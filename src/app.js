@@ -1,9 +1,13 @@
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
+const language = document.documentElement.lang || 'en';
+const localeBundle = window.usefulverseLocale ?? { runtime: {}, messages: {} };
+const languageTag = { en: 'en-US', es: 'es-ES', fr: 'fr-FR' }[language] ?? language;
+const translate = (message) => localeBundle.runtime[message] ?? localeBundle.messages[message] ?? message;
 
 function setStatus(element, message, type = '') {
   if (!element) return;
-  element.textContent = message;
+  element.textContent = translate(message);
   element.className = `tool-status${type ? ` is-${type}` : ''}`;
 }
 
@@ -41,7 +45,8 @@ function setupWordCounter(root) {
     if (action === 'clear') { input.value = ''; update(); input.focus(); }
     if (action === 'copy-summary') {
       const stats = getTextStats(input.value);
-      copyText(`Words: ${stats.words}\nCharacters: ${stats.characters}\nCharacters without spaces: ${stats.noSpaces}\nLines: ${stats.lines}\nReading time: ${stats.reading} min`, status);
+      const summaryLabels = language === 'es' ? ['Palabras', 'Caracteres', 'Caracteres sin espacios', 'Líneas', 'Tiempo de lectura'] : language === 'fr' ? ['Mots', 'Caractères', 'Caractères sans espaces', 'Lignes', 'Temps de lecture'] : ['Words', 'Characters', 'Characters without spaces', 'Lines', 'Reading time'];
+      copyText(`${summaryLabels[0]}: ${stats.words}\n${summaryLabels[1]}: ${stats.characters}\n${summaryLabels[2]}: ${stats.noSpaces}\n${summaryLabels[3]}: ${stats.lines}\n${summaryLabels[4]}: ${stats.reading} min`, status);
     }
   });
 }
@@ -80,7 +85,7 @@ function setupDedupe(root) {
       const seen = new Set();
       const lines = input.value.split(/\r?\n/u).map((line) => trim ? line.trim() : line).filter((line) => !removeEmpty || line !== '').filter((line) => { const key = ignoreCase ? line.toLocaleLowerCase() : line; if (seen.has(key)) return false; seen.add(key); return true; });
       output.value = lines.join('\n');
-      setStatus(status, `${lines.length} unique line${lines.length === 1 ? '' : 's'} kept.`, 'success');
+      setStatus(status, language === 'es' ? `${lines.length} ${lines.length === 1 ? 'línea única conservada.' : 'líneas únicas conservadas.'}` : language === 'fr' ? `${lines.length} ${lines.length === 1 ? 'ligne unique conservée.' : 'lignes uniques conservées.'}` : `${lines.length} unique line${lines.length === 1 ? '' : 's'} kept.`, 'success');
     }
     if (action === 'clear') { input.value = ''; output.value = ''; setStatus(status, 'Your cleaned list will appear here.'); input.focus(); }
     if (action === 'copy-output') copyText(output.value, status);
@@ -98,7 +103,7 @@ function setupJson(root) {
       setStatus(status, 'Valid JSON. Your result is ready.', 'success');
     } catch (error) {
       output.value = '';
-      setStatus(status, `This JSON has an error: ${error.message.replace(/^JSON\.parse:\s*/u, '')}`, 'error');
+      setStatus(status, language === 'en' ? `This JSON has an error: ${error.message.replace(/^JSON\.parse:\s*/u, '')}` : 'Invalid JSON. Check the quotes, commas and brackets.', 'error');
     }
   };
   root.addEventListener('click', (event) => {
@@ -130,7 +135,7 @@ function setupBase64(root) {
   const status = $('#tool-status', root);
   root.addEventListener('click', (event) => {
     const modeButton = event.target.closest('[data-mode]');
-    if (modeButton) { mode = modeButton.dataset.mode; $$('.segment', root).forEach((item) => item.classList.toggle('is-active', item === modeButton)); input.placeholder = mode === 'encode' ? 'Text to encode...' : 'Base64 to decode...'; }
+    if (modeButton) { mode = modeButton.dataset.mode; $$('.segment', root).forEach((item) => item.classList.toggle('is-active', item === modeButton)); input.placeholder = translate(mode === 'encode' ? 'Text to encode...' : 'Base64 to decode...'); }
     const action = event.target.closest('[data-action]')?.dataset.action;
     if (action === 'convert-base64') {
       try { output.value = mode === 'encode' ? utf8ToBase64(input.value) : base64ToUtf8(input.value); setStatus(status, 'Conversion complete.', 'success'); }
@@ -187,7 +192,7 @@ function numberValue(root, id) {
 }
 
 function formatNumber(value) {
-  return new Intl.NumberFormat(undefined, { maximumFractionDigits: 6 }).format(value);
+  return new Intl.NumberFormat(languageTag, { maximumFractionDigits: 6 }).format(value);
 }
 
 function setupPercentage(root) {
@@ -203,17 +208,17 @@ function setupPercentage(root) {
     if (percent !== null && base !== null) {
       const result = percent / 100 * base;
       $('#percent-result', root).textContent = `${formatNumber(result)}`;
-      answers.push(`${formatNumber(percent)}% of ${formatNumber(base)} = ${formatNumber(result)}`);
+      answers.push(language === 'es' || language === 'fr' ? `${formatNumber(percent)} % de ${formatNumber(base)} = ${formatNumber(result)}` : `${formatNumber(percent)}% of ${formatNumber(base)} = ${formatNumber(result)}`);
     } else $('#percent-result', root).textContent = '—';
     if (part !== null && whole !== null && whole !== 0) {
       const result = part / whole * 100;
       $('#what-percent-result', root).textContent = `${formatNumber(result)}%`;
-      answers.push(`${formatNumber(part)} is ${formatNumber(result)}% of ${formatNumber(whole)}`);
+      answers.push(language === 'es' ? `${formatNumber(part)} representa el ${formatNumber(result)} % de ${formatNumber(whole)}` : language === 'fr' ? `${formatNumber(part)} représente ${formatNumber(result)} % de ${formatNumber(whole)}` : `${formatNumber(part)} is ${formatNumber(result)}% of ${formatNumber(whole)}`);
     } else $('#what-percent-result', root).textContent = '—';
     if (oldValue !== null && newValue !== null && oldValue !== 0) {
       const result = (newValue - oldValue) / Math.abs(oldValue) * 100;
       $('#change-result', root).textContent = `${result >= 0 ? '+' : ''}${formatNumber(result)}%`;
-      answers.push(`Change from ${formatNumber(oldValue)} to ${formatNumber(newValue)} = ${result >= 0 ? '+' : ''}${formatNumber(result)}%`);
+      answers.push(language === 'es' ? `Cambio de ${formatNumber(oldValue)} a ${formatNumber(newValue)} = ${result >= 0 ? '+' : ''}${formatNumber(result)} %` : language === 'fr' ? `Variation de ${formatNumber(oldValue)} à ${formatNumber(newValue)} = ${result >= 0 ? '+' : ''}${formatNumber(result)} %` : `Change from ${formatNumber(oldValue)} to ${formatNumber(newValue)} = ${result >= 0 ? '+' : ''}${formatNumber(result)}%`);
     } else $('#change-result', root).textContent = '—';
     setStatus(status, answers.length ? 'Calculation complete.' : 'Enter valid numbers to calculate.', answers.length ? 'success' : 'error');
     return answers;
@@ -286,7 +291,7 @@ function setupTimestamp(root) {
     const date = new Date(milliseconds);
     if (Number.isNaN(date.getTime())) { setStatus(status, 'That timestamp is outside the supported date range.', 'error'); return; }
     $('#timestamp-utc', root).textContent = date.toISOString();
-    $('#timestamp-local', root).textContent = date.toLocaleString([], { dateStyle: 'medium', timeStyle: 'medium' });
+    $('#timestamp-local', root).textContent = date.toLocaleString(languageTag, { dateStyle: 'medium', timeStyle: 'medium' });
     setStatus(status, 'Date converted.', 'success');
   };
   const toTimestamp = () => {
@@ -365,8 +370,8 @@ function setupCsvToJson(root) {
         const headers = rows[0].map((header, index) => { const base = header.trim() || `column_${index + 1}`; const count = (used.get(base) || 0) + 1; used.set(base, count); return count === 1 ? base : `${base}_${count}`; });
         const result = rows.slice(1).map((row) => Object.fromEntries(headers.map((header, index) => [header, row[index] ?? ''])));
         output.value = JSON.stringify(result, null, 2);
-        setStatus(status, `${result.length} row${result.length === 1 ? '' : 's'} converted.`, 'success');
-      } catch (error) { output.value = ''; setStatus(status, error.message, 'error'); }
+        setStatus(status, language === 'es' ? `${result.length} ${result.length === 1 ? 'fila convertida.' : 'filas convertidas.'}` : language === 'fr' ? `${result.length} ${result.length === 1 ? 'ligne convertie.' : 'lignes converties.'}` : `${result.length} row${result.length === 1 ? '' : 's'} converted.`, 'success');
+      } catch (error) { output.value = ''; setStatus(status, language === 'en' ? error.message : 'Could not convert the CSV. Check the header row, commas and quotes.', 'error'); }
     }
     if (action === 'clear') { input.value = ''; output.value = ''; setStatus(status, 'The first row becomes the JSON keys.'); input.focus(); }
     if (action === 'copy-output') copyText(output.value, status);
@@ -390,8 +395,8 @@ function setupJsonToCsv(root) {
         if (!Array.isArray(parsed) || !parsed.length || parsed.some((item) => !item || typeof item !== 'object' || Array.isArray(item))) throw new Error('Use a non-empty array of JSON objects.');
         const headers = [...new Set(parsed.flatMap((item) => Object.keys(item)))];
         output.value = [headers.map(csvCell).join(','), ...parsed.map((item) => headers.map((header) => csvCell(item[header])).join(','))].join('\n');
-        setStatus(status, `${parsed.length} row${parsed.length === 1 ? '' : 's'} converted.`, 'success');
-      } catch (error) { output.value = ''; setStatus(status, error.message.startsWith('Unexpected') ? `Invalid JSON: ${error.message}` : error.message, 'error'); }
+      setStatus(status, language === 'es' ? `${parsed.length} ${parsed.length === 1 ? 'fila convertida.' : 'filas convertidas.'}` : language === 'fr' ? `${parsed.length} ${parsed.length === 1 ? 'ligne convertie.' : 'lignes converties.'}` : `${parsed.length} row${parsed.length === 1 ? '' : 's'} converted.`, 'success');
+      } catch (error) { output.value = ''; setStatus(status, language === 'en' ? (error.message.startsWith('Unexpected') ? `Invalid JSON: ${error.message}` : error.message) : 'Could not convert the JSON. Check that it is an array of objects with valid syntax.', 'error'); }
     }
     if (action === 'clear') { input.value = ''; output.value = ''; setStatus(status, 'Use an array of JSON objects with a shared set of keys.'); input.focus(); }
     if (action === 'copy-output') copyText(output.value, status);
@@ -435,7 +440,7 @@ function setupUuid(root) {
     const count = Number($('#uuid-count', root).value);
     if (!Number.isInteger(count) || count < 1 || count > 100) { setStatus(status, 'Choose a number from 1 to 100.', 'error'); return; }
     output.value = Array.from({ length: count }, () => crypto.randomUUID()).join('\n');
-    setStatus(status, `${count} UUID${count === 1 ? '' : 's'} generated locally.`, 'success');
+    setStatus(status, language === 'es' ? `${count} ${count === 1 ? 'UUID generado localmente.' : 'UUID generados localmente.'}` : language === 'fr' ? `${count} ${count === 1 ? 'UUID généré localement.' : 'UUID générés localement.'}` : `${count} UUID${count === 1 ? '' : 's'} generated locally.`, 'success');
   };
   root.addEventListener('click', (event) => {
     const action = event.target.closest('[data-action]')?.dataset.action;
@@ -478,8 +483,8 @@ function setupRegex(root) {
       const matches = [...input.value.matchAll(expression)].slice(0, 1000).map((match) => match[0]);
       count.textContent = matches.length;
       output.textContent = matches.length ? matches.join('\n') : 'No matches found.';
-      setStatus(status, matches.length ? `${matches.length} match${matches.length === 1 ? '' : 'es'} found.` : 'No matches found.', matches.length ? 'success' : '');
-    } catch (error) { count.textContent = '0'; output.textContent = 'No matches yet.'; setStatus(status, `Invalid regular expression: ${error.message}`, 'error'); }
+      setStatus(status, matches.length ? (language === 'es' ? `${matches.length} ${matches.length === 1 ? 'coincidencia encontrada.' : 'coincidencias encontradas.'}` : language === 'fr' ? `${matches.length} ${matches.length === 1 ? 'correspondance trouvée.' : 'correspondances trouvées.'}` : `${matches.length} match${matches.length === 1 ? '' : 'es'} found.`) : 'No matches found.', matches.length ? 'success' : '');
+    } catch (error) { count.textContent = '0'; output.textContent = translate('No matches yet.'); setStatus(status, language === 'en' ? `Invalid regular expression: ${error.message}` : 'Enter a valid regular expression and supported flags.', 'error'); }
   };
   root.addEventListener('click', (event) => {
     const action = event.target.closest('[data-action]')?.dataset.action;
@@ -507,7 +512,7 @@ function setupJwt(root) {
       header.textContent = JSON.stringify(JSON.parse(decodeBase64Url(parts[0])), null, 2);
       payload.textContent = JSON.stringify(JSON.parse(decodeBase64Url(parts[1])), null, 2);
       setStatus(status, 'Header and payload decoded. Signature was not verified.', 'success');
-    } catch (error) { header.textContent = '—'; payload.textContent = '—'; setStatus(status, `Could not decode this JWT: ${error.message}`, 'error'); }
+    } catch (error) { header.textContent = '—'; payload.textContent = '—'; setStatus(status, language === 'en' ? `Could not decode this JWT: ${error.message}` : 'This JWT could not be decoded. Check that it has three dot-separated parts and valid Base64URL data.', 'error'); }
   };
   root.addEventListener('click', (event) => {
     const action = event.target.closest('[data-action]')?.dataset.action;
@@ -570,7 +575,7 @@ function setupColor(root) {
       const hsl = rgbToHsl(red, green, blue);
       outputs.hex.textContent = hex; outputs.rgb.textContent = `rgb(${red}, ${green}, ${blue})`; outputs.hsl.textContent = `hsl(${hsl[0]}, ${hsl[1]}%, ${hsl[2]}%)`;
       preview.style.backgroundColor = hex; setStatus(status, 'Color converted.', 'success');
-    } catch (error) { Object.values(outputs).forEach((output) => { output.textContent = '—'; }); preview.style.backgroundColor = 'transparent'; setStatus(status, error.message, 'error'); }
+    } catch (error) { Object.values(outputs).forEach((output) => { output.textContent = '—'; }); preview.style.backgroundColor = 'transparent'; setStatus(status, language === 'en' ? error.message : 'Use a valid HEX, RGB or HSL color, such as #4D6BFF.', 'error'); }
   };
   root.addEventListener('click', (event) => {
     const action = event.target.closest('[data-action]')?.dataset.action;
@@ -638,7 +643,7 @@ function setupRoman(root) {
       }
       if (action === 'roman-to-number') { $('#number-output', root).textContent = romanToNumber($('#roman-input', root).value); setStatus(status, 'Roman numeral converted.', 'success'); }
       if (action === 'clear') { $$('input', root).forEach((input) => { input.value = ''; }); $$('output', root).forEach((output) => { output.textContent = '—'; }); setStatus(status, 'Conversions run only in your browser.'); }
-    } catch (error) { setStatus(status, error.message, 'error'); }
+    } catch (error) { setStatus(status, language === 'en' ? error.message : 'Use a valid whole number or Roman numeral between 1 and 3,999.', 'error'); }
   });
 }
 
@@ -660,7 +665,7 @@ function setupBinary(root) {
     const action = event.target.closest('[data-action]')?.dataset.action;
     if (action === 'convert-binary') {
       try { const from = Number($('#binary-from', root).value); const to = Number($('#binary-to', root).value); output.textContent = parseBaseInteger(input.value, from).toString(to).toUpperCase(); setStatus(status, 'Number converted locally.', 'success'); }
-      catch (error) { output.textContent = '—'; setStatus(status, error.message, 'error'); }
+      catch (error) { output.textContent = '—'; setStatus(status, language === 'en' ? error.message : 'Enter an integer using digits valid for the selected base.', 'error'); }
     }
     if (action === 'clear') { input.value = ''; output.textContent = '—'; setStatus(status, 'Supports whole numbers in bases 2, 8, 10 and 16.'); input.focus(); }
   });
@@ -675,7 +680,7 @@ function setupPrime(root) {
       if (!Number.isSafeInteger(value) || value < 0 || value > 1_000_000_000_000) { setStatus(status, 'Enter a whole number from 0 to 1,000,000,000,000.', 'error'); output.textContent = '—'; return; }
       let prime = value >= 2;
       for (let divisor = 2; prime && divisor * divisor <= value; divisor += divisor === 2 ? 1 : 2) if (value % divisor === 0) prime = false;
-      output.textContent = prime ? 'Prime number' : 'Not prime'; setStatus(status, 'Number checked locally.', 'success');
+      output.textContent = translate(prime ? 'Prime number' : 'Not prime'); setStatus(status, 'Number checked locally.', 'success');
     }
     if (action === 'clear') { input.value = ''; output.textContent = '—'; setStatus(status, 'Checks integers up to one trillion locally.'); input.focus(); }
   });
@@ -722,21 +727,66 @@ function setupDuration(root) {
       const start = new Date($('#duration-start', root).value).getTime(); const end = new Date($('#duration-end', root).value).getTime();
       if (!Number.isFinite(start) || !Number.isFinite(end) || end < start) { setStatus(status, 'Choose valid times with the end after the start.', 'error'); return; }
       const milliseconds = end - start; const totalSeconds = Math.floor(milliseconds / 1000); const days = Math.floor(totalSeconds / 86400); const hours = Math.floor(totalSeconds / 3600); const minutes = Math.floor((totalSeconds % 3600) / 60); const seconds = totalSeconds % 60;
-      $('#duration-days', root).textContent = formatNumber(milliseconds / 86400000); $('#duration-hours', root).textContent = formatNumber(milliseconds / 3600000); $('#duration-exact', root).textContent = `${days}d ${hours % 24}h ${minutes}m ${seconds}s`; setStatus(status, 'Duration calculated locally.', 'success');
+      $('#duration-days', root).textContent = formatNumber(milliseconds / 86400000); $('#duration-hours', root).textContent = formatNumber(milliseconds / 3600000); $('#duration-exact', root).textContent = language === 'es' ? `${days} d ${hours % 24} h ${minutes} min ${seconds} s` : language === 'fr' ? `${days} j ${hours % 24} h ${minutes} min ${seconds} s` : `${days}d ${hours % 24}h ${minutes}m ${seconds}s`; setStatus(status, 'Duration calculated locally.', 'success');
     }
     if (action === 'clear') { $$('input', root).forEach((input) => { input.value = ''; }); ['duration-days', 'duration-hours', 'duration-exact'].forEach((id) => { $(`#${id}`, root).textContent = '—'; }); setStatus(status, 'Choose a start and end time.'); }
   });
 }
 
-const numberWordsSmall = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
-const numberWordsTens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
-function wordsUnderThousand(value) { const words = []; if (value >= 100) { words.push(`${numberWordsSmall[Math.floor(value / 100)]} hundred`); value %= 100; } if (value >= 20) { words.push(numberWordsTens[Math.floor(value / 10)]); value %= 10; } if (value) words.push(numberWordsSmall[value]); return words.join(' '); }
+const englishSmall = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+const englishTens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+const spanishSmall = ['cero', 'uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve', 'diez', 'once', 'doce', 'trece', 'catorce', 'quince', 'dieciséis', 'diecisiete', 'dieciocho', 'diecinueve', 'veinte', 'veintiuno', 'veintidós', 'veintitrés', 'veinticuatro', 'veinticinco', 'veintiséis', 'veintisiete', 'veintiocho', 'veintinueve'];
+const spanishTens = ['', '', '', 'treinta', 'cuarenta', 'cincuenta', 'sesenta', 'setenta', 'ochenta', 'noventa'];
+const spanishHundreds = ['', 'ciento', 'doscientos', 'trescientos', 'cuatrocientos', 'quinientos', 'seiscientos', 'setecientos', 'ochocientos', 'novecientos'];
+const frenchSmall = ['zéro', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'onze', 'douze', 'treize', 'quatorze', 'quinze', 'seize', 'dix-sept', 'dix-huit', 'dix-neuf'];
+const frenchTens = ['', '', 'vingt', 'trente', 'quarante', 'cinquante', 'soixante'];
+function wordsUnderThousand(value) {
+  if (language === 'es') {
+    const words = [];
+    if (value >= 100) { const hundreds = Math.floor(value / 100); words.push(value === 100 ? 'cien' : spanishHundreds[hundreds]); value %= 100; }
+    if (value >= 30) { const tens = Math.floor(value / 10); const units = value % 10; words.push(units ? `${spanishTens[tens]} y ${englishUnitSpanish(units)}` : spanishTens[tens]); value = 0; }
+    if (value) words.push(spanishSmall[value]);
+    return words.join(' ');
+  }
+  if (language === 'fr') {
+    const words = [];
+    if (value >= 100) { const hundreds = Math.floor(value / 100); const remainder = value % 100; words.push(hundreds === 1 ? 'cent' : `${frenchSmall[hundreds]} cent${remainder ? '' : 's'}`); value = remainder; }
+    if (value < 20) { if (value) words.push(frenchSmall[value]); return words.join(' '); }
+    if (value < 70) { const tens = Math.floor(value / 10); const units = value % 10; words.push(units === 1 ? `${frenchTens[tens]} et un` : `${frenchTens[tens]}${units ? `-${frenchSmall[units]}` : ''}`); return words.join(' '); }
+    if (value < 80) return value === 71 ? 'soixante et onze' : `soixante-${frenchSmall[value - 60]}`;
+    return value === 80 ? 'quatre-vingts' : `quatre-vingt${value > 80 ? `-${value - 80 < 20 ? frenchSmall[value - 80] : `dix-${frenchSmall[value - 90]}`}` : ''}`;
+  }
+  const words = [];
+  if (value >= 100) { words.push(`${englishSmall[Math.floor(value / 100)]} hundred`); value %= 100; }
+  if (value >= 20) { words.push(englishTens[Math.floor(value / 10)]); value %= 10; }
+  if (value) words.push(englishSmall[value]);
+  return words.join(' ');
+}
+function englishUnitSpanish(value) { return value === 1 ? 'uno' : spanishSmall[value]; }
+function spanishBeforeScale(text) { return text.replace(/veintiuno$/u, 'veintiún').replace(/ y uno$/u, ' y un').replace(/uno$/u, 'un'); }
 function numberToWords(value) {
-  if (value === 0n) return 'zero';
-  const negative = value < 0n; const absolute = negative ? -value : value; const scales = ['', 'thousand', 'million', 'billion']; const groups = []; let remaining = absolute;
+  if (value === 0n) return language === 'es' ? 'cero' : language === 'fr' ? 'zéro' : 'zero';
+  const negative = value < 0n; const absolute = negative ? -value : value; const groups = []; let remaining = absolute;
   while (remaining) { groups.push(Number(remaining % 1000n)); remaining /= 1000n; }
-  const words = []; for (let index = groups.length - 1; index >= 0; index -= 1) if (groups[index]) words.push(`${wordsUnderThousand(groups[index])}${scales[index] ? ` ${scales[index]}` : ''}`);
-  return `${negative ? 'minus ' : ''}${words.join(' ')}`;
+  const words = [];
+  for (let index = groups.length - 1; index >= 0; index -= 1) {
+    const group = groups[index]; if (!group) continue;
+    let part = wordsUnderThousand(group);
+    if (language === 'es') {
+      if (index === 3) part = `${group === 1 ? '' : `${spanishBeforeScale(part)} `}mil millones`;
+      else if (index === 2) part = `${spanishBeforeScale(part)} ${group === 1 ? 'millón' : 'millones'}`;
+      else if (index === 1) part = group === 1 ? 'mil' : `${spanishBeforeScale(part)} mil`;
+    } else if (language === 'fr') {
+      if (index === 3) part = `${part} ${group === 1 ? 'milliard' : 'milliards'}`;
+      else if (index === 2) part = `${part} ${group === 1 ? 'million' : 'millions'}`;
+      else if (index === 1) part = group === 1 ? 'mille' : `${part} mille`;
+    } else {
+      const scale = ['', 'thousand', 'million', 'billion'][index];
+      if (scale) part = `${part} ${scale}`;
+    }
+    words.push(part);
+  }
+  return `${negative ? (language === 'es' ? 'menos ' : language === 'fr' ? 'moins ' : 'minus ') : ''}${words.join(' ')}`;
 }
 
 function setupNumberWords(root) {
@@ -745,7 +795,7 @@ function setupNumberWords(root) {
     const action = event.target.closest('[data-action]')?.dataset.action;
     if (action === 'number-to-words') {
       try { const text = input.value.trim().replaceAll(',', ''); if (!/^-?\d+$/u.test(text)) throw new Error('Enter a whole number.'); const value = BigInt(text); if (value < -999_999_999_999n || value > 999_999_999_999n) throw new Error('Use a number between -999,999,999,999 and 999,999,999,999.'); output.value = numberToWords(value); setStatus(status, 'Number converted locally.', 'success'); }
-      catch (error) { output.value = ''; setStatus(status, error.message, 'error'); }
+      catch (error) { output.value = ''; setStatus(status, language === 'en' ? error.message : 'Use a whole number between -999,999,999,999 and 999,999,999,999.', 'error'); }
     }
     if (action === 'copy-output') copyText(output.value, status);
     if (action === 'clear') { input.value = ''; output.value = ''; setStatus(status, 'Supports whole numbers from -999,999,999,999 to 999,999,999,999.'); input.focus(); }
@@ -790,7 +840,7 @@ function setupUnitConverter(root) {
   const category = $('#unit-category', root); const from = $('#unit-from', root); const to = $('#unit-to', root); const input = $('#unit-input', root); const output = $('#unit-output', root); const status = $('#tool-status', root);
   const updateUnits = () => {
     const definition = unitDefinitions[category.value]; from.innerHTML = ''; to.innerHTML = '';
-    Object.entries(definition.units).forEach(([value, [label]]) => { from.add(new Option(label, value)); to.add(new Option(label, value)); });
+    Object.entries(definition.units).forEach(([value, [label]]) => { const localizedLabel = translate(label); from.add(new Option(localizedLabel, value)); to.add(new Option(localizedLabel, value)); });
     if (to.options.length > 1) to.selectedIndex = 1;
   };
   const convertTemperature = (value, source, target) => {
@@ -820,7 +870,7 @@ function setupDateCalculator(root) {
     if (action === 'date-difference') {
       const start = parseDateOnly($('#date-start', root).value); const end = parseDateOnly($('#date-end', root).value);
       if (!start || !end) { setStatus(status, 'Choose two valid dates.', 'error'); return; }
-      $('#date-difference-result', root).textContent = `${Math.abs(Math.round((end - start) / 86400000))} days`; setStatus(status, 'Date difference calculated.', 'success');
+      const days = Math.abs(Math.round((end - start) / 86400000)); const dayWord = language === 'es' ? (days === 1 ? 'día' : 'días') : language === 'fr' ? (days === 1 ? 'jour' : 'jours') : (days === 1 ? 'day' : 'days'); $('#date-difference-result', root).textContent = `${formatNumber(days)} ${dayWord}`; setStatus(status, 'Date difference calculated.', 'success');
     }
     if (action === 'date-offset') {
       const base = parseDateOnly($('#date-base', root).value); const offset = Number($('#date-offset', root).value);
@@ -1002,7 +1052,7 @@ function setupQr(root) {
     const value = input.value.trim();
     if (!value) { setStatus(status, 'Paste a link or short text first.', 'error'); input.focus(); return false; }
     try { qrRender(canvas, qrCreateModules(value), Number($('#qr-size', root).value), '#000000', '#ffffff'); result.hidden = false; generated = true; setStatus(status, 'QR code ready. Nothing left this browser.', 'success'); return true; }
-    catch (error) { generated = false; setStatus(status, error.message, 'error'); return false; }
+    catch (error) { generated = false; setStatus(status, language === 'en' ? error.message : 'Use a link or text of 106 bytes or fewer. Short links work best.', 'error'); return false; }
   };
   root.addEventListener('click', (event) => {
     const action = event.target.closest('[data-action]')?.dataset.action;
@@ -1040,12 +1090,12 @@ function localDateTimeValue(date) {
 function setupTimeZone(root) {
   const input = $('#timezone-date', root); const from = $('#timezone-from', root); const to = $('#timezone-to', root); const fromOutput = $('#timezone-from-result', root); const toOutput = $('#timezone-to-result', root); const status = $('#tool-status', root);
   input.value = localDateTimeValue(new Date());
-  const format = (date, timeZone) => new Intl.DateTimeFormat(undefined, { timeZone, dateStyle: 'full', timeStyle: 'long' }).format(date);
+  const format = (date, timeZone) => new Intl.DateTimeFormat(languageTag, { timeZone, dateStyle: 'full', timeStyle: 'long' }).format(date);
   root.addEventListener('click', (event) => {
     const action = event.target.closest('[data-action]')?.dataset.action;
     if (action === 'convert-timezone') {
       try { const date = parseZonedDateTime(input.value, from.value); fromOutput.textContent = format(date, from.value); toOutput.textContent = format(date, to.value); setStatus(status, 'Time converted locally with daylight saving support.', 'success'); }
-      catch (error) { fromOutput.textContent = '—'; toOutput.textContent = '—'; setStatus(status, error.message, 'error'); }
+      catch (error) { fromOutput.textContent = '—'; toOutput.textContent = '—'; setStatus(status, language === 'en' ? error.message : 'This date and time is invalid for the selected time zone.', 'error'); }
     }
     if (action === 'clear') { input.value = ''; fromOutput.textContent = '—'; toOutput.textContent = '—'; setStatus(status, 'Uses your browser’s time zone data, including daylight saving changes.'); input.focus(); }
   });
@@ -1065,12 +1115,13 @@ function setupHome() {
   const cards = $$('.tool-card', grid);
   const empty = $('#empty-state');
   const search = $('#tool-search');
-  let category = 'All';
+  const allCategory = $('[data-category-filter]')?.dataset.categoryFilter || 'All';
+  let category = allCategory;
   const render = () => {
     const term = search.value.trim().toLocaleLowerCase();
     let visible = 0;
     cards.forEach((card) => {
-      const matchesCategory = category === 'All' || card.dataset.category === category;
+      const matchesCategory = category === allCategory || card.dataset.category === category;
       const matchesSearch = !term || card.dataset.search.toLocaleLowerCase().includes(term);
       const show = matchesCategory && matchesSearch;
       card.hidden = !show;

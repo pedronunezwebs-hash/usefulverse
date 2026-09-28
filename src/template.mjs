@@ -1,5 +1,6 @@
 import { tools } from './catalog.mjs';
 import { seo } from './seo.mjs';
+import { localeEntries, localePath, locales, translateStaticHtml, ui } from './locales.mjs';
 
 const escapeHtml = (value) => String(value)
   .replaceAll('&', '&amp;')
@@ -8,12 +9,12 @@ const escapeHtml = (value) => String(value)
   .replaceAll('"', '&quot;')
   .replaceAll("'", '&#039;');
 
-const toolUrl = (id) => `/tools/${id}/`;
+const toolUrl = (id, language = 'en') => localePath(language, id);
 
 const icon = (tool) => `<span class="tool-icon tool-icon--${tool.accent}" aria-hidden="true">${escapeHtml(tool.icon)}</span>`;
 
-export function toolCard(tool) {
-  return `<a class="tool-card" href="${toolUrl(tool.id)}" data-category="${escapeHtml(tool.category)}" data-search="${escapeHtml(`${tool.title} ${tool.description} ${tool.keywords}`)}">
+export function toolCard(tool, language = 'en') {
+  return `<a class="tool-card" href="${toolUrl(tool.id, language)}" data-category="${escapeHtml(tool.category)}" data-search="${escapeHtml(`${tool.title} ${tool.description} ${tool.keywords}`)}">
     <div class="tool-card__top">${icon(tool)}<span class="tool-card__category">${escapeHtml(tool.category)}</span></div>
     <h3>${escapeHtml(tool.title)}</h3>
     <p>${escapeHtml(tool.description)}</p>
@@ -252,16 +253,32 @@ function toolMarkup(id) {
   return `${common}<p>This tool is not available yet.</p>${close}`;
 }
 
-export function renderToolPage(tool, assetVersion = '') {
-  const canonical = `https://usefulverse.com${toolUrl(tool.id)}`;
-  const seoData = seo[tool.id] ?? { title: tool.title, description: `${tool.description} Free, fast and private in your browser.` };
+export function renderToolPage(tool, assetVersion = '', language = 'en', pageTools = tools) {
+  const canonical = `https://usefulverse.com${toolUrl(tool.id, language)}`;
+  const seoData = language === 'en'
+    ? (seo[tool.id] ?? { title: tool.title, description: `${tool.description} Free, fast and private in your browser.` })
+    : {
+      title: tool.shortTitle,
+      description: tool.description,
+      faq: [
+        { question: language === 'es' ? `¿Cómo se usa «${tool.shortTitle}»?` : `Comment utiliser « ${tool.shortTitle} » ?`, answer: tool.intro },
+        { question: language === 'es' ? '¿Se envían mis datos a un servidor?' : 'Mes données sont-elles envoyées à un serveur ?', answer: language === 'es' ? 'No. El procesamiento se realiza en tu navegador y tus datos no se suben.' : 'Non. Le traitement s’effectue dans votre navigateur et vos données ne sont pas envoyées.' },
+      ],
+    };
   const faq = seoData.faq ?? [];
+  const homeHref = localePath(language);
+  const alternates = localeEntries.map(({ key, code }) => `<link rel="alternate" hreflang="${code}" href="https://usefulverse.com${localePath(key, tool.id)}">`).join('\n    ');
+  const dynamicTranslations = {
+    [`About ${tool.title}.`]: language === 'es' ? `Acerca de ${tool.title}.` : `À propos de ${tool.title}.`,
+    [`${tool.title} made simple.`]: language === 'es' ? `${tool.title} sin complicaciones.` : `${tool.title} en toute simplicité.`,
+    [`${tool.category} tool`]: `${tool.category} · ${ui[language]?.tool ?? 'tool'}`,
+  };
   const breadcrumbs = `<script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'UsefulVerse', item: 'https://usefulverse.com/' },
-      { '@type': 'ListItem', position: 2, name: tool.category, item: 'https://usefulverse.com/#tools' },
+      { '@type': 'ListItem', position: 1, name: 'UsefulVerse', item: `https://usefulverse.com${homeHref}` },
+      { '@type': 'ListItem', position: 2, name: tool.category, item: `https://usefulverse.com${homeHref}#tools` },
       { '@type': 'ListItem', position: 3, name: tool.title, item: canonical },
     ],
   })}</script>`;
@@ -271,7 +288,8 @@ export function renderToolPage(tool, assetVersion = '') {
     name: tool.title,
     url: canonical,
     description: seoData.description,
-    applicationCategory: tool.category === 'Developer' ? 'DeveloperApplication' : 'UtilitiesApplication',
+    inLanguage: language,
+    applicationCategory: tools.find((item) => item.id === tool.id)?.category === 'Developer' ? 'DeveloperApplication' : 'UtilitiesApplication',
     operatingSystem: 'Any',
     browserRequirements: 'Requires JavaScript',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
@@ -282,7 +300,7 @@ export function renderToolPage(tool, assetVersion = '') {
     mainEntity: faq.map(({ question, answer }) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })),
   })}</script>` : '';
   const faqSection = faq.length ? `<section class="tool-faq" aria-labelledby="faq-title"><div><p class="eyebrow">Common questions</p><h2 id="faq-title">About ${escapeHtml(tool.title)}.</h2></div><div class="faq-list">${faq.map(({ question, answer }) => `<details><summary>${escapeHtml(question)}</summary><p>${escapeHtml(answer)}</p></details>`).join('')}</div></section>` : '';
-  return shell({
+  const rendered = shell({
     title: `${seoData.title} | UsefulVerse`,
     description: seoData.description,
     canonical,
@@ -290,33 +308,42 @@ export function renderToolPage(tool, assetVersion = '') {
     schema: `${applicationSchema}${breadcrumbs}${faqSchema}`,
     body: `<main class="tool-page" data-tool-page="${tool.id}">
       <div class="page-container">
-        <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">UsefulVerse</a><span aria-hidden="true">/</span><a href="/#tools">${escapeHtml(tool.category)}</a><span aria-hidden="true">/</span><span>${escapeHtml(tool.title)}</span></nav>
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="${homeHref}">UsefulVerse</a><span aria-hidden="true">/</span><a href="${homeHref}#tools">${escapeHtml(tool.category)}</a><span aria-hidden="true">/</span><span>${escapeHtml(tool.title)}</span></nav>
         <div class="tool-page__heading"><div>${icon(tool)}<p class="eyebrow">${escapeHtml(tool.category)} tool</p><h1>${escapeHtml(tool.title)}</h1><p class="tool-lead">${escapeHtml(tool.intro)}</p></div><div class="privacy-note"><span class="privacy-note__dot" aria-hidden="true"></span><span>Runs in your browser. No upload.</span></div></div>
         <section class="tool-panel" aria-label="${escapeHtml(tool.title)} workspace">${toolMarkup(tool.id)}</section>
         <section class="tool-explainer"><div><p class="eyebrow">About this tool</p><h2>${escapeHtml(tool.title)} made simple.</h2></div><p>${escapeHtml(tool.body)}</p></section>
         ${faqSection}
-        <section class="related-tools"><div class="section-heading"><div><p class="eyebrow">Keep going</p><h2>More useful tools</h2></div><a class="text-link" href="/">Browse all tools <span aria-hidden="true">↗</span></a></div><div class="tool-grid tool-grid--compact">${relatedCards(tool.id, tool.category)}</div></section>
+        <section class="related-tools"><div class="section-heading"><div><p class="eyebrow">Keep going</p><h2>More useful tools</h2></div><a class="text-link" href="${homeHref}">Browse all tools <span aria-hidden="true">↗</span></a></div><div class="tool-grid tool-grid--compact">${relatedCards(tool.id, tool.category, pageTools, language)}</div></section>
       </div>
     </main>`,
+    lang: language,
+    alternates,
+    toolId: tool.id,
   });
+  return language === 'en' ? rendered : translateStaticHtml(rendered, language, dynamicTranslations);
 }
 
-function relatedCards(currentId, category) {
-  const related = tools.filter((tool) => tool.id !== currentId && tool.category === category).slice(0, 3);
-  const fallback = tools.filter((tool) => tool.id !== currentId && !related.some((item) => item.id === tool.id)).slice(0, 3 - related.length);
-  return [...related, ...fallback].map(toolCard).join('');
+function relatedCards(currentId, category, pageTools = tools, language = 'en') {
+  const related = pageTools.filter((tool) => tool.id !== currentId && tool.category === category).slice(0, 3);
+  const fallback = pageTools.filter((tool) => tool.id !== currentId && !related.some((item) => item.id === tool.id)).slice(0, 3 - related.length);
+  return [...related, ...fallback].map((tool) => toolCard(tool, language)).join('');
 }
 
-export function shell({ title, description, canonical, body, schema = '', assetVersion = '' }) {
+export function shell({ title, description, canonical, body, schema = '', assetVersion = '', lang = 'en', alternates = '', toolId = '' }) {
   const assetSuffix = assetVersion ? `?v=${escapeHtml(assetVersion)}` : '';
+  const homeHref = localePath(lang);
+  const defaultAlternate = `<link rel="alternate" hreflang="x-default" href="https://usefulverse.com${localePath('en', toolId)}">`;
+  const localeSelector = `<nav class="language-switch" aria-label="Language">${localeEntries.map(({ key, code, name }) => `<a href="${localePath(key, toolId)}" hreflang="${code}" lang="${code}"${key === lang ? ' aria-current="page"' : ''} aria-label="${escapeHtml(name)}">${code.toUpperCase()}</a>`).join('')}</nav>`;
   return `<!doctype html>
-<html lang="en">
+<html lang="${lang}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>${escapeHtml(title)}</title>
     <meta name="description" content="${escapeHtml(description)}">
     <link rel="canonical" href="${escapeHtml(canonical)}">
+    ${alternates}
+    ${defaultAlternate}
     <meta name="theme-color" content="#0b1324">
     <meta property="og:type" content="website">
     <meta property="og:title" content="${escapeHtml(title)}">
@@ -329,32 +356,40 @@ export function shell({ title, description, canonical, body, schema = '', assetV
     ${schema}
   </head>
   <body>
-    <header class="site-header"><div class="page-container site-header__inner"><a class="brand" href="/" aria-label="UsefulVerse home"><span class="brand-mark" aria-hidden="true">◆</span><span>usefulverse</span></a><nav class="main-nav" aria-label="Main navigation"><a href="/#tools">Tools</a><a href="/#how-it-works">How it works</a></nav><a class="header-cta" href="/#tools">Find a tool <span aria-hidden="true">↗</span></a></div></header>
+    <header class="site-header"><div class="page-container site-header__inner"><a class="brand" href="${homeHref}" aria-label="UsefulVerse home"><span class="brand-mark" aria-hidden="true">◆</span><span>usefulverse</span></a><nav class="main-nav" aria-label="Main navigation"><a href="${homeHref}#tools">Tools</a><a href="${homeHref}#how-it-works">How it works</a></nav><a class="header-cta" href="${homeHref}#tools">Find a tool <span aria-hidden="true">↗</span></a>${localeSelector}</div></header>
     ${body}
-    <footer class="site-footer"><div class="page-container site-footer__inner"><a class="brand brand--footer" href="/"><span class="brand-mark" aria-hidden="true">◆</span><span>usefulverse</span></a><p>Simple tools that respect your time and your files.</p><div class="footer-links"><a href="/#tools">All tools</a><a href="/#how-it-works">Privacy first</a></div></div></footer>
+    <footer class="site-footer"><div class="page-container site-footer__inner"><a class="brand brand--footer" href="${homeHref}"><span class="brand-mark" aria-hidden="true">◆</span><span>usefulverse</span></a><p>Simple tools that respect your time and your files.</p><div class="footer-links"><a href="${homeHref}#tools">All tools</a><a href="${homeHref}#how-it-works">Privacy first</a></div></div></footer>
+    ${lang === 'en' ? '' : `<script defer src="/assets/locale-${lang}.js${assetSuffix}"></script>`}
     <script defer src="/assets/app.js${assetSuffix}"></script>
   </body>
 </html>`;
 }
 
-export function renderHome(tools, categories, assetVersion = '') {
+export function renderHome(tools, categories, assetVersion = '', language = 'en') {
+  const homeUrl = `https://usefulverse.com${localePath(language)}`;
+  const alternates = localeEntries.map(({ key, code }) => `<link rel="alternate" hreflang="${code}" href="https://usefulverse.com${localePath(key)}">`).join('\n    ');
+  const dynamicTranslations = {};
   const schema = `<script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'UsefulVerse',
-    url: 'https://usefulverse.com/',
-    description: 'Fast, private browser tools for everyday tasks.',
+    url: homeUrl,
+    description: locales[language].homeDescription,
+    inLanguage: locales[language].code,
   })}</script>`;
-  return shell({
-    title: 'UsefulVerse — Simple tools for everyday tasks',
-    description: 'Fast, private browser tools for text, files, data, SEO and everyday tasks. No account and no upload required.',
-    canonical: 'https://usefulverse.com/',
+  const rendered = shell({
+    title: locales[language].homeTitle,
+    description: locales[language].homeDescription,
+    canonical: homeUrl,
     schema,
     assetVersion,
+    lang: language,
+    alternates,
     body: `<main>
       <section class="home-intro"><div class="page-container home-intro__grid"><div><p class="eyebrow">A useful place on the internet</p><h1>Do the small things<br><span>faster.</span></h1><p class="home-lead">Simple browser tools for text, data and everyday work. No account. No upload. Just open a tool and get it done.</p><a class="button button--primary button--large" href="#tools">Explore tools <span aria-hidden="true">↘</span></a></div><div class="intro-card" aria-label="UsefulVerse principles"><div class="intro-card__orb" aria-hidden="true"><span>useful</span><strong>verse</strong></div><div class="intro-card__notes"><span>Fast by default</span><span>Private by design</span><span>Free to use</span></div></div></div></section>
-      <section class="tools-section" id="tools"><div class="page-container"><div class="section-heading section-heading--tools"><div><p class="eyebrow">The toolbox</p><h2>Find the right tool.</h2></div><div class="search-wrap"><label class="sr-only" for="tool-search">Search tools</label><input id="tool-search" class="search-input" type="search" placeholder="Search tools" autocomplete="off"><span aria-hidden="true">⌕</span></div></div><div class="category-row" role="group" aria-label="Tool categories">${categories.map((category) => `<button class="category-chip${category === 'All' ? ' is-active' : ''}" data-category-filter="${escapeHtml(category)}">${escapeHtml(category)}</button>`).join('')}</div><div class="tool-grid" id="tool-grid">${tools.map(toolCard).join('')}</div><p class="empty-state" id="empty-state" hidden>No tools match that search yet. Try another word.</p></div></section>
+      <section class="tools-section" id="tools"><div class="page-container"><div class="section-heading section-heading--tools"><div><p class="eyebrow">The toolbox</p><h2>Find the right tool.</h2></div><div class="search-wrap"><label class="sr-only" for="tool-search">Search tools</label><input id="tool-search" class="search-input" type="search" placeholder="Search tools" autocomplete="off"><span aria-hidden="true">⌕</span></div></div><div class="category-row" role="group" aria-label="Tool categories">${categories.map((category) => `<button class="category-chip${category === categories[0] ? ' is-active' : ''}" data-category-filter="${escapeHtml(category)}">${escapeHtml(category)}</button>`).join('')}</div><div class="tool-grid" id="tool-grid">${tools.map((tool) => toolCard(tool, language)).join('')}</div><p class="empty-state" id="empty-state" hidden>No tools match that search yet. Try another word.</p></div></section>
       <section class="how-section" id="how-it-works"><div class="page-container how-grid"><div><p class="eyebrow">Why UsefulVerse</p><h2>Small tools.<br>Clear answers.</h2></div><div class="how-points"><article><span class="step-number">01</span><h3>Open a tool</h3><p>Each tool has one clear job. You can start in seconds.</p></article><article><span class="step-number">02</span><h3>Work privately</h3><p>Your text stays in your browser for browser-first tools.</p></article><article><span class="step-number">03</span><h3>Take the result</h3><p>Copy it or use it where you need it next.</p></article></div></div></section>
     </main>`,
   });
+  return language === 'en' ? rendered : translateStaticHtml(rendered, language, dynamicTranslations);
 }
