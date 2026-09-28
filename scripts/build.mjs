@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { tools, categories } from '../src/catalog.mjs';
 import { renderHome, renderToolPage } from '../src/template.mjs';
+import { localePath, locales, localizedTool, runtimeMessages, ui } from '../src/locales.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const dist = join(root, 'dist');
@@ -21,19 +22,48 @@ await cp(join(root, 'public', indexNowKeyFile), join(dist, indexNowKeyFile));
 const assetVersion = createHash('sha256')
   .update(await readFile(join(dist, 'assets', 'styles.css')))
   .update(await readFile(join(dist, 'assets', 'app.js')))
+  .update(await readFile(join(root, 'src', 'locales.mjs')))
   .digest('hex')
   .slice(0, 12);
 
-await writeFile(join(dist, 'index.html'), renderHome(tools, categories, assetVersion));
-for (const tool of tools) {
-  const directory = join(dist, 'tools', tool.id);
-  await mkdir(directory, { recursive: true });
-  await writeFile(join(directory, 'index.html'), renderToolPage(tool, assetVersion));
+const languages = Object.keys(locales);
+const pages = [];
+for (const language of languages) {
+  const localizedTools = tools.map((tool) => localizedTool(tool, language));
+  const localizedCategories = [ui[language]?.All ?? categories[0], ...new Set(localizedTools.map((tool) => tool.category))];
+  const homePath = localePath(language);
+  const homeFile = join(dist, homePath.replace(/^\//u, ''), 'index.html');
+  await mkdir(join(dist, homePath.replace(/^\//u, '')), { recursive: true });
+  await writeFile(homeFile, renderHome(localizedTools, localizedCategories, assetVersion, language));
+  pages.push({ language, path: homePath });
+  if (language !== 'en') {
+    const localeBundle = `window.usefulverseLocale = ${JSON.stringify({ code: language, messages: ui[language], runtime: runtimeMessages[language] })};\n`;
+    await writeFile(join(dist, 'assets', `locale-${language}.js`), localeBundle);
+  }
+  for (const tool of localizedTools) {
+    const toolPath = localePath(language, tool.id);
+    const directory = join(dist, toolPath.replace(/^\//u, ''));
+    await mkdir(directory, { recursive: true });
+    await writeFile(join(directory, 'index.html'), renderToolPage(tool, assetVersion, language, localizedTools));
+    pages.push({ language, path: toolPath });
+  }
 }
 
-const urls = ['', ...tools.map((tool) => `tools/${tool.id}/`)];
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((url) => `  <url><loc>https://usefulverse.com/${url}</loc></url>`).join('\n')}\n</urlset>\n`;
+const localizedRoute = (language, toolId) => `https://usefulverse.com${localePath(language, toolId)}`;
+const xhtmlNamespace = ' xmlns:xhtml="http://www.w3.org/1999/xhtml"';
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"${xhtmlNamespace}>\n${pages.map(({ language, path }) => {
+  const toolId = path.match(/\/tools\/([^/]+)\/$/u)?.[1] ?? '';
+  const alternates = languages.map((alternateLanguage) => `    <xhtml:link rel="alternate" hreflang="${locales[alternateLanguage].code}" href="${localizedRoute(alternateLanguage, toolId)}"/>`);
+  alternates.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${localizedRoute('en', toolId)}"/>`);
+  return `  <url>\n    <loc>${localizedRoute(language, toolId)}</loc>\n${alternates.join('\n')}\n  </url>`;
+}).join('\n')}\n</urlset>\n`;
 await writeFile(join(dist, 'sitemap.xml'), sitemap);
 await writeFile(join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: https://usefulverse.com/sitemap.xml\n`);
 await writeFile(join(dist, 'llms.txt'), `# UsefulVerse\n\n> Fast, private browser tools for text, data, SEO and everyday tasks.\n\nUsefulVerse is a static website of small online tools. Browser-first tools process user input locally and do not require an account or upload.\n\n## Tools\n\n${tools.map((tool) => `- [${tool.title}](https://usefulverse.com/tools/${tool.id}/): ${tool.description}`).join('\n')}\n\n## Site\n\n- [Home](https://usefulverse.com/)\n- [Sitemap](https://usefulverse.com/sitemap.xml)\n`);
-console.log(`Built ${urls.length} pages in dist/`);
+for (const language of ['es', 'fr']) {
+  const localizedTools = tools.map((tool) => localizedTool(tool, language));
+  const homeUrl = `https://usefulverse.com${localePath(language)}`;
+  const localLlms = `# UsefulVerse — ${locales[language].name}\n\n> ${locales[language].homeDescription}\n\n${localizedTools.map((tool) => `- [${tool.title}](https://usefulverse.com${localePath(language, tool.id)}): ${tool.description}`).join('\n')}\n\n- [${language === 'es' ? 'Inicio' : 'Accueil'}](${homeUrl})\n- [Sitemap](https://usefulverse.com/sitemap.xml)\n`;
+  await writeFile(join(dist, language, 'llms.txt'), localLlms);
+}
+console.log(`Built ${pages.length} pages (${tools.length} tools × ${languages.length} languages + ${languages.length} home pages) in dist/`);

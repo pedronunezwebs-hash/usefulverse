@@ -33,6 +33,10 @@ button { cursor: pointer; }
 .main-nav a:hover, .main-nav a:focus-visible, .footer-links a:hover { color: var(--ink); }
 .header-cta { display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-size: 14px; font-weight: 750; }
 .header-cta:hover, .header-cta:focus-visible { border-color: var(--ink); }
+.language-switch { display: inline-flex; align-items: center; gap: 3px; padding: 4px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+.language-switch a { min-width: 34px; padding: 7px 8px; border-radius: 999px; color: var(--muted); font-size: 11px; font-weight: 800; text-align: center; }
+.language-switch a[aria-current="page"] { color: var(--ink); background: var(--lime); }
+.language-switch a:hover, .language-switch a:focus-visible { color: var(--ink); outline: 2px solid var(--blue); outline-offset: 1px; }
 
 .home-intro { padding: 90px 0 78px; background: var(--paper); }
 .home-intro__grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 80px; align-items: center; }
@@ -226,7 +230,8 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--blue); }
   .page-container { width: min(100% - 24px, 480px); }
   .site-header__inner { min-height: 66px; }
   .brand { font-size: 18px; }
-  .header-cta { padding: 9px 12px; font-size: 12px; }
+  .header-cta { display: none; }
+  .language-switch { margin-left: auto; }
   h1 { font-size: clamp(46px, 15vw, 70px); }
   .home-lead { font-size: 17px; }
   .home-intro { padding-top: 50px; }
