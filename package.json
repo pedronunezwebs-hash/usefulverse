@@ -1,0 +1,14 @@
+{
+  "name": "usefulverse",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/build.mjs && node scripts/check-build.mjs",
+    "test": "node --test",
+    "serve": "python3 -m http.server 4173 --directory dist",
+    "seo:indexnow": "node scripts/indexnow.mjs",
+    "seo:yandex": "node scripts/yandex-webmaster.mjs"
+  }
+}
