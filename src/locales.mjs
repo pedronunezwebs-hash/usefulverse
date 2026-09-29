@@ -1,6 +1,7 @@
 import { ptBR } from './locales/pt-br.mjs';
 import { deDE } from './locales/de.mjs';
 import { longtailBodies } from './locales/longtail.mjs';
+import { advancedToolLocales } from './locales/advanced-tools.mjs';
 
 export const locales = {
   en: { code: 'en', name: 'English', prefix: '', homeTitle: 'UsefulVerse — Simple tools for everyday tasks', homeDescription: 'Fast, private browser tools for text, files, data, SEO and everyday tasks. No account and no upload required.' },
@@ -139,6 +140,27 @@ for (const [key, pack] of Object.entries(packs)) {
   ui[key] = pack.ui;
   runtimeMessages[key] = pack.runtimeMessages;
   copy[key] = pack.copy;
+}
+
+// Add the browser-only tool copy after the standard locale packs are assembled,
+// so the same translations drive page generation, browser UI, SEO and FAQs.
+for (const [language, data] of Object.entries(advancedToolLocales)) {
+  Object.assign(ui[language], data.ui);
+  Object.assign(runtimeMessages[language], data.ui);
+  Object.assign(copy[language], data.copy);
+  const pack = packs[language];
+  if (!pack) continue;
+  Object.assign(pack.ui, data.ui);
+  Object.assign(pack.runtimeMessages, data.ui);
+  Object.assign(pack.copy, data.copy);
+  for (const [id, values] of Object.entries(data.copy)) {
+    const [title, shortTitle, description, , intro, body] = values;
+    pack.seo[id] = { title: shortTitle, description: description.length >= 25 ? description : `${description} ${intro}` };
+    pack.faq[id] = [
+      { question: data.faqHow.replace('{title}', shortTitle), answer: intro },
+      { question: data.faqPrivacyQuestion, answer: data.faqPrivacyAnswer.replace('{body}', body) },
+    ];
+  }
 }
 
 // Parameterized runtime strings for app.js (see src/locales/template-keys.mjs). Packs bring their own.

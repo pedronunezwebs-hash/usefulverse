@@ -1,4 +1,4 @@
-import { cp, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readdir, readFile, rename, rm, stat, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -13,6 +13,19 @@ await rm(dist, { recursive: true, force: true });
 await mkdir(join(dist, 'assets'), { recursive: true });
 await cp(join(root, 'src', 'styles.css'), join(dist, 'assets', 'styles.css'));
 await cp(join(root, 'src', 'app.js'), join(dist, 'assets', 'app.js'));
+await cp(join(root, 'src', 'advanced-tools.js'), join(dist, 'assets', 'advanced-tools.js'));
+await cp(join(root, 'src', 'advanced-logic.mjs'), join(dist, 'assets', 'advanced-logic.mjs'));
+const vendor = join(dist, 'assets', 'vendor');
+await mkdir(vendor, { recursive: true });
+await cp(join(root, 'node_modules', 'pdf-lib', 'dist', 'pdf-lib.min.js'), join(vendor, 'pdf-lib.min.js'));
+await cp(join(root, 'node_modules', 'jsqr', 'dist', 'jsQR.js'), join(vendor, 'jsQR.js'));
+await cp(join(root, 'node_modules', 'pdfjs-dist', 'legacy', 'build', 'pdf.min.mjs'), join(vendor, 'pdf.min.mjs'));
+await cp(join(root, 'node_modules', 'pdfjs-dist', 'legacy', 'build', 'pdf.worker.min.mjs'), join(vendor, 'pdf.worker.min.mjs'));
+await cp(join(root, 'node_modules', 'pdfjs-dist', 'cmaps'), join(vendor, 'cmaps'), { recursive: true });
+await cp(join(root, 'node_modules', 'pdfjs-dist', 'standard_fonts'), join(vendor, 'standard_fonts'), { recursive: true });
+await cp(join(root, 'node_modules', 'pdf-lib', 'LICENSE.md'), join(vendor, 'LICENSE-pdf-lib.md'));
+await cp(join(root, 'node_modules', 'pdfjs-dist', 'LICENSE'), join(vendor, 'LICENSE-pdfjs-dist'));
+await cp(join(root, 'node_modules', 'jsqr', 'LICENSE'), join(vendor, 'LICENSE-jsqr'));
 await cp(join(root, 'public', 'favicon.svg'), join(dist, 'favicon.svg'));
 await cp(join(root, 'public', '_headers'), join(dist, '_headers'));
 await cp(join(root, 'public', 'BingSiteAuth.xml'), join(dist, 'BingSiteAuth.xml'));
@@ -24,12 +37,21 @@ await cp(join(root, 'public', indexNowKeyFile), join(dist, indexNowKeyFile));
 const assetHash = createHash('sha256')
   .update(await readFile(join(dist, 'assets', 'styles.css')))
   .update(await readFile(join(dist, 'assets', 'app.js')))
+  .update(await readFile(join(dist, 'assets', 'advanced-tools.js')))
+  .update(await readFile(join(dist, 'assets', 'advanced-logic.mjs')))
+  .update(await readFile(join(root, 'package-lock.json')))
   .update(await readFile(join(root, 'src', 'locales.mjs')));
+for (const file of (await readdir(vendor, { recursive: true })).sort()) {
+  const path = join(vendor, file);
+  if ((await stat(path)).isFile()) assetHash.update(await readFile(path));
+}
 const localeFiles = (await readdir(join(root, 'src', 'locales'), { recursive: true })).filter((file) => /\.m?js$/u.test(file) && !file.endsWith('.test.mjs')).sort();
 for (const file of localeFiles) assetHash.update(await readFile(join(root, 'src', 'locales', file)));
 const assetVersion = assetHash
   .digest('hex')
   .slice(0, 12);
+await rename(join(vendor, 'cmaps'), join(vendor, `cmaps-${assetVersion}`));
+await rename(join(vendor, 'standard_fonts'), join(vendor, `standard_fonts-${assetVersion}`));
 
 const languages = Object.keys(locales);
 const pages = [];

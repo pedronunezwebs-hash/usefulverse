@@ -10,5 +10,10 @@
     "serve": "python3 -m http.server 4173 --directory dist",
     "seo:indexnow": "node scripts/indexnow.mjs",
     "seo:yandex": "node scripts/yandex-webmaster.mjs"
+  },
+  "devDependencies": {
+    "jsqr": "1.4.0",
+    "pdf-lib": "1.17.1",
+    "pdfjs-dist": "6.3.289"
   }
 }
