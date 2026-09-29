@@ -25,7 +25,7 @@ if (usesCommaDecimal || localeConfig.textNumberInputs) {
 }
 
 const currentLanguageLink = $('.language-switch [aria-current="page"]');
-if (currentLanguageLink) currentLanguageLink.parentElement.scrollLeft = currentLanguageLink.offsetLeft - (currentLanguageLink.parentElement.clientWidth - currentLanguageLink.offsetWidth) / 2;
+if (currentLanguageLink) requestAnimationFrame(() => currentLanguageLink.scrollIntoView({ block: 'nearest', inline: 'center' }));
 
 // Full-width IME digits/letters become ASCII (NFKC); Devanagari, Bengali and Arabic-family digits
 // also become ASCII so localized number formats work consistently in every calculator.
@@ -1223,6 +1223,14 @@ function setupToolPage() {
   const root = $('.tool-workspace');
   if (!root) return;
   const id = root.dataset.tool;
+  const advancedTools = new Set(['xml-formatter', 'color-contrast-checker', 'tip-calculator', 'gpa-calculator', 'file-checksum', 'image-resizer-compressor', 'pdf-tools', 'csv-viewer', 'qr-code-reader']);
+  if (advancedTools.has(id)) {
+    const assetVersion = new URL(document.currentScript?.src ?? location.href).searchParams.get('v');
+    import(`./advanced-tools.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupAdvancedTool }) => setupAdvancedTool(id, root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
   const setups = { 'word-counter': setupWordCounter, 'text-case-converter': setupCaseConverter, 'remove-duplicate-lines': setupDedupe, 'json-formatter': setupJson, 'base64-encoder-decoder': setupBase64, 'url-encoder-decoder': setupUrl, 'text-to-slug': setupSlug, 'percentage-calculator': setupPercentage, 'password-generator': setupPassword, 'timestamp-converter': setupTimestamp, 'html-entity-encoder-decoder': setupHtmlEntities, 'csv-to-json': setupCsvToJson, 'json-to-csv': setupJsonToCsv, 'random-number-generator': setupRandomNumber, 'uuid-generator': setupUuid, 'sha256-hash-generator': setupSha256, 'regex-tester': setupRegex, 'jwt-decoder': setupJwt, 'color-converter': setupColor, 'url-parser': setupUrlParser, 'roman-numeral-converter': setupRoman, 'binary-converter': setupBinary, 'prime-number-checker': setupPrime, 'average-calculator': setupAverage, 'ratio-proportion-calculator': setupRatio, 'time-duration-calculator': setupDuration, 'number-to-words-converter': setupNumberWords, 'remove-line-breaks': setupRemoveLineBreaks, 'text-diff-checker': setupTextDiff, 'unit-converter': setupUnitConverter, 'date-calculator': setupDateCalculator, 'qr-code-generator': setupQr, 'time-zone-converter': setupTimeZone };
   setups[id]?.(root);
 }

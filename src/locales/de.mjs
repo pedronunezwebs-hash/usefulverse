@@ -63,7 +63,7 @@ const copy = {
   'time-zone-converter': ['Zeitzonen umrechnen', 'Zeitzonenrechner', 'Wandeln Sie Datum und Uhrzeit zwischen Zeitzonen um – mit Sommerzeit.', 'Zeitzonen umrechnen, Zeitunterschied, Uhrzeit zwischen Ländern, Zeitzonenrechner', 'Wählen Sie Datum, Uhrzeit und zwei Orte, um die passenden Ortszeiten zu sehen.', 'Verwendet die internationale Zeitzonendatenbank Ihres Browsers und berücksichtigt unterstützte Sommerzeitwechsel.'],
 };
 
-Object.assign(ui, { 'Color preview': 'Farbvorschau', 'JSON result...': 'JSON-Ergebnis …', 'CSV result...': 'CSV-Ergebnis …', 'Your UUIDs will appear here...': 'Ihre UUIDs erscheinen hier …', 'Text to hash...': 'Text zum Hashen …', 'Your hash will appear here...': 'Ihr Hash erscheint hier …', 'Paste sample text here...': 'Beispieltext hier einfügen …', Seoul: 'Seoul', Jakarta: 'Jakarta', 'India (Kolkata)': 'Indien (Kolkata)' });
+Object.assign(ui, { 'Color preview': 'Farbvorschau', 'JSON result...': 'JSON-Ergebnis …', 'CSV result...': 'CSV-Ergebnis …', 'Your UUIDs will appear here...': 'Ihre UUIDs erscheinen hier …', 'Text to hash...': 'Text zum Hashen …', 'Your hash will appear here...': 'Ihr Hash erscheint hier …', 'Paste sample text here...': 'Beispieltext hier einfügen …', Seoul: 'Seoul', Jakarta: 'Jakarta', 'India (Kolkata)': 'Indien (Kolkata)', Continue: 'Weiter', Previous: 'Zurück', Next: 'Weiter', 'CSV data': 'CSV-Daten' });
 
 runtimeMessages['Base64 to decode...'] = ui['Base64 to decode...'];
 
