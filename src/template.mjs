@@ -255,22 +255,27 @@ function toolMarkup(id) {
 
 export function renderToolPage(tool, assetVersion = '', language = 'en', pageTools = tools) {
   const canonical = `https://usefulverse.com${toolUrl(tool.id, language)}`;
+  const faqCopy = {
+    es: { how: (name) => `¿Cómo se usa «${name}»?`, privacyQuestion: '¿Se envían mis datos a un servidor?', privacyAnswer: 'No. El procesamiento se realiza en tu navegador y tus datos no se suben.' },
+    fr: { how: (name) => `Comment utiliser « ${name} » ?`, privacyQuestion: 'Mes données sont-elles envoyées à un serveur ?', privacyAnswer: 'Non. Le traitement s’effectue dans votre navigateur et vos données ne sont pas envoyées.' },
+    pt: { how: (name) => `Como usar ${name}?`, privacyQuestion: 'Meus dados são enviados para algum servidor?', privacyAnswer: 'Não. O processamento acontece no seu navegador, e seus dados não são enviados para um servidor.' },
+  };
   const seoData = language === 'en'
     ? (seo[tool.id] ?? { title: tool.title, description: `${tool.description} Free, fast and private in your browser.` })
     : {
       title: tool.shortTitle,
       description: tool.description,
       faq: [
-        { question: language === 'es' ? `¿Cómo se usa «${tool.shortTitle}»?` : `Comment utiliser « ${tool.shortTitle} » ?`, answer: tool.intro },
-        { question: language === 'es' ? '¿Se envían mis datos a un servidor?' : 'Mes données sont-elles envoyées à un serveur ?', answer: language === 'es' ? 'No. El procesamiento se realiza en tu navegador y tus datos no se suben.' : 'Non. Le traitement s’effectue dans votre navigateur et vos données ne sont pas envoyées.' },
+        { question: faqCopy[language].how(tool.shortTitle), answer: tool.intro },
+        { question: faqCopy[language].privacyQuestion, answer: faqCopy[language].privacyAnswer },
       ],
     };
   const faq = seoData.faq ?? [];
   const homeHref = localePath(language);
   const alternates = localeEntries.map(({ key, code }) => `<link rel="alternate" hreflang="${code}" href="https://usefulverse.com${localePath(key, tool.id)}">`).join('\n    ');
   const dynamicTranslations = {
-    [`About ${tool.title}.`]: language === 'es' ? `Acerca de ${tool.title}.` : `À propos de ${tool.title}.`,
-    [`${tool.title} made simple.`]: language === 'es' ? `${tool.title} sin complicaciones.` : `${tool.title} en toute simplicité.`,
+    [`About ${tool.title}.`]: language === 'es' ? `Acerca de ${tool.title}.` : language === 'fr' ? `À propos de ${tool.title}.` : `Sobre ${tool.title}.`,
+    [`${tool.title} made simple.`]: language === 'es' ? `${tool.title} sin complicaciones.` : language === 'fr' ? `${tool.title} en toute simplicité.` : `${tool.title} sem complicação.`,
     [`${tool.category} tool`]: `${tool.category} · ${ui[language]?.tool ?? 'tool'}`,
   };
   const breadcrumbs = `<script type="application/ld+json">${JSON.stringify({
@@ -288,7 +293,7 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
     name: tool.title,
     url: canonical,
     description: seoData.description,
-    inLanguage: language,
+    inLanguage: locales[language]?.code ?? language,
     applicationCategory: tools.find((item) => item.id === tool.id)?.category === 'Developer' ? 'DeveloperApplication' : 'UtilitiesApplication',
     operatingSystem: 'Any',
     browserRequirements: 'Requires JavaScript',
@@ -332,10 +337,11 @@ function relatedCards(currentId, category, pageTools = tools, language = 'en') {
 export function shell({ title, description, canonical, body, schema = '', assetVersion = '', lang = 'en', alternates = '', toolId = '' }) {
   const assetSuffix = assetVersion ? `?v=${escapeHtml(assetVersion)}` : '';
   const homeHref = localePath(lang);
+  const localeCode = locales[lang]?.code ?? lang;
   const defaultAlternate = `<link rel="alternate" hreflang="x-default" href="https://usefulverse.com${localePath('en', toolId)}">`;
   const localeSelector = `<nav class="language-switch" aria-label="Language">${localeEntries.map(({ key, code, name }) => `<a href="${localePath(key, toolId)}" hreflang="${code}" lang="${code}"${key === lang ? ' aria-current="page"' : ''} aria-label="${escapeHtml(name)}">${code.toUpperCase()}</a>`).join('')}</nav>`;
   return `<!doctype html>
-<html lang="${lang}">
+<html lang="${localeCode}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

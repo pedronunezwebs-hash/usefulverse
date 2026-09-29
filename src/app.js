@@ -1,9 +1,17 @@
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
 const language = document.documentElement.lang || 'en';
+const isPortuguese = language.toLowerCase().startsWith('pt');
 const localeBundle = window.usefulverseLocale ?? { runtime: {}, messages: {} };
-const languageTag = { en: 'en-US', es: 'es-ES', fr: 'fr-FR' }[language] ?? language;
+const languageTag = { en: 'en-US', es: 'es-ES', fr: 'fr-FR', 'pt-BR': 'pt-BR' }[language] ?? language;
 const translate = (message) => localeBundle.runtime[message] ?? localeBundle.messages[message] ?? message;
+
+if (isPortuguese) {
+  for (const input of document.querySelectorAll('.tool-workspace input[type="number"]')) {
+    input.type = 'text';
+    input.inputMode = input.id === 'date-offset' ? 'numeric' : 'decimal';
+  }
+}
 
 function setStatus(element, message, type = '') {
   if (!element) return;
@@ -45,7 +53,7 @@ function setupWordCounter(root) {
     if (action === 'clear') { input.value = ''; update(); input.focus(); }
     if (action === 'copy-summary') {
       const stats = getTextStats(input.value);
-      const summaryLabels = language === 'es' ? ['Palabras', 'Caracteres', 'Caracteres sin espacios', 'Líneas', 'Tiempo de lectura'] : language === 'fr' ? ['Mots', 'Caractères', 'Caractères sans espaces', 'Lignes', 'Temps de lecture'] : ['Words', 'Characters', 'Characters without spaces', 'Lines', 'Reading time'];
+      const summaryLabels = language === 'es' ? ['Palabras', 'Caracteres', 'Caracteres sin espacios', 'Líneas', 'Tiempo de lectura'] : language === 'fr' ? ['Mots', 'Caractères', 'Caractères sans espaces', 'Lignes', 'Temps de lecture'] : isPortuguese ? ['Palavras', 'Caracteres', 'Caracteres sem espaços', 'Linhas', 'Tempo de leitura'] : ['Words', 'Characters', 'Characters without spaces', 'Lines', 'Reading time'];
       copyText(`${summaryLabels[0]}: ${stats.words}\n${summaryLabels[1]}: ${stats.characters}\n${summaryLabels[2]}: ${stats.noSpaces}\n${summaryLabels[3]}: ${stats.lines}\n${summaryLabels[4]}: ${stats.reading} min`, status);
     }
   });
@@ -85,7 +93,7 @@ function setupDedupe(root) {
       const seen = new Set();
       const lines = input.value.split(/\r?\n/u).map((line) => trim ? line.trim() : line).filter((line) => !removeEmpty || line !== '').filter((line) => { const key = ignoreCase ? line.toLocaleLowerCase() : line; if (seen.has(key)) return false; seen.add(key); return true; });
       output.value = lines.join('\n');
-      setStatus(status, language === 'es' ? `${lines.length} ${lines.length === 1 ? 'línea única conservada.' : 'líneas únicas conservadas.'}` : language === 'fr' ? `${lines.length} ${lines.length === 1 ? 'ligne unique conservée.' : 'lignes uniques conservées.'}` : `${lines.length} unique line${lines.length === 1 ? '' : 's'} kept.`, 'success');
+      setStatus(status, language === 'es' ? `${lines.length} ${lines.length === 1 ? 'línea única conservada.' : 'líneas únicas conservadas.'}` : language === 'fr' ? `${lines.length} ${lines.length === 1 ? 'ligne unique conservée.' : 'lignes uniques conservées.'}` : isPortuguese ? `${lines.length} ${lines.length === 1 ? 'linha única mantida.' : 'linhas únicas mantidas.'}` : `${lines.length} unique line${lines.length === 1 ? '' : 's'} kept.`, 'success');
     }
     if (action === 'clear') { input.value = ''; output.value = ''; setStatus(status, 'Your cleaned list will appear here.'); input.focus(); }
     if (action === 'copy-output') copyText(output.value, status);
@@ -187,8 +195,16 @@ function setupSlug(root) {
 }
 
 function numberValue(root, id) {
-  const value = Number($(`#${id}`, root)?.value);
+  const value = parseInputNumber($(`#${id}`, root)?.value ?? '');
   return Number.isFinite(value) ? value : null;
+}
+
+function parseInputNumber(value) {
+  const raw = String(value).trim();
+  if (!isPortuguese) return Number(raw);
+  if (raw.includes(',')) return Number(raw.replace(/\./gu, '').replace(',', '.'));
+  if (/^-?\d{1,3}(?:\.\d{3})+$/u.test(raw)) return Number(raw.replace(/\./gu, ''));
+  return Number(raw);
 }
 
 function formatNumber(value) {
@@ -208,17 +224,17 @@ function setupPercentage(root) {
     if (percent !== null && base !== null) {
       const result = percent / 100 * base;
       $('#percent-result', root).textContent = `${formatNumber(result)}`;
-      answers.push(language === 'es' || language === 'fr' ? `${formatNumber(percent)} % de ${formatNumber(base)} = ${formatNumber(result)}` : `${formatNumber(percent)}% of ${formatNumber(base)} = ${formatNumber(result)}`);
+      answers.push(language === 'es' || language === 'fr' ? `${formatNumber(percent)} % de ${formatNumber(base)} = ${formatNumber(result)}` : isPortuguese ? `${formatNumber(percent)}% de ${formatNumber(base)} = ${formatNumber(result)}` : `${formatNumber(percent)}% of ${formatNumber(base)} = ${formatNumber(result)}`);
     } else $('#percent-result', root).textContent = '—';
     if (part !== null && whole !== null && whole !== 0) {
       const result = part / whole * 100;
       $('#what-percent-result', root).textContent = `${formatNumber(result)}%`;
-      answers.push(language === 'es' ? `${formatNumber(part)} representa el ${formatNumber(result)} % de ${formatNumber(whole)}` : language === 'fr' ? `${formatNumber(part)} représente ${formatNumber(result)} % de ${formatNumber(whole)}` : `${formatNumber(part)} is ${formatNumber(result)}% of ${formatNumber(whole)}`);
+      answers.push(language === 'es' ? `${formatNumber(part)} representa el ${formatNumber(result)} % de ${formatNumber(whole)}` : language === 'fr' ? `${formatNumber(part)} représente ${formatNumber(result)} % de ${formatNumber(whole)}` : isPortuguese ? `${formatNumber(part)} representa ${formatNumber(result)}% de ${formatNumber(whole)}` : `${formatNumber(part)} is ${formatNumber(result)}% of ${formatNumber(whole)}`);
     } else $('#what-percent-result', root).textContent = '—';
     if (oldValue !== null && newValue !== null && oldValue !== 0) {
       const result = (newValue - oldValue) / Math.abs(oldValue) * 100;
       $('#change-result', root).textContent = `${result >= 0 ? '+' : ''}${formatNumber(result)}%`;
-      answers.push(language === 'es' ? `Cambio de ${formatNumber(oldValue)} a ${formatNumber(newValue)} = ${result >= 0 ? '+' : ''}${formatNumber(result)} %` : language === 'fr' ? `Variation de ${formatNumber(oldValue)} à ${formatNumber(newValue)} = ${result >= 0 ? '+' : ''}${formatNumber(result)} %` : `Change from ${formatNumber(oldValue)} to ${formatNumber(newValue)} = ${result >= 0 ? '+' : ''}${formatNumber(result)}%`);
+      answers.push(language === 'es' ? `Cambio de ${formatNumber(oldValue)} a ${formatNumber(newValue)} = ${result >= 0 ? '+' : ''}${formatNumber(result)} %` : language === 'fr' ? `Variation de ${formatNumber(oldValue)} à ${formatNumber(newValue)} = ${result >= 0 ? '+' : ''}${formatNumber(result)} %` : isPortuguese ? `Variação de ${formatNumber(oldValue)} para ${formatNumber(newValue)} = ${result >= 0 ? '+' : ''}${formatNumber(result)}%` : `Change from ${formatNumber(oldValue)} to ${formatNumber(newValue)} = ${result >= 0 ? '+' : ''}${formatNumber(result)}%`);
     } else $('#change-result', root).textContent = '—';
     setStatus(status, answers.length ? 'Calculation complete.' : 'Enter valid numbers to calculate.', answers.length ? 'success' : 'error');
     return answers;
@@ -269,7 +285,7 @@ function setupPassword(root) {
       [characters[index], characters[swap]] = [characters[swap], characters[index]];
     }
     output.value = characters.join('');
-    strength.textContent = targetLength >= 20 && selected.length >= 3 ? 'Strong' : 'Good';
+    strength.textContent = translate(targetLength >= 20 && selected.length >= 3 ? 'Strong' : 'Good');
     setStatus(status, 'Password created locally. Store it in a password manager.', 'success');
   };
   length.addEventListener('input', updateLength);
@@ -370,7 +386,7 @@ function setupCsvToJson(root) {
         const headers = rows[0].map((header, index) => { const base = header.trim() || `column_${index + 1}`; const count = (used.get(base) || 0) + 1; used.set(base, count); return count === 1 ? base : `${base}_${count}`; });
         const result = rows.slice(1).map((row) => Object.fromEntries(headers.map((header, index) => [header, row[index] ?? ''])));
         output.value = JSON.stringify(result, null, 2);
-        setStatus(status, language === 'es' ? `${result.length} ${result.length === 1 ? 'fila convertida.' : 'filas convertidas.'}` : language === 'fr' ? `${result.length} ${result.length === 1 ? 'ligne convertie.' : 'lignes converties.'}` : `${result.length} row${result.length === 1 ? '' : 's'} converted.`, 'success');
+        setStatus(status, language === 'es' ? `${result.length} ${result.length === 1 ? 'fila convertida.' : 'filas convertidas.'}` : language === 'fr' ? `${result.length} ${result.length === 1 ? 'ligne convertie.' : 'lignes converties.'}` : isPortuguese ? `${result.length} ${result.length === 1 ? 'linha convertida.' : 'linhas convertidas.'}` : `${result.length} row${result.length === 1 ? '' : 's'} converted.`, 'success');
       } catch (error) { output.value = ''; setStatus(status, language === 'en' ? error.message : 'Could not convert the CSV. Check the header row, commas and quotes.', 'error'); }
     }
     if (action === 'clear') { input.value = ''; output.value = ''; setStatus(status, 'The first row becomes the JSON keys.'); input.focus(); }
@@ -395,7 +411,7 @@ function setupJsonToCsv(root) {
         if (!Array.isArray(parsed) || !parsed.length || parsed.some((item) => !item || typeof item !== 'object' || Array.isArray(item))) throw new Error('Use a non-empty array of JSON objects.');
         const headers = [...new Set(parsed.flatMap((item) => Object.keys(item)))];
         output.value = [headers.map(csvCell).join(','), ...parsed.map((item) => headers.map((header) => csvCell(item[header])).join(','))].join('\n');
-      setStatus(status, language === 'es' ? `${parsed.length} ${parsed.length === 1 ? 'fila convertida.' : 'filas convertidas.'}` : language === 'fr' ? `${parsed.length} ${parsed.length === 1 ? 'ligne convertie.' : 'lignes converties.'}` : `${parsed.length} row${parsed.length === 1 ? '' : 's'} converted.`, 'success');
+      setStatus(status, language === 'es' ? `${parsed.length} ${parsed.length === 1 ? 'fila convertida.' : 'filas convertidas.'}` : language === 'fr' ? `${parsed.length} ${parsed.length === 1 ? 'ligne convertie.' : 'lignes converties.'}` : isPortuguese ? `${parsed.length} ${parsed.length === 1 ? 'linha convertida.' : 'linhas convertidas.'}` : `${parsed.length} row${parsed.length === 1 ? '' : 's'} converted.`, 'success');
       } catch (error) { output.value = ''; setStatus(status, language === 'en' ? (error.message.startsWith('Unexpected') ? `Invalid JSON: ${error.message}` : error.message) : 'Could not convert the JSON. Check that it is an array of objects with valid syntax.', 'error'); }
     }
     if (action === 'clear') { input.value = ''; output.value = ''; setStatus(status, 'Use an array of JSON objects with a shared set of keys.'); input.focus(); }
@@ -413,8 +429,8 @@ function setupRandomNumber(root) {
   const result = $('#random-result', root);
   const status = $('#tool-status', root);
   const generate = () => {
-    const min = Number($('#random-min', root).value);
-    const max = Number($('#random-max', root).value);
+    const min = parseInputNumber($('#random-min', root).value);
+    const max = parseInputNumber($('#random-max', root).value);
     const integer = $('#random-integer', root).checked;
     if (!Number.isFinite(min) || !Number.isFinite(max) || min > max) { result.textContent = '—'; setStatus(status, 'Enter a valid minimum and maximum.', 'error'); return; }
     if (integer) {
@@ -440,7 +456,7 @@ function setupUuid(root) {
     const count = Number($('#uuid-count', root).value);
     if (!Number.isInteger(count) || count < 1 || count > 100) { setStatus(status, 'Choose a number from 1 to 100.', 'error'); return; }
     output.value = Array.from({ length: count }, () => crypto.randomUUID()).join('\n');
-    setStatus(status, language === 'es' ? `${count} ${count === 1 ? 'UUID generado localmente.' : 'UUID generados localmente.'}` : language === 'fr' ? `${count} ${count === 1 ? 'UUID généré localement.' : 'UUID générés localement.'}` : `${count} UUID${count === 1 ? '' : 's'} generated locally.`, 'success');
+    setStatus(status, language === 'es' ? `${count} ${count === 1 ? 'UUID generado localmente.' : 'UUID generados localmente.'}` : language === 'fr' ? `${count} ${count === 1 ? 'UUID généré localement.' : 'UUID générés localement.'}` : isPortuguese ? `${count} ${count === 1 ? 'UUID gerado localmente.' : 'UUIDs gerados localmente.'}` : `${count} UUID${count === 1 ? '' : 's'} generated locally.`, 'success');
   };
   root.addEventListener('click', (event) => {
     const action = event.target.closest('[data-action]')?.dataset.action;
@@ -482,14 +498,14 @@ function setupRegex(root) {
       const expression = new RegExp(pattern.value, flags.value.includes('g') ? flags.value : `${flags.value}g`);
       const matches = [...input.value.matchAll(expression)].slice(0, 1000).map((match) => match[0]);
       count.textContent = matches.length;
-      output.textContent = matches.length ? matches.join('\n') : 'No matches found.';
-      setStatus(status, matches.length ? (language === 'es' ? `${matches.length} ${matches.length === 1 ? 'coincidencia encontrada.' : 'coincidencias encontradas.'}` : language === 'fr' ? `${matches.length} ${matches.length === 1 ? 'correspondance trouvée.' : 'correspondances trouvées.'}` : `${matches.length} match${matches.length === 1 ? '' : 'es'} found.`) : 'No matches found.', matches.length ? 'success' : '');
+      output.textContent = matches.length ? matches.join('\n') : translate('No matches found.');
+      setStatus(status, matches.length ? (language === 'es' ? `${matches.length} ${matches.length === 1 ? 'coincidencia encontrada.' : 'coincidencias encontradas.'}` : language === 'fr' ? `${matches.length} ${matches.length === 1 ? 'correspondance trouvée.' : 'correspondances trouvées.'}` : isPortuguese ? `${matches.length} ${matches.length === 1 ? 'correspondência encontrada.' : 'correspondências encontradas.'}` : `${matches.length} match${matches.length === 1 ? '' : 'es'} found.`) : 'No matches found.', matches.length ? 'success' : '');
     } catch (error) { count.textContent = '0'; output.textContent = translate('No matches yet.'); setStatus(status, language === 'en' ? `Invalid regular expression: ${error.message}` : 'Enter a valid regular expression and supported flags.', 'error'); }
   };
   root.addEventListener('click', (event) => {
     const action = event.target.closest('[data-action]')?.dataset.action;
     if (action === 'test-regex') test();
-    if (action === 'clear') { pattern.value = ''; flags.value = 'gi'; input.value = ''; count.textContent = '0'; output.textContent = 'No matches yet.'; setStatus(status, 'Regular expressions run locally in your browser.'); pattern.focus(); }
+    if (action === 'clear') { pattern.value = ''; flags.value = 'gi'; input.value = ''; count.textContent = '0'; output.textContent = translate('No matches yet.'); setStatus(status, 'Regular expressions run locally in your browser.'); pattern.focus(); }
   });
 }
 
@@ -599,7 +615,7 @@ function setupUrlParser(root) {
       fields.query.textContent = url.search || '(none)';
       fields.hash.textContent = url.hash || '(none)';
       const entries = [...url.searchParams.entries()].map(([name, value]) => ({ name, value }));
-      params.textContent = entries.length ? JSON.stringify(entries, null, 2) : 'No query parameters.';
+      params.textContent = entries.length ? JSON.stringify(entries, null, 2) : translate('No query parameters.');
       setStatus(status, 'URL parsed locally.', 'success');
     } catch { Object.values(fields).forEach((field) => { field.textContent = '—'; }); params.textContent = '—'; setStatus(status, 'Enter a complete URL, including https://.', 'error'); }
   };
@@ -692,7 +708,8 @@ function setupAverage(root) {
   root.addEventListener('click', (event) => {
     const action = event.target.closest('[data-action]')?.dataset.action;
     if (action === 'calculate-average') {
-      const values = input.value.trim().split(/[,\s]+/u).filter(Boolean).map(Number);
+      const separator = isPortuguese ? /[;\s]+/u : /[,\s]+/u;
+      const values = input.value.trim().split(separator).filter(Boolean).map(parseInputNumber);
       if (!values.length || values.some((value) => !Number.isFinite(value))) { setStatus(status, 'Enter valid numbers separated by spaces, commas or lines.', 'error'); return; }
       const sum = values.reduce((total, value) => total + value, 0);
       $('#average-result', root).textContent = formatNumber(sum / values.length); $('#average-sum', root).textContent = formatNumber(sum); $('#average-count', root).textContent = values.length; $('#average-min', root).textContent = formatNumber(Math.min(...values)); $('#average-max', root).textContent = formatNumber(Math.max(...values)); setStatus(status, 'Average calculated locally.', 'success');
@@ -708,7 +725,7 @@ function setupRatio(root) {
   root.addEventListener('click', (event) => {
     const action = event.target.closest('[data-action]')?.dataset.action;
     if (action === 'solve-ratio') {
-      const values = ['a', 'b', 'c'].map((name) => Number($(`#ratio-${name}`, root).value));
+      const values = ['a', 'b', 'c'].map((name) => parseInputNumber($(`#ratio-${name}`, root).value));
       if (values.some((value) => !Number.isFinite(value) || value <= 0) || values[0] === 0) { setStatus(status, 'Enter three positive numbers.', 'error'); return; }
       const x = values[1] * values[2] / values[0]; const precision = Math.abs(x) < 1 ? 6 : 4;
       $('#ratio-x', root).value = String(Number(x.toFixed(precision))); $('#ratio-result', root).textContent = Number(x.toFixed(precision));
@@ -727,7 +744,7 @@ function setupDuration(root) {
       const start = new Date($('#duration-start', root).value).getTime(); const end = new Date($('#duration-end', root).value).getTime();
       if (!Number.isFinite(start) || !Number.isFinite(end) || end < start) { setStatus(status, 'Choose valid times with the end after the start.', 'error'); return; }
       const milliseconds = end - start; const totalSeconds = Math.floor(milliseconds / 1000); const days = Math.floor(totalSeconds / 86400); const hours = Math.floor(totalSeconds / 3600); const minutes = Math.floor((totalSeconds % 3600) / 60); const seconds = totalSeconds % 60;
-      $('#duration-days', root).textContent = formatNumber(milliseconds / 86400000); $('#duration-hours', root).textContent = formatNumber(milliseconds / 3600000); $('#duration-exact', root).textContent = language === 'es' ? `${days} d ${hours % 24} h ${minutes} min ${seconds} s` : language === 'fr' ? `${days} j ${hours % 24} h ${minutes} min ${seconds} s` : `${days}d ${hours % 24}h ${minutes}m ${seconds}s`; setStatus(status, 'Duration calculated locally.', 'success');
+      $('#duration-days', root).textContent = formatNumber(milliseconds / 86400000); $('#duration-hours', root).textContent = formatNumber(milliseconds / 3600000); $('#duration-exact', root).textContent = language === 'es' ? `${days} d ${hours % 24} h ${minutes} min ${seconds} s` : language === 'fr' ? `${days} j ${hours % 24} h ${minutes} min ${seconds} s` : isPortuguese ? `${days} d ${hours % 24} h ${minutes} min ${seconds} s` : `${days}d ${hours % 24}h ${minutes}m ${seconds}s`; setStatus(status, 'Duration calculated locally.', 'success');
     }
     if (action === 'clear') { $$('input', root).forEach((input) => { input.value = ''; }); ['duration-days', 'duration-hours', 'duration-exact'].forEach((id) => { $(`#${id}`, root).textContent = '—'; }); setStatus(status, 'Choose a start and end time.'); }
   });
@@ -740,6 +757,10 @@ const spanishTens = ['', '', '', 'treinta', 'cuarenta', 'cincuenta', 'sesenta', 
 const spanishHundreds = ['', 'ciento', 'doscientos', 'trescientos', 'cuatrocientos', 'quinientos', 'seiscientos', 'setecientos', 'ochocientos', 'novecientos'];
 const frenchSmall = ['zéro', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'onze', 'douze', 'treize', 'quatorze', 'quinze', 'seize', 'dix-sept', 'dix-huit', 'dix-neuf'];
 const frenchTens = ['', '', 'vingt', 'trente', 'quarante', 'cinquante', 'soixante'];
+const portugueseSmall = ['zero', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez'];
+portugueseSmall.push('onze', 'doze', 'treze', 'quatorze', 'quinze', 'dezesseis', 'dezessete', 'dezoito', 'dezenove');
+const portugueseTens = ['', '', 'vinte', 'trinta', 'quarenta', 'cinquenta', 'sessenta', 'setenta', 'oitenta', 'noventa'];
+const portugueseHundreds = ['', 'cento', 'duzentos', 'trezentos', 'quatrocentos', 'quinhentos', 'seiscentos', 'setecentos', 'oitocentos', 'novecentos'];
 function wordsUnderThousand(value) {
   if (language === 'es') {
     const words = [];
@@ -755,6 +776,14 @@ function wordsUnderThousand(value) {
     if (value < 70) { const tens = Math.floor(value / 10); const units = value % 10; words.push(units === 1 ? `${frenchTens[tens]} et un` : `${frenchTens[tens]}${units ? `-${frenchSmall[units]}` : ''}`); return words.join(' '); }
     if (value < 80) return value === 71 ? 'soixante et onze' : `soixante-${frenchSmall[value - 60]}`;
     return value === 80 ? 'quatre-vingts' : `quatre-vingt${value > 80 ? `-${value - 80 < 20 ? frenchSmall[value - 80] : `dix-${frenchSmall[value - 90]}`}` : ''}`;
+  }
+  if (isPortuguese) {
+    if (value < 20) return portugueseSmall[value];
+    if (value < 100) return `${portugueseTens[Math.floor(value / 10)]}${value % 10 ? ` e ${portugueseSmall[value % 10]}` : ''}`;
+    if (value === 100) return 'cem';
+    const hundreds = portugueseHundreds[Math.floor(value / 100)];
+    const remainder = value % 100;
+    return remainder ? `${hundreds} e ${wordsUnderThousand(remainder)}` : hundreds;
   }
   const words = [];
   if (value >= 100) { words.push(`${englishSmall[Math.floor(value / 100)]} hundred`); value %= 100; }
@@ -780,13 +809,22 @@ function numberToWords(value) {
       if (index === 3) part = `${part} ${group === 1 ? 'milliard' : 'milliards'}`;
       else if (index === 2) part = `${part} ${group === 1 ? 'million' : 'millions'}`;
       else if (index === 1) part = group === 1 ? 'mille' : `${part} mille`;
+    } else if (isPortuguese) {
+      if (index === 3) part = `${part} ${group === 1 ? 'bilhão' : 'bilhões'}`;
+      else if (index === 2) part = `${part} ${group === 1 ? 'milhão' : 'milhões'}`;
+      else if (index === 1) part = group === 1 ? 'mil' : `${part} mil`;
     } else {
       const scale = ['', 'thousand', 'million', 'billion'][index];
       if (scale) part = `${part} ${scale}`;
     }
     words.push(part);
   }
-  return `${negative ? (language === 'es' ? 'menos ' : language === 'fr' ? 'moins ' : 'minus ') : ''}${words.join(' ')}`;
+  const lastNonzeroGroup = groups.find((group) => group > 0);
+  if (isPortuguese && words.length > 1 && (lastNonzeroGroup <= 100 || lastNonzeroGroup % 100 === 0)) {
+    const finalGroup = words.pop();
+    words.push('e', finalGroup);
+  }
+  return `${negative ? (language === 'es' ? 'menos ' : language === 'fr' ? 'moins ' : isPortuguese ? 'menos ' : 'minus ') : ''}${words.join(' ')}`;
 }
 
 function setupNumberWords(root) {
@@ -794,7 +832,7 @@ function setupNumberWords(root) {
   root.addEventListener('click', (event) => {
     const action = event.target.closest('[data-action]')?.dataset.action;
     if (action === 'number-to-words') {
-      try { const text = input.value.trim().replaceAll(',', ''); if (!/^-?\d+$/u.test(text)) throw new Error('Enter a whole number.'); const value = BigInt(text); if (value < -999_999_999_999n || value > 999_999_999_999n) throw new Error('Use a number between -999,999,999,999 and 999,999,999,999.'); output.value = numberToWords(value); setStatus(status, 'Number converted locally.', 'success'); }
+      try { const raw = input.value.trim(); const validPortugueseInteger = !isPortuguese || /^-?(?:\d+|\d{1,3}(?:[.\s]\d{3})+)$/u.test(raw); const text = isPortuguese ? raw.replace(/[.\s]/gu, '') : raw.replaceAll(',', ''); if (!validPortugueseInteger || !/^-?\d+$/u.test(text)) throw new Error('Enter a whole number.'); const value = BigInt(text); if (value < -999_999_999_999n || value > 999_999_999_999n) throw new Error('Use a number between -999,999,999,999 and 999,999,999,999.'); output.value = numberToWords(value); setStatus(status, 'Number converted locally.', 'success'); }
       catch (error) { output.value = ''; setStatus(status, language === 'en' ? error.message : 'Use a whole number between -999,999,999,999 and 999,999,999,999.', 'error'); }
     }
     if (action === 'copy-output') copyText(output.value, status);
@@ -823,9 +861,9 @@ function setupTextDiff(root) {
     if (action === 'compare-text') {
       const before = original.value.split(/\r?\n/u); const after = changed.value.split(/\r?\n/u); const differences = [];
       for (let index = 0; index < Math.max(before.length, after.length); index += 1) if (before[index] !== after[index]) differences.push(`Line ${index + 1}:\n- ${before[index] || '(empty)'}\n+ ${after[index] || '(empty)'}`);
-      count.textContent = differences.length; output.textContent = differences.length ? differences.join('\n\n') : 'No differences found.'; setStatus(status, differences.length ? `${differences.length} different line${differences.length === 1 ? '' : 's'} found.` : 'The texts are identical.', differences.length ? 'success' : '');
+      count.textContent = differences.length; output.textContent = differences.length ? differences.join('\n\n') : translate('No differences found.'); setStatus(status, differences.length ? `${differences.length} different line${differences.length === 1 ? '' : 's'} found.` : 'The texts are identical.', differences.length ? 'success' : '');
     }
-    if (action === 'clear') { original.value = ''; changed.value = ''; count.textContent = '0'; output.textContent = 'No comparison yet.'; setStatus(status, 'Comparison runs locally line by line.'); original.focus(); }
+    if (action === 'clear') { original.value = ''; changed.value = ''; count.textContent = '0'; output.textContent = translate('No comparison yet.'); setStatus(status, 'Comparison runs locally line by line.'); original.focus(); }
   });
 }
 
@@ -851,7 +889,7 @@ function setupUnitConverter(root) {
   root.addEventListener('click', (event) => {
     const action = event.target.closest('[data-action]')?.dataset.action;
     if (action === 'convert-unit') {
-      const value = Number(input.value); const definition = unitDefinitions[category.value];
+      const value = parseInputNumber(input.value); const definition = unitDefinitions[category.value];
       if (!Number.isFinite(value)) { output.textContent = '—'; setStatus(status, 'Enter a valid number.', 'error'); return; }
       const result = category.value === 'temperature' ? convertTemperature(value, from.value, to.value) : value * definition.units[from.value][1] / definition.units[to.value][1];
       output.textContent = `${formatNumber(result)} ${to.options[to.selectedIndex].text}`; setStatus(status, 'Unit converted locally.', 'success');
@@ -870,7 +908,7 @@ function setupDateCalculator(root) {
     if (action === 'date-difference') {
       const start = parseDateOnly($('#date-start', root).value); const end = parseDateOnly($('#date-end', root).value);
       if (!start || !end) { setStatus(status, 'Choose two valid dates.', 'error'); return; }
-      const days = Math.abs(Math.round((end - start) / 86400000)); const dayWord = language === 'es' ? (days === 1 ? 'día' : 'días') : language === 'fr' ? (days === 1 ? 'jour' : 'jours') : (days === 1 ? 'day' : 'days'); $('#date-difference-result', root).textContent = `${formatNumber(days)} ${dayWord}`; setStatus(status, 'Date difference calculated.', 'success');
+      const days = Math.abs(Math.round((end - start) / 86400000)); const dayWord = language === 'es' ? (days === 1 ? 'día' : 'días') : language === 'fr' ? (days === 1 ? 'jour' : 'jours') : isPortuguese ? (days === 1 ? 'dia' : 'dias') : (days === 1 ? 'day' : 'days'); $('#date-difference-result', root).textContent = `${formatNumber(days)} ${dayWord}`; setStatus(status, 'Date difference calculated.', 'success');
     }
     if (action === 'date-offset') {
       const base = parseDateOnly($('#date-base', root).value); const offset = Number($('#date-offset', root).value);
