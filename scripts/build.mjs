@@ -16,6 +16,7 @@ await cp(join(root, 'public', 'favicon.svg'), join(dist, 'favicon.svg'));
 await cp(join(root, 'public', '_headers'), join(dist, '_headers'));
 await cp(join(root, 'public', 'BingSiteAuth.xml'), join(dist, 'BingSiteAuth.xml'));
 await cp(join(root, 'public', 'yandex_f441658073fe7135.html'), join(dist, 'yandex_f441658073fe7135.html'));
+await cp(join(root, 'public', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html'), join(dist, 'naverbbd67ca2bfab12f8138c42ad5d27c664.html'));
 const indexNowKeyFile = '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt';
 await cp(join(root, 'public', indexNowKeyFile), join(dist, indexNowKeyFile));
 
