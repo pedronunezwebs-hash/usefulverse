@@ -1,7 +1,10 @@
+import { ptBR } from './locales/pt-br.mjs';
+
 export const locales = {
   en: { code: 'en', name: 'English', prefix: '', homeTitle: 'UsefulVerse — Simple tools for everyday tasks', homeDescription: 'Fast, private browser tools for text, files, data, SEO and everyday tasks. No account and no upload required.' },
   es: { code: 'es', name: 'Español', prefix: '/es', homeTitle: 'UsefulVerse — Herramientas sencillas para cada día', homeDescription: 'Herramientas rápidas y privadas para texto, datos, SEO y tareas cotidianas. Sin cuenta ni archivos subidos.' },
   fr: { code: 'fr', name: 'Français', prefix: '/fr', homeTitle: 'UsefulVerse — Des outils simples au quotidien', homeDescription: 'Des outils rapides et privés pour le texte, les données, le SEO et les tâches du quotidien. Sans compte ni envoi de fichiers.' },
+  pt: { code: 'pt-BR', name: 'Português (Brasil)', prefix: '/pt-br', homeTitle: 'UsefulVerse — Ferramentas online simples e gratuitas', homeDescription: 'Ferramentas online rápidas e privadas para texto, dados, SEO e tarefas do dia a dia. Sem conta e sem enviar arquivos.' },
 };
 
 export function localePath(language, toolId = '') {
@@ -22,6 +25,7 @@ export const ui = {
 
 Object.assign(ui.es, { 'Open a tool': 'Abrir una herramienta', 'Calculate average': 'Calcular promedio', "Generated locally with your browser's secure random generator.": 'Se genera en tu navegador con un generador seguro de números aleatorios.', 'Generated locally with your browser’s secure random generator.': 'Se genera en tu navegador con un generador seguro de números aleatorios.', 'URL components': 'Componentes de la URL', 'Whole number from 1 to 3,999': 'Número entero del 1 al 3.999', '% of': '% de', of: 'de', 'Tool categories': 'Categorías de herramientas' });
 Object.assign(ui.fr, { 'Open a tool': 'Ouvrir un outil', 'Calculate average': 'Calculer la moyenne', "Generated locally with your browser's secure random generator.": 'Généré dans votre navigateur avec un générateur de nombres aléatoires sécurisé.', 'Generated locally with your browser’s secure random generator.': 'Généré dans votre navigateur avec un générateur de nombres aléatoires sécurisé.', 'URL components': 'Composants de l’URL', 'Whole number from 1 to 3,999': 'Nombre entier de 1 à 3 999', '% of': '% de', of: 'de', 'Tool categories': 'Catégories d’outils' });
+ui.pt = ptBR.ui;
 
 export const runtimeMessages = {
   es: {
@@ -34,6 +38,10 @@ export const runtimeMessages = {
 
 Object.assign(runtimeMessages.es, { 'Prime number': 'Número primo', 'Not prime': 'No es primo', Strong: 'Segura', Good: 'Buena', Meters: 'Metros', Kilometers: 'Kilómetros', Centimeters: 'Centímetros', Millimeters: 'Milímetros', Inches: 'Pulgadas', Feet: 'Pies', Yards: 'Yardas', Miles: 'Millas', Kilograms: 'Kilogramos', Grams: 'Gramos', Milligrams: 'Miligramos', Pounds: 'Libras', Ounces: 'Onzas', Liters: 'Litros', Milliliters: 'Mililitros', 'US gallons': 'Galones estadounidenses', 'US quarts': 'Cuartos estadounidenses', 'US cups': 'Tazas estadounidenses', Celsius: 'Celsius', Fahrenheit: 'Fahrenheit', Kelvin: 'Kelvin' });
 Object.assign(runtimeMessages.fr, { 'Prime number': 'Nombre premier', 'Not prime': 'Ce n’est pas un nombre premier', Strong: 'Fort', Good: 'Correct', Meters: 'Mètres', Kilometers: 'Kilomètres', Centimeters: 'Centimètres', Millimeters: 'Millimètres', Inches: 'Pouces', Feet: 'Pieds', Yards: 'Yards', Miles: 'Milles', Kilograms: 'Kilogrammes', Grams: 'Grammes', Milligrams: 'Milligrammes', Pounds: 'Livres', Ounces: 'Onces', Liters: 'Litres', Milliliters: 'Millilitres', 'US gallons': 'Gallons américains', 'US quarts': 'Quarts américains', 'US cups': 'Tasses américaines', Celsius: 'Celsius', Fahrenheit: 'Fahrenheit', Kelvin: 'Kelvin' });
+runtimeMessages.pt = ptBR.runtimeMessages;
+
+Object.assign(runtimeMessages.es, { 'No query parameters.': 'No hay parámetros de consulta.', 'No comparison yet.': 'Aún no hay ninguna comparación.', 'Roman numeral converted.': 'Número romano convertido.' });
+Object.assign(runtimeMessages.fr, { 'No query parameters.': 'Aucun paramètre de requête.', 'No comparison yet.': 'Aucune comparaison pour le moment.', 'Roman numeral converted.': 'Nombre romain converti.' });
 
 const copy = {
   es: {
@@ -107,6 +115,8 @@ const copy = {
     'time-zone-converter': ['Convertisseur de fuseaux horaires', 'Fuseaux horaires', 'Convertissez la date et l’heure entre plusieurs fuseaux avec gestion du changement d’heure.', 'convertisseur fuseau horaire, décalage horaire, convertir heure entre pays', 'Choisissez une date, une heure et deux lieux pour voir les heures locales correspondantes.', 'Utilise la base internationale du navigateur et tient compte des changements d’heure.'],
   },
 };
+
+copy.pt = ptBR.copy;
 
 export function localizedTool(tool, language) {
   const values = copy[language]?.[tool.id];

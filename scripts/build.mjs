@@ -24,6 +24,7 @@ const assetVersion = createHash('sha256')
   .update(await readFile(join(dist, 'assets', 'styles.css')))
   .update(await readFile(join(dist, 'assets', 'app.js')))
   .update(await readFile(join(root, 'src', 'locales.mjs')))
+  .update(await readFile(join(root, 'src', 'locales', 'pt-br.mjs')))
   .digest('hex')
   .slice(0, 12);
 
@@ -38,7 +39,7 @@ for (const language of languages) {
   await writeFile(homeFile, renderHome(localizedTools, localizedCategories, assetVersion, language));
   pages.push({ language, path: homePath });
   if (language !== 'en') {
-    const localeBundle = `window.usefulverseLocale = ${JSON.stringify({ code: language, messages: ui[language], runtime: runtimeMessages[language] })};\n`;
+    const localeBundle = `window.usefulverseLocale = ${JSON.stringify({ code: locales[language].code, messages: ui[language], runtime: runtimeMessages[language] })};\n`;
     await writeFile(join(dist, 'assets', `locale-${language}.js`), localeBundle);
   }
   for (const tool of localizedTools) {
@@ -61,10 +62,12 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://w
 await writeFile(join(dist, 'sitemap.xml'), sitemap);
 await writeFile(join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: https://usefulverse.com/sitemap.xml\n`);
 await writeFile(join(dist, 'llms.txt'), `# UsefulVerse\n\n> Fast, private browser tools for text, data, SEO and everyday tasks.\n\nUsefulVerse is a static website of small online tools. Browser-first tools process user input locally and do not require an account or upload.\n\n## Tools\n\n${tools.map((tool) => `- [${tool.title}](https://usefulverse.com/tools/${tool.id}/): ${tool.description}`).join('\n')}\n\n## Site\n\n- [Home](https://usefulverse.com/)\n- [Sitemap](https://usefulverse.com/sitemap.xml)\n`);
-for (const language of ['es', 'fr']) {
+for (const language of languages.filter((key) => key !== 'en')) {
   const localizedTools = tools.map((tool) => localizedTool(tool, language));
   const homeUrl = `https://usefulverse.com${localePath(language)}`;
-  const localLlms = `# UsefulVerse — ${locales[language].name}\n\n> ${locales[language].homeDescription}\n\n${localizedTools.map((tool) => `- [${tool.title}](https://usefulverse.com${localePath(language, tool.id)}): ${tool.description}`).join('\n')}\n\n- [${language === 'es' ? 'Inicio' : 'Accueil'}](${homeUrl})\n- [Sitemap](https://usefulverse.com/sitemap.xml)\n`;
-  await writeFile(join(dist, language, 'llms.txt'), localLlms);
+  const homeLabel = { es: 'Inicio', fr: 'Accueil', pt: 'Página inicial' }[language] ?? 'Home';
+  const localLlms = `# UsefulVerse — ${locales[language].name}\n\n> ${locales[language].homeDescription}\n\n${localizedTools.map((tool) => `- [${tool.title}](https://usefulverse.com${localePath(language, tool.id)}): ${tool.description}`).join('\n')}\n\n- [${homeLabel}](${homeUrl})\n- [Sitemap](https://usefulverse.com/sitemap.xml)\n`;
+  const localeDirectory = localePath(language).replace(/^\//u, '').replace(/\/$/u, '');
+  await writeFile(join(dist, localeDirectory, 'llms.txt'), localLlms);
 }
 console.log(`Built ${pages.length} pages (${tools.length} tools × ${languages.length} languages + ${languages.length} home pages) in dist/`);
