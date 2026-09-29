@@ -26,14 +26,15 @@ Open `http://localhost:4173` after starting the server.
 English remains the default at `/`. The site supports Spanish (`/es/`), French
 (`/fr/`), Brazilian Portuguese (`/pt-br/`), German (`/de/`), Japanese (`/ja/`),
 Korean (`/ko/`), Indonesian (`/id/`), Hindi (`/hi/`), Arabic (`/ar/`), Simplified
-Chinese (`/zh-cn/`), Bengali (`/bn/`), Russian (`/ru/`) and Urdu (`/ur/`). Each
+Chinese (`/zh-cn/`), Bengali (`/bn/`), Russian (`/ru/`), Urdu (`/ur/`), Turkish
+(`/tr/`) and Vietnamese (`/vi/`). Each
 of the 33 tools has a matching URL in every language. The build creates every version as static HTML, adds
 reciprocal `hreflang` and canonical tags, and lists every version with language
 alternates in `sitemap.xml`. It does not call a translation service at build time
 or in the visitor's browser.
 
-Japanese, Korean, Indonesian, Hindi, Arabic, Simplified Chinese, Bengali, Russian
-and Urdu are self-contained language packs in
+Japanese, Korean, Indonesian, Hindi, Arabic, Simplified Chinese, Bengali, Russian,
+Urdu, Turkish and Vietnamese are self-contained language packs in
 `src/locales/<key>/`: `core.mjs` (site meta, page strings, runtime templates,
 shared UI), `tools-a|b|c.mjs` (UI strings plus localized copy, SEO title and
 description, and FAQ per tool), `runtime.js` (browser hook appended to the locale

@@ -129,7 +129,7 @@ copy.de = deDE.copy;
 
 // Self-contained language packs live in src/locales/<key>/index.mjs. USEFULVERSE_PACKS=ja,ko limits the
 // build to some packs so one language can be checked while another is still being edited.
-export const packKeys = ['ja', 'ko', 'id', 'hi', 'ar', 'zh', 'bn', 'ru', 'ur'];
+export const packKeys = ['ja', 'ko', 'id', 'hi', 'ar', 'zh', 'bn', 'ru', 'ur', 'tr', 'vi'];
 const enabledPacks = process.env.USEFULVERSE_PACKS?.split(',').map((key) => key.trim()).filter(Boolean) ?? packKeys;
 export const packs = {};
 for (const key of packKeys.filter((item) => enabledPacks.includes(item))) packs[key] = (await import(`./locales/${key}/index.mjs`)).pack;
