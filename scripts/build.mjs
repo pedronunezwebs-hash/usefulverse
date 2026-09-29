@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { tools, categories } from '../src/catalog.mjs';
-import { renderHome, renderToolPage } from '../src/template.mjs';
+import { renderHome, renderNotFoundPage, renderToolPage } from '../src/template.mjs';
 import { localePath, locales, localizedTool, packs, ui } from '../src/locales.mjs';
 import { localeBundleSource } from '../src/locales/bundle.mjs';
 
@@ -64,6 +64,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://w
 await writeFile(join(dist, 'sitemap.xml'), sitemap);
 await writeFile(join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: https://usefulverse.com/sitemap.xml\n`);
 await writeFile(join(dist, 'llms.txt'), `# UsefulVerse\n\n> Fast, private browser tools for text, data, SEO and everyday tasks.\n\nUsefulVerse is a static website of small online tools. Browser-first tools process user input locally and do not require an account or upload.\n\n## Tools\n\n${tools.map((tool) => `- [${tool.title}](https://usefulverse.com/tools/${tool.id}/): ${tool.description}`).join('\n')}\n\n## Site\n\n- [Home](https://usefulverse.com/)\n- [Sitemap](https://usefulverse.com/sitemap.xml)\n`);
+await writeFile(join(dist, '404.html'), renderNotFoundPage());
 for (const language of languages.filter((key) => key !== 'en')) {
   const localizedTools = tools.map((tool) => localizedTool(tool, language));
   const homeUrl = `https://usefulverse.com${localePath(language)}`;

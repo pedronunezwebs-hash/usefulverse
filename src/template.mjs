@@ -1,6 +1,7 @@
 import { tools } from './catalog.mjs';
 import { seo } from './seo.mjs';
 import { localeEntries, localePath, locales, packs, translateStaticHtml, ui } from './locales.mjs';
+import { longtailFaqs } from './locales/longtail.mjs';
 
 const fill = (template, values) => template.replace(/\{(\w+)\}/gu, (match, name) => values[name] ?? match);
 
@@ -12,6 +13,17 @@ const escapeHtml = (value) => String(value)
   .replaceAll("'", '&#039;');
 
 const toolUrl = (id, language = 'en') => localePath(language, id);
+
+export const relatedToolIds = {
+  'roman-numeral-converter': ['date-calculator', 'number-to-words-converter', 'binary-converter'],
+  'binary-converter': ['prime-number-checker', 'timestamp-converter', 'number-to-words-converter'],
+  'prime-number-checker': ['binary-converter', 'average-calculator', 'ratio-proportion-calculator'],
+  'average-calculator': ['percentage-calculator', 'ratio-proportion-calculator', 'unit-converter'],
+  'ratio-proportion-calculator': ['percentage-calculator', 'average-calculator', 'unit-converter'],
+  'time-duration-calculator': ['date-calculator', 'time-zone-converter', 'timestamp-converter'],
+  'date-calculator': ['time-duration-calculator', 'time-zone-converter', 'percentage-calculator'],
+  'remove-line-breaks': ['word-counter', 'text-case-converter', 'remove-duplicate-lines'],
+};
 
 const icon = (tool) => `<span class="tool-icon tool-icon--${tool.accent}" aria-hidden="true">${escapeHtml(tool.icon)}</span>`;
 
@@ -281,7 +293,7 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
         { question: faqCopy[language].privacyQuestion, answer: faqCopy[language].privacyAnswer },
       ],
     };
-  const faq = seoData.faq ?? [];
+  const faq = [...(seoData.faq ?? []), ...(longtailFaqs[tool.id]?.[language] ?? [])];
   const homeHref = localePath(language);
   const alternates = localeEntries.map(({ key, code }) => `<link rel="alternate" hreflang="${code}" href="https://usefulverse.com${localePath(key, tool.id)}">`).join('\n    ');
   // Page-specific wording for UI keys that mean something else on this tool (e.g. "Whole number" is an
@@ -349,9 +361,76 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
 }
 
 function relatedCards(currentId, category, pageTools = tools, language = 'en') {
-  const related = pageTools.filter((tool) => tool.id !== currentId && tool.category === category).slice(0, 3);
-  const fallback = pageTools.filter((tool) => tool.id !== currentId && !related.some((item) => item.id === tool.id)).slice(0, 3 - related.length);
+  const preferredIds = relatedToolIds[currentId] ?? [];
+  const related = preferredIds.map((id) => pageTools.find((tool) => tool.id === id)).filter(Boolean).slice(0, 3);
+  const sameCategory = pageTools.filter((tool) => tool.id !== currentId && tool.category === category && !related.some((item) => item.id === tool.id));
+  const fallback = [...sameCategory, ...pageTools.filter((tool) => tool.id !== currentId && !related.some((item) => item.id === tool.id) && !sameCategory.some((item) => item.id === tool.id))].slice(0, 3 - related.length);
   return [...related, ...fallback].map((tool) => toolCard(tool, language)).join('');
+}
+
+export function renderNotFoundPage() {
+  const languageOptions = localeEntries.map(({ key, name, code }) => `<a href="${localePath(key)}" lang="${code}" hreflang="${code}">${escapeHtml(name)}</a>`).join('\n        ');
+  const messages = {
+    en: { title: 'Page not found', heading: 'This page took a wrong turn.', detail: 'The address may be outdated or the page may have moved. Head back to the tools directory.', home: 'Browse all tools', languages: 'Choose a language' },
+    es: { title: 'Página no encontrada', heading: 'Esta página se ha perdido.', detail: 'Puede que la dirección ya no exista o que la página se haya movido. Vuelve al directorio de herramientas.', home: 'Ver todas las herramientas', languages: 'Elige un idioma' },
+    fr: { title: 'Page introuvable', heading: 'Cette page a pris le mauvais chemin.', detail: 'Cette adresse est peut-être obsolète ou la page a été déplacée. Revenez au répertoire des outils.', home: 'Voir tous les outils', languages: 'Choisir une langue' },
+    pt: { title: 'Página não encontrada', heading: 'Esta página saiu do caminho.', detail: 'O endereço pode estar desatualizado ou a página pode ter mudado. Volte ao diretório de ferramentas.', home: 'Ver todas as ferramentas', languages: 'Escolha um idioma' },
+    de: { title: 'Seite nicht gefunden', heading: 'Diese Seite ist falsch abgebogen.', detail: 'Die Adresse ist möglicherweise veraltet oder die Seite wurde verschoben. Gehen Sie zurück zur Tool-Übersicht.', home: 'Alle Tools ansehen', languages: 'Sprache auswählen' },
+    ja: { title: 'ページが見つかりません', heading: 'お探しのページが見つかりません。', detail: 'URLが古いか、ページが移動した可能性があります。ツール一覧からお探しください。', home: 'ツール一覧を見る', languages: '言語を選択' },
+    ko: { title: '페이지를 찾을 수 없습니다', heading: '요청하신 페이지가 없습니다.', detail: '주소가 변경되었거나 페이지가 이동했을 수 있습니다. 도구 목록에서 찾아보세요.', home: '모든 도구 보기', languages: '언어 선택' },
+    id: { title: 'Halaman tidak ditemukan', heading: 'Halaman ini tidak ditemukan.', detail: 'Alamat mungkin sudah tidak berlaku atau halamannya telah dipindahkan. Kembali ke daftar alat.', home: 'Lihat semua alat', languages: 'Pilih bahasa' },
+    hi: { title: 'पेज नहीं मिला', heading: 'यह पेज नहीं मिला।', detail: 'पता पुराना हो सकता है या पेज कहीं और चला गया है। टूल की सूची पर वापस जाएं।', home: 'सभी टूल देखें', languages: 'भाषा चुनें' },
+  };
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,follow">
+    <meta name="theme-color" content="#0b1324">
+    <title>Page not found | UsefulVerse</title>
+    <style>
+      :root { color-scheme: light; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #172033; background: #f7f8fb; }
+      * { box-sizing: border-box; }
+      body { min-height: 100vh; margin: 0; display: grid; place-items: center; padding: 24px; }
+      main { width: min(100%, 680px); padding: clamp(28px, 7vw, 64px); background: white; border: 1px solid #e5e8ef; border-radius: 28px; box-shadow: 0 18px 60px #1720330d; }
+      .brand { display: inline-flex; gap: 10px; align-items: center; color: inherit; text-decoration: none; font-size: 1.1rem; font-weight: 750; letter-spacing: -.04em; }
+      .mark { color: #536dfe; }
+      .code { margin: 54px 0 8px; color: #536dfe; font-size: .8rem; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+      h1 { max-width: 12ch; margin: 0; font-size: clamp(2.4rem, 8vw, 4.8rem); line-height: .98; letter-spacing: -.065em; }
+      .detail { max-width: 48ch; margin: 22px 0 28px; color: #596273; font-size: 1.08rem; line-height: 1.65; }
+      .home { display: inline-flex; align-items: center; min-height: 48px; padding: 0 20px; border-radius: 999px; color: white; background: #536dfe; text-decoration: none; font-weight: 700; }
+      nav { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 38px; padding-top: 24px; border-top: 1px solid #e9ebf0; }
+      nav p { flex-basis: 100%; margin: 0 0 2px; color: #596273; font-size: .85rem; }
+      nav a { color: #46546b; font-size: .9rem; text-underline-offset: 3px; }
+      a:focus-visible { outline: 3px solid #f5a623; outline-offset: 4px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a class="brand" href="/" aria-label="UsefulVerse home"><span class="mark" aria-hidden="true">◆</span> usefulverse</a>
+      <p class="code">404 · UsefulVerse</p>
+      <h1 id="not-found-heading">This page took a wrong turn.</h1>
+      <p class="detail" id="not-found-detail">The address may be outdated or the page may have moved. Head back to the tools directory.</p>
+      <a class="home" id="not-found-home" href="/">Browse all tools</a>
+      <nav aria-label="Choose a language"><p id="not-found-languages">Choose a language</p>${languageOptions}</nav>
+    </main>
+    <script>
+      const copy = ${JSON.stringify(messages)};
+      const prefixes = ${JSON.stringify(Object.fromEntries(localeEntries.map(({ key, prefix }) => [key, prefix])))};
+      const preferred = (navigator.languages || [navigator.language || 'en']).map((value) => value.toLowerCase());
+      const key = Object.keys(prefixes).find((language) => preferred.some((value) => value === language || value.startsWith(language + '-'))) || 'en';
+      const text = copy[key];
+      document.documentElement.lang = key === 'pt' ? 'pt-BR' : key;
+      document.title = text.title + ' | UsefulVerse';
+      document.getElementById('not-found-heading').textContent = text.heading;
+      document.getElementById('not-found-detail').textContent = text.detail;
+      document.getElementById('not-found-home').textContent = text.home;
+      document.getElementById('not-found-home').href = prefixes[key] ? prefixes[key] + '/' : '/';
+      document.getElementById('not-found-languages').textContent = text.languages;
+    </script>
+  </body>
+</html>`;
 }
 
 export function shell({ title, description, canonical, body, schema = '', assetVersion = '', lang = 'en', alternates = '', toolId = '' }) {
