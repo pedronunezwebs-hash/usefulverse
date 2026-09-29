@@ -1,6 +1,8 @@
 import { tools } from './catalog.mjs';
 import { seo } from './seo.mjs';
-import { localeEntries, localePath, locales, translateStaticHtml, ui } from './locales.mjs';
+import { localeEntries, localePath, locales, packs, translateStaticHtml, ui } from './locales.mjs';
+
+const fill = (template, values) => template.replace(/\{(\w+)\}/gu, (match, name) => values[name] ?? match);
 
 const escapeHtml = (value) => String(value)
   .replaceAll('&', '&amp;')
@@ -247,7 +249,7 @@ function toolMarkup(id) {
   ${close}`;
   if (id === 'time-zone-converter') return `${common}
     <label class="field-label" for="timezone-date">Date and time</label><input id="timezone-date" class="tool-input" type="datetime-local">
-    <div class="converter-grid"><section class="calculator-card"><h2>From</h2><label class="field-label" for="timezone-from">Time zone</label><select id="timezone-from" class="tool-input"><option value="UTC">UTC</option><option value="America/New_York" selected>New York (Eastern)</option><option value="America/Chicago">Chicago (Central)</option><option value="America/Denver">Denver (Mountain)</option><option value="America/Los_Angeles">Los Angeles (Pacific)</option><option value="Europe/London">London</option><option value="Europe/Madrid">Madrid</option><option value="Asia/Ho_Chi_Minh">Ho Chi Minh City</option><option value="Asia/Tokyo">Tokyo</option><option value="Australia/Sydney">Sydney</option></select><output class="calculation-result" id="timezone-from-result">—</output></section><section class="calculator-card"><h2>To</h2><label class="field-label" for="timezone-to">Time zone</label><select id="timezone-to" class="tool-input"><option value="UTC">UTC</option><option value="America/New_York">New York (Eastern)</option><option value="America/Chicago">Chicago (Central)</option><option value="America/Denver">Denver (Mountain)</option><option value="America/Los_Angeles">Los Angeles (Pacific)</option><option value="Europe/London" selected>London</option><option value="Europe/Madrid">Madrid</option><option value="Asia/Ho_Chi_Minh">Ho Chi Minh City</option><option value="Asia/Tokyo">Tokyo</option><option value="Australia/Sydney">Sydney</option></select><output class="calculation-result" id="timezone-to-result">—</output></section></div>
+    <div class="converter-grid"><section class="calculator-card"><h2>From</h2><label class="field-label" for="timezone-from">Time zone</label><select id="timezone-from" class="tool-input"><option value="UTC">UTC</option><option value="America/New_York" selected>New York (Eastern)</option><option value="America/Chicago">Chicago (Central)</option><option value="America/Denver">Denver (Mountain)</option><option value="America/Los_Angeles">Los Angeles (Pacific)</option><option value="Europe/London">London</option><option value="Europe/Madrid">Madrid</option><option value="Asia/Kolkata">India (Kolkata)</option><option value="Asia/Jakarta">Jakarta</option><option value="Asia/Ho_Chi_Minh">Ho Chi Minh City</option><option value="Asia/Seoul">Seoul</option><option value="Asia/Tokyo">Tokyo</option><option value="Australia/Sydney">Sydney</option></select><output class="calculation-result" id="timezone-from-result">—</output></section><section class="calculator-card"><h2>To</h2><label class="field-label" for="timezone-to">Time zone</label><select id="timezone-to" class="tool-input"><option value="UTC">UTC</option><option value="America/New_York">New York (Eastern)</option><option value="America/Chicago">Chicago (Central)</option><option value="America/Denver">Denver (Mountain)</option><option value="America/Los_Angeles">Los Angeles (Pacific)</option><option value="Europe/London" selected>London</option><option value="Europe/Madrid">Madrid</option><option value="Asia/Kolkata">India (Kolkata)</option><option value="Asia/Jakarta">Jakarta</option><option value="Asia/Ho_Chi_Minh">Ho Chi Minh City</option><option value="Asia/Seoul">Seoul</option><option value="Asia/Tokyo">Tokyo</option><option value="Australia/Sydney">Sydney</option></select><output class="calculation-result" id="timezone-to-result">—</output></section></div>
     <div class="tool-actions"><button class="button button--primary" data-action="convert-timezone">Convert time</button><button class="button button--ghost" data-action="clear">Clear</button></div><p class="tool-status" id="tool-status" aria-live="polite">Uses your browser’s time zone data, including daylight saving changes.</p>
   ${close}`;
   return `${common}<p>This tool is not available yet.</p>${close}`;
@@ -260,9 +262,17 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
     fr: { how: (name) => `Comment utiliser « ${name} » ?`, privacyQuestion: 'Mes données sont-elles envoyées à un serveur ?', privacyAnswer: 'Non. Le traitement s’effectue dans votre navigateur et vos données ne sont pas envoyées.' },
     pt: { how: (name) => `Como usar ${name}?`, privacyQuestion: 'Meus dados são enviados para algum servidor?', privacyAnswer: 'Não. O processamento acontece no seu navegador, e seus dados não são enviados para um servidor.' },
   };
+  const pack = packs[language];
   const seoData = language === 'en'
     ? (seo[tool.id] ?? { title: tool.title, description: `${tool.description} Free, fast and private in your browser.` })
-    : {
+    : pack ? {
+      title: pack.seo?.[tool.id]?.title ?? tool.shortTitle,
+      description: pack.seo?.[tool.id]?.description ?? tool.description,
+      faq: pack.faq?.[tool.id] ?? [
+        { question: fill(pack.page.faqHow, { name: tool.shortTitle }), answer: tool.intro },
+        { question: pack.page.privacyQuestion, answer: pack.page.privacyAnswer },
+      ],
+    } : {
       title: tool.shortTitle,
       description: tool.description,
       faq: [
@@ -273,7 +283,13 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
   const faq = seoData.faq ?? [];
   const homeHref = localePath(language);
   const alternates = localeEntries.map(({ key, code }) => `<link rel="alternate" hreflang="${code}" href="https://usefulverse.com${localePath(key, tool.id)}">`).join('\n    ');
-  const dynamicTranslations = {
+  const dynamicTranslations = pack ? {
+    [`About ${tool.title}.`]: fill(pack.page.about, { title: tool.title }),
+    [`${tool.title} made simple.`]: fill(pack.page.madeSimple, { title: tool.title }),
+    [`${tool.category} tool`]: fill(pack.page.categoryTool, { category: tool.category }),
+    [`${tool.title} workspace`]: fill(pack.page.workspace, { title: tool.title }),
+  } : {
+    [`${tool.title} workspace`]: { es: `Área de trabajo: ${tool.title}`, fr: `Espace de travail : ${tool.title}`, pt: `Área de trabalho: ${tool.title}` }[language] ?? `${tool.title} workspace`,
     [`About ${tool.title}.`]: language === 'es' ? `Acerca de ${tool.title}.` : language === 'fr' ? `À propos de ${tool.title}.` : `Sobre ${tool.title}.`,
     [`${tool.title} made simple.`]: language === 'es' ? `${tool.title} sin complicaciones.` : language === 'fr' ? `${tool.title} en toute simplicité.` : `${tool.title} sem complicação.`,
     [`${tool.category} tool`]: `${tool.category} · ${ui[language]?.tool ?? 'tool'}`,
@@ -356,6 +372,7 @@ export function shell({ title, description, canonical, body, schema = '', assetV
     <meta property="og:description" content="${escapeHtml(description)}">
     <meta property="og:url" content="${escapeHtml(canonical)}">
     <meta property="og:site_name" content="UsefulVerse">
+    <meta property="og:locale" content="${escapeHtml((packs[lang]?.meta.tag ?? { en: 'en-US', es: 'es-ES', fr: 'fr-FR', pt: 'pt-BR' }[lang] ?? localeCode).replace('-', '_'))}">
     <meta name="twitter:card" content="summary">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/styles.css${assetSuffix}">

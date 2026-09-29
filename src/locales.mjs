@@ -118,6 +118,33 @@ const copy = {
 
 copy.pt = ptBR.copy;
 
+// Self-contained language packs live in src/locales/<key>/index.mjs. USEFULVERSE_PACKS=ja,ko limits the
+// build to some packs so one language can be checked while another is still being edited.
+export const packKeys = ['ja', 'ko', 'id', 'hi'];
+const enabledPacks = process.env.USEFULVERSE_PACKS?.split(',').map((key) => key.trim()).filter(Boolean) ?? packKeys;
+export const packs = {};
+for (const key of packKeys.filter((item) => enabledPacks.includes(item))) packs[key] = (await import(`./locales/${key}/index.mjs`)).pack;
+for (const [key, pack] of Object.entries(packs)) {
+  const { code, name, prefix, homeTitle, homeDescription } = pack.meta;
+  locales[key] = { code, name, prefix, homeTitle, homeDescription };
+  ui[key] = pack.ui;
+  runtimeMessages[key] = pack.runtimeMessages;
+  copy[key] = pack.copy;
+}
+
+// Parameterized runtime strings for app.js (see src/locales/template-keys.mjs). Packs bring their own.
+export const runtimeTemplates = {
+  es: { 'diff.found': { one: '{count} línea distinta encontrada.', other: '{count} líneas distintas encontradas.' }, 'diff.line': 'Línea {line}:', 'diff.empty': '(vacía)', 'url.none': '(ninguno)', 'timestamp.local': 'Hora local: {value}', 'timestamp.seconds': 'Segundos: {value}', 'timestamp.milliseconds': 'Milisegundos: {value}' },
+  fr: { 'diff.found': { one: '{count} ligne différente trouvée.', other: '{count} lignes différentes trouvées.' }, 'diff.line': 'Ligne {line} :', 'diff.empty': '(vide)', 'url.none': '(aucun)', 'timestamp.local': 'Heure locale : {value}', 'timestamp.seconds': 'Secondes : {value}', 'timestamp.milliseconds': 'Millisecondes : {value}' },
+  pt: { 'diff.found': { one: '{count} linha diferente encontrada.', other: '{count} linhas diferentes encontradas.' }, 'diff.line': 'Linha {line}:', 'diff.empty': '(vazia)', 'url.none': '(nenhum)', 'timestamp.local': 'Horário local: {value}', 'timestamp.seconds': 'Segundos: {value}', 'timestamp.milliseconds': 'Milissegundos: {value}' },
+};
+for (const [key, pack] of Object.entries(packs)) runtimeTemplates[key] = pack.templates;
+
+// Static strings that older locales were missing; packs translate them in their own ui.
+Object.assign(ui.es, { 'Color preview': 'Vista previa del color', 'JSON result...': 'Resultado JSON…', 'CSV result...': 'Resultado CSV…', 'Your UUIDs will appear here...': 'Tus UUID aparecerán aquí…', 'Text to hash...': 'Texto para el hash…', 'Your hash will appear here...': 'Tu hash aparecerá aquí…', 'Paste sample text here...': 'Pega aquí un texto de ejemplo…', Seoul: 'Seúl', Jakarta: 'Yakarta', 'India (Kolkata)': 'India (Calcuta)' });
+Object.assign(ui.fr, { 'Color preview': 'Aperçu de la couleur', 'JSON result...': 'Résultat JSON…', 'CSV result...': 'Résultat CSV…', 'Your UUIDs will appear here...': 'Vos UUID apparaîtront ici…', 'Text to hash...': 'Texte à hacher…', 'Your hash will appear here...': 'Votre hachage apparaîtra ici…', 'Paste sample text here...': 'Collez un texte d’exemple ici…', Seoul: 'Séoul', Jakarta: 'Jakarta', 'India (Kolkata)': 'Inde (Calcutta)' });
+Object.assign(ui.pt, { 'Color preview': 'Prévia da cor', 'JSON result...': 'Resultado JSON…', 'CSV result...': 'Resultado CSV…', 'Your UUIDs will appear here...': 'Seus UUIDs aparecerão aqui…', 'Text to hash...': 'Texto para gerar o hash…', 'Your hash will appear here...': 'Seu hash aparecerá aqui…', 'Paste sample text here...': 'Cole um texto de exemplo aqui…', Seoul: 'Seul', Jakarta: 'Jacarta', 'India (Kolkata)': 'Índia (Calcutá)' });
+
 export function localizedTool(tool, language) {
   const values = copy[language]?.[tool.id];
   if (!values) return tool;
