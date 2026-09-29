@@ -4,6 +4,8 @@ import { fileURLToPath } from 'node:url';
 import { tools } from '../src/catalog.mjs';
 import { seo } from '../src/seo.mjs';
 import { localePath, locales, localizedTool, packs } from '../src/locales.mjs';
+import { longtailBodies, longtailFaqs } from '../src/locales/longtail.mjs';
+import { relatedToolIds } from '../src/template.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const dist = process.env.USEFULVERSE_DIST ? resolve(process.env.USEFULVERSE_DIST) : join(root, 'dist');
@@ -12,7 +14,10 @@ const localizedFiles = languages.filter((language) => language !== 'en').flatMap
   `assets/locale-${language}.js`,
   `${localePath(language).replace(/^\//u, '').replace(/\/$/u, '')}/llms.txt`,
 ]);
-const required = ['index.html', 'assets/styles.css', 'assets/app.js', 'favicon.svg', 'robots.txt', 'sitemap.xml', 'llms.txt', ...localizedFiles, 'BingSiteAuth.xml', 'yandex_f441658073fe7135.html', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html', '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt'];
+const required = ['index.html', '404.html', 'assets/styles.css', 'assets/app.js', 'favicon.svg', 'robots.txt', 'sitemap.xml', 'llms.txt', ...localizedFiles, 'BingSiteAuth.xml', 'yandex_f441658073fe7135.html', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html', '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt'];
+const notFound = await readFile(join(dist, '404.html'), 'utf8');
+if (!notFound.includes('<meta name="robots" content="noindex,follow">') || /<link rel="canonical"/u.test(notFound)) throw new Error('404 page must be noindex and must not claim a canonical URL');
+for (const language of languages) if (!notFound.includes(`href="${localePath(language)}"`)) throw new Error(`404 page is missing its ${language} home link`);
 for (const file of required) await access(join(dist, file));
 const naverVerification = await readFile(join(dist, 'naverbbd67ca2bfab12f8138c42ad5d27c664.html'), 'utf8');
 if (naverVerification !== 'naver-site-verification: naverbbd67ca2bfab12f8138c42ad5d27c664.html\n') throw new Error('Naver verification file content does not match the downloaded file');
@@ -42,6 +47,16 @@ for (const language of languages) {
     if (!html.includes('"@type":"WebApplication"') || !html.includes('property="og:title"')) throw new Error(`Missing SEO schema or social metadata for ${language}/${tool.id}`);
     if (!html.includes('"@type":"FAQPage"') || !html.includes('class="tool-faq"')) throw new Error(`Missing FAQ content for ${language}/${tool.id}`);
     if (language === 'en' && seo[tool.id]?.faq?.length && !html.includes(seo[tool.id].faq[0].question)) throw new Error(`English FAQ mismatch for ${tool.id}`);
+    const expectedBody = longtailBodies[tool.id]?.[language];
+    if (expectedBody && !html.includes(expectedBody.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll("'", '&#039;'))) throw new Error(`Missing localized long-tail explanation for ${language}/${tool.id}`);
+    const expectedFaq = longtailFaqs[tool.id]?.[language];
+    if (expectedFaq) for (const { question, answer } of expectedFaq) {
+      if (!html.includes(question) || !html.includes(answer)) throw new Error(`Missing localized long-tail FAQ for ${language}/${tool.id}: ${question}`);
+    }
+    const expectedRelated = relatedToolIds[tool.id];
+    if (expectedRelated) for (const relatedId of expectedRelated) {
+      if (!html.includes(`href="${localePath(language, relatedId)}"`)) throw new Error(`Missing contextual ${relatedId} link on ${language}/${tool.id}`);
+    }
   }
 }
 const home = await readFile(join(dist, 'index.html'), 'utf8');

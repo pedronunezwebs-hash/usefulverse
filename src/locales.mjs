@@ -1,5 +1,6 @@
 import { ptBR } from './locales/pt-br.mjs';
 import { deDE } from './locales/de.mjs';
+import { longtailBodies } from './locales/longtail.mjs';
 
 export const locales = {
   en: { code: 'en', name: 'English', prefix: '', homeTitle: 'UsefulVerse — Simple tools for everyday tasks', homeDescription: 'Fast, private browser tools for text, files, data, SEO and everyday tasks. No account and no upload required.' },
@@ -158,7 +159,7 @@ export function localizedTool(tool, language) {
   const values = copy[language]?.[tool.id];
   if (!values) return tool;
   const [title, shortTitle, description, keywords, intro, body] = values;
-  return { ...tool, title, shortTitle, description, keywords, intro, body, category: ui[language][tool.category] ?? tool.category };
+  return { ...tool, title, shortTitle, description, keywords, intro, body: longtailBodies[tool.id]?.[language] ?? body, category: ui[language][tool.category] ?? tool.category };
 }
 
 export function translateStaticHtml(html, language, dynamic = {}) {

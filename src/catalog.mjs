@@ -249,7 +249,7 @@ export const tools = [
     accent: 'orange',
     keywords: 'roman numeral converter, convert roman numerals, number to roman numeral, roman numeral date converter',
     intro: 'Enter a number or Roman numeral and get the other format immediately.',
-    body: 'Convert whole numbers from 1 to 3,999 locally. Useful for dates, names, outlines, quizzes and quick checks.',
+    body: 'For example, 2026 is MMXXVI and 49 is XLIX. The converter accepts standard whole-number notation from 1 to 3,999; forms such as IIII for 4 are rejected.',
   },
   {
     id: 'binary-converter',
@@ -261,7 +261,7 @@ export const tools = [
     accent: 'blue',
     keywords: 'binary converter, binary number converter, number base converter, decimal to binary, hexadecimal to binary',
     intro: 'Choose the input and output bases, enter an integer and convert it locally.',
-    body: 'Useful for programming, networking and learning number systems. Large whole numbers are handled with JavaScript BigInt in your browser.',
+    body: 'For a quick check, decimal 25 is binary 11001, octal 31 and hexadecimal 19. It converts signed integers between bases 2, 8, 10 and 16; fractions and base prefixes such as 0b are not accepted.',
   },
   {
     id: 'prime-number-checker',
@@ -273,7 +273,7 @@ export const tools = [
     accent: 'lime',
     keywords: 'prime number checker, prime checker online, is this number prime, prime number test',
     intro: 'Enter a whole number and find out whether it is prime in one click.',
-    body: 'The calculation runs in your browser and supports integers up to one trillion for a quick, practical check.',
+    body: 'A prime number is a whole number greater than 1 with exactly two positive divisors. For example, 97 is prime, while 1 and 91 are not. Check non-negative integers up to 1,000,000,000,000 in your browser.',
   },
   {
     id: 'average-calculator',
@@ -285,7 +285,7 @@ export const tools = [
     accent: 'violet',
     keywords: 'average calculator, mean calculator, calculate average, average of numbers',
     intro: 'Paste numbers separated by spaces, commas or new lines and calculate their average.',
-    body: 'Useful for grades, measurements, budgets and quick data checks. Your numbers stay in this browser.',
+    body: 'To find the arithmetic mean, add the values and divide by how many values there are: 10, 12 and 14 have an average of 12. The result also shows the sum, count, minimum and maximum. Separate values with commas, spaces or new lines.',
   },
   {
     id: 'ratio-proportion-calculator',
@@ -297,7 +297,7 @@ export const tools = [
     accent: 'orange',
     keywords: 'ratio calculator, proportion calculator, ratio and proportion, solve a proportion',
     intro: 'Enter three values to solve the fourth value in a:b = c:x.',
-    body: 'Use it for recipes, scale drawings, discounts, mixtures and any proportional relationship.',
+    body: 'For A:B = C:X, the missing value is X = B × C ÷ A. For example, 2:3 = 8:X gives X = 12. With integer inputs, the tool also simplifies A:B; all three inputs must be greater than zero.',
   },
   {
     id: 'time-duration-calculator',
@@ -309,7 +309,7 @@ export const tools = [
     accent: 'blue',
     keywords: 'time duration calculator, duration calculator, date time duration, hours calculator',
     intro: 'Choose a start and end time to calculate the duration between them.',
-    body: 'Useful for work hours, project timing, travel, events and any interval that crosses more than one day.',
+    body: 'For example, 9:15 a.m. to 5:45 p.m. on the same date is 8 hours 30 minutes. Choose both dates as well as both times for an overnight or multi-day interval; breaks are not deducted automatically.',
   },
   {
     id: 'number-to-words-converter',
@@ -333,7 +333,7 @@ export const tools = [
     accent: 'lime',
     keywords: 'remove line breaks, remove line breaks online, remove line breaks from text, line break remover',
     intro: 'Paste text from a document and turn broken lines into one clean paragraph.',
-    body: 'Useful for cleaning copied PDFs, Word documents, emails and spreadsheet text without sending your content anywhere.',
+    body: 'Use “Join with spaces” for wrapped sentences copied from a PDF or email, so words stay separated. Choose “Remove breaks” only when you want adjacent lines joined without a separator. Both actions collapse repeated spaces and tabs and merge blank paragraphs.',
   },
   {
     id: 'text-diff-checker',
@@ -369,7 +369,7 @@ export const tools = [
     accent: 'orange',
     keywords: 'date calculator, days between dates, date difference calculator, add days to date',
     intro: 'Compare two dates or move forward and backward from a starting date.',
-    body: 'Useful for deadlines, planning, contracts, schedules and simple date calculations in your local time zone.',
+    body: 'From January 1 to January 31 is 30 elapsed days because the starting date is not counted as a full day. You can also add or subtract a whole number of calendar days; weekends and public holidays are not excluded.',
   },
   {
     id: 'qr-code-generator',
