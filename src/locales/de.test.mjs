@@ -27,3 +27,9 @@ test('all catalog tools have complete German SEO copy', () => {
     assert.ok(tool.category, `Missing German category: ${tool.id}`);
   }
 });
+
+test('German number-to-words tool uses natural localized wording', () => {
+  const tool = localizedTool(tools.find(({ id }) => id === 'number-to-words-converter'), 'de');
+  assert.equal(tool.shortTitle, 'Zahl in Worten');
+  assert.ok(!tool.shortTitle.includes('Zahlen in Wörter'));
+});
