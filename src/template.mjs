@@ -380,6 +380,8 @@ export function renderNotFoundPage() {
     ko: { title: '페이지를 찾을 수 없습니다', heading: '요청하신 페이지가 없습니다.', detail: '주소가 변경되었거나 페이지가 이동했을 수 있습니다. 도구 목록에서 찾아보세요.', home: '모든 도구 보기', languages: '언어 선택' },
     id: { title: 'Halaman tidak ditemukan', heading: 'Halaman ini tidak ditemukan.', detail: 'Alamat mungkin sudah tidak berlaku atau halamannya telah dipindahkan. Kembali ke daftar alat.', home: 'Lihat semua alat', languages: 'Pilih bahasa' },
     hi: { title: 'पेज नहीं मिला', heading: 'यह पेज नहीं मिला।', detail: 'पता पुराना हो सकता है या पेज कहीं और चला गया है। टूल की सूची पर वापस जाएं।', home: 'सभी टूल देखें', languages: 'भाषा चुनें' },
+    ar: { title: 'الصفحة غير موجودة', heading: 'يبدو أن هذه الصفحة سلكت طريقًا خاطئًا.', detail: 'قد يكون العنوان قديمًا أو نُقلت الصفحة. عُد إلى دليل الأدوات.', home: 'تصفح كل الأدوات', languages: 'اختر اللغة' },
+    zh: { title: '页面不存在', heading: '这个页面走错了方向。', detail: '链接可能已过期，或页面已移动。请返回工具目录。', home: '浏览全部工具', languages: '选择语言' },
   };
   return `<!doctype html>
 <html lang="en">
@@ -421,7 +423,8 @@ export function renderNotFoundPage() {
       const preferred = (navigator.languages || [navigator.language || 'en']).map((value) => value.toLowerCase());
       const key = Object.keys(prefixes).find((language) => preferred.some((value) => value === language || value.startsWith(language + '-'))) || 'en';
       const text = copy[key];
-      document.documentElement.lang = key === 'pt' ? 'pt-BR' : key;
+      document.documentElement.lang = key === 'pt' ? 'pt-BR' : key === 'zh' ? 'zh-CN' : key;
+      document.documentElement.dir = key === 'ar' ? 'rtl' : 'ltr';
       document.title = text.title + ' | UsefulVerse';
       document.getElementById('not-found-heading').textContent = text.heading;
       document.getElementById('not-found-detail').textContent = text.detail;
@@ -438,9 +441,9 @@ export function shell({ title, description, canonical, body, schema = '', assetV
   const homeHref = localePath(lang);
   const localeCode = locales[lang]?.code ?? lang;
   const defaultAlternate = `<link rel="alternate" hreflang="x-default" href="https://usefulverse.com${localePath('en', toolId)}">`;
-  const localeSelector = `<nav class="language-switch" aria-label="Language">${localeEntries.map(({ key, code, name }) => `<a href="${localePath(key, toolId)}" hreflang="${code}" lang="${code}"${key === lang ? ' aria-current="page"' : ''} aria-label="${escapeHtml(name)}">${code.toUpperCase()}</a>`).join('')}</nav>`;
+  const localeSelector = `<nav class="language-switch" aria-label="Language">${localeEntries.map(({ key, code, name }) => `<a href="${localePath(key, toolId)}" hreflang="${code}" lang="${code}"${key === lang ? ' aria-current="page"' : ''} aria-label="${code.toUpperCase()} — ${escapeHtml(name)}">${code.toUpperCase()}</a>`).join('')}</nav>`;
   return `<!doctype html>
-<html lang="${localeCode}">
+<html lang="${localeCode}" dir="${packs[lang]?.meta.direction ?? 'ltr'}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

@@ -5,7 +5,15 @@ import { locales } from '../locales.mjs';
 import { renderNotFoundPage } from '../template.mjs';
 import { runTool } from './test-harness.mjs';
 
-test('Long-tail examples match the real tool calculations in all nine languages', async () => {
+const parseLocalizedNumber = (value) => {
+  const localized = String(value)
+    .replace(/[٠-٩]/gu, (digit) => String(digit.codePointAt(0) - 0x660))
+    .replace(/[۰-۹]/gu, (digit) => String(digit.codePointAt(0) - 0x6f0));
+  const match = localized.match(/[-+]?\d[\d\s,.٫٬]*/u)?.[0] ?? '';
+  return Number(match.replace(/[\s٬]/gu, '').replace(/[٫,]/gu, '.'));
+};
+
+test('Long-tail examples match the real tool calculations in all eleven languages', async () => {
   for (const language of Object.keys(locales)) {
     const roman = await runTool(language, 'roman-numeral-converter', 'number-to-roman', { '#roman-number': '2026' });
     assert.equal(roman('#roman-output').textContent, 'MMXXVI', `${language}: Roman numeral`);
@@ -21,22 +29,22 @@ test('Long-tail examples match the real tool calculations in all nine languages'
 
     const separator = ['pt', 'de', 'id'].includes(language) ? ';' : ',';
     const average = await runTool(language, 'average-calculator', 'calculate-average', { '#average-input': `10${separator}12${separator}14` });
-    assert.equal(Number(average('#average-result').textContent.replace(',', '.')), 12, `${language}: average`);
+    assert.equal(parseLocalizedNumber(average('#average-result').textContent), 12, `${language}: average`);
 
     const ratio = await runTool(language, 'ratio-proportion-calculator', 'solve-ratio', {
       '#ratio-a': '2', '#ratio-b': '3', '#ratio-c': '8',
     });
-    assert.equal(Number(ratio('#ratio-result').textContent.replace(',', '.')), 12, `${language}: ratio`);
+    assert.equal(parseLocalizedNumber(ratio('#ratio-result').textContent), 12, `${language}: ratio`);
 
     const duration = await runTool(language, 'time-duration-calculator', 'calculate-duration', {
       '#duration-start': '2026-01-10T09:15', '#duration-end': '2026-01-10T17:45',
     });
-    assert.equal(Number(duration('#duration-hours').textContent.replace(',', '.')), 8.5, `${language}: duration`);
+    assert.equal(parseLocalizedNumber(duration('#duration-hours').textContent), 8.5, `${language}: duration`);
 
     const dates = await runTool(language, 'date-calculator', 'date-difference', {
       '#date-start': '2026-01-01', '#date-end': '2026-01-31',
     });
-    assert.match(dates('#date-difference-result').textContent, /^30\b/u, `${language}: elapsed calendar days`);
+    assert.equal(parseLocalizedNumber(dates('#date-difference-result').textContent), 30, `${language}: elapsed calendar days`);
 
     const lineBreaks = await runTool(language, 'remove-line-breaks', 'join-line-breaks', { '#tool-input': 'alpha\nbeta' });
     assert.equal(lineBreaks('#tool-output').value, 'alpha beta', `${language}: join with spaces`);
@@ -50,12 +58,13 @@ test('The custom 404 selects a supported browser language and the matching home 
   for (const [browserLanguage, pageLanguage, href] of [
     ['es-ES', 'es', '/es/'], ['fr-FR', 'fr', '/fr/'], ['pt-BR', 'pt-BR', '/pt-br/'],
     ['de-DE', 'de', '/de/'], ['ja-JP', 'ja', '/ja/'], ['ko-KR', 'ko', '/ko/'],
-    ['id-ID', 'id', '/id/'], ['hi-IN', 'hi', '/hi/'], ['zh-CN', 'en', '/'],
+    ['id-ID', 'id', '/id/'], ['hi-IN', 'hi', '/hi/'], ['ar-SA', 'ar', '/ar/'], ['zh-CN', 'zh-CN', '/zh-cn/'],
   ]) {
     const elements = new Map(['not-found-heading', 'not-found-detail', 'not-found-home', 'not-found-languages'].map((id) => [id, {}]));
     const document = { documentElement: { lang: 'en' }, title: '', getElementById: (id) => elements.get(id) };
     vm.runInNewContext(script, { document, navigator: { languages: [browserLanguage], language: browserLanguage } });
     assert.equal(document.documentElement.lang, pageLanguage, `${browserLanguage}: document language`);
+    assert.equal(document.documentElement.dir, pageLanguage === 'ar' ? 'rtl' : 'ltr', `${browserLanguage}: text direction`);
     assert.equal(elements.get('not-found-home').href, href, `${browserLanguage}: home link`);
   }
 });
