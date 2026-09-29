@@ -72,4 +72,4 @@ for (const language of languages.filter((key) => key !== 'en')) {
   const localeDirectory = localePath(language).replace(/^\//u, '').replace(/\/$/u, '');
   await writeFile(join(dist, localeDirectory, 'llms.txt'), localLlms);
 }
-console.log(`Built ${pages.length} pages (${tools.length} tools × ${languages.length} languages + ${languages.length} home pages) in dist/`);
+console.log(`Built ${pages.length} pages (${tools.length} tools × ${languages.length} languages + ${languages.length} home pages) in ${dist}`);

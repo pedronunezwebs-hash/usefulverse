@@ -58,8 +58,9 @@ for (const language of languages) {
 }
 for (const { path, language } of pages) {
   const html = await readFile(path, 'utf8');
-  const title = html.match(/<title>([^<]+)<\/title>/u)?.[1] ?? '';
-  const description = html.match(/<meta name="description" content="([^"]+)"/u)?.[1] ?? '';
+  const unescape = (value) => value.replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&quot;', '"').replaceAll('&#039;', "'").replaceAll('&amp;', '&');
+  const title = unescape(html.match(/<title>([^<]+)<\/title>/u)?.[1] ?? '');
+  const description = unescape(html.match(/<meta name="description" content="([^"]+)"/u)?.[1] ?? '');
   if (title.length < 15 || title.length > 65) throw new Error(`Title length is invalid in ${path}: ${title.length}`);
   if (description.length < 25 || description.length > 155) throw new Error(`Description length is invalid in ${path}: ${description.length}`);
   const titles = titlesByLanguage.get(language);
