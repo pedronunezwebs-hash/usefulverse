@@ -98,10 +98,10 @@ function setupCaseConverter(root) {
   const status = $('#tool-status', root);
   const update = (mode) => {
     const value = input.value;
-    if (mode === 'upper') output.value = value.toLocaleUpperCase();
-    if (mode === 'lower') output.value = value.toLocaleLowerCase();
-    if (mode === 'sentence') output.value = value.toLocaleLowerCase().replace(/(^|[.!?]\s+)(\p{L})/gu, (_, start, letter) => `${start}${letter.toLocaleUpperCase()}`);
-    if (mode === 'title') output.value = value.toLocaleLowerCase().replace(/\b[\p{L}\d]/gu, (letter) => letter.toLocaleUpperCase());
+    if (mode === 'upper') output.value = value.toLocaleUpperCase(languageTag);
+    if (mode === 'lower') output.value = value.toLocaleLowerCase(languageTag);
+    if (mode === 'sentence') output.value = value.toLocaleLowerCase(languageTag).replace(/(^|[.!?]\s+)(\p{L})/gu, (_, start, letter) => `${start}${letter.toLocaleUpperCase(languageTag)}`);
+    if (mode === 'title') output.value = value.toLocaleLowerCase(languageTag).replace(/(^|[^\p{L}\p{N}])(\p{L}|\d)/gu, (_, start, letter) => `${start}${letter.toLocaleUpperCase(languageTag)}`);
   };
   root.addEventListener('click', (event) => {
     const button = event.target.closest('[data-case]');
@@ -124,7 +124,7 @@ function setupDedupe(root) {
       const ignoreCase = $('#ignore-case', root).checked;
       const removeEmpty = $('#remove-empty', root).checked;
       const seen = new Set();
-      const lines = input.value.split(/\r?\n/u).map((line) => trim ? line.trim() : line).filter((line) => !removeEmpty || line !== '').filter((line) => { const key = ignoreCase ? line.toLocaleLowerCase() : line; if (seen.has(key)) return false; seen.add(key); return true; });
+      const lines = input.value.split(/\r?\n/u).map((line) => trim ? line.trim() : line).filter((line) => !removeEmpty || line !== '').filter((line) => { const key = ignoreCase ? line.toLocaleLowerCase(languageTag) : line; if (seen.has(key)) return false; seen.add(key); return true; });
       output.value = lines.join('\n');
       setStatus(status, fmt('dedupe.kept', { n: lines.length, count: formatNumber(lines.length) }) ?? (language === 'es' ? `${lines.length} ${lines.length === 1 ? 'línea única conservada.' : 'líneas únicas conservadas.'}` : language === 'fr' ? `${lines.length} ${lines.length === 1 ? 'ligne unique conservée.' : 'lignes uniques conservées.'}` : isPortuguese ? `${lines.length} ${lines.length === 1 ? 'linha única mantida.' : 'linhas únicas mantidas.'}` : isGerman ? `${lines.length} ${lines.length === 1 ? 'eindeutige Zeile behalten.' : 'eindeutige Zeilen behalten.'}` : `${lines.length} unique line${lines.length === 1 ? '' : 's'} kept.`), 'success');
     }
@@ -248,7 +248,7 @@ function localDecimal(value) {
 
 // Search matches with or without Latin accents and the Devanagari nukta, and full-width/precomposed forms.
 function searchKey(text) {
-  return text.normalize('NFKD').replace(/[\u0300-\u036f\u093c]/gu, '').normalize('NFC').toLocaleLowerCase();
+  return text.normalize('NFKD').replace(/[\u0300-\u036f\u093c]/gu, '').normalize('NFC').toLocaleLowerCase(languageTag);
 }
 
 function formatNumber(value) {

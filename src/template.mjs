@@ -385,6 +385,8 @@ export function renderNotFoundPage() {
     bn: { title: 'পৃষ্ঠা পাওয়া যায়নি', heading: 'এই পৃষ্ঠাটি খুঁজে পাওয়া যায়নি।', detail: 'ঠিকানাটি পুরোনো হতে পারে অথবা পৃষ্ঠাটি সরানো হয়েছে। সব টুলের তালিকায় ফিরে যান।', home: 'সব টুল দেখুন', languages: 'ভাষা বেছে নিন' },
     ru: { title: 'Страница не найдена', heading: 'Похоже, страница свернула не туда.', detail: 'Адрес мог устареть или страница была перемещена. Вернитесь к списку инструментов.', home: 'Все инструменты', languages: 'Выберите язык' },
     ur: { title: 'صفحہ نہیں ملا', heading: 'یہ صفحہ نہیں مل سکا۔', detail: 'ممکن ہے پتہ پرانا ہو یا صفحہ منتقل کر دیا گیا ہو۔ ٹولز کی فہرست پر واپس جائیں۔', home: 'تمام ٹولز دیکھیں', languages: 'زبان منتخب کریں' },
+    tr: { title: 'Sayfa bulunamadı', heading: 'Bu sayfa yanlış bir yola saptı.', detail: 'Adres güncel olmayabilir veya sayfa taşınmış olabilir. Araçlar dizinine dönün.', home: 'Tüm araçlara göz at', languages: 'Dil seçin' },
+    vi: { title: 'Không tìm thấy trang', heading: 'Trang này đã đi nhầm đường.', detail: 'Địa chỉ có thể đã cũ hoặc trang đã được chuyển. Hãy quay lại danh sách công cụ.', home: 'Xem tất cả công cụ', languages: 'Chọn ngôn ngữ' },
   };
   return `<!doctype html>
 <html lang="en">

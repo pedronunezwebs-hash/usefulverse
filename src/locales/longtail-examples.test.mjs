@@ -14,7 +14,7 @@ const parseLocalizedNumber = (value) => {
   return Number(match.replace(/[\s٬]/gu, '').replace(/[٫,]/gu, '.'));
 };
 
-test('Long-tail examples match the real tool calculations in all fourteen languages', async () => {
+test('Long-tail examples match the real tool calculations in every supported language', async () => {
   for (const language of Object.keys(locales)) {
     const roman = await runTool(language, 'roman-numeral-converter', 'number-to-roman', { '#roman-number': '2026' });
     assert.equal(roman('#roman-output').textContent, 'MMXXVI', `${language}: Roman numeral`);
@@ -28,7 +28,7 @@ test('Long-tail examples match the real tool calculations in all fourteen langua
     const one = await runTool(language, 'prime-number-checker', 'check-prime', { '#prime-input': '1' });
     assert.notEqual(one('#prime-output').textContent, primeResult, `${language}: 1 is not classified like 97`);
 
-    const separator = ['pt', 'de', 'id', 'ru'].includes(language) ? ';' : ',';
+    const separator = ['pt', 'de', 'id', 'ru', 'tr', 'vi'].includes(language) ? ';' : ',';
     const average = await runTool(language, 'average-calculator', 'calculate-average', { '#average-input': `10${separator}12${separator}14` });
     assert.equal(parseLocalizedNumber(average('#average-result').textContent), 12, `${language}: average`);
 
@@ -61,6 +61,7 @@ test('The custom 404 selects a supported browser language and the matching home 
     ['de-DE', 'de', '/de/'], ['ja-JP', 'ja', '/ja/'], ['ko-KR', 'ko', '/ko/'],
     ['id-ID', 'id', '/id/'], ['hi-IN', 'hi', '/hi/'], ['ar-SA', 'ar', '/ar/'], ['zh-CN', 'zh-CN', '/zh-cn/'],
     ['bn-BD', 'bn-BD', '/bn/'], ['ru-RU', 'ru-RU', '/ru/'], ['ur-PK', 'ur-PK', '/ur/'],
+    ['tr-TR', 'tr', '/tr/'], ['vi-VN', 'vi', '/vi/'],
   ]) {
     const elements = new Map(['not-found-heading', 'not-found-detail', 'not-found-home', 'not-found-languages'].map((id) => [id, {}]));
     const document = { documentElement: { lang: 'en' }, title: '', getElementById: (id) => elements.get(id) };
