@@ -382,6 +382,9 @@ export function renderNotFoundPage() {
     hi: { title: 'पेज नहीं मिला', heading: 'यह पेज नहीं मिला।', detail: 'पता पुराना हो सकता है या पेज कहीं और चला गया है। टूल की सूची पर वापस जाएं।', home: 'सभी टूल देखें', languages: 'भाषा चुनें' },
     ar: { title: 'الصفحة غير موجودة', heading: 'يبدو أن هذه الصفحة سلكت طريقًا خاطئًا.', detail: 'قد يكون العنوان قديمًا أو نُقلت الصفحة. عُد إلى دليل الأدوات.', home: 'تصفح كل الأدوات', languages: 'اختر اللغة' },
     zh: { title: '页面不存在', heading: '这个页面走错了方向。', detail: '链接可能已过期，或页面已移动。请返回工具目录。', home: '浏览全部工具', languages: '选择语言' },
+    bn: { title: 'পৃষ্ঠা পাওয়া যায়নি', heading: 'এই পৃষ্ঠাটি খুঁজে পাওয়া যায়নি।', detail: 'ঠিকানাটি পুরোনো হতে পারে অথবা পৃষ্ঠাটি সরানো হয়েছে। সব টুলের তালিকায় ফিরে যান।', home: 'সব টুল দেখুন', languages: 'ভাষা বেছে নিন' },
+    ru: { title: 'Страница не найдена', heading: 'Похоже, страница свернула не туда.', detail: 'Адрес мог устареть или страница была перемещена. Вернитесь к списку инструментов.', home: 'Все инструменты', languages: 'Выберите язык' },
+    ur: { title: 'صفحہ نہیں ملا', heading: 'یہ صفحہ نہیں مل سکا۔', detail: 'ممکن ہے پتہ پرانا ہو یا صفحہ منتقل کر دیا گیا ہو۔ ٹولز کی فہرست پر واپس جائیں۔', home: 'تمام ٹولز دیکھیں', languages: 'زبان منتخب کریں' },
   };
   return `<!doctype html>
 <html lang="en">
@@ -423,8 +426,8 @@ export function renderNotFoundPage() {
       const preferred = (navigator.languages || [navigator.language || 'en']).map((value) => value.toLowerCase());
       const key = Object.keys(prefixes).find((language) => preferred.some((value) => value === language || value.startsWith(language + '-'))) || 'en';
       const text = copy[key];
-      document.documentElement.lang = key === 'pt' ? 'pt-BR' : key === 'zh' ? 'zh-CN' : key;
-      document.documentElement.dir = key === 'ar' ? 'rtl' : 'ltr';
+      document.documentElement.lang = ({ pt: 'pt-BR', zh: 'zh-CN', bn: 'bn-BD', ru: 'ru-RU', ur: 'ur-PK' })[key] || key;
+      document.documentElement.dir = ['ar', 'ur'].includes(key) ? 'rtl' : 'ltr';
       document.title = text.title + ' | UsefulVerse';
       document.getElementById('not-found-heading').textContent = text.heading;
       document.getElementById('not-found-detail').textContent = text.detail;

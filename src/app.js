@@ -27,11 +27,12 @@ if (usesCommaDecimal || localeConfig.textNumberInputs) {
 const currentLanguageLink = $('.language-switch [aria-current="page"]');
 if (currentLanguageLink) currentLanguageLink.parentElement.scrollLeft = currentLanguageLink.offsetLeft - (currentLanguageLink.parentElement.clientWidth - currentLanguageLink.offsetWidth) / 2;
 
-// Full-width IME digits/letters become ASCII (NFKC), Devanagari digits (InScript keyboards) become 0-9,
-// and a leading Unicode minus, dash or katakana ー becomes '-'.
+// Full-width IME digits/letters become ASCII (NFKC); Devanagari, Bengali and Arabic-family digits
+// also become ASCII so localized number formats work consistently in every calculator.
 function normalizeInput(value) {
   return String(value).normalize('NFKC')
     .replace(/[०-९]/gu, (digit) => String(digit.codePointAt(0) - 0x966))
+    .replace(/[০-৯]/gu, (digit) => String(digit.codePointAt(0) - 0x09e6))
     .replace(/[٠-٩]/gu, (digit) => String(digit.codePointAt(0) - 0x660))
     .replace(/[۰-۹]/gu, (digit) => String(digit.codePointAt(0) - 0x6f0))
     .replace(/\u066b/gu, '.')
@@ -235,8 +236,8 @@ function parseInputNumber(value) {
   const raw = normalizeInput(value);
   if (!raw) return NaN;
   if (!usesCommaDecimal) return Number(/^[-+]?\d{1,3}(?:,\d{2,3})*,\d{3}(?:\.\d+)?$/u.test(raw) ? raw.replaceAll(',', '') : raw);
-  if (raw.includes(',')) return Number(raw.replace(/\./gu, '').replace(',', '.'));
-  if (/^-?\d{1,3}(?:\.\d{3})+$/u.test(raw)) return Number(raw.replace(/\./gu, ''));
+  if (raw.includes(',')) return Number(raw.replace(/[\s\u00a0\u202f]/gu, '').replace(/\./gu, '').replace(',', '.'));
+  if (/^-?\d{1,3}(?:[.\s\u00a0\u202f]\d{3})+$/u.test(raw)) return Number(raw.replace(/[.\s\u00a0\u202f]/gu, ''));
   return Number(raw);
 }
 
@@ -788,7 +789,7 @@ function setupDuration(root) {
       const start = new Date($('#duration-start', root).value).getTime(); const end = new Date($('#duration-end', root).value).getTime();
       if (!Number.isFinite(start) || !Number.isFinite(end) || end < start) { setStatus(status, 'Choose valid times with the end after the start.', 'error'); return; }
       const milliseconds = end - start; const totalSeconds = Math.floor(milliseconds / 1000); const days = Math.floor(totalSeconds / 86400); const hours = Math.floor(totalSeconds / 3600); const minutes = Math.floor((totalSeconds % 3600) / 60); const seconds = totalSeconds % 60;
-      $('#duration-days', root).textContent = formatNumber(milliseconds / 86400000); $('#duration-hours', root).textContent = formatNumber(milliseconds / 3600000); $('#duration-exact', root).textContent = fmt('duration.exact', { days: formatNumber(days), hours: hours % 24, minutes, seconds }) ?? (language === 'es' ? `${days} d ${hours % 24} h ${minutes} min ${seconds} s` : language === 'fr' ? `${days} j ${hours % 24} h ${minutes} min ${seconds} s` : isPortuguese ? `${days} d ${hours % 24} h ${minutes} min ${seconds} s` : isGerman ? `${days} T ${hours % 24} Std. ${minutes} Min. ${seconds} Sek.` : `${days}d ${hours % 24}h ${minutes}m ${seconds}s`); setStatus(status, 'Duration calculated locally.', 'success');
+      $('#duration-days', root).textContent = formatNumber(milliseconds / 86400000); $('#duration-hours', root).textContent = formatNumber(milliseconds / 3600000); $('#duration-exact', root).textContent = fmt('duration.exact', { days: formatNumber(days), hours: formatNumber(hours % 24), minutes: formatNumber(minutes), seconds: formatNumber(seconds) }) ?? (language === 'es' ? `${days} d ${hours % 24} h ${minutes} min ${seconds} s` : language === 'fr' ? `${days} j ${hours % 24} h ${minutes} min ${seconds} s` : isPortuguese ? `${days} d ${hours % 24} h ${minutes} min ${seconds} s` : isGerman ? `${days} T ${hours % 24} Std. ${minutes} Min. ${seconds} Sek.` : `${days}d ${hours % 24}h ${minutes}m ${seconds}s`); setStatus(status, 'Duration calculated locally.', 'success');
     }
     if (action === 'clear') { $$('input', root).forEach((input) => { input.value = ''; }); ['duration-days', 'duration-hours', 'duration-exact'].forEach((id) => { $(`#${id}`, root).textContent = '—'; }); setStatus(status, 'Choose a start and end time.'); }
   });
