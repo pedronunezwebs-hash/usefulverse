@@ -24,17 +24,34 @@ Open `http://localhost:4173` after starting the server.
 ## Languages and localized URLs
 
 English remains the default at `/`. Spanish is published at `/es/`, French at
-`/fr/`, and Brazilian Portuguese at `/pt-br/`; each of the 33 tools has a
-matching URL under each language prefix. The build creates all four versions
-as static HTML (136 URLs total), adds reciprocal `hreflang` and canonical tags,
-and lists every version with language alternates in `sitemap.xml`. It does not
-call a translation service at build time or in the visitor's browser.
+`/fr/`, Brazilian Portuguese at `/pt-br/`, Japanese at `/ja/`, Korean at `/ko/`,
+Indonesian at `/id/` and Hindi at `/hi/`; each of the 33 tools has a matching URL
+under each language prefix. The build creates every version as static HTML, adds
+reciprocal `hreflang` and canonical tags, and lists every version with language
+alternates in `sitemap.xml`. It does not call a translation service at build time
+or in the visitor's browser.
+
+Japanese, Korean, Indonesian and Hindi are self-contained language packs in
+`src/locales/<key>/`: `core.mjs` (site meta, page strings, runtime templates,
+shared UI), `tools-a|b|c.mjs` (UI strings plus localized copy, SEO title and
+description, and FAQ per tool), `runtime.js` (browser hook appended to the locale
+bundle, e.g. number-to-words) and `GLOSSARY.md` (terminology, style and keyword
+research for that market). `src/locales/template-keys.mjs` lists the
+parameterized runtime strings every pack must provide. Packs are strict:
+`npm test` fails on missing or untranslated values, and `npm run check` fails if
+any visible text or `aria-label`/`placeholder`/`title` in a pack's pages is still
+an English UI string (unless the pack lists it in `meta.keepEnglish`).
 
 When adding a tool, add its translated title, description, keywords, intro and
-explanation for Spanish and French in `src/locales.mjs`, and Brazilian
-Portuguese in `src/locales/pt-br.mjs`. Add translations for any new labels and
-runtime messages there as well. `npm run check` verifies that every locale has
-a generated page and valid canonical/hreflang entries.
+explanation for Spanish and French in `src/locales.mjs`, for Brazilian
+Portuguese in `src/locales/pt-br.mjs`, and `copy`, `seo` and `faq` entries in the
+matching `tools-*.mjs` of every pack. Add translations for any new labels and
+runtime messages there as well. `npm run check` verifies that every locale has a
+generated page and valid canonical/hreflang entries.
+
+To build or check a subset of packs (for example while one is being edited), set
+`USEFULVERSE_PACKS=ja,ko`; `USEFULVERSE_DIST=<dir>` writes the build elsewhere so
+parallel checks do not share `dist/`.
 
 ## GitHub + Cloudflare Pages
 
