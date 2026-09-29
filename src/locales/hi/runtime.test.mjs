@@ -5,6 +5,7 @@ import test from 'node:test';
 import vm from 'node:vm';
 import { localeBundleSource } from '../bundle.mjs';
 import { numberToWordsHook, runTool } from '../test-harness.mjs';
+import { readFile } from 'node:fs/promises';
 
 process.env.TZ = 'Asia/Kolkata'; // IST, no DST: local-time outputs below are deterministic.
 const tick = () => new Promise((resolve) => setImmediate(resolve));
@@ -196,7 +197,7 @@ test('hi average, ratio, prime and unit converter: Indian number input and outpu
   assert.equal(ratio('#tool-status').textContent, 'समानुपात आपके ब्राउज़र में हल हो गया।');
   const simplified = await runTool('hi', 'ratio-proportion-calculator', 'solve-ratio', { '#ratio-a': '12', '#ratio-b': '18', '#ratio-c': '1,00,000' });
   assert.equal(simplified('#ratio-simplified').textContent, '2:3', 'FAQ: 12:18 = 2:3');
-  assert.equal(String(simplified('#ratio-result').textContent), '150000');
+  assert.equal(simplified('#ratio-result').textContent, '1,50,000', 'hi-IN grouping');
   const zero = await runTool('hi', 'ratio-proportion-calculator', 'solve-ratio', { '#ratio-a': '0', '#ratio-b': '3', '#ratio-c': '8' });
   assert.equal(zero('#tool-status').textContent, 'A, B और C में शून्य से बड़ी संख्याएं डालें।');
 
@@ -283,25 +284,26 @@ test('hi timestamp and time zone converters: IST defaults and hi-IN output', asy
   assert.match(zones('#timezone-to-result').textContent, /^गुरुवार, 15 जनवरी 2026 को 10:00:00 am /u, 'winter: IST is 10:30 ahead');
 });
 
-test('hi runtime hook: InScript digits in number fields, search with or without nukta', async () => {
-  await numberToWordsHook('hi'); // loads the hi pack for localeBundleSource
-  let onInput;
-  const card = { dataset: { search: 'यूनिट कन्वर्टर मीटर फ़ुट' } };
-  const document = { querySelectorAll: () => [card], addEventListener: (type, handler, capture) => { if (type === 'input' && capture) onInput = handler; } };
-  vm.runInNewContext(await localeBundleSource('hi'), { window: {}, document });
-  assert.ok(card.dataset.search.includes('फ़ुट') && card.dataset.search.includes('फुट'), 'फुट (no nukta) finds the card');
-  const field = (props) => ({ selectionEnd: null, setSelectionRange() {}, ...props });
-  const amount = field({ inputMode: 'numeric', value: '१,५०,०००' });
-  onInput({ target: amount });
-  assert.equal(amount.value, '1,50,000');
-  const list = field({ id: 'average-input', value: '१०\n२०.५' });
-  onInput({ target: list });
-  assert.equal(list.value, '10\n20.5');
-  const prose = field({ id: 'tool-input', value: 'कक्षा १० के नंबर' });
-  onInput({ target: prose });
-  assert.equal(prose.value, 'कक्षा १० के नंबर', 'text fields keep Devanagari digits');
-  const search = field({ id: 'tool-search', value: 'फ़ुट' });
-  onInput({ target: search });
-  assert.equal(search.value, 'फ़ुट', 'precomposed फ़ becomes फ + nukta, as stored');
-  assert.ok(card.dataset.search.includes(search.value));
+test('hi InScript digits in number fields and home search with or without nukta', async () => {
+  const amount = await runTool('hi', 'percentage-calculator', 'calculate-percentage', { '#percent-value': '१०', '#percent-base': '१,५०,०००' });
+  assert.equal(amount('#percent-result').textContent, '15,000');
+  const list = await runTool('hi', 'average-calculator', 'calculate-average', { '#average-input': '१०\n२०.५' });
+  assert.equal(list('#average-sum').textContent, '30.5');
+  const words = await runTool('hi', 'number-to-words-converter', 'number-to-words', { '#words-number': '१,००,०००' });
+  assert.equal(words('#words-output').value, 'एक लाख');
+
+  // Home search: the card text stores फ़ as फ + nukta; typing फुट, precomposed फ़ुट or फ़ुट must all find it.
+  const app = await readFile(new URL('../../app.js', import.meta.url), 'utf8');
+  const search = { value: '', listeners: [], addEventListener(type, handler) { this.listeners.push(handler); } };
+  const cards = [{ dataset: { search: 'यूनिट कन्वर्टर मीटर फ़ुट', category: 'Everyday' }, hidden: false }, { dataset: { search: 'पासवर्ड जनरेटर', category: 'Privacy' }, hidden: false }];
+  const elements = { '#tool-grid': { querySelectorAll: () => cards }, '#empty-state': { hidden: true }, '#tool-search': search };
+  const document = { documentElement: { lang: 'hi' }, querySelector: (selector) => elements[selector] ?? null, querySelectorAll: (selector) => (selector === '.tool-card' ? cards : []) };
+  const context = { document, window: {}, URL };
+  vm.runInNewContext(await localeBundleSource('hi'), context);
+  vm.runInNewContext(app, context);
+  for (const term of ['फुट', 'फ़ुट', '\u095eुट']) {
+    search.value = term;
+    search.listeners.forEach((handler) => handler());
+    assert.deepEqual(cards.map((card) => card.hidden), [false, true], term);
+  }
 });

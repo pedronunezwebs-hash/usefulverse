@@ -131,3 +131,8 @@ export const runtimeMessages = {
   "Choose a valid date and time.": "सही तारीख और समय चुनें।",
   "Number converted locally.": "संख्या आपके ब्राउज़र में ही बदल दी गई।",
 };
+
+// Page-specific wording where a shared key means something else on that tool (see src/template.mjs).
+export const toolUi = {
+  "percentage-calculator": {"Whole number": "कुल मान"},
+};

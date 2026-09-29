@@ -3,6 +3,9 @@ import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import { localeBundleSource } from '../bundle.mjs';
 import { runTool } from '../test-harness.mjs';
+import { tools } from '../../catalog.mjs';
+import { localizedTool } from '../../locales.mjs';
+import { renderToolPage } from '../../template.mjs';
 
 // Localized runtime output of src/app.js with the published ja bundle: metrics, statuses, answers and IME input.
 const tick = () => new Promise((resolve) => setTimeout(resolve, 0));
@@ -115,7 +118,7 @@ test('ja number inputs accept IME full-width digits, 読点 and comma grouping',
   assert.deepEqual(text(average, ['#average-result', '#average-sum', '#average-count', '#average-min', '#average-max']), ['30', '150', 5, '10', '50']);
 
   const ratio = await runTool('ja', 'ratio-proportion-calculator', 'solve-ratio', { '#ratio-a': '１２', '#ratio-b': '１８', '#ratio-c': '８' });
-  assert.deepEqual(text(ratio, ['#ratio-result', '#ratio-simplified', '#tool-status']), [12, '2:3', 'ブラウザ内でXを求めました。']);
+  assert.deepEqual(text(ratio, ['#ratio-result', '#ratio-simplified', '#tool-status']), ['12', '2:3', 'ブラウザ内でXを求めました。']);
 
   const unit = await runTool('ja', 'unit-converter', 'convert-unit', { '#unit-category': 'length', '#unit-from': 'meter', '#unit-to': 'kilometer', '#unit-input': '１，５００' });
   assert.equal(unit('#unit-output').textContent, '1.5 キロメートル（km）');
@@ -124,36 +127,23 @@ test('ja number inputs accept IME full-width digits, 読点 and comma grouping',
   assert.equal(roman('#roman-output').textContent, 'MMXXVI');
 });
 
-test('ja runtime.js relabels the percentage-change fields that share the From/Whole number keys', async () => {
-  const nodes = { 'label[for="percent-old"]': { firstChild: { textContent: '変換元 ' } }, 'label[for="percent-whole"] .sr-only': { firstChild: { textContent: '整数' } } };
-  vm.runInNewContext(await localeBundleSource('ja'), { window: {}, document: { querySelector: (selector) => nodes[selector] ?? null } });
-  assert.equal(nodes['label[for="percent-old"]'].firstChild.textContent, '変化前 ');
-  assert.equal(nodes['label[for="percent-whole"] .sr-only'].firstChild.textContent, '全体の数');
+test('ja percentage page has its own wording for the shared From/Whole number keys', async () => {
+  const percentage = renderToolPage(localizedTool(tools.find((tool) => tool.id === 'percentage-calculator'), 'ja'), '', 'ja');
+  assert.match(percentage, /<label for="percent-old">変化前 /u);
+  assert.match(percentage, /<span class="sr-only">全体の数<\/span>/u);
+  const timeZone = renderToolPage(localizedTool(tools.find((tool) => tool.id === 'time-zone-converter'), 'ja'), '', 'ja');
+  assert.ok(timeZone.includes('変換元') && !timeZone.includes('変化前'), 'other tools keep the shared wording');
 });
 
-test('ja runtime.js normalizes IME input that app.js reads without NFKC, and gives 〇日前 a keyboard with a minus key', async () => {
-  const listeners = {};
-  const inputs = { 'date-offset': { value: 'ー３０', inputMode: 'numeric' }, 'words-number': { value: '−１２，３４５' }, 'timestamp-unix': { value: '１７１０００００００' }, 'binary-input': { value: 'ｆｆ' }, 'roman-input': { value: 'Ⅻ' } };
-  const document = { querySelector: () => null, getElementById: (id) => inputs[id] ?? null, addEventListener: (type, handler, capture) => { listeners[type] = { handler, capture }; } };
-  vm.runInNewContext(await localeBundleSource('ja'), { window: {}, document });
-  assert.equal(listeners.click.capture, true, 'runs before the bubbling click handler of app.js');
-  listeners.click.handler({ target: { closest: () => null } });
-  assert.equal(inputs['date-offset'].value, 'ー３０', 'clicks outside tool buttons change nothing');
-  listeners.click.handler({ target: { closest: (selector) => (selector === '[data-action]' ? {} : null) } });
-  const values = Object.fromEntries(Object.entries(inputs).map(([id, input]) => [id, input.value]));
-  assert.deepEqual(values, { 'date-offset': '-30', 'words-number': '-12,345', 'timestamp-unix': '1710000000', 'binary-input': 'ff', 'roman-input': 'XII' });
-  listeners.DOMContentLoaded.handler();
-  assert.equal(inputs['date-offset'].inputMode, 'text');
-
-  // app.js accepts the normalized values.
-  const date = await runTool('ja', 'date-calculator', 'date-offset', { '#date-base': '2026-09-29', '#date-offset': values['date-offset'] });
+test('ja IME input: full-width digits and letters, ー/− as minus, Ⅻ', async () => {
+  const date = await runTool('ja', 'date-calculator', 'date-offset', { '#date-base': '2026-09-29', '#date-offset': 'ー３０' });
   assert.equal(date('#date-offset-result').textContent, '2026年8月30日日曜日');
-  const words = await runTool('ja', 'number-to-words-converter', 'number-to-words', { '#words-number': values['words-number'] });
+  const words = await runTool('ja', 'number-to-words-converter', 'number-to-words', { '#words-number': '−１２，３４５' });
   assert.equal(words('#words-output').value.split('\n')[0], 'マイナス一万二千三百四十五');
-  const timestamp = await runTool('ja', 'timestamp-converter', 'from-timestamp', { '#timestamp-unix': values['timestamp-unix'] });
+  const timestamp = await runTool('ja', 'timestamp-converter', 'from-timestamp', { '#timestamp-unix': '１７１０００００００' });
   assert.equal(timestamp('#timestamp-utc').textContent, '2024-03-09T16:00:00.000Z');
-  const binary = await runTool('ja', 'binary-converter', 'convert-binary', { '#binary-input': values['binary-input'], '#binary-from': '16', '#binary-to': '10' });
+  const binary = await runTool('ja', 'binary-converter', 'convert-binary', { '#binary-input': 'ｆｆ', '#binary-from': '16', '#binary-to': '10' });
   assert.equal(binary('#binary-output').textContent, '255');
-  const roman = await runTool('ja', 'roman-numeral-converter', 'roman-to-number', { '#roman-input': values['roman-input'] });
+  const roman = await runTool('ja', 'roman-numeral-converter', 'roman-to-number', { '#roman-input': 'Ⅻ' });
   assert.equal(roman('#number-output').textContent, 12);
 });

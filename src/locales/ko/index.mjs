@@ -13,4 +13,5 @@ export const pack = {
   copy: { ...a.copy, ...b.copy, ...c.copy },
   seo: { ...a.seo, ...b.seo, ...c.seo },
   faq: { ...a.faq, ...b.faq, ...c.faq },
+  toolUi: core.toolUi,
 };

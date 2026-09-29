@@ -65,4 +65,6 @@ const copy = {
 
 Object.assign(ui, { 'Color preview': 'Farbvorschau', 'JSON result...': 'JSON-Ergebnis …', 'CSV result...': 'CSV-Ergebnis …', 'Your UUIDs will appear here...': 'Ihre UUIDs erscheinen hier …', 'Text to hash...': 'Text zum Hashen …', 'Your hash will appear here...': 'Ihr Hash erscheint hier …', 'Paste sample text here...': 'Beispieltext hier einfügen …', Seoul: 'Seoul', Jakarta: 'Jakarta', 'India (Kolkata)': 'Indien (Kolkata)' });
 
+runtimeMessages['Base64 to decode...'] = ui['Base64 to decode...'];
+
 export const deDE = { ui, runtimeMessages, copy };

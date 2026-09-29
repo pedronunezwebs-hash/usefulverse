@@ -23,20 +23,3 @@
     return `${value < 0n ? 'ऋण ' : ''}${parts.join(' ')}`;
   };
 })();
-// Input fixes that shared app.js lacks (reported as infra): Hindi InScript keyboards type ०-९, which
-// Number() rejects, so numeric fields get Latin digits; home search matches with or without the nukta
-// (फुट finds फ़ुट) and with precomposed फ़/ज़ (NFC splits them like the pack stores them).
-if (typeof document !== 'undefined' && typeof document.addEventListener === 'function') {
-  for (const card of document.querySelectorAll('[data-search]')) card.dataset.search += ` ${card.dataset.search.replace(/़/gu, '')}`;
-  document.addEventListener('input', (event) => {
-    const field = event.target;
-    if (event.isComposing || typeof field?.value !== 'string') return;
-    const numeric = field.inputMode === 'decimal' || field.inputMode === 'numeric' || field.id === 'average-input';
-    const fixed = field.id === 'tool-search' ? field.value.normalize('NFC')
-      : numeric ? field.value.replace(/[०-९]/gu, (digit) => digit.charCodeAt(0) - 0x966) : field.value;
-    if (fixed === field.value) return;
-    const caret = fixed.length - (field.value.length - (field.selectionEnd ?? field.value.length));
-    field.value = fixed;
-    field.setSelectionRange?.(caret, caret);
-  }, true);
-}

@@ -126,3 +126,8 @@ export const runtimeMessages = {
   "Choose a valid date and time.": "正しい日時を選択してください。",
   "Number converted locally.": "ブラウザ内で変換しました。",
 };
+
+// Page-specific wording where a shared key means something else on that tool (see src/template.mjs).
+export const toolUi = {
+  "percentage-calculator": {"From": "変化前", "Whole number": "全体の数"},
+};

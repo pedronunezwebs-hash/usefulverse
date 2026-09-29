@@ -125,3 +125,8 @@ export const runtimeMessages = {
   "Choose a valid date and time.": "Pilih tanggal dan waktu yang valid.",
   "Number converted locally.": "Angka berhasil dikonversi di browser Anda.",
 };
+
+// Page-specific wording where a shared key means something else on that tool (see src/template.mjs).
+export const toolUi = {
+  "percentage-calculator": {"Whole number": "Nilai total"},
+};

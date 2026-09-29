@@ -27,9 +27,10 @@ if (usesCommaDecimal || localeConfig.textNumberInputs) {
 const currentLanguageLink = $('.language-switch [aria-current="page"]');
 if (currentLanguageLink) currentLanguageLink.parentElement.scrollLeft = currentLanguageLink.offsetLeft - (currentLanguageLink.parentElement.clientWidth - currentLanguageLink.offsetWidth) / 2;
 
-// Full-width IME digits/letters become ASCII (NFKC); a leading Unicode minus, dash or katakana ー becomes '-'.
+// Full-width IME digits/letters become ASCII (NFKC), Devanagari digits (InScript keyboards) become 0-9,
+// and a leading Unicode minus, dash or katakana ー becomes '-'.
 function normalizeInput(value) {
-  return String(value).normalize('NFKC').trim().replace(/^[\u2010-\u2015\u2212\u30fc\ufe63]\s*(?=[\dA-Za-z])/u, '-');
+  return String(value).normalize('NFKC').replace(/[०-९]/gu, (digit) => String(digit.codePointAt(0) - 0x966)).trim().replace(/^[\u2010-\u2015\u2212\u30fc\ufe63]\s*(?=[\dA-Za-z])/u, '-');
 }
 
 function setStatus(element, message, type = '') {
@@ -236,6 +237,11 @@ function parseInputNumber(value) {
 // Plain number (no grouping) with the locale's decimal separator, for values users copy or edit.
 function localDecimal(value) {
   return usesCommaDecimal ? String(value).replace('.', ',') : String(value);
+}
+
+// Search matches with or without Latin accents and the Devanagari nukta, and full-width/precomposed forms.
+function searchKey(text) {
+  return text.normalize('NFKD').replace(/[\u0300-\u036f\u093c]/gu, '').normalize('NFC').toLocaleLowerCase();
 }
 
 function formatNumber(value) {
@@ -741,7 +747,7 @@ function setupAverage(root) {
     const action = event.target.closest('[data-action]')?.dataset.action;
     if (action === 'calculate-average') {
       const separator = usesCommaDecimal ? /[;\s、]+/u : /[,\s、]+/u;
-      const values = input.value.normalize('NFKC').trim().split(separator).filter(Boolean).map(parseInputNumber);
+      const values = normalizeInput(input.value).split(separator).filter(Boolean).map(parseInputNumber);
       if (!values.length || values.some((value) => !Number.isFinite(value))) { setStatus(status, 'Enter valid numbers separated by spaces, commas or lines.', 'error'); return; }
       const sum = values.reduce((total, value) => total + value, 0);
       $('#average-result', root).textContent = formatNumber(sum / values.length); $('#average-sum', root).textContent = formatNumber(sum); $('#average-count', root).textContent = values.length; $('#average-min', root).textContent = formatNumber(Math.min(...values)); $('#average-max', root).textContent = formatNumber(Math.max(...values)); setStatus(status, 'Average calculated locally.', 'success');
@@ -1223,11 +1229,11 @@ function setupHome() {
   const allCategory = $('[data-category-filter]')?.dataset.categoryFilter || 'All';
   let category = allCategory;
   const render = () => {
-    const term = search.value.trim().toLocaleLowerCase();
+    const term = searchKey(search.value.trim());
     let visible = 0;
     cards.forEach((card) => {
       const matchesCategory = category === allCategory || card.dataset.category === category;
-      const matchesSearch = !term || card.dataset.search.toLocaleLowerCase().includes(term);
+      const matchesSearch = !term || searchKey(card.dataset.search).includes(term);
       const show = matchesCategory && matchesSearch;
       card.hidden = !show;
       if (show) visible += 1;

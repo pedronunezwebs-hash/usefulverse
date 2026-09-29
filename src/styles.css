@@ -251,6 +251,13 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--blue); }
   .segment { flex: 1 1 50%; padding-inline: 8px; }
 }
 
+/* Grid cards and fields may shrink below the intrinsic width of native date/time controls (wider in CJK fonts). */
+.calculator-card, .converter-grid > * { min-width: 0; }
+.tool-input { min-width: 0; max-width: 100%; }
+/* Long compounds (German) hyphenate; any word that still cannot fit its line breaks instead of overflowing. */
+h1, h2, h3 { overflow-wrap: break-word; }
+html:lang(de) :is(h1, h2, h3) { hyphens: auto; }
+
 /* Japanese, Korean and Hindi: native font stacks, no tight Latin tracking, room for Devanagari marks. */
 html:lang(ja) body { font-family: Inter, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic UI", Meiryo, system-ui, sans-serif; line-break: strict; }
 html:lang(ko) body { font-family: Inter, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif; word-break: keep-all; }

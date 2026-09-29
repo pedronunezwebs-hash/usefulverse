@@ -25,32 +25,4 @@
   };
   window.usefulverseLocale.numberToWords = (value) => `${words(value, false)}\n大字：${words(value, true)}`;
 
-  // ponytail: the shared ui keys "From" (変換元, unit/time zone converters) and "Whole number" (整数, prime/kanji
-  // tools) also label the percentage-change and share fields, where they read wrong. Relabel those two here
-  // until src/template.mjs gives the percentage calculator its own keys; then delete this block.
-  const relabel = (selector, text) => {
-    const node = typeof document === 'undefined' ? null : document.querySelector(selector);
-    if (node?.firstChild) node.firstChild.textContent = text;
-  };
-  relabel('label[for="percent-old"]', '変化前 ');
-  relabel('label[for="percent-whole"] .sr-only', '全体の数');
-
-  // ponytail: src/app.js reads these fields without NFKC (or, for 漢数字, without the IME's ー/− as minus), so
-  // IME input such as ３０, ー30, ＦＦ or Ⅻ failed. Normalize them in the capture phase, before app.js's click
-  // handler on .tool-workspace. #date-offset gets a full keyboard: the iOS numeric pad has no minus key for 〇日前.
-  // Delete once app.js normalizes these inputs itself (GLOSSARY §7).
-  if (typeof document !== 'undefined' && document.addEventListener) {
-    const imeFields = ['date-offset', 'words-number', 'timestamp-unix', 'binary-input', 'roman-input'];
-    document.addEventListener('click', (event) => {
-      if (!event.target.closest?.('[data-action]')) return;
-      for (const id of imeFields) {
-        const input = document.getElementById(id);
-        if (input) input.value = input.value.normalize('NFKC').trim().replace(/^[ー−‐―–]/u, '-');
-      }
-    }, true);
-    document.addEventListener('DOMContentLoaded', () => {
-      const offset = document.getElementById('date-offset');
-      if (offset) offset.inputMode = 'text';
-    });
-  }
 })();

@@ -130,3 +130,8 @@ export const runtimeMessages = {
   // Shared by the binary converter and number-to-words (app.js), so it must fit both tools.
   "Number converted locally.": "브라우저에서 숫자를 변환했습니다.",
 };
+
+// Page-specific wording where a shared key means something else on that tool (see src/template.mjs).
+export const toolUi = {
+  "percentage-calculator": {"Whole number": "전체 값"},
+};

@@ -125,7 +125,7 @@ export const runtimeMessages = {
 
 export const copy = {
   "word-counter": [
-    "Penghitung Kata dan Karakter Online",
+    "Penghitung Kata dan Karakter",
     "Penghitung kata",
     "Hitung jumlah kata, karakter, baris, dan waktu baca dalam satu tampilan yang jelas.",
     "penghitung kata, hitung kata, hitung jumlah kata, hitung karakter, penghitung karakter, hitung huruf, word counter, character counter, waktu baca",
@@ -133,7 +133,7 @@ export const copy = {
     "Praktis untuk mengecek batas kata makalah, abstrak skripsi, atau esai beasiswa, misalnya maksimal 250 kata. Cocok juga untuk caption Instagram dan TikTok, bio, artikel SEO, dan surat lamaran kerja, tanpa perlu mengunggah teks.",
   ],
   "text-case-converter": [
-    "Ubah Huruf Besar dan Kecil Online",
+    "Ubah Huruf Besar dan Kecil",
     "Pengubah huruf besar kecil",
     "Ubah teks menjadi HURUF BESAR, huruf kecil, kapital awal kalimat, atau Kapital Tiap Kata.",
     "ubah huruf besar kecil, ubah huruf kapital, huruf besar ke kecil, huruf kecil ke besar, kapital tiap kata, huruf kapital setiap kata, konverter huruf, case converter, uppercase, lowercase, title case",
@@ -149,7 +149,7 @@ export const copy = {
     "Cocok untuk merapikan daftar peserta atau absen, nomor WhatsApp, kata kunci SEO, dan email. Anda juga bisa menyalin satu kolom dari Excel atau Google Sheets, menempelkannya di sini, lalu menyalin kembali daftar yang sudah unik.",
   ],
   "json-formatter": [
-    "JSON Formatter & Validator Online",
+    "JSON Formatter & Validator",
     "JSON formatter",
     "Rapikan, minify, dan validasi JSON langsung di perangkat Anda.",
     "json formatter, format json, rapikan json, json validator, validasi json, json beautifier, minify json, json online",
@@ -173,7 +173,7 @@ export const copy = {
     "Berguna saat menyusun link dengan parameter, misalnya kata pencarian yang berisi spasi atau tanda &, atau saat membaca link panjang yang penuh kode seperti %20. Encode juga mengubah karakter /, ?, &, dan =, jadi paling tepat dipakai untuk nilai parameter, bukan seluruh URL.",
   ],
   "text-to-slug": [
-    "Slug Generator – Ubah Judul Jadi URL",
+    "Slug Generator",
     "Slug generator",
     "Ubah judul menjadi slug URL huruf kecil yang rapi dan siap dipakai.",
     "slug generator, url slug generator, buat slug, slug url, slug seo, permalink, text to slug",
@@ -197,7 +197,7 @@ export const copy = {
     "Cocok untuk akun email, media sosial, marketplace, dan password Wi-Fi. Password dibuat di browser ini dengan Web Crypto API. Pakai password yang berbeda untuk setiap akun dan simpan di pengelola password.",
   ],
   "timestamp-converter": [
-    "Unix Timestamp Converter – Timestamp ke Tanggal",
+    "Unix Timestamp Converter",
     "Konverter timestamp",
     "Ubah Unix timestamp ke tanggal dan tanggal ke timestamp dalam detik atau milidetik.",
     "unix timestamp converter, konversi timestamp, timestamp ke tanggal, tanggal ke timestamp, epoch converter, unix time, epoch",
@@ -205,7 +205,7 @@ export const copy = {
     "Lihat waktu UTC dan waktu lokal Anda (misalnya WIB) sekaligus, lengkap dengan detik dan milidetik yang siap disalin ke kode. Praktis untuk membaca log server, data API, atau kolom created_at di database.",
   ],
   "html-entity-encoder-decoder": [
-    "HTML Entity Encode & Decode Online",
+    "HTML Entity Encode & Decode",
     "Konverter entity HTML",
     "Encode karakter khusus untuk HTML atau decode entity kembali menjadi teks yang bisa dibaca.",
     "html entity encode, html entity decode, html encode, html decode, escape html, karakter khusus html, html entities",
