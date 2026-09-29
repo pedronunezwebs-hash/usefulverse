@@ -1,13 +1,14 @@
-import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { tools, categories } from '../src/catalog.mjs';
 import { renderHome, renderToolPage } from '../src/template.mjs';
-import { localePath, locales, localizedTool, runtimeMessages, ui } from '../src/locales.mjs';
+import { localePath, locales, localizedTool, packs, ui } from '../src/locales.mjs';
+import { localeBundleSource } from '../src/locales/bundle.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
-const dist = join(root, 'dist');
+const dist = process.env.USEFULVERSE_DIST ? resolve(process.env.USEFULVERSE_DIST) : join(root, 'dist');
 await rm(dist, { recursive: true, force: true });
 await mkdir(join(dist, 'assets'), { recursive: true });
 await cp(join(root, 'src', 'styles.css'), join(dist, 'assets', 'styles.css'));
@@ -20,12 +21,13 @@ await cp(join(root, 'public', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html'), joi
 const indexNowKeyFile = '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt';
 await cp(join(root, 'public', indexNowKeyFile), join(dist, indexNowKeyFile));
 
-const assetVersion = createHash('sha256')
+const assetHash = createHash('sha256')
   .update(await readFile(join(dist, 'assets', 'styles.css')))
   .update(await readFile(join(dist, 'assets', 'app.js')))
-  .update(await readFile(join(root, 'src', 'locales.mjs')))
-  .update(await readFile(join(root, 'src', 'locales', 'pt-br.mjs')))
-  .update(await readFile(join(root, 'src', 'locales', 'de.mjs')))
+  .update(await readFile(join(root, 'src', 'locales.mjs')));
+const localeFiles = (await readdir(join(root, 'src', 'locales'), { recursive: true })).filter((file) => /\.m?js$/u.test(file) && !file.endsWith('.test.mjs')).sort();
+for (const file of localeFiles) assetHash.update(await readFile(join(root, 'src', 'locales', file)));
+const assetVersion = assetHash
   .digest('hex')
   .slice(0, 12);
 
@@ -40,8 +42,7 @@ for (const language of languages) {
   await writeFile(homeFile, renderHome(localizedTools, localizedCategories, assetVersion, language));
   pages.push({ language, path: homePath });
   if (language !== 'en') {
-    const localeBundle = `window.usefulverseLocale = ${JSON.stringify({ code: locales[language].code, messages: ui[language], runtime: runtimeMessages[language] })};\n`;
-    await writeFile(join(dist, 'assets', `locale-${language}.js`), localeBundle);
+    await writeFile(join(dist, 'assets', `locale-${language}.js`), await localeBundleSource(language));
   }
   for (const tool of localizedTools) {
     const toolPath = localePath(language, tool.id);
@@ -66,9 +67,9 @@ await writeFile(join(dist, 'llms.txt'), `# UsefulVerse\n\n> Fast, private browse
 for (const language of languages.filter((key) => key !== 'en')) {
   const localizedTools = tools.map((tool) => localizedTool(tool, language));
   const homeUrl = `https://usefulverse.com${localePath(language)}`;
-  const homeLabel = { es: 'Inicio', fr: 'Accueil', pt: 'Página inicial', de: 'Startseite' }[language] ?? 'Home';
+  const homeLabel = packs[language]?.meta.homeLabel ?? { es: 'Inicio', fr: 'Accueil', pt: 'Página inicial', de: 'Startseite' }[language] ?? 'Home';
   const localLlms = `# UsefulVerse — ${locales[language].name}\n\n> ${locales[language].homeDescription}\n\n${localizedTools.map((tool) => `- [${tool.title}](https://usefulverse.com${localePath(language, tool.id)}): ${tool.description}`).join('\n')}\n\n- [${homeLabel}](${homeUrl})\n- [Sitemap](https://usefulverse.com/sitemap.xml)\n`;
   const localeDirectory = localePath(language).replace(/^\//u, '').replace(/\/$/u, '');
   await writeFile(join(dist, localeDirectory, 'llms.txt'), localLlms);
 }
-console.log(`Built ${pages.length} pages (${tools.length} tools × ${languages.length} languages + ${languages.length} home pages) in dist/`);
+console.log(`Built ${pages.length} pages (${tools.length} tools × ${languages.length} languages + ${languages.length} home pages) in ${dist}`);

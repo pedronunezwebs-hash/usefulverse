@@ -33,8 +33,9 @@ button { cursor: pointer; }
 .main-nav a:hover, .main-nav a:focus-visible, .footer-links a:hover { color: var(--ink); }
 .header-cta { display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-size: 14px; font-weight: 750; }
 .header-cta:hover, .header-cta:focus-visible { border-color: var(--ink); }
-.language-switch { display: inline-flex; align-items: center; gap: 3px; padding: 4px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
-.language-switch a { min-width: 34px; padding: 7px 8px; border-radius: 999px; color: var(--muted); font-size: 11px; font-weight: 800; text-align: center; }
+.language-switch { position: relative; display: inline-flex; align-items: center; gap: 3px; min-width: 0; padding: 4px; overflow-x: auto; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); scrollbar-width: none; overscroll-behavior-x: contain; }
+.language-switch::-webkit-scrollbar { display: none; }
+.language-switch a { flex: none; min-width: 34px; padding: 7px 8px; border-radius: 999px; color: var(--muted); font-size: 11px; font-weight: 800; text-align: center; }
 .language-switch a[aria-current="page"] { color: var(--ink); background: var(--lime); }
 .language-switch a:hover, .language-switch a:focus-visible { color: var(--ink); outline: 2px solid var(--blue); outline-offset: 1px; }
 
@@ -249,6 +250,25 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--blue); }
   .segmented { width: 100%; }
   .segment { flex: 1 1 50%; padding-inline: 8px; }
 }
+
+/* Grid cards and fields may shrink below the intrinsic width of native date/time controls (wider in CJK fonts). */
+.calculator-card, .converter-grid > * { min-width: 0; }
+.tool-input { min-width: 0; max-width: 100%; }
+/* Long compounds (German) hyphenate; any word that still cannot fit its line breaks instead of overflowing. */
+h1, h2, h3 { overflow-wrap: break-word; }
+html:lang(de) :is(h1, h2, h3) { hyphens: auto; }
+
+/* Japanese, Korean and Hindi: native font stacks, no tight Latin tracking, room for Devanagari marks. */
+html:lang(ja) body { font-family: Inter, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic UI", Meiryo, system-ui, sans-serif; line-break: strict; }
+html:lang(ko) body { font-family: Inter, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif; word-break: keep-all; }
+html:lang(hi) body { font-family: Inter, "Kohinoor Devanagari", "Noto Sans Devanagari", "Nirmala UI", Mangal, system-ui, sans-serif; }
+html:is(:lang(ja), :lang(ko), :lang(hi)) :is(h1, h2, h3) { letter-spacing: -.01em; overflow-wrap: anywhere; }
+html:is(:lang(ja), :lang(ko), :lang(hi)) .eyebrow { letter-spacing: .04em; }
+html:lang(ja) :is(h1, h2, h3) { word-break: auto-phrase; }
+html:is(:lang(ja), :lang(ko)) h1 { line-height: 1.12; }
+html:lang(hi) h1 { line-height: 1.3; }
+html:lang(hi) :is(h2, h3, .calculation-result) { line-height: 1.4; }
+html:is(:lang(ja), :lang(ko), :lang(hi)) :is(p, dd, summary) { overflow-wrap: anywhere; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
