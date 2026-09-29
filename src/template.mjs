@@ -284,7 +284,10 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
   const faq = seoData.faq ?? [];
   const homeHref = localePath(language);
   const alternates = localeEntries.map(({ key, code }) => `<link rel="alternate" hreflang="${code}" href="https://usefulverse.com${localePath(key, tool.id)}">`).join('\n    ');
-  const dynamicTranslations = pack ? {
+  // Page-specific wording for UI keys that mean something else on this tool (e.g. "Whole number" is an
+  // integer elsewhere but the total in the percentage calculator). Packs bring theirs in `toolUi`.
+  const toolUi = pack ? pack.toolUi?.[tool.id] : { 'percentage-calculator': { es: { 'Whole number': 'Total' }, fr: { 'Whole number': 'Total' }, pt: { 'Whole number': 'Valor total' }, de: { 'Whole number': 'Gesamtwert' } } }[tool.id]?.[language];
+  const dynamicTranslations = { ...toolUi, ...(pack ? {
     [`About ${tool.title}.`]: fill(pack.page.about, { title: tool.title }),
     [`${tool.title} made simple.`]: fill(pack.page.madeSimple, { title: tool.title }),
     [`${tool.category} tool`]: fill(pack.page.categoryTool, { category: tool.category }),
@@ -294,7 +297,7 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
     [`About ${tool.title}.`]: language === 'es' ? `Acerca de ${tool.title}.` : language === 'fr' ? `À propos de ${tool.title}.` : language === 'de' ? `Über ${tool.title}.` : `Sobre ${tool.title}.`,
     [`${tool.title} made simple.`]: language === 'es' ? `${tool.title} sin complicaciones.` : language === 'fr' ? `${tool.title} en toute simplicité.` : language === 'de' ? `${tool.title} – einfach erklärt.` : `${tool.title} sem complicação.`,
     [`${tool.category} tool`]: `${tool.category} · ${ui[language]?.tool ?? 'tool'}`,
-  };
+  }) };
   const breadcrumbs = `<script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
