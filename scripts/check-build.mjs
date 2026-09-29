@@ -27,7 +27,9 @@ for (const language of languages) {
   const homePath = join(dist, localePath(language).replace(/^\//u, ''), 'index.html');
   pages.push({ path: homePath, language, tool: null });
   const home = await readFile(homePath, 'utf8');
-  if (!home.includes(`<html lang="${locales[language].code}">`) || !home.includes('id="tool-grid"')) throw new Error(`Incomplete ${language} home page`);
+  const direction = packs[language]?.meta.direction ?? 'ltr';
+  if (!home.includes(`<html lang="${locales[language].code}" dir="${direction}">`) || !home.includes('id="tool-grid"')) throw new Error(`Incomplete ${language} home page or wrong text direction`);
+  if (!home.includes(`aria-label="${locales[language].code.toUpperCase()} — ${locales[language].name}"`)) throw new Error(`Language selector accessible name does not include the visible code for ${language}`);
   if (!home.includes(`rel="canonical" href="https://usefulverse.com${localePath(language)}"`)) throw new Error(`Missing canonical on ${language} home`);
   for (const alternate of languages) if (!home.includes(`hreflang="${locales[alternate].code}" href="https://usefulverse.com${localePath(alternate)}"`)) throw new Error(`Missing ${alternate} alternate on ${language} home`);
   const localizedHomeMarker = packs[language]?.meta.homeMarker ?? { es: 'Herramientas', fr: 'Outils', pt: 'Ferramentas', de: 'Tool-Sammlung' }[language];
@@ -38,7 +40,8 @@ for (const language of languages) {
     await access(path);
     const html = await readFile(path, 'utf8');
     const canonical = `https://usefulverse.com${localePath(language, tool.id)}`;
-    if (!html.includes(`<html lang="${locales[language].code}">`)) throw new Error(`Wrong html lang for ${language}/${tool.id}`);
+    if (!html.includes(`<html lang="${locales[language].code}" dir="${direction}">`)) throw new Error(`Wrong html lang or text direction for ${language}/${tool.id}`);
+    if (!html.includes(`aria-label="${locales[language].code.toUpperCase()} — ${locales[language].name}"`)) throw new Error(`Language selector accessible name does not include the visible code for ${language}/${tool.id}`);
     if (!html.includes(`rel="canonical" href="${canonical}"`)) throw new Error(`Missing canonical for ${language}/${tool.id}`);
     for (const alternate of languages) if (!html.includes(`hreflang="${locales[alternate].code}" href="https://usefulverse.com${localePath(alternate, tool.id)}"`)) throw new Error(`Missing ${alternate} alternate for ${language}/${tool.id}`);
     if (!html.includes(`data-tool="${tool.id}"`)) throw new Error(`Missing tool runtime for ${language}/${tool.id}`);
@@ -93,7 +96,7 @@ const visibleStrings = (html) => html.split(/(<script\b[\s\S]*?<\/script>|<style
 const englishStrings = new Set();
 for (const { path, language } of pages) if (language === 'en') for (const value of visibleStrings(await readFile(path, 'utf8'))) englishStrings.add(value);
 const universalStrings = new Set(['usefulverse', 'UsefulVerse', 'useful', 'verse', 'JSON Web Token', 'Base64', 'JSON', 'CSV', 'UUID', 'SHA-256', 'UTC', 'HEX', 'RGB', 'HSL', '256 px', '384 px', '512 px',
-  ...Object.values(locales).flatMap(({ name, code }) => [name, code.toUpperCase()])]);
+  ...Object.values(locales).flatMap(({ name, code }) => [name, code.toUpperCase(), `${code.toUpperCase()} — ${name}`])]);
 const isUniversal = (value) => universalStrings.has(value) || [...value.replace(/\s/gu, '')].length <= 3 || !/\p{Ll}{2}/u.test(value) || /^[^\p{L}]*(?:https?:|\\b|\{"|name,age)/u.test(value);
 for (const [language, pack] of Object.entries(packs)) {
   const keepEnglish = new Set(pack.meta.keepEnglish ?? []);

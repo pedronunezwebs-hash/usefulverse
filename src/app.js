@@ -30,7 +30,13 @@ if (currentLanguageLink) currentLanguageLink.parentElement.scrollLeft = currentL
 // Full-width IME digits/letters become ASCII (NFKC), Devanagari digits (InScript keyboards) become 0-9,
 // and a leading Unicode minus, dash or katakana ー becomes '-'.
 function normalizeInput(value) {
-  return String(value).normalize('NFKC').replace(/[०-९]/gu, (digit) => String(digit.codePointAt(0) - 0x966)).trim().replace(/^[\u2010-\u2015\u2212\u30fc\ufe63]\s*(?=[\dA-Za-z])/u, '-');
+  return String(value).normalize('NFKC')
+    .replace(/[०-९]/gu, (digit) => String(digit.codePointAt(0) - 0x966))
+    .replace(/[٠-٩]/gu, (digit) => String(digit.codePointAt(0) - 0x660))
+    .replace(/[۰-۹]/gu, (digit) => String(digit.codePointAt(0) - 0x6f0))
+    .replace(/\u066b/gu, '.')
+    .replace(/\u066c/gu, '')
+    .trim().replace(/^[\u2010-\u2015\u2212\u30fc\ufe63]\s*(?=[\dA-Za-z])/u, '-');
 }
 
 function setStatus(element, message, type = '') {
@@ -245,7 +251,7 @@ function searchKey(text) {
 }
 
 function formatNumber(value) {
-  return new Intl.NumberFormat(languageTag, { maximumFractionDigits: 6 }).format(value);
+  return new Intl.NumberFormat(languageTag, { maximumFractionDigits: 6, ...(localeConfig.numberingSystem ? { numberingSystem: localeConfig.numberingSystem } : {}) }).format(value);
 }
 
 function setupPercentage(root) {

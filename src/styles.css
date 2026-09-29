@@ -29,7 +29,7 @@ button { cursor: pointer; }
 .site-header__inner { min-height: 76px; display: flex; align-items: center; gap: 36px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 800; letter-spacing: -.04em; }
 .brand-mark { color: var(--blue); font-size: 14px; transform: rotate(45deg); display: inline-block; }
-.main-nav { display: flex; gap: 28px; margin-left: auto; color: var(--muted); font-size: 14px; font-weight: 650; }
+.main-nav { display: flex; gap: 28px; margin-inline-start: auto; color: var(--muted); font-size: 14px; font-weight: 650; }
 .main-nav a:hover, .main-nav a:focus-visible, .footer-links a:hover { color: var(--ink); }
 .header-cta { display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-size: 14px; font-weight: 750; }
 .header-cta:hover, .header-cta:focus-visible { border-color: var(--ink); }
@@ -60,15 +60,15 @@ h1 span { color: var(--blue); }
 .intro-card__orb { position: relative; width: 178px; height: 178px; display: flex; flex-direction: column; justify-content: center; border: 1px solid rgb(216 248 120 / 48%); border-radius: 50%; color: var(--lime); text-align: center; transform: rotate(-8deg); }
 .intro-card__orb span { font-size: 30px; font-weight: 850; letter-spacing: -.06em; }
 .intro-card__orb strong { margin-top: -4px; color: #fff; font-size: 29px; font-weight: 500; letter-spacing: -.06em; }
-.intro-card__notes { position: absolute; right: 26px; bottom: 24px; left: 26px; display: flex; justify-content: space-between; color: rgb(255 255 255 / 65%); font-size: 11px; font-weight: 720; text-transform: uppercase; letter-spacing: .08em; }
+.intro-card__notes { position: absolute; inset-inline: 26px; bottom: 24px; display: flex; justify-content: space-between; color: rgb(255 255 255 / 65%); font-size: 11px; font-weight: 720; text-transform: uppercase; letter-spacing: .08em; }
 
 .tools-section { padding: 92px 0 112px; background: var(--surface); }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 30px; }
 .section-heading h2, .how-section h2 { margin-bottom: 0; font-size: clamp(34px, 5vw, 58px); line-height: 1; letter-spacing: -.065em; }
 .search-wrap { position: relative; width: min(300px, 100%); }
-.search-input { width: 100%; min-height: 48px; padding: 0 40px 0 16px; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); background: var(--paper); outline: 0; }
+.search-input { width: 100%; min-height: 48px; padding: 0 16px 0 40px; padding-inline: 16px 40px; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); background: var(--paper); outline: 0; }
 .search-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgb(77 107 255 / 14%); }
-.search-wrap > span { position: absolute; top: 12px; right: 16px; color: var(--muted); font-size: 20px; }
+.search-wrap > span { position: absolute; top: 12px; inset-inline-end: 16px; color: var(--muted); font-size: 20px; }
 .category-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
 .category-chip { padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: var(--surface); font-size: 13px; font-weight: 720; }
 .category-chip:hover, .category-chip:focus-visible { color: var(--ink); border-color: var(--ink); }
@@ -103,7 +103,7 @@ h1 span { color: var(--blue); }
 .site-footer__inner { display: flex; align-items: center; gap: 28px; }
 .brand--footer { color: var(--ink); font-size: 16px; }
 .site-footer p { margin: 0; font-size: 13px; }
-.footer-links { display: flex; gap: 18px; margin-left: auto; font-size: 13px; font-weight: 700; }
+.footer-links { display: flex; gap: 18px; margin-inline-start: auto; font-size: 13px; font-weight: 700; }
 
 .tool-page { padding: 48px 0 100px; }
 .breadcrumbs { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 58px; color: var(--muted); font-size: 13px; }
@@ -149,8 +149,8 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--blue); }
 .calculation-result { display: block; min-height: 31px; margin-top: 20px; color: var(--blue-dark); font-size: 22px; font-weight: 850; letter-spacing: -.04em; }
 .password-generator { display: grid; grid-template-columns: 1.25fr .75fr; gap: 28px; align-items: end; }
 .password-output { position: relative; }
-.password-output .tool-input { padding-right: 92px; font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
-.password-strength { position: absolute; right: 14px; bottom: 16px; color: #267642; font-size: 12px; font-weight: 800; }
+.password-output .tool-input { padding-inline-end: 92px; font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+.password-strength { position: absolute; inset-inline-end: 14px; bottom: 16px; color: #267642; font-size: 12px; font-weight: 800; }
 .password-controls input[type="range"] { width: 100%; accent-color: var(--blue); }
 .conversion-results { margin-top: 22px; }
 .conversion-results p { display: grid; grid-template-columns: 130px 1fr; gap: 14px; margin: 10px 0; padding-top: 10px; border-top: 1px solid var(--line); }
@@ -208,7 +208,7 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--blue); }
   .page-container { width: min(100% - 28px, 680px); }
   .site-header__inner { gap: 18px; }
   .main-nav { display: none; }
-  .header-cta { margin-left: auto; }
+  .header-cta { margin-inline-start: auto; }
   .home-intro { padding: 64px 0 50px; }
   .home-intro__grid, .how-grid, .tool-explainer, .tool-faq { grid-template-columns: 1fr; gap: 42px; }
   .intro-card { min-height: 300px; }
@@ -224,7 +224,7 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--blue); }
   .color-input-row { grid-template-columns: 1fr; }
   .random-number-form .option-row { grid-column: auto; }
   .site-footer__inner { align-items: start; flex-wrap: wrap; }
-  .footer-links { width: 100%; margin-left: 0; }
+  .footer-links { width: 100%; margin-inline-start: 0; }
 }
 
 @media (max-width: 520px) {
@@ -232,12 +232,12 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--blue); }
   .site-header__inner { min-height: 66px; }
   .brand { font-size: 18px; }
   .header-cta { display: none; }
-  .language-switch { margin-left: auto; }
+  .language-switch { margin-inline-start: auto; }
   h1 { font-size: clamp(46px, 15vw, 70px); }
   .home-lead { font-size: 17px; }
   .home-intro { padding-top: 50px; }
   .intro-card { min-height: 250px; border-radius: 23px; }
-  .intro-card__notes { right: 16px; bottom: 16px; left: 16px; font-size: 9px; }
+  .intro-card__notes { inset-inline: 16px; bottom: 16px; font-size: 9px; }
   .tools-section, .how-section { padding: 70px 0; }
   .tool-card { flex-basis: 100%; max-width: none; }
   .tool-page { padding-top: 28px; }
@@ -269,6 +269,24 @@ html:is(:lang(ja), :lang(ko)) h1 { line-height: 1.12; }
 html:lang(hi) h1 { line-height: 1.3; }
 html:lang(hi) :is(h2, h3, .calculation-result) { line-height: 1.4; }
 html:is(:lang(ja), :lang(ko), :lang(hi)) :is(p, dd, summary) { overflow-wrap: anywhere; }
+html:lang(ar) body { font-family: Inter, "Noto Sans Arabic", "Geeza Pro", "Tahoma", system-ui, sans-serif; }
+html:lang(ar) :is(h1, h2, h3) { letter-spacing: 0; line-height: 1.35; }
+html:lang(ar) .eyebrow { letter-spacing: 0; }
+html:lang(zh) body { font-family: Inter, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; }
+html:lang(zh) :is(h1, h2, h3) { letter-spacing: 0; line-height: 1.25; overflow-wrap: anywhere; }
+
+/* In RTL pages, code, dates and numeric input/output keep an unambiguous LTR order. */
+html[dir="rtl"] .tool-textarea--code,
+html[dir="rtl"] input[type="number"],
+html[dir="rtl"] input[inputmode="numeric"],
+html[dir="rtl"] input[inputmode="decimal"],
+html[dir="rtl"] input[type="date"],
+html[dir="rtl"] input[type="datetime-local"],
+html[dir="rtl"] #regex-pattern,
+html[dir="rtl"] #regex-flags,
+html[dir="rtl"] #color-value,
+html[dir="rtl"] .calculation-result,
+html[dir="rtl"] .conversion-results output { direction: ltr; text-align: left; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
