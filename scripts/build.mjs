@@ -67,7 +67,7 @@ await writeFile(join(dist, 'llms.txt'), `# UsefulVerse\n\n> Fast, private browse
 for (const language of languages.filter((key) => key !== 'en')) {
   const localizedTools = tools.map((tool) => localizedTool(tool, language));
   const homeUrl = `https://usefulverse.com${localePath(language)}`;
-  const homeLabel = packs[language]?.meta.homeLabel ?? { es: 'Inicio', fr: 'Accueil', pt: 'Página inicial' }[language] ?? 'Home';
+  const homeLabel = packs[language]?.meta.homeLabel ?? { es: 'Inicio', fr: 'Accueil', pt: 'Página inicial', de: 'Startseite' }[language] ?? 'Home';
   const localLlms = `# UsefulVerse — ${locales[language].name}\n\n> ${locales[language].homeDescription}\n\n${localizedTools.map((tool) => `- [${tool.title}](https://usefulverse.com${localePath(language, tool.id)}): ${tool.description}`).join('\n')}\n\n- [${homeLabel}](${homeUrl})\n- [Sitemap](https://usefulverse.com/sitemap.xml)\n`;
   const localeDirectory = localePath(language).replace(/^\//u, '').replace(/\/$/u, '');
   await writeFile(join(dist, localeDirectory, 'llms.txt'), localLlms);

@@ -1,10 +1,12 @@
 import { ptBR } from './locales/pt-br.mjs';
+import { deDE } from './locales/de.mjs';
 
 export const locales = {
   en: { code: 'en', name: 'English', prefix: '', homeTitle: 'UsefulVerse — Simple tools for everyday tasks', homeDescription: 'Fast, private browser tools for text, files, data, SEO and everyday tasks. No account and no upload required.' },
   es: { code: 'es', name: 'Español', prefix: '/es', homeTitle: 'UsefulVerse — Herramientas sencillas para cada día', homeDescription: 'Herramientas rápidas y privadas para texto, datos, SEO y tareas cotidianas. Sin cuenta ni archivos subidos.' },
   fr: { code: 'fr', name: 'Français', prefix: '/fr', homeTitle: 'UsefulVerse — Des outils simples au quotidien', homeDescription: 'Des outils rapides et privés pour le texte, les données, le SEO et les tâches du quotidien. Sans compte ni envoi de fichiers.' },
   pt: { code: 'pt-BR', name: 'Português (Brasil)', prefix: '/pt-br', homeTitle: 'UsefulVerse — Ferramentas online simples e gratuitas', homeDescription: 'Ferramentas online rápidas e privadas para texto, dados, SEO e tarefas do dia a dia. Sem conta e sem enviar arquivos.' },
+  de: { code: 'de', name: 'Deutsch', prefix: '/de', homeTitle: 'UsefulVerse — Einfache Online-Tools für den Alltag', homeDescription: 'Schnelle, private Browser-Tools für Text, Daten, SEO und alltägliche Aufgaben. Ohne Konto und ohne Datei-Upload.' },
 };
 
 export function localePath(language, toolId = '') {
@@ -117,6 +119,9 @@ const copy = {
 };
 
 copy.pt = ptBR.copy;
+ui.de = deDE.ui;
+runtimeMessages.de = deDE.runtimeMessages;
+copy.de = deDE.copy;
 
 // Self-contained language packs live in src/locales/<key>/index.mjs. USEFULVERSE_PACKS=ja,ko limits the
 // build to some packs so one language can be checked while another is still being edited.
@@ -137,6 +142,7 @@ export const runtimeTemplates = {
   es: { 'diff.found': { one: '{count} línea distinta encontrada.', other: '{count} líneas distintas encontradas.' }, 'diff.line': 'Línea {line}:', 'diff.empty': '(vacía)', 'url.none': '(ninguno)', 'timestamp.local': 'Hora local: {value}', 'timestamp.seconds': 'Segundos: {value}', 'timestamp.milliseconds': 'Milisegundos: {value}' },
   fr: { 'diff.found': { one: '{count} ligne différente trouvée.', other: '{count} lignes différentes trouvées.' }, 'diff.line': 'Ligne {line} :', 'diff.empty': '(vide)', 'url.none': '(aucun)', 'timestamp.local': 'Heure locale : {value}', 'timestamp.seconds': 'Secondes : {value}', 'timestamp.milliseconds': 'Millisecondes : {value}' },
   pt: { 'diff.found': { one: '{count} linha diferente encontrada.', other: '{count} linhas diferentes encontradas.' }, 'diff.line': 'Linha {line}:', 'diff.empty': '(vazia)', 'url.none': '(nenhum)', 'timestamp.local': 'Horário local: {value}', 'timestamp.seconds': 'Segundos: {value}', 'timestamp.milliseconds': 'Milissegundos: {value}' },
+  de: { 'diff.found': { one: '{count} abweichende Zeile gefunden.', other: '{count} abweichende Zeilen gefunden.' }, 'diff.line': 'Zeile {line}:', 'diff.empty': '(leer)', 'url.none': '(keine)', 'timestamp.local': 'Ortszeit: {value}', 'timestamp.seconds': 'Sekunden: {value}', 'timestamp.milliseconds': 'Millisekunden: {value}' },
 };
 for (const [key, pack] of Object.entries(packs)) runtimeTemplates[key] = pack.templates;
 

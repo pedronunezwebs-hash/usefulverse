@@ -25,7 +25,7 @@ for (const language of languages) {
   if (!home.includes(`<html lang="${locales[language].code}">`) || !home.includes('id="tool-grid"')) throw new Error(`Incomplete ${language} home page`);
   if (!home.includes(`rel="canonical" href="https://usefulverse.com${localePath(language)}"`)) throw new Error(`Missing canonical on ${language} home`);
   for (const alternate of languages) if (!home.includes(`hreflang="${locales[alternate].code}" href="https://usefulverse.com${localePath(alternate)}"`)) throw new Error(`Missing ${alternate} alternate on ${language} home`);
-  const localizedHomeMarker = packs[language]?.meta.homeMarker ?? { es: 'Herramientas', fr: 'Outils', pt: 'Ferramentas' }[language];
+  const localizedHomeMarker = packs[language]?.meta.homeMarker ?? { es: 'Herramientas', fr: 'Outils', pt: 'Ferramentas', de: 'Tool-Sammlung' }[language];
   if (localizedHomeMarker && !home.includes(localizedHomeMarker)) throw new Error(`Home copy is not localized for ${language}`);
   for (const tool of tools.map((item) => localizedTool(item, language))) {
     const path = join(dist, localePath(language, tool.id).replace(/^\//u, ''), 'index.html');
@@ -37,7 +37,7 @@ for (const language of languages) {
     if (!html.includes(`rel="canonical" href="${canonical}"`)) throw new Error(`Missing canonical for ${language}/${tool.id}`);
     for (const alternate of languages) if (!html.includes(`hreflang="${locales[alternate].code}" href="https://usefulverse.com${localePath(alternate, tool.id)}"`)) throw new Error(`Missing ${alternate} alternate for ${language}/${tool.id}`);
     if (!html.includes(`data-tool="${tool.id}"`)) throw new Error(`Missing tool runtime for ${language}/${tool.id}`);
-    const relatedHeading = packs[language]?.ui['More useful tools'] ?? { en: 'More useful tools', es: 'Más herramientas útiles', fr: 'Plus d’outils utiles', pt: 'Mais ferramentas úteis' }[language];
+    const relatedHeading = packs[language]?.ui['More useful tools'] ?? { en: 'More useful tools', es: 'Más herramientas útiles', fr: 'Plus d’outils utiles', pt: 'Mais ferramentas úteis', de: 'Weitere nützliche Tools' }[language];
     if (!html.includes(relatedHeading)) throw new Error(`Missing localized related-tools heading for ${language}/${tool.id}`);
     if (!html.includes('"@type":"WebApplication"') || !html.includes('property="og:title"')) throw new Error(`Missing SEO schema or social metadata for ${language}/${tool.id}`);
     if (!html.includes('"@type":"FAQPage"') || !html.includes('class="tool-faq"')) throw new Error(`Missing FAQ content for ${language}/${tool.id}`);
