@@ -1,10 +1,12 @@
 import { ptBR } from './locales/pt-br.mjs';
+import { deDE } from './locales/de.mjs';
 
 export const locales = {
   en: { code: 'en', name: 'English', prefix: '', homeTitle: 'UsefulVerse — Simple tools for everyday tasks', homeDescription: 'Fast, private browser tools for text, files, data, SEO and everyday tasks. No account and no upload required.' },
   es: { code: 'es', name: 'Español', prefix: '/es', homeTitle: 'UsefulVerse — Herramientas sencillas para cada día', homeDescription: 'Herramientas rápidas y privadas para texto, datos, SEO y tareas cotidianas. Sin cuenta ni archivos subidos.' },
   fr: { code: 'fr', name: 'Français', prefix: '/fr', homeTitle: 'UsefulVerse — Des outils simples au quotidien', homeDescription: 'Des outils rapides et privés pour le texte, les données, le SEO et les tâches du quotidien. Sans compte ni envoi de fichiers.' },
   pt: { code: 'pt-BR', name: 'Português (Brasil)', prefix: '/pt-br', homeTitle: 'UsefulVerse — Ferramentas online simples e gratuitas', homeDescription: 'Ferramentas online rápidas e privadas para texto, dados, SEO e tarefas do dia a dia. Sem conta e sem enviar arquivos.' },
+  de: { code: 'de', name: 'Deutsch', prefix: '/de', homeTitle: 'UsefulVerse — Einfache Online-Tools für den Alltag', homeDescription: 'Schnelle, private Browser-Tools für Text, Daten, SEO und alltägliche Aufgaben. Ohne Konto und ohne Datei-Upload.' },
 };
 
 export function localePath(language, toolId = '') {
@@ -117,6 +119,9 @@ const copy = {
 };
 
 copy.pt = ptBR.copy;
+ui.de = deDE.ui;
+runtimeMessages.de = deDE.runtimeMessages;
+copy.de = deDE.copy;
 
 export function localizedTool(tool, language) {
   const values = copy[language]?.[tool.id];

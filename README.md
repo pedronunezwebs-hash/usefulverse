@@ -24,16 +24,18 @@ Open `http://localhost:4173` after starting the server.
 ## Languages and localized URLs
 
 English remains the default at `/`. Spanish is published at `/es/`, French at
-`/fr/`, and Brazilian Portuguese at `/pt-br/`; each of the 33 tools has a
-matching URL under each language prefix. The build creates all four versions
-as static HTML (136 URLs total), adds reciprocal `hreflang` and canonical tags,
+`/fr/`, Brazilian Portuguese at `/pt-br/`, and German at `/de/`; each of the 33
+tools has a matching URL under each language prefix. The build creates all five
+versions as static HTML (170 URLs total), adds reciprocal `hreflang` and canonical
+tags,
 and lists every version with language alternates in `sitemap.xml`. It does not
 call a translation service at build time or in the visitor's browser.
 
 When adding a tool, add its translated title, description, keywords, intro and
 explanation for Spanish and French in `src/locales.mjs`, and Brazilian
-Portuguese in `src/locales/pt-br.mjs`. Add translations for any new labels and
-runtime messages there as well. `npm run check` verifies that every locale has
+Portuguese in `src/locales/pt-br.mjs`, and German in `src/locales/de.mjs`. Add
+translations for any new labels and runtime messages there as well.
+`npm run check` verifies that every locale has
 a generated page and valid canonical/hreflang entries.
 
 ## GitHub + Cloudflare Pages

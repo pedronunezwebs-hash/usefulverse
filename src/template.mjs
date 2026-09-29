@@ -259,6 +259,7 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
     es: { how: (name) => `¿Cómo se usa «${name}»?`, privacyQuestion: '¿Se envían mis datos a un servidor?', privacyAnswer: 'No. El procesamiento se realiza en tu navegador y tus datos no se suben.' },
     fr: { how: (name) => `Comment utiliser « ${name} » ?`, privacyQuestion: 'Mes données sont-elles envoyées à un serveur ?', privacyAnswer: 'Non. Le traitement s’effectue dans votre navigateur et vos données ne sont pas envoyées.' },
     pt: { how: (name) => `Como usar ${name}?`, privacyQuestion: 'Meus dados são enviados para algum servidor?', privacyAnswer: 'Não. O processamento acontece no seu navegador, e seus dados não são enviados para um servidor.' },
+    de: { how: (name) => `Wie verwendet man „${name}“?`, privacyQuestion: 'Werden meine Daten an einen Server gesendet?', privacyAnswer: 'Nein. Die Verarbeitung findet in Ihrem Browser statt. Ihre Daten werden nicht hochgeladen.' },
   };
   const seoData = language === 'en'
     ? (seo[tool.id] ?? { title: tool.title, description: `${tool.description} Free, fast and private in your browser.` })
@@ -274,8 +275,8 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
   const homeHref = localePath(language);
   const alternates = localeEntries.map(({ key, code }) => `<link rel="alternate" hreflang="${code}" href="https://usefulverse.com${localePath(key, tool.id)}">`).join('\n    ');
   const dynamicTranslations = {
-    [`About ${tool.title}.`]: language === 'es' ? `Acerca de ${tool.title}.` : language === 'fr' ? `À propos de ${tool.title}.` : `Sobre ${tool.title}.`,
-    [`${tool.title} made simple.`]: language === 'es' ? `${tool.title} sin complicaciones.` : language === 'fr' ? `${tool.title} en toute simplicité.` : `${tool.title} sem complicação.`,
+    [`About ${tool.title}.`]: language === 'es' ? `Acerca de ${tool.title}.` : language === 'fr' ? `À propos de ${tool.title}.` : language === 'de' ? `Über ${tool.title}.` : `Sobre ${tool.title}.`,
+    [`${tool.title} made simple.`]: language === 'es' ? `${tool.title} sin complicaciones.` : language === 'fr' ? `${tool.title} en toute simplicité.` : language === 'de' ? `${tool.title} – einfach erklärt.` : `${tool.title} sem complicação.`,
     [`${tool.category} tool`]: `${tool.category} · ${ui[language]?.tool ?? 'tool'}`,
   };
   const breadcrumbs = `<script type="application/ld+json">${JSON.stringify({
