@@ -6,8 +6,10 @@ import { seo } from '../src/seo.mjs';
 import { localePath, locales, localizedTool } from '../src/locales.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
-const required = ['index.html', 'assets/styles.css', 'assets/app.js', 'assets/locale-es.js', 'assets/locale-fr.js', 'favicon.svg', 'robots.txt', 'sitemap.xml', 'llms.txt', 'es/llms.txt', 'fr/llms.txt', 'BingSiteAuth.xml', 'yandex_f441658073fe7135.html', '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt'];
+const required = ['index.html', 'assets/styles.css', 'assets/app.js', 'assets/locale-es.js', 'assets/locale-fr.js', 'favicon.svg', 'robots.txt', 'sitemap.xml', 'llms.txt', 'es/llms.txt', 'fr/llms.txt', 'BingSiteAuth.xml', 'yandex_f441658073fe7135.html', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html', '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt'];
 for (const file of required) await access(join(root, 'dist', file));
+const naverVerification = await readFile(join(root, 'dist', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html'), 'utf8');
+if (naverVerification !== 'naver-site-verification: naverbbd67ca2bfab12f8138c42ad5d27c664.html\n') throw new Error('Naver verification file content does not match the downloaded file');
 const languages = Object.keys(locales);
 const pages = [];
 const titles = [];
