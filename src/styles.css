@@ -33,7 +33,7 @@ button { cursor: pointer; }
 .main-nav a:hover, .main-nav a:focus-visible, .footer-links a:hover { color: var(--ink); }
 .header-cta { display: inline-flex; align-items: center; gap: 8px; padding: 11px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-size: 14px; font-weight: 750; }
 .header-cta:hover, .header-cta:focus-visible { border-color: var(--ink); }
-.language-switch { display: inline-flex; align-items: center; gap: 3px; min-width: 0; padding: 4px; overflow-x: auto; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); scrollbar-width: none; overscroll-behavior-x: contain; }
+.language-switch { position: relative; display: inline-flex; align-items: center; gap: 3px; min-width: 0; padding: 4px; overflow-x: auto; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); scrollbar-width: none; overscroll-behavior-x: contain; }
 .language-switch::-webkit-scrollbar { display: none; }
 .language-switch a { flex: none; min-width: 34px; padding: 7px 8px; border-radius: 999px; color: var(--muted); font-size: 11px; font-weight: 800; text-align: center; }
 .language-switch a[aria-current="page"] { color: var(--ink); background: var(--lime); }

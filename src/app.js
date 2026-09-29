@@ -228,7 +228,7 @@ function numberValue(root, id) {
 function parseInputNumber(value) {
   const raw = normalizeInput(value);
   if (!raw) return NaN;
-  if (!usesCommaDecimal) return Number(/^[-+]?\d{1,3}(?:,\d{2,3})+(?:\.\d+)?$/u.test(raw) ? raw.replaceAll(',', '') : raw);
+  if (!usesCommaDecimal) return Number(/^[-+]?\d{1,3}(?:,\d{2,3})*,\d{3}(?:\.\d+)?$/u.test(raw) ? raw.replaceAll(',', '') : raw);
   if (raw.includes(',')) return Number(raw.replace(/\./gu, '').replace(',', '.'));
   if (/^-?\d{1,3}(?:\.\d{3})+$/u.test(raw)) return Number(raw.replace(/\./gu, ''));
   return Number(raw);
@@ -709,8 +709,8 @@ function parseBaseInteger(value, base) {
   const alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'.slice(0, base);
   if (!digits || [...digits.toUpperCase()].some((digit) => !alphabet.includes(digit))) throw new Error(`Use only valid digits for base ${base}.`);
   const prefix = base === 2 ? '0b' : base === 8 ? '0o' : base === 16 ? '0x' : '';
-  const number = BigInt(`${negative ? '-' : ''}${prefix}${digits}`);
-  return number;
+  const number = BigInt(`${prefix}${digits}`);
+  return negative ? -number : number;
 }
 
 function setupBinary(root) {

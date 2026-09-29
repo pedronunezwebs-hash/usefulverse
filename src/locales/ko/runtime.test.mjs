@@ -161,7 +161,7 @@ test('ko local number parsing across tools (full-width digits, thousands commas)
   const negative = await runTool('ko', 'binary-converter', 'convert-binary', { '#binary-from': '10', '#binary-to': '2', '#binary-input': '-255' });
   assert.equal(negative('#binary-output').textContent, '-11111111');
   const negativeHex = await runTool('ko', 'binary-converter', 'convert-binary', { '#binary-from': '16', '#binary-to': '10', '#binary-input': '-FF' });
-  assert.equal(negativeHex('#binary-output').textContent, '—');
+  assert.equal(negativeHex('#binary-output').textContent, '-255');
 });
 
 test('ko time zones default to Seoul → New York', async () => {

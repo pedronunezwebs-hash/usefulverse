@@ -559,8 +559,8 @@ honesty limits · 2 real questions. "Weak demand" flags say what people type ins
 - H1 `진법 변환기` · short `진법 변환기` · seo.title `진법 변환기 - 2진수·10진수·16진수`
 - UI: From base `기준 진법` · To base `변환 진법` · Decimal (10) `10진수` ·
   Binary (2) `2진수` · Hexadecimal (16) `16진수` · Octal (8) `8진수`.
-- Honesty: integers only (BigInt, any size), no fractional part. **Negative numbers only when the
-  source base is 10** (-255 → -11111111); app.js builds `BigInt('-0x…')`, which throws for bases 2, 8, 16.
+- Honesty: integers only (BigInt, any size), no fractional part. Negative numbers work in every base
+  (-255 → -11111111, -FF → -255).
 - Questions: `10진수를 2진수로 바꾸는 방법은?` · `소수점이 있는 수도 변환되나요?`
 
 ### Group C
