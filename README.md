@@ -24,8 +24,8 @@ Open `http://localhost:4173` after starting the server.
 ## Languages and localized URLs
 
 English remains the default at `/`. Spanish is published at `/es/`, French at
-`/fr/`, Brazilian Portuguese at `/pt-br/`, Japanese at `/ja/`, Korean at `/ko/`,
-Indonesian at `/id/` and Hindi at `/hi/`; each of the 33 tools has a matching URL
+`/fr/`, Brazilian Portuguese at `/pt-br/`, German at `/de/`, Japanese at `/ja/`,
+Korean at `/ko/`, Indonesian at `/id/` and Hindi at `/hi/`; each of the 33 tools has a matching URL
 under each language prefix. The build creates every version as static HTML, adds
 reciprocal `hreflang` and canonical tags, and lists every version with language
 alternates in `sitemap.xml`. It does not call a translation service at build time
@@ -44,7 +44,7 @@ an English UI string (unless the pack lists it in `meta.keepEnglish`).
 
 When adding a tool, add its translated title, description, keywords, intro and
 explanation for Spanish and French in `src/locales.mjs`, for Brazilian
-Portuguese in `src/locales/pt-br.mjs`, and `copy`, `seo` and `faq` entries in the
+Portuguese in `src/locales/pt-br.mjs`, for German in `src/locales/de.mjs`, and `copy`, `seo` and `faq` entries in the
 matching `tools-*.mjs` of every pack. Add translations for any new labels and
 runtime messages there as well. `npm run check` verifies that every locale has a
 generated page and valid canonical/hreflang entries.

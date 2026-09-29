@@ -1,9 +1,20 @@
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { tools } from '../catalog.mjs';
 import { packs } from '../locales.mjs';
 import { pageKeys, templateKeys } from './template-keys.mjs';
 import { numberToWordsHook } from './test-harness.mjs';
+
+// Every English message app.js shows through translate()/setStatus() must exist in each pack.
+const appSource = await readFile(new URL('../app.js', import.meta.url), 'utf8');
+const runtimeLiterals = new Set([
+  ...[...appSource.matchAll(/setStatus\([^,]+,\s*'([^']+)'/gu)].map((match) => match[1]),
+  ...[...appSource.matchAll(/setStatus\([^,]+,\s*[\w.]+ \? '([^']+)' : '([^']+)'/gu)].flatMap((match) => [match[1], match[2]]),
+  ...[...appSource.matchAll(/ : '([^']+)', (?:'(?:success|error)'|\w+\.length \?)/gu)].map((match) => match[1]),
+  ...[...appSource.matchAll(/translate\(([^()]*)\)/gu)].flatMap((match) => [...match[1].matchAll(/'([^']+)'/gu)].map((literal) => literal[1])),
+  ...[...appSource.matchAll(/\w+: \['([^']+)', (?:[\d.]+|null)\]/gu)].map((match) => match[1]),
+].filter((text) => /\p{L}{2}/u.test(text) && !['encode', 'upper'].includes(text)));
 
 const placeholders = (text) => [...text.matchAll(/\{(\w+)\}/gu)].map((match) => match[1]).sort();
 
@@ -26,6 +37,11 @@ for (const [language, pack] of Object.entries(packs)) {
         if (value === key && /\p{Ll}{2}/u.test(key)) assert.ok(keepEnglish.has(key), `${group}[${JSON.stringify(key)}] is still English (add to meta.keepEnglish only if that is correct in ${language})`);
       }
     }
+  });
+
+  test(`${language}: every runtime message used by app.js is translated`, () => {
+    const missing = [...runtimeLiterals].filter((text) => !pack.runtimeMessages[text] && !pack.ui[text]);
+    assert.deepEqual(missing, [], `missing in ui/runtimeMessages: ${missing.map((text) => JSON.stringify(text)).join(', ')}`);
   });
 
   test(`${language}: page strings and runtime templates keep their placeholders`, () => {

@@ -261,6 +261,7 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
     es: { how: (name) => `¿Cómo se usa «${name}»?`, privacyQuestion: '¿Se envían mis datos a un servidor?', privacyAnswer: 'No. El procesamiento se realiza en tu navegador y tus datos no se suben.' },
     fr: { how: (name) => `Comment utiliser « ${name} » ?`, privacyQuestion: 'Mes données sont-elles envoyées à un serveur ?', privacyAnswer: 'Non. Le traitement s’effectue dans votre navigateur et vos données ne sont pas envoyées.' },
     pt: { how: (name) => `Como usar ${name}?`, privacyQuestion: 'Meus dados são enviados para algum servidor?', privacyAnswer: 'Não. O processamento acontece no seu navegador, e seus dados não são enviados para um servidor.' },
+    de: { how: (name) => `Wie verwendet man „${name}“?`, privacyQuestion: 'Werden meine Daten an einen Server gesendet?', privacyAnswer: 'Nein. Die Verarbeitung findet in Ihrem Browser statt. Ihre Daten werden nicht hochgeladen.' },
   };
   const pack = packs[language];
   const seoData = language === 'en'
@@ -283,17 +284,20 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
   const faq = seoData.faq ?? [];
   const homeHref = localePath(language);
   const alternates = localeEntries.map(({ key, code }) => `<link rel="alternate" hreflang="${code}" href="https://usefulverse.com${localePath(key, tool.id)}">`).join('\n    ');
-  const dynamicTranslations = pack ? {
+  // Page-specific wording for UI keys that mean something else on this tool (e.g. "Whole number" is an
+  // integer elsewhere but the total in the percentage calculator). Packs bring theirs in `toolUi`.
+  const toolUi = pack ? pack.toolUi?.[tool.id] : { 'percentage-calculator': { es: { 'Whole number': 'Total' }, fr: { 'Whole number': 'Total' }, pt: { 'Whole number': 'Valor total' }, de: { 'Whole number': 'Gesamtwert' } } }[tool.id]?.[language];
+  const dynamicTranslations = { ...toolUi, ...(pack ? {
     [`About ${tool.title}.`]: fill(pack.page.about, { title: tool.title }),
     [`${tool.title} made simple.`]: fill(pack.page.madeSimple, { title: tool.title }),
     [`${tool.category} tool`]: fill(pack.page.categoryTool, { category: tool.category }),
     [`${tool.title} workspace`]: fill(pack.page.workspace, { title: tool.title }),
   } : {
-    [`${tool.title} workspace`]: { es: `Área de trabajo: ${tool.title}`, fr: `Espace de travail : ${tool.title}`, pt: `Área de trabalho: ${tool.title}` }[language] ?? `${tool.title} workspace`,
-    [`About ${tool.title}.`]: language === 'es' ? `Acerca de ${tool.title}.` : language === 'fr' ? `À propos de ${tool.title}.` : `Sobre ${tool.title}.`,
-    [`${tool.title} made simple.`]: language === 'es' ? `${tool.title} sin complicaciones.` : language === 'fr' ? `${tool.title} en toute simplicité.` : `${tool.title} sem complicação.`,
+    [`${tool.title} workspace`]: { es: `Área de trabajo: ${tool.title}`, fr: `Espace de travail : ${tool.title}`, pt: `Área de trabalho: ${tool.title}`, de: `Arbeitsbereich: ${tool.title}` }[language] ?? `${tool.title} workspace`,
+    [`About ${tool.title}.`]: language === 'es' ? `Acerca de ${tool.title}.` : language === 'fr' ? `À propos de ${tool.title}.` : language === 'de' ? `Über ${tool.title}.` : `Sobre ${tool.title}.`,
+    [`${tool.title} made simple.`]: language === 'es' ? `${tool.title} sin complicaciones.` : language === 'fr' ? `${tool.title} en toute simplicité.` : language === 'de' ? `${tool.title} – einfach erklärt.` : `${tool.title} sem complicação.`,
     [`${tool.category} tool`]: `${tool.category} · ${ui[language]?.tool ?? 'tool'}`,
-  };
+  }) };
   const breadcrumbs = `<script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -372,7 +376,7 @@ export function shell({ title, description, canonical, body, schema = '', assetV
     <meta property="og:description" content="${escapeHtml(description)}">
     <meta property="og:url" content="${escapeHtml(canonical)}">
     <meta property="og:site_name" content="UsefulVerse">
-    <meta property="og:locale" content="${escapeHtml((packs[lang]?.meta.tag ?? { en: 'en-US', es: 'es-ES', fr: 'fr-FR', pt: 'pt-BR' }[lang] ?? localeCode).replace('-', '_'))}">
+    <meta property="og:locale" content="${escapeHtml((packs[lang]?.meta.tag ?? { en: 'en-US', es: 'es-ES', fr: 'fr-FR', pt: 'pt-BR', de: 'de-DE' }[lang] ?? localeCode).replace('-', '_'))}">
     <meta name="twitter:card" content="summary">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/styles.css${assetSuffix}">
