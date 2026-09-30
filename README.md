@@ -7,7 +7,7 @@ Browser-first collection of fast, private, static tools for everyday work.
 - Processing happens in the browser whenever possible.
 - No account, upload or paid API is required.
 - Each useful tool gets its own stable, indexable URL.
-- The current catalog contains 66 browser-only tools across writing, data, developer, SEO, design, privacy, text, files and everyday tasks.
+- The current catalog contains 68 browser-only tools across writing, data, developer, SEO, design, privacy, text, files and everyday tasks.
 - The public build is static and deployable to Cloudflare Pages.
 - CSS and JavaScript URLs are content-versioned during the build so CDN caches cannot serve an old runtime after a deploy.
 - HTML uses short browser and edge cache lifetimes; versioned assets remain immutable for repeat visits.
@@ -28,7 +28,7 @@ English remains the default at `/`. The site supports Spanish (`/es/`), French
 Korean (`/ko/`), Indonesian (`/id/`), Hindi (`/hi/`), Arabic (`/ar/`), Simplified
 Chinese (`/zh-cn/`), Bengali (`/bn/`), Russian (`/ru/`), Urdu (`/ur/`), Turkish
 (`/tr/`) and Vietnamese (`/vi/`). Each
-of the 66 tools has a matching URL in every language. The build creates every version as static HTML, adds
+of the 68 tools has a matching URL in every language. The build creates every version as static HTML, adds
 reciprocal `hreflang` and canonical tags, and lists every version with language
 alternates in `sitemap.xml`. It does not call a translation service at build time
 or in the visitor's browser.
@@ -37,14 +37,17 @@ The newest browser-only batch adds a typing-speed test, fraction calculator,
 time-card calculator, countdown/stopwatch/Pomodoro timer, Lorem Ipsum generator,
 IPv4 subnet calculator, random name picker, fuel-cost calculator, image cropper,
 PDF-page-to-image ZIP converter, SQL formatter and an in-browser video
-compressor. PDF compression offers a structural pass that usually keeps text and
-layout, plus an optional image-based mode that explains what it removes before
-running. Video and PDF compression create a separate copy, leave the original
-untouched, and only offer a result when it is smaller. File processing stays on
-the visitor's device; memory, storage, browser and codec support are the practical
-limits, not a server upload-size quota. Heavy PDF/video code is loaded only when
-the relevant tool or operation needs it. The current generated sitemap contains
-1,077 URLs: 66 tools and 16 home pages in 16 languages, plus an English guides index
+compressor, a local audio compressor and a local audio/video transcriber. PDF
+compression offers a structural pass that usually keeps text and layout, plus an
+optional image-based mode that explains what it removes before running. Media
+compression creates a separate copy, leaves the original untouched and only offers
+an audio/video result when it is smaller. Transcription runs in the browser; its
+first use downloads about 43 MB of speech-model files and a roughly 14 MB local
+engine. The recording is not uploaded, although the browser may download those files
+again if its cache is cleared. File processing stays on the visitor's device; memory,
+storage, browser, battery, speed and codec support are practical limits, not a server
+upload-size quota. Heavy media code is loaded only when needed. The generated sitemap
+contains 1,109 URLs: 68 tools and 16 home pages in 16 languages, plus an English guides index
 and four sourced, task-specific guides. Guides are published in English only because
 the existing keyword measurements are for US English; they do not claim localized
 alternates, and they link directly to the related localized tool when a reader switches

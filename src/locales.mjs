@@ -8,6 +8,7 @@ import { priorityToolLocales } from './locales/priority-tools.mjs';
 import { browserBatchLocales } from './locales/browser-batch.mjs';
 import { imageFormatLocales } from './locales/image-formats.mjs';
 import { officePackageLocales, tiffHints } from './locales/office-package.mjs';
+import { mediaToolLocales } from './locales/media-tools.mjs';
 
 export const locales = {
   en: { code: 'en', name: 'English', prefix: '', homeTitle: 'UsefulVerse — Simple tools for everyday tasks', homeDescription: 'Fast, private browser tools for text, files, data, SEO and everyday tasks. No account and no upload required.' },
@@ -298,6 +299,31 @@ for (const [language, data] of Object.entries(officePackageLocales)) {
   Object.assign(pack.copy, data.copy);
   Object.assign(pack.seo, data.seo);
   Object.assign(pack.faq, data.faq);
+}
+
+// Keep the audio compressor and the audio/video transcriber localized with their UI,
+// tool copy, SEO metadata and FAQs. Heavy media code remains separately lazy-loaded.
+for (const [language, data] of Object.entries(mediaToolLocales)) {
+  Object.assign(ui[language] ??= {}, data.ui);
+  Object.assign(runtimeMessages[language] ??= {}, data.ui);
+  Object.assign(copy[language] ??= {}, data.copy);
+  const pack = packs[language];
+  if (!pack) continue;
+  Object.assign(pack.ui, data.ui);
+  Object.assign(pack.runtimeMessages, data.ui);
+  Object.assign(pack.copy, data.copy);
+  for (const [id, values] of Object.entries(data.copy)) {
+    const [, shortTitle, description, , intro, body] = values;
+    const safeDescription = description.length >= 25 && description.length <= 155
+      ? description
+      : `${intro.slice(0, 145).replace(/[\s,;:]+$/u, '')}…`;
+    pack.seo[id] = { title: shortTitle, description: safeDescription };
+    const faq = advancedToolLocales[language];
+    pack.faq[id] = [
+      { question: faq.faqHow.replace('{title}', shortTitle), answer: intro },
+      { question: faq.faqPrivacyQuestion, answer: faq.faqPrivacyAnswer.replace('{body}', body) },
+    ];
+  }
 }
 
 // Parameterized runtime strings for app.js (see src/locales/template-keys.mjs). Packs bring their own.

@@ -1316,6 +1316,14 @@ function setupToolPage() {
       .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
     return;
   }
+  const mediaTools = new Set(['audio-compressor', 'media-transcriber']);
+  if (mediaTools.has(id)) {
+    const assetVersion = new URL(document.currentScript?.src ?? location.href).searchParams.get('v');
+    import(`./media-tools.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupMediaTool }) => setupMediaTool(id, root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
   const setups = { 'word-counter': setupWordCounter, 'text-case-converter': setupCaseConverter, 'remove-duplicate-lines': setupDedupe, 'json-formatter': setupJson, 'base64-encoder-decoder': setupBase64, 'url-encoder-decoder': setupUrl, 'text-to-slug': setupSlug, 'percentage-calculator': setupPercentage, 'password-generator': setupPassword, 'timestamp-converter': setupTimestamp, 'html-entity-encoder-decoder': setupHtmlEntities, 'csv-to-json': setupCsvToJson, 'json-to-csv': setupJsonToCsv, 'random-number-generator': setupRandomNumber, 'uuid-generator': setupUuid, 'sha256-hash-generator': setupSha256, 'regex-tester': setupRegex, 'jwt-decoder': setupJwt, 'color-converter': setupColor, 'url-parser': setupUrlParser, 'roman-numeral-converter': setupRoman, 'binary-converter': setupBinary, 'prime-number-checker': setupPrime, 'average-calculator': setupAverage, 'ratio-proportion-calculator': setupRatio, 'time-duration-calculator': setupDuration, 'number-to-words-converter': setupNumberWords, 'remove-line-breaks': setupRemoveLineBreaks, 'text-diff-checker': setupTextDiff, 'unit-converter': setupUnitConverter, 'date-calculator': setupDateCalculator, 'qr-code-generator': setupQr, 'time-zone-converter': setupTimeZone };
   setups[id]?.(root);
 }
