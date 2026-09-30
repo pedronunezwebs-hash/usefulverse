@@ -1308,7 +1308,7 @@ function setupToolPage() {
       .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
     return;
   }
-  const advancedTools = new Set(['xml-formatter', 'color-contrast-checker', 'tip-calculator', 'gpa-calculator', 'file-checksum', 'image-resizer-compressor', 'pdf-tools', 'csv-viewer', 'qr-code-reader', 'standard-deviation-calculator', 'discount-calculator', 'square-footage-calculator', 'barcode-generator']);
+  const advancedTools = new Set(['xml-formatter', 'color-contrast-checker', 'tip-calculator', 'gpa-calculator', 'file-checksum', 'image-resizer-compressor', 'pdf-tools', 'video-compressor', 'csv-viewer', 'qr-code-reader', 'standard-deviation-calculator', 'discount-calculator', 'square-footage-calculator', 'barcode-generator']);
   if (advancedTools.has(id)) {
     const assetVersion = new URL(document.currentScript?.src ?? location.href).searchParams.get('v');
     import(`./advanced-tools.js${assetVersion ? `?v=${assetVersion}` : ''}`)

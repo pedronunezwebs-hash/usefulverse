@@ -293,13 +293,11 @@ function setupImage(root) {
     revokePreview();
     if (!sourceFile) return;
     if (!['image/jpeg', 'image/png', 'image/webp'].includes(sourceFile.type)) { sourceFile = null; return setStatus(root, 'Choose a JPG, PNG or WebP image.', 'error'); }
-    if (sourceFile.size > 20 * 1024 * 1024) { sourceFile = null; return setStatus(root, 'This image is larger than the 20 MB limit.', 'error'); }
     let bitmap;
     try {
       const file = sourceFile;
       bitmap = await createImageBitmap(file);
       if (operation !== imageOperation) return;
-      if (bitmap.width * bitmap.height > 40_000_000) { sourceFile = null; return setStatus(root, 'This image has more than 40 megapixels. Choose a smaller image.', 'error'); }
       aspectRatio = bitmap.width / bitmap.height;
       width.value = String(bitmap.width); height.value = String(bitmap.height);
       $('#image-file-meta', root).textContent = `${file.name} · ${bitmap.width} × ${bitmap.height} px · ${logic.formatFileSize(file.size, languageTag)}`;
@@ -349,7 +347,7 @@ function setupImage(root) {
     }
     if (action === 'clear') {
       imageOperation += 1;
-      sourceFile = null; fileInput.value = ''; width.value = '1200'; height.value = '800'; quality.value = '80'; $('#image-quality-value', root).textContent = '80%'; $('#image-file-meta', root).textContent = t('JPG, PNG or WebP. Your original is never changed.'); $('#image-preview', root).hidden = true; revokePreview(); setStatus(root, 'The image is processed locally in your browser.');
+      sourceFile = null; fileInput.value = ''; width.value = '1200'; height.value = '800'; quality.value = '80'; $('#image-quality-value', root).textContent = '80%'; $('#image-file-meta', root).textContent = t('JPG, PNG or WebP. No fixed file-size cap. Very large images depend on device memory; output is limited to 40 megapixels.'); $('#image-preview', root).hidden = true; revokePreview(); setStatus(root, 'The image is processed locally in your browser.');
     }
   });
 }
@@ -374,43 +372,112 @@ function loadPdfJs() {
 }
 
 async function validatePdf(file) {
-  if (!file || file.size > 10 * 1024 * 1024) throw new RangeError('Each PDF must be 10 MB or smaller.');
+  if (!file) throw new TypeError('Choose a PDF file.');
   const header = new TextDecoder('latin1').decode(await file.slice(0, 1024).arrayBuffer());
   if (!header.includes('%PDF-')) throw new TypeError('One selected file is not a readable PDF.');
   return new Uint8Array(await file.arrayBuffer());
+}
+
+function optimizePdfInWorker(bytes, { onWorker, signal }) {
+  return new Promise((resolve, reject) => {
+    const worker = new Worker(versioned('/assets/vendor/pdf-compressor-worker.mjs'), { type: 'module' });
+    onWorker(worker);
+    const cleanup = () => { signal?.removeEventListener('abort', abort); worker.terminate(); onWorker(null); };
+    const abort = () => { cleanup(); reject(new Error('PDF compression canceled. No new file was saved.')); };
+    signal?.addEventListener('abort', abort, { once: true });
+    worker.addEventListener('message', ({ data }) => {
+      cleanup();
+      if (data.type === 'result') resolve(new Uint8Array(data.bytes));
+      else reject(new Error('This PDF could not be optimized. It may be protected, damaged or use a feature this browser tool does not support.'));
+    }, { once: true });
+    worker.addEventListener('error', () => {
+      cleanup();
+      reject(new Error('The PDF optimizer could not start. Refresh the page and try again.'));
+    }, { once: true });
+    worker.postMessage({ bytes: bytes.buffer }, [bytes.buffer]);
+  });
 }
 
 function setupPdf(root) {
   const mode = $('#pdf-mode', root);
   const input = $('#pdf-files', root);
   const output = $('#pdf-downloads', root);
+  const runButton = $('[data-action="run-pdf"]', root);
+  const cancelButton = $('[data-action="cancel-pdf"]', root);
+  let activeOperation = null;
+  const setBusy = (busy, canCancel = false) => {
+    runButton.disabled = busy;
+    cancelButton.disabled = !busy || !canCancel;
+    $('[data-action="clear"]', root).disabled = busy;
+    for (const control of [mode, input, $('#pdf-ranges', root), $('#pdf-compress-confirm', root), $('#pdf-image-quality', root)]) {
+      control.disabled = busy;
+    }
+  };
+  const fileHint = () => mode.value === 'merge'
+    ? 'PDFs are processed on this device and are never uploaded. There is no fixed file-size cap; available memory and browser support are the practical limits. Choose up to 10 PDFs to merge.'
+    : mode.value === 'optimize' || mode.value === 'smallest'
+      ? 'PDFs are processed on this device, never uploaded. Compression has no fixed file-size cap; available memory and browser support are the practical limits.'
+      : 'PDFs are processed on this device and are never uploaded. There is no fixed file-size cap; available memory and browser support are the practical limits.';
+  const updateFileMeta = () => {
+    const files = [...input.files];
+    $('#pdf-file-meta', root).textContent = files.length
+      ? files.map((file) => `${file.name} (${logic.formatFileSize(file.size, languageTag)})`).join(' · ')
+      : t(fileHint());
+  };
   const updateMode = () => {
     const isMerge = mode.value === 'merge';
     const isSplit = mode.value === 'split';
+    const isOptimize = mode.value === 'optimize';
+    const isSmallest = mode.value === 'smallest';
+    const isCompress = isOptimize || isSmallest;
     input.multiple = isMerge;
     $('#pdf-range-wrap', root).hidden = !isSplit;
-    $('#pdf-compress-note', root).hidden = mode.value !== 'compress';
-    $('#pdf-file-meta', root).textContent = t(isMerge ? 'PDF files stay on this device. Choose up to 10 files.' : 'Choose one PDF file. It will stay on this device.');
+    $('#pdf-optimize-note', root).hidden = !isOptimize;
+    $('#pdf-compress-note', root).hidden = !isSmallest;
+    $('#pdf-image-options', root).hidden = !isSmallest;
+    $('#pdf-compress-confirm', root).checked = false;
+    updateFileMeta();
+    cancelButton.hidden = !isCompress;
     clearDownloadLinks(output);
     setStatus(root, 'PDF processing runs in this browser. No upload.');
   };
   mode.addEventListener('change', updateMode);
   input.addEventListener('change', () => {
-    const files = [...input.files];
-    $('#pdf-file-meta', root).textContent = files.length ? files.map((file) => `${file.name} (${logic.formatFileSize(file.size, languageTag)})`).join(' · ') : t(mode.value === 'merge' ? 'PDF files stay on this device. Choose up to 10 files.' : 'Choose one PDF file. It will stay on this device.');
+    updateFileMeta();
     clearDownloadLinks(output);
   });
   root.addEventListener('click', async (event) => {
     const action = event.target.closest('[data-action]')?.dataset.action;
-    if (action === 'clear') { input.value = ''; $('#pdf-ranges', root).value = ''; $('#pdf-compress-confirm', root).checked = false; clearDownloadLinks(output); updateMode(); }
+    if (action === 'cancel-pdf') {
+      if (!activeOperation) return;
+      activeOperation.cancelled = true;
+      activeOperation.abortController?.abort();
+      activeOperation.worker?.terminate();
+      activeOperation.renderTask?.cancel();
+      void activeOperation.loadingTask?.destroy().catch(() => {});
+      setStatus(root, 'PDF compression canceled. No new file was saved.');
+      return;
+    }
+    if (action === 'clear') {
+      if (activeOperation) {
+        activeOperation.cancelled = true;
+        activeOperation.abortController?.abort();
+        activeOperation.worker?.terminate();
+        activeOperation.renderTask?.cancel();
+        void activeOperation.loadingTask?.destroy().catch(() => {});
+      }
+      input.value = ''; $('#pdf-ranges', root).value = ''; $('#pdf-compress-confirm', root).checked = false; clearDownloadLinks(output); setBusy(false); updateMode();
+    }
     if (action !== 'run-pdf') return;
+    if (activeOperation) return;
     const files = [...input.files];
     clearDownloadLinks(output);
+    const operation = { cancelled: false, worker: null, renderTask: null, loadingTask: null };
+    activeOperation = operation;
+    setBusy(true, mode.value === 'optimize' || mode.value === 'smallest');
     try {
       if (mode.value === 'merge') {
         if (files.length < 2 || files.length > 10) throw new RangeError('Choose between 2 and 10 PDF files to merge.');
-        const totalBytes = files.reduce((sum, file) => sum + file.size, 0);
-        if (totalBytes > 20 * 1024 * 1024) throw new RangeError('The selected PDFs are larger than the 20 MB total limit.');
         setStatus(root, 'Merging PDF files on your device…');
         const { PDFDocument } = await loadPdfLib();
         const merged = await PDFDocument.create();
@@ -439,30 +506,50 @@ function setupPdf(root) {
           makeDownloadLink(output, new Blob([bytes], { type: 'application/pdf' }), `pages-${group[0] + 1}-${group.at(-1) + 1}.pdf`, 'Download PDF');
         }
         setStatus(root, `${groups.length} PDF file${groups.length === 1 ? '' : 's'} ready. Your original is unchanged.`, 'success');
+      } else if (mode.value === 'optimize') {
+        if (files.length !== 1) throw new RangeError('Choose exactly one PDF to compress.');
+        setBusy(true, true);
+        setStatus(root, 'Optimizing PDF structure on your device…');
+        const bytes = await validatePdf(files[0]);
+        if (operation.cancelled) return;
+        const abortController = new AbortController();
+        operation.abortController = abortController;
+        const optimized = await optimizePdfInWorker(bytes, { onWorker: (worker) => { operation.worker = worker; }, signal: abortController.signal });
+        if (operation.cancelled) return;
+        const difference = files[0].size - optimized.byteLength;
+        if (difference <= 0) {
+          setStatus(root, 'This method did not make the PDF smaller. The original is unchanged. Try the other mode.', 'error');
+        } else {
+          makeDownloadLink(output, new Blob([optimized], { type: 'application/pdf' }), `${files[0].name.replace(/\.pdf$/iu, '')}-optimized.pdf`, 'Download PDF');
+          setStatus(root, t('PDF optimization made the file {size} smaller. Compare it before using it. Your original is unchanged.').replace('{size}', logic.formatFileSize(difference, languageTag)), 'success');
+        }
       } else {
         if (files.length !== 1) throw new RangeError('Choose exactly one PDF to compress.');
         if (!$('#pdf-compress-confirm', root).checked) throw new TypeError('Confirm the image-based compression warning before continuing.');
-        setStatus(root, 'Preparing PDF pages. Larger files can take a little while…');
         const [pdfjs, { PDFDocument }] = await Promise.all([loadPdfJs(), loadPdfLib()]);
-        const loadingTask = pdfjs.getDocument({ data: await validatePdf(files[0]), cMapUrl: `/assets/vendor/cmaps${vendorDirectoryVersion}/`, cMapPacked: true, standardFontDataUrl: `/assets/vendor/standard_fonts${vendorDirectoryVersion}/` });
+        if (operation.cancelled) return;
+        operation.loadingTask = pdfjs.getDocument({ data: await validatePdf(files[0]), cMapUrl: `/assets/vendor/cmaps${vendorDirectoryVersion}/`, cMapPacked: true, standardFontDataUrl: `/assets/vendor/standard_fonts${vendorDirectoryVersion}/` });
         let bytes;
         try {
-          const pdf = await loadingTask.promise;
-          if (pdf.numPages > 20) throw new RangeError('Image compression supports up to 20 pages.');
+          const pdf = await operation.loadingTask.promise;
           const compressed = await PDFDocument.create();
+          const quality = $('#pdf-image-quality', root).value === 'smaller' ? { dpi: 100, jpeg: 0.62 } : { dpi: 150, jpeg: 0.78 };
           for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber += 1) {
-            setStatus(root, `Compressing page ${pageNumber} of ${pdf.numPages} on your device…`);
+            if (operation.cancelled) return;
+            setStatus(root, t('Rendering page {current} of {total} on your device…').replace('{current}', formatNumber(pageNumber)).replace('{total}', formatNumber(pdf.numPages)));
             const page = await pdf.getPage(pageNumber);
             let canvas;
             try {
               const unitViewport = page.getViewport({ scale: 1 });
-              const scale = Math.min(110 / 72, Math.sqrt(4_000_000 / (unitViewport.width * unitViewport.height)));
+              const scale = Math.min(quality.dpi / 72, Math.sqrt(4_000_000 / (unitViewport.width * unitViewport.height)));
               const viewport = page.getViewport({ scale });
               canvas = document.createElement('canvas'); canvas.width = Math.ceil(viewport.width); canvas.height = Math.ceil(viewport.height);
               const context = canvas.getContext('2d', { alpha: false });
               if (!context) throw new Error('Canvas is unavailable.');
-              await page.render({ canvasContext: context, viewport, background: '#ffffff' }).promise;
-              const imageBlob = await new Promise((resolve, reject) => canvas.toBlob((blob) => blob ? resolve(blob) : reject(new Error('Page image could not be created.')), 'image/jpeg', 0.72));
+              operation.renderTask = page.render({ canvasContext: context, viewport, background: '#ffffff' });
+              await operation.renderTask.promise;
+              operation.renderTask = null;
+              const imageBlob = await new Promise((resolve, reject) => canvas.toBlob((blob) => blob ? resolve(blob) : reject(new Error('Page image could not be created.')), 'image/jpeg', quality.jpeg));
               const image = await compressed.embedJpg(await imageBlob.arrayBuffer());
               const outputPage = compressed.addPage([unitViewport.width, unitViewport.height]);
               outputPage.drawImage(image, { x: 0, y: 0, width: unitViewport.width, height: unitViewport.height });
@@ -471,13 +558,166 @@ function setupPdf(root) {
               page.cleanup();
             }
           }
+          if (operation.cancelled) return;
+          setStatus(root, 'Creating the compressed PDF on your device…');
           bytes = await compressed.save({ useObjectStreams: true, addDefaultPage: false });
-        } finally { await loadingTask.destroy().catch(() => {}); }
-        makeDownloadLink(output, new Blob([bytes], { type: 'application/pdf' }), `${files[0].name.replace(/\.pdf$/iu, '')}-image-compressed.pdf`, 'Download PDF');
+        } finally { await operation.loadingTask.destroy().catch(() => {}); }
+        if (operation.cancelled) return;
         const difference = files[0].size - bytes.byteLength;
-        setStatus(root, difference > 0 ? `The new file is ${logic.formatFileSize(difference, languageTag)} smaller. Check text and quality before replacing the original.` : 'The new file is not smaller. Keep the original and try another quality or tool.', difference > 0 ? 'success' : 'error');
+        if (difference <= 0) {
+          setStatus(root, 'This method did not make the PDF smaller. The original is unchanged. Try the other mode.', 'error');
+        } else {
+          makeDownloadLink(output, new Blob([bytes], { type: 'application/pdf' }), `${files[0].name.replace(/\.pdf$/iu, '')}-image-compressed.pdf`, 'Download PDF');
+          setStatus(root, t('Image compression made the file {size} smaller. Inspect readability; the original is unchanged.').replace('{size}', logic.formatFileSize(difference, languageTag)), 'success');
+        }
       }
-    } catch (error) { clearDownloadLinks(output); setStatus(root, error.message || 'This PDF could not be processed. It may be damaged, encrypted or unsupported.', 'error'); }
+    } catch (error) {
+      clearDownloadLinks(output);
+      if (!operation.cancelled) setStatus(root, error.message || 'This PDF could not be processed. It may be damaged, encrypted or unsupported.', 'error');
+    } finally {
+      if (activeOperation === operation) activeOperation = null;
+      setBusy(false);
+    }
+  });
+  updateMode();
+}
+
+let videoCompressorPromise;
+function loadVideoCompressor() {
+  videoCompressorPromise ??= import(versioned('/assets/vendor/video-compression.mjs'));
+  return videoCompressorPromise;
+}
+
+function setupVideoCompressor(root) {
+  const input = $('#video-file', root);
+  const format = $('#video-format', root);
+  const output = $('#video-downloads', root);
+  const progress = $('#video-progress', root);
+  const runButton = $('[data-action="compress-video"]', root);
+  const cancelButton = $('[data-action="cancel-video"]', root);
+  let activeController = null;
+  let activeFileWritable = null;
+  const setBusy = (busy) => {
+    runButton.disabled = busy;
+    cancelButton.disabled = !busy;
+    $('[data-action="clear"]', root).disabled = busy;
+    for (const control of [input, format, $('#video-quality', root), $('#video-height', root)]) control.disabled = busy;
+  };
+  const stop = () => {
+    activeController?.abort();
+    void activeFileWritable?.abort().catch(() => {});
+  };
+  $('#video-memory-note', root).hidden = typeof window.showSaveFilePicker === 'function';
+  input.addEventListener('change', () => {
+    clearDownloadLinks(output);
+    const file = input.files[0];
+    $('#video-file-meta', root).textContent = file
+      ? `${file.name} · ${logic.formatFileSize(file.size, languageTag)}`
+      : t('The video is processed on your device and is never uploaded. There is no fixed file-size cap; available memory, storage and browser codecs set practical limits.');
+    progress.hidden = true;
+    progress.value = 0;
+    if (file) setStatus(root, 'Video selected. Choose quality and resolution, then compress.');
+  });
+  root.addEventListener('click', async (event) => {
+    const action = event.target.closest('[data-action]')?.dataset.action;
+    if (action === 'cancel-video') {
+      stop();
+      cancelButton.disabled = true;
+      setStatus(root, 'Video compression canceled. No compressed copy was kept.');
+      return;
+    }
+    if (action === 'clear') {
+      stop(); input.value = ''; clearDownloadLinks(output); progress.value = 0; progress.hidden = true;
+      $('#video-file-meta', root).textContent = t('The video is processed on your device and is never uploaded. There is no fixed file-size cap; available memory, storage and browser codecs set practical limits.');
+      setStatus(root, 'No upload. Keep this tab open while your device works.');
+      return;
+    }
+    if (action !== 'compress-video' || activeController) return;
+    const file = input.files[0];
+    if (!file) return setStatus(root, 'Choose a video before compressing.', 'error');
+    const extension = format.value === 'webm' ? 'webm' : 'mp4';
+    const baseName = file.name.replace(/\.[^.]+$/u, '') || 'video';
+    const controller = new AbortController();
+    activeController = controller;
+    setBusy(true);
+    clearDownloadLinks(output);
+    progress.hidden = false;
+    progress.value = 0;
+    let fileWritable = null;
+    let streamedBytes = 0;
+    try {
+      let bridge = null;
+      if (typeof window.showSaveFilePicker === 'function') {
+        setStatus(root, 'Choose where to save the new video…');
+        const handle = await window.showSaveFilePicker({
+          suggestedName: `${baseName}-compressed.${extension}`,
+          types: [{ description: `${extension.toUpperCase()} video`, accept: { [extension === 'webm' ? 'video/webm' : 'video/mp4']: [`.${extension}`] } }],
+        });
+        if (controller.signal.aborted) return;
+        fileWritable = await handle.createWritable();
+        activeFileWritable = fileWritable;
+        bridge = new WritableStream({
+          write: (chunk) => {
+            streamedBytes = Math.max(streamedBytes, chunk.position + chunk.data.byteLength);
+            return fileWritable.write({ type: 'write', position: chunk.position, data: chunk.data });
+          },
+          // Keep the browser's temporary file uncommitted until the whole encode succeeds and we know it is smaller.
+          close: () => {},
+          abort: (reason) => fileWritable.abort(reason),
+        });
+      }
+      setStatus(root, 'Encoding video on your device. Keep this tab open…');
+      const { compressVideo } = await loadVideoCompressor();
+      const result = await compressVideo({
+        file,
+        format: extension,
+        quality: $('#video-quality', root).value,
+        maxHeight: Number($('#video-height', root).value) || null,
+        writable: bridge,
+        signal: controller.signal,
+        onProgress: (value) => {
+          progress.value = value;
+          setStatus(root, t('Compressing video: {percent}%').replace('{percent}', String(value)));
+        },
+      });
+      if (controller.signal.aborted) return;
+      if (result.streamed) {
+        const difference = file.size - streamedBytes;
+        if (difference <= 0) {
+          await fileWritable.abort(); fileWritable = null; activeFileWritable = null;
+          progress.hidden = true;
+          return setStatus(root, 'This video could not be made smaller. No copy was saved; your original is unchanged. Try a lower quality or resolution.', 'error');
+        }
+        await fileWritable.close(); fileWritable = null; activeFileWritable = null;
+        setStatus(root, t('Video saved as a new file, {size} smaller. Your original is unchanged.').replace('{size}', logic.formatFileSize(difference, languageTag)), 'success');
+      } else if (result.blob && result.blob.size < file.size) {
+        makeDownloadLink(output, result.blob, `${baseName}-compressed.${extension}`, 'Download video');
+        setStatus(root, t('Compressed video is {size} smaller. Review it before sharing; your original is unchanged.').replace('{size}', logic.formatFileSize(file.size - result.blob.size, languageTag)), 'success');
+      } else {
+        setStatus(root, 'This video could not be made smaller. No copy was saved; your original is unchanged. Try a lower quality or resolution.', 'error');
+      }
+    } catch (error) {
+      if (fileWritable) await fileWritable.abort().catch(() => {});
+      fileWritable = null; activeFileWritable = null;
+      if (controller.signal.aborted) setStatus(root, 'Video compression canceled. No compressed copy was kept.');
+      else if (error?.name === 'AbortError') setStatus(root, 'Save was canceled. Your original video is unchanged.');
+      else {
+        const message = error?.message?.startsWith('This output would omit')
+          ? 'This video has an audio, subtitle or data track that the selected format cannot keep. No output was saved.'
+          : error?.message === 'No video track was found in this file.'
+            ? error.message
+            : error?.message === 'This browser cannot encode the selected video in that format. Try another format or browser.'
+              ? error.message
+              : 'This browser could not process this video. Try MP4 or WebM, another output format, or a smaller resolution.';
+        setStatus(root, message, 'error');
+      }
+    } finally {
+      if (fileWritable) await fileWritable.abort().catch(() => {});
+      activeFileWritable = null;
+      if (activeController === controller) activeController = null;
+      progress.hidden = true;
+      setBusy(false);
+    }
   });
 }
 
@@ -854,6 +1094,7 @@ const setups = {
   'file-checksum': setupChecksum,
   'image-resizer-compressor': setupImage,
   'pdf-tools': setupPdf,
+  'video-compressor': setupVideoCompressor,
   'csv-viewer': setupCsv,
   'qr-code-reader': setupQrReader,
   'standard-deviation-calculator': setupStandardDeviation,

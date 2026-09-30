@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "dompurify": "3.4.16",
+    "esbuild": "0.28.2",
     "heic2any": "0.0.4",
     "js-yaml": "4.3.2",
     "jsqr": "1.4.0",
@@ -22,6 +23,8 @@
     "turndown": "7.2.4"
   },
   "dependencies": {
-    "jsbarcode": "3.12.3"
+    "@neslinesli93/qpdf-wasm": "0.3.0",
+    "jsbarcode": "3.12.3",
+    "mediabunny": "1.61.0"
   }
 }
