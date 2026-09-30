@@ -44,7 +44,11 @@ untouched, and only offer a result when it is smaller. File processing stays on
 the visitor's device; memory, storage, browser and codec support are the practical
 limits, not a server upload-size quota. Heavy PDF/video code is loaded only when
 the relevant tool or operation needs it. The current generated sitemap contains
-1,072 URLs (66 tools and 16 home pages in 16 languages).
+1,077 URLs: 66 tools and 16 home pages in 16 languages, plus an English guides index
+and four sourced, task-specific guides. Guides are published in English only because
+the existing keyword measurements are for US English; they do not claim localized
+alternates, and they link directly to the related localized tool when a reader switches
+language. They are static HTML and add no server processing or paid API usage.
 
 TIFF/TIF images can be opened locally in the image converter, resizer and image-to-PDF
 tool. Multi-page TIFF uses only its first page, and some compression variants depend on
