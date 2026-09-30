@@ -26,7 +26,7 @@ function runTool(toolId, action, values = {}) {
   };
   const window = { usefulverseLocale: { code: 'de', messages: deDE.ui, runtime: deDE.runtimeMessages } };
   vm.runInNewContext(appSource, { document, window, URL });
-  clickHandler({ target: { closest: () => ({ dataset: { action } }) } });
+  clickHandler({ target: { closest: (selector) => selector === '[data-action]' ? ({ dataset: { action } }) : null } });
   return getElement;
 }
 

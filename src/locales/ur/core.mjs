@@ -308,7 +308,7 @@ export const ui = {
   "Sum": "رقم",
   "Supports HEX, RGB and HSL colors.": "HEX، RGB اور HSL رنگوں کو سپورٹ کرتا ہے۔",
   "Supports whole numbers from -999,999,999,999 to 999,999,999,999.": "-999,999,999,999 سے 999,999,999,999 تک پورے نمبروں کو سپورٹ کرتا ہے۔",
-  "Supports whole numbers in bases 2, 8, 10 and 16.": "بیس 2، 8، 10 اور 16 میں پورے نمبر کو سپورٹ کرتا ہے۔",
+  "Supports whole numbers in bases 2–36.": "بیس 2 سے 36 تک کے اعداد کو سپورٹ کرتا ہے۔",
   "Sydney": "سڈنی",
   "Symbols": "علامتیں",
   "Take the result": "نتیجہ لے لو",

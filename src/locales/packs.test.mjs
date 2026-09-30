@@ -17,6 +17,15 @@ const runtimeLiterals = new Set([
 ].filter((text) => /\p{L}{2}/u.test(text) && !['encode', 'upper'].includes(text)));
 
 const placeholders = (text) => [...text.matchAll(/\{(\w+)\}/gu)].map((match) => match[1]).sort();
+const saveUsefulVerseUi = [
+  'Want to find UsefulVerse again?',
+  'Free tools, no account or subscription. Save this page in your notes or send it to yourself for next time.',
+  'Save UsefulVerse',
+  'Link copied. Keep it in your notes or send it to yourself for next time.',
+  'Share options opened. Choose where you want to keep the link.',
+  'Copy was blocked. Select the link below and copy it manually.',
+  'Page link',
+];
 
 for (const [language, pack] of Object.entries(packs)) {
   const keepEnglish = new Set(pack.meta.keepEnglish ?? []);
@@ -36,6 +45,13 @@ for (const [language, pack] of Object.entries(packs)) {
         assert.ok(value.trim(), `${group}[${key}] is empty`);
         if (value === key && /\p{Ll}{2}/u.test(key)) assert.ok(keepEnglish.has(key), `${group}[${JSON.stringify(key)}] is still English (add to meta.keepEnglish only if that is correct in ${language})`);
       }
+    }
+  });
+
+  test(`${language}: UsefulVerse save/share prompt is translated`, () => {
+    for (const key of saveUsefulVerseUi) {
+      assert.ok(pack.ui[key], `ui[${JSON.stringify(key)}]`);
+      assert.notEqual(pack.ui[key], key, `ui[${JSON.stringify(key)}] is still English`);
     }
   });
 

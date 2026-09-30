@@ -7,7 +7,7 @@ Browser-first collection of fast, private, static tools for everyday work.
 - Processing happens in the browser whenever possible.
 - No account, upload or paid API is required.
 - Each useful tool gets its own stable, indexable URL.
-- The current catalog contains 33 browser-only tools across writing, data, developer, SEO, design, privacy, text and everyday tasks.
+- The current catalog contains 49 browser-only tools across writing, data, developer, SEO, design, privacy, text and everyday tasks.
 - The public build is static and deployable to Cloudflare Pages.
 - CSS and JavaScript URLs are content-versioned during the build so CDN caches cannot serve an old runtime after a deploy.
 - HTML uses short browser and edge cache lifetimes; versioned assets remain immutable for repeat visits.
@@ -28,7 +28,7 @@ English remains the default at `/`. The site supports Spanish (`/es/`), French
 Korean (`/ko/`), Indonesian (`/id/`), Hindi (`/hi/`), Arabic (`/ar/`), Simplified
 Chinese (`/zh-cn/`), Bengali (`/bn/`), Russian (`/ru/`), Urdu (`/ur/`), Turkish
 (`/tr/`) and Vietnamese (`/vi/`). Each
-of the 33 tools has a matching URL in every language. The build creates every version as static HTML, adds
+of the 49 tools has a matching URL in every language. The build creates every version as static HTML, adds
 reciprocal `hreflang` and canonical tags, and lists every version with language
 alternates in `sitemap.xml`. It does not call a translation service at build time
 or in the visitor's browser.

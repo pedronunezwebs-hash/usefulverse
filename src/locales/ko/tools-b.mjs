@@ -76,7 +76,7 @@ export const ui = {
   "To base": "변환 진법",
   "Integer to convert": "변환할 정수",
   "Convert number": "진법 변환",
-  "Supports whole numbers in bases 2, 8, 10 and 16.": "2진수, 8진수, 10진수, 16진수 정수를 지원합니다.",
+  "Supports whole numbers in bases 2–36.": "2진수부터 36진수까지의 정수를 지원합니다.",
 };
 
 export const runtimeMessages = {

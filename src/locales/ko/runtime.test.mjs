@@ -138,7 +138,7 @@ test('ko local number parsing across tools (full-width digits, thousands commas)
   const comma = await runTool('ko', 'average-calculator', 'calculate-average', { '#average-input': '1,234' });
   assert.equal(String(comma('#average-count').textContent), '2'); // FAQ: a thousands comma splits the number
 
-  const random = await withCrypto('random-number-generator', 'generate-number', { '#random-min': '７', '#random-max': '７' }, { checked: { '#random-integer': true } });
+  const random = await withCrypto('random-number-generator', 'generate-number', { '#random-min': '７', '#random-max': '７', '#random-count': '1' }, { checked: { '#random-integer': true } });
   assert.equal(random('#random-result').textContent, '7');
   assert.equal(status(random), '브라우저에서 랜덤 숫자를 생성했습니다.');
 

@@ -15,10 +15,17 @@ await cp(join(root, 'src', 'styles.css'), join(dist, 'assets', 'styles.css'));
 await cp(join(root, 'src', 'app.js'), join(dist, 'assets', 'app.js'));
 await cp(join(root, 'src', 'advanced-tools.js'), join(dist, 'assets', 'advanced-tools.js'));
 await cp(join(root, 'src', 'advanced-logic.mjs'), join(dist, 'assets', 'advanced-logic.mjs'));
+await cp(join(root, 'src', 'expanded-tools.js'), join(dist, 'assets', 'expanded-tools.js'));
+await cp(join(root, 'src', 'expanded-logic.mjs'), join(dist, 'assets', 'expanded-logic.mjs'));
 const vendor = join(dist, 'assets', 'vendor');
 await mkdir(vendor, { recursive: true });
 await cp(join(root, 'node_modules', 'pdf-lib', 'dist', 'pdf-lib.min.js'), join(vendor, 'pdf-lib.min.js'));
 await cp(join(root, 'node_modules', 'jsqr', 'dist', 'jsQR.js'), join(vendor, 'jsQR.js'));
+await cp(join(root, 'node_modules', 'heic2any', 'dist', 'heic2any.min.js'), join(vendor, 'heic2any.min.js'));
+await cp(join(root, 'node_modules', 'marked', 'lib', 'marked.umd.js'), join(vendor, 'marked.umd.js'));
+await cp(join(root, 'node_modules', 'dompurify', 'dist', 'purify.min.js'), join(vendor, 'purify.min.js'));
+await cp(join(root, 'node_modules', 'turndown', 'lib', 'turndown.browser.umd.js'), join(vendor, 'turndown.browser.umd.js'));
+await cp(join(root, 'node_modules', 'js-yaml', 'dist', 'js-yaml.mjs'), join(vendor, 'js-yaml.mjs'));
 await cp(join(root, 'node_modules', 'pdfjs-dist', 'legacy', 'build', 'pdf.min.mjs'), join(vendor, 'pdf.min.mjs'));
 await cp(join(root, 'node_modules', 'pdfjs-dist', 'legacy', 'build', 'pdf.worker.min.mjs'), join(vendor, 'pdf.worker.min.mjs'));
 await cp(join(root, 'node_modules', 'pdfjs-dist', 'cmaps'), join(vendor, 'cmaps'), { recursive: true });
@@ -26,6 +33,11 @@ await cp(join(root, 'node_modules', 'pdfjs-dist', 'standard_fonts'), join(vendor
 await cp(join(root, 'node_modules', 'pdf-lib', 'LICENSE.md'), join(vendor, 'LICENSE-pdf-lib.md'));
 await cp(join(root, 'node_modules', 'pdfjs-dist', 'LICENSE'), join(vendor, 'LICENSE-pdfjs-dist'));
 await cp(join(root, 'node_modules', 'jsqr', 'LICENSE'), join(vendor, 'LICENSE-jsqr'));
+await cp(join(root, 'node_modules', 'heic2any', 'LICENSE.md'), join(vendor, 'LICENSE-heic2any.md'));
+await cp(join(root, 'node_modules', 'marked', 'LICENSE'), join(vendor, 'LICENSE-marked'));
+await cp(join(root, 'node_modules', 'dompurify', 'LICENSE-MPL'), join(vendor, 'LICENSE-dompurify-MPL'));
+await cp(join(root, 'node_modules', 'turndown', 'LICENSE'), join(vendor, 'LICENSE-turndown'));
+await cp(join(root, 'node_modules', 'js-yaml', 'LICENSE'), join(vendor, 'LICENSE-js-yaml'));
 await cp(join(root, 'public', 'favicon.svg'), join(dist, 'favicon.svg'));
 await cp(join(root, 'public', '_headers'), join(dist, '_headers'));
 await cp(join(root, 'public', 'BingSiteAuth.xml'), join(dist, 'BingSiteAuth.xml'));
@@ -39,6 +51,8 @@ const assetHash = createHash('sha256')
   .update(await readFile(join(dist, 'assets', 'app.js')))
   .update(await readFile(join(dist, 'assets', 'advanced-tools.js')))
   .update(await readFile(join(dist, 'assets', 'advanced-logic.mjs')))
+  .update(await readFile(join(dist, 'assets', 'expanded-tools.js')))
+  .update(await readFile(join(dist, 'assets', 'expanded-logic.mjs')))
   .update(await readFile(join(root, 'package-lock.json')))
   .update(await readFile(join(root, 'src', 'locales.mjs')));
 for (const file of (await readdir(vendor, { recursive: true })).sort()) {

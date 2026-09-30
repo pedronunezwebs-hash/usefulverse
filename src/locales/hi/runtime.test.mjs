@@ -91,11 +91,11 @@ test('hi UUID, random number and password: statuses, limits and Indian number in
   const tooMany = await runWithCrypto('uuid-generator', 'generate-uuids', { '#uuid-count': '101' });
   assert.equal(tooMany('#tool-status').textContent, '1 से 100 तक की संख्या चुनें।');
 
-  const random = await runWithCrypto('random-number-generator', 'generate-number', { '#random-min': '1', '#random-max': '1,00,000' }, { checked: { '#random-integer': true } });
+  const random = await runWithCrypto('random-number-generator', 'generate-number', { '#random-min': '1', '#random-max': '1,00,000', '#random-count': '1' }, { checked: { '#random-integer': true } });
   const drawn = Number(random('#random-result').textContent);
   assert.ok(Number.isInteger(drawn) && drawn >= 1 && drawn <= 100000, `1,00,000 is one lakh, got ${drawn}`);
   assert.equal(random('#tool-status').textContent, 'रैंडम नंबर आपके ब्राउज़र में ही बना।');
-  const hugeRange = await runWithCrypto('random-number-generator', 'generate-number', { '#random-min': '1', '#random-max': '500,00,00,000' }, { checked: { '#random-integer': true } });
+  const hugeRange = await runWithCrypto('random-number-generator', 'generate-number', { '#random-min': '1', '#random-max': '500,00,00,000', '#random-count': '1' }, { checked: { '#random-integer': true } });
   assert.equal(hugeRange('#tool-status').textContent, '429 करोड़ से छोटी रेंज चुनें।');
 
   const allTypes = { '#include-uppercase': true, '#include-lowercase': true, '#include-numbers': true, '#include-symbols': true };
