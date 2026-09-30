@@ -1,5 +1,7 @@
 const DAY_MS = 86_400_000;
 
+export { formatFileSize } from './advanced-logic.mjs';
+
 export function parseIsoDate(value) {
   const match = /^(\d{4})-(\d{2})-(\d{2})$/u.exec(String(value));
   if (!match) throw new TypeError('Enter a valid calendar date.');

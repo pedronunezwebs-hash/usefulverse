@@ -1,6 +1,7 @@
 import { tools } from './catalog.mjs';
 import { seo } from './seo.mjs';
 import { localeEntries, localePath, locales, packs, translateStaticHtml, ui } from './locales.mjs';
+import { imageFormatLocales } from './locales/image-formats.mjs';
 import { longtailFaqs } from './locales/longtail.mjs';
 import { expandedToolMarkup } from './expanded-template.mjs';
 import { browserBatchToolMarkup } from './browser-batch-template.mjs';
@@ -330,7 +331,7 @@ function toolMarkup(id) {
     <label class="field-label" for="checksum-expected">Compare with a known checksum (optional)</label><input id="checksum-expected" class="tool-input" type="text" spellcheck="false" autocomplete="off" placeholder="Paste the published SHA-256 value"><p class="checksum-match" id="checksum-match" aria-live="polite"></p>
   ${close}`;
   if (id === 'image-resizer-compressor') return `${common}
-    <label class="field-label" for="image-file">Choose an image</label><input id="image-file" class="tool-input file-picker" type="file" accept="image/jpeg,image/png,image/webp"><p class="file-meta" id="image-file-meta">JPG, PNG or WebP. No fixed file-size cap. Very large images depend on device memory; output is limited to 40 megapixels.</p>
+    <label class="field-label" for="image-file">Choose an image</label><input id="image-file" class="tool-input file-picker" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/avif,image/bmp,image/gif,image/apng,image/svg+xml,image/x-icon,image/vnd.microsoft.icon,.jpg,.jpeg,.jpe,.jfif,.pjpeg,.pjp,.png,.apng,.webp,.heic,.heif,.avif,.bmp,.gif,.svg,.ico,.cur"><p class="file-meta" id="image-file-meta">JPG, PNG, WebP, HEIC/HEIF, AVIF, BMP, GIF/APNG, SVG and ICO. Animated files export only their first frame. Output up to 40 megapixels.</p><p class="tool-hint">AVIF and some HEIC files may depend on browser support.</p>
     <div class="image-editor"><div><label class="field-label" for="image-width">Width (px)</label><input id="image-width" class="tool-input" type="number" min="1" max="8000" value="1200" inputmode="numeric"></div><button class="button button--ghost aspect-lock" type="button" data-action="toggle-aspect" aria-pressed="true" aria-label="Keep proportions">↔</button><div><label class="field-label" for="image-height">Height (px)</label><input id="image-height" class="tool-input" type="number" min="1" max="8000" value="800" inputmode="numeric"></div></div>
     <label class="field-label" for="image-format">Output format</label><select id="image-format" class="tool-input"><option value="image/webp">WebP</option><option value="image/jpeg">JPEG</option><option value="image/png">PNG</option></select><label class="field-label" for="image-quality">Quality <output id="image-quality-value">80%</output></label><input id="image-quality" type="range" min="40" max="95" step="1" value="80"><p class="tool-hint">Quality applies to JPEG and WebP. PNG is lossless.</p>
     <div class="tool-actions"><button class="button button--primary" data-action="resize-image">Resize and save image</button><button class="button button--ghost" data-action="clear">Clear</button></div><p class="tool-status" id="tool-status" aria-live="polite">The image is processed locally in your browser.</p><div class="image-preview" id="image-preview" hidden><img id="image-preview-img" alt="Resized image preview"><p id="image-output-meta"></p><a class="button button--ghost" id="image-download" download="usefulverse-image.webp">Download image</a></div>
@@ -396,6 +397,8 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
     de: { how: (name) => `Wie verwendet man „${name}“?`, privacyQuestion: 'Werden meine Daten an einen Server gesendet?', privacyAnswer: 'Nein. Die Verarbeitung findet in Ihrem Browser statt. Ihre Daten werden nicht hochgeladen.' },
   };
   const pack = packs[language];
+  const imageFormatData = imageFormatLocales[language];
+  const imageFormatCopy = imageFormatData?.copy?.[tool.id];
   const seoData = language === 'en'
     ? (seo[tool.id] ?? { title: tool.title, description: `${tool.description} Free, fast and private in your browser.` })
     : pack ? {
@@ -404,6 +407,15 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
       faq: pack.faq?.[tool.id] ?? [
         { question: fill(pack.page.faqHow, { name: tool.shortTitle }), answer: tool.intro },
         { question: pack.page.privacyQuestion, answer: pack.page.privacyAnswer },
+      ],
+    } : imageFormatCopy ? {
+      title: imageFormatData.seoTitles?.[tool.id] ?? imageFormatCopy[1],
+      description: imageFormatCopy[2].length >= 25 && imageFormatCopy[2].length <= 155
+        ? imageFormatCopy[2]
+        : `${imageFormatCopy[4].slice(0, 145).replace(/[\s,;:]+$/u, '')}…`,
+      faq: [
+        { question: imageFormatData.faqQuestions?.[tool.id] ?? faqCopy[language].how(tool.shortTitle), answer: imageFormatCopy[4] },
+        { question: faqCopy[language].privacyQuestion, answer: faqCopy[language].privacyAnswer },
       ],
     } : {
       title: tool.shortTitle,

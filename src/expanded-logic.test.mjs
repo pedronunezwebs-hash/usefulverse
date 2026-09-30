@@ -9,11 +9,19 @@ import {
   calculateWeightedAverage,
   countBusinessDays,
   crc32,
+  formatFileSize,
   parseIsoDate,
   removeDuplicateLines,
   romanDate,
   toRomanNumeral,
 } from './expanded-logic.mjs';
+
+test('shared file-size labels are available to expanded file tools and localized', () => {
+  assert.equal(formatFileSize(1024, 'en'), '1 KB');
+  assert.equal(formatFileSize(1024 * 1024, 'en'), '1 MB');
+  assert.equal(formatFileSize(1.5 * 1024 * 1024, 'es'), '1,5 MB');
+  assert.equal(formatFileSize(-1, 'en'), '—');
+});
 
 test('calendar date parsing rejects impossible dates and avoids time-zone drift', () => {
   assert.equal(addCalendarDays('2024-02-28', 1), '2024-02-29');

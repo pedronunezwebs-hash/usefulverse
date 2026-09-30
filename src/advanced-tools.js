@@ -274,6 +274,42 @@ function setupChecksum(root) {
   });
 }
 
+const imageExtensions = new Set(['jpg', 'jpeg', 'jpe', 'jfif', 'pjpeg', 'pjp', 'png', 'apng', 'webp', 'heic', 'heif', 'avif', 'bmp', 'gif', 'svg', 'ico', 'cur']);
+const imageMimeTypes = new Set(['image/jpeg', 'image/png', 'image/apng', 'image/webp', 'image/heic', 'image/heif', 'image/avif', 'image/bmp', 'image/x-ms-bmp', 'image/gif', 'image/svg+xml', 'image/x-icon', 'image/vnd.microsoft.icon']);
+
+function isSupportedImage(file) {
+  const extension = file.name.split('.').pop()?.toLowerCase() ?? '';
+  return imageMimeTypes.has(file.type.toLowerCase()) || imageExtensions.has(extension);
+}
+
+function isHeic(file) {
+  return /\.(?:heic|heif)$/iu.test(file.name) || ['image/heic', 'image/heif'].includes(file.type.toLowerCase());
+}
+
+async function decodeImageFile(file) {
+  let image = file;
+  if (isHeic(file)) {
+    const converter = await loadVendorScript('heic2any.min.js', 'heic2any');
+    const result = await converter({ blob: file, toType: 'image/png' });
+    image = Array.isArray(result) ? result[0] : result;
+  }
+  try { return await createImageBitmap(image, { imageOrientation: 'from-image' }); }
+  catch {
+    try { return await createImageBitmap(image); }
+    catch {
+      const url = URL.createObjectURL(image);
+      try {
+        const element = new Image();
+        element.src = url;
+        if (typeof element.decode === 'function') await element.decode();
+        else await new Promise((resolve, reject) => { element.onload = resolve; element.onerror = reject; });
+        try { return await createImageBitmap(element); }
+        catch { return element; }
+      } finally { URL.revokeObjectURL(url); }
+    }
+  }
+}
+
 function setupImage(root) {
   const fileInput = $('#image-file', root);
   const width = $('#image-width', root);
@@ -292,18 +328,18 @@ function setupImage(root) {
     $('#image-preview', root).hidden = true;
     revokePreview();
     if (!sourceFile) return;
-    if (!['image/jpeg', 'image/png', 'image/webp'].includes(sourceFile.type)) { sourceFile = null; return setStatus(root, 'Choose a JPG, PNG or WebP image.', 'error'); }
+    if (!isSupportedImage(sourceFile)) { sourceFile = null; return setStatus(root, 'Choose a supported image format.', 'error'); }
     let bitmap;
     try {
       const file = sourceFile;
-      bitmap = await createImageBitmap(file);
+      bitmap = await decodeImageFile(file);
       if (operation !== imageOperation) return;
       aspectRatio = bitmap.width / bitmap.height;
       width.value = String(bitmap.width); height.value = String(bitmap.height);
       $('#image-file-meta', root).textContent = `${file.name} · ${bitmap.width} × ${bitmap.height} px · ${logic.formatFileSize(file.size, languageTag)}`;
       setStatus(root, 'Image ready. Choose its size and format.');
-    } catch { if (operation === imageOperation) { sourceFile = null; setStatus(root, 'This image could not be opened. Try another file.', 'error'); } }
-    finally { bitmap?.close(); }
+    } catch { if (operation === imageOperation) { sourceFile = null; setStatus(root, 'This image could not be decoded by your browser. Try another file or browser.', 'error'); } }
+    finally { bitmap?.close?.(); }
   });
   width.addEventListener('input', () => { if (keepAspect && Number(width.value) > 0) height.value = String(Math.max(1, Math.round(Number(width.value) / aspectRatio))); });
   height.addEventListener('input', () => { if (keepAspect && Number(height.value) > 0) width.value = String(Math.max(1, Math.round(Number(height.value) * aspectRatio))); });
@@ -325,7 +361,7 @@ function setupImage(root) {
       setStatus(root, 'Resizing the image on your device…');
       let bitmap;
       try {
-        bitmap = await createImageBitmap(original);
+        bitmap = await decodeImageFile(original);
         if (operation !== imageOperation) return;
         const canvas = document.createElement('canvas'); canvas.width = outWidth; canvas.height = outHeight;
         const context = canvas.getContext('2d', { alpha: format.value === 'image/png' });
@@ -334,6 +370,7 @@ function setupImage(root) {
         context.drawImage(bitmap, 0, 0, outWidth, outHeight);
         const blob = await new Promise((resolve, reject) => canvas.toBlob((value) => value ? resolve(value) : reject(new Error('Image conversion failed.')), format.value, Number(quality.value) / 100));
         if (operation !== imageOperation) return;
+        if (blob.type !== format.value) throw new Error('The browser does not support the selected output format.');
         revokePreview();
         previewUrl = URL.createObjectURL(blob); objectUrls.add(previewUrl);
         $('#image-preview-img', root).src = previewUrl;
@@ -342,12 +379,12 @@ function setupImage(root) {
         const download = $('#image-download', root); download.href = previewUrl; download.download = `${original.name.replace(/\.[^.]+$/u, '')}-resized.${extension}`;
         $('#image-preview', root).hidden = false;
         setStatus(root, 'Your new image is ready to download. The original is unchanged.', 'success');
-      } catch (error) { if (operation === imageOperation) setStatus(root, error.message === 'Canvas is unavailable.' ? error.message : 'The image could not be resized. Try fewer pixels or another format.', 'error'); }
-      finally { bitmap?.close(); }
+      } catch (error) { if (operation === imageOperation) setStatus(root, error.message === 'Canvas is unavailable.' ? error.message : error.message.includes('output format') ? 'The browser does not support the selected output format.' : 'The image could not be resized. Try fewer pixels or another format.', 'error'); }
+      finally { bitmap?.close?.(); }
     }
     if (action === 'clear') {
       imageOperation += 1;
-      sourceFile = null; fileInput.value = ''; width.value = '1200'; height.value = '800'; quality.value = '80'; $('#image-quality-value', root).textContent = '80%'; $('#image-file-meta', root).textContent = t('JPG, PNG or WebP. No fixed file-size cap. Very large images depend on device memory; output is limited to 40 megapixels.'); $('#image-preview', root).hidden = true; revokePreview(); setStatus(root, 'The image is processed locally in your browser.');
+      sourceFile = null; fileInput.value = ''; width.value = '1200'; height.value = '800'; quality.value = '80'; $('#image-quality-value', root).textContent = '80%'; $('#image-file-meta', root).textContent = t('JPG, PNG, WebP, HEIC/HEIF, AVIF, BMP, GIF/APNG, SVG and ICO. Animated files export only their first frame. Output up to 40 megapixels.'); $('#image-preview', root).hidden = true; revokePreview(); setStatus(root, 'The image is processed locally in your browser.');
     }
   });
 }
@@ -842,7 +879,7 @@ function setupQrReader(root) {
       if (operation !== scanOperation) return;
       if (!await scanBitmap(bitmap, operation) && operation === scanOperation) setStatus(root, 'No QR code found. Try a clearer, well-lit image.', 'error');
     } catch (error) { if (operation === scanOperation) setStatus(root, error.message || 'This image could not be scanned. Try another image.', 'error'); }
-    finally { bitmap?.close(); }
+    finally { bitmap?.close?.(); }
   });
   start.addEventListener('click', async () => {
     if (!navigator.mediaDevices?.getUserMedia || !window.isSecureContext) return setStatus(root, 'Camera scanning needs a supported browser and a secure HTTPS connection. You can choose an image instead.', 'error');
