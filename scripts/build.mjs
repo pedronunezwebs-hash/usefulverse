@@ -23,6 +23,24 @@ await cp(join(root, 'src', 'new-tool-logic.mjs'), join(dist, 'assets', 'new-tool
 const vendor = join(dist, 'assets', 'vendor');
 await mkdir(vendor, { recursive: true });
 await cp(join(root, 'node_modules', 'pdf-lib', 'dist', 'pdf-lib.min.js'), join(vendor, 'pdf-lib.min.js'));
+await bundle({
+  entryPoints: [join(root, 'src', 'tiff-decoder.mjs')],
+  outfile: join(dist, 'assets', 'tiff-decoder.mjs'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'office-package-worker.mjs')],
+  outfile: join(vendor, 'office-package-worker.mjs'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
 await cp(join(root, 'node_modules', 'jsqr', 'dist', 'jsQR.js'), join(vendor, 'jsQR.js'));
 await cp(join(root, 'node_modules', 'heic2any', 'dist', 'heic2any.min.js'), join(vendor, 'heic2any.min.js'));
 await cp(join(root, 'node_modules', 'marked', 'lib', 'marked.umd.js'), join(vendor, 'marked.umd.js'));
@@ -63,6 +81,9 @@ await cp(join(root, 'node_modules', 'dompurify', 'LICENSE-MPL'), join(vendor, 'L
 await cp(join(root, 'node_modules', 'turndown', 'LICENSE'), join(vendor, 'LICENSE-turndown'));
 await cp(join(root, 'node_modules', 'js-yaml', 'LICENSE'), join(vendor, 'LICENSE-js-yaml'));
 await cp(join(root, 'node_modules', 'jsbarcode', 'MIT-LICENSE.txt'), join(vendor, 'LICENSE-jsbarcode.txt'));
+await cp(join(root, 'node_modules', 'utif', 'LICENSE'), join(vendor, 'LICENSE-utif'));
+await cp(join(root, 'node_modules', 'pako', 'LICENSE'), join(vendor, 'LICENSE-pako'));
+await cp(join(root, 'node_modules', 'fflate', 'LICENSE'), join(vendor, 'LICENSE-fflate'));
 await cp(join(root, 'node_modules', 'mediabunny', 'LICENSE'), join(vendor, 'LICENSE-mediabunny'));
 await cp(join(root, 'node_modules', '@neslinesli93', 'qpdf-wasm', 'README.md'), join(vendor, 'NOTICE-qpdf-wasm.md'));
 await cp(join(root, 'public', 'licenses', 'LICENSE-qpdf.txt'), join(vendor, 'LICENSE-qpdf.txt'));

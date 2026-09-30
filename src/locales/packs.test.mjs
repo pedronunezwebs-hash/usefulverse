@@ -5,6 +5,7 @@ import { tools } from '../catalog.mjs';
 import { renderToolPage } from '../template.mjs';
 import { packs, runtimeMessages } from '../locales.mjs';
 import { imageFormatLocales } from './image-formats.mjs';
+import { officePackageLocales, tiffHints } from './office-package.mjs';
 import { pageKeys, templateKeys } from './template-keys.mjs';
 import { numberToWordsHook } from './test-harness.mjs';
 
@@ -137,5 +138,35 @@ test('image-to-PDF empty-state file-size and pixel guidance is translated in eve
     assert.ok(translated, `${language} should translate the image-to-PDF limits`);
     assert.notEqual(translated, key, `${language} should not show the English image-to-PDF limits`);
     assert.equal(runtimeMessages[language]?.[key], translated, `${language} runtime should use the same translated guidance`);
+  }
+});
+
+test('Office compressor copy, FAQs and local-processing limits exist in every shipped language', () => {
+  for (const language of Object.keys(imageFormatLocales)) {
+    const data = officePackageLocales[language];
+    assert.ok(data, `${language} Office copy`);
+    assert.equal(data.copy['office-file-compressor'].length, 6, `${language} Office page copy`);
+    assert.ok(data.copy['office-file-compressor'][3].includes('DOCX') && data.copy['office-file-compressor'][3].includes('XLSX') && data.copy['office-file-compressor'][3].includes('PPTX'));
+    assert.match(data.copy['office-file-compressor'][5], /100\s?(?:MB|Mo|МБ)/u);
+    assert.ok(data.faq['office-file-compressor'].length >= 2, `${language} Office FAQs`);
+    for (const key of ['Choose a DOCX, XLSX or PPTX file', 'Try to reduce file size', 'Processing runs locally in this browser. No upload.']) {
+      assert.ok(data.ui[key], `${language} UI: ${key}`);
+      assert.notEqual(data.ui[key], key, `${language} UI remains English: ${key}`);
+    }
+  }
+});
+
+test('TIFF/TIF support and its first-page limitation are explicit on every localized image page', () => {
+  const ids = ['image-format-converter', 'image-resizer-compressor', 'image-to-pdf'];
+  for (const [language, data] of Object.entries(imageFormatLocales)) {
+    assert.ok(tiffHints[language], `${language} TIFF limitation`);
+    for (const id of ids) {
+      assert.match(data.copy[id][3], /TIFF|TIF/u, `${language}/${id} keywords`);
+      assert.ok(data.copy[id][5].includes(tiffHints[language]), `${language}/${id} explains TIFF behavior`);
+      const tool = tools.find((item) => item.id === id);
+      const values = data.copy[id];
+      const html = renderToolPage({ ...tool, title: values[0], shortTitle: values[1], description: values[2], keywords: values[3], intro: values[4], body: values[5] }, 'test', language, tools);
+      assert.ok(html.includes(tiffHints[language]), `${language}/${id} published TIFF guidance`);
+    }
   }
 });

@@ -7,6 +7,7 @@ import { expandedToolUiLocales } from './locales/expanded-ui.mjs';
 import { priorityToolLocales } from './locales/priority-tools.mjs';
 import { browserBatchLocales } from './locales/browser-batch.mjs';
 import { imageFormatLocales } from './locales/image-formats.mjs';
+import { officePackageLocales, tiffHints } from './locales/office-package.mjs';
 
 export const locales = {
   en: { code: 'en', name: 'English', prefix: '', homeTitle: 'UsefulVerse — Simple tools for everyday tasks', homeDescription: 'Fast, private browser tools for text, files, data, SEO and everyday tasks. No account and no upload required.' },
@@ -250,6 +251,18 @@ for (const [language, data] of Object.entries(browserBatchLocales)) {
 // Image input-format support is shared by the converter, resizer and image-to-PDF tools.
 // Keep each localized page, its controls, SEO copy and FAQ in sync with that runtime.
 for (const [language, data] of Object.entries(imageFormatLocales)) {
+  const tiffHint = tiffHints[language];
+  if (tiffHint) data.ui['Multi-page TIFF uses only its first page. Some TIFF compression variants may not decode.'] = tiffHint;
+  for (const id of ['image-format-converter', 'image-resizer-compressor', 'image-to-pdf']) {
+    const values = data.copy[id];
+    if (!values) continue;
+    values[3] = `${values[3]}, TIFF/TIF, TIFF to JPG, TIF to PNG, TIFF to PDF`;
+    values[5] = `${values[5]} ${tiffHint}`;
+    const pack = packs[language];
+    if (pack) pack.faq[id]?.push({ question: ({
+      en: 'Can I use TIFF/TIF files with this image tool?', es: '¿Puedo usar archivos TIFF/TIF con esta herramienta de imágenes?', fr: 'Puis-je utiliser des fichiers TIFF/TIF avec cet outil ?', pt: 'Posso usar arquivos TIFF/TIF nesta ferramenta de imagem?', de: 'Kann ich TIFF/TIF-Dateien mit diesem Bildwerkzeug verwenden?', ja: 'この画像ツールでTIFF/TIFファイルを使えますか？', ko: '이 이미지 도구에서 TIFF/TIF 파일을 사용할 수 있나요?', id: 'Bisakah saya memakai file TIFF/TIF dengan alat gambar ini?', hi: 'क्या इस चित्र टूल में TIFF/TIF फ़ाइलें इस्तेमाल कर सकते हैं?', ar: 'هل يمكنني استخدام ملفات TIFF/TIF مع أداة الصور هذه؟', zh: '此图片工具支持 TIFF/TIF 文件吗？', bn: 'এই ছবি টুলে কি TIFF/TIF ফাইল ব্যবহার করা যায়?', ru: 'Можно ли использовать файлы TIFF/TIF в этом инструменте?', ur: 'کیا اس تصویری ٹول میں TIFF/TIF فائلیں استعمال کر سکتا ہوں؟', tr: 'Bu görsel aracında TIFF/TIF dosyaları kullanabilir miyim?', vi: 'Tôi có thể dùng tệp TIFF/TIF với công cụ ảnh này không?'
+    })[language], answer: tiffHint });
+  }
   Object.assign(ui[language] ??= {}, data.ui);
   Object.assign(runtimeMessages[language] ??= {}, data.ui);
   Object.assign(copy[language] ??= {}, data.copy);
@@ -270,6 +283,21 @@ for (const [language, data] of Object.entries(imageFormatLocales)) {
       { question: faq.faqPrivacyQuestion, answer: faq.faqPrivacyAnswer.replace('{body}', body) },
     ];
   }
+}
+
+// Office Open XML package recompression is a local, optional tool. Keep its page,
+// FAQs and runtime messages translated together for the whole published locale set.
+for (const [language, data] of Object.entries(officePackageLocales)) {
+  Object.assign(ui[language] ??= {}, data.ui);
+  Object.assign(runtimeMessages[language] ??= {}, data.ui);
+  Object.assign(copy[language] ??= {}, data.copy);
+  const pack = packs[language];
+  if (!pack) continue;
+  Object.assign(pack.ui, data.ui);
+  Object.assign(pack.runtimeMessages, data.ui);
+  Object.assign(pack.copy, data.copy);
+  Object.assign(pack.seo, data.seo);
+  Object.assign(pack.faq, data.faq);
 }
 
 // Parameterized runtime strings for app.js (see src/locales/template-keys.mjs). Packs bring their own.
