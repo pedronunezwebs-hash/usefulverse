@@ -21,6 +21,7 @@ await cp(join(root, 'src', 'expanded-tools.js'), join(dist, 'assets', 'expanded-
 await cp(join(root, 'src', 'expanded-logic.mjs'), join(dist, 'assets', 'expanded-logic.mjs'));
 await cp(join(root, 'src', 'new-tools.js'), join(dist, 'assets', 'new-tools.js'));
 await cp(join(root, 'src', 'new-tool-logic.mjs'), join(dist, 'assets', 'new-tool-logic.mjs'));
+await cp(join(root, 'src', 'media-tools.js'), join(dist, 'assets', 'media-tools.js'));
 const vendor = join(dist, 'assets', 'vendor');
 await mkdir(vendor, { recursive: true });
 await cp(join(root, 'node_modules', 'pdf-lib', 'dist', 'pdf-lib.min.js'), join(vendor, 'pdf-lib.min.js'));
@@ -69,6 +70,28 @@ await bundle({
   target: ['es2022'],
   minify: true,
 });
+await bundle({
+  entryPoints: [join(root, 'src', 'audio-processing.mjs')],
+  outfile: join(vendor, 'audio-processing.mjs'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'media-transcription-worker.mjs')],
+  outfile: join(dist, 'assets', 'media-transcription-worker.mjs'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+const onnxRuntime = join(vendor, 'onnx');
+await mkdir(onnxRuntime, { recursive: true });
+await cp(join(root, 'node_modules', 'onnxruntime-web', 'dist', 'ort-wasm-simd-threaded.mjs'), join(onnxRuntime, 'ort-wasm-simd-threaded.mjs'));
+await cp(join(root, 'node_modules', 'onnxruntime-web', 'dist', 'ort-wasm-simd-threaded.wasm'), join(onnxRuntime, 'ort-wasm-simd-threaded.wasm'));
 await cp(join(root, 'node_modules', 'pdfjs-dist', 'legacy', 'build', 'pdf.min.mjs'), join(vendor, 'pdf.min.mjs'));
 await cp(join(root, 'node_modules', 'pdfjs-dist', 'legacy', 'build', 'pdf.worker.min.mjs'), join(vendor, 'pdf.worker.min.mjs'));
 await cp(join(root, 'node_modules', 'pdfjs-dist', 'cmaps'), join(vendor, 'cmaps'), { recursive: true });
@@ -86,6 +109,9 @@ await cp(join(root, 'node_modules', 'utif', 'LICENSE'), join(vendor, 'LICENSE-ut
 await cp(join(root, 'node_modules', 'pako', 'LICENSE'), join(vendor, 'LICENSE-pako'));
 await cp(join(root, 'node_modules', 'fflate', 'LICENSE'), join(vendor, 'LICENSE-fflate'));
 await cp(join(root, 'node_modules', 'mediabunny', 'LICENSE'), join(vendor, 'LICENSE-mediabunny'));
+await cp(join(root, 'node_modules', '@mediabunny', 'mp3-encoder', 'LICENSE'), join(vendor, 'LICENSE-mediabunny-mp3-encoder'));
+await cp(join(root, 'node_modules', '@huggingface', 'transformers', 'LICENSE'), join(vendor, 'LICENSE-transformers-js'));
+await cp(join(root, 'public', 'licenses', 'LICENSE-onnxruntime.txt'), join(vendor, 'LICENSE-onnxruntime-web.txt'));
 await cp(join(root, 'node_modules', '@neslinesli93', 'qpdf-wasm', 'README.md'), join(vendor, 'NOTICE-qpdf-wasm.md'));
 await cp(join(root, 'public', 'licenses', 'LICENSE-qpdf.txt'), join(vendor, 'LICENSE-qpdf.txt'));
 await cp(join(root, 'public', 'licenses', 'LICENSE-qpdf-wasm-ISC.txt'), join(vendor, 'LICENSE-qpdf-wasm-ISC.txt'));
@@ -106,6 +132,8 @@ const assetHash = createHash('sha256')
   .update(await readFile(join(dist, 'assets', 'expanded-logic.mjs')))
   .update(await readFile(join(dist, 'assets', 'new-tools.js')))
   .update(await readFile(join(dist, 'assets', 'new-tool-logic.mjs')))
+  .update(await readFile(join(dist, 'assets', 'media-tools.js')))
+  .update(await readFile(join(dist, 'assets', 'media-transcription-worker.mjs')))
   .update(await readFile(join(root, 'package-lock.json')))
   .update(await readFile(join(root, 'src', 'locales.mjs')));
 for (const file of (await readdir(vendor, { recursive: true })).sort()) {

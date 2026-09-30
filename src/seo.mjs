@@ -69,3 +69,21 @@ Object.assign(seo, {
   'pdf-to-image': { title: 'PDF to JPG & PNG Converter – Export PDF Pages', description: 'Convert PDF pages to JPG or PNG images locally and save them together in one ZIP file.', faq: [{ question: 'Can I convert every page of a PDF to images?', answer: 'Yes. Choose all pages or enter a page range, select JPG or PNG and download the rendered pages together as a ZIP.' }, { question: 'Is the PDF uploaded to a server?', answer: 'No. PDF.js reads the selected PDF in your browser and renders each page on your device.' }] },
   'sql-formatter': { title: 'SQL Formatter – Format & Indent SQL Online', description: 'Format SQL queries with readable indentation, line breaks and keyword casing. Your SQL stays in the browser.', faq: [{ question: 'What does an SQL formatter do?', answer: 'It adds line breaks and indentation to common SQL clauses and can normalize recognized SQL keyword casing.' }, { question: 'Does this tool validate or run SQL?', answer: 'No. It is a best-effort formatter, not a syntax validator, database connection or security checker. Review the output before use.' }] },
 });
+
+Object.assign(seo, {
+  'audio-compressor': { title: 'Audio Compressor Online – MP3, M4A & OGG', description: 'Compress audio in your browser and save a smaller MP3, M4A or OGG copy when possible. Your original stays on your device.', faq: [
+    { question: 'How do I compress audio without uploading it?', answer: 'Choose an audio file, output format and quality, then save a new copy. Processing runs locally in your browser; codec support depends on your device and browser.' },
+    { question: 'Will compressing audio always make the file smaller?', answer: 'No. Re-encoding may reduce sound quality or make a file larger. UsefulVerse only offers a copy when it is smaller, and never changes the original.' },
+    { question: 'Which audio formats can I create?', answer: 'Choose MP3, M4A (AAC) or OGG (Opus). The formats your browser can encode may vary; use MP3 if another choice is unavailable.' },
+  ] },
+  'media-transcriber': { title: 'Audio to Text & Video Transcriber Online', description: 'Transcribe speech from audio or video locally in your browser. No media upload; first use downloads an open speech model and local engine.', faq: [
+    { question: 'How do I transcribe an audio or video file to text?', answer: 'Choose a recording or a video with an audio track, select a spoken language or automatic detection, then start transcription. Speech recognition runs on your device.' },
+    { question: 'Is my recording uploaded for transcription?', answer: 'No. The media is decoded and transcribed in your browser. On first use, about 58 MB of model and local engine files are downloaded; your browser may download them again if its cache is cleared.' },
+    { question: 'How accurate is the transcript?', answer: 'The compact multilingual model can mishear names, numbers and punctuation. Review the transcript before relying on or sharing it.' },
+  ] },
+});
+
+seo['video-compressor'].faq.push({
+  question: 'Should I use a computer to compress a long video?',
+  answer: 'A desktop or laptop is recommended for long or high-resolution files. Compression uses your device’s memory, storage, battery and supported browser codecs; keep this tab open while it runs.',
+});

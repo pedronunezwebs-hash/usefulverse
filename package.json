@@ -25,6 +25,8 @@
     "utif": "3.1.0"
   },
   "dependencies": {
+    "@huggingface/transformers": "4.3.0",
+    "@mediabunny/mp3-encoder": "1.61.0",
     "@neslinesli93/qpdf-wasm": "0.3.0",
     "jsbarcode": "3.12.3",
     "mediabunny": "1.61.0"
