@@ -412,6 +412,21 @@ html[dir="rtl"] .conversion-results output { direction: ltr; text-align: left; }
 .expanded-tool-workspace .tool-file-controls .button { min-height: 38px; padding: 7px 10px; font-size: 12px; }
 .expanded-tool-workspace .file-downloads { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 14px; }
 .expanded-tool-workspace .file-download { max-width: 100%; overflow-wrap: anywhere; }
+.expanded-tool-workspace .timecard-shifts { display: grid; gap: 12px; }
+.expanded-tool-workspace .timecard-row { display: grid; min-width: 0; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; align-items: end; gap: 12px; margin: 0; padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); }
+.expanded-tool-workspace .timecard-row legend { padding: 0 5px; color: var(--muted); font-size: 12px; font-weight: 800; }
+.expanded-tool-workspace .timecard-row .field-label { min-width: 0; margin: 0; }
+.expanded-tool-workspace .timecard-row .button { min-width: 42px; min-height: 46px; }
+.expanded-tool-workspace .typing-prompt { margin: 20px 0 12px; padding: 16px 18px; border-radius: 13px; color: var(--ink); background: var(--paper); font-size: 15px; line-height: 1.7; }
+.expanded-tool-workspace .timer-display { display: grid; min-height: 220px; margin: 20px 0; padding: 20px; place-content: center; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); text-align: center; }
+.expanded-tool-workspace .timer-display output { color: var(--ink); font-size: clamp(54px, 13vw, 96px); font-variant-numeric: tabular-nums; font-weight: 850; letter-spacing: -.07em; line-height: 1; }
+.expanded-tool-workspace .timer-display p { min-height: 20px; margin: 12px 0 0; color: var(--muted); font-size: 13px; }
+.expanded-tool-workspace .crop-preview-wrap { margin-top: 18px; }
+.expanded-tool-workspace .crop-preview-wrap .field-label { margin-top: 0; }
+.expanded-tool-workspace .crop-canvas { display: block; width: 100%; max-width: 100%; height: auto; max-height: 65vh; margin-top: 8px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); object-fit: contain; touch-action: none; cursor: crosshair; }
+.expanded-tool-workspace .crop-canvas:focus-visible { outline: 3px solid rgb(77 107 255 / 30%); outline-offset: 3px; }
+.expanded-tool-workspace .picker-winners { display: grid; gap: 8px; margin: 16px 0 0; padding-inline-start: 24px; }
+.expanded-tool-workspace .picker-winners li { padding: 10px 12px; border-radius: 10px; color: var(--ink); background: var(--paper); font-weight: 700; overflow-wrap: anywhere; }
 .expanded-tool-workspace .favicon-preview-card { display: flex; flex-direction: column; }
 .expanded-tool-workspace #favicon-preview { display: block; width: min(100%, 260px); height: auto; margin: auto; border: 1px solid var(--line); border-radius: 16px; background-color: var(--surface); background-image: linear-gradient(45deg, #eef0f4 25%, transparent 25%), linear-gradient(-45deg, #eef0f4 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #eef0f4 75%), linear-gradient(-45deg, transparent 75%, #eef0f4 75%); background-position: 0 0, 0 8px, 8px -8px, -8px 0; background-size: 16px 16px; }
 .expanded-tool-workspace .image-convert-preview { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 145px), 1fr)); gap: 12px; margin-top: 18px; }
@@ -423,6 +438,8 @@ html[dir="rtl"] .conversion-results output { direction: ltr; text-align: left; }
 .expanded-tool-workspace .markdown-preview { display: block; width: calc(100% - 20px); min-height: 280px; margin: 0 10px 10px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
 .expanded-tool-workspace .tool-actions .button:disabled, .expanded-tool-workspace .tool-file-controls .button:disabled { opacity: .55; cursor: not-allowed; transform: none; }
 @media (max-width: 520px) {
+  .expanded-tool-workspace .timecard-row { grid-template-columns: 1fr; }
+  .expanded-tool-workspace .timecard-row .button { justify-self: start; }
   .expanded-tool-workspace .tool-file-item { grid-template-columns: 1fr; }
   .expanded-tool-workspace .tool-file-controls { justify-content: start; }
   .expanded-tool-workspace .converter-grid { grid-template-columns: 1fr; }

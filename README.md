@@ -7,7 +7,7 @@ Browser-first collection of fast, private, static tools for everyday work.
 - Processing happens in the browser whenever possible.
 - No account, upload or paid API is required.
 - Each useful tool gets its own stable, indexable URL.
-- The current catalog contains 49 browser-only tools across writing, data, developer, SEO, design, privacy, text and everyday tasks.
+- The current catalog contains 64 browser-only tools across writing, data, developer, SEO, design, privacy, text and everyday tasks.
 - The public build is static and deployable to Cloudflare Pages.
 - CSS and JavaScript URLs are content-versioned during the build so CDN caches cannot serve an old runtime after a deploy.
 - HTML uses short browser and edge cache lifetimes; versioned assets remain immutable for repeat visits.
@@ -28,10 +28,18 @@ English remains the default at `/`. The site supports Spanish (`/es/`), French
 Korean (`/ko/`), Indonesian (`/id/`), Hindi (`/hi/`), Arabic (`/ar/`), Simplified
 Chinese (`/zh-cn/`), Bengali (`/bn/`), Russian (`/ru/`), Urdu (`/ur/`), Turkish
 (`/tr/`) and Vietnamese (`/vi/`). Each
-of the 49 tools has a matching URL in every language. The build creates every version as static HTML, adds
+of the 64 tools has a matching URL in every language. The build creates every version as static HTML, adds
 reciprocal `hreflang` and canonical tags, and lists every version with language
 alternates in `sitemap.xml`. It does not call a translation service at build time
 or in the visitor's browser.
+
+The newest browser-only batch adds a typing-speed test, fraction calculator,
+time-card calculator, countdown/stopwatch/Pomodoro timer, Lorem Ipsum generator,
+IPv4 subnet calculator, random name picker, fuel-cost calculator, image cropper,
+PDF-page-to-image ZIP converter and SQL formatter. Calculations and file work run
+on the visitor's device; PDF.js is loaded only on the PDF converter page. The
+current generated sitemap contains 1,040 URLs (64 tools and 16 home pages in 16
+languages).
 
 Japanese, Korean, Indonesian, Hindi, Arabic, Simplified Chinese, Bengali, Russian,
 Urdu, Turkish and Vietnamese are self-contained language packs in

@@ -17,6 +17,8 @@ await cp(join(root, 'src', 'advanced-tools.js'), join(dist, 'assets', 'advanced-
 await cp(join(root, 'src', 'advanced-logic.mjs'), join(dist, 'assets', 'advanced-logic.mjs'));
 await cp(join(root, 'src', 'expanded-tools.js'), join(dist, 'assets', 'expanded-tools.js'));
 await cp(join(root, 'src', 'expanded-logic.mjs'), join(dist, 'assets', 'expanded-logic.mjs'));
+await cp(join(root, 'src', 'new-tools.js'), join(dist, 'assets', 'new-tools.js'));
+await cp(join(root, 'src', 'new-tool-logic.mjs'), join(dist, 'assets', 'new-tool-logic.mjs'));
 const vendor = join(dist, 'assets', 'vendor');
 await mkdir(vendor, { recursive: true });
 await cp(join(root, 'node_modules', 'pdf-lib', 'dist', 'pdf-lib.min.js'), join(vendor, 'pdf-lib.min.js'));
@@ -55,6 +57,8 @@ const assetHash = createHash('sha256')
   .update(await readFile(join(dist, 'assets', 'advanced-logic.mjs')))
   .update(await readFile(join(dist, 'assets', 'expanded-tools.js')))
   .update(await readFile(join(dist, 'assets', 'expanded-logic.mjs')))
+  .update(await readFile(join(dist, 'assets', 'new-tools.js')))
+  .update(await readFile(join(dist, 'assets', 'new-tool-logic.mjs')))
   .update(await readFile(join(root, 'package-lock.json')))
   .update(await readFile(join(root, 'src', 'locales.mjs')));
 for (const file of (await readdir(vendor, { recursive: true })).sort()) {

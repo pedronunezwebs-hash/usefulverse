@@ -3,6 +3,7 @@ import { seo } from './seo.mjs';
 import { localeEntries, localePath, locales, packs, translateStaticHtml, ui } from './locales.mjs';
 import { longtailFaqs } from './locales/longtail.mjs';
 import { expandedToolMarkup } from './expanded-template.mjs';
+import { browserBatchToolMarkup } from './browser-batch-template.mjs';
 
 const fill = (template, values) => template.replace(/\{(\w+)\}/gu, (match, name) => values[name] ?? match);
 
@@ -35,6 +36,17 @@ export const relatedToolIds = {
   'discount-calculator': ['percentage-calculator', 'tip-calculator', 'ratio-proportion-calculator'],
   'square-footage-calculator': ['unit-converter', 'image-resizer-compressor', 'business-days-calculator'],
   'barcode-generator': ['qr-code-generator', 'qr-code-reader', 'favicon-generator'],
+  'typing-speed-test': ['word-counter', 'text-case-converter', 'random-name-picker'],
+  'fraction-calculator': ['percentage-calculator', 'average-calculator', 'ratio-proportion-calculator'],
+  'time-card-calculator': ['time-duration-calculator', 'business-days-calculator', 'online-timer'],
+  'online-timer': ['time-duration-calculator', 'time-card-calculator', 'typing-speed-test'],
+  'lorem-ipsum-generator': ['word-counter', 'text-case-converter', 'text-to-slug'],
+  'subnet-calculator': ['binary-converter', 'url-parser', 'json-formatter'],
+  'random-name-picker': ['random-number-generator', 'typing-speed-test', 'lorem-ipsum-generator'],
+  'fuel-cost-calculator': ['unit-converter', 'time-duration-calculator', 'percentage-calculator'],
+  'image-cropper': ['image-resizer-compressor', 'image-format-converter', 'image-to-pdf'],
+  'pdf-to-image': ['pdf-tools', 'image-to-pdf', 'image-format-converter'],
+  'sql-formatter': ['json-formatter', 'xml-formatter', 'csv-to-json'],
 };
 
 const icon = (tool) => `<span class="tool-icon tool-icon--${tool.accent}" aria-hidden="true">${escapeHtml(tool.icon)}</span>`;
@@ -51,6 +63,8 @@ export function toolCard(tool, language = 'en') {
 function toolMarkup(id) {
   const expanded = expandedToolMarkup(id);
   if (expanded) return expanded;
+  const browserBatch = browserBatchToolMarkup(id);
+  if (browserBatch) return browserBatch;
   const common = `<div class="tool-workspace" data-tool="${id}">`;
   const close = `</div>`;
   if (id === 'word-counter') return `${common}
