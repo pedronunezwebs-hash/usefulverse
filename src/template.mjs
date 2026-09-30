@@ -31,6 +31,10 @@ export const relatedToolIds = {
   'image-format-converter': ['image-resizer-compressor', 'image-to-pdf', 'pdf-tools'],
   'markdown-html-converter': ['word-counter', 'text-case-converter', 'remove-line-breaks'],
   'json-yaml-converter': ['json-formatter', 'csv-to-json', 'json-to-csv'],
+  'standard-deviation-calculator': ['average-calculator', 'ratio-proportion-calculator', 'percentage-calculator'],
+  'discount-calculator': ['percentage-calculator', 'tip-calculator', 'ratio-proportion-calculator'],
+  'square-footage-calculator': ['unit-converter', 'image-resizer-compressor', 'business-days-calculator'],
+  'barcode-generator': ['qr-code-generator', 'qr-code-reader', 'favicon-generator'],
 };
 
 const icon = (tool) => `<span class="tool-icon tool-icon--${tool.accent}" aria-hidden="true">${escapeHtml(tool.icon)}</span>`;
@@ -244,9 +248,10 @@ function toolMarkup(id) {
     <p class="tool-status" id="tool-status" aria-live="polite">Checks integers up to one trillion locally.</p><div class="random-result prime-result" id="prime-output" aria-live="polite">—</div>
   ${close}`;
   if (id === 'average-calculator') return `${common}
-    <div class="segmented" role="group" aria-label="Average calculation type"><button class="segment is-active" type="button" data-average-mode="simple" aria-pressed="true">Simple average</button><button class="segment" type="button" data-average-mode="weighted" aria-pressed="false">Weighted average for grades</button></div>
+    <div class="segmented" role="group" aria-label="Average calculation type"><button class="segment is-active" type="button" data-average-mode="simple" aria-pressed="true">Simple average</button><button class="segment" type="button" data-average-mode="weighted" aria-pressed="false">Weighted average for grades</button><button class="segment" type="button" data-average-mode="final-grade" aria-pressed="false">What grade do I need on my final?</button></div>
     <section id="average-simple-fields"><label class="sr-only" for="average-input">Numbers to average</label><textarea id="average-input" class="tool-textarea tool-textarea--large" placeholder="10\n20\n30\n40"></textarea><div class="tool-actions"><button class="button button--primary" data-action="calculate-average">Calculate average</button></div></section>
     <section id="average-weighted-fields" hidden><p class="tool-hint">Enter matching lists in the same order. For example, values 90, 80 and weights 3, 1 give a weighted average of 87.5.</p><div class="converter-grid"><label class="field-label" for="average-values">Grades or values<textarea id="average-values" class="tool-textarea" placeholder="90\n80"></textarea></label><label class="field-label" for="average-weights">Credits or weights<textarea id="average-weights" class="tool-textarea" placeholder="3\n1"></textarea></label></div><div class="tool-actions"><button class="button button--primary" data-action="calculate-weighted-average">Calculate weighted average</button></div></section>
+    <section id="average-final-fields" hidden><p class="tool-hint">Assumes your current grade covers coursework before the final. A result over 100% is not attainable; 0% means you have already met the target.</p><div class="converter-grid"><label class="field-label" for="average-current-grade">Current grade before the final (%)<input id="average-current-grade" class="tool-input" type="number" min="0" max="100" step="any" inputmode="decimal" placeholder="85"></label><label class="field-label" for="average-final-weight">Final exam weight (%)<input id="average-final-weight" class="tool-input" type="number" min="0.01" max="100" step="any" inputmode="decimal" placeholder="30"></label><label class="field-label" for="average-target-grade">Desired course grade (%)<input id="average-target-grade" class="tool-input" type="number" min="0" max="100" step="any" inputmode="decimal" placeholder="90"></label></div><div class="tool-actions"><button class="button button--primary" data-action="calculate-final-grade">Calculate required grade</button></div><div class="result-block"><div class="result-block__heading"><span>Required final exam grade</span></div><output id="average-final-result" aria-live="polite">—</output></div></section>
     <div class="tool-actions"><button class="button button--ghost" data-action="clear">Clear</button></div><p class="tool-status" id="tool-status" aria-live="polite">Separate numbers with spaces, commas or new lines.</p>
     <div class="result-grid result-grid--three"><div class="result-block"><div class="result-block__heading"><span>Average</span></div><output id="average-result">—</output></div><div class="result-block"><div class="result-block__heading"><span>Sum or weighted total</span></div><output id="average-sum">—</output></div><div class="result-block"><div class="result-block__heading"><span>Count</span></div><output id="average-count">—</output></div><div class="result-block"><div class="result-block__heading"><span>Minimum</span></div><output id="average-min">—</output></div><div class="result-block"><div class="result-block__heading"><span>Maximum</span></div><output id="average-max">—</output></div><div class="result-block"><div class="result-block__heading"><span>Total weight</span></div><output id="average-weight-total">—</output></div></div>
   ${close}`;
@@ -330,6 +335,33 @@ function toolMarkup(id) {
     <label class="field-label" for="qr-reader-file">Choose a QR image</label><input id="qr-reader-file" class="tool-input file-picker" type="file" accept="image/jpeg,image/png,image/webp"><p class="file-meta">The image is scanned on your device. Nothing is uploaded.</p><div class="tool-actions"><button class="button button--primary" data-action="start-camera">Start camera</button><button class="button button--ghost" data-action="stop-camera" disabled>Stop camera</button></div><p class="tool-status" id="tool-status" aria-live="polite">Camera access is optional. You will be asked before it starts.</p><video id="qr-reader-video" class="qr-reader-video" playsinline muted hidden></video><canvas id="qr-reader-canvas" hidden></canvas>
     <div class="result-block qr-reader-result"><div class="result-block__heading"><span>QR code contents</span></div><textarea id="qr-reader-output" class="tool-textarea" readonly placeholder="Scanned text will appear here..."></textarea><div class="tool-actions"><button class="button button--ghost" data-action="copy-qr-result">Copy result</button><a id="qr-reader-link" class="button button--ghost" href="#" target="_blank" hidden rel="noopener noreferrer">Open link</a><button class="button button--ghost" data-action="clear">Clear</button></div></div>
   ${close}`;
+  if (id === 'standard-deviation-calculator') return `${common}
+    <label class="field-label" for="stats-input">Numbers to average</label><textarea id="stats-input" class="tool-textarea tool-textarea--large" maxlength="200000" placeholder="4, 8, 6, 5, 3, 7"></textarea>
+    <label class="field-label" for="stats-type">Type</label><select id="stats-type" class="tool-input"><option value="population">Population</option><option value="sample">Sample</option></select>
+    <div class="tool-actions"><button class="button button--primary" data-action="calculate-statistics">Calculate</button><button class="button button--ghost" data-action="clear">Clear</button></div><p class="tool-status" id="tool-status" aria-live="polite">Enter valid numbers and choose population or sample.</p>
+    <div class="result-grid"><div class="result-block"><div class="result-block__heading"><span>Count</span></div><output id="stats-count">—</output></div><div class="result-block"><div class="result-block__heading"><span>Average</span></div><output id="stats-mean">—</output></div><div class="result-block"><div class="result-block__heading"><span>Variance</span></div><output id="stats-variance">—</output></div><div class="result-block"><div class="result-block__heading"><span>Standard deviation</span></div><output id="stats-deviation">—</output></div></div>
+  ${close}`;
+  if (id === 'discount-calculator') return `${common}
+    <div class="segmented" role="group" aria-label="Discount calculation type"><button class="segment is-active" type="button" data-discount-mode="sale" aria-pressed="true">Sale price</button><button class="segment" type="button" data-discount-mode="reverse" aria-pressed="false">Find percent off</button></div>
+    <section id="discount-sale-fields"><label class="field-label" for="discount-original">Original price</label><input id="discount-original" class="tool-input" type="number" min="0" step="any" inputmode="decimal" placeholder="100"><label class="field-label" for="discount-percent">Discount (%)</label><input id="discount-percent" class="tool-input" type="number" min="0" max="100" step="any" inputmode="decimal" placeholder="20"></section>
+    <section id="discount-reverse-fields" hidden><label class="field-label" for="discount-reverse-original">Original price</label><input id="discount-reverse-original" class="tool-input" type="number" min="0" step="any" inputmode="decimal" placeholder="100"><label class="field-label" for="discount-sale-price">Sale price</label><input id="discount-sale-price" class="tool-input" type="number" min="0" step="any" inputmode="decimal" placeholder="80"></section>
+    <div class="tool-actions"><button class="button button--primary" data-action="calculate-discount">Calculate</button><button class="button button--ghost" data-action="clear">Clear</button></div><p class="tool-status" id="tool-status" aria-live="polite">Results are estimates before tax.</p>
+    <div class="result-grid"><div class="result-block"><div class="result-block__heading"><span>Amount saved</span></div><output id="discount-saved">—</output></div><div class="result-block"><div class="result-block__heading"><span>Sale price</span></div><output id="discount-final">—</output></div><div class="result-block"><div class="result-block__heading"><span>Discount percent</span></div><output id="discount-rate-result">—</output></div></div>
+  ${close}`;
+  if (id === 'square-footage-calculator') return `${common}
+    <div class="converter-grid"><label class="field-label" for="area-length">Length<input id="area-length" class="tool-input" type="number" min="0" step="any" inputmode="decimal" placeholder="12"></label><label class="field-label" for="area-width">Width<input id="area-width" class="tool-input" type="number" min="0" step="any" inputmode="decimal" placeholder="10"></label></div>
+    <label class="field-label" for="area-unit">Unit</label><select id="area-unit" class="tool-input"><option value="ft">ft</option><option value="in">in</option><option value="m">m</option><option value="cm">cm</option></select>
+    <label class="field-label" for="area-waste">Waste allowance (%)</label><input id="area-waste" class="tool-input" type="number" min="0" max="100" step="any" inputmode="decimal" value="10">
+    <div class="tool-actions"><button class="button button--primary" data-action="calculate-area">Calculate</button><button class="button button--ghost" data-action="clear">Clear</button></div><p class="tool-status" id="tool-status" aria-live="polite">Enter positive room dimensions. The waste allowance is optional.</p>
+    <div class="result-grid"><div class="result-block"><div class="result-block__heading"><span>Area (ft²)</span></div><output id="area-square-feet">—</output></div><div class="result-block"><div class="result-block__heading"><span>Area (m²)</span></div><output id="area-square-meters">—</output></div><div class="result-block"><div class="result-block__heading"><span>Area with waste (ft²)</span></div><output id="area-with-waste">—</output></div></div>
+  ${close}`;
+  if (id === 'barcode-generator') return `${common}
+    <label class="field-label" for="barcode-format">Type</label><select id="barcode-format" class="tool-input"><option value="CODE128">Code 128</option><option value="EAN13">EAN-13</option><option value="UPC">UPC-A</option></select>
+    <label class="field-label" for="barcode-value">Value</label><input id="barcode-value" class="tool-input" type="text" maxlength="80" autocomplete="off" spellcheck="false" placeholder="UV-2026-001">
+    <label class="option-label"><input id="barcode-show-value" type="checkbox" checked> Show text below</label><p class="tool-hint" id="barcode-format-hint">Code 128 accepts up to 80 printable ASCII characters.</p>
+    <div class="tool-actions"><button class="button button--primary" data-action="generate-barcode">Generate</button><button class="button button--ghost" data-action="clear">Clear</button></div><p class="tool-status" id="tool-status" aria-live="polite">Generated locally. Retail barcodes need a valid product identifier.</p>
+    <div class="barcode-preview" id="barcode-preview-wrap" hidden><svg id="barcode-preview" role="img" aria-label="Generated barcode"></svg></div><div class="file-downloads" id="barcode-downloads" aria-live="polite"></div><div class="tool-actions" id="barcode-download-actions" hidden><button class="button button--ghost" data-action="download-barcode-svg">Download <span>SVG</span></button><button class="button button--ghost" data-action="download-barcode-png">Download <span>PNG</span></button></div>
+  ${close}`;
   return `${common}<p>This tool is not available yet.</p>${close}`;
 }
 
@@ -359,7 +391,13 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
         { question: faqCopy[language].privacyQuestion, answer: faqCopy[language].privacyAnswer },
       ],
     };
-  const faq = [...(seoData.faq ?? []), ...(longtailFaqs[tool.id]?.[language] ?? [])];
+  const faqByQuestion = new Map();
+  for (const item of [...(seoData.faq ?? []), ...(longtailFaqs[tool.id]?.[language] ?? [])]) {
+    const { question } = item;
+    const key = question.trim().replace(/\s+/gu, ' ').toLocaleLowerCase(language);
+    faqByQuestion.set(key, item);
+  }
+  const faq = [...faqByQuestion.values()];
   const homeHref = localePath(language);
   const alternates = localeEntries.map(({ key, code }) => `<link rel="alternate" hreflang="${code}" href="https://usefulverse.com${localePath(key, tool.id)}">`).join('\n    ');
   // Page-specific wording for UI keys that mean something else on this tool (e.g. "Whole number" is an

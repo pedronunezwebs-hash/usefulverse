@@ -4,6 +4,7 @@ import { longtailBodies } from './locales/longtail.mjs';
 import { advancedToolLocales } from './locales/advanced-tools.mjs';
 import { expandedToolLocales } from './locales/expanded-tools.mjs';
 import { expandedToolUiLocales } from './locales/expanded-ui.mjs';
+import { priorityToolLocales } from './locales/priority-tools.mjs';
 
 export const locales = {
   en: { code: 'en', name: 'English', prefix: '', homeTitle: 'UsefulVerse — Simple tools for everyday tasks', homeDescription: 'Fast, private browser tools for text, files, data, SEO and everyday tasks. No account and no upload required.' },
@@ -138,6 +139,8 @@ export const packs = {};
 for (const key of packKeys.filter((item) => enabledPacks.includes(item))) packs[key] = (await import(`./locales/${key}/index.mjs`)).pack;
 for (const [key, pack] of Object.entries(packs)) {
   const { code, name, prefix, homeTitle, homeDescription } = pack.meta;
+  pack.meta.keepEnglish ??= [];
+  if (!pack.meta.keepEnglish.includes('Code 128')) pack.meta.keepEnglish.push('Code 128');
   locales[key] = { code, name, prefix, homeTitle, homeDescription };
   ui[key] = pack.ui;
   runtimeMessages[key] = pack.runtimeMessages;
@@ -193,6 +196,31 @@ for (const [language, data] of Object.entries(expandedToolLocales)) {
         { question: faq.faqPrivacyQuestion, answer: faq.faqPrivacyAnswer.replace('{body}', body) },
       ];
     }
+  }
+}
+
+// First SEO-priority tool set: its page copy, controls, metadata and FAQ are
+// translated together for every supported language.
+for (const [language, data] of Object.entries(priorityToolLocales)) {
+  Object.assign(ui[language] ??= {}, data.ui);
+  Object.assign(runtimeMessages[language] ??= {}, data.ui);
+  Object.assign(copy[language] ??= {}, data.copy);
+  const pack = packs[language];
+  if (!pack) continue;
+  Object.assign(pack.ui, data.ui);
+  Object.assign(pack.runtimeMessages, data.ui);
+  Object.assign(pack.copy, data.copy);
+  for (const [id, values] of Object.entries(data.copy)) {
+    const [title, shortTitle, description, , intro, body] = values;
+    const safeDescription = description.length >= 25 && description.length <= 155
+      ? description
+      : `${intro.slice(0, 145).replace(/[\s,;:]+$/u, '')}…`;
+    pack.seo[id] = { title: shortTitle, description: safeDescription };
+    const faq = advancedToolLocales[language];
+    pack.faq[id] = [
+      { question: faq.faqHow.replace('{title}', shortTitle), answer: intro },
+      { question: faq.faqPrivacyQuestion, answer: faq.faqPrivacyAnswer.replace('{body}', body) },
+    ];
   }
 }
 

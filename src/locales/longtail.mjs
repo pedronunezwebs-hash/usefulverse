@@ -114,43 +114,48 @@ const tools = {
   },
   'average-calculator': {
     en: {
-      body: 'Calculate a weighted average for grades with different credits: scores 90 and 80 with weights 3 and 1 give 87.5. Switch to simple average for an arithmetic mean; the tool also shows the sum, count, minimum and maximum. Paste values or grades from a spreadsheet.',
+      body: 'Calculate a weighted average for grades with different credits: scores 90 and 80 with weights 3 and 1 give 87.5. Switch to simple average for an arithmetic mean, or calculate the score needed on a final exam from your current grade, exam weight and target. The tool also shows the sum, count, minimum and maximum. Paste values or grades from a spreadsheet.',
       faq: [
         { question: 'What is the average of 10, 12 and 14?', answer: 'Add the values (10 + 12 + 14 = 36), then divide by 3. The arithmetic mean is 12.' },
         { question: 'How do I calculate a weighted average for grades?', answer: 'Enter each grade and its matching credit or weight in the same order. For example, (90 × 3 + 80 × 1) ÷ (3 + 1) = 87.5.' },
         { question: 'Can I paste a column of grades or measurements?', answer: 'Yes. Paste values separated by commas, spaces or line breaks. Use the weighted mode for matching grade and credit lists; the tool does not calculate a median.' },
+        { question: 'What grade do I need on my final exam?', answer: 'Enter your current course grade, the final exam weight and your target grade. For example, with an 80% current grade, a 40% final and an 85% target, you need 92.5% on the final.' },
       ],
     },
     es: {
-      body: 'Calcula la media ponderada de notas con créditos distintos: una nota de 90 con peso 3 y otra de 80 con peso 1 dan 87,5. Cambia a media simple para obtener la media aritmética; también verás suma, cantidad, mínimo y máximo. Puedes pegar datos de una hoja de cálculo.',
+      body: 'Calcula la media ponderada de notas con créditos distintos: una nota de 90 con peso 3 y otra de 80 con peso 1 dan 87,5. Cambia a media simple para obtener la media aritmética o calcula qué nota necesitas en el examen final según tu nota actual, el peso del examen y tu objetivo. También verás suma, cantidad, mínimo y máximo; puedes pegar datos de una hoja de cálculo.',
       faq: [
         { question: '¿Cuál es la media de 10, 12 y 14?', answer: 'Suma los valores (10 + 12 + 14 = 36) y divide el resultado entre 3. La media aritmética es 12.' },
         { question: '¿Cómo se calcula la media ponderada de las notas?', answer: 'Introduce cada nota y su crédito o peso correspondiente en el mismo orden. Por ejemplo, (90 × 3 + 80 × 1) ÷ (3 + 1) = 87,5.' },
         { question: '¿Puedo pegar una columna de notas o mediciones?', answer: 'Sí. Pega valores separados por comas, espacios o saltos de línea. Usa el modo ponderado para listas de notas y créditos; la herramienta no calcula la mediana.' },
+        { question: '¿Qué nota necesito en el examen final?', answer: 'Introduce tu nota actual, el peso del examen final y tu objetivo. Por ejemplo, con un 80 % actual, un examen que vale el 40 % y un objetivo del 85 %, necesitas un 92,5 % en el examen.' },
       ],
     },
     fr: {
-      body: 'Calculez la moyenne pondérée de notes avec des crédits différents : une note de 90 avec un poids de 3 et une note de 80 avec un poids de 1 donnent 87,5. Passez en mode simple pour la moyenne arithmétique ; le résultat affiche aussi la somme, le nombre de valeurs, le minimum et le maximum.',
+      body: 'Calculez la moyenne pondérée de notes avec des crédits différents : 90 avec un poids de 3 et 80 avec un poids de 1 donnent 87,5. Passez en mode simple pour la moyenne arithmétique ou calculez la note nécessaire à l’examen final selon votre moyenne actuelle, son coefficient et votre objectif. La somme, le nombre de valeurs, le minimum et le maximum sont également affichés.',
       faq: [
         { question: 'Quelle est la moyenne de 10, 12 et 14 ?', answer: 'Additionnez les valeurs (10 + 12 + 14 = 36), puis divisez la somme par 3. La moyenne arithmétique est 12.' },
         { question: 'Comment calculer une moyenne pondérée de notes ?', answer: 'Saisissez chaque note et le crédit ou poids correspondant dans le même ordre. Par exemple, (90 × 3 + 80 × 1) ÷ (3 + 1) = 87,5.' },
         { question: 'Puis-je coller une liste de notes ou de mesures ?', answer: 'Oui. Collez les valeurs séparées par des virgules, des espaces ou des retours à la ligne. Utilisez le mode pondéré pour les listes de notes et de crédits ; l’outil ne calcule pas la médiane.' },
+        { question: 'Quelle note me faut-il à l’examen final ?', answer: 'Saisissez votre moyenne actuelle, le coefficient de l’examen final et votre objectif. Avec 80 % actuellement, un examen qui compte pour 40 % et un objectif de 85 %, il faut obtenir 92,5 % à l’examen.' },
       ],
     },
     pt: {
-      body: 'Calcule a média ponderada de notas com créditos diferentes: uma nota 90 com peso 3 e outra 80 com peso 1 resultam em 87,5. Mude para a média simples para obter a média aritmética; o resultado também mostra soma, quantidade, mínimo e máximo.',
+      body: 'Calcule a média ponderada de notas com créditos diferentes: uma nota 90 com peso 3 e outra 80 com peso 1 resulta em 87,5. Mude para a média simples ou descubra a nota necessária na prova final com base na nota atual, no peso da prova e na meta desejada. O resultado também mostra soma, quantidade, mínimo e máximo.',
       faq: [
         { question: 'Qual é a média de 10, 12 e 14?', answer: 'Some os valores (10 + 12 + 14 = 36) e divida o total por 3. A média aritmética é 12.' },
         { question: 'Como calcular a média ponderada das notas?', answer: 'Informe cada nota e o crédito ou peso correspondente na mesma ordem. Por exemplo, (90 × 3 + 80 × 1) ÷ (3 + 1) = 87,5.' },
         { question: 'Posso colar uma coluna de notas ou medições?', answer: 'Sim. Cole os valores separados por ponto e vírgula, espaços ou quebras de linha. Use o modo ponderado para listas correspondentes de notas e créditos; a ferramenta não calcula a mediana.' },
+        { question: 'De que nota preciso na prova final?', answer: 'Informe sua nota atual, o peso da prova final e a meta desejada. Com nota atual de 80%, prova valendo 40% e meta de 85%, você precisa tirar 92,5% na prova.' },
       ],
     },
     de: {
-      body: 'Berechnen Sie einen gewichteten Notendurchschnitt mit unterschiedlichen Leistungspunkten: Die Noten 90 mit Gewicht 3 und 80 mit Gewicht 1 ergeben 87,5. Wechseln Sie zum einfachen Durchschnitt für den arithmetischen Mittelwert; zusätzlich sehen Sie Summe, Anzahl, Minimum und Maximum.',
+      body: 'Berechnen Sie einen gewichteten Notendurchschnitt mit unterschiedlichen Leistungspunkten: 90 mit Gewicht 3 und 80 mit Gewicht 1 ergeben 87,5. Wechseln Sie zum einfachen Durchschnitt oder berechnen Sie anhand des aktuellen Notenstands, der Prüfungsgewichtung und Ihres Ziels die benötigte Note in der Abschlussprüfung. Summe, Anzahl, Minimum und Maximum werden ebenfalls angezeigt.',
       faq: [
         { question: 'Wie hoch ist der Durchschnitt von 10, 12 und 14?', answer: 'Addieren Sie die Werte (10 + 12 + 14 = 36) und teilen Sie die Summe durch 3. Der arithmetische Mittelwert beträgt 12.' },
         { question: 'Wie berechne ich einen gewichteten Notendurchschnitt?', answer: 'Geben Sie jede Note und die passende Anzahl an Leistungspunkten oder das Gewicht in derselben Reihenfolge ein. Beispiel: (90 × 3 + 80 × 1) ÷ (3 + 1) = 87,5.' },
         { question: 'Kann ich eine Spalte mit Noten oder Messwerten einfügen?', answer: 'Ja. Fügen Sie durch Semikolons, Leerzeichen oder Zeilenumbrüche getrennte Werte ein. Für Noten mit Leistungspunkten verwenden Sie den gewichteten Modus; einen Median berechnet das Tool nicht.' },
+        { question: 'Welche Note brauche ich in der Abschlussprüfung?', answer: 'Geben Sie Ihren aktuellen Notenstand, die Gewichtung der Abschlussprüfung und Ihr Ziel ein. Bei aktuell 80 %, einer Prüfungsgewichtung von 40 % und einem Ziel von 85 % benötigen Sie 92,5 % in der Prüfung.' },
       ],
     },
   },
