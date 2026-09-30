@@ -8,6 +8,14 @@ test('Urdu translations do not contain Bengali text', () => {
   assert.doesNotMatch(JSON.stringify(packs.ur), /[\u0980-\u09FF]/u);
 });
 
+test('Urdu JSON formatter is discoverable with localized internal-search terms', () => {
+  const keywords = packs.ur.copy['json-formatter'][3];
+  assert.match(keywords, /JSON فارمیٹر/u);
+  assert.match(keywords, /JSON کی توثیق/u);
+  assert.match(keywords, /JSON کو خوبصورت بنانا/u);
+  assert.match(keywords, /JSON مختصر کرنے کا ٹول/u);
+});
+
 test('Urdu number words use irregular forms and lakh/crore scales', async () => {
   const words = await numberToWordsHook('ur');
   for (const [value, expected] of [

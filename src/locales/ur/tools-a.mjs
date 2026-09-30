@@ -31,7 +31,7 @@ export const copy = {
     "JSON فارمیٹر",
     "JSON فارمیٹر",
     "JSON کو براہ راست اپنے آلے پر فارمیٹ کریں، چھوٹا کریں اور اس کی توثیق کریں۔",
-    "json formatter, json validator, json beautifier, json minifier",
+    "JSON فارمیٹر، JSON کی توثیق، JSON کو خوبصورت بنانا، JSON مختصر کرنے کا ٹول، JSON formatter، JSON validator، JSON beautifier، JSON minifier",
     "JSON پیسٹ کریں، پھر اسے فارمیٹ کریں یا اسے چھوٹا کریں۔ غلطیاں واضح طور پر بیان کی گئی ہیں۔",
     "آپ کا JSON اس براؤزر ٹیب میں رہتا ہے۔ سرور کو کچھ بھی نہیں بھیجا جاتا ہے۔"
   ],
