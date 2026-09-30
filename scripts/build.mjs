@@ -26,6 +26,7 @@ await cp(join(root, 'node_modules', 'marked', 'lib', 'marked.umd.js'), join(vend
 await cp(join(root, 'node_modules', 'dompurify', 'dist', 'purify.min.js'), join(vendor, 'purify.min.js'));
 await cp(join(root, 'node_modules', 'turndown', 'lib', 'turndown.browser.umd.js'), join(vendor, 'turndown.browser.umd.js'));
 await cp(join(root, 'node_modules', 'js-yaml', 'dist', 'js-yaml.mjs'), join(vendor, 'js-yaml.mjs'));
+await cp(join(root, 'node_modules', 'jsbarcode', 'dist', 'JsBarcode.all.min.js'), join(vendor, 'JsBarcode.all.min.js'));
 await cp(join(root, 'node_modules', 'pdfjs-dist', 'legacy', 'build', 'pdf.min.mjs'), join(vendor, 'pdf.min.mjs'));
 await cp(join(root, 'node_modules', 'pdfjs-dist', 'legacy', 'build', 'pdf.worker.min.mjs'), join(vendor, 'pdf.worker.min.mjs'));
 await cp(join(root, 'node_modules', 'pdfjs-dist', 'cmaps'), join(vendor, 'cmaps'), { recursive: true });
@@ -38,6 +39,7 @@ await cp(join(root, 'node_modules', 'marked', 'LICENSE'), join(vendor, 'LICENSE-
 await cp(join(root, 'node_modules', 'dompurify', 'LICENSE-MPL'), join(vendor, 'LICENSE-dompurify-MPL'));
 await cp(join(root, 'node_modules', 'turndown', 'LICENSE'), join(vendor, 'LICENSE-turndown'));
 await cp(join(root, 'node_modules', 'js-yaml', 'LICENSE'), join(vendor, 'LICENSE-js-yaml'));
+await cp(join(root, 'node_modules', 'jsbarcode', 'MIT-LICENSE.txt'), join(vendor, 'LICENSE-jsbarcode.txt'));
 await cp(join(root, 'public', 'favicon.svg'), join(dist, 'favicon.svg'));
 await cp(join(root, 'public', '_headers'), join(dist, '_headers'));
 await cp(join(root, 'public', 'BingSiteAuth.xml'), join(dist, 'BingSiteAuth.xml'));

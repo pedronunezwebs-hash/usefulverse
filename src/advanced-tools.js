@@ -11,6 +11,20 @@ const objectUrls = new Set();
 window.addEventListener('pagehide', () => objectUrls.forEach((url) => URL.revokeObjectURL(url)), { once: true });
 
 const logic = await import(versioned('./advanced-logic.mjs'));
+const vendorPromises = new Map();
+
+function loadVendorScript(filename, globalName) {
+  if (window[globalName]) return Promise.resolve(window[globalName]);
+  const path = `/assets/vendor/${filename}`;
+  if (!vendorPromises.has(path)) vendorPromises.set(path, new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = versioned(path);
+    script.onload = () => window[globalName] ? resolve(window[globalName]) : reject(new Error('A browser tool library could not load.'));
+    script.onerror = () => reject(new Error('A browser tool library could not load.'));
+    document.head.append(script);
+  }));
+  return vendorPromises.get(path);
+}
 
 function setStatus(root, message, type = '') {
   const status = $('#tool-status', root);
@@ -631,6 +645,207 @@ function setupQrReader(root) {
   window.addEventListener('pagehide', stopCamera, { once: true });
 }
 
+function setupStandardDeviation(root) {
+  const input = $('#stats-input', root);
+  const status = $('#tool-status', root);
+  const outputs = ['stats-count', 'stats-mean', 'stats-variance', 'stats-deviation'];
+  root.addEventListener('click', (event) => {
+    const action = event.target.closest('[data-action]')?.dataset.action;
+    if (action === 'clear') {
+      input.value = '';
+      outputs.forEach((id) => { $(`#${id}`, root).textContent = '—'; });
+      setStatus(root, 'Enter a list of valid numbers. Sample mode needs at least two values.');
+      input.focus();
+    }
+    if (action !== 'calculate-statistics') return;
+    try {
+      const decimal = new Intl.NumberFormat(languageTag).formatToParts(1.1).find((part) => part.type === 'decimal')?.value ?? '.';
+      const delimiter = decimal === ',' ? /[;\n\r]+/u : /[,;\n\r]+/u;
+      const rawValues = input.value.trim().split(delimiter).map((value) => value.trim()).filter(Boolean);
+      if (input.value.length > 200_000 || rawValues.length > 10_000) throw new RangeError('Enter no more than 10,000 values.');
+      const values = rawValues.map(parseNumber);
+      if (!values.length || values.some((value) => !Number.isFinite(value))) throw new TypeError('Enter a list of valid numbers. Sample mode needs at least two values.');
+      const type = $('#stats-type', root).value;
+      const result = logic.calculateStandardDeviation(values, type);
+      $('#stats-count', root).textContent = formatNumber(result.count);
+      $('#stats-mean', root).textContent = formatNumber(result.mean, { maximumFractionDigits: 6 });
+      $('#stats-variance', root).textContent = formatNumber(result.variance, { maximumFractionDigits: 6 });
+      $('#stats-deviation', root).textContent = formatNumber(result.standardDeviation, { maximumFractionDigits: 6 });
+      setStatus(root, type === 'sample' ? 'Sample statistics calculated locally.' : 'Population statistics calculated locally.', 'success');
+    } catch (error) {
+      outputs.forEach((id) => { $(`#${id}`, root).textContent = '—'; });
+      setStatus(root, error.message || 'Check the values and try again.', 'error');
+    }
+  });
+}
+
+function setupDiscount(root) {
+  let mode = 'sale';
+  const outputs = ['discount-saved', 'discount-final', 'discount-rate-result'];
+  root.addEventListener('click', (event) => {
+    const modeButton = event.target.closest('[data-discount-mode]');
+    if (modeButton) {
+      mode = modeButton.dataset.discountMode;
+      $$('[data-discount-mode]', root).forEach((button) => {
+        const active = button === modeButton;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+      $('#discount-sale-fields', root).hidden = mode !== 'sale';
+      $('#discount-reverse-fields', root).hidden = mode !== 'reverse';
+      outputs.forEach((id) => { $(`#${id}`, root).textContent = '—'; });
+      setStatus(root, 'Results are estimates before tax.');
+      return;
+    }
+    const action = event.target.closest('[data-action]')?.dataset.action;
+    if (action === 'clear') {
+      $$('input', root).forEach((input) => { input.value = ''; });
+      outputs.forEach((id) => { $(`#${id}`, root).textContent = '—'; });
+      setStatus(root, 'Results are estimates before tax.');
+      $('#discount-original', root).focus();
+      return;
+    }
+    if (action !== 'calculate-discount') return;
+    try {
+      const result = mode === 'sale'
+        ? logic.calculateDiscount(parseNumber($('#discount-original', root).value), parseNumber($('#discount-percent', root).value))
+        : logic.findDiscount(parseNumber($('#discount-reverse-original', root).value), parseNumber($('#discount-sale-price', root).value));
+      $('#discount-saved', root).textContent = formatNumber(result.saved, { maximumFractionDigits: 2 });
+      $('#discount-final', root).textContent = formatNumber(result.salePrice, { maximumFractionDigits: 2 });
+      $('#discount-rate-result', root).textContent = `${formatNumber(result.discountPercent, { maximumFractionDigits: 4 })}%`;
+      setStatus(root, 'Discount calculated locally.', 'success');
+    } catch (error) {
+      outputs.forEach((id) => { $(`#${id}`, root).textContent = '—'; });
+      setStatus(root, error.message || 'Check the values and try again.', 'error');
+    }
+  });
+}
+
+function setupSquareFootage(root) {
+  const outputIds = ['area-square-feet', 'area-square-meters', 'area-with-waste'];
+  const status = $('#tool-status', root);
+  root.addEventListener('click', (event) => {
+    const action = event.target.closest('[data-action]')?.dataset.action;
+    if (action === 'clear') {
+      $('#area-length', root).value = '';
+      $('#area-width', root).value = '';
+      $('#area-unit', root).value = 'ft';
+      $('#area-waste', root).value = '10';
+      outputIds.forEach((id) => { $(`#${id}`, root).textContent = '—'; });
+      setStatus(root, 'Enter positive room dimensions. The waste allowance is optional.');
+      $('#area-length', root).focus();
+      return;
+    }
+    if (action !== 'calculate-area') return;
+    try {
+      const result = logic.calculateFloorArea(
+        parseNumber($('#area-length', root).value),
+        parseNumber($('#area-width', root).value),
+        $('#area-unit', root).value,
+        $('#area-waste', root).value.trim() === '' ? 0 : parseNumber($('#area-waste', root).value),
+      );
+      $('#area-square-feet', root).textContent = `${formatNumber(result.areaSquareFeet, { maximumFractionDigits: 3 })} ft²`;
+      $('#area-square-meters', root).textContent = `${formatNumber(result.areaSquareMeters, { maximumFractionDigits: 3 })} m²`;
+      $('#area-with-waste', root).textContent = `${formatNumber(result.areaWithWasteSquareFeet, { maximumFractionDigits: 3 })} ft²`;
+      setStatus(root, 'Area calculated locally. Measure the project before ordering materials.', 'success');
+    } catch (error) {
+      outputIds.forEach((id) => { $(`#${id}`, root).textContent = '—'; });
+      setStatus(root, error.message || 'Check the values and try again.', 'error');
+    }
+  });
+}
+
+function setupBarcode(root) {
+  const format = $('#barcode-format', root);
+  const value = $('#barcode-value', root);
+  const svg = $('#barcode-preview', root);
+  const preview = $('#barcode-preview-wrap', root);
+  const actions = $('#barcode-download-actions', root);
+  const downloads = $('#barcode-downloads', root);
+  let rendered = null;
+  const updateHint = () => {
+    const messages = { CODE128: 'Code 128 accepts up to 80 printable ASCII characters.', EAN13: 'Enter 12 digits, or 13 digits with a valid check digit. A missing check digit is added.', UPC: 'Enter 11 digits, or 12 digits with a valid check digit. A missing check digit is added.' };
+    $('#barcode-format-hint', root).textContent = t(messages[format.value]);
+  };
+  const clearResult = () => {
+    clearDownloadLinks(downloads);
+    svg.replaceChildren();
+    preview.hidden = true;
+    actions.hidden = true;
+    rendered = null;
+  };
+  const generate = async () => {
+    const raw = value.value.trim();
+    if (!raw) throw new TypeError('Enter text or digits for your barcode.');
+    let barcodeValue = raw;
+    if (format.value === 'CODE128') {
+      if (raw.length > 80 || !/^[\x20-\x7e]+$/u.test(raw)) throw new TypeError('Code 128 accepts 1–80 printable ASCII characters.');
+    } else barcodeValue = logic.normalizeRetailBarcode(raw, format.value);
+    clearResult();
+    setStatus(root, 'Creating your barcode locally…');
+    const JsBarcode = await loadVendorScript('JsBarcode.all.min.js', 'JsBarcode');
+    JsBarcode(svg, barcodeValue, {
+      format: format.value,
+      lineColor: '#000000',
+      background: '#ffffff',
+      width: 2,
+      height: 90,
+      margin: 12,
+      displayValue: $('#barcode-show-value', root).checked,
+      font: 'monospace',
+      fontSize: 16,
+      textMargin: 6,
+    });
+    preview.hidden = false;
+    actions.hidden = false;
+    rendered = { value: barcodeValue, format: format.value };
+    setStatus(root, 'Barcode created locally. No data was uploaded.', 'success');
+  };
+  format.addEventListener('change', () => { updateHint(); clearResult(); });
+  $('#barcode-show-value', root).addEventListener('change', () => { if (rendered) generate().catch((error) => setStatus(root, error.message, 'error')); });
+  root.addEventListener('click', async (event) => {
+    const action = event.target.closest('[data-action]')?.dataset.action;
+    if (action === 'clear') {
+      value.value = '';
+      format.value = 'CODE128';
+      $('#barcode-show-value', root).checked = true;
+      updateHint(); clearResult();
+      setStatus(root, 'Generated locally. Retail barcodes need a valid product identifier.');
+      value.focus();
+      return;
+    }
+    if (action === 'generate-barcode') {
+      try { await generate(); }
+      catch (error) { clearResult(); setStatus(root, error.message || 'The barcode could not be created.', 'error'); }
+      return;
+    }
+    if (!rendered) return;
+    if (action === 'download-barcode-svg') {
+      makeDownloadLink(downloads, new Blob([svg.outerHTML], { type: 'image/svg+xml;charset=utf-8' }), 'usefulverse-barcode.svg', 'Download SVG');
+    }
+    if (action === 'download-barcode-png') {
+      try {
+        const serialized = new XMLSerializer().serializeToString(svg);
+        const svgUrl = URL.createObjectURL(new Blob([serialized], { type: 'image/svg+xml;charset=utf-8' }));
+        try {
+          const image = new Image();
+          image.src = svgUrl;
+          await image.decode();
+          const canvas = document.createElement('canvas');
+          canvas.width = image.naturalWidth; canvas.height = image.naturalHeight;
+          const context = canvas.getContext('2d');
+          if (!context) throw new Error('Canvas is unavailable.');
+          context.fillStyle = '#ffffff'; context.fillRect(0, 0, canvas.width, canvas.height); context.drawImage(image, 0, 0);
+          const blob = await new Promise((resolve, reject) => canvas.toBlob((result) => result ? resolve(result) : reject(new Error('PNG image could not be created.')), 'image/png'));
+          makeDownloadLink(downloads, blob, 'usefulverse-barcode.png', 'Download PNG');
+          canvas.width = 1; canvas.height = 1;
+        } finally { URL.revokeObjectURL(svgUrl); }
+      } catch { setStatus(root, 'PNG could not be created. Download the SVG instead.', 'error'); }
+    }
+  });
+  updateHint();
+}
+
 const setups = {
   'xml-formatter': setupXml,
   'color-contrast-checker': setupContrast,
@@ -641,6 +856,10 @@ const setups = {
   'pdf-tools': setupPdf,
   'csv-viewer': setupCsv,
   'qr-code-reader': setupQrReader,
+  'standard-deviation-calculator': setupStandardDeviation,
+  'discount-calculator': setupDiscount,
+  'square-footage-calculator': setupSquareFootage,
+  'barcode-generator': setupBarcode,
 };
 
 export function setupAdvancedTool(id, root) {

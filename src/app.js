@@ -783,16 +783,17 @@ function setupPrime(root) {
 
 function setupAverage(root) {
   const input = $('#average-input', root); const status = $('#tool-status', root);
-  const outputIds = ['average-result', 'average-sum', 'average-count', 'average-min', 'average-max', 'average-weight-total'];
+  const outputIds = ['average-result', 'average-sum', 'average-count', 'average-min', 'average-max', 'average-weight-total', 'average-final-result'];
   let mode = 'simple';
   const parseList = (value) => normalizeInput(value).split(usesCommaDecimal ? /[;、\n]+/u : /[,;、\s]+/u).map((item) => item.trim()).filter(Boolean).map(parseInputNumber);
-  root.addEventListener('click', (event) => {
+  root.addEventListener('click', async (event) => {
     const modeButton = event.target.closest('[data-average-mode]');
     if (modeButton) {
       mode = modeButton.dataset.averageMode;
       $$('[data-average-mode]', root).forEach((button) => { const active = button === modeButton; button.classList.toggle('is-active', active); button.setAttribute('aria-pressed', String(active)); });
       $('#average-simple-fields', root).hidden = mode !== 'simple';
       $('#average-weighted-fields', root).hidden = mode !== 'weighted';
+      $('#average-final-fields', root).hidden = mode !== 'final-grade';
       return;
     }
     const action = event.target.closest('[data-action]')?.dataset.action;
@@ -812,7 +813,22 @@ function setupAverage(root) {
       $('#average-result', root).textContent = formatNumber(weightedTotal / totalWeight); $('#average-sum', root).textContent = formatNumber(weightedTotal); $('#average-count', root).textContent = values.length; $('#average-min', root).textContent = formatNumber(Math.min(...values)); $('#average-max', root).textContent = formatNumber(Math.max(...values)); $('#average-weight-total', root).textContent = formatNumber(totalWeight);
       setStatus(status, 'Weighted average calculated locally.', 'success');
     }
-    if (action === 'clear') { input.value = ''; $('#average-values', root).value = ''; $('#average-weights', root).value = ''; outputIds.forEach((id) => { $(`#${id}`, root).textContent = '—'; }); setStatus(status, 'Separate numbers with spaces, commas or new lines.'); input.focus(); }
+    if (action === 'calculate-final-grade') {
+      const current = parseInputNumber($('#average-current-grade', root).value);
+      const weight = parseInputNumber($('#average-final-weight', root).value);
+      const target = parseInputNumber($('#average-target-grade', root).value);
+      const output = $('#average-final-result', root);
+      if ([current, weight, target].some((value) => !Number.isFinite(value)) || current < 0 || current > 100 || target < 0 || target > 100 || weight <= 0 || weight > 100) {
+        output.textContent = '—';
+        setStatus(status, 'Enter grades from 0 to 100 and a final exam weight above 0 up to 100.', 'error');
+        return;
+      }
+      const { calculateRequiredFinalGrade } = await import('./advanced-logic.mjs');
+      const result = calculateRequiredFinalGrade(current, weight, target);
+      output.textContent = `${formatNumber(result.required)}%`;
+      setStatus(status, 'Required grade calculated in your browser.', 'success');
+    }
+    if (action === 'clear') { input.value = ''; $('#average-values', root).value = ''; $('#average-weights', root).value = ''; ['average-current-grade', 'average-final-weight', 'average-target-grade'].forEach((id) => { $(`#${id}`, root).value = ''; }); outputIds.forEach((id) => { $(`#${id}`, root).textContent = '—'; }); setStatus(status, 'Separate numbers with spaces, commas or new lines.'); input.focus(); }
   });
 }
 
@@ -1284,7 +1300,7 @@ function setupToolPage() {
       .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
     return;
   }
-  const advancedTools = new Set(['xml-formatter', 'color-contrast-checker', 'tip-calculator', 'gpa-calculator', 'file-checksum', 'image-resizer-compressor', 'pdf-tools', 'csv-viewer', 'qr-code-reader']);
+  const advancedTools = new Set(['xml-formatter', 'color-contrast-checker', 'tip-calculator', 'gpa-calculator', 'file-checksum', 'image-resizer-compressor', 'pdf-tools', 'csv-viewer', 'qr-code-reader', 'standard-deviation-calculator', 'discount-calculator', 'square-footage-calculator', 'barcode-generator']);
   if (advancedTools.has(id)) {
     const assetVersion = new URL(document.currentScript?.src ?? location.href).searchParams.get('v');
     import(`./advanced-tools.js${assetVersion ? `?v=${assetVersion}` : ''}`)

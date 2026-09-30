@@ -53,6 +53,17 @@ export function calculateGpa(courses) {
   return { gpa: weightedPoints / totalCredits, totalCredits, courses: valid.length };
 }
 
+export function calculateRequiredFinalGrade(currentGrade, finalWeight, desiredGrade) {
+  if (![currentGrade, finalWeight, desiredGrade].every(Number.isFinite)
+    || currentGrade < 0 || currentGrade > 100
+    || desiredGrade < 0 || desiredGrade > 100
+    || finalWeight <= 0 || finalWeight > 100) {
+    throw new RangeError('Grades must be 0–100 and final exam weight must be greater than 0 and at most 100.');
+  }
+  const required = (desiredGrade - currentGrade * (1 - finalWeight / 100)) / (finalWeight / 100);
+  return { required: Math.max(0, required), alreadyReached: required <= 0, attainable: required <= 100 };
+}
+
 export function parseLocalizedNumber(value, locale = 'en') {
   let input = String(value).normalize('NFKC')
     .replace(/[०-९]/gu, (digit) => String(digit.codePointAt(0) - 0x966))
@@ -177,4 +188,66 @@ export function formatFileSize(bytes, locale = 'en') {
   const megabytes = bytes >= 1024 * 1024;
   const value = megabytes ? bytes / (1024 * 1024) : bytes / 1024;
   return `${new Intl.NumberFormat(locale, { maximumFractionDigits: 1 }).format(value)} ${megabytes ? 'MB' : 'KB'}`;
+}
+
+export function calculateStandardDeviation(values, type = 'population') {
+  if (!Array.isArray(values) || !values.length || values.length > 10_000 || values.some((value) => !Number.isFinite(value))) {
+    throw new TypeError('Enter between 1 and 10,000 finite numbers.');
+  }
+  if (type !== 'population' && type !== 'sample') throw new TypeError('Choose population or sample data.');
+  if (type === 'sample' && values.length < 2) throw new RangeError('Sample standard deviation needs at least two values.');
+
+  // Welford's online method avoids the cancellation error of sum(x²) - sum(x)²/n.
+  let mean = 0;
+  let sumSquaredDeviations = 0;
+  for (const [index, value] of values.entries()) {
+    const delta = value - mean;
+    mean += delta / (index + 1);
+    sumSquaredDeviations += delta * (value - mean);
+  }
+  const variance = Math.max(0, sumSquaredDeviations / (type === 'sample' ? values.length - 1 : values.length));
+  return { count: values.length, mean, variance, standardDeviation: Math.sqrt(variance), type };
+}
+
+export function calculateDiscount(originalPrice, discountPercent) {
+  if (!Number.isFinite(originalPrice) || originalPrice < 0) throw new RangeError('Original price must be zero or greater.');
+  if (!Number.isFinite(discountPercent) || discountPercent < 0 || discountPercent > 100) throw new RangeError('Discount must be between 0 and 100 percent.');
+  const saved = originalPrice * discountPercent / 100;
+  return { originalPrice, discountPercent, saved, salePrice: originalPrice - saved };
+}
+
+export function findDiscount(originalPrice, salePrice) {
+  if (!Number.isFinite(originalPrice) || originalPrice <= 0) throw new RangeError('Original price must be greater than zero.');
+  if (!Number.isFinite(salePrice) || salePrice < 0 || salePrice > originalPrice) throw new RangeError('Sale price must be between zero and the original price.');
+  const saved = originalPrice - salePrice;
+  return { originalPrice, salePrice, saved, discountPercent: saved / originalPrice * 100 };
+}
+
+const areaUnitInFeet = Object.freeze({ ft: 1, in: 1 / 12, m: 3.280839895013123, cm: 1 / 30.48 });
+
+export function calculateFloorArea(length, width, unit = 'ft', wastePercent = 0) {
+  if (!Number.isFinite(length) || length <= 0 || !Number.isFinite(width) || width <= 0) throw new RangeError('Length and width must be greater than zero.');
+  if (!Object.hasOwn(areaUnitInFeet, unit)) throw new TypeError('Choose feet, inches, meters or centimeters.');
+  if (!Number.isFinite(wastePercent) || wastePercent < 0 || wastePercent > 100) throw new RangeError('Waste allowance must be between 0 and 100 percent.');
+  const areaSquareFeet = length * areaUnitInFeet[unit] * width * areaUnitInFeet[unit];
+  const areaSquareMeters = areaSquareFeet / 10.763910416709722;
+  return { areaSquareFeet, areaSquareMeters, areaWithWasteSquareFeet: areaSquareFeet * (1 + wastePercent / 100), wastePercent };
+}
+
+export function normalizeRetailBarcode(value, format) {
+  const digits = String(value).replace(/\s+/gu, '');
+  const checkDigitFor = (body) => {
+    const sum = [...body].reverse().reduce((total, digit, index) => total + Number(digit) * (index % 2 === 0 ? 3 : 1), 0);
+    return String((10 - (sum % 10)) % 10);
+  };
+  const specs = { EAN13: { bodyLength: 12, fullLength: 13 }, UPC: { bodyLength: 11, fullLength: 12 } };
+  const spec = specs[format];
+  if (!spec) throw new TypeError('Choose EAN-13 or UPC-A.');
+  if (!/^\d+$/u.test(digits) || (digits.length !== spec.bodyLength && digits.length !== spec.fullLength)) {
+    throw new TypeError(`${format} needs ${spec.bodyLength} digits, or ${spec.fullLength} including the check digit.`);
+  }
+  const expected = checkDigitFor(digits.slice(0, spec.bodyLength));
+  if (digits.length === spec.bodyLength) return `${digits}${expected}`;
+  if (digits.at(-1) !== expected) throw new TypeError('The supplied barcode check digit is not valid.');
+  return digits;
 }
