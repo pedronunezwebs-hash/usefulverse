@@ -303,7 +303,7 @@ export const ui = {
   "Sum": "সমষ্টি",
   "Supports HEX, RGB and HSL colors.": "HEX, RGB এবং HSL রং সমর্থন করে।",
   "Supports whole numbers from -999,999,999,999 to 999,999,999,999.": "-999,999,999,999 থেকে 999,999,999,999 পর্যন্ত পূর্ণ সংখ্যা সমর্থন করে।",
-  "Supports whole numbers in bases 2, 8, 10 and 16.": "2, 8, 10 এবং 16 বেসে পূর্ণ সংখ্যা সমর্থন করে।",
+  "Supports whole numbers in bases 2–36.": "2 থেকে 36 পর্যন্ত যেকোনো বেসের পূর্ণ সংখ্যা সমর্থন করে।",
   "Sydney": "সিডনি",
   "Symbols": "প্রতীক",
   "Take the result": "ফল নিন",

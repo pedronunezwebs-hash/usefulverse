@@ -40,38 +40,38 @@ const tools = {
   },
   'binary-converter': {
     en: {
-      body: 'For a quick check, decimal 25 is binary 11001, octal 31 and hexadecimal 19. It converts signed integers between bases 2, 8, 10 and 16; fractions and base prefixes such as 0b are not accepted.',
+      body: 'For a quick check, decimal 25 is binary 11001, octal 31 and hexadecimal 19. Convert signed whole numbers between any bases 2–36, including hexadecimal to binary; fractions and prefixes such as 0b or 0x are not accepted.',
       faq: [
         { question: 'What is 25 in binary?', answer: 'Decimal 25 is 11001 in binary. Select Decimal as the input base and Binary as the output base, then enter 25.' },
-        { question: 'Which number bases and values can I convert?', answer: 'Convert whole numbers between binary (base 2), octal (8), decimal (10) and hexadecimal (16). Negative integers are supported; fractions and prefixes such as 0b or 0x are not.' },
+        { question: 'Which number bases and values can I convert?', answer: 'Convert signed whole numbers between any base from 2 to 36. Digits 0–9 and letters A–Z represent values; fractions and prefixes such as 0b or 0x are not accepted.' },
       ],
     },
     es: {
-      body: 'Como ejemplo, 25 en decimal equivale a 11001 en binario, 31 en octal y 19 en hexadecimal. Convierte enteros positivos o negativos entre bases 2, 8, 10 y 16; no admite decimales ni prefijos como 0b.',
+      body: 'Como ejemplo, 25 en decimal equivale a 11001 en binario, 31 en octal y 19 en hexadecimal. Convierte enteros positivos o negativos entre cualquier base del 2 al 36, incluida la conversión de hexadecimal a binario; no admite fracciones ni prefijos como 0b o 0x.',
       faq: [
         { question: '¿Cuánto es 25 en binario?', answer: 'El número decimal 25 equivale a 11001 en binario. Elige Decimal como base de origen y Binario como base de destino, e introduce 25.' },
-        { question: '¿Qué bases y números acepta el conversor?', answer: 'Convierte enteros entre binario (base 2), octal (8), decimal (10) y hexadecimal (16). Admite números negativos, pero no fracciones ni prefijos como 0b o 0x.' },
+        { question: '¿Qué bases y números acepta el conversor?', answer: 'Convierte enteros positivos y negativos entre cualquier base del 2 al 36. Usa los dígitos del 0 al 9 y las letras de la A a la Z; no admite fracciones ni prefijos como 0b o 0x.' },
       ],
     },
     fr: {
-      body: 'Par exemple, 25 en décimal vaut 11001 en binaire, 31 en octal et 19 en hexadécimal. Convertissez des entiers positifs ou négatifs entre les bases 2, 8, 10 et 16 ; les fractions et préfixes comme 0b ne sont pas acceptés.',
+      body: 'Par exemple, 25 en décimal vaut 11001 en binaire, 31 en octal et 19 en hexadécimal. Convertissez des entiers positifs ou négatifs entre toutes les bases de 2 à 36, y compris de l’hexadécimal au binaire ; les fractions et préfixes comme 0b ou 0x ne sont pas acceptés.',
       faq: [
         { question: 'Combien vaut 25 en binaire ?', answer: 'Le nombre décimal 25 s’écrit 11001 en binaire. Choisissez Décimal comme base d’entrée et Binaire comme base de sortie, puis saisissez 25.' },
-        { question: 'Quelles bases et quelles valeurs le convertisseur accepte-t-il ?', answer: 'Il convertit les entiers entre le binaire (base 2), l’octal (8), le décimal (10) et l’hexadécimal (16). Les entiers négatifs sont acceptés, contrairement aux fractions et aux préfixes comme 0b ou 0x.' },
+        { question: 'Quelles bases et quelles valeurs le convertisseur accepte-t-il ?', answer: 'Il convertit les entiers signés entre toutes les bases de 2 à 36. Les chiffres de 0 à 9 et les lettres de A à Z représentent les valeurs ; les fractions et préfixes comme 0b ou 0x ne sont pas acceptés.' },
       ],
     },
     pt: {
-      body: 'Por exemplo, 25 em decimal equivale a 11001 em binário, 31 em octal e 19 em hexadecimal. Converta números inteiros positivos ou negativos entre as bases 2, 8, 10 e 16; frações e prefixos como 0b não são aceitos.',
+      body: 'Por exemplo, 25 em decimal equivale a 11001 em binário, 31 em octal e 19 em hexadecimal. Converta números inteiros positivos ou negativos entre qualquer base de 2 a 36, inclusive de hexadecimal para binário; frações e prefixos como 0b ou 0x não são aceitos.',
       faq: [
         { question: 'Quanto é 25 em binário?', answer: 'O número decimal 25 equivale a 11001 em binário. Selecione Decimal como base de entrada e Binário como base de saída e digite 25.' },
-        { question: 'Quais bases e números o conversor aceita?', answer: 'Converta números inteiros entre binário (base 2), octal (8), decimal (10) e hexadecimal (16). Números negativos são aceitos; frações e prefixos como 0b ou 0x não são.' },
+        { question: 'Quais bases e números o conversor aceita?', answer: 'Converta números inteiros positivos ou negativos entre qualquer base de 2 a 36. Os dígitos de 0 a 9 e as letras de A a Z representam os valores; frações e prefixos como 0b ou 0x não são aceitos.' },
       ],
     },
     de: {
-      body: 'Zum Beispiel entspricht 25 im Dezimalsystem der Binärzahl 11001, der Oktalzahl 31 und der Hexadezimalzahl 19. Ganze positive und negative Zahlen lassen sich zwischen den Basen 2, 8, 10 und 16 umwandeln; Brüche und Präfixe wie 0b sind nicht zulässig.',
+      body: 'Zum Beispiel entspricht 25 im Dezimalsystem der Binärzahl 11001, der Oktalzahl 31 und der Hexadezimalzahl 19. Ganze positive und negative Zahlen lassen sich zwischen allen Basen von 2 bis 36 umwandeln, auch von Hexadezimal zu Binär; Brüche und Präfixe wie 0b oder 0x sind nicht zulässig.',
       faq: [
         { question: 'Was ist 25 im Binärsystem?', answer: 'Die Dezimalzahl 25 entspricht der Binärzahl 11001. Wählen Sie Dezimal als Ausgangsbasis und Binär als Zielbasis und geben Sie 25 ein.' },
-        { question: 'Welche Zahlensysteme und Werte unterstützt der Rechner?', answer: 'Ganze Zahlen lassen sich zwischen Binär (Basis 2), Oktal (8), Dezimal (10) und Hexadezimal (16) umwandeln. Negative ganze Zahlen sind möglich, Brüche und Präfixe wie 0b oder 0x nicht.' },
+        { question: 'Welche Zahlensysteme und Werte unterstützt der Rechner?', answer: 'Ganze Zahlen mit Vorzeichen lassen sich zwischen allen Basen von 2 bis 36 umwandeln. Ziffern von 0 bis 9 und Buchstaben von A bis Z stehen für die Werte; Brüche und Präfixe wie 0b oder 0x werden nicht unterstützt.' },
       ],
     },
   },
@@ -114,38 +114,43 @@ const tools = {
   },
   'average-calculator': {
     en: {
-      body: 'To find the arithmetic mean, add the values and divide by how many values there are: 10, 12 and 14 have an average of 12. The result also shows the sum, count, minimum and maximum. Separate values with commas, spaces or new lines.',
+      body: 'Calculate a weighted average for grades with different credits: scores 90 and 80 with weights 3 and 1 give 87.5. Switch to simple average for an arithmetic mean; the tool also shows the sum, count, minimum and maximum. Paste values or grades from a spreadsheet.',
       faq: [
         { question: 'What is the average of 10, 12 and 14?', answer: 'Add the values (10 + 12 + 14 = 36), then divide by 3. The arithmetic mean is 12.' },
-        { question: 'Can I paste a column of grades or measurements?', answer: 'Yes. Paste values separated by commas, spaces or line breaks. The calculator shows the mean, sum, count, minimum and maximum; it does not calculate a median or weighted average.' },
+        { question: 'How do I calculate a weighted average for grades?', answer: 'Enter each grade and its matching credit or weight in the same order. For example, (90 × 3 + 80 × 1) ÷ (3 + 1) = 87.5.' },
+        { question: 'Can I paste a column of grades or measurements?', answer: 'Yes. Paste values separated by commas, spaces or line breaks. Use the weighted mode for matching grade and credit lists; the tool does not calculate a median.' },
       ],
     },
     es: {
-      body: 'Para calcular la media aritmética, suma los valores y divide entre la cantidad: 10, 12 y 14 tienen una media de 12. También verás suma, cantidad, mínimo y máximo. Separa los números con comas, espacios o saltos de línea.',
+      body: 'Calcula la media ponderada de notas con créditos distintos: una nota de 90 con peso 3 y otra de 80 con peso 1 dan 87,5. Cambia a media simple para obtener la media aritmética; también verás suma, cantidad, mínimo y máximo. Puedes pegar datos de una hoja de cálculo.',
       faq: [
         { question: '¿Cuál es la media de 10, 12 y 14?', answer: 'Suma los valores (10 + 12 + 14 = 36) y divide el resultado entre 3. La media aritmética es 12.' },
-        { question: '¿Puedo pegar una lista de notas o mediciones?', answer: 'Sí. Pega los valores separados por comas, espacios o saltos de línea. La calculadora muestra la media, suma, cantidad, mínimo y máximo; no calcula mediana ni media ponderada.' },
+        { question: '¿Cómo se calcula la media ponderada de las notas?', answer: 'Introduce cada nota y su crédito o peso correspondiente en el mismo orden. Por ejemplo, (90 × 3 + 80 × 1) ÷ (3 + 1) = 87,5.' },
+        { question: '¿Puedo pegar una columna de notas o mediciones?', answer: 'Sí. Pega valores separados por comas, espacios o saltos de línea. Usa el modo ponderado para listas de notas y créditos; la herramienta no calcula la mediana.' },
       ],
     },
     fr: {
-      body: 'Pour calculer la moyenne arithmétique, additionnez les valeurs puis divisez par leur nombre : la moyenne de 10, 12 et 14 est 12. Le résultat indique aussi la somme, le nombre de valeurs, le minimum et le maximum. Séparez les valeurs par des virgules, des espaces ou des retours à la ligne.',
+      body: 'Calculez la moyenne pondérée de notes avec des crédits différents : une note de 90 avec un poids de 3 et une note de 80 avec un poids de 1 donnent 87,5. Passez en mode simple pour la moyenne arithmétique ; le résultat affiche aussi la somme, le nombre de valeurs, le minimum et le maximum.',
       faq: [
         { question: 'Quelle est la moyenne de 10, 12 et 14 ?', answer: 'Additionnez les valeurs (10 + 12 + 14 = 36), puis divisez la somme par 3. La moyenne arithmétique est 12.' },
-        { question: 'Puis-je coller une liste de notes ou de mesures ?', answer: 'Oui. Collez les valeurs séparées par des virgules, des espaces ou des retours à la ligne. La calculatrice affiche la moyenne, la somme, le nombre de valeurs, le minimum et le maximum ; elle ne calcule ni médiane ni moyenne pondérée.' },
+        { question: 'Comment calculer une moyenne pondérée de notes ?', answer: 'Saisissez chaque note et le crédit ou poids correspondant dans le même ordre. Par exemple, (90 × 3 + 80 × 1) ÷ (3 + 1) = 87,5.' },
+        { question: 'Puis-je coller une liste de notes ou de mesures ?', answer: 'Oui. Collez les valeurs séparées par des virgules, des espaces ou des retours à la ligne. Utilisez le mode pondéré pour les listes de notes et de crédits ; l’outil ne calcule pas la médiane.' },
       ],
     },
     pt: {
-      body: 'Para calcular a média aritmética, some os valores e divida pela quantidade: 10, 12 e 14 têm média 12. O resultado também mostra soma, quantidade, mínimo e máximo. Separe os valores por ponto e vírgula, espaços ou linhas.',
+      body: 'Calcule a média ponderada de notas com créditos diferentes: uma nota 90 com peso 3 e outra 80 com peso 1 resultam em 87,5. Mude para a média simples para obter a média aritmética; o resultado também mostra soma, quantidade, mínimo e máximo.',
       faq: [
         { question: 'Qual é a média de 10, 12 e 14?', answer: 'Some os valores (10 + 12 + 14 = 36) e divida o total por 3. A média aritmética é 12.' },
-        { question: 'Posso colar uma coluna de notas ou medições?', answer: 'Sim. Cole os valores separados por ponto e vírgula, espaços ou quebras de linha. A calculadora mostra média, soma, quantidade, mínimo e máximo; não calcula mediana nem média ponderada.' },
+        { question: 'Como calcular a média ponderada das notas?', answer: 'Informe cada nota e o crédito ou peso correspondente na mesma ordem. Por exemplo, (90 × 3 + 80 × 1) ÷ (3 + 1) = 87,5.' },
+        { question: 'Posso colar uma coluna de notas ou medições?', answer: 'Sim. Cole os valores separados por ponto e vírgula, espaços ou quebras de linha. Use o modo ponderado para listas correspondentes de notas e créditos; a ferramenta não calcula a mediana.' },
       ],
     },
     de: {
-      body: 'Für den arithmetischen Mittelwert addieren Sie die Werte und teilen die Summe durch ihre Anzahl: Der Durchschnitt von 10, 12 und 14 ist 12. Zusätzlich sehen Sie Summe, Anzahl, Minimum und Maximum. Trennen Sie die Zahlen mit Semikolons, Leerzeichen oder Zeilenumbrüchen.',
+      body: 'Berechnen Sie einen gewichteten Notendurchschnitt mit unterschiedlichen Leistungspunkten: Die Noten 90 mit Gewicht 3 und 80 mit Gewicht 1 ergeben 87,5. Wechseln Sie zum einfachen Durchschnitt für den arithmetischen Mittelwert; zusätzlich sehen Sie Summe, Anzahl, Minimum und Maximum.',
       faq: [
         { question: 'Wie hoch ist der Durchschnitt von 10, 12 und 14?', answer: 'Addieren Sie die Werte (10 + 12 + 14 = 36) und teilen Sie die Summe durch 3. Der arithmetische Mittelwert beträgt 12.' },
-        { question: 'Kann ich eine Spalte mit Noten oder Messwerten einfügen?', answer: 'Ja. Fügen Sie Werte ein, die durch Semikolons, Leerzeichen oder Zeilenumbrüche getrennt sind. Der Rechner zeigt Mittelwert, Summe, Anzahl, Minimum und Maximum; Median und gewichteten Durchschnitt berechnet er nicht.' },
+        { question: 'Wie berechne ich einen gewichteten Notendurchschnitt?', answer: 'Geben Sie jede Note und die passende Anzahl an Leistungspunkten oder das Gewicht in derselben Reihenfolge ein. Beispiel: (90 × 3 + 80 × 1) ÷ (3 + 1) = 87,5.' },
+        { question: 'Kann ich eine Spalte mit Noten oder Messwerten einfügen?', answer: 'Ja. Fügen Sie durch Semikolons, Leerzeichen oder Zeilenumbrüche getrennte Werte ein. Für Noten mit Leistungspunkten verwenden Sie den gewichteten Modus; einen Median berechnet das Tool nicht.' },
       ],
     },
   },

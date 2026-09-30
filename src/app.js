@@ -63,8 +63,12 @@ function getTextStats(input) {
   const words = !trimmed ? 0 : segmenter ? [...segmenter.segment(trimmed)].filter((segment) => segment.isWordLike).length : trimmed.split(/\s+/u).length;
   const lines = value ? value.split(/\r?\n/u).length : 0;
   const noSpaces = [...value.replace(/\s/gu, '')].length;
+  const sentences = trimmed ? (typeof Intl.Segmenter === 'function'
+    ? [...new Intl.Segmenter(languageTag, { granularity: 'sentence' }).segment(trimmed)].filter((part) => part.segment.trim()).length
+    : (trimmed.match(/[^.!?。！？]+[.!?。！？]?/gu) ?? []).filter((part) => part.trim()).length) : 0;
+  const paragraphs = trimmed ? trimmed.split(/\n\s*\n/gu).filter((part) => part.trim()).length : 0;
   const readingUnits = localeConfig.readingUnit === 'characters' ? noSpaces : words;
-  return { words, characters: [...value].length, noSpaces, lines, reading: readingUnits ? Math.max(1, Math.ceil(readingUnits / (localeConfig.readingRate ?? 200))) : 0 };
+  return { words, characters: [...value].length, noSpaces, lines, sentences, paragraphs, reading: readingUnits ? Math.max(1, Math.ceil(readingUnits / (localeConfig.readingRate ?? 200))) : 0 };
 }
 
 function setupWordCounter(root) {
@@ -76,6 +80,8 @@ function setupWordCounter(root) {
     $('#metric-characters', root).textContent = stats.characters;
     $('#metric-characters-no-spaces', root).textContent = stats.noSpaces;
     $('#metric-lines', root).textContent = stats.lines;
+    $('#metric-sentences', root).textContent = stats.sentences;
+    $('#metric-paragraphs', root).textContent = stats.paragraphs;
     $('#metric-reading-time', root).textContent = fmt('reading.minutes', { n: stats.reading, count: stats.reading }) ?? `${stats.reading} ${isGerman ? 'Min.' : 'min'}`;
   };
   input.addEventListener('input', update);
@@ -124,8 +130,10 @@ function setupDedupe(root) {
       const ignoreCase = $('#ignore-case', root).checked;
       const removeEmpty = $('#remove-empty', root).checked;
       const seen = new Set();
-      const lines = input.value.split(/\r?\n/u).map((line) => trim ? line.trim() : line).filter((line) => !removeEmpty || line !== '').filter((line) => { const key = ignoreCase ? line.toLocaleLowerCase(languageTag) : line; if (seen.has(key)) return false; seen.add(key); return true; });
+      let removed = 0;
+      const lines = input.value.split(/\r?\n/u).map((line) => trim ? line.trim() : line).filter((line) => !removeEmpty || line !== '').filter((line) => { const key = ignoreCase ? line.toLocaleLowerCase(languageTag) : line; if (seen.has(key)) { removed += 1; return false; } seen.add(key); return true; });
       output.value = lines.join('\n');
+      $('#dedupe-removed-count', root).textContent = formatNumber(removed);
       setStatus(status, fmt('dedupe.kept', { n: lines.length, count: formatNumber(lines.length) }) ?? (language === 'es' ? `${lines.length} ${lines.length === 1 ? 'línea única conservada.' : 'líneas únicas conservadas.'}` : language === 'fr' ? `${lines.length} ${lines.length === 1 ? 'ligne unique conservée.' : 'lignes uniques conservées.'}` : isPortuguese ? `${lines.length} ${lines.length === 1 ? 'linha única mantida.' : 'linhas únicas mantidas.'}` : isGerman ? `${lines.length} ${lines.length === 1 ? 'eindeutige Zeile behalten.' : 'eindeutige Zeilen behalten.'}` : `${lines.length} unique line${lines.length === 1 ? '' : 's'} kept.`), 'success');
     }
     if (action === 'clear') { input.value = ''; output.value = ''; setStatus(status, 'Your cleaned list will appear here.'); input.focus(); }
@@ -477,21 +485,37 @@ function setupRandomNumber(root) {
     const min = parseInputNumber($('#random-min', root).value);
     const max = parseInputNumber($('#random-max', root).value);
     const integer = $('#random-integer', root).checked;
+    const count = parseInputNumber($('#random-count', root).value);
+    const unique = $('#random-unique', root).checked && integer;
     if (!Number.isFinite(min) || !Number.isFinite(max) || min > max) { result.textContent = '—'; setStatus(status, 'Enter a valid minimum and maximum.', 'error'); return; }
+    if (!Number.isInteger(count) || count < 1 || count > 100) { result.textContent = '—'; setStatus(status, 'Choose a number from 1 to 100.', 'error'); return; }
     if (integer) {
       const low = Math.ceil(min);
       const high = Math.floor(max);
       if (low > high || high - low >= 0x100000000) { result.textContent = '—'; setStatus(status, 'Use an integer range smaller than 4.29 billion.', 'error'); return; }
-      result.textContent = String(low + secureRandomIndex(high - low + 1));
-    } else result.textContent = localDecimal(min + secureRandomFloat() * (max - min));
+      const range = high - low + 1;
+      if (unique && count > range) { result.textContent = '—'; setStatus(status, 'There are not enough different numbers in this range.', 'error'); return; }
+      let values;
+      if (unique) {
+        const selected = new Set();
+        for (let offset = range - count; offset < range; offset += 1) {
+          const candidate = secureRandomIndex(offset + 1);
+          selected.add(selected.has(candidate) ? offset : candidate);
+        }
+        values = [...selected].map((value) => String(low + value));
+      } else values = Array.from({ length: count }, () => String(low + secureRandomIndex(range)));
+      result.textContent = values.join('\n');
+    } else result.textContent = Array.from({ length: count }, () => localDecimal(min + secureRandomFloat() * (max - min))).join('\n');
     setStatus(status, 'Random number generated locally.', 'success');
   };
   root.addEventListener('click', (event) => {
     const action = event.target.closest('[data-action]')?.dataset.action;
     if (action === 'generate-number') generate();
     if (action === 'copy-output') copyText(result.textContent === '—' ? '' : result.textContent, status);
-    if (action === 'clear') { $('#random-min', root).value = ''; $('#random-max', root).value = ''; result.textContent = '—'; setStatus(status, 'Uses your browser’s secure random source.'); $('#random-min', root).focus(); }
+    if (action === 'random-preset-1-100') { $('#random-min', root).value = '1'; $('#random-max', root).value = '100'; $('#random-integer', root).checked = true; $('#random-min', root).focus(); }
+    if (action === 'clear') { $('#random-min', root).value = ''; $('#random-max', root).value = ''; $('#random-count', root).value = '1'; $('#random-unique', root).checked = false; result.textContent = '—'; setStatus(status, 'Uses your browser’s secure random source.'); $('#random-min', root).focus(); }
   });
+  $('#random-integer', root).addEventListener('change', (event) => { $('#random-unique', root).disabled = !event.target.checked; if (!event.target.checked) $('#random-unique', root).checked = false; });
 }
 
 function setupUuid(root) {
@@ -703,6 +727,15 @@ function setupRoman(root) {
         $('#roman-output', root).textContent = numberToRoman(value); setStatus(status, 'Number converted.', 'success');
       }
       if (action === 'roman-to-number') { $('#number-output', root).textContent = romanToNumber($('#roman-input', root).value); setStatus(status, 'Roman numeral converted.', 'success'); }
+      if (action === 'convert-roman-date') {
+        const value = $('#roman-date', root).value;
+        if (!value) throw new Error('Choose a date to convert.');
+        const [year, month, day] = value.split('-').map(Number);
+        const order = $('#roman-date-order', root).value;
+        const parts = { y: year, m: month, d: day };
+        $('#roman-date-output', root).textContent = [...order].map((part) => numberToRoman(parts[part])).join(' / ');
+        setStatus(status, 'Roman numeral date is ready.', 'success');
+      }
       if (action === 'clear') { $$('input', root).forEach((input) => { input.value = ''; }); $$('output', root).forEach((output) => { output.textContent = '—'; }); setStatus(status, 'Conversions run only in your browser.'); }
     } catch (error) { setStatus(status, language === 'en' ? error.message : 'Use a valid whole number or Roman numeral between 1 and 3,999.', 'error'); }
   });
@@ -710,13 +743,14 @@ function setupRoman(root) {
 
 function parseBaseInteger(value, base) {
   const text = normalizeInput(value).replace(/_/gu, '');
-  if (!text) throw new Error('Enter an integer to convert.');
+  if (!text || text.length > 4096) throw new Error('Enter an integer with no more than 4,096 digits.');
+  if (!Number.isInteger(base) || base < 2 || base > 36) throw new Error('Choose a number base from 2 to 36.');
   const negative = text.startsWith('-');
   const digits = negative || text.startsWith('+') ? text.slice(1) : text;
   const alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'.slice(0, base);
   if (!digits || [...digits.toUpperCase()].some((digit) => !alphabet.includes(digit))) throw new Error(`Use only valid digits for base ${base}.`);
-  const prefix = base === 2 ? '0b' : base === 8 ? '0o' : base === 16 ? '0x' : '';
-  const number = BigInt(`${prefix}${digits}`);
+  let number = 0n;
+  for (const character of digits.toUpperCase()) number = number * BigInt(base) + BigInt(alphabet.indexOf(character));
   return negative ? -number : number;
 }
 
@@ -728,7 +762,7 @@ function setupBinary(root) {
       try { const from = Number($('#binary-from', root).value); const to = Number($('#binary-to', root).value); output.textContent = parseBaseInteger(input.value, from).toString(to).toUpperCase(); setStatus(status, 'Number converted locally.', 'success'); }
       catch (error) { output.textContent = '—'; setStatus(status, language === 'en' ? error.message : 'Enter an integer using digits valid for the selected base.', 'error'); }
     }
-    if (action === 'clear') { input.value = ''; output.textContent = '—'; setStatus(status, 'Supports whole numbers in bases 2, 8, 10 and 16.'); input.focus(); }
+    if (action === 'clear') { input.value = ''; output.textContent = '—'; setStatus(status, 'Supports whole numbers in bases 2–36.'); input.focus(); }
   });
 }
 
@@ -749,17 +783,36 @@ function setupPrime(root) {
 
 function setupAverage(root) {
   const input = $('#average-input', root); const status = $('#tool-status', root);
-  const outputIds = ['average-result', 'average-sum', 'average-count', 'average-min', 'average-max'];
+  const outputIds = ['average-result', 'average-sum', 'average-count', 'average-min', 'average-max', 'average-weight-total'];
+  let mode = 'simple';
+  const parseList = (value) => normalizeInput(value).split(usesCommaDecimal ? /[;、\n]+/u : /[,;、\s]+/u).map((item) => item.trim()).filter(Boolean).map(parseInputNumber);
   root.addEventListener('click', (event) => {
+    const modeButton = event.target.closest('[data-average-mode]');
+    if (modeButton) {
+      mode = modeButton.dataset.averageMode;
+      $$('[data-average-mode]', root).forEach((button) => { const active = button === modeButton; button.classList.toggle('is-active', active); button.setAttribute('aria-pressed', String(active)); });
+      $('#average-simple-fields', root).hidden = mode !== 'simple';
+      $('#average-weighted-fields', root).hidden = mode !== 'weighted';
+      return;
+    }
     const action = event.target.closest('[data-action]')?.dataset.action;
     if (action === 'calculate-average') {
-      const separator = usesCommaDecimal ? /[;\s、]+/u : /[,\s、]+/u;
-      const values = normalizeInput(input.value).split(separator).filter(Boolean).map(parseInputNumber);
+      const values = parseList(input.value);
       if (!values.length || values.some((value) => !Number.isFinite(value))) { setStatus(status, 'Enter valid numbers separated by spaces, commas or lines.', 'error'); return; }
       const sum = values.reduce((total, value) => total + value, 0);
-      $('#average-result', root).textContent = formatNumber(sum / values.length); $('#average-sum', root).textContent = formatNumber(sum); $('#average-count', root).textContent = values.length; $('#average-min', root).textContent = formatNumber(Math.min(...values)); $('#average-max', root).textContent = formatNumber(Math.max(...values)); setStatus(status, 'Average calculated locally.', 'success');
+      $('#average-result', root).textContent = formatNumber(sum / values.length); $('#average-sum', root).textContent = formatNumber(sum); $('#average-count', root).textContent = values.length; $('#average-min', root).textContent = formatNumber(Math.min(...values)); $('#average-max', root).textContent = formatNumber(Math.max(...values)); $('#average-weight-total', root).textContent = '—'; setStatus(status, 'Average calculated locally.', 'success');
     }
-    if (action === 'clear') { input.value = ''; outputIds.forEach((id) => { $(`#${id}`, root).textContent = '—'; }); setStatus(status, 'Separate numbers with spaces, commas or new lines.'); input.focus(); }
+    if (action === 'calculate-weighted-average') {
+      const values = parseList($('#average-values', root).value);
+      const weights = parseList($('#average-weights', root).value);
+      if (!values.length || values.length !== weights.length || values.some((value) => !Number.isFinite(value)) || weights.some((weight) => !Number.isFinite(weight) || weight < 0)) { setStatus(status, 'Enter the same number of valid values and non-negative weights.', 'error'); return; }
+      const weightedTotal = values.reduce((sum, value, index) => sum + value * weights[index], 0);
+      const totalWeight = weights.reduce((sum, weight) => sum + weight, 0);
+      if (!Number.isFinite(weightedTotal) || totalWeight <= 0) { setStatus(status, 'The total weight must be greater than zero.', 'error'); return; }
+      $('#average-result', root).textContent = formatNumber(weightedTotal / totalWeight); $('#average-sum', root).textContent = formatNumber(weightedTotal); $('#average-count', root).textContent = values.length; $('#average-min', root).textContent = formatNumber(Math.min(...values)); $('#average-max', root).textContent = formatNumber(Math.max(...values)); $('#average-weight-total', root).textContent = formatNumber(totalWeight);
+      setStatus(status, 'Weighted average calculated locally.', 'success');
+    }
+    if (action === 'clear') { input.value = ''; $('#average-values', root).value = ''; $('#average-weights', root).value = ''; outputIds.forEach((id) => { $(`#${id}`, root).textContent = '—'; }); setStatus(status, 'Separate numbers with spaces, commas or new lines.'); input.focus(); }
   });
 }
 
@@ -1223,6 +1276,14 @@ function setupToolPage() {
   const root = $('.tool-workspace');
   if (!root) return;
   const id = root.dataset.tool;
+  const expandedTools = new Set(['age-calculator', 'business-days-calculator', 'image-to-pdf', 'favicon-generator', 'image-format-converter', 'markdown-html-converter', 'json-yaml-converter']);
+  if (expandedTools.has(id)) {
+    const assetVersion = new URL(document.currentScript?.src ?? location.href).searchParams.get('v');
+    import(`./expanded-tools.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupExpandedTool }) => setupExpandedTool(id, root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
   const advancedTools = new Set(['xml-formatter', 'color-contrast-checker', 'tip-calculator', 'gpa-calculator', 'file-checksum', 'image-resizer-compressor', 'pdf-tools', 'csv-viewer', 'qr-code-reader']);
   if (advancedTools.has(id)) {
     const assetVersion = new URL(document.currentScript?.src ?? location.href).searchParams.get('v');
@@ -1233,6 +1294,40 @@ function setupToolPage() {
   }
   const setups = { 'word-counter': setupWordCounter, 'text-case-converter': setupCaseConverter, 'remove-duplicate-lines': setupDedupe, 'json-formatter': setupJson, 'base64-encoder-decoder': setupBase64, 'url-encoder-decoder': setupUrl, 'text-to-slug': setupSlug, 'percentage-calculator': setupPercentage, 'password-generator': setupPassword, 'timestamp-converter': setupTimestamp, 'html-entity-encoder-decoder': setupHtmlEntities, 'csv-to-json': setupCsvToJson, 'json-to-csv': setupJsonToCsv, 'random-number-generator': setupRandomNumber, 'uuid-generator': setupUuid, 'sha256-hash-generator': setupSha256, 'regex-tester': setupRegex, 'jwt-decoder': setupJwt, 'color-converter': setupColor, 'url-parser': setupUrlParser, 'roman-numeral-converter': setupRoman, 'binary-converter': setupBinary, 'prime-number-checker': setupPrime, 'average-calculator': setupAverage, 'ratio-proportion-calculator': setupRatio, 'time-duration-calculator': setupDuration, 'number-to-words-converter': setupNumberWords, 'remove-line-breaks': setupRemoveLineBreaks, 'text-diff-checker': setupTextDiff, 'unit-converter': setupUnitConverter, 'date-calculator': setupDateCalculator, 'qr-code-generator': setupQr, 'time-zone-converter': setupTimeZone };
   setups[id]?.(root);
+}
+
+function setupUsefulVerseSave() {
+  $$('[data-save-usefulverse]').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const url = button.dataset.shareUrl;
+      const card = button.closest('.save-card');
+      const status = $('[data-save-status]', card);
+      const link = $('.save-card__link', card);
+      button.disabled = true;
+      try {
+        if (typeof navigator.share === 'function') {
+          try {
+            await navigator.share({ title: 'UsefulVerse', url });
+            setStatus(status, 'Share options opened. Choose where you want to keep the link.', 'success');
+            return;
+          } catch (error) {
+            if (error?.name === 'AbortError') return;
+          }
+        }
+        try {
+          await navigator.clipboard.writeText(url);
+          setStatus(status, 'Link copied. Keep it in your notes or send it to yourself for next time.', 'success');
+        } catch {
+          link.hidden = false;
+          link.focus();
+          link.select();
+          setStatus(status, 'Copy was blocked. Select the link below and copy it manually.', 'error');
+        }
+      } finally {
+        button.disabled = false;
+      }
+    });
+  });
 }
 
 function setupHome() {
@@ -1261,3 +1356,4 @@ function setupHome() {
 
 setupHome();
 setupToolPage();
+setupUsefulVerseSave();

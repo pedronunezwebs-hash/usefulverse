@@ -315,7 +315,7 @@ export const ui = {
   "Sum": "Сумма",
   "Supports HEX, RGB and HSL colors.": "Поддерживает цвета HEX, RGB и HSL.",
   "Supports whole numbers from -999,999,999,999 to 999,999,999,999.": "Поддерживает целые числа от -999 999 999 999 до 999 999 999 999.",
-  "Supports whole numbers in bases 2, 8, 10 and 16.": "Поддерживает целые числа по основаниям 2, 8, 10 и 16.",
+  "Supports whole numbers in bases 2–36.": "Поддерживает целые числа в системах счисления с основаниями от 2 до 36.",
   "Sydney": "Сидней",
   "Symbols": "Символы",
   "Take the result": "Возьмите результат",

@@ -2,6 +2,7 @@ import { tools } from './catalog.mjs';
 import { seo } from './seo.mjs';
 import { localeEntries, localePath, locales, packs, translateStaticHtml, ui } from './locales.mjs';
 import { longtailFaqs } from './locales/longtail.mjs';
+import { expandedToolMarkup } from './expanded-template.mjs';
 
 const fill = (template, values) => template.replace(/\{(\w+)\}/gu, (match, name) => values[name] ?? match);
 
@@ -23,6 +24,13 @@ export const relatedToolIds = {
   'time-duration-calculator': ['date-calculator', 'time-zone-converter', 'timestamp-converter'],
   'date-calculator': ['time-duration-calculator', 'time-zone-converter', 'percentage-calculator'],
   'remove-line-breaks': ['word-counter', 'text-case-converter', 'remove-duplicate-lines'],
+  'age-calculator': ['date-calculator', 'time-duration-calculator', 'business-days-calculator'],
+  'business-days-calculator': ['date-calculator', 'age-calculator', 'time-duration-calculator'],
+  'image-to-pdf': ['pdf-tools', 'image-resizer-compressor', 'image-format-converter'],
+  'favicon-generator': ['image-resizer-compressor', 'color-converter', 'color-contrast-checker'],
+  'image-format-converter': ['image-resizer-compressor', 'image-to-pdf', 'pdf-tools'],
+  'markdown-html-converter': ['word-counter', 'text-case-converter', 'remove-line-breaks'],
+  'json-yaml-converter': ['json-formatter', 'csv-to-json', 'json-to-csv'],
 };
 
 const icon = (tool) => `<span class="tool-icon tool-icon--${tool.accent}" aria-hidden="true">${escapeHtml(tool.icon)}</span>`;
@@ -37,6 +45,8 @@ export function toolCard(tool, language = 'en') {
 }
 
 function toolMarkup(id) {
+  const expanded = expandedToolMarkup(id);
+  if (expanded) return expanded;
   const common = `<div class="tool-workspace" data-tool="${id}">`;
   const close = `</div>`;
   if (id === 'word-counter') return `${common}
@@ -47,6 +57,8 @@ function toolMarkup(id) {
       <div class="metric"><strong id="metric-characters">0</strong><span>Characters</span></div>
       <div class="metric"><strong id="metric-characters-no-spaces">0</strong><span>Without spaces</span></div>
       <div class="metric"><strong id="metric-lines">0</strong><span>Lines</span></div>
+      <div class="metric"><strong id="metric-sentences">0</strong><span>Sentences</span></div>
+      <div class="metric"><strong id="metric-paragraphs">0</strong><span>Paragraphs</span></div>
       <div class="metric"><strong id="metric-reading-time">0 min</strong><span>Reading time</span></div>
     </div>
     <div class="tool-actions"><button class="button button--primary" data-action="copy-summary">Copy summary</button><button class="button button--ghost" data-action="clear">Clear</button></div>
@@ -71,6 +83,7 @@ function toolMarkup(id) {
     <p class="tool-status" id="tool-status" aria-live="polite">Your cleaned list will appear here.</p>
     <label class="field-label" for="tool-output">Clean list</label>
     <textarea id="tool-output" class="tool-textarea tool-textarea--large" readonly placeholder="Cleaned lines..."></textarea>
+    <p class="file-meta"><span>Duplicates removed:</span> <output id="dedupe-removed-count">0</output></p>
     <div class="tool-actions"><button class="button button--primary" data-action="copy-output">Copy result</button></div>
   ${close}`;
   if (id === 'json-formatter') return `${common}
@@ -165,7 +178,8 @@ function toolMarkup(id) {
     <div class="tool-actions"><button class="button button--primary" data-action="copy-output">Copy result</button></div>
   ${close}`;
   if (id === 'random-number-generator') return `${common}
-    <div class="random-number-form"><label class="field-label" for="random-min">Minimum</label><input id="random-min" class="tool-input" type="number" inputmode="decimal" value="1"><label class="field-label" for="random-max">Maximum</label><input id="random-max" class="tool-input" type="number" inputmode="decimal" value="100"><label class="option-row"><input id="random-integer" type="checkbox" checked> Whole number only</label></div>
+    <div class="tool-actions"><button class="button button--ghost" type="button" data-action="random-preset-1-100">Random number from 1 to 100</button></div>
+    <div class="random-number-form"><label class="field-label" for="random-min">Minimum</label><input id="random-min" class="tool-input" type="number" inputmode="decimal" value="1"><label class="field-label" for="random-max">Maximum</label><input id="random-max" class="tool-input" type="number" inputmode="decimal" value="100"><label class="field-label" for="random-count">How many numbers? <input id="random-count" class="tool-input" type="number" min="1" max="100" value="1" inputmode="numeric"></label><label class="option-row"><input id="random-integer" type="checkbox" checked> Whole number only</label><label class="option-row"><input id="random-unique" type="checkbox"> No repeats</label></div>
     <div class="random-result" id="random-result" aria-live="polite">—</div>
     <div class="tool-actions"><button class="button button--primary" data-action="generate-number">Generate number</button><button class="button button--ghost" data-action="copy-output">Copy result</button><button class="button button--ghost" data-action="clear">Clear</button></div>
     <p class="tool-status" id="tool-status" aria-live="polite">Uses your browser’s secure random source.</p>
@@ -217,20 +231,24 @@ function toolMarkup(id) {
   ${close}`;
   if (id === 'roman-numeral-converter') return `${common}
     <div class="converter-grid"><section class="calculator-card"><h2>Number to Roman numeral</h2><label class="field-label" for="roman-number">Whole number from 1 to 3,999</label><input id="roman-number" class="tool-input" type="number" min="1" max="3999" placeholder="2026"><div class="tool-actions"><button class="button button--primary" data-action="number-to-roman">Convert to Roman</button></div><output class="calculation-result" id="roman-output">—</output></section><section class="calculator-card"><h2>Roman numeral to number</h2><label class="field-label" for="roman-input">Roman numeral</label><input id="roman-input" class="tool-input" type="text" spellcheck="false" placeholder="MMXXVI"><div class="tool-actions"><button class="button button--primary" data-action="roman-to-number">Convert to number</button></div><output class="calculation-result" id="number-output">—</output></section></div>
+    <section class="calculator-card roman-date-card"><h2>Roman numeral converter for dates</h2><label class="field-label" for="roman-date">Date</label><input id="roman-date" class="tool-input" type="date" min="0001-01-01" max="3999-12-31"><label class="field-label" for="roman-date-order">Date order</label><select id="roman-date-order" class="tool-input"><option value="dmy">Day / month / year</option><option value="mdy">Month / day / year</option><option value="ymd">Year / month / day</option></select><div class="tool-actions"><button class="button button--primary" data-action="convert-roman-date">Convert date to Roman numerals</button></div><output class="calculation-result" id="roman-date-output">—</output><p class="tool-hint">Each date part is converted separately; the selected order avoids ambiguous date formats.</p></section>
     <p class="tool-status" id="tool-status" aria-live="polite">Conversions run only in your browser.</p>
   ${close}`;
   if (id === 'binary-converter') return `${common}
-    <div class="base-converter"><label class="field-label" for="binary-from">From base <select id="binary-from" class="tool-input"><option value="10">Decimal (10)</option><option value="2">Binary (2)</option><option value="16">Hexadecimal (16)</option><option value="8">Octal (8)</option></select></label><span class="base-arrow" aria-hidden="true">→</span><label class="field-label" for="binary-to">To base <select id="binary-to" class="tool-input"><option value="2">Binary (2)</option><option value="10">Decimal (10)</option><option value="16">Hexadecimal (16)</option><option value="8">Octal (8)</option></select></label></div>
+    <div class="base-converter"><label class="field-label" for="binary-from">From base <select id="binary-from" class="tool-input">${[...Array(35)].map((_, index) => { const base = index + 2; return `<option value="${base}"${base === 10 ? ' selected' : ''}>${base}</option>`; }).join('')}</select></label><span class="base-arrow" aria-hidden="true">→</span><label class="field-label" for="binary-to">To base <select id="binary-to" class="tool-input">${[...Array(35)].map((_, index) => { const base = index + 2; return `<option value="${base}"${base === 2 ? ' selected' : ''}>${base}</option>`; }).join('')}</select></label></div>
     <label class="field-label" for="binary-input">Integer to convert</label><input id="binary-input" class="tool-input" type="text" spellcheck="false" placeholder="255"><div class="tool-actions"><button class="button button--primary" data-action="convert-binary">Convert number</button><button class="button button--ghost" data-action="clear">Clear</button></div>
-    <p class="tool-status" id="tool-status" aria-live="polite">Supports whole numbers in bases 2, 8, 10 and 16.</p><div class="result-block"><div class="result-block__heading"><span>Result</span></div><output id="binary-output" class="result-output">—</output></div>
+    <p class="tool-status" id="tool-status" aria-live="polite">Supports whole numbers in bases 2 through 36. Digits 0–9 and letters A–Z represent values.</p><div class="result-block"><div class="result-block__heading"><span>Result</span></div><output id="binary-output" class="result-output">—</output></div>
   ${close}`;
   if (id === 'prime-number-checker') return `${common}
     <label class="field-label" for="prime-input">Whole number</label><input id="prime-input" class="tool-input" type="number" min="0" max="1000000000000" inputmode="numeric" placeholder="97"><div class="tool-actions"><button class="button button--primary" data-action="check-prime">Check number</button><button class="button button--ghost" data-action="clear">Clear</button></div>
     <p class="tool-status" id="tool-status" aria-live="polite">Checks integers up to one trillion locally.</p><div class="random-result prime-result" id="prime-output" aria-live="polite">—</div>
   ${close}`;
   if (id === 'average-calculator') return `${common}
-    <label class="sr-only" for="average-input">Numbers to average</label><textarea id="average-input" class="tool-textarea tool-textarea--large" placeholder="10\n20\n30\n40"></textarea><div class="tool-actions"><button class="button button--primary" data-action="calculate-average">Calculate average</button><button class="button button--ghost" data-action="clear">Clear</button></div><p class="tool-status" id="tool-status" aria-live="polite">Separate numbers with spaces, commas or new lines.</p>
-    <div class="result-grid result-grid--three"><div class="result-block"><div class="result-block__heading"><span>Average</span></div><output id="average-result">—</output></div><div class="result-block"><div class="result-block__heading"><span>Sum</span></div><output id="average-sum">—</output></div><div class="result-block"><div class="result-block__heading"><span>Count</span></div><output id="average-count">—</output></div><div class="result-block"><div class="result-block__heading"><span>Minimum</span></div><output id="average-min">—</output></div><div class="result-block"><div class="result-block__heading"><span>Maximum</span></div><output id="average-max">—</output></div></div>
+    <div class="segmented" role="group" aria-label="Average calculation type"><button class="segment is-active" type="button" data-average-mode="simple" aria-pressed="true">Simple average</button><button class="segment" type="button" data-average-mode="weighted" aria-pressed="false">Weighted average for grades</button></div>
+    <section id="average-simple-fields"><label class="sr-only" for="average-input">Numbers to average</label><textarea id="average-input" class="tool-textarea tool-textarea--large" placeholder="10\n20\n30\n40"></textarea><div class="tool-actions"><button class="button button--primary" data-action="calculate-average">Calculate average</button></div></section>
+    <section id="average-weighted-fields" hidden><p class="tool-hint">Enter matching lists in the same order. For example, values 90, 80 and weights 3, 1 give a weighted average of 87.5.</p><div class="converter-grid"><label class="field-label" for="average-values">Grades or values<textarea id="average-values" class="tool-textarea" placeholder="90\n80"></textarea></label><label class="field-label" for="average-weights">Credits or weights<textarea id="average-weights" class="tool-textarea" placeholder="3\n1"></textarea></label></div><div class="tool-actions"><button class="button button--primary" data-action="calculate-weighted-average">Calculate weighted average</button></div></section>
+    <div class="tool-actions"><button class="button button--ghost" data-action="clear">Clear</button></div><p class="tool-status" id="tool-status" aria-live="polite">Separate numbers with spaces, commas or new lines.</p>
+    <div class="result-grid result-grid--three"><div class="result-block"><div class="result-block__heading"><span>Average</span></div><output id="average-result">—</output></div><div class="result-block"><div class="result-block__heading"><span>Sum or weighted total</span></div><output id="average-sum">—</output></div><div class="result-block"><div class="result-block__heading"><span>Count</span></div><output id="average-count">—</output></div><div class="result-block"><div class="result-block__heading"><span>Minimum</span></div><output id="average-min">—</output></div><div class="result-block"><div class="result-block__heading"><span>Maximum</span></div><output id="average-max">—</output></div><div class="result-block"><div class="result-block__heading"><span>Total weight</span></div><output id="average-weight-total">—</output></div></div>
   ${close}`;
   if (id === 'ratio-proportion-calculator') return `${common}
     <div class="ratio-equation"><label for="ratio-a"><span>A</span><input id="ratio-a" class="tool-input tool-input--small" type="number" inputmode="decimal" placeholder="2"></label><strong>:</strong><label for="ratio-b"><span>B</span><input id="ratio-b" class="tool-input tool-input--small" type="number" inputmode="decimal" placeholder="3"></label><strong>=</strong><label for="ratio-c"><span>C</span><input id="ratio-c" class="tool-input tool-input--small" type="number" inputmode="decimal" placeholder="8"></label><strong>:</strong><label for="ratio-x"><span>X</span><input id="ratio-x" class="tool-input tool-input--small" type="text" readonly placeholder="?"></label></div><div class="tool-actions"><button class="button button--primary" data-action="solve-ratio">Solve proportion</button><button class="button button--ghost" data-action="clear">Clear</button></div><p class="tool-status" id="tool-status" aria-live="polite">Solve A:B = C:X, then see the simplified A:B ratio.</p><div class="result-grid"><div class="result-block"><div class="result-block__heading"><span>Missing value X</span></div><output id="ratio-result">—</output></div><div class="result-block"><div class="result-block__heading"><span>Simplified A:B</span></div><output id="ratio-simplified">—</output></div></div>
@@ -396,6 +414,7 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
       <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="${homeHref}">UsefulVerse</a><span aria-hidden="true">/</span><a href="${homeHref}#tools">${escapeHtml(tool.category)}</a><span aria-hidden="true">/</span><span>${escapeHtml(tool.title)}</span></nav>
         <div class="tool-page__heading"><div>${icon(tool)}<p class="eyebrow">${escapeHtml(tool.category)} tool</p><h1>${escapeHtml(tool.title)}</h1><p class="tool-lead">${escapeHtml(tool.intro)}</p></div><div class="privacy-note"><span class="privacy-note__dot" aria-hidden="true"></span><span>Runs in your browser. No upload.</span></div></div>
         <section class="tool-panel" aria-label="${escapeHtml(tool.title)} workspace">${toolMarkup(tool.id)}</section>
+        ${usefulVerseSaveCard(canonical)}
         <section class="tool-explainer"><div><p class="eyebrow">About this tool</p><h2>${escapeHtml(tool.title)} made simple.</h2></div><p>${escapeHtml(tool.body)}</p></section>
         ${faqSection}
         <section class="related-tools"><div class="section-heading"><div><p class="eyebrow">Keep going</p><h2>More useful tools</h2></div><a class="text-link" href="${homeHref}">Browse all tools <span aria-hidden="true">↗</span></a></div><div class="tool-grid tool-grid--compact">${relatedCards(tool.id, tool.category, pageTools, language)}</div></section>
@@ -414,6 +433,13 @@ function relatedCards(currentId, category, pageTools = tools, language = 'en') {
   const sameCategory = pageTools.filter((tool) => tool.id !== currentId && tool.category === category && !related.some((item) => item.id === tool.id));
   const fallback = [...sameCategory, ...pageTools.filter((tool) => tool.id !== currentId && !related.some((item) => item.id === tool.id) && !sameCategory.some((item) => item.id === tool.id))].slice(0, 3 - related.length);
   return [...related, ...fallback].map((tool) => toolCard(tool, language)).join('');
+}
+
+function usefulVerseSaveCard(url, compact = false) {
+  return `<aside class="save-card${compact ? ' save-card--compact' : ''}" aria-labelledby="save-usefulverse-title">
+    <div class="save-card__copy"><h2 id="save-usefulverse-title">Want to find UsefulVerse again?</h2><p>Free tools, no account or subscription. Save this page in your notes or send it to yourself for next time.</p><p class="save-card__status" data-save-status aria-live="polite"></p><label class="sr-only" for="save-usefulverse-link">Page link</label><input class="save-card__link" id="save-usefulverse-link" type="url" value="${escapeHtml(url)}" readonly hidden></div>
+    <button class="button button--ghost save-card__button" type="button" data-save-usefulverse data-share-url="${escapeHtml(url)}">Save UsefulVerse <span aria-hidden="true">↗</span></button>
+  </aside>`;
 }
 
 export function renderNotFoundPage() {
@@ -548,7 +574,7 @@ export function renderHome(tools, categories, assetVersion = '', language = 'en'
     lang: language,
     alternates,
     body: `<main>
-      <section class="home-intro"><div class="page-container home-intro__grid"><div><p class="eyebrow">A useful place on the internet</p><h1>Do the small things<br><span>faster.</span></h1><p class="home-lead">Simple browser tools for text, data and everyday work. No account. No upload. Just open a tool and get it done.</p><a class="button button--primary button--large" href="#tools">Explore tools <span aria-hidden="true">↘</span></a></div><div class="intro-card" aria-label="UsefulVerse principles"><div class="intro-card__orb" aria-hidden="true"><span>useful</span><strong>verse</strong></div><div class="intro-card__notes"><span>Fast by default</span><span>Private by design</span><span>Free to use</span></div></div></div></section>
+      <section class="home-intro"><div class="page-container home-intro__grid"><div><p class="eyebrow">A useful place on the internet</p><h1>Do the small things<br><span>faster.</span></h1><p class="home-lead">Simple browser tools for text, data and everyday work. No account. No upload. Just open a tool and get it done.</p><div class="home-intro__actions"><a class="button button--primary button--large" href="#tools">Explore tools <span aria-hidden="true">↘</span></a>${usefulVerseSaveCard(homeUrl, true)}</div></div><div class="intro-card" aria-label="UsefulVerse principles"><div class="intro-card__orb" aria-hidden="true"><span>useful</span><strong>verse</strong></div><div class="intro-card__notes"><span>Fast by default</span><span>Private by design</span><span>Free to use</span></div></div></div></section>
       <section class="tools-section" id="tools"><div class="page-container"><div class="section-heading section-heading--tools"><div><p class="eyebrow">The toolbox</p><h2>Find the right tool.</h2></div><div class="search-wrap"><label class="sr-only" for="tool-search">Search tools</label><input id="tool-search" class="search-input" type="search" placeholder="Search tools" autocomplete="off"><span aria-hidden="true">⌕</span></div></div><div class="category-row" role="group" aria-label="Tool categories">${categories.map((category) => `<button class="category-chip${category === categories[0] ? ' is-active' : ''}" data-category-filter="${escapeHtml(category)}">${escapeHtml(category)}</button>`).join('')}</div><div class="tool-grid" id="tool-grid">${tools.map((tool) => toolCard(tool, language)).join('')}</div><p class="empty-state" id="empty-state" hidden>No tools match that search yet. Try another word.</p></div></section>
       <section class="how-section" id="how-it-works"><div class="page-container how-grid"><div><p class="eyebrow">Why UsefulVerse</p><h2>Small tools.<br>Clear answers.</h2></div><div class="how-points"><article><span class="step-number">01</span><h3>Open a tool</h3><p>Each tool has one clear job. You can start in seconds.</p></article><article><span class="step-number">02</span><h3>Work privately</h3><p>Your text stays in your browser for browser-first tools.</p></article><article><span class="step-number">03</span><h3>Take the result</h3><p>Copy it or use it where you need it next.</p></article></div></div></section>
     </main>`,

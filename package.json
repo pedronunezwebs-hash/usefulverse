@@ -12,8 +12,13 @@
     "seo:yandex": "node scripts/yandex-webmaster.mjs"
   },
   "devDependencies": {
+    "dompurify": "3.4.16",
+    "heic2any": "0.0.4",
+    "js-yaml": "4.3.2",
     "jsqr": "1.4.0",
+    "marked": "18.0.14",
     "pdf-lib": "1.17.1",
-    "pdfjs-dist": "6.3.289"
+    "pdfjs-dist": "6.3.289",
+    "turndown": "7.2.4"
   }
 }

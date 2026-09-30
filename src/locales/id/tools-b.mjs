@@ -77,7 +77,7 @@ export const ui = {
   "To base": "Ke basis",
   "Integer to convert": "Bilangan bulat yang ingin dikonversi",
   "Convert number": "Konversi bilangan",
-  "Supports whole numbers in bases 2, 8, 10 and 16.": "Mendukung bilangan bulat basis 2, 8, 10, dan 16.",
+  "Supports whole numbers in bases 2–36.": "Mendukung bilangan bulat dalam basis 2 hingga 36.",
 };
 
 export const runtimeMessages = {

@@ -74,7 +74,7 @@ export const ui = {
   "To base": "変換先",
   "Integer to convert": "変換する整数",
   "Convert number": "変換",
-  "Supports whole numbers in bases 2, 8, 10 and 16.": "2進数・8進数・10進数・16進数の整数に対応しています。",
+  "Supports whole numbers in bases 2–36.": "2進数から36進数までの整数に対応しています。",
 };
 
 export const runtimeMessages = {

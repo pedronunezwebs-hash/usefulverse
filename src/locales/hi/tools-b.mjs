@@ -79,7 +79,7 @@ export const ui = {
   "To base": "किस बेस में",
   "Integer to convert": "बदलने के लिए पूर्णांक",
   "Convert number": "संख्या बदलें",
-  "Supports whole numbers in bases 2, 8, 10 and 16.": "बेस 2, 8, 10 और 16 में पूर्ण संख्याएं बदलता है।",
+  "Supports whole numbers in bases 2–36.": "बेस 2 से 36 तक पूर्ण संख्याओं को बदलता है।",
 };
 
 export const runtimeMessages = {
