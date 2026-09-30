@@ -1,4 +1,6 @@
-// Localized copy for the nine browser-only tools. Keep wording accurate about
+import { compressionToolLocales } from './compression-tools.mjs';
+
+// Localized copy for browser-only tools. Keep wording accurate about
 // what the local implementation does; no file contents are sent to a server.
 export const advancedToolLocales = {
   es: {
@@ -212,6 +214,11 @@ export const advancedToolLocales = {
     },
   },
 };
+
+for (const [language, data] of Object.entries(compressionToolLocales)) {
+  Object.assign(advancedToolLocales[language].ui, data.ui);
+  Object.assign(advancedToolLocales[language].copy, data.copy);
+}
 
 const faqTemplates = {
   es: ['¿Cómo funciona {title}?', '¿Se suben mis archivos o datos?', 'No. {body}'],

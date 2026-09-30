@@ -2,6 +2,7 @@ import { cp, mkdir, readdir, readFile, rename, rm, stat, writeFile } from 'node:
 import { createHash } from 'node:crypto';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { build as bundle } from 'esbuild';
 import { tools, categories } from '../src/catalog.mjs';
 import { renderHome, renderNotFoundPage, renderToolPage } from '../src/template.mjs';
 import { localePath, locales, localizedTool, packs, ui } from '../src/locales.mjs';
@@ -29,6 +30,26 @@ await cp(join(root, 'node_modules', 'dompurify', 'dist', 'purify.min.js'), join(
 await cp(join(root, 'node_modules', 'turndown', 'lib', 'turndown.browser.umd.js'), join(vendor, 'turndown.browser.umd.js'));
 await cp(join(root, 'node_modules', 'js-yaml', 'dist', 'js-yaml.mjs'), join(vendor, 'js-yaml.mjs'));
 await cp(join(root, 'node_modules', 'jsbarcode', 'dist', 'JsBarcode.all.min.js'), join(vendor, 'JsBarcode.all.min.js'));
+await cp(join(root, 'node_modules', '@neslinesli93', 'qpdf-wasm', 'dist', 'qpdf.wasm'), join(vendor, 'qpdf.wasm'));
+await bundle({
+  entryPoints: [join(root, 'src', 'pdf-compressor-worker.mjs')],
+  outfile: join(vendor, 'pdf-compressor-worker.mjs'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+  external: ['fs', 'path'],
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'video-compression.mjs')],
+  outfile: join(vendor, 'video-compression.mjs'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
 await cp(join(root, 'node_modules', 'pdfjs-dist', 'legacy', 'build', 'pdf.min.mjs'), join(vendor, 'pdf.min.mjs'));
 await cp(join(root, 'node_modules', 'pdfjs-dist', 'legacy', 'build', 'pdf.worker.min.mjs'), join(vendor, 'pdf.worker.min.mjs'));
 await cp(join(root, 'node_modules', 'pdfjs-dist', 'cmaps'), join(vendor, 'cmaps'), { recursive: true });
@@ -42,6 +63,10 @@ await cp(join(root, 'node_modules', 'dompurify', 'LICENSE-MPL'), join(vendor, 'L
 await cp(join(root, 'node_modules', 'turndown', 'LICENSE'), join(vendor, 'LICENSE-turndown'));
 await cp(join(root, 'node_modules', 'js-yaml', 'LICENSE'), join(vendor, 'LICENSE-js-yaml'));
 await cp(join(root, 'node_modules', 'jsbarcode', 'MIT-LICENSE.txt'), join(vendor, 'LICENSE-jsbarcode.txt'));
+await cp(join(root, 'node_modules', 'mediabunny', 'LICENSE'), join(vendor, 'LICENSE-mediabunny'));
+await cp(join(root, 'node_modules', '@neslinesli93', 'qpdf-wasm', 'README.md'), join(vendor, 'NOTICE-qpdf-wasm.md'));
+await cp(join(root, 'public', 'licenses', 'LICENSE-qpdf.txt'), join(vendor, 'LICENSE-qpdf.txt'));
+await cp(join(root, 'public', 'licenses', 'LICENSE-qpdf-wasm-ISC.txt'), join(vendor, 'LICENSE-qpdf-wasm-ISC.txt'));
 await cp(join(root, 'public', 'favicon.svg'), join(dist, 'favicon.svg'));
 await cp(join(root, 'public', '_headers'), join(dist, '_headers'));
 await cp(join(root, 'public', 'BingSiteAuth.xml'), join(dist, 'BingSiteAuth.xml'));
