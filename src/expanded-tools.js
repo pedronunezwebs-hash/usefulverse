@@ -47,8 +47,8 @@ function safeBaseName(name) {
   return base || 'image';
 }
 
-const imageExtensions = new Set(['jpg', 'jpeg', 'jpe', 'jfif', 'pjpeg', 'pjp', 'png', 'apng', 'webp', 'heic', 'heif', 'avif', 'bmp', 'gif', 'svg', 'ico', 'cur']);
-const imageMimeTypes = new Set(['image/jpeg', 'image/png', 'image/apng', 'image/webp', 'image/heic', 'image/heif', 'image/avif', 'image/bmp', 'image/x-ms-bmp', 'image/gif', 'image/svg+xml', 'image/x-icon', 'image/vnd.microsoft.icon']);
+const imageExtensions = new Set(['jpg', 'jpeg', 'jpe', 'jfif', 'pjpeg', 'pjp', 'png', 'apng', 'webp', 'heic', 'heif', 'avif', 'bmp', 'gif', 'svg', 'ico', 'cur', 'tif', 'tiff']);
+const imageMimeTypes = new Set(['image/jpeg', 'image/png', 'image/apng', 'image/webp', 'image/heic', 'image/heif', 'image/avif', 'image/bmp', 'image/x-ms-bmp', 'image/gif', 'image/svg+xml', 'image/x-icon', 'image/vnd.microsoft.icon', 'image/tiff']);
 const outputExtensions = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp' };
 
 function imageExtension(file) {
@@ -61,6 +61,10 @@ function isSupportedImage(file) {
 
 function isHeic(file) {
   return /\.(?:heic|heif)$/iu.test(file.name) || ['image/heic', 'image/heif'].includes(file.type.toLowerCase());
+}
+
+function isTiff(file) {
+  return /\.(?:tif|tiff)$/iu.test(file.name) || file.type.toLowerCase() === 'image/tiff';
 }
 
 async function decodeBitmap(blob) {
@@ -81,7 +85,11 @@ async function decodeBitmap(blob) {
   }
 }
 
-async function decodeImageFile(file) {
+async function decodeImageFile(file, maxPixels = 40_000_000) {
+  if (isTiff(file)) {
+    const { decodeTiffFile } = await import(versioned('/assets/tiff-decoder.mjs'));
+    return decodeTiffFile(file, maxPixels);
+  }
   let image = file;
   if (isHeic(file)) {
     const converter = await loadVendorScript('heic2any.min.js', 'heic2any');
@@ -343,7 +351,7 @@ function setupImageToPdf(root) {
           let bitmap;
           let canvas;
           try {
-            bitmap = await decodeImageFile(file);
+            bitmap = await decodeImageFile(file, limits.pixels);
             if (bitmap.width * bitmap.height > limits.pixels) throw new RangeError('An image has more than 20 megapixels. Choose a smaller image.');
             let embedded;
             canvas = document.createElement('canvas'); canvas.width = bitmap.width; canvas.height = bitmap.height;
@@ -581,7 +589,7 @@ function setupImageFormatConverter(root) {
           try {
             if (isHeic(file)) setStatus(root, 'Loading the HEIC decoder…');
             setStatus(root, 'Converting images on your device…');
-            bitmap = await decodeImageFile(file);
+            bitmap = await decodeImageFile(file, 20_000_000);
             if (bitmap.width * bitmap.height > 20_000_000) throw new RangeError('An image has more than 20 megapixels.');
             canvas = document.createElement('canvas'); canvas.width = bitmap.width; canvas.height = bitmap.height;
             const alpha = type !== 'image/jpeg' && backgroundChoice === 'transparent';
@@ -752,6 +760,108 @@ function setupJsonYaml(root) {
   });
 }
 
+function setupOfficeFileCompressor(root) {
+  const input = $('#office-package-file', root);
+  const runButton = $('[data-action="compress-office-file"]', root);
+  const cancelButton = $('[data-action="cancel-office-file"]', root);
+  const downloads = $('#office-package-downloads', root);
+  let selectedFile = null;
+  let worker = null;
+  let operation = 0;
+
+  const setBusy = (busy) => {
+    runButton.disabled = busy;
+    cancelButton.disabled = !busy;
+    input.disabled = busy;
+  };
+  const cancel = (announce = true) => {
+    if (worker) worker.terminate();
+    worker = null;
+    operation += 1;
+    setBusy(false);
+    if (announce) setStatus(root, 'Processing canceled. Your original file is unchanged.');
+  };
+
+  input.addEventListener('change', () => {
+    cancel(false);
+    selectedFile = input.files?.[0] ?? null;
+    clearDownloadLinks(downloads);
+    if (!selectedFile) {
+      $('#office-package-meta', root).textContent = t('Files stay on your device. Limits: 100 MB input, 200 MB expanded data and 5,000 package parts.');
+      return setStatus(root, 'Processing runs locally in this browser. No upload.');
+    }
+    const extension = selectedFile.name.split('.').pop()?.toLowerCase() ?? '';
+    if (!['docx', 'xlsx', 'pptx'].includes(extension)) {
+      selectedFile = null;
+      input.value = '';
+      $('#office-package-meta', root).textContent = t('Files stay on your device. Limits: 100 MB input, 200 MB expanded data and 5,000 package parts.');
+      return setStatus(root, 'Choose a modern DOCX, XLSX or PPTX file.', 'error');
+    }
+    $('#office-package-meta', root).textContent = `${selectedFile.name} · ${logic.formatFileSize(selectedFile.size, languageTag)} · DOCX/XLSX/PPTX`;
+    setStatus(root, 'Office file ready. The original will remain unchanged.');
+  });
+
+  root.addEventListener('click', async (event) => {
+    const action = event.target.closest('[data-action]')?.dataset.action;
+    if (action === 'cancel-office-file') return cancel(true);
+    if (action === 'clear') {
+      cancel(false);
+      input.value = '';
+      selectedFile = null;
+      clearDownloadLinks(downloads);
+      $('#office-package-meta', root).textContent = t('Files stay on your device. Limits: 100 MB input, 200 MB expanded data and 5,000 package parts.');
+      return setStatus(root, 'Processing runs locally in this browser. No upload.');
+    }
+    if (action !== 'compress-office-file' || worker) return;
+    if (!selectedFile) return setStatus(root, 'Choose a modern DOCX, XLSX or PPTX file.', 'error');
+    if (selectedFile.size > 100 * 1024 * 1024) return setStatus(root, 'This file is larger than the 100 MB local processing limit.', 'error');
+    if (typeof Worker !== 'function') return setStatus(root, 'This browser does not support local Office file processing.', 'error');
+
+    const file = selectedFile;
+    const currentOperation = ++operation;
+    clearDownloadLinks(downloads);
+    setBusy(true);
+    setStatus(root, 'Recompressing the Office package on your device…');
+    try {
+      const bytes = await file.arrayBuffer();
+      if (currentOperation !== operation) return;
+      worker = new Worker(versioned('/assets/vendor/office-package-worker.mjs'), { type: 'module' });
+      worker.onmessage = (message) => {
+        if (currentOperation !== operation) return;
+        worker?.terminate();
+        worker = null;
+        setBusy(false);
+        const result = message.data;
+        if (!result?.ok) return setStatus(root, result?.message || 'The file could not be safely recompressed. Your original has not changed.', 'error');
+        if (!result.smaller) return setStatus(root, 'This package is already compact. No smaller download was created.');
+        const type = {
+          docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+          xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+          pptx: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+        }[result.extension];
+        const blob = new Blob([result.bytes], { type });
+        makeDownloadLink(downloads, blob, `${safeBaseName(file.name)}-compressed.${result.extension}`);
+        setStatus(root, 'A smaller copy is ready. Compare it and keep your original.', 'success');
+      };
+      worker.onerror = () => {
+        worker?.terminate();
+        worker = null;
+        setBusy(false);
+        setStatus(root, 'The file could not be safely recompressed. Your original has not changed.', 'error');
+      };
+      worker.postMessage({ bytes, fileName: file.name }, [bytes]);
+    } catch {
+      if (currentOperation !== operation) return;
+      worker?.terminate();
+      worker = null;
+      setBusy(false);
+      setStatus(root, 'The file could not be safely recompressed. Your original has not changed.', 'error');
+    }
+  });
+
+  window.addEventListener('pagehide', () => worker?.terminate(), { once: true });
+}
+
 const setups = {
   'age-calculator': setupAgeCalculator,
   'business-days-calculator': setupBusinessDays,
@@ -760,6 +870,7 @@ const setups = {
   'image-format-converter': setupImageFormatConverter,
   'markdown-html-converter': setupMarkdownHtml,
   'json-yaml-converter': setupJsonYaml,
+  'office-file-compressor': setupOfficeFileCompressor,
 };
 
 export function setupExpandedTool(id, root) {

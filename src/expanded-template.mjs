@@ -53,7 +53,7 @@ const templates = {
 
   'image-to-pdf': () => shell('image-to-pdf', `
     <label class="field-label" for="images-pdf-files">Choose images</label>
-    <input id="images-pdf-files" class="tool-input file-picker" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/avif,image/bmp,image/gif,image/apng,image/svg+xml,image/x-icon,image/vnd.microsoft.icon,.jpg,.jpeg,.jpe,.jfif,.pjpeg,.pjp,.png,.apng,.webp,.heic,.heif,.avif,.bmp,.gif,.svg,.ico,.cur" multiple>
+    <input id="images-pdf-files" class="tool-input file-picker" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/avif,image/tiff,image/bmp,image/gif,image/apng,image/svg+xml,image/x-icon,image/vnd.microsoft.icon,.jpg,.jpeg,.jpe,.jfif,.pjpeg,.pjp,.png,.apng,.webp,.heic,.heif,.avif,.tif,.tiff,.bmp,.gif,.svg,.ico,.cur" multiple>
     <p class="file-meta" id="images-pdf-meta">Up to 20 images · 20 megapixels per image · no fixed file-size cap. Large batches depend on your device memory.</p>
     <ol class="tool-file-list" id="images-pdf-list" aria-label="Images in PDF page order"></ol>
     <div class="calculator-grid">
@@ -62,7 +62,7 @@ const templates = {
       <label class="field-label" for="images-pdf-margin">White margin<select id="images-pdf-margin" class="tool-input"><option value="0">None</option><option value="12" selected>Small</option><option value="24">Large</option></select></label>
     </div>
     <div class="tool-actions"><button class="button button--primary" type="button" data-action="create-images-pdf">Create PDF</button><button class="button button--ghost" type="button" data-action="clear">Clear</button></div>
-    <p class="tool-hint">Transparent areas become white. Animated images use only their first frame.</p><p class="tool-hint">AVIF and some HEIC files may depend on browser support.</p><p class="tool-status" id="tool-status" aria-live="polite"></p>
+    <p class="tool-hint">Transparent areas become white. Animated images use only their first frame.</p><p class="tool-hint">AVIF and some HEIC files may depend on browser support.</p><p class="tool-hint">Multi-page TIFF uses only its first page. Some TIFF compression variants may not decode.</p><p class="tool-status" id="tool-status" aria-live="polite"></p>
     <div class="file-downloads" id="images-pdf-downloads" aria-live="polite"></div>`),
 
   'favicon-generator': () => shell('favicon-generator', `
@@ -86,16 +86,24 @@ const templates = {
     <p class="tool-status" id="tool-status" aria-live="polite">Choose an image to preview the generated icons.</p>
     <div class="file-downloads" id="favicon-downloads" aria-live="polite"></div>`),
 
+  'office-file-compressor': () => shell('office-file-compressor', `
+    <label class="field-label" for="office-package-file">Choose a DOCX, XLSX or PPTX file</label>
+    <input id="office-package-file" class="tool-input file-picker" type="file" accept=".docx,.xlsx,.pptx,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.openxmlformats-officedocument.presentationml.presentation">
+    <p class="file-meta" id="office-package-meta">Files stay on your device. Limits: 100 MB input, 200 MB expanded data and 5,000 package parts.</p>
+    <p class="tool-hint">This safely recompresses the Office package without rewriting its contents. Embedded photos are not recompressed, so the result may not be smaller. Signed, encrypted, macro-enabled and older Office files are not supported. Keep your original.</p>
+    <div class="tool-actions"><button class="button button--primary" type="button" data-action="compress-office-file">Try to reduce file size</button><button class="button button--ghost" type="button" data-action="cancel-office-file" disabled>Cancel</button><button class="button button--ghost" type="button" data-action="clear">Clear</button></div>
+    <p class="tool-status" id="tool-status" aria-live="polite">Processing runs locally in this browser. No upload.</p><div class="file-downloads" id="office-package-downloads" aria-live="polite"></div>`),
+
   'image-format-converter': () => shell('image-format-converter', `
     <label class="field-label" for="image-convert-files">Choose images</label>
-    <input id="image-convert-files" class="tool-input file-picker" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/avif,image/bmp,image/gif,image/apng,image/svg+xml,image/x-icon,image/vnd.microsoft.icon,.jpg,.jpeg,.jpe,.jfif,.pjpeg,.pjp,.png,.apng,.webp,.heic,.heif,.avif,.bmp,.gif,.svg,.ico,.cur" multiple>
+    <input id="image-convert-files" class="tool-input file-picker" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/avif,image/tiff,image/bmp,image/gif,image/apng,image/svg+xml,image/x-icon,image/vnd.microsoft.icon,.jpg,.jpeg,.jpe,.jfif,.pjpeg,.pjp,.png,.apng,.webp,.heic,.heif,.avif,.tif,.tiff,.bmp,.gif,.svg,.ico,.cur" multiple>
     <p class="file-meta" id="image-convert-meta">Up to 20 images · 20 megapixels per image · no fixed file-size cap. Large batches depend on your device memory.</p>
     <div class="calculator-grid">
       <label class="field-label" for="image-convert-format">Convert to<select id="image-convert-format" class="tool-input"><option value="image/jpeg">JPG</option><option value="image/png">PNG</option><option value="image/webp">WebP</option></select></label>
       <label class="field-label" for="image-convert-quality">Quality for JPG and WebP <span id="image-convert-quality-value">88%</span><input id="image-convert-quality" type="range" min="50" max="100" value="88"></label>
       <label class="field-label" for="image-convert-background">Background for transparent images<select id="image-convert-background" class="tool-input"><option value="#ffffff">White</option><option value="#000000">Black</option><option value="transparent">Keep transparency when possible</option></select></label>
     </div>
-    <p class="tool-hint">AVIF and some HEIC inputs depend on browser support. Animated GIF, APNG and WebP files become a still image. SVG is rasterized, not converted into an editable vector. Metadata is not copied.</p>
+    <p class="tool-hint">AVIF and some HEIC inputs depend on browser support. Animated GIF, APNG and WebP files become a still image. SVG is rasterized, not converted into an editable vector. Metadata is not copied.</p><p class="tool-hint">Multi-page TIFF uses only its first page. Some TIFF compression variants may not decode.</p>
     <div class="tool-actions"><button class="button button--primary" type="button" data-action="convert-images">Convert and download</button><button class="button button--ghost" type="button" data-action="clear">Clear</button></div>
     <p class="tool-status" id="tool-status" aria-live="polite">Your original images remain unchanged and are not uploaded.</p>
     <div class="image-convert-preview" id="image-convert-preview" hidden></div>

@@ -274,8 +274,8 @@ function setupChecksum(root) {
   });
 }
 
-const imageExtensions = new Set(['jpg', 'jpeg', 'jpe', 'jfif', 'pjpeg', 'pjp', 'png', 'apng', 'webp', 'heic', 'heif', 'avif', 'bmp', 'gif', 'svg', 'ico', 'cur']);
-const imageMimeTypes = new Set(['image/jpeg', 'image/png', 'image/apng', 'image/webp', 'image/heic', 'image/heif', 'image/avif', 'image/bmp', 'image/x-ms-bmp', 'image/gif', 'image/svg+xml', 'image/x-icon', 'image/vnd.microsoft.icon']);
+const imageExtensions = new Set(['jpg', 'jpeg', 'jpe', 'jfif', 'pjpeg', 'pjp', 'png', 'apng', 'webp', 'heic', 'heif', 'avif', 'bmp', 'gif', 'svg', 'ico', 'cur', 'tif', 'tiff']);
+const imageMimeTypes = new Set(['image/jpeg', 'image/png', 'image/apng', 'image/webp', 'image/heic', 'image/heif', 'image/avif', 'image/bmp', 'image/x-ms-bmp', 'image/gif', 'image/svg+xml', 'image/x-icon', 'image/vnd.microsoft.icon', 'image/tiff']);
 
 function isSupportedImage(file) {
   const extension = file.name.split('.').pop()?.toLowerCase() ?? '';
@@ -286,7 +286,15 @@ function isHeic(file) {
   return /\.(?:heic|heif)$/iu.test(file.name) || ['image/heic', 'image/heif'].includes(file.type.toLowerCase());
 }
 
-async function decodeImageFile(file) {
+function isTiff(file) {
+  return /\.(?:tif|tiff)$/iu.test(file.name) || file.type.toLowerCase() === 'image/tiff';
+}
+
+async function decodeImageFile(file, maxPixels = 40_000_000) {
+  if (isTiff(file)) {
+    const { decodeTiffFile } = await import(versioned('/assets/tiff-decoder.mjs'));
+    return decodeTiffFile(file, maxPixels);
+  }
   let image = file;
   if (isHeic(file)) {
     const converter = await loadVendorScript('heic2any.min.js', 'heic2any');
