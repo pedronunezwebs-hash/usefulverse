@@ -1292,6 +1292,14 @@ function setupToolPage() {
   const root = $('.tool-workspace');
   if (!root) return;
   const id = root.dataset.tool;
+  const browserBatchTools = new Set(['typing-speed-test', 'fraction-calculator', 'time-card-calculator', 'online-timer', 'lorem-ipsum-generator', 'subnet-calculator', 'random-name-picker', 'fuel-cost-calculator', 'image-cropper', 'pdf-to-image', 'sql-formatter']);
+  if (browserBatchTools.has(id)) {
+    const assetVersion = new URL(document.currentScript?.src ?? location.href).searchParams.get('v');
+    import(`./new-tools.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupNewTool }) => setupNewTool(id, root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
   const expandedTools = new Set(['age-calculator', 'business-days-calculator', 'image-to-pdf', 'favicon-generator', 'image-format-converter', 'markdown-html-converter', 'json-yaml-converter']);
   if (expandedTools.has(id)) {
     const assetVersion = new URL(document.currentScript?.src ?? location.href).searchParams.get('v');

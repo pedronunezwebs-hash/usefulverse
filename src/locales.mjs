@@ -5,6 +5,7 @@ import { advancedToolLocales } from './locales/advanced-tools.mjs';
 import { expandedToolLocales } from './locales/expanded-tools.mjs';
 import { expandedToolUiLocales } from './locales/expanded-ui.mjs';
 import { priorityToolLocales } from './locales/priority-tools.mjs';
+import { browserBatchLocales } from './locales/browser-batch.mjs';
 
 export const locales = {
   en: { code: 'en', name: 'English', prefix: '', homeTitle: 'UsefulVerse — Simple tools for everyday tasks', homeDescription: 'Fast, private browser tools for text, files, data, SEO and everyday tasks. No account and no upload required.' },
@@ -219,6 +220,27 @@ for (const [language, data] of Object.entries(priorityToolLocales)) {
     const faq = advancedToolLocales[language];
     pack.faq[id] = [
       { question: faq.faqHow.replace('{title}', shortTitle), answer: intro },
+      { question: faq.faqPrivacyQuestion, answer: faq.faqPrivacyAnswer.replace('{body}', body) },
+    ];
+  }
+}
+
+// The next browser-only batch is shipped as localized static pages across every active language.
+for (const [language, data] of Object.entries(browserBatchLocales)) {
+  Object.assign(ui[language] ??= {}, data.ui);
+  Object.assign(runtimeMessages[language] ??= {}, data.ui);
+  Object.assign(copy[language] ??= {}, data.copy);
+  const pack = packs[language];
+  if (!pack) continue;
+  Object.assign(pack.ui, data.ui);
+  Object.assign(pack.runtimeMessages, data.ui);
+  Object.assign(pack.copy, data.copy);
+  for (const [id, values] of Object.entries(data.copy)) {
+    const [title, shortTitle, description, , intro, body] = values;
+    pack.seo[id] = { title: shortTitle, description: description.length >= 25 && description.length <= 155 ? description : `${intro.slice(0, 145)}…` };
+    const faq = advancedToolLocales[language];
+    pack.faq[id] = [
+      { question: faq.faqHow.replace('{name}', shortTitle).replace('{title}', shortTitle), answer: intro },
       { question: faq.faqPrivacyQuestion, answer: faq.faqPrivacyAnswer.replace('{body}', body) },
     ];
   }
