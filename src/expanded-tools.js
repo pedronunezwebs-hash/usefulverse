@@ -295,7 +295,7 @@ function setupImageToPdf(root) {
       item.append(name, controls);
       return item;
     }));
-    $('#images-pdf-meta', root).textContent = files.length ? `${formatNumber(files.length)} ${t('images ready in page order')} · ${logic.formatFileSize(files.reduce((sum, file) => sum + file.size, 0), languageTag)}` : t('Add up to 20 JPG, PNG, WebP, HEIC/HEIF, AVIF, BMP, GIF/APNG, SVG or ICO images. They stay on this device.');
+    $('#images-pdf-meta', root).textContent = files.length ? `${formatNumber(files.length)} ${t('images ready in page order')} · ${logic.formatFileSize(files.reduce((sum, file) => sum + file.size, 0), languageTag)}` : t('Add up to 20 images. No fixed file-size cap; 20 megapixels per image. Large batches depend on your device memory.');
     createButton.disabled = files.length === 0 || generating;
   };
   input.addEventListener('change', () => {

@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { tools } from '../catalog.mjs';
 import { renderToolPage } from '../template.mjs';
-import { packs } from '../locales.mjs';
+import { packs, runtimeMessages } from '../locales.mjs';
 import { imageFormatLocales } from './image-formats.mjs';
 import { pageKeys, templateKeys } from './template-keys.mjs';
 import { numberToWordsHook } from './test-harness.mjs';
@@ -127,5 +127,15 @@ test('image-format SEO titles and intent FAQs reach the generated static pages i
       assert.ok(html.includes(`<title>${data.seoTitles[id]} | UsefulVerse</title>`), `${language}/${id} should publish its localized SEO title`);
       assert.ok(html.includes(data.faqQuestions[id]), `${language}/${id} should publish its localized search-intent FAQ`);
     }
+  }
+});
+
+test('image-to-PDF empty-state file-size and pixel guidance is translated in every language', () => {
+  const key = 'Add up to 20 images. No fixed file-size cap; 20 megapixels per image. Large batches depend on your device memory.';
+  for (const [language, data] of Object.entries(imageFormatLocales)) {
+    const translated = data.ui[key];
+    assert.ok(translated, `${language} should translate the image-to-PDF limits`);
+    assert.notEqual(translated, key, `${language} should not show the English image-to-PDF limits`);
+    assert.equal(runtimeMessages[language]?.[key], translated, `${language} runtime should use the same translated guidance`);
   }
 });
