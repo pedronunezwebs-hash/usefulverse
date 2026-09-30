@@ -53,8 +53,8 @@ const templates = {
 
   'image-to-pdf': () => shell('image-to-pdf', `
     <label class="field-label" for="images-pdf-files">Choose images</label>
-    <input id="images-pdf-files" class="tool-input file-picker" type="file" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" multiple>
-    <p class="file-meta" id="images-pdf-meta">Up to 20 images, 20 MB each and 40 MB total.</p>
+    <input id="images-pdf-files" class="tool-input file-picker" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/avif,image/bmp,image/gif,image/apng,image/svg+xml,image/x-icon,image/vnd.microsoft.icon,.jpg,.jpeg,.jpe,.jfif,.pjpeg,.pjp,.png,.apng,.webp,.heic,.heif,.avif,.bmp,.gif,.svg,.ico,.cur" multiple>
+    <p class="file-meta" id="images-pdf-meta">Up to 20 images · 20 megapixels per image · no fixed file-size cap. Large batches depend on your device memory.</p>
     <ol class="tool-file-list" id="images-pdf-list" aria-label="Images in PDF page order"></ol>
     <div class="calculator-grid">
       <label class="field-label" for="images-pdf-size">PDF page size<select id="images-pdf-size" class="tool-input"><option value="a4">A4</option><option value="letter">US Letter</option><option value="fit">Fit each page to its image</option></select></label>
@@ -62,7 +62,7 @@ const templates = {
       <label class="field-label" for="images-pdf-margin">White margin<select id="images-pdf-margin" class="tool-input"><option value="0">None</option><option value="12" selected>Small</option><option value="24">Large</option></select></label>
     </div>
     <div class="tool-actions"><button class="button button--primary" type="button" data-action="create-images-pdf">Create PDF</button><button class="button button--ghost" type="button" data-action="clear">Clear</button></div>
-    <p class="tool-hint">Transparent image areas become white in the PDF.</p><p class="tool-status" id="tool-status" aria-live="polite"></p>
+    <p class="tool-hint">Transparent areas become white. Animated images use only their first frame.</p><p class="tool-hint">AVIF and some HEIC files may depend on browser support.</p><p class="tool-status" id="tool-status" aria-live="polite"></p>
     <div class="file-downloads" id="images-pdf-downloads" aria-live="polite"></div>`),
 
   'favicon-generator': () => shell('favicon-generator', `
@@ -87,15 +87,15 @@ const templates = {
     <div class="file-downloads" id="favicon-downloads" aria-live="polite"></div>`),
 
   'image-format-converter': () => shell('image-format-converter', `
-    <label class="field-label" for="image-convert-files">Choose images (up to 20 MB each)</label>
-    <input id="image-convert-files" class="tool-input file-picker" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.jpg,.jpeg,.png,.webp,.heic,.heif" multiple>
-    <p class="file-meta" id="image-convert-meta">Up to 20 images, 20 MB each and 40 MB total.</p>
+    <label class="field-label" for="image-convert-files">Choose images</label>
+    <input id="image-convert-files" class="tool-input file-picker" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/avif,image/bmp,image/gif,image/apng,image/svg+xml,image/x-icon,image/vnd.microsoft.icon,.jpg,.jpeg,.jpe,.jfif,.pjpeg,.pjp,.png,.apng,.webp,.heic,.heif,.avif,.bmp,.gif,.svg,.ico,.cur" multiple>
+    <p class="file-meta" id="image-convert-meta">Up to 20 images · 20 megapixels per image · no fixed file-size cap. Large batches depend on your device memory.</p>
     <div class="calculator-grid">
       <label class="field-label" for="image-convert-format">Convert to<select id="image-convert-format" class="tool-input"><option value="image/jpeg">JPG</option><option value="image/png">PNG</option><option value="image/webp">WebP</option></select></label>
       <label class="field-label" for="image-convert-quality">Quality for JPG and WebP <span id="image-convert-quality-value">88%</span><input id="image-convert-quality" type="range" min="50" max="100" value="88"></label>
       <label class="field-label" for="image-convert-background">Background for transparent images<select id="image-convert-background" class="tool-input"><option value="#ffffff">White</option><option value="#000000">Black</option><option value="transparent">Keep transparency when possible</option></select></label>
     </div>
-    <p class="tool-hint">HEIC metadata, including location, is not copied.</p>
+    <p class="tool-hint">AVIF and some HEIC inputs depend on browser support. Animated GIF, APNG and WebP files become a still image. SVG is rasterized, not converted into an editable vector. Metadata is not copied.</p>
     <div class="tool-actions"><button class="button button--primary" type="button" data-action="convert-images">Convert and download</button><button class="button button--ghost" type="button" data-action="clear">Clear</button></div>
     <p class="tool-status" id="tool-status" aria-live="polite">Your original images remain unchanged and are not uploaded.</p>
     <div class="image-convert-preview" id="image-convert-preview" hidden></div>

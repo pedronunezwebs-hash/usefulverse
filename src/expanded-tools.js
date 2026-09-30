@@ -47,6 +47,50 @@ function safeBaseName(name) {
   return base || 'image';
 }
 
+const imageExtensions = new Set(['jpg', 'jpeg', 'jpe', 'jfif', 'pjpeg', 'pjp', 'png', 'apng', 'webp', 'heic', 'heif', 'avif', 'bmp', 'gif', 'svg', 'ico', 'cur']);
+const imageMimeTypes = new Set(['image/jpeg', 'image/png', 'image/apng', 'image/webp', 'image/heic', 'image/heif', 'image/avif', 'image/bmp', 'image/x-ms-bmp', 'image/gif', 'image/svg+xml', 'image/x-icon', 'image/vnd.microsoft.icon']);
+const outputExtensions = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp' };
+
+function imageExtension(file) {
+  return file.name.split('.').pop()?.toLowerCase() ?? '';
+}
+
+function isSupportedImage(file) {
+  return imageMimeTypes.has(file.type.toLowerCase()) || imageExtensions.has(imageExtension(file));
+}
+
+function isHeic(file) {
+  return /\.(?:heic|heif)$/iu.test(file.name) || ['image/heic', 'image/heif'].includes(file.type.toLowerCase());
+}
+
+async function decodeBitmap(blob) {
+  try { return await createImageBitmap(blob, { imageOrientation: 'from-image' }); }
+  catch {
+    try { return await createImageBitmap(blob); }
+    catch {
+      const url = URL.createObjectURL(blob);
+      try {
+        const image = new Image();
+        image.src = url;
+        if (typeof image.decode === 'function') await image.decode();
+        else await new Promise((resolve, reject) => { image.onload = resolve; image.onerror = reject; });
+        try { return await createImageBitmap(image); }
+        catch { return image; }
+      } finally { URL.revokeObjectURL(url); }
+    }
+  }
+}
+
+async function decodeImageFile(file) {
+  let image = file;
+  if (isHeic(file)) {
+    const converter = await loadVendorScript('heic2any.min.js', 'heic2any');
+    const result = await converter({ blob: file, toType: 'image/png' });
+    image = Array.isArray(result) ? result[0] : result;
+  }
+  return decodeBitmap(image);
+}
+
 function makeObjectUrl(blob) {
   const url = URL.createObjectURL(blob);
   objectUrls.add(url);
@@ -230,7 +274,7 @@ function setupImageToPdf(root) {
   let files = [];
   let operation = 0;
   let generating = false;
-  const limits = { count: 20, each: 20 * 1024 * 1024, total: 40 * 1024 * 1024, pixels: 20_000_000 };
+  const limits = { count: 20, pixels: 20_000_000 };
   const renderList = () => {
     list.replaceChildren(...files.map((file, index) => {
       const item = document.createElement('li');
@@ -251,20 +295,20 @@ function setupImageToPdf(root) {
       item.append(name, controls);
       return item;
     }));
-    $('#images-pdf-meta', root).textContent = files.length ? `${formatNumber(files.length)} ${t('images ready in page order')} · ${logic.formatFileSize(files.reduce((sum, file) => sum + file.size, 0), languageTag)}` : t('Add up to 20 JPG, PNG or WebP images. They stay on this device.');
+    $('#images-pdf-meta', root).textContent = files.length ? `${formatNumber(files.length)} ${t('images ready in page order')} · ${logic.formatFileSize(files.reduce((sum, file) => sum + file.size, 0), languageTag)}` : t('Add up to 20 JPG, PNG, WebP, HEIC/HEIF, AVIF, BMP, GIF/APNG, SVG or ICO images. They stay on this device.');
     createButton.disabled = files.length === 0 || generating;
   };
   input.addEventListener('change', () => {
     operation += 1;
     clearDownloadLinks(downloads);
     const incoming = [...input.files];
-    const accepted = incoming.filter((file) => ['image/jpeg', 'image/png', 'image/webp'].includes(file.type) && file.size <= limits.each);
+    const accepted = incoming.filter(isSupportedImage);
     const next = [...files, ...accepted];
-    if (next.length > limits.count || next.reduce((sum, file) => sum + file.size, 0) > limits.total) {
-      setStatus(root, 'Choose up to 20 images under 40 MB total.', 'error');
+    if (next.length > limits.count) {
+      setStatus(root, t('Choose up to 20 images.'), 'error');
     } else {
       files = next;
-      setStatus(root, accepted.length === incoming.length ? 'Images added. Reorder pages below.' : 'Some files skipped. Use JPG, PNG or WebP (max 20 MB each).', accepted.length === incoming.length ? 'success' : 'error');
+      setStatus(root, accepted.length === incoming.length ? 'Images added. Reorder pages below.' : 'Some files were skipped. Use a supported image format within the on-page limits.', accepted.length === incoming.length ? 'success' : 'error');
     }
     input.value = '';
     renderList();
@@ -299,7 +343,7 @@ function setupImageToPdf(root) {
           let bitmap;
           let canvas;
           try {
-            bitmap = await createImageBitmap(file, { imageOrientation: 'from-image' });
+            bitmap = await decodeImageFile(file);
             if (bitmap.width * bitmap.height > limits.pixels) throw new RangeError('An image has more than 20 megapixels. Choose a smaller image.');
             let embedded;
             canvas = document.createElement('canvas'); canvas.width = bitmap.width; canvas.height = bitmap.height;
@@ -332,7 +376,7 @@ function setupImageToPdf(root) {
             const drawHeight = embedded.height * scale;
             page.drawImage(embedded, { x: (pageWidth - drawWidth) / 2, y: (pageHeight - drawHeight) / 2, width: drawWidth, height: drawHeight });
           } finally {
-            bitmap?.close();
+            bitmap?.close?.();
             if (canvas) { canvas.width = 1; canvas.height = 1; }
           }
           if (fileIndex % 5 === 4) await new Promise((resolve) => setTimeout(resolve, 0));
@@ -399,7 +443,7 @@ function setupFaviconGenerator(root) {
   }
 
   input.addEventListener('change', async () => {
-    bitmap?.close(); bitmap = null;
+    bitmap?.close?.(); bitmap = null;
     if (svgUrl) { URL.revokeObjectURL(svgUrl); objectUrls.delete(svgUrl); svgUrl = null; }
     clearDownloadLinks(downloads); snippet.value = '';
     const file = input.files[0];
@@ -413,7 +457,7 @@ function setupFaviconGenerator(root) {
       drawPreview();
       setStatus(root, 'Image ready. Adjust options or create your favicon files.', 'success');
     } catch {
-      bitmap?.close(); bitmap = null; drawPreview();
+      bitmap?.close?.(); bitmap = null; drawPreview();
       setStatus(root, 'Could not open the image. Choose a valid PNG, JPG, WebP or SVG.', 'error');
     }
   });
@@ -467,7 +511,7 @@ function setupFaviconGenerator(root) {
       }
     }
     if (action === 'clear') {
-      input.value = ''; bitmap?.close(); bitmap = null;
+      input.value = ''; bitmap?.close?.(); bitmap = null;
       if (svgUrl) { URL.revokeObjectURL(svgUrl); objectUrls.delete(svgUrl); svgUrl = null; }
       context.clearRect(0, 0, canvas.width, canvas.height);
       $('#favicon-file-meta', root).textContent = t('PNG, JPG, WebP or SVG · up to 10 MB. A square image works best.');
@@ -476,22 +520,7 @@ function setupFaviconGenerator(root) {
       snippet.value = ''; clearDownloadLinks(downloads); setStatus(root, 'Choose an image to preview the generated icons.');
     }
   });
-  window.addEventListener('pagehide', () => bitmap?.close(), { once: true });
-}
-
-function isHeic(file) {
-  return /\.(?:heic|heif)$/iu.test(file.name) || ['image/heic', 'image/heif'].includes(file.type.toLowerCase());
-}
-
-async function decodeHeic(file) {
-  const converter = await loadVendorScript('heic2any.min.js', 'heic2any');
-  const result = await converter({ blob: file, toType: 'image/jpeg', quality: 0.94 });
-  return Array.isArray(result) ? result[0] : result;
-}
-
-async function decodeBitmap(file) {
-  try { return await createImageBitmap(file, { imageOrientation: 'from-image' }); }
-  catch { return createImageBitmap(file); }
+  window.addEventListener('pagehide', () => bitmap?.close?.(), { once: true });
 }
 
 function setupImageFormatConverter(root) {
@@ -505,8 +534,6 @@ function setupImageFormatConverter(root) {
   let converted = [];
   let operation = 0;
   const maxFiles = 20;
-  const maxFileBytes = 20 * 1024 * 1024;
-  const maxTotalBytes = 40 * 1024 * 1024;
   const clearResults = () => {
     clearDownloadLinks(downloads);
     for (const image of previews.querySelectorAll('img[data-object-url]')) {
@@ -523,15 +550,15 @@ function setupImageFormatConverter(root) {
   input.addEventListener('change', () => {
     operation += 1; clearResults();
     const incoming = [...input.files];
-    const supported = incoming.filter((file) => ['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif'].includes(file.type.toLowerCase()) || /\.(?:jpe?g|png|webp|heic|heif)$/iu.test(file.name));
-    if (supported.length > maxFiles || supported.some((file) => file.size > maxFileBytes) || supported.reduce((sum, file) => sum + file.size, 0) > maxTotalBytes) {
+    const supported = incoming.filter(isSupportedImage);
+    if (supported.length > maxFiles) {
       files = [];
-      setStatus(root, 'Choose up to 20 images, max 20 MB each and 40 MB total.', 'error');
+      setStatus(root, t('Choose up to 20 images.'), 'error');
     } else {
       files = supported;
-      setStatus(root, supported.length === incoming.length && supported.length ? 'Images ready. Choose a format and convert them on your device.' : 'Some files skipped. Use JPG, PNG, WebP or HEIC within the size limit.', supported.length ? 'success' : 'error');
+      setStatus(root, supported.length === incoming.length && supported.length ? 'Images ready. Choose a format and convert them on your device.' : 'Some files were skipped. Use a supported image format within the on-page limits.', supported.length ? 'success' : 'error');
     }
-    $('#image-convert-meta', root).textContent = files.length ? `${formatNumber(files.length)} ${t('images ready to convert')} · ${logic.formatFileSize(files.reduce((sum, file) => sum + file.size, 0), languageTag)}` : t('Convert JPG, PNG, WebP or HEIC/HEIF images on your device. Up to 20 files.');
+    $('#image-convert-meta', root).textContent = files.length ? `${formatNumber(files.length)} ${t('images ready to convert')} · ${logic.formatFileSize(files.reduce((sum, file) => sum + file.size, 0), languageTag)}` : t('Convert common image formats to JPG, PNG or WebP on your device. Up to 20 files.');
     input.value = '';
   });
   root.addEventListener('click', async (event) => {
@@ -551,14 +578,10 @@ function setupImageFormatConverter(root) {
           if (run !== operation) return;
           let bitmap;
           let canvas;
-          let imageBlob = file;
           try {
-            if (isHeic(file)) {
-              setStatus(root, 'Loading the HEIC decoder…');
-              imageBlob = await decodeHeic(file);
-            }
+            if (isHeic(file)) setStatus(root, 'Loading the HEIC decoder…');
             setStatus(root, 'Converting images on your device…');
-            bitmap = await decodeBitmap(imageBlob);
+            bitmap = await decodeImageFile(file);
             if (bitmap.width * bitmap.height > 20_000_000) throw new RangeError('An image has more than 20 megapixels.');
             canvas = document.createElement('canvas'); canvas.width = bitmap.width; canvas.height = bitmap.height;
             const alpha = type !== 'image/jpeg' && backgroundChoice === 'transparent';
@@ -568,16 +591,16 @@ function setupImageFormatConverter(root) {
             context.drawImage(bitmap, 0, 0);
             const blob = await new Promise((resolve, reject) => canvas.toBlob((value) => value ? resolve(value) : reject(new Error('This image format is not supported in this browser.')), type, Number(quality.value) / 100));
             if (blob.type !== type) throw new Error('The browser does not support this output format.');
-            results.push({ name: `${safeBaseName(file.name)}.${type === 'image/jpeg' ? 'jpg' : type.slice(6)}`, blob });
+            results.push({ name: `${safeBaseName(file.name)}.${outputExtensions[type]}`, blob });
           } finally {
-            bitmap?.close();
+            bitmap?.close?.();
             if (canvas) { canvas.width = 1; canvas.height = 1; }
           }
           if (index % 2 === 1) await new Promise((resolve) => setTimeout(resolve, 0));
         }
         if (run !== operation) return;
         converted = results;
-        const extension = type === 'image/jpeg' ? 'jpg' : type.slice(6);
+        const extension = outputExtensions[type];
         if (results.length === 1) makeDownloadLink(downloads, results[0].blob, results[0].name);
         else {
           const archive = await logic.buildZip(results.map(({ name, blob }) => ({ name, data: blob })));
@@ -592,19 +615,18 @@ function setupImageFormatConverter(root) {
           figure.append(image, caption); previews.append(figure);
         }
         previews.hidden = false;
-        setStatus(root, 'Images converted. HEIC location metadata is not copied.', 'success');
+        setStatus(root, 'Images converted. Animated files become a still frame; metadata is not copied.', 'success');
       } catch (error) {
         clearResults();
         const message = error.message.includes('20 megapixels') ? 'Image exceeds 20 megapixels. Choose a smaller image.'
-          : error.message.includes('format') ? 'This browser cannot create that output format. Choose JPG or PNG.'
-            : error.message.includes('HEIC') || files.some(isHeic) ? 'Could not decode this HEIC file. Try a smaller file or another browser.'
-              : 'Could not convert an image. Try a different file.';
+          : error.message.includes('output format') ? 'The browser does not support the selected output format.'
+            : 'This image could not be decoded by your browser. Try another file or browser.';
         setStatus(root, message, 'error');
       } finally { button.disabled = false; clearButton.disabled = false; }
     }
     if (action === 'clear') {
       operation += 1; files = []; input.value = ''; clearResults();
-      $('#image-convert-meta', root).textContent = t('Convert JPG, PNG, WebP or HEIC/HEIF images on your device. Up to 20 files.');
+      $('#image-convert-meta', root).textContent = t('Convert common image formats to JPG, PNG or WebP on your device. Up to 20 files.');
       quality.value = '88'; $('#image-convert-quality-value', root).textContent = '88%';
       output.value = 'image/jpeg'; $('#image-convert-background', root).value = '#ffffff';
       setStatus(root, 'Original images are unchanged and never uploaded.');

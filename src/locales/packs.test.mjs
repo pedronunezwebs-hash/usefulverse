@@ -2,7 +2,9 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { tools } from '../catalog.mjs';
+import { renderToolPage } from '../template.mjs';
 import { packs } from '../locales.mjs';
+import { imageFormatLocales } from './image-formats.mjs';
 import { pageKeys, templateKeys } from './template-keys.mjs';
 import { numberToWordsHook } from './test-harness.mjs';
 
@@ -89,6 +91,7 @@ for (const [language, pack] of Object.entries(packs)) {
       assert.notEqual(values[5], tool.body, `copy.${tool.id} body is still English`);
       const seo = pack.seo[tool.id];
       assert.ok(seo?.title && seo?.description, `seo.${tool.id}`);
+      assert.equal(seo.title, imageFormatLocales[language]?.seoTitles?.[tool.id] ?? seo.title, `seo.${tool.id} should name its localized format intent`);
       const title = `${seo.title} | UsefulVerse`;
       assert.ok(title.length >= 15 && title.length <= 65, `seo.${tool.id}.title length ${title.length}`);
       assert.ok(seo.description.length >= 25 && seo.description.length <= 155, `seo.${tool.id}.description length ${seo.description.length}`);
@@ -97,6 +100,9 @@ for (const [language, pack] of Object.entries(packs)) {
       const faq = pack.faq[tool.id];
       assert.ok(Array.isArray(faq) && faq.length >= 2, `faq.${tool.id}`);
       for (const item of faq) assert.ok(item.question?.trim() && item.answer?.trim(), `faq.${tool.id} item`);
+      for (const [id, question] of Object.entries(imageFormatLocales[language]?.faqQuestions ?? {})) {
+        assert.equal(pack.faq[id]?.[0]?.question, question, `faq.${id} should target its localized image-format search intent`);
+      }
     }
   });
 
@@ -110,3 +116,16 @@ for (const [language, pack] of Object.entries(packs)) {
     }
   });
 }
+
+test('image-format SEO titles and intent FAQs reach the generated static pages in every localized language', () => {
+  for (const [language, data] of Object.entries(imageFormatLocales)) {
+    for (const id of ['image-format-converter', 'image-resizer-compressor', 'image-to-pdf']) {
+      const source = tools.find((tool) => tool.id === id);
+      const [title, shortTitle, description, keywords, intro, body] = data.copy[id];
+      const localizedTool = { ...source, title, shortTitle, description, keywords, intro, body };
+      const html = renderToolPage(localizedTool, 'test', language, tools);
+      assert.ok(html.includes(`<title>${data.seoTitles[id]} | UsefulVerse</title>`), `${language}/${id} should publish its localized SEO title`);
+      assert.ok(html.includes(data.faqQuestions[id]), `${language}/${id} should publish its localized search-intent FAQ`);
+    }
+  }
+});
