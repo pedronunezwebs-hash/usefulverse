@@ -6,6 +6,7 @@ import { seo } from '../src/seo.mjs';
 import { localePath, locales, localizedTool, packs } from '../src/locales.mjs';
 import { longtailBodies, longtailFaqs } from '../src/locales/longtail.mjs';
 import { relatedToolIds } from '../src/template.mjs';
+import { guideCanonical, guidePath, guides } from '../src/guides.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const dist = process.env.USEFULVERSE_DIST ? resolve(process.env.USEFULVERSE_DIST) : join(root, 'dist');
@@ -62,7 +63,25 @@ for (const language of languages) {
     }
   }
 }
+const guidesIndexPath = join(dist, guidePath().replace(/^\//u, ''), 'index.html');
+pages.push({ path: guidesIndexPath, language: 'en', tool: null, guide: null });
+const guidesIndex = await readFile(guidesIndexPath, 'utf8');
+if (!guidesIndex.includes(`<link rel="canonical" href="${guideCanonical()}">`) || !guidesIndex.includes('"@type":"CollectionPage"')) throw new Error('Guides index is missing its canonical or collection schema');
+if (!guidesIndex.includes('href="/guides/how-to-calculate-a-weighted-grade/"')) throw new Error('Guides index is missing its weighted-grade guide');
+for (const guide of guides) {
+  const route = guidePath(guide.slug);
+  const path = join(dist, route.replace(/^\//u, ''), 'index.html');
+  await access(path);
+  const html = await readFile(path, 'utf8');
+  pages.push({ path, language: 'en', tool: null, guide });
+  if (!html.includes(`<link rel="canonical" href="${guideCanonical(guide.slug)}">`)) throw new Error(`Missing canonical for guide ${guide.slug}`);
+  if (/<link rel="alternate" hreflang=/u.test(html)) throw new Error(`Untranslated guide ${guide.slug} must not claim language alternates`);
+  if (!html.includes('<html lang="en" dir="ltr">') || !html.includes('"@type":"Article"')) throw new Error(`Guide ${guide.slug} is missing its language or article schema`);
+  if (!html.includes(`href="${localePath('en', guide.toolId)}"`)) throw new Error(`Guide ${guide.slug} is missing its related tool CTA`);
+  if (!html.includes('Sources and further reading') || !guide.sources?.every(({ url }) => html.includes(`href="${url}"`))) throw new Error(`Guide ${guide.slug} is missing its source links`);
+}
 const home = await readFile(join(dist, 'index.html'), 'utf8');
+if (!home.includes('href="/guides/">Guides</a>')) throw new Error('English home page is missing the guides navigation link');
 const assetVersion = home.match(/\/assets\/app\.js\?v=([a-f0-9]{12})/u)?.[1];
 if (!assetVersion || !home.includes(`/assets/styles.css?v=${assetVersion}`)) throw new Error('Hashed asset URLs are missing');
 const sitemap = await readFile(join(dist, 'sitemap.xml'), 'utf8');
@@ -70,9 +89,15 @@ const sitemapCount = [...sitemap.matchAll(/<loc>https:\/\/usefulverse\.com\//gu)
 if (sitemapCount !== pages.length) throw new Error(`Sitemap expected ${pages.length} URLs, found ${sitemapCount}`);
 if (!sitemap.includes('xmlns:xhtml="http://www.w3.org/1999/xhtml"') || !sitemap.includes('hreflang="x-default"')) throw new Error('Sitemap is missing localized alternate links');
 for (const language of languages) {
-  const paths = [localePath(language), ...tools.map((tool) => localePath(language, tool.id))];
+  const paths = [localePath(language), ...tools.map((tool) => localePath(language, tool.id)), ...(language === 'en' ? [guidePath(), ...guides.map((guide) => guidePath(guide.slug))] : [])];
   const count = paths.filter((path) => sitemap.includes(`<loc>https://usefulverse.com${path}</loc>`)).length;
-  if (count !== tools.length + 1) throw new Error(`Sitemap has ${count} URLs for ${language}; expected ${tools.length + 1}`);
+  const expected = tools.length + 1 + (language === 'en' ? guides.length + 1 : 0);
+  if (count !== expected) throw new Error(`Sitemap has ${count} URLs for ${language}; expected ${expected}`);
+}
+for (const route of [guidePath(), ...guides.map((guide) => guidePath(guide.slug))]) if (!sitemap.includes(`<loc>https://usefulverse.com${route}</loc>`)) throw new Error(`Sitemap is missing guide ${route}`);
+for (const guide of guides) {
+  const toolPage = await readFile(join(dist, localePath('en', guide.toolId).replace(/^\//u, ''), 'index.html'), 'utf8');
+  if (!toolPage.includes(`href="${guidePath(guide.slug)}"`)) throw new Error(`Related English tool page is missing guide ${guide.slug}`);
 }
 for (const { path, language } of pages) {
   const html = await readFile(path, 'utf8');

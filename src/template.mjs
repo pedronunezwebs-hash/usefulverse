@@ -3,6 +3,7 @@ import { seo } from './seo.mjs';
 import { localeEntries, localePath, locales, packs, translateStaticHtml, ui } from './locales.mjs';
 import { imageFormatLocales } from './locales/image-formats.mjs';
 import { longtailFaqs } from './locales/longtail.mjs';
+import { guideCanonical, guidePath, guides } from './guides.mjs';
 import { expandedToolMarkup } from './expanded-template.mjs';
 import { browserBatchToolMarkup } from './browser-batch-template.mjs';
 
@@ -50,6 +51,13 @@ export const relatedToolIds = {
   'pdf-to-image': ['pdf-tools', 'image-to-pdf', 'image-format-converter'],
   'video-compressor': ['pdf-tools', 'image-resizer-compressor', 'image-format-converter'],
   'sql-formatter': ['json-formatter', 'xml-formatter', 'csv-to-json'],
+};
+
+const relatedGuideSlugs = {
+  'average-calculator': ['how-to-calculate-a-weighted-grade'],
+  'word-counter': ['google-docs-word-count'],
+  'remove-duplicate-lines': ['remove-duplicates-in-excel-safely'],
+  'binary-converter': ['hexadecimal-to-binary-conversion'],
 };
 
 const icon = (tool) => `<span class="tool-icon tool-icon--${tool.accent}" aria-hidden="true">${escapeHtml(tool.icon)}</span>`;
@@ -476,6 +484,11 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
     mainEntity: faq.map(({ question, answer }) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })),
   })}</script>` : '';
   const faqSection = faq.length ? `<section class="tool-faq" aria-labelledby="faq-title"><div><p class="eyebrow">Common questions</p><h2 id="faq-title">About ${escapeHtml(tool.title)}.</h2></div><div class="faq-list">${faq.map(({ question, answer }) => `<details><summary>${escapeHtml(question)}</summary><p>${escapeHtml(answer)}</p></details>`).join('')}</div></section>` : '';
+  const guideLinks = language === 'en' ? (relatedGuideSlugs[tool.id] ?? []).map((slug) => {
+    const guide = guides.find((item) => item.slug === slug);
+    return guide ? `<a class="guide-link-card" href="${guidePath(slug)}"><span class="eyebrow">Step-by-step guide</span><strong>${escapeHtml(guide.title)}</strong><span>Read the walkthrough <span aria-hidden="true">↗</span></span></a>` : '';
+  }).join('') : '';
+  const guidesSection = guideLinks ? `<section class="tool-guides" aria-labelledby="tool-guides-title"><div><p class="eyebrow">Learn the steps</p><h2 id="tool-guides-title">Helpful guides</h2></div><div class="guide-link-grid">${guideLinks}</div></section>` : '';
   const rendered = shell({
     title: `${seoData.title} | UsefulVerse`,
     description: seoData.description,
@@ -489,6 +502,7 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
         <section class="tool-panel" aria-label="${escapeHtml(tool.title)} workspace">${toolMarkup(tool.id)}</section>
         ${usefulVerseSaveCard(canonical)}
         <section class="tool-explainer"><div><p class="eyebrow">About this tool</p><h2>${escapeHtml(tool.title)} made simple.</h2></div><p>${escapeHtml(tool.body)}</p></section>
+        ${guidesSection}
         ${faqSection}
         <section class="related-tools"><div class="section-heading"><div><p class="eyebrow">Keep going</p><h2>More useful tools</h2></div><a class="text-link" href="${homeHref}">Browse all tools <span aria-hidden="true">↗</span></a></div><div class="tool-grid tool-grid--compact">${relatedCards(tool.id, tool.category, pageTools, language)}</div></section>
       </div>
@@ -588,12 +602,88 @@ export function renderNotFoundPage() {
 </html>`;
 }
 
-export function shell({ title, description, canonical, body, schema = '', assetVersion = '', lang = 'en', alternates = '', toolId = '' }) {
+function guideBlockMarkup(block) {
+  if (block.type === 'p') return `<p>${escapeHtml(block.text)}</p>`;
+  if (block.type === 'note') return `<aside class="guide-note"><strong>${escapeHtml(block.title)}</strong><p>${escapeHtml(block.text)}</p></aside>`;
+  if (block.type === 'formula') return `<div class="guide-formula"><span>${escapeHtml(block.label)}</span><code>${escapeHtml(block.value)}</code></div>`;
+  if (block.type === 'list' || block.type === 'steps') {
+    const tag = block.type === 'steps' ? 'ol' : 'ul';
+    return `<${tag}>${block.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</${tag}>`;
+  }
+  if (block.type === 'table') return `<div class="guide-table-wrap" role="region" aria-label="${escapeHtml(block.caption)}" tabindex="0"><table><caption>${escapeHtml(block.caption)}</caption><thead><tr>${block.headers.map((header) => `<th scope="col">${escapeHtml(header)}</th>`).join('')}</tr></thead><tbody>${block.rows.map((row) => `<tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  return '';
+}
+
+export function renderGuidesIndex(guides, assetVersion = '') {
+  const canonical = guideCanonical();
+  const alternates = '';
+  const schema = `<script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'UsefulVerse Guides',
+    url: canonical,
+    description: 'Practical, sourced walkthroughs for common tasks and free browser tools.',
+    inLanguage: 'en-US',
+  })}</script>`;
+  const cards = guides.map((guide) => `<a class="guide-card" href="${guidePath(guide.slug)}"><span class="eyebrow">UsefulVerse guide</span><h2>${escapeHtml(guide.title)}</h2><p>${escapeHtml(guide.description)}</p><span class="guide-card__link">Read the guide <span aria-hidden="true">↗</span></span></a>`).join('');
+  return shell({
+    title: 'Practical Guides for Everyday Tools | UsefulVerse',
+    description: 'Clear, sourced walkthroughs for grades, Google Docs, Excel and number conversions, with free tools to finish the task.',
+    canonical,
+    body: `<main class="guides-page"><div class="page-container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">UsefulVerse</a><span aria-hidden="true">/</span><span>Guides</span></nav><header class="guides-hero"><p class="eyebrow">UsefulVerse guides</p><h1>Know the steps.<br><span>Then get it done.</span></h1><p class="home-lead">Short, practical walkthroughs that explain the details a tool cannot guess for you. Each guide links to a free browser tool when it helps.</p></header><section class="guide-card-grid" aria-label="All guides">${cards}</section></div></main>`,
+    schema,
+    assetVersion,
+    lang: 'en',
+    alternates,
+    defaultAlternate: false,
+  });
+}
+
+export function renderGuidePage(guide, assetVersion = '') {
+  const canonical = guideCanonical(guide.slug);
+  const schema = `<script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: guide.title,
+    description: guide.description,
+    mainEntityOfPage: canonical,
+    url: canonical,
+    inLanguage: 'en-US',
+  })}</script><script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'UsefulVerse', item: 'https://usefulverse.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Guides', item: guideCanonical() },
+      { '@type': 'ListItem', position: 3, name: guide.title, item: canonical },
+    ],
+  })}</script>`;
+  const sections = guide.sections.map((section) => `<section class="guide-section"><h2>${escapeHtml(section.heading)}</h2>${section.blocks.map(guideBlockMarkup).join('')}</section>`).join('');
+  const sources = guide.sources?.length ? `<section class="guide-sources" aria-labelledby="guide-sources-title"><h2 id="guide-sources-title">Sources and further reading</h2><ul>${guide.sources.map((source) => `<li><a href="${escapeHtml(source.url)}">${escapeHtml(source.label)}</a></li>`).join('')}</ul></section>` : '';
+  const relatedTool = tools.find((tool) => tool.id === guide.toolId);
+  const toolCta = relatedTool ? `<aside class="guide-sidebar"><p class="eyebrow">Try the free tool</p><h2>${escapeHtml(relatedTool.title)}</h2><p>${escapeHtml(guide.toolCta ?? relatedTool.description)}</p><a class="button button--primary" href="${toolUrl(relatedTool.id)}">Open the tool <span aria-hidden="true">↗</span></a><p class="guide-sidebar__privacy">Runs in your browser. Your input is not uploaded.</p></aside>` : '';
+  return shell({
+    title: `${guide.title} | UsefulVerse`,
+    description: guide.description,
+    canonical,
+    body: `<main class="guide-page"><div class="page-container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">UsefulVerse</a><span aria-hidden="true">/</span><a href="${guidePath()}">Guides</a><span aria-hidden="true">/</span><span>${escapeHtml(guide.title)}</span></nav><header class="guide-hero"><p class="eyebrow">UsefulVerse guide</p><h1>${escapeHtml(guide.title)}</h1><p class="tool-lead">${escapeHtml(guide.intro)}</p></header><div class="guide-layout"><article class="guide-content">${sections}${sources}<p class="guide-backlink"><a href="${guidePath()}">← Browse all UsefulVerse guides</a></p></article>${toolCta}</div></div></main>`,
+    schema,
+    assetVersion,
+    lang: 'en',
+    alternates: '',
+    localeToolId: guide.toolId,
+    defaultAlternate: false,
+    ogType: 'article',
+  });
+}
+
+export function shell({ title, description, canonical, body, schema = '', assetVersion = '', lang = 'en', alternates = '', toolId = '', localeToolId = toolId, defaultAlternate = true, ogType = 'website' }) {
   const assetSuffix = assetVersion ? `?v=${escapeHtml(assetVersion)}` : '';
   const homeHref = localePath(lang);
   const localeCode = locales[lang]?.code ?? lang;
-  const defaultAlternate = `<link rel="alternate" hreflang="x-default" href="https://usefulverse.com${localePath('en', toolId)}">`;
-  const localeSelector = `<nav class="language-switch" aria-label="Language">${localeEntries.map(({ key, code, name }) => `<a href="${localePath(key, toolId)}" hreflang="${code}" lang="${code}"${key === lang ? ' aria-current="page"' : ''} aria-label="${code.toUpperCase()} — ${escapeHtml(name)}">${code.toUpperCase()}</a>`).join('')}</nav>`;
+  const defaultAlternateTag = defaultAlternate ? `<link rel="alternate" hreflang="x-default" href="https://usefulverse.com${localePath('en', toolId)}">` : '';
+  const localeSelector = `<nav class="language-switch" aria-label="Language">${localeEntries.map(({ key, code, name }) => `<a href="${localePath(key, localeToolId)}" hreflang="${code}" lang="${code}"${key === lang ? ' aria-current="page"' : ''} aria-label="${code.toUpperCase()} — ${escapeHtml(name)}">${code.toUpperCase()}</a>`).join('')}</nav>`;
+  const guideNavLink = lang === 'en' ? `<a href="${guidePath()}">Guides</a>` : '';
   return `<!doctype html>
 <html lang="${localeCode}" dir="${packs[lang]?.meta.direction ?? 'ltr'}">
   <head>
@@ -603,9 +693,9 @@ export function shell({ title, description, canonical, body, schema = '', assetV
     <meta name="description" content="${escapeHtml(description)}">
     <link rel="canonical" href="${escapeHtml(canonical)}">
     ${alternates}
-    ${defaultAlternate}
+    ${defaultAlternateTag}
     <meta name="theme-color" content="#0b1324">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="${escapeHtml(ogType)}">
     <meta property="og:title" content="${escapeHtml(title)}">
     <meta property="og:description" content="${escapeHtml(description)}">
     <meta property="og:url" content="${escapeHtml(canonical)}">
@@ -617,9 +707,9 @@ export function shell({ title, description, canonical, body, schema = '', assetV
     ${schema}
   </head>
   <body>
-    <header class="site-header"><div class="page-container site-header__inner"><a class="brand" href="${homeHref}" aria-label="UsefulVerse home"><span class="brand-mark" aria-hidden="true">◆</span><span>usefulverse</span></a><nav class="main-nav" aria-label="Main navigation"><a href="${homeHref}#tools">Tools</a><a href="${homeHref}#how-it-works">How it works</a></nav><a class="header-cta" href="${homeHref}#tools">Find a tool <span aria-hidden="true">↗</span></a>${localeSelector}</div></header>
+    <header class="site-header"><div class="page-container site-header__inner"><a class="brand" href="${homeHref}" aria-label="UsefulVerse home"><span class="brand-mark" aria-hidden="true">◆</span><span>usefulverse</span></a><nav class="main-nav" aria-label="Main navigation"><a href="${homeHref}#tools">Tools</a><a href="${homeHref}#how-it-works">How it works</a>${guideNavLink}</nav><a class="header-cta" href="${homeHref}#tools">Find a tool <span aria-hidden="true">↗</span></a>${localeSelector}</div></header>
     ${body}
-    <footer class="site-footer"><div class="page-container site-footer__inner"><a class="brand brand--footer" href="${homeHref}"><span class="brand-mark" aria-hidden="true">◆</span><span>usefulverse</span></a><p>Simple tools that respect your time and your files.</p><div class="footer-links"><a href="${homeHref}#tools">All tools</a><a href="${homeHref}#how-it-works">Privacy first</a></div></div></footer>
+    <footer class="site-footer"><div class="page-container site-footer__inner"><a class="brand brand--footer" href="${homeHref}"><span class="brand-mark" aria-hidden="true">◆</span><span>usefulverse</span></a><p>Simple tools that respect your time and your files.</p><div class="footer-links"><a href="${homeHref}#tools">All tools</a><a href="${homeHref}#how-it-works">Privacy first</a>${lang === 'en' ? `<a href="${guidePath()}">Guides</a>` : ''}</div></div></footer>
     ${lang === 'en' ? '' : `<script defer src="/assets/locale-${lang}.js${assetSuffix}"></script>`}
     <script defer src="/assets/app.js${assetSuffix}"></script>
   </body>

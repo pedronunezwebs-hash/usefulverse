@@ -4,7 +4,8 @@ import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { build as bundle } from 'esbuild';
 import { tools, categories } from '../src/catalog.mjs';
-import { renderHome, renderNotFoundPage, renderToolPage } from '../src/template.mjs';
+import { renderGuidePage, renderGuidesIndex, renderHome, renderNotFoundPage, renderToolPage } from '../src/template.mjs';
+import { guidePath, guides } from '../src/guides.mjs';
 import { localePath, locales, localizedTool, packs, ui } from '../src/locales.mjs';
 import { localeBundleSource } from '../src/locales/bundle.mjs';
 
@@ -141,9 +142,21 @@ for (const language of languages) {
   }
 }
 
+await mkdir(join(dist, 'guides'), { recursive: true });
+await writeFile(join(dist, 'guides', 'index.html'), renderGuidesIndex(guides, assetVersion));
+pages.push({ language: 'en', path: guidePath() });
+for (const guide of guides) {
+  const route = guidePath(guide.slug);
+  const directory = join(dist, route.replace(/^\//u, ''));
+  await mkdir(directory, { recursive: true });
+  await writeFile(join(directory, 'index.html'), renderGuidePage(guide, assetVersion));
+  pages.push({ language: 'en', path: route });
+}
+
 const localizedRoute = (language, toolId) => `https://usefulverse.com${localePath(language, toolId)}`;
 const xhtmlNamespace = ' xmlns:xhtml="http://www.w3.org/1999/xhtml"';
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"${xhtmlNamespace}>\n${pages.map(({ language, path }) => {
+  if (path.startsWith('/guides/')) return `  <url>\n    <loc>https://usefulverse.com${path}</loc>\n  </url>`;
   const toolId = path.match(/\/tools\/([^/]+)\/$/u)?.[1] ?? '';
   const alternates = languages.map((alternateLanguage) => `    <xhtml:link rel="alternate" hreflang="${locales[alternateLanguage].code}" href="${localizedRoute(alternateLanguage, toolId)}"/>`);
   alternates.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${localizedRoute('en', toolId)}"/>`);
@@ -151,7 +164,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://w
 }).join('\n')}\n</urlset>\n`;
 await writeFile(join(dist, 'sitemap.xml'), sitemap);
 await writeFile(join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: https://usefulverse.com/sitemap.xml\n`);
-await writeFile(join(dist, 'llms.txt'), `# UsefulVerse\n\n> Fast, private browser tools for text, data, SEO and everyday tasks.\n\nUsefulVerse is a static website of small online tools. Browser-first tools process user input locally and do not require an account or upload.\n\n## Tools\n\n${tools.map((tool) => `- [${tool.title}](https://usefulverse.com/tools/${tool.id}/): ${tool.description}`).join('\n')}\n\n## Site\n\n- [Home](https://usefulverse.com/)\n- [Sitemap](https://usefulverse.com/sitemap.xml)\n`);
+await writeFile(join(dist, 'llms.txt'), `# UsefulVerse\n\n> Fast, private browser tools for text, data, SEO and everyday tasks.\n\nUsefulVerse is a static website of small online tools. Browser-first tools process user input locally and do not require an account or upload.\n\n## Tools\n\n${tools.map((tool) => `- [${tool.title}](https://usefulverse.com/tools/${tool.id}/): ${tool.description}`).join('\n')}\n\n## Guides\n\n- [UsefulVerse Guides](https://usefulverse.com${guidePath()})\n${guides.map((guide) => `- [${guide.title}](https://usefulverse.com${guidePath(guide.slug)}): ${guide.description}`).join('\n')}\n\n## Site\n\n- [Home](https://usefulverse.com/)\n- [Sitemap](https://usefulverse.com/sitemap.xml)\n`);
 await writeFile(join(dist, '404.html'), renderNotFoundPage());
 for (const language of languages.filter((key) => key !== 'en')) {
   const localizedTools = tools.map((tool) => localizedTool(tool, language));
@@ -161,4 +174,4 @@ for (const language of languages.filter((key) => key !== 'en')) {
   const localeDirectory = localePath(language).replace(/^\//u, '').replace(/\/$/u, '');
   await writeFile(join(dist, localeDirectory, 'llms.txt'), localLlms);
 }
-console.log(`Built ${pages.length} pages (${tools.length} tools × ${languages.length} languages + ${languages.length} home pages) in ${dist}`);
+console.log(`Built ${pages.length} pages (${tools.length} tools × ${languages.length} languages + ${languages.length} home pages + ${guides.length + 1} English guide pages) in ${dist}`);
