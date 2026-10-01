@@ -1,4 +1,4 @@
-import { access, readFile } from 'node:fs/promises';
+import { access, readFile, readdir, stat } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { tools } from '../src/catalog.mjs';
@@ -29,7 +29,7 @@ for (const language of languages) {
   pages.push({ path: homePath, language, tool: null });
   const home = await readFile(homePath, 'utf8');
   const direction = packs[language]?.meta.direction ?? 'ltr';
-  if (!home.includes(`<html lang="${locales[language].code}" dir="${direction}">`) || !home.includes('id="tool-grid"')) throw new Error(`Incomplete ${language} home page or wrong text direction`);
+  if (!home.includes(`<html lang="${locales[language].code}" dir="${direction}" data-asset-version="`) || !home.includes('id="tool-grid"')) throw new Error(`Incomplete ${language} home page or wrong text direction`);
   if (!home.includes(`aria-label="${locales[language].code.toUpperCase()} — ${locales[language].name}"`)) throw new Error(`Language selector accessible name does not include the visible code for ${language}`);
   if (!home.includes(`rel="canonical" href="https://usefulverse.com${localePath(language)}"`)) throw new Error(`Missing canonical on ${language} home`);
   for (const alternate of languages) if (!home.includes(`hreflang="${locales[alternate].code}" href="https://usefulverse.com${localePath(alternate)}"`)) throw new Error(`Missing ${alternate} alternate on ${language} home`);
@@ -41,7 +41,7 @@ for (const language of languages) {
     await access(path);
     const html = await readFile(path, 'utf8');
     const canonical = `https://usefulverse.com${localePath(language, tool.id)}`;
-    if (!html.includes(`<html lang="${locales[language].code}" dir="${direction}">`)) throw new Error(`Wrong html lang or text direction for ${language}/${tool.id}`);
+    if (!html.includes(`<html lang="${locales[language].code}" dir="${direction}" data-asset-version="`)) throw new Error(`Wrong html lang or text direction for ${language}/${tool.id}`);
     if (!html.includes(`aria-label="${locales[language].code.toUpperCase()} — ${locales[language].name}"`)) throw new Error(`Language selector accessible name does not include the visible code for ${language}/${tool.id}`);
     if (!html.includes(`rel="canonical" href="${canonical}"`)) throw new Error(`Missing canonical for ${language}/${tool.id}`);
     for (const alternate of languages) if (!html.includes(`hreflang="${locales[alternate].code}" href="https://usefulverse.com${localePath(alternate, tool.id)}"`)) throw new Error(`Missing ${alternate} alternate for ${language}/${tool.id}`);
@@ -76,7 +76,7 @@ for (const guide of guides) {
   pages.push({ path, language: 'en', tool: null, guide });
   if (!html.includes(`<link rel="canonical" href="${guideCanonical(guide.slug)}">`)) throw new Error(`Missing canonical for guide ${guide.slug}`);
   if (/<link rel="alternate" hreflang=/u.test(html)) throw new Error(`Untranslated guide ${guide.slug} must not claim language alternates`);
-  if (!html.includes('<html lang="en" dir="ltr">') || !html.includes('"@type":"Article"')) throw new Error(`Guide ${guide.slug} is missing its language or article schema`);
+  if (!html.includes('<html lang="en" dir="ltr" data-asset-version="') || !html.includes('"@type":"Article"')) throw new Error(`Guide ${guide.slug} is missing its language or article schema`);
   if (!html.includes(`href="${localePath('en', guide.toolId)}"`)) throw new Error(`Guide ${guide.slug} is missing its related tool CTA`);
   if (!html.includes('Sources and further reading') || !guide.sources?.every(({ url }) => html.includes(`href="${url}"`))) throw new Error(`Guide ${guide.slug} is missing its source links`);
 }
@@ -84,6 +84,15 @@ const home = await readFile(join(dist, 'index.html'), 'utf8');
 if (!home.includes('href="/guides/">Guides</a>')) throw new Error('English home page is missing the guides navigation link');
 const assetVersion = home.match(/\/assets\/app\.js\?v=([a-f0-9]{12})/u)?.[1];
 if (!assetVersion || !home.includes(`/assets/styles.css?v=${assetVersion}`)) throw new Error('Hashed asset URLs are missing');
+for (const toolId of ['pdf-page-editor', 'pdf-ocr', 'pdf-document-converter', 'pdf-to-markdown', 'pdf-form-filler', 'pdf-compare', 'zip-archive-tool', 'media-converter', 'scientific-calculator', 'loan-calculator', 'compound-interest-calculator', 'invoice-generator', 'resume-builder', 'portrait-background-remover']) {
+  const page = await readFile(join(dist, localePath('en', toolId).replace(/^\//u, ''), 'index.html'), 'utf8');
+  if (!page.includes(`data-tool="${toolId}"`) || !page.includes(`v=${assetVersion}`)) throw new Error(`Suite tool ${toolId} is missing its versioned runtime or page markup`);
+}
+for (const asset of ['assets/tool-suite-tools.js', 'assets/tool-suite-ocr.js', 'assets/portrait-background-worker.js', 'assets/vendor/tesseract-7.0.0/worker.min.js', 'assets/vendor/tesseract-7.0.0/tesseract-core-lstm.wasm', 'assets/vendor/tesseract-7.0.0/tesseract-core-simd-lstm.wasm', 'assets/vendor/tesseract-7.0.0/tesseract-core-relaxedsimd-lstm.wasm.js', 'assets/vendor/tesseract-7.0.0/tesseract-core-relaxedsimd-lstm.wasm', 'assets/ocr-languages-4.0.0/eng.traineddata.gz', 'assets/models-fa2fa546052fba4c08921230a26cc69a333fca12/Xenova/modnet/onnx/model_quantized.onnx']) await access(join(dist, asset));
+for (const file of await readdir(dist, { recursive: true })) {
+  const path = join(dist, file);
+  if ((await stat(path)).isFile() && (await stat(path)).size > 25 * 1024 * 1024) throw new Error(`Cloudflare Pages asset exceeds 25 MiB: ${file}`);
+}
 const sitemap = await readFile(join(dist, 'sitemap.xml'), 'utf8');
 const sitemapCount = [...sitemap.matchAll(/<loc>https:\/\/usefulverse\.com\//gu)].length;
 if (sitemapCount !== pages.length) throw new Error(`Sitemap expected ${pages.length} URLs, found ${sitemapCount}`);

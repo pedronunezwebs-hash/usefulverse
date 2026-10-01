@@ -22,6 +22,15 @@ await cp(join(root, 'src', 'expanded-logic.mjs'), join(dist, 'assets', 'expanded
 await cp(join(root, 'src', 'new-tools.js'), join(dist, 'assets', 'new-tools.js'));
 await cp(join(root, 'src', 'new-tool-logic.mjs'), join(dist, 'assets', 'new-tool-logic.mjs'));
 await cp(join(root, 'src', 'media-tools.js'), join(dist, 'assets', 'media-tools.js'));
+await bundle({
+  entryPoints: [join(root, 'src', 'tool-suite-tools.js')],
+  outfile: join(dist, 'assets', 'tool-suite-tools.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
 const vendor = join(dist, 'assets', 'vendor');
 await mkdir(vendor, { recursive: true });
 await cp(join(root, 'node_modules', 'pdf-lib', 'dist', 'pdf-lib.min.js'), join(vendor, 'pdf-lib.min.js'));
@@ -80,6 +89,15 @@ await bundle({
   minify: true,
 });
 await bundle({
+  entryPoints: [join(root, 'src', 'media-converter.mjs')],
+  outfile: join(vendor, 'media-converter.mjs'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
   entryPoints: [join(root, 'src', 'media-transcription-worker.mjs')],
   outfile: join(dist, 'assets', 'media-transcription-worker.mjs'),
   bundle: true,
@@ -88,6 +106,33 @@ await bundle({
   target: ['es2022'],
   minify: true,
 });
+await bundle({
+  entryPoints: [join(root, 'src', 'portrait-background-worker.mjs')],
+  outfile: join(dist, 'assets', 'portrait-background-worker.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'tool-suite-ocr.mjs')],
+  outfile: join(dist, 'assets', 'tool-suite-ocr.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await cp(join(root, 'public', 'ocr-languages-4.0.0'), join(dist, 'assets', 'ocr-languages-4.0.0'), { recursive: true });
+const modnetRevision = 'fa2fa546052fba4c08921230a26cc69a333fca12';
+await cp(join(root, 'public', 'models'), join(dist, 'assets', `models-${modnetRevision}`), { recursive: true });
+const tesseract = join(vendor, 'tesseract-7.0.0');
+await mkdir(tesseract, { recursive: true });
+await cp(join(root, 'node_modules', 'tesseract.js', 'dist', 'worker.min.js'), join(tesseract, 'worker.min.js'));
+for (const core of ['tesseract-core-lstm.wasm.js', 'tesseract-core-lstm.wasm', 'tesseract-core-simd-lstm.wasm.js', 'tesseract-core-simd-lstm.wasm', 'tesseract-core-relaxedsimd-lstm.wasm.js', 'tesseract-core-relaxedsimd-lstm.wasm']) {
+  await cp(join(root, 'node_modules', 'tesseract.js-core', core), join(tesseract, core));
+}
 const onnxRuntime = join(vendor, 'onnx');
 await mkdir(onnxRuntime, { recursive: true });
 await cp(join(root, 'node_modules', 'onnxruntime-web', 'dist', 'ort-wasm-simd-threaded.mjs'), join(onnxRuntime, 'ort-wasm-simd-threaded.mjs'));
@@ -97,6 +142,8 @@ await cp(join(root, 'node_modules', 'pdfjs-dist', 'legacy', 'build', 'pdf.worker
 await cp(join(root, 'node_modules', 'pdfjs-dist', 'cmaps'), join(vendor, 'cmaps'), { recursive: true });
 await cp(join(root, 'node_modules', 'pdfjs-dist', 'standard_fonts'), join(vendor, 'standard_fonts'), { recursive: true });
 await cp(join(root, 'node_modules', 'pdf-lib', 'LICENSE.md'), join(vendor, 'LICENSE-pdf-lib.md'));
+await cp(join(root, 'node_modules', 'tesseract.js', 'LICENSE.md'), join(vendor, 'LICENSE-tesseract.js.md'));
+await cp(join(root, 'node_modules', 'tesseract.js-core', 'LICENSE'), join(vendor, 'LICENSE-tesseract-core'));
 await cp(join(root, 'node_modules', 'pdfjs-dist', 'LICENSE'), join(vendor, 'LICENSE-pdfjs-dist'));
 await cp(join(root, 'node_modules', 'jsqr', 'LICENSE'), join(vendor, 'LICENSE-jsqr'));
 await cp(join(root, 'node_modules', 'heic2any', 'LICENSE.md'), join(vendor, 'LICENSE-heic2any.md'));
@@ -134,11 +181,22 @@ const assetHash = createHash('sha256')
   .update(await readFile(join(dist, 'assets', 'new-tool-logic.mjs')))
   .update(await readFile(join(dist, 'assets', 'media-tools.js')))
   .update(await readFile(join(dist, 'assets', 'media-transcription-worker.mjs')))
+  .update(await readFile(join(dist, 'assets', 'tool-suite-tools.js')))
+  .update(await readFile(join(dist, 'assets', 'tool-suite-ocr.js')))
+  .update(await readFile(join(dist, 'assets', 'portrait-background-worker.js')))
+  .update(await readFile(join(vendor, 'media-converter.mjs')))
   .update(await readFile(join(root, 'package-lock.json')))
   .update(await readFile(join(root, 'src', 'locales.mjs')));
 for (const file of (await readdir(vendor, { recursive: true })).sort()) {
   const path = join(vendor, file);
   if ((await stat(path)).isFile()) assetHash.update(await readFile(path));
+}
+for (const folder of ['ocr-languages-4.0.0', `models-${modnetRevision}`]) {
+  const directory = join(dist, 'assets', folder);
+  for (const file of (await readdir(directory, { recursive: true })).sort()) {
+    const path = join(directory, file);
+    if ((await stat(path)).isFile()) assetHash.update(await readFile(path));
+  }
 }
 const localeFiles = (await readdir(join(root, 'src', 'locales'), { recursive: true })).filter((file) => /\.m?js$/u.test(file) && !file.endsWith('.test.mjs')).sort();
 for (const file of localeFiles) assetHash.update(await readFile(join(root, 'src', 'locales', file)));

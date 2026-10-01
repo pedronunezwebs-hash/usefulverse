@@ -1292,6 +1292,14 @@ function setupToolPage() {
   const root = $('.tool-workspace');
   if (!root) return;
   const id = root.dataset.tool;
+  const toolSuiteTools = new Set(['pdf-page-editor', 'pdf-ocr', 'pdf-document-converter', 'pdf-to-markdown', 'pdf-form-filler', 'pdf-compare', 'zip-archive-tool', 'media-converter', 'scientific-calculator', 'loan-calculator', 'compound-interest-calculator', 'invoice-generator', 'resume-builder', 'portrait-background-remover']);
+  if (toolSuiteTools.has(id)) {
+    const assetVersion = document.documentElement.dataset.assetVersion || new URL(document.currentScript?.src ?? location.href).searchParams.get('v');
+    import(`./tool-suite-tools.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupToolSuite }) => setupToolSuite(id, root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
   const browserBatchTools = new Set(['typing-speed-test', 'fraction-calculator', 'time-card-calculator', 'online-timer', 'lorem-ipsum-generator', 'subnet-calculator', 'random-name-picker', 'fuel-cost-calculator', 'image-cropper', 'pdf-to-image', 'sql-formatter']);
   if (browserBatchTools.has(id)) {
     const assetVersion = new URL(document.currentScript?.src ?? location.href).searchParams.get('v');
