@@ -29,6 +29,7 @@
     "@mediabunny/mp3-encoder": "1.61.0",
     "@neslinesli93/qpdf-wasm": "0.3.0",
     "jsbarcode": "3.12.3",
-    "mediabunny": "1.61.0"
+    "mediabunny": "1.61.0",
+    "tesseract.js": "7.0.0"
   }
 }

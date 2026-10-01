@@ -6,6 +6,7 @@ import { longtailFaqs } from './locales/longtail.mjs';
 import { guideCanonical, guidePath, guides } from './guides.mjs';
 import { expandedToolMarkup } from './expanded-template.mjs';
 import { browserBatchToolMarkup } from './browser-batch-template.mjs';
+import { toolSuiteMarkup } from './tool-suite-template.mjs';
 
 const fill = (template, values) => template.replace(/\{(\w+)\}/gu, (match, name) => values[name] ?? match);
 
@@ -53,6 +54,20 @@ export const relatedToolIds = {
   'audio-compressor': ['video-compressor', 'media-transcriber', 'pdf-tools'],
   'media-transcriber': ['audio-compressor', 'video-compressor', 'word-counter'],
   'sql-formatter': ['json-formatter', 'xml-formatter', 'csv-to-json'],
+  'pdf-page-editor': ['pdf-tools', 'pdf-to-image', 'pdf-form-filler'],
+  'pdf-ocr': ['pdf-document-converter', 'pdf-to-image', 'pdf-page-editor'],
+  'pdf-document-converter': ['office-file-compressor', 'pdf-ocr', 'pdf-tools'],
+  'pdf-to-markdown': ['pdf-ocr', 'markdown-html-converter', 'pdf-document-converter'],
+  'pdf-form-filler': ['pdf-page-editor', 'pdf-tools', 'invoice-generator'],
+  'pdf-compare': ['pdf-page-editor', 'pdf-ocr', 'pdf-tools'],
+  'zip-archive-tool': ['office-file-compressor', 'image-format-converter', 'pdf-to-image'],
+  'media-converter': ['audio-compressor', 'video-compressor', 'media-transcriber'],
+  'scientific-calculator': ['fraction-calculator', 'percentage-calculator', 'standard-deviation-calculator'],
+  'loan-calculator': ['compound-interest-calculator', 'percentage-calculator', 'discount-calculator'],
+  'compound-interest-calculator': ['loan-calculator', 'percentage-calculator', 'average-calculator'],
+  'invoice-generator': ['percentage-calculator', 'loan-calculator', 'resume-builder'],
+  'resume-builder': ['word-counter', 'text-case-converter', 'invoice-generator'],
+  'portrait-background-remover': ['image-format-converter', 'image-cropper', 'image-resizer-compressor'],
 };
 
 const relatedGuideSlugs = {
@@ -74,6 +89,8 @@ export function toolCard(tool, language = 'en') {
 }
 
 function toolMarkup(id) {
+  const suite = toolSuiteMarkup(id);
+  if (suite) return suite;
   const expanded = expandedToolMarkup(id);
   if (expanded) return expanded;
   const browserBatch = browserBatchToolMarkup(id);
@@ -699,7 +716,7 @@ export function shell({ title, description, canonical, body, schema = '', assetV
   const localeSelector = `<nav class="language-switch" aria-label="Language">${localeEntries.map(({ key, code, name }) => `<a href="${localePath(key, localeToolId)}" hreflang="${code}" lang="${code}"${key === lang ? ' aria-current="page"' : ''} aria-label="${code.toUpperCase()} — ${escapeHtml(name)}">${code.toUpperCase()}</a>`).join('')}</nav>`;
   const guideNavLink = lang === 'en' ? `<a href="${guidePath()}">Guides</a>` : '';
   return `<!doctype html>
-<html lang="${localeCode}" dir="${packs[lang]?.meta.direction ?? 'ltr'}">
+<html lang="${localeCode}" dir="${packs[lang]?.meta.direction ?? 'ltr'}" data-asset-version="${escapeHtml(assetVersion)}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

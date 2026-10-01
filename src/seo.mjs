@@ -87,3 +87,63 @@ seo['video-compressor'].faq.push({
   question: 'Should I use a computer to compress a long video?',
   answer: 'A desktop or laptop is recommended for long or high-resolution files. Compression uses your device’s memory, storage, battery and supported browser codecs; keep this tab open while it runs.',
 });
+
+Object.assign(seo, {
+  'pdf-page-editor': { title: 'PDF Page Organizer – Remove, Extract & Reorder', description: 'Reorder, rotate, extract or remove pages from a PDF in your browser. Save a separate copy without uploading the original.', faq: [
+    { question: 'Can I reorder or remove pages in a PDF?', answer: 'Yes. Choose pages to rotate, move, extract or remove, then save the edited result as a new PDF. Keep your original as a backup.' },
+    { question: 'Is there a limit to how many PDF pages I can edit?', answer: 'There is no server upload limit because the PDF stays on your device, but available memory and browser performance limit practical file size.' },
+  ] },
+  'pdf-ocr': { title: 'PDF OCR – Extract Text from Scanned PDFs', description: 'Recognize text in scanned PDF pages with local OCR. Choose a language; processing happens on your device after language data loads.', faq: [
+    { question: 'Can I copy text from a scanned PDF?', answer: 'Yes. OCR recognizes text in page images and creates a searchable PDF copy. Recognition can make mistakes, especially with handwriting or low-quality scans.' },
+    { question: 'Is my scanned PDF uploaded?', answer: 'No. OCR runs in your browser. The selected language data is loaded from UsefulVerse on first use and may be downloaded again if your cache is cleared.' },
+  ] },
+  'pdf-document-converter': { title: 'Convert PDF to Word and Word to PDF', description: 'Convert text-based PDFs and DOCX files locally. Layouts, tables, fonts and images may change; review the exported document.', faq: [
+    { question: 'Will a PDF to Word conversion keep the exact layout?', answer: 'Not always. This local converter focuses on selectable text; columns, tables, fonts, images and page breaks may need manual correction.' },
+    { question: 'Does the converter support scanned PDFs?', answer: 'Scanned pages need OCR before their text can be converted. Use the separate PDF OCR tool first; handwriting recognition is not guaranteed.' },
+  ] },
+  'pdf-to-markdown': { title: 'PDF to Markdown Converter – Extract Text Online', description: 'Extract selectable PDF text into a Markdown file with page headings. Local browser processing; scanned pages need OCR first.', faq: [
+    { question: 'How can I convert a PDF to Markdown?', answer: 'Choose a text-based PDF and convert it. The tool extracts selectable text and separates pages with Markdown headings.' },
+    { question: 'Does PDF to Markdown preserve the original layout or tables?', answer: 'No. It extracts text, not the original design, columns, tables or images. Scanned PDFs need OCR first, and you should review the result.' },
+    { question: 'Is my PDF uploaded to convert it?', answer: 'No. Text extraction runs locally in your browser. The tool supports PDFs up to 50 MB and 300 pages; memory and browser performance can impose lower practical limits.' },
+  ] },
+  'pdf-form-filler': { title: 'Fill PDF Forms and Add a Signature', description: 'Type into supported PDF form fields or place a drawn signature locally, then save a copy. The signature is visual, not certified.', faq: [
+    { question: 'Can I fill out a PDF form in my browser?', answer: 'Yes. Supported interactive fields can be filled and saved as a separate PDF copy. Some flattened or unusual forms may not expose editable fields.' },
+    { question: 'Is the signature legally certified?', answer: 'No. The drawn signature is a visual mark only; it does not provide identity verification, a certificate or a certified electronic signature.' },
+  ] },
+  'pdf-compare': { title: 'Compare Two PDF Files and Find Text Changes', description: 'Compare selectable text from two PDF files side by side in your browser. Scanned images and visual layout changes may not be detected.', faq: [
+    { question: 'Can this tool compare two PDF documents?', answer: 'Yes. It extracts selectable text and highlights additions or removals. It does not certify a document or reliably compare visual formatting and images.' },
+    { question: 'Why is text missing from my comparison?', answer: 'The PDF may contain scanned images rather than selectable text. Run OCR first; results can still contain recognition errors.' },
+  ] },
+  'zip-archive-tool': { title: 'Create and Extract ZIP Files Online', description: 'Create or open standard ZIP archives in your browser. Files remain on your device; password-protected ZIP and ZIP64 are not supported.', faq: [
+    { question: 'Can I create a ZIP file without uploading files?', answer: 'Yes. Select files and create an archive locally in your browser. The input files are not sent to a server.' },
+    { question: 'Can I open a password-protected or very large ZIP?', answer: 'This tool supports standard, unencrypted ZIP archives and applies practical file, entry and memory safeguards. ZIP64 and encrypted archives are not supported.' },
+  ] },
+  'media-converter': { title: 'Audio and Video Converter Online', description: 'Convert or trim supported audio and video formats in your browser. Available input, output codecs and speed depend on your device.', faq: [
+    { question: 'Does this audio and video converter upload my files?', answer: 'No. Supported files are processed in your browser. Keep the tab open; long or high-resolution media may need substantial memory, power and time.' },
+    { question: 'Can I convert every media format?', answer: 'No. Browser codec support differs by browser and device. The available formats shown by the tool depend on codecs your browser can decode or encode.' },
+  ] },
+  'scientific-calculator': { title: 'Scientific Calculator – Trigonometry & More', description: 'Calculate scientific expressions with trigonometry, logarithms, powers and parentheses. Choose degrees or radians and review each result.', faq: [
+    { question: 'Can this scientific calculator use degrees and radians?', answer: 'Yes. Select degrees or radians before calculating sine, cosine or tangent. Check the selected angle mode when a result looks unexpected.' },
+    { question: 'Does the calculator evaluate entered code?', answer: 'No. It accepts a restricted mathematical expression syntax and does not run JavaScript or other code.' },
+  ] },
+  'loan-calculator': { title: 'Loan Payment Calculator and Amortization', description: 'Estimate a fixed-rate loan payment, total interest and amortization schedule from the amount, rate and term you enter.', faq: [
+    { question: 'How do I estimate a monthly loan payment?', answer: 'Enter the principal, annual interest rate and repayment term. The calculator estimates fixed monthly principal and interest payments.' },
+    { question: 'Does the estimate include taxes or lender fees?', answer: 'No. It excludes taxes, insurance, fees, variable rates and lender-specific rules. Use it as an estimate, not a loan offer.' },
+  ] },
+  'compound-interest-calculator': { title: 'Compound Interest Calculator with Contributions', description: 'Estimate how savings can grow with compound interest and regular contributions. Change the rate, schedule and time to compare scenarios.', faq: [
+    { question: 'Can I include monthly savings contributions?', answer: 'Yes. Enter an initial balance and a regular contribution amount, then choose the contribution and compounding frequency.' },
+    { question: 'Is the result a guaranteed investment return?', answer: 'No. It is a mathematical estimate using the rate you enter and does not account for taxes, fees, inflation or changing returns.' },
+  ] },
+  'invoice-generator': { title: 'Simple Invoice Generator – Download a PDF', description: 'Create a simple invoice with line items, tax, currency and business details, then print or save it as a PDF in your browser.', faq: [
+    { question: 'How do I create an invoice and save it as a PDF?', answer: 'Add your details and line items, review the calculated totals, then use Print or Save as PDF in your browser.' },
+    { question: 'Are invoices stored or sent to UsefulVerse?', answer: 'No. Invoice data stays in the current browser session and is not uploaded. Save your PDF before closing or refreshing the page.' },
+  ] },
+  'resume-builder': { title: 'Resume and CV Builder – Print to PDF', description: 'Build a clean resume or CV from your details and print or save a PDF copy. Your personal information stays in your browser.', faq: [
+    { question: 'Can I download my resume as a PDF?', answer: 'Yes. Preview the resume and choose Print or Save as PDF in your browser. Check page breaks before sharing the file.' },
+    { question: 'Does UsefulVerse store my resume details?', answer: 'No. The resume is created in your browser and is not uploaded. Save a copy before closing the tab; browser storage is not a permanent backup.' },
+  ] },
+  'portrait-background-remover': { title: 'Portrait Background Remover Online', description: 'Remove the background from a portrait locally in your browser. The first use downloads an on-device model; results vary by image.', faq: [
+    { question: 'Are my portrait photos uploaded to remove the background?', answer: 'No. The image and segmentation run on your device. The first use downloads the model files from UsefulVerse; later use may rely on your browser cache.' },
+    { question: 'Why can background removal be slow on my phone?', answer: 'The model uses device memory and processing power. A desktop or laptop is recommended for large photos; keep the tab open while it works.' },
+  ] },
+});

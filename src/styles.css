@@ -469,6 +469,18 @@ html[dir="rtl"] .conversion-results output { direction: ltr; text-align: left; }
 .expanded-tool-workspace .day-option { display: inline-flex; min-width: 58px; min-height: 42px; align-items: center; justify-content: center; gap: 7px; padding: 8px 11px; border: 1px solid var(--line); border-radius: 11px; color: var(--ink); background: var(--surface); font-size: 13px; font-weight: 750; cursor: pointer; }
 .expanded-tool-workspace .day-option:focus-within { outline: 3px solid rgb(77 107 255 / 20%); outline-offset: 2px; }
 .expanded-tool-workspace .tool-file-list { display: grid; gap: 8px; margin: 14px 0; padding: 0; list-style: none; }
+.pdf-page-list { display: grid; gap: 0.75rem; margin-block: 1rem; }
+.pdf-page-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; padding: 0.75rem; border: 1px solid var(--line, #dce1e8); border-radius: 0.8rem; background: var(--surface, #fff); }
+.pdf-page-row strong { margin-right: auto; }
+.pdf-form-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 0.8rem; }
+.signature-pad { display: block; width: 100%; height: auto; aspect-ratio: 4.1 / 1; touch-action: none; background: #fff; border: 1px solid var(--line, #dce1e8); border-radius: 0.75rem; }
+.comparison-results { display: grid; gap: 0.75rem; margin-top: 1rem; }
+.comparison-results pre { overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; padding: 0.8rem; background: var(--surface-muted, #f6f7f9); border-radius: 0.5rem; }
+.invoice-preview, .resume-preview { margin-top: 1rem; padding: clamp(1rem, 4vw, 2rem); color: #151515; background: #fff; border: 1px solid var(--line, #dce1e8); border-radius: 0.8rem; }
+.invoice-preview table { width: 100%; border-collapse: collapse; }
+.invoice-preview th, .invoice-preview td { padding: 0.55rem; border-bottom: 1px solid #ddd; text-align: start; }
+.invoice-preview .invoice-total { text-align: end; }
+.resume-preview .pre { white-space: pre-wrap; }
 .expanded-tool-workspace .tool-file-item { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
 .expanded-tool-workspace .tool-file-item > span:first-child { min-width: 0; overflow-wrap: anywhere; color: var(--ink); font-size: 13px; }
 .expanded-tool-workspace .tool-file-controls { display: flex; flex-wrap: wrap; justify-content: end; gap: 5px; }

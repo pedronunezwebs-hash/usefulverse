@@ -9,6 +9,7 @@ import { browserBatchLocales } from './locales/browser-batch.mjs';
 import { imageFormatLocales } from './locales/image-formats.mjs';
 import { officePackageLocales, tiffHints } from './locales/office-package.mjs';
 import { mediaToolLocales } from './locales/media-tools.mjs';
+import { toolSuiteLocales } from './locales/tool-suite.mjs';
 
 export const locales = {
   en: { code: 'en', name: 'English', prefix: '', homeTitle: 'UsefulVerse — Simple tools for everyday tasks', homeDescription: 'Fast, private browser tools for text, files, data, SEO and everyday tasks. No account and no upload required.' },
@@ -326,6 +327,29 @@ for (const [language, data] of Object.entries(mediaToolLocales)) {
   }
 }
 
+// The cross-tool suite adds browser-local PDF workflows, ZIP, media, calculators
+// and private document builders. Keep each route localized with its runtime UI.
+for (const [language, data] of Object.entries(toolSuiteLocales)) {
+  if (language === 'en') continue;
+  Object.assign(ui[language] ??= {}, data.ui);
+  Object.assign(runtimeMessages[language] ??= {}, data.ui);
+  Object.assign(copy[language] ??= {}, data.copy);
+  const pack = packs[language];
+  if (!pack) continue;
+  Object.assign(pack.ui, data.ui);
+  Object.assign(pack.runtimeMessages, data.ui);
+  Object.assign(pack.copy, data.copy);
+  for (const [id, values] of Object.entries(data.copy)) {
+    const [title, shortTitle, description, , intro, body] = values;
+    pack.seo[id] = { title: shortTitle, description };
+    pack.faq[id] = [
+      { question: data.faq.how.replace('{name}', shortTitle), answer: intro },
+      { question: data.faq.privacyQuestion, answer: data.faq.privacyAnswer },
+    ];
+  }
+  pack.meta.keepEnglish = [...new Set([...(pack.meta.keepEnglish ?? []), 'PDF', 'DOCX', 'ZIP', 'OCR', 'MP3', 'M4A', 'AAC', 'OGG', 'Opus', 'MP4', 'WebM', 'sin(30) + sqrt(16)', 'all or 1-3,5', 'INV-001', 'USD'])];
+}
+
 // Parameterized runtime strings for app.js (see src/locales/template-keys.mjs). Packs bring their own.
 export const runtimeTemplates = {
   es: { 'diff.found': { one: '{count} línea distinta encontrada.', other: '{count} líneas distintas encontradas.' }, 'diff.line': 'Línea {line}:', 'diff.empty': '(vacía)', 'url.none': '(ninguno)', 'timestamp.local': 'Hora local: {value}', 'timestamp.seconds': 'Segundos: {value}', 'timestamp.milliseconds': 'Milisegundos: {value}' },
@@ -353,14 +377,16 @@ export function localizedTool(tool, language) {
 export function translateStaticHtml(html, language, dynamic = {}) {
   const dictionary = { ...ui[language], ...dynamic };
   if (!dictionary) return html;
-  const decode = (value) => value.replaceAll('&amp;', '&').replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&quot;', '"').replaceAll('&#039;', "'");
-  const encode = (value) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;');
+  const decode = (value) => value.replaceAll('&#10;', '\n').replaceAll('&#13;', '\r').replaceAll('&amp;', '&').replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&quot;', '"').replaceAll('&#039;', "'");
+  const encode = (value) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;').replaceAll('\r', '&#13;').replaceAll('\n', '&#10;');
+  const translations = new Map(Object.entries(dictionary).map(([key, value]) => [decode(key), decode(value)]));
   const translate = (value) => {
     const decoded = decode(value);
     const leading = decoded.match(/^\s*/u)?.[0] ?? '';
     const trailing = decoded.match(/\s*$/u)?.[0] ?? '';
     const key = decoded.slice(leading.length, decoded.length - trailing.length);
-    return Object.hasOwn(dictionary, key) ? encode(`${leading}${dictionary[key]}${trailing}`) : value;
+    const translation = translations.get(key);
+    return translation === undefined ? value : encode(`${leading}${translation}${trailing}`);
   };
   const parts = html.split(/(<script\b[\s\S]*?<\/script>|<style\b[\s\S]*?<\/style>|<[^>]+>)/giu);
   return parts.map((part) => {
