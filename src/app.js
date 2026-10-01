@@ -24,8 +24,30 @@ if (usesCommaDecimal || localeConfig.textNumberInputs) {
   }
 }
 
-const currentLanguageLink = $('.language-switch [aria-current="page"]');
-if (currentLanguageLink) requestAnimationFrame(() => currentLanguageLink.scrollIntoView({ block: 'nearest', inline: 'center' }));
+const languagePicker = $('.language-picker');
+if (languagePicker) {
+  const languagePickerButton = $('.language-picker__trigger', languagePicker);
+  const languagePickerPanel = $('.language-picker__panel', languagePicker);
+  const currentLanguageOption = $('.language-picker__option[aria-current="page"]', languagePickerPanel);
+  const setLanguagePickerOpen = (open, returnFocus = false) => {
+    languagePickerButton.setAttribute('aria-expanded', String(open));
+    languagePickerPanel.hidden = !open;
+    if (open) requestAnimationFrame(() => currentLanguageOption?.scrollIntoView({ block: 'nearest' }));
+    if (!open && returnFocus) languagePickerButton.focus();
+  };
+
+  languagePickerButton.addEventListener('click', () => {
+    setLanguagePickerOpen(languagePickerButton.getAttribute('aria-expanded') !== 'true');
+  });
+  document.addEventListener('click', (event) => {
+    if (!languagePicker.contains(event.target)) setLanguagePickerOpen(false);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && languagePickerButton.getAttribute('aria-expanded') === 'true') {
+      setLanguagePickerOpen(false, true);
+    }
+  });
+}
 
 // Full-width IME digits/letters become ASCII (NFKC); Devanagari, Bengali and Arabic-family digits
 // also become ASCII so localized number formats work consistently in every calculator.

@@ -20,6 +20,22 @@ for (const language of pdfOnlyLocaleKeys) localizedFiles.push(
   `${pdfOnlyLocales[language].prefix.replace(/^\//u, '')}/llms.txt`,
 );
 const required = ['index.html', '404.html', 'assets/styles.css', 'assets/app.js', 'favicon.svg', 'robots.txt', 'sitemap.xml', 'llms.txt', ...localizedFiles, 'BingSiteAuth.xml', 'yandex_f441658073fe7135.html', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html', '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt'];
+function assertLanguagePicker(html, currentLanguage, availableLocales, toolId, context) {
+  const currentLocale = availableLocales.find(({ key }) => key === currentLanguage);
+  const languageLabel = ui[currentLanguage]?.Language ?? 'Language';
+  if (!currentLocale) throw new Error(`Current language ${currentLanguage} is missing from picker on ${context}`);
+  if (!html.includes(`class="language-picker__trigger" type="button" aria-expanded="false" aria-controls="language-picker-options" aria-label="${languageLabel}: ${currentLocale.name}"`)) throw new Error(`Missing localized language-picker button on ${context}`);
+  const options = [...html.matchAll(/<a class="language-picker__option"[^>]*>([\s\S]*?)<\/a>/gu)];
+  if (options.length !== availableLocales.length) throw new Error(`Expected ${availableLocales.length} language options on ${context}, found ${options.length}`);
+  for (const locale of availableLocales) {
+    const href = localePath(locale.key, toolId);
+    const isCurrent = locale.key === currentLanguage;
+    const openingTag = `<a class="language-picker__option" href="${href}" hreflang="${locale.code}" lang="${locale.code}" dir="auto"${isCurrent ? ' aria-current="page"' : ''}>`;
+    const match = options.find(([markup]) => markup.startsWith(openingTag));
+    if (!match || !match[1].includes(`<span>${locale.name}</span>`)) throw new Error(`Missing native-language picker entry for ${locale.key} on ${context}`);
+  }
+  if (options.filter(([markup]) => markup.includes('aria-current="page"')).length !== 1) throw new Error(`Language picker must mark exactly one current locale on ${context}`);
+}
 const notFound = await readFile(join(dist, '404.html'), 'utf8');
 if (!notFound.includes('<meta name="robots" content="noindex,follow">') || /<link rel="canonical"/u.test(notFound)) throw new Error('404 page must be noindex and must not claim a canonical URL');
 for (const language of languages) if (!notFound.includes(`href="${localePath(language)}"`)) throw new Error(`404 page is missing its ${language} home link`);
@@ -34,7 +50,7 @@ for (const language of languages) {
   const home = await readFile(homePath, 'utf8');
   const direction = packs[language]?.meta.direction ?? 'ltr';
   if (!home.includes(`<html lang="${locales[language].code}" dir="${direction}" data-asset-version="`) || !home.includes('id="tool-grid"')) throw new Error(`Incomplete ${language} home page or wrong text direction`);
-  if (!home.includes(`aria-label="${locales[language].code.toUpperCase()} — ${locales[language].name}"`)) throw new Error(`Language selector accessible name does not include the visible code for ${language}`);
+  assertLanguagePicker(home, language, languages.map((key) => ({ key, ...locales[key] })), '', `${language} home`);
   if (!home.includes(`rel="canonical" href="https://usefulverse.com${localePath(language)}"`)) throw new Error(`Missing canonical on ${language} home`);
   for (const alternate of languages) if (!home.includes(`hreflang="${locales[alternate].code}" href="https://usefulverse.com${localePath(alternate)}"`)) throw new Error(`Missing ${alternate} alternate on ${language} home`);
   const localizedHomeMarker = packs[language]?.meta.homeMarker ?? { es: 'Herramientas', fr: 'Outils', pt: 'Ferramentas', de: 'Tool-Sammlung' }[language];
@@ -46,9 +62,10 @@ for (const language of languages) {
     const html = await readFile(path, 'utf8');
     const canonical = `https://usefulverse.com${localePath(language, tool.id)}`;
     if (!html.includes(`<html lang="${locales[language].code}" dir="${direction}" data-asset-version="`)) throw new Error(`Wrong html lang or text direction for ${language}/${tool.id}`);
-    if (!html.includes(`aria-label="${locales[language].code.toUpperCase()} — ${locales[language].name}"`)) throw new Error(`Language selector accessible name does not include the visible code for ${language}/${tool.id}`);
+    const availableLocales = pdfToolIds.includes(tool.id) ? pdfLocaleEntries : languages.map((key) => ({ key, ...locales[key] }));
+    assertLanguagePicker(html, language, availableLocales, tool.id, `${language}/${tool.id}`);
     if (!html.includes(`rel="canonical" href="${canonical}"`)) throw new Error(`Missing canonical for ${language}/${tool.id}`);
-    const alternateLanguages = pdfToolIds.includes(tool.id) ? pdfLocaleEntries : languages.map((key) => ({ key, ...locales[key] }));
+    const alternateLanguages = availableLocales;
     for (const alternate of alternateLanguages) if (!html.includes(`hreflang="${alternate.code}" href="https://usefulverse.com${localePath(alternate.key, tool.id)}"`)) throw new Error(`Missing ${alternate.key} alternate for ${language}/${tool.id}`);
     if (!html.includes(`data-tool="${tool.id}"`)) throw new Error(`Missing tool runtime for ${language}/${tool.id}`);
     const relatedHeading = packs[language]?.ui['More useful tools'] ?? { en: 'More useful tools', es: 'Más herramientas útiles', fr: 'Plus d’outils utiles', pt: 'Mais ferramentas úteis', de: 'Weitere nützliche Tools' }[language];
@@ -76,6 +93,7 @@ for (const language of pdfOnlyLocaleKeys) {
     await access(path);
     const html = await readFile(path, 'utf8');
     pages.push({ path, language, tool: localizedTool(tools.find((item) => item.id === toolId), language) });
+    assertLanguagePicker(html, language, pdfLocaleEntries, toolId, `${language}/${toolId}`);
     if (!html.includes(`<html lang="${locale.code}" dir="${pack.meta.direction ?? 'ltr'}" data-asset-version="`)) throw new Error(`Wrong html lang or text direction for ${language}/${toolId}`);
     if (!html.includes(`rel="canonical" href="https://usefulverse.com${localePath(language, toolId)}"`)) throw new Error(`Missing canonical for ${language}/${toolId}`);
     if (!html.includes(`href="${localePath(language, 'pdf-tools')}" aria-label="${ui[language]['UsefulVerse home']}"`)) throw new Error(`PDF-only header points to a non-existent or untranslated home for ${language}/${toolId}`);
