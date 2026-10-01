@@ -89,6 +89,28 @@ seo['video-compressor'].faq.push({
 });
 
 Object.assign(seo, {
+  'pdf-redact': { title: 'Permanently Redact PDF – Remove Sensitive Text', description: 'Redact PDF text locally by rebuilding pages with opaque black masks. Review every page; keep the original.', faq: [
+    { question: 'Does this permanently remove selected PDF content?', answer: 'The exported copy is rebuilt from page images with opaque black masks; the original PDF objects and text are not copied. Review the result in a separate PDF reader before sharing. This is a local transformation, not a legal or security certification.' },
+    { question: 'What changes in a redacted PDF copy?', answer: 'All pages are flattened into images. Searchable/selectable text, forms, links, layers, existing signatures, metadata and accessibility structure are not preserved. Keep the original.' },
+    { question: 'Is my PDF uploaded, and what are the limits?', answer: 'No. Processing happens in your browser. The current input limit is 50 MB and 100 pages, with a 40-megapixel render budget; resolution and practical performance depend on your device.' },
+  ] },
+  'pdf-to-pdfa': { title: 'Convert PDF to PDF/A-1b – Visual Archive Copy', description: 'Create a local PDF/A-1b image copy with an sRGB output intent. Text and interactive features are flattened; validate the result before archival use.', faq: [
+    { question: 'Can I convert a PDF to PDF/A-1b in my browser?', answer: 'Yes. This tool rebuilds each page as an image and creates a new PDF/A-1b-style archival copy locally. It does not retain searchable text or interactive content.' },
+    { question: 'Does this page validate every PDF/A file it creates?', answer: 'No. Sample outputs passed veraPDF during development, but the browser only checks that the downloaded copy opens and has the expected page count. Validate the individual file with a PDF/A validator before relying on archival compliance.' },
+    { question: 'Will the PDF/A copy keep forms, signatures and selectable text?', answer: 'No. This image-only method removes searchable text, forms, links, signatures, metadata and accessibility structure. Keep the original.' },
+  ] },
+  'pdf-crop': { title: 'Crop PDF Pages Online by Custom Margins', description: 'Crop PDF page margins locally in millimeters. The visible area changes, but hidden content is not securely deleted.', faq: [
+    { question: 'Can cropping a PDF permanently remove hidden content?', answer: 'No. Cropping changes the visible CropBox but may leave content outside it in the file. Use a tested redaction workflow to remove sensitive material.' },
+    { question: 'Can I crop different margins on every page?', answer: 'This version applies the same top, right, bottom and left margins to all pages. Rotated pages must be set to 0° first.' },
+  ] },
+  'pdf-protect-unlock': { title: 'Protect or Unlock a PDF with AES-256 Password', description: 'Add AES-256 password protection or remove a known PDF password locally. Your original file stays on your device.', faq: [
+    { question: 'How do I protect a PDF with a password?', answer: 'Choose Protect PDF, enter different opening and owner passwords of at least eight characters, confirm the opening password and process the file. Save both passwords safely; they cannot be recovered here.' },
+    { question: 'Can I unlock a PDF without its current password?', answer: 'No. Enter the current password. This tool does not guess, crack or bypass passwords.' },
+  ] },
+  'pdf-repair': { title: 'Repair a Damaged PDF File Locally', description: 'Try to rebuild a damaged PDF on your device and check its basic structure. Recovery is best effort, not guaranteed.', faq: [
+    { question: 'Can this tool repair every corrupted PDF?', answer: 'No. It can rewrite some damaged PDF structures, but cannot restore missing page content or guarantee that every page is correct. Always review the repaired copy.' },
+    { question: 'Is my PDF uploaded for repair?', answer: 'No. The local QPDF engine processes the file in your browser. The current input limit is 200 MB, and practical limits depend on device memory.' },
+  ] },
   'pdf-page-editor': { title: 'PDF Page Organizer – Remove, Extract & Reorder', description: 'Reorder, rotate, extract or remove pages from a PDF in your browser. Save a separate copy without uploading the original.', faq: [
     { question: 'Can I reorder or remove pages in a PDF?', answer: 'Yes. Choose pages to rotate, move, extract or remove, then save the edited result as a new PDF. Keep your original as a backup.' },
     { question: 'Is there a limit to how many PDF pages I can edit?', answer: 'There is no server upload limit because the PDF stays on your device, but available memory and browser performance limit practical file size.' },
@@ -100,6 +122,11 @@ Object.assign(seo, {
   'pdf-document-converter': { title: 'Convert PDF to Word and Word to PDF', description: 'Convert text-based PDFs and DOCX files locally. Layouts, tables, fonts and images may change; review the exported document.', faq: [
     { question: 'Will a PDF to Word conversion keep the exact layout?', answer: 'Not always. This local converter focuses on selectable text; columns, tables, fonts, images and page breaks may need manual correction.' },
     { question: 'Does the converter support scanned PDFs?', answer: 'Scanned pages need OCR before their text can be converted. Use the separate PDF OCR tool first; handwriting recognition is not guaranteed.' },
+  ] },
+  'html-to-pdf': { title: 'HTML to PDF Converter – Print HTML Locally', description: 'Preview sanitized HTML and use your browser to save it as PDF. No upload; website URLs, scripts, images and external content are not fetched.', faq: [
+    { question: 'How do I convert HTML to PDF here?', answer: 'Paste a simple HTML document, preview the cleaned result, then open the browser print dialog and choose Save as PDF. Page size and margins come from the browser.' },
+    { question: 'Can I enter a website URL or preserve its styling and images?', answer: 'No. This tool only processes HTML you paste. For safety it removes styles, scripts, images, links, forms and external content. Complex layouts may change.' },
+    { question: 'Is my HTML uploaded?', answer: 'No. The HTML is sanitized and previewed locally; your browser print dialog creates the PDF. Nothing is sent to a conversion server.' },
   ] },
   'pdf-to-markdown': { title: 'PDF to Markdown Converter – Extract Text Online', description: 'Extract selectable PDF text into a Markdown file with page headings. Local browser processing; scanned pages need OCR first.', faq: [
     { question: 'How can I convert a PDF to Markdown?', answer: 'Choose a text-based PDF and convert it. The tool extracts selectable text and separates pages with Markdown headings.' },

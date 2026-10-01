@@ -10,6 +10,15 @@ import { imageFormatLocales } from './locales/image-formats.mjs';
 import { officePackageLocales, tiffHints } from './locales/office-package.mjs';
 import { mediaToolLocales } from './locales/media-tools.mjs';
 import { toolSuiteLocales } from './locales/tool-suite.mjs';
+import { pdfParityLocales } from './locales/pdf-parity.mjs';
+import { pdfRedactLocales } from './locales/pdf-redact.mjs';
+import { imageCaptureUiLocales } from './locales/image-capture.mjs';
+import { htmlToPdfLocales } from './locales/html-to-pdf.mjs';
+import { pdfToPdfaLocales } from './locales/pdf-to-pdfa.mjs';
+import { pdfOfficeUiLocales } from './locales/pdf-office-ui.mjs';
+import { pdfOnlyLocaleData } from './locales/pdf-only-locales.mjs';
+import { pdfOnlyExtraLocaleData } from './locales/pdf-only-extra.mjs';
+import { pdfOnlyUiLocales } from './locales/pdf-only-ui.mjs';
 
 export const locales = {
   en: { code: 'en', name: 'English', prefix: '', homeTitle: 'UsefulVerse — Simple tools for everyday tasks', homeDescription: 'Fast, private browser tools for text, files, data, SEO and everyday tasks. No account and no upload required.' },
@@ -19,9 +28,26 @@ export const locales = {
   de: { code: 'de', name: 'Deutsch', prefix: '/de', homeTitle: 'UsefulVerse — Einfache Online-Tools für den Alltag', homeDescription: 'Schnelle, private Browser-Tools für Text, Daten, SEO und alltägliche Aufgaben. Ohne Konto und ohne Datei-Upload.' },
 };
 
+// These languages are published only for the PDF tool cluster. They are kept
+// separate from `locales` so they do not imply that the full 88-tool site has
+// been translated.
+export const pdfToolIds = [
+  'pdf-tools', 'pdf-protect-unlock', 'pdf-repair', 'pdf-crop', 'pdf-redact', 'pdf-to-pdfa',
+  'image-to-pdf', 'pdf-to-image', 'pdf-page-editor', 'pdf-ocr', 'pdf-document-converter',
+  'html-to-pdf', 'pdf-to-markdown', 'pdf-form-filler', 'pdf-compare',
+];
+export const pdfOnlyLocaleDataAll = { ...pdfOnlyLocaleData, ...pdfOnlyExtraLocaleData };
+export const pdfOnlyLocaleKeys = Object.keys(pdfOnlyLocaleDataAll);
+export const pdfOnlyLocales = {};
+export const pdfOnlyPacks = {};
+
 export function localePath(language, toolId = '') {
-  const prefix = locales[language]?.prefix ?? '';
+  const prefix = (locales[language] ?? pdfOnlyLocales[language])?.prefix ?? '';
   return `${prefix}${toolId ? `/tools/${toolId}/` : '/'}`;
+}
+
+export function localeHomePath(language) {
+  return pdfOnlyLocales[language] ? localePath(language, 'pdf-tools') : localePath(language);
 }
 
 export const ui = {
@@ -175,7 +201,7 @@ for (const [language, data] of Object.entries(advancedToolLocales)) {
 
 // UI, SEO metadata and FAQs for the next browser-only tool batch.
 for (const [language, data] of Object.entries(expandedToolLocales)) {
-  const toolUi = { ...(data.ui ?? {}), ...(expandedToolUiLocales[language] ?? {}) };
+  const toolUi = { ...(data.ui ?? {}), ...(imageCaptureUiLocales[language] ?? {}), ...(expandedToolUiLocales[language] ?? {}) };
   if (Object.keys(toolUi).length) {
     ui[language] ??= {};
     runtimeMessages[language] ??= {};
@@ -350,6 +376,141 @@ for (const [language, data] of Object.entries(toolSuiteLocales)) {
   pack.meta.keepEnglish = [...new Set([...(pack.meta.keepEnglish ?? []), 'PDF', 'DOCX', 'ZIP', 'OCR', 'MP3', 'M4A', 'AAC', 'OGG', 'Opus', 'MP4', 'WebM', 'sin(30) + sqrt(16)', 'all or 1-3,5', 'INV-001', 'USD'])];
 }
 
+// Password protection and best-effort PDF repair are processed by the visitor's
+// browser. Keep their page copy and controls localized in every current locale.
+for (const [language, data] of Object.entries(pdfParityLocales)) {
+  Object.assign(ui[language] ??= {}, data.ui);
+  Object.assign(runtimeMessages[language] ??= {}, data.ui);
+  Object.assign(copy[language] ??= {}, data.copy);
+  const pack = packs[language];
+  if (!pack) continue;
+  Object.assign(pack.ui, data.ui);
+  Object.assign(pack.runtimeMessages, data.ui);
+  Object.assign(pack.copy, data.copy);
+  for (const [id, values] of Object.entries(data.copy)) {
+    const [, shortTitle, description, , intro] = values;
+    pack.seo[id] = { title: shortTitle, description };
+    pack.faq[id] = [
+      { question: pack.page.faqHow.replace('{name}', shortTitle), answer: intro },
+      { question: pack.page.privacyQuestion, answer: pack.page.privacyAnswer },
+    ];
+  }
+  pack.meta.keepEnglish = [...new Set([...(pack.meta.keepEnglish ?? []), 'PDF', 'QPDF', 'AES-256', 'MB'])];
+}
+
+// Permanent PDF redaction is available only after its complete local workflow
+// copy, runtime controls, SEO text and FAQ are translated for each current locale.
+for (const [language, data] of Object.entries(pdfRedactLocales)) {
+  Object.assign(ui[language] ??= {}, data.ui);
+  Object.assign(runtimeMessages[language] ??= {}, data.ui);
+  Object.assign(copy[language] ??= {}, data.copy);
+  const pack = packs[language];
+  if (!pack) continue;
+  Object.assign(pack.ui, data.ui);
+  Object.assign(pack.runtimeMessages, data.ui);
+  Object.assign(pack.copy, data.copy);
+  const [, shortTitle, description, , intro] = data.copy['pdf-redact'];
+  pack.seo['pdf-redact'] = { title: shortTitle, description };
+  pack.faq['pdf-redact'] = [
+    { question: pack.page.faqHow.replace('{name}', shortTitle), answer: intro },
+    { question: pack.page.privacyQuestion, answer: pack.page.privacyAnswer },
+  ];
+  pack.meta.keepEnglish = [...new Set([...(pack.meta.keepEnglish ?? []), 'PDF', 'MB', 'dpi'])];
+}
+
+// HTML-to-PDF uses the visitor's browser print dialog and only accepts sanitized,
+// user-provided markup. Keep the page copy and every visible control localized.
+for (const [language, data] of Object.entries(htmlToPdfLocales)) {
+  Object.assign(ui[language] ??= {}, data.ui);
+  Object.assign(runtimeMessages[language] ??= {}, data.ui);
+  Object.assign(copy[language] ??= {}, data.copy);
+  const pack = packs[language];
+  if (!pack) continue;
+  Object.assign(pack.ui, data.ui);
+  Object.assign(pack.runtimeMessages, data.ui);
+  Object.assign(pack.copy, data.copy);
+  const [, shortTitle, description, , intro, body] = data.copy['html-to-pdf'];
+  pack.seo['html-to-pdf'] = { title: shortTitle, description };
+  pack.faq['html-to-pdf'] = [
+    { question: pack.page.faqHow.replace('{name}', shortTitle), answer: intro },
+    { question: pack.page.privacyQuestion, answer: body },
+  ];
+  pack.meta.keepEnglish = [...new Set([...(pack.meta.keepEnglish ?? []), 'HTML', 'PDF'])];
+}
+
+// PDF/A-1b visual-copy workflow, with explicit fidelity and per-file-validation caveats.
+for (const [language, data] of Object.entries(pdfToPdfaLocales)) {
+  Object.assign(ui[language] ??= {}, data.ui);
+  Object.assign(runtimeMessages[language] ??= {}, data.ui);
+  Object.assign(copy[language] ??= {}, data.copy);
+  const pack = packs[language];
+  if (!pack) continue;
+  Object.assign(pack.ui, data.ui);
+  Object.assign(pack.runtimeMessages, data.ui);
+  Object.assign(pack.copy, data.copy);
+  const [, shortTitle, description, , intro, body] = data.copy['pdf-to-pdfa'];
+  pack.seo['pdf-to-pdfa'] = { title: shortTitle, description };
+  pack.faq['pdf-to-pdfa'] = [
+    { question: pack.page.faqHow.replace('{name}', shortTitle), answer: intro },
+    { question: pack.page.privacyQuestion, answer: body },
+  ];
+  pack.meta.keepEnglish = [...new Set([...(pack.meta.keepEnglish ?? []), 'PDF/A-1b', 'veraPDF', 'sRGB', 'MB', 'dpi'])];
+}
+
+// Shared PDF editor and Office-conversion UI for every currently supported locale.
+for (const [language, data] of Object.entries(pdfOfficeUiLocales)) {
+  Object.assign(ui[language] ??= {}, data);
+  Object.assign(runtimeMessages[language] ??= {}, data);
+  const pack = packs[language];
+  if (!pack) continue;
+  Object.assign(pack.ui, data);
+  Object.assign(pack.runtimeMessages, data);
+}
+
+// Additional iLovePDF-menu languages are deliberately scoped to the PDF
+// routes. Each route has translated page copy, FAQs and runtime labels; there
+// are no translated home pages or claims about the other tools.
+for (const [language, data] of Object.entries(pdfOnlyLocaleDataAll)) {
+  const locale = {
+    code: data.meta.code,
+    name: data.meta.name,
+    prefix: data.meta.prefix,
+    tag: data.meta.tag,
+    homeTitle: data.meta.homeTitle,
+    homeDescription: data.meta.homeDescription,
+  };
+  pdfOnlyLocales[language] = locale;
+  ui[language] = { ...(data.ui ?? {}), ...(pdfOnlyUiLocales[language] ?? {}), PDF: 'PDF', Files: data.meta.homeLabel, Design: data.meta.homeLabel, 'Files tool': data.meta.homeLabel };
+  runtimeMessages[language] = { ...ui[language], ...(data.runtimeMessages ?? {}) };
+  copy[language] = data.copy;
+  const seo = {};
+  const faq = {};
+  for (const toolId of pdfToolIds) {
+    const values = data.copy[toolId];
+    if (!values) throw new Error(`PDF-only locale ${language} is missing ${toolId}`);
+    const [title, shortTitle, description, , intro, body] = values;
+    seo[toolId] = { title: shortTitle, description };
+    faq[toolId] = [
+      { question: data.page.faqHow.replace('{name}', shortTitle), answer: intro },
+      { question: data.page.privacyQuestion, answer: data.page.privacyAnswer },
+    ];
+    // Localize dynamic labels used by renderToolPage.
+    ui[language][`About ${title}.`] = data.page.about.replace('{title}', title);
+    ui[language][`${title} made simple.`] = data.page.madeSimple.replace('{title}', title);
+    ui[language][`${title} workspace`] = data.page.workspace.replace('{title}', title);
+  }
+  pdfOnlyPacks[language] = {
+    meta: data.meta,
+    page: data.page,
+    ui: ui[language],
+    runtimeMessages: runtimeMessages[language],
+    copy: data.copy,
+    seo,
+    faq,
+    templates: {},
+  };
+}
+
 // Parameterized runtime strings for app.js (see src/locales/template-keys.mjs). Packs bring their own.
 export const runtimeTemplates = {
   es: { 'diff.found': { one: '{count} línea distinta encontrada.', other: '{count} líneas distintas encontradas.' }, 'diff.line': 'Línea {line}:', 'diff.empty': '(vacía)', 'url.none': '(ninguno)', 'timestamp.local': 'Hora local: {value}', 'timestamp.seconds': 'Segundos: {value}', 'timestamp.milliseconds': 'Milisegundos: {value}' },
@@ -364,6 +525,26 @@ Object.assign(ui.es, { 'Color preview': 'Vista previa del color', 'JSON result..
 Object.assign(ui.fr, { 'Color preview': 'Aperçu de la couleur', 'JSON result...': 'Résultat JSON…', 'CSV result...': 'Résultat CSV…', 'Your UUIDs will appear here...': 'Vos UUID apparaîtront ici…', 'Text to hash...': 'Texte à hacher…', 'Your hash will appear here...': 'Votre hachage apparaîtra ici…', 'Paste sample text here...': 'Collez un texte d’exemple ici…', Seoul: 'Séoul', Jakarta: 'Jakarta', 'India (Kolkata)': 'Inde (Calcutta)' });
 Object.assign(ui.pt, { 'Color preview': 'Prévia da cor', 'JSON result...': 'Resultado JSON…', 'CSV result...': 'Resultado CSV…', 'Your UUIDs will appear here...': 'Seus UUIDs aparecerão aqui…', 'Text to hash...': 'Texto para gerar o hash…', 'Your hash will appear here...': 'Seu hash aparecerá aqui…', 'Paste sample text here...': 'Cole um texto de exemplo aqui…', Seoul: 'Seul', Jakarta: 'Jacarta', 'India (Kolkata)': 'Índia (Calcutá)' });
 
+// Some static UI labels are also emitted by the browser runtime. Keep only
+// translations used by at least one runtime dictionary to avoid copying the
+// entire German UI catalog into every locale bundle.
+const germanRuntimeKeys = new Set(Object.values(runtimeMessages).flatMap((messages) => Object.keys(messages)));
+for (const key of germanRuntimeKeys) {
+  if (!runtimeMessages.de[key] && ui.de[key]) runtimeMessages.de[key] = ui.de[key];
+}
+Object.assign(runtimeMessages.de, {
+  'Important limits and output': 'Wichtige Grenzen und Ausgabe',
+  'all or 1-3,5': 'alle oder 1–3,5',
+  'Rotate 90°': 'Um 90° drehen',
+  'pages ready to edit': 'Seiten zum Bearbeiten bereit',
+  'Area selected. Choose the replacement and apply it.': 'Bereich ausgewählt. Wählen Sie den Ersatz und wenden Sie ihn an.',
+  added: 'hinzugefügt', removed: 'entfernt', 'text changed': 'Text geändert',
+  Original: 'Original', Updated: 'Aktualisiert', '(no extractable text)': '(kein extrahierbarer Text)',
+  'No text differences were found on matching pages.': 'Auf den übereinstimmenden Seiten wurden keine Textunterschiede gefunden.',
+  'Page counts': 'Seitenzahlen', 'supported form fields found.': 'unterstützte Formularfelder gefunden.',
+  PDF: 'PDF', 'Files tool': 'Dateiwerkzeuge',
+});
+
 export function localizedTool(tool, language) {
   const values = copy[language]?.[tool.id];
   if (!values) {
@@ -371,7 +552,7 @@ export function localizedTool(tool, language) {
     return body ? { ...tool, body } : tool;
   }
   const [title, shortTitle, description, keywords, intro, body] = values;
-  return { ...tool, title, shortTitle, description, keywords, intro, body: longtailBodies[tool.id]?.[language] ?? body, category: ui[language][tool.category] ?? tool.category };
+  return { ...tool, title, shortTitle, description, keywords, intro, body: longtailBodies[tool.id]?.[language] ?? body, category: pdfOnlyLocales[language] ? 'PDF' : ui[language][tool.category] ?? tool.category };
 }
 
 export function translateStaticHtml(html, language, dynamic = {}) {
@@ -397,3 +578,5 @@ export function translateStaticHtml(html, language, dynamic = {}) {
 }
 
 export const localeEntries = Object.entries(locales).map(([key, value]) => ({ key, ...value }));
+export const pdfOnlyLocaleEntries = pdfOnlyLocaleKeys.map((key) => ({ key, ...pdfOnlyLocales[key] }));
+export const pdfLocaleEntries = [...localeEntries, ...pdfOnlyLocaleEntries];

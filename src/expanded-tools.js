@@ -276,9 +276,11 @@ function setupBusinessDays(root) {
 
 function setupImageToPdf(root) {
   const input = $('#images-pdf-files', root);
+  const cameraInput = $('#images-pdf-camera', root);
   const list = $('#images-pdf-list', root);
   const downloads = $('#images-pdf-downloads', root);
   const createButton = $('[data-action="create-images-pdf"]', root);
+  const cameraButton = $('[data-action="capture-image"]', root);
   let files = [];
   let operation = 0;
   let generating = false;
@@ -305,27 +307,43 @@ function setupImageToPdf(root) {
     }));
     $('#images-pdf-meta', root).textContent = files.length ? `${formatNumber(files.length)} ${t('images ready in page order')} · ${logic.formatFileSize(files.reduce((sum, file) => sum + file.size, 0), languageTag)}` : t('Add up to 20 images. No fixed file-size cap; 20 megapixels per image. Large batches depend on your device memory.');
     createButton.disabled = files.length === 0 || generating;
+    cameraButton.disabled = generating || files.length >= limits.count;
+    cameraInput.disabled = generating || files.length >= limits.count;
   };
-  input.addEventListener('change', () => {
+  const appendImages = (incoming) => {
+    if (!incoming.length) return;
     operation += 1;
     clearDownloadLinks(downloads);
-    const incoming = [...input.files];
     const accepted = incoming.filter(isSupportedImage);
     const next = [...files, ...accepted];
     if (next.length > limits.count) {
       setStatus(root, t('Choose up to 20 images.'), 'error');
     } else {
       files = next;
-      setStatus(root, accepted.length === incoming.length ? 'Images added. Reorder pages below.' : 'Some files were skipped. Use a supported image format within the on-page limits.', accepted.length === incoming.length ? 'success' : 'error');
+      const allAccepted = accepted.length === incoming.length;
+      setStatus(root, allAccepted ? (incoming.length === 1 ? t('Photo added. Review the page order below.') : 'Images added. Reorder pages below.') : 'Some files were skipped. Use a supported image format within the on-page limits.', allAccepted ? 'success' : 'error');
     }
-    input.value = '';
     renderList();
+  };
+  input.addEventListener('change', () => {
+    appendImages([...input.files]);
+    input.value = '';
+  });
+  cameraInput.addEventListener('change', () => {
+    appendImages([...cameraInput.files]);
+    cameraInput.value = '';
   });
   root.addEventListener('click', async (event) => {
     const button = event.target.closest('[data-action]');
     if (!button) return;
     const action = button.dataset.action;
     const index = Number(button.dataset.index);
+    if (action === 'capture-image') {
+      if (files.length >= limits.count) return setStatus(root, t('Choose up to 20 images.'), 'error');
+      try { cameraInput.click(); }
+      catch { setStatus(root, t('Camera could not be opened. Choose images above instead.'), 'error'); }
+      return;
+    }
     if (action === 'move-image-up' && index > 0) [files[index - 1], files[index]] = [files[index], files[index - 1]];
     if (action === 'move-image-down' && index < files.length - 1) [files[index + 1], files[index]] = [files[index], files[index + 1]];
     if (action === 'remove-image') files.splice(index, 1);
@@ -404,7 +422,7 @@ function setupImageToPdf(root) {
       }
     }
     if (action === 'clear') {
-      operation += 1; generating = false; input.disabled = false; files = []; input.value = ''; renderList(); clearDownloadLinks(downloads);
+      operation += 1; generating = false; input.disabled = false; cameraInput.disabled = false; files = []; input.value = ''; cameraInput.value = ''; renderList(); clearDownloadLinks(downloads);
       setStatus(root, 'Each image becomes a page in the order shown.');
     }
   });

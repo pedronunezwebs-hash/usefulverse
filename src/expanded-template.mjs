@@ -54,6 +54,9 @@ const templates = {
   'image-to-pdf': () => shell('image-to-pdf', `
     <label class="field-label" for="images-pdf-files">Choose images</label>
     <input id="images-pdf-files" class="tool-input file-picker" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/avif,image/tiff,image/bmp,image/gif,image/apng,image/svg+xml,image/x-icon,image/vnd.microsoft.icon,.jpg,.jpeg,.jpe,.jfif,.pjpeg,.pjp,.png,.apng,.webp,.heic,.heif,.avif,.tif,.tiff,.bmp,.gif,.svg,.ico,.cur" multiple>
+    <input id="images-pdf-camera" type="file" accept="image/*" capture="environment" hidden>
+    <div class="tool-actions"><button class="button button--ghost" type="button" data-action="capture-image">Take a photo</button></div>
+    <p class="tool-hint">On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.</p>
     <p class="file-meta" id="images-pdf-meta">Up to 20 images · 20 megapixels per image · no fixed file-size cap. Large batches depend on your device memory.</p>
     <ol class="tool-file-list" id="images-pdf-list" aria-label="Images in PDF page order"></ol>
     <div class="calculator-grid">

@@ -1292,7 +1292,7 @@ function setupToolPage() {
   const root = $('.tool-workspace');
   if (!root) return;
   const id = root.dataset.tool;
-  const toolSuiteTools = new Set(['pdf-page-editor', 'pdf-ocr', 'pdf-document-converter', 'pdf-to-markdown', 'pdf-form-filler', 'pdf-compare', 'zip-archive-tool', 'media-converter', 'scientific-calculator', 'loan-calculator', 'compound-interest-calculator', 'invoice-generator', 'resume-builder', 'portrait-background-remover']);
+  const toolSuiteTools = new Set(['pdf-protect-unlock', 'pdf-repair', 'pdf-crop', 'pdf-redact', 'pdf-to-pdfa', 'pdf-page-editor', 'pdf-ocr', 'pdf-document-converter', 'html-to-pdf', 'pdf-to-markdown', 'pdf-form-filler', 'pdf-compare', 'zip-archive-tool', 'media-converter', 'scientific-calculator', 'loan-calculator', 'compound-interest-calculator', 'invoice-generator', 'resume-builder', 'portrait-background-remover']);
   if (toolSuiteTools.has(id)) {
     const assetVersion = document.documentElement.dataset.assetVersion || new URL(document.currentScript?.src ?? location.href).searchParams.get('v');
     import(`./tool-suite-tools.js${assetVersion ? `?v=${assetVersion}` : ''}`)
