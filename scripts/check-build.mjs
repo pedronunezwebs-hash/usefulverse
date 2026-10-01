@@ -3,7 +3,7 @@ import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { tools } from '../src/catalog.mjs';
 import { seo } from '../src/seo.mjs';
-import { localePath, locales, localizedTool, packs } from '../src/locales.mjs';
+import { localePath, locales, localizedTool, packs, pdfLocaleEntries, pdfOnlyLocaleKeys, pdfOnlyLocales, pdfOnlyPacks, pdfToolIds, ui } from '../src/locales.mjs';
 import { longtailBodies, longtailFaqs } from '../src/locales/longtail.mjs';
 import { relatedToolIds } from '../src/template.mjs';
 import { guideCanonical, guidePath, guides } from '../src/guides.mjs';
@@ -15,6 +15,10 @@ const localizedFiles = languages.filter((language) => language !== 'en').flatMap
   `assets/locale-${language}.js`,
   `${localePath(language).replace(/^\//u, '').replace(/\/$/u, '')}/llms.txt`,
 ]);
+for (const language of pdfOnlyLocaleKeys) localizedFiles.push(
+  `assets/locale-${language}.js`,
+  `${pdfOnlyLocales[language].prefix.replace(/^\//u, '')}/llms.txt`,
+);
 const required = ['index.html', '404.html', 'assets/styles.css', 'assets/app.js', 'favicon.svg', 'robots.txt', 'sitemap.xml', 'llms.txt', ...localizedFiles, 'BingSiteAuth.xml', 'yandex_f441658073fe7135.html', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html', '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt'];
 const notFound = await readFile(join(dist, '404.html'), 'utf8');
 if (!notFound.includes('<meta name="robots" content="noindex,follow">') || /<link rel="canonical"/u.test(notFound)) throw new Error('404 page must be noindex and must not claim a canonical URL');
@@ -23,7 +27,7 @@ for (const file of required) await access(join(dist, file));
 const naverVerification = await readFile(join(dist, 'naverbbd67ca2bfab12f8138c42ad5d27c664.html'), 'utf8');
 if (naverVerification !== 'naver-site-verification: naverbbd67ca2bfab12f8138c42ad5d27c664.html\n') throw new Error('Naver verification file content does not match the downloaded file');
 const pages = [];
-const titlesByLanguage = new Map(languages.map((language) => [language, new Set()]));
+const titlesByLanguage = new Map([...languages, ...pdfOnlyLocaleKeys].map((language) => [language, new Set()]));
 for (const language of languages) {
   const homePath = join(dist, localePath(language).replace(/^\//u, ''), 'index.html');
   pages.push({ path: homePath, language, tool: null });
@@ -44,7 +48,8 @@ for (const language of languages) {
     if (!html.includes(`<html lang="${locales[language].code}" dir="${direction}" data-asset-version="`)) throw new Error(`Wrong html lang or text direction for ${language}/${tool.id}`);
     if (!html.includes(`aria-label="${locales[language].code.toUpperCase()} — ${locales[language].name}"`)) throw new Error(`Language selector accessible name does not include the visible code for ${language}/${tool.id}`);
     if (!html.includes(`rel="canonical" href="${canonical}"`)) throw new Error(`Missing canonical for ${language}/${tool.id}`);
-    for (const alternate of languages) if (!html.includes(`hreflang="${locales[alternate].code}" href="https://usefulverse.com${localePath(alternate, tool.id)}"`)) throw new Error(`Missing ${alternate} alternate for ${language}/${tool.id}`);
+    const alternateLanguages = pdfToolIds.includes(tool.id) ? pdfLocaleEntries : languages.map((key) => ({ key, ...locales[key] }));
+    for (const alternate of alternateLanguages) if (!html.includes(`hreflang="${alternate.code}" href="https://usefulverse.com${localePath(alternate.key, tool.id)}"`)) throw new Error(`Missing ${alternate.key} alternate for ${language}/${tool.id}`);
     if (!html.includes(`data-tool="${tool.id}"`)) throw new Error(`Missing tool runtime for ${language}/${tool.id}`);
     const relatedHeading = packs[language]?.ui['More useful tools'] ?? { en: 'More useful tools', es: 'Más herramientas útiles', fr: 'Plus d’outils utiles', pt: 'Mais ferramentas úteis', de: 'Weitere nützliche Tools' }[language];
     if (!html.includes(relatedHeading)) throw new Error(`Missing localized related-tools heading for ${language}/${tool.id}`);
@@ -60,6 +65,29 @@ for (const language of languages) {
     const expectedRelated = relatedToolIds[tool.id];
     if (expectedRelated) for (const relatedId of expectedRelated) {
       if (!html.includes(`href="${localePath(language, relatedId)}"`)) throw new Error(`Missing contextual ${relatedId} link on ${language}/${tool.id}`);
+    }
+  }
+}
+for (const language of pdfOnlyLocaleKeys) {
+  const locale = pdfOnlyLocales[language];
+  const pack = pdfOnlyPacks[language];
+  for (const toolId of pdfToolIds) {
+    const path = join(dist, localePath(language, toolId).replace(/^\//u, ''), 'index.html');
+    await access(path);
+    const html = await readFile(path, 'utf8');
+    pages.push({ path, language, tool: localizedTool(tools.find((item) => item.id === toolId), language) });
+    if (!html.includes(`<html lang="${locale.code}" dir="${pack.meta.direction ?? 'ltr'}" data-asset-version="`)) throw new Error(`Wrong html lang or text direction for ${language}/${toolId}`);
+    if (!html.includes(`rel="canonical" href="https://usefulverse.com${localePath(language, toolId)}"`)) throw new Error(`Missing canonical for ${language}/${toolId}`);
+    if (!html.includes(`href="${localePath(language, 'pdf-tools')}" aria-label="${ui[language]['UsefulVerse home']}"`)) throw new Error(`PDF-only header points to a non-existent or untranslated home for ${language}/${toolId}`);
+    for (const alternate of pdfLocaleEntries) if (!html.includes(`hreflang="${alternate.code}" href="https://usefulverse.com${localePath(alternate.key, toolId)}"`)) throw new Error(`Missing ${alternate.key} PDF alternate for ${language}/${toolId}`);
+    const translated = pack.copy[toolId];
+    if (!translated || !html.includes(translated[0]) || !html.includes(translated[4]) || !html.includes(translated[5])) throw new Error(`Localized page copy/FAQ is incomplete for ${language}/${toolId}`);
+    const nonPdfPath = join(dist, localePath(language, 'word-counter').replace(/^\//u, ''), 'index.html');
+    try {
+      await access(nonPdfPath);
+      throw new Error(`Unexpected non-PDF route was generated for PDF-only locale ${language}`);
+    } catch (error) {
+      if (error.code !== 'ENOENT') throw error;
     }
   }
 }
@@ -84,11 +112,11 @@ const home = await readFile(join(dist, 'index.html'), 'utf8');
 if (!home.includes('href="/guides/">Guides</a>')) throw new Error('English home page is missing the guides navigation link');
 const assetVersion = home.match(/\/assets\/app\.js\?v=([a-f0-9]{12})/u)?.[1];
 if (!assetVersion || !home.includes(`/assets/styles.css?v=${assetVersion}`)) throw new Error('Hashed asset URLs are missing');
-for (const toolId of ['pdf-page-editor', 'pdf-ocr', 'pdf-document-converter', 'pdf-to-markdown', 'pdf-form-filler', 'pdf-compare', 'zip-archive-tool', 'media-converter', 'scientific-calculator', 'loan-calculator', 'compound-interest-calculator', 'invoice-generator', 'resume-builder', 'portrait-background-remover']) {
+for (const toolId of ['pdf-protect-unlock', 'pdf-repair', 'pdf-crop', 'pdf-redact', 'pdf-to-pdfa', 'pdf-page-editor', 'pdf-ocr', 'pdf-document-converter', 'html-to-pdf', 'pdf-to-markdown', 'pdf-form-filler', 'pdf-compare', 'zip-archive-tool', 'media-converter', 'scientific-calculator', 'loan-calculator', 'compound-interest-calculator', 'invoice-generator', 'resume-builder', 'portrait-background-remover']) {
   const page = await readFile(join(dist, localePath('en', toolId).replace(/^\//u, ''), 'index.html'), 'utf8');
   if (!page.includes(`data-tool="${toolId}"`) || !page.includes(`v=${assetVersion}`)) throw new Error(`Suite tool ${toolId} is missing its versioned runtime or page markup`);
 }
-for (const asset of ['assets/tool-suite-tools.js', 'assets/tool-suite-ocr.js', 'assets/portrait-background-worker.js', 'assets/vendor/tesseract-7.0.0/worker.min.js', 'assets/vendor/tesseract-7.0.0/tesseract-core-lstm.wasm', 'assets/vendor/tesseract-7.0.0/tesseract-core-simd-lstm.wasm', 'assets/vendor/tesseract-7.0.0/tesseract-core-relaxedsimd-lstm.wasm.js', 'assets/vendor/tesseract-7.0.0/tesseract-core-relaxedsimd-lstm.wasm', 'assets/ocr-languages-4.0.0/eng.traineddata.gz', 'assets/models-fa2fa546052fba4c08921230a26cc69a333fca12/Xenova/modnet/onnx/model_quantized.onnx']) await access(join(dist, asset));
+for (const asset of ['assets/tool-suite-tools.js', 'assets/tool-suite-ocr.js', 'assets/portrait-background-worker.js', 'assets/vendor/pdf-qpdf-worker.mjs', 'assets/vendor/pdf-crop-worker.mjs', 'assets/vendor/pdfa-worker.mjs', 'assets/vendor/LICENSE-pdfkit', 'assets/vendor/qpdf.wasm', 'assets/vendor/tesseract-7.0.0/worker.min.js', 'assets/vendor/tesseract-7.0.0/tesseract-core-lstm.wasm', 'assets/vendor/tesseract-7.0.0/tesseract-core-simd-lstm.wasm', 'assets/vendor/tesseract-7.0.0/tesseract-core-relaxedsimd-lstm.wasm.js', 'assets/vendor/tesseract-7.0.0/tesseract-core-relaxedsimd-lstm.wasm', 'assets/ocr-languages-4.0.0/eng.traineddata.gz', 'assets/models-fa2fa546052fba4c08921230a26cc69a333fca12/Xenova/modnet/onnx/model_quantized.onnx']) await access(join(dist, asset));
 for (const file of await readdir(dist, { recursive: true })) {
   const path = join(dist, file);
   if ((await stat(path)).isFile() && (await stat(path)).size > 25 * 1024 * 1024) throw new Error(`Cloudflare Pages asset exceeds 25 MiB: ${file}`);
@@ -102,6 +130,12 @@ for (const language of languages) {
   const count = paths.filter((path) => sitemap.includes(`<loc>https://usefulverse.com${path}</loc>`)).length;
   const expected = tools.length + 1 + (language === 'en' ? guides.length + 1 : 0);
   if (count !== expected) throw new Error(`Sitemap has ${count} URLs for ${language}; expected ${expected}`);
+}
+for (const language of pdfOnlyLocaleKeys) {
+  const paths = pdfToolIds.map((toolId) => localePath(language, toolId));
+  const count = paths.filter((path) => sitemap.includes(`<loc>https://usefulverse.com${path}</loc>`)).length;
+  if (count !== pdfToolIds.length) throw new Error(`Sitemap has ${count} PDF URLs for ${language}; expected ${pdfToolIds.length}`);
+  if (sitemap.includes(`<loc>https://usefulverse.com${localePath(language)}</loc>`)) throw new Error(`Sitemap must not invent a general-language home page for ${language}`);
 }
 for (const route of [guidePath(), ...guides.map((guide) => guidePath(guide.slug))]) if (!sitemap.includes(`<loc>https://usefulverse.com${route}</loc>`)) throw new Error(`Sitemap is missing guide ${route}`);
 for (const guide of guides) {
@@ -131,7 +165,9 @@ const englishStrings = new Set();
 for (const { path, language } of pages) if (language === 'en') for (const value of visibleStrings(await readFile(path, 'utf8'))) englishStrings.add(value);
 const universalStrings = new Set(['usefulverse', 'UsefulVerse', 'useful', 'verse', 'JSON Web Token', 'Base64', 'JSON', 'CSV', 'UUID', 'SHA-256', 'UTC', 'HEX', 'RGB', 'HSL', 'JPG', 'JPEG', 'PNG', 'WebP', 'PDF', 'M4A (AAC)', 'OGG (Opus)', 'Bahasa Indonesia', '<note><to>Alex</to></note>', '256 px', '384 px', '512 px',
   'English', 'Español', 'Français', 'Português', 'Deutsch', '日本語', '한국어', 'Indonesian', 'हिन्दी', 'العربية', '中文', 'বাংলা', 'Русский', 'اردو', 'Türkçe', 'Tiếng Việt',
-  ...Object.values(locales).flatMap(({ name, code }) => [name, code.toUpperCase(), `${code.toUpperCase()} — ${name}`])]);
+  ...Object.values(locales).flatMap(({ name, code }) => [name, code.toUpperCase(), `${code.toUpperCase()} — ${name}`]),
+  ...Object.values(pdfOnlyLocales).flatMap(({ name, code }) => [name, code.toUpperCase(), `${code.toUpperCase()} — ${name}`]),
+  'Standard', 'Standard — 150 dpi', 'Text', 'A4', 'US Letter', 'DRAFT', 'OCR', 'DOC', 'MD', 'JPG', 'PNG']);
 const isUniversal = (value) => universalStrings.has(value) || [...value.replace(/\s/gu, '')].length <= 3 || !/\p{Ll}{2}/u.test(value) || /^[^\p{L}]*(?:https?:|\\b|\{"|name,age)/u.test(value);
 for (const [language, pack] of Object.entries(packs)) {
   const keepEnglish = new Set(pack.meta.keepEnglish ?? []);
@@ -140,5 +176,15 @@ for (const [language, pack] of Object.entries(packs)) {
     for (const value of visibleStrings(await readFile(path, 'utf8'))) if (englishStrings.has(value) && !isUniversal(value) && !keepEnglish.has(value)) leftovers.set(value, path.slice(dist.length));
   }
   if (leftovers.size) throw new Error(`Untranslated English strings in ${language} (${leftovers.size}):\n${[...leftovers].map(([value, path]) => `  ${JSON.stringify(value)} (${path})`).join('\n')}`);
+}
+for (const language of pdfOnlyLocaleKeys) {
+  const keepEnglish = new Set(pdfOnlyPacks[language].meta.keepEnglish ?? []);
+  const leftovers = new Map();
+  for (const { path, language: pageLanguage } of pages.filter((page) => page.language === language)) {
+    for (const value of visibleStrings(await readFile(path, 'utf8'))) {
+      if (englishStrings.has(value) && !isUniversal(value) && !keepEnglish.has(value)) leftovers.set(value, path.slice(dist.length));
+    }
+  }
+  if (leftovers.size) throw new Error(`Untranslated English strings in PDF-only ${language} (${leftovers.size}):\n${[...leftovers].map(([value, path]) => `  ${JSON.stringify(value)} (${path})`).join('\n')}`);
 }
 console.log(`Build check passed: ${pages.filter(({ tool }) => tool).length} localized tool pages + ${languages.length} home pages; ${sitemapCount} URLs in sitemap.`);

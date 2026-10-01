@@ -1,6 +1,6 @@
 import { tools } from './catalog.mjs';
 import { seo } from './seo.mjs';
-import { localeEntries, localePath, locales, packs, translateStaticHtml, ui } from './locales.mjs';
+import { localeEntries, localeHomePath, localePath, locales, packs, pdfLocaleEntries, pdfOnlyLocales, pdfOnlyPacks, pdfToolIds, translateStaticHtml, ui } from './locales.mjs';
 import { imageFormatLocales } from './locales/image-formats.mjs';
 import { longtailFaqs } from './locales/longtail.mjs';
 import { guideCanonical, guidePath, guides } from './guides.mjs';
@@ -56,7 +56,8 @@ export const relatedToolIds = {
   'sql-formatter': ['json-formatter', 'xml-formatter', 'csv-to-json'],
   'pdf-page-editor': ['pdf-tools', 'pdf-to-image', 'pdf-form-filler'],
   'pdf-ocr': ['pdf-document-converter', 'pdf-to-image', 'pdf-page-editor'],
-  'pdf-document-converter': ['office-file-compressor', 'pdf-ocr', 'pdf-tools'],
+  'pdf-document-converter': ['office-file-compressor', 'pdf-ocr', 'html-to-pdf'],
+  'html-to-pdf': ['pdf-document-converter', 'pdf-page-editor', 'pdf-tools'],
   'pdf-to-markdown': ['pdf-ocr', 'markdown-html-converter', 'pdf-document-converter'],
   'pdf-form-filler': ['pdf-page-editor', 'pdf-tools', 'invoice-generator'],
   'pdf-compare': ['pdf-page-editor', 'pdf-ocr', 'pdf-tools'],
@@ -436,7 +437,7 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
     pt: { how: (name) => `Como usar ${name}?`, privacyQuestion: 'Meus dados são enviados para algum servidor?', privacyAnswer: 'Não. O processamento acontece no seu navegador, e seus dados não são enviados para um servidor.' },
     de: { how: (name) => `Wie verwendet man „${name}“?`, privacyQuestion: 'Werden meine Daten an einen Server gesendet?', privacyAnswer: 'Nein. Die Verarbeitung findet in Ihrem Browser statt. Ihre Daten werden nicht hochgeladen.' },
   };
-  const pack = packs[language];
+  const pack = packs[language] ?? pdfOnlyPacks[language];
   const imageFormatData = imageFormatLocales[language];
   const imageFormatCopy = imageFormatData?.copy?.[tool.id];
   const seoData = language === 'en'
@@ -468,12 +469,13 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
   const faqByQuestion = new Map();
   for (const item of [...(seoData.faq ?? []), ...(longtailFaqs[tool.id]?.[language] ?? [])]) {
     const { question } = item;
-    const key = question.trim().replace(/\s+/gu, ' ').toLocaleLowerCase(language);
+    const key = question.trim().replace(/\s+/gu, ' ').toLocaleLowerCase((locales[language] ?? pdfOnlyLocales[language])?.code ?? language);
     faqByQuestion.set(key, item);
   }
   const faq = [...faqByQuestion.values()];
-  const homeHref = localePath(language);
-  const alternates = localeEntries.map(({ key, code }) => `<link rel="alternate" hreflang="${code}" href="https://usefulverse.com${localePath(key, tool.id)}">`).join('\n    ');
+  const homeHref = localeHomePath(language);
+  const pageLocales = pdfToolIds.includes(tool.id) ? pdfLocaleEntries : localeEntries;
+  const alternates = pageLocales.map(({ key, code }) => `<link rel="alternate" hreflang="${code}" href="https://usefulverse.com${localePath(key, tool.id)}">`).join('\n    ');
   // Page-specific wording for UI keys that mean something else on this tool (e.g. "Whole number" is an
   // integer elsewhere but the total in the percentage calculator). Packs bring theirs in `toolUi`.
   const toolUi = pack ? pack.toolUi?.[tool.id] : { 'percentage-calculator': { es: { 'Whole number': 'Total' }, fr: { 'Whole number': 'Total' }, pt: { 'Whole number': 'Valor total' }, de: { 'Whole number': 'Gesamtwert' } } }[tool.id]?.[language];
@@ -493,7 +495,7 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'UsefulVerse', item: `https://usefulverse.com${homeHref}` },
-      { '@type': 'ListItem', position: 2, name: tool.category, item: `https://usefulverse.com${homeHref}#tools` },
+      { '@type': 'ListItem', position: 2, name: tool.category, item: `https://usefulverse.com${pdfOnlyLocales[language] ? homeHref : `${homeHref}#tools`}` },
       { '@type': 'ListItem', position: 3, name: tool.title, item: canonical },
     ],
   })}</script>`;
@@ -503,7 +505,7 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
     name: tool.title,
     url: canonical,
     description: seoData.description,
-    inLanguage: locales[language]?.code ?? language,
+    inLanguage: (locales[language] ?? pdfOnlyLocales[language])?.code ?? language,
     applicationCategory: tools.find((item) => item.id === tool.id)?.category === 'Developer' ? 'DeveloperApplication' : 'UtilitiesApplication',
     operatingSystem: 'Any',
     browserRequirements: 'Requires JavaScript',
@@ -520,6 +522,13 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
     return guide ? `<a class="guide-link-card" href="${guidePath(slug)}"><span class="eyebrow">Step-by-step guide</span><strong>${escapeHtml(guide.title)}</strong><span>Read the walkthrough <span aria-hidden="true">↗</span></span></a>` : '';
   }).join('') : '';
   const guidesSection = guideLinks ? `<section class="tool-guides" aria-labelledby="tool-guides-title"><div><p class="eyebrow">Learn the steps</p><h2 id="tool-guides-title">Helpful guides</h2></div><div class="guide-link-grid">${guideLinks}</div></section>` : '';
+  const pdfOnlyMarkup = pdfOnlyLocales[language] ? toolMarkup(tool.id)
+    .replace(/<p class="(?:tool-hint|file-meta)"[^>]*>[\s\S]*?<\/p>/gu, '') : toolMarkup(tool.id);
+  const pdfLimitations = pdfOnlyLocales[language]
+    ? `<details class="tool-limits" open><summary>${escapeHtml(ui[language]?.['Important limits and output'] ?? 'Important limits and output')}</summary><p>${escapeHtml(tool.body)}</p></details>`
+    : '';
+  const toolPanel = `${pdfLimitations}${pdfOnlyMarkup}`;
+  const toolExplainer = pdfOnlyLocales[language] ? '' : `<section class="tool-explainer"><div><p class="eyebrow">About this tool</p><h2>${escapeHtml(tool.title)} made simple.</h2></div><p>${escapeHtml(tool.body)}</p></section>`;
   const rendered = shell({
     title: `${seoData.title} | UsefulVerse`,
     description: seoData.description,
@@ -528,11 +537,11 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
     schema: `${applicationSchema}${breadcrumbs}${faqSchema}`,
     body: `<main class="tool-page" data-tool-page="${tool.id}">
       <div class="page-container">
-      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="${homeHref}">UsefulVerse</a><span aria-hidden="true">/</span><a href="${homeHref}#tools">${escapeHtml(tool.category)}</a><span aria-hidden="true">/</span><span>${escapeHtml(tool.title)}</span></nav>
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="${homeHref}">UsefulVerse</a><span aria-hidden="true">/</span><a href="${pdfOnlyLocales[language] ? homeHref : `${homeHref}#tools`}">${escapeHtml(tool.category)}</a><span aria-hidden="true">/</span><span>${escapeHtml(tool.title)}</span></nav>
         <div class="tool-page__heading"><div>${icon(tool)}<p class="eyebrow">${escapeHtml(tool.category)} tool</p><h1>${escapeHtml(tool.title)}</h1><p class="tool-lead">${escapeHtml(tool.intro)}</p></div><div class="privacy-note"><span class="privacy-note__dot" aria-hidden="true"></span><span>Runs in your browser. No upload.</span></div></div>
-        <section class="tool-panel" aria-label="${escapeHtml(tool.title)} workspace">${toolMarkup(tool.id)}</section>
+        <section class="tool-panel" aria-label="${escapeHtml(tool.title)} workspace">${toolPanel}</section>
         ${usefulVerseSaveCard(canonical)}
-        <section class="tool-explainer"><div><p class="eyebrow">About this tool</p><h2>${escapeHtml(tool.title)} made simple.</h2></div><p>${escapeHtml(tool.body)}</p></section>
+        ${toolExplainer}
         ${guidesSection}
         ${faqSection}
         <section class="related-tools"><div class="section-heading"><div><p class="eyebrow">Keep going</p><h2>More useful tools</h2></div><a class="text-link" href="${homeHref}">Browse all tools <span aria-hidden="true">↗</span></a></div><div class="tool-grid tool-grid--compact">${relatedCards(tool.id, tool.category, pageTools, language)}</div></section>
@@ -710,13 +719,18 @@ export function renderGuidePage(guide, assetVersion = '') {
 
 export function shell({ title, description, canonical, body, schema = '', assetVersion = '', lang = 'en', alternates = '', toolId = '', localeToolId = toolId, defaultAlternate = true, ogType = 'website' }) {
   const assetSuffix = assetVersion ? `?v=${escapeHtml(assetVersion)}` : '';
-  const homeHref = localePath(lang);
-  const localeCode = locales[lang]?.code ?? lang;
+  const homeHref = localeHomePath(lang);
+  const languageLocales = pdfToolIds.includes(localeToolId) ? pdfLocaleEntries : localeEntries;
+  const isPdfOnlyLanguage = Boolean(pdfOnlyLocales[lang]);
+  const localeCode = (locales[lang] ?? pdfOnlyLocales[lang])?.code ?? lang;
   const defaultAlternateTag = defaultAlternate ? `<link rel="alternate" hreflang="x-default" href="https://usefulverse.com${localePath('en', toolId)}">` : '';
-  const localeSelector = `<nav class="language-switch" aria-label="Language">${localeEntries.map(({ key, code, name }) => `<a href="${localePath(key, localeToolId)}" hreflang="${code}" lang="${code}"${key === lang ? ' aria-current="page"' : ''} aria-label="${code.toUpperCase()} — ${escapeHtml(name)}">${code.toUpperCase()}</a>`).join('')}</nav>`;
-  const guideNavLink = lang === 'en' ? `<a href="${guidePath()}">Guides</a>` : '';
+  const localeSelector = `<nav class="language-switch${languageLocales.length > localeEntries.length ? ' language-switch--expanded' : ''}" aria-label="Language">${languageLocales.map(({ key, code, name }) => `<a href="${localePath(key, localeToolId)}" hreflang="${code}" lang="${code}"${key === lang ? ' aria-current="page"' : ''} aria-label="${code.toUpperCase()} — ${escapeHtml(name)}">${code.toUpperCase()}</a>`).join('')}</nav>`;
+  const guideNavLink = lang === 'en' && !pdfOnlyLocales[lang] ? `<a href="${guidePath()}">Guides</a>` : '';
+  const toolDirectoryHref = isPdfOnlyLanguage ? homeHref : `${homeHref}#tools`;
+  const howItWorksLink = isPdfOnlyLanguage ? '' : `<a href="${homeHref}#how-it-works">How it works</a>`;
+  const siteMeta = packs[lang] ?? pdfOnlyPacks[lang];
   return `<!doctype html>
-<html lang="${localeCode}" dir="${packs[lang]?.meta.direction ?? 'ltr'}" data-asset-version="${escapeHtml(assetVersion)}">
+<html lang="${localeCode}" dir="${siteMeta?.meta.direction ?? 'ltr'}" data-asset-version="${escapeHtml(assetVersion)}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -731,16 +745,16 @@ export function shell({ title, description, canonical, body, schema = '', assetV
     <meta property="og:description" content="${escapeHtml(description)}">
     <meta property="og:url" content="${escapeHtml(canonical)}">
     <meta property="og:site_name" content="UsefulVerse">
-    <meta property="og:locale" content="${escapeHtml((packs[lang]?.meta.tag ?? { en: 'en-US', es: 'es-ES', fr: 'fr-FR', pt: 'pt-BR', de: 'de-DE' }[lang] ?? localeCode).replace('-', '_'))}">
+    <meta property="og:locale" content="${escapeHtml((siteMeta?.meta.tag ?? { en: 'en-US', es: 'es-ES', fr: 'fr-FR', pt: 'pt-BR', de: 'de-DE' }[lang] ?? localeCode).replace('-', '_'))}">
     <meta name="twitter:card" content="summary">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/styles.css${assetSuffix}">
     ${schema}
   </head>
   <body>
-    <header class="site-header"><div class="page-container site-header__inner"><a class="brand" href="${homeHref}" aria-label="UsefulVerse home"><span class="brand-mark" aria-hidden="true">◆</span><span>usefulverse</span></a><nav class="main-nav" aria-label="Main navigation"><a href="${homeHref}#tools">Tools</a><a href="${homeHref}#how-it-works">How it works</a>${guideNavLink}</nav><a class="header-cta" href="${homeHref}#tools">Find a tool <span aria-hidden="true">↗</span></a>${localeSelector}</div></header>
+    <header class="site-header"><div class="page-container site-header__inner"><a class="brand" href="${homeHref}" aria-label="UsefulVerse home"><span class="brand-mark" aria-hidden="true">◆</span><span>usefulverse</span></a><nav class="main-nav" aria-label="Main navigation"><a href="${toolDirectoryHref}">Tools</a>${howItWorksLink}${guideNavLink}</nav><a class="header-cta" href="${toolDirectoryHref}">Find a tool <span aria-hidden="true">↗</span></a>${localeSelector}</div></header>
     ${body}
-    <footer class="site-footer"><div class="page-container site-footer__inner"><a class="brand brand--footer" href="${homeHref}"><span class="brand-mark" aria-hidden="true">◆</span><span>usefulverse</span></a><p>Simple tools that respect your time and your files.</p><div class="footer-links"><a href="${homeHref}#tools">All tools</a><a href="${homeHref}#how-it-works">Privacy first</a>${lang === 'en' ? `<a href="${guidePath()}">Guides</a>` : ''}</div></div></footer>
+    <footer class="site-footer"><div class="page-container site-footer__inner"><a class="brand brand--footer" href="${homeHref}"><span class="brand-mark" aria-hidden="true">◆</span><span>usefulverse</span></a><p>Simple tools that respect your time and your files.</p><div class="footer-links"><a href="${toolDirectoryHref}">All tools</a>${isPdfOnlyLanguage ? '' : `<a href="${homeHref}#how-it-works">Privacy first</a>`}${lang === 'en' ? `<a href="${guidePath()}">Guides</a>` : ''}</div></div></footer>
     ${lang === 'en' ? '' : `<script defer src="/assets/locale-${lang}.js${assetSuffix}"></script>`}
     <script defer src="/assets/app.js${assetSuffix}"></script>
   </body>

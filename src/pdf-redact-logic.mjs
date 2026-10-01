@@ -1,0 +1,40 @@
+export const MAX_PDF_REDACT_BYTES = 50 * 1024 * 1024;
+export const MAX_PDF_REDACT_PAGES = 100;
+export const MAX_PDF_REDACT_PIXELS = 40_000_000;
+export const MAX_PDF_REDACT_SIDE = 12_000;
+
+export function normalizeRedactionRect(x1, y1, x2, y2) {
+  const values = [x1, y1, x2, y2].map(Number);
+  if (values.some((value) => !Number.isFinite(value))) throw new TypeError('Redaction area coordinates must be numbers.');
+  const left = Math.min(...[values[0], values[2]].map((value) => Math.max(0, Math.min(1, value))));
+  const top = Math.min(...[values[1], values[3]].map((value) => Math.max(0, Math.min(1, value))));
+  const right = Math.max(...[values[0], values[2]].map((value) => Math.max(0, Math.min(1, value))));
+  const bottom = Math.max(...[values[1], values[3]].map((value) => Math.max(0, Math.min(1, value))));
+  if (right - left < 0.002 || bottom - top < 0.002) throw new RangeError('Draw a larger redaction area.');
+  return { x: left, y: top, width: right - left, height: bottom - top };
+}
+
+export function redactionPixelPlan(pageSizes, dpi) {
+  const resolution = Number(dpi);
+  if (!Number.isFinite(resolution) || ![100, 150, 200, 300].includes(resolution)) throw new RangeError('Choose a supported redaction resolution.');
+  if (!Array.isArray(pageSizes) || pageSizes.length < 1) throw new RangeError('The PDF has no pages to redact.');
+  if (pageSizes.length > MAX_PDF_REDACT_PAGES) throw new RangeError(`This local tool supports up to ${MAX_PDF_REDACT_PAGES} pages.`);
+  const pages = pageSizes.map(({ width, height }) => {
+    if (![width, height].every((value) => Number.isFinite(value) && value > 0)) throw new RangeError('The PDF contains a page with invalid dimensions.');
+    const pixelWidth = Math.ceil((width * resolution) / 72);
+    const pixelHeight = Math.ceil((height * resolution) / 72);
+    if (pixelWidth > MAX_PDF_REDACT_SIDE || pixelHeight > MAX_PDF_REDACT_SIDE) throw new RangeError('A page is too large to render safely at this resolution. Choose a lower resolution.');
+    return { width: pixelWidth, height: pixelHeight, pixels: pixelWidth * pixelHeight };
+  });
+  const totalPixels = pages.reduce((total, page) => total + page.pixels, 0);
+  if (totalPixels > MAX_PDF_REDACT_PIXELS) throw new RangeError('This PDF needs too much memory at the selected resolution. Choose a lower resolution or fewer pages.');
+  return { dpi: resolution, totalPixels, pages };
+}
+
+export function validateRedactionInput(bytes) {
+  if (!(bytes instanceof Uint8Array)) throw new TypeError('Choose a valid PDF file.');
+  if (bytes.byteLength > MAX_PDF_REDACT_BYTES) throw new RangeError('This local tool supports PDF files up to 50 MB.');
+  if (bytes.length < 8 || !new TextDecoder('latin1').decode(bytes.subarray(0, 1024)).includes('%PDF-')) {
+    throw new TypeError('Choose a valid PDF file.');
+  }
+}

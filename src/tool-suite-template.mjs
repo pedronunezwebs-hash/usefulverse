@@ -1,10 +1,77 @@
 const shell = (id, content) => `<div class="tool-workspace expanded-tool-workspace" data-tool="${id}">${content}</div>`;
 
 const templates = {
+  'pdf-protect-unlock': () => shell('pdf-protect-unlock', `
+    <label class="field-label" for="suite-security-file">Choose a PDF</label><input id="suite-security-file" class="tool-input file-picker" type="file" accept="application/pdf,.pdf">
+    <label class="field-label" for="suite-security-action">Action<select id="suite-security-action" class="tool-input"><option value="protect">Protect PDF with a password</option><option value="unlock">Remove password (current password required)</option></select></label>
+    <label class="field-label" for="suite-security-password" id="suite-security-password-label">Password to open the PDF<input id="suite-security-password" class="tool-input" type="password" autocomplete="new-password" minlength="8" maxlength="256"></label>
+    <label class="field-label" for="suite-security-confirm" id="suite-security-confirm-label">Confirm opening password<input id="suite-security-confirm" class="tool-input" type="password" autocomplete="new-password" minlength="8" maxlength="256"></label>
+    <label class="field-label" for="suite-security-owner" id="suite-security-owner-label">Separate owner password<input id="suite-security-owner" class="tool-input" type="password" autocomplete="new-password" minlength="8" maxlength="256"></label>
+    <p class="tool-hint" id="suite-security-hint">Use different passwords, and keep them somewhere safe. If you lose them, this tool cannot recover them.</p>
+    <p class="file-meta">Processing uses this device and a local PDF engine. The engine is downloaded only when you start. Files are not uploaded. A computer is recommended for large PDFs; this page accepts files up to 200 MB to help protect browser memory.</p>
+    <div class="tool-actions"><button class="button button--primary" type="button" data-action="run-qpdf">Protect PDF</button><button class="button button--ghost" type="button" data-action="cancel-qpdf" disabled>Cancel</button><button class="button button--ghost" type="button" data-action="clear">Clear</button></div>
+    <p class="tool-status" id="tool-status" aria-live="polite">Choose a PDF to start.</p><div class="file-downloads" id="suite-downloads"></div>`),
+
+  'pdf-repair': () => shell('pdf-repair', `
+    <label class="field-label" for="suite-repair-file">Choose a PDF that will not open</label><input id="suite-repair-file" class="tool-input file-picker" type="file" accept="application/pdf,.pdf">
+    <p class="tool-hint">This makes a best-effort rebuilt copy and checks that a PDF reader can parse it. It cannot restore missing or destroyed page data, and some files cannot be repaired.</p>
+    <p class="file-meta">The repair runs on this device. Nothing is uploaded. The local engine is downloaded only when you start. For large files, use a computer. The maximum input is 200 MB to help protect browser memory. Keep your original.</p>
+    <div class="tool-actions"><button class="button button--primary" type="button" data-action="repair-pdf">Try to repair PDF</button><button class="button button--ghost" type="button" data-action="cancel-qpdf" disabled>Cancel</button><button class="button button--ghost" type="button" data-action="clear">Clear</button></div>
+    <p class="tool-status" id="tool-status" aria-live="polite">Choose a PDF to start.</p><div class="file-downloads" id="suite-downloads"></div>`),
+
+  'pdf-crop': () => shell('pdf-crop', `
+    <label class="field-label" for="suite-crop-file">Choose a PDF</label><input id="suite-crop-file" class="tool-input file-picker" type="file" accept="application/pdf,.pdf">
+    <div class="calculator-grid">
+      <label class="field-label" for="suite-crop-top">Top margin (mm)<input id="suite-crop-top" class="tool-input" type="number" min="0" max="500" step="any" value="0"></label>
+      <label class="field-label" for="suite-crop-right">Right margin (mm)<input id="suite-crop-right" class="tool-input" type="number" min="0" max="500" step="any" value="0"></label>
+      <label class="field-label" for="suite-crop-bottom">Bottom margin (mm)<input id="suite-crop-bottom" class="tool-input" type="number" min="0" max="500" step="any" value="0"></label>
+      <label class="field-label" for="suite-crop-left">Left margin (mm)<input id="suite-crop-left" class="tool-input" type="number" min="0" max="500" step="any" value="0"></label>
+    </div>
+    <p class="tool-hint">Margins apply to every page. Rotated pages must be set to 0° first.</p>
+    <p class="tool-hint">Changing the CropBox hides content outside the page view; it does not securely delete it. Do not use this to conceal sensitive information.</p>
+    <p class="file-meta">Processing stays on this device. A computer is recommended for large PDFs. Limits: 100 MB and 300 pages; actual performance depends on available memory.</p>
+    <div class="tool-actions"><button class="button button--primary" type="button" data-action="crop-pdf">Crop PDF</button><button class="button button--ghost" type="button" data-action="cancel-crop-pdf" disabled>Cancel</button><button class="button button--ghost" type="button" data-action="clear">Clear</button></div>
+    <p class="tool-status" id="tool-status" aria-live="polite">Choose a PDF to start.</p><div class="file-downloads" id="suite-downloads"></div>`),
+
+  'pdf-redact': () => shell('pdf-redact', `
+    <label class="field-label" for="suite-redact-file">Choose a PDF to redact</label><input id="suite-redact-file" class="tool-input file-picker" type="file" accept="application/pdf,.pdf">
+    <p class="tool-hint">Drag over sensitive content on each page. The black areas are burned into a newly rebuilt copy; this does not merely draw a removable cover.</p>
+    <p class="file-meta">Your PDF stays on this device. Redaction rebuilds every page as an image, so text search/copy, forms, links, existing signatures, layers and accessibility structure are removed. Keep the original. A computer is recommended. Limits: 50 MB, 100 pages and a device-memory budget; the usable resolution depends on the document and device.</p>
+    <div class="redaction-page-controls" aria-label="PDF page controls"><button class="button button--ghost" type="button" data-action="redact-previous" disabled>Previous page</button><output id="suite-redact-page" aria-live="polite">0 / 0</output><button class="button button--ghost" type="button" data-action="redact-next" disabled>Next page</button></div>
+    <canvas id="suite-redact-canvas" class="redaction-canvas" aria-label="PDF page preview. Drag over content to mark it for permanent removal." tabindex="0" hidden></canvas>
+    <p class="tool-hint">Review every page. You can remove the last area or clear marks for the current page before exporting.</p>
+    <div class="tool-actions"><button class="button button--ghost" type="button" data-action="redact-undo" disabled>Remove the last area</button><button class="button button--ghost" type="button" data-action="redact-clear-page" disabled>Clear areas on this page</button></div>
+    <label class="field-label" for="suite-redact-dpi">Redaction resolution<select id="suite-redact-dpi" class="tool-input"><option value="100">Smaller file — 100 dpi</option><option value="150" selected>Standard — 150 dpi</option><option value="200">Clearer text — 200 dpi</option><option value="300">Maximum detail — 300 dpi</option></select></label>
+    <label class="redaction-confirm"><input id="suite-redact-confirm" type="checkbox" disabled><span>I checked every page and each black area covers only the information I want to remove.</span></label>
+    <div class="tool-actions"><button class="button button--primary" type="button" data-action="redact-pdf" disabled>Create redacted PDF copy</button><button class="button button--ghost" type="button" data-action="cancel-redact-pdf" disabled>Cancel</button><button class="button button--ghost" type="button" data-action="clear">Clear</button></div>
+    <p class="tool-status" id="tool-status" aria-live="polite">Choose a PDF to start.</p><div class="file-downloads" id="suite-downloads"></div>`),
+
+  'pdf-to-pdfa': () => shell('pdf-to-pdfa', `
+    <label class="field-label" for="suite-pdfa-file">Choose a PDF to convert to PDF/A</label><input id="suite-pdfa-file" class="tool-input file-picker" type="file" accept="application/pdf,.pdf">
+    <p class="tool-hint">PDF/A-1b makes a flattened image copy of every page. Text is not searchable or selectable. Forms, links, existing signatures, metadata and accessibility structure are not retained. Keep your original.</p>
+    <p class="tool-hint">This is a visual archival copy, not an accessibility or electronic-signature copy. The browser does not run veraPDF on each file. Validate the download before relying on archival compliance.</p>
+    <p class="file-meta">This PDF is processed on your device and is not uploaded. A computer is recommended for this memory-intensive conversion.</p>
+    <label class="field-label" for="suite-pdfa-dpi">Output resolution<select id="suite-pdfa-dpi" class="tool-input"><option value="100">Smaller file — 100 dpi</option><option value="150" selected>Standard — 150 dpi</option><option value="200">Clearer text — 200 dpi</option></select></label>
+    <label class="redaction-confirm"><input id="suite-pdfa-confirm" type="checkbox" disabled><span>I understand that this creates an image-only copy; my original file will not be changed.</span></label>
+    <div class="tool-actions"><button class="button button--primary" type="button" data-action="create-pdfa" disabled>Create PDF/A-1b visual copy</button><button class="button button--ghost" type="button" data-action="cancel-pdfa" disabled>Cancel</button><button class="button button--ghost" type="button" data-action="clear">Clear</button></div>
+    <p class="tool-status" id="tool-status" aria-live="polite">Choose a PDF to start.</p><div class="file-downloads" id="suite-downloads"></div>`),
+
   'pdf-page-editor': () => shell('pdf-page-editor', `
     <label class="field-label" for="suite-pdf-file">Choose a PDF</label><input id="suite-pdf-file" class="tool-input file-picker" type="file" accept="application/pdf,.pdf">
-    <p class="file-meta">Your file is processed locally and is not uploaded.</p>
+    <p class="file-meta">Your file is processed locally and is not uploaded.</p><p class="tool-hint">Visual edits flatten modified pages; searchable text on them is lost. Limit: 50 MB, 100 pages, 40 MP. A computer is recommended.</p>
     <div id="suite-pages" class="pdf-page-list" aria-live="polite"></div>
+    <section id="suite-visual-edit" class="pdf-visual-edit" hidden aria-labelledby="suite-visual-edit-title">
+      <h3 id="suite-visual-edit-title">Edit text or image</h3>
+      <p class="tool-hint">Drag over the area to replace, then add text or a PNG/JPEG image. A solid background hides the old content; it may not match the page. Modified pages are flattened and lose searchable text.</p>
+      <canvas id="suite-visual-edit-canvas" class="redaction-canvas" aria-label="PDF page preview" tabindex="0"></canvas>
+      <label class="field-label" for="suite-visual-edit-mode">Replace with<select id="suite-visual-edit-mode" class="tool-input"><option value="text">Text</option><option value="image">Image</option></select></label>
+      <label class="field-label" for="suite-visual-edit-text">Replacement text<textarea id="suite-visual-edit-text" class="tool-textarea" maxlength="2000" placeholder="Type replacement text…"></textarea></label>
+      <label class="field-label" for="suite-visual-edit-image">Replacement image<input id="suite-visual-edit-image" class="tool-input file-picker" type="file" accept="image/png,image/jpeg"></label>
+      <div class="calculator-grid"><label class="field-label" for="suite-visual-edit-background">Background color<input id="suite-visual-edit-background" class="tool-input" type="color" value="#ffffff"></label><label class="field-label" for="suite-visual-edit-color">Text color<input id="suite-visual-edit-color" class="tool-input" type="color" value="#111111"></label></div>
+      <label class="field-label" for="suite-visual-edit-size">Font size (pt)<input id="suite-visual-edit-size" class="tool-input" type="number" min="8" max="72" value="14"></label>
+      <div class="tool-actions"><button class="button button--primary" type="button" data-action="apply-visual-edit" disabled>Apply replacement</button><button class="button button--ghost" type="button" data-action="undo-visual-edit" disabled>Undo replacement</button><button class="button button--ghost" type="button" data-action="close-visual-edit">Done</button></div>
+      <p id="suite-visual-edit-note" class="tool-status" aria-live="polite">Select an area in the preview.</p>
+    </section>
     <div class="calculator-grid">
       <label class="field-label" for="suite-page-numbers">Page numbers<select id="suite-page-numbers" class="tool-input"><option value="none">Do not add</option><option value="bottom-center">Bottom center</option><option value="bottom-right">Bottom right</option></select></label>
       <label class="field-label" for="suite-watermark">Text watermark (optional)<input id="suite-watermark" class="tool-input" maxlength="80" placeholder="DRAFT"></label>
@@ -22,9 +89,21 @@ const templates = {
     <label class="field-label" for="suite-ocr-output">Extracted text</label><textarea id="suite-ocr-output" class="tool-textarea tool-textarea--large" readonly></textarea><div class="tool-actions"><button class="button button--ghost" type="button" data-action="copy-ocr">Copy text</button><button class="button button--ghost" type="button" data-action="download-ocr">Download TXT</button></div>`),
 
   'pdf-document-converter': () => shell('pdf-document-converter', `
-    <div class="segmented" role="group" aria-label="Conversion direction"><button class="segment is-active" type="button" data-doc-mode="pdf-docx" aria-pressed="true">PDF to Word</button><button class="segment" type="button" data-doc-mode="docx-pdf" aria-pressed="false">Word to PDF</button></div>
-    <label class="field-label" for="suite-doc-file">Choose a PDF or DOCX file</label><input id="suite-doc-file" class="tool-input file-picker" type="file" accept="application/pdf,.pdf,.docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+    <label class="field-label" for="suite-doc-mode">Conversion direction<select id="suite-doc-mode" class="tool-input"><option value="pdf-docx">PDF to Word · text only</option><option value="docx-pdf">Word to PDF · text only</option><option value="pdf-xlsx">PDF to Excel · extracted text</option><option value="xlsx-pdf">Excel to PDF · print view</option><option value="pdf-pptx">PDF to PowerPoint · page images</option><option value="pptx-pdf">PowerPoint to PDF · print view</option></select></label>
+    <label class="field-label" for="suite-doc-file">Choose a file</label><input id="suite-doc-file" class="tool-input file-picker" type="file" accept="application/pdf,.pdf,.docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+    <p class="file-meta">Office files stay on your device. Layout, formulas, charts, animations, fonts and page breaks may change. Office to PDF opens your browser’s print dialog. Use a computer for large files.</p>
+    <p class="tool-hint">PDF to Excel estimates rows from selectable text; it does not recreate formulas or tables. PDF to PowerPoint makes image-only slides. Scanned PDFs need OCR first.</p>
     <div class="tool-actions"><button class="button button--primary" type="button" data-action="convert-document">Convert file</button><button class="button button--ghost" type="button" data-action="clear">Clear</button></div><p class="tool-status" id="tool-status" aria-live="polite"></p><div class="file-downloads" id="suite-downloads"></div>`),
+
+  'html-to-pdf': () => shell('html-to-pdf', `
+    <label class="field-label" for="suite-html-title">Document title<input id="suite-html-title" class="tool-input" type="text" maxlength="120"></label>
+    <label class="field-label" for="suite-html-source">HTML content</label><textarea id="suite-html-source" class="tool-textarea tool-textarea--code tool-textarea--large" spellcheck="false" maxlength="250000" placeholder="Type or paste HTML here…"></textarea>
+    <p class="file-meta">Your file is processed locally and is not uploaded.</p><p class="file-meta">HTML content is limited to 250,000 characters. Website URLs are not fetched.</p>
+    <p class="tool-hint">For safety, scripts, styles, images, links, forms and external content are removed. This tool prints simple text and tables; it does not convert a website URL.</p>
+    <div class="tool-actions"><button class="button button--ghost" type="button" data-action="preview-html-pdf">Preview document</button><button class="button button--primary" type="button" data-action="print-html-pdf">Print / Save as PDF</button><button class="button button--ghost" type="button" data-action="clear">Clear</button></div>
+    <iframe id="suite-html-preview" class="html-pdf-preview" sandbox="" title="HTML preview" hidden></iframe>
+    <p class="tool-hint">The browser creates the PDF. Paper size, margins and headers are set in the print dialog.</p>
+    <p class="tool-status" id="tool-status" aria-live="polite">Enter content, then preview it or open your browser’s print dialog.</p>`),
 
   'pdf-to-markdown': () => shell('pdf-to-markdown', `
     <label class="field-label" for="suite-markdown-file">Choose a PDF</label><input id="suite-markdown-file" class="tool-input file-picker" type="file" accept="application/pdf,.pdf">

@@ -6,7 +6,7 @@ import { build as bundle } from 'esbuild';
 import { tools, categories } from '../src/catalog.mjs';
 import { renderGuidePage, renderGuidesIndex, renderHome, renderNotFoundPage, renderToolPage } from '../src/template.mjs';
 import { guidePath, guides } from '../src/guides.mjs';
-import { localePath, locales, localizedTool, packs, ui } from '../src/locales.mjs';
+import { localeHomePath, localePath, locales, localizedTool, packs, pdfLocaleEntries, pdfOnlyLocaleKeys, pdfOnlyLocales, pdfOnlyPacks, pdfToolIds, ui } from '../src/locales.mjs';
 import { localeBundleSource } from '../src/locales/bundle.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
@@ -124,6 +124,34 @@ await bundle({
   target: ['es2022'],
   minify: true,
 });
+await bundle({
+  entryPoints: [join(root, 'src', 'pdf-qpdf-worker.mjs')],
+  outfile: join(vendor, 'pdf-qpdf-worker.mjs'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+  external: ['fs', 'path'],
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'pdf-crop-worker.mjs')],
+  outfile: join(vendor, 'pdf-crop-worker.mjs'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'pdfa-worker.mjs')],
+  outfile: join(vendor, 'pdfa-worker.mjs'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
 await cp(join(root, 'public', 'ocr-languages-4.0.0'), join(dist, 'assets', 'ocr-languages-4.0.0'), { recursive: true });
 const modnetRevision = 'fa2fa546052fba4c08921230a26cc69a333fca12';
 await cp(join(root, 'public', 'models'), join(dist, 'assets', `models-${modnetRevision}`), { recursive: true });
@@ -145,6 +173,7 @@ await cp(join(root, 'node_modules', 'pdf-lib', 'LICENSE.md'), join(vendor, 'LICE
 await cp(join(root, 'node_modules', 'tesseract.js', 'LICENSE.md'), join(vendor, 'LICENSE-tesseract.js.md'));
 await cp(join(root, 'node_modules', 'tesseract.js-core', 'LICENSE'), join(vendor, 'LICENSE-tesseract-core'));
 await cp(join(root, 'node_modules', 'pdfjs-dist', 'LICENSE'), join(vendor, 'LICENSE-pdfjs-dist'));
+await cp(join(root, 'node_modules', 'pdfkit', 'LICENSE'), join(vendor, 'LICENSE-pdfkit'));
 await cp(join(root, 'node_modules', 'jsqr', 'LICENSE'), join(vendor, 'LICENSE-jsqr'));
 await cp(join(root, 'node_modules', 'heic2any', 'LICENSE.md'), join(vendor, 'LICENSE-heic2any.md'));
 await cp(join(root, 'node_modules', 'marked', 'LICENSE'), join(vendor, 'LICENSE-marked'));
@@ -228,6 +257,22 @@ for (const language of languages) {
   }
 }
 
+// The additional 12 languages intentionally receive only genuine PDF routes;
+// they do not get thin home pages or untranslated non-PDF tool URLs.
+for (const language of pdfOnlyLocaleKeys) {
+  const localizedTools = pdfToolIds.map((toolId) => localizedTool(tools.find((tool) => tool.id === toolId), language));
+  if (language !== 'en') {
+    await writeFile(join(dist, 'assets', `locale-${language}.js`), await localeBundleSource(language));
+  }
+  for (const tool of localizedTools) {
+    const toolPath = localePath(language, tool.id);
+    const directory = join(dist, toolPath.replace(/^\//u, ''));
+    await mkdir(directory, { recursive: true });
+    await writeFile(join(directory, 'index.html'), renderToolPage(tool, assetVersion, language, localizedTools));
+    pages.push({ language, path: toolPath });
+  }
+}
+
 await mkdir(join(dist, 'guides'), { recursive: true });
 await writeFile(join(dist, 'guides', 'index.html'), renderGuidesIndex(guides, assetVersion));
 pages.push({ language: 'en', path: guidePath() });
@@ -244,7 +289,8 @@ const xhtmlNamespace = ' xmlns:xhtml="http://www.w3.org/1999/xhtml"';
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"${xhtmlNamespace}>\n${pages.map(({ language, path }) => {
   if (path.startsWith('/guides/')) return `  <url>\n    <loc>https://usefulverse.com${path}</loc>\n  </url>`;
   const toolId = path.match(/\/tools\/([^/]+)\/$/u)?.[1] ?? '';
-  const alternates = languages.map((alternateLanguage) => `    <xhtml:link rel="alternate" hreflang="${locales[alternateLanguage].code}" href="${localizedRoute(alternateLanguage, toolId)}"/>`);
+  const alternateLanguages = pdfToolIds.includes(toolId) ? pdfLocaleEntries : languages.map((key) => ({ key, ...locales[key] }));
+  const alternates = alternateLanguages.map(({ key, code }) => `    <xhtml:link rel="alternate" hreflang="${code}" href="${localizedRoute(key, toolId)}"/>`);
   alternates.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${localizedRoute('en', toolId)}"/>`);
   return `  <url>\n    <loc>${localizedRoute(language, toolId)}</loc>\n${alternates.join('\n')}\n  </url>`;
 }).join('\n')}\n</urlset>\n`;
@@ -260,4 +306,12 @@ for (const language of languages.filter((key) => key !== 'en')) {
   const localeDirectory = localePath(language).replace(/^\//u, '').replace(/\/$/u, '');
   await writeFile(join(dist, localeDirectory, 'llms.txt'), localLlms);
 }
-console.log(`Built ${pages.length} pages (${tools.length} tools × ${languages.length} languages + ${languages.length} home pages + ${guides.length + 1} English guide pages) in ${dist}`);
+for (const language of pdfOnlyLocaleKeys) {
+  const localizedTools = pdfToolIds.map((toolId) => localizedTool(tools.find((tool) => tool.id === toolId), language));
+  const homeUrl = `https://usefulverse.com${localeHomePath(language)}`;
+  const localLlms = `# UsefulVerse — ${pdfOnlyLocales[language].name}\n\n> ${pdfOnlyLocales[language].homeDescription}\n\n${localizedTools.map((tool) => `- [${tool.title}](https://usefulverse.com${localePath(language, tool.id)}): ${tool.description}`).join('\n')}\n\n- [${pdfOnlyPacks[language].meta.homeLabel}](${homeUrl})\n- [Sitemap](https://usefulverse.com/sitemap.xml)\n`;
+  const localeDirectory = pdfOnlyLocales[language].prefix.replace(/^\//u, '');
+  await mkdir(join(dist, localeDirectory), { recursive: true });
+  await writeFile(join(dist, localeDirectory, 'llms.txt'), localLlms);
+}
+console.log(`Built ${pages.length} pages (${tools.length} tools × ${languages.length} core languages, ${languages.length} core home pages, ${pdfToolIds.length} PDF tools × ${pdfOnlyLocaleKeys.length} PDF-only languages, and ${guides.length + 1} English guide pages) in ${dist}`);

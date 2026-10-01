@@ -28,7 +28,7 @@ English remains the default at `/`. The site supports Spanish (`/es/`), French
 Korean (`/ko/`), Indonesian (`/id/`), Hindi (`/hi/`), Arabic (`/ar/`), Simplified
 Chinese (`/zh-cn/`), Bengali (`/bn/`), Russian (`/ru/`), Urdu (`/ur/`), Turkish
 (`/tr/`) and Vietnamese (`/vi/`). Each
-of the 82 tools has a matching URL in every language. The build creates every version as static HTML, adds
+of the 88 tools has a matching URL in every language. The build creates every version as static HTML, adds
 reciprocal `hreflang` and canonical tags, and lists every version with language
 alternates in `sitemap.xml`. It does not call a translation service at build time
 or in the visitor's browser.
@@ -47,8 +47,9 @@ engine. The recording is not uploaded, although the browser may download those f
 again if its cache is cleared. File processing stays on the visitor's device; memory,
 storage, browser, battery, speed and codec support are practical limits, not a server
 upload-size quota. Heavy media code is loaded only when needed. The generated sitemap
-contains 1,333 URLs: 82 tools and 16 home pages in 16 languages, plus an English guides index
-and four sourced, task-specific guides. Guides are published in English only because
+contains 1,609 URLs: 88 core tools and 16 home pages in 16 languages, 15 PDF tools
+in 12 additional PDF-only languages, plus an English guides index and four sourced,
+task-specific guides. Guides are published in English only because
 the existing keyword measurements are for US English; they do not claim localized
 alternates, and they link directly to the related localized tool when a reader switches
 language. They are static HTML and add no server processing or paid API usage.

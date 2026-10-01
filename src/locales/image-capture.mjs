@@ -1,0 +1,100 @@
+// Camera capture controls for Image to PDF. The capture input is a browser/OS
+// hint only; it does not promise live-camera support or automatic scan cleanup.
+export const imageCaptureUiLocales = {
+  en: {
+    'Take a photo': 'Take a photo',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.',
+    'Photo added. Review the page order below.': 'Photo added. Review the page order below.',
+    'Camera could not be opened. Choose images above instead.': 'Camera could not be opened. Choose images above instead.',
+  },
+  es: {
+    'Take a photo': 'Tomar una foto',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'En móviles compatibles se abrirá la cámara trasera. La foto se añade en el dispositivo; no se recorta ni se corrige la perspectiva automáticamente.',
+    'Photo added. Review the page order below.': 'Foto añadida. Revisa el orden de las páginas.',
+    'Camera could not be opened. Choose images above instead.': 'No se pudo abrir la cámara. Elige imágenes con el botón de arriba.',
+  },
+  fr: {
+    'Take a photo': 'Prendre une photo',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'Sur les téléphones compatibles, l’appareil photo arrière s’ouvre. La photo est ajoutée sur l’appareil, sans recadrage ni correction de perspective automatiques.',
+    'Photo added. Review the page order below.': 'Photo ajoutée. Vérifiez l’ordre des pages.',
+    'Camera could not be opened. Choose images above instead.': 'Impossible d’ouvrir l’appareil photo. Choisissez plutôt des images avec le bouton ci-dessus.',
+  },
+  pt: {
+    'Take a photo': 'Tirar uma foto',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'Em celulares compatíveis, a câmera traseira será aberta. A foto é adicionada no dispositivo, sem corte ou correção de perspectiva automática.',
+    'Photo added. Review the page order below.': 'Foto adicionada. Confira a ordem das páginas.',
+    'Camera could not be opened. Choose images above instead.': 'Não foi possível abrir a câmera. Escolha imagens pelo botão acima.',
+  },
+  de: {
+    'Take a photo': 'Foto aufnehmen',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'Auf unterstützten Smartphones öffnet sich die Rückkamera. Das Foto wird lokal hinzugefügt; es wird nicht automatisch zugeschnitten oder perspektivisch korrigiert.',
+    'Photo added. Review the page order below.': 'Foto hinzugefügt. Prüfe die Seitenreihenfolge.',
+    'Camera could not be opened. Choose images above instead.': 'Die Kamera ließ sich nicht öffnen. Wähle stattdessen oben Bilder aus.',
+  },
+  ja: {
+    'Take a photo': '写真を撮る',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': '対応するスマートフォンでは背面カメラが開きます。写真は端末内に追加され、自動トリミングや遠近補正は行われません。',
+    'Photo added. Review the page order below.': '写真を追加しました。下でページ順を確認してください。',
+    'Camera could not be opened. Choose images above instead.': 'カメラを開けませんでした。上のボタンから画像を選択してください。',
+  },
+  ko: {
+    'Take a photo': '사진 촬영',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': '지원되는 휴대폰에서는 후면 카메라가 열립니다. 사진은 기기에 추가되며 자동 자르기나 원근 보정은 되지 않습니다.',
+    'Photo added. Review the page order below.': '사진을 추가했습니다. 아래에서 페이지 순서를 확인하세요.',
+    'Camera could not be opened. Choose images above instead.': '카메라를 열 수 없습니다. 위 버튼에서 이미지를 선택하세요.',
+  },
+  id: {
+    'Take a photo': 'Ambil foto',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'Pada ponsel yang mendukung, kamera belakang akan terbuka. Foto ditambahkan di perangkat; foto tidak dipotong atau dikoreksi perspektif secara otomatis.',
+    'Photo added. Review the page order below.': 'Foto ditambahkan. Periksa urutan halaman di bawah.',
+    'Camera could not be opened. Choose images above instead.': 'Kamera tidak dapat dibuka. Pilih gambar melalui tombol di atas.',
+  },
+  hi: {
+    'Take a photo': 'फ़ोटो लें',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'समर्थित फ़ोन पर पीछे वाला कैमरा खुलेगा। फ़ोटो आपके डिवाइस पर जोड़ी जाएगी; उसे अपने-आप काटा या परिप्रेक्ष्य-सुधारा नहीं जाएगा।',
+    'Photo added. Review the page order below.': 'फ़ोटो जोड़ दी गई। नीचे पेजों का क्रम देखें।',
+    'Camera could not be opened. Choose images above instead.': 'कैमरा नहीं खुला। ऊपर दिए बटन से चित्र चुनें।',
+  },
+  ar: {
+    'Take a photo': 'التقط صورة',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'على الهواتف المدعومة، ستُفتح الكاميرا الخلفية. تُضاف الصورة على الجهاز ولا تُقص أو تُصحح منظورياً تلقائياً.',
+    'Photo added. Review the page order below.': 'أُضيفت الصورة. راجع ترتيب الصفحات أدناه.',
+    'Camera could not be opened. Choose images above instead.': 'تعذر فتح الكاميرا. اختر الصور من الزر أعلاه بدلاً من ذلك.',
+  },
+  zh: {
+    'Take a photo': '拍摄照片',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': '在支持的手机上会打开后置摄像头。照片会添加到本机，但不会自动裁切或校正透视。',
+    'Photo added. Review the page order below.': '已添加照片。请在下方检查页面顺序。',
+    'Camera could not be opened. Choose images above instead.': '无法打开相机。请改用上方按钮选择图片。',
+  },
+  bn: {
+    'Take a photo': 'ছবি তুলুন',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'সমর্থিত ফোনে পেছনের ক্যামেরা খুলবে। ছবিটি ডিভাইসেই যোগ হবে; স্বয়ংক্রিয়ভাবে ক্রপ বা পার্সপেক্টিভ সংশোধন করা হবে না।',
+    'Photo added. Review the page order below.': 'ছবি যোগ হয়েছে। নিচে পৃষ্ঠার ক্রম দেখুন।',
+    'Camera could not be opened. Choose images above instead.': 'ক্যামেরা খোলা যায়নি। উপরের বোতাম দিয়ে ছবি বেছে নিন।',
+  },
+  ru: {
+    'Take a photo': 'Сделать фото',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'На поддерживаемых телефонах откроется задняя камера. Фото добавится на устройство; автоматического кадрирования и исправления перспективы нет.',
+    'Photo added. Review the page order below.': 'Фото добавлено. Проверьте порядок страниц ниже.',
+    'Camera could not be opened. Choose images above instead.': 'Не удалось открыть камеру. Выберите изображения кнопкой выше.',
+  },
+  ur: {
+    'Take a photo': 'تصویر لیں',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'معاون فونز پر پچھلا کیمرا کھلے گا۔ تصویر ڈیوائس پر شامل ہوگی؛ خودکار طور پر کراپ یا پرسپیکٹو درست نہیں ہوگی۔',
+    'Photo added. Review the page order below.': 'تصویر شامل ہوگئی۔ نیچے صفحات کی ترتیب دیکھیں۔',
+    'Camera could not be opened. Choose images above instead.': 'کیمرا نہیں کھل سکا۔ اوپر والے بٹن سے تصاویر منتخب کریں۔',
+  },
+  tr: {
+    'Take a photo': 'Fotoğraf çek',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'Desteklenen telefonlarda arka kamera açılır. Fotoğraf cihaza eklenir; otomatik kırpma veya perspektif düzeltmesi yapılmaz.',
+    'Photo added. Review the page order below.': 'Fotoğraf eklendi. Sayfa sırasını aşağıdan kontrol edin.',
+    'Camera could not be opened. Choose images above instead.': 'Kamera açılamadı. Bunun yerine yukarıdaki düğmeden görsel seçin.',
+  },
+  vi: {
+    'Take a photo': 'Chụp ảnh',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'Trên điện thoại được hỗ trợ, camera sau sẽ mở. Ảnh được thêm ngay trên thiết bị; không tự động cắt hoặc chỉnh phối cảnh.',
+    'Photo added. Review the page order below.': 'Đã thêm ảnh. Hãy xem thứ tự trang bên dưới.',
+    'Camera could not be opened. Choose images above instead.': 'Không thể mở camera. Hãy chọn ảnh bằng nút ở trên.',
+  },
+};

@@ -5,7 +5,10 @@ import { tools } from '../catalog.mjs';
 import { renderToolPage } from '../template.mjs';
 import { packs, runtimeMessages } from '../locales.mjs';
 import { imageFormatLocales } from './image-formats.mjs';
+import { imageCaptureUiLocales } from './image-capture.mjs';
 import { officePackageLocales, tiffHints } from './office-package.mjs';
+import { htmlToPdfLocales } from './html-to-pdf.mjs';
+import { pdfToPdfaLocales } from './pdf-to-pdfa.mjs';
 import { pageKeys, templateKeys } from './template-keys.mjs';
 import { numberToWordsHook } from './test-harness.mjs';
 
@@ -141,6 +144,24 @@ test('image-to-PDF empty-state file-size and pixel guidance is translated in eve
   }
 });
 
+test('image-to-PDF camera capture copy is localized in every shipped language', () => {
+  const keys = [
+    'Take a photo',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.',
+    'Photo added. Review the page order below.',
+    'Camera could not be opened. Choose images above instead.',
+  ];
+  for (const language of Object.keys(packs)) {
+    const translations = imageCaptureUiLocales[language];
+    assert.ok(translations, `${language} camera copy`);
+    for (const key of keys) {
+      assert.ok(translations[key], `${language} must translate: ${key}`);
+      if (language !== 'en') assert.notEqual(translations[key], key, `${language} should not show English copy: ${key}`);
+      assert.equal(runtimeMessages[language]?.[key], translations[key], `${language} runtime copy: ${key}`);
+    }
+  }
+});
+
 test('Office compressor copy, FAQs and local-processing limits exist in every shipped language', () => {
   for (const language of Object.keys(imageFormatLocales)) {
     const data = officePackageLocales[language];
@@ -168,5 +189,46 @@ test('TIFF/TIF support and its first-page limitation are explicit on every local
       const html = renderToolPage({ ...tool, title: values[0], shortTitle: values[1], description: values[2], keywords: values[3], intro: values[4], body: values[5] }, 'test', language, tools);
       assert.ok(html.includes(tiffHints[language]), `${language}/${id} published TIFF guidance`);
     }
+  }
+});
+
+test('HTML-to-PDF controls, SEO copy and safe-use limits are localized in every current language', () => {
+  const keys = Object.keys(htmlToPdfLocales.en.ui).sort();
+  const tool = tools.find((item) => item.id === 'html-to-pdf');
+  assert.ok(tool, 'HTML-to-PDF tool is in the catalog');
+  for (const [language, data] of Object.entries(htmlToPdfLocales)) {
+    assert.deepEqual(Object.keys(data.ui).sort(), keys, `${language} UI keys`);
+    assert.equal(data.copy['html-to-pdf'].length, 6, `${language} page copy`);
+    const [title, , description, keywords, intro, body] = data.copy['html-to-pdf'];
+    assert.ok(title && description.length >= 25 && description.length <= 155 && keywords && intro && body, `${language} SEO content`);
+    assert.ok(body.length > 120, `${language} explains browser-print limitations`);
+    if (language !== 'en') assert.notEqual(title, htmlToPdfLocales.en.copy['html-to-pdf'][0], `${language} page title must be translated`);
+    for (const [key, value] of Object.entries(data.ui)) {
+      assert.ok(value.trim(), `${language} UI ${key}`);
+      if (language !== 'en') assert.notEqual(value, key, `${language} should not leave ${key} in English`);
+      assert.equal(runtimeMessages[language]?.[key], value, `${language} runtime mapping ${key}`);
+    }
+    const html = renderToolPage({ ...tool, title, shortTitle: data.copy['html-to-pdf'][1], description, keywords, intro, body }, 'test', language, tools);
+    assert.ok(html.includes(`data-tool="html-to-pdf"`), `${language} has the converter UI`);
+    assert.ok(html.includes(data.ui['HTML content is limited to 250,000 characters. Website URLs are not fetched.']), `${language} has its input cap`);
+  }
+});
+
+test('PDF/A visual-copy UI and page copy are complete in every current locale', () => {
+  const supported = ['en', 'es', 'fr', 'pt', 'de', 'ja', 'ko', 'id', 'hi', 'ar', 'zh', 'bn', 'ru', 'ur', 'tr', 'vi'];
+  assert.deepEqual(Object.keys(pdfToPdfaLocales).sort(), [...supported].sort());
+  const uiKeys = Object.keys(pdfToPdfaLocales.en.ui).sort();
+  const deviceMetaKey = 'This PDF is processed on your device and is not uploaded. A computer is recommended for this memory-intensive conversion.';
+  for (const language of supported) {
+    const localized = pdfToPdfaLocales[language];
+    assert.deepEqual(Object.keys(localized.ui).sort(), uiKeys, `${language} UI keys`);
+    assert.equal(localized.copy['pdf-to-pdfa'].length, 6, `${language} SEO copy fields`);
+    assert.ok(localized.ui[deviceMetaKey]?.trim(), `${language} local-processing meta`);
+    for (const [index, value] of localized.copy['pdf-to-pdfa'].entries()) {
+      assert.ok(value.trim(), `${language} copy field ${index} is empty`);
+      if (language !== 'en') assert.notEqual(value, pdfToPdfaLocales.en.copy['pdf-to-pdfa'][index], `${language} copy field ${index} fell back to English`);
+    }
+    if (language !== 'en') for (const key of uiKeys) assert.notEqual(localized.ui[key], pdfToPdfaLocales.en.ui[key], `${language} UI string ${key} fell back to English`);
+    if (language !== 'en') assert.notEqual(localized.ui[deviceMetaKey], deviceMetaKey, `${language} local-processing meta fell back to English`);
   }
 });
