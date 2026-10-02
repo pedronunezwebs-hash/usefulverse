@@ -34,7 +34,10 @@ const brandSuffix = ' | UsefulVerse';
 export function positionSeoMetadata(metadata, language = 'en') {
   const [fullTitle, compactDescription] = positioning[language] ?? positioning.en;
   const inputTitle = String(metadata.title ?? '').trim();
-  const title = inputTitle.replace(/\s*\|\s*UsefulVerse$/u, '').trim();
+  const title = inputTitle
+    .replace(/\s*\|\s*UsefulVerse$/u, '')
+    .replace(/^UsefulVerse\s*[—–-]\s*/u, '')
+    .trim();
   const description = String(metadata.description ?? '').trim();
 
   // Keep the search intent at the beginning. Add the free/no-usage-cap claim only
