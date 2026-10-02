@@ -27,5 +27,9 @@ test('home-page titles and descriptions also obey the same positioning and lengt
     const description = decode(html.match(/<meta name="description" content="([^"]*)"/u)?.[1] ?? '');
     assert.ok(title.length >= 15 && title.length <= 65, `${language} home title length ${title.length}`);
     assert.ok(description.length >= 25 && description.length <= 155, `${language} home description length ${description.length}`);
+    assert.doesNotMatch(title, /UsefulVerse.*UsefulVerse/u, `${language} home title repeats the brand`);
+    assert.match(title, /UsefulVerse$/u, `${language} home title should end with the brand`);
+    if (language === 'en') assert.match(title, /Free · no limits/u);
+    if (language === 'es') assert.match(title, /Gratis · sin límites/u);
   }
 });
