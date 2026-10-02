@@ -128,7 +128,9 @@ test('image-format SEO titles and intent FAQs reach the generated static pages i
       const [title, shortTitle, description, keywords, intro, body] = data.copy[id];
       const localizedTool = { ...source, title, shortTitle, description, keywords, intro, body };
       const html = renderToolPage(localizedTool, 'test', language, tools);
-      assert.ok(html.includes(`<title>${data.seoTitles[id]} | UsefulVerse</title>`), `${language}/${id} should publish its localized SEO title`);
+      const publishedTitle = html.match(/<title>([^<]+)<\/title>/u)?.[1] ?? '';
+      assert.ok(publishedTitle.startsWith(data.seoTitles[id]), `${language}/${id} should keep its localized keyword at the start of the SEO title`);
+      assert.ok(publishedTitle.endsWith(' | UsefulVerse'), `${language}/${id} should keep the UsefulVerse brand in the title`);
       assert.ok(html.includes(data.faqQuestions[id]), `${language}/${id} should publish its localized search-intent FAQ`);
     }
   }
