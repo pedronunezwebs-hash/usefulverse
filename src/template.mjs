@@ -467,7 +467,7 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
         { question: faqCopy[language].privacyQuestion, answer: faqCopy[language].privacyAnswer },
       ],
     };
-  const seoData = positionSeoMetadata(baseSeoData, language);
+  const seoData = baseSeoData;
   const faqByQuestion = new Map();
   for (const item of [...(seoData.faq ?? []), ...(longtailFaqs[tool.id]?.[language] ?? [])]) {
     const { question } = item;
@@ -749,6 +749,7 @@ export function renderGuidePage(guide, assetVersion = '', language = 'en') {
 }
 
 export function shell({ title, description, canonical, body, schema = '', assetVersion = '', lang = 'en', alternates = '', toolId = '', localeToolId = toolId, defaultAlternate = true, ogType = 'website', localeRoute }) {
+  const positionedMetadata = positionSeoMetadata({ title, description }, lang);
   const assetSuffix = assetVersion ? `?v=${escapeHtml(assetVersion)}` : '';
   const homeHref = localeHomePath(lang);
   const languageLocales = pdfToolIds.includes(localeToolId) ? pdfLocaleEntries : localeEntries;
@@ -771,15 +772,15 @@ export function shell({ title, description, canonical, body, schema = '', assetV
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>${escapeHtml(title)}</title>
-    <meta name="description" content="${escapeHtml(description)}">
+    <title>${escapeHtml(positionedMetadata.title)}</title>
+    <meta name="description" content="${escapeHtml(positionedMetadata.description)}">
     <link rel="canonical" href="${escapeHtml(canonical)}">
     ${alternates}
     ${defaultAlternateTag}
     <meta name="theme-color" content="#0b1324">
     <meta property="og:type" content="${escapeHtml(ogType)}">
-    <meta property="og:title" content="${escapeHtml(title)}">
-    <meta property="og:description" content="${escapeHtml(description)}">
+    <meta property="og:title" content="${escapeHtml(positionedMetadata.title)}">
+    <meta property="og:description" content="${escapeHtml(positionedMetadata.description)}">
     <meta property="og:url" content="${escapeHtml(canonical)}">
     <meta property="og:site_name" content="UsefulVerse">
     <meta property="og:locale" content="${escapeHtml((siteMeta?.meta.tag ?? { en: 'en-US', es: 'es-ES', fr: 'fr-FR', pt: 'pt-BR', de: 'de-DE' }[lang] ?? localeCode).replace('-', '_'))}">
