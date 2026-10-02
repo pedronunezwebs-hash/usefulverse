@@ -1,5 +1,6 @@
 import { tools } from './catalog.mjs';
 import { seo } from './seo.mjs';
+import { positionSeoMetadata } from './seo-positioning.mjs';
 import { localeEntries, localeHomePath, localePath, locales, localizedTool, numberWordsLocaleCodes, packs, pdfLocaleEntries, pdfOnlyLocales, pdfOnlyPacks, pdfToolIds, translateStaticHtml, ui } from './locales.mjs';
 import { imageFormatLocales } from './locales/image-formats.mjs';
 import { longtailFaqs } from './locales/longtail.mjs';
@@ -440,7 +441,7 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
   const pack = packs[language] ?? pdfOnlyPacks[language];
   const imageFormatData = imageFormatLocales[language];
   const imageFormatCopy = imageFormatData?.copy?.[tool.id];
-  const seoData = language === 'en'
+  const baseSeoData = language === 'en'
     ? (seo[tool.id] ?? { title: tool.title, description: `${tool.description} Free, fast and private in your browser.` })
     : pack ? {
       title: pack.seo?.[tool.id]?.title ?? tool.shortTitle,
@@ -466,6 +467,7 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
         { question: faqCopy[language].privacyQuestion, answer: faqCopy[language].privacyAnswer },
       ],
     };
+  const seoData = positionSeoMetadata(baseSeoData, language);
   const faqByQuestion = new Map();
   for (const item of [...(seoData.faq ?? []), ...(longtailFaqs[tool.id]?.[language] ?? [])]) {
     const { question } = item;

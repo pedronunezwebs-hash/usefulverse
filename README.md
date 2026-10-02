@@ -7,7 +7,7 @@ Browser-first collection of fast, private, static tools for everyday work.
 - Processing happens in the browser whenever possible.
 - No account, upload or paid API is required.
 - Each useful tool gets its own stable, indexable URL.
-- The current catalog contains 82 browser-only tools across writing, data, developer, SEO, design, privacy, text, files and everyday tasks.
+- The current catalog contains 88 browser-only tools across writing, data, developer, SEO, design, privacy, text, files and everyday tasks.
 - The public build is static and deployable to Cloudflare Pages.
 - CSS and JavaScript URLs are content-versioned during the build so CDN caches cannot serve an old runtime after a deploy.
 - HTML uses short browser and edge cache lifetimes; versioned assets remain immutable for repeat visits.
@@ -23,12 +23,15 @@ Open `http://localhost:4173` after starting the server.
 
 ## Languages and localized URLs
 
-English remains the default at `/`. The site supports Spanish (`/es/`), French
-(`/fr/`), Brazilian Portuguese (`/pt-br/`), German (`/de/`), Japanese (`/ja/`),
-Korean (`/ko/`), Indonesian (`/id/`), Hindi (`/hi/`), Arabic (`/ar/`), Simplified
-Chinese (`/zh-cn/`), Bengali (`/bn/`), Russian (`/ru/`), Urdu (`/ur/`), Turkish
-(`/tr/`) and Vietnamese (`/vi/`). Each
-of the 88 tools has a matching URL in every language. The build creates every version as static HTML, adds
+English remains the default at `/`. The site has 28 complete language versions:
+Spanish (`/es/`), French (`/fr/`), Brazilian Portuguese (`/pt-br/`), German
+(`/de/`), Japanese (`/ja/`), Korean (`/ko/`), Indonesian (`/id/`), Hindi
+(`/hi/`), Arabic (`/ar/`), Simplified Chinese (`/zh-cn/`), Bengali (`/bn/`),
+Russian (`/ru/`), Urdu (`/ur/`), Turkish (`/tr/`), Vietnamese (`/vi/`), Italian
+(`/it/`), Traditional Chinese (`/zh_tw/`), Bulgarian (`/bg/`), Catalan (`/ca/`),
+Dutch (`/nl/`), Greek (`/el/`), Malay (`/ms/`), Polish (`/pl/`), Swedish
+(`/sv/`), Thai (`/th/`), Ukrainian (`/uk/`) and Swahili (`/sw/`). Each of the
+88 tools has a matching URL in every language. The build creates every version as static HTML, adds
 reciprocal `hreflang` and canonical tags, and lists every version with language
 alternates in `sitemap.xml`. It does not call a translation service at build time
 or in the visitor's browser.
@@ -47,12 +50,9 @@ engine. The recording is not uploaded, although the browser may download those f
 again if its cache is cleared. File processing stays on the visitor's device; memory,
 storage, browser, battery, speed and codec support are practical limits, not a server
 upload-size quota. Heavy media code is loaded only when needed. The generated sitemap
-contains 1,609 URLs: 88 core tools and 16 home pages in 16 languages, 15 PDF tools
-in 12 additional PDF-only languages, plus an English guides index and four sourced,
-task-specific guides. Guides are published in English only because
-the existing keyword measurements are for US English; they do not claim localized
-alternates, and they link directly to the related localized tool when a reader switches
-language. They are static HTML and add no server processing or paid API usage.
+contains 2,632 URLs: 88 tools and one home page in each of 28 languages, plus five
+guide routes (the guide index and four sourced, task-specific guides) in every language.
+Guides are static HTML and add no server processing or paid API usage.
 
 TIFF/TIF images can be opened locally in the image converter, resizer and image-to-PDF
 tool. Multi-page TIFF uses only its first page, and some compression variants depend on
@@ -75,7 +75,8 @@ practical limits. The tools do not upload chosen files, but local processing can
 that every format or file will work. Keep an original copy and review converted results.
 
 Japanese, Korean, Indonesian, Hindi, Arabic, Simplified Chinese, Bengali, Russian,
-Urdu, Turkish and Vietnamese are self-contained language packs in
+Urdu, Turkish, Vietnamese, Italian, Traditional Chinese, Bulgarian, Catalan, Dutch,
+Greek, Malay, Polish, Swedish, Thai, Ukrainian and Swahili are self-contained language packs in
 `src/locales/<key>/`: `core.mjs` (site meta, page strings, runtime templates,
 shared UI), `tools-a|b|c.mjs` (UI strings plus localized copy, SEO title and
 description, and FAQ per tool), `runtime.js` (browser hook appended to the locale
