@@ -2,6 +2,7 @@ import { readFile } from 'node:fs/promises';
 import vm from 'node:vm';
 import { locales, packs, runtimeMessages, runtimeTemplates, ui } from '../locales.mjs';
 import { localeBundleSource } from './bundle.mjs';
+import { numberWordsRuntimeSource } from './number-words-runtime.mjs';
 
 const appSource = await readFile(new URL('../app.js', import.meta.url), 'utf8');
 
@@ -50,6 +51,7 @@ export async function runTool(language, toolId, action, values = {}, { checked =
   };
   const context = { document, window: {}, URL, crypto: globalThis.crypto, atob, btoa, TextEncoder, TextDecoder, setTimeout, clearTimeout, Option: class { constructor(text, value) { this.text = text; this.value = value; } }, navigator: { clipboard: { writeText: async (text) => { context.copied = text; } } } };
   if (language !== 'en') vm.runInNewContext(await localeBundleSource(language), context);
+  if (toolId === 'number-to-words-converter') vm.runInNewContext(await numberWordsRuntimeSource(language), context);
   vm.runInNewContext(appSource, context);
   const click = (name) => handlers.click?.({ target: { closest: (selector) => selector === '[data-action]' ? { dataset: { action: name } } : selector === '[data-case]' ? { dataset: { case: name } } : null } });
   if (action) click(action);
@@ -61,5 +63,6 @@ export async function numberToWordsHook(language) {
   await ensurePack(language);
   const context = { window: {} };
   vm.runInNewContext(await localeBundleSource(language), context);
+  vm.runInNewContext(await numberWordsRuntimeSource(language), context);
   return context.window.usefulverseLocale.numberToWords ?? null;
 }

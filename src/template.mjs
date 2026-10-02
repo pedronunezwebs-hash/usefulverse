@@ -1,9 +1,9 @@
 import { tools } from './catalog.mjs';
 import { seo } from './seo.mjs';
-import { localeEntries, localeHomePath, localePath, locales, packs, pdfLocaleEntries, pdfOnlyLocales, pdfOnlyPacks, pdfToolIds, translateStaticHtml, ui } from './locales.mjs';
+import { localeEntries, localeHomePath, localePath, locales, localizedTool, numberWordsLocaleCodes, packs, pdfLocaleEntries, pdfOnlyLocales, pdfOnlyPacks, pdfToolIds, translateStaticHtml, ui } from './locales.mjs';
 import { imageFormatLocales } from './locales/image-formats.mjs';
 import { longtailFaqs } from './locales/longtail.mjs';
-import { guideCanonical, guidePath, guides } from './guides.mjs';
+import { guideCanonical, guidePath, guidesForLocale } from './guides.mjs';
 import { expandedToolMarkup } from './expanded-template.mjs';
 import { browserBatchToolMarkup } from './browser-batch-template.mjs';
 import { toolSuiteMarkup } from './tool-suite-template.mjs';
@@ -517,11 +517,12 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
     mainEntity: faq.map(({ question, answer }) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })),
   })}</script>` : '';
   const faqSection = faq.length ? `<section class="tool-faq" aria-labelledby="faq-title"><div><p class="eyebrow">Common questions</p><h2 id="faq-title">About ${escapeHtml(tool.title)}.</h2></div><div class="faq-list">${faq.map(({ question, answer }) => `<details><summary>${escapeHtml(question)}</summary><p>${escapeHtml(answer)}</p></details>`).join('')}</div></section>` : '';
-  const guideLinks = language === 'en' ? (relatedGuideSlugs[tool.id] ?? []).map((slug) => {
-    const guide = guides.find((item) => item.slug === slug);
-    return guide ? `<a class="guide-link-card" href="${guidePath(slug)}"><span class="eyebrow">Step-by-step guide</span><strong>${escapeHtml(guide.title)}</strong><span>Read the walkthrough <span aria-hidden="true">↗</span></span></a>` : '';
-  }).join('') : '';
-  const guidesSection = guideLinks ? `<section class="tool-guides" aria-labelledby="tool-guides-title"><div><p class="eyebrow">Learn the steps</p><h2 id="tool-guides-title">Helpful guides</h2></div><div class="guide-link-grid">${guideLinks}</div></section>` : '';
+  const pageGuides = guidesForLocale(language);
+  const guideLinks = (relatedGuideSlugs[tool.id] ?? []).map((slug) => {
+    const guide = pageGuides.find((item) => item.slug === slug);
+    return guide ? `<a class="guide-link-card" href="${guidePath(slug, language)}"><span class="eyebrow">${escapeHtml(ui[language]?.['UsefulVerse guide'] ?? 'UsefulVerse guide')}</span><strong>${escapeHtml(guide.title)}</strong><span>${escapeHtml(ui[language]?.['Read the guide'] ?? 'Read the guide')} <span aria-hidden="true">↗</span></span></a>` : '';
+  }).join('');
+  const guidesSection = guideLinks ? `<section class="tool-guides" aria-labelledby="tool-guides-title"><div><p class="eyebrow">${escapeHtml(ui[language]?.['UsefulVerse guides'] ?? 'UsefulVerse guides')}</p><h2 id="tool-guides-title">${escapeHtml(ui[language]?.['All guides'] ?? 'All guides')}</h2></div><div class="guide-link-grid">${guideLinks}</div></section>` : '';
   const pdfOnlyMarkup = pdfOnlyLocales[language] ? toolMarkup(tool.id)
     .replace(/<p class="(?:tool-hint|file-meta)"[^>]*>[\s\S]*?<\/p>/gu, '') : toolMarkup(tool.id);
   const pdfLimitations = pdfOnlyLocales[language]
@@ -642,82 +643,110 @@ export function renderNotFoundPage() {
 </html>`;
 }
 
+const guideMathAtom = String.raw`(?:\([^()\n]*\d[^()\n]*\)|\d[\d.,]*%?)`;
+const guideMathPattern = new RegExp(`(?<![\\p{L}\\p{N}])${guideMathAtom}(?:\\s*[×÷+−=\\-]\\s*${guideMathAtom})+(?![\\p{L}\\p{N}])`, 'gu');
+
+function guideTextMarkup(value) {
+  const source = String(value);
+  let cursor = 0;
+  let html = '';
+  for (const match of source.matchAll(guideMathPattern)) {
+    html += escapeHtml(source.slice(cursor, match.index));
+    html += `<bdi dir="ltr">${escapeHtml(match[0])}</bdi>`;
+    cursor = match.index + match[0].length;
+  }
+  return html + escapeHtml(source.slice(cursor));
+}
+
 function guideBlockMarkup(block) {
-  if (block.type === 'p') return `<p>${escapeHtml(block.text)}</p>`;
-  if (block.type === 'note') return `<aside class="guide-note"><strong>${escapeHtml(block.title)}</strong><p>${escapeHtml(block.text)}</p></aside>`;
-  if (block.type === 'formula') return `<div class="guide-formula"><span>${escapeHtml(block.label)}</span><code>${escapeHtml(block.value)}</code></div>`;
+  if (block.type === 'p') return `<p>${guideTextMarkup(block.text)}</p>`;
+  if (block.type === 'note') return `<aside class="guide-note"><strong>${escapeHtml(block.title)}</strong><p>${guideTextMarkup(block.text)}</p></aside>`;
+  if (block.type === 'formula') return `<div class="guide-formula"><span>${escapeHtml(block.label)}</span><code dir="ltr">${escapeHtml(block.value)}</code></div>`;
   if (block.type === 'list' || block.type === 'steps') {
     const tag = block.type === 'steps' ? 'ol' : 'ul';
-    return `<${tag}>${block.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</${tag}>`;
+    return `<${tag}>${block.items.map((item) => `<li>${guideTextMarkup(item)}</li>`).join('')}</${tag}>`;
   }
-  if (block.type === 'table') return `<div class="guide-table-wrap" role="region" aria-label="${escapeHtml(block.caption)}" tabindex="0"><table><caption>${escapeHtml(block.caption)}</caption><thead><tr>${block.headers.map((header) => `<th scope="col">${escapeHtml(header)}</th>`).join('')}</tr></thead><tbody>${block.rows.map((row) => `<tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  if (block.type === 'table') return `<div class="guide-table-wrap" role="region" aria-label="${escapeHtml(block.caption)}" tabindex="0"><table><caption>${escapeHtml(block.caption)}</caption><thead><tr>${block.headers.map((header) => `<th scope="col">${escapeHtml(header)}</th>`).join('')}</tr></thead><tbody>${block.rows.map((row) => `<tr>${row.map((cell) => `<td${/^[0-9A-F\s]+$/u.test(cell) ? ' dir="ltr"' : ''}>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
   return '';
 }
 
-export function renderGuidesIndex(guides, assetVersion = '') {
-  const canonical = guideCanonical();
-  const alternates = '';
+const guideAlternates = (slug = '') => `${localeEntries.map(({ key, code }) => `<link rel="alternate" hreflang="${code}" href="https://usefulverse.com${guidePath(slug, key)}">`).join('\n    ')}\n    <link rel="alternate" hreflang="x-default" href="https://usefulverse.com${guidePath(slug)}">`;
+const fitMetaDescription = (value) => value.length <= 155 ? value : `${value.slice(0, 151).replace(/\s+\S*$/u, '')}…`;
+
+export function renderGuidesIndex(guides, assetVersion = '', language = 'en') {
+  const copy = ui[language] ?? {};
+  const canonical = guideCanonical('', language);
+  const title = copy['Practical Guides for Everyday Tools | UsefulVerse'] ?? 'Practical Guides for Everyday Tools | UsefulVerse';
+  const description = fitMetaDescription(copy['Clear, sourced walkthroughs for grades, Google Docs, Excel and number conversions, with free tools to finish the task.'] ?? 'Clear, sourced walkthroughs for grades, Google Docs, Excel and number conversions, with free tools to finish the task.');
   const schema = `<script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'UsefulVerse Guides',
+    name: copy['UsefulVerse Guides'] ?? 'UsefulVerse Guides',
     url: canonical,
-    description: 'Practical, sourced walkthroughs for common tasks and free browser tools.',
-    inLanguage: 'en-US',
+    description,
+    inLanguage: locales[language]?.code ?? 'en',
   })}</script>`;
-  const cards = guides.map((guide) => `<a class="guide-card" href="${guidePath(guide.slug)}"><span class="eyebrow">UsefulVerse guide</span><h2>${escapeHtml(guide.title)}</h2><p>${escapeHtml(guide.description)}</p><span class="guide-card__link">Read the guide <span aria-hidden="true">↗</span></span></a>`).join('');
-  return shell({
-    title: 'Practical Guides for Everyday Tools | UsefulVerse',
-    description: 'Clear, sourced walkthroughs for grades, Google Docs, Excel and number conversions, with free tools to finish the task.',
+  const cards = guides.map((guide) => `<a class="guide-card" href="${guidePath(guide.slug, language)}"><span class="eyebrow">${escapeHtml(copy['UsefulVerse guide'] ?? 'UsefulVerse guide')}</span><h2>${escapeHtml(guide.title)}</h2><p>${escapeHtml(guide.description)}</p><span class="guide-card__link">${escapeHtml(copy['Read the guide'] ?? 'Read the guide')} <span aria-hidden="true">↗</span></span></a>`).join('');
+  const rendered = shell({
+    title,
+    description,
     canonical,
-    body: `<main class="guides-page"><div class="page-container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">UsefulVerse</a><span aria-hidden="true">/</span><span>Guides</span></nav><header class="guides-hero"><p class="eyebrow">UsefulVerse guides</p><h1>Know the steps.<br><span>Then get it done.</span></h1><p class="home-lead">Short, practical walkthroughs that explain the details a tool cannot guess for you. Each guide links to a free browser tool when it helps.</p></header><section class="guide-card-grid" aria-label="All guides">${cards}</section></div></main>`,
+    body: `<main class="guides-page"><div class="page-container"><nav class="breadcrumbs" aria-label="${escapeHtml(copy.Breadcrumb ?? 'Breadcrumb')}"><a href="${localeHomePath(language)}">UsefulVerse</a><span aria-hidden="true">/</span><span>${escapeHtml(copy.Guides ?? 'Guides')}</span></nav><header class="guides-hero"><p class="eyebrow">${escapeHtml(copy['UsefulVerse guides'] ?? 'UsefulVerse guides')}</p><h1>${escapeHtml(copy['Know the steps.'] ?? 'Know the steps.')}<br><span>${escapeHtml(copy['Then get it done.'] ?? 'Then get it done.')}</span></h1><p class="home-lead">${escapeHtml(copy['Short, practical walkthroughs that explain the details a tool cannot guess for you. Each guide links to a free browser tool when it helps.'] ?? 'Short, practical walkthroughs that explain the details a tool cannot guess for you. Each guide links to a free browser tool when it helps.')}</p></header><section class="guide-card-grid" aria-label="${escapeHtml(copy['All guides'] ?? 'All guides')}">${cards}</section></div></main>`,
     schema,
     assetVersion,
-    lang: 'en',
-    alternates,
+    lang: language,
+    alternates: guideAlternates(),
     defaultAlternate: false,
+    localeRoute: (key) => guidePath('', key),
   });
+  return language === 'en' ? rendered : translateStaticHtml(rendered, language);
 }
 
-export function renderGuidePage(guide, assetVersion = '') {
-  const canonical = guideCanonical(guide.slug);
+export function renderGuidePage(guide, assetVersion = '', language = 'en') {
+  const copy = ui[language] ?? {};
+  const canonical = guideCanonical(guide.slug, language);
+  const articleTitle = guide.title.length > 55 ? guide.title : `${guide.title} | UsefulVerse`;
+  const description = fitMetaDescription(guide.description);
   const schema = `<script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: guide.title,
-    description: guide.description,
+    description,
     mainEntityOfPage: canonical,
     url: canonical,
-    inLanguage: 'en-US',
+    inLanguage: locales[language]?.code ?? 'en',
   })}</script><script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'UsefulVerse', item: 'https://usefulverse.com/' },
-      { '@type': 'ListItem', position: 2, name: 'Guides', item: guideCanonical() },
+      { '@type': 'ListItem', position: 2, name: copy.Guides ?? 'Guides', item: guideCanonical('', language) },
       { '@type': 'ListItem', position: 3, name: guide.title, item: canonical },
     ],
   })}</script>`;
   const sections = guide.sections.map((section) => `<section class="guide-section"><h2>${escapeHtml(section.heading)}</h2>${section.blocks.map(guideBlockMarkup).join('')}</section>`).join('');
-  const sources = guide.sources?.length ? `<section class="guide-sources" aria-labelledby="guide-sources-title"><h2 id="guide-sources-title">Sources and further reading</h2><ul>${guide.sources.map((source) => `<li><a href="${escapeHtml(source.url)}">${escapeHtml(source.label)}</a></li>`).join('')}</ul></section>` : '';
+  const sources = guide.sources?.length ? `<section class="guide-sources" aria-labelledby="guide-sources-title"><h2 id="guide-sources-title">${escapeHtml(copy['Sources and further reading'] ?? 'Sources and further reading')}</h2><ul>${guide.sources.map((source) => `<li><a href="${escapeHtml(source.url)}">${escapeHtml(source.label)}</a></li>`).join('')}</ul></section>` : '';
   const relatedTool = tools.find((tool) => tool.id === guide.toolId);
-  const toolCta = relatedTool ? `<aside class="guide-sidebar"><p class="eyebrow">Try the free tool</p><h2>${escapeHtml(relatedTool.title)}</h2><p>${escapeHtml(guide.toolCta ?? relatedTool.description)}</p><a class="button button--primary" href="${toolUrl(relatedTool.id)}">Open the tool <span aria-hidden="true">↗</span></a><p class="guide-sidebar__privacy">Runs in your browser. Your input is not uploaded.</p></aside>` : '';
-  return shell({
-    title: `${guide.title} | UsefulVerse`,
-    description: guide.description,
+  const translatedTool = relatedTool ? localizedTool(relatedTool, language) : null;
+  const toolCta = translatedTool ? `<aside class="guide-sidebar"><p class="eyebrow">${escapeHtml(copy['Try the free tool'] ?? 'Try the free tool')}</p><h2>${escapeHtml(translatedTool.title)}</h2><p>${escapeHtml(guide.toolCta ?? translatedTool.description)}</p><a class="button button--primary" href="${toolUrl(translatedTool.id, language)}">${escapeHtml(copy['Open the tool'] ?? 'Open the tool')} <span aria-hidden="true">↗</span></a><p class="guide-sidebar__privacy">${escapeHtml(copy['Runs in your browser. Your input is not uploaded.'] ?? 'Runs in your browser. Your input is not uploaded.')}</p></aside>` : '';
+  const rendered = shell({
+    title: articleTitle,
+    description,
     canonical,
-    body: `<main class="guide-page"><div class="page-container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">UsefulVerse</a><span aria-hidden="true">/</span><a href="${guidePath()}">Guides</a><span aria-hidden="true">/</span><span>${escapeHtml(guide.title)}</span></nav><header class="guide-hero"><p class="eyebrow">UsefulVerse guide</p><h1>${escapeHtml(guide.title)}</h1><p class="tool-lead">${escapeHtml(guide.intro)}</p></header><div class="guide-layout"><article class="guide-content">${sections}${sources}<p class="guide-backlink"><a href="${guidePath()}">← Browse all UsefulVerse guides</a></p></article>${toolCta}</div></div></main>`,
+    body: `<main class="guide-page"><div class="page-container"><nav class="breadcrumbs" aria-label="${escapeHtml(copy.Breadcrumb ?? 'Breadcrumb')}"><a href="${localeHomePath(language)}">UsefulVerse</a><span aria-hidden="true">/</span><a href="${guidePath('', language)}">${escapeHtml(copy.Guides ?? 'Guides')}</a><span aria-hidden="true">/</span><span>${escapeHtml(guide.title)}</span></nav><header class="guide-hero"><p class="eyebrow">${escapeHtml(copy['UsefulVerse guide'] ?? 'UsefulVerse guide')}</p><h1>${escapeHtml(guide.title)}</h1><p class="tool-lead">${escapeHtml(guide.intro)}</p></header><div class="guide-layout"><article class="guide-content">${sections}${sources}<p class="guide-backlink"><a href="${guidePath('', language)}">← ${escapeHtml(copy['Browse all UsefulVerse guides'] ?? 'Browse all UsefulVerse guides')}</a></p></article>${toolCta}</div></div></main>`,
     schema,
     assetVersion,
-    lang: 'en',
-    alternates: '',
+    lang: language,
+    alternates: guideAlternates(guide.slug),
     localeToolId: guide.toolId,
     defaultAlternate: false,
     ogType: 'article',
+    localeRoute: (key) => guidePath(guide.slug, key),
   });
+  return language === 'en' ? rendered : translateStaticHtml(rendered, language);
 }
 
-export function shell({ title, description, canonical, body, schema = '', assetVersion = '', lang = 'en', alternates = '', toolId = '', localeToolId = toolId, defaultAlternate = true, ogType = 'website' }) {
+export function shell({ title, description, canonical, body, schema = '', assetVersion = '', lang = 'en', alternates = '', toolId = '', localeToolId = toolId, defaultAlternate = true, ogType = 'website', localeRoute }) {
   const assetSuffix = assetVersion ? `?v=${escapeHtml(assetVersion)}` : '';
   const homeHref = localeHomePath(lang);
   const languageLocales = pdfToolIds.includes(localeToolId) ? pdfLocaleEntries : localeEntries;
@@ -726,10 +755,14 @@ export function shell({ title, description, canonical, body, schema = '', assetV
   const currentLocale = languageLocales.find(({ key }) => key === lang) ?? localeEntries[0];
   const languageLabel = ui[lang]?.Language ?? 'Language';
   const defaultAlternateTag = defaultAlternate ? `<link rel="alternate" hreflang="x-default" href="https://usefulverse.com${localePath('en', toolId)}">` : '';
-  const localeSelector = `<div class="language-picker"><button class="language-picker__trigger" type="button" aria-expanded="false" aria-controls="language-picker-options" aria-label="${escapeHtml(languageLabel)}: ${escapeHtml(currentLocale.name)}"><svg class="language-picker__globe" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg><span class="language-picker__current" lang="${currentLocale.code}" dir="auto">${escapeHtml(currentLocale.name)}</span><svg class="language-picker__chevron" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m4 6 4 4 4-4"></path></svg></button><div class="language-picker__panel" id="language-picker-options" hidden><nav aria-label="${escapeHtml(languageLabel)}"><ul class="language-picker__options">${languageLocales.map(({ key, code, name }) => `<li><a class="language-picker__option" href="${localePath(key, localeToolId)}" hreflang="${code}" lang="${code}" dir="auto"${key === lang ? ' aria-current="page"' : ''}><span>${escapeHtml(name)}</span>${key === lang ? '<span class="language-picker__selected" aria-hidden="true">✓</span>' : ''}</a></li>`).join('')}</ul></nav></div></div>`;
-  const guideNavLink = lang === 'en' && !pdfOnlyLocales[lang] ? `<a href="${guidePath()}">Guides</a>` : '';
+  const routeForLocale = localeRoute ?? ((key) => localePath(key, localeToolId));
+  const localeSelector = `<div class="language-picker"><button class="language-picker__trigger" type="button" aria-expanded="false" aria-controls="language-picker-options" aria-label="${escapeHtml(languageLabel)}: ${escapeHtml(currentLocale.name)}"><svg class="language-picker__globe" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg><span class="language-picker__current" lang="${currentLocale.code}" dir="auto">${escapeHtml(currentLocale.name)}</span><svg class="language-picker__chevron" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="m4 6 4 4 4-4"></path></svg></button><div class="language-picker__panel" id="language-picker-options" hidden><nav aria-label="${escapeHtml(languageLabel)}"><ul class="language-picker__options">${languageLocales.map(({ key, code, name }) => `<li><a class="language-picker__option" href="${routeForLocale(key)}" hreflang="${code}" lang="${code}" dir="auto"${key === lang ? ' aria-current="page"' : ''}><span>${escapeHtml(name)}</span>${key === lang ? '<span class="language-picker__selected" aria-hidden="true">✓</span>' : ''}</a></li>`).join('')}</ul></nav></div></div>`;
+  const guideNavLink = !isPdfOnlyLanguage ? `<a href="${guidePath('', lang)}">${escapeHtml(ui[lang]?.Guides ?? 'Guides')}</a>` : '';
   const toolDirectoryHref = isPdfOnlyLanguage ? homeHref : `${homeHref}#tools`;
   const howItWorksLink = isPdfOnlyLanguage ? '' : `<a href="${homeHref}#how-it-works">How it works</a>`;
+  const numberWordsScript = localeToolId === 'number-to-words-converter' && numberWordsLocaleCodes[lang]
+    ? `<script defer src="/assets/number-words-${lang}.js${assetSuffix}"></script>`
+    : '';
   const siteMeta = packs[lang] ?? pdfOnlyPacks[lang];
   return `<!doctype html>
 <html lang="${localeCode}" dir="${siteMeta?.meta.direction ?? 'ltr'}" data-asset-version="${escapeHtml(assetVersion)}">
@@ -756,8 +789,9 @@ export function shell({ title, description, canonical, body, schema = '', assetV
   <body>
     <header class="site-header"><div class="page-container site-header__inner"><a class="brand" href="${homeHref}" aria-label="UsefulVerse home"><span class="brand-mark" aria-hidden="true">◆</span><span>usefulverse</span></a><nav class="main-nav" aria-label="Main navigation"><a href="${toolDirectoryHref}">Tools</a>${howItWorksLink}${guideNavLink}</nav><a class="header-cta" href="${toolDirectoryHref}">Find a tool <span aria-hidden="true">↗</span></a>${localeSelector}</div></header>
     ${body}
-    <footer class="site-footer"><div class="page-container site-footer__inner"><a class="brand brand--footer" href="${homeHref}"><span class="brand-mark" aria-hidden="true">◆</span><span>usefulverse</span></a><p>Simple tools that respect your time and your files.</p><div class="footer-links"><a href="${toolDirectoryHref}">All tools</a>${isPdfOnlyLanguage ? '' : `<a href="${homeHref}#how-it-works">Privacy first</a>`}${lang === 'en' ? `<a href="${guidePath()}">Guides</a>` : ''}</div></div></footer>
+    <footer class="site-footer"><div class="page-container site-footer__inner"><a class="brand brand--footer" href="${homeHref}"><span class="brand-mark" aria-hidden="true">◆</span><span>usefulverse</span></a><p>Simple tools that respect your time and your files.</p><div class="footer-links"><a href="${toolDirectoryHref}">All tools</a>${isPdfOnlyLanguage ? '' : `<a href="${homeHref}#how-it-works">Privacy first</a>`}${guideNavLink}</div></div></footer>
     ${lang === 'en' ? '' : `<script defer src="/assets/locale-${lang}.js${assetSuffix}"></script>`}
+    ${numberWordsScript}
     <script defer src="/assets/app.js${assetSuffix}"></script>
   </body>
 </html>`;

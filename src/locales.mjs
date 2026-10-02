@@ -19,6 +19,18 @@ import { pdfOfficeUiLocales } from './locales/pdf-office-ui.mjs';
 import { pdfOnlyLocaleData } from './locales/pdf-only-locales.mjs';
 import { pdfOnlyExtraLocaleData } from './locales/pdf-only-extra.mjs';
 import { pdfOnlyUiLocales } from './locales/pdf-only-ui.mjs';
+import { guidePacks } from './locales/guide-packs.mjs';
+import {
+  expandedLocaleCopyFixes,
+  expandedLocaleFaqFixes,
+  expandedLocaleGuideFixes,
+  expandedLocaleMetaFixes,
+  expandedLocaleStatusFixes,
+  expandedLocaleTemplateFixes,
+  expandedLocaleTitleFixes,
+  expandedLocaleTranslationReview,
+  expandedLocaleUiFixes,
+} from './locales/expanded-locale-review.mjs';
 
 export const locales = {
   en: { code: 'en', name: 'English', prefix: '', homeTitle: 'UsefulVerse — Simple tools for everyday tasks', homeDescription: 'Fast, private browser tools for text, files, data, SEO and everyday tasks. No account and no upload required.' },
@@ -37,7 +49,12 @@ export const pdfToolIds = [
   'html-to-pdf', 'pdf-to-markdown', 'pdf-form-filler', 'pdf-compare',
 ];
 export const pdfOnlyLocaleDataAll = { ...pdfOnlyLocaleData, ...pdfOnlyExtraLocaleData };
-export const pdfOnlyLocaleKeys = Object.keys(pdfOnlyLocaleDataAll);
+export const expandedFullLocaleKeys = ['it', 'zh_tw', 'bg', 'ca', 'nl', 'el', 'ms', 'pl', 'sv', 'th', 'uk', 'sw'];
+export const numberWordsLocaleCodes = {
+  it: 'it-IT', zh_tw: 'zh-TW', bg: 'bg-BG', ca: 'ca-ES', nl: 'nl-NL', el: 'el-GR',
+  ms: 'ms-MY', pl: 'pl-PL', sv: 'sv-SE', th: 'th-TH', uk: 'uk-UA', sw: 'sw-KE',
+};
+export const pdfOnlyLocaleKeys = Object.keys(pdfOnlyLocaleDataAll).filter((key) => !expandedFullLocaleKeys.includes(key));
 export const pdfOnlyLocales = {};
 export const pdfOnlyPacks = {};
 
@@ -164,18 +181,50 @@ copy.de = deDE.copy;
 
 // Self-contained language packs live in src/locales/<key>/index.mjs. USEFULVERSE_PACKS=ja,ko limits the
 // build to some packs so one language can be checked while another is still being edited.
-export const packKeys = ['ja', 'ko', 'id', 'hi', 'ar', 'zh', 'bn', 'ru', 'ur', 'tr', 'vi'];
+export const packKeys = ['ja', 'ko', 'id', 'hi', 'ar', 'zh', 'bn', 'ru', 'ur', 'tr', 'vi', ...expandedFullLocaleKeys];
 const enabledPacks = process.env.USEFULVERSE_PACKS?.split(',').map((key) => key.trim()).filter(Boolean) ?? packKeys;
 export const packs = {};
 for (const key of packKeys.filter((item) => enabledPacks.includes(item))) packs[key] = (await import(`./locales/${key}/index.mjs`)).pack;
 for (const [key, pack] of Object.entries(packs)) {
   const { code, name, prefix, homeTitle, homeDescription } = pack.meta;
+  if (expandedLocaleTranslationReview[key]) pack.meta.translationReview = expandedLocaleTranslationReview[key];
   pack.meta.keepEnglish ??= [];
   if (!pack.meta.keepEnglish.includes('Code 128')) pack.meta.keepEnglish.push('Code 128');
   locales[key] = { code, name, prefix, homeTitle, homeDescription };
   ui[key] = pack.ui;
   runtimeMessages[key] = pack.runtimeMessages;
   copy[key] = pack.copy;
+}
+
+// Existing non-English packs had no localized guide articles. Load them as
+// static content, and use the same dictionary for article chrome and runtime UI.
+for (const [language, guidePack] of Object.entries(guidePacks)) {
+  const pack = packs[language];
+  const guideUi = guidePack.ui ?? {};
+  Object.assign(ui[language] ??= {}, guideUi);
+  Object.assign(runtimeMessages[language] ??= {}, guideUi);
+  if (!pack) continue;
+  if (Array.isArray(guidePack.guides)) pack.guides = guidePack.guides;
+  Object.assign(pack.ui, guideUi);
+  Object.assign(pack.runtimeMessages, guideUi);
+}
+
+const guideNavigationLabels = {
+  en: 'Guides', es: 'Guías', fr: 'Guides', pt: 'Guias', de: 'Ratgeber', ja: 'ガイド', ko: '가이드',
+  id: 'Panduan', hi: 'मार्गदर्शिकाएँ', ar: 'الأدلة', zh: '指南', bn: 'নির্দেশিকা', ru: 'Руководства',
+  ur: 'رہنما', tr: 'Kılavuzlar', vi: 'Hướng dẫn', it: 'Guide', zh_tw: '指南', bg: 'Ръководства',
+  ca: 'Guies', nl: 'Gidsen', el: 'Οδηγοί', ms: 'Panduan', pl: 'Poradniki', sv: 'Guider', th: 'คู่มือ',
+  uk: 'Посібники', sw: 'Miongozo',
+};
+for (const [language, label] of Object.entries(guideNavigationLabels)) {
+  ui[language] ??= {};
+  runtimeMessages[language] ??= {};
+  ui[language].Guides = label;
+  runtimeMessages[language].Guides = label;
+  if (packs[language]) {
+    packs[language].ui.Guides = label;
+    packs[language].runtimeMessages.Guides = label;
+  }
 }
 
 // Add the browser-only tool copy after the standard locale packs are assembled,
@@ -467,10 +516,10 @@ for (const [language, data] of Object.entries(pdfOfficeUiLocales)) {
   Object.assign(pack.runtimeMessages, data);
 }
 
-// Additional iLovePDF-menu languages are deliberately scoped to the PDF
-// routes. Each route has translated page copy, FAQs and runtime labels; there
-// are no translated home pages or claims about the other tools.
+// Keep the original PDF-only source packs available for translation export, but
+// do not expose duplicate routes for locales promoted to full-site coverage.
 for (const [language, data] of Object.entries(pdfOnlyLocaleDataAll)) {
+  if (expandedFullLocaleKeys.includes(language)) continue;
   const locale = {
     code: data.meta.code,
     name: data.meta.name,
@@ -544,6 +593,111 @@ Object.assign(runtimeMessages.de, {
   'Page counts': 'Seitenzahlen', 'supported form fields found.': 'unterstützte Formularfelder gefunden.',
   PDF: 'PDF', 'Files tool': 'Dateiwerkzeuge',
 });
+
+const intentionallySharedLocaleTerms = {
+  it: ['SEO', 'UTC', 'US Letter', 'A4', 'PDF', 'Privacy', 'Host', 'Query', 'Volume', 'Data', 'Standard', 'Standard — 150 dpi', 'Celsius', 'Fahrenheit', 'Kelvin', 'Pomodoro', 'Widescreen (16:9)', 'SQL query', 'SHA-256 checksum', 'MP3 audio', 'OGG / Opus audio', 'Seoul', 'Jakarta', 'India (Kolkata)', 'Ho Chi Minh City', 'Tokyo', 'Sydney', 'Madrid', 'Email', 'Location', 'Original'],
+  zh_tw: ['SEO', 'US Letter', 'A4', 'PDF', 'UTC', 'UUID v4 identifiers', 'JSON Web Token', 'Pomodoro', 'GitHub Flavored Markdown', 'MP3 audio', 'OGG / Opus audio', 'Seoul', 'Jakarta', 'India (Kolkata)', 'Ho Chi Minh City', 'Tokyo', 'Sydney', 'Madrid', 'Email', 'Location'],
+  bg: ['SEO', 'UTC', 'US Letter', 'A4', 'PDF', 'JSON Web Token', 'UUID v4 identifiers', 'Pomodoro', 'Stopwatch', 'SQL query', 'SHA-256 checksum', 'MP3 audio', 'OGG / Opus audio', 'Seoul', 'Jakarta', 'India (Kolkata)', 'Ho Chi Minh City', 'Tokyo', 'Sydney', 'Madrid', 'Email'],
+  ca: ['SEO', 'UTC', 'US Letter', 'A4', 'PDF', 'Text', 'Data', 'Part', 'Protocol', 'Decimal', 'Decimal (10)', 'Octal (8)', 'Celsius', 'Fahrenheit', 'Kelvin', 'Grams', 'Original', 'Transparent', 'JSON array', 'UUID v4 identifiers', 'JSON Web Token', 'GitHub Flavored Markdown', 'Pomodoro', 'Stopwatch', 'SQL query', 'Miles (US MPG)', 'WCAG AA · normal text', 'WCAG AAA · normal text', 'SHA-256 checksum', 'Seoul', 'Jakarta', 'India (Kolkata)', 'Ho Chi Minh City', 'Tokyo', 'Sydney', 'Madrid', 'Email'],
+  nl: ['SEO', 'UTC', 'US Letter', 'A4', 'PDF', 'Privacy', 'Minimum', 'Maximum', 'Protocol', 'Host', 'Type', 'Volume', 'Meters', 'Kilometers', 'Centimeters', 'Millimeters', 'Milliliters', 'Inches', 'Yards', 'Celsius', 'Fahrenheit', 'Kelvin', 'Chicago (Central)', 'Denver (Mountain)', 'Los Angeles (Pacific)', 'UUID v4 identifiers', 'JSON Web Token', 'SHA-256 checksum', 'GitHub Flavored Markdown', 'Pomodoro', 'Stopwatch', 'SQL query', 'MP3 audio', 'M4A / AAC audio', 'OGG / Opus audio', 'MP4 video', 'WebM video', 'Miles (US MPG)', 'Kilometers (L/100 km)', 'Seoul', 'Jakarta', 'India (Kolkata)', 'Ho Chi Minh City', 'Tokyo', 'Sydney', 'Madrid', 'Email', 'Profile'],
+  el: ['SEO', 'UTC', 'US Letter', 'A4', 'PDF', 'UUID v4 identifiers', 'JSON Web Token', 'Pomodoro', 'SQL query', 'SHA-256 checksum', 'MP3 audio', 'OGG / Opus audio', 'Seoul', 'Jakarta', 'India (Kolkata)', 'Ho Chi Minh City', 'Tokyo', 'Sydney', 'Madrid', 'Email'],
+  ms: ['SEO', 'UTC', 'US Letter', 'A4', 'PDF', 'Data', 'Unit', 'Fahrenheit', 'UUID v4 identifiers', 'JSON Web Token', 'Pomodoro', 'SQL query', 'SHA-256 checksum', 'MP3 audio', 'OGG / Opus audio', 'Quarterly', 'Chicago (Central)', 'Denver (Mountain)', 'London', 'Seoul', 'Jakarta', 'India (Kolkata)', 'Ho Chi Minh City', 'Tokyo', 'Sydney', 'Madrid', 'Email', 'Profile'],
+  pl: ['SEO', 'UTC', 'US Letter', 'A4', 'PDF', 'Data', 'UUID v4 identifiers', 'JSON Web Token', 'GitHub Flavored Markdown', 'Pomodoro', 'SQL query', 'SHA-256 checksum', 'MP3 audio', 'M4A / AAC audio', 'OGG / Opus audio', 'Miles (US MPG)', 'Host', 'Chicago (Central)', 'Seoul', 'Jakarta', 'India (Kolkata)', 'Ho Chi Minh City', 'Tokyo', 'Sydney', 'Madrid', 'Email'],
+  sv: ['SEO', 'UTC', 'US Letter', 'A4', 'PDF', 'Text', 'Decimal (10)', 'Standard', 'Standard — 150 dpi', 'Celsius', 'Fahrenheit', 'Kelvin', 'UUID v4 identifiers', 'JSON Web Token', 'GitHub Flavored Markdown', 'Pomodoro', 'SQL query', 'SHA-256 checksum', 'WCAG AA · normal text', 'WCAG AAA · normal text', 'MP3 audio', 'M4A / AAC audio', 'OGG / Opus audio', 'MP4 video', 'WebM video', 'Miles (US MPG)', 'Square (1:1)', 'Widescreen (16:9)', 'Chicago (Central)', 'Seoul', 'Jakarta', 'India (Kolkata)', 'Ho Chi Minh City', 'Tokyo', 'Sydney', 'Madrid', 'London', 'Email', 'Original'],
+  th: ['SEO', 'UTC', 'US Letter', 'A4', 'PDF', 'UUID v4 identifiers', 'JSON Web Token', 'Pomodoro', 'SQL query', 'SHA-256 checksum', 'MP3 audio', 'OGG / Opus audio', 'Seoul', 'Jakarta', 'India (Kolkata)', 'Ho Chi Minh City', 'Tokyo', 'Sydney', 'Madrid', 'Email'],
+  uk: ['SEO', 'UTC', 'US Letter', 'A4', 'PDF', 'UUID v4 identifiers', 'JSON Web Token', 'Pomodoro', 'SQL query', 'SHA-256 checksum', 'MP3 audio', 'OGG / Opus audio', 'Seoul', 'Jakarta', 'India (Kolkata)', 'Ho Chi Minh City', 'Tokyo', 'Sydney', 'Madrid', 'Email'],
+  sw: ['SEO', 'UTC', 'US Letter', 'A4', 'PDF', 'Hash', 'Fahrenheit', 'UUID v4 identifiers', 'JSON Web Token', 'Pomodoro', 'SQL query', 'SHA-256 checksum', 'MP3 audio', 'OGG / Opus audio', 'Seoul', 'Jakarta', 'India (Kolkata)', 'Ho Chi Minh City', 'Tokyo', 'Sydney', 'Madrid', 'Email'],
+};
+for (const [language, pack] of Object.entries(packs)) {
+  const metadataFix = expandedLocaleMetaFixes[language];
+  if (metadataFix?.homeTitle) pack.meta.homeTitle = metadataFix.homeTitle;
+  if (metadataFix?.homeDescription) pack.meta.homeDescription = metadataFix.homeDescription;
+  Object.assign(pack.ui, expandedLocaleUiFixes[language] ?? {}, expandedLocaleStatusFixes[language] ?? {});
+  Object.assign(pack.runtimeMessages, expandedLocaleUiFixes[language] ?? {}, expandedLocaleStatusFixes[language] ?? {});
+  for (const [toolId, title] of Object.entries(expandedLocaleTitleFixes[language] ?? {})) {
+    if (!pack.copy[toolId]) continue;
+    pack.copy[toolId][0] = title;
+  }
+  for (const [templateId, template] of Object.entries(expandedLocaleTemplateFixes[language] ?? {})) {
+    const current = pack.templates[templateId];
+    pack.templates[templateId] = typeof current === 'string' ? template : { ...current, other: template };
+  }
+  if (language === 'zh_tw') {
+    pack.templates['regex.matches'].other = '{count} 個符合項目。';
+    pack.templates['diff.found'].other = '{count} 行不同。';
+  }
+  if (language === 'uk') {
+    pack.templates['regex.matches'].many = '{count} збігів знайдено.';
+    pack.templates['diff.found'].many = 'Знайдено {count} відмінних рядків.';
+  }
+  for (const [toolId, replacements] of Object.entries(expandedLocaleCopyFixes[language] ?? {})) {
+    const current = pack.copy[toolId];
+    if (!Array.isArray(current)) continue;
+    pack.copy[toolId] = current.map((value, index) => Object.hasOwn(replacements, index) ? replacements[index] : value);
+  }
+  for (const [toolId, replacements] of Object.entries(expandedLocaleFaqFixes[language] ?? {})) {
+    for (const [index, fields] of Object.entries(replacements)) {
+      const item = pack.faq?.[toolId]?.[Number(index)];
+      if (!item) throw new Error(`Missing ${language} FAQ entry ${toolId}[${index}] for its reviewed correction`);
+      Object.assign(item, fields);
+    }
+  }
+  for (const [slug, replacements] of Object.entries(expandedLocaleGuideFixes[language] ?? {})) {
+    const guide = pack.guides?.find((item) => item.slug === slug);
+    if (!guide) throw new Error(`Missing ${language} guide ${slug} for its reviewed correction`);
+    for (const { path, value } of replacements) {
+      let target = guide;
+      for (const segment of path.slice(0, -1)) target = target?.[segment];
+      const key = path.at(-1);
+      if (!target || !(key in target)) throw new Error(`Missing ${language} guide field ${slug}.${path.join('.')}`);
+      target[key] = value;
+    }
+  }
+  pack.meta.keepEnglish = [...new Set([...(pack.meta.keepEnglish ?? []), ...(intentionallySharedLocaleTerms[language] ?? [])])];
+  Object.assign(ui[language] ??= {}, pack.ui);
+  Object.assign(runtimeMessages[language] ??= {}, pack.runtimeMessages);
+  locales[language].homeTitle = pack.meta.homeTitle;
+  locales[language].homeDescription = pack.meta.homeDescription;
+}
+
+const truncateMetadata = (value, limit, addEllipsis = false) => {
+  const text = String(value ?? '').trim().replace(/\s+/gu, ' ');
+  if (text.length <= limit) return text;
+  const suffix = addEllipsis ? '…' : '';
+  const allowance = limit - suffix.length;
+  const prefix = text.slice(0, allowance + 1);
+  const boundary = prefix.lastIndexOf(' ');
+  const end = boundary >= Math.floor(allowance * 0.6) ? boundary : allowance;
+  return `${prefix.slice(0, end).replace(/[\s,;:—–-]+$/u, '')}${suffix}`;
+};
+for (const [language, metaFix] of Object.entries(expandedLocaleMetaFixes)) {
+  const pack = packs[language];
+  for (const [toolId, values] of Object.entries(metaFix.seo ?? {})) {
+    Object.assign(pack.seo[toolId], values);
+  }
+}
+for (const pack of Object.values(packs)) {
+  for (const [toolId, metadata] of Object.entries(pack.seo)) {
+    metadata.title = truncateMetadata(metadata.title, 51);
+    if (metadata.description.length < 25) {
+      const intro = pack.copy[toolId]?.[4] ?? '';
+      metadata.description = intro.length >= 25 ? intro : `${metadata.description} — ${pack.meta.name}`;
+    }
+    metadata.description = truncateMetadata(metadata.description, 155, true);
+  }
+}
+
+// Camera strings have one canonical translation source. Apply them after the
+// feature-specific packs so older pack copy cannot silently replace the
+// reviewed camera wording in the generated page and browser runtime.
+for (const [language, data] of Object.entries(imageCaptureUiLocales)) {
+  Object.assign(ui[language] ??= {}, data);
+  Object.assign(runtimeMessages[language] ??= {}, data);
+  const pack = packs[language];
+  if (!pack) continue;
+  Object.assign(pack.ui, data);
+  Object.assign(pack.runtimeMessages, data);
+}
 
 export function localizedTool(tool, language) {
   const values = copy[language]?.[tool.id];
