@@ -3,10 +3,10 @@ import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { tools } from '../src/catalog.mjs';
 import { seo } from '../src/seo.mjs';
-import { localePath, locales, localizedTool, packs, pdfLocaleEntries, pdfOnlyLocaleKeys, pdfOnlyLocales, pdfOnlyPacks, pdfToolIds, ui } from '../src/locales.mjs';
+import { localePath, locales, localizedTool, numberWordsLocaleCodes, packs, pdfLocaleEntries, pdfOnlyLocaleKeys, pdfOnlyLocales, pdfOnlyPacks, pdfToolIds, ui } from '../src/locales.mjs';
 import { longtailBodies, longtailFaqs } from '../src/locales/longtail.mjs';
 import { relatedToolIds } from '../src/template.mjs';
-import { guideCanonical, guidePath, guides } from '../src/guides.mjs';
+import { guideCanonical, guidePath, guides, guidesForLocale } from '../src/guides.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const dist = process.env.USEFULVERSE_DIST ? resolve(process.env.USEFULVERSE_DIST) : join(root, 'dist');
@@ -19,8 +19,9 @@ for (const language of pdfOnlyLocaleKeys) localizedFiles.push(
   `assets/locale-${language}.js`,
   `${pdfOnlyLocales[language].prefix.replace(/^\//u, '')}/llms.txt`,
 );
+for (const language of Object.keys(numberWordsLocaleCodes)) localizedFiles.push(`assets/number-words-${language}.js`);
 const required = ['index.html', '404.html', 'assets/styles.css', 'assets/app.js', 'favicon.svg', 'robots.txt', 'sitemap.xml', 'llms.txt', ...localizedFiles, 'BingSiteAuth.xml', 'yandex_f441658073fe7135.html', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html', '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt'];
-function assertLanguagePicker(html, currentLanguage, availableLocales, toolId, context) {
+function assertLanguagePicker(html, currentLanguage, availableLocales, toolId, context, routeForLocale = (key) => localePath(key, toolId)) {
   const currentLocale = availableLocales.find(({ key }) => key === currentLanguage);
   const languageLabel = ui[currentLanguage]?.Language ?? 'Language';
   if (!currentLocale) throw new Error(`Current language ${currentLanguage} is missing from picker on ${context}`);
@@ -28,7 +29,7 @@ function assertLanguagePicker(html, currentLanguage, availableLocales, toolId, c
   const options = [...html.matchAll(/<a class="language-picker__option"[^>]*>([\s\S]*?)<\/a>/gu)];
   if (options.length !== availableLocales.length) throw new Error(`Expected ${availableLocales.length} language options on ${context}, found ${options.length}`);
   for (const locale of availableLocales) {
-    const href = localePath(locale.key, toolId);
+    const href = routeForLocale(locale.key);
     const isCurrent = locale.key === currentLanguage;
     const openingTag = `<a class="language-picker__option" href="${href}" hreflang="${locale.code}" lang="${locale.code}" dir="auto"${isCurrent ? ' aria-current="page"' : ''}>`;
     const match = options.find(([markup]) => markup.startsWith(openingTag));
@@ -72,6 +73,10 @@ for (const language of languages) {
     if (!html.includes(relatedHeading)) throw new Error(`Missing localized related-tools heading for ${language}/${tool.id}`);
     if (!html.includes('"@type":"WebApplication"') || !html.includes('property="og:title"')) throw new Error(`Missing SEO schema or social metadata for ${language}/${tool.id}`);
     if (!html.includes('"@type":"FAQPage"') || !html.includes('class="tool-faq"')) throw new Error(`Missing FAQ content for ${language}/${tool.id}`);
+    if (tool.id === 'number-to-words-converter' && numberWordsLocaleCodes[language]) {
+      const version = html.match(/data-asset-version="([a-f0-9]{12})"/u)?.[1];
+      if (!version || !html.includes(`<script defer src="/assets/number-words-${language}.js?v=${version}"></script>`)) throw new Error(`Missing local number-to-words runtime for ${language}`);
+    }
     if (language === 'en' && seo[tool.id]?.faq?.length && !html.includes(seo[tool.id].faq[0].question)) throw new Error(`English FAQ mismatch for ${tool.id}`);
     const expectedBody = longtailBodies[tool.id]?.[language];
     if (expectedBody && !html.includes(expectedBody.replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll("'", '&#039;'))) throw new Error(`Missing localized long-tail explanation for ${language}/${tool.id}`);
@@ -109,22 +114,31 @@ for (const language of pdfOnlyLocaleKeys) {
     }
   }
 }
-const guidesIndexPath = join(dist, guidePath().replace(/^\//u, ''), 'index.html');
-pages.push({ path: guidesIndexPath, language: 'en', tool: null, guide: null });
-const guidesIndex = await readFile(guidesIndexPath, 'utf8');
-if (!guidesIndex.includes(`<link rel="canonical" href="${guideCanonical()}">`) || !guidesIndex.includes('"@type":"CollectionPage"')) throw new Error('Guides index is missing its canonical or collection schema');
-if (!guidesIndex.includes('href="/guides/how-to-calculate-a-weighted-grade/"')) throw new Error('Guides index is missing its weighted-grade guide');
-for (const guide of guides) {
-  const route = guidePath(guide.slug);
-  const path = join(dist, route.replace(/^\//u, ''), 'index.html');
-  await access(path);
-  const html = await readFile(path, 'utf8');
-  pages.push({ path, language: 'en', tool: null, guide });
-  if (!html.includes(`<link rel="canonical" href="${guideCanonical(guide.slug)}">`)) throw new Error(`Missing canonical for guide ${guide.slug}`);
-  if (/<link rel="alternate" hreflang=/u.test(html)) throw new Error(`Untranslated guide ${guide.slug} must not claim language alternates`);
-  if (!html.includes('<html lang="en" dir="ltr" data-asset-version="') || !html.includes('"@type":"Article"')) throw new Error(`Guide ${guide.slug} is missing its language or article schema`);
-  if (!html.includes(`href="${localePath('en', guide.toolId)}"`)) throw new Error(`Guide ${guide.slug} is missing its related tool CTA`);
-  if (!html.includes('Sources and further reading') || !guide.sources?.every(({ url }) => html.includes(`href="${url}"`))) throw new Error(`Guide ${guide.slug} is missing its source links`);
+for (const language of languages) {
+  const localizedGuides = guidesForLocale(language);
+  if (!localizedGuides || localizedGuides.length !== guides.length) throw new Error(`Expected ${guides.length} localized guides for ${language}`);
+  const indexRoute = guidePath('', language);
+  const indexPath = join(dist, indexRoute.replace(/^\//u, ''), 'index.html');
+  await access(indexPath);
+  pages.push({ path: indexPath, language, tool: null, guide: null });
+  const indexHtml = await readFile(indexPath, 'utf8');
+  if (!indexHtml.includes(`<link rel="canonical" href="${guideCanonical('', language)}">`) || !indexHtml.includes('"@type":"CollectionPage"')) throw new Error(`Guide index is missing its canonical or collection schema in ${language}`);
+  assertLanguagePicker(indexHtml, language, languages.map((key) => ({ key, ...locales[key] })), '', `${language} guides index`, (key) => guidePath('', key));
+  for (const alternate of languages) if (!indexHtml.includes(`hreflang="${locales[alternate].code}" href="https://usefulverse.com${guidePath('', alternate)}"`)) throw new Error(`Guide index is missing the ${alternate} alternate for ${language}`);
+  for (const guide of localizedGuides) {
+    const route = guidePath(guide.slug, language);
+    const path = join(dist, route.replace(/^\//u, ''), 'index.html');
+    await access(path);
+    const html = await readFile(path, 'utf8');
+    pages.push({ path, language, tool: null, guide });
+    if (!html.includes(`<link rel="canonical" href="${guideCanonical(guide.slug, language)}">`)) throw new Error(`Missing canonical for ${language}/${guide.slug}`);
+    if (!html.includes(`<html lang="${locales[language].code}" dir="${packs[language]?.meta.direction ?? 'ltr'}" data-asset-version="`) || !html.includes('"@type":"Article"')) throw new Error(`Guide ${language}/${guide.slug} is missing its language or article schema`);
+    assertLanguagePicker(html, language, languages.map((key) => ({ key, ...locales[key] })), '', `${language}/${guide.slug}`, (key) => guidePath(guide.slug, key));
+    for (const alternate of languages) if (!html.includes(`hreflang="${locales[alternate].code}" href="https://usefulverse.com${guidePath(guide.slug, alternate)}"`)) throw new Error(`Guide ${language}/${guide.slug} is missing the ${alternate} alternate`);
+    if (!html.includes(`href="${localePath(language, guide.toolId)}"`)) throw new Error(`Guide ${language}/${guide.slug} is missing its localized related-tool CTA`);
+    const sourceHeading = ui[language]?.['Sources and further reading'] ?? 'Sources and further reading';
+    if (!html.includes(sourceHeading) || !guide.sources?.every(({ url }) => html.includes(`href="${url}"`))) throw new Error(`Guide ${language}/${guide.slug} is missing its source links`);
+  }
 }
 const home = await readFile(join(dist, 'index.html'), 'utf8');
 if (!home.includes('href="/guides/">Guides</a>')) throw new Error('English home page is missing the guides navigation link');
@@ -144,9 +158,9 @@ const sitemapCount = [...sitemap.matchAll(/<loc>https:\/\/usefulverse\.com\//gu)
 if (sitemapCount !== pages.length) throw new Error(`Sitemap expected ${pages.length} URLs, found ${sitemapCount}`);
 if (!sitemap.includes('xmlns:xhtml="http://www.w3.org/1999/xhtml"') || !sitemap.includes('hreflang="x-default"')) throw new Error('Sitemap is missing localized alternate links');
 for (const language of languages) {
-  const paths = [localePath(language), ...tools.map((tool) => localePath(language, tool.id)), ...(language === 'en' ? [guidePath(), ...guides.map((guide) => guidePath(guide.slug))] : [])];
+  const paths = [localePath(language), ...tools.map((tool) => localePath(language, tool.id)), guidePath('', language), ...guides.map((guide) => guidePath(guide.slug, language))];
   const count = paths.filter((path) => sitemap.includes(`<loc>https://usefulverse.com${path}</loc>`)).length;
-  const expected = tools.length + 1 + (language === 'en' ? guides.length + 1 : 0);
+  const expected = tools.length + guides.length + 2;
   if (count !== expected) throw new Error(`Sitemap has ${count} URLs for ${language}; expected ${expected}`);
 }
 for (const language of pdfOnlyLocaleKeys) {
@@ -155,10 +169,11 @@ for (const language of pdfOnlyLocaleKeys) {
   if (count !== pdfToolIds.length) throw new Error(`Sitemap has ${count} PDF URLs for ${language}; expected ${pdfToolIds.length}`);
   if (sitemap.includes(`<loc>https://usefulverse.com${localePath(language)}</loc>`)) throw new Error(`Sitemap must not invent a general-language home page for ${language}`);
 }
-for (const route of [guidePath(), ...guides.map((guide) => guidePath(guide.slug))]) if (!sitemap.includes(`<loc>https://usefulverse.com${route}</loc>`)) throw new Error(`Sitemap is missing guide ${route}`);
-for (const guide of guides) {
-  const toolPage = await readFile(join(dist, localePath('en', guide.toolId).replace(/^\//u, ''), 'index.html'), 'utf8');
-  if (!toolPage.includes(`href="${guidePath(guide.slug)}"`)) throw new Error(`Related English tool page is missing guide ${guide.slug}`);
+for (const language of languages) for (const guide of guidesForLocale(language)) {
+  const route = guidePath(guide.slug, language);
+  if (!sitemap.includes(`<loc>https://usefulverse.com${route}</loc>`)) throw new Error(`Sitemap is missing guide ${route}`);
+  const toolPage = await readFile(join(dist, localePath(language, guide.toolId).replace(/^\//u, ''), 'index.html'), 'utf8');
+  if (!toolPage.includes(`href="${route}"`)) throw new Error(`Related ${language} tool page is missing guide ${guide.slug}`);
 }
 for (const { path, language } of pages) {
   const html = await readFile(path, 'utf8');
@@ -181,19 +196,23 @@ const visibleStrings = (html) => html.split(/(<script\b[\s\S]*?<\/script>|<style
 });
 const englishStrings = new Set();
 for (const { path, language } of pages) if (language === 'en') for (const value of visibleStrings(await readFile(path, 'utf8'))) englishStrings.add(value);
-const universalStrings = new Set(['usefulverse', 'UsefulVerse', 'useful', 'verse', 'JSON Web Token', 'Base64', 'JSON', 'CSV', 'UUID', 'SHA-256', 'UTC', 'HEX', 'RGB', 'HSL', 'JPG', 'JPEG', 'PNG', 'WebP', 'PDF', 'M4A (AAC)', 'OGG (Opus)', 'Bahasa Indonesia', '<note><to>Alex</to></note>', '256 px', '384 px', '512 px',
+// Equations, code samples, color literals, and numeric placeholders are intentionally language-neutral.
+const universalStrings = new Set(['usefulverse', 'UsefulVerse', 'useful', 'verse', 'JSON Web Token', 'Base64', 'JSON', 'CSV', 'UUID', 'SHA-256', 'UTC', 'HEX', 'RGB', 'HSL', 'JPG', 'JPEG', 'PNG', 'WebP', 'PDF', 'M4A (AAC)', 'OGG (Opus)', 'Bahasa Indonesia', '<note><to>Alex</to></note>', '256 px', '384 px', '512 px', '0 min', '#4D6BFF, rgb(77,107,255) or hsl(231,100%,67%)', 'sin(30) + sqrt(16)',
+  'grade₁ × weight₁ + grade₂ × weight₂ + …', '(target grade − current grade × (1 − final weight)) ÷ final weight',
   'English', 'Español', 'Français', 'Português', 'Deutsch', '日本語', '한국어', 'Indonesian', 'हिन्दी', 'العربية', '中文', 'বাংলা', 'Русский', 'اردو', 'Türkçe', 'Tiếng Việt',
+  ...guides.flatMap((guide) => guide.sources?.map(({ label }) => label) ?? []),
   ...Object.values(locales).flatMap(({ name, code }) => [name, code.toUpperCase(), `${code.toUpperCase()} — ${name}`]),
   ...Object.values(pdfOnlyLocales).flatMap(({ name, code }) => [name, code.toUpperCase(), `${code.toUpperCase()} — ${name}`]),
   'Standard', 'Standard — 150 dpi', 'Text', 'A4', 'US Letter', 'DRAFT', 'OCR', 'DOC', 'MD', 'JPG', 'PNG']);
 const isUniversal = (value) => universalStrings.has(value) || [...value.replace(/\s/gu, '')].length <= 3 || !/\p{Ll}{2}/u.test(value) || /^[^\p{L}]*(?:https?:|\\b|\{"|name,age)/u.test(value);
+const translationIssues = [];
 for (const [language, pack] of Object.entries(packs)) {
   const keepEnglish = new Set(pack.meta.keepEnglish ?? []);
   const leftovers = new Map();
   for (const { path } of pages.filter((page) => page.language === language)) {
     for (const value of visibleStrings(await readFile(path, 'utf8'))) if (englishStrings.has(value) && !isUniversal(value) && !keepEnglish.has(value)) leftovers.set(value, path.slice(dist.length));
   }
-  if (leftovers.size) throw new Error(`Untranslated English strings in ${language} (${leftovers.size}):\n${[...leftovers].map(([value, path]) => `  ${JSON.stringify(value)} (${path})`).join('\n')}`);
+  if (leftovers.size) translationIssues.push(`Untranslated English strings in ${language} (${leftovers.size}):\n${[...leftovers].map(([value, path]) => `  ${JSON.stringify(value)} (${path})`).join('\n')}`);
 }
 for (const language of pdfOnlyLocaleKeys) {
   const keepEnglish = new Set(pdfOnlyPacks[language].meta.keepEnglish ?? []);
@@ -203,6 +222,7 @@ for (const language of pdfOnlyLocaleKeys) {
       if (englishStrings.has(value) && !isUniversal(value) && !keepEnglish.has(value)) leftovers.set(value, path.slice(dist.length));
     }
   }
-  if (leftovers.size) throw new Error(`Untranslated English strings in PDF-only ${language} (${leftovers.size}):\n${[...leftovers].map(([value, path]) => `  ${JSON.stringify(value)} (${path})`).join('\n')}`);
+  if (leftovers.size) translationIssues.push(`Untranslated English strings in PDF-only ${language} (${leftovers.size}):\n${[...leftovers].map(([value, path]) => `  ${JSON.stringify(value)} (${path})`).join('\n')}`);
 }
+if (translationIssues.length) throw new Error(translationIssues.join('\n\n'));
 console.log(`Build check passed: ${pages.filter(({ tool }) => tool).length} localized tool pages + ${languages.length} home pages; ${sitemapCount} URLs in sitemap.`);

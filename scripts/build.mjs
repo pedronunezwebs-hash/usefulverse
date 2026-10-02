@@ -5,12 +5,19 @@ import { fileURLToPath } from 'node:url';
 import { build as bundle } from 'esbuild';
 import { tools, categories } from '../src/catalog.mjs';
 import { renderGuidePage, renderGuidesIndex, renderHome, renderNotFoundPage, renderToolPage } from '../src/template.mjs';
-import { guidePath, guides } from '../src/guides.mjs';
-import { localeHomePath, localePath, locales, localizedTool, packs, pdfLocaleEntries, pdfOnlyLocaleKeys, pdfOnlyLocales, pdfOnlyPacks, pdfToolIds, ui } from '../src/locales.mjs';
+import { guidePath, guides, guidesForLocale } from '../src/guides.mjs';
+import { localeHomePath, localePath, locales, localizedTool, numberWordsLocaleCodes, packs, pdfLocaleEntries, pdfOnlyLocaleKeys, pdfOnlyLocales, pdfOnlyPacks, pdfToolIds, ui } from '../src/locales.mjs';
 import { localeBundleSource } from '../src/locales/bundle.mjs';
+import { numberWordsRuntimeSource } from '../src/locales/number-words-runtime.mjs';
+import { localizedGuideGaps } from '../src/locales/release-gate.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const dist = process.env.USEFULVERSE_DIST ? resolve(process.env.USEFULVERSE_DIST) : join(root, 'dist');
+const guidesByLocale = Object.fromEntries(Object.keys(locales).map((language) => [language, { guides: guidesForLocale(language) }]));
+const guideGaps = localizedGuideGaps(locales, guidesByLocale, guides);
+if (guideGaps.length) {
+  throw new Error(`Refusing to replace build output while guide localization is incomplete:\n${guideGaps.map((gap) => `- ${gap}`).join('\n')}`);
+}
 await rm(dist, { recursive: true, force: true });
 await mkdir(join(dist, 'assets'), { recursive: true });
 await cp(join(root, 'src', 'styles.css'), join(dist, 'assets', 'styles.css'));
@@ -187,6 +194,7 @@ await cp(join(root, 'node_modules', 'fflate', 'LICENSE'), join(vendor, 'LICENSE-
 await cp(join(root, 'node_modules', 'mediabunny', 'LICENSE'), join(vendor, 'LICENSE-mediabunny'));
 await cp(join(root, 'node_modules', '@mediabunny', 'mp3-encoder', 'LICENSE'), join(vendor, 'LICENSE-mediabunny-mp3-encoder'));
 await cp(join(root, 'node_modules', '@huggingface', 'transformers', 'LICENSE'), join(vendor, 'LICENSE-transformers-js'));
+await cp(join(root, 'node_modules', 'to-words', 'LICENSE'), join(vendor, 'LICENSE-to-words'));
 await cp(join(root, 'public', 'licenses', 'LICENSE-onnxruntime.txt'), join(vendor, 'LICENSE-onnxruntime-web.txt'));
 await cp(join(root, 'node_modules', '@neslinesli93', 'qpdf-wasm', 'README.md'), join(vendor, 'NOTICE-qpdf-wasm.md'));
 await cp(join(root, 'public', 'licenses', 'LICENSE-qpdf.txt'), join(vendor, 'LICENSE-qpdf.txt'));
@@ -198,6 +206,10 @@ await cp(join(root, 'public', 'yandex_f441658073fe7135.html'), join(dist, 'yande
 await cp(join(root, 'public', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html'), join(dist, 'naverbbd67ca2bfab12f8138c42ad5d27c664.html'));
 const indexNowKeyFile = '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt';
 await cp(join(root, 'public', indexNowKeyFile), join(dist, indexNowKeyFile));
+
+for (const language of Object.keys(numberWordsLocaleCodes)) {
+  await writeFile(join(dist, 'assets', `number-words-${language}.js`), await numberWordsRuntimeSource(language));
+}
 
 const assetHash = createHash('sha256')
   .update(await readFile(join(dist, 'assets', 'styles.css')))
@@ -213,6 +225,7 @@ const assetHash = createHash('sha256')
   .update(await readFile(join(dist, 'assets', 'tool-suite-tools.js')))
   .update(await readFile(join(dist, 'assets', 'tool-suite-ocr.js')))
   .update(await readFile(join(dist, 'assets', 'portrait-background-worker.js')))
+  .update(await Promise.all(Object.keys(numberWordsLocaleCodes).map((language) => readFile(join(dist, 'assets', `number-words-${language}.js`)))).then((files) => Buffer.concat(files)))
   .update(await readFile(join(vendor, 'media-converter.mjs')))
   .update(await readFile(join(root, 'package-lock.json')))
   .update(await readFile(join(root, 'src', 'locales.mjs')));
@@ -273,21 +286,32 @@ for (const language of pdfOnlyLocaleKeys) {
   }
 }
 
-await mkdir(join(dist, 'guides'), { recursive: true });
-await writeFile(join(dist, 'guides', 'index.html'), renderGuidesIndex(guides, assetVersion));
-pages.push({ language: 'en', path: guidePath() });
-for (const guide of guides) {
-  const route = guidePath(guide.slug);
-  const directory = join(dist, route.replace(/^\//u, ''));
-  await mkdir(directory, { recursive: true });
-  await writeFile(join(directory, 'index.html'), renderGuidePage(guide, assetVersion));
-  pages.push({ language: 'en', path: route });
+for (const language of languages) {
+  const localizedGuides = guidesForLocale(language);
+  if (!localizedGuides || localizedGuides.length !== guides.length) throw new Error(`Missing complete guide translations for ${language}`);
+  const indexRoute = guidePath('', language);
+  const indexDirectory = join(dist, indexRoute.replace(/^\//u, ''));
+  await mkdir(indexDirectory, { recursive: true });
+  await writeFile(join(indexDirectory, 'index.html'), renderGuidesIndex(localizedGuides, assetVersion, language));
+  pages.push({ language, path: indexRoute });
+  for (const guide of localizedGuides) {
+    const route = guidePath(guide.slug, language);
+    const directory = join(dist, route.replace(/^\//u, ''));
+    await mkdir(directory, { recursive: true });
+    await writeFile(join(directory, 'index.html'), renderGuidePage(guide, assetVersion, language));
+    pages.push({ language, path: route });
+  }
 }
 
 const localizedRoute = (language, toolId) => `https://usefulverse.com${localePath(language, toolId)}`;
 const xhtmlNamespace = ' xmlns:xhtml="http://www.w3.org/1999/xhtml"';
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"${xhtmlNamespace}>\n${pages.map(({ language, path }) => {
-  if (path.startsWith('/guides/')) return `  <url>\n    <loc>https://usefulverse.com${path}</loc>\n  </url>`;
+  if (path.includes('/guides/')) {
+    const slug = path.match(/\/guides\/([^/]+)\/$/u)?.[1] ?? '';
+    const alternates = languages.map((key) => `    <xhtml:link rel="alternate" hreflang="${locales[key].code}" href="https://usefulverse.com${guidePath(slug, key)}"/>`);
+    alternates.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="https://usefulverse.com${guidePath(slug)}"/>`);
+    return `  <url>\n    <loc>https://usefulverse.com${path}</loc>\n${alternates.join('\n')}\n  </url>`;
+  }
   const toolId = path.match(/\/tools\/([^/]+)\/$/u)?.[1] ?? '';
   const alternateLanguages = pdfToolIds.includes(toolId) ? pdfLocaleEntries : languages.map((key) => ({ key, ...locales[key] }));
   const alternates = alternateLanguages.map(({ key, code }) => `    <xhtml:link rel="alternate" hreflang="${code}" href="${localizedRoute(key, toolId)}"/>`);
@@ -304,7 +328,9 @@ for (const language of languages.filter((key) => key !== 'en')) {
   const homeLabel = packs[language]?.meta.homeLabel ?? { es: 'Inicio', fr: 'Accueil', pt: 'Página inicial', de: 'Startseite' }[language] ?? 'Home';
   const localLlms = `# UsefulVerse — ${locales[language].name}\n\n> ${locales[language].homeDescription}\n\n${localizedTools.map((tool) => `- [${tool.title}](https://usefulverse.com${localePath(language, tool.id)}): ${tool.description}`).join('\n')}\n\n- [${homeLabel}](${homeUrl})\n- [Sitemap](https://usefulverse.com/sitemap.xml)\n`;
   const localeDirectory = localePath(language).replace(/^\//u, '').replace(/\/$/u, '');
-  await writeFile(join(dist, localeDirectory, 'llms.txt'), localLlms);
+  const localizedGuides = guidesForLocale(language);
+  const guideListings = localizedGuides.length ? `\n## Guides\n\n- [${packs[language]?.ui['UsefulVerse Guides'] ?? 'UsefulVerse Guides'}](https://usefulverse.com${guidePath('', language)})\n${localizedGuides.map((guide) => `- [${guide.title}](https://usefulverse.com${guidePath(guide.slug, language)}): ${guide.description}`).join('\n')}` : '';
+  await writeFile(join(dist, localeDirectory, 'llms.txt'), localLlms.replace(/\n- \[Sitemap\][\s\S]*$/u, `${guideListings}\n\n- [Sitemap](https://usefulverse.com/sitemap.xml)\n`));
 }
 for (const language of pdfOnlyLocaleKeys) {
   const localizedTools = pdfToolIds.map((toolId) => localizedTool(tools.find((tool) => tool.id === toolId), language));
@@ -314,4 +340,5 @@ for (const language of pdfOnlyLocaleKeys) {
   await mkdir(join(dist, localeDirectory), { recursive: true });
   await writeFile(join(dist, localeDirectory, 'llms.txt'), localLlms);
 }
-console.log(`Built ${pages.length} pages (${tools.length} tools × ${languages.length} core languages, ${languages.length} core home pages, ${pdfToolIds.length} PDF tools × ${pdfOnlyLocaleKeys.length} PDF-only languages, and ${guides.length + 1} English guide pages) in ${dist}`);
+const pageBreakdown = `${tools.length} tools × ${languages.length} languages, ${languages.length} localized home pages, and ${guides.length + 1} guide routes × ${languages.length} languages${pdfOnlyLocaleKeys.length ? `, plus ${pdfToolIds.length} PDF tools × ${pdfOnlyLocaleKeys.length} PDF-only languages` : ''}`;
+console.log(`Built ${pages.length} pages (${pageBreakdown}) in ${dist}`);

@@ -1,3 +1,6 @@
+import { locales, packs } from './locales.mjs';
+import { guidePacks } from './locales/guide-packs.mjs';
+
 const site = 'https://usefulverse.com';
 
 export const guides = [
@@ -208,8 +211,115 @@ export const guides = [
   },
 ];
 
-export const guidePath = (slug = '') => slug ? `/guides/${slug}/` : '/guides/';
+const protectedGuideFields = new Set(['slug', 'toolId', 'type', 'value', 'url']);
 
-export function guideCanonical(slug = '') {
-  return `${site}${guidePath(slug)}`;
+// Curated search-result metadata corrections for localized guide drafts. These
+// overrides fix specific truncation/length issues; they do not certify the
+// surrounding guide prose as linguistically reviewed.
+const guideMetadataOverrides = {
+  es: {
+    'how-to-calculate-a-weighted-grade': { description: 'Aprende la fórmula de la nota ponderada, calcula tu nota con categorías pendientes y averigua qué puntuación necesitas para alcanzar tu meta.' },
+    'google-docs-word-count': { description: 'Consulta el recuento de palabras de un documento o selección en Google Docs, activa el contador en tiempo real y descubre qué contenido queda fuera.' },
+  },
+  fr: {
+    'how-to-calculate-a-weighted-grade': { description: 'Comprenez la moyenne pondérée, calculez votre note avec des catégories en cours et trouvez la note nécessaire à l’examen pour atteindre votre objectif.' },
+    'remove-duplicates-in-excel-safely': { description: 'Choisissez les critères des doublons, vérifiez les lignes uniques, gardez les bonnes données et évitez les suppressions accidentelles dans Excel.' },
+  },
+  pt: {
+    'google-docs-word-count': { description: 'Veja a contagem de palavras de um documento ou seleção no Google Docs, ative o contador em tempo real e saiba o que fica de fora.' },
+  },
+  de: {
+    'how-to-calculate-a-weighted-grade': { description: 'Lerne die Formel für gewichtete Noten, berechne deinen aktuellen Stand mit offenen Kategorien und finde die nötige Prüfungsnote für dein Ziel.' },
+  },
+  id: {
+    'how-to-calculate-a-weighted-grade': { description: 'Pelajari rumus nilai berbobot, hitung nilai saat ini dengan kategori yang belum selesai, dan cari nilai ujian untuk mencapai target.' },
+  },
+  it: {
+    'how-to-calculate-a-weighted-grade': {
+      title: 'Come calcolare una media ponderata (con esempi)',
+      description: 'Scopri la formula della media ponderata, calcola il voto con categorie incomplete e trova il punteggio d’esame per raggiungere il tuo obiettivo.',
+    },
+    'google-docs-word-count': { title: 'Come contare le parole in Google Docs' },
+    'remove-duplicates-in-excel-safely': { description: 'Scegli i criteri dei duplicati in Excel, controlla l’anteprima delle righe uniche, conserva i dati corretti ed evita cancellazioni accidentali.' },
+  },
+  nl: {
+    'hexadecimal-to-binary-conversion': {
+      title: 'Hexadecimaal naar binair omzetten',
+      description: 'Zet elk hexadecimaal cijfer om in vier binaire bits, gebruik de 0–F-tabel en behoud de voorloopnullen van elke groep.',
+    },
+  },
+  el: {
+    'remove-duplicates-in-excel-safely': { title: 'Αφαίρεση διπλοτύπων στο Excel με ασφάλεια' },
+    'hexadecimal-to-binary-conversion': { title: 'Μετατροπή δεκαεξαδικού σε δυαδικό' },
+    'how-to-calculate-a-weighted-grade': {
+      title: 'Σταθμισμένος βαθμός: υπολογισμός και παραδείγματα',
+      description: 'Μάθετε τον τύπο του σταθμισμένου βαθμού, υπολογίστε την τρέχουσα επίδοση με εκκρεμείς κατηγορίες και βρείτε τον βαθμό εξέτασης που χρειάζεστε.',
+    },
+  },
+  ms: {
+    'how-to-calculate-a-weighted-grade': { title: 'Cara mengira markah berwajaran' },
+    'google-docs-word-count': { title: 'Cara kira perkataan dalam Google Docs' },
+    'remove-duplicates-in-excel-safely': { title: 'Cara buang data pendua dalam Excel' },
+    'hexadecimal-to-binary-conversion': { title: 'Heksadesimal kepada binari: cara menukar' },
+  },
+  tr: {
+    'google-docs-word-count': { title: 'Google Dokümanlar’da kelime sayısı' },
+  },
+  th: {
+    'how-to-calculate-a-weighted-grade': { title: 'วิธีคำนวณเกรดแบบถ่วงน้ำหนัก (พร้อมตัวอย่าง)' },
+  },
+  sw: {
+    'how-to-calculate-a-weighted-grade': { title: 'Jinsi ya kuhesabu alama zenye uzani' },
+    'google-docs-word-count': { title: 'Jinsi ya kuhesabu maneno kwenye Google Docs' },
+    'remove-duplicates-in-excel-safely': { title: 'Jinsi ya kuondoa nakala rudufu kwenye Excel' },
+    'hexadecimal-to-binary-conversion': { title: 'Heksadesimali kwenda mfumo wa jozi' },
+  },
+  sv: {
+    'google-docs-word-count': { title: 'Räkna ord i Google Dokument' },
+    'remove-duplicates-in-excel-safely': { title: 'Ta bort dubbletter i Excel säkert' },
+  },
+  zh: {
+    'how-to-calculate-a-weighted-grade': { title: '加权平均成绩怎么算？公式与示例' },
+    'hexadecimal-to-binary-conversion': { title: '十六进制转二进制：分组换算方法' },
+  },
+  zh_tw: {
+    'how-to-calculate-a-weighted-grade': { title: '加權成績如何計算？公式與範例說明' },
+  },
+};
+
+function applyGuideMetadataOverrides(language, localizedGuides) {
+  const overrides = guideMetadataOverrides[language];
+  if (!overrides) return localizedGuides;
+  return localizedGuides.map((guide) => ({ ...guide, ...(overrides[guide.slug] ?? {}) }));
+}
+
+function materializeGuideTranslation(value, translations, language, field = '') {
+  if (Array.isArray(value)) return value.map((item) => materializeGuideTranslation(item, translations, language, field));
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(Object.entries(value).map(([key, item]) => [
+      key,
+      materializeGuideTranslation(item, translations, language, key),
+    ]));
+  }
+  if (typeof value !== 'string' || protectedGuideFields.has(field) || /^[0-9A-F]+$/u.test(value)) return value;
+  const translated = translations[value];
+  if (typeof translated !== 'string' || !translated.trim()) throw new Error(`Missing reviewed guide translation for ${language}: ${value}`);
+  return translated;
+}
+
+export function guidesForLocale(language) {
+  if (language === 'en') return guides;
+  const guidePack = guidePacks[language];
+  if (Array.isArray(guidePack?.guides)) return applyGuideMetadataOverrides(language, guidePack.guides);
+  if (guidePack?.text) return applyGuideMetadataOverrides(language, guides.map((guide) => materializeGuideTranslation(guide, guidePack.text, language)));
+  return applyGuideMetadataOverrides(language, packs[language]?.guides ?? []);
+}
+
+export const guidePath = (slug = '', language = 'en') => {
+  const prefix = locales[language]?.prefix ?? '';
+  return `${prefix}/guides/${slug ? `${slug}/` : ''}`;
+};
+
+export function guideCanonical(slug = '', language = 'en') {
+  return `${site}${guidePath(slug, language)}`;
 }

@@ -37,6 +37,9 @@ jobs:
       - name: Build and validate all pages
         run: npm run check
 
+      - name: Require linguistic approval for expanded locales
+        run: npm run locale:release-check
+
       - name: Publish to the existing Cloudflare Pages project
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: cloudflare/wrangler-action@v4
