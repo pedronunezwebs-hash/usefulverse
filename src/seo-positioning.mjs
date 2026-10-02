@@ -33,16 +33,21 @@ const brandSuffix = ' | UsefulVerse';
 
 export function positionSeoMetadata(metadata, language = 'en') {
   const [fullTitle, compactDescription] = positioning[language] ?? positioning.en;
-  const title = String(metadata.title ?? '').trim();
+  const inputTitle = String(metadata.title ?? '').trim();
+  const title = inputTitle.replace(/\s*\|\s*UsefulVerse$/u, '').trim();
   const description = String(metadata.description ?? '').trim();
 
   // Keep the search intent at the beginning. Add the free/no-usage-cap claim only
   // when the complete title still fits the project's 65-character release gate.
-  const candidateTitle = `${title} — ${fullTitle}`;
-  const finalTitle = `${candidateTitle}${brandSuffix}`.length <= 65
+  const candidateTitle = `${title} — ${fullTitle}${brandSuffix}`;
+  const compactTitle = `${title} — ${language === 'en' ? 'Free' : fullTitle.split(/[·,]/u)[0].trim()}${brandSuffix}`;
+  const boundedTitle = candidateTitle.length <= 65
     ? candidateTitle
-    : `${title} — ${language === 'en' ? 'Free' : fullTitle.split(/[·,]/u)[0].trim()}`;
-  const boundedTitle = `${finalTitle}${brandSuffix}`.length <= 65 ? finalTitle : title;
+    : compactTitle.length <= 65
+      ? compactTitle
+      : `${title}${brandSuffix}`.length <= 65
+        ? `${title}${brandSuffix}`
+        : inputTitle;
 
   // Don't cut useful query-specific copy just to force a slogan into every snippet.
   const candidateDescription = `${description.replace(/[.。！？!？\s]+$/u, '')}. ${compactDescription}`;
