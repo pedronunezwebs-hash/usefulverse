@@ -23,6 +23,8 @@ import { pdfOnlyExtraLocaleData } from './locales/pdf-only-extra.mjs';
 import { pdfOnlyUiLocales } from './locales/pdf-only-ui.mjs';
 import { guidePacks } from './locales/guide-packs.mjs';
 import { planLocaleData } from './locales/plan-language-data.mjs';
+import { gifMakerCopy } from './locales/gif-maker-copy.mjs';
+import { recordingControlLocales } from './locales/recording-controls.mjs';
 import {
   expandedLocaleCopyFixes,
   expandedLocaleFaqFixes,
@@ -964,6 +966,15 @@ packs.ha.meta.keepEnglish = [...new Set([...(packs.ha.meta.keepEnglish ?? []), '
 packs.tl.meta.keepEnglish = [...new Set([...(packs.tl.meta.keepEnglish ?? []), 'Seoul', 'Jakarta', 'usefulverse'])];
 if (packs.tl) packs.tl.page.workspace = 'Workspace ni {title}';
 
+for (const [language, strings] of Object.entries(recordingControlLocales)) {
+  Object.assign(ui[language] ??= {}, strings);
+  Object.assign(runtimeMessages[language] ??= {}, strings);
+  if (packs[language]) {
+    Object.assign(packs[language].ui, strings);
+    Object.assign(packs[language].runtimeMessages, strings);
+  }
+}
+
 for (const [language, data] of Object.entries(planLocaleData.partial)) {
   const pack = packs[language];
   if (!pack) continue;
@@ -974,6 +985,17 @@ for (const [language, data] of Object.entries(planLocaleData.partial)) {
       description: truncateMetadata(metadata.description, 155, true),
     };
   }
+}
+
+for (const [language, [intro, body]] of Object.entries(gifMakerCopy)) {
+  const values = copy[language]?.['gif-maker'];
+  if (values) {
+    values[2] = body;
+    values[4] = intro;
+    values[5] = body;
+  }
+  const metadata = packs[language]?.seo?.['gif-maker'];
+  if (metadata) metadata.description = truncateMetadata(body, 155, true);
 }
 
 // Keep language names in the picker in their own spelling, regardless of the
@@ -1001,12 +1023,22 @@ for (const [language, data] of Object.entries(imageCaptureUiLocales)) {
 
 export function localizedTool(tool, language) {
   const values = copy[language]?.[tool.id];
+  const gifCopy = tool.id === 'gif-maker' ? gifMakerCopy[language] : null;
   if (!values) {
     const body = longtailBodies[tool.id]?.[language];
-    return body ? { ...tool, body } : tool;
+    return gifCopy ? { ...tool, intro: gifCopy[0], body: gifCopy[1] } : body ? { ...tool, body } : tool;
   }
   const [title, shortTitle, description, keywords, intro, body] = values;
-  return { ...tool, title, shortTitle, description, keywords, intro, body: longtailBodies[tool.id]?.[language] ?? body, category: pdfOnlyLocales[language] ? 'PDF' : ui[language][tool.category] ?? tool.category };
+  return {
+    ...tool,
+    title,
+    shortTitle,
+    description: gifCopy ? gifCopy[1] : description,
+    keywords,
+    intro: gifCopy ? gifCopy[0] : intro,
+    body: gifCopy ? gifCopy[1] : longtailBodies[tool.id]?.[language] ?? body,
+    category: pdfOnlyLocales[language] ? 'PDF' : ui[language][tool.category] ?? tool.category,
+  };
 }
 
 export function translateStaticHtml(html, language, dynamic = {}) {

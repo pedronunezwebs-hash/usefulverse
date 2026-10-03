@@ -1,7 +1,12 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { createXlsx, readXlsxSheets } from './pdf-office.mjs';
-import { convertSubtitles, csvText, gcdAll, lcmAll, parseCsv, parseWholeNumbers } from './plan-tools.js';
+import { convertSubtitles, csvText, gcdAll, lcmAll, parseCsv, parseWholeNumbers, toggleRecorderPause } from './plan-tools.js';
+import { planToolMarkup } from './plan-tools-template.mjs';
+import { locales, localizedTool } from './locales.mjs';
+import { gifMakerCopy } from './locales/gif-maker-copy.mjs';
+import { recordingControlLocales } from './locales/recording-controls.mjs';
+import { tools } from './catalog.mjs';
 
 test('GCD and LCM support negative integers, zero and several values', () => {
   const values = parseWholeNumbers('12, -18, 30');
@@ -35,4 +40,34 @@ test('subtitle conversion shifts timing, preserves multiline captions and normal
   assert.match(vtt, /00:00:01\.750 --> 00:00:03\.000\nHello\nsecond line/u);
   assert.match(vtt, /00:00:03\.500 --> 00:00:04\.500/u);
   assert.throws(() => convertSubtitles(srt, 'srt', -2_000), /cue invalid/u);
+});
+
+test('voice recorder exposes an accessible pause and resume control', () => {
+  const markup = planToolMarkup('voice-recorder');
+  assert.match(markup, /data-action="pause-voice-recording" aria-pressed="false" disabled>Pause/u);
+  assert.match(markup, /data-action="stop-plan-recording" disabled>Stop and save/u);
+
+  const calls = [];
+  const recorder = {
+    state: 'recording',
+    pause() { calls.push('pause'); this.state = 'paused'; },
+    resume() { calls.push('resume'); this.state = 'recording'; },
+  };
+  assert.equal(toggleRecorderPause(recorder), 'paused');
+  assert.equal(toggleRecorderPause(recorder), 'recording');
+  assert.deepEqual(calls, ['pause', 'resume']);
+  assert.equal(toggleRecorderPause({ state: 'inactive' }), null);
+});
+
+test('recording controls and GIF capability copy cover every published full locale', () => {
+  const gifTool = tools.find((tool) => tool.id === 'gif-maker');
+  assert.equal(Object.keys(gifMakerCopy).length, Object.keys(locales).length);
+  assert.equal(Object.keys(recordingControlLocales).length, Object.keys(locales).length);
+  for (const language of Object.keys(locales)) {
+    const tool = localizedTool(gifTool, language);
+    assert.equal(tool.intro, gifMakerCopy[language][0], language);
+    assert.equal(tool.body, gifMakerCopy[language][1], language);
+    assert.match(recordingControlLocales[language].Resume, /\S/u, language);
+    assert.match(recordingControlLocales[language]['Recording paused.'], /\S/u, language);
+  }
 });
