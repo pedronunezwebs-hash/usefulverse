@@ -1,13 +1,14 @@
 import { tools } from './catalog.mjs';
 import { seo } from './seo.mjs';
 import { positionSeoMetadata } from './seo-positioning.mjs';
-import { localeEntries, localeHomePath, localePath, locales, localizedTool, numberWordsLocaleCodes, packs, pdfLocaleEntries, pdfOnlyLocales, pdfOnlyPacks, pdfToolIds, translateStaticHtml, ui } from './locales.mjs';
+import { localeEntries, localeHomePath, localePath, locales, localizedTool, numberWordsLocaleCodes, packs, pdfLocaleEntries, pdfOnlyLocales, pdfOnlyPacks, pdfToolIds, plannedSeoOverrides, translateStaticHtml, ui } from './locales.mjs';
 import { imageFormatLocales } from './locales/image-formats.mjs';
 import { longtailFaqs } from './locales/longtail.mjs';
 import { guideCanonical, guidePath, guidesForLocale } from './guides.mjs';
 import { expandedToolMarkup } from './expanded-template.mjs';
 import { browserBatchToolMarkup } from './browser-batch-template.mjs';
 import { toolSuiteMarkup } from './tool-suite-template.mjs';
+import { planToolMarkup } from './plan-tools-template.mjs';
 
 const fill = (template, values) => template.replace(/\{(\w+)\}/gu, (match, name) => values[name] ?? match);
 
@@ -74,6 +75,8 @@ export const relatedToolIds = {
 
 const relatedGuideSlugs = {
   'average-calculator': ['how-to-calculate-a-weighted-grade'],
+  'prime-number-checker': ['how-to-check-if-a-number-is-prime'],
+  'date-calculator': ['how-to-count-days-between-dates'],
   'word-counter': ['google-docs-word-count'],
   'remove-duplicate-lines': ['remove-duplicates-in-excel-safely'],
   'binary-converter': ['hexadecimal-to-binary-conversion'],
@@ -91,6 +94,8 @@ export function toolCard(tool, language = 'en') {
 }
 
 function toolMarkup(id) {
+  const plan = planToolMarkup(id);
+  if (plan) return plan;
   const suite = toolSuiteMarkup(id);
   if (suite) return suite;
   const expanded = expandedToolMarkup(id);
@@ -314,13 +319,13 @@ function toolMarkup(id) {
     <label class="sr-only" for="tool-input">Text with line breaks</label><textarea id="tool-input" class="tool-textarea tool-textarea--large" placeholder="Paste text with\nbroken lines\nhere..."></textarea><div class="tool-actions"><button class="button button--primary" data-action="join-line-breaks">Join with spaces</button><button class="button button--ghost" data-action="remove-line-breaks">Remove breaks</button><button class="button button--ghost" data-action="clear">Clear</button></div><p class="tool-status" id="tool-status" aria-live="polite">Your text stays in this browser.</p><label class="field-label" for="tool-output">Clean result</label><textarea id="tool-output" class="tool-textarea tool-textarea--large" readonly placeholder="Your clean paragraph will appear here..."></textarea><div class="tool-actions"><button class="button button--primary" data-action="copy-output">Copy result</button></div>
   ${close}`;
   if (id === 'text-diff-checker') return `${common}
-    <div class="converter-grid"><section class="calculator-card"><label class="field-label" for="diff-original">Original text</label><textarea id="diff-original" class="tool-textarea" placeholder="Paste the original..."></textarea></section><section class="calculator-card"><label class="field-label" for="diff-changed">Changed text</label><textarea id="diff-changed" class="tool-textarea" placeholder="Paste the changed version..."></textarea></section></div><div class="tool-actions"><button class="button button--primary" data-action="compare-text">Compare text</button><button class="button button--ghost" data-action="clear">Clear</button></div><p class="tool-status" id="tool-status" aria-live="polite">Comparison runs locally line by line.</p><div class="result-block"><div class="result-block__heading"><span>Differences</span><strong id="diff-count">0</strong></div><pre id="diff-output" class="result-pre">No comparison yet.</pre></div>
+    <div class="converter-grid"><section class="calculator-card"><label class="field-label" for="diff-original">Original text</label><textarea id="diff-original" class="tool-textarea" placeholder="Paste the original..."></textarea></section><section class="calculator-card"><label class="field-label" for="diff-changed">Changed text</label><textarea id="diff-changed" class="tool-textarea" placeholder="Paste the changed version..."></textarea></section></div><div class="option-row"><label><input id="diff-ignore-whitespace" type="checkbox"> Trim spaces</label><label><input id="diff-ignore-case" type="checkbox"> Ignore case</label></div><div class="tool-actions"><button class="button button--primary" data-action="compare-text">Compare text</button><button class="button button--ghost" data-action="clear">Clear</button></div><p class="tool-status" id="tool-status" aria-live="polite">Comparison runs locally line by line.</p><div class="result-block"><div class="result-block__heading"><span>Differences</span><strong id="diff-count">0</strong></div><pre id="diff-output" class="result-pre">No comparison yet.</pre></div>
   ${close}`;
   if (id === 'unit-converter') return `${common}
     <div class="base-converter unit-converter"><label class="field-label" for="unit-category">Type <select id="unit-category" class="tool-input"><option value="length">Length</option><option value="weight">Weight</option><option value="temperature">Temperature</option><option value="volume">Volume</option></select></label><label class="field-label" for="unit-from">From <select id="unit-from" class="tool-input"></select></label><label class="field-label" for="unit-to">To <select id="unit-to" class="tool-input"></select></label></div><label class="field-label" for="unit-input">Value</label><input id="unit-input" class="tool-input" type="number" inputmode="decimal" placeholder="1"><div class="tool-actions"><button class="button button--primary" data-action="convert-unit">Convert unit</button><button class="button button--ghost" data-action="clear">Clear</button></div><p class="tool-status" id="tool-status" aria-live="polite">Conversions run locally in your browser.</p><div class="result-block"><div class="result-block__heading"><span>Result</span></div><output id="unit-output" class="result-output">—</output></div>
   ${close}`;
   if (id === 'date-calculator') return `${common}
-    <div class="converter-grid"><section class="calculator-card"><h2>Days between dates</h2><label class="field-label" for="date-start">Start date</label><input id="date-start" class="tool-input" type="date"><label class="field-label" for="date-end">End date</label><input id="date-end" class="tool-input" type="date"><div class="tool-actions"><button class="button button--primary" data-action="date-difference">Calculate difference</button></div><output class="calculation-result" id="date-difference-result">—</output></section><section class="calculator-card"><h2>Add or subtract days</h2><label class="field-label" for="date-base">Starting date</label><input id="date-base" class="tool-input" type="date"><label class="field-label" for="date-offset">Days to add <span class="field-hint">Use a negative number to subtract</span></label><input id="date-offset" class="tool-input" type="number" inputmode="numeric" placeholder="30"><div class="tool-actions"><button class="button button--primary" data-action="date-offset">Calculate date</button></div><output class="calculation-result" id="date-offset-result">—</output></section></div><p class="tool-status" id="tool-status" aria-live="polite">Dates are calculated in your browser.</p>
+    <div class="converter-grid"><section class="calculator-card"><h2>Days between dates</h2><label class="field-label" for="date-start">Start date</label><input id="date-start" class="tool-input" type="date"><label class="field-label" for="date-end">End date</label><input id="date-end" class="tool-input" type="date"><label class="option-row"><input id="date-include-start" type="checkbox"> Count both start and end dates</label><div class="tool-actions"><button class="button button--primary" data-action="date-difference">Calculate difference</button></div><output class="calculation-result" id="date-difference-result">—</output></section><section class="calculator-card"><h2>Add or subtract days</h2><label class="field-label" for="date-base">Starting date</label><input id="date-base" class="tool-input" type="date"><label class="field-label" for="date-offset">Days to add <span class="field-hint">Use a negative number to subtract</span></label><input id="date-offset" class="tool-input" type="number" inputmode="numeric" placeholder="30"><div class="tool-actions"><button class="button button--primary" data-action="date-offset">Calculate date</button></div><output class="calculation-result" id="date-offset-result">—</output></section></div><p class="tool-status" id="tool-status" aria-live="polite">Dates are calculated in your browser.</p>
   ${close}`;
   if (id === 'qr-code-generator') return `${common}
     <label class="field-label" for="qr-input">Link or short text</label><textarea id="qr-input" class="tool-textarea" maxlength="106" placeholder="https://usefulverse.com/tools/qr-code-generator"></textarea>
@@ -439,6 +444,7 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
     de: { how: (name) => `Wie verwendet man „${name}“?`, privacyQuestion: 'Werden meine Daten an einen Server gesendet?', privacyAnswer: 'Nein. Die Verarbeitung findet in Ihrem Browser statt. Ihre Daten werden nicht hochgeladen.' },
   };
   const pack = packs[language] ?? pdfOnlyPacks[language];
+  const plannedSeo = plannedSeoOverrides[language];
   const imageFormatData = imageFormatLocales[language];
   const imageFormatCopy = imageFormatData?.copy?.[tool.id];
   const baseSeoData = language === 'en'
@@ -450,6 +456,9 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
         { question: fill(pack.page.faqHow, { name: tool.shortTitle }), answer: tool.intro },
         { question: pack.page.privacyQuestion, answer: pack.page.privacyAnswer },
       ],
+    } : plannedSeo?.seo?.[tool.id] ? {
+      ...plannedSeo.seo[tool.id],
+      faq: plannedSeo.faq?.[tool.id] ?? [],
     } : imageFormatCopy ? {
       title: imageFormatData.seoTitles?.[tool.id] ?? imageFormatCopy[1],
       description: imageFormatCopy[2].length >= 25 && imageFormatCopy[2].length <= 155
@@ -631,9 +640,9 @@ export function renderNotFoundPage() {
       const prefixes = ${JSON.stringify(Object.fromEntries(localeEntries.map(({ key, prefix }) => [key, prefix])))};
       const preferred = (navigator.languages || [navigator.language || 'en']).map((value) => value.toLowerCase());
       const key = Object.keys(prefixes).find((language) => preferred.some((value) => value === language || value.startsWith(language + '-'))) || 'en';
-      const text = copy[key];
+      const text = copy[key] || copy.en;
       document.documentElement.lang = ({ pt: 'pt-BR', zh: 'zh-CN', bn: 'bn-BD', ru: 'ru-RU', ur: 'ur-PK' })[key] || key;
-      document.documentElement.dir = ['ar', 'ur'].includes(key) ? 'rtl' : 'ltr';
+      document.documentElement.dir = ['ar', 'ur', 'fa'].includes(key) ? 'rtl' : 'ltr';
       document.title = text.title + ' | UsefulVerse';
       document.getElementById('not-found-heading').textContent = text.heading;
       document.getElementById('not-found-detail').textContent = text.detail;
@@ -803,6 +812,7 @@ export function shell({ title, description, canonical, body, schema = '', assetV
 export function renderHome(tools, categories, assetVersion = '', language = 'en') {
   const homeUrl = `https://usefulverse.com${localePath(language)}`;
   const alternates = localeEntries.map(({ key, code }) => `<link rel="alternate" hreflang="${code}" href="https://usefulverse.com${localePath(key)}">`).join('\n    ');
+  const homeMetadata = positionSeoMetadata({ title: locales[language].homeTitle, description: locales[language].homeDescription }, language);
   const dynamicTranslations = {};
   const schema = `<script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
@@ -813,8 +823,8 @@ export function renderHome(tools, categories, assetVersion = '', language = 'en'
     inLanguage: locales[language].code,
   })}</script>`;
   const rendered = shell({
-    title: locales[language].homeTitle,
-    description: locales[language].homeDescription,
+    title: homeMetadata.title,
+    description: homeMetadata.description,
     canonical: homeUrl,
     schema,
     assetVersion,

@@ -14,7 +14,7 @@ if (gaps.length) {
 }
 
 for (const language of expandedFullLocaleKeys) {
-  if (!packs[language] || guidesForLocale(language).length !== 4) {
+  if (!packs[language] || guidesForLocale(language).length !== 6) {
     console.error(`Release blocked: ${language} is missing one or more localized guide routes.`);
     process.exitCode = 1;
   }

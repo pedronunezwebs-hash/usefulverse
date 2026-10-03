@@ -13,6 +13,8 @@ import { toolSuiteLocales } from './locales/tool-suite.mjs';
 import { pdfParityLocales } from './locales/pdf-parity.mjs';
 import { pdfRedactLocales } from './locales/pdf-redact.mjs';
 import { imageCaptureUiLocales } from './locales/image-capture.mjs';
+import { pageKeys, templateKeys } from './locales/template-keys.mjs';
+import { tools } from './catalog.mjs';
 import { htmlToPdfLocales } from './locales/html-to-pdf.mjs';
 import { pdfToPdfaLocales } from './locales/pdf-to-pdfa.mjs';
 import { pdfOfficeUiLocales } from './locales/pdf-office-ui.mjs';
@@ -20,12 +22,14 @@ import { pdfOnlyLocaleData } from './locales/pdf-only-locales.mjs';
 import { pdfOnlyExtraLocaleData } from './locales/pdf-only-extra.mjs';
 import { pdfOnlyUiLocales } from './locales/pdf-only-ui.mjs';
 import { guidePacks } from './locales/guide-packs.mjs';
+import { planLocaleData } from './locales/plan-language-data.mjs';
 import {
   expandedLocaleCopyFixes,
   expandedLocaleFaqFixes,
   expandedLocaleGuideFixes,
   expandedLocaleMetaFixes,
   expandedLocaleStatusFixes,
+  expandedLocaleStatusKeys,
   expandedLocaleTemplateFixes,
   expandedLocaleTitleFixes,
   expandedLocaleTranslationReview,
@@ -49,10 +53,11 @@ export const pdfToolIds = [
   'html-to-pdf', 'pdf-to-markdown', 'pdf-form-filler', 'pdf-compare',
 ];
 export const pdfOnlyLocaleDataAll = { ...pdfOnlyLocaleData, ...pdfOnlyExtraLocaleData };
-export const expandedFullLocaleKeys = ['it', 'zh_tw', 'bg', 'ca', 'nl', 'el', 'ms', 'pl', 'sv', 'th', 'uk', 'sw'];
+export const expandedFullLocaleKeys = ['it', 'zh_tw', 'bg', 'ca', 'nl', 'el', 'ms', 'pl', 'sv', 'th', 'uk', 'sw', 'mr', 'te', 'ha', 'tl', 'ta', 'fa', 'am', 'gu'];
 export const numberWordsLocaleCodes = {
   it: 'it-IT', zh_tw: 'zh-TW', bg: 'bg-BG', ca: 'ca-ES', nl: 'nl-NL', el: 'el-GR',
   ms: 'ms-MY', pl: 'pl-PL', sv: 'sv-SE', th: 'th-TH', uk: 'uk-UA', sw: 'sw-KE',
+  mr: 'mr-IN', te: 'te-IN', ha: 'ha-NG', tl: 'fil-PH', ta: 'ta-IN', fa: 'fa-IR', am: 'am-ET', gu: 'gu-IN',
 };
 export const pdfOnlyLocaleKeys = Object.keys(pdfOnlyLocaleDataAll).filter((key) => !expandedFullLocaleKeys.includes(key));
 export const pdfOnlyLocales = {};
@@ -184,7 +189,20 @@ copy.de = deDE.copy;
 export const packKeys = ['ja', 'ko', 'id', 'hi', 'ar', 'zh', 'bn', 'ru', 'ur', 'tr', 'vi', ...expandedFullLocaleKeys];
 const enabledPacks = process.env.USEFULVERSE_PACKS?.split(',').map((key) => key.trim()).filter(Boolean) ?? packKeys;
 export const packs = {};
-for (const key of packKeys.filter((item) => enabledPacks.includes(item))) packs[key] = (await import(`./locales/${key}/index.mjs`)).pack;
+for (const key of packKeys.filter((item) => enabledPacks.includes(item))) {
+  const planned = planLocaleData.full[key];
+  packs[key] = planned ? {
+    meta: planned.meta,
+    page: planned.page,
+    ui: planned.ui,
+    runtimeMessages: Object.fromEntries(Object.entries(planned.ui).filter(([name]) => !name.startsWith('status.'))),
+    copy: planned.copy,
+    seo: planned.seo,
+    faq: planned.faq,
+    templates: planned.templates,
+    guides: planned.guides,
+  } : (await import(`./locales/${key}/index.mjs`)).pack;
+}
 for (const [key, pack] of Object.entries(packs)) {
   const { code, name, prefix, homeTitle, homeDescription } = pack.meta;
   if (expandedLocaleTranslationReview[key]) pack.meta.translationReview = expandedLocaleTranslationReview[key];
@@ -690,6 +708,288 @@ for (const pack of Object.values(packs)) {
 // Camera strings have one canonical translation source. Apply them after the
 // feature-specific packs so older pack copy cannot silently replace the
 // reviewed camera wording in the generated page and browser runtime.
+for (const [language, data] of Object.entries(imageCaptureUiLocales)) {
+  Object.assign(ui[language] ??= {}, data);
+  Object.assign(runtimeMessages[language] ??= {}, data);
+  const pack = packs[language];
+  if (!pack) continue;
+  Object.assign(pack.ui, data);
+  Object.assign(pack.runtimeMessages, data);
+}
+
+// Complete the 36-language rollout with the owner-approved machine translations.
+// These dictionaries are consumed at build time and emitted as one small locale
+// bundle per page; they are not added to the shared browser application bundle.
+export const plannedSeoOverrides = Object.fromEntries(Object.entries(planLocaleData.partial).map(([language, data]) => [language, { seo: data.seo, faq: data.faq }]));
+
+function repairLocalizedPlaceholders(value, variables) {
+  const markers = /\{[\w.-]+\}|UVPH[\w-]+?ZZ/gu;
+  const matches = [...String(value ?? '').matchAll(markers)];
+  if (!variables.length) return String(value ?? '').replace(markers, '').replace(/\s{2,}/gu, ' ').trim();
+  let index = 0;
+  let repaired = String(value ?? '').replace(markers, () => {
+    const variable = variables[index++];
+    return variable ? `{${variable}}` : '';
+  });
+  const present = [...repaired.matchAll(/\{([\w.-]+)\}/gu)].map(([, key]) => key);
+  const missing = variables.filter((variable) => !present.includes(variable));
+  if (missing.length) repaired = `${repaired} ${missing.map((variable) => `{${variable}}`).join(' ')}`;
+  return repaired.trim();
+}
+
+for (const [language, data] of Object.entries(planLocaleData.partial)) {
+  ui[language] ??= {};
+  runtimeMessages[language] ??= {};
+  for (const [key, value] of Object.entries(data.ui)) {
+    if (!Object.hasOwn(ui[language], key)) ui[language][key] = value;
+    if (!key.startsWith('status.') && !Object.hasOwn(runtimeMessages[language], key)) runtimeMessages[language][key] = value;
+  }
+  Object.assign(copy[language] ??= {}, data.copy);
+  const pack = packs[language];
+  if (pack) {
+    for (const [key, value] of Object.entries(data.ui)) {
+      if (!Object.hasOwn(pack.ui, key) && !Object.hasOwn(pack.runtimeMessages, key)) pack.ui[key] = value;
+      if (!key.startsWith('status.') && !Object.hasOwn(pack.runtimeMessages, key) && !Object.hasOwn(pack.ui, key)) pack.runtimeMessages[key] = value;
+    }
+    Object.assign(pack.copy, data.copy);
+    Object.assign(pack.seo, data.seo);
+    Object.assign(pack.faq, data.faq);
+    if (data.guides.length) {
+      const existing = pack.guides ?? [];
+      const additions = data.guides.filter((guide) => !existing.some((item) => item.slug === guide.slug));
+      pack.guides = [...existing, ...additions];
+    }
+  }
+  for (const [toolId, metadata] of Object.entries(data.seo)) {
+    if (pack?.seo?.[toolId]) Object.assign(pack.seo[toolId], metadata);
+  }
+  for (const [toolId, questions] of Object.entries(data.faq)) {
+    if (pack?.faq) pack.faq[toolId] = questions;
+  }
+  const guidePack = guidePacks[language];
+  if (guidePack?.text) Object.assign(guidePack.text, data.guideText);
+  else if (guidePack && Array.isArray(guidePack.guides)) {
+    const existing = new Set(guidePack.guides.map((guide) => guide.slug));
+    guidePack.guides.push(...data.guides.filter((guide) => !existing.has(guide.slug)));
+  }
+}
+
+const nativeLanguageNames = [...new Set(Object.values(locales).map(({ name }) => name))];
+for (const [language, data] of Object.entries(planLocaleData.full)) {
+  const pack = packs[language];
+  if (!pack) throw new Error(`Missing full translated pack for ${language}`);
+  pack.meta.translationReview = expandedLocaleTranslationReview[language];
+  pack.meta.keepEnglish = [...new Set([...(pack.meta.keepEnglish ?? []), ...expandedLocaleStatusKeys, '240 px', '360 px', '480 px', 'UsefulVerse', 'PDF', 'JPG', 'PNG', 'WebP', 'XLSX', 'CSV', 'SRT', 'VTT', 'GIF', 'OCR', 'EXIF', 'GPS', 'MP3', 'WebM', 'JSON', 'URL', 'SEO', 'WebVTT (.vtt)', 'SubRip (.srt)', 'your-clean-url-slug', 'https://example.com/search?q=hello world', 'https://example.com/search?q=useful&lang=en', 'https://usefulverse.com/tools/qr-code-generator', 'name,age\nAda,36\nLinus,55', '\\bUseful\\w*\\b', ...nativeLanguageNames])];
+  pack.guides = data.guides;
+  Object.assign(pack.ui, data.ui);
+  for (const [key, value] of Object.entries(data.ui)) if (!key.startsWith('status.')) pack.runtimeMessages[key] = value;
+  Object.assign(pack.runtimeMessages, data.runtimeMessages ?? {});
+  Object.assign(pack.copy, data.copy);
+  Object.assign(pack.seo, data.seo);
+  Object.assign(pack.faq, data.faq);
+  Object.assign(pack.templates, data.templates);
+  for (const [name] of Object.entries(pageKeys)) pack.page[name] = repairLocalizedPlaceholders(pack.page[name], pageKeys[name].vars);
+  for (const [name, spec] of Object.entries(templateKeys)) {
+    const entry = pack.templates[name];
+    if (typeof entry === 'string') pack.templates[name] = repairLocalizedPlaceholders(entry, spec.vars);
+    else if (entry) for (const [category, value] of Object.entries(entry)) entry[category] = repairLocalizedPlaceholders(value, spec.vars);
+  }
+  if (language === 'mr') {
+    pack.meta.homeTitle = 'मोफत ऑनलाइन साधने';
+    pack.meta.homeDescription = 'मजकूर, फाइल्स, डेटा आणि दैनंदिन कामांसाठी वेगवान खाजगी ब्राउझर साधने. खाते किंवा फाइल अपलोडची गरज नाही.';
+    Object.assign(pack.page, {
+      faqHow: 'मी {name} कसे वापरू?', privacyQuestion: 'माझा डेटा अपलोड होतो का?',
+      privacyAnswer: 'नाही. प्रक्रिया तुमच्या ब्राउझरमध्ये चालते आणि तुमचा डेटा अपलोड केला जात नाही.',
+      about: '{title} बद्दल.', madeSimple: '{title} सोपे झाले.', categoryTool: '{category} साधन', workspace: '{title} कार्यक्षेत्र',
+    });
+  }
+  if (language === 'ha') {
+    pack.meta.homeTitle = 'Kayan aikin kan layi kyauta';
+    pack.meta.homeDescription = 'Kayan aikin burauza masu sauri da sirri don rubutu, fayiloli, bayanai da ayyukan yau da kullum. Babu asusu ko loda fayil.';
+    pack.page.categoryTool = '{category} kayan aiki';
+    pack.templates['reading.minutes'] = '{count} minti';
+  }
+  if (language === 'ha') {
+    const clean = (value) => typeof value === 'string' ? value.replace(/\s*\n?Saukewa:\s*/gu, ' ').replace(/\s{2,}/gu, ' ').trim() : value;
+    for (const dictionary of [pack.ui, pack.runtimeMessages, pack.copy, pack.templates]) {
+      for (const [key, value] of Object.entries(dictionary)) dictionary[key] = Array.isArray(value) ? value.map(clean) : value && typeof value === 'object' ? Object.fromEntries(Object.entries(value).map(([field, item]) => [field, clean(item)])) : clean(value);
+    }
+    for (const dictionary of [pack.seo, pack.faq]) for (const value of Object.values(dictionary)) {
+      if (value && typeof value === 'object') for (const [key, item] of Object.entries(value)) value[key] = Array.isArray(item) ? item.map((entry) => Object.fromEntries(Object.entries(entry).map(([field, text]) => [field, clean(text)]))) : clean(item);
+    }
+  }
+  if (language === 'tl') {
+    pack.page.categoryTool = '{category} kasangkapan';
+    pack.templates['reading.minutes'] = '{count} minuto';
+  }
+  pack.meta.homeTitle = truncateMetadata(pack.meta.homeTitle, 65);
+  pack.meta.homeDescription = truncateMetadata(pack.meta.homeDescription, 155, true);
+  const usedTitles = new Set();
+  for (const tool of tools) {
+    const metadata = pack.seo[tool.id];
+    const localized = pack.copy[tool.id];
+    if (!metadata || !localized) continue;
+    metadata.title = truncateMetadata(localized[1], 51);
+    if (usedTitles.has(metadata.title)) metadata.title = truncateMetadata(localized[0], 51);
+    if (usedTitles.has(metadata.title)) metadata.title = truncateMetadata(`${localized[1]} — ${ui[language][tool.category] ?? tool.category}`, 51);
+    if (usedTitles.has(metadata.title)) metadata.title = truncateMetadata(`${localized[1]} ${tool.id}`, 51);
+    usedTitles.add(metadata.title);
+    const description = localized[2].length >= 25 ? localized[2] : `${localized[1]}: ${localized[4]}`;
+    metadata.description = truncateMetadata(description, 155, true);
+  }
+  Object.assign(ui[language], pack.ui);
+  Object.assign(runtimeMessages[language], pack.runtimeMessages);
+  Object.assign(copy[language], pack.copy);
+}
+
+// Machine translation can leave a short tool name unchanged even when its
+// description is translated. Keep these visible catalog titles localized.
+const plannedToolTitleFixes = {
+  bg: { 'screen-recorder': 'Запис на екрана' },
+  sv: { 'image-collage-maker': 'Bildkollageverktyg' },
+  uk: { 'image-collage-maker': 'Створення колажу з фото' },
+  tl: {
+    'word-counter': 'Bilang ng mga Salita',
+    'text-case-converter': 'Tagapagpalit ng laki ng titik',
+    'profit-margin-calculator': 'Kalkulador ng tubo at margin',
+    'salary-to-hourly-calculator': 'Kalkulador ng sahod kada oras',
+    'image-collage-maker': 'Gumawa ng collage ng larawan',
+    'image-metadata-remover': 'Alisin ang metadata ng larawan',
+    'gif-maker': 'Gumawa ng animated na GIF',
+    'screen-recorder': 'Pangrekord ng screen',
+  },
+  ha: { 'json-formatter': 'Mai tsara JSON' },
+  ta: { 'pdf-tools': 'PDF-ஐ இணைக்க, பிரிக்க, சுருக்க' },
+  fa: { 'json-formatter': 'قالب‌بند JSON' },
+  am: { 'sha256-hash-generator': 'የ SHA-256 ሃሽ አመንጪ' },
+};
+plannedToolTitleFixes.ha['base64-encoder-decoder'] = 'Mai shigar da fassara Base64';
+plannedToolTitleFixes.ha['uuid-generator'] = 'Mai ƙirƙirar UUID';
+plannedToolTitleFixes.ha['sha256-hash-generator'] = 'Mai ƙirƙirar SHA-256 checksum';
+plannedToolTitleFixes.ha['jwt-decoder'] = 'Mai fassara JWT';
+plannedToolTitleFixes.ha['binary-converter'] = 'Mai canza lambar binary';
+plannedToolTitleFixes.ha['qr-code-generator'] = 'Mai samar da lambar QR';
+plannedToolTitleFixes.ha['tip-calculator'] = 'Mai lissafin tukuici';
+plannedToolTitleFixes.ha['video-compressor'] = 'Mai matse bidiyo';
+plannedToolTitleFixes.ha['audio-compressor'] = 'Mai matse sauti';
+plannedToolTitleFixes.ha['favicon-generator'] = 'Mai samar da favicon';
+plannedToolTitleFixes.ha['barcode-generator'] = 'Mai samar da lambar barcode';
+plannedToolTitleFixes.ha['lorem-ipsum-generator'] = 'Mai samar da Lorem Ipsum';
+plannedToolTitleFixes.ha['random-name-picker'] = 'Mai zaɓen suna bazuwar';
+plannedToolTitleFixes.ta['pdf-to-markdown'] = 'PDF-ஐ Markdown ஆக மாற்றி';
+plannedToolTitleFixes.fa['html-entity-encoder-decoder'] = 'مبدل موجودیت‌های HTML';
+plannedToolTitleFixes.fa['xml-formatter'] = 'قالب‌بند XML';
+plannedToolTitleFixes.fa['sql-formatter'] = 'قالب‌بند SQL';
+plannedToolTitleFixes.am['subnet-calculator'] = 'የንዑስ ኔትወርክ ካልኩሌተር';
+plannedToolTitleFixes.tl['json-formatter'] = 'Formatter ng JSON';
+plannedToolTitleFixes.tl['timestamp-converter'] = 'Tagapagpalit ng Unix timestamp';
+plannedToolTitleFixes.tl['csv-to-json'] = 'Tagapagpalit ng CSV sa JSON';
+plannedToolTitleFixes.tl['json-to-csv'] = 'Tagapagpalit ng JSON sa CSV';
+plannedToolTitleFixes.tl['random-number-generator'] = 'Tagapagbuo ng random na numero';
+plannedToolTitleFixes.tl['uuid-generator'] = 'Tagapagbuo ng UUID';
+plannedToolTitleFixes.tl['sha256-hash-generator'] = 'Tagapagbuo ng SHA-256 hash';
+plannedToolTitleFixes.tl['regex-tester'] = 'Tagasubok ng regular expression';
+plannedToolTitleFixes.tl['jwt-decoder'] = 'Tagapag-decode ng JWT';
+plannedToolTitleFixes.tl['url-parser'] = 'Tagasuri ng URL';
+plannedToolTitleFixes.tl['roman-numeral-converter'] = 'Tagapagpalit ng Romanong numero';
+plannedToolTitleFixes.tl['binary-converter'] = 'Tagapagpalit ng binary';
+plannedToolTitleFixes.tl['number-to-words-converter'] = 'I-convert ang numero sa salita';
+plannedToolTitleFixes.tl['text-diff-checker'] = 'Tagasuri ng pagkakaiba ng teksto';
+plannedToolTitleFixes.tl['unit-converter'] = 'Tagapagpalit ng yunit';
+plannedToolTitleFixes.tl['time-zone-converter'] = 'Tagapagpalit ng time zone';
+plannedToolTitleFixes.tl['color-contrast-checker'] = 'Tagasuri ng contrast ng kulay';
+plannedToolTitleFixes.tl['gpa-calculator'] = 'Tagakalkula ng GPA';
+plannedToolTitleFixes.tl['file-checksum'] = 'Tagabuo ng file checksum';
+plannedToolTitleFixes.tl['pdf-tools'] = 'Mga kasangkapan sa PDF';
+plannedToolTitleFixes.tl['video-compressor'] = 'Tagapiga ng video';
+plannedToolTitleFixes.tl['audio-compressor'] = 'Tagapiga ng audio';
+plannedToolTitleFixes.tl['csv-viewer'] = 'Tagatingin ng CSV';
+plannedToolTitleFixes.tl['qr-code-reader'] = 'Mambabasa ng QR code';
+plannedToolTitleFixes.tl['markdown-html-converter'] = 'Tagapagpalit ng Markdown at HTML';
+plannedToolTitleFixes.tl['standard-deviation-calculator'] = 'Kalkulador ng standard deviation';
+plannedToolTitleFixes.tl['discount-calculator'] = 'Kalkulador ng diskuwento';
+plannedToolTitleFixes.tl['square-footage-calculator'] = 'Kalkulador ng lawak ng sahig';
+plannedToolTitleFixes.tl['fraction-calculator'] = 'Kalkulador ng fraction';
+plannedToolTitleFixes.tl['time-card-calculator'] = 'Kalkulador ng oras sa trabaho';
+plannedToolTitleFixes.tl['lorem-ipsum-generator'] = 'Tagabuo ng Lorem Ipsum';
+plannedToolTitleFixes.tl['subnet-calculator'] = 'Kalkulador ng subnet';
+plannedToolTitleFixes.tl['sql-formatter'] = 'Tagapag-ayos ng SQL';
+plannedToolTitleFixes.tl['pdf-to-markdown'] = 'I-convert ang PDF sa Markdown';
+plannedToolTitleFixes.tl['scientific-calculator'] = 'Siyentipikong kalkulador';
+plannedToolTitleFixes.tl['portrait-background-remover'] = 'Tagatanggal ng background ng portrait';
+for (const [language, titles] of Object.entries(plannedToolTitleFixes)) {
+  for (const [toolId, title] of Object.entries(titles)) {
+    if (packs[language]?.copy[toolId]) packs[language].copy[toolId][0] = title;
+    if (copy[language]?.[toolId]) copy[language][toolId][0] = title;
+    if (packs[language]?.seo[toolId]) packs[language].seo[toolId].title = truncateMetadata(title, 51);
+  }
+}
+
+const plannedSharedUiFixes = {
+  it: { 'Markup:': 'Ricarico:' },
+  bg: { 'Screen Recorder': 'Запис на екрана' },
+  ca: { Cost: 'Cost' },
+  nl: { Week: 'Week' },
+  el: { 'Image Compressor & Resizer': 'Συμπιεστής και αλλαγή μεγέθους εικόνας' },
+  ha: { 'Encode HTML': 'Yi encode HTML', 'HTML preview': 'Duban HTML', Matches: 'Daidaito', Hash: 'Hash (lambar tantancewa)', Sum: 'Jimilla', Shift: 'Matsawa', Miles: 'Mil', Grams: 'Gram', Milligrams: 'Milligram', Ounces: 'Oza', Milliliters: 'Mililita', Celsius: 'Digiri Celsius', Fahrenheit: 'Digiri Fahrenheit', Kelvin: 'Digiri Kelvin', 'MP3 audio': 'Sautin MP3', 'M4A / AAC audio': 'Sautin M4A / AAC', 'OGG / Opus audio': 'Sautin OGG / Opus', Millimeters: 'Milimita', 'Subnet mask': 'Maskin subnet', Decimal: 'Goma', 'Shift 1': 'Canja 1', '15 seconds': 'sakan 15', '30 seconds': 'sakan 30', '60 seconds': 'sakan 60', 'GitHub Flavored Markdown': 'Markdown na salon GitHub', London: 'London', Madrid: 'Madrid', 'Ho Chi Minh City': 'Ho Chi Minh City', 'Los Angeles (Pacific)': 'Los Angeles (Yammacin Tekun Pacific)', 'Decimal (10)': 'Lambar goma (10)', 'Binary (2)': 'Tsarin binary (2)', 'Hexadecimal (16)': 'Lambar hexadecimal (16)', 'Octal (8)': 'Lambar octal (8)', 'Miles (US MPG)': 'Mil (US MPG)', 'Square (1:1)': 'Murabba’i (1:1)' },
+  tl: { Text: 'Teksto', Developer: 'Pag-develop', Data: 'Datos', Pattern: 'Huwaran', Sample: 'Halimbawa', Output: 'Resulta', Profile: 'Profile ng kulay', Email: 'Adres ng email', Celsius: 'Digri Celsius', Fahrenheit: 'Digri Fahrenheit', Kelvin: 'Digri Kelvin', 'Standard deviation': 'Pamantayang paglihis', Decimal: 'Desimal', 'Roman numeral': 'Romanong numero', 'Decimal (10)': 'Desimal (10)', Header: 'Ulohan', Host: 'Pang-host', Hash: 'Hash ng datos', 'SHA-256 checksum': 'Checksum ng SHA-256', Sum: 'Kabuuan', Pass: 'Pumasa', Landscape: 'Pahalang na ayos', 'Portrait (4:5)': 'Patayo (4:5)', 'Widescreen (16:9)': 'Malapad na screen (16:9)', Background: 'Likuran', Transparent: 'Walang kulay', 'Transparent PNG preview': 'Paunang tingin ng transparent na PNG', 'HTML preview': 'Preview ng HTML', 'Contrast ratio': 'Ratio ng contrast', 'Output format': 'Format ng output', 'Profit Margin Calculator': 'Kalkulador ng tubo at margin', 'Spreadsheet converter': 'Tagapagpalit ng spreadsheet', 'Subtitle converter': 'Tagapagpalit ng subtitle', Worksheet: 'Pahina ng worksheet', 'Spacing (px)': 'Agwat (px)', 'Least common multiple (LCM):': 'Pinakamaliit na common multiple (LCM):', 'Random Number Generator': 'Tagabuo ng random na numero', 'Roman Numeral Converter': 'Tagapagpalit ng numerong Romano', 'Scientific Notation Converter workspace': 'Workspace ng tagapagpalit ng scientific notation', Protocol: 'Protokol', Payload: 'Kargang data', 'SQL query': 'Query ng SQL', Countdown: 'Pababang bilang', Stopwatch: 'Kronometro', 'Audio compression: {percent}%': 'Pag-compress ng audio: {percent}%', 'M4A / AAC audio': 'Tunog na M4A / AAC', 'OGG / Opus audio': 'Tunog na OGG / Opus', 'Word to PDF': 'Word patungong PDF', 'Signature drawing area': 'Lugar para iguhit ang pirma', 'HTML input': 'Input ng HTML', 'YAML input': 'Input ng YAML', 'YAML output': 'Output ng YAML', 'JSON output': 'Output ng JSON', 'Markdown input': 'Input ng Markdown', 'Timer mode': 'Uri ng timer', 'Subnet mask': 'Maskara ng subnet', 'Wildcard mask': 'Maskara ng wildcard', Miles: 'Milya', 'Miles (US MPG)': 'Milya (US MPG)', Milliliters: 'Mililitro', Milligrams: 'Miligramo', 'US quarts': 'Mga US quart', 'Round trip': 'Pagbalik at pag-alis', 'Square (1:1)': 'Parisukat (1:1)', 'Binary (2)': 'Binarya (2)', 'Hexadecimal (16)': 'Hexadesimal (16)', 'Octal (8)': 'Oktal (8)', 'JSON Web Token': 'Token sa Web na JSON', 'Decode token': 'I-decode ang token', 'CSV data': 'Datos ng CSV', 'JSON array': 'Hanay ng JSON', 'SHA-256 hexadecimal digest': 'Digest ng SHA-256 hexadecimal', 'Prime number': 'Bilang prima', Breadcrumb: 'Mumo ng pahina', Minify: 'Paliitin', 'Decode Base64': 'I-decode ang Base64', 'URL slug': 'Slug ng URL', 'Base number': 'Batayang numero', Milliseconds: 'Milysegundo', 'Time zone': 'Sona ng oras', 'Chicago (Central)': 'Chicago (Gitnang Oras)', 'Los Angeles (Pacific)': 'Los Angeles (Oras Pasipiko)', 'India (Kolkata)': 'India (Oras ng Kolkata)' },
+  ta: { 'Decode Base64': 'Base64 குறிமுறையை நீக்கு', 'PDF Merge, Split & Compressor': 'PDF-ஐ இணைக்க, பிரிக்க, சுருக்க' },
+  fa: { 'JSON Web Token': 'توکن وب JSON', 'SHA-256 checksum': 'جمع کنترلی SHA-256', 'GitHub Flavored Markdown': 'مارک‌داون با قالب گیت‌هاب' },
+  sv: { 'PDF Merge, Split & Compressor': 'Sammanfoga, dela och komprimera PDF', 'Photo Collage Maker': 'Verktyg för fotocollage', 'File Checksum Calculator': 'Beräkna filens kontrollsumma' },
+  uk: { 'Photo Collage Maker': 'Створення фотоколажу' },
+};
+plannedSharedUiFixes.tl['Markup:'] = 'Patong-presyo:';
+plannedSharedUiFixes.tl['Salary to Hourly Pay Calculator'] = 'Kalkulador ng sahod kada oras';
+plannedSharedUiFixes.tl['Salary to Hourly Pay Calculator workspace'] = 'Workspace ng kalkulador ng sahod kada oras';
+plannedSharedUiFixes.tl['PDF Merge, Split & Compressor'] = 'Pagsamahin, hatiin at i-compress ang PDF';
+plannedSharedUiFixes.tl['Image to Text OCR workspace'] = 'Workspace para kunin ang teksto mula sa larawan gamit ang OCR';
+plannedSharedUiFixes.tl['Spreadsheet to CSV Converter workspace'] = 'Workspace ng converter ng spreadsheet papuntang CSV';
+plannedSharedUiFixes.tl['Photo Collage Maker'] = 'Gumawa ng collage ng larawan';
+plannedSharedUiFixes.tl['Color Contrast Checker'] = 'Tagasuri ng contrast ng kulay';
+plannedSharedUiFixes.tl['Image Metadata Remover'] = 'Tagapag-alis ng metadata ng larawan';
+plannedSharedUiFixes.tl['File Checksum Calculator'] = 'Kalkulador ng checksum ng file';
+plannedSharedUiFixes.tl['Word Counter'] = 'Bilang ng mga salita';
+plannedSharedUiFixes.tl['Animated GIF Maker'] = 'Gumawa ng animated na GIF';
+plannedSharedUiFixes.tl['Screen Recorder'] = 'Pangrekord ng screen';
+plannedSharedUiFixes.tl.Clear = 'Burahin';
+plannedSharedUiFixes.tl.Expression = 'Ekspresyong matematikal';
+plannedSharedUiFixes.tl['Supports arithmetic, powers, percentages, trigonometry, roots and logarithms.'] = 'Sinusuportahan ang arithmetic, exponent, porsyento, trigonometry, square root at logarithmo.';
+for (const [language, entries] of Object.entries(plannedSharedUiFixes)) {
+  Object.assign(ui[language] ?? {}, entries);
+  Object.assign(runtimeMessages[language] ?? {}, entries);
+  Object.assign(packs[language]?.ui ?? {}, entries);
+  Object.assign(packs[language]?.runtimeMessages ?? {}, entries);
+}
+packs.ha.meta.keepEnglish = [...new Set([...(packs.ha.meta.keepEnglish ?? []), 'Seoul', 'Jakarta'])];
+packs.tl.meta.keepEnglish = [...new Set([...(packs.tl.meta.keepEnglish ?? []), 'Seoul', 'Jakarta', 'usefulverse'])];
+if (packs.tl) packs.tl.page.workspace = 'Workspace ni {title}';
+
+for (const [language, data] of Object.entries(planLocaleData.partial)) {
+  const pack = packs[language];
+  if (!pack) continue;
+  for (const [toolId, metadata] of Object.entries(data.seo)) {
+    pack.seo[toolId] = {
+      ...metadata,
+      title: truncateMetadata(metadata.title, 51),
+      description: truncateMetadata(metadata.description, 155, true),
+    };
+  }
+}
+
+// Keep language names in the picker in their own spelling, regardless of the
+// current page language (for example, English remains “English” on every page).
+for (const language of Object.keys(locales)) {
+  for (const name of nativeLanguageNames) {
+    ui[language][name] = name;
+    runtimeMessages[language][name] = name;
+  }
+  if (packs[language]) {
+    packs[language].meta.keepEnglish = [...new Set([...(packs[language].meta.keepEnglish ?? []), ...nativeLanguageNames, ...expandedLocaleStatusKeys, 'London', 'Madrid', 'Ho Chi Minh City', 'Tokyo', 'Sydney', 'Pomodoro', 'Português', 'Cost', 'Week', '240 px', '360 px', '480 px', 'UsefulVerse', 'PDF', 'JPG', 'PNG', 'WebP', 'XLSX', 'CSV', 'SRT', 'VTT', 'GIF', 'OCR', 'EXIF', 'GPS', 'MP3', 'WebM', 'JSON', 'URL', 'SEO', 'WebVTT (.vtt)', 'SubRip (.srt)'])];
+  }
+}
+
+// Reapply camera translations after generated full-language dictionaries so
+// machine drafts cannot replace the reviewed action and feedback strings.
 for (const [language, data] of Object.entries(imageCaptureUiLocales)) {
   Object.assign(ui[language] ??= {}, data);
   Object.assign(runtimeMessages[language] ??= {}, data);

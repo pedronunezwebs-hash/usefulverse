@@ -27,9 +27,24 @@ const positioning = {
   th: ['ฟรี · ไม่จำกัด', 'ใช้ฟรีโดยไม่จำกัดจำนวนครั้ง'],
   uk: ['Безкоштовно · без лімітів', 'Безкоштовно, без обмежень на кількість використань.'],
   sw: ['Bure · bila kikomo', 'Bure kutumia, bila kikomo cha matumizi.'],
+  mr: ['मोफत · कोणतीही मर्यादा नाही', 'मोफत, वापर मर्यादा नाही.'],
+  te: ['ఉచితం · పరిమితులు లేవు', 'ఉచితం, వినియోగ పరిమితి లేదు.'],
+  ha: ['Kyauta · babu iyaka', 'Kyauta ne, babu iyakar amfani.'],
+  tl: ['Libre · walang limitasyon', 'Libre gamitin, walang limitasyon sa paggamit.'],
+  ta: ['இலவசம் · வரம்புகள் இல்லை', 'இலவசம், பயன்பாட்டு வரம்பு இல்லை.'],
+  fa: ['رایگان · بدون محدودیت', 'رایگان، بدون محدودیت استفاده.'],
+  am: ['ነፃ · ገደብ የለም', 'ነፃ ነው፣ የአጠቃቀም ገደብ የለም።'],
+  gu: ['મફત · કોઈ મર્યાદા નથી', 'મફત, ઉપયોગની કોઈ મર્યાદા નથી.'],
 };
 
 const brandSuffix = ' | UsefulVerse';
+const shorten = (value, limit) => {
+  const text = String(value ?? '').trim().replace(/\s+/gu, ' ');
+  if (text.length <= limit) return text;
+  const prefix = text.slice(0, limit);
+  const boundary = prefix.lastIndexOf(' ');
+  return `${prefix.slice(0, boundary > limit * 0.6 ? boundary : limit - 1).replace(/[\s,;:—–-]+$/u, '')}…`;
+};
 
 export function positionSeoMetadata(metadata, language = 'en') {
   const [fullTitle, compactDescription] = positioning[language] ?? positioning.en;
@@ -50,11 +65,11 @@ export function positionSeoMetadata(metadata, language = 'en') {
       ? compactTitle
       : `${title}${brandSuffix}`.length <= 65
         ? `${title}${brandSuffix}`
-        : inputTitle;
+        : `${shorten(title, 49)}${brandSuffix}`;
 
   // Don't cut useful query-specific copy just to force a slogan into every snippet.
   const candidateDescription = `${description.replace(/[.。！？!？\s]+$/u, '')}. ${compactDescription}`;
-  const finalDescription = candidateDescription.length <= 155 ? candidateDescription : description;
+  const finalDescription = candidateDescription.length <= 155 ? candidateDescription : shorten(description, 155);
   return { ...metadata, title: boundedTitle, description: finalDescription };
 }
 

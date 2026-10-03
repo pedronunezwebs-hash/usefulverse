@@ -7,7 +7,7 @@ Browser-first collection of fast, private, static tools for everyday work.
 - Processing happens in the browser whenever possible.
 - No account, upload or paid API is required.
 - Each useful tool gets its own stable, indexable URL.
-- The current catalog contains 88 browser-only tools across writing, data, developer, SEO, design, privacy, text, files and everyday tasks.
+- The current catalog contains 100 browser-only tools across writing, data, developer, SEO, design, privacy, text, files and everyday tasks.
 - The public build is static and deployable to Cloudflare Pages.
 - CSS and JavaScript URLs are content-versioned during the build so CDN caches cannot serve an old runtime after a deploy.
 - HTML uses short browser and edge cache lifetimes; versioned assets remain immutable for repeat visits.
@@ -23,15 +23,19 @@ Open `http://localhost:4173` after starting the server.
 
 ## Languages and localized URLs
 
-English remains the default at `/`. The site has 28 complete language versions:
+English remains the default at `/`. The site has 36 language versions:
 Spanish (`/es/`), French (`/fr/`), Brazilian Portuguese (`/pt-br/`), German
 (`/de/`), Japanese (`/ja/`), Korean (`/ko/`), Indonesian (`/id/`), Hindi
 (`/hi/`), Arabic (`/ar/`), Simplified Chinese (`/zh-cn/`), Bengali (`/bn/`),
 Russian (`/ru/`), Urdu (`/ur/`), Turkish (`/tr/`), Vietnamese (`/vi/`), Italian
 (`/it/`), Traditional Chinese (`/zh_tw/`), Bulgarian (`/bg/`), Catalan (`/ca/`),
 Dutch (`/nl/`), Greek (`/el/`), Malay (`/ms/`), Polish (`/pl/`), Swedish
-(`/sv/`), Thai (`/th/`), Ukrainian (`/uk/`) and Swahili (`/sw/`). Each of the
-88 tools has a matching URL in every language. The build creates every version as static HTML, adds
+(`/sv/`), Thai (`/th/`), Ukrainian (`/uk/`), Swahili (`/sw/`), Marathi (`/mr/`),
+Telugu (`/te/`), Hausa (`/ha/`), Filipino (`/tl/`), Tamil (`/ta/`), Persian
+(`/fa/`), Amharic (`/am/`) and Gujarati (`/gu/`). Each of the 100 tools has a
+matching URL in every language. Newer language packs use concise machine-assisted
+translations accepted by the owner; they are not represented as native-reviewed.
+The build creates every version as static HTML, adds
 reciprocal `hreflang` and canonical tags, and lists every version with language
 alternates in `sitemap.xml`. It does not call a translation service at build time
 or in the visitor's browser.
@@ -50,9 +54,16 @@ engine. The recording is not uploaded, although the browser may download those f
 again if its cache is cleared. File processing stays on the visitor's device; memory,
 storage, browser, battery, speed and codec support are practical limits, not a server
 upload-size quota. Heavy media code is loaded only when needed. The generated sitemap
-contains 2,632 URLs: 88 tools and one home page in each of 28 languages, plus five
-guide routes (the guide index and four sourced, task-specific guides) in every language.
+contains 3,888 URLs: 100 tools and one home page in each of 36 languages, plus seven
+guide routes (the guide index and six sourced, task-specific guides) in every language.
 Guides are static HTML and add no server processing or paid API usage.
+
+The expanded local-tool set also includes GCD/LCM, scientific notation, profit
+margin, salary-to-hourly conversion, image-to-text (OCR), spreadsheet conversion,
+subtitle conversion, image collage, image metadata removal, GIF creation, screen
+recording and voice recording. Processing stays on the device; browser permissions,
+available memory, file compatibility and device performance can limit an individual
+session. No processing API or server function is used.
 
 TIFF/TIF images can be opened locally in the image converter, resizer and image-to-PDF
 tool. Multi-page TIFF uses only its first page, and some compression variants depend on

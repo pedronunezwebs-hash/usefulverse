@@ -7,6 +7,7 @@ import { renderGuidePage, renderGuidesIndex } from '../template.mjs';
 const protectedFields = new Set(['slug', 'toolId', 'type', 'value', 'url']);
 
 function compareLocalizedShape(source, translated, field = '') {
+  if (field === 'sources') { assert.deepEqual(translated, source, 'source citation names and URLs stay original'); return; }
   assert.equal(typeof translated, typeof source, `${field || 'guide'} type`);
   if (Array.isArray(source)) {
     assert.equal(translated.length, source.length, `${field} item count`);
