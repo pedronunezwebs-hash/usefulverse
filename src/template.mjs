@@ -634,7 +634,7 @@ export function renderNotFoundPage() {
   </head>
   <body>
     <main>
-      <a class="brand" href="/" aria-label="UsefulVerse home"><span class="mark" aria-hidden="true">◆</span> usefulverse</a>
+      <a class="brand" href="/" aria-label="UsefulVerse home"><span class="mark" aria-hidden="true">◆</span> UsefulVerse</a>
       <p class="code">404 · UsefulVerse</p>
       <h1 id="not-found-heading">This page took a wrong turn.</h1>
       <p class="detail" id="not-found-detail">The address may be outdated or the page may have moved. Head back to the tools directory.</p>
@@ -805,9 +805,9 @@ export function shell({ title, description, canonical, body, schema = '', assetV
     ${schema}
   </head>
   <body>
-    <header class="site-header"><div class="page-container site-header__inner"><a class="brand" href="${homeHref}" aria-label="UsefulVerse home"><span class="brand-mark" aria-hidden="true">◆</span><span>usefulverse</span></a><nav class="main-nav" aria-label="Main navigation"><a href="${toolDirectoryHref}">Tools</a>${howItWorksLink}${guideNavLink}</nav><a class="header-cta" href="${toolDirectoryHref}">Find a tool <span aria-hidden="true">↗</span></a>${localeSelector}</div></header>
+    <header class="site-header"><div class="page-container site-header__inner"><a class="brand" href="${homeHref}" aria-label="UsefulVerse home"><span class="brand-mark" aria-hidden="true">◆</span><span>UsefulVerse</span></a><nav class="main-nav" aria-label="Main navigation"><a href="${toolDirectoryHref}">Tools</a>${howItWorksLink}${guideNavLink}</nav><a class="header-cta" href="${toolDirectoryHref}">Find a tool <span aria-hidden="true">↗</span></a>${localeSelector}</div></header>
     ${body}
-    <footer class="site-footer"><div class="page-container site-footer__inner"><a class="brand brand--footer" href="${homeHref}"><span class="brand-mark" aria-hidden="true">◆</span><span>usefulverse</span></a><p>Simple tools that respect your time and your files.</p><div class="footer-links"><a href="${toolDirectoryHref}">All tools</a>${isPdfOnlyLanguage ? '' : `<a href="${homeHref}#how-it-works">Privacy first</a>`}${guideNavLink}</div></div></footer>
+    <footer class="site-footer"><div class="page-container site-footer__inner"><a class="brand brand--footer" href="${homeHref}"><span class="brand-mark" aria-hidden="true">◆</span><span>UsefulVerse</span></a><p>Simple tools that respect your time and your files.</p><div class="footer-links"><a href="${toolDirectoryHref}">All tools</a>${isPdfOnlyLanguage ? '' : `<a href="${homeHref}#how-it-works">Privacy first</a>`}${guideNavLink}</div></div></footer>
     ${lang === 'en' ? '' : `<script defer src="/assets/locale-${lang}.js${assetSuffix}"></script>`}
     ${numberWordsScript}
     <script defer src="/assets/app.js${assetSuffix}"></script>
