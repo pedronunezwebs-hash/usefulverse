@@ -9,6 +9,7 @@ import { expandedToolMarkup } from './expanded-template.mjs';
 import { browserBatchToolMarkup } from './browser-batch-template.mjs';
 import { toolSuiteMarkup } from './tool-suite-template.mjs';
 import { planToolMarkup } from './plan-tools-template.mjs';
+import { opportunityToolMarkup } from './opportunity-template.mjs';
 
 const fill = (template, values) => template.replace(/\{(\w+)\}/gu, (match, name) => values[name] ?? match);
 
@@ -93,7 +94,9 @@ export function toolCard(tool, language = 'en') {
   </a>`;
 }
 
-function toolMarkup(id) {
+function toolMarkup(id, language = 'en', localizedTitle = '') {
+  const opportunity = opportunityToolMarkup(id, language, ui[language] ?? {}, localizedTitle);
+  if (opportunity) return opportunity;
   const plan = planToolMarkup(id);
   if (plan) return plan;
   const suite = toolSuiteMarkup(id);
@@ -448,7 +451,10 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
   const imageFormatData = imageFormatLocales[language];
   const imageFormatCopy = imageFormatData?.copy?.[tool.id];
   const baseSeoData = language === 'en'
-    ? (seo[tool.id] ?? { title: tool.title, description: `${tool.description} Free, fast and private in your browser.` })
+    ? (seo[tool.id] ?? { title: tool.shortTitle, description: `${tool.description} Free and unlimited use in your browser.`, faq: [
+      { question: `How do I use ${tool.shortTitle}?`, answer: tool.intro },
+      { question: 'Is my data uploaded to a server?', answer: 'No. This tool runs locally in your browser. Your input is not uploaded.' },
+    ] })
     : pack ? {
       title: pack.seo?.[tool.id]?.title ?? tool.shortTitle,
       description: pack.seo?.[tool.id]?.description ?? tool.description,
@@ -534,8 +540,8 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
     return guide ? `<a class="guide-link-card" href="${guidePath(slug, language)}"><span class="eyebrow">${escapeHtml(ui[language]?.['UsefulVerse guide'] ?? 'UsefulVerse guide')}</span><strong>${escapeHtml(guide.title)}</strong><span>${escapeHtml(ui[language]?.['Read the guide'] ?? 'Read the guide')} <span aria-hidden="true">↗</span></span></a>` : '';
   }).join('');
   const guidesSection = guideLinks ? `<section class="tool-guides" aria-labelledby="tool-guides-title"><div><p class="eyebrow">${escapeHtml(ui[language]?.['UsefulVerse guides'] ?? 'UsefulVerse guides')}</p><h2 id="tool-guides-title">${escapeHtml(ui[language]?.['All guides'] ?? 'All guides')}</h2></div><div class="guide-link-grid">${guideLinks}</div></section>` : '';
-  const pdfOnlyMarkup = pdfOnlyLocales[language] ? toolMarkup(tool.id)
-    .replace(/<p class="(?:tool-hint|file-meta)"[^>]*>[\s\S]*?<\/p>/gu, '') : toolMarkup(tool.id);
+  const pdfOnlyMarkup = pdfOnlyLocales[language] ? toolMarkup(tool.id, language, tool.title)
+    .replace(/<p class="(?:tool-hint|file-meta)"[^>]*>[\s\S]*?<\/p>/gu, '') : toolMarkup(tool.id, language, tool.title);
   const pdfLimitations = pdfOnlyLocales[language]
     ? `<details class="tool-limits" open><summary>${escapeHtml(ui[language]?.['Important limits and output'] ?? 'Important limits and output')}</summary><p>${escapeHtml(tool.body)}</p></details>`
     : '';

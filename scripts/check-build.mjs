@@ -156,7 +156,7 @@ for (const file of await readdir(dist, { recursive: true })) {
 const sitemap = await readFile(join(dist, 'sitemap.xml'), 'utf8');
 const sitemapCount = [...sitemap.matchAll(/<loc>https:\/\/usefulverse\.com\//gu)].length;
 if (sitemapCount !== pages.length) throw new Error(`Sitemap expected ${pages.length} URLs, found ${sitemapCount}`);
-if (!sitemap.includes('xmlns:xhtml="http://www.w3.org/1999/xhtml"') || !sitemap.includes('hreflang="x-default"')) throw new Error('Sitemap is missing localized alternate links');
+if (sitemap.includes('xhtml:link') || sitemap.includes('hreflang=')) throw new Error('Sitemap must stay compact; localized alternates belong in reciprocal HTML head tags');
 for (const language of languages) {
   const paths = [localePath(language), ...tools.map((tool) => localePath(language, tool.id)), guidePath('', language), ...guides.map((guide) => guidePath(guide.slug, language))];
   const count = paths.filter((path) => sitemap.includes(`<loc>https://usefulverse.com${path}</loc>`)).length;
@@ -197,7 +197,7 @@ const visibleStrings = (html) => html.split(/(<script\b[\s\S]*?<\/script>|<style
 const englishStrings = new Set();
 for (const { path, language } of pages) if (language === 'en') for (const value of visibleStrings(await readFile(path, 'utf8'))) englishStrings.add(value);
 // Equations, code samples, color literals, and numeric placeholders are intentionally language-neutral.
-const universalStrings = new Set(['usefulverse', 'UsefulVerse', 'useful', 'verse', 'JSON Web Token', 'Base64', 'JSON', 'CSV', 'UUID', 'SHA-256', 'UTC', 'HEX', 'RGB', 'HSL', 'JPG', 'JPEG', 'PNG', 'WebP', 'PDF', 'M4A (AAC)', 'OGG (Opus)', 'Bahasa Indonesia', '<note><to>Alex</to></note>', '256 px', '384 px', '512 px', '0 min', '#4D6BFF, rgb(77,107,255) or hsl(231,100%,67%)', 'sin(30) + sqrt(16)',
+const universalStrings = new Set(['usefulverse', 'UsefulVerse', 'useful', 'verse', 'JSON Web Token', 'Base64', 'JSON', 'CSV', 'UUID', 'SHA-256', 'UTC', 'HEX', 'RGB', 'HSL', 'JPG', 'JPEG', 'PNG', 'WebP', 'PDF', 'M4A (AAC)', 'OGG (Opus)', 'Bahasa Indonesia', '<note><to>Alex</to></note>', '256 px', '384 px', '512 px', '0 min', 'd/dx', '#4D6BFF, rgb(77,107,255) or hsl(231,100%,67%)', 'sin(30) + sqrt(16)',
   'grade₁ × weight₁ + grade₂ × weight₂ + …', '(target grade − current grade × (1 − final weight)) ÷ final weight',
   'English', 'Español', 'Français', 'Português', 'Deutsch', '日本語', '한국어', 'Indonesian', 'हिन्दी', 'العربية', '中文', 'বাংলা', 'Русский', 'اردو', 'Türkçe', 'Tiếng Việt',
   ...guides.flatMap((guide) => guide.sources?.map(({ label }) => label) ?? []),

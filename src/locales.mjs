@@ -13,6 +13,7 @@ import { toolSuiteLocales } from './locales/tool-suite.mjs';
 import { pdfParityLocales } from './locales/pdf-parity.mjs';
 import { pdfRedactLocales } from './locales/pdf-redact.mjs';
 import { imageCaptureUiLocales } from './locales/image-capture.mjs';
+import { opportunityLocaleData } from './locales/opportunity-tools.mjs';
 import { pageKeys, templateKeys } from './locales/template-keys.mjs';
 import { tools } from './catalog.mjs';
 import { htmlToPdfLocales } from './locales/html-to-pdf.mjs';
@@ -781,10 +782,12 @@ for (const [language, data] of Object.entries(planLocaleData.full)) {
   const pack = packs[language];
   if (!pack) throw new Error(`Missing full translated pack for ${language}`);
   pack.meta.translationReview = expandedLocaleTranslationReview[language];
-  pack.meta.keepEnglish = [...new Set([...(pack.meta.keepEnglish ?? []), ...expandedLocaleStatusKeys, '240 px', '360 px', '480 px', 'UsefulVerse', 'PDF', 'JPG', 'PNG', 'WebP', 'XLSX', 'CSV', 'SRT', 'VTT', 'GIF', 'OCR', 'EXIF', 'GPS', 'MP3', 'WebM', 'JSON', 'URL', 'SEO', 'WebVTT (.vtt)', 'SubRip (.srt)', 'your-clean-url-slug', 'https://example.com/search?q=hello world', 'https://example.com/search?q=useful&lang=en', 'https://usefulverse.com/tools/qr-code-generator', 'name,age\nAda,36\nLinus,55', '\\bUseful\\w*\\b', ...nativeLanguageNames])];
+  pack.meta.keepEnglish = [...new Set([...(pack.meta.keepEnglish ?? []), ...expandedLocaleStatusKeys, '240 px', '360 px', '480 px', 'UsefulVerse', 'PDF', 'JPG', 'PNG', 'WebP', 'XLSX', 'CSV', 'SRT', 'VTT', 'GIF', 'OCR', 'EXIF', 'GPS', 'MP3', 'WebM', 'JSON', 'URL', 'SEO', 'd/dx', 'WebVTT (.vtt)', 'SubRip (.srt)', 'your-clean-url-slug', 'https://example.com/search?q=hello world', 'https://example.com/search?q=useful&lang=en', 'https://usefulverse.com/tools/qr-code-generator', 'name,age\nAda,36\nLinus,55', '\\bUseful\\w*\\b', ...nativeLanguageNames])];
   pack.guides = data.guides;
   Object.assign(pack.ui, data.ui);
+  Object.assign(pack.ui, expandedLocaleUiFixes[language] ?? {});
   for (const [key, value] of Object.entries(data.ui)) if (!key.startsWith('status.')) pack.runtimeMessages[key] = value;
+  Object.assign(pack.runtimeMessages, expandedLocaleUiFixes[language] ?? {});
   Object.assign(pack.runtimeMessages, data.runtimeMessages ?? {});
   Object.assign(pack.copy, data.copy);
   Object.assign(pack.seo, data.seo);
@@ -1020,6 +1023,154 @@ for (const [language, data] of Object.entries(imageCaptureUiLocales)) {
   Object.assign(pack.ui, data);
   Object.assign(pack.runtimeMessages, data);
 }
+
+// Browser-local SEO opportunity tools are translated as static site content.
+// New tool routes stay gated until all active locales have a complete copy/UI pack.
+for (const [language, data] of Object.entries(opportunityLocaleData)) {
+  ui[language] ??= {};
+  runtimeMessages[language] ??= {};
+  const missingUi = Object.fromEntries(Object.entries(data.ui).filter(([source]) => !Object.hasOwn(ui[language], source)));
+  Object.assign(ui[language], missingUi);
+  Object.assign(runtimeMessages[language], missingUi);
+  Object.assign(copy[language] ??= {}, data.copy);
+  const pack = packs[language];
+  if (!pack) continue;
+  Object.assign(pack.ui, missingUi);
+  Object.assign(pack.runtimeMessages, missingUi);
+  Object.assign(pack.copy, data.copy);
+  for (const [id, values] of Object.entries(data.copy)) {
+    const [, shortTitle, description, , intro] = values;
+    const seoDescription = description.length >= 25 ? description : `${description} ${intro}`;
+    pack.seo[id] = {
+      title: truncateMetadata(shortTitle, 51),
+      description: truncateMetadata(seoDescription, 155, true),
+    };
+    pack.faq[id] = [
+      { question: pack.page.faqHow.replace('{name}', shortTitle), answer: intro },
+      { question: pack.page.privacyQuestion, answer: pack.page.privacyAnswer },
+    ];
+  }
+}
+
+// Correct short machine-translation strings that Google left in English or
+// treated as labels, and keep the language-pack regression checks meaningful.
+const opportunityLocaleCorrections = {
+  fr: { ui: { 'User-agent': 'Agent utilisateur', Article: 'Article', Description: 'Description' } },
+  pt: { ui: { 'User-agent': 'Agente de usuário' } },
+  id: { ui: { 'User-agent': 'Agen pengguna' } },
+  ru: { ui: { 'User-agent': 'Агент пользователя' } },
+  tr: { ui: { 'User-agent': 'Kullanıcı aracısı', 'Canonical URL': 'Kanonik URL' } },
+  vi: { ui: { 'User-agent': 'Tác nhân người dùng' } },
+  it: { ui: { 'User-agent': 'Agente utente' } },
+  ca: { ui: { 'User-agent': 'Agent d’usuari', Article: 'Article' } },
+  nl: { ui: { 'User-agent': 'Gebruikersagent' } },
+  el: { ui: { 'User-agent': 'Πράκτορας χρήστη' } },
+  pl: { ui: { 'User-agent': 'Agent użytkownika' } },
+  sv: { ui: { 'User-agent': 'Användaragent' } },
+  th: { ui: { 'User-agent': 'ตัวแทนผู้ใช้', 'Meta description': 'คำอธิบายเมตา', 'Canonical URL': 'URL หลัก', 'White noise': 'เสียงสีขาว', 'Pink noise': 'เสียงสีชมพู', 'Brown noise': 'เสียงสีน้ำตาล' }, copy: { 'hex-editor': ['โปรแกรมแก้ไขเลขฐานสิบหก', 'แก้ไขเลขฐานสิบหก'], 'image-editor': ['โปรแกรมแก้ไขรูปภาพ', 'แก้ไขรูปภาพ'] } },
+  uk: { ui: { 'User-agent': 'Агент користувача' } },
+  zh: { ui: { 'Find commission rate': '计算佣金率', 'Known commission amount': '已知佣金金额' } },
+  zh_tw: { copy: { 'diagram-maker': ['流程圖製作工具', '簡易流程圖'], 'sqlite-playground': ['SQLite 線上練習場', 'SQLite 練習場'] } },
+  id: { ui: { Binomial: 'Distribusi binomial', Linear: 'Linier', Radial: 'Radial', 'Tempo: {bpm} BPM.': 'Tempo: {bpm} ketukan per menit.', 'Tempo (BPM)': 'Tempo (ketukan per menit)', 'User-agent': 'Agen pengguna' } },
+  ur: { ui: { Binomial: 'دو حدی', Poisson: 'تقسیم پوسن', Precision: 'درستی', 'Tempo (BPM)': 'رفتار (دھڑکن فی منٹ)' } },
+  tr: { ui: { Normal: 'Normal dağılım', Poisson: 'Poisson dağılımı', 'Tempo: {bpm} BPM.': 'Tempo: Dakikada {bpm} vuruş.', 'Tempo (BPM)': 'Tempo (dakikadaki vuruş)', 'User-agent': 'Kullanıcı aracısı', 'Canonical URL': 'Kanonik URL', 'Minimum x': 'En küçük x' } },
+  vi: { ui: { Poisson: 'Phân phối Poisson', 'User-agent': 'Tác nhân người dùng', 'Carbohydrate (%)': 'Chất bột đường (%)' } },
+  it: { ui: { Poisson: 'Distribuzione di Poisson', 'Tempo: {bpm} BPM.': 'Tempo: {bpm} battiti al minuto.', 'Tempo (BPM)': 'Tempo (battiti al minuto)', 'Tap tempo': 'Tempo con tocchi', Stop: 'Ferma', 'User-agent': 'Agente utente' } },
+  ca: { ui: { Normal: 'Distribució normal', Poisson: 'Distribució de Poisson', 'Tempo: {bpm} BPM.': 'Tempo: {bpm} pulsacions per minut.', 'Tempo (BPM)': 'Tempo (pulsacions per minut)', 'Tap tempo': 'Marca el tempo tocant', Dividend: 'Dividendo', Divisor: 'Nombre divisor', 'User-agent': 'Agent d’usuari', Format: 'Formata' } },
+  nl: { ui: { Poisson: 'Poisson-verdeling', 'Tempo: {bpm} BPM.': 'Tempo: {bpm} slagen per minuut.', 'Tempo (BPM)': 'Tempo (slagen per minuut)', Stop: 'Stoppen', Dividend: 'Deeltal', 'User-agent': 'Gebruikersagent', 'Minimum x': 'Minimale x', 'Maximum x': 'Maximale x' } },
+  el: { ui: { Poisson: 'Κατανομή Poisson', 'User-agent': 'Πράκτορας χρήστη' } },
+  ms: { ui: { Binomial: 'Taburan binomial', Poisson: 'Taburan Poisson', Linear: 'Linear', Radial: 'Jejarian', 'Tempo: {bpm} BPM.': 'Tempo: {bpm} denyutan seminit.', 'Tempo (BPM)': 'Tempo (denyutan seminit)', 'Morse to text': 'Morse kepada teks', Format: 'Formatkan' } },
+  pl: { ui: { Cylinder: 'Walec', 'Tempo: {bpm} BPM.': 'Tempo: {bpm} uderzeń na minutę.', 'Tempo (BPM)': 'Tempo (uderzenia na minutę)', 'User-agent': 'Agent użytkownika', 'Minimum x': 'Minimalne x' } },
+  sv: { ui: { Distribution: 'Fördelning', Binomial: 'Binomialfördelning', Poisson: 'Poissonfördelning', Cylinder: 'Cylindern', 'Tempo: {bpm} BPM.': 'Tempo: {bpm} slag per minut.', 'Tempo (BPM)': 'Tempo (slag per minut)', Precision: 'Noggrannhet', Divisor: 'Delare', 'User-agent': 'Användaragent' } },
+  sw: {
+    ui: { Binomial: 'Usambazaji wa binomiali', Poisson: 'Usambazaji wa Poisson', 'Tempo: {bpm} BPM.': 'Kasi: midundo {bpm} kwa dakika.', 'Tempo (BPM)': 'Kasi (midundo kwa dakika)', 'Morse to text': 'Morse hadi maandishi' },
+    copy: { 'equation-solver': ['Kitatuzi cha milinganyo', 'Kitatuzi cha milinganyo'] },
+  },
+  ha: {
+    ui: { Binomial: 'Rarraba binomial', Geometric: 'Ci gaba na geometric', 'Rate λ (Poisson)': 'Ƙimar λ (Rarraba Poisson)', 'Coefficient c': 'Ƙididdigar c', 'Tempo (BPM)': 'Gudun bugun (BPM)', Chord: 'Haɗin sauti' },
+    copy: {
+      'break-even-calculator': ['Kalkuleta ta matsayin daidaita kuɗin shiga da kashewa', 'Matsayin daidaita kuɗin shiga da kashewa'],
+      'paint-calculator': ['Kalkuleta na fenti', 'Kalkuleta na fenti'],
+    },
+  },
+  tl: {
+    ui: { Normal: 'Normal na distribusyon', Binomial: 'Binomial na distribusyon', Poisson: 'Distribusyon ng Poisson', Sphere: 'Globo', Cylinder: 'Silindro', Cone: 'Kono', 'Rectangular prism': 'Parihabang prisma', 'Rate λ (Poisson)': 'Rate λ (Distribusyon ng Poisson)', 'Mouse test pad': 'Lugar ng pagsubok ng mouse', 'Tempo: {bpm} BPM.': 'Tempo: {bpm} kumpas bawat minuto.', 'Tempo (BPM)': 'Tempo (kumpas bawat minuto)', 'Rounding rule': 'Panuntunan sa pag-round', 'Half up': 'Kalahati pataas', 'Package A': 'Pakete A', 'Package B': 'Pakete B', 'Fixed fee': 'Nakatakdang bayad', Customer: 'Mamimili', Divisor: 'Panghati', 'Coefficient a': 'Koepisyente a', 'Coefficient b': 'Koepisyente b', 'Coefficient c': 'Koepisyente c', 'Destination URL': 'URL ng destinasyon', 'User-agent': 'Ahente ng user', WebSite: 'Website', 'Locale code': 'Code ng locale', Linear: 'Linear', Radial: 'Radial', 'Opacity (%)': 'Antas ng opacity (%)', Inset: 'Nasa loob', Analogous: 'Magkakahawig', Triadic: 'Tatsulok', 'Gap (px)': 'Agwat (px)', 'Mirror text': 'Baligtarin ang teksto', Webpage: 'Pahina sa web', 'URL (webpage)': 'URL (pahina sa web)', 'JSON data': 'JSON na data', Contrast: 'Kaibahan', Saturation: 'Tindi ng kulay', 'Minimum x': 'Pinakamababang x', 'Bar chart': 'Bar chart', 'Line chart': 'Line chart' },
+    copy: {
+      'break-even-calculator': ['Calculator ng break-even point', 'Calculator ng break-even'],
+      'depreciation-calculator': ['Calculator ng depreciation', 'Calculator ng depreciation'],
+      'recipe-scaler': ['Tagapag-scale ng sangkap ng recipe', 'Pag-scale ng recipe'],
+      'json-ld-generator': ['Tagabuo ng JSON-LD Schema', 'Tagabuo ng JSON-LD Schema'],
+      'css-gradient-generator': ['Tagabuo ng CSS gradient', 'Tagabuo ng CSS gradient'],
+      'css-box-shadow-generator': ['Tagabuo ng CSS box shadow', 'Tagabuo ng CSS box shadow'],
+      'color-palette-generator': ['Tagabuo ng color palette', 'Tagabuo ng color palette'],
+      'polynomial-integral-calculator': ['Calculator ng integral ng polynomial', 'Integral ng polynomial'],
+      'truth-table-generator': ['Tagabuo ng talahanayan ng katotohanan', 'Talahanayan ng katotohanan'],
+      'json-schema-validator': ['Tagasuri ng JSON Schema', 'Tagasuri ng JSON Schema'],
+      'html-css-js-playground': ['Pagsubok sa HTML, CSS at JavaScript', 'Pagsubok sa HTML at CSS'],
+      'sqlite-playground': ['Palaruan ng SQLite', 'Pagsubok sa SQLite'],
+      'cron-expression-builder': ['Tagabuo ng iskedyul ng Cron', 'Iskedyul ng Cron'],
+      'hex-editor': ['Tagapag-edit ng hexadecimal', 'Editor ng hexadecimal'],
+      'image-editor': ['Pang-edit ng larawan', 'Pag-edit ng larawan'],
+      'meme-maker': ['Tagagawa ng meme', 'Gumawa ng meme'],
+      'svg-optimizer': ['Tagapag-optimize ng SVG', 'Pag-optimize ng SVG'],
+      'pixel-art-editor': ['Editor ng pixel art', 'Pixel art'],
+      'diagram-maker': ['Simpleng tagagawa ng diagram', 'Simpleng diagram'],
+      'latex-equation-renderer': ['Tagapag-render ng LaTeX equation', 'LaTeX equation'],
+      'business-card-maker': ['Tagagawa ng business card', 'Business card'],
+      'virtual-piano': ['Virtual na piyano', 'Virtual na piyano'],
+      'webcam-tester': ['Pagsubok sa webcam', 'Pagsubok sa webcam'],
+      'noise-generator': ['Tagagawa ng ingay na puti, rosas at kayumanggi', 'Tagagawa ng ingay'],
+      'function-grapher': ['Grapher ng function', 'Grapher ng function'],
+      'jsonpath-query-tool': ['Kasangkapan sa query ng JSONPath', 'Query ng JSONPath'],
+      'printable-calendar-maker': ['Tagagawa ng napi-print na kalendaryo', 'Napi-print na kalendaryo'],
+      'bingo-card-generator': ['Tagabuo ng bingo card', 'Bingo card'],
+      'adult-bmi-calculator': ['Calculator ng BMI para sa adulto', 'BMI para sa adulto'],
+      'one-rep-max-calculator': ['Calculator ng maximum na isang ulit', 'Maximum na isang ulit'],
+      'equation-solver': ['Lutasin ang mga equation', 'Equation solver'],
+      'polynomial-factorization-calculator': ['Pag-factor ng polynomial', 'Pag-factor ng polynomial'],
+      'probability-calculator': ['Calculator ng posibilidad', 'Calculator ng posibilidad'],
+      'coordinate-geometry-calculator': ['Calculator ng coordinate geometry', 'Coordinate geometry'],
+      'commission-calculator': ['Calculator ng komisyon', 'Calculator ng komisyon'],
+      'credit-card-payoff-calculator': ['Calculator ng pagbabayad ng credit card', 'Pagbabayad ng credit card'],
+      'sample-size-calculator': ['Calculator ng laki ng sample', 'Laki ng sample ng survey'],
+      'concrete-calculator': ['Calculator ng kongkreto', 'Calculator ng kongkreto'],
+    },
+  },
+  am: { ui: { 'Coefficient a': 'ኮኤፊሺየንት a', 'Coefficient b': 'ኮኤፊሺየንት b' } },
+};
+opportunityLocaleCorrections.tl.ui['Bar chart'] = 'Tsart ng bar';
+opportunityLocaleCorrections.tl.ui['Line chart'] = 'Tsart ng linya';
+for (const [language, corrections] of Object.entries(opportunityLocaleCorrections)) {
+  for (const [source, value] of Object.entries(corrections.ui ?? {})) {
+    ui[language][source] = value;
+    runtimeMessages[language][source] = value;
+    if (packs[language]) {
+      packs[language].ui[source] = value;
+      packs[language].runtimeMessages[source] = value;
+    }
+  }
+  for (const [toolId, values] of Object.entries(corrections.copy ?? {})) {
+    copy[language][toolId][0] = values[0];
+    copy[language][toolId][1] = values[1];
+    if (packs[language]) {
+      packs[language].copy[toolId] = copy[language][toolId];
+      if (packs[language].seo[toolId]) packs[language].seo[toolId].title = truncateMetadata(values[1], 51);
+    }
+  }
+}
+// This technical schema label is also spelled “Article” in Catalan.
+packs.ca.meta.keepEnglish = [...new Set([...(packs.ca.meta.keepEnglish ?? []), 'Article'])];
+for (const pack of Object.values(packs)) pack.meta.keepEnglish = [...new Set([...(pack.meta.keepEnglish ?? []), 'CSS Grid', 'Flexbox', 'Linear', 'Radial', 'Determinant', '36 px'])];
+packs.nl.meta.keepEnglish = [...new Set([...(packs.nl.meta.keepEnglish ?? []), 'Inverse'])];
+for (const language of ['id', 'tr', 'vi', 'ms', 'sv']) packs[language].meta.keepEnglish = [...new Set([...(packs[language].meta.keepEnglish ?? []), 'Protein (%)'])];
+for (const language of Object.keys(packs)) packs[language].meta.keepEnglish = [...new Set([...(packs[language].meta.keepEnglish ?? []), 'JavaScript', 'SELECT 1 AS ready;'])];
+packs.id.meta.keepEnglish = [...new Set([...(packs.id.meta.keepEnglish ?? []), 'Format', 'Volume (%)'])];
+for (const language of ['zh', 'th', 'tl']) packs[language].meta.keepEnglish = [...new Set([...(packs[language].meta.keepEnglish ?? []), 'JSON Schema'])];
+packs.ha.meta.keepEnglish = [...new Set([...(packs.ha.meta.keepEnglish ?? []), 'Carbohydrate (%)'])];
+packs.sv.meta.keepEnglish = [...new Set([...(packs.sv.meta.keepEnglish ?? []), 'Addition', 'Division'])];
+for (const language of ['it', 'nl']) packs[language].meta.keepEnglish = [...new Set([...(packs[language].meta.keepEnglish ?? []), 'Volume (%)'])];
+for (const language of ['ca', 'nl']) packs[language].meta.keepEnglish = [...new Set([...(packs[language].meta.keepEnglish ?? []), 'Contrast'])];
+for (const language of ['pl', 'tl']) packs[language].meta.keepEnglish = [...new Set([...(packs[language].meta.keepEnglish ?? []), 'Format'])];
 
 export function localizedTool(tool, language) {
   const values = copy[language]?.[tool.id];

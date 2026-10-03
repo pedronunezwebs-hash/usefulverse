@@ -1,5 +1,4 @@
 import { appendFile, readFile } from 'node:fs/promises';
-import { createHash } from 'node:crypto';
 import { createServer } from 'node:http';
 
 const directory = process.env.USEFULVERSE_TRANSLATION_DIR ?? '/tmp/usefulverse-local-translation-20261001';
@@ -27,7 +26,9 @@ for (const [language, target] of Object.entries(input.targets)) {
   const rows = [];
   for (const [unitId, source] of Object.entries(target.units)) {
     index += 1;
-    const rowId = createHash('sha1').update(`${language}:${unitId}`).digest('hex').slice(0, 8).toUpperCase();
+    // Numeric sentinels avoid spellcheck changes in the free Translate UI
+    // (it has occasionally collapsed repeated letters in hexadecimal IDs).
+    const rowId = String(index).padStart(8, '0');
     const replacements = [];
     let tokenIndex = 0;
     let cursor = 0;
@@ -50,7 +51,7 @@ for (const [language, target] of Object.entries(input.targets)) {
   let batchRows = [];
   let batchText = '';
   for (const row of remaining) {
-    const line = `UVR${row.rowId}|${row.masked}`;
+    const line = `${row.rowId}|${row.masked}`;
     if (line.length > 2400) throw new Error(`Single translation string exceeds safe limit: ${language}/${row.unitId}`);
     const addition = `${batchRows.length ? '\n' : ''}${line}`;
     if (batchText.length + addition.length > 2400 || batchRows.length >= 40) {
@@ -71,7 +72,7 @@ function send(response, status, value) {
 }
 
 function responseText(job) {
-  return job.map((row) => `UVR${row.rowId}|${row.masked}`).join('\n');
+  return job.map((row) => `${row.rowId}|${row.masked}`).join('\n');
 }
 
 async function readBody(request) {
@@ -114,7 +115,9 @@ const server = createServer(async (request, response) => {
     if (!job?.current) return send(response, 409, { error: 'No active batch' });
     const translations = new Map();
     // Google Translate may add a space around the pipe in the visible result.
-    const matcher = /UVR([A-F0-9]{8})\s*\|\s*([\s\S]*?)(?=UVR[A-F0-9]{8}\s*\||$)/gu;
+    // RTL translation UIs can visually reorder or drop the ASCII pipe while
+    // retaining the numeric row sentinel. Accept that punctuation variation.
+    const matcher = /(\d{8})\s*\|?\s*([\s\S]*?)(?=\d{8}\s*\|?|$)/gu;
     for (const match of String(body.text ?? '').matchAll(matcher)) translations.set(match[1], match[2].trim());
     const missing = [];
     const invalidMarkers = [];

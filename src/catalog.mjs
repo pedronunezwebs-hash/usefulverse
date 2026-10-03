@@ -1,3 +1,5 @@
+import { opportunityTools } from './opportunity-tools.mjs';
+
 export const tools = [
   {
     id: 'word-counter',
@@ -919,6 +921,7 @@ export const tools = [
   { id: 'gif-maker', title: 'Animated GIF Maker', shortTitle: 'GIF maker', description: 'Create a GIF from 2–12 images or one video up to 8 seconds. Video support varies by browser; GIF colors, memory use and output size depend on the source.', category: 'Design', icon: 'GIF', accent: 'violet', keywords: 'GIF maker, create animated GIF from images, image to GIF, video to GIF, GIF animation maker online', intro: 'Create a GIF from images or a video clip up to 8 seconds.', body: 'Create a GIF from 2–12 images or one video up to 8 seconds. Video support varies by browser. GIF has limited colors; image size and frame count use memory and affect output size.' },
   { id: 'screen-recorder', title: 'Screen Recorder', shortTitle: 'Screen recorder', description: 'Record a browser tab, window or screen to a video file supported by your browser.', category: 'Files', icon: '◉', accent: 'orange', keywords: 'screen recorder online, record screen in browser, free screen capture video, screen recording tool', intro: 'Choose what to share in the browser prompt, start recording and stop to save the video.', body: 'Screen sharing requires a secure browser context and your permission each time. Recording format depends on your browser. You can stop sharing at any time; the recording stays on your device.' },
   { id: 'voice-recorder', title: 'Voice Recorder', shortTitle: 'Voice recorder', description: 'Record voice from a microphone and download the audio format supported by your browser.', category: 'Files', icon: '♫', accent: 'blue', keywords: 'voice recorder online, record audio in browser, microphone recorder, audio recorder free', intro: 'Allow microphone access, record your voice, then stop and download the recording.', body: 'Microphone access requires your permission and a secure browser connection. The exact output format depends on your browser; this tool does not promise MP3 output on every device. Stop the recording to release the microphone.' },
+  ...opportunityTools,
 ];
 
 export const categories = ['All', ...new Set(tools.map((tool) => tool.category))];
