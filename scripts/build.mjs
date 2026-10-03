@@ -30,6 +30,15 @@ await cp(join(root, 'src', 'new-tools.js'), join(dist, 'assets', 'new-tools.js')
 await cp(join(root, 'src', 'new-tool-logic.mjs'), join(dist, 'assets', 'new-tool-logic.mjs'));
 await cp(join(root, 'src', 'media-tools.js'), join(dist, 'assets', 'media-tools.js'));
 await bundle({
+  entryPoints: [join(root, 'src', 'plan-tools.js')],
+  outfile: join(dist, 'assets', 'plan-tools.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
   entryPoints: [join(root, 'src', 'tool-suite-tools.js')],
   outfile: join(dist, 'assets', 'tool-suite-tools.js'),
   bundle: true,

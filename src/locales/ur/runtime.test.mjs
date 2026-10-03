@@ -5,7 +5,11 @@ import { numberToWordsHook, runTool } from '../test-harness.mjs';
 
 test('Urdu translations do not contain Bengali text', () => {
   assert.equal(packs.ur.toolUi['percentage-calculator']['Whole number'], 'کل تعداد');
-  assert.doesNotMatch(JSON.stringify(packs.ur), /[\u0980-\u09FF]/u);
+  const content = structuredClone(packs.ur);
+  delete content.ui['বাংলা'];
+  delete content.runtimeMessages['বাংলা'];
+  content.meta.keepEnglish = content.meta.keepEnglish.filter((value) => value !== 'বাংলা');
+  assert.doesNotMatch(JSON.stringify(content), /[\u0980-\u09FF]/u);
 });
 
 test('Urdu JSON formatter is discoverable with localized internal-search terms', () => {

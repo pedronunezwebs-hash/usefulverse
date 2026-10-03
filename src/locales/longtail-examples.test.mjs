@@ -9,6 +9,7 @@ const parseLocalizedNumber = (value) => {
   const localized = String(value)
     .replace(/[٠-٩]/gu, (digit) => String(digit.codePointAt(0) - 0x660))
     .replace(/[۰-۹]/gu, (digit) => String(digit.codePointAt(0) - 0x6f0))
+    .replace(/[०-९]/gu, (digit) => String(digit.codePointAt(0) - 0x966))
     .replace(/[০-৯]/gu, (digit) => String(digit.codePointAt(0) - 0x09e6));
   const match = localized.match(/[-+]?\d[\d\s,.٫٬]*/u)?.[0] ?? '';
   return Number(match.replace(/[\s٬]/gu, '').replace(/[٫,]/gu, '.'));
@@ -27,8 +28,12 @@ test('Long-tail examples match the real tool calculations in every supported lan
     assert.notEqual(primeResult, '—', `${language}: 97 has a result`);
     const one = await runTool(language, 'prime-number-checker', 'check-prime', { '#prime-input': '1' });
     assert.notEqual(one('#prime-output').textContent, primeResult, `${language}: 1 is not classified like 97`);
+    const largePrime = await runTool(language, 'prime-number-checker', 'check-prime', { '#prime-input': '9999999967' });
+    assert.equal(largePrime('#prime-output').textContent, primeResult, `${language}: large prime`);
+    const largeComposite = await runTool(language, 'prime-number-checker', 'check-prime', { '#prime-input': '9999999969' });
+    assert.notEqual(largeComposite('#prime-output').textContent, primeResult, `${language}: large composite`);
 
-    const separator = ['pt', 'de', 'id', 'ru', 'tr', 'vi'].includes(language) ? ';' : ',';
+    const separator = ['pt', 'de', 'id', 'ru', 'tr', 'vi', 'fa'].includes(language) ? ';' : ',';
     const average = await runTool(language, 'average-calculator', 'calculate-average', { '#average-input': `10${separator}12${separator}14` });
     assert.equal(parseLocalizedNumber(average('#average-result').textContent), 12, `${language}: average`);
 
@@ -46,6 +51,15 @@ test('Long-tail examples match the real tool calculations in every supported lan
       '#date-start': '2026-01-01', '#date-end': '2026-01-31',
     });
     assert.equal(parseLocalizedNumber(dates('#date-difference-result').textContent), 30, `${language}: elapsed calendar days`);
+    const inclusiveDates = await runTool(language, 'date-calculator', 'date-difference', {
+      '#date-start': '2026-01-01', '#date-end': '2026-01-31',
+    }, { checked: { '#date-include-start': true } });
+    assert.equal(parseLocalizedNumber(inclusiveDates('#date-difference-result').textContent), 31, `${language}: inclusive calendar days`);
+
+    const diff = await runTool(language, 'text-diff-checker', 'compare-text', {
+      '#diff-original': ' Keep this line ', '#diff-changed': 'keep this line',
+    }, { checked: { '#diff-ignore-whitespace': true, '#diff-ignore-case': true } });
+    assert.equal(diff('#diff-count').textContent, 0, `${language}: normalized text comparison`);
 
     const lineBreaks = await runTool(language, 'remove-line-breaks', 'join-line-breaks', { '#tool-input': 'alpha\nbeta' });
     assert.equal(lineBreaks('#tool-output').value, 'alpha beta', `${language}: join with spaces`);

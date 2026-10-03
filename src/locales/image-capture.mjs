@@ -169,4 +169,52 @@ export const imageCaptureUiLocales = {
     'Photo added. Review the page order below.': 'Picha imeongezwa. Kagua mpangilio wa kurasa hapa chini.',
     'Camera could not be opened. Choose images above instead.': 'Kamera haikuweza kufunguliwa. Badala yake, chagua picha kwa kutumia kitufe kilicho juu.',
   },
+  mr: {
+    'Take a photo': 'फोटो काढा',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'समर्थित फोनवर मागील कॅमेरा उघडतो. फोटो तुमच्या डिव्हाइसवर जोडला जातो; तो आपोआप क्रॉप किंवा दृष्टीकोन दुरुस्त केला जात नाही.',
+    'Photo added. Review the page order below.': 'फोटो जोडला. खाली पानांचा क्रम तपासा.',
+    'Camera could not be opened. Choose images above instead.': 'कॅमेरा उघडता आला नाही. त्याऐवजी वरील बटणाने प्रतिमा निवडा.',
+  },
+  te: {
+    'Take a photo': 'ఫోటో తీయండి',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'మద్దతు ఉన్న ఫోన్లలో వెనుక కెమెరా తెరుచుకుంటుంది. ఫోటో మీ పరికరంలోనే జోడించబడుతుంది; అది స్వయంచాలకంగా కత్తిరించబడదు లేదా దృక్కోణం సరిచేయబడదు.',
+    'Photo added. Review the page order below.': 'ఫోటో జోడించబడింది. దిగువ పేజీల క్రమాన్ని చూడండి.',
+    'Camera could not be opened. Choose images above instead.': 'కెమెరా తెరవలేకపోయాం. బదులుగా పై బటన్‌తో చిత్రాలను ఎంచుకోండి.',
+  },
+  ha: {
+    'Take a photo': 'Ɗauki hoto',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'A wayoyin da ke tallafawa, kyamarar baya za ta buɗe. Ana ƙara hoton a na’urarka; ba a yanke shi ko gyara hangen nesa kai tsaye ba.',
+    'Photo added. Review the page order below.': 'An ƙara hoto. Duba tsarin shafukan da ke ƙasa.',
+    'Camera could not be opened. Choose images above instead.': 'Ba a iya buɗe kamara ba. Zaɓi hotuna da maɓallin da ke sama maimakon haka.',
+  },
+  tl: {
+    'Take a photo': 'Kumuha ng larawan',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'Sa mga sinusuportahang telepono, bubukas ang camera sa likod. Idadagdag ang larawan sa device mo; hindi ito awtomatikong ike-crop o itatama ang perspektibo.',
+    'Photo added. Review the page order below.': 'Naidagdag ang larawan. Suriin ang ayos ng mga pahina sa ibaba.',
+    'Camera could not be opened. Choose images above instead.': 'Hindi mabuksan ang camera. Piliin na lang ang mga larawan gamit ang button sa itaas.',
+  },
+  ta: {
+    'Take a photo': 'புகைப்படம் எடுக்கவும்',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'ஆதரிக்கப்படும் போன்களில் பின்புற கேமரா திறக்கும். படம் உங்கள் சாதனத்திலேயே சேர்க்கப்படும்; தானாக வெட்டப்படவோ கண்ணோட்டம் திருத்தப்படவோாது.',
+    'Photo added. Review the page order below.': 'புகைப்படம் சேர்க்கப்பட்டது. கீழே பக்கங்களின் வரிசையைச் சரிபார்க்கவும்.',
+    'Camera could not be opened. Choose images above instead.': 'கேமராவைத் திறக்க முடியவில்லை. மேலே உள்ள பொத்தானைப் பயன்படுத்தி படங்களைத் தேர்ந்தெடுக்கவும்.',
+  },
+  fa: {
+    'Take a photo': 'عکس بگیرید',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'در گوشی‌های پشتیبانی‌شده، دوربین پشت باز می‌شود. عکس روی دستگاه شما اضافه می‌شود و به‌طور خودکار برش یا اصلاح پرسپکتیو نمی‌شود.',
+    'Photo added. Review the page order below.': 'عکس اضافه شد. ترتیب صفحه‌ها را در پایین بررسی کنید.',
+    'Camera could not be opened. Choose images above instead.': 'دوربین باز نشد. به‌جای آن با دکمه بالا تصویرها را انتخاب کنید.',
+  },
+  am: {
+    'Take a photo': 'ፎቶ አንሳ',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'በሚደገፉ ስልኮች የኋላ ካሜራ ይከፈታል። ፎቶው በመሣሪያዎ ላይ ይጨመራል፤ በራስ-ሰር አይቆረጥም ወይም አይስተካከልም።',
+    'Photo added. Review the page order below.': 'ፎቶው ተጨምሯል። ከታች የገጾቹን ቅደም ተከተል ይመልከቱ።',
+    'Camera could not be opened. Choose images above instead.': 'ካሜራው ሊከፈት አልቻለም። በምትኩ ከላይ ያሉትን ምስሎች ይምረጡ።',
+  },
+  gu: {
+    'Take a photo': 'ફોટો લો',
+    'On supported phones, this opens the rear camera. The photo is added locally; it is not automatically cropped or perspective-corrected.': 'સપોર્ટેડ ફોનમાં પાછળનો કેમેરો ખુલશે. ફોટો તમારા ઉપકરણમાં ઉમેરાશે; તે આપમેળે કાપવામાં કે પરિપ્રેક્ષ્ય સુધારવામાં નહીં આવે.',
+    'Photo added. Review the page order below.': 'ફોટો ઉમેરાયો. નીચે પેજનો ક્રમ તપાસો.',
+    'Camera could not be opened. Choose images above instead.': 'કેમેરો ખોલી શકાયો નથી. તેના બદલે ઉપરના બટનથી છબીઓ પસંદ કરો.',
+  },
 };

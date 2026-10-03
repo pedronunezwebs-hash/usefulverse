@@ -7,7 +7,11 @@ test('Russian shared labels do not contain Bengali text or mistranslate clear', 
   assert.equal(ui.ru.Clear, 'Очистить');
   assert.equal(ui.ru['Check number'], 'Проверить число');
   assert.equal(packs.ru.toolUi['percentage-calculator']['Whole number'], 'Всего');
-  assert.doesNotMatch(JSON.stringify(packs.ru), /[\u0980-\u09FF]/u);
+  const content = structuredClone(packs.ru);
+  delete content.ui['বাংলা'];
+  delete content.runtimeMessages['বাংলা'];
+  content.meta.keepEnglish = content.meta.keepEnglish.filter((value) => value !== 'বাংলা');
+  assert.doesNotMatch(JSON.stringify(content), /[\u0980-\u09FF]/u);
 });
 
 test('Russian number words apply gender and scale plurals', async () => {

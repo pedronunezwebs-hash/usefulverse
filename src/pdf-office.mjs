@@ -132,8 +132,8 @@ function relationMap(xml) {
 
 function safeHtmlText(value) { return xmlEscape(value).replaceAll('&apos;', '&#39;'); }
 
-/** Parse XLSX cell values for a local, print-friendly table. Formulas are not recalculated. */
-export function xlsxToPrintHtml(input, filename = 'spreadsheet.xlsx') {
+/** Read XLSX cell values locally. Formulas are returned as their saved values and never executed. */
+export function readXlsxSheets(input) {
   const { files, textPart } = officeFiles(input, 'xlsx');
   const workbook = textPart('xl/workbook.xml');
   const workbookRelations = relationMap(textPart('xl/_rels/workbook.xml.rels'));
@@ -172,6 +172,12 @@ export function xlsxToPrintHtml(input, filename = 'spreadsheet.xlsx') {
     if (rows.length) sheets.push({ name, rows });
   }
   if (!sheets.length) throw new TypeError('No printable spreadsheet values were found.');
+  return sheets;
+}
+
+/** Parse XLSX values for a local, print-friendly table. Formulas are not recalculated. */
+export function xlsxToPrintHtml(input, filename = 'spreadsheet.xlsx') {
+  const sheets = readXlsxSheets(input);
   const title = safeHtmlText(filename.replace(/\.[^.]+$/u, ''));
   const sections = sheets.map(({ name, rows }) => `<section><h2>${safeHtmlText(name)}</h2><table><tbody>${rows.map((row) => `<tr>${row.map((cell) => `<td>${safeHtmlText(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></section>`).join('');
   return `<h1>${title}</h1>${sections}`;

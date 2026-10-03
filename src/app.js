@@ -796,7 +796,8 @@ function setupPrime(root) {
       const value = parseInputNumber(input.value);
       if (!Number.isSafeInteger(value) || value < 0 || value > 1_000_000_000_000) { setStatus(status, 'Enter a whole number from 0 to 1,000,000,000,000.', 'error'); output.textContent = '—'; return; }
       let prime = value >= 2;
-      for (let divisor = 2; prime && divisor * divisor <= value; divisor += divisor === 2 ? 1 : 2) if (value % divisor === 0) prime = false;
+      if (prime && value % 2 === 0) prime = value === 2;
+      for (let divisor = 3; prime && divisor <= Math.floor(Math.sqrt(value)); divisor += 2) if (value % divisor === 0) prime = false;
       output.textContent = translate(prime ? 'Prime number' : 'Not prime'); setStatus(status, 'Number checked locally.', 'success');
     }
     if (action === 'clear') { input.value = ''; output.textContent = '—'; setStatus(status, 'Checks integers up to one trillion locally.'); input.focus(); }
@@ -1030,7 +1031,15 @@ function setupTextDiff(root) {
     const action = event.target.closest('[data-action]')?.dataset.action;
     if (action === 'compare-text') {
       const before = original.value.split(/\r?\n/u); const after = changed.value.split(/\r?\n/u); const differences = [];
-      for (let index = 0; index < Math.max(before.length, after.length); index += 1) if (before[index] !== after[index]) differences.push(`${fmt('diff.line', { line: index + 1 }) ?? `Line ${index + 1}:`}\n- ${before[index] || (fmt('diff.empty') ?? '(empty)')}\n+ ${after[index] || (fmt('diff.empty') ?? '(empty)')}`);
+      const ignoreWhitespace = $('#diff-ignore-whitespace', root)?.checked ?? false;
+      const ignoreCase = $('#diff-ignore-case', root)?.checked ?? false;
+      const normalize = (line) => `${ignoreWhitespace ? line.trim() : line}`;
+      for (let index = 0; index < Math.max(before.length, after.length); index += 1) {
+        const left = normalize(before[index] ?? ''); const right = normalize(after[index] ?? '');
+        const comparableLeft = ignoreCase ? left.toLocaleLowerCase(languageTag) : left;
+        const comparableRight = ignoreCase ? right.toLocaleLowerCase(languageTag) : right;
+        if (comparableLeft !== comparableRight) differences.push(`${fmt('diff.line', { line: index + 1 }) ?? `Line ${index + 1}:`}\n- ${before[index] || (fmt('diff.empty') ?? '(empty)')}\n+ ${after[index] || (fmt('diff.empty') ?? '(empty)')}`);
+      }
       count.textContent = differences.length; output.textContent = differences.length ? differences.join('\n\n') : translate('No differences found.'); setStatus(status, differences.length ? (fmt('diff.found', { n: differences.length, count: formatNumber(differences.length) }) ?? `${differences.length} different line${differences.length === 1 ? '' : 's'} found.`) : 'The texts are identical.', differences.length ? 'success' : '');
     }
     if (action === 'clear') { original.value = ''; changed.value = ''; count.textContent = '0'; output.textContent = translate('No comparison yet.'); setStatus(status, 'Comparison runs locally line by line.'); original.focus(); }
@@ -1069,7 +1078,11 @@ function setupUnitConverter(root) {
   updateUnits();
 }
 
-function parseDateOnly(value) { return /^\d{4}-\d{2}-\d{2}$/u.test(value) ? new Date(`${value}T00:00:00Z`) : null; }
+function parseDateOnly(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/u.test(value)) return null;
+  const date = new Date(`${value}T00:00:00Z`);
+  return Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === value ? date : null;
+}
 
 function setupDateCalculator(root) {
   const status = $('#tool-status', root);
@@ -1078,11 +1091,15 @@ function setupDateCalculator(root) {
     if (action === 'date-difference') {
       const start = parseDateOnly($('#date-start', root).value); const end = parseDateOnly($('#date-end', root).value);
       if (!start || !end) { setStatus(status, 'Choose two valid dates.', 'error'); return; }
-      const days = Math.abs(Math.round((end - start) / 86400000)); const dayWord = language === 'es' ? (days === 1 ? 'día' : 'días') : language === 'fr' ? (days === 1 ? 'jour' : 'jours') : isPortuguese ? (days === 1 ? 'dia' : 'dias') : isGerman ? (days === 1 ? 'Tag' : 'Tage') : (days === 1 ? 'day' : 'days'); $('#date-difference-result', root).textContent = fmt('date.days', { n: days, count: formatNumber(days) }) ?? `${formatNumber(days)} ${dayWord}`; setStatus(status, 'Date difference calculated.', 'success');
+      const includeStart = $('#date-include-start', root)?.checked ?? false;
+      const days = Math.abs(Math.round((end - start) / 86400000)) + Number(includeStart);
+      const dayWord = language === 'es' ? (days === 1 ? 'día' : 'días') : language === 'fr' ? (days === 1 ? 'jour' : 'jours') : isPortuguese ? (days === 1 ? 'dia' : 'dias') : isGerman ? (days === 1 ? 'Tag' : 'Tage') : (days === 1 ? 'day' : 'days');
+      $('#date-difference-result', root).textContent = fmt('date.days', { n: days, count: formatNumber(days) }) ?? `${formatNumber(days)} ${dayWord}`;
+      setStatus(status, 'Date difference calculated.', 'success');
     }
     if (action === 'date-offset') {
       const base = parseDateOnly($('#date-base', root).value); const offset = parseInputNumber($('#date-offset', root).value);
-      if (!base || !Number.isInteger(offset)) { setStatus(status, 'Choose a date and enter a whole number of days.', 'error'); return; }
+      if (!base || !Number.isSafeInteger(offset) || Math.abs(offset) > 3_652_425) { setStatus(status, 'Choose a date and enter a whole number of days.', 'error'); return; }
       base.setUTCDate(base.getUTCDate() + offset); $('#date-offset-result', root).textContent = localeConfig.longDates ? new Intl.DateTimeFormat(languageTag, { dateStyle: 'full', timeZone: 'UTC' }).format(base) : base.toISOString().slice(0, 10); setStatus(status, 'Date calculated.', 'success');
     }
     if (action === 'clear') { $$('input', root).forEach((input) => { input.value = ''; }); $$('output', root).forEach((output) => { output.textContent = '—'; }); setStatus(status, 'Dates are calculated in your browser.'); }
@@ -1324,7 +1341,7 @@ function setupToolPage() {
   }
   const browserBatchTools = new Set(['typing-speed-test', 'fraction-calculator', 'time-card-calculator', 'online-timer', 'lorem-ipsum-generator', 'subnet-calculator', 'random-name-picker', 'fuel-cost-calculator', 'image-cropper', 'pdf-to-image', 'sql-formatter']);
   if (browserBatchTools.has(id)) {
-    const assetVersion = new URL(document.currentScript?.src ?? location.href).searchParams.get('v');
+    const assetVersion = document.documentElement.dataset.assetVersion;
     import(`./new-tools.js${assetVersion ? `?v=${assetVersion}` : ''}`)
       .then(({ setupNewTool }) => setupNewTool(id, root))
       .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
@@ -1351,6 +1368,14 @@ function setupToolPage() {
     const assetVersion = new URL(document.currentScript?.src ?? location.href).searchParams.get('v');
     import(`./media-tools.js${assetVersion ? `?v=${assetVersion}` : ''}`)
       .then(({ setupMediaTool }) => setupMediaTool(id, root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  const planTools = new Set(['gcd-lcm-calculator', 'scientific-notation-converter', 'profit-margin-calculator', 'salary-to-hourly-calculator', 'image-to-text', 'spreadsheet-converter', 'subtitle-converter', 'image-collage-maker', 'image-metadata-remover', 'gif-maker', 'screen-recorder', 'voice-recorder']);
+  if (planTools.has(id)) {
+    const assetVersion = new URL(document.currentScript?.src ?? location.href).searchParams.get('v');
+    import(`./plan-tools.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupPlanTool }) => setupPlanTool(id, root))
       .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
     return;
   }

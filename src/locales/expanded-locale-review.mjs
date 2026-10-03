@@ -2,11 +2,11 @@
 // over native-level linguistic review for these 12 expanded locale packs.
 // This records that product decision; it does not claim native proofreading.
 export const expandedLocaleTranslationReview = Object.fromEntries(
-  ['it', 'zh_tw', 'bg', 'ca', 'nl', 'el', 'ms', 'pl', 'sv', 'th', 'uk', 'sw']
+  ['it', 'zh_tw', 'bg', 'ca', 'nl', 'el', 'ms', 'pl', 'sv', 'th', 'uk', 'sw', 'mr', 'te', 'ha', 'tl', 'ta', 'fa', 'am', 'gu']
     .map((language) => [language, {
       status: 'machine-accepted',
       acceptedBy: 'site owner (explicitly accepted machine translation)',
-      acceptedAt: '2026-10-02',
+      acceptedAt: ['mr', 'te', 'ha', 'tl', 'ta', 'fa', 'am', 'gu'].includes(language) ? '2026-10-03' : '2026-10-02',
     }]),
 );
 
@@ -577,6 +577,7 @@ const statusKeys = [
   'status.pdfProgress', 'status.pdfError', 'status.sqlLocal', 'status.sqlError', 'status.needName',
   'status.timerRunning', 'status.durationRequired', 'status.ready',
 ];
+export const expandedLocaleStatusKeys = statusKeys;
 const statusValues = {
   it: [
     'Scrivi per iniziare il test.', 'Elaborazione…', 'Completato.', 'Controlla i dati e riprova.', 'Tempo scaduto.', 'Timer in pausa.',

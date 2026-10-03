@@ -209,6 +209,63 @@ export const guides = [
       { label: 'Harvard CS 61: Number systems and hexadecimal/binary conversion (PDF)', url: 'https://www.read.seas.harvard.edu/~kohler/class/04f-aos/ref/carter03pc-2up.pdf' },
     ],
   },
+  {
+    slug: 'how-to-check-if-a-number-is-prime', toolId: 'prime-number-checker',
+    title: 'How to Check if a Number Is Prime',
+    description: 'Learn the prime-number rule, check small divisors efficiently, and avoid common mistakes such as calling 1 prime.',
+    toolCta: 'Check whether a whole number is prime in your browser.',
+    intro: 'A prime-number test asks whether a whole number greater than 1 has any divisors besides 1 and itself. This guide shows a reliable way to check a number and explains what the result does—and does not—tell you.',
+    sections: [
+      { heading: 'Know the definition first', blocks: [
+        { type: 'p', text: 'A prime number is a whole number greater than 1 with exactly two positive divisors: 1 and the number itself. The first primes are 2, 3, 5, 7, 11 and 13. The number 1 is neither prime nor composite, and 2 is the only even prime.' },
+        { type: 'note', title: 'Prime or composite?', text: 'A composite number has a divisor other than 1 and itself. For example, 91 is composite because 7 × 13 = 91; 97 is prime.' },
+      ] },
+      { heading: 'Check only up to the square root', blocks: [
+        { type: 'p', text: 'To test a positive integer n, you do not need to try every number below n. If n has a factor larger than its square root, it must also have a matching factor smaller than the square root. So testing possible divisors up to the square root is enough.' },
+        { type: 'steps', items: ['If the number is less than 2, it is not prime.', 'Check whether it is divisible by 2. If it is even and greater than 2, it is not prime.', 'Try odd divisors from 3 up to the square root. If any divides evenly, the number is composite.', 'If none divides evenly, the number is prime.'] },
+      ] },
+      { heading: 'Example: is 97 prime?', blocks: [
+        { type: 'p', text: 'The square root of 97 is a little less than 10. Check the possible prime divisors up to that point: 2, 3, 5 and 7. The number is not divisible by any of them, so 97 is prime.' },
+        { type: 'p', text: 'For 91, the check finds 7: 91 ÷ 7 = 13. That is enough to show that 91 is composite; there is no need to test larger divisors.' },
+      ] },
+      { heading: 'Common mistakes', blocks: [
+        { type: 'list', items: ['Calling 1 prime. A prime must have exactly two positive divisors, while 1 has only one.', 'Assuming every odd number is prime. Odd composites such as 9, 15, 21 and 91 have odd divisors.', 'Testing only a few small divisors for a large number. The check must cover every possible divisor up to the square root, or use a verified primality algorithm.'] },
+        { type: 'p', text: 'UsefulVerse checks practical whole-number inputs locally in your browser. A prime result is a divisibility check, not a proof about a cryptographic key or a substitute for specialized number-theory software.' },
+      ] },
+    ],
+    sources: [
+      { label: 'Math is Fun: Prime Numbers', url: 'https://www.mathsisfun.com/prime_numbers.html' },
+      { label: 'Math is Fun: Prime Factorization', url: 'https://www.mathsisfun.com/prime-factorization.html' },
+    ],
+  },
+  {
+    slug: 'how-to-count-days-between-dates', toolId: 'date-calculator',
+    title: 'How to Count Days Between Dates',
+    description: 'Understand elapsed versus inclusive day counts, handle date order, and choose calendar days or working days.',
+    toolCta: 'Calculate elapsed or inclusive calendar days between two dates.',
+    intro: 'The same date range can produce two correct totals depending on whether you count the starting date, the ending date, or both. Decide what the question means before using a date calculator.',
+    sections: [
+      { heading: 'Elapsed days and inclusive days are different', blocks: [
+        { type: 'p', text: 'Elapsed days measure the distance from one date to another and do not count the start date as a full day. From January 1 to January 31 is 30 elapsed days. If you are counting every calendar date in a period and both endpoints count, include both dates for a total of 31.' },
+        { type: 'table', caption: 'Example counts from January 1 to January 31', headers: ['Counting method', 'Result', 'Typical question'], rows: [['Elapsed (start excluded)', '30 days', 'How many days until January 31?'], ['Inclusive (both dates counted)', '31 days', 'How many calendar dates does the period cover?'], ['Same start and end date', '0 elapsed; 1 inclusive', 'Is the selected day counted as a day in the period?']] },
+        { type: 'note', title: 'Check the wording', text: 'A deadline, stay, billing period or event may define its counting rule differently. Follow the applicable instructions instead of assuming one convention.' },
+      ] },
+      { heading: 'Use a consistent order for the dates', blocks: [
+        { type: 'p', text: 'Some calculators show a signed result; others show the absolute distance. UsefulVerse shows the distance between the dates, so reversing the start and end does not create a negative count. Its optional inclusive setting adds one calendar date to that distance.' },
+        { type: 'steps', items: ['Choose the first calendar date and the second calendar date.', 'Leave the inclusive option off for elapsed days, or turn it on to count both endpoints.', 'Read the result and check that the chosen convention matches your task.'] },
+      ] },
+      { heading: 'Calendar days are not business days', blocks: [
+        { type: 'p', text: 'A calendar-day count includes Saturdays, Sundays and holidays. For a work deadline, use a business-day calculator and specify the weekend and holidays that apply. Holiday calendars vary by country, region, employer and year.' },
+      ] },
+      { heading: 'Dates do not all have the same month length', blocks: [
+        { type: 'p', text: 'Months contain 28, 29, 30 or 31 days. Leap years add February 29, so counting across February should use the actual calendar rather than multiplying months by 30. Date-only calculations also avoid daylight-saving clock changes; if you need elapsed hours, use a date-and-time calculator and specify the time zone.' },
+      ] },
+    ],
+    sources: [
+      { label: 'timeanddate.com: Date Duration Calculator help', url: 'https://www.timeanddate.com/date/duration-help.html' },
+      { label: 'Oracle: Count whole days between two dates', url: 'https://docs.oracle.com/en/cloud/saas/intelligent-advisor/using-policy-modeling/Content/Guides/Use_Intelligent_Advisor/Use_Policy_Modeling/Work_with_rules/Write_rules_dates_and_times/Count_number_days_between_two_dates.htm' },
+    ],
+  },
 ];
 
 const protectedGuideFields = new Set(['slug', 'toolId', 'type', 'value', 'url']);
@@ -287,21 +344,37 @@ const guideMetadataOverrides = {
   },
 };
 
-function applyGuideMetadataOverrides(language, localizedGuides) {
-  const overrides = guideMetadataOverrides[language];
-  if (!overrides) return localizedGuides;
-  return localizedGuides.map((guide) => ({ ...guide, ...(overrides[guide.slug] ?? {}) }));
+const guideExactTermFixes = {
+  ha: { Binary: 'Tsarin binary' },
+  tl: { Binary: 'Binarya' },
+};
+
+function applyGuideExactTermFixes(guide, language) {
+  const fixes = guideExactTermFixes[language];
+  if (!fixes) return guide;
+  const visit = (value, field = '') => {
+    if (field === 'sources') return value;
+    if (Array.isArray(value)) return value.map((item) => visit(item));
+    if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, visit(item, key)]));
+    return typeof value === 'string' ? (fixes[value] ?? value) : value;
+  };
+  return visit(guide);
 }
 
-function materializeGuideTranslation(value, translations, language, field = '') {
-  if (Array.isArray(value)) return value.map((item) => materializeGuideTranslation(item, translations, language, field));
+function applyGuideMetadataOverrides(language, localizedGuides) {
+  const overrides = guideMetadataOverrides[language];
+  return localizedGuides.map((guide) => applyGuideExactTermFixes({ ...guide, ...(overrides?.[guide.slug] ?? {}) }, language));
+}
+
+function materializeGuideTranslation(value, translations, language, field = '', path = []) {
+  if (Array.isArray(value)) return value.map((item) => materializeGuideTranslation(item, translations, language, field, path));
   if (value && typeof value === 'object') {
     return Object.fromEntries(Object.entries(value).map(([key, item]) => [
       key,
-      materializeGuideTranslation(item, translations, language, key),
+      materializeGuideTranslation(item, translations, language, key, [...path, key]),
     ]));
   }
-  if (typeof value !== 'string' || protectedGuideFields.has(field) || /^[0-9A-F]+$/u.test(value)) return value;
+  if (typeof value !== 'string' || path.includes('sources') || protectedGuideFields.has(field) || /^[0-9A-F]+$/u.test(value)) return value;
   const translated = translations[value];
   if (typeof translated !== 'string' || !translated.trim()) throw new Error(`Missing reviewed guide translation for ${language}: ${value}`);
   return translated;
