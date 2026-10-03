@@ -1,5 +1,14 @@
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
+const deferredStylesheet = $('link[data-deferred-styles]');
+if (deferredStylesheet) {
+  const enableStylesheet = () => {
+    deferredStylesheet.media = 'all';
+    deferredStylesheet.removeAttribute('data-deferred-styles');
+  };
+  deferredStylesheet.addEventListener('load', enableStylesheet, { once: true });
+  try { if (deferredStylesheet.sheet?.cssRules.length) enableStylesheet(); } catch {}
+}
 const language = document.documentElement.lang || 'en';
 const isPortuguese = language.toLowerCase().startsWith('pt');
 const isGerman = language.toLowerCase().startsWith('de');

@@ -13,6 +13,26 @@ import { localizedGuideGaps } from '../src/locales/release-gate.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const dist = process.env.USEFULVERSE_DIST ? resolve(process.env.USEFULVERSE_DIST) : join(root, 'dist');
+const criticalCss = (await readFile(join(root, 'src', 'critical.css'), 'utf8')).trim();
+
+async function deferFullStyles(directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  for (const entry of entries) {
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) {
+      await deferFullStyles(path);
+      continue;
+    }
+    if (entry.name !== 'index.html' && entry.name !== '404.html') continue;
+    const html = await readFile(path, 'utf8');
+    const stylesheet = html.match(/<link rel="stylesheet" href="([^"]*\/assets\/styles\.css\?v=[^"]+)">/u);
+    if (!stylesheet) throw new Error(`Cannot find the versioned global stylesheet in ${path}`);
+    const href = stylesheet[1];
+    const replacement = `<style data-critical-styles>${criticalCss}</style>\n    <link rel="stylesheet" href="${href}" media="print" data-deferred-styles>\n    <noscript><link rel="stylesheet" href="${href}"></noscript>`;
+    await writeFile(path, html.replace(stylesheet[0], replacement));
+  }
+}
+
 const guidesByLocale = Object.fromEntries(Object.keys(locales).map((language) => [language, { guides: guidesForLocale(language) }]));
 const guideGaps = localizedGuideGaps(locales, guidesByLocale, guides);
 if (guideGaps.length) {
@@ -255,6 +275,7 @@ for (const language of Object.keys(numberWordsLocaleCodes)) {
 
 const assetHash = createHash('sha256')
   .update(await readFile(join(dist, 'assets', 'styles.css')))
+  .update(criticalCss)
   .update(await readFile(join(dist, 'assets', 'app.js')))
   .update(await readFile(join(dist, 'assets', 'advanced-tools.js')))
   .update(await readFile(join(dist, 'assets', 'advanced-logic.mjs')))
@@ -346,6 +367,8 @@ for (const language of languages) {
     pages.push({ language, path: route });
   }
 }
+
+await deferFullStyles(dist);
 
 // Every rendered page has reciprocal HTML hreflang tags. Repeating all locale
 // alternates inside every sitemap URL made the XML grow quadratically; keep the

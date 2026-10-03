@@ -14,14 +14,15 @@ Documento editable de trabajo. Fuente de keywords: análisis DataForSEO ya reali
 
 ## Seguimiento de ejecución · 4 oct 2026
 
-- Rama aislada: `codex/100-tools-expansion-execution-2026-10`; la rama aún no se ha publicado en GitHub ni fusionado.
+- Rama aislada remota: `codex/100-tools-expansion-execution-2026-10`; PR #34 está abierto contra `main` y todavía no se ha fusionado. La CI aprobó el commit inicial `c97542f`; las optimizaciones pendientes de revisión se publicarán en esa misma rama.
 - Catálogo: **100 candidatas implementadas como herramientas con 100 slugs nuevos**, además de las 100 existentes: 200 herramientas × 36 idiomas.
 - Build: **7.488 URLs** — 7.200 páginas de herramientas, 36 portadas y 252 páginas de guías— y **7.864 archivos** desplegables. Assets menores de 25 MiB; no se encontró carpeta `functions/` ni endpoint de procesamiento.
 - Traducciones: las 100 páginas nuevas se generan en los 36 idiomas y cada página incluye metadatos localizados, canonical y alternates; `npm run check` pasó. `npm run locale:release-check` también pasó (revisión editorial ampliada: 20 idiomas).
 - Pruebas: `npm test` pasó **511/511**; `git diff --check` pasó. Las suites nuevas incluyen validación de motores y límites, pero esto no sustituye probar cada combinación de entradas/dispositivo en navegador.
 - Browser QA: LaTeX generó SVG real y descargable; SQLite ejecutó una consulta SQLite en memoria; gráfico/diagrama generaron SVG; la vista RTL árabe no mostró overflow a 390 px y no tuvo errores de consola. Siete rutas móviles muestreadas dieron 100 en accesibilidad, buenas prácticas y SEO en localhost; su rendimiento fue 94–98. En SQLite desktop aislado, Lighthouse dio 100 en las cuatro categorías.
+- Optimización de carga en revisión: CSS crítico local y hoja global aplazada sin funciones/API/recursos externos. Tras corregir reglas de los breakpoints, CLS fue **0,001 en 412 px** y **~0,0007 en 600 px**. Lighthouse móvil local: recibo 97; graficador 99 y 98 en dos ejecuciones; portada 96. Los cuatro pilares no están a 100 de forma repetible; Accessibility/Best Practices/SEO/Agentic Browsing dieron 100 en el recibo y el graficador muestreados. Prueba interactiva: recibo con 2 × $3,50 y 10 % = total $7,70; el graficador produjo los 160 puntos y el SVG. Consola sin errores en el graficador.
 - Previsualización no productiva de Pages: `https://uv-100-tools-20261004.usefulverse.pages.dev`; el smoke test SQLite pasó allí. La emulación móvil de Lighthouse en la previsualización dio 98 de rendimiento; las auditorías SEO de `pages.dev` no son representativas porque Cloudflare bloquea indexación en dominios de preview.
-- **No está publicado en `usefulverse.com`**. El objetivo de 100/100/100/100 no está demostrado en todas las rutas; no afirmar “PageSpeed perfecto”. Faltan auditorías exhaustivas de los 100 motores/36 idiomas, revisión final del diff, push/PR/CI, despliegue de producción, sitemap/paneles de buscadores y limpieza tras respaldo online.
+- **No está publicado en `usefulverse.com`**. El objetivo de 100/100/100/100 no está demostrado en todas las rutas y las muestras de rendimiento móviles siguen por debajo de 100; no afirmar “PageSpeed perfecto” ni desplegar a producción hasta resolver la puerta definida. Faltan auditorías de cobertura pendiente, revisión final del diff, push y nueva CI, merge/despliegue, comprobación del sitemap/paneles de buscadores y limpieza tras respaldo online.
 
 ## Estado inicial observado
 
