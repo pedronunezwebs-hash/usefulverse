@@ -21,6 +21,18 @@ function safeName(name, extension) {
   return `${stem}${extension}`;
 }
 
+export function toggleRecorderPause(recorder) {
+  if (recorder?.state === 'recording' && typeof recorder.pause === 'function') {
+    recorder.pause();
+    return 'paused';
+  }
+  if (recorder?.state === 'paused' && typeof recorder.resume === 'function') {
+    recorder.resume();
+    return 'recording';
+  }
+  return null;
+}
+
 export function parseWholeNumbers(value) {
   const normalized = String(value).normalize('NFKC').replace(/[٠-٩]/gu, (d) => String(d.codePointAt(0) - 0x660)).replace(/[۰-۹]/gu, (d) => String(d.codePointAt(0) - 0x6f0));
   const fields = normalized.split(/[\s,;]+/u).filter(Boolean);
@@ -193,15 +205,20 @@ async function decodeVideoFrames(file, maxEdge, delayMs, progress) {
 function setupRecording(root, mode) {
   const preview = $('#plan-recording-preview', root); const link = $('#plan-recording-download', root); const formatSelect = $('#plan-recording-type', root);
   const startButton = $(`[data-action="start-${mode}-recording"]`, root); const stopButton = $('[data-action="stop-plan-recording"]', root);
+  const pauseButton = mode === 'voice' ? $('[data-action="pause-voice-recording"]', root) : null;
   let recorder; let stream; let chunks = []; let objectUrl = '';
   const supportedTypes = mode === 'voice' ? ['audio/webm;codecs=opus', 'audio/mp4;codecs=mp4a.40.2', 'audio/ogg;codecs=opus', 'audio/webm', 'audio/mp4'] : ['video/webm;codecs=vp9,opus', 'video/webm;codecs=vp8,opus', 'video/mp4'];
-  const chosenType = supportedTypes.find((type) => MediaRecorder.isTypeSupported?.(type)) ?? '';
+  const chosenType = globalThis.MediaRecorder ? supportedTypes.find((type) => MediaRecorder.isTypeSupported?.(type)) ?? '' : '';
   formatSelect.innerHTML = ''; formatSelect.add(new Option(chosenType || tr('Browser default'), chosenType));
   if (!navigator.mediaDevices?.getUserMedia && mode === 'voice' || !navigator.mediaDevices?.getDisplayMedia && mode === 'screen' || !globalThis.MediaRecorder) {
     startButton.disabled = true; setStatus(root, 'Recording is not supported in this browser.', 'error'); return;
   }
   const release = () => { stream?.getTracks().forEach((track) => track.stop()); stream = null; };
-  const stop = () => { if (recorder?.state === 'recording') recorder.stop(); stopButton.disabled = true; };
+  const stop = () => {
+    if (recorder?.state === 'recording' || recorder?.state === 'paused') recorder.stop();
+    stopButton.disabled = true;
+    if (pauseButton) pauseButton.disabled = true;
+  };
   root.addEventListener('click', async (event) => {
     const action = event.target.closest('[data-action]')?.dataset.action;
     if (action === `start-${mode}-recording`) {
@@ -212,14 +229,30 @@ function setupRecording(root, mode) {
         recorder.addEventListener('dataavailable', (item) => { if (item.data.size) chunks.push(item.data); });
         recorder.addEventListener('stop', () => {
           const blob = new Blob(chunks, { type: recorder.mimeType || chosenType || 'application/octet-stream' }); release();
+          if (pauseButton) pauseButton.disabled = true;
           if (!blob.size) { setStatus(root, 'The recording is empty. Try again.', 'error'); startButton.disabled = false; return; }
           if (objectUrl) URL.revokeObjectURL(objectUrl); objectUrl = URL.createObjectURL(blob);
           preview.src = objectUrl; preview.hidden = false; link.href = objectUrl; link.download = safeName(`usefulverse-${mode}-recording`, blob.type.includes('mp4') ? '.mp4' : blob.type.includes('ogg') ? '.ogg' : '.webm'); link.textContent = `${tr('Download recording')} (${blob.type || tr('browser format')})`; link.hidden = false;
           setStatus(root, `Recording ready. Actual format: ${blob.type || 'browser default'}.`, 'success'); startButton.disabled = false; stopButton.disabled = true;
         });
         if (mode === 'screen') stream.getVideoTracks()[0]?.addEventListener('ended', stop, { once: true });
-        recorder.start(1000); stopButton.disabled = false; setStatus(root, 'Recording… Select Stop and save when finished.');
-      } catch (error) { release(); startButton.disabled = false; stopButton.disabled = true; setStatus(root, error?.name === 'NotAllowedError' ? 'Permission was not granted.' : 'Could not start recording in this browser.', 'error'); }
+        recorder.start(1000); stopButton.disabled = false;
+        if (pauseButton) { pauseButton.disabled = false; pauseButton.textContent = tr('Pause'); pauseButton.setAttribute('aria-pressed', 'false'); }
+        setStatus(root, 'Recording… Select Stop and save when finished.');
+      } catch (error) {
+        release(); startButton.disabled = false; stopButton.disabled = true;
+        if (pauseButton) pauseButton.disabled = true;
+        setStatus(root, error?.name === 'NotAllowedError' ? 'Permission was not granted.' : 'Could not start recording in this browser.', 'error');
+      }
+    }
+    if (action === 'pause-voice-recording' && mode === 'voice') {
+      const state = toggleRecorderPause(recorder);
+      if (state) {
+        const paused = state === 'paused';
+        pauseButton.textContent = tr(paused ? 'Resume' : 'Pause');
+        pauseButton.setAttribute('aria-pressed', String(paused));
+        setStatus(root, paused ? 'Recording paused.' : 'Recording…');
+      } else if (pauseButton) pauseButton.disabled = true;
     }
     if (action === 'stop-plan-recording') stop();
     if (action === 'clear') { stop(); release(); preview.pause?.(); preview.removeAttribute('src'); preview.hidden = true; link.hidden = true; chunks = []; setStatus(root, 'Recording stopped and microphone or screen sharing released.'); }
