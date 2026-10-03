@@ -15,6 +15,9 @@ button{cursor:pointer}
 .header-cta{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:14px;font-weight:750}
 .language-picker{position:relative;flex:none}
 .language-picker__trigger{display:inline-flex;min-height:42px;align-items:center;justify-content:center;gap:9px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);font:inherit;font-size:13px;font-weight:750;cursor:pointer}
+.language-picker__globe{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round}
+.language-picker__current{max-width:132px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.language-picker__chevron{width:14px;height:14px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .language-picker__panel[hidden]{display:none}
 .home-intro{padding:90px 0 78px;background:var(--paper)}
 .home-intro__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center}
