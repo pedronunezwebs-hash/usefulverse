@@ -28,7 +28,7 @@ async function deferFullStyles(directory) {
     const stylesheet = html.match(/<link rel="stylesheet" href="([^"]*\/assets\/styles\.css\?v=[^"]+)">/u);
     if (!stylesheet) throw new Error(`Cannot find the versioned global stylesheet in ${path}`);
     const href = stylesheet[1];
-    const replacement = `<style data-critical-styles>${criticalCss}</style>\n    <link rel="stylesheet" href="${href}" media="print" data-deferred-styles>\n    <noscript><link rel="stylesheet" href="${href}"></noscript>`;
+    const replacement = `<link rel="preload" href="${href}" as="style">\n    <style data-critical-styles>${criticalCss}</style>\n    <link rel="stylesheet" href="${href}" media="print" data-deferred-styles>\n    <noscript><link rel="stylesheet" href="${href}"></noscript>`;
     await writeFile(path, html.replace(stylesheet[0], replacement));
   }
 }

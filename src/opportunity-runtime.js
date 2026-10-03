@@ -425,7 +425,7 @@ export function setupOpportunityTool(id, root) {
       $$('[data-op-field]', section).forEach((input) => { input.disabled = !shown; });
     });
   };
-  $$('[data-op-field="mode"], [data-op-field="test"]', root).forEach((input) => input.addEventListener('change', toggleModeFields));
+  $$('[data-op-field="mode"], [data-op-field="test"], [data-op-field="units"]', root).forEach((input) => input.addEventListener('change', toggleModeFields));
   toggleModeFields();
   root.addEventListener('click', async (event) => {
     if (event.target.closest('[data-op-calculate]')) {
