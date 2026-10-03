@@ -1347,7 +1347,7 @@ function setupToolPage() {
       .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
     return;
   }
-  const expandedTools = new Set(['age-calculator', 'business-days-calculator', 'image-to-pdf', 'favicon-generator', 'image-format-converter', 'markdown-html-converter', 'json-yaml-converter']);
+  const expandedTools = new Set(['age-calculator', 'business-days-calculator', 'office-file-compressor', 'image-to-pdf', 'favicon-generator', 'image-format-converter', 'markdown-html-converter', 'json-yaml-converter']);
   if (expandedTools.has(id)) {
     const assetVersion = new URL(document.currentScript?.src ?? location.href).searchParams.get('v');
     import(`./expanded-tools.js${assetVersion ? `?v=${assetVersion}` : ''}`)
