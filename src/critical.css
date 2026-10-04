@@ -114,6 +114,7 @@ html:is(:lang(ja),:lang(ko)) h1{line-height:1.12}
 html:lang(hi) h1{line-height:1.3}
 html:lang(hi) :is(h2,h3,.calculation-result){line-height:1.4}
 html:is(:lang(ja),:lang(ko),:lang(hi),:lang(bn)) :is(p,dd,summary){overflow-wrap:anywhere}
+html:lang(de) :is(h1,h2,h3){hyphens:auto}
 html:lang(ja) body{font-family:Inter,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI",Meiryo,system-ui,sans-serif;line-break:strict}
 html:lang(ko) body{font-family:Inter,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;word-break:keep-all}
 html:lang(hi) body{font-family:Inter,"Kohinoor Devanagari","Noto Sans Devanagari","Nirmala UI",Mangal,system-ui,sans-serif}
