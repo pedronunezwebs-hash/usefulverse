@@ -1,5 +1,14 @@
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
+const deferredStylesheet = $('link[data-deferred-styles]');
+if (deferredStylesheet) {
+  const enableStylesheet = () => {
+    deferredStylesheet.media = 'all';
+    deferredStylesheet.removeAttribute('data-deferred-styles');
+  };
+  deferredStylesheet.addEventListener('load', enableStylesheet, { once: true });
+  try { if (deferredStylesheet.sheet?.cssRules.length) enableStylesheet(); } catch {}
+}
 const language = document.documentElement.lang || 'en';
 const isPortuguese = language.toLowerCase().startsWith('pt');
 const isGerman = language.toLowerCase().startsWith('de');
@@ -1088,6 +1097,15 @@ function setupDateCalculator(root) {
   const status = $('#tool-status', root);
   root.addEventListener('click', (event) => {
     const action = event.target.closest('[data-action]')?.dataset.action;
+    if (action === 'japanese-era') {
+      const date = parseDateOnly($('#japanese-era-date', root)?.value);
+      const output = $('#japanese-era-result', root);
+      if (!date) { output.textContent = '有効な日付を選択してください。'; return; }
+      try {
+        output.textContent = new Intl.DateTimeFormat('ja-JP-u-ca-japanese', { era: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(date);
+      } catch { output.textContent = 'このブラウザーでは和暦を表示できません。'; }
+      return;
+    }
     if (action === 'date-difference') {
       const start = parseDateOnly($('#date-start', root).value); const end = parseDateOnly($('#date-end', root).value);
       if (!start || !end) { setStatus(status, 'Choose two valid dates.', 'error'); return; }
@@ -1331,6 +1349,16 @@ function setupToolPage() {
   const root = $('.tool-workspace');
   if (!root) return;
   const id = root.dataset.tool;
+  const opportunityTools = new Set(['equation-solver', 'system-of-equations-calculator', 'polynomial-factorization-calculator', 'probability-calculator', 'z-score-calculator', 'coordinate-geometry-calculator', 'long-division-calculator', 'rounding-calculator', 'tax-calculator', 'commission-calculator', 'credit-card-payoff-calculator', 'unit-price-calculator', 'concrete-calculator', 'tile-calculator', 'receipt-generator', 'quotation-generator', 'morse-code-translator', 'online-metronome', 'keyboard-tester', 'mouse-tester', 'reaction-time-test', 'combinatorics-calculator', 'probability-distribution-calculator', 'confidence-interval-calculator', 'sample-size-calculator', 'linear-regression-calculator', 'triangle-calculator', 'volume-calculator', 'sequence-calculator', 'break-even-calculator', 'roi-cagr-calculator', 'depreciation-calculator', 'dimensional-weight-calculator', 'paint-calculator', 'board-foot-calculator', 'recipe-scaler', 'iban-validator', 'utm-builder', 'robots-txt-generator', 'sitemap-xml-generator', 'json-ld-generator', 'meta-tag-generator', 'css-gradient-generator', 'css-box-shadow-generator', 'color-palette-generator', 'css-grid-generator', 'polynomial-derivative-calculator', 'polynomial-integral-calculator', 'matrix-calculator', 'truth-table-generator', 'statistical-test-calculator', 'cash-flow-irr-calculator', 'debt-payoff-planner', 'rent-vs-buy-calculator', 'citation-generator', 'json-schema-validator', 'jsonpath-query-tool', 'printable-calendar-maker', 'flashcard-maker', 'word-search-maker', 'bingo-card-generator', 'adult-bmi-calculator', 'bmr-tdee-calculator', 'macro-calorie-calculator', 'running-pace-calculator', 'one-rep-max-calculator', 'cover-letter-builder', 'test-data-generator', 'math-worksheet-generator', 'function-grapher', 'crossword-maker', 'html-formatter', 'css-formatter', 'javascript-formatter', 'html-css-js-playground', 'sqlite-playground', 'cron-expression-builder', 'hex-editor', 'image-editor', 'image-watermark-tool', 'passport-photo-maker', 'meme-maker', 'svg-optimizer', 'pixel-art-editor', 'chart-maker', 'diagram-maker', 'latex-equation-renderer', 'business-card-maker', 'body-fat-calculator', 'due-date-calculator', 'cycle-calendar-estimator', 'ascii-art-generator', 'guitar-tuner', 'virtual-piano', 'guitar-chord-finder', 'noise-generator', 'webcam-tester', 'speaker-tester']);
+  opportunityTools.add('local-notepad');
+  opportunityTools.add('teleprompter-online');
+  if (opportunityTools.has(id)) {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./opportunity-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupOpportunityTool }) => setupOpportunityTool(id, root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
   const toolSuiteTools = new Set(['pdf-protect-unlock', 'pdf-repair', 'pdf-crop', 'pdf-redact', 'pdf-to-pdfa', 'pdf-page-editor', 'pdf-ocr', 'pdf-document-converter', 'html-to-pdf', 'pdf-to-markdown', 'pdf-form-filler', 'pdf-compare', 'zip-archive-tool', 'media-converter', 'scientific-calculator', 'loan-calculator', 'compound-interest-calculator', 'invoice-generator', 'resume-builder', 'portrait-background-remover']);
   if (toolSuiteTools.has(id)) {
     const assetVersion = document.documentElement.dataset.assetVersion || new URL(document.currentScript?.src ?? location.href).searchParams.get('v');

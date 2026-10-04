@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   calculateFraction, calculateFuelCost, calculateSubnet, calculateTimeCard,
-  createZip, formatSql, formatTimer, generateLorem, parseFraction,
+  createAmidakujiDraw, createZip, formatSql, formatTimer, generateLorem, parseFraction,
   parsePdfPageRanges, typingMetrics,
 } from './new-tool-logic.mjs';
 import { browserBatchLocales } from './locales/browser-batch.mjs';
@@ -27,6 +27,25 @@ test('fractions preserve exact arithmetic and accept common forms', () => {
   assert.equal(calculateFraction('0.1', '0.2', 'add').fraction, '3/10');
   assert.throws(() => calculateFraction('1/2', '0', 'divide'), /zero/u);
   assert.throws(() => parseFraction('1/0'), /zero/u);
+});
+
+test('amidakuji creates valid non-crossing rows, a complete permutation and one winner', () => {
+  let state = 123456789;
+  const randomIndex = (length) => { state = (state * 1103515245 + 12345) & 0x7fffffff; return state % length; };
+  const result = createAmidakujiDraw(['A', 'B', 'C', 'D'], randomIndex, 12);
+  assert.equal(result.rows.length, 12);
+  assert.ok(result.rows.every((row) => row.every((bar, index) => !bar || !row[index + 1])));
+  assert.deepEqual([...result.destinations].sort(), [0, 1, 2, 3]);
+  assert.equal(result.destinations[result.winnerIndex], result.target);
+  assert.throws(() => createAmidakujiDraw(['Only one'], randomIndex), /2–8 names/u);
+  assert.throws(() => createAmidakujiDraw(Array(9).fill('Name'), randomIndex), /2–8 names/u);
+  assert.throws(() => createAmidakujiDraw(['A', 'B'], () => 3), /outside its range/u);
+});
+
+test('Japanese calendar formatter follows the official Heisei-to-Reiwa boundary', () => {
+  const formatter = new Intl.DateTimeFormat('ja-JP-u-ca-japanese', { era: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+  assert.equal(formatter.format(new Date('2019-04-30T00:00:00Z')), '平成31年4月30日');
+  assert.equal(formatter.format(new Date('2019-05-01T00:00:00Z')), '令和元年5月1日');
 });
 
 test('time card totals breaks and overnight shifts correctly', () => {

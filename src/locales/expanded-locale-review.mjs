@@ -108,6 +108,11 @@ export const expandedLocaleTitleFixes = {
 };
 
 export const expandedLocaleUiFixes = {
+  tl: {
+    'One-sample t-test': 't-test para sa iisang sample',
+    'Chi-square goodness of fit': 'Chi-square test ng goodness of fit',
+    'One-way ANOVA': 'One-way na ANOVA',
+  },
   it: {
     Output: 'Risultato',
     'Area (m²)': 'Superficie (m²)',
@@ -167,7 +172,7 @@ export const expandedLocaleUiFixes = {
     'URL to parse': 'URL do analizy', Miles: 'Mile', 'Binary (2)': 'Dwójkowy (2)', 'Shift 1': 'Zmiana 1', Shift: 'Zmiana', Stopwatch: 'Stoper', Start: 'Rozpocznij', 'Format XML': 'Formatuj XML', 'Tip per person': 'Napiwek na osobę', 'Turn line breaks into HTML breaks': 'Zamień podziały wierszy na znaczniki HTML',
     Pass: 'Zaliczone', 'Roman numeral date is ready.': 'Data zapisana cyframi rzymskimi jest gotowa.', 'Format SQL': 'Formatuj SQL', Transcribe: 'Transkrybuj', Minimum: 'Najmniejsza wartość',
   },
-  th: { 'Check XML': 'ตรวจสอบ XML', 'URL slug': 'ส่วนท้าย URL', 'your-clean-url-slug': 'ส่วนท้าย URL ที่อ่านง่าย', 'JSON array': 'อาร์เรย์ JSON', Query: 'คำค้นหา', Hash: 'แฮช', Shift: 'กะ', 'The quick brown fox jumps over the lazy dog.': 'สุนัขจิ้งจอกสีน้ำตาลตัวเร็วกระโดดข้ามสุนัขขี้เกียจ', 'GitHub Flavored Markdown': 'มาร์กดาวน์รูปแบบ GitHub' },
+  th: { 'Check XML': 'ตรวจสอบ XML', 'URL slug': 'ส่วนท้าย URL', 'your-clean-url-slug': 'ส่วนท้าย URL ที่อ่านง่าย', 'JSON array': 'อาร์เรย์ JSON', Query: 'คำค้นหา', Hash: 'แฮช', Shift: 'กะ', 'The quick brown fox jumps over the lazy dog.': 'สุนัขจิ้งจอกสีน้ำตาลตัวเร็วกระโดดข้ามสุนัขขี้เกียจ', 'GitHub Flavored Markdown': 'มาร์กดาวน์รูปแบบ GitHub', 'One-sample t-test': 'การทดสอบ t แบบหนึ่งกลุ่มตัวอย่าง', 'Chi-square goodness of fit': 'การทดสอบไคสแควร์ความกลมกลืน', 'One-way ANOVA': 'การวิเคราะห์ความแปรปรวนทางเดียว' },
   nl: {
     'New York (Eastern)': 'New York (oostelijke tijdzone)',
     'The quick brown fox jumps over the lazy dog.': 'De snelle bruine vos springt over de luie hond.',

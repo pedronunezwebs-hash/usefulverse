@@ -13,6 +13,26 @@ import { localizedGuideGaps } from '../src/locales/release-gate.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const dist = process.env.USEFULVERSE_DIST ? resolve(process.env.USEFULVERSE_DIST) : join(root, 'dist');
+const criticalCss = (await readFile(join(root, 'src', 'critical.css'), 'utf8')).trim();
+
+async function deferFullStyles(directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  for (const entry of entries) {
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) {
+      await deferFullStyles(path);
+      continue;
+    }
+    if (entry.name !== 'index.html' && entry.name !== '404.html') continue;
+    const html = await readFile(path, 'utf8');
+    const stylesheet = html.match(/<link rel="stylesheet" href="([^"]*\/assets\/styles\.css\?v=[^"]+)">/u);
+    if (!stylesheet) throw new Error(`Cannot find the versioned global stylesheet in ${path}`);
+    const href = stylesheet[1];
+    const replacement = `<link rel="preload" href="${href}" as="style">\n    <style data-critical-styles>${criticalCss}</style>\n    <link rel="stylesheet" href="${href}" media="print" data-deferred-styles>\n    <noscript><link rel="stylesheet" href="${href}"></noscript>`;
+    await writeFile(path, html.replace(stylesheet[0], replacement));
+  }
+}
+
 const guidesByLocale = Object.fromEntries(Object.keys(locales).map((language) => [language, { guides: guidesForLocale(language) }]));
 const guideGaps = localizedGuideGaps(locales, guidesByLocale, guides);
 if (guideGaps.length) {
@@ -20,8 +40,20 @@ if (guideGaps.length) {
 }
 await rm(dist, { recursive: true, force: true });
 await mkdir(join(dist, 'assets'), { recursive: true });
-await cp(join(root, 'src', 'styles.css'), join(dist, 'assets', 'styles.css'));
-await cp(join(root, 'src', 'app.js'), join(dist, 'assets', 'app.js'));
+await bundle({
+  entryPoints: [join(root, 'src', 'styles.css')],
+  outfile: join(dist, 'assets', 'styles.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'app.js')],
+  outfile: join(dist, 'assets', 'app.js'),
+  bundle: false,
+  format: 'esm',
+  target: ['es2022'],
+  minify: true,
+});
 await cp(join(root, 'src', 'advanced-tools.js'), join(dist, 'assets', 'advanced-tools.js'));
 await cp(join(root, 'src', 'advanced-logic.mjs'), join(dist, 'assets', 'advanced-logic.mjs'));
 await cp(join(root, 'src', 'expanded-tools.js'), join(dist, 'assets', 'expanded-tools.js'));
@@ -47,8 +79,29 @@ await bundle({
   target: ['es2022'],
   minify: true,
 });
+await bundle({
+  entryPoints: [join(root, 'src', 'opportunity-runtime.js')],
+  outfile: join(dist, 'assets', 'opportunity-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'sqlite-playground-worker.mjs')],
+  outfile: join(dist, 'assets', 'sqlite-playground-worker.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await cp(join(root, 'node_modules', '@sqlite.org', 'sqlite-wasm', 'dist', 'sqlite3.wasm'), join(dist, 'assets', 'sqlite3.wasm'));
 const vendor = join(dist, 'assets', 'vendor');
 await mkdir(vendor, { recursive: true });
+await cp(join(root, 'node_modules', 'mathjax', 'tex-svg.js'), join(vendor, 'mathjax-tex-svg.js'));
+await cp(join(root, 'node_modules', 'mathjax', 'LICENSE'), join(vendor, 'LICENSE-mathjax.txt'));
 await cp(join(root, 'node_modules', 'pdf-lib', 'dist', 'pdf-lib.min.js'), join(vendor, 'pdf-lib.min.js'));
 await bundle({
   entryPoints: [join(root, 'src', 'tiff-decoder.mjs')],
@@ -222,6 +275,7 @@ for (const language of Object.keys(numberWordsLocaleCodes)) {
 
 const assetHash = createHash('sha256')
   .update(await readFile(join(dist, 'assets', 'styles.css')))
+  .update(criticalCss)
   .update(await readFile(join(dist, 'assets', 'app.js')))
   .update(await readFile(join(dist, 'assets', 'advanced-tools.js')))
   .update(await readFile(join(dist, 'assets', 'advanced-logic.mjs')))
@@ -233,6 +287,8 @@ const assetHash = createHash('sha256')
   .update(await readFile(join(dist, 'assets', 'media-transcription-worker.mjs')))
   .update(await readFile(join(dist, 'assets', 'tool-suite-tools.js')))
   .update(await readFile(join(dist, 'assets', 'tool-suite-ocr.js')))
+  .update(await readFile(join(dist, 'assets', 'sqlite-playground-worker.js')))
+  .update(await readFile(join(dist, 'assets', 'sqlite3.wasm')))
   .update(await readFile(join(dist, 'assets', 'portrait-background-worker.js')))
   .update(await Promise.all(Object.keys(numberWordsLocaleCodes).map((language) => readFile(join(dist, 'assets', `number-words-${language}.js`)))).then((files) => Buffer.concat(files)))
   .update(await readFile(join(vendor, 'media-converter.mjs')))
@@ -312,21 +368,13 @@ for (const language of languages) {
   }
 }
 
-const localizedRoute = (language, toolId) => `https://usefulverse.com${localePath(language, toolId)}`;
-const xhtmlNamespace = ' xmlns:xhtml="http://www.w3.org/1999/xhtml"';
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"${xhtmlNamespace}>\n${pages.map(({ language, path }) => {
-  if (path.includes('/guides/')) {
-    const slug = path.match(/\/guides\/([^/]+)\/$/u)?.[1] ?? '';
-    const alternates = languages.map((key) => `    <xhtml:link rel="alternate" hreflang="${locales[key].code}" href="https://usefulverse.com${guidePath(slug, key)}"/>`);
-    alternates.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="https://usefulverse.com${guidePath(slug)}"/>`);
-    return `  <url>\n    <loc>https://usefulverse.com${path}</loc>\n${alternates.join('\n')}\n  </url>`;
-  }
-  const toolId = path.match(/\/tools\/([^/]+)\/$/u)?.[1] ?? '';
-  const alternateLanguages = pdfToolIds.includes(toolId) ? pdfLocaleEntries : languages.map((key) => ({ key, ...locales[key] }));
-  const alternates = alternateLanguages.map(({ key, code }) => `    <xhtml:link rel="alternate" hreflang="${code}" href="${localizedRoute(key, toolId)}"/>`);
-  alternates.push(`    <xhtml:link rel="alternate" hreflang="x-default" href="${localizedRoute('en', toolId)}"/>`);
-  return `  <url>\n    <loc>${localizedRoute(language, toolId)}</loc>\n${alternates.join('\n')}\n  </url>`;
-}).join('\n')}\n</urlset>\n`;
+await deferFullStyles(dist);
+
+// Every rendered page has reciprocal HTML hreflang tags. Repeating all locale
+// alternates inside every sitemap URL made the XML grow quadratically; keep the
+// sitemap to its canonical URL inventory so future localized tools stay below
+// Cloudflare Pages' single-file limit.
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(({ path }) => `  <url><loc>https://usefulverse.com${path}</loc></url>`).join('\n')}\n</urlset>\n`;
 await writeFile(join(dist, 'sitemap.xml'), sitemap);
 await writeFile(join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: https://usefulverse.com/sitemap.xml\n`);
 await writeFile(join(dist, 'llms.txt'), `# UsefulVerse\n\n> Fast, private browser tools for text, data, SEO and everyday tasks.\n\nUsefulVerse is a static website of small online tools. Browser-first tools process user input locally and do not require an account or upload.\n\n## Tools\n\n${tools.map((tool) => `- [${tool.title}](https://usefulverse.com/tools/${tool.id}/): ${tool.description}`).join('\n')}\n\n## Guides\n\n- [UsefulVerse Guides](https://usefulverse.com${guidePath()})\n${guides.map((guide) => `- [${guide.title}](https://usefulverse.com${guidePath(guide.slug)}): ${guide.description}`).join('\n')}\n\n## Site\n\n- [Home](https://usefulverse.com/)\n- [Sitemap](https://usefulverse.com/sitemap.xml)\n`);

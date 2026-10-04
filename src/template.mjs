@@ -9,6 +9,7 @@ import { expandedToolMarkup } from './expanded-template.mjs';
 import { browserBatchToolMarkup } from './browser-batch-template.mjs';
 import { toolSuiteMarkup } from './tool-suite-template.mjs';
 import { planToolMarkup } from './plan-tools-template.mjs';
+import { opportunityToolMarkup } from './opportunity-template.mjs';
 
 const fill = (template, values) => template.replace(/\{(\w+)\}/gu, (match, name) => values[name] ?? match);
 
@@ -93,14 +94,16 @@ export function toolCard(tool, language = 'en') {
   </a>`;
 }
 
-function toolMarkup(id) {
+function toolMarkup(id, language = 'en', localizedTitle = '') {
+  const opportunity = opportunityToolMarkup(id, language, ui[language] ?? {}, localizedTitle);
+  if (opportunity) return opportunity;
   const plan = planToolMarkup(id);
   if (plan) return plan;
   const suite = toolSuiteMarkup(id);
   if (suite) return suite;
   const expanded = expandedToolMarkup(id);
   if (expanded) return expanded;
-  const browserBatch = browserBatchToolMarkup(id);
+  const browserBatch = browserBatchToolMarkup(id, language);
   if (browserBatch) return browserBatch;
   const common = `<div class="tool-workspace" data-tool="${id}">`;
   const close = `</div>`;
@@ -324,8 +327,9 @@ function toolMarkup(id) {
   if (id === 'unit-converter') return `${common}
     <div class="base-converter unit-converter"><label class="field-label" for="unit-category">Type <select id="unit-category" class="tool-input"><option value="length">Length</option><option value="weight">Weight</option><option value="temperature">Temperature</option><option value="volume">Volume</option></select></label><label class="field-label" for="unit-from">From <select id="unit-from" class="tool-input"></select></label><label class="field-label" for="unit-to">To <select id="unit-to" class="tool-input"></select></label></div><label class="field-label" for="unit-input">Value</label><input id="unit-input" class="tool-input" type="number" inputmode="decimal" placeholder="1"><div class="tool-actions"><button class="button button--primary" data-action="convert-unit">Convert unit</button><button class="button button--ghost" data-action="clear">Clear</button></div><p class="tool-status" id="tool-status" aria-live="polite">Conversions run locally in your browser.</p><div class="result-block"><div class="result-block__heading"><span>Result</span></div><output id="unit-output" class="result-output">—</output></div>
   ${close}`;
+  const japaneseEraMarkup = language === 'ja' ? '<section class="calculator-card japanese-era-card"><h2>西暦・和暦変換</h2><label class="field-label" for="japanese-era-date">日付<input id="japanese-era-date" class="tool-input" type="date"></label><div class="tool-actions"><button class="button button--primary" type="button" data-action="japanese-era">和暦に変換</button></div><output class="calculation-result" id="japanese-era-result" aria-live="polite">—</output><p class="tool-hint">日本の元号に基づく日付表示です。変換はブラウザー内で行われます。</p></section>' : '';
   if (id === 'date-calculator') return `${common}
-    <div class="converter-grid"><section class="calculator-card"><h2>Days between dates</h2><label class="field-label" for="date-start">Start date</label><input id="date-start" class="tool-input" type="date"><label class="field-label" for="date-end">End date</label><input id="date-end" class="tool-input" type="date"><label class="option-row"><input id="date-include-start" type="checkbox"> Count both start and end dates</label><div class="tool-actions"><button class="button button--primary" data-action="date-difference">Calculate difference</button></div><output class="calculation-result" id="date-difference-result">—</output></section><section class="calculator-card"><h2>Add or subtract days</h2><label class="field-label" for="date-base">Starting date</label><input id="date-base" class="tool-input" type="date"><label class="field-label" for="date-offset">Days to add <span class="field-hint">Use a negative number to subtract</span></label><input id="date-offset" class="tool-input" type="number" inputmode="numeric" placeholder="30"><div class="tool-actions"><button class="button button--primary" data-action="date-offset">Calculate date</button></div><output class="calculation-result" id="date-offset-result">—</output></section></div><p class="tool-status" id="tool-status" aria-live="polite">Dates are calculated in your browser.</p>
+    <div class="converter-grid"><section class="calculator-card"><h2>Days between dates</h2><label class="field-label" for="date-start">Start date</label><input id="date-start" class="tool-input" type="date"><label class="field-label" for="date-end">End date</label><input id="date-end" class="tool-input" type="date"><label class="option-row"><input id="date-include-start" type="checkbox"> Count both start and end dates</label><div class="tool-actions"><button class="button button--primary" data-action="date-difference">Calculate difference</button></div><output class="calculation-result" id="date-difference-result">—</output></section><section class="calculator-card"><h2>Add or subtract days</h2><label class="field-label" for="date-base">Starting date</label><input id="date-base" class="tool-input" type="date"><label class="field-label" for="date-offset">Days to add <span class="field-hint">Use a negative number to subtract</span></label><input id="date-offset" class="tool-input" type="number" inputmode="numeric" placeholder="30"><div class="tool-actions"><button class="button button--primary" data-action="date-offset">Calculate date</button></div><output class="calculation-result" id="date-offset-result">—</output></section></div>${japaneseEraMarkup}<p class="tool-status" id="tool-status" aria-live="polite">Dates are calculated in your browser.</p>
   ${close}`;
   if (id === 'qr-code-generator') return `${common}
     <label class="field-label" for="qr-input">Link or short text</label><textarea id="qr-input" class="tool-textarea" maxlength="106" placeholder="https://usefulverse.com/tools/qr-code-generator"></textarea>
@@ -448,7 +452,10 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
   const imageFormatData = imageFormatLocales[language];
   const imageFormatCopy = imageFormatData?.copy?.[tool.id];
   const baseSeoData = language === 'en'
-    ? (seo[tool.id] ?? { title: tool.title, description: `${tool.description} Free, fast and private in your browser.` })
+    ? (seo[tool.id] ?? { title: tool.shortTitle, description: `${tool.description} Free and unlimited use in your browser.`, faq: [
+      { question: `How do I use ${tool.shortTitle}?`, answer: tool.intro },
+      { question: 'Is my data uploaded to a server?', answer: 'No. This tool runs locally in your browser. Your input is not uploaded.' },
+    ] })
     : pack ? {
       title: pack.seo?.[tool.id]?.title ?? tool.shortTitle,
       description: pack.seo?.[tool.id]?.description ?? tool.description,
@@ -534,8 +541,8 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
     return guide ? `<a class="guide-link-card" href="${guidePath(slug, language)}"><span class="eyebrow">${escapeHtml(ui[language]?.['UsefulVerse guide'] ?? 'UsefulVerse guide')}</span><strong>${escapeHtml(guide.title)}</strong><span>${escapeHtml(ui[language]?.['Read the guide'] ?? 'Read the guide')} <span aria-hidden="true">↗</span></span></a>` : '';
   }).join('');
   const guidesSection = guideLinks ? `<section class="tool-guides" aria-labelledby="tool-guides-title"><div><p class="eyebrow">${escapeHtml(ui[language]?.['UsefulVerse guides'] ?? 'UsefulVerse guides')}</p><h2 id="tool-guides-title">${escapeHtml(ui[language]?.['All guides'] ?? 'All guides')}</h2></div><div class="guide-link-grid">${guideLinks}</div></section>` : '';
-  const pdfOnlyMarkup = pdfOnlyLocales[language] ? toolMarkup(tool.id)
-    .replace(/<p class="(?:tool-hint|file-meta)"[^>]*>[\s\S]*?<\/p>/gu, '') : toolMarkup(tool.id);
+  const pdfOnlyMarkup = pdfOnlyLocales[language] ? toolMarkup(tool.id, language, tool.title)
+    .replace(/<p class="(?:tool-hint|file-meta)"[^>]*>[\s\S]*?<\/p>/gu, '') : toolMarkup(tool.id, language, tool.title);
   const pdfLimitations = pdfOnlyLocales[language]
     ? `<details class="tool-limits" open><summary>${escapeHtml(ui[language]?.['Important limits and output'] ?? 'Important limits and output')}</summary><p>${escapeHtml(tool.body)}</p></details>`
     : '';
@@ -628,7 +635,7 @@ export function renderNotFoundPage() {
   </head>
   <body>
     <main>
-      <a class="brand" href="/" aria-label="UsefulVerse home"><span class="mark" aria-hidden="true">◆</span> usefulverse</a>
+      <a class="brand" href="/" aria-label="UsefulVerse home"><span class="mark" aria-hidden="true">◆</span> UsefulVerse</a>
       <p class="code">404 · UsefulVerse</p>
       <h1 id="not-found-heading">This page took a wrong turn.</h1>
       <p class="detail" id="not-found-detail">The address may be outdated or the page may have moved. Head back to the tools directory.</p>
@@ -799,9 +806,9 @@ export function shell({ title, description, canonical, body, schema = '', assetV
     ${schema}
   </head>
   <body>
-    <header class="site-header"><div class="page-container site-header__inner"><a class="brand" href="${homeHref}" aria-label="UsefulVerse home"><span class="brand-mark" aria-hidden="true">◆</span><span>usefulverse</span></a><nav class="main-nav" aria-label="Main navigation"><a href="${toolDirectoryHref}">Tools</a>${howItWorksLink}${guideNavLink}</nav><a class="header-cta" href="${toolDirectoryHref}">Find a tool <span aria-hidden="true">↗</span></a>${localeSelector}</div></header>
+    <header class="site-header"><div class="page-container site-header__inner"><a class="brand" href="${homeHref}" aria-label="UsefulVerse home"><span class="brand-mark" aria-hidden="true">◆</span><span>UsefulVerse</span></a><nav class="main-nav" aria-label="Main navigation"><a href="${toolDirectoryHref}">Tools</a>${howItWorksLink}${guideNavLink}</nav><a class="header-cta" href="${toolDirectoryHref}">Find a tool <span aria-hidden="true">↗</span></a>${localeSelector}</div></header>
     ${body}
-    <footer class="site-footer"><div class="page-container site-footer__inner"><a class="brand brand--footer" href="${homeHref}"><span class="brand-mark" aria-hidden="true">◆</span><span>usefulverse</span></a><p>Simple tools that respect your time and your files.</p><div class="footer-links"><a href="${toolDirectoryHref}">All tools</a>${isPdfOnlyLanguage ? '' : `<a href="${homeHref}#how-it-works">Privacy first</a>`}${guideNavLink}</div></div></footer>
+    <footer class="site-footer"><div class="page-container site-footer__inner"><a class="brand brand--footer" href="${homeHref}"><span class="brand-mark" aria-hidden="true">◆</span><span>UsefulVerse</span></a><p>Simple tools that respect your time and your files.</p><div class="footer-links"><a href="${toolDirectoryHref}">All tools</a>${isPdfOnlyLanguage ? '' : `<a href="${homeHref}#how-it-works">Privacy first</a>`}${guideNavLink}</div></div></footer>
     ${lang === 'en' ? '' : `<script defer src="/assets/locale-${lang}.js${assetSuffix}"></script>`}
     ${numberWordsScript}
     <script defer src="/assets/app.js${assetSuffix}"></script>

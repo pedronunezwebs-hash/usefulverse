@@ -5,7 +5,15 @@ import { locales, packs, pdfOnlyLocales, pdfOnlyPacks, runtimeMessages, runtimeT
 // runtime.js hook (e.g. numberToWords) appended after it.
 export async function localeBundleSource(language) {
   const pack = packs[language] ?? pdfOnlyPacks[language];
-  const bundle = { code: (locales[language] ?? pdfOnlyLocales[language]).code, messages: ui[language], runtime: runtimeMessages[language], templates: runtimeTemplates[language] ?? {} };
+  // Runtime translations take precedence over UI translations. Merge once so
+  // every page downloads each localized string only once, while keeping the
+  // empty runtime object for older tool modules that still read this shape.
+  const bundle = {
+    code: (locales[language] ?? pdfOnlyLocales[language]).code,
+    messages: { ...(ui[language] ?? {}), ...(runtimeMessages[language] ?? {}) },
+    runtime: {},
+    templates: runtimeTemplates[language] ?? {},
+  };
   if (pack) Object.assign(bundle, { tag: pack.meta.tag, config: pack.meta.runtime ?? {} });
   let source = `window.usefulverseLocale = ${JSON.stringify(bundle)};\n`;
   const hook = new URL(`./${language}/runtime.js`, import.meta.url);

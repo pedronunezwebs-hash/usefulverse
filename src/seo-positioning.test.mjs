@@ -33,3 +33,21 @@ test('home-page titles and descriptions also obey the same positioning and lengt
     if (language === 'es') assert.match(title, /Gratis · sin límites/u);
   }
 });
+
+test('Japanese existing tools include localized amida and Japanese-era utilities without exposing Japanese-only UI elsewhere', () => {
+  const picker = tools.find((tool) => tool.id === 'random-name-picker');
+  const dates = tools.find((tool) => tool.id === 'date-calculator');
+  const japanesePicker = renderToolPage(localizedTool(picker, 'ja'), '', 'ja');
+  const englishPicker = renderToolPage(localizedTool(picker, 'en'), '', 'en');
+  const japaneseDates = renderToolPage(localizedTool(dates, 'ja'), '', 'ja');
+  const englishDates = renderToolPage(localizedTool(dates, 'en'), '', 'en');
+  assert.match(japanesePicker, /あみだくじを作成/u);
+  assert.match(japanesePicker, /あみだくじ/u);
+  assert.doesNotMatch(englishPicker, /あみだくじ/u);
+  assert.match(japaneseDates, /data-action="japanese-era"/u);
+  assert.match(japaneseDates, /和暦に変換/u);
+  assert.match(japaneseDates, /西暦を和暦に変換できますか/u);
+  assert.match(localizedTool(dates, 'ja').keywords, /西暦 和暦 変換/u);
+  assert.match(japaneseDates, /西暦を令和・平成に変換/u);
+  assert.doesNotMatch(englishDates, /和暦/u);
+});

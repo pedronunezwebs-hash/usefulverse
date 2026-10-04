@@ -198,7 +198,28 @@ function secureIndex(max) {
 function setupNamePicker(root) {
   root.addEventListener('click', (event) => {
     const actionName = event.target.closest('[data-action]')?.dataset.action;
-    if (actionName === 'clear-picker') { $('#picker-names', root).value = ''; $('#picker-winners', root).replaceChildren(); status(root, 'needName'); return; }
+    if (actionName === 'clear-picker') { $('#picker-names', root).value = ''; $('#picker-winners', root).replaceChildren(); $('#amidakuji-result', root)?.setAttribute('hidden', ''); $('#amidakuji-status', root)?.replaceChildren(); status(root, 'needName'); return; }
+    if (actionName === 'amidakuji-picker') {
+      const feedback = $('#amidakuji-status', root); const resultPanel = $('#amidakuji-result', root); const svg = $('#amidakuji-svg', root);
+      try {
+        const names = $('#picker-names', root).value.split(/\r?\n/u).map((name) => name.trim()).filter(Boolean);
+        const draw = logic.createAmidakujiDraw(names, secureIndex);
+        const width = 640; const height = 380; const left = 50; const right = width - left; const top = 60; const bottom = height - 50;
+        const gap = (right - left) / (names.length - 1); const rowGap = (bottom - top) / (draw.rows.length + 1);
+        svg.replaceChildren(); svg.setAttribute('viewBox', `0 0 ${width} ${height}`); svg.setAttribute('aria-label', `あみだくじ。${names.length}人から選ばれたのは${names[draw.winnerIndex]}です。`);
+        const addLine = (x1, y1, x2, y2) => { const line = document.createElementNS('http://www.w3.org/2000/svg', 'line'); for (const [key, value] of Object.entries({ x1, y1, x2, y2, stroke: '#17191f', 'stroke-width': 3, 'stroke-linecap': 'round' })) line.setAttribute(key, String(value)); svg.append(line); };
+        const addLabel = (text, x, y, full = text) => { const label = document.createElementNS('http://www.w3.org/2000/svg', 'text'); label.setAttribute('x', String(x)); label.setAttribute('y', String(y)); label.setAttribute('text-anchor', 'middle'); label.setAttribute('font-size', '12'); label.setAttribute('fill', '#17191f'); label.textContent = full.length > 10 ? `${full.slice(0, 9)}…` : text; svg.append(label); };
+        names.forEach((name, column) => { const x = left + gap * column; addLabel(name, x, 28, name); addLine(x, top, x, bottom); });
+        draw.rows.forEach((bars, row) => bars.forEach((connected, column) => { if (connected) { const y = top + rowGap * (row + 1); addLine(left + gap * column, y, left + gap * (column + 1), y); } }));
+        names.forEach((_, column) => addLabel(column === draw.target ? '当たり' : 'はずれ', left + gap * column, height - 14));
+        $('#amidakuji-winner', root).textContent = `当たり：${names[draw.winnerIndex]}`;
+        resultPanel.hidden = false; feedback.textContent = 'あみだくじを作成しました。下の結果を確認してください。';
+      } catch (error) {
+        resultPanel.hidden = true;
+        feedback.textContent = error instanceof RangeError ? '名前を2〜8人分入力してください。各名前は80文字以内です。' : '抽選を作成できませんでした。入力を確認して、もう一度お試しください。';
+      }
+      return;
+    }
     if (actionName !== 'pick-names') return;
     try {
       const entries = $('#picker-names', root).value.split(/\r?\n/u).map((name) => name.trim()).filter(Boolean);
