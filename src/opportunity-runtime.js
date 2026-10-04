@@ -269,14 +269,30 @@ function setupNoise(root) {
 }
 
 function setupPiano(root) {
-  let context; const active = new Map(); const keyNotes = new Map([['a', 60], ['w', 61], ['s', 62], ['e', 63], ['d', 64], ['f', 65], ['t', 66], ['g', 67], ['y', 68], ['h', 69], ['u', 70], ['j', 71], ['k', 72]]);
+  let context; const active = new Map(); const pending = new Map(); const held = new Set(); const keyNotes = new Map([['a', 60], ['w', 61], ['s', 62], ['e', 63], ['d', 64], ['f', 65], ['t', 66], ['g', 67], ['y', 68], ['h', 69], ['u', 70], ['j', 71], ['k', 72]]);
   const volume = $('[data-piano-volume]', root);
-  const noteOn = async (midi, button) => { if (active.has(midi)) return; context ??= new (window.AudioContext || window.webkitAudioContext)(); await context.resume(); const osc = context.createOscillator(); const gain = context.createGain(); osc.frequency.value = 440 * 2 ** ((midi - 69) / 12); gain.gain.value = 0.0001; osc.connect(gain).connect(context.destination); osc.start(); gain.gain.exponentialRampToValueAtTime(Math.max(0.0002, Number(volume.value) / 100 * 0.2), context.currentTime + 0.015); active.set(midi, { osc, gain, button }); button?.classList.add('is-pressed'); };
+  const noteOn = async (midi, button) => {
+    if (active.has(midi) || pending.has(midi)) return;
+    const activation = Symbol(); pending.set(midi, activation);
+    try {
+      const AudioContextType = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContextType) throw new Error('audio unavailable');
+      context ??= new AudioContextType(); await context.resume();
+      if (pending.get(midi) !== activation || !held.has(midi) || context.state !== 'running') return;
+      const osc = context.createOscillator(); const gain = context.createGain();
+      osc.frequency.value = 440 * 2 ** ((midi - 69) / 12); gain.gain.value = 0.0001;
+      osc.connect(gain).connect(context.destination); osc.start();
+      gain.gain.exponentialRampToValueAtTime(Math.max(0.0001, Number(volume.value) / 100 * 0.2), context.currentTime + 0.015);
+      active.set(midi, { osc, gain, button }); button?.classList.add('is-pressed');
+    } finally { if (pending.get(midi) === activation) pending.delete(midi); }
+  };
   const noteOff = (midi) => { const item = active.get(midi); if (!item) return; item.gain.gain.setTargetAtTime(0.0001, context.currentTime, 0.04); item.osc.stop(context.currentTime + 0.2); item.button?.classList.remove('is-pressed'); active.delete(midi); };
+  const release = (midi) => { held.delete(midi); pending.delete(midi); noteOff(midi); };
   volume?.addEventListener('input', () => { const level = Number(volume.value) / 100 * 0.2; for (const { gain } of active.values()) gain.gain.setTargetAtTime(Math.max(0.0001, level), context.currentTime, 0.02); });
-  $$('[data-midi]', root).forEach((button) => { const midi = Number(button.dataset.midi); button.addEventListener('pointerdown', (event) => { event.preventDefault(); noteOn(midi, button).catch(() => setStatus(root, 'Audio could not start.', 'error')); }); button.addEventListener('pointerup', () => noteOff(midi)); button.addEventListener('pointerleave', () => noteOff(midi)); button.addEventListener('pointercancel', () => noteOff(midi)); button.addEventListener('lostpointercapture', () => noteOff(midi)); });
-  const down = (event) => { if (event.repeat || event.target.closest('input, textarea, select, [contenteditable="true"]')) return; const midi = keyNotes.get(event.key.toLowerCase()); if (midi) { event.preventDefault(); noteOn(midi, $$('[data-midi]', root).find((button) => Number(button.dataset.midi) === midi)).catch(() => setStatus(root, say('Audio could not start. Check your browser audio settings.'), 'error')); } }; const up = (event) => { const midi = keyNotes.get(event.key.toLowerCase()); if (midi) noteOff(midi); };
-  window.addEventListener('keydown', down); window.addEventListener('keyup', up); window.addEventListener('blur', () => [...active.keys()].forEach(noteOff)); window.addEventListener('pagehide', () => { [...active.keys()].forEach(noteOff); context?.close().catch(() => {}); }, { once: true });
+  $$('[data-midi]', root).forEach((button) => { const midi = Number(button.dataset.midi); button.addEventListener('pointerdown', (event) => { event.preventDefault(); held.add(midi); noteOn(midi, button).catch(() => setStatus(root, 'Audio could not start.', 'error')); }); button.addEventListener('pointerup', () => release(midi)); button.addEventListener('pointerleave', () => release(midi)); button.addEventListener('pointercancel', () => release(midi)); button.addEventListener('lostpointercapture', () => release(midi)); });
+  const down = (event) => { if (event.repeat || event.target.closest('input, textarea, select, [contenteditable="true"]')) return; const midi = keyNotes.get(event.key.toLowerCase()); if (midi) { event.preventDefault(); held.add(midi); noteOn(midi, $$('[data-midi]', root).find((button) => Number(button.dataset.midi) === midi)).catch(() => setStatus(root, say('Audio could not start. Check your browser audio settings.'), 'error')); } }; const up = (event) => { const midi = keyNotes.get(event.key.toLowerCase()); if (midi) release(midi); };
+  const releaseAll = () => { for (const midi of new Set([...held, ...pending.keys(), ...active.keys()])) release(midi); };
+  window.addEventListener('keydown', down); window.addEventListener('keyup', up); window.addEventListener('blur', releaseAll); window.addEventListener('pagehide', () => { releaseAll(); context?.close().catch(() => {}); }, { once: true });
 }
 
 function setupSpeaker(root) {
