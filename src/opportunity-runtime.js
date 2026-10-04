@@ -3,6 +3,7 @@ import { buildStudyPlan } from './study-planner-logic.mjs';
 import { createMentalMathProblem, parseMentalMathAnswer, validateMentalMathSettings } from './mental-math-logic.mjs';
 import { budgetCsvCell, parseBudgetAmount, summarizeBudget, validateBudgetTransaction } from './household-budget-logic.mjs';
 import { advanceTournamentBracketWinner, createTournamentBracket, getTournamentChampion, parseTournamentEntrants } from './tournament-bracket-logic.mjs';
+import { skipOverdueMetronomeBeats } from './metronome-logic.mjs';
 
 const $ = (selector, root) => root.querySelector(selector);
 const $$ = (selector, root) => [...root.querySelectorAll(selector)];
@@ -346,9 +347,10 @@ function setupSandbox(root) {
 }
 
 function setupMetronome(root) {
-  let context; let timer; let beat = 0; let tapTimes = []; let nextNoteAt = 0;
+  let context; let timer; let beat = 0; let tapTimes = []; let nextNoteAt = 0; let startAttempt = 0; let running = false;
   const bpmInput = $('[data-op-field="bpm"]', root); const beatsInput = $('[data-op-field="beats"]', root);
   const start = $('[data-op-start]', root); const stop = $('[data-op-stop]', root); const tap = $('[data-op-tap]', root);
+  const lockSettings = (locked) => { bpmInput.disabled = locked; beatsInput.disabled = locked; };
   const scheduleBeat = (when) => {
     if (!context) return;
     const oscillator = context.createOscillator(); const gain = context.createGain();
@@ -360,17 +362,51 @@ function setupMetronome(root) {
   const scheduleAhead = () => {
     if (!context || context.state !== 'running') return;
     const bpm = Number(bpmInput.value);
+    const secondsPerBeat = 60 / bpm;
+    const timing = skipOverdueMetronomeBeats({ nextNoteAt, currentTime: context.currentTime, secondsPerBeat, beatIndex: beat, beatsPerBar: Number(beatsInput.value || 4) });
+    nextNoteAt = timing.nextNoteAt;
+    beat = timing.beatIndex;
     while (nextNoteAt < context.currentTime + 0.12) {
       scheduleBeat(nextNoteAt);
-      nextNoteAt += 60 / bpm;
+      nextNoteAt += secondsPerBeat;
     }
   };
-  const stopPlaying = () => { clearInterval(timer); timer = undefined; if (start) start.disabled = false; if (stop) stop.disabled = true; if (context && context.state !== 'closed') { context.close().catch(() => {}); context = undefined; } setStatus(root, 'Metronome stopped.'); };
+  const stopPlaying = (announce = true) => {
+    startAttempt += 1;
+    clearInterval(timer); timer = undefined; running = false;
+    if (start) start.disabled = false;
+    if (stop) stop.disabled = true;
+    lockSettings(false);
+    const oldContext = context; context = undefined;
+    oldContext?.removeEventListener('statechange', scheduleAhead);
+    if (oldContext && oldContext.state !== 'closed') oldContext.close().catch(() => {});
+    if (announce) setStatus(root, 'Metronome stopped.');
+  };
   start.addEventListener('click', async () => {
+    if (start.disabled || running) return;
     const bpm = Number(bpmInput.value);
     if (!Number.isFinite(bpm) || bpm < 20 || bpm > 300) return setStatus(root, 'Enter a tempo from 20 to 300 BPM.', 'error');
-    try { const AudioContextType = window.AudioContext || window.webkitAudioContext; if (!AudioContextType) throw new Error('audio unavailable'); context ??= new AudioContextType(); await context.resume(); clearInterval(timer); beat = 0; nextNoteAt = context.currentTime + 0.03; scheduleAhead(); timer = setInterval(scheduleAhead, 25); start.disabled = true; stop.disabled = false; setStatus(root, 'Metronome is playing. Audio stays in this browser.', 'success'); }
-    catch { setStatus(root, 'Audio could not start. Check your browser audio settings.', 'error'); }
+    const attempt = ++startAttempt;
+    start.disabled = true; stop.disabled = false; lockSettings(true);
+    let startingContext;
+    try {
+      const AudioContextType = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContextType) throw new Error('audio unavailable');
+      startingContext = new AudioContextType(); context = startingContext;
+      await startingContext.resume();
+      if (attempt !== startAttempt || context !== startingContext || !root.isConnected) {
+        if (startingContext.state !== 'closed') startingContext.close().catch(() => {});
+        return;
+      }
+      running = true; beat = 0; nextNoteAt = startingContext.currentTime + 0.03;
+      startingContext.addEventListener('statechange', scheduleAhead);
+      scheduleAhead(); timer = setInterval(scheduleAhead, 25);
+      setStatus(root, 'Metronome is playing. Audio stays in this browser.', 'success');
+    } catch {
+      if (attempt !== startAttempt) return;
+      stopPlaying(false);
+      setStatus(root, 'Audio could not start. Check your browser audio settings.', 'error');
+    }
   });
   stop.addEventListener('click', stopPlaying);
   tap.addEventListener('click', () => {
@@ -378,7 +414,7 @@ function setupMetronome(root) {
     if (tapTimes.length >= 2) { const intervals = tapTimes.slice(1).map((time, index) => time - tapTimes[index]); const bpm = Math.round(60000 / (intervals.reduce((a, b) => a + b, 0) / intervals.length)); bpmInput.value = String(Math.max(20, Math.min(300, bpm))); setStatus(root, 'Tempo: ' + bpmInput.value + ' BPM.', 'success'); }
     else setStatus(root, 'Tap again to measure the tempo.');
   });
-  window.addEventListener('pagehide', stopPlaying, { once: true });
+  window.addEventListener('pagehide', () => stopPlaying(false), { once: true });
 }
 
 function setupKeyboard(root) {
