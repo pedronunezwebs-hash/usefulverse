@@ -23,6 +23,16 @@ const escapeHtml = (value) => String(value)
 const toolUrl = (id, language = 'en') => localePath(language, id);
 
 export const relatedToolIds = {
+  'tournament-bracket-generator': ['random-name-picker', 'random-number-generator'],
+  'chess-clock': ['tournament-bracket-generator', 'random-number-generator'],
+  'ear-training': ['online-metronome', 'guitar-tuner', 'virtual-piano'],
+  'bpm-detector': ['online-metronome', 'audio-compressor', 'media-converter'],
+  'music-scale-finder': ['guitar-chord-finder', 'guitar-tuner', 'ear-training'],
+  'seating-chart-maker': ['printable-calendar-maker', 'quotation-generator', 'study-planner'],
+  'gantt-chart-maker': ['study-planner', 'printable-calendar-maker', 'seating-chart-maker'],
+  'sprite-sheet-maker': ['gif-maker', 'pixel-art-editor', 'image-format-converter'],
+  'mental-math-practice': ['study-planner', 'math-worksheet-generator', 'fraction-calculator'],
+  'study-planner': ['online-timer', 'flashcard-maker', 'math-worksheet-generator'],
   'roman-numeral-converter': ['date-calculator', 'number-to-words-converter', 'binary-converter'],
   'binary-converter': ['prime-number-checker', 'timestamp-converter', 'number-to-words-converter'],
   'prime-number-checker': ['binary-converter', 'average-calculator', 'ratio-proportion-calculator'],
@@ -558,7 +568,7 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
       <div class="page-container">
       <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="${homeHref}">UsefulVerse</a><span aria-hidden="true">/</span><a href="${pdfOnlyLocales[language] ? homeHref : `${homeHref}#tools`}">${escapeHtml(tool.category)}</a><span aria-hidden="true">/</span><span>${escapeHtml(tool.title)}</span></nav>
         <div class="tool-page__heading"><div>${icon(tool)}<p class="eyebrow">${escapeHtml(tool.category)} tool</p><h1>${escapeHtml(tool.title)}</h1><p class="tool-lead">${escapeHtml(tool.intro)}</p></div><div class="privacy-note"><span class="privacy-note__dot" aria-hidden="true"></span><span>Runs in your browser. No upload.</span></div></div>
-        <section class="tool-panel" aria-label="${escapeHtml(tool.title)} workspace">${toolPanel}</section>
+        <section class="tool-panel" aria-label="${escapeHtml(tool.title)} workspace">${toolPanel}<aside class="tool-follow-up" data-tool-follow-up hidden aria-labelledby="tool-follow-up-title"><div class="section-heading"><h2 id="tool-follow-up-title">${escapeHtml(ui[language]?.['More useful tools'] ?? 'More useful tools')}</h2><button class="button button--ghost" type="button" data-tool-follow-up-dismiss aria-label="${escapeHtml(ui[language]?.Close ?? 'Close')}">×</button></div><div class="tool-grid tool-grid--compact" data-tool-follow-up-links></div></aside></section>
         ${usefulVerseSaveCard(canonical)}
         ${toolExplainer}
         ${guidesSection}

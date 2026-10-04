@@ -1348,10 +1348,85 @@ function setupTimeZone(root) {
 function setupToolPage() {
   const root = $('.tool-workspace');
   if (!root) return;
+  const followUp = document.querySelector('[data-tool-follow-up]');
+  const followUpLinks = followUp?.querySelector('[data-tool-follow-up-links]');
+  const relatedCards = [...document.querySelectorAll('.related-tools .tool-card')].slice(0, 3);
+  let followUpObserver;
+  const revealRelevantTools = () => {
+    if (!followUp || !followUpLinks || !relatedCards.length || followUp.hidden === false || !root.querySelector('.tool-status.is-success')) return;
+    followUpLinks.replaceChildren(...relatedCards.map((card) => card.cloneNode(true)));
+    followUp.hidden = false;
+    followUpObserver?.disconnect();
+  };
+  if (followUp && followUpLinks && relatedCards.length) {
+    followUpObserver = new MutationObserver(revealRelevantTools);
+    followUpObserver.observe(root, { subtree: true, attributes: true, attributeFilter: ['class'], childList: true, characterData: true });
+    revealRelevantTools();
+    followUp.querySelector('[data-tool-follow-up-dismiss]')?.addEventListener('click', () => {
+      followUp.hidden = true;
+      followUpObserver?.disconnect();
+    });
+  }
   const id = root.dataset.tool;
   const opportunityTools = new Set(['equation-solver', 'system-of-equations-calculator', 'polynomial-factorization-calculator', 'probability-calculator', 'z-score-calculator', 'coordinate-geometry-calculator', 'long-division-calculator', 'rounding-calculator', 'tax-calculator', 'commission-calculator', 'credit-card-payoff-calculator', 'unit-price-calculator', 'concrete-calculator', 'tile-calculator', 'receipt-generator', 'quotation-generator', 'morse-code-translator', 'online-metronome', 'keyboard-tester', 'mouse-tester', 'reaction-time-test', 'combinatorics-calculator', 'probability-distribution-calculator', 'confidence-interval-calculator', 'sample-size-calculator', 'linear-regression-calculator', 'triangle-calculator', 'volume-calculator', 'sequence-calculator', 'break-even-calculator', 'roi-cagr-calculator', 'depreciation-calculator', 'dimensional-weight-calculator', 'paint-calculator', 'board-foot-calculator', 'recipe-scaler', 'iban-validator', 'utm-builder', 'robots-txt-generator', 'sitemap-xml-generator', 'json-ld-generator', 'meta-tag-generator', 'css-gradient-generator', 'css-box-shadow-generator', 'color-palette-generator', 'css-grid-generator', 'polynomial-derivative-calculator', 'polynomial-integral-calculator', 'matrix-calculator', 'truth-table-generator', 'statistical-test-calculator', 'cash-flow-irr-calculator', 'debt-payoff-planner', 'rent-vs-buy-calculator', 'citation-generator', 'json-schema-validator', 'jsonpath-query-tool', 'printable-calendar-maker', 'flashcard-maker', 'word-search-maker', 'bingo-card-generator', 'adult-bmi-calculator', 'bmr-tdee-calculator', 'macro-calorie-calculator', 'running-pace-calculator', 'one-rep-max-calculator', 'cover-letter-builder', 'test-data-generator', 'math-worksheet-generator', 'function-grapher', 'crossword-maker', 'html-formatter', 'css-formatter', 'javascript-formatter', 'html-css-js-playground', 'sqlite-playground', 'cron-expression-builder', 'hex-editor', 'image-editor', 'image-watermark-tool', 'passport-photo-maker', 'meme-maker', 'svg-optimizer', 'pixel-art-editor', 'chart-maker', 'diagram-maker', 'latex-equation-renderer', 'business-card-maker', 'body-fat-calculator', 'due-date-calculator', 'cycle-calendar-estimator', 'ascii-art-generator', 'guitar-tuner', 'virtual-piano', 'guitar-chord-finder', 'noise-generator', 'webcam-tester', 'speaker-tester']);
+  opportunityTools.add('study-planner');
+  opportunityTools.add('seating-chart-maker');
+  opportunityTools.add('gantt-chart-maker');
+  opportunityTools.add('sprite-sheet-maker');
+  opportunityTools.add('mental-math-practice');
+  opportunityTools.add('tournament-bracket-generator');
   opportunityTools.add('local-notepad');
   opportunityTools.add('teleprompter-online');
+  opportunityTools.add('household-budget-planner');
+  if (id === 'ear-training') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./ear-training-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupEarTraining }) => setupEarTraining(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'bpm-detector') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./bpm-detector-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupBpmDetector }) => setupBpmDetector(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'music-scale-finder') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./music-scale-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupMusicScaleFinder }) => setupMusicScaleFinder(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'seating-chart-maker') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./seating-chart-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupSeatingChart }) => setupSeatingChart(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'gantt-chart-maker') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./gantt-chart-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupGanttChart }) => setupGanttChart(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'sprite-sheet-maker') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./sprite-sheet-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupSpriteSheetMaker }) => setupSpriteSheetMaker(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'chess-clock') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./chess-clock-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupChessClock }) => setupChessClock(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
   if (opportunityTools.has(id)) {
     const assetVersion = document.documentElement.dataset.assetVersion;
     import(`./opportunity-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)

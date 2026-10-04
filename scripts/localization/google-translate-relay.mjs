@@ -5,6 +5,7 @@ const directory = process.env.USEFULVERSE_TRANSLATION_DIR ?? '/tmp/usefulverse-l
 const port = Number(process.env.USEFULVERSE_TRANSLATION_PORT ?? 4179);
 const input = JSON.parse(await readFile(`${directory}/draft-input.json`, 'utf8'));
 const protectedPattern = /\{[A-Za-z][A-Za-z0-9_]*\}|https?:\/\/[^\s<>]+|`[^`]*`|<\/?[A-Za-z][^>]*>|UsefulVerse/gu;
+const redoLanguages = new Set((process.env.USEFULVERSE_TRANSLATION_REDO ?? '').split(',').filter(Boolean));
 
 const outputFile = `${directory}/google-translate-output.jsonl`;
 const completed = new Map();
@@ -12,9 +13,11 @@ try {
   for (const line of (await readFile(outputFile, 'utf8')).split(/\r?\n/u)) {
     if (!line) continue;
     const row = JSON.parse(line);
-    const ids = completed.get(row.language) ?? new Set();
-    ids.add(row.unitId);
-    completed.set(row.language, ids);
+    if (!redoLanguages.has(row.language)) {
+      const ids = completed.get(row.language) ?? new Set();
+      ids.add(row.unitId);
+      completed.set(row.language, ids);
+    }
   }
 } catch (error) {
   if (error.code !== 'ENOENT') throw error;
@@ -26,9 +29,9 @@ for (const [language, target] of Object.entries(input.targets)) {
   const rows = [];
   for (const [unitId, source] of Object.entries(target.units)) {
     index += 1;
-    // Numeric sentinels avoid spellcheck changes in the free Translate UI
-    // (it has occasionally collapsed repeated letters in hexadecimal IDs).
-    const rowId = String(index).padStart(8, '0');
+    // Alphanumeric sentinels avoid spelling changes and digit normalization in
+    // translated text, including languages that reformat standalone numbers.
+    const rowId = `UVROW${index}X`;
     const replacements = [];
     let tokenIndex = 0;
     let cursor = 0;
@@ -45,7 +48,7 @@ for (const [language, target] of Object.entries(input.targets)) {
     rows.push({ rowId, unitId, source, masked, replacements });
   }
 
-  const finished = completed.get(language) ?? new Set();
+  const finished = redoLanguages.has(language) ? new Set() : completed.get(language) ?? new Set();
   const remaining = rows.filter((row) => !finished.has(row.unitId));
   const batches = [];
   let batchRows = [];
@@ -117,8 +120,12 @@ const server = createServer(async (request, response) => {
     // Google Translate may add a space around the pipe in the visible result.
     // RTL translation UIs can visually reorder or drop the ASCII pipe while
     // retaining the numeric row sentinel. Accept that punctuation variation.
-    const matcher = /(\d{8})\s*\|?\s*([\s\S]*?)(?=\d{8}\s*\|?|$)/gu;
-    for (const match of String(body.text ?? '').matchAll(matcher)) translations.set(match[1], match[2].trim());
+    const matcher = /(UVROW\d+X)\s*\|?\s*([\s\S]*?)(?=UVROW\d+X\s*\|?|$)/gu;
+    // Some scripts show both the original translation and a Latin
+    // transliteration. Keep the first rendered version for each sentinel.
+    for (const match of String(body.text ?? '').matchAll(matcher)) {
+      if (!translations.has(match[1])) translations.set(match[1], match[2].trim());
+    }
     const missing = [];
     const invalidMarkers = [];
     const results = [];

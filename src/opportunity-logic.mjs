@@ -924,7 +924,7 @@ export function makeFlashcards({ cards }) {
   const lines = String(cards).split(/\r?\n/u).map((line) => line.trim()).filter(Boolean);
   if (!lines.length || lines.length > 200) throw new RangeError('Enter between 1 and 200 flashcards.');
   return lines.map((line, index) => {
-    const split = line.indexOf(','); if (split < 1 || !line.slice(split + 1).trim()) throw new TypeError(`Line ${index + 1}: use term, definition.`);
+    const split = line.search(/[,،，、]/u); if (split < 1 || !line.slice(split + 1).trim()) throw new TypeError(`Line ${index + 1}: use term, definition.`);
     return `${index + 1}. FRONT: ${line.slice(0, split).trim()}\n   BACK: ${line.slice(split + 1).trim()}`;
   }).join('\n\n');
 }
@@ -935,12 +935,19 @@ function seededRandom(seed) {
   return () => { state += 0x6D2B79F5; let value = state; value = Math.imul(value ^ value >>> 15, value | 1); value ^= value + Math.imul(value ^ value >>> 7, value | 61); return ((value ^ value >>> 14) >>> 0) / 4294967296; };
 }
 
+function puzzleCells(value) {
+  const text = String(value ?? '').normalize('NFC').toLocaleUpperCase().replace(/[^\p{L}\p{M}\p{N}]/gu, '');
+  if (typeof Intl.Segmenter === 'function') return [...new Intl.Segmenter(undefined, { granularity: 'grapheme' }).segment(text)].map(({ segment }) => segment);
+  return Array.from(text);
+}
+
 export function makeWordSearch({ words, size, seed = '1' }) {
   const dimension = number(size, 'grid size');
   if (!Number.isInteger(dimension) || dimension < 8 || dimension > 20) throw new RangeError('Grid size must be a whole number from 8 to 20.');
-  const list = [...new Set(String(words).split(/[\n,;]+/u).map((word) => word.normalize('NFKD').replace(/\p{M}/gu, '').toUpperCase().replace(/[^A-Z]/gu, '')).filter(Boolean))];
-  if (!list.length || list.length > 20 || list.some((word) => word.length > dimension)) throw new RangeError('Enter 1 to 20 unique A–Z words, each no longer than the grid.');
+  const list = [...new Set(String(words).split(/[\n,;،，、]+/u).map((word) => puzzleCells(word).join('')).filter(Boolean))].map(puzzleCells);
+  if (!list.length || list.length > 20 || list.some((word) => word.length > dimension)) throw new RangeError('Enter 1 to 20 unique words using letters or digits, each no longer than the grid.');
   const grid = Array.from({ length: dimension }, () => Array(dimension).fill('')); const random = seededRandom(seed);
+  const filler = [...new Set(list.flat())];
   const directions = [[0, 1], [1, 0], [1, 1], [-1, 1], [0, -1], [-1, 0], [-1, -1], [1, -1]]; const placements = [];
   for (const word of [...list].sort((a, b) => b.length - a.length)) {
     let placed = false;
@@ -948,13 +955,13 @@ export function makeWordSearch({ words, size, seed = '1' }) {
       const [dr, dc] = directions[Math.floor(random() * directions.length)]; const row = Math.floor(random() * dimension); const col = Math.floor(random() * dimension);
       const endRow = row + dr * (word.length - 1); const endCol = col + dc * (word.length - 1);
       if (endRow < 0 || endRow >= dimension || endCol < 0 || endCol >= dimension) continue;
-      if ([...word].some((letter, index) => grid[row + dr * index][col + dc * index] && grid[row + dr * index][col + dc * index] !== letter)) continue;
-      [...word].forEach((letter, index) => { grid[row + dr * index][col + dc * index] = letter; });
-      placements.push(`${word}: (${row + 1},${col + 1}) → (${endRow + 1},${endCol + 1})`); placed = true;
+      if (word.some((letter, index) => grid[row + dr * index][col + dc * index] && grid[row + dr * index][col + dc * index] !== letter)) continue;
+      word.forEach((letter, index) => { grid[row + dr * index][col + dc * index] = letter; });
+      placements.push(`${word.join('')}: (${row + 1},${col + 1}) → (${endRow + 1},${endCol + 1})`); placed = true;
     }
     if (!placed) throw new RangeError(`Could not place “${word}”. Increase the grid or use fewer words.`);
   }
-  for (const row of grid) for (let col = 0; col < dimension; col += 1) if (!row[col]) row[col] = String.fromCharCode(65 + Math.floor(random() * 26));
+  for (const row of grid) for (let col = 0; col < dimension; col += 1) if (!row[col]) row[col] = filler[Math.floor(random() * filler.length)];
   return `WORD SEARCH (${dimension}×${dimension})\n${grid.map((row) => row.join(' ')).join('\n')}\n\nANSWER KEY · start and end coordinates\n${placements.join('\n')}`;
 }
 
@@ -1103,8 +1110,11 @@ function estimateCycle({ start, cycle = 28, period = 5 }) { const days = number(
 function makeAscii({ text }) { const input = String(text ?? '').trim(); if (!input || input.length > 80) throw new RangeError('Enter 1–80 characters.'); return input.toUpperCase().split('').map((char) => char === ' ' ? '   ' : `[${char}]`).join(' '); }
 function findChord({ chord }) { const chords = { C: 'C–E–G · x32010', G: 'G–B–D · 320003', D: 'D–F♯–A · xx0232', A: 'A–C♯–E · x02220', E: 'E–G♯–B · 022100', Am: 'A–C–E · x02210', Em: 'E–G–B · 022000', Dm: 'D–F–A · xx0231', F: 'F–A–C · 133211' }; if (!chords[chord]) throw new TypeError('Choose a listed chord.'); return `${chord}: ${chords[chord]}\nStandard tuning; one common fingering.`; }
 function makeCrossword({ pairs }) {
-  const items = String(pairs ?? '').split(/\r?\n/u).map((line) => line.split(/[,;\t]/u).map((part) => part.trim())).filter((parts) => parts.length >= 2 && parts[0] && parts[1]).map(([answer, clue]) => ({ answer: answer.normalize('NFD').replace(/[\u0300-\u036f]/gu, '').toUpperCase().replace(/[^A-Z]/gu, ''), clue }));
-  if (items.length < 2 || items.length > 20 || items.some((item) => item.answer.length < 2 || item.answer.length > 14 || item.clue.length > 140)) throw new RangeError('Enter 2–20 answer, clue lines. Answers must contain 2–14 Latin letters.');
+  const items = String(pairs ?? '').split(/\r?\n/u).map((line) => {
+    const split = line.search(/[,;\t،，、]/u);
+    return split < 1 ? null : { answer: line.slice(0, split).trim(), clue: line.slice(split + 1).trim() };
+  }).filter((item) => item?.answer && item.clue).map(({ answer, clue }) => ({ answer: puzzleCells(answer), clue }));
+  if (items.length < 2 || items.length > 20 || items.some((item) => item.answer.length < 2 || item.answer.length > 14 || item.clue.length > 140)) throw new RangeError('Enter 2–20 answer, clue lines. Answers must contain 2–14 letters or digits.');
   const size = 31; const grid = Array.from({ length: size }, () => Array(size).fill('')); const placed = [];
   const fits = (word, row, col, vertical) => {
     const dr = vertical ? 1 : 0; const dc = vertical ? 0 : 1; const endR = row + dr * (word.length - 1); const endC = col + dc * (word.length - 1);
@@ -1123,7 +1133,7 @@ function makeCrossword({ pairs }) {
   }
   if (placed.length < 2) throw new RangeError('The answers did not cross. Add words with at least one shared letter.');
   const minR = Math.min(...placed.map((p) => p.row)); const maxR = Math.max(...placed.map((p) => p.row + (p.vertical ? p.answer.length - 1 : 0))); const minC = Math.min(...placed.map((p) => p.col)); const maxC = Math.max(...placed.map((p) => p.col + (p.vertical ? 0 : p.answer.length - 1)));
-  return `CROSSWORD GRID (* = empty)\n${grid.slice(minR, maxR + 1).map((row) => row.slice(minC, maxC + 1).map((cell) => cell || '*').join(' ')).join('\n')}\n\nPLACED ${placed.length} OF ${items.length} WORDS\n${placed.map((item, index) => `${index + 1}. ${item.vertical ? 'Down' : 'Across'} · ${item.clue}`).join('\n')}`;
+  return `CROSSWORD GRID (* = empty)\n${grid.slice(minR, maxR + 1).map((row) => row.slice(minC, maxC + 1).map((cell) => cell || '*').join(' ')).join('\n')}\n\nPLACED ${placed.length} OF ${items.length} WORDS\n${placed.map((item, index) => `${index + 1}. ${item.vertical ? 'Down' : 'Across'} · ${item.clue} (${item.answer.join('')})`).join('\n')}`;
 }
 function optimizeSvg({ svg }) {
   const text = String(svg ?? '').trim(); if (!/^(?:<\?xml[^>]*>\s*)?<svg\b[\s\S]*<\/svg>\s*$/iu.test(text)) throw new TypeError('Paste a complete SVG document.');

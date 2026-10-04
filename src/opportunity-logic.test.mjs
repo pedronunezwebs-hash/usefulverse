@@ -232,6 +232,7 @@ test('printable calendars handle leap years and week-start offsets', () => {
 
 test('flashcards parse rows and reject missing backs', () => {
   assert.match(makeFlashcards({ cards: 'Term, Definition' }), /FRONT: Term\n   BACK: Definition/u);
+  assert.match(makeFlashcards({ cards: 'مصطلح، تعريف، مع تفاصيل' }), /FRONT: مصطلح\n   BACK: تعريف، مع تفاصيل/u);
   assert.throws(() => makeFlashcards({ cards: 'missing separator' }), /use term, definition/u);
 });
 
@@ -241,6 +242,21 @@ test('word search is seeded, places all words and validates capacity', () => {
   assert.equal(makeWordSearch(input), result);
   assert.match(result, /PLANET:[\s\S]*COMET:[\s\S]*STAR:/u);
   assert.throws(() => makeWordSearch({ ...input, words: 'ABCDEFGHIJK', size: 8 }), /no longer than the grid/u);
+});
+
+test('word search keeps non-Latin words instead of silently deleting their letters', () => {
+  const arabic = makeWordSearch({ words: 'مرحبا،سلام', size: 8, seed: 'ar' });
+  assert.match(arabic, /مرحبا:/u);
+  assert.match(arabic, /سلام:/u);
+  const hindi = makeWordSearch({ words: 'नमस्ते,भारत', size: 8, seed: 'hi' });
+  assert.match(hindi, /नमस्ते:/u);
+  assert.match(hindi, /भारत:/u);
+  const crossword = calculateOpportunity('crossword', { pairs: 'مرحبا, greeting\nاهلا, welcome' });
+  assert.match(crossword, /مرحبا/u);
+  assert.match(crossword, /اهلا/u);
+  const arabicDelimiter = calculateOpportunity('crossword', { pairs: 'بيت، مكان، للسكن\nباب، مدخل' });
+  assert.match(arabicDelimiter, /مكان، للسكن \(بيت\)/u);
+  assert.match(arabicDelimiter, /مدخل \(باب\)/u);
 });
 
 test('bingo cards are reproducible and require unique pool', () => {

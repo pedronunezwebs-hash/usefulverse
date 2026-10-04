@@ -20,7 +20,7 @@ for (const language of pdfOnlyLocaleKeys) localizedFiles.push(
   `${pdfOnlyLocales[language].prefix.replace(/^\//u, '')}/llms.txt`,
 );
 for (const language of Object.keys(numberWordsLocaleCodes)) localizedFiles.push(`assets/number-words-${language}.js`);
-const required = ['index.html', '404.html', 'assets/styles.css', 'assets/app.js', 'favicon.svg', 'robots.txt', 'sitemap.xml', 'llms.txt', ...localizedFiles, 'BingSiteAuth.xml', 'yandex_f441658073fe7135.html', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html', '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt'];
+const required = ['index.html', '404.html', 'assets/styles.css', 'assets/app.js', 'assets/chess-clock-runtime.js', 'assets/ear-training-runtime.js', 'assets/bpm-detector-runtime.js', 'assets/music-scale-runtime.js', 'assets/seating-chart-runtime.js', 'assets/gantt-chart-runtime.js', 'assets/sprite-sheet-runtime.js', 'assets/timer-logic.mjs', 'favicon.svg', 'robots.txt', 'sitemap.xml', 'llms.txt', 'timer-notifications.js', ...localizedFiles, 'BingSiteAuth.xml', 'yandex_f441658073fe7135.html', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html', '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt'];
 function assertLanguagePicker(html, currentLanguage, availableLocales, toolId, context, routeForLocale = (key) => localePath(key, toolId)) {
   const currentLocale = availableLocales.find(({ key }) => key === currentLanguage);
   const languageLabel = ui[currentLanguage]?.Language ?? 'Language';
@@ -41,6 +41,39 @@ const notFound = await readFile(join(dist, '404.html'), 'utf8');
 if (!notFound.includes('<meta name="robots" content="noindex,follow">') || /<link rel="canonical"/u.test(notFound)) throw new Error('404 page must be noindex and must not claim a canonical URL');
 for (const language of languages) if (!notFound.includes(`href="${localePath(language)}"`)) throw new Error(`404 page is missing its ${language} home link`);
 for (const file of required) await access(join(dist, file));
+const deferredAssetBudgets = new Map([
+  ['assets/app.js', 72 * 1024], ['assets/styles.css', 54 * 1024],
+  ['assets/new-tools.js', 32 * 1024], ['assets/expanded-tools.js', 40 * 1024],
+  ['assets/advanced-tools.js', 52 * 1024], ['assets/media-tools.js', 16 * 1024],
+  ['assets/plan-tools.js', 55 * 1024], ['assets/tool-suite-tools.js', 150 * 1024],
+  ['assets/opportunity-runtime.js', 128 * 1024], ['assets/new-tool-logic.mjs', 16 * 1024], ['assets/timer-logic.mjs', 16 * 1024],
+  ['assets/chess-clock-runtime.js', 8 * 1024],
+  ['assets/ear-training-runtime.js', 8 * 1024],
+  ['assets/bpm-detector-runtime.js', 8 * 1024],
+  ['assets/music-scale-runtime.js', 8 * 1024],
+  ['assets/seating-chart-runtime.js', 10 * 1024],
+  ['assets/gantt-chart-runtime.js', 10 * 1024],
+  ['assets/sprite-sheet-runtime.js', 12 * 1024],
+  ['assets/expanded-logic.mjs', 16 * 1024], ['assets/advanced-logic.mjs', 16 * 1024],
+]);
+for (const [file, budget] of deferredAssetBudgets) {
+  const bytes = (await stat(join(dist, file))).size;
+  if (bytes > budget) throw new Error(`Shared or deferred asset exceeded its ${budget}-byte budget: ${file} is ${bytes} bytes.`);
+}
+for (const file of await readdir(join(dist, 'assets'))) {
+  if (!/^locale-[\w-]+\.js$/u.test(file)) continue;
+  const bytes = (await stat(join(dist, 'assets', file))).size;
+  if (bytes > 320 * 1024) throw new Error(`Locale bundle exceeded its 327680-byte budget: ${file} is ${bytes} bytes.`);
+}
+const headers = await readFile(join(dist, '_headers'), 'utf8');
+const globalHeaderBlock = headers.split(/\n\s*\n/u).find((block) => block.startsWith('/*')) ?? '';
+if (!globalHeaderBlock.includes('Permissions-Policy: camera=(self), geolocation=()') || /Permissions-Policy: [^\n]*microphone=\(\)/u.test(globalHeaderBlock) || !headers.includes('/tools/voice-recorder/*\n  Permissions-Policy: microphone=(self)') || !headers.includes('/tools/guitar-tuner/*\n  Permissions-Policy: microphone=(self)')) {
+  throw new Error('Do not globally deny microphone access: Cloudflare Pages merges matching Permissions-Policy headers. Keep microphone prompts user-initiated in the recorder and guitar tuner routes.');
+}
+const timerPage = await readFile(join(dist, localePath('en', 'online-timer').replace(/^\//u, '') + 'index.html'), 'utf8');
+for (const feature of ['data-timer-mode="pomodoro"', 'id="long-break-minutes"', 'id="long-break-every"', 'id="timer-auto-start"', 'id="timer-sound"', 'data-action="timer-test-sound"', 'data-action="timer-enable-notifications"', 'data-action="timer-skip"', 'data-action="timer-clear-data"']) {
+  if (!timerPage.includes(feature)) throw new Error(`Online timer is missing its required control: ${feature}`);
+}
 const naverVerification = await readFile(join(dist, 'naverbbd67ca2bfab12f8138c42ad5d27c664.html'), 'utf8');
 if (naverVerification !== 'naver-site-verification: naverbbd67ca2bfab12f8138c42ad5d27c664.html\n') throw new Error('Naver verification file content does not match the downloaded file');
 const pages = [];
@@ -69,6 +102,7 @@ for (const language of languages) {
     const alternateLanguages = availableLocales;
     for (const alternate of alternateLanguages) if (!html.includes(`hreflang="${alternate.code}" href="https://usefulverse.com${localePath(alternate.key, tool.id)}"`)) throw new Error(`Missing ${alternate.key} alternate for ${language}/${tool.id}`);
     if (!html.includes(`data-tool="${tool.id}"`)) throw new Error(`Missing tool runtime for ${language}/${tool.id}`);
+    if (!html.includes('data-tool-follow-up') || !html.includes('data-tool-follow-up-links') || !html.includes('data-tool-follow-up-dismiss')) throw new Error(`Missing dismissible contextual next-step links for ${language}/${tool.id}`);
     const relatedHeading = packs[language]?.ui['More useful tools'] ?? { en: 'More useful tools', es: 'Más herramientas útiles', fr: 'Plus d’outils utiles', pt: 'Mais ferramentas úteis', de: 'Weitere nützliche Tools' }[language];
     if (!html.includes(relatedHeading)) throw new Error(`Missing localized related-tools heading for ${language}/${tool.id}`);
     if (!html.includes('"@type":"WebApplication"') || !html.includes('property="og:title"')) throw new Error(`Missing SEO schema or social metadata for ${language}/${tool.id}`);

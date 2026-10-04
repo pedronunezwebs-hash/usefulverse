@@ -1,4 +1,8 @@
 import { calculateOpportunity } from './opportunity-logic.mjs';
+import { buildStudyPlan } from './study-planner-logic.mjs';
+import { createMentalMathProblem, parseMentalMathAnswer, validateMentalMathSettings } from './mental-math-logic.mjs';
+import { budgetCsvCell, parseBudgetAmount, summarizeBudget, validateBudgetTransaction } from './household-budget-logic.mjs';
+import { advanceTournamentBracketWinner, createTournamentBracket, getTournamentChampion, parseTournamentEntrants } from './tournament-bracket-logic.mjs';
 
 const $ = (selector, root) => root.querySelector(selector);
 const $$ = (selector, root) => [...root.querySelectorAll(selector)];
@@ -47,6 +51,55 @@ function offerSvg(root, svg, filename) {
   const link = $('[data-op-download]', root);
   if (!link) return;
   offerDownload(root, new Blob([new XMLSerializer().serializeToString(svg)], { type: 'image/svg+xml;charset=utf-8' }), filename);
+}
+
+function setupFlashcardStudy(root) {
+  const study = $('[data-flashcard-study]', root);
+  if (!study) return;
+  let deck = []; let index = 0;
+  const render = () => {
+    if (!deck.length) { study.hidden = true; return; }
+    const card = deck[index];
+    $('[data-flashcard-front]', study).textContent = card.front;
+    $('[data-flashcard-back]', study).textContent = card.back;
+    $('[data-flashcard-back]', study).hidden = true;
+    $('[data-flashcard-show]', study).hidden = false;
+    $('[data-flashcard-count]', study).textContent = say('Card {current} of {total}').replace('{current}', String(index + 1)).replace('{total}', String(deck.length));
+    $('[data-flashcard-previous]', study).disabled = index === 0;
+    $('[data-flashcard-next]', study).disabled = index === deck.length - 1;
+  };
+  root.addEventListener('click', (event) => {
+    if (event.target.closest('[data-op-calculate]')) {
+      try {
+        const raw = $('[data-op-field="cards"]', root)?.value ?? '';
+        const lines = raw.split(/\r?\n/u).map((line) => line.trim()).filter(Boolean);
+        deck = lines.map((line) => {
+          const comma = line.indexOf(',');
+          if (comma < 1) return null;
+          return { front: line.slice(0, comma).trim(), back: line.slice(comma + 1).trim() };
+        }).filter((card) => card?.front && card.back);
+        if (deck.length !== lines.length || deck.length > 200) { deck = []; study.hidden = true; return; }
+        index = 0; study.hidden = deck.length === 0; render();
+      } catch { study.hidden = true; }
+    }
+    if (!deck.length) return;
+    if (event.target.closest('[data-flashcard-show]')) {
+      $('[data-flashcard-back]', study).hidden = false;
+      $('[data-flashcard-show]', study).hidden = true;
+    }
+    if (event.target.closest('[data-flashcard-known]')) {
+      deck.splice(index, 1);
+      if (!deck.length) { study.hidden = true; setStatus(root, 'Done.', 'success'); return; }
+      index = Math.min(index, deck.length - 1); render();
+    }
+    if (event.target.closest('[data-flashcard-again]')) { const oldIndex = index; const [card] = deck.splice(index, 1); deck.push(card); index = oldIndex >= deck.length - 1 ? 0 : oldIndex; render(); }
+    if (event.target.closest('[data-flashcard-previous]') && index > 0) { index -= 1; render(); }
+    if (event.target.closest('[data-flashcard-next]') && index < deck.length - 1) { index += 1; render(); }
+    if (event.target.closest('[data-flashcard-shuffle]')) {
+      for (let i = deck.length - 1; i > 0; i -= 1) { const j = Math.floor(Math.random() * (i + 1)); [deck[i], deck[j]] = [deck[j], deck[i]]; }
+      index = 0; render();
+    }
+  });
 }
 
 function addSvgElement(parent, name, attrs = {}, text = '') {
@@ -205,16 +258,23 @@ function setupDeviceTools(engine, root) {
 
 function setupNoise(root) {
   let context; let node; let gain;
-  const stop = () => { try { node?.stop(); } catch {} node?.disconnect(); gain?.disconnect(); node = undefined; gain = undefined; if (context && context.state !== 'closed') context.close().catch(() => {}); context = undefined; $('[data-device-start]', root).disabled = false; $('[data-device-stop]', root).disabled = true; };
-  $('[data-device-start]', root)?.addEventListener('click', async () => { try { context = new (window.AudioContext || window.webkitAudioContext)(); await context.resume(); const buffer = context.createBuffer(1, context.sampleRate * 2, context.sampleRate); const data = buffer.getChannelData(0); let last = 0; for (let i = 0; i < data.length; i += 1) { const white = Math.random() * 2 - 1; const color = $('[data-op-field="color"]', root).value; last = color === 'brown' ? (last + 0.02 * white) / 1.02 : color === 'pink' ? (0.98 * last + 0.02 * white) : white; data[i] = color === 'white' ? white : last * (color === 'pink' ? 3.5 : 12); } node = context.createBufferSource(); node.buffer = buffer; node.loop = true; gain = context.createGain(); gain.gain.value = Math.min(0.5, Number($('[data-op-field="volume"]', root).value) / 100); node.connect(gain).connect(context.destination); node.start(); $('[data-device-start]', root).disabled = true; $('[data-device-stop]', root).disabled = false; setStatus(root, say('Result ready. This calculation runs locally in your browser.'), 'success'); } catch (error) { stop(); setStatus(root, error instanceof Error ? error.message : say('Audio could not start. Check your browser audio settings.'), 'error'); } });
-  $('[data-device-stop]', root)?.addEventListener('click', stop); window.addEventListener('pagehide', stop, { once: true });
+  const stop = (announce = false) => { try { node?.stop(); } catch {} node?.disconnect(); gain?.disconnect(); node = undefined; gain = undefined; if (context && context.state !== 'closed') context.close().catch(() => {}); context = undefined; $('[data-device-start]', root).disabled = false; $('[data-device-stop]', root).disabled = true; if (announce) setStatus(root, 'Noise stopped.'); };
+  $('[data-op-field="volume"]', root)?.addEventListener('input', (event) => {
+    if (!context || !gain) return;
+    const target = Math.min(0.5, Math.max(0, Number(event.currentTarget.value) / 100));
+    gain.gain.setTargetAtTime(target, context.currentTime, 0.04);
+  });
+  $('[data-device-start]', root)?.addEventListener('click', async () => { try { context = new (window.AudioContext || window.webkitAudioContext)(); await context.resume(); const buffer = context.createBuffer(1, context.sampleRate * 2, context.sampleRate); const data = buffer.getChannelData(0); let last = 0; for (let i = 0; i < data.length; i += 1) { const white = Math.random() * 2 - 1; const color = $('[data-op-field="color"]', root).value; last = color === 'brown' ? (last + 0.02 * white) / 1.02 : color === 'pink' ? (0.98 * last + 0.02 * white) : white; data[i] = color === 'white' ? white : last * (color === 'pink' ? 3.5 : 12); } node = context.createBufferSource(); node.buffer = buffer; node.loop = true; gain = context.createGain(); gain.gain.value = Math.min(0.5, Number($('[data-op-field="volume"]', root).value) / 100); node.connect(gain).connect(context.destination); node.start(); $('[data-device-start]', root).disabled = true; $('[data-device-stop]', root).disabled = false; setStatus(root, 'Noise is playing in your browser.', 'success'); } catch (error) { stop(); setStatus(root, error instanceof Error ? error.message : say('Audio could not start. Check your browser audio settings.'), 'error'); } });
+  $('[data-device-stop]', root)?.addEventListener('click', () => stop(true)); window.addEventListener('pagehide', stop, { once: true });
 }
 
 function setupPiano(root) {
   let context; const active = new Map(); const keyNotes = new Map([['a', 60], ['w', 61], ['s', 62], ['e', 63], ['d', 64], ['f', 65], ['t', 66], ['g', 67], ['y', 68], ['h', 69], ['u', 70], ['j', 71], ['k', 72]]);
-  const noteOn = async (midi, button) => { if (active.has(midi)) return; context ??= new (window.AudioContext || window.webkitAudioContext)(); await context.resume(); const osc = context.createOscillator(); const gain = context.createGain(); osc.frequency.value = 440 * 2 ** ((midi - 69) / 12); gain.gain.value = 0.0001; osc.connect(gain).connect(context.destination); osc.start(); gain.gain.exponentialRampToValueAtTime(0.15, context.currentTime + 0.015); active.set(midi, { osc, gain, button }); button?.classList.add('is-pressed'); };
+  const volume = $('[data-piano-volume]', root);
+  const noteOn = async (midi, button) => { if (active.has(midi)) return; context ??= new (window.AudioContext || window.webkitAudioContext)(); await context.resume(); const osc = context.createOscillator(); const gain = context.createGain(); osc.frequency.value = 440 * 2 ** ((midi - 69) / 12); gain.gain.value = 0.0001; osc.connect(gain).connect(context.destination); osc.start(); gain.gain.exponentialRampToValueAtTime(Math.max(0.0002, Number(volume.value) / 100 * 0.2), context.currentTime + 0.015); active.set(midi, { osc, gain, button }); button?.classList.add('is-pressed'); };
   const noteOff = (midi) => { const item = active.get(midi); if (!item) return; item.gain.gain.setTargetAtTime(0.0001, context.currentTime, 0.04); item.osc.stop(context.currentTime + 0.2); item.button?.classList.remove('is-pressed'); active.delete(midi); };
-  $$('[data-midi]', root).forEach((button) => { const midi = Number(button.dataset.midi); button.addEventListener('pointerdown', (event) => { event.preventDefault(); noteOn(midi, button).catch(() => setStatus(root, 'Audio could not start.', 'error')); }); button.addEventListener('pointerup', () => noteOff(midi)); button.addEventListener('pointerleave', () => noteOff(midi)); });
+  volume?.addEventListener('input', () => { const level = Number(volume.value) / 100 * 0.2; for (const { gain } of active.values()) gain.gain.setTargetAtTime(Math.max(0.0001, level), context.currentTime, 0.02); });
+  $$('[data-midi]', root).forEach((button) => { const midi = Number(button.dataset.midi); button.addEventListener('pointerdown', (event) => { event.preventDefault(); noteOn(midi, button).catch(() => setStatus(root, 'Audio could not start.', 'error')); }); button.addEventListener('pointerup', () => noteOff(midi)); button.addEventListener('pointerleave', () => noteOff(midi)); button.addEventListener('pointercancel', () => noteOff(midi)); button.addEventListener('lostpointercapture', () => noteOff(midi)); });
   const down = (event) => { if (event.repeat || event.target.closest('input, textarea, select, [contenteditable="true"]')) return; const midi = keyNotes.get(event.key.toLowerCase()); if (midi) { event.preventDefault(); noteOn(midi, $$('[data-midi]', root).find((button) => Number(button.dataset.midi) === midi)).catch(() => setStatus(root, say('Audio could not start. Check your browser audio settings.'), 'error')); } }; const up = (event) => { const midi = keyNotes.get(event.key.toLowerCase()); if (midi) noteOff(midi); };
   window.addEventListener('keydown', down); window.addEventListener('keyup', up); window.addEventListener('blur', () => [...active.keys()].forEach(noteOff)); window.addEventListener('pagehide', () => { [...active.keys()].forEach(noteOff); context?.close().catch(() => {}); }, { once: true });
 }
@@ -270,22 +330,30 @@ function setupSandbox(root) {
 }
 
 function setupMetronome(root) {
-  let context; let timer; let beat = 0; let tapTimes = [];
+  let context; let timer; let beat = 0; let tapTimes = []; let nextNoteAt = 0;
   const bpmInput = $('[data-op-field="bpm"]', root); const beatsInput = $('[data-op-field="beats"]', root);
   const start = $('[data-op-start]', root); const stop = $('[data-op-stop]', root); const tap = $('[data-op-tap]', root);
-  const tick = () => {
+  const scheduleBeat = (when) => {
     if (!context) return;
     const oscillator = context.createOscillator(); const gain = context.createGain();
     oscillator.frequency.value = beat === 0 ? 1320 : 880;
-    gain.gain.setValueAtTime(0.0001, context.currentTime); gain.gain.exponentialRampToValueAtTime(0.16, context.currentTime + 0.004); gain.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + 0.045);
-    oscillator.connect(gain); gain.connect(context.destination); oscillator.start(); oscillator.stop(context.currentTime + 0.05);
+    gain.gain.setValueAtTime(0.0001, when); gain.gain.exponentialRampToValueAtTime(0.16, when + 0.004); gain.gain.exponentialRampToValueAtTime(0.0001, when + 0.045);
+    oscillator.connect(gain); gain.connect(context.destination); oscillator.start(when); oscillator.stop(when + 0.05);
     beat = (beat + 1) % Number(beatsInput.value || 4);
+  };
+  const scheduleAhead = () => {
+    if (!context || context.state !== 'running') return;
+    const bpm = Number(bpmInput.value);
+    while (nextNoteAt < context.currentTime + 0.12) {
+      scheduleBeat(nextNoteAt);
+      nextNoteAt += 60 / bpm;
+    }
   };
   const stopPlaying = () => { clearInterval(timer); timer = undefined; if (start) start.disabled = false; if (stop) stop.disabled = true; if (context && context.state !== 'closed') { context.close().catch(() => {}); context = undefined; } setStatus(root, 'Metronome stopped.'); };
   start.addEventListener('click', async () => {
     const bpm = Number(bpmInput.value);
     if (!Number.isFinite(bpm) || bpm < 20 || bpm > 300) return setStatus(root, 'Enter a tempo from 20 to 300 BPM.', 'error');
-    try { const AudioContextType = window.AudioContext || window.webkitAudioContext; if (!AudioContextType) throw new Error('audio unavailable'); context ??= new AudioContextType(); await context.resume(); clearInterval(timer); beat = 0; tick(); timer = setInterval(tick, 60000 / bpm); start.disabled = true; stop.disabled = false; setStatus(root, 'Metronome is playing. Audio stays in this browser.', 'success'); }
+    try { const AudioContextType = window.AudioContext || window.webkitAudioContext; if (!AudioContextType) throw new Error('audio unavailable'); context ??= new AudioContextType(); await context.resume(); clearInterval(timer); beat = 0; nextNoteAt = context.currentTime + 0.03; scheduleAhead(); timer = setInterval(scheduleAhead, 25); start.disabled = true; stop.disabled = false; setStatus(root, 'Metronome is playing. Audio stays in this browser.', 'success'); }
     catch { setStatus(root, 'Audio could not start. Check your browser audio settings.', 'error'); }
   });
   stop.addEventListener('click', stopPlaying);
@@ -369,13 +437,36 @@ function setupTeleprompter(root) {
   const source = $('#op-teleprompter-source', root); const viewport = $('[data-teleprompter-viewport]', root); const output = $('[data-teleprompter-output]', root);
   const speed = $('[data-teleprompter-speed]', root); const size = $('[data-teleprompter-size]', root); const button = $('[data-teleprompter-start]', root); const mirror = $('[data-teleprompter-mirror]', root);
   const speedLabel = $('[data-teleprompter-speed-label]', root); const sizeLabel = $('[data-teleprompter-size-label]', root);
-  let frame = 0; let previous = 0; let running = false;
+  const positionKey = `usefulverse:teleprompter-position:${location.pathname}`;
+  let savedPosition = null; let saveTimer = 0; let frame = 0; let previous = 0; let running = false;
+  try { savedPosition = JSON.parse(sessionStorage.getItem(positionKey) || 'null'); } catch {}
+  const textSignature = (text) => {
+    let hash = 2166136261;
+    for (const character of text) { hash ^= character.codePointAt(0); hash = Math.imul(hash, 16777619); }
+    return `${text.length}:${hash >>> 0}`;
+  };
+  const restorePosition = () => {
+    if (!savedPosition || savedPosition.signature !== textSignature(source.value) || !Number.isFinite(savedPosition.top)) return;
+    viewport.scrollTop = Math.min(Math.max(0, savedPosition.top), Math.max(0, viewport.scrollHeight - viewport.clientHeight));
+  };
+  const savePosition = () => {
+    if (!source.value) return;
+    savedPosition = { signature: textSignature(source.value), top: viewport.scrollTop };
+    try { sessionStorage.setItem(positionKey, JSON.stringify(savedPosition)); } catch {}
+  };
+  const scheduleSave = () => { clearTimeout(saveTimer); saveTimer = window.setTimeout(savePosition, 180); };
   const tick = (time) => {
     if (!running) return;
     if (previous) viewport.scrollTop += (time - previous) * Number(speed.value) * Number(size.value) / 300000;
     previous = time; frame = requestAnimationFrame(tick);
   };
   const stop = () => { running = false; cancelAnimationFrame(frame); previous = 0; };
+  const togglePlayback = () => button.click();
+  root.addEventListener('keydown', (event) => {
+    if (event.target.closest('input, textarea, select, button, [contenteditable="true"]')) return;
+    if (event.code === 'Space') { event.preventDefault(); togglePlayback(); }
+    else if (event.key === 'Escape' && running) { event.preventDefault(); stop(); button.textContent = say('Start scrolling'); setStatus(root, 'Scrolling paused.'); }
+  });
   speed.addEventListener('input', () => { speedLabel.value = speed.value; speedLabel.textContent = speed.value; });
   size.addEventListener('input', () => { sizeLabel.value = `${size.value} px`; sizeLabel.textContent = `${size.value} px`; output.style.fontSize = `${size.value}px`; });
   mirror.addEventListener('change', () => { output.style.transform = mirror.checked ? 'scaleX(-1)' : ''; });
@@ -383,15 +474,303 @@ function setupTeleprompter(root) {
     if (running) { stop(); button.textContent = say('Start scrolling'); return setStatus(root, 'Scrolling paused.'); }
     if (source.value.trim()) output.textContent = source.value;
     if (!output.textContent.trim() || output.textContent === say('Your script will appear here.')) return setStatus(root, 'Paste or type a script first.', 'error');
-    output.style.fontSize = `${size.value}px`; running = true; button.textContent = say('Pause scrolling'); frame = requestAnimationFrame(tick); setStatus(root, 'Teleprompter is scrolling in this browser.', 'success');
+    restorePosition(); output.style.fontSize = `${size.value}px`; running = true; button.textContent = say('Pause scrolling'); frame = requestAnimationFrame(tick); setStatus(root, 'Teleprompter is scrolling in this browser.', 'success');
   });
-  $('[data-teleprompter-reset]', root).addEventListener('click', () => { stop(); viewport.scrollTop = 0; output.textContent = source.value || say('Your script will appear here.'); button.textContent = say('Start scrolling'); setStatus(root, 'Script position reset.'); });
-  source.addEventListener('input', () => { if (!running) output.textContent = source.value || say('Your script will appear here.'); });
-  window.addEventListener('pagehide', stop, { once: true });
+  $('[data-teleprompter-reset]', root).addEventListener('click', () => { stop(); clearTimeout(saveTimer); viewport.scrollTop = 0; savedPosition = null; try { sessionStorage.removeItem(positionKey); } catch {} output.textContent = source.value || say('Your script will appear here.'); button.textContent = say('Start scrolling'); setStatus(root, 'Script position reset.'); });
+  source.addEventListener('input', () => { if (running) { stop(); button.textContent = say('Start scrolling'); } if (!running) { output.textContent = source.value || say('Your script will appear here.'); restorePosition(); } });
+  viewport.addEventListener('scroll', scheduleSave, { passive: true });
+  document.addEventListener('visibilitychange', () => { if (document.hidden && running) { stop(); savePosition(); button.textContent = say('Start scrolling'); setStatus(root, 'Scrolling paused.'); } });
+  window.addEventListener('pagehide', () => { clearTimeout(saveTimer); savePosition(); stop(); }, { once: true });
+}
+
+function setupStudyPlanner(root) {
+  const courses = $('[data-study-courses]', root);
+  const template = $('[data-study-course-template]', root);
+  const status = $('[data-study-status]', root);
+  const results = $('[data-study-results]', root);
+  const schedule = $('[data-study-schedule]', root);
+  const storageKey = 'usefulverse:study-plan:v1';
+  let currentPlan = null;
+  const setStudyStatus = (key, type = '') => { status.textContent = say(key); status.className = `tool-status${type ? ` is-${type}` : ''}`; };
+  const updateCourseControls = () => {
+    const rows = $$('[data-study-course]', courses);
+    rows.forEach((row, index) => {
+      row.querySelector('[data-study-course-number]').textContent = String(index + 1);
+      row.querySelector('[data-study-remove]').disabled = rows.length === 1;
+    });
+    $('[data-study-add]', root).disabled = rows.length >= 12;
+  };
+  const readCourses = () => $$('[data-study-course]', courses).map((row) => Object.fromEntries(
+    $$('[data-study-field]', row).map((input) => [input.dataset.studyField, input.value]),
+  ));
+  const fillCourses = (items) => {
+    if (!Array.isArray(items) || !items.length || items.length > 12) throw new TypeError(say('Saved plan is not valid.'));
+    courses.replaceChildren();
+    items.forEach((item, index) => {
+      const fragment = template.content.cloneNode(true);
+      const row = fragment.querySelector('[data-study-course]');
+      for (const input of $$('[data-study-field]', row)) input.value = String(item[input.dataset.studyField] ?? '');
+      courses.append(fragment);
+    });
+    updateCourseControls(); currentPlan = null; results.hidden = true;
+  };
+  const formatDate = (iso) => new Intl.DateTimeFormat(bundle.tag ?? locale, { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(`${iso}T00:00:00Z`));
+  const renderPlan = (plan) => {
+    currentPlan = plan; results.hidden = false; schedule.replaceChildren();
+    $('[data-study-summary]', results).textContent = `${say('Subjects')}: ${plan.subjectCount} · ${say('Sessions')}: ${plan.totalSessions} · ${say('Study time')}: ${plan.studyMinutes} min`;
+    const warning = $('[data-study-warning]', results);
+    warning.textContent = plan.unfinished.length ? say('Some topics do not fit before the exam dates. Add more time or reduce the workload.') : say('All listed topics fit in this draft schedule.');
+    warning.className = `tool-status${plan.unfinished.length ? ' is-error' : ' is-success'}`;
+    for (const item of plan.schedule) {
+      const row = document.createElement('li');
+      const time = document.createElement('time'); time.dateTime = item.date; time.textContent = formatDate(item.date);
+      const title = document.createElement('strong'); title.textContent = item.topic;
+      const detail = document.createElement('span'); detail.textContent = `${item.subject} · ${say('Session')} ${item.session}/${item.totalSessions} · ${item.minutes} min`;
+      row.append(time, title, detail); schedule.append(row);
+    }
+    for (const task of plan.unfinished) {
+      const row = document.createElement('li'); row.className = 'study-schedule__unfinished';
+      const title = document.createElement('strong'); title.textContent = task.topic;
+      const detail = document.createElement('span'); detail.textContent = `${task.subject} · ${say('Sessions left')}: ${task.remainingSessions}`;
+      row.append(title, detail); schedule.append(row);
+    }
+  };
+  $('[data-study-pomodoro]', root).href = location.pathname.replace('/study-planner/', '/online-timer/');
+  root.addEventListener('click', (event) => {
+    const button = event.target.closest('button');
+    if (!button) return;
+    if (button.matches('[data-study-add]')) {
+      if ($$('[data-study-course]', courses).length >= 12) return;
+      const fragment = template.content.cloneNode(true); courses.append(fragment); updateCourseControls();
+      courses.lastElementChild.querySelector('[data-study-field="name"]').focus();
+    }
+    if (button.matches('[data-study-remove]')) { button.closest('[data-study-course]').remove(); updateCourseControls(); }
+    if (button.matches('[data-study-create]')) {
+      try { renderPlan(buildStudyPlan(readCourses())); setStudyStatus('Study schedule created in this browser.', 'success'); }
+      catch (error) { setStudyStatus(error.message, 'error'); }
+    }
+    if (button.matches('[data-study-save]')) {
+      try { localStorage.setItem(storageKey, JSON.stringify(readCourses())); setStudyStatus('Study plan saved on this device.', 'success'); }
+      catch { setStudyStatus('Could not save the plan. Browser storage may be full or disabled.', 'error'); }
+    }
+    if (button.matches('[data-study-load]')) {
+      try {
+        const saved = localStorage.getItem(storageKey);
+        if (!saved) return setStudyStatus('No saved study plan was found on this device.', 'error');
+        fillCourses(JSON.parse(saved)); setStudyStatus('Saved study plan loaded.', 'success');
+      } catch { setStudyStatus('Saved plan is not valid.', 'error'); }
+    }
+    if (button.matches('[data-study-download]')) {
+      if (!currentPlan) return setStudyStatus('Create a study plan before downloading it.', 'error');
+      const blob = new Blob([`${JSON.stringify({ courses: readCourses(), plan: currentPlan }, null, 2)}\n`], { type: 'application/json;charset=utf-8' });
+      const url = URL.createObjectURL(blob); const link = document.createElement('a'); link.href = url; link.download = 'usefulverse-study-plan.json'; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+      setStudyStatus('Study plan download is ready.', 'success');
+    }
+    if (button.matches('[data-study-clear]')) {
+      try { localStorage.removeItem(storageKey); } catch {}
+      courses.replaceChildren(template.content.cloneNode(true)); updateCourseControls(); results.hidden = true; currentPlan = null; setStudyStatus('Saved study plan cleared from this device.');
+    }
+  });
+  updateCourseControls();
+}
+
+function setupMentalMath(root) {
+  const round = $('[data-mental-round]', root); const question = $('[data-mental-question]', root); const answer = $('[data-mental-answer]', root);
+  const check = $('[data-mental-check]', root); const next = $('[data-mental-next]', root); const stats = $('[data-mental-stats]', root);
+  const feedback = $('[data-mental-feedback]', root); const status = $('[data-mental-status]', root);
+  let problems = []; let index = 0; let score = 0; let streak = 0; let startedAt = 0; let timer;
+  const elapsed = () => Math.floor((performance.now() - startedAt) / 1000);
+  const timeLabel = () => { const seconds = elapsed(); return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`; };
+  const updateStats = () => { stats.textContent = `${say('Question {current} of {total}').replace('{current}', String(Math.min(index + 1, problems.length))).replace('{total}', String(problems.length))} · ${say('Score')}: ${score} · ${say('Streak')}: ${streak} · ${say('Time')}: ${timeLabel()}`; };
+  const finish = () => {
+    clearInterval(timer); timer = undefined; check.hidden = true; next.hidden = true; answer.disabled = true;
+    const accuracy = Math.round(score / problems.length * 100);
+    status.textContent = say('Round complete. Score: {score}/{total} ({accuracy}%).').replace('{score}', String(score)).replace('{total}', String(problems.length)).replace('{accuracy}', String(accuracy));
+    status.className = 'tool-status is-success'; updateStats();
+  };
+  const showProblem = () => { const item = problems[index]; question.textContent = `${item.a} ${item.symbol} ${item.b} = ?`; answer.value = ''; answer.disabled = false; check.hidden = false; next.hidden = true; feedback.textContent = say('Ready when you are.'); feedback.className = 'tool-status'; updateStats(); answer.focus(); };
+  const start = () => {
+    try {
+      const settings = validateMentalMathSettings({ operation: $('[data-op-field="operation"]', root).value, difficulty: $('[data-op-field="difficulty"]', root).value, questions: $('[data-op-field="questions"]', root).value });
+      clearInterval(timer); problems = Array.from({ length: settings.questions }, () => createMentalMathProblem(settings)); index = 0; score = 0; streak = 0; startedAt = performance.now();
+      status.textContent = ''; round.hidden = false; showProblem(); timer = window.setInterval(updateStats, 1000);
+    } catch (error) { status.textContent = say(error.message); status.className = 'tool-status is-error'; }
+  };
+  $('[data-mental-start]', root).addEventListener('click', start);
+  check.addEventListener('click', () => {
+    if (!problems.length || check.hidden) return;
+    try {
+      const value = parseMentalMathAnswer(answer.value); const correct = problems[index].answer;
+      if (value === correct) { score += 1; streak += 1; feedback.textContent = say('Correct!'); feedback.className = 'tool-status is-success'; }
+      else { streak = 0; feedback.textContent = say('Not quite. Answer: {answer}.').replace('{answer}', String(correct)); feedback.className = 'tool-status is-error'; }
+      answer.disabled = true; check.hidden = true; next.hidden = false; updateStats();
+    } catch (error) { feedback.textContent = say(error.message); feedback.className = 'tool-status is-error'; }
+  });
+  answer.addEventListener('keydown', (event) => { if (event.key === 'Enter' && !check.hidden) { event.preventDefault(); check.click(); } });
+  next.addEventListener('click', () => { if (index + 1 >= problems.length) finish(); else { index += 1; showProblem(); } });
+  window.addEventListener('pagehide', () => clearInterval(timer), { once: true });
+}
+
+function setupTournamentBracket(root) {
+  const entrantsInput = $('[data-bracket-entrants]', root); const shuffle = $('[data-bracket-shuffle]', root);
+  const roundsNode = $('[data-bracket-rounds]', root); const status = $('[data-bracket-status]', root);
+  let bracket = null;
+  const sayBracket = (text, values = {}) => Object.entries(values).reduce((result, [key, value]) => result.replace(`{${key}}`, String(value)), say(text));
+  const render = () => {
+    roundsNode.replaceChildren();
+    if (!bracket) return;
+    bracket.rounds.forEach((round, roundIndex) => {
+      const section = document.createElement('section'); section.className = 'tournament-bracket__round';
+      const heading = document.createElement('h3'); heading.textContent = sayBracket('Round {n}', { n: roundIndex + 1 }); section.append(heading);
+      const list = document.createElement('ol'); list.className = 'tournament-bracket__matches';
+      round.forEach((item, matchIndex) => {
+        const card = document.createElement('li'); card.className = 'tournament-bracket__match';
+        if (item.winner !== null) {
+          const winner = document.createElement('strong'); winner.className = 'tournament-bracket__winner'; winner.textContent = item.winner;
+          card.append(winner);
+          if (item.players.includes(null)) { const bye = document.createElement('span'); bye.textContent = say('Bye — advances automatically.'); card.append(bye); }
+        } else if (!item.ready.every(Boolean)) {
+          const waiting = document.createElement('span'); waiting.textContent = say('Waiting for the previous match.'); card.append(waiting);
+        } else {
+          item.players.forEach((name, playerIndex) => {
+            if (!name) return;
+            const button = document.createElement('button'); button.type = 'button'; button.className = 'button button--ghost tournament-bracket__entrant';
+            button.dataset.bracketWinner = ''; button.dataset.round = String(roundIndex); button.dataset.match = String(matchIndex); button.dataset.player = String(playerIndex); button.textContent = name;
+            card.append(button);
+          });
+        }
+        list.append(card);
+      });
+      section.append(list); roundsNode.append(section);
+    });
+  };
+  $('[data-bracket-generate]', root).addEventListener('click', () => {
+    try {
+      parseTournamentEntrants(entrantsInput.value);
+      bracket = createTournamentBracket(entrantsInput.value, { shuffle: shuffle.checked });
+      render(); status.textContent = say('Bracket created. Select a winner in each match.'); status.className = 'tool-status is-success';
+    } catch (error) { status.textContent = say(error.message); status.className = 'tool-status is-error'; }
+  });
+  $('[data-bracket-clear]', root).addEventListener('click', () => {
+    bracket = null; entrantsInput.value = ''; roundsNode.replaceChildren(); status.textContent = say('Bracket cleared from this page.'); status.className = 'tool-status'; entrantsInput.focus();
+  });
+  roundsNode.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-bracket-winner]');
+    if (!button || !bracket) return;
+    try {
+      bracket = advanceTournamentBracketWinner(bracket, Number(button.dataset.round), Number(button.dataset.match), Number(button.dataset.player));
+      render();
+      const champion = getTournamentChampion(bracket);
+      status.textContent = champion ? sayBracket('Champion: {name}', { name: champion }) : sayBracket('Winner: {name} advances.', { name: button.textContent });
+      status.className = 'tool-status is-success';
+    } catch (error) { status.textContent = say(error.message); status.className = 'tool-status is-error'; }
+  });
+}
+
+function setupHouseholdBudget(root) {
+  const monthInput = $('[data-budget-month]', root); const currencyInput = $('[data-budget-currency]', root);
+  const dateInput = $('[data-budget-date]', root); const amountInput = $('[data-budget-amount]', root);
+  const typeInput = $('[data-budget-type]', root); const categoryInput = $('[data-budget-category]', root);
+  const noteInput = $('[data-budget-note]', root); const rowsNode = $('[data-budget-rows]', root);
+  const localDate = new Date();
+  const today = [localDate.getFullYear(), String(localDate.getMonth() + 1).padStart(2, '0'), String(localDate.getDate()).padStart(2, '0')].join('-');
+  let month = today.slice(0, 7); let transactions = []; const drafts = new Map();
+  monthInput.value = month; dateInput.value = today;
+  const storageKey = (selectedMonth) => `usefulverse:household-budget:v1:${selectedMonth}`;
+  const money = (value) => {
+    try { return new Intl.NumberFormat(locale, { style: 'currency', currency: currencyInput.value, maximumFractionDigits: 2 }).format(value); }
+    catch { return `${currencyInput.value} ${new Intl.NumberFormat(locale, { maximumFractionDigits: 2 }).format(value)}`; }
+  };
+  const render = () => {
+    const summary = summarizeBudget(transactions);
+    $('[data-budget-income]', root).textContent = money(summary.income);
+    $('[data-budget-expenses]', root).textContent = money(summary.expenses);
+    $('[data-budget-balance]', root).textContent = money(summary.balance);
+    const breakdown = $('[data-budget-categories]', root);
+    breakdown.replaceChildren();
+    if (!summary.categories.length) {
+      const item = document.createElement('li'); item.textContent = say('No transactions yet.'); breakdown.append(item);
+    } else {
+      for (const item of summary.categories) {
+        const row = document.createElement('li'); row.textContent = `${say(item.type === 'income' ? 'Income' : 'Expense')} · ${say(item.category)}: ${money(item.amount)}`; breakdown.append(row);
+      }
+    }
+    rowsNode.replaceChildren();
+    if (!summary.transactions.length) {
+      const row = document.createElement('tr'); const cell = document.createElement('td');
+      cell.colSpan = 6; cell.textContent = say('No transactions yet.'); row.append(cell); rowsNode.append(row);
+    } else {
+      summary.transactions.forEach((transaction, index) => {
+        const row = document.createElement('tr');
+        for (const value of [transaction.date, say(transaction.type === 'income' ? 'Income' : 'Expense'), say(transaction.category), money(transaction.amount), transaction.note || '—']) {
+          const cell = document.createElement('td'); cell.textContent = value; row.append(cell);
+        }
+        const actionCell = document.createElement('td'); const remove = document.createElement('button');
+        remove.type = 'button'; remove.className = 'button button--ghost'; remove.dataset.budgetRemove = String(index); remove.textContent = say('Remove');
+        actionCell.append(remove); row.append(actionCell); rowsNode.append(row);
+      });
+    }
+    currencyInput.disabled = transactions.length > 0;
+  };
+  $('[data-budget-add]', root).addEventListener('click', () => {
+    try {
+      const amount = parseBudgetAmount(amountInput.value, locale);
+      const transaction = validateBudgetTransaction({ date: dateInput.value, type: typeInput.value, amount, category: categoryInput.value, note: noteInput.value }, month);
+      const next = [...transactions, transaction]; summarizeBudget(next);
+      transactions = next; drafts.set(month, transactions); amountInput.value = ''; noteInput.value = ''; render();
+      setStatus(root, 'Transaction added.', 'success'); amountInput.focus();
+    } catch (error) { setStatus(root, say(error instanceof Error ? error.message : 'Check the transaction and try again.'), 'error'); }
+  });
+  rowsNode.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-budget-remove]'); if (!button) return;
+    transactions.splice(Number(button.dataset.budgetRemove), 1); drafts.set(month, transactions); render(); setStatus(root, 'Transaction removed.', 'success');
+  });
+  monthInput.addEventListener('change', () => {
+    if (!/^\d{4}-\d{2}$/u.test(monthInput.value)) { monthInput.value = month; return setStatus(root, 'Choose a valid month.', 'error'); }
+    drafts.set(month, transactions); month = monthInput.value;
+    transactions = drafts.get(month) ?? [];
+    dateInput.value = today.slice(0, 7) === month ? today : `${month}-01`;
+    render(); setStatus(root, 'Month changed. Save the month on this device if you want to keep it.');
+  });
+  $('[data-budget-save]', root).addEventListener('click', () => {
+    try { localStorage.setItem(storageKey(month), JSON.stringify({ version: 1, month, currency: currencyInput.value, transactions: summarizeBudget(transactions).transactions })); setStatus(root, 'Month saved on this device.', 'success'); }
+    catch { setStatus(root, 'Could not save this month. Browser storage may be unavailable or full.', 'error'); }
+  });
+  $('[data-budget-load]', root).addEventListener('click', () => {
+    try {
+      const saved = JSON.parse(localStorage.getItem(storageKey(month)) ?? 'null');
+      if (saved?.version !== 1 || saved.month !== month || !['USD', 'EUR', 'GBP', 'CAD', 'AUD', 'INR', 'JPY'].includes(saved.currency)) throw new TypeError('No valid saved month was found on this device.');
+      const summary = summarizeBudget(saved.transactions);
+      if (summary.transactions.some((transaction) => transaction.date.slice(0, 7) !== month)) throw new TypeError('A saved transaction is outside the selected month.');
+      currencyInput.value = saved.currency;
+      transactions = summary.transactions; drafts.set(month, transactions); render(); setStatus(root, 'Saved month loaded on this device.', 'success');
+    } catch (error) { setStatus(root, say(error instanceof Error ? error.message : 'Could not load the saved month.'), 'error'); }
+  });
+  $('[data-budget-clear]', root).addEventListener('click', () => {
+    try { localStorage.removeItem(storageKey(month)); setStatus(root, 'Saved month deleted from this device.', 'success'); }
+    catch { setStatus(root, 'Browser storage is unavailable.', 'error'); }
+  });
+  $('[data-budget-reset]', root).addEventListener('click', () => {
+    transactions = []; drafts.set(month, transactions); render(); setStatus(root, 'This month was cleared from the page. Saved data was not deleted.');
+  });
+  $('[data-budget-csv]', root).addEventListener('click', () => {
+    if (!transactions.length) return setStatus(root, 'Add a transaction before downloading a CSV.', 'error');
+    const headers = ['Date', 'Type', 'Category', 'Amount', 'Currency', 'Note'];
+    const lines = [headers.map(budgetCsvCell).join(','), ...transactions.map((item) => [item.date, say(item.type === 'income' ? 'Income' : 'Expense'), say(item.category), item.amount.toFixed(2), currencyInput.value, item.note].map(budgetCsvCell).join(','))];
+    const blob = new Blob([`\uFEFF${lines.join('\r\n')}`], { type: 'text/csv;charset=utf-8' }); const url = URL.createObjectURL(blob);
+    const link = document.createElement('a'); link.href = url; link.download = `usefulverse-budget-${month}.csv`; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+    setStatus(root, 'CSV download started.', 'success');
+  });
+  render();
 }
 
 export function setupOpportunityTool(id, root) {
   const engine = root.dataset.opEngine;
+  if (engine === 'household-budget') { setupHouseholdBudget(root); return; }
+  if (engine === 'mental-math') { setupMentalMath(root); return; }
+  if (engine === 'tournament-bracket') { setupTournamentBracket(root); return; }
+  if (engine === 'study-planner') { setupStudyPlanner(root); return; }
+  if (engine === 'flashcards') setupFlashcardStudy(root);
   if (engine === 'notepad') { setupNotepad(root); return; }
   if (engine === 'teleprompter') { setupTeleprompter(root); return; }
   if (engine === 'sqlite-playground') { setupSqlite(root); return; }
@@ -453,7 +832,13 @@ export function setupOpportunityTool(id, root) {
         if (engine === 'function-graph') drawFunctionGraph(root, result);
         setStatus(root, 'Result ready. This calculation runs locally in your browser.', 'success');
       }
-      catch (error) { displayOutput(root, ''); setStatus(root, error instanceof Error ? error.message : 'Check your inputs and try again.', 'error'); }
+      catch (error) {
+        displayOutput(root, '');
+        const message = error instanceof Error && /^Line \d+: use term, definition\.$/u.test(error.message)
+          ? 'Each line needs a term, comma, and definition.'
+          : error instanceof Error ? error.message : 'Check your inputs and try again.';
+        setStatus(root, message, 'error');
+      }
     }
     if (event.target.closest('[data-op-clear]')) { $$('[data-op-field]', root).forEach((item) => { item.value = item.tagName === 'SELECT' ? item.options[0]?.value ?? '' : ''; }); displayOutput(root, ''); setStatus(root, 'Fields cleared.'); }
     if (event.target.closest('[data-op-copy]')) await copyResult(root);

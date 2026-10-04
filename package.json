@@ -10,6 +10,7 @@
     "serve": "python3 -m http.server 4173 --directory dist",
     "locale:report": "node scripts/localization/report-coverage.mjs",
     "locale:release-check": "node scripts/localization/check-release.mjs",
+    "audit:functional": "node scripts/functional-audit.mjs",
     "seo:indexnow": "node scripts/indexnow.mjs",
     "seo:yandex": "node scripts/yandex-webmaster.mjs"
   },

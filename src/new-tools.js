@@ -22,13 +22,16 @@ const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)]
 const version = new URL(import.meta.url).searchParams.get('v');
 const versioned = (path) => `${path}${version ? `?v=${encodeURIComponent(version)}` : ''}`;
 const logic = await import(versioned('./new-tool-logic.mjs'));
+const timerLogic = await import(versioned('./timer-logic.mjs'));
 const objectUrls = new Set();
 window.addEventListener('pagehide', () => objectUrls.forEach((url) => URL.revokeObjectURL(url)), { once: true });
 
 function status(root, message, type = '') {
   const output = $('#tool-status', root);
   if (!output) return;
-  output.textContent = t(`status.${message}`);
+  const statusKey = `status.${message}`;
+  const localizedStatus = t(statusKey);
+  output.textContent = localizedStatus === statusKey ? t(message) : localizedStatus;
   output.className = `tool-status${type ? ` is-${type}` : ''}`;
 }
 function number(value) {
@@ -123,46 +126,203 @@ function setupTimeCard(root) {
 }
 
 function setupTimer(root) {
-  let mode = 'countdown'; let phase = 'focus'; let remaining = 5 * 60_000; let accumulated = 0; let started = 0; let ticker = 0; let running = false; let cycle = 0;
+  const storageKey = 'usefulverse:pomodoro:v1';
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(storageKey) || '{}') || {}; } catch {}
+  let settings = timerLogic.normalizePomodoroSettings(saved.settings);
+  let mode = 'countdown'; let phase = 'focus'; let remaining = 300_000; let accumulated = 0;
+  let deadline = 0; let stopwatchStarted = 0; let focusSegmentStartedAt = 0; let focusElapsedThisPhase = Number.isFinite(saved.focusElapsedThisPhase) && saved.focusElapsedThisPhase > 0 ? Math.min(180 * 60_000, saved.focusElapsedThisPhase) : 0; let ticker = 0; let running = false; let starting = false; let completed = Number.isInteger(saved.completed) && saved.completed > 0 ? saved.completed : 0;
+  let focusMilliseconds = Number.isFinite(saved.focusMilliseconds) && saved.focusMilliseconds > 0 ? saved.focusMilliseconds : 0;
+  let audioContext; let notificationRegistration; const originalTitle = document.title;
   const display = $('#timer-display', root);
-  const render = () => {
-    const elapsed = running ? performance.now() - started : 0;
-    const value = mode === 'stopwatch' ? accumulated + elapsed : Math.max(0, remaining - elapsed);
-    display.textContent = logic.formatTimer(value);
-    $('#timer-phase', root).textContent = mode === 'pomodoro' ? t(phase === 'focus' ? 'status.focusSession' : 'status.breakSession') : t(mode === 'stopwatch' ? 'Stopwatch' : 'Countdown');
+  const persist = () => { try { localStorage.setItem(storageKey, JSON.stringify({ settings, completed, focusMilliseconds, focusElapsedThisPhase })); } catch {} };
+  const getDuration = (selectedMode = mode, selectedPhase = phase) => {
+    if (selectedMode === 'pomodoro') {
+      const minutes = selectedPhase === 'focus' ? settings.focusMinutes : selectedPhase === 'long-break' ? settings.longBreakMinutes : settings.shortBreakMinutes;
+      return minutes * 60_000;
+    }
+    return (number($('#timer-minutes', root).value) * 60 + number($('#timer-seconds', root).value)) * 1000;
   };
-  const stop = () => { if (running) { const elapsed = performance.now() - started; if (mode === 'stopwatch') accumulated += elapsed; else remaining = Math.max(0, remaining - elapsed); } running = false; clearInterval(ticker); ticker = 0; render(); };
-  const reset = () => { stop(); cycle = 0; phase = 'focus'; if (mode === 'stopwatch') accumulated = 0; else if (mode === 'pomodoro') remaining = number($('#focus-minutes', root).value) * 60_000; else remaining = (number($('#timer-minutes', root).value) * 60 + number($('#timer-seconds', root).value)) * 1000; render(); status(root, 'ready'); };
-  const start = () => {
-    if (running) return;
-    if (mode !== 'stopwatch' && remaining <= 0) reset();
-    if (mode !== 'stopwatch' && (!Number.isFinite(remaining) || remaining <= 0)) return status(root, 'durationRequired', 'error');
-    running = true; started = performance.now(); clearInterval(ticker); ticker = window.setInterval(tick, 200);
-    status(root, 'timerRunning'); render();
+  const phaseLabel = () => {
+    if (mode !== 'pomodoro') return t(mode === 'stopwatch' ? 'Stopwatch' : 'Countdown');
+    return t(phase === 'focus' ? 'status.focusSession' : phase === 'long-break' ? 'Long break' : 'Short break');
+  };
+  const showStats = () => {
+    $('#timer-stats', root).hidden = mode !== 'pomodoro';
+    $('#timer-completed', root).textContent = String(completed);
+    const liveFocus = running && mode === 'pomodoro' && phase === 'focus' ? Math.max(0, performance.now() - focusSegmentStartedAt) : 0;
+    $('#timer-focus-time', root).textContent = `${new Intl.NumberFormat(localeTag, { maximumFractionDigits: 1 }).format((focusMilliseconds + focusElapsedThisPhase + liveFocus) / 60_000)} min`;
+  };
+  const render = () => {
+    let value;
+    if (mode === 'stopwatch') value = accumulated + (running ? performance.now() - stopwatchStarted : 0);
+    else value = running ? timerLogic.remainingUntil(deadline, performance.now()) : remaining;
+    display.textContent = logic.formatTimer(value);
+    $('#timer-phase', root).textContent = phaseLabel();
+    const timerTitle = running && mode !== 'stopwatch' ? `(${logic.formatTimer(value)}) ${originalTitle}` : originalTitle;
+    if (document.title !== timerTitle) document.title = timerTitle;
+    const skipButton = $('[data-action="timer-skip"]', root);
+    if (skipButton) skipButton.hidden = mode !== 'pomodoro';
+    ['focus-minutes', 'break-minutes', 'long-break-minutes', 'long-break-every'].forEach((id) => { $(`#${id}`, root).disabled = running; });
+    showStats();
+  };
+  const playAlert = async () => {
+    if (!settings.sound || settings.volume <= 0) return;
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return;
+    try {
+      audioContext ??= new AudioContextClass();
+      if (audioContext.state === 'suspended') await audioContext.resume();
+      for (let index = 0; index < 3; index += 1) {
+        const oscillator = audioContext.createOscillator(); const gain = audioContext.createGain();
+        oscillator.type = 'sine'; oscillator.frequency.value = index === 1 ? 880 : 660;
+        gain.gain.setValueAtTime(0.0001, audioContext.currentTime + index * 0.22);
+        gain.gain.exponentialRampToValueAtTime(Math.max(0.0002, settings.volume / 100 * 0.18), audioContext.currentTime + index * 0.22 + 0.025);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + index * 0.22 + 0.18);
+        oscillator.connect(gain); gain.connect(audioContext.destination);
+        oscillator.start(audioContext.currentTime + index * 0.22); oscillator.stop(audioContext.currentTime + index * 0.22 + 0.19);
+      }
+    } catch {}
+  };
+  const notify = async (title, body) => {
+    if (!('Notification' in window) || Notification.permission !== 'granted') return;
+    try {
+      const options = { body, icon: '/favicon.ico', tag: 'usefulverse-timer', data: { url: location.pathname } };
+      if (notificationRegistration?.showNotification) await notificationRegistration.showNotification(title, options);
+      else new Notification(title, options);
+    } catch {}
+  };
+  const stopTicker = () => { clearInterval(ticker); ticker = 0; };
+  const pause = () => {
+    if (!running) return;
+    const now = performance.now();
+    if (mode === 'stopwatch') accumulated += performance.now() - stopwatchStarted;
+    else {
+      remaining = timerLogic.remainingUntil(deadline, now);
+      if (mode === 'pomodoro' && phase === 'focus') {
+        focusElapsedThisPhase = Math.min(getDuration('pomodoro', 'focus'), focusElapsedThisPhase + Math.max(0, now - focusSegmentStartedAt));
+      }
+    }
+    running = false; focusSegmentStartedAt = 0; stopTicker(); persist(); render();
+  };
+  const completePhase = async () => {
+    if (!running || mode === 'stopwatch') return;
+    const now = performance.now();
+    if (mode === 'pomodoro' && phase === 'focus') {
+      focusElapsedThisPhase = Math.min(getDuration('pomodoro', 'focus'), focusElapsedThisPhase + Math.max(0, now - focusSegmentStartedAt));
+      focusMilliseconds += focusElapsedThisPhase;
+      focusElapsedThisPhase = 0;
+    }
+    running = false; stopTicker(); remaining = 0;
+    focusSegmentStartedAt = 0;
+    const finishedMode = mode; const finishedPhase = phase;
+    void playAlert();
+    const title = t('Pomodoro');
+    const message = finishedMode === 'pomodoro' ? t(finishedPhase === 'focus' ? 'status.focusComplete' : 'status.breakComplete') : t('status.timeUp');
+    void notify(title, message);
+    if (finishedMode === 'pomodoro') {
+      if (finishedPhase === 'focus') {
+        completed += 1;
+        phase = timerLogic.nextPomodoroPhase('focus', completed, settings.longBreakEvery);
+      } else { phase = 'focus'; focusElapsedThisPhase = 0; }
+      remaining = getDuration('pomodoro', phase); persist();
+      status(root, finishedPhase === 'focus' ? 'focusComplete' : 'breakComplete', 'success');
+      if (settings.autoStart) { running = true; deadline = performance.now() + remaining; focusSegmentStartedAt = phase === 'focus' ? performance.now() : 0; ticker = window.setInterval(tick, 250); }
+    } else status(root, 'timeUp', 'success');
+    render();
   };
   const tick = () => {
+    if (mode !== 'stopwatch' && timerLogic.remainingUntil(deadline, performance.now()) <= 0) { completePhase(); return; }
     render();
-    if (mode !== 'stopwatch' && remaining - (performance.now() - started) <= 0) {
-      remaining = 0; running = false; clearInterval(ticker); ticker = 0;
-      if (mode === 'pomodoro') {
-        status(root, phase === 'focus' ? 'focusComplete' : 'breakComplete', 'success');
-        if (phase === 'focus') { phase = 'break'; remaining = number($('#break-minutes', root).value) * 60_000; }
-        else { phase = 'focus'; cycle += 1; remaining = number($('#focus-minutes', root).value) * 60_000; }
-        started = performance.now(); running = true; ticker = window.setInterval(tick, 200);
-      } else status(root, 'timeUp', 'success');
-      render();
-    }
   };
-  root.addEventListener('click', (event) => {
+  const reset = (announce = true) => {
+    pause(); running = false; stopTicker(); focusMilliseconds += focusElapsedThisPhase; focusElapsedThisPhase = 0; focusSegmentStartedAt = 0; phase = 'focus'; accumulated = 0; remaining = getDuration(); persist(); render();
+    if (announce) status(root, 'ready');
+  };
+  const start = async () => {
+    if (running || starting) return;
+    if (mode !== 'stopwatch' && remaining <= 0) remaining = getDuration();
+    if (mode !== 'stopwatch' && (!Number.isFinite(remaining) || remaining <= 0)) return status(root, 'durationRequired', 'error');
+    starting = true;
+    if (settings.sound) {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (AudioContextClass) { try { audioContext ??= new AudioContextClass(); await audioContext.resume(); } catch {} }
+    }
+    running = true;
+    if (mode === 'stopwatch') stopwatchStarted = performance.now();
+    else {
+      deadline = performance.now() + remaining;
+      if (mode === 'pomodoro' && phase === 'focus') focusSegmentStartedAt = performance.now();
+    }
+    starting = false;
+    stopTicker(); ticker = window.setInterval(tick, 250); status(root, 'timerRunning'); render();
+  };
+  const applySettings = () => {
+    settings = timerLogic.normalizePomodoroSettings({
+      focusMinutes: number($('#focus-minutes', root).value), shortBreakMinutes: number($('#break-minutes', root).value),
+      longBreakMinutes: number($('#long-break-minutes', root).value), longBreakEvery: number($('#long-break-every', root).value),
+      autoStart: $('#timer-auto-start', root).checked, sound: $('#timer-sound', root).checked, volume: number($('#timer-volume', root).value),
+    });
+    $('#focus-minutes', root).value = String(settings.focusMinutes); $('#break-minutes', root).value = String(settings.shortBreakMinutes);
+    $('#long-break-minutes', root).value = String(settings.longBreakMinutes); $('#long-break-every', root).value = String(settings.longBreakEvery);
+    $('#timer-auto-start', root).checked = settings.autoStart; $('#timer-sound', root).checked = settings.sound; $('#timer-volume', root).value = String(settings.volume);
+    persist(); if (!running && mode === 'pomodoro') { remaining = getDuration(); render(); }
+  };
+  $('#focus-minutes', root).value = String(settings.focusMinutes); $('#break-minutes', root).value = String(settings.shortBreakMinutes);
+  $('#long-break-minutes', root).value = String(settings.longBreakMinutes); $('#long-break-every', root).value = String(settings.longBreakEvery);
+  $('#timer-auto-start', root).checked = settings.autoStart; $('#timer-sound', root).checked = settings.sound; $('#timer-volume', root).value = String(settings.volume);
+  $('#timer-options', root).hidden = true; $('#timer-settings', root).hidden = false; $('#pomodoro-settings', root).hidden = true;
+  root.addEventListener('click', async (event) => {
     const modeButton = event.target.closest('[data-timer-mode]');
-    if (modeButton) { stop(); mode = modeButton.dataset.timerMode; $$('.timer-modes [data-timer-mode]', root).forEach((button) => { button.classList.toggle('is-active', button === modeButton); button.setAttribute('aria-pressed', String(button === modeButton)); }); $('#timer-settings', root).hidden = mode === 'stopwatch' || mode === 'pomodoro'; $('#pomodoro-settings', root).hidden = mode !== 'pomodoro'; reset(); }
+    if (modeButton) {
+      pause(); mode = modeButton.dataset.timerMode;
+      $$('.timer-modes [data-timer-mode]', root).forEach((button) => { button.classList.toggle('is-active', button === modeButton); button.setAttribute('aria-pressed', String(button === modeButton)); });
+      $('#timer-settings', root).hidden = mode === 'stopwatch' || mode === 'pomodoro';
+      $('#pomodoro-settings', root).hidden = mode !== 'pomodoro'; $('#timer-options', root).hidden = mode !== 'pomodoro'; reset();
+    }
     const actionName = event.target.closest('[data-action]')?.dataset.action;
-    if (actionName === 'timer-start') start();
-    if (actionName === 'timer-pause') { stop(); status(root, 'timerPaused'); }
+    if (actionName === 'timer-start') await start();
+    if (actionName === 'timer-pause') { pause(); status(root, 'timerPaused'); }
     if (actionName === 'timer-reset') reset();
+    if (actionName === 'timer-skip' && mode === 'pomodoro') {
+      pause(); phase = phase === 'focus' ? 'short-break' : 'focus'; focusElapsedThisPhase = 0;
+      remaining = getDuration(); render(); status(root, 'ready');
+    }
+    if (actionName === 'timer-test-sound') { await playAlert(); status(root, 'ready'); }
+    if (actionName === 'timer-enable-notifications') {
+      if (!('Notification' in window)) return status(root, 'Notifications are not available in this browser.', 'error');
+      let permission;
+      try { permission = await Notification.requestPermission(); }
+      catch { return status(root, 'Notifications are not available in this browser.', 'error'); }
+      if (permission === 'granted' && 'serviceWorker' in navigator) {
+        try { notificationRegistration = await navigator.serviceWorker.register('/timer-notifications.js'); } catch {}
+      }
+      status(root, permission === 'granted' ? 'Notifications enabled.' : permission === 'denied' ? 'Notifications are blocked. Change this site\'s permission in browser settings.' : 'ready', permission === 'granted' ? 'success' : permission === 'denied' ? 'error' : '');
+    }
+    if (actionName === 'timer-clear-data') {
+      pause(); settings = timerLogic.normalizePomodoroSettings(); completed = 0; focusMilliseconds = 0; focusElapsedThisPhase = 0;
+      $('#focus-minutes', root).value = String(settings.focusMinutes); $('#break-minutes', root).value = String(settings.shortBreakMinutes);
+      $('#long-break-minutes', root).value = String(settings.longBreakMinutes); $('#long-break-every', root).value = String(settings.longBreakEvery);
+      $('#timer-auto-start', root).checked = settings.autoStart; $('#timer-sound', root).checked = settings.sound; $('#timer-volume', root).value = String(settings.volume);
+      reset(false);
+      try { localStorage.removeItem(storageKey); } catch {}
+      render(); status(root, 'ready');
+    }
   });
-  $('#timer-minutes', root).addEventListener('change', reset); $('#timer-seconds', root).addEventListener('change', reset); $('#focus-minutes', root).addEventListener('change', reset); $('#break-minutes', root).addEventListener('change', reset);
-  reset();
+  ['focus-minutes', 'break-minutes', 'long-break-minutes', 'long-break-every', 'timer-auto-start', 'timer-sound', 'timer-volume'].forEach((id) => $(`#${id}`, root).addEventListener('change', applySettings));
+  const syncCountdownInputs = () => {
+    if (running || mode !== 'countdown') return;
+    const minutes = number($('#timer-minutes', root).value); const seconds = number($('#timer-seconds', root).value);
+    if (!Number.isInteger(minutes) || minutes < 0 || minutes > 999 || !Number.isInteger(seconds) || seconds < 0 || seconds > 59) return;
+    remaining = (minutes * 60 + seconds) * 1000; render();
+  };
+  $('#timer-minutes', root).addEventListener('input', syncCountdownInputs);
+  $('#timer-minutes', root).addEventListener('change', syncCountdownInputs);
+  $('#timer-seconds', root).addEventListener('input', syncCountdownInputs);
+  $('#timer-seconds', root).addEventListener('change', syncCountdownInputs);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) tick(); });
+  window.addEventListener('pagehide', () => { pause(); try { audioContext?.close(); } catch {} }, { once: true });
+  remaining = getDuration(); render();
 }
 
 function setupLorem(root) {

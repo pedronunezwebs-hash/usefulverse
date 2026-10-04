@@ -62,7 +62,7 @@ await bundle({
   target: ['es2022'],
   minify: true,
 });
-for (const sourceName of ['advanced-tools.js', 'advanced-logic.mjs', 'expanded-tools.js', 'expanded-logic.mjs', 'new-tools.js', 'new-tool-logic.mjs', 'media-tools.js']) {
+for (const sourceName of ['advanced-tools.js', 'advanced-logic.mjs', 'expanded-tools.js', 'expanded-logic.mjs', 'new-tools.js', 'new-tool-logic.mjs', 'timer-logic.mjs', 'media-tools.js']) {
   await copyMinifiedScript(sourceName);
 }
 await bundle({
@@ -86,6 +86,69 @@ await bundle({
 await bundle({
   entryPoints: [join(root, 'src', 'opportunity-runtime.js')],
   outfile: join(dist, 'assets', 'opportunity-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'chess-clock-runtime.js')],
+  outfile: join(dist, 'assets', 'chess-clock-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'ear-training-runtime.js')],
+  outfile: join(dist, 'assets', 'ear-training-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'bpm-detector-runtime.js')],
+  outfile: join(dist, 'assets', 'bpm-detector-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'music-scale-runtime.js')],
+  outfile: join(dist, 'assets', 'music-scale-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'seating-chart-runtime.js')],
+  outfile: join(dist, 'assets', 'seating-chart-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'gantt-chart-runtime.js')],
+  outfile: join(dist, 'assets', 'gantt-chart-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'sprite-sheet-runtime.js')],
+  outfile: join(dist, 'assets', 'sprite-sheet-runtime.js'),
   bundle: true,
   format: 'esm',
   platform: 'browser',
@@ -266,6 +329,7 @@ await cp(join(root, 'node_modules', '@neslinesli93', 'qpdf-wasm', 'README.md'), 
 await cp(join(root, 'public', 'licenses', 'LICENSE-qpdf.txt'), join(vendor, 'LICENSE-qpdf.txt'));
 await cp(join(root, 'public', 'licenses', 'LICENSE-qpdf-wasm-ISC.txt'), join(vendor, 'LICENSE-qpdf-wasm-ISC.txt'));
 await cp(join(root, 'public', 'favicon.svg'), join(dist, 'favicon.svg'));
+await cp(join(root, 'public', 'timer-notifications.js'), join(dist, 'timer-notifications.js'));
 await cp(join(root, 'public', '_headers'), join(dist, '_headers'));
 await cp(join(root, 'public', 'BingSiteAuth.xml'), join(dist, 'BingSiteAuth.xml'));
 await cp(join(root, 'public', 'yandex_f441658073fe7135.html'), join(dist, 'yandex_f441658073fe7135.html'));
@@ -287,6 +351,7 @@ const assetHash = createHash('sha256')
   .update(await readFile(join(dist, 'assets', 'expanded-logic.mjs')))
   .update(await readFile(join(dist, 'assets', 'new-tools.js')))
   .update(await readFile(join(dist, 'assets', 'new-tool-logic.mjs')))
+  .update(await readFile(join(dist, 'assets', 'timer-logic.mjs')))
   .update(await readFile(join(dist, 'assets', 'media-tools.js')))
   .update(await readFile(join(dist, 'assets', 'media-transcription-worker.mjs')))
   .update(await readFile(join(dist, 'assets', 'tool-suite-tools.js')))
@@ -298,6 +363,23 @@ const assetHash = createHash('sha256')
   .update(await readFile(join(vendor, 'media-converter.mjs')))
   .update(await readFile(join(root, 'package-lock.json')))
   .update(await readFile(join(root, 'src', 'locales.mjs')));
+assetHash.update(await readFile(join(root, 'public', 'timer-notifications.js')));
+// Any browser-loaded script uses this version token in its URL. Include every
+// lazy runtime in the hash so deploying a changed module cannot keep serving a
+// stale copy from the browser cache.
+for (const file of [
+  'plan-tools.js',
+  'opportunity-runtime.js',
+  'chess-clock-runtime.js',
+  'ear-training-runtime.js',
+  'bpm-detector-runtime.js',
+  'music-scale-runtime.js',
+  'seating-chart-runtime.js',
+  'gantt-chart-runtime.js',
+  'sprite-sheet-runtime.js',
+]) {
+  assetHash.update(await readFile(join(dist, 'assets', file)));
+}
 for (const file of (await readdir(vendor, { recursive: true })).sort()) {
   const path = join(vendor, file);
   if ((await stat(path)).isFile()) assetHash.update(await readFile(path));

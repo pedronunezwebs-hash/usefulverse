@@ -7,7 +7,7 @@ Browser-first collection of fast, private, static tools for everyday work.
 - Processing happens in the browser whenever possible.
 - No account, upload or paid API is required.
 - Each useful tool gets its own stable, indexable URL.
-- The current catalog contains 100 browser-only tools across writing, data, developer, SEO, design, privacy, text, files and everyday tasks.
+- The current catalog contains 211 browser-first tools across writing, data, developer, SEO, design, privacy, text, files, productivity, education and music.
 - The public build is static and deployable to Cloudflare Pages.
 - CSS and JavaScript URLs are content-versioned during the build so CDN caches cannot serve an old runtime after a deploy.
 - HTML uses short browser and edge cache lifetimes; versioned assets remain immutable for repeat visits.
@@ -32,7 +32,7 @@ Russian (`/ru/`), Urdu (`/ur/`), Turkish (`/tr/`), Vietnamese (`/vi/`), Italian
 Dutch (`/nl/`), Greek (`/el/`), Malay (`/ms/`), Polish (`/pl/`), Swedish
 (`/sv/`), Thai (`/th/`), Ukrainian (`/uk/`), Swahili (`/sw/`), Marathi (`/mr/`),
 Telugu (`/te/`), Hausa (`/ha/`), Filipino (`/tl/`), Tamil (`/ta/`), Persian
-(`/fa/`), Amharic (`/am/`) and Gujarati (`/gu/`). Each of the 100 tools has a
+(`/fa/`), Amharic (`/am/`) and Gujarati (`/gu/`). Each of the 211 tools has a
 matching URL in every language. Newer language packs use concise machine-assisted
 translations accepted by the owner; they are not represented as native-reviewed.
 The build creates every version as static HTML, adds
@@ -54,7 +54,7 @@ engine. The recording is not uploaded, although the browser may download those f
 again if its cache is cleared. File processing stays on the visitor's device; memory,
 storage, browser, battery, speed and codec support are practical limits, not a server
 upload-size quota. Heavy media code is loaded only when needed. The generated sitemap
-contains 3,888 URLs: 100 tools and one home page in each of 36 languages, plus seven
+contains 7,884 URLs: 211 tools and one home page in each of 36 languages, plus seven
 guide routes (the guide index and six sourced, task-specific guides) in every language.
 Guides are static HTML and add no server processing or paid API usage.
 
@@ -64,6 +64,24 @@ subtitle conversion, image collage, image metadata removal, GIF creation, screen
 recording and voice recording. Processing stays on the device; browser permissions,
 available memory, file compatibility and device performance can limit an individual
 session. No processing API or server function is used.
+
+Study Planner creates a local draft schedule from subjects, exam dates, available
+minutes and estimated topics; it can optionally save in browser storage or export JSON.
+Mental Math Practice generates arithmetic rounds in the browser and tracks score,
+streak and elapsed time only for the current round. Neither tool uploads user entries.
+Tournament Bracket Generator creates a single-elimination draw for 2–64 participants,
+auto-advances byes, and records match winners only in the current page session.
+Chess Clock provides two-player time controls with configurable starting time and
+per-move increment; it uses a monotonic clock and warns that background suspension
+can affect timing. No move or game data is uploaded.
+Ear Training plays synthesized musical intervals in the browser, checks answers and
+tracks a short practice score. It does not record or upload audio; playback requires
+browser Web Audio support and a user click to start sound.
+BPM Detector estimates tempo from a user-selected audio file or a manual tap rhythm.
+Audio decoding and analysis stay in the browser. File selection is limited to 50 MB
+and three minutes to reduce memory pressure; codec support depends on the browser and
+device, so a computer is recommended for this task. Results are estimates, including
+possible half-time/double-time ambiguity, and should be checked by tapping along.
 
 TIFF/TIF images can be opened locally in the image converter, resizer and image-to-PDF
 tool. Multi-page TIFF uses only its first page, and some compression variants depend on
