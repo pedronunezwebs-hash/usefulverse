@@ -295,3 +295,35 @@ export function formatTimer(milliseconds) {
   const seconds = total % 60;
   return hours ? `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}` : `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
+
+export function createAmidakujiDraw(names, randomIndex, rowCount = 18) {
+  if (!Array.isArray(names) || names.length < 2 || names.length > 8 || names.some((name) => typeof name !== 'string' || !name.trim() || name.length > 80)) {
+    throw new RangeError('Amidakuji needs 2–8 names, each up to 80 characters.');
+  }
+  if (!Number.isInteger(rowCount) || rowCount < 6 || rowCount > 64) throw new RangeError('Amidakuji rows must be from 6 to 64.');
+  if (typeof randomIndex !== 'function') throw new TypeError('A random index function is required.');
+  const pick = (length) => {
+    const index = randomIndex(length);
+    if (!Number.isInteger(index) || index < 0 || index >= length) throw new RangeError('Random index is outside its range.');
+    return index;
+  };
+  const rows = Array.from({ length: rowCount }, () => {
+    const bars = Array(names.length - 1).fill(false);
+    for (let column = 0; column < bars.length; column += 1) {
+      if (!bars[column - 1] && pick(2) === 0) bars[column] = true;
+    }
+    return bars;
+  });
+  const destinations = names.map((_, start) => {
+    let column = start;
+    for (const bars of rows) {
+      if (bars[column]) column += 1;
+      else if (column > 0 && bars[column - 1]) column -= 1;
+    }
+    return column;
+  });
+  const target = pick(names.length);
+  const winnerIndex = destinations.indexOf(target);
+  if (winnerIndex < 0) throw new Error('The ladder did not produce a valid path.');
+  return { rows, destinations, target, winnerIndex };
+}

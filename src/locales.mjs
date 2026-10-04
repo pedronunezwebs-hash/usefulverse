@@ -1172,6 +1172,28 @@ for (const language of ['it', 'nl']) packs[language].meta.keepEnglish = [...new 
 for (const language of ['ca', 'nl']) packs[language].meta.keepEnglish = [...new Set([...(packs[language].meta.keepEnglish ?? []), 'Contrast'])];
 for (const language of ['pl', 'tl']) packs[language].meta.keepEnglish = [...new Set([...(packs[language].meta.keepEnglish ?? []), 'Format'])];
 
+const japaneseDateCalculatorCopy = [
+  '日数・和暦計算ツール',
+  '日数・和暦計算',
+  '2つの日付の間の日数や何日後の日付を計算し、西暦を和暦に変換します。',
+  '日数計算, 日付 計算, 何日後 計算, 何日前 計算, 期間 計算, 日数 カウント, 経過日数, 日付 差, 西暦 和暦 変換, 和暦 西暦 変換',
+  '開始日と終了日を選ぶと日数を計算します。和暦変換では日付を選んで「和暦に変換」を押してください。',
+  '締め切りや記念日までの日数を計算できます。日本の元号に基づく西暦・和暦変換にも対応し、計算はブラウザー内で行います。',
+];
+if (packs.ja) {
+  packs.ja.copy['date-calculator'] = japaneseDateCalculatorCopy;
+  copy.ja['date-calculator'] = japaneseDateCalculatorCopy;
+  Object.assign(packs.ja.seo['date-calculator'], {
+    title: '日数・和暦計算｜西暦を令和・平成に変換',
+    description: '日付の差や何日後を計算し、西暦を令和・平成などの和暦に変換。締め切りや記念日にも使えます。無料・登録不要、日付は端末内で処理。',
+  });
+  packs.ja.faq['date-calculator'] = [
+    { question: '2つの日付の間が何日あるか計算するには？', answer: '「開始日」と「終了日」を選んで「日数を計算」を押します。たとえば1月1日から1月31日までなら、30日と表示されます。' },
+    { question: '西暦を和暦に変換できますか？', answer: '日付を選び、「和暦に変換」を押すと、日本の元号を使った年・月・日が表示されます。変換はブラウザー内で行われます。' },
+    { question: '日付に日数を加算または減算できますか？', answer: '基準日と整数の日数を入力します。日数を減算するには負の数を使います。' },
+  ];
+}
+
 export function localizedTool(tool, language) {
   const values = copy[language]?.[tool.id];
   const gifCopy = tool.id === 'gif-maker' ? gifMakerCopy[language] : null;

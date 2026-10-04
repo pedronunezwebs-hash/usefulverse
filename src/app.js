@@ -1097,6 +1097,15 @@ function setupDateCalculator(root) {
   const status = $('#tool-status', root);
   root.addEventListener('click', (event) => {
     const action = event.target.closest('[data-action]')?.dataset.action;
+    if (action === 'japanese-era') {
+      const date = parseDateOnly($('#japanese-era-date', root)?.value);
+      const output = $('#japanese-era-result', root);
+      if (!date) { output.textContent = '有効な日付を選択してください。'; return; }
+      try {
+        output.textContent = new Intl.DateTimeFormat('ja-JP-u-ca-japanese', { era: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(date);
+      } catch { output.textContent = 'このブラウザーでは和暦を表示できません。'; }
+      return;
+    }
     if (action === 'date-difference') {
       const start = parseDateOnly($('#date-start', root).value); const end = parseDateOnly($('#date-end', root).value);
       if (!start || !end) { setStatus(status, 'Choose two valid dates.', 'error'); return; }
