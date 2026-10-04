@@ -8,6 +8,14 @@ test('all 36 published locales provide localized flashcard format feedback and d
     assert.ok(messages.Close?.trim(), `${language} has a close label`);
     assert.ok(messages['Noise is playing in your browser.']?.trim(), `${language} has a noise playback status`);
     assert.ok(messages['Noise stopped.']?.trim(), `${language} has a noise stopped status`);
+    assert.ok(messages['Save deck on this device']?.trim(), `${language} has a translated flashcard save label`);
+    assert.ok(messages['Load saved deck']?.trim(), `${language} has a translated flashcard load label`);
+    assert.ok(messages['Delete saved deck']?.trim(), `${language} has a translated flashcard delete label`);
+    if (language !== 'en') {
+      assert.notEqual(messages['Save deck on this device'], 'Save deck on this device', `${language} flashcard save label is translated`);
+      assert.notEqual(messages['Load saved deck'], 'Load saved deck', `${language} flashcard load label is translated`);
+      assert.notEqual(messages['Delete saved deck'], 'Delete saved deck', `${language} flashcard delete label is translated`);
+    }
     const formatError = messages['Each line needs a term, comma, and definition.'];
     assert.ok(formatError?.trim(), `${language} has flashcard format feedback`);
     if (language !== 'en') assert.notEqual(formatError, 'Each line needs a term, comma, and definition.', `${language} is translated`);

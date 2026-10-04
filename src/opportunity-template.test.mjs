@@ -62,6 +62,14 @@ test('mental math practice exposes a bounded round and accessible answer states'
   assert.doesNotMatch(markup, /data-op-calculate|data-op-clear/u);
 });
 
+test('flashcards expose interactive study controls and explicit local save/load/delete actions', () => {
+  const markup = opportunityToolMarkup('flashcard-maker');
+  for (const control of ['data-flashcard-study', 'data-flashcard-show', 'data-flashcard-known', 'data-flashcard-again', 'data-flashcard-shuffle', 'data-flashcard-save', 'data-flashcard-load', 'data-flashcard-delete']) assert.ok(markup.includes(control), control);
+  assert.match(markup, /Save deck on this device/u);
+  assert.match(markup, /Load saved deck/u);
+  assert.match(markup, /Delete saved deck/u);
+});
+
 test('tournament bracket exposes local participant input, shuffle and accessible match updates', () => {
   const markup = opportunityToolMarkup('tournament-bracket-generator');
   for (const control of ['data-bracket-entrants', 'data-bracket-shuffle', 'data-bracket-generate', 'data-bracket-clear', 'data-bracket-rounds', 'aria-live="polite"']) assert.ok(markup.includes(control), control);

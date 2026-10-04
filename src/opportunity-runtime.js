@@ -57,7 +57,19 @@ function offerSvg(root, svg, filename) {
 function setupFlashcardStudy(root) {
   const study = $('[data-flashcard-study]', root);
   if (!study) return;
-  let deck = []; let index = 0;
+  const input = $('[data-op-field="cards"]', root);
+  const save = $('[data-flashcard-save]', root);
+  const load = $('[data-flashcard-load]', root);
+  const remove = $('[data-flashcard-delete]', root);
+  const storageKey = 'usefulverse:flashcards:v1';
+  let deck = []; let index = 0; let known = 0;
+  const refreshSaveControls = () => {
+    save.disabled = deck.length === 0;
+    try {
+      const hasSavedDeck = localStorage.getItem(storageKey) !== null;
+      load.disabled = !hasSavedDeck; remove.disabled = !hasSavedDeck;
+    } catch { load.disabled = true; remove.disabled = true; }
+  };
   const render = () => {
     if (!deck.length) { study.hidden = true; return; }
     const card = deck[index];
@@ -68,20 +80,60 @@ function setupFlashcardStudy(root) {
     $('[data-flashcard-count]', study).textContent = say('Card {current} of {total}').replace('{current}', String(index + 1)).replace('{total}', String(deck.length));
     $('[data-flashcard-previous]', study).disabled = index === 0;
     $('[data-flashcard-next]', study).disabled = index === deck.length - 1;
+    save.disabled = false;
   };
+  refreshSaveControls();
   root.addEventListener('click', (event) => {
     if (event.target.closest('[data-op-calculate]')) {
       try {
-        const raw = $('[data-op-field="cards"]', root)?.value ?? '';
+        const raw = input?.value ?? '';
         const lines = raw.split(/\r?\n/u).map((line) => line.trim()).filter(Boolean);
         deck = lines.map((line) => {
           const comma = line.indexOf(',');
           if (comma < 1) return null;
           return { front: line.slice(0, comma).trim(), back: line.slice(comma + 1).trim() };
         }).filter((card) => card?.front && card.back);
-        if (deck.length !== lines.length || deck.length > 200) { deck = []; study.hidden = true; return; }
-        index = 0; study.hidden = deck.length === 0; render();
-      } catch { study.hidden = true; }
+        if (!lines.length || deck.length !== lines.length || deck.length > 200) throw new TypeError('Each line needs a term, comma, and definition.');
+        index = 0; known = 0; study.hidden = false; render(); refreshSaveControls();
+      } catch (error) {
+        event.stopImmediatePropagation(); deck = []; index = 0; known = 0; study.hidden = true; refreshSaveControls();
+        setStatus(root, error instanceof Error ? error.message : 'Each line needs a term, comma, and definition.', 'error');
+      }
+    }
+    if (event.target.closest('[data-flashcard-save]')) {
+      try {
+        if (!deck.length) throw new TypeError('Create a deck before saving it.');
+        localStorage.setItem(storageKey, JSON.stringify({ version: 1, deck, index, known }));
+        refreshSaveControls(); setStatus(root, 'Plan saved on this device.', 'success');
+      } catch (error) {
+        setStatus(root, error instanceof Error && error.message === 'Create a deck before saving it.' ? error.message : 'Could not save the plan. Browser storage may be full or disabled.', 'error');
+      }
+      return;
+    }
+    if (event.target.closest('[data-flashcard-load]')) {
+      let raw;
+      try {
+        raw = localStorage.getItem(storageKey);
+      } catch { return setStatus(root, 'Could not load the saved plan in this browser.', 'error'); }
+      if (raw === null) return setStatus(root, 'No saved plan was found on this device.', 'error');
+      try {
+        const saved = JSON.parse(raw);
+        const validDeck = Array.isArray(saved?.deck) && saved.deck.length > 0 && saved.deck.length <= 200
+          && saved.deck.every((card) => typeof card?.front === 'string' && typeof card?.back === 'string'
+            && card.front.trim() && card.back.trim() && card.front.length <= 5000 && card.back.length <= 5000);
+        if (saved?.version !== 1 || !validDeck || !Number.isInteger(saved.index) || saved.index < 0 || saved.index >= saved.deck.length
+            || !Number.isInteger(saved.known) || saved.known < 0 || saved.known + saved.deck.length > 200) throw new TypeError('Invalid deck state');
+        deck = saved.deck.map(({ front, back }) => ({ front, back })); index = saved.index; known = saved.known;
+        input.value = deck.map(({ front, back }) => `${front},${back}`).join('\n');
+        study.hidden = false; render(); refreshSaveControls(); displayOutput(root, deck.map(({ front, back }) => `${front}, ${back}`).join('\n'));
+        setStatus(root, 'Saved plan loaded.', 'success');
+      } catch { setStatus(root, 'Saved plan is not valid.', 'error'); }
+      return;
+    }
+    if (event.target.closest('[data-flashcard-delete]')) {
+      try { localStorage.removeItem(storageKey); refreshSaveControls(); setStatus(root, 'Saved plan deleted from this device.', 'success'); }
+      catch { setStatus(root, 'Could not delete the saved plan in this browser.', 'error'); }
+      return;
     }
     if (!deck.length) return;
     if (event.target.closest('[data-flashcard-show]')) {
@@ -89,9 +141,10 @@ function setupFlashcardStudy(root) {
       $('[data-flashcard-show]', study).hidden = true;
     }
     if (event.target.closest('[data-flashcard-known]')) {
+      known += 1;
       deck.splice(index, 1);
-      if (!deck.length) { study.hidden = true; setStatus(root, 'Done.', 'success'); return; }
-      index = Math.min(index, deck.length - 1); render();
+      if (!deck.length) { study.hidden = true; refreshSaveControls(); setStatus(root, 'Done.', 'success'); return; }
+      index = Math.min(index, deck.length - 1); render(); refreshSaveControls();
     }
     if (event.target.closest('[data-flashcard-again]')) { const oldIndex = index; const [card] = deck.splice(index, 1); deck.push(card); index = oldIndex >= deck.length - 1 ? 0 : oldIndex; render(); }
     if (event.target.closest('[data-flashcard-previous]') && index > 0) { index -= 1; render(); }

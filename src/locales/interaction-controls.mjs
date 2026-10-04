@@ -62,6 +62,45 @@ const noisePlayback = {
   ha: ['Ana kunna sautin a cikin burauzarka.', 'An dakatar da kunnawa.'], tl: ['Nagpapatugtog ng ingay sa iyong browser.', 'Itinigil ang pagpapatugtog.'], ta: ['உங்கள் உலாவியில் ஒலி இயங்குகிறது.', 'ஒலி நிறுத்தப்பட்டது.'], fa: ['صدای نویز در مرورگر شما پخش می‌شود.', 'پخش متوقف شد.'], am: ['ድምፁ በአሳሽዎ ውስጥ እየተጫወተ ነው።', 'ድምፁ ቆሟል።'], gu: ['બ્રાઉઝરમાં અવાજ ચાલી રહ્યો છે.', 'અવાજ બંધ થયો.'],
 };
 
+const flashcardPersistence = {
+  en: ['Save deck on this device', 'Load saved deck', 'Delete saved deck'],
+  es: ['Guardar mazo en este dispositivo', 'Cargar mazo guardado', 'Borrar mazo guardado'],
+  fr: ['Enregistrer le jeu sur cet appareil', 'Charger le jeu enregistré', 'Supprimer le jeu enregistré'],
+  pt: ['Salvar o baralho neste dispositivo', 'Carregar o baralho salvo', 'Excluir o baralho salvo'],
+  de: ['Lernkartensatz auf diesem Gerät speichern', 'Gespeicherten Lernkartensatz laden', 'Gespeicherten Lernkartensatz löschen'],
+  ja: ['この端末にカードセットを保存', '保存したカードセットを読み込む', '保存したカードセットを削除'],
+  ko: ['이 기기에 카드 덱 저장', '저장된 카드 덱 불러오기', '저장된 카드 덱 삭제'],
+  id: ['Simpan dek kartu di perangkat ini', 'Muat dek kartu tersimpan', 'Hapus dek kartu tersimpan'],
+  hi: ['इस डिवाइस पर कार्ड डेक सहेजें', 'सहेजा गया कार्ड डेक खोलें', 'सहेजा गया कार्ड डेक मिटाएँ'],
+  ar: ['حفظ مجموعة البطاقات على هذا الجهاز', 'تحميل مجموعة البطاقات المحفوظة', 'حذف مجموعة البطاقات المحفوظة'],
+  zh: ['在此设备保存卡片组', '加载已保存的卡片组', '删除已保存的卡片组'],
+  bn: ['এই ডিভাইসে কার্ডের সেট সংরক্ষণ করুন', 'সংরক্ষিত কার্ডের সেট লোড করুন', 'সংরক্ষিত কার্ডের সেট মুছুন'],
+  ru: ['Сохранить колоду на этом устройстве', 'Загрузить сохранённую колоду', 'Удалить сохранённую колоду'],
+  ur: ['اس آلے پر کارڈز کا مجموعہ محفوظ کریں', 'محفوظ کردہ کارڈز کا مجموعہ کھولیں', 'محفوظ کردہ کارڈز کا مجموعہ حذف کریں'],
+  tr: ['Desteyi bu cihaza kaydet', 'Kayıtlı desteyi yükle', 'Kayıtlı desteyi sil'],
+  vi: ['Lưu bộ thẻ trên thiết bị này', 'Tải bộ thẻ đã lưu', 'Xóa bộ thẻ đã lưu'],
+  it: ['Salva il mazzo su questo dispositivo', 'Carica il mazzo salvato', 'Elimina il mazzo salvato'],
+  zh_tw: ['在此裝置儲存卡片組', '載入已儲存的卡片組', '刪除已儲存的卡片組'],
+  bg: ['Запазване на тестето на това устройство', 'Зареждане на запазено тесте', 'Изтриване на запазено тесте'],
+  ca: ['Desa la baralla en aquest dispositiu', 'Carrega la baralla desada', 'Suprimeix la baralla desada'],
+  nl: ['Kaartenset opslaan op dit apparaat', 'Opgeslagen kaartenset laden', 'Opgeslagen kaartenset verwijderen'],
+  el: ['Αποθήκευση τράπουλας σε αυτή τη συσκευή', 'Φόρτωση αποθηκευμένης τράπουλας', 'Διαγραφή αποθηκευμένης τράπουλας'],
+  ms: ['Simpan dek pada peranti ini', 'Muatkan dek yang disimpan', 'Padam dek yang disimpan'],
+  pl: ['Zapisz talię na tym urządzeniu', 'Wczytaj zapisaną talię', 'Usuń zapisaną talię'],
+  sv: ['Spara kortleken på den här enheten', 'Läs in sparad kortlek', 'Ta bort sparad kortlek'],
+  th: ['บันทึกชุดบัตรคำไว้ในอุปกรณ์นี้', 'โหลดชุดบัตรคำที่บันทึกไว้', 'ลบชุดบัตรคำที่บันทึกไว้'],
+  uk: ['Зберегти колоду на цьому пристрої', 'Завантажити збережену колоду', 'Видалити збережену колоду'],
+  sw: ['Hifadhi seti ya kadi kwenye kifaa hiki', 'Pakia seti ya kadi iliyohifadhiwa', 'Futa seti ya kadi iliyohifadhiwa'],
+  mr: ['या डिव्हाइसवर कार्डांचा संच जतन करा', 'जतन केलेला कार्डांचा संच उघडा', 'जतन केलेला कार्डांचा संच हटवा'],
+  te: ['ఈ పరికరంలో కార్డుల సమూహాన్ని భద్రపరచండి', 'భద్రపరిచిన కార్డుల సమూహాన్ని తెరవండి', 'భద్రపరిచిన కార్డుల సమూహాన్ని తొలగించండి'],
+  ha: ['Ajiye tarin katunan a wannan na’ura', 'Loda tarin katunan da aka ajiye', 'Goge tarin katunan da aka ajiye'],
+  tl: ['I-save ang deck sa device na ito', 'I-load ang na-save na deck', 'Burahin ang na-save na deck'],
+  ta: ['அட்டைகளைச் சேமி', 'சேமித்ததை ஏற்று', 'சேமித்ததை நீக்கு'],
+  fa: ['دسته کارت را در این دستگاه ذخیره کنید', 'دسته کارت ذخیره‌شده را بارگذاری کنید', 'دسته کارت ذخیره‌شده را حذف کنید'],
+  am: ['የካርድ ስብስቡን በዚህ መሣሪያ ላይ ያስቀምጡ', 'የተቀመጠውን የካርድ ስብስብ ይክፈቱ', 'የተቀመጠውን የካርድ ስብስብ ይሰርዙ'],
+  gu: ['આ ઉપકરણમાં કાર્ડનો સમૂહ સાચવો', 'સાચવેલો કાર્ડનો સમૂહ ખોલો', 'સાચવેલો કાર્ડનો સમૂહ કાઢી નાખો'],
+};
+
 export const interactionControlLocales = Object.fromEntries(Object.entries(rows).map(([language, values]) => {
   if (values.length !== keys.length) throw new Error(`Interaction strings do not match for ${language}.`);
   const close = {
@@ -70,7 +109,9 @@ export const interactionControlLocales = Object.fromEntries(Object.entries(rows)
     nl: 'Sluiten', el: 'Κλείσιμο', ms: 'Tutup', pl: 'Zamknij', sv: 'Stäng', th: 'ปิด', uk: 'Закрити', sw: 'Funga', mr: 'बंद करा', te: 'మూసివేయి',
     ha: 'Rufe', tl: 'Isara', ta: 'மூடு', fa: 'بستن', am: 'ዝጋ', gu: 'બંધ કરો',
   }[language];
+  const flashcardLabels = flashcardPersistence[language];
+  if (!flashcardLabels || flashcardLabels.length !== 3) throw new Error(`Missing flashcard save labels for ${language}.`);
   if (!close) throw new Error(`Missing localized close label for ${language}.`);
   if (!noisePlayback[language]) throw new Error(`Missing localized noise status for ${language}.`);
-  return [language, { ...Object.fromEntries(keys.map((key, index) => [key, values[index]])), Close: close, 'Each line needs a term, comma, and definition.': flashcardFormatError[language], 'Noise is playing in your browser.': noisePlayback[language][0], 'Noise stopped.': noisePlayback[language][1] }];
+  return [language, { ...Object.fromEntries(keys.map((key, index) => [key, values[index]])), Close: close, 'Save deck on this device': flashcardLabels[0], 'Load saved deck': flashcardLabels[1], 'Delete saved deck': flashcardLabels[2], 'Each line needs a term, comma, and definition.': flashcardFormatError[language], 'Noise is playing in your browser.': noisePlayback[language][0], 'Noise stopped.': noisePlayback[language][1] }];
 }));
