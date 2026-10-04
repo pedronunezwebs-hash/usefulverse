@@ -2,7 +2,7 @@ import { cp, mkdir, readdir, readFile, rename, rm, stat, writeFile } from 'node:
 import { createHash } from 'node:crypto';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { build as bundle } from 'esbuild';
+import { build as bundle, transform } from 'esbuild';
 import { tools, categories } from '../src/catalog.mjs';
 import { renderGuidePage, renderGuidesIndex, renderHome, renderNotFoundPage, renderToolPage } from '../src/template.mjs';
 import { guidePath, guides, guidesForLocale } from '../src/guides.mjs';
@@ -14,6 +14,14 @@ import { localizedGuideGaps } from '../src/locales/release-gate.mjs';
 const root = fileURLToPath(new URL('..', import.meta.url));
 const dist = process.env.USEFULVERSE_DIST ? resolve(process.env.USEFULVERSE_DIST) : join(root, 'dist');
 const criticalCss = (await readFile(join(root, 'src', 'critical.css'), 'utf8')).trim();
+
+async function copyMinifiedScript(sourceName) {
+  const sourcePath = join(root, 'src', sourceName);
+  const outputPath = join(dist, 'assets', sourceName);
+  const source = await readFile(sourcePath, 'utf8');
+  const { code } = await transform(source, { loader: 'js', minify: true, target: ['es2022'] });
+  await writeFile(outputPath, code);
+}
 
 async function deferFullStyles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -54,13 +62,9 @@ await bundle({
   target: ['es2022'],
   minify: true,
 });
-await cp(join(root, 'src', 'advanced-tools.js'), join(dist, 'assets', 'advanced-tools.js'));
-await cp(join(root, 'src', 'advanced-logic.mjs'), join(dist, 'assets', 'advanced-logic.mjs'));
-await cp(join(root, 'src', 'expanded-tools.js'), join(dist, 'assets', 'expanded-tools.js'));
-await cp(join(root, 'src', 'expanded-logic.mjs'), join(dist, 'assets', 'expanded-logic.mjs'));
-await cp(join(root, 'src', 'new-tools.js'), join(dist, 'assets', 'new-tools.js'));
-await cp(join(root, 'src', 'new-tool-logic.mjs'), join(dist, 'assets', 'new-tool-logic.mjs'));
-await cp(join(root, 'src', 'media-tools.js'), join(dist, 'assets', 'media-tools.js'));
+for (const sourceName of ['advanced-tools.js', 'advanced-logic.mjs', 'expanded-tools.js', 'expanded-logic.mjs', 'new-tools.js', 'new-tool-logic.mjs', 'media-tools.js']) {
+  await copyMinifiedScript(sourceName);
+}
 await bundle({
   entryPoints: [join(root, 'src', 'plan-tools.js')],
   outfile: join(dist, 'assets', 'plan-tools.js'),
