@@ -186,24 +186,111 @@ function drawChart(root, values) {
   offerSvg(root, svg, 'usefulverse-chart.svg');
 }
 
-function drawDiagram(root, text) {
+function drawDiagram(root, text, { downloadable = false } = {}) {
   const svg = $('[data-op-svg]', root); if (!svg) return;
   const steps = String(text ?? '').split(/\r?\n/u).map((line) => line.trim()).filter(Boolean);
-  if (steps.length < 2 || steps.length > 12 || steps.some((step) => step.length > 48)) throw new TypeError('Enter 2–12 steps, up to 48 characters each.');
-  const width = 640; const rowHeight = 74; const height = Math.max(180, steps.length * rowHeight + 30);
+  if (steps.length < 2 || steps.length > 12 || steps.some((step) => [...step].length > 48)) throw new TypeError($('.diagram-maker', root)?.dataset.diagramInvalid ?? say('Check your inputs and try again.'));
+  const width = 640; const rowHeight = 92; const height = Math.max(210, steps.length * rowHeight + 20);
   svg.replaceChildren(); svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
-  addSvgElement(svg, 'title', {}, 'Process diagram');
-  steps.forEach((step, index) => {
-    const y = 14 + index * rowHeight;
-    if (index) addSvgElement(svg, 'path', { d: `M320 ${y - 12}V${y + 1}`, stroke: '#475569', 'stroke-width': 2, 'marker-end': 'url(#arrow)' });
-    addSvgElement(svg, 'rect', { x: 110, y, width: 420, height: 48, rx: 10, fill: '#f8fafc', stroke: '#475569', 'stroke-width': 2 });
-    addSvgElement(svg, 'text', { x: 320, y: y + 30, 'text-anchor': 'middle', 'font-size': 16, fill: '#111827' }, step);
-  });
+  addSvgElement(svg, 'title', {}, $('.diagram-maker', root)?.dataset.diagramTitle ?? say('Diagram steps'));
   const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-  defs.innerHTML = '<marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#475569"/></marker>';
-  svg.prepend(defs);
+  const marker = addSvgElement(defs, 'marker', { id: 'usefulverse-diagram-arrow', markerWidth: 8, markerHeight: 8, refX: 4, refY: 4, orient: 'auto' });
+  addSvgElement(marker, 'path', { d: 'M0 0L8 4L0 8Z', fill: '#475569' });
+  svg.append(defs);
+  steps.forEach((step, index) => {
+    const y = 10 + index * rowHeight;
+    if (index) addSvgElement(svg, 'path', { d: `M320 ${y - 14}V${y + 1}`, stroke: '#475569', 'stroke-width': 2, 'marker-end': 'url(#usefulverse-diagram-arrow)' });
+    addSvgElement(svg, 'rect', { x: 80, y, width: 480, height: 68, rx: 10, fill: '#f8fafc', stroke: '#475569', 'stroke-width': 2 });
+    const textNode = addSvgElement(svg, 'text', { x: 320, y: y + 41 - ([...step].length > 26 ? 9 : 0), 'text-anchor': 'middle', 'font-size': 16, fill: '#111827' });
+    const chars = typeof Intl.Segmenter === 'function' ? [...new Intl.Segmenter(locale, { granularity: 'grapheme' }).segment(step)].map(({ segment }) => segment) : [...step];
+    const lines = [];
+    for (let start = 0; start < chars.length; start += 26) lines.push(chars.slice(start, start + 26).join(''));
+    lines.forEach((line, lineIndex) => addSvgElement(textNode, 'tspan', { x: 320, dy: lineIndex ? 20 : 0 }, line));
+  });
+  svg.hidden = false;
   displayOutput(root, steps.join('\n'));
-  offerSvg(root, svg, 'usefulverse-process.svg');
+  const download = $('[data-op-download]', root);
+  if (downloadable) offerSvg(root, svg, 'usefulverse-process.svg');
+  if (download) download.hidden = !downloadable;
+  return steps;
+}
+
+function setupDiagramMaker(root) {
+  const input = $('[data-op-field="steps"]', root);
+  const editor = $('.diagram-maker', root);
+  const list = $('[data-diagram-steps]', root);
+  const svg = $('[data-op-svg]', root);
+  const output = $('#op-output', root);
+  const download = $('[data-op-download]', root);
+  const stepsFromInput = () => input.value.split(/\r?\n/u).map((step) => step.trim()).filter(Boolean);
+  const clearExport = () => {
+    if (download?.dataset.objectUrl) URL.revokeObjectURL(download.dataset.objectUrl);
+    if (download) { download.removeAttribute('href'); delete download.dataset.objectUrl; download.hidden = true; }
+  };
+  const renderList = () => {
+    const steps = stepsFromInput();
+    list.replaceChildren();
+    steps.forEach((step, index) => {
+      const item = document.createElement('li');
+      const text = document.createElement('span'); text.textContent = `${index + 1}. ${step}`;
+      const actions = document.createElement('div'); actions.className = 'tool-actions';
+      const makeAction = (label, action, disabled = false) => {
+        const button = document.createElement('button'); button.type = 'button'; button.className = 'button button--ghost';
+        button.textContent = label; button.setAttribute('aria-label', `${label}: ${step}`); button.dataset.diagramAction = action; button.dataset.diagramIndex = String(index); button.disabled = disabled; return button;
+      };
+      actions.append(makeAction(editor.dataset.diagramMoveUp, 'up', index === 0), makeAction(editor.dataset.diagramMoveDown, 'down', index === steps.length - 1), makeAction(editor.dataset.diagramRemoveStep, 'remove'));
+      item.append(text, actions); list.append(item);
+    });
+  };
+  const preview = () => {
+    const steps = stepsFromInput();
+    if (steps.length < 2 || steps.length > 12 || steps.some((step) => [...step].length > 48)) {
+      if (svg) { svg.replaceChildren(); svg.hidden = true; }
+      if (output) output.value = '';
+      clearExport();
+      return false;
+    }
+    try { drawDiagram(root, steps.join('\n')); return true; }
+    catch { clearExport(); return false; }
+  };
+  input.addEventListener('input', () => { renderList(); preview(); clearExport(); });
+  root.addEventListener('click', (event) => {
+    const action = event.target.closest('[data-diagram-action]');
+    if (action) {
+      const steps = stepsFromInput(); const index = Number(action.dataset.diagramIndex); const type = action.dataset.diagramAction;
+      if (!Number.isInteger(index) || index < 0 || index >= steps.length) return;
+      if (type === 'remove') steps.splice(index, 1);
+      else {
+        const target = type === 'up' ? index - 1 : index + 1;
+        if (target < 0 || target >= steps.length) return;
+        [steps[index], steps[target]] = [steps[target], steps[index]];
+      }
+      input.value = steps.join('\n'); renderList(); preview(); clearExport();
+      return;
+    }
+    if (event.target.closest('[data-diagram-add]')) {
+      const steps = stepsFromInput();
+      if (steps.length >= 12) return setStatus(root, editor.dataset.diagramInvalid, 'error');
+      const base = input.value.trimEnd(); const separator = base ? '\n' : '';
+      const start = base.length + separator.length;
+      input.value = `${base}${separator}${editor.dataset.diagramNewStep}`; renderList(); preview(); clearExport(); input.focus();
+      input.setSelectionRange(start, input.value.length); setStatus(root, 'Values are processed locally in this browser.');
+      return;
+    }
+    if (event.target.closest('[data-diagram-create]')) {
+      try { drawDiagram(root, input.value, { downloadable: true }); setStatus(root, 'Result ready. This calculation runs locally in your browser.', 'success'); }
+      catch (error) { clearExport(); setStatus(root, error instanceof Error ? error.message : 'Check your inputs and try again.', 'error'); }
+      return;
+    }
+    if (event.target.closest('[data-diagram-clear]')) {
+      input.value = ''; list.replaceChildren(); svg.replaceChildren(); svg.hidden = true; output.value = ''; clearExport();
+      setStatus(root, 'Fields cleared.'); input.focus();
+      return;
+    }
+    if (event.target.closest('[data-op-copy]')) copyResult(root);
+  });
+  window.addEventListener('pagehide', clearExport, { once: true });
+  renderList();
 }
 
 function setupSqlite(root) {
@@ -871,6 +958,7 @@ function setupHouseholdBudget(root) {
 
 export function setupOpportunityTool(id, root) {
   const engine = root.dataset.opEngine;
+  if (engine === 'diagram-maker') { setupDiagramMaker(root); return; }
   if (engine === 'household-budget') { setupHouseholdBudget(root); return; }
   if (engine === 'mental-math') { setupMentalMath(root); return; }
   if (engine === 'tournament-bracket') { setupTournamentBracket(root); return; }

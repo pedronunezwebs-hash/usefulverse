@@ -172,6 +172,7 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--blue); }
 .opportunity-workspace .calculator-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); align-items: start; }
 .opportunity-workspace .calculator-card { min-width: 0; }
 .opportunity-workspace [data-op-svg], .opportunity-workspace [data-function-graph] { display: block; width: 100%; max-width: 760px; height: auto; min-height: 160px; margin-block: 1rem; color: #172033; background: #fff; border: 1px solid #d9dee8; border-radius: .75rem; }
+.opportunity-workspace [data-op-svg][hidden] { display: none; }
 .opportunity-workspace [data-image-canvas] { display: block; max-width: 100%; height: auto; margin-block: 1rem; }
 .opportunity-workspace [data-device-video] { display: block; width: 100%; max-width: 720px; min-height: 180px; background: #111; border-radius: .75rem; }
 .op-sql-results { max-width: 100%; overflow: auto; }

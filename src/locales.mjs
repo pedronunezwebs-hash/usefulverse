@@ -26,7 +26,7 @@ import { guidePacks } from './locales/guide-packs.mjs';
 import { planLocaleData } from './locales/plan-language-data.mjs';
 import { gifMakerCopy } from './locales/gif-maker-copy.mjs';
 import { recordingControlLocales } from './locales/recording-controls.mjs';
-import { interactionControlLocales } from './locales/interaction-controls.mjs';
+import { diagramEditorKeys, interactionControlLocales } from './locales/interaction-controls.mjs';
 import { wordSearchBody, wordSearchDescription } from './locales/puzzle-copy.mjs';
 import {
   expandedLocaleCopyFixes,
@@ -1253,11 +1253,12 @@ for (const [language, corrections] of Object.entries(opportunityLocaleCorrection
 }
 
 for (const [language, messages] of Object.entries(interactionControlLocales)) {
-  Object.assign(ui[language] ??= {}, messages);
-  Object.assign(runtimeMessages[language] ??= {}, messages);
+  const sharedMessages = Object.fromEntries(Object.entries(messages).filter(([key]) => !diagramEditorKeys.includes(key)));
+  Object.assign(ui[language] ??= {}, sharedMessages);
+  Object.assign(runtimeMessages[language] ??= {}, sharedMessages);
   if (packs[language]) {
-    Object.assign(packs[language].ui, messages);
-    Object.assign(packs[language].runtimeMessages, messages);
+    Object.assign(packs[language].ui, sharedMessages);
+    Object.assign(packs[language].runtimeMessages, sharedMessages);
   }
 }
 // This technical schema label is also spelled “Article” in Catalan.

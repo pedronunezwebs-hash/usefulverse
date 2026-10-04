@@ -101,6 +101,46 @@ const flashcardPersistence = {
   gu: ['આ ઉપકરણમાં કાર્ડનો સમૂહ સાચવો', 'સાચવેલો કાર્ડનો સમૂહ ખોલો', 'સાચવેલો કાર્ડનો સમૂહ કાઢી નાખો'],
 };
 
+const diagramEditorLabels = {
+  en: ['Diagram steps', 'Add step', 'Move up', 'Move down', 'Remove step', 'Create diagram', 'Download diagram as SVG', 'New step', 'Use 2–12 steps, max 48 characters each.'],
+  es: ['Pasos del diagrama', 'Añadir paso', 'Mover arriba', 'Mover abajo', 'Quitar paso', 'Crear diagrama', 'Descargar diagrama en SVG', 'Paso nuevo', 'Usa de 2 a 12 pasos, máximo 48 caracteres cada uno.'],
+  fr: ['Étapes du diagramme', 'Ajouter une étape', 'Monter', 'Descendre', 'Supprimer l’étape', 'Créer le diagramme', 'Télécharger le diagramme en SVG', 'Nouvelle étape', 'Utilisez 2 à 12 étapes, de 48 caractères maximum.'],
+  pt: ['Etapas do diagrama', 'Adicionar etapa', 'Mover para cima', 'Mover para baixo', 'Remover etapa', 'Criar diagrama', 'Baixar diagrama em SVG', 'Nova etapa', 'Use de 2 a 12 etapas, com até 48 caracteres cada.'],
+  de: ['Diagrammschritte', 'Schritt hinzufügen', 'Nach oben', 'Nach unten', 'Schritt entfernen', 'Diagramm erstellen', 'Diagramm als SVG herunterladen', 'Neuer Schritt', 'Nutze 2 bis 12 Schritte mit höchstens 48 Zeichen.'],
+  ja: ['図のステップ', 'ステップを追加', '上へ移動', '下へ移動', 'ステップを削除', '図を作成', 'SVG形式で図をダウンロード', '新しいステップ', 'ステップは2～12個、各48文字以内にしてください。'],
+  ko: ['다이어그램 단계', '단계 추가', '위로 이동', '아래로 이동', '단계 삭제', '다이어그램 만들기', '다이어그램을 SVG로 다운로드', '새 단계', '단계는 2~12개이며 각각 48자 이하여야 합니다.'],
+  id: ['Langkah diagram', 'Tambah langkah', 'Pindah ke atas', 'Pindah ke bawah', 'Hapus langkah', 'Buat diagram', 'Unduh diagram sebagai SVG', 'Langkah baru', 'Gunakan 2–12 langkah, maksimal 48 karakter per langkah.'],
+  hi: ['आरेख के चरण', 'चरण जोड़ें', 'ऊपर ले जाएँ', 'नीचे ले जाएँ', 'चरण हटाएँ', 'आरेख बनाएँ', 'आरेख को SVG के रूप में डाउनलोड करें', 'नया चरण', '2–12 चरण रखें; हर चरण में अधिकतम 48 अक्षर हों।'],
+  ar: ['خطوات المخطط', 'إضافة خطوة', 'تحريك لأعلى', 'تحريك لأسفل', 'إزالة الخطوة', 'إنشاء المخطط', 'تنزيل المخطط بصيغة SVG', 'خطوة جديدة', 'استخدم من خطوتين إلى 12، بحد أقصى 48 حرفًا لكل خطوة.'],
+  zh: ['图表步骤', '添加步骤', '上移', '下移', '删除步骤', '创建图表', '下载 SVG 图表', '新步骤', '请使用 2 至 12 个步骤，每步最多 48 个字符。'],
+  bn: ['ডায়াগ্রামের ধাপ', 'ধাপ যোগ করুন', 'উপরে সরান', 'নিচে সরান', 'ধাপ সরান', 'ডায়াগ্রাম তৈরি করুন', 'SVG হিসেবে ডায়াগ্রাম ডাউনলোড করুন', 'নতুন ধাপ', '২–১২টি ধাপ দিন, প্রতিটিতে সর্বোচ্চ ৪৮টি অক্ষর।'],
+  ru: ['Шаги диаграммы', 'Добавить шаг', 'Переместить вверх', 'Переместить вниз', 'Удалить шаг', 'Создать диаграмму', 'Скачать диаграмму в SVG', 'Новый шаг', 'Используйте от 2 до 12 шагов, не более 48 символов в каждом.'],
+  ur: ['ڈایاگرام کے مراحل', 'مرحلہ شامل کریں', 'اوپر لے جائیں', 'نیچے لے جائیں', 'مرحلہ ہٹائیں', 'ڈایاگرام بنائیں', 'ڈایاگرام SVG میں ڈاؤن لوڈ کریں', 'نیا مرحلہ', '2 سے 12 مراحل رکھیں، ہر مرحلہ زیادہ سے زیادہ 48 حروف کا ہو۔'],
+  tr: ['Diyagram adımları', 'Adım ekle', 'Yukarı taşı', 'Aşağı taşı', 'Adımı kaldır', 'Diyagram oluştur', 'Diyagramı SVG olarak indir', 'Yeni adım', 'Her biri en fazla 48 karakter olan 2–12 adım kullanın.'],
+  vi: ['Các bước trong sơ đồ', 'Thêm bước', 'Chuyển lên', 'Chuyển xuống', 'Xóa bước', 'Tạo sơ đồ', 'Tải sơ đồ SVG xuống', 'Bước mới', 'Dùng 2–12 bước, mỗi bước tối đa 48 ký tự.'],
+  it: ['Passaggi del diagramma', 'Aggiungi passaggio', 'Sposta su', 'Sposta giù', 'Rimuovi passaggio', 'Crea diagramma', 'Scarica il diagramma in SVG', 'Nuovo passaggio', 'Usa da 2 a 12 passaggi, massimo 48 caratteri ciascuno.'],
+  zh_tw: ['圖表步驟', '新增步驟', '上移', '下移', '移除步驟', '建立圖表', '下載 SVG 圖表', '新步驟', '請使用 2 至 12 個步驟，每步最多 48 個字元。'],
+  bg: ['Стъпки в диаграмата', 'Добавяне на стъпка', 'Премести нагоре', 'Премести надолу', 'Премахни стъпка', 'Създай диаграма', 'Изтегли диаграмата като SVG', 'Нова стъпка', 'Използвайте 2–12 стъпки с до 48 знака всяка.'],
+  ca: ['Passos del diagrama', 'Afegeix un pas', 'Mou amunt', 'Mou avall', 'Elimina el pas', 'Crea el diagrama', 'Baixa el diagrama en SVG', 'Pas nou', 'Fes servir de 2 a 12 passos, amb un màxim de 48 caràcters cadascun.'],
+  nl: ['Diagramstappen', 'Stap toevoegen', 'Omhoog verplaatsen', 'Omlaag verplaatsen', 'Stap verwijderen', 'Diagram maken', 'Diagram downloaden als SVG', 'Nieuwe stap', 'Gebruik 2–12 stappen van maximaal 48 tekens per stap.'],
+  el: ['Βήματα διαγράμματος', 'Προσθήκη βήματος', 'Μετακίνηση πάνω', 'Μετακίνηση κάτω', 'Αφαίρεση βήματος', 'Δημιουργία διαγράμματος', 'Λήψη διαγράμματος ως SVG', 'Νέο βήμα', 'Χρησιμοποιήστε 2–12 βήματα, έως 48 χαρακτήρες το καθένα.'],
+  ms: ['Langkah rajah', 'Tambah langkah', 'Alih ke atas', 'Alih ke bawah', 'Buang langkah', 'Cipta rajah', 'Muat turun rajah sebagai SVG', 'Langkah baharu', 'Gunakan 2–12 langkah, maksimum 48 aksara setiap satu.'],
+  pl: ['Kroki diagramu', 'Dodaj krok', 'Przenieś w górę', 'Przenieś w dół', 'Usuń krok', 'Utwórz diagram', 'Pobierz diagram jako SVG', 'Nowy krok', 'Użyj 2–12 kroków, maksymalnie 48 znaków w każdym.'],
+  sv: ['Diagramsteg', 'Lägg till steg', 'Flytta upp', 'Flytta ned', 'Ta bort steg', 'Skapa diagram', 'Ladda ned diagram som SVG', 'Nytt steg', 'Använd 2–12 steg med högst 48 tecken vardera.'],
+  th: ['ขั้นตอนของแผนภาพ', 'เพิ่มขั้นตอน', 'เลื่อนขึ้น', 'เลื่อนลง', 'ลบขั้นตอน', 'สร้างแผนภาพ', 'ดาวน์โหลดแผนภาพเป็น SVG', 'ขั้นตอนใหม่', 'ใช้ 2–12 ขั้นตอน แต่ละขั้นตอนไม่เกิน 48 ตัวอักษร'],
+  uk: ['Кроки діаграми', 'Додати крок', 'Перемістити вгору', 'Перемістити вниз', 'Видалити крок', 'Створити діаграму', 'Завантажити діаграму як SVG', 'Новий крок', 'Використовуйте 2–12 кроків, до 48 символів у кожному.'],
+  sw: ['Hatua za mchoro', 'Ongeza hatua', 'Sogeza juu', 'Sogeza chini', 'Ondoa hatua', 'Unda mchoro', 'Pakua mchoro kama SVG', 'Hatua mpya', 'Tumia hatua 2–12, zenye hadi herufi 48 kila moja.'],
+  mr: ['आरेखाच्या पायऱ्या', 'पायरी जोडा', 'वर हलवा', 'खाली हलवा', 'पायरी काढा', 'आरेख तयार करा', 'आरेख SVG म्हणून डाउनलोड करा', 'नवी पायरी', '२–१२ पायऱ्या वापरा; प्रत्येक पायरीत जास्तीत जास्त ४८ अक्षरे असू द्या.'],
+  te: ['రేఖాచిత్ర దశలు', 'దశను జోడించండి', 'పైకి తరలించండి', 'కిందికి తరలించండి', 'దశను తీసివేయండి', 'రేఖాచిత్రాన్ని సృష్టించండి', 'రేఖాచిత్రాన్ని SVGగా డౌన్‌లోడ్ చేయండి', 'కొత్త దశ', '2–12 దశలు వాడండి; ఒక్కో దశలో గరిష్ఠంగా 48 అక్షరాలు ఉండాలి.'],
+  ha: ['Matakan zane', 'Ƙara mataki', 'Matsar sama', 'Matsar ƙasa', 'Cire mataki', 'Ƙirƙiri zane', 'Sauke zanen a matsayin SVG', 'Sabon mataki', 'Yi amfani da matakai 2–12, haruffa 48 ga kowane mataki.'],
+  tl: ['Mga hakbang sa diagram', 'Magdagdag ng hakbang', 'Ilipat pataas', 'Ilipat pababa', 'Alisin ang hakbang', 'Gumawa ng diagram', 'I-download ang diagram bilang SVG', 'Bagong hakbang', 'Gumamit ng 2–12 hakbang, hanggang 48 karakter bawat isa.'],
+  ta: ['படிகள்', 'சேர்', 'மேல்', 'கீழ்', 'நீக்கு', 'உருவாக்கு', 'SVG பதிவிறக்கு', 'புதியது', '2–12 படிகள்; ஒவ்வொன்றும் அதிகபட்சம் 48 எழுத்துகள்.'],
+  fa: ['مراحل نمودار', 'افزودن مرحله', 'انتقال به بالا', 'انتقال به پایین', 'حذف مرحله', 'ساخت نمودار', 'دانلود نمودار به‌صورت SVG', 'مرحله جدید', 'از ۲ تا ۱۲ مرحله، هرکدام حداکثر ۴۸ نویسه استفاده کنید.'],
+  am: ['የዲያግራም ደረጃዎች', 'ደረጃ ጨምር', 'ወደ ላይ አንቀሳቅስ', 'ወደ ታች አንቀሳቅስ', 'ደረጃ አስወግድ', 'ዲያግራም ፍጠር', 'ዲያግራሙን እንደ SVG አውርድ', 'አዲስ ደረጃ', '2–12 ደረጃዎችን ይጠቀሙ፤ እያንዳንዱ እስከ 48 ቁምፊዎች ይሁን።'],
+  gu: ['આકૃતિનાં પગલાં', 'પગલું ઉમેરો', 'ઉપર ખસેડો', 'નીચે ખસેડો', 'પગલું દૂર કરો', 'આકૃતિ બનાવો', 'આકૃતિ SVG તરીકે ડાઉનલોડ કરો', 'નવું પગલું', '2–12 પગલાં વાપરો; દરેકમાં વધુમાં વધુ 48 અક્ષરો.'],
+};
+export const diagramEditorKeys = ['Diagram steps', 'Add step', 'Move up', 'Move down', 'Remove step', 'Create diagram', 'Download diagram as SVG', 'New step', 'Use 2–12 steps, max 48 characters each.'];
+
 export const interactionControlLocales = Object.fromEntries(Object.entries(rows).map(([language, values]) => {
   if (values.length !== keys.length) throw new Error(`Interaction strings do not match for ${language}.`);
   const close = {
@@ -110,8 +150,11 @@ export const interactionControlLocales = Object.fromEntries(Object.entries(rows)
     ha: 'Rufe', tl: 'Isara', ta: 'மூடு', fa: 'بستن', am: 'ዝጋ', gu: 'બંધ કરો',
   }[language];
   const flashcardLabels = flashcardPersistence[language];
+  const diagramLabels = diagramEditorLabels[language];
   if (!flashcardLabels || flashcardLabels.length !== 3) throw new Error(`Missing flashcard save labels for ${language}.`);
+  if (!diagramLabels || diagramLabels.length !== 9) throw new Error(`Missing diagram editor labels for ${language}.`);
   if (!close) throw new Error(`Missing localized close label for ${language}.`);
   if (!noisePlayback[language]) throw new Error(`Missing localized noise status for ${language}.`);
-  return [language, { ...Object.fromEntries(keys.map((key, index) => [key, values[index]])), Close: close, 'Save deck on this device': flashcardLabels[0], 'Load saved deck': flashcardLabels[1], 'Delete saved deck': flashcardLabels[2], 'Each line needs a term, comma, and definition.': flashcardFormatError[language], 'Noise is playing in your browser.': noisePlayback[language][0], 'Noise stopped.': noisePlayback[language][1] }];
+  const diagramMessages = Object.fromEntries(diagramEditorKeys.map((key, index) => [key, diagramLabels[index]]));
+  return [language, { ...Object.fromEntries(keys.map((key, index) => [key, values[index]])), ...diagramMessages, Close: close, 'Save deck on this device': flashcardLabels[0], 'Load saved deck': flashcardLabels[1], 'Delete saved deck': flashcardLabels[2], 'Each line needs a term, comma, and definition.': flashcardFormatError[language], 'Noise is playing in your browser.': noisePlayback[language][0], 'Noise stopped.': noisePlayback[language][1] }];
 }));

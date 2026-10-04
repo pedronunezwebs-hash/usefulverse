@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { opportunityToolMarkup } from './opportunity-template.mjs';
 import { opportunityLocaleData } from './locales/opportunity-tools.mjs';
+import { interactionControlLocales } from './locales/interaction-controls.mjs';
 
 function cardAttributes(markup, fieldId) {
   const fieldIndex = markup.indexOf(`data-op-field="${fieldId}"`);
@@ -54,6 +55,18 @@ test('study planner exposes editable subjects, exam dates, workload, local save 
   const markup = opportunityToolMarkup('study-planner');
   for (const control of ['data-study-course', 'data-study-field="name"', 'data-study-field="examDate"', 'data-study-field="minutesPerDay"', 'data-study-field="tasks"', 'data-study-add', 'data-study-create', 'data-study-save', 'data-study-load', 'data-study-download', 'data-study-clear', 'data-study-schedule']) assert.ok(markup.includes(control), control);
   assert.doesNotMatch(markup, /data-op-calculate|data-op-clear/u);
+});
+
+test('diagram maker exposes accessible local step editing and SVG export', () => {
+  const markup = opportunityToolMarkup('diagram-maker', 'es', { ...opportunityLocaleData.es.ui, ...interactionControlLocales.es });
+  for (const control of ['data-op-field="steps"', 'data-diagram-add', 'data-diagram-create', 'data-diagram-clear', 'data-diagram-steps', 'data-op-svg', 'data-op-download', 'data-op-copy']) assert.ok(markup.includes(control), control);
+  assert.match(markup, /aria-label="Pasos del diagrama"/u);
+  assert.match(markup, />Añadir paso</u);
+  assert.match(markup, />Crear diagrama</u);
+  assert.match(markup, />Descargar diagrama en SVG</u);
+  assert.match(markup, /data-diagram-invalid="Usa de 2 a 12 pasos, máximo 48 caracteres cada uno\."/u);
+  assert.match(markup, /data-diagram-title="Pasos del diagrama"/u);
+  assert.doesNotMatch(markup, /data-op-calculate/u);
 });
 
 test('mental math practice exposes a bounded round and accessible answer states', () => {
