@@ -1436,12 +1436,21 @@ function setupToolPage() {
   opportunityTools.add('connect-four');
   opportunityTools.add('reversi');
   opportunityTools.add('checkers');
+  opportunityTools.add('screen-ruler');
+  opportunityTools.add('protractor');
   opportunityTools.add('kanban-board');
   opportunityTools.add('reading-speed-test');
   if (id === 'connect-four' || id === 'reversi' || id === 'checkers') {
     const assetVersion = document.documentElement.dataset.assetVersion;
     import(`./board-games-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
       .then(({ setupBoardGame }) => setupBoardGame(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'screen-ruler' || id === 'protractor') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./measurement-tools-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupMeasurementTool }) => setupMeasurementTool(id, root))
       .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
     return;
   }

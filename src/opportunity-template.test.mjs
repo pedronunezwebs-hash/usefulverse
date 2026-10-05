@@ -177,3 +177,18 @@ test('reading speed test exposes a localized local-only flow with bounded input 
   assert.match(markup, /لا يقيس الفهم بشكل موضوعي/u);
   assert.doesNotMatch(markup, /data-op-calculate|data-op-clear|Fetch|XMLHttpRequest/u);
 });
+
+test('screen ruler offers bounded pixel controls and clearly labels optional physical calibration', () => {
+  const markup = opportunityToolMarkup('screen-ruler');
+  for (const control of ['data-ruler-start', 'data-ruler-end', 'data-ruler-start-marker', 'data-ruler-end-marker', 'data-ruler-calibration-px', 'data-ruler-calibration-mm', 'data-ruler-clear-calibration', 'data-ruler-output', 'aria-live="polite"']) assert.ok(markup.includes(control), control);
+  assert.match(markup, /type="range" min="0" max="500"/u);
+  assert.match(markup, /Physical units are estimates/u);
+  assert.doesNotMatch(markup, /data-op-calculate|fetch\(|XMLHttpRequest/u);
+});
+
+test('protractor exposes two bounded adjustable rays and an accessible angle result', () => {
+  const markup = opportunityToolMarkup('protractor', 'ar');
+  for (const control of ['data-protractor-angle="0"', 'data-protractor-angle="1"', 'data-protractor-ray="0"', 'data-protractor-ray="1"', 'data-protractor-handle="0"', 'data-protractor-handle="1"', 'data-protractor-reset', 'data-protractor-output', 'role="group"', 'role="slider"', 'aria-valuemin="0"', 'aria-valuemax="180"', 'aria-live="polite"']) assert.ok(markup.includes(control), control);
+  assert.match(markup, /data-planner-messages="/u);
+  assert.doesNotMatch(markup, /data-op-calculate|fetch\(|XMLHttpRequest/u);
+});

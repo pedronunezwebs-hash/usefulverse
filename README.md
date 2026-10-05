@@ -241,7 +241,7 @@ same `dist/sitemap.xml` that is deployed, so it includes every localized route.
 
 <!-- BEGIN GENERATED SITEMAP URL INVENTORY -->
 
-Generated from `dist/sitemap.xml`: **9,144 canonical URLs**.
+Generated from `dist/sitemap.xml`: **9,216 canonical URLs**.
 
 ```text
 https://usefulverse.com/
@@ -491,6 +491,8 @@ https://usefulverse.com/tools/solitaire/
 https://usefulverse.com/tools/minesweeper/
 https://usefulverse.com/tools/nonogram/
 https://usefulverse.com/tools/sliding-puzzle/
+https://usefulverse.com/tools/screen-ruler/
+https://usefulverse.com/tools/protractor/
 https://usefulverse.com/es/
 https://usefulverse.com/es/tools/word-counter/
 https://usefulverse.com/es/tools/text-case-converter/
@@ -738,6 +740,8 @@ https://usefulverse.com/es/tools/solitaire/
 https://usefulverse.com/es/tools/minesweeper/
 https://usefulverse.com/es/tools/nonogram/
 https://usefulverse.com/es/tools/sliding-puzzle/
+https://usefulverse.com/es/tools/screen-ruler/
+https://usefulverse.com/es/tools/protractor/
 https://usefulverse.com/fr/
 https://usefulverse.com/fr/tools/word-counter/
 https://usefulverse.com/fr/tools/text-case-converter/
@@ -985,6 +989,8 @@ https://usefulverse.com/fr/tools/solitaire/
 https://usefulverse.com/fr/tools/minesweeper/
 https://usefulverse.com/fr/tools/nonogram/
 https://usefulverse.com/fr/tools/sliding-puzzle/
+https://usefulverse.com/fr/tools/screen-ruler/
+https://usefulverse.com/fr/tools/protractor/
 https://usefulverse.com/pt-br/
 https://usefulverse.com/pt-br/tools/word-counter/
 https://usefulverse.com/pt-br/tools/text-case-converter/
@@ -1232,6 +1238,8 @@ https://usefulverse.com/pt-br/tools/solitaire/
 https://usefulverse.com/pt-br/tools/minesweeper/
 https://usefulverse.com/pt-br/tools/nonogram/
 https://usefulverse.com/pt-br/tools/sliding-puzzle/
+https://usefulverse.com/pt-br/tools/screen-ruler/
+https://usefulverse.com/pt-br/tools/protractor/
 https://usefulverse.com/de/
 https://usefulverse.com/de/tools/word-counter/
 https://usefulverse.com/de/tools/text-case-converter/
@@ -1479,6 +1487,8 @@ https://usefulverse.com/de/tools/solitaire/
 https://usefulverse.com/de/tools/minesweeper/
 https://usefulverse.com/de/tools/nonogram/
 https://usefulverse.com/de/tools/sliding-puzzle/
+https://usefulverse.com/de/tools/screen-ruler/
+https://usefulverse.com/de/tools/protractor/
 https://usefulverse.com/ja/
 https://usefulverse.com/ja/tools/word-counter/
 https://usefulverse.com/ja/tools/text-case-converter/
@@ -1726,6 +1736,8 @@ https://usefulverse.com/ja/tools/solitaire/
 https://usefulverse.com/ja/tools/minesweeper/
 https://usefulverse.com/ja/tools/nonogram/
 https://usefulverse.com/ja/tools/sliding-puzzle/
+https://usefulverse.com/ja/tools/screen-ruler/
+https://usefulverse.com/ja/tools/protractor/
 https://usefulverse.com/ko/
 https://usefulverse.com/ko/tools/word-counter/
 https://usefulverse.com/ko/tools/text-case-converter/
@@ -1973,6 +1985,8 @@ https://usefulverse.com/ko/tools/solitaire/
 https://usefulverse.com/ko/tools/minesweeper/
 https://usefulverse.com/ko/tools/nonogram/
 https://usefulverse.com/ko/tools/sliding-puzzle/
+https://usefulverse.com/ko/tools/screen-ruler/
+https://usefulverse.com/ko/tools/protractor/
 https://usefulverse.com/id/
 https://usefulverse.com/id/tools/word-counter/
 https://usefulverse.com/id/tools/text-case-converter/
@@ -2220,6 +2234,8 @@ https://usefulverse.com/id/tools/solitaire/
 https://usefulverse.com/id/tools/minesweeper/
 https://usefulverse.com/id/tools/nonogram/
 https://usefulverse.com/id/tools/sliding-puzzle/
+https://usefulverse.com/id/tools/screen-ruler/
+https://usefulverse.com/id/tools/protractor/
 https://usefulverse.com/hi/
 https://usefulverse.com/hi/tools/word-counter/
 https://usefulverse.com/hi/tools/text-case-converter/
@@ -2467,6 +2483,8 @@ https://usefulverse.com/hi/tools/solitaire/
 https://usefulverse.com/hi/tools/minesweeper/
 https://usefulverse.com/hi/tools/nonogram/
 https://usefulverse.com/hi/tools/sliding-puzzle/
+https://usefulverse.com/hi/tools/screen-ruler/
+https://usefulverse.com/hi/tools/protractor/
 https://usefulverse.com/ar/
 https://usefulverse.com/ar/tools/word-counter/
 https://usefulverse.com/ar/tools/text-case-converter/
@@ -2714,6 +2732,8 @@ https://usefulverse.com/ar/tools/solitaire/
 https://usefulverse.com/ar/tools/minesweeper/
 https://usefulverse.com/ar/tools/nonogram/
 https://usefulverse.com/ar/tools/sliding-puzzle/
+https://usefulverse.com/ar/tools/screen-ruler/
+https://usefulverse.com/ar/tools/protractor/
 https://usefulverse.com/zh-cn/
 https://usefulverse.com/zh-cn/tools/word-counter/
 https://usefulverse.com/zh-cn/tools/text-case-converter/
@@ -2961,6 +2981,8 @@ https://usefulverse.com/zh-cn/tools/solitaire/
 https://usefulverse.com/zh-cn/tools/minesweeper/
 https://usefulverse.com/zh-cn/tools/nonogram/
 https://usefulverse.com/zh-cn/tools/sliding-puzzle/
+https://usefulverse.com/zh-cn/tools/screen-ruler/
+https://usefulverse.com/zh-cn/tools/protractor/
 https://usefulverse.com/bn/
 https://usefulverse.com/bn/tools/word-counter/
 https://usefulverse.com/bn/tools/text-case-converter/
@@ -3208,6 +3230,8 @@ https://usefulverse.com/bn/tools/solitaire/
 https://usefulverse.com/bn/tools/minesweeper/
 https://usefulverse.com/bn/tools/nonogram/
 https://usefulverse.com/bn/tools/sliding-puzzle/
+https://usefulverse.com/bn/tools/screen-ruler/
+https://usefulverse.com/bn/tools/protractor/
 https://usefulverse.com/ru/
 https://usefulverse.com/ru/tools/word-counter/
 https://usefulverse.com/ru/tools/text-case-converter/
@@ -3455,6 +3479,8 @@ https://usefulverse.com/ru/tools/solitaire/
 https://usefulverse.com/ru/tools/minesweeper/
 https://usefulverse.com/ru/tools/nonogram/
 https://usefulverse.com/ru/tools/sliding-puzzle/
+https://usefulverse.com/ru/tools/screen-ruler/
+https://usefulverse.com/ru/tools/protractor/
 https://usefulverse.com/ur/
 https://usefulverse.com/ur/tools/word-counter/
 https://usefulverse.com/ur/tools/text-case-converter/
@@ -3702,6 +3728,8 @@ https://usefulverse.com/ur/tools/solitaire/
 https://usefulverse.com/ur/tools/minesweeper/
 https://usefulverse.com/ur/tools/nonogram/
 https://usefulverse.com/ur/tools/sliding-puzzle/
+https://usefulverse.com/ur/tools/screen-ruler/
+https://usefulverse.com/ur/tools/protractor/
 https://usefulverse.com/tr/
 https://usefulverse.com/tr/tools/word-counter/
 https://usefulverse.com/tr/tools/text-case-converter/
@@ -3949,6 +3977,8 @@ https://usefulverse.com/tr/tools/solitaire/
 https://usefulverse.com/tr/tools/minesweeper/
 https://usefulverse.com/tr/tools/nonogram/
 https://usefulverse.com/tr/tools/sliding-puzzle/
+https://usefulverse.com/tr/tools/screen-ruler/
+https://usefulverse.com/tr/tools/protractor/
 https://usefulverse.com/vi/
 https://usefulverse.com/vi/tools/word-counter/
 https://usefulverse.com/vi/tools/text-case-converter/
@@ -4196,6 +4226,8 @@ https://usefulverse.com/vi/tools/solitaire/
 https://usefulverse.com/vi/tools/minesweeper/
 https://usefulverse.com/vi/tools/nonogram/
 https://usefulverse.com/vi/tools/sliding-puzzle/
+https://usefulverse.com/vi/tools/screen-ruler/
+https://usefulverse.com/vi/tools/protractor/
 https://usefulverse.com/it/
 https://usefulverse.com/it/tools/word-counter/
 https://usefulverse.com/it/tools/text-case-converter/
@@ -4443,6 +4475,8 @@ https://usefulverse.com/it/tools/solitaire/
 https://usefulverse.com/it/tools/minesweeper/
 https://usefulverse.com/it/tools/nonogram/
 https://usefulverse.com/it/tools/sliding-puzzle/
+https://usefulverse.com/it/tools/screen-ruler/
+https://usefulverse.com/it/tools/protractor/
 https://usefulverse.com/zh-tw/
 https://usefulverse.com/zh-tw/tools/word-counter/
 https://usefulverse.com/zh-tw/tools/text-case-converter/
@@ -4690,6 +4724,8 @@ https://usefulverse.com/zh-tw/tools/solitaire/
 https://usefulverse.com/zh-tw/tools/minesweeper/
 https://usefulverse.com/zh-tw/tools/nonogram/
 https://usefulverse.com/zh-tw/tools/sliding-puzzle/
+https://usefulverse.com/zh-tw/tools/screen-ruler/
+https://usefulverse.com/zh-tw/tools/protractor/
 https://usefulverse.com/bg/
 https://usefulverse.com/bg/tools/word-counter/
 https://usefulverse.com/bg/tools/text-case-converter/
@@ -4937,6 +4973,8 @@ https://usefulverse.com/bg/tools/solitaire/
 https://usefulverse.com/bg/tools/minesweeper/
 https://usefulverse.com/bg/tools/nonogram/
 https://usefulverse.com/bg/tools/sliding-puzzle/
+https://usefulverse.com/bg/tools/screen-ruler/
+https://usefulverse.com/bg/tools/protractor/
 https://usefulverse.com/ca/
 https://usefulverse.com/ca/tools/word-counter/
 https://usefulverse.com/ca/tools/text-case-converter/
@@ -5184,6 +5222,8 @@ https://usefulverse.com/ca/tools/solitaire/
 https://usefulverse.com/ca/tools/minesweeper/
 https://usefulverse.com/ca/tools/nonogram/
 https://usefulverse.com/ca/tools/sliding-puzzle/
+https://usefulverse.com/ca/tools/screen-ruler/
+https://usefulverse.com/ca/tools/protractor/
 https://usefulverse.com/nl/
 https://usefulverse.com/nl/tools/word-counter/
 https://usefulverse.com/nl/tools/text-case-converter/
@@ -5431,6 +5471,8 @@ https://usefulverse.com/nl/tools/solitaire/
 https://usefulverse.com/nl/tools/minesweeper/
 https://usefulverse.com/nl/tools/nonogram/
 https://usefulverse.com/nl/tools/sliding-puzzle/
+https://usefulverse.com/nl/tools/screen-ruler/
+https://usefulverse.com/nl/tools/protractor/
 https://usefulverse.com/el/
 https://usefulverse.com/el/tools/word-counter/
 https://usefulverse.com/el/tools/text-case-converter/
@@ -5678,6 +5720,8 @@ https://usefulverse.com/el/tools/solitaire/
 https://usefulverse.com/el/tools/minesweeper/
 https://usefulverse.com/el/tools/nonogram/
 https://usefulverse.com/el/tools/sliding-puzzle/
+https://usefulverse.com/el/tools/screen-ruler/
+https://usefulverse.com/el/tools/protractor/
 https://usefulverse.com/ms/
 https://usefulverse.com/ms/tools/word-counter/
 https://usefulverse.com/ms/tools/text-case-converter/
@@ -5925,6 +5969,8 @@ https://usefulverse.com/ms/tools/solitaire/
 https://usefulverse.com/ms/tools/minesweeper/
 https://usefulverse.com/ms/tools/nonogram/
 https://usefulverse.com/ms/tools/sliding-puzzle/
+https://usefulverse.com/ms/tools/screen-ruler/
+https://usefulverse.com/ms/tools/protractor/
 https://usefulverse.com/pl/
 https://usefulverse.com/pl/tools/word-counter/
 https://usefulverse.com/pl/tools/text-case-converter/
@@ -6172,6 +6218,8 @@ https://usefulverse.com/pl/tools/solitaire/
 https://usefulverse.com/pl/tools/minesweeper/
 https://usefulverse.com/pl/tools/nonogram/
 https://usefulverse.com/pl/tools/sliding-puzzle/
+https://usefulverse.com/pl/tools/screen-ruler/
+https://usefulverse.com/pl/tools/protractor/
 https://usefulverse.com/sv/
 https://usefulverse.com/sv/tools/word-counter/
 https://usefulverse.com/sv/tools/text-case-converter/
@@ -6419,6 +6467,8 @@ https://usefulverse.com/sv/tools/solitaire/
 https://usefulverse.com/sv/tools/minesweeper/
 https://usefulverse.com/sv/tools/nonogram/
 https://usefulverse.com/sv/tools/sliding-puzzle/
+https://usefulverse.com/sv/tools/screen-ruler/
+https://usefulverse.com/sv/tools/protractor/
 https://usefulverse.com/th/
 https://usefulverse.com/th/tools/word-counter/
 https://usefulverse.com/th/tools/text-case-converter/
@@ -6666,6 +6716,8 @@ https://usefulverse.com/th/tools/solitaire/
 https://usefulverse.com/th/tools/minesweeper/
 https://usefulverse.com/th/tools/nonogram/
 https://usefulverse.com/th/tools/sliding-puzzle/
+https://usefulverse.com/th/tools/screen-ruler/
+https://usefulverse.com/th/tools/protractor/
 https://usefulverse.com/uk/
 https://usefulverse.com/uk/tools/word-counter/
 https://usefulverse.com/uk/tools/text-case-converter/
@@ -6913,6 +6965,8 @@ https://usefulverse.com/uk/tools/solitaire/
 https://usefulverse.com/uk/tools/minesweeper/
 https://usefulverse.com/uk/tools/nonogram/
 https://usefulverse.com/uk/tools/sliding-puzzle/
+https://usefulverse.com/uk/tools/screen-ruler/
+https://usefulverse.com/uk/tools/protractor/
 https://usefulverse.com/sw/
 https://usefulverse.com/sw/tools/word-counter/
 https://usefulverse.com/sw/tools/text-case-converter/
@@ -7160,6 +7214,8 @@ https://usefulverse.com/sw/tools/solitaire/
 https://usefulverse.com/sw/tools/minesweeper/
 https://usefulverse.com/sw/tools/nonogram/
 https://usefulverse.com/sw/tools/sliding-puzzle/
+https://usefulverse.com/sw/tools/screen-ruler/
+https://usefulverse.com/sw/tools/protractor/
 https://usefulverse.com/mr/
 https://usefulverse.com/mr/tools/word-counter/
 https://usefulverse.com/mr/tools/text-case-converter/
@@ -7407,6 +7463,8 @@ https://usefulverse.com/mr/tools/solitaire/
 https://usefulverse.com/mr/tools/minesweeper/
 https://usefulverse.com/mr/tools/nonogram/
 https://usefulverse.com/mr/tools/sliding-puzzle/
+https://usefulverse.com/mr/tools/screen-ruler/
+https://usefulverse.com/mr/tools/protractor/
 https://usefulverse.com/te/
 https://usefulverse.com/te/tools/word-counter/
 https://usefulverse.com/te/tools/text-case-converter/
@@ -7654,6 +7712,8 @@ https://usefulverse.com/te/tools/solitaire/
 https://usefulverse.com/te/tools/minesweeper/
 https://usefulverse.com/te/tools/nonogram/
 https://usefulverse.com/te/tools/sliding-puzzle/
+https://usefulverse.com/te/tools/screen-ruler/
+https://usefulverse.com/te/tools/protractor/
 https://usefulverse.com/ha/
 https://usefulverse.com/ha/tools/word-counter/
 https://usefulverse.com/ha/tools/text-case-converter/
@@ -7901,6 +7961,8 @@ https://usefulverse.com/ha/tools/solitaire/
 https://usefulverse.com/ha/tools/minesweeper/
 https://usefulverse.com/ha/tools/nonogram/
 https://usefulverse.com/ha/tools/sliding-puzzle/
+https://usefulverse.com/ha/tools/screen-ruler/
+https://usefulverse.com/ha/tools/protractor/
 https://usefulverse.com/tl/
 https://usefulverse.com/tl/tools/word-counter/
 https://usefulverse.com/tl/tools/text-case-converter/
@@ -8148,6 +8210,8 @@ https://usefulverse.com/tl/tools/solitaire/
 https://usefulverse.com/tl/tools/minesweeper/
 https://usefulverse.com/tl/tools/nonogram/
 https://usefulverse.com/tl/tools/sliding-puzzle/
+https://usefulverse.com/tl/tools/screen-ruler/
+https://usefulverse.com/tl/tools/protractor/
 https://usefulverse.com/ta/
 https://usefulverse.com/ta/tools/word-counter/
 https://usefulverse.com/ta/tools/text-case-converter/
@@ -8395,6 +8459,8 @@ https://usefulverse.com/ta/tools/solitaire/
 https://usefulverse.com/ta/tools/minesweeper/
 https://usefulverse.com/ta/tools/nonogram/
 https://usefulverse.com/ta/tools/sliding-puzzle/
+https://usefulverse.com/ta/tools/screen-ruler/
+https://usefulverse.com/ta/tools/protractor/
 https://usefulverse.com/fa/
 https://usefulverse.com/fa/tools/word-counter/
 https://usefulverse.com/fa/tools/text-case-converter/
@@ -8642,6 +8708,8 @@ https://usefulverse.com/fa/tools/solitaire/
 https://usefulverse.com/fa/tools/minesweeper/
 https://usefulverse.com/fa/tools/nonogram/
 https://usefulverse.com/fa/tools/sliding-puzzle/
+https://usefulverse.com/fa/tools/screen-ruler/
+https://usefulverse.com/fa/tools/protractor/
 https://usefulverse.com/am/
 https://usefulverse.com/am/tools/word-counter/
 https://usefulverse.com/am/tools/text-case-converter/
@@ -8889,6 +8957,8 @@ https://usefulverse.com/am/tools/solitaire/
 https://usefulverse.com/am/tools/minesweeper/
 https://usefulverse.com/am/tools/nonogram/
 https://usefulverse.com/am/tools/sliding-puzzle/
+https://usefulverse.com/am/tools/screen-ruler/
+https://usefulverse.com/am/tools/protractor/
 https://usefulverse.com/gu/
 https://usefulverse.com/gu/tools/word-counter/
 https://usefulverse.com/gu/tools/text-case-converter/
@@ -9136,6 +9206,8 @@ https://usefulverse.com/gu/tools/solitaire/
 https://usefulverse.com/gu/tools/minesweeper/
 https://usefulverse.com/gu/tools/nonogram/
 https://usefulverse.com/gu/tools/sliding-puzzle/
+https://usefulverse.com/gu/tools/screen-ruler/
+https://usefulverse.com/gu/tools/protractor/
 https://usefulverse.com/guides/
 https://usefulverse.com/guides/how-to-calculate-a-weighted-grade/
 https://usefulverse.com/guides/google-docs-word-count/
