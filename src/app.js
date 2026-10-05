@@ -1402,6 +1402,7 @@ function setupToolPage() {
   opportunityTools.add('font-tester');
   opportunityTools.add('kakuro');
   opportunityTools.add('battleship');
+  opportunityTools.add('color-vision-simulator');
   opportunityTools.add('study-planner');
   opportunityTools.add('seating-chart-maker');
   opportunityTools.add('gantt-chart-maker');

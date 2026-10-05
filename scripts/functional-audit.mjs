@@ -38,6 +38,10 @@ modules.set('habit-tracker', 'src/habit-tracker-runtime.js');
 modules.set('time-tracker', 'src/time-tracker-runtime.js');
 modules.set('weekly-meal-planner', 'src/weekly-meal-planner-runtime.js');
 modules.set('online-sequencer', 'src/online-sequencer-runtime.js');
+modules.set('battleship', 'src/battleship-runtime.js');
+modules.set('kakuro', 'src/kakuro-runtime.js');
+modules.set('font-tester', 'src/font-tester-runtime.js');
+modules.set('color-vision-simulator', 'src/color-vision-runtime.js');
 for (const id of ['css-animation-generator', 'css-clip-path-editor', 'css-filter-generator']) modules.set(id, 'src/css-design-tools.js');
 for (const id of ['api-request-builder', 'html-table-generator', 'pwa-manifest-generator']) modules.set(id, 'src/web-dev-tools.js');
 for (const id of ['connect-four', 'reversi', 'checkers']) modules.set(id, 'src/board-games-runtime.js');
@@ -45,6 +49,7 @@ for (const id of ['screen-ruler', 'protractor']) modules.set(id, 'src/measuremen
 for (const id of ['printable-label-maker', 'poster-maker', 'certificate-maker', 'invitation-maker']) modules.set(id, 'src/print-studio-runtime.js');
 const coreSetups = app.match(/const setups = \{([\s\S]*?)\n\s*\};/u)?.[1] ?? '';
 for (const [, id] of coreSetups.matchAll(/'([^']+)'\s*:/gu)) modules.set(id, 'src/app.js');
+for (const tool of opportunityTools) if (!modules.has(tool.id)) modules.set(tool.id, 'src/opportunity-runtime.js');
 
 const engines = new Map(opportunityTools.map(({ id, engine }) => [id, engine]));
 const esc = (value) => `"${String(value ?? '').replaceAll('"', '""')}"`;
@@ -68,6 +73,7 @@ for (const tool of tools) {
   const related = relatedToolIds[tool.id] ?? [];
   const verifiedCandidate = [
     'battleship',
+    'color-vision-simulator',
     'music-scale-finder', 'sprite-sheet-maker', 'study-planner', 'online-sequencer',
     'equation-solver', 'system-of-equations-calculator', 'polynomial-factorization-calculator',
     'probability-calculator', 'z-score-calculator', 'coordinate-geometry-calculator',
@@ -118,6 +124,7 @@ for (const tool of tools) {
   const correctedCandidate = ['online-timer', 'flashcard-maker', 'online-metronome', 'word-search-maker', 'crossword-maker', 'virtual-piano', 'voice-recorder', 'screen-recorder', 'mental-math-practice', 'tournament-bracket-generator', 'chess-clock', 'ear-training', 'bpm-detector', 'song-key-finder', 'audio-spectrogram', 'seating-chart-maker', 'gantt-chart-maker', 'household-budget-planner', 'diagram-maker', 'noise-generator', 'teleprompter-online', 'typing-speed-test', 'task-list', 'kanban-board', 'reading-speed-test', 'habit-tracker', 'time-tracker', 'weekly-meal-planner', 'reading-log', 'pdf-tools', 'pdf-protect-unlock', 'pdf-repair', 'pdf-redact', 'pdf-to-pdfa', 'pdf-page-editor', 'html-to-pdf', 'pdf-document-converter', 'pdf-form-filler', 'image-to-text', 'pdf-ocr', 'portrait-background-remover', 'media-transcriber', 'drum-machine', 'api-request-builder', 'html-table-generator', 'pwa-manifest-generator', 'connect-four', 'reversi', 'checkers', 'fretboard-trainer', 'font-tester', 'kakuro'].includes(tool.id);
   const evidenceByTool = {
     'battleship': 'Unit tests cover 40 randomized fleets, straight non-overlapping ships, hits/misses, repeated-shot rejection, sinking, player win, computer win and turn progression. Isolated local Chrome fired targets through a player victory, observed computer shots and terminal state, then started a new game and confirmed a different fleet and all 64 targets reset. Arabic RTL showed translated headings, status controls and row/column labels. The computer uses random shots only; no optimal AI, manual placement, multiplayer or exhaustive browser/device support is claimed.',
+    'color-vision-simulator': 'Unit tests cover deterministic normal/protanopia/deuteranopia/tritanopia/achromatopsia transforms, alpha preservation, grayscale output, malformed data, unknown modes, supported MIME types and exact 10 MiB/4-megapixel limits. Isolated local Chrome rendered the sample palette, changed the simulation, loaded a synthetic 2×2 PNG through the browser file chooser, changed to achromatopsia, cleared the image and confirmed canvases reset to 0×0; the Arabic RTL route rendered localized controls and terminology with no console errors. Only synthetic imagery and Chrome were exercised; real photographs, full-resolution memory, mobile devices, color-science accuracy and other browser implementations remain unverified. Simulation is educational, not medical or accessibility certification.',
     'font-tester': 'Unit tests reject missing, empty, unsupported and over-10-MB files and accept WOFF, WOFF2, TTF and OTF at the exact cap. Isolated local Chrome loaded a system TTF, confirmed document.fonts.check, changed preview text, then Reset restored sans-serif, cleared the file input and released the font; an unsupported .mjs file was rejected. Arabic RTL labels are localized and browser console had no errors. Actual WOFF/WOFF2/OTF decoding, mobile behavior, accessibility variants and all devices remain unverified.',
     'kakuro': 'Unit tests generated 12 distinct 4×4 boards, checked each row/column no-repeat constraint and all sums, verified hints, rejected malformed/incomplete grids, and normalized Arabic-Indic, Persian, Devanagari and fullwidth digits. Local Chrome solved a generated grid from its visible clues and showed “Puzzle solved!”, then tested a fresh puzzle, hint, clear and incomplete-state feedback. Arabic RTL controls and clues were visible. Mobile behavior, exhaustive puzzle difficulty and other browsers remain unverified.',
     'hangul-practice': 'Isolated local Chrome completed a five-question round by matching Hangul consonants/vowels to the displayed romanized readings; final status was “Round complete: 5 of 5 correct.” Unit tests cover distinct items, one valid choice, consonant/vowel groups and invalid size/group. Static localization checks cover all 36 locales and placeholders. This teaches only 14 basic consonants and 10 basic vowels; romanization is approximate. Wrong-answer feedback, vowel-only 10-question round, pronunciation, expanded syllables and other browsers remain unverified.',

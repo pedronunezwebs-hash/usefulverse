@@ -1041,6 +1041,12 @@ export function setupOpportunityTool(id, root) {
     import(battleshipUrl.href).then(({ setupBattleship }) => setupBattleship(root)).catch(() => setStatus(root, 'Tool loading failed. Refresh the page and try again.', 'error'));
     return;
   }
+  if (engine === 'color-vision-simulator') {
+    const colorVisionUrl = new URL('./color-vision-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
+    if (version) colorVisionUrl.searchParams.set('v', version);
+    import(colorVisionUrl.href).then(({ setupColorVision }) => setupColorVision(root)).catch(() => setStatus(root, 'Tool loading failed. Refresh the page and try again.', 'error'));
+    return;
+  }
   if (engine === 'tic-tac-toe') {
     const gameUrl = new URL('./tic-tac-toe-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
     if (version) gameUrl.searchParams.set('v', version);

@@ -40,6 +40,7 @@ uiPhrases.push('One label per line', 'Page size', 'Color theme', 'Poster title',
 uiPhrases.push('Choose a short audio file to estimate its likely key. The audio stays on your device.', 'Choose a short audio file to visualize its frequencies. The audio stays on your device.', 'Choose audio file', 'Analyze audio', 'Clear', 'No audio selected.', 'File size limit: 25 MB. Keep the clip under 3 minutes.', 'Analyzing audio on this device…', 'Likely key', 'Other possibilities', 'No clear key detected. Try a longer section with clear harmony.', 'This browser could not decode this audio format.', 'The file is larger than 25 MB.', 'The decoded clip is longer than 3 minutes.', 'Audio analysis failed. Try another supported file.', 'This is an estimate, not a guaranteed key. Compare the alternatives.', 'Run analysis to see likely keys.', 'The chosen file stays in this browser and is not uploaded.', 'Audio analysis uses device memory and processing.', 'Analysis complete.', 'Audio spectrogram', 'Frequency', 'Time', 'A spectrogram shows frequency energy over time; it is not a calibrated measurement.');
 uiPhrases.push('The board uses standard E–A–D–G–B–E tuning and frets 0–12.', 'Which note is on string {string}, fret {fret}?', 'Choose a note.', 'Correct: {correct} · streak: {streak}', 'Correct! The note is {note}.', 'Not quite. Try another note.', 'Next note', 'Reset score');
 uiPhrases.push('Rhythm practice', 'Tap in time', 'Listen to one bar, then tap each beat 16 times.', 'Rhythm practice started. Listen to the count-in.', 'Practice complete: {accuracy}% on time; average error {offset} ms.', 'Practice stopped after {count} of 16 taps.', 'Tap after starting rhythm practice.', 'Rhythm practice stopped.', 'Wait for the count-in to finish.');
+uiPhrases.push('This is an approximate visual simulation, not a diagnosis or accessibility certification. Your image stays on this device and is not uploaded.', 'Choose image', 'Simulation mode', 'Normal color vision', 'Protanopia simulation', 'Deuteranopia simulation', 'Tritanopia simulation', 'Achromatopsia simulation', 'Create sample palette', 'Clear image', 'Original image', 'Simulated image', 'Choose an image or create a sample palette to begin.', 'Image loaded locally. Choose a simulation mode.', 'Sample palette created.', 'Image cleared.', 'Choose a PNG, JPEG, WebP, GIF or BMP image.', 'The image is larger than 10 MB. Choose a smaller file.', 'The image exceeds the 4-megapixel limit. Choose a smaller image.', 'This image could not be opened by your browser.', 'Color vision simulation failed. Try another image.');
 const corrections = {
   el: { copy: { 'fretboard-trainer': ['Εκπαιδευτής ταστιέρας κιθάρας'] } },
   ha: { copy: { 'fretboard-trainer': ['Mai koyon bayanin fret na gitar'] } },
@@ -88,6 +89,14 @@ corrections.fa.copy = { ...corrections.fa.copy, 'css-animation-generator': ['م�
 // Avoid a few untranslated literals returned by the free draft translator.
 corrections.it ??= {};
 corrections.it.ui = { ...corrections.it.ui, Time: 'Orario' };
+corrections.bn ??= {};
+corrections.bn.ui = { ...corrections.bn.ui, 'Deuteranopia simulation': 'ডিউটেরানোপিয়া সিমুলেশন' };
+corrections.ar ??= {};
+corrections.ar.ui = { ...corrections.ar.ui, 'Deuteranopia simulation': 'محاكاة الديوترانوبيا', 'Clear image': 'مسح الصورة', 'Simulated image': 'الصورة المحاكاة' };
+corrections.ur ??= {};
+corrections.ur.ui = { ...corrections.ur.ui, 'Deuteranopia simulation': 'ڈییوٹیرانوپیا کی نقل' };
+corrections.tl ??= {};
+corrections.tl.ui = { ...corrections.tl.ui, 'Simulation mode': 'Paraan ng pagtulad', 'Protanopia simulation': 'Pagtulad sa protanopia', 'Deuteranopia simulation': 'Pagtulad sa deuteranopia', 'Tritanopia simulation': 'Pagtulad sa tritanopia', 'Achromatopsia simulation': 'Pagtulad sa achromatopsia' };
 corrections.nl ??= {};
 corrections.nl.ui = { ...corrections.nl.ui, Violet: 'Paars' };
 corrections.ms ??= {};

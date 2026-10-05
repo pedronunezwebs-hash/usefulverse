@@ -7,7 +7,7 @@ Browser-first collection of fast, private, static tools for everyday work.
 - Processing happens in the browser whenever possible.
 - No account, upload or paid API is required.
 - Each useful tool gets its own stable, indexable URL.
-- The current catalog contains 256 browser-first tools across writing, data, developer, SEO, design, privacy, text, files, productivity, education, music, games and CSS design.
+- The current catalog contains 259 browser-first tools across writing, data, developer, SEO, design, privacy, text, files, productivity, education, music, games, accessibility and CSS design.
 - The public build is static and deployable to Cloudflare Pages.
 - CSS and JavaScript URLs are content-versioned during the build so CDN caches cannot serve an old runtime after a deploy.
 - HTML uses short browser and edge cache lifetimes; versioned assets remain immutable for repeat visits.
@@ -32,7 +32,7 @@ Russian (`/ru/`), Urdu (`/ur/`), Turkish (`/tr/`), Vietnamese (`/vi/`), Italian
 Dutch (`/nl/`), Greek (`/el/`), Malay (`/ms/`), Polish (`/pl/`), Swedish
 (`/sv/`), Thai (`/th/`), Ukrainian (`/uk/`), Swahili (`/sw/`), Marathi (`/mr/`),
 Telugu (`/te/`), Hausa (`/ha/`), Filipino (`/tl/`), Tamil (`/ta/`), Persian
-(`/fa/`), Amharic (`/am/`) and Gujarati (`/gu/`). Each of the 256 tools has a
+(`/fa/`), Amharic (`/am/`) and Gujarati (`/gu/`). Each of the 259 tools has a
 matching URL in every language. Newer language packs use concise machine-assisted
 translations accepted by the owner; they are not represented as native-reviewed.
 The build creates every version as static HTML, adds
@@ -54,9 +54,15 @@ engine. The recording is not uploaded, although the browser may download those f
 again if its cache is cleared. File processing stays on the visitor's device; memory,
 storage, browser, battery, speed and codec support are practical limits, not a server
 upload-size quota. Heavy media code is loaded only when needed. The generated sitemap
-contains 9,504 URLs: 256 tools and one home page in each of 36 languages, plus seven
+contains 9,612 URLs: 259 tools and one home page in each of 36 languages, plus seven
 guide routes (the guide index and six sourced, task-specific guides) in every language.
 Guides are static HTML and add no server processing or paid API usage.
+
+Local browser games include randomly generated Kakuro puzzles and an 8×8 Battleship
+game against a simple opponent. The color-vision simulator processes raster images
+in the browser, supports five approximate viewing modes, and caps input at 10 MiB
+and four megapixels to reduce memory pressure. It is an educational aid, not a
+diagnostic or accessibility certification.
 
 Music practice includes local pitch, scale, chord and ear-training tools, plus a
 randomized guitar-fretboard note quiz for standard tuning. Its score is transient
@@ -249,7 +255,7 @@ same `dist/sitemap.xml` that is deployed, so it includes every localized route.
 
 <!-- BEGIN GENERATED SITEMAP URL INVENTORY -->
 
-Generated from `dist/sitemap.xml`: **9,576 canonical URLs**.
+Generated from `dist/sitemap.xml`: **9,612 canonical URLs**.
 
 ```text
 https://usefulverse.com/
@@ -353,6 +359,7 @@ https://usefulverse.com/tools/image-metadata-remover/
 https://usefulverse.com/tools/gif-maker/
 https://usefulverse.com/tools/screen-recorder/
 https://usefulverse.com/tools/voice-recorder/
+https://usefulverse.com/tools/color-vision-simulator/
 https://usefulverse.com/tools/weekly-meal-planner/
 https://usefulverse.com/tools/reading-log/
 https://usefulverse.com/tools/time-tracker/
@@ -612,6 +619,7 @@ https://usefulverse.com/es/tools/image-metadata-remover/
 https://usefulverse.com/es/tools/gif-maker/
 https://usefulverse.com/es/tools/screen-recorder/
 https://usefulverse.com/es/tools/voice-recorder/
+https://usefulverse.com/es/tools/color-vision-simulator/
 https://usefulverse.com/es/tools/weekly-meal-planner/
 https://usefulverse.com/es/tools/reading-log/
 https://usefulverse.com/es/tools/time-tracker/
@@ -871,6 +879,7 @@ https://usefulverse.com/fr/tools/image-metadata-remover/
 https://usefulverse.com/fr/tools/gif-maker/
 https://usefulverse.com/fr/tools/screen-recorder/
 https://usefulverse.com/fr/tools/voice-recorder/
+https://usefulverse.com/fr/tools/color-vision-simulator/
 https://usefulverse.com/fr/tools/weekly-meal-planner/
 https://usefulverse.com/fr/tools/reading-log/
 https://usefulverse.com/fr/tools/time-tracker/
@@ -1130,6 +1139,7 @@ https://usefulverse.com/pt-br/tools/image-metadata-remover/
 https://usefulverse.com/pt-br/tools/gif-maker/
 https://usefulverse.com/pt-br/tools/screen-recorder/
 https://usefulverse.com/pt-br/tools/voice-recorder/
+https://usefulverse.com/pt-br/tools/color-vision-simulator/
 https://usefulverse.com/pt-br/tools/weekly-meal-planner/
 https://usefulverse.com/pt-br/tools/reading-log/
 https://usefulverse.com/pt-br/tools/time-tracker/
@@ -1389,6 +1399,7 @@ https://usefulverse.com/de/tools/image-metadata-remover/
 https://usefulverse.com/de/tools/gif-maker/
 https://usefulverse.com/de/tools/screen-recorder/
 https://usefulverse.com/de/tools/voice-recorder/
+https://usefulverse.com/de/tools/color-vision-simulator/
 https://usefulverse.com/de/tools/weekly-meal-planner/
 https://usefulverse.com/de/tools/reading-log/
 https://usefulverse.com/de/tools/time-tracker/
@@ -1648,6 +1659,7 @@ https://usefulverse.com/ja/tools/image-metadata-remover/
 https://usefulverse.com/ja/tools/gif-maker/
 https://usefulverse.com/ja/tools/screen-recorder/
 https://usefulverse.com/ja/tools/voice-recorder/
+https://usefulverse.com/ja/tools/color-vision-simulator/
 https://usefulverse.com/ja/tools/weekly-meal-planner/
 https://usefulverse.com/ja/tools/reading-log/
 https://usefulverse.com/ja/tools/time-tracker/
@@ -1907,6 +1919,7 @@ https://usefulverse.com/ko/tools/image-metadata-remover/
 https://usefulverse.com/ko/tools/gif-maker/
 https://usefulverse.com/ko/tools/screen-recorder/
 https://usefulverse.com/ko/tools/voice-recorder/
+https://usefulverse.com/ko/tools/color-vision-simulator/
 https://usefulverse.com/ko/tools/weekly-meal-planner/
 https://usefulverse.com/ko/tools/reading-log/
 https://usefulverse.com/ko/tools/time-tracker/
@@ -2166,6 +2179,7 @@ https://usefulverse.com/id/tools/image-metadata-remover/
 https://usefulverse.com/id/tools/gif-maker/
 https://usefulverse.com/id/tools/screen-recorder/
 https://usefulverse.com/id/tools/voice-recorder/
+https://usefulverse.com/id/tools/color-vision-simulator/
 https://usefulverse.com/id/tools/weekly-meal-planner/
 https://usefulverse.com/id/tools/reading-log/
 https://usefulverse.com/id/tools/time-tracker/
@@ -2425,6 +2439,7 @@ https://usefulverse.com/hi/tools/image-metadata-remover/
 https://usefulverse.com/hi/tools/gif-maker/
 https://usefulverse.com/hi/tools/screen-recorder/
 https://usefulverse.com/hi/tools/voice-recorder/
+https://usefulverse.com/hi/tools/color-vision-simulator/
 https://usefulverse.com/hi/tools/weekly-meal-planner/
 https://usefulverse.com/hi/tools/reading-log/
 https://usefulverse.com/hi/tools/time-tracker/
@@ -2684,6 +2699,7 @@ https://usefulverse.com/ar/tools/image-metadata-remover/
 https://usefulverse.com/ar/tools/gif-maker/
 https://usefulverse.com/ar/tools/screen-recorder/
 https://usefulverse.com/ar/tools/voice-recorder/
+https://usefulverse.com/ar/tools/color-vision-simulator/
 https://usefulverse.com/ar/tools/weekly-meal-planner/
 https://usefulverse.com/ar/tools/reading-log/
 https://usefulverse.com/ar/tools/time-tracker/
@@ -2943,6 +2959,7 @@ https://usefulverse.com/zh-cn/tools/image-metadata-remover/
 https://usefulverse.com/zh-cn/tools/gif-maker/
 https://usefulverse.com/zh-cn/tools/screen-recorder/
 https://usefulverse.com/zh-cn/tools/voice-recorder/
+https://usefulverse.com/zh-cn/tools/color-vision-simulator/
 https://usefulverse.com/zh-cn/tools/weekly-meal-planner/
 https://usefulverse.com/zh-cn/tools/reading-log/
 https://usefulverse.com/zh-cn/tools/time-tracker/
@@ -3202,6 +3219,7 @@ https://usefulverse.com/bn/tools/image-metadata-remover/
 https://usefulverse.com/bn/tools/gif-maker/
 https://usefulverse.com/bn/tools/screen-recorder/
 https://usefulverse.com/bn/tools/voice-recorder/
+https://usefulverse.com/bn/tools/color-vision-simulator/
 https://usefulverse.com/bn/tools/weekly-meal-planner/
 https://usefulverse.com/bn/tools/reading-log/
 https://usefulverse.com/bn/tools/time-tracker/
@@ -3461,6 +3479,7 @@ https://usefulverse.com/ru/tools/image-metadata-remover/
 https://usefulverse.com/ru/tools/gif-maker/
 https://usefulverse.com/ru/tools/screen-recorder/
 https://usefulverse.com/ru/tools/voice-recorder/
+https://usefulverse.com/ru/tools/color-vision-simulator/
 https://usefulverse.com/ru/tools/weekly-meal-planner/
 https://usefulverse.com/ru/tools/reading-log/
 https://usefulverse.com/ru/tools/time-tracker/
@@ -3720,6 +3739,7 @@ https://usefulverse.com/ur/tools/image-metadata-remover/
 https://usefulverse.com/ur/tools/gif-maker/
 https://usefulverse.com/ur/tools/screen-recorder/
 https://usefulverse.com/ur/tools/voice-recorder/
+https://usefulverse.com/ur/tools/color-vision-simulator/
 https://usefulverse.com/ur/tools/weekly-meal-planner/
 https://usefulverse.com/ur/tools/reading-log/
 https://usefulverse.com/ur/tools/time-tracker/
@@ -3979,6 +3999,7 @@ https://usefulverse.com/tr/tools/image-metadata-remover/
 https://usefulverse.com/tr/tools/gif-maker/
 https://usefulverse.com/tr/tools/screen-recorder/
 https://usefulverse.com/tr/tools/voice-recorder/
+https://usefulverse.com/tr/tools/color-vision-simulator/
 https://usefulverse.com/tr/tools/weekly-meal-planner/
 https://usefulverse.com/tr/tools/reading-log/
 https://usefulverse.com/tr/tools/time-tracker/
@@ -4238,6 +4259,7 @@ https://usefulverse.com/vi/tools/image-metadata-remover/
 https://usefulverse.com/vi/tools/gif-maker/
 https://usefulverse.com/vi/tools/screen-recorder/
 https://usefulverse.com/vi/tools/voice-recorder/
+https://usefulverse.com/vi/tools/color-vision-simulator/
 https://usefulverse.com/vi/tools/weekly-meal-planner/
 https://usefulverse.com/vi/tools/reading-log/
 https://usefulverse.com/vi/tools/time-tracker/
@@ -4497,6 +4519,7 @@ https://usefulverse.com/it/tools/image-metadata-remover/
 https://usefulverse.com/it/tools/gif-maker/
 https://usefulverse.com/it/tools/screen-recorder/
 https://usefulverse.com/it/tools/voice-recorder/
+https://usefulverse.com/it/tools/color-vision-simulator/
 https://usefulverse.com/it/tools/weekly-meal-planner/
 https://usefulverse.com/it/tools/reading-log/
 https://usefulverse.com/it/tools/time-tracker/
@@ -4756,6 +4779,7 @@ https://usefulverse.com/zh-tw/tools/image-metadata-remover/
 https://usefulverse.com/zh-tw/tools/gif-maker/
 https://usefulverse.com/zh-tw/tools/screen-recorder/
 https://usefulverse.com/zh-tw/tools/voice-recorder/
+https://usefulverse.com/zh-tw/tools/color-vision-simulator/
 https://usefulverse.com/zh-tw/tools/weekly-meal-planner/
 https://usefulverse.com/zh-tw/tools/reading-log/
 https://usefulverse.com/zh-tw/tools/time-tracker/
@@ -5015,6 +5039,7 @@ https://usefulverse.com/bg/tools/image-metadata-remover/
 https://usefulverse.com/bg/tools/gif-maker/
 https://usefulverse.com/bg/tools/screen-recorder/
 https://usefulverse.com/bg/tools/voice-recorder/
+https://usefulverse.com/bg/tools/color-vision-simulator/
 https://usefulverse.com/bg/tools/weekly-meal-planner/
 https://usefulverse.com/bg/tools/reading-log/
 https://usefulverse.com/bg/tools/time-tracker/
@@ -5274,6 +5299,7 @@ https://usefulverse.com/ca/tools/image-metadata-remover/
 https://usefulverse.com/ca/tools/gif-maker/
 https://usefulverse.com/ca/tools/screen-recorder/
 https://usefulverse.com/ca/tools/voice-recorder/
+https://usefulverse.com/ca/tools/color-vision-simulator/
 https://usefulverse.com/ca/tools/weekly-meal-planner/
 https://usefulverse.com/ca/tools/reading-log/
 https://usefulverse.com/ca/tools/time-tracker/
@@ -5533,6 +5559,7 @@ https://usefulverse.com/nl/tools/image-metadata-remover/
 https://usefulverse.com/nl/tools/gif-maker/
 https://usefulverse.com/nl/tools/screen-recorder/
 https://usefulverse.com/nl/tools/voice-recorder/
+https://usefulverse.com/nl/tools/color-vision-simulator/
 https://usefulverse.com/nl/tools/weekly-meal-planner/
 https://usefulverse.com/nl/tools/reading-log/
 https://usefulverse.com/nl/tools/time-tracker/
@@ -5792,6 +5819,7 @@ https://usefulverse.com/el/tools/image-metadata-remover/
 https://usefulverse.com/el/tools/gif-maker/
 https://usefulverse.com/el/tools/screen-recorder/
 https://usefulverse.com/el/tools/voice-recorder/
+https://usefulverse.com/el/tools/color-vision-simulator/
 https://usefulverse.com/el/tools/weekly-meal-planner/
 https://usefulverse.com/el/tools/reading-log/
 https://usefulverse.com/el/tools/time-tracker/
@@ -6051,6 +6079,7 @@ https://usefulverse.com/ms/tools/image-metadata-remover/
 https://usefulverse.com/ms/tools/gif-maker/
 https://usefulverse.com/ms/tools/screen-recorder/
 https://usefulverse.com/ms/tools/voice-recorder/
+https://usefulverse.com/ms/tools/color-vision-simulator/
 https://usefulverse.com/ms/tools/weekly-meal-planner/
 https://usefulverse.com/ms/tools/reading-log/
 https://usefulverse.com/ms/tools/time-tracker/
@@ -6310,6 +6339,7 @@ https://usefulverse.com/pl/tools/image-metadata-remover/
 https://usefulverse.com/pl/tools/gif-maker/
 https://usefulverse.com/pl/tools/screen-recorder/
 https://usefulverse.com/pl/tools/voice-recorder/
+https://usefulverse.com/pl/tools/color-vision-simulator/
 https://usefulverse.com/pl/tools/weekly-meal-planner/
 https://usefulverse.com/pl/tools/reading-log/
 https://usefulverse.com/pl/tools/time-tracker/
@@ -6569,6 +6599,7 @@ https://usefulverse.com/sv/tools/image-metadata-remover/
 https://usefulverse.com/sv/tools/gif-maker/
 https://usefulverse.com/sv/tools/screen-recorder/
 https://usefulverse.com/sv/tools/voice-recorder/
+https://usefulverse.com/sv/tools/color-vision-simulator/
 https://usefulverse.com/sv/tools/weekly-meal-planner/
 https://usefulverse.com/sv/tools/reading-log/
 https://usefulverse.com/sv/tools/time-tracker/
@@ -6828,6 +6859,7 @@ https://usefulverse.com/th/tools/image-metadata-remover/
 https://usefulverse.com/th/tools/gif-maker/
 https://usefulverse.com/th/tools/screen-recorder/
 https://usefulverse.com/th/tools/voice-recorder/
+https://usefulverse.com/th/tools/color-vision-simulator/
 https://usefulverse.com/th/tools/weekly-meal-planner/
 https://usefulverse.com/th/tools/reading-log/
 https://usefulverse.com/th/tools/time-tracker/
@@ -7087,6 +7119,7 @@ https://usefulverse.com/uk/tools/image-metadata-remover/
 https://usefulverse.com/uk/tools/gif-maker/
 https://usefulverse.com/uk/tools/screen-recorder/
 https://usefulverse.com/uk/tools/voice-recorder/
+https://usefulverse.com/uk/tools/color-vision-simulator/
 https://usefulverse.com/uk/tools/weekly-meal-planner/
 https://usefulverse.com/uk/tools/reading-log/
 https://usefulverse.com/uk/tools/time-tracker/
@@ -7346,6 +7379,7 @@ https://usefulverse.com/sw/tools/image-metadata-remover/
 https://usefulverse.com/sw/tools/gif-maker/
 https://usefulverse.com/sw/tools/screen-recorder/
 https://usefulverse.com/sw/tools/voice-recorder/
+https://usefulverse.com/sw/tools/color-vision-simulator/
 https://usefulverse.com/sw/tools/weekly-meal-planner/
 https://usefulverse.com/sw/tools/reading-log/
 https://usefulverse.com/sw/tools/time-tracker/
@@ -7605,6 +7639,7 @@ https://usefulverse.com/mr/tools/image-metadata-remover/
 https://usefulverse.com/mr/tools/gif-maker/
 https://usefulverse.com/mr/tools/screen-recorder/
 https://usefulverse.com/mr/tools/voice-recorder/
+https://usefulverse.com/mr/tools/color-vision-simulator/
 https://usefulverse.com/mr/tools/weekly-meal-planner/
 https://usefulverse.com/mr/tools/reading-log/
 https://usefulverse.com/mr/tools/time-tracker/
@@ -7864,6 +7899,7 @@ https://usefulverse.com/te/tools/image-metadata-remover/
 https://usefulverse.com/te/tools/gif-maker/
 https://usefulverse.com/te/tools/screen-recorder/
 https://usefulverse.com/te/tools/voice-recorder/
+https://usefulverse.com/te/tools/color-vision-simulator/
 https://usefulverse.com/te/tools/weekly-meal-planner/
 https://usefulverse.com/te/tools/reading-log/
 https://usefulverse.com/te/tools/time-tracker/
@@ -8123,6 +8159,7 @@ https://usefulverse.com/ha/tools/image-metadata-remover/
 https://usefulverse.com/ha/tools/gif-maker/
 https://usefulverse.com/ha/tools/screen-recorder/
 https://usefulverse.com/ha/tools/voice-recorder/
+https://usefulverse.com/ha/tools/color-vision-simulator/
 https://usefulverse.com/ha/tools/weekly-meal-planner/
 https://usefulverse.com/ha/tools/reading-log/
 https://usefulverse.com/ha/tools/time-tracker/
@@ -8382,6 +8419,7 @@ https://usefulverse.com/tl/tools/image-metadata-remover/
 https://usefulverse.com/tl/tools/gif-maker/
 https://usefulverse.com/tl/tools/screen-recorder/
 https://usefulverse.com/tl/tools/voice-recorder/
+https://usefulverse.com/tl/tools/color-vision-simulator/
 https://usefulverse.com/tl/tools/weekly-meal-planner/
 https://usefulverse.com/tl/tools/reading-log/
 https://usefulverse.com/tl/tools/time-tracker/
@@ -8641,6 +8679,7 @@ https://usefulverse.com/ta/tools/image-metadata-remover/
 https://usefulverse.com/ta/tools/gif-maker/
 https://usefulverse.com/ta/tools/screen-recorder/
 https://usefulverse.com/ta/tools/voice-recorder/
+https://usefulverse.com/ta/tools/color-vision-simulator/
 https://usefulverse.com/ta/tools/weekly-meal-planner/
 https://usefulverse.com/ta/tools/reading-log/
 https://usefulverse.com/ta/tools/time-tracker/
@@ -8900,6 +8939,7 @@ https://usefulverse.com/fa/tools/image-metadata-remover/
 https://usefulverse.com/fa/tools/gif-maker/
 https://usefulverse.com/fa/tools/screen-recorder/
 https://usefulverse.com/fa/tools/voice-recorder/
+https://usefulverse.com/fa/tools/color-vision-simulator/
 https://usefulverse.com/fa/tools/weekly-meal-planner/
 https://usefulverse.com/fa/tools/reading-log/
 https://usefulverse.com/fa/tools/time-tracker/
@@ -9159,6 +9199,7 @@ https://usefulverse.com/am/tools/image-metadata-remover/
 https://usefulverse.com/am/tools/gif-maker/
 https://usefulverse.com/am/tools/screen-recorder/
 https://usefulverse.com/am/tools/voice-recorder/
+https://usefulverse.com/am/tools/color-vision-simulator/
 https://usefulverse.com/am/tools/weekly-meal-planner/
 https://usefulverse.com/am/tools/reading-log/
 https://usefulverse.com/am/tools/time-tracker/
@@ -9418,6 +9459,7 @@ https://usefulverse.com/gu/tools/image-metadata-remover/
 https://usefulverse.com/gu/tools/gif-maker/
 https://usefulverse.com/gu/tools/screen-recorder/
 https://usefulverse.com/gu/tools/voice-recorder/
+https://usefulverse.com/gu/tools/color-vision-simulator/
 https://usefulverse.com/gu/tools/weekly-meal-planner/
 https://usefulverse.com/gu/tools/reading-log/
 https://usefulverse.com/gu/tools/time-tracker/

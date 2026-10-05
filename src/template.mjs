@@ -827,6 +827,7 @@ export function shell({ title, description, canonical, body, schema = '', assetV
     ${toolId === '2048-game' ? `<link rel="stylesheet" href="/assets/2048-game.css${assetSuffix}">` : ''}
     ${toolId === 'sudoku' ? `<link rel="stylesheet" href="/assets/sudoku.css${assetSuffix}">` : ''}
     ${toolId === 'battleship' ? `<link rel="stylesheet" href="/assets/battleship.css${assetSuffix}">` : ''}
+    ${toolId === 'color-vision-simulator' ? `<link rel="stylesheet" href="/assets/color-vision.css${assetSuffix}">` : ''}
     ${toolId === 'tic-tac-toe' ? `<link rel="stylesheet" href="/assets/tic-tac-toe.css${assetSuffix}">` : ''}
     ${toolId === 'chess-game' ? `<link rel="stylesheet" href="/assets/chess-game.css${assetSuffix}">` : ''}
     ${toolId === 'solitaire' ? `<link rel="stylesheet" href="/assets/solitaire.css${assetSuffix}">` : ''}

@@ -222,6 +222,16 @@ test('audio analysis pages are local, lazy-runtime-friendly and expose bounded f
   assert.match(opportunityToolMarkup('audio-spectrogram'), /data-audio-chart/u);
 });
 
+test('color vision simulator exposes accessible local image controls and translated runtime messages', () => {
+  const markup = opportunityToolMarkup('color-vision-simulator', 'ar');
+  for (const control of ['data-color-vision', 'type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/bmp"', 'data-color-vision-mode', 'data-color-vision-sample', 'data-color-vision-clear', 'data-color-vision-original', 'data-color-vision-result', 'data-planner-messages']) assert.ok(markup.includes(control), control);
+  assert.match(markup, /محاكاة بصرية تقريبية/u);
+  assert.match(markup, /مسح الصورة/u);
+  assert.doesNotMatch(markup, /محاكاة Deuteranopia/u);
+  assert.match(markup, /4 ميجابكسل/u);
+  assert.doesNotMatch(markup, /fetch\(|XMLHttpRequest|data-op-calculate/u);
+});
+
 test('fretboard trainer exposes accessible note choices and localized runtime messages', () => {
   const markup = opportunityToolMarkup('fretboard-trainer', 'es', opportunityLocaleData.es.ui);
   assert.match(markup, /data-fretboard-trainer/u);

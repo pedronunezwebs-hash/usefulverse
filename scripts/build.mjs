@@ -328,6 +328,8 @@ await bundle({ entryPoints: [join(root, 'src', 'font-tester-runtime.js')], outfi
 await bundle({ entryPoints: [join(root, 'src', 'kakuro-runtime.js')], outfile: join(dist, 'assets', 'kakuro-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
 await bundle({ entryPoints: [join(root, 'src', 'battleship-runtime.js')], outfile: join(dist, 'assets', 'battleship-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
 await cp(join(root, 'src', 'battleship.css'), join(dist, 'assets', 'battleship.css'));
+await bundle({ entryPoints: [join(root, 'src', 'color-vision-runtime.js')], outfile: join(dist, 'assets', 'color-vision-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await cp(join(root, 'src', 'color-vision.css'), join(dist, 'assets', 'color-vision.css'));
 await bundle({
   entryPoints: [join(root, 'src', 'css-design-tools.js')],
   outfile: join(dist, 'assets', 'css-design-tools.js'),
@@ -796,6 +798,7 @@ assetHash.update(await readFile(join(dist, 'assets', 'web-dev-tools.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'board-games.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'measurement-tools.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'print-studio.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'color-vision.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'habit-tracker-runtime.css')));
 // Any browser-loaded script uses this version token in its URL. Include every
 // lazy runtime in the hash so deploying a changed module cannot keep serving a
@@ -820,6 +823,7 @@ for (const file of [
   'fretboard-trainer-runtime.js',
   'font-tester-runtime.js',
   'kakuro-runtime.js',
+  'color-vision-runtime.js',
   'css-design-tools.js',
   'css-design-logic.mjs',
   'web-dev-tools.js',
