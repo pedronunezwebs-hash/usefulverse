@@ -838,7 +838,7 @@ export function shell({ title, description, canonical, body, schema = '', assetV
     ${toolId === 'fretboard-trainer' ? `<link rel="stylesheet" href="/assets/fretboard-trainer.css${assetSuffix}">` : ''}
     ${['css-animation-generator', 'css-clip-path-editor', 'css-filter-generator'].includes(toolId) ? `<link rel="stylesheet" href="/assets/css-design-tools.css${assetSuffix}">` : ''}
     ${['api-request-builder', 'html-table-generator', 'pwa-manifest-generator'].includes(toolId) ? `<link rel="stylesheet" href="/assets/web-dev-tools.css${assetSuffix}">` : ''}
-    ${['connect-four', 'reversi', 'checkers'].includes(toolId) ? `<link rel="stylesheet" href="/assets/board-games.css${assetSuffix}">` : ''}
+    ${['connect-four', 'reversi', 'checkers', 'kakuro'].includes(toolId) ? `<link rel="stylesheet" href="/assets/board-games.css${assetSuffix}">` : ''}
     ${['screen-ruler', 'protractor'].includes(toolId) ? `<link rel="stylesheet" href="/assets/measurement-tools.css${assetSuffix}">` : ''}
     ${['printable-label-maker', 'poster-maker', 'certificate-maker', 'invitation-maker'].includes(toolId) ? `<link rel="stylesheet" href="/assets/print-studio.css${assetSuffix}">` : ''}
     ${toolId === 'kanban-board' ? `<link rel="stylesheet" href="/assets/kanban-board.css${assetSuffix}">` : ''}

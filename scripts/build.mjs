@@ -325,6 +325,7 @@ await bundle({
 await bundle({ entryPoints: [join(root, 'src', 'audio-analysis-runtime.js')], outfile: join(dist, 'assets', 'audio-analysis-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
 await bundle({ entryPoints: [join(root, 'src', 'fretboard-trainer-runtime.js')], outfile: join(dist, 'assets', 'fretboard-trainer-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
 await bundle({ entryPoints: [join(root, 'src', 'font-tester-runtime.js')], outfile: join(dist, 'assets', 'font-tester-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'kakuro-runtime.js')], outfile: join(dist, 'assets', 'kakuro-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
 await bundle({
   entryPoints: [join(root, 'src', 'css-design-tools.js')],
   outfile: join(dist, 'assets', 'css-design-tools.js'),
@@ -816,6 +817,7 @@ for (const file of [
   'audio-analysis-runtime.js',
   'fretboard-trainer-runtime.js',
   'font-tester-runtime.js',
+  'kakuro-runtime.js',
   'css-design-tools.js',
   'css-design-logic.mjs',
   'web-dev-tools.js',

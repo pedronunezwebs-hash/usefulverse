@@ -380,3 +380,11 @@ Añadir pruebas de vacío, negativos, extremos, entradas inválidas, singularida
 - Sudoku se volvió a probar: tablero inicial, nueva partida y recarga fueron tres tableros distintos de 81 celdas. El guardado local de huellas recientes evita repeticiones corrientes, pero se pierde si se borra/bloquea localStorage; no se promete aleatoriedad sin posibilidad matemática de repetición.
 - El build genera **9.504 URLs** (256 herramientas × 36 idiomas, 36 portadas y 252 guías). `npm run check` y `npm test` deben repetirse con los gates de idioma, auditor funcional y revisión de diff antes de integrar o publicar. Se mantuvo el límite existente del paquete de idioma común; no se ejecutaron PageSpeed/Lighthouse ni DataForSEO.
 - Este es un checkpoint local en la rama aislada, no despliegue ni indexación externa. El plan general sigue abierto mientras queden candidatas o fases acordadas por implementar.
+
+## Continuación · Kakuro
+
+- Se añadió Kakuro como herramienta separada de Sudoku, con partidas 4×4 generadas localmente, sumas por fila/columna, regla de no repetir 1–9 dentro de cada línea, pistas, limpiar y validar cualquier solución válida. Los dígitos decimales comunes de los idiomas publicados (incluidos árabe/persa, devanagari y ancho completo) se normalizan a valores de juego.
+- En Chrome local se resolvió una cuadrícula a partir de las pistas visibles y apareció “Puzzle solved!”; también se comprobó que una partida nueva cambia las pistas, que la pista rellena una casilla, que limpiar borra y que una cuadrícula incompleta muestra validación. Árabe RTL mostró controles y pistas traducidos.
+- Unit tests cubren 12 tableros diferentes en la muestra, sumas, no repetición, entrada localizada, pistas y entradas inválidas. Estas pruebas no prueban cada posible partida ni todos los navegadores/dispositivos.
+- Se detectó y corrigió durante QA que faltaba registrar el motor en el dispatcher común: antes la ruta y los controles se renderizaban, pero las interacciones no arrancaban. El build ahora verifica los controles requeridos. Total provisional: **9.540 URLs** (257 herramientas × 36 idiomas, 36 portadas y 252 guías). README y auditoría funcional se regeneran antes del siguiente checkpoint.
+- Sin DataForSEO ni PageSpeed/Lighthouse; son cambios de rama local y no están desplegados. El plan general continúa abierto.
