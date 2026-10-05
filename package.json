@@ -10,6 +10,7 @@
     "serve": "python3 -m http.server 4173 --directory dist",
     "locale:report": "node scripts/localization/report-coverage.mjs",
     "locale:release-check": "node scripts/localization/check-release.mjs",
+    "docs:urls": "node scripts/update-readme-url-inventory.mjs",
     "audit:functional": "node scripts/functional-audit.mjs",
     "seo:indexnow": "node scripts/indexnow.mjs",
     "seo:yandex": "node scripts/yandex-webmaster.mjs"
@@ -33,6 +34,7 @@
     "@mediabunny/mp3-encoder": "1.61.0",
     "@neslinesli93/qpdf-wasm": "0.3.0",
     "@sqlite.org/sqlite-wasm": "3.53.4-build2",
+    "chess.js": "1.4.0",
     "css-tree": "3.1.0",
     "csso": "5.0.5",
     "jsbarcode": "3.12.3",

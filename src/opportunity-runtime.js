@@ -973,6 +973,84 @@ function setupHouseholdBudget(root) {
 
 export function setupOpportunityTool(id, root) {
   const engine = root.dataset.opEngine;
+  if (engine === 'spelling-practice') {
+    const spellingUrl = new URL('./spelling-practice-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
+    if (version) spellingUrl.searchParams.set('v', version);
+    import(spellingUrl.href).then(({ setupSpellingPractice }) => setupSpellingPractice(root)); return;
+  }
+  if (engine === 'hangul-practice') {
+    const hangulUrl = new URL('./hangul-practice-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
+    if (version) hangulUrl.searchParams.set('v', version);
+    import(hangulUrl.href).then(({ setupHangulPractice }) => setupHangulPractice(root)); return;
+  }
+  if (engine === '2048-game') {
+    const gameUrl = new URL('./2048-game-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
+    if (version) gameUrl.searchParams.set('v', version);
+    import(gameUrl.href).then(({ setup2048Game }) => setup2048Game(root)); return;
+  }
+  if (engine === 'sudoku') {
+    const sudokuUrl = new URL('./sudoku-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
+    if (version) sudokuUrl.searchParams.set('v', version);
+    import(sudokuUrl.href).then(({ setupSudoku }) => setupSudoku(root)); return;
+  }
+  if (engine === 'tic-tac-toe') {
+    const gameUrl = new URL('./tic-tac-toe-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
+    if (version) gameUrl.searchParams.set('v', version);
+    import(gameUrl.href).then(({ setupTicTacToe }) => setupTicTacToe(root)); return;
+  }
+  if (engine === 'chess-game') {
+    const chessUrl = new URL('./chess-game-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
+    if (version) chessUrl.searchParams.set('v', version);
+    import(chessUrl.href).then(({ setupChessGame }) => setupChessGame(root)); return;
+  }
+  if (engine === 'solitaire') {
+    const solitaireUrl = new URL('./solitaire-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
+    if (version) solitaireUrl.searchParams.set('v', version);
+    import(solitaireUrl.href).then(({ setupSolitaire }) => setupSolitaire(root)); return;
+  }
+  if (engine === 'minesweeper') {
+    const minesweeperUrl = new URL('./minesweeper-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
+    if (version) minesweeperUrl.searchParams.set('v', version);
+    import(minesweeperUrl.href).then(({ setupMinesweeper }) => setupMinesweeper(root)); return;
+  }
+  if (engine === 'nonogram') {
+    const nonogramUrl = new URL('./nonogram-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
+    if (version) nonogramUrl.searchParams.set('v', version);
+    import(nonogramUrl.href).then(({ setupNonogram }) => setupNonogram(root)); return;
+  }
+  if (engine === 'sliding-puzzle') {
+    const puzzleUrl = new URL('./sliding-puzzle-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
+    if (version) puzzleUrl.searchParams.set('v', version);
+    import(puzzleUrl.href).then(({ setupSlidingPuzzle }) => setupSlidingPuzzle(root)); return;
+  }
+  if (engine === 'drum-machine') {
+    const drumUrl = new URL('./drum-machine-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
+    if (version) drumUrl.searchParams.set('v', version);
+    import(drumUrl.href).then(({ setupDrumMachine }) => setupDrumMachine(root)).catch(() => setStatus(root, 'Tool loading failed. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (['css-animation', 'css-clip-path', 'css-filters'].includes(engine)) {
+    const cssToolUrl = new URL('./css-design-tools.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
+    if (version) cssToolUrl.searchParams.set('v', version);
+    import(cssToolUrl.href).then(({ setupCssDesignTool }) => setupCssDesignTool(root)).catch(() => setStatus(root, 'Tool loading failed. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (['api-request-builder', 'html-table-generator', 'pwa-manifest-generator'].includes(engine)) {
+    const webDevUrl = new URL('./web-dev-tools.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
+    if (version) webDevUrl.searchParams.set('v', version);
+    import(webDevUrl.href).then(({ setupWebDevTool }) => setupWebDevTool(root)).catch(() => setStatus(root, 'Tool loading failed. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (['quiz-maker', 'memory-game', 'kana-practice', 'abacus-practice'].includes(engine)) {
+    const studyUrl = new URL('./local-study-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
+    if (version) studyUrl.searchParams.set('v', version);
+    import(studyUrl.href).then(({ setupLocalStudyTool }) => setupLocalStudyTool(root)); return;
+  }
+  if (['packing-list', 'decision-matrix', 'workout-planner'].includes(engine)) {
+    const plannerUrl = new URL('./local-planners-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
+    if (version) plannerUrl.searchParams.set('v', version);
+    import(plannerUrl.href).then(({ setupLocalPlanningTools }) => setupLocalPlanningTools(root)); return;
+  }
   if (engine === 'diagram-maker') { setupDiagramMaker(root); return; }
   if (engine === 'household-budget') { setupHouseholdBudget(root); return; }
   if (engine === 'mental-math') { setupMentalMath(root); return; }

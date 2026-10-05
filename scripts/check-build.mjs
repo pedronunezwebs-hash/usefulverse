@@ -20,7 +20,7 @@ for (const language of pdfOnlyLocaleKeys) localizedFiles.push(
   `${pdfOnlyLocales[language].prefix.replace(/^\//u, '')}/llms.txt`,
 );
 for (const language of Object.keys(numberWordsLocaleCodes)) localizedFiles.push(`assets/number-words-${language}.js`);
-const required = ['index.html', '404.html', 'assets/styles.css', 'assets/app.js', 'assets/chart-runtime.js', 'assets/sqlite-playground-runtime.js', 'assets/code-formatter-runtime.js', 'assets/formatter-html-engine.js', 'assets/formatter-css-engine.js', 'assets/formatter-javascript-engine.js', 'assets/chess-clock-runtime.js', 'assets/ear-training-runtime.js', 'assets/bpm-detector-runtime.js', 'assets/music-scale-runtime.js', 'assets/seating-chart-runtime.js', 'assets/gantt-chart-runtime.js', 'assets/sprite-sheet-runtime.js', 'assets/kanban-board-runtime.js', 'assets/kanban-board.css', 'assets/reading-speed-runtime.js', 'assets/habit-tracker-runtime.js', 'assets/habit-tracker-runtime.css', 'assets/reading-speed.css', 'assets/timer-logic.mjs', 'favicon.svg', 'robots.txt', 'sitemap.xml', 'llms.txt', 'timer-notifications.js', ...localizedFiles, 'BingSiteAuth.xml', 'yandex_f441658073fe7135.html', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html', '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt'];
+const required = ['index.html', '404.html', 'assets/styles.css', 'assets/app.js', 'assets/chart-runtime.js', 'assets/sqlite-playground-runtime.js', 'assets/code-formatter-runtime.js', 'assets/formatter-html-engine.js', 'assets/formatter-css-engine.js', 'assets/formatter-javascript-engine.js', 'assets/chess-clock-runtime.js', 'assets/ear-training-runtime.js', 'assets/bpm-detector-runtime.js', 'assets/music-scale-runtime.js', 'assets/seating-chart-runtime.js', 'assets/gantt-chart-runtime.js', 'assets/sprite-sheet-runtime.js', 'assets/kanban-board-runtime.js', 'assets/kanban-board.css', 'assets/reading-speed-runtime.js', 'assets/habit-tracker-runtime.js', 'assets/habit-tracker-runtime.css', 'assets/reading-speed.css', 'assets/timer-logic.mjs', 'assets/tic-tac-toe-runtime.js', 'assets/tic-tac-toe-logic.mjs', 'assets/tic-tac-toe.css', 'assets/chess-game-runtime.js', 'assets/chess-game.css', 'assets/solitaire-runtime.js', 'assets/solitaire.css', 'assets/minesweeper-runtime.js', 'assets/minesweeper.css', 'assets/nonogram-runtime.js', 'assets/nonogram.css', 'assets/sliding-puzzle-runtime.js', 'assets/sliding-puzzle.css', 'assets/drum-machine-runtime.js', 'assets/drum-machine.css', 'assets/online-sequencer-runtime.js', 'assets/online-sequencer-logic.mjs', 'assets/online-sequencer.css', 'assets/board-games-runtime.js', 'assets/board-games.css', 'third-party-licenses/chess.js.txt', 'favicon.svg', 'robots.txt', 'sitemap.xml', 'llms.txt', 'timer-notifications.js', ...localizedFiles, 'BingSiteAuth.xml', 'yandex_f441658073fe7135.html', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html', '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt'];
 function assertLanguagePicker(html, currentLanguage, availableLocales, toolId, context, routeForLocale = (key) => localePath(key, toolId)) {
   const currentLocale = availableLocales.find(({ key }) => key === currentLanguage);
   const languageLabel = ui[currentLanguage]?.Language ?? 'Language';
@@ -44,15 +44,56 @@ for (const file of required) await access(join(dist, file));
 await access(join(dist, 'assets', 'time-tracker-runtime.js'));
 await access(join(dist, 'assets', 'weekly-meal-planner-runtime.js'));
 await access(join(dist, 'assets', 'reading-log-runtime.js'));
+await access(join(dist, 'assets', 'css-design-tools.js'));
+await access(join(dist, 'assets', 'css-design-logic.mjs'));
+await access(join(dist, 'assets', 'css-design-tools.css'));
+await access(join(dist, 'assets', 'web-dev-tools.js'));
+await access(join(dist, 'assets', 'web-dev-logic.mjs'));
+await access(join(dist, 'assets', 'web-dev-tools.css'));
+await access(join(dist, 'assets', 'local-planners-runtime.js'));
 const deferredAssetBudgets = new Map([
   ['assets/app.js', 72 * 1024], ['assets/styles.css', 54 * 1024],
   ['assets/new-tools.js', 32 * 1024], ['assets/expanded-tools.js', 40 * 1024],
   ['assets/advanced-tools.js', 52 * 1024], ['assets/media-tools.js', 16 * 1024],
   ['assets/plan-tools.js', 55 * 1024], ['assets/tool-suite-tools.js', 150 * 1024],
-  ['assets/opportunity-runtime.js', 128 * 1024], ['assets/new-tool-logic.mjs', 16 * 1024], ['assets/timer-logic.mjs', 16 * 1024],
+  // This runtime is deferred until a tool opens; keep it below 132 KiB while it hosts the expanding local-tool catalog.
+  ['assets/opportunity-runtime.js', 132 * 1024], ['assets/new-tool-logic.mjs', 16 * 1024], ['assets/timer-logic.mjs', 16 * 1024],
   ['assets/time-tracker-runtime.js', 8 * 1024],
   ['assets/weekly-meal-planner-runtime.js', 12 * 1024],
   ['assets/reading-log-runtime.js', 12 * 1024],
+  ['assets/local-planners-runtime.js', 12 * 1024],
+  ['assets/local-study-runtime.js', 12 * 1024],
+  ['assets/spelling-practice-runtime.js', 8 * 1024],
+  ['assets/hangul-practice-runtime.js', 8 * 1024],
+  ['assets/2048-game-runtime.js', 8 * 1024],
+  ['assets/2048-game.css', 2 * 1024],
+  ['assets/sudoku-runtime.js', 12 * 1024],
+  ['assets/sudoku.css', 3 * 1024],
+  ['assets/tic-tac-toe-runtime.js', 8 * 1024],
+  ['assets/tic-tac-toe-logic.mjs', 4 * 1024],
+  ['assets/tic-tac-toe.css', 2 * 1024],
+  ['assets/chess-game-runtime.js', 90 * 1024],
+  ['assets/chess-game.css', 3 * 1024],
+  ['assets/solitaire-runtime.js', 16 * 1024],
+  ['assets/solitaire.css', 4 * 1024],
+  ['assets/minesweeper-runtime.js', 12 * 1024],
+  ['assets/minesweeper.css', 4 * 1024],
+  ['assets/nonogram-runtime.js', 10 * 1024],
+  ['assets/nonogram.css', 3 * 1024],
+  ['assets/sliding-puzzle-runtime.js', 8 * 1024],
+  ['assets/sliding-puzzle.css', 2 * 1024],
+  ['assets/drum-machine-runtime.js', 12 * 1024],
+  ['assets/drum-machine.css', 3 * 1024],
+  ['assets/online-sequencer-runtime.js', 12 * 1024],
+  ['assets/online-sequencer-logic.mjs', 4 * 1024],
+  ['assets/online-sequencer.css', 3 * 1024],
+  ['assets/css-design-tools.js', 8 * 1024],
+  ['assets/css-design-logic.mjs', 4 * 1024],
+  ['assets/css-design-tools.css', 4 * 1024],
+  ['assets/web-dev-tools.js', 12 * 1024],
+  ['assets/web-dev-logic.mjs', 8 * 1024],
+  ['assets/web-dev-tools.css', 4 * 1024],
+  ['assets/board-games-runtime.js', 12 * 1024], ['assets/board-games.css', 4 * 1024],
   ['assets/chart-runtime.js', 8 * 1024],
   ['assets/sqlite-playground-runtime.js', 8 * 1024],
   ['assets/code-formatter-runtime.js', 8 * 1024],
@@ -92,6 +133,36 @@ if (!globalHeaderBlock.includes('Permissions-Policy: camera=(self), geolocation=
 const timerPage = await readFile(join(dist, localePath('en', 'online-timer').replace(/^\//u, '') + 'index.html'), 'utf8');
 for (const feature of ['data-timer-mode="pomodoro"', 'id="long-break-minutes"', 'id="long-break-every"', 'id="timer-auto-start"', 'id="timer-sound"', 'id="timer-audio-status"', 'data-action="timer-test-sound"', 'data-action="timer-enable-notifications"', 'data-action="timer-skip"', 'data-action="timer-clear-data"']) {
   if (!timerPage.includes(feature)) throw new Error(`Online timer is missing its required control: ${feature}`);
+}
+const minesweeperPage = await readFile(join(dist, localePath('en', 'minesweeper').replace(/^\//u, '') + 'index.html'), 'utf8');
+for (const feature of ['data-minesweeper-difficulty', 'data-minesweeper-new', 'data-minesweeper-flag-mode', 'data-minesweeper-mines-left', 'data-minesweeper-time', 'data-minesweeper-board']) {
+  if (!minesweeperPage.includes(feature)) throw new Error(`Minesweeper is missing its required control: ${feature}`);
+}
+const nonogramPage = await readFile(join(dist, localePath('en', 'nonogram').replace(/^\//u, '') + 'index.html'), 'utf8');
+for (const feature of ['data-nonogram-new', 'data-nonogram-check', 'data-nonogram-clear', 'data-nonogram-board']) {
+  if (!nonogramPage.includes(feature)) throw new Error(`Nonogram is missing its required control: ${feature}`);
+}
+const slidingPage = await readFile(join(dist, localePath('en', 'sliding-puzzle').replace(/^\//u, '') + 'index.html'), 'utf8');
+for (const feature of ['data-sliding-size', 'data-sliding-new', 'data-sliding-moves', 'data-sliding-board']) {
+  if (!slidingPage.includes(feature)) throw new Error(`Sliding puzzle is missing its required control: ${feature}`);
+}
+for (const language of languages) {
+  const drumPath = join(dist, localePath(language, 'drum-machine').replace(/^\//u, '') + 'index.html');
+  const drumPage = await readFile(drumPath, 'utf8');
+  for (const feature of ['data-drum-tempo', 'data-drum-play', 'data-drum-clear', 'data-drum-board', 'data-planner-messages=', '/assets/drum-machine.css?v=']) {
+    if (!drumPage.includes(feature)) throw new Error(`Drum machine is missing ${feature} in ${language}`);
+  }
+}
+for (const language of languages) {
+  const sequencePath = join(dist, localePath(language, 'online-sequencer').replace(/^\//u, '') + 'index.html');
+  const sequencePage = await readFile(sequencePath, 'utf8');
+  for (const feature of ['data-sequencer-tempo', 'data-sequencer-play', 'data-sequencer-clear', 'data-sequencer-board', 'data-sequencer-midi', 'data-planner-messages=', '/assets/online-sequencer.css?v=']) {
+    if (!sequencePage.includes(feature)) throw new Error(`Online sequencer is missing ${feature} in ${language}`);
+  }
+  for (const label of ['MIDI download started.', 'Tempo', 'Note {note}, step {number}']) {
+    const translated = packs[language]?.runtime?.[label];
+    if (translated && !sequencePage.includes(translated)) throw new Error(`Online sequencer is missing localized message "${label}" in ${language}`);
+  }
 }
 const naverVerification = await readFile(join(dist, 'naverbbd67ca2bfab12f8138c42ad5d27c664.html'), 'utf8');
 if (naverVerification !== 'naver-site-verification: naverbbd67ca2bfab12f8138c42ad5d27c664.html\n') throw new Error('Naver verification file content does not match the downloaded file');

@@ -1,0 +1,15 @@
+.local-solitaire__top{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.45rem;margin:1rem auto;width:min(100%,46rem)}
+.local-solitaire__foundations{grid-column:4/8;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.45rem}
+.local-solitaire__pile,.local-solitaire__top>[data-solitaire-stock],.local-solitaire__top>[data-solitaire-waste]{position:relative;display:grid;place-items:start center;min-width:0;min-height:clamp(3.6rem,12vw,5.3rem);padding:.1rem;border:1px solid var(--line,#cbd5e1);border-radius:.55rem;background:#fff;color:inherit}
+.local-solitaire__pile.is-empty,.local-solitaire__top>[data-solitaire-stock]:disabled{background:#edf2e9;color:#526b59}
+.local-solitaire__top>[data-solitaire-waste]{align-content:start}
+.local-solitaire__empty{font-size:2rem;line-height:1.5;color:#82908a}
+.local-solitaire__tableau{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.35rem;width:min(100%,46rem);margin:0 auto;overflow-x:auto;overscroll-behavior-x:contain}
+.local-solitaire__column{display:flex;flex-direction:column;align-items:center;min-width:0;min-height:clamp(5rem,16vw,7rem);border-radius:.45rem}
+.local-solitaire__card{position:relative;z-index:1;display:grid;place-items:start center;width:100%;min-width:0;aspect-ratio:2/2.8;padding:.12rem .04rem;border:1px solid #bac4bf;border-radius:.35rem;background:#fff;color:#172033;font-size:clamp(.8rem,3.5vw,1.3rem);font-weight:750;line-height:1.15;box-shadow:0 1px 2px #13201820;cursor:pointer}
+.local-solitaire__column>.local-solitaire__card+.local-solitaire__card{margin-top:-.45rem}
+.local-solitaire__column>.local-solitaire__card.is-face-down{background:#51736a;color:#fff}
+.local-solitaire__card.is-red,.local-solitaire__pile.is-red{color:#b42332}
+.local-solitaire__card.is-selected,.local-solitaire__pile.is-selected{outline:3px solid #a3df42;outline-offset:1px;z-index:3}
+.local-solitaire__card:focus-visible,.local-solitaire__pile:focus-visible,.local-solitaire__top>[data-solitaire-stock]:focus-visible{outline:3px solid #1769ff;outline-offset:2px;z-index:4}
+@media(max-width:420px){.local-solitaire__top{gap:.25rem}.local-solitaire__tableau{gap:.18rem}.local-solitaire__column>.local-solitaire__card+.local-solitaire__card{margin-top:-.3rem}}

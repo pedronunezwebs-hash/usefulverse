@@ -67,6 +67,84 @@ await bundle({
   minify: true,
 });
 await bundle({
+  entryPoints: [join(root, 'src', '2048-game.css')],
+  outfile: join(dist, 'assets', '2048-game.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'sudoku.css')],
+  outfile: join(dist, 'assets', 'sudoku.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'tic-tac-toe.css')],
+  outfile: join(dist, 'assets', 'tic-tac-toe.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'chess-game.css')],
+  outfile: join(dist, 'assets', 'chess-game.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'solitaire.css')],
+  outfile: join(dist, 'assets', 'solitaire.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'minesweeper.css')],
+  outfile: join(dist, 'assets', 'minesweeper.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'nonogram.css')],
+  outfile: join(dist, 'assets', 'nonogram.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'sliding-puzzle.css')],
+  outfile: join(dist, 'assets', 'sliding-puzzle.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'drum-machine.css')],
+  outfile: join(dist, 'assets', 'drum-machine.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'online-sequencer.css')],
+  outfile: join(dist, 'assets', 'online-sequencer.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'css-design-tools.css')],
+  outfile: join(dist, 'assets', 'css-design-tools.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'web-dev-tools.css')],
+  outfile: join(dist, 'assets', 'web-dev-tools.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'board-games.css')],
+  outfile: join(dist, 'assets', 'board-games.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
   entryPoints: [join(root, 'src', 'app.js')],
   outfile: join(dist, 'assets', 'app.js'),
   bundle: false,
@@ -98,6 +176,195 @@ await bundle({
 await bundle({
   entryPoints: [join(root, 'src', 'opportunity-runtime.js')],
   outfile: join(dist, 'assets', 'opportunity-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'local-planners-runtime.js')],
+  outfile: join(dist, 'assets', 'local-planners-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'local-study-runtime.js')],
+  outfile: join(dist, 'assets', 'local-study-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'spelling-practice-runtime.js')],
+  outfile: join(dist, 'assets', 'spelling-practice-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'hangul-practice-runtime.js')],
+  outfile: join(dist, 'assets', 'hangul-practice-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', '2048-game-runtime.js')],
+  outfile: join(dist, 'assets', '2048-game-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'sudoku-runtime.js')],
+  outfile: join(dist, 'assets', 'sudoku-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'tic-tac-toe-runtime.js')],
+  outfile: join(dist, 'assets', 'tic-tac-toe-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'chess-game-runtime.js')],
+  outfile: join(dist, 'assets', 'chess-game-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'solitaire-runtime.js')],
+  outfile: join(dist, 'assets', 'solitaire-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'minesweeper-runtime.js')],
+  outfile: join(dist, 'assets', 'minesweeper-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'nonogram-runtime.js')],
+  outfile: join(dist, 'assets', 'nonogram-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'sliding-puzzle-runtime.js')],
+  outfile: join(dist, 'assets', 'sliding-puzzle-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'drum-machine-runtime.js')],
+  outfile: join(dist, 'assets', 'drum-machine-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'online-sequencer-runtime.js')],
+  outfile: join(dist, 'assets', 'online-sequencer-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'css-design-tools.js')],
+  outfile: join(dist, 'assets', 'css-design-tools.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'web-dev-tools.js')],
+  outfile: join(dist, 'assets', 'web-dev-tools.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'board-games-runtime.js')],
+  outfile: join(dist, 'assets', 'board-games-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'web-dev-logic.mjs')],
+  outfile: join(dist, 'assets', 'web-dev-logic.mjs'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'css-design-logic.mjs')],
+  outfile: join(dist, 'assets', 'css-design-logic.mjs'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'online-sequencer-logic.mjs')],
+  outfile: join(dist, 'assets', 'online-sequencer-logic.mjs'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'tic-tac-toe-logic.mjs')],
+  outfile: join(dist, 'assets', 'tic-tac-toe-logic.mjs'),
   bundle: true,
   format: 'esm',
   platform: 'browser',
@@ -434,6 +701,8 @@ await cp(join(root, 'node_modules', '@neslinesli93', 'qpdf-wasm', 'README.md'), 
 await cp(join(root, 'public', 'licenses', 'LICENSE-qpdf.txt'), join(vendor, 'LICENSE-qpdf.txt'));
 await cp(join(root, 'public', 'licenses', 'LICENSE-qpdf-wasm-ISC.txt'), join(vendor, 'LICENSE-qpdf-wasm-ISC.txt'));
 await cp(join(root, 'public', 'favicon.svg'), join(dist, 'favicon.svg'));
+await mkdir(join(dist, 'third-party-licenses'), { recursive: true });
+await cp(join(root, 'public', 'licenses', 'chess.js.txt'), join(dist, 'third-party-licenses', 'chess.js.txt'));
 await cp(join(root, 'public', 'timer-notifications.js'), join(dist, 'timer-notifications.js'));
 await cp(join(root, 'public', '_headers'), join(dist, '_headers'));
 await cp(join(root, 'public', 'BingSiteAuth.xml'), join(dist, 'BingSiteAuth.xml'));
@@ -471,6 +740,19 @@ const assetHash = createHash('sha256')
 assetHash.update(await readFile(join(root, 'public', 'timer-notifications.js')));
 assetHash.update(await readFile(join(dist, 'assets', 'kanban-board.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'reading-speed.css')));
+assetHash.update(await readFile(join(dist, 'assets', '2048-game.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'sudoku.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'tic-tac-toe.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'chess-game.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'solitaire.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'minesweeper.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'nonogram.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'sliding-puzzle.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'drum-machine.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'online-sequencer.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'css-design-tools.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'web-dev-tools.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'board-games.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'habit-tracker-runtime.css')));
 // Any browser-loaded script uses this version token in its URL. Include every
 // lazy runtime in the hash so deploying a changed module cannot keep serving a
@@ -478,6 +760,26 @@ assetHash.update(await readFile(join(dist, 'assets', 'habit-tracker-runtime.css'
 for (const file of [
   'plan-tools.js',
   'opportunity-runtime.js',
+  'local-study-runtime.js',
+  'spelling-practice-runtime.js',
+  'hangul-practice-runtime.js',
+  '2048-game-runtime.js',
+  'sudoku-runtime.js',
+  'tic-tac-toe-runtime.js',
+  'chess-game-runtime.js',
+  'solitaire-runtime.js',
+  'minesweeper-runtime.js',
+  'nonogram-runtime.js',
+  'sliding-puzzle-runtime.js',
+  'drum-machine-runtime.js',
+  'online-sequencer-runtime.js',
+  'css-design-tools.js',
+  'css-design-logic.mjs',
+  'web-dev-tools.js',
+  'web-dev-logic.mjs',
+  'board-games-runtime.js',
+  'online-sequencer-logic.mjs',
+  'tic-tac-toe-logic.mjs',
   'time-tracker-runtime.js',
   'weekly-meal-planner-runtime.js',
   'reading-log-runtime.js',

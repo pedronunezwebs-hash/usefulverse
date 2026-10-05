@@ -1408,12 +1408,53 @@ function setupToolPage() {
   opportunityTools.add('local-notepad');
   opportunityTools.add('teleprompter-online');
   opportunityTools.add('household-budget-planner');
+  opportunityTools.add('packing-list-maker');
+  opportunityTools.add('decision-matrix');
+  opportunityTools.add('workout-planner');
+  opportunityTools.add('quiz-maker');
+  opportunityTools.add('memory-game');
+  opportunityTools.add('kana-practice');
+  opportunityTools.add('abacus-practice');
+  opportunityTools.add('spelling-practice');
+  opportunityTools.add('hangul-practice');
+  opportunityTools.add('2048-game');
+  opportunityTools.add('sudoku');
+  opportunityTools.add('tic-tac-toe');
+  opportunityTools.add('chess-game');
+  opportunityTools.add('solitaire');
+  opportunityTools.add('minesweeper');
+  opportunityTools.add('nonogram');
+  opportunityTools.add('sliding-puzzle');
+  opportunityTools.add('drum-machine');
+  opportunityTools.add('online-sequencer');
+  opportunityTools.add('css-animation-generator');
+  opportunityTools.add('css-clip-path-editor');
+  opportunityTools.add('css-filter-generator');
+  opportunityTools.add('api-request-builder');
+  opportunityTools.add('html-table-generator');
+  opportunityTools.add('pwa-manifest-generator');
+  opportunityTools.add('connect-four');
+  opportunityTools.add('reversi');
   opportunityTools.add('kanban-board');
   opportunityTools.add('reading-speed-test');
+  if (id === 'connect-four' || id === 'reversi') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./board-games-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupBoardGame }) => setupBoardGame(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
   if (id === 'ear-training') {
     const assetVersion = document.documentElement.dataset.assetVersion;
     import(`./ear-training-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
       .then(({ setupEarTraining }) => setupEarTraining(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'online-sequencer') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./online-sequencer-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupOnlineSequencer }) => setupOnlineSequencer(root))
       .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
     return;
   }

@@ -1,0 +1,8 @@
+.web-dev-tool { display: grid; gap: 1rem; }
+.web-dev-tool__check { display: flex; align-items: center; gap: .55rem; }
+.web-dev-tool__check input { width: 1.1rem; height: 1.1rem; }
+.web-dev-tool__preview { min-height: 3rem; overflow-x: auto; padding: 1rem; border: 1px solid var(--border, #dce3ec); border-radius: .8rem; }
+.web-dev-tool__preview table { width: 100%; border-collapse: collapse; text-align: start; }
+.web-dev-tool__preview caption { padding: .5rem; font-weight: 650; text-align: start; }
+.web-dev-tool__preview th, .web-dev-tool__preview td { padding: .55rem .7rem; border: 1px solid var(--border, #dce3ec); }
+.web-dev-tool__preview th { background: var(--surface-muted, #f2f5f8); }

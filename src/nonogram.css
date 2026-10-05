@@ -1,0 +1,9 @@
+.local-nonogram__viewport{max-width:100%;overflow:auto;overscroll-behavior:contain;padding:.5rem;border:1px solid var(--line,#cbd5e1);border-radius:.6rem;background:#f6f8f6}
+.local-nonogram__board{--nonogram-cell:clamp(2.25rem,10vw,3rem);display:grid;grid-template-columns:minmax(3.2rem,auto) repeat(var(--nonogram-size),var(--nonogram-cell));grid-template-rows:repeat(var(--nonogram-size),var(--nonogram-cell));gap:2px;width:max-content;margin:auto;align-items:stretch}
+.local-nonogram__corner,.local-nonogram__clue{display:flex;align-items:center;justify-content:center;background:#e8eee9;color:#263b32;font-weight:700;font-variant-numeric:tabular-nums;white-space:pre-line;text-align:center}
+.local-nonogram__clue--column{writing-mode:vertical-rl;transform:rotate(180deg);grid-row:1}
+.local-nonogram__clue--row{grid-column:1;white-space:pre-wrap;justify-content:flex-end;padding-inline-end:.45rem}
+.local-nonogram__cell{display:grid;place-items:center;min-width:0;padding:0;border:1px solid #84968c;border-radius:.15rem;background:#fff;color:#14291f;font-size:1.25rem;font-weight:800;cursor:pointer}
+.local-nonogram__cell.is-filled{background:#254e3b;color:#fff}
+.local-nonogram__cell.is-crossed{background:#f1f4f1;color:#89958e}
+.local-nonogram__cell:focus-visible{outline:3px solid #1769ff;outline-offset:1px;z-index:2}

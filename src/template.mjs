@@ -823,6 +823,19 @@ export function shell({ title, description, canonical, body, schema = '', assetV
     <meta name="twitter:card" content="summary">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/styles.css${assetSuffix}">
+    ${toolId === '2048-game' ? `<link rel="stylesheet" href="/assets/2048-game.css${assetSuffix}">` : ''}
+    ${toolId === 'sudoku' ? `<link rel="stylesheet" href="/assets/sudoku.css${assetSuffix}">` : ''}
+    ${toolId === 'tic-tac-toe' ? `<link rel="stylesheet" href="/assets/tic-tac-toe.css${assetSuffix}">` : ''}
+    ${toolId === 'chess-game' ? `<link rel="stylesheet" href="/assets/chess-game.css${assetSuffix}">` : ''}
+    ${toolId === 'solitaire' ? `<link rel="stylesheet" href="/assets/solitaire.css${assetSuffix}">` : ''}
+    ${toolId === 'minesweeper' ? `<link rel="stylesheet" href="/assets/minesweeper.css${assetSuffix}">` : ''}
+    ${toolId === 'nonogram' ? `<link rel="stylesheet" href="/assets/nonogram.css${assetSuffix}">` : ''}
+    ${toolId === 'sliding-puzzle' ? `<link rel="stylesheet" href="/assets/sliding-puzzle.css${assetSuffix}">` : ''}
+    ${toolId === 'drum-machine' ? `<link rel="stylesheet" href="/assets/drum-machine.css${assetSuffix}">` : ''}
+    ${toolId === 'online-sequencer' ? `<link rel="stylesheet" href="/assets/online-sequencer.css${assetSuffix}">` : ''}
+    ${['css-animation-generator', 'css-clip-path-editor', 'css-filter-generator'].includes(toolId) ? `<link rel="stylesheet" href="/assets/css-design-tools.css${assetSuffix}">` : ''}
+    ${['api-request-builder', 'html-table-generator', 'pwa-manifest-generator'].includes(toolId) ? `<link rel="stylesheet" href="/assets/web-dev-tools.css${assetSuffix}">` : ''}
+    ${['connect-four', 'reversi'].includes(toolId) ? `<link rel="stylesheet" href="/assets/board-games.css${assetSuffix}">` : ''}
     ${toolId === 'kanban-board' ? `<link rel="stylesheet" href="/assets/kanban-board.css${assetSuffix}">` : ''}
     ${toolId === 'reading-speed-test' ? `<link rel="stylesheet" href="/assets/reading-speed.css${assetSuffix}">` : ''}
     ${schema}

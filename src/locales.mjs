@@ -14,6 +14,7 @@ import { pdfParityLocales } from './locales/pdf-parity.mjs';
 import { pdfRedactLocales } from './locales/pdf-redact.mjs';
 import { imageCaptureUiLocales } from './locales/image-capture.mjs';
 import { opportunityLocaleData } from './locales/opportunity-tools.mjs';
+import { generatedOpportunityCopy } from './locales/generated-opportunity-copy.mjs';
 import { taskListLocaleData } from './locales/task-list.mjs';
 import { taskListContent } from './locales/task-list-content.mjs';
 import { kanbanBoardLocaleData } from './locales/kanban-board.mjs';
@@ -1093,6 +1094,10 @@ for (const [language, data] of Object.entries(readingLogLocaleData)) {
   const content = readingLogContent(language);
   opportunityLocaleData[language].copy['reading-log'] = content.copy;
 }
+for (const [language, data] of Object.entries(generatedOpportunityCopy)) {
+  opportunityLocaleData[language] ??= { ui: {}, copy: {} };
+  Object.assign(opportunityLocaleData[language].copy, data.copy);
+}
 for (const [language, data] of Object.entries(opportunityLocaleData)) {
   ui[language] ??= {};
   runtimeMessages[language] ??= {};
@@ -1412,7 +1417,7 @@ export function localizedTool(tool, language) {
     keywords,
     intro: gifCopy ? gifCopy[0] : intro,
     body: gifCopy ? gifCopy[1] : puzzleBody ?? longtailBodies[tool.id]?.[language] ?? body,
-    category: pdfOnlyLocales[language] ? 'PDF' : ui[language][tool.category] ?? tool.category,
+    category: pdfOnlyLocales[language] ? 'PDF' : generatedOpportunityCopy[language]?.ui?.[tool.category] ?? ui[language][tool.category] ?? tool.category,
   };
 }
 
