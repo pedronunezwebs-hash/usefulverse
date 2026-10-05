@@ -20,7 +20,7 @@ for (const language of pdfOnlyLocaleKeys) localizedFiles.push(
   `${pdfOnlyLocales[language].prefix.replace(/^\//u, '')}/llms.txt`,
 );
 for (const language of Object.keys(numberWordsLocaleCodes)) localizedFiles.push(`assets/number-words-${language}.js`);
-const required = ['index.html', '404.html', 'assets/styles.css', 'assets/app.js', 'assets/chess-clock-runtime.js', 'assets/ear-training-runtime.js', 'assets/bpm-detector-runtime.js', 'assets/music-scale-runtime.js', 'assets/seating-chart-runtime.js', 'assets/gantt-chart-runtime.js', 'assets/sprite-sheet-runtime.js', 'assets/kanban-board-runtime.js', 'assets/kanban-board.css', 'assets/reading-speed-runtime.js', 'assets/reading-speed.css', 'assets/timer-logic.mjs', 'favicon.svg', 'robots.txt', 'sitemap.xml', 'llms.txt', 'timer-notifications.js', ...localizedFiles, 'BingSiteAuth.xml', 'yandex_f441658073fe7135.html', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html', '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt'];
+const required = ['index.html', '404.html', 'assets/styles.css', 'assets/app.js', 'assets/chart-runtime.js', 'assets/sqlite-playground-runtime.js', 'assets/code-formatter-runtime.js', 'assets/formatter-html-engine.js', 'assets/formatter-css-engine.js', 'assets/formatter-javascript-engine.js', 'assets/chess-clock-runtime.js', 'assets/ear-training-runtime.js', 'assets/bpm-detector-runtime.js', 'assets/music-scale-runtime.js', 'assets/seating-chart-runtime.js', 'assets/gantt-chart-runtime.js', 'assets/sprite-sheet-runtime.js', 'assets/kanban-board-runtime.js', 'assets/kanban-board.css', 'assets/reading-speed-runtime.js', 'assets/reading-speed.css', 'assets/timer-logic.mjs', 'favicon.svg', 'robots.txt', 'sitemap.xml', 'llms.txt', 'timer-notifications.js', ...localizedFiles, 'BingSiteAuth.xml', 'yandex_f441658073fe7135.html', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html', '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt'];
 function assertLanguagePicker(html, currentLanguage, availableLocales, toolId, context, routeForLocale = (key) => localePath(key, toolId)) {
   const currentLocale = availableLocales.find(({ key }) => key === currentLanguage);
   const languageLabel = ui[currentLanguage]?.Language ?? 'Language';
@@ -47,6 +47,12 @@ const deferredAssetBudgets = new Map([
   ['assets/advanced-tools.js', 52 * 1024], ['assets/media-tools.js', 16 * 1024],
   ['assets/plan-tools.js', 55 * 1024], ['assets/tool-suite-tools.js', 150 * 1024],
   ['assets/opportunity-runtime.js', 128 * 1024], ['assets/new-tool-logic.mjs', 16 * 1024], ['assets/timer-logic.mjs', 16 * 1024],
+  ['assets/chart-runtime.js', 8 * 1024],
+  ['assets/sqlite-playground-runtime.js', 8 * 1024],
+  ['assets/code-formatter-runtime.js', 8 * 1024],
+  ['assets/formatter-html-engine.js', 3 * 1024 * 1024],
+  ['assets/formatter-css-engine.js', 3 * 1024 * 1024],
+  ['assets/formatter-javascript-engine.js', 3 * 1024 * 1024],
   ['assets/task-list-runtime.js', 8 * 1024],
   ['assets/kanban-board-runtime.js', 12 * 1024],
   ['assets/kanban-board.css', 3 * 1024],

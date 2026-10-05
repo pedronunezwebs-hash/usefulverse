@@ -100,7 +100,15 @@ function setupFractions(root) {
 
 function setupTimeCard(root) {
   const rows = $('#timecard-shifts', root); const template = $('#timecard-row-template', root);
-  const refreshNames = () => $$('.timecard-row', rows).forEach((row, index) => { row.querySelector('legend').textContent = `${t('Shift')} ${index + 1}`; row.querySelector('[data-action="remove-shift"]').disabled = rows.children.length === 1; });
+  const refreshNames = () => $$('.timecard-row', rows).forEach((row, index) => {
+    row.querySelector('legend').textContent = `${t('Shift')} ${index + 1}`;
+    row.querySelector('[data-action="remove-shift"]').disabled = rows.children.length === 1;
+    for (const [field, key] of [['[data-shift-start]', 'start'], ['[data-shift-end]', 'end'], ['[data-shift-break]', 'break']]) {
+      const input = row.querySelector(field);
+      input.id = `timecard-shift-${index + 1}-${key}`;
+      input.name = `shifts[${index}][${key}]`;
+    }
+  });
   const calculate = () => {
     try {
       const totals = logic.calculateTimeCard($$('.timecard-row', rows).map((row) => ({ start: $('[data-shift-start]', row).value, end: $('[data-shift-end]', row).value, breakMinutes: number($('[data-shift-break]', row).value || '0') })));

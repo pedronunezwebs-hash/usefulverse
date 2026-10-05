@@ -133,18 +133,20 @@ function setupCaseConverter(root) {
   const input = $('#tool-input', root);
   const output = $('#tool-output', root);
   const status = $('#tool-status', root);
+  const idleMessage = status.textContent;
   const update = (mode) => {
     const value = input.value;
     if (mode === 'upper') output.value = value.toLocaleUpperCase(languageTag);
     if (mode === 'lower') output.value = value.toLocaleLowerCase(languageTag);
     if (mode === 'sentence') output.value = value.toLocaleLowerCase(languageTag).replace(/(^|[.!?]\s+)(\p{L})/gu, (_, start, letter) => `${start}${letter.toLocaleUpperCase(languageTag)}`);
     if (mode === 'title') output.value = value.toLocaleLowerCase(languageTag).replace(/(^|[^\p{L}\p{N}])(\p{L}|\d)/gu, (_, start, letter) => `${start}${letter.toLocaleUpperCase(languageTag)}`);
+    status.textContent = value ? '' : idleMessage;
   };
   root.addEventListener('click', (event) => {
     const button = event.target.closest('[data-case]');
     if (button) { $$('.button-row [data-case]', root).forEach((item) => item.classList.toggle('button--primary', item === button)); $$('.button-row [data-case]', root).forEach((item) => item.classList.toggle('button--ghost', item !== button)); update(button.dataset.case); }
     const action = event.target.closest('[data-action]')?.dataset.action;
-    if (action === 'clear') { input.value = ''; output.value = ''; input.focus(); }
+    if (action === 'clear') { input.value = ''; output.value = ''; status.textContent = idleMessage; input.focus(); }
     if (action === 'copy-output') copyText(output.value, status);
   });
   input.addEventListener('input', () => update($('.button-row [data-case].button--primary', root)?.dataset.case || 'upper'));
@@ -1447,6 +1449,27 @@ function setupToolPage() {
     const assetVersion = document.documentElement.dataset.assetVersion;
     import(`./reading-speed-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
       .then(({ setupReadingSpeed }) => setupReadingSpeed(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'chart-maker') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./chart-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupChartMaker }) => setupChartMaker(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'sqlite-playground') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./sqlite-playground-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupSqlitePlayground }) => setupSqlitePlayground(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (['html-formatter', 'css-formatter', 'javascript-formatter'].includes(id)) {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./code-formatter-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupCodeFormatter }) => setupCodeFormatter(root))
       .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
     return;
   }

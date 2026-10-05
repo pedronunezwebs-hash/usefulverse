@@ -105,6 +105,36 @@ await bundle({
   minify: true,
 });
 await bundle({
+  entryPoints: [join(root, 'src', 'chart-runtime.js')],
+  outfile: join(dist, 'assets', 'chart-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'sqlite-playground-runtime.js')],
+  outfile: join(dist, 'assets', 'sqlite-playground-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+for (const name of ['code-formatter-runtime', 'formatter-html-engine', 'formatter-css-engine', 'formatter-javascript-engine']) {
+  const extension = name === 'code-formatter-runtime' ? '.js' : '.mjs';
+  await bundle({
+    entryPoints: [join(root, 'src', `${name}${extension}`)],
+    outfile: join(dist, 'assets', `${name}.js`),
+    bundle: true,
+    format: 'esm',
+    platform: 'browser',
+    target: ['es2022'],
+    minify: true,
+  });
+}
+await bundle({
   entryPoints: [join(root, 'src', 'task-list-runtime.js')],
   outfile: join(dist, 'assets', 'task-list-runtime.js'),
   bundle: true,
@@ -411,6 +441,12 @@ assetHash.update(await readFile(join(dist, 'assets', 'reading-speed.css')));
 for (const file of [
   'plan-tools.js',
   'opportunity-runtime.js',
+  'chart-runtime.js',
+  'sqlite-playground-runtime.js',
+  'code-formatter-runtime.js',
+  'formatter-html-engine.js',
+  'formatter-css-engine.js',
+  'formatter-javascript-engine.js',
   'task-list-runtime.js',
   'kanban-board-runtime.js',
   'reading-speed-runtime.js',

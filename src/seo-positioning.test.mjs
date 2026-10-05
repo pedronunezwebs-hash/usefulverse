@@ -50,6 +50,21 @@ test('result follow-up is hidden initially, offers at most three localized relat
   }
 });
 
+test('contextual result links point to existing, distinct tools and match the completed task', () => {
+  const ids = new Set(tools.map((tool) => tool.id));
+  for (const [source, recommendations] of Object.entries(relatedToolIds)) {
+    assert.ok(ids.has(source), `Unknown recommendation source ${source}`);
+    assert.ok(recommendations.length <= 3, `${source} exceeds the three-link limit`);
+    assert.equal(new Set(recommendations).size, recommendations.length, `${source} repeats a suggestion`);
+    assert.ok(!recommendations.includes(source), `${source} recommends itself`);
+    for (const target of recommendations) assert.ok(ids.has(target), `${source} points to missing ${target}`);
+  }
+  assert.deepEqual(relatedToolIds['pdf-to-image'], ['image-cropper', 'image-resizer-compressor', 'image-format-converter']);
+  assert.deepEqual(relatedToolIds['video-compressor'], ['media-converter', 'audio-compressor', 'media-transcriber']);
+  assert.deepEqual(relatedToolIds['media-transcriber'], ['subtitle-converter', 'word-counter', 'audio-compressor']);
+  assert.ok(!relatedToolIds['video-compressor'].includes('pdf-tools'));
+});
+
 test('Japanese existing tools include localized amida and Japanese-era utilities without exposing Japanese-only UI elsewhere', () => {
   const picker = tools.find((tool) => tool.id === 'random-name-picker');
   const dates = tools.find((tool) => tool.id === 'date-calculator');

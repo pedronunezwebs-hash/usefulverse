@@ -22,6 +22,7 @@ import {
   calculateTeleprompterScrollRate,
   countTeleprompterWords,
 } from './opportunity-logic.mjs';
+import { parseChartCsv } from './chart-logic.mjs';
 
 test('teleprompter scroll rate maps the full script to the selected reading speed', () => {
   const rate = calculateTeleprompterScrollRate(1_200, 120, 120);
@@ -366,9 +367,18 @@ test('colored noise generation is deterministic, bounded, and rejects unsafe len
 });
 
 test('diagram and chart engines validate bounded entries before visual SVG rendering', () => {
-  assert.equal(calculateOpportunity('chart-maker', { csv: 'Month,Value\nJan,2\nFeb,5', type: 'bar' }), 'Jan,2\nFeb,5');
+  assert.deepEqual(parseChartCsv('Month,Value\nJan,2\nFeb,5'), [{ label: 'Jan', value: 2 }, { label: 'Feb', value: 5 }]);
+  assert.deepEqual(parseChartCsv('"Jan, week 1",2\n"Say ""yes""",5'), [
+    { label: 'Jan, week 1', value: 2 }, { label: 'Say "yes"', value: 5 },
+  ]);
+  assert.deepEqual(parseChartCsv('Month,Value\n"Jan, week 1",2\n"Say ""yes""",5'), [
+    { label: 'Jan, week 1', value: 2 }, { label: 'Say "yes"', value: 5 },
+  ]);
   assert.equal(calculateOpportunity('diagram-maker', { steps: 'Start\nReview\nFinish' }), 'Start\nReview\nFinish');
-  assert.throws(() => calculateOpportunity('chart-maker', { csv: 'a,nope\nb,2' }), /number/u);
+  assert.throws(() => parseChartCsv('a,nope\nb,2'), /number/u);
+  assert.throws(() => parseChartCsv('"unfinished,2\nb,3'), /missing its closing quote/u);
+  assert.throws(() => parseChartCsv('a,1,extra\nb,2'), /exactly a label and a number/u);
+  assert.throws(() => parseChartCsv('a,1e308\nb,2'), /2–60 label,value/u);
   assert.throws(() => calculateOpportunity('diagram-maker', { steps: 'only one' }), /2–12/u);
 });
 

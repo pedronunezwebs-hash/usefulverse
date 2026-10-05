@@ -35,7 +35,13 @@ function printDocument(root) {
   const printWindow = window.open('', '_blank', 'width=780,height=800');
   if (!printWindow) return setStatus(root, 'Allow this click to open a print preview, then try again.', 'error');
   const escaped = output.value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
-  printWindow.document.write('<!doctype html><html lang="' + locale + '"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>' + say('Print preview') + '</title><style>body{max-width:800px;margin:48px auto;padding:0 24px;font:16px/1.55 system-ui,sans-serif;color:#151924}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit}@media print{body{margin:0}}</style><pre>' + escaped + '</pre>');
+  if (root.dataset.tool === 'business-card-maker') {
+    const lines = output.value.split(/\r?\n/u).filter((line) => line.trim());
+    const card = lines.map((line, index) => `<div class="card-line${index ? '' : ' card-line--name'}">${line.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')}</div>`).join('');
+    printWindow.document.write('<!doctype html><html lang="' + locale + '"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>' + say('Print preview') + '</title><style>@page{margin:12mm}body{margin:0;color:#151924;font:10pt/1.35 system-ui,sans-serif}.business-card{width:3.5in;min-height:2in;box-sizing:border-box;padding:.22in;border:1px solid #cbd5e1;border-radius:.08in;display:flex;flex-direction:column;justify-content:center;gap:.035in;overflow-wrap:anywhere}.card-line--name{font-size:17pt;font-weight:700;margin-bottom:.06in}.card-line:nth-child(2){font-weight:600;color:#334155}@media screen{body{padding:24px}.business-card{box-shadow:0 2px 12px #0002}}@media print{.business-card{break-inside:avoid;box-shadow:none}}</style><article class="business-card">' + card + '</article></html>');
+  } else {
+    printWindow.document.write('<!doctype html><html lang="' + locale + '"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>' + say('Print preview') + '</title><style>body{max-width:800px;margin:48px auto;padding:0 24px;font:16px/1.55 system-ui,sans-serif;color:#151924}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit}@media print{body{margin:0}}</style><pre>' + escaped + '</pre>');
+  }
   printWindow.addEventListener('load', () => printWindow.print(), { once: true });
   printWindow.document.close();
 }
@@ -165,28 +171,6 @@ function addSvgElement(parent, name, attrs = {}, text = '') {
   return node;
 }
 
-function drawChart(root, values) {
-  const svg = $('[data-op-svg]', root); if (!svg) return;
-  const rows = String(values.csv ?? '').split(/\r?\n/u).map((line) => line.split(',').map((cell) => cell.trim())).filter((row) => row.length >= 2 && row[0]).map(([label, value]) => [label.slice(0, 30), Number(value)]);
-  if (rows.length > 2 && !Number.isFinite(rows[0][1])) rows.shift();
-  if (rows.length < 2 || rows.length > 60 || rows.some(([, value]) => !Number.isFinite(value))) throw new TypeError('Enter 2–60 label,value CSV lines with numeric values.');
-  const max = Math.max(0, ...rows.map(([, value]) => value)); const min = Math.min(0, ...rows.map(([, value]) => value)); const range = max - min || 1;
-  svg.replaceChildren(); svg.setAttribute('viewBox', '0 0 640 360');
-  addSvgElement(svg, 'title', {}, 'Chart preview');
-  addSvgElement(svg, 'path', { d: 'M56 24V300H624', fill: 'none', stroke: 'currentColor', opacity: '.45' });
-  const y = (value) => 280 - (value - min) / range * 230;
-  if (values.type === 'line') {
-    const x = (index) => 72 + index * 536 / (rows.length - 1);
-    addSvgElement(svg, 'path', { d: rows.map(([, value], i) => `${i ? 'L' : 'M'}${x(i)},${y(value)}`).join(' '), fill: 'none', stroke: '#2563eb', 'stroke-width': 4 });
-    rows.forEach(([label, value], i) => { addSvgElement(svg, 'circle', { cx: x(i), cy: y(value), r: 5, fill: '#2563eb' }); addSvgElement(svg, 'text', { x: x(i), y: 320, 'text-anchor': 'middle', 'font-size': 12 }, label); });
-  } else {
-    const width = Math.min(64, 500 / rows.length); const gap = (536 - width * rows.length) / (rows.length + 1);
-    rows.forEach(([label, value], i) => { const x = 62 + gap + i * (width + gap); const top = y(Math.max(0, value)); addSvgElement(svg, 'rect', { x, y: Math.min(top, y(0)), width, height: Math.max(1, Math.abs(y(0) - top)), fill: '#2563eb', rx: 3 }); addSvgElement(svg, 'text', { x: x + width / 2, y: 320, 'text-anchor': 'middle', 'font-size': 12 }, label); });
-  }
-  displayOutput(root, rows.map(([label, value]) => `${label},${value}`).join('\n'));
-  offerSvg(root, svg, 'usefulverse-chart.svg');
-}
-
 function drawDiagram(root, text, { downloadable = false } = {}) {
   const svg = $('[data-op-svg]', root); if (!svg) return;
   const steps = String(text ?? '').split(/\r?\n/u).map((line) => line.trim()).filter(Boolean);
@@ -292,32 +276,6 @@ function setupDiagramMaker(root) {
   });
   window.addEventListener('pagehide', clearExport, { once: true });
   renderList();
-}
-
-function setupSqlite(root) {
-  const output = $('#op-output', root); const run = $('[data-op-calculate]', root); const reset = $('[data-sql-reset]', root);
-  const worker = new Worker(`/assets/sqlite-playground-worker.js?v=${encodeURIComponent(document.documentElement.dataset.assetVersion || '')}`, { type: 'module' });
-  let nextId = 0; const pending = new Map();
-  const renderRows = (columns, rows) => {
-    const table = document.createElement('table'); table.className = 'op-sql-table';
-    const head = table.createTHead().insertRow();
-    for (const name of columns) { const cell = document.createElement('th'); cell.scope = 'col'; cell.textContent = String(name); head.append(cell); }
-    const body = table.createTBody();
-    for (const row of rows) { const tr = body.insertRow(); for (const value of row) { const cell = tr.insertCell(); cell.textContent = value === null ? 'NULL' : String(value); } }
-    $('#op-sql-results', root)?.replaceChildren(table);
-  };
-  worker.addEventListener('message', ({ data }) => {
-    if (data.type === 'init-error') { setStatus(root, data.message, 'error'); run.disabled = true; return; }
-    if (data.type === 'ready') { setStatus(root, say('Values are processed locally in this browser.'), 'success'); return; }
-    const task = pending.get(data.id); if (!task) return; pending.delete(data.id);
-    if (data.type === 'error') { setStatus(root, data.message, 'error'); return; }
-    if (data.type === 'result') { output.textContent = [data.columns.join('\t'), ...data.rows.map((row) => row.map((value) => value === null ? 'NULL' : String(value)).join('\t'))].filter(Boolean).join('\n'); renderRows(data.columns, data.rows); setStatus(root, say('Result ready. This calculation runs locally in your browser.'), 'success'); }
-    if (data.type === 'reset') { $('#op-sql-results', root)?.replaceChildren(); output.textContent = '—'; setStatus(root, 'Database reset.'); }
-  });
-  const send = (type, sql = '') => { const id = ++nextId; pending.set(id, true); worker.postMessage({ type, sql, id }); };
-  run?.addEventListener('click', (event) => { event.preventDefault(); send('exec', $('[data-op-field="sql"]', root)?.value); });
-  reset?.addEventListener('click', () => send('reset'));
-  window.addEventListener('pagehide', () => { worker.postMessage({ type: 'dispose' }); worker.terminate(); }, { once: true });
 }
 
 function setupLatex(root) {
@@ -593,15 +551,26 @@ function setupKeyboard(root) {
 }
 
 function setupMouse(root) {
-  const pad = $('#op-mouse-pad', root); const clicks = []; const last = $('#op-mouse-last', root); const cps = $('#op-mouse-cps', root); const wheel = $('#op-mouse-wheel', root);
+  const pad = $('#op-mouse-pad', root); const clicks = []; const last = $('#op-mouse-last', root); const cps = $('#op-mouse-cps', root); const wheel = $('#op-mouse-wheel', root); let decayTimer;
+  const refreshClicks = () => {
+    const now = performance.now();
+    while (clicks.length && now - clicks[0] >= 1000) clicks.shift();
+    cps.textContent = String(clicks.length);
+    if (clicks.length) decayTimer = setTimeout(refreshClicks, Math.max(1, 1000 - (now - clicks[0])));
+    else decayTimer = undefined;
+  };
   const register = (button) => {
-    const now = performance.now(); clicks.push(now); while (clicks.length && now - clicks[0] > 1000) clicks.shift();
+    const now = performance.now();
+    while (clicks.length && now - clicks[0] >= 1000) clicks.shift();
+    clicks.push(now); clearTimeout(decayTimer); decayTimer = undefined;
     last.textContent = [say('Left button'), say('Middle button'), say('Right button')][button] ?? String(button); cps.textContent = String(clicks.length); setStatus(root, 'Mouse event detected.', 'success');
+    decayTimer = setTimeout(refreshClicks, Math.max(1, 1000 - (now - clicks[0])));
   };
   pad.addEventListener('mousedown', (event) => register(event.button)); pad.addEventListener('contextmenu', (event) => event.preventDefault());
   pad.addEventListener('wheel', (event) => { wheel.textContent = event.deltaY < 0 ? say('Up') : say('Down'); setStatus(root, 'Wheel event detected.', 'success'); }, { passive: true });
   $$('[data-mouse-button]', root).forEach((button) => { button.addEventListener('mousedown', (event) => event.stopPropagation()); button.addEventListener('click', () => register(Number(button.dataset.mouseButton))); });
-  window.addEventListener('blur', () => { clicks.length = 0; cps.textContent = '0'; });
+  window.addEventListener('blur', () => { clearTimeout(decayTimer); decayTimer = undefined; clicks.length = 0; cps.textContent = '0'; });
+  window.addEventListener('pagehide', () => clearTimeout(decayTimer), { once: true });
 }
 
 function setupReaction(root) {
@@ -1012,7 +981,6 @@ export function setupOpportunityTool(id, root) {
   if (engine === 'flashcards') setupFlashcardStudy(root);
   if (engine === 'notepad') { setupNotepad(root); return; }
   if (engine === 'teleprompter') { setupTeleprompter(root); return; }
-  if (engine === 'sqlite-playground') { setupSqlite(root); return; }
   if (engine === 'latex-renderer') setupLatex(root);
   if (engine === 'pixel-art') setupPixelArt(root);
   if (['guitar-tuner', 'webcam-tester'].includes(engine)) { setupDeviceTools(engine, root); return; }
@@ -1052,7 +1020,6 @@ export function setupOpportunityTool(id, root) {
         const values = valuesFrom(root);
         if (engine === 'pixel-art') return;
         if (['image-editor', 'watermark', 'id-photo', 'meme-maker'].includes(engine)) return await runImageTool(engine, values, root);
-        if (engine === 'chart-maker') { drawChart(root, values); setStatus(root, 'Chart created locally in this browser.', 'success'); return; }
         if (engine === 'diagram-maker') { drawDiagram(root, values.steps); setStatus(root, 'Diagram created locally in this browser.', 'success'); return; }
         if (engine === 'hex-editor' && values.file instanceof File) {
           if (values.file.size > 1024 * 1024) throw new RangeError('Choose a file up to 1 MiB for this in-browser hex preview.');

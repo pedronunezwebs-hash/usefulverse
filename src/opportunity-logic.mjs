@@ -1112,23 +1112,6 @@ function plotPolynomial({ coefficients, xmin, xmax, samples = 120 }) {
   return Array.from({ length: count + 1 }, (_, i) => { const x = low + (high - low) * i / count; const y = [...terms].reduce((sum, coefficient) => sum * x + coefficient, 0); if (!Number.isFinite(y) || Math.abs(y) > 1e12) throw new RangeError('The graph exceeds the safe display range. Narrow the x range.'); return `${fixed(x, 3)},${fixed(y, 3)}`; }).join('\n');
 }
 
-function simpleFormatter({ source, mode = 'format' }, kind) {
-  const text = String(source ?? ''); if (!text.trim() || text.length > 200_000) throw new RangeError('Paste non-empty source under 200,000 characters.');
-  if (kind === 'html') return mode === 'minify' ? text.replace(/>\s+</gu, '><').trim() : text.replace(/>\s*</gu, '>\n<').trim();
-  if (kind === 'css') {
-    if (mode === 'minify') return text.replace(/\/\*[\s\S]*?\*\//gu, '').replace(/\s*([{}:;,])\s*/gu, '$1').replace(/;\}/gu, '}').trim();
-    return text.replace(/\s*\{\s*/gu, ' {\n  ').replace(/;\s*/gu, ';\n  ').replace(/\s*:\s*/gu, ': ').replace(/\s*\}\s*/gu, '\n}\n\n').trim();
-  }
-  if (kind === 'javascript') {
-    // Deliberately conservative formatter: preserve token content and only add line breaks at separators.
-    let quote = ''; let escaped = false; let output = ''; let depth = 0;
-    for (const char of text) { if (quote) { output += char; if (escaped) escaped = false; else if (char === '\\') escaped = true; else if (char === quote) quote = ''; continue; } if (char === '"' || char === "'" || char === '`') { quote = char; output += char; } else if (char === '{') { depth++; output += ' {\n' + '  '.repeat(depth); } else if (char === '}') { depth = Math.max(0, depth - 1); output += '\n' + '  '.repeat(depth) + '}'; } else if (char === ';') output += ';\n' + '  '.repeat(depth); else output += char; }
-    if (quote || depth !== 0) throw new TypeError('The source has an unclosed quote or brace.');
-    return mode === 'minify' ? text.replace(/\/\*[\s\S]*?\*\//gu, '').replace(/\s+/gu, ' ').replace(/\s*([{};,])\s*/gu, '$1').trim() : output.trim();
-  }
-  throw new TypeError('Unsupported formatter.');
-}
-
 function cronExpression({ frequency, minute = 0, hour = 9, weekday = 1, day = 1 }) {
   const m = number(minute, 'minute'); const h = number(hour, 'hour'); const w = number(weekday, 'weekday'); const d = number(day, 'day');
   if (![m, h, w, d].every(Number.isInteger) || m < 0 || m > 59 || h < 0 || h > 23 || w < 0 || w > 6 || d < 1 || d > 31) throw new RangeError('Check the allowed ranges for minute, hour, weekday and day.');
@@ -1209,7 +1192,6 @@ function inspectHex({ hex }) {
   }
   return lines.join('\n');
 }
-function chartRows({ csv }) { const rows = String(csv ?? '').split(/\r?\n/u).map((line) => line.split(',').map((cell) => cell.trim())).filter((row) => row.length >= 2 && row[0]); if (rows.length > 1 && !Number.isFinite(Number(rows[0][1]))) rows.shift(); if (rows.length < 2 || rows.length > 60 || rows.some((row) => !row[0] || !Number.isFinite(Number(row[1])))) throw new TypeError('Enter 2–60 label,value CSV lines with a number in the second column.'); return rows.map(([label, value]) => `${label.slice(0, 40)},${number(value, 'chart value')}`).join('\n'); }
 function diagramSteps({ steps }) { const rows = String(steps ?? '').split(/\r?\n/u).map((line) => line.trim()).filter(Boolean); if (rows.length < 2 || rows.length > 12 || rows.some((line) => line.length > 48)) throw new RangeError('Enter 2–12 short steps (up to 48 characters each).'); return rows.join('\n'); }
 function renderLatexSubset({ equation }) { let text = String(equation ?? '').trim(); if (!text || text.length > 240) throw new RangeError('Enter an equation of 1–240 characters.'); if (/\\(?:input|include|write|href|url|html|class|style|def|newcommand|require)\b/iu.test(text)) throw new TypeError('This equation uses an unsupported command.'); text = text.replace(/\\frac\s*\{([^{}]{1,40})\}\s*\{([^{}]{1,40})\}/gu, '($1) / ($2)').replace(/\\sqrt\s*\{([^{}]{1,60})\}/gu, '√($1)').replace(/\\times\b/gu, '×').replace(/\\cdot\b/gu, '·').replace(/\\pi\b/gu, 'π').replace(/\\theta\b/gu, 'θ').replace(/\\alpha\b/gu, 'α').replace(/\\beta\b/gu, 'β').replace(/\\leq\b/gu, '≤').replace(/\\geq\b/gu, '≥').replace(/\\neq\b/gu, '≠').replace(/\^\{([^{}]+)\}/gu, '^($1)').replace(/_\{([^{}]+)\}/gu, '_($1)').replace(/[{}]/gu, '').replace(/\\[A-Za-z]+/gu, '?'); return text; }
 
@@ -1282,9 +1264,6 @@ export function calculateOpportunity(engine, values, locale = 'en') {
     'test-data': generateTestData,
     'math-worksheet': generateMathWorksheet,
     'function-graph': plotPolynomial,
-    'html-format': (input) => simpleFormatter(input, 'html'),
-    'css-format': (input) => simpleFormatter(input, 'css'),
-    'javascript-format': (input) => simpleFormatter(input, 'javascript'),
     'cron-builder': cronExpression,
     'body-fat': estimateBodyFat,
     'due-date': estimateDueDate,
@@ -1296,7 +1275,6 @@ export function calculateOpportunity(engine, values, locale = 'en') {
     'sqlite-playground': simpleSql,
     'business-card': makeBusinessCard,
     'hex-editor': inspectHex,
-    'chart-maker': chartRows,
     'diagram-maker': diagramSteps,
     'latex-renderer': renderLatexSubset,
     'code-playground': () => 'Preview updated in the isolated frame.',

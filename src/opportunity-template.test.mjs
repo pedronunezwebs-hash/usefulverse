@@ -28,6 +28,19 @@ test('conditional fields render in their default visible state before JavaScript
   assert.match(cardAttributes(statistics, 'observed'), /\shidden(?:\s|>)/u);
 });
 
+test('citation webpage URL is rendered as a URL input, not a numeric field', () => {
+  const markup = opportunityToolMarkup('citation-generator');
+  assert.match(markup, /id="op-citation-generator-url" type="url" data-op-field="url"/u);
+});
+
+test('business card creates a printable card preview instead of a generic calculation result', () => {
+  const markup = opportunityToolMarkup('business-card-maker');
+  assert.match(markup, /data-op-calculate[^>]*>Create document</u);
+  assert.match(markup, /id="op-output"[^>]*readonly/u);
+  assert.match(markup, /data-op-print/u);
+  assert.doesNotMatch(markup, /<output class="calculation-result" id="op-output"/u);
+});
+
 test('noise-generator volume is a bounded slider that can be adjusted during playback', () => {
   const markup = opportunityToolMarkup('noise-generator');
   assert.match(markup, /id="op-noise-generator-volume" type="range" min="1" max="50"[^>]*data-op-field="volume"/u);

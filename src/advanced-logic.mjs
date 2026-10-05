@@ -6,6 +6,14 @@ export const gradePoints = Object.freeze({
   F: 0,
 });
 
+export function hasXmlParseError(documentXml) {
+  const parserErrorNamespace = 'http://www.mozilla.org/newlayout/xml/parsererror.xml';
+  const elements = [...(documentXml?.getElementsByTagName?.('parsererror') ?? [])];
+  return elements.some((element) => element.namespaceURI === parserErrorNamespace
+    || element.textContent?.includes('This page contains the following errors:')
+    || element.textContent?.includes('XML Parsing Error:'));
+}
+
 export function parseHexColor(value) {
   const match = String(value).trim().match(/^#?([\da-f]{3}|[\da-f]{6})$/iu);
   if (!match) throw new TypeError('Enter a 3- or 6-digit HEX color.');
