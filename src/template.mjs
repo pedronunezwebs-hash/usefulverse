@@ -27,6 +27,7 @@ export const relatedToolIds = {
   'task-list': ['kanban-board', 'study-planner', 'gantt-chart-maker'],
   'kanban-board': ['task-list', 'gantt-chart-maker', 'study-planner'],
   'reading-speed-test': ['typing-speed-test', 'word-counter', 'study-planner'],
+  'reading-log': ['reading-speed-test', 'study-planner', 'habit-tracker'],
   'chess-clock': ['tournament-bracket-generator', 'random-number-generator'],
   'ear-training': ['online-metronome', 'guitar-tuner', 'virtual-piano'],
   'bpm-detector': ['online-metronome', 'audio-compressor', 'media-converter'],

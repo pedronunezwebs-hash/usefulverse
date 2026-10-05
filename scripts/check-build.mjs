@@ -43,6 +43,7 @@ for (const language of languages) if (!notFound.includes(`href="${localePath(lan
 for (const file of required) await access(join(dist, file));
 await access(join(dist, 'assets', 'time-tracker-runtime.js'));
 await access(join(dist, 'assets', 'weekly-meal-planner-runtime.js'));
+await access(join(dist, 'assets', 'reading-log-runtime.js'));
 const deferredAssetBudgets = new Map([
   ['assets/app.js', 72 * 1024], ['assets/styles.css', 54 * 1024],
   ['assets/new-tools.js', 32 * 1024], ['assets/expanded-tools.js', 40 * 1024],
@@ -51,6 +52,7 @@ const deferredAssetBudgets = new Map([
   ['assets/opportunity-runtime.js', 128 * 1024], ['assets/new-tool-logic.mjs', 16 * 1024], ['assets/timer-logic.mjs', 16 * 1024],
   ['assets/time-tracker-runtime.js', 8 * 1024],
   ['assets/weekly-meal-planner-runtime.js', 12 * 1024],
+  ['assets/reading-log-runtime.js', 12 * 1024],
   ['assets/chart-runtime.js', 8 * 1024],
   ['assets/sqlite-playground-runtime.js', 8 * 1024],
   ['assets/code-formatter-runtime.js', 8 * 1024],

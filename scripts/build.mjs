@@ -123,6 +123,15 @@ await bundle({
   minify: true,
 });
 await bundle({
+  entryPoints: [join(root, 'src', 'reading-log-runtime.js')],
+  outfile: join(dist, 'assets', 'reading-log-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
   entryPoints: [join(root, 'src', 'chart-runtime.js')],
   outfile: join(dist, 'assets', 'chart-runtime.js'),
   bundle: true,
@@ -471,6 +480,7 @@ for (const file of [
   'opportunity-runtime.js',
   'time-tracker-runtime.js',
   'weekly-meal-planner-runtime.js',
+  'reading-log-runtime.js',
   'chart-runtime.js',
   'sqlite-playground-runtime.js',
   'code-formatter-runtime.js',
