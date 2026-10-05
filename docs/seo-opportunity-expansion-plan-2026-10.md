@@ -8,7 +8,7 @@ Documento editable de trabajo. Fuente de keywords: análisis DataForSEO ya reali
 - Mantener el sitio estático: entrada, archivos y cálculos se procesan en el dispositivo; sin Functions, Workers de procesamiento, API por visita, D1, R2 ni almacenamiento remoto.
 - Mantener los 36 idiomas y localizar títulos, descriptions, copy, controles, estados, errores, preguntas frecuentes, `lang`, canonical, hreflang y enlaces relacionados.
 - Cada herramienta se prueba con datos de referencia, casos límite, entrada inválida, teclado, lector/aria, móvil/tablet/escritorio, consola y peticiones de red. Los flujos con cámara/micrófono liberan permisos y recursos al terminar.
-- Lighthouse: objetivo 100/100/100/100 en las plantillas y motores representativos, con cobertura de las 100 rutas inglesas nuevas y muestras localizadas que cubran los 36 idiomas. Repetir de forma aislada los resultados por debajo de 100; no ejecutar miles de auditorías redundantes. Es una puntuación de laboratorio, no garantiza datos de campo ni posiciones.
+- Rendimiento: revisar código dividido, carga diferida, caché, solicitudes, recursos y presupuestos estáticos. **No ejecutar PageSpeed Insights ni Lighthouse en esta continuación**, por instrucción explícita del usuario del 4-oct-2026. Los resultados antiguos de Lighthouse que aparecen abajo son solo antecedentes históricos.
 - No desplegar con errores funcionales, traducciones absurdas, metadatos duplicados o por encima de límites, regresiones, assets mayores de 25 MiB o sitemap/artefacto fuera del límite de Pages.
 - Verificar PR/CI, SHA de `main`, despliegue real de Cloudflare Pages, sitemap, robots, llm manifests, buscadores y limpieza total del clon/dependencias/QA temporales.
 
@@ -207,8 +207,19 @@ Añadir pruebas de vacío, negativos, extremos, entradas inválidas, singularida
 1. `npm test`, `npm run check`, `npm run locale:release-check`, `git diff --check`.
 2. Validar cada HTML generado: título/description únicos, canonical, hreflang recíproco, sitemap exacto y XML válido. Reducir alternates del sitemap si hace falta y conservar hreflang HTML.
 3. Assets locales y diferidos; ningún formulario/archivo se manda a terceros. No añadir Worker/API de procesamiento.
-4. Lighthouse cuatro categorías: medir plantillas y motores representativos (esta ejecución cubre las 100 rutas inglesas nuevas y un ejemplo en cada locale); ante fallo, aislar y repetir. No agotar minutos con miles de mediciones redundantes. Guardar evidencia bajo QA temporal y no en el bundle público.
+4. PageSpeed/Lighthouse: omitido en esta ejecución por instrucción explícita. Validar rendimiento con inspección de módulos, tamaños del build, carga diferida, caché y red; no sustituirlo por un barrido de URLs.
 5. Revisar diff y abrir PR; esperar CI y revisar resultado. Integrar y comprobar SHA remoto.
 6. Verificar deploy Cloudflare Pages, 200 de rutas elegidas en los 36 idiomas (incluidos RTL), robots/sitemap/llms.txt. Enviar sitemap e IndexNow únicamente tras publicar y diferenciar recepción de indexación.
 7. Comprobar cada panel disponible (Google, Bing, Yandex, Naver); Brave: rastreo permitido, sin prometer alta/índice. No afirmar que se envió donde falten permisos.
 8. Quitar el clon, node_modules, caché, build, informes y capturas propios solo después de respaldar/verificar online. Mantener intactos credenciales, repos e historial de Git.
+
+## Seguimiento incremental de la continuación · 5 oct 2026
+
+- El catálogo real ya no es de 200: la rama de trabajo contiene **214 herramientas, 36 idiomas y 7.992 URLs de build/sitemap** (7.704 páginas de herramientas y 36 portadas; las restantes son guías). No confundir este SHA de rama con producción: aún no está integrado ni desplegado.
+- Fase 0: `docs/functional-audit.csv` ya tiene una fila por herramienta. La matriz debe seguir actualizándose con evidencia, no convertir un HTTP 200 o una sola ruta feliz en “verificada”.
+- Fase 1: política de micrófono limitada a las rutas que la necesitan y controles Pomodoro/audio ya están cubiertos por comprobaciones del build/tests; siguen pendientes verificaciones físicas de permisos, sonido y entrega real de avisos en navegador/OS.
+- En esta tanda, `screen-recorder` pasó a **corregida, no verificada en navegador real**: pruebas de APIs simuladas cubren inicio por clic, formato anunciado por el navegador simulado, parada/preview/descarga, liberación de pista, denegación y fin de la pista compartida.
+- La evidencia PDF existente permite clasificar `pdf-tools`, `pdf-protect-unlock`, `pdf-repair`, `pdf-redact`, `pdf-to-pdfa` y `pdf-page-editor` como **corregidas con cobertura parcial**; no equivale a una auditoría de archivos adversariales ni a garantía de compatibilidad universal. La matriz conserva los límites por herramienta.
+- Pendientes funcionales sin una prueba de flujo suficiente en la matriz: `media-transcriber`, `pdf-ocr`, `pdf-document-converter`, `html-to-pdf`, `pdf-form-filler`, `portrait-background-remover` e `image-to-text`. Cada uno requiere carga local/modelo bajo demanda y revisión de archivos de salida; no se los debe etiquetar como comprobados por inspección visual de la página.
+- Verificación de esta tanda: `npm test` **646/646**, `npm run check` genera y valida 7.992 URLs, `npm run locale:release-check` aprobado para 20 locales ampliados, y `git diff --check` limpio. Son pruebas de la rama, no del despliegue público.
+- Fases 2–8 aún no cerradas para el nuevo plan de 78 candidatas: hay herramientas de la primera tanda prioritaria ya incluidas, pero las fases de crecimiento restantes, integración final, publicación, actualización del sitemap externo y comprobación de buscadores siguen pendientes. DataForSEO ya costó **$0,05076**; no repetir consultas.
