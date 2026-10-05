@@ -1023,6 +1023,12 @@ export function setupOpportunityTool(id, root) {
     if (version) sudokuUrl.searchParams.set('v', version);
     import(sudokuUrl.href).then(({ setupSudoku }) => setupSudoku(root)); return;
   }
+  if (engine === 'font-tester') {
+    const fontTesterUrl = new URL('./font-tester-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
+    if (version) fontTesterUrl.searchParams.set('v', version);
+    import(fontTesterUrl.href).then(({ setupFontTester }) => setupFontTester(root)).catch(() => setStatus(root, 'Tool loading failed. Refresh the page and try again.', 'error'));
+    return;
+  }
   if (engine === 'tic-tac-toe') {
     const gameUrl = new URL('./tic-tac-toe-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
     if (version) gameUrl.searchParams.set('v', version);

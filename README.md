@@ -7,7 +7,7 @@ Browser-first collection of fast, private, static tools for everyday work.
 - Processing happens in the browser whenever possible.
 - No account, upload or paid API is required.
 - Each useful tool gets its own stable, indexable URL.
-- The current catalog contains 255 browser-first tools across writing, data, developer, SEO, design, privacy, text, files, productivity, education, music, games and CSS design.
+- The current catalog contains 256 browser-first tools across writing, data, developer, SEO, design, privacy, text, files, productivity, education, music, games and CSS design.
 - The public build is static and deployable to Cloudflare Pages.
 - CSS and JavaScript URLs are content-versioned during the build so CDN caches cannot serve an old runtime after a deploy.
 - HTML uses short browser and edge cache lifetimes; versioned assets remain immutable for repeat visits.
@@ -32,7 +32,7 @@ Russian (`/ru/`), Urdu (`/ur/`), Turkish (`/tr/`), Vietnamese (`/vi/`), Italian
 Dutch (`/nl/`), Greek (`/el/`), Malay (`/ms/`), Polish (`/pl/`), Swedish
 (`/sv/`), Thai (`/th/`), Ukrainian (`/uk/`), Swahili (`/sw/`), Marathi (`/mr/`),
 Telugu (`/te/`), Hausa (`/ha/`), Filipino (`/tl/`), Tamil (`/ta/`), Persian
-(`/fa/`), Amharic (`/am/`) and Gujarati (`/gu/`). Each of the 255 tools has a
+(`/fa/`), Amharic (`/am/`) and Gujarati (`/gu/`). Each of the 256 tools has a
 matching URL in every language. Newer language packs use concise machine-assisted
 translations accepted by the owner; they are not represented as native-reviewed.
 The build creates every version as static HTML, adds
@@ -54,7 +54,7 @@ engine. The recording is not uploaded, although the browser may download those f
 again if its cache is cleared. File processing stays on the visitor's device; memory,
 storage, browser, battery, speed and codec support are practical limits, not a server
 upload-size quota. Heavy media code is loaded only when needed. The generated sitemap
-contains 9,468 URLs: 255 tools and one home page in each of 36 languages, plus seven
+contains 9,504 URLs: 256 tools and one home page in each of 36 languages, plus seven
 guide routes (the guide index and six sourced, task-specific guides) in every language.
 Guides are static HTML and add no server processing or paid API usage.
 
@@ -249,7 +249,7 @@ same `dist/sitemap.xml` that is deployed, so it includes every localized route.
 
 <!-- BEGIN GENERATED SITEMAP URL INVENTORY -->
 
-Generated from `dist/sitemap.xml`: **9,468 canonical URLs**.
+Generated from `dist/sitemap.xml`: **9,504 canonical URLs**.
 
 ```text
 https://usefulverse.com/
@@ -364,6 +364,7 @@ https://usefulverse.com/tools/household-budget-planner/
 https://usefulverse.com/tools/seating-chart-maker/
 https://usefulverse.com/tools/gantt-chart-maker/
 https://usefulverse.com/tools/sprite-sheet-maker/
+https://usefulverse.com/tools/font-tester/
 https://usefulverse.com/tools/drum-machine/
 https://usefulverse.com/tools/online-sequencer/
 https://usefulverse.com/tools/song-key-finder/
@@ -620,6 +621,7 @@ https://usefulverse.com/es/tools/household-budget-planner/
 https://usefulverse.com/es/tools/seating-chart-maker/
 https://usefulverse.com/es/tools/gantt-chart-maker/
 https://usefulverse.com/es/tools/sprite-sheet-maker/
+https://usefulverse.com/es/tools/font-tester/
 https://usefulverse.com/es/tools/drum-machine/
 https://usefulverse.com/es/tools/online-sequencer/
 https://usefulverse.com/es/tools/song-key-finder/
@@ -876,6 +878,7 @@ https://usefulverse.com/fr/tools/household-budget-planner/
 https://usefulverse.com/fr/tools/seating-chart-maker/
 https://usefulverse.com/fr/tools/gantt-chart-maker/
 https://usefulverse.com/fr/tools/sprite-sheet-maker/
+https://usefulverse.com/fr/tools/font-tester/
 https://usefulverse.com/fr/tools/drum-machine/
 https://usefulverse.com/fr/tools/online-sequencer/
 https://usefulverse.com/fr/tools/song-key-finder/
@@ -1132,6 +1135,7 @@ https://usefulverse.com/pt-br/tools/household-budget-planner/
 https://usefulverse.com/pt-br/tools/seating-chart-maker/
 https://usefulverse.com/pt-br/tools/gantt-chart-maker/
 https://usefulverse.com/pt-br/tools/sprite-sheet-maker/
+https://usefulverse.com/pt-br/tools/font-tester/
 https://usefulverse.com/pt-br/tools/drum-machine/
 https://usefulverse.com/pt-br/tools/online-sequencer/
 https://usefulverse.com/pt-br/tools/song-key-finder/
@@ -1388,6 +1392,7 @@ https://usefulverse.com/de/tools/household-budget-planner/
 https://usefulverse.com/de/tools/seating-chart-maker/
 https://usefulverse.com/de/tools/gantt-chart-maker/
 https://usefulverse.com/de/tools/sprite-sheet-maker/
+https://usefulverse.com/de/tools/font-tester/
 https://usefulverse.com/de/tools/drum-machine/
 https://usefulverse.com/de/tools/online-sequencer/
 https://usefulverse.com/de/tools/song-key-finder/
@@ -1644,6 +1649,7 @@ https://usefulverse.com/ja/tools/household-budget-planner/
 https://usefulverse.com/ja/tools/seating-chart-maker/
 https://usefulverse.com/ja/tools/gantt-chart-maker/
 https://usefulverse.com/ja/tools/sprite-sheet-maker/
+https://usefulverse.com/ja/tools/font-tester/
 https://usefulverse.com/ja/tools/drum-machine/
 https://usefulverse.com/ja/tools/online-sequencer/
 https://usefulverse.com/ja/tools/song-key-finder/
@@ -1900,6 +1906,7 @@ https://usefulverse.com/ko/tools/household-budget-planner/
 https://usefulverse.com/ko/tools/seating-chart-maker/
 https://usefulverse.com/ko/tools/gantt-chart-maker/
 https://usefulverse.com/ko/tools/sprite-sheet-maker/
+https://usefulverse.com/ko/tools/font-tester/
 https://usefulverse.com/ko/tools/drum-machine/
 https://usefulverse.com/ko/tools/online-sequencer/
 https://usefulverse.com/ko/tools/song-key-finder/
@@ -2156,6 +2163,7 @@ https://usefulverse.com/id/tools/household-budget-planner/
 https://usefulverse.com/id/tools/seating-chart-maker/
 https://usefulverse.com/id/tools/gantt-chart-maker/
 https://usefulverse.com/id/tools/sprite-sheet-maker/
+https://usefulverse.com/id/tools/font-tester/
 https://usefulverse.com/id/tools/drum-machine/
 https://usefulverse.com/id/tools/online-sequencer/
 https://usefulverse.com/id/tools/song-key-finder/
@@ -2412,6 +2420,7 @@ https://usefulverse.com/hi/tools/household-budget-planner/
 https://usefulverse.com/hi/tools/seating-chart-maker/
 https://usefulverse.com/hi/tools/gantt-chart-maker/
 https://usefulverse.com/hi/tools/sprite-sheet-maker/
+https://usefulverse.com/hi/tools/font-tester/
 https://usefulverse.com/hi/tools/drum-machine/
 https://usefulverse.com/hi/tools/online-sequencer/
 https://usefulverse.com/hi/tools/song-key-finder/
@@ -2668,6 +2677,7 @@ https://usefulverse.com/ar/tools/household-budget-planner/
 https://usefulverse.com/ar/tools/seating-chart-maker/
 https://usefulverse.com/ar/tools/gantt-chart-maker/
 https://usefulverse.com/ar/tools/sprite-sheet-maker/
+https://usefulverse.com/ar/tools/font-tester/
 https://usefulverse.com/ar/tools/drum-machine/
 https://usefulverse.com/ar/tools/online-sequencer/
 https://usefulverse.com/ar/tools/song-key-finder/
@@ -2924,6 +2934,7 @@ https://usefulverse.com/zh-cn/tools/household-budget-planner/
 https://usefulverse.com/zh-cn/tools/seating-chart-maker/
 https://usefulverse.com/zh-cn/tools/gantt-chart-maker/
 https://usefulverse.com/zh-cn/tools/sprite-sheet-maker/
+https://usefulverse.com/zh-cn/tools/font-tester/
 https://usefulverse.com/zh-cn/tools/drum-machine/
 https://usefulverse.com/zh-cn/tools/online-sequencer/
 https://usefulverse.com/zh-cn/tools/song-key-finder/
@@ -3180,6 +3191,7 @@ https://usefulverse.com/bn/tools/household-budget-planner/
 https://usefulverse.com/bn/tools/seating-chart-maker/
 https://usefulverse.com/bn/tools/gantt-chart-maker/
 https://usefulverse.com/bn/tools/sprite-sheet-maker/
+https://usefulverse.com/bn/tools/font-tester/
 https://usefulverse.com/bn/tools/drum-machine/
 https://usefulverse.com/bn/tools/online-sequencer/
 https://usefulverse.com/bn/tools/song-key-finder/
@@ -3436,6 +3448,7 @@ https://usefulverse.com/ru/tools/household-budget-planner/
 https://usefulverse.com/ru/tools/seating-chart-maker/
 https://usefulverse.com/ru/tools/gantt-chart-maker/
 https://usefulverse.com/ru/tools/sprite-sheet-maker/
+https://usefulverse.com/ru/tools/font-tester/
 https://usefulverse.com/ru/tools/drum-machine/
 https://usefulverse.com/ru/tools/online-sequencer/
 https://usefulverse.com/ru/tools/song-key-finder/
@@ -3692,6 +3705,7 @@ https://usefulverse.com/ur/tools/household-budget-planner/
 https://usefulverse.com/ur/tools/seating-chart-maker/
 https://usefulverse.com/ur/tools/gantt-chart-maker/
 https://usefulverse.com/ur/tools/sprite-sheet-maker/
+https://usefulverse.com/ur/tools/font-tester/
 https://usefulverse.com/ur/tools/drum-machine/
 https://usefulverse.com/ur/tools/online-sequencer/
 https://usefulverse.com/ur/tools/song-key-finder/
@@ -3948,6 +3962,7 @@ https://usefulverse.com/tr/tools/household-budget-planner/
 https://usefulverse.com/tr/tools/seating-chart-maker/
 https://usefulverse.com/tr/tools/gantt-chart-maker/
 https://usefulverse.com/tr/tools/sprite-sheet-maker/
+https://usefulverse.com/tr/tools/font-tester/
 https://usefulverse.com/tr/tools/drum-machine/
 https://usefulverse.com/tr/tools/online-sequencer/
 https://usefulverse.com/tr/tools/song-key-finder/
@@ -4204,6 +4219,7 @@ https://usefulverse.com/vi/tools/household-budget-planner/
 https://usefulverse.com/vi/tools/seating-chart-maker/
 https://usefulverse.com/vi/tools/gantt-chart-maker/
 https://usefulverse.com/vi/tools/sprite-sheet-maker/
+https://usefulverse.com/vi/tools/font-tester/
 https://usefulverse.com/vi/tools/drum-machine/
 https://usefulverse.com/vi/tools/online-sequencer/
 https://usefulverse.com/vi/tools/song-key-finder/
@@ -4460,6 +4476,7 @@ https://usefulverse.com/it/tools/household-budget-planner/
 https://usefulverse.com/it/tools/seating-chart-maker/
 https://usefulverse.com/it/tools/gantt-chart-maker/
 https://usefulverse.com/it/tools/sprite-sheet-maker/
+https://usefulverse.com/it/tools/font-tester/
 https://usefulverse.com/it/tools/drum-machine/
 https://usefulverse.com/it/tools/online-sequencer/
 https://usefulverse.com/it/tools/song-key-finder/
@@ -4716,6 +4733,7 @@ https://usefulverse.com/zh-tw/tools/household-budget-planner/
 https://usefulverse.com/zh-tw/tools/seating-chart-maker/
 https://usefulverse.com/zh-tw/tools/gantt-chart-maker/
 https://usefulverse.com/zh-tw/tools/sprite-sheet-maker/
+https://usefulverse.com/zh-tw/tools/font-tester/
 https://usefulverse.com/zh-tw/tools/drum-machine/
 https://usefulverse.com/zh-tw/tools/online-sequencer/
 https://usefulverse.com/zh-tw/tools/song-key-finder/
@@ -4972,6 +4990,7 @@ https://usefulverse.com/bg/tools/household-budget-planner/
 https://usefulverse.com/bg/tools/seating-chart-maker/
 https://usefulverse.com/bg/tools/gantt-chart-maker/
 https://usefulverse.com/bg/tools/sprite-sheet-maker/
+https://usefulverse.com/bg/tools/font-tester/
 https://usefulverse.com/bg/tools/drum-machine/
 https://usefulverse.com/bg/tools/online-sequencer/
 https://usefulverse.com/bg/tools/song-key-finder/
@@ -5228,6 +5247,7 @@ https://usefulverse.com/ca/tools/household-budget-planner/
 https://usefulverse.com/ca/tools/seating-chart-maker/
 https://usefulverse.com/ca/tools/gantt-chart-maker/
 https://usefulverse.com/ca/tools/sprite-sheet-maker/
+https://usefulverse.com/ca/tools/font-tester/
 https://usefulverse.com/ca/tools/drum-machine/
 https://usefulverse.com/ca/tools/online-sequencer/
 https://usefulverse.com/ca/tools/song-key-finder/
@@ -5484,6 +5504,7 @@ https://usefulverse.com/nl/tools/household-budget-planner/
 https://usefulverse.com/nl/tools/seating-chart-maker/
 https://usefulverse.com/nl/tools/gantt-chart-maker/
 https://usefulverse.com/nl/tools/sprite-sheet-maker/
+https://usefulverse.com/nl/tools/font-tester/
 https://usefulverse.com/nl/tools/drum-machine/
 https://usefulverse.com/nl/tools/online-sequencer/
 https://usefulverse.com/nl/tools/song-key-finder/
@@ -5740,6 +5761,7 @@ https://usefulverse.com/el/tools/household-budget-planner/
 https://usefulverse.com/el/tools/seating-chart-maker/
 https://usefulverse.com/el/tools/gantt-chart-maker/
 https://usefulverse.com/el/tools/sprite-sheet-maker/
+https://usefulverse.com/el/tools/font-tester/
 https://usefulverse.com/el/tools/drum-machine/
 https://usefulverse.com/el/tools/online-sequencer/
 https://usefulverse.com/el/tools/song-key-finder/
@@ -5996,6 +6018,7 @@ https://usefulverse.com/ms/tools/household-budget-planner/
 https://usefulverse.com/ms/tools/seating-chart-maker/
 https://usefulverse.com/ms/tools/gantt-chart-maker/
 https://usefulverse.com/ms/tools/sprite-sheet-maker/
+https://usefulverse.com/ms/tools/font-tester/
 https://usefulverse.com/ms/tools/drum-machine/
 https://usefulverse.com/ms/tools/online-sequencer/
 https://usefulverse.com/ms/tools/song-key-finder/
@@ -6252,6 +6275,7 @@ https://usefulverse.com/pl/tools/household-budget-planner/
 https://usefulverse.com/pl/tools/seating-chart-maker/
 https://usefulverse.com/pl/tools/gantt-chart-maker/
 https://usefulverse.com/pl/tools/sprite-sheet-maker/
+https://usefulverse.com/pl/tools/font-tester/
 https://usefulverse.com/pl/tools/drum-machine/
 https://usefulverse.com/pl/tools/online-sequencer/
 https://usefulverse.com/pl/tools/song-key-finder/
@@ -6508,6 +6532,7 @@ https://usefulverse.com/sv/tools/household-budget-planner/
 https://usefulverse.com/sv/tools/seating-chart-maker/
 https://usefulverse.com/sv/tools/gantt-chart-maker/
 https://usefulverse.com/sv/tools/sprite-sheet-maker/
+https://usefulverse.com/sv/tools/font-tester/
 https://usefulverse.com/sv/tools/drum-machine/
 https://usefulverse.com/sv/tools/online-sequencer/
 https://usefulverse.com/sv/tools/song-key-finder/
@@ -6764,6 +6789,7 @@ https://usefulverse.com/th/tools/household-budget-planner/
 https://usefulverse.com/th/tools/seating-chart-maker/
 https://usefulverse.com/th/tools/gantt-chart-maker/
 https://usefulverse.com/th/tools/sprite-sheet-maker/
+https://usefulverse.com/th/tools/font-tester/
 https://usefulverse.com/th/tools/drum-machine/
 https://usefulverse.com/th/tools/online-sequencer/
 https://usefulverse.com/th/tools/song-key-finder/
@@ -7020,6 +7046,7 @@ https://usefulverse.com/uk/tools/household-budget-planner/
 https://usefulverse.com/uk/tools/seating-chart-maker/
 https://usefulverse.com/uk/tools/gantt-chart-maker/
 https://usefulverse.com/uk/tools/sprite-sheet-maker/
+https://usefulverse.com/uk/tools/font-tester/
 https://usefulverse.com/uk/tools/drum-machine/
 https://usefulverse.com/uk/tools/online-sequencer/
 https://usefulverse.com/uk/tools/song-key-finder/
@@ -7276,6 +7303,7 @@ https://usefulverse.com/sw/tools/household-budget-planner/
 https://usefulverse.com/sw/tools/seating-chart-maker/
 https://usefulverse.com/sw/tools/gantt-chart-maker/
 https://usefulverse.com/sw/tools/sprite-sheet-maker/
+https://usefulverse.com/sw/tools/font-tester/
 https://usefulverse.com/sw/tools/drum-machine/
 https://usefulverse.com/sw/tools/online-sequencer/
 https://usefulverse.com/sw/tools/song-key-finder/
@@ -7532,6 +7560,7 @@ https://usefulverse.com/mr/tools/household-budget-planner/
 https://usefulverse.com/mr/tools/seating-chart-maker/
 https://usefulverse.com/mr/tools/gantt-chart-maker/
 https://usefulverse.com/mr/tools/sprite-sheet-maker/
+https://usefulverse.com/mr/tools/font-tester/
 https://usefulverse.com/mr/tools/drum-machine/
 https://usefulverse.com/mr/tools/online-sequencer/
 https://usefulverse.com/mr/tools/song-key-finder/
@@ -7788,6 +7817,7 @@ https://usefulverse.com/te/tools/household-budget-planner/
 https://usefulverse.com/te/tools/seating-chart-maker/
 https://usefulverse.com/te/tools/gantt-chart-maker/
 https://usefulverse.com/te/tools/sprite-sheet-maker/
+https://usefulverse.com/te/tools/font-tester/
 https://usefulverse.com/te/tools/drum-machine/
 https://usefulverse.com/te/tools/online-sequencer/
 https://usefulverse.com/te/tools/song-key-finder/
@@ -8044,6 +8074,7 @@ https://usefulverse.com/ha/tools/household-budget-planner/
 https://usefulverse.com/ha/tools/seating-chart-maker/
 https://usefulverse.com/ha/tools/gantt-chart-maker/
 https://usefulverse.com/ha/tools/sprite-sheet-maker/
+https://usefulverse.com/ha/tools/font-tester/
 https://usefulverse.com/ha/tools/drum-machine/
 https://usefulverse.com/ha/tools/online-sequencer/
 https://usefulverse.com/ha/tools/song-key-finder/
@@ -8300,6 +8331,7 @@ https://usefulverse.com/tl/tools/household-budget-planner/
 https://usefulverse.com/tl/tools/seating-chart-maker/
 https://usefulverse.com/tl/tools/gantt-chart-maker/
 https://usefulverse.com/tl/tools/sprite-sheet-maker/
+https://usefulverse.com/tl/tools/font-tester/
 https://usefulverse.com/tl/tools/drum-machine/
 https://usefulverse.com/tl/tools/online-sequencer/
 https://usefulverse.com/tl/tools/song-key-finder/
@@ -8556,6 +8588,7 @@ https://usefulverse.com/ta/tools/household-budget-planner/
 https://usefulverse.com/ta/tools/seating-chart-maker/
 https://usefulverse.com/ta/tools/gantt-chart-maker/
 https://usefulverse.com/ta/tools/sprite-sheet-maker/
+https://usefulverse.com/ta/tools/font-tester/
 https://usefulverse.com/ta/tools/drum-machine/
 https://usefulverse.com/ta/tools/online-sequencer/
 https://usefulverse.com/ta/tools/song-key-finder/
@@ -8812,6 +8845,7 @@ https://usefulverse.com/fa/tools/household-budget-planner/
 https://usefulverse.com/fa/tools/seating-chart-maker/
 https://usefulverse.com/fa/tools/gantt-chart-maker/
 https://usefulverse.com/fa/tools/sprite-sheet-maker/
+https://usefulverse.com/fa/tools/font-tester/
 https://usefulverse.com/fa/tools/drum-machine/
 https://usefulverse.com/fa/tools/online-sequencer/
 https://usefulverse.com/fa/tools/song-key-finder/
@@ -9068,6 +9102,7 @@ https://usefulverse.com/am/tools/household-budget-planner/
 https://usefulverse.com/am/tools/seating-chart-maker/
 https://usefulverse.com/am/tools/gantt-chart-maker/
 https://usefulverse.com/am/tools/sprite-sheet-maker/
+https://usefulverse.com/am/tools/font-tester/
 https://usefulverse.com/am/tools/drum-machine/
 https://usefulverse.com/am/tools/online-sequencer/
 https://usefulverse.com/am/tools/song-key-finder/
@@ -9324,6 +9359,7 @@ https://usefulverse.com/gu/tools/household-budget-planner/
 https://usefulverse.com/gu/tools/seating-chart-maker/
 https://usefulverse.com/gu/tools/gantt-chart-maker/
 https://usefulverse.com/gu/tools/sprite-sheet-maker/
+https://usefulverse.com/gu/tools/font-tester/
 https://usefulverse.com/gu/tools/drum-machine/
 https://usefulverse.com/gu/tools/online-sequencer/
 https://usefulverse.com/gu/tools/song-key-finder/
