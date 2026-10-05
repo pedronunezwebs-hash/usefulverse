@@ -1,4 +1,4 @@
-import { calculateOpportunity, makeNoiseSamples } from './opportunity-logic.mjs';
+import { calculateOpportunity, calculateTeleprompterScrollRate, countTeleprompterWords, makeNoiseSamples } from './opportunity-logic.mjs';
 import { buildStudyPlan } from './study-planner-logic.mjs';
 import { createMentalMathProblem, parseMentalMathAnswer, validateMentalMathSettings } from './mental-math-logic.mjs';
 import { budgetCsvCell, parseBudgetAmount, summarizeBudget, validateBudgetTransaction } from './household-budget-logic.mjs';
@@ -654,7 +654,7 @@ function setupTeleprompter(root) {
   const speed = $('[data-teleprompter-speed]', root); const size = $('[data-teleprompter-size]', root); const button = $('[data-teleprompter-start]', root); const mirror = $('[data-teleprompter-mirror]', root);
   const speedLabel = $('[data-teleprompter-speed-label]', root); const sizeLabel = $('[data-teleprompter-size-label]', root);
   const positionKey = `usefulverse:teleprompter-position:${location.pathname}`;
-  let savedPosition = null; let saveTimer = 0; let frame = 0; let previous = 0; let running = false;
+  let savedPosition = null; let saveTimer = 0; let frame = 0; let previous = 0; let running = false; let restoredSignature = ''; let wordCount = 0;
   try { savedPosition = JSON.parse(sessionStorage.getItem(positionKey) || 'null'); } catch {}
   const textSignature = (text) => {
     let hash = 2166136261;
@@ -662,7 +662,10 @@ function setupTeleprompter(root) {
     return `${text.length}:${hash >>> 0}`;
   };
   const restorePosition = () => {
-    if (!savedPosition || savedPosition.signature !== textSignature(source.value) || !Number.isFinite(savedPosition.top)) return;
+    const signature = textSignature(source.value);
+    if (restoredSignature === signature) return;
+    restoredSignature = signature;
+    if (!savedPosition || savedPosition.signature !== signature || !Number.isFinite(savedPosition.top)) return;
     viewport.scrollTop = Math.min(Math.max(0, savedPosition.top), Math.max(0, viewport.scrollHeight - viewport.clientHeight));
   };
   const savePosition = () => {
@@ -671,31 +674,45 @@ function setupTeleprompter(root) {
     try { sessionStorage.setItem(positionKey, JSON.stringify(savedPosition)); } catch {}
   };
   const scheduleSave = () => { clearTimeout(saveTimer); saveTimer = window.setTimeout(savePosition, 180); };
+  const setPaused = () => { stop(); savePosition(); button.textContent = say('Start scrolling'); setStatus(root, 'Scrolling paused.'); };
   const tick = (time) => {
     if (!running) return;
-    if (previous) viewport.scrollTop += (time - previous) * Number(speed.value) * Number(size.value) / 300000;
+    const maxScroll = Math.max(0, viewport.scrollHeight - viewport.clientHeight);
+    if (maxScroll === 0 || viewport.scrollTop >= maxScroll) return setPaused();
+    if (previous) viewport.scrollTop = Math.min(maxScroll, viewport.scrollTop + (time - previous) * calculateTeleprompterScrollRate(maxScroll, wordCount, speed.value));
+    if (viewport.scrollTop >= maxScroll) return setPaused();
     previous = time; frame = requestAnimationFrame(tick);
   };
-  const stop = () => { running = false; cancelAnimationFrame(frame); previous = 0; };
+  function stop() { running = false; cancelAnimationFrame(frame); previous = 0; }
   const togglePlayback = () => button.click();
   root.addEventListener('keydown', (event) => {
     if (event.target.closest('input, textarea, select, button, [contenteditable="true"]')) return;
     if (event.code === 'Space') { event.preventDefault(); togglePlayback(); }
-    else if (event.key === 'Escape' && running) { event.preventDefault(); stop(); button.textContent = say('Start scrolling'); setStatus(root, 'Scrolling paused.'); }
+    else if (event.key === 'Escape' && running) { event.preventDefault(); setPaused(); }
   });
   speed.addEventListener('input', () => { speedLabel.value = speed.value; speedLabel.textContent = speed.value; });
   size.addEventListener('input', () => { sizeLabel.value = `${size.value} px`; sizeLabel.textContent = `${size.value} px`; output.style.fontSize = `${size.value}px`; });
   mirror.addEventListener('change', () => { output.style.transform = mirror.checked ? 'scaleX(-1)' : ''; });
   button.addEventListener('click', () => {
-    if (running) { stop(); button.textContent = say('Start scrolling'); return setStatus(root, 'Scrolling paused.'); }
+    if (running) return setPaused();
     if (source.value.trim()) output.textContent = source.value;
     if (!output.textContent.trim() || output.textContent === say('Your script will appear here.')) return setStatus(root, 'Paste or type a script first.', 'error');
-    restorePosition(); output.style.fontSize = `${size.value}px`; running = true; button.textContent = say('Pause scrolling'); frame = requestAnimationFrame(tick); setStatus(root, 'Teleprompter is scrolling in this browser.', 'success');
+    wordCount = countTeleprompterWords(source.value);
+    if (wordCount < 1) return setStatus(root, 'Paste or type a script first.', 'error');
+    output.style.fontSize = `${size.value}px`; restorePosition();
+    if (viewport.scrollHeight <= viewport.clientHeight || viewport.scrollTop >= viewport.scrollHeight - viewport.clientHeight) return setStatus(root, 'Scrolling paused.');
+    running = true; previous = 0; button.textContent = say('Pause scrolling'); frame = requestAnimationFrame(tick); setStatus(root, 'Teleprompter is scrolling in this browser.', 'success');
   });
   $('[data-teleprompter-reset]', root).addEventListener('click', () => { stop(); clearTimeout(saveTimer); viewport.scrollTop = 0; savedPosition = null; try { sessionStorage.removeItem(positionKey); } catch {} output.textContent = source.value || say('Your script will appear here.'); button.textContent = say('Start scrolling'); setStatus(root, 'Script position reset.'); });
-  source.addEventListener('input', () => { if (running) { stop(); button.textContent = say('Start scrolling'); } if (!running) { output.textContent = source.value || say('Your script will appear here.'); restorePosition(); } });
+  source.addEventListener('input', () => {
+    if (running) { stop(); button.textContent = say('Start scrolling'); }
+    wordCount = countTeleprompterWords(source.value);
+    savedPosition = null; restoredSignature = textSignature(source.value); viewport.scrollTop = 0;
+    try { sessionStorage.removeItem(positionKey); } catch {}
+    if (!running) output.textContent = source.value || say('Your script will appear here.');
+  });
   viewport.addEventListener('scroll', scheduleSave, { passive: true });
-  document.addEventListener('visibilitychange', () => { if (document.hidden && running) { stop(); savePosition(); button.textContent = say('Start scrolling'); setStatus(root, 'Scrolling paused.'); } });
+  document.addEventListener('visibilitychange', () => { if (document.hidden && running) setPaused(); });
   window.addEventListener('pagehide', () => { clearTimeout(saveTimer); savePosition(); stop(); }, { once: true });
 }
 

@@ -19,7 +19,22 @@ import {
   calculateMacros, calculateRunningPace, estimateOneRepMax, buildCoverLetter, generateTestData,
   generateMathWorksheet,
   calculateOpportunity,
+  calculateTeleprompterScrollRate,
+  countTeleprompterWords,
 } from './opportunity-logic.mjs';
+
+test('teleprompter scroll rate maps the full script to the selected reading speed', () => {
+  const rate = calculateTeleprompterScrollRate(1_200, 120, 120);
+  assert.equal(rate, 0.02);
+  assert.equal(1_200 / rate, 60_000);
+  assert.equal(calculateTeleprompterScrollRate(0, 80, 120), 0);
+  assert.throws(() => calculateTeleprompterScrollRate(-1, 80, 120), /zero or greater/u);
+  assert.throws(() => calculateTeleprompterScrollRate(100, 0, 120), /positive integer/u);
+  assert.throws(() => calculateTeleprompterScrollRate(100, 80, 29), /between 30 and 240/u);
+  assert.equal(countTeleprompterWords('Count these three words'), 4);
+  assert.equal(countTeleprompterWords('漢字かなカナ 한국어'), 9);
+  assert.equal(countTeleprompterWords(''), 0);
+});
 
 test('equation solver handles linear, quadratic, repeated and invalid real roots', () => {
   assert.match(solveEquation({ a: 0, b: 2, c: -4 }), /x = 2/u);

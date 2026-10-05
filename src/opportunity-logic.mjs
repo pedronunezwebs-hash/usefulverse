@@ -40,6 +40,18 @@ export function makeNoiseSamples(color, length, random = Math.random) {
   return samples;
 }
 
+export function calculateTeleprompterScrollRate(maxScroll, wordCount, wordsPerMinute) {
+  const distance = Number(maxScroll); const words = Number(wordCount); const speed = Number(wordsPerMinute);
+  if (!Number.isFinite(distance) || distance < 0) throw new RangeError('Scroll distance must be zero or greater.');
+  if (!Number.isInteger(words) || words < 1) throw new RangeError('Word count must be a positive integer.');
+  if (!Number.isFinite(speed) || speed < 30 || speed > 240) throw new RangeError('Reading speed must be between 30 and 240 words per minute.');
+  return distance * speed / (words * 60_000);
+}
+
+export function countTeleprompterWords(text) {
+  return (String(text).match(/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]|[\p{L}\p{N}]+/gu) ?? []).length;
+}
+
 export function solveEquation({ a, b, c }) {
   const A = number(a, 'coefficient a'); const B = number(b, 'coefficient b'); const C = number(c, 'coefficient c');
   if (A === 0 && B === 0) return C === 0 ? 'Every real number is a solution.' : 'There is no solution.';
