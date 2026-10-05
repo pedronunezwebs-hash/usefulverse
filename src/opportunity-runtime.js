@@ -1035,6 +1035,12 @@ export function setupOpportunityTool(id, root) {
     import(kakuroUrl.href).then(({ setupKakuro }) => setupKakuro(root)).catch(() => setStatus(root, 'Tool loading failed. Refresh the page and try again.', 'error'));
     return;
   }
+  if (engine === 'battleship') {
+    const battleshipUrl = new URL('./battleship-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
+    if (version) battleshipUrl.searchParams.set('v', version);
+    import(battleshipUrl.href).then(({ setupBattleship }) => setupBattleship(root)).catch(() => setStatus(root, 'Tool loading failed. Refresh the page and try again.', 'error'));
+    return;
+  }
   if (engine === 'tic-tac-toe') {
     const gameUrl = new URL('./tic-tac-toe-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
     if (version) gameUrl.searchParams.set('v', version);

@@ -281,3 +281,31 @@ test('metronome rhythm practice is accessible, bounded and localized in every pu
     assert.deepEqual(placeholders(translated), placeholders(phrase), `${language} placeholder mismatch: ${phrase}`);
   }
 });
+
+test('Battleship has localized local-play controls and runtime messages in all 36 locales', () => {
+  const phrases = [
+    'Your fleet stays on this device. The computer randomly picks a square to shoot at.', 'Your fleet', 'Enemy fleet', 'New game',
+    'Row {row}, column {column}: {state}', 'Ship', 'Ship hit', 'No ship here', 'No shot yet',
+    'Computer hit your ship at row {row}, column {column}.', 'Computer missed at row {row}, column {column}.',
+    'You hit a ship.', 'You missed.', 'You sank a ship!', 'You win!', 'The computer sank your fleet.',
+    'Choose an untried square on the enemy board to fire.', 'Choose a square to fire.', 'Computer turn…',
+    'Game over. Start a new game to play again.', 'A new fleet was placed randomly.', 'Enemy board', 'Your board',
+    'Line up your guess with the row and column.',
+  ];
+  const tool = opportunityTools.find((item) => item.id === 'battleship');
+  assert.ok(tool);
+  for (const language of Object.keys(locales)) {
+    const localized = localizedTool(tool, language);
+    assert.ok(localized.title && localized.description && localized.intro, `localized copy ${language}`);
+    for (const phrase of phrases) {
+      const translated = generatedOpportunityCopy[language]?.ui?.[phrase];
+      assert.ok(translated, `${language} is missing ${phrase}`);
+      if (language !== 'en') assert.notEqual(translated, phrase, `${language} falls back to English: ${phrase}`);
+      const placeholders = (value) => [...value.matchAll(/\{([^}]+)\}/gu)].map(([, token]) => token).sort();
+      assert.deepEqual(placeholders(translated), placeholders(phrase), `${language} placeholder mismatch: ${phrase}`);
+    }
+  }
+  const markup = opportunityToolMarkup('battleship', 'ar', opportunityLocaleData.ar.ui);
+  for (const control of ['data-battleship-enemy', 'data-battleship-player', 'data-battleship-new', 'data-planner-messages']) assert.ok(markup.includes(control), control);
+  assert.match(markup, /لوحة العدو|لوحة العدو/u);
+});

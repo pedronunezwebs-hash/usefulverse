@@ -249,7 +249,7 @@ same `dist/sitemap.xml` that is deployed, so it includes every localized route.
 
 <!-- BEGIN GENERATED SITEMAP URL INVENTORY -->
 
-Generated from `dist/sitemap.xml`: **9,540 canonical URLs**.
+Generated from `dist/sitemap.xml`: **9,576 canonical URLs**.
 
 ```text
 https://usefulverse.com/
@@ -366,6 +366,7 @@ https://usefulverse.com/tools/gantt-chart-maker/
 https://usefulverse.com/tools/sprite-sheet-maker/
 https://usefulverse.com/tools/font-tester/
 https://usefulverse.com/tools/kakuro/
+https://usefulverse.com/tools/battleship/
 https://usefulverse.com/tools/drum-machine/
 https://usefulverse.com/tools/online-sequencer/
 https://usefulverse.com/tools/song-key-finder/
@@ -624,6 +625,7 @@ https://usefulverse.com/es/tools/gantt-chart-maker/
 https://usefulverse.com/es/tools/sprite-sheet-maker/
 https://usefulverse.com/es/tools/font-tester/
 https://usefulverse.com/es/tools/kakuro/
+https://usefulverse.com/es/tools/battleship/
 https://usefulverse.com/es/tools/drum-machine/
 https://usefulverse.com/es/tools/online-sequencer/
 https://usefulverse.com/es/tools/song-key-finder/
@@ -882,6 +884,7 @@ https://usefulverse.com/fr/tools/gantt-chart-maker/
 https://usefulverse.com/fr/tools/sprite-sheet-maker/
 https://usefulverse.com/fr/tools/font-tester/
 https://usefulverse.com/fr/tools/kakuro/
+https://usefulverse.com/fr/tools/battleship/
 https://usefulverse.com/fr/tools/drum-machine/
 https://usefulverse.com/fr/tools/online-sequencer/
 https://usefulverse.com/fr/tools/song-key-finder/
@@ -1140,6 +1143,7 @@ https://usefulverse.com/pt-br/tools/gantt-chart-maker/
 https://usefulverse.com/pt-br/tools/sprite-sheet-maker/
 https://usefulverse.com/pt-br/tools/font-tester/
 https://usefulverse.com/pt-br/tools/kakuro/
+https://usefulverse.com/pt-br/tools/battleship/
 https://usefulverse.com/pt-br/tools/drum-machine/
 https://usefulverse.com/pt-br/tools/online-sequencer/
 https://usefulverse.com/pt-br/tools/song-key-finder/
@@ -1398,6 +1402,7 @@ https://usefulverse.com/de/tools/gantt-chart-maker/
 https://usefulverse.com/de/tools/sprite-sheet-maker/
 https://usefulverse.com/de/tools/font-tester/
 https://usefulverse.com/de/tools/kakuro/
+https://usefulverse.com/de/tools/battleship/
 https://usefulverse.com/de/tools/drum-machine/
 https://usefulverse.com/de/tools/online-sequencer/
 https://usefulverse.com/de/tools/song-key-finder/
@@ -1656,6 +1661,7 @@ https://usefulverse.com/ja/tools/gantt-chart-maker/
 https://usefulverse.com/ja/tools/sprite-sheet-maker/
 https://usefulverse.com/ja/tools/font-tester/
 https://usefulverse.com/ja/tools/kakuro/
+https://usefulverse.com/ja/tools/battleship/
 https://usefulverse.com/ja/tools/drum-machine/
 https://usefulverse.com/ja/tools/online-sequencer/
 https://usefulverse.com/ja/tools/song-key-finder/
@@ -1914,6 +1920,7 @@ https://usefulverse.com/ko/tools/gantt-chart-maker/
 https://usefulverse.com/ko/tools/sprite-sheet-maker/
 https://usefulverse.com/ko/tools/font-tester/
 https://usefulverse.com/ko/tools/kakuro/
+https://usefulverse.com/ko/tools/battleship/
 https://usefulverse.com/ko/tools/drum-machine/
 https://usefulverse.com/ko/tools/online-sequencer/
 https://usefulverse.com/ko/tools/song-key-finder/
@@ -2172,6 +2179,7 @@ https://usefulverse.com/id/tools/gantt-chart-maker/
 https://usefulverse.com/id/tools/sprite-sheet-maker/
 https://usefulverse.com/id/tools/font-tester/
 https://usefulverse.com/id/tools/kakuro/
+https://usefulverse.com/id/tools/battleship/
 https://usefulverse.com/id/tools/drum-machine/
 https://usefulverse.com/id/tools/online-sequencer/
 https://usefulverse.com/id/tools/song-key-finder/
@@ -2430,6 +2438,7 @@ https://usefulverse.com/hi/tools/gantt-chart-maker/
 https://usefulverse.com/hi/tools/sprite-sheet-maker/
 https://usefulverse.com/hi/tools/font-tester/
 https://usefulverse.com/hi/tools/kakuro/
+https://usefulverse.com/hi/tools/battleship/
 https://usefulverse.com/hi/tools/drum-machine/
 https://usefulverse.com/hi/tools/online-sequencer/
 https://usefulverse.com/hi/tools/song-key-finder/
@@ -2688,6 +2697,7 @@ https://usefulverse.com/ar/tools/gantt-chart-maker/
 https://usefulverse.com/ar/tools/sprite-sheet-maker/
 https://usefulverse.com/ar/tools/font-tester/
 https://usefulverse.com/ar/tools/kakuro/
+https://usefulverse.com/ar/tools/battleship/
 https://usefulverse.com/ar/tools/drum-machine/
 https://usefulverse.com/ar/tools/online-sequencer/
 https://usefulverse.com/ar/tools/song-key-finder/
@@ -2946,6 +2956,7 @@ https://usefulverse.com/zh-cn/tools/gantt-chart-maker/
 https://usefulverse.com/zh-cn/tools/sprite-sheet-maker/
 https://usefulverse.com/zh-cn/tools/font-tester/
 https://usefulverse.com/zh-cn/tools/kakuro/
+https://usefulverse.com/zh-cn/tools/battleship/
 https://usefulverse.com/zh-cn/tools/drum-machine/
 https://usefulverse.com/zh-cn/tools/online-sequencer/
 https://usefulverse.com/zh-cn/tools/song-key-finder/
@@ -3204,6 +3215,7 @@ https://usefulverse.com/bn/tools/gantt-chart-maker/
 https://usefulverse.com/bn/tools/sprite-sheet-maker/
 https://usefulverse.com/bn/tools/font-tester/
 https://usefulverse.com/bn/tools/kakuro/
+https://usefulverse.com/bn/tools/battleship/
 https://usefulverse.com/bn/tools/drum-machine/
 https://usefulverse.com/bn/tools/online-sequencer/
 https://usefulverse.com/bn/tools/song-key-finder/
@@ -3462,6 +3474,7 @@ https://usefulverse.com/ru/tools/gantt-chart-maker/
 https://usefulverse.com/ru/tools/sprite-sheet-maker/
 https://usefulverse.com/ru/tools/font-tester/
 https://usefulverse.com/ru/tools/kakuro/
+https://usefulverse.com/ru/tools/battleship/
 https://usefulverse.com/ru/tools/drum-machine/
 https://usefulverse.com/ru/tools/online-sequencer/
 https://usefulverse.com/ru/tools/song-key-finder/
@@ -3720,6 +3733,7 @@ https://usefulverse.com/ur/tools/gantt-chart-maker/
 https://usefulverse.com/ur/tools/sprite-sheet-maker/
 https://usefulverse.com/ur/tools/font-tester/
 https://usefulverse.com/ur/tools/kakuro/
+https://usefulverse.com/ur/tools/battleship/
 https://usefulverse.com/ur/tools/drum-machine/
 https://usefulverse.com/ur/tools/online-sequencer/
 https://usefulverse.com/ur/tools/song-key-finder/
@@ -3978,6 +3992,7 @@ https://usefulverse.com/tr/tools/gantt-chart-maker/
 https://usefulverse.com/tr/tools/sprite-sheet-maker/
 https://usefulverse.com/tr/tools/font-tester/
 https://usefulverse.com/tr/tools/kakuro/
+https://usefulverse.com/tr/tools/battleship/
 https://usefulverse.com/tr/tools/drum-machine/
 https://usefulverse.com/tr/tools/online-sequencer/
 https://usefulverse.com/tr/tools/song-key-finder/
@@ -4236,6 +4251,7 @@ https://usefulverse.com/vi/tools/gantt-chart-maker/
 https://usefulverse.com/vi/tools/sprite-sheet-maker/
 https://usefulverse.com/vi/tools/font-tester/
 https://usefulverse.com/vi/tools/kakuro/
+https://usefulverse.com/vi/tools/battleship/
 https://usefulverse.com/vi/tools/drum-machine/
 https://usefulverse.com/vi/tools/online-sequencer/
 https://usefulverse.com/vi/tools/song-key-finder/
@@ -4494,6 +4510,7 @@ https://usefulverse.com/it/tools/gantt-chart-maker/
 https://usefulverse.com/it/tools/sprite-sheet-maker/
 https://usefulverse.com/it/tools/font-tester/
 https://usefulverse.com/it/tools/kakuro/
+https://usefulverse.com/it/tools/battleship/
 https://usefulverse.com/it/tools/drum-machine/
 https://usefulverse.com/it/tools/online-sequencer/
 https://usefulverse.com/it/tools/song-key-finder/
@@ -4752,6 +4769,7 @@ https://usefulverse.com/zh-tw/tools/gantt-chart-maker/
 https://usefulverse.com/zh-tw/tools/sprite-sheet-maker/
 https://usefulverse.com/zh-tw/tools/font-tester/
 https://usefulverse.com/zh-tw/tools/kakuro/
+https://usefulverse.com/zh-tw/tools/battleship/
 https://usefulverse.com/zh-tw/tools/drum-machine/
 https://usefulverse.com/zh-tw/tools/online-sequencer/
 https://usefulverse.com/zh-tw/tools/song-key-finder/
@@ -5010,6 +5028,7 @@ https://usefulverse.com/bg/tools/gantt-chart-maker/
 https://usefulverse.com/bg/tools/sprite-sheet-maker/
 https://usefulverse.com/bg/tools/font-tester/
 https://usefulverse.com/bg/tools/kakuro/
+https://usefulverse.com/bg/tools/battleship/
 https://usefulverse.com/bg/tools/drum-machine/
 https://usefulverse.com/bg/tools/online-sequencer/
 https://usefulverse.com/bg/tools/song-key-finder/
@@ -5268,6 +5287,7 @@ https://usefulverse.com/ca/tools/gantt-chart-maker/
 https://usefulverse.com/ca/tools/sprite-sheet-maker/
 https://usefulverse.com/ca/tools/font-tester/
 https://usefulverse.com/ca/tools/kakuro/
+https://usefulverse.com/ca/tools/battleship/
 https://usefulverse.com/ca/tools/drum-machine/
 https://usefulverse.com/ca/tools/online-sequencer/
 https://usefulverse.com/ca/tools/song-key-finder/
@@ -5526,6 +5546,7 @@ https://usefulverse.com/nl/tools/gantt-chart-maker/
 https://usefulverse.com/nl/tools/sprite-sheet-maker/
 https://usefulverse.com/nl/tools/font-tester/
 https://usefulverse.com/nl/tools/kakuro/
+https://usefulverse.com/nl/tools/battleship/
 https://usefulverse.com/nl/tools/drum-machine/
 https://usefulverse.com/nl/tools/online-sequencer/
 https://usefulverse.com/nl/tools/song-key-finder/
@@ -5784,6 +5805,7 @@ https://usefulverse.com/el/tools/gantt-chart-maker/
 https://usefulverse.com/el/tools/sprite-sheet-maker/
 https://usefulverse.com/el/tools/font-tester/
 https://usefulverse.com/el/tools/kakuro/
+https://usefulverse.com/el/tools/battleship/
 https://usefulverse.com/el/tools/drum-machine/
 https://usefulverse.com/el/tools/online-sequencer/
 https://usefulverse.com/el/tools/song-key-finder/
@@ -6042,6 +6064,7 @@ https://usefulverse.com/ms/tools/gantt-chart-maker/
 https://usefulverse.com/ms/tools/sprite-sheet-maker/
 https://usefulverse.com/ms/tools/font-tester/
 https://usefulverse.com/ms/tools/kakuro/
+https://usefulverse.com/ms/tools/battleship/
 https://usefulverse.com/ms/tools/drum-machine/
 https://usefulverse.com/ms/tools/online-sequencer/
 https://usefulverse.com/ms/tools/song-key-finder/
@@ -6300,6 +6323,7 @@ https://usefulverse.com/pl/tools/gantt-chart-maker/
 https://usefulverse.com/pl/tools/sprite-sheet-maker/
 https://usefulverse.com/pl/tools/font-tester/
 https://usefulverse.com/pl/tools/kakuro/
+https://usefulverse.com/pl/tools/battleship/
 https://usefulverse.com/pl/tools/drum-machine/
 https://usefulverse.com/pl/tools/online-sequencer/
 https://usefulverse.com/pl/tools/song-key-finder/
@@ -6558,6 +6582,7 @@ https://usefulverse.com/sv/tools/gantt-chart-maker/
 https://usefulverse.com/sv/tools/sprite-sheet-maker/
 https://usefulverse.com/sv/tools/font-tester/
 https://usefulverse.com/sv/tools/kakuro/
+https://usefulverse.com/sv/tools/battleship/
 https://usefulverse.com/sv/tools/drum-machine/
 https://usefulverse.com/sv/tools/online-sequencer/
 https://usefulverse.com/sv/tools/song-key-finder/
@@ -6816,6 +6841,7 @@ https://usefulverse.com/th/tools/gantt-chart-maker/
 https://usefulverse.com/th/tools/sprite-sheet-maker/
 https://usefulverse.com/th/tools/font-tester/
 https://usefulverse.com/th/tools/kakuro/
+https://usefulverse.com/th/tools/battleship/
 https://usefulverse.com/th/tools/drum-machine/
 https://usefulverse.com/th/tools/online-sequencer/
 https://usefulverse.com/th/tools/song-key-finder/
@@ -7074,6 +7100,7 @@ https://usefulverse.com/uk/tools/gantt-chart-maker/
 https://usefulverse.com/uk/tools/sprite-sheet-maker/
 https://usefulverse.com/uk/tools/font-tester/
 https://usefulverse.com/uk/tools/kakuro/
+https://usefulverse.com/uk/tools/battleship/
 https://usefulverse.com/uk/tools/drum-machine/
 https://usefulverse.com/uk/tools/online-sequencer/
 https://usefulverse.com/uk/tools/song-key-finder/
@@ -7332,6 +7359,7 @@ https://usefulverse.com/sw/tools/gantt-chart-maker/
 https://usefulverse.com/sw/tools/sprite-sheet-maker/
 https://usefulverse.com/sw/tools/font-tester/
 https://usefulverse.com/sw/tools/kakuro/
+https://usefulverse.com/sw/tools/battleship/
 https://usefulverse.com/sw/tools/drum-machine/
 https://usefulverse.com/sw/tools/online-sequencer/
 https://usefulverse.com/sw/tools/song-key-finder/
@@ -7590,6 +7618,7 @@ https://usefulverse.com/mr/tools/gantt-chart-maker/
 https://usefulverse.com/mr/tools/sprite-sheet-maker/
 https://usefulverse.com/mr/tools/font-tester/
 https://usefulverse.com/mr/tools/kakuro/
+https://usefulverse.com/mr/tools/battleship/
 https://usefulverse.com/mr/tools/drum-machine/
 https://usefulverse.com/mr/tools/online-sequencer/
 https://usefulverse.com/mr/tools/song-key-finder/
@@ -7848,6 +7877,7 @@ https://usefulverse.com/te/tools/gantt-chart-maker/
 https://usefulverse.com/te/tools/sprite-sheet-maker/
 https://usefulverse.com/te/tools/font-tester/
 https://usefulverse.com/te/tools/kakuro/
+https://usefulverse.com/te/tools/battleship/
 https://usefulverse.com/te/tools/drum-machine/
 https://usefulverse.com/te/tools/online-sequencer/
 https://usefulverse.com/te/tools/song-key-finder/
@@ -8106,6 +8136,7 @@ https://usefulverse.com/ha/tools/gantt-chart-maker/
 https://usefulverse.com/ha/tools/sprite-sheet-maker/
 https://usefulverse.com/ha/tools/font-tester/
 https://usefulverse.com/ha/tools/kakuro/
+https://usefulverse.com/ha/tools/battleship/
 https://usefulverse.com/ha/tools/drum-machine/
 https://usefulverse.com/ha/tools/online-sequencer/
 https://usefulverse.com/ha/tools/song-key-finder/
@@ -8364,6 +8395,7 @@ https://usefulverse.com/tl/tools/gantt-chart-maker/
 https://usefulverse.com/tl/tools/sprite-sheet-maker/
 https://usefulverse.com/tl/tools/font-tester/
 https://usefulverse.com/tl/tools/kakuro/
+https://usefulverse.com/tl/tools/battleship/
 https://usefulverse.com/tl/tools/drum-machine/
 https://usefulverse.com/tl/tools/online-sequencer/
 https://usefulverse.com/tl/tools/song-key-finder/
@@ -8622,6 +8654,7 @@ https://usefulverse.com/ta/tools/gantt-chart-maker/
 https://usefulverse.com/ta/tools/sprite-sheet-maker/
 https://usefulverse.com/ta/tools/font-tester/
 https://usefulverse.com/ta/tools/kakuro/
+https://usefulverse.com/ta/tools/battleship/
 https://usefulverse.com/ta/tools/drum-machine/
 https://usefulverse.com/ta/tools/online-sequencer/
 https://usefulverse.com/ta/tools/song-key-finder/
@@ -8880,6 +8913,7 @@ https://usefulverse.com/fa/tools/gantt-chart-maker/
 https://usefulverse.com/fa/tools/sprite-sheet-maker/
 https://usefulverse.com/fa/tools/font-tester/
 https://usefulverse.com/fa/tools/kakuro/
+https://usefulverse.com/fa/tools/battleship/
 https://usefulverse.com/fa/tools/drum-machine/
 https://usefulverse.com/fa/tools/online-sequencer/
 https://usefulverse.com/fa/tools/song-key-finder/
@@ -9138,6 +9172,7 @@ https://usefulverse.com/am/tools/gantt-chart-maker/
 https://usefulverse.com/am/tools/sprite-sheet-maker/
 https://usefulverse.com/am/tools/font-tester/
 https://usefulverse.com/am/tools/kakuro/
+https://usefulverse.com/am/tools/battleship/
 https://usefulverse.com/am/tools/drum-machine/
 https://usefulverse.com/am/tools/online-sequencer/
 https://usefulverse.com/am/tools/song-key-finder/
@@ -9396,6 +9431,7 @@ https://usefulverse.com/gu/tools/gantt-chart-maker/
 https://usefulverse.com/gu/tools/sprite-sheet-maker/
 https://usefulverse.com/gu/tools/font-tester/
 https://usefulverse.com/gu/tools/kakuro/
+https://usefulverse.com/gu/tools/battleship/
 https://usefulverse.com/gu/tools/drum-machine/
 https://usefulverse.com/gu/tools/online-sequencer/
 https://usefulverse.com/gu/tools/song-key-finder/

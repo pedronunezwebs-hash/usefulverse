@@ -326,6 +326,8 @@ await bundle({ entryPoints: [join(root, 'src', 'audio-analysis-runtime.js')], ou
 await bundle({ entryPoints: [join(root, 'src', 'fretboard-trainer-runtime.js')], outfile: join(dist, 'assets', 'fretboard-trainer-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
 await bundle({ entryPoints: [join(root, 'src', 'font-tester-runtime.js')], outfile: join(dist, 'assets', 'font-tester-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
 await bundle({ entryPoints: [join(root, 'src', 'kakuro-runtime.js')], outfile: join(dist, 'assets', 'kakuro-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'battleship-runtime.js')], outfile: join(dist, 'assets', 'battleship-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await cp(join(root, 'src', 'battleship.css'), join(dist, 'assets', 'battleship.css'));
 await bundle({
   entryPoints: [join(root, 'src', 'css-design-tools.js')],
   outfile: join(dist, 'assets', 'css-design-tools.js'),
