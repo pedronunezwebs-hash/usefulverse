@@ -14,7 +14,7 @@ import {
   calculateStatisticalTest, calculateCashFlows, calculateDebtPayoff, calculateRentVsBuy,
   createCitation, validateJsonSchema, queryJsonPath,
   makeNoiseSamples,
-  makePrintableCalendar, makeFlashcards, makeWordSearch, makeBingoCard,
+  makePrintableCalendar, makeFlashcards, flashcardProgress, makeWordSearch, makeBingoCard,
   calculateAdultBmi, calculateBmrTdee,
   calculateMacros, calculateRunningPace, estimateOneRepMax, buildCoverLetter, generateTestData,
   generateMathWorksheet,
@@ -250,6 +250,13 @@ test('flashcards parse rows and reject missing backs', () => {
   assert.match(makeFlashcards({ cards: 'Term, Definition' }), /FRONT: Term\n   BACK: Definition/u);
   assert.match(makeFlashcards({ cards: 'مصطلح، تعريف، مع تفاصيل' }), /FRONT: مصطلح\n   BACK: تعريف، مع تفاصيل/u);
   assert.throws(() => makeFlashcards({ cards: 'missing separator' }), /use term, definition/u);
+});
+
+test('flashcard progress keeps the original deck total as known cards leave the review queue', () => {
+  assert.deepEqual(flashcardProgress(0, 0, 3), { current: 1, total: 3 });
+  assert.deepEqual(flashcardProgress(1, 1, 2), { current: 3, total: 3 });
+  assert.deepEqual(flashcardProgress(2, 0, 1), { current: 3, total: 3 });
+  assert.deepEqual(flashcardProgress(3, 0, 0), { current: 0, total: 3 });
 });
 
 test('word search is seeded, places all words and validates capacity', () => {

@@ -970,6 +970,8 @@ export function makeFlashcards({ cards }) {
   }).join('\n\n');
 }
 
+export const flashcardProgress = (known, index, remaining) => ({ current: remaining ? known + index + 1 : 0, total: known + remaining });
+
 function seededRandom(seed) {
   let state = 2166136261;
   for (const char of String(seed)) { state ^= char.codePointAt(0); state = Math.imul(state, 16777619); }

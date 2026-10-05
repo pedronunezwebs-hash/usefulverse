@@ -4,6 +4,9 @@ import { readFile } from 'node:fs/promises';
 import { opportunityToolMarkup } from './opportunity-template.mjs';
 import { opportunityLocaleData } from './locales/opportunity-tools.mjs';
 import { interactionControlLocales } from './locales/interaction-controls.mjs';
+import { longtailBodies } from './locales/longtail.mjs';
+import { locales, localizedTool } from './locales.mjs';
+import { opportunityTools } from './opportunity-tools.mjs';
 
 function cardAttributes(markup, fieldId) {
   const fieldIndex = markup.indexOf(`data-op-field="${fieldId}"`);
@@ -89,6 +92,14 @@ test('flashcards expose interactive study controls and explicit local save/load/
   assert.match(markup, /Save deck on this device/u);
   assert.match(markup, /Load saved deck/u);
   assert.match(markup, /Delete saved deck/u);
+});
+
+test('flashcard help copy matches local save behavior in every published locale', () => {
+  const tool = opportunityTools.find(({ id }) => id === 'flashcard-maker');
+  for (const language of Object.keys(locales)) {
+    const body = localizedTool(tool, language).body;
+    assert.equal(body, longtailBodies['flashcard-maker'][language], `${language} has its localized local-save explanation`);
+  }
 });
 
 test('tournament bracket exposes local participant input, shuffle and accessible match updates', () => {

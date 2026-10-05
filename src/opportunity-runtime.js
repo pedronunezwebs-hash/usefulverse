@@ -1,4 +1,4 @@
-import { calculateOpportunity, calculateTeleprompterScrollRate, countTeleprompterWords, makeNoiseSamples } from './opportunity-logic.mjs';
+import { calculateOpportunity, calculateTeleprompterScrollRate, countTeleprompterWords, flashcardProgress, makeNoiseSamples } from './opportunity-logic.mjs';
 import { buildStudyPlan } from './study-planner-logic.mjs';
 import { createMentalMathProblem, parseMentalMathAnswer, validateMentalMathSettings } from './mental-math-logic.mjs';
 import { budgetCsvCell, parseBudgetAmount, summarizeBudget, validateBudgetTransaction } from './household-budget-logic.mjs';
@@ -77,7 +77,8 @@ function setupFlashcardStudy(root) {
     $('[data-flashcard-back]', study).textContent = card.back;
     $('[data-flashcard-back]', study).hidden = true;
     $('[data-flashcard-show]', study).hidden = false;
-    $('[data-flashcard-count]', study).textContent = say('Card {current} of {total}').replace('{current}', String(index + 1)).replace('{total}', String(deck.length));
+    const progress = flashcardProgress(known, index, deck.length);
+    $('[data-flashcard-count]', study).textContent = say('Card {current} of {total}').replace('{current}', String(progress.current)).replace('{total}', String(progress.total));
     $('[data-flashcard-previous]', study).disabled = index === 0;
     $('[data-flashcard-next]', study).disabled = index === deck.length - 1;
     save.disabled = false;
