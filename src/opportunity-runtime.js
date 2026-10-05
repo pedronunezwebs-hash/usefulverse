@@ -699,6 +699,12 @@ function setupTeleprompter(root) {
     if (!output.textContent.trim() || output.textContent === say('Your script will appear here.')) return setStatus(root, 'Paste or type a script first.', 'error');
     wordCount = countTeleprompterWords(source.value);
     if (wordCount < 1) return setStatus(root, 'Paste or type a script first.', 'error');
+    const signature = textSignature(source.value);
+    if (savedPosition && savedPosition.signature !== signature) {
+      savedPosition = null;
+      try { sessionStorage.removeItem(positionKey); } catch {}
+      restoredSignature = signature;
+    }
     output.style.fontSize = `${size.value}px`; restorePosition();
     if (viewport.scrollHeight <= viewport.clientHeight || viewport.scrollTop >= viewport.scrollHeight - viewport.clientHeight) return setStatus(root, 'Scrolling paused.');
     running = true; previous = 0; button.textContent = say('Pause scrolling'); frame = requestAnimationFrame(tick); setStatus(root, 'Teleprompter is scrolling in this browser.', 'success');
@@ -706,9 +712,7 @@ function setupTeleprompter(root) {
   $('[data-teleprompter-reset]', root).addEventListener('click', () => { stop(); clearTimeout(saveTimer); viewport.scrollTop = 0; savedPosition = null; try { sessionStorage.removeItem(positionKey); } catch {} output.textContent = source.value || say('Your script will appear here.'); button.textContent = say('Start scrolling'); setStatus(root, 'Script position reset.'); });
   source.addEventListener('input', () => {
     if (running) { stop(); button.textContent = say('Start scrolling'); }
-    wordCount = countTeleprompterWords(source.value);
-    savedPosition = null; restoredSignature = textSignature(source.value); viewport.scrollTop = 0;
-    try { sessionStorage.removeItem(positionKey); } catch {}
+    restoredSignature = ''; viewport.scrollTop = 0;
     if (!running) output.textContent = source.value || say('Your script will appear here.');
   });
   viewport.addEventListener('scroll', scheduleSave, { passive: true });
