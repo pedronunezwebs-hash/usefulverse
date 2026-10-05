@@ -8,6 +8,43 @@ const MAX_FILE_BYTES = 50 * 1024 * 1024;
 const MAX_DURATION_SECONDS = 180;
 const MAX_DECODED_SAMPLES = 24_000_000;
 
+function readAudioDuration(file) {
+  return new Promise((resolve, reject) => {
+    const probe = document.createElement('audio');
+    const url = URL.createObjectURL(file);
+    let settled = false;
+    const finish = (callback, result) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timeout);
+      probe.removeAttribute('src');
+      probe.load();
+      URL.revokeObjectURL(url);
+      callback(result);
+    };
+    const timeout = window.setTimeout(() => {
+      const error = new Error('Audio duration metadata is unavailable.');
+      error.name = 'NotSupportedError';
+      finish(reject, error);
+    }, 5000);
+    probe.preload = 'metadata';
+    probe.addEventListener('loadedmetadata', () => {
+      if (!Number.isFinite(probe.duration) || probe.duration <= 0) {
+        const error = new Error('Audio duration metadata is unavailable.');
+        error.name = 'NotSupportedError';
+        return finish(reject, error);
+      }
+      finish(resolve, probe.duration);
+    }, { once: true });
+    probe.addEventListener('error', () => {
+      const error = new Error('Audio duration metadata is unavailable.');
+      error.name = 'NotSupportedError';
+      finish(reject, error);
+    }, { once: true });
+    probe.src = url;
+  });
+}
+
 export function setupBpmDetector(root) {
   const fileInput = $('[data-bpm-file]', root);
   const analyze = $('[data-bpm-analyze]', root);
@@ -38,6 +75,8 @@ export function setupBpmDetector(root) {
     value.textContent = '—';
     sayStatus(say('Analyzing audio locally…'));
     try {
+      const duration = await readAudioDuration(file);
+      if (duration > MAX_DURATION_SECONDS) throw new RangeError('limit');
       audio = new Context();
       const buffer = await audio.decodeAudioData(await file.arrayBuffer());
       if (buffer.duration > MAX_DURATION_SECONDS || buffer.length * buffer.numberOfChannels > MAX_DECODED_SAMPLES) {
