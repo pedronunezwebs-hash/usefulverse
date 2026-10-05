@@ -1427,6 +1427,13 @@ function setupToolPage() {
       .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
     return;
   }
+  if (id === 'task-list') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./task-list-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupTaskList }) => setupTaskList(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
   if (opportunityTools.has(id)) {
     const assetVersion = document.documentElement.dataset.assetVersion;
     import(`./opportunity-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)

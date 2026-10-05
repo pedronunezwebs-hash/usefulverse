@@ -14,6 +14,8 @@ import { pdfParityLocales } from './locales/pdf-parity.mjs';
 import { pdfRedactLocales } from './locales/pdf-redact.mjs';
 import { imageCaptureUiLocales } from './locales/image-capture.mjs';
 import { opportunityLocaleData } from './locales/opportunity-tools.mjs';
+import { taskListLocaleData } from './locales/task-list.mjs';
+import { taskListContent } from './locales/task-list-content.mjs';
 import { pageKeys, templateKeys } from './locales/template-keys.mjs';
 import { tools } from './catalog.mjs';
 import { htmlToPdfLocales } from './locales/html-to-pdf.mjs';
@@ -1048,6 +1050,10 @@ for (const [language, data] of Object.entries(imageCaptureUiLocales)) {
 
 // Browser-local SEO opportunity tools are translated as static site content.
 // New tool routes stay gated until all active locales have a complete copy/UI pack.
+for (const [language, data] of Object.entries(taskListLocaleData)) {
+  opportunityLocaleData[language] ??= { ui: {}, copy: {} };
+  opportunityLocaleData[language].copy['task-list'] = taskListContent(language).copy;
+}
 for (const [language, data] of Object.entries(opportunityLocaleData)) {
   ui[language] ??= {};
   runtimeMessages[language] ??= {};

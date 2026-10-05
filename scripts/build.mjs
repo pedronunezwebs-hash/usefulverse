@@ -93,6 +93,15 @@ await bundle({
   minify: true,
 });
 await bundle({
+  entryPoints: [join(root, 'src', 'task-list-runtime.js')],
+  outfile: join(dist, 'assets', 'task-list-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
   entryPoints: [join(root, 'src', 'chess-clock-runtime.js')],
   outfile: join(dist, 'assets', 'chess-clock-runtime.js'),
   bundle: true,
@@ -370,6 +379,7 @@ assetHash.update(await readFile(join(root, 'public', 'timer-notifications.js')))
 for (const file of [
   'plan-tools.js',
   'opportunity-runtime.js',
+  'task-list-runtime.js',
   'chess-clock-runtime.js',
   'ear-training-runtime.js',
   'bpm-detector-runtime.js',

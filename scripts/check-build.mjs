@@ -47,6 +47,7 @@ const deferredAssetBudgets = new Map([
   ['assets/advanced-tools.js', 52 * 1024], ['assets/media-tools.js', 16 * 1024],
   ['assets/plan-tools.js', 55 * 1024], ['assets/tool-suite-tools.js', 150 * 1024],
   ['assets/opportunity-runtime.js', 128 * 1024], ['assets/new-tool-logic.mjs', 16 * 1024], ['assets/timer-logic.mjs', 16 * 1024],
+  ['assets/task-list-runtime.js', 8 * 1024],
   ['assets/chess-clock-runtime.js', 8 * 1024],
   ['assets/ear-training-runtime.js', 8 * 1024],
   ['assets/bpm-detector-runtime.js', 8 * 1024],

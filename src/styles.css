@@ -222,6 +222,9 @@ input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--blue); }
 .bpm-detector__result > p { margin: .35rem 0; }
 .bpm-detector__number { display: flex; align-items: baseline; justify-content: center; gap: .45rem; font-size: clamp(2rem, 10vw, 4rem); font-weight: 800; font-variant-numeric: tabular-nums; }
 .seating-chart { display: grid; gap: 16px; }
+.task-list { display: grid; gap: 14px; }
+.task-list__main { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.task-list__item { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 12px; border: 1px solid var(--line); border-radius: 12px; }
 .seating-chart__settings { display: grid; align-content: start; gap: 14px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .seating-chart__results { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
 .seating-chart__table { flex: 1 1 240px; max-width: 420px; min-width: min(100%, 240px); padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
