@@ -30,6 +30,7 @@ modules.set('music-scale-finder', 'src/music-scale-runtime.js');
 modules.set('seating-chart-maker', 'src/seating-chart-runtime.js');
 modules.set('gantt-chart-maker', 'src/gantt-chart-runtime.js');
 modules.set('sprite-sheet-maker', 'src/sprite-sheet-runtime.js');
+modules.set('reading-speed-test', 'src/reading-speed-runtime.js');
 const coreSetups = app.match(/const setups = \{([\s\S]*?)\n\s*\};/u)?.[1] ?? '';
 for (const [, id] of coreSetups.matchAll(/'([^']+)'\s*:/gu)) modules.set(id, 'src/app.js');
 
@@ -51,7 +52,7 @@ for (const tool of tools) {
           : 'None declared; verify against implementation';
   const related = relatedToolIds[tool.id] ?? [];
   const verified = ['music-scale-finder', 'sprite-sheet-maker', 'study-planner'].includes(tool.id);
-  const corrected = ['online-timer', 'flashcard-maker', 'online-metronome', 'word-search-maker', 'crossword-maker', 'virtual-piano', 'voice-recorder', 'mental-math-practice', 'tournament-bracket-generator', 'chess-clock', 'ear-training', 'bpm-detector', 'seating-chart-maker', 'gantt-chart-maker', 'household-budget-planner', 'diagram-maker', 'noise-generator', 'teleprompter-online', 'typing-speed-test', 'task-list', 'kanban-board'].includes(tool.id);
+  const corrected = ['online-timer', 'flashcard-maker', 'online-metronome', 'word-search-maker', 'crossword-maker', 'virtual-piano', 'voice-recorder', 'mental-math-practice', 'tournament-bracket-generator', 'chess-clock', 'ear-training', 'bpm-detector', 'seating-chart-maker', 'gantt-chart-maker', 'household-budget-planner', 'diagram-maker', 'noise-generator', 'teleprompter-online', 'typing-speed-test', 'task-list', 'kanban-board', 'reading-speed-test'].includes(tool.id);
   const status = verified ? 'verified' : corrected ? 'corrected' : 'pending';
   const evidenceByTool = {
     'remove-duplicate-lines': 'Isolated local Chrome smoke entered alpha/beta/alpha and verified the result kept alpha and beta once each with a count of one removed. Empty input was handled without an exception and reported zero unique lines. Full whitespace, case, large-list and repeat checks remain pending.',
@@ -108,6 +109,7 @@ for (const tool of tools) {
     'sprite-sheet-maker': 'Unit tests cover layout, image fitting, Unicode metadata, invalid inputs and canvas-safe bounds. Browser smoke used a locally generated 2×2 PNG: selection, frame dimensions, sheet rendering, CSS coordinates, and actual PNG/JSON blob contents were verified. Spanish metadata/UI and Arabic RTL rendering were checked; browser console had no errors or warnings. Other browsers and large-file/device limits were not exhaustively tested.',
     'task-list': '625 repository tests and the full static build pass. Isolated local-browser smoke added a prioritized task with a valid due date and subtasks, toggled its completed state and a subtask independently, filtered completed tasks, saved to localStorage, reloaded, and restored the task; delete removed the test backup. English and Arabic RTL interactions worked. Japanese UI showed the correct priority word after fixing a shared-translation collision. The JSON button reported that a download started, but the browser automation did not expose a completed download event, so the downloaded file itself is not marked verified. Other browsers, storage denial/quota and large lists remain untested.',
     'kanban-board': '630 repository tests, the full static build and locale release checks pass. Local Chrome smoke verified add/move by button and keyboard, undo/redo, add/rename/remove empty column, explicit local save/reload/load/delete. Arabic RTL and Japanese UI labels and default columns were checked. A separate smoke loaded all 213 English tool routes and found headings, workspaces and controls with no console errors; this checks page/module startup, not each feature flow. Test card and saved board were removed. JSON file completion, other browsers, storage denial/quota and large boards remain unverified.',
+    'reading-speed-test': 'Isolated local Chrome exercised the localized sample, start, pause, resume, finish, WPM result, restart and empty-input disable state. Japanese word segmentation/sample and Arabic RTL controls were checked; 36-language static copy and build validation passed. Browser-local text is not saved or uploaded. Cross-browser timing and other scripts/long-text boundaries remain pending.',
   };
   const evidence = evidenceByTool[tool.id] ?? 'English local-Chrome route smoke loaded this URL and found its heading, tool workspace and controls without an alert or error state; no functional action, file export, device permission or browser-specific behavior was exercised, so this tool remains pending.';
   rows.push([

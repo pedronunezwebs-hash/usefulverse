@@ -20,7 +20,7 @@ for (const language of pdfOnlyLocaleKeys) localizedFiles.push(
   `${pdfOnlyLocales[language].prefix.replace(/^\//u, '')}/llms.txt`,
 );
 for (const language of Object.keys(numberWordsLocaleCodes)) localizedFiles.push(`assets/number-words-${language}.js`);
-const required = ['index.html', '404.html', 'assets/styles.css', 'assets/app.js', 'assets/chess-clock-runtime.js', 'assets/ear-training-runtime.js', 'assets/bpm-detector-runtime.js', 'assets/music-scale-runtime.js', 'assets/seating-chart-runtime.js', 'assets/gantt-chart-runtime.js', 'assets/sprite-sheet-runtime.js', 'assets/kanban-board-runtime.js', 'assets/kanban-board.css', 'assets/timer-logic.mjs', 'favicon.svg', 'robots.txt', 'sitemap.xml', 'llms.txt', 'timer-notifications.js', ...localizedFiles, 'BingSiteAuth.xml', 'yandex_f441658073fe7135.html', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html', '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt'];
+const required = ['index.html', '404.html', 'assets/styles.css', 'assets/app.js', 'assets/chess-clock-runtime.js', 'assets/ear-training-runtime.js', 'assets/bpm-detector-runtime.js', 'assets/music-scale-runtime.js', 'assets/seating-chart-runtime.js', 'assets/gantt-chart-runtime.js', 'assets/sprite-sheet-runtime.js', 'assets/kanban-board-runtime.js', 'assets/kanban-board.css', 'assets/reading-speed-runtime.js', 'assets/reading-speed.css', 'assets/timer-logic.mjs', 'favicon.svg', 'robots.txt', 'sitemap.xml', 'llms.txt', 'timer-notifications.js', ...localizedFiles, 'BingSiteAuth.xml', 'yandex_f441658073fe7135.html', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html', '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt'];
 function assertLanguagePicker(html, currentLanguage, availableLocales, toolId, context, routeForLocale = (key) => localePath(key, toolId)) {
   const currentLocale = availableLocales.find(({ key }) => key === currentLanguage);
   const languageLabel = ui[currentLanguage]?.Language ?? 'Language';
@@ -50,6 +50,8 @@ const deferredAssetBudgets = new Map([
   ['assets/task-list-runtime.js', 8 * 1024],
   ['assets/kanban-board-runtime.js', 12 * 1024],
   ['assets/kanban-board.css', 3 * 1024],
+  ['assets/reading-speed-runtime.js', 12 * 1024],
+  ['assets/reading-speed.css', 3 * 1024],
   ['assets/chess-clock-runtime.js', 8 * 1024],
   ['assets/ear-training-runtime.js', 8 * 1024],
   ['assets/bpm-detector-runtime.js', 8 * 1024],
@@ -113,6 +115,12 @@ for (const language of languages) {
     if (tool.id === 'number-to-words-converter' && numberWordsLocaleCodes[language]) {
       const version = html.match(/data-asset-version="([a-f0-9]{12})"/u)?.[1];
       if (!version || !html.includes(`<script defer src="/assets/number-words-${language}.js?v=${version}"></script>`)) throw new Error(`Missing local number-to-words runtime for ${language}`);
+    }
+    if (tool.id === 'reading-speed-test') {
+      for (const control of ['data-reading-speed', 'data-reading-text', 'maxlength="50000"', 'data-reading-start', 'data-reading-pause', 'data-reading-resume', 'data-reading-finish', 'data-reading-reset', 'data-reading-result', 'data-reading-rating']) {
+        if (!html.includes(control)) throw new Error(`Reading speed page is missing ${control} in ${language}`);
+      }
+      if (!html.includes('/assets/reading-speed.css?v=') || !html.includes('data-reading-messages=')) throw new Error(`Reading speed page is missing localized or page-specific assets in ${language}`);
     }
     if (language === 'en' && seo[tool.id]?.faq?.length && !html.includes(seo[tool.id].faq[0].question)) throw new Error(`English FAQ mismatch for ${tool.id}`);
     const expectedBody = longtailBodies[tool.id]?.[language];

@@ -154,3 +154,13 @@ test('household budget exposes an explicit local-only monthly ledger, accessible
   assert.match(markup, /type="text" inputmode="decimal"[^>]*data-budget-amount/u);
   assert.doesNotMatch(markup, /data-op-calculate|data-op-clear/u);
 });
+
+test('reading speed test exposes a localized local-only flow with bounded input and accessible result controls', () => {
+  const markup = opportunityToolMarkup('reading-speed-test', 'ar');
+  for (const control of ['data-reading-speed', 'data-reading-text', 'maxlength="50000"', 'data-reading-sample-button', 'data-reading-count', 'data-reading-start', 'data-reading-pause', 'data-reading-resume', 'data-reading-finish', 'data-reading-reset', 'data-reading-status', 'data-reading-result', 'data-reading-rating']) assert.ok(markup.includes(control), control);
+  assert.match(markup, /data-reading-messages="/u);
+  assert.match(markup, /يبقى النص المقروء في هذا المتصفح/u);
+  assert.match(markup, /استخدم النص النموذجي/u);
+  assert.match(markup, /لا يقيس الفهم بشكل موضوعي/u);
+  assert.doesNotMatch(markup, /data-op-calculate|data-op-clear|Fetch|XMLHttpRequest/u);
+});

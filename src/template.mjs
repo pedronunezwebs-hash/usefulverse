@@ -26,6 +26,7 @@ export const relatedToolIds = {
   'tournament-bracket-generator': ['random-name-picker', 'random-number-generator'],
   'task-list': ['kanban-board', 'study-planner', 'gantt-chart-maker'],
   'kanban-board': ['task-list', 'gantt-chart-maker', 'study-planner'],
+  'reading-speed-test': ['typing-speed-test', 'word-counter', 'study-planner'],
   'chess-clock': ['tournament-bracket-generator', 'random-number-generator'],
   'ear-training': ['online-metronome', 'guitar-tuner', 'virtual-piano'],
   'bpm-detector': ['online-metronome', 'audio-compressor', 'media-converter'],
@@ -816,6 +817,7 @@ export function shell({ title, description, canonical, body, schema = '', assetV
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/styles.css${assetSuffix}">
     ${toolId === 'kanban-board' ? `<link rel="stylesheet" href="/assets/kanban-board.css${assetSuffix}">` : ''}
+    ${toolId === 'reading-speed-test' ? `<link rel="stylesheet" href="/assets/reading-speed.css${assetSuffix}">` : ''}
     ${schema}
   </head>
   <body>

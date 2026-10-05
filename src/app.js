@@ -1379,6 +1379,7 @@ function setupToolPage() {
   opportunityTools.add('teleprompter-online');
   opportunityTools.add('household-budget-planner');
   opportunityTools.add('kanban-board');
+  opportunityTools.add('reading-speed-test');
   if (id === 'ear-training') {
     const assetVersion = document.documentElement.dataset.assetVersion;
     import(`./ear-training-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
@@ -1439,6 +1440,13 @@ function setupToolPage() {
     const assetVersion = document.documentElement.dataset.assetVersion;
     import(`./kanban-board-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
       .then(({ setupKanbanBoard }) => setupKanbanBoard(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'reading-speed-test') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./reading-speed-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupReadingSpeed }) => setupReadingSpeed(root))
       .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
     return;
   }

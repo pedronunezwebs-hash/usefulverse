@@ -7,7 +7,7 @@ Browser-first collection of fast, private, static tools for everyday work.
 - Processing happens in the browser whenever possible.
 - No account, upload or paid API is required.
 - Each useful tool gets its own stable, indexable URL.
-- The current catalog contains 211 browser-first tools across writing, data, developer, SEO, design, privacy, text, files, productivity, education and music.
+- The current catalog contains 214 browser-first tools across writing, data, developer, SEO, design, privacy, text, files, productivity, education and music.
 - The public build is static and deployable to Cloudflare Pages.
 - CSS and JavaScript URLs are content-versioned during the build so CDN caches cannot serve an old runtime after a deploy.
 - HTML uses short browser and edge cache lifetimes; versioned assets remain immutable for repeat visits.
@@ -32,7 +32,7 @@ Russian (`/ru/`), Urdu (`/ur/`), Turkish (`/tr/`), Vietnamese (`/vi/`), Italian
 Dutch (`/nl/`), Greek (`/el/`), Malay (`/ms/`), Polish (`/pl/`), Swedish
 (`/sv/`), Thai (`/th/`), Ukrainian (`/uk/`), Swahili (`/sw/`), Marathi (`/mr/`),
 Telugu (`/te/`), Hausa (`/ha/`), Filipino (`/tl/`), Tamil (`/ta/`), Persian
-(`/fa/`), Amharic (`/am/`) and Gujarati (`/gu/`). Each of the 211 tools has a
+(`/fa/`), Amharic (`/am/`) and Gujarati (`/gu/`). Each of the 214 tools has a
 matching URL in every language. Newer language packs use concise machine-assisted
 translations accepted by the owner; they are not represented as native-reviewed.
 The build creates every version as static HTML, adds
@@ -54,9 +54,16 @@ engine. The recording is not uploaded, although the browser may download those f
 again if its cache is cleared. File processing stays on the visitor's device; memory,
 storage, browser, battery, speed and codec support are practical limits, not a server
 upload-size quota. Heavy media code is loaded only when needed. The generated sitemap
-contains 7,884 URLs: 211 tools and one home page in each of 36 languages, plus seven
+contains 7,992 URLs: 214 tools and one home page in each of 36 languages, plus seven
 guide routes (the guide index and six sourced, task-specific guides) in every language.
 Guides are static HTML and add no server processing or paid API usage.
+
+Reading Speed Test lets visitors use a localized sample or their own text, times
+the session with a monotonic clock, estimates words per minute and offers an
+optional self-rating for comprehension. The estimate is not an objective
+comprehension score, and word segmentation differs by language. Text stays in the
+page and is neither uploaded nor saved. Localized passages are static; the small
+timer module is loaded only on this tool page.
 
 The expanded local-tool set also includes GCD/LCM, scientific notation, profit
 margin, salary-to-hourly conversion, image-to-text (OCR), spreadsheet conversion,
