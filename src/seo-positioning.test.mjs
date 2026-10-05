@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { tools } from './catalog.mjs';
 import { locales, localizedTool } from './locales.mjs';
-import { renderHome, renderToolPage } from './template.mjs';
+import { relatedToolIds, renderHome, renderToolPage } from './template.mjs';
 
 const decode = (value) => value
   .replaceAll('&amp;', '&').replaceAll('&lt;', '<').replaceAll('&gt;', '>')
@@ -31,6 +31,22 @@ test('home-page titles and descriptions also obey the same positioning and lengt
     assert.match(title, /UsefulVerse$/u, `${language} home title should end with the brand`);
     if (language === 'en') assert.match(title, /Free · no limits/u);
     if (language === 'es') assert.match(title, /Gratis · sin límites/u);
+  }
+});
+
+test('result follow-up is hidden initially, offers at most three localized related tools and can be dismissed', () => {
+  const tool = tools.find((item) => item.id === 'pdf-to-image');
+  for (const language of ['en', 'es', 'ar']) {
+    const html = renderToolPage(localizedTool(tool, language), '', language);
+    const panel = html.match(/<aside class="tool-follow-up"[\s\S]*?<\/aside>/u)?.[0] ?? '';
+    const related = html.match(/<section class="related-tools">[\s\S]*?<\/section>/u)?.[0] ?? '';
+    const ids = relatedToolIds[tool.id];
+    assert.match(panel, /data-tool-follow-up hidden/u, `${language} panel starts hidden`);
+    assert.match(panel, /data-tool-follow-up-dismiss/u, `${language} panel has a dismiss control`);
+    assert.equal((panel.match(/class="tool-card\b/gu) ?? []).length, 0, `${language} cards wait for a result`);
+    assert.equal((related.match(/class="tool-card\b/gu) ?? []).length, 3, `${language} offers exactly three related tools`);
+    for (const id of ids) assert.match(related, new RegExp(`href="(?:/${language})?/tools/${id}/"`, 'u'));
+    assert.ok(!ids.includes(tool.id), `${language} recommendations omit the current tool`);
   }
 });
 
