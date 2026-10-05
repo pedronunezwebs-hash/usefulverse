@@ -32,6 +32,7 @@ export const relatedToolIds = {
   'ear-training': ['online-metronome', 'guitar-tuner', 'virtual-piano'],
   'bpm-detector': ['online-metronome', 'audio-compressor', 'media-converter'],
   'music-scale-finder': ['guitar-chord-finder', 'guitar-tuner', 'ear-training'],
+  'fretboard-trainer': ['music-scale-finder', 'guitar-chord-finder', 'ear-training'],
   'seating-chart-maker': ['printable-calendar-maker', 'quotation-generator', 'study-planner'],
   'gantt-chart-maker': ['study-planner', 'printable-calendar-maker', 'seating-chart-maker'],
   'sprite-sheet-maker': ['gif-maker', 'pixel-art-editor', 'image-format-converter'],
@@ -834,6 +835,7 @@ export function shell({ title, description, canonical, body, schema = '', assetV
     ${toolId === 'drum-machine' ? `<link rel="stylesheet" href="/assets/drum-machine.css${assetSuffix}">` : ''}
     ${toolId === 'online-sequencer' ? `<link rel="stylesheet" href="/assets/online-sequencer.css${assetSuffix}">` : ''}
     ${['song-key-finder', 'audio-spectrogram'].includes(toolId) ? `<link rel="stylesheet" href="/assets/audio-analysis.css${assetSuffix}">` : ''}
+    ${toolId === 'fretboard-trainer' ? `<link rel="stylesheet" href="/assets/fretboard-trainer.css${assetSuffix}">` : ''}
     ${['css-animation-generator', 'css-clip-path-editor', 'css-filter-generator'].includes(toolId) ? `<link rel="stylesheet" href="/assets/css-design-tools.css${assetSuffix}">` : ''}
     ${['api-request-builder', 'html-table-generator', 'pwa-manifest-generator'].includes(toolId) ? `<link rel="stylesheet" href="/assets/web-dev-tools.css${assetSuffix}">` : ''}
     ${['connect-four', 'reversi', 'checkers'].includes(toolId) ? `<link rel="stylesheet" href="/assets/board-games.css${assetSuffix}">` : ''}

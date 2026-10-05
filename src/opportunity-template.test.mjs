@@ -7,6 +7,7 @@ import { interactionControlLocales } from './locales/interaction-controls.mjs';
 import { longtailBodies } from './locales/longtail.mjs';
 import { locales, localizedTool } from './locales.mjs';
 import { opportunityTools } from './opportunity-tools.mjs';
+import { generatedOpportunityCopy } from './locales/generated-opportunity-copy.mjs';
 
 function cardAttributes(markup, fieldId) {
   const fieldIndex = markup.indexOf(`data-op-field="${fieldId}"`);
@@ -219,4 +220,44 @@ test('audio analysis pages are local, lazy-runtime-friendly and expose bounded f
   }
   assert.match(opportunityToolMarkup('song-key-finder'), /data-audio-key/u);
   assert.match(opportunityToolMarkup('audio-spectrogram'), /data-audio-chart/u);
+});
+
+test('fretboard trainer exposes accessible note choices and localized runtime messages', () => {
+  const markup = opportunityToolMarkup('fretboard-trainer', 'es', opportunityLocaleData.es.ui);
+  assert.match(markup, /data-fretboard-trainer/u);
+  assert.match(markup, /data-planner-messages=/u);
+  assert.match(markup, /data-fretboard-prompt aria-live="polite"/u);
+  assert.match(markup, /data-fretboard-status role="status" aria-live="polite"/u);
+  assert.match(markup, /data-fretboard-note="C♯"/u);
+  assert.match(markup, /data-fretboard-next disabled/u);
+  assert.match(markup, /data-fretboard-reset/u);
+  assert.doesNotMatch(markup, /data-op-calculate|fetch\(|XMLHttpRequest/u);
+});
+
+test('fretboard trainer stays available with direction-aware pages and 36-language localized copy', async () => {
+  const tool = opportunityTools.find(({ id }) => id === 'fretboard-trainer');
+  assert.ok(tool);
+  const phrases = [
+    'The board uses standard E–A–D–G–B–E tuning and frets 0–12.',
+    'Which note is on string {string}, fret {fret}?',
+    'Choose a note.',
+    'Correct: {correct} · streak: {streak}',
+    'Correct! The note is {note}.',
+    'Not quite. Try another note.',
+    'Next note',
+    'Reset score',
+  ];
+  for (const language of Object.keys(locales)) {
+    const localized = localizedTool(tool, language);
+    assert.ok(localized.title && localized.description && localized.intro, `localized metadata ${language}`);
+    for (const phrase of phrases) {
+      const translated = generatedOpportunityCopy[language]?.ui?.[phrase];
+      assert.ok(translated, `Missing fretboard phrase ${phrase} in ${language}`);
+      if (language !== 'en') assert.notEqual(translated, phrase, `Untranslated fretboard phrase in ${language}: ${phrase}`);
+      const tokens = (value) => [...value.matchAll(/\{([^}]+)\}/gu)].map(([, token]) => token).sort();
+      assert.deepEqual(tokens(translated), tokens(phrase), `Placeholder mismatch for ${phrase} in ${language}`);
+    }
+  }
+  const template = await readFile(new URL('./template.mjs', import.meta.url), 'utf8');
+  assert.match(template, /fretboard-trainer\.css/u);
 });

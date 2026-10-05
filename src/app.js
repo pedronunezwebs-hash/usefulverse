@@ -1429,6 +1429,7 @@ function setupToolPage() {
   opportunityTools.add('online-sequencer');
   opportunityTools.add('song-key-finder');
   opportunityTools.add('audio-spectrogram');
+  opportunityTools.add('fretboard-trainer');
   opportunityTools.add('css-animation-generator');
   opportunityTools.add('css-clip-path-editor');
   opportunityTools.add('css-filter-generator');
@@ -1492,6 +1493,13 @@ function setupToolPage() {
     const assetVersion = document.documentElement.dataset.assetVersion;
     import(`./audio-analysis-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
       .then(({ setupAudioAnalysis }) => setupAudioAnalysis(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'fretboard-trainer') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./fretboard-trainer-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupFretboardTrainer }) => setupFretboardTrainer(root))
       .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
     return;
   }

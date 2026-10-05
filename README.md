@@ -7,7 +7,7 @@ Browser-first collection of fast, private, static tools for everyday work.
 - Processing happens in the browser whenever possible.
 - No account, upload or paid API is required.
 - Each useful tool gets its own stable, indexable URL.
-- The current catalog contains 245 browser-first tools across writing, data, developer, SEO, design, privacy, text, files, productivity, education, music, games and CSS design.
+- The current catalog contains 255 browser-first tools across writing, data, developer, SEO, design, privacy, text, files, productivity, education, music, games and CSS design.
 - The public build is static and deployable to Cloudflare Pages.
 - CSS and JavaScript URLs are content-versioned during the build so CDN caches cannot serve an old runtime after a deploy.
 - HTML uses short browser and edge cache lifetimes; versioned assets remain immutable for repeat visits.
@@ -32,7 +32,7 @@ Russian (`/ru/`), Urdu (`/ur/`), Turkish (`/tr/`), Vietnamese (`/vi/`), Italian
 Dutch (`/nl/`), Greek (`/el/`), Malay (`/ms/`), Polish (`/pl/`), Swedish
 (`/sv/`), Thai (`/th/`), Ukrainian (`/uk/`), Swahili (`/sw/`), Marathi (`/mr/`),
 Telugu (`/te/`), Hausa (`/ha/`), Filipino (`/tl/`), Tamil (`/ta/`), Persian
-(`/fa/`), Amharic (`/am/`) and Gujarati (`/gu/`). Each of the 245 tools has a
+(`/fa/`), Amharic (`/am/`) and Gujarati (`/gu/`). Each of the 255 tools has a
 matching URL in every language. Newer language packs use concise machine-assisted
 translations accepted by the owner; they are not represented as native-reviewed.
 The build creates every version as static HTML, adds
@@ -54,9 +54,13 @@ engine. The recording is not uploaded, although the browser may download those f
 again if its cache is cleared. File processing stays on the visitor's device; memory,
 storage, browser, battery, speed and codec support are practical limits, not a server
 upload-size quota. Heavy media code is loaded only when needed. The generated sitemap
-contains 9,108 URLs: 245 tools and one home page in each of 36 languages, plus seven
+contains 9,468 URLs: 255 tools and one home page in each of 36 languages, plus seven
 guide routes (the guide index and six sourced, task-specific guides) in every language.
 Guides are static HTML and add no server processing or paid API usage.
+
+Music practice includes local pitch, scale, chord and ear-training tools, plus a
+randomized guitar-fretboard note quiz for standard tuning. Its score is transient
+and no practice data is uploaded or saved.
 
 Reading Speed Test lets visitors use a localized sample or their own text, times
 the session with a monotonic clock, estimates words per minute and offers an
@@ -241,7 +245,7 @@ same `dist/sitemap.xml` that is deployed, so it includes every localized route.
 
 <!-- BEGIN GENERATED SITEMAP URL INVENTORY -->
 
-Generated from `dist/sitemap.xml`: **9,432 canonical URLs**.
+Generated from `dist/sitemap.xml`: **9,468 canonical URLs**.
 
 ```text
 https://usefulverse.com/
@@ -370,6 +374,7 @@ https://usefulverse.com/tools/connect-four/
 https://usefulverse.com/tools/reversi/
 https://usefulverse.com/tools/checkers/
 https://usefulverse.com/tools/music-scale-finder/
+https://usefulverse.com/tools/fretboard-trainer/
 https://usefulverse.com/tools/bpm-detector/
 https://usefulverse.com/tools/ear-training/
 https://usefulverse.com/tools/chess-clock/
@@ -625,6 +630,7 @@ https://usefulverse.com/es/tools/connect-four/
 https://usefulverse.com/es/tools/reversi/
 https://usefulverse.com/es/tools/checkers/
 https://usefulverse.com/es/tools/music-scale-finder/
+https://usefulverse.com/es/tools/fretboard-trainer/
 https://usefulverse.com/es/tools/bpm-detector/
 https://usefulverse.com/es/tools/ear-training/
 https://usefulverse.com/es/tools/chess-clock/
@@ -880,6 +886,7 @@ https://usefulverse.com/fr/tools/connect-four/
 https://usefulverse.com/fr/tools/reversi/
 https://usefulverse.com/fr/tools/checkers/
 https://usefulverse.com/fr/tools/music-scale-finder/
+https://usefulverse.com/fr/tools/fretboard-trainer/
 https://usefulverse.com/fr/tools/bpm-detector/
 https://usefulverse.com/fr/tools/ear-training/
 https://usefulverse.com/fr/tools/chess-clock/
@@ -1135,6 +1142,7 @@ https://usefulverse.com/pt-br/tools/connect-four/
 https://usefulverse.com/pt-br/tools/reversi/
 https://usefulverse.com/pt-br/tools/checkers/
 https://usefulverse.com/pt-br/tools/music-scale-finder/
+https://usefulverse.com/pt-br/tools/fretboard-trainer/
 https://usefulverse.com/pt-br/tools/bpm-detector/
 https://usefulverse.com/pt-br/tools/ear-training/
 https://usefulverse.com/pt-br/tools/chess-clock/
@@ -1390,6 +1398,7 @@ https://usefulverse.com/de/tools/connect-four/
 https://usefulverse.com/de/tools/reversi/
 https://usefulverse.com/de/tools/checkers/
 https://usefulverse.com/de/tools/music-scale-finder/
+https://usefulverse.com/de/tools/fretboard-trainer/
 https://usefulverse.com/de/tools/bpm-detector/
 https://usefulverse.com/de/tools/ear-training/
 https://usefulverse.com/de/tools/chess-clock/
@@ -1645,6 +1654,7 @@ https://usefulverse.com/ja/tools/connect-four/
 https://usefulverse.com/ja/tools/reversi/
 https://usefulverse.com/ja/tools/checkers/
 https://usefulverse.com/ja/tools/music-scale-finder/
+https://usefulverse.com/ja/tools/fretboard-trainer/
 https://usefulverse.com/ja/tools/bpm-detector/
 https://usefulverse.com/ja/tools/ear-training/
 https://usefulverse.com/ja/tools/chess-clock/
@@ -1900,6 +1910,7 @@ https://usefulverse.com/ko/tools/connect-four/
 https://usefulverse.com/ko/tools/reversi/
 https://usefulverse.com/ko/tools/checkers/
 https://usefulverse.com/ko/tools/music-scale-finder/
+https://usefulverse.com/ko/tools/fretboard-trainer/
 https://usefulverse.com/ko/tools/bpm-detector/
 https://usefulverse.com/ko/tools/ear-training/
 https://usefulverse.com/ko/tools/chess-clock/
@@ -2155,6 +2166,7 @@ https://usefulverse.com/id/tools/connect-four/
 https://usefulverse.com/id/tools/reversi/
 https://usefulverse.com/id/tools/checkers/
 https://usefulverse.com/id/tools/music-scale-finder/
+https://usefulverse.com/id/tools/fretboard-trainer/
 https://usefulverse.com/id/tools/bpm-detector/
 https://usefulverse.com/id/tools/ear-training/
 https://usefulverse.com/id/tools/chess-clock/
@@ -2410,6 +2422,7 @@ https://usefulverse.com/hi/tools/connect-four/
 https://usefulverse.com/hi/tools/reversi/
 https://usefulverse.com/hi/tools/checkers/
 https://usefulverse.com/hi/tools/music-scale-finder/
+https://usefulverse.com/hi/tools/fretboard-trainer/
 https://usefulverse.com/hi/tools/bpm-detector/
 https://usefulverse.com/hi/tools/ear-training/
 https://usefulverse.com/hi/tools/chess-clock/
@@ -2665,6 +2678,7 @@ https://usefulverse.com/ar/tools/connect-four/
 https://usefulverse.com/ar/tools/reversi/
 https://usefulverse.com/ar/tools/checkers/
 https://usefulverse.com/ar/tools/music-scale-finder/
+https://usefulverse.com/ar/tools/fretboard-trainer/
 https://usefulverse.com/ar/tools/bpm-detector/
 https://usefulverse.com/ar/tools/ear-training/
 https://usefulverse.com/ar/tools/chess-clock/
@@ -2920,6 +2934,7 @@ https://usefulverse.com/zh-cn/tools/connect-four/
 https://usefulverse.com/zh-cn/tools/reversi/
 https://usefulverse.com/zh-cn/tools/checkers/
 https://usefulverse.com/zh-cn/tools/music-scale-finder/
+https://usefulverse.com/zh-cn/tools/fretboard-trainer/
 https://usefulverse.com/zh-cn/tools/bpm-detector/
 https://usefulverse.com/zh-cn/tools/ear-training/
 https://usefulverse.com/zh-cn/tools/chess-clock/
@@ -3175,6 +3190,7 @@ https://usefulverse.com/bn/tools/connect-four/
 https://usefulverse.com/bn/tools/reversi/
 https://usefulverse.com/bn/tools/checkers/
 https://usefulverse.com/bn/tools/music-scale-finder/
+https://usefulverse.com/bn/tools/fretboard-trainer/
 https://usefulverse.com/bn/tools/bpm-detector/
 https://usefulverse.com/bn/tools/ear-training/
 https://usefulverse.com/bn/tools/chess-clock/
@@ -3430,6 +3446,7 @@ https://usefulverse.com/ru/tools/connect-four/
 https://usefulverse.com/ru/tools/reversi/
 https://usefulverse.com/ru/tools/checkers/
 https://usefulverse.com/ru/tools/music-scale-finder/
+https://usefulverse.com/ru/tools/fretboard-trainer/
 https://usefulverse.com/ru/tools/bpm-detector/
 https://usefulverse.com/ru/tools/ear-training/
 https://usefulverse.com/ru/tools/chess-clock/
@@ -3685,6 +3702,7 @@ https://usefulverse.com/ur/tools/connect-four/
 https://usefulverse.com/ur/tools/reversi/
 https://usefulverse.com/ur/tools/checkers/
 https://usefulverse.com/ur/tools/music-scale-finder/
+https://usefulverse.com/ur/tools/fretboard-trainer/
 https://usefulverse.com/ur/tools/bpm-detector/
 https://usefulverse.com/ur/tools/ear-training/
 https://usefulverse.com/ur/tools/chess-clock/
@@ -3940,6 +3958,7 @@ https://usefulverse.com/tr/tools/connect-four/
 https://usefulverse.com/tr/tools/reversi/
 https://usefulverse.com/tr/tools/checkers/
 https://usefulverse.com/tr/tools/music-scale-finder/
+https://usefulverse.com/tr/tools/fretboard-trainer/
 https://usefulverse.com/tr/tools/bpm-detector/
 https://usefulverse.com/tr/tools/ear-training/
 https://usefulverse.com/tr/tools/chess-clock/
@@ -4195,6 +4214,7 @@ https://usefulverse.com/vi/tools/connect-four/
 https://usefulverse.com/vi/tools/reversi/
 https://usefulverse.com/vi/tools/checkers/
 https://usefulverse.com/vi/tools/music-scale-finder/
+https://usefulverse.com/vi/tools/fretboard-trainer/
 https://usefulverse.com/vi/tools/bpm-detector/
 https://usefulverse.com/vi/tools/ear-training/
 https://usefulverse.com/vi/tools/chess-clock/
@@ -4450,6 +4470,7 @@ https://usefulverse.com/it/tools/connect-four/
 https://usefulverse.com/it/tools/reversi/
 https://usefulverse.com/it/tools/checkers/
 https://usefulverse.com/it/tools/music-scale-finder/
+https://usefulverse.com/it/tools/fretboard-trainer/
 https://usefulverse.com/it/tools/bpm-detector/
 https://usefulverse.com/it/tools/ear-training/
 https://usefulverse.com/it/tools/chess-clock/
@@ -4705,6 +4726,7 @@ https://usefulverse.com/zh-tw/tools/connect-four/
 https://usefulverse.com/zh-tw/tools/reversi/
 https://usefulverse.com/zh-tw/tools/checkers/
 https://usefulverse.com/zh-tw/tools/music-scale-finder/
+https://usefulverse.com/zh-tw/tools/fretboard-trainer/
 https://usefulverse.com/zh-tw/tools/bpm-detector/
 https://usefulverse.com/zh-tw/tools/ear-training/
 https://usefulverse.com/zh-tw/tools/chess-clock/
@@ -4960,6 +4982,7 @@ https://usefulverse.com/bg/tools/connect-four/
 https://usefulverse.com/bg/tools/reversi/
 https://usefulverse.com/bg/tools/checkers/
 https://usefulverse.com/bg/tools/music-scale-finder/
+https://usefulverse.com/bg/tools/fretboard-trainer/
 https://usefulverse.com/bg/tools/bpm-detector/
 https://usefulverse.com/bg/tools/ear-training/
 https://usefulverse.com/bg/tools/chess-clock/
@@ -5215,6 +5238,7 @@ https://usefulverse.com/ca/tools/connect-four/
 https://usefulverse.com/ca/tools/reversi/
 https://usefulverse.com/ca/tools/checkers/
 https://usefulverse.com/ca/tools/music-scale-finder/
+https://usefulverse.com/ca/tools/fretboard-trainer/
 https://usefulverse.com/ca/tools/bpm-detector/
 https://usefulverse.com/ca/tools/ear-training/
 https://usefulverse.com/ca/tools/chess-clock/
@@ -5470,6 +5494,7 @@ https://usefulverse.com/nl/tools/connect-four/
 https://usefulverse.com/nl/tools/reversi/
 https://usefulverse.com/nl/tools/checkers/
 https://usefulverse.com/nl/tools/music-scale-finder/
+https://usefulverse.com/nl/tools/fretboard-trainer/
 https://usefulverse.com/nl/tools/bpm-detector/
 https://usefulverse.com/nl/tools/ear-training/
 https://usefulverse.com/nl/tools/chess-clock/
@@ -5725,6 +5750,7 @@ https://usefulverse.com/el/tools/connect-four/
 https://usefulverse.com/el/tools/reversi/
 https://usefulverse.com/el/tools/checkers/
 https://usefulverse.com/el/tools/music-scale-finder/
+https://usefulverse.com/el/tools/fretboard-trainer/
 https://usefulverse.com/el/tools/bpm-detector/
 https://usefulverse.com/el/tools/ear-training/
 https://usefulverse.com/el/tools/chess-clock/
@@ -5980,6 +6006,7 @@ https://usefulverse.com/ms/tools/connect-four/
 https://usefulverse.com/ms/tools/reversi/
 https://usefulverse.com/ms/tools/checkers/
 https://usefulverse.com/ms/tools/music-scale-finder/
+https://usefulverse.com/ms/tools/fretboard-trainer/
 https://usefulverse.com/ms/tools/bpm-detector/
 https://usefulverse.com/ms/tools/ear-training/
 https://usefulverse.com/ms/tools/chess-clock/
@@ -6235,6 +6262,7 @@ https://usefulverse.com/pl/tools/connect-four/
 https://usefulverse.com/pl/tools/reversi/
 https://usefulverse.com/pl/tools/checkers/
 https://usefulverse.com/pl/tools/music-scale-finder/
+https://usefulverse.com/pl/tools/fretboard-trainer/
 https://usefulverse.com/pl/tools/bpm-detector/
 https://usefulverse.com/pl/tools/ear-training/
 https://usefulverse.com/pl/tools/chess-clock/
@@ -6490,6 +6518,7 @@ https://usefulverse.com/sv/tools/connect-four/
 https://usefulverse.com/sv/tools/reversi/
 https://usefulverse.com/sv/tools/checkers/
 https://usefulverse.com/sv/tools/music-scale-finder/
+https://usefulverse.com/sv/tools/fretboard-trainer/
 https://usefulverse.com/sv/tools/bpm-detector/
 https://usefulverse.com/sv/tools/ear-training/
 https://usefulverse.com/sv/tools/chess-clock/
@@ -6745,6 +6774,7 @@ https://usefulverse.com/th/tools/connect-four/
 https://usefulverse.com/th/tools/reversi/
 https://usefulverse.com/th/tools/checkers/
 https://usefulverse.com/th/tools/music-scale-finder/
+https://usefulverse.com/th/tools/fretboard-trainer/
 https://usefulverse.com/th/tools/bpm-detector/
 https://usefulverse.com/th/tools/ear-training/
 https://usefulverse.com/th/tools/chess-clock/
@@ -7000,6 +7030,7 @@ https://usefulverse.com/uk/tools/connect-four/
 https://usefulverse.com/uk/tools/reversi/
 https://usefulverse.com/uk/tools/checkers/
 https://usefulverse.com/uk/tools/music-scale-finder/
+https://usefulverse.com/uk/tools/fretboard-trainer/
 https://usefulverse.com/uk/tools/bpm-detector/
 https://usefulverse.com/uk/tools/ear-training/
 https://usefulverse.com/uk/tools/chess-clock/
@@ -7255,6 +7286,7 @@ https://usefulverse.com/sw/tools/connect-four/
 https://usefulverse.com/sw/tools/reversi/
 https://usefulverse.com/sw/tools/checkers/
 https://usefulverse.com/sw/tools/music-scale-finder/
+https://usefulverse.com/sw/tools/fretboard-trainer/
 https://usefulverse.com/sw/tools/bpm-detector/
 https://usefulverse.com/sw/tools/ear-training/
 https://usefulverse.com/sw/tools/chess-clock/
@@ -7510,6 +7542,7 @@ https://usefulverse.com/mr/tools/connect-four/
 https://usefulverse.com/mr/tools/reversi/
 https://usefulverse.com/mr/tools/checkers/
 https://usefulverse.com/mr/tools/music-scale-finder/
+https://usefulverse.com/mr/tools/fretboard-trainer/
 https://usefulverse.com/mr/tools/bpm-detector/
 https://usefulverse.com/mr/tools/ear-training/
 https://usefulverse.com/mr/tools/chess-clock/
@@ -7765,6 +7798,7 @@ https://usefulverse.com/te/tools/connect-four/
 https://usefulverse.com/te/tools/reversi/
 https://usefulverse.com/te/tools/checkers/
 https://usefulverse.com/te/tools/music-scale-finder/
+https://usefulverse.com/te/tools/fretboard-trainer/
 https://usefulverse.com/te/tools/bpm-detector/
 https://usefulverse.com/te/tools/ear-training/
 https://usefulverse.com/te/tools/chess-clock/
@@ -8020,6 +8054,7 @@ https://usefulverse.com/ha/tools/connect-four/
 https://usefulverse.com/ha/tools/reversi/
 https://usefulverse.com/ha/tools/checkers/
 https://usefulverse.com/ha/tools/music-scale-finder/
+https://usefulverse.com/ha/tools/fretboard-trainer/
 https://usefulverse.com/ha/tools/bpm-detector/
 https://usefulverse.com/ha/tools/ear-training/
 https://usefulverse.com/ha/tools/chess-clock/
@@ -8275,6 +8310,7 @@ https://usefulverse.com/tl/tools/connect-four/
 https://usefulverse.com/tl/tools/reversi/
 https://usefulverse.com/tl/tools/checkers/
 https://usefulverse.com/tl/tools/music-scale-finder/
+https://usefulverse.com/tl/tools/fretboard-trainer/
 https://usefulverse.com/tl/tools/bpm-detector/
 https://usefulverse.com/tl/tools/ear-training/
 https://usefulverse.com/tl/tools/chess-clock/
@@ -8530,6 +8566,7 @@ https://usefulverse.com/ta/tools/connect-four/
 https://usefulverse.com/ta/tools/reversi/
 https://usefulverse.com/ta/tools/checkers/
 https://usefulverse.com/ta/tools/music-scale-finder/
+https://usefulverse.com/ta/tools/fretboard-trainer/
 https://usefulverse.com/ta/tools/bpm-detector/
 https://usefulverse.com/ta/tools/ear-training/
 https://usefulverse.com/ta/tools/chess-clock/
@@ -8785,6 +8822,7 @@ https://usefulverse.com/fa/tools/connect-four/
 https://usefulverse.com/fa/tools/reversi/
 https://usefulverse.com/fa/tools/checkers/
 https://usefulverse.com/fa/tools/music-scale-finder/
+https://usefulverse.com/fa/tools/fretboard-trainer/
 https://usefulverse.com/fa/tools/bpm-detector/
 https://usefulverse.com/fa/tools/ear-training/
 https://usefulverse.com/fa/tools/chess-clock/
@@ -9040,6 +9078,7 @@ https://usefulverse.com/am/tools/connect-four/
 https://usefulverse.com/am/tools/reversi/
 https://usefulverse.com/am/tools/checkers/
 https://usefulverse.com/am/tools/music-scale-finder/
+https://usefulverse.com/am/tools/fretboard-trainer/
 https://usefulverse.com/am/tools/bpm-detector/
 https://usefulverse.com/am/tools/ear-training/
 https://usefulverse.com/am/tools/chess-clock/
@@ -9295,6 +9334,7 @@ https://usefulverse.com/gu/tools/connect-four/
 https://usefulverse.com/gu/tools/reversi/
 https://usefulverse.com/gu/tools/checkers/
 https://usefulverse.com/gu/tools/music-scale-finder/
+https://usefulverse.com/gu/tools/fretboard-trainer/
 https://usefulverse.com/gu/tools/bpm-detector/
 https://usefulverse.com/gu/tools/ear-training/
 https://usefulverse.com/gu/tools/chess-clock/

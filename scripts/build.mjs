@@ -127,6 +127,7 @@ await bundle({
   minify: true,
 });
 await bundle({ entryPoints: [join(root, 'src', 'audio-analysis.css')], outfile: join(dist, 'assets', 'audio-analysis.css'), bundle: false, minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'fretboard-trainer.css')], outfile: join(dist, 'assets', 'fretboard-trainer.css'), bundle: false, minify: true });
 await bundle({
   entryPoints: [join(root, 'src', 'css-design-tools.css')],
   outfile: join(dist, 'assets', 'css-design-tools.css'),
@@ -322,6 +323,7 @@ await bundle({
   minify: true,
 });
 await bundle({ entryPoints: [join(root, 'src', 'audio-analysis-runtime.js')], outfile: join(dist, 'assets', 'audio-analysis-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'fretboard-trainer-runtime.js')], outfile: join(dist, 'assets', 'fretboard-trainer-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
 await bundle({
   entryPoints: [join(root, 'src', 'css-design-tools.js')],
   outfile: join(dist, 'assets', 'css-design-tools.js'),
@@ -784,6 +786,7 @@ assetHash.update(await readFile(join(dist, 'assets', 'sliding-puzzle.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'drum-machine.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'online-sequencer.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'audio-analysis.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'fretboard-trainer.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'css-design-tools.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'web-dev-tools.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'board-games.css')));
@@ -810,6 +813,7 @@ for (const file of [
   'drum-machine-runtime.js',
   'online-sequencer-runtime.js',
   'audio-analysis-runtime.js',
+  'fretboard-trainer-runtime.js',
   'css-design-tools.js',
   'css-design-logic.mjs',
   'web-dev-tools.js',

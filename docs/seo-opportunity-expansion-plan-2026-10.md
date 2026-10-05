@@ -2,6 +2,11 @@
 
 ## Seguimiento · continuación del 6 oct 2026
 
+- Se añadió **Guitar Fretboard Note Trainer** en las 36 rutas lingüísticas. Practica notas aleatorias de las seis cuerdas en afinación estándar E–A–D–G–B–E y trastes 0–12, con respuesta inmediata, puntuación/racha, siguiente pregunta y reinicio. Motor y estilos se cargan solo en esta página; no se guarda ni transmite actividad.
+- Chrome local comprobó acierto y error, progresión, puntuación/racha, reinicio y textos árabes RTL; a 390 px el layout no desborda. El mismo flujo se inspeccionó en escritorio y no dejó errores de consola. Tests comprueban afinación, posiciones y generación de preguntas; un gate recorre las 36 localizaciones y conserva placeholders. Afinaciones alternativas, nombres regionales de notas, clases de acordes, otros dispositivos y navegadores no se prometen.
+- El módulo independiente queda marcado como diferido y con límite de tamaño. `npm test`: **772/772**; `npm run check`: **9.468 URLs** (255 herramientas × 36 idiomas, 36 portadas y 252 guías); `npm run locale:release-check` aprobado para 20 idiomas ampliados; auditor funcional actualizado (**255 herramientas: 211 verificadas con evidencia específica, 44 corregidas con evidencia específica, 0 pendientes sin clasificar**); `git diff --check` limpio. README e inventario literal regenerados desde el sitemap local, 9.468 URLs. Estas son pruebas locales de rama, no producción ni compatibilidad exhaustiva.
+- No se ejecutaron DataForSEO ni PageSpeed/Lighthouse. La rama aún no está publicada; no se han actualizado paneles de buscadores con este sitemap.
+
 - Se añadieron **Song Key Finder** y **Audio Spectrogram** como herramientas locales bajo demanda, sin Functions/API ni transferencia de archivos. Ambas aceptan hasta 25 MiB y 180 segundos para acotar el uso de memoria.
 - La tonalidad se expresa como estimación con alternativas; el espectrograma explica que su escala no está calibrada. Se liberan AudioContext, URLs de objeto y resultados anteriores al elegir otro archivo o limpiar.
 - Prueba real en Chrome con un WAV sintético de 3 s: detector devuelve **C major** y alternativas **E minor/G major**; el espectrograma muestra la banda estacionaria esperada. Los límites y casos inválidos tienen pruebas de lógica. Consola sin errores/avisos durante ambos flujos.

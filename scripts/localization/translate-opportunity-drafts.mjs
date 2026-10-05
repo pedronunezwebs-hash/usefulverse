@@ -35,7 +35,11 @@ uiPhrases.push('Games', 'Two players share this device. Moves are not saved or u
 uiPhrases.push('Measure CSS pixels on this display. Physical units are estimates unless you calibrate the ruler.', 'Start position (px)', 'End position (px)', 'Measured length', 'Pixels per known length', 'Known length (mm)', 'Calibrate', 'Clear calibration', 'Use the range controls to move the markers.', 'Uncalibrated CSS pixels', 'mm', 'in', 'Screen ruler', 'Set two rays to match the lines you want to measure. The angle is calculated locally.', 'First ray (degrees)', 'Second ray (degrees)', 'Angle', 'degrees', 'Drag a ray handle or use its range control.', 'Reset angle', 'Protractor');
 uiPhrases.push('One label per line', 'Page size', 'Color theme', 'Poster title', 'Subtitle', 'Poster message', 'Recipient name', 'Award or achievement', 'Presented by', 'Date', 'Event name', 'Time', 'Location', 'RSVP details', 'Choose A4 or US Letter paper.', 'A4', 'US Letter', 'Blue', 'Green', 'Orange', 'Violet', 'Preview', 'Download SVG', 'Enter some text to create your design.', 'SVG design downloaded.', 'Could not create the SVG file.', 'Your text stays in this browser. Check printer scaling before printing.', 'One label per line (up to 30)', 'Print design');
 uiPhrases.push('Choose a short audio file to estimate its likely key. The audio stays on your device.', 'Choose a short audio file to visualize its frequencies. The audio stays on your device.', 'Choose audio file', 'Analyze audio', 'Clear', 'No audio selected.', 'File size limit: 25 MB. Keep the clip under 3 minutes.', 'Analyzing audio on this device…', 'Likely key', 'Other possibilities', 'No clear key detected. Try a longer section with clear harmony.', 'This browser could not decode this audio format.', 'The file is larger than 25 MB.', 'The decoded clip is longer than 3 minutes.', 'Audio analysis failed. Try another supported file.', 'This is an estimate, not a guaranteed key. Compare the alternatives.', 'Run analysis to see likely keys.', 'The chosen file stays in this browser and is not uploaded.', 'Audio analysis uses device memory and processing.', 'Analysis complete.', 'Audio spectrogram', 'Frequency', 'Time', 'A spectrogram shows frequency energy over time; it is not a calibrated measurement.');
+uiPhrases.push('The board uses standard E–A–D–G–B–E tuning and frets 0–12.', 'Which note is on string {string}, fret {fret}?', 'Choose a note.', 'Correct: {correct} · streak: {streak}', 'Correct! The note is {note}.', 'Not quite. Try another note.', 'Next note', 'Reset score');
 const corrections = {
+  el: { copy: { 'fretboard-trainer': ['Εκπαιδευτής ταστιέρας κιθάρας'] } },
+  ha: { copy: { 'fretboard-trainer': ['Mai koyon bayanin fret na gitar'] } },
+  tl: { copy: { 'fretboard-trainer': ['Pagsasanay sa mga nota ng fretboard ng gitara'] } },
   el: { copy: { 'css-animation-generator': ['Δημιουργός κινούμενων σχεδίων CSS'], 'css-clip-path-editor': ['Επεξεργαστής αποκοπής CSS'], 'css-filter-generator': ['Δημιουργός φίλτρων CSS'] } },
   sv: { copy: { 'css-animation-generator': ['CSS-animationsgenerator'], 'css-clip-path-editor': ['CSS-redigerare för klippbanor'], 'css-filter-generator': ['CSS-filtergenerator'] } },
   ha: { copy: { 'css-animation-generator': ['Mai samar da motsin CSS'], 'css-filter-generator': ['Mai samar da matatar CSS'] } },
@@ -118,6 +122,9 @@ for (const [language, titles] of Object.entries(toolTitleCorrections)) {
   corrections[language].copy = { ...corrections[language].copy };
   for (const [id, title] of Object.entries(titles)) corrections[language].copy[id] = [title];
 }
+corrections.el.copy['fretboard-trainer'] = ['Εκπαιδευτής ταστιέρας κιθάρας'];
+corrections.ha.copy['fretboard-trainer'] = ['Mai koyon bayanin fret na gitar'];
+corrections.tl.copy['fretboard-trainer'] = ['Pagsasanay sa mga nota ng fretboard ng gitara'];
 corrections.ha.ui = { ...corrections.ha.ui, 'JavaScript Fetch': 'Buƙatar Fetch ta JavaScript' };
 corrections.ha.ui['Browser tab'] = 'Shafin burauza';
 corrections.tl.ui = { ...corrections.tl.ui, 'Start URL': 'URL ng pagsisimula', 'Display mode': 'Paraan ng pagpapakita' };
