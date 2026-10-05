@@ -241,7 +241,7 @@ same `dist/sitemap.xml` that is deployed, so it includes every localized route.
 
 <!-- BEGIN GENERATED SITEMAP URL INVENTORY -->
 
-Generated from `dist/sitemap.xml`: **9,360 canonical URLs**.
+Generated from `dist/sitemap.xml`: **9,432 canonical URLs**.
 
 ```text
 https://usefulverse.com/
@@ -358,6 +358,8 @@ https://usefulverse.com/tools/gantt-chart-maker/
 https://usefulverse.com/tools/sprite-sheet-maker/
 https://usefulverse.com/tools/drum-machine/
 https://usefulverse.com/tools/online-sequencer/
+https://usefulverse.com/tools/song-key-finder/
+https://usefulverse.com/tools/audio-spectrogram/
 https://usefulverse.com/tools/css-animation-generator/
 https://usefulverse.com/tools/css-clip-path-editor/
 https://usefulverse.com/tools/css-filter-generator/
@@ -611,6 +613,8 @@ https://usefulverse.com/es/tools/gantt-chart-maker/
 https://usefulverse.com/es/tools/sprite-sheet-maker/
 https://usefulverse.com/es/tools/drum-machine/
 https://usefulverse.com/es/tools/online-sequencer/
+https://usefulverse.com/es/tools/song-key-finder/
+https://usefulverse.com/es/tools/audio-spectrogram/
 https://usefulverse.com/es/tools/css-animation-generator/
 https://usefulverse.com/es/tools/css-clip-path-editor/
 https://usefulverse.com/es/tools/css-filter-generator/
@@ -864,6 +868,8 @@ https://usefulverse.com/fr/tools/gantt-chart-maker/
 https://usefulverse.com/fr/tools/sprite-sheet-maker/
 https://usefulverse.com/fr/tools/drum-machine/
 https://usefulverse.com/fr/tools/online-sequencer/
+https://usefulverse.com/fr/tools/song-key-finder/
+https://usefulverse.com/fr/tools/audio-spectrogram/
 https://usefulverse.com/fr/tools/css-animation-generator/
 https://usefulverse.com/fr/tools/css-clip-path-editor/
 https://usefulverse.com/fr/tools/css-filter-generator/
@@ -1117,6 +1123,8 @@ https://usefulverse.com/pt-br/tools/gantt-chart-maker/
 https://usefulverse.com/pt-br/tools/sprite-sheet-maker/
 https://usefulverse.com/pt-br/tools/drum-machine/
 https://usefulverse.com/pt-br/tools/online-sequencer/
+https://usefulverse.com/pt-br/tools/song-key-finder/
+https://usefulverse.com/pt-br/tools/audio-spectrogram/
 https://usefulverse.com/pt-br/tools/css-animation-generator/
 https://usefulverse.com/pt-br/tools/css-clip-path-editor/
 https://usefulverse.com/pt-br/tools/css-filter-generator/
@@ -1370,6 +1378,8 @@ https://usefulverse.com/de/tools/gantt-chart-maker/
 https://usefulverse.com/de/tools/sprite-sheet-maker/
 https://usefulverse.com/de/tools/drum-machine/
 https://usefulverse.com/de/tools/online-sequencer/
+https://usefulverse.com/de/tools/song-key-finder/
+https://usefulverse.com/de/tools/audio-spectrogram/
 https://usefulverse.com/de/tools/css-animation-generator/
 https://usefulverse.com/de/tools/css-clip-path-editor/
 https://usefulverse.com/de/tools/css-filter-generator/
@@ -1623,6 +1633,8 @@ https://usefulverse.com/ja/tools/gantt-chart-maker/
 https://usefulverse.com/ja/tools/sprite-sheet-maker/
 https://usefulverse.com/ja/tools/drum-machine/
 https://usefulverse.com/ja/tools/online-sequencer/
+https://usefulverse.com/ja/tools/song-key-finder/
+https://usefulverse.com/ja/tools/audio-spectrogram/
 https://usefulverse.com/ja/tools/css-animation-generator/
 https://usefulverse.com/ja/tools/css-clip-path-editor/
 https://usefulverse.com/ja/tools/css-filter-generator/
@@ -1876,6 +1888,8 @@ https://usefulverse.com/ko/tools/gantt-chart-maker/
 https://usefulverse.com/ko/tools/sprite-sheet-maker/
 https://usefulverse.com/ko/tools/drum-machine/
 https://usefulverse.com/ko/tools/online-sequencer/
+https://usefulverse.com/ko/tools/song-key-finder/
+https://usefulverse.com/ko/tools/audio-spectrogram/
 https://usefulverse.com/ko/tools/css-animation-generator/
 https://usefulverse.com/ko/tools/css-clip-path-editor/
 https://usefulverse.com/ko/tools/css-filter-generator/
@@ -2129,6 +2143,8 @@ https://usefulverse.com/id/tools/gantt-chart-maker/
 https://usefulverse.com/id/tools/sprite-sheet-maker/
 https://usefulverse.com/id/tools/drum-machine/
 https://usefulverse.com/id/tools/online-sequencer/
+https://usefulverse.com/id/tools/song-key-finder/
+https://usefulverse.com/id/tools/audio-spectrogram/
 https://usefulverse.com/id/tools/css-animation-generator/
 https://usefulverse.com/id/tools/css-clip-path-editor/
 https://usefulverse.com/id/tools/css-filter-generator/
@@ -2382,6 +2398,8 @@ https://usefulverse.com/hi/tools/gantt-chart-maker/
 https://usefulverse.com/hi/tools/sprite-sheet-maker/
 https://usefulverse.com/hi/tools/drum-machine/
 https://usefulverse.com/hi/tools/online-sequencer/
+https://usefulverse.com/hi/tools/song-key-finder/
+https://usefulverse.com/hi/tools/audio-spectrogram/
 https://usefulverse.com/hi/tools/css-animation-generator/
 https://usefulverse.com/hi/tools/css-clip-path-editor/
 https://usefulverse.com/hi/tools/css-filter-generator/
@@ -2635,6 +2653,8 @@ https://usefulverse.com/ar/tools/gantt-chart-maker/
 https://usefulverse.com/ar/tools/sprite-sheet-maker/
 https://usefulverse.com/ar/tools/drum-machine/
 https://usefulverse.com/ar/tools/online-sequencer/
+https://usefulverse.com/ar/tools/song-key-finder/
+https://usefulverse.com/ar/tools/audio-spectrogram/
 https://usefulverse.com/ar/tools/css-animation-generator/
 https://usefulverse.com/ar/tools/css-clip-path-editor/
 https://usefulverse.com/ar/tools/css-filter-generator/
@@ -2888,6 +2908,8 @@ https://usefulverse.com/zh-cn/tools/gantt-chart-maker/
 https://usefulverse.com/zh-cn/tools/sprite-sheet-maker/
 https://usefulverse.com/zh-cn/tools/drum-machine/
 https://usefulverse.com/zh-cn/tools/online-sequencer/
+https://usefulverse.com/zh-cn/tools/song-key-finder/
+https://usefulverse.com/zh-cn/tools/audio-spectrogram/
 https://usefulverse.com/zh-cn/tools/css-animation-generator/
 https://usefulverse.com/zh-cn/tools/css-clip-path-editor/
 https://usefulverse.com/zh-cn/tools/css-filter-generator/
@@ -3141,6 +3163,8 @@ https://usefulverse.com/bn/tools/gantt-chart-maker/
 https://usefulverse.com/bn/tools/sprite-sheet-maker/
 https://usefulverse.com/bn/tools/drum-machine/
 https://usefulverse.com/bn/tools/online-sequencer/
+https://usefulverse.com/bn/tools/song-key-finder/
+https://usefulverse.com/bn/tools/audio-spectrogram/
 https://usefulverse.com/bn/tools/css-animation-generator/
 https://usefulverse.com/bn/tools/css-clip-path-editor/
 https://usefulverse.com/bn/tools/css-filter-generator/
@@ -3394,6 +3418,8 @@ https://usefulverse.com/ru/tools/gantt-chart-maker/
 https://usefulverse.com/ru/tools/sprite-sheet-maker/
 https://usefulverse.com/ru/tools/drum-machine/
 https://usefulverse.com/ru/tools/online-sequencer/
+https://usefulverse.com/ru/tools/song-key-finder/
+https://usefulverse.com/ru/tools/audio-spectrogram/
 https://usefulverse.com/ru/tools/css-animation-generator/
 https://usefulverse.com/ru/tools/css-clip-path-editor/
 https://usefulverse.com/ru/tools/css-filter-generator/
@@ -3647,6 +3673,8 @@ https://usefulverse.com/ur/tools/gantt-chart-maker/
 https://usefulverse.com/ur/tools/sprite-sheet-maker/
 https://usefulverse.com/ur/tools/drum-machine/
 https://usefulverse.com/ur/tools/online-sequencer/
+https://usefulverse.com/ur/tools/song-key-finder/
+https://usefulverse.com/ur/tools/audio-spectrogram/
 https://usefulverse.com/ur/tools/css-animation-generator/
 https://usefulverse.com/ur/tools/css-clip-path-editor/
 https://usefulverse.com/ur/tools/css-filter-generator/
@@ -3900,6 +3928,8 @@ https://usefulverse.com/tr/tools/gantt-chart-maker/
 https://usefulverse.com/tr/tools/sprite-sheet-maker/
 https://usefulverse.com/tr/tools/drum-machine/
 https://usefulverse.com/tr/tools/online-sequencer/
+https://usefulverse.com/tr/tools/song-key-finder/
+https://usefulverse.com/tr/tools/audio-spectrogram/
 https://usefulverse.com/tr/tools/css-animation-generator/
 https://usefulverse.com/tr/tools/css-clip-path-editor/
 https://usefulverse.com/tr/tools/css-filter-generator/
@@ -4153,6 +4183,8 @@ https://usefulverse.com/vi/tools/gantt-chart-maker/
 https://usefulverse.com/vi/tools/sprite-sheet-maker/
 https://usefulverse.com/vi/tools/drum-machine/
 https://usefulverse.com/vi/tools/online-sequencer/
+https://usefulverse.com/vi/tools/song-key-finder/
+https://usefulverse.com/vi/tools/audio-spectrogram/
 https://usefulverse.com/vi/tools/css-animation-generator/
 https://usefulverse.com/vi/tools/css-clip-path-editor/
 https://usefulverse.com/vi/tools/css-filter-generator/
@@ -4406,6 +4438,8 @@ https://usefulverse.com/it/tools/gantt-chart-maker/
 https://usefulverse.com/it/tools/sprite-sheet-maker/
 https://usefulverse.com/it/tools/drum-machine/
 https://usefulverse.com/it/tools/online-sequencer/
+https://usefulverse.com/it/tools/song-key-finder/
+https://usefulverse.com/it/tools/audio-spectrogram/
 https://usefulverse.com/it/tools/css-animation-generator/
 https://usefulverse.com/it/tools/css-clip-path-editor/
 https://usefulverse.com/it/tools/css-filter-generator/
@@ -4659,6 +4693,8 @@ https://usefulverse.com/zh-tw/tools/gantt-chart-maker/
 https://usefulverse.com/zh-tw/tools/sprite-sheet-maker/
 https://usefulverse.com/zh-tw/tools/drum-machine/
 https://usefulverse.com/zh-tw/tools/online-sequencer/
+https://usefulverse.com/zh-tw/tools/song-key-finder/
+https://usefulverse.com/zh-tw/tools/audio-spectrogram/
 https://usefulverse.com/zh-tw/tools/css-animation-generator/
 https://usefulverse.com/zh-tw/tools/css-clip-path-editor/
 https://usefulverse.com/zh-tw/tools/css-filter-generator/
@@ -4912,6 +4948,8 @@ https://usefulverse.com/bg/tools/gantt-chart-maker/
 https://usefulverse.com/bg/tools/sprite-sheet-maker/
 https://usefulverse.com/bg/tools/drum-machine/
 https://usefulverse.com/bg/tools/online-sequencer/
+https://usefulverse.com/bg/tools/song-key-finder/
+https://usefulverse.com/bg/tools/audio-spectrogram/
 https://usefulverse.com/bg/tools/css-animation-generator/
 https://usefulverse.com/bg/tools/css-clip-path-editor/
 https://usefulverse.com/bg/tools/css-filter-generator/
@@ -5165,6 +5203,8 @@ https://usefulverse.com/ca/tools/gantt-chart-maker/
 https://usefulverse.com/ca/tools/sprite-sheet-maker/
 https://usefulverse.com/ca/tools/drum-machine/
 https://usefulverse.com/ca/tools/online-sequencer/
+https://usefulverse.com/ca/tools/song-key-finder/
+https://usefulverse.com/ca/tools/audio-spectrogram/
 https://usefulverse.com/ca/tools/css-animation-generator/
 https://usefulverse.com/ca/tools/css-clip-path-editor/
 https://usefulverse.com/ca/tools/css-filter-generator/
@@ -5418,6 +5458,8 @@ https://usefulverse.com/nl/tools/gantt-chart-maker/
 https://usefulverse.com/nl/tools/sprite-sheet-maker/
 https://usefulverse.com/nl/tools/drum-machine/
 https://usefulverse.com/nl/tools/online-sequencer/
+https://usefulverse.com/nl/tools/song-key-finder/
+https://usefulverse.com/nl/tools/audio-spectrogram/
 https://usefulverse.com/nl/tools/css-animation-generator/
 https://usefulverse.com/nl/tools/css-clip-path-editor/
 https://usefulverse.com/nl/tools/css-filter-generator/
@@ -5671,6 +5713,8 @@ https://usefulverse.com/el/tools/gantt-chart-maker/
 https://usefulverse.com/el/tools/sprite-sheet-maker/
 https://usefulverse.com/el/tools/drum-machine/
 https://usefulverse.com/el/tools/online-sequencer/
+https://usefulverse.com/el/tools/song-key-finder/
+https://usefulverse.com/el/tools/audio-spectrogram/
 https://usefulverse.com/el/tools/css-animation-generator/
 https://usefulverse.com/el/tools/css-clip-path-editor/
 https://usefulverse.com/el/tools/css-filter-generator/
@@ -5924,6 +5968,8 @@ https://usefulverse.com/ms/tools/gantt-chart-maker/
 https://usefulverse.com/ms/tools/sprite-sheet-maker/
 https://usefulverse.com/ms/tools/drum-machine/
 https://usefulverse.com/ms/tools/online-sequencer/
+https://usefulverse.com/ms/tools/song-key-finder/
+https://usefulverse.com/ms/tools/audio-spectrogram/
 https://usefulverse.com/ms/tools/css-animation-generator/
 https://usefulverse.com/ms/tools/css-clip-path-editor/
 https://usefulverse.com/ms/tools/css-filter-generator/
@@ -6177,6 +6223,8 @@ https://usefulverse.com/pl/tools/gantt-chart-maker/
 https://usefulverse.com/pl/tools/sprite-sheet-maker/
 https://usefulverse.com/pl/tools/drum-machine/
 https://usefulverse.com/pl/tools/online-sequencer/
+https://usefulverse.com/pl/tools/song-key-finder/
+https://usefulverse.com/pl/tools/audio-spectrogram/
 https://usefulverse.com/pl/tools/css-animation-generator/
 https://usefulverse.com/pl/tools/css-clip-path-editor/
 https://usefulverse.com/pl/tools/css-filter-generator/
@@ -6430,6 +6478,8 @@ https://usefulverse.com/sv/tools/gantt-chart-maker/
 https://usefulverse.com/sv/tools/sprite-sheet-maker/
 https://usefulverse.com/sv/tools/drum-machine/
 https://usefulverse.com/sv/tools/online-sequencer/
+https://usefulverse.com/sv/tools/song-key-finder/
+https://usefulverse.com/sv/tools/audio-spectrogram/
 https://usefulverse.com/sv/tools/css-animation-generator/
 https://usefulverse.com/sv/tools/css-clip-path-editor/
 https://usefulverse.com/sv/tools/css-filter-generator/
@@ -6683,6 +6733,8 @@ https://usefulverse.com/th/tools/gantt-chart-maker/
 https://usefulverse.com/th/tools/sprite-sheet-maker/
 https://usefulverse.com/th/tools/drum-machine/
 https://usefulverse.com/th/tools/online-sequencer/
+https://usefulverse.com/th/tools/song-key-finder/
+https://usefulverse.com/th/tools/audio-spectrogram/
 https://usefulverse.com/th/tools/css-animation-generator/
 https://usefulverse.com/th/tools/css-clip-path-editor/
 https://usefulverse.com/th/tools/css-filter-generator/
@@ -6936,6 +6988,8 @@ https://usefulverse.com/uk/tools/gantt-chart-maker/
 https://usefulverse.com/uk/tools/sprite-sheet-maker/
 https://usefulverse.com/uk/tools/drum-machine/
 https://usefulverse.com/uk/tools/online-sequencer/
+https://usefulverse.com/uk/tools/song-key-finder/
+https://usefulverse.com/uk/tools/audio-spectrogram/
 https://usefulverse.com/uk/tools/css-animation-generator/
 https://usefulverse.com/uk/tools/css-clip-path-editor/
 https://usefulverse.com/uk/tools/css-filter-generator/
@@ -7189,6 +7243,8 @@ https://usefulverse.com/sw/tools/gantt-chart-maker/
 https://usefulverse.com/sw/tools/sprite-sheet-maker/
 https://usefulverse.com/sw/tools/drum-machine/
 https://usefulverse.com/sw/tools/online-sequencer/
+https://usefulverse.com/sw/tools/song-key-finder/
+https://usefulverse.com/sw/tools/audio-spectrogram/
 https://usefulverse.com/sw/tools/css-animation-generator/
 https://usefulverse.com/sw/tools/css-clip-path-editor/
 https://usefulverse.com/sw/tools/css-filter-generator/
@@ -7442,6 +7498,8 @@ https://usefulverse.com/mr/tools/gantt-chart-maker/
 https://usefulverse.com/mr/tools/sprite-sheet-maker/
 https://usefulverse.com/mr/tools/drum-machine/
 https://usefulverse.com/mr/tools/online-sequencer/
+https://usefulverse.com/mr/tools/song-key-finder/
+https://usefulverse.com/mr/tools/audio-spectrogram/
 https://usefulverse.com/mr/tools/css-animation-generator/
 https://usefulverse.com/mr/tools/css-clip-path-editor/
 https://usefulverse.com/mr/tools/css-filter-generator/
@@ -7695,6 +7753,8 @@ https://usefulverse.com/te/tools/gantt-chart-maker/
 https://usefulverse.com/te/tools/sprite-sheet-maker/
 https://usefulverse.com/te/tools/drum-machine/
 https://usefulverse.com/te/tools/online-sequencer/
+https://usefulverse.com/te/tools/song-key-finder/
+https://usefulverse.com/te/tools/audio-spectrogram/
 https://usefulverse.com/te/tools/css-animation-generator/
 https://usefulverse.com/te/tools/css-clip-path-editor/
 https://usefulverse.com/te/tools/css-filter-generator/
@@ -7948,6 +8008,8 @@ https://usefulverse.com/ha/tools/gantt-chart-maker/
 https://usefulverse.com/ha/tools/sprite-sheet-maker/
 https://usefulverse.com/ha/tools/drum-machine/
 https://usefulverse.com/ha/tools/online-sequencer/
+https://usefulverse.com/ha/tools/song-key-finder/
+https://usefulverse.com/ha/tools/audio-spectrogram/
 https://usefulverse.com/ha/tools/css-animation-generator/
 https://usefulverse.com/ha/tools/css-clip-path-editor/
 https://usefulverse.com/ha/tools/css-filter-generator/
@@ -8201,6 +8263,8 @@ https://usefulverse.com/tl/tools/gantt-chart-maker/
 https://usefulverse.com/tl/tools/sprite-sheet-maker/
 https://usefulverse.com/tl/tools/drum-machine/
 https://usefulverse.com/tl/tools/online-sequencer/
+https://usefulverse.com/tl/tools/song-key-finder/
+https://usefulverse.com/tl/tools/audio-spectrogram/
 https://usefulverse.com/tl/tools/css-animation-generator/
 https://usefulverse.com/tl/tools/css-clip-path-editor/
 https://usefulverse.com/tl/tools/css-filter-generator/
@@ -8454,6 +8518,8 @@ https://usefulverse.com/ta/tools/gantt-chart-maker/
 https://usefulverse.com/ta/tools/sprite-sheet-maker/
 https://usefulverse.com/ta/tools/drum-machine/
 https://usefulverse.com/ta/tools/online-sequencer/
+https://usefulverse.com/ta/tools/song-key-finder/
+https://usefulverse.com/ta/tools/audio-spectrogram/
 https://usefulverse.com/ta/tools/css-animation-generator/
 https://usefulverse.com/ta/tools/css-clip-path-editor/
 https://usefulverse.com/ta/tools/css-filter-generator/
@@ -8707,6 +8773,8 @@ https://usefulverse.com/fa/tools/gantt-chart-maker/
 https://usefulverse.com/fa/tools/sprite-sheet-maker/
 https://usefulverse.com/fa/tools/drum-machine/
 https://usefulverse.com/fa/tools/online-sequencer/
+https://usefulverse.com/fa/tools/song-key-finder/
+https://usefulverse.com/fa/tools/audio-spectrogram/
 https://usefulverse.com/fa/tools/css-animation-generator/
 https://usefulverse.com/fa/tools/css-clip-path-editor/
 https://usefulverse.com/fa/tools/css-filter-generator/
@@ -8960,6 +9028,8 @@ https://usefulverse.com/am/tools/gantt-chart-maker/
 https://usefulverse.com/am/tools/sprite-sheet-maker/
 https://usefulverse.com/am/tools/drum-machine/
 https://usefulverse.com/am/tools/online-sequencer/
+https://usefulverse.com/am/tools/song-key-finder/
+https://usefulverse.com/am/tools/audio-spectrogram/
 https://usefulverse.com/am/tools/css-animation-generator/
 https://usefulverse.com/am/tools/css-clip-path-editor/
 https://usefulverse.com/am/tools/css-filter-generator/
@@ -9213,6 +9283,8 @@ https://usefulverse.com/gu/tools/gantt-chart-maker/
 https://usefulverse.com/gu/tools/sprite-sheet-maker/
 https://usefulverse.com/gu/tools/drum-machine/
 https://usefulverse.com/gu/tools/online-sequencer/
+https://usefulverse.com/gu/tools/song-key-finder/
+https://usefulverse.com/gu/tools/audio-spectrogram/
 https://usefulverse.com/gu/tools/css-animation-generator/
 https://usefulverse.com/gu/tools/css-clip-path-editor/
 https://usefulverse.com/gu/tools/css-filter-generator/

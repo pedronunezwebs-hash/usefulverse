@@ -1427,6 +1427,8 @@ function setupToolPage() {
   opportunityTools.add('sliding-puzzle');
   opportunityTools.add('drum-machine');
   opportunityTools.add('online-sequencer');
+  opportunityTools.add('song-key-finder');
+  opportunityTools.add('audio-spectrogram');
   opportunityTools.add('css-animation-generator');
   opportunityTools.add('css-clip-path-editor');
   opportunityTools.add('css-filter-generator');
@@ -1483,6 +1485,13 @@ function setupToolPage() {
     const assetVersion = document.documentElement.dataset.assetVersion;
     import(`./bpm-detector-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
       .then(({ setupBpmDetector }) => setupBpmDetector(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'song-key-finder' || id === 'audio-spectrogram') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./audio-analysis-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupAudioAnalysis }) => setupAudioAnalysis(root))
       .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
     return;
   }

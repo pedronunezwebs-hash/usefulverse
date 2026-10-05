@@ -207,3 +207,16 @@ test('print studio pages expose localized input, vector preview, download and pr
   assert.match(opportunityToolMarkup('certificate-maker'), /Recipient name/u);
   assert.match(opportunityToolMarkup('invitation-maker'), /RSVP details/u);
 });
+
+test('audio analysis pages are local, lazy-runtime-friendly and expose bounded file controls', () => {
+  for (const id of ['song-key-finder', 'audio-spectrogram']) {
+    const markup = opportunityToolMarkup(id, 'ar');
+    assert.match(markup, /type="file" accept="audio\//u, id);
+    assert.match(markup, /data-audio-analyze disabled/u, id);
+    assert.match(markup, /data-audio-clear/u, id);
+    assert.match(markup, /data-planner-messages=/u, id);
+    assert.doesNotMatch(markup, /fetch\(|XMLHttpRequest/u, id);
+  }
+  assert.match(opportunityToolMarkup('song-key-finder'), /data-audio-key/u);
+  assert.match(opportunityToolMarkup('audio-spectrogram'), /data-audio-chart/u);
+});

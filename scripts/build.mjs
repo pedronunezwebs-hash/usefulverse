@@ -126,6 +126,7 @@ await bundle({
   bundle: false,
   minify: true,
 });
+await bundle({ entryPoints: [join(root, 'src', 'audio-analysis.css')], outfile: join(dist, 'assets', 'audio-analysis.css'), bundle: false, minify: true });
 await bundle({
   entryPoints: [join(root, 'src', 'css-design-tools.css')],
   outfile: join(dist, 'assets', 'css-design-tools.css'),
@@ -320,6 +321,7 @@ await bundle({
   target: ['es2022'],
   minify: true,
 });
+await bundle({ entryPoints: [join(root, 'src', 'audio-analysis-runtime.js')], outfile: join(dist, 'assets', 'audio-analysis-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
 await bundle({
   entryPoints: [join(root, 'src', 'css-design-tools.js')],
   outfile: join(dist, 'assets', 'css-design-tools.js'),
@@ -392,6 +394,7 @@ await bundle({
   target: ['es2022'],
   minify: true,
 });
+await bundle({ entryPoints: [join(root, 'src', 'audio-analysis-logic.mjs')], outfile: join(dist, 'assets', 'audio-analysis-logic.mjs'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
 await bundle({
   entryPoints: [join(root, 'src', 'tic-tac-toe-logic.mjs')],
   outfile: join(dist, 'assets', 'tic-tac-toe-logic.mjs'),
@@ -780,6 +783,7 @@ assetHash.update(await readFile(join(dist, 'assets', 'nonogram.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'sliding-puzzle.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'drum-machine.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'online-sequencer.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'audio-analysis.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'css-design-tools.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'web-dev-tools.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'board-games.css')));
@@ -805,6 +809,7 @@ for (const file of [
   'sliding-puzzle-runtime.js',
   'drum-machine-runtime.js',
   'online-sequencer-runtime.js',
+  'audio-analysis-runtime.js',
   'css-design-tools.js',
   'css-design-logic.mjs',
   'web-dev-tools.js',
@@ -813,6 +818,7 @@ for (const file of [
   'measurement-tools-runtime.js',
   'print-studio-runtime.js',
   'online-sequencer-logic.mjs',
+  'audio-analysis-logic.mjs',
   'tic-tac-toe-logic.mjs',
   'time-tracker-runtime.js',
   'weekly-meal-planner-runtime.js',

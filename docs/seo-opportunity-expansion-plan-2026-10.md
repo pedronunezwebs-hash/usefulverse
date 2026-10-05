@@ -1,5 +1,16 @@
 # UsefulVerse · ejecución del plan de 100 oportunidades SEO
 
+## Seguimiento · continuación del 6 oct 2026
+
+- Se añadieron **Song Key Finder** y **Audio Spectrogram** como herramientas locales bajo demanda, sin Functions/API ni transferencia de archivos. Ambas aceptan hasta 25 MiB y 180 segundos para acotar el uso de memoria.
+- La tonalidad se expresa como estimación con alternativas; el espectrograma explica que su escala no está calibrada. Se liberan AudioContext, URLs de objeto y resultados anteriores al elegir otro archivo o limpiar.
+- Prueba real en Chrome con un WAV sintético de 3 s: detector devuelve **C major** y alternativas **E minor/G major**; el espectrograma muestra la banda estacionaria esperada. Los límites y casos inválidos tienen pruebas de lógica. Consola sin errores/avisos durante ambos flujos.
+- Verificación de esta etapa: `npm test` **767/767**, `npm run check` **9.432 URLs**, `npm run locale:release-check` aprobado para 20 idiomas ampliados, auditoría funcional generada para 254 herramientas (211 verificadas con evidencia concreta, 43 corregidas con evidencia, ninguna sin clasificar), `git diff --check` limpio.
+- README regenerado desde el sitemap del build: **9.432 URLs**. Este es el conteo de la rama; aún no está desplegado a producción.
+- Límites de evidencia: solo se decodificó una muestra PCM WAV en Chrome; no se verificaron distintos códecs reales, archivos máximos, móviles ni otros navegadores. No se afirma compatibilidad universal ni exactitud de análisis de canciones completas.
+- Sudoku ya evita repetir sus tableros recientes y genera un nuevo tablero al iniciar «New puzzle»; el test de auditoría documenta una muestra de 100 tableros distintos y solución única por dificultad. Repetición aún puede ocurrir si se borra o bloquea el almacenamiento local.
+- El plan continúa abierto: no integrar este checkpoint como publicación final ni declarar cerradas las fases pendientes por el hecho de que los gates de esta etapa pasen.
+
 Documento editable de trabajo. Fuente de keywords: análisis DataForSEO ya realizado y aprobado; no repetir consultas ni sumar volúmenes como si fueran tráfico. Ejecución en rama aislada y publicación solo después de las puertas de calidad.
 
 ## Objetivo y criterios de cierre
