@@ -65,7 +65,7 @@ function setupTyping(root) {
   const input = $('#typing-input', root); const prompt = $('#typing-prompt', root); const duration = $('#typing-duration', root);
   let startedAt = 0; let timer = 0; let finished = false;
   const renderMetrics = (elapsed) => {
-    const stats = logic.typingMetrics(prompt.textContent, input.value, elapsed);
+    const stats = logic.typingMetrics(prompt.textContent, input.value, Math.max(1000, elapsed));
     $('#typing-wpm', root).textContent = format(stats.wpm, 1);
     $('#typing-accuracy', root).textContent = `${format(stats.accuracy, 1)}%`;
     $('#typing-correct', root).textContent = format(stats.correctCharacters);

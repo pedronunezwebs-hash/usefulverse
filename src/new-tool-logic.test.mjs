@@ -70,10 +70,11 @@ test('fuel estimates respect US and metric efficiency units', () => {
   assert.throws(() => calculateFuelCost({ distance: 0, efficiency: 8, price: 1 }), /positive/u);
 });
 
-test('typing metrics count Unicode code points and expose accuracy independently', () => {
+test('typing metrics count visible Unicode graphemes and expose accuracy independently', () => {
   assert.deepEqual(typingMetrics('hello', 'hello', 60_000), { wpm: 1, accuracy: 100, correctCharacters: 5, typedCharacters: 5 });
   assert.deepEqual(typingMetrics('café', 'cafèx', 30_000), { wpm: 2, accuracy: 60, correctCharacters: 3, typedCharacters: 5 });
   assert.equal(typingMetrics('你好', '你', 0).wpm, 0);
+  assert.deepEqual(typingMetrics('é👨‍👩‍👧‍👦', 'e\u0301👨‍👩‍👧‍👦', 60_000), { wpm: 0.4, accuracy: 100, correctCharacters: 2, typedCharacters: 2 });
 });
 
 test('Lorem Ipsum generation enforces output limits and modes', () => {
