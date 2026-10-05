@@ -140,6 +140,22 @@ function setupTimer(root) {
     }).catch(() => {});
   }
   const display = $('#timer-display', root);
+  const audioNotice = $('#timer-audio-status', root);
+  const showAudioUnavailable = () => {
+    if (!audioNotice) return;
+    audioNotice.textContent = t('Audio could not start. Check your browser audio settings.');
+    audioNotice.hidden = false;
+  };
+  const clearAudioNotice = () => { if (audioNotice) { audioNotice.hidden = true; audioNotice.textContent = ''; } };
+  const resumeAudio = async () => {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return false;
+    try {
+      audioContext ??= new AudioContextClass();
+      if (audioContext.state === 'suspended') await audioContext.resume();
+      return audioContext.state === 'running';
+    } catch { return false; }
+  };
   const persist = () => { try { localStorage.setItem(storageKey, JSON.stringify({ settings, completed, focusMilliseconds, focusElapsedThisPhase })); } catch {} };
   const getDuration = (selectedMode = mode, selectedPhase = phase) => {
     if (selectedMode === 'pomodoro') {
@@ -171,13 +187,10 @@ function setupTimer(root) {
     ['focus-minutes', 'break-minutes', 'long-break-minutes', 'long-break-every'].forEach((id) => { $(`#${id}`, root).disabled = running; });
     showStats();
   };
-  const playAlert = async () => {
-    if (!settings.sound || settings.volume <= 0) return;
-    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-    if (!AudioContextClass) return;
+  const playAlert = async ({ preview = false } = {}) => {
+    if ((!preview && !settings.sound) || settings.volume <= 0) return 'muted';
+    if (!await resumeAudio()) return 'unavailable';
     try {
-      audioContext ??= new AudioContextClass();
-      if (audioContext.state === 'suspended') await audioContext.resume();
       for (let index = 0; index < 3; index += 1) {
         const oscillator = audioContext.createOscillator(); const gain = audioContext.createGain();
         oscillator.type = 'sine'; oscillator.frequency.value = index === 1 ? 880 : 660;
@@ -187,7 +200,8 @@ function setupTimer(root) {
         oscillator.connect(gain); gain.connect(audioContext.destination);
         oscillator.start(audioContext.currentTime + index * 0.22); oscillator.stop(audioContext.currentTime + index * 0.22 + 0.19);
       }
-    } catch {}
+      return 'played';
+    } catch { return 'unavailable'; }
   };
   const notify = async (title, body) => {
     if (!('Notification' in window) || Notification.permission !== 'granted') return;
@@ -221,7 +235,7 @@ function setupTimer(root) {
     running = false; stopTicker(); remaining = 0;
     focusSegmentStartedAt = 0;
     const finishedMode = mode; const finishedPhase = phase;
-    void playAlert();
+    void playAlert().then((result) => { if (result === 'unavailable') showAudioUnavailable(); });
     const title = t('Pomodoro');
     const message = finishedMode === 'pomodoro' ? t(finishedPhase === 'focus' ? 'status.focusComplete' : 'status.breakComplete') : t('status.timeUp');
     void notify(title, message);
@@ -249,10 +263,7 @@ function setupTimer(root) {
     if (mode !== 'stopwatch' && remaining <= 0) remaining = getDuration();
     if (mode !== 'stopwatch' && (!Number.isFinite(remaining) || remaining <= 0)) return status(root, 'durationRequired', 'error');
     starting = true;
-    if (settings.sound) {
-      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-      if (AudioContextClass) { try { audioContext ??= new AudioContextClass(); await audioContext.resume(); } catch {} }
-    }
+    if (settings.sound && settings.volume > 0 && !await resumeAudio()) showAudioUnavailable();
     running = true;
     if (mode === 'stopwatch') stopwatchStarted = performance.now();
     else {
@@ -293,7 +304,12 @@ function setupTimer(root) {
       pause(); phase = phase === 'focus' ? 'short-break' : 'focus'; focusElapsedThisPhase = 0;
       remaining = getDuration(); render(); status(root, 'ready');
     }
-    if (actionName === 'timer-test-sound') { await playAlert(); status(root, 'ready'); }
+    if (actionName === 'timer-test-sound') {
+      const result = await playAlert({ preview: true });
+      if (result === 'unavailable') showAudioUnavailable();
+      else clearAudioNotice();
+      status(root, 'ready');
+    }
     if (actionName === 'timer-enable-notifications') {
       if (!('Notification' in window)) return status(root, 'Notifications are not available in this browser.', 'error');
       let permission;

@@ -71,7 +71,7 @@ if (!globalHeaderBlock.includes('Permissions-Policy: camera=(self), geolocation=
   throw new Error('Do not globally deny microphone access: Cloudflare Pages merges matching Permissions-Policy headers. Keep microphone prompts user-initiated in the recorder and guitar tuner routes.');
 }
 const timerPage = await readFile(join(dist, localePath('en', 'online-timer').replace(/^\//u, '') + 'index.html'), 'utf8');
-for (const feature of ['data-timer-mode="pomodoro"', 'id="long-break-minutes"', 'id="long-break-every"', 'id="timer-auto-start"', 'id="timer-sound"', 'data-action="timer-test-sound"', 'data-action="timer-enable-notifications"', 'data-action="timer-skip"', 'data-action="timer-clear-data"']) {
+for (const feature of ['data-timer-mode="pomodoro"', 'id="long-break-minutes"', 'id="long-break-every"', 'id="timer-auto-start"', 'id="timer-sound"', 'id="timer-audio-status"', 'data-action="timer-test-sound"', 'data-action="timer-enable-notifications"', 'data-action="timer-skip"', 'data-action="timer-clear-data"']) {
   if (!timerPage.includes(feature)) throw new Error(`Online timer is missing its required control: ${feature}`);
 }
 const naverVerification = await readFile(join(dist, 'naverbbd67ca2bfab12f8138c42ad5d27c664.html'), 'utf8');

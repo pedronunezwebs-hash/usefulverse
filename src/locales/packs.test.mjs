@@ -32,6 +32,7 @@ const saveUsefulVerseUi = [
   'Copy was blocked. Select the link below and copy it manually.',
   'Page link',
 ];
+const timerAudioUnavailable = 'Audio could not start. Check your browser audio settings.';
 
 for (const [language, pack] of Object.entries(packs)) {
   const keepEnglish = new Set(pack.meta.keepEnglish ?? []);
@@ -59,6 +60,12 @@ for (const [language, pack] of Object.entries(packs)) {
       assert.ok(pack.ui[key], `ui[${JSON.stringify(key)}]`);
       assert.notEqual(pack.ui[key], key, `ui[${JSON.stringify(key)}] is still English`);
     }
+  });
+
+  test(`${language}: Pomodoro explains when browser audio cannot start`, () => {
+    if (language === 'en') return;
+    assert.ok(pack.runtimeMessages[timerAudioUnavailable], `runtimeMessages[${JSON.stringify(timerAudioUnavailable)}]`);
+    assert.notEqual(pack.runtimeMessages[timerAudioUnavailable], timerAudioUnavailable);
   });
 
   test(`${language}: every runtime message used by app.js is translated`, () => {
