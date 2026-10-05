@@ -69,3 +69,60 @@ export function reversiTurnOutcome(board, mover, nextPlayer = mover === RED ? BL
   if (reversiLegalMoves(board, mover).length) return { kind: 'pass', player: nextPlayer, red, black, winner: EMPTY };
   return { kind: 'finished', player: null, red, black, winner: red === black ? 3 : red > black ? RED : BLACK };
 }
+
+const CHECKERS_SIZE = 8;
+const checkersIndex = (row, column) => row * CHECKERS_SIZE + column;
+const checkersInside = (row, column) => row >= 0 && row < CHECKERS_SIZE && column >= 0 && column < CHECKERS_SIZE;
+const checkersOwner = (value) => value === RED || value === RED + 2 ? RED : value === BLACK || value === BLACK + 2 ? BLACK : EMPTY;
+const checkersKing = (value) => value === RED + 2 || value === BLACK + 2;
+
+export function createCheckers() {
+  const board = Array(64).fill(EMPTY);
+  for (let row = 0; row < 3; row += 1) for (let column = 0; column < 8; column += 1) if ((row + column) % 2 === 1) board[checkersIndex(row, column)] = BLACK;
+  for (let row = 5; row < 8; row += 1) for (let column = 0; column < 8; column += 1) if ((row + column) % 2 === 1) board[checkersIndex(row, column)] = RED;
+  return board;
+}
+
+function checkersMovesForPiece(board, index) {
+  const player = checkersOwner(board[index]); if (!player) return [];
+  const row = Math.floor(index / 8); const column = index % 8;
+  const rowDirections = checkersKing(board[index]) ? [-1, 1] : [player === RED ? -1 : 1];
+  const moves = [];
+  for (const dr of rowDirections) for (const dc of [-1, 1]) {
+    const nextRow = row + dr; const nextColumn = column + dc;
+    if (!checkersInside(nextRow, nextColumn)) continue;
+    const next = checkersIndex(nextRow, nextColumn);
+    if (board[next] === EMPTY) moves.push({ from: index, to: next, capture: null });
+    else if (checkersOwner(board[next]) !== player) {
+      const landingRow = nextRow + dr; const landingColumn = nextColumn + dc;
+      if (checkersInside(landingRow, landingColumn)) {
+        const landing = checkersIndex(landingRow, landingColumn);
+        if (board[landing] === EMPTY) moves.push({ from: index, to: landing, capture: next });
+      }
+    }
+  }
+  return moves;
+}
+
+export function checkersLegalMoves(board, player, forcedFrom = null) {
+  if (!Array.isArray(board) || board.length !== 64 || ![RED, BLACK].includes(player)) return [];
+  const pieces = forcedFrom === null ? board.map((piece, index) => checkersOwner(piece) === player ? index : -1).filter((index) => index >= 0)
+    : checkersOwner(board[forcedFrom]) === player ? [forcedFrom] : [];
+  const moves = pieces.flatMap((index) => checkersMovesForPiece(board, index));
+  return moves.some((move) => move.capture !== null) ? moves.filter((move) => move.capture !== null) : forcedFrom === null ? moves : [];
+}
+
+export function playCheckersMove(board, from, to, player, forcedFrom = null) {
+  if (!Number.isInteger(from) || from < 0 || from >= 64 || !Number.isInteger(to) || to < 0 || to >= 64) return null;
+  const move = checkersLegalMoves(board, player, forcedFrom).find((candidate) => candidate.from === from && candidate.to === to);
+  if (!move) return null;
+  const next = [...board]; let piece = next[from]; next[from] = EMPTY; next[to] = EMPTY;
+  if (move.capture !== null) next[move.capture] = EMPTY;
+  const promoted = !checkersKing(piece) && (player === RED ? Math.floor(to / 8) === 0 : Math.floor(to / 8) === 7);
+  if (promoted) piece += 2;
+  next[to] = piece;
+  const continuation = move.capture !== null && !promoted ? checkersMovesForPiece(next, to).filter((candidate) => candidate.capture !== null) : [];
+  const nextPlayer = continuation.length ? player : player === RED ? BLACK : RED;
+  const winner = checkersLegalMoves(next, nextPlayer).length ? EMPTY : player;
+  return { board: next, capture: move.capture, promoted, continuation: continuation.length > 0, nextPlayer, winner };
+}

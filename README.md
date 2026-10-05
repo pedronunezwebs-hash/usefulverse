@@ -241,7 +241,7 @@ same `dist/sitemap.xml` that is deployed, so it includes every localized route.
 
 <!-- BEGIN GENERATED SITEMAP URL INVENTORY -->
 
-Generated from `dist/sitemap.xml`: **9,108 canonical URLs**.
+Generated from `dist/sitemap.xml`: **9,144 canonical URLs**.
 
 ```text
 https://usefulverse.com/
@@ -366,6 +366,7 @@ https://usefulverse.com/tools/html-table-generator/
 https://usefulverse.com/tools/pwa-manifest-generator/
 https://usefulverse.com/tools/connect-four/
 https://usefulverse.com/tools/reversi/
+https://usefulverse.com/tools/checkers/
 https://usefulverse.com/tools/music-scale-finder/
 https://usefulverse.com/tools/bpm-detector/
 https://usefulverse.com/tools/ear-training/
@@ -612,6 +613,7 @@ https://usefulverse.com/es/tools/html-table-generator/
 https://usefulverse.com/es/tools/pwa-manifest-generator/
 https://usefulverse.com/es/tools/connect-four/
 https://usefulverse.com/es/tools/reversi/
+https://usefulverse.com/es/tools/checkers/
 https://usefulverse.com/es/tools/music-scale-finder/
 https://usefulverse.com/es/tools/bpm-detector/
 https://usefulverse.com/es/tools/ear-training/
@@ -858,6 +860,7 @@ https://usefulverse.com/fr/tools/html-table-generator/
 https://usefulverse.com/fr/tools/pwa-manifest-generator/
 https://usefulverse.com/fr/tools/connect-four/
 https://usefulverse.com/fr/tools/reversi/
+https://usefulverse.com/fr/tools/checkers/
 https://usefulverse.com/fr/tools/music-scale-finder/
 https://usefulverse.com/fr/tools/bpm-detector/
 https://usefulverse.com/fr/tools/ear-training/
@@ -1104,6 +1107,7 @@ https://usefulverse.com/pt-br/tools/html-table-generator/
 https://usefulverse.com/pt-br/tools/pwa-manifest-generator/
 https://usefulverse.com/pt-br/tools/connect-four/
 https://usefulverse.com/pt-br/tools/reversi/
+https://usefulverse.com/pt-br/tools/checkers/
 https://usefulverse.com/pt-br/tools/music-scale-finder/
 https://usefulverse.com/pt-br/tools/bpm-detector/
 https://usefulverse.com/pt-br/tools/ear-training/
@@ -1350,6 +1354,7 @@ https://usefulverse.com/de/tools/html-table-generator/
 https://usefulverse.com/de/tools/pwa-manifest-generator/
 https://usefulverse.com/de/tools/connect-four/
 https://usefulverse.com/de/tools/reversi/
+https://usefulverse.com/de/tools/checkers/
 https://usefulverse.com/de/tools/music-scale-finder/
 https://usefulverse.com/de/tools/bpm-detector/
 https://usefulverse.com/de/tools/ear-training/
@@ -1596,6 +1601,7 @@ https://usefulverse.com/ja/tools/html-table-generator/
 https://usefulverse.com/ja/tools/pwa-manifest-generator/
 https://usefulverse.com/ja/tools/connect-four/
 https://usefulverse.com/ja/tools/reversi/
+https://usefulverse.com/ja/tools/checkers/
 https://usefulverse.com/ja/tools/music-scale-finder/
 https://usefulverse.com/ja/tools/bpm-detector/
 https://usefulverse.com/ja/tools/ear-training/
@@ -1842,6 +1848,7 @@ https://usefulverse.com/ko/tools/html-table-generator/
 https://usefulverse.com/ko/tools/pwa-manifest-generator/
 https://usefulverse.com/ko/tools/connect-four/
 https://usefulverse.com/ko/tools/reversi/
+https://usefulverse.com/ko/tools/checkers/
 https://usefulverse.com/ko/tools/music-scale-finder/
 https://usefulverse.com/ko/tools/bpm-detector/
 https://usefulverse.com/ko/tools/ear-training/
@@ -2088,6 +2095,7 @@ https://usefulverse.com/id/tools/html-table-generator/
 https://usefulverse.com/id/tools/pwa-manifest-generator/
 https://usefulverse.com/id/tools/connect-four/
 https://usefulverse.com/id/tools/reversi/
+https://usefulverse.com/id/tools/checkers/
 https://usefulverse.com/id/tools/music-scale-finder/
 https://usefulverse.com/id/tools/bpm-detector/
 https://usefulverse.com/id/tools/ear-training/
@@ -2334,6 +2342,7 @@ https://usefulverse.com/hi/tools/html-table-generator/
 https://usefulverse.com/hi/tools/pwa-manifest-generator/
 https://usefulverse.com/hi/tools/connect-four/
 https://usefulverse.com/hi/tools/reversi/
+https://usefulverse.com/hi/tools/checkers/
 https://usefulverse.com/hi/tools/music-scale-finder/
 https://usefulverse.com/hi/tools/bpm-detector/
 https://usefulverse.com/hi/tools/ear-training/
@@ -2580,6 +2589,7 @@ https://usefulverse.com/ar/tools/html-table-generator/
 https://usefulverse.com/ar/tools/pwa-manifest-generator/
 https://usefulverse.com/ar/tools/connect-four/
 https://usefulverse.com/ar/tools/reversi/
+https://usefulverse.com/ar/tools/checkers/
 https://usefulverse.com/ar/tools/music-scale-finder/
 https://usefulverse.com/ar/tools/bpm-detector/
 https://usefulverse.com/ar/tools/ear-training/
@@ -2826,6 +2836,7 @@ https://usefulverse.com/zh-cn/tools/html-table-generator/
 https://usefulverse.com/zh-cn/tools/pwa-manifest-generator/
 https://usefulverse.com/zh-cn/tools/connect-four/
 https://usefulverse.com/zh-cn/tools/reversi/
+https://usefulverse.com/zh-cn/tools/checkers/
 https://usefulverse.com/zh-cn/tools/music-scale-finder/
 https://usefulverse.com/zh-cn/tools/bpm-detector/
 https://usefulverse.com/zh-cn/tools/ear-training/
@@ -3072,6 +3083,7 @@ https://usefulverse.com/bn/tools/html-table-generator/
 https://usefulverse.com/bn/tools/pwa-manifest-generator/
 https://usefulverse.com/bn/tools/connect-four/
 https://usefulverse.com/bn/tools/reversi/
+https://usefulverse.com/bn/tools/checkers/
 https://usefulverse.com/bn/tools/music-scale-finder/
 https://usefulverse.com/bn/tools/bpm-detector/
 https://usefulverse.com/bn/tools/ear-training/
@@ -3318,6 +3330,7 @@ https://usefulverse.com/ru/tools/html-table-generator/
 https://usefulverse.com/ru/tools/pwa-manifest-generator/
 https://usefulverse.com/ru/tools/connect-four/
 https://usefulverse.com/ru/tools/reversi/
+https://usefulverse.com/ru/tools/checkers/
 https://usefulverse.com/ru/tools/music-scale-finder/
 https://usefulverse.com/ru/tools/bpm-detector/
 https://usefulverse.com/ru/tools/ear-training/
@@ -3564,6 +3577,7 @@ https://usefulverse.com/ur/tools/html-table-generator/
 https://usefulverse.com/ur/tools/pwa-manifest-generator/
 https://usefulverse.com/ur/tools/connect-four/
 https://usefulverse.com/ur/tools/reversi/
+https://usefulverse.com/ur/tools/checkers/
 https://usefulverse.com/ur/tools/music-scale-finder/
 https://usefulverse.com/ur/tools/bpm-detector/
 https://usefulverse.com/ur/tools/ear-training/
@@ -3810,6 +3824,7 @@ https://usefulverse.com/tr/tools/html-table-generator/
 https://usefulverse.com/tr/tools/pwa-manifest-generator/
 https://usefulverse.com/tr/tools/connect-four/
 https://usefulverse.com/tr/tools/reversi/
+https://usefulverse.com/tr/tools/checkers/
 https://usefulverse.com/tr/tools/music-scale-finder/
 https://usefulverse.com/tr/tools/bpm-detector/
 https://usefulverse.com/tr/tools/ear-training/
@@ -4056,6 +4071,7 @@ https://usefulverse.com/vi/tools/html-table-generator/
 https://usefulverse.com/vi/tools/pwa-manifest-generator/
 https://usefulverse.com/vi/tools/connect-four/
 https://usefulverse.com/vi/tools/reversi/
+https://usefulverse.com/vi/tools/checkers/
 https://usefulverse.com/vi/tools/music-scale-finder/
 https://usefulverse.com/vi/tools/bpm-detector/
 https://usefulverse.com/vi/tools/ear-training/
@@ -4302,6 +4318,7 @@ https://usefulverse.com/it/tools/html-table-generator/
 https://usefulverse.com/it/tools/pwa-manifest-generator/
 https://usefulverse.com/it/tools/connect-four/
 https://usefulverse.com/it/tools/reversi/
+https://usefulverse.com/it/tools/checkers/
 https://usefulverse.com/it/tools/music-scale-finder/
 https://usefulverse.com/it/tools/bpm-detector/
 https://usefulverse.com/it/tools/ear-training/
@@ -4548,6 +4565,7 @@ https://usefulverse.com/zh-tw/tools/html-table-generator/
 https://usefulverse.com/zh-tw/tools/pwa-manifest-generator/
 https://usefulverse.com/zh-tw/tools/connect-four/
 https://usefulverse.com/zh-tw/tools/reversi/
+https://usefulverse.com/zh-tw/tools/checkers/
 https://usefulverse.com/zh-tw/tools/music-scale-finder/
 https://usefulverse.com/zh-tw/tools/bpm-detector/
 https://usefulverse.com/zh-tw/tools/ear-training/
@@ -4794,6 +4812,7 @@ https://usefulverse.com/bg/tools/html-table-generator/
 https://usefulverse.com/bg/tools/pwa-manifest-generator/
 https://usefulverse.com/bg/tools/connect-four/
 https://usefulverse.com/bg/tools/reversi/
+https://usefulverse.com/bg/tools/checkers/
 https://usefulverse.com/bg/tools/music-scale-finder/
 https://usefulverse.com/bg/tools/bpm-detector/
 https://usefulverse.com/bg/tools/ear-training/
@@ -5040,6 +5059,7 @@ https://usefulverse.com/ca/tools/html-table-generator/
 https://usefulverse.com/ca/tools/pwa-manifest-generator/
 https://usefulverse.com/ca/tools/connect-four/
 https://usefulverse.com/ca/tools/reversi/
+https://usefulverse.com/ca/tools/checkers/
 https://usefulverse.com/ca/tools/music-scale-finder/
 https://usefulverse.com/ca/tools/bpm-detector/
 https://usefulverse.com/ca/tools/ear-training/
@@ -5286,6 +5306,7 @@ https://usefulverse.com/nl/tools/html-table-generator/
 https://usefulverse.com/nl/tools/pwa-manifest-generator/
 https://usefulverse.com/nl/tools/connect-four/
 https://usefulverse.com/nl/tools/reversi/
+https://usefulverse.com/nl/tools/checkers/
 https://usefulverse.com/nl/tools/music-scale-finder/
 https://usefulverse.com/nl/tools/bpm-detector/
 https://usefulverse.com/nl/tools/ear-training/
@@ -5532,6 +5553,7 @@ https://usefulverse.com/el/tools/html-table-generator/
 https://usefulverse.com/el/tools/pwa-manifest-generator/
 https://usefulverse.com/el/tools/connect-four/
 https://usefulverse.com/el/tools/reversi/
+https://usefulverse.com/el/tools/checkers/
 https://usefulverse.com/el/tools/music-scale-finder/
 https://usefulverse.com/el/tools/bpm-detector/
 https://usefulverse.com/el/tools/ear-training/
@@ -5778,6 +5800,7 @@ https://usefulverse.com/ms/tools/html-table-generator/
 https://usefulverse.com/ms/tools/pwa-manifest-generator/
 https://usefulverse.com/ms/tools/connect-four/
 https://usefulverse.com/ms/tools/reversi/
+https://usefulverse.com/ms/tools/checkers/
 https://usefulverse.com/ms/tools/music-scale-finder/
 https://usefulverse.com/ms/tools/bpm-detector/
 https://usefulverse.com/ms/tools/ear-training/
@@ -6024,6 +6047,7 @@ https://usefulverse.com/pl/tools/html-table-generator/
 https://usefulverse.com/pl/tools/pwa-manifest-generator/
 https://usefulverse.com/pl/tools/connect-four/
 https://usefulverse.com/pl/tools/reversi/
+https://usefulverse.com/pl/tools/checkers/
 https://usefulverse.com/pl/tools/music-scale-finder/
 https://usefulverse.com/pl/tools/bpm-detector/
 https://usefulverse.com/pl/tools/ear-training/
@@ -6270,6 +6294,7 @@ https://usefulverse.com/sv/tools/html-table-generator/
 https://usefulverse.com/sv/tools/pwa-manifest-generator/
 https://usefulverse.com/sv/tools/connect-four/
 https://usefulverse.com/sv/tools/reversi/
+https://usefulverse.com/sv/tools/checkers/
 https://usefulverse.com/sv/tools/music-scale-finder/
 https://usefulverse.com/sv/tools/bpm-detector/
 https://usefulverse.com/sv/tools/ear-training/
@@ -6516,6 +6541,7 @@ https://usefulverse.com/th/tools/html-table-generator/
 https://usefulverse.com/th/tools/pwa-manifest-generator/
 https://usefulverse.com/th/tools/connect-four/
 https://usefulverse.com/th/tools/reversi/
+https://usefulverse.com/th/tools/checkers/
 https://usefulverse.com/th/tools/music-scale-finder/
 https://usefulverse.com/th/tools/bpm-detector/
 https://usefulverse.com/th/tools/ear-training/
@@ -6762,6 +6788,7 @@ https://usefulverse.com/uk/tools/html-table-generator/
 https://usefulverse.com/uk/tools/pwa-manifest-generator/
 https://usefulverse.com/uk/tools/connect-four/
 https://usefulverse.com/uk/tools/reversi/
+https://usefulverse.com/uk/tools/checkers/
 https://usefulverse.com/uk/tools/music-scale-finder/
 https://usefulverse.com/uk/tools/bpm-detector/
 https://usefulverse.com/uk/tools/ear-training/
@@ -7008,6 +7035,7 @@ https://usefulverse.com/sw/tools/html-table-generator/
 https://usefulverse.com/sw/tools/pwa-manifest-generator/
 https://usefulverse.com/sw/tools/connect-four/
 https://usefulverse.com/sw/tools/reversi/
+https://usefulverse.com/sw/tools/checkers/
 https://usefulverse.com/sw/tools/music-scale-finder/
 https://usefulverse.com/sw/tools/bpm-detector/
 https://usefulverse.com/sw/tools/ear-training/
@@ -7254,6 +7282,7 @@ https://usefulverse.com/mr/tools/html-table-generator/
 https://usefulverse.com/mr/tools/pwa-manifest-generator/
 https://usefulverse.com/mr/tools/connect-four/
 https://usefulverse.com/mr/tools/reversi/
+https://usefulverse.com/mr/tools/checkers/
 https://usefulverse.com/mr/tools/music-scale-finder/
 https://usefulverse.com/mr/tools/bpm-detector/
 https://usefulverse.com/mr/tools/ear-training/
@@ -7500,6 +7529,7 @@ https://usefulverse.com/te/tools/html-table-generator/
 https://usefulverse.com/te/tools/pwa-manifest-generator/
 https://usefulverse.com/te/tools/connect-four/
 https://usefulverse.com/te/tools/reversi/
+https://usefulverse.com/te/tools/checkers/
 https://usefulverse.com/te/tools/music-scale-finder/
 https://usefulverse.com/te/tools/bpm-detector/
 https://usefulverse.com/te/tools/ear-training/
@@ -7746,6 +7776,7 @@ https://usefulverse.com/ha/tools/html-table-generator/
 https://usefulverse.com/ha/tools/pwa-manifest-generator/
 https://usefulverse.com/ha/tools/connect-four/
 https://usefulverse.com/ha/tools/reversi/
+https://usefulverse.com/ha/tools/checkers/
 https://usefulverse.com/ha/tools/music-scale-finder/
 https://usefulverse.com/ha/tools/bpm-detector/
 https://usefulverse.com/ha/tools/ear-training/
@@ -7992,6 +8023,7 @@ https://usefulverse.com/tl/tools/html-table-generator/
 https://usefulverse.com/tl/tools/pwa-manifest-generator/
 https://usefulverse.com/tl/tools/connect-four/
 https://usefulverse.com/tl/tools/reversi/
+https://usefulverse.com/tl/tools/checkers/
 https://usefulverse.com/tl/tools/music-scale-finder/
 https://usefulverse.com/tl/tools/bpm-detector/
 https://usefulverse.com/tl/tools/ear-training/
@@ -8238,6 +8270,7 @@ https://usefulverse.com/ta/tools/html-table-generator/
 https://usefulverse.com/ta/tools/pwa-manifest-generator/
 https://usefulverse.com/ta/tools/connect-four/
 https://usefulverse.com/ta/tools/reversi/
+https://usefulverse.com/ta/tools/checkers/
 https://usefulverse.com/ta/tools/music-scale-finder/
 https://usefulverse.com/ta/tools/bpm-detector/
 https://usefulverse.com/ta/tools/ear-training/
@@ -8484,6 +8517,7 @@ https://usefulverse.com/fa/tools/html-table-generator/
 https://usefulverse.com/fa/tools/pwa-manifest-generator/
 https://usefulverse.com/fa/tools/connect-four/
 https://usefulverse.com/fa/tools/reversi/
+https://usefulverse.com/fa/tools/checkers/
 https://usefulverse.com/fa/tools/music-scale-finder/
 https://usefulverse.com/fa/tools/bpm-detector/
 https://usefulverse.com/fa/tools/ear-training/
@@ -8730,6 +8764,7 @@ https://usefulverse.com/am/tools/html-table-generator/
 https://usefulverse.com/am/tools/pwa-manifest-generator/
 https://usefulverse.com/am/tools/connect-four/
 https://usefulverse.com/am/tools/reversi/
+https://usefulverse.com/am/tools/checkers/
 https://usefulverse.com/am/tools/music-scale-finder/
 https://usefulverse.com/am/tools/bpm-detector/
 https://usefulverse.com/am/tools/ear-training/
@@ -8976,6 +9011,7 @@ https://usefulverse.com/gu/tools/html-table-generator/
 https://usefulverse.com/gu/tools/pwa-manifest-generator/
 https://usefulverse.com/gu/tools/connect-four/
 https://usefulverse.com/gu/tools/reversi/
+https://usefulverse.com/gu/tools/checkers/
 https://usefulverse.com/gu/tools/music-scale-finder/
 https://usefulverse.com/gu/tools/bpm-detector/
 https://usefulverse.com/gu/tools/ear-training/

@@ -835,7 +835,7 @@ export function shell({ title, description, canonical, body, schema = '', assetV
     ${toolId === 'online-sequencer' ? `<link rel="stylesheet" href="/assets/online-sequencer.css${assetSuffix}">` : ''}
     ${['css-animation-generator', 'css-clip-path-editor', 'css-filter-generator'].includes(toolId) ? `<link rel="stylesheet" href="/assets/css-design-tools.css${assetSuffix}">` : ''}
     ${['api-request-builder', 'html-table-generator', 'pwa-manifest-generator'].includes(toolId) ? `<link rel="stylesheet" href="/assets/web-dev-tools.css${assetSuffix}">` : ''}
-    ${['connect-four', 'reversi'].includes(toolId) ? `<link rel="stylesheet" href="/assets/board-games.css${assetSuffix}">` : ''}
+    ${['connect-four', 'reversi', 'checkers'].includes(toolId) ? `<link rel="stylesheet" href="/assets/board-games.css${assetSuffix}">` : ''}
     ${toolId === 'kanban-board' ? `<link rel="stylesheet" href="/assets/kanban-board.css${assetSuffix}">` : ''}
     ${toolId === 'reading-speed-test' ? `<link rel="stylesheet" href="/assets/reading-speed.css${assetSuffix}">` : ''}
     ${schema}

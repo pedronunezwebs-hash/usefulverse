@@ -1435,9 +1435,10 @@ function setupToolPage() {
   opportunityTools.add('pwa-manifest-generator');
   opportunityTools.add('connect-four');
   opportunityTools.add('reversi');
+  opportunityTools.add('checkers');
   opportunityTools.add('kanban-board');
   opportunityTools.add('reading-speed-test');
-  if (id === 'connect-four' || id === 'reversi') {
+  if (id === 'connect-four' || id === 'reversi' || id === 'checkers') {
     const assetVersion = document.documentElement.dataset.assetVersion;
     import(`./board-games-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
       .then(({ setupBoardGame }) => setupBoardGame(root))
