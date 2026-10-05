@@ -55,6 +55,12 @@ await bundle({
   minify: true,
 });
 await bundle({
+  entryPoints: [join(root, 'src', 'kanban-board.css')],
+  outfile: join(dist, 'assets', 'kanban-board.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
   entryPoints: [join(root, 'src', 'app.js')],
   outfile: join(dist, 'assets', 'app.js'),
   bundle: false,
@@ -95,6 +101,15 @@ await bundle({
 await bundle({
   entryPoints: [join(root, 'src', 'task-list-runtime.js')],
   outfile: join(dist, 'assets', 'task-list-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'kanban-board-runtime.js')],
+  outfile: join(dist, 'assets', 'kanban-board-runtime.js'),
   bundle: true,
   format: 'esm',
   platform: 'browser',
@@ -371,8 +386,9 @@ const assetHash = createHash('sha256')
   .update(await Promise.all(Object.keys(numberWordsLocaleCodes).map((language) => readFile(join(dist, 'assets', `number-words-${language}.js`)))).then((files) => Buffer.concat(files)))
   .update(await readFile(join(vendor, 'media-converter.mjs')))
   .update(await readFile(join(root, 'package-lock.json')))
-  .update(await readFile(join(root, 'src', 'locales.mjs')));
+.update(await readFile(join(root, 'src', 'locales.mjs')));
 assetHash.update(await readFile(join(root, 'public', 'timer-notifications.js')));
+assetHash.update(await readFile(join(dist, 'assets', 'kanban-board.css')));
 // Any browser-loaded script uses this version token in its URL. Include every
 // lazy runtime in the hash so deploying a changed module cannot keep serving a
 // stale copy from the browser cache.
@@ -380,6 +396,7 @@ for (const file of [
   'plan-tools.js',
   'opportunity-runtime.js',
   'task-list-runtime.js',
+  'kanban-board-runtime.js',
   'chess-clock-runtime.js',
   'ear-training-runtime.js',
   'bpm-detector-runtime.js',

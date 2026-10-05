@@ -16,6 +16,8 @@ import { imageCaptureUiLocales } from './locales/image-capture.mjs';
 import { opportunityLocaleData } from './locales/opportunity-tools.mjs';
 import { taskListLocaleData } from './locales/task-list.mjs';
 import { taskListContent } from './locales/task-list-content.mjs';
+import { kanbanBoardLocaleData } from './locales/kanban-board.mjs';
+import { kanbanBoardContent } from './locales/kanban-board-content.mjs';
 import { pageKeys, templateKeys } from './locales/template-keys.mjs';
 import { tools } from './catalog.mjs';
 import { htmlToPdfLocales } from './locales/html-to-pdf.mjs';
@@ -1053,6 +1055,10 @@ for (const [language, data] of Object.entries(imageCaptureUiLocales)) {
 for (const [language, data] of Object.entries(taskListLocaleData)) {
   opportunityLocaleData[language] ??= { ui: {}, copy: {} };
   opportunityLocaleData[language].copy['task-list'] = taskListContent(language).copy;
+}
+for (const [language, data] of Object.entries(kanbanBoardLocaleData)) {
+  opportunityLocaleData[language] ??= { ui: {}, copy: {} };
+  opportunityLocaleData[language].copy['kanban-board'] = kanbanBoardContent(language).copy;
 }
 for (const [language, data] of Object.entries(opportunityLocaleData)) {
   ui[language] ??= {};
