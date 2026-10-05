@@ -41,12 +41,14 @@ const notFound = await readFile(join(dist, '404.html'), 'utf8');
 if (!notFound.includes('<meta name="robots" content="noindex,follow">') || /<link rel="canonical"/u.test(notFound)) throw new Error('404 page must be noindex and must not claim a canonical URL');
 for (const language of languages) if (!notFound.includes(`href="${localePath(language)}"`)) throw new Error(`404 page is missing its ${language} home link`);
 for (const file of required) await access(join(dist, file));
+await access(join(dist, 'assets', 'time-tracker-runtime.js'));
 const deferredAssetBudgets = new Map([
   ['assets/app.js', 72 * 1024], ['assets/styles.css', 54 * 1024],
   ['assets/new-tools.js', 32 * 1024], ['assets/expanded-tools.js', 40 * 1024],
   ['assets/advanced-tools.js', 52 * 1024], ['assets/media-tools.js', 16 * 1024],
   ['assets/plan-tools.js', 55 * 1024], ['assets/tool-suite-tools.js', 150 * 1024],
   ['assets/opportunity-runtime.js', 128 * 1024], ['assets/new-tool-logic.mjs', 16 * 1024], ['assets/timer-logic.mjs', 16 * 1024],
+  ['assets/time-tracker-runtime.js', 8 * 1024],
   ['assets/chart-runtime.js', 8 * 1024],
   ['assets/sqlite-playground-runtime.js', 8 * 1024],
   ['assets/code-formatter-runtime.js', 8 * 1024],

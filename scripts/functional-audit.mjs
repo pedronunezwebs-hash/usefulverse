@@ -31,6 +31,8 @@ modules.set('seating-chart-maker', 'src/seating-chart-runtime.js');
 modules.set('gantt-chart-maker', 'src/gantt-chart-runtime.js');
 modules.set('sprite-sheet-maker', 'src/sprite-sheet-runtime.js');
 modules.set('reading-speed-test', 'src/reading-speed-runtime.js');
+modules.set('habit-tracker', 'src/habit-tracker-runtime.js');
+modules.set('time-tracker', 'src/time-tracker-runtime.js');
 const coreSetups = app.match(/const setups = \{([\s\S]*?)\n\s*\};/u)?.[1] ?? '';
 for (const [, id] of coreSetups.matchAll(/'([^']+)'\s*:/gu)) modules.set(id, 'src/app.js');
 
@@ -42,7 +44,8 @@ const rows = [[
 ]];
 for (const tool of tools) {
   const engine = engines.get(tool.id) ?? '';
-  const permissions = tool.id === 'household-budget-planner' ? 'Optional localStorage and browser CSV download; no bank connection'
+  const permissions = tool.id === 'time-tracker' ? 'Optional localStorage and browser CSV download; no account or server processing'
+    : tool.id === 'household-budget-planner' ? 'Optional localStorage and browser CSV download; no bank connection'
     : ['seating-chart-maker', 'gantt-chart-maker'].includes(tool.id) ? 'Optional localStorage; browser download and print actions'
     : tool.id === 'sprite-sheet-maker' ? 'Local file picker, createImageBitmap, canvas export and browser downloads'
     : /camera|webcam|qr-code-reader/iu.test(tool.id) ? 'Camera permission, if used'
@@ -98,9 +101,10 @@ for (const tool of tools) {
     'speaker-tester', 'hex-editor', 'sqlite-playground', 'html-formatter', 'css-formatter', 'javascript-formatter',
     'image-resizer-compressor', 'pdf-crop', 'image-to-pdf', 'favicon-generator', 'image-format-converter', 'svg-optimizer', 'subtitle-converter', 'pdf-to-image', 'video-compressor', 'audio-compressor', 'image-cropper', 'html-css-js-playground', 'zip-archive-tool', 'image-collage-maker', 'media-converter', 'spreadsheet-converter', 'image-metadata-remover', 'office-file-compressor', 'gif-maker', 'pdf-to-markdown', 'pdf-compare', 'qr-code-reader',
   ].includes(tool.id);
-  const corrected = ['online-timer', 'flashcard-maker', 'online-metronome', 'word-search-maker', 'crossword-maker', 'virtual-piano', 'voice-recorder', 'screen-recorder', 'mental-math-practice', 'tournament-bracket-generator', 'chess-clock', 'ear-training', 'bpm-detector', 'seating-chart-maker', 'gantt-chart-maker', 'household-budget-planner', 'diagram-maker', 'noise-generator', 'teleprompter-online', 'typing-speed-test', 'task-list', 'kanban-board', 'reading-speed-test', 'pdf-tools', 'pdf-protect-unlock', 'pdf-repair', 'pdf-redact', 'pdf-to-pdfa', 'pdf-page-editor', 'html-to-pdf', 'pdf-document-converter', 'pdf-form-filler', 'image-to-text', 'pdf-ocr', 'portrait-background-remover', 'media-transcriber'].includes(tool.id);
+  const corrected = ['online-timer', 'flashcard-maker', 'online-metronome', 'word-search-maker', 'crossword-maker', 'virtual-piano', 'voice-recorder', 'screen-recorder', 'mental-math-practice', 'tournament-bracket-generator', 'chess-clock', 'ear-training', 'bpm-detector', 'seating-chart-maker', 'gantt-chart-maker', 'household-budget-planner', 'diagram-maker', 'noise-generator', 'teleprompter-online', 'typing-speed-test', 'task-list', 'kanban-board', 'reading-speed-test', 'habit-tracker', 'time-tracker', 'pdf-tools', 'pdf-protect-unlock', 'pdf-repair', 'pdf-redact', 'pdf-to-pdfa', 'pdf-page-editor', 'html-to-pdf', 'pdf-document-converter', 'pdf-form-filler', 'image-to-text', 'pdf-ocr', 'portrait-background-remover', 'media-transcriber'].includes(tool.id);
   const status = verified ? 'verified' : corrected ? 'corrected' : 'pending';
   const evidenceByTool = {
+    'habit-tracker': 'Logic tests cover dates across month/year boundaries, Unicode normalization, duplicate/maximum names, future dates, streaks, backup import limits and malformed data. Static build validates 36 localized UI/SEO packs. Local Chrome smoke created a habit, marked today, saved it, reloaded and restored it; the test record was then removed. Runtime and stylesheet are lazy-loaded only on this route. Exact translation quality outside reviewed strings, exported backup download completion, storage-denied devices and cross-browser behavior remain unverified.',
     'remove-duplicate-lines': 'Isolated local Chrome smoke entered alpha/beta/alpha and verified the result kept alpha and beta once each with a count of one removed. Empty input was handled without an exception and reported zero unique lines. Full whitespace, case, large-list and repeat checks remain pending.',
     'html-formatter': 'Isolated local Chrome verified format/minify runs only after user action and loads a separate versioned engine. Minify preserved visible whitespace around inline elements and comments; a script in the pasted source was not executed. Input stayed local. Malformed-markup normalization and cross-browser DOMParser differences remain unverified.',
     'image-resizer-compressor': 'Isolated local Chrome supplied a synthetic 64×32 SVG, resized it to 32×16 and verified a 562-byte image/webp Blob with matching preview dimensions and a fixture-resized.webp download. Processing and output URL stayed local; the vector input rasterizes on export, and lossy quality/animation/orientation behavior across raster formats still needs separate coverage.',
@@ -318,6 +322,7 @@ for (const tool of tools) {
     'password-generator': 'Isolated local Chrome generated a 16-character password with uppercase, lowercase, digits and symbols enabled; it showed the local-generation/password-manager reminder and no console error. Character-set guarantees, entropy calculations, toggles, bounds, copy action and secure randomness fallback remain pending.',
     'timestamp-converter': 'Isolated local Chrome converted Unix timestamp 0 (seconds) to a date containing 1970 and reported completion. Millisecond detection, timezone display, invalid/extreme timestamps, reverse conversion and locale/time-zone edge cases remain pending.',
     'html-entity-encoder-decoder': 'Isolated local Chrome encoded “<tag>&” as &lt;tag&gt;&amp; in encode mode. Decode round-trip, numeric/named entities, malformed entities and Unicode remain pending.',
+    'time-tracker': 'Unit tests cover Unicode names, monotonic elapsed time, pause/resume, duration bounds, backup validation, project totals and CSV formula neutralization. Static rendering and all 36 locale copy/UI packs are asserted. Chrome smoke test exercised start/pause/resume/finish, local save and delete, generated CSV content and cleared test storage; Arabic controls and RTL rendering were checked. Storage-quota denial and a native download dialog remain untested.',
   };
   const evidence = evidenceByTool[tool.id] ?? 'English local-Chrome route smoke loaded this URL and found its heading, tool workspace and controls without an alert or error state; no functional action, file export, device permission or browser-specific behavior was exercised, so this tool remains pending.';
   rows.push([

@@ -105,6 +105,15 @@ await bundle({
   minify: true,
 });
 await bundle({
+  entryPoints: [join(root, 'src', 'time-tracker-runtime.js')],
+  outfile: join(dist, 'assets', 'time-tracker-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
   entryPoints: [join(root, 'src', 'chart-runtime.js')],
   outfile: join(dist, 'assets', 'chart-runtime.js'),
   bundle: true,
@@ -451,6 +460,7 @@ assetHash.update(await readFile(join(dist, 'assets', 'habit-tracker-runtime.css'
 for (const file of [
   'plan-tools.js',
   'opportunity-runtime.js',
+  'time-tracker-runtime.js',
   'chart-runtime.js',
   'sqlite-playground-runtime.js',
   'code-formatter-runtime.js',
