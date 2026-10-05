@@ -60,7 +60,11 @@ Guides are static HTML and add no server processing or paid API usage.
 
 Music practice includes local pitch, scale, chord and ear-training tools, plus a
 randomized guitar-fretboard note quiz for standard tuning. Its score is transient
-and no practice data is uploaded or saved.
+and no practice data is uploaded or saved. The online metronome also has a
+16-beat rhythm-practice round: it plays a count-in, measures taps against the
+browser audio clock, and reports the share within 100 ms plus average timing
+error. Background-tab/device scheduling can affect results; it is a practice aid,
+not precision timing equipment.
 
 Reading Speed Test lets visitors use a localized sample or their own text, times
 the session with a monotonic clock, estimates words per minute and offers an

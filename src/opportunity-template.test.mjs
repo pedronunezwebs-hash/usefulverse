@@ -261,3 +261,23 @@ test('fretboard trainer stays available with direction-aware pages and 36-langua
   const template = await readFile(new URL('./template.mjs', import.meta.url), 'utf8');
   assert.match(template, /fretboard-trainer\.css/u);
 });
+
+test('metronome rhythm practice is accessible, bounded and localized in every published language', () => {
+  const phrases = [
+    'Rhythm practice', 'Tap in time', 'Listen to one bar, then tap each beat 16 times.',
+    'Rhythm practice started. Listen to the count-in.',
+    'Practice complete: {accuracy}% on time; average error {offset} ms.',
+    'Practice stopped after {count} of 16 taps.', 'Tap after starting rhythm practice.',
+    'Rhythm practice stopped.', 'Wait for the count-in to finish.',
+  ];
+  const markup = opportunityToolMarkup('online-metronome', 'es', opportunityLocaleData.es.ui);
+  for (const control of ['data-op-practice-start', 'data-op-practice-tap disabled', 'data-rhythm-practice-status role="status" aria-live="polite"']) assert.ok(markup.includes(control), control);
+  assert.ok(markup.includes('data-planner-messages=') && markup.includes('Rhythm practice stopped.'), 'runtime receives localized message dictionary');
+  for (const language of Object.keys(locales)) for (const phrase of phrases) {
+    const translated = generatedOpportunityCopy[language]?.ui?.[phrase];
+    assert.ok(translated, `${language} is missing ${phrase}`);
+    if (language !== 'en') assert.notEqual(translated, phrase, `${language} falls back to English: ${phrase}`);
+    const placeholders = (value) => [...value.matchAll(/\{([^}]+)\}/gu)].map(([, token]) => token).sort();
+    assert.deepEqual(placeholders(translated), placeholders(phrase), `${language} placeholder mismatch: ${phrase}`);
+  }
+});

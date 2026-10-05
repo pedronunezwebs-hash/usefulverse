@@ -3,7 +3,7 @@ import { buildStudyPlan } from './study-planner-logic.mjs';
 import { createMentalMathProblem, parseMentalMathAnswer, validateMentalMathSettings } from './mental-math-logic.mjs';
 import { budgetCsvCell, parseBudgetAmount, summarizeBudget, validateBudgetTransaction } from './household-budget-logic.mjs';
 import { advanceTournamentBracketWinner, createTournamentBracket, getTournamentChampion, parseTournamentEntrants } from './tournament-bracket-logic.mjs';
-import { skipOverdueMetronomeBeats } from './metronome-logic.mjs';
+import { scoreRhythmTaps, skipOverdueMetronomeBeats } from './metronome-logic.mjs';
 
 const $ = (selector, root) => root.querySelector(selector);
 const $$ = (selector, root) => [...root.querySelectorAll(selector)];
@@ -471,8 +471,13 @@ function setupSandbox(root) {
 
 function setupMetronome(root) {
   let context; let timer; let beat = 0; let tapTimes = []; let nextNoteAt = 0; let startAttempt = 0; let running = false;
+  let practiceActive = false; let practiceFirstBeatAt = 0; let practiceTaps = [];
   const bpmInput = $('[data-op-field="bpm"]', root); const beatsInput = $('[data-op-field="beats"]', root);
   const start = $('[data-op-start]', root); const stop = $('[data-op-stop]', root); const tap = $('[data-op-tap]', root);
+  const practiceStart = $('[data-op-practice-start]', root); const practiceTap = $('[data-op-practice-tap]', root);
+  const practiceStatus = $('[data-rhythm-practice-status]', root);
+  let messages = {}; try { messages = JSON.parse(root.dataset.plannerMessages || '{}'); } catch { /* keep readable English fallback */ }
+  const message = (key, values = {}) => Object.entries(values).reduce((text, [name, value]) => text.replaceAll(`{${name}}`, String(value)), messages[key] || say(key));
   const lockSettings = (locked) => { bpmInput.disabled = locked; beatsInput.disabled = locked; };
   const scheduleBeat = (when) => {
     if (!context) return;
@@ -495,22 +500,29 @@ function setupMetronome(root) {
     }
   };
   const stopPlaying = (announce = true) => {
+    const endedPractice = practiceActive;
+    const practiceCount = practiceTaps.length;
+    practiceActive = false; practiceTaps = [];
     startAttempt += 1;
     clearInterval(timer); timer = undefined; running = false;
     if (start) start.disabled = false;
     if (stop) stop.disabled = true;
+    if (tap) tap.disabled = false;
+    if (practiceStart) practiceStart.disabled = false;
+    if (practiceTap) practiceTap.disabled = true;
     lockSettings(false);
     const oldContext = context; context = undefined;
     oldContext?.removeEventListener('statechange', scheduleAhead);
     if (oldContext && oldContext.state !== 'closed') oldContext.close().catch(() => {});
-    if (announce) setStatus(root, 'Metronome stopped.');
+    if (announce && endedPractice) practiceStatus.textContent = practiceCount ? message('Practice stopped after {count} of 16 taps.', { count: practiceCount }) : message('Rhythm practice stopped.');
+    else if (announce) setStatus(root, 'Metronome stopped.');
   };
-  start.addEventListener('click', async () => {
-    if (start.disabled || running) return;
+  const startPlayback = async (forPractice = false) => {
+    if (start.disabled || running || (practiceStart?.disabled && forPractice)) return;
     const bpm = Number(bpmInput.value);
     if (!Number.isFinite(bpm) || bpm < 20 || bpm > 300) return setStatus(root, 'Enter a tempo from 20 to 300 BPM.', 'error');
     const attempt = ++startAttempt;
-    start.disabled = true; stop.disabled = false; lockSettings(true);
+    start.disabled = true; stop.disabled = false; tap.disabled = true; if (practiceStart) practiceStart.disabled = true; lockSettings(true);
     let startingContext;
     try {
       const AudioContextType = window.AudioContext || window.webkitAudioContext;
@@ -522,14 +534,32 @@ function setupMetronome(root) {
         return;
       }
       running = true; beat = 0; nextNoteAt = startingContext.currentTime + 0.03;
+      practiceActive = forPractice; practiceTaps = [];
+      if (forPractice) {
+        practiceFirstBeatAt = nextNoteAt + (60 / bpm) * Number(beatsInput.value || 4);
+        practiceTap.disabled = false;
+        practiceStatus.textContent = message('Rhythm practice started. Listen to the count-in.');
+      }
       startingContext.addEventListener('statechange', scheduleAhead);
       scheduleAhead(); timer = setInterval(scheduleAhead, 25);
-      setStatus(root, 'Metronome is playing. Audio stays in this browser.', 'success');
+      if (!forPractice) setStatus(root, 'Metronome is playing. Audio stays in this browser.', 'success');
     } catch {
       if (attempt !== startAttempt) return;
       stopPlaying(false);
       setStatus(root, 'Audio could not start. Check your browser audio settings.', 'error');
     }
+  };
+  start.addEventListener('click', () => startPlayback(false));
+  practiceStart.addEventListener('click', () => startPlayback(true));
+  practiceTap.addEventListener('click', () => {
+    if (!practiceActive || !context) { practiceStatus.textContent = message('Tap after starting rhythm practice.'); return; }
+    if (context.currentTime < practiceFirstBeatAt - 30 / Number(bpmInput.value)) { practiceStatus.textContent = message('Wait for the count-in to finish.'); return; }
+    practiceTaps.push(context.currentTime);
+    if (practiceTaps.length < 16) return;
+    const result = scoreRhythmTaps({ tapTimes: practiceTaps, firstBeatAt: practiceFirstBeatAt, secondsPerBeat: 60 / Number(bpmInput.value), targetCount: 16, toleranceMs: 100 });
+    practiceActive = false;
+    practiceStatus.textContent = message('Practice complete: {accuracy}% on time; average error {offset} ms.', { accuracy: result.accuracy, offset: result.averageAbsoluteOffsetMs });
+    stopPlaying(false);
   });
   stop.addEventListener('click', stopPlaying);
   tap.addEventListener('click', () => {
