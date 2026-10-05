@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { tools } from './catalog.mjs';
-import { locales, localizedTool } from './locales.mjs';
+import { localePath, locales, localizedTool } from './locales.mjs';
 import { relatedToolIds, renderHome, renderToolPage } from './template.mjs';
 
 const decode = (value) => value
@@ -36,7 +36,7 @@ test('home-page titles and descriptions also obey the same positioning and lengt
 
 test('result follow-up is hidden initially, offers at most three localized related tools and can be dismissed', () => {
   const tool = tools.find((item) => item.id === 'pdf-to-image');
-  for (const language of ['en', 'es', 'ar']) {
+  for (const language of Object.keys(locales)) {
     const html = renderToolPage(localizedTool(tool, language), '', language);
     const panel = html.match(/<aside class="tool-follow-up"[\s\S]*?<\/aside>/u)?.[0] ?? '';
     const related = html.match(/<section class="related-tools">[\s\S]*?<\/section>/u)?.[0] ?? '';
@@ -45,7 +45,7 @@ test('result follow-up is hidden initially, offers at most three localized relat
     assert.match(panel, /data-tool-follow-up-dismiss/u, `${language} panel has a dismiss control`);
     assert.equal((panel.match(/class="tool-card\b/gu) ?? []).length, 0, `${language} cards wait for a result`);
     assert.equal((related.match(/class="tool-card\b/gu) ?? []).length, 3, `${language} offers exactly three related tools`);
-    for (const id of ids) assert.match(related, new RegExp(`href="(?:/${language})?/tools/${id}/"`, 'u'));
+    for (const id of ids) assert.ok(related.includes(`href="${localePath(language, id)}"`), `${language} links to ${id} in its own locale`);
     assert.ok(!ids.includes(tool.id), `${language} recommendations omit the current tool`);
   }
 });
