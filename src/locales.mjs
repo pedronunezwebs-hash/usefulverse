@@ -24,6 +24,8 @@ import { habitTrackerLocaleData } from './locales/habit-tracker.mjs';
 import { habitTrackerContent } from './locales/habit-tracker-content.mjs';
 import { timeTrackerLocaleData } from './locales/time-tracker.mjs';
 import { timeTrackerContent } from './locales/time-tracker-content.mjs';
+import { mealPlannerLocaleData } from './locales/meal-planner.mjs';
+import { mealPlannerContent } from './locales/meal-planner-content.mjs';
 import { pageKeys, templateKeys } from './locales/template-keys.mjs';
 import { tools } from './catalog.mjs';
 import { htmlToPdfLocales } from './locales/html-to-pdf.mjs';
@@ -1079,6 +1081,10 @@ for (const [language, data] of Object.entries(timeTrackerLocaleData)) {
   opportunityLocaleData[language] ??= { ui: {}, copy: {} };
   const content = timeTrackerContent(language);
   opportunityLocaleData[language].copy['time-tracker'] = content.copy;
+}
+for (const [language, data] of Object.entries(mealPlannerLocaleData)) {
+  opportunityLocaleData[language] ??= { ui: {}, copy: {} };
+  opportunityLocaleData[language].copy['weekly-meal-planner'] = mealPlannerContent(language).copy;
 }
 for (const [language, data] of Object.entries(opportunityLocaleData)) {
   ui[language] ??= {};

@@ -33,6 +33,7 @@ modules.set('sprite-sheet-maker', 'src/sprite-sheet-runtime.js');
 modules.set('reading-speed-test', 'src/reading-speed-runtime.js');
 modules.set('habit-tracker', 'src/habit-tracker-runtime.js');
 modules.set('time-tracker', 'src/time-tracker-runtime.js');
+modules.set('weekly-meal-planner', 'src/weekly-meal-planner-runtime.js');
 const coreSetups = app.match(/const setups = \{([\s\S]*?)\n\s*\};/u)?.[1] ?? '';
 for (const [, id] of coreSetups.matchAll(/'([^']+)'\s*:/gu)) modules.set(id, 'src/app.js');
 
@@ -44,7 +45,8 @@ const rows = [[
 ]];
 for (const tool of tools) {
   const engine = engines.get(tool.id) ?? '';
-  const permissions = tool.id === 'time-tracker' ? 'Optional localStorage and browser CSV download; no account or server processing'
+  const permissions = tool.id === 'weekly-meal-planner' ? 'Optional localStorage and browser JSON import/export; no account or server processing'
+    : tool.id === 'time-tracker' ? 'Optional localStorage and browser CSV download; no account or server processing'
     : tool.id === 'household-budget-planner' ? 'Optional localStorage and browser CSV download; no bank connection'
     : ['seating-chart-maker', 'gantt-chart-maker'].includes(tool.id) ? 'Optional localStorage; browser download and print actions'
     : tool.id === 'sprite-sheet-maker' ? 'Local file picker, createImageBitmap, canvas export and browser downloads'
@@ -101,7 +103,7 @@ for (const tool of tools) {
     'speaker-tester', 'hex-editor', 'sqlite-playground', 'html-formatter', 'css-formatter', 'javascript-formatter',
     'image-resizer-compressor', 'pdf-crop', 'image-to-pdf', 'favicon-generator', 'image-format-converter', 'svg-optimizer', 'subtitle-converter', 'pdf-to-image', 'video-compressor', 'audio-compressor', 'image-cropper', 'html-css-js-playground', 'zip-archive-tool', 'image-collage-maker', 'media-converter', 'spreadsheet-converter', 'image-metadata-remover', 'office-file-compressor', 'gif-maker', 'pdf-to-markdown', 'pdf-compare', 'qr-code-reader',
   ].includes(tool.id);
-  const corrected = ['online-timer', 'flashcard-maker', 'online-metronome', 'word-search-maker', 'crossword-maker', 'virtual-piano', 'voice-recorder', 'screen-recorder', 'mental-math-practice', 'tournament-bracket-generator', 'chess-clock', 'ear-training', 'bpm-detector', 'seating-chart-maker', 'gantt-chart-maker', 'household-budget-planner', 'diagram-maker', 'noise-generator', 'teleprompter-online', 'typing-speed-test', 'task-list', 'kanban-board', 'reading-speed-test', 'habit-tracker', 'time-tracker', 'pdf-tools', 'pdf-protect-unlock', 'pdf-repair', 'pdf-redact', 'pdf-to-pdfa', 'pdf-page-editor', 'html-to-pdf', 'pdf-document-converter', 'pdf-form-filler', 'image-to-text', 'pdf-ocr', 'portrait-background-remover', 'media-transcriber'].includes(tool.id);
+  const corrected = ['online-timer', 'flashcard-maker', 'online-metronome', 'word-search-maker', 'crossword-maker', 'virtual-piano', 'voice-recorder', 'screen-recorder', 'mental-math-practice', 'tournament-bracket-generator', 'chess-clock', 'ear-training', 'bpm-detector', 'seating-chart-maker', 'gantt-chart-maker', 'household-budget-planner', 'diagram-maker', 'noise-generator', 'teleprompter-online', 'typing-speed-test', 'task-list', 'kanban-board', 'reading-speed-test', 'habit-tracker', 'time-tracker', 'weekly-meal-planner', 'pdf-tools', 'pdf-protect-unlock', 'pdf-repair', 'pdf-redact', 'pdf-to-pdfa', 'pdf-page-editor', 'html-to-pdf', 'pdf-document-converter', 'pdf-form-filler', 'image-to-text', 'pdf-ocr', 'portrait-background-remover', 'media-transcriber'].includes(tool.id);
   const status = verified ? 'verified' : corrected ? 'corrected' : 'pending';
   const evidenceByTool = {
     'habit-tracker': 'Logic tests cover dates across month/year boundaries, Unicode normalization, duplicate/maximum names, future dates, streaks, backup import limits and malformed data. Static build validates 36 localized UI/SEO packs. Local Chrome smoke created a habit, marked today, saved it, reloaded and restored it; the test record was then removed. Runtime and stylesheet are lazy-loaded only on this route. Exact translation quality outside reviewed strings, exported backup download completion, storage-denied devices and cross-browser behavior remain unverified.',
@@ -323,6 +325,7 @@ for (const tool of tools) {
     'timestamp-converter': 'Isolated local Chrome converted Unix timestamp 0 (seconds) to a date containing 1970 and reported completion. Millisecond detection, timezone display, invalid/extreme timestamps, reverse conversion and locale/time-zone edge cases remain pending.',
     'html-entity-encoder-decoder': 'Isolated local Chrome encoded “<tag>&” as &lt;tag&gt;&amp; in encode mode. Decode round-trip, numeric/named entities, malformed entities and Unicode remain pending.',
     'time-tracker': 'Unit tests cover Unicode names, monotonic elapsed time, pause/resume, duration bounds, backup validation, project totals and CSV formula neutralization. Static rendering and all 36 locale copy/UI packs are asserted. Chrome smoke test exercised start/pause/resume/finish, local save and delete, generated CSV content and cleared test storage; Arabic controls and RTL rendering were checked. Storage-quota denial and a native download dialog remain untested.',
+    'weekly-meal-planner': 'Unit tests cover Unicode normalization, ingredient validation, duplicate handling, week boundaries and backup schema. Build validates all 36 locales and the lazy runtime budget. Local Chrome added two meals, deduplicated ingredients case-insensitively, saved/cleared/reloaded a local plan, imported a generated JSON File, inspected the JSON download Blob and removed all test storage. Arabic labels and RTL were checked. Large inputs, other browsers and storage-denial behavior remain unverified.',
   };
   const evidence = evidenceByTool[tool.id] ?? 'English local-Chrome route smoke loaded this URL and found its heading, tool workspace and controls without an alert or error state; no functional action, file export, device permission or browser-specific behavior was exercised, so this tool remains pending.';
   rows.push([
