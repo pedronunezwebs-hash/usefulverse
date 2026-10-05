@@ -1438,6 +1438,10 @@ function setupToolPage() {
   opportunityTools.add('checkers');
   opportunityTools.add('screen-ruler');
   opportunityTools.add('protractor');
+  opportunityTools.add('printable-label-maker');
+  opportunityTools.add('poster-maker');
+  opportunityTools.add('certificate-maker');
+  opportunityTools.add('invitation-maker');
   opportunityTools.add('kanban-board');
   opportunityTools.add('reading-speed-test');
   if (id === 'connect-four' || id === 'reversi' || id === 'checkers') {
@@ -1451,6 +1455,13 @@ function setupToolPage() {
     const assetVersion = document.documentElement.dataset.assetVersion;
     import(`./measurement-tools-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
       .then(({ setupMeasurementTool }) => setupMeasurementTool(id, root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (['printable-label-maker', 'poster-maker', 'certificate-maker', 'invitation-maker'].includes(id)) {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./print-studio-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupPrintStudioTool }) => setupPrintStudioTool(root))
       .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
     return;
   }

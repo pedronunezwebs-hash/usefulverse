@@ -33,6 +33,7 @@ uiPhrases.push('Effect', 'Fade in', 'Slide from left', 'Bounce', 'Rotate', 'Puls
 uiPhrases.push('HTTP method', 'Request URL', 'Headers as JSON', 'Request body', 'Output format', 'cURL', 'JavaScript Fetch', 'Build code', 'Copy code', 'Download manifest.json', 'App name', 'Short name', 'Description', 'Start URL', 'Display mode', 'Standalone app', 'Minimal interface', 'Full screen', 'Browser tab', 'Theme color', 'Background color', 'First row contains headings', 'Table caption (optional)', 'Tab-separated rows', 'Generate table', 'Preview', 'Generated code', 'Request details', 'This tool builds code only. It does not send a request.', 'Browser CORS and server rules can block a request you run elsewhere.', 'No network request was sent.', 'Code generated.', 'Table generated.', 'Manifest generated.', 'Code copied.', 'Copy was blocked. Select the text and copy it manually.', 'Download started.', 'Enter the requested values and try again.', 'Reset');
 uiPhrases.push('Games', 'Two players share this device. Moves are not saved or uploaded.', 'Current turn: Red', 'Current turn: Black', 'Red wins!', 'Black wins!', 'Game tied.', 'New game', 'Connect Four board', 'Reversi board', 'Checkers board', 'Row {row}, column {column}: {state}', 'Red disk', 'Black disk', 'Red checker', 'Black checker', 'Red king', 'Black king', 'Empty square', 'Legal move', 'Choose a non-full column.', 'No legal move. Pass this turn.', 'Pass turn', 'Choose a highlighted square.', 'Piece selected. Choose a highlighted square.', 'Continue the capture.', 'Red wins! Red: {red}, Black: {black}.', 'Black wins! Red: {red}, Black: {black}.', 'Game tied. Red: {red}, Black: {black}.');
 uiPhrases.push('Measure CSS pixels on this display. Physical units are estimates unless you calibrate the ruler.', 'Start position (px)', 'End position (px)', 'Measured length', 'Pixels per known length', 'Known length (mm)', 'Calibrate', 'Clear calibration', 'Use the range controls to move the markers.', 'Uncalibrated CSS pixels', 'mm', 'in', 'Screen ruler', 'Set two rays to match the lines you want to measure. The angle is calculated locally.', 'First ray (degrees)', 'Second ray (degrees)', 'Angle', 'degrees', 'Drag a ray handle or use its range control.', 'Reset angle', 'Protractor');
+uiPhrases.push('One label per line', 'Page size', 'Color theme', 'Poster title', 'Subtitle', 'Poster message', 'Recipient name', 'Award or achievement', 'Presented by', 'Date', 'Event name', 'Time', 'Location', 'RSVP details', 'Choose A4 or US Letter paper.', 'A4', 'US Letter', 'Blue', 'Green', 'Orange', 'Violet', 'Preview', 'Download SVG', 'Enter some text to create your design.', 'SVG design downloaded.', 'Could not create the SVG file.', 'Your text stays in this browser. Check printer scaling before printing.', 'One label per line (up to 30)', 'Print design');
 const corrections = {
   el: { copy: { 'css-animation-generator': ['Δημιουργός κινούμενων σχεδίων CSS'], 'css-clip-path-editor': ['Επεξεργαστής αποκοπής CSS'], 'css-filter-generator': ['Δημιουργός φίλτρων CSS'] } },
   sv: { copy: { 'css-animation-generator': ['CSS-animationsgenerator'], 'css-clip-path-editor': ['CSS-redigerare för klippbanor'], 'css-filter-generator': ['CSS-filtergenerator'] } },
@@ -73,6 +74,21 @@ corrections.tl ??= {};
 corrections.tl.ui = { ...corrections.tl.ui, 'Screen ruler': 'Panukat ng screen', 'End position (px)': 'Posisyon ng dulo (px)' };
 corrections.fa ??= {};
 corrections.fa.copy = { ...corrections.fa.copy, 'css-animation-generator': ['مولد انیمیشن CSS'], 'css-clip-path-editor': ['ویرایشگر برش CSS'] };
+// Avoid a few untranslated literals returned by the free draft translator.
+corrections.it ??= {};
+corrections.it.ui = { ...corrections.it.ui, Time: 'Orario' };
+corrections.nl ??= {};
+corrections.nl.ui = { ...corrections.nl.ui, Violet: 'Paars' };
+corrections.ms ??= {};
+corrections.ms.ui = { ...corrections.ms.ui, Violet: 'Ungu' };
+corrections.sv ??= {};
+corrections.sv.ui = { ...corrections.sv.ui, Orange: 'Orangefärgad' };
+corrections.sw ??= {};
+corrections.sw.ui = { ...corrections.sw.ui, Violet: 'Zambarau' };
+corrections.ha ??= {};
+corrections.ha.ui = { ...corrections.ha.ui, Blue: 'Shuɗi', Orange: 'Lemun tsami', Violet: 'Shunayya', Subtitle: 'Ƙaramin take' };
+corrections.tl ??= {};
+corrections.tl.ui = { ...corrections.tl.ui, Orange: 'Kahel', Violet: 'Lila', 'Print design': 'I-print ang disenyo', Subtitle: 'Pangalawang pamagat' };
 const cssLabelCorrections = {
   id: { Sepia: 'Warna sepia' }, ca: { Triangle: 'Forma triangular' }, nl: { Effect: 'Werking', Timing: 'Tijdinstelling', Sepia: 'Sepiafilter' },
   el: { 'Fade in': 'Σταδιακή εμφάνιση' }, ms: { Ellipse: 'Bentuk bujur', Sepia: 'Warna sepia' }, pl: { Sepia: 'Odcień sepii' },

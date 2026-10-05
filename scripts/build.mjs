@@ -151,6 +151,12 @@ await bundle({
   minify: true,
 });
 await bundle({
+  entryPoints: [join(root, 'src', 'print-studio.css')],
+  outfile: join(dist, 'assets', 'print-studio.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
   entryPoints: [join(root, 'src', 'app.js')],
   outfile: join(dist, 'assets', 'app.js'),
   bundle: false,
@@ -344,6 +350,15 @@ await bundle({
 await bundle({
   entryPoints: [join(root, 'src', 'measurement-tools-runtime.js')],
   outfile: join(dist, 'assets', 'measurement-tools-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'print-studio-runtime.js')],
+  outfile: join(dist, 'assets', 'print-studio-runtime.js'),
   bundle: true,
   format: 'esm',
   platform: 'browser',
@@ -769,6 +784,7 @@ assetHash.update(await readFile(join(dist, 'assets', 'css-design-tools.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'web-dev-tools.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'board-games.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'measurement-tools.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'print-studio.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'habit-tracker-runtime.css')));
 // Any browser-loaded script uses this version token in its URL. Include every
 // lazy runtime in the hash so deploying a changed module cannot keep serving a
@@ -795,6 +811,7 @@ for (const file of [
   'web-dev-logic.mjs',
   'board-games-runtime.js',
   'measurement-tools-runtime.js',
+  'print-studio-runtime.js',
   'online-sequencer-logic.mjs',
   'tic-tac-toe-logic.mjs',
   'time-tracker-runtime.js',

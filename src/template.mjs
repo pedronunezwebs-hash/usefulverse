@@ -837,6 +837,7 @@ export function shell({ title, description, canonical, body, schema = '', assetV
     ${['api-request-builder', 'html-table-generator', 'pwa-manifest-generator'].includes(toolId) ? `<link rel="stylesheet" href="/assets/web-dev-tools.css${assetSuffix}">` : ''}
     ${['connect-four', 'reversi', 'checkers'].includes(toolId) ? `<link rel="stylesheet" href="/assets/board-games.css${assetSuffix}">` : ''}
     ${['screen-ruler', 'protractor'].includes(toolId) ? `<link rel="stylesheet" href="/assets/measurement-tools.css${assetSuffix}">` : ''}
+    ${['printable-label-maker', 'poster-maker', 'certificate-maker', 'invitation-maker'].includes(toolId) ? `<link rel="stylesheet" href="/assets/print-studio.css${assetSuffix}">` : ''}
     ${toolId === 'kanban-board' ? `<link rel="stylesheet" href="/assets/kanban-board.css${assetSuffix}">` : ''}
     ${toolId === 'reading-speed-test' ? `<link rel="stylesheet" href="/assets/reading-speed.css${assetSuffix}">` : ''}
     ${schema}

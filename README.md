@@ -241,7 +241,7 @@ same `dist/sitemap.xml` that is deployed, so it includes every localized route.
 
 <!-- BEGIN GENERATED SITEMAP URL INVENTORY -->
 
-Generated from `dist/sitemap.xml`: **9,216 canonical URLs**.
+Generated from `dist/sitemap.xml`: **9,360 canonical URLs**.
 
 ```text
 https://usefulverse.com/
@@ -493,6 +493,10 @@ https://usefulverse.com/tools/nonogram/
 https://usefulverse.com/tools/sliding-puzzle/
 https://usefulverse.com/tools/screen-ruler/
 https://usefulverse.com/tools/protractor/
+https://usefulverse.com/tools/printable-label-maker/
+https://usefulverse.com/tools/poster-maker/
+https://usefulverse.com/tools/certificate-maker/
+https://usefulverse.com/tools/invitation-maker/
 https://usefulverse.com/es/
 https://usefulverse.com/es/tools/word-counter/
 https://usefulverse.com/es/tools/text-case-converter/
@@ -742,6 +746,10 @@ https://usefulverse.com/es/tools/nonogram/
 https://usefulverse.com/es/tools/sliding-puzzle/
 https://usefulverse.com/es/tools/screen-ruler/
 https://usefulverse.com/es/tools/protractor/
+https://usefulverse.com/es/tools/printable-label-maker/
+https://usefulverse.com/es/tools/poster-maker/
+https://usefulverse.com/es/tools/certificate-maker/
+https://usefulverse.com/es/tools/invitation-maker/
 https://usefulverse.com/fr/
 https://usefulverse.com/fr/tools/word-counter/
 https://usefulverse.com/fr/tools/text-case-converter/
@@ -991,6 +999,10 @@ https://usefulverse.com/fr/tools/nonogram/
 https://usefulverse.com/fr/tools/sliding-puzzle/
 https://usefulverse.com/fr/tools/screen-ruler/
 https://usefulverse.com/fr/tools/protractor/
+https://usefulverse.com/fr/tools/printable-label-maker/
+https://usefulverse.com/fr/tools/poster-maker/
+https://usefulverse.com/fr/tools/certificate-maker/
+https://usefulverse.com/fr/tools/invitation-maker/
 https://usefulverse.com/pt-br/
 https://usefulverse.com/pt-br/tools/word-counter/
 https://usefulverse.com/pt-br/tools/text-case-converter/
@@ -1240,6 +1252,10 @@ https://usefulverse.com/pt-br/tools/nonogram/
 https://usefulverse.com/pt-br/tools/sliding-puzzle/
 https://usefulverse.com/pt-br/tools/screen-ruler/
 https://usefulverse.com/pt-br/tools/protractor/
+https://usefulverse.com/pt-br/tools/printable-label-maker/
+https://usefulverse.com/pt-br/tools/poster-maker/
+https://usefulverse.com/pt-br/tools/certificate-maker/
+https://usefulverse.com/pt-br/tools/invitation-maker/
 https://usefulverse.com/de/
 https://usefulverse.com/de/tools/word-counter/
 https://usefulverse.com/de/tools/text-case-converter/
@@ -1489,6 +1505,10 @@ https://usefulverse.com/de/tools/nonogram/
 https://usefulverse.com/de/tools/sliding-puzzle/
 https://usefulverse.com/de/tools/screen-ruler/
 https://usefulverse.com/de/tools/protractor/
+https://usefulverse.com/de/tools/printable-label-maker/
+https://usefulverse.com/de/tools/poster-maker/
+https://usefulverse.com/de/tools/certificate-maker/
+https://usefulverse.com/de/tools/invitation-maker/
 https://usefulverse.com/ja/
 https://usefulverse.com/ja/tools/word-counter/
 https://usefulverse.com/ja/tools/text-case-converter/
@@ -1738,6 +1758,10 @@ https://usefulverse.com/ja/tools/nonogram/
 https://usefulverse.com/ja/tools/sliding-puzzle/
 https://usefulverse.com/ja/tools/screen-ruler/
 https://usefulverse.com/ja/tools/protractor/
+https://usefulverse.com/ja/tools/printable-label-maker/
+https://usefulverse.com/ja/tools/poster-maker/
+https://usefulverse.com/ja/tools/certificate-maker/
+https://usefulverse.com/ja/tools/invitation-maker/
 https://usefulverse.com/ko/
 https://usefulverse.com/ko/tools/word-counter/
 https://usefulverse.com/ko/tools/text-case-converter/
@@ -1987,6 +2011,10 @@ https://usefulverse.com/ko/tools/nonogram/
 https://usefulverse.com/ko/tools/sliding-puzzle/
 https://usefulverse.com/ko/tools/screen-ruler/
 https://usefulverse.com/ko/tools/protractor/
+https://usefulverse.com/ko/tools/printable-label-maker/
+https://usefulverse.com/ko/tools/poster-maker/
+https://usefulverse.com/ko/tools/certificate-maker/
+https://usefulverse.com/ko/tools/invitation-maker/
 https://usefulverse.com/id/
 https://usefulverse.com/id/tools/word-counter/
 https://usefulverse.com/id/tools/text-case-converter/
@@ -2236,6 +2264,10 @@ https://usefulverse.com/id/tools/nonogram/
 https://usefulverse.com/id/tools/sliding-puzzle/
 https://usefulverse.com/id/tools/screen-ruler/
 https://usefulverse.com/id/tools/protractor/
+https://usefulverse.com/id/tools/printable-label-maker/
+https://usefulverse.com/id/tools/poster-maker/
+https://usefulverse.com/id/tools/certificate-maker/
+https://usefulverse.com/id/tools/invitation-maker/
 https://usefulverse.com/hi/
 https://usefulverse.com/hi/tools/word-counter/
 https://usefulverse.com/hi/tools/text-case-converter/
@@ -2485,6 +2517,10 @@ https://usefulverse.com/hi/tools/nonogram/
 https://usefulverse.com/hi/tools/sliding-puzzle/
 https://usefulverse.com/hi/tools/screen-ruler/
 https://usefulverse.com/hi/tools/protractor/
+https://usefulverse.com/hi/tools/printable-label-maker/
+https://usefulverse.com/hi/tools/poster-maker/
+https://usefulverse.com/hi/tools/certificate-maker/
+https://usefulverse.com/hi/tools/invitation-maker/
 https://usefulverse.com/ar/
 https://usefulverse.com/ar/tools/word-counter/
 https://usefulverse.com/ar/tools/text-case-converter/
@@ -2734,6 +2770,10 @@ https://usefulverse.com/ar/tools/nonogram/
 https://usefulverse.com/ar/tools/sliding-puzzle/
 https://usefulverse.com/ar/tools/screen-ruler/
 https://usefulverse.com/ar/tools/protractor/
+https://usefulverse.com/ar/tools/printable-label-maker/
+https://usefulverse.com/ar/tools/poster-maker/
+https://usefulverse.com/ar/tools/certificate-maker/
+https://usefulverse.com/ar/tools/invitation-maker/
 https://usefulverse.com/zh-cn/
 https://usefulverse.com/zh-cn/tools/word-counter/
 https://usefulverse.com/zh-cn/tools/text-case-converter/
@@ -2983,6 +3023,10 @@ https://usefulverse.com/zh-cn/tools/nonogram/
 https://usefulverse.com/zh-cn/tools/sliding-puzzle/
 https://usefulverse.com/zh-cn/tools/screen-ruler/
 https://usefulverse.com/zh-cn/tools/protractor/
+https://usefulverse.com/zh-cn/tools/printable-label-maker/
+https://usefulverse.com/zh-cn/tools/poster-maker/
+https://usefulverse.com/zh-cn/tools/certificate-maker/
+https://usefulverse.com/zh-cn/tools/invitation-maker/
 https://usefulverse.com/bn/
 https://usefulverse.com/bn/tools/word-counter/
 https://usefulverse.com/bn/tools/text-case-converter/
@@ -3232,6 +3276,10 @@ https://usefulverse.com/bn/tools/nonogram/
 https://usefulverse.com/bn/tools/sliding-puzzle/
 https://usefulverse.com/bn/tools/screen-ruler/
 https://usefulverse.com/bn/tools/protractor/
+https://usefulverse.com/bn/tools/printable-label-maker/
+https://usefulverse.com/bn/tools/poster-maker/
+https://usefulverse.com/bn/tools/certificate-maker/
+https://usefulverse.com/bn/tools/invitation-maker/
 https://usefulverse.com/ru/
 https://usefulverse.com/ru/tools/word-counter/
 https://usefulverse.com/ru/tools/text-case-converter/
@@ -3481,6 +3529,10 @@ https://usefulverse.com/ru/tools/nonogram/
 https://usefulverse.com/ru/tools/sliding-puzzle/
 https://usefulverse.com/ru/tools/screen-ruler/
 https://usefulverse.com/ru/tools/protractor/
+https://usefulverse.com/ru/tools/printable-label-maker/
+https://usefulverse.com/ru/tools/poster-maker/
+https://usefulverse.com/ru/tools/certificate-maker/
+https://usefulverse.com/ru/tools/invitation-maker/
 https://usefulverse.com/ur/
 https://usefulverse.com/ur/tools/word-counter/
 https://usefulverse.com/ur/tools/text-case-converter/
@@ -3730,6 +3782,10 @@ https://usefulverse.com/ur/tools/nonogram/
 https://usefulverse.com/ur/tools/sliding-puzzle/
 https://usefulverse.com/ur/tools/screen-ruler/
 https://usefulverse.com/ur/tools/protractor/
+https://usefulverse.com/ur/tools/printable-label-maker/
+https://usefulverse.com/ur/tools/poster-maker/
+https://usefulverse.com/ur/tools/certificate-maker/
+https://usefulverse.com/ur/tools/invitation-maker/
 https://usefulverse.com/tr/
 https://usefulverse.com/tr/tools/word-counter/
 https://usefulverse.com/tr/tools/text-case-converter/
@@ -3979,6 +4035,10 @@ https://usefulverse.com/tr/tools/nonogram/
 https://usefulverse.com/tr/tools/sliding-puzzle/
 https://usefulverse.com/tr/tools/screen-ruler/
 https://usefulverse.com/tr/tools/protractor/
+https://usefulverse.com/tr/tools/printable-label-maker/
+https://usefulverse.com/tr/tools/poster-maker/
+https://usefulverse.com/tr/tools/certificate-maker/
+https://usefulverse.com/tr/tools/invitation-maker/
 https://usefulverse.com/vi/
 https://usefulverse.com/vi/tools/word-counter/
 https://usefulverse.com/vi/tools/text-case-converter/
@@ -4228,6 +4288,10 @@ https://usefulverse.com/vi/tools/nonogram/
 https://usefulverse.com/vi/tools/sliding-puzzle/
 https://usefulverse.com/vi/tools/screen-ruler/
 https://usefulverse.com/vi/tools/protractor/
+https://usefulverse.com/vi/tools/printable-label-maker/
+https://usefulverse.com/vi/tools/poster-maker/
+https://usefulverse.com/vi/tools/certificate-maker/
+https://usefulverse.com/vi/tools/invitation-maker/
 https://usefulverse.com/it/
 https://usefulverse.com/it/tools/word-counter/
 https://usefulverse.com/it/tools/text-case-converter/
@@ -4477,6 +4541,10 @@ https://usefulverse.com/it/tools/nonogram/
 https://usefulverse.com/it/tools/sliding-puzzle/
 https://usefulverse.com/it/tools/screen-ruler/
 https://usefulverse.com/it/tools/protractor/
+https://usefulverse.com/it/tools/printable-label-maker/
+https://usefulverse.com/it/tools/poster-maker/
+https://usefulverse.com/it/tools/certificate-maker/
+https://usefulverse.com/it/tools/invitation-maker/
 https://usefulverse.com/zh-tw/
 https://usefulverse.com/zh-tw/tools/word-counter/
 https://usefulverse.com/zh-tw/tools/text-case-converter/
@@ -4726,6 +4794,10 @@ https://usefulverse.com/zh-tw/tools/nonogram/
 https://usefulverse.com/zh-tw/tools/sliding-puzzle/
 https://usefulverse.com/zh-tw/tools/screen-ruler/
 https://usefulverse.com/zh-tw/tools/protractor/
+https://usefulverse.com/zh-tw/tools/printable-label-maker/
+https://usefulverse.com/zh-tw/tools/poster-maker/
+https://usefulverse.com/zh-tw/tools/certificate-maker/
+https://usefulverse.com/zh-tw/tools/invitation-maker/
 https://usefulverse.com/bg/
 https://usefulverse.com/bg/tools/word-counter/
 https://usefulverse.com/bg/tools/text-case-converter/
@@ -4975,6 +5047,10 @@ https://usefulverse.com/bg/tools/nonogram/
 https://usefulverse.com/bg/tools/sliding-puzzle/
 https://usefulverse.com/bg/tools/screen-ruler/
 https://usefulverse.com/bg/tools/protractor/
+https://usefulverse.com/bg/tools/printable-label-maker/
+https://usefulverse.com/bg/tools/poster-maker/
+https://usefulverse.com/bg/tools/certificate-maker/
+https://usefulverse.com/bg/tools/invitation-maker/
 https://usefulverse.com/ca/
 https://usefulverse.com/ca/tools/word-counter/
 https://usefulverse.com/ca/tools/text-case-converter/
@@ -5224,6 +5300,10 @@ https://usefulverse.com/ca/tools/nonogram/
 https://usefulverse.com/ca/tools/sliding-puzzle/
 https://usefulverse.com/ca/tools/screen-ruler/
 https://usefulverse.com/ca/tools/protractor/
+https://usefulverse.com/ca/tools/printable-label-maker/
+https://usefulverse.com/ca/tools/poster-maker/
+https://usefulverse.com/ca/tools/certificate-maker/
+https://usefulverse.com/ca/tools/invitation-maker/
 https://usefulverse.com/nl/
 https://usefulverse.com/nl/tools/word-counter/
 https://usefulverse.com/nl/tools/text-case-converter/
@@ -5473,6 +5553,10 @@ https://usefulverse.com/nl/tools/nonogram/
 https://usefulverse.com/nl/tools/sliding-puzzle/
 https://usefulverse.com/nl/tools/screen-ruler/
 https://usefulverse.com/nl/tools/protractor/
+https://usefulverse.com/nl/tools/printable-label-maker/
+https://usefulverse.com/nl/tools/poster-maker/
+https://usefulverse.com/nl/tools/certificate-maker/
+https://usefulverse.com/nl/tools/invitation-maker/
 https://usefulverse.com/el/
 https://usefulverse.com/el/tools/word-counter/
 https://usefulverse.com/el/tools/text-case-converter/
@@ -5722,6 +5806,10 @@ https://usefulverse.com/el/tools/nonogram/
 https://usefulverse.com/el/tools/sliding-puzzle/
 https://usefulverse.com/el/tools/screen-ruler/
 https://usefulverse.com/el/tools/protractor/
+https://usefulverse.com/el/tools/printable-label-maker/
+https://usefulverse.com/el/tools/poster-maker/
+https://usefulverse.com/el/tools/certificate-maker/
+https://usefulverse.com/el/tools/invitation-maker/
 https://usefulverse.com/ms/
 https://usefulverse.com/ms/tools/word-counter/
 https://usefulverse.com/ms/tools/text-case-converter/
@@ -5971,6 +6059,10 @@ https://usefulverse.com/ms/tools/nonogram/
 https://usefulverse.com/ms/tools/sliding-puzzle/
 https://usefulverse.com/ms/tools/screen-ruler/
 https://usefulverse.com/ms/tools/protractor/
+https://usefulverse.com/ms/tools/printable-label-maker/
+https://usefulverse.com/ms/tools/poster-maker/
+https://usefulverse.com/ms/tools/certificate-maker/
+https://usefulverse.com/ms/tools/invitation-maker/
 https://usefulverse.com/pl/
 https://usefulverse.com/pl/tools/word-counter/
 https://usefulverse.com/pl/tools/text-case-converter/
@@ -6220,6 +6312,10 @@ https://usefulverse.com/pl/tools/nonogram/
 https://usefulverse.com/pl/tools/sliding-puzzle/
 https://usefulverse.com/pl/tools/screen-ruler/
 https://usefulverse.com/pl/tools/protractor/
+https://usefulverse.com/pl/tools/printable-label-maker/
+https://usefulverse.com/pl/tools/poster-maker/
+https://usefulverse.com/pl/tools/certificate-maker/
+https://usefulverse.com/pl/tools/invitation-maker/
 https://usefulverse.com/sv/
 https://usefulverse.com/sv/tools/word-counter/
 https://usefulverse.com/sv/tools/text-case-converter/
@@ -6469,6 +6565,10 @@ https://usefulverse.com/sv/tools/nonogram/
 https://usefulverse.com/sv/tools/sliding-puzzle/
 https://usefulverse.com/sv/tools/screen-ruler/
 https://usefulverse.com/sv/tools/protractor/
+https://usefulverse.com/sv/tools/printable-label-maker/
+https://usefulverse.com/sv/tools/poster-maker/
+https://usefulverse.com/sv/tools/certificate-maker/
+https://usefulverse.com/sv/tools/invitation-maker/
 https://usefulverse.com/th/
 https://usefulverse.com/th/tools/word-counter/
 https://usefulverse.com/th/tools/text-case-converter/
@@ -6718,6 +6818,10 @@ https://usefulverse.com/th/tools/nonogram/
 https://usefulverse.com/th/tools/sliding-puzzle/
 https://usefulverse.com/th/tools/screen-ruler/
 https://usefulverse.com/th/tools/protractor/
+https://usefulverse.com/th/tools/printable-label-maker/
+https://usefulverse.com/th/tools/poster-maker/
+https://usefulverse.com/th/tools/certificate-maker/
+https://usefulverse.com/th/tools/invitation-maker/
 https://usefulverse.com/uk/
 https://usefulverse.com/uk/tools/word-counter/
 https://usefulverse.com/uk/tools/text-case-converter/
@@ -6967,6 +7071,10 @@ https://usefulverse.com/uk/tools/nonogram/
 https://usefulverse.com/uk/tools/sliding-puzzle/
 https://usefulverse.com/uk/tools/screen-ruler/
 https://usefulverse.com/uk/tools/protractor/
+https://usefulverse.com/uk/tools/printable-label-maker/
+https://usefulverse.com/uk/tools/poster-maker/
+https://usefulverse.com/uk/tools/certificate-maker/
+https://usefulverse.com/uk/tools/invitation-maker/
 https://usefulverse.com/sw/
 https://usefulverse.com/sw/tools/word-counter/
 https://usefulverse.com/sw/tools/text-case-converter/
@@ -7216,6 +7324,10 @@ https://usefulverse.com/sw/tools/nonogram/
 https://usefulverse.com/sw/tools/sliding-puzzle/
 https://usefulverse.com/sw/tools/screen-ruler/
 https://usefulverse.com/sw/tools/protractor/
+https://usefulverse.com/sw/tools/printable-label-maker/
+https://usefulverse.com/sw/tools/poster-maker/
+https://usefulverse.com/sw/tools/certificate-maker/
+https://usefulverse.com/sw/tools/invitation-maker/
 https://usefulverse.com/mr/
 https://usefulverse.com/mr/tools/word-counter/
 https://usefulverse.com/mr/tools/text-case-converter/
@@ -7465,6 +7577,10 @@ https://usefulverse.com/mr/tools/nonogram/
 https://usefulverse.com/mr/tools/sliding-puzzle/
 https://usefulverse.com/mr/tools/screen-ruler/
 https://usefulverse.com/mr/tools/protractor/
+https://usefulverse.com/mr/tools/printable-label-maker/
+https://usefulverse.com/mr/tools/poster-maker/
+https://usefulverse.com/mr/tools/certificate-maker/
+https://usefulverse.com/mr/tools/invitation-maker/
 https://usefulverse.com/te/
 https://usefulverse.com/te/tools/word-counter/
 https://usefulverse.com/te/tools/text-case-converter/
@@ -7714,6 +7830,10 @@ https://usefulverse.com/te/tools/nonogram/
 https://usefulverse.com/te/tools/sliding-puzzle/
 https://usefulverse.com/te/tools/screen-ruler/
 https://usefulverse.com/te/tools/protractor/
+https://usefulverse.com/te/tools/printable-label-maker/
+https://usefulverse.com/te/tools/poster-maker/
+https://usefulverse.com/te/tools/certificate-maker/
+https://usefulverse.com/te/tools/invitation-maker/
 https://usefulverse.com/ha/
 https://usefulverse.com/ha/tools/word-counter/
 https://usefulverse.com/ha/tools/text-case-converter/
@@ -7963,6 +8083,10 @@ https://usefulverse.com/ha/tools/nonogram/
 https://usefulverse.com/ha/tools/sliding-puzzle/
 https://usefulverse.com/ha/tools/screen-ruler/
 https://usefulverse.com/ha/tools/protractor/
+https://usefulverse.com/ha/tools/printable-label-maker/
+https://usefulverse.com/ha/tools/poster-maker/
+https://usefulverse.com/ha/tools/certificate-maker/
+https://usefulverse.com/ha/tools/invitation-maker/
 https://usefulverse.com/tl/
 https://usefulverse.com/tl/tools/word-counter/
 https://usefulverse.com/tl/tools/text-case-converter/
@@ -8212,6 +8336,10 @@ https://usefulverse.com/tl/tools/nonogram/
 https://usefulverse.com/tl/tools/sliding-puzzle/
 https://usefulverse.com/tl/tools/screen-ruler/
 https://usefulverse.com/tl/tools/protractor/
+https://usefulverse.com/tl/tools/printable-label-maker/
+https://usefulverse.com/tl/tools/poster-maker/
+https://usefulverse.com/tl/tools/certificate-maker/
+https://usefulverse.com/tl/tools/invitation-maker/
 https://usefulverse.com/ta/
 https://usefulverse.com/ta/tools/word-counter/
 https://usefulverse.com/ta/tools/text-case-converter/
@@ -8461,6 +8589,10 @@ https://usefulverse.com/ta/tools/nonogram/
 https://usefulverse.com/ta/tools/sliding-puzzle/
 https://usefulverse.com/ta/tools/screen-ruler/
 https://usefulverse.com/ta/tools/protractor/
+https://usefulverse.com/ta/tools/printable-label-maker/
+https://usefulverse.com/ta/tools/poster-maker/
+https://usefulverse.com/ta/tools/certificate-maker/
+https://usefulverse.com/ta/tools/invitation-maker/
 https://usefulverse.com/fa/
 https://usefulverse.com/fa/tools/word-counter/
 https://usefulverse.com/fa/tools/text-case-converter/
@@ -8710,6 +8842,10 @@ https://usefulverse.com/fa/tools/nonogram/
 https://usefulverse.com/fa/tools/sliding-puzzle/
 https://usefulverse.com/fa/tools/screen-ruler/
 https://usefulverse.com/fa/tools/protractor/
+https://usefulverse.com/fa/tools/printable-label-maker/
+https://usefulverse.com/fa/tools/poster-maker/
+https://usefulverse.com/fa/tools/certificate-maker/
+https://usefulverse.com/fa/tools/invitation-maker/
 https://usefulverse.com/am/
 https://usefulverse.com/am/tools/word-counter/
 https://usefulverse.com/am/tools/text-case-converter/
@@ -8959,6 +9095,10 @@ https://usefulverse.com/am/tools/nonogram/
 https://usefulverse.com/am/tools/sliding-puzzle/
 https://usefulverse.com/am/tools/screen-ruler/
 https://usefulverse.com/am/tools/protractor/
+https://usefulverse.com/am/tools/printable-label-maker/
+https://usefulverse.com/am/tools/poster-maker/
+https://usefulverse.com/am/tools/certificate-maker/
+https://usefulverse.com/am/tools/invitation-maker/
 https://usefulverse.com/gu/
 https://usefulverse.com/gu/tools/word-counter/
 https://usefulverse.com/gu/tools/text-case-converter/
@@ -9208,6 +9348,10 @@ https://usefulverse.com/gu/tools/nonogram/
 https://usefulverse.com/gu/tools/sliding-puzzle/
 https://usefulverse.com/gu/tools/screen-ruler/
 https://usefulverse.com/gu/tools/protractor/
+https://usefulverse.com/gu/tools/printable-label-maker/
+https://usefulverse.com/gu/tools/poster-maker/
+https://usefulverse.com/gu/tools/certificate-maker/
+https://usefulverse.com/gu/tools/invitation-maker/
 https://usefulverse.com/guides/
 https://usefulverse.com/guides/how-to-calculate-a-weighted-grade/
 https://usefulverse.com/guides/google-docs-word-count/

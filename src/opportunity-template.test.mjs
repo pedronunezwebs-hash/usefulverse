@@ -192,3 +192,18 @@ test('protractor exposes two bounded adjustable rays and an accessible angle res
   assert.match(markup, /data-planner-messages="/u);
   assert.doesNotMatch(markup, /data-op-calculate|fetch\(|XMLHttpRequest/u);
 });
+
+test('print studio pages expose localized input, vector preview, download and print actions', () => {
+  for (const id of ['printable-label-maker', 'poster-maker', 'certificate-maker', 'invitation-maker']) {
+    const markup = opportunityToolMarkup(id, 'ar');
+    assert.match(markup, /data-print-studio=/u, id);
+    assert.match(markup, /data-print-preview/u, id);
+    assert.match(markup, /data-print-download/u, id);
+    assert.match(markup, /data-print-print/u, id);
+    assert.match(markup, /data-planner-messages=/u, id);
+    assert.doesNotMatch(markup, /fetch\(|XMLHttpRequest/u, id);
+  }
+  assert.match(opportunityToolMarkup('printable-label-maker'), /One label per line/u);
+  assert.match(opportunityToolMarkup('certificate-maker'), /Recipient name/u);
+  assert.match(opportunityToolMarkup('invitation-maker'), /RSVP details/u);
+});
