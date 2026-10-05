@@ -11,6 +11,35 @@ const positive = (value, label, allowZero = false) => {
 const fixed = (value, digits = 6) => Number(value.toFixed(digits)).toString();
 const money = (value) => Number(value).toFixed(2);
 
+export function makeNoiseSamples(color, length, random = Math.random) {
+  if (!['white', 'pink', 'brown'].includes(color)) throw new TypeError('Choose white, pink, or brown noise.');
+  if (!Number.isInteger(length) || length < 1 || length > 192_000) throw new RangeError('Noise buffer must contain 1–192000 samples.');
+  if (typeof random !== 'function') throw new TypeError('A random source is required.');
+  const samples = new Float32Array(length);
+  let b0 = 0; let b1 = 0; let b2 = 0; let b3 = 0; let b4 = 0; let b5 = 0; let b6 = 0; let brown = 0;
+  for (let index = 0; index < length; index += 1) {
+    const unit = random();
+    if (!Number.isFinite(unit) || unit < 0 || unit >= 1) throw new RangeError('Random values must be between 0 and 1.');
+    const white = unit * 2 - 1;
+    let sample = white;
+    if (color === 'pink') {
+      b0 = 0.99886 * b0 + white * 0.0555179;
+      b1 = 0.99332 * b1 + white * 0.0750759;
+      b2 = 0.969 * b2 + white * 0.153852;
+      b3 = 0.8665 * b3 + white * 0.3104856;
+      b4 = 0.55 * b4 + white * 0.5329522;
+      b5 = -0.7616 * b5 - white * 0.016898;
+      sample = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.25;
+      b6 = white * 0.115926;
+    } else if (color === 'brown') {
+      brown = (brown + 0.02 * white) / 1.02;
+      sample = brown * 6;
+    }
+    samples[index] = Math.max(-1, Math.min(1, sample));
+  }
+  return samples;
+}
+
 export function solveEquation({ a, b, c }) {
   const A = number(a, 'coefficient a'); const B = number(b, 'coefficient b'); const C = number(c, 'coefficient c');
   if (A === 0 && B === 0) return C === 0 ? 'Every real number is a solution.' : 'There is no solution.';

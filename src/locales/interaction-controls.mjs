@@ -139,7 +139,14 @@ const diagramEditorLabels = {
   am: ['የዲያግራም ደረጃዎች', 'ደረጃ ጨምር', 'ወደ ላይ አንቀሳቅስ', 'ወደ ታች አንቀሳቅስ', 'ደረጃ አስወግድ', 'ዲያግራም ፍጠር', 'ዲያግራሙን እንደ SVG አውርድ', 'አዲስ ደረጃ', '2–12 ደረጃዎችን ይጠቀሙ፤ እያንዳንዱ እስከ 48 ቁምፊዎች ይሁን።'],
   gu: ['આકૃતિનાં પગલાં', 'પગલું ઉમેરો', 'ઉપર ખસેડો', 'નીચે ખસેડો', 'પગલું દૂર કરો', 'આકૃતિ બનાવો', 'આકૃતિ SVG તરીકે ડાઉનલોડ કરો', 'નવું પગલું', '2–12 પગલાં વાપરો; દરેકમાં વધુમાં વધુ 48 અક્ષરો.'],
 };
+const noiseTimerLabels = {
+  en: 'Auto-stop (minutes; 0 = off)', es: 'Apagado automático (minutos; 0 = desactivado)', fr: 'Arrêt automatique (minutes ; 0 = désactivé)', pt: 'Parada automática (minutos; 0 = desativada)', de: 'Automatisch stoppen (Minuten; 0 = aus)', ja: '自動停止（分、0で無効）', ko: '자동 정지(분, 0은 끔)', id: 'Berhenti otomatis (menit; 0 = mati)', hi: 'अपने-आप रोकें (मिनट; 0 = बंद)', ar: 'إيقاف تلقائي (بالدقائق؛ 0 = إيقاف)',
+  zh: '自动停止（分钟；0 表示关闭）', bn: 'স্বয়ংক্রিয় বন্ধ (মিনিট; ০ = বন্ধ)', ru: 'Автостоп (минуты; 0 — выкл.)', ur: 'خودکار بند (منٹ؛ 0 = بند)', tr: 'Otomatik durdur (dakika; 0 = kapalı)', vi: 'Tự dừng (phút; 0 = tắt)', it: 'Arresto automatico (minuti; 0 = disattivato)', zh_tw: '自動停止（分鐘；0 代表關閉）', bg: 'Автоматично спиране (минути; 0 = изкл.)', ca: 'Aturada automàtica (minuts; 0 = desactivada)',
+  nl: 'Automatisch stoppen (minuten; 0 = uit)', el: 'Αυτόματη διακοπή (λεπτά· 0 = ανενεργή)', ms: 'Henti automatik (minit; 0 = mati)', pl: 'Automatyczne zatrzymanie (minuty; 0 = wył.)', sv: 'Automatiskt stopp (minuter; 0 = av)', th: 'หยุดอัตโนมัติ (นาที; 0 = ปิด)', uk: 'Автостоп (хвилини; 0 — вимк.)', sw: 'Simamisha kiotomatiki (dakika; 0 = zima)',
+  mr: 'आपोआप थांबवा (मिनिटे; 0 = बंद)', te: 'ఆటోమేటిక్ ఆపు (నిమిషాలు; 0 = ఆఫ్)', ha: 'Tsayawa ta atomatik (mintuna; 0 = a kashe)', tl: 'Awtomatikong paghinto (minuto; 0 = naka-off)', ta: 'தானாக நிறுத்து (நிமிடங்கள்; 0 = முடக்கு)', fa: 'توقف خودکار (دقیقه؛ ۰ = خاموش)', am: 'በራስ-ሰር አቁም (ደቂቃ፤ 0 = ጠፍቷል)', gu: 'આપમેળે બંધ (મિનિટ; 0 = બંધ)',
+};
 export const diagramEditorKeys = ['Diagram steps', 'Add step', 'Move up', 'Move down', 'Remove step', 'Create diagram', 'Download diagram as SVG', 'New step', 'Use 2–12 steps, max 48 characters each.'];
+export const noiseControlKeys = ['Auto-stop (minutes; 0 = off)'];
 
 export const interactionControlLocales = Object.fromEntries(Object.entries(rows).map(([language, values]) => {
   if (values.length !== keys.length) throw new Error(`Interaction strings do not match for ${language}.`);
@@ -156,5 +163,7 @@ export const interactionControlLocales = Object.fromEntries(Object.entries(rows)
   if (!close) throw new Error(`Missing localized close label for ${language}.`);
   if (!noisePlayback[language]) throw new Error(`Missing localized noise status for ${language}.`);
   const diagramMessages = Object.fromEntries(diagramEditorKeys.map((key, index) => [key, diagramLabels[index]]));
-  return [language, { ...Object.fromEntries(keys.map((key, index) => [key, values[index]])), ...diagramMessages, Close: close, 'Save deck on this device': flashcardLabels[0], 'Load saved deck': flashcardLabels[1], 'Delete saved deck': flashcardLabels[2], 'Each line needs a term, comma, and definition.': flashcardFormatError[language], 'Noise is playing in your browser.': noisePlayback[language][0], 'Noise stopped.': noisePlayback[language][1] }];
+  const noiseTimerLabel = noiseTimerLabels[language];
+  if (!noiseTimerLabel) throw new Error(`Missing localized noise timer label for ${language}.`);
+  return [language, { ...Object.fromEntries(keys.map((key, index) => [key, values[index]])), ...diagramMessages, 'Auto-stop (minutes; 0 = off)': noiseTimerLabel, Close: close, 'Save deck on this device': flashcardLabels[0], 'Load saved deck': flashcardLabels[1], 'Delete saved deck': flashcardLabels[2], 'Each line needs a term, comma, and definition.': flashcardFormatError[language], 'Noise is playing in your browser.': noisePlayback[language][0], 'Noise stopped.': noisePlayback[language][1] }];
 }));

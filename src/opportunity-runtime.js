@@ -1,4 +1,4 @@
-import { calculateOpportunity } from './opportunity-logic.mjs';
+import { calculateOpportunity, makeNoiseSamples } from './opportunity-logic.mjs';
 import { buildStudyPlan } from './study-planner-logic.mjs';
 import { createMentalMathProblem, parseMentalMathAnswer, validateMentalMathSettings } from './mental-math-logic.mjs';
 import { budgetCsvCell, parseBudgetAmount, summarizeBudget, validateBudgetTransaction } from './household-budget-logic.mjs';
@@ -398,14 +398,38 @@ function setupDeviceTools(engine, root) {
 }
 
 function setupNoise(root) {
-  let context; let node; let gain;
-  const stop = (announce = false) => { try { node?.stop(); } catch {} node?.disconnect(); gain?.disconnect(); node = undefined; gain = undefined; if (context && context.state !== 'closed') context.close().catch(() => {}); context = undefined; $('[data-device-start]', root).disabled = false; $('[data-device-stop]', root).disabled = true; if (announce) setStatus(root, 'Noise stopped.'); };
+  let context; let node; let gain; let stopTimer;
+  const stopAfter = $('[data-op-field="stop-after"]', root);
+  const stop = (announce = false) => { clearTimeout(stopTimer); stopTimer = undefined; try { node?.stop(); } catch {} node?.disconnect(); gain?.disconnect(); node = undefined; gain = undefined; if (context && context.state !== 'closed') context.close().catch(() => {}); context = undefined; $('[data-device-start]', root).disabled = false; $('[data-device-stop]', root).disabled = true; if (announce) setStatus(root, 'Noise stopped.'); };
+  const scheduleStop = () => {
+    clearTimeout(stopTimer); stopTimer = undefined;
+    if (!node || !stopAfter) return;
+    const minutes = Number(stopAfter.value);
+    if (!Number.isFinite(minutes) || minutes < 0 || minutes > 720) { stopAfter.setAttribute('aria-invalid', 'true'); setStatus(root, say('Check your inputs and try again.'), 'error'); return; }
+    stopAfter.removeAttribute('aria-invalid');
+    if (minutes > 0) stopTimer = setTimeout(() => stop(true), minutes * 60_000);
+  };
   $('[data-op-field="volume"]', root)?.addEventListener('input', (event) => {
     if (!context || !gain) return;
-    const target = Math.min(0.5, Math.max(0, Number(event.currentTarget.value) / 100));
+    const target = Math.min(0.5, Math.max(0, Number(event.currentTarget.value) / 100 || 0));
     gain.gain.setTargetAtTime(target, context.currentTime, 0.04);
   });
-  $('[data-device-start]', root)?.addEventListener('click', async () => { try { context = new (window.AudioContext || window.webkitAudioContext)(); await context.resume(); const buffer = context.createBuffer(1, context.sampleRate * 2, context.sampleRate); const data = buffer.getChannelData(0); let last = 0; for (let i = 0; i < data.length; i += 1) { const white = Math.random() * 2 - 1; const color = $('[data-op-field="color"]', root).value; last = color === 'brown' ? (last + 0.02 * white) / 1.02 : color === 'pink' ? (0.98 * last + 0.02 * white) : white; data[i] = color === 'white' ? white : last * (color === 'pink' ? 3.5 : 12); } node = context.createBufferSource(); node.buffer = buffer; node.loop = true; gain = context.createGain(); gain.gain.value = Math.min(0.5, Number($('[data-op-field="volume"]', root).value) / 100); node.connect(gain).connect(context.destination); node.start(); $('[data-device-start]', root).disabled = true; $('[data-device-stop]', root).disabled = false; setStatus(root, 'Noise is playing in your browser.', 'success'); } catch (error) { stop(); setStatus(root, error instanceof Error ? error.message : say('Audio could not start. Check your browser audio settings.'), 'error'); } });
+  stopAfter?.addEventListener('input', scheduleStop);
+  $('[data-device-start]', root)?.addEventListener('click', async () => { try {
+    const color = $('[data-op-field="color"]', root).value;
+    const AudioContextType = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextType) throw new Error(say('Audio could not start. Check your browser audio settings.'));
+    context = new AudioContextType(); await context.resume();
+    if (context.state !== 'running') throw new Error(say('Audio could not start. Check your browser audio settings.'));
+    const length = Math.min(Math.ceil(context.sampleRate * 2), 192_000);
+    const buffer = context.createBuffer(1, length, context.sampleRate);
+    buffer.getChannelData(0).set(makeNoiseSamples(color, length));
+    node = context.createBufferSource(); node.buffer = buffer; node.loop = true;
+    gain = context.createGain(); gain.gain.value = Math.min(0.5, Math.max(0.01, Number($('[data-op-field="volume"]', root).value) / 100 || 0.15));
+    node.connect(gain).connect(context.destination); node.start();
+    $('[data-device-start]', root).disabled = true; $('[data-device-stop]', root).disabled = false;
+    scheduleStop(); setStatus(root, 'Noise is playing in your browser.', 'success');
+  } catch (error) { stop(); setStatus(root, error instanceof Error ? error.message : say('Audio could not start. Check your browser audio settings.'), 'error'); } });
   $('[data-device-stop]', root)?.addEventListener('click', () => stop(true)); window.addEventListener('pagehide', stop, { once: true });
 }
 

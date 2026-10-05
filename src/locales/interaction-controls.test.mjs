@@ -8,6 +8,8 @@ test('all 36 published locales provide localized flashcard and diagram editor co
     assert.ok(messages.Close?.trim(), `${language} has a close label`);
     assert.ok(messages['Noise is playing in your browser.']?.trim(), `${language} has a noise playback status`);
     assert.ok(messages['Noise stopped.']?.trim(), `${language} has a noise stopped status`);
+    assert.ok(messages['Auto-stop (minutes; 0 = off)']?.trim(), `${language} has a localized noise timer label`);
+    if (language !== 'en') assert.notEqual(messages['Auto-stop (minutes; 0 = off)'], 'Auto-stop (minutes; 0 = off)', `${language} translates the noise timer label`);
     assert.ok(messages['Save deck on this device']?.trim(), `${language} has a translated flashcard save label`);
     assert.ok(messages['Load saved deck']?.trim(), `${language} has a translated flashcard load label`);
     assert.ok(messages['Delete saved deck']?.trim(), `${language} has a translated flashcard delete label`);

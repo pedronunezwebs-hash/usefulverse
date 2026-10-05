@@ -13,6 +13,7 @@ import {
   differentiatePolynomial, integratePolynomial, calculateMatrix, buildTruthTable,
   calculateStatisticalTest, calculateCashFlows, calculateDebtPayoff, calculateRentVsBuy,
   createCitation, validateJsonSchema, queryJsonPath,
+  makeNoiseSamples,
   makePrintableCalendar, makeFlashcards, makeWordSearch, makeBingoCard,
   calculateAdultBmi, calculateBmrTdee,
   calculateMacros, calculateRunningPace, estimateOneRepMax, buildCoverLetter, generateTestData,
@@ -314,6 +315,23 @@ test('math worksheet seed reproduces valid arithmetic and answer keys', () => {
   assert.equal((output.match(/ = ______/gu) ?? []).length, 10);
   assert.match(output, /ANSWER KEY/u);
   assert.throws(() => generateMathWorksheet({ ...input, count: 51 }), /1 to 50/u);
+});
+
+test('colored noise generation is deterministic, bounded, and rejects unsafe lengths or colors', () => {
+  for (const color of ['white', 'pink', 'brown']) {
+    const makeRandom = () => { let seed = 1234567; return () => { seed = (1664525 * seed + 1013904223) >>> 0; return seed / 4294967296; }; };
+    const samples = makeNoiseSamples(color, 48_000, makeRandom());
+    assert.equal(samples.length, 48_000);
+    assert.ok(samples.some((sample) => sample !== 0));
+    assert.ok([...samples].every((sample) => Number.isFinite(sample) && Math.abs(sample) <= 1));
+    const rms = Math.sqrt(samples.reduce((sum, sample) => sum + sample ** 2, 0) / samples.length);
+    assert.ok(rms > 0.1 && rms < 0.75, `${color} noise should have a usable, unclipped average level`);
+    assert.deepEqual(samples, makeNoiseSamples(color, 48_000, makeRandom()));
+  }
+  assert.throws(() => makeNoiseSamples('blue', 10), /white, pink, or brown/u);
+  assert.throws(() => makeNoiseSamples('white', 0), /1–192000/u);
+  assert.throws(() => makeNoiseSamples('white', 192001), /1–192000/u);
+  assert.throws(() => makeNoiseSamples('white', 2, () => 1), /between 0 and 1/u);
 });
 
 test('diagram and chart engines validate bounded entries before visual SVG rendering', () => {

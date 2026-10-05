@@ -26,7 +26,7 @@ import { guidePacks } from './locales/guide-packs.mjs';
 import { planLocaleData } from './locales/plan-language-data.mjs';
 import { gifMakerCopy } from './locales/gif-maker-copy.mjs';
 import { recordingControlLocales } from './locales/recording-controls.mjs';
-import { diagramEditorKeys, interactionControlLocales } from './locales/interaction-controls.mjs';
+import { diagramEditorKeys, interactionControlLocales, noiseControlKeys } from './locales/interaction-controls.mjs';
 import { wordSearchBody, wordSearchDescription } from './locales/puzzle-copy.mjs';
 import {
   expandedLocaleCopyFixes,
@@ -1253,7 +1253,8 @@ for (const [language, corrections] of Object.entries(opportunityLocaleCorrection
 }
 
 for (const [language, messages] of Object.entries(interactionControlLocales)) {
-  const sharedMessages = Object.fromEntries(Object.entries(messages).filter(([key]) => !diagramEditorKeys.includes(key)));
+  const pageMarkupMessages = [...diagramEditorKeys, ...noiseControlKeys];
+  const sharedMessages = Object.fromEntries(Object.entries(messages).filter(([key]) => !pageMarkupMessages.includes(key)));
   Object.assign(ui[language] ??= {}, sharedMessages);
   Object.assign(runtimeMessages[language] ??= {}, sharedMessages);
   if (packs[language]) {

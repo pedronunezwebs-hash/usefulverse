@@ -69,6 +69,14 @@ test('diagram maker exposes accessible local step editing and SVG export', () =>
   assert.doesNotMatch(markup, /data-op-calculate/u);
 });
 
+test('noise generator exposes a localized optional timer capped at twelve hours', () => {
+  const markup = opportunityToolMarkup('noise-generator', 'es', opportunityLocaleData.es.ui);
+  assert.match(markup, /data-op-field="stop-after"/u);
+  assert.match(markup, /Apagado automático \(minutos; 0 = desactivado\)/u);
+  assert.match(markup, /max="720"/u);
+  assert.match(markup, /value="0"/u);
+});
+
 test('mental math practice exposes a bounded round and accessible answer states', () => {
   const markup = opportunityToolMarkup('mental-math-practice');
   for (const control of ['data-mental-start', 'data-mental-round', 'data-mental-question', 'data-mental-answer', 'data-mental-check', 'data-mental-next', 'aria-live="polite"']) assert.ok(markup.includes(control), control);
