@@ -1,6 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { interactionControlLocales } from './interaction-controls.mjs';
+import { tools } from '../catalog.mjs';
+import { locales, localizedTool } from '../locales.mjs';
+import { expandedLocaleCopyFixes } from './expanded-locale-review.mjs';
 
 test('all 36 published locales provide localized flashcard and diagram editor controls', () => {
   assert.equal(Object.keys(interactionControlLocales).length, 36);
@@ -25,5 +28,20 @@ test('all 36 published locales provide localized flashcard and diagram editor co
     const formatError = messages['Each line needs a term, comma, and definition.'];
     assert.ok(formatError?.trim(), `${language} has flashcard format feedback`);
     if (language !== 'en') assert.notEqual(formatError, 'Each line needs a term, comma, and definition.', `${language} is translated`);
+  }
+});
+
+test('localized online-timer intros do not promise accurate alerts when a tab or device sleeps', () => {
+  const timer = tools.find(({ id }) => id === 'online-timer');
+  assert.ok(timer, 'online timer exists in the catalog');
+  const correctedLocales = Object.keys(expandedLocaleCopyFixes)
+    .filter((language) => expandedLocaleCopyFixes[language]['online-timer']?.[4]);
+  assert.equal(correctedLocales.length, 20, 'all expanded locales that had the overclaim have corrected copy');
+
+  for (const language of Object.keys(locales)) {
+    const intro = localizedTool(timer, language).intro;
+    assert.doesNotMatch(intro, /keeps time accurately if a tab sleeps/iu, `${language} must not claim exact timing during tab sleep`);
+    const correction = expandedLocaleCopyFixes[language]?.['online-timer']?.[4];
+    if (correction) assert.equal(intro, correction, `${language} uses its reviewed sleep/alert caveat`);
   }
 });
