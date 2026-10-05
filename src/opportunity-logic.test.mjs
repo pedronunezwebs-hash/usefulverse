@@ -282,6 +282,15 @@ test('word search keeps non-Latin words instead of silently deleting their lette
   assert.match(arabicDelimiter, /مدخل \(باب\)/u);
 });
 
+test('word puzzles use the page locale for Turkish dotted and dotless I', () => {
+  const search = calculateOpportunity('word-search', { words: 'istanbul,ışık', size: 10, seed: 'tr' }, 'tr');
+  assert.match(search, /İSTANBUL:/u);
+  assert.match(search, /IŞIK:/u);
+  const crossword = calculateOpportunity('crossword', { pairs: 'istanbul, city\nbalık, fish' }, 'tr');
+  assert.match(crossword, /İSTANBUL/u);
+  assert.match(crossword, /BALIK/u);
+});
+
 test('bingo cards are reproducible and require unique pool', () => {
   const entries = Array.from({ length: 24 }, (_, i) => `Entry ${i + 1}`).join('\n');
   const card = makeBingoCard({ entries, seed: 'same' });

@@ -1061,7 +1061,7 @@ export function setupOpportunityTool(id, root) {
           $('[data-op-field="hex"]', root).value = values.hex;
         }
         if (engine === 'svg-optimizer' && values.file instanceof File && !String(values.svg ?? '').trim()) values.svg = await values.file.text();
-        const result = calculateOpportunity(engine, values);
+        const result = calculateOpportunity(engine, values, locale);
         displayOutput(root, result);
         if (engine === 'svg-optimizer') offerDownload(root, new Blob([result], { type: 'image/svg+xml;charset=utf-8' }), 'usefulverse-optimized.svg');
         if (engine === 'hex-editor') {
