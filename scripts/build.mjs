@@ -162,6 +162,15 @@ await bundle({
   minify: true,
 });
 await bundle({
+  entryPoints: [join(root, 'src', 'habit-tracker-runtime.js')],
+  outfile: join(dist, 'assets', 'habit-tracker-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
   entryPoints: [join(root, 'src', 'chess-clock-runtime.js')],
   outfile: join(dist, 'assets', 'chess-clock-runtime.js'),
   bundle: true,
@@ -435,6 +444,7 @@ const assetHash = createHash('sha256')
 assetHash.update(await readFile(join(root, 'public', 'timer-notifications.js')));
 assetHash.update(await readFile(join(dist, 'assets', 'kanban-board.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'reading-speed.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'habit-tracker-runtime.css')));
 // Any browser-loaded script uses this version token in its URL. Include every
 // lazy runtime in the hash so deploying a changed module cannot keep serving a
 // stale copy from the browser cache.
@@ -450,6 +460,7 @@ for (const file of [
   'task-list-runtime.js',
   'kanban-board-runtime.js',
   'reading-speed-runtime.js',
+  'habit-tracker-runtime.js',
   'chess-clock-runtime.js',
   'ear-training-runtime.js',
   'bpm-detector-runtime.js',

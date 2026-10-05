@@ -20,6 +20,8 @@ import { kanbanBoardLocaleData } from './locales/kanban-board.mjs';
 import { kanbanBoardContent } from './locales/kanban-board-content.mjs';
 import { readingSpeedLocaleData } from './locales/reading-speed.mjs';
 import { readingSpeedContent } from './locales/reading-speed-content.mjs';
+import { habitTrackerLocaleData } from './locales/habit-tracker.mjs';
+import { habitTrackerContent } from './locales/habit-tracker-content.mjs';
 import { pageKeys, templateKeys } from './locales/template-keys.mjs';
 import { tools } from './catalog.mjs';
 import { htmlToPdfLocales } from './locales/html-to-pdf.mjs';
@@ -1065,6 +1067,11 @@ for (const [language, data] of Object.entries(kanbanBoardLocaleData)) {
 for (const [language, data] of Object.entries(readingSpeedLocaleData)) {
   opportunityLocaleData[language] ??= { ui: {}, copy: {} };
   opportunityLocaleData[language].copy['reading-speed-test'] = readingSpeedContent(language).copy;
+}
+for (const [language, data] of Object.entries(habitTrackerLocaleData)) {
+  opportunityLocaleData[language] ??= { ui: {}, copy: {} };
+  const content = habitTrackerContent(language);
+  opportunityLocaleData[language].copy['habit-tracker'] = content.copy;
 }
 for (const [language, data] of Object.entries(opportunityLocaleData)) {
   ui[language] ??= {};
