@@ -134,6 +134,11 @@ function setupTimer(root) {
   let deadline = 0; let stopwatchStarted = 0; let focusSegmentStartedAt = 0; let focusElapsedThisPhase = Number.isFinite(saved.focusElapsedThisPhase) && saved.focusElapsedThisPhase > 0 ? Math.min(180 * 60_000, saved.focusElapsedThisPhase) : 0; let ticker = 0; let running = false; let starting = false; let completed = Number.isInteger(saved.completed) && saved.completed > 0 ? saved.completed : 0;
   let focusMilliseconds = Number.isFinite(saved.focusMilliseconds) && saved.focusMilliseconds > 0 ? saved.focusMilliseconds : 0;
   let audioContext; let notificationRegistration; const originalTitle = document.title;
+  if ('Notification' in window && Notification.permission === 'granted' && 'serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistration().then((registration) => {
+      if (registration?.showNotification) notificationRegistration = registration;
+    }).catch(() => {});
+  }
   const display = $('#timer-display', root);
   const persist = () => { try { localStorage.setItem(storageKey, JSON.stringify({ settings, completed, focusMilliseconds, focusElapsedThisPhase })); } catch {} };
   const getDuration = (selectedMode = mode, selectedPhase = phase) => {
