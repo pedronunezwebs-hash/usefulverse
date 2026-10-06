@@ -7,7 +7,7 @@ Browser-first collection of fast, private, static tools for everyday work.
 - Processing happens in the browser whenever possible.
 - No account, upload or paid API is required.
 - Each useful tool gets its own stable, indexable URL.
-- The current catalog contains 259 browser-first tools across writing, data, developer, SEO, design, privacy, text, files, productivity, education, music, games, accessibility and CSS design.
+- The current catalog contains 277 browser-first tools across writing, data, developer, SEO, design, privacy, text, files, productivity, education, music, games, accessibility, planning and CSS design.
 - The public build is static and deployable to Cloudflare Pages.
 - CSS and JavaScript URLs are content-versioned during the build so CDN caches cannot serve an old runtime after a deploy.
 - HTML uses short browser and edge cache lifetimes; versioned assets remain immutable for repeat visits.
@@ -32,7 +32,7 @@ Russian (`/ru/`), Urdu (`/ur/`), Turkish (`/tr/`), Vietnamese (`/vi/`), Italian
 Dutch (`/nl/`), Greek (`/el/`), Malay (`/ms/`), Polish (`/pl/`), Swedish
 (`/sv/`), Thai (`/th/`), Ukrainian (`/uk/`), Swahili (`/sw/`), Marathi (`/mr/`),
 Telugu (`/te/`), Hausa (`/ha/`), Filipino (`/tl/`), Tamil (`/ta/`), Persian
-(`/fa/`), Amharic (`/am/`) and Gujarati (`/gu/`). Each of the 259 tools has a
+(`/fa/`), Amharic (`/am/`) and Gujarati (`/gu/`). Each of the 277 tools has a
 matching URL in every language. Newer language packs use concise machine-assisted
 translations accepted by the owner; they are not represented as native-reviewed.
 The build creates every version as static HTML, adds
@@ -54,9 +54,21 @@ engine. The recording is not uploaded, although the browser may download those f
 again if its cache is cleared. File processing stays on the visitor's device; memory,
 storage, browser, battery, speed and codec support are practical limits, not a server
 upload-size quota. Heavy media code is loaded only when needed. The generated sitemap
-contains 9,612 URLs: 259 tools and one home page in each of 36 languages, plus seven
+contains 10,260 URLs: 277 tools and one home page in each of 36 languages, plus seven
 guide routes (the guide index and six sourced, task-specific guides) in every language.
 Guides are static HTML and add no server processing or paid API usage.
+
+The latest expansion adds a local audio looper (WAV export), molecule gallery,
+photo mosaic and square-tile photo puzzle, text-focused EPUB reader and EPUB
+metadata editor, two-player backgammon, a seven-piece tangram, and a simple
+single-staff music-score editor. Room Planner adds a measured, browser-only room
+layout with SVG export. These tools have explicit scope limits: the EPUB reader
+extracts text rather than rendering every book feature; EPUB metadata edits create
+a separate copy; the image “jigsaw” uses square tiles rather than interlocking
+pieces; tangram targets are a small fixed set; backgammon is local two-player; and
+music notation is intentionally basic. File work stays on-device, so memory,
+browser support and device speed still matter; these are not claims of universal
+file compatibility.
 
 Local browser games include randomly generated Kakuro puzzles and an 8×8 Battleship
 game against a simple opponent. The color-vision simulator processes raster images
@@ -255,7 +267,7 @@ same `dist/sitemap.xml` that is deployed, so it includes every localized route.
 
 <!-- BEGIN GENERATED SITEMAP URL INVENTORY -->
 
-Generated from `dist/sitemap.xml`: **9,900 canonical URLs**.
+Generated from `dist/sitemap.xml`: **10,260 canonical URLs**.
 
 ```text
 https://usefulverse.com/
@@ -359,6 +371,7 @@ https://usefulverse.com/tools/image-metadata-remover/
 https://usefulverse.com/tools/gif-maker/
 https://usefulverse.com/tools/screen-recorder/
 https://usefulverse.com/tools/voice-recorder/
+https://usefulverse.com/tools/room-planner/
 https://usefulverse.com/tools/go-game/
 https://usefulverse.com/tools/mahjong-solitaire/
 https://usefulverse.com/tools/periodic-table/
@@ -526,6 +539,15 @@ https://usefulverse.com/tools/printable-label-maker/
 https://usefulverse.com/tools/poster-maker/
 https://usefulverse.com/tools/certificate-maker/
 https://usefulverse.com/tools/invitation-maker/
+https://usefulverse.com/tools/audio-looper/
+https://usefulverse.com/tools/molecule-viewer/
+https://usefulverse.com/tools/photo-mosaic-maker/
+https://usefulverse.com/tools/epub-reader/
+https://usefulverse.com/tools/epub-metadata-editor/
+https://usefulverse.com/tools/backgammon/
+https://usefulverse.com/tools/tangram/
+https://usefulverse.com/tools/jigsaw-puzzle/
+https://usefulverse.com/tools/music-score-editor/
 https://usefulverse.com/es/
 https://usefulverse.com/es/tools/word-counter/
 https://usefulverse.com/es/tools/text-case-converter/
@@ -627,6 +649,7 @@ https://usefulverse.com/es/tools/image-metadata-remover/
 https://usefulverse.com/es/tools/gif-maker/
 https://usefulverse.com/es/tools/screen-recorder/
 https://usefulverse.com/es/tools/voice-recorder/
+https://usefulverse.com/es/tools/room-planner/
 https://usefulverse.com/es/tools/go-game/
 https://usefulverse.com/es/tools/mahjong-solitaire/
 https://usefulverse.com/es/tools/periodic-table/
@@ -794,6 +817,15 @@ https://usefulverse.com/es/tools/printable-label-maker/
 https://usefulverse.com/es/tools/poster-maker/
 https://usefulverse.com/es/tools/certificate-maker/
 https://usefulverse.com/es/tools/invitation-maker/
+https://usefulverse.com/es/tools/audio-looper/
+https://usefulverse.com/es/tools/molecule-viewer/
+https://usefulverse.com/es/tools/photo-mosaic-maker/
+https://usefulverse.com/es/tools/epub-reader/
+https://usefulverse.com/es/tools/epub-metadata-editor/
+https://usefulverse.com/es/tools/backgammon/
+https://usefulverse.com/es/tools/tangram/
+https://usefulverse.com/es/tools/jigsaw-puzzle/
+https://usefulverse.com/es/tools/music-score-editor/
 https://usefulverse.com/fr/
 https://usefulverse.com/fr/tools/word-counter/
 https://usefulverse.com/fr/tools/text-case-converter/
@@ -895,6 +927,7 @@ https://usefulverse.com/fr/tools/image-metadata-remover/
 https://usefulverse.com/fr/tools/gif-maker/
 https://usefulverse.com/fr/tools/screen-recorder/
 https://usefulverse.com/fr/tools/voice-recorder/
+https://usefulverse.com/fr/tools/room-planner/
 https://usefulverse.com/fr/tools/go-game/
 https://usefulverse.com/fr/tools/mahjong-solitaire/
 https://usefulverse.com/fr/tools/periodic-table/
@@ -1062,6 +1095,15 @@ https://usefulverse.com/fr/tools/printable-label-maker/
 https://usefulverse.com/fr/tools/poster-maker/
 https://usefulverse.com/fr/tools/certificate-maker/
 https://usefulverse.com/fr/tools/invitation-maker/
+https://usefulverse.com/fr/tools/audio-looper/
+https://usefulverse.com/fr/tools/molecule-viewer/
+https://usefulverse.com/fr/tools/photo-mosaic-maker/
+https://usefulverse.com/fr/tools/epub-reader/
+https://usefulverse.com/fr/tools/epub-metadata-editor/
+https://usefulverse.com/fr/tools/backgammon/
+https://usefulverse.com/fr/tools/tangram/
+https://usefulverse.com/fr/tools/jigsaw-puzzle/
+https://usefulverse.com/fr/tools/music-score-editor/
 https://usefulverse.com/pt-br/
 https://usefulverse.com/pt-br/tools/word-counter/
 https://usefulverse.com/pt-br/tools/text-case-converter/
@@ -1163,6 +1205,7 @@ https://usefulverse.com/pt-br/tools/image-metadata-remover/
 https://usefulverse.com/pt-br/tools/gif-maker/
 https://usefulverse.com/pt-br/tools/screen-recorder/
 https://usefulverse.com/pt-br/tools/voice-recorder/
+https://usefulverse.com/pt-br/tools/room-planner/
 https://usefulverse.com/pt-br/tools/go-game/
 https://usefulverse.com/pt-br/tools/mahjong-solitaire/
 https://usefulverse.com/pt-br/tools/periodic-table/
@@ -1330,6 +1373,15 @@ https://usefulverse.com/pt-br/tools/printable-label-maker/
 https://usefulverse.com/pt-br/tools/poster-maker/
 https://usefulverse.com/pt-br/tools/certificate-maker/
 https://usefulverse.com/pt-br/tools/invitation-maker/
+https://usefulverse.com/pt-br/tools/audio-looper/
+https://usefulverse.com/pt-br/tools/molecule-viewer/
+https://usefulverse.com/pt-br/tools/photo-mosaic-maker/
+https://usefulverse.com/pt-br/tools/epub-reader/
+https://usefulverse.com/pt-br/tools/epub-metadata-editor/
+https://usefulverse.com/pt-br/tools/backgammon/
+https://usefulverse.com/pt-br/tools/tangram/
+https://usefulverse.com/pt-br/tools/jigsaw-puzzle/
+https://usefulverse.com/pt-br/tools/music-score-editor/
 https://usefulverse.com/de/
 https://usefulverse.com/de/tools/word-counter/
 https://usefulverse.com/de/tools/text-case-converter/
@@ -1431,6 +1483,7 @@ https://usefulverse.com/de/tools/image-metadata-remover/
 https://usefulverse.com/de/tools/gif-maker/
 https://usefulverse.com/de/tools/screen-recorder/
 https://usefulverse.com/de/tools/voice-recorder/
+https://usefulverse.com/de/tools/room-planner/
 https://usefulverse.com/de/tools/go-game/
 https://usefulverse.com/de/tools/mahjong-solitaire/
 https://usefulverse.com/de/tools/periodic-table/
@@ -1598,6 +1651,15 @@ https://usefulverse.com/de/tools/printable-label-maker/
 https://usefulverse.com/de/tools/poster-maker/
 https://usefulverse.com/de/tools/certificate-maker/
 https://usefulverse.com/de/tools/invitation-maker/
+https://usefulverse.com/de/tools/audio-looper/
+https://usefulverse.com/de/tools/molecule-viewer/
+https://usefulverse.com/de/tools/photo-mosaic-maker/
+https://usefulverse.com/de/tools/epub-reader/
+https://usefulverse.com/de/tools/epub-metadata-editor/
+https://usefulverse.com/de/tools/backgammon/
+https://usefulverse.com/de/tools/tangram/
+https://usefulverse.com/de/tools/jigsaw-puzzle/
+https://usefulverse.com/de/tools/music-score-editor/
 https://usefulverse.com/ja/
 https://usefulverse.com/ja/tools/word-counter/
 https://usefulverse.com/ja/tools/text-case-converter/
@@ -1699,6 +1761,7 @@ https://usefulverse.com/ja/tools/image-metadata-remover/
 https://usefulverse.com/ja/tools/gif-maker/
 https://usefulverse.com/ja/tools/screen-recorder/
 https://usefulverse.com/ja/tools/voice-recorder/
+https://usefulverse.com/ja/tools/room-planner/
 https://usefulverse.com/ja/tools/go-game/
 https://usefulverse.com/ja/tools/mahjong-solitaire/
 https://usefulverse.com/ja/tools/periodic-table/
@@ -1866,6 +1929,15 @@ https://usefulverse.com/ja/tools/printable-label-maker/
 https://usefulverse.com/ja/tools/poster-maker/
 https://usefulverse.com/ja/tools/certificate-maker/
 https://usefulverse.com/ja/tools/invitation-maker/
+https://usefulverse.com/ja/tools/audio-looper/
+https://usefulverse.com/ja/tools/molecule-viewer/
+https://usefulverse.com/ja/tools/photo-mosaic-maker/
+https://usefulverse.com/ja/tools/epub-reader/
+https://usefulverse.com/ja/tools/epub-metadata-editor/
+https://usefulverse.com/ja/tools/backgammon/
+https://usefulverse.com/ja/tools/tangram/
+https://usefulverse.com/ja/tools/jigsaw-puzzle/
+https://usefulverse.com/ja/tools/music-score-editor/
 https://usefulverse.com/ko/
 https://usefulverse.com/ko/tools/word-counter/
 https://usefulverse.com/ko/tools/text-case-converter/
@@ -1967,6 +2039,7 @@ https://usefulverse.com/ko/tools/image-metadata-remover/
 https://usefulverse.com/ko/tools/gif-maker/
 https://usefulverse.com/ko/tools/screen-recorder/
 https://usefulverse.com/ko/tools/voice-recorder/
+https://usefulverse.com/ko/tools/room-planner/
 https://usefulverse.com/ko/tools/go-game/
 https://usefulverse.com/ko/tools/mahjong-solitaire/
 https://usefulverse.com/ko/tools/periodic-table/
@@ -2134,6 +2207,15 @@ https://usefulverse.com/ko/tools/printable-label-maker/
 https://usefulverse.com/ko/tools/poster-maker/
 https://usefulverse.com/ko/tools/certificate-maker/
 https://usefulverse.com/ko/tools/invitation-maker/
+https://usefulverse.com/ko/tools/audio-looper/
+https://usefulverse.com/ko/tools/molecule-viewer/
+https://usefulverse.com/ko/tools/photo-mosaic-maker/
+https://usefulverse.com/ko/tools/epub-reader/
+https://usefulverse.com/ko/tools/epub-metadata-editor/
+https://usefulverse.com/ko/tools/backgammon/
+https://usefulverse.com/ko/tools/tangram/
+https://usefulverse.com/ko/tools/jigsaw-puzzle/
+https://usefulverse.com/ko/tools/music-score-editor/
 https://usefulverse.com/id/
 https://usefulverse.com/id/tools/word-counter/
 https://usefulverse.com/id/tools/text-case-converter/
@@ -2235,6 +2317,7 @@ https://usefulverse.com/id/tools/image-metadata-remover/
 https://usefulverse.com/id/tools/gif-maker/
 https://usefulverse.com/id/tools/screen-recorder/
 https://usefulverse.com/id/tools/voice-recorder/
+https://usefulverse.com/id/tools/room-planner/
 https://usefulverse.com/id/tools/go-game/
 https://usefulverse.com/id/tools/mahjong-solitaire/
 https://usefulverse.com/id/tools/periodic-table/
@@ -2402,6 +2485,15 @@ https://usefulverse.com/id/tools/printable-label-maker/
 https://usefulverse.com/id/tools/poster-maker/
 https://usefulverse.com/id/tools/certificate-maker/
 https://usefulverse.com/id/tools/invitation-maker/
+https://usefulverse.com/id/tools/audio-looper/
+https://usefulverse.com/id/tools/molecule-viewer/
+https://usefulverse.com/id/tools/photo-mosaic-maker/
+https://usefulverse.com/id/tools/epub-reader/
+https://usefulverse.com/id/tools/epub-metadata-editor/
+https://usefulverse.com/id/tools/backgammon/
+https://usefulverse.com/id/tools/tangram/
+https://usefulverse.com/id/tools/jigsaw-puzzle/
+https://usefulverse.com/id/tools/music-score-editor/
 https://usefulverse.com/hi/
 https://usefulverse.com/hi/tools/word-counter/
 https://usefulverse.com/hi/tools/text-case-converter/
@@ -2503,6 +2595,7 @@ https://usefulverse.com/hi/tools/image-metadata-remover/
 https://usefulverse.com/hi/tools/gif-maker/
 https://usefulverse.com/hi/tools/screen-recorder/
 https://usefulverse.com/hi/tools/voice-recorder/
+https://usefulverse.com/hi/tools/room-planner/
 https://usefulverse.com/hi/tools/go-game/
 https://usefulverse.com/hi/tools/mahjong-solitaire/
 https://usefulverse.com/hi/tools/periodic-table/
@@ -2670,6 +2763,15 @@ https://usefulverse.com/hi/tools/printable-label-maker/
 https://usefulverse.com/hi/tools/poster-maker/
 https://usefulverse.com/hi/tools/certificate-maker/
 https://usefulverse.com/hi/tools/invitation-maker/
+https://usefulverse.com/hi/tools/audio-looper/
+https://usefulverse.com/hi/tools/molecule-viewer/
+https://usefulverse.com/hi/tools/photo-mosaic-maker/
+https://usefulverse.com/hi/tools/epub-reader/
+https://usefulverse.com/hi/tools/epub-metadata-editor/
+https://usefulverse.com/hi/tools/backgammon/
+https://usefulverse.com/hi/tools/tangram/
+https://usefulverse.com/hi/tools/jigsaw-puzzle/
+https://usefulverse.com/hi/tools/music-score-editor/
 https://usefulverse.com/ar/
 https://usefulverse.com/ar/tools/word-counter/
 https://usefulverse.com/ar/tools/text-case-converter/
@@ -2771,6 +2873,7 @@ https://usefulverse.com/ar/tools/image-metadata-remover/
 https://usefulverse.com/ar/tools/gif-maker/
 https://usefulverse.com/ar/tools/screen-recorder/
 https://usefulverse.com/ar/tools/voice-recorder/
+https://usefulverse.com/ar/tools/room-planner/
 https://usefulverse.com/ar/tools/go-game/
 https://usefulverse.com/ar/tools/mahjong-solitaire/
 https://usefulverse.com/ar/tools/periodic-table/
@@ -2938,6 +3041,15 @@ https://usefulverse.com/ar/tools/printable-label-maker/
 https://usefulverse.com/ar/tools/poster-maker/
 https://usefulverse.com/ar/tools/certificate-maker/
 https://usefulverse.com/ar/tools/invitation-maker/
+https://usefulverse.com/ar/tools/audio-looper/
+https://usefulverse.com/ar/tools/molecule-viewer/
+https://usefulverse.com/ar/tools/photo-mosaic-maker/
+https://usefulverse.com/ar/tools/epub-reader/
+https://usefulverse.com/ar/tools/epub-metadata-editor/
+https://usefulverse.com/ar/tools/backgammon/
+https://usefulverse.com/ar/tools/tangram/
+https://usefulverse.com/ar/tools/jigsaw-puzzle/
+https://usefulverse.com/ar/tools/music-score-editor/
 https://usefulverse.com/zh-cn/
 https://usefulverse.com/zh-cn/tools/word-counter/
 https://usefulverse.com/zh-cn/tools/text-case-converter/
@@ -3039,6 +3151,7 @@ https://usefulverse.com/zh-cn/tools/image-metadata-remover/
 https://usefulverse.com/zh-cn/tools/gif-maker/
 https://usefulverse.com/zh-cn/tools/screen-recorder/
 https://usefulverse.com/zh-cn/tools/voice-recorder/
+https://usefulverse.com/zh-cn/tools/room-planner/
 https://usefulverse.com/zh-cn/tools/go-game/
 https://usefulverse.com/zh-cn/tools/mahjong-solitaire/
 https://usefulverse.com/zh-cn/tools/periodic-table/
@@ -3206,6 +3319,15 @@ https://usefulverse.com/zh-cn/tools/printable-label-maker/
 https://usefulverse.com/zh-cn/tools/poster-maker/
 https://usefulverse.com/zh-cn/tools/certificate-maker/
 https://usefulverse.com/zh-cn/tools/invitation-maker/
+https://usefulverse.com/zh-cn/tools/audio-looper/
+https://usefulverse.com/zh-cn/tools/molecule-viewer/
+https://usefulverse.com/zh-cn/tools/photo-mosaic-maker/
+https://usefulverse.com/zh-cn/tools/epub-reader/
+https://usefulverse.com/zh-cn/tools/epub-metadata-editor/
+https://usefulverse.com/zh-cn/tools/backgammon/
+https://usefulverse.com/zh-cn/tools/tangram/
+https://usefulverse.com/zh-cn/tools/jigsaw-puzzle/
+https://usefulverse.com/zh-cn/tools/music-score-editor/
 https://usefulverse.com/bn/
 https://usefulverse.com/bn/tools/word-counter/
 https://usefulverse.com/bn/tools/text-case-converter/
@@ -3307,6 +3429,7 @@ https://usefulverse.com/bn/tools/image-metadata-remover/
 https://usefulverse.com/bn/tools/gif-maker/
 https://usefulverse.com/bn/tools/screen-recorder/
 https://usefulverse.com/bn/tools/voice-recorder/
+https://usefulverse.com/bn/tools/room-planner/
 https://usefulverse.com/bn/tools/go-game/
 https://usefulverse.com/bn/tools/mahjong-solitaire/
 https://usefulverse.com/bn/tools/periodic-table/
@@ -3474,6 +3597,15 @@ https://usefulverse.com/bn/tools/printable-label-maker/
 https://usefulverse.com/bn/tools/poster-maker/
 https://usefulverse.com/bn/tools/certificate-maker/
 https://usefulverse.com/bn/tools/invitation-maker/
+https://usefulverse.com/bn/tools/audio-looper/
+https://usefulverse.com/bn/tools/molecule-viewer/
+https://usefulverse.com/bn/tools/photo-mosaic-maker/
+https://usefulverse.com/bn/tools/epub-reader/
+https://usefulverse.com/bn/tools/epub-metadata-editor/
+https://usefulverse.com/bn/tools/backgammon/
+https://usefulverse.com/bn/tools/tangram/
+https://usefulverse.com/bn/tools/jigsaw-puzzle/
+https://usefulverse.com/bn/tools/music-score-editor/
 https://usefulverse.com/ru/
 https://usefulverse.com/ru/tools/word-counter/
 https://usefulverse.com/ru/tools/text-case-converter/
@@ -3575,6 +3707,7 @@ https://usefulverse.com/ru/tools/image-metadata-remover/
 https://usefulverse.com/ru/tools/gif-maker/
 https://usefulverse.com/ru/tools/screen-recorder/
 https://usefulverse.com/ru/tools/voice-recorder/
+https://usefulverse.com/ru/tools/room-planner/
 https://usefulverse.com/ru/tools/go-game/
 https://usefulverse.com/ru/tools/mahjong-solitaire/
 https://usefulverse.com/ru/tools/periodic-table/
@@ -3742,6 +3875,15 @@ https://usefulverse.com/ru/tools/printable-label-maker/
 https://usefulverse.com/ru/tools/poster-maker/
 https://usefulverse.com/ru/tools/certificate-maker/
 https://usefulverse.com/ru/tools/invitation-maker/
+https://usefulverse.com/ru/tools/audio-looper/
+https://usefulverse.com/ru/tools/molecule-viewer/
+https://usefulverse.com/ru/tools/photo-mosaic-maker/
+https://usefulverse.com/ru/tools/epub-reader/
+https://usefulverse.com/ru/tools/epub-metadata-editor/
+https://usefulverse.com/ru/tools/backgammon/
+https://usefulverse.com/ru/tools/tangram/
+https://usefulverse.com/ru/tools/jigsaw-puzzle/
+https://usefulverse.com/ru/tools/music-score-editor/
 https://usefulverse.com/ur/
 https://usefulverse.com/ur/tools/word-counter/
 https://usefulverse.com/ur/tools/text-case-converter/
@@ -3843,6 +3985,7 @@ https://usefulverse.com/ur/tools/image-metadata-remover/
 https://usefulverse.com/ur/tools/gif-maker/
 https://usefulverse.com/ur/tools/screen-recorder/
 https://usefulverse.com/ur/tools/voice-recorder/
+https://usefulverse.com/ur/tools/room-planner/
 https://usefulverse.com/ur/tools/go-game/
 https://usefulverse.com/ur/tools/mahjong-solitaire/
 https://usefulverse.com/ur/tools/periodic-table/
@@ -4010,6 +4153,15 @@ https://usefulverse.com/ur/tools/printable-label-maker/
 https://usefulverse.com/ur/tools/poster-maker/
 https://usefulverse.com/ur/tools/certificate-maker/
 https://usefulverse.com/ur/tools/invitation-maker/
+https://usefulverse.com/ur/tools/audio-looper/
+https://usefulverse.com/ur/tools/molecule-viewer/
+https://usefulverse.com/ur/tools/photo-mosaic-maker/
+https://usefulverse.com/ur/tools/epub-reader/
+https://usefulverse.com/ur/tools/epub-metadata-editor/
+https://usefulverse.com/ur/tools/backgammon/
+https://usefulverse.com/ur/tools/tangram/
+https://usefulverse.com/ur/tools/jigsaw-puzzle/
+https://usefulverse.com/ur/tools/music-score-editor/
 https://usefulverse.com/tr/
 https://usefulverse.com/tr/tools/word-counter/
 https://usefulverse.com/tr/tools/text-case-converter/
@@ -4111,6 +4263,7 @@ https://usefulverse.com/tr/tools/image-metadata-remover/
 https://usefulverse.com/tr/tools/gif-maker/
 https://usefulverse.com/tr/tools/screen-recorder/
 https://usefulverse.com/tr/tools/voice-recorder/
+https://usefulverse.com/tr/tools/room-planner/
 https://usefulverse.com/tr/tools/go-game/
 https://usefulverse.com/tr/tools/mahjong-solitaire/
 https://usefulverse.com/tr/tools/periodic-table/
@@ -4278,6 +4431,15 @@ https://usefulverse.com/tr/tools/printable-label-maker/
 https://usefulverse.com/tr/tools/poster-maker/
 https://usefulverse.com/tr/tools/certificate-maker/
 https://usefulverse.com/tr/tools/invitation-maker/
+https://usefulverse.com/tr/tools/audio-looper/
+https://usefulverse.com/tr/tools/molecule-viewer/
+https://usefulverse.com/tr/tools/photo-mosaic-maker/
+https://usefulverse.com/tr/tools/epub-reader/
+https://usefulverse.com/tr/tools/epub-metadata-editor/
+https://usefulverse.com/tr/tools/backgammon/
+https://usefulverse.com/tr/tools/tangram/
+https://usefulverse.com/tr/tools/jigsaw-puzzle/
+https://usefulverse.com/tr/tools/music-score-editor/
 https://usefulverse.com/vi/
 https://usefulverse.com/vi/tools/word-counter/
 https://usefulverse.com/vi/tools/text-case-converter/
@@ -4379,6 +4541,7 @@ https://usefulverse.com/vi/tools/image-metadata-remover/
 https://usefulverse.com/vi/tools/gif-maker/
 https://usefulverse.com/vi/tools/screen-recorder/
 https://usefulverse.com/vi/tools/voice-recorder/
+https://usefulverse.com/vi/tools/room-planner/
 https://usefulverse.com/vi/tools/go-game/
 https://usefulverse.com/vi/tools/mahjong-solitaire/
 https://usefulverse.com/vi/tools/periodic-table/
@@ -4546,6 +4709,15 @@ https://usefulverse.com/vi/tools/printable-label-maker/
 https://usefulverse.com/vi/tools/poster-maker/
 https://usefulverse.com/vi/tools/certificate-maker/
 https://usefulverse.com/vi/tools/invitation-maker/
+https://usefulverse.com/vi/tools/audio-looper/
+https://usefulverse.com/vi/tools/molecule-viewer/
+https://usefulverse.com/vi/tools/photo-mosaic-maker/
+https://usefulverse.com/vi/tools/epub-reader/
+https://usefulverse.com/vi/tools/epub-metadata-editor/
+https://usefulverse.com/vi/tools/backgammon/
+https://usefulverse.com/vi/tools/tangram/
+https://usefulverse.com/vi/tools/jigsaw-puzzle/
+https://usefulverse.com/vi/tools/music-score-editor/
 https://usefulverse.com/it/
 https://usefulverse.com/it/tools/word-counter/
 https://usefulverse.com/it/tools/text-case-converter/
@@ -4647,6 +4819,7 @@ https://usefulverse.com/it/tools/image-metadata-remover/
 https://usefulverse.com/it/tools/gif-maker/
 https://usefulverse.com/it/tools/screen-recorder/
 https://usefulverse.com/it/tools/voice-recorder/
+https://usefulverse.com/it/tools/room-planner/
 https://usefulverse.com/it/tools/go-game/
 https://usefulverse.com/it/tools/mahjong-solitaire/
 https://usefulverse.com/it/tools/periodic-table/
@@ -4814,6 +4987,15 @@ https://usefulverse.com/it/tools/printable-label-maker/
 https://usefulverse.com/it/tools/poster-maker/
 https://usefulverse.com/it/tools/certificate-maker/
 https://usefulverse.com/it/tools/invitation-maker/
+https://usefulverse.com/it/tools/audio-looper/
+https://usefulverse.com/it/tools/molecule-viewer/
+https://usefulverse.com/it/tools/photo-mosaic-maker/
+https://usefulverse.com/it/tools/epub-reader/
+https://usefulverse.com/it/tools/epub-metadata-editor/
+https://usefulverse.com/it/tools/backgammon/
+https://usefulverse.com/it/tools/tangram/
+https://usefulverse.com/it/tools/jigsaw-puzzle/
+https://usefulverse.com/it/tools/music-score-editor/
 https://usefulverse.com/zh-tw/
 https://usefulverse.com/zh-tw/tools/word-counter/
 https://usefulverse.com/zh-tw/tools/text-case-converter/
@@ -4915,6 +5097,7 @@ https://usefulverse.com/zh-tw/tools/image-metadata-remover/
 https://usefulverse.com/zh-tw/tools/gif-maker/
 https://usefulverse.com/zh-tw/tools/screen-recorder/
 https://usefulverse.com/zh-tw/tools/voice-recorder/
+https://usefulverse.com/zh-tw/tools/room-planner/
 https://usefulverse.com/zh-tw/tools/go-game/
 https://usefulverse.com/zh-tw/tools/mahjong-solitaire/
 https://usefulverse.com/zh-tw/tools/periodic-table/
@@ -5082,6 +5265,15 @@ https://usefulverse.com/zh-tw/tools/printable-label-maker/
 https://usefulverse.com/zh-tw/tools/poster-maker/
 https://usefulverse.com/zh-tw/tools/certificate-maker/
 https://usefulverse.com/zh-tw/tools/invitation-maker/
+https://usefulverse.com/zh-tw/tools/audio-looper/
+https://usefulverse.com/zh-tw/tools/molecule-viewer/
+https://usefulverse.com/zh-tw/tools/photo-mosaic-maker/
+https://usefulverse.com/zh-tw/tools/epub-reader/
+https://usefulverse.com/zh-tw/tools/epub-metadata-editor/
+https://usefulverse.com/zh-tw/tools/backgammon/
+https://usefulverse.com/zh-tw/tools/tangram/
+https://usefulverse.com/zh-tw/tools/jigsaw-puzzle/
+https://usefulverse.com/zh-tw/tools/music-score-editor/
 https://usefulverse.com/bg/
 https://usefulverse.com/bg/tools/word-counter/
 https://usefulverse.com/bg/tools/text-case-converter/
@@ -5183,6 +5375,7 @@ https://usefulverse.com/bg/tools/image-metadata-remover/
 https://usefulverse.com/bg/tools/gif-maker/
 https://usefulverse.com/bg/tools/screen-recorder/
 https://usefulverse.com/bg/tools/voice-recorder/
+https://usefulverse.com/bg/tools/room-planner/
 https://usefulverse.com/bg/tools/go-game/
 https://usefulverse.com/bg/tools/mahjong-solitaire/
 https://usefulverse.com/bg/tools/periodic-table/
@@ -5350,6 +5543,15 @@ https://usefulverse.com/bg/tools/printable-label-maker/
 https://usefulverse.com/bg/tools/poster-maker/
 https://usefulverse.com/bg/tools/certificate-maker/
 https://usefulverse.com/bg/tools/invitation-maker/
+https://usefulverse.com/bg/tools/audio-looper/
+https://usefulverse.com/bg/tools/molecule-viewer/
+https://usefulverse.com/bg/tools/photo-mosaic-maker/
+https://usefulverse.com/bg/tools/epub-reader/
+https://usefulverse.com/bg/tools/epub-metadata-editor/
+https://usefulverse.com/bg/tools/backgammon/
+https://usefulverse.com/bg/tools/tangram/
+https://usefulverse.com/bg/tools/jigsaw-puzzle/
+https://usefulverse.com/bg/tools/music-score-editor/
 https://usefulverse.com/ca/
 https://usefulverse.com/ca/tools/word-counter/
 https://usefulverse.com/ca/tools/text-case-converter/
@@ -5451,6 +5653,7 @@ https://usefulverse.com/ca/tools/image-metadata-remover/
 https://usefulverse.com/ca/tools/gif-maker/
 https://usefulverse.com/ca/tools/screen-recorder/
 https://usefulverse.com/ca/tools/voice-recorder/
+https://usefulverse.com/ca/tools/room-planner/
 https://usefulverse.com/ca/tools/go-game/
 https://usefulverse.com/ca/tools/mahjong-solitaire/
 https://usefulverse.com/ca/tools/periodic-table/
@@ -5618,6 +5821,15 @@ https://usefulverse.com/ca/tools/printable-label-maker/
 https://usefulverse.com/ca/tools/poster-maker/
 https://usefulverse.com/ca/tools/certificate-maker/
 https://usefulverse.com/ca/tools/invitation-maker/
+https://usefulverse.com/ca/tools/audio-looper/
+https://usefulverse.com/ca/tools/molecule-viewer/
+https://usefulverse.com/ca/tools/photo-mosaic-maker/
+https://usefulverse.com/ca/tools/epub-reader/
+https://usefulverse.com/ca/tools/epub-metadata-editor/
+https://usefulverse.com/ca/tools/backgammon/
+https://usefulverse.com/ca/tools/tangram/
+https://usefulverse.com/ca/tools/jigsaw-puzzle/
+https://usefulverse.com/ca/tools/music-score-editor/
 https://usefulverse.com/nl/
 https://usefulverse.com/nl/tools/word-counter/
 https://usefulverse.com/nl/tools/text-case-converter/
@@ -5719,6 +5931,7 @@ https://usefulverse.com/nl/tools/image-metadata-remover/
 https://usefulverse.com/nl/tools/gif-maker/
 https://usefulverse.com/nl/tools/screen-recorder/
 https://usefulverse.com/nl/tools/voice-recorder/
+https://usefulverse.com/nl/tools/room-planner/
 https://usefulverse.com/nl/tools/go-game/
 https://usefulverse.com/nl/tools/mahjong-solitaire/
 https://usefulverse.com/nl/tools/periodic-table/
@@ -5886,6 +6099,15 @@ https://usefulverse.com/nl/tools/printable-label-maker/
 https://usefulverse.com/nl/tools/poster-maker/
 https://usefulverse.com/nl/tools/certificate-maker/
 https://usefulverse.com/nl/tools/invitation-maker/
+https://usefulverse.com/nl/tools/audio-looper/
+https://usefulverse.com/nl/tools/molecule-viewer/
+https://usefulverse.com/nl/tools/photo-mosaic-maker/
+https://usefulverse.com/nl/tools/epub-reader/
+https://usefulverse.com/nl/tools/epub-metadata-editor/
+https://usefulverse.com/nl/tools/backgammon/
+https://usefulverse.com/nl/tools/tangram/
+https://usefulverse.com/nl/tools/jigsaw-puzzle/
+https://usefulverse.com/nl/tools/music-score-editor/
 https://usefulverse.com/el/
 https://usefulverse.com/el/tools/word-counter/
 https://usefulverse.com/el/tools/text-case-converter/
@@ -5987,6 +6209,7 @@ https://usefulverse.com/el/tools/image-metadata-remover/
 https://usefulverse.com/el/tools/gif-maker/
 https://usefulverse.com/el/tools/screen-recorder/
 https://usefulverse.com/el/tools/voice-recorder/
+https://usefulverse.com/el/tools/room-planner/
 https://usefulverse.com/el/tools/go-game/
 https://usefulverse.com/el/tools/mahjong-solitaire/
 https://usefulverse.com/el/tools/periodic-table/
@@ -6154,6 +6377,15 @@ https://usefulverse.com/el/tools/printable-label-maker/
 https://usefulverse.com/el/tools/poster-maker/
 https://usefulverse.com/el/tools/certificate-maker/
 https://usefulverse.com/el/tools/invitation-maker/
+https://usefulverse.com/el/tools/audio-looper/
+https://usefulverse.com/el/tools/molecule-viewer/
+https://usefulverse.com/el/tools/photo-mosaic-maker/
+https://usefulverse.com/el/tools/epub-reader/
+https://usefulverse.com/el/tools/epub-metadata-editor/
+https://usefulverse.com/el/tools/backgammon/
+https://usefulverse.com/el/tools/tangram/
+https://usefulverse.com/el/tools/jigsaw-puzzle/
+https://usefulverse.com/el/tools/music-score-editor/
 https://usefulverse.com/ms/
 https://usefulverse.com/ms/tools/word-counter/
 https://usefulverse.com/ms/tools/text-case-converter/
@@ -6255,6 +6487,7 @@ https://usefulverse.com/ms/tools/image-metadata-remover/
 https://usefulverse.com/ms/tools/gif-maker/
 https://usefulverse.com/ms/tools/screen-recorder/
 https://usefulverse.com/ms/tools/voice-recorder/
+https://usefulverse.com/ms/tools/room-planner/
 https://usefulverse.com/ms/tools/go-game/
 https://usefulverse.com/ms/tools/mahjong-solitaire/
 https://usefulverse.com/ms/tools/periodic-table/
@@ -6422,6 +6655,15 @@ https://usefulverse.com/ms/tools/printable-label-maker/
 https://usefulverse.com/ms/tools/poster-maker/
 https://usefulverse.com/ms/tools/certificate-maker/
 https://usefulverse.com/ms/tools/invitation-maker/
+https://usefulverse.com/ms/tools/audio-looper/
+https://usefulverse.com/ms/tools/molecule-viewer/
+https://usefulverse.com/ms/tools/photo-mosaic-maker/
+https://usefulverse.com/ms/tools/epub-reader/
+https://usefulverse.com/ms/tools/epub-metadata-editor/
+https://usefulverse.com/ms/tools/backgammon/
+https://usefulverse.com/ms/tools/tangram/
+https://usefulverse.com/ms/tools/jigsaw-puzzle/
+https://usefulverse.com/ms/tools/music-score-editor/
 https://usefulverse.com/pl/
 https://usefulverse.com/pl/tools/word-counter/
 https://usefulverse.com/pl/tools/text-case-converter/
@@ -6523,6 +6765,7 @@ https://usefulverse.com/pl/tools/image-metadata-remover/
 https://usefulverse.com/pl/tools/gif-maker/
 https://usefulverse.com/pl/tools/screen-recorder/
 https://usefulverse.com/pl/tools/voice-recorder/
+https://usefulverse.com/pl/tools/room-planner/
 https://usefulverse.com/pl/tools/go-game/
 https://usefulverse.com/pl/tools/mahjong-solitaire/
 https://usefulverse.com/pl/tools/periodic-table/
@@ -6690,6 +6933,15 @@ https://usefulverse.com/pl/tools/printable-label-maker/
 https://usefulverse.com/pl/tools/poster-maker/
 https://usefulverse.com/pl/tools/certificate-maker/
 https://usefulverse.com/pl/tools/invitation-maker/
+https://usefulverse.com/pl/tools/audio-looper/
+https://usefulverse.com/pl/tools/molecule-viewer/
+https://usefulverse.com/pl/tools/photo-mosaic-maker/
+https://usefulverse.com/pl/tools/epub-reader/
+https://usefulverse.com/pl/tools/epub-metadata-editor/
+https://usefulverse.com/pl/tools/backgammon/
+https://usefulverse.com/pl/tools/tangram/
+https://usefulverse.com/pl/tools/jigsaw-puzzle/
+https://usefulverse.com/pl/tools/music-score-editor/
 https://usefulverse.com/sv/
 https://usefulverse.com/sv/tools/word-counter/
 https://usefulverse.com/sv/tools/text-case-converter/
@@ -6791,6 +7043,7 @@ https://usefulverse.com/sv/tools/image-metadata-remover/
 https://usefulverse.com/sv/tools/gif-maker/
 https://usefulverse.com/sv/tools/screen-recorder/
 https://usefulverse.com/sv/tools/voice-recorder/
+https://usefulverse.com/sv/tools/room-planner/
 https://usefulverse.com/sv/tools/go-game/
 https://usefulverse.com/sv/tools/mahjong-solitaire/
 https://usefulverse.com/sv/tools/periodic-table/
@@ -6958,6 +7211,15 @@ https://usefulverse.com/sv/tools/printable-label-maker/
 https://usefulverse.com/sv/tools/poster-maker/
 https://usefulverse.com/sv/tools/certificate-maker/
 https://usefulverse.com/sv/tools/invitation-maker/
+https://usefulverse.com/sv/tools/audio-looper/
+https://usefulverse.com/sv/tools/molecule-viewer/
+https://usefulverse.com/sv/tools/photo-mosaic-maker/
+https://usefulverse.com/sv/tools/epub-reader/
+https://usefulverse.com/sv/tools/epub-metadata-editor/
+https://usefulverse.com/sv/tools/backgammon/
+https://usefulverse.com/sv/tools/tangram/
+https://usefulverse.com/sv/tools/jigsaw-puzzle/
+https://usefulverse.com/sv/tools/music-score-editor/
 https://usefulverse.com/th/
 https://usefulverse.com/th/tools/word-counter/
 https://usefulverse.com/th/tools/text-case-converter/
@@ -7059,6 +7321,7 @@ https://usefulverse.com/th/tools/image-metadata-remover/
 https://usefulverse.com/th/tools/gif-maker/
 https://usefulverse.com/th/tools/screen-recorder/
 https://usefulverse.com/th/tools/voice-recorder/
+https://usefulverse.com/th/tools/room-planner/
 https://usefulverse.com/th/tools/go-game/
 https://usefulverse.com/th/tools/mahjong-solitaire/
 https://usefulverse.com/th/tools/periodic-table/
@@ -7226,6 +7489,15 @@ https://usefulverse.com/th/tools/printable-label-maker/
 https://usefulverse.com/th/tools/poster-maker/
 https://usefulverse.com/th/tools/certificate-maker/
 https://usefulverse.com/th/tools/invitation-maker/
+https://usefulverse.com/th/tools/audio-looper/
+https://usefulverse.com/th/tools/molecule-viewer/
+https://usefulverse.com/th/tools/photo-mosaic-maker/
+https://usefulverse.com/th/tools/epub-reader/
+https://usefulverse.com/th/tools/epub-metadata-editor/
+https://usefulverse.com/th/tools/backgammon/
+https://usefulverse.com/th/tools/tangram/
+https://usefulverse.com/th/tools/jigsaw-puzzle/
+https://usefulverse.com/th/tools/music-score-editor/
 https://usefulverse.com/uk/
 https://usefulverse.com/uk/tools/word-counter/
 https://usefulverse.com/uk/tools/text-case-converter/
@@ -7327,6 +7599,7 @@ https://usefulverse.com/uk/tools/image-metadata-remover/
 https://usefulverse.com/uk/tools/gif-maker/
 https://usefulverse.com/uk/tools/screen-recorder/
 https://usefulverse.com/uk/tools/voice-recorder/
+https://usefulverse.com/uk/tools/room-planner/
 https://usefulverse.com/uk/tools/go-game/
 https://usefulverse.com/uk/tools/mahjong-solitaire/
 https://usefulverse.com/uk/tools/periodic-table/
@@ -7494,6 +7767,15 @@ https://usefulverse.com/uk/tools/printable-label-maker/
 https://usefulverse.com/uk/tools/poster-maker/
 https://usefulverse.com/uk/tools/certificate-maker/
 https://usefulverse.com/uk/tools/invitation-maker/
+https://usefulverse.com/uk/tools/audio-looper/
+https://usefulverse.com/uk/tools/molecule-viewer/
+https://usefulverse.com/uk/tools/photo-mosaic-maker/
+https://usefulverse.com/uk/tools/epub-reader/
+https://usefulverse.com/uk/tools/epub-metadata-editor/
+https://usefulverse.com/uk/tools/backgammon/
+https://usefulverse.com/uk/tools/tangram/
+https://usefulverse.com/uk/tools/jigsaw-puzzle/
+https://usefulverse.com/uk/tools/music-score-editor/
 https://usefulverse.com/sw/
 https://usefulverse.com/sw/tools/word-counter/
 https://usefulverse.com/sw/tools/text-case-converter/
@@ -7595,6 +7877,7 @@ https://usefulverse.com/sw/tools/image-metadata-remover/
 https://usefulverse.com/sw/tools/gif-maker/
 https://usefulverse.com/sw/tools/screen-recorder/
 https://usefulverse.com/sw/tools/voice-recorder/
+https://usefulverse.com/sw/tools/room-planner/
 https://usefulverse.com/sw/tools/go-game/
 https://usefulverse.com/sw/tools/mahjong-solitaire/
 https://usefulverse.com/sw/tools/periodic-table/
@@ -7762,6 +8045,15 @@ https://usefulverse.com/sw/tools/printable-label-maker/
 https://usefulverse.com/sw/tools/poster-maker/
 https://usefulverse.com/sw/tools/certificate-maker/
 https://usefulverse.com/sw/tools/invitation-maker/
+https://usefulverse.com/sw/tools/audio-looper/
+https://usefulverse.com/sw/tools/molecule-viewer/
+https://usefulverse.com/sw/tools/photo-mosaic-maker/
+https://usefulverse.com/sw/tools/epub-reader/
+https://usefulverse.com/sw/tools/epub-metadata-editor/
+https://usefulverse.com/sw/tools/backgammon/
+https://usefulverse.com/sw/tools/tangram/
+https://usefulverse.com/sw/tools/jigsaw-puzzle/
+https://usefulverse.com/sw/tools/music-score-editor/
 https://usefulverse.com/mr/
 https://usefulverse.com/mr/tools/word-counter/
 https://usefulverse.com/mr/tools/text-case-converter/
@@ -7863,6 +8155,7 @@ https://usefulverse.com/mr/tools/image-metadata-remover/
 https://usefulverse.com/mr/tools/gif-maker/
 https://usefulverse.com/mr/tools/screen-recorder/
 https://usefulverse.com/mr/tools/voice-recorder/
+https://usefulverse.com/mr/tools/room-planner/
 https://usefulverse.com/mr/tools/go-game/
 https://usefulverse.com/mr/tools/mahjong-solitaire/
 https://usefulverse.com/mr/tools/periodic-table/
@@ -8030,6 +8323,15 @@ https://usefulverse.com/mr/tools/printable-label-maker/
 https://usefulverse.com/mr/tools/poster-maker/
 https://usefulverse.com/mr/tools/certificate-maker/
 https://usefulverse.com/mr/tools/invitation-maker/
+https://usefulverse.com/mr/tools/audio-looper/
+https://usefulverse.com/mr/tools/molecule-viewer/
+https://usefulverse.com/mr/tools/photo-mosaic-maker/
+https://usefulverse.com/mr/tools/epub-reader/
+https://usefulverse.com/mr/tools/epub-metadata-editor/
+https://usefulverse.com/mr/tools/backgammon/
+https://usefulverse.com/mr/tools/tangram/
+https://usefulverse.com/mr/tools/jigsaw-puzzle/
+https://usefulverse.com/mr/tools/music-score-editor/
 https://usefulverse.com/te/
 https://usefulverse.com/te/tools/word-counter/
 https://usefulverse.com/te/tools/text-case-converter/
@@ -8131,6 +8433,7 @@ https://usefulverse.com/te/tools/image-metadata-remover/
 https://usefulverse.com/te/tools/gif-maker/
 https://usefulverse.com/te/tools/screen-recorder/
 https://usefulverse.com/te/tools/voice-recorder/
+https://usefulverse.com/te/tools/room-planner/
 https://usefulverse.com/te/tools/go-game/
 https://usefulverse.com/te/tools/mahjong-solitaire/
 https://usefulverse.com/te/tools/periodic-table/
@@ -8298,6 +8601,15 @@ https://usefulverse.com/te/tools/printable-label-maker/
 https://usefulverse.com/te/tools/poster-maker/
 https://usefulverse.com/te/tools/certificate-maker/
 https://usefulverse.com/te/tools/invitation-maker/
+https://usefulverse.com/te/tools/audio-looper/
+https://usefulverse.com/te/tools/molecule-viewer/
+https://usefulverse.com/te/tools/photo-mosaic-maker/
+https://usefulverse.com/te/tools/epub-reader/
+https://usefulverse.com/te/tools/epub-metadata-editor/
+https://usefulverse.com/te/tools/backgammon/
+https://usefulverse.com/te/tools/tangram/
+https://usefulverse.com/te/tools/jigsaw-puzzle/
+https://usefulverse.com/te/tools/music-score-editor/
 https://usefulverse.com/ha/
 https://usefulverse.com/ha/tools/word-counter/
 https://usefulverse.com/ha/tools/text-case-converter/
@@ -8399,6 +8711,7 @@ https://usefulverse.com/ha/tools/image-metadata-remover/
 https://usefulverse.com/ha/tools/gif-maker/
 https://usefulverse.com/ha/tools/screen-recorder/
 https://usefulverse.com/ha/tools/voice-recorder/
+https://usefulverse.com/ha/tools/room-planner/
 https://usefulverse.com/ha/tools/go-game/
 https://usefulverse.com/ha/tools/mahjong-solitaire/
 https://usefulverse.com/ha/tools/periodic-table/
@@ -8566,6 +8879,15 @@ https://usefulverse.com/ha/tools/printable-label-maker/
 https://usefulverse.com/ha/tools/poster-maker/
 https://usefulverse.com/ha/tools/certificate-maker/
 https://usefulverse.com/ha/tools/invitation-maker/
+https://usefulverse.com/ha/tools/audio-looper/
+https://usefulverse.com/ha/tools/molecule-viewer/
+https://usefulverse.com/ha/tools/photo-mosaic-maker/
+https://usefulverse.com/ha/tools/epub-reader/
+https://usefulverse.com/ha/tools/epub-metadata-editor/
+https://usefulverse.com/ha/tools/backgammon/
+https://usefulverse.com/ha/tools/tangram/
+https://usefulverse.com/ha/tools/jigsaw-puzzle/
+https://usefulverse.com/ha/tools/music-score-editor/
 https://usefulverse.com/tl/
 https://usefulverse.com/tl/tools/word-counter/
 https://usefulverse.com/tl/tools/text-case-converter/
@@ -8667,6 +8989,7 @@ https://usefulverse.com/tl/tools/image-metadata-remover/
 https://usefulverse.com/tl/tools/gif-maker/
 https://usefulverse.com/tl/tools/screen-recorder/
 https://usefulverse.com/tl/tools/voice-recorder/
+https://usefulverse.com/tl/tools/room-planner/
 https://usefulverse.com/tl/tools/go-game/
 https://usefulverse.com/tl/tools/mahjong-solitaire/
 https://usefulverse.com/tl/tools/periodic-table/
@@ -8834,6 +9157,15 @@ https://usefulverse.com/tl/tools/printable-label-maker/
 https://usefulverse.com/tl/tools/poster-maker/
 https://usefulverse.com/tl/tools/certificate-maker/
 https://usefulverse.com/tl/tools/invitation-maker/
+https://usefulverse.com/tl/tools/audio-looper/
+https://usefulverse.com/tl/tools/molecule-viewer/
+https://usefulverse.com/tl/tools/photo-mosaic-maker/
+https://usefulverse.com/tl/tools/epub-reader/
+https://usefulverse.com/tl/tools/epub-metadata-editor/
+https://usefulverse.com/tl/tools/backgammon/
+https://usefulverse.com/tl/tools/tangram/
+https://usefulverse.com/tl/tools/jigsaw-puzzle/
+https://usefulverse.com/tl/tools/music-score-editor/
 https://usefulverse.com/ta/
 https://usefulverse.com/ta/tools/word-counter/
 https://usefulverse.com/ta/tools/text-case-converter/
@@ -8935,6 +9267,7 @@ https://usefulverse.com/ta/tools/image-metadata-remover/
 https://usefulverse.com/ta/tools/gif-maker/
 https://usefulverse.com/ta/tools/screen-recorder/
 https://usefulverse.com/ta/tools/voice-recorder/
+https://usefulverse.com/ta/tools/room-planner/
 https://usefulverse.com/ta/tools/go-game/
 https://usefulverse.com/ta/tools/mahjong-solitaire/
 https://usefulverse.com/ta/tools/periodic-table/
@@ -9102,6 +9435,15 @@ https://usefulverse.com/ta/tools/printable-label-maker/
 https://usefulverse.com/ta/tools/poster-maker/
 https://usefulverse.com/ta/tools/certificate-maker/
 https://usefulverse.com/ta/tools/invitation-maker/
+https://usefulverse.com/ta/tools/audio-looper/
+https://usefulverse.com/ta/tools/molecule-viewer/
+https://usefulverse.com/ta/tools/photo-mosaic-maker/
+https://usefulverse.com/ta/tools/epub-reader/
+https://usefulverse.com/ta/tools/epub-metadata-editor/
+https://usefulverse.com/ta/tools/backgammon/
+https://usefulverse.com/ta/tools/tangram/
+https://usefulverse.com/ta/tools/jigsaw-puzzle/
+https://usefulverse.com/ta/tools/music-score-editor/
 https://usefulverse.com/fa/
 https://usefulverse.com/fa/tools/word-counter/
 https://usefulverse.com/fa/tools/text-case-converter/
@@ -9203,6 +9545,7 @@ https://usefulverse.com/fa/tools/image-metadata-remover/
 https://usefulverse.com/fa/tools/gif-maker/
 https://usefulverse.com/fa/tools/screen-recorder/
 https://usefulverse.com/fa/tools/voice-recorder/
+https://usefulverse.com/fa/tools/room-planner/
 https://usefulverse.com/fa/tools/go-game/
 https://usefulverse.com/fa/tools/mahjong-solitaire/
 https://usefulverse.com/fa/tools/periodic-table/
@@ -9370,6 +9713,15 @@ https://usefulverse.com/fa/tools/printable-label-maker/
 https://usefulverse.com/fa/tools/poster-maker/
 https://usefulverse.com/fa/tools/certificate-maker/
 https://usefulverse.com/fa/tools/invitation-maker/
+https://usefulverse.com/fa/tools/audio-looper/
+https://usefulverse.com/fa/tools/molecule-viewer/
+https://usefulverse.com/fa/tools/photo-mosaic-maker/
+https://usefulverse.com/fa/tools/epub-reader/
+https://usefulverse.com/fa/tools/epub-metadata-editor/
+https://usefulverse.com/fa/tools/backgammon/
+https://usefulverse.com/fa/tools/tangram/
+https://usefulverse.com/fa/tools/jigsaw-puzzle/
+https://usefulverse.com/fa/tools/music-score-editor/
 https://usefulverse.com/am/
 https://usefulverse.com/am/tools/word-counter/
 https://usefulverse.com/am/tools/text-case-converter/
@@ -9471,6 +9823,7 @@ https://usefulverse.com/am/tools/image-metadata-remover/
 https://usefulverse.com/am/tools/gif-maker/
 https://usefulverse.com/am/tools/screen-recorder/
 https://usefulverse.com/am/tools/voice-recorder/
+https://usefulverse.com/am/tools/room-planner/
 https://usefulverse.com/am/tools/go-game/
 https://usefulverse.com/am/tools/mahjong-solitaire/
 https://usefulverse.com/am/tools/periodic-table/
@@ -9638,6 +9991,15 @@ https://usefulverse.com/am/tools/printable-label-maker/
 https://usefulverse.com/am/tools/poster-maker/
 https://usefulverse.com/am/tools/certificate-maker/
 https://usefulverse.com/am/tools/invitation-maker/
+https://usefulverse.com/am/tools/audio-looper/
+https://usefulverse.com/am/tools/molecule-viewer/
+https://usefulverse.com/am/tools/photo-mosaic-maker/
+https://usefulverse.com/am/tools/epub-reader/
+https://usefulverse.com/am/tools/epub-metadata-editor/
+https://usefulverse.com/am/tools/backgammon/
+https://usefulverse.com/am/tools/tangram/
+https://usefulverse.com/am/tools/jigsaw-puzzle/
+https://usefulverse.com/am/tools/music-score-editor/
 https://usefulverse.com/gu/
 https://usefulverse.com/gu/tools/word-counter/
 https://usefulverse.com/gu/tools/text-case-converter/
@@ -9739,6 +10101,7 @@ https://usefulverse.com/gu/tools/image-metadata-remover/
 https://usefulverse.com/gu/tools/gif-maker/
 https://usefulverse.com/gu/tools/screen-recorder/
 https://usefulverse.com/gu/tools/voice-recorder/
+https://usefulverse.com/gu/tools/room-planner/
 https://usefulverse.com/gu/tools/go-game/
 https://usefulverse.com/gu/tools/mahjong-solitaire/
 https://usefulverse.com/gu/tools/periodic-table/
@@ -9906,6 +10269,15 @@ https://usefulverse.com/gu/tools/printable-label-maker/
 https://usefulverse.com/gu/tools/poster-maker/
 https://usefulverse.com/gu/tools/certificate-maker/
 https://usefulverse.com/gu/tools/invitation-maker/
+https://usefulverse.com/gu/tools/audio-looper/
+https://usefulverse.com/gu/tools/molecule-viewer/
+https://usefulverse.com/gu/tools/photo-mosaic-maker/
+https://usefulverse.com/gu/tools/epub-reader/
+https://usefulverse.com/gu/tools/epub-metadata-editor/
+https://usefulverse.com/gu/tools/backgammon/
+https://usefulverse.com/gu/tools/tangram/
+https://usefulverse.com/gu/tools/jigsaw-puzzle/
+https://usefulverse.com/gu/tools/music-score-editor/
 https://usefulverse.com/guides/
 https://usefulverse.com/guides/how-to-calculate-a-weighted-grade/
 https://usefulverse.com/guides/google-docs-word-count/

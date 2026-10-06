@@ -206,6 +206,12 @@ await bundle({ entryPoints: [join(root, 'src', 'mahjong-solitaire-runtime.js')],
 await bundle({ entryPoints: [join(root, 'src', 'mahjong-solitaire.css')], outfile: join(dist, 'assets', 'mahjong-solitaire.css'), bundle: false, minify: true });
 await bundle({ entryPoints: [join(root, 'src', 'go-game-runtime.js')], outfile: join(dist, 'assets', 'go-game-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
 await bundle({ entryPoints: [join(root, 'src', 'go-game.css')], outfile: join(dist, 'assets', 'go-game.css'), bundle: false, minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'room-planner-runtime.js')], outfile: join(dist, 'assets', 'room-planner-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'room-planner.css')], outfile: join(dist, 'assets', 'room-planner.css'), bundle: false, minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'planned-tools-runtime.js')], outfile: join(dist, 'assets', 'planned-tools-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'planned-tools.css')], outfile: join(dist, 'assets', 'planned-tools.css'), bundle: false, minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'image-puzzle-runtime.js')], outfile: join(dist, 'assets', 'image-puzzle-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'epub-tools-runtime.js')], outfile: join(dist, 'assets', 'epub-tools-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
 await bundle({
   entryPoints: [join(root, 'src', 'local-planners-runtime.js')],
   outfile: join(dist, 'assets', 'local-planners-runtime.js'),
@@ -814,6 +820,8 @@ assetHash.update(await readFile(join(dist, 'assets', 'audio-editor.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'periodic-table.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'mahjong-solitaire.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'go-game.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'room-planner.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'planned-tools.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'habit-tracker-runtime.css')));
 // Any browser-loaded script uses this version token in its URL. Include every
 // lazy runtime in the hash so deploying a changed module cannot keep serving a
@@ -826,6 +834,10 @@ for (const file of [
   'periodic-table-runtime.js',
   'mahjong-solitaire-runtime.js',
   'go-game-runtime.js',
+  'room-planner-runtime.js',
+  'planned-tools-runtime.js',
+  'image-puzzle-runtime.js',
+  'epub-tools-runtime.js',
   'local-study-runtime.js',
   'spelling-practice-runtime.js',
   'hangul-practice-runtime.js',

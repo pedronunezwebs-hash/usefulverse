@@ -1400,6 +1400,8 @@ function setupToolPage() {
   }
   const opportunityTools = new Set(['equation-solver', 'system-of-equations-calculator', 'polynomial-factorization-calculator', 'probability-calculator', 'z-score-calculator', 'coordinate-geometry-calculator', 'long-division-calculator', 'rounding-calculator', 'tax-calculator', 'commission-calculator', 'credit-card-payoff-calculator', 'unit-price-calculator', 'concrete-calculator', 'tile-calculator', 'receipt-generator', 'quotation-generator', 'morse-code-translator', 'online-metronome', 'keyboard-tester', 'mouse-tester', 'reaction-time-test', 'combinatorics-calculator', 'probability-distribution-calculator', 'confidence-interval-calculator', 'sample-size-calculator', 'linear-regression-calculator', 'triangle-calculator', 'volume-calculator', 'sequence-calculator', 'break-even-calculator', 'roi-cagr-calculator', 'depreciation-calculator', 'dimensional-weight-calculator', 'paint-calculator', 'board-foot-calculator', 'recipe-scaler', 'iban-validator', 'utm-builder', 'robots-txt-generator', 'sitemap-xml-generator', 'json-ld-generator', 'meta-tag-generator', 'css-gradient-generator', 'css-box-shadow-generator', 'color-palette-generator', 'css-grid-generator', 'polynomial-derivative-calculator', 'polynomial-integral-calculator', 'matrix-calculator', 'truth-table-generator', 'statistical-test-calculator', 'cash-flow-irr-calculator', 'debt-payoff-planner', 'rent-vs-buy-calculator', 'citation-generator', 'json-schema-validator', 'jsonpath-query-tool', 'printable-calendar-maker', 'flashcard-maker', 'word-search-maker', 'bingo-card-generator', 'adult-bmi-calculator', 'bmr-tdee-calculator', 'macro-calorie-calculator', 'running-pace-calculator', 'one-rep-max-calculator', 'cover-letter-builder', 'test-data-generator', 'math-worksheet-generator', 'function-grapher', 'crossword-maker', 'html-formatter', 'css-formatter', 'javascript-formatter', 'html-css-js-playground', 'sqlite-playground', 'cron-expression-builder', 'hex-editor', 'image-editor', 'image-watermark-tool', 'passport-photo-maker', 'meme-maker', 'svg-optimizer', 'pixel-art-editor', 'chart-maker', 'diagram-maker', 'latex-equation-renderer', 'business-card-maker', 'body-fat-calculator', 'due-date-calculator', 'cycle-calendar-estimator', 'ascii-art-generator', 'guitar-tuner', 'virtual-piano', 'guitar-chord-finder', 'noise-generator', 'webcam-tester', 'speaker-tester']);
   opportunityTools.add('font-tester');
+  opportunityTools.add('room-planner');
+  for (const id of ['audio-looper','molecule-viewer','photo-mosaic-maker','epub-reader','epub-metadata-editor','backgammon','tangram','jigsaw-puzzle','music-score-editor']) opportunityTools.add(id);
   opportunityTools.add('kakuro');
   opportunityTools.add('battleship');
   opportunityTools.add('color-vision-simulator');
@@ -1609,6 +1611,34 @@ function setupToolPage() {
     import(`./go-game-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
       .then(({ setupGoGame }) => setupGoGame(root))
       .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'room-planner') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./room-planner-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupRoomPlanner }) => setupRoomPlanner(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (['audio-looper', 'molecule-viewer', 'music-score-editor', 'backgammon', 'tangram'].includes(id)) {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./planned-tools-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupPlannedTool }) => setupPlannedTool(id, root))
+      .catch((error) => { console.error('Planned tool setup failed.', error); setStatus($('#op-status', root) || $('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'); });
+    return;
+  }
+  if (['photo-mosaic-maker', 'jigsaw-puzzle'].includes(id)) {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./image-puzzle-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupImagePuzzleTool }) => setupImagePuzzleTool(id, root))
+      .catch((error) => { console.error('Image puzzle setup failed.', error); setStatus($('#op-status', root) || $('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'); });
+    return;
+  }
+  if (['epub-reader', 'epub-metadata-editor'].includes(id)) {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./epub-tools-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupEpubTool }) => setupEpubTool(id, root))
+      .catch((error) => { console.error('EPUB tool setup failed.', error); setStatus($('#op-status', root) || $('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'); });
     return;
   }
   if (opportunityTools.has(id)) {

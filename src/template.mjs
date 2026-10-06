@@ -836,6 +836,8 @@ export function shell({ title, description, canonical, body, schema = '', assetV
     ${toolId === 'periodic-table' ? `<link rel="stylesheet" href="/assets/periodic-table.css${assetSuffix}">` : ''}
     ${toolId === 'mahjong-solitaire' ? `<link rel="stylesheet" href="/assets/mahjong-solitaire.css${assetSuffix}">` : ''}
     ${toolId === 'go-game' ? `<link rel="stylesheet" href="/assets/go-game.css${assetSuffix}">` : ''}
+    ${toolId === 'room-planner' ? `<link rel="stylesheet" href="/assets/room-planner.css${assetSuffix}">` : ''}
+    ${['audio-looper', 'molecule-viewer', 'music-score-editor', 'backgammon', 'tangram', 'jigsaw-puzzle', 'photo-mosaic-maker'].includes(toolId) ? `<link rel="stylesheet" href="/assets/planned-tools.css${assetSuffix}">` : ''}
     ${['svg-editor', 'seamless-pattern-maker', 'html-form-builder', 'html-email-builder'].includes(toolId) ? `<link rel="stylesheet" href="/assets/web-authoring.css${assetSuffix}">` : ''}
     ${toolId === 'tic-tac-toe' ? `<link rel="stylesheet" href="/assets/tic-tac-toe.css${assetSuffix}">` : ''}
     ${toolId === 'chess-game' ? `<link rel="stylesheet" href="/assets/chess-game.css${assetSuffix}">` : ''}

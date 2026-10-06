@@ -393,3 +393,14 @@ test('Go game exposes local two-player board controls and rule limitations in ev
     for (const phrase of phrases) assert.ok(generatedOpportunityCopy[language]?.ui?.[phrase], `${language} missing ${phrase}`);
   }
 });
+
+test('room planner exposes measured dimensions, furniture controls and local SVG in every locale', () => {
+  const phrases = ['Room dimensions and furniture stay on this device. This simple 2D layout is not construction software.', 'Room width', 'Room depth', 'Unit', 'Meters', 'Feet', 'Update room', 'Add furniture', 'Move selected item with arrow keys. Drag with a mouse or touch.', 'Rotate selected', 'Remove selected', 'Clear furniture', 'Download SVG floor plan', 'Room {width} × {depth} {unit}', 'Furniture cannot overlap another item.', 'Room width and depth must be from 2 to 30.', 'These dimensions would make furniture overlap.'];
+  for (const language of Object.keys(locales)) {
+    const markup = opportunityToolMarkup('room-planner', language, opportunityLocaleData[language]?.ui ?? {});
+    for (const selector of ['data-room-planner', 'data-room-width', 'data-room-depth', 'data-room-unit', 'data-room-update', 'data-room-furniture', 'data-room-add', 'data-room-svg', 'data-room-size', 'data-room-rotate', 'data-room-remove', 'data-room-clear', 'data-room-download', 'data-room-items']) assert.ok(markup.includes(selector), `${language}: ${selector}`);
+    assert.match(markup, /data-room-svg[^>]+dir="ltr"/u);
+    assert.doesNotMatch(markup, /fetch\(|XMLHttpRequest/u);
+    for (const phrase of phrases) assert.ok(generatedOpportunityCopy[language]?.ui?.[phrase], `${language} missing ${phrase}`);
+  }
+});
