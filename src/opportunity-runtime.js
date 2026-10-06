@@ -1047,6 +1047,12 @@ export function setupOpportunityTool(id, root) {
     import(colorVisionUrl.href).then(({ setupColorVision }) => setupColorVision(root)).catch(() => setStatus(root, 'Tool loading failed. Refresh the page and try again.', 'error'));
     return;
   }
+  if (['svg-editor', 'seamless-pattern-maker', 'html-form-builder', 'html-email-builder'].includes(engine)) {
+    const authoringUrl = new URL('./web-authoring-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
+    if (version) authoringUrl.searchParams.set('v', version);
+    import(authoringUrl.href).then(({ setupWebAuthoringTool }) => setupWebAuthoringTool(root)).catch(() => setStatus(root, 'Tool loading failed. Refresh the page and try again.', 'error'));
+    return;
+  }
   if (engine === 'tic-tac-toe') {
     const gameUrl = new URL('./tic-tac-toe-runtime.js', import.meta.url); const version = new URL(import.meta.url).searchParams.get('v');
     if (version) gameUrl.searchParams.set('v', version);

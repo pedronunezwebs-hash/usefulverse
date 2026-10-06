@@ -1403,6 +1403,10 @@ function setupToolPage() {
   opportunityTools.add('kakuro');
   opportunityTools.add('battleship');
   opportunityTools.add('color-vision-simulator');
+  opportunityTools.add('svg-editor');
+  opportunityTools.add('seamless-pattern-maker');
+  opportunityTools.add('html-form-builder');
+  opportunityTools.add('html-email-builder');
   opportunityTools.add('study-planner');
   opportunityTools.add('seating-chart-maker');
   opportunityTools.add('gantt-chart-maker');

@@ -232,6 +232,20 @@ test('color vision simulator exposes accessible local image controls and transla
   assert.doesNotMatch(markup, /fetch\(|XMLHttpRequest|data-op-calculate/u);
 });
 
+test('local web authoring tools expose their complete browser-only controls in all 36 locales', () => {
+  const expected = {
+    'svg-editor': ['data-web-authoring="svg"', 'data-svg-add', 'data-svg-clear', 'data-svg-download', 'data-svg-output'],
+    'seamless-pattern-maker': ['data-web-authoring="pattern"', 'data-pattern-motif', 'data-pattern-preview', 'data-pattern-download'],
+    'html-form-builder': ['data-web-authoring="form"', 'data-form-fields', 'data-form-build', 'data-form-preview', 'data-form-download'],
+    'html-email-builder': ['data-web-authoring="email"', 'data-email-url', 'data-email-build', 'sandbox=""', 'data-email-download'],
+  };
+  for (const language of Object.keys(locales)) for (const [id, controls] of Object.entries(expected)) {
+    const markup = opportunityToolMarkup(id, language);
+    for (const control of controls) assert.ok(markup.includes(control), `${language}/${id}: ${control}`);
+    assert.doesNotMatch(markup, /fetch\(|XMLHttpRequest/u, `${language}/${id} must not upload data`);
+  }
+});
+
 test('fretboard trainer exposes accessible note choices and localized runtime messages', () => {
   const markup = opportunityToolMarkup('fretboard-trainer', 'es', opportunityLocaleData.es.ui);
   assert.match(markup, /data-fretboard-trainer/u);

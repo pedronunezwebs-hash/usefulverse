@@ -33,6 +33,10 @@ export const relatedToolIds = {
   'bpm-detector': ['online-metronome', 'audio-compressor', 'media-converter'],
   'music-scale-finder': ['guitar-chord-finder', 'guitar-tuner', 'ear-training'],
   'fretboard-trainer': ['music-scale-finder', 'guitar-chord-finder', 'ear-training'],
+  'svg-editor': ['svg-optimizer', 'css-grid-generator', 'color-palette-generator'],
+  'seamless-pattern-maker': ['css-gradient-generator', 'pixel-art-editor', 'svg-editor'],
+  'html-form-builder': ['html-formatter', 'meta-tag-generator', 'html-table-generator'],
+  'html-email-builder': ['meta-tag-generator', 'html-formatter', 'utm-builder'],
   'seating-chart-maker': ['printable-calendar-maker', 'quotation-generator', 'study-planner'],
   'gantt-chart-maker': ['study-planner', 'printable-calendar-maker', 'seating-chart-maker'],
   'sprite-sheet-maker': ['gif-maker', 'pixel-art-editor', 'image-format-converter'],
@@ -828,6 +832,7 @@ export function shell({ title, description, canonical, body, schema = '', assetV
     ${toolId === 'sudoku' ? `<link rel="stylesheet" href="/assets/sudoku.css${assetSuffix}">` : ''}
     ${toolId === 'battleship' ? `<link rel="stylesheet" href="/assets/battleship.css${assetSuffix}">` : ''}
     ${toolId === 'color-vision-simulator' ? `<link rel="stylesheet" href="/assets/color-vision.css${assetSuffix}">` : ''}
+    ${['svg-editor', 'seamless-pattern-maker', 'html-form-builder', 'html-email-builder'].includes(toolId) ? `<link rel="stylesheet" href="/assets/web-authoring.css${assetSuffix}">` : ''}
     ${toolId === 'tic-tac-toe' ? `<link rel="stylesheet" href="/assets/tic-tac-toe.css${assetSuffix}">` : ''}
     ${toolId === 'chess-game' ? `<link rel="stylesheet" href="/assets/chess-game.css${assetSuffix}">` : ''}
     ${toolId === 'solitaire' ? `<link rel="stylesheet" href="/assets/solitaire.css${assetSuffix}">` : ''}

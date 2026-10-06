@@ -41,6 +41,7 @@ uiPhrases.push('Choose a short audio file to estimate its likely key. The audio 
 uiPhrases.push('The board uses standard E–A–D–G–B–E tuning and frets 0–12.', 'Which note is on string {string}, fret {fret}?', 'Choose a note.', 'Correct: {correct} · streak: {streak}', 'Correct! The note is {note}.', 'Not quite. Try another note.', 'Next note', 'Reset score');
 uiPhrases.push('Rhythm practice', 'Tap in time', 'Listen to one bar, then tap each beat 16 times.', 'Rhythm practice started. Listen to the count-in.', 'Practice complete: {accuracy}% on time; average error {offset} ms.', 'Practice stopped after {count} of 16 taps.', 'Tap after starting rhythm practice.', 'Rhythm practice stopped.', 'Wait for the count-in to finish.');
 uiPhrases.push('This is an approximate visual simulation, not a diagnosis or accessibility certification. Your image stays on this device and is not uploaded.', 'Choose image', 'Simulation mode', 'Normal color vision', 'Protanopia simulation', 'Deuteranopia simulation', 'Tritanopia simulation', 'Achromatopsia simulation', 'Create sample palette', 'Clear image', 'Original image', 'Simulated image', 'Choose an image or create a sample palette to begin.', 'Image loaded locally. Choose a simulation mode.', 'Sample palette created.', 'Image cleared.', 'Choose a PNG, JPEG, WebP, GIF or BMP image.', 'The image is larger than 10 MB. Choose a smaller file.', 'The image exceeds the 4-megapixel limit. Choose a smaller image.', 'This image could not be opened by your browser.', 'Color vision simulation failed. Try another image.');
+uiPhrases.push('Create a small vector graphic with local controls. No file is uploaded.', 'Shape', 'Rectangle', 'Circle', 'Text', 'X position', 'Y position', 'Size', 'Fill color', 'Text content', 'Add object', 'Clear objects', 'Download SVG', 'SVG preview', 'Objects: {count}', 'Object added.', 'Objects cleared.', 'Add an object to preview your SVG.', 'Choose text for the text object.', 'Create a repeatable tile with simple geometric motifs. The SVG is generated in your browser.', 'Motif', 'Dots', 'Grid', 'Diagonal lines', 'Crosses', 'Tile size', 'Spacing', 'Foreground', 'Background', 'Pattern preview', 'Download SVG tile', 'SVG code', 'Pattern updated.', 'Pattern could not be created. Check the selected values.', 'Generate front-end HTML only. This does not host a form or collect responses.', 'Fields: one per line — label | text, email, number, date or textarea | required or optional', 'Name | text | required\nEmail | email | required\nMessage | textarea | optional', 'Submit button label', 'Submit', 'Build form HTML', 'Form preview', 'HTML output', 'Copy HTML', 'Download HTML', 'Form HTML created. It does not include a server endpoint.', 'Enter 1–60 valid field lines using the shown format.', 'Could not copy. Use the download or select the output manually.', 'Create a simple email HTML template locally; this tool does not send email.', 'Brand name', 'Email heading', 'Message', 'Button label', 'Button HTTPS link', 'Accent color', 'Footer note', 'You are receiving this message because you chose to hear from us.', 'Create preview', 'Email preview', 'Email HTML created. Test it in your email service before sending.', 'Use a valid HTTPS link and fill in each text field.');
 const corrections = {
   el: { copy: { 'fretboard-trainer': ['Εκπαιδευτής ταστιέρας κιθάρας'] } },
   ha: { copy: { 'fretboard-trainer': ['Mai koyon bayanin fret na gitar'] } },
@@ -123,6 +124,35 @@ for (const [language, labels] of Object.entries(cssLabelCorrections)) {
   corrections[language] ??= {};
   corrections[language].ui = { ...corrections[language].ui, ...labels };
 }
+const authoringLabelFixes = {
+  ja: { 'SVG code': 'SVGコード', Motif: '模様', Dots: '点', Grid: '格子', Crosses: '十字', 'Tile size': 'タイルサイズ', Spacing: '間隔', Rectangle: '長方形' },
+  ko: { 'SVG code': 'SVG 코드', Motif: '무늬', Dots: '점', Grid: '격자', Crosses: '십자', 'Tile size': '타일 크기', Spacing: '간격', Rectangle: '직사각형' },
+  id: { 'SVG code': 'Kode SVG', Motif: 'Pola', Dots: 'Titik', Grid: 'Kisi', Crosses: 'Silang', 'Tile size': 'Ukuran ubin', Spacing: 'Jarak' },
+  hi: { 'SVG code': 'SVG कोड', Motif: 'आकृति', Dots: 'बिंदु', Grid: 'जाल', Crosses: 'क्रॉस', 'Tile size': 'टाइल का आकार', Spacing: 'अंतराल' },
+  ar: { 'SVG code': 'رمز SVG', Motif: 'نمط زخرفي', Dots: 'نقاط', Grid: 'شبكة', Crosses: 'علامات تقاطع', 'Tile size': 'حجم البلاطة', Spacing: 'التباعد' },
+  zh: { 'SVG code': 'SVG 代码', Motif: '图案', Dots: '圆点', Grid: '网格', Crosses: '十字', 'Tile size': '图块大小', Spacing: '间距' },
+  zh_tw: { 'SVG code': 'SVG 程式碼', Motif: '圖樣', Dots: '圓點', Grid: '網格', Crosses: '十字', 'Tile size': '圖塊大小', Spacing: '間距' },
+  bn: { 'SVG code': 'SVG কোড', Motif: 'নকশা', Dots: 'বিন্দু', Grid: 'জালিকা', Crosses: 'ক্রস', 'Tile size': 'টাইলের আকার', Spacing: 'ব্যবধান' },
+  ru: { 'SVG code': 'Код SVG', Rectangle: 'Прямоугольник', Motif: 'Узор', Dots: 'Точки', Grid: 'Сетка', Crosses: 'Кресты', 'Tile size': 'Размер плитки', Spacing: 'Интервал' },
+  ur: { 'SVG code': 'SVG کوڈ', Motif: 'نمونہ', Dots: 'نقطے', Grid: 'جالی', Crosses: 'کراس', 'Tile size': 'ٹائل کا سائز', Spacing: 'فاصلہ' },
+  tr: { 'SVG code': 'SVG kodu', Motif: 'Desen', Dots: 'Noktalar', Grid: 'Izgara', Crosses: 'Artılar', 'Tile size': 'Döşeme boyutu', Spacing: 'Aralık' },
+  vi: { 'SVG code': 'Mã SVG', Motif: 'Họa tiết', Dots: 'Chấm', Grid: 'Lưới', Crosses: 'Dấu cộng', 'Tile size': 'Kích thước ô', Spacing: 'Khoảng cách' },
+  it: { 'SVG code': 'Codice SVG', Motif: 'Motivo', Dots: 'Punti', Grid: 'Griglia', Crosses: 'Croci', 'Tile size': 'Dimensione tessera', Spacing: 'Spaziatura' },
+  bg: { 'SVG code': 'SVG код', Motif: 'Мотив', Dots: 'Точки', Grid: 'Мрежа', Crosses: 'Кръстове', 'Tile size': 'Размер на плочката', Spacing: 'Разстояние' },
+  ca: { 'SVG code': 'Codi SVG', Rectangle: 'Forma rectangular' },
+  nl: { 'SVG code': 'SVG-code' }, el: { 'SVG code': 'Κώδικας SVG' },
+  ms: { 'SVG code': 'Kod SVG', Motif: 'Corak', Grid: 'Petak' },
+  pl: { 'SVG code': 'Kod SVG' }, sv: { 'SVG code': 'SVG-kod', 'X position': 'X-koordinat' },
+  th: { 'SVG code': 'โค้ด SVG' }, uk: { 'SVG code': 'Код SVG' }, sw: { 'SVG code': 'Msimbo wa SVG' },
+  mr: { 'SVG code': 'SVG कोड' }, te: { 'SVG code': 'SVG కోడ్' }, ha: { 'SVG code': 'Lambar SVG', Motif: 'Tsari', 'SVG preview': 'Duban SVG' },
+  tl: { 'SVG code': 'Kodigo SVG', Motif: 'Motibo', Grid: 'Parilya', Spacing: 'Agwat', Foreground: 'Kulay sa harapan', 'Email preview': 'Paunang tingin sa email' },
+  ta: { 'SVG code': 'SVG குறியீடு' }, fa: { 'SVG code': 'کد SVG' }, am: { 'SVG code': 'የSVG ኮድ' }, gu: { 'SVG code': 'SVG કોડ' },
+};
+for (const [language, labels] of Object.entries(authoringLabelFixes)) {
+  corrections[language] ??= {};
+  corrections[language].ui = { ...corrections[language].ui, ...labels };
+}
+
 const toolTitleCorrections = {
   en: { 'api-request-builder': 'Create API Request Code — cURL & Fetch', 'html-table-generator': 'Create HTML Tables from TSV', 'pwa-manifest-generator': 'Create a PWA Web App Manifest' },
   bg: { 'api-request-builder': 'Създаване на код за API заявка — cURL и Fetch' },
