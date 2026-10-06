@@ -2,6 +2,18 @@ const DAY_MS = 86_400_000;
 
 export { formatFileSize } from './advanced-logic.mjs';
 
+export async function createBitmapFromSanitizedSvg(url, {
+  ImageConstructor = globalThis.Image,
+  bitmapFactory = globalThis.createImageBitmap,
+} = {}) {
+  if (typeof url !== 'string' || !url.startsWith('blob:')) throw new TypeError('Expected a local SVG object URL.');
+  if (typeof ImageConstructor !== 'function' || typeof bitmapFactory !== 'function') throw new TypeError('SVG image decoding is not available in this browser.');
+  const image = new ImageConstructor();
+  image.src = url;
+  await image.decode();
+  return bitmapFactory(image);
+}
+
 export function parseIsoDate(value) {
   const match = /^(\d{4})-(\d{2})-(\d{2})$/u.exec(String(value));
   if (!match) throw new TypeError('Enter a valid calendar date.');

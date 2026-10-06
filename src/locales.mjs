@@ -14,6 +14,21 @@ import { pdfParityLocales } from './locales/pdf-parity.mjs';
 import { pdfRedactLocales } from './locales/pdf-redact.mjs';
 import { imageCaptureUiLocales } from './locales/image-capture.mjs';
 import { opportunityLocaleData } from './locales/opportunity-tools.mjs';
+import { generatedOpportunityCopy } from './locales/generated-opportunity-copy.mjs';
+import { taskListLocaleData } from './locales/task-list.mjs';
+import { taskListContent } from './locales/task-list-content.mjs';
+import { kanbanBoardLocaleData } from './locales/kanban-board.mjs';
+import { kanbanBoardContent } from './locales/kanban-board-content.mjs';
+import { readingSpeedLocaleData } from './locales/reading-speed.mjs';
+import { readingSpeedContent } from './locales/reading-speed-content.mjs';
+import { habitTrackerLocaleData } from './locales/habit-tracker.mjs';
+import { habitTrackerContent } from './locales/habit-tracker-content.mjs';
+import { timeTrackerLocaleData } from './locales/time-tracker.mjs';
+import { timeTrackerContent } from './locales/time-tracker-content.mjs';
+import { mealPlannerLocaleData } from './locales/meal-planner.mjs';
+import { mealPlannerContent } from './locales/meal-planner-content.mjs';
+import { readingLogLocaleData } from './locales/reading-log.mjs';
+import { readingLogContent } from './locales/reading-log-content.mjs';
 import { pageKeys, templateKeys } from './locales/template-keys.mjs';
 import { tools } from './catalog.mjs';
 import { htmlToPdfLocales } from './locales/html-to-pdf.mjs';
@@ -26,6 +41,8 @@ import { guidePacks } from './locales/guide-packs.mjs';
 import { planLocaleData } from './locales/plan-language-data.mjs';
 import { gifMakerCopy } from './locales/gif-maker-copy.mjs';
 import { recordingControlLocales } from './locales/recording-controls.mjs';
+import { diagramEditorKeys, interactionControlLocales, noiseControlKeys } from './locales/interaction-controls.mjs';
+import { wordSearchBody, wordSearchDescription } from './locales/puzzle-copy.mjs';
 import {
   expandedLocaleCopyFixes,
   expandedLocaleFaqFixes,
@@ -297,6 +314,25 @@ for (const [language, data] of Object.entries(expandedToolLocales)) {
         { question: faq.faqPrivacyQuestion, answer: faq.faqPrivacyAnswer.replace('{body}', body) },
       ];
     }
+  }
+}
+
+const planningCategoryLabels = {
+  en: 'Planning', es: 'Planificación', fr: 'Organisation', pt: 'Planejamento', de: 'Planung', ja: '計画',
+  ko: '계획', id: 'Perencanaan', hi: 'योजना', ar: 'التخطيط', zh: '规划', bn: 'পরিকল্পনা', ru: 'Планирование',
+  ur: 'منصوبہ بندی', tr: 'Planlama', vi: 'Lập kế hoạch', it: 'Pianificazione', zh_tw: '規劃', bg: 'Планиране',
+  ca: 'Planificació', nl: 'Plannen', el: 'Σχεδιασμός', ms: 'Perancangan', pl: 'Planowanie', sv: 'Planering',
+  th: 'การวางแผน', uk: 'Планування', sw: 'Mipango', mr: 'नियोजन', te: 'ప్రణాళిక', ha: 'Tsarawa',
+  tl: 'Pagpaplano', ta: 'திட்டமிடல்', fa: 'برنامه‌ریزی', am: 'ዕቅድ', gu: 'આયોજન',
+};
+for (const [language, label] of Object.entries(planningCategoryLabels)) {
+  ui[language] ??= {};
+  runtimeMessages[language] ??= {};
+  ui[language].Planning = label;
+  runtimeMessages[language].Planning = label;
+  if (packs[language]) {
+    packs[language].ui.Planning = label;
+    packs[language].runtimeMessages.Planning = label;
   }
 }
 
@@ -966,6 +1002,7 @@ for (const [language, entries] of Object.entries(plannedSharedUiFixes)) {
   Object.assign(packs[language]?.runtimeMessages ?? {}, entries);
 }
 packs.ha.meta.keepEnglish = [...new Set([...(packs.ha.meta.keepEnglish ?? []), 'Seoul', 'Jakarta'])];
+packs.ca.meta.keepEnglish = [...new Set([...(packs.ca.meta.keepEnglish ?? []), 'sessions'])];
 packs.tl.meta.keepEnglish = [...new Set([...(packs.tl.meta.keepEnglish ?? []), 'Seoul', 'Jakarta', 'usefulverse'])];
 if (packs.tl) packs.tl.page.workspace = 'Workspace ni {title}';
 
@@ -1026,6 +1063,41 @@ for (const [language, data] of Object.entries(imageCaptureUiLocales)) {
 
 // Browser-local SEO opportunity tools are translated as static site content.
 // New tool routes stay gated until all active locales have a complete copy/UI pack.
+for (const [language, data] of Object.entries(taskListLocaleData)) {
+  opportunityLocaleData[language] ??= { ui: {}, copy: {} };
+  opportunityLocaleData[language].copy['task-list'] = taskListContent(language).copy;
+}
+for (const [language, data] of Object.entries(kanbanBoardLocaleData)) {
+  opportunityLocaleData[language] ??= { ui: {}, copy: {} };
+  opportunityLocaleData[language].copy['kanban-board'] = kanbanBoardContent(language).copy;
+}
+for (const [language, data] of Object.entries(readingSpeedLocaleData)) {
+  opportunityLocaleData[language] ??= { ui: {}, copy: {} };
+  opportunityLocaleData[language].copy['reading-speed-test'] = readingSpeedContent(language).copy;
+}
+for (const [language, data] of Object.entries(habitTrackerLocaleData)) {
+  opportunityLocaleData[language] ??= { ui: {}, copy: {} };
+  const content = habitTrackerContent(language);
+  opportunityLocaleData[language].copy['habit-tracker'] = content.copy;
+}
+for (const [language, data] of Object.entries(timeTrackerLocaleData)) {
+  opportunityLocaleData[language] ??= { ui: {}, copy: {} };
+  const content = timeTrackerContent(language);
+  opportunityLocaleData[language].copy['time-tracker'] = content.copy;
+}
+for (const [language, data] of Object.entries(mealPlannerLocaleData)) {
+  opportunityLocaleData[language] ??= { ui: {}, copy: {} };
+  opportunityLocaleData[language].copy['weekly-meal-planner'] = mealPlannerContent(language).copy;
+}
+for (const [language, data] of Object.entries(readingLogLocaleData)) {
+  opportunityLocaleData[language] ??= { ui: {}, copy: {} };
+  const content = readingLogContent(language);
+  opportunityLocaleData[language].copy['reading-log'] = content.copy;
+}
+for (const [language, data] of Object.entries(generatedOpportunityCopy)) {
+  opportunityLocaleData[language] ??= { ui: {}, copy: {} };
+  Object.assign(opportunityLocaleData[language].copy, data.copy);
+}
 for (const [language, data] of Object.entries(opportunityLocaleData)) {
   ui[language] ??= {};
   runtimeMessages[language] ??= {};
@@ -1055,6 +1127,50 @@ for (const [language, data] of Object.entries(opportunityLocaleData)) {
 // Correct short machine-translation strings that Google left in English or
 // treated as labels, and keep the language-pack regression checks meaningful.
 const opportunityLocaleCorrections = {
+  de: { ui: { Images: 'Bilder' } },
+  ja: { ui: { Images: '画像' } },
+  ko: { ui: { Images: '이미지' } },
+  id: { ui: { Images: 'Gambar' } },
+  hi: { ui: { Images: 'छवियां' } },
+  ar: { ui: { Images: 'الصور' } },
+  zh: { ui: { Images: '图像' } },
+  bn: { ui: { Images: 'ছবি' } },
+  ru: { ui: { Images: 'Изображения' } },
+  ur: { ui: { Images: 'تصاویر' } },
+  tr: { ui: { Images: 'Görseller' } },
+  vi: { ui: { Images: 'Hình ảnh' } },
+  it: {
+    ui: { Images: 'Immagini', Shopping: 'Acquisti' },
+    copy: { 'sprite-sheet-maker': ['Creatore di sprite sheet', 'Generatore di sprite sheet'] },
+  },
+  zh_tw: {
+    ui: { Images: '圖片' },
+    copy: { 'sprite-sheet-maker': ['精靈圖集產生器', '精靈圖集產生器'] },
+  },
+  bg: { ui: { Images: 'Изображения' } },
+  ca: { ui: { Images: 'Imatges' } },
+  nl: { ui: { Images: 'Afbeeldingen', Entertainment: 'Ontspanning' } },
+  el: { ui: { Images: 'Εικόνες' } },
+  ms: { ui: { Images: 'Imej' } },
+  pl: { ui: { Images: 'Obrazy' } },
+  sv: {
+    ui: { Images: 'Bilder', Transport: 'Resor' },
+    copy: { 'sprite-sheet-maker': ['Skapare av spriteark', 'Spritearkgenerator'] },
+  },
+  th: { ui: { Images: 'รูปภาพ' } },
+  uk: { ui: { Images: 'Зображення' } },
+  sw: { ui: { Images: 'Picha' } },
+  mr: { ui: { Images: 'प्रतिमा' } },
+  te: { ui: { Images: 'చిత్రాలు' } },
+  ha: { ui: { Images: 'Hotuna' } },
+  tl: {
+    ui: { Images: 'Mga larawan' },
+    copy: { 'sprite-sheet-maker': ['Tagagawa ng sprite sheet', 'Tagagawa ng sprite sheet'] },
+  },
+  ta: { ui: { Images: 'படங்கள்' } },
+  fa: { ui: { Images: 'تصاویر' } },
+  am: { ui: { Images: 'ምስሎች' } },
+  gu: { ui: { Images: 'છબીઓ' } },
   fr: { ui: { 'User-agent': 'Agent utilisateur', Article: 'Article', Description: 'Description' } },
   pt: { ui: { 'User-agent': 'Agente de usuário' } },
   id: { ui: { 'User-agent': 'Agen pengguna' } },
@@ -1138,6 +1254,30 @@ const opportunityLocaleCorrections = {
   },
   am: { ui: { 'Coefficient a': 'ኮኤፊሺየንት a', 'Coefficient b': 'ኮኤፊሺየንት b' } },
 };
+const imageCategoryTranslations = {
+  de: 'Bilder', es: 'Imágenes', pt: 'Imagens', ja: '画像', ko: '이미지', id: 'Gambar', hi: 'छवियां', ar: 'الصور', zh: '图像',
+  bn: 'ছবি', ru: 'Изображения', ur: 'تصاویر', tr: 'Görseller', vi: 'Hình ảnh', it: 'Immagini', zh_tw: '圖片',
+  bg: 'Изображения', ca: 'Imatges', nl: 'Afbeeldingen', el: 'Εικόνες', ms: 'Imej', pl: 'Obrazy', sv: 'Bilder',
+  th: 'รูปภาพ', uk: 'Зображення', sw: 'Picha', mr: 'प्रतिमा', te: 'చిత్రాలు', ha: 'Hotuna', tl: 'Mga larawan',
+  ta: 'படங்கள்', fa: 'تصاویر', am: 'ምስሎች', gu: 'છબીઓ',
+};
+for (const [language, label] of Object.entries(imageCategoryTranslations)) {
+  opportunityLocaleCorrections[language] ??= {};
+  opportunityLocaleCorrections[language].ui ??= {};
+  opportunityLocaleCorrections[language].ui.Images = label;
+}
+Object.assign(opportunityLocaleCorrections.it.copy ??= {}, {
+  'sprite-sheet-maker': ['Creatore di sprite sheet', 'Generatore di sprite sheet'],
+});
+Object.assign(opportunityLocaleCorrections.zh_tw.copy ??= {}, {
+  'sprite-sheet-maker': ['精靈圖集產生器', '精靈圖集產生器'],
+});
+Object.assign(opportunityLocaleCorrections.sv.copy ??= {}, {
+  'sprite-sheet-maker': ['Skapare av spriteark', 'Spritearkgenerator'],
+});
+Object.assign(opportunityLocaleCorrections.tl.copy ??= {}, {
+  'sprite-sheet-maker': ['Tagagawa ng sprite sheet', 'Tagagawa ng sprite sheet'],
+});
 opportunityLocaleCorrections.tl.ui['Bar chart'] = 'Tsart ng bar';
 opportunityLocaleCorrections.tl.ui['Line chart'] = 'Tsart ng linya';
 for (const [language, corrections] of Object.entries(opportunityLocaleCorrections)) {
@@ -1150,12 +1290,26 @@ for (const [language, corrections] of Object.entries(opportunityLocaleCorrection
     }
   }
   for (const [toolId, values] of Object.entries(corrections.copy ?? {})) {
-    copy[language][toolId][0] = values[0];
-    copy[language][toolId][1] = values[1];
+    const localized = packs[language]?.copy?.[toolId] ?? copy[language]?.[toolId];
+    if (!localized) continue;
+    localized[0] = values[0];
+    localized[1] = values[1];
+    copy[language][toolId] = localized;
     if (packs[language]) {
-      packs[language].copy[toolId] = copy[language][toolId];
+      packs[language].copy[toolId] = localized;
       if (packs[language].seo[toolId]) packs[language].seo[toolId].title = truncateMetadata(values[1], 51);
     }
+  }
+}
+
+for (const [language, messages] of Object.entries(interactionControlLocales)) {
+  const pageMarkupMessages = [...diagramEditorKeys, ...noiseControlKeys];
+  const sharedMessages = Object.fromEntries(Object.entries(messages).filter(([key]) => !pageMarkupMessages.includes(key)));
+  Object.assign(ui[language] ??= {}, sharedMessages);
+  Object.assign(runtimeMessages[language] ??= {}, sharedMessages);
+  if (packs[language]) {
+    Object.assign(packs[language].ui, sharedMessages);
+    Object.assign(packs[language].runtimeMessages, sharedMessages);
   }
 }
 // This technical schema label is also spelled “Article” in Catalan.
@@ -1194,23 +1348,76 @@ if (packs.ja) {
   ];
 }
 
+for (const [language, description] of Object.entries(wordSearchDescription)) {
+  const pack = packs[language];
+  if (pack?.seo['word-search-maker']) pack.seo['word-search-maker'].description = truncateMetadata(description, 155, true);
+}
+
+// Resolve short budget categories that automated translation left unchanged.
+for (const [language, labels] of Object.entries({
+  it: { Shopping: 'Acquisti' },
+  nl: { Entertainment: 'Ontspanning' },
+  sv: { Shopping: 'Inköp', Transport: 'Resor' },
+})) {
+  Object.assign(ui[language] ??= {}, labels);
+  Object.assign(runtimeMessages[language] ??= {}, labels);
+  if (packs[language]) {
+    Object.assign(packs[language].ui, labels);
+    Object.assign(packs[language].runtimeMessages, labels);
+  }
+}
+
+// Keep the Tamil runtime pack below Cloudflare Pages' per-file asset budget.
+// These shorter strings preserve the technical limits and user instructions.
+const tamilCompactUi = {
+  'Tap your side’s clock after each move. White starts.': 'ஒவ்வொரு நகர்வுக்குப் பிறகும் உங்கள் கடிகாரத்தைத் தட்டவும். வெள்ளை முதலில் தொடங்கும்.',
+  'Audio is analyzed locally in this browser. No file is uploaded. Use a computer for long files.': 'ஆடியோ இந்த உலாவியில் செயலாக்கப்படும்; பதிவேற்றம் இல்லை. நீண்ட கோப்புகளுக்கு கணினியைப் பயன்படுத்தவும்.',
+  'For device memory, files are limited to 50 MB and 3 minutes. Browser audio-format support varies.': 'சாதன வரம்பு: 50 MB, 3 நிமிடங்கள். ஆடியோ வடிவ ஆதரவு உலாவியைப் பொறுத்தது.',
+  'Tempo is an estimate and may be half or double the beat you feel. Check the alternatives by tapping along.': 'இது மதிப்பீடு; உணரும் தாளத்தின் பாதி அல்லது இரட்டிப்பாக இருக்கலாம். தட்டிப் பார்த்து மாற்றுகளைச் சரிபார்க்கவும்.',
+  'The file is too large or long for this device. Choose audio under 50 MB and 3 minutes.': 'கோப்பு இந்தச் சாதனத்திற்கு மிகப் பெரியது அல்லது நீளமானது. 50 MB, 3 நிமிடங்களுக்குள் ஆடியோவைத் தேர்ந்தெடுக்கவும்.',
+  'Choose up to 128 PNG, JPG, WebP, GIF, AVIF or BMP images. The first frame of an animated image is used. Processing speed depends on your device.': 'அதிகபட்சம் 128 PNG, JPG, WebP, GIF, AVIF அல்லது BMP படங்களைத் தேர்ந்தெடுக்கவும். அசைபடத்தின் முதல் ஃபிரேம் மட்டுமே பயன்படும். வேகம் சாதனத்தைப் பொறுத்தது.',
+  'The selected images are too large to process reliably in this browser. Choose fewer or smaller images.': 'படங்கள் இந்த உலாவியில் செயலாக்க மிகப் பெரியவை. குறைவான அல்லது சிறிய படங்களைத் தேர்ந்தெடுக்கவும்.',
+  'The sprite sheet would be too large for a reliable browser export. Reduce frame size, columns or padding.': 'ஏற்றுமதிக்கு sprite sheet பெரிதாக உள்ளது. ஃபிரேம் அளவு, நெடுவரிசை அல்லது இடைவெளியைக் குறைக்கவும்.',
+};
+Object.assign(ui.ta ??= {}, tamilCompactUi);
+Object.assign(runtimeMessages.ta ??= {}, tamilCompactUi);
+if (packs.ta) {
+  Object.assign(packs.ta.ui, tamilCompactUi);
+  Object.assign(packs.ta.runtimeMessages, tamilCompactUi);
+}
+
+// The budget tool reuses its translated heading as the shorter action label.
+for (const [language, data] of Object.entries(opportunityLocaleData)) {
+  const translation = data.ui['Add a transaction'];
+  if (!translation) continue;
+  ui[language]['Add transaction'] = translation;
+  runtimeMessages[language]['Add transaction'] = translation;
+  if (packs[language]) {
+    packs[language].ui['Add transaction'] = translation;
+    packs[language].runtimeMessages['Add transaction'] = translation;
+  }
+}
+
 export function localizedTool(tool, language) {
   const values = copy[language]?.[tool.id];
   const gifCopy = tool.id === 'gif-maker' ? gifMakerCopy[language] : null;
+  const puzzleBody = tool.id === 'word-search-maker' ? wordSearchBody[language] : null;
+  const puzzleDescription = tool.id === 'word-search-maker' ? wordSearchDescription[language] : null;
   if (!values) {
     const body = longtailBodies[tool.id]?.[language];
-    return gifCopy ? { ...tool, intro: gifCopy[0], body: gifCopy[1] } : body ? { ...tool, body } : tool;
+    return gifCopy ? { ...tool, intro: gifCopy[0], body: gifCopy[1] } : puzzleBody ? { ...tool, ...(puzzleDescription ? { description: puzzleDescription } : {}), body: puzzleBody } : body ? { ...tool, body } : tool;
   }
   const [title, shortTitle, description, keywords, intro, body] = values;
   return {
     ...tool,
+    ...(puzzleDescription ? { description: puzzleDescription } : {}),
     title,
     shortTitle,
-    description: gifCopy ? gifCopy[1] : description,
+    description: gifCopy ? gifCopy[1] : puzzleDescription ?? description,
     keywords,
     intro: gifCopy ? gifCopy[0] : intro,
-    body: gifCopy ? gifCopy[1] : longtailBodies[tool.id]?.[language] ?? body,
-    category: pdfOnlyLocales[language] ? 'PDF' : ui[language][tool.category] ?? tool.category,
+    body: gifCopy ? gifCopy[1] : puzzleBody ?? longtailBodies[tool.id]?.[language] ?? body,
+    category: pdfOnlyLocales[language] ? 'PDF' : generatedOpportunityCopy[language]?.ui?.[tool.category] ?? ui[language][tool.category] ?? tool.category,
   };
 }
 

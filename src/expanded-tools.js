@@ -477,8 +477,11 @@ function setupFaviconGenerator(root) {
     if (!file) { drawPreview(); return; }
     if (file.size > 10 * 1024 * 1024) { input.value = ''; $('#favicon-file-meta', root).textContent = t('PNG, JPG, WebP or SVG · up to 10 MB. A square image works best.'); return setStatus(root, 'Choose an image under 10 MB.', 'error'); }
     try {
-      const source = file.type === 'image/svg+xml' || file.name.toLowerCase().endsWith('.svg') ? await readSvg(file) : file;
-      bitmap = await createImageBitmap(source, { imageOrientation: 'from-image' });
+      const isSvg = file.type === 'image/svg+xml' || file.name.toLowerCase().endsWith('.svg');
+      if (isSvg) {
+        await readSvg(file);
+        bitmap = await logic.createBitmapFromSanitizedSvg(svgUrl);
+      } else bitmap = await createImageBitmap(file, { imageOrientation: 'from-image' });
       if (bitmap.width * bitmap.height > 40_000_000) throw new RangeError('This image has more than 40 megapixels.');
       drawPreview();
       setStatus(root, 'Image ready. Adjust options or create your favicon files.', 'success');

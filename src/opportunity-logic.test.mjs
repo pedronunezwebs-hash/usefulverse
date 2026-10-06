@@ -13,12 +13,29 @@ import {
   differentiatePolynomial, integratePolynomial, calculateMatrix, buildTruthTable,
   calculateStatisticalTest, calculateCashFlows, calculateDebtPayoff, calculateRentVsBuy,
   createCitation, validateJsonSchema, queryJsonPath,
-  makePrintableCalendar, makeFlashcards, makeWordSearch, makeBingoCard,
+  makeNoiseSamples,
+  makePrintableCalendar, makeFlashcards, flashcardProgress, makeWordSearch, makeBingoCard,
   calculateAdultBmi, calculateBmrTdee,
   calculateMacros, calculateRunningPace, estimateOneRepMax, buildCoverLetter, generateTestData,
   generateMathWorksheet,
   calculateOpportunity,
+  calculateTeleprompterScrollRate,
+  countTeleprompterWords,
 } from './opportunity-logic.mjs';
+import { parseChartCsv } from './chart-logic.mjs';
+
+test('teleprompter scroll rate maps the full script to the selected reading speed', () => {
+  const rate = calculateTeleprompterScrollRate(1_200, 120, 120);
+  assert.equal(rate, 0.02);
+  assert.equal(1_200 / rate, 60_000);
+  assert.equal(calculateTeleprompterScrollRate(0, 80, 120), 0);
+  assert.throws(() => calculateTeleprompterScrollRate(-1, 80, 120), /zero or greater/u);
+  assert.throws(() => calculateTeleprompterScrollRate(100, 0, 120), /positive integer/u);
+  assert.throws(() => calculateTeleprompterScrollRate(100, 80, 29), /between 30 and 240/u);
+  assert.equal(countTeleprompterWords('Count these three words'), 4);
+  assert.equal(countTeleprompterWords('漢字かなカナ 한국어'), 9);
+  assert.equal(countTeleprompterWords(''), 0);
+});
 
 test('equation solver handles linear, quadratic, repeated and invalid real roots', () => {
   assert.match(solveEquation({ a: 0, b: 2, c: -4 }), /x = 2/u);
@@ -232,7 +249,15 @@ test('printable calendars handle leap years and week-start offsets', () => {
 
 test('flashcards parse rows and reject missing backs', () => {
   assert.match(makeFlashcards({ cards: 'Term, Definition' }), /FRONT: Term\n   BACK: Definition/u);
+  assert.match(makeFlashcards({ cards: 'مصطلح، تعريف، مع تفاصيل' }), /FRONT: مصطلح\n   BACK: تعريف، مع تفاصيل/u);
   assert.throws(() => makeFlashcards({ cards: 'missing separator' }), /use term, definition/u);
+});
+
+test('flashcard progress keeps the original deck total as known cards leave the review queue', () => {
+  assert.deepEqual(flashcardProgress(0, 0, 3), { current: 1, total: 3 });
+  assert.deepEqual(flashcardProgress(1, 1, 2), { current: 3, total: 3 });
+  assert.deepEqual(flashcardProgress(2, 0, 1), { current: 3, total: 3 });
+  assert.deepEqual(flashcardProgress(3, 0, 0), { current: 0, total: 3 });
 });
 
 test('word search is seeded, places all words and validates capacity', () => {
@@ -241,6 +266,30 @@ test('word search is seeded, places all words and validates capacity', () => {
   assert.equal(makeWordSearch(input), result);
   assert.match(result, /PLANET:[\s\S]*COMET:[\s\S]*STAR:/u);
   assert.throws(() => makeWordSearch({ ...input, words: 'ABCDEFGHIJK', size: 8 }), /no longer than the grid/u);
+});
+
+test('word search keeps non-Latin words instead of silently deleting their letters', () => {
+  const arabic = makeWordSearch({ words: 'مرحبا،سلام', size: 8, seed: 'ar' });
+  assert.match(arabic, /مرحبا:/u);
+  assert.match(arabic, /سلام:/u);
+  const hindi = makeWordSearch({ words: 'नमस्ते,भारत', size: 8, seed: 'hi' });
+  assert.match(hindi, /नमस्ते:/u);
+  assert.match(hindi, /भारत:/u);
+  const crossword = calculateOpportunity('crossword', { pairs: 'مرحبا, greeting\nاهلا, welcome' });
+  assert.match(crossword, /مرحبا/u);
+  assert.match(crossword, /اهلا/u);
+  const arabicDelimiter = calculateOpportunity('crossword', { pairs: 'بيت، مكان، للسكن\nباب، مدخل' });
+  assert.match(arabicDelimiter, /مكان، للسكن \(بيت\)/u);
+  assert.match(arabicDelimiter, /مدخل \(باب\)/u);
+});
+
+test('word puzzles use the page locale for Turkish dotted and dotless I', () => {
+  const search = calculateOpportunity('word-search', { words: 'istanbul,ışık', size: 10, seed: 'tr' }, 'tr');
+  assert.match(search, /İSTANBUL:/u);
+  assert.match(search, /IŞIK:/u);
+  const crossword = calculateOpportunity('crossword', { pairs: 'istanbul, city\nbalık, fish' }, 'tr');
+  assert.match(crossword, /İSTANBUL/u);
+  assert.match(crossword, /BALIK/u);
 });
 
 test('bingo cards are reproducible and require unique pool', () => {
@@ -300,10 +349,36 @@ test('math worksheet seed reproduces valid arithmetic and answer keys', () => {
   assert.throws(() => generateMathWorksheet({ ...input, count: 51 }), /1 to 50/u);
 });
 
+test('colored noise generation is deterministic, bounded, and rejects unsafe lengths or colors', () => {
+  for (const color of ['white', 'pink', 'brown']) {
+    const makeRandom = () => { let seed = 1234567; return () => { seed = (1664525 * seed + 1013904223) >>> 0; return seed / 4294967296; }; };
+    const samples = makeNoiseSamples(color, 48_000, makeRandom());
+    assert.equal(samples.length, 48_000);
+    assert.ok(samples.some((sample) => sample !== 0));
+    assert.ok([...samples].every((sample) => Number.isFinite(sample) && Math.abs(sample) <= 1));
+    const rms = Math.sqrt(samples.reduce((sum, sample) => sum + sample ** 2, 0) / samples.length);
+    assert.ok(rms > 0.1 && rms < 0.75, `${color} noise should have a usable, unclipped average level`);
+    assert.deepEqual(samples, makeNoiseSamples(color, 48_000, makeRandom()));
+  }
+  assert.throws(() => makeNoiseSamples('blue', 10), /white, pink, or brown/u);
+  assert.throws(() => makeNoiseSamples('white', 0), /1–192000/u);
+  assert.throws(() => makeNoiseSamples('white', 192001), /1–192000/u);
+  assert.throws(() => makeNoiseSamples('white', 2, () => 1), /between 0 and 1/u);
+});
+
 test('diagram and chart engines validate bounded entries before visual SVG rendering', () => {
-  assert.equal(calculateOpportunity('chart-maker', { csv: 'Month,Value\nJan,2\nFeb,5', type: 'bar' }), 'Jan,2\nFeb,5');
+  assert.deepEqual(parseChartCsv('Month,Value\nJan,2\nFeb,5'), [{ label: 'Jan', value: 2 }, { label: 'Feb', value: 5 }]);
+  assert.deepEqual(parseChartCsv('"Jan, week 1",2\n"Say ""yes""",5'), [
+    { label: 'Jan, week 1', value: 2 }, { label: 'Say "yes"', value: 5 },
+  ]);
+  assert.deepEqual(parseChartCsv('Month,Value\n"Jan, week 1",2\n"Say ""yes""",5'), [
+    { label: 'Jan, week 1', value: 2 }, { label: 'Say "yes"', value: 5 },
+  ]);
   assert.equal(calculateOpportunity('diagram-maker', { steps: 'Start\nReview\nFinish' }), 'Start\nReview\nFinish');
-  assert.throws(() => calculateOpportunity('chart-maker', { csv: 'a,nope\nb,2' }), /number/u);
+  assert.throws(() => parseChartCsv('a,nope\nb,2'), /number/u);
+  assert.throws(() => parseChartCsv('"unfinished,2\nb,3'), /missing its closing quote/u);
+  assert.throws(() => parseChartCsv('a,1,extra\nb,2'), /exactly a label and a number/u);
+  assert.throws(() => parseChartCsv('a,1e308\nb,2'), /2–60 label,value/u);
   assert.throws(() => calculateOpportunity('diagram-maker', { steps: 'only one' }), /2–12/u);
 });
 

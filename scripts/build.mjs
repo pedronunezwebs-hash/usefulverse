@@ -55,6 +55,110 @@ await bundle({
   minify: true,
 });
 await bundle({
+  entryPoints: [join(root, 'src', 'kanban-board.css')],
+  outfile: join(dist, 'assets', 'kanban-board.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'reading-speed.css')],
+  outfile: join(dist, 'assets', 'reading-speed.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', '2048-game.css')],
+  outfile: join(dist, 'assets', '2048-game.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'sudoku.css')],
+  outfile: join(dist, 'assets', 'sudoku.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'tic-tac-toe.css')],
+  outfile: join(dist, 'assets', 'tic-tac-toe.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'chess-game.css')],
+  outfile: join(dist, 'assets', 'chess-game.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'solitaire.css')],
+  outfile: join(dist, 'assets', 'solitaire.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'minesweeper.css')],
+  outfile: join(dist, 'assets', 'minesweeper.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'nonogram.css')],
+  outfile: join(dist, 'assets', 'nonogram.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'sliding-puzzle.css')],
+  outfile: join(dist, 'assets', 'sliding-puzzle.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'drum-machine.css')],
+  outfile: join(dist, 'assets', 'drum-machine.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'online-sequencer.css')],
+  outfile: join(dist, 'assets', 'online-sequencer.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({ entryPoints: [join(root, 'src', 'audio-analysis.css')], outfile: join(dist, 'assets', 'audio-analysis.css'), bundle: false, minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'fretboard-trainer.css')], outfile: join(dist, 'assets', 'fretboard-trainer.css'), bundle: false, minify: true });
+await bundle({
+  entryPoints: [join(root, 'src', 'css-design-tools.css')],
+  outfile: join(dist, 'assets', 'css-design-tools.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'web-dev-tools.css')],
+  outfile: join(dist, 'assets', 'web-dev-tools.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'board-games.css')],
+  outfile: join(dist, 'assets', 'board-games.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'measurement-tools.css')],
+  outfile: join(dist, 'assets', 'measurement-tools.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'print-studio.css')],
+  outfile: join(dist, 'assets', 'print-studio.css'),
+  bundle: false,
+  minify: true,
+});
+await bundle({
   entryPoints: [join(root, 'src', 'app.js')],
   outfile: join(dist, 'assets', 'app.js'),
   bundle: false,
@@ -62,7 +166,7 @@ await bundle({
   target: ['es2022'],
   minify: true,
 });
-for (const sourceName of ['advanced-tools.js', 'advanced-logic.mjs', 'expanded-tools.js', 'expanded-logic.mjs', 'new-tools.js', 'new-tool-logic.mjs', 'media-tools.js']) {
+for (const sourceName of ['advanced-tools.js', 'advanced-logic.mjs', 'expanded-tools.js', 'expanded-logic.mjs', 'new-tools.js', 'new-tool-logic.mjs', 'timer-logic.mjs', 'media-tools.js']) {
   await copyMinifiedScript(sourceName);
 }
 await bundle({
@@ -86,6 +190,394 @@ await bundle({
 await bundle({
   entryPoints: [join(root, 'src', 'opportunity-runtime.js')],
   outfile: join(dist, 'assets', 'opportunity-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({ entryPoints: [join(root, 'src', 'web-authoring-runtime.js')], outfile: join(dist, 'assets', 'web-authoring-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'web-authoring.css')], outfile: join(dist, 'assets', 'web-authoring.css'), bundle: false, minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'audio-editor-runtime.js')], outfile: join(dist, 'assets', 'audio-editor-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'audio-editor.css')], outfile: join(dist, 'assets', 'audio-editor.css'), bundle: false, minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'periodic-table-runtime.js')], outfile: join(dist, 'assets', 'periodic-table-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'periodic-table.css')], outfile: join(dist, 'assets', 'periodic-table.css'), bundle: false, minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'mahjong-solitaire-runtime.js')], outfile: join(dist, 'assets', 'mahjong-solitaire-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'mahjong-solitaire.css')], outfile: join(dist, 'assets', 'mahjong-solitaire.css'), bundle: false, minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'go-game-runtime.js')], outfile: join(dist, 'assets', 'go-game-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'go-game.css')], outfile: join(dist, 'assets', 'go-game.css'), bundle: false, minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'room-planner-runtime.js')], outfile: join(dist, 'assets', 'room-planner-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'room-planner.css')], outfile: join(dist, 'assets', 'room-planner.css'), bundle: false, minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'planned-tools-runtime.js')], outfile: join(dist, 'assets', 'planned-tools-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'planned-tools.css')], outfile: join(dist, 'assets', 'planned-tools.css'), bundle: false, minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'image-puzzle-runtime.js')], outfile: join(dist, 'assets', 'image-puzzle-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'epub-tools-runtime.js')], outfile: join(dist, 'assets', 'epub-tools-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({
+  entryPoints: [join(root, 'src', 'local-planners-runtime.js')],
+  outfile: join(dist, 'assets', 'local-planners-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'local-study-runtime.js')],
+  outfile: join(dist, 'assets', 'local-study-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'spelling-practice-runtime.js')],
+  outfile: join(dist, 'assets', 'spelling-practice-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'hangul-practice-runtime.js')],
+  outfile: join(dist, 'assets', 'hangul-practice-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', '2048-game-runtime.js')],
+  outfile: join(dist, 'assets', '2048-game-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'sudoku-runtime.js')],
+  outfile: join(dist, 'assets', 'sudoku-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'tic-tac-toe-runtime.js')],
+  outfile: join(dist, 'assets', 'tic-tac-toe-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'chess-game-runtime.js')],
+  outfile: join(dist, 'assets', 'chess-game-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'solitaire-runtime.js')],
+  outfile: join(dist, 'assets', 'solitaire-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'minesweeper-runtime.js')],
+  outfile: join(dist, 'assets', 'minesweeper-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'nonogram-runtime.js')],
+  outfile: join(dist, 'assets', 'nonogram-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'sliding-puzzle-runtime.js')],
+  outfile: join(dist, 'assets', 'sliding-puzzle-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'drum-machine-runtime.js')],
+  outfile: join(dist, 'assets', 'drum-machine-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'online-sequencer-runtime.js')],
+  outfile: join(dist, 'assets', 'online-sequencer-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({ entryPoints: [join(root, 'src', 'audio-analysis-runtime.js')], outfile: join(dist, 'assets', 'audio-analysis-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'fretboard-trainer-runtime.js')], outfile: join(dist, 'assets', 'fretboard-trainer-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'font-tester-runtime.js')], outfile: join(dist, 'assets', 'font-tester-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'kakuro-runtime.js')], outfile: join(dist, 'assets', 'kakuro-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'battleship-runtime.js')], outfile: join(dist, 'assets', 'battleship-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await cp(join(root, 'src', 'battleship.css'), join(dist, 'assets', 'battleship.css'));
+await bundle({ entryPoints: [join(root, 'src', 'color-vision-runtime.js')], outfile: join(dist, 'assets', 'color-vision-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await cp(join(root, 'src', 'color-vision.css'), join(dist, 'assets', 'color-vision.css'));
+await bundle({
+  entryPoints: [join(root, 'src', 'css-design-tools.js')],
+  outfile: join(dist, 'assets', 'css-design-tools.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'web-dev-tools.js')],
+  outfile: join(dist, 'assets', 'web-dev-tools.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'board-games-runtime.js')],
+  outfile: join(dist, 'assets', 'board-games-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'measurement-tools-runtime.js')],
+  outfile: join(dist, 'assets', 'measurement-tools-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'print-studio-runtime.js')],
+  outfile: join(dist, 'assets', 'print-studio-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'web-dev-logic.mjs')],
+  outfile: join(dist, 'assets', 'web-dev-logic.mjs'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'css-design-logic.mjs')],
+  outfile: join(dist, 'assets', 'css-design-logic.mjs'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'online-sequencer-logic.mjs')],
+  outfile: join(dist, 'assets', 'online-sequencer-logic.mjs'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({ entryPoints: [join(root, 'src', 'audio-analysis-logic.mjs')], outfile: join(dist, 'assets', 'audio-analysis-logic.mjs'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({
+  entryPoints: [join(root, 'src', 'tic-tac-toe-logic.mjs')],
+  outfile: join(dist, 'assets', 'tic-tac-toe-logic.mjs'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'time-tracker-runtime.js')],
+  outfile: join(dist, 'assets', 'time-tracker-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'weekly-meal-planner-runtime.js')],
+  outfile: join(dist, 'assets', 'weekly-meal-planner-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'reading-log-runtime.js')],
+  outfile: join(dist, 'assets', 'reading-log-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'chart-runtime.js')],
+  outfile: join(dist, 'assets', 'chart-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'sqlite-playground-runtime.js')],
+  outfile: join(dist, 'assets', 'sqlite-playground-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+for (const name of ['code-formatter-runtime', 'formatter-html-engine', 'formatter-css-engine', 'formatter-javascript-engine']) {
+  const extension = name === 'code-formatter-runtime' ? '.js' : '.mjs';
+  await bundle({
+    entryPoints: [join(root, 'src', `${name}${extension}`)],
+    outfile: join(dist, 'assets', `${name}.js`),
+    bundle: true,
+    format: 'esm',
+    platform: 'browser',
+    target: ['es2022'],
+    minify: true,
+  });
+}
+await bundle({
+  entryPoints: [join(root, 'src', 'task-list-runtime.js')],
+  outfile: join(dist, 'assets', 'task-list-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'kanban-board-runtime.js')],
+  outfile: join(dist, 'assets', 'kanban-board-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'reading-speed-runtime.js')],
+  outfile: join(dist, 'assets', 'reading-speed-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'habit-tracker-runtime.js')],
+  outfile: join(dist, 'assets', 'habit-tracker-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'chess-clock-runtime.js')],
+  outfile: join(dist, 'assets', 'chess-clock-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'ear-training-runtime.js')],
+  outfile: join(dist, 'assets', 'ear-training-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'bpm-detector-runtime.js')],
+  outfile: join(dist, 'assets', 'bpm-detector-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'music-scale-runtime.js')],
+  outfile: join(dist, 'assets', 'music-scale-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'seating-chart-runtime.js')],
+  outfile: join(dist, 'assets', 'seating-chart-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'gantt-chart-runtime.js')],
+  outfile: join(dist, 'assets', 'gantt-chart-runtime.js'),
+  bundle: true,
+  format: 'esm',
+  platform: 'browser',
+  target: ['es2022'],
+  minify: true,
+});
+await bundle({
+  entryPoints: [join(root, 'src', 'sprite-sheet-runtime.js')],
+  outfile: join(dist, 'assets', 'sprite-sheet-runtime.js'),
   bundle: true,
   format: 'esm',
   platform: 'browser',
@@ -266,6 +758,9 @@ await cp(join(root, 'node_modules', '@neslinesli93', 'qpdf-wasm', 'README.md'), 
 await cp(join(root, 'public', 'licenses', 'LICENSE-qpdf.txt'), join(vendor, 'LICENSE-qpdf.txt'));
 await cp(join(root, 'public', 'licenses', 'LICENSE-qpdf-wasm-ISC.txt'), join(vendor, 'LICENSE-qpdf-wasm-ISC.txt'));
 await cp(join(root, 'public', 'favicon.svg'), join(dist, 'favicon.svg'));
+await mkdir(join(dist, 'third-party-licenses'), { recursive: true });
+await cp(join(root, 'public', 'licenses', 'chess.js.txt'), join(dist, 'third-party-licenses', 'chess.js.txt'));
+await cp(join(root, 'public', 'timer-notifications.js'), join(dist, 'timer-notifications.js'));
 await cp(join(root, 'public', '_headers'), join(dist, '_headers'));
 await cp(join(root, 'public', 'BingSiteAuth.xml'), join(dist, 'BingSiteAuth.xml'));
 await cp(join(root, 'public', 'yandex_f441658073fe7135.html'), join(dist, 'yandex_f441658073fe7135.html'));
@@ -287,6 +782,7 @@ const assetHash = createHash('sha256')
   .update(await readFile(join(dist, 'assets', 'expanded-logic.mjs')))
   .update(await readFile(join(dist, 'assets', 'new-tools.js')))
   .update(await readFile(join(dist, 'assets', 'new-tool-logic.mjs')))
+  .update(await readFile(join(dist, 'assets', 'timer-logic.mjs')))
   .update(await readFile(join(dist, 'assets', 'media-tools.js')))
   .update(await readFile(join(dist, 'assets', 'media-transcription-worker.mjs')))
   .update(await readFile(join(dist, 'assets', 'tool-suite-tools.js')))
@@ -297,7 +793,102 @@ const assetHash = createHash('sha256')
   .update(await Promise.all(Object.keys(numberWordsLocaleCodes).map((language) => readFile(join(dist, 'assets', `number-words-${language}.js`)))).then((files) => Buffer.concat(files)))
   .update(await readFile(join(vendor, 'media-converter.mjs')))
   .update(await readFile(join(root, 'package-lock.json')))
-  .update(await readFile(join(root, 'src', 'locales.mjs')));
+.update(await readFile(join(root, 'src', 'locales.mjs')));
+assetHash.update(await readFile(join(root, 'public', 'timer-notifications.js')));
+assetHash.update(await readFile(join(dist, 'assets', 'kanban-board.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'reading-speed.css')));
+assetHash.update(await readFile(join(dist, 'assets', '2048-game.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'sudoku.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'tic-tac-toe.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'chess-game.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'solitaire.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'minesweeper.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'nonogram.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'sliding-puzzle.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'drum-machine.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'online-sequencer.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'audio-analysis.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'fretboard-trainer.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'css-design-tools.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'web-dev-tools.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'board-games.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'measurement-tools.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'print-studio.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'color-vision.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'web-authoring.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'audio-editor.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'periodic-table.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'mahjong-solitaire.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'go-game.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'room-planner.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'planned-tools.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'habit-tracker-runtime.css')));
+// Any browser-loaded script uses this version token in its URL. Include every
+// lazy runtime in the hash so deploying a changed module cannot keep serving a
+// stale copy from the browser cache.
+for (const file of [
+  'plan-tools.js',
+  'opportunity-runtime.js',
+  'web-authoring-runtime.js',
+  'audio-editor-runtime.js',
+  'periodic-table-runtime.js',
+  'mahjong-solitaire-runtime.js',
+  'go-game-runtime.js',
+  'room-planner-runtime.js',
+  'planned-tools-runtime.js',
+  'image-puzzle-runtime.js',
+  'epub-tools-runtime.js',
+  'local-study-runtime.js',
+  'spelling-practice-runtime.js',
+  'hangul-practice-runtime.js',
+  '2048-game-runtime.js',
+  'sudoku-runtime.js',
+  'tic-tac-toe-runtime.js',
+  'chess-game-runtime.js',
+  'solitaire-runtime.js',
+  'minesweeper-runtime.js',
+  'nonogram-runtime.js',
+  'sliding-puzzle-runtime.js',
+  'drum-machine-runtime.js',
+  'online-sequencer-runtime.js',
+  'audio-analysis-runtime.js',
+  'fretboard-trainer-runtime.js',
+  'font-tester-runtime.js',
+  'kakuro-runtime.js',
+  'color-vision-runtime.js',
+  'css-design-tools.js',
+  'css-design-logic.mjs',
+  'web-dev-tools.js',
+  'web-dev-logic.mjs',
+  'board-games-runtime.js',
+  'measurement-tools-runtime.js',
+  'print-studio-runtime.js',
+  'online-sequencer-logic.mjs',
+  'audio-analysis-logic.mjs',
+  'tic-tac-toe-logic.mjs',
+  'time-tracker-runtime.js',
+  'weekly-meal-planner-runtime.js',
+  'reading-log-runtime.js',
+  'chart-runtime.js',
+  'sqlite-playground-runtime.js',
+  'code-formatter-runtime.js',
+  'formatter-html-engine.js',
+  'formatter-css-engine.js',
+  'formatter-javascript-engine.js',
+  'task-list-runtime.js',
+  'kanban-board-runtime.js',
+  'reading-speed-runtime.js',
+  'habit-tracker-runtime.js',
+  'chess-clock-runtime.js',
+  'ear-training-runtime.js',
+  'bpm-detector-runtime.js',
+  'music-scale-runtime.js',
+  'seating-chart-runtime.js',
+  'gantt-chart-runtime.js',
+  'sprite-sheet-runtime.js',
+]) {
+  assetHash.update(await readFile(join(dist, 'assets', file)));
+}
 for (const file of (await readdir(vendor, { recursive: true })).sort()) {
   const path = join(vendor, file);
   if ((await stat(path)).isFile()) assetHash.update(await readFile(path));

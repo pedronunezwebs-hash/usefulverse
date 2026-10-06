@@ -20,7 +20,9 @@ for (const language of pdfOnlyLocaleKeys) localizedFiles.push(
   `${pdfOnlyLocales[language].prefix.replace(/^\//u, '')}/llms.txt`,
 );
 for (const language of Object.keys(numberWordsLocaleCodes)) localizedFiles.push(`assets/number-words-${language}.js`);
-const required = ['index.html', '404.html', 'assets/styles.css', 'assets/app.js', 'favicon.svg', 'robots.txt', 'sitemap.xml', 'llms.txt', ...localizedFiles, 'BingSiteAuth.xml', 'yandex_f441658073fe7135.html', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html', '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt'];
+const required = ['index.html', '404.html', 'assets/styles.css', 'assets/app.js', 'assets/chart-runtime.js', 'assets/sqlite-playground-runtime.js', 'assets/code-formatter-runtime.js', 'assets/formatter-html-engine.js', 'assets/formatter-css-engine.js', 'assets/formatter-javascript-engine.js', 'assets/chess-clock-runtime.js', 'assets/ear-training-runtime.js', 'assets/bpm-detector-runtime.js', 'assets/music-scale-runtime.js', 'assets/seating-chart-runtime.js', 'assets/gantt-chart-runtime.js', 'assets/sprite-sheet-runtime.js', 'assets/kanban-board-runtime.js', 'assets/kanban-board.css', 'assets/reading-speed-runtime.js', 'assets/habit-tracker-runtime.js', 'assets/habit-tracker-runtime.css', 'assets/reading-speed.css', 'assets/timer-logic.mjs', 'assets/tic-tac-toe-runtime.js', 'assets/tic-tac-toe-logic.mjs', 'assets/tic-tac-toe.css', 'assets/chess-game-runtime.js', 'assets/chess-game.css', 'assets/solitaire-runtime.js', 'assets/solitaire.css', 'assets/minesweeper-runtime.js', 'assets/minesweeper.css', 'assets/nonogram-runtime.js', 'assets/nonogram.css', 'assets/sliding-puzzle-runtime.js', 'assets/sliding-puzzle.css', 'assets/drum-machine-runtime.js', 'assets/drum-machine.css', 'assets/online-sequencer-runtime.js', 'assets/online-sequencer-logic.mjs', 'assets/online-sequencer.css', 'assets/board-games-runtime.js', 'assets/board-games.css', 'assets/measurement-tools-runtime.js', 'assets/measurement-tools.css', 'assets/print-studio-runtime.js', 'assets/print-studio.css', 'third-party-licenses/chess.js.txt', 'favicon.svg', 'robots.txt', 'sitemap.xml', 'llms.txt', 'timer-notifications.js', ...localizedFiles, 'BingSiteAuth.xml', 'yandex_f441658073fe7135.html', 'naverbbd67ca2bfab12f8138c42ad5d27c664.html', '4fe0d351af80cfb3bc08a274c1875a4dc73650fd479d11fe4a414e82b5f41e98.txt'];
+required.push('assets/audio-analysis-runtime.js', 'assets/audio-analysis-logic.mjs', 'assets/audio-analysis.css');
+required.push('assets/fretboard-trainer-runtime.js', 'assets/fretboard-trainer.css', 'assets/font-tester-runtime.js', 'assets/kakuro-runtime.js', 'assets/battleship-runtime.js', 'assets/battleship.css', 'assets/color-vision-runtime.js', 'assets/color-vision.css', 'assets/web-authoring-runtime.js', 'assets/web-authoring.css', 'assets/audio-editor-runtime.js', 'assets/audio-editor.css', 'assets/periodic-table-runtime.js', 'assets/periodic-table.css', 'assets/mahjong-solitaire-runtime.js', 'assets/mahjong-solitaire.css', 'assets/go-game-runtime.js', 'assets/go-game.css', 'assets/room-planner-runtime.js', 'assets/room-planner.css', 'assets/planned-tools-runtime.js', 'assets/planned-tools.css', 'assets/image-puzzle-runtime.js', 'assets/epub-tools-runtime.js');
 function assertLanguagePicker(html, currentLanguage, availableLocales, toolId, context, routeForLocale = (key) => localePath(key, toolId)) {
   const currentLocale = availableLocales.find(({ key }) => key === currentLanguage);
   const languageLabel = ui[currentLanguage]?.Language ?? 'Language';
@@ -41,6 +43,164 @@ const notFound = await readFile(join(dist, '404.html'), 'utf8');
 if (!notFound.includes('<meta name="robots" content="noindex,follow">') || /<link rel="canonical"/u.test(notFound)) throw new Error('404 page must be noindex and must not claim a canonical URL');
 for (const language of languages) if (!notFound.includes(`href="${localePath(language)}"`)) throw new Error(`404 page is missing its ${language} home link`);
 for (const file of required) await access(join(dist, file));
+await access(join(dist, 'assets', 'time-tracker-runtime.js'));
+await access(join(dist, 'assets', 'weekly-meal-planner-runtime.js'));
+await access(join(dist, 'assets', 'reading-log-runtime.js'));
+await access(join(dist, 'assets', 'css-design-tools.js'));
+await access(join(dist, 'assets', 'css-design-logic.mjs'));
+await access(join(dist, 'assets', 'css-design-tools.css'));
+await access(join(dist, 'assets', 'web-dev-tools.js'));
+await access(join(dist, 'assets', 'web-dev-logic.mjs'));
+await access(join(dist, 'assets', 'web-dev-tools.css'));
+await access(join(dist, 'assets', 'local-planners-runtime.js'));
+const deferredAssetBudgets = new Map([
+  ['assets/app.js', 72 * 1024], ['assets/styles.css', 54 * 1024],
+  ['assets/new-tools.js', 32 * 1024], ['assets/expanded-tools.js', 40 * 1024],
+  ['assets/advanced-tools.js', 52 * 1024], ['assets/media-tools.js', 16 * 1024],
+  ['assets/plan-tools.js', 55 * 1024], ['assets/tool-suite-tools.js', 150 * 1024],
+  // This runtime is deferred until a tool opens; keep it below 132 KiB while it hosts the expanding local-tool catalog.
+  ['assets/opportunity-runtime.js', 132 * 1024], ['assets/new-tool-logic.mjs', 16 * 1024], ['assets/timer-logic.mjs', 16 * 1024],
+  ['assets/time-tracker-runtime.js', 8 * 1024],
+  ['assets/weekly-meal-planner-runtime.js', 12 * 1024],
+  ['assets/reading-log-runtime.js', 12 * 1024],
+  ['assets/local-planners-runtime.js', 12 * 1024],
+  ['assets/local-study-runtime.js', 12 * 1024],
+  ['assets/spelling-practice-runtime.js', 8 * 1024],
+  ['assets/hangul-practice-runtime.js', 8 * 1024],
+  ['assets/2048-game-runtime.js', 8 * 1024],
+  ['assets/2048-game.css', 2 * 1024],
+  ['assets/sudoku-runtime.js', 12 * 1024],
+  ['assets/sudoku.css', 3 * 1024],
+  ['assets/tic-tac-toe-runtime.js', 8 * 1024],
+  ['assets/tic-tac-toe-logic.mjs', 4 * 1024],
+  ['assets/tic-tac-toe.css', 2 * 1024],
+  ['assets/chess-game-runtime.js', 90 * 1024],
+  ['assets/chess-game.css', 3 * 1024],
+  ['assets/solitaire-runtime.js', 16 * 1024],
+  ['assets/solitaire.css', 4 * 1024],
+  ['assets/minesweeper-runtime.js', 12 * 1024],
+  ['assets/minesweeper.css', 4 * 1024],
+  ['assets/nonogram-runtime.js', 10 * 1024],
+  ['assets/nonogram.css', 3 * 1024],
+  ['assets/sliding-puzzle-runtime.js', 8 * 1024],
+  ['assets/sliding-puzzle.css', 2 * 1024],
+  ['assets/drum-machine-runtime.js', 12 * 1024],
+  ['assets/drum-machine.css', 3 * 1024],
+  ['assets/online-sequencer-runtime.js', 12 * 1024],
+  ['assets/online-sequencer-logic.mjs', 4 * 1024],
+  ['assets/online-sequencer.css', 3 * 1024],
+  ['assets/audio-analysis-runtime.js', 12 * 1024], ['assets/audio-analysis-logic.mjs', 8 * 1024], ['assets/audio-analysis.css', 3 * 1024],
+  ['assets/fretboard-trainer-runtime.js', 6 * 1024], ['assets/fretboard-trainer.css', 2 * 1024],
+  ['assets/font-tester-runtime.js', 5 * 1024],
+  ['assets/kakuro-runtime.js', 5 * 1024],
+  ['assets/battleship-runtime.js', 7 * 1024],
+  ['assets/color-vision-runtime.js', 8 * 1024], ['assets/color-vision.css', 3 * 1024],
+  ['assets/web-authoring-runtime.js', 12 * 1024], ['assets/web-authoring.css', 4 * 1024],
+  ['assets/audio-editor-runtime.js', 12 * 1024], ['assets/audio-editor.css', 3 * 1024],
+  ['assets/periodic-table-runtime.js', 12 * 1024], ['assets/periodic-table.css', 4 * 1024],
+  ['assets/mahjong-solitaire-runtime.js', 12 * 1024], ['assets/mahjong-solitaire.css', 4 * 1024],
+  ['assets/go-game-runtime.js', 12 * 1024], ['assets/go-game.css', 4 * 1024],
+  ['assets/room-planner-runtime.js', 14 * 1024], ['assets/room-planner.css', 4 * 1024],
+  ['assets/planned-tools-runtime.js', 24 * 1024], ['assets/planned-tools.css', 8 * 1024],
+  ['assets/image-puzzle-runtime.js', 12 * 1024], ['assets/epub-tools-runtime.js', 24 * 1024],
+  ['assets/css-design-tools.js', 8 * 1024],
+  ['assets/css-design-logic.mjs', 4 * 1024],
+  ['assets/css-design-tools.css', 4 * 1024],
+  ['assets/web-dev-tools.js', 12 * 1024],
+  ['assets/web-dev-logic.mjs', 8 * 1024],
+  ['assets/web-dev-tools.css', 4 * 1024],
+  ['assets/board-games-runtime.js', 12 * 1024], ['assets/board-games.css', 4 * 1024],
+  ['assets/measurement-tools-runtime.js', 8 * 1024], ['assets/measurement-tools.css', 3 * 1024],
+  ['assets/print-studio-runtime.js', 8 * 1024], ['assets/print-studio.css', 4 * 1024],
+  ['assets/chart-runtime.js', 8 * 1024],
+  ['assets/sqlite-playground-runtime.js', 8 * 1024],
+  ['assets/code-formatter-runtime.js', 8 * 1024],
+  ['assets/formatter-html-engine.js', 3 * 1024 * 1024],
+  ['assets/formatter-css-engine.js', 3 * 1024 * 1024],
+  ['assets/formatter-javascript-engine.js', 3 * 1024 * 1024],
+  ['assets/task-list-runtime.js', 8 * 1024],
+  ['assets/kanban-board-runtime.js', 12 * 1024],
+  ['assets/kanban-board.css', 3 * 1024],
+  ['assets/reading-speed-runtime.js', 12 * 1024],
+  ['assets/habit-tracker-runtime.js', 10 * 1024],
+  ['assets/habit-tracker-runtime.css', 4 * 1024],
+  ['assets/reading-speed.css', 3 * 1024],
+  ['assets/chess-clock-runtime.js', 8 * 1024],
+  ['assets/ear-training-runtime.js', 8 * 1024],
+  ['assets/bpm-detector-runtime.js', 8 * 1024],
+  ['assets/music-scale-runtime.js', 8 * 1024],
+  ['assets/seating-chart-runtime.js', 10 * 1024],
+  ['assets/gantt-chart-runtime.js', 10 * 1024],
+  ['assets/sprite-sheet-runtime.js', 12 * 1024],
+  ['assets/expanded-logic.mjs', 16 * 1024], ['assets/advanced-logic.mjs', 16 * 1024],
+]);
+for (const [file, budget] of deferredAssetBudgets) {
+  const bytes = (await stat(join(dist, file))).size;
+  if (bytes > budget) throw new Error(`Shared or deferred asset exceeded its ${budget}-byte budget: ${file} is ${bytes} bytes.`);
+}
+for (const file of await readdir(join(dist, 'assets'))) {
+  if (!/^locale-[\w-]+\.js$/u.test(file)) continue;
+  const bytes = (await stat(join(dist, 'assets', file))).size;
+  if (bytes > 320 * 1024) throw new Error(`Locale bundle exceeded its 327680-byte budget: ${file} is ${bytes} bytes.`);
+}
+const headers = await readFile(join(dist, '_headers'), 'utf8');
+const globalHeaderBlock = headers.split(/\n\s*\n/u).find((block) => block.startsWith('/*')) ?? '';
+if (!globalHeaderBlock.includes('Permissions-Policy: camera=(self), geolocation=()') || /Permissions-Policy: [^\n]*microphone=\(\)/u.test(globalHeaderBlock) || !headers.includes('/tools/voice-recorder/*\n  Permissions-Policy: microphone=(self)') || !headers.includes('/tools/guitar-tuner/*\n  Permissions-Policy: microphone=(self)')) {
+  throw new Error('Do not globally deny microphone access: Cloudflare Pages merges matching Permissions-Policy headers. Keep microphone prompts user-initiated in the recorder and guitar tuner routes.');
+}
+const timerPage = await readFile(join(dist, localePath('en', 'online-timer').replace(/^\//u, '') + 'index.html'), 'utf8');
+for (const feature of ['data-timer-mode="pomodoro"', 'id="long-break-minutes"', 'id="long-break-every"', 'id="timer-auto-start"', 'id="timer-sound"', 'id="timer-audio-status"', 'data-action="timer-test-sound"', 'data-action="timer-enable-notifications"', 'data-action="timer-skip"', 'data-action="timer-clear-data"']) {
+  if (!timerPage.includes(feature)) throw new Error(`Online timer is missing its required control: ${feature}`);
+}
+const minesweeperPage = await readFile(join(dist, localePath('en', 'minesweeper').replace(/^\//u, '') + 'index.html'), 'utf8');
+for (const feature of ['data-minesweeper-difficulty', 'data-minesweeper-new', 'data-minesweeper-flag-mode', 'data-minesweeper-mines-left', 'data-minesweeper-time', 'data-minesweeper-board']) {
+  if (!minesweeperPage.includes(feature)) throw new Error(`Minesweeper is missing its required control: ${feature}`);
+}
+const nonogramPage = await readFile(join(dist, localePath('en', 'nonogram').replace(/^\//u, '') + 'index.html'), 'utf8');
+for (const feature of ['data-nonogram-new', 'data-nonogram-check', 'data-nonogram-clear', 'data-nonogram-board']) {
+  if (!nonogramPage.includes(feature)) throw new Error(`Nonogram is missing its required control: ${feature}`);
+}
+const kakuroPage = await readFile(join(dist, localePath('en', 'kakuro').replace(/^\//u, '') + 'index.html'), 'utf8');
+for (const feature of ['data-kakuro-new', 'data-kakuro-hint', 'data-kakuro-check', 'data-kakuro-clear', 'data-kakuro-cell="0,0"', 'data-kakuro-row="0"', 'data-kakuro-column="0"']) {
+  if (!kakuroPage.includes(feature)) throw new Error(`Kakuro is missing its required control: ${feature}`);
+}
+const battleshipPage = await readFile(join(dist, localePath('en', 'battleship').replace(/^\//u, '') + 'index.html'), 'utf8');
+for (const feature of ['data-battleship', 'data-battleship-new', 'data-battleship-enemy', 'data-battleship-player', 'data-planner-messages']) {
+  if (!battleshipPage.includes(feature)) throw new Error(`Battleship is missing its required control: ${feature}`);
+}
+const colorVisionPage = await readFile(join(dist, localePath('en', 'color-vision-simulator').replace(/^\//u, '') + 'index.html'), 'utf8');
+for (const feature of ['data-color-vision', 'data-color-vision-mode', 'data-color-vision-sample', 'data-color-vision-clear', 'data-color-vision-original', 'data-color-vision-result', 'data-planner-messages']) {
+  if (!colorVisionPage.includes(feature)) throw new Error(`Color vision simulator is missing its required control: ${feature}`);
+}
+const slidingPage = await readFile(join(dist, localePath('en', 'sliding-puzzle').replace(/^\//u, '') + 'index.html'), 'utf8');
+for (const feature of ['data-sliding-size', 'data-sliding-new', 'data-sliding-moves', 'data-sliding-board']) {
+  if (!slidingPage.includes(feature)) throw new Error(`Sliding puzzle is missing its required control: ${feature}`);
+}
+for (const language of languages) {
+  const drumPath = join(dist, localePath(language, 'drum-machine').replace(/^\//u, '') + 'index.html');
+  const drumPage = await readFile(drumPath, 'utf8');
+  for (const feature of ['data-drum-tempo', 'data-drum-play', 'data-drum-clear', 'data-drum-board', 'data-planner-messages=', '/assets/drum-machine.css?v=']) {
+    if (!drumPage.includes(feature)) throw new Error(`Drum machine is missing ${feature} in ${language}`);
+  }
+}
+for (const language of languages) {
+  const sequencePath = join(dist, localePath(language, 'online-sequencer').replace(/^\//u, '') + 'index.html');
+  const sequencePage = await readFile(sequencePath, 'utf8');
+  for (const feature of ['data-sequencer-tempo', 'data-sequencer-play', 'data-sequencer-clear', 'data-sequencer-board', 'data-sequencer-midi', 'data-planner-messages=', '/assets/online-sequencer.css?v=']) {
+    if (!sequencePage.includes(feature)) throw new Error(`Online sequencer is missing ${feature} in ${language}`);
+  }
+  for (const label of ['MIDI download started.', 'Tempo', 'Note {note}, step {number}']) {
+    const translated = packs[language]?.runtime?.[label];
+    if (translated && !sequencePage.includes(translated)) throw new Error(`Online sequencer is missing localized message "${label}" in ${language}`);
+  }
+}
+for (const language of languages) {
+  const fretboardPath = join(dist, localePath(language, 'fretboard-trainer').replace(/^\//u, '') + 'index.html');
+  const fretboardPage = await readFile(fretboardPath, 'utf8');
+  for (const feature of ['data-fretboard-trainer', 'data-fretboard-prompt', 'data-fretboard-answers', 'data-fretboard-next', 'data-fretboard-reset', 'data-planner-messages=', '/assets/fretboard-trainer.css?v=']) {
+    if (!fretboardPage.includes(feature)) throw new Error(`Fretboard trainer is missing ${feature} in ${language}`);
+  }
+}
 const naverVerification = await readFile(join(dist, 'naverbbd67ca2bfab12f8138c42ad5d27c664.html'), 'utf8');
 if (naverVerification !== 'naver-site-verification: naverbbd67ca2bfab12f8138c42ad5d27c664.html\n') throw new Error('Naver verification file content does not match the downloaded file');
 const pages = [];
@@ -69,6 +229,7 @@ for (const language of languages) {
     const alternateLanguages = availableLocales;
     for (const alternate of alternateLanguages) if (!html.includes(`hreflang="${alternate.code}" href="https://usefulverse.com${localePath(alternate.key, tool.id)}"`)) throw new Error(`Missing ${alternate.key} alternate for ${language}/${tool.id}`);
     if (!html.includes(`data-tool="${tool.id}"`)) throw new Error(`Missing tool runtime for ${language}/${tool.id}`);
+    if (!html.includes('data-tool-follow-up') || !html.includes('data-tool-follow-up-links') || !html.includes('data-tool-follow-up-dismiss')) throw new Error(`Missing dismissible contextual next-step links for ${language}/${tool.id}`);
     const relatedHeading = packs[language]?.ui['More useful tools'] ?? { en: 'More useful tools', es: 'Más herramientas útiles', fr: 'Plus d’outils utiles', pt: 'Mais ferramentas úteis', de: 'Weitere nützliche Tools' }[language];
     if (!html.includes(relatedHeading)) throw new Error(`Missing localized related-tools heading for ${language}/${tool.id}`);
     if (!html.includes('"@type":"WebApplication"') || !html.includes('property="og:title"')) throw new Error(`Missing SEO schema or social metadata for ${language}/${tool.id}`);
@@ -76,6 +237,12 @@ for (const language of languages) {
     if (tool.id === 'number-to-words-converter' && numberWordsLocaleCodes[language]) {
       const version = html.match(/data-asset-version="([a-f0-9]{12})"/u)?.[1];
       if (!version || !html.includes(`<script defer src="/assets/number-words-${language}.js?v=${version}"></script>`)) throw new Error(`Missing local number-to-words runtime for ${language}`);
+    }
+    if (tool.id === 'reading-speed-test') {
+      for (const control of ['data-reading-speed', 'data-reading-text', 'maxlength="50000"', 'data-reading-start', 'data-reading-pause', 'data-reading-resume', 'data-reading-finish', 'data-reading-reset', 'data-reading-result', 'data-reading-rating']) {
+        if (!html.includes(control)) throw new Error(`Reading speed page is missing ${control} in ${language}`);
+      }
+      if (!html.includes('/assets/reading-speed.css?v=') || !html.includes('data-reading-messages=')) throw new Error(`Reading speed page is missing localized or page-specific assets in ${language}`);
     }
     if (language === 'en' && seo[tool.id]?.faq?.length && !html.includes(seo[tool.id].faq[0].question)) throw new Error(`English FAQ mismatch for ${tool.id}`);
     const expectedBody = longtailBodies[tool.id]?.[language];

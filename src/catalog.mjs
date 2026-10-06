@@ -730,8 +730,8 @@ export const tools = [
     description: 'Use a countdown timer, stopwatch or Pomodoro focus timer in one simple browser tool.',
     category: 'Everyday', icon: '⏱', accent: 'orange',
     keywords: 'online timer, countdown timer, online stopwatch, Pomodoro timer, focus timer, free timer online',
-    intro: 'Choose countdown, stopwatch or focus mode, then start. The timer keeps time accurately if a tab sleeps.',
-    body: 'Elapsed time is calculated from a monotonic browser clock rather than counting interval ticks, so background-tab delays do not accumulate as timer drift. No account, notification permission or audio is required.',
+    intro: 'Choose countdown, stopwatch or focus mode, then start. Background tabs or sleeping devices may delay alerts, so keep this page open.',
+    body: 'Elapsed time is calculated from a monotonic browser clock rather than counting interval ticks, so background-tab delays do not accumulate as timer drift. Sound and notifications are optional and are requested only when you choose to use them. Browser or device sleep can delay alerts; keep this page open and awake for the most reliable timing.',
   },
   {
     id: 'lorem-ipsum-generator', title: 'Lorem Ipsum Generator', shortTitle: 'Lorem ipsum generator',

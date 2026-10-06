@@ -1,0 +1,14 @@
+.music-sequencer { display: grid; gap: 1rem; }
+.music-sequencer__controls { display: flex; align-items: end; flex-wrap: wrap; gap: .75rem; }
+.music-sequencer__controls .field-label { min-width: min(100%, 15rem); flex: 1; }
+.music-sequencer__viewport { overflow-x: auto; padding: .25rem 0 .5rem; }
+.music-sequencer__board { display: grid; gap: .35rem; min-width: 42rem; }
+.music-sequencer__row { display: grid; grid-template-columns: 3.25rem repeat(16, minmax(1.5rem, 1fr)); align-items: center; gap: .3rem; }
+.music-sequencer__note { color: var(--ink-muted, #475569); font-weight: 700; text-align: center; }
+.music-sequencer__step { min-height: 2rem; border: 1px solid var(--line, #d8dee9); border-radius: .4rem; background: var(--surface, #fff); cursor: pointer; touch-action: manipulation; }
+.music-sequencer__step.is-beat { border-left-width: 2px; border-left-color: var(--ink-muted, #475569); }
+.music-sequencer__step.is-on { background: var(--accent, #c9f45b); border-color: var(--accent-strong, #86a928); }
+.music-sequencer__step.is-current { outline: 3px solid #5267dd; outline-offset: 1px; }
+.music-sequencer__step:focus-visible { outline: 3px solid #5267dd; outline-offset: 2px; }
+@media (max-width: 520px) { .music-sequencer__step { min-height: 2.25rem; } }
+@media (prefers-reduced-motion: reduce) { .music-sequencer__step { scroll-behavior: auto; } }

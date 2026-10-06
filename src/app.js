@@ -133,18 +133,20 @@ function setupCaseConverter(root) {
   const input = $('#tool-input', root);
   const output = $('#tool-output', root);
   const status = $('#tool-status', root);
+  const idleMessage = status.textContent;
   const update = (mode) => {
     const value = input.value;
     if (mode === 'upper') output.value = value.toLocaleUpperCase(languageTag);
     if (mode === 'lower') output.value = value.toLocaleLowerCase(languageTag);
     if (mode === 'sentence') output.value = value.toLocaleLowerCase(languageTag).replace(/(^|[.!?]\s+)(\p{L})/gu, (_, start, letter) => `${start}${letter.toLocaleUpperCase(languageTag)}`);
     if (mode === 'title') output.value = value.toLocaleLowerCase(languageTag).replace(/(^|[^\p{L}\p{N}])(\p{L}|\d)/gu, (_, start, letter) => `${start}${letter.toLocaleUpperCase(languageTag)}`);
+    status.textContent = value ? '' : idleMessage;
   };
   root.addEventListener('click', (event) => {
     const button = event.target.closest('[data-case]');
     if (button) { $$('.button-row [data-case]', root).forEach((item) => item.classList.toggle('button--primary', item === button)); $$('.button-row [data-case]', root).forEach((item) => item.classList.toggle('button--ghost', item !== button)); update(button.dataset.case); }
     const action = event.target.closest('[data-action]')?.dataset.action;
-    if (action === 'clear') { input.value = ''; output.value = ''; input.focus(); }
+    if (action === 'clear') { input.value = ''; output.value = ''; status.textContent = idleMessage; input.focus(); }
     if (action === 'copy-output') copyText(output.value, status);
   });
   input.addEventListener('input', () => update($('.button-row [data-case].button--primary', root)?.dataset.case || 'upper'));
@@ -1348,10 +1350,297 @@ function setupTimeZone(root) {
 function setupToolPage() {
   const root = $('.tool-workspace');
   if (!root) return;
+  const followUp = document.querySelector('[data-tool-follow-up]');
+  const followUpLinks = followUp?.querySelector('[data-tool-follow-up-links]');
+  const relatedCards = [...document.querySelectorAll('.related-tools .tool-card')].slice(0, 3);
+  let followUpObserver;
+  const revealRelevantTools = () => {
+    if (!followUp || !followUpLinks || !relatedCards.length || followUp.hidden === false || !root.querySelector('.tool-status.is-success')) return;
+    followUpLinks.replaceChildren(...relatedCards.map((card) => card.cloneNode(true)));
+    followUp.hidden = false;
+    followUpObserver?.disconnect();
+  };
+  if (followUp && followUpLinks && relatedCards.length) {
+    followUpObserver = new MutationObserver(revealRelevantTools);
+    followUpObserver.observe(root, { subtree: true, attributes: true, attributeFilter: ['class'], childList: true, characterData: true });
+    revealRelevantTools();
+    followUp.querySelector('[data-tool-follow-up-dismiss]')?.addEventListener('click', () => {
+      followUp.hidden = true;
+      followUpObserver?.disconnect();
+    });
+  }
   const id = root.dataset.tool;
+  if (id === 'habit-tracker') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./habit-tracker-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupHabitTracker }) => setupHabitTracker(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'time-tracker') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./time-tracker-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupTimeTracker }) => setupTimeTracker(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'weekly-meal-planner') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./weekly-meal-planner-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupWeeklyMealPlanner }) => setupWeeklyMealPlanner(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'reading-log') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./reading-log-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupReadingLog }) => setupReadingLog(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
   const opportunityTools = new Set(['equation-solver', 'system-of-equations-calculator', 'polynomial-factorization-calculator', 'probability-calculator', 'z-score-calculator', 'coordinate-geometry-calculator', 'long-division-calculator', 'rounding-calculator', 'tax-calculator', 'commission-calculator', 'credit-card-payoff-calculator', 'unit-price-calculator', 'concrete-calculator', 'tile-calculator', 'receipt-generator', 'quotation-generator', 'morse-code-translator', 'online-metronome', 'keyboard-tester', 'mouse-tester', 'reaction-time-test', 'combinatorics-calculator', 'probability-distribution-calculator', 'confidence-interval-calculator', 'sample-size-calculator', 'linear-regression-calculator', 'triangle-calculator', 'volume-calculator', 'sequence-calculator', 'break-even-calculator', 'roi-cagr-calculator', 'depreciation-calculator', 'dimensional-weight-calculator', 'paint-calculator', 'board-foot-calculator', 'recipe-scaler', 'iban-validator', 'utm-builder', 'robots-txt-generator', 'sitemap-xml-generator', 'json-ld-generator', 'meta-tag-generator', 'css-gradient-generator', 'css-box-shadow-generator', 'color-palette-generator', 'css-grid-generator', 'polynomial-derivative-calculator', 'polynomial-integral-calculator', 'matrix-calculator', 'truth-table-generator', 'statistical-test-calculator', 'cash-flow-irr-calculator', 'debt-payoff-planner', 'rent-vs-buy-calculator', 'citation-generator', 'json-schema-validator', 'jsonpath-query-tool', 'printable-calendar-maker', 'flashcard-maker', 'word-search-maker', 'bingo-card-generator', 'adult-bmi-calculator', 'bmr-tdee-calculator', 'macro-calorie-calculator', 'running-pace-calculator', 'one-rep-max-calculator', 'cover-letter-builder', 'test-data-generator', 'math-worksheet-generator', 'function-grapher', 'crossword-maker', 'html-formatter', 'css-formatter', 'javascript-formatter', 'html-css-js-playground', 'sqlite-playground', 'cron-expression-builder', 'hex-editor', 'image-editor', 'image-watermark-tool', 'passport-photo-maker', 'meme-maker', 'svg-optimizer', 'pixel-art-editor', 'chart-maker', 'diagram-maker', 'latex-equation-renderer', 'business-card-maker', 'body-fat-calculator', 'due-date-calculator', 'cycle-calendar-estimator', 'ascii-art-generator', 'guitar-tuner', 'virtual-piano', 'guitar-chord-finder', 'noise-generator', 'webcam-tester', 'speaker-tester']);
+  opportunityTools.add('font-tester');
+  opportunityTools.add('room-planner');
+  for (const id of ['audio-looper','molecule-viewer','photo-mosaic-maker','epub-reader','epub-metadata-editor','backgammon','tangram','jigsaw-puzzle','music-score-editor']) opportunityTools.add(id);
+  opportunityTools.add('kakuro');
+  opportunityTools.add('battleship');
+  opportunityTools.add('color-vision-simulator');
+  opportunityTools.add('audio-editor');
+  opportunityTools.add('periodic-table');
+  opportunityTools.add('svg-editor');
+  opportunityTools.add('seamless-pattern-maker');
+  opportunityTools.add('html-form-builder');
+  opportunityTools.add('html-email-builder');
+  opportunityTools.add('study-planner');
+  opportunityTools.add('seating-chart-maker');
+  opportunityTools.add('gantt-chart-maker');
+  opportunityTools.add('sprite-sheet-maker');
+  opportunityTools.add('mental-math-practice');
+  opportunityTools.add('tournament-bracket-generator');
   opportunityTools.add('local-notepad');
   opportunityTools.add('teleprompter-online');
+  opportunityTools.add('household-budget-planner');
+  opportunityTools.add('packing-list-maker');
+  opportunityTools.add('decision-matrix');
+  opportunityTools.add('workout-planner');
+  opportunityTools.add('quiz-maker');
+  opportunityTools.add('memory-game');
+  opportunityTools.add('kana-practice');
+  opportunityTools.add('abacus-practice');
+  opportunityTools.add('spelling-practice');
+  opportunityTools.add('hangul-practice');
+  opportunityTools.add('2048-game');
+  opportunityTools.add('sudoku');
+  opportunityTools.add('tic-tac-toe');
+  opportunityTools.add('chess-game');
+  opportunityTools.add('solitaire');
+  opportunityTools.add('minesweeper');
+  opportunityTools.add('nonogram');
+  opportunityTools.add('sliding-puzzle');
+  opportunityTools.add('drum-machine');
+  opportunityTools.add('online-sequencer');
+  opportunityTools.add('song-key-finder');
+  opportunityTools.add('audio-spectrogram');
+  opportunityTools.add('fretboard-trainer');
+  opportunityTools.add('css-animation-generator');
+  opportunityTools.add('css-clip-path-editor');
+  opportunityTools.add('css-filter-generator');
+  opportunityTools.add('api-request-builder');
+  opportunityTools.add('html-table-generator');
+  opportunityTools.add('pwa-manifest-generator');
+  opportunityTools.add('connect-four');
+  opportunityTools.add('reversi');
+  opportunityTools.add('checkers');
+  opportunityTools.add('screen-ruler');
+  opportunityTools.add('protractor');
+  opportunityTools.add('printable-label-maker');
+  opportunityTools.add('poster-maker');
+  opportunityTools.add('certificate-maker');
+  opportunityTools.add('invitation-maker');
+  opportunityTools.add('kanban-board');
+  opportunityTools.add('reading-speed-test');
+  if (id === 'connect-four' || id === 'reversi' || id === 'checkers') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./board-games-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupBoardGame }) => setupBoardGame(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'screen-ruler' || id === 'protractor') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./measurement-tools-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupMeasurementTool }) => setupMeasurementTool(id, root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (['printable-label-maker', 'poster-maker', 'certificate-maker', 'invitation-maker'].includes(id)) {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./print-studio-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupPrintStudioTool }) => setupPrintStudioTool(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'ear-training') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./ear-training-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupEarTraining }) => setupEarTraining(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'online-sequencer') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./online-sequencer-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupOnlineSequencer }) => setupOnlineSequencer(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'bpm-detector') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./bpm-detector-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupBpmDetector }) => setupBpmDetector(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'song-key-finder' || id === 'audio-spectrogram') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./audio-analysis-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupAudioAnalysis }) => setupAudioAnalysis(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'fretboard-trainer') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./fretboard-trainer-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupFretboardTrainer }) => setupFretboardTrainer(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'music-scale-finder') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./music-scale-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupMusicScaleFinder }) => setupMusicScaleFinder(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'seating-chart-maker') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./seating-chart-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupSeatingChart }) => setupSeatingChart(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'gantt-chart-maker') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./gantt-chart-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupGanttChart }) => setupGanttChart(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'sprite-sheet-maker') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./sprite-sheet-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupSpriteSheetMaker }) => setupSpriteSheetMaker(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'chess-clock') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./chess-clock-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupChessClock }) => setupChessClock(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'task-list') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./task-list-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupTaskList }) => setupTaskList(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'kanban-board') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./kanban-board-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupKanbanBoard }) => setupKanbanBoard(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'reading-speed-test') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./reading-speed-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupReadingSpeed }) => setupReadingSpeed(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'chart-maker') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./chart-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupChartMaker }) => setupChartMaker(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'sqlite-playground') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./sqlite-playground-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupSqlitePlayground }) => setupSqlitePlayground(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (['html-formatter', 'css-formatter', 'javascript-formatter'].includes(id)) {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./code-formatter-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupCodeFormatter }) => setupCodeFormatter(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'periodic-table') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./periodic-table-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupPeriodicTable }) => setupPeriodicTable(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'mahjong-solitaire') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./mahjong-solitaire-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupMahjongSolitaire }) => setupMahjongSolitaire(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'go-game') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./go-game-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupGoGame }) => setupGoGame(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'room-planner') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./room-planner-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupRoomPlanner }) => setupRoomPlanner(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (['audio-looper', 'molecule-viewer', 'music-score-editor', 'backgammon', 'tangram'].includes(id)) {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./planned-tools-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupPlannedTool }) => setupPlannedTool(id, root))
+      .catch((error) => { console.error('Planned tool setup failed.', error); setStatus($('#op-status', root) || $('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'); });
+    return;
+  }
+  if (['photo-mosaic-maker', 'jigsaw-puzzle'].includes(id)) {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./image-puzzle-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupImagePuzzleTool }) => setupImagePuzzleTool(id, root))
+      .catch((error) => { console.error('Image puzzle setup failed.', error); setStatus($('#op-status', root) || $('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'); });
+    return;
+  }
+  if (['epub-reader', 'epub-metadata-editor'].includes(id)) {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./epub-tools-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupEpubTool }) => setupEpubTool(id, root))
+      .catch((error) => { console.error('EPUB tool setup failed.', error); setStatus($('#op-status', root) || $('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'); });
+    return;
+  }
   if (opportunityTools.has(id)) {
     const assetVersion = document.documentElement.dataset.assetVersion;
     import(`./opportunity-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)

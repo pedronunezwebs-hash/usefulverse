@@ -6,6 +6,11 @@ const rational = (n, d = 1n) => {
   const divisor = gcd(n, d);
   return { n: n / divisor, d: d / divisor };
 };
+const graphemeSegmenter = typeof Intl.Segmenter === 'function' ? new Intl.Segmenter(undefined, { granularity: 'grapheme' }) : null;
+const graphemes = (text) => {
+  const normalized = String(text).normalize('NFC');
+  return graphemeSegmenter ? [...graphemeSegmenter.segment(normalized)].map(({ segment }) => segment) : Array.from(normalized);
+};
 
 export function parseFraction(input) {
   const text = String(input).trim().replace(/[−–—]/gu, '-').replace(/,/gu, '.');
@@ -104,8 +109,8 @@ export function calculateFuelCost({ distance, efficiency, price, passengers = 1,
 }
 
 export function typingMetrics(prompt, typed, elapsedMs) {
-  const expected = [...prompt];
-  const entered = [...typed];
+  const expected = graphemes(prompt);
+  const entered = graphemes(typed);
   let correct = 0;
   for (let index = 0; index < Math.min(expected.length, entered.length); index += 1) if (expected[index] === entered[index]) correct += 1;
   const minutes = Math.max(0, elapsedMs) / 60_000;

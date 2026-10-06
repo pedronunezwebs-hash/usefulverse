@@ -11,6 +11,47 @@ const positive = (value, label, allowZero = false) => {
 const fixed = (value, digits = 6) => Number(value.toFixed(digits)).toString();
 const money = (value) => Number(value).toFixed(2);
 
+export function makeNoiseSamples(color, length, random = Math.random) {
+  if (!['white', 'pink', 'brown'].includes(color)) throw new TypeError('Choose white, pink, or brown noise.');
+  if (!Number.isInteger(length) || length < 1 || length > 192_000) throw new RangeError('Noise buffer must contain 1–192000 samples.');
+  if (typeof random !== 'function') throw new TypeError('A random source is required.');
+  const samples = new Float32Array(length);
+  let b0 = 0; let b1 = 0; let b2 = 0; let b3 = 0; let b4 = 0; let b5 = 0; let b6 = 0; let brown = 0;
+  for (let index = 0; index < length; index += 1) {
+    const unit = random();
+    if (!Number.isFinite(unit) || unit < 0 || unit >= 1) throw new RangeError('Random values must be between 0 and 1.');
+    const white = unit * 2 - 1;
+    let sample = white;
+    if (color === 'pink') {
+      b0 = 0.99886 * b0 + white * 0.0555179;
+      b1 = 0.99332 * b1 + white * 0.0750759;
+      b2 = 0.969 * b2 + white * 0.153852;
+      b3 = 0.8665 * b3 + white * 0.3104856;
+      b4 = 0.55 * b4 + white * 0.5329522;
+      b5 = -0.7616 * b5 - white * 0.016898;
+      sample = (b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362) * 0.25;
+      b6 = white * 0.115926;
+    } else if (color === 'brown') {
+      brown = (brown + 0.02 * white) / 1.02;
+      sample = brown * 6;
+    }
+    samples[index] = Math.max(-1, Math.min(1, sample));
+  }
+  return samples;
+}
+
+export function calculateTeleprompterScrollRate(maxScroll, wordCount, wordsPerMinute) {
+  const distance = Number(maxScroll); const words = Number(wordCount); const speed = Number(wordsPerMinute);
+  if (!Number.isFinite(distance) || distance < 0) throw new RangeError('Scroll distance must be zero or greater.');
+  if (!Number.isInteger(words) || words < 1) throw new RangeError('Word count must be a positive integer.');
+  if (!Number.isFinite(speed) || speed < 30 || speed > 240) throw new RangeError('Reading speed must be between 30 and 240 words per minute.');
+  return distance * speed / (words * 60_000);
+}
+
+export function countTeleprompterWords(text) {
+  return (String(text).match(/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]|[\p{L}\p{N}]+/gu) ?? []).length;
+}
+
 export function solveEquation({ a, b, c }) {
   const A = number(a, 'coefficient a'); const B = number(b, 'coefficient b'); const C = number(c, 'coefficient c');
   if (A === 0 && B === 0) return C === 0 ? 'Every real number is a solution.' : 'There is no solution.';
@@ -924,10 +965,12 @@ export function makeFlashcards({ cards }) {
   const lines = String(cards).split(/\r?\n/u).map((line) => line.trim()).filter(Boolean);
   if (!lines.length || lines.length > 200) throw new RangeError('Enter between 1 and 200 flashcards.');
   return lines.map((line, index) => {
-    const split = line.indexOf(','); if (split < 1 || !line.slice(split + 1).trim()) throw new TypeError(`Line ${index + 1}: use term, definition.`);
+    const split = line.search(/[,،，、]/u); if (split < 1 || !line.slice(split + 1).trim()) throw new TypeError(`Line ${index + 1}: use term, definition.`);
     return `${index + 1}. FRONT: ${line.slice(0, split).trim()}\n   BACK: ${line.slice(split + 1).trim()}`;
   }).join('\n\n');
 }
+
+export const flashcardProgress = (known, index, remaining) => ({ current: remaining ? known + index + 1 : 0, total: known + remaining });
 
 function seededRandom(seed) {
   let state = 2166136261;
@@ -935,12 +978,19 @@ function seededRandom(seed) {
   return () => { state += 0x6D2B79F5; let value = state; value = Math.imul(value ^ value >>> 15, value | 1); value ^= value + Math.imul(value ^ value >>> 7, value | 61); return ((value ^ value >>> 14) >>> 0) / 4294967296; };
 }
 
-export function makeWordSearch({ words, size, seed = '1' }) {
+function puzzleCells(value, locale = 'en') {
+  const text = String(value ?? '').normalize('NFC').toLocaleUpperCase(locale).replace(/[^\p{L}\p{M}\p{N}]/gu, '');
+  if (typeof Intl.Segmenter === 'function') return [...new Intl.Segmenter(locale, { granularity: 'grapheme' }).segment(text)].map(({ segment }) => segment);
+  return Array.from(text);
+}
+
+export function makeWordSearch({ words, size, seed = '1', locale = 'en' }) {
   const dimension = number(size, 'grid size');
   if (!Number.isInteger(dimension) || dimension < 8 || dimension > 20) throw new RangeError('Grid size must be a whole number from 8 to 20.');
-  const list = [...new Set(String(words).split(/[\n,;]+/u).map((word) => word.normalize('NFKD').replace(/\p{M}/gu, '').toUpperCase().replace(/[^A-Z]/gu, '')).filter(Boolean))];
-  if (!list.length || list.length > 20 || list.some((word) => word.length > dimension)) throw new RangeError('Enter 1 to 20 unique A–Z words, each no longer than the grid.');
+  const list = [...new Set(String(words).split(/[\n,;،，、]+/u).map((word) => puzzleCells(word, locale).join('')).filter(Boolean))].map((word) => puzzleCells(word, locale));
+  if (!list.length || list.length > 20 || list.some((word) => word.length > dimension)) throw new RangeError('Enter 1 to 20 unique words using letters or digits, each no longer than the grid.');
   const grid = Array.from({ length: dimension }, () => Array(dimension).fill('')); const random = seededRandom(seed);
+  const filler = [...new Set(list.flat())];
   const directions = [[0, 1], [1, 0], [1, 1], [-1, 1], [0, -1], [-1, 0], [-1, -1], [1, -1]]; const placements = [];
   for (const word of [...list].sort((a, b) => b.length - a.length)) {
     let placed = false;
@@ -948,13 +998,13 @@ export function makeWordSearch({ words, size, seed = '1' }) {
       const [dr, dc] = directions[Math.floor(random() * directions.length)]; const row = Math.floor(random() * dimension); const col = Math.floor(random() * dimension);
       const endRow = row + dr * (word.length - 1); const endCol = col + dc * (word.length - 1);
       if (endRow < 0 || endRow >= dimension || endCol < 0 || endCol >= dimension) continue;
-      if ([...word].some((letter, index) => grid[row + dr * index][col + dc * index] && grid[row + dr * index][col + dc * index] !== letter)) continue;
-      [...word].forEach((letter, index) => { grid[row + dr * index][col + dc * index] = letter; });
-      placements.push(`${word}: (${row + 1},${col + 1}) → (${endRow + 1},${endCol + 1})`); placed = true;
+      if (word.some((letter, index) => grid[row + dr * index][col + dc * index] && grid[row + dr * index][col + dc * index] !== letter)) continue;
+      word.forEach((letter, index) => { grid[row + dr * index][col + dc * index] = letter; });
+      placements.push(`${word.join('')}: (${row + 1},${col + 1}) → (${endRow + 1},${endCol + 1})`); placed = true;
     }
     if (!placed) throw new RangeError(`Could not place “${word}”. Increase the grid or use fewer words.`);
   }
-  for (const row of grid) for (let col = 0; col < dimension; col += 1) if (!row[col]) row[col] = String.fromCharCode(65 + Math.floor(random() * 26));
+  for (const row of grid) for (let col = 0; col < dimension; col += 1) if (!row[col]) row[col] = filler[Math.floor(random() * filler.length)];
   return `WORD SEARCH (${dimension}×${dimension})\n${grid.map((row) => row.join(' ')).join('\n')}\n\nANSWER KEY · start and end coordinates\n${placements.join('\n')}`;
 }
 
@@ -1062,23 +1112,6 @@ function plotPolynomial({ coefficients, xmin, xmax, samples = 120 }) {
   return Array.from({ length: count + 1 }, (_, i) => { const x = low + (high - low) * i / count; const y = [...terms].reduce((sum, coefficient) => sum * x + coefficient, 0); if (!Number.isFinite(y) || Math.abs(y) > 1e12) throw new RangeError('The graph exceeds the safe display range. Narrow the x range.'); return `${fixed(x, 3)},${fixed(y, 3)}`; }).join('\n');
 }
 
-function simpleFormatter({ source, mode = 'format' }, kind) {
-  const text = String(source ?? ''); if (!text.trim() || text.length > 200_000) throw new RangeError('Paste non-empty source under 200,000 characters.');
-  if (kind === 'html') return mode === 'minify' ? text.replace(/>\s+</gu, '><').trim() : text.replace(/>\s*</gu, '>\n<').trim();
-  if (kind === 'css') {
-    if (mode === 'minify') return text.replace(/\/\*[\s\S]*?\*\//gu, '').replace(/\s*([{}:;,])\s*/gu, '$1').replace(/;\}/gu, '}').trim();
-    return text.replace(/\s*\{\s*/gu, ' {\n  ').replace(/;\s*/gu, ';\n  ').replace(/\s*:\s*/gu, ': ').replace(/\s*\}\s*/gu, '\n}\n\n').trim();
-  }
-  if (kind === 'javascript') {
-    // Deliberately conservative formatter: preserve token content and only add line breaks at separators.
-    let quote = ''; let escaped = false; let output = ''; let depth = 0;
-    for (const char of text) { if (quote) { output += char; if (escaped) escaped = false; else if (char === '\\') escaped = true; else if (char === quote) quote = ''; continue; } if (char === '"' || char === "'" || char === '`') { quote = char; output += char; } else if (char === '{') { depth++; output += ' {\n' + '  '.repeat(depth); } else if (char === '}') { depth = Math.max(0, depth - 1); output += '\n' + '  '.repeat(depth) + '}'; } else if (char === ';') output += ';\n' + '  '.repeat(depth); else output += char; }
-    if (quote || depth !== 0) throw new TypeError('The source has an unclosed quote or brace.');
-    return mode === 'minify' ? text.replace(/\/\*[\s\S]*?\*\//gu, '').replace(/\s+/gu, ' ').replace(/\s*([{};,])\s*/gu, '$1').trim() : output.trim();
-  }
-  throw new TypeError('Unsupported formatter.');
-}
-
 function cronExpression({ frequency, minute = 0, hour = 9, weekday = 1, day = 1 }) {
   const m = number(minute, 'minute'); const h = number(hour, 'hour'); const w = number(weekday, 'weekday'); const d = number(day, 'day');
   if (![m, h, w, d].every(Number.isInteger) || m < 0 || m > 59 || h < 0 || h > 23 || w < 0 || w > 6 || d < 1 || d > 31) throw new RangeError('Check the allowed ranges for minute, hour, weekday and day.');
@@ -1102,9 +1135,12 @@ function estimateCycle({ start, cycle = 28, period = 5 }) { const days = number(
 
 function makeAscii({ text }) { const input = String(text ?? '').trim(); if (!input || input.length > 80) throw new RangeError('Enter 1–80 characters.'); return input.toUpperCase().split('').map((char) => char === ' ' ? '   ' : `[${char}]`).join(' '); }
 function findChord({ chord }) { const chords = { C: 'C–E–G · x32010', G: 'G–B–D · 320003', D: 'D–F♯–A · xx0232', A: 'A–C♯–E · x02220', E: 'E–G♯–B · 022100', Am: 'A–C–E · x02210', Em: 'E–G–B · 022000', Dm: 'D–F–A · xx0231', F: 'F–A–C · 133211' }; if (!chords[chord]) throw new TypeError('Choose a listed chord.'); return `${chord}: ${chords[chord]}\nStandard tuning; one common fingering.`; }
-function makeCrossword({ pairs }) {
-  const items = String(pairs ?? '').split(/\r?\n/u).map((line) => line.split(/[,;\t]/u).map((part) => part.trim())).filter((parts) => parts.length >= 2 && parts[0] && parts[1]).map(([answer, clue]) => ({ answer: answer.normalize('NFD').replace(/[\u0300-\u036f]/gu, '').toUpperCase().replace(/[^A-Z]/gu, ''), clue }));
-  if (items.length < 2 || items.length > 20 || items.some((item) => item.answer.length < 2 || item.answer.length > 14 || item.clue.length > 140)) throw new RangeError('Enter 2–20 answer, clue lines. Answers must contain 2–14 Latin letters.');
+function makeCrossword({ pairs, locale = 'en' }) {
+  const items = String(pairs ?? '').split(/\r?\n/u).map((line) => {
+    const split = line.search(/[,;\t،，、]/u);
+    return split < 1 ? null : { answer: line.slice(0, split).trim(), clue: line.slice(split + 1).trim() };
+  }).filter((item) => item?.answer && item.clue).map(({ answer, clue }) => ({ answer: puzzleCells(answer, locale), clue }));
+  if (items.length < 2 || items.length > 20 || items.some((item) => item.answer.length < 2 || item.answer.length > 14 || item.clue.length > 140)) throw new RangeError('Enter 2–20 answer, clue lines. Answers must contain 2–14 letters or digits.');
   const size = 31; const grid = Array.from({ length: size }, () => Array(size).fill('')); const placed = [];
   const fits = (word, row, col, vertical) => {
     const dr = vertical ? 1 : 0; const dc = vertical ? 0 : 1; const endR = row + dr * (word.length - 1); const endC = col + dc * (word.length - 1);
@@ -1123,7 +1159,7 @@ function makeCrossword({ pairs }) {
   }
   if (placed.length < 2) throw new RangeError('The answers did not cross. Add words with at least one shared letter.');
   const minR = Math.min(...placed.map((p) => p.row)); const maxR = Math.max(...placed.map((p) => p.row + (p.vertical ? p.answer.length - 1 : 0))); const minC = Math.min(...placed.map((p) => p.col)); const maxC = Math.max(...placed.map((p) => p.col + (p.vertical ? 0 : p.answer.length - 1)));
-  return `CROSSWORD GRID (* = empty)\n${grid.slice(minR, maxR + 1).map((row) => row.slice(minC, maxC + 1).map((cell) => cell || '*').join(' ')).join('\n')}\n\nPLACED ${placed.length} OF ${items.length} WORDS\n${placed.map((item, index) => `${index + 1}. ${item.vertical ? 'Down' : 'Across'} · ${item.clue}`).join('\n')}`;
+  return `CROSSWORD GRID (* = empty)\n${grid.slice(minR, maxR + 1).map((row) => row.slice(minC, maxC + 1).map((cell) => cell || '*').join(' ')).join('\n')}\n\nPLACED ${placed.length} OF ${items.length} WORDS\n${placed.map((item, index) => `${index + 1}. ${item.vertical ? 'Down' : 'Across'} · ${item.clue} (${item.answer.join('')})`).join('\n')}`;
 }
 function optimizeSvg({ svg }) {
   const text = String(svg ?? '').trim(); if (!/^(?:<\?xml[^>]*>\s*)?<svg\b[\s\S]*<\/svg>\s*$/iu.test(text)) throw new TypeError('Paste a complete SVG document.');
@@ -1156,11 +1192,10 @@ function inspectHex({ hex }) {
   }
   return lines.join('\n');
 }
-function chartRows({ csv }) { const rows = String(csv ?? '').split(/\r?\n/u).map((line) => line.split(',').map((cell) => cell.trim())).filter((row) => row.length >= 2 && row[0]); if (rows.length > 1 && !Number.isFinite(Number(rows[0][1]))) rows.shift(); if (rows.length < 2 || rows.length > 60 || rows.some((row) => !row[0] || !Number.isFinite(Number(row[1])))) throw new TypeError('Enter 2–60 label,value CSV lines with a number in the second column.'); return rows.map(([label, value]) => `${label.slice(0, 40)},${number(value, 'chart value')}`).join('\n'); }
 function diagramSteps({ steps }) { const rows = String(steps ?? '').split(/\r?\n/u).map((line) => line.trim()).filter(Boolean); if (rows.length < 2 || rows.length > 12 || rows.some((line) => line.length > 48)) throw new RangeError('Enter 2–12 short steps (up to 48 characters each).'); return rows.join('\n'); }
 function renderLatexSubset({ equation }) { let text = String(equation ?? '').trim(); if (!text || text.length > 240) throw new RangeError('Enter an equation of 1–240 characters.'); if (/\\(?:input|include|write|href|url|html|class|style|def|newcommand|require)\b/iu.test(text)) throw new TypeError('This equation uses an unsupported command.'); text = text.replace(/\\frac\s*\{([^{}]{1,40})\}\s*\{([^{}]{1,40})\}/gu, '($1) / ($2)').replace(/\\sqrt\s*\{([^{}]{1,60})\}/gu, '√($1)').replace(/\\times\b/gu, '×').replace(/\\cdot\b/gu, '·').replace(/\\pi\b/gu, 'π').replace(/\\theta\b/gu, 'θ').replace(/\\alpha\b/gu, 'α').replace(/\\beta\b/gu, 'β').replace(/\\leq\b/gu, '≤').replace(/\\geq\b/gu, '≥').replace(/\\neq\b/gu, '≠').replace(/\^\{([^{}]+)\}/gu, '^($1)').replace(/_\{([^{}]+)\}/gu, '_($1)').replace(/[{}]/gu, '').replace(/\\[A-Za-z]+/gu, '?'); return text; }
 
-export function calculateOpportunity(engine, values) {
+export function calculateOpportunity(engine, values, locale = 'en') {
   const handlers = {
     equation: solveEquation,
     'linear-system': solveLinearSystem,
@@ -1218,7 +1253,7 @@ export function calculateOpportunity(engine, values) {
     jsonpath: queryJsonPath,
     calendar: makePrintableCalendar,
     flashcards: makeFlashcards,
-    'word-search': makeWordSearch,
+    'word-search': (input) => makeWordSearch({ ...input, locale }),
     bingo: makeBingoCard,
     bmi: calculateAdultBmi,
     'bmr-tdee': calculateBmrTdee,
@@ -1229,21 +1264,17 @@ export function calculateOpportunity(engine, values) {
     'test-data': generateTestData,
     'math-worksheet': generateMathWorksheet,
     'function-graph': plotPolynomial,
-    'html-format': (input) => simpleFormatter(input, 'html'),
-    'css-format': (input) => simpleFormatter(input, 'css'),
-    'javascript-format': (input) => simpleFormatter(input, 'javascript'),
     'cron-builder': cronExpression,
     'body-fat': estimateBodyFat,
     'due-date': estimateDueDate,
     'cycle-calendar': estimateCycle,
     'ascii-art': makeAscii,
     'chord-finder': findChord,
-    crossword: makeCrossword,
+    crossword: (input) => makeCrossword({ ...input, locale }),
     'svg-optimizer': optimizeSvg,
     'sqlite-playground': simpleSql,
     'business-card': makeBusinessCard,
     'hex-editor': inspectHex,
-    'chart-maker': chartRows,
     'diagram-maker': diagramSteps,
     'latex-renderer': renderLatexSubset,
     'code-playground': () => 'Preview updated in the isolated frame.',

@@ -1,0 +1,1 @@
+.room-planner__add{align-items:end;margin-top:1rem}.room-planner__svg{display:block;width:min(100%,48rem);height:auto;margin:1rem auto;background:#f5f7fa;touch-action:none;outline:none}.room-planner__svg:focus-visible{outline:3px solid #286bcb}.room-planner__items{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem}.room-planner__items:empty{display:none}

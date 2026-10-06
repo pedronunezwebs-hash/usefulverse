@@ -306,6 +306,29 @@ export const expandedLocaleCopyFixes = {
   },
 };
 
+Object.assign(expandedLocaleCopyFixes, {
+  it: { ...expandedLocaleCopyFixes.it, 'online-timer': { 4: 'Scegli tra conto alla rovescia, cronometro o modalità concentrazione, quindi avvia. Le schede in background o i dispositivi in sospensione possono ritardare gli avvisi: tieni aperta questa pagina.' } },
+  zh_tw: { ...expandedLocaleCopyFixes.zh_tw, 'online-timer': { 4: '選擇倒數計時、碼錶或專注模式，然後開始。背景分頁或進入睡眠的裝置可能會延遲提醒，請保持此頁面開啟。' } },
+  bg: { ...expandedLocaleCopyFixes.bg, 'online-timer': { 4: 'Изберете обратно броене, хронометър или режим за концентрация и стартирайте. Фоновите раздели или устройствата в режим на заспиване може да забавят известията, затова оставете страницата отворена.' } },
+  ca: { ...expandedLocaleCopyFixes.ca, 'online-timer': { 4: 'Tria entre compte enrere, cronòmetre o mode de concentració i comença. Les pestanyes en segon pla o els dispositius en repòs poden retardar els avisos; mantén aquesta pàgina oberta.' } },
+  nl: { ...expandedLocaleCopyFixes.nl, 'online-timer': { 4: 'Kies aftellen, stopwatch of focusmodus en start. Achtergrondtabbladen of apparaten in de slaapstand kunnen meldingen vertragen; houd deze pagina open.' } },
+  el: { ...expandedLocaleCopyFixes.el, 'online-timer': { 4: 'Επιλέξτε αντίστροφη μέτρηση, χρονόμετρο ή λειτουργία εστίασης και ξεκινήστε. Οι καρτέλες στο παρασκήνιο ή οι συσκευές σε αναστολή μπορεί να καθυστερήσουν τις ειδοποιήσεις· κρατήστε αυτή τη σελίδα ανοιχτή.' } },
+  ms: { ...expandedLocaleCopyFixes.ms, 'online-timer': { 4: 'Pilih kira detik, jam randik atau mod fokus, kemudian mula. Tab latar belakang atau peranti tidur mungkin melambatkan amaran; pastikan halaman ini terbuka.' } },
+  pl: { ...expandedLocaleCopyFixes.pl, 'online-timer': { 4: 'Wybierz odliczanie, stoper lub tryb skupienia i uruchom. Karty w tle lub uśpione urządzenia mogą opóźniać alerty, dlatego pozostaw tę stronę otwartą.' } },
+  sv: { ...expandedLocaleCopyFixes.sv, 'online-timer': { 4: 'Välj nedräkning, stoppur eller fokusläge och starta. Bakgrundsflikar eller enheter i viloläge kan fördröja aviseringar, så låt den här sidan vara öppen.' } },
+  th: { ...expandedLocaleCopyFixes.th, 'online-timer': { 4: 'เลือกโหมดนับถอยหลัง จับเวลา หรือโฟกัส แล้วเริ่มใช้งาน แท็บที่อยู่เบื้องหลังหรืออุปกรณ์ที่พักการทำงานอาจทำให้การแจ้งเตือนล่าช้า โปรดเปิดหน้านี้ไว้' } },
+  uk: { ...expandedLocaleCopyFixes.uk, 'online-timer': { 4: 'Оберіть зворотний відлік, секундомір або режим концентрації та запустіть таймер. Фонові вкладки або пристрої в режимі сну можуть затримувати сповіщення, тому залиште цю сторінку відкритою.' } },
+  sw: { ...expandedLocaleCopyFixes.sw, 'online-timer': { 4: 'Chagua hali ya kuhesabu kurudi nyuma, saa ya kupima muda au umakini, kisha anza. Vichupo vilivyo chinichini au vifaa vilivyolala vinaweza kuchelewesha arifa; acha ukurasa huu wazi.' } },
+  mr: { ...expandedLocaleCopyFixes.mr, 'online-timer': { 4: 'काउंटडाउन, स्टॉपवॉच किंवा फोकस मोड निवडा आणि सुरू करा. पार्श्वभूमीतील टॅब किंवा स्लीप मोडमधील डिव्हाइस सूचना उशिरा देऊ शकतात; हे पृष्ठ उघडे ठेवा.' } },
+  te: { ...expandedLocaleCopyFixes.te, 'online-timer': { 4: 'కౌంట్‌డౌన్, స్టాప్‌వాచ్ లేదా ఫోకస్ మోడ్‌ను ఎంచుకుని ప్రారంభించండి. బ్యాక్‌గ్రౌండ్ ట్యాబ్‌లు లేదా నిద్రలో ఉన్న పరికరాలు అలర్ట్‌లను ఆలస్యం చేయవచ్చు; ఈ పేజీని తెరిచి ఉంచండి.' } },
+  ha: { ...expandedLocaleCopyFixes.ha, 'online-timer': { 4: 'Zaɓi ƙidayar baya, agogon gudu ko yanayin mai da hankali, sannan ka fara. Shafukan da ke bayan fage ko na’urorin da suke barci na iya jinkirta faɗakarwa; ka bar wannan shafin a buɗe.' } },
+  tl: { ...expandedLocaleCopyFixes.tl, 'online-timer': { 4: 'Pumili ng countdown, stopwatch o focus mode at magsimula. Maaaring maantala ang mga alerto kapag nasa background ang tab o naka-sleep ang device, kaya panatilihing bukas ang page na ito.' } },
+  ta: { ...expandedLocaleCopyFixes.ta, 'online-timer': { 4: 'கவுண்ட்டவுன், ஸ்டாப்வாட்ச் அல்லது கவனிப்பு முறையைத் தேர்ந்தெடுத்து தொடங்கவும். பின்னணித் தாவல்கள் அல்லது உறக்கநிலைச் சாதனங்கள் எச்சரிக்கைகளைத் தாமதப்படுத்தலாம்; இந்தப் பக்கத்தைத் திறந்தே வைக்கவும்.' } },
+  fa: { ...expandedLocaleCopyFixes.fa, 'online-timer': { 4: 'شمارش معکوس، کرنومتر یا حالت تمرکز را انتخاب و شروع کنید. زبانه‌های پس‌زمینه یا دستگاه‌های در حالت خواب ممکن است هشدارها را به تأخیر بیندازند؛ این صفحه را باز نگه دارید.' } },
+  am: { ...expandedLocaleCopyFixes.am, 'online-timer': { 4: 'ቆጠራ፣ የሩጫ ሰዓት ወይም የትኩረት ሁነታን ይምረጡና ይጀምሩ። ከበስተጀርባ ያሉ ትሮች ወይም በእንቅልፍ ላይ ያሉ መሣሪያዎች ማሳወቂያዎችን ሊያዘገዩ ይችላሉ፤ ይህን ገጽ ክፍት ያቆዩ።' } },
+  gu: { ...expandedLocaleCopyFixes.gu, 'online-timer': { 4: 'કાઉન્ટડાઉન, સ્ટોપવૉચ અથવા ફોકસ મોડ પસંદ કરીને શરૂ કરો. બૅકગ્રાઉન્ડ ટૅબ અથવા સ્લીપમાં ગયેલું ઉપકરણ સૂચનાઓ મોડેથી આપી શકે છે; આ પેજ ખુલ્લું રાખો.' } },
+});
+
 export const expandedLocaleFaqFixes = {
   ms: {
     'uuid-generator': { 0: { answer: 'UUID v4 ialah pengecam 128-bit yang dijana secara rawak dan lazim digunakan untuk rekod, data ujian serta pembangunan perisian.' } },

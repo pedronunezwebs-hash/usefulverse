@@ -90,9 +90,7 @@ function setupXml(root) {
     if (/<!DOCTYPE/iu.test(value)) throw new TypeError('For safety, this tool does not accept a DOCTYPE.');
     const documentXml = new DOMParser().parseFromString(value, 'application/xml');
     const rootNode = documentXml.documentElement;
-    const hasParserError = rootNode?.localName === 'parsererror'
-      && rootNode.namespaceURI === 'http://www.mozilla.org/newlayout/xml/parsererror.xml';
-    if (!rootNode || hasParserError) throw new SyntaxError('XML is not well formed. Check the tags and quotation marks.');
+    if (!rootNode || logic.hasXmlParseError(documentXml)) throw new SyntaxError('XML is not well formed. Check the tags and quotation marks.');
     return documentXml;
   };
 
@@ -120,6 +118,11 @@ function setupXml(root) {
       ...after.map((node) => serializer.serializeToString(node)),
     ].join('\n');
   };
+
+  input.addEventListener('input', () => {
+    output.value = '';
+    setStatus(root, 'XML is checked in your browser. No upload.');
+  });
 
   root.addEventListener('click', (event) => {
     const action = event.target.closest('[data-action]')?.dataset.action;

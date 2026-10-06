@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import {
   calculateContrastRatio,
+  hasXmlParseError,
   calculateDiscount,
   calculateFloorArea,
   calculateGpa,
@@ -16,6 +17,14 @@ import {
   findDiscount,
   normalizeRetailBarcode,
 } from './advanced-logic.mjs';
+
+test('XML parse-error detection handles Chrome’s nested parsererror and leaves normal XML content alone', () => {
+  const fakeDocument = (elements) => ({ getElementsByTagName: (name) => name === 'parsererror' ? elements : [] });
+  assert.equal(hasXmlParseError(fakeDocument([{ namespaceURI: 'http://www.w3.org/1999/xhtml', textContent: 'This page contains the following errors: premature end of data' }])), true);
+  assert.equal(hasXmlParseError(fakeDocument([{ namespaceURI: 'http://www.mozilla.org/newlayout/xml/parsererror.xml', textContent: 'XML parsing failed' }])), true);
+  assert.equal(hasXmlParseError(fakeDocument([{ namespaceURI: null, textContent: 'A user document element named parsererror' }])), false);
+  assert.equal(hasXmlParseError(fakeDocument([])), false);
+});
 
 test('standard deviation distinguishes sample from population and handles constant data', () => {
   assert.deepEqual(calculateStandardDeviation([1, 2, 3]), {

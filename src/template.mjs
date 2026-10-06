@@ -23,6 +23,25 @@ const escapeHtml = (value) => String(value)
 const toolUrl = (id, language = 'en') => localePath(language, id);
 
 export const relatedToolIds = {
+  'tournament-bracket-generator': ['random-name-picker', 'random-number-generator'],
+  'task-list': ['kanban-board', 'study-planner', 'gantt-chart-maker'],
+  'kanban-board': ['task-list', 'gantt-chart-maker', 'study-planner'],
+  'reading-speed-test': ['typing-speed-test', 'word-counter', 'study-planner'],
+  'reading-log': ['reading-speed-test', 'study-planner', 'habit-tracker'],
+  'chess-clock': ['tournament-bracket-generator', 'random-number-generator'],
+  'ear-training': ['online-metronome', 'guitar-tuner', 'virtual-piano'],
+  'bpm-detector': ['online-metronome', 'audio-compressor', 'media-converter'],
+  'music-scale-finder': ['guitar-chord-finder', 'guitar-tuner', 'ear-training'],
+  'fretboard-trainer': ['music-scale-finder', 'guitar-chord-finder', 'ear-training'],
+  'svg-editor': ['svg-optimizer', 'css-grid-generator', 'color-palette-generator'],
+  'seamless-pattern-maker': ['css-gradient-generator', 'pixel-art-editor', 'svg-editor'],
+  'html-form-builder': ['html-formatter', 'meta-tag-generator', 'html-table-generator'],
+  'html-email-builder': ['meta-tag-generator', 'html-formatter', 'utm-builder'],
+  'seating-chart-maker': ['printable-calendar-maker', 'quotation-generator', 'study-planner'],
+  'gantt-chart-maker': ['study-planner', 'printable-calendar-maker', 'seating-chart-maker'],
+  'sprite-sheet-maker': ['gif-maker', 'pixel-art-editor', 'image-format-converter'],
+  'mental-math-practice': ['study-planner', 'math-worksheet-generator', 'fraction-calculator'],
+  'study-planner': ['online-timer', 'flashcard-maker', 'math-worksheet-generator'],
   'roman-numeral-converter': ['date-calculator', 'number-to-words-converter', 'binary-converter'],
   'binary-converter': ['prime-number-checker', 'timestamp-converter', 'number-to-words-converter'],
   'prime-number-checker': ['binary-converter', 'average-calculator', 'ratio-proportion-calculator'],
@@ -34,6 +53,11 @@ export const relatedToolIds = {
   'age-calculator': ['date-calculator', 'time-duration-calculator', 'business-days-calculator'],
   'business-days-calculator': ['date-calculator', 'age-calculator', 'time-duration-calculator'],
   'image-to-pdf': ['pdf-tools', 'image-resizer-compressor', 'image-format-converter'],
+  'pdf-tools': ['pdf-page-editor', 'pdf-redact', 'pdf-protect-unlock'],
+  'pdf-to-image': ['image-cropper', 'image-resizer-compressor', 'image-format-converter'],
+  'pdf-protect-unlock': ['pdf-redact', 'pdf-compare', 'pdf-page-editor'],
+  'pdf-redact': ['pdf-tools', 'pdf-page-editor', 'pdf-protect-unlock'],
+  'image-resizer-compressor': ['image-format-converter', 'image-cropper', 'image-to-pdf'],
   'office-file-compressor': ['pdf-tools', 'image-resizer-compressor', 'image-format-converter'],
   'favicon-generator': ['image-resizer-compressor', 'color-converter', 'color-contrast-checker'],
   'image-format-converter': ['image-resizer-compressor', 'image-to-pdf', 'pdf-tools'],
@@ -52,10 +76,11 @@ export const relatedToolIds = {
   'random-name-picker': ['random-number-generator', 'typing-speed-test', 'lorem-ipsum-generator'],
   'fuel-cost-calculator': ['unit-converter', 'time-duration-calculator', 'percentage-calculator'],
   'image-cropper': ['image-resizer-compressor', 'image-format-converter', 'image-to-pdf'],
-  'pdf-to-image': ['pdf-tools', 'image-to-pdf', 'image-format-converter'],
-  'video-compressor': ['pdf-tools', 'image-resizer-compressor', 'image-format-converter'],
-  'audio-compressor': ['video-compressor', 'media-transcriber', 'pdf-tools'],
-  'media-transcriber': ['audio-compressor', 'video-compressor', 'word-counter'],
+  'video-compressor': ['media-converter', 'audio-compressor', 'media-transcriber'],
+  'audio-compressor': ['media-converter', 'media-transcriber', 'video-compressor'],
+  'media-transcriber': ['subtitle-converter', 'word-counter', 'audio-compressor'],
+  'voice-recorder': ['audio-compressor', 'media-converter', 'media-transcriber'],
+  'screen-recorder': ['video-compressor', 'media-converter', 'media-transcriber'],
   'sql-formatter': ['json-formatter', 'xml-formatter', 'csv-to-json'],
   'pdf-page-editor': ['pdf-tools', 'pdf-to-image', 'pdf-form-filler'],
   'pdf-ocr': ['pdf-document-converter', 'pdf-to-image', 'pdf-page-editor'],
@@ -69,7 +94,7 @@ export const relatedToolIds = {
   'scientific-calculator': ['fraction-calculator', 'percentage-calculator', 'standard-deviation-calculator'],
   'loan-calculator': ['compound-interest-calculator', 'percentage-calculator', 'discount-calculator'],
   'compound-interest-calculator': ['loan-calculator', 'percentage-calculator', 'average-calculator'],
-  'invoice-generator': ['percentage-calculator', 'loan-calculator', 'resume-builder'],
+  'invoice-generator': ['quotation-generator', 'receipt-generator', 'percentage-calculator'],
   'resume-builder': ['word-counter', 'text-case-converter', 'invoice-generator'],
   'portrait-background-remover': ['image-format-converter', 'image-cropper', 'image-resizer-compressor'],
 };
@@ -558,7 +583,7 @@ export function renderToolPage(tool, assetVersion = '', language = 'en', pageToo
       <div class="page-container">
       <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="${homeHref}">UsefulVerse</a><span aria-hidden="true">/</span><a href="${pdfOnlyLocales[language] ? homeHref : `${homeHref}#tools`}">${escapeHtml(tool.category)}</a><span aria-hidden="true">/</span><span>${escapeHtml(tool.title)}</span></nav>
         <div class="tool-page__heading"><div>${icon(tool)}<p class="eyebrow">${escapeHtml(tool.category)} tool</p><h1>${escapeHtml(tool.title)}</h1><p class="tool-lead">${escapeHtml(tool.intro)}</p></div><div class="privacy-note"><span class="privacy-note__dot" aria-hidden="true"></span><span>Runs in your browser. No upload.</span></div></div>
-        <section class="tool-panel" aria-label="${escapeHtml(tool.title)} workspace">${toolPanel}</section>
+        <section class="tool-panel" aria-label="${escapeHtml(tool.title)} workspace">${toolPanel}<aside class="tool-follow-up" data-tool-follow-up hidden aria-labelledby="tool-follow-up-title"><div class="section-heading"><h2 id="tool-follow-up-title">${escapeHtml(ui[language]?.['More useful tools'] ?? 'More useful tools')}</h2><button class="button button--ghost" type="button" data-tool-follow-up-dismiss aria-label="${escapeHtml(ui[language]?.Close ?? 'Close')}">×</button></div><div class="tool-grid tool-grid--compact" data-tool-follow-up-links></div></aside></section>
         ${usefulVerseSaveCard(canonical)}
         ${toolExplainer}
         ${guidesSection}
@@ -803,6 +828,34 @@ export function shell({ title, description, canonical, body, schema = '', assetV
     <meta name="twitter:card" content="summary">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/styles.css${assetSuffix}">
+    ${toolId === '2048-game' ? `<link rel="stylesheet" href="/assets/2048-game.css${assetSuffix}">` : ''}
+    ${toolId === 'sudoku' ? `<link rel="stylesheet" href="/assets/sudoku.css${assetSuffix}">` : ''}
+    ${toolId === 'battleship' ? `<link rel="stylesheet" href="/assets/battleship.css${assetSuffix}">` : ''}
+    ${toolId === 'color-vision-simulator' ? `<link rel="stylesheet" href="/assets/color-vision.css${assetSuffix}">` : ''}
+    ${toolId === 'audio-editor' ? `<link rel="stylesheet" href="/assets/audio-editor.css${assetSuffix}">` : ''}
+    ${toolId === 'periodic-table' ? `<link rel="stylesheet" href="/assets/periodic-table.css${assetSuffix}">` : ''}
+    ${toolId === 'mahjong-solitaire' ? `<link rel="stylesheet" href="/assets/mahjong-solitaire.css${assetSuffix}">` : ''}
+    ${toolId === 'go-game' ? `<link rel="stylesheet" href="/assets/go-game.css${assetSuffix}">` : ''}
+    ${toolId === 'room-planner' ? `<link rel="stylesheet" href="/assets/room-planner.css${assetSuffix}">` : ''}
+    ${['audio-looper', 'molecule-viewer', 'music-score-editor', 'backgammon', 'tangram', 'jigsaw-puzzle', 'photo-mosaic-maker'].includes(toolId) ? `<link rel="stylesheet" href="/assets/planned-tools.css${assetSuffix}">` : ''}
+    ${['svg-editor', 'seamless-pattern-maker', 'html-form-builder', 'html-email-builder'].includes(toolId) ? `<link rel="stylesheet" href="/assets/web-authoring.css${assetSuffix}">` : ''}
+    ${toolId === 'tic-tac-toe' ? `<link rel="stylesheet" href="/assets/tic-tac-toe.css${assetSuffix}">` : ''}
+    ${toolId === 'chess-game' ? `<link rel="stylesheet" href="/assets/chess-game.css${assetSuffix}">` : ''}
+    ${toolId === 'solitaire' ? `<link rel="stylesheet" href="/assets/solitaire.css${assetSuffix}">` : ''}
+    ${toolId === 'minesweeper' ? `<link rel="stylesheet" href="/assets/minesweeper.css${assetSuffix}">` : ''}
+    ${toolId === 'nonogram' ? `<link rel="stylesheet" href="/assets/nonogram.css${assetSuffix}">` : ''}
+    ${toolId === 'sliding-puzzle' ? `<link rel="stylesheet" href="/assets/sliding-puzzle.css${assetSuffix}">` : ''}
+    ${toolId === 'drum-machine' ? `<link rel="stylesheet" href="/assets/drum-machine.css${assetSuffix}">` : ''}
+    ${toolId === 'online-sequencer' ? `<link rel="stylesheet" href="/assets/online-sequencer.css${assetSuffix}">` : ''}
+    ${['song-key-finder', 'audio-spectrogram'].includes(toolId) ? `<link rel="stylesheet" href="/assets/audio-analysis.css${assetSuffix}">` : ''}
+    ${toolId === 'fretboard-trainer' ? `<link rel="stylesheet" href="/assets/fretboard-trainer.css${assetSuffix}">` : ''}
+    ${['css-animation-generator', 'css-clip-path-editor', 'css-filter-generator'].includes(toolId) ? `<link rel="stylesheet" href="/assets/css-design-tools.css${assetSuffix}">` : ''}
+    ${['api-request-builder', 'html-table-generator', 'pwa-manifest-generator'].includes(toolId) ? `<link rel="stylesheet" href="/assets/web-dev-tools.css${assetSuffix}">` : ''}
+    ${['connect-four', 'reversi', 'checkers', 'kakuro'].includes(toolId) ? `<link rel="stylesheet" href="/assets/board-games.css${assetSuffix}">` : ''}
+    ${['screen-ruler', 'protractor'].includes(toolId) ? `<link rel="stylesheet" href="/assets/measurement-tools.css${assetSuffix}">` : ''}
+    ${['printable-label-maker', 'poster-maker', 'certificate-maker', 'invitation-maker'].includes(toolId) ? `<link rel="stylesheet" href="/assets/print-studio.css${assetSuffix}">` : ''}
+    ${toolId === 'kanban-board' ? `<link rel="stylesheet" href="/assets/kanban-board.css${assetSuffix}">` : ''}
+    ${toolId === 'reading-speed-test' ? `<link rel="stylesheet" href="/assets/reading-speed.css${assetSuffix}">` : ''}
     ${schema}
   </head>
   <body>
