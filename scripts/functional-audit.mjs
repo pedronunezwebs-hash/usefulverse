@@ -43,6 +43,7 @@ modules.set('kakuro', 'src/kakuro-runtime.js');
 modules.set('font-tester', 'src/font-tester-runtime.js');
 modules.set('color-vision-simulator', 'src/color-vision-runtime.js');
 for (const id of ['svg-editor', 'seamless-pattern-maker', 'html-form-builder', 'html-email-builder']) modules.set(id, 'src/web-authoring-runtime.js');
+modules.set('audio-editor', 'src/audio-editor-runtime.js');
 for (const id of ['css-animation-generator', 'css-clip-path-editor', 'css-filter-generator']) modules.set(id, 'src/css-design-tools.js');
 for (const id of ['api-request-builder', 'html-table-generator', 'pwa-manifest-generator']) modules.set(id, 'src/web-dev-tools.js');
 for (const id of ['connect-four', 'reversi', 'checkers']) modules.set(id, 'src/board-games-runtime.js');
@@ -65,6 +66,7 @@ for (const tool of tools) {
     : tool.id === 'household-budget-planner' ? 'Optional localStorage and browser CSV download; no bank connection'
     : ['seating-chart-maker', 'gantt-chart-maker'].includes(tool.id) ? 'Optional localStorage; browser download and print actions'
     : tool.id === 'sprite-sheet-maker' ? 'Local file picker, createImageBitmap, canvas export and browser downloads'
+      : tool.id === 'audio-editor' ? 'Local file picker, Web Audio decoding/playback, and browser Blob download; no server upload or microphone permission'
       : tool.id === 'drum-machine' ? 'Browser Web Audio API; user-initiated audio output only, no recording or upload'
     : /camera|webcam|qr-code-reader/iu.test(tool.id) ? 'Camera permission, if used'
     : /voice-recorder|guitar-tuner/iu.test(tool.id) ? 'Microphone permission'
@@ -76,6 +78,7 @@ for (const tool of tools) {
     'battleship',
     'color-vision-simulator',
     'svg-editor', 'seamless-pattern-maker', 'html-form-builder', 'html-email-builder',
+    'audio-editor',
     'music-scale-finder', 'sprite-sheet-maker', 'study-planner', 'online-sequencer',
     'equation-solver', 'system-of-equations-calculator', 'polynomial-factorization-calculator',
     'probability-calculator', 'z-score-calculator', 'coordinate-geometry-calculator',
@@ -131,6 +134,7 @@ for (const tool of tools) {
     'seamless-pattern-maker': 'Unit tests cover all four advertised motifs, SVG output, invalid motifs/colors and bounded inputs. Chrome loaded the initial dots tile, switched to diagonal lines and confirmed both the SVG and preview updated. Responsive checks at 390/768/1280 px had no horizontal overflow. Export is a local SVG Blob; actual download handling, all motifs in browser and other browser rendering remain unverified.',
     'html-form-builder': 'Unit tests cover semantic labels, unique names, supported input types, required state, invalid definitions, limits and escaping. Chrome generated the default form and confirmed preview controls and submit button are disabled (no accidental submission), then rejected an unsupported field type and cleared output. Arabic RTL route showed localized validation feedback. Responsive checks at 390/768/1280 px had no horizontal overflow. Clipboard permissions, download dialog and user-side endpoint integration remain unverified; the tool does not host or collect form responses.',
     'html-email-builder': 'Unit tests cover content escaping, HTTPS-only credential-free links, color validation and language tags. Chrome rejected javascript: URL and generated the HTML for a valid HTTPS link; text was escaped, no script tag appeared, and the preview iframe has an empty sandbox. Responsive checks at 390/768/1280 px had no horizontal overflow. Actual download/client compatibility and all email clients remain unverified; this builder does not send email.',
+    'audio-editor': 'Unit tests cover trim/fade/gain bounds and PCM16 WAV headers/clipping. Isolated local Chrome decoded a generated one-second WAV after the metadata preflight, set a 0.2–0.8 s trim and 0.1 s fades, played and stopped the selection, rendered a WAV Blob with the expected local filename, then cleared the file and revoked its temporary URL. The Arabic route uses lang=ar and RTL, has translated controls, no horizontal overflow at the 1280 px QA viewport and no console errors. The browser download manager did not expose a completed file path in this run, and mobile, real-world codecs and other browsers remain unverified. The page discloses the 25 MiB/3 minute limit; no upload or server conversion is used.',
     'font-tester': 'Unit tests reject missing, empty, unsupported and over-10-MB files and accept WOFF, WOFF2, TTF and OTF at the exact cap. Isolated local Chrome loaded a system TTF, confirmed document.fonts.check, changed preview text, then Reset restored sans-serif, cleared the file input and released the font; an unsupported .mjs file was rejected. Arabic RTL labels are localized and browser console had no errors. Actual WOFF/WOFF2/OTF decoding, mobile behavior, accessibility variants and all devices remain unverified.',
     'kakuro': 'Unit tests generated 12 distinct 4×4 boards, checked each row/column no-repeat constraint and all sums, verified hints, rejected malformed/incomplete grids, and normalized Arabic-Indic, Persian, Devanagari and fullwidth digits. Local Chrome solved a generated grid from its visible clues and showed “Puzzle solved!”, then tested a fresh puzzle, hint, clear and incomplete-state feedback. Arabic RTL controls and clues were visible. Mobile behavior, exhaustive puzzle difficulty and other browsers remain unverified.',
     'hangul-practice': 'Isolated local Chrome completed a five-question round by matching Hangul consonants/vowels to the displayed romanized readings; final status was “Round complete: 5 of 5 correct.” Unit tests cover distinct items, one valid choice, consonant/vowel groups and invalid size/group. Static localization checks cover all 36 locales and placeholders. This teaches only 14 basic consonants and 10 basic vowels; romanization is approximate. Wrong-answer feedback, vowel-only 10-question round, pronunciation, expanded syllables and other browsers remain unverified.',

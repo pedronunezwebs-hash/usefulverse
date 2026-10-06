@@ -1403,6 +1403,7 @@ function setupToolPage() {
   opportunityTools.add('kakuro');
   opportunityTools.add('battleship');
   opportunityTools.add('color-vision-simulator');
+  opportunityTools.add('audio-editor');
   opportunityTools.add('svg-editor');
   opportunityTools.add('seamless-pattern-maker');
   opportunityTools.add('html-form-builder');

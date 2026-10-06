@@ -333,3 +333,29 @@ test('Battleship has localized local-play controls and runtime messages in all 3
   for (const control of ['data-battleship-enemy', 'data-battleship-player', 'data-battleship-new', 'data-planner-messages']) assert.ok(markup.includes(control), control);
   assert.match(markup, /لوحة العدو|لوحة العدو/u);
 });
+
+test('audio editor exposes local-only editing controls and translated runtime copy in all locales', () => {
+  const phrases = [
+    'Edit audio locally in your browser. Your file is not uploaded.', 'Choose audio file', 'Trim start (seconds)',
+    'Trim end (seconds)', 'Volume', 'Fade in (seconds)', 'Fade out (seconds)', 'Duration', 'Preview selection',
+    'Stop playback', 'Export WAV', 'Download WAV', 'Clear audio', 'Choose a short audio file to begin.',
+    'Choose an audio file under 25 MB.', 'Choose audio up to 3 minutes with one or two channels.',
+    'This audio format could not be opened in this browser.', 'Audio loaded locally. Adjust the trim and export settings.',
+    'Choose a valid trim range and audio file first.', 'Playing the edited selection.', 'Playback finished.',
+    'Playback stopped.', 'Rendering WAV on this device…', 'WAV export is ready to download.',
+    'Audio export failed. Try a shorter supported clip.', 'Choose valid volume, fades and trim values.',
+    'WAV export exceeds the 128 MiB safety limit.', 'Audio editor controls', 'Audio cleared from this page.',
+  ];
+  for (const language of Object.keys(locales)) {
+    const markup = opportunityToolMarkup('audio-editor', language, opportunityLocaleData[language]?.ui ?? {});
+    for (const control of ['data-audio-editor', 'data-audio-edit-file', 'data-audio-edit-start', 'data-audio-edit-end', 'data-audio-edit-volume', 'data-audio-edit-fade-in', 'data-audio-edit-fade-out', 'data-audio-edit-play disabled', 'data-audio-edit-export disabled', 'data-audio-edit-stop', 'data-audio-edit-clear', 'data-audio-edit-download hidden', 'data-planner-messages=']) assert.ok(markup.includes(control), `${language}: ${control}`);
+    assert.match(markup, /25 MB/u);
+    assert.match(markup, /3 minutes/u);
+    assert.doesNotMatch(markup, /fetch\(|XMLHttpRequest/u);
+    for (const phrase of phrases) {
+      const translated = generatedOpportunityCopy[language]?.ui?.[phrase];
+      assert.ok(translated, `${language} missing ${phrase}`);
+      if (language !== 'en' && !(['Volume'].includes(phrase) && ['pt', 'it', 'nl'].includes(language))) assert.notEqual(translated, phrase, `${language} untranslated: ${phrase}`);
+    }
+  }
+});

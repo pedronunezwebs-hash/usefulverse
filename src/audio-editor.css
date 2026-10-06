@@ -1,0 +1,1 @@
+.audio-editor__settings{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,12rem),1fr));gap:14px}.audio-editor__preview{padding:16px;border:1px solid var(--border,#dbe3ef);border-radius:12px;background:#fff}.audio-editor__download[hidden]{display:none}
