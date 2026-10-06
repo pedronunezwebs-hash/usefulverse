@@ -200,6 +200,8 @@ await bundle({ entryPoints: [join(root, 'src', 'web-authoring-runtime.js')], out
 await bundle({ entryPoints: [join(root, 'src', 'web-authoring.css')], outfile: join(dist, 'assets', 'web-authoring.css'), bundle: false, minify: true });
 await bundle({ entryPoints: [join(root, 'src', 'audio-editor-runtime.js')], outfile: join(dist, 'assets', 'audio-editor-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
 await bundle({ entryPoints: [join(root, 'src', 'audio-editor.css')], outfile: join(dist, 'assets', 'audio-editor.css'), bundle: false, minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'periodic-table-runtime.js')], outfile: join(dist, 'assets', 'periodic-table-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'periodic-table.css')], outfile: join(dist, 'assets', 'periodic-table.css'), bundle: false, minify: true });
 await bundle({
   entryPoints: [join(root, 'src', 'local-planners-runtime.js')],
   outfile: join(dist, 'assets', 'local-planners-runtime.js'),
@@ -805,6 +807,7 @@ assetHash.update(await readFile(join(dist, 'assets', 'print-studio.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'color-vision.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'web-authoring.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'audio-editor.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'periodic-table.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'habit-tracker-runtime.css')));
 // Any browser-loaded script uses this version token in its URL. Include every
 // lazy runtime in the hash so deploying a changed module cannot keep serving a
@@ -814,6 +817,7 @@ for (const file of [
   'opportunity-runtime.js',
   'web-authoring-runtime.js',
   'audio-editor-runtime.js',
+  'periodic-table-runtime.js',
   'local-study-runtime.js',
   'spelling-practice-runtime.js',
   'hangul-practice-runtime.js',

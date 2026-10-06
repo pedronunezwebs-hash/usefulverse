@@ -359,3 +359,15 @@ test('audio editor exposes local-only editing controls and translated runtime co
     }
   }
 });
+
+test('periodic table exposes 118-element search, filters, comparison and quiz controls in every locale', () => {
+  const phrases = ['Search by element name, symbol or atomic number', 'All families', 'Element details', 'Atomic number', 'Compare elements', 'Add to comparison', 'Remove from comparison', 'Start symbol quiz', 'What is the symbol for atomic number {number}?', 'Your answer', 'Check answer', 'No elements match these filters.', 'Family groups are simplified for learning; not a safety reference.'];
+  for (const language of Object.keys(locales)) {
+    const markup = opportunityToolMarkup('periodic-table', language, opportunityLocaleData[language]?.ui ?? {});
+    for (const selector of ['data-periodic-table', 'data-periodic-search', 'data-periodic-family', 'data-periodic-group', 'data-periodic-grid', 'data-periodic-details', 'data-periodic-compare-clear', 'data-periodic-quiz-start', 'data-periodic-answer', 'data-periodic-check']) assert.ok(markup.includes(selector), `${language}: ${selector}`);
+    assert.match(markup, /role="list" dir="ltr"/u);
+    assert.doesNotMatch(markup, /fetch\(|XMLHttpRequest/u);
+    for (const phrase of phrases) assert.ok(generatedOpportunityCopy[language]?.ui?.[phrase], `${language} missing ${phrase}`);
+    for (const name of ['Hydrogen', 'Carbon', 'Iron', 'Gold', 'Oganesson']) assert.ok(generatedOpportunityCopy[language]?.ui?.[name], `${language} missing element name ${name}`);
+  }
+});

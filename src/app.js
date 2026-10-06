@@ -1404,6 +1404,7 @@ function setupToolPage() {
   opportunityTools.add('battleship');
   opportunityTools.add('color-vision-simulator');
   opportunityTools.add('audio-editor');
+  opportunityTools.add('periodic-table');
   opportunityTools.add('svg-editor');
   opportunityTools.add('seamless-pattern-maker');
   opportunityTools.add('html-form-builder');
@@ -1586,6 +1587,13 @@ function setupToolPage() {
     const assetVersion = document.documentElement.dataset.assetVersion;
     import(`./code-formatter-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
       .then(({ setupCodeFormatter }) => setupCodeFormatter(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
+  if (id === 'periodic-table') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./periodic-table-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupPeriodicTable }) => setupPeriodicTable(root))
       .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
     return;
   }

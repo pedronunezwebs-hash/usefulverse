@@ -2,6 +2,7 @@ import { writeFile } from 'node:fs/promises';
 import { opportunityTools } from '../../src/opportunity-tools.mjs';
 import { locales } from '../../src/locales.mjs';
 import { generatedOpportunityCopy as previousDrafts } from '../../src/locales/generated-opportunity-copy.mjs';
+import { elements } from '../../src/periodic-table-logic.mjs';
 
 const ids = process.env.USEFULVERSE_TRANSLATION_TOOL_IDS?.split(',').filter(Boolean);
 if (!ids?.length) throw new Error('Set USEFULVERSE_TRANSLATION_TOOL_IDS to the exact new tool IDs.');
@@ -30,6 +31,7 @@ const uiPhrases = [
   'Effect', 'Fade in', 'Slide from left', 'Bounce', 'Rotate', 'Pulse', 'Duration', 'Delay', 'Repetitions', 'Infinite', 'Timing', 'Ease', 'Ease in', 'Ease out', 'Ease in-out', 'Linear', 'Animation preview', 'Preview', 'CSS output', 'Copy CSS', 'Replay preview', 'Shape', 'Circle', 'Ellipse', 'Inset', 'Triangle', 'Diamond', 'Hexagon', 'Clip-path preview', 'Brightness', 'Contrast', 'Grayscale', 'Hue', 'Invert', 'Sepia', 'Saturation', 'Blur', 'Filter preview', 'Check the selected values and try again.', 'CSS copied.', 'Copy was blocked. Select the CSS and copy it manually.',
 ];
 uiPhrases.push('Effect', 'Fade in', 'Slide from left', 'Bounce', 'Rotate', 'Pulse', 'Duration', 'Delay', 'Repetitions', 'Infinite', 'Timing', 'Ease', 'Ease in', 'Ease out', 'Ease in-out', 'Linear', 'Animation preview', 'Preview', 'CSS output', 'Copy CSS', 'Replay preview', 'Shape', 'Circle', 'Ellipse', 'Inset', 'Triangle', 'Diamond', 'Hexagon', 'Clip-path preview', 'Brightness', 'Contrast', 'Grayscale', 'Hue', 'Invert', 'Sepia', 'Saturation', 'Blur', 'Filter preview', 'Check the selected values and try again.', 'CSS copied.', 'Copy was blocked. Select the CSS and copy it manually.');
+uiPhrases.push('Search by element name, symbol or atomic number', 'All families', 'All groups', 'Metal', 'Nonmetal', 'Metalloid', 'Lanthanide', 'Actinide', 'Search', 'Reset filters', '118 elements', 'Element details', 'Atomic number', 'Symbol', 'Name', 'Group', 'Period', 'Family', 'Compare elements', 'Choose 2 or 3 elements to compare.', 'Add to comparison', 'Remove from comparison', 'Clear comparison', 'Comparison', 'Start symbol quiz', 'Next question', 'What is the symbol for atomic number {number}?', 'Your answer', 'Check answer', 'Correct!', 'Try again. The symbol is {symbol}.', 'Choose an element to see its details.', 'No elements match these filters.', 'Use a group or period to explore the table.', 'Family groups are simplified for learning; not a safety reference.', 'Periodic table', ...elements.map(({ name }) => name));
 uiPhrases.push('HTTP method', 'Request URL', 'Headers as JSON', 'Request body', 'Output format', 'cURL', 'JavaScript Fetch', 'Build code', 'Copy code', 'Download manifest.json', 'App name', 'Short name', 'Description', 'Start URL', 'Display mode', 'Standalone app', 'Minimal interface', 'Full screen', 'Browser tab', 'Theme color', 'Background color', 'First row contains headings', 'Table caption (optional)', 'Tab-separated rows', 'Generate table', 'Preview', 'Generated code', 'Request details', 'This tool builds code only. It does not send a request.', 'Browser CORS and server rules can block a request you run elsewhere.', 'No network request was sent.', 'Code generated.', 'Table generated.', 'Manifest generated.', 'Code copied.', 'Copy was blocked. Select the text and copy it manually.', 'Download started.', 'Enter the requested values and try again.', 'Reset');
 uiPhrases.push('Games', 'Two players share this device. Moves are not saved or uploaded.', 'Current turn: Red', 'Current turn: Black', 'Red wins!', 'Black wins!', 'Game tied.', 'New game', 'Connect Four board', 'Reversi board', 'Checkers board', 'Row {row}, column {column}: {state}', 'Red disk', 'Black disk', 'Red checker', 'Black checker', 'Red king', 'Black king', 'Empty square', 'Legal move', 'Choose a non-full column.', 'No legal move. Pass this turn.', 'Pass turn', 'Choose a highlighted square.', 'Piece selected. Choose a highlighted square.', 'Continue the capture.', 'Red wins! Red: {red}, Black: {black}.', 'Black wins! Red: {red}, Black: {black}.', 'Game tied. Red: {red}, Black: {black}.');
 uiPhrases.push('Choose a font file', 'Choose a font file to start.', 'Load font', 'Choose a font file first.', 'Choose a WOFF, WOFF2, TTF or OTF file under 10 MB.', 'This browser could not load that font. Try another file.', 'Font loaded for this preview.', 'Font removed.', 'Font preview', 'Sample text', 'Font size', 'Font size (px)', 'Reset preview', 'The file stays on this device and is not uploaded.', 'Choose a font file and load it to preview.', 'Type or paste text to preview.', 'Font could not be loaded. Use a supported font file under 10 MB.');
@@ -178,6 +180,22 @@ corrections.ca.ui = { ...corrections.ca.ui, 'Connect Four board': 'Tauler de qua
 corrections.uk.ui = { ...corrections.uk.ui, 'Two players share this device. Moves are not saved or uploaded.': 'Двоє гравців грають на цьому пристрої. Ходи не зберігаються й не надсилаються.', 'Connect Four board': 'Дошка гри в чотири в ряд', 'Reversi board': 'Дошка гри Реверсі' };
 corrections.ha.ui['Reversi board'] = 'Allon wasan Reversi';
 corrections.tl.ui = { ...corrections.tl.ui, 'Connect Four board': 'Lupon ng larong apat na magkakasunod', 'Reversi board': 'Lupon ng larong Reversi', 'Checkers board': 'Lupon ng dama', 'Pass turn': 'Ipasa ang pagkakataon' };
+const periodicTableUiCorrections = {
+  tr: { Metal: 'Metal elementi' },
+  ca: { '118 elements': '118 elements químics' },
+  nl: { Lanthanide: 'Lanthaanreeks', Actinide: 'Actiniumreeks' },
+  pl: { Metal: 'Pierwiastek metaliczny' },
+  sv: { Metalloid: 'Halvmetall' },
+  sw: { Nonmetal: 'Isiyo metali', Metalloid: 'Metaloidi', Lanthanide: 'Lantanidi', Actinide: 'Aktinidi' },
+  ha: { Nonmetal: 'Ba ƙarfe ba', Metalloid: 'Tsaka-tsakin ƙarfe', Lanthanide: 'Jerin lanthanide', Actinide: 'Jerin actinide' },
+  tl: { Metal: 'Metal na elemento', Nonmetal: 'Hindi metal', Metalloid: 'Metalloid na elemento', Lanthanide: 'Serye ng lanthanide', Actinide: 'Serye ng actinide', 'Periodic table': 'Talahanayang peryodiko' },
+  am: { Lanthanide: 'የላንታናይድ ተከታታይ', Actinide: 'የአክቲናይድ ተከታታይ' },
+};
+for (const [language, labels] of Object.entries(periodicTableUiCorrections)) {
+  corrections[language] ??= {};
+  corrections[language].ui = { ...corrections[language].ui, ...labels };
+}
+corrections.tl.copy = { ...corrections.tl.copy, 'periodic-table': ['Libreng interactive periodic table — Hanapin ang mga elemento', 'Periodic table', 'Maghanap ng 118 elemento ayon sa pangalan, simbolo o atomic number, ihambing ang mga detalye at magsanay sa isang maikling pagsusulit.', 'interactive periodic table, talaan ng mga elemento, paghahanap ng simbolo ng elemento, pagsusulit sa periodic table', 'Pumili ng pamilya o grupo, o ilagay ang pangalan, simbolo o atomic number ng elemento.', 'Gumagana ang periodic table na ito sa browser at para sa pag-aaral. Pinapasimple ang mga pangkat ng pamilya; huwag itong gamitin bilang sangguniang pangkaligtasan.'] };
 const translations = structuredClone(previousDrafts);
 const refreshSelected = process.env.USEFULVERSE_TRANSLATION_REFRESH === '1';
 const targetLanguage = (language) => language === 'zh_tw' ? 'zh-TW' : language;
