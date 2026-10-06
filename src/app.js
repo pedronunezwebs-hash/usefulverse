@@ -1597,6 +1597,13 @@ function setupToolPage() {
       .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
     return;
   }
+  if (id === 'mahjong-solitaire') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./mahjong-solitaire-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupMahjongSolitaire }) => setupMahjongSolitaire(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
   if (opportunityTools.has(id)) {
     const assetVersion = document.documentElement.dataset.assetVersion;
     import(`./opportunity-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)

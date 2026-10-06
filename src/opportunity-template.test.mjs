@@ -371,3 +371,14 @@ test('periodic table exposes 118-element search, filters, comparison and quiz co
     for (const name of ['Hydrogen', 'Carbon', 'Iron', 'Gold', 'Oganesson']) assert.ok(generatedOpportunityCopy[language]?.ui?.[name], `${language} missing element name ${name}`);
   }
 });
+
+test('Mahjong Solitaire exposes randomized local play and rules in every locale', () => {
+  const phrases = ['This is a compact single-layer Mahjong-style matching puzzle, not the traditional layered layout. A tile is free when at least one horizontal side is open. Every new board has a valid solution.', 'New puzzle', 'Moves', 'Choose two matching free tiles.', 'Puzzle complete!'];
+  for (const language of Object.keys(locales)) {
+    const markup = opportunityToolMarkup('mahjong-solitaire', language, opportunityLocaleData[language]?.ui ?? {});
+    for (const selector of ['data-mahjong', 'data-mahjong-new', 'data-mahjong-moves', 'data-mahjong-board']) assert.ok(markup.includes(selector), `${language}: ${selector}`);
+    assert.match(markup, /role="group"/u);
+    assert.doesNotMatch(markup, /fetch\(|XMLHttpRequest/u);
+    for (const phrase of phrases) assert.ok(generatedOpportunityCopy[language]?.ui?.[phrase], `${language} missing ${phrase}`);
+  }
+});
