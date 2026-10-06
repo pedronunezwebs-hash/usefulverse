@@ -255,7 +255,7 @@ same `dist/sitemap.xml` that is deployed, so it includes every localized route.
 
 <!-- BEGIN GENERATED SITEMAP URL INVENTORY -->
 
-Generated from `dist/sitemap.xml`: **9,864 canonical URLs**.
+Generated from `dist/sitemap.xml`: **9,900 canonical URLs**.
 
 ```text
 https://usefulverse.com/
@@ -359,6 +359,7 @@ https://usefulverse.com/tools/image-metadata-remover/
 https://usefulverse.com/tools/gif-maker/
 https://usefulverse.com/tools/screen-recorder/
 https://usefulverse.com/tools/voice-recorder/
+https://usefulverse.com/tools/go-game/
 https://usefulverse.com/tools/mahjong-solitaire/
 https://usefulverse.com/tools/periodic-table/
 https://usefulverse.com/tools/audio-editor/
@@ -626,6 +627,7 @@ https://usefulverse.com/es/tools/image-metadata-remover/
 https://usefulverse.com/es/tools/gif-maker/
 https://usefulverse.com/es/tools/screen-recorder/
 https://usefulverse.com/es/tools/voice-recorder/
+https://usefulverse.com/es/tools/go-game/
 https://usefulverse.com/es/tools/mahjong-solitaire/
 https://usefulverse.com/es/tools/periodic-table/
 https://usefulverse.com/es/tools/audio-editor/
@@ -893,6 +895,7 @@ https://usefulverse.com/fr/tools/image-metadata-remover/
 https://usefulverse.com/fr/tools/gif-maker/
 https://usefulverse.com/fr/tools/screen-recorder/
 https://usefulverse.com/fr/tools/voice-recorder/
+https://usefulverse.com/fr/tools/go-game/
 https://usefulverse.com/fr/tools/mahjong-solitaire/
 https://usefulverse.com/fr/tools/periodic-table/
 https://usefulverse.com/fr/tools/audio-editor/
@@ -1160,6 +1163,7 @@ https://usefulverse.com/pt-br/tools/image-metadata-remover/
 https://usefulverse.com/pt-br/tools/gif-maker/
 https://usefulverse.com/pt-br/tools/screen-recorder/
 https://usefulverse.com/pt-br/tools/voice-recorder/
+https://usefulverse.com/pt-br/tools/go-game/
 https://usefulverse.com/pt-br/tools/mahjong-solitaire/
 https://usefulverse.com/pt-br/tools/periodic-table/
 https://usefulverse.com/pt-br/tools/audio-editor/
@@ -1427,6 +1431,7 @@ https://usefulverse.com/de/tools/image-metadata-remover/
 https://usefulverse.com/de/tools/gif-maker/
 https://usefulverse.com/de/tools/screen-recorder/
 https://usefulverse.com/de/tools/voice-recorder/
+https://usefulverse.com/de/tools/go-game/
 https://usefulverse.com/de/tools/mahjong-solitaire/
 https://usefulverse.com/de/tools/periodic-table/
 https://usefulverse.com/de/tools/audio-editor/
@@ -1694,6 +1699,7 @@ https://usefulverse.com/ja/tools/image-metadata-remover/
 https://usefulverse.com/ja/tools/gif-maker/
 https://usefulverse.com/ja/tools/screen-recorder/
 https://usefulverse.com/ja/tools/voice-recorder/
+https://usefulverse.com/ja/tools/go-game/
 https://usefulverse.com/ja/tools/mahjong-solitaire/
 https://usefulverse.com/ja/tools/periodic-table/
 https://usefulverse.com/ja/tools/audio-editor/
@@ -1961,6 +1967,7 @@ https://usefulverse.com/ko/tools/image-metadata-remover/
 https://usefulverse.com/ko/tools/gif-maker/
 https://usefulverse.com/ko/tools/screen-recorder/
 https://usefulverse.com/ko/tools/voice-recorder/
+https://usefulverse.com/ko/tools/go-game/
 https://usefulverse.com/ko/tools/mahjong-solitaire/
 https://usefulverse.com/ko/tools/periodic-table/
 https://usefulverse.com/ko/tools/audio-editor/
@@ -2228,6 +2235,7 @@ https://usefulverse.com/id/tools/image-metadata-remover/
 https://usefulverse.com/id/tools/gif-maker/
 https://usefulverse.com/id/tools/screen-recorder/
 https://usefulverse.com/id/tools/voice-recorder/
+https://usefulverse.com/id/tools/go-game/
 https://usefulverse.com/id/tools/mahjong-solitaire/
 https://usefulverse.com/id/tools/periodic-table/
 https://usefulverse.com/id/tools/audio-editor/
@@ -2495,6 +2503,7 @@ https://usefulverse.com/hi/tools/image-metadata-remover/
 https://usefulverse.com/hi/tools/gif-maker/
 https://usefulverse.com/hi/tools/screen-recorder/
 https://usefulverse.com/hi/tools/voice-recorder/
+https://usefulverse.com/hi/tools/go-game/
 https://usefulverse.com/hi/tools/mahjong-solitaire/
 https://usefulverse.com/hi/tools/periodic-table/
 https://usefulverse.com/hi/tools/audio-editor/
@@ -2762,6 +2771,7 @@ https://usefulverse.com/ar/tools/image-metadata-remover/
 https://usefulverse.com/ar/tools/gif-maker/
 https://usefulverse.com/ar/tools/screen-recorder/
 https://usefulverse.com/ar/tools/voice-recorder/
+https://usefulverse.com/ar/tools/go-game/
 https://usefulverse.com/ar/tools/mahjong-solitaire/
 https://usefulverse.com/ar/tools/periodic-table/
 https://usefulverse.com/ar/tools/audio-editor/
@@ -3029,6 +3039,7 @@ https://usefulverse.com/zh-cn/tools/image-metadata-remover/
 https://usefulverse.com/zh-cn/tools/gif-maker/
 https://usefulverse.com/zh-cn/tools/screen-recorder/
 https://usefulverse.com/zh-cn/tools/voice-recorder/
+https://usefulverse.com/zh-cn/tools/go-game/
 https://usefulverse.com/zh-cn/tools/mahjong-solitaire/
 https://usefulverse.com/zh-cn/tools/periodic-table/
 https://usefulverse.com/zh-cn/tools/audio-editor/
@@ -3296,6 +3307,7 @@ https://usefulverse.com/bn/tools/image-metadata-remover/
 https://usefulverse.com/bn/tools/gif-maker/
 https://usefulverse.com/bn/tools/screen-recorder/
 https://usefulverse.com/bn/tools/voice-recorder/
+https://usefulverse.com/bn/tools/go-game/
 https://usefulverse.com/bn/tools/mahjong-solitaire/
 https://usefulverse.com/bn/tools/periodic-table/
 https://usefulverse.com/bn/tools/audio-editor/
@@ -3563,6 +3575,7 @@ https://usefulverse.com/ru/tools/image-metadata-remover/
 https://usefulverse.com/ru/tools/gif-maker/
 https://usefulverse.com/ru/tools/screen-recorder/
 https://usefulverse.com/ru/tools/voice-recorder/
+https://usefulverse.com/ru/tools/go-game/
 https://usefulverse.com/ru/tools/mahjong-solitaire/
 https://usefulverse.com/ru/tools/periodic-table/
 https://usefulverse.com/ru/tools/audio-editor/
@@ -3830,6 +3843,7 @@ https://usefulverse.com/ur/tools/image-metadata-remover/
 https://usefulverse.com/ur/tools/gif-maker/
 https://usefulverse.com/ur/tools/screen-recorder/
 https://usefulverse.com/ur/tools/voice-recorder/
+https://usefulverse.com/ur/tools/go-game/
 https://usefulverse.com/ur/tools/mahjong-solitaire/
 https://usefulverse.com/ur/tools/periodic-table/
 https://usefulverse.com/ur/tools/audio-editor/
@@ -4097,6 +4111,7 @@ https://usefulverse.com/tr/tools/image-metadata-remover/
 https://usefulverse.com/tr/tools/gif-maker/
 https://usefulverse.com/tr/tools/screen-recorder/
 https://usefulverse.com/tr/tools/voice-recorder/
+https://usefulverse.com/tr/tools/go-game/
 https://usefulverse.com/tr/tools/mahjong-solitaire/
 https://usefulverse.com/tr/tools/periodic-table/
 https://usefulverse.com/tr/tools/audio-editor/
@@ -4364,6 +4379,7 @@ https://usefulverse.com/vi/tools/image-metadata-remover/
 https://usefulverse.com/vi/tools/gif-maker/
 https://usefulverse.com/vi/tools/screen-recorder/
 https://usefulverse.com/vi/tools/voice-recorder/
+https://usefulverse.com/vi/tools/go-game/
 https://usefulverse.com/vi/tools/mahjong-solitaire/
 https://usefulverse.com/vi/tools/periodic-table/
 https://usefulverse.com/vi/tools/audio-editor/
@@ -4631,6 +4647,7 @@ https://usefulverse.com/it/tools/image-metadata-remover/
 https://usefulverse.com/it/tools/gif-maker/
 https://usefulverse.com/it/tools/screen-recorder/
 https://usefulverse.com/it/tools/voice-recorder/
+https://usefulverse.com/it/tools/go-game/
 https://usefulverse.com/it/tools/mahjong-solitaire/
 https://usefulverse.com/it/tools/periodic-table/
 https://usefulverse.com/it/tools/audio-editor/
@@ -4898,6 +4915,7 @@ https://usefulverse.com/zh-tw/tools/image-metadata-remover/
 https://usefulverse.com/zh-tw/tools/gif-maker/
 https://usefulverse.com/zh-tw/tools/screen-recorder/
 https://usefulverse.com/zh-tw/tools/voice-recorder/
+https://usefulverse.com/zh-tw/tools/go-game/
 https://usefulverse.com/zh-tw/tools/mahjong-solitaire/
 https://usefulverse.com/zh-tw/tools/periodic-table/
 https://usefulverse.com/zh-tw/tools/audio-editor/
@@ -5165,6 +5183,7 @@ https://usefulverse.com/bg/tools/image-metadata-remover/
 https://usefulverse.com/bg/tools/gif-maker/
 https://usefulverse.com/bg/tools/screen-recorder/
 https://usefulverse.com/bg/tools/voice-recorder/
+https://usefulverse.com/bg/tools/go-game/
 https://usefulverse.com/bg/tools/mahjong-solitaire/
 https://usefulverse.com/bg/tools/periodic-table/
 https://usefulverse.com/bg/tools/audio-editor/
@@ -5432,6 +5451,7 @@ https://usefulverse.com/ca/tools/image-metadata-remover/
 https://usefulverse.com/ca/tools/gif-maker/
 https://usefulverse.com/ca/tools/screen-recorder/
 https://usefulverse.com/ca/tools/voice-recorder/
+https://usefulverse.com/ca/tools/go-game/
 https://usefulverse.com/ca/tools/mahjong-solitaire/
 https://usefulverse.com/ca/tools/periodic-table/
 https://usefulverse.com/ca/tools/audio-editor/
@@ -5699,6 +5719,7 @@ https://usefulverse.com/nl/tools/image-metadata-remover/
 https://usefulverse.com/nl/tools/gif-maker/
 https://usefulverse.com/nl/tools/screen-recorder/
 https://usefulverse.com/nl/tools/voice-recorder/
+https://usefulverse.com/nl/tools/go-game/
 https://usefulverse.com/nl/tools/mahjong-solitaire/
 https://usefulverse.com/nl/tools/periodic-table/
 https://usefulverse.com/nl/tools/audio-editor/
@@ -5966,6 +5987,7 @@ https://usefulverse.com/el/tools/image-metadata-remover/
 https://usefulverse.com/el/tools/gif-maker/
 https://usefulverse.com/el/tools/screen-recorder/
 https://usefulverse.com/el/tools/voice-recorder/
+https://usefulverse.com/el/tools/go-game/
 https://usefulverse.com/el/tools/mahjong-solitaire/
 https://usefulverse.com/el/tools/periodic-table/
 https://usefulverse.com/el/tools/audio-editor/
@@ -6233,6 +6255,7 @@ https://usefulverse.com/ms/tools/image-metadata-remover/
 https://usefulverse.com/ms/tools/gif-maker/
 https://usefulverse.com/ms/tools/screen-recorder/
 https://usefulverse.com/ms/tools/voice-recorder/
+https://usefulverse.com/ms/tools/go-game/
 https://usefulverse.com/ms/tools/mahjong-solitaire/
 https://usefulverse.com/ms/tools/periodic-table/
 https://usefulverse.com/ms/tools/audio-editor/
@@ -6500,6 +6523,7 @@ https://usefulverse.com/pl/tools/image-metadata-remover/
 https://usefulverse.com/pl/tools/gif-maker/
 https://usefulverse.com/pl/tools/screen-recorder/
 https://usefulverse.com/pl/tools/voice-recorder/
+https://usefulverse.com/pl/tools/go-game/
 https://usefulverse.com/pl/tools/mahjong-solitaire/
 https://usefulverse.com/pl/tools/periodic-table/
 https://usefulverse.com/pl/tools/audio-editor/
@@ -6767,6 +6791,7 @@ https://usefulverse.com/sv/tools/image-metadata-remover/
 https://usefulverse.com/sv/tools/gif-maker/
 https://usefulverse.com/sv/tools/screen-recorder/
 https://usefulverse.com/sv/tools/voice-recorder/
+https://usefulverse.com/sv/tools/go-game/
 https://usefulverse.com/sv/tools/mahjong-solitaire/
 https://usefulverse.com/sv/tools/periodic-table/
 https://usefulverse.com/sv/tools/audio-editor/
@@ -7034,6 +7059,7 @@ https://usefulverse.com/th/tools/image-metadata-remover/
 https://usefulverse.com/th/tools/gif-maker/
 https://usefulverse.com/th/tools/screen-recorder/
 https://usefulverse.com/th/tools/voice-recorder/
+https://usefulverse.com/th/tools/go-game/
 https://usefulverse.com/th/tools/mahjong-solitaire/
 https://usefulverse.com/th/tools/periodic-table/
 https://usefulverse.com/th/tools/audio-editor/
@@ -7301,6 +7327,7 @@ https://usefulverse.com/uk/tools/image-metadata-remover/
 https://usefulverse.com/uk/tools/gif-maker/
 https://usefulverse.com/uk/tools/screen-recorder/
 https://usefulverse.com/uk/tools/voice-recorder/
+https://usefulverse.com/uk/tools/go-game/
 https://usefulverse.com/uk/tools/mahjong-solitaire/
 https://usefulverse.com/uk/tools/periodic-table/
 https://usefulverse.com/uk/tools/audio-editor/
@@ -7568,6 +7595,7 @@ https://usefulverse.com/sw/tools/image-metadata-remover/
 https://usefulverse.com/sw/tools/gif-maker/
 https://usefulverse.com/sw/tools/screen-recorder/
 https://usefulverse.com/sw/tools/voice-recorder/
+https://usefulverse.com/sw/tools/go-game/
 https://usefulverse.com/sw/tools/mahjong-solitaire/
 https://usefulverse.com/sw/tools/periodic-table/
 https://usefulverse.com/sw/tools/audio-editor/
@@ -7835,6 +7863,7 @@ https://usefulverse.com/mr/tools/image-metadata-remover/
 https://usefulverse.com/mr/tools/gif-maker/
 https://usefulverse.com/mr/tools/screen-recorder/
 https://usefulverse.com/mr/tools/voice-recorder/
+https://usefulverse.com/mr/tools/go-game/
 https://usefulverse.com/mr/tools/mahjong-solitaire/
 https://usefulverse.com/mr/tools/periodic-table/
 https://usefulverse.com/mr/tools/audio-editor/
@@ -8102,6 +8131,7 @@ https://usefulverse.com/te/tools/image-metadata-remover/
 https://usefulverse.com/te/tools/gif-maker/
 https://usefulverse.com/te/tools/screen-recorder/
 https://usefulverse.com/te/tools/voice-recorder/
+https://usefulverse.com/te/tools/go-game/
 https://usefulverse.com/te/tools/mahjong-solitaire/
 https://usefulverse.com/te/tools/periodic-table/
 https://usefulverse.com/te/tools/audio-editor/
@@ -8369,6 +8399,7 @@ https://usefulverse.com/ha/tools/image-metadata-remover/
 https://usefulverse.com/ha/tools/gif-maker/
 https://usefulverse.com/ha/tools/screen-recorder/
 https://usefulverse.com/ha/tools/voice-recorder/
+https://usefulverse.com/ha/tools/go-game/
 https://usefulverse.com/ha/tools/mahjong-solitaire/
 https://usefulverse.com/ha/tools/periodic-table/
 https://usefulverse.com/ha/tools/audio-editor/
@@ -8636,6 +8667,7 @@ https://usefulverse.com/tl/tools/image-metadata-remover/
 https://usefulverse.com/tl/tools/gif-maker/
 https://usefulverse.com/tl/tools/screen-recorder/
 https://usefulverse.com/tl/tools/voice-recorder/
+https://usefulverse.com/tl/tools/go-game/
 https://usefulverse.com/tl/tools/mahjong-solitaire/
 https://usefulverse.com/tl/tools/periodic-table/
 https://usefulverse.com/tl/tools/audio-editor/
@@ -8903,6 +8935,7 @@ https://usefulverse.com/ta/tools/image-metadata-remover/
 https://usefulverse.com/ta/tools/gif-maker/
 https://usefulverse.com/ta/tools/screen-recorder/
 https://usefulverse.com/ta/tools/voice-recorder/
+https://usefulverse.com/ta/tools/go-game/
 https://usefulverse.com/ta/tools/mahjong-solitaire/
 https://usefulverse.com/ta/tools/periodic-table/
 https://usefulverse.com/ta/tools/audio-editor/
@@ -9170,6 +9203,7 @@ https://usefulverse.com/fa/tools/image-metadata-remover/
 https://usefulverse.com/fa/tools/gif-maker/
 https://usefulverse.com/fa/tools/screen-recorder/
 https://usefulverse.com/fa/tools/voice-recorder/
+https://usefulverse.com/fa/tools/go-game/
 https://usefulverse.com/fa/tools/mahjong-solitaire/
 https://usefulverse.com/fa/tools/periodic-table/
 https://usefulverse.com/fa/tools/audio-editor/
@@ -9437,6 +9471,7 @@ https://usefulverse.com/am/tools/image-metadata-remover/
 https://usefulverse.com/am/tools/gif-maker/
 https://usefulverse.com/am/tools/screen-recorder/
 https://usefulverse.com/am/tools/voice-recorder/
+https://usefulverse.com/am/tools/go-game/
 https://usefulverse.com/am/tools/mahjong-solitaire/
 https://usefulverse.com/am/tools/periodic-table/
 https://usefulverse.com/am/tools/audio-editor/
@@ -9704,6 +9739,7 @@ https://usefulverse.com/gu/tools/image-metadata-remover/
 https://usefulverse.com/gu/tools/gif-maker/
 https://usefulverse.com/gu/tools/screen-recorder/
 https://usefulverse.com/gu/tools/voice-recorder/
+https://usefulverse.com/gu/tools/go-game/
 https://usefulverse.com/gu/tools/mahjong-solitaire/
 https://usefulverse.com/gu/tools/periodic-table/
 https://usefulverse.com/gu/tools/audio-editor/

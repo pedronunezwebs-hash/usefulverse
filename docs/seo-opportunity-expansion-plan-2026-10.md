@@ -432,3 +432,10 @@ Añadir pruebas de vacío, negativos, extremos, entradas inválidas, singularida
 - La página advierte que es una variante compacta de una sola capa y no el diseño Mahjong tradicional de 144 fichas. No se anuncian flores, temporadas, capas superpuestas ni puntuación oficial.
 - Pruebas: 20 tableros aleatorios distintos, 20 rutas completas de solución, pareja/mismatch, fuente aleatoria inválida y etiqueta de ficha. Chrome quitó una pareja (48→46), incrementó movimientos y el reinicio restauró 48 fichas/0 movimientos. En árabe, sin overflow a 1280×800 ni 390×844 y consola sin errores; la rejilla se ajusta al móvil.
 - El conteo local pasa a **9.864 URLs** (266 herramientas × 36 idiomas, 36 portadas y 252 guías). Se volverán a ejecutar gates completos y README al cerrar el lote. No se ejecutaron PageSpeed/Lighthouse ni DataForSEO. Otras candidatas e integración/publicación siguen pendientes.
+
+## Continuación · 6 oct 2026 (Go 9×9)
+
+- Se añadió un Go local para dos jugadores en las 36 rutas lingüísticas. El motor verifica grupos/libertades, capturas, suicidio, punto ocupado y repetición posicional; dos pases consecutivos terminan el juego y muestran una puntuación de área simplificada. No hay cuenta, red, almacenamiento ni servidor.
+- La página explica que no implementa komi, reloj, handicap ni adjudicación de vida/muerte; no pretende ser árbitro de torneo ni cubrir cada reglamento.
+- Tests verifican una captura concreta, libertades, suicidio, repetición, puntuación y final por pases. Chrome ejecutó la secuencia de captura desde la UI, confirmó el contador y el vacío de la piedra capturada, pasó dos veces y encontró el marcador final con 81 intersecciones bloqueadas. Árabe RTL: sin desbordamiento en 390×844; 81 puntos presentes, consola sin errores.
+- Build local: **9.900 URLs** (267 herramientas × 36 idiomas, 36 portadas y 252 guías). Esto se suma al lote local; aún no indica despliegue/indexación. No se ejecutaron DataForSEO ni PageSpeed/Lighthouse.

@@ -835,6 +835,7 @@ export function shell({ title, description, canonical, body, schema = '', assetV
     ${toolId === 'audio-editor' ? `<link rel="stylesheet" href="/assets/audio-editor.css${assetSuffix}">` : ''}
     ${toolId === 'periodic-table' ? `<link rel="stylesheet" href="/assets/periodic-table.css${assetSuffix}">` : ''}
     ${toolId === 'mahjong-solitaire' ? `<link rel="stylesheet" href="/assets/mahjong-solitaire.css${assetSuffix}">` : ''}
+    ${toolId === 'go-game' ? `<link rel="stylesheet" href="/assets/go-game.css${assetSuffix}">` : ''}
     ${['svg-editor', 'seamless-pattern-maker', 'html-form-builder', 'html-email-builder'].includes(toolId) ? `<link rel="stylesheet" href="/assets/web-authoring.css${assetSuffix}">` : ''}
     ${toolId === 'tic-tac-toe' ? `<link rel="stylesheet" href="/assets/tic-tac-toe.css${assetSuffix}">` : ''}
     ${toolId === 'chess-game' ? `<link rel="stylesheet" href="/assets/chess-game.css${assetSuffix}">` : ''}

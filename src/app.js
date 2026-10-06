@@ -1604,6 +1604,13 @@ function setupToolPage() {
       .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
     return;
   }
+  if (id === 'go-game') {
+    const assetVersion = document.documentElement.dataset.assetVersion;
+    import(`./go-game-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)
+      .then(({ setupGoGame }) => setupGoGame(root))
+      .catch(() => setStatus($('#tool-status', root), 'This tool could not load. Refresh the page and try again.', 'error'));
+    return;
+  }
   if (opportunityTools.has(id)) {
     const assetVersion = document.documentElement.dataset.assetVersion;
     import(`./opportunity-runtime.js${assetVersion ? `?v=${assetVersion}` : ''}`)

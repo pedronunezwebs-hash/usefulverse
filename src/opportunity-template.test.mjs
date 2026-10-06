@@ -382,3 +382,14 @@ test('Mahjong Solitaire exposes randomized local play and rules in every locale'
     for (const phrase of phrases) assert.ok(generatedOpportunityCopy[language]?.ui?.[phrase], `${language} missing ${phrase}`);
   }
 });
+
+test('Go game exposes local two-player board controls and rule limitations in every locale', () => {
+  const phrases = ['Two people share this device. The board, moves and score stay in this browser.', 'Pass turn', 'Go board', 'Black to play', 'White to play', 'That move is suicide and is not allowed.', 'The board uses simplified area scoring and does not include komi.'];
+  for (const language of Object.keys(locales)) {
+    const markup = opportunityToolMarkup('go-game', language, opportunityLocaleData[language]?.ui ?? {});
+    for (const selector of ['data-go-game', 'data-go-board', 'data-go-pass', 'data-go-new', 'data-go-turn', 'data-go-captures']) assert.ok(markup.includes(selector), `${language}: ${selector}`);
+    assert.match(markup, /role="group"/u);
+    assert.doesNotMatch(markup, /fetch\(|XMLHttpRequest/u);
+    for (const phrase of phrases) assert.ok(generatedOpportunityCopy[language]?.ui?.[phrase], `${language} missing ${phrase}`);
+  }
+});

@@ -204,6 +204,8 @@ await bundle({ entryPoints: [join(root, 'src', 'periodic-table-runtime.js')], ou
 await bundle({ entryPoints: [join(root, 'src', 'periodic-table.css')], outfile: join(dist, 'assets', 'periodic-table.css'), bundle: false, minify: true });
 await bundle({ entryPoints: [join(root, 'src', 'mahjong-solitaire-runtime.js')], outfile: join(dist, 'assets', 'mahjong-solitaire-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
 await bundle({ entryPoints: [join(root, 'src', 'mahjong-solitaire.css')], outfile: join(dist, 'assets', 'mahjong-solitaire.css'), bundle: false, minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'go-game-runtime.js')], outfile: join(dist, 'assets', 'go-game-runtime.js'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true });
+await bundle({ entryPoints: [join(root, 'src', 'go-game.css')], outfile: join(dist, 'assets', 'go-game.css'), bundle: false, minify: true });
 await bundle({
   entryPoints: [join(root, 'src', 'local-planners-runtime.js')],
   outfile: join(dist, 'assets', 'local-planners-runtime.js'),
@@ -811,6 +813,7 @@ assetHash.update(await readFile(join(dist, 'assets', 'web-authoring.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'audio-editor.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'periodic-table.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'mahjong-solitaire.css')));
+assetHash.update(await readFile(join(dist, 'assets', 'go-game.css')));
 assetHash.update(await readFile(join(dist, 'assets', 'habit-tracker-runtime.css')));
 // Any browser-loaded script uses this version token in its URL. Include every
 // lazy runtime in the hash so deploying a changed module cannot keep serving a
@@ -822,6 +825,7 @@ for (const file of [
   'audio-editor-runtime.js',
   'periodic-table-runtime.js',
   'mahjong-solitaire-runtime.js',
+  'go-game-runtime.js',
   'local-study-runtime.js',
   'spelling-practice-runtime.js',
   'hangul-practice-runtime.js',
