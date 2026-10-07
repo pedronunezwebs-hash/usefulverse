@@ -1,5 +1,17 @@
 export const growthPilotTools = Object.freeze([
   {
+    id: 'pool-salt-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'pool salt calculator',
+    secondaryIntents: ['pool salinity calculator', 'pool salt dosage calculator', 'pool salt calculator gallons'],
+    functions: ['convert pool volume from litres or US/imperial gallons', 'calculate salt mass from measured current and manufacturer-specified target salinity', 'adjust for user-entered salt purity', 'estimate whole salt bags from package weight in kilograms or pounds'],
+    acceptance: 'For 1,000 litres and a 1,000 ppm increase, the ideal 100%-pure salt estimate is 1 kg before package rounding.',
+    boundary: 'Dosage estimate only. It does not recommend a target salinity, test water or account for actual pool capacity, salt already dissolved, water exchange or product composition. Use the chlorinator manufacturer instructions, a reliable water test and chemical safety directions; never treat this estimate as a substitute.',
+    relatedExistingIds: ['pool-volume-calculator'],
+    logicModule: './tools/pool-salt-calculator/logic.mjs',
+  },
+  {
     id: 'fence-calculator',
     category: 'home-materials',
     type: 'calculator',
@@ -183,15 +195,20 @@ export const growthPilotTools = Object.freeze([
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {
   const current = new Set(currentTools.map(({ id }) => id));
-  const seen = new Set();
+  const additionIds = new Set();
   for (const tool of additions) {
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/u.test(tool.id)) throw new Error(`Invalid stable tool ID: ${tool.id}`);
     if (current.has(tool.id)) throw new Error(`New tool collides with a protected UsefulVerse ID: ${tool.id}`);
+    if (additionIds.has(tool.id)) throw new Error(`Duplicate new tool ID: ${tool.id}`);
+    additionIds.add(tool.id);
+  }
+  const seen = new Set();
+  for (const tool of additions) {
     if (seen.has(tool.id)) throw new Error(`Duplicate new tool ID: ${tool.id}`);
     seen.add(tool.id);
     if (!tool.primaryIntent || !tool.acceptance || !tool.boundary || !tool.logicModule) throw new Error(`Incomplete product contract for ${tool.id}`);
     for (const relatedId of tool.relatedExistingIds) {
-      if (!current.has(relatedId)) throw new Error(`${tool.id} links to missing existing tool ${relatedId}`);
+      if (relatedId === tool.id || (!current.has(relatedId) && !additionIds.has(relatedId))) throw new Error(`${tool.id} links to missing related tool ${relatedId}`);
     }
   }
   return true;

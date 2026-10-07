@@ -14,6 +14,7 @@ import { calculateDrywall } from './drywall-calculator/logic.mjs';
 import { calculateRoofing } from './roofing-calculator/logic.mjs';
 import { calculateDeck } from './deck-calculator/logic.mjs';
 import { calculateFence } from './fence-calculator/logic.mjs';
+import { calculatePoolSalt } from './pool-salt-calculator/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
 test('gravel calculator converts area and depth into volume, waste, weight and bags', () => {
@@ -185,6 +186,30 @@ test('fence calculator counts endpoint posts, evenly split gates, panels, picket
   assert.throws(() => calculateFence({ length: 100, unit: 'ft', postSpacing: 0 }), /Maximum post spacing/u);
   assert.throws(() => calculateFence({ length: 100, unit: 'ft', materialUnit: 'm', maxPicketGap: 1.1 }), /must not exceed 1 meter/u);
   assert.throws(() => calculateFence({ length: 1, unit: 'm', gateCount: 0, materialUnit: 'm', picketWidth: 1.1, maxPicketGap: 0.05 }), /must fit within/u);
+});
+
+test('pool salt calculator estimates dosage from volume and measured salinity without inventing a target', () => {
+  const acceptance = calculatePoolSalt({ volume: 1_000, volumeUnit: 'l', currentSalinityPpm: 0, targetSalinityPpm: 1_000, saltPurityPercent: 100, bagSize: 1, bagUnit: 'kg' });
+  assert.equal(acceptance.saltToAddKg, 1);
+  assert.equal(acceptance.bagsToBuy, 1);
+  assert.equal(acceptance.noSaltNeeded, false);
+
+  const purityAdjusted = calculatePoolSalt({ volume: 1_000, volumeUnit: 'l', currentSalinityPpm: 500, targetSalinityPpm: 1_500, saltPurityPercent: 99, bagSize: 2.5, bagUnit: 'lb' });
+  assert.ok(Math.abs(purityAdjusted.saltToAddKg - (1 / 0.99)) < 1e-12);
+  assert.equal(purityAdjusted.bagsToBuy, 1);
+
+  const gallons = calculatePoolSalt({ volume: 1_000, volumeUnit: 'us-gal', currentSalinityPpm: 0, targetSalinityPpm: 1_000 });
+  assert.ok(Math.abs(gallons.saltToAddKg - 3.785411784) < 1e-12);
+  const alreadyAtTarget = calculatePoolSalt({ volume: 1_000, volumeUnit: 'l', currentSalinityPpm: 3_000, targetSalinityPpm: 2_800 });
+  assert.equal(alreadyAtTarget.saltToAddKg, 0);
+  assert.equal(alreadyAtTarget.bagsToBuy, null);
+  assert.equal(alreadyAtTarget.noSaltNeeded, true);
+
+  assert.throws(() => calculatePoolSalt({ volume: 0, currentSalinityPpm: 0, targetSalinityPpm: 1_000 }), /Pool volume/u);
+  assert.throws(() => calculatePoolSalt({ volume: 1_000, currentSalinityPpm: -1, targetSalinityPpm: 1_000 }), /Current salinity/u);
+  assert.throws(() => calculatePoolSalt({ volume: 1_000, currentSalinityPpm: 0, targetSalinityPpm: 10_001 }), /Target salinity/u);
+  assert.throws(() => calculatePoolSalt({ volume: 1_000, currentSalinityPpm: 0, targetSalinityPpm: 1_000, saltPurityPercent: 0 }), /Salt purity/u);
+  assert.throws(() => calculatePoolSalt({ volume: 1_000, currentSalinityPpm: 0, targetSalinityPpm: 1_000, volumeUnit: 'cups' }), /supported volume/u);
 });
 
 test('molar-mass parser handles formulas, nested groups and supported isotopes', () => {

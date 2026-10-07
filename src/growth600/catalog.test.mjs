@@ -3,9 +3,9 @@ import test from 'node:test';
 import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
-test('the fifteen current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 15);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 15);
+test('the sixteen current growth IDs are unique and additive to the protected catalog', () => {
+  assert.equal(growthPilotTools.length, 16);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 16);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -14,5 +14,5 @@ test('the additive catalog rejects protected-ID collisions, duplicate IDs and in
   assert.throws(() => assertGrowthCatalogIsAdditive(tools, [{ ...base, id: tools[0].id }]), /protected UsefulVerse ID/);
   assert.throws(() => assertGrowthCatalogIsAdditive(tools, [base, base]), /Duplicate new tool ID/);
   assert.throws(() => assertGrowthCatalogIsAdditive(tools, [{ ...base, acceptance: '' }]), /Incomplete product contract/);
-  assert.throws(() => assertGrowthCatalogIsAdditive(tools, [{ ...base, relatedExistingIds: ['not-real'] }]), /missing existing tool/);
+  assert.throws(() => assertGrowthCatalogIsAdditive(tools, [{ ...base, relatedExistingIds: ['not-real'] }]), /missing related tool/);
 });

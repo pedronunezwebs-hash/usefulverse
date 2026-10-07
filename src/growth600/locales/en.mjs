@@ -16,6 +16,30 @@ import deckCopies from './deck-calculator.mjs';
 import { deckCalculatorEnglishCopy } from './deck-calculator.en.mjs';
 import fenceCopies from './fence-calculator.mjs';
 import { fenceCalculatorEnglishCopy } from './fence-calculator.en.mjs';
+import poolSaltTranslations from './pool-salt-calculator-final.mjs';
+import { poolSaltCalculatorEnglishCopy } from './pool-salt-calculator.en.mjs';
+
+const poolSaltCopies = Object.freeze({
+  ...poolSaltTranslations,
+  es: Object.freeze({
+    ...poolSaltTranslations.es,
+    name: 'Calculadora de sal para piscinas',
+    title: 'Calculadora de sal para piscina gratis | UsefulVerse',
+    privacyAnswer: 'No. Esta estimación se calcula en tu navegador y no envía los datos de tu piscina a un servidor.',
+  }),
+  ar: Object.freeze({
+    ...poolSaltTranslations.ar,
+    actions: Object.freeze({
+      ...poolSaltTranslations.ar.actions,
+      kilograms: 'كيلوغرامات',
+      pounds: 'أرطال',
+    }),
+    messages: Object.freeze({
+      ...poolSaltTranslations.ar.messages,
+      saltToAdd: 'كمية الملح المطلوبة وفقًا للنقاء المُدخل',
+    }),
+  }),
+});
 
 const actionCopy = Object.freeze({
   calculate: 'Calculate', generate: 'Make the draw', reset: 'Reset', example: 'Try an example', newGame: 'New game',
@@ -49,6 +73,7 @@ const tools = {
   },
   'soil-calculator': soilEnglishCopy,
   'pool-volume-calculator': poolVolumeCalculatorEnglishCopy,
+  'pool-salt-calculator': poolSaltCalculatorEnglishCopy,
   'roof-pitch-calculator': roofPitchCalculatorEnglishCopy,
   'molar-mass-calculator': {
     copyLanguage: 'en', name: 'Molar mass calculator', title: 'Molar mass calculator free unlimited | UsefulVerse',
@@ -116,5 +141,6 @@ registerGrowthLocaleExtension(source, 'roof-pitch-calculator', roofCopies, 'grav
 registerGrowthLocaleExtension(source, 'roofing-calculator', roofingCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'deck-calculator', deckCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'fence-calculator', fenceCopies, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'pool-salt-calculator', poolSaltCopies, 'gravel-calculator');
 
 export default Object.freeze(source);

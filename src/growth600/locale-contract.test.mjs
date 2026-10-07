@@ -198,6 +198,27 @@ test('fence calculator localizes estimates, even-gate assumption and end-post FA
   }
 });
 
+test('pool salt calculator localizes manufacturer-target caveat and salinity FAQs in all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'pool-salt-calculator');
+  assert.ok(tool);
+  assert.equal(localeEntries.length, 36);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  assert.equal(localizedCopies.es[tool.id].name, 'Calculadora de sal para piscinas');
+  assert.equal(localizedCopies.es[tool.id].title, 'Calculadora de sal para piscina gratis | UsefulVerse');
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.ok(copy.fields.accuracyNote.trim());
+    assert.ok(copy.actions.liters && copy.actions.usGallons && copy.actions.imperialGallons);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.doesNotMatch(JSON.stringify(copy), /UVTOKEN\d+X|undefined|null/u, `${key}: no draft marker or missing copy`);
+  }
+  assert.match(localizedCopies.es[tool.id].privacyAnswer, /piscina/u);
+  assert.doesNotMatch(localizedCopies.es[tool.id].privacyAnswer, /grupo/u);
+  assert.equal(localizedCopies.ar[tool.id].actions.pounds, 'أرطال');
+  assert.equal(localizedCopies.ar[tool.id].actions.kilograms, 'كيلوغرامات');
+  assert.equal(localizedCopies.ar[tool.id].messages.saltToAdd, 'كمية الملح المطلوبة وفقًا للنقاء المُدخل');
+});
+
 test('the first Google Translate Spanish draft covers every copy key and preserves required placeholders', () => {
   assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'es' }], { es: spanishGrowthCopy }), true);
   assert.ok(Object.values(spanishGrowthCopy).every((copy) => copy.copyLanguage === 'es'));

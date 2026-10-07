@@ -91,7 +91,7 @@
 
 ## Próxima acción concreta
 
-Siguiente: Pool Salt Calculator (#094). El catálogo aditivo tiene ahora 15 candidatos. Deck Calculator (#083) y Roofing Calculator (#078) tienen sus gates locales registrados abajo. Fence Calculator (#093) tiene pruebas focalizadas y recorrido local; su casilla global sigue abierta. La publicación de la tanda sigue bloqueada hasta cerrar gates globales C/F/E/X/L/B/P/S; no se han enviado sus URLs a buscadores. Las 277 rutas originales permanecen intactas.
+Siguiente: Wallpaper Calculator (#097). El catálogo aditivo tiene ahora 16 candidatos. Deck Calculator (#083), Roofing Calculator (#078), Fence Calculator (#093) y Pool Salt Calculator (#094) tienen sus gates locales registrados abajo; sus casillas globales siguen abiertas. La publicación de la tanda sigue bloqueada hasta cerrar gates globales C/F/E/X/L/B/P/S; no se han enviado sus URLs a buscadores. Las 277 rutas originales permanecen intactas.
 
 ## Continuación · 2026-10-07
 
@@ -121,6 +121,18 @@ Siguiente: Pool Salt Calculator (#094). El catálogo aditivo tiene ahora 15 cand
 - [x] Controlador minificado: 6.383 B (≤24 KiB), local, sin API ni llamadas externas. No añade funciones de servidor ni coste por ejecución.
 - [x] Chrome DevTools local: ejemplo funcional en inglés; consola limpia. Árabe RTL comprobado a 390 y 1.440 px: documento sin overflow (390/390 y 1.440/1.440); ejemplo arroja los mismos totales. No se probaron dispositivos físicos.
 - [ ] Las traducciones son borradores automáticos y no revisión humana nativa. No se ejecutó Lighthouse/PageSpeed por instrucción del proyecto. Ninguna URL de este candidato se publicó; sitemap de producción, buscadores y las 277 herramientas originales no cambiaron. Gates C/F/E/X/L/B/P/S continúan abiertos para release coordinado.
+
+## Continuación · Pool Salt Calculator (#094) · 2026-10-08
+
+- [x] C — ID aditivo, intención diferenciada de `pool-volume-calculator` y colisión con las 277 herramientas protegidas comprobados por el catálogo. Los enlaces a otros candidatos solo aceptan IDs existentes y prohíben autorreferencias.
+- [x] F/E — volumen, salinidad medida/objetivo, pureza y bolsas; conversiones L/galón US/galón imperial y kg/lb. Aceptación: 1.000 L × 1.000 ppm = 1 kg de sal pura. Se prueban pureza 99%, redondeo de bolsas, salinidad igual/por encima del objetivo y rechazos de límites/unidades.
+- [x] X — ejemplo, cálculo, copia y reinicio. Chrome local confirmó copia y resultado de 1 kg; entrada cero produce un aviso de error y mantiene enfocado el control. No exporta archivos, así que descarga/importación no aplica.
+- [x] L — copy y metadatos en 36 idiomas; tests verifican los campos, dos FAQs adicionales y el contrato de idioma. QA corrigió “pool” como “grupo” en el aviso español, “pounds” como moneda en árabe y el rótulo de ajuste por pureza; además, localizó el título y nombre español, que mezclaban inglés. Son borradores automáticos, no traducciones revisadas por nativos.
+- [x] B local — build estático real: 612 HTML/URLs (16 herramientas × 36 idiomas + 36 portadas), 669 archivos y 12.569.293 bytes; sitemap de staging con 612 URLs únicas. El builder conserva su presupuesto de 20.000 archivos y 24 KiB, y los bundles no incluyen llamadas remotas ni ejecución dinámica. Sin Functions, R2 ni servicio de conversión.
+- [x] Chrome local: ejemplo de 1.000 L → 1 kg probado; español actualizado con título “Calculadora de sal para piscina gratis” y H1 “Calculadora de sal para piscinas”, anchos sin overflow en 390, 768 y 1.440 px, consola vacía; árabe RTL validado en 390 px, copia funcional y consola vacía. No se probaron dispositivos físicos ni se hizo PageSpeed/Lighthouse.
+- [x] Auditoría estática corregida: 612 URLs únicas con fichero, canonical propio, H1 y 37 alternates hreflang en cada página. Se decodificaron entidades HTML antes de comprobar longitudes de title/description (evita contar `&#39;` como seis caracteres); también se descartó el falso positivo del detector sobre el texto alemán “größer als null” (mayor que cero). Cero problemas en las 612 páginas.
+- [ ] `npm test` completo del repositorio y pipeline de release no ejecutados. Suite focalizada de catálogo/formularios/idiomas/render/build/bundles/lógica: 82/82 aprobadas. No hubo revisión humana nativa de las traducciones.
+- [ ] P/S abiertos: sin merge, deploy, altas ni envíos de sitemap a buscadores. #094 sigue sin marcar en `PLAN-600.md`; sitemap de producción y las 277 herramientas originales no cambiaron.
 
 ## Continuación · Roofing Calculator (#078) · 2026-10-07
 
