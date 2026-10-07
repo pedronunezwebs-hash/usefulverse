@@ -107,6 +107,19 @@ test('asphalt calculator has 36 localized copies, estimates-only disclosures and
   }
 });
 
+test('wallpaper calculator has complete localized copy, pattern guidance and boundaries in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'wallpaper-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.ok(copy.fields.accuracyNote.trim(), `${key}: estimate boundary should be present`);
+    assert.ok(copy.fields.relatedPaintCalculator.trim(), `${key}: related paint tool should be linked`);
+    assert.equal(copy.additionalFaqs.length, 2, `${key}: both FAQs should be localized`);
+    assert.doesNotMatch(JSON.stringify(copy), /UVWALL\d{4}X?|UVTOKEN\d+X/u, `${key}: translation markers must not leak`);
+  }
+});
+
 test('soil calculator has 36 localized copies, container-fill boundary and complete FAQs', () => {
   const soilTool = allGrowthPilotTools.find(({ id }) => id === 'soil-calculator');
   assert.ok(soilTool);

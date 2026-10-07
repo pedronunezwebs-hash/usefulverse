@@ -18,6 +18,8 @@ import fenceCopies from './fence-calculator.mjs';
 import { fenceCalculatorEnglishCopy } from './fence-calculator.en.mjs';
 import poolSaltTranslations from './pool-salt-calculator-final.mjs';
 import { poolSaltCalculatorEnglishCopy } from './pool-salt-calculator.en.mjs';
+import wallpaperCopies from './wallpaper-calculator-final.mjs';
+import { wallpaperCalculatorEnglishCopy } from './wallpaper-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -40,6 +42,21 @@ const poolSaltCopies = Object.freeze({
     }),
   }),
 });
+
+const wallpaperFreeLabels = Object.freeze({
+  en: 'free', es: 'gratis', fr: 'gratuit', pt: 'grátis', de: 'kostenlos', ja: '無料', ko: '무료', id: 'gratis', hi: 'मुफ़्त', ar: 'مجاني',
+  zh: '免费', bn: 'বিনামূল্যে', ru: 'бесплатно', ur: 'مفت', tr: 'ücretsiz', vi: 'miễn phí', it: 'gratis', zh_tw: '免費', bg: 'безплатно', ca: 'gratuït',
+  nl: 'gratis', el: 'δωρεάν', ms: 'percuma', pl: 'za darmo', sv: 'gratis', th: 'ฟรี', uk: 'безкоштовно', sw: 'bila malipo', mr: 'विनामूल्य', te: 'ఉచితంగా',
+  ha: 'kyauta', tl: 'libre', ta: 'இலவசம்', fa: 'رایگان', am: 'ነፃ', gu: 'મફત',
+});
+const localizedWallpaperCopies = Object.freeze(Object.fromEntries(Object.entries(wallpaperCopies).map(([language, copy]) => {
+  const suffix = ` ${wallpaperFreeLabels[language] ?? 'free'} | UsefulVerse`;
+  const availableNameLength = 60 - suffix.length;
+  const shortName = copy.name.length <= availableNameLength
+    ? copy.name
+    : copy.name.slice(0, availableNameLength).replace(/\s+\S*$/u, '').trim();
+  return [language, Object.freeze({ ...copy, title: `${shortName}${suffix}` })];
+})));
 
 const actionCopy = Object.freeze({
   calculate: 'Calculate', generate: 'Make the draw', reset: 'Reset', example: 'Try an example', newGame: 'New game',
@@ -74,6 +91,7 @@ const tools = {
   'soil-calculator': soilEnglishCopy,
   'pool-volume-calculator': poolVolumeCalculatorEnglishCopy,
   'pool-salt-calculator': poolSaltCalculatorEnglishCopy,
+  'wallpaper-calculator': wallpaperCalculatorEnglishCopy,
   'roof-pitch-calculator': roofPitchCalculatorEnglishCopy,
   'molar-mass-calculator': {
     copyLanguage: 'en', name: 'Molar mass calculator', title: 'Molar mass calculator free unlimited | UsefulVerse',
@@ -142,5 +160,6 @@ registerGrowthLocaleExtension(source, 'roofing-calculator', roofingCopies, 'grav
 registerGrowthLocaleExtension(source, 'deck-calculator', deckCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'fence-calculator', fenceCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'pool-salt-calculator', poolSaltCopies, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'wallpaper-calculator', localizedWallpaperCopies, 'gravel-calculator');
 
 export default Object.freeze(source);

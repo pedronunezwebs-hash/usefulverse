@@ -66,4 +66,11 @@ test('tool renderer includes additional localized FAQs in page content and schem
   });
   assert.match(asphaltHtml, /https:\/\/usefulverse\.com\/ar\/tools\/concrete-calculator\//u);
   assert.match(asphaltHtml, /<summary>What density should I use\?<\/summary>/u);
+
+  const wallpaperHtml = renderGrowthToolPage({
+    tool: { id: 'wallpaper-calculator' }, locale: locales[1], localeEntries: locales,
+    copy: { ...copy, fields: { relatedPaintCalculator: 'Also need paint? Try the paint calculator.' } },
+    origin: 'https://tools.usefulverse.com', formHtml: '<form id="tool-form"></form>',
+  });
+  assert.match(wallpaperHtml, /https:\/\/usefulverse\.com\/ar\/tools\/paint-calculator\//u);
 });

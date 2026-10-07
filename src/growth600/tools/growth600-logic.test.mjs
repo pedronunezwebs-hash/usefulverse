@@ -15,6 +15,7 @@ import { calculateRoofing } from './roofing-calculator/logic.mjs';
 import { calculateDeck } from './deck-calculator/logic.mjs';
 import { calculateFence } from './fence-calculator/logic.mjs';
 import { calculatePoolSalt } from './pool-salt-calculator/logic.mjs';
+import { calculateWallpaper } from './wallpaper-calculator/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
 test('gravel calculator converts area and depth into volume, waste, weight and bags', () => {
@@ -29,6 +30,13 @@ test('gravel calculator converts area and depth into volume, waste, weight and b
   assert.equal(calculateTriangularArea(4, 3), 6);
   assert.throws(() => calculateGravel({ areaM2: 0, depthM: 1 }), /Area/);
   assert.throws(() => calculateGravel({ areaM2: 1, depthM: 1, wastePercent: 101 }), /Waste/);
+});
+
+test('wallpaper calculator counts pattern-aligned drops, openings and allowance', () => {
+  const base = { perimeter: 12, wallHeight: 2.4, rollWidth: 0.53, rollLength: 10.05, wastePercent: 0, unit: 'm' };
+  assert.equal(calculateWallpaper(base).rollsNeeded, 6);
+  assert.equal(calculateWallpaper({ ...base, patternRepeat: 0.32 }).rollsNeeded, 8);
+  assert.equal(calculateWallpaper({ ...base, openingsArea: 2.4 }).stripsNeeded, 21);
 });
 
 test('soil calculator estimates raised-bed and pot fill volume and bag count', () => {

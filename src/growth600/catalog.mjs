@@ -1,5 +1,17 @@
 export const growthPilotTools = Object.freeze([
   {
+    id: 'wallpaper-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'wallpaper calculator',
+    secondaryIntents: ['wallpaper roll calculator', 'wallpaper pattern repeat calculator', 'wallpaper strips calculator'],
+    functions: ['estimate wallpaper strips from wall perimeter, height and roll width', 'round each drop up to the pattern repeat and include a fixed trim allowance', 'estimate usable drops per roll and whole roll count', 'deduct user-entered door and window area proportionally and apply extra material'],
+    acceptance: 'For a 12 m perimeter, 2.4 m height, 0.53 m wide × 10.05 m roll and no waste: no pattern repeat needs 6 rolls; a 0.32 m repeat increases the estimate to 8 rolls.',
+    boundary: 'Planning estimate only. It converts opening area into equivalent full-height strip width and assumes a continuous perimeter; it cannot lay out individual walls, corners, obstacles, pattern phase, damaged sections or product-specific trim. Verify roll coverage and pattern instructions on the product label and buy a practical allowance.',
+    relatedExistingIds: ['paint-calculator'],
+    logicModule: './tools/wallpaper-calculator/logic.mjs',
+  },
+  {
     id: 'pool-salt-calculator',
     category: 'home-materials',
     type: 'calculator',

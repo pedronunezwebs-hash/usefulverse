@@ -91,7 +91,7 @@
 
 ## Próxima acción concreta
 
-Siguiente: Wallpaper Calculator (#097). El catálogo aditivo tiene ahora 16 candidatos. Deck Calculator (#083), Roofing Calculator (#078), Fence Calculator (#093) y Pool Salt Calculator (#094) tienen sus gates locales registrados abajo; sus casillas globales siguen abiertas. La publicación de la tanda sigue bloqueada hasta cerrar gates globales C/F/E/X/L/B/P/S; no se han enviado sus URLs a buscadores. Las 277 rutas originales permanecen intactas.
+Siguiente: Image Region Redactor (#098). Wallpaper Calculator (#097) ya está implementada y sus gates locales están documentados abajo, pero mantiene abiertos los gates globales P/S; todavía no se publica. El catálogo aditivo tiene ahora 17 candidatos. La publicación de la tanda sigue bloqueada hasta cerrar gates globales C/F/E/X/L/B/P/S; no se han enviado sus URLs a buscadores. Las 277 rutas originales permanecen intactas.
 
 ## Continuación · 2026-10-07
 
@@ -223,6 +223,17 @@ Siguiente: Wallpaper Calculator (#097). El catálogo aditivo tiene ahora 16 cand
 - [x] Budget/privacy: JS minificado 4.583 B (≤24 KiB), sin red externa ni ejecución dinámica; herramienta se calcula en navegador. La salida de staging fue local, estática y no agrega Functions/APIs.
 - [x] Chrome DevTools local: ejemplo válido 6.000 L/1.585 US gal/1.320 imp gal; óvalo inclinado de 8×4 m y profundidad media de 1,5 m devuelve 37.699 L. Cero de entrada activa `aria-invalid`, enfoca campo y anuncia error; reset limpia estado. A 390 px no hay overflow; muestra árabe RTL con `lang=ar`, `dir=rtl` también sin overflow; consola sin errores.
 - [ ] No se probaron hardware físico ni revisión nativa de 36 borradores. Candidato #067 en staging: sin deploy, sin sitemap de producción actualizado y sin envío a motores. Los gates C/F/E/X/L/B/P/S solo se cierran en la publicación conjunta con comprobación de URLs públicas.
+
+## Continuación · Wallpaper Calculator (#097) · 2026-10-08
+
+- [x] Implementada como herramienta diferenciada de `paint-calculator`: calcula tiras por perímetro y ancho de rollo, ajusta cada caída al patrón repetido, añade 10 cm de margen de corte, estima caídas por rollo y descuenta aperturas proporcionalmente. La página explica que es una estimación de planificación, no un plano de corte por pared ni una alineación exacta del patrón.
+- [x] Cálculo local y acotado, con metros/pies, desperdicio configurable y validación de valores. Aceptación: 12 m × 2,4 m, rollo 0,53 m × 10,05 m, sin desperdicio = 6 rollos; patrón de 0,32 m = 8 rollos. El resultado aumenta con el desperdicio y las entradas inválidas/rangos no admitidos se rechazan.
+- [x] 36 copias de idioma con labels, acciones, mensajes, metadatos y FAQs; contratos rechazan campos faltantes y desborde de límites de metadatos. Son borradores de traducción automática comprensibles; no revisión humana nativa. La traducción se materializa antes de publicar: no hay llamada de traducción en tiempo de ejecución.
+- [x] Regresión focalizada de catálogo, formularios, contratos, utilidades de locale, renderer, builder y lógica: **86/86 aprobadas**. El build separado real produjo 648 páginas (17 herramientas × 36 locales + 36 portadas), 648 URLs de sitemap, 706 archivos y 13.395.741 bytes; no se reejecuta sobre una carpeta existente, de acuerdo con el guard del builder.
+- [x] Auditoría estática de las 36 URLs de Wallpaper: 36 presentes en el sitemap, canonical propio, 37 alternates hreflang, título ≤60 caracteres, descripción ≤160 y sin marcadores `undefined`/traducción filtrados. Bundle minificado del controlador: 4.248 B, bajo el límite de 24 KiB. `git diff --check` pasó.
+- [x] QA de Chrome DevTools local: ejemplos de aceptación de 6 y 8 rollos; árabe con `lang="ar"`, `dir="rtl"` y cálculo visible; en viewport móvil 390×844 y escritorio 1440×900 no aparece desbordamiento horizontal. Consola sin errores ni warnings.
+- [ ] No probado en hardware físico ni revisado por hablantes nativos. No se ejecutó el `npm test` global completo en este paso; pasó la suite focalizada. No hay PageSpeed/Lighthouse por instrucción expresa del proyecto.
+- [ ] Solo staging local en rama de trabajo: sin merge, dominio/DNS, deploy, sitemap de producción o envío a buscadores. Los gates P/S de publicación quedan abiertos; el candidato #097 sigue sin marcar en `PLAN-600.md` hasta que el release coordinado verifique la URL pública.
 
 ## Continuación · Roof Pitch Calculator (#071) · 2026-10-07
 
