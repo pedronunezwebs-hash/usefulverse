@@ -49,6 +49,7 @@ const messages = { copied: 'Copied.', copyUnavailable: 'Copy unavailable.', calc
 function toolCopy(tool, language) {
   const name = `${tool.id} ${language}`;
   const fields = {
+    'fence-calculator': { unit: 'Run unit', length: 'Total run', gateCount: 'Number of gates', gateWidth: 'Gate opening', materialUnit: 'Material unit', postSpacing: 'Post spacing', panelWidth: 'Panel width', picketWidth: 'Picket width', maxPicketGap: 'Maximum gap', picketHeight: 'Picket length', wastePercent: 'Extra pieces', pricePerPost: 'Price per post', pricePerGate: 'Price per gate', pricePerPanel: 'Price per panel', pricePerPicket: 'Price per picket', accuracyNote: 'Estimate only; gate positions are assumed evenly spaced.' },
     'deck-calculator': { unit: 'Unit', length: 'Deck length', width: 'Deck width', boardUnit: 'Board and support unit', boardWidth: 'Board width', gap: 'Gap', stockBoardLength: 'Stock board length', joistSpacing: 'Support spacing', wastePercent: 'Extra material', fastenersPerIntersection: 'Fasteners per crossing', pricePerBoard: 'Price per board', safetyNote: 'Estimate only; joints require support.' },
     'roofing-calculator': { projectedArea: 'Projected roof area', areaUnit: 'Area unit', rise: 'Rise', run: 'Run', pitchUnit: 'Pitch unit', wastePercent: 'Extra material', bundlesPerSquare: 'Bundles per square', pricePerBundle: 'Price per bundle', safetyNote: 'Estimate only; verify measurements.' },
     'drywall-calculator': { roomLength: 'Room length', roomWidth: 'Room width', wallHeight: 'Wall height', openingArea: 'Opening area', roomCount: 'Room count', unit: 'Unit', includeCeiling: 'Surfaces', boardWidth: 'Board width', boardHeight: 'Board length', wastePercent: 'Extra material', screwsPerBoard: 'Screws per board', pricePerBoard: 'Price per board', accuracyNote: 'Area estimate; cuts and layout change actual quantity.' },
@@ -72,14 +73,16 @@ function toolCopy(tool, language) {
   if (tool.id === 'drywall-calculator') Object.assign(actions, { millimeters: 'Millimeters', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only' });
   if (tool.id === 'roofing-calculator') Object.assign(actions, { squareMeters: 'Square metres', squareFeet: 'Square feet' });
   if (tool.id === 'deck-calculator') Object.assign(actions, { millimeters: 'Millimeters' });
+  if (tool.id === 'fence-calculator') Object.assign(actions, { millimeters: 'Millimeters' });
   const deckMessages = tool.id === 'deck-calculator' ? { area: 'Deck area', boardRows: 'Board rows', coveredWidth: 'Covered width', orderLength: 'Order length', boards: 'Boards to order', supportLines: 'Support lines', fasteners: 'Fasteners', joints: 'End joints', estimatedCost: 'Estimated cost', costNotEntered: 'Enter a board price.' } : {};
+  const fenceMessages = tool.id === 'fence-calculator' ? { totalRun: 'Total run', gateOpening: 'Gate openings', fenceLength: 'Fence length', sections: 'Fence sections', averageSection: 'Average section', posts: 'Posts', panels: 'Panels to order', pickets: 'Pickets to order', picketGap: 'Adjusted picket gap', picketLength: 'Total picket cut length', extra: 'extra', onePicket: 'One picket per section', panelCost: 'Panel-option cost', picketCost: 'Picket-option cost' } : {};
   const localizedMessages = tool.id === 'stair-calculator' ? { ...messages, riserHeight: 'Riser height', treadCount: 'Tread count', totalRun: 'Total run', angle: 'Angle', stringerLength: 'Stringer length', diagram: 'Stair side view' } : messages;
   const asphaltMessages = tool.id === 'asphalt-calculator' ? { ...messages, compactedVolume: 'Compacted volume', orderVolume: 'Order volume', metricTonnes: 'Metric tonnes', shortTons: 'US short tons', estimatedCost: 'Estimated material cost' } : {};
   const poolMessages = tool.id === 'pool-volume-calculator' ? { liters: 'Litres', usGallons: 'US gallons', imperialGallons: 'Imperial gallons', averageDepth: 'Average depth' } : {};
   const roofMessages = tool.id === 'roof-pitch-calculator' ? { angleDegrees: 'Angle', angleRadians: 'Angle in radians', slopePercent: 'Slope', pitch: 'Rise per 12 run', rafterLength: 'Rafter length' } : {};
   const drywallMessages = tool.id === 'drywall-calculator' ? { wallArea: 'Net wall area', ceilingArea: 'Ceiling area', totalArea: 'Total surface area', boardCount: 'Whole boards', boardCoverage: 'Board coverage', estimatedScrews: 'Estimated screws', jointSeams: 'Approximate joint seams', estimatedCost: 'Estimated board cost', costNotEntered: 'Enter a board price.' } : {};
   const roofingMessages = tool.id === 'roofing-calculator' ? { projectedArea: 'Projected area', roofArea: 'Sloped roof area', extraArea: 'Area with extra material', pitch: 'Pitch', slopeFactor: 'Slope multiplier', roofingSquares: 'Roofing squares', bundles: 'Bundles', estimatedCost: 'Estimated cost', costNotEntered: 'Enter a bundle price.' } : {};
-  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: { ...localizedMessages, ...asphaltMessages, ...poolMessages, ...roofMessages, ...drywallMessages, ...roofingMessages, ...deckMessages }, copyLanguage: language };
+  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: { ...localizedMessages, ...asphaltMessages, ...poolMessages, ...roofMessages, ...drywallMessages, ...roofingMessages, ...deckMessages, ...fenceMessages }, copyLanguage: language };
   if (tool.id === 'tire-size-calculator') localized.additionalFaqs = [
     { question: 'Will this replacement tire fit my vehicle?', answer: fields.fitmentNote },
     { question: 'How is actual speed estimated?', answer: 'Dashboard speed is multiplied by the ratio of new to current nominal tire diameter. It is an estimate.' },
@@ -115,6 +118,10 @@ function toolCopy(tool, language) {
   if (tool.id === 'deck-calculator') localized.additionalFaqs = [
     { question: 'What if the stock boards are shorter than the deck?', answer: fields.safetyNote },
     { question: 'Does this estimate include a cut map or framing design?', answer: 'No. It estimates surface board quantity and simplified support fasteners; every board-end joint still needs a suitable support and project-specific framing design.' },
+  ];
+  if (tool.id === 'fence-calculator') localized.additionalFaqs = [
+    { question: 'How many posts does one isolated fence section need?', answer: fields.accuracyNote },
+    { question: 'Does this place gates at their exact positions?', answer: 'No. It divides fence sections evenly because individual gate positions are not entered.' },
   ];
   return localized;
 }

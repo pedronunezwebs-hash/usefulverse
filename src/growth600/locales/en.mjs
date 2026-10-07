@@ -14,6 +14,8 @@ import roofingCopies from './roofing-calculator.mjs';
 import { roofingCalculatorEnglishCopy } from './roofing-calculator.en.mjs';
 import deckCopies from './deck-calculator.mjs';
 import { deckCalculatorEnglishCopy } from './deck-calculator.en.mjs';
+import fenceCopies from './fence-calculator.mjs';
+import { fenceCalculatorEnglishCopy } from './fence-calculator.en.mjs';
 
 const actionCopy = Object.freeze({
   calculate: 'Calculate', generate: 'Make the draw', reset: 'Reset', example: 'Try an example', newGame: 'New game',
@@ -27,6 +29,7 @@ const reusableMessages = Object.freeze({ copied: 'Copied.', copyUnavailable: 'Co
 
 const tools = {
   'deck-calculator': deckCalculatorEnglishCopy,
+  'fence-calculator': fenceCalculatorEnglishCopy,
   'roofing-calculator': roofingCalculatorEnglishCopy,
   'drywall-calculator': drywallEnglishCopy,
   'gravel-calculator': {
@@ -112,5 +115,6 @@ registerGrowthLocaleExtension(source, 'pool-volume-calculator', poolCopies, 'gra
 registerGrowthLocaleExtension(source, 'roof-pitch-calculator', roofCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'roofing-calculator', roofingCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'deck-calculator', deckCopies, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'fence-calculator', fenceCopies, 'gravel-calculator');
 
 export default Object.freeze(source);

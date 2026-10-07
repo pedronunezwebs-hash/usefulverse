@@ -184,6 +184,20 @@ test('deck calculator localizes decking, stock-board joints, supports and safety
   }
 });
 
+test('fence calculator localizes estimates, even-gate assumption and end-post FAQs in all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'fence-calculator');
+  assert.ok(tool);
+  assert.equal(localeEntries.length, 36);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.ok(copy.fields.accuracyNote.trim());
+    assert.ok(copy.actions.meters && copy.actions.feet && copy.actions.inches);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.doesNotMatch(JSON.stringify(copy), /UVTOKEN\d+X|undefined|null/u, `${key}: no draft marker or missing copy`);
+  }
+});
+
 test('the first Google Translate Spanish draft covers every copy key and preserves required placeholders', () => {
   assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'es' }], { es: spanishGrowthCopy }), true);
   assert.ok(Object.values(spanishGrowthCopy).every((copy) => copy.copyLanguage === 'es'));

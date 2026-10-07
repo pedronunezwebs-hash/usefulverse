@@ -1,5 +1,17 @@
 export const growthPilotTools = Object.freeze([
   {
+    id: 'fence-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'fence calculator',
+    secondaryIntents: ['fence materials calculator', 'fence posts calculator', 'fence panels calculator', 'fence picket calculator'],
+    functions: ['estimate posts for straight fence sections and evenly distributed gate openings', 'compare panel and picket infill quantities', 'estimate picket spacing under a user-entered maximum gap', 'apply extra-material allowance and optional item costs'],
+    acceptance: 'A 100 ft straight run with one 4 ft gate, 8 ft maximum post spacing, 8 ft panels, 5.5 in pickets, 2 in maximum gap and 10% extra estimates 14 posts, 12 panels (14 to order) and 156 pickets (172 to order); one isolated section with no gates always includes both end posts.',
+    boundary: 'Planning estimate only. Gate placement is assumed even; panel and picket quantities are alternatives. It does not design shared corner posts, rails, foundations, slopes, wind resistance, hinges, latches, permits or local code compliance. Verify the layout and product dimensions with a qualified installer.',
+    relatedExistingIds: ['room-planner'],
+    logicModule: './tools/fence-calculator/logic.mjs',
+  },
+  {
     id: 'deck-calculator',
     category: 'home-materials',
     type: 'calculator',

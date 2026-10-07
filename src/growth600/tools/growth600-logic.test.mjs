@@ -13,6 +13,7 @@ import { calculateRoofPitch } from './roof-pitch-calculator/logic.mjs';
 import { calculateDrywall } from './drywall-calculator/logic.mjs';
 import { calculateRoofing } from './roofing-calculator/logic.mjs';
 import { calculateDeck } from './deck-calculator/logic.mjs';
+import { calculateFence } from './fence-calculator/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
 test('gravel calculator converts area and depth into volume, waste, weight and bags', () => {
@@ -150,6 +151,40 @@ test('deck calculator counts board rows, stock length, supported-run estimates a
   assert.throws(() => calculateDeck({ length: 4, width: 3, unit: 'yard', boardWidth: 0.14, gap: 0, stockBoardLength: 4, joistSpacing: 0.4 }), /supported length unit/u);
   assert.throws(() => calculateDeck({ length: 4, width: 3, unit: 'm', boardWidth: 0, stockBoardLength: 4, joistSpacing: 0.4 }), /Board width/u);
   assert.throws(() => calculateDeck({ length: 4, width: 3, unit: 'm', boardWidth: 0.14, gap: 0, stockBoardLength: 4, joistSpacing: 0.4, fastenersPerIntersection: 1.5 }), /whole number/u);
+});
+
+test('fence calculator counts endpoint posts, evenly split gates, panels, pickets, waste and optional costs', () => {
+  const fence = calculateFence({ length: 100, unit: 'ft', gateCount: 1, gateWidth: 48, materialUnit: 'in', postSpacing: 96, panelWidth: 96, picketWidth: 5.5, maxPicketGap: 2, picketHeight: 72, wastePercent: 10, pricePerPost: 25, pricePerGate: 120, pricePerPanel: 80, pricePerPicket: 8 });
+  assert.ok(Math.abs(fence.gateOpeningM - 4 * 0.3048) < 1e-12);
+  assert.equal(fence.sectionCount, 2);
+  assert.equal(fence.postSpansPerSection, 6);
+  assert.equal(fence.postCount, 14);
+  assert.equal(fence.panelCount, 12);
+  assert.equal(fence.orderedPanels, 14);
+  assert.equal(fence.picketsPerSection, 78);
+  assert.equal(fence.picketCount, 156);
+  assert.equal(fence.orderedPickets, 172);
+  assert.ok(fence.actualPicketGapM <= 2 * 0.0254);
+  assert.equal(fence.estimatedPanelOptionCost, 14 * 25 + 120 + 14 * 80);
+  assert.equal(fence.estimatedPicketOptionCost, 14 * 25 + 120 + 172 * 8);
+
+  const isolated = calculateFence({ length: 4, unit: 'm', gateCount: 0, gateWidth: 1, materialUnit: 'm', postSpacing: 100, panelWidth: 2, picketWidth: 0.1, maxPicketGap: 0.05, picketHeight: 1.8, wastePercent: 0 });
+  assert.equal(isolated.sectionCount, 1);
+  assert.equal(isolated.postCount, 2, 'an isolated fence section needs both end posts');
+  assert.equal(isolated.gateOpeningM, 0);
+  assert.equal(isolated.estimatedPanelOptionCost, null);
+  assert.equal(isolated.estimatedPicketOptionCost, null);
+
+  const metric = calculateFence({ length: 30, unit: 'm', gateCount: 2, gateWidth: 1.2, materialUnit: 'm', postSpacing: 2.4, panelWidth: 2.4, picketWidth: 0.15, maxPicketGap: 0.05, picketHeight: 1.8, wastePercent: 0 });
+  assert.equal(metric.sectionCount, 3);
+  assert.ok(metric.postCount >= 2 * metric.sectionCount);
+  assert.equal(metric.gateOpeningM, 2.4);
+  assert.throws(() => calculateFence({ length: 2, unit: 'm', gateCount: 1, gateWidth: 80, materialUnit: 'in', postSpacing: 8, panelWidth: 8, picketWidth: 6, maxPicketGap: 2, picketHeight: 6 }), /Gate openings/u);
+  assert.throws(() => calculateFence({ length: 100, unit: 'ft', gateCount: 1.5 }), /whole number/u);
+  assert.throws(() => calculateFence({ length: 100, unit: 'ft', gateCount: 0, wastePercent: 31 }), /Extra material/u);
+  assert.throws(() => calculateFence({ length: 100, unit: 'ft', postSpacing: 0 }), /Maximum post spacing/u);
+  assert.throws(() => calculateFence({ length: 100, unit: 'ft', materialUnit: 'm', maxPicketGap: 1.1 }), /must not exceed 1 meter/u);
+  assert.throws(() => calculateFence({ length: 1, unit: 'm', gateCount: 0, materialUnit: 'm', picketWidth: 1.1, maxPicketGap: 0.05 }), /must fit within/u);
 });
 
 test('molar-mass parser handles formulas, nested groups and supported isotopes', () => {

@@ -1,6 +1,7 @@
 export const REQUIRED_GROWTH_COPY = Object.freeze(['name', 'title', 'description', 'intro', 'howQuestion', 'howAnswer', 'privacyQuestion', 'privacyAnswer']);
 export const REQUIRED_GROWTH_HOME_COPY = Object.freeze(['title', 'description', 'intro', 'directoryLabel', 'freeLabel', 'footerFree', 'skipToTool', 'home', 'languageLabel', 'breadcrumbLabel', 'faqLabel']);
 export const REQUIRED_TOOL_MESSAGES = Object.freeze({
+  'fence-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'totalRun', 'gateOpening', 'fenceLength', 'sections', 'averageSection', 'posts', 'panels', 'pickets', 'picketGap', 'picketLength', 'extra', 'onePicket', 'panelCost', 'picketCost'],
   'deck-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'area', 'boardRows', 'coveredWidth', 'orderLength', 'boards', 'supportLines', 'fasteners', 'joints', 'estimatedCost', 'costNotEntered'],
   'roofing-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'projectedArea', 'roofArea', 'extraArea', 'pitch', 'slopeFactor', 'roofingSquares', 'bundles', 'estimatedCost', 'costNotEntered'],
   'drywall-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'wallArea', 'ceilingArea', 'totalArea', 'boardCount', 'boardCoverage', 'estimatedScrews', 'jointSeams', 'estimatedCost', 'costNotEntered'],
@@ -17,6 +18,7 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   mancala: ['pit', 'seeds', 'playerOne', 'playerTwo', 'playerOneWins', 'playerTwoWins', 'tie', 'gameOver', 'turn'],
 });
 export const REQUIRED_TOOL_FIELDS = Object.freeze({
+  'fence-calculator': ['unit', 'length', 'gateCount', 'gateWidth', 'materialUnit', 'postSpacing', 'panelWidth', 'picketWidth', 'maxPicketGap', 'picketHeight', 'wastePercent', 'pricePerPost', 'pricePerGate', 'pricePerPanel', 'pricePerPicket', 'accuracyNote'],
   'deck-calculator': ['unit', 'length', 'width', 'boardUnit', 'boardWidth', 'gap', 'stockBoardLength', 'joistSpacing', 'wastePercent', 'fastenersPerIntersection', 'pricePerBoard', 'safetyNote'],
   'roofing-calculator': ['projectedArea', 'areaUnit', 'rise', 'run', 'pitchUnit', 'wastePercent', 'bundlesPerSquare', 'pricePerBundle', 'safetyNote'],
   'drywall-calculator': ['roomLength', 'roomWidth', 'wallHeight', 'openingArea', 'roomCount', 'unit', 'includeCeiling', 'boardWidth', 'boardHeight', 'wastePercent', 'screwsPerBoard', 'pricePerBoard', 'accuracyNote'],
@@ -33,6 +35,7 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   mancala: ['mode', 'board', 'rules'],
 });
 export const REQUIRED_TOOL_ACTIONS = Object.freeze({
+  'fence-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'millimeters', 'feet', 'inches'],
   'deck-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'millimeters', 'feet', 'inches'],
   'roofing-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'squareMeters', 'squareFeet', 'meters', 'centimeters', 'millimeters', 'feet', 'inches'],
   'drywall-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'millimeters', 'feet', 'inches', 'withCeiling', 'wallsOnly'],

@@ -1,6 +1,6 @@
 # UsefulVerse · progreso del plan 277 → 600
 
-Última verificación: 2026-10-07. Registro persistente de esta rama; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
+Última verificación: 2026-10-08. Registro persistente de esta rama; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
 ## Estado actual
 
@@ -91,7 +91,7 @@
 
 ## Próxima acción concreta
 
-Siguiente: Fence Calculator (#093). El catálogo aditivo tiene ahora 14 candidatos. Deck Calculator (#083) y Roofing Calculator (#078) tienen sus gates locales registrados abajo. La publicación de la tanda sigue bloqueada hasta cerrar gates globales C/F/E/X/L/B/P/S; no se han enviado sus URLs a buscadores. Las 277 rutas originales permanecen intactas.
+Siguiente: Pool Salt Calculator (#094). El catálogo aditivo tiene ahora 15 candidatos. Deck Calculator (#083) y Roofing Calculator (#078) tienen sus gates locales registrados abajo. Fence Calculator (#093) tiene pruebas focalizadas y recorrido local; su casilla global sigue abierta. La publicación de la tanda sigue bloqueada hasta cerrar gates globales C/F/E/X/L/B/P/S; no se han enviado sus URLs a buscadores. Las 277 rutas originales permanecen intactas.
 
 ## Continuación · 2026-10-07
 
@@ -110,6 +110,17 @@ Siguiente: Fence Calculator (#093). El catálogo aditivo tiene ahora 14 candidat
 - [ ] La inspección física en dispositivos reales y la lectura nativa/lingüística de las 36 traducciones siguen fuera de este QA; el plan solo exige una revisión visual representativa, pero estas limitaciones no deben presentarse como si fueran pruebas ya hechas. F4 y P/S continúan abiertos hasta cerrar los demás gates y verificar publicación.
 - [x] Workflow revisado: el build `growth600` se valida junto al pipeline existente; el deploy de `usefulverse-tools` requiere ejecución manual desde `main` con el input `publish_growth600=true`, y solo tras configurar el dominio y cerrar gates. Los nombres de los secretos Cloudflare requeridos existen en GitHub Actions (sus valores no se consultaron). YAML y `git diff --check` pasan. No se inició ningún workflow ni deploy en este paso.
 - [x] Gate B local del piloto: la salida tiene 262 archivos y 3.519.822 bytes; los cinco controladores minificados son 3.820–4.858 B y CSS 5.785 B. El builder comprueba 20.000 archivos/24 KiB de asset, inspecciona que no haya requests remotos ni ejecución dinámica y el código del piloto solo usa módulos locales/APIs nativas. `esbuild` es dependencia de build MIT; no se empaqueta en el navegador. No se añadieron Functions, APIs, fuentes externas ni servicios facturables.
+
+## Continuación · Fence Calculator (#093) · 2026-10-08
+
+- [x] Herramienta aditiva y una sola intención por ruta: estima tramos rectos, aperturas de puertas, postes extremos, paneles o piquetes como alternativas, separación ajustada, desperdicio y costes opcionales. No ofrece ubicaciones exactas de puertas; divide el tramo restante uniformemente y lo explica en la interfaz y FAQs.
+- [x] Aceptación de sección aislada: el modelo siempre cuenta dos postes extremos. Ejemplo 100 ft con una abertura de 48 in produce 2 secciones de 48 ft, 14 postes, 12 paneles base/14 con extra y 156 piquetes base/172 con extra.
+- [x] La lógica valida unidades métricas/imperiales, cantidades y máximos; los costes permanecen opcionales y solo se muestran con datos suficientes. Añadí regresión para gaps físicamente superiores a 1 m y corregí la validación que comparaba pulgadas directamente con metros.
+- [x] Suite específica final: 80/80 pruebas aprobadas incluyendo catálogo aditivo, formularios, contrato de los 36 idiomas, renderer, builder, límites de bundle y lógica.
+- [x] Build aislado de lote: 576 páginas (15 herramientas × 36 idiomas + 36 portadas), 576 URLs de sitemap, 632 archivos y 11.763.123 bytes. Las 36 páginas Fence tienen canonical, 37 alternates hreflang, FAQPage, idioma correcto, title ≤60, descripción ≤160 y sin marcadores `undefined`.
+- [x] Controlador minificado: 6.383 B (≤24 KiB), local, sin API ni llamadas externas. No añade funciones de servidor ni coste por ejecución.
+- [x] Chrome DevTools local: ejemplo funcional en inglés; consola limpia. Árabe RTL comprobado a 390 y 1.440 px: documento sin overflow (390/390 y 1.440/1.440); ejemplo arroja los mismos totales. No se probaron dispositivos físicos.
+- [ ] Las traducciones son borradores automáticos y no revisión humana nativa. No se ejecutó Lighthouse/PageSpeed por instrucción del proyecto. Ninguna URL de este candidato se publicó; sitemap de producción, buscadores y las 277 herramientas originales no cambiaron. Gates C/F/E/X/L/B/P/S continúan abiertos para release coordinado.
 
 ## Continuación · Roofing Calculator (#078) · 2026-10-07
 
