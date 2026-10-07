@@ -32,6 +32,7 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   'btu-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'roomArea', 'roomVolume', 'baseCapacity', 'ceilingAdjustment', 'insulationAdjustment', 'sunAdjustment', 'occupantAdjustment', 'kitchenAdjustment', 'capacity', 'tons', 'belowReferenceBand'],
   'brick-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'grossArea', 'netArea', 'courses', 'bricksPerCourse', 'bricksBeforeWaste', 'bricksToOrder', 'mortarVolume', 'mortarBags'],
   'rafter-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'effectiveRun', 'rafterLength', 'pitch', 'roofAngle', 'plumbCut', 'overhangRun'],
+  'carpet-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'floorArea', 'pileDirection', 'cuts', 'seams', 'cutLength', 'orderLength', 'purchasedArea', 'alternative'],
 });
 export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'image-color-picker': ['imageFile', 'accuracyNote', 'previewHint', 'zoom', 'currentColor', 'paletteLabel', 'relatedSharpener', 'relatedRedactor'],
@@ -65,6 +66,7 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'btu-calculator': ['length', 'width', 'ceilingHeight', 'dimensionUnit', 'insulationAdjustment', 'sunExposure', 'occupants', 'kitchen', 'accuracyNote'],
   'brick-calculator': ['wallLength', 'wallHeight', 'wallUnit', 'brickLength', 'brickHeight', 'brickDepth', 'brickUnit', 'joint', 'jointUnit', 'openingWidth', 'openingHeight', 'openingCount', 'wythes', 'wastePercent', 'bagYieldLiters', 'accuracyNote'],
   'rafter-calculator': ['unit', 'mode', 'span', 'rise', 'pitch', 'ridgeThickness', 'ridgeUnit', 'overhang', 'diagramLabel', 'accuracyNote'],
+  'carpet-calculator': ['unit', 'roomLength', 'roomWidth', 'rollWidth', 'rooms', 'pileDirection', 'wastePercent', 'accuracyNote'],
 });
 export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   'image-color-picker': ['load', 'addSample', 'copyColor', 'copyPalette', 'remove', 'clear', 'reset'],
@@ -98,6 +100,7 @@ export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   'btu-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'feet', 'meters', 'inches', 'shaded', 'typical', 'sunny', 'no', 'yes'],
   'brick-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'centimeters', 'inches'],
   'rafter-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'centimeters', 'inches', 'riseMode', 'pitchMode'],
+  'carpet-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'eitherDirection', 'alongRoomLength', 'alongRoomWidth'],
 });
 const MESSAGE_PLACEHOLDERS = Object.freeze({ monthCount: ['{count}'], privatePair: ['{giver}', '{recipient}'], turn: ['{player}'] });
 
@@ -116,6 +119,7 @@ export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, {
     for (const tool of tools) {
       const copy = languageCopy[tool.id];
       if (!copy) { errors.push(`${locale.key}/${tool.id}: translation is missing`); continue; }
+      if (copy.localizationStatus && copy.localizationStatus !== 'approved') errors.push(`${locale.key}/${tool.id}: localization is not approved for release`);
       for (const key of REQUIRED_GROWTH_COPY) {
         if (typeof copy[key] !== 'string' || !copy[key].trim()) errors.push(`${locale.key}/${tool.id}: ${key} is missing`);
       }
@@ -131,7 +135,7 @@ export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, {
           if (typeof copy.messages?.[key] === 'string' && !copy.messages[key].includes(token)) errors.push(`${locale.key}/${tool.id}: messages.${key} must preserve ${token}`);
         }
       }
-      if (['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'mulch-calculator', 'paver-calculator', 'solar-panel-calculator', 'btu-calculator', 'brick-calculator', 'rafter-calculator', 'image-region-redactor', 'image-sharpener', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'weight-loss-calculator', 'heloc-calculator', 'random-team-generator'].includes(tool.id)
+      if (['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'mulch-calculator', 'paver-calculator', 'solar-panel-calculator', 'btu-calculator', 'brick-calculator', 'rafter-calculator', 'carpet-calculator', 'image-region-redactor', 'image-sharpener', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'weight-loss-calculator', 'heloc-calculator', 'random-team-generator'].includes(tool.id)
         && (!Array.isArray(copy.additionalFaqs) || copy.additionalFaqs.length !== 2
           || copy.additionalFaqs.some((faq) => !faq.question?.trim() || !faq.answer?.trim()))) {
         errors.push(`${locale.key}/${tool.id}: two complete localized tool FAQs are required`);

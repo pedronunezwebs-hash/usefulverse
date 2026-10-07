@@ -49,6 +49,7 @@ export function renderGrowthForm(toolId, copy) {
     'btu-calculator': ['length', 'width', 'ceilingHeight', 'dimensionUnit', 'insulationAdjustment', 'sunExposure', 'occupants', 'kitchen', 'accuracyNote'],
     'brick-calculator': ['wallLength', 'wallHeight', 'wallUnit', 'brickLength', 'brickHeight', 'brickDepth', 'brickUnit', 'joint', 'jointUnit', 'openingWidth', 'openingHeight', 'openingCount', 'wythes', 'wastePercent', 'bagYieldLiters', 'accuracyNote'],
     'rafter-calculator': ['unit', 'span', 'rise', 'pitch', 'ridgeThickness', 'ridgeUnit', 'overhang', 'accuracyNote'],
+    'carpet-calculator': ['roomLength', 'roomWidth', 'rollWidth', 'rooms', 'pileDirection', 'wastePercent', 'accuracyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -83,6 +84,7 @@ export function renderGrowthForm(toolId, copy) {
     'btu-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'feet', 'meters', 'inches', 'shaded', 'typical', 'sunny', 'no', 'yes'],
     'brick-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'centimeters', 'inches'],
     'rafter-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'centimeters', 'inches', 'riseMode', 'pitchMode'],
+    'carpet-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'eitherDirection', 'alongRoomLength', 'alongRoomWidth'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -509,6 +511,19 @@ export function renderGrowthForm(toolId, copy) {
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div><figure class="rafter-diagram" data-rafter-diagram hidden></figure>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'carpet-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('carpet-unit', fields.unit, `<select id="carpet-unit" name="unit"><option value="m">${escapeGrowthHtml(labels.meters)}</option><option value="ft">${escapeGrowthHtml(labels.feet)}</option></select>`)}
+    ${label('carpet-room-length', fields.roomLength, '<input id="carpet-room-length" name="roomLength" type="number" min="0.01" max="100000" step="any" inputmode="decimal" value="4" required>')}
+    ${label('carpet-room-width', fields.roomWidth, '<input id="carpet-room-width" name="roomWidth" type="number" min="0.01" max="100000" step="any" inputmode="decimal" value="5" required>')}
+    ${label('carpet-roll-width', fields.rollWidth, '<input id="carpet-roll-width" name="rollWidth" type="number" min="0.1" max="20" step="any" inputmode="decimal" value="3" required>')}
+    ${label('carpet-rooms', fields.rooms, '<input id="carpet-rooms" name="rooms" type="number" min="1" max="100" step="1" inputmode="numeric" value="1" required>')}
+    <div class="field"><label for="carpet-pile-direction">${escapeGrowthHtml(fields.pileDirection)}</label><select id="carpet-pile-direction" name="pileDirection"><option value="either">${escapeGrowthHtml(labels.eitherDirection)}</option><option value="length">${escapeGrowthHtml(labels.alongRoomLength)}</option><option value="width">${escapeGrowthHtml(labels.alongRoomWidth)}</option></select></div>
+    ${label('carpet-waste', fields.wastePercent, '<input id="carpet-waste" name="wastePercent" type="number" min="0" max="50" step="any" inputmode="decimal" value="10" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);
 
   return attachCopy(`<section class="game" aria-label="${escapeGrowthHtml(copy.name)}"><div class="game-toolbar"><label for="mancala-mode">${escapeGrowthHtml(fields.mode)}</label><select id="mancala-mode" data-mode><option value="computer">${escapeGrowthHtml(labels.computer)}</option><option value="two-player">${escapeGrowthHtml(labels.twoPlayers)}</option></select>${button('new-game', labels.newGame, 'primary')}</div><p class="status" role="status" aria-live="polite" data-status></p><div class="mancala-board" data-board aria-label="${escapeGrowthHtml(fields.board)}"></div><section class="result" data-result hidden><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div></section><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);

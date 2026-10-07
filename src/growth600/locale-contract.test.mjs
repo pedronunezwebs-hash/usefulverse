@@ -40,7 +40,7 @@ import persianGrowthCopy from './locales/fa.mjs';
 import amharicGrowthCopy from './locales/am.mjs';
 import gujaratiGrowthCopy from './locales/gu.mjs';
 
-const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['tire-size-calculator', 'stair-calculator', 'asphalt-calculator'].includes(id));
+const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator'].includes(id));
 const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
   key,
   (await import(`./locales/${key}.mjs`)).default,
@@ -61,6 +61,11 @@ test('growth release gate enforces metadata limits and language-specific copy', 
   const overlong = { ...sample('en'), title: `${'x'.repeat(61)} | UsefulVerse` };
   assert.throws(() => assertGrowthLocaleCoverage([{ id: 'one' }], [{ key: 'en' }], { en: { _home: sampleHome('en'), one: overlong } }), /title is .*max 60/);
   assert.throws(() => assertGrowthLocaleCoverage([{ id: 'one' }], [{ key: 'en' }], { en: { _home: sampleHome('en'), one: { ...sample('es'), copyLanguage: 'es' } } }), /copy language does not match/);
+});
+
+test('growth release gate blocks candidate copy explicitly marked as untranslated', () => {
+  const draft = { ...sample('es'), localizationStatus: 'pending-tool-specific-translation' };
+  assert.throws(() => assertGrowthLocaleCoverage([{ id: 'one' }], [{ key: 'es' }], { es: { _home: sampleHome('es'), one: draft } }), /localization is not approved for release/);
 });
 
 test('the first real English pilot copy satisfies every field, message, placeholder and title budget', () => {
@@ -692,5 +697,16 @@ test('brick calculator has complete static localized copy and bounded metadata i
     assert.ok(copy.fields.accuracyNote.length > 40, key);
     assert.doesNotMatch(JSON.stringify(copy), /¤¤¤\d{4}¤¤¤|undefined|null/u, key);
     if (key !== 'en') assert.notEqual(copy.intro, localizedCopies.en[tool.id].intro, key);
+  }
+});
+
+test('carpet calculator has a complete English source but blocks untranslated locale drafts from release', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'carpet-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
+  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
+    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
+    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
   }
 });

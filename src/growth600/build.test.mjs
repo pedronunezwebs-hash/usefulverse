@@ -78,12 +78,14 @@ function toolCopy(tool, language) {
     'paver-calculator': { length: 'Paved area length', width: 'Paved area width', surfaceUnit: 'Surface unit', moduleLength: 'Repeat module length', moduleWidth: 'Repeat module width', moduleUnit: 'Module unit', paversPerModule: 'Pavers per module', paverWastePercent: 'Extra pavers', baseDepth: 'Base depth', baseDepthUnit: 'Base-depth unit', baseWastePercent: 'Extra base', pricePerPaver: 'Price per paver', basePricePerM3: 'Base price per m³', currency: 'Currency', unitsNote: 'Module dimensions include joint spacing.', accuracyNote: 'Estimate only.', relatedTileCalculator: 'Try tile calculator.', relatedGravelCalculator: 'Try gravel calculator.' },
     'brick-calculator': { wallLength: 'Wall length', wallHeight: 'Wall height', wallUnit: 'Wall unit', brickLength: 'Brick length', brickHeight: 'Brick height', brickDepth: 'Brick depth', brickUnit: 'Brick unit', joint: 'Joint thickness', jointUnit: 'Joint unit', openingWidth: 'Opening width', openingHeight: 'Opening height', openingCount: 'Identical openings', wythes: 'Wall layers', wastePercent: 'Extra bricks', bagYieldLiters: 'Bag yield in litres', accuracyNote: 'Planning estimate only; verify dimensions and product coverage with the supplier.' },
     'rafter-calculator': { unit: 'Measurement unit', mode: 'Slope input', span: 'Full roof span', rise: 'Rise to ridge', pitch: 'Pitch', ridgeThickness: 'Ridge-board thickness', ridgeUnit: 'Ridge-board unit', overhang: 'Horizontal overhang', diagramLabel: 'Roof geometry diagram', accuracyNote: 'Geometry estimate only; not structural design.' },
+    'carpet-calculator': { unit: 'Unit', roomLength: 'Room length', roomWidth: 'Room width', rollWidth: 'Carpet roll width', rooms: 'Number of identical rooms', pileDirection: 'Pile direction', wastePercent: 'Extra allowance', accuracyNote: 'Planning estimate only.' },
   }[tool.id];
   if (tool.id === 'tire-size-calculator') {
     Object.assign(actions, { kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)' });
   }
   if (tool.id === 'pool-volume-calculator') Object.assign(actions, { oval: 'Oval', flat: 'Flat floor', sloped: 'Sloped floor' });
   if (tool.id === 'roof-pitch-calculator') Object.assign(actions, { millimeters: 'Millimeters' });
+  if (tool.id === 'carpet-calculator') Object.assign(actions, { eitherDirection: 'Use less material', alongRoomLength: 'Along room length', alongRoomWidth: 'Along room width' });
   if (tool.id === 'drywall-calculator') Object.assign(actions, { millimeters: 'Millimeters', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only' });
   if (tool.id === 'roofing-calculator') Object.assign(actions, { squareMeters: 'Square metres', squareFeet: 'Square feet' });
   if (tool.id === 'deck-calculator') Object.assign(actions, { millimeters: 'Millimeters' });
@@ -112,7 +114,8 @@ function toolCopy(tool, language) {
   const paverMessages = tool.id === 'paver-calculator' ? { perimeter: 'Edge perimeter', moduleCount: 'Complete repeat modules', paversBeforeWaste: 'Pavers before extra allowance', paversToBuy: 'Pavers to buy', baseVolume: 'Base-layer volume', baseOrderVolume: 'Base volume with allowance', paverCost: 'Estimated paver cost', baseCost: 'Estimated base cost', totalCost: 'Estimated total material cost', costNotEntered: 'Enter a price to estimate cost.' } : {};
   const brickMessages = tool.id === 'brick-calculator' ? { grossArea: 'Gross wall area', netArea: 'Wall area after openings', courses: 'Approximate courses', bricksPerCourse: 'Average bricks per course', bricksBeforeWaste: 'Bricks before extra allowance', bricksToOrder: 'Bricks to order', mortarVolume: 'Approximate mortar volume', mortarBags: 'Mortar bags by entered yield' } : {};
   const rafterMessages = tool.id === 'rafter-calculator' ? { effectiveRun: 'Horizontal run to ridge', rafterLength: 'Geometric rafter length', pitch: 'Pitch (rise per 12)', roofAngle: 'Roof angle', plumbCut: 'Plumb-cut angle', overhangRun: 'Horizontal overhang' } : {};
-  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: { ...localizedMessages, ...asphaltMessages, ...poolMessages, ...saltMessages, ...roofMessages, ...drywallMessages, ...roofingMessages, ...deckMessages, ...fenceMessages, ...redactorMessages, ...upscalerMessages, ...dominoMessages, ...weightMessages, ...helocMessages, ...teamMessages, ...paverMessages, ...brickMessages, ...rafterMessages }, copyLanguage: language };
+  const carpetMessages = tool.id === 'carpet-calculator' ? { floorArea: 'Total floor area', pileDirection: 'Selected pile direction', cuts: 'Full-width cuts per room', seams: 'Seams per room', cutLength: 'Length of each cut', orderLength: 'Continuous roll length to order', purchasedArea: 'Approximate purchased area', alternative: 'Other orientation' } : {};
+  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: { ...localizedMessages, ...asphaltMessages, ...poolMessages, ...saltMessages, ...roofMessages, ...drywallMessages, ...roofingMessages, ...deckMessages, ...fenceMessages, ...redactorMessages, ...upscalerMessages, ...dominoMessages, ...weightMessages, ...helocMessages, ...teamMessages, ...paverMessages, ...brickMessages, ...rafterMessages, ...carpetMessages }, copyLanguage: language, ...(tool.id === 'carpet-calculator' ? { localizationStatus: 'approved' } : {}) };
   if (tool.id === 'image-color-picker') Object.assign(localized, {
     fields: { imageFile: 'Choose an image', accuracyNote: 'Local processing; maximum 12 megapixels.', previewHint: 'Click a pixel or use arrow keys.', zoom: 'Preview zoom', currentColor: 'Current pixel', paletteLabel: 'Color palette', relatedSharpener: 'Open the image sharpener.', relatedRedactor: 'Open the image redactor.' },
     actions: { ...actions, load: 'Choose image', addSample: 'Add color to palette', copyColor: 'Copy color', copyPalette: 'Copy HEX palette', remove: 'Remove', clear: 'Clear palette' },
@@ -214,6 +217,10 @@ function toolCopy(tool, language) {
     { question: 'Does an eave overhang increase rafter length?', answer: 'Yes. Enter it as a horizontal distance; the estimate extends the rafter along the same slope.' },
     { question: 'Does this calculate a birdsmouth cut?', answer: 'No. This is basic roof geometry only, not a construction or structural plan.' },
   ];
+  if (tool.id === 'carpet-calculator') localized.additionalFaqs = [
+    { question: 'Why can the carpet estimate exceed the room area?', answer: 'Carpet is cut in full-width strips, so unused edges can remain after the layout is cut.' },
+    { question: 'Does it create an installer-ready cutting diagram?', answer: 'No. The estimate does not account for obstacles, patterns or joining different rooms.' },
+  ];
   if (tool.id === 'wallpaper-calculator') localized.additionalFaqs = [
     { question: 'Why does a pattern repeat need more wallpaper?', answer: 'The cut length is rounded up to the next full design repeat, so fewer strips can fit on one roll.' },
     { question: 'Are openings and corners placed exactly?', answer: fields.accuracyNote },
@@ -279,11 +286,16 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   const controllerBundles = Object.fromEntries(growthPilotTools.map((tool) => [tool.id, `document.querySelector('[data-tool="${tool.id}"]');`]));
   const workerBundles = { 'image-upscaler-worker': 'self.addEventListener("message",()=>{});' };
   const extraAssets = { 'models-test/config.json': '{"upscale":2}', 'models-test/onnx/model.onnx': Buffer.from([1, 2, 3]) };
+  const fixtureCopyByLocale = { en: englishGrowthCopy, es: spanishGrowthCopy, fr: frenchGrowthCopy, pt: portugueseGrowthCopy, de: germanGrowthCopy, ja: japaneseGrowthCopy, ko: koreanGrowthCopy, id: indonesianGrowthCopy, hi: hindiGrowthCopy, ar: arabicGrowthCopy, zh: simplifiedChineseGrowthCopy, bn: bengaliGrowthCopy, ru: russianGrowthCopy, ur: urduGrowthCopy, tr: turkishGrowthCopy, vi: vietnameseGrowthCopy, it: italianGrowthCopy, zh_tw: traditionalChineseGrowthCopy, bg: bulgarianGrowthCopy, ca: catalanGrowthCopy, nl: dutchGrowthCopy, el: greekGrowthCopy, ms: malayGrowthCopy, pl: polishGrowthCopy, sv: swedishGrowthCopy, th: thaiGrowthCopy, uk: ukrainianGrowthCopy, sw: swahiliGrowthCopy, mr: marathiGrowthCopy, te: teluguGrowthCopy, ha: hausaGrowthCopy, tl: filipinoGrowthCopy, ta: tamilGrowthCopy, fa: persianGrowthCopy, am: amharicGrowthCopy, gu: gujaratiGrowthCopy };
+  for (const locale of smallLocales) fixtureCopyByLocale[locale.key] = {
+    ...fixtureCopyByLocale[locale.key],
+    'carpet-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'carpet-calculator'), locale.key),
+  };
   const result = await buildGrowthStaticSite({
     outputDir,
     origin: 'https://tools.usefulverse.com',
     localeEntries: smallLocales,
-    copyByLocale: { en: englishGrowthCopy, es: spanishGrowthCopy, fr: frenchGrowthCopy, pt: portugueseGrowthCopy, de: germanGrowthCopy, ja: japaneseGrowthCopy, ko: koreanGrowthCopy, id: indonesianGrowthCopy, hi: hindiGrowthCopy, ar: arabicGrowthCopy, zh: simplifiedChineseGrowthCopy, bn: bengaliGrowthCopy, ru: russianGrowthCopy, ur: urduGrowthCopy, tr: turkishGrowthCopy, vi: vietnameseGrowthCopy, it: italianGrowthCopy, zh_tw: traditionalChineseGrowthCopy, bg: bulgarianGrowthCopy, ca: catalanGrowthCopy, nl: dutchGrowthCopy, el: greekGrowthCopy, ms: malayGrowthCopy, pl: polishGrowthCopy, sv: swedishGrowthCopy, th: thaiGrowthCopy, uk: ukrainianGrowthCopy, sw: swahiliGrowthCopy, mr: marathiGrowthCopy, te: teluguGrowthCopy, ha: hausaGrowthCopy, tl: filipinoGrowthCopy, ta: tamilGrowthCopy, fa: persianGrowthCopy, am: amharicGrowthCopy, gu: gujaratiGrowthCopy },
+    copyByLocale: fixtureCopyByLocale,
     controllerBundles,
     workerBundles,
     extraAssets,

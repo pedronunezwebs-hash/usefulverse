@@ -85,6 +85,11 @@ const copies = {
     messages: { ...messages, effectiveRun: 'Run to ridge', roofAngle: 'Roof angle', plumbCut: 'Plumb cut', overhangRun: 'Horizontal overhang' },
     fields: { unit: 'Unit', mode: 'Slope input', span: 'Full span', rise: 'Rise', pitch: 'Pitch', ridgeThickness: 'Ridge thickness', ridgeUnit: 'Ridge unit', overhang: 'Overhang', diagramLabel: 'Roof geometry diagram', accuracyNote: 'Geometry estimate only.' },
   },
+  'carpet-calculator': {
+    name: 'Carpet calculator', actions: { ...actions, eitherDirection: 'Use less material', alongRoomLength: 'Pile along room length', alongRoomWidth: 'Pile along room width' },
+    messages: { ...messages, floorArea: 'Floor area', pileDirection: 'Pile direction', cuts: 'Cuts per room', seams: 'Seams', cutLength: 'Length per cut', orderLength: 'Roll length to order', purchasedArea: 'Purchased area', alternative: 'Other orientation' },
+    fields: { unit: 'Unit', roomLength: 'Room length', roomWidth: 'Room width', rollWidth: 'Roll width', rooms: 'Number of rooms', pileDirection: 'Pile direction', wastePercent: 'Extra allowance', accuracyNote: 'Planning estimate only.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {

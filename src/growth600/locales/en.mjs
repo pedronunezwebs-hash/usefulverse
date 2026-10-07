@@ -46,6 +46,8 @@ import brickCopies from './brick-calculator-final.mjs';
 import { brickCalculatorEnglishCopy } from './brick-calculator.en.mjs';
 import rafterCopies from './rafter-calculator-final.mjs';
 import { rafterCalculatorEnglishCopy } from './rafter-calculator.en.mjs';
+import carpetCopies from './carpet-calculator-final.mjs';
+import { carpetCalculatorEnglishCopy } from './carpet-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -119,6 +121,7 @@ const tools = {
   'pool-salt-calculator': poolSaltCalculatorEnglishCopy,
   'wallpaper-calculator': wallpaperCalculatorEnglishCopy,
   'rafter-calculator': rafterCalculatorEnglishCopy,
+  'carpet-calculator': carpetCalculatorEnglishCopy,
   'image-region-redactor': imageRegionRedactorEnglishCopy,
   'image-sharpener': imageSharpenerEnglishCopy,
   'image-color-picker': imageColorPickerEnglishCopy,
@@ -414,5 +417,6 @@ const localizedBtuCopies = Object.freeze(Object.fromEntries(Object.entries(trans
 registerGrowthLocaleExtension(source, 'btu-calculator', localizedBtuCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'brick-calculator', { ...brickCopies, en: brickCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'rafter-calculator', { ...rafterCopies, en: rafterCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'carpet-calculator', { ...carpetCopies, en: carpetCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

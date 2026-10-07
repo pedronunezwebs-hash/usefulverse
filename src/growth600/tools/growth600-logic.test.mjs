@@ -18,6 +18,7 @@ import { calculatePoolSalt } from './pool-salt-calculator/logic.mjs';
 import { calculateWallpaper } from './wallpaper-calculator/logic.mjs';
 import { calculateBrickMaterials } from './brick-calculator/logic.mjs';
 import { calculateRafter } from './rafter-calculator/logic.mjs';
+import { calculateCarpet } from './carpet-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -73,6 +74,24 @@ test('rafter calculator handles span deduction, pitch, overhang and invalid geom
   assert.ok(metric.rafterLength > 0);
   assert.throws(() => calculateRafter({ span: 1, rise: 1, ridgeThickness: 1, ridgeUnit: 'm', unit: 'm' }), /smaller than the span/u);
   assert.throws(() => calculateRafter({ span: 20, pitch: 0, unit: 'ft', mode: 'pitch' }), /Pitch/u);
+});
+
+test('carpet calculator compares cut orientation, seams, rooms, allowance and units', () => {
+  const plan = calculateCarpet({ roomLength: 4, roomWidth: 5, rollWidth: 3, wastePercent: 0, unit: 'm', pileDirection: 'length' });
+  assert.equal(plan.chosen.cutsPerRoom, 2);
+  assert.equal(plan.chosen.seamsPerRoom, 1);
+  assert.equal(plan.chosen.cutLength, 4);
+  assert.equal(plan.chosen.orderedLength, 8);
+  assert.equal(plan.roomArea, 20);
+  const best = calculateCarpet({ roomLength: 4, roomWidth: 5, rollWidth: 3, wastePercent: 0, unit: 'm', pileDirection: 'either' });
+  assert.equal(best.chosen.pileDirection, 'length');
+  assert.ok(best.options.find((option) => option.pileDirection === 'width').orderedLength > best.chosen.orderedLength);
+  const twoRooms = calculateCarpet({ roomLength: 4, roomWidth: 5, rollWidth: 3, rooms: 2, wastePercent: 10, unit: 'm', pileDirection: 'length' });
+  assert.equal(twoRooms.chosen.orderedLength, 17.6);
+  const imperial = calculateCarpet({ roomLength: 12, roomWidth: 15, rollWidth: 10, unit: 'ft', wastePercent: 0, pileDirection: 'length' });
+  assert.equal(imperial.chosen.cutsPerRoom, 2);
+  assert.throws(() => calculateCarpet({ roomLength: 4, roomWidth: 5, rollWidth: 0 }), /Roll width/u);
+  assert.throws(() => calculateCarpet({ roomLength: 4, roomWidth: 5, rollWidth: 3, rooms: 1.5 }), /whole number/u);
 });
 
 test('image redactor validates safe image sizes, exact regions, drag mapping and modes', () => {

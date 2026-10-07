@@ -371,6 +371,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['roof-pitch-calculator', 'roofing-calculator'],
     logicModule: './tools/rafter-calculator/logic.mjs',
   },
+  {
+    id: 'carpet-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'carpet calculator',
+    secondaryIntents: ['carpet roll calculator', 'carpet seam calculator', 'carpet flooring calculator'],
+    functions: ['estimate full-width carpet cuts and seams for a rectangular room from roll width', 'compare roll orientations and calculate material length for the selected pile direction', 'support identical rooms, metric/imperial dimensions and a configurable cutting allowance', 'show why roll-width leftovers mean purchased area exceeds floor area'],
+    acceptance: 'For a 4 m × 5 m room and a 3 m-wide roll, the calculator requires more than one cut/seam in the 5 m-across orientation; it reports a 4 m continuous cut if pile direction runs along the 4 m side.',
+    boundary: 'Planning estimate for rectangular rooms and plain broadloom carpet only. It does not create an installer-ready cutting diagram or account for alcoves, stairs, doorways, pattern matching, pile shading, defects, joins between rooms or reusable offcuts. Verify roll width, pile direction, pattern and installation requirements with the supplier/installer. Inputs stay in this browser.',
+    relatedExistingIds: ['square-footage-calculator'],
+    logicModule: './tools/carpet-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {
