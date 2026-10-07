@@ -13,6 +13,7 @@ import portugueseGrowthCopy from './locales/pt.mjs';
 import germanGrowthCopy from './locales/de.mjs';
 import japaneseGrowthCopy from './locales/ja.mjs';
 import koreanGrowthCopy from './locales/ko.mjs';
+import indonesianGrowthCopy from './locales/id.mjs';
 import spanishGrowthCopy from './locales/es.mjs';
 
 const actions = { calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', feet: 'Feet', inches: 'Inches', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Computer', twoPlayers: 'Two players', privacyNote: 'Private on this device.' };
@@ -41,13 +42,13 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   const tempRoot = await mkdtemp(join(tmpdir(), 'usefulverse-growth600-build-'));
   context.after(async () => rm(tempRoot, { recursive: true, force: true }));
   const outputDir = join(tempRoot, 'site');
-  const smallLocales = localeEntries.filter(({ key }) => ['en', 'es', 'fr', 'pt', 'de', 'ja', 'ko'].includes(key));
+  const smallLocales = localeEntries.filter(({ key }) => ['en', 'es', 'fr', 'pt', 'de', 'ja', 'ko', 'id'].includes(key));
   const controllerBundles = Object.fromEntries(growthPilotTools.map((tool) => [tool.id, `document.querySelector('[data-tool="${tool.id}"]');`]));
   const result = await buildGrowthStaticSite({
     outputDir,
     origin: 'https://tools.usefulverse.com',
     localeEntries: smallLocales,
-    copyByLocale: { en: englishGrowthCopy, es: spanishGrowthCopy, fr: frenchGrowthCopy, pt: portugueseGrowthCopy, de: germanGrowthCopy, ja: japaneseGrowthCopy, ko: koreanGrowthCopy },
+    copyByLocale: { en: englishGrowthCopy, es: spanishGrowthCopy, fr: frenchGrowthCopy, pt: portugueseGrowthCopy, de: germanGrowthCopy, ja: japaneseGrowthCopy, ko: koreanGrowthCopy, id: indonesianGrowthCopy },
     controllerBundles,
     styles: 'body{font-family:system-ui}',
     currentTools,
@@ -67,6 +68,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   assert.ok(enPage.includes('hreflang="es" href="https://tools.usefulverse.com/es/tools/gravel-calculator/"'));
   assert.ok(enPage.includes('hreflang="fr" href="https://tools.usefulverse.com/fr/tools/gravel-calculator/"'));
   assert.ok(enPage.includes('hreflang="ko" href="https://tools.usefulverse.com/ko/tools/gravel-calculator/"'));
+  assert.ok(enPage.includes('hreflang="id" href="https://tools.usefulverse.com/id/tools/gravel-calculator/"'));
   assert.ok(enPage.includes('name="area"') === false);
   assert.ok(enPage.includes('data-shape'));
   const esPage = await readFile(join(outputDir, 'es/tools/gravel-calculator/index.html'), 'utf8');
@@ -99,6 +101,11 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   assert.match(koPage, /자갈 계산기/u);
   assert.match(koPage, /자주 묻는 질문/u);
   assert.doesNotMatch(koPage, />undefined</u);
+  const idPage = await readFile(join(outputDir, 'id/tools/gravel-calculator/index.html'), 'utf8');
+  assert.match(idPage, /<html lang="id" dir="ltr">/u);
+  assert.match(idPage, /Kalkulator kerikil/u);
+  assert.match(idPage, /Pertanyaan umum/u);
+  assert.doesNotMatch(idPage, />undefined</u);
   const files = await readdir(join(outputDir, 'assets'));
   assert.equal(files.length, growthPilotTools.length + 1);
   assert.ok((await stat(join(outputDir, 'assets', files[0]))).isFile());
