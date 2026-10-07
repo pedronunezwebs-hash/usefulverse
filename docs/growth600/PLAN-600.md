@@ -4085,7 +4085,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/image-sharpener/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `image sharpener` — 9.900 búsquedas/mes US/en, KD 23; nivel B. CPC 3.3 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Unsharp mask con radio, cantidad y umbral; comparar antes/después, deshacer y descargar copia. Ninguna solicitud con la imagen ni mejora de detalle inexistente prometida.
-- **Prueba de aceptación específica:** Amount0 conserva pixelraster
+- **Prueba de aceptación específica:** Amount0 conserva cada píxel RGBA decodificado dentro del procesamiento; salida PNG conserva sus valores, JPEG se reconoce como formato con pérdida
 - **Frontera con otras herramientas:** image-editor: mejoraedgefilter, soloadmitir si nofunción existente. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**

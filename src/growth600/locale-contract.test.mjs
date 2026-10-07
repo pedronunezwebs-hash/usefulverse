@@ -136,6 +136,21 @@ test('image region redactor has complete localized copy, privacy boundaries and 
   assert.match(localizedCopies.en[tool.id].fields.imageFile, /BMP/u, 'English copy names BMP as a supported format');
 });
 
+test('image sharpener has complete localized copy, device limits and FAQs in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'image-sharpener');
+  assert.ok(tool);
+  assert.equal(localeEntries.length, 36);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.ok(copy.fields.accuracyNote.trim(), `${key}: device and quality boundary should be present`);
+    assert.ok(copy.fields.imageFile.trim(), `${key}: input should be labeled`);
+    assert.ok(copy.fields.relatedRedactor.trim() && copy.fields.relatedCropper.trim(), `${key}: related tools should be linked`);
+    assert.equal(copy.additionalFaqs.length, 2, `${key}: two FAQs should be present`);
+    assert.doesNotMatch(JSON.stringify(copy), /UVS\d{3}X|UVSHARPEN\d{3}X|undefined|:null/u, `${key}: no translation marker or missing copy`);
+  }
+});
+
 test('soil calculator has 36 localized copies, container-fill boundary and complete FAQs', () => {
   const soilTool = allGrowthPilotTools.find(({ id }) => id === 'soil-calculator');
   assert.ok(soilTool);

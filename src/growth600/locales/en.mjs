@@ -22,6 +22,8 @@ import wallpaperCopies from './wallpaper-calculator-final.mjs';
 import { wallpaperCalculatorEnglishCopy } from './wallpaper-calculator.en.mjs';
 import imageRegionRedactorCopies from './image-region-redactor-final.mjs';
 import { imageRegionRedactorEnglishCopy } from './image-region-redactor.en.mjs';
+import imageSharpenerCopies from './image-sharpener-final.mjs';
+import { imageSharpenerEnglishCopy } from './image-sharpener.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -95,6 +97,7 @@ const tools = {
   'pool-salt-calculator': poolSaltCalculatorEnglishCopy,
   'wallpaper-calculator': wallpaperCalculatorEnglishCopy,
   'image-region-redactor': imageRegionRedactorEnglishCopy,
+  'image-sharpener': imageSharpenerEnglishCopy,
   'roof-pitch-calculator': roofPitchCalculatorEnglishCopy,
   'molar-mass-calculator': {
     copyLanguage: 'en', name: 'Molar mass calculator', title: 'Molar mass calculator free unlimited | UsefulVerse',
@@ -165,5 +168,6 @@ registerGrowthLocaleExtension(source, 'fence-calculator', fenceCopies, 'gravel-c
 registerGrowthLocaleExtension(source, 'pool-salt-calculator', poolSaltCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'wallpaper-calculator', localizedWallpaperCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'image-region-redactor', imageRegionRedactorCopies, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'image-sharpener', imageSharpenerCopies, 'gravel-calculator');
 
 export default Object.freeze(source);

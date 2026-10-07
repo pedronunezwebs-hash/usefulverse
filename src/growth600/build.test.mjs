@@ -90,6 +90,15 @@ function toolCopy(tool, language) {
   const roofingMessages = tool.id === 'roofing-calculator' ? { projectedArea: 'Projected area', roofArea: 'Sloped roof area', extraArea: 'Area with extra material', pitch: 'Pitch', slopeFactor: 'Slope multiplier', roofingSquares: 'Roofing squares', bundles: 'Bundles', estimatedCost: 'Estimated cost', costNotEntered: 'Enter a bundle price.' } : {};
   const redactorMessages = tool.id === 'image-region-redactor' ? { unsupportedImage: 'Choose a supported raster image.', imageTooLarge: 'Image too large for this tab.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', invalidRegion: 'Check the pixel region.', regionAdded: 'Region added.', regionRemoved: 'Region removed.', regionsCleared: 'All regions removed.', addRegionFirst: 'Add a region first.', exporting: 'Applying regions…', exportFailed: 'Could not create the image.', exportReady: 'Redacted image ready.', region: 'Region' } : {};
   const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: { ...localizedMessages, ...asphaltMessages, ...poolMessages, ...saltMessages, ...roofMessages, ...drywallMessages, ...roofingMessages, ...deckMessages, ...fenceMessages, ...redactorMessages }, copyLanguage: language };
+  if (tool.id === 'image-sharpener') Object.assign(localized, {
+    fields: { imageFile: 'Choose image', amount: 'Strength', radius: 'Radius', threshold: 'Threshold', compare: 'Show original', accuracyNote: 'Processed locally; 8 megapixel limit.', previewHint: 'Reduced preview.', format: 'Format', relatedRedactor: 'Redact details.', relatedCropper: 'Crop image.' },
+    actions: { ...actions, load: 'Choose image', export: 'Prepare download', download: 'Download', original: 'Show original', sharpened: 'Sharpened preview', png: 'PNG', jpeg: 'JPEG' },
+    messages: { ...localized.messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose image first.', exporting: 'Sharpening…', exportFailed: 'Export failed.', exportReady: 'Download ready.' },
+    additionalFaqs: [
+      { question: 'Can sharpening restore missing detail?', answer: 'No. It increases local edge contrast only.' },
+      { question: 'What do strength, radius and threshold do?', answer: 'They control the sharpening effect.' },
+    ],
+  });
   if (tool.id === 'wallpaper-calculator') Object.assign(localized.messages, { netArea: 'Estimated net wall area', strips: 'Wall strips needed', dropLength: 'Cut length per strip', dropsPerRoll: 'Strips per roll', stripsToOrder: 'Strips including extra', rolls: 'Whole rolls to buy' });
   if (tool.id === 'tire-size-calculator') localized.additionalFaqs = [
     { question: 'Will this replacement tire fit my vehicle?', answer: fields.fitmentNote },
@@ -142,6 +151,10 @@ function toolCopy(tool, language) {
   if (tool.id === 'image-region-redactor') localized.additionalFaqs = [
     { question: 'Does blur or pixelation fully hide private information?', answer: 'Not always. Use solid black for sensitive details and check the exported copy.' },
     { question: 'Does the original image change?', answer: 'No. The original remains unchanged; export creates a new flattened image.' },
+  ];
+  if (tool.id === 'image-sharpener') localized.additionalFaqs = [
+    { question: 'Can sharpening restore missing detail?', answer: 'No. It increases local edge contrast only.' },
+    { question: 'What do strength, radius and threshold do?', answer: 'They control the sharpening effect.' },
   ];
   return localized;
 }

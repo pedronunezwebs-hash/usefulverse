@@ -12,6 +12,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/image-region-redactor/logic.mjs',
   },
   {
+    id: 'image-sharpener',
+    category: 'image-tools',
+    type: 'image-editor',
+    primaryIntent: 'image sharpener',
+    secondaryIntents: ['sharpen image online', 'image sharpening tool', 'sharpen photo online'],
+    functions: ['load a local raster image', 'adjust unsharp-mask radius, amount and threshold with a before/after comparison', 'preview at reduced dimensions and export a sharpened PNG or JPEG at the original dimensions'],
+    acceptance: 'An amount of zero leaves every decoded RGBA pixel unchanged in the processing pipeline; PNG output preserves those pixel values, while JPEG export is lossy by design. Positive sharpening changes RGB edge contrast without changing dimensions or alpha.',
+    boundary: 'Local edge-contrast adjustment, not AI detail recovery, denoising or the general image editor. Excessive sharpening can create halos and amplify noise; results depend on source quality and device memory. Limited to 8 megapixels.',
+    relatedExistingIds: ['image-region-redactor', 'image-cropper'],
+    logicModule: './tools/image-sharpener/logic.mjs',
+  },
+  {
     id: 'wallpaper-calculator',
     category: 'home-materials',
     type: 'calculator',

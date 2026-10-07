@@ -1,0 +1,33 @@
+export const imageSharpenerEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Image sharpener',
+  title: 'Image sharpener free | UsefulVerse',
+  description: 'Sharpen image edges with adjustable strength, radius and threshold. Compare and download a local PNG or JPEG for free.',
+  intro: 'Improve the apparent crispness of a soft photo with a simple unsharp mask. Preview changes, compare with the original and export a separate image.',
+  howQuestion: 'How do I sharpen an image online?',
+  howAnswer: 'Choose an image, then adjust strength, radius and threshold. Use the comparison checkbox to view the untouched source. Download a new PNG or JPEG when the result looks right. The original file is not changed.',
+  privacyQuestion: 'Is my photo uploaded?',
+  privacyAnswer: 'No. The image is processed in this browser and is not sent to a server. It stays in this tab until you reset the tool or close the page.',
+  fields: {
+    imageFile: 'Choose an image (PNG, JPEG, WebP, GIF, AVIF or BMP)',
+    amount: 'Sharpening strength', radius: 'Edge radius (pixels)', threshold: 'Noise threshold',
+    compare: 'Show original', format: 'Download format',
+    accuracyNote: 'This adjusts edge contrast; it cannot restore detail that the camera did not capture. Strong settings may create halos or make noise more visible. Processing uses this device and browser memory. Maximum: 8 megapixels; a computer is recommended for larger workflows. Animated GIFs export as a still image; animation is not retained.',
+    previewHint: 'Preview is reduced to fit this page. Download keeps the source dimensions.',
+    relatedRedactor: 'Need to cover private details instead? Use the image region redactor.',
+    relatedCropper: 'Want to change the framing? Open the image cropper.',
+  },
+  actions: { load: 'Choose image', export: 'Sharpen and prepare download', download: 'Download sharpened image', original: 'Show original', sharpened: 'Sharpened preview', png: 'PNG (best for exact pixels)', jpeg: 'JPEG (smaller, re-encoded)', reset: 'Reset' },
+  messages: {
+    unsupportedImage: 'Choose a supported raster image that this browser can open.',
+    imageTooLarge: 'This image is over the 8-megapixel limit. Choose a smaller copy or use another image tool.',
+    imageReady: 'Image ready.', selectImage: 'Choose an image first.',
+    exporting: 'Sharpening the full-size image on this device…',
+    exportFailed: 'The browser could not create the image. Try a smaller image or PNG format.',
+    exportReady: 'A separate sharpened image is ready to download.',
+  },
+  additionalFaqs: [
+    { question: 'Can sharpening restore missing photo detail?', answer: 'No. Sharpening increases local edge contrast to make some details appear crisper; it cannot recover information the sensor or source image never captured.' },
+    { question: 'What do strength, radius and threshold do?', answer: 'Strength controls the edge contrast boost, radius controls how wide nearby edges are compared, and threshold skips very small differences that may be noise. Compare against the original and use modest settings to avoid halos.' },
+  ],
+});

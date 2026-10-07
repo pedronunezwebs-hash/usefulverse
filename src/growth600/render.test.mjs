@@ -82,4 +82,12 @@ test('tool renderer includes additional localized FAQs in page content and schem
   assert.match(redactorHtml, /https:\/\/usefulverse\.com\/ar\/tools\/photo-mosaic-maker\//u);
   assert.match(redactorHtml, /https:\/\/usefulverse\.com\/ar\/tools\/image-cropper\//u);
   assert.match(redactorHtml, /<summary>Is blur enough\?<\/summary>/u);
+
+  const sharpenerHtml = renderGrowthToolPage({
+    tool: { id: 'image-sharpener' }, locale: locales[1], localeEntries: locales,
+    copy: { ...copy, fields: { relatedRedactor: 'Hide sensitive areas with the image redactor.' }, additionalFaqs: [{ question: 'Can it restore details?', answer: 'No, sharpening cannot restore information that was not captured.' }] },
+    origin: 'https://tools.usefulverse.com', formHtml: '<form id="tool-form"></form>',
+  });
+  assert.match(sharpenerHtml, /https:\/\/usefulverse\.com\/ar\/tools\/image-region-redactor\//u);
+  assert.match(sharpenerHtml, /<summary>Can it restore details\?<\/summary>/u);
 });
