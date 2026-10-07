@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 44/323; **279 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 45/323; **278 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -399,7 +399,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 44/323; **279 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing, Retaining Wall, Battery Runtime y Lumber Cut List Optimizer están en la rama; las candidatas nuevas con localización incompleta no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 45/323; **278 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing, Retaining Wall, Battery Runtime, Lumber Cut List Optimizer y Plant Spacing Calculator están en la rama; las candidatas nuevas con localización incompleta no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.
 
 ## Continuación · Rafter Calculator (#126) · 2026-10-08
@@ -532,6 +532,15 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [x] E — suite focal Growth600 (`catalog`, `forms`, `locale-contract`, `locale-utils`, `render`, `build`, `bundle-controllers`, `growth600-logic`): **139/139 aprobadas**; `git diff --check` limpio.
 - [ ] X/E visual — no se pudo ejecutar el build integral: este worktree no tiene instalado `onnxruntime-web` (el builder requiere su runtime para otros módulos); no repetí `npm ci`, porque la instalación completa descarga runtimes binarios pesados. Falta además recorrido visual en navegador/móvil/RTL y dispositivos reales.
 - [ ] P/S — sin merge/deploy, sitemap de producción intacto y sin envío a buscadores; no ejecutar PageSpeed/Lighthouse.
+
+## Continuación · Plant Spacing Calculator (#237) · 2026-10-08
+
+- [x] C/F/E/X — candidata #45/323, distinta de `room-planner`: cuenta filas y plantas en una cama rectangular con márgenes de media separación; compara cuadrícula regular frente a filas alternas desplazadas media separación. El plan registra `plant spacing calculator` con 1.600 búsquedas/mes US/en, KD 11; `plant population calculator` con 170/mes, KD 0. Sin nuevas llamadas a DataForSEO.
+- [x] B — formulario semántico local con patrón, unidad común, medidas de cama, separación entre plantas y filas, ejemplo, reset, copia, resultado accesible y nota sobre los supuestos geométricos.
+- [x] X — prueba: 5 × 3 m y espaciamiento 0,5 m da 60 en cuadrícula y 57 en triangular; al pasar ambos espaciamientos a 1 m la cuadrícula baja a 15. Cobertura añadida para unidades imperiales, cero plantas por bordes, valores inválidos y límites de densidad. Suite focal completa: **143/143 aprobadas**.
+- [ ] L — copy inglesa completa; otros 35 idiomas son borradores `pending-tool-specific-translation`; el gate no permite publicarlos.
+- [ ] E/X — correr suite focal y luego falta inspección visual en navegador, móvil, RTL y dispositivos reales.
+- [ ] P/S — sin merge/deploy, sitemap público intacto y sin envío a buscadores; no ejecutar PageSpeed/Lighthouse.
 
 ## Continuación · Fertilizer Calculator (#183) · 2026-10-08
 

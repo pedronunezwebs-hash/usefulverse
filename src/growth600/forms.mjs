@@ -62,6 +62,7 @@ export function renderGrowthForm(toolId, copy) {
     'retaining-wall-calculator': ['wallLength', 'wallHeight', 'wallUnit', 'blockLength', 'blockHeight', 'blockDepth', 'blockUnit', 'joint', 'baseWidth', 'baseDepth', 'backfillThickness', 'wastePercent', 'accuracyNote'],
     'battery-runtime-calculator': ['capacityMode', 'energyMode', 'ampHourMode', 'capacityEnergy', 'energyUnit', 'capacityAh', 'voltage', 'loadWatts', 'depthOfDischargePercent', 'efficiencyPercent', 'accuracyNote'],
     'lumber-cut-calculator': ['unit', 'stockLength', 'kerf', 'cutList', 'accuracyNote'],
+    'plant-spacing-calculator': ['bedLength', 'bedWidth', 'inRowSpacing', 'rowSpacing', 'unit', 'pattern', 'accuracyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -109,6 +110,7 @@ export function renderGrowthForm(toolId, copy) {
     'retaining-wall-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'feet', 'inches'],
     'battery-runtime-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'wh', 'kwh'],
     'lumber-cut-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'millimeters', 'centimeters', 'meters', 'inches', 'feet'],
+    'plant-spacing-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'millimeters', 'centimeters', 'meters', 'inches', 'feet', 'grid', 'triangular', 'squareUnits'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -716,6 +718,17 @@ export function renderGrowthForm(toolId, copy) {
     ${label('stock-length', fields.stockLength, '<input id="stock-length" name="stockLength" type="number" min="0.001" max="100000000" step="any" inputmode="decimal" required>')}
     ${label('saw-kerf', fields.kerf, '<input id="saw-kerf" name="kerf" type="number" min="0" max="100000000" step="any" inputmode="decimal" value="3" required>')}
     ${label('cut-list', fields.cutList, '<textarea id="cut-list" name="cutList" rows="7" spellcheck="false" required></textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'plant-spacing-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('plant-length-unit', fields.unit, `<select id="plant-length-unit" name="unit"><option value="m">${escapeGrowthHtml(labels.meters)}</option><option value="cm">${escapeGrowthHtml(labels.centimeters)}</option><option value="mm">${escapeGrowthHtml(labels.millimeters)}</option><option value="ft">${escapeGrowthHtml(labels.feet)}</option><option value="in">${escapeGrowthHtml(labels.inches)}</option></select>`)}
+    ${label('plant-layout-pattern', fields.pattern, `<select id="plant-layout-pattern" name="pattern"><option value="grid">${escapeGrowthHtml(labels.grid)}</option><option value="triangular">${escapeGrowthHtml(labels.triangular)}</option></select>`)}
+    ${label('plant-bed-length', fields.bedLength, '<input id="plant-bed-length" name="bedLength" type="number" min="0.001" max="1000000" step="any" inputmode="decimal" required>')}
+    ${label('plant-bed-width', fields.bedWidth, '<input id="plant-bed-width" name="bedWidth" type="number" min="0.001" max="1000000" step="any" inputmode="decimal" required>')}
+    ${label('plant-in-row-spacing', fields.inRowSpacing, '<input id="plant-in-row-spacing" name="inRowSpacing" type="number" min="0.001" max="1000000" step="any" inputmode="decimal" required>')}
+    ${label('plant-row-spacing', fields.rowSpacing, '<input id="plant-row-spacing" name="rowSpacing" type="number" min="0.001" max="1000000" step="any" inputmode="decimal" required>')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

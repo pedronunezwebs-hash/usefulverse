@@ -180,6 +180,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/lumber-cut-calculator/logic.mjs',
   },
   {
+    id: 'plant-spacing-calculator',
+    category: 'garden',
+    type: 'calculator',
+    primaryIntent: 'plant spacing calculator',
+    secondaryIntents: ['plant population calculator', 'garden plant spacing calculator', 'triangular plant spacing calculator'],
+    functions: ['estimate plant and row counts inside a rectangular bed from center-based edge margins', 'compare regular grid and staggered triangular layouts', 'show actual layout count, planting area and approximate density in a shared length unit'],
+    acceptance: 'For a 5 m × 3 m bed with 0.5 m in-row and row spacing, the centered rectangular grid has 10 plants per row, 6 rows and 60 plants; increasing both spacings to 1 m reduces the count to 15. The staggered triangular mode offsets alternate rows by half the in-row spacing.',
+    boundary: 'Geometric layout estimate only. Assumes a flat rectangle, uniform center spacing and a half-spacing border; it does not recommend species spacing, account for paths, irregular beds, mature canopy, roots, slope, irrigation or plant-health requirements. Follow the selected variety guidance and verify a real planting layout.',
+    relatedExistingIds: ['room-planner'],
+    logicModule: './tools/plant-spacing-calculator/logic.mjs',
+  },
+  {
     id: 'deck-calculator',
     category: 'home-materials',
     type: 'calculator',

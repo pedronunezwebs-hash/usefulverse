@@ -149,6 +149,11 @@ const copies = {
     messages: { ...messages },
     fields: { unit: 'Shared unit', stockLength: 'Stock length', kerf: 'Saw kerf', cutList: 'Cut list', accuracyNote: 'Heuristic only; verify before cutting.' },
   },
+  'plant-spacing-calculator': {
+    name: 'Plant spacing calculator', actions: { ...actions, grid: 'Regular grid', triangular: 'Staggered triangular', squareUnits: 'square units' },
+    messages: { ...messages, totalPlants: 'Estimated plants', rows: 'Rows', plantsPerRow: 'Plants per even / offset row', bedArea: 'Bed area', plantDensity: 'Estimated density', plantsPerArea: 'plants per square unit' },
+    fields: { bedLength: 'Bed length', bedWidth: 'Bed width', inRowSpacing: 'In-row spacing', rowSpacing: 'Row spacing', unit: 'Unit', pattern: 'Layout', accuracyNote: 'Geometry estimate only.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -357,6 +362,13 @@ test('lumber cut list form has one unit, a kerf, accessible results and a multil
   for (const name of ['unit', 'stockLength', 'kerf', 'cutList']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
   assert.match(html, /<textarea[^>]*name="cutList"/u);
   assert.match(html, /Heuristic only/u);
+  assert.match(html, /aria-live="polite"/u);
+});
+
+test('plant spacing form exposes layout choice, bed geometry and both center spacings', () => {
+  const html = renderGrowthForm('plant-spacing-calculator', copies['plant-spacing-calculator']);
+  for (const name of ['unit', 'pattern', 'bedLength', 'bedWidth', 'inRowSpacing', 'rowSpacing']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  assert.match(html, /Staggered triangular/u);
   assert.match(html, /aria-live="polite"/u);
 });
 

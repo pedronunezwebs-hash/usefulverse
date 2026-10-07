@@ -31,6 +31,7 @@ import { calculateBalusterSpacing } from './baluster-spacing-calculator/logic.mj
 import { calculateRetainingWall } from './retaining-wall-calculator/logic.mjs';
 import { calculateBatteryRuntime } from './battery-runtime-calculator/logic.mjs';
 import { optimizeLumberCuts, parseCutList } from './lumber-cut-calculator/logic.mjs';
+import { calculatePlantSpacing } from './plant-spacing-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -704,4 +705,33 @@ test('lumber cut optimizer rejects overlength cuts, malformed quantities and exc
   assert.throws(() => parseCutList('not a cut'), /cut line/u);
   assert.throws(() => parseCutList(Array.from({ length: 301 }, () => '1').join('\n')), /no more than 300/u);
   assert.throws(() => optimizeLumberCuts({ stockLength: 0, cuts: [{ length: 1, quantity: 1 }] }), /allowed range/u);
+});
+
+test('plant spacing counts centered grid and staggered layouts with unit-aware density', () => {
+  const grid = calculatePlantSpacing({ bedLength: 5, bedWidth: 3, inRowSpacing: 0.5, rowSpacing: 0.5, unit: 'm', pattern: 'grid' });
+  assert.equal(grid.rowCount, 6);
+  assert.equal(grid.plantsPerEvenRow, 10);
+  assert.equal(grid.totalPlants, 60);
+  assert.equal(grid.areaInSelectedUnit, 15);
+  assert.equal(grid.densityPerSelectedArea, 4);
+  const triangular = calculatePlantSpacing({ bedLength: 5, bedWidth: 3, inRowSpacing: 0.5, rowSpacing: 0.5, unit: 'm', pattern: 'triangular' });
+  assert.equal(triangular.rowCount, 6);
+  assert.equal(triangular.plantsPerEvenRow, 10);
+  assert.equal(triangular.plantsPerOddRow, 9);
+  assert.equal(triangular.totalPlants, 57);
+  const wider = calculatePlantSpacing({ bedLength: 5, bedWidth: 3, inRowSpacing: 1, rowSpacing: 1, unit: 'm', pattern: 'grid' });
+  assert.equal(wider.totalPlants, 15, 'increasing spacing should reduce plant count');
+  const feet = calculatePlantSpacing({ bedLength: 10, bedWidth: 10, inRowSpacing: 2, rowSpacing: 2, unit: 'ft', pattern: 'grid' });
+  assert.equal(feet.rowCount, 5);
+  assert.equal(feet.totalPlants, 25);
+  assert.equal(feet.areaInSelectedUnit, 100);
+});
+
+test('plant spacing validates bounds, patterns and caps dense layouts without large loops', () => {
+  assert.equal(calculatePlantSpacing({ bedLength: 1, bedWidth: 0.2, inRowSpacing: 1, rowSpacing: 1, pattern: 'triangular' }).totalPlants, 0);
+  assert.throws(() => calculatePlantSpacing({ bedLength: 0, bedWidth: 2, inRowSpacing: 1, rowSpacing: 1 }), /allowed range/u);
+  assert.throws(() => calculatePlantSpacing({ bedLength: 5, bedWidth: 3, inRowSpacing: 0.5, rowSpacing: 0.5, pattern: 'hex' }), /Choose grid/u);
+  assert.throws(() => calculatePlantSpacing({ bedLength: 1_000_000, bedWidth: 1_000_000, inRowSpacing: 0.001, rowSpacing: 0.001 }), /100,000 rows/u);
+  assert.throws(() => calculatePlantSpacing({ bedLength: 101, bedWidth: 101, inRowSpacing: 0.1, rowSpacing: 0.1 }), /1,000,000 plants/u);
+  assert.throws(() => calculatePlantSpacing({ bedLength: 3, bedWidth: 2, inRowSpacing: 1, rowSpacing: 1, unit: 'yd' }), /supported length/u);
 });

@@ -876,7 +876,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Función mínima y ampliaciones útiles:** Separación filas/plantas, rejilla triangular y conteo
 - **Prueba de aceptación específica:** Más separación reduce número plantas
 - **Frontera con otras herramientas:** room-planner: plantación y densidad. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Motor local por conteo geométrico sin iterar sobre cada planta; límite de 100.000 filas y 1.000.000 de plantas para acotar cómputo. Cuadrícula con bordes a media separación y triangular con filas alternadas a media separación. No prescribe distancias para especies; seguir los gates globales y probar unidades/formatos.
 - **Consultas secundarias del mismo propietario:**
   - `plant population calculator` — 170/mes US/en; KD 0.
   - `plant spacing calculator free online`; `plant spacing calculator with example`; `plant spacing calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
