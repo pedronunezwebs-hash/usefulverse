@@ -15,6 +15,7 @@ import spanishGrowthCopy from './locales/es.mjs';
 import simplifiedChineseGrowthCopy from './locales/zh.mjs';
 import bengaliGrowthCopy from './locales/bn.mjs';
 import russianGrowthCopy from './locales/ru.mjs';
+import urduGrowthCopy from './locales/ur.mjs';
 
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
@@ -136,4 +137,13 @@ test('the first Google Translate Russian draft covers every copy key and preserv
   assert.equal(russianGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} мес.');
   assert.equal(russianGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver} дарит подарок {recipient}.');
   assert.equal(russianGrowthCopy.mancala.messages.turn, 'Ход игрока {player}.');
+});
+
+test('the first Google Translate Urdu draft covers every copy key and preserves required placeholders', () => {
+  assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'ur' }], { ur: urduGrowthCopy }), true);
+  assert.ok(Object.values(urduGrowthCopy).every((copy) => copy.copyLanguage === 'ur'));
+  assert.ok(Object.values(urduGrowthCopy).every((copy) => copy.title.length <= 60 && copy.description.length <= 160));
+  assert.equal(urduGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} مہینے');
+  assert.equal(urduGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver}، {recipient} کو تحفہ دیتا ہے۔');
+  assert.equal(urduGrowthCopy.mancala.messages.turn, '{player} کی باری ہے۔');
 });
