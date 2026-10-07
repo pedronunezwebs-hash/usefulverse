@@ -7,6 +7,7 @@ import frenchGrowthCopy from './locales/fr.mjs';
 import portugueseGrowthCopy from './locales/pt.mjs';
 import germanGrowthCopy from './locales/de.mjs';
 import japaneseGrowthCopy from './locales/ja.mjs';
+import koreanGrowthCopy from './locales/ko.mjs';
 import spanishGrowthCopy from './locales/es.mjs';
 
 const tools = [{ id: 'one' }, { id: 'two' }];
@@ -65,4 +66,13 @@ test('the first Google Translate Japanese draft covers every copy key and preser
   assert.ok(Object.values(japaneseGrowthCopy).every((copy) => copy.title.length <= 60 && copy.description.length <= 160));
   assert.equal(japaneseGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver}が{recipient}にプレゼントを贈ります。');
   assert.equal(japaneseGrowthCopy.mancala.messages.turn, '{player}の番です。');
+});
+
+test('the first Google Translate Korean draft covers every copy key and preserves required placeholders', () => {
+  assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'ko' }], { ko: koreanGrowthCopy }), true);
+  assert.ok(Object.values(koreanGrowthCopy).every((copy) => copy.copyLanguage === 'ko'));
+  assert.ok(Object.values(koreanGrowthCopy).every((copy) => copy.title.length <= 60 && copy.description.length <= 160));
+  assert.equal(koreanGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count}개월');
+  assert.equal(koreanGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver} 님이 {recipient} 님에게 선물을 줍니다.');
+  assert.equal(koreanGrowthCopy.mancala.messages.turn, '{player} 차례입니다.');
 });
