@@ -18,6 +18,7 @@ import russianGrowthCopy from './locales/ru.mjs';
 import urduGrowthCopy from './locales/ur.mjs';
 import turkishGrowthCopy from './locales/tr.mjs';
 import vietnameseGrowthCopy from './locales/vi.mjs';
+import italianGrowthCopy from './locales/it.mjs';
 
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
@@ -167,4 +168,13 @@ test('the first Vietnamese draft covers every copy key and preserves required pl
   assert.equal(vietnameseGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver} tặng quà cho {recipient}.');
   assert.equal(vietnameseGrowthCopy.mancala.messages.turn, 'Đến lượt {player}.');
   assert.equal(vietnameseGrowthCopy['secret-santa-generator'].title.length <= 60, true);
+});
+
+test('the first Italian draft covers every copy key and preserves required placeholders', () => {
+  assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'it' }], { it: italianGrowthCopy }), true);
+  assert.ok(Object.values(italianGrowthCopy).every((copy) => copy.copyLanguage === 'it'));
+  assert.ok(Object.values(italianGrowthCopy).every((copy) => copy.title.length <= 60 && copy.description.length <= 160));
+  assert.equal(italianGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} mesi');
+  assert.equal(italianGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver} fa un regalo a {recipient}.');
+  assert.equal(italianGrowthCopy.mancala.messages.turn, 'Tocca a {player}.');
 });
