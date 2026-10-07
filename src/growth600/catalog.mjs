@@ -144,6 +144,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/baluster-spacing-calculator/logic.mjs',
   },
   {
+    id: 'retaining-wall-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'retaining wall calculator',
+    secondaryIntents: ['retaining wall blocks calculator', 'retaining wall material calculator', 'retaining wall gravel calculator'],
+    functions: ['estimate block courses and whole blocks from a straight wall, editable block modules and joint thickness', 'estimate a rectangular user-dimensioned base-material volume and a rectangular backfill zone', 'apply a user-entered material allowance and show metric or cubic-foot quantities'],
+    acceptance: 'A zero-height wall returns zero block courses, blocks, base volume and backfill volume; a nonzero wall estimates whole courses and blocks by rounded-up module coverage.',
+    boundary: 'Material planning estimate only. It does not design or assess wall stability, drainage, reinforcement, geogrid, foundations, soil pressure, slopes, surcharges, loads, permits or local code. The rectangular base and backfill quantities use dimensions entered by the user, not recommended design values. Have a qualified professional review retaining-wall design and follow local requirements.',
+    relatedExistingIds: ['brick-calculator', 'gravel-calculator'],
+    logicModule: './tools/retaining-wall-calculator/logic.mjs',
+  },
+  {
     id: 'deck-calculator',
     category: 'home-materials',
     type: 'calculator',

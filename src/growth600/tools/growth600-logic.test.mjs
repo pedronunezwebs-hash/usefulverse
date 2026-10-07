@@ -28,6 +28,7 @@ import { calculateCompostMix } from './compost-calculator/logic.mjs';
 import { calculatePond } from './pond-volume-calculator/logic.mjs';
 import { calculateFertilizer } from './fertilizer-calculator/logic.mjs';
 import { calculateBalusterSpacing } from './baluster-spacing-calculator/logic.mjs';
+import { calculateRetainingWall } from './retaining-wall-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -636,4 +637,25 @@ test('baluster spacing distributes uniform gaps and finds a minimum count for a 
   assert.throws(() => calculateBalusterSpacing({ mode: 'max-gap', openingWidth: 1200, balusterWidth: 1, maximumGap: 0.01, unit: 'mm' }), /1,000/u);
   assert.throws(() => calculateBalusterSpacing({ mode: 'density', openingWidth: 1200, balusterWidth: 40, unit: 'mm', balusterCount: 10 }), /Choose maximum-gap/u);
   assert.throws(() => calculateBalusterSpacing({ mode: 'count', openingWidth: 1, balusterWidth: 0.5, unit: 'yd', balusterCount: 2 }), /supported length/u);
+});
+
+test('retaining wall calculator estimates user-dimensioned blocks, base and backfill without structural claims', () => {
+  const estimate = calculateRetainingWall({ wallLength: 20, wallHeight: 4, wallUnit: 'ft', blockLength: 16, blockHeight: 6, blockDepth: 12, blockUnit: 'in', joint: 0.25, baseWidth: 2, baseDepth: 0.5, backfillThickness: 1, wastePercent: 5 });
+  assert.equal(estimate.courses, 8);
+  assert.equal(estimate.blocksPerCourse, 15);
+  assert.equal(estimate.blocksBeforeWaste, 120);
+  assert.equal(estimate.blocksToOrder, 126);
+  assert.ok(Math.abs(estimate.baseVolumeFt3 - 20) < 1e-10);
+  assert.ok(Math.abs(estimate.backfillVolumeFt3 - 80) < 1e-10);
+  const metric = calculateRetainingWall({ wallLength: 6, wallHeight: 1.2, wallUnit: 'm', blockLength: 40, blockHeight: 20, blockDepth: 20, blockUnit: 'cm', joint: 0, baseWidth: 0.5, baseDepth: 0.2, backfillThickness: 0.3, wastePercent: 0 });
+  assert.equal(metric.courses, 6);
+  assert.equal(metric.blocksPerCourse, 15);
+  assert.equal(metric.blocksToOrder, 90);
+  const zero = calculateRetainingWall({ wallLength: 6, wallHeight: 0, wallUnit: 'm', blockLength: 40, blockHeight: 20, blockDepth: 20, blockUnit: 'cm', joint: 0.5, baseWidth: 1, baseDepth: 1, backfillThickness: 1 });
+  assert.equal(zero.courses, 0);
+  assert.equal(zero.blocksToOrder, 0);
+  assert.equal(zero.baseOrderM3, 0);
+  assert.equal(zero.backfillOrderM3, 0);
+  assert.throws(() => calculateRetainingWall({ wallLength: 0, wallHeight: 1 }), /allowed range/u);
+  assert.throws(() => calculateRetainingWall({ wallLength: 5, wallHeight: 1, wallUnit: 'yd' }), /supported wall/u);
 });

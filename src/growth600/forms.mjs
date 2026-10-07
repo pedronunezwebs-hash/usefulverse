@@ -59,6 +59,7 @@ export function renderGrowthForm(toolId, copy) {
     'pond-volume-calculator': ['shape', 'length', 'width', 'diameter', 'dimensionUnit', 'averageDepth', 'maximumDepth', 'edgeOverlap', 'fillPercent', 'accuracyNote'],
     'fertilizer-calculator': ['mode', 'productMode', 'areaMode', 'productMass', 'massUnit', 'area', 'areaUnit', 'productRate', 'rateUnit', 'nitrogenPercent', 'phosphatePercent', 'potashPercent', 'accuracyNote'],
     'baluster-spacing-calculator': ['mode', 'maxGapMode', 'countMode', 'openingWidth', 'balusterWidth', 'unit', 'maximumGap', 'balusterCount', 'accuracyNote'],
+    'retaining-wall-calculator': ['wallLength', 'wallHeight', 'wallUnit', 'blockLength', 'blockHeight', 'blockDepth', 'blockUnit', 'joint', 'baseWidth', 'baseDepth', 'backfillThickness', 'wastePercent', 'accuracyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -103,6 +104,7 @@ export function renderGrowthForm(toolId, copy) {
     'pond-volume-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'rectangle', 'circle', 'oval', 'meters', 'feet'],
     'fertilizer-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilograms', 'pounds', 'squareMeters', 'hectares', 'squareFeet', 'acres', 'kg100m2', 'kgHa', 'lb1000ft2', 'lbAcre'],
     'baluster-spacing-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'millimeters', 'centimeters', 'meters', 'inches', 'feet'],
+    'retaining-wall-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'feet', 'inches'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -673,6 +675,23 @@ export function renderGrowthForm(toolId, copy) {
     ${label('baluster-unit', fields.unit, `<select id="baluster-unit" name="unit"><option value="mm">${escapeGrowthHtml(labels.millimeters)}</option><option value="cm">${escapeGrowthHtml(labels.centimeters)}</option><option value="m">${escapeGrowthHtml(labels.meters)}</option><option value="in">${escapeGrowthHtml(labels.inches)}</option><option value="ft">${escapeGrowthHtml(labels.feet)}</option></select>`)}
     <div data-baluster-input="max-gap">${label('maximum-gap', fields.maximumGap, '<input id="maximum-gap" name="maximumGap" type="number" min="0.01" max="1000000" step="any" inputmode="decimal" required>')}</div>
     <div data-baluster-input="count" hidden>${label('baluster-count', fields.balusterCount, '<input id="baluster-count" name="balusterCount" type="number" min="1" max="1000" step="1" inputmode="numeric" required>')}</div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'retaining-wall-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('wall-unit', fields.wallUnit, `<select id="wall-unit" name="wallUnit"><option value="ft">${escapeGrowthHtml(labels.feet)}</option><option value="m">${escapeGrowthHtml(labels.meters)}</option></select>`)}
+    ${label('wall-length', fields.wallLength, '<input id="wall-length" name="wallLength" type="number" min="0.01" max="100000" step="any" inputmode="decimal" required>')}
+    ${label('wall-height', fields.wallHeight, '<input id="wall-height" name="wallHeight" type="number" min="0" max="10000" step="any" inputmode="decimal" required>')}
+    ${label('block-unit', fields.blockUnit, `<select id="block-unit" name="blockUnit"><option value="in">${escapeGrowthHtml(labels.inches)}</option><option value="cm">${escapeGrowthHtml(labels.centimeters)}</option></select>`)}
+    ${label('block-length', fields.blockLength, '<input id="block-length" name="blockLength" type="number" min="0.1" max="100000" step="any" inputmode="decimal" required>')}
+    ${label('block-height', fields.blockHeight, '<input id="block-height" name="blockHeight" type="number" min="0.1" max="100000" step="any" inputmode="decimal" required>')}
+    ${label('block-depth', fields.blockDepth, '<input id="block-depth" name="blockDepth" type="number" min="0.1" max="100000" step="any" inputmode="decimal" required>')}
+    ${label('block-joint', fields.joint, '<input id="block-joint" name="joint" type="number" min="0" max="1000" step="any" inputmode="decimal" value="0.25" required>')}
+    ${label('base-width', fields.baseWidth, '<input id="base-width" name="baseWidth" type="number" min="0" max="10000" step="any" inputmode="decimal" value="2" required>')}
+    ${label('base-depth', fields.baseDepth, '<input id="base-depth" name="baseDepth" type="number" min="0" max="10000" step="any" inputmode="decimal" value="0.5" required>')}
+    ${label('backfill-thickness', fields.backfillThickness, '<input id="backfill-thickness" name="backfillThickness" type="number" min="0" max="10000" step="any" inputmode="decimal" value="1" required>')}
+    ${label('material-waste', fields.wastePercent, '<input id="material-waste" name="wastePercent" type="number" min="0" max="50" step="any" inputmode="decimal" value="5" required>')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

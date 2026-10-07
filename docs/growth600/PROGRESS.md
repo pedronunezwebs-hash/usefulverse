@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 41/323; **282 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 42/323; **281 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -399,7 +399,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 41/323; **282 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer y Baluster Spacing Calculator están en la rama; Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer y Baluster Spacing tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 42/323; **281 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing y Retaining Wall Calculator están en la rama; Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing y Retaining Wall tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.
 
 ## Continuación · Rafter Calculator (#126) · 2026-10-08
@@ -502,6 +502,16 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — inglés completo; las otras 35 versiones son borradores `pending-tool-specific-translation`; el gate de publicación no las acepta.
 - [ ] E/X visual — falta comprobar el flujo en navegador, móvil y RTL; los tests no son revisión visual ni prueba en dispositivos físicos.
 - [ ] P/S — sin merge/deploy ni sitemap productivo actualizado y sin enviar URLs a buscadores. Los gates globales siguen abiertos; no se ejecutó PageSpeed/Lighthouse.
+
+## Continuación · Retaining Wall Calculator (#210) · 2026-10-08
+
+- [x] C — candidata #42/323, centrada en muros de contención rectos, distinta de `brick-calculator` (mampostería general). La ficha existente registra `retaining wall calculator` con 1.900 búsquedas/mes US/en, KD 0; `retaining wall blocks calculator`, 170/mes. Sin nuevas consultas a DataForSEO.
+- [x] F/E — cuenta cursos y bloques completos redondeando módulo de bloque + junta; estima base y relleno como prismas rectangulares definidos por el usuario, y aplica margen configurable. Aceptación cero altura → cero cursos, bloques y volúmenes; prueba adicional en imperial: muro 20 × 4 ft, bloque 16 × 6 × 12 in, junta 0,25 in, 5% extra → 8 cursos, 15 bloques/curso, 120 base y 126 a pedir; base y relleno 20 ft³ y 80 ft³ antes del extra. También se probó una conversión métrica. Suite focal completa: **132/132 aprobadas**.
+- [x] X — copy y FAQs prohíben inferir diseño seguro: no calcula estabilidad, presión del terreno, drenaje, geogrid, refuerzos, cimentación, cargas ni normativa; las dimensiones de base/relleno son entradas del usuario, no recomendaciones. Exhorta a revisión profesional.
+- [x] B — formulario semántico con unidades métricas/imperiales, ejemplo, reset, copia, salida accesible y validación; añadido al catálogo, locales estructurales, renderer, bundle y builder sintético.
+- [ ] L — inglés completo; otros 35 locales son `pending-tool-specific-translation` y el release gate bloquea publicación.
+- [ ] E/X visual — navegador, móvil y RTL pendientes; no equivale a una prueba visual o física.
+- [ ] P/S — no merge/deploy, no cambio del sitemap de producción ni envío a buscadores; gates globales pendientes. No se ejecutó PageSpeed/Lighthouse.
 
 ## Continuación · Fertilizer Calculator (#183) · 2026-10-08
 

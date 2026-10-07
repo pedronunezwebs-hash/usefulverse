@@ -66,6 +66,8 @@ import fertilizerCopies from './fertilizer-calculator-final.mjs';
 import { fertilizerCalculatorEnglishCopy } from './fertilizer-calculator.en.mjs';
 import balusterCopies from './baluster-spacing-calculator-final.mjs';
 import { balusterSpacingCalculatorEnglishCopy } from './baluster-spacing-calculator.en.mjs';
+import retainingWallCopies from './retaining-wall-calculator-final.mjs';
+import { retainingWallCalculatorEnglishCopy } from './retaining-wall-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -446,5 +448,6 @@ registerGrowthLocaleExtension(source, 'compost-calculator', { ...compostCopies, 
 registerGrowthLocaleExtension(source, 'pond-volume-calculator', { ...pondCopies, en: pondVolumeCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'fertilizer-calculator', { ...fertilizerCopies, en: fertilizerCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'baluster-spacing-calculator', { ...balusterCopies, en: balusterSpacingCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'retaining-wall-calculator', { ...retainingWallCopies, en: retainingWallCalculatorEnglishCopy }, 'brick-calculator');
 
 export default Object.freeze(source);
