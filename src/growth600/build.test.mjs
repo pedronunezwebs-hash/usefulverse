@@ -289,6 +289,10 @@ test('static build refuses overwrite, missing translated pages/controllers, and 
   const base = { origin: 'https://tools.usefulverse.com', localeEntries: smallLocales, copyByLocale: createCopy(smallLocales), controllerBundles: Object.fromEntries(growthPilotTools.map((tool) => [tool.id, 'export {};'])), styles: 'body{}', faviconSvg: '<svg/>', currentTools };
   await assert.rejects(buildGrowthStaticSite({ ...base, outputDir: tempRoot }), /Refusing to overwrite/);
   await assert.rejects(buildGrowthStaticSite({ ...base, outputDir: join(tempRoot, 'overflow'), maxFiles: 1 }), /safety cap is 1/);
+  assert.equal(await stat(join(tempRoot, 'overflow')).then(() => true, () => false), false, 'failed build must not leave a partial output directory');
+  assert.deepEqual((await readdir(tempRoot)).filter((name) => name.startsWith('.growth600-build-')), [], 'failed build must clean its staging directory');
+  await assert.rejects(buildGrowthStaticSite({ ...base, outputDir: join(tempRoot, 'oversized-file'), maxFileBytes: 1 }), /per-file maximum/u);
+  assert.equal(await stat(join(tempRoot, 'oversized-file')).then(() => true, () => false), false, 'file-size rejection must not leave a partial output directory');
   const noCopy = createCopy(smallLocales);
   delete noCopy.en['mancala'];
   await assert.rejects(buildGrowthStaticSite({ ...base, outputDir: join(tempRoot, 'missing-copy'), copyByLocale: noCopy }), /mancala: translation is missing/);

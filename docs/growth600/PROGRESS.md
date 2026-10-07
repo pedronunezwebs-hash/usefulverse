@@ -91,3 +91,11 @@
 ## Próxima acción concreta
 
 Siguiente: completar gates locales F4 (recorrido representativo de interfaz/localización, presupuestos y funciones ya implementadas), revisar si el destino separado de Cloudflare Pages puede crearse dentro del plan sin alterar el root y después desplegar únicamente el piloto por su pipeline. El build y sitemap temporal ya pasan, pero `usefulverse-tools` aún no existe; ninguna URL nueva está publicada ni enviada a buscadores. Las 277 rutas originales siguen intactas.
+
+## Continuación · 2026-10-07
+
+- [x] El builder ahora genera en un directorio de staging privado y renombra la salida solo después de pasar todas las comprobaciones. Si excede el máximo de archivos o el límite por archivo, elimina el staging y no deja un directorio de publicación parcial; mantiene la negativa a sobrescribir una salida existente.
+- [x] Regresión focalizada después del cambio: `node --test src/growth600/build.test.mjs src/growth600/tools/growth600-logic.test.mjs` — 9/9 pruebas aprobadas, incluyendo exceso de archivos, exceso de tamaño y limpieza del staging tras rechazo. `git diff --check` pasó.
+- [x] Build completo aislado de la tanda piloto: 216 HTML en 36 locales (5 herramientas + portada), 216 URL únicas en `sitemap.xml`, 262 archivos y 3.519.822 bytes. El resultado se generó bajo `/tmp` y no se desplegó.
+- [ ] No se repitió `npm ci` completo: la instalación temporal comenzó a descargar runtimes binarios multiplataforma ajenos al piloto. Se detuvo para limitar espacio/recursos; las pruebas específicas y el build real anteriores sí terminaron. La regresión general previamente registrada (889/889) no sustituye una regresión completa tras integrar todo el lote.
+- [ ] F4 aún requiere revisión visual adicional y el destino Pages separado; P/S siguen abiertos. Este trabajo no publicó ni envió el sitemap y no cambió las 277 herramientas de producción.

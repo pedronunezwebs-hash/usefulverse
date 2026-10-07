@@ -1,6 +1,6 @@
-import { mkdir, readFile, readdir, stat, writeFile } from 'node:fs/promises';
+import { mkdir, mkdtemp, readFile, readdir, rename, rm, stat, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
-import { dirname, join } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 import { localePath } from '../locales.mjs';
 import { growthPilotTools, assertGrowthCatalogIsAdditive } from './catalog.mjs';
 import { assertGrowthLocaleCoverage } from './locale-contract.mjs';
@@ -31,7 +31,7 @@ export function assertLocalController(toolId, source, maxBytes) {
   if (/\beval\s*\(|\bnew\s+Function\b/u.test(source)) throw new Error(`${toolId} controller contains dynamic code execution.`);
 }
 
-export async function buildGrowthStaticSite({
+async function buildGrowthStaticSiteIntoDirectory({
   outputDir, origin, localeEntries, copyByLocale, controllerBundles, styles,
   faviconSvg,
   currentTools, tools = growthPilotTools, maxFiles = 18_500,
@@ -106,4 +106,26 @@ export async function buildGrowthStaticSite({
   const actualUrls = (await readFile(join(outputDir, 'sitemap.xml'), 'utf8')).match(/<loc>/gu)?.length ?? 0;
   if (actualUrls !== canonicalUrls.length) throw new Error(`Sitemap has ${actualUrls} URLs; expected ${canonicalUrls.length}.`);
   return { files: files.length, pages: canonicalUrls.length, sitemapUrls: actualUrls, totalBytes: sizes.reduce((sum, file) => sum + file.bytes, 0), origin: new URL(origin).origin, version, assetFiles: [...assetFiles] };
+}
+
+/**
+ * Build in an isolated sibling directory and publish the completed tree with one rename.
+ * A failed budget/validation check must never leave a partial deploy directory behind.
+ */
+export async function buildGrowthStaticSite(options) {
+  const outputDir = resolve(options?.outputDir ?? '');
+  if (!options?.outputDir) throw new TypeError('A build output directory is required.');
+  if (await stat(outputDir).then(() => true, () => false)) throw new Error(`Refusing to overwrite an existing growth build directory: ${outputDir}`);
+
+  const parent = dirname(outputDir);
+  await mkdir(parent, { recursive: true });
+  const stagingRoot = await mkdtemp(join(parent, '.growth600-build-'));
+  const stagingOutput = join(stagingRoot, 'site');
+  try {
+    const result = await buildGrowthStaticSiteIntoDirectory({ ...options, outputDir: stagingOutput });
+    await rename(stagingOutput, outputDir);
+    return result;
+  } finally {
+    await rm(stagingRoot, { recursive: true, force: true });
+  }
 }
