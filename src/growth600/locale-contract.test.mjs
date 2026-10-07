@@ -26,6 +26,7 @@ import dutchGrowthCopy from './locales/nl.mjs';
 import greekGrowthCopy from './locales/el.mjs';
 import malayGrowthCopy from './locales/ms.mjs';
 import polishGrowthCopy from './locales/pl.mjs';
+import swedishGrowthCopy from './locales/sv.mjs';
 
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
@@ -247,4 +248,13 @@ test('the first Polish draft covers every copy key and preserves required placeh
   assert.equal(polishGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} miesięcy');
   assert.equal(polishGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver} daje prezent osobie {recipient}.');
   assert.equal(polishGrowthCopy.mancala.messages.turn, 'Ruch gracza {player}.');
+});
+
+test('the first Swedish draft covers every copy key and preserves required placeholders', () => {
+  assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'sv' }], { sv: swedishGrowthCopy }), true);
+  assert.ok(Object.values(swedishGrowthCopy).every((copy) => copy.copyLanguage === 'sv'));
+  assert.ok(Object.values(swedishGrowthCopy).every((copy) => copy.title.length <= 60 && copy.description.length <= 160));
+  assert.equal(swedishGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} månader');
+  assert.equal(swedishGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver} ger en present till {recipient}.');
+  assert.equal(swedishGrowthCopy.mancala.messages.turn, '{player} är näst på tur.');
 });
