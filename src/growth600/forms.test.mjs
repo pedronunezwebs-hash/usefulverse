@@ -199,6 +199,11 @@ const copies = {
     messages: { ...messages, stockAliquot: 'Stock volume', diluent: 'Diluent volume', dilutionFactor: 'Dilution factor', steps: 'Step count', perStepFactor: 'Factor per step', transferVolume: 'Transfer volume', totalDilutionFactor: 'Total factor' },
     fields: { mode: 'Mode', directMode: 'Direct', serialMode: 'Serial', stockConcentration: 'Stock concentration', targetConcentration: 'Target concentration', finalVolume: 'Final volume', volumeUnit: 'Volume unit', steps: 'Number of steps', accuracyNote: 'Math only.' },
   },
+  'ohms-law-calculator': {
+    name: 'Ohm’s law calculator', actions: { ...actions },
+    messages: { ...messages, solvedVoltage: 'Voltage', solvedCurrent: 'Current', solvedResistance: 'Resistance', solvedPower: 'Power', equivalentResistance: 'Equivalent resistance', resistorCount: 'Resistor count', topology: 'Connection' },
+    fields: { mode: 'Mode', solverMode: 'Solve values', networkMode: 'Equivalent resistance', voltage: 'Voltage (V)', current: 'Current (A)', resistance: 'Resistance (Ω)', power: 'Power (W)', topology: 'Connection', series: 'Series', parallel: 'Parallel', resistorValues: 'Resistor values', accuracyNote: 'Ideal DC arithmetic only.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -277,6 +282,12 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(dilution, /data-dilution-steps hidden/u);
   assert.match(dilution, /value="serial"/u);
   assert.match(dilution, /data-action="copy"/u);
+  const ohms = renderGrowthForm('ohms-law-calculator', copies['ohms-law-calculator']);
+  for (const name of ['mode', 'voltage', 'current', 'resistance', 'power', 'topology', 'resistorValues']) assert.match(ohms, new RegExp(`name="${name}"`, 'u'));
+  assert.match(ohms, /data-ohms-solver/u);
+  assert.match(ohms, /data-ohms-network hidden/u);
+  assert.match(ohms, /max="1000000000000"/u);
+  assert.match(ohms, /data-action="copy"/u);
   const asphalt = renderGrowthForm('asphalt-calculator', copies['asphalt-calculator']);
   assert.match(asphalt, /name="compactedThickness"/u);
   assert.match(asphalt, /name="pricePerTonne"/u);

@@ -1039,15 +1039,17 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [ ] **C/F/E/X/L/B/P/S completos — `ohms-law-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/ohms-law-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `ohms law calculator` — 14.800 búsquedas/mes US/en, KD 31; nivel A. CPC 0.6 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Resolver V, I, R y potencia, serie/paralelo básico; integrar equivalentes de resistencias serie/paralelo en esta misma página.
-- **Prueba de aceptación específica:** 12V entre6ohm da2A y24W
-- **Frontera con otras herramientas:** unit-converter: magnitudes eléctricas relacionadas. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** H: dependencia/cómputo bajo demanda; verificar licencia y compatibilidad. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Función mínima y ampliaciones útiles:** Resolver voltaje, corriente, resistencia y potencia introduciendo cualquier pareja válida de valores. En la misma página, modo separado para equivalentes de 2–20 resistencias en serie o paralelo. Mostrar V, A, Ω y W, ejemplo, copiar, reiniciar y límites de cálculo.
+- **Prueba de aceptación específica:** 12 V entre 6 Ω da 2 A y 24 W; 2 Ω, 3 Ω y 6 Ω en paralelo dan 1 Ω. Probar las seis parejas posibles, entrada incompleta, cero/negativos, valores extremos y ambas topologías.
+- **Frontera con otras herramientas:** complementa `voltage-drop-calculator` (caída en conductor, no ley de Ohm de dos valores) y `unit-converter`; no crea URLs por fórmula, variable desconocida ni topología.
+- **Implementación/riesgo:** L: aritmética pura en JavaScript, sin dependencias ni procesamiento remoto. Las fórmulas de V=IR, P=VI, resistencia en serie y paralelo se contrastan con [OpenStax, resistors in series and parallel](https://openstax.org/books/university-physics-volume-2/pages/10-2-resistors-in-series-and-parallel) y [OpenStax, key equations](https://openstax.org/books/physics/pages/19-key-equations). Solo circuito resistivo DC ideal: no usar para certificar seguridad o seleccionar componentes; declarar límites, verificar hojas de datos y pedir revisión profesional.
 - **Consultas secundarias del mismo propietario:**
   - `voltage current resistance calculator` — 140/mes US/en; KD 14.
   - `ohms law calculator free online`; `ohms law calculator with example`; `ohms law calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** DE/de `ohmsches gesetz rechner` 480/mes, KD 0.
+
+- **Estado de implementación (2026-10-08):** motor local, dos modos, formulario accesible, ejemplo y resultado copiable implementados en el checkpoint de Growth600. El copy completo solo está listo en inglés; las otras 35 localizaciones permanecen bloqueadas como borradores. No desplegar hasta cerrar traducción y todos los gates C/F/E/X/L/B/P/S.
 
 ### 100 · Chemical Equation Balancer
 

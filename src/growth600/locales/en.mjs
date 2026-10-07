@@ -92,6 +92,8 @@ import molarityCopies from './molarity-calculator-final.mjs';
 import { molarityCalculatorEnglishCopy } from './molarity-calculator.en.mjs';
 import dilutionCopies from './dilution-calculator-final.mjs';
 import { dilutionCalculatorEnglishCopy } from './dilution-calculator.en.mjs';
+import ohmsLawCopies from './ohms-law-calculator-final.mjs';
+import { ohmsLawCalculatorEnglishCopy } from './ohms-law-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -485,5 +487,6 @@ registerGrowthLocaleExtension(source, 'miter-angle-calculator', { ...miterAngleC
 registerGrowthLocaleExtension(source, 'voltage-drop-calculator', { ...voltageDropCopies, en: voltageDropCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'molarity-calculator', { ...molarityCopies, en: molarityCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'dilution-calculator', { ...dilutionCopies, en: dilutionCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'ohms-law-calculator', { ...ohmsLawCopies, en: ohmsLawCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

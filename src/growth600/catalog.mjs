@@ -276,6 +276,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/dilution-calculator/logic.mjs',
   },
   {
+    id: 'ohms-law-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'ohms law calculator',
+    secondaryIntents: ['voltage current resistance calculator', 'resistor series parallel calculator', 'electrical power calculator ohms law'],
+    functions: ['solve voltage, current, resistance and power from any two valid positive values using the DC resistive Ohm’s-law relationships', 'calculate equivalent resistance for a list of 2 to 20 resistors in series or parallel', 'show all solved values with explicit V, A, Ω and W units and a copyable result'],
+    acceptance: '12 V across 6 Ω returns 2 A and 24 W; 2 Ω, 3 Ω and 6 Ω in parallel return 1 Ω equivalent resistance.',
+    boundary: 'Ideal DC resistive arithmetic only. Does not account for AC impedance, reactive components, source/internal resistance, tolerance, heating, power ratings, wiring, or electrical-code and shock/fire risks. Do not use it to certify a circuit or select safe components; verify with a qualified professional and component datasheets. Inputs stay in this browser.',
+    relatedExistingIds: ['voltage-drop-calculator'],
+    logicModule: './tools/ohms-law-calculator/logic.mjs',
+  },
+  {
     id: 'miter-angle-calculator',
     category: 'home-materials',
     type: 'calculator',
@@ -296,7 +308,7 @@ export const growthPilotTools = Object.freeze([
     functions: ['estimate resistive voltage drop for copper or aluminum conductors from one-way length, current, cross-sectional area and supply voltage', 'support DC two-conductor, single-phase AC and balanced three-phase AC modes with optional power factor', 'show volts, percentage, estimated load voltage and explicit calculation assumptions'],
     acceptance: 'Zero route length yields zero drop; for 20 A over 30 m one-way in 2.5 mm² copper at 230 V single-phase and power factor 1, resistive drop is about 8.27 V (3.60%).',
     boundary: 'Reference-resistivity, resistive-only estimate at 20°C, not wire sizing or electrical safety advice. Omits conductor heating, AC reactance, harmonics, connectors, installation conditions, ampacity, overcurrent protection and local codes. Three-phase assumes balanced load. Qualified electrician must verify design and local requirements.',
-    relatedExistingIds: [],
+    relatedExistingIds: ['ohms-law-calculator'],
     logicModule: './tools/voltage-drop-calculator/logic.mjs',
   },
   {

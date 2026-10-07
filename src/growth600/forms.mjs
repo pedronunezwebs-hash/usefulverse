@@ -35,6 +35,7 @@ export function renderGrowthForm(toolId, copy) {
     'molar-mass-calculator': ['formula'],
     'molarity-calculator': ['mode', 'moles', 'molarity', 'volume', 'volumeUnit', 'molarMass', 'accuracyNote'],
     'dilution-calculator': ['mode', 'directMode', 'serialMode', 'stockConcentration', 'targetConcentration', 'finalVolume', 'volumeUnit', 'steps', 'accuracyNote'],
+    'ohms-law-calculator': ['mode', 'solverMode', 'networkMode', 'voltage', 'current', 'resistance', 'power', 'topology', 'series', 'parallel', 'resistorValues', 'accuracyNote'],
     'auto-loan-refinance-calculator': ['balance', 'currentApr', 'currentMonths', 'newApr', 'newMonths', 'fees', 'feeTreatment'],
     'secret-santa-generator': ['names', 'exclusions'],
     'tire-size-calculator': ['originalSize', 'replacementSize', 'indicatedSpeed', 'speedUnit', 'fitmentNote'],
@@ -92,6 +93,7 @@ export function renderGrowthForm(toolId, copy) {
     'molar-mass-calculator': ['calculate', 'reset', 'example', 'copy', 'result'],
     'molarity-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'milliliters'],
     'dilution-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'milliliters'],
+    'ohms-law-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'auto-loan-refinance-calculator': ['calculate', 'reset', 'copy', 'result'],
     'secret-santa-generator': ['generate', 'reset', 'copy', 'download', 'result', 'reveal', 'next', 'privacyNote'],
     'tire-size-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kmh', 'mph'],
@@ -867,6 +869,22 @@ export function renderGrowthForm(toolId, copy) {
     ${label('voltage-section', fields.crossSectionMm2, '<input id="voltage-section" name="crossSectionMm2" type="number" min="0.0001" max="1000000" step="any" inputmode="decimal" value="2.5" required>')}
     ${label('voltage-supply', fields.supplyVoltageV, '<input id="voltage-supply" name="supplyVoltageV" type="number" min="0.001" max="10000000" step="any" inputmode="decimal" value="230" required>')}
     <div class="field" data-power-factor-field><label for="voltage-power-factor">${escapeGrowthHtml(fields.powerFactor)}</label><input id="voltage-power-factor" name="powerFactor" type="number" min="0" max="1" step="any" inputmode="decimal" value="1" required></div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'ohms-law-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('ohms-mode', fields.mode, `<select id="ohms-mode" name="mode"><option value="solve">${escapeGrowthHtml(fields.solverMode)}</option><option value="network">${escapeGrowthHtml(fields.networkMode)}</option></select>`)}
+    <div data-ohms-solver>
+      ${label('ohms-voltage', fields.voltage, '<input id="ohms-voltage" name="voltage" type="number" min="0.000000000001" max="1000000000000" step="any" inputmode="decimal">')}
+      ${label('ohms-current', fields.current, '<input id="ohms-current" name="current" type="number" min="0.000000000001" max="1000000000000" step="any" inputmode="decimal">')}
+      ${label('ohms-resistance', fields.resistance, '<input id="ohms-resistance" name="resistance" type="number" min="0.000000000001" max="1000000000000" step="any" inputmode="decimal">')}
+      ${label('ohms-power', fields.power, '<input id="ohms-power" name="power" type="number" min="0.000000000001" max="1000000000000" step="any" inputmode="decimal">')}
+    </div>
+    <div data-ohms-network hidden>
+      ${label('ohms-topology', fields.topology, `<select id="ohms-topology" name="topology"><option value="series">${escapeGrowthHtml(fields.series)}</option><option value="parallel">${escapeGrowthHtml(fields.parallel)}</option></select>`)}
+      ${label('ohms-resistor-values', fields.resistorValues, '<textarea id="ohms-resistor-values" name="resistorValues" rows="4" maxlength="500" spellcheck="false"></textarea>')}
+    </div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

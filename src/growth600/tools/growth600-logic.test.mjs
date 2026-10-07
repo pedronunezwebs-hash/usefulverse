@@ -41,6 +41,7 @@ import { calculateMiterAngles } from './miter-angle-calculator/logic.mjs';
 import { calculateVoltageDrop } from './voltage-drop-calculator/logic.mjs';
 import { calculateMolarity } from './molarity-calculator/logic.mjs';
 import { calculateDilution } from './dilution-calculator/logic.mjs';
+import { calculateEquivalentResistance, solveOhmsLaw } from './ohms-law-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -56,6 +57,25 @@ test('gravel calculator converts area and depth into volume, waste, weight and b
   assert.equal(calculateTriangularArea(4, 3), 6);
   assert.throws(() => calculateGravel({ areaM2: 0, depthM: 1 }), /Area/);
   assert.throws(() => calculateGravel({ areaM2: 1, depthM: 1, wastePercent: 101 }), /Waste/);
+});
+
+test('Ohm’s law calculator solves every pair and equivalent resistor networks', () => {
+  const expected = { voltage: 12, current: 2, resistance: 6, power: 24 };
+  for (const values of [
+    { voltage: 12, current: 2 }, { voltage: 12, resistance: 6 }, { voltage: 12, power: 24 },
+    { current: 2, resistance: 6 }, { current: 2, power: 24 }, { resistance: 6, power: 24 },
+  ]) {
+    const result = solveOhmsLaw(values);
+    for (const key of Object.keys(expected)) assert.ok(Math.abs(result[key] - expected[key]) < 1e-10, `${key} from ${Object.keys(values)}`);
+  }
+  assert.equal(calculateEquivalentResistance([2, 3, 6], 'series').resistance, 11);
+  assert.ok(Math.abs(calculateEquivalentResistance([2, 3, 6], 'parallel').resistance - 1) < 1e-12);
+  assert.throws(() => solveOhmsLaw({ voltage: 12 }), /exactly two/u);
+  assert.throws(() => solveOhmsLaw({ voltage: 12, current: 0 }), /between/u);
+  assert.throws(() => solveOhmsLaw({ voltage: 12, current: 2, resistance: 6 }), /exactly two/u);
+  assert.throws(() => calculateEquivalentResistance([10], 'series'), /2 to 20/u);
+  assert.throws(() => calculateEquivalentResistance([10, 0], 'parallel'), /between/u);
+  assert.throws(() => calculateEquivalentResistance([10, 20], 'unknown'), /series or parallel/u);
 });
 
 test('wallpaper calculator counts pattern-aligned drops, openings and allowance', () => {

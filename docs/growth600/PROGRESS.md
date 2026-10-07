@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 54/323; **269 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 55/323; **268 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -642,3 +642,15 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — inglés completo; 35 idiomas siguen como borradores bloqueados hasta localización específica.
 - [ ] X/E visual — revisión real de interacción, móvil y RTL pendiente.
 - [ ] P/S — no deploy ni sitemap productivo actualizado; no envíos a buscadores ni PageSpeed/Lighthouse. Permanecen los gates globales.
+
+## Continuación · Ohm’s Law Calculator (#089) · 2026-10-08
+
+- [x] C/F — candidata #55/323, distinta de `voltage-drop-calculator`: resuelve ley de Ohm para resistencias DC ideales y ofrece equivalentes serie/paralelo. Demanda del plan: 14.800 búsquedas/mes US/en, KD 31, CPC USD 0,60 (no CPM); `voltage current resistance calculator` 140/mes, KD 14. Sin nuevas llamadas a DataForSEO.
+- [x] E/X — motor local sin dependencias, cubre las seis parejas de V/I/R/P y redes de 2–20 resistencias. Aceptación 12 V/6 Ω → 2 A/24 W; 2, 3 y 6 Ω en paralelo → 1 Ω. Rechaza datos incompletos, no positivos, extremos y topología inválida.
+- [x] B — formulario con modos solver/red, ejemplo, resultado anunciado, copia, reinicio y límites de seguridad eléctrica en lenguaje claro.
+- [x] E — suite focal Growth600 (`catalog`, `forms`, `locale-contract`, `locale-utils`, `render`, `build`, `bundle-controllers`, `growth600-logic`): **171/171 aprobadas**; sintaxis de lógica/controlador/locales comprobada y `git diff --check` limpio.
+- [x] B/L-bundle — controlador aislado y estático de **4.260 bytes**, por debajo del budget de 24 KiB; no usa API, red externa ni dependencia de ejecución.
+- [x] E/X navegador — un build local inglés de 2 herramientas verificó los dos flujos: 12 V/6 Ω → 2 A/24 W y 2/3/6 Ω en paralelo → 1 Ω; campos parciales no activan validación nativa incorrecta, y campo vacío anuncia error. A 390 px no hay overflow horizontal; consola sin warnings/errores. La primera pasada encontró campos solver marcados accidentalmente como obligatorios; se quitó esa restricción y se repitió el flujo correctamente.
+- [ ] L — texto fuente en inglés listo; otros 35 idiomas permanecen como borradores estructurales bloqueados.
+- [ ] X/E visual — flujo funcional probado en Chrome móvil; todavía falta inspección visual de escritorio y RTL.
+- [ ] P/S — no merge/deploy ni cambio del sitemap de producción; sin envío a buscadores. No se ejecuta PageSpeed/Lighthouse.
