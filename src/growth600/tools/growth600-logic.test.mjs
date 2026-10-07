@@ -34,6 +34,7 @@ import { optimizeLumberCuts, parseCutList } from './lumber-cut-calculator/logic.
 import { calculatePlantSpacing } from './plant-spacing-calculator/logic.mjs';
 import { calculateEvCharging } from './ev-charging-calculator/logic.mjs';
 import { calculateRainwaterHarvesting, parseMonthlyValues } from './rainwater-harvesting-calculator/logic.mjs';
+import { calculateRamp } from './ramp-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -786,4 +787,27 @@ test('rainwater monthly inputs require twelve valid values and tank storage stay
   assert.throws(() => parseMonthlyValues(Array.from({ length: 12 }, (_, index) => index === 4 ? '-1' : '1').join('\n')), /line 5/u);
   assert.throws(() => calculateRainwaterHarvesting({ catchmentArea: 1, rainfallValues: Array(12).fill(1), tankCapacity: 10, startingStorage: 11, monthlyDemandValues: Array(12).fill(0) }), /allowed range/u);
   assert.throws(() => calculateRainwaterHarvesting({ catchmentArea: 1, rainfallValues: Array(12).fill(1), tankCapacity: 10, monthlyDemandValues: Array(11).fill(0) }), /12 valid monthly demand/u);
+});
+
+test('ramp calculator converts rise and chosen 1:N ratio into run, surface and landing length', () => {
+  const result = calculateRamp({ rise: 1, slopeRatioDenominator: 12, unit: 'm' });
+  assert.equal(result.horizontalRun, 12);
+  assert.ok(Math.abs(result.rampSurface - Math.sqrt(145)) < 1e-12);
+  assert.equal(result.slopePercent, 100 / 12);
+  assert.ok(Math.abs(result.slopeAngleDegrees - 4.76364169) < 1e-8);
+  const landings = calculateRamp({ rise: 1, slopeRatioDenominator: 12, landingCount: 2, landingDepth: 1.5, unit: 'm' });
+  assert.equal(landings.horizontalRun, 12);
+  assert.equal(landings.landingRun, 3);
+  assert.equal(landings.totalHorizontalLength, 15);
+  const feet = calculateRamp({ rise: 12, slopeRatioDenominator: 12, landingCount: 0, unit: 'in' });
+  assert.equal(feet.horizontalRun, 144);
+  assert.equal(feet.totalHorizontalLength, 144);
+});
+
+test('ramp calculator rejects unsupported units, fractional ratio and excessive landing input', () => {
+  assert.throws(() => calculateRamp({ rise: 1, slopeRatioDenominator: 0 }), /allowed range/u);
+  assert.throws(() => calculateRamp({ rise: 1, slopeRatioDenominator: 12.5 }), /whole number/u);
+  assert.throws(() => calculateRamp({ rise: 1, slopeRatioDenominator: 12, landingCount: 1, landingDepth: 0 }), /allowed range/u);
+  assert.throws(() => calculateRamp({ rise: 1, slopeRatioDenominator: 12, landingCount: 101, landingDepth: 1 }), /from 0 to 100/u);
+  assert.throws(() => calculateRamp({ rise: 1, unit: 'yd' }), /supported length/u);
 });

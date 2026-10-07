@@ -164,6 +164,11 @@ const copies = {
     messages: { ...messages, totalCollected: 'Potential collected', totalDemand: 'Demand', totalOverflow: 'Overflow', unmetDemand: 'Unmet demand', endingStorage: 'Ending storage', rainfall: 'rainfall', collected: 'collected', demand: 'demand', overflow: 'overflow', storage: 'ending tank', months: Array.from({ length: 12 }, (_, index) => `Month ${index + 1}`) },
     fields: { catchmentArea: 'Roof area', areaUnit: 'Area unit', rainfallUnit: 'Rainfall unit', rainfallValues: 'Monthly rainfall', runoffPercent: 'Runoff efficiency', tankCapacity: 'Tank capacity', tankUnit: 'Volume unit', startingStorage: 'Starting storage', monthlyDemandValues: 'Monthly demand', accuracyNote: 'Estimate only; water may need treatment.' },
   },
+  'ramp-calculator': {
+    name: 'Ramp calculator', actions: { ...actions, millimeters: 'Millimeters', centimeters: 'Centimeters', meters: 'Meters', inches: 'Inches', feet: 'Feet' },
+    messages: { ...messages, horizontalRun: 'Horizontal ramp run', rampSurface: 'Sloped ramp surface length', landings: 'Landings', totalHorizontal: 'Total horizontal length', slopePercent: 'Slope percentage', angle: 'Slope angle' },
+    fields: { rise: 'Vertical rise', slopeRatioDenominator: 'Ratio denominator', landingCount: 'Landing count', landingDepth: 'Landing depth', unit: 'Unit', safetyNote: 'Geometry only; check applicable standards.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -394,6 +399,13 @@ test('rainwater form gathers 12 monthly rainfall and demand entries plus catchme
   for (const name of ['areaUnit', 'catchmentArea', 'rainfallUnit', 'rainfallValues', 'runoffPercent', 'tankUnit', 'tankCapacity', 'startingStorage', 'monthlyDemandValues']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
   assert.equal((html.match(/rows="12"/gu) ?? []).length, 2);
   assert.match(html, /water may need treatment/u);
+});
+
+test('ramp form exposes a user-selected slope, landings and a visible standards disclaimer', () => {
+  const html = renderGrowthForm('ramp-calculator', copies['ramp-calculator']);
+  for (const name of ['unit', 'rise', 'slopeRatioDenominator', 'landingCount', 'landingDepth']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  assert.match(html, /check applicable standards/u);
+  assert.match(html, /aria-live="polite"/u);
 });
 
 test('weight scenario form explains its limits and collects explicit local inputs', () => {

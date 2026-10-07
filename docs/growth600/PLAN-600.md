@@ -917,7 +917,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/ramp-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `ramp calculator` — 880 búsquedas/mes US/en, KD 0; nivel C. CPC 1.52 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Altura, pendiente objetivo, longitudes y descansos; norma elegida por usuario
-- **Prueba de aceptación específica:** 1m a1:12 necesita12m horizontal
+- **Prueba de aceptación específica:** 1 m a 1:12 necesita 12 m de recorrido horizontal y sqrt(145) m de superficie inclinada, antes de contar descansos.
 - **Frontera con otras herramientas:** slope-grade-calculator: diseño con descansos; no certificación accesibilidad. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** D: dato/norma versionado, país y año visibles. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
@@ -933,7 +933,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Función mínima y ampliaciones útiles:** U valores, áreas, deltaT, ventilación y pérdidas por componente
 - **Prueba de aceptación específica:** U1 por10m² por20K da200W
 - **Frontera con otras herramientas:** btu-calculator: cargas detalladas, validar distinción de intención. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Altura, ratio elegido 1:N, conteo/profundidad de descansos y unidades métricas/imperiales. Devuelve recorrido horizontal, superficie inclinada, porcentaje/ángulo y longitud horizontal total. No decide ni valida normas de accesibilidad o construcción; mostrar límites prominentes.
 - **Consultas secundarias del mismo propietario:**
   - `room heat loss calculator` — 20/mes US/en; KD 0.
   - `heat loss calculator free online`; `heat loss calculator with example`; `heat loss calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

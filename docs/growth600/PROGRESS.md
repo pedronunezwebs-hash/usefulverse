@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 47/323; **276 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 48/323; **275 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -399,7 +399,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 47/323; **276 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing, Retaining Wall, Battery Runtime, Lumber Cut List Optimizer, Plant Spacing Calculator, EV Charging Calculator y Rainwater Harvesting Calculator están en la rama; las candidatas nuevas con localización incompleta no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 48/323; **275 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing, Retaining Wall, Battery Runtime, Lumber Cut List Optimizer, Plant Spacing Calculator, EV Charging Calculator, Rainwater Harvesting Calculator y Ramp Calculator están en la rama; las candidatas nuevas con localización incompleta no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.
 
 ## Continuación · Rafter Calculator (#126) · 2026-10-08
@@ -561,6 +561,16 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [x] E — suite focal del catálogo/formularios/locales/render/build/bundle/lógica: **151/151 aprobadas**; validación estática y `git diff --check` ejecutadas.
 - [ ] X/E visual — revisión en navegador, móvil, RTL y dispositivos físicos pendiente.
 - [ ] P/S — no deploy, sitemap productivo ni envío a buscadores.
+
+## Continuación · Ramp Calculator (#265) · 2026-10-08
+
+- [x] C/F — candidata #48/323; el plan registra `ramp calculator` con 880 búsquedas/mes US/en, KD 0 y `wheelchair ramp calculator`/`ramp slope calculator` como intenciones complementarias; sin nuevas consultas a DataForSEO. Diferenciada de `stair-calculator` por rampa/ratio.
+- [x] E/X — aceptación 1 m a 1:12 da 12 m de run y sqrt(145) m de superficie inclinada; caso de dos descansos suma 3 m horizontales al plan de 12 m. Unidades mm/cm/m/in/ft. Ratio personalizado; no se imponen ni certifican normas. Mensaje claro de que no revisa accesibilidad, estructura, códigos o reglas locales.
+- [x] B — interfaz semántica local con altura, ratio, cantidad/profundidad de descansos, unidad, ejemplo, reset, copia y salida accesible.
+- [ ] L — inglés completo; 35 locales en borrador estructural y bloqueados hasta traducir.
+- [x] E — suite focal Growth600 para catálogo/formulario/locales/render/build/bundle/lógica: **155/155 aprobadas**; validaciones de sintaxis y `git diff --check` se ejecutan al cerrar el checkpoint.
+- [ ] X/E visual — inspección de navegador, móvil, RTL y dispositivos físicos sigue pendiente.
+- [ ] P/S — no merge/deploy, sitemap productivo intacto ni envíos a buscadores.
 
 ## Continuación · Fertilizer Calculator (#183) · 2026-10-08
 

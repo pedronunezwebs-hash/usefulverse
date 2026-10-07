@@ -65,6 +65,7 @@ export function renderGrowthForm(toolId, copy) {
     'plant-spacing-calculator': ['bedLength', 'bedWidth', 'inRowSpacing', 'rowSpacing', 'unit', 'pattern', 'accuracyNote'],
     'ev-charging-calculator': ['batteryCapacityKwh', 'startSocPercent', 'targetSocPercent', 'chargerPowerKw', 'efficiencyPercent', 'electricityRatePerKwh', 'currency', 'accuracyNote'],
     'rainwater-harvesting-calculator': ['catchmentArea', 'areaUnit', 'rainfallUnit', 'rainfallValues', 'runoffPercent', 'tankCapacity', 'tankUnit', 'startingStorage', 'monthlyDemandValues', 'accuracyNote'],
+    'ramp-calculator': ['rise', 'slopeRatioDenominator', 'landingCount', 'landingDepth', 'unit', 'safetyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -115,6 +116,7 @@ export function renderGrowthForm(toolId, copy) {
     'plant-spacing-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'millimeters', 'centimeters', 'meters', 'inches', 'feet', 'grid', 'triangular', 'squareUnits'],
     'ev-charging-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kwh', 'kw', 'percent'],
     'rainwater-harvesting-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'squareMeters', 'squareFeet', 'millimeters', 'inches', 'liters', 'usGallons'],
+    'ramp-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'millimeters', 'centimeters', 'meters', 'inches', 'feet'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -760,6 +762,16 @@ export function renderGrowthForm(toolId, copy) {
     ${label('starting-storage', fields.startingStorage, '<input id="starting-storage" name="startingStorage" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="0" required>')}
     ${label('monthly-demand-values', fields.monthlyDemandValues, '<textarea id="monthly-demand-values" name="monthlyDemandValues" rows="12" spellcheck="false" required></textarea>')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'ramp-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('ramp-unit', fields.unit, `<select id="ramp-unit" name="unit"><option value="m">${escapeGrowthHtml(labels.meters)}</option><option value="cm">${escapeGrowthHtml(labels.centimeters)}</option><option value="mm">${escapeGrowthHtml(labels.millimeters)}</option><option value="ft">${escapeGrowthHtml(labels.feet)}</option><option value="in">${escapeGrowthHtml(labels.inches)}</option></select>`)}
+    ${label('ramp-rise', fields.rise, '<input id="ramp-rise" name="rise" type="number" min="0.001" max="1000000" step="any" inputmode="decimal" required>')}
+    ${label('ramp-slope-ratio', fields.slopeRatioDenominator, '<input id="ramp-slope-ratio" name="slopeRatioDenominator" type="number" min="1" max="1000" step="1" inputmode="numeric" value="12" required>')}
+    ${label('ramp-landing-count', fields.landingCount, '<input id="ramp-landing-count" name="landingCount" type="number" min="0" max="100" step="1" inputmode="numeric" value="0" required>')}
+    ${label('ramp-landing-depth', fields.landingDepth, '<input id="ramp-landing-depth" name="landingDepth" type="number" min="0.001" max="1000000" step="any" inputmode="decimal">')}
+    <p class="hint">${escapeGrowthHtml(fields.safetyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);
 

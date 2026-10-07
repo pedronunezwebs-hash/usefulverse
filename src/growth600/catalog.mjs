@@ -216,6 +216,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/rainwater-harvesting-calculator/logic.mjs',
   },
   {
+    id: 'ramp-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'ramp calculator',
+    secondaryIntents: ['wheelchair ramp calculator', 'ramp slope calculator', 'ramp length calculator'],
+    functions: ['calculate horizontal run and sloped surface length from a rise and user-selected slope ratio', 'include a user-entered count and depth for level landings in total horizontal planning length', 'show slope percentage and angle without selecting a legal or accessible slope'],
+    acceptance: 'A 1 m rise at a chosen 1:12 ratio needs 12 m of horizontal ramp run; sloped surface is sqrt(1² + 12²) m before landings.',
+    boundary: 'Geometry only, not an accessibility assessment, building-code interpretation or structural design. Slope rules and required landings depend on jurisdiction, use, occupancy, rise, site and applicable standards; user-entered ratio is not validated for compliance. Have a qualified professional review plans and local requirements before construction.',
+    relatedExistingIds: ['stair-calculator'],
+    logicModule: './tools/ramp-calculator/logic.mjs',
+  },
+  {
     id: 'deck-calculator',
     category: 'home-materials',
     type: 'calculator',
