@@ -119,6 +119,11 @@ const copies = {
     messages: { ...messages, wetMass: 'Wet mass', dryMass: 'Dry mass', waterMass: 'Water mass', carbonMass: 'Carbon mass', nitrogenMass: 'Nitrogen mass', mixRatio: 'Mix C:N ratio', mixMoisture: 'Mix moisture', targetMoisture: 'Target moisture', waterToAdd: 'Water to add', waterToRemove: 'Water to remove', perMaterial: 'Material' },
     fields: { massUnit: 'Mass unit', targetMoisture: 'Target moisture', material1: 'Material 1', material2: 'Material 2', material3: 'Material 3', material4: 'Material 4', name1: 'Name', name2: 'Name', name3: 'Name', name4: 'Name', wetMass1: 'Wet mass', wetMass2: 'Wet mass', wetMass3: 'Wet mass', wetMass4: 'Wet mass', moisture1: 'Moisture', moisture2: 'Moisture', moisture3: 'Moisture', moisture4: 'Moisture', carbon1: 'Dry carbon', carbon2: 'Dry carbon', carbon3: 'Dry carbon', carbon4: 'Dry carbon', ratio1: 'C:N ratio', ratio2: 'C:N ratio', ratio3: 'C:N ratio', ratio4: 'C:N ratio', accuracyNote: 'Estimate only.' },
   },
+  'pond-volume-calculator': {
+    name: 'Pond Volume Calculator', actions: { ...actions, rectangle: 'Rectangle', circle: 'Circle', oval: 'Oval', meters: 'Meters', feet: 'Feet' },
+    messages: { ...messages, footprint: 'Footprint area', geometricCapacity: 'Capacity', filledVolume: 'Filled volume', liters: 'Liters', usGallons: 'US gallons', imperialGallons: 'Imperial gallons', linerLength: 'Liner length', linerWidth: 'Liner width', linerArea: 'Liner area' },
+    fields: { shape: 'Shape', length: 'Length', width: 'Width', diameter: 'Diameter', dimensionUnit: 'Unit', averageDepth: 'Average depth', maximumDepth: 'Maximum depth', edgeOverlap: 'Edge overlap', fillPercent: 'Fill percentage', accuracyNote: 'Geometric estimate only.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -278,6 +283,15 @@ test('compost form exposes mass-basis inputs for four materials and an optional 
     for (const name of [`wetMass${index}`, `moisture${index}`, `carbon${index}`, `ratio${index}`]) assert.match(html, new RegExp(`name="${name}"`, 'u'));
   }
   assert.match(html, /Dry carbon/u);
+  assert.match(html, /aria-live="polite" data-status/u);
+});
+
+test('pond form exposes plan shapes, separate depth inputs and liner overlap', () => {
+  const html = renderGrowthForm('pond-volume-calculator', copies['pond-volume-calculator']);
+  assert.match(html, /data-pond-shape/u);
+  for (const name of ['shape', 'dimensionUnit', 'length', 'width', 'ovalLength', 'ovalWidth', 'diameter', 'averageDepth', 'maximumDepth', 'edgeOverlap', 'fillPercent']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  assert.match(html, /data-pond-dimensions="circle" hidden/u);
+  assert.match(html, /Fill percentage/u);
   assert.match(html, /aria-live="polite" data-status/u);
 });
 

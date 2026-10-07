@@ -455,6 +455,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['soil-calculator', 'mulch-calculator'],
     logicModule: './tools/compost-calculator/logic.mjs',
   },
+  {
+    id: 'pond-volume-calculator',
+    category: 'garden-calculators',
+    type: 'calculator',
+    primaryIntent: 'pond volume calculator',
+    secondaryIntents: ['pond liner calculator', 'fish pond volume calculator', 'pond liner size calculator'],
+    functions: ['estimate geometric water capacity for rectangular, circular or oval ponds', 'calculate filled water volume from the user-entered fill percentage and average depth', 'estimate liner sheet length, width and area from plan dimensions, maximum depth and edge overlap', 'show liters and US/imperial gallons alongside selected-unit liner dimensions'],
+    acceptance: 'For the same footprint and fill percentage, increasing average depth increases estimated water volume; increasing maximum depth increases the estimated liner dimensions.',
+    boundary: 'Simple geometric planning estimate only. Volume assumes a flat-bottom prism using the entered average water depth; liner sizing applies maximum depth around the full perimeter and the entered overlap at every edge. Sloped sides, shelves, curves, rocks, folds, anchoring and manufacturer installation details can change actual needs. Does not assess structure, water treatment, wildlife or code compliance. All calculations run locally in this browser.',
+    relatedExistingIds: ['pool-volume-calculator', 'soil-calculator'],
+    logicModule: './tools/pond-volume-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

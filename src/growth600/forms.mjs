@@ -56,6 +56,7 @@ export function renderGrowthForm(toolId, copy) {
     'wall-framing-calculator': ['wallLength', 'wallHeight', 'wallUnit', 'spacing', 'spacingUnit', 'openingStart1', 'openingWidth1', 'breakBottomPlate1', 'openingStart2', 'openingWidth2', 'breakBottomPlate2', 'openingStart3', 'openingWidth3', 'breakBottomPlate3', 'topPlateRows', 'bottomPlateRows', 'accuracyNote'],
     'electricity-cost-calculator': ['ratePerKwh', 'billingDays', 'fixedCharge', 'currency', 'appliance1', 'applianceName1', 'power1', 'powerUnit1', 'quantity1', 'hours1', 'activeDays1', 'appliance2', 'applianceName2', 'power2', 'powerUnit2', 'quantity2', 'hours2', 'activeDays2', 'appliance3', 'applianceName3', 'power3', 'powerUnit3', 'quantity3', 'hours3', 'activeDays3', 'appliance4', 'applianceName4', 'power4', 'powerUnit4', 'quantity4', 'hours4', 'activeDays4', 'accuracyNote'],
     'compost-calculator': ['massUnit', 'targetMoisture', 'material1', 'name1', 'wetMass1', 'moisture1', 'carbon1', 'ratio1', 'material2', 'name2', 'wetMass2', 'moisture2', 'carbon2', 'ratio2', 'material3', 'name3', 'wetMass3', 'moisture3', 'carbon3', 'ratio3', 'material4', 'name4', 'wetMass4', 'moisture4', 'carbon4', 'ratio4', 'accuracyNote'],
+    'pond-volume-calculator': ['shape', 'length', 'width', 'diameter', 'dimensionUnit', 'averageDepth', 'maximumDepth', 'edgeOverlap', 'fillPercent', 'accuracyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -97,6 +98,7 @@ export function renderGrowthForm(toolId, copy) {
     'wall-framing-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'centimeters', 'millimeters', 'inches'],
     'electricity-cost-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'watts', 'kilowatts'],
     'compost-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilograms', 'pounds'],
+    'pond-volume-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'rectangle', 'circle', 'oval', 'meters', 'feet'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -625,6 +627,20 @@ export function renderGrowthForm(toolId, copy) {
       ${label(`material-carbon-${index}`, fields[`carbon${index}`], `<input id="material-carbon-${index}" name="carbon${index}" type="number" min="0.01" max="100" step="any" inputmode="decimal">`)}
       ${label(`material-ratio-${index}`, fields[`ratio${index}`], `<input id="material-ratio-${index}" name="ratio${index}" type="number" min="0.1" max="1000" step="any" inputmode="decimal">`)}
     </fieldset>`).join('')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'pond-volume-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('pond-shape', fields.shape, `<select id="pond-shape" name="shape" data-pond-shape><option value="rectangle">${escapeGrowthHtml(labels.rectangle)}</option><option value="circle">${escapeGrowthHtml(labels.circle)}</option><option value="oval">${escapeGrowthHtml(labels.oval)}</option></select>`)}
+    ${label('pond-unit', fields.dimensionUnit, `<select id="pond-unit" name="dimensionUnit"><option value="m">${escapeGrowthHtml(labels.meters)}</option><option value="ft">${escapeGrowthHtml(labels.feet)}</option></select>`)}
+    <div data-pond-dimensions="rectangle">${label('pond-length', fields.length, '<input id="pond-length" name="length" type="number" min="0.1" max="100000" step="any" inputmode="decimal">')}${label('pond-width', fields.width, '<input id="pond-width" name="width" type="number" min="0.1" max="100000" step="any" inputmode="decimal">')}</div>
+    <div data-pond-dimensions="oval" hidden>${label('pond-oval-length', fields.length, '<input id="pond-oval-length" name="ovalLength" type="number" min="0.1" max="100000" step="any" inputmode="decimal">')}${label('pond-oval-width', fields.width, '<input id="pond-oval-width" name="ovalWidth" type="number" min="0.1" max="100000" step="any" inputmode="decimal">')}</div>
+    <div data-pond-dimensions="circle" hidden>${label('pond-diameter', fields.diameter, '<input id="pond-diameter" name="diameter" type="number" min="0.1" max="100000" step="any" inputmode="decimal">')}</div>
+    ${label('pond-average-depth', fields.averageDepth, '<input id="pond-average-depth" name="averageDepth" type="number" min="0.01" max="100000" step="any" inputmode="decimal">')}
+    ${label('pond-maximum-depth', fields.maximumDepth, '<input id="pond-maximum-depth" name="maximumDepth" type="number" min="0.01" max="100000" step="any" inputmode="decimal">')}
+    ${label('pond-overlap', fields.edgeOverlap, '<input id="pond-overlap" name="edgeOverlap" type="number" min="0" max="100000" step="any" inputmode="decimal">')}
+    ${label('pond-fill', fields.fillPercent, '<input id="pond-fill" name="fillPercent" type="number" min="1" max="100" step="any" inputmode="decimal" value="100">')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

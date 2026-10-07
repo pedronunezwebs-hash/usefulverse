@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 38/323; **285 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 39/323; **284 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -399,7 +399,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 38/323; **285 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost y Compost Calculator están en la rama; Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost y Compost tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 39/323; **284 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost y Pond Volume Calculator están en la rama; Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost y Pond Volume tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.
 
 ## Continuación · Rafter Calculator (#126) · 2026-10-08
@@ -481,3 +481,14 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [x] B — forms, locale-contract, builder sintético y bundle cubiertos por pruebas; `git diff --check` ejecutado antes del checkpoint.
 - [ ] E/X visual — falta navegador, móvil y RTL; no se ha hecho inspección visual.
 - [ ] P/S — sin merge/deploy, sin cambio en sitemap de producción ni envío a buscadores; traducción específica, QA visual y gates coordinados siguen pendientes. No se ejecutó PageSpeed/Lighthouse.
+
+## Continuación · Pond Volume Calculator (#177) · 2026-10-08
+
+- [x] C — candidata #39/323, para estanques de jardín, distinta de `pool-volume-calculator` (piscinas). Intenciones `pond volume calculator` (2.900 búsquedas/mes US/en, KD 0; CPC 0,66 USD) y `pond liner calculator` (1.000/mes, KD 0), según el plan existente; sin llamadas nuevas a DataForSEO.
+- [x] F — formas rectangular, circular y oval; capacidad geométrica por área de planta × profundidad media; volumen a nivel de llenado configurable; lámina rectangular mínima estimada con la profundidad máxima aplicada a todo el perímetro más el solape elegido por borde. Muestra litros, galones US/imperiales y dimensiones/área de lámina en m/ft.
+- [x] E — aceptación: rectángulo 5 × 3 m, profundidad media 0,6 m, máxima 0,8 m, solape 0,3 m y llenado 90% → 9 m³ geométricos, 8,1 m³ de agua y lámina 7,2 × 5,2 m. Pruebas confirman mayor profundidad media ⇒ más volumen, mayor máxima ⇒ lámina mayor; también círculo, óvalo, unidades y límites. Suite Growth600 focal: **123/123 aprobadas**.
+- [x] X — advierte que no modela taludes, repisas, rocas, pliegues, anclaje ni reglas del proveedor; no es plano constructivo ni calcula tratamiento de agua. No requiere API ni procesa datos en servidor.
+- [x] L — inglés completo; borradores estructurales en otros 35 idiomas quedan en `pending-tool-specific-translation`, por lo que no pasan el gate de publicación.
+- [x] B — controlador, formulario, catálogos de locales, builder y bundle incluidos en pruebas. `git diff --check` pasó sin errores.
+- [ ] E/X visual — falta revisión del formulario/ejemplo en navegador, móvil y RTL.
+- [ ] P/S — no merge/deploy, sitemap de producción sin cambios ni envío a buscadores. Faltan traducciones, QA visual y gates de release globales; no se ejecutó PageSpeed/Lighthouse.

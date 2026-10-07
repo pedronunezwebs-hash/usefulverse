@@ -25,6 +25,7 @@ import { calculateInsulation } from './insulation-calculator/logic.mjs';
 import { calculateWallFraming } from './wall-framing-calculator/logic.mjs';
 import { calculateElectricityCost } from './electricity-cost-calculator/logic.mjs';
 import { calculateCompostMix } from './compost-calculator/logic.mjs';
+import { calculatePond } from './pond-volume-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -575,4 +576,27 @@ test('compost mix derives carbon and nitrogen from dry matter and estimates mois
   assert.ok(dryTarget.waterToRemoveKg > 0);
   assert.throws(() => calculateCompostMix({ massUnit: 'ton', materials: [{ wetMass: 10, moisturePercent: 20, carbonPercent: 45, carbonNitrogenRatio: 30 }] }), /Choose kilograms/u);
   assert.throws(() => calculateCompostMix({ materials: [{ name: 'Leaves' }] }), /Complete every value/u);
+});
+
+test('pond volume separates average-depth water capacity from maximum-depth liner sizing', () => {
+  const example = calculatePond({ shape: 'rectangle', length: 5, width: 3, dimensionUnit: 'm', averageDepth: 0.6, maximumDepth: 0.8, edgeOverlap: 0.3, fillPercent: 90 });
+  assert.equal(example.footprintM2, 15);
+  assert.equal(example.geometricCapacityM3, 9);
+  assert.equal(example.filledVolumeM3, 8.1);
+  assert.equal(example.liters, 8100);
+  assert.ok(Math.abs(example.linerLength - 7.2) < 1e-12);
+  assert.ok(Math.abs(example.linerWidth - 5.2) < 1e-12);
+  assert.ok(Math.abs(example.linerArea - 37.44) < 1e-12);
+  const deeperWater = calculatePond({ shape: 'rectangle', length: 5, width: 3, dimensionUnit: 'm', averageDepth: 1, maximumDepth: 1, edgeOverlap: 0.3 });
+  assert.ok(deeperWater.filledVolumeM3 > example.filledVolumeM3);
+  const deeperLiner = calculatePond({ shape: 'rectangle', length: 5, width: 3, dimensionUnit: 'm', averageDepth: 0.6, maximumDepth: 1, edgeOverlap: 0.3, fillPercent: 90 });
+  assert.ok(deeperLiner.linerLength > example.linerLength);
+  const circle = calculatePond({ shape: 'circle', diameter: 4, dimensionUnit: 'm', averageDepth: 1, maximumDepth: 1.5, edgeOverlap: 0.25 });
+  assert.ok(Math.abs(circle.footprintM2 - Math.PI * 4) < 1e-12);
+  assert.equal(circle.linerLength, 7.5);
+  const oval = calculatePond({ shape: 'oval', length: 10, width: 4, dimensionUnit: 'm', averageDepth: 1, maximumDepth: 1, edgeOverlap: 0 });
+  assert.ok(Math.abs(oval.footprintM2 - Math.PI * 10) < 1e-12);
+  assert.throws(() => calculatePond({ shape: 'rectangle', length: 5, width: 3, dimensionUnit: 'm', averageDepth: 1, maximumDepth: 0.8 }), /cannot be less/u);
+  assert.throws(() => calculatePond({ shape: 'triangle', dimensionUnit: 'm' }), /Choose a rectangular/u);
+  assert.throws(() => calculatePond({ shape: 'circle', diameter: 4, dimensionUnit: 'yd', averageDepth: 1, maximumDepth: 1 }), /Choose meters/u);
 });
