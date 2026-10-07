@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 35/323; **288 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 36/323; **287 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -399,7 +399,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 35/323; **288 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed e Insulation Calculator están en la rama; Rafter, Carpet, Aquarium, Grass Seed e Insulation tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 36/323; **287 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation y Wall Framing Calculator están en la rama; Rafter, Carpet, Aquarium, Grass Seed, Insulation y Wall Framing tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.
 
 ## Continuación · Rafter Calculator (#126) · 2026-10-08
@@ -448,3 +448,14 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [x] L — inglés completo y borradores estructurales para los otros 35 idiomas, marcados `pending-tool-specific-translation`; release gate los bloquea, sin hacer pasar texto inglés por traducción terminada.
 - [x] B — controlador y builder sintético incluidos en pruebas; bundle pasa el presupuesto compartido. `git diff --check` limpio. No se ha realizado revisión visual en navegador.
 - [ ] P/S — sin merge ni deploy, sitemap de producción sin cambios, sin envío a buscadores. Traducciones específicas, revisión visual y gates globales siguen pendientes.
+
+## Continuación · Wall Framing Calculator (#153) · 2026-10-08
+
+- [x] C — candidata #36/323, para estimar montantes y placas de una pared recta; distinta de `drywall-calculator` (placas de yeso) y `deck-calculator` (tarima). Intenciones: `stud calculator`, `wall framing calculator`, `wall stud spacing calculator`, `wall plate material calculator`. No se consultó DataForSEO.
+- [x] F — cálculo local de posiciones distribuidas para no superar la separación máxima indicada; admite pared en m/ft, separación en m/cm/mm/ft/in, hasta tres huecos con posiciones explícitas desde el extremo izquierdo, marca opcional para huecos que interrumpen la placa inferior, y número de filas de placas superior/inferior. Cuenta extremos de pared y bordes de los huecos; estima metros lineales de material.
+- [x] E — caso de aceptación probado: pared 8 × 8 ft, separación máxima 16 in y hueco entre 2–5 ft marcado como corte de placa produce posiciones `[0, 1, 2, 5, 6, 7, 8]`, 7 montantes, 56 ft de montante, 16 ft de placa superior y 5 ft de placa inferior. El mismo hueco sin marcar como corte conserva los 8 ft de placa inferior. Se corrigió un residuo de coma flotante visible (`6.999999999999999`) redondeando las posiciones convertidas a 9 decimales. La suite Growth600 focal pasó **114/114**.
+- [x] X — rechaza huecos incompletos, solapados o que toquen/dejen sin apoyo los extremos; limita entradas. El aviso delimita que no calcula cargaderos, montantes king/jack, dinteles, refuerzos, cargas, cortes comerciales ni cumplimiento normativo. No es un plano estructural.
+- [x] L — texto inglés completo; las otras 35 versiones son borradores estructurales `pending-tool-specific-translation` y la puerta de salida bloquea publicarlas como traducciones completas.
+- [x] B — formulario, controlador y módulo aparecen cubiertos por los tests focales del catálogo, formulario, localización, builder y bundle; `git diff --check` pasó sin errores.
+- [ ] E/X visual — falta recorrer el flujo en navegador y revisar móvil/RTL; los tests de lógica no sustituyen esa inspección.
+- [ ] P/S — sin merge ni deploy; sitemap de producción intacto y sin envíos a buscadores. Los gates globales C/F/E/X/L/B/P/S y las traducciones específicas siguen pendientes; no ejecutar PageSpeed/Lighthouse.

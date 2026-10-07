@@ -104,6 +104,11 @@ const copies = {
     messages: { ...messages, layerTotal: 'Layers included', totalR: 'Total US resistance', totalRsi: 'Total metric resistance', uFactorUs: 'U-factor US', uFactorSi: 'U-factor SI' },
     fields: { unit: 'Input unit', layerName1: 'Layer 1 name', layerResistance1: 'Layer 1 resistance', layerQuantity1: 'Layer 1 quantity', layerName2: 'Layer 2 name', layerResistance2: 'Layer 2 resistance', layerQuantity2: 'Layer 2 quantity', layerName3: 'Layer 3 name', layerResistance3: 'Layer 3 resistance', layerQuantity3: 'Layer 3 quantity', layerName4: 'Layer 4 name', layerResistance4: 'Layer 4 resistance', layerQuantity4: 'Layer 4 quantity', accuracyNote: 'Series layer estimate only.' },
   },
+  'wall-framing-calculator': {
+    name: 'Wall framing calculator', actions: { ...actions, meters: 'Metres', feet: 'Feet', centimeters: 'Centimetres', millimeters: 'Millimetres', inches: 'Inches' },
+    messages: { ...messages, studCount: 'Stud count', studPositions: 'Positions', studLinearLength: 'Stud material', openings: 'Openings', topPlateMaterial: 'Top plates', bottomPlateMaterial: 'Bottom plates', totalPlateMaterial: 'Plate total', rows: 'rows' },
+    fields: { wallLength: 'Wall length', wallHeight: 'Wall height', wallUnit: 'Wall unit', spacing: 'Stud spacing', spacingUnit: 'Spacing unit', openingStart1: 'Opening 1 position', openingWidth1: 'Opening 1 width', breakBottomPlate1: 'Opening interrupts bottom plate', openingStart2: 'Opening 2 position', openingWidth2: 'Opening 2 width', breakBottomPlate2: 'Opening interrupts bottom plate', openingStart3: 'Opening 3 position', openingWidth3: 'Opening 3 width', breakBottomPlate3: 'Opening interrupts bottom plate', topPlateRows: 'Top plate rows', bottomPlateRows: 'Bottom plate rows', accuracyNote: 'Estimate only; not structural design.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -235,6 +240,12 @@ test('mulch form exposes accessible bed geometry, multiple-bed count, units, bag
   assert.match(html, /data-mulch-dimensions="circle" hidden/u);
   assert.match(html, /data-action="example"/u);
   assert.match(html, /aria-live="polite" data-status/u);
+});
+
+test('wall framing form makes doorway plate breaks an explicit localized choice', () => {
+  const html = renderGrowthForm('wall-framing-calculator', copies['wall-framing-calculator']);
+  for (const index of [1, 2, 3]) assert.match(html, new RegExp(`name="breakBottomPlate${index}" type="checkbox"`, 'u'));
+  assert.match(html, /Opening interrupts bottom plate/u);
 });
 
 test('weight scenario form explains its limits and collects explicit local inputs', () => {

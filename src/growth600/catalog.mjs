@@ -419,6 +419,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['drywall-calculator', 'roofing-calculator'],
     logicModule: './tools/insulation-calculator/logic.mjs',
   },
+  {
+    id: 'wall-framing-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'stud calculator',
+    secondaryIntents: ['wall framing calculator', 'wall stud spacing calculator', 'wall plate material calculator'],
+    functions: ['estimate stud positions along a straight wall using the entered maximum spacing', 'place supported positions at both wall ends and the edges of up to three positioned openings', 'calculate stud and top/bottom plate linear material using entered row counts', 'accept separate units for wall dimensions and stud spacing'],
+    acceptance: 'Stud positions always include both wall endpoints; an entered opening splits the run and its two edge positions are included.',
+    boundary: 'Quantity-planning estimate for one straight wall only. It does not size headers, king/jack studs, sills, cripple studs, corners, intersections, bracing, connections, loads, fasteners, stock cuts or code compliance. Follow local requirements and have a qualified professional review structural plans. Does not generate a construction-ready framing plan. All calculations run in this browser.',
+    relatedExistingIds: ['drywall-calculator', 'deck-calculator'],
+    logicModule: './tools/wall-framing-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

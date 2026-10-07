@@ -53,6 +53,7 @@ export function renderGrowthForm(toolId, copy) {
     'aquarium-calculator': ['length', 'width', 'height', 'dimensionUnit', 'substrateDepth', 'substrateSolidPercent', 'airGap', 'accuracyNote'],
     'grass-seed-calculator': ['area', 'areaUnit', 'seedingRate', 'rateUnit', 'wastePercent', 'varietyA', 'percentA', 'varietyB', 'percentB', 'bagSize', 'bagUnit', 'accuracyNote'],
     'insulation-calculator': ['unit', 'layerName1', 'layerResistance1', 'layerQuantity1', 'layerName2', 'layerResistance2', 'layerQuantity2', 'layerName3', 'layerResistance3', 'layerQuantity3', 'layerName4', 'layerResistance4', 'layerQuantity4', 'accuracyNote'],
+    'wall-framing-calculator': ['wallLength', 'wallHeight', 'wallUnit', 'spacing', 'spacingUnit', 'openingStart1', 'openingWidth1', 'breakBottomPlate1', 'openingStart2', 'openingWidth2', 'breakBottomPlate2', 'openingStart3', 'openingWidth3', 'breakBottomPlate3', 'topPlateRows', 'bottomPlateRows', 'accuracyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -91,6 +92,7 @@ export function renderGrowthForm(toolId, copy) {
     'aquarium-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'feet', 'inches', 'liters', 'usGallons', 'imperialGallons'],
     'grass-seed-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'm2', 'ft2', 'acre', 'gM2', 'lb1000ft2', 'kg', 'lb'],
     'insulation-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'R', 'RSI'],
+    'wall-framing-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'centimeters', 'millimeters', 'inches'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -571,6 +573,23 @@ export function renderGrowthForm(toolId, copy) {
       ${label(`insulation-value-${index}`, fields[`layerResistance${index}`], `<input id="insulation-value-${index}" name="layerResistance${index}" type="number" min="0" max="1000" step="any" inputmode="decimal" ${index <= 2 ? `value="${index}"` : ''}>`)}
       ${label(`insulation-quantity-${index}`, fields[`layerQuantity${index}`], `<input id="insulation-quantity-${index}" name="layerQuantity${index}" type="number" min="1" max="100" step="1" inputmode="numeric" value="1" required>`)}
     </fieldset>`).join('')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'wall-framing-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('wall-length', fields.wallLength, '<input id="wall-length" name="wallLength" type="number" min="0.1" max="100000" step="any" inputmode="decimal" value="8" required>')}
+    ${label('wall-height', fields.wallHeight, '<input id="wall-height" name="wallHeight" type="number" min="0.1" max="100" step="any" inputmode="decimal" value="8" required>')}
+    ${label('wall-unit', fields.wallUnit, `<select id="wall-unit" name="wallUnit"><option value="ft">${escapeGrowthHtml(labels.feet)}</option><option value="m">${escapeGrowthHtml(labels.meters)}</option></select>`)}
+    ${label('stud-spacing', fields.spacing, '<input id="stud-spacing" name="spacing" type="number" min="0.01" max="100000" step="any" inputmode="decimal" value="16" required>')}
+    ${label('stud-spacing-unit', fields.spacingUnit, `<select id="stud-spacing-unit" name="spacingUnit"><option value="in">${escapeGrowthHtml(labels.inches)}</option><option value="mm">${escapeGrowthHtml(labels.millimeters)}</option><option value="cm">${escapeGrowthHtml(labels.centimeters)}</option><option value="ft">${escapeGrowthHtml(labels.feet)}</option><option value="m">${escapeGrowthHtml(labels.meters)}</option></select>`)}
+    ${[1, 2, 3].map((index) => `<fieldset><legend>${escapeGrowthHtml(fields[`openingStart${index}`])}</legend>
+      ${label(`opening-start-${index}`, fields[`openingStart${index}`], `<input id="opening-start-${index}" name="openingStart${index}" type="number" min="0" max="100000" step="any" inputmode="decimal">`)}
+      ${label(`opening-width-${index}`, fields[`openingWidth${index}`], `<input id="opening-width-${index}" name="openingWidth${index}" type="number" min="0.01" max="100000" step="any" inputmode="decimal">`)}
+      <label><input name="breakBottomPlate${index}" type="checkbox"> ${escapeGrowthHtml(fields[`breakBottomPlate${index}`])}</label>
+    </fieldset>`).join('')}
+    ${label('top-plate-rows', fields.topPlateRows, '<input id="top-plate-rows" name="topPlateRows" type="number" min="1" max="5" step="1" inputmode="numeric" value="2" required>')}
+    ${label('bottom-plate-rows', fields.bottomPlateRows, '<input id="bottom-plate-rows" name="bottomPlateRows" type="number" min="0" max="3" step="1" inputmode="numeric" value="1" required>')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

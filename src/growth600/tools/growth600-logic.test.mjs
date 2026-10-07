@@ -22,6 +22,7 @@ import { calculateCarpet } from './carpet-calculator/logic.mjs';
 import { calculateAquarium } from './aquarium-calculator/logic.mjs';
 import { calculateGrassSeed } from './grass-seed-calculator/logic.mjs';
 import { calculateInsulation } from './insulation-calculator/logic.mjs';
+import { calculateWallFraming } from './wall-framing-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -497,4 +498,25 @@ test('insulation adds series layers, quantity and converts R/RSI with reciprocal
   assert.throws(() => calculateInsulation({ layers: [{ resistance: 2, quantity: 1.5 }] }), /allowed range/u);
   assert.throws(() => calculateInsulation({ layers: [{ resistance: 0 }] }), /above zero/u);
   assert.throws(() => calculateInsulation({ unit: 'Rsi', layers: [{ resistance: 2 }] }), /Choose R or RSI/u);
+});
+
+test('wall framing includes both endpoints and positioned opening edges, with plate lengths', () => {
+  const result = calculateWallFraming({ wallLength: 8, wallHeight: 8, wallUnit: 'ft', spacing: 16, spacingUnit: 'in', openings: [{ start: 2, width: 3, breaksBottomPlate: true }] });
+  assert.equal(result.studCount, 7);
+  assert.deepEqual(result.studPositions, [0, 1, 2, 5, 6, 7, 8]);
+  assert.equal(result.studLinearLength, 56);
+  assert.equal(result.topPlateLength, 16);
+  assert.equal(result.bottomPlateLength, 5);
+  assert.equal(result.totalPlateLength, 21);
+  assert.equal(result.openingCount, 1);
+  const windowOpening = calculateWallFraming({ wallLength: 8, wallHeight: 8, wallUnit: 'ft', spacing: 16, spacingUnit: 'in', openings: [{ start: 2, width: 3 }] });
+  assert.equal(windowOpening.bottomPlateLength, 8);
+  const metric = calculateWallFraming({ wallLength: 3, wallHeight: 2.4, wallUnit: 'm', spacing: 600, spacingUnit: 'mm', topPlateRows: 2, bottomPlateRows: 0 });
+  assert.equal(metric.studPositions[0], 0);
+  assert.equal(metric.studPositions.at(-1), 3);
+  assert.equal(metric.bottomPlateLength, 0);
+  assert.ok(metric.studPositions.slice(1).every((position, index) => position - metric.studPositions[index] <= 0.6000001));
+  assert.throws(() => calculateWallFraming({ wallLength: 8, wallHeight: 8, spacing: 16, spacingUnit: 'in', openings: [{ start: 2, width: 4 }, { start: 5, width: 1 }] }), /overlap/u);
+  assert.throws(() => calculateWallFraming({ wallLength: 8, wallHeight: 8, spacing: 16, spacingUnit: 'in', openings: [{ start: 2, width: null }] }), /both the start and width/u);
+  assert.throws(() => calculateWallFraming({ wallLength: 8, wallHeight: 8, spacing: 16, spacingUnit: 'in', openings: [{ start: 0, width: 3 }] }), /leave wall at both ends/u);
 });
