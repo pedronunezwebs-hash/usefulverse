@@ -34,6 +34,7 @@ export function renderGrowthForm(toolId, copy) {
     'gravel-calculator': ['shape', 'depth', 'length', 'width', 'diameter', 'base', 'triangleHeight', 'dimensionUnit', 'depthUnit', 'density', 'densityUnit', 'waste', 'bagSize', 'bagUnit'],
     'molar-mass-calculator': ['formula'],
     'molarity-calculator': ['mode', 'moles', 'molarity', 'volume', 'volumeUnit', 'molarMass', 'accuracyNote'],
+    'dilution-calculator': ['mode', 'directMode', 'serialMode', 'stockConcentration', 'targetConcentration', 'finalVolume', 'volumeUnit', 'steps', 'accuracyNote'],
     'auto-loan-refinance-calculator': ['balance', 'currentApr', 'currentMonths', 'newApr', 'newMonths', 'fees', 'feeTreatment'],
     'secret-santa-generator': ['names', 'exclusions'],
     'tire-size-calculator': ['originalSize', 'replacementSize', 'indicatedSpeed', 'speedUnit', 'fitmentNote'],
@@ -90,6 +91,7 @@ export function renderGrowthForm(toolId, copy) {
     'gravel-calculator': ['calculate', 'reset', 'copy', 'result', 'rectangle', 'circle', 'triangle', 'meters', 'centimeters', 'feet', 'inches', 'kgPerCubicMeter', 'lbPerCubicFoot', 'kilograms', 'pounds'],
     'molar-mass-calculator': ['calculate', 'reset', 'example', 'copy', 'result'],
     'molarity-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'milliliters'],
+    'dilution-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'milliliters'],
     'auto-loan-refinance-calculator': ['calculate', 'reset', 'copy', 'result'],
     'secret-santa-generator': ['generate', 'reset', 'copy', 'download', 'result', 'reveal', 'next', 'privacyNote'],
     'tire-size-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kmh', 'mph'],
@@ -829,6 +831,17 @@ export function renderGrowthForm(toolId, copy) {
     <div class="field" data-molarity-fields="molarity">${label('molarity-value', fields.molarity, '<input id="molarity-value" name="molarity" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="0.5">')}</div>
     <div class="field" data-molarity-fields="volume">${label('molarity-volume', fields.volume, '<input id="molarity-volume" name="volume" type="number" min="0" max="1000000000000" step="any" inputmode="decimal" value="2">')}<label for="molarity-volume-unit">${escapeGrowthHtml(fields.volumeUnit)}</label><select id="molarity-volume-unit" name="volumeUnit"><option value="L">${escapeGrowthHtml(labels.liters)}</option><option value="mL">${escapeGrowthHtml(labels.milliliters)}</option></select></div>
     <div class="field" data-molarity-fields="molarMass">${label('molarity-molar-mass', fields.molarMass, '<input id="molarity-molar-mass" name="molarMass" type="number" min="0.00000000000000000000000000000000000000000000000001" max="1000000000" step="any" inputmode="decimal" value="58.44">')}</div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'dilution-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('dilution-mode', fields.mode, `<select id="dilution-mode" name="mode"><option value="direct">${escapeGrowthHtml(fields.directMode)}</option><option value="serial">${escapeGrowthHtml(fields.serialMode)}</option></select>`)}
+    ${label('dilution-stock-concentration', fields.stockConcentration, '<input id="dilution-stock-concentration" name="stockConcentration" type="number" min="0" step="any" inputmode="decimal" value="10" required>')}
+    ${label('dilution-target-concentration', fields.targetConcentration, '<input id="dilution-target-concentration" name="targetConcentration" type="number" min="0" step="any" inputmode="decimal" value="2" required>')}
+    ${label('dilution-final-volume', fields.finalVolume, '<input id="dilution-final-volume" name="finalVolume" type="number" min="0" step="any" inputmode="decimal" value="1" required>')}
+    ${label('dilution-volume-unit', fields.volumeUnit, `<select id="dilution-volume-unit" name="volumeUnit"><option value="L">${escapeGrowthHtml(labels.liters)}</option><option value="mL">${escapeGrowthHtml(labels.milliliters)}</option></select>`)}
+    <div class="field" data-dilution-steps hidden>${label('dilution-steps', fields.steps, '<input id="dilution-steps" name="steps" type="number" min="1" max="20" step="1" inputmode="numeric" value="3" required>')}</div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

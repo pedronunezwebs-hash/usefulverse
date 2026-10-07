@@ -194,6 +194,11 @@ const copies = {
     messages: { ...messages, concentrationResult: 'Solution concentration', molesResult: 'Amount of solute', volumeResult: 'Total solution volume', soluteMassResult: 'Solute mass', soluteForSolutionResult: 'Solute mass for target solution', finalVolume: 'Target final solution volume' },
     fields: { mode: 'Calculation', concentrationMode: 'Molarity from moles and solution volume', molesMode: 'Moles from molarity and solution volume', volumeMode: 'Solution volume from moles and molarity', soluteMassMode: 'Solute mass from concentration', prepareMode: 'Prepare a target solution', moles: 'Moles', molarity: 'Molarity', volume: 'Total solution volume', volumeUnit: 'Volume unit', molarMass: 'Molar mass', accuracyNote: 'Use total final solution volume.' },
   },
+  'dilution-calculator': {
+    name: 'Dilution calculator', actions: { ...actions, liters: 'Liters', milliliters: 'Milliliters' },
+    messages: { ...messages, stockAliquot: 'Stock volume', diluent: 'Diluent volume', dilutionFactor: 'Dilution factor', steps: 'Step count', perStepFactor: 'Factor per step', transferVolume: 'Transfer volume', totalDilutionFactor: 'Total factor' },
+    fields: { mode: 'Mode', directMode: 'Direct', serialMode: 'Serial', stockConcentration: 'Stock concentration', targetConcentration: 'Target concentration', finalVolume: 'Final volume', volumeUnit: 'Volume unit', steps: 'Number of steps', accuracyNote: 'Math only.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -267,6 +272,11 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   for (const mode of ['concentration', 'moles', 'volume', 'solute-mass', 'prepare-solution']) assert.match(molarity, new RegExp(`value="${mode}"`, 'u'));
   assert.match(molarity, /data-molarity-fields="molarMass"/u);
   assert.match(molarity, /data-action="copy"/u);
+  const dilution = renderGrowthForm('dilution-calculator', copies['dilution-calculator']);
+  for (const name of ['mode', 'stockConcentration', 'targetConcentration', 'finalVolume', 'volumeUnit', 'steps']) assert.match(dilution, new RegExp(`name="${name}"`, 'u'));
+  assert.match(dilution, /data-dilution-steps hidden/u);
+  assert.match(dilution, /value="serial"/u);
+  assert.match(dilution, /data-action="copy"/u);
   const asphalt = renderGrowthForm('asphalt-calculator', copies['asphalt-calculator']);
   assert.match(asphalt, /name="compactedThickness"/u);
   assert.match(asphalt, /name="pricePerTonne"/u);

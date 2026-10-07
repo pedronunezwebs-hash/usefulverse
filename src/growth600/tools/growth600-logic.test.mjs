@@ -40,6 +40,7 @@ import { calculateHeatPump } from './heat-pump-calculator/logic.mjs';
 import { calculateMiterAngles } from './miter-angle-calculator/logic.mjs';
 import { calculateVoltageDrop } from './voltage-drop-calculator/logic.mjs';
 import { calculateMolarity } from './molarity-calculator/logic.mjs';
+import { calculateDilution } from './dilution-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -898,6 +899,22 @@ test('molarity calculator solves concentration, amount, volume and preparation m
   assert.throws(() => calculateMolarity({ mode: 'concentration', moles: 1, volume: 0 }), /allowed range/u);
   assert.throws(() => calculateMolarity({ mode: 'solute-mass', molarity: 1, volume: 1, molarMass: 0 }), /allowed range/u);
   assert.throws(() => calculateMolarity({ mode: 'concentration', moles: 1, volume: 1, volumeUnit: 'gallon' }), /Choose liters/u);
+});
+
+test('dilution calculator solves direct and equal serial dilution volumes with explicit bounds', () => {
+  const direct = calculateDilution({ mode: 'direct', stockConcentration: 10, targetConcentration: 2, finalVolume: 1, volumeUnit: 'L' });
+  assert.equal(direct.stockVolume, 0.2);
+  assert.equal(direct.diluentVolume, 0.8);
+  assert.equal(direct.dilutionFactor, 5);
+  const serial = calculateDilution({ mode: 'serial', stockConcentration: 1000, targetConcentration: 1, finalVolume: 10, volumeUnit: 'mL', steps: 3 });
+  assert.equal(serial.totalDilutionFactor, 1000);
+  assert.ok(Math.abs(serial.perStepFactor - 10) < 1e-12);
+  assert.ok(Math.abs(serial.transferVolume - 1) < 1e-12);
+  assert.ok(Math.abs(serial.diluentVolume - 9) < 1e-12);
+  assert.throws(() => calculateDilution({ stockConcentration: 1, targetConcentration: 2, finalVolume: 10 }), /cannot exceed/u);
+  assert.throws(() => calculateDilution({ mode: 'serial', stockConcentration: 10, targetConcentration: 1, finalVolume: 10, steps: 2.5 }), /whole number/u);
+  assert.throws(() => calculateDilution({ stockConcentration: 10, targetConcentration: 1, finalVolume: 10, volumeUnit: 'gallon' }), /Choose liters/u);
+  assert.throws(() => calculateDilution({ mode: 'unsupported', stockConcentration: 10, targetConcentration: 1, finalVolume: 10 }), /Choose direct/u);
 });
 
 test('heat pump calculator rejects invalid units, COP, hours, tariff and currency', () => {

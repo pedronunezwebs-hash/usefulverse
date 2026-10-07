@@ -1025,10 +1025,10 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [ ] **C/F/E/X/L/B/P/S completos — `dilution-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/dilution-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `dilution calculator` — 14.800 búsquedas/mes US/en, KD 16; nivel A. CPC 5.58 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Dilución, serie de pasos y volúmenes finales
-- **Prueba de aceptación específica:** 10M por1L para2M exige5L final
+- **Función mínima y ampliaciones útiles:** modo directo `C₁V₁=C₂V₂` con alícuota de stock, volumen final y diluyente idealizado; modo de serie que divide un factor total en pasos iguales y muestra alícuota/diluyente por paso. Concentraciones en la misma unidad elegida y volúmenes L/mL.
+- **Prueba de aceptación específica:** stock 10 M → objetivo 2 M y 1 L final requiere 0,2 L de stock + 0,8 L de diluyente (asumiendo aditividad); factor total 10× repartido en 3 pasos da factor por paso `10^(1/3)`.
 - **Frontera con otras herramientas:** molarity-calculator: misma familia; flujo de dilución por serie distinto. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** motor local acotado; rechazar objetivo mayor que stock, volúmenes no positivos y pasos fraccionarios o >20. La serie calcula factores/volúmenes matemáticos, no un procedimiento de laboratorio. Concentraciones deben estar en unidades consistentes; volumen de diluyente es estimado y asume mezcla ideal con volúmenes aditivos. Sin pureza, compatibilidad, temperatura, incertidumbre ni peligros. Seguir el patrón de familia y gates globales.
 - **Consultas secundarias del mismo propietario:**
   - `c1v1 c2v2 calculator` — 880/mes US/en; KD 0.
   - `dilution calculator free online`; `dilution calculator with example`; `dilution calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

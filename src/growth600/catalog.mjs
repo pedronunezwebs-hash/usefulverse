@@ -264,6 +264,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/molarity-calculator/logic.mjs',
   },
   {
+    id: 'dilution-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'dilution calculator',
+    secondaryIntents: ['c1v1 c2v2 calculator', 'serial dilution calculator', 'stock solution dilution calculator'],
+    functions: ['solve stock aliquot and idealized diluent volume for a direct C1V1=C2V2 dilution', 'split a total dilution factor into equal serial steps and calculate per-step transfer and diluent volumes', 'support consistent user-selected concentration units and L/mL volume units with explicit assumptions'],
+    acceptance: '10 M stock to 2 M target at 1 L final volume yields 0.2 L stock and 0.8 L diluent; three equal serial steps for 10× total dilution use per-step factor 10^(1/3).',
+    boundary: 'Educational arithmetic only, not a laboratory protocol or safety advice. Concentration units must match. Assumes ideal additive volumes; does not model stock purity, density, compatibility, heat, measurement uncertainty or chemical hazards. Follow the chemical safety documentation and qualified laboratory procedures.',
+    relatedExistingIds: ['molarity-calculator'],
+    logicModule: './tools/dilution-calculator/logic.mjs',
+  },
+  {
     id: 'miter-angle-calculator',
     category: 'home-materials',
     type: 'calculator',

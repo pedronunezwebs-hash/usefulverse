@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 53/323; **270 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 54/323; **269 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -632,3 +632,13 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — fuente completa en inglés; 35 borradores de idiomas aún pendientes y bloqueados por el gate de producción.
 - [ ] X/E visual — falta recorrido real en navegador, móvil y RTL; las pruebas automatizadas no equivalen a inspección visual.
 - [ ] P/S — no merge/deploy, sitemap productivo sin cambios ni avisos a buscadores; sin PageSpeed/Lighthouse. Gates globales siguen abiertos.
+
+## Continuación · Dilution Calculator (#087) · 2026-10-08
+
+- [x] C/F — candidata #54/323, distinta de Molarity: resuelve C₁V₁=C₂V₂ y series de dilución, no concentración genérica. El plan registra `dilution calculator` 14.800 búsquedas US/en, KD 16, CPC 5,58 USD (no CPM); `c1v1 c2v2 calculator` 880/mes, KD 0. Sin consultas adicionales a DataForSEO.
+- [x] E/X — modo directo 10 M→2 M en 1 L: 0,2 L stock y 0,8 L diluyente; modo serial reparte un factor total de 1.000 en tres pasos iguales (factor 10 por paso), calculando transferencias y volumen idealizado. Rechaza concentraciones objetivo mayores que stock, volúmenes inválidos, unidad desconocida y pasos no enteros o fuera de 1–20. Precisa que es matemática, no un protocolo seguro de laboratorio.
+- [x] B — formulario estático local con modo directo/serie, campos de concentración y volumen, paso contextual, ejemplo, reset, copia, FAQ y estado accesible.
+- [x] E — suite focal catálogo/formulario/locales/render/build/bundles/lógica: **169/169 aprobadas**. Primer fallo fue una aserción de igualdad exacta con flotantes; cambiada a tolerancia numérica, sin redondear el motor.
+- [ ] L — inglés completo; 35 idiomas siguen como borradores bloqueados hasta localización específica.
+- [ ] X/E visual — revisión real de interacción, móvil y RTL pendiente.
+- [ ] P/S — no deploy ni sitemap productivo actualizado; no envíos a buscadores ni PageSpeed/Lighthouse. Permanecen los gates globales.
