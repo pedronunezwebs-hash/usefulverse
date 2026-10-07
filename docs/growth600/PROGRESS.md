@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 40/323; **283 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 41/323; **282 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -399,7 +399,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 40/323; **283 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume y Fertilizer Calculator están en la rama; Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume y Fertilizer tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 41/323; **282 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer y Baluster Spacing Calculator están en la rama; Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer y Baluster Spacing tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.
 
 ## Continuación · Rafter Calculator (#126) · 2026-10-08
@@ -492,6 +492,16 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [x] B — controlador, formulario, catálogos de locales, builder y bundle incluidos en pruebas. `git diff --check` pasó sin errores.
 - [ ] E/X visual — falta revisión del formulario/ejemplo en navegador, móvil y RTL.
 - [ ] P/S — no merge/deploy, sitemap de producción sin cambios ni envío a buscadores. Faltan traducciones, QA visual y gates de release globales; no se ejecutó PageSpeed/Lighthouse.
+
+## Continuación · Baluster Spacing Calculator (#192) · 2026-10-08
+
+- [x] C — candidata #41/323, especializada en repartir balaustres dentro de un vano y enlazada a `fence-calculator` sin duplicar su estimación general de cercado. La ficha del plan registra `baluster spacing calculator` con 2.400 búsquedas/mes US/en, KD 0; secundaria `spindle spacing calculator`, 480/mes. Sin consultas nuevas a DataForSEO.
+- [x] F/E — dos modos locales: hallar el mínimo número de piezas para un hueco máximo introducido por el usuario, o hallar el hueco uniforme dado un número fijo. Incluye huecos iguales en ambos extremos y unidades mm/cm/m/in/ft. Ejemplo: vano 1.200 mm, piezas de 40 mm, máximo de 100 mm → 8 piezas y 9 huecos de ≈97,778 mm; con 7 piezas el hueco sería 115 mm. La suma de anchos y huecos conserva el ancho del vano. Pruebas cubren modo fijo, métrico/imperial, sobrellenado, unidades/modo inválidos y límite de 1.000 piezas. Suite focal: **129/129 aprobadas**.
+- [x] X — aclara que es solo aritmética de distribución; no verifica código de barandillas, aberturas permitidas, cargas, resistencia, fijaciones ni seguridad. Recomienda revisar la normativa local y consultar a un profesional cualificado.
+- [x] B — formulario semántico con cambio de modo, ejemplo, reset, copia, resultado accesible y validación; renderer, catálogo, contrato de idioma, controller y builder de pruebas añadidos.
+- [ ] L — inglés completo; las otras 35 versiones son borradores `pending-tool-specific-translation`; el gate de publicación no las acepta.
+- [ ] E/X visual — falta comprobar el flujo en navegador, móvil y RTL; los tests no son revisión visual ni prueba en dispositivos físicos.
+- [ ] P/S — sin merge/deploy ni sitemap productivo actualizado y sin enviar URLs a buscadores. Los gates globales siguen abiertos; no se ejecutó PageSpeed/Lighthouse.
 
 ## Continuación · Fertilizer Calculator (#183) · 2026-10-08
 

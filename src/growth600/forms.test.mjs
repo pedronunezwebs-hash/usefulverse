@@ -129,6 +129,11 @@ const copies = {
     messages: { ...messages, productMass: 'Product mass', nitrogenMass: 'Nitrogen', phosphateMass: 'Phosphate', potashMass: 'Potash' },
     fields: { mode: 'Mode', productMode: 'Product amount', areaMode: 'Area and rate', productMass: 'Fertilizer mass', massUnit: 'Mass unit', area: 'Area', areaUnit: 'Area unit', productRate: 'Rate', rateUnit: 'Rate unit', nitrogenPercent: 'Nitrogen percentage', phosphatePercent: 'Phosphate percentage', potashPercent: 'Potash percentage', accuracyNote: 'Use your own product label and rate.' },
   },
+  'baluster-spacing-calculator': {
+    name: 'Baluster Spacing Calculator', actions: { ...actions, millimeters: 'Millimeters', centimeters: 'Centimeters', meters: 'Meters', inches: 'Inches', feet: 'Feet' },
+    messages: { ...messages, balusterCount: 'Balusters to fit', gapCount: 'Equal clear gaps', uniformClearGap: 'Uniform clear gap', totalBalusterWidth: 'Total baluster width', totalClearGap: 'Total clear gap' },
+    fields: { mode: 'Method', maxGapMode: 'Find count from maximum gap', countMode: 'Calculate gap from count', openingWidth: 'Clear opening', balusterWidth: 'Baluster width', unit: 'Length unit', maximumGap: 'Maximum gap', balusterCount: 'Baluster count', accuracyNote: 'Layout only; verify local code and safety.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -307,6 +312,14 @@ test('fertilizer form separates product-content and user-rate area modes', () =>
   assert.match(html, /data-fertilizer-input="area" hidden/u);
   for (const name of ['productMass', 'area', 'areaUnit', 'productRate', 'rateUnit', 'massUnit', 'nitrogenPercent', 'phosphatePercent', 'potashPercent']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
   assert.match(html, /Area and rate/u);
+});
+
+test('baluster form exposes maximum-gap and fixed-count spacing modes', () => {
+  const html = renderGrowthForm('baluster-spacing-calculator', copies['baluster-spacing-calculator']);
+  assert.match(html, /data-baluster-input="max-gap"/u);
+  assert.match(html, /data-baluster-input="count" hidden/u);
+  for (const name of ['openingWidth', 'balusterWidth', 'unit', 'maximumGap', 'balusterCount']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  assert.match(html, /Find count from maximum gap/u);
 });
 
 test('weight scenario form explains its limits and collects explicit local inputs', () => {

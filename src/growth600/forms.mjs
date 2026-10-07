@@ -58,6 +58,7 @@ export function renderGrowthForm(toolId, copy) {
     'compost-calculator': ['massUnit', 'targetMoisture', 'material1', 'name1', 'wetMass1', 'moisture1', 'carbon1', 'ratio1', 'material2', 'name2', 'wetMass2', 'moisture2', 'carbon2', 'ratio2', 'material3', 'name3', 'wetMass3', 'moisture3', 'carbon3', 'ratio3', 'material4', 'name4', 'wetMass4', 'moisture4', 'carbon4', 'ratio4', 'accuracyNote'],
     'pond-volume-calculator': ['shape', 'length', 'width', 'diameter', 'dimensionUnit', 'averageDepth', 'maximumDepth', 'edgeOverlap', 'fillPercent', 'accuracyNote'],
     'fertilizer-calculator': ['mode', 'productMode', 'areaMode', 'productMass', 'massUnit', 'area', 'areaUnit', 'productRate', 'rateUnit', 'nitrogenPercent', 'phosphatePercent', 'potashPercent', 'accuracyNote'],
+    'baluster-spacing-calculator': ['mode', 'maxGapMode', 'countMode', 'openingWidth', 'balusterWidth', 'unit', 'maximumGap', 'balusterCount', 'accuracyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -101,6 +102,7 @@ export function renderGrowthForm(toolId, copy) {
     'compost-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilograms', 'pounds'],
     'pond-volume-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'rectangle', 'circle', 'oval', 'meters', 'feet'],
     'fertilizer-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilograms', 'pounds', 'squareMeters', 'hectares', 'squareFeet', 'acres', 'kg100m2', 'kgHa', 'lb1000ft2', 'lbAcre'],
+    'baluster-spacing-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'millimeters', 'centimeters', 'meters', 'inches', 'feet'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -660,6 +662,17 @@ export function renderGrowthForm(toolId, copy) {
     ${label('nitrogen-percent', fields.nitrogenPercent, '<input id="nitrogen-percent" name="nitrogenPercent" type="number" min="0" max="100" step="any" inputmode="decimal">')}
     ${label('phosphate-percent', fields.phosphatePercent, '<input id="phosphate-percent" name="phosphatePercent" type="number" min="0" max="100" step="any" inputmode="decimal" value="0">')}
     ${label('potash-percent', fields.potashPercent, '<input id="potash-percent" name="potashPercent" type="number" min="0" max="100" step="any" inputmode="decimal" value="0">')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'baluster-spacing-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('baluster-mode', fields.mode, `<select id="baluster-mode" name="mode"><option value="max-gap">${escapeGrowthHtml(fields.maxGapMode)}</option><option value="count">${escapeGrowthHtml(fields.countMode)}</option></select>`)}
+    ${label('opening-width', fields.openingWidth, '<input id="opening-width" name="openingWidth" type="number" min="0.1" max="1000000" step="any" inputmode="decimal" required>')}
+    ${label('baluster-width', fields.balusterWidth, '<input id="baluster-width" name="balusterWidth" type="number" min="0.01" max="100000" step="any" inputmode="decimal" required>')}
+    ${label('baluster-unit', fields.unit, `<select id="baluster-unit" name="unit"><option value="mm">${escapeGrowthHtml(labels.millimeters)}</option><option value="cm">${escapeGrowthHtml(labels.centimeters)}</option><option value="m">${escapeGrowthHtml(labels.meters)}</option><option value="in">${escapeGrowthHtml(labels.inches)}</option><option value="ft">${escapeGrowthHtml(labels.feet)}</option></select>`)}
+    <div data-baluster-input="max-gap">${label('maximum-gap', fields.maximumGap, '<input id="maximum-gap" name="maximumGap" type="number" min="0.01" max="1000000" step="any" inputmode="decimal" required>')}</div>
+    <div data-baluster-input="count" hidden>${label('baluster-count', fields.balusterCount, '<input id="baluster-count" name="balusterCount" type="number" min="1" max="1000" step="1" inputmode="numeric" required>')}</div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

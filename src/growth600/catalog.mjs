@@ -132,6 +132,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/fence-calculator/logic.mjs',
   },
   {
+    id: 'baluster-spacing-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'baluster spacing calculator',
+    secondaryIntents: ['spindle spacing calculator', 'railing baluster calculator', 'baluster gap calculator'],
+    functions: ['calculate a uniform clear gap from an opening width, baluster thickness and chosen count', 'estimate the minimum baluster count that stays within a user-entered maximum gap', 'show total baluster width, number of clear gaps and exact uniform spacing in metric or imperial units'],
+    acceptance: 'For a 1,200 mm clear opening, 40 mm balusters and a 100 mm maximum gap, the minimum count is 8 and all 9 gaps are about 97.78 mm; 7 balusters would leave 115 mm gaps. Gaps plus baluster widths equal the opening width.',
+    boundary: 'Layout arithmetic only. It does not determine code-compliant guard openings, strength, loads, fasteners, post details, material suitability or safety. Confirm applicable local requirements and have a qualified professional review the design before building.',
+    relatedExistingIds: ['fence-calculator'],
+    logicModule: './tools/baluster-spacing-calculator/logic.mjs',
+  },
+  {
     id: 'deck-calculator',
     category: 'home-materials',
     type: 'calculator',

@@ -27,6 +27,7 @@ import { calculateElectricityCost } from './electricity-cost-calculator/logic.mj
 import { calculateCompostMix } from './compost-calculator/logic.mjs';
 import { calculatePond } from './pond-volume-calculator/logic.mjs';
 import { calculateFertilizer } from './fertilizer-calculator/logic.mjs';
+import { calculateBalusterSpacing } from './baluster-spacing-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -618,4 +619,21 @@ test('fertilizer calculator applies label percentages to a batch or entered area
   assert.throws(() => calculateFertilizer({ mode: 'area', area: 0, productRate: 2, nitrogenPercent: 20 }), /allowed range/u);
   assert.throws(() => calculateFertilizer({ mode: 'product', productMass: 10, nitrogenPercent: 0, phosphatePercent: 0, potashPercent: 0 }), /non-zero/u);
   assert.throws(() => calculateFertilizer({ mode: 'rate', productMass: 10, nitrogenPercent: 20 }), /Choose product amount/u);
+});
+
+test('baluster spacing distributes uniform gaps and finds a minimum count for a chosen maximum', () => {
+  const maximumGap = calculateBalusterSpacing({ mode: 'max-gap', openingWidth: 1200, balusterWidth: 40, maximumGap: 100, unit: 'mm' });
+  assert.equal(maximumGap.balusterCount, 8);
+  assert.equal(maximumGap.gapCount, 9);
+  assert.ok(Math.abs(maximumGap.clearGap - 97.777777778) < 1e-9);
+  assert.ok((1200 - 7 * 40) / 8 > 100, 'one fewer baluster would exceed the chosen maximum gap');
+  assert.equal(maximumGap.totalBalusterWidth + maximumGap.totalClearGap, 1200);
+  const fixedCount = calculateBalusterSpacing({ mode: 'count', openingWidth: 48, balusterWidth: 2, balusterCount: 7, unit: 'in' });
+  assert.equal(fixedCount.clearGap, 4.25);
+  const metric = calculateBalusterSpacing({ mode: 'count', openingWidth: 1.2, balusterWidth: 0.04, balusterCount: 10, unit: 'm' });
+  assert.ok(Math.abs(metric.clearGap - 0.072727273) < 1e-9);
+  assert.throws(() => calculateBalusterSpacing({ mode: 'count', openingWidth: 99, balusterWidth: 20, balusterCount: 5, unit: 'mm' }), /do not fit/u);
+  assert.throws(() => calculateBalusterSpacing({ mode: 'max-gap', openingWidth: 1200, balusterWidth: 1, maximumGap: 0.01, unit: 'mm' }), /1,000/u);
+  assert.throws(() => calculateBalusterSpacing({ mode: 'density', openingWidth: 1200, balusterWidth: 40, unit: 'mm', balusterCount: 10 }), /Choose maximum-gap/u);
+  assert.throws(() => calculateBalusterSpacing({ mode: 'count', openingWidth: 1, balusterWidth: 0.5, unit: 'yd', balusterCount: 2 }), /supported length/u);
 });
