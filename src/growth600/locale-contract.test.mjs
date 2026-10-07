@@ -12,6 +12,7 @@ import indonesianGrowthCopy from './locales/id.mjs';
 import hindiGrowthCopy from './locales/hi.mjs';
 import arabicGrowthCopy from './locales/ar.mjs';
 import spanishGrowthCopy from './locales/es.mjs';
+import simplifiedChineseGrowthCopy from './locales/zh.mjs';
 
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
@@ -105,4 +106,14 @@ test('the first Google Translate Arabic draft covers every copy key and preserve
   assert.equal(arabicGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} شهراً');
   assert.equal(arabicGrowthCopy['secret-santa-generator'].messages.privatePair, 'يقدم {giver} هدية إلى {recipient}.');
   assert.equal(arabicGrowthCopy.mancala.messages.turn, 'دور {player}.');
+});
+
+test('the first Google Translate simplified Chinese draft covers every copy key and preserves required placeholders', () => {
+  assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'zh' }], { zh: simplifiedChineseGrowthCopy }), true);
+  assert.ok(Object.values(simplifiedChineseGrowthCopy).every((copy) => copy.copyLanguage === 'zh'));
+  assert.ok(Object.values(simplifiedChineseGrowthCopy).every((copy) => copy.title.length <= 60 && copy.description.length <= 160));
+  assert.equal(simplifiedChineseGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} 个月');
+  assert.equal(simplifiedChineseGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver} 赠送礼物给 {recipient}。');
+  assert.equal(simplifiedChineseGrowthCopy.mancala.messages.turn, '轮到 {player} 走棋。');
+  assert.equal(simplifiedChineseGrowthCopy['gravel-calculator'].actions.generate, '开始抽签');
 });
