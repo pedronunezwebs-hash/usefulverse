@@ -68,6 +68,7 @@ export function renderGrowthForm(toolId, copy) {
     'ramp-calculator': ['rise', 'slopeRatioDenominator', 'landingCount', 'landingDepth', 'unit', 'safetyNote'],
     'heat-loss-calculator': ['areaUnit', 'temperatureUnit', 'volumeUnit', 'temperatureDifference', 'wallArea', 'wallUValue', 'roofArea', 'roofUValue', 'windowArea', 'windowUValue', 'floorArea', 'floorUValue', 'roomVolume', 'airChangesPerHour', 'accuracyNote'],
     'heat-pump-calculator': ['heatOutput', 'heatOutputUnit', 'cop', 'electricityRatePerKwh', 'hoursPerDay', 'currency', 'accuracyNote'],
+    'miter-angle-calculator': ['mode', 'cornerAngle', 'springAngle', 'accuracyNote', 'diagramLabel', 'diagramCorner', 'diagramCut', 'diagramSpring'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -121,6 +122,7 @@ export function renderGrowthForm(toolId, copy) {
     'ramp-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'millimeters', 'centimeters', 'meters', 'inches', 'feet'],
     'heat-loss-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'squareMeters', 'squareFeet', 'cubicMeters', 'cubicFeet', 'kelvin', 'fahrenheit'],
     'heat-pump-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilowatts', 'btuPerHour'],
+    'miter-angle-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'simpleMode', 'compoundMode'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -813,6 +815,18 @@ export function renderGrowthForm(toolId, copy) {
     ${label('heat-pump-electricity-rate', fields.electricityRatePerKwh, '<input id="heat-pump-electricity-rate" name="electricityRatePerKwh" type="number" min="0" max="1000000" step="any" inputmode="decimal" value="0.2" required>')}
     ${label('heat-pump-hours', fields.hoursPerDay, '<input id="heat-pump-hours" name="hoursPerDay" type="number" min="0" max="24" step="any" inputmode="decimal" value="8" required>')}
     ${label('heat-pump-currency', fields.currency, '<input id="heat-pump-currency" name="currency" type="text" value="USD" maxlength="3" pattern="[A-Za-z]{3}" autocomplete="off" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'miter-angle-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('miter-mode', fields.mode, `<select id="miter-mode" name="mode"><option value="simple">${escapeGrowthHtml(labels.simpleMode)}</option><option value="compound">${escapeGrowthHtml(labels.compoundMode)}</option></select>`)}
+    ${label('miter-corner-angle', fields.cornerAngle, '<input id="miter-corner-angle" name="cornerAngle" type="number" min="1" max="179" step="any" inputmode="decimal" value="90" required>')}
+    <fieldset class="miter-compound-fields" data-compound-fields hidden>
+      <legend>${escapeGrowthHtml(labels.compoundMode)}</legend>
+      ${label('miter-spring-angle', fields.springAngle, '<input id="miter-spring-angle" name="springAngle" type="number" min="0" max="90" step="any" inputmode="decimal" value="38" required>')}
+    </fieldset>
+    <figure class="miter-diagram"><svg viewBox="0 0 320 170" role="img" aria-labelledby="miter-diagram-title miter-diagram-desc"><title id="miter-diagram-title">${escapeGrowthHtml(fields.diagramLabel)}</title><desc id="miter-diagram-desc">${escapeGrowthHtml(fields.diagramCorner)} ${escapeGrowthHtml(fields.diagramCut)}${labels.compoundMode ? `; ${escapeGrowthHtml(fields.diagramSpring)}` : ''}</desc><path d="M45 142 L160 28 L275 142" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><path d="M116 142 A44 44 0 0 1 129 111" fill="none" stroke="currentColor" stroke-width="2"/><path d="M160 28 L160 142" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 5"/><text x="160" y="158" text-anchor="middle">${escapeGrowthHtml(fields.diagramCorner)}</text><text x="73" y="89" text-anchor="middle">${escapeGrowthHtml(fields.diagramCut)}</text></svg><figcaption>${escapeGrowthHtml(fields.diagramLabel)}</figcaption></figure>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

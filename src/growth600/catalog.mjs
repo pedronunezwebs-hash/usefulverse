@@ -252,6 +252,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/heat-pump-calculator/logic.mjs',
   },
   {
+    id: 'miter-angle-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'miter angle calculator',
+    secondaryIntents: ['compound miter calculator', 'crown molding miter and bevel calculator', 'miter saw angle calculator'],
+    functions: ['calculate a symmetric simple miter from an inside corner angle', 'calculate compound miter and bevel magnitudes for flat crown molding using an explicit spring-angle convention', 'show an accessible angle diagram, worked example, copyable settings and limits'],
+    acceptance: 'A 90° inside corner gives a 45° simple miter. With flat crown molding and a 38° spring angle measured from its wall-side back, compound settings are approximately 31.62° miter and 33.86° bevel.',
+    boundary: 'Geometry only. The compound formula assumes flat crown molding and spring angle measured from the wall-side back; other conventions or molding orientations can differ. Outputs are unsigned magnitudes and do not identify left/right saw orientation. Verify the profile, saw manual and a test piece before cutting; not construction or safety advice.',
+    relatedExistingIds: ['protractor'],
+    logicModule: './tools/miter-angle-calculator/logic.mjs',
+  },
+  {
     id: 'deck-calculator',
     category: 'home-materials',
     type: 'calculator',

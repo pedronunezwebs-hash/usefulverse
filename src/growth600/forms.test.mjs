@@ -179,6 +179,11 @@ const copies = {
     messages: { ...messages, heatOutputKw: 'Heat output', electricalInput: 'Electrical input', dailyEnergy: 'Daily energy', monthlyEnergy: '30-day energy', dailyCost: 'Daily cost', monthlyCost: '30-day cost', resistanceDailyEnergy: 'Resistance baseline energy', resistanceDailyCost: 'Resistance baseline cost', dailyEnergyDifference: 'Daily energy saved', dailyCostDifference: 'Daily cost difference' },
     fields: { heatOutput: 'Heat-output rate', heatOutputUnit: 'Unit', cop: 'COP', electricityRatePerKwh: 'Rate per kWh', hoursPerDay: 'Hours per day', currency: 'Currency code', accuracyNote: 'Estimate only. Comparison baseline assumes COP 1.' },
   },
+  'miter-angle-calculator': {
+    name: 'Miter angle calculator', actions: { ...actions, simpleMode: 'Simple miter', compoundMode: 'Compound miter' },
+    messages: { ...messages, miterSetting: 'Miter setting', bevelSetting: 'Bevel setting', halfCorner: 'Half corner' },
+    fields: { mode: 'Cut type', cornerAngle: 'Inside corner angle', springAngle: 'Spring angle', accuracyNote: 'Geometry estimate only.', diagramLabel: 'Angle diagram', diagramCorner: 'Inside corner', diagramCut: 'Miter cut', diagramSpring: 'Spring angle' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -235,6 +240,13 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   for (const name of ['heatOutput', 'heatOutputUnit', 'cop', 'electricityRatePerKwh', 'hoursPerDay', 'currency']) assert.match(heatPump, new RegExp(`name="${name}"`, 'u'));
   assert.match(heatPump, /COP 1/u);
   assert.match(heatPump, /data-action="calculate"/u);
+  const miter = renderGrowthForm('miter-angle-calculator', copies['miter-angle-calculator']);
+  assert.match(miter, /name="cornerAngle" type="number" min="1" max="179"/u);
+  assert.match(miter, /name="springAngle" type="number" min="0" max="90"/u);
+  assert.match(miter, /data-compound-fields hidden/u);
+  assert.match(miter, /role="img" aria-labelledby="miter-diagram-title miter-diagram-desc"/u);
+  assert.match(miter, /data-action="copy"/u);
+  assert.match(miter, /data-action="calculate"/u);
   const asphalt = renderGrowthForm('asphalt-calculator', copies['asphalt-calculator']);
   assert.match(asphalt, /name="compactedThickness"/u);
   assert.match(asphalt, /name="pricePerTonne"/u);

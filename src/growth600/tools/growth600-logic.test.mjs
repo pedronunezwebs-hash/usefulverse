@@ -37,6 +37,7 @@ import { calculateRainwaterHarvesting, parseMonthlyValues } from './rainwater-ha
 import { calculateRamp } from './ramp-calculator/logic.mjs';
 import { calculateHeatLoss } from './heat-loss-calculator/logic.mjs';
 import { calculateHeatPump } from './heat-pump-calculator/logic.mjs';
+import { calculateMiterAngles } from './miter-angle-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -850,6 +851,19 @@ test('heat pump calculator estimates electricity, 30-day cost and COP 1 comparis
   assert.ok(Math.abs(btu.heatOutputKw - 1) < 1e-10);
   assert.equal(btu.electricalInputKw, 0.5);
   assert.equal(btu.dailyEnergyKwh, 12);
+});
+
+test('miter calculator returns simple and compound settings under the stated spring-angle convention', () => {
+  const simple = calculateMiterAngles({ cornerAngle: 90 });
+  assert.equal(simple.miterSawAngle, 45);
+  assert.equal(simple.bevelSawAngle, 0);
+  assert.equal(calculateMiterAngles({ cornerAngle: 120 }).miterSawAngle, 60);
+  const compound = calculateMiterAngles({ cornerAngle: 90, springAngle: 38, mode: 'compound' });
+  assert.ok(Math.abs(compound.miterSawAngle - 31.62) < 0.01);
+  assert.ok(Math.abs(compound.bevelSawAngle - 33.86) < 0.01);
+  assert.throws(() => calculateMiterAngles({ cornerAngle: 0 }), /allowed range/u);
+  assert.throws(() => calculateMiterAngles({ cornerAngle: 90, mode: 'compound', springAngle: 91 }), /allowed range/u);
+  assert.throws(() => calculateMiterAngles({ cornerAngle: 90, mode: 'unsupported' }), /Choose simple/u);
 });
 
 test('heat pump calculator rejects invalid units, COP, hours, tariff and currency', () => {

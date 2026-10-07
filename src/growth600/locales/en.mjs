@@ -84,6 +84,8 @@ import heatLossCopies from './heat-loss-calculator-final.mjs';
 import { heatLossCalculatorEnglishCopy } from './heat-loss-calculator.en.mjs';
 import heatPumpCopies from './heat-pump-calculator-final.mjs';
 import { heatPumpCalculatorEnglishCopy } from './heat-pump-calculator.en.mjs';
+import miterAngleCopies from './miter-angle-calculator-final.mjs';
+import { miterAngleCalculatorEnglishCopy } from './miter-angle-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -473,5 +475,6 @@ registerGrowthLocaleExtension(source, 'rainwater-harvesting-calculator', { ...ra
 registerGrowthLocaleExtension(source, 'ramp-calculator', { ...rampCopies, en: rampCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'heat-loss-calculator', { ...heatLossCopies, en: heatLossCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'heat-pump-calculator', { ...heatPumpCopies, en: heatPumpCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'miter-angle-calculator', { ...miterAngleCopies, en: miterAngleCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

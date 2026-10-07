@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 50/323; **273 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 51/323; **272 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -602,3 +602,13 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — inglés completo; los otros 35 idiomas están como borradores `pending-tool-specific-translation`, bloqueados por el gate de lanzamiento.
 - [ ] X/E visual — recorrido real en navegador, móvil y RTL todavía pendiente; no declarado probado visualmente.
 - [ ] P/S — no merge/deploy, sitemap de producción sin cambios y sin envíos a buscadores. No se ejecuta PageSpeed/Lighthouse; puertas de publicación continúan abiertas.
+
+## Continuación · Miter Angle Calculator (#294) · 2026-10-08
+
+- [x] C/F — candidata #51/323, diferenciada del transportador de ángulos: resuelve ajustes simétricos de inglete y corte compuesto de moldura corona plana. Demanda ya registrada en el plan: `miter angle calculator` 480 búsquedas/mes US/en, KD 0; `compound miter calculator` 260/mes. Sin nuevas consultas ni gasto de DataForSEO.
+- [x] E/X — cálculo simple: ángulo interior/2. Modo compuesto: convención de ángulo de resorte medida desde el reverso apoyado en pared; 90°/38° → 31,62° de inglete y 33,86° de bisel, cotejado con tabla del manual DEWALT enlazado en la ficha. Valida ángulos interiores 1°–179° y resorte 0°–90°; no informa orientación izquierda/derecha.
+- [x] B — formulario local con modo simple/compuesto, resorte contextual, ejemplo, reset, copiar, resultado accesible y SVG explicativo; bundle separado, sin servicios ni dependencias de red.
+- [x] E — suite focal de catálogo/formularios/locales/render/build/bundle/lógica: **163/163 aprobadas**; sintaxis de controladores y `git diff --check` se verifican antes del checkpoint.
+- [ ] L — copy fuente en inglés completo; 35 locales son borradores estructurales y están bloqueados para publicación hasta traducirse.
+- [ ] X/E visual — falta recorrido de interacción en navegador, móvil y RTL. SVG y tests no equivalen a validación visual/dispositivo.
+- [ ] P/S — no merge/deploy ni sitemap productivo actualizado; no se envió a buscadores. No se lanzó PageSpeed/Lighthouse; gates generales de publicación siguen abiertos.

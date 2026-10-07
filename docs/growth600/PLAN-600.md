@@ -958,10 +958,10 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [ ] **C/F/E/X/L/B/P/S completos — `miter-angle-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/miter-angle-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `miter angle calculator` — 480 búsquedas/mes US/en, KD 0; nivel C. CPC 0.95 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Cortes a inglete simples/compuestos, grados y dibujo
-- **Prueba de aceptación específica:** Esquina90 da inglete45 simétrico
+- **Función mínima y ampliaciones útiles:** corte simple simétrico del ángulo interior; modo compuesto para moldura corona plana que devuelve magnitudes de inglete y bisel; diagrama accesible y ejemplo 90°/38°. Convención compuesta declarada: ángulo de resorte medido desde el reverso de la moldura que apoya en la pared.
+- **Prueba de aceptación específica:** esquina interior de 90° → inglete simple 45°; en modo compuesto con ángulo de resorte 38°, inglete ≈31,62° y bisel ≈33,86°, concordante con la tabla del [manual de sierra DEWALT](https://www.dewalt.com/GLOBALBOM/QU/DCS361B/20/Instruction_Manual/EN/NA379781_DCS361_NA.pdf).
 - **Frontera con otras herramientas:** protractor: calcular corte no medir ángulo. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** motor local ligero, entradas acotadas (interior 1°–179°, resorte 0°–90°), grados y redondeo de presentación a dos decimales. Fórmulas compuestas solo para moldura corona plana; resultados sin orientación izquierda/derecha. Verificar perfil, escala del fabricante y corte de prueba. Geometry only, no consejo estructural o de seguridad. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `compound miter calculator` — 260/mes US/en; KD 0.
   - `miter angle calculator free online`; `miter angle calculator with example`; `miter angle calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
