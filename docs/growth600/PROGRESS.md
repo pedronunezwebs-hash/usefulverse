@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 42/323; **281 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 43/323; **280 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -399,7 +399,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 42/323; **281 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing y Retaining Wall Calculator están en la rama; Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing y Retaining Wall tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 43/323; **280 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing, Retaining Wall y Battery Runtime Calculator están en la rama; Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing, Retaining Wall y Battery Runtime tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.
 
 ## Continuación · Rafter Calculator (#126) · 2026-10-08
@@ -512,6 +512,16 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — inglés completo; otros 35 locales son `pending-tool-specific-translation` y el release gate bloquea publicación.
 - [ ] E/X visual — navegador, móvil y RTL pendientes; no equivale a una prueba visual o física.
 - [ ] P/S — no merge/deploy, no cambio del sitemap de producción ni envío a buscadores; gates globales pendientes. No se ejecutó PageSpeed/Lighthouse.
+
+## Continuación · Battery Runtime Calculator (#211) · 2026-10-08
+
+- [x] C — candidata #43/323, estima autonomía de batería para una carga constante y no distancia de vehículo; la ficha registra `battery runtime calculator` con 1.900 búsquedas/mes US/en, KD 0. Sin nueva consulta a DataForSEO.
+- [x] F/E — permite capacidad en Wh/kWh o Ah × voltaje; calcula energía utilizable tras profundidad de descarga y eficiencia asumidas y divide por vatios de carga. Casos: 100 Wh/10 W = 10 h ideal; 80% de descarga × 90% de eficiencia = 7,2 h; 20 Ah × 12 V con 50%/80% y 24 W = 4 h. Incluye validación, cero de descarga y errores de modo/unidades. Suite focal: **135/135 aprobadas**.
+- [x] X — muestra capacidad nominal, energía utilizable, horas y días equivalentes. Advierte que es idealizado, no promesa de runtime, y enumera química, tasa, temperatura, envejecimiento, caída de voltaje, inversor y cutoff; no dimensiona ni instala sistemas eléctricos.
+- [x] B — interfaz con modos condicionales, ejemplo, reset, copia, estados accesibles, módulo puro y controller aislado incluido en budget/builder tests.
+- [ ] L — inglés completo; otros 35 idiomas con marcador `pending-tool-specific-translation`; el gate impide publicar placeholders.
+- [ ] E/X visual — falta recorrido en navegador, móvil, RTL y dispositivos físicos.
+- [ ] P/S — sin merge/deploy, sitemap productivo intacto y sin envíos a buscadores. Gates de publicación abiertos; no se ejecutó PageSpeed/Lighthouse.
 
 ## Continuación · Fertilizer Calculator (#183) · 2026-10-08
 

@@ -29,6 +29,7 @@ import { calculatePond } from './pond-volume-calculator/logic.mjs';
 import { calculateFertilizer } from './fertilizer-calculator/logic.mjs';
 import { calculateBalusterSpacing } from './baluster-spacing-calculator/logic.mjs';
 import { calculateRetainingWall } from './retaining-wall-calculator/logic.mjs';
+import { calculateBatteryRuntime } from './battery-runtime-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -658,4 +659,24 @@ test('retaining wall calculator estimates user-dimensioned blocks, base and back
   assert.equal(zero.backfillOrderM3, 0);
   assert.throws(() => calculateRetainingWall({ wallLength: 0, wallHeight: 1 }), /allowed range/u);
   assert.throws(() => calculateRetainingWall({ wallLength: 5, wallHeight: 1, wallUnit: 'yd' }), /supported wall/u);
+});
+
+test('battery runtime converts Wh or Ah and applies user-entered discharge and efficiency', () => {
+  const ideal = calculateBatteryRuntime({ mode: 'energy', capacityEnergy: 100, energyUnit: 'Wh', loadWatts: 10, depthOfDischargePercent: 100, efficiencyPercent: 100 });
+  assert.equal(ideal.nominalEnergyWh, 100);
+  assert.equal(ideal.usableEnergyWh, 100);
+  assert.equal(ideal.runtimeHours, 10);
+  const losses = calculateBatteryRuntime({ mode: 'energy', capacityEnergy: 100, energyUnit: 'Wh', loadWatts: 10, depthOfDischargePercent: 80, efficiencyPercent: 90 });
+  assert.equal(losses.usableEnergyWh, 72);
+  assert.equal(losses.runtimeHours, 7.2);
+  assert.equal(losses.runtimeDays, 0.3);
+  const ampHours = calculateBatteryRuntime({ mode: 'ah', capacityAh: 20, voltage: 12, loadWatts: 24, depthOfDischargePercent: 50, efficiencyPercent: 80 });
+  assert.equal(ampHours.nominalEnergyWh, 240);
+  assert.equal(ampHours.usableEnergyWh, 96);
+  assert.equal(ampHours.runtimeHours, 4);
+  assert.equal(calculateBatteryRuntime({ mode: 'energy', capacityEnergy: 1, energyUnit: 'kWh', loadWatts: 100 }).runtimeHours, 10);
+  assert.equal(calculateBatteryRuntime({ mode: 'energy', capacityEnergy: 10, energyUnit: 'Wh', loadWatts: 100, depthOfDischargePercent: 0 }).runtimeHours, 0);
+  assert.throws(() => calculateBatteryRuntime({ mode: 'ah', capacityAh: 20, voltage: 0, loadWatts: 10 }), /allowed range/u);
+  assert.throws(() => calculateBatteryRuntime({ mode: 'other', loadWatts: 10 }), /Choose energy/u);
+  assert.throws(() => calculateBatteryRuntime({ mode: 'energy', capacityEnergy: 1, energyUnit: 'J', loadWatts: 10 }), /Choose Wh/u);
 });

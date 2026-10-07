@@ -60,6 +60,7 @@ export function renderGrowthForm(toolId, copy) {
     'fertilizer-calculator': ['mode', 'productMode', 'areaMode', 'productMass', 'massUnit', 'area', 'areaUnit', 'productRate', 'rateUnit', 'nitrogenPercent', 'phosphatePercent', 'potashPercent', 'accuracyNote'],
     'baluster-spacing-calculator': ['mode', 'maxGapMode', 'countMode', 'openingWidth', 'balusterWidth', 'unit', 'maximumGap', 'balusterCount', 'accuracyNote'],
     'retaining-wall-calculator': ['wallLength', 'wallHeight', 'wallUnit', 'blockLength', 'blockHeight', 'blockDepth', 'blockUnit', 'joint', 'baseWidth', 'baseDepth', 'backfillThickness', 'wastePercent', 'accuracyNote'],
+    'battery-runtime-calculator': ['capacityMode', 'energyMode', 'ampHourMode', 'capacityEnergy', 'energyUnit', 'capacityAh', 'voltage', 'loadWatts', 'depthOfDischargePercent', 'efficiencyPercent', 'accuracyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -105,6 +106,7 @@ export function renderGrowthForm(toolId, copy) {
     'fertilizer-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilograms', 'pounds', 'squareMeters', 'hectares', 'squareFeet', 'acres', 'kg100m2', 'kgHa', 'lb1000ft2', 'lbAcre'],
     'baluster-spacing-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'millimeters', 'centimeters', 'meters', 'inches', 'feet'],
     'retaining-wall-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'feet', 'inches'],
+    'battery-runtime-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'wh', 'kwh'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -692,6 +694,17 @@ export function renderGrowthForm(toolId, copy) {
     ${label('base-depth', fields.baseDepth, '<input id="base-depth" name="baseDepth" type="number" min="0" max="10000" step="any" inputmode="decimal" value="0.5" required>')}
     ${label('backfill-thickness', fields.backfillThickness, '<input id="backfill-thickness" name="backfillThickness" type="number" min="0" max="10000" step="any" inputmode="decimal" value="1" required>')}
     ${label('material-waste', fields.wastePercent, '<input id="material-waste" name="wastePercent" type="number" min="0" max="50" step="any" inputmode="decimal" value="5" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'battery-runtime-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('battery-capacity-mode', fields.capacityMode, `<select id="battery-capacity-mode" name="capacityMode"><option value="energy">${escapeGrowthHtml(fields.energyMode)}</option><option value="ah">${escapeGrowthHtml(fields.ampHourMode)}</option></select>`)}
+    <div data-battery-input="energy">${label('battery-energy', fields.capacityEnergy, '<input id="battery-energy" name="capacityEnergy" type="number" min="0.001" max="1000000000" step="any" inputmode="decimal" required>')}${label('battery-energy-unit', fields.energyUnit, `<select id="battery-energy-unit" name="energyUnit"><option value="Wh">${escapeGrowthHtml(labels.wh)}</option><option value="kWh">${escapeGrowthHtml(labels.kwh)}</option></select>`)}</div>
+    <div data-battery-input="ah" hidden>${label('battery-capacity-ah', fields.capacityAh, '<input id="battery-capacity-ah" name="capacityAh" type="number" min="0.001" max="1000000000" step="any" inputmode="decimal" required>')}${label('battery-voltage', fields.voltage, '<input id="battery-voltage" name="voltage" type="number" min="0.01" max="1000000" step="any" inputmode="decimal" required>')}</div>
+    ${label('load-watts', fields.loadWatts, '<input id="load-watts" name="loadWatts" type="number" min="0.001" max="100000000" step="any" inputmode="decimal" required>')}
+    ${label('battery-depth', fields.depthOfDischargePercent, '<input id="battery-depth" name="depthOfDischargePercent" type="number" min="0" max="100" step="any" inputmode="decimal" value="100" required>')}
+    ${label('battery-efficiency', fields.efficiencyPercent, '<input id="battery-efficiency" name="efficiencyPercent" type="number" min="0.1" max="100" step="any" inputmode="decimal" value="100" required>')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

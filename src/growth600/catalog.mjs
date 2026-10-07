@@ -156,6 +156,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/retaining-wall-calculator/logic.mjs',
   },
   {
+    id: 'battery-runtime-calculator',
+    category: 'home-energy',
+    type: 'calculator',
+    primaryIntent: 'battery runtime calculator',
+    secondaryIntents: ['battery backup runtime calculator', 'battery run time calculator', 'battery backup time calculator'],
+    functions: ['estimate runtime from a battery energy rating in Wh/kWh or from Ah and voltage', 'apply user-entered depth-of-discharge and system-efficiency percentages', 'show nominal and usable energy alongside hours and days for transparent assumptions'],
+    acceptance: 'A 100 Wh battery supplying a constant 10 W load at 100% depth of discharge and efficiency estimates 10 hours; applying 80% discharge and 90% efficiency estimates 7.2 hours.',
+    boundary: 'Idealized energy arithmetic only. Runtime varies with load profile, voltage sag, temperature, battery age, chemistry, discharge rate, inverter losses and cutoff behavior. The entered efficiency and discharge percentages are assumptions, not measured performance. It does not size wiring, protection, chargers or battery systems; follow manufacturer instructions and consult a qualified electrician for installations.',
+    relatedExistingIds: ['electricity-cost-calculator'],
+    logicModule: './tools/battery-runtime-calculator/logic.mjs',
+  },
+  {
     id: 'deck-calculator',
     category: 'home-materials',
     type: 'calculator',

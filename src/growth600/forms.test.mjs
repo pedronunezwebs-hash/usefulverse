@@ -139,6 +139,11 @@ const copies = {
     messages: { ...messages, courses: 'Whole block courses', blocksPerCourse: 'Blocks per course', blocksBeforeWaste: 'Blocks before extra allowance', blocksToOrder: 'Blocks to order', baseMaterial: 'Base material to order', backfill: 'Backfill to order' },
     fields: { wallLength: 'Wall length', wallHeight: 'Wall height (zero for no wall)', wallUnit: 'Wall unit', blockLength: 'Block length', blockHeight: 'Block height', blockDepth: 'Block depth', blockUnit: 'Block unit', joint: 'Joint', baseWidth: 'Base width', baseDepth: 'Base depth', backfillThickness: 'Backfill thickness', wastePercent: 'Extra allowance', accuracyNote: 'Base and backfill dimensions are user-entered, not recommendations.' },
   },
+  'battery-runtime-calculator': {
+    name: 'Battery Runtime Calculator', actions: { ...actions, wh: 'Watt-hours (Wh)', kwh: 'Kilowatt-hours (kWh)' },
+    messages: { ...messages, nominalEnergy: 'Nominal battery energy', usableEnergy: 'Estimated usable energy', runtimeHours: 'Estimated runtime', runtimeDays: 'Equivalent days' },
+    fields: { capacityMode: 'Capacity format', energyMode: 'Energy rating', ampHourMode: 'Amp-hours and voltage', capacityEnergy: 'Energy capacity', energyUnit: 'Energy unit', capacityAh: 'Amp-hours', voltage: 'Voltage', loadWatts: 'Load power', depthOfDischargePercent: 'Discharge depth', efficiencyPercent: 'Efficiency', accuracyNote: 'Estimate only; actual runtime varies.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -332,6 +337,14 @@ test('retaining wall form collects block, joint, base and backfill dimensions', 
   for (const name of ['wallLength', 'wallHeight', 'wallUnit', 'blockLength', 'blockHeight', 'blockDepth', 'blockUnit', 'joint', 'baseWidth', 'baseDepth', 'backfillThickness', 'wastePercent']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
   assert.match(html, /Wall height \(zero for no wall\)/u);
   assert.match(html, /not recommendations/u);
+});
+
+test('battery runtime form switches between energy and amp-hour input modes', () => {
+  const html = renderGrowthForm('battery-runtime-calculator', copies['battery-runtime-calculator']);
+  assert.match(html, /data-battery-input="energy"/u);
+  assert.match(html, /data-battery-input="ah" hidden/u);
+  for (const name of ['capacityMode', 'capacityEnergy', 'energyUnit', 'capacityAh', 'voltage', 'loadWatts', 'depthOfDischargePercent', 'efficiencyPercent']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  assert.match(html, /Amp-hours and voltage/u);
 });
 
 test('weight scenario form explains its limits and collects explicit local inputs', () => {
