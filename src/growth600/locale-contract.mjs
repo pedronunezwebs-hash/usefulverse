@@ -17,6 +17,7 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   'gravel-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'area', 'volume', 'orderVolume', 'estimatedWeight', 'bagsToBuy'],
   'molar-mass-calculator': ['copied', 'copyUnavailable', 'calculated', 'invalidFormula', 'atomCount', 'molarMass'],
   'auto-loan-refinance-calculator': ['copied', 'copyUnavailable', 'estimateOnly', 'checkInputs', 'currentPayment', 'newPayment', 'paymentDifference', 'currentTotal', 'newTotal', 'estimatedDifference', 'breakEven', 'noBreakEven', 'monthCount'],
+  'heloc-calculator': ['copied', 'copyUnavailable', 'checkInputs', 'estimateOnly', 'interestOnlyPayment', 'availableCredit', 'repaymentPayment', 'drawInterest', 'repaymentInterest', 'totalInterest', 'totalPayments', 'paymentChange'],
   'secret-santa-generator': ['copied', 'copyUnavailable', 'privatePair', 'allRevealed', 'drawReady', 'checkNamesAndRules', 'downloaded'],
   'tire-size-calculator': ['copied', 'copyUnavailable', 'calculated', 'sameSize', 'checkInputs', 'diameter', 'sidewall', 'circumference', 'revolutions', 'diameterDifference', 'diameterChange', 'groundClearance', 'actualSpeed'],
   'stair-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'riserHeight', 'treadCount', 'totalRun', 'angle', 'stringerLength', 'diagram'],
@@ -42,6 +43,7 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'gravel-calculator': ['shape', 'depth', 'length', 'width', 'diameter', 'base', 'triangleHeight', 'dimensionUnit', 'depthUnit', 'density', 'densityUnit', 'waste', 'bagSize', 'bagUnit'],
   'molar-mass-calculator': ['formula', 'supportedHint'],
   'auto-loan-refinance-calculator': ['balance', 'currentApr', 'currentMonths', 'newApr', 'newMonths', 'fees', 'feeTreatment', 'upfront', 'rolledIn', 'currencyNote'],
+  'heloc-calculator': ['creditLimit', 'balance', 'annualApr', 'drawMonths', 'repaymentMonths', 'currency', 'accuracyNote', 'relatedLoanCalculator'],
   'secret-santa-generator': ['names', 'exclusions', 'exclusionsHint'],
   'tire-size-calculator': ['originalSize', 'replacementSize', 'indicatedSpeed', 'speedUnit', 'fitmentNote', 'relatedUnitConverter'],
   'stair-calculator': ['totalRise', 'riserCount', 'treadDepth', 'unit', 'codeNote', 'relatedUnitConverter'],
@@ -67,6 +69,7 @@ export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   'gravel-calculator': ['calculate', 'reset', 'copy', 'result', 'rectangle', 'circle', 'triangle', 'meters', 'centimeters', 'feet', 'inches', 'kgPerCubicMeter', 'lbPerCubicFoot', 'kilograms', 'pounds'],
   'molar-mass-calculator': ['calculate', 'reset', 'example', 'copy', 'result'],
   'auto-loan-refinance-calculator': ['calculate', 'reset', 'copy', 'result'],
+  'heloc-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
   'secret-santa-generator': ['generate', 'reset', 'copy', 'download', 'result', 'reveal', 'next', 'privacyNote'],
   'tire-size-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kmh', 'mph'],
   'stair-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'feet', 'inches'],
@@ -107,7 +110,7 @@ export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, {
           if (typeof copy.messages?.[key] === 'string' && !copy.messages[key].includes(token)) errors.push(`${locale.key}/${tool.id}: messages.${key} must preserve ${token}`);
         }
       }
-      if (['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'image-region-redactor', 'image-sharpener', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'weight-loss-calculator'].includes(tool.id)
+      if (['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'image-region-redactor', 'image-sharpener', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'weight-loss-calculator', 'heloc-calculator'].includes(tool.id)
         && (!Array.isArray(copy.additionalFaqs) || copy.additionalFaqs.length !== 2
           || copy.additionalFaqs.some((faq) => !faq.question?.trim() || !faq.answer?.trim()))) {
         errors.push(`${locale.key}/${tool.id}: two complete localized tool FAQs are required`);

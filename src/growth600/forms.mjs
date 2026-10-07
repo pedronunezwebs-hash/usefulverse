@@ -40,7 +40,8 @@ export function renderGrowthForm(toolId, copy) {
     'asphalt-calculator': ['area', 'areaUnit', 'compactedThickness', 'thicknessUnit', 'density', 'densityUnit', 'wastePercent', 'pricePerTonne', 'accuracyNote', 'relatedConcreteCalculator'],
     mancala: ['mode'],
     'dominoes-game': ['mode', 'variant', 'board', 'stock', 'hand', 'opponentHand', 'accuracyNote'],
-    'weight-loss-calculator': ['currentWeight', 'targetWeight', 'dailyDeficit', 'unit', 'methodNote', 'healthNote', 'sourceNiddk', 'sourceCdc'],
+  'weight-loss-calculator': ['currentWeight', 'targetWeight', 'dailyDeficit', 'unit', 'methodNote', 'healthNote', 'sourceNiddk', 'sourceCdc'],
+  'heloc-calculator': ['creditLimit', 'balance', 'annualApr', 'drawMonths', 'repaymentMonths', 'currency', 'accuracyNote', 'relatedLoanCalculator'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -66,7 +67,8 @@ export function renderGrowthForm(toolId, copy) {
     'asphalt-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     mancala: ['newGame', 'rules', 'result', 'computer', 'twoPlayers'],
     'dominoes-game': ['newGame', 'draw', 'pass', 'playLeft', 'playRight', 'computer', 'twoPlayers', 'drawRule', 'blockRule'],
-    'weight-loss-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilograms', 'pounds', 'dayUnit', 'weekUnit', 'kilocalories', 'perWeek'],
+  'weight-loss-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilograms', 'pounds', 'dayUnit', 'weekUnit', 'kilocalories', 'perWeek'],
+  'heloc-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -362,6 +364,18 @@ export function renderGrowthForm(toolId, copy) {
     <p class="hint">${escapeGrowthHtml(fields.healthNote)}</p>
     <p class="hint">${escapeGrowthHtml(fields.sourceNiddk)} <a href="https://www.niddk.nih.gov/research-funding/at-niddk/labs-branches/laboratory-biological-modeling/integrative-physiology-section/research/body-weight-planner" rel="noreferrer">NIDDK</a> · <a href="https://www.cdc.gov/healthy-weight-growth/losing-weight/index.html" rel="noreferrer">${escapeGrowthHtml(fields.sourceCdc)}</a></p>
     <div class="actions">${button('example', labels.example, 'secondary')}${button('calculate', labels.calculate)}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'heloc-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('heloc-currency', fields.currency, '<select id="heloc-currency" name="currency"><option value="USD">USD</option><option value="CAD">CAD</option><option value="AUD">AUD</option><option value="GBP">GBP</option><option value="EUR">EUR</option></select>')}
+    ${label('heloc-limit', fields.creditLimit, '<input id="heloc-limit" name="creditLimit" type="number" min="0.01" max="100000000" step="any" inputmode="decimal" value="25000" required>')}
+    ${label('heloc-balance', fields.balance, '<input id="heloc-balance" name="balance" type="number" min="0" max="100000000" step="any" inputmode="decimal" value="12000" required>')}
+    ${label('heloc-apr', fields.annualApr, '<input id="heloc-apr" name="annualAprPercent" type="number" min="0" max="100" step="any" inputmode="decimal" value="10" required>')}
+    ${label('heloc-draw-months', fields.drawMonths, '<input id="heloc-draw-months" name="drawMonths" type="number" min="1" max="360" step="1" inputmode="numeric" value="120" required>')}
+    ${label('heloc-repayment-months', fields.repaymentMonths, '<input id="heloc-repayment-months" name="repaymentMonths" type="number" min="1" max="360" step="1" inputmode="numeric" value="240" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);
 

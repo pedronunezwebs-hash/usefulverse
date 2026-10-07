@@ -45,6 +45,11 @@ const copies = {
     messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', pixelSelected: 'Pixel selected.', sampleAdded: 'Color added.', paletteFull: 'Palette is full.', copiedColor: 'Color copied.', copiedPalette: 'Palette copied.', copyUnavailable: 'Clipboard unavailable.', paletteCleared: 'Palette cleared.' },
     fields: { imageFile: 'Choose image', accuracyNote: 'Maximum 12 megapixels.', previewHint: 'Click a pixel or use arrow keys.', zoom: 'Zoom', currentColor: 'Current pixel', paletteLabel: 'Color palette', relatedSharpener: 'Use the sharpener.', relatedRedactor: 'Use the redactor.' },
   },
+  'heloc-calculator': {
+    name: 'HELOC calculator', actions: { ...actions },
+    messages: { ...messages, estimateOnly: 'Illustration only.', interestOnlyPayment: 'Interest-only payment', availableCredit: 'Available credit', repaymentPayment: 'Repayment payment', paymentChange: 'Payment change', drawInterest: 'Draw interest', repaymentInterest: 'Repayment interest', totalInterest: 'Total interest', totalPayments: 'Total payments' },
+    fields: { creditLimit: 'Credit limit', balance: 'Current balance', annualApr: 'APR', drawMonths: 'Draw months', repaymentMonths: 'Repayment months', currency: 'Currency', accuracyNote: 'Illustrative fixed-rate estimate only.', relatedLoanCalculator: 'Compare with loan payment calculator.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -145,6 +150,18 @@ test('weight scenario form explains its limits and collects explicit local input
   assert.match(html, /cdc\.gov/u);
   assert.match(html, /data-action="example"/u);
   assert.match(html, /role="status"/u);
+  assert.doesNotMatch(html, /<form[^>]+action=/u);
+});
+
+test('HELOC form exposes editable limits, two terms, currency, assumptions and related calculator', () => {
+  const html = renderGrowthForm('heloc-calculator', copies['heloc-calculator']);
+  for (const name of ['currency', 'creditLimit', 'balance', 'annualAprPercent', 'drawMonths', 'repaymentMonths']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  for (const currency of ['USD', 'CAD', 'AUD', 'GBP', 'EUR']) assert.match(html, new RegExp(`value="${currency}"`, 'u'));
+  assert.match(html, /fixed-rate estimate only/u);
+  assert.match(html, /data-action="example"/u);
+  assert.match(html, /data-action="calculate"/u);
+  assert.match(html, /name="balance" type="number" min="0"/u);
+  assert.match(html, /loan payment calculator/u);
   assert.doesNotMatch(html, /<form[^>]+action=/u);
 });
 

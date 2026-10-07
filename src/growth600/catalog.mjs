@@ -228,6 +228,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/auto-loan-refinance-calculator/logic.mjs',
   },
   {
+    id: 'heloc-calculator',
+    category: 'finance-math',
+    type: 'calculator',
+    primaryIntent: 'heloc calculator',
+    secondaryIntents: ['heloc payment calculator', 'heloc interest only payment calculator', 'home equity line of credit repayment calculator'],
+    functions: ['enter a line limit, current drawn balance, APR and editable draw/repayment terms', 'estimate constant-balance interest-only payments during the draw period', 'estimate a fixed monthly principal-and-interest payment after the draw period', 'show available credit, phase interest and total modeled interest with a selectable currency display'],
+    acceptance: 'A 12,000 balance at 10% APR yields 100 interest-only per month; with a 25,000 limit, available credit is 13,000.',
+    boundary: 'Illustrative fixed-APR arithmetic only. Assumes no new draws or principal payments during the interest-only phase, then equal monthly amortization. Real HELOCs may have variable rates, different minimum payments, fees, floors, caps and lender-specific terms. Not a quote or financial advice.',
+    relatedExistingIds: ['loan-calculator'],
+    logicModule: './tools/heloc-calculator/logic.mjs',
+  },
+  {
     id: 'secret-santa-generator',
     category: 'groups-and-events',
     type: 'generator',

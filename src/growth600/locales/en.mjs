@@ -30,6 +30,8 @@ import imageColorPickerCopies from './image-color-picker-final.mjs';
 import { imageColorPickerEnglishCopy } from './image-color-picker.en.mjs';
 import dominoesCopies from './dominoes-game-final.mjs';
 import weightLossCopies from './weight-loss-calculator-final.mjs';
+import helocCopies from './heloc-calculator-final.mjs';
+import { helocCalculatorEnglishCopy } from './heloc-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -180,5 +182,6 @@ registerGrowthLocaleExtension(source, 'image-upscaler', { ...imageUpscalerDrafts
 registerGrowthLocaleExtension(source, 'image-color-picker', imageColorPickerCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'dominoes-game', dominoesCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'weight-loss-calculator', weightLossCopies, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'heloc-calculator', { ...helocCopies, en: helocCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

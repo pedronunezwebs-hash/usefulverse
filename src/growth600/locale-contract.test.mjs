@@ -98,6 +98,21 @@ test('image upscaler has complete localized copy, local-processing limits and ca
   }
 });
 
+test('HELOC calculator has complete localized copy, visible assumptions and metadata in all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'heloc-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.copyLanguage, key);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    assert.ok(copy.fields.accuracyNote.trim().length > 30, `${key}: assumptions and financial caveat`);
+    if (key === 'ar') assert.doesNotMatch(copy.fields.annualApr, /السنوي السنوي/u);
+    assert.doesNotMatch(JSON.stringify(copy), /UVHL\d{4}QXZ|undefined/iu, key);
+  }
+});
+
 test('dominoes game has complete static copy and FAQs in all 36 languages', () => {
   const dominoes = allGrowthPilotTools.find(({ id }) => id === 'dominoes-game');
   assert.ok(dominoes);
