@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 43/323; **280 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 44/323; **279 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -399,7 +399,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 43/323; **280 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing, Retaining Wall y Battery Runtime Calculator están en la rama; Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing, Retaining Wall y Battery Runtime tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 44/323; **279 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing, Retaining Wall, Battery Runtime y Lumber Cut List Optimizer están en la rama; las candidatas nuevas con localización incompleta no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.
 
 ## Continuación · Rafter Calculator (#126) · 2026-10-08
@@ -522,6 +522,16 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — inglés completo; otros 35 idiomas con marcador `pending-tool-specific-translation`; el gate impide publicar placeholders.
 - [ ] E/X visual — falta recorrido en navegador, móvil, RTL y dispositivos físicos.
 - [ ] P/S — sin merge/deploy, sitemap productivo intacto y sin envíos a buscadores. Gates de publicación abiertos; no se ejecutó PageSpeed/Lighthouse.
+
+## Continuación · Lumber Cut List Optimizer (#219) · 2026-10-08
+
+- [x] C/F/E — candidata #44/323, distinta de `board-foot-calculator`: distribuye longitudes lineales entre tablones, con kerf editable y unidades compartidas. El plan previo registra `cut list optimizer` con 1.900 búsquedas/mes US/en, KD 13 y secundaria `lumber cut calculator` con 70/mes, KD 15. Sin llamadas nuevas a DataForSEO.
+- [x] X — algoritmo local best-fit-decreasing determinista, con límite de 300 piezas/tablones, cuotas validadas, parséo explícito de longitudes/cantidades, kerf cargado por cada pieza y sobrante por tablón. La aceptación 2.400 mm / kerf 3 mm / cortes 1.200 + 800 + 390 da un tablón, 2.399 mm ocupados y 1 mm restante. Caso de corte mayor que tablón, formatos erróneos y exceso de entradas cubiertos por tests. No promete el mínimo global; informa la heurística y sus omisiones (vetas, defectos, extremos y cortes angulados).
+- [x] B — formulario semántico con selector de unidad común, longitud de stock, kerf, lista multilínea, ejemplo, reset, copia y resultado accesible construido con nodos/texto DOM; cálculo solo local. El módulo y controller quedan en el catálogo y el budget/fixture de build.
+- [ ] L — copy inglesa completa; los otros 35 idiomas siguen como `pending-tool-specific-translation`, por lo que el gate impide publicar placeholders.
+- [x] E — suite focal Growth600 (`catalog`, `forms`, `locale-contract`, `locale-utils`, `render`, `build`, `bundle-controllers`, `growth600-logic`): **139/139 aprobadas**; `git diff --check` limpio.
+- [ ] X/E visual — no se pudo ejecutar el build integral: este worktree no tiene instalado `onnxruntime-web` (el builder requiere su runtime para otros módulos); no repetí `npm ci`, porque la instalación completa descarga runtimes binarios pesados. Falta además recorrido visual en navegador/móvil/RTL y dispositivos reales.
+- [ ] P/S — sin merge/deploy, sitemap de producción intacto y sin envío a buscadores; no ejecutar PageSpeed/Lighthouse.
 
 ## Continuación · Fertilizer Calculator (#183) · 2026-10-08
 

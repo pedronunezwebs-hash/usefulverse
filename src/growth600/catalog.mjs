@@ -168,6 +168,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/battery-runtime-calculator/logic.mjs',
   },
   {
+    id: 'lumber-cut-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'cut list optimizer',
+    secondaryIntents: ['lumber cut calculator', 'wood cut list calculator', 'board cut optimizer'],
+    functions: ['allocate a bounded list of linear cuts across stock boards with a selected saw kerf', 'show per-board cut layouts, remaining offcut and total kerf allowance', 'accept a single shared measurement unit and quantity per cut size'],
+    acceptance: 'With 2400 mm stock, 3 mm kerf and cuts 1200 × 1, 800 × 1 and 390 × 1, one board fits exactly within the 2400 mm stock after kerf; a 1200 mm piece with a 1200 mm stock and positive kerf is rejected as overlength.',
+    boundary: 'A deterministic best-fit-decreasing heuristic, not a proof of globally minimal stock use. Assumes straight 1D cuts, one kerf allowance per produced piece and one shared unit; it does not model grain, defects, blade entry, clamps, trim ends, angled cuts, joinery or structural suitability. Verify every cut against real stock and tool setup before cutting.',
+    relatedExistingIds: ['board-foot-calculator'],
+    logicModule: './tools/lumber-cut-calculator/logic.mjs',
+  },
+  {
     id: 'deck-calculator',
     category: 'home-materials',
     type: 'calculator',

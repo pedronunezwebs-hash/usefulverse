@@ -61,6 +61,7 @@ export function renderGrowthForm(toolId, copy) {
     'baluster-spacing-calculator': ['mode', 'maxGapMode', 'countMode', 'openingWidth', 'balusterWidth', 'unit', 'maximumGap', 'balusterCount', 'accuracyNote'],
     'retaining-wall-calculator': ['wallLength', 'wallHeight', 'wallUnit', 'blockLength', 'blockHeight', 'blockDepth', 'blockUnit', 'joint', 'baseWidth', 'baseDepth', 'backfillThickness', 'wastePercent', 'accuracyNote'],
     'battery-runtime-calculator': ['capacityMode', 'energyMode', 'ampHourMode', 'capacityEnergy', 'energyUnit', 'capacityAh', 'voltage', 'loadWatts', 'depthOfDischargePercent', 'efficiencyPercent', 'accuracyNote'],
+    'lumber-cut-calculator': ['unit', 'stockLength', 'kerf', 'cutList', 'accuracyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -107,6 +108,7 @@ export function renderGrowthForm(toolId, copy) {
     'baluster-spacing-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'millimeters', 'centimeters', 'meters', 'inches', 'feet'],
     'retaining-wall-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'feet', 'inches'],
     'battery-runtime-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'wh', 'kwh'],
+    'lumber-cut-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'millimeters', 'centimeters', 'meters', 'inches', 'feet'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -705,6 +707,15 @@ export function renderGrowthForm(toolId, copy) {
     ${label('load-watts', fields.loadWatts, '<input id="load-watts" name="loadWatts" type="number" min="0.001" max="100000000" step="any" inputmode="decimal" required>')}
     ${label('battery-depth', fields.depthOfDischargePercent, '<input id="battery-depth" name="depthOfDischargePercent" type="number" min="0" max="100" step="any" inputmode="decimal" value="100" required>')}
     ${label('battery-efficiency', fields.efficiencyPercent, '<input id="battery-efficiency" name="efficiencyPercent" type="number" min="0.1" max="100" step="any" inputmode="decimal" value="100" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'lumber-cut-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('cut-unit', fields.unit, `<select id="cut-unit" name="unit"><option value="mm">${escapeGrowthHtml(labels.millimeters)}</option><option value="cm">${escapeGrowthHtml(labels.centimeters)}</option><option value="m">${escapeGrowthHtml(labels.meters)}</option><option value="in">${escapeGrowthHtml(labels.inches)}</option><option value="ft">${escapeGrowthHtml(labels.feet)}</option></select>`)}
+    ${label('stock-length', fields.stockLength, '<input id="stock-length" name="stockLength" type="number" min="0.001" max="100000000" step="any" inputmode="decimal" required>')}
+    ${label('saw-kerf', fields.kerf, '<input id="saw-kerf" name="kerf" type="number" min="0" max="100000000" step="any" inputmode="decimal" value="3" required>')}
+    ${label('cut-list', fields.cutList, '<textarea id="cut-list" name="cutList" rows="7" spellcheck="false" required></textarea>')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

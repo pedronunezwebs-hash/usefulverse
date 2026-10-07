@@ -144,6 +144,11 @@ const copies = {
     messages: { ...messages, nominalEnergy: 'Nominal battery energy', usableEnergy: 'Estimated usable energy', runtimeHours: 'Estimated runtime', runtimeDays: 'Equivalent days' },
     fields: { capacityMode: 'Capacity format', energyMode: 'Energy rating', ampHourMode: 'Amp-hours and voltage', capacityEnergy: 'Energy capacity', energyUnit: 'Energy unit', capacityAh: 'Amp-hours', voltage: 'Voltage', loadWatts: 'Load power', depthOfDischargePercent: 'Discharge depth', efficiencyPercent: 'Efficiency', accuracyNote: 'Estimate only; actual runtime varies.' },
   },
+  'lumber-cut-calculator': {
+    name: 'Lumber Cut List Optimizer', actions: { ...actions, millimeters: 'Millimeters', centimeters: 'Centimeters', meters: 'Meters', inches: 'Inches', feet: 'Feet' },
+    messages: { ...messages },
+    fields: { unit: 'Shared unit', stockLength: 'Stock length', kerf: 'Saw kerf', cutList: 'Cut list', accuracyNote: 'Heuristic only; verify before cutting.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -345,6 +350,14 @@ test('battery runtime form switches between energy and amp-hour input modes', ()
   assert.match(html, /data-battery-input="ah" hidden/u);
   for (const name of ['capacityMode', 'capacityEnergy', 'energyUnit', 'capacityAh', 'voltage', 'loadWatts', 'depthOfDischargePercent', 'efficiencyPercent']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
   assert.match(html, /Amp-hours and voltage/u);
+});
+
+test('lumber cut list form has one unit, a kerf, accessible results and a multiline cut list', () => {
+  const html = renderGrowthForm('lumber-cut-calculator', copies['lumber-cut-calculator']);
+  for (const name of ['unit', 'stockLength', 'kerf', 'cutList']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  assert.match(html, /<textarea[^>]*name="cutList"/u);
+  assert.match(html, /Heuristic only/u);
+  assert.match(html, /aria-live="polite"/u);
 });
 
 test('weight scenario form explains its limits and collects explicit local inputs', () => {

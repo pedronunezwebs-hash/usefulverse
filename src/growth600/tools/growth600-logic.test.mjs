@@ -30,6 +30,7 @@ import { calculateFertilizer } from './fertilizer-calculator/logic.mjs';
 import { calculateBalusterSpacing } from './baluster-spacing-calculator/logic.mjs';
 import { calculateRetainingWall } from './retaining-wall-calculator/logic.mjs';
 import { calculateBatteryRuntime } from './battery-runtime-calculator/logic.mjs';
+import { optimizeLumberCuts, parseCutList } from './lumber-cut-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -679,4 +680,28 @@ test('battery runtime converts Wh or Ah and applies user-entered discharge and e
   assert.throws(() => calculateBatteryRuntime({ mode: 'ah', capacityAh: 20, voltage: 0, loadWatts: 10 }), /allowed range/u);
   assert.throws(() => calculateBatteryRuntime({ mode: 'other', loadWatts: 10 }), /Choose energy/u);
   assert.throws(() => calculateBatteryRuntime({ mode: 'energy', capacityEnergy: 1, energyUnit: 'J', loadWatts: 10 }), /Choose Wh/u);
+});
+
+test('lumber cut optimizer accounts for kerf, packs deterministically and reports offcuts', () => {
+  const cuts = parseCutList('1200 x 1\n800 x 1\n390 x 1');
+  const plan = optimizeLumberCuts({ stockLength: 2400, kerf: 3, cuts });
+  assert.equal(plan.pieceCount, 3);
+  assert.equal(plan.boardCount, 1);
+  assert.equal(plan.totalCutLength, 2390);
+  assert.equal(plan.totalKerf, 9);
+  assert.equal(plan.boards[0].usedLength, 2399);
+  assert.equal(plan.boards[0].remainder, 1);
+  assert.equal(plan.totalOffcut, 1);
+  assert.equal(plan.theoreticalLowerBound, 1);
+  assert.deepEqual(optimizeLumberCuts({ stockLength: 2400, kerf: 3, cuts }).boards, plan.boards);
+  assert.deepEqual(parseCutList('600 × 2\n12,5'), [{ length: 600, quantity: 2 }, { length: 12.5, quantity: 1 }]);
+});
+
+test('lumber cut optimizer rejects overlength cuts, malformed quantities and excessive lists', () => {
+  assert.throws(() => optimizeLumberCuts({ stockLength: 1200, kerf: 3, cuts: [{ length: 1200, quantity: 1 }] }), /does not fit/u);
+  assert.throws(() => optimizeLumberCuts({ stockLength: 100, kerf: 0, cuts: [{ length: 101, quantity: 1 }] }), /does not fit/u);
+  assert.throws(() => parseCutList('600 × 0'), /whole number/u);
+  assert.throws(() => parseCutList('not a cut'), /cut line/u);
+  assert.throws(() => parseCutList(Array.from({ length: 301 }, () => '1').join('\n')), /no more than 300/u);
+  assert.throws(() => optimizeLumberCuts({ stockLength: 0, cuts: [{ length: 1, quantity: 1 }] }), /allowed range/u);
 });

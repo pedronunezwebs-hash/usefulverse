@@ -860,9 +860,9 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/lumber-cut-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `cut list optimizer` — 1.900 búsquedas/mes US/en, KD 13; nivel B. CPC 3.2 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Optimizar cortes lineales con kerf y sobrantes; cotas de cómputo
-- **Prueba de aceptación específica:** Cortes no exceden tablón ni olvidan kerf
+- **Prueba de aceptación específica:** Cortes no exceden tablón ni olvidan kerf; la prueba local actual deja 1 mm al encajar 1.200 + 800 + 390 mm con kerf de 3 mm en tablón de 2.400 mm.
 - **Frontera con otras herramientas:** board-foot-calculator: optimización de cortes. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Motor local de asignación 1D best-fit-decreasing, con límite de 300 piezas/tablas y kerf por pieza. Es una heurística, no garantiza óptimo global; verificar unidades/formato y validar el despiece en el material real. Seguir los gates globales; el caso de aceptación no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `lumber cut calculator` — 70/mes US/en; KD 15.
   - `cut list optimizer free online`; `cut list optimizer with example`; `cut list optimizer no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
