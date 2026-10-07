@@ -14,6 +14,7 @@ const copies = {
   'secret-santa-generator': { name: 'Secret Santa generator', actions, messages, fields: { names: 'Participants', exclusions: 'Exclusions', exclusionsHint: 'One giver:recipient per line.' } },
   'tire-size-calculator': { name: 'Tire size calculator', actions, messages, fields: { originalSize: 'Current tire size', replacementSize: 'New tire size', indicatedSpeed: 'Dashboard speed', speedUnit: 'Speed unit', fitmentNote: 'Nominal estimate only. Confirm fitment with the vehicle and tire maker.', relatedUnitConverter: 'Need to convert measurements? Open the unit converter.' } },
   'stair-calculator': { name: 'Stair calculator', actions, messages, fields: { totalRise: 'Total rise', riserCount: 'Number of risers', treadDepth: 'Tread depth', unit: 'Length unit', codeNote: 'Geometry estimate only. Check local building rules.', relatedUnitConverter: 'Need to convert measurements? Open the unit converter.' } },
+  'asphalt-calculator': { name: 'Asphalt calculator', actions, messages, fields: { area: 'Paved area', areaUnit: 'Area unit', compactedThickness: 'Compacted thickness', thicknessUnit: 'Thickness unit', density: 'Mix density', densityUnit: 'Density unit', wastePercent: 'Extra material', pricePerTonne: 'Price per metric tonne', accuracyNote: 'Estimates only; confirm with your supplier.', relatedConcreteCalculator: 'Planning a concrete slab? Try the concrete calculator.' } },
   mancala: { name: 'Mancala', actions, messages, fields: { mode: 'Game mode', board: 'Kalah board', rules: 'Choose a pit. Seeds are sown counter-clockwise; the other player store is skipped.' } },
 };
 
@@ -35,6 +36,10 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   const stairs = renderGrowthForm('stair-calculator', copies['stair-calculator']);
   assert.match(stairs, /name="riserCount" type="number" min="2" max="100" step="1"/u);
   assert.match(stairs, /data-stair-diagram/u);
+  const asphalt = renderGrowthForm('asphalt-calculator', copies['asphalt-calculator']);
+  assert.match(asphalt, /name="compactedThickness"/u);
+  assert.match(asphalt, /name="pricePerTonne"/u);
+  assert.match(asphalt, /value="2400"/u);
   assert.match(renderGrowthForm('gravel-calculator', copies['gravel-calculator']), /<label for="triangle-height">/u);
   assert.match(renderGrowthForm('gravel-calculator', copies['gravel-calculator']), /data-tool-copy/u);
   const payload = renderGrowthForm('secret-santa-generator', { ...copies['secret-santa-generator'], description: '</script><script>alert(1)</script>' });

@@ -6,6 +6,7 @@ import { compareAutoLoanRefinance, monthlyLoanPayment } from './auto-loan-refina
 import { assignSecretSanta } from './secret-santa-generator/logic.mjs';
 import { compareMetricTireSizes, parseMetricTireSize } from './tire-size-calculator/logic.mjs';
 import { calculateStairGeometry } from './stair-calculator/logic.mjs';
+import { calculateAsphalt } from './asphalt-calculator/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
 test('gravel calculator converts area and depth into volume, waste, weight and bags', () => {
@@ -144,6 +145,27 @@ test('stair geometry calculates risers, treads, run and stringer without claimin
   assert.throws(() => calculateStairGeometry(2.8, 16.5, 0.28, 'm'), /whole number/u);
   assert.throws(() => calculateStairGeometry(2.8, 16, 0.05, 'm'), /between/u);
   assert.throws(() => calculateStairGeometry(2.8, 16, 0.28, 'yard'), /unit/u);
+});
+
+test('asphalt calculator converts compacted layer to tonnage, cost and imperial units', () => {
+  const result = calculateAsphalt({ area: 100, areaUnit: 'm2', compactedThickness: 50, thicknessUnit: 'mm', density: 2400, densityUnit: 'kgm3', wastePercent: 0, pricePerTonne: 95 });
+  assert.equal(result.compactedVolumeM3, 5);
+  assert.equal(result.orderVolumeM3, 5);
+  assert.equal(result.estimatedMassKg, 12000);
+  assert.equal(result.metricTonnes, 12);
+  assert.equal(result.estimatedCost, 1140);
+  assert.ok(Math.abs(result.usShortTons - 13.227735) < 0.00001);
+  const withWaste = calculateAsphalt({ area: 100, compactedThickness: 50, density: 2400, wastePercent: 5 });
+  assert.equal(withWaste.orderVolumeM3, 5.25);
+  assert.equal(withWaste.metricTonnes, 12.6);
+  const imperial = calculateAsphalt({ area: 1076.391, areaUnit: 'ft2', compactedThickness: 1.9685, thicknessUnit: 'in', density: 149.826, densityUnit: 'lbft3' });
+  assert.ok(Math.abs(imperial.metricTonnes - 12) < 0.002);
+  assert.equal(calculateAsphalt({ area: 100, compactedThickness: 50 }).estimatedCost, null);
+  assert.throws(() => calculateAsphalt({ area: 0, compactedThickness: 50 }), /Area/u);
+  assert.throws(() => calculateAsphalt({ area: 100, compactedThickness: 0 }), /Compacted thickness/u);
+  assert.throws(() => calculateAsphalt({ area: 100, compactedThickness: 50, wastePercent: 31 }), /Waste/u);
+  assert.throws(() => calculateAsphalt({ area: 100, compactedThickness: 50, density: 9000 }), /Density/u);
+  assert.throws(() => calculateAsphalt({ area: 100, compactedThickness: 50, areaUnit: 'acre' }), /units/u);
 });
 
 test('Mancala keeps the original seed total over complete deterministic games', () => {

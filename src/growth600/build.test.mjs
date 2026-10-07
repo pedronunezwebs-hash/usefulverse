@@ -55,13 +55,15 @@ function toolCopy(tool, language) {
     'secret-santa-generator': { names: 'Names', exclusions: 'Exclusions', exclusionsHint: 'One giver:recipient pair per line.' },
     'tire-size-calculator': { originalSize: 'Current tire size', replacementSize: 'New tire size', indicatedSpeed: 'Dashboard speed', speedUnit: 'Speed unit', fitmentNote: 'Nominal estimate only; check fitment with vehicle and tire maker.', relatedUnitConverter: 'Need to convert measurements? Open the unit converter.' },
     'stair-calculator': { totalRise: 'Total rise', riserCount: 'Number of risers', treadDepth: 'Tread depth', unit: 'Length unit', codeNote: 'Geometry only; check local rules.', relatedUnitConverter: 'Need to convert measurements? Open the unit converter.' },
+    'asphalt-calculator': { area: 'Paved area', areaUnit: 'Area unit', compactedThickness: 'Compacted thickness', thicknessUnit: 'Thickness unit', density: 'Mix density', densityUnit: 'Density unit', wastePercent: 'Extra material', pricePerTonne: 'Price per tonne', accuracyNote: 'Estimate only; use supplier data.', relatedConcreteCalculator: 'Planning concrete? Use the concrete calculator.' },
     mancala: { mode: 'Mode', board: 'Kalah board', rules: 'Sow seeds around the board; skip the opponent store. Capture the opposite pit when the last seed lands in an empty pit on your side.' },
   }[tool.id];
   if (tool.id === 'tire-size-calculator') {
     Object.assign(actions, { kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)' });
   }
   const localizedMessages = tool.id === 'stair-calculator' ? { ...messages, riserHeight: 'Riser height', treadCount: 'Tread count', totalRun: 'Total run', angle: 'Angle', stringerLength: 'Stringer length', diagram: 'Stair side view' } : messages;
-  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: localizedMessages, copyLanguage: language };
+  const asphaltMessages = tool.id === 'asphalt-calculator' ? { ...messages, compactedVolume: 'Compacted volume', orderVolume: 'Order volume', metricTonnes: 'Metric tonnes', shortTons: 'US short tons', estimatedCost: 'Estimated material cost' } : {};
+  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: { ...localizedMessages, ...asphaltMessages }, copyLanguage: language };
   if (tool.id === 'tire-size-calculator') localized.additionalFaqs = [
     { question: 'Will this replacement tire fit my vehicle?', answer: fields.fitmentNote },
     { question: 'How is actual speed estimated?', answer: 'Dashboard speed is multiplied by the ratio of new to current nominal tire diameter. It is an estimate.' },
@@ -69,6 +71,10 @@ function toolCopy(tool, language) {
   if (tool.id === 'stair-calculator') localized.additionalFaqs = [
     { question: 'Which dimensions are shown?', answer: 'Rise, tread count, total run, angle and stringer estimate.' },
     { question: 'Does it verify local rules?', answer: fields.codeNote },
+  ];
+  if (tool.id === 'asphalt-calculator') localized.additionalFaqs = [
+    { question: 'What density should I use?', answer: fields.accuracyNote },
+    { question: 'How are extra material and cost estimated?', answer: 'Extra material increases the order estimate; cost is tonnes times the entered unit price.' },
   ];
   return localized;
 }

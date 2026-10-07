@@ -40,7 +40,7 @@ import persianGrowthCopy from './locales/fa.mjs';
 import amharicGrowthCopy from './locales/am.mjs';
 import gujaratiGrowthCopy from './locales/gu.mjs';
 
-const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['tire-size-calculator', 'stair-calculator'].includes(id));
+const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['tire-size-calculator', 'stair-calculator', 'asphalt-calculator'].includes(id));
 const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
   key,
   (await import(`./locales/${key}.mjs`)).default,
@@ -91,6 +91,19 @@ test('stair calculator has localized copy and two complete, localized FAQs in ev
     assert.ok(copy.fields.codeNote.trim().length > 0, `${key}: code boundary should be present`);
     assert.equal(copy.additionalFaqs.length, 2, `${key}: two additional FAQs should be localized`);
     assert.ok(copy.actions.meters && copy.actions.feet && copy.actions.inches, `${key}: units should be labeled`);
+  }
+});
+
+test('asphalt calculator has 36 localized copies, estimates-only disclosures and complete FAQs', () => {
+  const asphaltTool = allGrowthPilotTools.find(({ id }) => id === 'asphalt-calculator');
+  assert.ok(asphaltTool);
+  assert.equal(assertGrowthLocaleCoverage([asphaltTool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][asphaltTool.id];
+    assert.ok(copy.fields.accuracyNote.trim().length > 0, `${key}: supplier-density caveat should be present`);
+    assert.ok(copy.fields.relatedConcreteCalculator.trim().length > 0, `${key}: related concrete tool should be linked`);
+    assert.equal(copy.additionalFaqs.length, 2, `${key}: two complete FAQs should be present`);
+    assert.doesNotMatch(JSON.stringify(copy), /88993745\d{4}/u, `${key}: translation marker must not leak`);
   }
 });
 

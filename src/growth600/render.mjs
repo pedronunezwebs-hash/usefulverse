@@ -32,9 +32,11 @@ export function renderGrowthToolPage({ tool, locale, localeEntries, copy, origin
     { question: copy.privacyQuestion, answer: copy.privacyAnswer },
     ...(Array.isArray(copy.additionalFaqs) ? copy.additionalFaqs : []),
   ];
-  const relatedTool = copy.fields?.relatedUnitConverter
-    ? `<p class="related-tool"><a href="https://usefulverse.com${localePath(locale.key, 'unit-converter')}">${escapeGrowthHtml(copy.fields.relatedUnitConverter)}</a></p>`
-    : '';
+  const relatedTools = [
+    ['relatedUnitConverter', 'unit-converter'],
+    ['relatedConcreteCalculator', 'concrete-calculator'],
+  ].filter(([field]) => copy.fields?.[field]);
+  const relatedTool = relatedTools.map(([field, id]) => `<p class="related-tool"><a href="https://usefulverse.com${localePath(locale.key, id)}">${escapeGrowthHtml(copy.fields[field])}</a></p>`).join('');
   const suffix = assetVersion ? `?v=${encodeURIComponent(assetVersion)}` : '';
   const schema = safeJsonLd({
     '@context': 'https://schema.org', '@type': 'WebApplication', name: copy.name, url: canonical,

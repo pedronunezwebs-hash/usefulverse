@@ -1,5 +1,17 @@
 export const growthPilotTools = Object.freeze([
   {
+    id: 'asphalt-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'asphalt calculator',
+    secondaryIntents: ['asphalt tonnage calculator', 'asphalt material cost calculator', 'asphalt calculator by area and thickness'],
+    functions: ['paved area and compacted layer thickness with metric or imperial inputs', 'editable asphalt mix density with clear estimate caveat', 'compacted volume and order volume with optional extra material', 'metric tonnes and US short tons', 'optional material cost from user-entered price per metric tonne'],
+    acceptance: '100 m² × 0.05 m × 2,400 kg/m³ = 12,000 kg or 12 metric tonnes before extra material.',
+    boundary: 'Quantity and cost estimates only. Actual density, compaction, waste, delivery, labor, taxes and supplier pricing vary; confirm mix data and quotes with the supplier.',
+    relatedExistingIds: ['concrete-calculator'],
+    logicModule: './tools/asphalt-calculator/logic.mjs',
+  },
+  {
     id: 'stair-calculator',
     category: 'home-materials',
     type: 'calculator',

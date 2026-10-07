@@ -7,6 +7,7 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   'secret-santa-generator': ['copied', 'copyUnavailable', 'privatePair', 'allRevealed', 'drawReady', 'checkNamesAndRules', 'downloaded'],
   'tire-size-calculator': ['copied', 'copyUnavailable', 'calculated', 'sameSize', 'checkInputs', 'diameter', 'sidewall', 'circumference', 'revolutions', 'diameterDifference', 'diameterChange', 'groundClearance', 'actualSpeed'],
   'stair-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'riserHeight', 'treadCount', 'totalRun', 'angle', 'stringerLength', 'diagram'],
+  'asphalt-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'compactedVolume', 'orderVolume', 'metricTonnes', 'shortTons', 'estimatedCost'],
   mancala: ['pit', 'seeds', 'playerOne', 'playerTwo', 'playerOneWins', 'playerTwoWins', 'tie', 'gameOver', 'turn'],
 });
 export const REQUIRED_TOOL_FIELDS = Object.freeze({
@@ -16,6 +17,7 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'secret-santa-generator': ['names', 'exclusions', 'exclusionsHint'],
   'tire-size-calculator': ['originalSize', 'replacementSize', 'indicatedSpeed', 'speedUnit', 'fitmentNote', 'relatedUnitConverter'],
   'stair-calculator': ['totalRise', 'riserCount', 'treadDepth', 'unit', 'codeNote', 'relatedUnitConverter'],
+  'asphalt-calculator': ['area', 'areaUnit', 'compactedThickness', 'thicknessUnit', 'density', 'densityUnit', 'wastePercent', 'pricePerTonne', 'accuracyNote', 'relatedConcreteCalculator'],
   mancala: ['mode', 'board', 'rules'],
 });
 export const REQUIRED_TOOL_ACTIONS = Object.freeze({
@@ -25,6 +27,7 @@ export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   'secret-santa-generator': ['generate', 'reset', 'copy', 'download', 'result', 'reveal', 'next', 'privacyNote'],
   'tire-size-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kmh', 'mph'],
   'stair-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'feet', 'inches'],
+  'asphalt-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
   mancala: ['newGame', 'rules', 'result', 'computer', 'twoPlayers'],
 });
 const MESSAGE_PLACEHOLDERS = Object.freeze({ monthCount: ['{count}'], privatePair: ['{giver}', '{recipient}'], turn: ['{player}'] });
@@ -59,7 +62,7 @@ export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, {
           if (typeof copy.messages?.[key] === 'string' && !copy.messages[key].includes(token)) errors.push(`${locale.key}/${tool.id}: messages.${key} must preserve ${token}`);
         }
       }
-      if (['tire-size-calculator', 'stair-calculator'].includes(tool.id)
+      if (['tire-size-calculator', 'stair-calculator', 'asphalt-calculator'].includes(tool.id)
         && (!Array.isArray(copy.additionalFaqs) || copy.additionalFaqs.length !== 2
           || copy.additionalFaqs.some((faq) => !faq.question?.trim() || !faq.answer?.trim()))) {
         errors.push(`${locale.key}/${tool.id}: two complete localized tool FAQs are required`);

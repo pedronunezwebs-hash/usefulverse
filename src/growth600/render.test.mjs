@@ -58,4 +58,12 @@ test('tool renderer includes additional localized FAQs in page content and schem
   });
   assert.match(stairHtml, /https:\/\/usefulverse\.com\/ar\/tools\/unit-converter\//u);
   assert.match(stairHtml, /<summary>Does it check codes\?<\/summary>/u);
+
+  const asphaltHtml = renderGrowthToolPage({
+    tool: { id: 'asphalt-calculator' }, locale: locales[1], localeEntries: locales,
+    copy: { ...copy, fields: { relatedConcreteCalculator: 'Planning a concrete slab? Try the concrete calculator.' }, additionalFaqs: [{ question: 'What density should I use?', answer: 'Ask your supplier.' }] },
+    origin: 'https://tools.usefulverse.com', formHtml: '<form id="tool-form"></form>',
+  });
+  assert.match(asphaltHtml, /https:\/\/usefulverse\.com\/ar\/tools\/concrete-calculator\//u);
+  assert.match(asphaltHtml, /<summary>What density should I use\?<\/summary>/u);
 });
