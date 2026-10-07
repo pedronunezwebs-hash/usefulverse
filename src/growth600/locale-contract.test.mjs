@@ -37,6 +37,7 @@ import filipinoGrowthCopy from './locales/tl.mjs';
 import tamilGrowthCopy from './locales/ta.mjs';
 import persianGrowthCopy from './locales/fa.mjs';
 import amharicGrowthCopy from './locales/am.mjs';
+import gujaratiGrowthCopy from './locales/gu.mjs';
 
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
@@ -357,4 +358,13 @@ test('the Amharic machine-translation draft covers every copy key and preserves 
   assert.equal(amharicGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} ወራት');
   assert.equal(amharicGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver} ለ{recipient} ስጦታ ይሰጣል።');
   assert.equal(amharicGrowthCopy.mancala.messages.turn, '{player} ተራ ነው።');
+});
+
+test('the Gujarati machine-translation draft covers every copy key and preserves placeholders', () => {
+  assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'gu' }], { gu: gujaratiGrowthCopy }), true);
+  assert.ok(Object.values(gujaratiGrowthCopy).every((copy) => copy.copyLanguage === 'gu'));
+  assert.ok(Object.values(gujaratiGrowthCopy).every((copy) => copy.title.length <= 60 && copy.description.length <= 160));
+  assert.equal(gujaratiGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} મહિના');
+  assert.equal(gujaratiGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver} {recipient}ને ભેટ આપે છે.');
+  assert.equal(gujaratiGrowthCopy.mancala.messages.turn, '{player}નો વારો.');
 });
