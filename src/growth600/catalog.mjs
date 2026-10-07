@@ -228,6 +228,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/ramp-calculator/logic.mjs',
   },
   {
+    id: 'heat-loss-calculator',
+    category: 'home-energy',
+    type: 'calculator',
+    primaryIntent: 'heat loss calculator',
+    secondaryIntents: ['house heat loss calculator', 'room heat loss calculator', 'heat loss calculation by component'],
+    functions: ['estimate transmission heat loss separately for walls, roof, windows and floor from entered areas and U-values', 'add a simplified ventilation term from room volume and air changes per hour', 'convert temperature difference from K or °F and report total heat-loss rate in W and BTU/h'],
+    acceptance: 'A component with U = 1 W/(m²·K), area 10 m² and temperature difference 20 K contributes 200 W. Total equals the sum of component and ventilation terms.',
+    boundary: 'Simplified steady-state heat-loss estimate, not a heating-system sizing or energy-bill prediction. U-values and air changes are user inputs; thermal bridges, solar gains, internal gains, moisture, wind, intermittent operation, duct losses, local climate and building standards are not fully modeled. Verify assumptions with an energy professional before making building or equipment decisions.',
+    relatedExistingIds: ['btu-calculator', 'electricity-cost-calculator'],
+    logicModule: './tools/heat-loss-calculator/logic.mjs',
+  },
+  {
     id: 'deck-calculator',
     category: 'home-materials',
     type: 'calculator',

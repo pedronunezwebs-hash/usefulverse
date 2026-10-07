@@ -35,6 +35,7 @@ import { calculatePlantSpacing } from './plant-spacing-calculator/logic.mjs';
 import { calculateEvCharging } from './ev-charging-calculator/logic.mjs';
 import { calculateRainwaterHarvesting, parseMonthlyValues } from './rainwater-harvesting-calculator/logic.mjs';
 import { calculateRamp } from './ramp-calculator/logic.mjs';
+import { calculateHeatLoss } from './heat-loss-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -810,4 +811,25 @@ test('ramp calculator rejects unsupported units, fractional ratio and excessive 
   assert.throws(() => calculateRamp({ rise: 1, slopeRatioDenominator: 12, landingCount: 1, landingDepth: 0 }), /allowed range/u);
   assert.throws(() => calculateRamp({ rise: 1, slopeRatioDenominator: 12, landingCount: 101, landingDepth: 1 }), /from 0 to 100/u);
   assert.throws(() => calculateRamp({ rise: 1, unit: 'yd' }), /supported length/u);
+});
+
+test('heat loss separates transmission components and ventilation and converts units', () => {
+  const metric = calculateHeatLoss({ areaUnit: 'm2', temperatureUnit: 'K', volumeUnit: 'm3', temperatureDifference: 20, wallArea: 10, wallUValue: 1, roofArea: 5, roofUValue: 0.5, windowArea: 2, windowUValue: 2, floorArea: 10, floorUValue: 0.3, roomVolume: 100, airChangesPerHour: 1 });
+  assert.equal(metric.components.walls.watts, 200);
+  assert.equal(metric.transmissionWatts, 390);
+  assert.equal(metric.ventilationWatts, 660);
+  assert.equal(metric.totalWatts, 1050);
+  assert.ok(Math.abs(metric.totalBtuPerHour - 3582.74871465) < 1e-8);
+  const imperial = calculateHeatLoss({ areaUnit: 'ft2', temperatureUnit: 'F', volumeUnit: 'ft3', temperatureDifference: 36, wallArea: 107.639104, wallUValue: 1, roofArea: 0, roofUValue: 0, windowArea: 0, windowUValue: 0, floorArea: 0, floorUValue: 0, roomVolume: 3531.466672, airChangesPerHour: 0 });
+  assert.ok(Math.abs(imperial.components.walls.watts - 200) < 1e-5);
+  assert.equal(imperial.deltaK, 20);
+  assert.ok(Math.abs(imperial.volumeM3 - 100) < 1e-8);
+});
+
+test('heat loss calculator rejects invalid units, negative inputs, and out-of-range assumptions', () => {
+  const valid = { temperatureDifference: 20, wallArea: 10, wallUValue: 1, roofArea: 0, roofUValue: 0, windowArea: 0, windowUValue: 0, floorArea: 0, floorUValue: 0, roomVolume: 0, airChangesPerHour: 0 };
+  assert.throws(() => calculateHeatLoss({ ...valid, areaUnit: 'yd2' }), /supported area/u);
+  assert.throws(() => calculateHeatLoss({ ...valid, wallArea: -1 }), /allowed range/u);
+  assert.throws(() => calculateHeatLoss({ ...valid, temperatureDifference: -1 }), /allowed range/u);
+  assert.throws(() => calculateHeatLoss({ ...valid, airChangesPerHour: 101 }), /allowed range/u);
 });

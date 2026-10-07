@@ -66,6 +66,7 @@ export function renderGrowthForm(toolId, copy) {
     'ev-charging-calculator': ['batteryCapacityKwh', 'startSocPercent', 'targetSocPercent', 'chargerPowerKw', 'efficiencyPercent', 'electricityRatePerKwh', 'currency', 'accuracyNote'],
     'rainwater-harvesting-calculator': ['catchmentArea', 'areaUnit', 'rainfallUnit', 'rainfallValues', 'runoffPercent', 'tankCapacity', 'tankUnit', 'startingStorage', 'monthlyDemandValues', 'accuracyNote'],
     'ramp-calculator': ['rise', 'slopeRatioDenominator', 'landingCount', 'landingDepth', 'unit', 'safetyNote'],
+    'heat-loss-calculator': ['areaUnit', 'temperatureUnit', 'volumeUnit', 'temperatureDifference', 'wallArea', 'wallUValue', 'roofArea', 'roofUValue', 'windowArea', 'windowUValue', 'floorArea', 'floorUValue', 'roomVolume', 'airChangesPerHour', 'accuracyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -117,6 +118,7 @@ export function renderGrowthForm(toolId, copy) {
     'ev-charging-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kwh', 'kw', 'percent'],
     'rainwater-harvesting-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'squareMeters', 'squareFeet', 'millimeters', 'inches', 'liters', 'usGallons'],
     'ramp-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'millimeters', 'centimeters', 'meters', 'inches', 'feet'],
+    'heat-loss-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'squareMeters', 'squareFeet', 'cubicMeters', 'cubicFeet', 'kelvin', 'fahrenheit'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -772,6 +774,33 @@ export function renderGrowthForm(toolId, copy) {
     ${label('ramp-landing-count', fields.landingCount, '<input id="ramp-landing-count" name="landingCount" type="number" min="0" max="100" step="1" inputmode="numeric" value="0" required>')}
     ${label('ramp-landing-depth', fields.landingDepth, '<input id="ramp-landing-depth" name="landingDepth" type="number" min="0.001" max="1000000" step="any" inputmode="decimal">')}
     <p class="hint">${escapeGrowthHtml(fields.safetyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'heat-loss-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('heat-area-unit', fields.areaUnit, `<select id="heat-area-unit" name="areaUnit"><option value="m2">${escapeGrowthHtml(labels.squareMeters)}</option><option value="ft2">${escapeGrowthHtml(labels.squareFeet)}</option></select>`)}
+    ${label('heat-temperature-unit', fields.temperatureUnit, `<select id="heat-temperature-unit" name="temperatureUnit"><option value="K">${escapeGrowthHtml(labels.kelvin)}</option><option value="F">${escapeGrowthHtml(labels.fahrenheit)}</option></select>`)}
+    ${label('heat-temperature-difference', fields.temperatureDifference, '<input id="heat-temperature-difference" name="temperatureDifference" type="number" min="0" max="1000" step="any" inputmode="decimal" value="20" required>')}
+    <fieldset><legend>${escapeGrowthHtml(fields.wallArea)} / ${escapeGrowthHtml(fields.wallUValue)}</legend>
+      ${label('heat-wall-area', fields.wallArea, '<input id="heat-wall-area" name="wallArea" type="number" min="0" max="100000000" step="any" inputmode="decimal" value="10" required>')}
+      ${label('heat-wall-u', fields.wallUValue, '<input id="heat-wall-u" name="wallUValue" type="number" min="0" max="1000" step="any" inputmode="decimal" value="1" required>')}
+    </fieldset>
+    <fieldset><legend>${escapeGrowthHtml(fields.roofArea)} / ${escapeGrowthHtml(fields.roofUValue)}</legend>
+      ${label('heat-roof-area', fields.roofArea, '<input id="heat-roof-area" name="roofArea" type="number" min="0" max="100000000" step="any" inputmode="decimal" value="0" required>')}
+      ${label('heat-roof-u', fields.roofUValue, '<input id="heat-roof-u" name="roofUValue" type="number" min="0" max="1000" step="any" inputmode="decimal" value="0" required>')}
+    </fieldset>
+    <fieldset><legend>${escapeGrowthHtml(fields.windowArea)} / ${escapeGrowthHtml(fields.windowUValue)}</legend>
+      ${label('heat-window-area', fields.windowArea, '<input id="heat-window-area" name="windowArea" type="number" min="0" max="100000000" step="any" inputmode="decimal" value="0" required>')}
+      ${label('heat-window-u', fields.windowUValue, '<input id="heat-window-u" name="windowUValue" type="number" min="0" max="1000" step="any" inputmode="decimal" value="0" required>')}
+    </fieldset>
+    <fieldset><legend>${escapeGrowthHtml(fields.floorArea)} / ${escapeGrowthHtml(fields.floorUValue)}</legend>
+      ${label('heat-floor-area', fields.floorArea, '<input id="heat-floor-area" name="floorArea" type="number" min="0" max="100000000" step="any" inputmode="decimal" value="0" required>')}
+      ${label('heat-floor-u', fields.floorUValue, '<input id="heat-floor-u" name="floorUValue" type="number" min="0" max="1000" step="any" inputmode="decimal" value="0" required>')}
+    </fieldset>
+    ${label('heat-volume-unit', fields.volumeUnit, `<select id="heat-volume-unit" name="volumeUnit"><option value="m3">${escapeGrowthHtml(labels.cubicMeters)}</option><option value="ft3">${escapeGrowthHtml(labels.cubicFeet)}</option></select>`)}
+    ${label('heat-room-volume', fields.roomVolume, '<input id="heat-room-volume" name="roomVolume" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="0" required>')}
+    ${label('heat-air-changes', fields.airChangesPerHour, '<input id="heat-air-changes" name="airChangesPerHour" type="number" min="0" max="100" step="any" inputmode="decimal" value="0" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);
 

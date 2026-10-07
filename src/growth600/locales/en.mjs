@@ -80,6 +80,8 @@ import rainwaterHarvestingCopies from './rainwater-harvesting-calculator-final.m
 import { rainwaterHarvestingCalculatorEnglishCopy } from './rainwater-harvesting-calculator.en.mjs';
 import rampCopies from './ramp-calculator-final.mjs';
 import { rampCalculatorEnglishCopy } from './ramp-calculator.en.mjs';
+import heatLossCopies from './heat-loss-calculator-final.mjs';
+import { heatLossCalculatorEnglishCopy } from './heat-loss-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -467,5 +469,6 @@ registerGrowthLocaleExtension(source, 'plant-spacing-calculator', { ...plantSpac
 registerGrowthLocaleExtension(source, 'ev-charging-calculator', { ...evChargingCopies, en: evChargingCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'rainwater-harvesting-calculator', { ...rainwaterHarvestingCopies, en: rainwaterHarvestingCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'ramp-calculator', { ...rampCopies, en: rampCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'heat-loss-calculator', { ...heatLossCopies, en: heatLossCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

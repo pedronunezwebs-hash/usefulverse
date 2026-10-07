@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 48/323; **275 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 49/323; **274 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -399,7 +399,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 48/323; **275 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing, Retaining Wall, Battery Runtime, Lumber Cut List Optimizer, Plant Spacing Calculator, EV Charging Calculator, Rainwater Harvesting Calculator y Ramp Calculator están en la rama; las candidatas nuevas con localización incompleta no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 49/323; **274 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing, Retaining Wall, Battery Runtime, Lumber Cut List Optimizer, Plant Spacing Calculator, EV Charging Calculator, Rainwater Harvesting Calculator, Ramp Calculator y Heat Loss Calculator están en la rama; las candidatas nuevas con localización incompleta no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.
 
 ## Continuación · Rafter Calculator (#126) · 2026-10-08
@@ -581,3 +581,14 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — inglés completo; los otros 35 idiomas son borradores estructurales marcados `pending-tool-specific-translation`, por lo que el gate impide publicarlos como traducciones.
 - [ ] E/X visual — pendiente revisión en navegador, móvil y RTL; los tests automatizados no sustituyen inspección visual/dispositivo.
 - [ ] P/S — no merge/deploy ni sitemap productivo actualizado; sin envío a buscadores. Se mantienen abiertos los gates globales de publicación y no se ejecutó PageSpeed/Lighthouse.
+
+## Continuación · Heat Loss Calculator (#274) · 2026-10-08
+
+- [x] C/F — candidata #49/323 del orden del plan. Cubre pérdida térmica estacionaria por paredes, techo, ventanas y suelo, más un término simplificado de ventilación; distinta del cálculo de capacidad de refrigeración BTU y de costes eléctricos. La ficha registra `heat loss calculator` con 720 búsquedas mensuales US/en, KD 3; secundaria `room heat loss calculator`, 20/mes. No se hicieron nuevas llamadas a DataForSEO.
+- [x] E/X — transmisión `área × U × diferencia K`; ventilación aproximada con `0,33 × volumen m³ × ACH × diferencia K`; conversión separada de m²/ft², m³/ft³ y K/°F; total en W y BTU/h. El caso U=1 W/(m²·K), 10 m² y 20 K entrega 200 W; pruebas cubren sumas, ventilación, conversiones imperiales y rechazos de unidad/rango.
+- [x] B — formulario localizado por contrato, cuatro pares área/U, unidades editables, volumen/ACH, ejemplo, reset, copia y salida anunciada. Controlador pequeño, cálculo local; copy explica que no es Manual J, no elige equipos ni predice factura.
+- [x] E — pruebas focalizadas catálogo/formulario/contrato de locales/renderer/builder/bundles/lógica: **158/158 aprobadas** después de reparar un valor esperado incorrecto en la propia prueba. `git diff --check` y sintaxis se registran al cerrar el checkpoint.
+- [ ] La regresión completa `npm test` se intentó, pero el clon ligero carece de dependencias de suites ajenas a Growth600 (`prettier`, `fflate`, `to-words/gu-IN` y otras); el resultado global no puede declararse verde. No instalé todo `node_modules` ni descargué los motores pesados. El build integral sigue además bloqueado por el runtime WASM de OCR ausente en este clon.
+- [ ] L — inglés completo; 35 locales se mantienen como borradores estructurales `pending-tool-specific-translation`, y el gate de publicación los rechaza.
+- [ ] X/E visual — falta recorrido real en navegador, móvil y RTL; el test de formulario y build no sustituye esa revisión.
+- [ ] P/S — no merge/deploy, no cambio de sitemap de producción ni envío a buscadores; no se ejecutó PageSpeed/Lighthouse. Las puertas globales de publicación siguen pendientes.

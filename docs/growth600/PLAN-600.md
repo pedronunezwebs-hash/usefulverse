@@ -930,10 +930,10 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [ ] **C/F/E/X/L/B/P/S completos — `heat-loss-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/heat-loss-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `heat loss calculator` — 720 búsquedas/mes US/en, KD 3; nivel C. CPC 2.61 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** U valores, áreas, deltaT, ventilación y pérdidas por componente
-- **Prueba de aceptación específica:** U1 por10m² por20K da200W
+- **Función mínima y ampliaciones útiles:** calcular pérdidas de transmisión por separado para paredes, techo, ventanas y suelo a partir de área y valor U; sumar una aproximación de ventilación mediante volumen y renovaciones/hora; admitir áreas en m²/ft², volumen en m³/ft³ y diferencia térmica en K/°F; mostrar W y BTU/h.
+- **Prueba de aceptación específica:** U = 1 W/(m²·K) × 10 m² × diferencia de 20 K = 200 W para esa superficie. El total debe sumar transmisión de cada componente y ventilación de forma independiente.
 - **Frontera con otras herramientas:** btu-calculator: cargas detalladas, validar distinción de intención. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** Altura, ratio elegido 1:N, conteo/profundidad de descansos y unidades métricas/imperiales. Devuelve recorrido horizontal, superficie inclinada, porcentaje/ángulo y longitud horizontal total. No decide ni valida normas de accesibilidad o construcción; mostrar límites prominentes.
+- **Implementación/riesgo:** cálculo estacionario simplificado y local. Los valores U y renovaciones de aire son datos ingresados por la persona. No equivale a un cálculo Manual J, una auditoría energética ni a dimensionar un sistema; deja fuera puentes térmicos, ganancias solares/internas, humedad, viento, ductos, clima local y operación dinámica. No recomendar equipos ni predecir facturas; mostrar esta frontera con claridad.
 - **Consultas secundarias del mismo propietario:**
   - `room heat loss calculator` — 20/mes US/en; KD 0.
   - `heat loss calculator free online`; `heat loss calculator with example`; `heat loss calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
