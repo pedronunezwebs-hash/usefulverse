@@ -18,25 +18,32 @@ function parseInteger(source, position) {
   return { value, end: position + match[0].length };
 }
 
+function addCount(target, element, amount) {
+  const next = (target[element] ?? 0) + amount;
+  if (!Number.isSafeInteger(next) || next > 1_000_000) throw new RangeError('Formula atom counts cannot exceed 1,000,000 per element.');
+  target[element] = next;
+}
+
 export function parseChemicalFormula(formula) {
   if (typeof formula !== 'string' || !formula.trim() || formula.length > 160) throw new TypeError('Enter a formula with 1 to 160 characters.');
   const source = formula.replaceAll(' ', '');
   const counts = Object.create(null);
   let index = 0;
 
-  function parseGroup(closing = '') {
+  function parseGroup(closing = '', nesting = 0) {
+    if (nesting > 32) throw new RangeError('Formula groups cannot be nested more than 32 levels.');
     const group = Object.create(null);
     let terms = 0;
     while (index < source.length && source[index] !== closing && source[index] !== '.' && source[index] !== '·') {
       if (source[index] === '(' || source[index] === '[') {
         const open = source[index++];
         const close = open === '(' ? ')' : ']';
-        const nested = parseGroup(close);
+        const nested = parseGroup(close, nesting + 1);
         if (source[index] !== close) throw new SyntaxError(`Missing ${close} in formula.`);
         index += 1;
         const multiplier = parseInteger(source, index);
         index = multiplier.end;
-        for (const [key, amount] of Object.entries(nested)) group[key] = (group[key] ?? 0) + amount * multiplier.value;
+        for (const [key, amount] of Object.entries(nested)) addCount(group, key, amount * multiplier.value);
         terms += 1;
         continue;
       }
@@ -61,7 +68,7 @@ export function parseChemicalFormula(formula) {
       }
       const multiplier = parseInteger(source, index);
       index = multiplier.end;
-      group[element] = (group[element] ?? 0) + multiplier.value;
+      addCount(group, element, multiplier.value);
       terms += 1;
     }
     if (terms === 0) throw new SyntaxError('A group cannot be empty.');
@@ -74,7 +81,7 @@ export function parseChemicalFormula(formula) {
     index = leading.end;
     if (componentIndex === 0 && leading.value !== 1) throw new SyntaxError('Leading coefficients are not supported; enter the formula for one molecule.');
     const component = parseGroup();
-    for (const [element, amount] of Object.entries(component)) counts[element] = (counts[element] ?? 0) + amount * leading.value;
+    for (const [element, amount] of Object.entries(component)) addCount(counts, element, amount * leading.value);
     if (index < source.length && (source[index] === '.' || source[index] === '·')) index += 1;
     componentIndex += 1;
   }

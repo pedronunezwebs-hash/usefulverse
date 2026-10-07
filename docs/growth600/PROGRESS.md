@@ -6,11 +6,11 @@
 
 - [x] F0 — Arranque: leídas las instrucciones vigentes de la agencia, operación online, FABLE y Cloudflare; clon temporal aislado; plan y evidencia de DataForSEO localizados en GitHub. No hay PR abierto. Auth de GitHub y Wrangler confirmada sin exponer secretos.
 - [x] F1 — Snapshot: `main` sigue en `685f91adfc7818a54f6dc0a967e290d13137a3dd`, la misma base documentada en el plan. Inventario real: 277 herramientas, 36 idiomas. El `PLAN.md` del usuario coincide byte por byte con `docs/growth600/PLAN-600.md`.
-- [x] F1 — Línea base técnica: `npm test`: 832 aprobados, 0 fallidos. `npm run check` completó; sitemap generado: 10.260 URLs. El build temporal contiene 10.728 archivos (incluye assets) y ocupa 495 MB; el proyecto tiene margen para crecer, pero no hasta 600 herramientas en una única salida Free.
+- [x] F1 — Línea base técnica inicial: `npm test`: 832 aprobados, 0 fallidos. `npm run check` completó; sitemap generado: 10.260 URLs. El build temporal contiene 10.728 archivos (incluye assets) y ocupa 495 MB; el proyecto tiene margen para crecer, pero no hasta 600 herramientas en una única salida Free.
 - [x] F2 — Capacidad y coste estático comprobados: Cloudflare muestra un proyecto Pages actual (`usefulverse`). La documentación vigente indica hasta 100 proyectos por cuenta Free, 20.000 archivos por proyecto Free y peticiones a assets estáticos gratuitas e ilimitadas. La distribución planeada en una segunda salida estática es factible por cuota; no se ha creado todavía el segundo proyecto ni configurado su dominio.
 - [ ] F2 — Crear el proyecto Pages gratuito `usefulverse-tools`, configurar build separado y `tools.usefulverse.com`; hacerlo después de que el piloto esté construido y validado localmente.
-- [ ] F3 — Infraestructura aditiva para catálogo, renderer/origen canónico, 36 idiomas, builds y límites de tamaño. Parcial: catálogo, renderer, gate de idiomas, formularios y builder/sitemap separados probados con fixtures; faltan traducciones reales, cinco controladores, build de producción completo y budgets/licencias finales.
-- [ ] F4 — Piloto de cinco familias: `gravel-calculator`, `molar-mass-calculator`, `auto-loan-refinance-calculator`, `secret-santa-generator`, `mancala`. Los motores puros iniciales están implementados y tienen 7 pruebas; **ninguna herramienta está terminada**: faltan revisión integral, interfaz, exportación cuando aplique, 36 idiomas, build/presupuestos, publicación y sitemap (C/F/E/X/L/B/P/S).
+- [ ] F3 — Infraestructura aditiva para catálogo, renderer/origen canónico, 36 idiomas, builds y límites de tamaño. Parcial: catálogo, renderer, gate estricto por idioma, formularios y builder/sitemap separados están probados; `build:growth600` exige los 36 módulos antes de escribir salida. Solo existe copy real en inglés; faltan 35 locales y budgets/licencias finales.
+- [ ] F4 — Piloto de cinco familias: `gravel-calculator`, `molar-mass-calculator`, `auto-loan-refinance-calculator`, `secret-santa-generator`, `mancala`. Motores y cinco controladores locales están conectados. **Ninguna herramienta está terminada/publicable**: falta localizar a 36 idiomas, revisión móvil/teclado ampliada, build/presupuestos y publicación+sitemap (C/F/E/X/L/B/P/S).
 
 ## Avance de implementación · motores del piloto
 
@@ -22,14 +22,15 @@
 - [x] Suite piloto: `node --test src/growth600/tools/growth600-logic.test.mjs` — 7/7; incluye aceptación, límites, imposibilidad, variedad del sorteo y partidas deterministas con conservación de semillas.
 - [x] Contrato del catálogo aditivo: 5 IDs comparados contra las 277 protegidas; pruebas rechazan colisión, duplicados, contratos incompletos y enlaces a herramientas inexistentes.
 - [x] Renderer base: pruebas confirman canonical/hreflang en origen separado, `lang`/`dir` RTL, escape HTML y JSON-LD contra inyección, además de rechazo de origen no HTTPS. No es aún una página de producto completa.
-- [x] Formularios estáticos iniciales para cinco pilotos: entradas, límites HTML, estados anunciables y etiquetas obligatorias; tests impiden markup sin etiquetas/copy, pero aún no hay lógica DOM conectada ni operaciones funcionales en navegador.
+- [x] Formularios estáticos y controladores reales para los cinco pilotos; datos locales en `<script type="application/json">` con escape de contenido; tests verifican labels, submit/reset y copia segura.
+- [x] Bundles por herramienta minificados y separados; tamaños observados: grava 3.995 B, masa molar 4.713 B, refinanciación 3.820 B, Secret Santa 4.858 B, Mancala 3.875 B; bajo el presupuesto de 24 KiB, sin llamadas remotas ni ejecución dinámica.
 - [x] Puerta de localización: comprueba cada herramienta en cada idioma y límites de títulos/descripciones; aún faltan los textos traducidos reales para los 36 idiomas.
 - [x] Builder separado probado temporalmente: 2 idiomas de fixture × (5 herramientas + portada), sitemap/robots/llms, canonicals y assets versionados; rechaza sobreescrituras, archivos de más, controladores ausentes y copy incompleto. El fixture no es un build listo para publicar.
-- [ ] Medir assets con las cinco implementaciones y 36 traducciones reales; el build de producción completo aún no existe.
-- [x] Regresión del repo: `npm test` — 848 aprobados, 0 fallidos (ejecución final con reporter dot, código 0); `USEFULVERSE_DIST=/tmp/usefulverse-impl.uEAJhh/baseline-dist npm run check` — las 9.972 páginas de herramientas actuales siguen generando correctamente y el sitemap root conserva 10.260 URLs.
-- [ ] Conectar y probar en navegador los controladores de los cinco pilotos; los formularios actuales son solo estructura y todavía no realizan cálculos/juego.
-- [ ] Localización de los cinco pilotos; aún no hay páginas generadas en el subdominio.
-- [ ] Integración automática al `npm test` se verificará una vez implementados el builder y sus gates separados.
+- [ ] Medir assets con las 36 traducciones reales; aún solo se midieron los cinco bundles de controlador y el CSS.
+- [x] Recorrido funcional en navegador local de los cinco pilotos: grava (cálculo, inválido y reset), fórmula `Ca(OH)2` (74,092 g/mol) y rechazo de `XeF4`, refinanciación (cuotas/coste/break-even), sorteo con exclusión y revelado privado paso a paso, Mancala con turno extra y respuesta del ordenador. Las pruebas detectaron y corrigieron botones de envío mal tipados y el adaptador aleatorio criptográfico.
+- [x] Regresión del repo (checkpoint actual): `npm test -- --test-reporter=spec` — 850 aprobados, 0 fallidos; `USEFULVERSE_DIST=/tmp/usefulverse-impl.uEAJhh/baseline-dist npm run check` — código 0. El root conserva 9.972 páginas de herramientas y 10.260 URLs. `git diff --check` también pasó.
+- [ ] Localización de los cinco pilotos: `src/growth600/locales/en.mjs` es copy real; faltan otros 35 idiomas y el gate impide un build parcial. La UI gratuita de Google Translate se comprobó con cuatro frases e IDs estables; aún no se ha completado ni guardado una tanda de localización.
+- [x] Integración de bundle checks al `npm test`; `npm run build:growth600` falla de forma cerrada con lista de locales faltantes y no genera salida.
 
 ## Criterio y decisiones vigentes
 
@@ -43,9 +44,9 @@
 
 - `main` y rama base del plan: `685f91adfc7818a54f6dc0a967e290d13137a3dd`.
 - Cloudflare Pages Free: [límites oficiales](https://developers.cloudflare.com/pages/platform/limits/) (consulta de 2026-10-07); [precio de peticiones estáticas](https://developers.cloudflare.com/pages/functions/pricing/); [dominios personalizados](https://developers.cloudflare.com/pages/configuration/custom-domains/).
-- La línea base inicial `npm test`/`npm run check` fue previa a esta implementación; la última suite `npm test -- --test-reporter=dot` completó con código 0. El recuento anterior fue 846; se añadieron 2 pruebas de build, total 848. El build root volvió a conservar 9.972 páginas de herramientas/10.260 URLs; `src/growth600/` no se integra aún al root. No se lanzó PageSpeed, tal como pide el plan.
+- La última suite completa y el build root acabaron con código 0. `build:growth600` informó que faltan `es, fr, pt, de, ja, ko, id, hi, ar, zh, bn, ru, ur, tr, vi, it, zh_tw, bg, ca, nl, el, ms, pl, sv, th, uk, sw, mr, te, ha, tl, ta, fa, am, gu`; no creó salida. `src/growth600/` aún no se integra al root. No se lanzó PageSpeed, tal como pide el plan.
 - Ningún archivo se desplegó, ninguna URL nueva está publicada y el sitemap de producción no cambió.
 
 ## Próxima acción concreta
 
-Implementar y probar los cinco controladores contra sus formularios; luego añadir 36 copias reales y emitir el build completo en un directorio efímero para revisar todas las rutas, sitemap, cabeceras y budgets. La solicitud de muestra al endpoint público de Google Translate devolvió HTTP 429; no insistir ni contarla como localización válida. El repo root y sus 277 herramientas permanecen intactos.
+Traducir el copy por tandas con la interfaz gratuita de Google Translate e identificadores estables por línea; importar cada resultado a `src/growth600/locales/<key>.mjs`, validar placeholders/títulos/campos y no usar endpoints bloqueados. Completar las 36 locales, compilar en una carpeta efímera y revisar rutas, sitemap, hreflang y budgets. El endpoint no oficial devolvió HTTP 429: no reintentar. Las 277 rutas originales siguen intactas.

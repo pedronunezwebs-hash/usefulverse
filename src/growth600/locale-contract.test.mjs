@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { assertGrowthLocaleCoverage } from './locale-contract.mjs';
+import { growthPilotTools } from './catalog.mjs';
+import englishGrowthCopy from './locales/en.mjs';
 
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
@@ -16,4 +18,9 @@ test('growth release gate enforces metadata limits and language-specific copy', 
   const overlong = { ...sample('en'), title: `${'x'.repeat(61)} | UsefulVerse` };
   assert.throws(() => assertGrowthLocaleCoverage([{ id: 'one' }], [{ key: 'en' }], { en: { one: overlong } }), /title is .*max 60/);
   assert.throws(() => assertGrowthLocaleCoverage([{ id: 'one' }], [{ key: 'en' }], { en: { one: { ...sample('es'), copyLanguage: 'es' } } }), /copy language does not match/);
+});
+
+test('the first real English pilot copy satisfies every field, message, placeholder and title budget', () => {
+  assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assert.ok(Object.values(englishGrowthCopy).every((copy) => copy.title.length <= 60));
 });

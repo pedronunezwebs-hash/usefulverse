@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
+    "build:growth600": "node scripts/build-growth600.mjs",
     "check": "node scripts/build.mjs && node scripts/check-build.mjs",
     "test": "node --test",
     "serve": "python3 -m http.server 4173 --directory dist",

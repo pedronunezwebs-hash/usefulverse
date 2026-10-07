@@ -1,6 +1,7 @@
 function randomIndex(length, random) {
-  const value = random();
-  if (!Number.isFinite(value) || value < 0 || value >= 1) throw new RangeError('Random source must return a number from 0 (inclusive) to 1 (exclusive).');
+  const value = random(length);
+  if (Number.isSafeInteger(value) && value >= 0 && value < length) return value;
+  if (!Number.isFinite(value) || value < 0 || value >= 1) throw new RangeError('Random source must return an index in range or a fraction from 0 (inclusive) to 1 (exclusive).');
   return Math.floor(value * length);
 }
 

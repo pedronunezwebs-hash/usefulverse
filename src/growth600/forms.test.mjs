@@ -4,14 +4,15 @@ import { growthPilotTools } from './catalog.mjs';
 import { renderGrowthForm } from './forms.mjs';
 
 const actions = {
-  calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.',
+  calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', feet: 'Feet', inches: 'Inches', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.',
 };
+const messages = { copied: 'Copied.', copyUnavailable: 'Copy is unavailable.', calculated: 'Calculation complete.', checkInputs: 'Check your entries.', area: 'Area', volume: 'Volume', orderVolume: 'Order volume', estimatedWeight: 'Estimated weight', bagsToBuy: 'Bags to buy', invalidFormula: 'Check the chemical formula.', atomCount: 'atoms', molarMass: 'Molar mass', estimateOnly: 'Estimate only; compare lender offers.', currentPayment: 'Current monthly payment', newPayment: 'New monthly payment', paymentDifference: 'Monthly payment difference', currentTotal: 'Current remaining total', newTotal: 'New loan total', estimatedDifference: 'Estimated savings (negative means higher cost)', breakEven: 'Break-even', noBreakEven: 'No break-even within the compared terms', monthCount: '{count} months', privatePair: '{giver} gives to {recipient}', allRevealed: 'All pairs revealed.', drawReady: 'Draw ready. Reveal one person at a time.', checkNamesAndRules: 'Check the names and exclusions.', downloaded: 'Downloaded.', pit: 'Pit', seeds: 'seeds', playerOne: 'Player one', playerTwo: 'Player two', playerOneWins: 'Player one wins.', playerTwoWins: 'Player two wins.', tie: 'Tie game.', gameOver: 'Game over.', turn: '{player} to move.' };
 const copies = {
-  'gravel-calculator': { name: 'Gravel calculator', actions, fields: Object.fromEntries(['shape', 'area', 'depth', 'length', 'width', 'diameter', 'base', 'triangleHeight', 'density', 'waste', 'bagSize'].map((key) => [key, key])) },
-  'molar-mass-calculator': { name: 'Molar mass calculator', actions, fields: { formula: 'Formula', supportedHint: 'Common elements and selected isotopes are supported.' } },
-  'auto-loan-refinance-calculator': { name: 'Auto refinance calculator', actions, fields: { balance: 'Payoff balance', currentApr: 'Current APR', currentMonths: 'Months remaining', newApr: 'New APR', newMonths: 'New term', fees: 'Fees', feeTreatment: 'Fee treatment', upfront: 'Pay upfront', rolledIn: 'Add to balance' } },
-  'secret-santa-generator': { name: 'Secret Santa generator', actions, fields: { names: 'Participants', exclusions: 'Exclusions', exclusionsHint: 'One giver:recipient per line.' } },
-  mancala: { name: 'Mancala', actions, fields: { mode: 'Game mode', board: 'Kalah board', rules: 'Choose a pit. Seeds are sown counter-clockwise; the other player store is skipped.' } },
+  'gravel-calculator': { name: 'Gravel calculator', actions, messages, fields: Object.fromEntries(['shape', 'area', 'depth', 'length', 'width', 'diameter', 'base', 'triangleHeight', 'dimensionUnit', 'depthUnit', 'density', 'densityUnit', 'waste', 'bagSize', 'bagUnit'].map((key) => [key, key])) },
+  'molar-mass-calculator': { name: 'Molar mass calculator', actions, messages, fields: { formula: 'Formula', supportedHint: 'Common elements and selected isotopes are supported.' } },
+  'auto-loan-refinance-calculator': { name: 'Auto refinance calculator', actions, messages, fields: { balance: 'Payoff balance', currentApr: 'Current APR', currentMonths: 'Months remaining', newApr: 'New APR', newMonths: 'New term', fees: 'Fees', feeTreatment: 'Fee treatment', upfront: 'Pay upfront', rolledIn: 'Add to balance', currencyNote: 'Use the same currency for all amounts.' } },
+  'secret-santa-generator': { name: 'Secret Santa generator', actions, messages, fields: { names: 'Participants', exclusions: 'Exclusions', exclusionsHint: 'One giver:recipient per line.' } },
+  mancala: { name: 'Mancala', actions, messages, fields: { mode: 'Game mode', board: 'Kalah board', rules: 'Choose a pit. Seeds are sown counter-clockwise; the other player store is skipped.' } },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -27,6 +28,12 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(renderGrowthForm('molar-mass-calculator', copies['molar-mass-calculator']), /maxlength="160"/u);
   assert.match(renderGrowthForm('secret-santa-generator', copies['secret-santa-generator']), /data-reveal-name/u);
   assert.match(renderGrowthForm('mancala', copies.mancala), /data-board/u);
+  assert.match(renderGrowthForm('gravel-calculator', copies['gravel-calculator']), /type="submit" data-action="calculate"/u);
+  assert.match(renderGrowthForm('secret-santa-generator', copies['secret-santa-generator']), /type="submit" data-action="generate"/u);
+  assert.match(renderGrowthForm('gravel-calculator', copies['gravel-calculator']), /<label for="triangle-height">/u);
+  assert.match(renderGrowthForm('gravel-calculator', copies['gravel-calculator']), /data-tool-copy/u);
+  const payload = renderGrowthForm('secret-santa-generator', { ...copies['secret-santa-generator'], description: '</script><script>alert(1)</script>' });
+  assert.doesNotMatch(payload, /<script>alert\(1\)<\/script>/u);
 });
 
 test('pilot form renderer blocks missing translated fields or actions instead of silently falling back', () => {

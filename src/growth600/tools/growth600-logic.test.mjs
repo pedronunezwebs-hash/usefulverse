@@ -30,6 +30,8 @@ test('molar-mass parser handles formulas, nested groups and supported isotopes',
   assert.throws(() => calculateMolarMass('Ca(OH2'), /Missing/);
   assert.throws(() => calculateMolarMass('()'), /empty/);
   assert.throws(() => calculateMolarMass('C0'), /Formula counts/);
+  assert.throws(() => calculateMolarMass('(H1000000)1000000'), /cannot exceed/u);
+  assert.throws(() => calculateMolarMass(`${'('.repeat(33)}H${')'.repeat(33)}`), /nested more than 32 levels/u);
 });
 
 test('loan comparison handles zero APR, zero fees and a fee-only payment change', () => {
@@ -66,6 +68,9 @@ test('Secret Santa stays valid across varied random draws and produces different
   const first = assignSecretSanta(names, {}, seeded(11));
   const second = assignSecretSanta(names, {}, seeded(29));
   assert.notDeepEqual(first, second);
+  const integerRandom = assignSecretSanta(names, {}, (limit) => limit - 1);
+  assert.equal(integerRandom.length, names.length);
+  assert.ok(integerRandom.every(({ giver, recipient }) => giver !== recipient));
   for (let seed = 1; seed <= 40; seed += 1) {
     const pairs = assignSecretSanta(names, {}, seeded(seed));
     assert.equal(new Set(pairs.map(({ recipient }) => recipient)).size, names.length);

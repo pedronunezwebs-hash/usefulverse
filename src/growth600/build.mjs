@@ -24,7 +24,7 @@ async function writeRoute(root, route, content) {
   await writeFile(path, content);
 }
 
-function assertLocalController(toolId, source, maxBytes) {
+export function assertLocalController(toolId, source, maxBytes) {
   const bytes = Buffer.byteLength(source);
   if (bytes > maxBytes) throw new Error(`${toolId} controller exceeds the ${maxBytes}-byte initial runtime budget.`);
   if (/\b(?:fetch|XMLHttpRequest|WebSocket|EventSource)\b/u.test(source) || /https?:\/\//u.test(source)) throw new Error(`${toolId} controller must not contact a remote service.`);
@@ -46,7 +46,7 @@ export async function buildGrowthStaticSite({
       if (typeof home?.[key] !== 'string' || !home[key].trim()) throw new Error(`${locale.key}: missing localized home ${key}.`);
     }
     if (home.title.length > 60 || home.description.length > 160) throw new Error(`${locale.key}: home metadata exceeds its character budget.`);
-    home.tools = Object.fromEntries(tools.map((tool) => [tool.id, copyByLocale[locale.key][tool.id]]));
+    // Keep caller-owned locale data immutable so tests/build stages can safely reuse it.
   }
   for (const tool of tools) {
     if (typeof controllerBundles?.[tool.id] !== 'string' || !controllerBundles[tool.id].trim()) throw new Error(`Missing isolated browser controller for ${tool.id}.`);
@@ -68,7 +68,7 @@ export async function buildGrowthStaticSite({
   for (const locale of localeEntries) {
     const localeCopy = copyByLocale[locale.key];
     const localeHomeRoute = localePath(locale.key);
-    const homeHtml = renderGrowthHomePage({ tools, locale, localeEntries, copy: localeCopy._home, origin });
+    const homeHtml = renderGrowthHomePage({ tools, locale, localeEntries, copy: { ...localeCopy._home, tools: Object.fromEntries(tools.map((tool) => [tool.id, localeCopy[tool.id]])) }, origin });
     await writeRoute(outputDir, localeHomeRoute, homeHtml.replace('/assets/growth600.css', `/assets/growth600.${version}.css`));
     canonicalUrls.push(`${new URL(origin).origin}${localeHomeRoute}`);
     for (const tool of tools) {
