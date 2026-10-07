@@ -38,6 +38,8 @@ import mulchCopies from './mulch-calculator-final.mjs';
 import { mulchCalculatorEnglishCopy } from './mulch-calculator.en.mjs';
 import paverCopies from './paver-calculator-final.mjs';
 import { paverCalculatorEnglishCopy } from './paver-calculator.en.mjs';
+import solarCopies from './solar-panel-calculator-final.mjs';
+import { solarPanelCalculatorEnglishCopy } from './solar-panel-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -361,5 +363,6 @@ const localizedPaverCopies = {
   },
 };
 registerGrowthLocaleExtension(source, 'paver-calculator', localizedPaverCopies, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'solar-panel-calculator', { ...solarCopies, en: solarPanelCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

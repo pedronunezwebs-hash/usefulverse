@@ -91,7 +91,7 @@
 
 ## Próxima acción concreta
 
-Continuar con la siguiente candidata pendiente según el orden de prioridad de `PLAN-600.md`; no reutilizar este marcador histórico de Image Region Redactor. Al 2026-10-08 el catálogo aditivo contiene 27 candidatas, incluida Paver Calculator (#099). Quedan 296 de las 323 incorporaciones previstas. Las fichas nuevas siguen fuera de producción hasta cerrar los gates globales C/F/E/X/L/B/P/S; el sitemap de producción no cambia y no se envían URLs de staging a buscadores. Las 277 rutas originales permanecen protegidas.
+Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual y la siguiente candidata están al final de este archivo. Las fichas nuevas siguen fuera de producción hasta cerrar los gates globales C/F/E/X/L/B/P/S; el sitemap de producción no cambia y no se envían URLs de staging a buscadores. Las 277 rutas originales permanecen protegidas.
 
 ## Continuación · 2026-10-07
 
@@ -367,3 +367,20 @@ Continuar con la siguiente candidata pendiente según el orden de prioridad de `
 - [x] Suite focalizada de la familia Growth600 — **148/148 pruebas aprobadas**; `git diff --check` limpio. No se ejecutaron PageSpeed/Lighthouse.
 - [ ] No se ha probado en dispositivos físicos ni por hablantes nativos. El build fue una muestra aislada de Paver + Gravel para resolver enlaces y no equivale al build integral actual de todos los candidatos.
 - [ ] **No publicado:** sin merge, deploy ni envío a buscadores; no se alteró el sitemap de producción ni las 277 herramientas protegidas. #099 permanece sin marcar en `PLAN-600.md` hasta cierre coordinado de los gates de release C/F/E/X/L/B/P/S.
+
+## Continuación · Solar Panel Calculator (#104) · 2026-10-08
+
+- [x] C — candidata aditiva, sin colisión con el catálogo protegido ni con `fuel-cost-calculator`: calcula generación solar, no consumo de combustible. El catálogo de expansión ya contiene **28** de las 323 incorporaciones objetivo; quedan **295** candidatas por implementar.
+- [x] F/E — modo de producción desde cantidad de paneles y modo de dimensionado desde una meta diaria; permite pérdidas, superficie opcional, tarifa, moneda y coste de instalación. Pruebas: 1 kW × 5 horas × 0 % = 5 kWh/día; con 20 % de pérdidas = 4 kWh/día; para 4 kWh con paneles de 400 W y 5 horas a 20 % redondea a 3 paneles y estima 4,8 kWh/día. Aclara que generación, ahorro y retorno no están garantizados.
+- [x] X — Chrome local: botón de ejemplo, dimensionado, entradas incompletas y reset; el campo que falta queda enfocado y marcado. El ejemplo mostró el error «undefined» en el periodo de retorno; se corrigió leyendo la etiqueta `years` desde acciones y se volvió a comprobar que muestra «18.26 years».
+- [x] L — textos presentes para los **36 idiomas**, validación de campos/acciones/mensajes y dos FAQs por idioma. Titles ≤60 caracteres, descriptions ≤160 y sufijo de marca exacto `UsefulVerse`; ningún marcador automático se filtra. Son traducciones automáticas comprensibles, no revisión humana nativa.
+- [x] B local — bundle real del controlador de **6.433 B** (bajo el presupuesto de 24 KiB); CSS compartido 10.988 B. Build aislado local de las páginas solar en EN/ES/AR: 6 HTML y 6 URLs en sitemap, 15 archivos en total. No se ejecutó el build de release con modelos/dependencias completos.
+- [x] QA navegador RTL/móvil: árabe en 390 × 844, `lang=ar`, `dir=rtl`, ancho del documento 390 px, sin overflow; el ejemplo mostró estado/resultados localizados y consola limpia. Las solicitudes fueron solo documento, CSS y bundle local; no hubo llamadas externas.
+- [x] Pruebas growth600 completas disponibles en este clon: **134/134** aprobadas (esbuild temporal MIT instalado en `/tmp` para ejecutar la prueba de bundles). La suite focal solar/catalog/forms/locale/build: **78/78**.
+- [ ] No se ejecutaron `npm test` del repositorio completo, el build oficial con dependencias de modelos, PageSpeed/Lighthouse ni revisión humana nativa. No se probó en hardware físico.
+- [ ] **No publicado:** Solar sigue en la rama de trabajo, sin merge ni deploy. No cambia el sitemap de producción ni se envía URL a buscadores. La casilla #104 de `PLAN-600.md` permanece abierta hasta los gates de publicación P/S coordinados y las comprobaciones de release.
+
+## Estado actual del plan 277 → 600
+
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 28/323; **295 por implementar**. Solar está programada y validada localmente, pero aún no publicada. Las 277 herramientas originales no se tocaron.
+- **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.

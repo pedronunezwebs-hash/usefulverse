@@ -53,6 +53,7 @@ function toolCopy(tool, language) {
     'image-upscaler': { imageFile: 'Choose an image', accuracyNote: 'Local model; 1 megapixel limit.', progressHint: 'Progress', sourcePreview: 'Original', resultPreview: 'Result', relatedResizer: 'Resize image.', relatedSharpener: 'Sharpen image.' },
     'wallpaper-calculator': { unit: 'Unit', perimeter: 'Wall perimeter', wallHeight: 'Wall height', openingsArea: 'Opening area', rollWidth: 'Roll width', rollLength: 'Roll length', patternRepeat: 'Pattern repeat', wastePercent: 'Extra material', accuracyNote: 'Planning estimate only.', relatedPaintCalculator: 'Need paint too? Try the paint calculator.' },
     'pool-salt-calculator': { volume: 'Pool volume', volumeUnit: 'Volume unit', currentSalinityPpm: 'Current salinity ppm', targetSalinityPpm: 'Target salinity ppm', saltPurityPercent: 'Salt purity', bagSize: 'Bag size', bagUnit: 'Bag unit', accuracyNote: 'Use the manufacturer target.' },
+    'solar-panel-calculator': { mode: 'Estimate type', dailyTargetKwh: 'Daily energy target', panelCount: 'Panel count', panelWatts: 'Panel rating', peakSunHours: 'Peak sun hours', lossPercent: 'System losses', panelLengthM: 'Panel length', panelWidthM: 'Panel width', electricityRate: 'Electricity rate', systemCost: 'Installed system cost', currency: 'Currency', assumptionNote: 'Enter local sunlight and your own price assumptions.', accuracyNote: 'Planning estimate only; actual production, savings and payback vary with conditions and utility rules.' },
     'fence-calculator': { unit: 'Run unit', length: 'Total run', gateCount: 'Number of gates', gateWidth: 'Gate opening', materialUnit: 'Material unit', postSpacing: 'Post spacing', panelWidth: 'Panel width', picketWidth: 'Picket width', maxPicketGap: 'Maximum gap', picketHeight: 'Picket length', wastePercent: 'Extra pieces', pricePerPost: 'Price per post', pricePerGate: 'Price per gate', pricePerPanel: 'Price per panel', pricePerPicket: 'Price per picket', accuracyNote: 'Estimate only; gate positions are assumed evenly spaced.' },
     'deck-calculator': { unit: 'Unit', length: 'Deck length', width: 'Deck width', boardUnit: 'Board and support unit', boardWidth: 'Board width', gap: 'Gap', stockBoardLength: 'Stock board length', joistSpacing: 'Support spacing', wastePercent: 'Extra material', fastenersPerIntersection: 'Fasteners per crossing', pricePerBoard: 'Price per board', safetyNote: 'Estimate only; joints require support.' },
     'roofing-calculator': { projectedArea: 'Projected roof area', areaUnit: 'Area unit', rise: 'Rise', run: 'Run', pitchUnit: 'Pitch unit', wastePercent: 'Extra material', bundlesPerSquare: 'Bundles per square', pricePerBundle: 'Price per bundle', safetyNote: 'Estimate only; verify measurements.' },
@@ -170,6 +171,24 @@ function toolCopy(tool, language) {
     { question: 'How many posts does one isolated fence section need?', answer: fields.accuracyNote },
     { question: 'Does this place gates at their exact positions?', answer: 'No. It divides fence sections evenly because individual gate positions are not entered.' },
   ];
+  if (tool.id === 'solar-panel-calculator') {
+    Object.assign(fields, {
+      mode: 'Estimate type', dailyTargetKwh: 'Daily energy target', panelCount: 'Panel count', panelWatts: 'Panel rating',
+      peakSunHours: 'Peak sun hours', lossPercent: 'System losses', panelLengthM: 'Panel length', panelWidthM: 'Panel width',
+      electricityRate: 'Electricity rate', systemCost: 'Installed system cost', currency: 'Currency',
+      assumptionNote: 'Enter local sunlight and your own price assumptions.', accuracyNote: 'Planning estimate only; actual production, savings and payback vary with conditions and utility rules.',
+    });
+    Object.assign(actions, { productionMode: 'Estimate production', sizingMode: 'Size a system', years: 'years' });
+    Object.assign(localized.messages, {
+      panelCount: 'Panels needed', systemSize: 'System size', dailyProduction: 'Daily production', monthlyProduction: 'Monthly production',
+      annualProduction: 'Annual production', panelArea: 'Panel area', annualSavings: 'Annual bill offset', simplePayback: 'Simple payback',
+      paybackUnavailable: 'No payback estimate available.',
+    });
+    localized.additionalFaqs = [
+      { question: 'How many solar panels do I need?', answer: 'Enter daily energy use, panel power, sunlight and system losses.' },
+      { question: 'Are savings guaranteed?', answer: 'No. This is an estimate based on your assumptions.' },
+    ];
+  }
   if (tool.id === 'wallpaper-calculator') localized.additionalFaqs = [
     { question: 'Why does a pattern repeat need more wallpaper?', answer: 'The cut length is rounded up to the next full design repeat, so fewer strips can fit on one roll.' },
     { question: 'Are openings and corners placed exactly?', answer: fields.accuracyNote },

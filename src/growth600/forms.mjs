@@ -45,6 +45,7 @@ export function renderGrowthForm(toolId, copy) {
     'random-team-generator': ['names', 'teamCount', 'separations', 'separationsHint', 'seed', 'seedHint', 'privacyNote'],
   'mulch-calculator': ['shape', 'dimensionUnit', 'length', 'width', 'diameter', 'bedCount', 'depth', 'depthUnit', 'bagVolume', 'bagUnit', 'wastePercent', 'pricePerBag', 'currency', 'currencyNote', 'accuracyNote', 'relatedGravelCalculator', 'relatedSoilCalculator'],
     'paver-calculator': ['length', 'width', 'surfaceUnit', 'moduleLength', 'moduleWidth', 'moduleUnit', 'paversPerModule', 'paverWastePercent', 'baseDepth', 'baseDepthUnit', 'baseWastePercent', 'pricePerPaver', 'basePricePerM3', 'currency', 'unitsNote', 'accuracyNote', 'relatedTileCalculator', 'relatedGravelCalculator'],
+    'solar-panel-calculator': ['mode', 'dailyTargetKwh', 'panelCount', 'panelWatts', 'peakSunHours', 'lossPercent', 'panelLengthM', 'panelWidthM', 'electricityRate', 'systemCost', 'currency', 'assumptionNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -75,6 +76,7 @@ export function renderGrowthForm(toolId, copy) {
   'random-team-generator': ['generateTeams', 'reset', 'example', 'copy', 'download', 'result', 'team', 'participant', 'seedLabel'],
   'mulch-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'rectangle', 'circle', 'meters', 'feet', 'centimeters', 'millimeters', 'inches', 'liters', 'cubicFeet', 'squareMeters', 'squareFeet'],
     'paver-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'centimeters', 'inches', 'millimeters', 'squareMeters', 'squareFeet'],
+    'solar-panel-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'productionMode', 'sizingMode', 'years'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -431,6 +433,24 @@ export function renderGrowthForm(toolId, copy) {
     ${label('price-per-paver', fields.pricePerPaver, '<input id="price-per-paver" name="pricePerPaver" type="number" min="0" max="1000000" step="any" inputmode="decimal">')}
     ${label('base-price-per-m3', fields.basePricePerM3, '<input id="base-price-per-m3" name="basePricePerM3" type="number" min="0" max="1000000" step="any" inputmode="decimal">')}
     ${label('currency', fields.currency, '<select id="currency" name="currency"><option>USD</option><option>EUR</option><option>GBP</option><option>CAD</option><option>AUD</option><option>BRL</option><option>INR</option></select>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${button('calculate', labels.calculate)}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'solar-panel-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('solar-mode', fields.mode, `<select id="solar-mode" name="mode"><option value="production">${escapeGrowthHtml(labels.productionMode)}</option><option value="sizing">${escapeGrowthHtml(labels.sizingMode)}</option></select>`)}
+    <div data-solar-target hidden>${label('daily-target-kwh', fields.dailyTargetKwh, '<input id="daily-target-kwh" name="dailyTargetKwh" type="number" min="0.1" max="1000" step="any" inputmode="decimal" value="20">')}</div>
+    <div data-solar-count>${label('solar-panel-count', fields.panelCount, '<input id="solar-panel-count" name="panelCount" type="number" min="1" max="10000" step="1" inputmode="numeric" value="10">')}</div>
+    ${label('panel-watts', fields.panelWatts, '<input id="panel-watts" name="panelWatts" type="number" min="50" max="2000" step="any" inputmode="decimal" value="400">')}
+    ${label('peak-sun-hours', fields.peakSunHours, '<input id="peak-sun-hours" name="peakSunHours" type="number" min="0.1" max="14" step="any" inputmode="decimal" value="5">')}
+    ${label('solar-loss-percent', fields.lossPercent, '<input id="solar-loss-percent" name="lossPercent" type="number" min="0" max="60" step="any" inputmode="decimal" value="20">')}
+    <p class="hint">${escapeGrowthHtml(fields.assumptionNote)}</p>
+    ${label('panel-length-m', fields.panelLengthM, '<input id="panel-length-m" name="panelLengthM" type="number" min="0.2" max="5" step="any" inputmode="decimal" placeholder="">')}
+    ${label('panel-width-m', fields.panelWidthM, '<input id="panel-width-m" name="panelWidthM" type="number" min="0.2" max="5" step="any" inputmode="decimal" placeholder="">')}
+    ${label('electricity-rate', fields.electricityRate, '<input id="electricity-rate" name="electricityRate" type="number" min="0" max="100" step="any" inputmode="decimal" placeholder="">')}
+    ${label('system-cost', fields.systemCost, '<input id="system-cost" name="systemCost" type="number" min="0" max="1000000000" step="any" inputmode="decimal" placeholder="">')}
+    ${label('solar-currency', fields.currency, '<select id="solar-currency" name="currency"><option>USD</option><option>EUR</option><option>GBP</option><option>CAD</option><option>AUD</option><option>BRL</option><option>INR</option></select>')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${button('calculate', labels.calculate)}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>

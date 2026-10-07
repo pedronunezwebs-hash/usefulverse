@@ -1,5 +1,17 @@
 export const growthPilotTools = Object.freeze([
   {
+    id: 'solar-panel-calculator',
+    category: 'home-energy',
+    type: 'calculator',
+    primaryIntent: 'solar panel calculator',
+    secondaryIntents: ['solar panel size calculator', 'solar panel output calculator', 'how many solar panels do I need', 'solar energy calculator'],
+    functions: ['estimate daily, monthly and yearly output from panel count or estimate the panel count for a manually entered daily energy target', 'apply user-entered peak sun hours and system loss percentage', 'estimate panel area when both panel dimensions are supplied', 'estimate annual bill offset from a manually entered energy tariff and simple payback from a manually entered installed cost'],
+    acceptance: 'A 1 kW array with 5 peak sun hours produces 5 kWh/day before losses; at 20% entered losses it estimates 4 kWh/day, 121.67 kWh/month and 1,460 kWh/year.',
+    boundary: 'Illustrative estimate only. Peak sun hours, losses, panel rating and dimensions are user supplied; real output varies with location, season, shading, orientation, temperature, inverter and system condition. Savings assume every generated kWh offsets a purchased kWh at the entered tariff; actual self-consumption, export credits, utility fees, incentives, degradation, financing and maintenance are not modeled. Not electrical, installation or financial advice; consult a qualified solar professional. Runs locally and retains no inputs.',
+    relatedExistingIds: [],
+    logicModule: './tools/solar-panel-calculator/logic.mjs',
+  },
+  {
     id: 'paver-calculator',
     category: 'home-materials',
     type: 'calculator',
