@@ -63,6 +63,7 @@ export function renderGrowthForm(toolId, copy) {
     'battery-runtime-calculator': ['capacityMode', 'energyMode', 'ampHourMode', 'capacityEnergy', 'energyUnit', 'capacityAh', 'voltage', 'loadWatts', 'depthOfDischargePercent', 'efficiencyPercent', 'accuracyNote'],
     'lumber-cut-calculator': ['unit', 'stockLength', 'kerf', 'cutList', 'accuracyNote'],
     'plant-spacing-calculator': ['bedLength', 'bedWidth', 'inRowSpacing', 'rowSpacing', 'unit', 'pattern', 'accuracyNote'],
+    'ev-charging-calculator': ['batteryCapacityKwh', 'startSocPercent', 'targetSocPercent', 'chargerPowerKw', 'efficiencyPercent', 'electricityRatePerKwh', 'currency', 'accuracyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -111,6 +112,7 @@ export function renderGrowthForm(toolId, copy) {
     'battery-runtime-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'wh', 'kwh'],
     'lumber-cut-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'millimeters', 'centimeters', 'meters', 'inches', 'feet'],
     'plant-spacing-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'millimeters', 'centimeters', 'meters', 'inches', 'feet', 'grid', 'triangular', 'squareUnits'],
+    'ev-charging-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kwh', 'kw', 'percent'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -729,6 +731,18 @@ export function renderGrowthForm(toolId, copy) {
     ${label('plant-bed-width', fields.bedWidth, '<input id="plant-bed-width" name="bedWidth" type="number" min="0.001" max="1000000" step="any" inputmode="decimal" required>')}
     ${label('plant-in-row-spacing', fields.inRowSpacing, '<input id="plant-in-row-spacing" name="inRowSpacing" type="number" min="0.001" max="1000000" step="any" inputmode="decimal" required>')}
     ${label('plant-row-spacing', fields.rowSpacing, '<input id="plant-row-spacing" name="rowSpacing" type="number" min="0.001" max="1000000" step="any" inputmode="decimal" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'ev-charging-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('ev-battery-capacity', fields.batteryCapacityKwh, '<input id="ev-battery-capacity" name="batteryCapacityKwh" type="number" min="0.001" max="1000000" step="any" inputmode="decimal" required>')}
+    ${label('ev-start-soc', fields.startSocPercent, '<input id="ev-start-soc" name="startSocPercent" type="number" min="0" max="100" step="any" inputmode="decimal" value="20" required>')}
+    ${label('ev-target-soc', fields.targetSocPercent, '<input id="ev-target-soc" name="targetSocPercent" type="number" min="0" max="100" step="any" inputmode="decimal" value="80" required>')}
+    ${label('ev-charger-power', fields.chargerPowerKw, '<input id="ev-charger-power" name="chargerPowerKw" type="number" min="0.001" max="1000000" step="any" inputmode="decimal" required>')}
+    ${label('ev-efficiency', fields.efficiencyPercent, '<input id="ev-efficiency" name="efficiencyPercent" type="number" min="0.1" max="100" step="any" inputmode="decimal" value="90" required>')}
+    ${label('ev-electricity-rate', fields.electricityRatePerKwh, '<input id="ev-electricity-rate" name="electricityRatePerKwh" type="number" min="0" max="1000000" step="any" inputmode="decimal">')}
+    ${label('ev-currency', fields.currency, '<input id="ev-currency" name="currency" type="text" value="USD" maxlength="3" pattern="[A-Za-z]{3}" autocomplete="off">')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

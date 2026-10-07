@@ -192,6 +192,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/plant-spacing-calculator/logic.mjs',
   },
   {
+    id: 'ev-charging-calculator',
+    category: 'transport',
+    type: 'calculator',
+    primaryIntent: 'ev charging calculator',
+    secondaryIntents: ['electric car charging cost calculator', 'EV charging time calculator', 'electric vehicle charge time calculator'],
+    functions: ['estimate battery energy between user-entered starting and target state of charge', 'estimate grid energy and charging time from charger power and user-entered efficiency', 'optionally estimate electricity cost from a user-entered tariff and currency code'],
+    acceptance: 'For a 50 kWh battery charged from 20% to 80%, 30 kWh reaches the battery; at 90% efficiency the grid supplies about 33.333 kWh. With a constant 7.2 kW charger input, estimated time is about 4.6296 hours before real-world charging taper.',
+    boundary: 'Idealized constant-power estimate. Real EVs commonly reduce power as charge rises, and vehicle limits, temperature, shared circuits, charger behavior, battery conditioning and tariff rules affect results. It does not predict a vehicle-specific charging curve, savings, charger compatibility or installation safety. Use vehicle/charger documentation and a qualified electrician for electrical work.',
+    relatedExistingIds: ['fuel-cost-calculator'],
+    logicModule: './tools/ev-charging-calculator/logic.mjs',
+  },
+  {
     id: 'deck-calculator',
     category: 'home-materials',
     type: 'calculator',

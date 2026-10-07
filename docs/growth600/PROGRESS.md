@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 45/323; **278 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 46/323; **277 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -399,7 +399,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 45/323; **278 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing, Retaining Wall, Battery Runtime, Lumber Cut List Optimizer y Plant Spacing Calculator están en la rama; las candidatas nuevas con localización incompleta no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 46/323; **277 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing, Retaining Wall, Battery Runtime, Lumber Cut List Optimizer, Plant Spacing Calculator y EV Charging Calculator están en la rama; las candidatas nuevas con localización incompleta no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.
 
 ## Continuación · Rafter Calculator (#126) · 2026-10-08
@@ -541,6 +541,16 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — copy inglesa completa; otros 35 idiomas son borradores `pending-tool-specific-translation`; el gate no permite publicarlos.
 - [ ] E/X — correr suite focal y luego falta inspección visual en navegador, móvil, RTL y dispositivos reales.
 - [ ] P/S — sin merge/deploy, sitemap público intacto y sin envío a buscadores; no ejecutar PageSpeed/Lighthouse.
+
+## Continuación · EV Charging Calculator (#256) · 2026-10-08
+
+- [x] C/F — candidata #46/323, distinta de `fuel-cost-calculator`: cubre energía de batería entre dos estados de carga, consumo de red, tiempo de carga ideal y coste opcional. El plan registra `ev charging calculator` con 1.000 búsquedas/mes US/en, KD 11 y `electric car charging cost calculator` con 1.000/mes, KD 24. Sin nuevas llamadas a DataForSEO.
+- [x] E/X — caso plan 50 kWh × (80% − 20%) = 30 kWh a batería; con 90% de eficiencia son 33,333 kWh de red; a 7,2 kW constantes son 4,6296 h. Coste opcional de usuario; tarifa cero admitida; moneda ISO de tres letras requerida cuando se calcula coste. No pronostica curvas de vehículo y expone límites por taper, temperatura, equipo y tarifas.
+- [x] B — formulario semántico con niveles de carga, batería, potencia de entrada, eficiencia, tarifa opcional y moneda, ejemplo/reset/copia/resultado accesible. Motor local puro y sin API.
+- [ ] L — inglés completo; 35 locales siguen `pending-tool-specific-translation` y no pasan el gate.
+- [x] E — suite focal del catálogo, formularios, contrato de locales, render, build de pruebas, presupuesto de bundles y lógica: **147/147 aprobadas**; diff limpio pendiente del commit.
+- [ ] X/E visual — falta inspección en navegador, móvil, RTL y dispositivos reales.
+- [ ] P/S — no merge/deploy ni actualización del sitemap de producción/envío a buscadores; PageSpeed no se ejecuta.
 
 ## Continuación · Fertilizer Calculator (#183) · 2026-10-08
 

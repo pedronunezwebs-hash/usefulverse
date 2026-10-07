@@ -32,6 +32,7 @@ import { calculateRetainingWall } from './retaining-wall-calculator/logic.mjs';
 import { calculateBatteryRuntime } from './battery-runtime-calculator/logic.mjs';
 import { optimizeLumberCuts, parseCutList } from './lumber-cut-calculator/logic.mjs';
 import { calculatePlantSpacing } from './plant-spacing-calculator/logic.mjs';
+import { calculateEvCharging } from './ev-charging-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -734,4 +735,23 @@ test('plant spacing validates bounds, patterns and caps dense layouts without la
   assert.throws(() => calculatePlantSpacing({ bedLength: 1_000_000, bedWidth: 1_000_000, inRowSpacing: 0.001, rowSpacing: 0.001 }), /100,000 rows/u);
   assert.throws(() => calculatePlantSpacing({ bedLength: 101, bedWidth: 101, inRowSpacing: 0.1, rowSpacing: 0.1 }), /1,000,000 plants/u);
   assert.throws(() => calculatePlantSpacing({ bedLength: 3, bedWidth: 2, inRowSpacing: 1, rowSpacing: 1, unit: 'yd' }), /supported length/u);
+});
+
+test('EV charging estimates battery energy, grid energy, constant-power time and optional tariff cost', () => {
+  const estimate = calculateEvCharging({ batteryCapacityKwh: 50, startSocPercent: 20, targetSocPercent: 80, chargerPowerKw: 7.2, efficiencyPercent: 90, electricityRatePerKwh: 0.15, currency: 'USD' });
+  assert.equal(estimate.batteryEnergyKwh, 30);
+  assert.equal(estimate.gridEnergyKwh, 33.333333333333336);
+  assert.ok(Math.abs(estimate.chargingHours - 4.6296296296) < 1e-9);
+  assert.ok(Math.abs(estimate.estimatedCost - 5) < 1e-10);
+  const planExample = calculateEvCharging({ batteryCapacityKwh: 50, startSocPercent: 20, targetSocPercent: 80, chargerPowerKw: 7.2, efficiencyPercent: 90 });
+  assert.equal(planExample.gridEnergyKwh, 33.333333333333336);
+  assert.equal(planExample.estimatedCost, null);
+  assert.equal(calculateEvCharging({ batteryCapacityKwh: 50, startSocPercent: 80, targetSocPercent: 80, chargerPowerKw: 7.2, efficiencyPercent: 90, electricityRatePerKwh: 0 }).chargingHours, 0);
+});
+
+test('EV charging calculator rejects invalid charge targets, zero efficiency and malformed currency', () => {
+  assert.throws(() => calculateEvCharging({ batteryCapacityKwh: 50, startSocPercent: 81, targetSocPercent: 80, chargerPowerKw: 7 }), /at least/u);
+  assert.throws(() => calculateEvCharging({ batteryCapacityKwh: 50, startSocPercent: 0, targetSocPercent: 80, chargerPowerKw: 0 }), /allowed range/u);
+  assert.throws(() => calculateEvCharging({ batteryCapacityKwh: 50, startSocPercent: 0, targetSocPercent: 80, chargerPowerKw: 7, efficiencyPercent: 0 }), /allowed range/u);
+  assert.throws(() => calculateEvCharging({ batteryCapacityKwh: 50, startSocPercent: 0, targetSocPercent: 80, chargerPowerKw: 7, electricityRatePerKwh: 0.15, currency: 'US' }), /three-letter/u);
 });

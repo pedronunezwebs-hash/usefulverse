@@ -74,6 +74,8 @@ import lumberCutCopies from './lumber-cut-calculator-final.mjs';
 import { lumberCutCalculatorEnglishCopy } from './lumber-cut-calculator.en.mjs';
 import plantSpacingCopies from './plant-spacing-calculator-final.mjs';
 import { plantSpacingCalculatorEnglishCopy } from './plant-spacing-calculator.en.mjs';
+import evChargingCopies from './ev-charging-calculator-final.mjs';
+import { evChargingCalculatorEnglishCopy } from './ev-charging-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -458,5 +460,6 @@ registerGrowthLocaleExtension(source, 'retaining-wall-calculator', { ...retainin
 registerGrowthLocaleExtension(source, 'battery-runtime-calculator', { ...batteryRuntimeCopies, en: batteryRuntimeCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'lumber-cut-calculator', { ...lumberCutCopies, en: lumberCutCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'plant-spacing-calculator', { ...plantSpacingCopies, en: plantSpacingCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'ev-charging-calculator', { ...evChargingCopies, en: evChargingCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

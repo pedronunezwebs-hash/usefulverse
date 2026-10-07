@@ -154,6 +154,11 @@ const copies = {
     messages: { ...messages, totalPlants: 'Estimated plants', rows: 'Rows', plantsPerRow: 'Plants per even / offset row', bedArea: 'Bed area', plantDensity: 'Estimated density', plantsPerArea: 'plants per square unit' },
     fields: { bedLength: 'Bed length', bedWidth: 'Bed width', inRowSpacing: 'In-row spacing', rowSpacing: 'Row spacing', unit: 'Unit', pattern: 'Layout', accuracyNote: 'Geometry estimate only.' },
   },
+  'ev-charging-calculator': {
+    name: 'EV charging calculator', actions: { ...actions, kwh: 'Kilowatt-hours (kWh)', kw: 'Kilowatts (kW)', percent: 'Percent (%)' },
+    messages: { ...messages, batteryEnergy: 'Energy added to battery', gridEnergy: 'Estimated energy from grid', chargingTime: 'Estimated constant-power time', estimatedCost: 'Estimated electricity cost' },
+    fields: { batteryCapacityKwh: 'Battery capacity', startSocPercent: 'Starting charge', targetSocPercent: 'Target charge', chargerPowerKw: 'Charger power', efficiencyPercent: 'Efficiency', electricityRatePerKwh: 'Electricity rate', currency: 'Currency', accuracyNote: 'Idealized estimate only.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -369,6 +374,13 @@ test('plant spacing form exposes layout choice, bed geometry and both center spa
   const html = renderGrowthForm('plant-spacing-calculator', copies['plant-spacing-calculator']);
   for (const name of ['unit', 'pattern', 'bedLength', 'bedWidth', 'inRowSpacing', 'rowSpacing']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
   assert.match(html, /Staggered triangular/u);
+  assert.match(html, /aria-live="polite"/u);
+});
+
+test('EV charging form distinguishes battery charge, charger power and optional tariff inputs', () => {
+  const html = renderGrowthForm('ev-charging-calculator', copies['ev-charging-calculator']);
+  for (const name of ['batteryCapacityKwh', 'startSocPercent', 'targetSocPercent', 'chargerPowerKw', 'efficiencyPercent', 'electricityRatePerKwh', 'currency']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  assert.match(html, /maxlength="3"/u);
   assert.match(html, /aria-live="polite"/u);
 });
 
