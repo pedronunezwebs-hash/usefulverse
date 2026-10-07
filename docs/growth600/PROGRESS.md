@@ -91,7 +91,7 @@
 
 ## Próxima acción concreta
 
-Siguiente: Image Region Redactor (#098). Wallpaper Calculator (#097) ya está implementada y sus gates locales están documentados abajo, pero mantiene abiertos los gates globales P/S; todavía no se publica. El catálogo aditivo tiene ahora 17 candidatos. La publicación de la tanda sigue bloqueada hasta cerrar gates globales C/F/E/X/L/B/P/S; no se han enviado sus URLs a buscadores. Las 277 rutas originales permanecen intactas.
+Continuar con la siguiente candidata pendiente según el orden de prioridad de `PLAN-600.md`; no reutilizar este marcador histórico de Image Region Redactor. Al 2026-10-08 el catálogo aditivo contiene 26 candidatas, incluida Mulch Calculator (#033). Las fichas nuevas siguen fuera de producción hasta cerrar los gates globales C/F/E/X/L/B/P/S; el sitemap de producción no cambia y no se envían URLs de staging a buscadores. Las 277 rutas originales permanecen protegidas.
 
 ## Continuación · 2026-10-07
 
@@ -344,3 +344,14 @@ Siguiente: Image Region Redactor (#098). Wallpaper Calculator (#097) ya está im
 - [x] Chrome local: reparto de ejemplo equilibrado y exclusiones respetadas; semilla repite el resultado; incompatibilidad imposible comunica el problema; CSV probado sin guardar archivo en Descargas. Inglés y árabe (RTL) sin overflow a 500/1.280 px; consola limpia y sin solicitudes externas.
 - [ ] No probado en dispositivos físicos ni revisado por hablantes nativos. No se ejecutó PageSpeed/Lighthouse.
 - [ ] **No publicado:** continúa en `codex/growth600-tire-size-phase`; sin merge a `main`, deploy, sitemap de producción ni envíos a buscadores. La fila 069 de `PLAN-600.md` no se marca release-completa hasta pasar los gates coordinados C/F/E/X/L/B/P/S.
+
+## Continuación · Mulch Calculator (#033) · 2026-10-08
+
+- [x] C/F/E — candidata aditiva y diferenciada de grava/suelo: estima camas rectangulares o circulares repetidas, convierte unidades métricas/imperiales, profundidad y volumen de bolsa, permite extra opcional y redondea las bolsas hacia arriba. Precio y moneda son optativos; no consulta precios ni inventa costes.
+- [x] X — caso aceptado: dos camas rectangulares 5×4 m a 5 cm = 20 m², 1 m³ y 20 bolsas de 50 L. Navegador también confirmó camas circulares, volumen extra, coste, rechazo de profundidad cero y reset; el total local de la prueba circular fue 35 bolsas / 105 EUR.
+- [x] L — textos estáticos en los 36 idiomas del proyecto, con dos FAQs, metadatos y controles. La revisión de Arabic RTL detectó etiquetas automáticas confusas; se sustituyeron por texto árabe directo y se volvió a probar la ruta. El resto son borradores automáticos comprensibles, no revisión nativa humana.
+- [x] B local — controlador minificado **5.892 B**, CSS compartido **10.988 B**. Build aislado de todas las candidatas registradas: **972 HTML y 972 URLs únicas de sitemap** (26 herramientas × 36 idiomas + 36 portadas), 1.039 archivos y 21.024.360 bytes; salida temporal, sin Functions, APIs ni servicios de procesamiento.
+- [x] Chrome DevTools local: ejemplo y validación funcionales; Arabic `lang=ar`, `dir=rtl`, viewport móvil 390 px sin overflow, controles con nombre y consola limpia. La ruta solo solicitó documento, CSS, controlador local y favicon; nada de terceros. No equivale a prueba en dispositivo físico.
+- [x] `node --test src/growth600/*.test.mjs src/growth600/tools/growth600-logic.test.mjs src/growth600/tools/*/*.test.mjs`: **144/144 aprobadas**; `git diff --check` limpio.
+- [ ] No se ha ejecutado la regresión completa de todo el repositorio; tampoco PageSpeed/Lighthouse ni revisión nativa de los 36 idiomas.
+- [ ] **No publicado:** continúa en `codex/growth600-tire-size-phase`; no merge a `main`, deploy, actualización del sitemap de producción ni envíos a buscadores. #033 sigue sin marcar como release-completa en `PLAN-600.md` hasta cerrar los gates coordinados C/F/E/X/L/B/P/S.

@@ -72,6 +72,7 @@ function toolCopy(tool, language) {
   'weight-loss-calculator': { currentWeight: 'Current weight', targetWeight: 'Goal weight', dailyDeficit: 'Daily deficit', unit: 'Weight unit', methodNote: '7,700 kcal per kg; simple arithmetic only.', healthNote: 'Not medical advice.', sourceNiddk: 'Model notes:', sourceCdc: 'Gradual change' },
     'heloc-calculator': { creditLimit: 'Credit limit', balance: 'Current balance', annualApr: 'Annual APR', drawMonths: 'Draw period in months', repaymentMonths: 'Repayment period in months', currency: 'Currency', accuracyNote: 'Fixed APR; no additional draws or fees are modeled.', relatedLoanCalculator: 'See loan payment calculator.' },
     'random-team-generator': { names: 'Names', teamCount: 'Number of teams', separations: 'Keep apart', separationsHint: 'One pair per line: Name A | Name B.', seed: 'Seed', seedHint: 'Reuse the same seed to reproduce a result.', privacyNote: 'Runs locally; no upload or server processing.', relatedNamePicker: 'Want to pick a winner instead? Try the random name picker.' },
+    'mulch-calculator': { shape: 'Bed shape', dimensionUnit: 'Length unit', length: 'Bed length', width: 'Bed width', diameter: 'Bed diameter', bedCount: 'Number of beds', depth: 'Mulch depth', depthUnit: 'Depth unit', bagVolume: 'Bag volume', bagUnit: 'Bag unit', wastePercent: 'Extra material', pricePerBag: 'Price per bag', currency: 'Currency', currencyNote: 'Optional estimate only.', accuracyNote: 'Planning estimate; follow product label.', relatedGravelCalculator: 'Try the gravel calculator.', relatedSoilCalculator: 'Try the soil calculator.' },
   }[tool.id];
   if (tool.id === 'tire-size-calculator') {
     Object.assign(actions, { kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)' });
@@ -199,6 +200,14 @@ function toolCopy(tool, language) {
     localized.additionalFaqs = [
       { question: 'Can two people be kept on different teams?', answer: 'Yes. Add the exact names as a pair in the keep-apart field.' },
       { question: 'Can I reproduce a team draw?', answer: 'Yes. Use the same seed, participant list, team count and rules.' },
+    ];
+  }
+  if (tool.id === 'mulch-calculator') {
+    Object.assign(localized.actions, { rectangle: 'Rectangle', circle: 'Circle', meters: 'Metres', feet: 'Feet', centimeters: 'Centimetres', millimeters: 'Millimetres', inches: 'Inches', liters: 'Litres', cubicFeet: 'Cubic feet', squareMeters: 'Square metres', squareFeet: 'Square feet' });
+    Object.assign(localized.messages, { bedArea: 'Total bed area', mulchDepth: 'Mulch depth', cubicYards: 'Approximate cubic yards', bags: 'Whole bags to buy', estimatedCost: 'Estimated bag cost', costNotEntered: 'Enter a bag price.' });
+    localized.additionalFaqs = [
+      { question: 'How many bags cover one cubic metre?', answer: 'Divide 1,000 litres by the volume of one bag and round up.' },
+      { question: 'Does this calculator choose the right depth for my plants?', answer: 'No. Follow local gardening advice and the product label.' },
     ];
   }
   return localized;

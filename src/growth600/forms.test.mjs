@@ -55,6 +55,11 @@ const copies = {
     messages: { ...messages },
     fields: { names: 'Names', teamCount: 'Number of teams', separations: 'Keep apart', separationsHint: 'Name A | Name B', seed: 'Seed', seedHint: 'Reuse the seed', privacyNote: 'Local only', relatedNamePicker: 'Pick a winner' },
   },
+  'mulch-calculator': {
+    name: 'Mulch calculator', actions: { ...actions, liters: 'Litres', cubicFeet: 'Cubic feet', squareMeters: 'Square metres', squareFeet: 'Square feet' },
+    messages: { ...messages, bedArea: 'Total bed area', mulchDepth: 'Mulch depth', cubicYards: 'Cubic yards', costNotEntered: 'Enter a price.' },
+    fields: { shape: 'Bed shape', dimensionUnit: 'Length unit', length: 'Length', width: 'Width', diameter: 'Diameter', bedCount: 'Bed count', depth: 'Depth', depthUnit: 'Depth unit', bagVolume: 'Bag volume', bagUnit: 'Bag unit', wastePercent: 'Extra material', pricePerBag: 'Price', currency: 'Currency', currencyNote: 'Estimate only.', accuracyNote: 'Follow product label.', relatedGravelCalculator: 'Gravel calculator.', relatedSoilCalculator: 'Soil calculator.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -154,6 +159,17 @@ test('random team form exposes accessible participant, balance, constraint, seed
   assert.match(html, /data-action="generateTeams"/u);
   assert.match(html, /data-action="download"/u);
   assert.match(html, /data-team-seed-output/u);
+});
+
+test('mulch form exposes accessible bed geometry, multiple-bed count, units, bags and optional cost', () => {
+  const html = renderGrowthForm('mulch-calculator', copies['mulch-calculator']);
+  for (const name of ['shape', 'dimensionUnit', 'length', 'width', 'diameter', 'bedCount', 'depth', 'depthUnit', 'bagVolume', 'bagUnit', 'wastePercent', 'pricePerBag', 'currency']) {
+    assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  }
+  assert.match(html, /data-mulch-dimensions="rectangle"/u);
+  assert.match(html, /data-mulch-dimensions="circle" hidden/u);
+  assert.match(html, /data-action="example"/u);
+  assert.match(html, /aria-live="polite" data-status/u);
 });
 
 test('weight scenario form explains its limits and collects explicit local inputs', () => {

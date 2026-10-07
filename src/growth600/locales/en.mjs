@@ -34,6 +34,8 @@ import helocCopies from './heloc-calculator-final.mjs';
 import { helocCalculatorEnglishCopy } from './heloc-calculator.en.mjs';
 import randomTeamGeneratorCopies from './random-team-generator-final.mjs';
 import { randomTeamGeneratorEnglishCopy } from './random-team-generator.en.mjs';
+import mulchCopies from './mulch-calculator-final.mjs';
+import { mulchCalculatorEnglishCopy } from './mulch-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -186,5 +188,47 @@ registerGrowthLocaleExtension(source, 'dominoes-game', dominoesCopies, 'gravel-c
 registerGrowthLocaleExtension(source, 'weight-loss-calculator', weightLossCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'heloc-calculator', { ...helocCopies, en: helocCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'random-team-generator', { ...randomTeamGeneratorCopies, en: randomTeamGeneratorEnglishCopy }, 'gravel-calculator');
+const localizedMulchCopies = {
+  ...mulchCopies,
+  en: mulchCalculatorEnglishCopy,
+  ar: {
+    ...mulchCopies.ar,
+    name: 'حاسبة تغطية التربة',
+    title: 'حاسبة تغطية التربة مجانًا وبلا حدود | UsefulVerse',
+    description: 'قدّر كمية تغطية التربة والأكياس والتكلفة حسب مساحة الأحواض وعمقها. أداة مجانية بلا حدود في متصفحك.',
+    intro: 'اختر أحواضًا مستطيلة أو دائرية، وأدخل أبعادها وعددها وعمق التغطية وحجم الكيس لمعرفة الكمية المطلوبة.',
+    howQuestion: 'ما كمية التغطية التي أحتاج إليها؟',
+    howAnswer: 'اضرب إجمالي مساحة الأحواض في العمق المحدد. أضف نسبة اختيارية للتفاوت أو الهبوط، ثم اقسم الحجم على سعة الكيس وقرّب العدد إلى الأعلى.',
+    privacyQuestion: 'هل تُرسل قياساتي إلى الموقع؟',
+    privacyAnswer: 'لا. تُجرى الحسابات في المتصفح، ولا تُرسل القياسات إلى خادم ولا تحفظها هذه الأداة.',
+    fields: {
+      ...mulchCopies.ar.fields,
+      shape: 'شكل الحوض', dimensionUnit: 'وحدة القياس', length: 'طول الحوض المستطيل', width: 'عرض الحوض المستطيل', diameter: 'قطر الحوض الدائري',
+      bedCount: 'عدد الأحواض المتساوية', depth: 'عمق التغطية', depthUnit: 'وحدة العمق', bagVolume: 'حجم كل كيس', bagUnit: 'وحدة حجم الكيس',
+      wastePercent: 'كمية إضافية (%)', pricePerBag: 'سعر الكيس (اختياري)', currency: 'العملة',
+      currencyNote: 'التكلفة تقديرية حسب السعر الذي تدخله، ولا تشمل الضرائب أو التوصيل أو اختلاف الأسعار المحلية.',
+      accuracyNote: 'هذا تقدير للتخطيط فقط. قد تؤثر حواف الأحواض والأرض غير المستوية والهبوط وتعليمات المنتج في الكمية. اتبع إرشادات الزراعة المحلية وملصق المنتج لتحديد العمق المناسب.',
+      relatedGravelCalculator: 'تحتاج إلى حساب الحصى؟ جرّب حاسبة الحصى.', relatedSoilCalculator: 'تملأ أصصًا أو أوعية زراعة؟ جرّب حاسبة التربة.',
+    },
+    actions: {
+      ...mulchCopies.ar.actions,
+      calculate: 'احسب الكمية', reset: 'إعادة ضبط', copy: 'نسخ النتيجة', example: 'جرّب مثالًا', result: 'الكمية المطلوبة', rectangle: 'مستطيل', circle: 'دائرة',
+      meters: 'أمتار', feet: 'أقدام', centimeters: 'سنتيمترات', millimeters: 'ملليمترات', inches: 'بوصات', liters: 'لترات', cubicFeet: 'أقدام مكعبة',
+      squareMeters: 'أمتار مربعة', squareFeet: 'أقدام مربعة', copyUnavailable: 'النسخ غير متاح في هذا المتصفح.',
+    },
+    messages: {
+      ...mulchCopies.ar.messages,
+      copied: 'تم النسخ.', copyUnavailable: 'النسخ غير متاح في هذا المتصفح.', calculated: 'اكتمل التقدير.',
+      checkInputs: 'تحقق من الأبعاد والعدد والعمق وحجم الكيس والنسبة الإضافية.', bedArea: 'إجمالي مساحة الأحواض', mulchDepth: 'عمق التغطية',
+      volume: 'الحجم قبل إضافة كمية إضافية', orderVolume: 'الحجم مع الكمية الإضافية', cubicYards: 'حجم تقريبي بالياردات المكعبة',
+      bags: 'عدد الأكياس الكاملة للشراء', estimatedCost: 'التكلفة التقديرية للأكياس', costNotEntered: 'أدخل سعر الكيس لتقدير التكلفة.',
+    },
+    additionalFaqs: [
+      { question: 'كم كيسًا أحتاج إلى متر مكعب واحد؟', answer: 'اقسم 1000 لتر على سعة الكيس باللترات، ثم قرّب العدد إلى الأعلى. تحتاج إلى 20 كيسًا سعة كل منها 50 لترًا، قبل إضافة أي كمية احتياطية.' },
+      { question: 'هل أضيف كمية احتياطية؟', answer: 'يمكنك إضافة نسبة لتغطية تفاوت سطح الأرض أو هبوط المادة. لا تحدد الأداة عمق الزراعة أو نسبة احتياطية مناسبة؛ اتبع إرشادات العناية بالنبات وملصق المنتج.' },
+    ],
+  },
+};
+registerGrowthLocaleExtension(source, 'mulch-calculator', localizedMulchCopies, 'gravel-calculator');
 
 export default Object.freeze(source);

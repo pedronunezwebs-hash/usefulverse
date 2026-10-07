@@ -49,6 +49,14 @@ test('tool renderer includes additional localized FAQs in page content and schem
   });
   assert.match(teamHtml, /https:\/\/usefulverse\.com\/ar\/tools\/random-name-picker\//u);
 
+  const mulchHtml = renderGrowthToolPage({
+    tool: { id: 'mulch-calculator' }, locale: locales[1], localeEntries: locales,
+    copy: { ...copy, fields: { relatedGravelCalculator: 'Use gravel.', relatedSoilCalculator: 'Use soil.' }, additionalFaqs: [{ question: 'How many bags?', answer: 'Round up.' }] },
+    origin: 'https://tools.usefulverse.com', formHtml: '<form id="tool-form"></form>',
+  });
+  assert.match(mulchHtml, /https:\/\/tools\.usefulverse\.com\/ar\/tools\/gravel-calculator\//u);
+  assert.match(mulchHtml, /https:\/\/tools\.usefulverse\.com\/ar\/tools\/soil-calculator\//u);
+
   const html = renderGrowthToolPage({
     tool: { id: 'tire-size-calculator' }, locale: locales[1], localeEntries: locales,
     copy: { ...copy, fields: { relatedUnitConverter: 'Convert measurements with the unit converter.' }, additionalFaqs: [{ question: 'Does this fit?', answer: 'This estimate cannot confirm fitment.' }] },

@@ -60,6 +60,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/wallpaper-calculator/logic.mjs',
   },
   {
+    id: 'mulch-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'mulch calculator',
+    secondaryIntents: ['mulch bags calculator', 'mulch volume calculator', 'mulch calculator by square feet', 'mulch calculator by square metres'],
+    functions: ['calculate rectangle or circle planting-bed area and combine repeated beds', 'estimate loose mulch volume from bed area and depth', 'add a configurable material allowance and convert to cubic metres/yards', 'round up bags from a selected litre or cubic-foot bag size and optionally estimate cost'],
+    acceptance: 'A 5 m × 4 m bed at 5 cm depth requires 1 m³ before waste; with 50 L bags that is 20 bags. A 0% waste setting preserves the exact volume.',
+    boundary: 'Material estimate only: real bed boundaries, uneven ground, settling, product coverage and package fill can change actual needs. It does not recommend plant-specific mulch depth; follow local horticultural guidance and the product label. All values stay in this browser.',
+    relatedExistingIds: ['gravel-calculator', 'soil-calculator'],
+    logicModule: './tools/mulch-calculator/logic.mjs',
+  },
+  {
     id: 'pool-salt-calculator',
     category: 'home-materials',
     type: 'calculator',
