@@ -10,6 +10,7 @@ import { calculateAsphalt } from './asphalt-calculator/logic.mjs';
 import { calculateSoil } from './soil-calculator/logic.mjs';
 import { calculatePoolVolume } from './pool-volume-calculator/logic.mjs';
 import { calculateRoofPitch } from './roof-pitch-calculator/logic.mjs';
+import { calculateDrywall } from './drywall-calculator/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
 test('gravel calculator converts area and depth into volume, waste, weight and bags', () => {
@@ -76,6 +77,34 @@ test('roof pitch calculator reports pitch, slope, angles and optional overhang l
   assert.throws(() => calculateRoofPitch({ rise: 0, run: 10 }), /Rise/u);
   assert.throws(() => calculateRoofPitch({ rise: 3, run: 0 }), /Run/u);
   assert.throws(() => calculateRoofPitch({ rise: 3, run: 3, unit: 'yd' }), /unit/u);
+});
+
+test('drywall calculator estimates sheet coverage, seams, screws and optional cost', () => {
+  const room = calculateDrywall({ roomLength: 4, roomWidth: 3, wallHeight: 2.5, boardWidth: 1.2, boardHeight: 2.4, wastePercent: 0 });
+  assert.equal(room.grossWallAreaPerRoomM2, 35);
+  assert.equal(room.wallAreaM2, 35);
+  assert.equal(room.ceilingAreaM2, 12);
+  assert.equal(room.totalAreaM2, 47);
+  assert.equal(room.boards, 17);
+  assert.ok(room.boardCoverageM2 >= room.totalAreaM2);
+  assert.equal(room.estimatedScrews, 544);
+  assert.equal(room.approximateJointSeamLengthM, 48);
+  assert.equal(room.estimatedCost, null);
+
+  const multiRoom = calculateDrywall({ roomLength: 4, roomWidth: 3, wallHeight: 2.5, openingArea: 1.5, roomCount: 2, includeCeiling: false, wastePercent: 0, pricePerBoard: 12 });
+  assert.equal(multiRoom.wallAreaM2, 67);
+  assert.equal(multiRoom.ceilingAreaM2, 0);
+  assert.equal(multiRoom.boards, 24);
+  assert.equal(multiRoom.estimatedScrews, 768);
+  assert.equal(multiRoom.estimatedCost, 288);
+  const imperial = calculateDrywall({ roomLength: 10, roomWidth: 8, wallHeight: 8, openingArea: 20, includeCeiling: false, boardWidth: 4, boardHeight: 8, unit: 'ft', wastePercent: 0 });
+  assert.ok(Math.abs(imperial.totalAreaM2 / 0.3048 ** 2 - 268) < 1e-10);
+  assert.equal(imperial.boards, 9);
+  assert.ok(calculateDrywall({ roomLength: 4, roomWidth: 3, wallHeight: 2.5, wastePercent: 10 }).boards > room.boards);
+  assert.throws(() => calculateDrywall({ roomLength: 4, roomWidth: 3, wallHeight: 2.5, openingArea: 36 }), /Opening area/u);
+  assert.throws(() => calculateDrywall({ roomLength: 4, roomWidth: 3, wallHeight: 2.5, roomCount: 1.5 }), /whole number/u);
+  assert.throws(() => calculateDrywall({ roomLength: 4, roomWidth: 3, wallHeight: 2.5, screwsPerBoard: 32.5 }), /whole number/u);
+  assert.throws(() => calculateDrywall({ roomLength: 4, roomWidth: 3, wallHeight: 2.5, boardWidth: 0 }), /Board width/u);
 });
 
 test('molar-mass parser handles formulas, nested groups and supported isotopes', () => {

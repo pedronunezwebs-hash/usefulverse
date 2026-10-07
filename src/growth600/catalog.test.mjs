@@ -3,9 +3,9 @@ import test from 'node:test';
 import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
-test('the eleven current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 11);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 11);
+test('the twelve current growth IDs are unique and additive to the protected catalog', () => {
+  assert.equal(growthPilotTools.length, 12);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 12);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 

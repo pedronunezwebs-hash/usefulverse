@@ -1,5 +1,17 @@
 export const growthPilotTools = Object.freeze([
   {
+    id: 'drywall-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'drywall calculator',
+    secondaryIntents: ['plasterboard calculator', 'drywall sheets calculator', 'drywall screws calculator', 'drywall cost calculator'],
+    functions: ['wall and optional ceiling area for repeated rectangular rooms', 'deduct a user-entered opening area per room', 'custom sheet dimensions and extra-material allowance', 'whole-sheet count, approximate joint-seam length, screw estimate and optional sheet budget'],
+    acceptance: 'For one 4 m × 3 m × 2.5 m room with ceiling included, no openings or waste, and 1.2 m × 2.4 m sheets, the 47 m² surface estimate requires 17 sheets and 48.96 m² of nominal board coverage.',
+    boundary: 'Area-based material estimate only. It does not plan board layout, reuse offcuts, specify fire/moisture/acoustic ratings, joints, fastener patterns or local code; confirm product and installation requirements with a qualified installer.',
+    relatedExistingIds: ['tile-calculator'],
+    logicModule: './tools/drywall-calculator/logic.mjs',
+  },
+  {
     id: 'roof-pitch-calculator',
     category: 'home-materials',
     type: 'calculator',

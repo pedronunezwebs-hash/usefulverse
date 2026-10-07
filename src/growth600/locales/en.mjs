@@ -8,6 +8,8 @@ import { poolVolumeCalculatorEnglishCopy } from './pool-volume-calculator.en.mjs
 import roofCopies from './roof-pitch-calculator.mjs';
 import { roofPitchCalculatorEnglishCopy } from './roof-pitch-calculator.en.mjs';
 import { registerGrowthLocaleExtension } from '../locale-utils.mjs';
+import drywallCopies from './drywall-calculator.mjs';
+import { drywallEnglishCopy } from './drywall-calculator.en.mjs';
 
 const actionCopy = Object.freeze({
   calculate: 'Calculate', generate: 'Make the draw', reset: 'Reset', example: 'Try an example', newGame: 'New game',
@@ -20,6 +22,7 @@ const actionCopy = Object.freeze({
 const reusableMessages = Object.freeze({ copied: 'Copied.', copyUnavailable: 'Copy is not available in this browser.' });
 
 const tools = {
+  'drywall-calculator': drywallEnglishCopy,
   'gravel-calculator': {
     copyLanguage: 'en', name: 'Gravel calculator', title: 'Gravel calculator free & unlimited | UsefulVerse',
     description: 'Estimate gravel volume, weight and bags for a rectangle, circle or triangle. Free, unlimited and calculated in your browser.',
@@ -95,6 +98,7 @@ const source = {
 };
 
 registerGrowthLocaleExtension(source, 'tire-size-calculator', tireSizeCopies, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'drywall-calculator', drywallCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'stair-calculator', stairCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'asphalt-calculator', asphaltCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'soil-calculator', soilCopies, 'gravel-calculator');

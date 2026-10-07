@@ -91,7 +91,7 @@
 
 ## Próxima acción concreta
 
-Siguiente: continuar con Drywall Calculator (#077). El catálogo aditivo tiene ahora 11 candidatos; los cinco iniciales y #016, #052, #057, #060, #067 y #071 tienen gates locales registrados, pero la publicación queda bloqueada hasta cerrar gates globales C/F/E/X/L/B/P/S. `usefulverse-tools` sigue sin publicar estas nuevas páginas ni enviarlas a buscadores; las 277 rutas originales permanecen intactas.
+Siguiente: continuar con Roofing Calculator (#078). El catálogo aditivo tiene ahora 12 candidatos; los cinco iniciales y #016, #052, #057, #060, #067, #071 y #077 tienen gates locales registrados, pero la publicación queda bloqueada hasta cerrar gates globales C/F/E/X/L/B/P/S. `usefulverse-tools` sigue sin publicar estas nuevas páginas ni enviarlas a buscadores; las 277 rutas originales permanecen intactas.
 
 ## Continuación · 2026-10-07
 
@@ -191,3 +191,14 @@ Siguiente: continuar con Drywall Calculator (#077). El catálogo aditivo tiene a
 - [x] JS minificado de la herramienta: 3.247 B (≤24 KiB); el cálculo permanece en el dispositivo y no añade API, Worker ni dependencia remota.
 - [x] Chrome DevTools: entrada 3 m / 3 m y alero 0,5 m mostró 12:12, 100%, 45°, 0,79 rad y 4,61 m. Árabe móvil a 390 × 844 px: `dir=rtl`, ancho del documento 390 px, sin overflow y consola limpia.
 - [ ] No se probaron dispositivos físicos ni hubo revisión nativa humana de las 36 traducciones. El build y QA son de staging local: no se desplegó, el sitemap de producción no cambió y no se mandó a buscadores. Gates C/F/E/X/L/B/P/S continúan para el release coordinado.
+
+## Continuación · Drywall Calculator (#077) · 2026-10-07
+
+- [x] Una URL por idioma para presupuestar paredes y, opcionalmente, techo en varias habitaciones iguales; resta el área total de ventanas/puertas por habitación. No crea rutas separadas por techos, paredes, placas, tornillos o coste.
+- [x] Estima hojas enteras por superficie neta y desperdicio (0–30%), cobertura nominal, tornillos según cantidad editable por placa, juntas lineales aproximadas por disposición geométrica básica y coste opcional por placa sin asumir moneda. Aceptación: habitación de 4 × 3 × 2,5 m, techo incluido, sin aperturas ni desperdicio, placas 1,2 × 2,4 m → 47 m² y 17 placas que cubren 48,96 m².
+- [x] Conversión correcta de dimensiones y aperturas cuadradas entre m/cm/mm/ft/in. Test imperial comprobado: 10 × 8 × 8 ft, 20 ft² de aperturas, solo paredes y placas 4 × 8 ft → 268 ft² netos y 9 placas. Se corrigió una conversión de aperturas que detectó el test antes de QA.
+- [x] Límites visibles: es una estimación por área, no un plano de corte ni una especificación de juntas, tornillos, resistencia al fuego/humedad/acústica o cumplimiento normativo; desperdicio/offcuts y disposición pueden cambiar la compra real. Precio interpretado en la moneda que introduce la persona.
+- [x] Copia y FAQs estáticos para 36 idiomas; títulos/descripciones, canonical, `lang`, 37 hreflang y FAQPage pasan el control de las 36 rutas. Se eliminaron saltos de línea del texto traducido de metadatos antes de generar HTML. Traducciones automáticas comprensibles, no revisión nativa humana.
+- [x] Pruebas focalizadas: 74/74 (`catalog`, renderer, contratos, idiomas, builder, bundle y lógica); bundle JS 5.215 B (≤24 KiB). Build aislado: 468 páginas (12 × 36 herramientas + 36 portadas), 468 URLs sitemap únicas, 521 archivos y 9.051.968 bytes.
+- [x] Chrome DevTools: ejemplo muestra 47 m², 17 placas, cobertura 48,96 m², 544 tornillos y 48 m de juntas aproximadas; apertura mayor al área de pared enfoca y marca el campo con `aria-invalid`; reset limpia. Flujo imperial con precio devuelve 268 ft², 9 placas, 288 ft² de cobertura, 288 tornillos y coste 108. Árabe móvil 390 × 844: `dir=rtl`, ancho total 390 px y consola limpia.
+- [ ] Sin dispositivos físicos ni revisión nativa humana de los 36 textos. Build/QA son staging local. Ninguna ruta nueva publicada; sitemap de producción y buscadores intactos. Gates C/F/E/X/L/B/P/S siguen abiertos hasta release coordinado.
