@@ -184,6 +184,11 @@ const copies = {
     messages: { ...messages, miterSetting: 'Miter setting', bevelSetting: 'Bevel setting', halfCorner: 'Half corner' },
     fields: { mode: 'Cut type', cornerAngle: 'Inside corner angle', springAngle: 'Spring angle', accuracyNote: 'Geometry estimate only.', diagramLabel: 'Angle diagram', diagramCorner: 'Inside corner', diagramCut: 'Miter cut', diagramSpring: 'Spring angle' },
   },
+  'voltage-drop-calculator': {
+    name: 'Voltage drop calculator', actions: { ...actions, meters: 'Meters', feet: 'Feet' },
+    messages: { ...messages, voltageDrop: 'Voltage drop', voltageDropPercent: 'Drop percent', estimatedReceivingVoltage: 'Load voltage', resistancePerConductor: 'Resistance per conductor' },
+    fields: { circuit: 'Circuit', dc: 'DC', singlePhase: 'Single-phase AC', threePhase: 'Three-phase AC', material: 'Material', copper: 'Copper', aluminum: 'Aluminum', oneWayLength: 'One-way length', lengthUnit: 'Length unit', currentA: 'Current', crossSectionMm2: 'Conductor area', supplyVoltageV: 'Supply voltage', powerFactor: 'Power factor', accuracyNote: 'Resistive estimate only.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -247,6 +252,11 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(miter, /role="img" aria-labelledby="miter-diagram-title miter-diagram-desc"/u);
   assert.match(miter, /data-action="copy"/u);
   assert.match(miter, /data-action="calculate"/u);
+  const voltageDrop = renderGrowthForm('voltage-drop-calculator', copies['voltage-drop-calculator']);
+  for (const name of ['circuit', 'material', 'oneWayLength', 'lengthUnit', 'currentA', 'crossSectionMm2', 'supplyVoltageV', 'powerFactor']) assert.match(voltageDrop, new RegExp(`name="${name}"`, 'u'));
+  assert.match(voltageDrop, /data-power-factor-field/u);
+  assert.match(voltageDrop, /data-action="calculate"/u);
+  assert.match(voltageDrop, /type="reset"/u);
   const asphalt = renderGrowthForm('asphalt-calculator', copies['asphalt-calculator']);
   assert.match(asphalt, /name="compactedThickness"/u);
   assert.match(asphalt, /name="pricePerTonne"/u);

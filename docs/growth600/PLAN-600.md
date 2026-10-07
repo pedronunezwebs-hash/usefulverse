@@ -995,10 +995,10 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [ ] **C/F/E/X/L/B/P/S completos — `voltage-drop-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/voltage-drop-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `voltage drop calculator` — 27.100 búsquedas/mes US/en, KD 21; nivel A. CPC 1.86 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Material, longitud ida/vuelta, corriente y sección; sin certificación eléctrica
-- **Prueba de aceptación específica:** Longitud cero da caída cero
-- **Frontera con otras herramientas:** ohms-law-calculator: cableado y resistividad. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Función mínima y ampliaciones útiles:** material cobre/aluminio, longitud de ida, corriente, sección transversal, voltaje, circuito DC/monofásico/trifásico equilibrado y factor de potencia para CA; caída en V y porcentaje, más voltaje estimado de carga.
+- **Prueba de aceptación específica:** longitud cero da caída cero; el caso de referencia 20 A, 30 m, 2,5 mm² de cobre, 230 V monofásico y factor de potencia 1 calcula 8,2752 V (≈3,598%).
+- **Frontera con otras herramientas:** la ficha sugiere ley de Ohm, pero no existe una herramienta con ese ID en el catálogo base ni en Growth600 actual; por tanto no añadir enlace roto. Mantener el alcance específico de pérdida resistiva en conductores, sin fingir diseño de circuitos. Aplicar además §6; no crear URLs duplicadas por fase o unidades.
+- **Implementación/riesgo:** fórmula resistiva local con resistividades nominales a 20 °C (cobre 0,01724 y aluminio 0,02806 Ω·mm²/m); 2·I·L·ρ/A para CC/monofásico y √3·I·L·ρ/A·cosφ para trifásico equilibrado. Contrastar con la [guía de cálculo de caída de tensión](https://www.electrical-installation.org/enwiki/Calculation_of_voltage_drop_in_steady_load_conditions) y los datos de resistividad comercial del [NIST](https://nvlpubs.nist.gov/nistpubs/bulletin/07/nbsbulletinv7n1p103_A2b.pdf). La aproximación omite calentamiento, reactancia CA, armónicos, conectores, método de instalación, ampacidad, protecciones y códigos; no calcular calibre ni certificar seguridad. Un electricista cualificado debe validar diseño y normativa local.
 - **Consultas secundarias del mismo propietario:**
   - `wire voltage drop calculator` — 260/mes US/en; KD 12.
   - `voltage drop calculator free online`; `voltage drop calculator with example`; `voltage drop calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

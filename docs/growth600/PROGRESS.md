@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 51/323; **272 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 52/323; **271 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -612,3 +612,13 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — copy fuente en inglés completo; 35 locales son borradores estructurales y están bloqueados para publicación hasta traducirse.
 - [ ] X/E visual — falta recorrido de interacción en navegador, móvil y RTL. SVG y tests no equivalen a validación visual/dispositivo.
 - [ ] P/S — no merge/deploy ni sitemap productivo actualizado; no se envió a buscadores. No se lanzó PageSpeed/Lighthouse; gates generales de publicación siguen abiertos.
+
+## Continuación · Voltage Drop Calculator (#059) · 2026-10-08
+
+- [x] C/F — candidata #52/323, intención de caída de tensión en conductores, separada de cualquier calculadora de tensión genérica. El plan registra `voltage drop calculator` 27.100 búsquedas/mes US/en, KD 21 y CPC 1,86 USD (no CPM), más `wire voltage drop calculator` 260/mes. No se gastó DataForSEO adicional.
+- [x] E/X — ecuación resistiva a 20 °C: `ρ·L·I/A`; ida/vuelta (factor 2) para CC/monofásico y √3 para trifásico equilibrado; cosφ multiplica la parte resistiva para CA. 20 A, 30 m, cobre 2,5 mm² y 230 V monofásicos producen 8,2752 V (≈3,598%); longitud cero = cero. Cobre/aluminio, áreas y unidades acotadas. Contraste conceptual con Electrical Installation Guide y resistividad de conductores NIST documentados en la ficha.
+- [x] B — formulario local con circuitos CC/CA, material, longitud editable en m/ft, corriente, sección, voltaje, factor de potencia contextual, ejemplo, reset, copiar y resultado anunciado.
+- [x] E — suite focal Growth600 de catálogo/formulario/gate-locales/render/build/bundles/lógica: **165/165 aprobadas**, tras corregir en el catálogo una sugerencia del plan que refería a una herramienta de ley de Ohm inexistente. No se crea un enlace ficticio.
+- [ ] L — inglés fuente completo; los otros 35 locales quedan como borradores estructurales bloqueados.
+- [ ] X/E visual — falta interacción real de navegador, móvil y RTL; no declarada inspección visual.
+- [ ] P/S — sin deploy, sitemap de producción intacto y sin envíos a buscadores; PageSpeed/Lighthouse no se ejecutó. Gates globales siguen abiertos.

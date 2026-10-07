@@ -38,6 +38,7 @@ import { calculateRamp } from './ramp-calculator/logic.mjs';
 import { calculateHeatLoss } from './heat-loss-calculator/logic.mjs';
 import { calculateHeatPump } from './heat-pump-calculator/logic.mjs';
 import { calculateMiterAngles } from './miter-angle-calculator/logic.mjs';
+import { calculateVoltageDrop } from './voltage-drop-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -864,6 +865,21 @@ test('miter calculator returns simple and compound settings under the stated spr
   assert.throws(() => calculateMiterAngles({ cornerAngle: 0 }), /allowed range/u);
   assert.throws(() => calculateMiterAngles({ cornerAngle: 90, mode: 'compound', springAngle: 91 }), /allowed range/u);
   assert.throws(() => calculateMiterAngles({ cornerAngle: 90, mode: 'unsupported' }), /Choose simple/u);
+});
+
+test('voltage drop calculator handles zero length, material, circuit factors and unit-safe estimates', () => {
+  const base = { material: 'copper', oneWayLengthM: 30, currentA: 20, crossSectionMm2: 2.5, supplyVoltageV: 230, circuit: 'single-phase', powerFactor: 1 };
+  const single = calculateVoltageDrop(base);
+  assert.ok(Math.abs(single.voltageDropV - 8.2752) < 1e-8);
+  assert.ok(Math.abs(single.voltageDropPercent - 3.5979130435) < 1e-8);
+  assert.equal(calculateVoltageDrop({ ...base, oneWayLengthM: 0 }).voltageDropV, 0);
+  assert.ok(Math.abs(calculateVoltageDrop({ ...base, circuit: 'three-phase' }).voltageDropV - single.voltageDropV * Math.sqrt(3) / 2) < 1e-10);
+  assert.ok(calculateVoltageDrop({ ...base, circuit: 'dc', powerFactor: 0 }).voltageDropV > 0);
+  assert.ok(calculateVoltageDrop({ ...base, material: 'aluminum' }).voltageDropV > single.voltageDropV);
+  assert.throws(() => calculateVoltageDrop({ ...base, material: 'steel' }), /Choose copper/u);
+  assert.throws(() => calculateVoltageDrop({ ...base, crossSectionMm2: 0 }), /allowed range/u);
+  assert.throws(() => calculateVoltageDrop({ ...base, circuit: 'unsupported' }), /Choose DC/u);
+  assert.throws(() => calculateVoltageDrop({ ...base, powerFactor: 1.1 }), /allowed range/u);
 });
 
 test('heat pump calculator rejects invalid units, COP, hours, tariff and currency', () => {

@@ -86,6 +86,8 @@ import heatPumpCopies from './heat-pump-calculator-final.mjs';
 import { heatPumpCalculatorEnglishCopy } from './heat-pump-calculator.en.mjs';
 import miterAngleCopies from './miter-angle-calculator-final.mjs';
 import { miterAngleCalculatorEnglishCopy } from './miter-angle-calculator.en.mjs';
+import voltageDropCopies from './voltage-drop-calculator-final.mjs';
+import { voltageDropCalculatorEnglishCopy } from './voltage-drop-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -476,5 +478,6 @@ registerGrowthLocaleExtension(source, 'ramp-calculator', { ...rampCopies, en: ra
 registerGrowthLocaleExtension(source, 'heat-loss-calculator', { ...heatLossCopies, en: heatLossCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'heat-pump-calculator', { ...heatPumpCopies, en: heatPumpCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'miter-angle-calculator', { ...miterAngleCopies, en: miterAngleCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'voltage-drop-calculator', { ...voltageDropCopies, en: voltageDropCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

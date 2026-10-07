@@ -264,6 +264,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/miter-angle-calculator/logic.mjs',
   },
   {
+    id: 'voltage-drop-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'voltage drop calculator',
+    secondaryIntents: ['wire voltage drop calculator', 'voltage drop calculator single phase', 'three phase voltage drop calculator'],
+    functions: ['estimate resistive voltage drop for copper or aluminum conductors from one-way length, current, cross-sectional area and supply voltage', 'support DC two-conductor, single-phase AC and balanced three-phase AC modes with optional power factor', 'show volts, percentage, estimated load voltage and explicit calculation assumptions'],
+    acceptance: 'Zero route length yields zero drop; for 20 A over 30 m one-way in 2.5 mm² copper at 230 V single-phase and power factor 1, resistive drop is about 8.27 V (3.60%).',
+    boundary: 'Reference-resistivity, resistive-only estimate at 20°C, not wire sizing or electrical safety advice. Omits conductor heating, AC reactance, harmonics, connectors, installation conditions, ampacity, overcurrent protection and local codes. Three-phase assumes balanced load. Qualified electrician must verify design and local requirements.',
+    relatedExistingIds: [],
+    logicModule: './tools/voltage-drop-calculator/logic.mjs',
+  },
+  {
     id: 'deck-calculator',
     category: 'home-materials',
     type: 'calculator',
