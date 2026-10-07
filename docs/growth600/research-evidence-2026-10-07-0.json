@@ -1,0 +1,2737 @@
+{
+  "date": "2026-10-07",
+  "snapshot": "685f91adfc7818a54f6dc0a967e290d13137a3dd",
+  "cost_usd": 0.24852,
+  "ledger": [
+    {
+      "path": "/appendix/user_data",
+      "cache": "response-bd23e21d23d05d.json",
+      "cost": 0,
+      "time": "2026-10-07T07:10:59Z",
+      "task_ids": [
+        "10070710-1949-0064-0000-8cdf9bb0f64e"
+      ]
+    },
+    {
+      "path": "/appendix/user_data",
+      "cache": "response-bd23e21d23d05d.json",
+      "cost": 0,
+      "time": "2026-10-07T07:11:12Z",
+      "task_ids": [
+        "10070711-1949-0064-0000-9e05bd0283d7"
+      ]
+    },
+    {
+      "path": "/appendix/user_data",
+      "cache": "response-bd23e21d23d05d.json",
+      "cost": 0,
+      "time": "2026-10-07T07:11:20Z",
+      "task_ids": [
+        "10070711-1949-0064-0000-992cf184fe78"
+      ]
+    },
+    {
+      "path": "/dataforseo_labs/google/keyword_overview/live",
+      "cache": "response-d97184e68bff72.json",
+      "cost": 0.09288,
+      "time": "2026-10-07T07:29:43Z",
+      "task_ids": [
+        "10070729-1949-0607-0000-deadefa5a1fb"
+      ]
+    },
+    {
+      "path": "/dataforseo_labs/google/keyword_overview/live",
+      "cache": "response-0529bccfff83b2.json",
+      "cost": 0.02748,
+      "time": "2026-10-07T07:29:53Z",
+      "task_ids": [
+        "10070729-1949-0607-0000-e04c8771bd20"
+      ]
+    },
+    {
+      "path": "/dataforseo_labs/google/keyword_overview/live",
+      "cache": "response-5cbd77f5b459d0.json",
+      "cost": 0.0204,
+      "time": "2026-10-07T07:30:44Z",
+      "task_ids": [
+        "10070730-1949-0607-0000-fc78edd6f2ed"
+      ]
+    },
+    {
+      "path": "/dataforseo_labs/google/keyword_overview/live",
+      "cache": "response-49b8d33fd333bc.json",
+      "cost": 0.0204,
+      "time": "2026-10-07",
+      "task_ids": [
+        "10070730-1949-0607-0000-30fd39e25771"
+      ]
+    },
+    {
+      "path": "/dataforseo_labs/google/keyword_overview/live",
+      "cache": "response-f757a4f53f116d.json",
+      "cost": 0.0204,
+      "time": "2026-10-07",
+      "task_ids": [
+        "10070730-1949-0607-0000-ad773e69e100"
+      ]
+    },
+    {
+      "path": "/dataforseo_labs/google/keyword_overview/live",
+      "cache": "response-cc900b0548dbcc.json",
+      "cost": 0.01896,
+      "time": "2026-10-07T07:31:32Z",
+      "task_ids": [
+        "10070731-1949-0607-0000-88de2ca2a94e"
+      ]
+    },
+    {
+      "path": "/dataforseo_labs/google/keyword_ideas/live",
+      "cache": "response-58a8400ec6fdcf.json",
+      "cost": 0.036,
+      "time": "2026-10-07T07:32:03Z",
+      "task_ids": [
+        "10070731-1949-0400-0000-796c88c88ccf"
+      ]
+    },
+    {
+      "path": "/appendix/user_data",
+      "cache": "response-bd23e21d23d05d.json",
+      "cost": 0,
+      "time": "2026-10-07T07:32:48Z",
+      "task_ids": [
+        "10070732-1949-0064-0000-144fd4f8337e"
+      ]
+    },
+    {
+      "path": "/appendix/user_data",
+      "cache": "response-bd23e21d23d05d.json",
+      "cost": 0,
+      "time": "2026-10-07T07:34:23Z",
+      "task_ids": [
+        "10070734-1949-0064-0000-181db0975560"
+      ]
+    },
+    {
+      "path": "/serp/google/organic/live/advanced",
+      "cache": "response-2f43e757e44da6.json",
+      "cost": 0.002,
+      "time": "2026-10-07T07:34:54Z",
+      "task_ids": [
+        "10070734-1949-0139-0000-94b265702d9e"
+      ]
+    },
+    {
+      "path": "/serp/google/organic/live/advanced",
+      "cache": "response-d6213e749a3c4d.json",
+      "cost": 0.002,
+      "time": "2026-10-07T07:35:00Z",
+      "task_ids": [
+        "10070734-1949-0139-0000-df5c1606b45d"
+      ]
+    },
+    {
+      "path": "/serp/google/organic/live/advanced",
+      "cache": "response-25f4082590fec0.json",
+      "cost": 0.002,
+      "time": "2026-10-07T07:35:09Z",
+      "task_ids": [
+        "10070735-1949-0139-0000-a2c3157863a6"
+      ]
+    },
+    {
+      "path": "/serp/google/organic/live/advanced",
+      "cache": "response-d5736fd745f307.json",
+      "cost": 0.002,
+      "time": "2026-10-07T07:35:15Z",
+      "task_ids": [
+        "10070735-1949-0139-0000-7f5722888c1e"
+      ]
+    },
+    {
+      "path": "/serp/google/organic/live/advanced",
+      "cache": "response-9d5a01822d5503.json",
+      "cost": 0.002,
+      "time": "2026-10-07T07:35:30Z",
+      "task_ids": [
+        "10070735-1949-0139-0000-b5e4f4dd6ad0"
+      ]
+    },
+    {
+      "path": "/serp/google/organic/live/advanced",
+      "cache": "response-02ec41fb496754.json",
+      "cost": 0.002,
+      "time": "2026-10-07T07:35:36Z",
+      "task_ids": [
+        "10070735-1949-0139-0000-0f2834c9a452"
+      ]
+    }
+  ],
+  "selected": [
+    {
+      "number": 1,
+      "id": "snake-game",
+      "keyword": "snake game",
+      "volume": 7480000,
+      "kd": 53
+    },
+    {
+      "number": 2,
+      "id": "spider-solitaire",
+      "keyword": "spider solitaire",
+      "volume": 1000000,
+      "kd": 57
+    },
+    {
+      "number": 3,
+      "id": "freecell",
+      "keyword": "freecell",
+      "volume": 673000,
+      "kd": 57
+    },
+    {
+      "number": 4,
+      "id": "word-puzzle-solver",
+      "keyword": "word finder",
+      "volume": 673000,
+      "kd": 68
+    },
+    {
+      "number": 5,
+      "id": "spades-game",
+      "keyword": "spades game",
+      "volume": 550000,
+      "kd": 53
+    },
+    {
+      "number": 6,
+      "id": "inflation-calculator",
+      "keyword": "inflation calculator",
+      "volume": 550000,
+      "kd": 70
+    },
+    {
+      "number": 7,
+      "id": "retirement-calculator",
+      "keyword": "retirement calculator",
+      "volume": 368000,
+      "kd": 54
+    },
+    {
+      "number": 8,
+      "id": "text-to-speech",
+      "keyword": "text to speech",
+      "volume": 301000,
+      "kd": 94
+    },
+    {
+      "number": 9,
+      "id": "world-clock",
+      "keyword": "world clock",
+      "volume": 301000,
+      "kd": 100
+    },
+    {
+      "number": 10,
+      "id": "euchre",
+      "keyword": "euchre",
+      "volume": 201000,
+      "kd": 30
+    },
+    {
+      "number": 11,
+      "id": "name-generator",
+      "keyword": "fantasy name generator",
+      "volume": 165000,
+      "kd": 15
+    },
+    {
+      "number": 12,
+      "id": "bac-calculator",
+      "keyword": "bac calculator",
+      "volume": 165000,
+      "kd": 28
+    },
+    {
+      "number": 13,
+      "id": "cribbage",
+      "keyword": "cribbage",
+      "volume": 165000,
+      "kd": 33
+    },
+    {
+      "number": 14,
+      "id": "401k-calculator",
+      "keyword": "401k calculator",
+      "volume": 165000,
+      "kd": 36
+    },
+    {
+      "number": 15,
+      "id": "gin-rummy",
+      "keyword": "gin rummy",
+      "volume": 165000,
+      "kd": 43
+    },
+    {
+      "number": 16,
+      "id": "tire-size-calculator",
+      "keyword": "tire size calculator",
+      "volume": 165000,
+      "kd": 44
+    },
+    {
+      "number": 17,
+      "id": "random-word-generator",
+      "keyword": "random word generator",
+      "volume": 135000,
+      "kd": 21
+    },
+    {
+      "number": 18,
+      "id": "breathing-exercise",
+      "keyword": "breathing exercise",
+      "volume": 135000,
+      "kd": 33
+    },
+    {
+      "number": 19,
+      "id": "hearts-game",
+      "keyword": "hearts card game online",
+      "volume": 135000,
+      "kd": 42
+    },
+    {
+      "number": 20,
+      "id": "bra-size-calculator",
+      "keyword": "bra size calculator",
+      "volume": 135000,
+      "kd": 45
+    },
+    {
+      "number": 21,
+      "id": "sleep-calculator",
+      "keyword": "sleep calculator",
+      "volume": 135000,
+      "kd": 49
+    },
+    {
+      "number": 22,
+      "id": "typing-practice",
+      "keyword": "typing practice",
+      "volume": 135000,
+      "kd": 51
+    },
+    {
+      "number": 23,
+      "id": "logo-maker",
+      "keyword": "logo maker",
+      "volume": 135000,
+      "kd": 94
+    },
+    {
+      "number": 24,
+      "id": "required-minimum-distribution-calculator",
+      "keyword": "required minimum distribution calculator",
+      "volume": 110000,
+      "kd": 22
+    },
+    {
+      "number": 25,
+      "id": "protein-calculator",
+      "keyword": "protein calculator",
+      "volume": 110000,
+      "kd": 34
+    },
+    {
+      "number": 26,
+      "id": "molar-mass-calculator",
+      "keyword": "molecular weight calculator",
+      "volume": 90500,
+      "kd": 18
+    },
+    {
+      "number": 27,
+      "id": "mortgage-affordability-calculator",
+      "keyword": "how much house can i afford",
+      "volume": 90500,
+      "kd": 47
+    },
+    {
+      "number": 28,
+      "id": "mancala",
+      "keyword": "mancala",
+      "volume": 74000,
+      "kd": 17
+    },
+    {
+      "number": 29,
+      "id": "gold-calculator",
+      "keyword": "gold calculator",
+      "volume": 74000,
+      "kd": 19
+    },
+    {
+      "number": 30,
+      "id": "auto-loan-refinance-calculator",
+      "keyword": "auto loan refinance calculator",
+      "volume": 60500,
+      "kd": 0
+    },
+    {
+      "number": 31,
+      "id": "gravel-calculator",
+      "keyword": "gravel calculator",
+      "volume": 60500,
+      "kd": 9
+    },
+    {
+      "number": 32,
+      "id": "mortgage-refinance-calculator",
+      "keyword": "mortgage refinance calculator",
+      "volume": 60500,
+      "kd": 20
+    },
+    {
+      "number": 33,
+      "id": "mulch-calculator",
+      "keyword": "mulch calculator",
+      "volume": 60500,
+      "kd": 24
+    },
+    {
+      "number": 34,
+      "id": "image-color-picker",
+      "keyword": "image color picker",
+      "volume": 60500,
+      "kd": 26
+    },
+    {
+      "number": 35,
+      "id": "dominoes-game",
+      "keyword": "dominoes game",
+      "volume": 60500,
+      "kd": 48
+    },
+    {
+      "number": 36,
+      "id": "weight-loss-calculator",
+      "keyword": "weight loss calculator",
+      "volume": 60500,
+      "kd": 52
+    },
+    {
+      "number": 37,
+      "id": "image-upscaler",
+      "keyword": "image upscaler",
+      "volume": 60500,
+      "kd": 56
+    },
+    {
+      "number": 38,
+      "id": "heloc-calculator",
+      "keyword": "heloc calculator",
+      "volume": 49500,
+      "kd": 2
+    },
+    {
+      "number": 39,
+      "id": "secret-santa-generator",
+      "keyword": "secret santa generator",
+      "volume": 49500,
+      "kd": 13
+    },
+    {
+      "number": 40,
+      "id": "epub-to-pdf",
+      "keyword": "epub to pdf",
+      "volume": 49500,
+      "kd": 20
+    },
+    {
+      "number": 41,
+      "id": "pyramid-solitaire",
+      "keyword": "pyramid solitaire",
+      "volume": 49500,
+      "kd": 41
+    },
+    {
+      "number": 42,
+      "id": "eisenhower-matrix",
+      "keyword": "eisenhower matrix",
+      "volume": 49500,
+      "kd": 54
+    },
+    {
+      "number": 43,
+      "id": "social-security-calculator",
+      "keyword": "social security calculator",
+      "volume": 49500,
+      "kd": 60
+    },
+    {
+      "number": 44,
+      "id": "rebus-puzzles",
+      "keyword": "rebus puzzles",
+      "volume": 40500,
+      "kd": 5
+    },
+    {
+      "number": 45,
+      "id": "calories-burned-calculator",
+      "keyword": "calories burned calculator",
+      "volume": 40500,
+      "kd": 23
+    },
+    {
+      "number": 46,
+      "id": "killer-sudoku",
+      "keyword": "killer sudoku",
+      "volume": 40500,
+      "kd": 27
+    },
+    {
+      "number": 47,
+      "id": "sudoku-solver",
+      "keyword": "sudoku solver",
+      "volume": 40500,
+      "kd": 34
+    },
+    {
+      "number": 48,
+      "id": "hangman-game",
+      "keyword": "hangman game",
+      "volume": 40500,
+      "kd": 42
+    },
+    {
+      "number": 49,
+      "id": "rhyme-finder",
+      "keyword": "rhyming dictionary",
+      "volume": 40500,
+      "kd": 50
+    },
+    {
+      "number": 50,
+      "id": "water-intake-calculator",
+      "keyword": "water intake calculator",
+      "volume": 33100,
+      "kd": 3
+    },
+    {
+      "number": 51,
+      "id": "options-profit-calculator",
+      "keyword": "options profit calculator",
+      "volume": 33100,
+      "kd": 10
+    },
+    {
+      "number": 52,
+      "id": "stair-calculator",
+      "keyword": "stair calculator",
+      "volume": 33100,
+      "kd": 10
+    },
+    {
+      "number": 53,
+      "id": "cpm-calculator",
+      "keyword": "cpm calculator",
+      "volume": 33100,
+      "kd": 19
+    },
+    {
+      "number": 54,
+      "id": "annuity-calculator",
+      "keyword": "annuity calculator",
+      "volume": 33100,
+      "kd": 32
+    },
+    {
+      "number": 55,
+      "id": "aim-trainer",
+      "keyword": "aim trainer",
+      "volume": 33100,
+      "kd": 36
+    },
+    {
+      "number": 56,
+      "id": "alarm-clock",
+      "keyword": "online alarm clock",
+      "volume": 33100,
+      "kd": 39
+    },
+    {
+      "number": 57,
+      "id": "asphalt-calculator",
+      "keyword": "asphalt calculator",
+      "volume": 27100,
+      "kd": 0
+    },
+    {
+      "number": 58,
+      "id": "dividend-calculator",
+      "keyword": "dividend calculator",
+      "volume": 27100,
+      "kd": 9
+    },
+    {
+      "number": 59,
+      "id": "voltage-drop-calculator",
+      "keyword": "voltage drop calculator",
+      "volume": 27100,
+      "kd": 21
+    },
+    {
+      "number": 60,
+      "id": "soil-calculator",
+      "keyword": "soil calculator",
+      "volume": 27100,
+      "kd": 24
+    },
+    {
+      "number": 61,
+      "id": "family-tree-maker",
+      "keyword": "family tree maker",
+      "volume": 27100,
+      "kd": 35
+    },
+    {
+      "number": 62,
+      "id": "chess-puzzles",
+      "keyword": "chess puzzles",
+      "volume": 27100,
+      "kd": 35
+    },
+    {
+      "number": 63,
+      "id": "net-worth-calculator",
+      "keyword": "net worth calculator",
+      "volume": 27100,
+      "kd": 48
+    },
+    {
+      "number": 64,
+      "id": "body-surface-area-calculator",
+      "keyword": "body surface area calculator",
+      "volume": 22200,
+      "kd": 4
+    },
+    {
+      "number": 65,
+      "id": "weekly-planner",
+      "keyword": "weekly planner",
+      "volume": 22200,
+      "kd": 6
+    },
+    {
+      "number": 66,
+      "id": "overtime-calculator",
+      "keyword": "overtime calculator",
+      "volume": 22200,
+      "kd": 7
+    },
+    {
+      "number": 67,
+      "id": "pool-volume-calculator",
+      "keyword": "pool volume calculator",
+      "volume": 22200,
+      "kd": 7
+    },
+    {
+      "number": 68,
+      "id": "molarity-calculator",
+      "keyword": "molarity calculator",
+      "volume": 22200,
+      "kd": 8
+    },
+    {
+      "number": 69,
+      "id": "random-team-generator",
+      "keyword": "random team generator",
+      "volume": 22200,
+      "kd": 9
+    },
+    {
+      "number": 70,
+      "id": "meeting-minutes-template",
+      "keyword": "meeting minutes template",
+      "volume": 22200,
+      "kd": 19
+    },
+    {
+      "number": 71,
+      "id": "roof-pitch-calculator",
+      "keyword": "roof pitch calculator",
+      "volume": 22200,
+      "kd": 23
+    },
+    {
+      "number": 72,
+      "id": "dots-and-boxes",
+      "keyword": "dots and boxes",
+      "volume": 22200,
+      "kd": 25
+    },
+    {
+      "number": 73,
+      "id": "color-mixer",
+      "keyword": "color mixer",
+      "volume": 22200,
+      "kd": 33
+    },
+    {
+      "number": 74,
+      "id": "chess-analysis-board",
+      "keyword": "chess analysis board",
+      "volume": 22200,
+      "kd": 49
+    },
+    {
+      "number": 75,
+      "id": "blackjack-game",
+      "keyword": "blackjack game",
+      "volume": 22200,
+      "kd": 50
+    },
+    {
+      "number": 76,
+      "id": "debt-to-income-ratio-calculator",
+      "keyword": "debt to income ratio calculator",
+      "volume": 22200,
+      "kd": 57
+    },
+    {
+      "number": 77,
+      "id": "drywall-calculator",
+      "keyword": "drywall calculator",
+      "volume": 18100,
+      "kd": 15
+    },
+    {
+      "number": 78,
+      "id": "roofing-calculator",
+      "keyword": "roofing calculator",
+      "volume": 18100,
+      "kd": 21
+    },
+    {
+      "number": 79,
+      "id": "car-lease-calculator",
+      "keyword": "car lease calculator",
+      "volume": 18100,
+      "kd": 31
+    },
+    {
+      "number": 80,
+      "id": "fire-calculator",
+      "keyword": "fire calculator",
+      "volume": 18100,
+      "kd": 41
+    },
+    {
+      "number": 81,
+      "id": "email-signature-generator",
+      "keyword": "email signature generator",
+      "volume": 18100,
+      "kd": 44
+    },
+    {
+      "number": 82,
+      "id": "image-vectorizer",
+      "keyword": "image vectorizer",
+      "volume": 18100,
+      "kd": 51
+    },
+    {
+      "number": 83,
+      "id": "deck-calculator",
+      "keyword": "deck calculator",
+      "volume": 14800,
+      "kd": 0
+    },
+    {
+      "number": 84,
+      "id": "vo2-max-calculator",
+      "keyword": "vo2 max calculator",
+      "volume": 14800,
+      "kd": 2
+    },
+    {
+      "number": 85,
+      "id": "image-splitter",
+      "keyword": "image splitter",
+      "volume": 14800,
+      "kd": 5
+    },
+    {
+      "number": 86,
+      "id": "529-calculator",
+      "keyword": "529 calculator",
+      "volume": 14800,
+      "kd": 10
+    },
+    {
+      "number": 87,
+      "id": "dilution-calculator",
+      "keyword": "dilution calculator",
+      "volume": 14800,
+      "kd": 16
+    },
+    {
+      "number": 88,
+      "id": "julian-date-converter",
+      "keyword": "julian date converter",
+      "volume": 14800,
+      "kd": 24
+    },
+    {
+      "number": 89,
+      "id": "ohms-law-calculator",
+      "keyword": "ohms law calculator",
+      "volume": 14800,
+      "kd": 31
+    },
+    {
+      "number": 90,
+      "id": "tripeaks-solitaire",
+      "keyword": "tripeaks solitaire",
+      "volume": 14800,
+      "kd": 53
+    },
+    {
+      "number": 91,
+      "id": "ideal-weight-calculator",
+      "keyword": "ideal weight calculator",
+      "volume": 14800,
+      "kd": 62
+    },
+    {
+      "number": 92,
+      "id": "radical-calculator",
+      "keyword": "square root simplifier",
+      "volume": 12100,
+      "kd": 0
+    },
+    {
+      "number": 93,
+      "id": "fence-calculator",
+      "keyword": "fence calculator",
+      "volume": 12100,
+      "kd": 0
+    },
+    {
+      "number": 94,
+      "id": "pool-salt-calculator",
+      "keyword": "pool salt calculator",
+      "volume": 12100,
+      "kd": 1
+    },
+    {
+      "number": 95,
+      "id": "limit-calculator",
+      "keyword": "limit calculator",
+      "volume": 12100,
+      "kd": 7
+    },
+    {
+      "number": 96,
+      "id": "circle-calculator",
+      "keyword": "circle calculator",
+      "volume": 12100,
+      "kd": 8
+    },
+    {
+      "number": 97,
+      "id": "wallpaper-calculator",
+      "keyword": "wallpaper calculator",
+      "volume": 12100,
+      "kd": 9
+    },
+    {
+      "number": 98,
+      "id": "image-region-redactor",
+      "keyword": "image pixelator",
+      "volume": 12100,
+      "kd": 9
+    },
+    {
+      "number": 99,
+      "id": "paver-calculator",
+      "keyword": "paver calculator",
+      "volume": 12100,
+      "kd": 12
+    },
+    {
+      "number": 100,
+      "id": "chemical-equation-balancer",
+      "keyword": "chemical equation balancer",
+      "volume": 12100,
+      "kd": 12
+    },
+    {
+      "number": 101,
+      "id": "reverse-mortgage-calculator",
+      "keyword": "reverse mortgage calculator",
+      "volume": 12100,
+      "kd": 17
+    },
+    {
+      "number": 102,
+      "id": "gear-ratio-calculator",
+      "keyword": "gear ratio calculator",
+      "volume": 12100,
+      "kd": 28
+    },
+    {
+      "number": 103,
+      "id": "gomoku",
+      "keyword": "gomoku",
+      "volume": 12100,
+      "kd": 29
+    },
+    {
+      "number": 104,
+      "id": "solar-panel-calculator",
+      "keyword": "solar panel calculator",
+      "volume": 12100,
+      "kd": 41
+    },
+    {
+      "number": 105,
+      "id": "poker-odds-calculator",
+      "keyword": "poker odds calculator",
+      "volume": 9900,
+      "kd": 7
+    },
+    {
+      "number": 106,
+      "id": "heart-rate-zone-calculator",
+      "keyword": "heart rate zone calculator",
+      "volume": 9900,
+      "kd": 8
+    },
+    {
+      "number": 107,
+      "id": "btu-calculator",
+      "keyword": "btu calculator",
+      "volume": 9900,
+      "kd": 9
+    },
+    {
+      "number": 108,
+      "id": "density-calculator",
+      "keyword": "density calculator",
+      "volume": 9900,
+      "kd": 14
+    },
+    {
+      "number": 109,
+      "id": "image-sharpener",
+      "keyword": "image sharpener",
+      "volume": 9900,
+      "kd": 23
+    },
+    {
+      "number": 110,
+      "id": "ludo-game",
+      "keyword": "ludo game",
+      "volume": 9900,
+      "kd": 29
+    },
+    {
+      "number": 111,
+      "id": "memory-test",
+      "keyword": "memory test",
+      "volume": 9900,
+      "kd": 41
+    },
+    {
+      "number": 112,
+      "id": "fuel-economy-calculator",
+      "keyword": "fuel economy calculator",
+      "volume": 9900,
+      "kd": 49
+    },
+    {
+      "number": 113,
+      "id": "timeline-maker",
+      "keyword": "timeline maker",
+      "volume": 9900,
+      "kd": 56
+    },
+    {
+      "number": 114,
+      "id": "crossword-online",
+      "keyword": "crossword online",
+      "volume": 9900,
+      "kd": 73
+    },
+    {
+      "number": 115,
+      "id": "rref-calculator",
+      "keyword": "rref calculator",
+      "volume": 8100,
+      "kd": 0
+    },
+    {
+      "number": 116,
+      "id": "brick-calculator",
+      "keyword": "brick calculator",
+      "volume": 8100,
+      "kd": 10
+    },
+    {
+      "number": 117,
+      "id": "json-diff",
+      "keyword": "json diff",
+      "volume": 8100,
+      "kd": 14
+    },
+    {
+      "number": 118,
+      "id": "car-depreciation-calculator",
+      "keyword": "car depreciation calculator",
+      "volume": 8100,
+      "kd": 22
+    },
+    {
+      "number": 119,
+      "id": "pdf-flattener",
+      "keyword": "pdf flatten",
+      "volume": 8100,
+      "kd": 25
+    },
+    {
+      "number": 120,
+      "id": "interval-timer",
+      "keyword": "interval timer",
+      "volume": 8100,
+      "kd": 34
+    },
+    {
+      "number": 121,
+      "id": "logic-grid-puzzle",
+      "keyword": "logic grid puzzle",
+      "volume": 8100,
+      "kd": 38
+    },
+    {
+      "number": 122,
+      "id": "markdown-editor",
+      "keyword": "markdown editor",
+      "volume": 8100,
+      "kd": 45
+    },
+    {
+      "number": 123,
+      "id": "inequality-calculator",
+      "keyword": "inequality calculator",
+      "volume": 6600,
+      "kd": 0
+    },
+    {
+      "number": 124,
+      "id": "histogram-calculator",
+      "keyword": "histogram maker",
+      "volume": 6600,
+      "kd": 0
+    },
+    {
+      "number": 125,
+      "id": "lean-body-mass-calculator",
+      "keyword": "lean body mass calculator",
+      "volume": 6600,
+      "kd": 0
+    },
+    {
+      "number": 126,
+      "id": "rafter-calculator",
+      "keyword": "rafter calculator",
+      "volume": 6600,
+      "kd": 0
+    },
+    {
+      "number": 127,
+      "id": "purchase-order-generator",
+      "keyword": "purchase order template",
+      "volume": 6600,
+      "kd": 0
+    },
+    {
+      "number": 128,
+      "id": "eigenvalue-calculator",
+      "keyword": "eigenvalue calculator",
+      "volume": 6600,
+      "kd": 3
+    },
+    {
+      "number": 129,
+      "id": "bond-calculator",
+      "keyword": "bond calculator",
+      "volume": 6600,
+      "kd": 10
+    },
+    {
+      "number": 130,
+      "id": "waist-to-hip-ratio-calculator",
+      "keyword": "waist to hip ratio calculator",
+      "volume": 6600,
+      "kd": 20
+    },
+    {
+      "number": 131,
+      "id": "compression-ratio-calculator",
+      "keyword": "compression ratio calculator",
+      "volume": 6600,
+      "kd": 23
+    },
+    {
+      "number": 132,
+      "id": "goal-planner",
+      "keyword": "smart goals template",
+      "volume": 6600,
+      "kd": 30
+    },
+    {
+      "number": 133,
+      "id": "hebrew-calendar-converter",
+      "keyword": "hebrew calendar converter",
+      "volume": 6600,
+      "kd": 31
+    },
+    {
+      "number": 134,
+      "id": "carpet-calculator",
+      "keyword": "carpet calculator",
+      "volume": 5400,
+      "kd": 1
+    },
+    {
+      "number": 135,
+      "id": "aquarium-calculator",
+      "keyword": "fish tank volume calculator",
+      "volume": 5400,
+      "kd": 1
+    },
+    {
+      "number": 136,
+      "id": "absolute-value-calculator",
+      "keyword": "absolute value calculator",
+      "volume": 5400,
+      "kd": 3
+    },
+    {
+      "number": 137,
+      "id": "grass-seed-calculator",
+      "keyword": "grass seed calculator",
+      "volume": 5400,
+      "kd": 4
+    },
+    {
+      "number": 138,
+      "id": "kinetic-energy-calculator",
+      "keyword": "kinetic energy calculator",
+      "volume": 5400,
+      "kd": 5
+    },
+    {
+      "number": 139,
+      "id": "writing-prompt-generator",
+      "keyword": "writing prompt generator",
+      "volume": 5400,
+      "kd": 10
+    },
+    {
+      "number": 140,
+      "id": "insulation-calculator",
+      "keyword": "insulation calculator",
+      "volume": 5400,
+      "kd": 13
+    },
+    {
+      "number": 141,
+      "id": "differential-equation-solver",
+      "keyword": "differential equation solver",
+      "volume": 5400,
+      "kd": 15
+    },
+    {
+      "number": 142,
+      "id": "stock-profit-calculator",
+      "keyword": "stock profit calculator",
+      "volume": 5400,
+      "kd": 16
+    },
+    {
+      "number": 143,
+      "id": "sokoban",
+      "keyword": "sokoban",
+      "volume": 5400,
+      "kd": 25
+    },
+    {
+      "number": 144,
+      "id": "prime-factorization-calculator",
+      "keyword": "prime factorization calculator",
+      "volume": 5400,
+      "kd": 26
+    },
+    {
+      "number": 145,
+      "id": "color-palette-from-image",
+      "keyword": "color palette from image",
+      "volume": 5400,
+      "kd": 27
+    },
+    {
+      "number": 146,
+      "id": "maze-generator",
+      "keyword": "maze generator",
+      "volume": 5400,
+      "kd": 30
+    },
+    {
+      "number": 147,
+      "id": "pension-calculator",
+      "keyword": "pension calculator",
+      "volume": 5400,
+      "kd": 31
+    },
+    {
+      "number": 148,
+      "id": "text-to-binary-converter",
+      "keyword": "binary to text converter",
+      "volume": 5400,
+      "kd": 38
+    },
+    {
+      "number": 149,
+      "id": "moon-phase-calculator",
+      "keyword": "moon phase calculator",
+      "volume": 5400,
+      "kd": 49
+    },
+    {
+      "number": 150,
+      "id": "text-summarizer",
+      "keyword": "text summarizer",
+      "volume": 5400,
+      "kd": 62
+    },
+    {
+      "number": 151,
+      "id": "mind-map-maker",
+      "keyword": "mind map maker",
+      "volume": 5400,
+      "kd": 69
+    },
+    {
+      "number": 152,
+      "id": "rational-expression-calculator",
+      "keyword": "rational expression simplifier",
+      "volume": 4400,
+      "kd": 0
+    },
+    {
+      "number": 153,
+      "id": "wall-framing-calculator",
+      "keyword": "stud calculator",
+      "volume": 4400,
+      "kd": 0
+    },
+    {
+      "number": 154,
+      "id": "electricity-cost-calculator",
+      "keyword": "electricity cost calculator",
+      "volume": 4400,
+      "kd": 7
+    },
+    {
+      "number": 155,
+      "id": "compost-calculator",
+      "keyword": "compost calculator",
+      "volume": 4400,
+      "kd": 9
+    },
+    {
+      "number": 156,
+      "id": "modulo-calculator",
+      "keyword": "modulo calculator",
+      "volume": 4400,
+      "kd": 16
+    },
+    {
+      "number": 157,
+      "id": "meeting-planner",
+      "keyword": "meeting planner",
+      "volume": 4400,
+      "kd": 21
+    },
+    {
+      "number": 158,
+      "id": "resistor-color-code-calculator",
+      "keyword": "resistor color code calculator",
+      "volume": 4400,
+      "kd": 29
+    },
+    {
+      "number": 159,
+      "id": "mood-tracker",
+      "keyword": "mood tracker",
+      "volume": 4400,
+      "kd": 39
+    },
+    {
+      "number": 160,
+      "id": "journal-online",
+      "keyword": "journal online",
+      "volume": 4400,
+      "kd": 51
+    },
+    {
+      "number": 161,
+      "id": "travel-itinerary-planner",
+      "keyword": "travel itinerary planner",
+      "volume": 4400,
+      "kd": 71
+    },
+    {
+      "number": 162,
+      "id": "polynomial-long-division-calculator",
+      "keyword": "polynomial long division calculator",
+      "volume": 3600,
+      "kd": 0
+    },
+    {
+      "number": 163,
+      "id": "half-life-calculator",
+      "keyword": "half life calculator",
+      "volume": 3600,
+      "kd": 6
+    },
+    {
+      "number": 164,
+      "id": "mortgage-points-calculator",
+      "keyword": "mortgage points calculator",
+      "volume": 3600,
+      "kd": 7
+    },
+    {
+      "number": 165,
+      "id": "trapezoid-calculator",
+      "keyword": "trapezoid area calculator",
+      "volume": 3600,
+      "kd": 10
+    },
+    {
+      "number": 166,
+      "id": "prayer-times-calculator",
+      "keyword": "prayer time calculator",
+      "volume": 3600,
+      "kd": 13
+    },
+    {
+      "number": 167,
+      "id": "hitori",
+      "keyword": "hitori",
+      "volume": 3600,
+      "kd": 18
+    },
+    {
+      "number": 168,
+      "id": "nurikabe",
+      "keyword": "nurikabe",
+      "volume": 3600,
+      "kd": 19
+    },
+    {
+      "number": 169,
+      "id": "color-name-finder",
+      "keyword": "color name finder",
+      "volume": 3600,
+      "kd": 23
+    },
+    {
+      "number": 170,
+      "id": "photo-to-sketch",
+      "keyword": "photo to sketch",
+      "volume": 3600,
+      "kd": 24
+    },
+    {
+      "number": 171,
+      "id": "schema-markup-validator",
+      "keyword": "schema markup validator",
+      "volume": 3600,
+      "kd": 32
+    },
+    {
+      "number": 172,
+      "id": "readability-checker",
+      "keyword": "readability checker",
+      "volume": 3600,
+      "kd": 34
+    },
+    {
+      "number": 173,
+      "id": "savings-goal-calculator",
+      "keyword": "savings goal calculator",
+      "volume": 3600,
+      "kd": 36
+    },
+    {
+      "number": 174,
+      "id": "severance-pay-calculator",
+      "keyword": "severance pay calculator",
+      "volume": 2900,
+      "kd": 0
+    },
+    {
+      "number": 175,
+      "id": "divisibility-calculator",
+      "keyword": "divisibility calculator",
+      "volume": 2900,
+      "kd": 0
+    },
+    {
+      "number": 176,
+      "id": "number-line-graphing-tool",
+      "keyword": "number line generator",
+      "volume": 2900,
+      "kd": 0
+    },
+    {
+      "number": 177,
+      "id": "pond-volume-calculator",
+      "keyword": "pond volume calculator",
+      "volume": 2900,
+      "kd": 0
+    },
+    {
+      "number": 178,
+      "id": "acceleration-calculator",
+      "keyword": "acceleration calculator",
+      "volume": 2900,
+      "kd": 0
+    },
+    {
+      "number": 179,
+      "id": "force-calculator",
+      "keyword": "force calculator",
+      "volume": 2900,
+      "kd": 0
+    },
+    {
+      "number": 180,
+      "id": "horsepower-calculator",
+      "keyword": "horsepower calculator",
+      "volume": 2900,
+      "kd": 0
+    },
+    {
+      "number": 181,
+      "id": "rtf-converter",
+      "keyword": "rtf to pdf converter",
+      "volume": 2900,
+      "kd": 0
+    },
+    {
+      "number": 182,
+      "id": "csv-to-pdf",
+      "keyword": "csv to pdf",
+      "volume": 2900,
+      "kd": 0
+    },
+    {
+      "number": 183,
+      "id": "fertilizer-calculator",
+      "keyword": "fertilizer calculator",
+      "volume": 2900,
+      "kd": 5
+    },
+    {
+      "number": 184,
+      "id": "round-robin-tournament-generator",
+      "keyword": "round robin tournament generator",
+      "volume": 2900,
+      "kd": 8
+    },
+    {
+      "number": 185,
+      "id": "work-order-generator",
+      "keyword": "work order template",
+      "volume": 2900,
+      "kd": 14
+    },
+    {
+      "number": 186,
+      "id": "slitherlink",
+      "keyword": "slitherlink",
+      "volume": 2900,
+      "kd": 18
+    },
+    {
+      "number": 187,
+      "id": "project-risk-matrix",
+      "keyword": "risk assessment matrix",
+      "volume": 2900,
+      "kd": 19
+    },
+    {
+      "number": 188,
+      "id": "org-chart-maker",
+      "keyword": "org chart maker",
+      "volume": 2900,
+      "kd": 23
+    },
+    {
+      "number": 189,
+      "id": "certificate-decoder",
+      "keyword": "certificate decoder",
+      "volume": 2900,
+      "kd": 29
+    },
+    {
+      "number": 190,
+      "id": "extract-images-from-pdf",
+      "keyword": "extract images from pdf",
+      "volume": 2900,
+      "kd": 33
+    },
+    {
+      "number": 191,
+      "id": "sunrise-sunset-calculator",
+      "keyword": "sunrise sunset calculator",
+      "volume": 2900,
+      "kd": 79
+    },
+    {
+      "number": 192,
+      "id": "baluster-spacing-calculator",
+      "keyword": "baluster spacing calculator",
+      "volume": 2400,
+      "kd": 0
+    },
+    {
+      "number": 193,
+      "id": "ph-calculator",
+      "keyword": "ph calculator",
+      "volume": 2400,
+      "kd": 0
+    },
+    {
+      "number": 194,
+      "id": "section-modulus-calculator",
+      "keyword": "moment of inertia calculator",
+      "volume": 2400,
+      "kd": 0
+    },
+    {
+      "number": 195,
+      "id": "json-to-xml-converter",
+      "keyword": "xml to json converter",
+      "volume": 2400,
+      "kd": 0
+    },
+    {
+      "number": 196,
+      "id": "laplace-transform-calculator",
+      "keyword": "laplace transform calculator",
+      "volume": 2400,
+      "kd": 1
+    },
+    {
+      "number": 197,
+      "id": "frequency-wavelength-calculator",
+      "keyword": "wavelength calculator",
+      "volume": 2400,
+      "kd": 2
+    },
+    {
+      "number": 198,
+      "id": "ideal-gas-law-calculator",
+      "keyword": "ideal gas law calculator",
+      "volume": 2400,
+      "kd": 3
+    },
+    {
+      "number": 199,
+      "id": "peg-solitaire",
+      "keyword": "peg solitaire",
+      "volume": 2400,
+      "kd": 4
+    },
+    {
+      "number": 200,
+      "id": "vector-calculator",
+      "keyword": "vector calculator",
+      "volume": 2400,
+      "kd": 5
+    },
+    {
+      "number": 201,
+      "id": "torque-calculator",
+      "keyword": "torque calculator",
+      "volume": 2400,
+      "kd": 6
+    },
+    {
+      "number": 202,
+      "id": "cubic-quartic-equation-calculator",
+      "keyword": "cubic equation calculator",
+      "volume": 2400,
+      "kd": 7
+    },
+    {
+      "number": 203,
+      "id": "beam-deflection-calculator",
+      "keyword": "beam calculator",
+      "volume": 2400,
+      "kd": 8
+    },
+    {
+      "number": 204,
+      "id": "complex-number-calculator",
+      "keyword": "complex number calculator",
+      "volume": 2400,
+      "kd": 10
+    },
+    {
+      "number": 205,
+      "id": "led-resistor-calculator",
+      "keyword": "led resistor calculator",
+      "volume": 2400,
+      "kd": 11
+    },
+    {
+      "number": 206,
+      "id": "business-letter-generator",
+      "keyword": "formal letter template",
+      "volume": 2400,
+      "kd": 19
+    },
+    {
+      "number": 207,
+      "id": "lifetime-value-calculator",
+      "keyword": "customer lifetime value calculator",
+      "volume": 2400,
+      "kd": 27
+    },
+    {
+      "number": 208,
+      "id": "polar-graphing-calculator",
+      "keyword": "polar graphing calculator",
+      "volume": 1900,
+      "kd": 0
+    },
+    {
+      "number": 209,
+      "id": "boolean-algebra-calculator",
+      "keyword": "boolean algebra calculator",
+      "volume": 1900,
+      "kd": 0
+    },
+    {
+      "number": 210,
+      "id": "retaining-wall-calculator",
+      "keyword": "retaining wall calculator",
+      "volume": 1900,
+      "kd": 0
+    },
+    {
+      "number": 211,
+      "id": "battery-runtime-calculator",
+      "keyword": "battery runtime calculator",
+      "volume": 1900,
+      "kd": 0
+    },
+    {
+      "number": 212,
+      "id": "flow-rate-calculator",
+      "keyword": "flow rate calculator",
+      "volume": 1900,
+      "kd": 0
+    },
+    {
+      "number": 213,
+      "id": "reynolds-number-calculator",
+      "keyword": "reynolds number calculator",
+      "volume": 1900,
+      "kd": 0
+    },
+    {
+      "number": 214,
+      "id": "week-number-calculator",
+      "keyword": "week number calculator",
+      "volume": 1900,
+      "kd": 0
+    },
+    {
+      "number": 215,
+      "id": "har-viewer",
+      "keyword": "har analyzer",
+      "volume": 1900,
+      "kd": 3
+    },
+    {
+      "number": 216,
+      "id": "markdown-table-generator",
+      "keyword": "markdown table generator",
+      "volume": 1900,
+      "kd": 5
+    },
+    {
+      "number": 217,
+      "id": "sankey-diagram-generator",
+      "keyword": "sankey diagram generator",
+      "volume": 1900,
+      "kd": 10
+    },
+    {
+      "number": 218,
+      "id": "speed-reading-app",
+      "keyword": "speed reading app",
+      "volume": 1900,
+      "kd": 12
+    },
+    {
+      "number": 219,
+      "id": "lumber-cut-calculator",
+      "keyword": "cut list optimizer",
+      "volume": 1900,
+      "kd": 13
+    },
+    {
+      "number": 220,
+      "id": "event-budget-calculator",
+      "keyword": "wedding budget calculator",
+      "volume": 1900,
+      "kd": 15
+    },
+    {
+      "number": 221,
+      "id": "pdf-accessibility-checker",
+      "keyword": "pdf accessibility checker",
+      "volume": 1900,
+      "kd": 20
+    },
+    {
+      "number": 222,
+      "id": "futoshiki",
+      "keyword": "futoshiki",
+      "volume": 1900,
+      "kd": 33
+    },
+    {
+      "number": 223,
+      "id": "robots-txt-tester",
+      "keyword": "robots txt tester",
+      "volume": 1900,
+      "kd": 35
+    },
+    {
+      "number": 224,
+      "id": "docx-editor",
+      "keyword": "edit word document online",
+      "volume": 1900,
+      "kd": 37
+    },
+    {
+      "number": 225,
+      "id": "mockup-generator",
+      "keyword": "mockup generator",
+      "volume": 1900,
+      "kd": 60
+    },
+    {
+      "number": 226,
+      "id": "stem-and-leaf-plot-generator",
+      "keyword": "stem and leaf plot generator",
+      "volume": 1600,
+      "kd": 0
+    },
+    {
+      "number": 227,
+      "id": "box-plot-calculator",
+      "keyword": "box plot calculator",
+      "volume": 1600,
+      "kd": 0
+    },
+    {
+      "number": 228,
+      "id": "sleep-debt-calculator",
+      "keyword": "sleep debt calculator",
+      "volume": 1600,
+      "kd": 0
+    },
+    {
+      "number": 229,
+      "id": "three-phase-power-calculator",
+      "keyword": "three phase power calculator",
+      "volume": 1600,
+      "kd": 0
+    },
+    {
+      "number": 230,
+      "id": "momentum-calculator",
+      "keyword": "momentum calculator",
+      "volume": 1600,
+      "kd": 0
+    },
+    {
+      "number": 231,
+      "id": "cash-on-cash-return-calculator",
+      "keyword": "cash on cash return calculator",
+      "volume": 1600,
+      "kd": 1
+    },
+    {
+      "number": 232,
+      "id": "decision-tree-maker",
+      "keyword": "decision tree maker",
+      "volume": 1600,
+      "kd": 1
+    },
+    {
+      "number": 233,
+      "id": "push-up-test",
+      "keyword": "push up test",
+      "volume": 1600,
+      "kd": 2
+    },
+    {
+      "number": 234,
+      "id": "transformer-calculator",
+      "keyword": "transformer calculator",
+      "volume": 1600,
+      "kd": 3
+    },
+    {
+      "number": 235,
+      "id": "json-to-excel",
+      "keyword": "json to excel",
+      "volume": 1600,
+      "kd": 5
+    },
+    {
+      "number": 236,
+      "id": "statistical-power-calculator",
+      "keyword": "power analysis calculator",
+      "volume": 1600,
+      "kd": 9
+    },
+    {
+      "number": 237,
+      "id": "plant-spacing-calculator",
+      "keyword": "plant spacing calculator",
+      "volume": 1600,
+      "kd": 11
+    },
+    {
+      "number": 238,
+      "id": "shift-scheduler",
+      "keyword": "shift scheduler",
+      "volume": 1600,
+      "kd": 12
+    },
+    {
+      "number": 239,
+      "id": "forex-position-size-calculator",
+      "keyword": "forex position size calculator",
+      "volume": 1600,
+      "kd": 13
+    },
+    {
+      "number": 240,
+      "id": "subscription-tracker",
+      "keyword": "subscription tracker",
+      "volume": 1600,
+      "kd": 38
+    },
+    {
+      "number": 241,
+      "id": "sobriety-counter",
+      "keyword": "sobriety counter",
+      "volume": 1600,
+      "kd": 43
+    },
+    {
+      "number": 242,
+      "id": "lease-vs-buy-car-calculator",
+      "keyword": "lease vs buy car calculator",
+      "volume": 1300,
+      "kd": 0
+    },
+    {
+      "number": 243,
+      "id": "fisher-exact-test-calculator",
+      "keyword": "fisher exact test calculator",
+      "volume": 1300,
+      "kd": 0
+    },
+    {
+      "number": 244,
+      "id": "radar-chart-maker",
+      "keyword": "radar chart maker",
+      "volume": 1300,
+      "kd": 0
+    },
+    {
+      "number": 245,
+      "id": "acrostic-poem-maker",
+      "keyword": "acrostic poem generator",
+      "volume": 1300,
+      "kd": 1
+    },
+    {
+      "number": 246,
+      "id": "stoichiometry-calculator",
+      "keyword": "stoichiometry calculator",
+      "volume": 1300,
+      "kd": 4
+    },
+    {
+      "number": 247,
+      "id": "taylor-series-calculator",
+      "keyword": "taylor series calculator",
+      "volume": 1300,
+      "kd": 5
+    },
+    {
+      "number": 248,
+      "id": "packing-box-calculator",
+      "keyword": "moving box calculator",
+      "volume": 1300,
+      "kd": 11
+    },
+    {
+      "number": 249,
+      "id": "pressure-calculator",
+      "keyword": "pressure calculator",
+      "volume": 1300,
+      "kd": 12
+    },
+    {
+      "number": 250,
+      "id": "moonrise-moonset-calculator",
+      "keyword": "moonrise calculator",
+      "volume": 1300,
+      "kd": 17
+    },
+    {
+      "number": 251,
+      "id": "pcb-trace-width-calculator",
+      "keyword": "pcb trace width calculator",
+      "volume": 1300,
+      "kd": 38
+    },
+    {
+      "number": 252,
+      "id": "projectile-motion-calculator",
+      "keyword": "projectile motion calculator",
+      "volume": 1000,
+      "kd": 0
+    },
+    {
+      "number": 253,
+      "id": "hiking-time-calculator",
+      "keyword": "hiking time calculator",
+      "volume": 1000,
+      "kd": 4
+    },
+    {
+      "number": 254,
+      "id": "persian-calendar-converter",
+      "keyword": "persian calendar converter",
+      "volume": 1000,
+      "kd": 7
+    },
+    {
+      "number": 255,
+      "id": "effect-size-calculator",
+      "keyword": "effect size calculator",
+      "volume": 1000,
+      "kd": 8
+    },
+    {
+      "number": 256,
+      "id": "ev-charging-calculator",
+      "keyword": "ev charging calculator",
+      "volume": 1000,
+      "kd": 11
+    },
+    {
+      "number": 257,
+      "id": "pulley-calculator",
+      "keyword": "pulley calculator",
+      "volume": 1000,
+      "kd": 11
+    },
+    {
+      "number": 258,
+      "id": "rainwater-harvesting-calculator",
+      "keyword": "rainwater harvesting calculator",
+      "volume": 1000,
+      "kd": 21
+    },
+    {
+      "number": 259,
+      "id": "word-frequency-counter",
+      "keyword": "keyword density checker",
+      "volume": 1000,
+      "kd": 29
+    },
+    {
+      "number": 260,
+      "id": "hashi-puzzle",
+      "keyword": "hashi puzzle",
+      "volume": 1000,
+      "kd": 31
+    },
+    {
+      "number": 261,
+      "id": "ellipse-calculator",
+      "keyword": "ellipse area calculator",
+      "volume": 880,
+      "kd": 0
+    },
+    {
+      "number": 262,
+      "id": "mann-whitney-u-test-calculator",
+      "keyword": "mann whitney u test calculator",
+      "volume": 880,
+      "kd": 0
+    },
+    {
+      "number": 263,
+      "id": "linear-programming-calculator",
+      "keyword": "simplex method calculator",
+      "volume": 880,
+      "kd": 0
+    },
+    {
+      "number": 264,
+      "id": "wilks-calculator",
+      "keyword": "dots calculator powerlifting",
+      "volume": 880,
+      "kd": 0
+    },
+    {
+      "number": 265,
+      "id": "ramp-calculator",
+      "keyword": "ramp calculator",
+      "volume": 880,
+      "kd": 0
+    },
+    {
+      "number": 266,
+      "id": "rlc-circuit-calculator",
+      "keyword": "resonant frequency calculator",
+      "volume": 880,
+      "kd": 0
+    },
+    {
+      "number": 267,
+      "id": "antenna-length-calculator",
+      "keyword": "dipole antenna calculator",
+      "volume": 880,
+      "kd": 3
+    },
+    {
+      "number": 268,
+      "id": "effective-interest-rate-calculator",
+      "keyword": "effective interest rate calculator",
+      "volume": 880,
+      "kd": 7
+    },
+    {
+      "number": 269,
+      "id": "vcard-generator",
+      "keyword": "vcard generator",
+      "volume": 880,
+      "kd": 20
+    },
+    {
+      "number": 270,
+      "id": "binary-base64-tool",
+      "keyword": "base64 image encoder",
+      "volume": 880,
+      "kd": 42
+    },
+    {
+      "number": 271,
+      "id": "car-running-cost-calculator",
+      "keyword": "car ownership cost calculator",
+      "volume": 880,
+      "kd": 54
+    },
+    {
+      "number": 272,
+      "id": "specific-heat-calculator",
+      "keyword": "specific heat calculator",
+      "volume": 720,
+      "kd": 0
+    },
+    {
+      "number": 273,
+      "id": "json-model-generator",
+      "keyword": "json to csharp",
+      "volume": 720,
+      "kd": 1
+    },
+    {
+      "number": 274,
+      "id": "heat-loss-calculator",
+      "keyword": "heat loss calculator",
+      "volume": 720,
+      "kd": 3
+    },
+    {
+      "number": 275,
+      "id": "rc-time-constant-calculator",
+      "keyword": "rc time constant calculator",
+      "volume": 720,
+      "kd": 3
+    },
+    {
+      "number": 276,
+      "id": "image-histogram",
+      "keyword": "image histogram",
+      "volume": 720,
+      "kd": 3
+    },
+    {
+      "number": 277,
+      "id": "pdf-metadata-editor",
+      "keyword": "pdf metadata editor",
+      "volume": 720,
+      "kd": 6
+    },
+    {
+      "number": 278,
+      "id": "vcard-converter",
+      "keyword": "vcf to csv converter",
+      "volume": 720,
+      "kd": 8
+    },
+    {
+      "number": 279,
+      "id": "csv-editor",
+      "keyword": "csv editor",
+      "volume": 720,
+      "kd": 10
+    },
+    {
+      "number": 280,
+      "id": "chess-opening-trainer",
+      "keyword": "chess openings practice",
+      "volume": 720,
+      "kd": 17
+    },
+    {
+      "number": 281,
+      "id": "decibel-calculator",
+      "keyword": "decibel calculator",
+      "volume": 720,
+      "kd": 19
+    },
+    {
+      "number": 282,
+      "id": "openapi-editor",
+      "keyword": "swagger editor online",
+      "volume": 720,
+      "kd": 32
+    },
+    {
+      "number": 283,
+      "id": "font-pairing-tool",
+      "keyword": "font pair generator",
+      "volume": 720,
+      "kd": 37
+    },
+    {
+      "number": 284,
+      "id": "roth-vs-traditional-calculator",
+      "keyword": "roth ira vs traditional ira calculator",
+      "volume": 590,
+      "kd": 0
+    },
+    {
+      "number": 285,
+      "id": "polygon-calculator",
+      "keyword": "polygon calculator",
+      "volume": 590,
+      "kd": 0
+    },
+    {
+      "number": 286,
+      "id": "heat-pump-calculator",
+      "keyword": "heat pump calculator",
+      "volume": 590,
+      "kd": 0
+    },
+    {
+      "number": 287,
+      "id": "friction-calculator",
+      "keyword": "friction calculator",
+      "volume": 590,
+      "kd": 0
+    },
+    {
+      "number": 288,
+      "id": "thermal-expansion-calculator",
+      "keyword": "thermal expansion calculator",
+      "volume": 590,
+      "kd": 0
+    },
+    {
+      "number": 289,
+      "id": "hijri-calendar-converter",
+      "keyword": "hijri calendar converter",
+      "volume": 590,
+      "kd": 0
+    },
+    {
+      "number": 290,
+      "id": "capacitor-calculator",
+      "keyword": "capacitor calculator",
+      "volume": 590,
+      "kd": 2
+    },
+    {
+      "number": 291,
+      "id": "body-water-calculator",
+      "keyword": "body water calculator",
+      "volume": 590,
+      "kd": 6
+    },
+    {
+      "number": 292,
+      "id": "555-timer-calculator",
+      "keyword": "555 timer calculator",
+      "volume": 590,
+      "kd": 23
+    },
+    {
+      "number": 293,
+      "id": "fourier-series-calculator",
+      "keyword": "fourier series calculator",
+      "volume": 480,
+      "kd": 0
+    },
+    {
+      "number": 294,
+      "id": "miter-angle-calculator",
+      "keyword": "miter angle calculator",
+      "volume": 480,
+      "kd": 0
+    },
+    {
+      "number": 295,
+      "id": "xml-to-csv-converter",
+      "keyword": "xml to csv converter",
+      "volume": 480,
+      "kd": 0
+    },
+    {
+      "number": 296,
+      "id": "csv-merge",
+      "keyword": "merge csv files",
+      "volume": 480,
+      "kd": 0
+    },
+    {
+      "number": 297,
+      "id": "pdf-bookmarks-editor",
+      "keyword": "add bookmarks to pdf",
+      "volume": 480,
+      "kd": 5
+    },
+    {
+      "number": 298,
+      "id": "cycling-power-calculator",
+      "keyword": "cycling watts calculator",
+      "volume": 480,
+      "kd": 9
+    },
+    {
+      "number": 299,
+      "id": "modular-inverse-calculator",
+      "keyword": "modular inverse calculator",
+      "volume": 480,
+      "kd": 11
+    },
+    {
+      "number": 300,
+      "id": "a-b-test-calculator",
+      "keyword": "a b test calculator",
+      "volume": 480,
+      "kd": 55
+    },
+    {
+      "number": 301,
+      "id": "investment-allocation-calculator",
+      "keyword": "portfolio allocation calculator",
+      "volume": 390,
+      "kd": 0
+    },
+    {
+      "number": 302,
+      "id": "repeating-decimal-to-fraction",
+      "keyword": "repeating decimal to fraction calculator",
+      "volume": 390,
+      "kd": 0
+    },
+    {
+      "number": 303,
+      "id": "parametric-equation-calculator",
+      "keyword": "parametric graphing calculator",
+      "volume": 390,
+      "kd": 0
+    },
+    {
+      "number": 304,
+      "id": "pdf-page-size-converter",
+      "keyword": "resize pdf page size",
+      "volume": 390,
+      "kd": 0
+    },
+    {
+      "number": 305,
+      "id": "ics-viewer",
+      "keyword": "ics viewer",
+      "volume": 390,
+      "kd": 0
+    },
+    {
+      "number": 306,
+      "id": "singular-value-decomposition-calculator",
+      "keyword": "svd calculator",
+      "volume": 390,
+      "kd": 2
+    },
+    {
+      "number": 307,
+      "id": "sitemap-validator",
+      "keyword": "sitemap validator",
+      "volume": 390,
+      "kd": 3
+    },
+    {
+      "number": 308,
+      "id": "bcrypt-generator",
+      "keyword": "bcrypt generator",
+      "volume": 390,
+      "kd": 4
+    },
+    {
+      "number": 309,
+      "id": "spearman-correlation-calculator",
+      "keyword": "spearman correlation calculator",
+      "volume": 390,
+      "kd": 5
+    },
+    {
+      "number": 310,
+      "id": "inductor-calculator",
+      "keyword": "inductance calculator",
+      "volume": 390,
+      "kd": 6
+    },
+    {
+      "number": 311,
+      "id": "centripetal-force-calculator",
+      "keyword": "centripetal force calculator",
+      "volume": 390,
+      "kd": 9
+    },
+    {
+      "number": 312,
+      "id": "writing-tracker",
+      "keyword": "writing tracker",
+      "volume": 390,
+      "kd": 9
+    },
+    {
+      "number": 313,
+      "id": "aes-encryption-tool",
+      "keyword": "aes decrypt online",
+      "volume": 390,
+      "kd": 12
+    },
+    {
+      "number": 314,
+      "id": "jwt-encoder",
+      "keyword": "jwt encoder",
+      "volume": 390,
+      "kd": 16
+    },
+    {
+      "number": 315,
+      "id": "customer-acquisition-cost-calculator",
+      "keyword": "customer acquisition cost calculator",
+      "volume": 390,
+      "kd": 26
+    },
+    {
+      "number": 316,
+      "id": "wilcoxon-signed-rank-test-calculator",
+      "keyword": "wilcoxon signed rank test calculator",
+      "volume": 320,
+      "kd": 0
+    },
+    {
+      "number": 317,
+      "id": "graphql-formatter",
+      "keyword": "graphql formatter",
+      "volume": 320,
+      "kd": 0
+    },
+    {
+      "number": 318,
+      "id": "chore-chart-maker",
+      "keyword": "chore chart maker",
+      "volume": 320,
+      "kd": 4
+    },
+    {
+      "number": 319,
+      "id": "css-border-radius-generator",
+      "keyword": "border radius generator",
+      "volume": 320,
+      "kd": 12
+    },
+    {
+      "number": 320,
+      "id": "rental-yield-calculator",
+      "keyword": "rental yield calculator",
+      "volume": 320,
+      "kd": 19
+    },
+    {
+      "number": 321,
+      "id": "rsa-key-generator",
+      "keyword": "rsa key generator",
+      "volume": 320,
+      "kd": 22
+    },
+    {
+      "number": 322,
+      "id": "log-analyzer",
+      "keyword": "log analyzer",
+      "volume": 320,
+      "kd": 24
+    },
+    {
+      "number": 323,
+      "id": "chinese-remainder-theorem-calculator",
+      "keyword": "crt calculator",
+      "volume": 260,
+      "kd": 0
+    }
+  ],
+  "metrics": [],
+  "serps": [
+    {
+      "keyword": "html to pdf",
+      "location": 2840,
+      "items": [
+        {
+          "url": "https://www.docupilot.com/tools/html-to-pdf",
+          "domain": "www.docupilot.com",
+          "rank": 1
+        },
+        {
+          "url": "https://itextpdf.com/demos/convert-html-css-to-pdf-free-online",
+          "domain": "itextpdf.com",
+          "rank": 2
+        },
+        {
+          "url": "https://www.ilovepdf.com/blog/convert-web-to-pdf",
+          "domain": "www.ilovepdf.com",
+          "rank": 3
+        },
+        {
+          "url": "https://www.techradar.com/best/best-html-to-pdf-converter",
+          "domain": "www.techradar.com",
+          "rank": 4
+        },
+        {
+          "url": "https://www.princexml.com/",
+          "domain": "www.princexml.com",
+          "rank": 5
+        },
+        {
+          "url": "https://pdfcandy.com/html-to-pdf.html",
+          "domain": "pdfcandy.com",
+          "rank": 6
+        },
+        {
+          "url": "https://cloudconvert.com/htm-to-pdf",
+          "domain": "cloudconvert.com",
+          "rank": 7
+        },
+        {
+          "url": "https://pdfmaple.com/tools/html-to-pdf",
+          "domain": "pdfmaple.com",
+          "rank": 8
+        },
+        {
+          "url": "https://smallpdf.com/blog/how-to-convert-html-files-to-pdf-format",
+          "domain": "smallpdf.com",
+          "rank": 9
+        }
+      ],
+      "caveat": "Resultados puntuales posiblemente poco representativos; no prueban separación SEO completa."
+    },
+    {
+      "keyword": "flowchart maker",
+      "location": 2840,
+      "items": [
+        {
+          "url": "https://www.heflo.com/apps/flowchart",
+          "domain": "www.heflo.com",
+          "rank": 1
+        },
+        {
+          "url": "https://www.splotch.ink/old-home",
+          "domain": "www.splotch.ink",
+          "rank": 2
+        },
+        {
+          "url": "https://www.microsoft.com/da-dk/p/flowchart-maker-for-excel/9pfdq4rx34h1",
+          "domain": "www.microsoft.com",
+          "rank": 3
+        },
+        {
+          "url": "https://www.reddit.com/r/SixSigma/comments/1wowiz8/which_flowchart_maker_works_when_the_process_is/",
+          "domain": "www.reddit.com",
+          "rank": 4
+        },
+        {
+          "url": "https://www.pinterest.com/pin/447897125442629588/",
+          "domain": "www.pinterest.com",
+          "rank": 5
+        },
+        {
+          "url": "https://www.reddit.com/r/SideProject/comments/1v8q4ys/i_made_a_free_flowchart_maker_because_i_was_tired/",
+          "domain": "www.reddit.com",
+          "rank": 6
+        },
+        {
+          "url": "https://apps.microsoft.com/detail/9pfdq4rx34h1?hl=ar-SA&gl=JO",
+          "domain": "apps.microsoft.com",
+          "rank": 7
+        },
+        {
+          "url": "https://clickup.com/blog/flowchart-makers/",
+          "domain": "clickup.com",
+          "rank": 8
+        }
+      ],
+      "caveat": "Resultados puntuales posiblemente poco representativos; no prueban separación SEO completa."
+    },
+    {
+      "keyword": "anagram solver",
+      "location": 2840,
+      "items": [
+        {
+          "url": "https://www.anagrammer.com/anagram-solver/underline",
+          "domain": "www.anagrammer.com",
+          "rank": 1
+        },
+        {
+          "url": "https://anagram-solver.net/MNTITRRALEABSEEKT",
+          "domain": "anagram-solver.net",
+          "rank": 2
+        },
+        {
+          "url": "https://stackoverflow.com/questions/2650982/anagram-solver-based-on-statistics-rather-than-a-dictionary-table",
+          "domain": "stackoverflow.com",
+          "rank": 3
+        },
+        {
+          "url": "https://forums.phpfreaks.com/topic/267318-regex-for-anagram-solver/",
+          "domain": "forums.phpfreaks.com",
+          "rank": 4
+        },
+        {
+          "url": "https://play.google.com/store/apps/details?id=twa.poocoo.app&hl=af",
+          "domain": "play.google.com",
+          "rank": 5
+        },
+        {
+          "url": "https://www.anagrammer.com/anagram-solver/scale",
+          "domain": "www.anagrammer.com",
+          "rank": 6
+        },
+        {
+          "url": "https://libertybasiccom.proboards.com/thread/1785/anagram-solver-problem",
+          "domain": "libertybasiccom.proboards.com",
+          "rank": 7
+        },
+        {
+          "url": "https://apps.apple.com/nl/app/anagram-solver/id6451490456",
+          "domain": "apps.apple.com",
+          "rank": 8
+        },
+        {
+          "url": "https://www.crosswordsolver.org/forum/297898/universal-anagram-solver/",
+          "domain": "www.crosswordsolver.org",
+          "rank": 9
+        }
+      ],
+      "caveat": "Resultados puntuales posiblemente poco representativos; no prueban separación SEO completa."
+    },
+    {
+      "keyword": "text to pdf",
+      "location": 2840,
+      "items": [
+        {
+          "url": "https://documento.online-convert.com/it/converti/text-in-pdf",
+          "domain": "documento.online-convert.com",
+          "rank": 1
+        },
+        {
+          "url": "https://wordtohtml.net/fr/convert/txt-to-pdf",
+          "domain": "wordtohtml.net",
+          "rank": 2
+        },
+        {
+          "url": "https://apps.apple.com/bf/app/1366265585?see-all=customers-also-bought-apps&platform=iphone",
+          "domain": "apps.apple.com",
+          "rank": 3
+        },
+        {
+          "url": "https://www.cdpr.ca.gov/wp-content/uploads/2025/03/cdpr_enforcement_regional_boundaries_map_text_alternative.pdf",
+          "domain": "www.cdpr.ca.gov",
+          "rank": 4
+        },
+        {
+          "url": "https://talk.automators.fm/t/batch-convert-pages-and-numbers-files-to-pdf-need-help-with-applescript/12831",
+          "domain": "talk.automators.fm",
+          "rank": 5
+        },
+        {
+          "url": "https://smujo.id/biodiv/article/view/21182/8768",
+          "domain": "smujo.id",
+          "rank": 6
+        },
+        {
+          "url": "https://techcommunity.microsoft.com/discussions/microsoft-copilot/integrate-a-pdf-file-content-into-a-powerpoint/3940782",
+          "domain": "techcommunity.microsoft.com",
+          "rank": 7
+        },
+        {
+          "url": "https://www.justanswer.com/software/r73ev-use-phantom-foxit-pdf-editor.html",
+          "domain": "www.justanswer.com",
+          "rank": 8
+        },
+        {
+          "url": "https://www.researchgate.net/publication/299887979_Consumerism_Individualism_and_Anti-Activism",
+          "domain": "www.researchgate.net",
+          "rank": 9
+        }
+      ],
+      "caveat": "Resultados puntuales posiblemente poco representativos; no prueban separación SEO completa."
+    },
+    {
+      "keyword": "diagram maker",
+      "location": 2840,
+      "items": [
+        {
+          "url": "https://www.pippit.ai/tools/ai-diagram-generator",
+          "domain": "www.pippit.ai",
+          "rank": 1
+        },
+        {
+          "url": "https://affine.pro/ai/diagram-generator",
+          "domain": "affine.pro",
+          "rank": 2
+        },
+        {
+          "url": "https://www.mymap.ai/tools/state-diagram-maker",
+          "domain": "www.mymap.ai",
+          "rank": 3
+        },
+        {
+          "url": "https://evernote.com/ai-diagrams/online-network-diagram-maker",
+          "domain": "evernote.com",
+          "rank": 4
+        },
+        {
+          "url": "https://www.make-charts.com/tool/project-network-diagram-maker",
+          "domain": "www.make-charts.com",
+          "rank": 5
+        },
+        {
+          "url": "https://www.figma.com/ko-kr/community/plugin/1228771876010363761/ai-diagram-maker",
+          "domain": "www.figma.com",
+          "rank": 6
+        },
+        {
+          "url": "https://apps.apple.com/za/app/grafio-4-diagram-maker/id382418196",
+          "domain": "apps.apple.com",
+          "rank": 7
+        },
+        {
+          "url": "https://apps.microsoft.com/detail/9nzb652t5nfm?hl=es-MX&gl=HK",
+          "domain": "apps.microsoft.com",
+          "rank": 8
+        }
+      ],
+      "caveat": "Resultados puntuales posiblemente poco representativos; no prueban separación SEO completa."
+    },
+    {
+      "keyword": "word finder",
+      "location": 2840,
+      "items": [
+        {
+          "url": "https://scrabble.merriam.com/finder/escribes",
+          "domain": "scrabble.merriam.com",
+          "rank": 1
+        },
+        {
+          "url": "https://www.calculators.org/games/word-search-game/",
+          "domain": "www.calculators.org",
+          "rank": 2
+        },
+        {
+          "url": "https://web.stanford.edu/class/archive/cs/cs107/cs107.1202/lectures/17/scrabble-word-finder.html",
+          "domain": "web.stanford.edu",
+          "rank": 3
+        },
+        {
+          "url": "https://forum.freecodecamp.org/t/build-a-longest-word-finder-app/772677",
+          "domain": "forum.freecodecamp.org",
+          "rank": 4
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=4kZEInQndKQ",
+          "domain": "www.youtube.com",
+          "rank": 5
+        },
+        {
+          "url": "https://www.wordplays.com/lexulous-word-finder/iacciai",
+          "domain": "www.wordplays.com",
+          "rank": 6
+        },
+        {
+          "url": "https://coderanch.com/t/708869/java/Word-Finder",
+          "domain": "coderanch.com",
+          "rank": 7
+        },
+        {
+          "url": "https://www.scrabble.wiebolds.com/",
+          "domain": "www.scrabble.wiebolds.com",
+          "rank": 8
+        },
+        {
+          "url": "https://support.mozilla.org/en-US/questions/1586306",
+          "domain": "support.mozilla.org",
+          "rank": 9
+        }
+      ],
+      "caveat": "Resultados puntuales posiblemente poco representativos; no prueban separación SEO completa."
+    }
+  ]
+}

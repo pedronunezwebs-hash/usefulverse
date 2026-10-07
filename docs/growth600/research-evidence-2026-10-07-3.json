@@ -1,0 +1,3614 @@
+{
+  "date": "2026-10-07",
+  "metrics": [
+    {
+      "country": "US/en",
+      "keyword": "decimal to fraction calculator",
+      "volume": 22200,
+      "kd": 0,
+      "cpc": 4.73,
+      "updated": "2026-09-15 03:43:55 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-26 23:55:27 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "decision tree maker",
+      "volume": 1600,
+      "kd": 1,
+      "cpc": 6.8,
+      "updated": "2026-09-15 01:33:31 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 02:35:53 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "deck board calculator",
+      "volume": 14800,
+      "kd": 12,
+      "cpc": 4.01,
+      "updated": "2026-09-16 02:52:47 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 08:35:20 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "deck calculator",
+      "volume": 14800,
+      "kd": 0,
+      "cpc": 4.01,
+      "updated": "2026-09-12 01:00:54 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 08:35:20 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "delivery note generator",
+      "volume": 10,
+      "kd": null,
+      "cpc": null,
+      "updated": "2026-09-14 17:02:38 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "commercial",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 08:09:35 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "density calculator",
+      "volume": 9900,
+      "kd": 14,
+      "cpc": 5.62,
+      "updated": "2026-09-16 12:34:54 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 02:38:22 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "derivative calculator",
+      "volume": 60500,
+      "kd": 27,
+      "cpc": 0.43,
+      "updated": "2026-09-13 20:15:27 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-26 23:50:27 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "desmos scientific calculator",
+      "volume": 368000,
+      "kd": 47,
+      "cpc": 0.7,
+      "updated": "2026-09-16 05:34:53 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-26 23:41:33 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "device mockup generator",
+      "volume": 70,
+      "kd": 36,
+      "cpc": 2.54,
+      "updated": "2026-09-17 18:46:58 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-27 05:50:23 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "differential equation solver",
+      "volume": 5400,
+      "kd": 15,
+      "cpc": 0.97,
+      "updated": "2026-09-12 13:50:43 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-26 23:55:53 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "digit span test",
+      "volume": 1600,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-13 17:01:42 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 03:09:38 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "dilution calculator",
+      "volume": 14800,
+      "kd": 16,
+      "cpc": 5.58,
+      "updated": "2026-09-12 07:04:32 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-26 22:33:53 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "dipole antenna calculator",
+      "volume": 880,
+      "kd": 3,
+      "cpc": null,
+      "updated": "2026-09-12 13:58:49 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-27 06:50:38 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "discount points calculator",
+      "volume": 3600,
+      "kd": 5,
+      "cpc": 4.39,
+      "updated": "2026-09-12 22:28:08 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 16:12:33 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "distance calculator",
+      "volume": 110000,
+      "kd": 41,
+      "cpc": 0.19,
+      "updated": "2026-09-13 15:39:55 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 00:30:03 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "dividend calculator",
+      "volume": 27100,
+      "kd": 9,
+      "cpc": 3.64,
+      "updated": "2026-09-15 12:13:20 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 02:39:14 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "dividend reinvestment calculator",
+      "volume": 4400,
+      "kd": 8,
+      "cpc": 2.44,
+      "updated": "2026-09-13 09:25:31 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-26 23:43:17 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "divisibility calculator",
+      "volume": 2900,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-14 00:22:27 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 14:32:00 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "divisibility rules calculator",
+      "volume": 2900,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-12 14:02:21 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 13:44:18 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "docx editor",
+      "volume": 1000,
+      "kd": 25,
+      "cpc": 2.92,
+      "updated": "2026-09-12 18:32:31 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 00:17:05 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "dominoes game",
+      "volume": 60500,
+      "kd": 48,
+      "cpc": 0.76,
+      "updated": "2026-09-17 05:51:54 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-27 00:30:21 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "dominoes online",
+      "volume": 12100,
+      "kd": 38,
+      "cpc": 0.07,
+      "updated": "2026-09-12 06:22:33 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-26 23:25:31 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "dotenv validator",
+      "volume": 10,
+      "kd": null,
+      "cpc": null,
+      "updated": "2026-09-17 14:48:35 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-27 14:53:06 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "dots and boxes",
+      "volume": 22200,
+      "kd": 25,
+      "cpc": 0.47,
+      "updated": "2026-09-15 07:20:34 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 03:10:18 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "dots calculator powerlifting",
+      "volume": 880,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-14 20:47:53 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 10:00:22 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "drywall calculator",
+      "volume": 18100,
+      "kd": 15,
+      "cpc": 0.85,
+      "updated": "2026-09-15 02:34:08 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 10:42:50 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "dti calculator",
+      "volume": 18100,
+      "kd": 48,
+      "cpc": 1.75,
+      "updated": "2026-09-13 09:57:30 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 08:23:54 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "due date calculator",
+      "volume": 301000,
+      "kd": 46,
+      "cpc": 0.42,
+      "updated": "2026-09-16 14:09:44 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-26 23:28:45 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "ebook to pdf converter",
+      "volume": 140,
+      "kd": 19,
+      "cpc": 2.83,
+      "updated": "2026-09-15 11:18:38 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 15:08:00 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "ecommerce margin calculator",
+      "volume": 10,
+      "kd": null,
+      "cpc": 3.56,
+      "updated": "2026-09-17 01:00:15 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 16:34:09 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "ecommerce profit calculator",
+      "volume": 30,
+      "kd": 0,
+      "cpc": 5.04,
+      "updated": "2026-09-15 06:22:30 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 17:15:41 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "edit csv online",
+      "volume": 390,
+      "kd": 0,
+      "cpc": 8.71,
+      "updated": "2026-09-16 00:21:33 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 16:10:15 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "edit pdf metadata",
+      "volume": 720,
+      "kd": 0,
+      "cpc": 3.78,
+      "updated": "2026-09-15 00:10:20 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 15:06:11 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "edit word document online",
+      "volume": 1900,
+      "kd": 37,
+      "cpc": 2.81,
+      "updated": "2026-09-12 10:22:00 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 15:59:02 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "effect size calculator",
+      "volume": 1000,
+      "kd": 8,
+      "cpc": null,
+      "updated": "2026-09-14 08:20:59 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 15:02:14 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "effective interest rate calculator",
+      "volume": 880,
+      "kd": 7,
+      "cpc": 14.04,
+      "updated": "2026-09-16 19:53:54 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 16:13:48 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "egfr calculator",
+      "volume": 40500,
+      "kd": 28,
+      "cpc": 3.31,
+      "updated": "2026-09-15 07:40:35 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 15:56:47 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "eigenvalue calculator",
+      "volume": 6600,
+      "kd": 3,
+      "cpc": 0.08,
+      "updated": "2026-09-12 15:19:51 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 15:55:34 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "eigenvector calculator",
+      "volume": 2400,
+      "kd": 0,
+      "cpc": 0.11,
+      "updated": "2026-09-12 19:19:46 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 16:08:53 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "eisenhower matrix",
+      "volume": 49500,
+      "kd": 54,
+      "cpc": 0.63,
+      "updated": "2026-09-14 02:30:45 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 15:49:47 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "electric car charging cost calculator",
+      "volume": 1000,
+      "kd": 24,
+      "cpc": 3.33,
+      "updated": "2026-09-14 06:27:45 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 08:41:23 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "electric car range calculator",
+      "volume": 30,
+      "kd": 1,
+      "cpc": null,
+      "updated": "2026-09-17 11:32:50 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 11:30:24 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "electricity cost calculator",
+      "volume": 4400,
+      "kd": 7,
+      "cpc": 9.26,
+      "updated": "2026-09-12 16:54:33 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 18:26:51 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "ellipse area calculator",
+      "volume": 880,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-13 09:46:14 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 15:16:45 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "ellipse calculator",
+      "volume": 590,
+      "kd": 5,
+      "cpc": null,
+      "updated": "2026-09-12 04:41:13 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 15:42:18 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "email signature generator",
+      "volume": 18100,
+      "kd": 44,
+      "cpc": 7.59,
+      "updated": "2026-09-15 21:44:09 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational",
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-27 16:20:09 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "employee shift schedule maker",
+      "volume": 10,
+      "kd": 67,
+      "cpc": null,
+      "updated": "2026-09-13 18:51:03 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "transactional",
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-29 15:00:11 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "engine compression calculator",
+      "volume": 720,
+      "kd": 7,
+      "cpc": 0.56,
+      "updated": "2026-09-12 00:44:21 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 15:10:09 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "engine power calculator",
+      "volume": 70,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-12 22:35:55 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 08:20:37 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "env file generator",
+      "volume": 10,
+      "kd": null,
+      "cpc": null,
+      "updated": "2026-09-17 14:35:37 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 16:54:45 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "epub to pdf",
+      "volume": 49500,
+      "kd": 20,
+      "cpc": 4.57,
+      "updated": "2026-09-14 10:38:57 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 15:58:04 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "equity dilution calculator",
+      "volume": 90,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-12 10:24:49 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 15:35:35 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "equivalent resistance calculator",
+      "volume": 480,
+      "kd": 0,
+      "cpc": 6.09,
+      "updated": "2026-09-12 17:59:43 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 16:22:27 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "estimate sum calculator",
+      "volume": 33100,
+      "kd": 3,
+      "cpc": null,
+      "updated": "2026-09-15 05:35:35 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 15:22:30 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "estimate sums calculator",
+      "volume": 33100,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-16 04:06:58 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 16:00:00 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "estimate the sum calculator",
+      "volume": 33100,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-14 17:32:10 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 14:45:58 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "estimated sum calculator",
+      "volume": 33100,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-13 19:02:58 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 18:38:09 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "estimating sum calculator",
+      "volume": 33100,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-13 03:40:30 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 18:26:18 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "estimating sums calculator",
+      "volume": 33100,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-14 08:55:43 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 14:47:37 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "euchre",
+      "volume": 201000,
+      "kd": 30,
+      "cpc": 3.39,
+      "updated": "2026-09-14 11:26:04 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 16:22:39 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "euchre card game online",
+      "volume": 8100,
+      "kd": 27,
+      "cpc": 2.89,
+      "updated": "2026-09-15 14:58:28 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational",
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-27 15:19:39 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "ev charging calculator",
+      "volume": 1000,
+      "kd": 11,
+      "cpc": 7.77,
+      "updated": "2026-09-13 13:07:57 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 16:26:53 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "ev range calculator",
+      "volume": 170,
+      "kd": 0,
+      "cpc": 3.41,
+      "updated": "2026-09-14 08:58:03 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 13:27:14 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "event budget calculator",
+      "volume": 30,
+      "kd": 0,
+      "cpc": 4.57,
+      "updated": "2026-09-12 22:13:44 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 16:12:02 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "exercise calorie calculator",
+      "volume": 3600,
+      "kd": 41,
+      "cpc": 2.12,
+      "updated": "2026-09-13 20:20:47 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 15:13:34 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "exponent calculator",
+      "volume": 18100,
+      "kd": 12,
+      "cpc": 1.48,
+      "updated": "2026-09-12 06:32:54 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 16:18:07 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "exponent rules calculator",
+      "volume": 320,
+      "kd": 5,
+      "cpc": 0.46,
+      "updated": "2026-09-13 05:24:24 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 17:19:13 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "extract embedded files from pdf",
+      "volume": 10,
+      "kd": 21,
+      "cpc": null,
+      "updated": "2026-09-15 05:29:51 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 13:21:13 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "extract images from pdf",
+      "volume": 2900,
+      "kd": 33,
+      "cpc": 2.16,
+      "updated": "2026-09-17 06:21:35 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 15:44:20 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "factoring calculator",
+      "volume": 135000,
+      "kd": 8,
+      "cpc": 1.48,
+      "updated": "2026-09-15 02:17:34 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 18:52:45 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "family tree maker",
+      "volume": 27100,
+      "kd": 35,
+      "cpc": 2.82,
+      "updated": "2026-09-12 11:21:46 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "commercial",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 17:30:57 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "fantasy calculator",
+      "volume": 33100,
+      "kd": 16,
+      "cpc": 6.65,
+      "updated": "2026-09-12 05:12:36 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 10:19:22 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "fantasy football trade calculator",
+      "volume": 49500,
+      "kd": 12,
+      "cpc": 0.55,
+      "updated": "2026-09-13 02:42:52 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 21:41:58 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "fantasy name generator",
+      "volume": 165000,
+      "kd": 15,
+      "cpc": 2.47,
+      "updated": "2026-09-15 13:33:03 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 16:43:40 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "feature policy generator",
+      "volume": 0,
+      "kd": null,
+      "cpc": null,
+      "updated": "2026-09-17 06:44:51 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "navigational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 17:32:46 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "fence calculator",
+      "volume": 12100,
+      "kd": 0,
+      "cpc": 5.41,
+      "updated": "2026-09-14 00:55:42 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 10:34:12 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "fence materials calculator",
+      "volume": 1000,
+      "kd": 10,
+      "cpc": 3.6,
+      "updated": "2026-09-17 01:03:45 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 08:26:33 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "fertilizer calculator",
+      "volume": 2900,
+      "kd": 5,
+      "cpc": 1.58,
+      "updated": "2026-09-14 03:18:03 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 18:12:56 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "final exam calculator",
+      "volume": 74000,
+      "kd": 23,
+      "cpc": null,
+      "updated": "2026-09-16 03:15:48 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 07:47:05 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "financial independence calculator",
+      "volume": 1600,
+      "kd": 34,
+      "cpc": 3.27,
+      "updated": "2026-09-13 05:33:17 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 10:38:52 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "fire calculator",
+      "volume": 18100,
+      "kd": 41,
+      "cpc": 2.89,
+      "updated": "2026-09-12 10:43:38 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 10:40:38 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "fish tank volume calculator",
+      "volume": 5400,
+      "kd": 1,
+      "cpc": 0.09,
+      "updated": "2026-09-12 13:59:58 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 17:11:39 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "fisher exact test calculator",
+      "volume": 1300,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-16 08:56:11 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 18:14:12 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "five in a row online",
+      "volume": 20,
+      "kd": 39,
+      "cpc": null,
+      "updated": "2026-09-12 08:57:37 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 19:10:33 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "five letter word game",
+      "volume": 260,
+      "kd": 22,
+      "cpc": null,
+      "updated": "2026-09-13 01:27:00 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 07:19:04 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "flatten json online",
+      "volume": 10,
+      "kd": 7,
+      "cpc": null,
+      "updated": "2026-09-13 01:46:50 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 21:48:12 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "flesch reading ease calculator",
+      "volume": 1300,
+      "kd": 34,
+      "cpc": null,
+      "updated": "2026-09-17 01:34:52 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 19:02:35 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "flow rate calculator",
+      "volume": 1900,
+      "kd": 0,
+      "cpc": 3.54,
+      "updated": "2026-09-13 12:22:20 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 19:10:32 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "flowchart maker",
+      "volume": 27100,
+      "kd": 52,
+      "cpc": 18.41,
+      "updated": "2026-09-13 21:31:45 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "commercial",
+          "informational"
+        ],
+        "last_updated_time": "2026-04-29 07:37:38 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "flowchart online",
+      "volume": 720,
+      "kd": 43,
+      "cpc": 11.82,
+      "updated": "2026-09-13 23:14:23 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 19:02:55 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "fluid typography calculator",
+      "volume": 20,
+      "kd": 19,
+      "cpc": null,
+      "updated": "2026-09-16 12:24:12 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 23:01:10 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "font pair generator",
+      "volume": 720,
+      "kd": 37,
+      "cpc": 4.74,
+      "updated": "2026-09-14 15:54:36 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 15:11:17 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "font pairing tool",
+      "volume": 90,
+      "kd": 24,
+      "cpc": 1.7,
+      "updated": "2026-09-16 09:17:45 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 18:20:30 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "force area pressure calculator",
+      "volume": 50,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-12 23:47:58 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 21:26:21 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "force calculator",
+      "volume": 2900,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-13 11:14:44 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 18:20:39 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "forex position size calculator",
+      "volume": 1600,
+      "kd": 13,
+      "cpc": 3.9,
+      "updated": "2026-09-14 17:37:56 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 17:35:07 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "forex risk calculator",
+      "volume": 390,
+      "kd": 27,
+      "cpc": 3.05,
+      "updated": "2026-09-16 21:43:42 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 19:17:19 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "formal letter template",
+      "volume": 2400,
+      "kd": 19,
+      "cpc": 0.35,
+      "updated": "2026-09-17 17:50:30 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 18:15:15 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "fourier coefficients calculator",
+      "volume": 480,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-13 12:22:47 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 17:44:27 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "fourier series calculator",
+      "volume": 480,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-12 23:49:43 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 18:15:35 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "fraction calculator",
+      "volume": 368000,
+      "kd": 43,
+      "cpc": 1.44,
+      "updated": "2026-09-12 13:53:09 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 18:21:41 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "fraction calculator online",
+      "volume": 27100,
+      "kd": 32,
+      "cpc": 1.55,
+      "updated": "2026-09-16 23:19:25 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 07:50:43 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "fractional ownership calculator",
+      "volume": 10,
+      "kd": 9,
+      "cpc": null,
+      "updated": "2026-09-13 06:26:23 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 18:14:57 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "free birth chart calculator",
+      "volume": 33100,
+      "kd": 59,
+      "cpc": 0.66,
+      "updated": "2026-09-13 17:57:35 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 19:05:41 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "freecell",
+      "volume": 673000,
+      "kd": 57,
+      "cpc": 0.24,
+      "updated": "2026-09-14 06:43:20 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-27 17:49:53 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "freecell solitaire online",
+      "volume": 4400,
+      "kd": 55,
+      "cpc": 0.25,
+      "updated": "2026-09-15 15:20:16 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 07:29:44 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "frequency wavelength calculator",
+      "volume": 1000,
+      "kd": 9,
+      "cpc": 2.57,
+      "updated": "2026-09-16 02:30:10 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 11:08:29 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "friction calculator",
+      "volume": 590,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-14 22:19:27 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 07:28:08 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "friction force calculator",
+      "volume": 590,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-15 07:51:38 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 22:38:13 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "fuel economy calculator",
+      "volume": 9900,
+      "kd": 49,
+      "cpc": 6.52,
+      "updated": "2026-09-13 10:09:29 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 17:27:14 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "futoshiki",
+      "volume": 1900,
+      "kd": 33,
+      "cpc": null,
+      "updated": "2026-09-12 09:50:46 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 15:03:25 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "futoshiki puzzle online",
+      "volume": 10,
+      "kd": 7,
+      "cpc": null,
+      "updated": "2026-09-15 16:12:57 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-05-04 04:34:22 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "gallon to litres calculator",
+      "volume": 27100,
+      "kd": 2,
+      "cpc": null,
+      "updated": "2026-09-13 14:25:32 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 12:56:25 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "gallons into liters calculator",
+      "volume": 27100,
+      "kd": 2,
+      "cpc": null,
+      "updated": "2026-09-14 09:36:42 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-05-06 02:27:20 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "gallons to liters calculator",
+      "volume": 27100,
+      "kd": 2,
+      "cpc": null,
+      "updated": "2026-09-12 00:48:50 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 01:05:17 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "gas calculator",
+      "volume": 33100,
+      "kd": 52,
+      "cpc": 6.63,
+      "updated": "2026-09-12 01:03:57 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 19:53:48 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "gcf calculator",
+      "volume": 90500,
+      "kd": 4,
+      "cpc": 2.6,
+      "updated": "2026-09-13 18:14:29 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 19:41:07 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "gear ratio calculator",
+      "volume": 12100,
+      "kd": 28,
+      "cpc": 0.83,
+      "updated": "2026-09-16 07:39:32 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 21:07:28 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "gear speed calculator",
+      "volume": 590,
+      "kd": 28,
+      "cpc": 0.57,
+      "updated": "2026-09-14 03:38:55 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 21:11:03 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "genealogy chart maker",
+      "volume": 50,
+      "kd": 19,
+      "cpc": 2.48,
+      "updated": "2026-09-14 08:17:58 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 19:47:25 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "geometric transformation calculator",
+      "volume": 50,
+      "kd": 0,
+      "cpc": 2.56,
+      "updated": "2026-09-14 18:18:50 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 20:50:36 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "gin rummy",
+      "volume": 165000,
+      "kd": 43,
+      "cpc": 2.42,
+      "updated": "2026-09-13 19:34:55 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 20:21:21 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "gin rummy online",
+      "volume": 22200,
+      "kd": 43,
+      "cpc": 3.99,
+      "updated": "2026-09-17 15:26:13 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 19:59:14 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "glass effect css generator",
+      "volume": 10,
+      "kd": null,
+      "cpc": null,
+      "updated": "2026-09-14 23:16:01 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 21:18:39 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "goal planner",
+      "volume": 1900,
+      "kd": 15,
+      "cpc": 1.78,
+      "updated": "2026-09-12 16:32:46 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-27 20:15:53 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "gold calculator",
+      "volume": 74000,
+      "kd": 19,
+      "cpc": 3.47,
+      "updated": "2026-09-16 17:04:38 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 19:51:50 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "gomoku",
+      "volume": 12100,
+      "kd": 29,
+      "cpc": 0.37,
+      "updated": "2026-09-17 11:13:33 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 19:41:43 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "google calculator",
+      "volume": 246000,
+      "kd": 45,
+      "cpc": 1.21,
+      "updated": "2026-09-13 08:41:00 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 19:53:15 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "gpa calculator",
+      "volume": 823000,
+      "kd": 38,
+      "cpc": 5.91,
+      "updated": "2026-09-16 08:23:56 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 20:09:15 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "gradebook calculator online",
+      "volume": 90500,
+      "kd": 21,
+      "cpc": null,
+      "updated": "2026-09-17 16:45:30 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-27 21:26:04 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "grades calculator with weights",
+      "volume": 74000,
+      "kd": 2,
+      "cpc": null,
+      "updated": "2026-09-15 12:39:55 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 20:15:54 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "gradient slope calculator",
+      "volume": 880,
+      "kd": 14,
+      "cpc": null,
+      "updated": "2026-09-16 01:09:59 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 06:57:19 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "grading calculator",
+      "volume": 49500,
+      "kd": 17,
+      "cpc": 31.6,
+      "updated": "2026-09-13 17:51:59 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 22:37:34 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "grading calculator for test",
+      "volume": 33100,
+      "kd": 39,
+      "cpc": null,
+      "updated": "2026-09-13 14:10:40 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 20:57:57 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "grammar checker",
+      "volume": 823000,
+      "kd": 72,
+      "cpc": 1.56,
+      "updated": "2026-09-16 07:46:50 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-27 19:51:25 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "graph visualization tool",
+      "volume": 70,
+      "kd": 32,
+      "cpc": 8.95,
+      "updated": "2026-09-12 04:28:54 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-27 23:37:14 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "graphing calculator",
+      "volume": 450000,
+      "kd": 55,
+      "cpc": 0.38,
+      "updated": "2026-09-12 02:03:30 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-27 19:57:27 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "graphql formatter",
+      "volume": 320,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-16 16:21:05 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional",
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-28 11:59:02 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "graphql schema builder",
+      "volume": 10,
+      "kd": 40,
+      "cpc": null,
+      "updated": "2026-09-16 10:21:43 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 21:20:48 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "graphql schema generator",
+      "volume": 10,
+      "kd": 17,
+      "cpc": null,
+      "updated": "2026-09-14 00:45:52 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-28 02:11:32 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "graphql validator online",
+      "volume": 10,
+      "kd": 16,
+      "cpc": null,
+      "updated": "2026-09-16 23:30:48 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 21:27:32 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "grass seed calculator",
+      "volume": 5400,
+      "kd": 4,
+      "cpc": 2.19,
+      "updated": "2026-09-12 01:50:09 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 06:09:17 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "gravel calculator",
+      "volume": 60500,
+      "kd": 9,
+      "cpc": 2.71,
+      "updated": "2026-09-17 02:32:17 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-27 22:38:15 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "gravel volume calculator",
+      "volume": 260,
+      "kd": 0,
+      "cpc": 0.46,
+      "updated": "2026-09-13 22:29:32 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 01:46:07 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "half life calculator",
+      "volume": 3600,
+      "kd": 6,
+      "cpc": null,
+      "updated": "2026-09-12 14:48:52 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 20:04:54 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "hangman game",
+      "volume": 40500,
+      "kd": 42,
+      "cpc": 0.32,
+      "updated": "2026-09-16 13:01:31 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 21:10:58 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "hangman online",
+      "volume": 8100,
+      "kd": 41,
+      "cpc": 0.21,
+      "updated": "2026-09-13 06:03:19 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 20:33:50 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "har analyzer",
+      "volume": 1900,
+      "kd": 3,
+      "cpc": 6.87,
+      "updated": "2026-09-14 16:10:35 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 21:55:08 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "har viewer",
+      "volume": 480,
+      "kd": 14,
+      "cpc": 13.2,
+      "updated": "2026-09-13 09:47:49 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 20:13:25 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "hashi puzzle",
+      "volume": 1000,
+      "kd": 31,
+      "cpc": 1.28,
+      "updated": "2026-09-13 20:30:01 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 11:46:19 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "healthy weight range calculator",
+      "volume": 110,
+      "kd": 62,
+      "cpc": 0.39,
+      "updated": "2026-09-14 22:46:03 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 16:36:28 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "heart rate zone calculator",
+      "volume": 9900,
+      "kd": 8,
+      "cpc": 1.28,
+      "updated": "2026-09-14 04:20:34 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 21:05:13 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "hearts card game online",
+      "volume": 135000,
+      "kd": 42,
+      "cpc": 2.58,
+      "updated": "2026-09-16 00:58:03 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 01:31:48 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "hearts game",
+      "volume": 33100,
+      "kd": 57,
+      "cpc": 1.74,
+      "updated": "2026-09-14 07:45:52 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 20:41:42 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "heat capacity calculator",
+      "volume": 210,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-12 12:20:58 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 01:07:01 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "heat loss calculator",
+      "volume": 720,
+      "kd": 3,
+      "cpc": 2.61,
+      "updated": "2026-09-12 20:06:58 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 20:20:36 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "heat pump calculator",
+      "volume": 590,
+      "kd": 0,
+      "cpc": 3.61,
+      "updated": "2026-09-13 18:01:50 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 21:41:09 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "heat pump running cost calculator",
+      "volume": 10,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-12 18:46:16 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 20:17:02 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "hebrew calendar converter",
+      "volume": 6600,
+      "kd": 31,
+      "cpc": 4.73,
+      "updated": "2026-09-12 12:20:18 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 21:08:23 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "hebrew date converter",
+      "volume": 6600,
+      "kd": 27,
+      "cpc": 4.73,
+      "updated": "2026-09-12 17:17:44 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 02:56:05 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "height calculator",
+      "volume": 110000,
+      "kd": 28,
+      "cpc": 0.19,
+      "updated": "2026-09-13 13:01:47 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 20:12:47 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "heloc calculator",
+      "volume": 49500,
+      "kd": 2,
+      "cpc": 9.43,
+      "updated": "2026-09-14 22:02:47 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 22:41:20 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "heloc payment calculator",
+      "volume": 27100,
+      "kd": 6,
+      "cpc": 9.23,
+      "updated": "2026-09-12 13:22:35 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 16:40:51 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "hiit interval timer",
+      "volume": 260,
+      "kd": 13,
+      "cpc": 0.4,
+      "updated": "2026-09-16 04:16:25 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 03:30:13 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "hijri calendar converter",
+      "volume": 590,
+      "kd": 0,
+      "cpc": 0.08,
+      "updated": "2026-09-12 18:08:48 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 21:14:54 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "hiking time calculator",
+      "volume": 1000,
+      "kd": 4,
+      "cpc": null,
+      "updated": "2026-09-13 01:51:52 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 20:14:11 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "histogram calculator",
+      "volume": 480,
+      "kd": 0,
+      "cpc": 1.92,
+      "updated": "2026-09-13 22:00:50 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 22:03:05 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "histogram maker",
+      "volume": 6600,
+      "kd": 0,
+      "cpc": 5.41,
+      "updated": "2026-09-16 02:58:29 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 21:11:32 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "historical timeline maker",
+      "volume": 480,
+      "kd": 39,
+      "cpc": 5.54,
+      "updated": "2026-09-12 06:24:58 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-28 12:11:15 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "hitori",
+      "volume": 3600,
+      "kd": 18,
+      "cpc": null,
+      "updated": "2026-09-16 15:04:21 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 23:22:49 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "hitori puzzle online",
+      "volume": 10,
+      "kd": 11,
+      "cpc": null,
+      "updated": "2026-09-13 18:32:19 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 23:02:11 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "hmac generator",
+      "volume": 70,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-13 00:33:58 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-27 22:11:44 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "hmac sha256 generator",
+      "volume": 40,
+      "kd": 1,
+      "cpc": null,
+      "updated": "2026-09-12 20:48:37 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 18:02:03 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "horsepower calculator",
+      "volume": 2900,
+      "kd": 0,
+      "cpc": 1.39,
+      "updated": "2026-09-12 19:17:46 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 19:41:34 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "hours calculator",
+      "volume": 368000,
+      "kd": 41,
+      "cpc": 3.51,
+      "updated": "2026-09-12 02:02:56 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 20:41:56 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "how much house can i afford",
+      "volume": 90500,
+      "kd": 47,
+      "cpc": 3.26,
+      "updated": "2026-09-12 18:07:19 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 02:34:21 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "hreflang checker",
+      "volume": 170,
+      "kd": 29,
+      "cpc": null,
+      "updated": "2026-09-12 15:15:00 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 00:47:34 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "hreflang generator",
+      "volume": 30,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-14 08:52:21 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 11:43:20 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "htaccess generator",
+      "volume": 30,
+      "kd": 19,
+      "cpc": null,
+      "updated": "2026-09-16 10:08:39 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 21:22:49 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "htaccess redirect generator",
+      "volume": 30,
+      "kd": 15,
+      "cpc": null,
+      "updated": "2026-09-14 02:47:04 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 21:35:21 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "html email signature maker",
+      "volume": 720,
+      "kd": 39,
+      "cpc": 8.09,
+      "updated": "2026-09-17 03:35:42 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional",
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-27 23:05:01 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "ics calendar generator",
+      "volume": 10,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-14 03:20:58 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 23:02:13 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "ics viewer",
+      "volume": 390,
+      "kd": 0,
+      "cpc": 1.18,
+      "updated": "2026-09-12 18:13:34 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "navigational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 05:44:19 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "ideal gas law calculator",
+      "volume": 2400,
+      "kd": 3,
+      "cpc": null,
+      "updated": "2026-09-16 11:27:50 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 23:21:48 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "ideal weight calculator",
+      "volume": 14800,
+      "kd": 62,
+      "cpc": 1.06,
+      "updated": "2026-09-15 18:02:43 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 23:51:37 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "image color palette extractor",
+      "volume": 210,
+      "kd": 19,
+      "cpc": 5.91,
+      "updated": "2026-09-16 03:17:12 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 23:36:17 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "image color picker",
+      "volume": 60500,
+      "kd": 26,
+      "cpc": 2.34,
+      "updated": "2026-09-15 02:44:14 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 00:29:34 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "image colorizer",
+      "volume": 1900,
+      "kd": 41,
+      "cpc": 4.38,
+      "updated": "2026-09-12 08:25:30 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-27 23:55:04 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "image compressor",
+      "volume": 74000,
+      "kd": 77,
+      "cpc": 2.15,
+      "updated": "2026-09-12 02:21:51 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-27 22:57:29 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "image editor",
+      "volume": 74000,
+      "kd": 90,
+      "cpc": 3.84,
+      "updated": "2026-09-14 08:15:59 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 23:51:05 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "image finder",
+      "volume": 40500,
+      "kd": 67,
+      "cpc": 3.83,
+      "updated": "2026-09-12 18:26:35 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 00:24:27 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "image generator",
+      "volume": 90500,
+      "kd": 94,
+      "cpc": 3.16,
+      "updated": "2026-09-14 01:50:53 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 23:46:10 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "image histogram",
+      "volume": 720,
+      "kd": 3,
+      "cpc": null,
+      "updated": "2026-09-13 02:49:34 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 22:58:14 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "image overlay",
+      "volume": 4400,
+      "kd": 11,
+      "cpc": 4.07,
+      "updated": "2026-09-12 04:38:25 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 23:19:14 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "image pixelator",
+      "volume": 12100,
+      "kd": 9,
+      "cpc": 6.52,
+      "updated": "2026-09-15 01:26:47 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 23:02:37 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "image quality analyzer",
+      "volume": 30,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-15 18:53:21 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-28 05:45:57 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "image sharpener",
+      "volume": 9900,
+      "kd": 23,
+      "cpc": 3.3,
+      "updated": "2026-09-14 21:12:16 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 05:45:58 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "image splitter",
+      "volume": 14800,
+      "kd": 5,
+      "cpc": 2.05,
+      "updated": "2026-09-14 07:35:37 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-28 00:29:34 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "image to base64 converter",
+      "volume": 390,
+      "kd": 31,
+      "cpc": 0.02,
+      "updated": "2026-09-14 08:22:00 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 16:28:11 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "image to pencil sketch",
+      "volume": 720,
+      "kd": 19,
+      "cpc": 3.56,
+      "updated": "2026-09-12 11:38:42 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 23:39:23 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "image upscaler",
+      "volume": 60500,
+      "kd": 56,
+      "cpc": 3.71,
+      "updated": "2026-09-13 19:52:44 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-28 00:51:45 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "image vectorizer",
+      "volume": 18100,
+      "kd": 51,
+      "cpc": 4.01,
+      "updated": "2026-09-14 02:37:41 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-27 23:18:08 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "inch calculator",
+      "volume": 33100,
+      "kd": 16,
+      "cpc": 1.43,
+      "updated": "2026-09-13 23:12:02 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 23:20:57 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "inductance calculator",
+      "volume": 390,
+      "kd": 6,
+      "cpc": null,
+      "updated": "2026-09-17 15:19:49 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 06:11:10 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "inductor calculator",
+      "volume": 210,
+      "kd": 35,
+      "cpc": null,
+      "updated": "2026-09-12 08:18:27 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 00:28:34 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "inequality calculator",
+      "volume": 6600,
+      "kd": 0,
+      "cpc": 0.46,
+      "updated": "2026-09-16 17:42:40 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 23:46:45 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "inequality solver",
+      "volume": 1900,
+      "kd": 9,
+      "cpc": 1.38,
+      "updated": "2026-09-17 22:04:56 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 00:19:12 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "inflation calculator",
+      "volume": 550000,
+      "kd": 70,
+      "cpc": 2.87,
+      "updated": "2026-09-13 16:05:03 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 23:21:00 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "ini editor",
+      "volume": 170,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-17 17:05:15 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-28 01:23:49 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "ini to json converter",
+      "volume": 10,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-17 06:23:22 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 01:53:28 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "insulation calculator",
+      "volume": 5400,
+      "kd": 13,
+      "cpc": 3.04,
+      "updated": "2026-09-12 21:26:22 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 10:05:45 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "insulation r value calculator",
+      "volume": 320,
+      "kd": 2,
+      "cpc": 17.79,
+      "updated": "2026-09-14 08:37:33 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 23:12:15 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "integral calculator",
+      "volume": 90500,
+      "kd": 29,
+      "cpc": 0.45,
+      "updated": "2026-09-12 22:03:32 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 23:52:03 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "interval timer",
+      "volume": 8100,
+      "kd": 34,
+      "cpc": 1.02,
+      "updated": "2026-09-13 19:13:43 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "transactional",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 00:25:49 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "inverse laplace calculator",
+      "volume": 1900,
+      "kd": 7,
+      "cpc": null,
+      "updated": "2026-09-13 10:21:46 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-27 23:45:54 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "invert image",
+      "volume": 27100,
+      "kd": 15,
+      "cpc": 5.29,
+      "updated": "2026-09-12 06:53:51 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 19:15:19 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "investment allocation calculator",
+      "volume": 20,
+      "kd": 0,
+      "cpc": 4.12,
+      "updated": "2026-09-13 20:30:11 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 01:33:01 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "ipa converter",
+      "volume": 480,
+      "kd": 20,
+      "cpc": null,
+      "updated": "2026-09-13 21:51:15 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-28 06:25:40 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "irrigation calculator",
+      "volume": 170,
+      "kd": 13,
+      "cpc": 4.32,
+      "updated": "2026-09-15 13:07:28 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 17:03:55 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "iso week calculator",
+      "volume": 1900,
+      "kd": 17,
+      "cpc": null,
+      "updated": "2026-09-15 18:53:06 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 07:40:23 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "jalali date converter",
+      "volume": 10,
+      "kd": null,
+      "cpc": null,
+      "updated": "2026-09-17 08:57:20 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 05:05:23 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "join csv files by column",
+      "volume": null,
+      "kd": null,
+      "cpc": null,
+      "updated": "2026-06-14 00:26:04 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 10:28:20 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "journal online",
+      "volume": 4400,
+      "kd": 51,
+      "cpc": 3.03,
+      "updated": "2026-09-15 12:30:33 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "navigational"
+        ],
+        "last_updated_time": "2026-04-28 01:47:02 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "json compare online",
+      "volume": 2900,
+      "kd": 16,
+      "cpc": 6.64,
+      "updated": "2026-09-14 07:58:49 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-28 00:48:31 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "json diff",
+      "volume": 8100,
+      "kd": 14,
+      "cpc": null,
+      "updated": "2026-09-16 00:32:36 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 01:41:01 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "json flatten",
+      "volume": 70,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-13 20:56:37 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-29 15:42:50 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "json merge",
+      "volume": 110,
+      "kd": 8,
+      "cpc": null,
+      "updated": "2026-09-16 07:09:46 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 01:25:19 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "json to csharp",
+      "volume": 720,
+      "kd": 1,
+      "cpc": null,
+      "updated": "2026-09-17 18:50:14 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 15:55:44 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "json to excel",
+      "volume": 1600,
+      "kd": 5,
+      "cpc": 3.77,
+      "updated": "2026-09-14 22:23:57 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 01:43:15 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "json to typescript",
+      "volume": 480,
+      "kd": 19,
+      "cpc": null,
+      "updated": "2026-09-12 21:51:25 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 02:21:51 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "json to typescript interface",
+      "volume": 70,
+      "kd": 10,
+      "cpc": null,
+      "updated": "2026-09-12 05:24:43 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational"
+        ],
+        "last_updated_time": "2026-04-28 09:32:11 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "json to xlsx converter",
+      "volume": 880,
+      "kd": 0,
+      "cpc": 2.78,
+      "updated": "2026-09-15 21:34:20 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 13:50:59 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "json to xml converter",
+      "volume": 590,
+      "kd": 0,
+      "cpc": 9.78,
+      "updated": "2026-09-16 18:50:50 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-28 01:56:53 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "julian date converter",
+      "volume": 14800,
+      "kd": 24,
+      "cpc": null,
+      "updated": "2026-09-14 19:32:52 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 02:42:38 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "julian day calculator",
+      "volume": 14800,
+      "kd": 31,
+      "cpc": null,
+      "updated": "2026-09-13 12:08:42 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 14:16:37 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "jwt builder",
+      "volume": 30,
+      "kd": 24,
+      "cpc": null,
+      "updated": "2026-09-12 22:51:36 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "navigational",
+        "foreign_intent": [
+          "informational",
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-28 20:35:58 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "jwt encoder",
+      "volume": 390,
+      "kd": 16,
+      "cpc": 6.43,
+      "updated": "2026-09-15 06:16:41 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 01:27:55 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "kelvin to rgb converter",
+      "volume": 10,
+      "kd": null,
+      "cpc": null,
+      "updated": "2026-09-15 07:16:37 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 14:18:28 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "kenken",
+      "volume": 40500,
+      "kd": 21,
+      "cpc": 0.23,
+      "updated": "2026-09-14 07:11:32 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 06:57:28 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "keyword density checker",
+      "volume": 1000,
+      "kd": 29,
+      "cpc": 11.22,
+      "updated": "2026-09-14 04:35:42 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 07:24:57 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "killer sudoku",
+      "volume": 40500,
+      "kd": 27,
+      "cpc": 4.09,
+      "updated": "2026-09-15 15:17:22 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 06:58:13 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "killer sudoku online",
+      "volume": 4400,
+      "kd": 25,
+      "cpc": 3.4,
+      "updated": "2026-09-13 00:25:33 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 08:47:25 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "kinetic energy calculator",
+      "volume": 5400,
+      "kd": 5,
+      "cpc": null,
+      "updated": "2026-09-13 11:20:28 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 09:10:08 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "kinetic potential energy calculator",
+      "volume": 10,
+      "kd": 16,
+      "cpc": null,
+      "updated": "2026-09-16 14:19:53 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 09:51:46 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "laplace transform calculator",
+      "volume": 2400,
+      "kd": 1,
+      "cpc": null,
+      "updated": "2026-09-13 12:45:15 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 11:20:13 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "lawn seed calculator",
+      "volume": 320,
+      "kd": 4,
+      "cpc": 2.1,
+      "updated": "2026-09-16 03:32:47 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 16:53:02 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "lcm calculator",
+      "volume": 90500,
+      "kd": 8,
+      "cpc": null,
+      "updated": "2026-09-13 07:04:54 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 12:55:55 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "lean body mass calculator",
+      "volume": 6600,
+      "kd": 0,
+      "cpc": 1.46,
+      "updated": "2026-09-15 03:43:34 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-28 15:50:38 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "lean body mass formula calculator",
+      "volume": 20,
+      "kd": 0,
+      "cpc": null,
+      "updated": "2026-09-12 03:54:42 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 14:18:15 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "lease vs buy car calculator",
+      "volume": 1300,
+      "kd": 0,
+      "cpc": 1.02,
+      "updated": "2026-09-12 08:12:57 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-29 15:35:29 +00:00"
+      }
+    }
+  ]
+}
