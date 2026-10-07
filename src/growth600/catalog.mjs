@@ -240,6 +240,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/heat-loss-calculator/logic.mjs',
   },
   {
+    id: 'heat-pump-calculator',
+    category: 'home-energy',
+    type: 'calculator',
+    primaryIntent: 'heat pump calculator',
+    secondaryIntents: ['heat pump running cost calculator', 'heat pump electricity consumption calculator', 'heat pump COP calculator'],
+    functions: ['convert a user-entered heat-output rate from kW or BTU/h', 'estimate electrical input power and daily energy from a user-entered COP and operating hours', 'estimate hourly, daily and 30-day running cost from a user-entered electricity price and currency', 'compare energy use and cost against an idealized electric-resistance baseline delivering the same heat output'],
+    acceptance: 'A 10 kW heat-output rate at COP 5 needs 2 kW electrical input; when operated for 1 hour, it uses 2 kWh. At an entered tariff of 0.20 currency units/kWh, that hour costs 0.40 units.',
+    boundary: 'Illustrative steady-rate arithmetic only. COP, heat-output rate, operating hours, tariff and currency are user inputs; COP varies with outdoor temperature, flow temperature, system design, cycling, defrost, installation and maintenance. The resistance comparison assumes COP 1 and the same delivered heat; it is not a measured appliance comparison. No seasonal performance, climate, tariffs, taxes, fixed charges, equipment sizing or purchase advice is modeled. Verify manufacturer data, utility tariffs and local conditions; this tool runs locally and does not upload inputs.',
+    relatedExistingIds: ['electricity-cost-calculator', 'btu-calculator'],
+    logicModule: './tools/heat-pump-calculator/logic.mjs',
+  },
+  {
     id: 'deck-calculator',
     category: 'home-materials',
     type: 'calculator',

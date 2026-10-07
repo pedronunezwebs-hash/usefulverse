@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 49/323; **274 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 50/323; **273 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -399,7 +399,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 49/323; **274 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing, Retaining Wall, Battery Runtime, Lumber Cut List Optimizer, Plant Spacing Calculator, EV Charging Calculator, Rainwater Harvesting Calculator, Ramp Calculator y Heat Loss Calculator están en la rama; las candidatas nuevas con localización incompleta no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 50/323; **273 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing, Retaining Wall, Battery Runtime, Lumber Cut List Optimizer, Plant Spacing Calculator, EV Charging Calculator, Rainwater Harvesting Calculator, Ramp Calculator, Heat Loss Calculator y Heat Pump Calculator están en la rama; las candidatas nuevas con localización incompleta no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.
 
 ## Continuación · Rafter Calculator (#126) · 2026-10-08
@@ -592,3 +592,13 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — inglés completo; 35 locales se mantienen como borradores estructurales `pending-tool-specific-translation`, y el gate de publicación los rechaza.
 - [ ] X/E visual — falta recorrido real en navegador, móvil y RTL; el test de formulario y build no sustituye esa revisión.
 - [ ] P/S — no merge/deploy, no cambio de sitemap de producción ni envío a buscadores; no se ejecutó PageSpeed/Lighthouse. Las puertas globales de publicación siguen pendientes.
+
+## Continuación · Heat Pump Calculator (#286) · 2026-10-08
+
+- [x] C/F — candidata #50/323 del plan. Estima potencia eléctrica, energía diaria y coste con COP/tarifa del usuario; añade comparación explícita contra resistencia idealizada COP 1 para cubrir también la intención de coste de funcionamiento, sin crear URLs por unidad o modalidad. La ficha registra `heat pump calculator` con 590 búsquedas mensuales US/en, KD 0; `heat pump running cost calculator`, 10/mes. No se hicieron nuevas llamadas a DataForSEO.
+- [x] E/X — fórmula `potencia térmica/COP`; kWh como potencia eléctrica × horas; costes con precio por kWh. 10 kW térmicos, COP 5, 1 hora y tarifa 0,20 entregan 2 kW, 2 kWh y 0,40 unidades monetarias; comparación COP 1 calcula 10 kWh y diferencia diaria 8 kWh. Pruebas cubren BTU/h, código de moneda, cero de tarifa y rangos/unidades no válidos.
+- [x] B — entrada de calor en kW/BTU/h, COP, tarifa, horas al día, moneda, ejemplo, reset, copiar y resultado accesible. Advierte COP variable, referencia de 30 días y límites del comparador; no dimensiona equipos ni estima una factura real.
+- [x] E — suite focal de catálogo, formulario, gate de idiomas, renderer, builder, bundles y lógica: **161/161 aprobadas**; incluye ambas nuevas candidatas. Validaciones de sintaxis y diff al cerrar el checkpoint.
+- [ ] L — inglés completo; los otros 35 idiomas están como borradores `pending-tool-specific-translation`, bloqueados por el gate de lanzamiento.
+- [ ] X/E visual — recorrido real en navegador, móvil y RTL todavía pendiente; no declarado probado visualmente.
+- [ ] P/S — no merge/deploy, sitemap de producción sin cambios y sin envíos a buscadores. No se ejecuta PageSpeed/Lighthouse; puertas de publicación continúan abiertas.

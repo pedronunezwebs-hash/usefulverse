@@ -36,6 +36,7 @@ import { calculateEvCharging } from './ev-charging-calculator/logic.mjs';
 import { calculateRainwaterHarvesting, parseMonthlyValues } from './rainwater-harvesting-calculator/logic.mjs';
 import { calculateRamp } from './ramp-calculator/logic.mjs';
 import { calculateHeatLoss } from './heat-loss-calculator/logic.mjs';
+import { calculateHeatPump } from './heat-pump-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -832,4 +833,30 @@ test('heat loss calculator rejects invalid units, negative inputs, and out-of-ra
   assert.throws(() => calculateHeatLoss({ ...valid, wallArea: -1 }), /allowed range/u);
   assert.throws(() => calculateHeatLoss({ ...valid, temperatureDifference: -1 }), /allowed range/u);
   assert.throws(() => calculateHeatLoss({ ...valid, airChangesPerHour: 101 }), /allowed range/u);
+});
+
+test('heat pump calculator estimates electricity, 30-day cost and COP 1 comparison', () => {
+  const result = calculateHeatPump({ heatOutput: 10, heatOutputUnit: 'kW', cop: 5, electricityRatePerKwh: 0.2, hoursPerDay: 1, currency: 'eur' });
+  assert.equal(result.electricalInputKw, 2);
+  assert.equal(result.dailyEnergyKwh, 2);
+  assert.equal(result.monthlyEnergyKwh, 60);
+  assert.equal(result.dailyCost, 0.4);
+  assert.equal(result.monthlyCost, 12);
+  assert.equal(result.resistanceDailyEnergyKwh, 10);
+  assert.equal(result.dailyEnergyDifferenceKwh, 8);
+  assert.equal(result.dailyCostDifference, 1.6);
+  assert.equal(result.currency, 'EUR');
+  const btu = calculateHeatPump({ heatOutput: 3412.141633, heatOutputUnit: 'BTU/h', cop: 2, electricityRatePerKwh: 0, hoursPerDay: 24 });
+  assert.ok(Math.abs(btu.heatOutputKw - 1) < 1e-10);
+  assert.equal(btu.electricalInputKw, 0.5);
+  assert.equal(btu.dailyEnergyKwh, 12);
+});
+
+test('heat pump calculator rejects invalid units, COP, hours, tariff and currency', () => {
+  const valid = { heatOutput: 1, cop: 3, electricityRatePerKwh: 0.2, hoursPerDay: 8 };
+  assert.throws(() => calculateHeatPump({ ...valid, heatOutputUnit: 'W' }), /Choose kW/u);
+  assert.throws(() => calculateHeatPump({ ...valid, cop: 0 }), /allowed range/u);
+  assert.throws(() => calculateHeatPump({ ...valid, hoursPerDay: 25 }), /allowed range/u);
+  assert.throws(() => calculateHeatPump({ ...valid, electricityRatePerKwh: -1 }), /allowed range/u);
+  assert.throws(() => calculateHeatPump({ ...valid, currency: 'US' }), /three-letter/u);
 });

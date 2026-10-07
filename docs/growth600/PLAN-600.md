@@ -944,10 +944,10 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [ ] **C/F/E/X/L/B/P/S completos — `heat-pump-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/heat-pump-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `heat pump calculator` — 590 búsquedas/mes US/en, KD 0; nivel C. CPC 3.61 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Demanda de calor, COP, tarifa y comparación de energía
-- **Prueba de aceptación específica:** 10k Wh calor yCOP5 consume2k Wh
+- **Función mínima y ampliaciones útiles:** convertir la potencia térmica introducida en kW o BTU/h; estimar potencia eléctrica y kWh diarios según COP y horas de uso; estimar coste horario/diario/30 días con tarifa y código de moneda introducidos; comparar con una resistencia idealizada de COP 1 para el mismo calor entregado.
+- **Prueba de aceptación específica:** 10 kW térmicos con COP 5 requieren 2 kW eléctricos; por 1 hora son 2 kWh. A una tarifa introducida de 0,20 unidades/kWh, el coste de esa hora es 0,40 unidades.
 - **Frontera con otras herramientas:** electricity-cost-calculator: rendimiento térmico y demanda. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** aritmética local; COP, potencia térmica, horario, tarifa y código ISO de moneda son entradas del usuario. COP cambia con clima y sistema. La comparación de resistencia presupone COP 1; las cifras mensuales repiten 30 días idénticos y no son una factura real. Sin rendimiento estacional, impuestos, cargos fijos, dimensionamiento, recomendación de compra ni asesoría.
 - **Consultas secundarias del mismo propietario:**
   - `heat pump running cost calculator` — 10/mes US/en; KD 0.
   - `heat pump calculator free online`; `heat pump calculator with example`; `heat pump calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

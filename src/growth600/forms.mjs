@@ -67,6 +67,7 @@ export function renderGrowthForm(toolId, copy) {
     'rainwater-harvesting-calculator': ['catchmentArea', 'areaUnit', 'rainfallUnit', 'rainfallValues', 'runoffPercent', 'tankCapacity', 'tankUnit', 'startingStorage', 'monthlyDemandValues', 'accuracyNote'],
     'ramp-calculator': ['rise', 'slopeRatioDenominator', 'landingCount', 'landingDepth', 'unit', 'safetyNote'],
     'heat-loss-calculator': ['areaUnit', 'temperatureUnit', 'volumeUnit', 'temperatureDifference', 'wallArea', 'wallUValue', 'roofArea', 'roofUValue', 'windowArea', 'windowUValue', 'floorArea', 'floorUValue', 'roomVolume', 'airChangesPerHour', 'accuracyNote'],
+    'heat-pump-calculator': ['heatOutput', 'heatOutputUnit', 'cop', 'electricityRatePerKwh', 'hoursPerDay', 'currency', 'accuracyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -119,6 +120,7 @@ export function renderGrowthForm(toolId, copy) {
     'rainwater-harvesting-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'squareMeters', 'squareFeet', 'millimeters', 'inches', 'liters', 'usGallons'],
     'ramp-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'millimeters', 'centimeters', 'meters', 'inches', 'feet'],
     'heat-loss-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'squareMeters', 'squareFeet', 'cubicMeters', 'cubicFeet', 'kelvin', 'fahrenheit'],
+    'heat-pump-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilowatts', 'btuPerHour'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -800,6 +802,17 @@ export function renderGrowthForm(toolId, copy) {
     ${label('heat-volume-unit', fields.volumeUnit, `<select id="heat-volume-unit" name="volumeUnit"><option value="m3">${escapeGrowthHtml(labels.cubicMeters)}</option><option value="ft3">${escapeGrowthHtml(labels.cubicFeet)}</option></select>`)}
     ${label('heat-room-volume', fields.roomVolume, '<input id="heat-room-volume" name="roomVolume" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="0" required>')}
     ${label('heat-air-changes', fields.airChangesPerHour, '<input id="heat-air-changes" name="airChangesPerHour" type="number" min="0" max="100" step="any" inputmode="decimal" value="0" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'heat-pump-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('heat-output', fields.heatOutput, '<input id="heat-output" name="heatOutput" type="number" min="0" max="10000000" step="any" inputmode="decimal" value="10" required>')}
+    ${label('heat-output-unit', fields.heatOutputUnit, `<select id="heat-output-unit" name="heatOutputUnit"><option value="kW">${escapeGrowthHtml(labels.kilowatts)}</option><option value="BTU/h">${escapeGrowthHtml(labels.btuPerHour)}</option></select>`)}
+    ${label('heat-pump-cop', fields.cop, '<input id="heat-pump-cop" name="cop" type="number" min="0.1" max="30" step="any" inputmode="decimal" value="3" required>')}
+    ${label('heat-pump-electricity-rate', fields.electricityRatePerKwh, '<input id="heat-pump-electricity-rate" name="electricityRatePerKwh" type="number" min="0" max="1000000" step="any" inputmode="decimal" value="0.2" required>')}
+    ${label('heat-pump-hours', fields.hoursPerDay, '<input id="heat-pump-hours" name="hoursPerDay" type="number" min="0" max="24" step="any" inputmode="decimal" value="8" required>')}
+    ${label('heat-pump-currency', fields.currency, '<input id="heat-pump-currency" name="currency" type="text" value="USD" maxlength="3" pattern="[A-Za-z]{3}" autocomplete="off" required>')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);
