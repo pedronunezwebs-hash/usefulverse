@@ -58,6 +58,8 @@ import wallFramingCopies from './wall-framing-calculator-final.mjs';
 import { wallFramingCalculatorEnglishCopy } from './wall-framing-calculator.en.mjs';
 import electricityCostCopies from './electricity-cost-calculator-final.mjs';
 import { electricityCostCalculatorEnglishCopy } from './electricity-cost-calculator.en.mjs';
+import compostCopies from './compost-calculator-final.mjs';
+import { compostCalculatorEnglishCopy } from './compost-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -434,5 +436,6 @@ registerGrowthLocaleExtension(source, 'grass-seed-calculator', { ...grassSeedCop
 registerGrowthLocaleExtension(source, 'insulation-calculator', { ...insulationCopies, en: insulationCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'wall-framing-calculator', { ...wallFramingCopies, en: wallFramingCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'electricity-cost-calculator', { ...electricityCostCopies, en: electricityCostCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'compost-calculator', { ...compostCopies, en: compostCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

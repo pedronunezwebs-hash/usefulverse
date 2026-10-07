@@ -443,6 +443,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['household-budget-planner', 'solar-panel-calculator'],
     logicModule: './tools/electricity-cost-calculator/logic.mjs',
   },
+  {
+    id: 'compost-calculator',
+    category: 'garden-calculators',
+    type: 'calculator',
+    primaryIntent: 'compost calculator',
+    secondaryIntents: ['compost mix calculator', 'compost C:N ratio calculator', 'compost moisture calculator'],
+    functions: ['estimate a blended carbon-to-nitrogen ratio from up to four user-entered materials and wet masses', 'account for each material moisture, dry-matter carbon fraction and C:N ratio', 'show wet mass, dry mass, water, carbon, nitrogen and resulting mix moisture', 'optionally estimate water to add or moisture to remove for a user-entered target'],
+    acceptance: 'A zero-only or empty mixture is rejected; for valid materials the displayed mix C:N equals the sum of estimated carbon mass divided by the sum of estimated nitrogen mass.',
+    boundary: 'Estimate only from user-entered wet mass, moisture, dry carbon fraction and C:N values. Results depend on the accuracy and basis of material data and assume carbon and nitrogen estimates combine by mass. Does not assess decomposition, temperature, aeration, pathogens, maturity, local rules or agronomic suitability; does not prescribe a universal target. All calculations run locally in this browser.',
+    relatedExistingIds: ['soil-calculator', 'mulch-calculator'],
+    logicModule: './tools/compost-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

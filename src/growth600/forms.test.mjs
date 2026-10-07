@@ -114,6 +114,11 @@ const copies = {
     messages: { ...messages, applianceBreakdown: 'Appliance estimate', energyKwh: 'Period energy', energyCost: 'Energy charge', fixedCharge: 'Fixed charge', totalCost: 'Period total', averageDailyKwh: 'Daily average energy', averageDailyCost: 'Daily average cost', quantity: 'units', hours: 'hours/day', days: 'days' },
     fields: { ratePerKwh: 'Rate per kWh', billingDays: 'Billing days', fixedCharge: 'Fixed charge', currency: 'Currency code', appliance1: 'Appliance 1', appliance2: 'Appliance 2', appliance3: 'Appliance 3', appliance4: 'Appliance 4', applianceName1: 'Name', applianceName2: 'Name', applianceName3: 'Name', applianceName4: 'Name', power1: 'Power', power2: 'Power', power3: 'Power', power4: 'Power', powerUnit1: 'Power unit', powerUnit2: 'Power unit', powerUnit3: 'Power unit', powerUnit4: 'Power unit', quantity1: 'Quantity', quantity2: 'Quantity', quantity3: 'Quantity', quantity4: 'Quantity', hours1: 'Hours', hours2: 'Hours', hours3: 'Hours', hours4: 'Hours', activeDays1: 'Active days', activeDays2: 'Active days', activeDays3: 'Active days', activeDays4: 'Active days', accuracyNote: 'Estimate only.' },
   },
+  'compost-calculator': {
+    name: 'Compost Calculator', actions: { ...actions, kilograms: 'Kilograms', pounds: 'Pounds' },
+    messages: { ...messages, wetMass: 'Wet mass', dryMass: 'Dry mass', waterMass: 'Water mass', carbonMass: 'Carbon mass', nitrogenMass: 'Nitrogen mass', mixRatio: 'Mix C:N ratio', mixMoisture: 'Mix moisture', targetMoisture: 'Target moisture', waterToAdd: 'Water to add', waterToRemove: 'Water to remove', perMaterial: 'Material' },
+    fields: { massUnit: 'Mass unit', targetMoisture: 'Target moisture', material1: 'Material 1', material2: 'Material 2', material3: 'Material 3', material4: 'Material 4', name1: 'Name', name2: 'Name', name3: 'Name', name4: 'Name', wetMass1: 'Wet mass', wetMass2: 'Wet mass', wetMass3: 'Wet mass', wetMass4: 'Wet mass', moisture1: 'Moisture', moisture2: 'Moisture', moisture3: 'Moisture', moisture4: 'Moisture', carbon1: 'Dry carbon', carbon2: 'Dry carbon', carbon3: 'Dry carbon', carbon4: 'Dry carbon', ratio1: 'C:N ratio', ratio2: 'C:N ratio', ratio3: 'C:N ratio', ratio4: 'C:N ratio', accuracyNote: 'Estimate only.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -262,6 +267,17 @@ test('electricity cost form supports four per-appliance schedules and editable r
     for (const name of [`power${index}`, `powerUnit${index}`, `quantity${index}`, `hours${index}`, `activeDays${index}`]) assert.match(html, new RegExp(`name="${name}"`, 'u'));
   }
   assert.match(html, /value="kW"/u);
+  assert.match(html, /aria-live="polite" data-status/u);
+});
+
+test('compost form exposes mass-basis inputs for four materials and an optional moisture target', () => {
+  const html = renderGrowthForm('compost-calculator', copies['compost-calculator']);
+  assert.match(html, /name="massUnit"/u);
+  assert.match(html, /name="targetMoisturePercent"/u);
+  for (const index of [1, 2, 3, 4]) {
+    for (const name of [`wetMass${index}`, `moisture${index}`, `carbon${index}`, `ratio${index}`]) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  }
+  assert.match(html, /Dry carbon/u);
   assert.match(html, /aria-live="polite" data-status/u);
 });
 

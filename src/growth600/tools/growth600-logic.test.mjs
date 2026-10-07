@@ -24,6 +24,7 @@ import { calculateGrassSeed } from './grass-seed-calculator/logic.mjs';
 import { calculateInsulation } from './insulation-calculator/logic.mjs';
 import { calculateWallFraming } from './wall-framing-calculator/logic.mjs';
 import { calculateElectricityCost } from './electricity-cost-calculator/logic.mjs';
+import { calculateCompostMix } from './compost-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -547,4 +548,31 @@ test('electricity cost follows entered appliance schedules, kWh rate and fixed p
   assert.throws(() => calculateElectricityCost({ appliances: [], ratePerKwh: 0.2 }), /at least one appliance/u);
   assert.throws(() => calculateElectricityCost({ appliances: [{ power: 100, powerUnit: 'W', quantity: 1, hoursPerDay: 1, activeDays: 31 }], ratePerKwh: 0.2, billingDays: 30 }), /allowed range/u);
   assert.throws(() => calculateElectricityCost({ appliances: [{ power: 100, powerUnit: 'MW', quantity: 1, hoursPerDay: 1, activeDays: 1 }], ratePerKwh: 0.2 }), /Choose W or kW/u);
+});
+
+test('compost mix derives carbon and nitrogen from dry matter and estimates moisture balance', () => {
+  assert.throws(() => calculateCompostMix({ materials: [], targetMoisturePercent: 50 }), /at least one material/u);
+  assert.throws(() => calculateCompostMix({ materials: [{ wetMass: 0, moisturePercent: 20, carbonPercent: 45, carbonNitrogenRatio: 30 }] }), /allowed range/u);
+  const result = calculateCompostMix({
+    massUnit: 'kg', targetMoisturePercent: 55,
+    materials: [
+      { name: 'Dry leaves', wetMass: 10, moisturePercent: 20, carbonPercent: 45, carbonNitrogenRatio: 60 },
+      { name: 'Food scraps', wetMass: 10, moisturePercent: 70, carbonPercent: 45, carbonNitrogenRatio: 15 },
+      {},
+    ],
+  });
+  assert.equal(result.wetMassKg, 20);
+  assert.equal(result.dryMassKg, 11);
+  assert.equal(result.waterKg, 9);
+  assert.equal(result.carbonKg, 4.95);
+  assert.ok(Math.abs(result.nitrogenKg - 0.15) < 1e-12);
+  assert.ok(Math.abs(result.carbonNitrogenRatio - 33) < 1e-10);
+  assert.equal(result.moisturePercent, 45);
+  assert.ok(Math.abs(result.waterToAddKg - 4.444444444444445) < 1e-10);
+  assert.equal(result.waterToRemoveKg, 0);
+  const dryTarget = calculateCompostMix({ materials: [{ wetMass: 10, moisturePercent: 60, carbonPercent: 40, carbonNitrogenRatio: 30 }], targetMoisturePercent: 40 });
+  assert.equal(dryTarget.waterToAddKg, 0);
+  assert.ok(dryTarget.waterToRemoveKg > 0);
+  assert.throws(() => calculateCompostMix({ massUnit: 'ton', materials: [{ wetMass: 10, moisturePercent: 20, carbonPercent: 45, carbonNitrogenRatio: 30 }] }), /Choose kilograms/u);
+  assert.throws(() => calculateCompostMix({ materials: [{ name: 'Leaves' }] }), /Complete every value/u);
 });

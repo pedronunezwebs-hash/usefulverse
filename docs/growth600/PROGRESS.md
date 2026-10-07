@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 37/323; **286 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 38/323; **285 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -399,7 +399,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 37/323; **286 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing y Electricity Cost Calculator están en la rama; Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing y Electricity Cost tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 38/323; **285 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost y Compost Calculator están en la rama; Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost y Compost tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.
 
 ## Continuación · Rafter Calculator (#126) · 2026-10-08
@@ -470,3 +470,14 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [x] B — renderer, formulario, catálogo, locale-contract y bundle incluidos en la suite focal; build sintético pasó con el catálogo ampliado. `git diff --check` pasó sin errores.
 - [ ] E/X visual — navegador, móvil y RTL pendientes; no se declara revisión visual.
 - [ ] P/S — sin merge/deploy ni alteración del sitemap de producción; sin envíos a buscadores. Falta traducción específica, QA visual y gates globales C/F/E/X/L/B/P/S. No se ejecutó PageSpeed/Lighthouse.
+
+## Continuación · Compost Calculator (#155) · 2026-10-08
+
+- [x] C — candidata #38/323, mezcla de compost por masa y estimación de relación C:N; diferenciada de `soil-calculator` (volumen de suelo) y `mulch-calculator` (cobertura). La ficha del plan indica `compost calculator`: 4.400 búsquedas/mes US/en, KD 9 y CPC 1,18 USD (no CPM); no se hizo consulta nueva a DataForSEO. El término `compost carbon nitrogen calculator` no tiene volumen medido.
+- [x] F — hasta cuatro materiales; masa húmeda, humedad, carbono como porcentaje de materia seca y C:N por material; deriva por separado masa seca, agua, carbono y nitrógeno, suma C/N para obtener el ratio real ponderado por masas y humedad global. Opcionalmente estima agua a añadir o retirar hacia un porcentaje introducido por la persona. Unidades kg/lb.
+- [x] E — ejemplo: 10 kg de hojas (20% humedad, 45% C seco, C:N 60) + 10 kg de restos orgánicos (70%, 45%, C:N 15) → 20 kg húmedos, 11 kg secos, C:N 33:1 y 45% humedad; para una meta personal de 55%, balance estima añadir ≈4,44 kg de agua. Rechaza mezcla vacía/masa cero, fila parcial, unidades y rangos inválidos; prueba también objetivo que requiere retirar agua. Suite Growth600 focal: **120/120 aprobadas**.
+- [x] X — explica que depende de la calidad/base de los datos y no modela descomposición, patógenos, temperatura, aireación, madurez, normativas ni conveniencia agronómica; no prescribe un objetivo universal. No hay APIs, subida de datos ni cálculo remoto.
+- [x] L — inglés completo; borradores estructurales para otros 35 idiomas marcados `pending-tool-specific-translation`, con puerta de publicación cerrada.
+- [x] B — forms, locale-contract, builder sintético y bundle cubiertos por pruebas; `git diff --check` ejecutado antes del checkpoint.
+- [ ] E/X visual — falta navegador, móvil y RTL; no se ha hecho inspección visual.
+- [ ] P/S — sin merge/deploy, sin cambio en sitemap de producción ni envío a buscadores; traducción específica, QA visual y gates coordinados siguen pendientes. No se ejecutó PageSpeed/Lighthouse.

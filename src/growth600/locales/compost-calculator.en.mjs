@@ -1,0 +1,30 @@
+export const compostCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Compost Calculator',
+  title: 'Compost Calculator Free | UsefulVerse',
+  description: 'Estimate a compost mix C:N ratio and moisture from your material data. Free, private and calculated in your browser.',
+  intro: 'Combine up to four materials using their wet mass, moisture, dry carbon percentage and C:N ratio. Optionally estimate water to add or moisture to remove for your own target.',
+  howQuestion: 'How do I calculate the C:N ratio of a compost mix?',
+  howAnswer: 'For each material, estimate dry mass from its wet mass and moisture. Multiply dry mass by the dry carbon percentage to estimate carbon mass, then divide by that material’s C:N ratio to estimate nitrogen mass. Add the carbon and nitrogen estimates separately; the mix ratio is total carbon divided by total nitrogen.',
+  privacyQuestion: 'Are my compost material details uploaded?',
+  privacyAnswer: 'No. This calculation runs locally in your browser; material names and measurements are not sent to a server or saved by this tool.',
+  fields: {
+    massUnit: 'Mass unit for all materials', targetMoisture: 'Optional target mix moisture (%)',
+    material1: 'Material 1', material2: 'Material 2 (optional)', material3: 'Material 3 (optional)', material4: 'Material 4 (optional)',
+    name1: 'Material name (optional)', name2: 'Material name (optional)', name3: 'Material name (optional)', name4: 'Material name (optional)',
+    wetMass1: 'Wet mass', wetMass2: 'Wet mass', wetMass3: 'Wet mass', wetMass4: 'Wet mass',
+    moisture1: 'Moisture content (%)', moisture2: 'Moisture content (%)', moisture3: 'Moisture content (%)', moisture4: 'Moisture content (%)',
+    carbon1: 'Carbon as percent of dry mass (%)', carbon2: 'Carbon as percent of dry mass (%)', carbon3: 'Carbon as percent of dry mass (%)', carbon4: 'Carbon as percent of dry mass (%)',
+    ratio1: 'Material carbon-to-nitrogen ratio (C:N)', ratio2: 'Material carbon-to-nitrogen ratio (C:N)', ratio3: 'Material carbon-to-nitrogen ratio (C:N)', ratio4: 'Material carbon-to-nitrogen ratio (C:N)',
+    accuracyNote: 'Results depend on the source and basis of your material data. Enter the C:N ratio and carbon percentage for dry matter; the calculator does not infer them. It does not model decomposition, temperature, aeration, pathogens, maturity, local rules or growing suitability, and does not prescribe a universal target. Water estimates are simple mass-balance estimates, not a composting recommendation.',
+  },
+  actions: { calculate: 'Estimate compost mix', reset: 'Reset', copy: 'Copy result', example: 'Try an example', result: 'Compost mix estimate', kilograms: 'Kilograms', pounds: 'Pounds' },
+  messages: {
+    copied: 'Copied.', copyUnavailable: 'Copy is not available in this browser.', calculated: 'Estimate ready.', checkInputs: 'Check every used material row, its mass and percentages, and the optional target moisture.',
+    wetMass: 'Total wet mass', dryMass: 'Estimated dry mass', waterMass: 'Estimated water mass', carbonMass: 'Estimated carbon mass', nitrogenMass: 'Estimated nitrogen mass', mixRatio: 'Estimated mix C:N ratio', mixMoisture: 'Estimated mix moisture', targetMoisture: 'Entered target moisture', waterToAdd: 'Estimated water to add', waterToRemove: 'Estimated water to remove', perMaterial: 'Material',
+  },
+  additionalFaqs: [
+    { question: 'Can I calculate the C:N ratio using only each material’s ratio?', answer: 'Not reliably. The calculation also needs each material’s dry mass and estimated carbon fraction, because C:N values alone do not tell how much carbon or nitrogen is in the amount added.' },
+    { question: 'Does the target moisture tell me how to make good compost?', answer: 'No. It only estimates water mass needed to reach the percentage you enter. Compost quality also depends on materials, particle size, oxygen, temperature, time and other conditions.' },
+  ],
+});
