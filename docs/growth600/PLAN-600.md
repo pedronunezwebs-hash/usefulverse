@@ -301,6 +301,10 @@ Este turno solo produce el plan solicitado y respaldo documental; no cambia prod
 
 Las secciones siguientes contienen el coste exacto, la evidencia de demanda, las 323 fichas y el inventario de 277 herramientas. Todos los estados de implementación empiezan vacíos. Una URL propuesta no es una URL publicada.
 
+**Respaldo para reanudar:** rama documental `docs/seo-expansion-600-plan-2026-10-07` del repo privado `pedronunezwebs-hash/usefulverse`; carpeta `docs/growth600/`, con este plan y siete archivos de evidencia. No se fusionó a `main` ni se desplegó, porque este encargo es solo planificación. Recuperar esa rama antes de volver a pagar la investigación. [Respaldo online del plan](https://github.com/pedronunezwebs-hash/usefulverse/blob/docs/seo-expansion-600-plan-2026-10-07/docs/growth600/PLAN-600.md).
+
+**Lectura eficiente:** leer las reglas/fases completas y el inventario protegido; consultar las fichas y evidencia por lote/ID, sin volcar todas las respuestas API en el contexto de cada conversación. Usar encabezados, búsquedas y rangos para localizar las tareas; una salida truncada no significa que el contenido restante esté leído. Las casillas y el registro online son la fuente del avance, no el recuerdo de conversaciones anteriores.
+
 ## 14. Evidencia DataForSEO y gasto cerrado
 
 **Coste real de las respuestas API: 0.24852 USD. Tope previo: 0,30 USD.** No se autorizan llamadas adicionales al implementar por el hecho de reabrir este archivo.
