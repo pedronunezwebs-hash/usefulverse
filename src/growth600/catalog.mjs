@@ -395,6 +395,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['pool-volume-calculator'],
     logicModule: './tools/aquarium-calculator/logic.mjs',
   },
+  {
+    id: 'grass-seed-calculator',
+    category: 'garden-calculators',
+    type: 'calculator',
+    primaryIntent: 'grass seed calculator',
+    secondaryIntents: ['lawn seed calculator', 'grass seed mix calculator', 'grass seed bags calculator'],
+    functions: ['estimate seed quantity from lawn area and a user-entered product rate', 'accept metric or imperial area and two seeding-rate units', 'split the total into a two-variety mix whose shares must add to 100%', 'optionally round up to whole bags from a user-entered package size'],
+    acceptance: 'For 100 m² at 30 g/m² with no extra allowance, estimate 3 kg of seed.',
+    boundary: 'Arithmetic estimate only. The user must follow the product label or supplier for the seeding rate; the tool does not recommend a universal rate. It does not assess germination, soil, climate, preparation, uneven coverage, local rules or agronomic suitability. All calculations run locally in this browser.',
+    relatedExistingIds: ['mulch-calculator', 'soil-calculator'],
+    logicModule: './tools/grass-seed-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

@@ -51,6 +51,7 @@ export function renderGrowthForm(toolId, copy) {
     'rafter-calculator': ['unit', 'span', 'rise', 'pitch', 'ridgeThickness', 'ridgeUnit', 'overhang', 'accuracyNote'],
     'carpet-calculator': ['roomLength', 'roomWidth', 'rollWidth', 'rooms', 'pileDirection', 'wastePercent', 'accuracyNote'],
     'aquarium-calculator': ['length', 'width', 'height', 'dimensionUnit', 'substrateDepth', 'substrateSolidPercent', 'airGap', 'accuracyNote'],
+    'grass-seed-calculator': ['area', 'areaUnit', 'seedingRate', 'rateUnit', 'wastePercent', 'varietyA', 'percentA', 'varietyB', 'percentB', 'bagSize', 'bagUnit', 'accuracyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -87,6 +88,7 @@ export function renderGrowthForm(toolId, copy) {
     'rafter-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'centimeters', 'inches', 'riseMode', 'pitchMode'],
     'carpet-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'eitherDirection', 'alongRoomLength', 'alongRoomWidth'],
     'aquarium-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'feet', 'inches', 'liters', 'usGallons', 'imperialGallons'],
+    'grass-seed-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'm2', 'ft2', 'acre', 'gM2', 'lb1000ft2', 'kg', 'lb'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -536,6 +538,26 @@ export function renderGrowthForm(toolId, copy) {
     ${label('substrate-depth', fields.substrateDepth, '<input id="substrate-depth" name="substrateDepth" type="number" min="0" max="100000" step="any" value="5" inputmode="decimal">')}
     ${label('substrate-solid-percent', fields.substrateSolidPercent, '<input id="substrate-solid-percent" name="substrateSolidPercent" type="number" min="0" max="100" step="any" value="50" inputmode="decimal">')}
     ${label('air-gap', fields.airGap, '<input id="air-gap" name="airGap" type="number" min="0" max="100000" step="any" value="3" inputmode="decimal">')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'grass-seed-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('grass-area', fields.area, '<input id="grass-area" name="area" type="number" min="0.01" max="100000000" step="any" inputmode="decimal" value="100" required>')}
+    ${label('grass-area-unit', fields.areaUnit, `<select id="grass-area-unit" name="areaUnit"><option value="m2">${escapeGrowthHtml(labels.m2)}</option><option value="ft2">${escapeGrowthHtml(labels.ft2)}</option><option value="acre">${escapeGrowthHtml(labels.acre)}</option></select>`)}
+    ${label('grass-rate', fields.seedingRate, '<input id="grass-rate" name="seedingRate" type="number" min="0" max="1000000" step="any" inputmode="decimal" value="30" required>')}
+    ${label('grass-rate-unit', fields.rateUnit, `<select id="grass-rate-unit" name="rateUnit"><option value="g-m2">${escapeGrowthHtml(labels.gM2)}</option><option value="lb-1000ft2">${escapeGrowthHtml(labels.lb1000ft2)}</option></select>`)}
+    ${label('grass-extra', fields.wastePercent, '<input id="grass-extra" name="wastePercent" type="number" min="0" max="50" step="any" inputmode="decimal" value="0" required>')}
+    <fieldset><legend>${escapeGrowthHtml(fields.varietyA)}</legend>
+      ${label('grass-variety-a', fields.varietyA, '<input id="grass-variety-a" name="varietyA" type="text" maxlength="50" value="Seed A">')}
+      ${label('grass-share-a', fields.percentA, '<input id="grass-share-a" name="percentA" type="number" min="0" max="100" step="any" inputmode="decimal" value="100" required>')}
+      ${label('grass-variety-b', fields.varietyB, '<input id="grass-variety-b" name="varietyB" type="text" maxlength="50" value="Seed B">')}
+      ${label('grass-share-b', fields.percentB, '<input id="grass-share-b" name="percentB" type="number" min="0" max="100" step="any" inputmode="decimal" value="0" required>')}
+    </fieldset>
+    <fieldset><legend>${escapeGrowthHtml(fields.bagSize)}</legend>
+      ${label('grass-bag-size', fields.bagSize, '<input id="grass-bag-size" name="bagSize" type="number" min="0" max="1000000" step="any" inputmode="decimal" value="0" required>')}
+      ${label('grass-bag-unit', fields.bagUnit, `<select id="grass-bag-unit" name="bagUnit"><option value="kg">${escapeGrowthHtml(labels.kg)}</option><option value="lb">${escapeGrowthHtml(labels.lb)}</option></select>`)}
+    </fieldset>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

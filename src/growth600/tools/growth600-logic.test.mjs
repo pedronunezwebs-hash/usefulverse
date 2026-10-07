@@ -20,6 +20,7 @@ import { calculateBrickMaterials } from './brick-calculator/logic.mjs';
 import { calculateRafter } from './rafter-calculator/logic.mjs';
 import { calculateCarpet } from './carpet-calculator/logic.mjs';
 import { calculateAquarium } from './aquarium-calculator/logic.mjs';
+import { calculateGrassSeed } from './grass-seed-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -461,4 +462,23 @@ test('Mancala keeps the original seed total over complete deterministic games', 
     }
     assert.equal(state.over, true, `Game ${seed} did not terminate within 5000 moves.`);
   }
+});
+
+test('grass seed estimates user-selected rates, mix shares and whole bags', () => {
+  const metric = calculateGrassSeed({ area: 100, seedingRate: 30 });
+  assert.equal(metric.totalKg, 3);
+  assert.equal(metric.components[0].weightKg, 3);
+  const mixed = calculateGrassSeed({ area: 100, seedingRate: 30, percentA: 70, percentB: 30, varietyA: 'Rye', varietyB: 'Fescue', bagSize: 1.2 });
+  assert.equal(mixed.totalKg, 3);
+  assert.equal(mixed.components[0].weightKg, 2.1);
+  assert.equal(mixed.components[1].weightKg, 0.9);
+  assert.equal(mixed.bagsNeeded, 3);
+  assert.ok(Math.abs(mixed.estimatedPackedKg - 3.6) < 1e-12);
+  const imperial = calculateGrassSeed({ area: 1000, areaUnit: 'ft2', seedingRate: 5, rateUnit: 'lb-1000ft2', bagSize: 10, bagUnit: 'lb' });
+  assert.ok(Math.abs(imperial.totalLb - 5) < 1e-8);
+  assert.equal(imperial.bagsNeeded, 1);
+  assert.ok(Math.abs(calculateGrassSeed({ area: 1, areaUnit: 'acre', seedingRate: 1, rateUnit: 'lb-1000ft2' }).totalLb - 43.56) < 1e-7);
+  assert.throws(() => calculateGrassSeed({ area: 100, seedingRate: 30, percentA: 65, percentB: 30 }), /add up to 100/u);
+  assert.throws(() => calculateGrassSeed({ area: 100, seedingRate: 30, areaUnit: 'hectare' }), /supported/u);
+  assert.throws(() => calculateGrassSeed({ area: 100, seedingRate: -1 }), /Seeding rate/u);
 });

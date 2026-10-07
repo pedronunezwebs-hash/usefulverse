@@ -50,6 +50,8 @@ import carpetCopies from './carpet-calculator-final.mjs';
 import { carpetCalculatorEnglishCopy } from './carpet-calculator.en.mjs';
 import aquariumCopies from './aquarium-calculator-final.mjs';
 import { aquariumCalculatorEnglishCopy } from './aquarium-calculator.en.mjs';
+import grassSeedCopies from './grass-seed-calculator-final.mjs';
+import { grassSeedCalculatorEnglishCopy } from './grass-seed-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -422,5 +424,6 @@ registerGrowthLocaleExtension(source, 'brick-calculator', { ...brickCopies, en: 
 registerGrowthLocaleExtension(source, 'rafter-calculator', { ...rafterCopies, en: rafterCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'carpet-calculator', { ...carpetCopies, en: carpetCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'aquarium-calculator', { ...aquariumCopies, en: aquariumCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'grass-seed-calculator', { ...grassSeedCopies, en: grassSeedCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

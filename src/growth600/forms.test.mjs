@@ -94,6 +94,11 @@ const copies = {
     name: 'Aquarium volume calculator', actions: { ...actions, centimeters: 'Centimeters', liters: 'Litres', usGallons: 'US gallons', imperialGallons: 'Imperial gallons' },
     fields: { length: 'Inside length', width: 'Inside width', height: 'Inside height', dimensionUnit: 'Unit', substrateDepth: 'Substrate depth', substrateSolidPercent: 'Solid share', airGap: 'Air gap', accuracyNote: 'Estimate only.' },
   },
+  'grass-seed-calculator': {
+    name: 'Grass seed calculator', actions: { ...actions, m2: 'Square metres', ft2: 'Square feet', acre: 'Acres', gM2: 'g/m²', lb1000ft2: 'lb/1,000 ft²', kg: 'kg', lb: 'lb' },
+    messages: { ...messages, baseSeed: 'Seed before extra', extraSeed: 'Extra seed', totalSeed: 'Seed to buy', bags: 'Whole bags' },
+    fields: { area: 'Lawn area', areaUnit: 'Area unit', seedingRate: 'Seeding rate', rateUnit: 'Rate unit', wastePercent: 'Extra seed', varietyA: 'Variety A', percentA: 'Variety A share', varietyB: 'Variety B', percentB: 'Variety B share', bagSize: 'Bag size', bagUnit: 'Bag unit', accuracyNote: 'Use the product label.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {

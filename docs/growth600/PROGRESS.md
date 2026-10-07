@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 33/323; **290 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 34/323; **289 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -84,7 +84,7 @@
 - `main` y rama base del plan: `685f91adfc7818a54f6dc0a967e290d13137a3dd`.
 - Cloudflare Pages Free: [límites oficiales](https://developers.cloudflare.com/pages/platform/limits/) (consulta de 2026-10-07); [precio de peticiones estáticas](https://developers.cloudflare.com/pages/functions/pricing/); [dominios personalizados](https://developers.cloudflare.com/pages/configuration/custom-domains/).
 - Regresión completa con gujarati incluido: `npm test` — 889/889, 0 fallidos. `npm run build:growth600` generó correctamente 216 URLs en 36 idiomas (262 archivos, 3.519.822 bytes) en una carpeta temporal; auditoría estática de las 216 páginas pasó. No se lanzó PageSpeed, tal como pide el plan.
-- El piloto de cinco herramientas está publicado en el host separado `tools.usefulverse.com` con 216 URLs en su sitemap. Las **33 candidatas adicionales de esta rama** (incluidas Solar, BTU, Brick, Rafter, Carpet y Aquarium Calculator) no se han fusionado ni publicado; el sitemap de producción de UsefulVerse no se modificó.
+- El piloto de cinco herramientas está publicado en el host separado `tools.usefulverse.com` con 216 URLs en su sitemap. Las **34 candidatas adicionales de esta rama** (incluidas Solar, BTU, Brick, Rafter, Carpet, Aquarium y Grass Seed Calculator) no se han fusionado ni publicado; el sitemap de producción de UsefulVerse no se modificó.
 
 ## Cierre técnico de la vista previa
 
@@ -399,7 +399,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 33/323; **290 por implementar**. Solar, BTU, Brick, Rafter, Carpet y Aquarium Calculator están en la rama; Rafter, Carpet y Aquarium tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 34/323; **289 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium y Grass Seed Calculator están en la rama; Rafter, Carpet, Aquarium y Grass Seed tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.
 
 ## Continuación · Rafter Calculator (#126) · 2026-10-08
@@ -428,3 +428,13 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [x] Suite enfocada de lógica, formulario, catálogo, renderer, bundles y builder sintético: **107/107 aprobadas**; `git diff --check` limpio.
 - [x] Gate de localización cierra el paso de publicación: se reusan solo rótulos genéricos disponibles en las traducciones existentes; las 35 copias no inglesas se marcan `pending-tool-specific-translation`.
 - [ ] Falta traducir copy específico para los 35 idiomas, revisión visual y cerrar L/P/S. No se ha fusionado, desplegado ni enviado sitemap; sin llamadas a DataForSEO o PageSpeed.
+
+## Continuación · Grass Seed Calculator (#137) · 2026-10-08
+
+- [x] C — incorporada como candidata #34 del catálogo, distinta de `mulch-calculator`: calcula semilla por dosis superficial elegida por la persona, mezcla de dos variedades y bolsas enteras opcionales. Demanda de la ficha del plan: `grass seed calculator`, 5.400 búsquedas mensuales US/en, KD 4; secundaria `lawn seed calculator`, 320/mes. No se hicieron llamadas nuevas a DataForSEO.
+- [x] F — cálculo exclusivamente local: área m²/ft²/acre; dosis elegida en g/m² o lb/1.000 ft²; extra opcional 0–50%; mezcla A/B que debe sumar exactamente 100%; bolsa opcional en kg/lb, redondeada hacia arriba. Nombres de mezcla vacíos usan etiquetas genéricas y los nombres tienen límite de 50 caracteres.
+- [x] E — acepta el caso del plan: 100 m² × 30 g/m² = 3 kg; pruebas adicionales cubren conversión imperial, acre, mezcla, redondeo de bolsas, valores inválidos y suma de porcentajes. Suite focal de catálogo, formularios, contratos de idioma, renderer, build sintético, bundles y lógica: **109/109 aprobadas**.
+- [x] X — límite de producto explícito: no recomienda una tasa universal; remite al envase/proveedor y aclara que no modela germinación, suelo, clima, preparación ni cobertura irregular. Sin APIs, subida, base de datos ni coste de procesamiento.
+- [x] L — inglés completo y borradores estructurales en los otros 35 idiomas. Se reutilizan únicamente labels genéricos disponibles; el contenido específico está marcado `pending-tool-specific-translation` y el gate automático bloquea su publicación. No afirmar que sus 36 versiones estén traducidas/listas.
+- [x] B — builder sintético verificado por la suite y controlador aislado bajo el presupuesto común de bundles; suite focal 109/109 y `git diff --check` limpios. Revisión visual en navegador todavía pendiente.
+- [ ] P/S — no integrado ni desplegado. No modifica el sitemap de producción ni se envió a buscadores; quedan traducciones específicas, revisión visual y los gates coordinados de publicación.
