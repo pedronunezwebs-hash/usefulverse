@@ -1010,10 +1010,10 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [ ] **C/F/E/X/L/B/P/S completos — `molarity-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/molarity-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `molarity calculator` — 22.200 búsquedas/mes US/en, KD 8; nivel A. CPC — USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Moles, masa, volumen, molaridad y preparación; sin procedimientos peligrosos
-- **Prueba de aceptación específica:** 1mol en2L da0.5M
+- **Función mínima y ampliaciones útiles:** Resolver molaridad desde moles y volumen final; moles desde M y volumen; volumen desde moles y M; y masa del soluto desde M, volumen final y masa molar ingresada. Incluir selector de incógnita, unidades mol/L (M), L/mL, ejemplo, modo de preparación aritmética y distinción breve entre molaridad y molalidad.
+- **Prueba de aceptación específica:** 1 mol en 2 L de solución final da 0,5 mol/L = 0,5 M; 0,5 M × 2 L × 58,44 g/mol da 58,44 g de soluto para la concentración/volumen objetivo.
 - **Frontera con otras herramientas:** stoichiometry-calculator: soluciones no reacción. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** L: aritmética local acotada, volumen convertido a litros, masa molar proporcionada por la persona. La concentración es cantidad de constituyente dividida por volumen de la mezcla/solución según IUPAC: [Gold Book, amount concentration](https://goldbook.iupac.org/terms/view/A00295). Mostrar explícitamente que es volumen final de solución, no volumen inicial de disolvente. Sin correcciones de pureza, hidratación, densidad, temperatura o no idealidad; no convertir el resultado en procedimiento químico ni consejo de laboratorio/medicina. Seguir los gates globales; el ejemplo no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `solution concentration calculator` — 210/mes US/en; KD 19.
   - `molarity calculator free online`; `molarity calculator with example`; `molarity calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

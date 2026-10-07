@@ -39,6 +39,7 @@ import { calculateHeatLoss } from './heat-loss-calculator/logic.mjs';
 import { calculateHeatPump } from './heat-pump-calculator/logic.mjs';
 import { calculateMiterAngles } from './miter-angle-calculator/logic.mjs';
 import { calculateVoltageDrop } from './voltage-drop-calculator/logic.mjs';
+import { calculateMolarity } from './molarity-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -880,6 +881,23 @@ test('voltage drop calculator handles zero length, material, circuit factors and
   assert.throws(() => calculateVoltageDrop({ ...base, crossSectionMm2: 0 }), /allowed range/u);
   assert.throws(() => calculateVoltageDrop({ ...base, circuit: 'unsupported' }), /Choose DC/u);
   assert.throws(() => calculateVoltageDrop({ ...base, powerFactor: 1.1 }), /allowed range/u);
+});
+
+test('molarity calculator solves concentration, amount, volume and preparation mass with final solution volume', () => {
+  const base = { moles: 1, volume: 2, volumeUnit: 'L' };
+  const concentration = calculateMolarity({ mode: 'concentration', ...base });
+  assert.equal(concentration.value, 0.5);
+  assert.equal(concentration.unit, 'mol/L');
+  assert.equal(calculateMolarity({ mode: 'moles', molarity: 0.5, volume: 2000, volumeUnit: 'mL' }).value, 1);
+  assert.equal(calculateMolarity({ mode: 'volume', moles: 1, molarity: 0.5 }).value, 2);
+  assert.equal(calculateMolarity({ mode: 'solute-mass', molarity: 0.5, volume: 2, molarMass: 58.44 }).value, 58.44);
+  const prep = calculateMolarity({ mode: 'prepare-solution', molarity: 0.5, volume: 500, volumeUnit: 'mL', molarMass: 58.44 });
+  assert.equal(prep.value, 14.61);
+  assert.equal(prep.volumeLiters, 0.5);
+  assert.throws(() => calculateMolarity({ mode: 'volume', moles: 1, molarity: 0 }), /allowed range/u);
+  assert.throws(() => calculateMolarity({ mode: 'concentration', moles: 1, volume: 0 }), /allowed range/u);
+  assert.throws(() => calculateMolarity({ mode: 'solute-mass', molarity: 1, volume: 1, molarMass: 0 }), /allowed range/u);
+  assert.throws(() => calculateMolarity({ mode: 'concentration', moles: 1, volume: 1, volumeUnit: 'gallon' }), /Choose liters/u);
 });
 
 test('heat pump calculator rejects invalid units, COP, hours, tariff and currency', () => {

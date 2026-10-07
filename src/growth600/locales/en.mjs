@@ -88,6 +88,8 @@ import miterAngleCopies from './miter-angle-calculator-final.mjs';
 import { miterAngleCalculatorEnglishCopy } from './miter-angle-calculator.en.mjs';
 import voltageDropCopies from './voltage-drop-calculator-final.mjs';
 import { voltageDropCalculatorEnglishCopy } from './voltage-drop-calculator.en.mjs';
+import molarityCopies from './molarity-calculator-final.mjs';
+import { molarityCalculatorEnglishCopy } from './molarity-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -479,5 +481,6 @@ registerGrowthLocaleExtension(source, 'heat-loss-calculator', { ...heatLossCopie
 registerGrowthLocaleExtension(source, 'heat-pump-calculator', { ...heatPumpCopies, en: heatPumpCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'miter-angle-calculator', { ...miterAngleCopies, en: miterAngleCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'voltage-drop-calculator', { ...voltageDropCopies, en: voltageDropCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'molarity-calculator', { ...molarityCopies, en: molarityCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

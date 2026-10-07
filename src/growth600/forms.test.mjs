@@ -189,6 +189,11 @@ const copies = {
     messages: { ...messages, voltageDrop: 'Voltage drop', voltageDropPercent: 'Drop percent', estimatedReceivingVoltage: 'Load voltage', resistancePerConductor: 'Resistance per conductor' },
     fields: { circuit: 'Circuit', dc: 'DC', singlePhase: 'Single-phase AC', threePhase: 'Three-phase AC', material: 'Material', copper: 'Copper', aluminum: 'Aluminum', oneWayLength: 'One-way length', lengthUnit: 'Length unit', currentA: 'Current', crossSectionMm2: 'Conductor area', supplyVoltageV: 'Supply voltage', powerFactor: 'Power factor', accuracyNote: 'Resistive estimate only.' },
   },
+  'molarity-calculator': {
+    name: 'Molarity calculator', actions: { ...actions, liters: 'Liters', milliliters: 'Milliliters' },
+    messages: { ...messages, concentrationResult: 'Solution concentration', molesResult: 'Amount of solute', volumeResult: 'Total solution volume', soluteMassResult: 'Solute mass', soluteForSolutionResult: 'Solute mass for target solution', finalVolume: 'Target final solution volume' },
+    fields: { mode: 'Calculation', concentrationMode: 'Molarity from moles and solution volume', molesMode: 'Moles from molarity and solution volume', volumeMode: 'Solution volume from moles and molarity', soluteMassMode: 'Solute mass from concentration', prepareMode: 'Prepare a target solution', moles: 'Moles', molarity: 'Molarity', volume: 'Total solution volume', volumeUnit: 'Volume unit', molarMass: 'Molar mass', accuracyNote: 'Use total final solution volume.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -257,6 +262,11 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(voltageDrop, /data-power-factor-field/u);
   assert.match(voltageDrop, /data-action="calculate"/u);
   assert.match(voltageDrop, /type="reset"/u);
+  const molarity = renderGrowthForm('molarity-calculator', copies['molarity-calculator']);
+  for (const name of ['mode', 'moles', 'molarity', 'volume', 'volumeUnit', 'molarMass']) assert.match(molarity, new RegExp(`name="${name}"`, 'u'));
+  for (const mode of ['concentration', 'moles', 'volume', 'solute-mass', 'prepare-solution']) assert.match(molarity, new RegExp(`value="${mode}"`, 'u'));
+  assert.match(molarity, /data-molarity-fields="molarMass"/u);
+  assert.match(molarity, /data-action="copy"/u);
   const asphalt = renderGrowthForm('asphalt-calculator', copies['asphalt-calculator']);
   assert.match(asphalt, /name="compactedThickness"/u);
   assert.match(asphalt, /name="pricePerTonne"/u);

@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 52/323; **271 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 53/323; **270 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -622,3 +622,13 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — inglés fuente completo; los otros 35 locales quedan como borradores estructurales bloqueados.
 - [ ] X/E visual — falta interacción real de navegador, móvil y RTL; no declarada inspección visual.
 - [ ] P/S — sin deploy, sitemap de producción intacto y sin envíos a buscadores; PageSpeed/Lighthouse no se ejecutó. Gates globales siguen abiertos.
+
+## Continuación · Molarity Calculator (#068) · 2026-10-08
+
+- [x] C/F — candidata #53/323, distinta de masa molar: calcula cantidad-concentración/volumen de solución, no la masa de una fórmula química. La ficha registra `molarity calculator` 22.200 búsquedas mensuales US/en, KD 8; secundaria `solution concentration calculator` 210/mes. Sin nuevas consultas ni gasto DataForSEO.
+- [x] E/X — resuelve concentración `n/V`, moles `cV`, volumen `n/c` y masa de soluto `c·V·Mᵣ`; L/mL normalizados a litros. Aceptación 1 mol/2 L = 0,5 mol/L; 0,5 M × 2 L × 58,44 g/mol = 58,44 g. Casos cero/rangos, masa molar no positiva y unidad desconocida probados. Base conceptual cotejada con IUPAC Gold Book.
+- [x] B — formulario local con cinco objetivos seleccionables y campos contextuales, ejemplo, reset, copiar, FAQs educativas y aclaración de volumen final. No especifica una receta de laboratorio ni pasos de manipulación química.
+- [x] E — suite focal catálogo/formularios/localización/render/build/bundles/lógica: **167/167 aprobadas**; el motor y controlador pasan `node --check`.
+- [ ] L — fuente completa en inglés; 35 borradores de idiomas aún pendientes y bloqueados por el gate de producción.
+- [ ] X/E visual — falta recorrido real en navegador, móvil y RTL; las pruebas automatizadas no equivalen a inspección visual.
+- [ ] P/S — no merge/deploy, sitemap productivo sin cambios ni avisos a buscadores; sin PageSpeed/Lighthouse. Gates globales siguen abiertos.

@@ -252,6 +252,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/heat-pump-calculator/logic.mjs',
   },
   {
+    id: 'molarity-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'molarity calculator',
+    secondaryIntents: ['solution concentration calculator', 'moles from molarity calculator', 'solute mass calculator'],
+    functions: ['solve molar concentration from amount of substance and final solution volume', 'solve moles or solution volume from the other two values', 'estimate solute mass from target molarity, final solution volume and entered molar mass', 'provide an explicit final-volume example and distinguish molarity from molality'],
+    acceptance: '1 mol of solute in 2 L of total solution yields 0.5 mol/L (0.5 M); 0.5 M × 2 L × 58.44 g/mol yields 58.44 g of solute for that target solution.',
+    boundary: 'Educational concentration arithmetic only. Uses total final solution volume, not starting solvent volume. Does not account for chemical purity, hydration, density, temperature, non-ideal behavior, hazards or a safe lab procedure. Follow chemical labels and qualified institutional safety guidance; not laboratory or medical advice.',
+    relatedExistingIds: ['molar-mass-calculator'],
+    logicModule: './tools/molarity-calculator/logic.mjs',
+  },
+  {
     id: 'miter-angle-calculator',
     category: 'home-materials',
     type: 'calculator',
