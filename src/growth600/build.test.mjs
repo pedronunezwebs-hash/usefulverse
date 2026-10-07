@@ -11,6 +11,7 @@ import englishGrowthCopy from './locales/en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
 import portugueseGrowthCopy from './locales/pt.mjs';
 import germanGrowthCopy from './locales/de.mjs';
+import japaneseGrowthCopy from './locales/ja.mjs';
 import spanishGrowthCopy from './locales/es.mjs';
 
 const actions = { calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', feet: 'Feet', inches: 'Inches', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Computer', twoPlayers: 'Two players', privacyNote: 'Private on this device.' };
@@ -39,13 +40,13 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   const tempRoot = await mkdtemp(join(tmpdir(), 'usefulverse-growth600-build-'));
   context.after(async () => rm(tempRoot, { recursive: true, force: true }));
   const outputDir = join(tempRoot, 'site');
-  const smallLocales = localeEntries.filter(({ key }) => ['en', 'es', 'fr', 'pt', 'de'].includes(key));
+  const smallLocales = localeEntries.filter(({ key }) => ['en', 'es', 'fr', 'pt', 'de', 'ja'].includes(key));
   const controllerBundles = Object.fromEntries(growthPilotTools.map((tool) => [tool.id, `document.querySelector('[data-tool="${tool.id}"]');`]));
   const result = await buildGrowthStaticSite({
     outputDir,
     origin: 'https://tools.usefulverse.com',
     localeEntries: smallLocales,
-    copyByLocale: { en: englishGrowthCopy, es: spanishGrowthCopy, fr: frenchGrowthCopy, pt: portugueseGrowthCopy, de: germanGrowthCopy },
+    copyByLocale: { en: englishGrowthCopy, es: spanishGrowthCopy, fr: frenchGrowthCopy, pt: portugueseGrowthCopy, de: germanGrowthCopy, ja: japaneseGrowthCopy },
     controllerBundles,
     styles: 'body{font-family:system-ui}',
     currentTools,
@@ -86,6 +87,11 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   assert.match(dePage, /Kiesrechner/u);
   assert.match(dePage, /Häufig gestellte Fragen/u);
   assert.doesNotMatch(dePage, />undefined</u);
+  const jaPage = await readFile(join(outputDir, 'ja/tools/gravel-calculator/index.html'), 'utf8');
+  assert.match(jaPage, /<html lang="ja" dir="ltr">/u);
+  assert.match(jaPage, /砂利計算機/u);
+  assert.match(jaPage, /よくある質問/u);
+  assert.doesNotMatch(jaPage, />undefined</u);
   const files = await readdir(join(outputDir, 'assets'));
   assert.equal(files.length, growthPilotTools.length + 1);
   assert.ok((await stat(join(outputDir, 'assets', files[0]))).isFile());

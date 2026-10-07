@@ -28,9 +28,9 @@
 - [x] Builder separado probado temporalmente: 2 idiomas de fixture × (5 herramientas + portada), sitemap/robots/llms, canonicals y assets versionados; rechaza sobreescrituras, archivos de más, controladores ausentes y copy incompleto. El fixture no es un build listo para publicar.
 - [ ] Medir assets con las 36 traducciones reales; aún solo se midieron los cinco bundles de controlador y el CSS.
 - [x] Recorrido funcional en navegador local de los cinco pilotos: grava (cálculo, inválido y reset), fórmula `Ca(OH)2` (74,092 g/mol) y rechazo de `XeF4`, refinanciación (cuotas/coste/break-even), sorteo con exclusión y revelado privado paso a paso, Mancala con turno extra y respuesta del ordenador. Las pruebas detectaron y corrigieron botones de envío mal tipados y el adaptador aleatorio criptográfico.
-- [x] Regresión del repo (checkpoint actual): `npm test -- --test-reporter=spec` — 857 aprobados, 0 fallidos. El catálogo base conserva 9.972 páginas de herramientas y 10.260 URLs.
-- [ ] Localización de los cinco pilotos: inglés fuente más borradores de Google Translate en español, francés, portugués y alemán, para las 252 cadenas del home y los cinco pilotos. Quedan 31 locales; el gate impide construir una publicación parcial.
-- [x] Infraestructura de español, francés, portugués y alemán: materializador de traducciones indexadas preserva placeholders y fuente; metadatos cumplen topes; páginas generadas usan el copy traducido sin `undefined`. Contratos y render de los cuatro idiomas pasan en pruebas enfocadas.
+- [x] Regresión del repo (checkpoint actual): `npm test -- --test-reporter=spec` — 858 aprobados, 0 fallidos. El catálogo base conserva 9.972 páginas de herramientas y 10.260 URLs.
+- [ ] Localización de los cinco pilotos: inglés fuente más borradores de Google Translate en español, francés, portugués, alemán y japonés, para las 252 cadenas del home y los cinco pilotos. Quedan 30 locales; el gate impide construir una publicación parcial.
+- [x] Infraestructura de español, francés, portugués, alemán y japonés: materializador de traducciones indexadas preserva placeholders y fuente; metadatos cumplen topes; páginas generadas usan el copy traducido sin `undefined`. Contratos y render de los cinco idiomas pasan en pruebas enfocadas.
 - [x] Etiquetas hreflang: el renderer mantiene la ruta existente `/tl/` y `<html lang="fil-PH">`, pero emite `hreflang="tl"` según el código ISO 639-1 requerido por Google. Cubierto para páginas de herramienta y portada.
 - [x] Integración de bundle checks al `npm test`; `npm run build:growth600` falla de forma cerrada con lista de locales faltantes y no genera salida.
 
@@ -46,9 +46,9 @@
 
 - `main` y rama base del plan: `685f91adfc7818a54f6dc0a967e290d13137a3dd`.
 - Cloudflare Pages Free: [límites oficiales](https://developers.cloudflare.com/pages/platform/limits/) (consulta de 2026-10-07); [precio de peticiones estáticas](https://developers.cloudflare.com/pages/functions/pricing/); [dominios personalizados](https://developers.cloudflare.com/pages/configuration/custom-domains/).
-- La suite completa después de incorporar alemán acabó con código 0 (857/857); las pruebas enfocadas de alemán y build pasan (9/9). `build:growth600` se detuvo intencionalmente por los 31 locales que faltan y no creó salida. `src/growth600/` aún no se integra al root. No se lanzó PageSpeed, tal como pide el plan.
+- La suite completa después de incorporar japonés acabó con código 0 (858/858). Japonés tiene 252 cadenas; los contratos, límites de metadatos y render pasan (10/10). `build:growth600` se detuvo por los 30 locales que faltan y no creó salida parcial. `src/growth600/` aún no se integra al root. No se lanzó PageSpeed, tal como pide el plan.
 - Ningún archivo se desplegó, ninguna URL nueva está publicada y el sitemap de producción no cambió.
 
 ## Próxima acción concreta
 
-Siguiente: traducir japonés en el siguiente turno, después coreano, indonesio, hindi, árabe, chino simplificado y los demás idiomas por orden del plan. Inglés fuente más español, francés, portugués y alemán ya están materializados; quedan 31. El gate conserva cerrada toda publicación parcial. Al completar las 36 locales, compilar en salida efímera y revisar rutas, sitemap, hreflang y budgets. El endpoint no oficial devolvió HTTP 429: no reintentar. Las 277 rutas originales siguen intactas.
+Siguiente: traducir coreano, después indonesio, hindi, árabe, chino simplificado y los demás idiomas por orden del plan. Inglés fuente más español, francés, portugués, alemán y japonés ya están materializados; quedan 30. El gate conserva cerrada toda publicación parcial. Al completar las 36 locales, compilar en salida efímera y revisar rutas, sitemap, hreflang y budgets. El endpoint no oficial devolvió HTTP 429: no reintentar. Las 277 rutas originales siguen intactas.
