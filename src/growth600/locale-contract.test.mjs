@@ -3,6 +3,7 @@ import test from 'node:test';
 import { assertGrowthLocaleCoverage } from './locale-contract.mjs';
 import { growthPilotTools } from './catalog.mjs';
 import englishGrowthCopy from './locales/en.mjs';
+import frenchGrowthCopy from './locales/fr.mjs';
 import spanishGrowthCopy from './locales/es.mjs';
 
 const tools = [{ id: 'one' }, { id: 'two' }];
@@ -31,4 +32,10 @@ test('the first Google Translate Spanish draft covers every copy key and preserv
   assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'es' }], { es: spanishGrowthCopy }), true);
   assert.ok(Object.values(spanishGrowthCopy).every((copy) => copy.copyLanguage === 'es'));
   assert.ok(Object.values(spanishGrowthCopy).every((copy) => copy.title.length <= 60 && copy.description.length <= 160));
+});
+
+test('the first Google Translate French draft covers every copy key and preserves required placeholders', () => {
+  assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'fr' }], { fr: frenchGrowthCopy }), true);
+  assert.ok(Object.values(frenchGrowthCopy).every((copy) => copy.copyLanguage === 'fr'));
+  assert.ok(Object.values(frenchGrowthCopy).every((copy) => copy.title.length <= 60 && copy.description.length <= 160));
 });
