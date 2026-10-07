@@ -467,6 +467,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['pool-volume-calculator', 'soil-calculator'],
     logicModule: './tools/pond-volume-calculator/logic.mjs',
   },
+  {
+    id: 'fertilizer-calculator',
+    category: 'garden-calculators',
+    type: 'calculator',
+    primaryIntent: 'fertilizer calculator',
+    secondaryIntents: ['NPK calculator', 'fertilizer rate calculator', 'fertilizer nutrient calculator'],
+    functions: ['calculate nitrogen, phosphate-equivalent and potash-equivalent mass from a user-entered fertilizer amount and guaranteed-analysis percentages', 'estimate product quantity from a user-entered application rate and area in metric or imperial units', 'show product mass and each labeled N-P₂O₅-K₂O nutrient mass in the selected mass unit', 'accept batch or area-rate inputs without recommending an application rate'],
+    acceptance: 'A 10 kg product amount with 20% nitrogen contains 2 kg nitrogen; zero area or a missing/invalid amount is rejected in area mode.',
+    boundary: 'Arithmetic from the fertilizer label and a rate entered by the user. N-P₂O₅-K₂O percentages are the conventional guaranteed-analysis labels, not elemental P and K masses. Does not recommend rates, products, crops, timing or nutrient targets; does not assess soil, runoff, local rules or plant suitability. Follow product label and local professional guidance. All calculations run locally in this browser.',
+    relatedExistingIds: ['grass-seed-calculator', 'compost-calculator'],
+    logicModule: './tools/fertilizer-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

@@ -124,6 +124,11 @@ const copies = {
     messages: { ...messages, footprint: 'Footprint area', geometricCapacity: 'Capacity', filledVolume: 'Filled volume', liters: 'Liters', usGallons: 'US gallons', imperialGallons: 'Imperial gallons', linerLength: 'Liner length', linerWidth: 'Liner width', linerArea: 'Liner area' },
     fields: { shape: 'Shape', length: 'Length', width: 'Width', diameter: 'Diameter', dimensionUnit: 'Unit', averageDepth: 'Average depth', maximumDepth: 'Maximum depth', edgeOverlap: 'Edge overlap', fillPercent: 'Fill percentage', accuracyNote: 'Geometric estimate only.' },
   },
+  'fertilizer-calculator': {
+    name: 'Fertilizer Calculator', actions: { ...actions, kilograms: 'Kilograms', pounds: 'Pounds', squareMeters: 'Square meters', hectares: 'Hectares', squareFeet: 'Square feet', acres: 'Acres', kg100m2: 'kg per 100 m²', kgHa: 'kg per hectare', lb1000ft2: 'lb per 1,000 ft²', lbAcre: 'lb per acre' },
+    messages: { ...messages, productMass: 'Product mass', nitrogenMass: 'Nitrogen', phosphateMass: 'Phosphate', potashMass: 'Potash' },
+    fields: { mode: 'Mode', productMode: 'Product amount', areaMode: 'Area and rate', productMass: 'Fertilizer mass', massUnit: 'Mass unit', area: 'Area', areaUnit: 'Area unit', productRate: 'Rate', rateUnit: 'Rate unit', nitrogenPercent: 'Nitrogen percentage', phosphatePercent: 'Phosphate percentage', potashPercent: 'Potash percentage', accuracyNote: 'Use your own product label and rate.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -293,6 +298,15 @@ test('pond form exposes plan shapes, separate depth inputs and liner overlap', (
   assert.match(html, /data-pond-dimensions="circle" hidden/u);
   assert.match(html, /Fill percentage/u);
   assert.match(html, /aria-live="polite" data-status/u);
+});
+
+test('fertilizer form separates product-content and user-rate area modes', () => {
+  const html = renderGrowthForm('fertilizer-calculator', copies['fertilizer-calculator']);
+  assert.match(html, /data-fertilizer-mode/u);
+  assert.match(html, /data-fertilizer-input="product"/u);
+  assert.match(html, /data-fertilizer-input="area" hidden/u);
+  for (const name of ['productMass', 'area', 'areaUnit', 'productRate', 'rateUnit', 'massUnit', 'nitrogenPercent', 'phosphatePercent', 'potashPercent']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  assert.match(html, /Area and rate/u);
 });
 
 test('weight scenario form explains its limits and collects explicit local inputs', () => {

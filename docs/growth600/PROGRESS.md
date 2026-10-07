@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 39/323; **284 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 40/323; **283 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -399,7 +399,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 39/323; **284 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost y Pond Volume Calculator están en la rama; Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost y Pond Volume tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 40/323; **283 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume y Fertilizer Calculator están en la rama; Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume y Fertilizer tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.
 
 ## Continuación · Rafter Calculator (#126) · 2026-10-08
@@ -492,3 +492,13 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [x] B — controlador, formulario, catálogos de locales, builder y bundle incluidos en pruebas. `git diff --check` pasó sin errores.
 - [ ] E/X visual — falta revisión del formulario/ejemplo en navegador, móvil y RTL.
 - [ ] P/S — no merge/deploy, sitemap de producción sin cambios ni envío a buscadores. Faltan traducciones, QA visual y gates de release globales; no se ejecutó PageSpeed/Lighthouse.
+
+## Continuación · Fertilizer Calculator (#183) · 2026-10-08
+
+- [x] C — candidata #40/323, distinta de `grass-seed-calculator`: calcula nutrientes de una etiqueta N-P₂O₅-K₂O y cantidad de producto desde área × tasa indicada por el usuario. La ficha del plan registra `fertilizer calculator` con 2.900 búsquedas mensuales US/en, KD 5; secundaria `npk calculator`, 140/mes. Sin consultas nuevas a DataForSEO.
+- [x] F/E — dos modos: masa del producto o área y tasa elegidas por el usuario; unidades kg/lb, m²/ha/ft²/acre y cuatro unidades de tasa. Aceptación: 10 kg al 20% N = 2 kg N; también verifica N-P₂O₅-K₂O, área/tasa y conversiones imperiales. Entradas, unidades y combinaciones no válidas se rechazan. Suite focal: **126/126 aprobadas**.
+- [x] X — cálculo estático local, sin APIs ni subida. Avisa que P₂O₅/K₂O son equivalentes de etiqueta, no masas elementales; no recomienda tipo, dosis, cultivo, calendario ni objetivo nutricional. Remite a etiqueta, análisis de suelo y orientación local cualificada.
+- [x] B — formulario con modos, ejemplo, reinicio, copia, resultado desglosado y estado accesible; integración en catálogo, controller, locale contract, bundle y fixture de build cubierta por tests.
+- [ ] L — inglés completo; los otros 35 idiomas son borradores estructurales marcados `pending-tool-specific-translation`, por lo que el gate impide publicarlos como traducciones.
+- [ ] E/X visual — pendiente revisión en navegador, móvil y RTL; los tests automatizados no sustituyen inspección visual/dispositivo.
+- [ ] P/S — no merge/deploy ni sitemap productivo actualizado; sin envío a buscadores. Se mantienen abiertos los gates globales de publicación y no se ejecutó PageSpeed/Lighthouse.

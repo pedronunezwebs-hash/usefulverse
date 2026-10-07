@@ -57,6 +57,7 @@ export function renderGrowthForm(toolId, copy) {
     'electricity-cost-calculator': ['ratePerKwh', 'billingDays', 'fixedCharge', 'currency', 'appliance1', 'applianceName1', 'power1', 'powerUnit1', 'quantity1', 'hours1', 'activeDays1', 'appliance2', 'applianceName2', 'power2', 'powerUnit2', 'quantity2', 'hours2', 'activeDays2', 'appliance3', 'applianceName3', 'power3', 'powerUnit3', 'quantity3', 'hours3', 'activeDays3', 'appliance4', 'applianceName4', 'power4', 'powerUnit4', 'quantity4', 'hours4', 'activeDays4', 'accuracyNote'],
     'compost-calculator': ['massUnit', 'targetMoisture', 'material1', 'name1', 'wetMass1', 'moisture1', 'carbon1', 'ratio1', 'material2', 'name2', 'wetMass2', 'moisture2', 'carbon2', 'ratio2', 'material3', 'name3', 'wetMass3', 'moisture3', 'carbon3', 'ratio3', 'material4', 'name4', 'wetMass4', 'moisture4', 'carbon4', 'ratio4', 'accuracyNote'],
     'pond-volume-calculator': ['shape', 'length', 'width', 'diameter', 'dimensionUnit', 'averageDepth', 'maximumDepth', 'edgeOverlap', 'fillPercent', 'accuracyNote'],
+    'fertilizer-calculator': ['mode', 'productMode', 'areaMode', 'productMass', 'massUnit', 'area', 'areaUnit', 'productRate', 'rateUnit', 'nitrogenPercent', 'phosphatePercent', 'potashPercent', 'accuracyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -99,6 +100,7 @@ export function renderGrowthForm(toolId, copy) {
     'electricity-cost-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'watts', 'kilowatts'],
     'compost-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilograms', 'pounds'],
     'pond-volume-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'rectangle', 'circle', 'oval', 'meters', 'feet'],
+    'fertilizer-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilograms', 'pounds', 'squareMeters', 'hectares', 'squareFeet', 'acres', 'kg100m2', 'kgHa', 'lb1000ft2', 'lbAcre'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -641,6 +643,23 @@ export function renderGrowthForm(toolId, copy) {
     ${label('pond-maximum-depth', fields.maximumDepth, '<input id="pond-maximum-depth" name="maximumDepth" type="number" min="0.01" max="100000" step="any" inputmode="decimal">')}
     ${label('pond-overlap', fields.edgeOverlap, '<input id="pond-overlap" name="edgeOverlap" type="number" min="0" max="100000" step="any" inputmode="decimal">')}
     ${label('pond-fill', fields.fillPercent, '<input id="pond-fill" name="fillPercent" type="number" min="1" max="100" step="any" inputmode="decimal" value="100">')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'fertilizer-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('fertilizer-mode', fields.mode, `<select id="fertilizer-mode" name="mode" data-fertilizer-mode><option value="product">${escapeGrowthHtml(fields.productMode)}</option><option value="area">${escapeGrowthHtml(fields.areaMode)}</option></select>`)}
+    <div data-fertilizer-input="product">${label('product-mass', fields.productMass, '<input id="product-mass" name="productMass" type="number" min="0.001" max="1000000" step="any" inputmode="decimal">')}</div>
+    <div data-fertilizer-input="area" hidden>
+      ${label('fertilizer-area', fields.area, '<input id="fertilizer-area" name="area" type="number" min="0.01" max="1000000000" step="any" inputmode="decimal">')}
+      ${label('fertilizer-area-unit', fields.areaUnit, `<select id="fertilizer-area-unit" name="areaUnit"><option value="m2">${escapeGrowthHtml(labels.squareMeters)}</option><option value="ha">${escapeGrowthHtml(labels.hectares)}</option><option value="ft2">${escapeGrowthHtml(labels.squareFeet)}</option><option value="acre">${escapeGrowthHtml(labels.acres)}</option></select>`)}
+      ${label('product-rate', fields.productRate, '<input id="product-rate" name="productRate" type="number" min="0.000001" max="1000000" step="any" inputmode="decimal">')}
+      ${label('product-rate-unit', fields.rateUnit, `<select id="product-rate-unit" name="rateUnit"><option value="kg100m2">${escapeGrowthHtml(labels.kg100m2)}</option><option value="kgHa">${escapeGrowthHtml(labels.kgHa)}</option><option value="lb1000ft2">${escapeGrowthHtml(labels.lb1000ft2)}</option><option value="lbAcre">${escapeGrowthHtml(labels.lbAcre)}</option></select>`)}
+    </div>
+    ${label('fertilizer-mass-unit', fields.massUnit, `<select id="fertilizer-mass-unit" name="massUnit"><option value="kg">${escapeGrowthHtml(labels.kilograms)}</option><option value="lb">${escapeGrowthHtml(labels.pounds)}</option></select>`)}
+    ${label('nitrogen-percent', fields.nitrogenPercent, '<input id="nitrogen-percent" name="nitrogenPercent" type="number" min="0" max="100" step="any" inputmode="decimal">')}
+    ${label('phosphate-percent', fields.phosphatePercent, '<input id="phosphate-percent" name="phosphatePercent" type="number" min="0" max="100" step="any" inputmode="decimal" value="0">')}
+    ${label('potash-percent', fields.potashPercent, '<input id="potash-percent" name="potashPercent" type="number" min="0" max="100" step="any" inputmode="decimal" value="0">')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

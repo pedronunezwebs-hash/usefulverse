@@ -40,7 +40,7 @@ import persianGrowthCopy from './locales/fa.mjs';
 import amharicGrowthCopy from './locales/am.mjs';
 import gujaratiGrowthCopy from './locales/gu.mjs';
 
-const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator'].includes(id));
+const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator'].includes(id));
 const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
   key,
   (await import(`./locales/${key}.mjs`)).default,
@@ -779,6 +779,17 @@ test('compost calculator has a complete English source but blocks untranslated l
 
 test('pond volume calculator has a complete English source but blocks untranslated locale drafts from release', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'pond-volume-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
+  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
+    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
+    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
+  }
+});
+
+test('fertilizer calculator has a complete English source but blocks untranslated locale drafts from release', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'fertilizer-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
   assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);

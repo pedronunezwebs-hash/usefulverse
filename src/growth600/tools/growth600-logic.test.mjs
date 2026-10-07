@@ -26,6 +26,7 @@ import { calculateWallFraming } from './wall-framing-calculator/logic.mjs';
 import { calculateElectricityCost } from './electricity-cost-calculator/logic.mjs';
 import { calculateCompostMix } from './compost-calculator/logic.mjs';
 import { calculatePond } from './pond-volume-calculator/logic.mjs';
+import { calculateFertilizer } from './fertilizer-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -599,4 +600,22 @@ test('pond volume separates average-depth water capacity from maximum-depth line
   assert.throws(() => calculatePond({ shape: 'rectangle', length: 5, width: 3, dimensionUnit: 'm', averageDepth: 1, maximumDepth: 0.8 }), /cannot be less/u);
   assert.throws(() => calculatePond({ shape: 'triangle', dimensionUnit: 'm' }), /Choose a rectangular/u);
   assert.throws(() => calculatePond({ shape: 'circle', diameter: 4, dimensionUnit: 'yd', averageDepth: 1, maximumDepth: 1 }), /Choose meters/u);
+});
+
+test('fertilizer calculator applies label percentages to a batch or entered area rate', () => {
+  const batch = calculateFertilizer({ mode: 'product', productMass: 10, massUnit: 'kg', nitrogenPercent: 20, phosphatePercent: 10, potashPercent: 10 });
+  assert.equal(batch.productMass, 10);
+  assert.equal(batch.nitrogenMass, 2);
+  assert.equal(batch.phosphateMass, 1);
+  assert.equal(batch.potashMass, 1);
+  const area = calculateFertilizer({ mode: 'area', area: 100, areaUnit: 'm2', productRate: 2, rateUnit: 'kg100m2', massUnit: 'kg', nitrogenPercent: 20, phosphatePercent: 10, potashPercent: 5 });
+  assert.equal(area.productMass, 2);
+  assert.equal(area.nitrogenMass, 0.4);
+  const imperial = calculateFertilizer({ mode: 'area', area: 1, areaUnit: 'acre', productRate: 100, rateUnit: 'lbAcre', massUnit: 'lb', nitrogenPercent: 10, phosphatePercent: 0, potashPercent: 0 });
+  assert.ok(Math.abs(imperial.productMass - 100) < 1e-10);
+  assert.equal(imperial.nitrogenMass, 10);
+  assert.throws(() => calculateFertilizer({ mode: 'product', productMass: 0, nitrogenPercent: 20 }), /allowed range/u);
+  assert.throws(() => calculateFertilizer({ mode: 'area', area: 0, productRate: 2, nitrogenPercent: 20 }), /allowed range/u);
+  assert.throws(() => calculateFertilizer({ mode: 'product', productMass: 10, nitrogenPercent: 0, phosphatePercent: 0, potashPercent: 0 }), /non-zero/u);
+  assert.throws(() => calculateFertilizer({ mode: 'rate', productMass: 10, nitrogenPercent: 20 }), /Choose product amount/u);
 });
