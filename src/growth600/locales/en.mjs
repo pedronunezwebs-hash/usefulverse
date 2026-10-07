@@ -1,4 +1,5 @@
 import tireSizeCopies from './tire-size-calculator.mjs';
+import stairCopies from './stair-calculator.mjs';
 import { registerGrowthLocaleExtension } from '../locale-utils.mjs';
 
 const actionCopy = Object.freeze({
@@ -84,5 +85,6 @@ const source = {
 };
 
 registerGrowthLocaleExtension(source, 'tire-size-calculator', tireSizeCopies, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'stair-calculator', stairCopies, 'gravel-calculator');
 
 export default Object.freeze(source);

@@ -54,15 +54,21 @@ function toolCopy(tool, language) {
     'auto-loan-refinance-calculator': { balance: 'Balance', currentApr: 'Current APR', currentMonths: 'Current months', newApr: 'New APR', newMonths: 'New months', fees: 'Fees', feeTreatment: 'Fee treatment', upfront: 'Upfront', rolledIn: 'Rolled in', currencyNote: 'Use one currency for all amounts.' },
     'secret-santa-generator': { names: 'Names', exclusions: 'Exclusions', exclusionsHint: 'One giver:recipient pair per line.' },
     'tire-size-calculator': { originalSize: 'Current tire size', replacementSize: 'New tire size', indicatedSpeed: 'Dashboard speed', speedUnit: 'Speed unit', fitmentNote: 'Nominal estimate only; check fitment with vehicle and tire maker.', relatedUnitConverter: 'Need to convert measurements? Open the unit converter.' },
+    'stair-calculator': { totalRise: 'Total rise', riserCount: 'Number of risers', treadDepth: 'Tread depth', unit: 'Length unit', codeNote: 'Geometry only; check local rules.', relatedUnitConverter: 'Need to convert measurements? Open the unit converter.' },
     mancala: { mode: 'Mode', board: 'Kalah board', rules: 'Sow seeds around the board; skip the opponent store. Capture the opposite pit when the last seed lands in an empty pit on your side.' },
   }[tool.id];
   if (tool.id === 'tire-size-calculator') {
     Object.assign(actions, { kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)' });
   }
-  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages, copyLanguage: language };
+  const localizedMessages = tool.id === 'stair-calculator' ? { ...messages, riserHeight: 'Riser height', treadCount: 'Tread count', totalRun: 'Total run', angle: 'Angle', stringerLength: 'Stringer length', diagram: 'Stair side view' } : messages;
+  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: localizedMessages, copyLanguage: language };
   if (tool.id === 'tire-size-calculator') localized.additionalFaqs = [
     { question: 'Will this replacement tire fit my vehicle?', answer: fields.fitmentNote },
     { question: 'How is actual speed estimated?', answer: 'Dashboard speed is multiplied by the ratio of new to current nominal tire diameter. It is an estimate.' },
+  ];
+  if (tool.id === 'stair-calculator') localized.additionalFaqs = [
+    { question: 'Which dimensions are shown?', answer: 'Rise, tread count, total run, angle and stringer estimate.' },
+    { question: 'Does it verify local rules?', answer: fields.codeNote },
   ];
   return localized;
 }

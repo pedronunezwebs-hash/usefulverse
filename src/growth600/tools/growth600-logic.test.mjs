@@ -5,6 +5,7 @@ import { calculateMolarMass, parseChemicalFormula } from './molar-mass-calculato
 import { compareAutoLoanRefinance, monthlyLoanPayment } from './auto-loan-refinance-calculator/logic.mjs';
 import { assignSecretSanta } from './secret-santa-generator/logic.mjs';
 import { compareMetricTireSizes, parseMetricTireSize } from './tire-size-calculator/logic.mjs';
+import { calculateStairGeometry } from './stair-calculator/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
 test('gravel calculator converts area and depth into volume, waste, weight and bags', () => {
@@ -128,6 +129,21 @@ test('metric tire comparison computes nominal geometry and speedometer estimate'
   assert.throws(() => compareMetricTireSizes('205/55R16', '205/55R16', 0), /Indicated speed/);
   assert.equal(compareMetricTireSizes('205/55R16', '205/55R16', 1).estimatedActualSpeed, 1);
   assert.throws(() => compareMetricTireSizes(null, '205/55R16'), /metric tire format/);
+});
+
+test('stair geometry calculates risers, treads, run and stringer without claiming code compliance', () => {
+  const result = calculateStairGeometry(2.8, 16, 0.28, 'm');
+  assert.equal(result.riserCount, 16);
+  assert.equal(result.treadCount, 15);
+  assert.equal(result.riserHeight, 0.175);
+  assert.equal(result.totalRun, 4.2);
+  assert.ok(Math.abs(result.stringerLength - 5.04777) < 0.0001);
+  assert.ok(Math.abs(result.angleDegrees - 32.005) < 0.01);
+  assert.equal(calculateStairGeometry(110, 16, 11, 'in').unit, 'in');
+  assert.throws(() => calculateStairGeometry(2.8, 1, 0.28, 'm'), /between/u);
+  assert.throws(() => calculateStairGeometry(2.8, 16.5, 0.28, 'm'), /whole number/u);
+  assert.throws(() => calculateStairGeometry(2.8, 16, 0.05, 'm'), /between/u);
+  assert.throws(() => calculateStairGeometry(2.8, 16, 0.28, 'yard'), /unit/u);
 });
 
 test('Mancala keeps the original seed total over complete deterministic games', () => {

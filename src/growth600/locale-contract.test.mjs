@@ -40,7 +40,7 @@ import persianGrowthCopy from './locales/fa.mjs';
 import amharicGrowthCopy from './locales/am.mjs';
 import gujaratiGrowthCopy from './locales/gu.mjs';
 
-const growthPilotTools = allGrowthPilotTools.filter(({ id }) => id !== 'tire-size-calculator');
+const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['tire-size-calculator', 'stair-calculator'].includes(id));
 const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
   key,
   (await import(`./locales/${key}.mjs`)).default,
@@ -78,6 +78,19 @@ test('tire-size calculator has localized copy and complete controls in every sup
     assert.ok(copy.fields.fitmentNote.trim().length > 0, `${key}: fitment limits should be present`);
     assert.ok(copy.messages.sameSize.length > 0, `${key}: equality state should be localized`);
     assert.ok(copy.actions.kmh.length > 0 && copy.actions.mph.length > 0, `${key}: speed units should be labeled`);
+  }
+});
+
+test('stair calculator has localized copy and two complete, localized FAQs in every supported language', () => {
+  const stairTool = allGrowthPilotTools.find(({ id }) => id === 'stair-calculator');
+  assert.ok(stairTool);
+  assert.equal(localeEntries.length, 36);
+  assert.equal(assertGrowthLocaleCoverage([stairTool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][stairTool.id];
+    assert.ok(copy.fields.codeNote.trim().length > 0, `${key}: code boundary should be present`);
+    assert.equal(copy.additionalFaqs.length, 2, `${key}: two additional FAQs should be localized`);
+    assert.ok(copy.actions.meters && copy.actions.feet && copy.actions.inches, `${key}: units should be labeled`);
   }
 });
 

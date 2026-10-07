@@ -1,5 +1,17 @@
 export const growthPilotTools = Object.freeze([
   {
+    id: 'stair-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'stair calculator',
+    secondaryIntents: ['stair rise run calculator', 'staircase calculator', 'stair stringer length calculator'],
+    functions: ['total rise and user-selected riser count', 'riser height, tread count, total run, pitch angle and stringer length', 'scaled side-profile SVG drawing', 'metric and imperial units'],
+    acceptance: '2.8 m total rise with 16 risers gives 0.175 m per riser and 15 treads; at 0.28 m tread depth, total run is 4.2 m.',
+    boundary: 'Geometry estimate only. It does not check building codes, headroom, landings, structure, guardrails or site conditions. Confirm all plans with local regulations and a qualified builder.',
+    relatedExistingIds: ['unit-converter'],
+    logicModule: './tools/stair-calculator/logic.mjs',
+  },
+  {
     id: 'tire-size-calculator',
     category: 'home-materials',
     type: 'calculator',
