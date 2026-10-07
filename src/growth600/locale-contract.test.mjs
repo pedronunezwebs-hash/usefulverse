@@ -5,6 +5,7 @@ import { growthPilotTools } from './catalog.mjs';
 import englishGrowthCopy from './locales/en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
 import portugueseGrowthCopy from './locales/pt.mjs';
+import germanGrowthCopy from './locales/de.mjs';
 import spanishGrowthCopy from './locales/es.mjs';
 
 const tools = [{ id: 'one' }, { id: 'two' }];
@@ -47,4 +48,12 @@ test('the first Google Translate Portuguese draft covers every copy key and pres
   assert.ok(Object.values(portugueseGrowthCopy).every((copy) => copy.title.length <= 60 && copy.description.length <= 160));
   assert.equal(portugueseGrowthCopy['auto-loan-refinance-calculator'].name, 'Calculadora de refinanciamento de carro');
   assert.equal(portugueseGrowthCopy.mancala.messages.pit, 'Casa');
+});
+
+test('the first Google Translate German draft covers every copy key and preserves required placeholders', () => {
+  assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'de' }], { de: germanGrowthCopy }), true);
+  assert.ok(Object.values(germanGrowthCopy).every((copy) => copy.copyLanguage === 'de'));
+  assert.ok(Object.values(germanGrowthCopy).every((copy) => copy.title.length <= 60 && copy.description.length <= 160));
+  assert.equal(germanGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} Monate');
+  assert.equal(germanGrowthCopy.mancala.messages.turn, '{player} ist am Zug.');
 });
