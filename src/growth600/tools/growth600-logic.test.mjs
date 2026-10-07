@@ -7,6 +7,7 @@ import { assignSecretSanta } from './secret-santa-generator/logic.mjs';
 import { compareMetricTireSizes, parseMetricTireSize } from './tire-size-calculator/logic.mjs';
 import { calculateStairGeometry } from './stair-calculator/logic.mjs';
 import { calculateAsphalt } from './asphalt-calculator/logic.mjs';
+import { calculateSoil } from './soil-calculator/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
 test('gravel calculator converts area and depth into volume, waste, weight and bags', () => {
@@ -21,6 +22,25 @@ test('gravel calculator converts area and depth into volume, waste, weight and b
   assert.equal(calculateTriangularArea(4, 3), 6);
   assert.throws(() => calculateGravel({ areaM2: 0, depthM: 1 }), /Area/);
   assert.throws(() => calculateGravel({ areaM2: 1, depthM: 1, wastePercent: 101 }), /Waste/);
+});
+
+test('soil calculator estimates raised-bed and pot fill volume and bag count', () => {
+  const cube = calculateSoil({ shape: 'rectangle', length: 1, width: 1, depth: 1 });
+  assert.equal(cube.volumePerContainerM3, 1);
+  assert.equal(cube.totalVolumeM3, 1);
+  assert.equal(cube.orderVolumeM3, 1);
+  assert.equal(cube.bagsToBuy, null);
+  const beds = calculateSoil({ shape: 'rectangle', length: 2, width: 1, depth: 0.3, containerCount: 2, wastePercent: 10, bagVolume: 40, bagUnit: 'l' });
+  assert.equal(beds.volumePerContainerM3, 0.6);
+  assert.equal(beds.totalVolumeM3, 1.2);
+  assert.equal(beds.orderVolumeM3, 1.32);
+  assert.equal(beds.bagsToBuy, 33);
+  const roundPot = calculateSoil({ shape: 'circle', diameter: 40, depth: 30, dimensionUnit: 'cm', bagVolume: 1, bagUnit: 'ft3' });
+  assert.ok(Math.abs(roundPot.volumePerContainerM3 - Math.PI * 0.2 ** 2 * 0.3) < 1e-12);
+  assert.equal(roundPot.bagsToBuy, 2);
+  assert.throws(() => calculateSoil({ shape: 'triangle', length: 1, width: 1, depth: 1 }), /shape/u);
+  assert.throws(() => calculateSoil({ shape: 'rectangle', length: 1, width: 1, depth: 1, containerCount: 1.5 }), /container count/iu);
+  assert.throws(() => calculateSoil({ shape: 'rectangle', length: 1, width: 1, depth: 1, wastePercent: 51 }), /waste/iu);
 });
 
 test('molar-mass parser handles formulas, nested groups and supported isotopes', () => {

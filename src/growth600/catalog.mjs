@@ -1,5 +1,17 @@
 export const growthPilotTools = Object.freeze([
   {
+    id: 'soil-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'soil calculator',
+    secondaryIntents: ['soil volume calculator', 'raised bed soil calculator', 'potting soil calculator', 'how many bags of soil do I need'],
+    functions: ['soil volume for rectangular raised beds and round pots', 'repeat the same container dimensions by quantity', 'optional extra-material allowance and bag count from bag volume', 'metric and imperial dimensions with litre or cubic-foot bags'],
+    acceptance: 'A 1 m × 1 m × 1 m rectangular container with one container and no extra material gives 1 m³ of soil.',
+    boundary: 'Calculates fill volume for containers, not ground coverage or landscaping aggregate weight. Actual settling, container taper, drainage layers and bag fill vary; measure usable dimensions and check the bag label.',
+    relatedExistingIds: [],
+    logicModule: './tools/soil-calculator/logic.mjs',
+  },
+  {
     id: 'asphalt-calculator',
     category: 'home-materials',
     type: 'calculator',

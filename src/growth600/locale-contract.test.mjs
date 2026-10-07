@@ -107,6 +107,19 @@ test('asphalt calculator has 36 localized copies, estimates-only disclosures and
   }
 });
 
+test('soil calculator has 36 localized copies, container-fill boundary and complete FAQs', () => {
+  const soilTool = allGrowthPilotTools.find(({ id }) => id === 'soil-calculator');
+  assert.ok(soilTool);
+  assert.equal(assertGrowthLocaleCoverage([soilTool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][soilTool.id];
+    assert.ok(copy.fields.accuracyNote.trim().length > 0, `${key}: actual fill can differ`);
+    assert.equal(copy.additionalFaqs.length, 2, `${key}: two complete FAQs should be present`);
+    assert.ok(copy.actions.liters && copy.actions.cubicFeet, `${key}: bag volume units should be labeled`);
+    assert.doesNotMatch(JSON.stringify(copy), /UVSOIL\d{4}X|UVTOKEN\d+X/u, `${key}: translation markers must not leak`);
+  }
+});
+
 test('the first Google Translate Spanish draft covers every copy key and preserves required placeholders', () => {
   assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'es' }], { es: spanishGrowthCopy }), true);
   assert.ok(Object.values(spanishGrowthCopy).every((copy) => copy.copyLanguage === 'es'));
