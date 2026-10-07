@@ -9,6 +9,7 @@ import { calculateStairGeometry } from './stair-calculator/logic.mjs';
 import { calculateAsphalt } from './asphalt-calculator/logic.mjs';
 import { calculateSoil } from './soil-calculator/logic.mjs';
 import { calculatePoolVolume } from './pool-volume-calculator/logic.mjs';
+import { calculateRoofPitch } from './roof-pitch-calculator/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
 test('gravel calculator converts area and depth into volume, waste, weight and bags', () => {
@@ -59,6 +60,22 @@ test('pool volume calculator handles shapes, sloped bottoms and gallon standards
   assert.ok(Math.abs(oval.volumeM3 - Math.PI * 8 * 4 / 4 * 1.5) < 1e-12);
   assert.throws(() => calculatePoolVolume({ shape: 'rectangle', length: 2, width: 3, shallowDepth: 1, floor: 'sloped', deepDepth: 0 }), /Deep depth/u);
   assert.throws(() => calculatePoolVolume({ shape: 'square', shallowDepth: 1 }), /shape/u);
+});
+
+test('roof pitch calculator reports pitch, slope, angles and optional overhang length', () => {
+  const equal = calculateRoofPitch({ rise: 3, run: 3, unit: 'm' });
+  assert.equal(equal.pitchRisePer12, 12);
+  assert.equal(equal.slopePercent, 100);
+  assert.equal(equal.angleDegrees, 45);
+  assert.ok(Math.abs(equal.angleRadians - Math.PI / 4) < 1e-12);
+  assert.ok(Math.abs(equal.rafterLengthM - Math.sqrt(18)) < 1e-12);
+  const overhang = calculateRoofPitch({ rise: 4, run: 12, overhang: 1, unit: 'ft' });
+  assert.equal(overhang.pitchRisePer12, 4);
+  assert.ok(Math.abs(overhang.slopePercent - 100 / 3) < 1e-12);
+  assert.ok(Math.abs(overhang.rafterLengthM - Math.hypot(4, 13) * 0.3048) < 1e-12);
+  assert.throws(() => calculateRoofPitch({ rise: 0, run: 10 }), /Rise/u);
+  assert.throws(() => calculateRoofPitch({ rise: 3, run: 0 }), /Run/u);
+  assert.throws(() => calculateRoofPitch({ rise: 3, run: 3, unit: 'yd' }), /unit/u);
 });
 
 test('molar-mass parser handles formulas, nested groups and supported isotopes', () => {

@@ -1,5 +1,17 @@
 export const growthPilotTools = Object.freeze([
   {
+    id: 'roof-pitch-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'roof pitch calculator',
+    secondaryIntents: ['roof slope calculator', 'roof angle calculator', 'rafter length calculator', 'roof pitch rise run calculator'],
+    functions: ['rise and horizontal run in metric or imperial units', 'pitch as rise per 12, slope percent, angle in degrees and radians', 'rafter length with optional horizontal eave overhang'],
+    acceptance: 'When roof rise equals horizontal run, the roof angle is 45 degrees and the pitch is 12:12.',
+    boundary: 'Geometry estimate only. Does not determine code compliance, structural capacity, snow/wind loads, materials or safe access; confirm plans with local requirements and a qualified professional.',
+    relatedExistingIds: ['triangle-calculator'],
+    logicModule: './tools/roof-pitch-calculator/logic.mjs',
+  },
+  {
     id: 'pool-volume-calculator',
     category: 'home-materials',
     type: 'calculator',

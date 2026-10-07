@@ -5,6 +5,8 @@ import soilCopies from './soil-calculator.mjs';
 import { soilEnglishCopy } from './soil-calculator.en.mjs';
 import poolCopies from './pool-volume-calculator.mjs';
 import { poolVolumeCalculatorEnglishCopy } from './pool-volume-calculator.en.mjs';
+import roofCopies from './roof-pitch-calculator.mjs';
+import { roofPitchCalculatorEnglishCopy } from './roof-pitch-calculator.en.mjs';
 import { registerGrowthLocaleExtension } from '../locale-utils.mjs';
 
 const actionCopy = Object.freeze({
@@ -35,6 +37,7 @@ const tools = {
   },
   'soil-calculator': soilEnglishCopy,
   'pool-volume-calculator': poolVolumeCalculatorEnglishCopy,
+  'roof-pitch-calculator': roofPitchCalculatorEnglishCopy,
   'molar-mass-calculator': {
     copyLanguage: 'en', name: 'Molar mass calculator', title: 'Molar mass calculator free unlimited | UsefulVerse',
     description: 'Calculate the molar mass of supported chemical formulas in your browser. Free, unlimited and no account needed.',
@@ -96,5 +99,6 @@ registerGrowthLocaleExtension(source, 'stair-calculator', stairCopies, 'gravel-c
 registerGrowthLocaleExtension(source, 'asphalt-calculator', asphaltCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'soil-calculator', soilCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'pool-volume-calculator', poolCopies, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'roof-pitch-calculator', roofCopies, 'gravel-calculator');
 
 export default Object.freeze(source);

@@ -51,6 +51,7 @@ function toolCopy(tool, language) {
   const fields = {
     'soil-calculator': { shape: 'Container shape', length: 'Inside length', width: 'Inside width', diameter: 'Inside diameter', depth: 'Fill depth', dimensionUnit: 'Dimension unit', containerCount: 'Number of containers', wastePercent: 'Extra soil', bagVolume: 'Bag volume', bagUnit: 'Bag volume unit', accuracyNote: 'Estimate only; tapered pots and settling change the actual amount.' },
     'pool-volume-calculator': { shape: 'Pool shape', length: 'Inside length', width: 'Inside width', ovalLength: 'Oval length', ovalWidth: 'Oval width', diameter: 'Inside diameter', floor: 'Floor type', shallowDepth: 'Shallow depth', deepDepth: 'Deep depth', dimensionUnit: 'Dimension unit', accuracyNote: 'Estimate only; steps and fill level change capacity.' },
+    'roof-pitch-calculator': { rise: 'Vertical rise', run: 'Horizontal run', overhang: 'Eave overhang', unit: 'Length unit', safetyNote: 'Geometry only; confirm structure and local rules.' },
     'gravel-calculator': { shape: 'Shape', area: 'Area', depth: 'Depth', length: 'Length', width: 'Width', diameter: 'Diameter', base: 'Base', triangleHeight: 'Height', dimensionUnit: 'Dimension unit', depthUnit: 'Depth unit', density: 'Density', densityUnit: 'Density unit', waste: 'Waste', bagSize: 'Bag size', bagUnit: 'Bag unit' },
     'molar-mass-calculator': { formula: 'Formula', supportedHint: 'Selected elements and isotopes are supported.' },
     'auto-loan-refinance-calculator': { balance: 'Balance', currentApr: 'Current APR', currentMonths: 'Current months', newApr: 'New APR', newMonths: 'New months', fees: 'Fees', feeTreatment: 'Fee treatment', upfront: 'Upfront', rolledIn: 'Rolled in', currencyNote: 'Use one currency for all amounts.' },
@@ -64,10 +65,12 @@ function toolCopy(tool, language) {
     Object.assign(actions, { kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)' });
   }
   if (tool.id === 'pool-volume-calculator') Object.assign(actions, { oval: 'Oval', flat: 'Flat floor', sloped: 'Sloped floor' });
+  if (tool.id === 'roof-pitch-calculator') Object.assign(actions, { millimeters: 'Millimeters' });
   const localizedMessages = tool.id === 'stair-calculator' ? { ...messages, riserHeight: 'Riser height', treadCount: 'Tread count', totalRun: 'Total run', angle: 'Angle', stringerLength: 'Stringer length', diagram: 'Stair side view' } : messages;
   const asphaltMessages = tool.id === 'asphalt-calculator' ? { ...messages, compactedVolume: 'Compacted volume', orderVolume: 'Order volume', metricTonnes: 'Metric tonnes', shortTons: 'US short tons', estimatedCost: 'Estimated material cost' } : {};
   const poolMessages = tool.id === 'pool-volume-calculator' ? { liters: 'Litres', usGallons: 'US gallons', imperialGallons: 'Imperial gallons', averageDepth: 'Average depth' } : {};
-  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: { ...localizedMessages, ...asphaltMessages, ...poolMessages }, copyLanguage: language };
+  const roofMessages = tool.id === 'roof-pitch-calculator' ? { angleDegrees: 'Angle', angleRadians: 'Angle in radians', slopePercent: 'Slope', pitch: 'Rise per 12 run', rafterLength: 'Rafter length' } : {};
+  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: { ...localizedMessages, ...asphaltMessages, ...poolMessages, ...roofMessages }, copyLanguage: language };
   if (tool.id === 'tire-size-calculator') localized.additionalFaqs = [
     { question: 'Will this replacement tire fit my vehicle?', answer: fields.fitmentNote },
     { question: 'How is actual speed estimated?', answer: 'Dashboard speed is multiplied by the ratio of new to current nominal tire diameter. It is an estimate.' },
@@ -87,6 +90,10 @@ function toolCopy(tool, language) {
   if (tool.id === 'pool-volume-calculator') localized.additionalFaqs = [
     { question: 'How do I estimate a sloped floor?', answer: 'Average shallow and deep water depth, then multiply by the pool footprint.' },
     { question: 'Why show two gallon values?', answer: 'US and imperial gallons are different units.' },
+  ];
+  if (tool.id === 'roof-pitch-calculator') localized.additionalFaqs = [
+    { question: 'What is a 12:12 roof pitch?', answer: 'It means equal rise and run, or 45 degrees.' },
+    { question: 'Does the rafter estimate include eaves?', answer: 'It includes only the optional horizontal overhang you enter.' },
   ];
   return localized;
 }

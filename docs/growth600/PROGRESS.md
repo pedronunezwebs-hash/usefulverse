@@ -91,7 +91,7 @@
 
 ## Próxima acción concreta
 
-Siguiente: continuar con Roof Pitch Calculator (#071). El catálogo aditivo tiene ahora 10 candidatos; los cinco iniciales y #016, #052, #057, #060 y #067 tienen gates locales registrados, pero la publicación queda bloqueada hasta cerrar gates globales C/F/E/X/L/B/P/S. `usefulverse-tools` sigue sin publicar estas nuevas páginas ni enviarlas a buscadores; las 277 rutas originales permanecen intactas.
+Siguiente: continuar con Drywall Calculator (#077). El catálogo aditivo tiene ahora 11 candidatos; los cinco iniciales y #016, #052, #057, #060, #067 y #071 tienen gates locales registrados, pero la publicación queda bloqueada hasta cerrar gates globales C/F/E/X/L/B/P/S. `usefulverse-tools` sigue sin publicar estas nuevas páginas ni enviarlas a buscadores; las 277 rutas originales permanecen intactas.
 
 ## Continuación · 2026-10-07
 
@@ -180,3 +180,14 @@ Siguiente: continuar con Roof Pitch Calculator (#071). El catálogo aditivo tien
 - [x] Budget/privacy: JS minificado 4.583 B (≤24 KiB), sin red externa ni ejecución dinámica; herramienta se calcula en navegador. La salida de staging fue local, estática y no agrega Functions/APIs.
 - [x] Chrome DevTools local: ejemplo válido 6.000 L/1.585 US gal/1.320 imp gal; óvalo inclinado de 8×4 m y profundidad media de 1,5 m devuelve 37.699 L. Cero de entrada activa `aria-invalid`, enfoca campo y anuncia error; reset limpia estado. A 390 px no hay overflow; muestra árabe RTL con `lang=ar`, `dir=rtl` también sin overflow; consola sin errores.
 - [ ] No se probaron hardware físico ni revisión nativa de 36 borradores. Candidato #067 en staging: sin deploy, sin sitemap de producción actualizado y sin envío a motores. Los gates C/F/E/X/L/B/P/S solo se cierran en la publicación conjunta con comprobación de URLs públicas.
+
+## Continuación · Roof Pitch Calculator (#071) · 2026-10-07
+
+- [x] Función local enfocada a una intención: calcula pendiente como X:12 y porcentaje, ángulo en grados/radianes y longitud geométrica aproximada de la viga; acepta altura, recorrido horizontal y alero opcional en m/cm/mm/ft/in. La aceptación 3:3 devuelve 12:12, 100%, 45° y 4,24 m; con 0,5 m de alero devuelve 4,61 m.
+- [x] No pretende sustituir cálculo estructural, normativa, cargas, ventilación o impermeabilización; advierte que se consulte a un profesional. Sin solaparse con la calculadora de triángulos existente: se añadió enlace contextual a esa herramienta para la geometría general.
+- [x] Textos y FAQs estáticos para los 36 idiomas; no hay servicio de traducción en producción. Son borradores automáticos comprensibles, no revisados por hablantes nativos.
+- [x] Suite focalizada tras añadir la herramienta: 72/72 aprobadas (catálogo, formularios, contratos de idioma, renderer, builder, bundle y lógica).
+- [x] Build local aislado: 432 páginas HTML (11 herramientas × 36 idiomas + 36 portadas), 432 URL únicas en el sitemap; 484 archivos / 8.130.911 bytes. Las 36 páginas de techo tienen canonical, 37 alternates hreflang (36 idiomas + x-default), FAQPage y controlador con hash; sin placeholders.
+- [x] JS minificado de la herramienta: 3.247 B (≤24 KiB); el cálculo permanece en el dispositivo y no añade API, Worker ni dependencia remota.
+- [x] Chrome DevTools: entrada 3 m / 3 m y alero 0,5 m mostró 12:12, 100%, 45°, 0,79 rad y 4,61 m. Árabe móvil a 390 × 844 px: `dir=rtl`, ancho del documento 390 px, sin overflow y consola limpia.
+- [ ] No se probaron dispositivos físicos ni hubo revisión nativa humana de las 36 traducciones. El build y QA son de staging local: no se desplegó, el sitemap de producción no cambió y no se mandó a buscadores. Gates C/F/E/X/L/B/P/S continúan para el release coordinado.

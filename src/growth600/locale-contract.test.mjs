@@ -133,6 +133,18 @@ test('pool calculator has 36 complete localized copies and distinguishes gallon 
   }
 });
 
+test('roof pitch calculator has all localized geometry labels, safety notes and FAQs', () => {
+  const roofTool = allGrowthPilotTools.find(({ id }) => id === 'roof-pitch-calculator');
+  assert.ok(roofTool);
+  assert.equal(assertGrowthLocaleCoverage([roofTool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][roofTool.id];
+    assert.ok(copy.fields.safetyNote.trim());
+    assert.ok(copy.actions.millimeters && copy.actions.feet && copy.actions.inches);
+    assert.equal(copy.additionalFaqs.length, 2);
+  }
+});
+
 test('the first Google Translate Spanish draft covers every copy key and preserves required placeholders', () => {
   assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'es' }], { es: spanishGrowthCopy }), true);
   assert.ok(Object.values(spanishGrowthCopy).every((copy) => copy.copyLanguage === 'es'));
