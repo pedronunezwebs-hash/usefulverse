@@ -91,7 +91,7 @@
 
 ## Próxima acción concreta
 
-Siguiente: continuar con Roofing Calculator (#078). El catálogo aditivo tiene ahora 12 candidatos; los cinco iniciales y #016, #052, #057, #060, #067, #071 y #077 tienen gates locales registrados, pero la publicación queda bloqueada hasta cerrar gates globales C/F/E/X/L/B/P/S. `usefulverse-tools` sigue sin publicar estas nuevas páginas ni enviarlas a buscadores; las 277 rutas originales permanecen intactas.
+Siguiente: Deck Calculator (#083). El catálogo aditivo tiene ahora 13 candidatos. Roofing Calculator (#078) ya tiene los gates locales registrados abajo. La publicación de la tanda sigue bloqueada hasta cerrar gates globales C/F/E/X/L/B/P/S; `usefulverse-tools` no publica aún Roofing y no se ha enviado su URL a buscadores. Las 277 rutas originales permanecen intactas.
 
 ## Continuación · 2026-10-07
 
@@ -110,6 +110,16 @@ Siguiente: continuar con Roofing Calculator (#078). El catálogo aditivo tiene a
 - [ ] La inspección física en dispositivos reales y la lectura nativa/lingüística de las 36 traducciones siguen fuera de este QA; el plan solo exige una revisión visual representativa, pero estas limitaciones no deben presentarse como si fueran pruebas ya hechas. F4 y P/S continúan abiertos hasta cerrar los demás gates y verificar publicación.
 - [x] Workflow revisado: el build `growth600` se valida junto al pipeline existente; el deploy de `usefulverse-tools` requiere ejecución manual desde `main` con el input `publish_growth600=true`, y solo tras configurar el dominio y cerrar gates. Los nombres de los secretos Cloudflare requeridos existen en GitHub Actions (sus valores no se consultaron). YAML y `git diff --check` pasan. No se inició ningún workflow ni deploy en este paso.
 - [x] Gate B local del piloto: la salida tiene 262 archivos y 3.519.822 bytes; los cinco controladores minificados son 3.820–4.858 B y CSS 5.785 B. El builder comprueba 20.000 archivos/24 KiB de asset, inspecciona que no haya requests remotos ni ejecución dinámica y el código del piloto solo usa módulos locales/APIs nativas. `esbuild` es dependencia de build MIT; no se empaqueta en el navegador. No se añadieron Functions, APIs, fuentes externas ni servicios facturables.
+
+## Continuación · Roofing Calculator (#078) · 2026-10-07
+
+- [x] Herramienta de estimación local diferenciada de `roof-pitch`: convierte área proyectada en superficie inclinada, aplica desperdicio configurable, calcula cuadrados de cubierta, paquetes enteros de tejas y coste opcional. No promete ajuste estructural, cumplimiento normativo ni presupuesto profesional.
+- [x] Aceptación y validación: con 1.200 ft², pitch 6:12, 10% de extra y 3 paquetes/cuadrado calcula 1.341,64 ft² inclinados, 1.475,8 ft² de pedido, 14,76 cuadrados y 45 paquetes; a 36 por paquete, total 1.620. Rechaza rise=0 y límites/entradas inválidas; reset, copia y foco/error comprobados.
+- [x] Copy y metadata en los 36 idiomas, con dos FAQ y aviso de estimación; títulos ≤60 y descripciones ≤160 caracteres. Textos autogenerados/traducidos como borrador comprensible, no revisión nativa. QA estático confirma lang, 37 hreflang, canonical, FAQPage y ausencia de marcadores o undefined en todas las rutas.
+- [x] Gates focalizados: 68/68 pruebas de catálogo/formularios/contratos/build y lógica aprobadas; `git diff --check` sin errores. Bundle minificado 4.031 B, sin servicios de conversión ni llamadas externas de runtime.
+- [x] Build aislado: 504 URLs únicas de sitemap (468 herramientas + 36 portadas), 558 archivos y 9.872.395 bytes; todas las 36 páginas de Roofing pasan la auditoría estática. El contenido generado solo estuvo en `/tmp`; no es producción.
+- [x] Chrome DevTools local: recorrido inglés con el ejemplo y validación; Arabic RTL a 390×844, sin overflow horizontal, controles sin nombre ausente ni errores de consola. Inspección puntual del ejemplo y coste; no equivale a hardware físico o revisión humana de 36 traducciones.
+- [ ] No desplegado ni remitido a los buscadores. Se conserva en esta rama hasta cerrar los gates de release globales; no se modificó el sitemap de producción ni el catálogo de las 277 herramientas existentes.
 
 ## Publicación del piloto · 2026-10-07
 

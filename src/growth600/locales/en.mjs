@@ -10,6 +10,8 @@ import { roofPitchCalculatorEnglishCopy } from './roof-pitch-calculator.en.mjs';
 import { registerGrowthLocaleExtension } from '../locale-utils.mjs';
 import drywallCopies from './drywall-calculator.mjs';
 import { drywallEnglishCopy } from './drywall-calculator.en.mjs';
+import roofingCopies from './roofing-calculator.mjs';
+import { roofingCalculatorEnglishCopy } from './roofing-calculator.en.mjs';
 
 const actionCopy = Object.freeze({
   calculate: 'Calculate', generate: 'Make the draw', reset: 'Reset', example: 'Try an example', newGame: 'New game',
@@ -22,6 +24,7 @@ const actionCopy = Object.freeze({
 const reusableMessages = Object.freeze({ copied: 'Copied.', copyUnavailable: 'Copy is not available in this browser.' });
 
 const tools = {
+  'roofing-calculator': roofingCalculatorEnglishCopy,
   'drywall-calculator': drywallEnglishCopy,
   'gravel-calculator': {
     copyLanguage: 'en', name: 'Gravel calculator', title: 'Gravel calculator free & unlimited | UsefulVerse',
@@ -104,5 +107,6 @@ registerGrowthLocaleExtension(source, 'asphalt-calculator', asphaltCopies, 'grav
 registerGrowthLocaleExtension(source, 'soil-calculator', soilCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'pool-volume-calculator', poolCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'roof-pitch-calculator', roofCopies, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'roofing-calculator', roofingCopies, 'gravel-calculator');
 
 export default Object.freeze(source);

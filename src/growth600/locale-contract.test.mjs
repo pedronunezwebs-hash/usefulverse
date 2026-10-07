@@ -158,6 +158,19 @@ test('drywall calculator localizes estimation limits, units and FAQs across all 
   }
 });
 
+test('roofing calculator localizes material estimates, package coverage limits and FAQs across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'roofing-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.ok(copy.fields.safetyNote.trim());
+    assert.ok(copy.actions.squareFeet && copy.actions.squareMeters && copy.actions.inches);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.doesNotMatch(JSON.stringify(copy), /UVTOKEN\d+X|undefined|null/u, `${key}: no draft marker or missing copy`);
+  }
+});
+
 test('the first Google Translate Spanish draft covers every copy key and preserves required placeholders', () => {
   assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'es' }], { es: spanishGrowthCopy }), true);
   assert.ok(Object.values(spanishGrowthCopy).every((copy) => copy.copyLanguage === 'es'));

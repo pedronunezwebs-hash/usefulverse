@@ -1,5 +1,17 @@
 export const growthPilotTools = Object.freeze([
   {
+    id: 'roofing-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'roofing calculator',
+    secondaryIntents: ['roof shingles calculator', 'roofing squares calculator', 'roofing bundles calculator', 'roofing material cost calculator'],
+    functions: ['convert horizontal projected roof area to sloped roof area using rise and run', 'optional material allowance for cuts and waste', 'roofing squares and whole shingle bundles from a user-selected bundles-per-square rate', 'optional cost from a user-entered bundle price'],
+    acceptance: 'For 1,200 ft² projected area and 6:12 pitch, sloped roof area is greater than 1,200 ft²; with 10% extra and 3 bundles per 100 ft², round up to 45 bundles.',
+    boundary: 'Material estimate only. Roof dimensions, layers, valley/ridge details, ventilation, underlayment, fasteners, flashing, product coverage, local codes and safe access are not evaluated; verify measurements and manufacturer coverage with a qualified roofer.',
+    relatedExistingIds: ['unit-converter'],
+    logicModule: './tools/roofing-calculator/logic.mjs',
+  },
+  {
     id: 'drywall-calculator',
     category: 'home-materials',
     type: 'calculator',

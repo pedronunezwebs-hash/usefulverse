@@ -49,6 +49,7 @@ const messages = { copied: 'Copied.', copyUnavailable: 'Copy unavailable.', calc
 function toolCopy(tool, language) {
   const name = `${tool.id} ${language}`;
   const fields = {
+    'roofing-calculator': { projectedArea: 'Projected roof area', areaUnit: 'Area unit', rise: 'Rise', run: 'Run', pitchUnit: 'Pitch unit', wastePercent: 'Extra material', bundlesPerSquare: 'Bundles per square', pricePerBundle: 'Price per bundle', safetyNote: 'Estimate only; verify measurements.' },
     'drywall-calculator': { roomLength: 'Room length', roomWidth: 'Room width', wallHeight: 'Wall height', openingArea: 'Opening area', roomCount: 'Room count', unit: 'Unit', includeCeiling: 'Surfaces', boardWidth: 'Board width', boardHeight: 'Board length', wastePercent: 'Extra material', screwsPerBoard: 'Screws per board', pricePerBoard: 'Price per board', accuracyNote: 'Area estimate; cuts and layout change actual quantity.' },
     'soil-calculator': { shape: 'Container shape', length: 'Inside length', width: 'Inside width', diameter: 'Inside diameter', depth: 'Fill depth', dimensionUnit: 'Dimension unit', containerCount: 'Number of containers', wastePercent: 'Extra soil', bagVolume: 'Bag volume', bagUnit: 'Bag volume unit', accuracyNote: 'Estimate only; tapered pots and settling change the actual amount.' },
     'pool-volume-calculator': { shape: 'Pool shape', length: 'Inside length', width: 'Inside width', ovalLength: 'Oval length', ovalWidth: 'Oval width', diameter: 'Inside diameter', floor: 'Floor type', shallowDepth: 'Shallow depth', deepDepth: 'Deep depth', dimensionUnit: 'Dimension unit', accuracyNote: 'Estimate only; steps and fill level change capacity.' },
@@ -68,12 +69,14 @@ function toolCopy(tool, language) {
   if (tool.id === 'pool-volume-calculator') Object.assign(actions, { oval: 'Oval', flat: 'Flat floor', sloped: 'Sloped floor' });
   if (tool.id === 'roof-pitch-calculator') Object.assign(actions, { millimeters: 'Millimeters' });
   if (tool.id === 'drywall-calculator') Object.assign(actions, { millimeters: 'Millimeters', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only' });
+  if (tool.id === 'roofing-calculator') Object.assign(actions, { squareMeters: 'Square metres', squareFeet: 'Square feet' });
   const localizedMessages = tool.id === 'stair-calculator' ? { ...messages, riserHeight: 'Riser height', treadCount: 'Tread count', totalRun: 'Total run', angle: 'Angle', stringerLength: 'Stringer length', diagram: 'Stair side view' } : messages;
   const asphaltMessages = tool.id === 'asphalt-calculator' ? { ...messages, compactedVolume: 'Compacted volume', orderVolume: 'Order volume', metricTonnes: 'Metric tonnes', shortTons: 'US short tons', estimatedCost: 'Estimated material cost' } : {};
   const poolMessages = tool.id === 'pool-volume-calculator' ? { liters: 'Litres', usGallons: 'US gallons', imperialGallons: 'Imperial gallons', averageDepth: 'Average depth' } : {};
   const roofMessages = tool.id === 'roof-pitch-calculator' ? { angleDegrees: 'Angle', angleRadians: 'Angle in radians', slopePercent: 'Slope', pitch: 'Rise per 12 run', rafterLength: 'Rafter length' } : {};
   const drywallMessages = tool.id === 'drywall-calculator' ? { wallArea: 'Net wall area', ceilingArea: 'Ceiling area', totalArea: 'Total surface area', boardCount: 'Whole boards', boardCoverage: 'Board coverage', estimatedScrews: 'Estimated screws', jointSeams: 'Approximate joint seams', estimatedCost: 'Estimated board cost', costNotEntered: 'Enter a board price.' } : {};
-  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: { ...localizedMessages, ...asphaltMessages, ...poolMessages, ...roofMessages, ...drywallMessages }, copyLanguage: language };
+  const roofingMessages = tool.id === 'roofing-calculator' ? { projectedArea: 'Projected area', roofArea: 'Sloped roof area', extraArea: 'Area with extra material', pitch: 'Pitch', slopeFactor: 'Slope multiplier', roofingSquares: 'Roofing squares', bundles: 'Bundles', estimatedCost: 'Estimated cost', costNotEntered: 'Enter a bundle price.' } : {};
+  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: { ...localizedMessages, ...asphaltMessages, ...poolMessages, ...roofMessages, ...drywallMessages, ...roofingMessages }, copyLanguage: language };
   if (tool.id === 'tire-size-calculator') localized.additionalFaqs = [
     { question: 'Will this replacement tire fit my vehicle?', answer: fields.fitmentNote },
     { question: 'How is actual speed estimated?', answer: 'Dashboard speed is multiplied by the ratio of new to current nominal tire diameter. It is an estimate.' },
@@ -101,6 +104,10 @@ function toolCopy(tool, language) {
   if (tool.id === 'drywall-calculator') localized.additionalFaqs = [
     { question: 'Do doors, windows and waste affect the sheet count?', answer: 'Enter total door and window area per room, then add material for cuts. The estimate is area-based; board layout and reusable offcuts may change the amount.' },
     { question: 'Does it set joint or screw installation rules?', answer: 'No. It estimates material only. Follow board-maker instructions and local requirements for joints, fire or moisture ratings and screw spacing.' },
+  ];
+  if (tool.id === 'roofing-calculator') localized.additionalFaqs = [
+    { question: 'How does roof pitch change the material estimate?', answer: 'The sloped surface is the horizontal projected area multiplied by the slope factor from rise and run. A steeper pitch increases the area.' },
+    { question: 'How many shingle bundles cover one roofing square?', answer: 'Enter the bundle rate printed on the product package. Coverage differs by shingle and product, so the calculator does not assume one universal rate.' },
   ];
   return localized;
 }

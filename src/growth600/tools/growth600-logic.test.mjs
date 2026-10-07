@@ -11,6 +11,7 @@ import { calculateSoil } from './soil-calculator/logic.mjs';
 import { calculatePoolVolume } from './pool-volume-calculator/logic.mjs';
 import { calculateRoofPitch } from './roof-pitch-calculator/logic.mjs';
 import { calculateDrywall } from './drywall-calculator/logic.mjs';
+import { calculateRoofing } from './roofing-calculator/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
 test('gravel calculator converts area and depth into volume, waste, weight and bags', () => {
@@ -105,6 +106,23 @@ test('drywall calculator estimates sheet coverage, seams, screws and optional co
   assert.throws(() => calculateDrywall({ roomLength: 4, roomWidth: 3, wallHeight: 2.5, roomCount: 1.5 }), /whole number/u);
   assert.throws(() => calculateDrywall({ roomLength: 4, roomWidth: 3, wallHeight: 2.5, screwsPerBoard: 32.5 }), /whole number/u);
   assert.throws(() => calculateDrywall({ roomLength: 4, roomWidth: 3, wallHeight: 2.5, boardWidth: 0 }), /Board width/u);
+});
+
+test('roofing calculator increases projected area by pitch and rounds material bundles up', () => {
+  const result = calculateRoofing({ projectedArea: 1200, areaUnit: 'ft2', rise: 6, run: 12, pitchUnit: 'in', wastePercent: 10, bundlesPerSquare: 3, pricePerBundle: 36 });
+  assert.ok(result.roofAreaM2 / (0.3048 ** 2) > 1200);
+  assert.ok(Math.abs(result.roofAreaM2 / (0.3048 ** 2) - 1341.6407865) < 1e-6);
+  assert.ok(Math.abs(result.orderAreaM2 / (0.3048 ** 2) - 1475.8048652) < 1e-6);
+  assert.equal(Number(result.roofingSquares.toFixed(3)), 14.758);
+  assert.equal(result.bundles, 45);
+  assert.equal(result.estimatedCost, 1620);
+  const flat = calculateRoofing({ projectedArea: 100, areaUnit: 'm2', rise: 0, run: 12, pitchUnit: 'in', wastePercent: 0, bundlesPerSquare: 3 });
+  assert.equal(flat.roofAreaM2, 100);
+  assert.equal(flat.bundles, 33);
+  assert.throws(() => calculateRoofing({ projectedArea: 100, areaUnit: 'm2', rise: 6, run: 0, pitchUnit: 'in' }), /Run/u);
+  assert.throws(() => calculateRoofing({ projectedArea: 100, areaUnit: 'acre', rise: 6, run: 12, pitchUnit: 'in' }), /square metres/u);
+  assert.throws(() => calculateRoofing({ projectedArea: 100, areaUnit: 'm2', rise: 6, run: 12, pitchUnit: 'yd' }), /pitch unit/u);
+  assert.throws(() => calculateRoofing({ projectedArea: 100, areaUnit: 'm2', rise: 6, run: 12, pitchUnit: 'in', wastePercent: 31 }), /Waste/u);
 });
 
 test('molar-mass parser handles formulas, nested groups and supported isotopes', () => {
