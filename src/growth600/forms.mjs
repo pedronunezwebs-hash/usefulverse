@@ -18,6 +18,7 @@ export function renderGrowthForm(toolId, copy) {
   const fields = copy?.fields ?? {};
   const actions = copy?.actions ?? {};
   const fieldNames = {
+    'image-color-picker': ['imageFile', 'accuracyNote', 'previewHint', 'zoom', 'currentColor', 'paletteLabel'],
     'image-region-redactor': ['imageFile', 'mode', 'strength', 'regionX', 'regionY', 'regionWidth', 'regionHeight', 'accuracyNote', 'dragHint', 'regionsLabel'],
     'image-sharpener': ['imageFile', 'amount', 'radius', 'threshold', 'compare', 'accuracyNote', 'previewHint', 'format', 'relatedRedactor', 'relatedCropper'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
@@ -40,6 +41,7 @@ export function renderGrowthForm(toolId, copy) {
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
+    'image-color-picker': ['load', 'addSample', 'copyColor', 'copyPalette', 'remove', 'clear', 'reset'],
     'image-region-redactor': ['load', 'addRegion', 'undo', 'clear', 'export', 'example', 'download', 'removeRegion', 'black', 'pixelate', 'blur', 'png', 'jpeg'],
     'image-sharpener': ['load', 'export', 'download', 'original', 'sharpened', 'png', 'jpeg'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
@@ -65,6 +67,21 @@ export function renderGrowthForm(toolId, copy) {
   const labels = Object.fromEntries([...new Set([...actionNames, 'calculate', 'generate', 'reset', 'example', 'newGame', 'rules', 'reveal', 'next', 'copy', 'download', 'result', 'progress', 'perPerson', 'metric', 'imperial', 'rectangle', 'circle', 'triangle', 'meters', 'centimeters', 'feet', 'inches', 'kgPerCubicMeter', 'lbPerCubicFoot', 'kilograms', 'pounds', 'twoPlayers', 'computer', 'human', 'currentPlayer', 'opponent', 'privacyNote', 'kmh', 'mph'])].map((key) => [key, actions[key] ?? '']));
   const submit = (name) => button(name === 'calculate' ? 'calculate' : 'generate', labels[name]);
   const reset = button('reset', labels.reset, 'secondary');
+
+  if (toolId === 'image-color-picker') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('color-picker-file', fields.imageFile, '<input id="color-picker-file" name="imageFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/avif,image/bmp" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div data-color-picker-workbench hidden>
+      <p class="hint">${escapeGrowthHtml(fields.previewHint)}</p>
+      <div class="color-picker-preview-wrap"><canvas data-color-picker-preview tabindex="0" role="button" aria-label="${escapeGrowthHtml(fields.previewHint)}"></canvas><span data-color-picker-marker aria-hidden="true" hidden></span></div>
+      ${label('color-picker-zoom', fields.zoom, '<select id="color-picker-zoom" name="zoom"><option value="1">1×</option><option value="2">2×</option><option value="4">4×</option><option value="8">8×</option></select>')}
+      <div class="color-picker-current" data-color-picker-current hidden><span data-current-swatch aria-hidden="true"></span><p data-current-value></p></div>
+      <div class="actions"><button type="button" data-action="add-sample" class="button button--primary" disabled>${escapeGrowthHtml(labels.addSample)}</button></div>
+      <section aria-labelledby="color-picker-palette-heading"><h2 id="color-picker-palette-heading">${escapeGrowthHtml(fields.paletteLabel)}</h2><ol data-color-picker-palette></ol><div class="actions"><button type="button" data-action="copy-palette" class="button button--secondary" disabled>${escapeGrowthHtml(labels.copyPalette)}</button><button type="button" data-action="clear" class="button button--secondary" disabled>${escapeGrowthHtml(labels.clear)}</button></div></section>
+    </div>
+    <div class="actions">${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+  </form>`, copy);
 
   if (toolId === 'image-region-redactor') return attachCopy(`<form id="tool-form" novalidate>
     ${label('image-file', fields.imageFile, '<input id="image-file" name="imageFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/avif,image/bmp" required>')}

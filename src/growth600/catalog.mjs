@@ -1,5 +1,17 @@
 export const growthPilotTools = Object.freeze([
   {
+    id: 'image-color-picker',
+    category: 'image-tools',
+    type: 'image-editor',
+    primaryIntent: 'image color picker',
+    secondaryIntents: ['pick color from image', 'color picker from photo', 'image pixel color picker'],
+    functions: ['load a local raster image', 'sample exact source pixels by pointer or keyboard with optional zoom', 'show source coordinates, HEX, RGB and alpha', 'build, copy and remove colors from a local palette'],
+    acceptance: 'Sampling a fully opaque pure-red source pixel returns RGB 255, 0, 0 and HEX #FF0000 at its exact source coordinates; transparent pixels retain their alpha value.',
+    boundary: 'Samples colors from a local image; it does not convert a typed color or identify a named color. Image decoding and preview use this device. Limited to 12 megapixels to keep memory use bounded; no image is uploaded.',
+    relatedExistingIds: ['color-converter', 'image-sharpener', 'image-region-redactor'],
+    logicModule: './tools/image-color-picker/logic.mjs',
+  },
+  {
     id: 'image-region-redactor',
     category: 'image-tools',
     type: 'image-editor',

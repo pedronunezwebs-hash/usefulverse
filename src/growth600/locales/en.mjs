@@ -24,6 +24,8 @@ import imageRegionRedactorCopies from './image-region-redactor-final.mjs';
 import { imageRegionRedactorEnglishCopy } from './image-region-redactor.en.mjs';
 import imageSharpenerCopies from './image-sharpener-final.mjs';
 import { imageSharpenerEnglishCopy } from './image-sharpener.en.mjs';
+import imageColorPickerCopies from './image-color-picker-final.mjs';
+import { imageColorPickerEnglishCopy } from './image-color-picker.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -98,6 +100,7 @@ const tools = {
   'wallpaper-calculator': wallpaperCalculatorEnglishCopy,
   'image-region-redactor': imageRegionRedactorEnglishCopy,
   'image-sharpener': imageSharpenerEnglishCopy,
+  'image-color-picker': imageColorPickerEnglishCopy,
   'roof-pitch-calculator': roofPitchCalculatorEnglishCopy,
   'molar-mass-calculator': {
     copyLanguage: 'en', name: 'Molar mass calculator', title: 'Molar mass calculator free unlimited | UsefulVerse',
@@ -169,5 +172,6 @@ registerGrowthLocaleExtension(source, 'pool-salt-calculator', poolSaltCopies, 'g
 registerGrowthLocaleExtension(source, 'wallpaper-calculator', localizedWallpaperCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'image-region-redactor', imageRegionRedactorCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'image-sharpener', imageSharpenerCopies, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'image-color-picker', imageColorPickerCopies, 'gravel-calculator');
 
 export default Object.freeze(source);

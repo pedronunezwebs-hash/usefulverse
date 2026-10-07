@@ -1,6 +1,7 @@
 export const REQUIRED_GROWTH_COPY = Object.freeze(['name', 'title', 'description', 'intro', 'howQuestion', 'howAnswer', 'privacyQuestion', 'privacyAnswer']);
 export const REQUIRED_GROWTH_HOME_COPY = Object.freeze(['title', 'description', 'intro', 'directoryLabel', 'freeLabel', 'footerFree', 'skipToTool', 'home', 'languageLabel', 'breadcrumbLabel', 'faqLabel']);
 export const REQUIRED_TOOL_MESSAGES = Object.freeze({
+  'image-color-picker': ['unsupportedImage', 'imageTooLarge', 'imageReady', 'selectImage', 'pixelSelected', 'sampleAdded', 'paletteFull', 'copiedColor', 'copiedPalette', 'copyUnavailable', 'paletteCleared'],
   'image-region-redactor': ['unsupportedImage', 'imageTooLarge', 'imageReady', 'selectImage', 'invalidRegion', 'regionAdded', 'regionRemoved', 'regionsCleared', 'addRegionFirst', 'exporting', 'exportFailed', 'exportReady', 'region'],
   'image-sharpener': ['unsupportedImage', 'imageTooLarge', 'imageReady', 'selectImage', 'exporting', 'exportFailed', 'exportReady'],
   'wallpaper-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'netArea', 'strips', 'dropLength', 'dropsPerRoll', 'stripsToOrder', 'rolls'],
@@ -22,6 +23,7 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   mancala: ['pit', 'seeds', 'playerOne', 'playerTwo', 'playerOneWins', 'playerTwoWins', 'tie', 'gameOver', 'turn'],
 });
 export const REQUIRED_TOOL_FIELDS = Object.freeze({
+  'image-color-picker': ['imageFile', 'accuracyNote', 'previewHint', 'zoom', 'currentColor', 'paletteLabel', 'relatedSharpener', 'relatedRedactor'],
   'image-region-redactor': ['imageFile', 'mode', 'strength', 'regionX', 'regionY', 'regionWidth', 'regionHeight', 'accuracyNote', 'dragHint', 'regionsLabel', 'format', 'relatedMosaic', 'relatedCropper'],
   'image-sharpener': ['imageFile', 'amount', 'radius', 'threshold', 'compare', 'accuracyNote', 'previewHint', 'format', 'relatedRedactor', 'relatedCropper'],
   'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
@@ -43,6 +45,7 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   mancala: ['mode', 'board', 'rules'],
 });
 export const REQUIRED_TOOL_ACTIONS = Object.freeze({
+  'image-color-picker': ['load', 'addSample', 'copyColor', 'copyPalette', 'remove', 'clear', 'reset'],
   'image-region-redactor': ['load', 'addRegion', 'undo', 'clear', 'export', 'example', 'download', 'removeRegion', 'black', 'pixelate', 'blur', 'png', 'jpeg'],
   'image-sharpener': ['load', 'export', 'download', 'original', 'sharpened', 'png', 'jpeg', 'reset'],
   'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
@@ -95,7 +98,7 @@ export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, {
           if (typeof copy.messages?.[key] === 'string' && !copy.messages[key].includes(token)) errors.push(`${locale.key}/${tool.id}: messages.${key} must preserve ${token}`);
         }
       }
-      if (['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'image-region-redactor', 'image-sharpener'].includes(tool.id)
+      if (['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'image-region-redactor', 'image-sharpener', 'image-color-picker'].includes(tool.id)
         && (!Array.isArray(copy.additionalFaqs) || copy.additionalFaqs.length !== 2
           || copy.additionalFaqs.some((faq) => !faq.question?.trim() || !faq.answer?.trim()))) {
         errors.push(`${locale.key}/${tool.id}: two complete localized tool FAQs are required`);

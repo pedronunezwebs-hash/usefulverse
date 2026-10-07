@@ -27,6 +27,12 @@ const copies = {
   'stair-calculator': { name: 'Stair calculator', actions, messages, fields: { totalRise: 'Total rise', riserCount: 'Number of risers', treadDepth: 'Tread depth', unit: 'Length unit', codeNote: 'Geometry estimate only. Check local building rules.', relatedUnitConverter: 'Need to convert measurements? Open the unit converter.' } },
   'asphalt-calculator': { name: 'Asphalt calculator', actions, messages, fields: { area: 'Paved area', areaUnit: 'Area unit', compactedThickness: 'Compacted thickness', thicknessUnit: 'Thickness unit', density: 'Mix density', densityUnit: 'Density unit', wastePercent: 'Extra material', pricePerTonne: 'Price per metric tonne', accuracyNote: 'Estimates only; confirm with your supplier.', relatedConcreteCalculator: 'Planning a concrete slab? Try the concrete calculator.' } },
   mancala: { name: 'Mancala', actions, messages, fields: { mode: 'Game mode', board: 'Kalah board', rules: 'Choose a pit. Seeds are sown counter-clockwise; the other player store is skipped.' } },
+  'image-color-picker': {
+    name: 'Image color picker',
+    actions: { ...actions, load: 'Choose image', addSample: 'Add color to palette', copyColor: 'Copy color', copyPalette: 'Copy HEX palette', remove: 'Remove', clear: 'Clear palette' },
+    messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', pixelSelected: 'Pixel selected.', sampleAdded: 'Color added.', paletteFull: 'Palette is full.', copiedColor: 'Color copied.', copiedPalette: 'Palette copied.', copyUnavailable: 'Clipboard unavailable.', paletteCleared: 'Palette cleared.' },
+    fields: { imageFile: 'Choose image', accuracyNote: 'Maximum 12 megapixels.', previewHint: 'Click a pixel or use arrow keys.', zoom: 'Zoom', currentColor: 'Current pixel', paletteLabel: 'Color palette', relatedSharpener: 'Use the sharpener.', relatedRedactor: 'Use the redactor.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -42,6 +48,13 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(renderGrowthForm('molar-mass-calculator', copies['molar-mass-calculator']), /maxlength="160"/u);
   assert.match(renderGrowthForm('secret-santa-generator', copies['secret-santa-generator']), /data-reveal-name/u);
   assert.match(renderGrowthForm('mancala', copies.mancala), /data-board/u);
+  const colorPicker = renderGrowthForm('image-color-picker', copies['image-color-picker']);
+  assert.match(colorPicker, /type="file" accept="image\/png,image\/jpeg,image\/webp,image\/gif,image\/avif,image\/bmp"/u);
+  assert.match(colorPicker, /data-color-picker-preview tabindex="0" role="button"/u);
+  assert.match(colorPicker, /name="zoom"/u);
+  assert.match(colorPicker, /data-color-picker-palette/u);
+  assert.match(colorPicker, /data-action="copy-palette"/u);
+  assert.match(colorPicker, /data-action="reset"/u);
   assert.match(renderGrowthForm('gravel-calculator', copies['gravel-calculator']), /type="submit" data-action="calculate"/u);
   assert.match(renderGrowthForm('secret-santa-generator', copies['secret-santa-generator']), /type="submit" data-action="generate"/u);
   const stairs = renderGrowthForm('stair-calculator', copies['stair-calculator']);

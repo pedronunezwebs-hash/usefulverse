@@ -68,6 +68,19 @@ test('the first real English pilot copy satisfies every field, message, placehol
   assert.ok(Object.values(englishGrowthCopy).every((copy) => copy.title.length <= 60));
 });
 
+test('image color picker has complete locale-specific copy and metadata in all 36 languages', () => {
+  const colorPicker = allGrowthPilotTools.find(({ id }) => id === 'image-color-picker');
+  assert.ok(colorPicker);
+  assert.equal(localeEntries.length, 36);
+  assert.equal(assertGrowthLocaleCoverage([colorPicker], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][colorPicker.id];
+    assert.equal(copy.copyLanguage, key);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
 test('tire-size calculator has localized copy and complete controls in every supported language', () => {
   const tireTool = allGrowthPilotTools.find(({ id }) => id === 'tire-size-calculator');
   assert.ok(tireTool);
