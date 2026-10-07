@@ -1,0 +1,3 @@
+/* Keep the keyboard skip link off-canvas vertically, never thousands of pixels horizontally. */
+.skip-link{position:fixed;left:auto;right:auto;inset-inline-start:1rem;inset-block-start:0;transform:translateY(-150%)}
+.skip-link:focus{left:auto;right:auto;transform:translateY(0)}

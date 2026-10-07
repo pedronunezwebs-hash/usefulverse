@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-07",
+  "metrics": [
+    {
+      "country": "US/en",
+      "keyword": "world meeting planner",
+      "volume": 2900,
+      "kd": 27,
+      "cpc": null,
+      "updated": "2026-09-17 19:52:17 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "commercial",
+        "foreign_intent": [
+          "informational",
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-30 01:38:29 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "world time clock",
+      "volume": 201000,
+      "kd": 94,
+      "cpc": 2.08,
+      "updated": "2026-09-15 13:44:18 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-30 00:28:46 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "writing prompt generator",
+      "volume": 5400,
+      "kd": 10,
+      "cpc": 6.26,
+      "updated": "2026-09-17 00:56:43 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-30 02:16:32 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "writing tracker",
+      "volume": 390,
+      "kd": 9,
+      "cpc": 9.7,
+      "updated": "2026-09-13 04:00:52 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "transactional",
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-30 09:10:30 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "xml sitemap checker",
+      "volume": 260,
+      "kd": 1,
+      "cpc": 9.1,
+      "updated": "2026-09-13 17:26:40 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "navigational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-30 00:39:09 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "xml to csv converter",
+      "volume": 480,
+      "kd": 0,
+      "cpc": 5.27,
+      "updated": "2026-09-13 05:27:45 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial",
+          "transactional"
+        ],
+        "last_updated_time": "2026-04-30 00:29:57 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "xml to json converter",
+      "volume": 2400,
+      "kd": 0,
+      "cpc": 4.87,
+      "updated": "2026-09-12 01:31:38 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": [
+          "commercial"
+        ],
+        "last_updated_time": "2026-04-30 00:30:05 +00:00"
+      }
+    },
+    {
+      "country": "US/en",
+      "keyword": "yahtzee game",
+      "volume": 301000,
+      "kd": 36,
+      "cpc": 2.11,
+      "updated": "2026-09-13 03:11:21 +00:00",
+      "intent": {
+        "se_type": "google",
+        "main_intent": "informational",
+        "foreign_intent": null,
+        "last_updated_time": "2026-04-30 00:47:24 +00:00"
+      }
+    }
+  ]
+}
