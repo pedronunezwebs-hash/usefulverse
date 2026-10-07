@@ -10,7 +10,19 @@
 - [x] F2 — Capacidad y coste estático comprobados: Cloudflare muestra un proyecto Pages actual (`usefulverse`). La documentación vigente indica hasta 100 proyectos por cuenta Free, 20.000 archivos por proyecto Free y peticiones a assets estáticos gratuitas e ilimitadas. La distribución planeada en una segunda salida estática es factible por cuota; no se ha creado todavía el segundo proyecto ni configurado su dominio.
 - [ ] F2 — Crear el proyecto Pages gratuito `usefulverse-tools`, configurar build separado y `tools.usefulverse.com`; hacerlo después de que el piloto esté construido y validado localmente.
 - [ ] F3 — Infraestructura aditiva para catálogo, renderer/origen canónico, 36 idiomas, builds y límites de tamaño.
-- [ ] F4 — Piloto de cinco familias: `gravel-calculator`, `molar-mass-calculator`, `auto-loan-refinance-calculator`, `secret-santa-generator`, `mancala`. Todas pendientes de implementar y pasar C/F/E/X/L/B/P/S. Este orden cubre hogar, ciencias, finanzas, organización y juegos.
+- [ ] F4 — Piloto de cinco familias: `gravel-calculator`, `molar-mass-calculator`, `auto-loan-refinance-calculator`, `secret-santa-generator`, `mancala`. Los motores puros iniciales están implementados y tienen 7 pruebas; **ninguna herramienta está terminada**: faltan revisión integral, interfaz, exportación cuando aplique, 36 idiomas, build/presupuestos, publicación y sitemap (C/F/E/X/L/B/P/S).
+
+## Avance de implementación · motores del piloto
+
+- [x] Grava: área de rectángulo/círculo/triángulo, volumen, desperdicio, densidad, peso estimado y redondeo de sacos; entradas fuera de rango rechazadas.
+- [x] Masa molar: parser local acotado para grupos, hidratos e isótopos expresamente incluidos; H₂O = 18,015 g/mol. Elementos/isótopos no soportados y fórmulas inválidas se rechazan; no se finge soporte universal.
+- [x] Refinanciación auto: pagos amortizados con APR 0%, cargos iniciales o financiados, coste total y punto de equilibrio acumulado por mes; solo matemáticas, sin recomendar una tasa.
+- [x] Secret Santa: emparejamiento sin autoasignación, exclusiones, imposibilidad explícita, fuente aleatoria inyectable y hasta 30 participantes.
+- [x] Mancala/Kalah: siembra, omisión del almacén contrario, capturas, turno extra, barrido final, empate y rival local heurístico. Invariante: conserva semillas.
+- [x] Suite piloto: `node --test src/growth600/tools/growth600-logic.test.mjs` — 7/7; incluye aceptación, límites, imposibilidad, variedad del sorteo y partidas deterministas con conservación de semillas.
+- [x] Regresión del repo: `npm test` — 837 aprobados, 0 fallidos; `USEFULVERSE_DIST=/tmp/usefulverse-impl.uEAJhh/baseline-dist npm run check` — las 9.972 páginas de herramientas actuales siguen generando correctamente y el sitemap root conserva 10.260 URLs.
+- [ ] Interfaz/producto y localización de los cinco pilotos; aún no hay páginas generadas en el subdominio.
+- [ ] Integración automática al `npm test` se verificará una vez implementados el builder y sus gates separados.
 
 ## Criterio y decisiones vigentes
 
@@ -24,9 +36,9 @@
 
 - `main` y rama base del plan: `685f91adfc7818a54f6dc0a967e290d13137a3dd`.
 - Cloudflare Pages Free: [límites oficiales](https://developers.cloudflare.com/pages/platform/limits/) (consulta de 2026-10-07); [precio de peticiones estáticas](https://developers.cloudflare.com/pages/functions/pricing/); [dominios personalizados](https://developers.cloudflare.com/pages/configuration/custom-domains/).
-- `npm test` y `npm run check` se ejecutaron sin modificar el código fuente. No se lanzó PageSpeed, tal como pide el plan.
+- La línea base inicial `npm test`/`npm run check` fue previa a esta implementación; tras añadir los motores, `npm test` completó 837/837 y `npm run check` conservó el build/sitemap root. No se lanzó PageSpeed, tal como pide el plan.
 - Ningún archivo se desplegó, ninguna URL nueva está publicada y el sitemap de producción no cambió.
 
 ## Próxima acción concreta
 
-Diseñar el renderer/build de `growth600` separado del renderer actual: el renderer común fija `https://usefulverse.com` en canonical y alternates, por lo que el nuevo render debe recibir un origen explícito y demostrar con pruebas que la salida root de las 277 sigue idéntica. Luego implementar un primer caso de la familia hogar y revisar el piloto local antes de ampliar.
+Implementar renderer/build aislado de `growth600`, sin importar ni ampliar `src/catalog.mjs` ni el runtime existente; el renderer root fija `https://usefulverse.com` en canonical/hreflang. El nuevo debe recibir el origen explícitamente, generar 36 rutas por piloto y superar tests de HTML/rutas/presupuestos. Después completar interfaces y traducciones reales antes de declarar un piloto en verde. La solicitud de muestra al endpoint público de Google Translate devolvió HTTP 429; no insistir ni contarla como localización válida.
