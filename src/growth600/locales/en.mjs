@@ -42,6 +42,8 @@ import solarCopies from './solar-panel-calculator-final.mjs';
 import { solarPanelCalculatorEnglishCopy } from './solar-panel-calculator.en.mjs';
 import btuCopies from './btu-calculator-final.mjs';
 import { btuCalculatorEnglishCopy } from './btu-calculator.en.mjs';
+import brickCopies from './brick-calculator-final.mjs';
+import { brickCalculatorEnglishCopy } from './brick-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -407,5 +409,6 @@ translatedBtuCopies.ar = Object.freeze({
 });
 const localizedBtuCopies = Object.freeze(Object.fromEntries(Object.entries(translatedBtuCopies).map(([language, copy]) => [language, cleanBtuMetadata(copy)])));
 registerGrowthLocaleExtension(source, 'btu-calculator', localizedBtuCopies, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'brick-calculator', { ...brickCopies, en: brickCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

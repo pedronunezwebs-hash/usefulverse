@@ -75,6 +75,11 @@ const copies = {
     messages: { ...messages, roomArea: 'Room area', roomVolume: 'Room volume', baseCapacity: 'Base capacity', ceilingAdjustment: 'Ceiling factor', insulationAdjustment: 'Insulation', sunAdjustment: 'Sunlight', occupantAdjustment: 'Extra occupants', kitchenAdjustment: 'Kitchen', capacity: 'Capacity', tons: 'Tons', belowReferenceBand: 'Below reference band.' },
     fields: { length: 'Room length', width: 'Room width', ceilingHeight: 'Ceiling height', dimensionUnit: 'Unit', insulationAdjustment: 'Insulation adjustment', sunExposure: 'Sun exposure', occupants: 'Occupants', kitchen: 'Kitchen', accuracyNote: 'Estimate only.' },
   },
+  'brick-calculator': {
+    name: 'Brick calculator', actions: { ...actions },
+    messages: { ...messages, grossArea: 'Gross area', netArea: 'Net area', courses: 'Courses', bricksPerCourse: 'Average bricks per course', bricksBeforeWaste: 'Bricks before extra', bricksToOrder: 'Bricks to order', mortarVolume: 'Mortar volume', mortarBags: 'Mortar bags' },
+    fields: { wallLength: 'Wall length', wallHeight: 'Wall height', wallUnit: 'Wall unit', brickLength: 'Brick length', brickHeight: 'Brick height', brickDepth: 'Brick depth', brickUnit: 'Brick unit', joint: 'Joint', jointUnit: 'Joint unit', openingWidth: 'Opening width', openingHeight: 'Opening height', openingCount: 'Opening count', wythes: 'Wall layers', wastePercent: 'Extra bricks', bagYieldLiters: 'Bag yield', accuracyNote: 'Estimate only.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -114,6 +119,11 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(btu, /name="insulationAdjustment"/u);
   assert.match(btu, /value="typical" selected/u);
   assert.match(btu, /aria-live="polite"/u);
+  const brick = renderGrowthForm('brick-calculator', copies['brick-calculator']);
+  assert.match(brick, /name="openingCount"/u);
+  assert.match(brick, /name="wythes"/u);
+  assert.match(brick, /name="bagYieldLiters"/u);
+  assert.match(brick, /data-action="copy"/u);
   assert.match(renderGrowthForm('secret-santa-generator', copies['secret-santa-generator']), /type="submit" data-action="generate"/u);
   const stairs = renderGrowthForm('stair-calculator', copies['stair-calculator']);
   assert.match(stairs, /name="riserCount" type="number" min="2" max="100" step="1"/u);

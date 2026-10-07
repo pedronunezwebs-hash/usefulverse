@@ -47,6 +47,7 @@ export function renderGrowthForm(toolId, copy) {
     'paver-calculator': ['length', 'width', 'surfaceUnit', 'moduleLength', 'moduleWidth', 'moduleUnit', 'paversPerModule', 'paverWastePercent', 'baseDepth', 'baseDepthUnit', 'baseWastePercent', 'pricePerPaver', 'basePricePerM3', 'currency', 'unitsNote', 'accuracyNote', 'relatedTileCalculator', 'relatedGravelCalculator'],
     'solar-panel-calculator': ['mode', 'dailyTargetKwh', 'panelCount', 'panelWatts', 'peakSunHours', 'lossPercent', 'panelLengthM', 'panelWidthM', 'electricityRate', 'systemCost', 'currency', 'assumptionNote'],
     'btu-calculator': ['length', 'width', 'ceilingHeight', 'dimensionUnit', 'insulationAdjustment', 'sunExposure', 'occupants', 'kitchen', 'accuracyNote'],
+    'brick-calculator': ['wallLength', 'wallHeight', 'wallUnit', 'brickLength', 'brickHeight', 'brickDepth', 'brickUnit', 'joint', 'jointUnit', 'openingWidth', 'openingHeight', 'openingCount', 'wythes', 'wastePercent', 'bagYieldLiters', 'accuracyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -79,6 +80,7 @@ export function renderGrowthForm(toolId, copy) {
     'paver-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'centimeters', 'inches', 'millimeters', 'squareMeters', 'squareFeet'],
     'solar-panel-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'productionMode', 'sizingMode', 'years'],
     'btu-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'feet', 'meters', 'inches', 'shaded', 'typical', 'sunny', 'no', 'yes'],
+    'brick-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'centimeters', 'inches'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -469,6 +471,27 @@ export function renderGrowthForm(toolId, copy) {
     ${label('btu-kitchen', fields.kitchen, `<select id="btu-kitchen" name="kitchen"><option value="no" selected>${escapeGrowthHtml(labels.no)}</option><option value="yes">${escapeGrowthHtml(labels.yes)}</option></select>`)}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'brick-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('brick-wall-unit', fields.wallUnit, `<select id="brick-wall-unit" name="wallUnit"><option value="ft">${escapeGrowthHtml(labels.feet)}</option><option value="m">${escapeGrowthHtml(labels.meters)}</option></select>`)}
+    ${label('brick-wall-length', fields.wallLength, '<input id="brick-wall-length" name="wallLength" type="number" min="0.01" max="10000" step="any" inputmode="decimal" value="10">')}
+    ${label('brick-wall-height', fields.wallHeight, '<input id="brick-wall-height" name="wallHeight" type="number" min="0.01" max="10000" step="any" inputmode="decimal" value="8">')}
+    ${label('brick-size-unit', fields.brickUnit, `<select id="brick-size-unit" name="brickUnit"><option value="in">${escapeGrowthHtml(labels.inches)}</option><option value="cm">${escapeGrowthHtml(labels.centimeters)}</option></select>`)}
+    ${label('brick-length', fields.brickLength, '<input id="brick-length" name="brickLength" type="number" min="1" max="100000" step="any" inputmode="decimal" value="7.625">')}
+    ${label('brick-height', fields.brickHeight, '<input id="brick-height" name="brickHeight" type="number" min="1" max="100000" step="any" inputmode="decimal" value="2.25">')}
+    ${label('brick-depth', fields.brickDepth, '<input id="brick-depth" name="brickDepth" type="number" min="1" max="100000" step="any" inputmode="decimal" value="3.625">')}
+    ${label('brick-joint-unit', fields.jointUnit, `<select id="brick-joint-unit" name="jointUnit"><option value="in">${escapeGrowthHtml(labels.inches)}</option><option value="cm">${escapeGrowthHtml(labels.centimeters)}</option></select>`)}
+    ${label('brick-joint', fields.joint, '<input id="brick-joint" name="joint" type="number" min="0" max="1000" step="any" inputmode="decimal" value="0.375">')}
+    ${label('brick-opening-width', fields.openingWidth, '<input id="brick-opening-width" name="openingWidth" type="number" min="0" max="100000" step="any" inputmode="decimal" value="3">')}
+    ${label('brick-opening-height', fields.openingHeight, '<input id="brick-opening-height" name="openingHeight" type="number" min="0" max="100000" step="any" inputmode="decimal" value="7">')}
+    ${label('brick-opening-count', fields.openingCount, '<input id="brick-opening-count" name="openingCount" type="number" min="0" max="1000" step="1" inputmode="numeric" value="1">')}
+    ${label('brick-wythes', fields.wythes, '<input id="brick-wythes" name="wythes" type="number" min="1" max="4" step="1" inputmode="numeric" value="1">')}
+    ${label('brick-waste-percent', fields.wastePercent, '<input id="brick-waste-percent" name="wastePercent" type="number" min="0" max="50" step="any" inputmode="decimal" value="5">')}
+    ${label('brick-bag-yield', fields.bagYieldLiters, '<input id="brick-bag-yield" name="bagYieldLiters" type="number" min="0.1" max="100000" step="any" inputmode="decimal" placeholder="">')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${button('calculate', labels.calculate)}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);
 

@@ -347,6 +347,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['random-name-picker'],
     logicModule: './tools/random-team-generator/logic.mjs',
   },
+  {
+    id: 'brick-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'brick calculator',
+    secondaryIntents: ['brick wall calculator', 'brick quantity calculator', 'brick mortar calculator', 'brick courses calculator'],
+    functions: ['estimate bricks from wall dimensions and actual brick size plus mortar joint', 'deduct repeated rectangular openings and show approximate courses and average bricks per course', 'apply configurable waste and wall wythes', 'estimate mortar volume and optional bag count from user-entered bag yield'],
+    acceptance: 'For a 10 ft × 8 ft wall with modular 7.625 × 2.25 in bricks, a 3/8 in joint, one 3 × 7 ft opening and 5% waste, the estimated order is lower than for the same closed wall; with zero waste, two wythes double the brick and mortar estimate.',
+    boundary: 'Planning estimate for a flat, rectangular wall only. It does not create a bond/layout or cut plan, model corners, lintels, reinforcement, waste reuse, structural loads, moisture, code, or mortar mix. Brick dimensions and joint size are editable; openings are deducted by area, so placement and course interruptions are not modeled. Check manufacturer coverage and consult a qualified mason. All arithmetic stays in this browser.',
+    relatedExistingIds: ['tile-calculator', 'gravel-calculator'],
+    logicModule: './tools/brick-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

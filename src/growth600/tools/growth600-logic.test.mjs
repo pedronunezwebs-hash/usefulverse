@@ -16,6 +16,7 @@ import { calculateDeck } from './deck-calculator/logic.mjs';
 import { calculateFence } from './fence-calculator/logic.mjs';
 import { calculatePoolSalt } from './pool-salt-calculator/logic.mjs';
 import { calculateWallpaper } from './wallpaper-calculator/logic.mjs';
+import { calculateBrickMaterials } from './brick-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -38,6 +39,24 @@ test('wallpaper calculator counts pattern-aligned drops, openings and allowance'
   assert.equal(calculateWallpaper(base).rollsNeeded, 6);
   assert.equal(calculateWallpaper({ ...base, patternRepeat: 0.32 }).rollsNeeded, 8);
   assert.equal(calculateWallpaper({ ...base, openingsArea: 2.4 }).stripsNeeded, 21);
+});
+
+test('brick calculator counts openings, layers, courses, mortar and bag yield', () => {
+  const wall = { wallLength: 10, wallHeight: 8, wallUnit: 'ft', brickLength: 7.625, brickHeight: 2.25, brickDepth: 3.625, brickUnit: 'in', joint: 0.375, jointUnit: 'in', wastePercent: 0 };
+  const closed = calculateBrickMaterials(wall);
+  const door = calculateBrickMaterials({ ...wall, openingWidth: 3, openingHeight: 7, openingCount: 1, wastePercent: 5, bagYieldLiters: 25 });
+  assert.ok(door.bricksToOrder < calculateBrickMaterials({ ...wall, wastePercent: 5 }).bricksToOrder);
+  const doubleWythe = calculateBrickMaterials({ ...wall, wythes: 2 });
+  assert.equal(doubleWythe.bricksToOrder, closed.bricksToOrder * 2);
+  assert.equal(doubleWythe.mortarLiters, closed.mortarLiters * 2);
+  assert.equal(door.courses, 37);
+  assert.ok(door.mortarLiters > 0);
+  assert.equal(door.mortarBags, Math.ceil(door.mortarLiters / 25));
+  const metric = calculateBrickMaterials({ wallLength: 3, wallHeight: 2.4, wallUnit: 'm', brickLength: 19, brickHeight: 5.7, brickDepth: 9, brickUnit: 'cm', joint: 1, jointUnit: 'cm' });
+  assert.ok(metric.bricksToOrder > 0);
+  assert.throws(() => calculateBrickMaterials({ ...wall, openingWidth: 11, openingHeight: 9, openingCount: 2 }), /Openings/u);
+  assert.throws(() => calculateBrickMaterials({ ...wall, openingWidth: 0, openingHeight: 4, openingCount: 1 }), /both opening/u);
+  assert.throws(() => calculateBrickMaterials({ ...wall, wythes: 1.5 }), /whole number/u);
 });
 
 test('image redactor validates safe image sizes, exact regions, drag mapping and modes', () => {

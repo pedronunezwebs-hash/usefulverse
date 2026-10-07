@@ -679,3 +679,18 @@ test('the Gujarati machine-translation draft covers every copy key and preserves
   assert.equal(gujaratiGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver} {recipient}ને ભેટ આપે છે.');
   assert.equal(gujaratiGrowthCopy.mancala.messages.turn, '{player}નો વારો.');
 });
+
+test('brick calculator has complete static localized copy and bounded metadata in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'brick-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.copyLanguage, key);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    assert.ok(copy.fields.accuracyNote.length > 40, key);
+    assert.doesNotMatch(JSON.stringify(copy), /¤¤¤\d{4}¤¤¤|undefined|null/u, key);
+    if (key !== 'en') assert.notEqual(copy.intro, localizedCopies.en[tool.id].intro, key);
+  }
+});
