@@ -40,3 +40,14 @@ test('Filipino route keeps its established BCP 47 page language while hreflang u
   assert.match(homeHtml, /hreflang="tl" href="https:\/\/tools\.usefulverse\.com\/tl\//u);
   assert.match(homeHtml, /href="\/favicon\.svg"/u);
 });
+
+test('tool renderer includes additional localized FAQs in page content and schema plus localized related route', () => {
+  const html = renderGrowthToolPage({
+    tool: { id: 'tire-size-calculator' }, locale: locales[1], localeEntries: locales,
+    copy: { ...copy, fields: { relatedUnitConverter: 'Convert measurements with the unit converter.' }, additionalFaqs: [{ question: 'Does this fit?', answer: 'This estimate cannot confirm fitment.' }] },
+    origin: 'https://tools.usefulverse.com', formHtml: '<form id="tool-form"></form>',
+  });
+  assert.match(html, /https:\/\/usefulverse\.com\/ar\/tools\/unit-converter\//u);
+  assert.match(html, /<summary>Does this fit\?<\/summary>/u);
+  assert.match(html, /"name":"Does this fit\?"/u);
+});

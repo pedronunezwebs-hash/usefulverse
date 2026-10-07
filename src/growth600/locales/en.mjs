@@ -1,3 +1,6 @@
+import tireSizeCopies from './tire-size-calculator.mjs';
+import { registerGrowthLocaleExtension } from '../locale-utils.mjs';
+
 const actionCopy = Object.freeze({
   calculate: 'Calculate', generate: 'Make the draw', reset: 'Reset', example: 'Try an example', newGame: 'New game',
   rules: 'How to play', reveal: 'Reveal first pair', next: 'Next pair', copy: 'Copy result', download: 'Download result', result: 'Result',
@@ -70,7 +73,7 @@ const tools = {
   },
 };
 
-export default Object.freeze({
+const source = {
   _home: {
     copyLanguage: 'en', title: 'Free everyday tools | UsefulVerse', description: 'Simple free browser tools for useful everyday tasks.',
     intro: 'Small tools that do one clear job. They run in your browser, with no account or usage fee.', directoryLabel: 'Free everyday tools',
@@ -78,4 +81,8 @@ export default Object.freeze({
     skipToTool: 'Skip to tool', home: 'Home', languageLabel: 'Language', breadcrumbLabel: 'Breadcrumb', faqLabel: 'Frequently asked questions',
   },
   ...tools,
-});
+};
+
+registerGrowthLocaleExtension(source, 'tire-size-calculator', tireSizeCopies, 'gravel-calculator');
+
+export default Object.freeze(source);

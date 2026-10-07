@@ -1,5 +1,17 @@
 export const growthPilotTools = Object.freeze([
   {
+    id: 'tire-size-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'tire size calculator',
+    secondaryIntents: ['tire diameter calculator', 'tire circumference calculator', 'compare tire sizes', 'speedometer tire size difference'],
+    functions: ['parse metric tire sizes such as 205/55R16', 'nominal sidewall height, outer diameter, circumference and revolutions per distance', 'compare diameter and estimated speedometer difference', 'show ground-clearance change from nominal diameter difference'],
+    acceptance: '205/55R16 has a nominal diameter of approximately 631.9 mm; comparing it with itself returns zero difference.',
+    boundary: 'Uses nominal metric tire-size geometry only. It does not confirm wheel, suspension, brake, load, speed-rating or legal fitment; real dimensions vary by tire model and wear.',
+    relatedExistingIds: ['unit-converter'],
+    logicModule: './tools/tire-size-calculator/logic.mjs',
+  },
+  {
     id: 'gravel-calculator',
     category: 'home-materials',
     type: 'calculator',

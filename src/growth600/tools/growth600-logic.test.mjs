@@ -4,6 +4,7 @@ import { calculateCircularArea, calculateGravel, calculateRectangularArea, calcu
 import { calculateMolarMass, parseChemicalFormula } from './molar-mass-calculator/logic.mjs';
 import { compareAutoLoanRefinance, monthlyLoanPayment } from './auto-loan-refinance-calculator/logic.mjs';
 import { assignSecretSanta } from './secret-santa-generator/logic.mjs';
+import { compareMetricTireSizes, parseMetricTireSize } from './tire-size-calculator/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
 test('gravel calculator converts area and depth into volume, waste, weight and bags', () => {
@@ -100,6 +101,33 @@ test('Mancala conserves seeds and implements extra turns, captures, endings and 
   assert.deepEqual(legalMancalaPits(noMoves), []);
   assert.equal(chooseMancalaMove(initial, () => 0), 2);
   assert.equal(playMancalaMove(initial, 6), null);
+});
+
+test('metric tire comparison computes nominal geometry and speedometer estimate', () => {
+  const size = parseMetricTireSize('205/55R16');
+  assert.ok(Math.abs(size.diameterMm - 631.9) < 0.1);
+  assert.ok(Math.abs(size.circumferenceMm - Math.PI * size.diameterMm) < 1e-9);
+  assert.equal(Number(size.sidewallMm.toFixed(2)), 112.75);
+
+  const same = compareMetricTireSizes('205/55R16', '205/55R16');
+  assert.equal(same.diameterDifferenceMm, 0);
+  assert.equal(same.circumferenceDifferenceMm, 0);
+  assert.equal(same.diameterChangePercent, 0);
+  assert.equal(same.estimatedActualSpeed, 100);
+  assert.equal(same.identicalSize, true);
+  assert.equal(compareMetricTireSizes('205 / 55 r 16', '205/55R16').identicalSize, true);
+
+  const larger = compareMetricTireSizes('205/55R16', '225/55R17', 60, 'mph');
+  assert.ok(larger.diameterDifferenceMm > 0);
+  assert.ok(larger.estimatedActualSpeed > 60);
+  assert.equal(larger.groundClearanceChangeMm, larger.diameterDifferenceMm / 2);
+  assert.throws(() => parseMetricTireSize('31x10.50R15'), /metric tire format/);
+  assert.throws(() => parseMetricTireSize('40/55R16'), /Width/);
+  assert.throws(() => parseMetricTireSize('205/10R16'), /Aspect ratio/);
+  assert.throws(() => compareMetricTireSizes('205/55R16', '205/55R16', 250, 'mph'), /Indicated speed/);
+  assert.throws(() => compareMetricTireSizes('205/55R16', '205/55R16', 0), /Indicated speed/);
+  assert.equal(compareMetricTireSizes('205/55R16', '205/55R16', 1).estimatedActualSpeed, 1);
+  assert.throws(() => compareMetricTireSizes(null, '205/55R16'), /metric tire format/);
 });
 
 test('Mancala keeps the original seed total over complete deterministic games', () => {

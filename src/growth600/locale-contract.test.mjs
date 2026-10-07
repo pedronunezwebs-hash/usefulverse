@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { assertGrowthLocaleCoverage } from './locale-contract.mjs';
-import { growthPilotTools } from './catalog.mjs';
+import { growthPilotTools as allGrowthPilotTools } from './catalog.mjs';
+import { localeEntries } from '../locales.mjs';
 import englishGrowthCopy from './locales/en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
 import portugueseGrowthCopy from './locales/pt.mjs';
@@ -39,6 +40,12 @@ import persianGrowthCopy from './locales/fa.mjs';
 import amharicGrowthCopy from './locales/am.mjs';
 import gujaratiGrowthCopy from './locales/gu.mjs';
 
+const growthPilotTools = allGrowthPilotTools.filter(({ id }) => id !== 'tire-size-calculator');
+const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
+  key,
+  (await import(`./locales/${key}.mjs`)).default,
+])));
+
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
 const sampleHome = (language) => ({ title: `${language} tools | UsefulVerse`, description: 'Free browser tools.', intro: 'Simple tools.', directoryLabel: 'Tools', freeLabel: 'Free', footerFree: 'Free tools.', skipToTool: 'Skip', home: 'Home', languageLabel: 'Language', breadcrumbLabel: 'Breadcrumb', faqLabel: 'FAQ', copyLanguage: language });
@@ -59,6 +66,19 @@ test('growth release gate enforces metadata limits and language-specific copy', 
 test('the first real English pilot copy satisfies every field, message, placeholder and title budget', () => {
   assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'en' }], { en: englishGrowthCopy }), true);
   assert.ok(Object.values(englishGrowthCopy).every((copy) => copy.title.length <= 60));
+});
+
+test('tire-size calculator has localized copy and complete controls in every supported language', () => {
+  const tireTool = allGrowthPilotTools.find(({ id }) => id === 'tire-size-calculator');
+  assert.ok(tireTool);
+  assert.equal(localeEntries.length, 36);
+  assert.equal(assertGrowthLocaleCoverage([tireTool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tireTool.id];
+    assert.ok(copy.fields.fitmentNote.trim().length > 0, `${key}: fitment limits should be present`);
+    assert.ok(copy.messages.sameSize.length > 0, `${key}: equality state should be localized`);
+    assert.ok(copy.actions.kmh.length > 0 && copy.actions.mph.length > 0, `${key}: speed units should be labeled`);
+  }
 });
 
 test('the first Google Translate Spanish draft covers every copy key and preserves required placeholders', () => {

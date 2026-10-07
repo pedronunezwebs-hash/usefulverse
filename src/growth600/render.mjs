@@ -30,7 +30,11 @@ export function renderGrowthToolPage({ tool, locale, localeEntries, copy, origin
   const faq = [
     { question: copy.howQuestion, answer: copy.howAnswer },
     { question: copy.privacyQuestion, answer: copy.privacyAnswer },
+    ...(Array.isArray(copy.additionalFaqs) ? copy.additionalFaqs : []),
   ];
+  const relatedTool = copy.fields?.relatedUnitConverter
+    ? `<p class="related-tool"><a href="https://usefulverse.com${localePath(locale.key, 'unit-converter')}">${escapeGrowthHtml(copy.fields.relatedUnitConverter)}</a></p>`
+    : '';
   const suffix = assetVersion ? `?v=${encodeURIComponent(assetVersion)}` : '';
   const schema = safeJsonLd({
     '@context': 'https://schema.org', '@type': 'WebApplication', name: copy.name, url: canonical,
@@ -67,6 +71,7 @@ export function renderGrowthToolPage({ tool, locale, localeEntries, copy, origin
     <section class="tool-intro"><p class="eyebrow">${escapeGrowthHtml(copy.freeLabel)}</p><h1>${escapeGrowthHtml(copy.name)}</h1><p>${escapeGrowthHtml(copy.intro)}</p></section>
     <section class="tool-panel" aria-label="${escapeGrowthHtml(copy.name)}">${formHtml}</section>
     <section class="tool-explainer"><h2>${escapeGrowthHtml(copy.howQuestion)}</h2><p>${escapeGrowthHtml(copy.howAnswer)}</p></section>
+    ${relatedTool}
     <section class="tool-faq" aria-label="${escapeGrowthHtml(copy.faqLabel)}"><h2>${escapeGrowthHtml(copy.faqLabel)}</h2>${faq.map(({ question, answer }) => `<details><summary>${escapeGrowthHtml(question)}</summary><p>${escapeGrowthHtml(answer)}</p></details>`).join('')}</section>
   </main>
   <footer><a href="${homeHref}">${escapeGrowthHtml(copy.home)}</a><p>${escapeGrowthHtml(copy.footerFree)}</p></footer>
