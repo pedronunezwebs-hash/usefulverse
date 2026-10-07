@@ -75,6 +75,7 @@ export default Object.freeze({
     copyLanguage: 'en', title: 'Free everyday tools | UsefulVerse', description: 'Simple free browser tools for useful everyday tasks.',
     intro: 'Small tools that do one clear job. They run in your browser, with no account or usage fee.', directoryLabel: 'Free everyday tools',
     freeLabel: 'Free to use, no account', footerFree: 'Free browser tools. Your data stays on your device where the tool allows it.',
+    skipToTool: 'Skip to tool', home: 'Home', languageLabel: 'Language', breadcrumbLabel: 'Breadcrumb', faqLabel: 'Frequently asked questions',
   },
   ...tools,
 });

@@ -1,4 +1,5 @@
 export const REQUIRED_GROWTH_COPY = Object.freeze(['name', 'title', 'description', 'intro', 'howQuestion', 'howAnswer', 'privacyQuestion', 'privacyAnswer']);
+export const REQUIRED_GROWTH_HOME_COPY = Object.freeze(['title', 'description', 'intro', 'directoryLabel', 'freeLabel', 'footerFree', 'skipToTool', 'home', 'languageLabel', 'breadcrumbLabel', 'faqLabel']);
 export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   'gravel-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'area', 'volume', 'orderVolume', 'estimatedWeight', 'bagsToBuy'],
   'molar-mass-calculator': ['copied', 'copyUnavailable', 'calculated', 'invalidFormula', 'atomCount', 'molarMass'],
@@ -27,6 +28,13 @@ export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, {
   for (const locale of localeEntries) {
     const languageCopy = copyByLocale?.[locale.key];
     if (!languageCopy) { errors.push(`${locale.key}: locale copy is missing`); continue; }
+    const home = languageCopy._home;
+    for (const key of REQUIRED_GROWTH_HOME_COPY) {
+      if (typeof home?.[key] !== 'string' || !home[key].trim()) errors.push(`${locale.key}/home: ${key} is missing`);
+    }
+    if (home?.copyLanguage !== locale.key) errors.push(`${locale.key}/home: copy language does not match its route`);
+    if (typeof home?.title === 'string' && home.title.length > titleMax) errors.push(`${locale.key}/home: title is ${home.title.length} characters (max ${titleMax})`);
+    if (typeof home?.description === 'string' && home.description.length > descriptionMax) errors.push(`${locale.key}/home: description is ${home.description.length} characters (max ${descriptionMax})`);
     for (const tool of tools) {
       const copy = languageCopy[tool.id];
       if (!copy) { errors.push(`${locale.key}/${tool.id}: translation is missing`); continue; }

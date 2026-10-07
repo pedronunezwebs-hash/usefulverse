@@ -28,8 +28,10 @@
 - [x] Builder separado probado temporalmente: 2 idiomas de fixture × (5 herramientas + portada), sitemap/robots/llms, canonicals y assets versionados; rechaza sobreescrituras, archivos de más, controladores ausentes y copy incompleto. El fixture no es un build listo para publicar.
 - [ ] Medir assets con las 36 traducciones reales; aún solo se midieron los cinco bundles de controlador y el CSS.
 - [x] Recorrido funcional en navegador local de los cinco pilotos: grava (cálculo, inválido y reset), fórmula `Ca(OH)2` (74,092 g/mol) y rechazo de `XeF4`, refinanciación (cuotas/coste/break-even), sorteo con exclusión y revelado privado paso a paso, Mancala con turno extra y respuesta del ordenador. Las pruebas detectaron y corrigieron botones de envío mal tipados y el adaptador aleatorio criptográfico.
-- [x] Regresión del repo (checkpoint actual): `npm test -- --test-reporter=spec` — 850 aprobados, 0 fallidos; `USEFULVERSE_DIST=/tmp/usefulverse-impl.uEAJhh/baseline-dist npm run check` — código 0. El root conserva 9.972 páginas de herramientas y 10.260 URLs. `git diff --check` también pasó.
-- [ ] Localización de los cinco pilotos: `src/growth600/locales/en.mjs` es copy real; faltan otros 35 idiomas y el gate impide un build parcial. La UI gratuita de Google Translate se comprobó con cuatro frases e IDs estables; aún no se ha completado ni guardado una tanda de localización.
+- [x] Regresión del repo (checkpoint actual): `npm test -- --test-reporter=spec` — 854 aprobados, 0 fallidos; `USEFULVERSE_DIST=/tmp/usefulverse-impl.uEAJhh/baseline-dist npm run check` — código 0. El root conserva 9.972 páginas de herramientas y 10.260 URLs. `git diff --check` también pasó.
+- [ ] Localización de los cinco pilotos: `src/growth600/locales/en.mjs` es copy fuente y español es el primer borrador importado desde Google Translate, para las 252 cadenas del home y los cinco pilotos. Falta validar su calidad humana y crear las otras 34 locales; el gate impide construir una publicación parcial.
+- [x] Infraestructura del locale español: materializador de traducciones indexadas preserva placeholders y fuente; metadatos cumplen topes; la página generada usa el copy traducido y no filtra `undefined`. Pruebas de locale/build: 10/10.
+- [x] Etiquetas hreflang: el renderer mantiene la ruta existente `/tl/` y `<html lang="fil-PH">`, pero emite `hreflang="tl"` según el código ISO 639-1 requerido por Google. Cubierto para páginas de herramienta y portada.
 - [x] Integración de bundle checks al `npm test`; `npm run build:growth600` falla de forma cerrada con lista de locales faltantes y no genera salida.
 
 ## Criterio y decisiones vigentes
@@ -44,9 +46,9 @@
 
 - `main` y rama base del plan: `685f91adfc7818a54f6dc0a967e290d13137a3dd`.
 - Cloudflare Pages Free: [límites oficiales](https://developers.cloudflare.com/pages/platform/limits/) (consulta de 2026-10-07); [precio de peticiones estáticas](https://developers.cloudflare.com/pages/functions/pricing/); [dominios personalizados](https://developers.cloudflare.com/pages/configuration/custom-domains/).
-- La última suite completa y el build root acabaron con código 0. `build:growth600` informó que faltan `es, fr, pt, de, ja, ko, id, hi, ar, zh, bn, ru, ur, tr, vi, it, zh_tw, bg, ca, nl, el, ms, pl, sv, th, uk, sw, mr, te, ha, tl, ta, fa, am, gu`; no creó salida. `src/growth600/` aún no se integra al root. No se lanzó PageSpeed, tal como pide el plan.
+- La última suite completa y el build root acabaron con código 0. `build:growth600` se debe volver a probar: ahora el único locale adicional es `es`, así que siguen faltando 34 locales; no debe crear salida parcial. `src/growth600/` aún no se integra al root. No se lanzó PageSpeed, tal como pide el plan.
 - Ningún archivo se desplegó, ninguna URL nueva está publicada y el sitemap de producción no cambió.
 
 ## Próxima acción concreta
 
-Traducir el copy por tandas con la interfaz gratuita de Google Translate e identificadores estables por línea; importar cada resultado a `src/growth600/locales/<key>.mjs`, validar placeholders/títulos/campos y no usar endpoints bloqueados. Completar las 36 locales, compilar en una carpeta efímera y revisar rutas, sitemap, hreflang y budgets. El endpoint no oficial devolvió HTTP 429: no reintentar. Las 277 rutas originales siguen intactas.
+Siguiente: traducir el inglés restante por lotes dentro del límite visible de Google Translate; importar y probar primero francés, después continuar el catálogo de locales en orden definido por el plan. Antes de avanzar a más funciones de cada herramienta, terminar la puerta común de localización de los cinco pilotos. Al completar las 36 locales, compilar en salida efímera y revisar rutas, sitemap, hreflang y budgets. El endpoint no oficial devolvió HTTP 429: no reintentar. Las 277 rutas originales siguen intactas.

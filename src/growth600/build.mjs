@@ -74,7 +74,7 @@ export async function buildGrowthStaticSite({
     for (const tool of tools) {
       const copy = localeCopy[tool.id];
       const formHtml = renderGrowthForm(tool.id, copy);
-      let html = renderGrowthToolPage({ tool, locale, localeEntries, copy, origin, assetVersion: version, formHtml });
+      let html = renderGrowthToolPage({ tool, locale, localeEntries, copy: { ...localeCopy._home, ...copy }, origin, assetVersion: version, formHtml });
       html = html.replace(`/assets/growth600.css?v=${version}`, `/assets/growth600.${version}.css`)
         .replace(`/assets/${tool.id}.js?v=${version}`, `/assets/${tool.id}.${sha(controllerBundles[tool.id])}.js`);
       const route = localePath(locale.key, tool.id);

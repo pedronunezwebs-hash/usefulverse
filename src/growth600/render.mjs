@@ -14,11 +14,17 @@ function safeJsonLd(value) {
   return JSON.stringify(value).replaceAll('<', '\\u003c').replaceAll('>', '\\u003e').replaceAll('&', '\\u0026').replaceAll('\u2028', '\\u2028').replaceAll('\u2029', '\\u2029');
 }
 
+function growthHreflang(locale) {
+  // Keep the site's established /tl route and BCP 47 fil-PH page language,
+  // but use ISO 639-1 `tl` in hreflang (Google does not accept ISO 639-3 `fil`).
+  return locale.key === 'tl' ? 'tl' : locale.hreflang ?? locale.code;
+}
+
 export function renderGrowthToolPage({ tool, locale, localeEntries, copy, origin, assetVersion, formHtml }) {
   if (!tool?.id || !locale?.key || !copy?.title || !formHtml) throw new TypeError('Tool, locale, localized copy and form markup are required.');
   const base = safeOrigin(origin);
   const canonical = `${base}${localePath(locale.key, tool.id)}`;
-  const alternates = localeEntries.map(({ key, code }) => `<link rel="alternate" hreflang="${escapeGrowthHtml(code)}" href="${base}${localePath(key, tool.id)}">`).join('\n    ');
+  const alternates = localeEntries.map((entry) => `<link rel="alternate" hreflang="${escapeGrowthHtml(growthHreflang(entry))}" href="${base}${localePath(entry.key, tool.id)}">`).join('\n    ');
   const homeHref = localePath(locale.key);
   const direction = ['ar', 'fa', 'ur'].includes(locale.key) ? 'rtl' : 'ltr';
   const faq = [
@@ -73,7 +79,7 @@ export function renderGrowthHomePage({ tools, locale, localeEntries, copy, origi
   const base = safeOrigin(origin);
   const canonical = `${base}${localePath(locale.key)}`;
   const direction = ['ar', 'fa', 'ur'].includes(locale.key) ? 'rtl' : 'ltr';
-  const alternates = localeEntries.map(({ key, code }) => `<link rel="alternate" hreflang="${escapeGrowthHtml(code)}" href="${base}${localePath(key)}">`).join('\n    ');
+  const alternates = localeEntries.map((entry) => `<link rel="alternate" hreflang="${escapeGrowthHtml(growthHreflang(entry))}" href="${base}${localePath(entry.key)}">`).join('\n    ');
   const cards = tools.map((tool) => `<li><a href="${localePath(locale.key, tool.id)}"><h2>${escapeGrowthHtml(copy.tools[tool.id].name)}</h2><p>${escapeGrowthHtml(copy.tools[tool.id].description)}</p></a></li>`).join('\n');
   const schema = safeJsonLd({ '@context': 'https://schema.org', '@type': 'WebSite', name: 'UsefulVerse', url: canonical, description: copy.description, inLanguage: locale.code });
   return `<!doctype html>
