@@ -82,7 +82,8 @@
 
 - [x] Corregido el 404 local del favicon en la salida aislada: home y herramientas enlazan `/favicon.svg`, y el builder copia el recurso existente desde `public/favicon.svg`.
 - [x] Build completo revisado de nuevo: 216 HTML, 216 `<loc>` en sitemap y enlace al favicon en las 216 páginas; el favicon se incluye como archivo estático en la salida. `npm test`: 888/888 y `git diff --check` sin errores.
-- [ ] Repetir un smoke test HTTP de la vista previa tras la corrección y cerrar el gate visual móvil/teclado. El favicon faltante era solo del build aislado y no cambia el sitio principal.
+- [x] Smoke HTTP tras la corrección: home Gujarati, calculadora, CSS y `/favicon.svg` respondieron 200; la repetición de recursos estáticos devolvió 304 según caché. En emulación táctil de 390 × 844 px, la calculadora Gujarati no tuvo desbordamiento horizontal; los controles mostraron nombres accesibles, el foco de teclado alcanzó el enlace para saltar al formulario y el cálculo 5 × 4 × 0,1 devolvió 20 m² / 2 m³.
+- [ ] Completar gate visual móvil/teclado de las otras cuatro familias y recorridos RTL/multilingües representativos. Esta única muestra Gujarati no equivale a certificar todas las páginas ni dispositivos. El favicon faltante era solo del build aislado y no cambia el sitio principal.
 
 ## Próxima acción concreta
 
