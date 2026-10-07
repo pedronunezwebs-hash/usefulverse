@@ -43,6 +43,7 @@ import { calculateMolarity } from './molarity-calculator/logic.mjs';
 import { calculateDilution } from './dilution-calculator/logic.mjs';
 import { calculateEquivalentResistance, solveOhmsLaw } from './ohms-law-calculator/logic.mjs';
 import { balanceChemicalEquation } from './chemical-equation-balancer/logic.mjs';
+import { calculateGearRatio } from './gear-ratio-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -101,6 +102,39 @@ test('chemical equation balancer conserves atoms for simple, grouped and underde
   for (const equation of ['', 'H2 + O2 H2O', 'H2 ->', 'H2 + + O2 -> H2O', 'Na+ + Cl- -> NaCl', 'H2 + O2 -> H2O -> H2O', 'H2 + H2 -> H2O', `${'H2 + '.repeat(8)}H2 -> H2O`]) {
     assert.throws(() => balanceChemicalEquation(equation), undefined, equation);
   }
+});
+
+test('gear ratio calculator composes stages, estimates RPM and torque, and labels drive direction', () => {
+  const single = calculateGearRatio({ stages: '20:40', inputRpm: 1500, inputTorque: 10, driveType: 'gears' });
+  assert.equal(single.ratio, 2);
+  assert.equal(single.outputRpm, 750);
+  assert.equal(single.idealOutputTorque, 20);
+  assert.equal(single.estimatedOutputTorque, 20);
+  assert.equal(single.outputDirection, 'reversed');
+
+  const compound = calculateGearRatio({ stages: '10:30\n20:40', inputRpm: 1800, inputTorque: 5, efficiencyPercent: 90, driveType: 'chain' });
+  assert.equal(compound.ratio, 6);
+  assert.equal(compound.outputRpm, 300);
+  assert.equal(compound.idealOutputTorque, 30);
+  assert.equal(compound.estimatedOutputTorque, 24.3);
+  assert.equal(compound.outputDirection, 'same');
+
+  const speedIncrease = calculateGearRatio({ stages: '40:20', inputRpm: 1200 });
+  assert.equal(speedIncrease.ratio, 0.5);
+  assert.equal(speedIncrease.outputRpm, 2400);
+  assert.equal(speedIncrease.idealOutputTorque, null);
+  assert.equal(speedIncrease.outputDirection, 'reversed');
+  assert.equal(calculateGearRatio({ stages: '20:40\n20:40', inputRpm: 1500 }).outputDirection, 'same');
+
+  for (const input of [
+    { stages: '', inputRpm: 1000 }, { stages: '20:40\ninvalid', inputRpm: 1000 },
+    { stages: '20.5:40', inputRpm: 1000 }, { stages: '0:40', inputRpm: 1000 },
+    { stages: '100001:40', inputRpm: 1000 }, { stages: Array.from({ length: 7 }, () => '2:3').join('\n'), inputRpm: 1000 },
+    { stages: Array.from({ length: 6 }, () => '1:100000').join('\n'), inputRpm: 1000 },
+    { stages: '20:40', inputRpm: 0 }, { stages: '20:40', inputRpm: 1000, inputTorque: -1 },
+    { stages: '20:40', inputRpm: 1000, efficiencyPercent: 0 }, { stages: '20:40', inputRpm: 1000, efficiencyPercent: 100.1 },
+    { stages: '20:40', inputRpm: 1000, driveType: 'belt' },
+  ]) assert.throws(() => calculateGearRatio(input));
 });
 
 test('wallpaper calculator counts pattern-aligned drops, openings and allowance', () => {

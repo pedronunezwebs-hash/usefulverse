@@ -300,6 +300,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/chemical-equation-balancer/logic.mjs',
   },
   {
+    id: 'gear-ratio-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'gear ratio calculator',
+    secondaryIntents: ['gear speed calculator', 'gear ratio calculator with rpm', 'sprocket ratio calculator'],
+    functions: ['calculate overall driven-to-driver tooth ratio across one to six compound stages for external gears or an uncrossed chain', 'estimate output RPM from input RPM and ideal output torque from optional input torque', 'apply an optional user-entered per-stage efficiency estimate and report direction assumptions for external gear meshes versus chain drives'],
+    acceptance: 'A 20-tooth driver and 40-tooth driven gear give a 2:1 reduction; 1,500 input RPM yields 750 output RPM and 10 N·m ideal input torque yields 20 N·m ideal output torque.',
+    boundary: 'Ideal kinematic ratio and torque estimate only; does not design gears, check strength, tooth profile, backlash, lubrication, bearing or motor loads, belt slip, chain tension, efficiency, safety or standards. Multi-stage input assumes each driven member shares a shaft with the next stage driver. An entered efficiency is a user assumption applied per stage. Verify mechanical design with a qualified engineer and component data. Inputs stay in this browser.',
+    relatedExistingIds: [],
+    logicModule: './tools/gear-ratio-calculator/logic.mjs',
+  },
+  {
     id: 'miter-angle-calculator',
     category: 'home-materials',
     type: 'calculator',

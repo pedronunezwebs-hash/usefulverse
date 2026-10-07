@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 56/323; **267 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 57/323; **266 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -665,3 +665,14 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [x] X/E navegador — build local aislado confirmó el ejemplo H₂/O₂, la reacción agrupada Ca(OH)₂, la ecuación C/CO/CO₂ con aviso de múltiples resultados, y rechazo de carga iónica con mensaje accesible. Se revisó visualmente en escritorio y en móvil a 390 px; ancho 390/390 sin overflow y consola limpia.
 - [ ] X/E visual — falta revisar la versión RTL localizada; las 35 traducciones siguen bloqueadas y no se publican como si estuvieran completas.
 - [ ] P/S — sin deploy, sitemap de producción intacto y sin envíos a buscadores; sin PageSpeed/Lighthouse. El catálogo total de la rama queda en 56 candidatas: 267 aún no implementadas.
+
+## Continuación · Gear Ratio Calculator (#102) · 2026-10-08
+
+- [x] C/F — candidata #57/323, no estaba en el catálogo base ni en las candidatas previas; trabaja transmisión mecánica, no velocidad de carrera, y no duplica conversores/unidades. Demanda ya investigada en el plan: `gear ratio calculator` 12.100 búsquedas/mes US/en, KD 28, CPC 0,83 USD (no CPM); `gear speed calculator` 590/mes. Sin consultas nuevas a DataForSEO.
+- [x] E/X — una a seis etapas con dientes de driver:driven; encadenamiento asumido en ejes compuestos. `20:40`, 1.500 RPM y 10 N·m → ratio 2:1, 750 RPM y 20 N·m ideal. Cadena de 10:30 y 20:40 → ratio 6:1; 1.800 RPM → 300 RPM; 5 N·m y 90% por etapa → 24,3 N·m. Comprueba aumento de velocidad, sentido de giro, límites, dientes enteros y eficiencia ingresada.
+- [x] B — formulario local con selección de engranajes externos o cadena sin cruzar; pares por línea, RPM, par opcional, eficiencia por etapa opcional, ejemplo, reinicio, copia y resultado accesible. Bundle independiente **5.038 bytes**; no API, dependencias ni ejecución remota.
+- [x] E — suite focal catálogo/formulario/gate de localización/render/build/bundles/lógica: **175/175 aprobadas**, incluyendo entradas inválidas y seis etapas fuera de rango.
+- [x] X/E navegador — build estático local; se verificó el ejemplo 20:40, tren compuesto de cadena con eficiencia, invalidación/aviso, vista escritorio y móvil 390 px (sin overflow); consola sin errores.
+- [ ] L — inglés fuente listo; los otros 35 idiomas son borradores estructurales y permanecen bloqueados para producción.
+- [ ] X/E — falta revisión visual con la versión RTL traducida; aún no está localizada.
+- [ ] P/S — sin deploy ni actualización del sitemap de producción/envío a buscadores; PageSpeed/Lighthouse no se ejecuta. Total de la rama: 57 candidatas implementadas, 266 pendientes.

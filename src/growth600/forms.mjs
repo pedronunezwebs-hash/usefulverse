@@ -37,6 +37,7 @@ export function renderGrowthForm(toolId, copy) {
     'dilution-calculator': ['mode', 'directMode', 'serialMode', 'stockConcentration', 'targetConcentration', 'finalVolume', 'volumeUnit', 'steps', 'accuracyNote'],
     'ohms-law-calculator': ['mode', 'solverMode', 'networkMode', 'voltage', 'current', 'resistance', 'power', 'topology', 'series', 'parallel', 'resistorValues', 'accuracyNote'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
+    'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
     'auto-loan-refinance-calculator': ['balance', 'currentApr', 'currentMonths', 'newApr', 'newMonths', 'fees', 'feeTreatment'],
     'secret-santa-generator': ['names', 'exclusions'],
     'tire-size-calculator': ['originalSize', 'replacementSize', 'indicatedSpeed', 'speedUnit', 'fitmentNote'],
@@ -96,6 +97,7 @@ export function renderGrowthForm(toolId, copy) {
     'dilution-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'milliliters'],
     'ohms-law-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'auto-loan-refinance-calculator': ['calculate', 'reset', 'copy', 'result'],
     'secret-santa-generator': ['generate', 'reset', 'copy', 'download', 'result', 'reveal', 'next', 'privacyNote'],
     'tire-size-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kmh', 'mph'],
@@ -894,6 +896,19 @@ export function renderGrowthForm(toolId, copy) {
   if (toolId === 'chemical-equation-balancer') return attachCopy(`<form id="tool-form" novalidate>
     ${label('chemical-equation', fields.equation, '<textarea id="chemical-equation" name="equation" rows="3" maxlength="500" spellcheck="false" autocapitalize="off" autocomplete="off" required></textarea>')}
     <p class="hint">${escapeGrowthHtml(fields.formulaHint)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'gear-ratio-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('gear-drive-type', fields.driveType, `<select id="gear-drive-type" name="driveType"><option value="gears">${escapeGrowthHtml(fields.externalGears)}</option><option value="chain">${escapeGrowthHtml(fields.chainDrive)}</option></select>`)}
+    ${label('gear-stages', fields.stages, '<textarea id="gear-stages" name="stages" rows="4" maxlength="180" spellcheck="false" autocapitalize="off" autocomplete="off" required></textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.stagesHint)}</p>
+    ${label('gear-input-rpm', fields.inputRpm, '<input id="gear-input-rpm" name="inputRpm" type="number" min="0.000001" max="1000000000" step="any" inputmode="decimal" required>')}
+    ${label('gear-input-torque', fields.inputTorque, '<input id="gear-input-torque" name="inputTorque" type="number" min="0.000001" max="1000000000" step="any" inputmode="decimal">')}
+    ${label('gear-efficiency', fields.efficiencyPercent, '<input id="gear-efficiency" name="efficiencyPercent" type="number" min="0.000001" max="100" step="any" inputmode="decimal">')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>

@@ -209,6 +209,11 @@ const copies = {
     messages: { ...messages, balancedEquation: 'Balanced equation', atomCheck: 'Atom count', leftSide: 'Reactants', rightSide: 'Products' },
     fields: { equation: 'Unbalanced equation', formulaHint: 'Enter neutral formulas and one arrow.', accuracyNote: 'Educational calculation only.' },
   },
+  'gear-ratio-calculator': {
+    name: 'Gear ratio calculator', actions: { ...actions },
+    messages: { ...messages, overallRatio: 'Overall ratio', outputSpeed: 'Output speed', stageCount: 'Stages', direction: 'Direction', sameDirection: 'Same direction', reversedDirection: 'Reversed', idealOutputTorque: 'Ideal torque', estimatedOutputTorque: 'Estimated torque', reduction: 'speed reduction', speedIncrease: 'speed increase', noRatioChange: 'no change' },
+    fields: { stages: 'Tooth pairs', stagesHint: 'One pair per line.', inputRpm: 'Input RPM', inputTorque: 'Input torque', driveType: 'Drive type', externalGears: 'External gears', chainDrive: 'Chain drive', efficiencyPercent: 'Efficiency', accuracyNote: 'Ideal arithmetic only.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -298,6 +303,11 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(chemical, /for="chemical-equation"/u);
   assert.match(chemical, /data-action="example"/u);
   assert.match(chemical, /data-action="copy"/u);
+  const gear = renderGrowthForm('gear-ratio-calculator', copies['gear-ratio-calculator']);
+  for (const name of ['stages', 'inputRpm', 'inputTorque', 'driveType', 'efficiencyPercent']) assert.match(gear, new RegExp(`name="${name}"`, 'u'));
+  assert.match(gear, /maxlength="180"/u);
+  assert.match(gear, /data-action="example"/u);
+  assert.match(gear, /data-action="copy"/u);
   const asphalt = renderGrowthForm('asphalt-calculator', copies['asphalt-calculator']);
   assert.match(asphalt, /name="compactedThickness"/u);
   assert.match(asphalt, /name="pricePerTonne"/u);

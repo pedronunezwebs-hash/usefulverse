@@ -1070,17 +1070,19 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 102 · Gear Ratio Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `gear-ratio-calculator`**
+- [ ] **C/F/E/X/L/B/P/S completos — `gear-ratio-calculator`** (motor/formulario y QA de navegador implementados en rama; localización y publicación siguen abiertas)
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/gear-ratio-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `gear ratio calculator` — 12.100 búsquedas/mes US/en, KD 28; nivel A. CPC 0.83 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Dientes, multiplicación, cadenas, RPM y par ideal
-- **Prueba de aceptación específica:** 20:40 reduce velocidad a mitad
-- **Frontera con otras herramientas:** running-pace-calculator: transmisión mecánica. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Función mínima y ampliaciones útiles:** relación driven/driver de dientes para engranajes externos o cadena sin cruzar; 1–6 etapas con cálculo acumulado; RPM de salida; par de entrada y par ideal opcionales; eficiencia por etapa editable que se compone a través de las etapas; indicación de dirección bajo supuestos explícitos; copiar, ejemplo y reiniciar.
+- **Prueba de aceptación específica:** 20:40, 1.500 RPM y 10 N·m → ratio 2:1, 750 RPM, 20 N·m ideales; dos etapas 10:30 y 20:40 → 6:1, 1.800 RPM→300 RPM y, con 5 N·m y 90% de eficiencia por etapa, 24,3 N·m estimados.
+- **Frontera con otras herramientas:** no confundir con `running-pace-calculator`: una calcula transmisión mecánica; la otra ritmo de carrera. No se crea una URL separada para engranajes y piñones porque comparten la relación de dientes.
+- **Implementación/riesgo:** JavaScript local sin dependencias; acotar a 6 etapas, 100.000 dientes por componente, ratio acumulada de 10⁻⁹ a 10⁹, 1.000.000.000 RPM/par como máximo y eficiencia por etapa >0–100%. Asume par compuesto entre etapas; no modela geometría, idlers, deslizamiento, resistencia de diente/eje, lubricación ni cargas/seguridad. La eficiencia introducida por la persona es una hipótesis aplicada a cada etapa, no una medición. Sin calcular potencia, límites de diseño ni conformidad mecánica.
 - **Consultas secundarias del mismo propietario:**
   - `gear speed calculator` — 590/mes US/en; KD 28.
   - `gear ratio calculator free online`; `gear ratio calculator with example`; `gear ratio calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+
+- **Estado de implementación (2026-10-08):** herramienta local implementada como candidata #57/323, build estático y flujo escritorio/móvil revisados, suite focal **175/175**; bundle controlador 5.038 bytes. Copy fuente inglés listo, 35 locales aún pendientes y bloqueados por el gate de publicación; no está desplegada.
 
 ### 108 · Density Calculator
 
