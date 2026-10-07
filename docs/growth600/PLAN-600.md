@@ -67,10 +67,10 @@ Un índice no sustituye un producto. Cada candidata tiene funciones mínimas, fr
 
 **Resolverlo ANTES de fabricar 11.628 páginas nuevas.** Cloudflare Pages Free limita cada proyecto a 20.000 archivos publicados. Solo 600 × 36 herramientas serían 21.600 HTML, sin portadas, guías ni assets. El límite de 25 MiB es por archivo publicado, no un límite universal de los archivos que procesa un visitante. [Límites de Pages](https://developers.cloudflare.com/pages/platform/limits/).
 
-Arquitectura propuesta, pendiente de verificar en la cuenta durante implementación:
+Arquitectura aprobada y en implementación; la cuenta ya permite el proyecto aislado, pero aún faltan su dominio, el pipeline y el primer deploy del piloto:
 
 - Conservar el proyecto/root actuales y todas las URLs de las 277 herramientas.
-- Añadir un **segundo proyecto Pages Free estático**, con subdominio candidato `tools.usefulverse.com`, bajo el mismo dominio comprado y el mismo repositorio GitHub.
+- Usar el **segundo proyecto Pages Free estático** `usefulverse-tools`, reservado el 2026-10-07 con rama de producción `main`. El subdominio candidato sigue siendo `tools.usefulverse.com`, bajo el mismo dominio comprado y el mismo repositorio GitHub.
 - Publicar allí las 323 nuevas herramientas: 323 × 36 = **11.628 páginas de herramienta**. Con 36 portadas del nuevo hub serían 11.664 HTML, más directorios/guías/archivos; contar cada salida real antes de subirla y dejar margen.
 - Los 10.260 registros de la base actual más esas 11.664 páginas darían **21.924 URLs como mínimo orientativo**, antes de añadir nuevos directorios/guías. No confundir esta proyección con el sitemap publicado hoy.
 - No replicar las herramientas existentes en el subdominio, ni replicar las nuevas en el root. Una sola ubicación canónica por herramienta e idioma.
@@ -82,8 +82,9 @@ Arquitectura propuesta, pendiente de verificar en la cuenta durante implementaci
 
 Las peticiones de assets estáticos son gratuitas según las condiciones actuales; eso no elimina límites de archivos, builds, account quotas ni cambios futuros de servicio. Revisar las condiciones vigentes antes de implementar. [Assets estáticos de Cloudflare](https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/).
 
-- [x] Confirmar proyectos, método de deploy y cuotas gratuitas disponibles, sin cambiar billing. Evidencia: un Pages project actual y Wrangler deploy estático; límites oficiales vigentes: 100 proyectos/20.000 archivos por proyecto Free, 500 builds/mes; assets estáticos con requests gratuitas. Ver fuentes y fecha en `docs/growth600/PROGRESS.md`. La nueva salida aún no está creada.
-- [ ] Reservar y configurar la segunda salida estática y el subdominio, si el gate anterior pasa.
+- [x] Confirmar proyectos, método de deploy y cuotas gratuitas disponibles, sin cambiar billing. Evidencia: dos Pages projects (el nuevo aún vacío) y Wrangler deploy estático; límites oficiales vigentes: 100 proyectos/20.000 archivos por proyecto Free, 500 builds/mes; assets estáticos con requests gratuitas. Ver fuentes y fecha en `docs/growth600/PROGRESS.md`.
+- [x] Reservar `usefulverse-tools` en Cloudflare Pages con rama de producción `main`; creación verificada con Wrangler el 2026-10-07. No se ha desplegado contenido.
+- [ ] Configurar el pipeline para construir/desplegar la salida separada y asociar `tools.usefulverse.com` al proyecto Pages; hacerlo solo cuando el piloto pase los gates de publicación. El subdominio no está asociado y no hay cambios DNS.
 - [ ] Añadir un `maxPublishedFiles` por salida, preferiblemente ≤18.500 para dejar margen; fallar build antes de superar el máximo contratado.
 - [ ] Ningún asset publicado >25 MiB; motores grandes deben fragmentarse mediante mecanismos soportados y comprobados, no con rutas ficticias.
 - [ ] Ausencia de Functions/Workers de cálculo, servicios pagados y secretos en el HTML/JS publicado.

@@ -7,8 +7,9 @@
 - [x] F0 — Arranque: leídas las instrucciones vigentes de la agencia, operación online, FABLE y Cloudflare; clon temporal aislado; plan y evidencia de DataForSEO localizados en GitHub. No hay PR abierto. Auth de GitHub y Wrangler confirmada sin exponer secretos.
 - [x] F1 — Snapshot: `main` sigue en `685f91adfc7818a54f6dc0a967e290d13137a3dd`, la misma base documentada en el plan. Inventario real: 277 herramientas, 36 idiomas. El `PLAN.md` del usuario coincide byte por byte con `docs/growth600/PLAN-600.md`.
 - [x] F1 — Línea base técnica inicial: `npm test`: 832 aprobados, 0 fallidos. `npm run check` completó; sitemap generado: 10.260 URLs. El build temporal contiene 10.728 archivos (incluye assets) y ocupa 495 MB; el proyecto tiene margen para crecer, pero no hasta 600 herramientas en una única salida Free.
-- [x] F2 — Capacidad y coste estático comprobados: Cloudflare muestra un proyecto Pages actual (`usefulverse`). La documentación vigente indica hasta 100 proyectos por cuenta Free, 20.000 archivos por proyecto Free y peticiones a assets estáticos gratuitas e ilimitadas. La distribución planeada en una segunda salida estática es factible por cuota; no se ha creado todavía el segundo proyecto ni configurado su dominio.
-- [ ] F2 — Crear el proyecto Pages gratuito `usefulverse-tools`, configurar build separado y `tools.usefulverse.com`; hacerlo después de que el piloto esté construido y validado localmente.
+- [x] F2 — Capacidad y coste estático comprobados: la cuenta muestra dos proyectos Pages (`usefulverse` y `usefulverse-tools`). La documentación oficial consultada el 2026-10-07 indica hasta 100 proyectos y 20.000 archivos por proyecto en Free, 500 builds al mes y peticiones estáticas gratuitas e ilimitadas. El segundo proyecto está vacío, con rama `main`; no tiene dominio ni deployment.
+- [x] F2 — Reservar el proyecto Pages gratuito `usefulverse-tools`: creado con Wrangler el 2026-10-07 y confirmado en la respuesta de Cloudflare. No se alteró `usefulverse`, DNS ni billing.
+- [ ] F2 — Configurar build/deploy separado y asociar `tools.usefulverse.com` una vez pasen los gates del piloto; no se han cambiado DNS ni enviado URLs.
 - [ ] F3 — Infraestructura aditiva para catálogo, renderer/origen canónico, 36 idiomas, builds y límites de tamaño. Parcial: catálogo, renderer, gate estricto por idioma, formularios y builder/sitemap separados están probados; los 36 módulos ya están presentes. Quedan el destino Pages separado, verificación final de budgets/licencias y operación de publicación.
 - [ ] F4 — Piloto de cinco familias: `gravel-calculator`, `molar-mass-calculator`, `auto-loan-refinance-calculator`, `secret-santa-generator`, `mancala`. Motores y cinco controladores locales están conectados. **Ninguna herramienta está todavía publicada ni terminada según C/F/E/X/L/B/P/S**: el copy ya está localizado a 36 idiomas y el build real validado; faltan cerrar revisión representativa móvil/teclado, gate de hosting, publicación+sitemap y verificación pública.
 
@@ -90,7 +91,7 @@
 
 ## Próxima acción concreta
 
-Siguiente: completar gates locales F4 (recorrido representativo de interfaz/localización, presupuestos y funciones ya implementadas), revisar si el destino separado de Cloudflare Pages puede crearse dentro del plan sin alterar el root y después desplegar únicamente el piloto por su pipeline. El build y sitemap temporal ya pasan, pero `usefulverse-tools` aún no existe; ninguna URL nueva está publicada ni enviada a buscadores. Las 277 rutas originales siguen intactas.
+Siguiente: cerrar el QA representativo restante del piloto, preparar el pipeline de build/deploy hacia `usefulverse-tools` y asociar el subdominio solo después de pasar los gates C/F/E/X/L/B/P/S. El proyecto Pages ya existe, pero sigue vacío: ninguna URL nueva está publicada ni enviada a buscadores. Las 277 rutas originales siguen intactas.
 
 ## Continuación · 2026-10-07
 
@@ -98,4 +99,4 @@ Siguiente: completar gates locales F4 (recorrido representativo de interfaz/loca
 - [x] Regresión focalizada después del cambio: `node --test src/growth600/build.test.mjs src/growth600/tools/growth600-logic.test.mjs` — 9/9 pruebas aprobadas, incluyendo exceso de archivos, exceso de tamaño y limpieza del staging tras rechazo. `git diff --check` pasó.
 - [x] Build completo aislado de la tanda piloto: 216 HTML en 36 locales (5 herramientas + portada), 216 URL únicas en `sitemap.xml`, 262 archivos y 3.519.822 bytes. El resultado se generó bajo `/tmp` y no se desplegó.
 - [ ] No se repitió `npm ci` completo: la instalación temporal comenzó a descargar runtimes binarios multiplataforma ajenos al piloto. Se detuvo para limitar espacio/recursos; las pruebas específicas y el build real anteriores sí terminaron. La regresión general previamente registrada (889/889) no sustituye una regresión completa tras integrar todo el lote.
-- [ ] F4 aún requiere revisión visual adicional y el destino Pages separado; P/S siguen abiertos. Este trabajo no publicó ni envió el sitemap y no cambió las 277 herramientas de producción.
+- [ ] F4 aún requiere revisión visual adicional; P/S siguen abiertos. El segundo Pages está creado pero sin dominio ni deployment. Este trabajo no publicó ni envió el sitemap y no cambió las 277 herramientas de producción.
