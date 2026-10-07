@@ -4,7 +4,7 @@ import { bundleGrowthControllers } from './bundle-controllers.mjs';
 import { growthPilotTools } from './catalog.mjs';
 import { assertLocalController } from './build.mjs';
 
-test('the five pilot controllers bundle locally under budget without network or dynamic code', async () => {
+test('growth controllers bundle locally under budget without network or dynamic code', async () => {
   const bundles = await bundleGrowthControllers();
   assert.deepEqual(Object.keys(bundles).sort(), growthPilotTools.map(({ id }) => id).sort());
   for (const [id, source] of Object.entries(bundles)) {

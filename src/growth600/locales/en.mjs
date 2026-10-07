@@ -3,6 +3,8 @@ import stairCopies from './stair-calculator.mjs';
 import asphaltCopies from './asphalt-calculator.mjs';
 import soilCopies from './soil-calculator.mjs';
 import { soilEnglishCopy } from './soil-calculator.en.mjs';
+import poolCopies from './pool-volume-calculator.mjs';
+import { poolVolumeCalculatorEnglishCopy } from './pool-volume-calculator.en.mjs';
 import { registerGrowthLocaleExtension } from '../locale-utils.mjs';
 
 const actionCopy = Object.freeze({
@@ -32,6 +34,7 @@ const tools = {
     messages: { ...reusableMessages, calculated: 'Estimate ready.', checkInputs: 'Enter a number above zero for each required measurement. Check the optional values too.', area: 'Area', volume: 'Gravel volume', orderVolume: 'Volume to order', estimatedWeight: 'Estimated weight', bagsToBuy: 'Whole bags to buy' },
   },
   'soil-calculator': soilEnglishCopy,
+  'pool-volume-calculator': poolVolumeCalculatorEnglishCopy,
   'molar-mass-calculator': {
     copyLanguage: 'en', name: 'Molar mass calculator', title: 'Molar mass calculator free unlimited | UsefulVerse',
     description: 'Calculate the molar mass of supported chemical formulas in your browser. Free, unlimited and no account needed.',
@@ -92,5 +95,6 @@ registerGrowthLocaleExtension(source, 'tire-size-calculator', tireSizeCopies, 'g
 registerGrowthLocaleExtension(source, 'stair-calculator', stairCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'asphalt-calculator', asphaltCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'soil-calculator', soilCopies, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'pool-volume-calculator', poolCopies, 'gravel-calculator');
 
 export default Object.freeze(source);

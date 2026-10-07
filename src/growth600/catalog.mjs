@@ -1,5 +1,17 @@
 export const growthPilotTools = Object.freeze([
   {
+    id: 'pool-volume-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'pool volume calculator',
+    secondaryIntents: ['swimming pool gallons calculator', 'pool water volume calculator', 'pool liters calculator'],
+    functions: ['rectangular, round and oval pool footprints', 'flat or sloped floor using shallow and deep measurements', 'cubic metres, litres, US gallons and imperial gallons'],
+    acceptance: 'A 2 m × 3 m rectangular pool with a flat 1 m depth gives 6,000 litres.',
+    boundary: 'Estimates water volume from simple geometric shapes and average depth. Steps, benches, curved walls, liners, displacement and actual fill level can change real capacity; use manufacturer data for chemical dosing.',
+    relatedExistingIds: ['volume-calculator'],
+    logicModule: './tools/pool-volume-calculator/logic.mjs',
+  },
+  {
     id: 'soil-calculator',
     category: 'home-materials',
     type: 'calculator',

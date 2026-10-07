@@ -8,6 +8,7 @@ import { compareMetricTireSizes, parseMetricTireSize } from './tire-size-calcula
 import { calculateStairGeometry } from './stair-calculator/logic.mjs';
 import { calculateAsphalt } from './asphalt-calculator/logic.mjs';
 import { calculateSoil } from './soil-calculator/logic.mjs';
+import { calculatePoolVolume } from './pool-volume-calculator/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
 test('gravel calculator converts area and depth into volume, waste, weight and bags', () => {
@@ -41,6 +42,23 @@ test('soil calculator estimates raised-bed and pot fill volume and bag count', (
   assert.throws(() => calculateSoil({ shape: 'triangle', length: 1, width: 1, depth: 1 }), /shape/u);
   assert.throws(() => calculateSoil({ shape: 'rectangle', length: 1, width: 1, depth: 1, containerCount: 1.5 }), /container count/iu);
   assert.throws(() => calculateSoil({ shape: 'rectangle', length: 1, width: 1, depth: 1, wastePercent: 51 }), /waste/iu);
+});
+
+test('pool volume calculator handles shapes, sloped bottoms and gallon standards', () => {
+  const rectangular = calculatePoolVolume({ shape: 'rectangle', length: 2, width: 3, shallowDepth: 1, dimensionUnit: 'm' });
+  assert.equal(rectangular.volumeM3, 6);
+  assert.equal(rectangular.liters, 6000);
+  assert.equal(Math.round(rectangular.usGallons), 1585);
+  assert.equal(Math.round(rectangular.imperialGallons), 1320);
+  const slope = calculatePoolVolume({ shape: 'rectangle', length: 2, width: 3, floor: 'sloped', shallowDepth: 1, deepDepth: 2, dimensionUnit: 'm' });
+  assert.equal(slope.averageDepthM, 1.5);
+  assert.equal(slope.liters, 9000);
+  const circle = calculatePoolVolume({ shape: 'circle', diameter: 20, shallowDepth: 5, dimensionUnit: 'ft' });
+  assert.ok(Math.abs(circle.volumeM3 - Math.PI * 10 ** 2 * 5 * 0.3048 ** 3) < 1e-12);
+  const oval = calculatePoolVolume({ shape: 'oval', length: 8, width: 4, shallowDepth: 1, deepDepth: 2, floor: 'sloped' });
+  assert.ok(Math.abs(oval.volumeM3 - Math.PI * 8 * 4 / 4 * 1.5) < 1e-12);
+  assert.throws(() => calculatePoolVolume({ shape: 'rectangle', length: 2, width: 3, shallowDepth: 1, floor: 'sloped', deepDepth: 0 }), /Deep depth/u);
+  assert.throws(() => calculatePoolVolume({ shape: 'square', shallowDepth: 1 }), /shape/u);
 });
 
 test('molar-mass parser handles formulas, nested groups and supported isotopes', () => {

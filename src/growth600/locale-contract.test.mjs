@@ -120,6 +120,19 @@ test('soil calculator has 36 localized copies, container-fill boundary and compl
   }
 });
 
+test('pool calculator has 36 complete localized copies and distinguishes gallon standards', () => {
+  const poolTool = allGrowthPilotTools.find(({ id }) => id === 'pool-volume-calculator');
+  assert.ok(poolTool);
+  assert.equal(assertGrowthLocaleCoverage([poolTool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][poolTool.id];
+    assert.ok(copy.fields.accuracyNote.trim());
+    assert.ok(copy.actions.sloped && copy.actions.oval && copy.actions.inches);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.doesNotMatch(JSON.stringify(copy), /UVPOOL\d{4}X|UVTOKEN\d+X/u, `${key}: translation markers must not leak`);
+  }
+});
+
 test('the first Google Translate Spanish draft covers every copy key and preserves required placeholders', () => {
   assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'es' }], { es: spanishGrowthCopy }), true);
   assert.ok(Object.values(spanishGrowthCopy).every((copy) => copy.copyLanguage === 'es'));

@@ -91,7 +91,7 @@
 
 ## Próxima acción concreta
 
-Siguiente: cerrar el QA representativo restante del piloto, preparar el pipeline de build/deploy hacia `usefulverse-tools` y asociar el subdominio solo después de pasar los gates C/F/E/X/L/B/P/S. El proyecto Pages ya existe, pero sigue vacío: ninguna URL nueva está publicada ni enviada a buscadores. Las 277 rutas originales siguen intactas.
+Siguiente: continuar con Roof Pitch Calculator (#071). El catálogo aditivo tiene ahora 10 candidatos; los cinco iniciales y #016, #052, #057, #060 y #067 tienen gates locales registrados, pero la publicación queda bloqueada hasta cerrar gates globales C/F/E/X/L/B/P/S. `usefulverse-tools` sigue sin publicar estas nuevas páginas ni enviarlas a buscadores; las 277 rutas originales permanecen intactas.
 
 ## Continuación · 2026-10-07
 
@@ -169,3 +169,14 @@ Siguiente: cerrar el QA representativo restante del piloto, preparar el pipeline
 - [x] Chrome DevTools: cubo de 1 m, cama múltiple con desperdicio/bolsas, maceta circular convertida desde centímetros y error por cantidad fraccionaria; reset limpia campos, error y resultados. A 500 px no hubo desbordamiento horizontal; consola limpia.
 - [ ] `npm test` completo no se volvió a ejecutar después de esta candidata: el intento global previo señaló dependencias/pruebas ajenas incompletas (`prettier`, `to-words/gu-IN`). La suite focalizada de esta candidata sí pasa. Sin dispositivos físicos ni revisión nativa de cada borrador.
 - [ ] #060 permanece en staging local: sin merge, deploy, cambio de sitemap de producción ni envío a buscadores. C/F/E/X/L/B/P/S se cierra en la publicación coordinada y comprobación online, no durante el build local.
+
+## Continuación · Pool Volume Calculator (#067) · 2026-10-07
+
+- [x] Una URL por idioma que agrupa piscinas rectangulares, circulares y ovaladas; fondo plano o inclinado con promedio de profundidad. El contrato la distingue de la calculadora general de volumen existente. No genera URL por forma ni por unidad.
+- [x] Fórmula local con metros, centímetros, pies y pulgadas; volumen en m³, litros, galones estadounidenses y galones imperiales claramente separados. Aceptación 2 × 3 × 1 m = 6.000 L. El aviso aclara límites de geometría y recomienda usar capacidad verificada del fabricante para dosificar químicos.
+- [x] Suite focalizada final: 70/70 aprobadas (`catalog`, forms, 36-locale contract/utils, render, build, controller bundle y lógica). Incluye tres formas, conversión imperial, fondo inclinado, rangos, metadata y FAQs.
+- [x] Localización estática en 36 idiomas y dos FAQs por idioma. Title con marca UsefulVerse preservada y límites del release contract cumplidos. Traducción automática comprensible; no revisión nativa humana.
+- [x] Build temporal final: 396 páginas (10 candidatos × 36 + 36 portadas), 396 URLs únicas de sitemap, 447 archivos / 7.387.218 bytes. Auditoría de las 36 páginas pool: metadata, canonical, hreflang, FAQPage, controlador presentes y sin `undefined`.
+- [x] Budget/privacy: JS minificado 4.583 B (≤24 KiB), sin red externa ni ejecución dinámica; herramienta se calcula en navegador. La salida de staging fue local, estática y no agrega Functions/APIs.
+- [x] Chrome DevTools local: ejemplo válido 6.000 L/1.585 US gal/1.320 imp gal; óvalo inclinado de 8×4 m y profundidad media de 1,5 m devuelve 37.699 L. Cero de entrada activa `aria-invalid`, enfoca campo y anuncia error; reset limpia estado. A 390 px no hay overflow; muestra árabe RTL con `lang=ar`, `dir=rtl` también sin overflow; consola sin errores.
+- [ ] No se probaron hardware físico ni revisión nativa de 36 borradores. Candidato #067 en staging: sin deploy, sin sitemap de producción actualizado y sin envío a motores. Los gates C/F/E/X/L/B/P/S solo se cierran en la publicación conjunta con comprobación de URLs públicas.
