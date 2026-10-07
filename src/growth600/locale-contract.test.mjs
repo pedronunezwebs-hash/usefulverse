@@ -28,6 +28,7 @@ import malayGrowthCopy from './locales/ms.mjs';
 import polishGrowthCopy from './locales/pl.mjs';
 import swedishGrowthCopy from './locales/sv.mjs';
 import thaiGrowthCopy from './locales/th.mjs';
+import ukrainianGrowthCopy from './locales/uk.mjs';
 
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
@@ -267,4 +268,13 @@ test('the first Thai draft covers every copy key and preserves required placehol
   assert.equal(thaiGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} เดือน');
   assert.equal(thaiGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver} มอบของขวัญให้ {recipient}');
   assert.equal(thaiGrowthCopy.mancala.messages.turn, 'ถึงตา {player}');
+});
+
+test('the first Ukrainian draft covers every copy key and preserves required placeholders', () => {
+  assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'uk' }], { uk: ukrainianGrowthCopy }), true);
+  assert.ok(Object.values(ukrainianGrowthCopy).every((copy) => copy.copyLanguage === 'uk'));
+  assert.ok(Object.values(ukrainianGrowthCopy).every((copy) => copy.title.length <= 60 && copy.description.length <= 160));
+  assert.equal(ukrainianGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} місяців');
+  assert.equal(ukrainianGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver} дарує подарунок для {recipient}.');
+  assert.equal(ukrainianGrowthCopy.mancala.messages.turn, 'Хід гравця {player}.');
 });
