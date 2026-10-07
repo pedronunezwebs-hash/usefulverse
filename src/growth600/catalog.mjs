@@ -287,6 +287,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['bmr-tdee-calculator'],
     logicModule: './tools/weight-loss-calculator/logic.mjs',
   },
+  {
+    id: 'random-team-generator',
+    category: 'groups-and-events',
+    type: 'generator',
+    primaryIntent: 'random team generator',
+    secondaryIntents: ['team generator', 'random team maker', 'split people into teams', 'balanced random teams'],
+    functions: ['split 2–60 unique participant names into 2–12 balanced teams', 'keep selected participant pairs on different teams', 'create a reproducible randomized result from an optional seed', 'copy a readable result or download a CSV locally'],
+    acceptance: 'Every supplied person appears exactly once, team sizes differ by at most one, and every valid keep-apart pair is assigned to different teams; reusing a seed and inputs reproduces the same result.',
+    boundary: 'A local randomized group split, not a cryptographic lottery or a guarantee of mathematically uniform assignments. Constraints are searched with a fixed work budget; a complex case may request simpler constraints instead of proving that no split exists. Names are not uploaded or saved.',
+    relatedExistingIds: ['random-name-picker'],
+    logicModule: './tools/random-team-generator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

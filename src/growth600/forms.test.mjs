@@ -50,6 +50,11 @@ const copies = {
     messages: { ...messages, estimateOnly: 'Illustration only.', interestOnlyPayment: 'Interest-only payment', availableCredit: 'Available credit', repaymentPayment: 'Repayment payment', paymentChange: 'Payment change', drawInterest: 'Draw interest', repaymentInterest: 'Repayment interest', totalInterest: 'Total interest', totalPayments: 'Total payments' },
     fields: { creditLimit: 'Credit limit', balance: 'Current balance', annualApr: 'APR', drawMonths: 'Draw months', repaymentMonths: 'Repayment months', currency: 'Currency', accuracyNote: 'Illustrative fixed-rate estimate only.', relatedLoanCalculator: 'Compare with loan payment calculator.' },
   },
+  'random-team-generator': {
+    name: 'Random team generator', actions: { ...actions, generateTeams: 'Generate teams', team: 'Team', participant: 'participants', seedLabel: 'Seed' },
+    messages: { ...messages },
+    fields: { names: 'Names', teamCount: 'Number of teams', separations: 'Keep apart', separationsHint: 'Name A | Name B', seed: 'Seed', seedHint: 'Reuse the seed', privacyNote: 'Local only', relatedNamePicker: 'Pick a winner' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -140,6 +145,15 @@ test('dominoes form exposes localized play modes, draw/block choices, board, sto
   assert.match(html, /data-action="draw"/u);
   assert.match(html, /data-action="pass"/u);
   assert.match(html, /aria-live="polite"/u);
+});
+
+test('random team form exposes accessible participant, balance, constraint, seed, copy and CSV controls', () => {
+  const html = renderGrowthForm('random-team-generator', copies['random-team-generator']);
+  for (const name of ['names', 'teamCount', 'separations', 'seed']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  assert.match(html, /aria-live="polite" data-status/u);
+  assert.match(html, /data-action="generateTeams"/u);
+  assert.match(html, /data-action="download"/u);
+  assert.match(html, /data-team-seed-output/u);
 });
 
 test('weight scenario form explains its limits and collects explicit local inputs', () => {

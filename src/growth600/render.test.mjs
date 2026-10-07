@@ -42,6 +42,13 @@ test('Filipino route keeps its established BCP 47 page language while hreflang u
 });
 
 test('tool renderer includes additional localized FAQs in page content and schema plus localized related route', () => {
+  const teamHtml = renderGrowthToolPage({
+    tool: { id: 'random-team-generator' }, locale: locales[1], localeEntries: locales,
+    copy: { ...copy, fields: { relatedNamePicker: 'Want to pick one winner? Try the random name picker.' } },
+    origin: 'https://tools.usefulverse.com', formHtml: '<form id="tool-form"></form>',
+  });
+  assert.match(teamHtml, /https:\/\/usefulverse\.com\/ar\/tools\/random-name-picker\//u);
+
   const html = renderGrowthToolPage({
     tool: { id: 'tire-size-calculator' }, locale: locales[1], localeEntries: locales,
     copy: { ...copy, fields: { relatedUnitConverter: 'Convert measurements with the unit converter.' }, additionalFaqs: [{ question: 'Does this fit?', answer: 'This estimate cannot confirm fitment.' }] },

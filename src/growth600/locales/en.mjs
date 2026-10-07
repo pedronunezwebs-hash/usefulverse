@@ -32,6 +32,8 @@ import dominoesCopies from './dominoes-game-final.mjs';
 import weightLossCopies from './weight-loss-calculator-final.mjs';
 import helocCopies from './heloc-calculator-final.mjs';
 import { helocCalculatorEnglishCopy } from './heloc-calculator.en.mjs';
+import randomTeamGeneratorCopies from './random-team-generator-final.mjs';
+import { randomTeamGeneratorEnglishCopy } from './random-team-generator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -183,5 +185,6 @@ registerGrowthLocaleExtension(source, 'image-color-picker', imageColorPickerCopi
 registerGrowthLocaleExtension(source, 'dominoes-game', dominoesCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'weight-loss-calculator', weightLossCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'heloc-calculator', { ...helocCopies, en: helocCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'random-team-generator', { ...randomTeamGeneratorCopies, en: randomTeamGeneratorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

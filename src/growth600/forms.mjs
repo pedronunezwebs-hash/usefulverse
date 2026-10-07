@@ -41,7 +41,8 @@ export function renderGrowthForm(toolId, copy) {
     mancala: ['mode'],
     'dominoes-game': ['mode', 'variant', 'board', 'stock', 'hand', 'opponentHand', 'accuracyNote'],
   'weight-loss-calculator': ['currentWeight', 'targetWeight', 'dailyDeficit', 'unit', 'methodNote', 'healthNote', 'sourceNiddk', 'sourceCdc'],
-  'heloc-calculator': ['creditLimit', 'balance', 'annualApr', 'drawMonths', 'repaymentMonths', 'currency', 'accuracyNote', 'relatedLoanCalculator'],
+    'heloc-calculator': ['creditLimit', 'balance', 'annualApr', 'drawMonths', 'repaymentMonths', 'currency', 'accuracyNote', 'relatedLoanCalculator'],
+    'random-team-generator': ['names', 'teamCount', 'separations', 'separationsHint', 'seed', 'seedHint', 'privacyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -69,6 +70,7 @@ export function renderGrowthForm(toolId, copy) {
     'dominoes-game': ['newGame', 'draw', 'pass', 'playLeft', 'playRight', 'computer', 'twoPlayers', 'drawRule', 'blockRule'],
   'weight-loss-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilograms', 'pounds', 'dayUnit', 'weekUnit', 'kilocalories', 'perWeek'],
   'heloc-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+  'random-team-generator': ['generateTeams', 'reset', 'example', 'copy', 'download', 'result', 'team', 'participant', 'seedLabel'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -377,6 +379,18 @@ export function renderGrowthForm(toolId, copy) {
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'random-team-generator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('team-names', fields.names, '<textarea id="team-names" name="names" rows="8" maxlength="5000" required></textarea>')}
+    ${label('team-count', fields.teamCount, '<input id="team-count" name="teamCount" type="number" min="2" max="12" step="1" value="2" inputmode="numeric" required>')}
+    ${label('team-separations', fields.separations, '<textarea id="team-separations" name="separations" rows="3" maxlength="12000"></textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.separationsHint)}</p>
+    ${label('team-seed', fields.seed, '<input id="team-seed" name="seed" type="text" maxlength="80" autocomplete="off">')}
+    <p class="hint">${escapeGrowthHtml(fields.seedHint)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <div class="actions"><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(labels.example)}</button><button type="submit" data-action="generateTeams" class="button button--primary">${escapeGrowthHtml(labels.generateTeams)}</button><button type="reset" data-action="reset" class="button button--secondary">${escapeGrowthHtml(labels.reset)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div><p class="hint" data-team-seed-output></p><div class="actions"><button type="button" data-action="copy" class="button button--secondary" disabled>${escapeGrowthHtml(labels.copy)}</button><button type="button" data-action="download" class="button button--secondary" disabled>${escapeGrowthHtml(labels.download)}</button></div></section>
   </form>`, copy);
 
   return attachCopy(`<section class="game" aria-label="${escapeGrowthHtml(copy.name)}"><div class="game-toolbar"><label for="mancala-mode">${escapeGrowthHtml(fields.mode)}</label><select id="mancala-mode" data-mode><option value="computer">${escapeGrowthHtml(labels.computer)}</option><option value="two-player">${escapeGrowthHtml(labels.twoPlayers)}</option></select>${button('new-game', labels.newGame, 'primary')}</div><p class="status" role="status" aria-live="polite" data-status></p><div class="mancala-board" data-board aria-label="${escapeGrowthHtml(fields.board)}"></div><section class="result" data-result hidden><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div></section><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);

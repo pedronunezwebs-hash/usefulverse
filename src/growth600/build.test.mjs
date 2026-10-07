@@ -71,6 +71,7 @@ function toolCopy(tool, language) {
     'dominoes-game': { mode: 'Play mode', variant: 'Rules', board: 'Domino line', stock: 'Tiles left to draw', hand: 'Your tiles', opponentHand: "Opponent's tiles", accuracyNote: 'Local double-six game.', rules: 'Match an open end.' },
   'weight-loss-calculator': { currentWeight: 'Current weight', targetWeight: 'Goal weight', dailyDeficit: 'Daily deficit', unit: 'Weight unit', methodNote: '7,700 kcal per kg; simple arithmetic only.', healthNote: 'Not medical advice.', sourceNiddk: 'Model notes:', sourceCdc: 'Gradual change' },
     'heloc-calculator': { creditLimit: 'Credit limit', balance: 'Current balance', annualApr: 'Annual APR', drawMonths: 'Draw period in months', repaymentMonths: 'Repayment period in months', currency: 'Currency', accuracyNote: 'Fixed APR; no additional draws or fees are modeled.', relatedLoanCalculator: 'See loan payment calculator.' },
+    'random-team-generator': { names: 'Names', teamCount: 'Number of teams', separations: 'Keep apart', separationsHint: 'One pair per line: Name A | Name B.', seed: 'Seed', seedHint: 'Reuse the same seed to reproduce a result.', privacyNote: 'Runs locally; no upload or server processing.', relatedNamePicker: 'Want to pick a winner instead? Try the random name picker.' },
   }[tool.id];
   if (tool.id === 'tire-size-calculator') {
     Object.assign(actions, { kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)' });
@@ -100,7 +101,8 @@ function toolCopy(tool, language) {
   const dominoMessages = tool.id === 'dominoes-game' ? { played: 'Tile played.', drew: 'Tile drawn.', passed: 'Turn passed.', noMoves: 'No legal move.', stockEmpty: 'The draw pile is empty.' } : {};
   const weightMessages = tool.id === 'weight-loss-calculator' ? { weightToLose: 'Weight difference', energyEquivalent: 'Linear energy equivalent', timeline: 'Timeline', weeklyRate: 'Weekly rate', noDeficitChange: 'Zero modeled change.', paceNote: 'This is not a recommended target.' } : {};
   const helocMessages = tool.id === 'heloc-calculator' ? { interestOnlyPayment: 'Interest-only payment', availableCredit: 'Available credit', repaymentPayment: 'Repayment payment', paymentChange: 'Payment change', drawInterest: 'Draw-period interest', repaymentInterest: 'Repayment interest', totalInterest: 'Total modeled interest', totalPayments: 'Total payments', estimateOnly: 'Illustration only; actual HELOC terms vary.' } : {};
-  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: { ...localizedMessages, ...asphaltMessages, ...poolMessages, ...saltMessages, ...roofMessages, ...drywallMessages, ...roofingMessages, ...deckMessages, ...fenceMessages, ...redactorMessages, ...upscalerMessages, ...dominoMessages, ...weightMessages, ...helocMessages }, copyLanguage: language };
+  const teamMessages = tool.id === 'random-team-generator' ? { generated: 'Teams generated.', invalidCount: 'Enter 2 to 60 names and a valid team count.', duplicateName: 'Names must be unique.', invalidPair: 'Check keep-apart pair format.', unknownName: 'A rule contains an unknown name.', incompatible: 'These rules cannot fit the selected team count.', searchLimit: 'Local search limit reached; simplify the rules.', downloadReady: 'CSV downloaded.', seedUnavailable: 'Secure randomness is unavailable.' } : {};
+  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: { ...localizedMessages, ...asphaltMessages, ...poolMessages, ...saltMessages, ...roofMessages, ...drywallMessages, ...roofingMessages, ...deckMessages, ...fenceMessages, ...redactorMessages, ...upscalerMessages, ...dominoMessages, ...weightMessages, ...helocMessages, ...teamMessages }, copyLanguage: language };
   if (tool.id === 'image-color-picker') Object.assign(localized, {
     fields: { imageFile: 'Choose an image', accuracyNote: 'Local processing; maximum 12 megapixels.', previewHint: 'Click a pixel or use arrow keys.', zoom: 'Preview zoom', currentColor: 'Current pixel', paletteLabel: 'Color palette', relatedSharpener: 'Open the image sharpener.', relatedRedactor: 'Open the image redactor.' },
     actions: { ...actions, load: 'Choose image', addSample: 'Add color to palette', copyColor: 'Copy color', copyPalette: 'Copy HEX palette', remove: 'Remove', clear: 'Clear palette' },
@@ -192,6 +194,13 @@ function toolCopy(tool, language) {
     { question: 'What happens to payments when the draw period ends?', answer: 'This estimate moves the current balance into equal monthly principal-and-interest payments over the term you enter.' },
     { question: 'Does it include future withdrawals or a changing rate?', answer: 'No. It assumes no more draws and one unchanged APR; lender rules, fees and variable-rate changes can make actual payments different.' },
   ];
+  if (tool.id === 'random-team-generator') {
+    Object.assign(localized.actions, { generateTeams: 'Generate teams', team: 'Team', participant: 'participants', seedLabel: 'Seed' });
+    localized.additionalFaqs = [
+      { question: 'Can two people be kept on different teams?', answer: 'Yes. Add the exact names as a pair in the keep-apart field.' },
+      { question: 'Can I reproduce a team draw?', answer: 'Yes. Use the same seed, participant list, team count and rules.' },
+    ];
+  }
   return localized;
 }
 
