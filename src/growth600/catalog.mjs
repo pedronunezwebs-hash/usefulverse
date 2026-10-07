@@ -407,6 +407,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['mulch-calculator', 'soil-calculator'],
     logicModule: './tools/grass-seed-calculator/logic.mjs',
   },
+  {
+    id: 'insulation-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'insulation calculator',
+    secondaryIntents: ['insulation R-value calculator', 'thermal resistance calculator', 'R-value to RSI converter'],
+    functions: ['add resistance contributions for user-entered layers in series', 'multiply each layer value by its repeated quantity', 'convert between US R-value and metric RSI', 'show reciprocal U-factors as a unit conversion, not an assembly performance prediction'],
+    acceptance: 'A layer with R-2 in series with a layer with R-3 totals R-5; metric inputs RSI 1 and RSI 2 total RSI 3.',
+    boundary: 'Arithmetic and unit conversion only for values provided by the user. Real wall or roof performance can differ because of framing, thermal bridges, gaps, moisture, installation and other parallel heat-flow paths. Does not recommend materials, thickness, code compliance or building design. Use tested product data and local requirements; all calculations run in this browser.',
+    relatedExistingIds: ['drywall-calculator', 'roofing-calculator'],
+    logicModule: './tools/insulation-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

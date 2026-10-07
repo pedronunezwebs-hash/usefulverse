@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 34/323; **289 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 35/323; **288 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -84,7 +84,7 @@
 - `main` y rama base del plan: `685f91adfc7818a54f6dc0a967e290d13137a3dd`.
 - Cloudflare Pages Free: [límites oficiales](https://developers.cloudflare.com/pages/platform/limits/) (consulta de 2026-10-07); [precio de peticiones estáticas](https://developers.cloudflare.com/pages/functions/pricing/); [dominios personalizados](https://developers.cloudflare.com/pages/configuration/custom-domains/).
 - Regresión completa con gujarati incluido: `npm test` — 889/889, 0 fallidos. `npm run build:growth600` generó correctamente 216 URLs en 36 idiomas (262 archivos, 3.519.822 bytes) en una carpeta temporal; auditoría estática de las 216 páginas pasó. No se lanzó PageSpeed, tal como pide el plan.
-- El piloto de cinco herramientas está publicado en el host separado `tools.usefulverse.com` con 216 URLs en su sitemap. Las **34 candidatas adicionales de esta rama** (incluidas Solar, BTU, Brick, Rafter, Carpet, Aquarium y Grass Seed Calculator) no se han fusionado ni publicado; el sitemap de producción de UsefulVerse no se modificó.
+- El piloto de cinco herramientas está publicado en el host separado `tools.usefulverse.com` con 216 URLs en su sitemap. Las **35 candidatas adicionales de esta rama** (incluidas Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed e Insulation Calculator) no se han fusionado ni publicado; el sitemap de producción de UsefulVerse no se modificó.
 
 ## Cierre técnico de la vista previa
 
@@ -399,7 +399,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 34/323; **289 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium y Grass Seed Calculator están en la rama; Rafter, Carpet, Aquarium y Grass Seed tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 35/323; **288 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed e Insulation Calculator están en la rama; Rafter, Carpet, Aquarium, Grass Seed e Insulation tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.
 
 ## Continuación · Rafter Calculator (#126) · 2026-10-08
@@ -438,3 +438,13 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [x] L — inglés completo y borradores estructurales en los otros 35 idiomas. Se reutilizan únicamente labels genéricos disponibles; el contenido específico está marcado `pending-tool-specific-translation` y el gate automático bloquea su publicación. No afirmar que sus 36 versiones estén traducidas/listas.
 - [x] B — builder sintético verificado por la suite y controlador aislado bajo el presupuesto común de bundles; suite focal 109/109 y `git diff --check` limpios. Revisión visual en navegador todavía pendiente.
 - [ ] P/S — no integrado ni desplegado. No modifica el sitemap de producción ni se envió a buscadores; quedan traducciones específicas, revisión visual y los gates coordinados de publicación.
+
+## Continuación · Insulation Calculator (#140) · 2026-10-08
+
+- [x] C — incorporada como candidata #35, diferenciada de `drywall-calculator` (resistencia térmica por capas, no paneles). La ficha del plan indica `insulation calculator` con 5.400 búsquedas mensuales US/en, KD 13; secundaria `insulation R value calculator`, 320/mes, KD 2. Sin llamadas nuevas a DataForSEO.
+- [x] F — suma de capas en serie con cantidad por capa, hasta cuatro entradas de interfaz (motor acotado a ocho), conversión R estadounidense ↔ RSI métrico y recíproco U como conversión de unidades. Aceptación: R2 + R3 = R5; RSI 1 + RSI 2 = RSI 3; capas sin valor se ignoran.
+- [x] E — pruebas cubren aceptación, cantidades repetidas, conversión y rechazo de cantidades fraccionarias/unidades inválidas/sin resistencia positiva. Suite enfocada de catálogo, forms, localización, renderer, build sintético, bundles y lógica: **111/111 aprobadas**.
+- [x] X — copy delimita el cálculo aritmético y advierte que no representa el valor efectivo de un muro con montantes, puentes térmicos, filtraciones, humedad, instalación ni requisitos normativos. No recomienda materiales ni diseño. Todo local; sin servicios de pago.
+- [x] L — inglés completo y borradores estructurales para los otros 35 idiomas, marcados `pending-tool-specific-translation`; release gate los bloquea, sin hacer pasar texto inglés por traducción terminada.
+- [x] B — controlador y builder sintético incluidos en pruebas; bundle pasa el presupuesto compartido. `git diff --check` limpio. No se ha realizado revisión visual en navegador.
+- [ ] P/S — sin merge ni deploy, sitemap de producción sin cambios, sin envío a buscadores. Traducciones específicas, revisión visual y gates globales siguen pendientes.

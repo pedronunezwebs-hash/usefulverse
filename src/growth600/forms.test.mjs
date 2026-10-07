@@ -99,6 +99,11 @@ const copies = {
     messages: { ...messages, baseSeed: 'Seed before extra', extraSeed: 'Extra seed', totalSeed: 'Seed to buy', bags: 'Whole bags' },
     fields: { area: 'Lawn area', areaUnit: 'Area unit', seedingRate: 'Seeding rate', rateUnit: 'Rate unit', wastePercent: 'Extra seed', varietyA: 'Variety A', percentA: 'Variety A share', varietyB: 'Variety B', percentB: 'Variety B share', bagSize: 'Bag size', bagUnit: 'Bag unit', accuracyNote: 'Use the product label.' },
   },
+  'insulation-calculator': {
+    name: 'Insulation R-value calculator', actions: { ...actions, R: 'US R-value', RSI: 'Metric RSI' },
+    messages: { ...messages, layerTotal: 'Layers included', totalR: 'Total US resistance', totalRsi: 'Total metric resistance', uFactorUs: 'U-factor US', uFactorSi: 'U-factor SI' },
+    fields: { unit: 'Input unit', layerName1: 'Layer 1 name', layerResistance1: 'Layer 1 resistance', layerQuantity1: 'Layer 1 quantity', layerName2: 'Layer 2 name', layerResistance2: 'Layer 2 resistance', layerQuantity2: 'Layer 2 quantity', layerName3: 'Layer 3 name', layerResistance3: 'Layer 3 resistance', layerQuantity3: 'Layer 3 quantity', layerName4: 'Layer 4 name', layerResistance4: 'Layer 4 resistance', layerQuantity4: 'Layer 4 quantity', accuracyNote: 'Series layer estimate only.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {

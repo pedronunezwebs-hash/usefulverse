@@ -21,6 +21,7 @@ import { calculateRafter } from './rafter-calculator/logic.mjs';
 import { calculateCarpet } from './carpet-calculator/logic.mjs';
 import { calculateAquarium } from './aquarium-calculator/logic.mjs';
 import { calculateGrassSeed } from './grass-seed-calculator/logic.mjs';
+import { calculateInsulation } from './insulation-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -481,4 +482,19 @@ test('grass seed estimates user-selected rates, mix shares and whole bags', () =
   assert.throws(() => calculateGrassSeed({ area: 100, seedingRate: 30, percentA: 65, percentB: 30 }), /add up to 100/u);
   assert.throws(() => calculateGrassSeed({ area: 100, seedingRate: 30, areaUnit: 'hectare' }), /supported/u);
   assert.throws(() => calculateGrassSeed({ area: 100, seedingRate: -1 }), /Seeding rate/u);
+});
+
+test('insulation adds series layers, quantity and converts R/RSI with reciprocal U-factors', () => {
+  const rValue = calculateInsulation({ layers: [{ name: 'A', resistance: 2 }, { name: 'B', resistance: 3 }] });
+  assert.equal(rValue.rValue, 5);
+  assert.ok(Math.abs(rValue.rsi - 0.880550919) < 1e-9);
+  assert.equal(rValue.uFactorUs, 0.2);
+  assert.ok(Math.abs(rValue.uFactorSi - 1 / rValue.rsi) < 1e-12);
+  const metric = calculateInsulation({ unit: 'RSI', layers: [{ resistance: 1 }, { resistance: 2, quantity: 1 }, { resistance: 0.5, quantity: 2 }] });
+  assert.equal(metric.rsi, 4);
+  assert.ok(Math.abs(metric.rValue - (4 / 0.1761101838)) < 1e-10);
+  assert.equal(metric.layerCount, 3);
+  assert.throws(() => calculateInsulation({ layers: [{ resistance: 2, quantity: 1.5 }] }), /allowed range/u);
+  assert.throws(() => calculateInsulation({ layers: [{ resistance: 0 }] }), /above zero/u);
+  assert.throws(() => calculateInsulation({ unit: 'Rsi', layers: [{ resistance: 2 }] }), /Choose R or RSI/u);
 });

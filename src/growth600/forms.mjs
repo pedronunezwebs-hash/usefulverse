@@ -52,6 +52,7 @@ export function renderGrowthForm(toolId, copy) {
     'carpet-calculator': ['roomLength', 'roomWidth', 'rollWidth', 'rooms', 'pileDirection', 'wastePercent', 'accuracyNote'],
     'aquarium-calculator': ['length', 'width', 'height', 'dimensionUnit', 'substrateDepth', 'substrateSolidPercent', 'airGap', 'accuracyNote'],
     'grass-seed-calculator': ['area', 'areaUnit', 'seedingRate', 'rateUnit', 'wastePercent', 'varietyA', 'percentA', 'varietyB', 'percentB', 'bagSize', 'bagUnit', 'accuracyNote'],
+    'insulation-calculator': ['unit', 'layerName1', 'layerResistance1', 'layerQuantity1', 'layerName2', 'layerResistance2', 'layerQuantity2', 'layerName3', 'layerResistance3', 'layerQuantity3', 'layerName4', 'layerResistance4', 'layerQuantity4', 'accuracyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -89,6 +90,7 @@ export function renderGrowthForm(toolId, copy) {
     'carpet-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'eitherDirection', 'alongRoomLength', 'alongRoomWidth'],
     'aquarium-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'feet', 'inches', 'liters', 'usGallons', 'imperialGallons'],
     'grass-seed-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'm2', 'ft2', 'acre', 'gM2', 'lb1000ft2', 'kg', 'lb'],
+    'insulation-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'R', 'RSI'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -558,6 +560,17 @@ export function renderGrowthForm(toolId, copy) {
       ${label('grass-bag-size', fields.bagSize, '<input id="grass-bag-size" name="bagSize" type="number" min="0" max="1000000" step="any" inputmode="decimal" value="0" required>')}
       ${label('grass-bag-unit', fields.bagUnit, `<select id="grass-bag-unit" name="bagUnit"><option value="kg">${escapeGrowthHtml(labels.kg)}</option><option value="lb">${escapeGrowthHtml(labels.lb)}</option></select>`)}
     </fieldset>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'insulation-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('insulation-unit', fields.unit, `<select id="insulation-unit" name="unit"><option value="R">${escapeGrowthHtml(labels.R)}</option><option value="RSI">${escapeGrowthHtml(labels.RSI)}</option></select>`)}
+    ${[1, 2, 3, 4].map((index) => `<fieldset><legend>${escapeGrowthHtml(fields[`layerName${index}`])}</legend>
+      ${label(`insulation-name-${index}`, fields[`layerName${index}`], `<input id="insulation-name-${index}" name="layerName${index}" type="text" maxlength="50">`)}
+      ${label(`insulation-value-${index}`, fields[`layerResistance${index}`], `<input id="insulation-value-${index}" name="layerResistance${index}" type="number" min="0" max="1000" step="any" inputmode="decimal" ${index <= 2 ? `value="${index}"` : ''}>`)}
+      ${label(`insulation-quantity-${index}`, fields[`layerQuantity${index}`], `<input id="insulation-quantity-${index}" name="layerQuantity${index}" type="number" min="1" max="100" step="1" inputmode="numeric" value="1" required>`)}
+    </fieldset>`).join('')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);
