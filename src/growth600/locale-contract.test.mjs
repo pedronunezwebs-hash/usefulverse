@@ -31,6 +31,7 @@ import thaiGrowthCopy from './locales/th.mjs';
 import ukrainianGrowthCopy from './locales/uk.mjs';
 import swahiliGrowthCopy from './locales/sw.mjs';
 import marathiGrowthCopy from './locales/mr.mjs';
+import teluguGrowthCopy from './locales/te.mjs';
 
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
@@ -297,4 +298,13 @@ test('the first Marathi draft covers every copy key and preserves required place
   assert.equal(marathiGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} महिने');
   assert.equal(marathiGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver} {recipient} यांना भेटवस्तू देतात.');
   assert.equal(marathiGrowthCopy.mancala.messages.turn, '{player} यांची चाल.');
+});
+
+test('the first Telugu draft covers every copy key and preserves required placeholders', () => {
+  assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'te' }], { te: teluguGrowthCopy }), true);
+  assert.ok(Object.values(teluguGrowthCopy).every((copy) => copy.copyLanguage === 'te'));
+  assert.ok(Object.values(teluguGrowthCopy).every((copy) => copy.title.length <= 60 && copy.description.length <= 160));
+  assert.equal(teluguGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} నెలలు');
+  assert.equal(teluguGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver} వారు {recipient}కు బహుమతి ఇస్తారు.');
+  assert.equal(teluguGrowthCopy.mancala.messages.turn, '{player} వంతు.');
 });
