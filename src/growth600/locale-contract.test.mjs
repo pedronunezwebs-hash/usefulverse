@@ -19,6 +19,7 @@ import urduGrowthCopy from './locales/ur.mjs';
 import turkishGrowthCopy from './locales/tr.mjs';
 import vietnameseGrowthCopy from './locales/vi.mjs';
 import italianGrowthCopy from './locales/it.mjs';
+import traditionalChineseGrowthCopy from './locales/zh_tw.mjs';
 
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
@@ -177,4 +178,13 @@ test('the first Italian draft covers every copy key and preserves required place
   assert.equal(italianGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} mesi');
   assert.equal(italianGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver} fa un regalo a {recipient}.');
   assert.equal(italianGrowthCopy.mancala.messages.turn, 'Tocca a {player}.');
+});
+
+test('the first Traditional Chinese draft covers every copy key and preserves required placeholders', () => {
+  assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'zh_tw' }], { zh_tw: traditionalChineseGrowthCopy }), true);
+  assert.ok(Object.values(traditionalChineseGrowthCopy).every((copy) => copy.copyLanguage === 'zh_tw'));
+  assert.ok(Object.values(traditionalChineseGrowthCopy).every((copy) => copy.title.length <= 60 && copy.description.length <= 160));
+  assert.equal(traditionalChineseGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} 個月');
+  assert.equal(traditionalChineseGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver} 送禮給 {recipient}。');
+  assert.equal(traditionalChineseGrowthCopy.mancala.messages.turn, '輪到玩家 {player}。');
 });
