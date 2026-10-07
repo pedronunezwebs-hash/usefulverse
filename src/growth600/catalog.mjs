@@ -1,5 +1,17 @@
 export const growthPilotTools = Object.freeze([
   {
+    id: 'image-region-redactor',
+    category: 'image-tools',
+    type: 'image-editor',
+    primaryIntent: 'image pixelator',
+    secondaryIntents: ['blur face online', 'pixelate part of image', 'black out part of photo'],
+    functions: ['load a local raster image', 'select multiple regions by pointer or exact pixel coordinates', 'pixelate, blur or permanently cover each selected region with black', 'preview edits and export a fresh PNG or JPEG locally'],
+    acceptance: 'A black-redacted region exports only black pixels in that region; source image remains unchanged and is never uploaded.',
+    boundary: 'Local image-region redaction, not a global mosaic or general photo editor. Blur and pixelation may leave details inferable; use opaque black for sensitive data. Processing depends on browser/device memory and is limited to 24 megapixels.',
+    relatedExistingIds: ['photo-mosaic-maker', 'image-cropper'],
+    logicModule: './tools/image-region-redactor/logic.mjs',
+  },
+  {
     id: 'wallpaper-calculator',
     category: 'home-materials',
     type: 'calculator',

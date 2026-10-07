@@ -18,6 +18,7 @@ export function renderGrowthForm(toolId, copy) {
   const fields = copy?.fields ?? {};
   const actions = copy?.actions ?? {};
   const fieldNames = {
+    'image-region-redactor': ['imageFile', 'mode', 'strength', 'regionX', 'regionY', 'regionWidth', 'regionHeight', 'accuracyNote', 'dragHint', 'regionsLabel'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
     'fence-calculator': ['unit', 'length', 'gateCount', 'gateWidth', 'materialUnit', 'postSpacing', 'panelWidth', 'picketWidth', 'maxPicketGap', 'picketHeight', 'wastePercent', 'pricePerPost', 'pricePerGate', 'pricePerPanel', 'pricePerPicket', 'accuracyNote'],
@@ -38,6 +39,7 @@ export function renderGrowthForm(toolId, copy) {
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
+    'image-region-redactor': ['load', 'addRegion', 'undo', 'clear', 'export', 'example', 'download', 'removeRegion', 'black', 'pixelate', 'blur', 'png', 'jpeg'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
     'fence-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'millimeters', 'feet', 'inches'],
@@ -61,6 +63,28 @@ export function renderGrowthForm(toolId, copy) {
   const labels = Object.fromEntries([...new Set([...actionNames, 'calculate', 'generate', 'reset', 'example', 'newGame', 'rules', 'reveal', 'next', 'copy', 'download', 'result', 'progress', 'perPerson', 'metric', 'imperial', 'rectangle', 'circle', 'triangle', 'meters', 'centimeters', 'feet', 'inches', 'kgPerCubicMeter', 'lbPerCubicFoot', 'kilograms', 'pounds', 'twoPlayers', 'computer', 'human', 'currentPlayer', 'opponent', 'privacyNote', 'kmh', 'mph'])].map((key) => [key, actions[key] ?? '']));
   const submit = (name) => button(name === 'calculate' ? 'calculate' : 'generate', labels[name]);
   const reset = button('reset', labels.reset, 'secondary');
+
+  if (toolId === 'image-region-redactor') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('image-file', fields.imageFile, '<input id="image-file" name="imageFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/avif,image/bmp" required>')}
+    <div class="field"><label for="redaction-mode">${escapeGrowthHtml(fields.mode)}</label><select id="redaction-mode" name="mode"><option value="black">${escapeGrowthHtml(labels.black)}</option><option value="pixelate">${escapeGrowthHtml(labels.pixelate)}</option><option value="blur">${escapeGrowthHtml(labels.blur)}</option></select></div>
+    ${label('redaction-strength', fields.strength, '<input id="redaction-strength" name="strength" type="range" min="4" max="32" step="1" value="12">')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div data-workbench hidden>
+      <p class="hint">${escapeGrowthHtml(fields.dragHint)}</p>
+      <canvas data-preview tabindex="0" role="img" aria-label="${escapeGrowthHtml(fields.dragHint)}"></canvas>
+      <fieldset class="redaction-coordinates"><legend>${escapeGrowthHtml(fields.regionsLabel)}</legend>
+        ${label('region-x', fields.regionX, '<input id="region-x" name="regionX" type="number" min="0" step="1" value="0" required>')}
+        ${label('region-y', fields.regionY, '<input id="region-y" name="regionY" type="number" min="0" step="1" value="0" required>')}
+        ${label('region-width', fields.regionWidth, '<input id="region-width" name="regionWidth" type="number" min="1" step="1" value="100" required>')}
+        ${label('region-height', fields.regionHeight, '<input id="region-height" name="regionHeight" type="number" min="1" step="1" value="100" required>')}
+        <div class="actions"><button type="submit" data-action="add-region" class="button button--primary">${escapeGrowthHtml(labels.addRegion)}</button></div>
+      </fieldset>
+      <h2>${escapeGrowthHtml(fields.regionsLabel)}</h2><ol data-region-list></ol>
+    </div>
+    <div class="actions"><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(labels.load)}</button><button type="button" data-action="undo" class="button button--secondary">${escapeGrowthHtml(labels.undo)}</button><button type="button" data-action="clear" class="button button--secondary">${escapeGrowthHtml(labels.clear)}</button><button type="button" data-action="export" class="button button--primary">${escapeGrowthHtml(labels.export)}</button>${reset}</div>
+    <div class="field"><label for="image-format">${escapeGrowthHtml(fields.format)}</label><select id="image-format" name="format"><option value="image/png">${escapeGrowthHtml(labels.png)}</option><option value="image/jpeg">${escapeGrowthHtml(labels.jpeg)}</option></select></div>
+    <p class="status" role="status" aria-live="polite" data-status></p><a class="button button--primary" data-export hidden></a>
+  </form>`, copy);
 
   if (toolId === 'wallpaper-calculator') return attachCopy(`<form id="tool-form" novalidate>
     ${label('unit', fields.unit, `<select id="unit" name="unit"><option value="m">${escapeGrowthHtml(labels.meters)}</option><option value="ft">${escapeGrowthHtml(labels.feet)}</option></select>`)}

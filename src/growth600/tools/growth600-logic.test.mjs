@@ -16,6 +16,7 @@ import { calculateDeck } from './deck-calculator/logic.mjs';
 import { calculateFence } from './fence-calculator/logic.mjs';
 import { calculatePoolSalt } from './pool-salt-calculator/logic.mjs';
 import { calculateWallpaper } from './wallpaper-calculator/logic.mjs';
+import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
 test('gravel calculator converts area and depth into volume, waste, weight and bags', () => {
@@ -37,6 +38,15 @@ test('wallpaper calculator counts pattern-aligned drops, openings and allowance'
   assert.equal(calculateWallpaper(base).rollsNeeded, 6);
   assert.equal(calculateWallpaper({ ...base, patternRepeat: 0.32 }).rollsNeeded, 8);
   assert.equal(calculateWallpaper({ ...base, openingsArea: 2.4 }).stripsNeeded, 21);
+});
+
+test('image redactor validates safe image sizes, exact regions, drag mapping and modes', () => {
+  assert.equal(validateImageSize(4000, 3000).pixels, 12_000_000);
+  assert.throws(() => validateImageSize(6000, 5000), /pixel count/u);
+  assert.deepEqual(normalizeRedactionRegion({ x: 5, y: 5, width: 20, height: 20 }, 100, 100), { x: 5, y: 5, width: 20, height: 20 });
+  assert.deepEqual(mapPointerRegion({ x: 10, y: 10 }, { x: 30, y: 35 }, 2, 2, 100, 100), { x: 20, y: 20, width: 40, height: 50 });
+  assert.equal(validateRedactionMode('black'), 'black');
+  assert.throws(() => validateRedactionMode('reversible'), /Choose/u);
 });
 
 test('soil calculator estimates raised-bed and pot fill volume and bag count', () => {

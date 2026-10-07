@@ -73,4 +73,13 @@ test('tool renderer includes additional localized FAQs in page content and schem
     origin: 'https://tools.usefulverse.com', formHtml: '<form id="tool-form"></form>',
   });
   assert.match(wallpaperHtml, /https:\/\/usefulverse\.com\/ar\/tools\/paint-calculator\//u);
+
+  const redactorHtml = renderGrowthToolPage({
+    tool: { id: 'image-region-redactor' }, locale: locales[1], localeEntries: locales,
+    copy: { ...copy, fields: { relatedMosaic: 'Try a photo mosaic.', relatedCropper: 'Try the image cropper.' }, additionalFaqs: [{ question: 'Is blur enough?', answer: 'Use black for sensitive details.' }] },
+    origin: 'https://tools.usefulverse.com', formHtml: '<form id="tool-form"></form>',
+  });
+  assert.match(redactorHtml, /https:\/\/usefulverse\.com\/ar\/tools\/photo-mosaic-maker\//u);
+  assert.match(redactorHtml, /https:\/\/usefulverse\.com\/ar\/tools\/image-cropper\//u);
+  assert.match(redactorHtml, /<summary>Is blur enough\?<\/summary>/u);
 });

@@ -20,6 +20,8 @@ import poolSaltTranslations from './pool-salt-calculator-final.mjs';
 import { poolSaltCalculatorEnglishCopy } from './pool-salt-calculator.en.mjs';
 import wallpaperCopies from './wallpaper-calculator-final.mjs';
 import { wallpaperCalculatorEnglishCopy } from './wallpaper-calculator.en.mjs';
+import imageRegionRedactorCopies from './image-region-redactor-final.mjs';
+import { imageRegionRedactorEnglishCopy } from './image-region-redactor.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -92,6 +94,7 @@ const tools = {
   'pool-volume-calculator': poolVolumeCalculatorEnglishCopy,
   'pool-salt-calculator': poolSaltCalculatorEnglishCopy,
   'wallpaper-calculator': wallpaperCalculatorEnglishCopy,
+  'image-region-redactor': imageRegionRedactorEnglishCopy,
   'roof-pitch-calculator': roofPitchCalculatorEnglishCopy,
   'molar-mass-calculator': {
     copyLanguage: 'en', name: 'Molar mass calculator', title: 'Molar mass calculator free unlimited | UsefulVerse',
@@ -161,5 +164,6 @@ registerGrowthLocaleExtension(source, 'deck-calculator', deckCopies, 'gravel-cal
 registerGrowthLocaleExtension(source, 'fence-calculator', fenceCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'pool-salt-calculator', poolSaltCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'wallpaper-calculator', localizedWallpaperCopies, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'image-region-redactor', imageRegionRedactorCopies, 'gravel-calculator');
 
 export default Object.freeze(source);

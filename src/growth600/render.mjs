@@ -33,6 +33,8 @@ export function renderGrowthToolPage({ tool, locale, localeEntries, copy, origin
     ...(Array.isArray(copy.additionalFaqs) ? copy.additionalFaqs : []),
   ];
   const relatedTools = [
+    ['relatedMosaic', 'photo-mosaic-maker'],
+    ['relatedCropper', 'image-cropper'],
     ['relatedUnitConverter', 'unit-converter'],
     ['relatedConcreteCalculator', 'concrete-calculator'],
     ['relatedPaintCalculator', 'paint-calculator'],

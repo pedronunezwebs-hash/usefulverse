@@ -1,0 +1,30 @@
+export const imageRegionRedactorEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Image pixelator',
+  title: 'Image pixelator free | UsefulVerse',
+  description: 'Pixelate, blur or black out selected image areas in your browser. Free, private and no upload.',
+  intro: 'Hide part of a photo with pixelation, blur or a solid black block. Add several regions, preview them and export a fresh image.',
+  howQuestion: 'How do I pixelate or blur part of an image?',
+  howAnswer: 'Choose a local image, select a redaction style, then drag over an area or enter exact pixel coordinates. Add more regions if needed and export a new PNG or JPEG. The original file is not changed. For sensitive text or faces, choose solid black: blur and pixelation can still leave details inferable.',
+  privacyQuestion: 'Is my image uploaded?',
+  privacyAnswer: 'No. The image is processed in this browser and is not sent to a server. It stays in this tab until you reset it or close the page.',
+  fields: {
+    imageFile: 'Choose an image (PNG, JPEG, WebP, GIF, AVIF or BMP)', mode: 'Redaction style', strength: 'Pixel size or blur amount',
+    regionX: 'Left position (pixels)', regionY: 'Top position (pixels)', regionWidth: 'Region width (pixels)', regionHeight: 'Region height (pixels)',
+    accuracyNote: 'For private information, use solid black. Blur and pixelation may still be guessed. Images are processed on this device; large images need enough browser memory. Maximum: 24 megapixels.',
+    dragHint: 'Drag across the image to add a region. You can also enter exact pixel coordinates below.', regionsLabel: 'Selected regions', format: 'Export format',
+    relatedMosaic: 'Want a mosaic effect over the whole picture? Try the photo mosaic maker.',
+    relatedCropper: 'Need to crop the picture instead? Open the image cropper.',
+  },
+  actions: { load: 'Choose image', addRegion: 'Add region', undo: 'Undo last region', clear: 'Remove all regions', export: 'Apply redactions', example: 'Choose image', download: 'Download redacted image', removeRegion: 'Remove region', black: 'Solid black (strongest)', pixelate: 'Pixelate', blur: 'Blur', png: 'PNG', jpeg: 'JPEG', reset: 'Reset' },
+  messages: {
+    unsupportedImage: 'Choose a supported raster image that this browser can open.', imageTooLarge: 'This image is too large for this browser tab. Try a smaller copy or a computer with more memory.',
+    imageReady: 'Image ready.', selectImage: 'Choose an image first.', invalidRegion: 'Enter a whole-pixel region inside the image, or drag a larger area.',
+    regionAdded: 'Redaction region added.', regionRemoved: 'Last region removed.', regionsCleared: 'All regions removed.',
+    addRegionFirst: 'Add at least one region before exporting.', exporting: 'Applying the selected regions…', exportFailed: 'The browser could not create the image. Try PNG or a smaller image.', exportReady: 'A new redacted image is ready to download.', region: 'Region',
+  },
+  additionalFaqs: [
+    { question: 'Does blur or pixelation fully hide private information?', answer: 'Not always. A face or text may remain guessable. Use the solid black option for sensitive details, check the exported file, and share only that new copy.' },
+    { question: 'Does the original image change?', answer: 'No. The tool keeps the selected source unchanged in this tab and exports a separate flattened PNG or JPEG with the visible redactions applied.' },
+  ],
+});

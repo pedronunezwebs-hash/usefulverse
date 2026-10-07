@@ -120,6 +120,22 @@ test('wallpaper calculator has complete localized copy, pattern guidance and bou
   }
 });
 
+test('image region redactor has complete localized copy, privacy boundaries and FAQs in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'image-region-redactor');
+  assert.ok(tool);
+  assert.equal(localeEntries.length, 36);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.ok(copy.fields.accuracyNote.trim(), `${key}: privacy and size boundary should be present`);
+    assert.ok(copy.fields.imageFile.trim(), `${key}: supported image types must be described`);
+    assert.ok(copy.fields.relatedMosaic.trim() && copy.fields.relatedCropper.trim(), `${key}: related image tools should be linked`);
+    assert.equal(copy.additionalFaqs.length, 2, `${key}: two FAQs should be localized`);
+    assert.doesNotMatch(JSON.stringify(copy), /⟦R\d{3}⟧|UVIMG\d+X|undefined|:null/u, `${key}: no marker or missing copy`);
+  }
+  assert.match(localizedCopies.en[tool.id].fields.imageFile, /BMP/u, 'English copy names BMP as a supported format');
+});
+
 test('soil calculator has 36 localized copies, container-fill boundary and complete FAQs', () => {
   const soilTool = allGrowthPilotTools.find(({ id }) => id === 'soil-calculator');
   assert.ok(soilTool);
