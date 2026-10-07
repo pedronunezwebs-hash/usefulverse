@@ -383,6 +383,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['square-footage-calculator'],
     logicModule: './tools/carpet-calculator/logic.mjs',
   },
+  {
+    id: 'aquarium-calculator',
+    category: 'home-and-pets',
+    type: 'calculator',
+    primaryIntent: 'fish tank volume calculator',
+    secondaryIntents: ['aquarium calculator', 'aquarium water volume calculator', 'fish tank weight calculator'],
+    functions: ['estimate rectangular tank capacity from internal dimensions', 'subtract the unfilled top air gap and an entered solid share of the substrate layer', 'show usable water in litres and US/imperial gallons', 'estimate water mass in kilograms and pounds without including the tank, stand or decorations'],
+    acceptance: 'One litre of estimated water is approximately one kilogram of water; the mass excludes the aquarium. With dimensions 60 × 30 × 36 cm, a 5 cm substrate depth at 50% solid share and a 3 cm air gap, estimated water is 54.9 L and water mass is about 54.9 kg.',
+    boundary: 'Planning estimate for rectangular tanks only. Use inside dimensions. Substrate solid share is a user assumption; rocks, filters, glass thickness, decorations, supports and actual load capacity are not calculated. Water density is approximated as 1 kg/L. Check the tank maker’s guidance; all arithmetic stays in this browser.',
+    relatedExistingIds: ['pool-volume-calculator'],
+    logicModule: './tools/aquarium-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

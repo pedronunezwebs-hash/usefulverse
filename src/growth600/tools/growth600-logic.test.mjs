@@ -19,6 +19,7 @@ import { calculateWallpaper } from './wallpaper-calculator/logic.mjs';
 import { calculateBrickMaterials } from './brick-calculator/logic.mjs';
 import { calculateRafter } from './rafter-calculator/logic.mjs';
 import { calculateCarpet } from './carpet-calculator/logic.mjs';
+import { calculateAquarium } from './aquarium-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -92,6 +93,19 @@ test('carpet calculator compares cut orientation, seams, rooms, allowance and un
   assert.equal(imperial.chosen.cutsPerRoom, 2);
   assert.throws(() => calculateCarpet({ roomLength: 4, roomWidth: 5, rollWidth: 0 }), /Roll width/u);
   assert.throws(() => calculateCarpet({ roomLength: 4, roomWidth: 5, rollWidth: 3, rooms: 1.5 }), /whole number/u);
+});
+
+test('aquarium calculator estimates net water, substrate, air space, gallons and water mass', () => {
+  const result = calculateAquarium({ length: 60, width: 30, height: 36, unit: 'cm', substrateDepth: 5, substrateSolidPercent: 50, airGap: 3 });
+  assert.equal(result.tankVolumeLiters, 64.8);
+  assert.equal(result.substrateDisplacementLiters, 4.5);
+  assert.ok(Math.abs(result.airSpaceLiters - 5.4) < 1e-10);
+  assert.ok(Math.abs(result.waterLiters - 54.9) < 1e-10);
+  assert.equal(result.waterMassKg, result.waterLiters);
+  assert.ok(Math.abs(calculateAquarium({ length: 10, width: 10, height: 10, unit: 'cm', substrateDepth: 0, substrateSolidPercent: 0, airGap: 0 }).waterMassKg - 1) < 1e-10);
+  assert.ok(Math.abs(calculateAquarium({ length: 24, width: 12, height: 12, unit: 'in', substrateDepth: 0, substrateSolidPercent: 0, airGap: 0 }).waterLiters - 56.634) < 0.01);
+  assert.throws(() => calculateAquarium({ length: 30, width: 30, height: 40, unit: 'cm', substrateDepth: 25, airGap: 15 }), /less than tank height/u);
+  assert.throws(() => calculateAquarium({ length: 30, width: 30, height: 40, unit: 'cm', substrateSolidPercent: 101 }), /from 0 to 100/u);
 });
 
 test('image redactor validates safe image sizes, exact regions, drag mapping and modes', () => {

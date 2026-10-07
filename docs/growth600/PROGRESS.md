@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 32/323; **291 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 33/323; **290 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -84,7 +84,7 @@
 - `main` y rama base del plan: `685f91adfc7818a54f6dc0a967e290d13137a3dd`.
 - Cloudflare Pages Free: [límites oficiales](https://developers.cloudflare.com/pages/platform/limits/) (consulta de 2026-10-07); [precio de peticiones estáticas](https://developers.cloudflare.com/pages/functions/pricing/); [dominios personalizados](https://developers.cloudflare.com/pages/configuration/custom-domains/).
 - Regresión completa con gujarati incluido: `npm test` — 889/889, 0 fallidos. `npm run build:growth600` generó correctamente 216 URLs en 36 idiomas (262 archivos, 3.519.822 bytes) en una carpeta temporal; auditoría estática de las 216 páginas pasó. No se lanzó PageSpeed, tal como pide el plan.
-- El piloto de cinco herramientas está publicado en el host separado `tools.usefulverse.com` con 216 URLs en su sitemap. Las **32 candidatas adicionales de esta rama** (incluidas Solar, BTU, Brick, Rafter y Carpet Calculator) no se han fusionado ni publicado; el sitemap de producción de UsefulVerse no se modificó.
+- El piloto de cinco herramientas está publicado en el host separado `tools.usefulverse.com` con 216 URLs en su sitemap. Las **33 candidatas adicionales de esta rama** (incluidas Solar, BTU, Brick, Rafter, Carpet y Aquarium Calculator) no se han fusionado ni publicado; el sitemap de producción de UsefulVerse no se modificó.
 
 ## Cierre técnico de la vista previa
 
@@ -399,7 +399,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 32/323; **291 por implementar**. Solar, BTU, Brick, Rafter y Carpet Calculator están en la rama; Rafter y Carpet tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 33/323; **290 por implementar**. Solar, BTU, Brick, Rafter, Carpet y Aquarium Calculator están en la rama; Rafter, Carpet y Aquarium tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.
 
 ## Continuación · Rafter Calculator (#126) · 2026-10-08
@@ -419,3 +419,12 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [x] Bundle estático por herramienta y pruebas de catálogo, formulario, lógica, renderer y build sintético. Suite enfocada: **105/105 aprobadas**; `git diff --check` limpio.
 - [x] Gate de localización: los rótulos comunes reutilizan traducciones existentes, pero los 35 copies no ingleses se marcan `pending-tool-specific-translation`. El build de publicación los rechaza explícitamente; no se confunden drafts estructurales con traducciones listas.
 - [ ] L/P/S y publicación siguen abiertos: falta traducir copy específico en 35 idiomas, revisar visualmente y probar el build productivo después de levantar el gate. No se modifica ni se envía el sitemap de producción. No se llamó DataForSEO ni PageSpeed.
+
+## Continuación · Aquarium Calculator (#135) · 2026-10-08
+
+- [x] Añadida como herramienta de volumen útil de pecera, distinta de la calculadora de piscina: usa medidas interiores rectangulares, resta cámara de aire y desplazamiento estimado del sustrato y muestra capacidad geométrica, agua útil, litros, galones US/imperiales y masa aproximada del agua.
+- [x] El porcentaje sólido del sustrato es editable y visible; el peso utiliza aproximadamente 1 kg/L y excluye tanque, soporte, piedras, equipo y decoración. El aviso explica que el resultado no determina capacidad estructural ni sustituye la ficha del fabricante.
+- [x] Formulario accesible con unidades cm/in/m/ft, ejemplo, reset, copia, resultados desglosados y error cuando sustrato más cámara de aire no dejan agua. Caso de aceptación: tanque 60×30×36 cm, sustrato 5 cm al 50% y cámara 3 cm → 54,9 L y ≈54,9 kg de agua.
+- [x] Suite enfocada de lógica, formulario, catálogo, renderer, bundles y builder sintético: **107/107 aprobadas**; `git diff --check` limpio.
+- [x] Gate de localización cierra el paso de publicación: se reusan solo rótulos genéricos disponibles en las traducciones existentes; las 35 copias no inglesas se marcan `pending-tool-specific-translation`.
+- [ ] Falta traducir copy específico para los 35 idiomas, revisión visual y cerrar L/P/S. No se ha fusionado, desplegado ni enviado sitemap; sin llamadas a DataForSEO o PageSpeed.

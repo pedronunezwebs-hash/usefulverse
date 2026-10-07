@@ -90,6 +90,10 @@ const copies = {
     messages: { ...messages, floorArea: 'Floor area', pileDirection: 'Pile direction', cuts: 'Cuts per room', seams: 'Seams', cutLength: 'Length per cut', orderLength: 'Roll length to order', purchasedArea: 'Purchased area', alternative: 'Other orientation' },
     fields: { unit: 'Unit', roomLength: 'Room length', roomWidth: 'Room width', rollWidth: 'Roll width', rooms: 'Number of rooms', pileDirection: 'Pile direction', wastePercent: 'Extra allowance', accuracyNote: 'Planning estimate only.' },
   },
+  'aquarium-calculator': {
+    name: 'Aquarium volume calculator', actions: { ...actions, centimeters: 'Centimeters', liters: 'Litres', usGallons: 'US gallons', imperialGallons: 'Imperial gallons' },
+    fields: { length: 'Inside length', width: 'Inside width', height: 'Inside height', dimensionUnit: 'Unit', substrateDepth: 'Substrate depth', substrateSolidPercent: 'Solid share', airGap: 'Air gap', accuracyNote: 'Estimate only.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {

@@ -48,6 +48,8 @@ import rafterCopies from './rafter-calculator-final.mjs';
 import { rafterCalculatorEnglishCopy } from './rafter-calculator.en.mjs';
 import carpetCopies from './carpet-calculator-final.mjs';
 import { carpetCalculatorEnglishCopy } from './carpet-calculator.en.mjs';
+import aquariumCopies from './aquarium-calculator-final.mjs';
+import { aquariumCalculatorEnglishCopy } from './aquarium-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -122,6 +124,7 @@ const tools = {
   'wallpaper-calculator': wallpaperCalculatorEnglishCopy,
   'rafter-calculator': rafterCalculatorEnglishCopy,
   'carpet-calculator': carpetCalculatorEnglishCopy,
+  'aquarium-calculator': aquariumCalculatorEnglishCopy,
   'image-region-redactor': imageRegionRedactorEnglishCopy,
   'image-sharpener': imageSharpenerEnglishCopy,
   'image-color-picker': imageColorPickerEnglishCopy,
@@ -418,5 +421,6 @@ registerGrowthLocaleExtension(source, 'btu-calculator', localizedBtuCopies, 'gra
 registerGrowthLocaleExtension(source, 'brick-calculator', { ...brickCopies, en: brickCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'rafter-calculator', { ...rafterCopies, en: rafterCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'carpet-calculator', { ...carpetCopies, en: carpetCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'aquarium-calculator', { ...aquariumCopies, en: aquariumCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

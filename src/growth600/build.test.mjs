@@ -79,6 +79,7 @@ function toolCopy(tool, language) {
     'brick-calculator': { wallLength: 'Wall length', wallHeight: 'Wall height', wallUnit: 'Wall unit', brickLength: 'Brick length', brickHeight: 'Brick height', brickDepth: 'Brick depth', brickUnit: 'Brick unit', joint: 'Joint thickness', jointUnit: 'Joint unit', openingWidth: 'Opening width', openingHeight: 'Opening height', openingCount: 'Identical openings', wythes: 'Wall layers', wastePercent: 'Extra bricks', bagYieldLiters: 'Bag yield in litres', accuracyNote: 'Planning estimate only; verify dimensions and product coverage with the supplier.' },
     'rafter-calculator': { unit: 'Measurement unit', mode: 'Slope input', span: 'Full roof span', rise: 'Rise to ridge', pitch: 'Pitch', ridgeThickness: 'Ridge-board thickness', ridgeUnit: 'Ridge-board unit', overhang: 'Horizontal overhang', diagramLabel: 'Roof geometry diagram', accuracyNote: 'Geometry estimate only; not structural design.' },
     'carpet-calculator': { unit: 'Unit', roomLength: 'Room length', roomWidth: 'Room width', rollWidth: 'Carpet roll width', rooms: 'Number of identical rooms', pileDirection: 'Pile direction', wastePercent: 'Extra allowance', accuracyNote: 'Planning estimate only.' },
+    'aquarium-calculator': { length: 'Inside length', width: 'Inside width', height: 'Inside height', dimensionUnit: 'Dimension unit', substrateDepth: 'Substrate depth', substrateSolidPercent: 'Solid share', airGap: 'Air gap', accuracyNote: 'Estimate only.' },
   }[tool.id];
   if (tool.id === 'tire-size-calculator') {
     Object.assign(actions, { kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)' });
@@ -86,6 +87,7 @@ function toolCopy(tool, language) {
   if (tool.id === 'pool-volume-calculator') Object.assign(actions, { oval: 'Oval', flat: 'Flat floor', sloped: 'Sloped floor' });
   if (tool.id === 'roof-pitch-calculator') Object.assign(actions, { millimeters: 'Millimeters' });
   if (tool.id === 'carpet-calculator') Object.assign(actions, { eitherDirection: 'Use less material', alongRoomLength: 'Along room length', alongRoomWidth: 'Along room width' });
+  if (tool.id === 'aquarium-calculator') Object.assign(actions, { centimeters: 'Centimetres', inches: 'Inches', liters: 'Litres', usGallons: 'US gallons', imperialGallons: 'Imperial gallons' });
   if (tool.id === 'drywall-calculator') Object.assign(actions, { millimeters: 'Millimeters', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only' });
   if (tool.id === 'roofing-calculator') Object.assign(actions, { squareMeters: 'Square metres', squareFeet: 'Square feet' });
   if (tool.id === 'deck-calculator') Object.assign(actions, { millimeters: 'Millimeters' });
@@ -115,7 +117,8 @@ function toolCopy(tool, language) {
   const brickMessages = tool.id === 'brick-calculator' ? { grossArea: 'Gross wall area', netArea: 'Wall area after openings', courses: 'Approximate courses', bricksPerCourse: 'Average bricks per course', bricksBeforeWaste: 'Bricks before extra allowance', bricksToOrder: 'Bricks to order', mortarVolume: 'Approximate mortar volume', mortarBags: 'Mortar bags by entered yield' } : {};
   const rafterMessages = tool.id === 'rafter-calculator' ? { effectiveRun: 'Horizontal run to ridge', rafterLength: 'Geometric rafter length', pitch: 'Pitch (rise per 12)', roofAngle: 'Roof angle', plumbCut: 'Plumb-cut angle', overhangRun: 'Horizontal overhang' } : {};
   const carpetMessages = tool.id === 'carpet-calculator' ? { floorArea: 'Total floor area', pileDirection: 'Selected pile direction', cuts: 'Full-width cuts per room', seams: 'Seams per room', cutLength: 'Length of each cut', orderLength: 'Continuous roll length to order', purchasedArea: 'Approximate purchased area', alternative: 'Other orientation' } : {};
-  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: { ...localizedMessages, ...asphaltMessages, ...poolMessages, ...saltMessages, ...roofMessages, ...drywallMessages, ...roofingMessages, ...deckMessages, ...fenceMessages, ...redactorMessages, ...upscalerMessages, ...dominoMessages, ...weightMessages, ...helocMessages, ...teamMessages, ...paverMessages, ...brickMessages, ...rafterMessages, ...carpetMessages }, copyLanguage: language, ...(tool.id === 'carpet-calculator' ? { localizationStatus: 'approved' } : {}) };
+  const aquariumMessages = tool.id === 'aquarium-calculator' ? { tankVolume: 'Geometric capacity', substrateDisplacement: 'Substrate displacement', airSpace: 'Air-space volume', waterVolume: 'Water volume', waterMassKg: 'Water mass', waterMassLb: 'Water mass' } : {};
+  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: { ...localizedMessages, ...asphaltMessages, ...poolMessages, ...saltMessages, ...roofMessages, ...drywallMessages, ...roofingMessages, ...deckMessages, ...fenceMessages, ...redactorMessages, ...upscalerMessages, ...dominoMessages, ...weightMessages, ...helocMessages, ...teamMessages, ...paverMessages, ...brickMessages, ...rafterMessages, ...carpetMessages, ...aquariumMessages }, copyLanguage: language, ...(['carpet-calculator', 'aquarium-calculator'].includes(tool.id) ? { localizationStatus: 'approved' } : {}) };
   if (tool.id === 'image-color-picker') Object.assign(localized, {
     fields: { imageFile: 'Choose an image', accuracyNote: 'Local processing; maximum 12 megapixels.', previewHint: 'Click a pixel or use arrow keys.', zoom: 'Preview zoom', currentColor: 'Current pixel', paletteLabel: 'Color palette', relatedSharpener: 'Open the image sharpener.', relatedRedactor: 'Open the image redactor.' },
     actions: { ...actions, load: 'Choose image', addSample: 'Add color to palette', copyColor: 'Copy color', copyPalette: 'Copy HEX palette', remove: 'Remove', clear: 'Clear palette' },
@@ -221,6 +224,10 @@ function toolCopy(tool, language) {
     { question: 'Why can the carpet estimate exceed the room area?', answer: 'Carpet is cut in full-width strips, so unused edges can remain after the layout is cut.' },
     { question: 'Does it create an installer-ready cutting diagram?', answer: 'No. The estimate does not account for obstacles, patterns or joining different rooms.' },
   ];
+  if (tool.id === 'aquarium-calculator') localized.additionalFaqs = [
+    { question: 'Does this include gravel, rocks and aquarium equipment?', answer: fields.accuracyNote },
+    { question: 'Does the estimated weight include the tank?', answer: 'No. This estimate reports water mass only; add the tank, substrate, equipment and stand separately.' },
+  ];
   if (tool.id === 'wallpaper-calculator') localized.additionalFaqs = [
     { question: 'Why does a pattern repeat need more wallpaper?', answer: 'The cut length is rounded up to the next full design repeat, so fewer strips can fit on one roll.' },
     { question: 'Are openings and corners placed exactly?', answer: fields.accuracyNote },
@@ -290,6 +297,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   for (const locale of smallLocales) fixtureCopyByLocale[locale.key] = {
     ...fixtureCopyByLocale[locale.key],
     'carpet-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'carpet-calculator'), locale.key),
+    'aquarium-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'aquarium-calculator'), locale.key),
   };
   const result = await buildGrowthStaticSite({
     outputDir,
