@@ -288,6 +288,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/ohms-law-calculator/logic.mjs',
   },
   {
+    id: 'chemical-equation-balancer',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'chemical equation balancer',
+    secondaryIntents: ['balance chemical equation calculator', 'chemical reaction balancer', 'balance chemical equations online'],
+    functions: ['parse neutral molecular formulas with parentheses and hydrate separators for the elements supported by the UsefulVerse molar-mass calculator', 'balance reactants and products with exact rational row reduction and positive integer coefficients for supported equations; disclose when multiple-solution search is bounded', 'show a copyable balanced equation and reject malformed, charged or ambiguous equations that exceed the bounded local solver'],
+    acceptance: 'H2 + O2 -> H2O balances as 2H2 + O2 -> 2H2O; Ca(OH)2 + HCl -> CaCl2 + H2O balances as Ca(OH)2 + 2HCl -> CaCl2 + 2H2O.',
+    boundary: 'Educational atom-count balancing only for supported neutral formulas; it does not handle ionic charge/electron balance, half-reactions, reaction prediction, states, mechanisms, yields or hazards. Some underdetermined equations are rejected when a small bounded search cannot establish a minimum. Check the chemistry and follow qualified laboratory safety procedures; this is not a lab protocol or safety advice. Inputs stay in this browser.',
+    relatedExistingIds: ['molar-mass-calculator'],
+    logicModule: './tools/chemical-equation-balancer/logic.mjs',
+  },
+  {
     id: 'miter-angle-calculator',
     category: 'home-materials',
     type: 'calculator',

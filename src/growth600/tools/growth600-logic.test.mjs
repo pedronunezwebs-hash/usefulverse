@@ -42,6 +42,7 @@ import { calculateVoltageDrop } from './voltage-drop-calculator/logic.mjs';
 import { calculateMolarity } from './molarity-calculator/logic.mjs';
 import { calculateDilution } from './dilution-calculator/logic.mjs';
 import { calculateEquivalentResistance, solveOhmsLaw } from './ohms-law-calculator/logic.mjs';
+import { balanceChemicalEquation } from './chemical-equation-balancer/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -76,6 +77,30 @@ test('Ohm’s law calculator solves every pair and equivalent resistor networks'
   assert.throws(() => calculateEquivalentResistance([10], 'series'), /2 to 20/u);
   assert.throws(() => calculateEquivalentResistance([10, 0], 'parallel'), /between/u);
   assert.throws(() => calculateEquivalentResistance([10, 20], 'unknown'), /series or parallel/u);
+});
+
+test('chemical equation balancer conserves atoms for simple, grouped and underdetermined neutral equations', () => {
+  const water = balanceChemicalEquation('H2 + O2 -> H2O');
+  assert.equal(water.balancedEquation, '2H2 + O2 → 2H2O');
+  assert.deepEqual(water.coefficients, [2, 1, 2]);
+  assert.deepEqual(water.atomCounts, [{ element: 'H', reactants: 4, products: 4 }, { element: 'O', reactants: 2, products: 2 }]);
+
+  const acid = balanceChemicalEquation('Ca(OH)2 + HCl -> CaCl2 + H2O');
+  assert.equal(acid.balancedEquation, 'Ca(OH)2 + 2HCl → CaCl2 + 2H2O');
+  assert.ok(acid.atomCounts.every(({ reactants, products }) => reactants === products));
+
+  const iron = balanceChemicalEquation('Fe + O2 -> Fe2O3');
+  assert.deepEqual(iron.coefficients, [4, 3, 2]);
+
+  const underdetermined = balanceChemicalEquation('C + O2 -> CO + CO2');
+  assert.equal(underdetermined.balancedEquation, '3C + 2O2 → 2CO + CO2');
+  assert.equal(underdetermined.multipleSolutions, true);
+  assert.ok(underdetermined.atomCounts.every(({ reactants, products }) => reactants === products));
+  assert.equal(water.multipleSolutions, false);
+
+  for (const equation of ['', 'H2 + O2 H2O', 'H2 ->', 'H2 + + O2 -> H2O', 'Na+ + Cl- -> NaCl', 'H2 + O2 -> H2O -> H2O', 'H2 + H2 -> H2O', `${'H2 + '.repeat(8)}H2 -> H2O`]) {
+    assert.throws(() => balanceChemicalEquation(equation), undefined, equation);
+  }
 });
 
 test('wallpaper calculator counts pattern-aligned drops, openings and allowance', () => {

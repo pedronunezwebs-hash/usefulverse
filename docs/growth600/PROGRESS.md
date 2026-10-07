@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 55/323; **268 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 56/323; **267 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -654,3 +654,14 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — texto fuente en inglés listo; otros 35 idiomas permanecen como borradores estructurales bloqueados.
 - [ ] X/E visual — flujo funcional probado en Chrome móvil; todavía falta inspección visual de escritorio y RTL.
 - [ ] P/S — no merge/deploy ni cambio del sitemap de producción; sin envío a buscadores. No se ejecuta PageSpeed/Lighthouse.
+
+## Continuación · Chemical Equation Balancer (#100) · 2026-10-08
+
+- [x] C/F — candidata #56/323; balancea ecuaciones químicas moleculares neutras, sin solaparse con `molar-mass-calculator` (masa de una fórmula) ni con `molarity-calculator` (concentración de soluciones). Demanda guardada en el plan: `chemical equation balancer` 12.100/mes US/en, KD 12; secundaria 5.400/mes. Sin consultas nuevas a DataForSEO.
+- [x] E/X — matriz de conservación por elemento con fracciones BigInt exactas, normalización a coeficientes enteros, verificación de conteos a ambos lados y búsqueda acotada para ecuaciones subdeterminadas. Confirmados H₂/O₂/H₂O → 2,1,2; Ca(OH)₂/HCl → 1,2,1,2; Fe/O₂/Fe₂O₃ → 4,3,2; C/O₂/CO/CO₂ → 3,2,2,1. Parser reutiliza las fórmulas/elementos soportados por masa molar.
+- [x] B — controlador local, ejemplo, reinicio, copiar, resultado accesible y mensajes de conteo de átomos. Límite de 500 caracteres, 16 especies y fórmulas de hasta 160; no promete ecuaciones iónicas, electrones, predicción de productos ni mínimo global en casos subdeterminados complejos. Sin API ni nueva dependencia.
+- [x] E — suite focal Growth600 de catálogo, formularios, localización, renderer, build, bundles y lógica: **173/173 aprobadas**; el primer pase reveló que elementos ausentes de una especie producían `NaN` en el conteo. Se corrigió con cero explícito y la suite completa pasó.
+- [ ] L — copy fuente en inglés; las otras 35 locales son borradores y permanecen bloqueadas en el gate de producción.
+- [x] X/E navegador — build local aislado confirmó el ejemplo H₂/O₂, la reacción agrupada Ca(OH)₂, la ecuación C/CO/CO₂ con aviso de múltiples resultados, y rechazo de carga iónica con mensaje accesible. Se revisó visualmente en escritorio y en móvil a 390 px; ancho 390/390 sin overflow y consola limpia.
+- [ ] X/E visual — falta revisar la versión RTL localizada; las 35 traducciones siguen bloqueadas y no se publican como si estuvieran completas.
+- [ ] P/S — sin deploy, sitemap de producción intacto y sin envíos a buscadores; sin PageSpeed/Lighthouse. El catálogo total de la rama queda en 56 candidatas: 267 aún no implementadas.

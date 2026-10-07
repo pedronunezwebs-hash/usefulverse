@@ -1053,18 +1053,20 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 100 · Chemical Equation Balancer
 
-- [ ] **C/F/E/X/L/B/P/S completos — `chemical-equation-balancer`**
+- [ ] **C/F/E/X/L/B/P/S completos — `chemical-equation-balancer`** (motor/formulario implementados en esta rama; traducción, QA de navegador y publicación siguen abiertas)
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/chemical-equation-balancer/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `chemical equation balancer` — 12.100 búsquedas/mes US/en, KD 12; nivel A. CPC 2.2 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Balance por álgebra exacta, coeficientes mínimos y conservación
-- **Prueba de aceptación específica:** H2+O2=H2O da2,1,2
-- **Frontera con otras herramientas:** molecule-viewer: reacción no dibujo. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Función mínima y ampliaciones útiles:** recibir ecuación neutral con flecha y especies separadas por `+`; leer fórmulas con los elementos/paréntesis/grupos admitidos por el parser de masa molar; balancear por reducción racional exacta; mostrar coeficientes y conteo por elemento; copiar, reiniciar y ofrecer ejemplo. Si hay varias soluciones, mostrar que el resultado es una solución pequeña acotada, no afirmar un mínimo global.
+- **Prueba de aceptación específica:** `H2 + O2 -> H2O` devuelve `2H2 + O2 → 2H2O`; `Ca(OH)2 + HCl -> CaCl2 + H2O` devuelve `Ca(OH)2 + 2HCl → CaCl2 + 2H2O`. Probar también hierro y la ecuación subdeterminada C/CO/CO₂, sintaxis rota, especies repetidas, notación iónica y límites.
+- **Frontera con otras herramientas:** complementa `molar-mass-calculator` (masa de fórmula), no `molecule-viewer` inexistente. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
+- **Implementación/riesgo:** motor local sin librerías/API, fracciones exactas BigInt; parser reutilizado de masa molar. Acotar a 500 caracteres, 16 especies, 160 caracteres por fórmula y hasta tres variables libres con búsqueda acotada. No prometer química iónica/carga/electrones, predicción de reacción, rendimiento, seguridad ni mínimo global para sistemas con múltiples soluciones fuera del rango. Copy fuente inglés listo; los 35 borradores restantes no se publican sin traducción aprobada.
 - **Consultas secundarias del mismo propietario:**
   - `balance chemical equation calculator` — 5.400/mes US/en; KD 4.
   - `chemical equation balancer free online`; `chemical equation balancer with example`; `chemical equation balancer no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** DE/de `reaktionsgleichung ausgleichen` 880/mes, KD 0.
+
+- **Estado de implementación (2026-10-08):** motor, formulario semántico, controlador, pruebas y flujo visual inglés de escritorio/móvil implementados en la rama como candidata #56/323. Suite Growth600: 173/173 aprobadas. Falta revisión RTL, traducción específica de 35 idiomas y gates de publicación; no está desplegada.
 
 ### 102 · Gear Ratio Calculator
 

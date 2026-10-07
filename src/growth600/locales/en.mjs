@@ -94,6 +94,8 @@ import dilutionCopies from './dilution-calculator-final.mjs';
 import { dilutionCalculatorEnglishCopy } from './dilution-calculator.en.mjs';
 import ohmsLawCopies from './ohms-law-calculator-final.mjs';
 import { ohmsLawCalculatorEnglishCopy } from './ohms-law-calculator.en.mjs';
+import chemicalEquationCopies from './chemical-equation-balancer-final.mjs';
+import { chemicalEquationBalancerEnglishCopy } from './chemical-equation-balancer.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -488,5 +490,6 @@ registerGrowthLocaleExtension(source, 'voltage-drop-calculator', { ...voltageDro
 registerGrowthLocaleExtension(source, 'molarity-calculator', { ...molarityCopies, en: molarityCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'dilution-calculator', { ...dilutionCopies, en: dilutionCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'ohms-law-calculator', { ...ohmsLawCopies, en: ohmsLawCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'chemical-equation-balancer', { ...chemicalEquationCopies, en: chemicalEquationBalancerEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);
