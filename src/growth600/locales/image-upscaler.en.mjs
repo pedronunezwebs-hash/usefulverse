@@ -1,0 +1,33 @@
+export const imageUpscalerEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'AI image upscaler',
+  title: 'Free AI image upscaler, 2× online | UsefulVerse',
+  description: 'Upscale an image 2× free in your browser with no account or usage fee. Private local processing; 1 MP limit and device-dependent speed.',
+  intro: 'Create a new 2× image with a small super-resolution model that runs on this device. It can infer detail, but cannot recover the original scene.',
+  howQuestion: 'How do I upscale an image 2×?',
+  howAnswer: 'Choose a PNG, JPEG, WebP, AVIF or BMP image up to 1 megapixel, then start the local model. It processes overlapping tiles, shows progress and creates a new 2× PNG. The first run downloads about 20 MB of model and runtime files into the browser cache; later use may reuse that cache.',
+  privacyQuestion: 'Is my image uploaded?',
+  privacyAnswer: 'No. Your image is decoded and processed in a browser worker on this device. Only static model/runtime files are downloaded from this site; the image is not sent to a server.',
+  fields: {
+    imageFile: 'Choose an image (maximum 1 megapixel)',
+    accuracyNote: 'Free, with no usage fee or account. This model uses CPU and memory and can be slow, especially on phones; a computer is recommended. First use downloads about 20 MB. Transparent areas become white; PNG is recommended for output.',
+    progressHint: 'Model and tile progress',
+    sourcePreview: 'Original',
+    resultPreview: '2× result',
+    relatedResizer: 'Need ordinary resizing instead? Use the image resizer.',
+    relatedSharpener: 'Want edge sharpening instead? Use the image sharpener.',
+  },
+  actions: { upscale: 'Upscale 2×', cancel: 'Cancel processing', download: 'Download PNG' },
+  messages: {
+    copied: 'Copied.', copyUnavailable: 'Copy unavailable.', imageReady: 'Image ready.',
+    unsupportedImage: 'Choose a supported PNG, JPEG, WebP, AVIF or BMP image.',
+    imageTooLarge: 'This image exceeds the 1 megapixel limit. Choose a smaller image.',
+    selectImage: 'Choose a supported image first.', modelLoading: 'Loading the local upscaler…', processing: 'Processing tiles…',
+    cancelled: 'Processing cancelled. Your original image is unchanged.', workerUnavailable: 'This browser could not start the local processing worker.',
+    processingFailed: 'Upscaling failed. Try a smaller image or a recent desktop browser.', outputReady: '2× image ready.',
+  },
+  additionalFaqs: [
+    { question: 'Does 2× upscaling restore real missing details?', answer: 'No. The model creates plausible high-resolution detail from learned patterns; it cannot know what was truly in the original scene, and some images may look worse.' },
+    { question: 'Why is there a 1 megapixel limit?', answer: 'The model runs on the device. Tiling bounds each inference, but the model, browser and 2× output still use memory and CPU; a computer is recommended.' },
+  ],
+});

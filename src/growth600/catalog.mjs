@@ -36,6 +36,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/image-sharpener/logic.mjs',
   },
   {
+    id: 'image-upscaler',
+    category: 'image-tools',
+    type: 'image-editor',
+    primaryIntent: 'image upscaler',
+    secondaryIntents: ['upscale image online', 'AI image upscaler free', '2x image upscaler'],
+    functions: ['choose a local raster image', 'run a pinned lightweight 2× super-resolution model in a dedicated browser worker', 'process bounded overlapping tiles with progress and hard cancellation', 'compare the enlarged preview and download a new PNG'],
+    acceptance: 'A supported 64 × 64 image produces a 128 × 128 output; cancelling terminates inference and never replaces the source file.',
+    boundary: 'A lightweight 2× detail-reconstruction model, not a promise to recover the original scene or improve every image. Processing is limited to 1 megapixel and uses CPU, RAM and a one-time local model/runtime download of about 20 MB; desktop/laptop recommended. Transparency is composited on white. No image is uploaded.',
+    relatedExistingIds: ['image-resizer-compressor', 'image-sharpener', 'image-cropper'],
+    logicModule: './tools/image-upscaler/logic.mjs',
+  },
+  {
     id: 'wallpaper-calculator',
     category: 'home-materials',
     type: 'calculator',

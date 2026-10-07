@@ -24,6 +24,8 @@ import imageRegionRedactorCopies from './image-region-redactor-final.mjs';
 import { imageRegionRedactorEnglishCopy } from './image-region-redactor.en.mjs';
 import imageSharpenerCopies from './image-sharpener-final.mjs';
 import { imageSharpenerEnglishCopy } from './image-sharpener.en.mjs';
+import imageUpscalerDrafts from './image-upscaler-final.mjs';
+import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
 import imageColorPickerCopies from './image-color-picker-final.mjs';
 import { imageColorPickerEnglishCopy } from './image-color-picker.en.mjs';
 import dominoesCopies from './dominoes-game-final.mjs';
@@ -174,6 +176,7 @@ registerGrowthLocaleExtension(source, 'pool-salt-calculator', poolSaltCopies, 'g
 registerGrowthLocaleExtension(source, 'wallpaper-calculator', localizedWallpaperCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'image-region-redactor', imageRegionRedactorCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'image-sharpener', imageSharpenerCopies, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'image-upscaler', { ...imageUpscalerDrafts, en: imageUpscalerEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'image-color-picker', imageColorPickerCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'dominoes-game', dominoesCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'weight-loss-calculator', weightLossCopies, 'gravel-calculator');

@@ -81,6 +81,23 @@ test('image color picker has complete locale-specific copy and metadata in all 3
   }
 });
 
+test('image upscaler has complete localized copy, local-processing limits and cancellation in all 36 languages', () => {
+  const upscaler = allGrowthPilotTools.find(({ id }) => id === 'image-upscaler');
+  assert.ok(upscaler);
+  assert.equal(localeEntries.length, 36);
+  assert.equal(assertGrowthLocaleCoverage([upscaler], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][upscaler.id];
+    assert.equal(copy.copyLanguage, key);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    assert.ok(copy.fields.accuracyNote.length > 20, `${key}: device limits are disclosed`);
+    assert.ok(copy.messages.imageTooLarge.length > 0 && copy.messages.cancelled.length > 0, key);
+    assert.ok(copy.actions.upscale.length > 0 && copy.actions.cancel.length > 0, key);
+    assert.doesNotMatch(JSON.stringify(copy), /UVZX\d{4}QXZ|undefined/iu, key);
+  }
+});
+
 test('dominoes game has complete static copy and FAQs in all 36 languages', () => {
   const dominoes = allGrowthPilotTools.find(({ id }) => id === 'dominoes-game');
   assert.ok(dominoes);

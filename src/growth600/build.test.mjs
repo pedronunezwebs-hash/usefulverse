@@ -50,6 +50,7 @@ function toolCopy(tool, language) {
   const name = `${tool.id} ${language}`;
   const fields = {
     'image-region-redactor': { imageFile: 'Choose a raster image', mode: 'Redaction style', strength: 'Pixel size or blur amount', regionX: 'Left position in pixels', regionY: 'Top position in pixels', regionWidth: 'Region width in pixels', regionHeight: 'Region height in pixels', accuracyNote: 'Use black for private details; large images need enough memory.', dragHint: 'Drag to select or enter exact coordinates.', regionsLabel: 'Selected regions', format: 'Export format', relatedMosaic: 'Try a whole-image mosaic.', relatedCropper: 'Try the image cropper.' },
+    'image-upscaler': { imageFile: 'Choose an image', accuracyNote: 'Local model; 1 megapixel limit.', progressHint: 'Progress', sourcePreview: 'Original', resultPreview: 'Result', relatedResizer: 'Resize image.', relatedSharpener: 'Sharpen image.' },
     'wallpaper-calculator': { unit: 'Unit', perimeter: 'Wall perimeter', wallHeight: 'Wall height', openingsArea: 'Opening area', rollWidth: 'Roll width', rollLength: 'Roll length', patternRepeat: 'Pattern repeat', wastePercent: 'Extra material', accuracyNote: 'Planning estimate only.', relatedPaintCalculator: 'Need paint too? Try the paint calculator.' },
     'pool-salt-calculator': { volume: 'Pool volume', volumeUnit: 'Volume unit', currentSalinityPpm: 'Current salinity ppm', targetSalinityPpm: 'Target salinity ppm', saltPurityPercent: 'Salt purity', bagSize: 'Bag size', bagUnit: 'Bag unit', accuracyNote: 'Use the manufacturer target.' },
     'fence-calculator': { unit: 'Run unit', length: 'Total run', gateCount: 'Number of gates', gateWidth: 'Gate opening', materialUnit: 'Material unit', postSpacing: 'Post spacing', panelWidth: 'Panel width', picketWidth: 'Picket width', maxPicketGap: 'Maximum gap', picketHeight: 'Picket length', wastePercent: 'Extra pieces', pricePerPost: 'Price per post', pricePerGate: 'Price per gate', pricePerPanel: 'Price per panel', pricePerPicket: 'Price per picket', accuracyNote: 'Estimate only; gate positions are assumed evenly spaced.' },
@@ -81,6 +82,7 @@ function toolCopy(tool, language) {
   if (tool.id === 'fence-calculator') Object.assign(actions, { millimeters: 'Millimeters' });
   if (tool.id === 'pool-salt-calculator') Object.assign(actions, { liters: 'Litres', usGallons: 'US gallons', imperialGallons: 'Imperial gallons' });
   if (tool.id === 'image-region-redactor') Object.assign(actions, { load: 'Choose image', addRegion: 'Add region', undo: 'Undo last region', clear: 'Remove all regions', export: 'Apply redactions', removeRegion: 'Remove region', black: 'Solid black', pixelate: 'Pixelate', blur: 'Blur', png: 'PNG', jpeg: 'JPEG' });
+  if (tool.id === 'image-upscaler') Object.assign(actions, { upscale: 'Upscale 2×', cancel: 'Cancel processing' });
   if (tool.id === 'dominoes-game') Object.assign(actions, { draw: 'Draw a tile', pass: 'Pass', playLeft: 'Play left', playRight: 'Play right', drawRule: 'Draw dominoes', blockRule: 'Block dominoes' });
   if (tool.id === 'weight-loss-calculator') Object.assign(actions, { dayUnit: 'days', weekUnit: 'weeks', kilocalories: 'kcal', perWeek: 'per week' });
   const deckMessages = tool.id === 'deck-calculator' ? { area: 'Deck area', boardRows: 'Board rows', coveredWidth: 'Covered width', orderLength: 'Order length', boards: 'Boards to order', supportLines: 'Support lines', fasteners: 'Fasteners', joints: 'End joints', estimatedCost: 'Estimated cost', costNotEntered: 'Enter a board price.' } : {};
@@ -93,9 +95,10 @@ function toolCopy(tool, language) {
   const drywallMessages = tool.id === 'drywall-calculator' ? { wallArea: 'Net wall area', ceilingArea: 'Ceiling area', totalArea: 'Total surface area', boardCount: 'Whole boards', boardCoverage: 'Board coverage', estimatedScrews: 'Estimated screws', jointSeams: 'Approximate joint seams', estimatedCost: 'Estimated board cost', costNotEntered: 'Enter a board price.' } : {};
   const roofingMessages = tool.id === 'roofing-calculator' ? { projectedArea: 'Projected area', roofArea: 'Sloped roof area', extraArea: 'Area with extra material', pitch: 'Pitch', slopeFactor: 'Slope multiplier', roofingSquares: 'Roofing squares', bundles: 'Bundles', estimatedCost: 'Estimated cost', costNotEntered: 'Enter a bundle price.' } : {};
   const redactorMessages = tool.id === 'image-region-redactor' ? { unsupportedImage: 'Choose a supported raster image.', imageTooLarge: 'Image too large for this tab.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', invalidRegion: 'Check the pixel region.', regionAdded: 'Region added.', regionRemoved: 'Region removed.', regionsCleared: 'All regions removed.', addRegionFirst: 'Add a region first.', exporting: 'Applying regions…', exportFailed: 'Could not create the image.', exportReady: 'Redacted image ready.', region: 'Region' } : {};
+  const upscalerMessages = tool.id === 'image-upscaler' ? { unsupportedImage: 'Choose a supported image.', imageTooLarge: 'Image exceeds 1 megapixel.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', modelLoading: 'Loading the local model.', processing: 'Processing tiles.', cancelled: 'Processing cancelled.', workerUnavailable: 'Local worker unavailable.', processingFailed: 'Processing failed.', outputReady: '2× image ready.' } : {};
   const dominoMessages = tool.id === 'dominoes-game' ? { played: 'Tile played.', drew: 'Tile drawn.', passed: 'Turn passed.', noMoves: 'No legal move.', stockEmpty: 'The draw pile is empty.' } : {};
   const weightMessages = tool.id === 'weight-loss-calculator' ? { weightToLose: 'Weight difference', energyEquivalent: 'Linear energy equivalent', timeline: 'Timeline', weeklyRate: 'Weekly rate', noDeficitChange: 'Zero modeled change.', paceNote: 'This is not a recommended target.' } : {};
-  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: { ...localizedMessages, ...asphaltMessages, ...poolMessages, ...saltMessages, ...roofMessages, ...drywallMessages, ...roofingMessages, ...deckMessages, ...fenceMessages, ...redactorMessages, ...dominoMessages, ...weightMessages }, copyLanguage: language };
+  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: { ...localizedMessages, ...asphaltMessages, ...poolMessages, ...saltMessages, ...roofMessages, ...drywallMessages, ...roofingMessages, ...deckMessages, ...fenceMessages, ...redactorMessages, ...upscalerMessages, ...dominoMessages, ...weightMessages }, copyLanguage: language };
   if (tool.id === 'image-color-picker') Object.assign(localized, {
     fields: { imageFile: 'Choose an image', accuracyNote: 'Local processing; maximum 12 megapixels.', previewHint: 'Click a pixel or use arrow keys.', zoom: 'Preview zoom', currentColor: 'Current pixel', paletteLabel: 'Color palette', relatedSharpener: 'Open the image sharpener.', relatedRedactor: 'Open the image redactor.' },
     actions: { ...actions, load: 'Choose image', addSample: 'Add color to palette', copyColor: 'Copy color', copyPalette: 'Copy HEX palette', remove: 'Remove', clear: 'Clear palette' },
@@ -171,6 +174,10 @@ function toolCopy(tool, language) {
     { question: 'Can sharpening restore missing detail?', answer: 'No. It increases local edge contrast only.' },
     { question: 'What do strength, radius and threshold do?', answer: 'They control the sharpening effect.' },
   ];
+  if (tool.id === 'image-upscaler') localized.additionalFaqs = [
+    { question: 'Does it restore real missing detail?', answer: 'No. The model infers plausible details and cannot know the original scene.' },
+    { question: 'Why the size limit?', answer: 'The model and enlarged output use local device memory and CPU.' },
+  ];
   if (tool.id === 'dominoes-game') localized.additionalFaqs = [
     { question: 'Draw or block?', answer: 'The variant changes drawing rules.' },
     { question: 'Can two people play locally?', answer: 'Yes. Two people can share one device.' },
@@ -195,12 +202,16 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   const outputDir = join(tempRoot, 'site');
   const smallLocales = localeEntries.filter(({ key }) => ['en', 'es', 'fr', 'pt', 'de', 'ja', 'ko', 'id', 'hi', 'ar', 'zh', 'bn', 'ru', 'ur', 'tr', 'vi', 'it', 'zh_tw', 'bg', 'ca', 'nl', 'el', 'ms', 'pl', 'sv', 'th', 'uk', 'sw', 'mr', 'te', 'ha', 'tl', 'ta', 'fa', 'am', 'gu'].includes(key));
   const controllerBundles = Object.fromEntries(growthPilotTools.map((tool) => [tool.id, `document.querySelector('[data-tool="${tool.id}"]');`]));
+  const workerBundles = { 'image-upscaler-worker': 'self.addEventListener("message",()=>{});' };
+  const extraAssets = { 'models-test/config.json': '{"upscale":2}', 'models-test/onnx/model.onnx': Buffer.from([1, 2, 3]) };
   const result = await buildGrowthStaticSite({
     outputDir,
     origin: 'https://tools.usefulverse.com',
     localeEntries: smallLocales,
     copyByLocale: { en: englishGrowthCopy, es: spanishGrowthCopy, fr: frenchGrowthCopy, pt: portugueseGrowthCopy, de: germanGrowthCopy, ja: japaneseGrowthCopy, ko: koreanGrowthCopy, id: indonesianGrowthCopy, hi: hindiGrowthCopy, ar: arabicGrowthCopy, zh: simplifiedChineseGrowthCopy, bn: bengaliGrowthCopy, ru: russianGrowthCopy, ur: urduGrowthCopy, tr: turkishGrowthCopy, vi: vietnameseGrowthCopy, it: italianGrowthCopy, zh_tw: traditionalChineseGrowthCopy, bg: bulgarianGrowthCopy, ca: catalanGrowthCopy, nl: dutchGrowthCopy, el: greekGrowthCopy, ms: malayGrowthCopy, pl: polishGrowthCopy, sv: swedishGrowthCopy, th: thaiGrowthCopy, uk: ukrainianGrowthCopy, sw: swahiliGrowthCopy, mr: marathiGrowthCopy, te: teluguGrowthCopy, ha: hausaGrowthCopy, tl: filipinoGrowthCopy, ta: tamilGrowthCopy, fa: persianGrowthCopy, am: amharicGrowthCopy, gu: gujaratiGrowthCopy },
     controllerBundles,
+    workerBundles,
+    extraAssets,
     styles: 'body{font-family:system-ui}',
     faviconSvg: '<svg xmlns="http://www.w3.org/2000/svg"></svg>',
     currentTools,
@@ -209,10 +220,14 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   assert.equal(result.sitemapUrls, result.pages);
   assert.equal(await readFile(join(outputDir, 'favicon.svg'), 'utf8'), '<svg xmlns="http://www.w3.org/2000/svg"></svg>');
   assert.ok(result.files <= 18_500);
-  assert.ok(result.assetFiles.length === growthPilotTools.length + 1);
+  assert.ok(result.assetFiles.length === growthPilotTools.length + 1 + Object.keys(workerBundles).length + Object.keys(extraAssets).length);
   const sitemap = await readFile(join(outputDir, 'sitemap.xml'), 'utf8');
   assert.ok(sitemap.includes('https://tools.usefulverse.com/es/tools/gravel-calculator/'));
   assert.ok(!sitemap.includes('https://usefulverse.com/tools/gravel-calculator/'));
+  const workerAsset = result.assetFiles.map(([path]) => path.split('/').at(-1)).find((name) => name.startsWith('image-upscaler-worker.'));
+  assert.ok(workerAsset);
+  assert.match(await readFile(join(outputDir, 'assets', workerAsset), 'utf8'), /addEventListener/u);
+  assert.deepEqual([...await readFile(join(outputDir, 'assets/models-test/onnx/model.onnx'))], [1, 2, 3]);
   assert.match(await readFile(join(outputDir, 'robots.txt'), 'utf8'), /https:\/\/tools\.usefulverse\.com\/sitemap\.xml/u);
   const arabic = locales.ar;
   assert.equal(arabic.prefix, '/ar');
@@ -401,7 +416,9 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   assert.match(amPage, /hreflang="am-ET" href="https:\/\/tools\.usefulverse\.com\/am\/tools\/gravel-calculator\//u);
   assert.doesNotMatch(amPage, />undefined</u);
   const files = await readdir(join(outputDir, 'assets'));
-  assert.equal(files.length, growthPilotTools.length + 1);
+  // Top-level entries include the stylesheet, one controller per tool, the
+  // model worker, and the models directory (whose contents are nested).
+  assert.equal(files.length, growthPilotTools.length + 3);
   assert.ok((await stat(join(outputDir, 'assets', files[0]))).isFile());
 });
 
@@ -426,6 +443,10 @@ test('static build refuses overwrite, missing translated pages/controllers, and 
   await assert.rejects(buildGrowthStaticSite({ ...base, outputDir: join(tempRoot, 'remote-controller'), controllerBundles: remoteController }), /must not contact a remote service/);
   const dynamicCode = { ...base.controllerBundles, mancala: 'new Function("return 1")()' };
   await assert.rejects(buildGrowthStaticSite({ ...base, outputDir: join(tempRoot, 'dynamic-code'), controllerBundles: dynamicCode }), /dynamic code execution/);
+  const workerWithDynamicCode = { 'trusted-runtime-worker': 'new Function("return 1")()' };
+  await assert.rejects(buildGrowthStaticSite({ ...base, outputDir: join(tempRoot, 'untrusted-worker'), workerBundles: workerWithDynamicCode }), /worker contains dynamic code execution/u);
+  const trustedWorkerBuild = await buildGrowthStaticSite({ ...base, outputDir: join(tempRoot, 'trusted-worker'), workerBundles: workerWithDynamicCode, trustedWorkerDynamicCode: ['trusted-runtime-worker'] });
+  assert.ok(trustedWorkerBuild.assetFiles.some(([path]) => path.startsWith('assets/trusted-runtime-worker.')));
   const tooLarge = { ...base.controllerBundles, mancala: 'x'.repeat(25 * 1024) };
   await assert.rejects(buildGrowthStaticSite({ ...base, outputDir: join(tempRoot, 'oversized-controller'), controllerBundles: tooLarge }), /initial runtime budget/);
 });

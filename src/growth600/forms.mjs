@@ -21,6 +21,7 @@ export function renderGrowthForm(toolId, copy) {
     'image-color-picker': ['imageFile', 'accuracyNote', 'previewHint', 'zoom', 'currentColor', 'paletteLabel'],
     'image-region-redactor': ['imageFile', 'mode', 'strength', 'regionX', 'regionY', 'regionWidth', 'regionHeight', 'accuracyNote', 'dragHint', 'regionsLabel'],
     'image-sharpener': ['imageFile', 'amount', 'radius', 'threshold', 'compare', 'accuracyNote', 'previewHint', 'format', 'relatedRedactor', 'relatedCropper'],
+    'image-upscaler': ['imageFile', 'accuracyNote', 'progressHint', 'sourcePreview', 'resultPreview'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
     'fence-calculator': ['unit', 'length', 'gateCount', 'gateWidth', 'materialUnit', 'postSpacing', 'panelWidth', 'picketWidth', 'maxPicketGap', 'picketHeight', 'wastePercent', 'pricePerPost', 'pricePerGate', 'pricePerPanel', 'pricePerPicket', 'accuracyNote'],
@@ -46,6 +47,7 @@ export function renderGrowthForm(toolId, copy) {
     'image-color-picker': ['load', 'addSample', 'copyColor', 'copyPalette', 'remove', 'clear', 'reset'],
     'image-region-redactor': ['load', 'addRegion', 'undo', 'clear', 'export', 'example', 'download', 'removeRegion', 'black', 'pixelate', 'blur', 'png', 'jpeg'],
     'image-sharpener': ['load', 'export', 'download', 'original', 'sharpened', 'png', 'jpeg'],
+    'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
     'fence-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'millimeters', 'feet', 'inches'],
@@ -125,6 +127,18 @@ export function renderGrowthForm(toolId, copy) {
     <div class="field"><label for="sharpener-format">${escapeGrowthHtml(fields.format)}</label><select id="sharpener-format" name="format"><option value="image/png">${escapeGrowthHtml(labels.png)}</option><option value="image/jpeg">${escapeGrowthHtml(labels.jpeg)}</option></select></div>
     <div class="actions"><button type="button" data-action="export" class="button button--primary" disabled>${escapeGrowthHtml(labels.export)}</button>${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><a class="button button--primary" data-export hidden></a>
+  </form>`, copy);
+
+  if (toolId === 'image-upscaler') return attachCopy(`<form id="tool-form" data-worker-src="__WORKER_IMAGE_UPSCALER_WORKER__" novalidate>
+    ${label('upscaler-file', fields.imageFile, '<input id="upscaler-file" name="imageFile" type="file" accept="image/png,image/jpeg,image/webp,image/avif,image/bmp" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div data-upscaler-workbench hidden>
+      <div class="upscaler-previews"><figure><figcaption>${escapeGrowthHtml(fields.sourcePreview)}</figcaption><canvas data-upscaler-source hidden></canvas></figure><figure><figcaption>${escapeGrowthHtml(fields.resultPreview)}</figcaption><canvas data-upscaler-result hidden></canvas></figure></div>
+      <label class="field" data-progress-label><span>${escapeGrowthHtml(fields.progressHint)}</span><progress data-progress max="100" value="0" hidden></progress></label>
+      <div class="actions"><button type="button" data-action="upscale" class="button button--primary" disabled>${escapeGrowthHtml(labels.upscale)}</button><button type="button" data-action="cancel" class="button button--secondary" hidden disabled>${escapeGrowthHtml(labels.cancel)}</button>${reset}</div>
+      <a class="button button--primary" data-export hidden></a>
+    </div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
   </form>`, copy);
 
   if (toolId === 'wallpaper-calculator') return attachCopy(`<form id="tool-form" novalidate>

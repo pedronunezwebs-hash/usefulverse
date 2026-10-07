@@ -32,7 +32,7 @@ export function assertLocalController(toolId, source, maxBytes) {
 }
 
 async function buildGrowthStaticSiteIntoDirectory({
-  outputDir, origin, localeEntries, copyByLocale, controllerBundles, styles,
+  outputDir, origin, localeEntries, copyByLocale, controllerBundles, styles, workerBundles = {}, extraAssets = {}, trustedWorkerDynamicCode = [],
   faviconSvg,
   currentTools, tools = growthPilotTools, maxFiles = 18_500,
   maxAssetBytes = 24 * 1024, maxFileBytes = 25 * 1024 * 1024,
@@ -53,17 +53,39 @@ async function buildGrowthStaticSiteIntoDirectory({
     if (typeof controllerBundles?.[tool.id] !== 'string' || !controllerBundles[tool.id].trim()) throw new Error(`Missing isolated browser controller for ${tool.id}.`);
     assertLocalController(tool.id, controllerBundles[tool.id], maxAssetBytes);
   }
+  for (const [name, source] of Object.entries(workerBundles)) {
+    if (!/^[a-z0-9-]+$/u.test(name) || typeof source !== 'string' || !source.trim()) throw new Error(`Invalid worker bundle: ${name}.`);
+    if ((/\beval\s*\(|\bnew\s+Function\b/u.test(source)) && !trustedWorkerDynamicCode.includes(name)) throw new Error(`${name} worker contains dynamic code execution.`);
+    if (Buffer.byteLength(source) > maxFileBytes) throw new Error(`${name} worker exceeds Cloudflare's per-file maximum.`);
+  }
+  for (const [name, contents] of Object.entries(extraAssets)) {
+    if (!name || name.startsWith('/') || name.split('/').includes('..') || !(typeof contents === 'string' || Buffer.isBuffer(contents) || contents instanceof Uint8Array)) throw new Error(`Invalid static asset: ${name}.`);
+    if (Buffer.from(contents).byteLength > maxFileBytes) throw new Error(`${name} exceeds Cloudflare's per-file maximum.`);
+  }
   if (Buffer.byteLength(styles) > maxAssetBytes) throw new Error(`Growth stylesheet exceeds the ${maxAssetBytes}-byte budget.`);
 
   await mkdir(join(outputDir, 'assets'), { recursive: true });
   await writeFile(join(outputDir, 'favicon.svg'), faviconSvg);
-  const version = sha(styles + tools.map(({ id }) => controllerBundles[id]).join('\n'));
+  const version = sha(Buffer.concat([Buffer.from(styles), ...tools.map(({ id }) => Buffer.from(controllerBundles[id])), ...Object.entries(workerBundles).flatMap(([name, source]) => [Buffer.from(name), Buffer.from(source)]), ...Object.entries(extraAssets).flatMap(([name, contents]) => [Buffer.from(name), Buffer.from(contents)])]));
   await writeFile(join(outputDir, 'assets', `growth600.${version}.css`), styles);
   const assetFiles = new Map([[`assets/growth600.${version}.css`, Buffer.byteLength(styles)]]);
   for (const tool of tools) {
     const filename = `${tool.id}.${sha(controllerBundles[tool.id])}.js`;
     await writeFile(join(outputDir, 'assets', filename), controllerBundles[tool.id]);
     assetFiles.set(`assets/${filename}`, Buffer.byteLength(controllerBundles[tool.id]));
+  }
+  const workerPaths = {};
+  for (const [name, source] of Object.entries(workerBundles)) {
+    const filename = `${name}.${sha(source)}.mjs`;
+    await writeFile(join(outputDir, 'assets', filename), source);
+    workerPaths[name] = `/assets/${filename}`;
+    assetFiles.set(`assets/${filename}`, Buffer.byteLength(source));
+  }
+  for (const [name, contents] of Object.entries(extraAssets)) {
+    const path = join(outputDir, 'assets', name);
+    await mkdir(dirname(path), { recursive: true });
+    await writeFile(path, contents);
+    assetFiles.set(`assets/${name}`, Buffer.from(contents).byteLength);
   }
 
   const canonicalUrls = [];
@@ -75,7 +97,8 @@ async function buildGrowthStaticSiteIntoDirectory({
     canonicalUrls.push(`${new URL(origin).origin}${localeHomeRoute}`);
     for (const tool of tools) {
       const copy = localeCopy[tool.id];
-      const formHtml = renderGrowthForm(tool.id, copy);
+      let formHtml = renderGrowthForm(tool.id, copy);
+      for (const [name, path] of Object.entries(workerPaths)) formHtml = formHtml.replaceAll(`__WORKER_${name.toUpperCase().replaceAll('-', '_')}__`, path);
       let html = renderGrowthToolPage({ tool, locale, localeEntries, copy: { ...localeCopy._home, ...copy }, origin, assetVersion: version, formHtml });
       html = html.replace(`/assets/growth600.css?v=${version}`, `/assets/growth600.${version}.css`)
         .replace(`/assets/${tool.id}.js?v=${version}`, `/assets/${tool.id}.${sha(controllerBundles[tool.id])}.js`);

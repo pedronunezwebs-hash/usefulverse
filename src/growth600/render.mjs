@@ -34,6 +34,7 @@ export function renderGrowthToolPage({ tool, locale, localeEntries, copy, origin
   ];
   const relatedTools = [
     ['relatedSharpener', 'image-sharpener'],
+    ['relatedResizer', 'image-resizer-compressor'],
     ['relatedRedactor', 'image-region-redactor'],
     ['relatedMosaic', 'photo-mosaic-maker'],
     ['relatedCropper', 'image-cropper'],
