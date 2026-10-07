@@ -431,6 +431,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['drywall-calculator', 'deck-calculator'],
     logicModule: './tools/wall-framing-calculator/logic.mjs',
   },
+  {
+    id: 'electricity-cost-calculator',
+    category: 'calculators',
+    type: 'calculator',
+    primaryIntent: 'electricity cost calculator',
+    secondaryIntents: ['appliance energy cost calculator', 'electricity usage calculator', 'appliance electricity cost calculator'],
+    functions: ['estimate energy and cost for up to four appliances from rated power and usage schedule', 'accept W or kW, quantity, hours per active day, and active days in a billing period', 'apply a user-entered price per kWh and optional fixed charge for that same period', 'show each appliance and total period energy, energy charge, fixed charge, and average daily energy'],
+    acceptance: 'One 1000 W appliance running 1 hour per day for one day at 0.20 per kWh uses 1 kWh and costs 0.20 before fixed charges.',
+    boundary: 'Estimate only from nameplate power, user-entered usage schedule, tariff and optional fixed charge. Real consumption can differ with cycling, standby load, efficiency, time-of-use rates, taxes, fees, tiered pricing and utility billing rules. Does not retrieve live rates or recommend energy plans. All calculations run locally in this browser.',
+    relatedExistingIds: ['household-budget-planner', 'solar-panel-calculator'],
+    logicModule: './tools/electricity-cost-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

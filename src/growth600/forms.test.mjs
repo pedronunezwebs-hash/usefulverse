@@ -109,6 +109,11 @@ const copies = {
     messages: { ...messages, studCount: 'Stud count', studPositions: 'Positions', studLinearLength: 'Stud material', openings: 'Openings', topPlateMaterial: 'Top plates', bottomPlateMaterial: 'Bottom plates', totalPlateMaterial: 'Plate total', rows: 'rows' },
     fields: { wallLength: 'Wall length', wallHeight: 'Wall height', wallUnit: 'Wall unit', spacing: 'Stud spacing', spacingUnit: 'Spacing unit', openingStart1: 'Opening 1 position', openingWidth1: 'Opening 1 width', breakBottomPlate1: 'Opening interrupts bottom plate', openingStart2: 'Opening 2 position', openingWidth2: 'Opening 2 width', breakBottomPlate2: 'Opening interrupts bottom plate', openingStart3: 'Opening 3 position', openingWidth3: 'Opening 3 width', breakBottomPlate3: 'Opening interrupts bottom plate', topPlateRows: 'Top plate rows', bottomPlateRows: 'Bottom plate rows', accuracyNote: 'Estimate only; not structural design.' },
   },
+  'electricity-cost-calculator': {
+    name: 'Electricity Cost Calculator', actions: { ...actions, watts: 'Watts', kilowatts: 'Kilowatts' },
+    messages: { ...messages, applianceBreakdown: 'Appliance estimate', energyKwh: 'Period energy', energyCost: 'Energy charge', fixedCharge: 'Fixed charge', totalCost: 'Period total', averageDailyKwh: 'Daily average energy', averageDailyCost: 'Daily average cost', quantity: 'units', hours: 'hours/day', days: 'days' },
+    fields: { ratePerKwh: 'Rate per kWh', billingDays: 'Billing days', fixedCharge: 'Fixed charge', currency: 'Currency code', appliance1: 'Appliance 1', appliance2: 'Appliance 2', appliance3: 'Appliance 3', appliance4: 'Appliance 4', applianceName1: 'Name', applianceName2: 'Name', applianceName3: 'Name', applianceName4: 'Name', power1: 'Power', power2: 'Power', power3: 'Power', power4: 'Power', powerUnit1: 'Power unit', powerUnit2: 'Power unit', powerUnit3: 'Power unit', powerUnit4: 'Power unit', quantity1: 'Quantity', quantity2: 'Quantity', quantity3: 'Quantity', quantity4: 'Quantity', hours1: 'Hours', hours2: 'Hours', hours3: 'Hours', hours4: 'Hours', activeDays1: 'Active days', activeDays2: 'Active days', activeDays3: 'Active days', activeDays4: 'Active days', accuracyNote: 'Estimate only.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -246,6 +251,18 @@ test('wall framing form makes doorway plate breaks an explicit localized choice'
   const html = renderGrowthForm('wall-framing-calculator', copies['wall-framing-calculator']);
   for (const index of [1, 2, 3]) assert.match(html, new RegExp(`name="breakBottomPlate${index}" type="checkbox"`, 'u'));
   assert.match(html, /Opening interrupts bottom plate/u);
+});
+
+test('electricity cost form supports four per-appliance schedules and editable rate', () => {
+  const html = renderGrowthForm('electricity-cost-calculator', copies['electricity-cost-calculator']);
+  assert.match(html, /name="ratePerKwh"/u);
+  assert.match(html, /name="billingDays"/u);
+  assert.match(html, /name="currency"[^>]+pattern="\[A-Za-z\]\{3\}"/u);
+  for (const index of [1, 2, 3, 4]) {
+    for (const name of [`power${index}`, `powerUnit${index}`, `quantity${index}`, `hours${index}`, `activeDays${index}`]) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  }
+  assert.match(html, /value="kW"/u);
+  assert.match(html, /aria-live="polite" data-status/u);
 });
 
 test('weight scenario form explains its limits and collects explicit local inputs', () => {

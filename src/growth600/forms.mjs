@@ -54,6 +54,7 @@ export function renderGrowthForm(toolId, copy) {
     'grass-seed-calculator': ['area', 'areaUnit', 'seedingRate', 'rateUnit', 'wastePercent', 'varietyA', 'percentA', 'varietyB', 'percentB', 'bagSize', 'bagUnit', 'accuracyNote'],
     'insulation-calculator': ['unit', 'layerName1', 'layerResistance1', 'layerQuantity1', 'layerName2', 'layerResistance2', 'layerQuantity2', 'layerName3', 'layerResistance3', 'layerQuantity3', 'layerName4', 'layerResistance4', 'layerQuantity4', 'accuracyNote'],
     'wall-framing-calculator': ['wallLength', 'wallHeight', 'wallUnit', 'spacing', 'spacingUnit', 'openingStart1', 'openingWidth1', 'breakBottomPlate1', 'openingStart2', 'openingWidth2', 'breakBottomPlate2', 'openingStart3', 'openingWidth3', 'breakBottomPlate3', 'topPlateRows', 'bottomPlateRows', 'accuracyNote'],
+    'electricity-cost-calculator': ['ratePerKwh', 'billingDays', 'fixedCharge', 'currency', 'appliance1', 'applianceName1', 'power1', 'powerUnit1', 'quantity1', 'hours1', 'activeDays1', 'appliance2', 'applianceName2', 'power2', 'powerUnit2', 'quantity2', 'hours2', 'activeDays2', 'appliance3', 'applianceName3', 'power3', 'powerUnit3', 'quantity3', 'hours3', 'activeDays3', 'appliance4', 'applianceName4', 'power4', 'powerUnit4', 'quantity4', 'hours4', 'activeDays4', 'accuracyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -93,6 +94,7 @@ export function renderGrowthForm(toolId, copy) {
     'grass-seed-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'm2', 'ft2', 'acre', 'gM2', 'lb1000ft2', 'kg', 'lb'],
     'insulation-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'R', 'RSI'],
     'wall-framing-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'centimeters', 'millimeters', 'inches'],
+    'electricity-cost-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'watts', 'kilowatts'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -590,6 +592,23 @@ export function renderGrowthForm(toolId, copy) {
     </fieldset>`).join('')}
     ${label('top-plate-rows', fields.topPlateRows, '<input id="top-plate-rows" name="topPlateRows" type="number" min="1" max="5" step="1" inputmode="numeric" value="2" required>')}
     ${label('bottom-plate-rows', fields.bottomPlateRows, '<input id="bottom-plate-rows" name="bottomPlateRows" type="number" min="0" max="3" step="1" inputmode="numeric" value="1" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'electricity-cost-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('electricity-rate', fields.ratePerKwh, '<input id="electricity-rate" name="ratePerKwh" type="number" min="0" max="1000000" step="any" inputmode="decimal" required>')}
+    ${label('billing-days', fields.billingDays, '<input id="billing-days" name="billingDays" type="number" min="1" max="31" step="1" inputmode="numeric" value="30" required>')}
+    ${label('fixed-charge', fields.fixedCharge, '<input id="fixed-charge" name="fixedCharge" type="number" min="0" max="1000000" step="any" inputmode="decimal" value="0">')}
+    ${label('currency-code', fields.currency, '<input id="currency-code" name="currency" type="text" minlength="3" maxlength="3" pattern="[A-Za-z]{3}" value="USD" autocomplete="off" required>')}
+    ${[1, 2, 3, 4].map((index) => `<fieldset><legend>${escapeGrowthHtml(fields[`appliance${index}`])}</legend>
+      ${label(`appliance-name-${index}`, fields[`applianceName${index}`], `<input id="appliance-name-${index}" name="applianceName${index}" type="text" maxlength="60" autocomplete="off">`)}
+      ${label(`appliance-power-${index}`, fields[`power${index}`], `<input id="appliance-power-${index}" name="power${index}" type="number" min="0.01" max="10000000" step="any" inputmode="decimal">`)}
+      ${label(`appliance-power-unit-${index}`, fields[`powerUnit${index}`], `<select id="appliance-power-unit-${index}" name="powerUnit${index}"><option value="W">${escapeGrowthHtml(labels.watts)}</option><option value="kW">${escapeGrowthHtml(labels.kilowatts)}</option></select>`)}
+      ${label(`appliance-quantity-${index}`, fields[`quantity${index}`], `<input id="appliance-quantity-${index}" name="quantity${index}" type="number" min="1" max="10000" step="1" inputmode="numeric">`)}
+      ${label(`appliance-hours-${index}`, fields[`hours${index}`], `<input id="appliance-hours-${index}" name="hours${index}" type="number" min="0" max="24" step="any" inputmode="decimal">`)}
+      ${label(`appliance-days-${index}`, fields[`activeDays${index}`], `<input id="appliance-days-${index}" name="activeDays${index}" type="number" min="0" max="31" step="1" inputmode="numeric">`)}
+    </fieldset>`).join('')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

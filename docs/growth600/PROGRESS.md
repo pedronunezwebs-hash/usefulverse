@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 36/323; **287 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 37/323; **286 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -399,7 +399,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 36/323; **287 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation y Wall Framing Calculator están en la rama; Rafter, Carpet, Aquarium, Grass Seed, Insulation y Wall Framing tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 37/323; **286 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing y Electricity Cost Calculator están en la rama; Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing y Electricity Cost tienen localización incompleta y no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.
 
 ## Continuación · Rafter Calculator (#126) · 2026-10-08
@@ -459,3 +459,14 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [x] B — formulario, controlador y módulo aparecen cubiertos por los tests focales del catálogo, formulario, localización, builder y bundle; `git diff --check` pasó sin errores.
 - [ ] E/X visual — falta recorrer el flujo en navegador y revisar móvil/RTL; los tests de lógica no sustituyen esa inspección.
 - [ ] P/S — sin merge ni deploy; sitemap de producción intacto y sin envíos a buscadores. Los gates globales C/F/E/X/L/B/P/S y las traducciones específicas siguen pendientes; no ejecutar PageSpeed/Lighthouse.
+
+## Continuación · Electricity Cost Calculator (#154) · 2026-10-08
+
+- [x] C — candidata #37/323, enfocada en consumo y coste técnico por aparato; distinta de `household-budget-planner` (presupuesto doméstico) y `solar-panel-calculator` (generación fotovoltaica). La ficha del plan registra `electricity cost calculator`: 4.400 búsquedas/mes US/en, KD 7 y CPC 9,26 USD (no CPM); `stromkostenrechner`: 6.600/mes DE/de, KD 2. No se volvió a consultar DataForSEO.
+- [x] F — estima hasta cuatro aparatos en local: W/kW, cantidad, horas por día activo, días de uso dentro del periodo (1–31 días), tarifa editable por kWh, moneda ISO de tres letras y cargo fijo opcional. Desglosa energía/coste por aparato, total del periodo y promedio diario. No presupone que su tarifa sea universal.
+- [x] E — aceptación: 1.000 W × 1 h × 1 día × 0,20/kWh = 1 kWh y 0,20 antes de cargos fijos. Casos adicionales validan kW, varios aparatos, cargo fijo, promedio diario, falta de entradas, filas incompletas, días fuera del periodo y unidades inválidas. Suite Growth600 focal: **117/117 aprobadas**.
+- [x] X — el texto explica que ciclos del aparato, standby, ajustes, tarifas horarias/escalonadas, impuestos y cargos reales pueden diferir; no consulta tarifas en vivo ni recomienda planes. No sube datos ni llama APIs.
+- [x] L — fuente inglesa completa; borradores de estructura para los otros 35 idiomas identificados como `pending-tool-specific-translation`, bloqueados por el gate de publicación.
+- [x] B — renderer, formulario, catálogo, locale-contract y bundle incluidos en la suite focal; build sintético pasó con el catálogo ampliado. `git diff --check` pasó sin errores.
+- [ ] E/X visual — navegador, móvil y RTL pendientes; no se declara revisión visual.
+- [ ] P/S — sin merge/deploy ni alteración del sitemap de producción; sin envíos a buscadores. Falta traducción específica, QA visual y gates globales C/F/E/X/L/B/P/S. No se ejecutó PageSpeed/Lighthouse.

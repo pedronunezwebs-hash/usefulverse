@@ -23,6 +23,7 @@ import { calculateAquarium } from './aquarium-calculator/logic.mjs';
 import { calculateGrassSeed } from './grass-seed-calculator/logic.mjs';
 import { calculateInsulation } from './insulation-calculator/logic.mjs';
 import { calculateWallFraming } from './wall-framing-calculator/logic.mjs';
+import { calculateElectricityCost } from './electricity-cost-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -519,4 +520,31 @@ test('wall framing includes both endpoints and positioned opening edges, with pl
   assert.throws(() => calculateWallFraming({ wallLength: 8, wallHeight: 8, spacing: 16, spacingUnit: 'in', openings: [{ start: 2, width: 4 }, { start: 5, width: 1 }] }), /overlap/u);
   assert.throws(() => calculateWallFraming({ wallLength: 8, wallHeight: 8, spacing: 16, spacingUnit: 'in', openings: [{ start: 2, width: null }] }), /both the start and width/u);
   assert.throws(() => calculateWallFraming({ wallLength: 8, wallHeight: 8, spacing: 16, spacingUnit: 'in', openings: [{ start: 0, width: 3 }] }), /leave wall at both ends/u);
+});
+
+test('electricity cost follows entered appliance schedules, kWh rate and fixed period charge', () => {
+  const acceptance = calculateElectricityCost({
+    appliances: [{ power: 1000, powerUnit: 'W', quantity: 1, hoursPerDay: 1, activeDays: 1 }],
+    ratePerKwh: 0.2, billingDays: 1,
+  });
+  assert.equal(acceptance.energyKwh, 1);
+  assert.equal(acceptance.energyCost, 0.2);
+  assert.equal(acceptance.totalCost, 0.2);
+  const multiple = calculateElectricityCost({
+    appliances: [
+      { name: 'Heater', power: 2, powerUnit: 'kW', quantity: 2, hoursPerDay: 3.5, activeDays: 2 },
+      { power: 500, powerUnit: 'W', quantity: 1, hoursPerDay: 4, activeDays: 2 },
+      {},
+    ],
+    ratePerKwh: 0.3, billingDays: 30, fixedCharge: 4,
+  });
+  assert.equal(multiple.appliances.length, 2);
+  assert.equal(multiple.energyKwh, 32);
+  assert.equal(multiple.energyCost, 9.6);
+  assert.equal(multiple.totalCost, 13.6);
+  assert.equal(multiple.averageDailyKwh, 32 / 30);
+  assert.throws(() => calculateElectricityCost({ appliances: [{ name: 'Only a name' }], ratePerKwh: 0.2 }), /Complete every value/u);
+  assert.throws(() => calculateElectricityCost({ appliances: [], ratePerKwh: 0.2 }), /at least one appliance/u);
+  assert.throws(() => calculateElectricityCost({ appliances: [{ power: 100, powerUnit: 'W', quantity: 1, hoursPerDay: 1, activeDays: 31 }], ratePerKwh: 0.2, billingDays: 30 }), /allowed range/u);
+  assert.throws(() => calculateElectricityCost({ appliances: [{ power: 100, powerUnit: 'MW', quantity: 1, hoursPerDay: 1, activeDays: 1 }], ratePerKwh: 0.2 }), /Choose W or kW/u);
 });
