@@ -80,6 +80,11 @@ const copies = {
     messages: { ...messages, grossArea: 'Gross area', netArea: 'Net area', courses: 'Courses', bricksPerCourse: 'Average bricks per course', bricksBeforeWaste: 'Bricks before extra', bricksToOrder: 'Bricks to order', mortarVolume: 'Mortar volume', mortarBags: 'Mortar bags' },
     fields: { wallLength: 'Wall length', wallHeight: 'Wall height', wallUnit: 'Wall unit', brickLength: 'Brick length', brickHeight: 'Brick height', brickDepth: 'Brick depth', brickUnit: 'Brick unit', joint: 'Joint', jointUnit: 'Joint unit', openingWidth: 'Opening width', openingHeight: 'Opening height', openingCount: 'Opening count', wythes: 'Wall layers', wastePercent: 'Extra bricks', bagYieldLiters: 'Bag yield', accuracyNote: 'Estimate only.' },
   },
+  'rafter-calculator': {
+    name: 'Rafter calculator', actions: { ...actions, riseMode: 'Rise', pitchMode: 'Pitch' },
+    messages: { ...messages, effectiveRun: 'Run to ridge', roofAngle: 'Roof angle', plumbCut: 'Plumb cut', overhangRun: 'Horizontal overhang' },
+    fields: { unit: 'Unit', mode: 'Slope input', span: 'Full span', rise: 'Rise', pitch: 'Pitch', ridgeThickness: 'Ridge thickness', ridgeUnit: 'Ridge unit', overhang: 'Overhang', diagramLabel: 'Roof geometry diagram', accuracyNote: 'Geometry estimate only.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {

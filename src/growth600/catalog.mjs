@@ -359,6 +359,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['tile-calculator', 'gravel-calculator'],
     logicModule: './tools/brick-calculator/logic.mjs',
   },
+  {
+    id: 'rafter-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'rafter calculator',
+    secondaryIntents: ['rafter length calculator', 'roof rafter calculator', 'rafter cut angle calculator'],
+    functions: ['calculate geometric rafter length from building span and roof rise or pitch', 'account for ridge-board thickness and optional horizontal eave overhang', 'show the roof slope and plumb-cut angle with an accessible geometry sketch', 'support metric and imperial units without mixing them'],
+    acceptance: 'For a 20 ft span, 6 ft rise, 1.5 in ridge board and no overhang, horizontal run is 9.9375 ft; adding a 1 ft horizontal overhang increases the rafter length.',
+    boundary: 'Geometry estimate for a straight, symmetric roof only. It does not size structural members or calculate birdsmouth/seat cuts, tail details, connections, load capacity, code compliance or material waste. Verify dimensions and have a qualified professional review construction plans. Inputs stay in this browser.',
+    relatedExistingIds: ['roof-pitch-calculator', 'roofing-calculator'],
+    logicModule: './tools/rafter-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

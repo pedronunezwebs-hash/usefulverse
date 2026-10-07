@@ -31,6 +31,7 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   'solar-panel-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'panelCount', 'systemSize', 'dailyProduction', 'monthlyProduction', 'annualProduction', 'panelArea', 'annualSavings', 'simplePayback', 'paybackUnavailable'],
   'btu-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'roomArea', 'roomVolume', 'baseCapacity', 'ceilingAdjustment', 'insulationAdjustment', 'sunAdjustment', 'occupantAdjustment', 'kitchenAdjustment', 'capacity', 'tons', 'belowReferenceBand'],
   'brick-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'grossArea', 'netArea', 'courses', 'bricksPerCourse', 'bricksBeforeWaste', 'bricksToOrder', 'mortarVolume', 'mortarBags'],
+  'rafter-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'effectiveRun', 'rafterLength', 'pitch', 'roofAngle', 'plumbCut', 'overhangRun'],
 });
 export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'image-color-picker': ['imageFile', 'accuracyNote', 'previewHint', 'zoom', 'currentColor', 'paletteLabel', 'relatedSharpener', 'relatedRedactor'],
@@ -63,6 +64,7 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'solar-panel-calculator': ['mode', 'dailyTargetKwh', 'panelCount', 'panelWatts', 'peakSunHours', 'lossPercent', 'panelLengthM', 'panelWidthM', 'electricityRate', 'systemCost', 'currency', 'assumptionNote', 'accuracyNote'],
   'btu-calculator': ['length', 'width', 'ceilingHeight', 'dimensionUnit', 'insulationAdjustment', 'sunExposure', 'occupants', 'kitchen', 'accuracyNote'],
   'brick-calculator': ['wallLength', 'wallHeight', 'wallUnit', 'brickLength', 'brickHeight', 'brickDepth', 'brickUnit', 'joint', 'jointUnit', 'openingWidth', 'openingHeight', 'openingCount', 'wythes', 'wastePercent', 'bagYieldLiters', 'accuracyNote'],
+  'rafter-calculator': ['unit', 'mode', 'span', 'rise', 'pitch', 'ridgeThickness', 'ridgeUnit', 'overhang', 'diagramLabel', 'accuracyNote'],
 });
 export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   'image-color-picker': ['load', 'addSample', 'copyColor', 'copyPalette', 'remove', 'clear', 'reset'],
@@ -95,6 +97,7 @@ export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   'solar-panel-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'productionMode', 'sizingMode', 'years'],
   'btu-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'feet', 'meters', 'inches', 'shaded', 'typical', 'sunny', 'no', 'yes'],
   'brick-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'centimeters', 'inches'],
+  'rafter-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'centimeters', 'inches', 'riseMode', 'pitchMode'],
 });
 const MESSAGE_PLACEHOLDERS = Object.freeze({ monthCount: ['{count}'], privatePair: ['{giver}', '{recipient}'], turn: ['{player}'] });
 
@@ -128,7 +131,7 @@ export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, {
           if (typeof copy.messages?.[key] === 'string' && !copy.messages[key].includes(token)) errors.push(`${locale.key}/${tool.id}: messages.${key} must preserve ${token}`);
         }
       }
-      if (['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'mulch-calculator', 'paver-calculator', 'solar-panel-calculator', 'btu-calculator', 'brick-calculator', 'image-region-redactor', 'image-sharpener', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'weight-loss-calculator', 'heloc-calculator', 'random-team-generator'].includes(tool.id)
+      if (['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'mulch-calculator', 'paver-calculator', 'solar-panel-calculator', 'btu-calculator', 'brick-calculator', 'rafter-calculator', 'image-region-redactor', 'image-sharpener', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'weight-loss-calculator', 'heloc-calculator', 'random-team-generator'].includes(tool.id)
         && (!Array.isArray(copy.additionalFaqs) || copy.additionalFaqs.length !== 2
           || copy.additionalFaqs.some((faq) => !faq.question?.trim() || !faq.answer?.trim()))) {
         errors.push(`${locale.key}/${tool.id}: two complete localized tool FAQs are required`);

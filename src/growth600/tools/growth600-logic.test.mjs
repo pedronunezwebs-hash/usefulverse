@@ -17,6 +17,7 @@ import { calculateFence } from './fence-calculator/logic.mjs';
 import { calculatePoolSalt } from './pool-salt-calculator/logic.mjs';
 import { calculateWallpaper } from './wallpaper-calculator/logic.mjs';
 import { calculateBrickMaterials } from './brick-calculator/logic.mjs';
+import { calculateRafter } from './rafter-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -57,6 +58,21 @@ test('brick calculator counts openings, layers, courses, mortar and bag yield', 
   assert.throws(() => calculateBrickMaterials({ ...wall, openingWidth: 11, openingHeight: 9, openingCount: 2 }), /Openings/u);
   assert.throws(() => calculateBrickMaterials({ ...wall, openingWidth: 0, openingHeight: 4, openingCount: 1 }), /both opening/u);
   assert.throws(() => calculateBrickMaterials({ ...wall, wythes: 1.5 }), /whole number/u);
+});
+
+test('rafter calculator handles span deduction, pitch, overhang and invalid geometry', () => {
+  const base = calculateRafter({ span: 20, rise: 6, ridgeThickness: 1.5, ridgeUnit: 'in', unit: 'ft', overhang: 0 });
+  assert.equal(base.horizontalRun, 9.9375);
+  assert.ok(Math.abs(base.rafterLength - Math.hypot(9.9375, 6)) < 1e-12);
+  const withOverhang = calculateRafter({ span: 20, rise: 6, ridgeThickness: 1.5, ridgeUnit: 'in', unit: 'ft', overhang: 1 });
+  assert.ok(withOverhang.rafterLength > base.rafterLength);
+  const pitchMode = calculateRafter({ span: 20, pitch: 3, ridgeThickness: 1.5, ridgeUnit: 'in', unit: 'ft', mode: 'pitch' });
+  assert.ok(Math.abs(pitchMode.rise - 2.484375) < 1e-12);
+  assert.ok(Math.abs(pitchMode.pitchPer12 - 3) < 1e-12);
+  const metric = calculateRafter({ span: 6, rise: 1.5, ridgeThickness: 0.1, overhang: 0.3, unit: 'm' });
+  assert.ok(metric.rafterLength > 0);
+  assert.throws(() => calculateRafter({ span: 1, rise: 1, ridgeThickness: 1, ridgeUnit: 'm', unit: 'm' }), /smaller than the span/u);
+  assert.throws(() => calculateRafter({ span: 20, pitch: 0, unit: 'ft', mode: 'pitch' }), /Pitch/u);
 });
 
 test('image redactor validates safe image sizes, exact regions, drag mapping and modes', () => {

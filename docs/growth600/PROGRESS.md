@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 30/323; **293 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 31/323; **292 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -399,5 +399,14 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 30/323; **293 por implementar**. Solar, BTU y Brick Calculator están en la rama; Brick aún requiere completar sus gates antes de publicarse. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 31/323; **292 por implementar**. Solar, BTU, Brick y Rafter Calculator están en la rama; Rafter tiene copy localizado incompleto y no pasa el gate de publicación. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.
+
+## Continuación · Rafter Calculator (#126) · 2026-10-08
+
+- [x] Registrada como candidata nueva y diferenciada de la calculadora de inclinación: usa la luz completa del techo, descuenta media tabla de cumbrera y estima longitud del cabio, pendiente y ángulo básico de corte a plomo; permite entrada por elevación o pendiente (rise/12), unidades métricas/imperiales y alero horizontal opcional.
+- [x] Motor geométrico en el navegador, con validación de unidades y rangos. La prueba del plan (luz 20 ft, elevación 6 ft, cumbrera 1,5 in) confirma que el alero aumenta la longitud; acepta también pendiente 3:12. El resultado no diseña birdsmouth/asiento, sección estructural, uniones, cargas ni cumplimiento de código.
+- [x] Formulario con cambio accesible entre los modos de entrada, ejemplo, reinicio, copia, mensajes de estado y diagrama SVG con etiqueta accesible. Bundle incluido en la prueba de presupuesto, sin red ni código dinámico.
+- [x] Regresión focalizada de catálogo, formularios, contrato de idiomas, renderer, build y controladores: **102/102 aprobadas**; `git diff --check` limpio.
+- [ ] Localización final pendiente: para no seguir golpeando el endpoint gratuito después de HTTP 429, los borradores de los otros 35 idiomas reutilizan etiquetas/FAQ de la calculadora de inclinación y algunas frases propias de Rafter siguen en inglés. No está listo para publicar; falta traducir el copy específico y revalidar títulos/metadatos.
+- [ ] Sin revisión visual con navegador, prueba en hardware físico ni PageSpeed. No se ha fusionado/desplegado; no cambia el sitemap productivo ni se ha enviado a buscadores. La casilla C/F/E/X/L/B/P/S de #126 permanece abierta.
