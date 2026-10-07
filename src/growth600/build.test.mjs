@@ -37,6 +37,7 @@ import ukrainianGrowthCopy from './locales/uk.mjs';
 import swahiliGrowthCopy from './locales/sw.mjs';
 import marathiGrowthCopy from './locales/mr.mjs';
 import teluguGrowthCopy from './locales/te.mjs';
+import hausaGrowthCopy from './locales/ha.mjs';
 
 const actions = { calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', feet: 'Feet', inches: 'Inches', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Computer', twoPlayers: 'Two players', privacyNote: 'Private on this device.' };
 const messages = { copied: 'Copied.', copyUnavailable: 'Copy unavailable.', calculated: 'Done.', checkInputs: 'Check entries.', area: 'Area', volume: 'Volume', orderVolume: 'Order volume', estimatedWeight: 'Estimated weight', bagsToBuy: 'Bags to buy', invalidFormula: 'Check formula.', atomCount: 'atoms', molarMass: 'Molar mass', estimateOnly: 'Estimate only.', currentPayment: 'Current payment', newPayment: 'New payment', paymentDifference: 'Difference', currentTotal: 'Current total', newTotal: 'New total', estimatedDifference: 'Estimated savings', breakEven: 'Break-even', noBreakEven: 'No break-even', monthCount: '{count} months', privatePair: '{giver} gives to {recipient}', allRevealed: 'All revealed.', drawReady: 'Ready.', checkNamesAndRules: 'Check entries.', downloaded: 'Downloaded.', pit: 'Pit', seeds: 'seeds', playerOne: 'Player one', playerTwo: 'Player two', playerOneWins: 'Player one wins.', playerTwoWins: 'Player two wins.', tie: 'Tie.', gameOver: 'Game over.', turn: '{player} turn.' };
@@ -64,13 +65,13 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   const tempRoot = await mkdtemp(join(tmpdir(), 'usefulverse-growth600-build-'));
   context.after(async () => rm(tempRoot, { recursive: true, force: true }));
   const outputDir = join(tempRoot, 'site');
-  const smallLocales = localeEntries.filter(({ key }) => ['en', 'es', 'fr', 'pt', 'de', 'ja', 'ko', 'id', 'hi', 'ar', 'zh', 'bn', 'ru', 'ur', 'tr', 'vi', 'it', 'zh_tw', 'bg', 'ca', 'nl', 'el', 'ms', 'pl', 'sv', 'th', 'uk', 'sw', 'mr', 'te'].includes(key));
+  const smallLocales = localeEntries.filter(({ key }) => ['en', 'es', 'fr', 'pt', 'de', 'ja', 'ko', 'id', 'hi', 'ar', 'zh', 'bn', 'ru', 'ur', 'tr', 'vi', 'it', 'zh_tw', 'bg', 'ca', 'nl', 'el', 'ms', 'pl', 'sv', 'th', 'uk', 'sw', 'mr', 'te', 'ha'].includes(key));
   const controllerBundles = Object.fromEntries(growthPilotTools.map((tool) => [tool.id, `document.querySelector('[data-tool="${tool.id}"]');`]));
   const result = await buildGrowthStaticSite({
     outputDir,
     origin: 'https://tools.usefulverse.com',
     localeEntries: smallLocales,
-    copyByLocale: { en: englishGrowthCopy, es: spanishGrowthCopy, fr: frenchGrowthCopy, pt: portugueseGrowthCopy, de: germanGrowthCopy, ja: japaneseGrowthCopy, ko: koreanGrowthCopy, id: indonesianGrowthCopy, hi: hindiGrowthCopy, ar: arabicGrowthCopy, zh: simplifiedChineseGrowthCopy, bn: bengaliGrowthCopy, ru: russianGrowthCopy, ur: urduGrowthCopy, tr: turkishGrowthCopy, vi: vietnameseGrowthCopy, it: italianGrowthCopy, zh_tw: traditionalChineseGrowthCopy, bg: bulgarianGrowthCopy, ca: catalanGrowthCopy, nl: dutchGrowthCopy, el: greekGrowthCopy, ms: malayGrowthCopy, pl: polishGrowthCopy, sv: swedishGrowthCopy, th: thaiGrowthCopy, uk: ukrainianGrowthCopy, sw: swahiliGrowthCopy, mr: marathiGrowthCopy, te: teluguGrowthCopy },
+    copyByLocale: { en: englishGrowthCopy, es: spanishGrowthCopy, fr: frenchGrowthCopy, pt: portugueseGrowthCopy, de: germanGrowthCopy, ja: japaneseGrowthCopy, ko: koreanGrowthCopy, id: indonesianGrowthCopy, hi: hindiGrowthCopy, ar: arabicGrowthCopy, zh: simplifiedChineseGrowthCopy, bn: bengaliGrowthCopy, ru: russianGrowthCopy, ur: urduGrowthCopy, tr: turkishGrowthCopy, vi: vietnameseGrowthCopy, it: italianGrowthCopy, zh_tw: traditionalChineseGrowthCopy, bg: bulgarianGrowthCopy, ca: catalanGrowthCopy, nl: dutchGrowthCopy, el: greekGrowthCopy, ms: malayGrowthCopy, pl: polishGrowthCopy, sv: swedishGrowthCopy, th: thaiGrowthCopy, uk: ukrainianGrowthCopy, sw: swahiliGrowthCopy, mr: marathiGrowthCopy, te: teluguGrowthCopy, ha: hausaGrowthCopy },
     controllerBundles,
     styles: 'body{font-family:system-ui}',
     currentTools,
@@ -242,6 +243,11 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   assert.match(tePage, /కంకర కాలిక్యులేటర్/u);
   assert.match(tePage, /తరచుగా అడిగే ప్రశ్నలు/u);
   assert.doesNotMatch(tePage, />undefined</u);
+  const haPage = await readFile(join(outputDir, 'ha/tools/gravel-calculator/index.html'), 'utf8');
+  assert.match(haPage, /<html lang="ha-NG" dir="ltr">/u);
+  assert.match(haPage, /Kalkuleta tsakuwa/u);
+  assert.match(haPage, /Tambayoyin da ake yawan yi/u);
+  assert.doesNotMatch(haPage, />undefined</u);
   const files = await readdir(join(outputDir, 'assets'));
   assert.equal(files.length, growthPilotTools.length + 1);
   assert.ok((await stat(join(outputDir, 'assets', files[0]))).isFile());

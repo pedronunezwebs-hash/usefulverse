@@ -32,6 +32,7 @@ import ukrainianGrowthCopy from './locales/uk.mjs';
 import swahiliGrowthCopy from './locales/sw.mjs';
 import marathiGrowthCopy from './locales/mr.mjs';
 import teluguGrowthCopy from './locales/te.mjs';
+import hausaGrowthCopy from './locales/ha.mjs';
 
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
@@ -307,4 +308,13 @@ test('the first Telugu draft covers every copy key and preserves required placeh
   assert.equal(teluguGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} నెలలు');
   assert.equal(teluguGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver} వారు {recipient}కు బహుమతి ఇస్తారు.');
   assert.equal(teluguGrowthCopy.mancala.messages.turn, '{player} వంతు.');
+});
+
+test('the first Hausa draft covers every copy key and preserves required placeholders', () => {
+  assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'ha' }], { ha: hausaGrowthCopy }), true);
+  assert.ok(Object.values(hausaGrowthCopy).every((copy) => copy.copyLanguage === 'ha'));
+  assert.ok(Object.values(hausaGrowthCopy).every((copy) => copy.title.length <= 60 && copy.description.length <= 160));
+  assert.equal(hausaGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, 'watanni {count}');
+  assert.equal(hausaGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver} ya ba {recipient} kyauta.');
+  assert.equal(hausaGrowthCopy.mancala.messages.turn, 'Juyin {player}.');
 });
