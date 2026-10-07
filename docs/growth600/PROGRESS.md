@@ -25,11 +25,11 @@
 - [x] Formularios estáticos y controladores reales para los cinco pilotos; datos locales en `<script type="application/json">` con escape de contenido; tests verifican labels, submit/reset y copia segura.
 - [x] Bundles por herramienta minificados y separados; tamaños observados: grava 3.995 B, masa molar 4.713 B, refinanciación 3.820 B, Secret Santa 4.858 B, Mancala 3.875 B; bajo el presupuesto de 24 KiB, sin llamadas remotas ni ejecución dinámica.
 - [x] Puerta de localización: comprueba cada herramienta en cada idioma y límites de títulos/descripciones; los 36 borradores están presentes, con placeholders conservados y copy SEO dentro del contrato.
-- [x] Builder separado probado con el build real temporal: 36 idiomas × (5 herramientas + portada), 216 URLs de sitemap únicas, robots/llms, canonicals, hreflang y assets versionados; rechaza sobreescrituras, archivos de más, controladores ausentes y copy incompleto. Tras incluir el favicon del sitio: 262 archivos / 3.519.542 bytes; no es un deploy ni una salida del sitio principal.
+- [x] Builder separado probado con el build real temporal: 36 idiomas × (5 herramientas + portada), 216 URLs de sitemap únicas, robots/llms, canonicals, hreflang y assets versionados; rechaza sobreescrituras, archivos de más, controladores ausentes y copy incompleto. Tras incluir favicon y el ajuste CSS RTL: 262 archivos / 3.519.822 bytes; no es un deploy ni una salida del sitio principal.
 - [x] Medición de assets del build real: CSS 5.785 B; controladores minificados de 3.820–4.858 B; todos bajo 24 KiB. En 216 HTML se verificaron title, description, canonical, x-default, lang, ausencia de `undefined` y referencias a assets existentes.
 - [x] Recorrido funcional en navegador local de los cinco pilotos: grava (cálculo, inválido y reset), fórmula `Ca(OH)2` (74,092 g/mol) y rechazo de `XeF4`, refinanciación (cuotas/coste/break-even), sorteo con exclusión y revelado privado paso a paso, Mancala con turno extra y respuesta del ordenador. Las pruebas detectaron y corrigieron botones de envío mal tipados y el adaptador aleatorio criptográfico.
 - [x] Muestra real gujarati en navegador: entrada 5 × 4 m y profundidad 0,1 m devolvió 20 m² y 2 m³; labels, botones y resultado se mostraron en gujarati. Es una comprobación de escritorio, no reemplaza la revisión móvil pendiente.
-- [x] Regresión completa tras añadir gujarati: `npm test` — 888/888, 0 fallidos; pruebas enfocadas de contrato/build/render — 42/42.
+- [x] Regresión completa con los 36 idiomas y el ajuste RTL: `npm test` — 889/889, 0 fallidos.
 - [x] Localización de los cinco pilotos: inglés fuente más borradores automáticos comprensibles para las 252 cadenas del home y los cinco pilotos. Están materializados español, francés, portugués, alemán, japonés, coreano, indonesio, hindi, árabe, chino simplificado, bengalí, ruso, urdu, turco, vietnamita, italiano, chino tradicional, búlgaro, catalán, neerlandés, griego, malayo, polaco, sueco, tailandés, ucraniano, suajili, maratí, telugu, hausa, filipino, tamil, persa, amhárico y gujarati. El build exige todos los 36 locales.
 - [x] Infraestructura de los 36 idiomas: materializador indexado preserva placeholders y fuente; metadatos cumplen topes; páginas generadas usan copy localizado sin `undefined`. Contratos, renderer y build real pasan.
 - [x] Borrador hindi: 252 cadenas indexadas, placeholders `{count}`, `{giver}`, `{recipient}` y `{player}` preservados; presupuesto de metadata y render con `lang="hi"`/hreflang cubiertos por test.
@@ -75,7 +75,7 @@
 
 - `main` y rama base del plan: `685f91adfc7818a54f6dc0a967e290d13137a3dd`.
 - Cloudflare Pages Free: [límites oficiales](https://developers.cloudflare.com/pages/platform/limits/) (consulta de 2026-10-07); [precio de peticiones estáticas](https://developers.cloudflare.com/pages/functions/pricing/); [dominios personalizados](https://developers.cloudflare.com/pages/configuration/custom-domains/).
-- Regresión completa con gujarati incluido: `npm test` — 888/888, 0 fallidos; contrato/build/render enfocados — 42/42. `npm run build:growth600` generó correctamente 216 URLs en 36 idiomas (261 archivos, 3.506.074 bytes) en una carpeta temporal; auditoría estática de las 216 páginas pasó. No se lanzó PageSpeed, tal como pide el plan.
+- Regresión completa con gujarati incluido: `npm test` — 889/889, 0 fallidos. `npm run build:growth600` generó correctamente 216 URLs en 36 idiomas (262 archivos, 3.519.822 bytes) en una carpeta temporal; auditoría estática de las 216 páginas pasó. No se lanzó PageSpeed, tal como pide el plan.
 - Ningún archivo se desplegó, ninguna URL nueva está publicada y el sitemap de producción no cambió.
 
 ## Cierre técnico de la vista previa
@@ -83,7 +83,9 @@
 - [x] Corregido el 404 local del favicon en la salida aislada: home y herramientas enlazan `/favicon.svg`, y el builder copia el recurso existente desde `public/favicon.svg`.
 - [x] Build completo revisado de nuevo: 216 HTML, 216 `<loc>` en sitemap y enlace al favicon en las 216 páginas; el favicon se incluye como archivo estático en la salida. `npm test`: 888/888 y `git diff --check` sin errores.
 - [x] Smoke HTTP tras la corrección: home Gujarati, calculadora, CSS y `/favicon.svg` respondieron 200; la repetición de recursos estáticos devolvió 304 según caché. En emulación táctil de 390 × 844 px, la calculadora Gujarati no tuvo desbordamiento horizontal; los controles mostraron nombres accesibles, el foco de teclado alcanzó el enlace para saltar al formulario y el cálculo 5 × 4 × 0,1 devolvió 20 m² / 2 m³.
-- [ ] Completar gate visual móvil/teclado de las otras cuatro familias y recorridos RTL/multilingües representativos. Esta única muestra Gujarati no equivale a certificar todas las páginas ni dispositivos. El favicon faltante era solo del build aislado y no cambia el sitio principal.
+- [x] Recorrido móvil representativo (390 × 844 px): las otras cuatro familias en inglés no tuvieron overflow horizontal ni controles sin nombre accesible. Se detectó en Mancala árabe que el skip-link oculto con `left:-9999px` provocaba un ancho de documento de 10.389 px pese al viewport móvil.
+- [x] Corrección RTL compartida: el skip-link ahora se oculta verticalmente con `position: fixed` y transform, respetando `dir=rtl`; test de regresión añadido. Tras el fix, Mancala árabe mostró `dir=rtl`, viewport/documento de 390 px y ningún overflow global; tablero y hoyos conservan etiquetas accesibles.
+- [ ] Completar validación visual de otros idiomas RTL y recorridos móviles por variantes de campos/juego. Las muestras no equivalen a certificar las 216 páginas ni todos los dispositivos. Ninguno de estos cambios modifica el sitio principal.
 
 ## Próxima acción concreta
 

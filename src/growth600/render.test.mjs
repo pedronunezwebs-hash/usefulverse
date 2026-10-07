@@ -1,9 +1,16 @@
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { renderGrowthHomePage, renderGrowthToolPage } from './render.mjs';
 
 const locales = [{ key: 'en', code: 'en', name: 'English' }, { key: 'ar', code: 'ar', name: 'العربية' }];
 const copy = { name: 'Gravel calculator', title: 'Gravel calculator free | UsefulVerse', description: 'Estimate gravel volume in your browser.', intro: 'Enter area and depth.', howQuestion: 'How to use this tool', howAnswer: 'Add area and depth, then calculate.', privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This runs locally.', skipToTool: 'Skip to tool', home: 'Home', languageLabel: 'Language', breadcrumbLabel: 'Breadcrumb', freeLabel: 'Free, no usage limit', faqLabel: 'Questions', footerFree: 'Free browser tool.' };
+
+test('RTL skip-link override hides vertically without creating horizontal page overflow', async () => {
+  const css = await readFile(new URL('./rtl-fixes.css', import.meta.url), 'utf8');
+  assert.match(css, /\.skip-link\{position:fixed;left:auto;right:auto;inset-inline-start:1rem;inset-block-start:0;transform:translateY\(-150%\)\}/u);
+  assert.match(css, /\.skip-link:focus\{left:auto;right:auto;transform:translateY\(0\)\}/u);
+});
 
 test('growth renderer emits origin-scoped canonical/hreflang, language direction and escaped copy', () => {
   const html = renderGrowthToolPage({ tool: { id: 'gravel-calculator' }, locale: locales[1], localeEntries: locales, copy: { ...copy, name: '</script><script>alert(1)</script>' }, origin: 'https://tools.usefulverse.com', assetVersion: 'abcdef123456', formHtml: '<form id="tool-form"></form>' });
