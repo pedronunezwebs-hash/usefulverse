@@ -380,7 +380,17 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] No se ejecutaron `npm test` del repositorio completo, el build oficial con dependencias de modelos, PageSpeed/Lighthouse ni revisión humana nativa. No se probó en hardware físico.
 - [ ] **No publicado:** Solar sigue en la rama de trabajo, sin merge ni deploy. No cambia el sitemap de producción ni se envía URL a buscadores. La casilla #104 de `PLAN-600.md` permanece abierta hasta los gates de publicación P/S coordinados y las comprobaciones de release.
 
+## Continuación · BTU Calculator (#107) · 2026-10-08
+
+- [x] C — candidata aditiva para dimensionar un aire acondicionado de habitación. La ficha aprobada registra `btu calculator` en US/en con 9.900 búsquedas mensuales, KD 9 y CPC 2,40 USD (CPC, no CPM). No se volvió a consultar ni consumir DataForSEO.
+- [x] F/E — estimación en el navegador según las bandas publicadas de ENERGY STAR, con área y volumen visibles, altura de techo, ajuste de aislamiento explícito por el usuario, exposición solar, ocupantes extra y cocina. Para 12 × 12 × 8 ft, dos personas y sol típico: 144 ft², 1.152 ft³ y 5.000 Btu/h. Cero área devuelve cero; por debajo de 100 ft² avisa que la tabla empieza en 100; más de 2.500 ft² se rechaza en vez de extrapolar. No pretende sustituir Manual J, diseño HVAC ni asesoramiento profesional. Referencia: [ENERGY STAR — room air conditioners](https://www.energystar.gov/products/room_air_conditioners).
+- [x] X — Chrome local emulado a 390 × 844: ejemplo y cálculo verificados en español y árabe; controles/valores legibles, `lang` y dirección correctos (`es/ltr`, `ar/rtl`), documento de 390 px sin overflow horizontal. Consola árabe limpia; recursos solicitados solo al servidor local. No se probó en teléfonos físicos.
+- [x] L — copy estático en 36 idiomas. Se corrigieron los textos españoles de personas, unidades y resultado, y términos árabes que Google Translate había convertido en «pasajeros» o «número»; árabe mantiene rótulos RTL comprensibles. Los demás idiomas son borradores automáticos, no revisión nativa humana.
+- [x] B — suite enfocada `node --test src/growth600/*.test.mjs src/growth600/tools/btu-calculator/logic.test.mjs`: **83/83 aprobadas**. `git diff --check` limpio. Bundle BTU minificado **5.824 B** (límite 24 KiB). Build temporal de la candidata: **72 páginas / 72 URLs de sitemap** (36 locales + 36 portadas), 114 archivos y 1.080.073 bytes; no es el sitemap de producción.
+- [ ] No se ejecutó la regresión completa del repositorio ni PageSpeed/Lighthouse; tampoco revisión nativa de todos los idiomas o pruebas en equipo físico. La estimación de BTU es orientativa; el ajuste de aislamiento es una hipótesis manual, no un dato medido.
+- [ ] **No publicado:** permanece en `codex/growth600-tire-size-phase`; no se ha fusionado, desplegado ni enviado a buscadores. Sitemap de producción intacto. #107 sigue sin marcar como publicación completa en `PLAN-600.md` hasta cerrar los gates coordinados C/F/E/X/L/B/P/S.
+
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 28/323; **295 por implementar**. Solar está programada y validada localmente, pero aún no publicada. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 29/323; **294 por implementar**. Solar y BTU están programadas y validadas localmente, pero no publicadas. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.

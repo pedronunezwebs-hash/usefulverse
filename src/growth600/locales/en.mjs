@@ -40,6 +40,8 @@ import paverCopies from './paver-calculator-final.mjs';
 import { paverCalculatorEnglishCopy } from './paver-calculator.en.mjs';
 import solarCopies from './solar-panel-calculator-final.mjs';
 import { solarPanelCalculatorEnglishCopy } from './solar-panel-calculator.en.mjs';
+import btuCopies from './btu-calculator-final.mjs';
+import { btuCalculatorEnglishCopy } from './btu-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -364,5 +366,46 @@ const localizedPaverCopies = {
 };
 registerGrowthLocaleExtension(source, 'paver-calculator', localizedPaverCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'solar-panel-calculator', { ...solarCopies, en: solarPanelCalculatorEnglishCopy }, 'gravel-calculator');
+const cleanBtuMetadata = (copy) => Object.freeze({
+  ...copy,
+  name: copy.name.replace(/[ \t]{2,}/gu, ' ').trim(),
+  title: copy.title.replace(/[ \t]{2,}/gu, ' ').trim(),
+  description: copy.description.replace(/[ \t]{2,}/gu, ' ').trim(),
+});
+const translatedBtuCopies = { ...btuCopies, en: btuCalculatorEnglishCopy };
+translatedBtuCopies.es = Object.freeze({
+  ...translatedBtuCopies.es,
+  title: 'Calculadora BTU gratis e ilimitada | UsefulVerse',
+  description: 'Calcula la capacidad del aire acondicionado en BTU/h. Gratis, sin límites de uso y en tu navegador; el resultado es solo orientativo.',
+  fields: Object.freeze({
+    ...translatedBtuCopies.es.fields,
+    occupants: 'Número de personas que suelen estar en la habitación',
+    accuracyNote: 'Estimación orientativa basada en los rangos de tamaño de ENERGY STAR. El ajuste de aislamiento es una suposición que eliges tú. Para habitaciones de menos de 9,3 m² se usa el valor mínimo de la tabla; por encima de 232 m², consulta a un profesional. No sustituye un cálculo Manual J ni un diseño HVAC. La necesidad real depende del clima, ventanas, fugas de aire y otros detalles del edificio.',
+  }),
+  messages: Object.freeze({
+    ...translatedBtuCopies.es.messages,
+    roomArea: 'Área del suelo de la habitación', roomVolume: 'Volumen aproximado de la habitación',
+    baseCapacity: 'Capacidad base según el área', ceilingAdjustment: 'Factor por altura del techo',
+    insulationAdjustment: 'Ajuste por aislamiento', sunAdjustment: 'Factor de luz solar',
+    occupantAdjustment: 'Ajuste por personas adicionales', kitchenAdjustment: 'Ajuste por uso de cocina',
+    capacity: 'Capacidad de refrigeración estimada', tons: 'toneladas de refrigeración aproximadas',
+  }),
+  privacyAnswer: 'No. El cálculo se realiza en tu navegador. Esta herramienta no envía ni guarda en un servidor las medidas de la habitación ni los ajustes.',
+  actions: Object.freeze({ ...translatedBtuCopies.es.actions, meters: 'Metros' }),
+});
+translatedBtuCopies.ar = Object.freeze({
+  ...translatedBtuCopies.ar,
+  intro: 'قدّر سعة التبريد اللازمة للغرفة حسب مساحة الأرضية وارتفاع السقف والعزل وأشعة الشمس وعدد الأشخاص واستخدام المطبخ. تظهر الأداة كل تعديل.',
+  howAnswer: 'قِس الغرفة، واختر نطاق المساحة المناسب، ثم عدّل التقدير حسب ارتفاع السقف والعزل وضوء الشمس وعدد الأشخاص الإضافيين واستخدام المطبخ. تُقرّب النتيجة إلى أقرب 1000 وحدة BTU في الساعة.',
+  fields: Object.freeze({
+    ...translatedBtuCopies.ar.fields,
+    occupants: 'عدد الأشخاص الموجودين عادةً في الغرفة',
+    accuracyNote: 'هذا تقدير تخطيطي فقط، ويعتمد على نطاقات حجم مكيفات الغرف المنشورة من ENERGY STAR. تعديل العزل افتراض تختاره بنفسك. للمساحات الأقل من 100 قدم مربع يُستخدم الحد الأدنى في الجدول. للمساحات فوق 2500 قدم مربع، استشر مختصًا. هذا ليس حساب Manual J ولا تصميمًا لنظام تكييف مركزي. تختلف الحاجة الفعلية حسب المناخ والنوافذ وتسرب الهواء وتفاصيل المبنى.',
+  }),
+  actions: Object.freeze({ ...translatedBtuCopies.ar.actions, no: 'لا' }),
+  messages: Object.freeze({ ...translatedBtuCopies.ar.messages, copied: 'تم النسخ.', copyUnavailable: 'النسخ غير متاح في هذا المتصفح.', calculated: 'التقدير جاهز.', tons: 'طن تبريد تقريبي' }),
+});
+const localizedBtuCopies = Object.freeze(Object.fromEntries(Object.entries(translatedBtuCopies).map(([language, copy]) => [language, cleanBtuMetadata(copy)])));
+registerGrowthLocaleExtension(source, 'btu-calculator', localizedBtuCopies, 'gravel-calculator');
 
 export default Object.freeze(source);

@@ -54,6 +54,7 @@ function toolCopy(tool, language) {
     'wallpaper-calculator': { unit: 'Unit', perimeter: 'Wall perimeter', wallHeight: 'Wall height', openingsArea: 'Opening area', rollWidth: 'Roll width', rollLength: 'Roll length', patternRepeat: 'Pattern repeat', wastePercent: 'Extra material', accuracyNote: 'Planning estimate only.', relatedPaintCalculator: 'Need paint too? Try the paint calculator.' },
     'pool-salt-calculator': { volume: 'Pool volume', volumeUnit: 'Volume unit', currentSalinityPpm: 'Current salinity ppm', targetSalinityPpm: 'Target salinity ppm', saltPurityPercent: 'Salt purity', bagSize: 'Bag size', bagUnit: 'Bag unit', accuracyNote: 'Use the manufacturer target.' },
     'solar-panel-calculator': { mode: 'Estimate type', dailyTargetKwh: 'Daily energy target', panelCount: 'Panel count', panelWatts: 'Panel rating', peakSunHours: 'Peak sun hours', lossPercent: 'System losses', panelLengthM: 'Panel length', panelWidthM: 'Panel width', electricityRate: 'Electricity rate', systemCost: 'Installed system cost', currency: 'Currency', assumptionNote: 'Enter local sunlight and your own price assumptions.', accuracyNote: 'Planning estimate only; actual production, savings and payback vary with conditions and utility rules.' },
+    'btu-calculator': { length: 'Room length', width: 'Room width', ceilingHeight: 'Ceiling height', dimensionUnit: 'Unit', insulationAdjustment: 'Insulation adjustment', sunExposure: 'Sun exposure', occupants: 'People', kitchen: 'Kitchen', accuracyNote: 'Planning estimate only.' },
     'fence-calculator': { unit: 'Run unit', length: 'Total run', gateCount: 'Number of gates', gateWidth: 'Gate opening', materialUnit: 'Material unit', postSpacing: 'Post spacing', panelWidth: 'Panel width', picketWidth: 'Picket width', maxPicketGap: 'Maximum gap', picketHeight: 'Picket length', wastePercent: 'Extra pieces', pricePerPost: 'Price per post', pricePerGate: 'Price per gate', pricePerPanel: 'Price per panel', pricePerPicket: 'Price per picket', accuracyNote: 'Estimate only; gate positions are assumed evenly spaced.' },
     'deck-calculator': { unit: 'Unit', length: 'Deck length', width: 'Deck width', boardUnit: 'Board and support unit', boardWidth: 'Board width', gap: 'Gap', stockBoardLength: 'Stock board length', joistSpacing: 'Support spacing', wastePercent: 'Extra material', fastenersPerIntersection: 'Fasteners per crossing', pricePerBoard: 'Price per board', safetyNote: 'Estimate only; joints require support.' },
     'roofing-calculator': { projectedArea: 'Projected roof area', areaUnit: 'Area unit', rise: 'Rise', run: 'Run', pitchUnit: 'Pitch unit', wastePercent: 'Extra material', bundlesPerSquare: 'Bundles per square', pricePerBundle: 'Price per bundle', safetyNote: 'Estimate only; verify measurements.' },
@@ -187,6 +188,18 @@ function toolCopy(tool, language) {
     localized.additionalFaqs = [
       { question: 'How many solar panels do I need?', answer: 'Enter daily energy use, panel power, sunlight and system losses.' },
       { question: 'Are savings guaranteed?', answer: 'No. This is an estimate based on your assumptions.' },
+    ];
+  }
+  if (tool.id === 'btu-calculator') {
+    Object.assign(localized.actions, { feet: 'Feet', meters: 'Metres', inches: 'Inches', shaded: 'Shaded', typical: 'Typical', sunny: 'Sunny', no: 'No', yes: 'Yes' });
+    Object.assign(localized.messages, {
+      roomArea: 'Room area', roomVolume: 'Room volume', baseCapacity: 'Base capacity', ceilingAdjustment: 'Ceiling factor',
+      insulationAdjustment: 'Insulation', sunAdjustment: 'Sunlight', occupantAdjustment: 'Extra occupants', kitchenAdjustment: 'Kitchen',
+      capacity: 'Capacity', tons: 'Tons', belowReferenceBand: 'Below chart range.',
+    });
+    localized.additionalFaqs = [
+      { question: 'What does this BTU estimate show?', answer: 'A room-air-conditioner planning estimate based on the entered area and assumptions.' },
+      { question: 'Does this replace a professional load calculation?', answer: 'No. It is not a Manual J calculation or HVAC design.' },
     ];
   }
   if (tool.id === 'wallpaper-calculator') localized.additionalFaqs = [

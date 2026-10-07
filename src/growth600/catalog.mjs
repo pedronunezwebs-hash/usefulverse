@@ -1,5 +1,17 @@
 export const growthPilotTools = Object.freeze([
   {
+    id: 'btu-calculator',
+    category: 'home-energy',
+    type: 'calculator',
+    primaryIntent: 'btu calculator',
+    secondaryIntents: ['air conditioner size calculator', 'room air conditioner BTU calculator', 'cooling capacity calculator'],
+    functions: ['estimate room cooling capacity from floor dimensions and ceiling height using the published ENERGY STAR room-air-conditioner bands', 'adjust the estimate with explicit user-selected insulation, sunlight, extra occupants and kitchen factors', 'show the base value, each adjustment, room area and approximate volume so assumptions are visible', 'handle zero floor area as zero load and flag dimensions outside the reference chart instead of extrapolating a false precision'],
+    acceptance: 'A 12 × 12 ft room with an 8 ft ceiling, typical insulation, typical sun, two occupants and no kitchen returns 5,000 Btu/h; zero floor area returns zero, never a negative load.',
+    boundary: 'A room-air-conditioner planning estimate based on ENERGY STAR size bands and its published sunlight, occupant and kitchen adjustments; insulation and ceiling height are transparent user assumptions. It is not a Manual J load calculation, central HVAC design, energy audit or equipment recommendation. Actual loads depend on climate, envelope, windows, infiltration, orientation and other conditions. Check manufacturer guidance and consult a qualified HVAC professional; local-only arithmetic, no uploaded measurements.',
+    relatedExistingIds: [],
+    logicModule: './tools/btu-calculator/logic.mjs',
+  },
+  {
     id: 'solar-panel-calculator',
     category: 'home-energy',
     type: 'calculator',

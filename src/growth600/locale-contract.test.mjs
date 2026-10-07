@@ -353,6 +353,25 @@ test('solar panel calculator has a complete static draft in all 36 locales with 
   assert.match(localizedCopies.es[tool.id].title, /UsefulVerse/u);
 });
 
+test('BTU calculator has 36 static localized drafts, honest load limits and bounded metadata', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'btu-calculator');
+  assert.ok(tool);
+  assert.equal(localeEntries.length, 36);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.copyLanguage, key);
+    assert.ok(copy.title.endsWith(' | UsefulVerse'));
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.doesNotMatch(`${copy.name} ${copy.title} ${copy.description}`, / {2,}|undefined|null/u);
+    assert.doesNotMatch(JSON.stringify(copy), /UVTOKEN\d+X|undefined|null/iu);
+  }
+  assert.match(localizedCopies.en[tool.id].fields.accuracyNote, /Manual J/u);
+  assert.match(localizedCopies.es[tool.id].intro, /aislamiento/u);
+  assert.match(localizedCopies.ar[tool.id].copyLanguage, /^ar$/u);
+});
+
 test('the first Google Translate Spanish draft covers every copy key and preserves required placeholders', () => {
   assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'es' }], { es: spanishGrowthCopy }), true);
   assert.ok(Object.values(spanishGrowthCopy).every((copy) => copy.copyLanguage === 'es'));

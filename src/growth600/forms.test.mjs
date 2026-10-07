@@ -70,6 +70,11 @@ const copies = {
     messages: { ...messages, panelCount: 'Panels', systemSize: 'Array size', dailyProduction: 'Daily energy', monthlyProduction: 'Monthly energy', annualProduction: 'Yearly energy', panelArea: 'Panel area', annualSavings: 'Annual bill offset', simplePayback: 'Payback', paybackUnavailable: 'Unavailable.' },
     fields: { mode: 'Estimate mode', dailyTargetKwh: 'Daily use', panelCount: 'Number of panels', panelWatts: 'Panel watts', peakSunHours: 'Sun hours', lossPercent: 'Losses', panelLengthM: 'Panel length', panelWidthM: 'Panel width', electricityRate: 'Price per kWh', systemCost: 'Installed cost', currency: 'Currency', assumptionNote: 'Enter both dimensions for area.', accuracyNote: 'Estimate only.' },
   },
+  'btu-calculator': {
+    name: 'BTU calculator', actions: { ...actions, feet: 'Feet', meters: 'Metres', inches: 'Inches', shaded: 'Shaded', typical: 'Typical', sunny: 'Sunny', no: 'No', yes: 'Yes' },
+    messages: { ...messages, roomArea: 'Room area', roomVolume: 'Room volume', baseCapacity: 'Base capacity', ceilingAdjustment: 'Ceiling factor', insulationAdjustment: 'Insulation', sunAdjustment: 'Sunlight', occupantAdjustment: 'Extra occupants', kitchenAdjustment: 'Kitchen', capacity: 'Capacity', tons: 'Tons', belowReferenceBand: 'Below reference band.' },
+    fields: { length: 'Room length', width: 'Room width', ceilingHeight: 'Ceiling height', dimensionUnit: 'Unit', insulationAdjustment: 'Insulation adjustment', sunExposure: 'Sun exposure', occupants: 'Occupants', kitchen: 'Kitchen', accuracyNote: 'Estimate only.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -104,6 +109,11 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(solar, /data-solar-target hidden/u);
   assert.match(solar, /data-solar-count/u);
   assert.match(solar, /name="systemCost"/u);
+  const btu = renderGrowthForm('btu-calculator', copies['btu-calculator']);
+  assert.match(btu, /name="ceilingHeight"/u);
+  assert.match(btu, /name="insulationAdjustment"/u);
+  assert.match(btu, /value="typical" selected/u);
+  assert.match(btu, /aria-live="polite"/u);
   assert.match(renderGrowthForm('secret-santa-generator', copies['secret-santa-generator']), /type="submit" data-action="generate"/u);
   const stairs = renderGrowthForm('stair-calculator', copies['stair-calculator']);
   assert.match(stairs, /name="riserCount" type="number" min="2" max="100" step="1"/u);

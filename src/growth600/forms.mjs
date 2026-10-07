@@ -46,6 +46,7 @@ export function renderGrowthForm(toolId, copy) {
   'mulch-calculator': ['shape', 'dimensionUnit', 'length', 'width', 'diameter', 'bedCount', 'depth', 'depthUnit', 'bagVolume', 'bagUnit', 'wastePercent', 'pricePerBag', 'currency', 'currencyNote', 'accuracyNote', 'relatedGravelCalculator', 'relatedSoilCalculator'],
     'paver-calculator': ['length', 'width', 'surfaceUnit', 'moduleLength', 'moduleWidth', 'moduleUnit', 'paversPerModule', 'paverWastePercent', 'baseDepth', 'baseDepthUnit', 'baseWastePercent', 'pricePerPaver', 'basePricePerM3', 'currency', 'unitsNote', 'accuracyNote', 'relatedTileCalculator', 'relatedGravelCalculator'],
     'solar-panel-calculator': ['mode', 'dailyTargetKwh', 'panelCount', 'panelWatts', 'peakSunHours', 'lossPercent', 'panelLengthM', 'panelWidthM', 'electricityRate', 'systemCost', 'currency', 'assumptionNote'],
+    'btu-calculator': ['length', 'width', 'ceilingHeight', 'dimensionUnit', 'insulationAdjustment', 'sunExposure', 'occupants', 'kitchen', 'accuracyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -77,6 +78,7 @@ export function renderGrowthForm(toolId, copy) {
   'mulch-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'rectangle', 'circle', 'meters', 'feet', 'centimeters', 'millimeters', 'inches', 'liters', 'cubicFeet', 'squareMeters', 'squareFeet'],
     'paver-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'centimeters', 'inches', 'millimeters', 'squareMeters', 'squareFeet'],
     'solar-panel-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'productionMode', 'sizingMode', 'years'],
+    'btu-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'feet', 'meters', 'inches', 'shaded', 'typical', 'sunny', 'no', 'yes'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -453,6 +455,20 @@ export function renderGrowthForm(toolId, copy) {
     ${label('solar-currency', fields.currency, '<select id="solar-currency" name="currency"><option>USD</option><option>EUR</option><option>GBP</option><option>CAD</option><option>AUD</option><option>BRL</option><option>INR</option></select>')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${button('calculate', labels.calculate)}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'btu-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('btu-dimension-unit', fields.dimensionUnit, `<select id="btu-dimension-unit" name="dimensionUnit"><option value="ft">${escapeGrowthHtml(labels.feet)}</option><option value="m">${escapeGrowthHtml(labels.meters)}</option><option value="in">${escapeGrowthHtml(labels.inches)}</option></select>`)}
+    ${label('btu-room-length', fields.length, '<input id="btu-room-length" name="length" type="number" min="0" max="1000" step="any" inputmode="decimal" value="12" required>')}
+    ${label('btu-room-width', fields.width, '<input id="btu-room-width" name="width" type="number" min="0" max="1000" step="any" inputmode="decimal" value="12" required>')}
+    ${label('btu-ceiling-height', fields.ceilingHeight, '<input id="btu-ceiling-height" name="ceilingHeight" type="number" min="0.1" max="40" step="any" inputmode="decimal" value="8" required>')}
+    ${label('btu-insulation-adjustment', fields.insulationAdjustment, '<input id="btu-insulation-adjustment" name="insulationAdjustment" type="number" min="-30" max="50" step="1" value="0" required>')}
+    ${label('btu-sun-exposure', fields.sunExposure, `<select id="btu-sun-exposure" name="sunExposure"><option value="shaded">${escapeGrowthHtml(labels.shaded)}</option><option value="typical" selected>${escapeGrowthHtml(labels.typical)}</option><option value="sunny">${escapeGrowthHtml(labels.sunny)}</option></select>`)}
+    ${label('btu-occupants', fields.occupants, '<input id="btu-occupants" name="occupants" type="number" min="0" max="50" step="1" value="2" required>')}
+    ${label('btu-kitchen', fields.kitchen, `<select id="btu-kitchen" name="kitchen"><option value="no" selected>${escapeGrowthHtml(labels.no)}</option><option value="yes">${escapeGrowthHtml(labels.yes)}</option></select>`)}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);
 
