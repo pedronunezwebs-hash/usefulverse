@@ -67,6 +67,7 @@ function toolCopy(tool, language) {
     'stair-calculator': { totalRise: 'Total rise', riserCount: 'Number of risers', treadDepth: 'Tread depth', unit: 'Length unit', codeNote: 'Geometry only; check local rules.', relatedUnitConverter: 'Need to convert measurements? Open the unit converter.' },
     'asphalt-calculator': { area: 'Paved area', areaUnit: 'Area unit', compactedThickness: 'Compacted thickness', thicknessUnit: 'Thickness unit', density: 'Mix density', densityUnit: 'Density unit', wastePercent: 'Extra material', pricePerTonne: 'Price per tonne', accuracyNote: 'Estimate only; use supplier data.', relatedConcreteCalculator: 'Planning concrete? Use the concrete calculator.' },
     mancala: { mode: 'Mode', board: 'Kalah board', rules: 'Sow seeds around the board; skip the opponent store. Capture the opposite pit when the last seed lands in an empty pit on your side.' },
+    'dominoes-game': { mode: 'Play mode', variant: 'Rules', board: 'Domino line', stock: 'Tiles left to draw', hand: 'Your tiles', opponentHand: "Opponent's tiles", accuracyNote: 'Local double-six game.', rules: 'Match an open end.' },
   }[tool.id];
   if (tool.id === 'tire-size-calculator') {
     Object.assign(actions, { kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)' });
@@ -79,6 +80,7 @@ function toolCopy(tool, language) {
   if (tool.id === 'fence-calculator') Object.assign(actions, { millimeters: 'Millimeters' });
   if (tool.id === 'pool-salt-calculator') Object.assign(actions, { liters: 'Litres', usGallons: 'US gallons', imperialGallons: 'Imperial gallons' });
   if (tool.id === 'image-region-redactor') Object.assign(actions, { load: 'Choose image', addRegion: 'Add region', undo: 'Undo last region', clear: 'Remove all regions', export: 'Apply redactions', removeRegion: 'Remove region', black: 'Solid black', pixelate: 'Pixelate', blur: 'Blur', png: 'PNG', jpeg: 'JPEG' });
+  if (tool.id === 'dominoes-game') Object.assign(actions, { draw: 'Draw a tile', pass: 'Pass', playLeft: 'Play left', playRight: 'Play right', drawRule: 'Draw dominoes', blockRule: 'Block dominoes' });
   const deckMessages = tool.id === 'deck-calculator' ? { area: 'Deck area', boardRows: 'Board rows', coveredWidth: 'Covered width', orderLength: 'Order length', boards: 'Boards to order', supportLines: 'Support lines', fasteners: 'Fasteners', joints: 'End joints', estimatedCost: 'Estimated cost', costNotEntered: 'Enter a board price.' } : {};
   const fenceMessages = tool.id === 'fence-calculator' ? { totalRun: 'Total run', gateOpening: 'Gate openings', fenceLength: 'Fence length', sections: 'Fence sections', averageSection: 'Average section', posts: 'Posts', panels: 'Panels to order', pickets: 'Pickets to order', picketGap: 'Adjusted picket gap', picketLength: 'Total picket cut length', extra: 'extra', onePicket: 'One picket per section', panelCost: 'Panel-option cost', picketCost: 'Picket-option cost' } : {};
   const localizedMessages = tool.id === 'stair-calculator' ? { ...messages, riserHeight: 'Riser height', treadCount: 'Tread count', totalRun: 'Total run', angle: 'Angle', stringerLength: 'Stringer length', diagram: 'Stair side view' } : messages;
@@ -89,7 +91,8 @@ function toolCopy(tool, language) {
   const drywallMessages = tool.id === 'drywall-calculator' ? { wallArea: 'Net wall area', ceilingArea: 'Ceiling area', totalArea: 'Total surface area', boardCount: 'Whole boards', boardCoverage: 'Board coverage', estimatedScrews: 'Estimated screws', jointSeams: 'Approximate joint seams', estimatedCost: 'Estimated board cost', costNotEntered: 'Enter a board price.' } : {};
   const roofingMessages = tool.id === 'roofing-calculator' ? { projectedArea: 'Projected area', roofArea: 'Sloped roof area', extraArea: 'Area with extra material', pitch: 'Pitch', slopeFactor: 'Slope multiplier', roofingSquares: 'Roofing squares', bundles: 'Bundles', estimatedCost: 'Estimated cost', costNotEntered: 'Enter a bundle price.' } : {};
   const redactorMessages = tool.id === 'image-region-redactor' ? { unsupportedImage: 'Choose a supported raster image.', imageTooLarge: 'Image too large for this tab.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', invalidRegion: 'Check the pixel region.', regionAdded: 'Region added.', regionRemoved: 'Region removed.', regionsCleared: 'All regions removed.', addRegionFirst: 'Add a region first.', exporting: 'Applying regions…', exportFailed: 'Could not create the image.', exportReady: 'Redacted image ready.', region: 'Region' } : {};
-  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: { ...localizedMessages, ...asphaltMessages, ...poolMessages, ...saltMessages, ...roofMessages, ...drywallMessages, ...roofingMessages, ...deckMessages, ...fenceMessages, ...redactorMessages }, copyLanguage: language };
+  const dominoMessages = tool.id === 'dominoes-game' ? { played: 'Tile played.', drew: 'Tile drawn.', passed: 'Turn passed.', noMoves: 'No legal move.', stockEmpty: 'The draw pile is empty.' } : {};
+  const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: { ...localizedMessages, ...asphaltMessages, ...poolMessages, ...saltMessages, ...roofMessages, ...drywallMessages, ...roofingMessages, ...deckMessages, ...fenceMessages, ...redactorMessages, ...dominoMessages }, copyLanguage: language };
   if (tool.id === 'image-color-picker') Object.assign(localized, {
     fields: { imageFile: 'Choose an image', accuracyNote: 'Local processing; maximum 12 megapixels.', previewHint: 'Click a pixel or use arrow keys.', zoom: 'Preview zoom', currentColor: 'Current pixel', paletteLabel: 'Color palette', relatedSharpener: 'Open the image sharpener.', relatedRedactor: 'Open the image redactor.' },
     actions: { ...actions, load: 'Choose image', addSample: 'Add color to palette', copyColor: 'Copy color', copyPalette: 'Copy HEX palette', remove: 'Remove', clear: 'Clear palette' },
@@ -164,6 +167,10 @@ function toolCopy(tool, language) {
   if (tool.id === 'image-sharpener') localized.additionalFaqs = [
     { question: 'Can sharpening restore missing detail?', answer: 'No. It increases local edge contrast only.' },
     { question: 'What do strength, radius and threshold do?', answer: 'They control the sharpening effect.' },
+  ];
+  if (tool.id === 'dominoes-game') localized.additionalFaqs = [
+    { question: 'Draw or block?', answer: 'The variant changes drawing rules.' },
+    { question: 'Can two people play locally?', answer: 'Yes. Two people can share one device.' },
   ];
   return localized;
 }

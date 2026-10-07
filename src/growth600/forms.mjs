@@ -38,6 +38,7 @@ export function renderGrowthForm(toolId, copy) {
     'stair-calculator': ['totalRise', 'riserCount', 'treadDepth', 'unit', 'codeNote', 'relatedUnitConverter'],
     'asphalt-calculator': ['area', 'areaUnit', 'compactedThickness', 'thicknessUnit', 'density', 'densityUnit', 'wastePercent', 'pricePerTonne', 'accuracyNote', 'relatedConcreteCalculator'],
     mancala: ['mode'],
+    'dominoes-game': ['mode', 'variant', 'board', 'stock', 'hand', 'opponentHand', 'accuracyNote'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -61,6 +62,7 @@ export function renderGrowthForm(toolId, copy) {
     'stair-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'feet', 'inches'],
     'asphalt-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     mancala: ['newGame', 'rules', 'result', 'computer', 'twoPlayers'],
+    'dominoes-game': ['newGame', 'draw', 'pass', 'playLeft', 'playRight', 'computer', 'twoPlayers', 'drawRule', 'blockRule'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -323,6 +325,17 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);
+
+  if (toolId === 'dominoes-game') return attachCopy(`<section class="game domino-game" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="game-toolbar"><div class="field"><label for="domino-mode">${escapeGrowthHtml(fields.mode)}</label><select id="domino-mode" data-mode><option value="computer">${escapeGrowthHtml(labels.computer)}</option><option value="two-player">${escapeGrowthHtml(labels.twoPlayers)}</option></select></div>
+      <div class="field"><label for="domino-variant">${escapeGrowthHtml(fields.variant)}</label><select id="domino-variant" data-variant><option value="draw">${escapeGrowthHtml(labels.drawRule)}</option><option value="block">${escapeGrowthHtml(labels.blockRule)}</option></select></div>
+      <button type="button" data-action="new-game" class="button button--primary">${escapeGrowthHtml(labels.newGame)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section aria-labelledby="domino-board-heading"><h2 id="domino-board-heading">${escapeGrowthHtml(fields.board)}</h2><p class="hint"><span>${escapeGrowthHtml(fields.stock)}: </span><strong data-stock-count></strong></p><div class="domino-board-scroll" tabindex="0" aria-label="${escapeGrowthHtml(fields.board)}"><ol class="domino-board" data-board></ol></div></section>
+    <section aria-labelledby="domino-hand-heading"><h2 id="domino-hand-heading">${escapeGrowthHtml(fields.hand)}</h2><ul class="domino-hand" data-hand></ul></section><section data-opponent-hand hidden><h2>${escapeGrowthHtml(fields.opponentHand)}</h2><p data-opponent-count></p></section>
+    <section class="result" data-result hidden><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div></section>
+    <div class="actions"><button type="button" data-action="draw" class="button button--secondary">${escapeGrowthHtml(labels.draw)}</button><button type="button" data-action="pass" class="button button--secondary">${escapeGrowthHtml(labels.pass)}</button></div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);
 
   return attachCopy(`<section class="game" aria-label="${escapeGrowthHtml(copy.name)}"><div class="game-toolbar"><label for="mancala-mode">${escapeGrowthHtml(fields.mode)}</label><select id="mancala-mode" data-mode><option value="computer">${escapeGrowthHtml(labels.computer)}</option><option value="two-player">${escapeGrowthHtml(labels.twoPlayers)}</option></select>${button('new-game', labels.newGame, 'primary')}</div><p class="status" role="status" aria-live="polite" data-status></p><div class="mancala-board" data-board aria-label="${escapeGrowthHtml(fields.board)}"></div><section class="result" data-result hidden><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div></section><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);
 }

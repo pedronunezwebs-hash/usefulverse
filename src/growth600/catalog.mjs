@@ -239,6 +239,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['backgammon'],
     logicModule: './tools/mancala/logic.mjs',
   },
+  {
+    id: 'dominoes-game',
+    category: 'games',
+    type: 'game',
+    primaryIntent: 'dominoes game',
+    secondaryIntents: ['dominoes online', 'play dominoes against computer', 'draw dominoes game', 'block dominoes game'],
+    functions: ['play a double-six game locally against a simple computer or with a second person on one device', 'choose draw or block rules', 'place tiles on either matching end with correct orientation', 'draw or pass when no move is available', 'finish on an empty hand or blocked board and compare remaining pips'],
+    acceptance: 'All 28 double-six tiles are unique and dealt once; each played tile matches the selected open end, drawing changes only the active hand/stock, and a blocked game ends with the lowest remaining pip total winning.',
+    boundary: 'A local single-round double-six game with a simple heuristic opponent; no online multiplayer, tournament scoring, account, or server. The computer strategy is intentionally basic and rules can vary by region.',
+    relatedExistingIds: [],
+    logicModule: './tools/dominoes-game/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

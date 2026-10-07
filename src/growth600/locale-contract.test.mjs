@@ -81,6 +81,20 @@ test('image color picker has complete locale-specific copy and metadata in all 3
   }
 });
 
+test('dominoes game has complete static copy and FAQs in all 36 languages', () => {
+  const dominoes = allGrowthPilotTools.find(({ id }) => id === 'dominoes-game');
+  assert.ok(dominoes);
+  assert.equal(assertGrowthLocaleCoverage([dominoes], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][dominoes.id];
+    assert.equal(copy.copyLanguage, key);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    assert.match(copy.messages.turn, /\{player\}/u, key);
+    assert.doesNotMatch(JSON.stringify(copy), /UVTOKEN|987654\d{4}456789|undefined/u, key);
+  }
+});
+
 test('tire-size calculator has localized copy and complete controls in every supported language', () => {
   const tireTool = allGrowthPilotTools.find(({ id }) => id === 'tire-size-calculator');
   assert.ok(tireTool);

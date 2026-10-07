@@ -27,6 +27,12 @@ const copies = {
   'stair-calculator': { name: 'Stair calculator', actions, messages, fields: { totalRise: 'Total rise', riserCount: 'Number of risers', treadDepth: 'Tread depth', unit: 'Length unit', codeNote: 'Geometry estimate only. Check local building rules.', relatedUnitConverter: 'Need to convert measurements? Open the unit converter.' } },
   'asphalt-calculator': { name: 'Asphalt calculator', actions, messages, fields: { area: 'Paved area', areaUnit: 'Area unit', compactedThickness: 'Compacted thickness', thicknessUnit: 'Thickness unit', density: 'Mix density', densityUnit: 'Density unit', wastePercent: 'Extra material', pricePerTonne: 'Price per metric tonne', accuracyNote: 'Estimates only; confirm with your supplier.', relatedConcreteCalculator: 'Planning a concrete slab? Try the concrete calculator.' } },
   mancala: { name: 'Mancala', actions, messages, fields: { mode: 'Game mode', board: 'Kalah board', rules: 'Choose a pit. Seeds are sown counter-clockwise; the other player store is skipped.' } },
+  'dominoes-game': {
+    name: 'Dominoes game',
+    actions: { ...actions, draw: 'Draw a tile', pass: 'Pass turn', playLeft: 'Play left', playRight: 'Play right', drawRule: 'Draw rules', blockRule: 'Block rules' },
+    messages: { ...messages, played: 'Tile played.', drew: 'Tile drawn.', passed: 'Turn passed.', noMoves: 'No legal move.', stockEmpty: 'The stock is empty.' },
+    fields: { mode: 'Play mode', variant: 'Rules', board: 'Domino line', stock: 'Tiles left', hand: 'Your tiles', opponentHand: 'Opponent tiles', accuracyNote: 'Local play only.', rules: 'Match one open end.' },
+  },
   'image-color-picker': {
     name: 'Image color picker',
     actions: { ...actions, load: 'Choose image', addSample: 'Add color to palette', copyColor: 'Copy color', copyPalette: 'Copy HEX palette', remove: 'Remove', clear: 'Clear palette' },
@@ -105,6 +111,18 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(deck, /name="boardWidth"[^>]+value="5\.5"/u);
   const payload = renderGrowthForm('secret-santa-generator', { ...copies['secret-santa-generator'], description: '</script><script>alert(1)</script>' });
   assert.doesNotMatch(payload, /<script>alert\(1\)<\/script>/u);
+});
+
+test('dominoes form exposes localized play modes, draw/block choices, board, stock and hand', () => {
+  const html = renderGrowthForm('dominoes-game', copies['dominoes-game']);
+  assert.match(html, /data-mode/u);
+  assert.match(html, /data-variant/u);
+  assert.match(html, /data-board/u);
+  assert.match(html, /data-stock-count/u);
+  assert.match(html, /data-hand/u);
+  assert.match(html, /data-action="draw"/u);
+  assert.match(html, /data-action="pass"/u);
+  assert.match(html, /aria-live="polite"/u);
 });
 
 test('pilot form renderer blocks missing translated fields or actions instead of silently falling back', () => {
