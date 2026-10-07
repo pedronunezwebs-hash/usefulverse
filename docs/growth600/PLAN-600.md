@@ -82,7 +82,7 @@ Arquitectura propuesta, pendiente de verificar en la cuenta durante implementaci
 
 Las peticiones de assets estáticos son gratuitas según las condiciones actuales; eso no elimina límites de archivos, builds, account quotas ni cambios futuros de servicio. Revisar las condiciones vigentes antes de implementar. [Assets estáticos de Cloudflare](https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/).
 
-- [ ] Confirmar proyectos, método de deploy y cuotas gratuitas disponibles, sin cambiar billing.
+- [x] Confirmar proyectos, método de deploy y cuotas gratuitas disponibles, sin cambiar billing. Evidencia: un Pages project actual y Wrangler deploy estático; límites oficiales vigentes: 100 proyectos/20.000 archivos por proyecto Free, 500 builds/mes; assets estáticos con requests gratuitas. Ver fuentes y fecha en `docs/growth600/PROGRESS.md`. La nueva salida aún no está creada.
 - [ ] Reservar y configurar la segunda salida estática y el subdominio, si el gate anterior pasa.
 - [ ] Añadir un `maxPublishedFiles` por salida, preferiblemente ≤18.500 para dejar margen; fallar build antes de superar el máximo contratado.
 - [ ] Ningún asset publicado >25 MiB; motores grandes deben fragmentarse mediante mecanismos soportados y comprobados, no con rutas ficticias.
@@ -261,8 +261,8 @@ Estas comprobaciones son gates de la futura implementación, no funciones o fuen
 
 No rehacer la investigación, no gastar DataForSEO automáticamente, no perder el estado al cambiar de conversación.
 
-- [ ] **F0 — Arranque:** leer instrucciones actuales; confirmar repo/remoto/rama; cargar este MD y progreso online; crear checkout aislado temporal si hace falta; conservar trabajo ajeno.
-- [ ] **F1 — Snapshot:** importar manifiesto protegido de 277, comparar con main actual y actualizar el inventario si hubo cambios antes de implementar; no seguir con una base desfasada.
+- [x] **F0 — Arranque:** leer instrucciones actuales; confirmar repo/remoto/rama; cargar este MD y progreso online; crear checkout aislado temporal si hace falta; conservar trabajo ajeno. Evidencia: `docs/growth600/PROGRESS.md`.
+- [x] **F1 — Snapshot:** importar manifiesto protegido de 277, comparar con main actual y actualizar el inventario si hubo cambios antes de implementar; no seguir con una base desfasada. Evidencia: `main` en `685f91adfc7818a54f6dc0a967e290d13137a3dd`, 277 IDs/36 locales, misma copia exacta del plan; línea base `npm test` 832/832 y sitemap generado 10.260 URLs. Registro en `docs/growth600/PROGRESS.md`.
 - [ ] **F2 — Alojamiento:** pasar gate de dos salidas gratuitas, identificar destino canónico y construir hub piloto sin inventar disponibilidad de cuenta.
 - [ ] **F3 — Infraestructura aditiva:** catálogo nuevo, tests, fragmentos locales, builds separados y gates; ningún cambio funcional a las 277.
 - [ ] **F4 — Piloto:** implementar 5 nuevas de familias diferentes, cumplir todos los gates y verificar publicación antes de repetir una mala estructura 323 veces.
