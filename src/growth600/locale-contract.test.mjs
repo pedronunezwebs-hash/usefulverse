@@ -34,6 +34,7 @@ import marathiGrowthCopy from './locales/mr.mjs';
 import teluguGrowthCopy from './locales/te.mjs';
 import hausaGrowthCopy from './locales/ha.mjs';
 import filipinoGrowthCopy from './locales/tl.mjs';
+import tamilGrowthCopy from './locales/ta.mjs';
 
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
@@ -327,4 +328,13 @@ test('the first Filipino draft covers every copy key and preserves required plac
   assert.equal(filipinoGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} buwan');
   assert.equal(filipinoGrowthCopy['secret-santa-generator'].messages.privatePair, 'Nagbibigay si {giver} ng regalo kay {recipient}.');
   assert.equal(filipinoGrowthCopy.mancala.messages.turn, 'Turn ni {player}.');
+});
+
+test('the first Tamil draft covers every copy key and preserves required placeholders', () => {
+  assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'ta' }], { ta: tamilGrowthCopy }), true);
+  assert.ok(Object.values(tamilGrowthCopy).every((copy) => copy.copyLanguage === 'ta'));
+  assert.ok(Object.values(tamilGrowthCopy).every((copy) => copy.title.length <= 60 && copy.description.length <= 160));
+  assert.equal(tamilGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} மாதங்கள்');
+  assert.equal(tamilGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver}, {recipient}க்கு பரிசு வழங்குகிறார்.');
+  assert.equal(tamilGrowthCopy.mancala.messages.turn, '{player} முறை.');
 });
