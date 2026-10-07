@@ -76,6 +76,7 @@ Arquitectura propuesta, pendiente de verificar en la cuenta durante implementaci
 - No replicar las herramientas existentes en el subdominio, ni replicar las nuevas en el root. Una sola ubicación canónica por herramienta e idioma.
 - Enlazar el hub nuevo desde la portada/directorios existentes con un cambio aditivo pequeño; mantener las funciones, URLs y metadatos de las herramientas antiguas intactos. El nuevo catálogo puede enlazar a las 277 URLs originales.
 - Reutilizar fuentes de diseño/build donde sea seguro, con salidas y assets independientes. No añadir 323 registros al builder antiguo si eso hace que publique todo dos veces o rompa sus gates.
+- Atención al código real: `src/template.mjs` contiene enlaces canonical/hreflang con `https://usefulverse.com` escrito directamente. La nueva plantilla debe recibir `baseOrigin` y construir sus enlaces desde el catálogo/prefijos nuevos; importarla sin adaptar ese contrato produciría canonicals hacia páginas inexistentes del root. Resolverlo en el renderer nuevo, no reescribiendo los metadatos de las 277 protegidas.
 - Custom domain/DNS/SSL del subdominio y las verificaciones de propiedad de buscadores se realizan en la futura fase de despliegue; no dar acceso por hecho solo porque existe una propiedad del root.
 - Si la cuenta no permite otro proyecto gratuito o algún límite impide esta partición, detener esa operación y documentar una alternativa estática sin coste. **No activar un plan de pago, Worker dinámico, R2 o proxy por petición para salvar la cuota.**
 
