@@ -251,6 +251,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: [],
     logicModule: './tools/dominoes-game/logic.mjs',
   },
+  {
+    id: 'weight-loss-calculator',
+    category: 'health-math',
+    type: 'calculator',
+    primaryIntent: 'weight loss calculator',
+    secondaryIntents: ['weight loss calorie deficit calculator', 'weight loss timeline calculator', 'calorie deficit weight loss estimate'],
+    functions: ['calculate a transparent linear energy-equivalent scenario from a user-entered weight goal and daily deficit', 'support kilograms and pounds', 'show modeled energy equivalent, estimated scenario timeline and implied weekly rate', 'return no projected change when the entered deficit is zero', 'explain why the simplified linear rule is not a physiological forecast and link to official sources'],
+    acceptance: 'For 80 kg to 70 kg at an entered 500 kcal/day, the simple 7,700 kcal/kg scenario is 77,000 kcal and 154 days; a zero deficit produces zero modeled weekly change and no finite timeline.',
+    boundary: 'Educational arithmetic only, not a body-weight prediction, diet plan, calorie target or medical advice. The static energy-per-mass rule does not model changing metabolism, body composition, medicines or individual response; do not use it to choose a deficit. Runs locally and retains no inputs.',
+    relatedExistingIds: ['bmr-tdee-calculator'],
+    logicModule: './tools/weight-loss-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

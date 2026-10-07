@@ -95,6 +95,20 @@ test('dominoes game has complete static copy and FAQs in all 36 languages', () =
   }
 });
 
+test('weight-loss scenario has 36 localized cautious copy sets and official-source labels', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'weight-loss-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.copyLanguage, key);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.ok(copy.fields.healthNote.length > 20);
+    assert.ok(copy.fields.methodNote.length > 20);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
 test('tire-size calculator has localized copy and complete controls in every supported language', () => {
   const tireTool = allGrowthPilotTools.find(({ id }) => id === 'tire-size-calculator');
   assert.ok(tireTool);

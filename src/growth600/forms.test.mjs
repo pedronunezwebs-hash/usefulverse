@@ -33,6 +33,11 @@ const copies = {
     messages: { ...messages, played: 'Tile played.', drew: 'Tile drawn.', passed: 'Turn passed.', noMoves: 'No legal move.', stockEmpty: 'The stock is empty.' },
     fields: { mode: 'Play mode', variant: 'Rules', board: 'Domino line', stock: 'Tiles left', hand: 'Your tiles', opponentHand: 'Opponent tiles', accuracyNote: 'Local play only.', rules: 'Match one open end.' },
   },
+  'weight-loss-calculator': {
+    name: 'Weight loss scenario calculator', actions: { ...actions, dayUnit: 'days', weekUnit: 'weeks', kilocalories: 'kcal', perWeek: 'per week' },
+    messages: { ...messages, weightToLose: 'Weight difference', energyEquivalent: 'Linear energy equivalent', timeline: 'Timeline', weeklyRate: 'Weekly rate', noDeficitChange: 'Zero modeled change.', paceNote: 'This is not a recommended target.' },
+    fields: { currentWeight: 'Current weight', targetWeight: 'Goal weight', dailyDeficit: 'Daily deficit', unit: 'Weight unit', methodNote: '7,700 kcal per kg; simple arithmetic, not a body-weight forecast.', healthNote: 'Not medical advice.', sourceNiddk: 'Dynamic model information:', sourceCdc: 'gradual-change guidance' },
+  },
   'image-color-picker': {
     name: 'Image color picker',
     actions: { ...actions, load: 'Choose image', addSample: 'Add color to palette', copyColor: 'Copy color', copyPalette: 'Copy HEX palette', remove: 'Remove', clear: 'Clear palette' },
@@ -123,6 +128,17 @@ test('dominoes form exposes localized play modes, draw/block choices, board, sto
   assert.match(html, /data-action="draw"/u);
   assert.match(html, /data-action="pass"/u);
   assert.match(html, /aria-live="polite"/u);
+});
+
+test('weight scenario form explains its limits and collects explicit local inputs', () => {
+  const html = renderGrowthForm('weight-loss-calculator', copies['weight-loss-calculator']);
+  for (const name of ['currentWeight', 'targetWeight', 'unit', 'dailyDeficit']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  assert.match(html, /7,700 kcal per kg/u);
+  assert.match(html, /niddk\.nih\.gov/u);
+  assert.match(html, /cdc\.gov/u);
+  assert.match(html, /data-action="example"/u);
+  assert.match(html, /role="status"/u);
+  assert.doesNotMatch(html, /<form[^>]+action=/u);
 });
 
 test('pilot form renderer blocks missing translated fields or actions instead of silently falling back', () => {

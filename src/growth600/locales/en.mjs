@@ -27,6 +27,7 @@ import { imageSharpenerEnglishCopy } from './image-sharpener.en.mjs';
 import imageColorPickerCopies from './image-color-picker-final.mjs';
 import { imageColorPickerEnglishCopy } from './image-color-picker.en.mjs';
 import dominoesCopies from './dominoes-game-final.mjs';
+import weightLossCopies from './weight-loss-calculator-final.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -175,5 +176,6 @@ registerGrowthLocaleExtension(source, 'image-region-redactor', imageRegionRedact
 registerGrowthLocaleExtension(source, 'image-sharpener', imageSharpenerCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'image-color-picker', imageColorPickerCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'dominoes-game', dominoesCopies, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'weight-loss-calculator', weightLossCopies, 'gravel-calculator');
 
 export default Object.freeze(source);
