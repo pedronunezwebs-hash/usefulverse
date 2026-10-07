@@ -45,6 +45,7 @@ export function renderGrowthToolPage({ tool, locale, localeEntries, copy, origin
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeGrowthHtml(copy.title)}</title>
   <meta name="description" content="${escapeGrowthHtml(copy.description)}">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="canonical" href="${canonical}">
   ${alternates}
   <link rel="alternate" hreflang="x-default" href="${base}${localePath('en', tool.id)}">
@@ -86,6 +87,7 @@ export function renderGrowthHomePage({ tools, locale, localeEntries, copy, origi
 <html lang="${escapeGrowthHtml(locale.code)}" dir="${direction}"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeGrowthHtml(copy.title)}</title><meta name="description" content="${escapeGrowthHtml(copy.description)}">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="canonical" href="${canonical}">${alternates}
   <link rel="alternate" hreflang="x-default" href="${base}${localePath('en')}">
   <link rel="stylesheet" href="/assets/growth600.css">

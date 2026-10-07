@@ -79,10 +79,12 @@ test('separate static build writes only localized hub routes, its sitemap and bo
     copyByLocale: { en: englishGrowthCopy, es: spanishGrowthCopy, fr: frenchGrowthCopy, pt: portugueseGrowthCopy, de: germanGrowthCopy, ja: japaneseGrowthCopy, ko: koreanGrowthCopy, id: indonesianGrowthCopy, hi: hindiGrowthCopy, ar: arabicGrowthCopy, zh: simplifiedChineseGrowthCopy, bn: bengaliGrowthCopy, ru: russianGrowthCopy, ur: urduGrowthCopy, tr: turkishGrowthCopy, vi: vietnameseGrowthCopy, it: italianGrowthCopy, zh_tw: traditionalChineseGrowthCopy, bg: bulgarianGrowthCopy, ca: catalanGrowthCopy, nl: dutchGrowthCopy, el: greekGrowthCopy, ms: malayGrowthCopy, pl: polishGrowthCopy, sv: swedishGrowthCopy, th: thaiGrowthCopy, uk: ukrainianGrowthCopy, sw: swahiliGrowthCopy, mr: marathiGrowthCopy, te: teluguGrowthCopy, ha: hausaGrowthCopy, tl: filipinoGrowthCopy, ta: tamilGrowthCopy, fa: persianGrowthCopy, am: amharicGrowthCopy, gu: gujaratiGrowthCopy },
     controllerBundles,
     styles: 'body{font-family:system-ui}',
+    faviconSvg: '<svg xmlns="http://www.w3.org/2000/svg"></svg>',
     currentTools,
   });
   assert.equal(result.pages, smallLocales.length * (growthPilotTools.length + 1));
   assert.equal(result.sitemapUrls, result.pages);
+  assert.equal(await readFile(join(outputDir, 'favicon.svg'), 'utf8'), '<svg xmlns="http://www.w3.org/2000/svg"></svg>');
   assert.ok(result.files <= 18_500);
   assert.ok(result.assetFiles.length === growthPilotTools.length + 1);
   const sitemap = await readFile(join(outputDir, 'sitemap.xml'), 'utf8');
@@ -284,7 +286,7 @@ test('static build refuses overwrite, missing translated pages/controllers, and 
   const tempRoot = await mkdtemp(join(tmpdir(), 'usefulverse-growth600-gates-'));
   context.after(async () => rm(tempRoot, { recursive: true, force: true }));
   const smallLocales = localeEntries.filter(({ key }) => key === 'en');
-  const base = { origin: 'https://tools.usefulverse.com', localeEntries: smallLocales, copyByLocale: createCopy(smallLocales), controllerBundles: Object.fromEntries(growthPilotTools.map((tool) => [tool.id, 'export {};'])), styles: 'body{}', currentTools };
+  const base = { origin: 'https://tools.usefulverse.com', localeEntries: smallLocales, copyByLocale: createCopy(smallLocales), controllerBundles: Object.fromEntries(growthPilotTools.map((tool) => [tool.id, 'export {};'])), styles: 'body{}', faviconSvg: '<svg/>', currentTools };
   await assert.rejects(buildGrowthStaticSite({ ...base, outputDir: tempRoot }), /Refusing to overwrite/);
   await assert.rejects(buildGrowthStaticSite({ ...base, outputDir: join(tempRoot, 'overflow'), maxFiles: 1 }), /safety cap is 1/);
   const noCopy = createCopy(smallLocales);

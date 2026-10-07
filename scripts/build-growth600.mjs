@@ -25,6 +25,7 @@ if (missing.length) throw new Error(`Growth600 release blocked: translated copy 
 
 const outputDir = resolve(process.env.GROWTH600_DIST ?? resolve(root, 'dist-growth600'));
 const styles = await readFile(resolve(root, 'src/growth600/site.css'), 'utf8');
+const faviconSvg = await readFile(resolve(root, 'public/favicon.svg'), 'utf8');
 const result = await buildGrowthStaticSite({
   outputDir,
   origin: 'https://tools.usefulverse.com',
@@ -32,6 +33,7 @@ const result = await buildGrowthStaticSite({
   copyByLocale,
   controllerBundles: await bundleGrowthControllers(),
   styles,
+  faviconSvg,
   currentTools,
   tools: growthPilotTools,
   maxFiles: 18_500,

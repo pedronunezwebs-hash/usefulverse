@@ -33,10 +33,11 @@ export function assertLocalController(toolId, source, maxBytes) {
 
 export async function buildGrowthStaticSite({
   outputDir, origin, localeEntries, copyByLocale, controllerBundles, styles,
+  faviconSvg,
   currentTools, tools = growthPilotTools, maxFiles = 18_500,
   maxAssetBytes = 24 * 1024, maxFileBytes = 25 * 1024 * 1024,
 }) {
-  if (!outputDir || !Array.isArray(localeEntries) || !localeEntries.length || !styles) throw new TypeError('Build directory, locales and stylesheet are required.');
+  if (!outputDir || !Array.isArray(localeEntries) || !localeEntries.length || !styles || !faviconSvg) throw new TypeError('Build directory, locales, stylesheet and favicon are required.');
   if (await stat(outputDir).then(() => true, () => false)) throw new Error(`Refusing to overwrite an existing growth build directory: ${outputDir}`);
   assertGrowthCatalogIsAdditive(currentTools ?? [], tools);
   assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale);
@@ -55,6 +56,7 @@ export async function buildGrowthStaticSite({
   if (Buffer.byteLength(styles) > maxAssetBytes) throw new Error(`Growth stylesheet exceeds the ${maxAssetBytes}-byte budget.`);
 
   await mkdir(join(outputDir, 'assets'), { recursive: true });
+  await writeFile(join(outputDir, 'favicon.svg'), faviconSvg);
   const version = sha(styles + tools.map(({ id }) => controllerBundles[id]).join('\n'));
   await writeFile(join(outputDir, 'assets', `growth600.${version}.css`), styles);
   const assetFiles = new Map([[`assets/growth600.${version}.css`, Buffer.byteLength(styles)]]);
