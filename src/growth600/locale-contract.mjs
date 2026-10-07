@@ -27,6 +27,7 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   'weight-loss-calculator': ['copied', 'copyUnavailable', 'checkInputs', 'estimateOnly', 'weightToLose', 'energyEquivalent', 'timeline', 'weeklyRate', 'noDeficitChange', 'paceNote'],
   'random-team-generator': ['copied', 'copyUnavailable', 'generated', 'checkInputs', 'invalidCount', 'duplicateName', 'invalidPair', 'unknownName', 'incompatible', 'searchLimit', 'downloadReady', 'seedUnavailable'],
   'mulch-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'bedArea', 'mulchDepth', 'volume', 'orderVolume', 'cubicYards', 'bags', 'estimatedCost', 'costNotEntered'],
+  'paver-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'area', 'perimeter', 'moduleCount', 'paversBeforeWaste', 'paversToBuy', 'baseVolume', 'baseOrderVolume', 'paverCost', 'baseCost', 'totalCost', 'costNotEntered'],
 });
 export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'image-color-picker': ['imageFile', 'accuracyNote', 'previewHint', 'zoom', 'currentColor', 'paletteLabel', 'relatedSharpener', 'relatedRedactor'],
@@ -55,6 +56,7 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'weight-loss-calculator': ['currentWeight', 'targetWeight', 'dailyDeficit', 'unit', 'methodNote', 'healthNote', 'sourceNiddk', 'sourceCdc'],
   'random-team-generator': ['names', 'teamCount', 'separations', 'separationsHint', 'seed', 'seedHint', 'privacyNote', 'relatedNamePicker'],
   'mulch-calculator': ['shape', 'dimensionUnit', 'length', 'width', 'diameter', 'bedCount', 'depth', 'depthUnit', 'bagVolume', 'bagUnit', 'wastePercent', 'pricePerBag', 'currency', 'currencyNote', 'accuracyNote', 'relatedGravelCalculator', 'relatedSoilCalculator'],
+  'paver-calculator': ['length', 'width', 'surfaceUnit', 'moduleLength', 'moduleWidth', 'moduleUnit', 'paversPerModule', 'paverWastePercent', 'baseDepth', 'baseDepthUnit', 'baseWastePercent', 'pricePerPaver', 'basePricePerM3', 'currency', 'unitsNote', 'accuracyNote', 'relatedTileCalculator', 'relatedGravelCalculator'],
 });
 export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   'image-color-picker': ['load', 'addSample', 'copyColor', 'copyPalette', 'remove', 'clear', 'reset'],
@@ -83,6 +85,7 @@ export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   'weight-loss-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilograms', 'pounds', 'dayUnit', 'weekUnit', 'kilocalories', 'perWeek'],
   'random-team-generator': ['generateTeams', 'reset', 'example', 'copy', 'download', 'result', 'team', 'participant', 'seedLabel'],
   'mulch-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'rectangle', 'circle', 'meters', 'feet', 'centimeters', 'millimeters', 'inches', 'liters', 'cubicFeet', 'squareMeters', 'squareFeet'],
+  'paver-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'centimeters', 'inches', 'millimeters', 'squareMeters', 'squareFeet'],
 });
 const MESSAGE_PLACEHOLDERS = Object.freeze({ monthCount: ['{count}'], privatePair: ['{giver}', '{recipient}'], turn: ['{player}'] });
 
@@ -116,7 +119,7 @@ export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, {
           if (typeof copy.messages?.[key] === 'string' && !copy.messages[key].includes(token)) errors.push(`${locale.key}/${tool.id}: messages.${key} must preserve ${token}`);
         }
       }
-      if (['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'mulch-calculator', 'image-region-redactor', 'image-sharpener', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'weight-loss-calculator', 'heloc-calculator', 'random-team-generator'].includes(tool.id)
+      if (['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'mulch-calculator', 'paver-calculator', 'image-region-redactor', 'image-sharpener', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'weight-loss-calculator', 'heloc-calculator', 'random-team-generator'].includes(tool.id)
         && (!Array.isArray(copy.additionalFaqs) || copy.additionalFaqs.length !== 2
           || copy.additionalFaqs.some((faq) => !faq.question?.trim() || !faq.answer?.trim()))) {
         errors.push(`${locale.key}/${tool.id}: two complete localized tool FAQs are required`);

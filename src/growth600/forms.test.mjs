@@ -60,6 +60,11 @@ const copies = {
     messages: { ...messages, bedArea: 'Total bed area', mulchDepth: 'Mulch depth', cubicYards: 'Cubic yards', costNotEntered: 'Enter a price.' },
     fields: { shape: 'Bed shape', dimensionUnit: 'Length unit', length: 'Length', width: 'Width', diameter: 'Diameter', bedCount: 'Bed count', depth: 'Depth', depthUnit: 'Depth unit', bagVolume: 'Bag volume', bagUnit: 'Bag unit', wastePercent: 'Extra material', pricePerBag: 'Price', currency: 'Currency', currencyNote: 'Estimate only.', accuracyNote: 'Follow product label.', relatedGravelCalculator: 'Gravel calculator.', relatedSoilCalculator: 'Soil calculator.' },
   },
+  'paver-calculator': {
+    name: 'Paver calculator', actions: { ...actions, squareMeters: 'Square metres', squareFeet: 'Square feet' },
+    messages: { ...messages, area: 'Paved area', perimeter: 'Edge perimeter', moduleCount: 'Repeat modules', paversBeforeWaste: 'Pavers before extra', paversToBuy: 'Pavers to buy', baseVolume: 'Base volume', baseOrderVolume: 'Base volume with extra', paverCost: 'Paver cost', baseCost: 'Base cost', totalCost: 'Total cost', costNotEntered: 'Enter a price.' },
+    fields: { length: 'Length', width: 'Width', surfaceUnit: 'Surface unit', moduleLength: 'Module length', moduleWidth: 'Module width', moduleUnit: 'Module unit', paversPerModule: 'Pavers per module', paverWastePercent: 'Extra pavers', baseDepth: 'Base depth', baseDepthUnit: 'Base unit', baseWastePercent: 'Extra base', pricePerPaver: 'Price per paver', basePricePerM3: 'Base price per cubic metre', currency: 'Currency', unitsNote: 'Module includes joints.', accuracyNote: 'Estimate only.', relatedTileCalculator: 'Tile calculator.', relatedGravelCalculator: 'Gravel calculator.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -83,6 +88,10 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(colorPicker, /data-action="copy-palette"/u);
   assert.match(colorPicker, /data-action="reset"/u);
   assert.match(renderGrowthForm('gravel-calculator', copies['gravel-calculator']), /type="submit" data-action="calculate"/u);
+  const pavers = renderGrowthForm('paver-calculator', copies['paver-calculator']);
+  assert.match(pavers, /name="moduleLength"/u);
+  assert.match(pavers, /name="paversPerModule"/u);
+  assert.match(pavers, /data-action="copy"/u);
   assert.match(renderGrowthForm('secret-santa-generator', copies['secret-santa-generator']), /type="submit" data-action="generate"/u);
   const stairs = renderGrowthForm('stair-calculator', copies['stair-calculator']);
   assert.match(stairs, /name="riserCount" type="number" min="2" max="100" step="1"/u);

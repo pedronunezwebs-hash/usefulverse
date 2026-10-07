@@ -36,6 +36,8 @@ import randomTeamGeneratorCopies from './random-team-generator-final.mjs';
 import { randomTeamGeneratorEnglishCopy } from './random-team-generator.en.mjs';
 import mulchCopies from './mulch-calculator-final.mjs';
 import { mulchCalculatorEnglishCopy } from './mulch-calculator.en.mjs';
+import paverCopies from './paver-calculator-final.mjs';
+import { paverCalculatorEnglishCopy } from './paver-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -230,5 +232,134 @@ const localizedMulchCopies = {
   },
 };
 registerGrowthLocaleExtension(source, 'mulch-calculator', localizedMulchCopies, 'gravel-calculator');
+const localizedPaverCopies = {
+  ...paverCopies,
+  en: paverCalculatorEnglishCopy,
+  ar: {
+    ...paverCopies.ar,
+    name: 'حاسبة بلاط الرصف', title: 'حاسبة بلاط الرصف مجانًا بلا حدود | UsefulVerse',
+    description: 'قدّر عدد بلاط الرصف ومواد القاعدة والتكلفة لساحة مستطيلة. مجانية وبلا حدود في متصفحك.',
+    intro: 'قدّر بلاط الرصف ومواد القاعدة لمساحة مستطيلة. أدخل أبعاد المساحة ونمط التكرار ونسبة المواد الإضافية والأسعار الاختيارية.',
+    howQuestion: 'كيف تعمل حاسبة بلاط الرصف؟',
+    howAnswer: 'تقرّب الحاسبة عدد وحدات النمط الكاملة إلى الأعلى لتغطية المساحة، ثم تضربه في عدد البلاطات داخل كل وحدة. كما تقدّر طول الحواف وحجم طبقة القاعدة.',
+    privacyQuestion: 'هل تُرفع قياساتي؟', privacyAnswer: 'لا. تعمل الحاسبة في متصفحك، ولا ترسل القياسات أو الأسعار إلى خادم ولا تحفظها.',
+    fields: {
+      ...paverCopies.ar.fields,
+      length: 'طول المساحة المرصوفة', width: 'عرض المساحة المرصوفة', surfaceUnit: 'وحدة قياس المساحة',
+      moduleLength: 'طول وحدة النمط المتكرر', moduleWidth: 'عرض وحدة النمط المتكرر', moduleUnit: 'وحدة قياس النمط',
+      paversPerModule: 'عدد بلاطات الرصف في كل وحدة نمط', paverWastePercent: 'بلاطات إضافية (%)',
+      baseDepth: 'عمق طبقة القاعدة', baseDepthUnit: 'وحدة عمق القاعدة', baseWastePercent: 'مواد قاعدة إضافية (%)',
+      pricePerPaver: 'سعر بلاطة الرصف (اختياري)', basePricePerM3: 'سعر مواد القاعدة لكل م³ (اختياري)', currency: 'العملة',
+      unitsNote: 'يجب أن تصف أبعاد النمط جزءًا كاملًا متكررًا، بما في ذلك عرض الفواصل. اجعل اتجاه النمط موافقًا لطول المساحة وعرضها.',
+      accuracyNote: 'تقدير للتخطيط فقط. تحسب الأداة وحدات النمط الكاملة؛ وقد تنتج قصاصات الحواف قطعًا قابلة لإعادة الاستخدام، لذلك قد تختلف الكمية الفعلية. لا تنشئ خطة قص أو تركيب، ولا تقيّم التصريف أو التربة أو الأحمال أو عمق الصقيع أو قوانين البناء المحلية. تحقّق من القياسات وتغطية المنتج ومتطلبات القاعدة مع المورد أو فني تركيب مؤهل.',
+      relatedTileCalculator: 'تحسب بلاط الأرضيات؟ جرّب حاسبة البلاط.', relatedGravelCalculator: 'تحسب طبقة حصى؟ جرّب حاسبة الحصى.',
+    },
+    actions: { ...paverCopies.ar.actions, calculate: 'احسب بلاطات الرصف', reset: 'إعادة ضبط', copy: 'انسخ النتيجة', example: 'جرّب مثالًا', result: 'تقدير بلاطات الرصف' },
+    messages: {
+      ...paverCopies.ar.messages, copied: 'تم النسخ.', copyUnavailable: 'النسخ غير متاح في هذا المتصفح.', calculated: 'التقدير جاهز.',
+      checkInputs: 'تحقق من أبعاد المساحة والنمط وعدد البلاطات وعمق القاعدة والنسب الإضافية.',
+      area: 'مساحة الرصف', perimeter: 'محيط الحواف', moduleCount: 'وحدات النمط الكاملة',
+      paversBeforeWaste: 'عدد البلاطات قبل الإضافة', paversToBuy: 'بلاطات الرصف المطلوب شراؤها',
+      baseVolume: 'حجم طبقة القاعدة', baseOrderVolume: 'حجم القاعدة مع الإضافة',
+      paverCost: 'التكلفة التقديرية للبلاطات', baseCost: 'التكلفة التقديرية لمواد القاعدة',
+      totalCost: 'إجمالي التكلفة التقديرية للمواد', costNotEntered: 'أدخل سعرًا لتقدير التكلفة.',
+    },
+    additionalFaqs: [
+      { question: 'كم بلاطة رصف أحتاج؟', answer: 'أدخل أبعاد المساحة المرصوفة وأبعاد وحدة نمط كاملة وعدد البلاطات فيها. تحسب الأداة وحدات كافية لتغطية كل جانب، ثم تضيف النسبة الاحتياطية التي تختارها.' },
+      { question: 'هل يشمل التقدير قصّ الحواف؟', answer: 'يحسب وحدات النمط الكاملة ويعرض محيط الحواف. لكنه لا يخطط للقص ولا يحدد إن كان يمكن إعادة استخدام القصاصات.' },
+    ],
+  },
+  zh: {
+    ...paverCopies.zh,
+    name: '铺路砖计算器', title: '铺路砖计算器免费无限制 | UsefulVerse',
+    description: '估算矩形庭院所需的铺路砖、基层材料、边缘长度和费用。免费使用，次数不限。',
+    intro: '估算矩形铺装区域所需的铺路砖和基层材料。输入面积、重复铺设模块、损耗比例和可选价格。',
+    howQuestion: '铺路砖计算器如何工作？',
+    howAnswer: '计算器会向上取整，确保完整的重复模块覆盖区域，然后乘以每个模块中的铺路砖数量。它还会估算边缘总长度和基层体积。',
+    privacyQuestion: '我的测量数据会上传吗？', privacyAnswer: '不会。计算在浏览器中进行，测量数据和价格不会发送到服务器，也不会由此工具保存。',
+    fields: {
+      ...paverCopies.zh.fields,
+      surfaceUnit: '面积单位', paversPerModule: '每个重复模块中的铺路砖数量', paverWastePercent: '额外铺路砖 (%)',
+      pricePerPaver: '每块铺路砖的价格（可选）', basePricePerM3: '每立方米基层材料价格（可选）',
+      unitsNote: '模块尺寸应表示一个完整的重复铺设单元，并包含接缝宽度。输入模块方向时，请与铺装区域的长宽方向对应。',
+      accuracyNote: '仅供规划估算。工具按完整重复模块计数；边缘切割可能产生可重复利用的余料，因此实际用量可能不同。工具不会生成切割或铺设方案，也不评估排水、土壤、承重、冻土深度或当地建筑规定。请向供应商或合格的施工人员确认尺寸、产品覆盖量和基层要求。',
+      relatedTileCalculator: '计算室内瓷砖用量？试试瓷砖计算器。', relatedGravelCalculator: '估算松散碎石层？试试碎石计算器。',
+    },
+    actions: { ...paverCopies.zh.actions, calculate: '计算铺路砖用量', result: '铺路砖用量估算' },
+    messages: {
+      ...paverCopies.zh.messages, checkInputs: '请检查区域尺寸、模块尺寸、每个模块的铺路砖数量、基层深度和损耗比例。',
+      area: '铺装面积', perimeter: '边缘总长度', moduleCount: '完整重复模块数量',
+      paversBeforeWaste: '增加损耗前的铺路砖数量', paversToBuy: '建议购买的铺路砖数量',
+      baseVolume: '基层体积', baseOrderVolume: '含损耗的基层体积', paverCost: '铺路砖估算费用',
+      baseCost: '基层材料估算费用', totalCost: '材料总估算费用',
+    },
+    additionalFaqs: [
+      { question: '我需要多少块铺路砖？', answer: '输入铺装区域的尺寸、一个完整重复模块的尺寸，以及该模块包含的铺路砖数量。计算器会向上取整以覆盖整个区域，并应用可选的损耗比例。' },
+      { question: '估算包含边缘切割吗？', answer: '工具按输入方向计算完整重复模块，并显示边缘总长度；它不会规划切割，也不会判断余料能否重复使用。' },
+    ],
+  },
+  zh_tw: {
+    ...paverCopies.zh_tw,
+    name: '鋪路磚計算器', title: '鋪路磚計算器免費無限制 | UsefulVerse',
+    description: '估算矩形庭院所需的鋪路磚、底層材料、邊緣長度和費用。免費使用，次數不限。',
+    intro: '估算矩形鋪面所需的鋪路磚和底層材料。輸入面積、重複鋪設模組、耗損比例和選填價格。',
+    howQuestion: '鋪路磚計算器如何運作？',
+    howAnswer: '計算器會將完整的重複模組數量無條件進位，確保覆蓋區域，再乘以每個模組中的鋪路磚數量。也會估算邊緣總長度和底層體積。',
+    privacyQuestion: '我的測量資料會上傳嗎？', privacyAnswer: '不會。計算在瀏覽器中進行，測量資料和價格不會傳送到伺服器，也不會由此工具保存。',
+    fields: {
+      ...paverCopies.zh_tw.fields,
+      surfaceUnit: '面積單位', paversPerModule: '每個重複模組中的鋪路磚數量', paverWastePercent: '額外鋪路磚 (%)',
+      pricePerPaver: '每塊鋪路磚價格（選填）', basePricePerM3: '每立方公尺底層材料價格（選填）',
+      unitsNote: '模組尺寸應代表一個完整的重複鋪設單元，並包含接縫寬度。輸入模組方向時，請對應鋪面區域的長寬方向。',
+      accuracyNote: '僅供規劃估算。工具按完整重複模組計數；邊緣切割可能產生可重複利用的餘料，因此實際用量可能不同。工具不會產生切割或鋪設方案，也不評估排水、土壤、承重、凍土深度或當地建築規定。請向供應商或合格施工人員確認尺寸、產品覆蓋量和底層需求。',
+      relatedTileCalculator: '計算室內磁磚用量？試試磁磚計算器。', relatedGravelCalculator: '估算鬆散碎石層？試試碎石計算器。',
+    },
+    actions: { ...paverCopies.zh_tw.actions, calculate: '計算鋪路磚用量', result: '鋪路磚用量估算' },
+    messages: {
+      ...paverCopies.zh_tw.messages, checkInputs: '請檢查區域尺寸、模組尺寸、每個模組的鋪路磚數量、底層深度和耗損比例。',
+      area: '鋪面面積', perimeter: '邊緣總長度', moduleCount: '完整重複模組數量',
+      paversBeforeWaste: '增加耗損前的鋪路磚數量', paversToBuy: '建議購買的鋪路磚數量',
+      baseVolume: '底層體積', baseOrderVolume: '含耗損的底層體積', paverCost: '鋪路磚估算費用',
+      baseCost: '底層材料估算費用', totalCost: '材料總估算費用',
+    },
+    additionalFaqs: [
+      { question: '我需要多少塊鋪路磚？', answer: '輸入鋪面區域尺寸、一個完整重複模組的尺寸，以及該模組包含的鋪路磚數量。計算器會無條件進位以覆蓋整個區域，並套用選填的耗損比例。' },
+      { question: '估算包含邊緣切割嗎？', answer: '工具依輸入方向計算完整重複模組，並顯示邊緣總長度；它不會規劃切割，也不會判斷餘料能否重複使用。' },
+    ],
+  },
+  ja: {
+    ...paverCopies.ja,
+    name: '舗装ブロック計算機', title: '舗装ブロック計算機・無料・回数無制限 | UsefulVerse',
+    description: '長方形の庭に必要な舗装ブロック、路盤材、縁の長さと費用を見積もります。無料・回数無制限。',
+    intro: '長方形の舗装面に必要なブロックと路盤材を見積もります。面積、繰り返しパターン、余分の割合、任意の価格を入力してください。',
+    howQuestion: '舗装ブロック計算機の使い方は？',
+    howAnswer: '入力した向きで面全体を覆えるよう、繰り返しモジュール数を切り上げて、各モジュールのブロック数を掛けます。縁の長さと路盤材の体積も見積もります。',
+    privacyQuestion: '測定値はアップロードされますか？', privacyAnswer: 'いいえ。計算はブラウザー内で行われ、測定値や価格はサーバーへ送信・保存されません。',
+    fields: {
+      ...paverCopies.ja.fields,
+      length: '舗装面の長さ', width: '舗装面の幅', surfaceUnit: '面積の単位',
+      moduleLength: '繰り返しモジュールの長さ', moduleWidth: '繰り返しモジュールの幅', moduleUnit: 'モジュールの単位',
+      paversPerModule: '1モジュールに含まれる舗装ブロック数', paverWastePercent: '追加するブロック (%)',
+      baseDepth: '路盤層の厚さ', baseDepthUnit: '路盤層の単位', baseWastePercent: '追加する路盤材 (%)',
+      pricePerPaver: 'ブロック1個の価格（任意）', basePricePerM3: '路盤材1m³あたりの価格（任意）', currency: '通貨',
+      unitsNote: 'モジュールの寸法は、目地幅を含む完全な繰り返し単位を表します。舗装面の長さと幅に合わせて向きを入力してください。',
+      accuracyNote: '計画用の概算です。完全な繰り返しモジュールで数えるため、端部の切断や余材の再利用によって実際の数量は変わります。切断・配置図は作成せず、排水、地盤、荷重、凍結深度、地域の建築規則も評価しません。寸法、製品の施工範囲、路盤の要件は販売店または有資格の施工業者に確認してください。',
+      relatedTileCalculator: '室内タイルの数量計算にはタイル計算機をお試しください。', relatedGravelCalculator: '砂利層の見積もりには砂利計算機をお試しください。',
+    },
+    actions: { ...paverCopies.ja.actions, calculate: 'ブロック数を計算', copy: '結果をコピー', example: '入力例を試す', result: '舗装ブロックの見積もり' },
+    messages: {
+      ...paverCopies.ja.messages, copyUnavailable: 'このブラウザーではコピーできません。', checkInputs: '舗装面とモジュールの寸法、ブロック数、路盤の厚さ、追加割合を確認してください。',
+      area: '舗装面積', perimeter: '縁の長さ', moduleCount: '完全な繰り返しモジュール数',
+      paversBeforeWaste: '追加分を含まないブロック数', paversToBuy: '購入するブロック数',
+      baseVolume: '路盤層の体積', baseOrderVolume: '追加分を含む路盤材の体積', paverCost: 'ブロックの概算費用',
+      baseCost: '路盤材の概算費用', totalCost: '材料費の合計概算', costNotEntered: '費用を見積もるには価格を入力してください。',
+    },
+    additionalFaqs: [
+      { question: '舗装ブロックは何個必要ですか？', answer: '舗装面と完全な繰り返しモジュールの寸法、モジュール内のブロック数を入力します。面全体を覆うようにモジュール数を切り上げ、任意の追加割合を適用します。' },
+      { question: '端部の切断分も含まれますか？', answer: '完全なモジュール数と縁の長さを計算しますが、切断配置や余材を再利用できるかどうかは判断しません。' },
+    ],
+  },
+};
+registerGrowthLocaleExtension(source, 'paver-calculator', localizedPaverCopies, 'gravel-calculator');
 
 export default Object.freeze(source);

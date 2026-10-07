@@ -1,5 +1,17 @@
 export const growthPilotTools = Object.freeze([
   {
+    id: 'paver-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'paver calculator',
+    secondaryIntents: ['paver pattern calculator', 'paver quantity calculator', 'paver base material calculator', 'paver edging perimeter calculator'],
+    functions: ['estimate pavers from a rectangular surface and a repeat module with one or more pieces', 'count complete modules in the entered orientation and apply optional extra pavers', 'calculate the edge perimeter for edging materials', 'estimate an optional base layer volume, allowance and user-entered material cost'],
+    acceptance: 'A 10 m × 10 m surface using a 40 cm × 40 cm repeat module with one paver per module needs 625 full modules/pavers; a 10 cm base layer is 10 m³ and the edge perimeter is 40 m.',
+    boundary: 'Planning estimate only: counts complete repeating modules in the entered orientation and does not create a cut or layout plan. Edge cuts may produce reusable offcuts. It does not assess drainage, soil, loading, frost depth or construction-code requirements; follow product instructions and consult a qualified installer. Inputs stay in this browser.',
+    relatedExistingIds: ['tile-calculator', 'gravel-calculator'],
+    logicModule: './tools/paver-calculator/logic.mjs',
+  },
+  {
     id: 'image-color-picker',
     category: 'image-tools',
     type: 'image-editor',

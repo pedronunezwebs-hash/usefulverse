@@ -43,7 +43,8 @@ export function renderGrowthForm(toolId, copy) {
   'weight-loss-calculator': ['currentWeight', 'targetWeight', 'dailyDeficit', 'unit', 'methodNote', 'healthNote', 'sourceNiddk', 'sourceCdc'],
     'heloc-calculator': ['creditLimit', 'balance', 'annualApr', 'drawMonths', 'repaymentMonths', 'currency', 'accuracyNote', 'relatedLoanCalculator'],
     'random-team-generator': ['names', 'teamCount', 'separations', 'separationsHint', 'seed', 'seedHint', 'privacyNote'],
-    'mulch-calculator': ['shape', 'dimensionUnit', 'length', 'width', 'diameter', 'bedCount', 'depth', 'depthUnit', 'bagVolume', 'bagUnit', 'wastePercent', 'pricePerBag', 'currency', 'currencyNote', 'accuracyNote', 'relatedGravelCalculator', 'relatedSoilCalculator'],
+  'mulch-calculator': ['shape', 'dimensionUnit', 'length', 'width', 'diameter', 'bedCount', 'depth', 'depthUnit', 'bagVolume', 'bagUnit', 'wastePercent', 'pricePerBag', 'currency', 'currencyNote', 'accuracyNote', 'relatedGravelCalculator', 'relatedSoilCalculator'],
+    'paver-calculator': ['length', 'width', 'surfaceUnit', 'moduleLength', 'moduleWidth', 'moduleUnit', 'paversPerModule', 'paverWastePercent', 'baseDepth', 'baseDepthUnit', 'baseWastePercent', 'pricePerPaver', 'basePricePerM3', 'currency', 'unitsNote', 'accuracyNote', 'relatedTileCalculator', 'relatedGravelCalculator'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -73,6 +74,7 @@ export function renderGrowthForm(toolId, copy) {
   'heloc-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
   'random-team-generator': ['generateTeams', 'reset', 'example', 'copy', 'download', 'result', 'team', 'participant', 'seedLabel'],
   'mulch-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'rectangle', 'circle', 'meters', 'feet', 'centimeters', 'millimeters', 'inches', 'liters', 'cubicFeet', 'squareMeters', 'squareFeet'],
+    'paver-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'centimeters', 'inches', 'millimeters', 'squareMeters', 'squareFeet'],
   }[toolId];
   const missing = actionNames.filter((key) => !actions[key]?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
@@ -409,6 +411,27 @@ export function renderGrowthForm(toolId, copy) {
     ${label('price-per-bag', fields.pricePerBag, '<input id="price-per-bag" name="pricePerBag" type="number" min="0" max="1000000" step="any" inputmode="decimal">')}
     ${label('currency', fields.currency, '<select id="currency" name="currency"><option>USD</option><option>EUR</option><option>GBP</option><option>CAD</option><option>AUD</option><option>BRL</option><option>INR</option></select>')}
     <p class="hint">${escapeGrowthHtml(fields.currencyNote)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${button('calculate', labels.calculate)}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'paver-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('paver-length', fields.length, '<input id="paver-length" name="length" type="number" min="0.01" max="100000" step="any" inputmode="decimal" value="10">')}
+    ${label('paver-width', fields.width, '<input id="paver-width" name="width" type="number" min="0.01" max="100000" step="any" inputmode="decimal" value="10">')}
+    ${label('surface-unit', fields.surfaceUnit, `<select id="surface-unit" name="surfaceUnit"><option value="m">${escapeGrowthHtml(labels.meters)}</option><option value="ft">${escapeGrowthHtml(labels.feet)}</option></select>`)}
+    ${label('module-length', fields.moduleLength, '<input id="module-length" name="moduleLength" type="number" min="1" max="100000" step="any" inputmode="decimal" value="40">')}
+    ${label('module-width', fields.moduleWidth, '<input id="module-width" name="moduleWidth" type="number" min="1" max="100000" step="any" inputmode="decimal" value="40">')}
+    ${label('module-unit', fields.moduleUnit, `<select id="module-unit" name="moduleUnit"><option value="cm">${escapeGrowthHtml(labels.centimeters)}</option><option value="in">${escapeGrowthHtml(labels.inches)}</option></select>`)}
+    ${label('pavers-per-module', fields.paversPerModule, '<input id="pavers-per-module" name="paversPerModule" type="number" min="1" max="1000" step="1" inputmode="numeric" value="1">')}
+    <p class="hint">${escapeGrowthHtml(fields.unitsNote)}</p>
+    ${label('paver-waste-percent', fields.paverWastePercent, '<input id="paver-waste-percent" name="paverWastePercent" type="number" min="0" max="50" step="any" inputmode="decimal" value="0">')}
+    ${label('base-depth', fields.baseDepth, '<input id="base-depth" name="baseDepth" type="number" min="0" max="100" step="any" inputmode="decimal" value="0">')}
+    ${label('base-depth-unit', fields.baseDepthUnit, `<select id="base-depth-unit" name="baseDepthUnit"><option value="cm">${escapeGrowthHtml(labels.centimeters)}</option><option value="in">${escapeGrowthHtml(labels.inches)}</option><option value="mm">${escapeGrowthHtml(labels.millimeters)}</option></select>`)}
+    ${label('base-waste-percent', fields.baseWastePercent, '<input id="base-waste-percent" name="baseWastePercent" type="number" min="0" max="50" step="any" inputmode="decimal" value="0">')}
+    ${label('price-per-paver', fields.pricePerPaver, '<input id="price-per-paver" name="pricePerPaver" type="number" min="0" max="1000000" step="any" inputmode="decimal">')}
+    ${label('base-price-per-m3', fields.basePricePerM3, '<input id="base-price-per-m3" name="basePricePerM3" type="number" min="0" max="1000000" step="any" inputmode="decimal">')}
+    ${label('currency', fields.currency, '<select id="currency" name="currency"><option>USD</option><option>EUR</option><option>GBP</option><option>CAD</option><option>AUD</option><option>BRL</option><option>INR</option></select>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${button('calculate', labels.calculate)}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

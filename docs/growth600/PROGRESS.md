@@ -91,7 +91,7 @@
 
 ## Próxima acción concreta
 
-Continuar con la siguiente candidata pendiente según el orden de prioridad de `PLAN-600.md`; no reutilizar este marcador histórico de Image Region Redactor. Al 2026-10-08 el catálogo aditivo contiene 26 candidatas, incluida Mulch Calculator (#033). Las fichas nuevas siguen fuera de producción hasta cerrar los gates globales C/F/E/X/L/B/P/S; el sitemap de producción no cambia y no se envían URLs de staging a buscadores. Las 277 rutas originales permanecen protegidas.
+Continuar con la siguiente candidata pendiente según el orden de prioridad de `PLAN-600.md`; no reutilizar este marcador histórico de Image Region Redactor. Al 2026-10-08 el catálogo aditivo contiene 27 candidatas, incluida Paver Calculator (#099). Quedan 296 de las 323 incorporaciones previstas. Las fichas nuevas siguen fuera de producción hasta cerrar los gates globales C/F/E/X/L/B/P/S; el sitemap de producción no cambia y no se envían URLs de staging a buscadores. Las 277 rutas originales permanecen protegidas.
 
 ## Continuación · 2026-10-07
 
@@ -355,3 +355,15 @@ Continuar con la siguiente candidata pendiente según el orden de prioridad de `
 - [x] `node --test src/growth600/*.test.mjs src/growth600/tools/growth600-logic.test.mjs src/growth600/tools/*/*.test.mjs`: **144/144 aprobadas**; `git diff --check` limpio.
 - [ ] No se ha ejecutado la regresión completa de todo el repositorio; tampoco PageSpeed/Lighthouse ni revisión nativa de los 36 idiomas.
 - [ ] **No publicado:** continúa en `codex/growth600-tire-size-phase`; no merge a `main`, deploy, actualización del sitemap de producción ni envíos a buscadores. #033 sigue sin marcar como release-completa en `PLAN-600.md` hasta cerrar los gates coordinados C/F/E/X/L/B/P/S.
+
+## Continuación · Paver Calculator (#099) · 2026-10-08
+
+- [x] C/F — una intención nueva (estimación de pavimento por módulo repetido), diferenciada de `tile-calculator` (azulejos) y `gravel-calculator` (árido suelto). La candidata registrada mide 12.100 búsquedas/mes en US/en, KD 12; CPC $0,87, no CPM. No se consultó DataForSEO en esta tanda.
+- [x] Lógica de navegador: calcula área rectangular, módulos completos en el sentido indicado, número de piezas por módulo, desperdicio opcional, perímetro para bordes, volumen de base y costes solo con precios que introduzca el usuario. Explica que no genera plan de cortes ni evalúa suelo, drenaje, cargas, heladas o normativa. Ningún dato se envía al servidor.
+- [x] E — ejemplo de aceptación probado: 10 × 10 m con módulos 40 × 40 cm y una pieza por módulo = 625 módulos/piezas, perímetro 40 m y capa base de 10 cm = 10 m³. Tests extra validan unidades imperiales, patrón múltiple, allowance, precios, base omitida, límites y valores demasiado grandes.
+- [x] X — Chrome local: ejemplo y resultado, validación de largo cero con foco y `aria-invalid`, y reinicio de campos. Arabic RTL `lang=ar`, `dir=rtl` en 390 × 844, ancho de documento y cuerpo 390 px; resultado muestra 625 piezas y 40 m de borde. Sin errores de consola; solo documento, CSS, JS y favicon locales.
+- [x] L — interfaz, FAQs y metadatos estáticos en 36 idiomas. Se reemplazaron en árabe, japonés, chino simplificado y tradicional varias traducciones automáticas incompletas/confusas por copy directo comprensible. Otros locales son borradores automáticos; no hubo revisión nativa humana.
+- [x] B local — bundles minificados: paver 6.254 B y grava 3.995 B (límite 24 KiB). Build aislado válido de estas dos calculadoras relacionadas: 108 HTML/sitemap URLs únicas (dos rutas × 36 idiomas + 36 portadas), 151 archivos y 1.860.607 bytes. Las 36 rutas Paver pasan la auditoría de canonical, 37 hreflang, metadatos de título/descripción, idioma, y ausencia de `undefined`/duplicados en sitemap.
+- [x] Suite focalizada de la familia Growth600 — **148/148 pruebas aprobadas**; `git diff --check` limpio. No se ejecutaron PageSpeed/Lighthouse.
+- [ ] No se ha probado en dispositivos físicos ni por hablantes nativos. El build fue una muestra aislada de Paver + Gravel para resolver enlaces y no equivale al build integral actual de todos los candidatos.
+- [ ] **No publicado:** sin merge, deploy ni envío a buscadores; no se alteró el sitemap de producción ni las 277 herramientas protegidas. #099 permanece sin marcar en `PLAN-600.md` hasta cierre coordinado de los gates de release C/F/E/X/L/B/P/S.

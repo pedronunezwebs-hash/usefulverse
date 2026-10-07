@@ -1,0 +1,35 @@
+export const paverCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Paver calculator',
+  title: 'Paver calculator free & unlimited | UsefulVerse',
+  description: 'Estimate pavers, repeat modules, edging perimeter and base volume for a rectangular patio. Free and unlimited in your browser.',
+  intro: 'Estimate the pavers and base material for a rectangular paved area. Set your repeating layout module, material allowance and optional prices.',
+  howQuestion: 'How does this paver estimate work?',
+  howAnswer: 'The calculator rounds up complete repeat modules in the orientation you enter, then multiplies by the pavers in each module. It also estimates the edge perimeter and base-layer volume from the full surface area.',
+  privacyQuestion: 'Are my measurements uploaded?',
+  privacyAnswer: 'No. The estimate runs in this browser. Measurements and prices are not sent to a server or saved by this tool.',
+  fields: {
+    length: 'Paved area length', width: 'Paved area width', surfaceUnit: 'Surface unit', moduleLength: 'Repeat module length', moduleWidth: 'Repeat module width',
+    moduleUnit: 'Module unit', paversPerModule: 'Pavers in each repeat module', paverWastePercent: 'Extra pavers (%)', baseDepth: 'Base-layer depth',
+    baseDepthUnit: 'Base-depth unit', baseWastePercent: 'Extra base material (%)', pricePerPaver: 'Price per paver (optional)',
+    basePricePerM3: 'Base material price per m³ (optional)', currency: 'Currency',
+    unitsNote: 'Module dimensions should describe one complete repeating section, including the joint spacing. Keep the entered orientation aligned with the surface length and width.',
+    accuracyNote: 'Planning estimate only. It counts full repeating modules; edge cuts may create reusable offcuts, so actual quantities can be lower or higher. It does not create a cut/layout plan or assess drainage, soil, load, frost depth or local construction rules. Verify dimensions, product coverage and base requirements with the supplier or a qualified installer.',
+    relatedTileCalculator: 'Laying indoor tiles? Try the tile calculator.', relatedGravelCalculator: 'Estimating a loose aggregate layer? Try the gravel calculator.',
+  },
+  actions: {
+    calculate: 'Calculate pavers', reset: 'Reset', copy: 'Copy result', example: 'Try example', result: 'Paver estimate', meters: 'Metres', feet: 'Feet',
+    centimeters: 'Centimetres', inches: 'Inches', millimeters: 'Millimetres', squareMeters: 'Square metres', squareFeet: 'Square feet',
+  },
+  messages: {
+    copied: 'Copied.', copyUnavailable: 'Copy is not available in this browser.', calculated: 'Estimate ready.',
+    checkInputs: 'Check surface dimensions, module size, paver count, base depth and allowances.', area: 'Paved area', perimeter: 'Edge perimeter',
+    moduleCount: 'Complete repeat modules', paversBeforeWaste: 'Pavers before extra allowance', paversToBuy: 'Pavers to buy',
+    baseVolume: 'Base-layer volume', baseOrderVolume: 'Base volume with allowance', paverCost: 'Estimated paver cost',
+    baseCost: 'Estimated base-material cost', totalCost: 'Estimated total material cost', costNotEntered: 'Enter a price to estimate cost.',
+  },
+  additionalFaqs: [
+    { question: 'How many pavers do I need?', answer: 'Enter the paved area size and the dimensions of one complete repeating module, then enter how many pavers it contains. The calculator rounds up modules to cover each side and applies your optional extra percentage.' },
+    { question: 'Does the estimate include border cuts?', answer: 'It counts full repeat modules in the entered orientation. It reports the perimeter for edging, but it does not plan cuts or determine whether offcuts can be reused.' },
+  ],
+});
