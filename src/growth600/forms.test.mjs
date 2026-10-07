@@ -7,7 +7,7 @@ const actions = {
   calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.',
 };
 const copies = {
-  'gravel-calculator': { name: 'Gravel calculator', actions, fields: Object.fromEntries(['shape', 'area', 'depth', 'length', 'width', 'diameter', 'base', 'density', 'waste', 'bagSize'].map((key) => [key, key])) },
+  'gravel-calculator': { name: 'Gravel calculator', actions, fields: Object.fromEntries(['shape', 'area', 'depth', 'length', 'width', 'diameter', 'base', 'triangleHeight', 'density', 'waste', 'bagSize'].map((key) => [key, key])) },
   'molar-mass-calculator': { name: 'Molar mass calculator', actions, fields: { formula: 'Formula', supportedHint: 'Common elements and selected isotopes are supported.' } },
   'auto-loan-refinance-calculator': { name: 'Auto refinance calculator', actions, fields: { balance: 'Payoff balance', currentApr: 'Current APR', currentMonths: 'Months remaining', newApr: 'New APR', newMonths: 'New term', fees: 'Fees', feeTreatment: 'Fee treatment', upfront: 'Pay upfront', rolledIn: 'Add to balance' } },
   'secret-santa-generator': { name: 'Secret Santa generator', actions, fields: { names: 'Participants', exclusions: 'Exclusions', exclusionsHint: 'One giver:recipient per line.' } },
@@ -22,7 +22,8 @@ test('all pilot forms render semantic labels, explicit actions and localized str
     assert.doesNotMatch(html, /\son[a-z]+=/iu, `${tool.id} must not use inline event handlers`);
     assert.doesNotMatch(html, /undefined|null/u, `${tool.id} must not emit missing values`);
   }
-  assert.match(renderGrowthForm('gravel-calculator', copies['gravel-calculator']), /for="area"/u);
+  assert.match(renderGrowthForm('gravel-calculator', copies['gravel-calculator']), /for="length"/u);
+  assert.doesNotMatch(renderGrowthForm('gravel-calculator', copies['gravel-calculator']), /name="area"/u);
   assert.match(renderGrowthForm('molar-mass-calculator', copies['molar-mass-calculator']), /maxlength="160"/u);
   assert.match(renderGrowthForm('secret-santa-generator', copies['secret-santa-generator']), /data-reveal-name/u);
   assert.match(renderGrowthForm('mancala', copies.mancala), /data-board/u);
