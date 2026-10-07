@@ -204,6 +204,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/ev-charging-calculator/logic.mjs',
   },
   {
+    id: 'rainwater-harvesting-calculator',
+    category: 'garden',
+    type: 'calculator',
+    primaryIntent: 'rainwater harvesting calculator',
+    secondaryIntents: ['rainwater collection calculator', 'rainwater tank calculator', 'rainwater harvesting system calculator'],
+    functions: ['convert a twelve-month rainfall series and roof catchment area into runoff-adjusted collection estimates', 'model tank storage, monthly demand, overflow and unmet demand across the year', 'allow metric or imperial catchment and tank-volume units with user-selected runoff efficiency'],
+    acceptance: 'An idealized 10 mm of rain over a 100 m² catchment at 100% runoff yields 1,000 L before tank limits or demand. Monthly storage never exceeds the chosen tank capacity and carries from one month to the next.',
+    boundary: 'Planning estimate only. Uses user-entered monthly rainfall, a rectangular horizontal catchment, one runoff coefficient and a month-level sequence that adds captured rain before serving demand; actual timing, roof material, first-flush diversion, evaporation, leaks, water quality and local collection rules are not modeled. Do not assume harvested water is potable; follow local requirements and appropriate treatment guidance.',
+    relatedExistingIds: ['pool-volume-calculator'],
+    logicModule: './tools/rainwater-harvesting-calculator/logic.mjs',
+  },
+  {
     id: 'deck-calculator',
     category: 'home-materials',
     type: 'calculator',

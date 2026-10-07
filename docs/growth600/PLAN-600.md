@@ -903,9 +903,9 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/rainwater-harvesting-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `rainwater harvesting calculator` — 1.000 búsquedas/mes US/en, KD 21; nivel B. CPC 0.91 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Cubierta, lluvia manual, escorrentía, depósito y balance mensual
-- **Prueba de aceptación específica:** 10mm sobre100m² ideal da1000L
+- **Prueba de aceptación específica:** 10 mm sobre 100 m² a 100% de escorrentía da 1.000 L antes de capacidad del depósito/demanda; conservar un balance que no exceda el tanque.
 - **Frontera con otras herramientas:** pool-volume-calculator: captación y almacenamiento. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Balance mensual de 12 valores de lluvia y 12 de demanda; incorpora área de cubierta, coeficiente de escorrentía, capacidad y almacenamiento inicial. Modelo ordena lluvia antes de demanda dentro del mes, y explicita que no representa cronología diaria, primera descarga, evaporación ni potabilidad. Procesamiento local acotado.
 - **Consultas secundarias del mismo propietario:**
   - `rainwater collection calculator` — 1.000/mes US/en; KD 29.
   - `rainwater harvesting calculator free online`; `rainwater harvesting calculator with example`; `rainwater harvesting calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

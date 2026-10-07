@@ -33,6 +33,7 @@ import { calculateBatteryRuntime } from './battery-runtime-calculator/logic.mjs'
 import { optimizeLumberCuts, parseCutList } from './lumber-cut-calculator/logic.mjs';
 import { calculatePlantSpacing } from './plant-spacing-calculator/logic.mjs';
 import { calculateEvCharging } from './ev-charging-calculator/logic.mjs';
+import { calculateRainwaterHarvesting, parseMonthlyValues } from './rainwater-harvesting-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -754,4 +755,35 @@ test('EV charging calculator rejects invalid charge targets, zero efficiency and
   assert.throws(() => calculateEvCharging({ batteryCapacityKwh: 50, startSocPercent: 0, targetSocPercent: 80, chargerPowerKw: 0 }), /allowed range/u);
   assert.throws(() => calculateEvCharging({ batteryCapacityKwh: 50, startSocPercent: 0, targetSocPercent: 80, chargerPowerKw: 7, efficiencyPercent: 0 }), /allowed range/u);
   assert.throws(() => calculateEvCharging({ batteryCapacityKwh: 50, startSocPercent: 0, targetSocPercent: 80, chargerPowerKw: 7, electricityRatePerKwh: 0.15, currency: 'US' }), /three-letter/u);
+});
+
+test('rainwater harvesting converts rainfall to collection and carries tank balance month by month', () => {
+  const rain = [10, ...Array(11).fill(0)];
+  const demand = [300, 600, ...Array(10).fill(0)];
+  const result = calculateRainwaterHarvesting({ catchmentArea: 100, areaUnit: 'm2', rainfallValues: rain, rainfallUnit: 'mm', runoffPercent: 100, tankCapacity: 800, tankUnit: 'L', startingStorage: 0, monthlyDemandValues: demand });
+  assert.equal(result.months[0].collectedLiters, 1000);
+  assert.equal(result.months[0].overflowLiters, 200);
+  assert.equal(result.months[0].endingStorageLiters, 500);
+  assert.equal(result.months[1].servedDemandLiters, 500);
+  assert.equal(result.months[1].unmetDemandLiters, 100);
+  assert.equal(result.months[1].endingStorageLiters, 0);
+  assert.equal(result.totalCollectedLiters, 1000);
+  assert.equal(result.totalDemandLiters, 900);
+  assert.equal(result.totalOverflowLiters, 200);
+  assert.equal(result.totalUnmetDemandLiters, 100);
+  const noTankLimit = calculateRainwaterHarvesting({ catchmentArea: 100, rainfallValues: rain, runoffPercent: 100, tankCapacity: 2000, monthlyDemandValues: Array(12).fill(0) });
+  assert.equal(noTankLimit.totalCollectedLiters, 1000);
+  assert.equal(noTankLimit.months[0].endingStorageLiters, 1000);
+  const imperial = calculateRainwaterHarvesting({ catchmentArea: 1, areaUnit: 'ft2', rainfallValues: [1, ...Array(11).fill(0)], rainfallUnit: 'in', runoffPercent: 100, tankCapacity: 10, tankUnit: 'gal', monthlyDemandValues: Array(12).fill(0) });
+  assert.ok(Math.abs(imperial.months[0].collectedLiters - 2.359737216) < 1e-9);
+  assert.ok(Math.abs(imperial.months[0].collectedLiters / 3.785411784 - 0.623376) < 1e-5);
+  assert.deepEqual(parseMonthlyValues(Array.from({ length: 12 }, () => '0,5').join('\n'))[0], 0.5);
+});
+
+test('rainwater monthly inputs require twelve valid values and tank storage stays bounded', () => {
+  assert.throws(() => parseMonthlyValues('1\n2'), /exactly 12/u);
+  assert.throws(() => parseMonthlyValues(Array.from({ length: 12 }, (_, index) => index === 4 ? '' : '1').join('\n')), /exactly 12/u);
+  assert.throws(() => parseMonthlyValues(Array.from({ length: 12 }, (_, index) => index === 4 ? '-1' : '1').join('\n')), /line 5/u);
+  assert.throws(() => calculateRainwaterHarvesting({ catchmentArea: 1, rainfallValues: Array(12).fill(1), tankCapacity: 10, startingStorage: 11, monthlyDemandValues: Array(12).fill(0) }), /allowed range/u);
+  assert.throws(() => calculateRainwaterHarvesting({ catchmentArea: 1, rainfallValues: Array(12).fill(1), tankCapacity: 10, monthlyDemandValues: Array(11).fill(0) }), /12 valid monthly demand/u);
 });

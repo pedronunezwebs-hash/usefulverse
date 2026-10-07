@@ -159,6 +159,11 @@ const copies = {
     messages: { ...messages, batteryEnergy: 'Energy added to battery', gridEnergy: 'Estimated energy from grid', chargingTime: 'Estimated constant-power time', estimatedCost: 'Estimated electricity cost' },
     fields: { batteryCapacityKwh: 'Battery capacity', startSocPercent: 'Starting charge', targetSocPercent: 'Target charge', chargerPowerKw: 'Charger power', efficiencyPercent: 'Efficiency', electricityRatePerKwh: 'Electricity rate', currency: 'Currency', accuracyNote: 'Idealized estimate only.' },
   },
+  'rainwater-harvesting-calculator': {
+    name: 'Rainwater harvesting calculator', actions: { ...actions, squareMeters: 'Square meters', squareFeet: 'Square feet', millimeters: 'Millimeters', inches: 'Inches', liters: 'Liters', usGallons: 'US gallons' },
+    messages: { ...messages, totalCollected: 'Potential collected', totalDemand: 'Demand', totalOverflow: 'Overflow', unmetDemand: 'Unmet demand', endingStorage: 'Ending storage', rainfall: 'rainfall', collected: 'collected', demand: 'demand', overflow: 'overflow', storage: 'ending tank', months: Array.from({ length: 12 }, (_, index) => `Month ${index + 1}`) },
+    fields: { catchmentArea: 'Roof area', areaUnit: 'Area unit', rainfallUnit: 'Rainfall unit', rainfallValues: 'Monthly rainfall', runoffPercent: 'Runoff efficiency', tankCapacity: 'Tank capacity', tankUnit: 'Volume unit', startingStorage: 'Starting storage', monthlyDemandValues: 'Monthly demand', accuracyNote: 'Estimate only; water may need treatment.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -382,6 +387,13 @@ test('EV charging form distinguishes battery charge, charger power and optional 
   for (const name of ['batteryCapacityKwh', 'startSocPercent', 'targetSocPercent', 'chargerPowerKw', 'efficiencyPercent', 'electricityRatePerKwh', 'currency']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
   assert.match(html, /maxlength="3"/u);
   assert.match(html, /aria-live="polite"/u);
+});
+
+test('rainwater form gathers 12 monthly rainfall and demand entries plus catchment and storage assumptions', () => {
+  const html = renderGrowthForm('rainwater-harvesting-calculator', copies['rainwater-harvesting-calculator']);
+  for (const name of ['areaUnit', 'catchmentArea', 'rainfallUnit', 'rainfallValues', 'runoffPercent', 'tankUnit', 'tankCapacity', 'startingStorage', 'monthlyDemandValues']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  assert.equal((html.match(/rows="12"/gu) ?? []).length, 2);
+  assert.match(html, /water may need treatment/u);
 });
 
 test('weight scenario form explains its limits and collects explicit local inputs', () => {

@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 46/323; **277 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 47/323; **276 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -399,7 +399,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 
 ## Estado actual del plan 277 → 600
 
-- **Candidatas nuevas presentes en el catálogo de esta rama:** 46/323; **277 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing, Retaining Wall, Battery Runtime, Lumber Cut List Optimizer, Plant Spacing Calculator y EV Charging Calculator están en la rama; las candidatas nuevas con localización incompleta no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
+- **Candidatas nuevas presentes en el catálogo de esta rama:** 47/323; **276 por implementar**. Solar, BTU, Brick, Rafter, Carpet, Aquarium, Grass Seed, Insulation, Wall Framing, Electricity Cost, Compost, Pond Volume, Fertilizer, Baluster Spacing, Retaining Wall, Battery Runtime, Lumber Cut List Optimizer, Plant Spacing Calculator, EV Charging Calculator y Rainwater Harvesting Calculator están en la rama; las candidatas nuevas con localización incompleta no pasan el gate de publicación. Las 277 herramientas originales no se tocaron.
 - **Siguiente paso:** implementar el próximo candidato pendiente según el orden de `PLAN-600.md`, manteniendo las herramientas fuera de producción hasta los gates globales de publicación.
 
 ## Continuación · Rafter Calculator (#126) · 2026-10-08
@@ -551,6 +551,16 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [x] E — suite focal del catálogo, formularios, contrato de locales, render, build de pruebas, presupuesto de bundles y lógica: **147/147 aprobadas**; diff limpio pendiente del commit.
 - [ ] X/E visual — falta inspección en navegador, móvil, RTL y dispositivos reales.
 - [ ] P/S — no merge/deploy ni actualización del sitemap de producción/envío a buscadores; PageSpeed no se ejecuta.
+
+## Continuación · Rainwater Harvesting Calculator (#258) · 2026-10-08
+
+- [x] C/F — candidata #47/323; el plan registra `rainwater harvesting calculator` con 1.000 búsquedas/mes US/en, KD 21, y `rainwater collection calculator` con 1.000/mes, KD 29. Sin nuevas llamadas a DataForSEO; distinta de la calculadora de volumen de piscina.
+- [x] E/X — balance con 12 lluvias mensuales, 12 demandas, área de cubierta, porcentaje de escorrentía, capacidad/unidad y almacenamiento inicial. Aceptación: 10 mm × 100 m² = 1.000 L; caso de tanque 800 L y demanda prueba 200 L de desbordamiento, almacenamiento 500 L y 100 L de demanda no cubierta al mes siguiente. Mensualidad suma lluvia antes de demanda; se declara el supuesto y que agua captada no es necesariamente potable. Unidades m²/ft², mm/in, L/gal y entradas negativas/cantidad de meses cubiertas por pruebas.
+- [x] B — dos listas multilínea accesibles (enero–diciembre), formulario local, ejemplo, reset, copia y resumen anual/mensual con lluvia, rebose, almacenamiento y demanda incumplida.
+- [ ] L — inglés completo; 35 locales en borrador estructural y bloqueados por el gate.
+- [x] E — suite focal del catálogo/formularios/locales/render/build/bundle/lógica: **151/151 aprobadas**; validación estática y `git diff --check` ejecutadas.
+- [ ] X/E visual — revisión en navegador, móvil, RTL y dispositivos físicos pendiente.
+- [ ] P/S — no deploy, sitemap productivo ni envío a buscadores.
 
 ## Continuación · Fertilizer Calculator (#183) · 2026-10-08
 
