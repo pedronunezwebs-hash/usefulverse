@@ -85,7 +85,8 @@
 - [x] Smoke HTTP tras la corrección: home Gujarati, calculadora, CSS y `/favicon.svg` respondieron 200; la repetición de recursos estáticos devolvió 304 según caché. En emulación táctil de 390 × 844 px, la calculadora Gujarati no tuvo desbordamiento horizontal; los controles mostraron nombres accesibles, el foco de teclado alcanzó el enlace para saltar al formulario y el cálculo 5 × 4 × 0,1 devolvió 20 m² / 2 m³.
 - [x] Recorrido móvil representativo (390 × 844 px): las otras cuatro familias en inglés no tuvieron overflow horizontal ni controles sin nombre accesible. Se detectó en Mancala árabe que el skip-link oculto con `left:-9999px` provocaba un ancho de documento de 10.389 px pese al viewport móvil.
 - [x] Corrección RTL compartida: el skip-link ahora se oculta verticalmente con `position: fixed` y transform, respetando `dir=rtl`; test de regresión añadido. Tras el fix, Mancala árabe mostró `dir=rtl`, viewport/documento de 390 px y ningún overflow global; tablero y hoyos conservan etiquetas accesibles.
-- [ ] Completar validación visual de otros idiomas RTL y recorridos móviles por variantes de campos/juego. Las muestras no equivalen a certificar las 216 páginas ni todos los dispositivos. Ninguno de estos cambios modifica el sitio principal.
+- [x] Matriz automatizada de viewport móvil para las cinco familias en árabe, persa y urdu (15 rutas, 390 × 844 px): las 15 respetaron `dir=rtl`, no tuvieron overflow horizontal y no presentaron controles sin nombre accesible.
+- [ ] Falta inspección visual manual en dispositivos físicos y muestreo visual adicional de traducciones no RTL. La matriz comprueba geometría/nombres accesibles, no cada traducción o dispositivo. Ninguno de estos cambios modifica el sitio principal.
 
 ## Próxima acción concreta
 
