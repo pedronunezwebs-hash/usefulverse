@@ -91,7 +91,7 @@
 
 ## Próxima acción concreta
 
-Siguiente: Deck Calculator (#083). El catálogo aditivo tiene ahora 13 candidatos. Roofing Calculator (#078) ya tiene los gates locales registrados abajo. La publicación de la tanda sigue bloqueada hasta cerrar gates globales C/F/E/X/L/B/P/S; `usefulverse-tools` no publica aún Roofing y no se ha enviado su URL a buscadores. Las 277 rutas originales permanecen intactas.
+Siguiente: Fence Calculator (#093). El catálogo aditivo tiene ahora 14 candidatos. Deck Calculator (#083) y Roofing Calculator (#078) tienen sus gates locales registrados abajo. La publicación de la tanda sigue bloqueada hasta cerrar gates globales C/F/E/X/L/B/P/S; no se han enviado sus URLs a buscadores. Las 277 rutas originales permanecen intactas.
 
 ## Continuación · 2026-10-07
 
@@ -120,6 +120,16 @@ Siguiente: Deck Calculator (#083). El catálogo aditivo tiene ahora 13 candidato
 - [x] Build aislado: 504 URLs únicas de sitemap (468 herramientas + 36 portadas), 558 archivos y 9.872.395 bytes; todas las 36 páginas de Roofing pasan la auditoría estática. El contenido generado solo estuvo en `/tmp`; no es producción.
 - [x] Chrome DevTools local: recorrido inglés con el ejemplo y validación; Arabic RTL a 390×844, sin overflow horizontal, controles sin nombre ausente ni errores de consola. Inspección puntual del ejemplo y coste; no equivale a hardware físico o revisión humana de 36 traducciones.
 - [ ] No desplegado ni remitido a los buscadores. Se conserva en esta rama hasta cerrar los gates de release globales; no se modificó el sitemap de producción ni el catálogo de las 277 herramientas existentes.
+
+## Continuación · Deck Calculator (#083) · 2026-10-07
+
+- [x] Herramienta diferenciada de `board-foot-calculator`: calcula superficie rectangular, filas de tablas con separación, piezas/tablones de stock con allowance conservadora de desperdicio, líneas de apoyo y fijaciones estimadas. Si el stock es corto, informa las uniones aproximadas; exige planificar y apoyar cada unión, sin fingir un cut map.
+- [x] Unidades separadas para la estructura y las tablas/apoyos: el ejemplo legible usa 16 × 12 ft, tabla de 5,5 in, gap de 0,25 in, tabla stock de 16 ft y apoyos cada 16 in. Devuelve 26 filas, 29 piezas con 10% extra, 13 líneas de apoyo y 676 fijaciones; si las tablas son de 8 ft, muestra 26 uniones. Evita conversiones manuales y números largos en la UI.
+- [x] Copy, metadata, FAQ, units y avisos en 36 idiomas. Títulos ≤60, descriptions ≤160 en el contenido decodificado, canonical y 37 alternates en cada ruta. Traducción automática estática; no se vende como revisión nativa.
+- [x] Suite focalizada tras la integración de unidades: 70/70 aprobadas, incluido build y bundle bajo 24 KiB; Deck bundle 4.584 B. Build real temporal: 540 páginas de sitemap (504 tools + 36 home), 540 URLs únicas, 595 archivos y 10.783.628 bytes. Auditoría de las 36 páginas de Deck aprobada.
+- [x] Chrome DevTools: ejemplo, coste opcional, conteo conservador con juntas de tablones cortos y rechazo/foco de dimensión inválida; la muestra árabe en RTL a 390 × 844 no desborda (390 px document/body) ni presenta consola con errores ni inputs/selects sin etiqueta.
+- [ ] `npm test` ejecutado en el clon temporal, pero no puede dar verde total con las dependencias ausentes del checkout (`prettier`, `fflate` y variantes `to-words/*`); fallan suites ajenas por `ERR_MODULE_NOT_FOUND`. No se instaló el conjunto completo porque incluye dependencias grandes no necesarias para este piloto. Las 70 pruebas focalizadas sí pasan; CI limpio sigue siendo gate antes de publicar.
+- [ ] No desplegado ni enviado a buscadores; el sitemap de producción sigue intacto.
 
 ## Publicación del piloto · 2026-10-07
 

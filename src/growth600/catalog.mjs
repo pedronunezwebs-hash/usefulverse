@@ -1,5 +1,17 @@
 export const growthPilotTools = Object.freeze([
   {
+    id: 'deck-calculator',
+    category: 'home-materials',
+    type: 'calculator',
+    primaryIntent: 'deck calculator',
+    secondaryIntents: ['deck board calculator', 'decking calculator', 'decking material calculator', 'deck fastener calculator'],
+    functions: ['rectangular deck area in metric or imperial units', 'board rows from actual board width and gap', 'stock board count with a user-entered waste allowance and material price', 'support-line and simplified fastener estimate from user-entered spacing', 'approximate butt-joint count when stock boards are shorter than the deck run'],
+    acceptance: 'For a 16 × 12 ft deck with 5.5 in boards, 0.25 in gaps, 16 ft stock boards, 16 in support spacing and 10% waste: 26 rows, 29 stock boards, 13 support lines and 676 fasteners at two per crossing. With 8 ft stock boards, report 26 planned row joints.',
+    boundary: 'Simple surface-material estimate only. It does not design joists, beams, posts, foundations, stairs, guards, drainage, permits or code compliance, and it does not generate a cut map. Board-end joints must be planned and supported; verify materials and construction with a qualified builder.',
+    relatedExistingIds: ['board-foot-calculator'],
+    logicModule: './tools/deck-calculator/logic.mjs',
+  },
+  {
     id: 'roofing-calculator',
     category: 'home-materials',
     type: 'calculator',

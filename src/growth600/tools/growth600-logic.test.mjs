@@ -12,6 +12,7 @@ import { calculatePoolVolume } from './pool-volume-calculator/logic.mjs';
 import { calculateRoofPitch } from './roof-pitch-calculator/logic.mjs';
 import { calculateDrywall } from './drywall-calculator/logic.mjs';
 import { calculateRoofing } from './roofing-calculator/logic.mjs';
+import { calculateDeck } from './deck-calculator/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
 test('gravel calculator converts area and depth into volume, waste, weight and bags', () => {
@@ -123,6 +124,32 @@ test('roofing calculator increases projected area by pitch and rounds material b
   assert.throws(() => calculateRoofing({ projectedArea: 100, areaUnit: 'acre', rise: 6, run: 12, pitchUnit: 'in' }), /square metres/u);
   assert.throws(() => calculateRoofing({ projectedArea: 100, areaUnit: 'm2', rise: 6, run: 12, pitchUnit: 'yd' }), /pitch unit/u);
   assert.throws(() => calculateRoofing({ projectedArea: 100, areaUnit: 'm2', rise: 6, run: 12, pitchUnit: 'in', wastePercent: 31 }), /Waste/u);
+});
+
+test('deck calculator counts board rows, stock length, supported-run estimates and fasteners', () => {
+  const deck = calculateDeck({ length: 16, width: 12, unit: 'ft', boardWidth: 5.5, boardUnit: 'in', gap: 0.25, stockBoardLength: 16, joistSpacing: 16, wastePercent: 10, fastenersPerIntersection: 2, pricePerBoard: 20 });
+  assert.equal(deck.rows, 26);
+  assert.ok(Math.abs(deck.coveredWidthM / 0.3048 - 12.4375) < 1e-10);
+  assert.equal(deck.boards, 29);
+  assert.equal(deck.piecesPerRow, 1);
+  assert.equal(deck.supportLines, 13);
+  assert.equal(deck.estimatedFasteners, 676);
+  assert.equal(deck.totalJoints, 0);
+  assert.equal(deck.estimatedCost, 580);
+  const shorterStock = calculateDeck({ length: 16, width: 12, unit: 'ft', boardWidth: 5.5, boardUnit: 'in', gap: 0.25, stockBoardLength: 8, joistSpacing: 16, wastePercent: 0, fastenersPerIntersection: 2 });
+  assert.equal(shorterStock.jointsPerRow, 1);
+  assert.equal(shorterStock.totalJoints, 26);
+  assert.equal(shorterStock.boards, 52);
+  const conservativeCuts = calculateDeck({ length: 15, width: 12, unit: 'ft', boardWidth: 5.5, boardUnit: 'in', gap: 0.25, stockBoardLength: 8, joistSpacing: 16, wastePercent: 0, fastenersPerIntersection: 2 });
+  assert.equal(conservativeCuts.boards, 52);
+  assert.ok(conservativeCuts.boards > Math.ceil(conservativeCuts.orderLinearMetres / (8 * 0.3048)), 'without a cut map, short offcuts are not assumed reusable');
+  const metric = calculateDeck({ length: 4, width: 3, unit: 'm', boardWidth: 0.14, gap: 0.006, stockBoardLength: 4, joistSpacing: 0.4, wastePercent: 0, fastenersPerIntersection: 2 });
+  assert.equal(metric.rows, 21);
+  assert.equal(metric.supportLines, 11);
+  assert.equal(metric.estimatedFasteners, 462);
+  assert.throws(() => calculateDeck({ length: 4, width: 3, unit: 'yard', boardWidth: 0.14, gap: 0, stockBoardLength: 4, joistSpacing: 0.4 }), /supported length unit/u);
+  assert.throws(() => calculateDeck({ length: 4, width: 3, unit: 'm', boardWidth: 0, stockBoardLength: 4, joistSpacing: 0.4 }), /Board width/u);
+  assert.throws(() => calculateDeck({ length: 4, width: 3, unit: 'm', boardWidth: 0.14, gap: 0, stockBoardLength: 4, joistSpacing: 0.4, fastenersPerIntersection: 1.5 }), /whole number/u);
 });
 
 test('molar-mass parser handles formulas, nested groups and supported isotopes', () => {
