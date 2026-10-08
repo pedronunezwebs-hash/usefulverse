@@ -2,6 +2,16 @@
 
 Última verificación: 2026-10-08. Registro persistente de esta rama; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
+## En curso · Force Calculator (#179) · 2026-10-08
+
+- [x] C/F — herramienta de física 1D para resolver F = m × a y sumar de 2 a 5 fuerzas colineales con signo; incluye conversión N/kN/lbf, kg/lb y m/s²/ft/s² y un diagrama proporcional accesible. No sustituye cálculo vectorial, rozamiento, torque ni revisión de seguridad estructural.
+- [x] B/X — ejemplo, tres incógnitas, modo de fuerza neta, reinicio, copia, mensajes anunciados y cálculo íntegramente local. El diagrama muestra una marca sin flecha cuando una fuerza vale cero.
+- [x] L — textos estáticos en los 36 idiomas, derivados de la fuente inglesa con el flujo de traducción automática acordado; no son revisión nativa. Se corrigieron etiquetas ambiguas de aceleración en árabe.
+- [x] E — lógica, catálogo, formularios, contrato de locale y build focal: 163/163; `npm test`: 1.275/1.275; `npm run check`: 10.260 URLs del sitio protegido; build aislado: 3.168 URLs únicas (3.306 archivos, 97.538.927 bytes). `git diff --check` limpio.
+- [x] X — Chrome móvil 390 × 844 en árabe RTL: 2 kg × 3 m/s² = 6 N y 10 N − 4 N = 6 N; sin desbordamiento horizontal, errores de consola ni solicitudes externas. Se ajustó el título y algunas etiquetas árabes automáticas para que se entiendan mejor.
+- [ ] P/S — aún no integrado ni desplegado; no se ha modificado el sitemap público ni reenviado desde paneles. PageSpeed/Lighthouse no se ejecutó.
+- **Siguiente:** revisar diff final, abrir PR y publicar por el workflow del hub. La siguiente ficha del plan es #180 `horsepower-calculator`.
+
 ## Completada y publicada · Acceleration Calculator (#178) · 2026-10-08
 
 - [x] C/F/E — contrato sin duplicación: cuatro incógnitas de cinemática 1D con aceleración constante; unidades métricas/imperiales; alcance y supuestos visibles. No se alteró ninguna herramienta existente.

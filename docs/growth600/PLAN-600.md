@@ -1180,6 +1180,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 ### 179 · Force Calculator
 
 - [ ] **C/F/E/X/L/B/P/S completos — `force-calculator`**
+- **Estado local (2026-10-08):** motor, interfaz y traducción automática estática en 36 idiomas implementados; pruebas focales 163/163, suite completa 1.275/1.275 y `npm run check` (10.260 URLs protegidas) correctos. Build aislado: 3.168 URLs únicas (3.306 archivos). Chrome móvil 390 × 844 en árabe RTL comprobó F = m × a y fuerzas opuestas, sin overflow, errores de consola ni solicitudes externas. Falta integrar y desplegar; aún no está en producción.
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/force-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `force calculator` — 2.900 búsquedas/mes US/en, KD 0; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Masa/aceleración, fuerzas colineales y diagrama

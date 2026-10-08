@@ -52,6 +52,8 @@ import resistorColorCodeCopies from './resistor-color-code-calculator.mjs';
 import { resistorColorCodeCalculatorEnglishCopy } from './resistor-color-code-calculator.en.mjs';
 import accelerationCalculatorCopies from './acceleration-calculator.mjs';
 import { accelerationCalculatorEnglishCopy } from './acceleration-calculator.en.mjs';
+import forceCalculatorCopies from './force-calculator.mjs';
+import { forceCalculatorEnglishCopy } from './force-calculator.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
 import imageColorPickerCopies from './image-color-picker-final.mjs';
@@ -581,5 +583,16 @@ registerGrowthLocaleExtension(source, 'complex-number-calculator', { ...complexN
 registerGrowthLocaleExtension(source, 'kinetic-energy-calculator', { ...kineticEnergyCopies, en: kineticEnergyCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'resistor-color-code-calculator', { ...resistorColorCodeCopies, en: resistorColorCodeCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'acceleration-calculator', { ...accelerationCalculatorCopies, en: accelerationCalculatorEnglishCopy }, 'gravel-calculator');
+const forceFreeLabels = { en: 'Free', es: 'Gratis', fr: 'Gratuit', pt: 'Grátis', de: 'Kostenlos', ja: '無料', ko: '무료', id: 'Gratis', hi: 'मुफ़्त', ar: 'مجانية', zh: '免费', bn: 'বিনামূল্যে', ru: 'Бесплатно', ur: 'مفت', tr: 'Ücretsiz', vi: 'Miễn phí', it: 'Gratis', zh_tw: '免費', bg: 'Безплатно', ca: 'Gratis', nl: 'Gratis', el: 'Δωρεάν', ms: 'Percuma', pl: 'Bezpłatnie', sv: 'Gratis', th: 'ฟรี', uk: 'Безкоштовно', sw: 'Bure', mr: 'मोफत', te: 'ఉచితం', ha: 'Kyauta', tl: 'Libre', ta: 'இலவசம்', fa: 'رایگان', am: 'ነጻ', gu: 'મફત' };
+const forceLabelFixes = {
+  ar: { acceleration: 'التسارع', accelerationUnit: 'وحدة التسارع', netMode: 'اجمع القوى على خط واحد', result: 'نتيجة القوة' },
+};
+const localizedForceCalculatorCopies = Object.fromEntries(Object.entries(forceCalculatorCopies).map(([locale, copy]) => {
+  const fix = forceLabelFixes[locale] ?? {};
+  const name = fix.name ?? copy.name;
+  const suffix = ` ${forceFreeLabels[locale]} | UsefulVerse`;
+  return [locale, { ...copy, name, title: `${name.slice(0, 60 - suffix.length)}${suffix}`, fields: { ...copy.fields, ...(fix.accelerationUnit ? { accelerationUnit: fix.accelerationUnit } : {}), ...(fix.acceleration ? { acceleration: fix.acceleration } : {}), ...(fix.netMode ? { netMode: fix.netMode } : {}) }, actions: { ...copy.actions, ...(fix.result ? { result: fix.result } : {}) }, messages: { ...copy.messages, ...(fix.acceleration ? { acceleration: fix.acceleration } : {}) } }];
+}));
+registerGrowthLocaleExtension(source, 'force-calculator', { ...localizedForceCalculatorCopies, en: forceCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

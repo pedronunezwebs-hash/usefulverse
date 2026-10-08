@@ -53,6 +53,7 @@ export function renderGrowthForm(toolId, copy) {
     'kinetic-energy-calculator': ['mode', 'energyMode', 'speedMode', 'massKg', 'velocityMps', 'kineticEnergyJ', 'heightM', 'gravityMps2', 'accuracyNote'],
     'resistor-color-code-calculator': ['mode', 'decodeMode', 'encodeMode', 'bands', 'fourBands', 'fiveBands', 'sixBands', 'resistanceOhms', 'tolerance', 'temperatureCoefficient', 'accuracyNote', 'band1', 'band2', 'band3', 'band4', 'band5', 'band6', 'black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'gray', 'white', 'gold', 'silver', 'none', 'ppm250', 'ppm100', 'ppm50', 'ppm25', 'ppm20', 'ppm15', 'ppm10', 'ppm5', 'ppm1', 'tolerance005', 'tolerance01', 'tolerance025', 'tolerance05', 'tolerance1', 'tolerance2', 'tolerance5', 'tolerance10', 'tolerance20'],
     'acceleration-calculator': ['mode', 'solveAcceleration', 'solveTime', 'solveFinalVelocity', 'solveDisplacement', 'units', 'metric', 'imperial', 'initialVelocity', 'finalVelocity', 'acceleration', 'timeSeconds', 'initialPosition', 'accuracyNote'],
+    'force-calculator': ['mode', 'solveForce', 'solveMass', 'solveAcceleration', 'netMode', 'forceUnit', 'massUnit', 'accelerationUnit', 'force', 'mass', 'acceleration', 'forces', 'forcesHint', 'netMass', 'accuracyNote'],
     'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
     'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
@@ -142,6 +143,7 @@ export function renderGrowthForm(toolId, copy) {
     'kinetic-energy-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'resistor-color-code-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'acceleration-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'force-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
@@ -1251,6 +1253,27 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'force-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('force-mode', fields.mode, `<select id="force-mode" name="mode"><option value="solve-force">${escapeGrowthHtml(fields.solveForce)}</option><option value="solve-mass">${escapeGrowthHtml(fields.solveMass)}</option><option value="solve-acceleration">${escapeGrowthHtml(fields.solveAcceleration)}</option><option value="net-forces">${escapeGrowthHtml(fields.netMode)}</option></select>`)}
+    <div data-force-solve>
+      ${label('force-unit', fields.forceUnit, `<select id="force-unit" name="forceUnit"><option value="N">N</option><option value="kN">kN</option><option value="lbf">lbf</option></select>`)}
+      ${label('mass-unit', fields.massUnit, `<select id="mass-unit" name="massUnit"><option value="kg">kg</option><option value="lb">lb</option></select>`)}
+      ${label('acceleration-unit', fields.accelerationUnit, `<select id="acceleration-unit" name="accelerationUnit"><option value="m/s²">m/s²</option><option value="ft/s²">ft/s²</option></select>`)}
+      <div data-force-field="force">${label('force-value', fields.force, '<input id="force-value" name="force" type="number" step="any" inputmode="decimal" value="6" required>')}</div>
+      <div data-force-field="mass">${label('mass-value', fields.mass, '<input id="mass-value" name="mass" type="number" min="0.000000001" max="1000000000000" step="any" inputmode="decimal" value="2" required>')}</div>
+      <div data-force-field="acceleration">${label('acceleration-value', fields.acceleration, '<input id="acceleration-value" name="acceleration" type="number" step="any" inputmode="decimal" value="3" required>')}</div>
+    </div>
+    <div data-force-net hidden>
+      ${label('net-force-values', fields.forces, '<textarea id="net-force-values" name="forces" rows="3" maxlength="100" spellcheck="false" inputmode="decimal"></textarea>')}
+      <p class="hint">${escapeGrowthHtml(fields.forcesHint)}</p>
+      ${label('net-force-mass', fields.netMass, '<input id="net-force-mass" name="netMass" type="number" min="0.000000001" max="1000000000000" step="any" inputmode="decimal">')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'chemical-equation-balancer') return attachCopy(`<form id="tool-form" novalidate>

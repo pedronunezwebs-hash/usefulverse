@@ -252,6 +252,11 @@ const copies = {
     messages: { ...messages, acceleration: 'Acceleration', time: 'Elapsed time', initialVelocity: 'Initial velocity', finalVelocity: 'Final velocity', initialPosition: 'Initial position', displacement: 'Displacement', finalPosition: 'Final position' },
     fields: { mode: 'Solve for', solveAcceleration: 'Acceleration', solveTime: 'Time', solveFinalVelocity: 'Final velocity', solveDisplacement: 'Displacement', units: 'Unit system', metric: 'Metric', imperial: 'Imperial', initialVelocity: 'Initial velocity', finalVelocity: 'Final velocity', acceleration: 'Acceleration', timeSeconds: 'Time in seconds', initialPosition: 'Initial position', accuracyNote: 'Constant acceleration only.' },
   },
+  'force-calculator': {
+    name: 'Force calculator', actions: { ...actions, calculate: 'Calculate force', example: 'Try 2 kg × 3 m/s²' },
+    messages: { ...messages, force: 'Force', netForce: 'Net force', mass: 'Mass', acceleration: 'Acceleration', diagram: 'Force diagram' },
+    fields: { mode: 'Calculation mode', solveForce: 'Solve force', solveMass: 'Solve mass', solveAcceleration: 'Solve acceleration', netMode: 'Add collinear forces', forceUnit: 'Force unit', massUnit: 'Mass unit', accelerationUnit: 'Acceleration unit', force: 'Force', mass: 'Mass', acceleration: 'Acceleration', forces: 'Signed forces', forcesHint: 'Enter 2–5 forces on one line.', netMass: 'Object mass', accuracyNote: 'Ideal one-dimensional mechanics only.' },
+  },
   'compression-ratio-calculator': {
     name: 'Compression ratio calculator', actions: { ...actions, millimeters: 'Millimeters', inches: 'Inches' },
     messages: { ...messages, ratio: 'Static compression ratio', sweptVolume: 'Swept volume', clearanceVolume: 'Clearance volume', totalDisplacement: 'Total displacement', boreStroke: 'Bore to stroke' },
@@ -414,6 +419,12 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(acceleration, /value="imperial"/u);
   assert.match(acceleration, /data-action="example"/u);
   assert.match(acceleration, /data-action="copy"/u);
+  const force = renderGrowthForm('force-calculator', copies['force-calculator']);
+  for (const name of ['mode', 'forceUnit', 'massUnit', 'accelerationUnit', 'force', 'mass', 'acceleration', 'forces', 'netMass']) assert.match(force, new RegExp(`name="${name}"`, 'u'));
+  assert.match(force, /data-force-solve/u);
+  assert.match(force, /data-force-net hidden/u);
+  assert.match(force, /data-action="example"/u);
+  assert.match(force, /data-action="copy"/u);
   const compression = renderGrowthForm('compression-ratio-calculator', copies['compression-ratio-calculator']);
   for (const name of ['unit', 'volumeUnit', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders']) assert.match(compression, new RegExp(`name="${name}"`, 'u'));
   assert.match(compression, /min="1" max="16" step="1"/u);

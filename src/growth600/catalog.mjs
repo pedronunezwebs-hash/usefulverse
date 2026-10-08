@@ -1031,6 +1031,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: [],
     logicModule: './tools/acceleration-calculator/logic.mjs',
   },
+  {
+    id: 'force-calculator',
+    category: 'physics-math',
+    type: 'calculator',
+    primaryIntent: 'force calculator',
+    secondaryIntents: ['newtons second law calculator', 'net force calculator', 'force mass acceleration calculator'],
+    functions: ['solve force, mass or acceleration from the other two using F = m × a', 'add up to five signed collinear forces and calculate net force and acceleration', 'convert force between N, kN and lbf, mass between kg and lb, and acceleration between m/s² and ft/s²', 'show a proportional force-arrow diagram with direction and a zero-force state'],
+    acceptance: 'A 2 kg mass acted on by 3 m/s² has force 6 N; +10 N and −4 N give a 6 N net force.',
+    boundary: 'Ideal one-dimensional Newtonian mechanics. Signed forces are collinear and positive/negative indicate direction; this does not resolve vector components, friction, torque, changing mass or structural/safety suitability. Unit conversions use standard factors. Calculations run locally in this browser.',
+    relatedExistingIds: ['kinetic-energy-calculator', 'acceleration-calculator'],
+    logicModule: './tools/force-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {
