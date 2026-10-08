@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 104);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 104);
+  assert.equal(growthPilotTools.length, 105);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 105);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -78,6 +78,15 @@ test('thermal expansion calculator requires dimension-matched coefficients and h
   assert.match(tool.acceptance, /zero temperature change preserves/u);
   assert.match(tool.boundary, /does not infer material properties/u);
   assert.deepEqual(tool.relatedExistingIds, ['unit-converter', 'heat-loss-calculator']);
+});
+
+test('Hijri calendar converter declares its fixed tabular method and distinction from observation', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'hijri-calendar-converter');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'hijri calendar converter');
+  assert.match(tool.boundary, /not Umm al-Qura or a local moon-sighting decision/u);
+  assert.match(tool.acceptance, /same tabular method/u);
+  assert.deepEqual(tool.relatedExistingIds, ['date-calculator']);
 });
 
 test('Roth vs traditional compares user-entered tax scenarios without giving tax or account advice', () => {

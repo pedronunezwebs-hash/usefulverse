@@ -2,15 +2,21 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## En curso · Thermal Expansion Calculator (#288) · 2026-10-09
+## En curso · Hijri Calendar Converter (#289) · 2026-10-09
 
-- [x] C/F — Se reutiliza la ficha ya investigada: `thermal expansion calculator` y `linear expansion calculator`, 590 búsquedas/mes US/en, KD 0; sin repetir llamadas ni coste de DataForSEO.
-- [x] E/B — Calculadora local para expansión lineal, de área y volumen; pide el coeficiente adecuado a cada modo, distingue por °C/°F, admite unidades comunes y coeficientes negativos, y rechaza dimensiones finales negativas. Declara supuestos y que no elige materiales ni da consejo de ingeniería.
-- [x] L — 36 copias estáticas desde inglés con Google Translate (sin traducción en producción); títulos con marca final y ≤60 caracteres, descripciones ≤160. Tras revisar en Chrome, corregí manualmente las etiquetas árabes de área/volumen y el texto del cálculo.
-- [x] X — Focal **199/199**; suite completa **1.416/1.416**; `locale:release-check` aprobado; `npm run check` conserva **10.260 URLs** del sitio principal. Hub separado: **3.780 URLs** para 104 herramientas × 36 idiomas + 36 portadas (3.937 archivos).
-- [x] B — Chrome: lineal 10 m → +0,006 m / 10,006 m; área 100 m² → +0,12 m² / 100,12 m²; volumen 1.000 L con coeficiente 20×10⁻⁶/°F y ΔT 18 °F → +0,36 L. Árabe RTL confirma etiquetas corregidas, salida correcta y 390 px sin desbordamiento horizontal ni errores de consola. No PageSpeed/Lighthouse.
-- [ ] P/S — PR, CI, deploy y comprobaciones públicas del hub/sitemap aún pendientes. No se solicita indexación manual.
-- **Estado:** 104/323 candidatas Growth600 implementadas localmente (103 publicadas, esta pendiente); las 277 herramientas protegidas no se tocaron. Siguiente ficha según el plan: #289 Hijri Calendar Converter.
+- [x] C/F — Se reutilizó la ficha ya investigada: `hijri calendar converter`, 590 búsquedas/mes US/en, KD 0; sin llamada nueva ni gasto de DataForSEO.
+- [x] E/B — Conversor local bidireccional entre gregoriano e Hijri con calendario civil tabular fijo de 30 años; valida límites y fechas imposibles. Declara que no es Umm al-Qura ni un cálculo por avistamiento y que no es guía religiosa.
+- [x] L — 36 copias estáticas traducidas desde inglés con el flujo aprobado; sin traducción en producción. Los textos informan el método y sus límites; no son revisión nativa.
+- [x] X — Suite completa **1.420/1.420**; `locale:release-check`, `npm run check` y `git diff --check` pasan. La web original sigue en **10.260 URLs**. Build aislado actualizado: **3.816 URLs** (105 herramientas × 36 idiomas + 36 portadas; 3.974 archivos).
+- [x] B — Chrome EN y AR real: 11 Mar 2024 ↔ 1 Ramadan 1445; fecha imposible rechazada; RTL en 390 px sin overflow ni errores de consola. Se quitó “AH” de la salida para evitar mezcla innecesaria en árabe. No PageSpeed/Lighthouse.
+- [ ] P/S — PR, CI, fusión, deploy del hub y comprobaciones públicas aún pendientes. No se solicita indexación manual ni se afirma indexación.
+- **Estado:** implementada localmente en rama aislada; las 277 herramientas originales no se modificaron. La anterior (#288) quedó desplegada mientras esta rama se preparaba.
+
+## Publicada · Thermal Expansion Calculator (#288) · 2026-10-09
+
+- [x] C/F/E/X/L/B — Validación documentada en el cambio anterior; datos ya medidos y traducciones estáticas en los 36 idiomas.
+- [x] P/S — Merge commit `4d999e338d76e924485b18606cbe75813c85167e`; despliegue principal run `37858771766` y publicación del hub run `37859095394` completados correctamente. Rutas EN y AR HTTP 200; título inglés correcto; el sitemap separado anuncia **3.780 URLs** (104 herramientas × 36 locales + 36 portadas). El sitemap principal sigue separado.
+- **Estado publicado:** 104 candidatas Growth600 publicadas; el siguiente elemento en trabajo es #289 Hijri Calendar Converter. Publicación no equivale a indexación; no se envió solicitud manual a buscadores. No PageSpeed/Lighthouse.
 
 ## Publicada · Friction Calculator (#287) · 2026-10-09
 

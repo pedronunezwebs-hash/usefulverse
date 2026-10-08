@@ -76,6 +76,8 @@ import chessOpeningTrainerCopies from './chess-opening-trainer.mjs';
 import { chessOpeningTrainerEnglishCopy } from './chess-opening-trainer.en.mjs';
 import decibelCalculatorCopies from './decibel-calculator.mjs';
 import { decibelCalculatorEnglishCopy } from './decibel-calculator.en.mjs';
+import hijriCalendarConverterCopies from './hijri-calendar-converter.mjs';
+import { hijriCalendarConverterEnglishCopy } from './hijri-calendar-converter.en.mjs';
 import openApiEditorCopies from './openapi-editor.mjs';
 import { openApiEditorEnglishCopy } from './openapi-editor.en.mjs';
 import fontPairingToolCopies from './font-pairing-tool.mjs';
@@ -971,5 +973,9 @@ const polygonReleaseCopies = Object.fromEntries(Object.entries({ ...polygonCalcu
   } : copy];
 }));
 registerGrowthLocaleExtension(source, 'polygon-calculator', polygonReleaseCopies, 'roth-vs-traditional-calculator');
+registerGrowthLocaleExtension(source, 'hijri-calendar-converter', {
+  ...hijriCalendarConverterCopies,
+  en: hijriCalendarConverterEnglishCopy,
+}, 'polygon-calculator');
 
 export default Object.freeze(source);

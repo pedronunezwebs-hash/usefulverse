@@ -1,0 +1,25 @@
+export const hijriCalendarConverterEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Hijri Calendar Converter',
+  title: 'Free Hijri Calendar Converter | UsefulVerse',
+  description: 'Convert Gregorian and tabular Hijri dates both ways. Free, local converter with a clear calendar-method note.',
+  intro: 'Convert a Gregorian date to a tabular Hijri date or convert a Hijri date back to Gregorian, right in your browser.',
+  howQuestion: 'How do I convert a Gregorian date to Hijri?',
+  howAnswer: 'Choose a direction, enter a valid date and select Convert. The result uses the tabular Islamic civil calendar arithmetic method shown below.',
+  privacyQuestion: 'Are my dates uploaded?',
+  privacyAnswer: 'No. Date conversion runs in this browser. Your dates are not uploaded or saved by this tool.',
+  fields: {
+    mode: 'Conversion direction', gregorianToHijri: 'Gregorian to Hijri', hijriToGregorian: 'Hijri to Gregorian',
+    gregorianDate: 'Gregorian date', gregorianYear: 'Gregorian year', gregorianMonth: 'Gregorian month', gregorianDay: 'Gregorian day',
+    hijriYear: 'Hijri year (AH)', hijriMonth: 'Hijri month', hijriDay: 'Hijri day', hijriMonths: ['Muharram', 'Safar', 'Rabi al-Awwal', 'Rabi al-Thani', 'Jumada al-Awwal', 'Jumada al-Thani', 'Rajab', 'Sha’ban', 'Ramadan', 'Shawwal', 'Dhu al-Qadah', 'Dhu al-Hijjah'],
+    methodNote: 'Method: tabular Islamic civil calendar, using a repeating 30-year arithmetic cycle. It is not Umm al-Qura and does not use local moon sightings. A result can differ by a day from the calendar used by a mosque or local authority. Gregorian input range: 622–9999 CE; Hijri year range: 1–10000 AH. This is a date conversion, not religious guidance.',
+  },
+  actions: { convert: 'Convert date', reset: 'Reset', example: 'Try an example', result: 'Converted date' },
+  messages: { converted: 'Date converted.', checkInputs: 'Check the date and supported range.', hijriLabel: 'Tabular Hijri date', gregorianLabel: 'Gregorian date', leapYear: 'Hijri leap year', leapYes: 'Yes', leapNo: 'No' },
+  additionalFaqs: [
+    { question: 'Why can a Hijri date differ from another calendar?', answer: 'This tool uses a fixed tabular arithmetic calendar. Local religious calendars may use moon sightings or a different published calendar, so their date can differ by one day or more.' },
+    { question: 'Is this the Umm al-Qura calendar?', answer: 'No. This is the tabular Islamic civil calendar with a repeating 30-year arithmetic cycle; it does not reproduce Umm al-Qura dates.' },
+    { question: 'Does this tool decide when a religious month begins?', answer: 'No. It only converts dates using the stated arithmetic method and is not religious guidance.' },
+  ],
+  localizationStatus: 'approved',
+});

@@ -68,6 +68,7 @@ export function renderGrowthForm(toolId, copy) {
     'hashi-puzzle': ['difficulty', 'board', 'rules', 'accuracyNote', 'island', 'needs', 'current', 'bridge', 'to', 'toggleHint'],
     'chess-opening-trainer': ['opening', 'side', 'white', 'black', 'board', 'moves', 'progressLabel', 'square', 'empty', 'accuracyNote', 'rules', 'opening_italian', 'opening_sicilian', 'opening_ruy_lopez', 'opening_french', 'opening_caro_kann', 'opening_queens_gambit', 'opening_london', 'opening_scandinavian', 'opening_english', 'opening_kings_indian', 'piece_wp', 'piece_wn', 'piece_wb', 'piece_wr', 'piece_wq', 'piece_wk', 'piece_bp', 'piece_bn', 'piece_bb', 'piece_br', 'piece_bq', 'piece_bk'],
     'decibel-calculator': ['mode', 'powerMode', 'amplitudeMode', 'dbToPowerMode', 'dbToAmplitudeMode', 'sumMode', 'applyMode', 'ratio', 'inputDb', 'levels', 'inputLevel', 'gainDb', 'accuracyNote', 'assumptionsNote'],
+    'hijri-calendar-converter': ['mode', 'gregorianToHijri', 'hijriToGregorian', 'gregorianDate', 'gregorianYear', 'gregorianMonth', 'gregorianDay', 'hijriYear', 'hijriMonth', 'hijriDay', 'hijriMonths', 'methodNote'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -180,6 +181,7 @@ export function renderGrowthForm(toolId, copy) {
     'hashi-puzzle': ['newGame', 'checkBoard', 'hint', 'undo', 'clearBoard', 'rules', 'easy', 'regular', 'hard'],
     'chess-opening-trainer': ['newGame', 'hint', 'rules'],
     'decibel-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'hijri-calendar-converter': ['convert', 'reset', 'example', 'result'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
@@ -795,6 +797,15 @@ export function renderGrowthForm(toolId, copy) {
     <p class="hint" data-decibel-ratio-note>${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.assumptionsNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'hijri-calendar-converter') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('hijri-mode', fields.mode, `<select id="hijri-mode" name="mode"><option value="gregorian-to-hijri">${escapeGrowthHtml(fields.gregorianToHijri)}</option><option value="hijri-to-gregorian">${escapeGrowthHtml(fields.hijriToGregorian)}</option></select>`)}
+    <fieldset data-gregorian-fields><legend>${escapeGrowthHtml(fields.gregorianDate)}</legend>${label('gregorian-year', fields.gregorianYear, '<input id="gregorian-year" name="gregorianYear" type="number" min="622" max="9999" step="1" value="2024" inputmode="numeric" required>')}${label('gregorian-month', fields.gregorianMonth, '<input id="gregorian-month" name="gregorianMonth" type="number" min="1" max="12" step="1" value="3" inputmode="numeric" required>')}${label('gregorian-day', fields.gregorianDay, '<input id="gregorian-day" name="gregorianDay" type="number" min="1" max="31" step="1" value="11" inputmode="numeric" required>')}</fieldset>
+    <fieldset data-hijri-fields hidden><legend>${escapeGrowthHtml(fields.hijriToGregorian)}</legend>${label('hijri-year', fields.hijriYear, '<input id="hijri-year" name="hijriYear" type="number" min="1" max="10000" step="1" value="1445" inputmode="numeric" required>')}${label('hijri-month', fields.hijriMonth, `<select id="hijri-month" name="hijriMonth" required>${fields.hijriMonths.map((month, index) => `<option value="${index + 1}">${escapeGrowthHtml(month)}</option>`).join('')}</select>`)}${label('hijri-day', fields.hijriDay, '<input id="hijri-day" name="hijriDay" type="number" min="1" max="30" step="1" value="1" inputmode="numeric" required>')}</fieldset>
+    <p class="hint">${escapeGrowthHtml(fields.methodNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${button('convert', actions.convert)}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div></section>
   </form>`, copy);
 
   if (toolId === 'weight-loss-calculator') return attachCopy(`<form id="tool-form" novalidate>
