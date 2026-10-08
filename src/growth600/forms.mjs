@@ -54,6 +54,7 @@ export function renderGrowthForm(toolId, copy) {
     'resistor-color-code-calculator': ['mode', 'decodeMode', 'encodeMode', 'bands', 'fourBands', 'fiveBands', 'sixBands', 'resistanceOhms', 'tolerance', 'temperatureCoefficient', 'accuracyNote', 'band1', 'band2', 'band3', 'band4', 'band5', 'band6', 'black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'gray', 'white', 'gold', 'silver', 'none', 'ppm250', 'ppm100', 'ppm50', 'ppm25', 'ppm20', 'ppm15', 'ppm10', 'ppm5', 'ppm1', 'tolerance005', 'tolerance01', 'tolerance025', 'tolerance05', 'tolerance1', 'tolerance2', 'tolerance5', 'tolerance10', 'tolerance20'],
     'acceleration-calculator': ['mode', 'solveAcceleration', 'solveTime', 'solveFinalVelocity', 'solveDisplacement', 'units', 'metric', 'imperial', 'initialVelocity', 'finalVelocity', 'acceleration', 'timeSeconds', 'initialPosition', 'accuracyNote'],
     'force-calculator': ['mode', 'solveForce', 'solveMass', 'solveAcceleration', 'netMode', 'forceUnit', 'massUnit', 'accelerationUnit', 'force', 'mass', 'acceleration', 'forces', 'forcesHint', 'netMass', 'accuracyNote'],
+    'horsepower-calculator': ['mode', 'solvePower', 'solveTorque', 'solveRpm', 'torque', 'torqueUnit', 'rpm', 'power', 'powerUnit', 'accuracyNote'],
     'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
     'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
@@ -144,6 +145,7 @@ export function renderGrowthForm(toolId, copy) {
     'resistor-color-code-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'acceleration-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'force-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'horsepower-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
@@ -1274,6 +1276,19 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'horsepower-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('horsepower-mode', fields.mode, `<select id="horsepower-mode" name="mode"><option value="solve-power">${escapeGrowthHtml(fields.solvePower)}</option><option value="solve-torque">${escapeGrowthHtml(fields.solveTorque)}</option><option value="solve-rpm">${escapeGrowthHtml(fields.solveRpm)}</option></select>`)}
+    ${label('horsepower-torque-unit', fields.torqueUnit, '<select id="horsepower-torque-unit" name="torqueUnit"><option value="Nm">N·m</option><option value="lb·ft">lb·ft</option></select>')}
+    <div data-horsepower-field="torque">${label('horsepower-torque', fields.torque, '<input id="horsepower-torque" name="torque" type="number" step="any" inputmode="decimal" value="100" required>')}</div>
+    <div data-horsepower-field="rpm">${label('horsepower-rpm', fields.rpm, '<input id="horsepower-rpm" name="rpm" type="number" min="0" max="1000000000000" step="any" inputmode="decimal" value="1000" required>')}</div>
+    <div data-horsepower-field="power" hidden>${label('horsepower-power', fields.power, '<input id="horsepower-power" name="power" type="number" step="any" inputmode="decimal" value="10">')}</div>
+    ${label('horsepower-power-unit', fields.powerUnit, '<select id="horsepower-power-unit" name="powerUnit"><option value="hp">hp</option><option value="PS">PS</option><option value="kW">kW</option><option value="W">W</option></select>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'chemical-equation-balancer') return attachCopy(`<form id="tool-form" novalidate>

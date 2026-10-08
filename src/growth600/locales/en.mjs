@@ -54,6 +54,8 @@ import accelerationCalculatorCopies from './acceleration-calculator.mjs';
 import { accelerationCalculatorEnglishCopy } from './acceleration-calculator.en.mjs';
 import forceCalculatorCopies from './force-calculator.mjs';
 import { forceCalculatorEnglishCopy } from './force-calculator.en.mjs';
+import horsepowerCalculatorCopies from './horsepower-calculator.mjs';
+import { horsepowerCalculatorEnglishCopy } from './horsepower-calculator.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
 import imageColorPickerCopies from './image-color-picker-final.mjs';
@@ -594,5 +596,19 @@ const localizedForceCalculatorCopies = Object.fromEntries(Object.entries(forceCa
   return [locale, { ...copy, name, title: `${name.slice(0, 60 - suffix.length)}${suffix}`, fields: { ...copy.fields, ...(fix.accelerationUnit ? { accelerationUnit: fix.accelerationUnit } : {}), ...(fix.acceleration ? { acceleration: fix.acceleration } : {}), ...(fix.netMode ? { netMode: fix.netMode } : {}) }, actions: { ...copy.actions, ...(fix.result ? { result: fix.result } : {}) }, messages: { ...copy.messages, ...(fix.acceleration ? { acceleration: fix.acceleration } : {}) } }];
 }));
 registerGrowthLocaleExtension(source, 'force-calculator', { ...localizedForceCalculatorCopies, en: forceCalculatorEnglishCopy }, 'gravel-calculator');
+const localizedHorsepowerCalculatorCopies = Object.fromEntries(Object.entries(horsepowerCalculatorCopies).map(([language, copy]) => {
+  const spanish = language === 'es' ? {
+    fields: { solveTorque: 'Par a partir de la potencia y las RPM', solveRpm: 'RPM a partir de la potencia y el par', torque: 'Par', torqueUnit: 'Unidad de par', accuracyNote: 'Potencia ideal en el eje: P = par × 2π × RPM ÷ 60. hp mecánico y PS métrico son unidades distintas. No incluye pérdidas de transmisión ni el estado del motor.' },
+    messages: { torque: 'Par', rpm: 'Velocidad del motor', power: 'Potencia' },
+  } : {};
+  if (copy.description.length <= 150) return [language, { ...copy, ...spanish, fields: { ...copy.fields, ...spanish.fields }, messages: { ...copy.messages, ...spanish.messages } }];
+  const punctuation = [...copy.description.slice(0, 150).matchAll(/[.!?。！？؟؛]/gu)];
+  const end = punctuation.at(-1)?.index;
+  const description = end !== undefined && end >= 80
+    ? copy.description.slice(0, end + 1)
+    : `${copy.description.slice(0, 147).replace(/\s+\S*$/u, '')}…`;
+  return [language, { ...copy, ...spanish, fields: { ...copy.fields, ...spanish.fields }, messages: { ...copy.messages, ...spanish.messages }, description }];
+}));
+registerGrowthLocaleExtension(source, 'horsepower-calculator', { ...localizedHorsepowerCalculatorCopies, en: horsepowerCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

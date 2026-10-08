@@ -257,6 +257,11 @@ const copies = {
     messages: { ...messages, force: 'Force', netForce: 'Net force', mass: 'Mass', acceleration: 'Acceleration', diagram: 'Force diagram' },
     fields: { mode: 'Calculation mode', solveForce: 'Solve force', solveMass: 'Solve mass', solveAcceleration: 'Solve acceleration', netMode: 'Add collinear forces', forceUnit: 'Force unit', massUnit: 'Mass unit', accelerationUnit: 'Acceleration unit', force: 'Force', mass: 'Mass', acceleration: 'Acceleration', forces: 'Signed forces', forcesHint: 'Enter 2–5 forces on one line.', netMass: 'Object mass', accuracyNote: 'Ideal one-dimensional mechanics only.' },
   },
+  'horsepower-calculator': {
+    name: 'Horsepower calculator', actions: { ...actions, calculate: 'Calculate', example: 'Try 100 N·m at 1,000 RPM' },
+    messages: { ...messages, torque: 'Torque', rpm: 'Engine speed', power: 'Power', watts: 'Watts', kilowatts: 'Kilowatts', horsepower: 'Mechanical horsepower', metricHorsepower: 'Metric horsepower (PS)' },
+    fields: { mode: 'Calculate', solvePower: 'Power from torque and RPM', solveTorque: 'Torque from power and RPM', solveRpm: 'RPM from power and torque', torque: 'Torque', torqueUnit: 'Torque unit', rpm: 'Engine speed (RPM)', power: 'Power', powerUnit: 'Power unit', accuracyNote: 'Ideal shaft power only.' },
+  },
   'compression-ratio-calculator': {
     name: 'Compression ratio calculator', actions: { ...actions, millimeters: 'Millimeters', inches: 'Inches' },
     messages: { ...messages, ratio: 'Static compression ratio', sweptVolume: 'Swept volume', clearanceVolume: 'Clearance volume', totalDisplacement: 'Total displacement', boreStroke: 'Bore to stroke' },
@@ -425,6 +430,11 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(force, /data-force-net hidden/u);
   assert.match(force, /data-action="example"/u);
   assert.match(force, /data-action="copy"/u);
+  const horsepower = renderGrowthForm('horsepower-calculator', copies['horsepower-calculator']);
+  for (const name of ['mode', 'torqueUnit', 'torque', 'rpm', 'powerUnit', 'power']) assert.match(horsepower, new RegExp(`name="${name}"`, 'u'));
+  assert.match(horsepower, /data-horsepower-field="power" hidden/u);
+  assert.match(horsepower, /data-action="example"/u);
+  assert.match(horsepower, /data-action="copy"/u);
   const compression = renderGrowthForm('compression-ratio-calculator', copies['compression-ratio-calculator']);
   for (const name of ['unit', 'volumeUnit', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders']) assert.match(compression, new RegExp(`name="${name}"`, 'u'));
   assert.match(compression, /min="1" max="16" step="1"/u);
