@@ -45,6 +45,7 @@ import { calculateEquivalentResistance, solveOhmsLaw } from './ohms-law-calculat
 import { balanceChemicalEquation } from './chemical-equation-balancer/logic.mjs';
 import { calculateGearRatio } from './gear-ratio-calculator/logic.mjs';
 import { calculateDensity, parseDensityComponents } from './density-calculator/logic.mjs';
+import { calculateEngineCompression, compressionRatioFromVolumes } from './compression-ratio-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -159,6 +160,30 @@ test('density calculator solves each missing value, converts units and estimates
   assert.throws(() => calculateDensity({ mode: 'unknown' }), /Choose solve or mix/u);
   assert.throws(() => calculateDensity({ mode: 'mix', components: '2,1\nnot-a-row' }), /Component 2/u);
   assert.throws(() => calculateDensity({ mode: 'mix', components: Array.from({ length: 13 }, () => '1,1').join('\n') }), /no more than 12/u);
+});
+
+test('compression ratio calculator combines bore, stroke, chamber, gasket, deck and piston crown volumes', () => {
+  assert.equal(compressionRatioFromVolumes(9, 1), 10);
+  const swept = (Math.PI * 86 ** 2 * 86) / 4_000;
+  const metric = calculateEngineCompression({ bore: 86, stroke: 86, chamberVolume: swept / 9, cylinders: 4 });
+  assert.ok(Math.abs(metric.compressionRatio - 10) < 1e-12);
+  assert.equal(metric.cylinderCount, 4);
+  assert.ok(Math.abs(metric.totalDisplacementCc - swept * 4) < 1e-10);
+
+  const imperial = calculateEngineCompression({ unit: 'in', volumeUnit: 'in3', bore: 86 / 25.4, stroke: 86 / 25.4, chamberVolume: (swept / 9) / 16.387064, cylinders: 4 });
+  assert.ok(Math.abs(imperial.compressionRatio - metric.compressionRatio) < 1e-10);
+
+  const adjustments = calculateEngineCompression({ bore: 86, stroke: 86, chamberVolume: 50, gasketBore: 87, gasketThickness: 0.8, deckClearance: 0.1, pistonCrownVolume: 2, cylinders: 4 });
+  assert.ok(adjustments.gasketVolumeCc > 0);
+  assert.ok(adjustments.deckVolumeCc > 0);
+  assert.ok(adjustments.clearanceVolumeCc > 52);
+  assert.throws(() => calculateEngineCompression({ unit: 'feet', bore: 86, stroke: 86, chamberVolume: 50 }), /millimeters or inches/u);
+  assert.throws(() => calculateEngineCompression({ volumeUnit: 'liters', bore: 86, stroke: 86, chamberVolume: 50 }), /cubic centimeters or cubic inches/u);
+  assert.throws(() => calculateEngineCompression({ bore: 0, stroke: 86, chamberVolume: 50 }), /outside the supported range/u);
+  assert.throws(() => calculateEngineCompression({ bore: 86, stroke: 86, chamberVolume: 0 }), /greater than zero/u);
+  assert.throws(() => calculateEngineCompression({ bore: 86, stroke: 86, chamberVolume: 20, pistonCrownVolume: -30 }), /Clearance volume/u);
+  assert.throws(() => calculateEngineCompression({ bore: 86, stroke: 86, chamberVolume: 50, gasketThickness: -1 }), /outside the supported range/u);
+  assert.throws(() => calculateEngineCompression({ bore: 86, stroke: 86, chamberVolume: 50, cylinders: 17 }), /whole number/u);
 });
 
 test('wallpaper calculator counts pattern-aligned drops, openings and allowance', () => {

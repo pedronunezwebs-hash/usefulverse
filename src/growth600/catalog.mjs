@@ -324,6 +324,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/density-calculator/logic.mjs',
   },
   {
+    id: 'compression-ratio-calculator',
+    category: 'automotive',
+    type: 'calculator',
+    primaryIntent: 'compression ratio calculator',
+    secondaryIntents: ['engine compression calculator', 'engine compression ratio calculator', 'static compression ratio calculator'],
+    functions: ['calculate swept cylinder volume from bore and stroke in metric or imperial dimensions', 'combine chamber, head-gasket, deck and piston crown volumes to estimate clearance volume and static compression ratio', 'show per-cylinder and total engine displacement for one to sixteen cylinders, with explicit piston dish/dome sign convention'],
+    acceptance: 'A cylinder with 9 cc swept volume and 1 cc clearance volume has a 10:1 static compression ratio; bore 86 mm and stroke 86 mm with chamber volume set equal to one ninth of the swept volume gives 10:1 within rounding.',
+    boundary: 'Static geometric estimate only. Does not model dynamic compression, cam timing, boost, trapped volume, fuel, detonation, thermal expansion, machining tolerances, gasket crush, clearances under operation, component strength or engine safety. Piston crown volume is positive for a dish and negative for a dome. Verify measurements and consult engine specifications or a qualified builder. Inputs stay in this browser.',
+    relatedExistingIds: ['volume-calculator'],
+    logicModule: './tools/compression-ratio-calculator/logic.mjs',
+  },
+  {
     id: 'miter-angle-calculator',
     category: 'home-materials',
     type: 'calculator',

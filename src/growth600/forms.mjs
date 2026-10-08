@@ -39,6 +39,7 @@ export function renderGrowthForm(toolId, copy) {
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
     'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
     'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
+    'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
     'auto-loan-refinance-calculator': ['balance', 'currentApr', 'currentMonths', 'newApr', 'newMonths', 'fees', 'feeTreatment'],
     'secret-santa-generator': ['names', 'exclusions'],
     'tire-size-calculator': ['originalSize', 'replacementSize', 'indicatedSpeed', 'speedUnit', 'fitmentNote'],
@@ -100,6 +101,7 @@ export function renderGrowthForm(toolId, copy) {
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
     'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'auto-loan-refinance-calculator': ['calculate', 'reset', 'copy', 'result'],
     'secret-santa-generator': ['generate', 'reset', 'copy', 'download', 'result', 'reveal', 'next', 'privacyNote'],
     'tire-size-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kmh', 'mph'],
@@ -928,6 +930,23 @@ export function renderGrowthForm(toolId, copy) {
       ${label('density-components', fields.components, '<textarea id="density-components" name="components" rows="5" maxlength="1200" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>')}
       <p class="hint">${escapeGrowthHtml(fields.componentsHint)}</p>
     </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'compression-ratio-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('compression-unit', fields.unit, `<select id="compression-unit" name="unit"><option value="mm">${escapeGrowthHtml(fields.millimeters)}</option><option value="in">${escapeGrowthHtml(fields.inches)}</option></select>`)}
+    ${label('compression-volume-unit', fields.volumeUnit, `<select id="compression-volume-unit" name="volumeUnit"><option value="cc">${escapeGrowthHtml(fields.cubicCentimeters)}</option><option value="in3">${escapeGrowthHtml(fields.cubicInches)}</option></select>`)}
+    ${label('compression-bore', fields.bore, '<input id="compression-bore" name="bore" type="number" min="0.000001" max="10000" step="any" inputmode="decimal" required>')}
+    ${label('compression-stroke', fields.stroke, '<input id="compression-stroke" name="stroke" type="number" min="0.000001" max="10000" step="any" inputmode="decimal" required>')}
+    ${label('compression-chamber', fields.chamberVolume, '<input id="compression-chamber" name="chamberVolume" type="number" min="0.000001" max="1000000000" step="any" inputmode="decimal" required>')}
+    ${label('compression-gasket-bore', fields.gasketBore, '<input id="compression-gasket-bore" name="gasketBore" type="number" min="0.000001" max="10000" step="any" inputmode="decimal">')}
+    ${label('compression-gasket-thickness', fields.gasketThickness, '<input id="compression-gasket-thickness" name="gasketThickness" type="number" min="0" max="10000" step="any" inputmode="decimal">')}
+    ${label('compression-deck-clearance', fields.deckClearance, '<input id="compression-deck-clearance" name="deckClearance" type="number" min="-10000" max="10000" step="any" inputmode="decimal">')}
+    ${label('compression-piston-crown', fields.pistonCrownVolume, '<input id="compression-piston-crown" name="pistonCrownVolume" type="number" min="-1000000000" max="1000000000" step="any" inputmode="decimal">')}
+    ${label('compression-cylinders', fields.cylinders, '<input id="compression-cylinders" name="cylinders" type="number" min="1" max="16" step="1" value="1" inputmode="numeric">')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>

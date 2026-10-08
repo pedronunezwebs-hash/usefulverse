@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 58/323; **265 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 59/323; **264 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -687,3 +687,14 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] X/E navegador — falta interacción visual real en Chrome de la ruta generada, incluyendo la edición de campos y el cambio a modo de mezcla. No se declara pasada.
 - [ ] L — copy completo en inglés; los otros 35 idiomas están marcados `pending-tool-specific-translation`, bloqueados por el gate de producción.
 - [ ] P/S — no merge ni deploy; sitemap de producción y paneles de buscadores intactos. No se ejecutó PageSpeed/Lighthouse. Total de rama: 58 candidatas implementadas, 265 pendientes.
+
+## Continuación · Compression Ratio Calculator (#131) · 2026-10-08
+
+- [x] C/F — candidata #59/323 del plan; `compression ratio calculator`, distinta de la calculadora de volumen geométrico. La demanda ya guardada en DataForSEO indica 6.600 búsquedas/mes US/en, KD 23; CPC 0,91 USD (no CPM); `engine compression calculator` 720/mes. Sin consultas ni gasto adicional.
+- [x] E/X — calcula barrido desde bore × stroke, clearance por cámara/junta/deck/corona de pistón, relación estática, volumen total de 1–16 cilindros y relación bore:stroke. Unidades métricas/imperiales equivalentes; dome negativo y dish positivo. Valida holgura y límites; no modela compresión dinámica ni detonación.
+- [x] B/L fuente — formulario con ejemplo 10:1, reinicio/copia, unidades, FAQ y advertencia de medición/seguridad. Cálculo local; sin API ni dependencias de ejecución.
+- [x] E — suite focal de catálogo/formulario/localización/render/lógica: **176/176 aprobadas**; incluye equivalencia mm↔in, cc↔in³, aportaciones de junta/deck/corona y errores de holgura/cantidad de cilindros.
+- [x] E build/bundle — builder y bundle tests: **3/3 aprobados**; controlador minificado **4.997 bytes** (<24 KiB).
+- [ ] X/E navegador — falta interacción visual con ruta generada, incluido cambiar unidades y comparar entradas equivalentes. No se declara comprobada.
+- [ ] L — inglés fuente completo; los otros 35 locales están marcados `pending-tool-specific-translation` y no pasan el gate de publicación.
+- [ ] P/S — no merge/deploy; sitemap productivo y paneles de buscadores no cambiaron. No se ejecutó PageSpeed/Lighthouse. Total de rama: 59 candidatas implementadas, 264 pendientes.

@@ -1105,14 +1105,16 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [ ] **C/F/E/X/L/B/P/S completos — `compression-ratio-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/compression-ratio-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `compression ratio calculator` — 6.600 búsquedas/mes US/en, KD 23; nivel B. CPC 0.91 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Diámetro, carrera, cámara, junta y relación volumétrica
-- **Prueba de aceptación específica:** Volumen barrido9 y cámara1 da10:1
+- **Función mínima y ampliaciones útiles:** Calcular volumen barrido por cilindro desde diámetro y carrera; sumar volumen de cámara, junta comprimida, altura de deck con signo y cazoleta/cúpula del pistón para obtener volumen de holgura y relación estática. Unidades mm/in y cc/in³, cantidad de cilindros (1–16), desplazamiento total y relación diámetro/carrera.
+- **Prueba de aceptación específica:** 9 cc barridos + 1 cc de holgura → 10:1. Inputs equivalentes convertidos entre mm/cc e in/in³ producen la misma relación. Validar cúpula que reduzca holgura a cero/negativa, valores no finitos, unidad desconocida y límites de cilindros.
 - **Frontera con otras herramientas:** volume-calculator: motor y varios volúmenes. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `engine compression calculator` — 720/mes US/en; KD 7.
   - `compression ratio calculator free online`; `compression ratio calculator with example`; `compression ratio calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+
+- **Estado de implementación (2026-10-08):** motor de geometría local, formulario, controlador y copy completo en inglés implementados como candidata #59/323. Pruebas focales 176/176; builder/bundler 3/3; bundle 4.997 B. Las 35 traducciones específicas, la prueba visual en navegador y la publicación siguen pendientes; el release gate no permite sacarla aún.
 
 ### 138 · Kinetic Energy Calculator
 

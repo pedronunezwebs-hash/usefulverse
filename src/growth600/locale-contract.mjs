@@ -35,6 +35,7 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   'carpet-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'floorArea', 'pileDirection', 'cuts', 'seams', 'cutLength', 'orderLength', 'purchasedArea', 'alternative'],
   'aquarium-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'tankVolume', 'substrateDisplacement', 'airSpace', 'waterVolume', 'waterMassKg', 'waterMassLb'],
   'density-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'mass', 'volume', 'density', 'densityMetric', 'densityImperial', 'componentCount'],
+  'compression-ratio-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'ratio', 'sweptVolume', 'clearanceVolume', 'totalDisplacement', 'boreStroke'],
 });
 export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'image-color-picker': ['imageFile', 'accuracyNote', 'previewHint', 'zoom', 'currentColor', 'paletteLabel', 'relatedSharpener', 'relatedRedactor'],
@@ -71,6 +72,7 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'carpet-calculator': ['unit', 'roomLength', 'roomWidth', 'rollWidth', 'rooms', 'pileDirection', 'wastePercent', 'accuracyNote'],
   'aquarium-calculator': ['length', 'width', 'height', 'dimensionUnit', 'substrateDepth', 'substrateSolidPercent', 'airGap', 'accuracyNote'],
   'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
+  'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
 });
 export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   'image-color-picker': ['load', 'addSample', 'copyColor', 'copyPalette', 'remove', 'clear', 'reset'],
