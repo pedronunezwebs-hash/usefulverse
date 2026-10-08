@@ -57,6 +57,7 @@ export function renderGrowthForm(toolId, copy) {
     'horsepower-calculator': ['mode', 'solvePower', 'solveTorque', 'solveRpm', 'torque', 'torqueUnit', 'rpm', 'power', 'powerUnit', 'accuracyNote'],
     'rtf-converter': ['file', 'accuracyNote', 'limitNote', 'output'],
     'csv-to-pdf': ['file', 'separator', 'encoding', 'hasHeader', 'pageSize', 'orientation', 'margin', 'accuracyNote', 'limitNote', 'resultCount', 'tableLabel'],
+    'round-robin-tournament-generator': ['participants', 'participantsHint', 'doubleRound', 'shuffle', 'scoringNote', 'limitNote', 'standingsLabel', 'rank', 'team', 'played', 'wins', 'draws', 'losses', 'goalsFor', 'goalsAgainst', 'goalDifference', 'points', 'round', 'leg', 'home', 'away', 'bye', 'homeScore', 'awayScore', 'fixtureTableLabel'],
     'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
     'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
@@ -150,6 +151,7 @@ export function renderGrowthForm(toolId, copy) {
     'horsepower-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'rtf-converter': ['convert', 'reset', 'copy', 'download', 'print', 'result'],
     'csv-to-pdf': ['preview', 'reset', 'example', 'print', 'result'],
+    'round-robin-tournament-generator': ['generate', 'reset', 'example', 'downloadCsv', 'print', 'result'],
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
@@ -1323,6 +1325,21 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${submit('preview')}${button('example', actions.example, 'secondary')}${button('reset', actions.reset, 'secondary')}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><p data-csv-summary></p><div class="table-scroll"><table data-csv-preview><caption>${escapeGrowthHtml(fields.tableLabel)}</caption><thead></thead><tbody></tbody></table></div><p data-csv-preview-note></p><div class="actions">${button('print', actions.print, 'secondary')}</div></section>
+  </form>`, copy);
+
+  if (toolId === 'round-robin-tournament-generator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('round-robin-participants', fields.participants, '<textarea id="round-robin-participants" name="participants" rows="8" maxlength="1600" required></textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.participantsHint)}</p>
+    <label class="check-row"><input type="checkbox" name="doubleRound"> ${escapeGrowthHtml(fields.doubleRound)}</label>
+    <label class="check-row"><input type="checkbox" name="shuffle"> ${escapeGrowthHtml(fields.shuffle)}</label>
+    <p class="hint">${escapeGrowthHtml(fields.scoringNote)}</p><p class="hint">${escapeGrowthHtml(fields.limitNote)}</p>
+    <div class="actions">${submit('generate')}${button('example', actions.example, 'secondary')}${button('reset', actions.reset, 'secondary')}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><p data-round-robin-summary></p>
+      <h3>${escapeGrowthHtml(fields.standingsLabel)}</h3><div class="table-scroll"><table data-round-robin-standings><thead></thead><tbody></tbody></table></div>
+      <div data-round-robin-rounds></div>
+      <div class="actions">${button('downloadCsv', actions.downloadCsv, 'secondary')}${button('print', actions.print, 'secondary')}</div>
+    </section>
   </form>`, copy);
 
   if (toolId === 'chemical-equation-balancer') return attachCopy(`<form id="tool-form" novalidate>

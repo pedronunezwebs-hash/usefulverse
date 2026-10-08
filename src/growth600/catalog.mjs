@@ -1079,6 +1079,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['spreadsheet-converter', 'pdf-document-converter'],
     logicModule: './tools/csv-to-pdf/logic.mjs',
   },
+  {
+    id: 'round-robin-tournament-generator',
+    category: 'games',
+    type: 'schedule-generator',
+    primaryIntent: 'round robin tournament generator',
+    secondaryIntents: ['round robin schedule generator', 'round robin league schedule', 'double round robin schedule generator'],
+    functions: ['create a single- or double-leg round-robin schedule for 2–32 unique teams or players', 'shuffle the draw optionally and assign one automatic bye per entrant in each leg when the group size is odd', 'enter match scores and calculate a live table using 3/1/0 points with goal-difference, goals-for and wins tie-breaks', 'download fixtures and results as CSV or print/save them as PDF without sending participant data to a service'],
+    acceptance: 'Four teams produce six unique matches in three rounds for one leg and twelve matches in six rounds for two legs; every return match reverses home and away. Three teams produce one match and one bye each round, with each team receiving exactly one bye per leg.',
+    boundary: 'League schedule only, not an elimination bracket, Swiss pairing system, referee assignment, venue booking, live synchronization or official competition rule engine. Standard standings award 3 points for a win, 1 for a draw and 0 for a loss; ties use goal difference, goals scored, wins and name. Maximum 32 entrants (992 fixtures for a double round robin). All data stays in this browser unless the user downloads or prints it.',
+    relatedExistingIds: ['tournament-bracket-generator', 'random-team-generator'],
+    logicModule: './tools/round-robin-tournament-generator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

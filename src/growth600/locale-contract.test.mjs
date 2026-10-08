@@ -606,6 +606,21 @@ test('CSV to PDF has machine-accepted complete copy in all 36 locales and stays 
   }
 });
 
+test('Round Robin has machine-accepted complete copy in all 36 locales and stays within SEO metadata budgets', () => {
+  for (const [locale, copy] of Object.entries(localizedCopies)) {
+    const league = copy['round-robin-tournament-generator'];
+    assert.equal(league.copyLanguage, locale);
+    assert.equal(league.localizationStatus, locale === 'en' ? 'approved' : 'machine-accepted');
+    if (locale !== 'en') assert.equal(league.localizationAcceptedBy, 'site-owner');
+    assert.match(league.title, /\| UsefulVerse$/u);
+    assert.ok(league.title.length <= 60, `${locale} title exceeds 60 characters`);
+    assert.ok(league.description.length <= 160, `${locale} description exceeds 160 characters`);
+    for (const key of ['participants', 'participantsHint', 'doubleRound', 'shuffle', 'scoringNote', 'limitNote', 'standingsLabel', 'rank', 'team', 'played', 'wins', 'draws', 'losses', 'goalsFor', 'goalsAgainst', 'goalDifference', 'points', 'round', 'leg', 'home', 'away', 'bye', 'homeScore', 'awayScore', 'fixtureTableLabel']) assert.ok(league.fields[key]?.trim(), `${locale} missing ${key}`);
+    for (const key of ['generate', 'reset', 'example', 'downloadCsv', 'print', 'result']) assert.ok(league.actions[key]?.trim(), `${locale} missing ${key}`);
+    assert.equal(league.additionalFaqs.length, 3);
+  }
+});
+
 test('the first Google Translate Korean draft covers every copy key and preserves required placeholders', () => {
   assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'ko' }], { ko: koreanGrowthCopy }), true);
   assert.ok(Object.values(koreanGrowthCopy).every((copy) => copy.copyLanguage === 'ko'));

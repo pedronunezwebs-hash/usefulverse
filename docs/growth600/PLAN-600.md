@@ -3725,8 +3725,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 184 · Round Robin Tournament Generator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `round-robin-tournament-generator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/round-robin-tournament-generator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [ ] **P/S pendientes; C/F/E/X/L/B implementados localmente — `round-robin-tournament-generator`**
+- **Destino propuesto:** `https://tools.usefulverse.com/tools/round-robin-tournament-generator/`; otras 35 versiones con los prefijos del anexo. No declarar publicada hasta confirmar workflows, rutas y sitemap en producción.
 - **Demanda:** `round robin tournament generator` — 2.900 búsquedas/mes US/en, KD 8; nivel B. CPC 2.74 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Calendario todos contra todos, descansos, ida/vuelta y clasificación local; no usar cuadro eliminatorio como sustituto.
 - **Prueba de aceptación específica:** 4equiposgeneran6partidosunavuelta
@@ -3736,6 +3736,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `round robin schedule generator` — 480/mes US/en; KD 15.
   - `round robin tournament generator free online`; `round robin tournament generator with example`; `round robin tournament generator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Checkpoint local 2026-10-09:** círculo Berger, 2–32 participantes, descansos, ida/vuelta con localía revertida, sorteo opcional, puntuación y clasificación en vivo, CSV seguro e impresión local; 36 copias estáticas. 8 pruebas focalizadas; 1.313/1.313 regresiones, gate de traducciones aprobado, build del hub 3.312 páginas. Chrome EN/AR confirma cinco rondas/diez partidos para cinco participantes, tabla reactiva y consola limpia; campos de resultado accesibles con `id` y `name`. P/S todavía pendiente; ver `PROGRESS.md`.
 
 ### 187 · Project Risk Matrix
 

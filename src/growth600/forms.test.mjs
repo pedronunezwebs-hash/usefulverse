@@ -270,6 +270,10 @@ const copies = {
     name: 'CSV to PDF', actions: { ...actions, preview: 'Preview table', example: 'Load example', print: 'Print or save as PDF' }, messages: { ...messages },
     fields: { file: 'Choose CSV file', separator: 'Separator', auto: 'Detect', comma: 'Comma', semicolon: 'Semicolon', tab: 'Tab', pipe: 'Pipe', encoding: 'Encoding', hasHeader: 'First row is headings', pageSize: 'Paper', orientation: 'Orientation', landscape: 'Landscape', portrait: 'Portrait', margin: 'Margins', narrow: 'Narrow', normal: 'Normal', accuracyNote: 'Plain data only.', limitNote: '5 MiB local limit.', resultCount: 'rows', columnCount: 'columns', previewLimit: 'First', tableLabel: 'CSV preview' },
   },
+  'round-robin-tournament-generator': {
+    name: 'Round Robin Tournament Generator', actions: { ...actions, generate: 'Create schedule', example: 'Load example', downloadCsv: 'Download CSV', print: 'Print or save as PDF' }, messages: { ...messages },
+    fields: { participants: 'Teams or players, one per line', participantsHint: '2–32 unique names.', doubleRound: 'Create a return leg', shuffle: 'Shuffle the draw', scoringNote: '3 points for a win, 1 for a draw.', limitNote: '32 participant limit.', standingsLabel: 'Standings', rank: 'Rank', team: 'Team', played: 'Played', wins: 'Wins', draws: 'Draws', losses: 'Losses', goalsFor: 'For', goalsAgainst: 'Against', goalDifference: 'Goal difference', points: 'Points', round: 'Round', leg: 'Leg', home: 'Home', away: 'Away', bye: 'Bye', homeScore: 'Home score', awayScore: 'Away score', fixtureTableLabel: 'Fixtures' },
+  },
   'compression-ratio-calculator': {
     name: 'Compression ratio calculator', actions: { ...actions, millimeters: 'Millimeters', inches: 'Inches' },
     messages: { ...messages, ratio: 'Static compression ratio', sweptVolume: 'Swept volume', clearanceVolume: 'Clearance volume', totalDisplacement: 'Total displacement', boreStroke: 'Bore to stroke' },
@@ -876,6 +880,19 @@ test('CSV-to-PDF form labels local file, separator, encoding and print settings'
   assert.match(html, /name="hasHeader" checked/u);
   assert.match(html, /data-csv-preview/u);
   for (const action of ['preview', 'example', 'reset', 'print']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
+  assert.match(html, /role="status" aria-live="polite"/u);
+  assert.doesNotMatch(html, /<form[^>]+action=/u);
+});
+
+test('round-robin form exposes bounded participant input, league options, accessible standings and exports', () => {
+  const html = renderGrowthForm('round-robin-tournament-generator', copies['round-robin-tournament-generator']);
+  assert.match(html, /name="participants" rows="8" maxlength="1600" required/u);
+  assert.match(html, /name="doubleRound"/u);
+  assert.match(html, /name="shuffle"/u);
+  assert.match(html, /data-round-robin-standings/u);
+  assert.match(html, /data-round-robin-rounds/u);
+  assert.match(html, /<table data-round-robin-standings><thead><\/thead><tbody><\/tbody><\/table>/u);
+  for (const action of ['generate', 'example', 'reset', 'downloadCsv', 'print']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
   assert.match(html, /role="status" aria-live="polite"/u);
   assert.doesNotMatch(html, /<form[^>]+action=/u);
 });
