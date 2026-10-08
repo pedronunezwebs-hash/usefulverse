@@ -40,7 +40,7 @@ import persianGrowthCopy from './locales/fa.mjs';
 import amharicGrowthCopy from './locales/am.mjs';
 import gujaratiGrowthCopy from './locales/gu.mjs';
 
-const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'kinetic-energy-calculator', 'resistor-color-code-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator'].includes(id));
+const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'kinetic-energy-calculator', 'resistor-color-code-calculator', 'acceleration-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator'].includes(id));
 const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
   key,
   (await import(`./locales/${key}.mjs`)).default,
@@ -1154,6 +1154,13 @@ test('kinetic energy calculator has complete English copy and localized copy acr
 
 test('resistor color code calculator has complete English copy and localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'resistor-color-code-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('acceleration calculator has complete English copy and localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'acceleration-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
   assertMachineAcceptedGrowthToolInAllLocales(tool);

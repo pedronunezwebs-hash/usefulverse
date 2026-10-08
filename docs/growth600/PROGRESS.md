@@ -2,6 +2,16 @@
 
 Última verificación: 2026-10-08. Registro persistente de esta rama; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
+## Implementación en curso · Acceleration Calculator (#178) · 2026-10-08
+
+- [x] C/F/E — contrato sin duplicación: cuatro incógnitas de cinemática 1D con aceleración constante; unidades métricas/imperiales; alcance y supuestos visibles. No se alteró ninguna herramienta existente.
+- [x] L — 36 idiomas como textos estáticos; textos automáticos aceptados según el flujo acordado. Reparados marcadores filtrados en Marathi y términos físicos árabes obvios; el resto no se presenta como traducción nativa revisada.
+- [x] B — formulario accesible con modos dinámicos, campos requeridos coherentes, ejemplo, reset, copia y resultados anunciados.
+- [x] E — focalizadas 161/161; luego cambios solo de copy (labels AR/MR), contrato de localización 117/117. Regresión total 1.269/1.269; `npm run check` pasó: 10.260 URLs protegidas sin cambios.
+- [x] X/B/S — build aislado: 3.132 rutas únicas (86 herramientas × 36 locales + 36 portadas), 3.269 archivos; prueba real de navegador EN/AR, aceptación 4 m/s² y 50 m, modo imperial 2 ft/s² y 25 ft, RTL móvil 390 px sin overflow ni errores/conexiones externas; etiquetas Marathi inspeccionadas.
+- [ ] P — PR/deploy todavía no ejecutados. Tras CI, merge y deploy se debe verificar la ruta pública, sitemap (esperado 3.132 `<loc>`), y actualizar este registro. Google/Bing/Yandex ya recibieron anteriormente la URL del sitemap; una versión XML nueva se publica con el deploy, sin prometer indexación. Naver sigue pendiente de comprobar en su panel.
+- [ ] Próxima candidata después de cerrar #178: #179 `force-calculator`; mantener #163 `half-life-calculator` como duplicado/no recrear.
+
 ## Punto de reanudación vigente · 2026-10-08
 
 Este bloque prevalece sobre notas históricas de etapas anteriores que describen despliegues o traducciones todavía pendientes en ese momento.
@@ -9,20 +19,22 @@ Este bloque prevalece sobre notas históricas de etapas anteriores que describen
 - [x] Ficha #138/323 `kinetic-energy-calculator`: implementada, probada, integrada y publicada; 277 herramientas protegidas intactas.
 - [x] Gates C/F/E/X/L/B/P/S de #138: 1.262 pruebas completas; CI 37781969260 y `npm run check` correctos. Probados cálculo directo/inverso, copia, RTL árabe, CJK japonés, viewport 390 px y consola limpia; build con 84 herramientas × 36 idiomas + 36 portadas.
 - [x] Producción #138: merge `1d14d207cad7114a95714e3a8db8bda993616722`; Pages deployment `ce2460ae-7ff6-411e-8469-d33d7daa8014`. EN/ja/ar y sitemap respondieron HTTP 200; `https://tools.usefulverse.com/sitemap.xml` contiene 3.060 `<loc>` únicas (84 × 36 + 36).
-- [ ] Pendiente de registro externo tras #138: actualizar el estado de envío/lectura en los paneles de buscadores accesibles; la URL del sitemap no cambió. No afirmar indexación sin evidencia del panel.
-- [x] Implementación local de #158 `resistor-color-code-calculator`: 1.264/1.264 pruebas; `npm run check`; build aislado de 3.096 páginas (85 herramientas × 36 idiomas + 36 portadas), sitemap local con 3.096 `<loc>` únicos. Chrome comprobó 4 bandas = 1 kΩ ±5%, 6 bandas = 1 kΩ ±1% y 50 ppm/K, codificación inversa, copiar, español, árabe RTL, 390 px sin overflow y consola sin errores. La traducción es automática; se corrigió una frase gujarati ambigua. Sin PageSpeed.
-- [ ] Gates P/S de #158: todavía sin integrar, deploy público ni verificación pública de URL/sitemap; paneles de buscadores se actualizan después. Hasta esos pasos no declarar publicada la herramienta.
-- [ ] Próximo paso: revisar diff/CI, integrar #158, publicar en `usefulverse-tools`, comprobar URLs y sitemap públicos con 3.096 entradas y luego continuar la siguiente ficha sin tocar las 277 herramientas originales.
+- [x] #158 `resistor-color-code-calculator`: 1.264/1.264 pruebas; CI 37785744156; `npm run check`; build aislado de 3.096 URLs únicas (85 herramientas × 36 idiomas + 36 portadas). Verificados decodificación 4/6 bandas, modo inverso, copiar, ES/AR RTL, 390 px sin overflow y consola limpia. Google Translate estático (no revisión nativa); corregida una frase gujarati ambigua. Sin PageSpeed.
+- [x] Producción #158: PR #41 fusionado en `40e466c3356c1374616fb9af09d762e065aec180`; despliegue `78a117d0-1b8e-4e90-bb78-4a4f940fc755`. EN/ES/AR y sitemap públicos HTTP 200; sitemap contiene ahora 3.096 `<loc>` únicas e incluye esta herramienta en 36 idiomas.
+- [x] Google/Bing/Yandex ya recibieron la misma URL canónica del sitemap en la tanda anterior; el XML público se actualizó al desplegar la herramienta. El reenvío no demuestra rastreo ni indexación. Los estados previos del panel continúan siendo los últimos observados.
+- [ ] Naver Search Advisor: confirmar propiedad/envío del sitemap al recuperar acceso al panel; no afirmar que se envió.
+- [~] Ficha #163 `half-life-calculator`: no crear; el catálogo ya contiene herramienta, lógica y traducciones equivalentes. Se respeta la regla anti-duplicación.
+- [ ] Próxima candidata única: #178 `acceleration-calculator`; releer frontera y aceptación de `PLAN-600.md`, conservar las 277 herramientas protegidas y las herramientas existentes sin cambios.
 
 - [x] Publicación de la tanda previa: PR #39 integrado en `main` mediante merge `ded42fed1b0b6893418f5442116bc6017022f72d`; el workflow principal/hub terminó correctamente.
 - [x] Traducción: las 84 herramientas publicadas antes de #158 están en los 36 idiomas activos. Las nuevas herramientas #138 y #158 tienen versiones estáticas en los 36 idiomas; las cadenas de #158 son traducción automática comprensible y no revisión nativa. No regenerar idiomas de herramientas ya cerradas.
-- [x] Sitemap público del hub actualizado: `https://tools.usefulverse.com/sitemap.xml` respondió HTTP 200 con 3.060 URLs únicas (84 herramientas × 36 idiomas + 36 portadas). El sitemap del sitio principal conserva 10.260 URLs. Son hosts/sitemaps distintos.
-- [x] Google Search Console: el sitemap del hub se reenvió el 2026-10-08 y la interfaz confirmó el envío correcto. La última lectura que mostraba el panel era del 2026-10-07 y 216 páginas descubiertas; eso es el dato anterior a la nueva lectura, no prueba de rastreo o indexación de las 3.024 URLs.
+- [x] Sitemap público del hub: `https://tools.usefulverse.com/sitemap.xml` respondió HTTP 200 con 3.096 URLs únicas (85 herramientas × 36 idiomas + 36 portadas). El sitemap del sitio principal conserva 10.260 URLs; son hosts/sitemaps distintos.
+- [x] Google Search Console: el sitemap del hub se envió el 2026-10-08 y la interfaz confirmó el envío. El panel había mostrado 216 páginas descubiertas antes del último despliegue; no es la lectura actual ni prueba de rastreo/indexación de las 3.096 URLs.
 - [x] Bing Webmaster: enviado `https://tools.usefulverse.com/sitemap.xml` desde la propiedad principal; el panel lo muestra con fecha 2026-10-08 y estado `Processing`, sin error. Su propiedad `tools.usefulverse.com` respondió “User is unauthorized to access the site”; por ello no asumir que las métricas estén asociadas a una propiedad propia del subdominio.
 - [x] Yandex Webmaster: propiedad separada de `https://tools.usefulverse.com` verificada como Owner por DNS TXT. Se añadió `https://tools.usefulverse.com/sitemap.xml`; Yandex confirmó que está en la cola de procesamiento (puede tardar 1–2 semanas). El TXT de verificación se conserva en Cloudflare DNS.
 - [ ] Naver Search Advisor: la pestaña del panel llegó a inicio de sesión. Falta que el propietario inicie sesión, confirmar/añadir la propiedad del subdominio, y enviar allí el sitemap. No se cambió configuración ni se envió nada a Naver.
 - [ ] Tras procesarse Google/Bing/Yandex/Naver, registrar fechas/estados visibles y distinguir “enviado”, “procesado”, “URLs descubiertas” e “indexado”. No afirmar indexación por el mero envío. Los sitemaps y `robots.txt` son públicos y favorecen el descubrimiento aunque un panel no esté accesible.
-- [ ] Próxima implementación: continuar en la siguiente ficha única sin completar; no reescribir ni alterar las 277 herramientas protegidas ni duplicar las 84 herramientas del hub ya publicadas. Confirmar catálogo y plan actuales en `main` al reanudar.
+- [ ] Próxima implementación: #178 `acceleration-calculator`; no tocar las 277 protegidas ni recrear `half-life-calculator`. Confirmar catálogo y plan actuales en `main` al reanudar.
 
 ### Método breve de traducción que se debe conservar
 

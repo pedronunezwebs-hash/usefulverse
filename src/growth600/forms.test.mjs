@@ -247,6 +247,11 @@ const copies = {
     messages: { ...messages, resistance: 'Resistance', requestedResistance: 'Requested resistance', nominalResistance: 'Nearest nominal value', tolerance: 'Tolerance', bands: 'Band order', temperatureCoefficient: 'Temperature coefficient', rounding: 'Encoding note', nearestNominal: 'Rounded to nearest nominal.' },
     fields: { mode: 'Choose a task', decodeMode: 'Decode bands', encodeMode: 'Find bands from resistance', bands: 'Band count', fourBands: '4 bands', fiveBands: '5 bands', sixBands: '6 bands', resistanceOhms: 'Resistance in ohms', tolerance: 'Tolerance', temperatureCoefficient: 'Temperature coefficient', accuracyNote: 'Standard 4–6 band codes.', band1: 'Band 1', band2: 'Band 2', band3: 'Band 3', band4: 'Band 4', band5: 'Band 5', band6: 'Band 6', black: 'Black', brown: 'Brown', red: 'Red', orange: 'Orange', yellow: 'Yellow', green: 'Green', blue: 'Blue', violet: 'Violet', gray: 'Gray', white: 'White', gold: 'Gold', silver: 'Silver', none: 'None', ppm250: '250 ppm/K', ppm100: '100 ppm/K', ppm50: '50 ppm/K', ppm25: '25 ppm/K', ppm20: '20 ppm/K', ppm15: '15 ppm/K', ppm10: '10 ppm/K', ppm5: '5 ppm/K', ppm1: '1 ppm/K', tolerance005: '0.05%', tolerance01: '0.1%', tolerance025: '0.25%', tolerance05: '0.5%', tolerance1: '1%', tolerance2: '2%', tolerance5: '5%', tolerance10: '10%', tolerance20: '20%' },
   },
+  'acceleration-calculator': {
+    name: 'Acceleration calculator', actions: { ...actions, calculate: 'Calculate motion', example: 'Try 0 to 20 m/s in 5 seconds' },
+    messages: { ...messages, acceleration: 'Acceleration', time: 'Elapsed time', initialVelocity: 'Initial velocity', finalVelocity: 'Final velocity', initialPosition: 'Initial position', displacement: 'Displacement', finalPosition: 'Final position' },
+    fields: { mode: 'Solve for', solveAcceleration: 'Acceleration', solveTime: 'Time', solveFinalVelocity: 'Final velocity', solveDisplacement: 'Displacement', units: 'Unit system', metric: 'Metric', imperial: 'Imperial', initialVelocity: 'Initial velocity', finalVelocity: 'Final velocity', acceleration: 'Acceleration', timeSeconds: 'Time in seconds', initialPosition: 'Initial position', accuracyNote: 'Constant acceleration only.' },
+  },
   'compression-ratio-calculator': {
     name: 'Compression ratio calculator', actions: { ...actions, millimeters: 'Millimeters', inches: 'Inches' },
     messages: { ...messages, ratio: 'Static compression ratio', sweptVolume: 'Swept volume', clearanceVolume: 'Clearance volume', totalDisplacement: 'Total displacement', boreStroke: 'Bore to stroke' },
@@ -404,6 +409,11 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(resistor, /value="none"/u);
   assert.match(resistor, /data-action="example"/u);
   assert.match(resistor, /data-action="copy"/u);
+  const acceleration = renderGrowthForm('acceleration-calculator', copies['acceleration-calculator']);
+  for (const name of ['mode', 'units', 'initialVelocity', 'finalVelocity', 'acceleration', 'timeSeconds', 'initialPosition']) assert.match(acceleration, new RegExp(`name="${name}"`, 'u'));
+  assert.match(acceleration, /value="imperial"/u);
+  assert.match(acceleration, /data-action="example"/u);
+  assert.match(acceleration, /data-action="copy"/u);
   const compression = renderGrowthForm('compression-ratio-calculator', copies['compression-ratio-calculator']);
   for (const name of ['unit', 'volumeUnit', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders']) assert.match(compression, new RegExp(`name="${name}"`, 'u'));
   assert.match(compression, /min="1" max="16" step="1"/u);

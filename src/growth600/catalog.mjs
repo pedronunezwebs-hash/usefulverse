@@ -1019,6 +1019,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['ohms-law-calculator'],
     logicModule: './tools/resistor-color-code-calculator/logic.mjs',
   },
+  {
+    id: 'acceleration-calculator',
+    category: 'physics-math',
+    type: 'calculator',
+    primaryIntent: 'acceleration calculator',
+    secondaryIntents: ['acceleration velocity calculator', 'acceleration distance time calculator', 'constant acceleration calculator'],
+    functions: ['solve acceleration from initial and final velocity over time', 'solve elapsed time from two velocities and constant acceleration', 'solve final velocity or displacement from initial velocity, acceleration and time', 'show displacement and final position using metric or imperial units'],
+    acceptance: 'Starting at 0 m/s and reaching 20 m/s in 5 seconds gives 4 m/s² and 50 m displacement.',
+    boundary: 'Uses one-dimensional constant acceleration with signed velocity and acceleration. Time must be positive. The result does not model changing acceleration, drag, rotation, relativistic effects or engineering/safety suitability. Calculations stay in this browser.',
+    relatedExistingIds: [],
+    logicModule: './tools/acceleration-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {
