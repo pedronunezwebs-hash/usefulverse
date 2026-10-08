@@ -10,8 +10,9 @@
 - [x] E/X — Suite focal de catálogo/formulario/contrato/lógica: 174/174; `npm test`: 1.342/1.342. `npm run check` conserva el sitio principal en 10.260 URLs; `locale:release-check` pasa para los 20 locales ampliados.
 - [x] X/B — Chrome local en ES/AR: botones y estados localizados, candidato añadible con anuncio accesible y undo correcto; tamaño 6 crea 36 celdas. Árabe conserva `lang=ar`, página RTL y cuadrícula LTR; español `lang=es`, LTR. Móvil 390 px y escritorio 1440 px sin desbordamiento; consola sin errores/avisos. No se ejecutó PageSpeed/Lighthouse.
 - [x] Build aislado — 3.456 páginas/URLs (95 herramientas × 36 idiomas + 36 portadas), 3.602 archivos, 104.673.047 bytes; sitemap con 3.456 `<loc>` únicas y 36 variantes de Futoshiki.
-- [ ] P/S — Publicación y comprobación pública pendientes.
-- **Estado antes de publicar:** 95/323 candidatas adicionales implementadas; 228 pendientes. Siguiente candidata del plan: #260 Hashi Puzzle. Mantener intacto el catálogo original de 277.
+- [x] P/S — PR #55 fusionada en `b81fa8779b61265b3e57baa8f0aeedce82514e1c`; validación PR 37833297489, publicación principal 37833785332 y publicación del hub 37834374001 correctas. Rutas públicas EN/ES/AR y sitemap comprobados: HTTP 200; sitemap del hub contiene 3.456 URLs únicas y 36 variantes de Futoshiki. El sitemap del sitio principal conserva sus 10.260 URLs. Publicar no equivale a indexación; no se ejecutó PageSpeed/Lighthouse.
+- [x] README actualizado a 95 herramientas Growth600 y 3.456 URLs del hub.
+- **Estado publicado:** 95/323 candidatas adicionales; 228 pendientes. Siguiente candidata del plan: #260 Hashi Puzzle. Mantener intacto el catálogo original de 277.
 
 ## Publicada · Slitherlink (#186; 93.ª herramienta Growth600) · 2026-10-09
 

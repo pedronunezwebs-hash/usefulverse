@@ -62,6 +62,7 @@ export function renderGrowthForm(toolId, copy) {
     slitherlink: ['size', 'board', 'rules', 'accuracyNote', 'row', 'column', 'horizontal', 'vertical'],
     'peg-solitaire': ['board', 'rules', 'accuracyNote', 'hole', 'row', 'column', 'peg', 'empty'],
     futoshiki: ['size', 'difficulty', 'board', 'rules', 'accuracyNote', 'cell', 'row', 'column'],
+    'hashi-puzzle': ['difficulty', 'board', 'rules', 'accuracyNote', 'island', 'needs', 'current', 'bridge', 'to', 'toggleHint'],
     'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
     'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
@@ -85,6 +86,7 @@ export function renderGrowthForm(toolId, copy) {
     slitherlink: ['size', 'board', 'rules', 'accuracyNote', 'row', 'column', 'horizontal', 'vertical'],
     'peg-solitaire': ['board', 'rules', 'accuracyNote', 'hole', 'row', 'column', 'peg', 'empty'],
     futoshiki: ['size', 'difficulty', 'board', 'rules', 'accuracyNote', 'cell', 'row', 'column'],
+    'hashi-puzzle': ['difficulty', 'board', 'rules', 'accuracyNote', 'island', 'needs', 'current', 'bridge', 'to', 'toggleHint'],
     'color-name-finder': ['hexColor', 'colorPreview', 'nearestNames', 'exactMatchNote', 'paletteNote'],
   'weight-loss-calculator': ['currentWeight', 'targetWeight', 'dailyDeficit', 'unit', 'methodNote', 'healthNote', 'sourceNiddk', 'sourceCdc'],
     'heloc-calculator': ['creditLimit', 'balance', 'annualApr', 'drawMonths', 'repaymentMonths', 'currency', 'accuracyNote', 'relatedLoanCalculator'],
@@ -163,6 +165,7 @@ export function renderGrowthForm(toolId, copy) {
     slitherlink: ['newGame', 'checkBoard', 'hint', 'undo', 'clearMarks', 'rules', 'small', 'medium', 'large'],
     'peg-solitaire': ['newGame', 'hint', 'undo', 'rules', 'pegsRemaining'],
     futoshiki: ['newGame', 'checkBoard', 'hint', 'undo', 'rules', 'small', 'medium', 'large', 'easy', 'regular', 'hard'],
+    'hashi-puzzle': ['newGame', 'checkBoard', 'hint', 'undo', 'clearBoard', 'rules', 'easy', 'regular', 'hard'],
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
@@ -186,6 +189,7 @@ export function renderGrowthForm(toolId, copy) {
     slitherlink: ['newGame', 'checkBoard', 'hint', 'undo', 'clearMarks', 'rules', 'small', 'medium', 'large'],
     'peg-solitaire': ['newGame', 'hint', 'undo', 'rules', 'pegsRemaining'],
     futoshiki: ['newGame', 'checkBoard', 'hint', 'undo', 'rules', 'small', 'medium', 'large', 'easy', 'regular', 'hard'],
+    'hashi-puzzle': ['newGame', 'checkBoard', 'hint', 'undo', 'clearBoard', 'rules', 'easy', 'regular', 'hard'],
     'color-name-finder': ['findName', 'copyName', 'copyHex', 'result'],
   'weight-loss-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilograms', 'pounds', 'dayUnit', 'weekUnit', 'kilocalories', 'perWeek'],
   'heloc-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -697,6 +701,12 @@ export function renderGrowthForm(toolId, copy) {
     <div class="game-toolbar"><div class="field"><label for="futoshiki-size">${escapeGrowthHtml(fields.size)}</label><select id="futoshiki-size" data-size><option value="4">${escapeGrowthHtml(labels.small)}</option><option value="5" selected>${escapeGrowthHtml(labels.medium)}</option><option value="6">${escapeGrowthHtml(labels.large)}</option></select></div><div class="field"><label for="futoshiki-difficulty">${escapeGrowthHtml(fields.difficulty)}</label><select id="futoshiki-difficulty" data-difficulty><option value="easy">${escapeGrowthHtml(labels.easy)}</option><option value="medium" selected>${escapeGrowthHtml(labels.regular)}</option><option value="hard">${escapeGrowthHtml(labels.hard)}</option></select></div><button type="button" data-action="new-game" class="button button--primary">${escapeGrowthHtml(labels.newGame)}</button></div>
     <p class="status" role="status" aria-live="polite" data-status></p><section aria-labelledby="futoshiki-board-heading"><h2 id="futoshiki-board-heading">${escapeGrowthHtml(fields.board)}</h2><div class="futoshiki-board" data-board role="group" aria-label="${escapeGrowthHtml(fields.board)}"></div></section>
     <div class="actions"><button type="button" data-action="notes" class="button button--secondary" aria-pressed="false">${escapeGrowthHtml(labels.notes)}</button><button type="button" data-action="check-board" class="button button--primary">${escapeGrowthHtml(labels.checkBoard)}</button><button type="button" data-action="hint" class="button button--secondary">${escapeGrowthHtml(labels.hint)}</button><button type="button" data-action="undo" class="button button--secondary">${escapeGrowthHtml(labels.undo)}</button></div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);
+
+  if (toolId === 'hashi-puzzle') return attachCopy(`<section class="game hashi-game" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="game-toolbar"><div class="field"><label for="hashi-difficulty">${escapeGrowthHtml(fields.difficulty)}</label><select id="hashi-difficulty" data-difficulty><option value="easy">${escapeGrowthHtml(labels.easy)}</option><option value="medium" selected>${escapeGrowthHtml(labels.regular)}</option><option value="hard">${escapeGrowthHtml(labels.hard)}</option></select></div><button type="button" data-action="new-game" class="button button--primary">${escapeGrowthHtml(labels.newGame)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section aria-labelledby="hashi-board-heading"><h2 id="hashi-board-heading">${escapeGrowthHtml(fields.board)}</h2><div class="hashi-board" data-board role="group" aria-label="${escapeGrowthHtml(fields.board)}"></div></section>
+    <div class="actions"><button type="button" data-action="check-board" class="button button--primary">${escapeGrowthHtml(labels.checkBoard)}</button><button type="button" data-action="hint" class="button button--secondary">${escapeGrowthHtml(labels.hint)}</button><button type="button" data-action="undo" class="button button--secondary">${escapeGrowthHtml(labels.undo)}</button><button type="button" data-action="clear-board" class="button button--secondary">${escapeGrowthHtml(labels.clearBoard)}</button></div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);
 
   if (toolId === 'color-name-finder') return attachCopy(`<form id="tool-form" novalidate>

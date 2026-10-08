@@ -732,6 +732,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/futoshiki/logic.mjs',
   },
   {
+    id: 'hashi-puzzle',
+    category: 'games',
+    type: 'game',
+    primaryIntent: 'hashi puzzle',
+    secondaryIntents: ['bridges puzzle online', 'hashiwokakero puzzle', 'play bridges puzzle online'],
+    functions: ['generate varied Hashi layouts with a bounded search that confirms exactly one bridge solution', 'toggle zero, one or two bridges between the nearest islands in each row or column', 'prevent bridge crossings and island overfilling while showing each remaining bridge count', 'check exact island degrees and global connectivity, reveal one bridge hint, undo moves and clear the board', 'play locally without an account, network request, timer or saved score'],
+    acceptance: 'Each generated solution joins every island in one connected graph, matches every island number exactly, uses no crossing bridges and assigns only one or two bridges to a nearest visible island pair; the bounded solver proves the puzzle has one solution.',
+    boundary: 'Single-player Hashi/Hashiwokakero (Bridges) puzzle with local generation and uniqueness checks. No multiplayer, daily challenge, official puzzle archive, account, saved progress or network request. The board uses a compact 7×7 lattice and generation runs on the visitor’s device; slower hardware may take longer.',
+    relatedExistingIds: ['futoshiki', 'kakuro'],
+    logicModule: './tools/hashi-puzzle/logic.mjs',
+  },
+  {
     id: 'color-name-finder',
     category: 'design-tools',
     type: 'utility',

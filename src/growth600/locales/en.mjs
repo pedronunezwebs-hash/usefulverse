@@ -70,6 +70,8 @@ import pegSolitaireCopies from './peg-solitaire.mjs';
 import { pegSolitaireEnglishCopy } from './peg-solitaire.en.mjs';
 import futoshikiCopies from './futoshiki.mjs';
 import { futoshikiEnglishCopy } from './futoshiki.en.mjs';
+import hashiPuzzleCopies from './hashi-puzzle.mjs';
+import { hashiPuzzleEnglishCopy } from './hashi-puzzle.en.mjs';
 import { workOrderGeneratorEnglishCopy } from './work-order-generator.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
@@ -726,5 +728,45 @@ const futoshikiArabicCopy = {
   localizationStatus: 'machine-accepted',
 };
 registerGrowthLocaleExtension(source, 'futoshiki', { ...futoshikiCopies, en: futoshikiEnglishCopy, es: futoshikiSpanishCopy, ar: futoshikiArabicCopy }, 'peg-solitaire');
+
+const hashiPuzzleSpanishCopy = {
+  ...hashiPuzzleCopies.es,
+  title: 'Hashi (puentes) gratis | UsefulVerse',
+  description: 'Resuelve Hashi gratis: conecta las islas con puentes simples o dobles sin cruces. Comprueba la red, pide una pista o deshaz.',
+  intro: 'Conecta las islas numeradas con uno o dos puentes. Une las islas más cercanas de cada fila o columna, sin cruces y en una sola red.',
+  howQuestion: '¿Cómo se juega a Hashi?',
+  howAnswer: 'Cada número indica cuántas líneas de puente deben tocar esa isla. Pulsa un tramo para añadir una línea; otra vez para una segunda y de nuevo para quitarla. Los puentes no se cruzan y todas las islas deben conectarse. Usa Comprobar, Pista, Deshacer o Borrar puentes.',
+  privacyQuestion: '¿Hashi es gratis y privado?',
+  privacyAnswer: 'Sí. El puzzle funciona en este navegador. UsefulVerse no sube ni guarda la partida.',
+  fields: { ...hashiPuzzleCopies.es.fields, difficulty: 'Dificultad', board: 'Tablero de Hashi (puentes)', rules: 'Cada número indica el total exacto de líneas de puente que deben tocar una isla. Une solo las islas más cercanas en horizontal o vertical. Entre dos islas puede haber uno o dos puentes; no pueden cruzarse y todas deben formar una red conectada. Pulsa un tramo para alternar entre cero, uno, dos y cero puentes. La generación y la comprobación se ejecutan en este navegador.', accuracyNote: 'Los puzzles nuevos se generan en este dispositivo y se comprueba que tengan una única solución cuando es posible. Si el generador limitado no la encuentra enseguida, ofrece una alternativa sencilla verificada. La partida no se sube ni se guarda.', island: 'Isla', needs: 'necesita', current: 'puentes colocados', bridge: 'Tramo desde la isla', to: 'hasta', toggleHint: 'Activa para cambiar la cantidad de puentes.' },
+  actions: { ...hashiPuzzleCopies.es.actions, newGame: 'Nuevo puzzle', checkBoard: 'Comprobar puzzle', hint: 'Pista de un puente', undo: 'Deshacer', clearBoard: 'Borrar puentes', rules: 'Reglas', easy: 'Fácil', regular: 'Media', hard: 'Difícil' },
+  messages: { ...hashiPuzzleCopies.es.messages, newPuzzle: 'Hay un nuevo puzzle de Hashi con solución única.', fallbackPuzzle: 'Hay un puzzle sencillo de Hashi verificado.', solved: '¡Correcto! Cada isla tiene sus puentes y toda la red está conectada.', degree: 'Una o más islas no tienen la cantidad correcta de puentes.', crossing: 'Los puentes no se pueden cruzar.', disconnected: 'Todas las islas deben estar conectadas en una misma red.', hint: 'Pista: ajusta este tramo al valor {count}.', noHint: 'El puzzle ya está resuelto.', undo: 'Se restauró el cambio anterior de puentes.', undoEmpty: 'No hay ningún movimiento de puentes que deshacer.', cleared: 'Se borraron todos los puentes.', bridgeChanged: 'Número de puentes en este tramo: {count}.', islandFull: 'Eso superaría el número de puentes de una isla.' },
+  additionalFaqs: [
+    { question: '¿Qué significan los números en Hashi?', answer: 'Cada número es la cantidad exacta de líneas de puente que deben tocar la isla. Un puente doble cuenta como dos líneas.' },
+    { question: '¿Se pueden cruzar los puentes de Hashi?', answer: 'No. Los puentes son tramos rectos horizontales o verticales entre las islas más cercanas, y no pueden cruzarse.' },
+    { question: '¿Hay que conectar todas las islas?', answer: 'Sí. La red final debe conectar todas las islas, sin dejar grupos separados.' },
+  ],
+  localizationStatus: 'machine-accepted',
+};
+const hashiPuzzleArabicCopy = {
+  ...hashiPuzzleCopies.ar,
+  title: 'لغز Hashi مجاني | UsefulVerse',
+  description: 'العب لغز Hashi للجسور مجانًا. صِل الجزر بجسور لا تتقاطع، وتحقق من الشبكة واستخدم تلميحًا.',
+  intro: 'صِل الجزر المرقمة بجسر واحد أو جسرين. تصل الجسور بين أقرب الجزر في الصف أو العمود، ولا تتقاطع، ويجب أن تكوّن شبكة واحدة.',
+  howQuestion: 'كيف تلعب Hashi؟',
+  howAnswer: 'يوضح كل رقم عدد خطوط الجسور التي يجب أن تصل إلى الجزيرة. اضغط على مسار الجسر لإضافة خط، واضغط مرة أخرى لإضافة خط ثانٍ، ثم مرة أخرى لإزالتهما. لا تتقاطع الجسور ويجب أن تتصل جميع الجزر. استخدم التحقق أو التلميح أو التراجع أو مسح الجسور.',
+  privacyQuestion: 'هل لغز Hashi مجاني وخاص؟',
+  privacyAnswer: 'نعم. يعمل اللغز في هذا المتصفح. لا يرفع UsefulVerse لعبتك ولا يحفظها.',
+  fields: { ...hashiPuzzleCopies.ar.fields, difficulty: 'الصعوبة', board: 'لوحة لغز Hashi للجسور', rules: 'يمثل كل رقم العدد الدقيق لخطوط الجسور التي تلامس الجزيرة. صِل فقط أقرب الجزر أفقيًا أو رأسيًا. يمكن أن يصل بين زوج الجزر جسر واحد أو جسران، ولا يجوز تقاطع الجسور، ويجب أن تتصل جميع الجزر في شبكة واحدة. اضغط على المسار للتبديل بين صفر وجسر واحد وجسرين ثم صفر. يعمل التوليد والتحقق في هذا المتصفح.', accuracyNote: 'تُنشأ الألغاز على هذا الجهاز ويُتحقق من وجود حل واحد عندما يكون ذلك ممكنًا. إذا لم يعثر المولد المحدود على حل سريعًا، يعرض لغزًا بسيطًا تم التحقق منه. لا تُرفع اللعبة ولا تُحفظ.', island: 'جزيرة', needs: 'تحتاج إلى', current: 'الجسور الموضوعة', bridge: 'مسار جسر من الجزيرة', to: 'إلى', toggleHint: 'فعّل لتغيير عدد الجسور.' },
+  actions: { ...hashiPuzzleCopies.ar.actions, newGame: 'لغز جديد', checkBoard: 'تحقق من اللغز', hint: 'تلميح لجسر واحد', undo: 'تراجع', clearBoard: 'مسح الجسور', rules: 'القواعد', easy: 'سهل', regular: 'متوسط', hard: 'صعب' },
+  messages: { ...hashiPuzzleCopies.ar.messages, newPuzzle: 'لغز Hashi جديد بحل واحد جاهز.', fallbackPuzzle: 'لغز Hashi بسيط تم التحقق منه جاهز.', solved: 'صحيح! لكل جزيرة عدد الجسور المطلوب والشبكة متصلة.', degree: 'جزيرة واحدة أو أكثر لا تملك عدد الجسور المطلوب.', crossing: 'لا يجوز أن تتقاطع الجسور.', disconnected: 'يجب أن تتصل جميع الجزر في الشبكة نفسها.', hint: 'تلميح: اضبط عدد الجسور في هذا المسار على {count}.', noHint: 'تم حل اللغز بالفعل.', undo: 'تمت استعادة تغيير الجسر السابق.', undoEmpty: 'لا توجد حركة جسر للتراجع عنها.', cleared: 'تم مسح كل علامات الجسور.', bridgeChanged: 'عدد الجسور في هذا المسار: {count}.', islandFull: 'سيؤدي ذلك إلى تجاوز عدد الجسور المطلوب للجزيرة.' },
+  additionalFaqs: [
+    { question: 'ماذا تعني الأرقام في Hashi؟', answer: 'يمثل كل رقم العدد الدقيق لخطوط الجسر التي يجب أن تصل إلى الجزيرة. ويُحسب الجسر المزدوج خطين.' },
+    { question: 'هل يمكن أن تتقاطع جسور Hashi؟', answer: 'لا. الجسور مسارات مستقيمة أفقية أو رأسية بين أقرب الجزر، ولا يجوز أن تتقاطع.' },
+    { question: 'هل يجب ربط كل الجزر؟', answer: 'نعم. يجب أن تربط الشبكة النهائية كل الجزر دون ترك مجموعة منفصلة.' },
+  ],
+  localizationStatus: 'machine-accepted',
+};
+registerGrowthLocaleExtension(source, 'hashi-puzzle', { ...hashiPuzzleCopies, en: hashiPuzzleEnglishCopy, es: hashiPuzzleSpanishCopy, ar: hashiPuzzleArabicCopy }, 'futoshiki');
 
 export default Object.freeze(source);
