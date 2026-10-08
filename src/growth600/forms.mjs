@@ -11,7 +11,7 @@ function label(id, text, control) {
 }
 
 function button(action, text, kind = 'primary') {
-  const type = action === 'reset' ? 'reset' : ['calculate', 'generate', 'convert', 'preview'].includes(action) ? 'submit' : 'button';
+  const type = action === 'reset' ? 'reset' : ['calculate', 'compare', 'generate', 'convert', 'preview'].includes(action) ? 'submit' : 'button';
   return `<button type="${type}" data-action="${action}" class="button button--${kind}">${escapeGrowthHtml(text)}</button>`;
 }
 
@@ -68,6 +68,7 @@ export function renderGrowthForm(toolId, copy) {
     'decibel-calculator': ['mode', 'powerMode', 'amplitudeMode', 'dbToPowerMode', 'dbToAmplitudeMode', 'sumMode', 'applyMode', 'ratio', 'inputDb', 'levels', 'inputLevel', 'gainDb', 'accuracyNote', 'assumptionsNote'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
+    'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
     'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
     'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
@@ -176,6 +177,7 @@ export function renderGrowthForm(toolId, copy) {
     'decibel-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
+    'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
@@ -1364,6 +1366,30 @@ export function renderGrowthForm(toolId, copy) {
       <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
     </form>`, copy);
   }
+
+  if (toolId === 'roth-vs-traditional-calculator') return attachCopy(`<form id="tool-form" class="roth-traditional-form" novalidate>
+    ${label('roth-annual-contribution', fields.annualContribution, '<input id="roth-annual-contribution" name="annualContribution" type="number" inputmode="decimal" min="0" max="1000000" step="0.01" value="6000" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.budgetNote)}</p>
+    <div class="roth-tax-grid">
+      ${label('roth-current-tax-rate', fields.currentTaxRate, '<input id="roth-current-tax-rate" name="currentTaxRate" type="number" inputmode="decimal" min="0" max="60" step="0.1" value="22" required>')}
+      ${label('roth-future-tax-rate', fields.futureTaxRate, '<input id="roth-future-tax-rate" name="futureTaxRate" type="number" inputmode="decimal" min="0" max="60" step="0.1" value="22" required>')}
+      ${label('roth-annual-return', fields.annualReturn, '<input id="roth-annual-return" name="annualReturn" type="number" inputmode="decimal" min="-50" max="30" step="0.1" value="6" required>')}
+      ${label('roth-years', fields.years, '<input id="roth-years" name="years" type="number" inputmode="numeric" min="1" max="80" step="1" value="25" required>')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${button('compare', actions.compare)}${button('reset', actions.reset, 'secondary')}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-roth-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.resultSummary)}</h2><p data-roth-summary></p><dl>
+      <div><dt>${escapeGrowthHtml(fields.rothAnnualDeposit)}</dt><dd data-roth-deposit></dd></div>
+      <div><dt>${escapeGrowthHtml(fields.rothAfterTax)}</dt><dd data-roth-after-tax></dd></div>
+      <div><dt>${escapeGrowthHtml(fields.traditionalBeforeTax)}</dt><dd data-traditional-before-tax></dd></div>
+      <div><dt>${escapeGrowthHtml(fields.traditionalAfterTax)}</dt><dd data-traditional-after-tax></dd></div>
+      <div><dt>${escapeGrowthHtml(fields.traditionalTax)}</dt><dd data-traditional-tax></dd></div>
+      <div><dt>${escapeGrowthHtml(fields.taxPaidNow)}</dt><dd data-tax-paid-now></dd></div>
+      <div><dt>${escapeGrowthHtml(fields.estimatedDifference)}</dt><dd data-estimated-difference></dd></div>
+      <div><dt>${escapeGrowthHtml(fields.totalBudget)}</dt><dd data-total-budget></dd></div>
+    </dl><a href="https://www.irs.gov/publications/p590b" target="_blank" rel="noopener noreferrer">${escapeGrowthHtml(fields.irsSource)}</a></section>
+  </form>`, copy);
 
   if (toolId === 'acceleration-calculator') return attachCopy(`<form id="tool-form" novalidate>
     ${label('acceleration-mode', fields.mode, `<select id="acceleration-mode" name="mode"><option value="acceleration">${escapeGrowthHtml(fields.solveAcceleration)}</option><option value="time">${escapeGrowthHtml(fields.solveTime)}</option><option value="final-velocity">${escapeGrowthHtml(fields.solveFinalVelocity)}</option><option value="displacement">${escapeGrowthHtml(fields.solveDisplacement)}</option></select>`)}

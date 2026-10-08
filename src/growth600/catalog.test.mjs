@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 100);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 100);
+  assert.equal(growthPilotTools.length, 101);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 101);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -50,6 +50,15 @@ test('font pairing compares type hierarchy without duplicating single-file font 
   assert.match(tool.boundary, /not a font-file tester/u);
   assert.match(tool.acceptance, /initial page makes no font requests/u);
   assert.deepEqual(tool.relatedExistingIds, ['font-tester', 'color-palette-generator']);
+});
+
+test('Roth vs traditional compares user-entered tax scenarios without giving tax or account advice', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'roth-vs-traditional-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'roth ira vs traditional ira calculator');
+  assert.match(tool.boundary, /not tax, investment, eligibility or account advice/u);
+  assert.match(tool.acceptance, /equal pretax budgets produce equal after-tax balances/u);
+  assert.deepEqual(tool.relatedExistingIds, ['compound-interest-calculator']);
 });
 
 test('the additive catalog rejects protected-ID collisions, duplicate IDs and incomplete contracts', () => {

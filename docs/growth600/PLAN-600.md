@@ -4281,18 +4281,19 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 283 · Font Pairing Tool
 
-- [ ] **C/F/E/X/L/B completos — `font-pairing-tool`; P/S pendiente**
+- [x] **C/F/E/X/L/B/P/S completos — `font-pairing-tool`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/font-pairing-tool/`; otras 35 versiones con los prefijos del anexo.
 - **Demanda:** `font pair generator` — 720 búsquedas/mes US/en, KD 37; nivel C. CPC 4.74 USD (no CPM).
 - **Función y frontera comprobadas:** Comparar jerarquía de encabezado/cuerpo con seis presets de stacks del sistema, escalas, pesos y altura de línea ajustables, vista previa, intercambio de roles y exportación CSS. Hasta ocho fuentes seleccionadas del dispositivo (TTF/OTF/WOFF/WOFF2), máximo 5 MiB por archivo/15 MiB total; se cargan en memoria del navegador solo al elegirlas, no se suben ni se descargan fuentes externas. El usuario debe comprobar las licencias; no se ofrecen presets externos bajo una licencia supuesta.
 - **Pruebas de aceptación superadas:** Cero solicitudes de fuente/red externa en carga inicial; los seis presets producen los pares definidos; intercambio y reset restauran valores coherentes; CSS solo acepta stacks y nombres internos permitidos. Las validaciones limitan formato, cantidad y tamaño, y limpiar elimina las entradas `FontFace` de la sesión. El upload real de una fuente no se pudo probar porque el control de navegador no permite acceder a ese archivo del sistema; formato/tamaño y lógica pasan pruebas automatizadas.
 - **Frontera con otras herramientas:** font-tester: combinaciones tipográficas no inspecciónfont. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** Solo lectura local de archivo elegida por el usuario y uso temporal de memoria; límites explícitos y nota sobre recursos/licencia del dispositivo. No hay API, Worker ni procesamiento remoto.
-- **Pruebas/publicación:** suite focal 57/57; `npm test` 1.382/1.382; `npm run check` preserva 10.260 URLs del sitio principal; `locale:release-check` pasa. Build aislado: 3.636 URLs únicas (100 herramientas × 36 idiomas + 36 portadas). Chrome EN/AR: presets, swap, reset, LTR/RTL y ausencia de peticiones de fuentes externas; sin errores visibles. No se ejecutó PageSpeed/Lighthouse.
+- **Pruebas/publicación:** suite focal 57/57; `npm test` 1.382/1.382; `npm run check` preserva 10.260 URLs del sitio principal; `locale:release-check` pasa. Build aislado: 3.636 páginas (100 herramientas × 36 idiomas + 36 portadas). Chrome EN/AR: presets, swap, reset, LTR/RTL y ausencia de peticiones de fuentes externas; sin errores visibles. No se ejecutó PageSpeed/Lighthouse.
 - **Consultas secundarias del mismo propietario:**
   - `font pairing tool` — 90/mes US/en; KD 24.
   - `font pair generator free online`; `font pair generator with example`; `font pair generator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
-- **Estado de la candidata:** implementación y cobertura estática en los 36 locales completadas; copy de máquina comprensible sin revisión nativa, con títulos/descripciones dentro de límites. Publicación pendiente de PR, merge y verificación online.
+- **Publicación confirmada:** PR [#61](https://github.com/pedronunezwebs-hash/usefulverse/pull/61) fusionada en `636e134c860f019a169ca13cf230691a5fd23476`; validación PR 37849556075; deploy principal 37849893982; publicación del hub 37850612894. Rutas EN/ES/AR HTTP 200; sitemap del hub 3.636 URLs únicas con 36 rutas de esta candidata; sitemap principal 10.260. Publicación no demuestra indexación ni se declara envío manual a Search Console.
+- **Estado de la candidata:** publicada en 36 locales; copy automático comprensible sin revisión nativa; metadatos dentro de los límites.
 - **Longtails funcionales:** ya cubiertas en preview de parejas heading/body, presets, jerarquía tipográfica, carga local y exportación CSS; no publicar una URL por modificador.
 
 ### 319 · Css Border Radius Generator
