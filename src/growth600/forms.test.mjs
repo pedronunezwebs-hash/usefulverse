@@ -48,6 +48,7 @@ const copies = {
     fields: { difficulty: 'Difficulty', board: 'Nurikabe grid', rules: 'The sea cannot contain a 2×2 square.', accuracyNote: 'Unique local puzzles.', cell: 'Cell', row: 'row', column: 'column', sea: 'sea', island: 'island' },
   },
   slitherlink: { name: 'Slitherlink puzzle', actions: { ...actions, newGame: 'New puzzle', checkBoard: 'Check board', hint: 'One-edge hint', undo: 'Undo', clearMarks: 'Clear lines', rules: 'Rules', small: 'Small', medium: 'Medium', large: 'Large' }, messages: { ...messages }, fields: { size: 'Grid size', board: 'Slitherlink puzzle grid', rules: 'Draw one loop.', accuracyNote: 'Puzzles are checked locally.', row: 'row', column: 'column', horizontal: 'horizontal edge', vertical: 'vertical edge' } },
+  'peg-solitaire': { name: 'Peg Solitaire', actions: { ...actions, newGame: 'New game', hint: 'Show a legal move', undo: 'Undo move', rules: 'Rules', pegsRemaining: 'Pegs remaining' }, messages: { moved: 'Jump made.', won: 'Won.', noMoves: 'No moves.' }, fields: { board: 'Peg solitaire board', rules: 'Jump over one peg into an empty hole.', accuracyNote: 'Local game.', hole: 'hole', row: 'row', column: 'column', peg: 'peg', empty: 'empty' } },
   'color-name-finder': {
     name: 'Color name finder', actions: { ...actions, findName: 'Find color name', copyName: 'Copy closest name', copyHex: 'Copy hex value', result: 'Color matches' },
     messages: { ...messages, found: 'Ready.', checkColor: 'Enter a valid hex color.', copied: 'Copied.', copyUnavailable: 'Unavailable.', exactMatch: 'Exact match.', nearestMatch: 'Closest names.', distance: 'Distance' },
@@ -619,6 +620,14 @@ test('Slitherlink form exposes local grid-size selection and accessible loop con
   assert.match(html, /data-size/u);
   assert.match(html, /data-board[^>]+role="group"[^>]+aria-label=/u);
   for (const action of ['new-game', 'check-board', 'hint', 'undo', 'clear-marks']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
+  assert.match(html, /aria-live="polite"/u);
+});
+
+test('Peg solitaire form exposes an accessible 33-hole board, peg count, undo and local hint actions', () => {
+  const html = renderGrowthForm('peg-solitaire', copies['peg-solitaire']);
+  assert.match(html, /data-board[^>]+role="group"[^>]+aria-label=/u);
+  assert.match(html, /data-peg-count/u);
+  for (const action of ['new-game', 'hint', 'undo']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
   assert.match(html, /aria-live="polite"/u);
 });
 

@@ -66,6 +66,8 @@ import { roundRobinTournamentArabicCopy } from './round-robin-tournament-generat
 import workOrderCopies from './work-order-generator.mjs';
 import slitherlinkCopies from './slitherlink.mjs';
 import { slitherlinkEnglishCopy } from './slitherlink.en.mjs';
+import pegSolitaireCopies from './peg-solitaire.mjs';
+import { pegSolitaireEnglishCopy } from './peg-solitaire.en.mjs';
 import { workOrderGeneratorEnglishCopy } from './work-order-generator.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
@@ -644,5 +646,44 @@ const slitherlinkArabicCopy = {
   actions: { ...slitherlinkCopies.ar.actions, checkBoard: 'تحقق من الحل', hint: 'تلميح', clearMarks: 'مسح الخطوط', rules: 'القواعد' },
 };
 registerGrowthLocaleExtension(source, 'slitherlink', { ...slitherlinkCopies, en: slitherlinkEnglishCopy, es: slitherlinkSpanishCopy, ar: slitherlinkArabicCopy }, 'nurikabe');
+const pegSolitaireSpanishCopy = {
+  ...pegSolitaireCopies.es,
+  name: 'Solitario de clavijas',
+  title: 'Solitario de clavijas gratis | UsefulVerse',
+  description: 'Juega gratis al solitario inglés de clavijas: salta sobre una ficha, deshaz movimientos y reinicia en tu dispositivo.',
+  intro: 'Salta una clavija sobre otra hasta un hueco vacío para retirar la ficha saltada. Intenta terminar con una sola clavija.',
+  howQuestion: '¿Cómo se juega al solitario de clavijas?',
+  howAnswer: 'Elige una clavija que pueda saltar en línea recta sobre otra hasta un hueco vacío. Retira la clavija saltada. Intenta dejar una sola clavija.',
+  privacyQuestion: '¿El solitario de clavijas guarda la partida?',
+  privacyAnswer: 'No. La partida se juega en este navegador y no se sube ni se guarda.',
+  actions: { ...pegSolitaireCopies.es.actions, newGame: 'Nueva partida', undo: 'Deshacer movimiento', hint: 'Mostrar movimiento legal', rules: 'Reglas', pegsRemaining: 'Clavijas restantes' },
+  fields: { ...pegSolitaireCopies.es.fields, board: 'Tablero inglés de solitario de clavijas', rules: 'Selecciona una clavija y luego un hueco vacío a dos posiciones en línea recta. Se retira la clavija intermedia. Deja una sola clavija para ganar. Si no quedan saltos legales y quedan varias clavijas, termina la partida.', accuracyNote: 'Tablero inglés clásico de 33 huecos, con el centro vacío al empezar. Juego local para una persona; los movimientos no se suben ni se guardan.', hole: 'hueco', row: 'fila', column: 'columna', peg: 'clavija', empty: 'vacío' },
+  messages: { ...pegSolitaireCopies.es.messages, newGame: 'Empieza una partida nueva.', moved: 'Salto realizado. Quedan {count} clavijas.', won: '¡Has ganado! Queda una clavija.', noMoves: 'No quedan saltos legales. Empieza otra partida.', choosePeg: 'Elige una clavija que pueda saltar.', chooseHole: 'Elige un hueco vacío en línea recta, a dos posiciones.', hint: 'Se ha marcado un movimiento legal.', undo: 'Se ha deshecho el último movimiento.', undoEmpty: 'No hay movimientos que deshacer.' },
+  additionalFaqs: [
+    { question: '¿Cuál es el objetivo del solitario inglés de clavijas?', answer: 'Empieza con 32 clavijas en un tablero de 33 huecos y el centro vacío. Salta sobre una clavija cada vez y retírala. El objetivo habitual es dejar una sola clavija.' },
+    { question: '¿Se puede mover una clavija en diagonal?', answer: 'No. En esta versión inglesa, los saltos son horizontales o verticales y terminan en el siguiente hueco vacío.' },
+    { question: '¿Por qué empieza vacío el hueco central?', answer: 'Es la posición clásica del tablero inglés: 32 clavijas y un hueco vacío en el centro.' },
+  ],
+};
+const pegSolitaireArabicCopy = {
+  ...pegSolitaireCopies.ar,
+  name: 'سوليتير الأوتاد',
+  title: 'سوليتير الأوتاد مجاني | UsefulVerse',
+  description: 'العب سوليتير الأوتاد الإنجليزي مجانًا. نفّذ قفزات قانونية، واستخدم تلميحًا، وتراجع عن حركة أو ابدأ من جديد على جهازك.',
+  intro: 'اقفز بوتد فوق وتد آخر إلى خانة فارغة لإزالة الوتد الذي قفزت فوقه. حاول أن تنهي اللعبة بوتد واحد.',
+  howQuestion: 'كيف تلعب سوليتير الأوتاد؟',
+  howAnswer: 'اختر وتدًا يمكنه القفز أفقيًا أو رأسيًا فوق وتد مجاور إلى خانة فارغة. أزل الوتد الذي قفزت فوقه. حاول أن تُبقي وتدًا واحدًا.',
+  privacyQuestion: 'هل تُحفظ حركاتي في لعبة سوليتير الأوتاد؟',
+  privacyAnswer: 'لا. تُلعب اللعبة في هذا المتصفح، ولا تُرفع الحركات ولا تُحفظ.',
+  actions: { ...pegSolitaireCopies.ar.actions, newGame: 'لعبة جديدة', undo: 'تراجع عن الحركة', hint: 'إظهار حركة قانونية', rules: 'القواعد', pegsRemaining: 'الأوتاد المتبقية' },
+  fields: { ...pegSolitaireCopies.ar.fields, board: 'لوحة سوليتير الأوتاد الإنجليزية', rules: 'اختر وتدًا، ثم اختر خانة فارغة تبعد خانتين في خط مستقيم أفقي أو رأسي. أزل الوتد الواقع بينهما. اترك وتدًا واحدًا للفوز. إذا لم تبقَ قفزات قانونية وبقي أكثر من وتد، تنتهي اللعبة.', accuracyNote: 'لوحة إنجليزية كلاسيكية من 33 خانة، وتبدأ والخانة الوسطى فارغة. لعبة محلية لشخص واحد؛ لا تُرفع الحركات ولا تُحفظ.', hole: 'خانة', row: 'صف', column: 'عمود', peg: 'وتد', empty: 'فارغة' },
+  messages: { ...pegSolitaireCopies.ar.messages, newGame: 'بدأت لعبة جديدة والخانة الوسطى فارغة.', moved: 'تم القفز. بقي {count} من الأوتاد.', won: 'فزت! بقي وتد واحد.', noMoves: 'لم تبقَ قفزات قانونية. ابدأ لعبة جديدة للمحاولة مرة أخرى.', choosePeg: 'اختر وتدًا لديه قفزة قانونية.', chooseHole: 'اختر خانة فارغة تبعد خانتين في خط مستقيم.', hint: 'تم تمييز حركة قانونية.', undo: 'تم التراجع عن الحركة الأخيرة.', undoEmpty: 'لا توجد حركة للتراجع عنها.' },
+  additionalFaqs: [
+    { question: 'ما هدف لعبة سوليتير الأوتاد الإنجليزية؟', answer: 'ابدأ بـ32 وتدًا على لوحة متقاطعة من 33 خانة، والخانة الوسطى فارغة. اقفز فوق وتد واحد في كل مرة وأزله. الهدف المعتاد هو إبقاء وتد واحد.' },
+    { question: 'هل يمكن للوتد أن يتحرك قطريًا؟', answer: 'لا. في هذه النسخة الإنجليزية، تكون القفزات أفقيًا أو رأسيًا فوق وتد مجاور إلى الخانة الفارغة التالية.' },
+    { question: 'لماذا تكون الخانة الوسطى فارغة في البداية؟', answer: 'هذا هو ترتيب لوحة سوليتير الأوتاد الإنجليزية الكلاسيكية: 32 وتدًا والخانة الوسطى فارغة.' },
+  ],
+};
+registerGrowthLocaleExtension(source, 'peg-solitaire', { ...pegSolitaireCopies, en: pegSolitaireEnglishCopy, es: pegSolitaireSpanishCopy, ar: pegSolitaireArabicCopy }, 'slitherlink');
 
 export default Object.freeze(source);
