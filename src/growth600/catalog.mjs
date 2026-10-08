@@ -684,6 +684,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/hitori/logic.mjs',
   },
   {
+    id: 'nurikabe',
+    category: 'games',
+    type: 'game',
+    primaryIntent: 'nurikabe puzzle',
+    secondaryIntents: ['nurikabe puzzle online', 'play nurikabe online', 'nurikabe logic puzzle'],
+    functions: ['generate locally checked 5×5 island-and-sea puzzles at three difficulty levels', 'mark sea cells while numbered clues define exact island sizes', 'check sea connectivity, forbidden 2×2 sea squares and every island boundary and size', 'request a one-cell hint without exposing the complete solution', 'start a newly randomized puzzle without an account or saved history'],
+    acceptance: 'Every generated board has exactly one exhaustively verified solution; its sea is connected and has no 2×2 block, and every island contains exactly one clue and the clue’s exact number of cells.',
+    boundary: 'Single-player Nurikabe logic puzzle with local generation and checks. No account, network request, saved progress, multiplayer or official daily puzzle. The generator may use a verified, rotated fallback if it reaches its bounded attempt limit.',
+    relatedExistingIds: [],
+    logicModule: './tools/nurikabe/logic.mjs',
+  },
+  {
     id: 'weight-loss-calculator',
     category: 'health-math',
     type: 'calculator',

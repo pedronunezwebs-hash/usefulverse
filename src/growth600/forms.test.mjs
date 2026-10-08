@@ -39,6 +39,11 @@ const copies = {
     messages: { ...messages },
     fields: { size: 'Grid size', difficulty: 'Difficulty', board: 'Hitori grid', rules: 'Rules', accuracyNote: 'Unique local puzzles.', cell: 'Cell', row: 'row', column: 'column', black: 'black', white: 'white' },
   },
+  nurikabe: {
+    name: 'Nurikabe puzzle', actions: { ...actions, newGame: 'New puzzle', checkBoard: 'Check board', hint: 'One-cell hint', clearMarks: 'Clear sea marks', easy: 'Easy', medium: 'Medium', hard: 'Hard' },
+    messages: { ...messages },
+    fields: { difficulty: 'Difficulty', board: 'Nurikabe grid', rules: 'The sea cannot contain a 2×2 square.', accuracyNote: 'Unique local puzzles.', cell: 'Cell', row: 'row', column: 'column', sea: 'sea', island: 'island' },
+  },
   'weight-loss-calculator': {
     name: 'Weight loss scenario calculator', actions: { ...actions, dayUnit: 'days', weekUnit: 'weeks', kilocalories: 'kcal', perWeek: 'per week' },
     messages: { ...messages, weightToLose: 'Weight difference', energyEquivalent: 'Linear energy equivalent', timeline: 'Timeline', weeklyRate: 'Weekly rate', noDeficitChange: 'Zero modeled change.', paceNote: 'This is not a recommended target.' },
@@ -506,6 +511,18 @@ test('Hitori form exposes localized grid settings, accessible game grid and rule
   assert.match(html, /data-action="check-board"/u);
   assert.match(html, /data-action="hint"/u);
   assert.match(html, /data-action="clear-marks"/u);
+});
+
+test('Nurikabe form exposes accessible board, difficulty, rules and local puzzle actions', () => {
+  const html = renderGrowthForm('nurikabe', copies.nurikabe);
+  assert.match(html, /data-difficulty/u);
+  assert.match(html, /role="grid"/u);
+  assert.match(html, /aria-live="polite"/u);
+  assert.match(html, /data-action="new-game"/u);
+  assert.match(html, /data-action="check-board"/u);
+  assert.match(html, /data-action="hint"/u);
+  assert.match(html, /data-action="clear-marks"/u);
+  assert.match(html, /2×2/u);
 });
 
 test('random team form exposes accessible participant, balance, constraint, seed, copy and CSV controls', () => {

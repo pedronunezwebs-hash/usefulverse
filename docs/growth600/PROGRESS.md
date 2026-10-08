@@ -824,3 +824,16 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — inglés listo; otros 35 idiomas permanecen `pending-tool-specific-translation`, comprobado por un test que exige que el release gate los rechace. Las traducciones de fixture de build no aprueban copy real ni abren el gate de producción.
 - [ ] P/S — no desplegado, sin merge y sin cambios ni envíos del sitemap de producción.
 - **Recuento vigente:** 70/323 candidatos con implementación inglesa en catálogo; 253 filas por resolver (252 válidas y una reserva, según el plan). Las 277 herramientas existentes están intactas. Hitori cuenta como implementación inglesa, no como herramienta completamente localizada/publicada.
+
+## Continuación · Nurikabe (#168) · 2026-10-08
+
+- [x] C/F — candidata distinta de Hitori y Nonogram: rompecabezas de islas numeradas y mar; 3.600 búsquedas/mes US/en, KD 19, registrado en la investigación ya pagada. No se repitieron llamadas ni hubo gasto de DataForSEO.
+- [x] E — generación 5×5 en tres niveles; el solucionador distingue “una solución probada” de “búsqueda cortada por presupuesto”. Solo acepta una solución si la búsqueda fue exhaustiva. Generación acotada por 800 intentos y 200.000 nodos totales; fallback verificado y transformado para no repetir siempre el mismo diseño.
+- [x] E — checker detecta pista marcada como mar, bloque 2×2, mar desconectado, islas que se tocan, región sin pista y tamaño incorrecto. Pistas de una celda.
+- [x] B — controles localizados, teclado/foco, botones táctiles, nombres de fila/columna, estado anunciado, dificultad, nueva partida, comprobar, pista y borrar marcas. Copy en inglés con reglas, privacidad y dos FAQs; ruta y módulo registrados en catálogo/formulario/estilos.
+- [x] E — pruebas focalizadas finales: `node --test src/growth600/catalog.test.mjs src/growth600/forms.test.mjs src/growth600/locale-contract.test.mjs src/growth600/render.test.mjs src/growth600/build.test.mjs src/growth600/tools/nurikabe/logic.test.mjs` — **144/144 aprobadas**. Incluye unicidad demostrada, presupuesto agotado, casos inválidos, pistas, respaldo único en tres niveles y variedad entre partidas.
+- [ ] B/X — no hay `node_modules` ni `esbuild` en el clon; no instalé dependencias. En un preview local temporal comprobé interacción con ratón/teclado, validación, pista, limpiar y cambio de dificultad. El servidor temporal falló al servir recursos durante la comprobación móvil posterior; por eso no doy por validado el render móvil ni la consola de ese preview. No pude compilar el bundle final; `node --check` sí valida la sintaxis.
+- [ ] L — inglés fuente listo; 35 locales siguen marcados `pending-tool-specific-translation` y el gate los bloquea.
+- [ ] RTL — sin revisión de render RTL; se hará cuando haya traducciones RTL reales.
+- [ ] P/S — sin merge ni deploy; no se alteraron sitemaps de producción ni se enviaron URLs a buscadores.
+- **Recuento vigente:** 71/323 candidatas nuevas con implementación inglesa en catálogo; quedan 252 filas por resolver (251 candidatas válidas y una reserva). Las 277 herramientas originales siguen intactas. Nurikabe no cuenta como localizada, publicada ni indexada.
