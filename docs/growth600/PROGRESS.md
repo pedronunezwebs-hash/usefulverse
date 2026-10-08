@@ -979,3 +979,14 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — solo inglés aprobado; los otros 35 locales siguen como borradores explícitamente pendientes y bloqueados para release.
 - [ ] P/S — no fusionado ni desplegado; sitemap e indexación públicos no se modificaron.
 - **Recuento vigente:** **82/323** candidatas con implementación inglesa; quedan **240 candidatas únicas válidas y una fila duplicada que debe sustituirse**. Las 277 herramientas existentes siguen intactas. Esta candidata no está localizada en todos los idiomas, publicada ni indexada.
+
+## Continuación · Complex Number Calculator (#204 / herramienta 83) · 2026-10-08
+
+- [x] C/F — candidata de números complejos diferenciada de la calculadora científica general: aritmética rectangular, módulo/argumento, conversiones polar-cartesiano y raíces n-ésimas 2–12; incluye la aceptación `i × i = −1`. Sin nueva consulta a DataForSEO.
+- [x] E/X — suma/resta/producto, división con fórmula estable, conversión de ángulos en grados/radianes, rama principal, todas las raíces y controles de rango; división por cero y argumento indefinido de cero se exponen explícitamente. Operaciones locales y resultado insertado como texto, nunca HTML.
+- [x] B/L — formulario adaptado a la operación elegida, entradas requeridas activas/desactivadas correctamente, ejemplo, reinicio, mensajes accesibles y copy/FAQs/metadata ingleses aprobados (title/description dentro de límites). No se agregó endpoint, API, coste ni carga remota.
+- [x] E — pruebas focalizadas de lógica, controlador, formulario, catálogo, contrato de idioma y build: **161 aprobadas, 0 fallidas**. `node --check`/budget minificado final aún no acreditados.
+- [ ] X/B/P/S — revisión visual/browser y bundle final no completados: el checkout no tiene `esbuild` (dependencia declarada del repositorio); `npm test` completo falla en múltiples módulos por paquetes locales ausentes, no por fallos de lógica de la herramienta. No instalé dependencias ni toqué Cloudflare/producción.
+- [ ] L — solo inglés aprobado; los otros 35 idiomas continúan como borradores ingleses `pending-tool-specific-translation`. La puerta real de publicación rechaza esas 35 versiones. Por ello no desplegué, no alteré el sitemap de producción y no lo envié a Google/Bing/Yandex/Naver.
+- **Recuento:** **83/323** candidatas implementadas en inglés; quedan **239 candidatas únicas válidas más una fila duplicada/reserva por sustituir**. Las 277 originales permanecen intactas. Esto no significa 360 páginas publicadas ni localizadas.
+- **Siguiente reanudación:** traducir y revisar esta herramienta en los 35 idiomas; obtener dependencias reproducibles del repo sin alterar el lockfile; pasar X/B/P/S; después integrar/desplegar en el proyecto Pages de herramientas y actualizar/verificar su sitemap. Para pausar ahora, la rama debe conservar el respaldo remoto.

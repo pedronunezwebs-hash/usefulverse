@@ -983,6 +983,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['grass-seed-calculator', 'compost-calculator'],
     logicModule: './tools/fertilizer-calculator/logic.mjs',
   },
+  {
+    id: 'complex-number-calculator',
+    category: 'calculators',
+    type: 'calculator',
+    primaryIntent: 'complex number calculator',
+    secondaryIntents: ['complex calculator', 'complex roots calculator', 'complex number polar form calculator'],
+    functions: ['add, subtract, multiply and divide complex numbers in rectangular form', 'convert rectangular and polar forms with degrees or radians', 'calculate modulus and principal argument', 'list every nth root for integer degrees from 2 to 12'],
+    acceptance: 'Multiplying i by i returns −1 + 0i; division by zero is rejected; a nonzero nth-root result is numerically verified by raising it to the selected degree.',
+    boundary: 'Numerical complex arithmetic only; not a symbolic algebra system, equation solver or graphing calculator. Arguments use the principal branch, angles are bounded, and nth-root degrees are limited to 2–12. All calculations run locally in the browser; no values are uploaded.',
+    relatedExistingIds: ['scientific-calculator'],
+    logicModule: './tools/complex-number-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

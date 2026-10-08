@@ -31,6 +31,7 @@ export function renderGrowthForm(toolId, copy) {
     'laplace-transform-calculator': ['direction', 'forwardMode', 'inverseMode', 'expression', 'forwardHint', 'inverseHint', 'accuracyNote', 'resultSummary', 'region', 'forwardConvention', 'inverseConvention', 'forwardExample', 'inverseExample'],
     'vector-calculator': ['dimension', 'dimension2d', 'dimension3d', 'operation', 'vectorA', 'vectorB', 'ax', 'ay', 'az', 'bx', 'by', 'bz', 'accuracyNote', 'resultSummary', 'zComponent', 'magnitudeAResult', 'magnitudeBResult', 'dotProductResult', 'exampleHint'],
     'cubic-quartic-equation-calculator': ['degree', 'degree3', 'degree4', 'a4', 'a3', 'a2', 'a1', 'a0', 'accuracyNote', 'resultSummary', 'root', 'multiplicity', 'residual', 'noRealRoots', 'nonRealRootsNote', 'exampleHint'],
+    'complex-number-calculator': ['operation', 'realA', 'imaginaryA', 'realB', 'imaginaryB', 'radius', 'angle', 'angleUnit', 'degrees', 'radians', 'degree', 'resultSummary', 'resultReal', 'resultImaginary', 'modulus', 'argument', 'polar', 'rootNumber', 'zeroArgumentNote', 'accuracyNote', 'exampleHint'],
     'image-upscaler': ['imageFile', 'accuracyNote', 'progressHint', 'sourcePreview', 'resultPreview'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
@@ -116,6 +117,7 @@ export function renderGrowthForm(toolId, copy) {
     'laplace-transform-calculator': ['calculate', 'example', 'reset'],
     'vector-calculator': ['calculate', 'example', 'reset', 'add', 'subtract', 'dot', 'cross', 'magnitudeA', 'magnitudeB', 'normalizeA', 'normalizeB', 'angle', 'projection'],
     'cubic-quartic-equation-calculator': ['calculate', 'example', 'reset'],
+    'complex-number-calculator': ['calculate', 'example', 'reset', 'add', 'subtract', 'multiply', 'divide', 'magnitude', 'argument', 'rectangularToPolar', 'polarToRectangular', 'roots'],
     'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
@@ -384,6 +386,23 @@ export function renderGrowthForm(toolId, copy) {
     <p class="hint">${escapeGrowthHtml(fields.exampleHint)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('calculate', actions.calculate)}${button('example', actions.example, 'secondary')}${reset}</div>
     <section class="result" data-equation-result hidden aria-labelledby="equation-result-title"><h2 id="equation-result-title">${escapeGrowthHtml(fields.resultSummary)}</h2><div data-equation-output></div></section>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+  </form>`, copy);
+  }
+
+  if (toolId === 'complex-number-calculator') {
+    const numeric = (name, labelText, value = '0') => `<div class="field"><label for="complex-${name}">${escapeGrowthHtml(labelText)}</label><input id="complex-${name}" name="${name}" type="number" inputmode="decimal" step="any" min="-1000000000" max="1000000000" value="${value}" required></div>`;
+    const operations = ['add', 'subtract', 'multiply', 'divide', 'magnitude', 'argument', 'rectangularToPolar', 'polarToRectangular', 'roots']
+      .map((key) => `<option value="${key}"${key === 'multiply' ? ' selected' : ''}>${escapeGrowthHtml(actions[key])}</option>`).join('');
+    return attachCopy(`<form id="tool-form" class="complex-number-calculator" novalidate>
+    ${label('complex-operation', fields.operation, `<select id="complex-operation" name="operation">${operations}</select>`)}
+    <div data-complex-rect>${numeric('realA', fields.realA, '0')}${numeric('imaginaryA', fields.imaginaryA, '1')}</div>
+    <div data-complex-b hidden>${numeric('realB', fields.realB, '0')}${numeric('imaginaryB', fields.imaginaryB, '1')}</div>
+    <div data-complex-polar hidden>${numeric('radius', fields.radius, '1')}<div class="field"><label for="complex-angle">${escapeGrowthHtml(fields.angle)}</label><input id="complex-angle" name="angle" type="number" inputmode="decimal" step="any" min="-1000000" max="1000000" value="90" required></div><div class="field"><label for="complex-angle-unit">${escapeGrowthHtml(fields.angleUnit)}</label><select id="complex-angle-unit" name="angleUnit"><option value="degrees">${escapeGrowthHtml(fields.degrees)}</option><option value="radians">${escapeGrowthHtml(fields.radians)}</option></select></div></div>
+    <div data-complex-degree hidden>${label('complex-degree', fields.degree, '<input id="complex-degree" name="degree" type="number" inputmode="numeric" min="2" max="12" step="1" value="2" required>')}</div>
+    <p class="hint">${escapeGrowthHtml(fields.exampleHint)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('calculate', actions.calculate)}${button('example', actions.example, 'secondary')}${reset}</div>
+    <section class="result" data-complex-result hidden aria-labelledby="complex-result-title"><h2 id="complex-result-title">${escapeGrowthHtml(fields.resultSummary)}</h2><div data-complex-output></div></section>
     <p class="status" role="status" aria-live="polite" data-status></p>
   </form>`, copy);
   }

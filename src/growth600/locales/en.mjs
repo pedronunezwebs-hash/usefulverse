@@ -44,6 +44,8 @@ import vectorCalculatorCopies from './vector-calculator-final.mjs';
 import { vectorCalculatorEnglishCopy } from './vector-calculator.en.mjs';
 import cubicQuarticEquationDrafts from './cubic-quartic-equation-calculator-final.mjs';
 import { cubicQuarticEquationCalculatorEnglishCopy } from './cubic-quartic-equation-calculator.en.mjs';
+import complexNumberCalculatorDrafts from './complex-number-calculator-final.mjs';
+import { complexNumberCalculatorEnglishCopy } from './complex-number-calculator.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
 import imageColorPickerCopies from './image-color-picker-final.mjs';
@@ -569,5 +571,6 @@ registerGrowthLocaleExtension(source, 'number-line-graphing-tool', { ...numberLi
 registerGrowthLocaleExtension(source, 'laplace-transform-calculator', { ...laplaceTransformCopies, en: laplaceTransformEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'vector-calculator', { ...vectorCalculatorCopies, en: vectorCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'cubic-quartic-equation-calculator', { ...cubicQuarticEquationDrafts, en: cubicQuarticEquationCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'complex-number-calculator', { ...complexNumberCalculatorDrafts, en: complexNumberCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);
