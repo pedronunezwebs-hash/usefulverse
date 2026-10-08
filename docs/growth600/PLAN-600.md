@@ -422,6 +422,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `tire size calculator free online`; `tire size calculator with example`; `tire size calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 
+- **Estado de implementación (2026-10-08):** motor local para las tres incógnitas, conversiones de unidades y estimación explícita de mezcla; formulario/controlador, copy inglés, límites y pruebas añadidos como candidata #58/323. Suite focal sin bundling: 174/174 aprobadas. Los 35 locales no ingleses siguen pendientes y bloqueados para publicación; build bundle y QA visual pendientes porque `esbuild` no está disponible en este clon. No desplegada.
+
 ### 031 · Gravel Calculator
 
 - [ ] **C/F/E/X/L/B/P/S completos — `gravel-calculator`**
@@ -1089,9 +1091,9 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [ ] **C/F/E/X/L/B/P/S completos — `density-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/density-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `density calculator` — 9.900 búsquedas/mes US/en, KD 14; nivel B. CPC 5.62 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Masa, volumen, densidad y mezcla con supuestos
-- **Prueba de aceptación específica:** 10kg en2m³ da5kg/m³
-- **Frontera con otras herramientas:** volume-calculator: propiedades no geometría. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
+- **Función mínima y ampliaciones útiles:** Introducir exactamente dos de masa (kg), volumen (m³) y densidad (kg/m³) para resolver el tercero; informar también en g/cm³ y lb/ft³. Modo opcional de mezcla: hasta 12 filas masa,volumen, sumar ambas magnitudes y estimar la densidad agregada bajo la hipótesis explícita de volúmenes aditivos.
+- **Prueba de aceptación específica:** 10 kg en 2 m³ da 5 kg/m³ (0,005 g/cm³; aproximadamente 0,31214 lb/ft³). 10 kg a 5 kg/m³ da 2 m³; 2 m³ a 5 kg/m³ da 10 kg. Filas 2 kg/1 m³ y 3 kg/0,5 m³ dan 5 kg / 1,5 m³ / 3,333333 kg/m³.
+- **Frontera con otras herramientas:** `volume-calculator` resuelve geometría para obtener volumen; esta herramienta relaciona propiedades físicas de masa, volumen y densidad. No crear URL por valor desconocido o unidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `mass volume density calculator` — 720/mes US/en; KD 1.

@@ -312,6 +312,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/gear-ratio-calculator/logic.mjs',
   },
   {
+    id: 'density-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'density calculator',
+    secondaryIntents: ['mass volume density calculator', 'density from mass and volume', 'density of a mixture calculator'],
+    functions: ['solve mass, volume or density when exactly two are known in kg, m³ and kg/m³', 'convert the result to g/cm³ and lb/ft³', 'estimate aggregate density for up to twelve components when their masses and volumes are supplied, explicitly assuming additive volumes'],
+    acceptance: '10 kg divided by 2 m³ gives 5 kg/m³; 10 kg at 5 kg/m³ gives 2 m³; mixture rows 2 kg, 1 m³ and 3 kg, 0.5 m³ give 5 kg total, 1.5 m³ total and 3.333333 kg/m³.',
+    boundary: 'Positive scalar arithmetic only. Component volumes are assumed additive; this is not valid for every blend, dissolved material, porous material or compressible fluid. No material identification, temperature/pressure correction, purity, safety, engineering certification or lab protocol. Inputs remain in this browser.',
+    relatedExistingIds: ['volume-calculator'],
+    logicModule: './tools/density-calculator/logic.mjs',
+  },
+  {
     id: 'miter-angle-calculator',
     category: 'home-materials',
     type: 'calculator',

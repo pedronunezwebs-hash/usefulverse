@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 57/323; **266 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 58/323; **265 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
 
 ## Avance de implementación · motores del piloto
 
@@ -676,3 +676,14 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — inglés fuente listo; los otros 35 idiomas son borradores estructurales y permanecen bloqueados para producción.
 - [ ] X/E — falta revisión visual con la versión RTL traducida; aún no está localizada.
 - [ ] P/S — sin deploy ni actualización del sitemap de producción/envío a buscadores; PageSpeed/Lighthouse no se ejecuta. Total de la rama: 57 candidatas implementadas, 266 pendientes.
+
+## Continuación · Density Calculator (#108) · 2026-10-08
+
+- [x] C/F — candidata #58/323 del plan; cubre ρ=m/V y `mass volume density calculator`, sin competir con `volume-calculator`, que resuelve geometría. Demanda ya registrada en DataForSEO: `density calculator` 9.900 búsquedas/mes US/en, KD 14; CPC 5,62 USD (no CPM); `mass volume density calculator` 720/mes. Sin consultas nuevas ni gasto adicional.
+- [x] E/X — resuelve masa, volumen o densidad con las otras dos; 10 kg/2 m³ → 5 kg/m³ y conversiones; mezcla suma hasta 12 filas y declara la hipótesis de volumen aditivo. Límites y rechazos probados: campos insuficientes/excesivos, sintaxis incorrecta y más de 12 componentes.
+- [x] B/L fuente — formulario por modo, copiar, reiniciar, ejemplo, mensajes accesibles, FAQs, privacidad y límites físicos explícitos. JavaScript local; sin API, dependencias, carga remota ni coste por uso.
+- [x] E — pruebas focales de catálogo/formulario/localización/render/lógica: **174/174 aprobadas**.
+- [x] E build/bundle — las pruebas del builder y bundler pasaron (3/3 adicionales); controlador minificado específico: **4.435 bytes**, debajo del límite de 24 KiB. El builder valida markup/rutas con los fixtures de prueba.
+- [ ] X/E navegador — falta interacción visual real en Chrome de la ruta generada, incluyendo la edición de campos y el cambio a modo de mezcla. No se declara pasada.
+- [ ] L — copy completo en inglés; los otros 35 idiomas están marcados `pending-tool-specific-translation`, bloqueados por el gate de producción.
+- [ ] P/S — no merge ni deploy; sitemap de producción y paneles de buscadores intactos. No se ejecutó PageSpeed/Lighthouse. Total de rama: 58 candidatas implementadas, 265 pendientes.

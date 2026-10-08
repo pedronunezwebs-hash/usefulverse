@@ -214,6 +214,11 @@ const copies = {
     messages: { ...messages, overallRatio: 'Overall ratio', outputSpeed: 'Output speed', stageCount: 'Stages', direction: 'Direction', sameDirection: 'Same direction', reversedDirection: 'Reversed', idealOutputTorque: 'Ideal torque', estimatedOutputTorque: 'Estimated torque', reduction: 'speed reduction', speedIncrease: 'speed increase', noRatioChange: 'no change' },
     fields: { stages: 'Tooth pairs', stagesHint: 'One pair per line.', inputRpm: 'Input RPM', inputTorque: 'Input torque', driveType: 'Drive type', externalGears: 'External gears', chainDrive: 'Chain drive', efficiencyPercent: 'Efficiency', accuracyNote: 'Ideal arithmetic only.' },
   },
+  'density-calculator': {
+    name: 'Density calculator', actions: { ...actions },
+    messages: { ...messages, mass: 'Mass', volume: 'Volume', density: 'Density', densityMetric: 'Metric density', densityImperial: 'US density', componentCount: 'Components' },
+    fields: { mode: 'Mode', solveMode: 'Solve one value', mixtureMode: 'Estimate mixture', massKg: 'Mass in kg', volumeM3: 'Volume in m3', densityKgM3: 'Density in kg/m3', components: 'Mass,volume rows', componentsHint: 'One pair per row.', accuracyNote: 'Mixture assumes additive volumes.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -308,6 +313,12 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(gear, /maxlength="180"/u);
   assert.match(gear, /data-action="example"/u);
   assert.match(gear, /data-action="copy"/u);
+  const density = renderGrowthForm('density-calculator', copies['density-calculator']);
+  for (const name of ['mode', 'massKg', 'volumeM3', 'densityKgM3', 'components']) assert.match(density, new RegExp(`name="${name}"`, 'u'));
+  assert.match(density, /data-density-solve/u);
+  assert.match(density, /data-density-mixture/u);
+  assert.match(density, /maxlength="1200"/u);
+  assert.match(density, /data-action="copy"/u);
   const asphalt = renderGrowthForm('asphalt-calculator', copies['asphalt-calculator']);
   assert.match(asphalt, /name="compactedThickness"/u);
   assert.match(asphalt, /name="pricePerTonne"/u);

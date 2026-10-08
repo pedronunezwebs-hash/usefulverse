@@ -98,6 +98,8 @@ import chemicalEquationCopies from './chemical-equation-balancer-final.mjs';
 import { chemicalEquationBalancerEnglishCopy } from './chemical-equation-balancer.en.mjs';
 import gearRatioCopies from './gear-ratio-calculator-final.mjs';
 import { gearRatioCalculatorEnglishCopy } from './gear-ratio-calculator.en.mjs';
+import densityCopies from './density-calculator-final.mjs';
+import { densityCalculatorEnglishCopy } from './density-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -494,5 +496,6 @@ registerGrowthLocaleExtension(source, 'dilution-calculator', { ...dilutionCopies
 registerGrowthLocaleExtension(source, 'ohms-law-calculator', { ...ohmsLawCopies, en: ohmsLawCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'chemical-equation-balancer', { ...chemicalEquationCopies, en: chemicalEquationBalancerEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'gear-ratio-calculator', { ...gearRatioCopies, en: gearRatioCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'density-calculator', { ...densityCopies, en: densityCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

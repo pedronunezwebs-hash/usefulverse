@@ -1,0 +1,32 @@
+export const densityCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Density Calculator',
+  title: 'Density Calculator Free & Unlimited | UsefulVerse',
+  description: 'Find mass, volume or density, or estimate a mixture. Free, local and no account.',
+  intro: 'Calculate density from mass and volume, or find a missing mass or volume. See metric and US customary density units, or estimate a mixture from its components.',
+  howQuestion: 'How do I calculate density?',
+  howAnswer: 'Density equals mass divided by volume. Enter exactly two values in kilograms, cubic meters and kilograms per cubic meter. For example, 10 kg ÷ 2 m³ = 5 kg/m³. The mixture mode adds component masses and volumes, assuming their volumes are additive.',
+  privacyQuestion: 'Are my measurements uploaded?',
+  privacyAnswer: 'No. The calculations run in this browser; your values are not uploaded or saved.',
+  fields: {
+    mode: 'Calculation mode',
+    solveMode: 'Find one missing value',
+    mixtureMode: 'Estimate a mixture',
+    massKg: 'Mass (kg)',
+    volumeM3: 'Volume (m³)',
+    densityKgM3: 'Density (kg/m³)',
+    components: 'Component mass,volume (kg,m³), one component per line',
+    componentsHint: 'Enter up to 12 rows, such as 2,1 for 2 kg and 1 m³. Volumes are assumed to add together.',
+    accuracyNote: 'Positive values only. Mixture density assumes component volumes add without contraction or expansion; that assumption may not fit dissolved, porous, reactive or compressible materials. This is a math estimate, not material identification or a lab/engineering assessment.',
+  },
+  actions: { calculate: 'Calculate density', reset: 'Reset', copy: 'Copy result', example: 'Try 10 kg and 2 m³', result: 'Density result' },
+  messages: {
+    copied: 'Result copied.', copyUnavailable: 'Copy is not available in this browser.', calculated: 'Calculation ready.', checkInputs: 'Enter exactly two positive values, or one to twelve valid mixture rows.',
+    mass: 'Mass', volume: 'Volume', density: 'Density', densityMetric: 'Density (metric)', densityImperial: 'Density (US customary)', componentCount: 'Components',
+  },
+  additionalFaqs: [
+    { question: 'What is the formula for density?', answer: 'Density is mass divided by volume: ρ = m / V. This calculator uses kg, m³ and kg/m³, and also reports g/cm³ and lb/ft³.' },
+    { question: 'Can I calculate mass or volume instead?', answer: 'Yes. Enter any two of mass, volume and density, leaving the value you want to find blank. All entered values must be positive.' },
+    { question: 'How does mixture density work?', answer: 'Enter each component’s mass and volume on its own line. The tool divides total mass by total volume and assumes the component volumes are additive. Real mixtures may shrink, expand, dissolve or contain voids, so measured final volume is more accurate when that matters.' },
+  ],
+});

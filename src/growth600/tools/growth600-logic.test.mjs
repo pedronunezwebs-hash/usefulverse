@@ -44,6 +44,7 @@ import { calculateDilution } from './dilution-calculator/logic.mjs';
 import { calculateEquivalentResistance, solveOhmsLaw } from './ohms-law-calculator/logic.mjs';
 import { balanceChemicalEquation } from './chemical-equation-balancer/logic.mjs';
 import { calculateGearRatio } from './gear-ratio-calculator/logic.mjs';
+import { calculateDensity, parseDensityComponents } from './density-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
@@ -135,6 +136,29 @@ test('gear ratio calculator composes stages, estimates RPM and torque, and label
     { stages: '20:40', inputRpm: 1000, efficiencyPercent: 0 }, { stages: '20:40', inputRpm: 1000, efficiencyPercent: 100.1 },
     { stages: '20:40', inputRpm: 1000, driveType: 'belt' },
   ]) assert.throws(() => calculateGearRatio(input));
+});
+
+test('density calculator solves each missing value, converts units and estimates additive mixtures', () => {
+  const density = calculateDensity({ massKg: 10, volumeM3: 2 });
+  assert.equal(density.densityKgM3, 5);
+  assert.equal(density.densityGcm3, 0.005);
+  assert.ok(Math.abs(density.densityLbFt3 - 0.3121398028805) < 1e-12);
+  assert.equal(calculateDensity({ massKg: 10, densityKgM3: 5 }).volumeM3, 2);
+  assert.equal(calculateDensity({ volumeM3: 2, densityKgM3: 5 }).massKg, 10);
+
+  const mixture = calculateDensity({ mode: 'mix', components: '2,1\n3,0.5' });
+  assert.equal(mixture.componentCount, 2);
+  assert.equal(mixture.massKg, 5);
+  assert.equal(mixture.volumeM3, 1.5);
+  assert.ok(Math.abs(mixture.densityKgM3 - (5 / 1.5)) < 1e-12);
+  assert.equal(parseDensityComponents('2;1')[0].volumeM3, 1);
+
+  assert.throws(() => calculateDensity({ massKg: 10 }), /exactly two/u);
+  assert.throws(() => calculateDensity({ massKg: 10, volumeM3: 2, densityKgM3: 5 }), /exactly two/u);
+  assert.throws(() => calculateDensity({ massKg: 0, volumeM3: 2 }), /greater than zero/u);
+  assert.throws(() => calculateDensity({ mode: 'unknown' }), /Choose solve or mix/u);
+  assert.throws(() => calculateDensity({ mode: 'mix', components: '2,1\nnot-a-row' }), /Component 2/u);
+  assert.throws(() => calculateDensity({ mode: 'mix', components: Array.from({ length: 13 }, () => '1,1').join('\n') }), /no more than 12/u);
 });
 
 test('wallpaper calculator counts pattern-aligned drops, openings and allowance', () => {

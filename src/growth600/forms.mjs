@@ -38,6 +38,7 @@ export function renderGrowthForm(toolId, copy) {
     'ohms-law-calculator': ['mode', 'solverMode', 'networkMode', 'voltage', 'current', 'resistance', 'power', 'topology', 'series', 'parallel', 'resistorValues', 'accuracyNote'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
     'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
+    'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
     'auto-loan-refinance-calculator': ['balance', 'currentApr', 'currentMonths', 'newApr', 'newMonths', 'fees', 'feeTreatment'],
     'secret-santa-generator': ['names', 'exclusions'],
     'tire-size-calculator': ['originalSize', 'replacementSize', 'indicatedSpeed', 'speedUnit', 'fitmentNote'],
@@ -98,6 +99,7 @@ export function renderGrowthForm(toolId, copy) {
     'ohms-law-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
     'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'auto-loan-refinance-calculator': ['calculate', 'reset', 'copy', 'result'],
     'secret-santa-generator': ['generate', 'reset', 'copy', 'download', 'result', 'reveal', 'next', 'privacyNote'],
     'tire-size-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kmh', 'mph'],
@@ -913,6 +915,23 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'density-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('density-mode', fields.mode, `<select id="density-mode" name="mode"><option value="solve">${escapeGrowthHtml(fields.solveMode)}</option><option value="mix">${escapeGrowthHtml(fields.mixtureMode)}</option></select>`)}
+    <div data-density-solve>
+      ${label('density-mass-kg', fields.massKg, '<input id="density-mass-kg" name="massKg" type="number" min="0.000000000001" max="1000000000000" step="any" inputmode="decimal">')}
+      ${label('density-volume-m3', fields.volumeM3, '<input id="density-volume-m3" name="volumeM3" type="number" min="0.000000000001" max="1000000000000" step="any" inputmode="decimal">')}
+      ${label('density-kg-m3', fields.densityKgM3, '<input id="density-kg-m3" name="densityKgM3" type="number" min="0.000000000001" max="1000000000000" step="any" inputmode="decimal">')}
+    </div>
+    <div data-density-mixture hidden>
+      ${label('density-components', fields.components, '<textarea id="density-components" name="components" rows="5" maxlength="1200" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>')}
+      <p class="hint">${escapeGrowthHtml(fields.componentsHint)}</p>
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 
   return attachCopy(`<section class="game" aria-label="${escapeGrowthHtml(copy.name)}"><div class="game-toolbar"><label for="mancala-mode">${escapeGrowthHtml(fields.mode)}</label><select id="mancala-mode" data-mode><option value="computer">${escapeGrowthHtml(labels.computer)}</option><option value="two-player">${escapeGrowthHtml(labels.twoPlayers)}</option></select>${button('new-game', labels.newGame, 'primary')}</div><p class="status" role="status" aria-live="polite" data-status></p><div class="mancala-board" data-board aria-label="${escapeGrowthHtml(fields.board)}"></div><section class="result" data-result hidden><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div></section><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);
