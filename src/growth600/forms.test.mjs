@@ -273,6 +273,7 @@ const copies = {
   'prayer-times-calculator': { name: 'Prayer times calculator', actions: { ...actions }, fields: { date: 'Date', latitude: 'Latitude', longitude: 'Longitude', utcOffset: 'UTC offset', method: 'Method', mwl: 'MWL', isna: 'ISNA', egypt: 'Egypt', makkah: 'Makkah', karachi: 'Karachi', france: 'France', russia: 'Russia', singapore: 'Singapore', asrMethod: 'Asr', standard: 'Standard', hanafi: 'Hanafi', highLatitudeMethod: 'High latitude', angleBased: 'Angle based', middleOfNight: 'Middle of night', oneSeventh: 'One-seventh', noAdjustment: 'None', ramadan: 'Ramadan', accuracyNote: 'Estimate only.' } },
 };
 copies['savings-goal-calculator'] = { name: 'Savings Goal Calculator', actions: { ...actions, requiredContribution: 'Monthly deposit needed', monthsToGoal: 'Time needed for my deposit', beginning: 'Beginning of month', end: 'End of month' }, messages: { ...messages }, fields: { mode: 'Calculation', startingBalance: 'Current savings', targetAmount: 'Savings target', annualRatePercent: 'Annual rate', months: 'Months', monthlyContribution: 'Monthly deposit', contributionTiming: 'Deposit timing', accuracyNote: 'Estimate only.', resultSummary: 'Estimate', monthlyResult: 'Required deposit', monthsResult: 'Months', projectedBalance: 'Projected balance', totalContributions: 'Deposits', estimatedInterest: 'Estimated interest', currencyNote: 'Use the same currency.' } };
+copies['severance-pay-calculator'] = { name: 'Severance Pay Calculator', actions: { ...actions, customMode: 'Custom assumptions', ukMode: 'Great Britain statutory estimate' }, messages: { ...messages, calculationFailed: 'Could not calculate.', exampleLoaded: 'Example loaded.', calculateFirst: 'Calculate first.', belowServiceMinimum: 'Fewer than two completed years.', capApplied: 'A cap applied.', noCapApplied: 'No cap applied.', customAssumptions: 'Custom assumptions.' }, fields: { mode: 'Calculation type', weeklyPay: 'Average gross weekly pay', yearsOfService: 'Years of service', weeksPerYear: 'Weeks per year', birthDate: 'Birth date', employmentStartDate: 'Employment start date', redundancyDate: 'Redundancy date', accuracyNote: 'Estimate only.', customNote: 'Uses your assumptions.', ukNote: 'Great Britain estimate; enter GBP.', officialSource: 'Official guidance', estimate: 'Estimated amount', appliedWeeklyPay: 'Weekly pay used', totalWeeks: 'Weeks of pay', rulesAsOf: 'Rules from', resultSummary: 'Estimate details' } };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
   for (const tool of growthPilotTools) {
@@ -594,6 +595,18 @@ test('savings goal form exposes both solve modes and an accessible estimate regi
   assert.match(html, /name="monthlyContribution"[^>]*disabled(?![^>]*hidden)/u);
   assert.match(html, /data-action="example"/u);
   assert.match(html, /data-action="copy"/u);
+  assert.match(html, /role="status" aria-live="polite"/u);
+});
+
+test('severance form separates custom assumptions from UK statutory inputs and shows the official source', () => {
+  const html = renderGrowthForm('severance-pay-calculator', copies['severance-pay-calculator']);
+  for (const name of ['mode', 'weeklyPay', 'yearsOfService', 'weeksPerYear', 'birthDate', 'employmentStartDate', 'redundancyDate']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  assert.match(html, /name="birthDate"[^>]*disabled/u);
+  assert.match(html, /data-severance-result hidden/u);
+  assert.match(html, /data-severance-uk-note hidden/u);
+  assert.match(html, /href="https:\/\/www\.gov\.uk\/redundancy-your-rights\/redundancy-pay"/u);
+  assert.match(html, /<option value="custom">Custom assumptions<\/option>/u);
+  assert.match(html, /<option value="uk-statutory">Great Britain statutory estimate<\/option>/u);
   assert.match(html, /role="status" aria-live="polite"/u);
 });
 

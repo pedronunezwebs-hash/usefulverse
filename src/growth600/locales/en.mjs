@@ -32,6 +32,8 @@ import readabilityCheckerCopies from './readability-checker-final.mjs';
 import { readabilityCheckerEnglishCopy } from './readability-checker.en.mjs';
 import savingsGoalCalculatorCopies from './savings-goal-calculator-final.mjs';
 import { savingsGoalCalculatorEnglishCopy } from './savings-goal-calculator.en.mjs';
+import severancePayCalculatorCopies from './severance-pay-calculator-final.mjs';
+import { severancePayCalculatorEnglishCopy } from './severance-pay-calculator.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
 import imageColorPickerCopies from './image-color-picker-final.mjs';
@@ -551,5 +553,6 @@ registerGrowthLocaleExtension(source, 'photo-to-sketch', { ...photoToSketchCopie
 registerGrowthLocaleExtension(source, 'schema-markup-validator', { ...schemaMarkupValidatorCopies, en: schemaMarkupValidatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'readability-checker', { ...readabilityCheckerCopies, en: readabilityCheckerEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'savings-goal-calculator', { ...savingsGoalCalculatorCopies, en: savingsGoalCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'severance-pay-calculator', { ...severancePayCalculatorCopies, en: severancePayCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

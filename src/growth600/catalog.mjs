@@ -756,6 +756,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/savings-goal-calculator/logic.mjs',
   },
   {
+    id: 'severance-pay-calculator',
+    category: 'personal-finance',
+    type: 'calculator',
+    primaryIntent: 'severance pay calculator',
+    secondaryIntents: ['redundancy pay calculator', 'severance package estimator', 'statutory redundancy pay calculator UK'],
+    functions: ['estimate a user-defined severance scenario from weekly pay, years and weeks per year', 'optionally estimate UK statutory redundancy pay using birth, employment-start and entered employment-end dates', 'count full service years backwards from the entered end date and show age-band weeks, weekly-pay cap and pinned rule date', 'keep custom assumptions separate from official UK statutory inputs and currency units'],
+    acceptance: 'A custom assumption of 500 per week × 10 years × 2 weeks per year returns 10,000; the UK statutory mode applies only to dates on/after 2026-04-06, requires two full service years for a positive entitlement estimate, and caps weekly pay at £751 and service at 20 years.',
+    boundary: 'Estimate only, not legal, tax, employment or financial advice and not a determination of entitlement. Custom mode is arithmetic from user-entered assumptions. UK mode models statutory redundancy pay rules and limits in force from 6 April 2026 only; it does not model contract enhancements, notice, holiday, bonuses, tax, continuity disputes, insolvency or individual eligibility. Link directly to GOV.UK for authoritative current guidance. No inputs are sent or stored.',
+    relatedExistingIds: ['salary-to-hourly-calculator'],
+    logicModule: './tools/severance-pay-calculator/logic.mjs',
+  },
+  {
     id: 'weight-loss-calculator',
     category: 'health-math',
     type: 'calculator',

@@ -25,6 +25,7 @@ export function renderGrowthForm(toolId, copy) {
     'schema-markup-validator': ['markup', 'accuracyNote', 'resultSummary', 'issues', 'googleNote'],
     'readability-checker': ['text', 'language', 'languageEn', 'languageEs', 'languageFr', 'languageDe', 'languageIt', 'accuracyNote', 'resultSummary', 'formula', 'wordCount', 'sentenceCount', 'characterCount', 'characterCountNoSpaces', 'letterCount', 'syllableEstimate', 'averageSentenceLength', 'averageWordLength', 'averageSyllablesPerWord', 'longWordCount'],
     'savings-goal-calculator': ['mode', 'startingBalance', 'targetAmount', 'annualRatePercent', 'months', 'monthlyContribution', 'contributionTiming', 'accuracyNote', 'resultSummary', 'monthlyResult', 'monthsResult', 'projectedBalance', 'totalContributions', 'estimatedInterest', 'currencyNote'],
+    'severance-pay-calculator': ['mode', 'weeklyPay', 'yearsOfService', 'weeksPerYear', 'birthDate', 'employmentStartDate', 'redundancyDate', 'accuracyNote', 'customNote', 'ukNote', 'officialSource', 'estimate', 'appliedWeeklyPay', 'totalWeeks', 'rulesAsOf'],
     'image-upscaler': ['imageFile', 'accuracyNote', 'progressHint', 'sourcePreview', 'resultPreview'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
@@ -104,6 +105,7 @@ export function renderGrowthForm(toolId, copy) {
     'schema-markup-validator': ['validate', 'example', 'copySummary'],
     'readability-checker': ['calculate', 'example', 'copy', 'reset'],
     'savings-goal-calculator': ['calculate', 'example', 'copy', 'reset', 'requiredContribution', 'monthsToGoal', 'beginning', 'end'],
+    'severance-pay-calculator': ['calculate', 'example', 'copy', 'reset', 'customMode', 'ukMode'],
     'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
@@ -296,6 +298,22 @@ export function renderGrowthForm(toolId, copy) {
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.currencyNote)}</p>
     <div class="actions">${button('calculate', labels.calculate)}${button('example', labels.example, 'secondary')}${button('copy', labels.copy, 'secondary')}${reset}</div>
     <section class="result" data-savings-result hidden aria-labelledby="savings-result-title"><h2 id="savings-result-title">${escapeGrowthHtml(fields.resultSummary)}</h2><p data-savings-primary></p><dl><div><dt>${escapeGrowthHtml(fields.projectedBalance)}</dt><dd data-savings-projected></dd></div><div><dt>${escapeGrowthHtml(fields.totalContributions)}</dt><dd data-savings-contributions></dd></div><div><dt>${escapeGrowthHtml(fields.estimatedInterest)}</dt><dd data-savings-interest></dd></div></dl></section>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+  </form>`, copy);
+
+  if (toolId === 'severance-pay-calculator') return attachCopy(`<form id="tool-form" class="severance-pay-calculator" novalidate>
+    ${label('severance-mode', fields.mode, `<select id="severance-mode" name="mode"><option value="custom">${escapeGrowthHtml(labels.customMode)}</option><option value="uk-statutory">${escapeGrowthHtml(labels.ukMode)}</option></select>`)}
+    ${label('severance-weekly-pay', fields.weeklyPay, '<input id="severance-weekly-pay" name="weeklyPay" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="500" required>')}
+    ${label('severance-years', fields.yearsOfService, '<input id="severance-years" name="yearsOfService" type="number" min="0" max="80" step="any" inputmode="decimal" value="10" required>')}
+    ${label('severance-weeks-per-year', fields.weeksPerYear, '<input id="severance-weeks-per-year" name="weeksPerYear" type="number" min="0" max="52" step="any" inputmode="decimal" value="2" required>')}
+    ${label('severance-birth-date', fields.birthDate, '<input id="severance-birth-date" name="birthDate" type="date" disabled required>')}
+    ${label('severance-start-date', fields.employmentStartDate, '<input id="severance-start-date" name="employmentStartDate" type="date" disabled required>')}
+    ${label('severance-date', fields.redundancyDate, '<input id="severance-date" name="redundancyDate" type="date" min="2026-04-06" disabled required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <p class="hint" data-severance-custom-note>${escapeGrowthHtml(fields.customNote)}</p>
+    <p class="hint" data-severance-uk-note hidden>${escapeGrowthHtml(fields.ukNote)} <a href="https://www.gov.uk/redundancy-your-rights/redundancy-pay" rel="noopener noreferrer">${escapeGrowthHtml(fields.officialSource)}</a>.</p>
+    <div class="actions">${button('calculate', labels.calculate)}${button('example', labels.example, 'secondary')}${button('copy', labels.copy, 'secondary')}${reset}</div>
+    <section class="result" data-severance-result hidden aria-labelledby="severance-result-title"><h2 id="severance-result-title">${escapeGrowthHtml(fields.resultSummary)}</h2><dl><div><dt>${escapeGrowthHtml(fields.estimate)}</dt><dd data-severance-amount></dd></div><div><dt>${escapeGrowthHtml(fields.appliedWeeklyPay)}</dt><dd data-severance-weekly-pay></dd></div><div><dt>${escapeGrowthHtml(fields.yearsOfService)}</dt><dd data-severance-years></dd></div><div><dt>${escapeGrowthHtml(fields.totalWeeks)}</dt><dd data-severance-weeks></dd></div></dl><p class="hint" data-severance-details></p></section>
     <p class="status" role="status" aria-live="polite" data-status></p>
   </form>`, copy);
 
