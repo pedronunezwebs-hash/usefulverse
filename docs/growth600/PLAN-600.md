@@ -421,7 +421,6 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `tire diameter calculator` — sin métrica obtenida; no atribuir volumen.
   - `tire size calculator free online`; `tire size calculator with example`; `tire size calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
-
 - **Estado de implementación (2026-10-08):** motor local para las tres incógnitas, conversiones de unidades y estimación explícita de mezcla; formulario/controlador, copy inglés, límites y pruebas añadidos como candidata #58/323. Suite focal sin bundling: 174/174 aprobadas. Los 35 locales no ingleses siguen pendientes y bloqueados para publicación; build bundle y QA visual pendientes porque `esbuild` no está disponible en este clon. No desplegada.
 
 ### 031 · Gravel Calculator
@@ -2359,6 +2358,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `divisibility rules calculator` — 2.900/mes US/en; KD 0.
   - `divisibility calculator free online`; `divisibility calculator with example`; `divisibility calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Avance comprobado (2026-10-08):** motor exacto local, formulario/controlador con validación, cocientes/restos, reglas comunes, ejemplo, preset de divisores, copia y limpieza de resultados obsoletos. La suite focalizada pasa **157/157**. El bundle minificado es de **3.466 bytes**. Solo inglés está listo; 35 idiomas siguen bloqueados como borradores. Sin inspección visual real, despliegue ni sitemap actualizado. Recuento: **78/323** con implementación inglesa; 245 filas restantes incluyendo una duplicada que se debe sustituir.
 
 ### 176 · Number Line Graphing Tool
 

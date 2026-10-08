@@ -768,6 +768,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/severance-pay-calculator/logic.mjs',
   },
   {
+    id: 'divisibility-calculator',
+    category: 'math-statistics',
+    type: 'calculator',
+    primaryIntent: 'divisibility calculator',
+    secondaryIntents: ['divisibility rules calculator', 'divisibility test', 'check if a number is divisible by another'],
+    functions: ['test a whole integer against up to 30 positive divisors in one run', 'show the exact quotient when divisible and the Euclidean remainder otherwise', 'explain common rules for divisors 2–13, 25, 100 and 1,000, with a safe exact-remainder fallback for custom divisors', 'support negative integers and values up to 150 digits without converting them to imprecise floating-point numbers'],
+    acceptance: '123 tested against 2 and 3 reports not divisible by 2 with remainder 1 and divisible by 3 with quotient 41; 0 is divisible by every positive divisor, while divisor 0 is rejected.',
+    boundary: 'Checks only the divisors entered by the user; it does not list all factors, find the greatest common divisor, test primality or factor the integer. Exact integer arithmetic runs locally. Supports a signed input with at most 150 digits and at most 30 unique positive divisors, each with at most 150 digits.',
+    relatedExistingIds: ['prime-number-checker', 'gcd-lcm-calculator'],
+    logicModule: './tools/divisibility-calculator/logic.mjs',
+  },
+  {
     id: 'weight-loss-calculator',
     category: 'health-math',
     type: 'calculator',

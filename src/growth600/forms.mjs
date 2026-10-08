@@ -26,6 +26,7 @@ export function renderGrowthForm(toolId, copy) {
     'readability-checker': ['text', 'language', 'languageEn', 'languageEs', 'languageFr', 'languageDe', 'languageIt', 'accuracyNote', 'resultSummary', 'formula', 'wordCount', 'sentenceCount', 'characterCount', 'characterCountNoSpaces', 'letterCount', 'syllableEstimate', 'averageSentenceLength', 'averageWordLength', 'averageSyllablesPerWord', 'longWordCount'],
     'savings-goal-calculator': ['mode', 'startingBalance', 'targetAmount', 'annualRatePercent', 'months', 'monthlyContribution', 'contributionTiming', 'accuracyNote', 'resultSummary', 'monthlyResult', 'monthsResult', 'projectedBalance', 'totalContributions', 'estimatedInterest', 'currencyNote'],
     'severance-pay-calculator': ['mode', 'weeklyPay', 'yearsOfService', 'weeksPerYear', 'birthDate', 'employmentStartDate', 'redundancyDate', 'accuracyNote', 'customNote', 'ukNote', 'officialSource', 'estimate', 'appliedWeeklyPay', 'totalWeeks', 'rulesAsOf'],
+    'divisibility-calculator': ['integer', 'divisors', 'accuracyNote', 'resultSummary', 'remainder', 'quotient', 'rule', 'rule1', 'rule2', 'rule3', 'rule4', 'rule5', 'rule6', 'rule7', 'rule8', 'rule9', 'rule10', 'rule11', 'rule12', 'rule13', 'rule25', 'rule100', 'rule1000', 'ruleGeneric'],
     'image-upscaler': ['imageFile', 'accuracyNote', 'progressHint', 'sourcePreview', 'resultPreview'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
@@ -106,6 +107,7 @@ export function renderGrowthForm(toolId, copy) {
     'readability-checker': ['calculate', 'example', 'copy', 'reset'],
     'savings-goal-calculator': ['calculate', 'example', 'copy', 'reset', 'requiredContribution', 'monthsToGoal', 'beginning', 'end'],
     'severance-pay-calculator': ['calculate', 'example', 'copy', 'reset', 'customMode', 'ukMode'],
+    'divisibility-calculator': ['calculate', 'example', 'commonDivisors', 'copy', 'reset'],
     'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
@@ -314,6 +316,15 @@ export function renderGrowthForm(toolId, copy) {
     <p class="hint" data-severance-uk-note hidden>${escapeGrowthHtml(fields.ukNote)} <a href="https://www.gov.uk/redundancy-your-rights/redundancy-pay" rel="noopener noreferrer">${escapeGrowthHtml(fields.officialSource)}</a>.</p>
     <div class="actions">${button('calculate', labels.calculate)}${button('example', labels.example, 'secondary')}${button('copy', labels.copy, 'secondary')}${reset}</div>
     <section class="result" data-severance-result hidden aria-labelledby="severance-result-title"><h2 id="severance-result-title">${escapeGrowthHtml(fields.resultSummary)}</h2><dl><div><dt>${escapeGrowthHtml(fields.estimate)}</dt><dd data-severance-amount></dd></div><div><dt>${escapeGrowthHtml(fields.appliedWeeklyPay)}</dt><dd data-severance-weekly-pay></dd></div><div><dt>${escapeGrowthHtml(fields.yearsOfService)}</dt><dd data-severance-years></dd></div><div><dt>${escapeGrowthHtml(fields.totalWeeks)}</dt><dd data-severance-weeks></dd></div></dl><p class="hint" data-severance-details></p></section>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+  </form>`, copy);
+
+  if (toolId === 'divisibility-calculator') return attachCopy(`<form id="tool-form" class="divisibility-calculator" novalidate>
+    ${label('divisibility-integer', fields.integer, '<input id="divisibility-integer" name="integer" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" maxlength="151" pattern="-?[0-9]{1,150}" value="123" required>')}
+    ${label('divisibility-divisors', fields.divisors, '<input id="divisibility-divisors" name="divisors" type="text" autocomplete="off" spellcheck="false" maxlength="512" value="2, 3, 5, 7, 11" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('calculate', labels.calculate)}${button('example', labels.example, 'secondary')}${button('common-divisors', labels.commonDivisors, 'secondary')}${button('copy', labels.copy, 'secondary')}${reset}</div>
+    <section class="result" data-divisibility-result hidden aria-labelledby="divisibility-result-title"><h2 id="divisibility-result-title">${escapeGrowthHtml(fields.resultSummary)}</h2><pre data-divisibility-summary></pre></section>
     <p class="status" role="status" aria-live="polite" data-status></p>
   </form>`, copy);
 
