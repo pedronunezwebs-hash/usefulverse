@@ -2,6 +2,22 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
+## Publicada · Decibel Calculator (#281; 98.ª herramienta Growth600) · 2026-10-09
+
+- [x] C/F — Reutilizada la ficha del plan: `decibel calculator` 720 búsquedas/mes US/en, KD 19; `db calculator` 480/mes, KD 3. CPC 1,25 USD (no CPM). Sin consultas nuevas a DataForSEO.
+- [x] E/B — Calcula dB↔ratios de potencia/amplitud, suma 2–20 niveles incoherentes con suma logarítmica estable y aplica ganancia/atenuación. Límites finitos explícitos. No afirma medir SPL, calibrar micrófono ni reproducir audio; la relación de amplitud presupone igual impedancia y la suma, fuentes no correlacionadas.
+- [x] L — 36 páginas estáticas; textos traducidos automáticamente desde inglés como borradores comprensibles, con restablecer revisado para evitar falsos sentidos, etiquetas técnicas y supuestos explícitos. Títulos y descripciones pasan el contrato; `hreflang` y canonicals generados por la plantilla.
+- [x] E/X — 40 pruebas específicas de lógica, más contrato de catálogo/formulario/locales; `npm test` pasa 1.367/1.367, `locale:release-check` pasa y `npm run check` conserva las 10.260 URLs del sitio principal.
+- [x] B — Build aislado del hub: 3.564 páginas/URLs (98 herramientas × 36 locales + 36 portadas), 3.713 archivos y 107.612.103 bytes. Chrome local en español y árabe: cálculos de ejemplo, selector de modo, reset, textos, dirección RTL y ancho móvil correctos; sin desbordamiento horizontal ni errores/avisos de consola. No se ejecutó PageSpeed/Lighthouse.
+- [x] P/S — PR [#58](https://github.com/pedronunezwebs-hash/usefulverse/pull/58) fusionada en `bde5565790889c0d7512abb69d37d233fd87f672`; validación PR 37842387921 y despliegue principal 37842817210 correctos; publicación separada del hub 37843288478 correcta. Se comprobó HTTP 200 en las 36 rutas; inglés/español LTR y árabe RTL.
+- [x] Sitemap público del hub: **3.564 `<loc>` únicas**, incluidas 36 versiones de Decibel Calculator; sitemap principal aún contiene 10.260. La publicación y el envío del sitemap no garantizan indexación.
+- **Estado publicado:** 98/323 candidatas Growth600; 225 pendientes. El catálogo original de 277 herramientas sigue intacto. Próxima candidata: #282 OpenAPI Editor.
+
+## Publicada · Chess Opening Trainer (#280; 97.ª herramienta Growth600) · 2026-10-09
+
+- [x] C/F — Ficha existente del plan: `chess openings practice` 720 búsquedas/mes US/en, KD 17; `chess opening trainer` 390/mes, KD 25. CPC 0,99 USD (no CPM); sin DataForSEO nuevo.
+- [x] E/B/L/X/P/S — Trainer de diez líneas de apertura, movimientos legales y feedback, traducido en 36 locales. PR [#57](https://github.com/pedronunezwebs-hash/usefulverse/pull/57), despliegue principal 37839908944 y publicación del hub 37840590010 correctos; 3.528 URLs únicas en el sitemap del hub. EN/ES LTR, AR RTL. Véanse sus pruebas y alcance en el registro de Chess del plan.
+
 ## Publicada · Hashi Puzzle (#260; 96.ª herramienta Growth600) · 2026-10-09
 
 - [x] C/F — Reutilizada la ficha del plan: `hashi puzzle` 1.000 búsquedas/mes US/en, KD 31; `bridges puzzle online` 10/mes, KD 17. Sin consulta nueva a DataForSEO.
