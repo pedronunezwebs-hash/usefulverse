@@ -1532,8 +1532,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 288 · Thermal Expansion Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `thermal-expansion-calculator`** (C/F/E/X/L/B terminados; pendiente P/S)
-- **Destino preparado, no publicado:** `https://tools.usefulverse.com/tools/thermal-expansion-calculator/`; otras 35 versiones con los prefijos del anexo.
+- [x] **C/F/E/X/L/B/P/S completos — `thermal-expansion-calculator`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/thermal-expansion-calculator/`; otras 35 versiones con los prefijos del anexo.
 - **Demanda:** `thermal expansion calculator` — 590 búsquedas/mes US/en, KD 0; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Expansión lineal, superficial, volumétrica y coeficiente manual
 - **Prueba de aceptación específica:** DeltaT cero conserva longitud
@@ -1543,7 +1543,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `linear expansion calculator` — 590/mes US/en; KD 0.
   - `thermal expansion calculator free online`; `thermal expansion calculator with example`; `thermal expansion calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
-- **Avance comprobado (2026-10-09):** herramienta local, sin API ni dependencia de servidor; modos lineal/superficial/volumétrico, coeficiente del modo ingresado, unidades métricas e imperiales, conversión coherente de diferencias/coeficientes °C/°F, expansión negativa y límites físicos explícitos. 36 copias estáticas de Google Translate con suffix de marca asegurado y límites de título/descripción; árabe RTL corregido tras inspección. Pruebas focales 199/199, `locale:release-check`, suite general 1.416/1.416, `npm run check` (10.260 URLs principales) y build hub (3.780 URLs para 104 herramientas × 36 idiomas + 36 portadas) aprobados. Chrome EN probó lineal 10 m → 10,006 m, área 100 m² → 100,12 m² y volumen 1.000 L con coeficiente por °F/ΔT 18 °F → +0,36 L. Chrome AR verificó cálculo lineal, RTL y ancho móvil 390 px sin overflow ni errores de consola. No PageSpeed/Lighthouse. Pendiente PR/CI, despliegue y comprobar las URLs/sitemap públicos; no afirmar indexación.
+- **Cierre comprobado (2026-10-09):** CI/deploy principal run `37858771766` y publicación separada run `37859095394` correctos; EN y AR HTTP 200; sitemap del hub 3.780 URLs. No se afirma indexación ni envío manual a buscadores.
 
 ### 290 · Capacitor Calculator
 
@@ -3535,16 +3535,17 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 ### 289 · Hijri Calendar Converter
 
 - [ ] **C/F/E/X/L/B/P/S completos — `hijri-calendar-converter`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/hijri-calendar-converter/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- **Destino propuesto:** `https://tools.usefulverse.com/tools/hijri-calendar-converter/`; otras 35 versiones con los prefijos del anexo. Pendiente de PR y publicación.
 - **Demanda:** `hijri calendar converter` — 590 búsquedas/mes US/en, KD 0; nivel C. CPC 0.08 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Conversión gregoriana e Hijri tabular, método visible y advertencia de diferencias observacionales; años y fechas inválidas rechazados.
-- **Prueba de aceptación específica:** Roundtripfechaválidacorrecto
-- **Frontera con otras herramientas:** date-calculator: calendarioislámicodistinto. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
+- **Prueba de aceptación específica:** una fecha válida completa round trip bajo el mismo método tabular; se rechazan fechas gregorianas imposibles y días que no existen en el mes Hijri de ese año.
+- **Frontera con otras herramientas:** `date-calculator`: calendario islámico distinto y conversión explícita no cubierta allí. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `gregorian hijri converter` — sin métrica obtenida; no atribuir volumen.
   - `hijri calendar converter free online`; `hijri calendar converter with example`; `hijri calendar converter no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Avance comprobado (2026-10-09):** motor aritmético local del calendario civil tabular islámico, ciclo bisiesto de 30 años y rangos limitados; 36 copias lingüísticas estáticas. Suite general 1.410/1.410 y `locale:release-check` pasan. Chrome EN/AR: 11 Mar 2024 ↔ 1 Ramadan 1445; fecha inválida rechazada; árabe RTL a 390 px, sin overflow ni errores de consola. No es Umm al-Qura, observación lunar ni guía religiosa. PR/deploy aún pendientes; no PageSpeed/Lighthouse.
 
 ## Checklist · Organización y productividad
 

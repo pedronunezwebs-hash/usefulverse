@@ -1247,6 +1247,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['invoice-generator', 'task-list'],
     logicModule: './tools/work-order-generator/logic.mjs',
   },
+  {
+    id: 'hijri-calendar-converter',
+    category: 'date-time',
+    type: 'converter',
+    primaryIntent: 'hijri calendar converter',
+    secondaryIntents: ['gregorian hijri converter', 'hijri to gregorian date converter', 'islamic date converter'],
+    functions: ['convert valid Gregorian dates to a deterministic tabular Hijri date and back', 'show the selected Hijri month, year and leap-year status', 'explain the fixed arithmetic method and why local moon-sighting calendars may differ'],
+    acceptance: 'A valid date converts to a Hijri date and back to the same Gregorian day under the same tabular method; invalid Gregorian dates and impossible Hijri month days are rejected.',
+    boundary: 'Uses the tabular Islamic civil 30-year arithmetic calendar, not Umm al-Qura or a local moon-sighting decision. Dates can differ from religious calendars by a day. Gregorian range is 622–9999 CE; Hijri years are bounded to 1–10000 AH. Conversion runs locally and is not religious guidance.',
+    relatedExistingIds: ['date-calculator'],
+    logicModule: './tools/hijri-calendar-converter/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {
