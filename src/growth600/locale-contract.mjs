@@ -44,6 +44,7 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   slitherlink: ['newPuzzle', 'solved', 'loopError', 'clueError', 'hintOn', 'hintOff', 'noHint', 'undoEmpty', 'edgeOn', 'edgeOff', 'marksCleared', 'generationFailed'],
   'peg-solitaire': ['newGame', 'moved', 'won', 'noMoves', 'choosePeg', 'chooseHole', 'hint', 'undo', 'undoEmpty'],
   futoshiki: ['newPuzzle', 'solved', 'incomplete', 'duplicateRow', 'duplicateColumn', 'inequality', 'hint', 'noHint', 'undo', 'undoEmpty', 'invalidValue', 'generationFailed', 'notesEnabled', 'notesDisabled', 'noteAdded', 'noteRemoved', 'cellCleared'],
+  'hashi-puzzle': ['newPuzzle', 'fallbackPuzzle', 'solved', 'degree', 'crossing', 'disconnected', 'hint', 'noHint', 'undo', 'undoEmpty', 'cleared', 'bridgeChanged', 'islandFull'],
   'color-name-finder': ['found', 'checkColor', 'copied', 'copyUnavailable', 'exactMatch', 'nearestMatch', 'distance'],
   'weight-loss-calculator': ['copied', 'copyUnavailable', 'checkInputs', 'estimateOnly', 'weightToLose', 'energyEquivalent', 'timeline', 'weeklyRate', 'noDeficitChange', 'paceNote'],
   'random-team-generator': ['copied', 'copyUnavailable', 'generated', 'checkInputs', 'invalidCount', 'duplicateName', 'invalidPair', 'unknownName', 'incompatible', 'searchLimit', 'downloadReady', 'seedUnavailable'],
@@ -112,6 +113,7 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   slitherlink: ['size', 'board', 'rules', 'accuracyNote', 'row', 'column', 'horizontal', 'vertical'],
   'peg-solitaire': ['board', 'rules', 'accuracyNote', 'hole', 'row', 'column', 'peg', 'empty'],
   futoshiki: ['size', 'difficulty', 'board', 'rules', 'accuracyNote', 'cell', 'row', 'column', 'notes'],
+  'hashi-puzzle': ['difficulty', 'board', 'rules', 'accuracyNote', 'island', 'needs', 'current', 'bridge', 'to', 'toggleHint'],
   'color-name-finder': ['hexColor', 'colorPreview', 'nearestNames', 'exactMatchNote', 'paletteNote'],
   'weight-loss-calculator': ['currentWeight', 'targetWeight', 'dailyDeficit', 'unit', 'methodNote', 'healthNote', 'sourceNiddk', 'sourceCdc'],
   'random-team-generator': ['names', 'teamCount', 'separations', 'separationsHint', 'seed', 'seedHint', 'privacyNote', 'relatedNamePicker'],
@@ -190,6 +192,7 @@ export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   slitherlink: ['newGame', 'checkBoard', 'hint', 'undo', 'clearMarks', 'rules', 'small', 'medium', 'large'],
   'peg-solitaire': ['newGame', 'hint', 'undo', 'rules', 'pegsRemaining'],
   futoshiki: ['newGame', 'checkBoard', 'hint', 'undo', 'notes', 'notesOn', 'rules', 'small', 'medium', 'large', 'easy', 'regular', 'hard'],
+  'hashi-puzzle': ['newGame', 'checkBoard', 'hint', 'undo', 'clearBoard', 'rules', 'easy', 'regular', 'hard'],
   'color-name-finder': ['findName', 'copyName', 'copyHex', 'result'],
   'weight-loss-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilograms', 'pounds', 'dayUnit', 'weekUnit', 'kilocalories', 'perWeek'],
   'random-team-generator': ['generateTeams', 'reset', 'example', 'copy', 'download', 'result', 'team', 'participant', 'seedLabel'],
@@ -203,7 +206,7 @@ export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   'aquarium-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'feet', 'inches', 'liters', 'usGallons', 'imperialGallons'],
 });
 const MESSAGE_PLACEHOLDERS = Object.freeze({ monthCount: ['{count}'], privatePair: ['{giver}', '{recipient}'], turn: ['{player}'], overlap: ['{first}', '{second}', '{minutes}'], shortConnection: ['{first}', '{second}', '{minutes}', '{needed}'], invalidValue: ['{size}'] });
-const TOOL_MESSAGE_PLACEHOLDERS = Object.freeze({ futoshiki: Object.freeze({ hint: ['{row}', '{column}'], invalidValue: ['{size}'], noteAdded: ['{value}'], noteRemoved: ['{value}'] }) });
+const TOOL_MESSAGE_PLACEHOLDERS = Object.freeze({ futoshiki: Object.freeze({ hint: ['{row}', '{column}'], invalidValue: ['{size}'], noteAdded: ['{value}'], noteRemoved: ['{value}'] }), 'hashi-puzzle': Object.freeze({ hint: ['{count}'], bridgeChanged: ['{count}'] }) });
 
 export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, { titleMax = 60, descriptionMax = 160 } = {}) {
   const errors = [];
@@ -244,8 +247,8 @@ export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, {
           if (typeof copy.messages?.[key] === 'string' && !copy.messages[key].includes(token)) errors.push(`${locale.key}/${tool.id}: messages.${key} must preserve ${token}`);
         }
       }
-      const faqTools = ['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'mulch-calculator', 'paver-calculator', 'solar-panel-calculator', 'btu-calculator', 'brick-calculator', 'rafter-calculator', 'carpet-calculator', 'aquarium-calculator', 'image-region-redactor', 'image-sharpener', 'photo-to-sketch', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'hitori', 'nurikabe', 'slitherlink', 'peg-solitaire', 'futoshiki', 'color-name-finder', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'weight-loss-calculator', 'heloc-calculator', 'random-team-generator', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'laplace-transform-calculator', 'csv-to-pdf', 'round-robin-tournament-generator', 'work-order-generator'];
-      const faqCount = ['csv-to-pdf', 'round-robin-tournament-generator', 'work-order-generator', 'slitherlink', 'peg-solitaire', 'futoshiki'].includes(tool.id) ? 3 : 2;
+      const faqTools = ['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'mulch-calculator', 'paver-calculator', 'solar-panel-calculator', 'btu-calculator', 'brick-calculator', 'rafter-calculator', 'carpet-calculator', 'aquarium-calculator', 'image-region-redactor', 'image-sharpener', 'photo-to-sketch', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'hitori', 'nurikabe', 'slitherlink', 'peg-solitaire', 'futoshiki', 'hashi-puzzle', 'color-name-finder', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'weight-loss-calculator', 'heloc-calculator', 'random-team-generator', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'laplace-transform-calculator', 'csv-to-pdf', 'round-robin-tournament-generator', 'work-order-generator'];
+      const faqCount = ['csv-to-pdf', 'round-robin-tournament-generator', 'work-order-generator', 'slitherlink', 'peg-solitaire', 'futoshiki', 'hashi-puzzle'].includes(tool.id) ? 3 : 2;
       if (faqTools.includes(tool.id)
         && (!Array.isArray(copy.additionalFaqs) || copy.additionalFaqs.length !== faqCount
           || copy.additionalFaqs.some((faq) => !faq.question?.trim() || !faq.answer?.trim()))) {
