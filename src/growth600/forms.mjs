@@ -30,6 +30,7 @@ export function renderGrowthForm(toolId, copy) {
     'number-line-graphing-tool': ['intervals', 'intervalFormat', 'accuracyNote', 'chartDescription', 'exampleInput'],
     'laplace-transform-calculator': ['direction', 'forwardMode', 'inverseMode', 'expression', 'forwardHint', 'inverseHint', 'accuracyNote', 'resultSummary', 'region', 'forwardConvention', 'inverseConvention', 'forwardExample', 'inverseExample'],
     'vector-calculator': ['dimension', 'dimension2d', 'dimension3d', 'operation', 'vectorA', 'vectorB', 'ax', 'ay', 'az', 'bx', 'by', 'bz', 'accuracyNote', 'resultSummary', 'zComponent', 'magnitudeAResult', 'magnitudeBResult', 'dotProductResult', 'exampleHint'],
+    'cubic-quartic-equation-calculator': ['degree', 'degree3', 'degree4', 'a4', 'a3', 'a2', 'a1', 'a0', 'accuracyNote', 'resultSummary', 'root', 'multiplicity', 'residual', 'noRealRoots', 'nonRealRootsNote', 'exampleHint'],
     'image-upscaler': ['imageFile', 'accuracyNote', 'progressHint', 'sourcePreview', 'resultPreview'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
@@ -114,6 +115,7 @@ export function renderGrowthForm(toolId, copy) {
     'number-line-graphing-tool': ['calculate', 'example', 'downloadSvg', 'reset'],
     'laplace-transform-calculator': ['calculate', 'example', 'reset'],
     'vector-calculator': ['calculate', 'example', 'reset', 'add', 'subtract', 'dot', 'cross', 'magnitudeA', 'magnitudeB', 'normalizeA', 'normalizeB', 'angle', 'projection'],
+    'cubic-quartic-equation-calculator': ['calculate', 'example', 'reset'],
     'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
@@ -370,6 +372,18 @@ export function renderGrowthForm(toolId, copy) {
     <p class="hint">${escapeGrowthHtml(fields.exampleHint)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('calculate', actions.calculate)}${button('example', actions.example, 'secondary')}${reset}</div>
     <section class="result" data-vector-result hidden aria-labelledby="vector-result-title"><h2 id="vector-result-title">${escapeGrowthHtml(fields.resultSummary)}</h2><div data-vector-output></div></section>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+  </form>`, copy);
+  }
+
+  if (toolId === 'cubic-quartic-equation-calculator') {
+    const coefficient = (name, labelText, value, quarticOnly = false) => `<div class="field"${quarticOnly ? ' data-quartic-only hidden' : ''}><label for="equation-${name}">${escapeGrowthHtml(labelText)}</label><input id="equation-${name}" name="${name}" type="number" inputmode="decimal" step="any" min="-1000000" max="1000000" value="${value}" required${quarticOnly ? ' disabled' : ''}></div>`;
+    return attachCopy(`<form id="tool-form" class="equation-calculator" novalidate>
+    ${label('equation-degree', fields.degree, `<select id="equation-degree" name="degree"><option value="3" selected>${escapeGrowthHtml(fields.degree3)}</option><option value="4">${escapeGrowthHtml(fields.degree4)}</option></select>`)}
+    <div class="fields">${coefficient('a4', fields.a4, '1', true)}${coefficient('a3', fields.a3, '1')}${coefficient('a2', fields.a2, '0')}${coefficient('a1', fields.a1, '0')}${coefficient('a0', fields.a0, '-1')}</div>
+    <p class="hint">${escapeGrowthHtml(fields.exampleHint)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('calculate', actions.calculate)}${button('example', actions.example, 'secondary')}${reset}</div>
+    <section class="result" data-equation-result hidden aria-labelledby="equation-result-title"><h2 id="equation-result-title">${escapeGrowthHtml(fields.resultSummary)}</h2><div data-equation-output></div></section>
     <p class="status" role="status" aria-live="polite" data-status></p>
   </form>`, copy);
   }

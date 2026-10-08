@@ -966,3 +966,16 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — solo el inglés está aprobado; los otros 35 idiomas continúan bloqueados como borradores sin traducción específica.
 - [ ] P/S — no fusionado ni desplegado; sitemap público e indexación no se tocaron.
 - **Recuento vigente:** **81/323** candidatas con implementación inglesa; quedan **242 candidatas únicas válidas y una fila duplicada que debe reemplazarse**. Las 277 herramientas existentes siguen intactas. Vector Calculator aún no se cuenta como completamente localizada, publicada o indexada.
+
+## Continuación · Cubic & Quartic Equation Calculator (#202) · 2026-10-08
+
+- [x] C/F — reutilicé el dato del plan: `cubic equation calculator`, 2.400 búsquedas/mes US/en, KD 7; secundaria `polynomial roots calculator`, 390/mes, KD 0. No volví a consultar DataForSEO ni consumí cuota.
+- [x] E/B — calcula raíces reales numéricas para polinomios cúbicos y cuárticos desde coeficientes, ordena las raíces distintas, estima multiplicidad y muestra residuo absoluto. La vista indica cuando no hay raíces reales o cuando no muestra raíces complejas. No promete CAS, factorización ni exactitud simbólica.
+- [x] Controles — coeficientes finitos limitados a ±1.000.000; término principal distinto de cero y ratio mínimo 1e−12; cota de raíces que evita rangos extremos; errores claros, ejemplo `x³−1`, selector de grado con `x⁴` inactivo y deshabilitado en cúbica; resultados seguros vía `textContent`, estado accesible y limpieza de resultados obsoletos.
+- [x] Integración — catálogo aditivo, formulario, controlador, copy inglés con dos FAQs, extensión locale para 36 entradas, contrato y fixture de build. Las 277 herramientas protegidas no se tocaron.
+- [x] X automática — pruebas focalizadas de lógica, controlador, formulario, catálogo, contrato, render y build: **161/161 aprobadas**. Además, 200 conjuntos deterministas de raíces reales generadas pasaron la comprobación de cardinalidad y tolerancia.
+- [x] B — bundle de controlador minificado: **4.461 bytes**; `assertLocalController` lo acepta bajo 24 KiB y sin llamadas remotas/código dinámico. No necesita API, consulta de datos ni proceso de servidor.
+- [ ] X visual — revisión interactiva real en Chrome aún pendiente.
+- [ ] L — solo inglés aprobado; los otros 35 locales siguen como borradores explícitamente pendientes y bloqueados para release.
+- [ ] P/S — no fusionado ni desplegado; sitemap e indexación públicos no se modificaron.
+- **Recuento vigente:** **82/323** candidatas con implementación inglesa; quedan **240 candidatas únicas válidas y una fila duplicada que debe sustituirse**. Las 277 herramientas existentes siguen intactas. Esta candidata no está localizada en todos los idiomas, publicada ni indexada.

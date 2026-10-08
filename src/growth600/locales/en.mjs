@@ -42,6 +42,8 @@ import laplaceTransformCopies from './laplace-transform-calculator-final.mjs';
 import { laplaceTransformEnglishCopy } from './laplace-transform-calculator.en.mjs';
 import vectorCalculatorCopies from './vector-calculator-final.mjs';
 import { vectorCalculatorEnglishCopy } from './vector-calculator.en.mjs';
+import cubicQuarticEquationDrafts from './cubic-quartic-equation-calculator-final.mjs';
+import { cubicQuarticEquationCalculatorEnglishCopy } from './cubic-quartic-equation-calculator.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
 import imageColorPickerCopies from './image-color-picker-final.mjs';
@@ -566,5 +568,6 @@ registerGrowthLocaleExtension(source, 'divisibility-calculator', { ...divisibili
 registerGrowthLocaleExtension(source, 'number-line-graphing-tool', { ...numberLineGraphingCopies, en: numberLineGraphingEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'laplace-transform-calculator', { ...laplaceTransformCopies, en: laplaceTransformEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'vector-calculator', { ...vectorCalculatorCopies, en: vectorCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'cubic-quartic-equation-calculator', { ...cubicQuarticEquationDrafts, en: cubicQuarticEquationCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

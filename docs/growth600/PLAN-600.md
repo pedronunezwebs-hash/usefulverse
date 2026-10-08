@@ -2411,13 +2411,14 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/cubic-quartic-equation-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `cubic equation calculator` — 2.400 búsquedas/mes US/en, KD 7; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Raíces cúbicas/cuarticas y multiplicidades con residuos numéricos
-- **Prueba de aceptación específica:** x^3-1 tiene raíz real1
+- **Prueba de aceptación específica:** x³ − 1 tiene raíz real 1, multiplicidad 1 y residuo próximo a cero.
 - **Frontera con otras herramientas:** equation-solver: polinomios de grado3-4. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** resolver raíces reales numéricamente mediante aislamiento por puntos críticos y bisección acotada; no anunciar raíces complejas, factorización simbólica ni certeza formal. Limitar coeficientes y descartar polinomios mal condicionados; mostrar residuo y límites visibles.
 - **Consultas secundarias del mismo propietario:**
   - `polynomial roots calculator` — 390/mes US/en; KD 0.
   - `cubic equation calculator free online`; `cubic equation calculator with example`; `cubic equation calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Avance de implementación (2026-10-08):** motor real local para grado 3/4, raíces distintas ordenadas, multiplicidad aproximada y residuo absoluto; ejemplo `x³−1`, cuártica con cuatro raíces, raíces dobles/triples y caso sin raíces reales. Formulario accesible cambia entre cúbica/cuártica y deshabilita el coeficiente principal extra en modo cúbico; resultados se insertan como texto y limpian al cambiar entradas. Coeficientes acotados a ±1.000.000; exige coeficiente líder no nulo y ratio mínimo 1e−12. 161/161 pruebas focalizadas aprobadas y otros 200 polinomios deterministas verificados; bundle 4.461 bytes, aceptado por `assertLocalController` (<24 KiB, sin red/código dinámico). Copy inglés aprobado, 35 idiomas siguen como borradores bloqueados; falta QA visual, traducción completa, publicación y sitemap. Recuento inglés: 82/323.
 
 ### 204 · Complex Number Calculator
 

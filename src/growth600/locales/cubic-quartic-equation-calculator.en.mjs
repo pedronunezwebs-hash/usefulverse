@@ -1,0 +1,32 @@
+export const cubicQuarticEquationCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Cubic & Quartic Equation Calculator',
+  title: 'Cubic & Quartic Calculator | Free | UsefulVerse',
+  description: 'Find approximate real roots of cubic and quartic equations. Free calculator with multiplicities and residuals.',
+  intro: 'Enter polynomial coefficients to estimate its real roots, multiplicities and residuals in your browser.',
+  howQuestion: 'How do I use the polynomial root calculator?',
+  howAnswer: 'Choose a cubic or quartic, enter coefficients from the highest power to the constant term, then calculate. Roots are numerical estimates and are listed in order.',
+  privacyQuestion: 'Are my equation coefficients uploaded?',
+  privacyAnswer: 'No. The calculation runs locally in this browser; your coefficients are not sent to a server.',
+  fields: {
+    degree: 'Polynomial degree', degree3: 'Cubic (degree 3)', degree4: 'Quartic (degree 4)',
+    a4: 'Coefficient of x⁴', a3: 'Coefficient of x³', a2: 'Coefficient of x²', a1: 'Coefficient of x', a0: 'Constant term',
+    accuracyNote: 'Real roots only; this does not calculate complex roots or symbolic factors. Coefficients are limited to ±1,000,000. Very small leading coefficients are rejected. Results are numerical estimates; residual is |P(root)|.',
+    resultSummary: 'Real roots', root: 'Root', multiplicity: 'Multiplicity', residual: 'Absolute residual', noRealRoots: 'No real roots found for these coefficients.',
+    nonRealRootsNote: 'Some roots are non-real and are not shown.', exampleHint: 'Example: x³ − 1 = 0 has the real root x = 1.',
+  },
+  actions: { calculate: 'Calculate roots', example: 'Load example', reset: 'Clear' },
+  messages: {
+    calculated: 'Root estimates ready.', checkInputs: 'Check the coefficients and try again.', exampleLoaded: 'Cubic example loaded.',
+    invalidDegree: 'Choose degree 3 or 4.', missingCoefficient: 'Enter every coefficient; use 0 when a term is missing.',
+    coefficientOutOfRange: 'Each coefficient must be a finite number from −1,000,000 to 1,000,000.',
+    zeroLeadingCoefficient: 'The leading coefficient cannot be zero.', illConditioned: 'The leading coefficient is too small relative to the others for a reliable estimate.',
+    rangeTooWide: 'The possible root range is too wide for this calculator.', calculationFailed: 'A stable numerical result could not be calculated for these coefficients.',
+    noRealRoots: 'No real roots found.',
+  },
+  additionalFaqs: [
+    { question: 'Does this calculator show complex roots?', answer: 'No. It estimates real roots only. It does not calculate complex roots, symbolic factors or a general computer-algebra solution.' },
+    { question: 'Are the roots exact?', answer: 'No. Roots are numerical estimates. The residual |P(root)| indicates how close the displayed estimate is to zero when substituted into the polynomial.' },
+  ],
+  localizationStatus: 'approved',
+});

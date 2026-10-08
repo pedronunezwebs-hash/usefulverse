@@ -816,6 +816,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/vector-calculator/logic.mjs',
   },
   {
+    id: 'cubic-quartic-equation-calculator',
+    category: 'math-statistics',
+    type: 'calculator',
+    primaryIntent: 'cubic equation calculator',
+    secondaryIntents: ['polynomial roots calculator', 'cubic polynomial roots', 'quartic equation calculator'],
+    functions: ['estimate distinct real roots for cubic and quartic polynomials from coefficients', 'report estimated multiplicities and absolute residuals for each displayed root', 'sort distinct roots numerically and identify when non-real roots are not shown', 'provide an example and reject unsupported degree, missing values, unsafe coefficient sizes and poorly conditioned leading terms'],
+    acceptance: 'For x³ − 1 = 0, report the real root x = 1 with multiplicity 1 and a near-zero residual; for x⁴ − 5x² + 4 = 0, report −2, −1, 1 and 2.',
+    boundary: 'Numerical real roots only for degree 3 or 4; not a symbolic solver and does not calculate complex roots or exact algebraic factors. Coefficients are limited to ±1,000,000 and the leading coefficient must be at least 1e-12 of the largest coefficient. Near-multiple roots can be ill-conditioned; residuals expose approximation quality but do not certify a root. All computation runs locally without APIs or server processing.',
+    relatedExistingIds: [],
+    logicModule: './tools/cubic-quartic-equation-calculator/logic.mjs',
+  },
+  {
     id: 'weight-loss-calculator',
     category: 'health-math',
     type: 'calculator',
