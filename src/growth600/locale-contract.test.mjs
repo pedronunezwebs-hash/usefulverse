@@ -60,6 +60,21 @@ test('polygon calculator has 36 locale copies with clear geometric measurements'
   }
 });
 
+test('thermal expansion calculator has complete static copy and snippet-sized metadata in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'thermal-expansion-calculator');
+  assert.ok(tool);
+  assert.equal(localeEntries.length, 36);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  assert.equal(localizedCopies.ar[tool.id].fields.areaMode, 'المساحة');
+  assert.equal(localizedCopies.ar[tool.id].fields.volumeMode, 'الحجم');
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.fields.accuracyNote.length > 30, `${key}: limits and coefficient assumptions disclosed`);
+    assert.ok(copy.title.toLowerCase().includes('usefulverse'), `${key}: brand retained in title`);
+  }
+});
+
 function assertMachineAcceptedGrowthToolInAllLocales(tool) {
   assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
   for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {

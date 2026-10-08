@@ -267,6 +267,12 @@ const copies = {
     messages: { ...messages, normalForce: 'Normal force', gravityComponent: 'Gravity along surface', requiredStatic: 'Static friction needed', maximumStatic: 'Maximum static friction', frictionMagnitude: 'Friction magnitude', frictionDirection: 'Friction direction', regime: 'Motion result', netForce: 'Net force', acceleration: 'Acceleration', noDirection: 'None', positiveDirection: 'Positive direction', negativeDirection: 'Negative direction', uphill: 'Up slope', downhill: 'Down slope', static: 'At rest', startsDownhill: 'Starts sliding down', startsUphill: 'Starts sliding up' },
     fields: { mode: 'Calculation mode', normalForce: 'Normal force', mass: 'Mass', massUnit: 'Mass unit', angle: 'Incline angle', gravity: 'Gravity', staticCoefficient: 'Static coefficient', kineticCoefficient: 'Kinetic coefficient', appliedForce: 'Applied force', forceUnit: 'Force unit', motionState: 'Object state', atRest: 'At rest', movingUp: 'Moving up', movingDown: 'Moving down', positiveSurfaceDirection: 'Direction note', accuracyNote: 'Coulomb model only.' },
   },
+  'thermal-expansion-calculator': {
+    name: 'Thermal expansion calculator',
+    actions: { ...actions, squareMeters: 'Square meters', squareCentimeters: 'Square centimeters', squareFeet: 'Square feet', squareInches: 'Square inches', cubicMeters: 'Cubic meters', cubicCentimeters: 'Cubic centimeters', liters: 'Liters', cubicInches: 'Cubic inches' },
+    messages: { ...messages, mode: 'Expansion type', initialDimension: 'Starting dimension', coefficient: 'Coefficient', temperatureChange: 'Temperature change', dimensionChange: 'Dimension change', finalDimension: 'Final dimension', relativeChange: 'Relative change' },
+    fields: { mode: 'Expansion type', linearMode: 'Linear', areaMode: 'Area', volumeMode: 'Volume', initialDimension: 'Starting dimension', lengthUnit: 'Length unit', areaUnit: 'Area unit', volumeUnit: 'Volume unit', coefficient: 'Expansion coefficient', coefficientTemperatureUnit: 'Coefficient stated per', perCelsius: 'degree Celsius', perFahrenheit: 'degree Fahrenheit', perCelsiusShort: 'per °C', perFahrenheitShort: 'per °F', deltaTemperature: 'Temperature change', temperatureUnit: 'Temperature unit', celsius: 'Celsius', fahrenheit: 'Fahrenheit', accuracyNote: 'Enter a coefficient for the selected type.' },
+  },
   'horsepower-calculator': {
     name: 'Horsepower calculator', actions: { ...actions, calculate: 'Calculate', example: 'Try 100 N·m at 1,000 RPM' },
     messages: { ...messages, torque: 'Torque', rpm: 'Engine speed', power: 'Power', watts: 'Watts', kilowatts: 'Kilowatts', horsepower: 'Mechanical horsepower', metricHorsepower: 'Metric horsepower (PS)' },
@@ -472,6 +478,12 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(friction, /name="staticCoefficient"/u);
   assert.match(friction, /name="kineticCoefficient"/u);
   assert.match(friction, /Coulomb model only\./u);
+  const thermal = renderGrowthForm('thermal-expansion-calculator', copies['thermal-expansion-calculator']);
+  for (const name of ['mode', 'initialDimension', 'lengthUnit', 'areaUnit', 'volumeUnit', 'coefficient', 'coefficientTemperatureUnit', 'deltaTemperature', 'temperatureUnit']) assert.match(thermal, new RegExp(`name="${name}"`, 'u'));
+  assert.match(thermal, /data-thermal-unit="area" hidden/u);
+  assert.match(thermal, /data-thermal-unit="volume" hidden/u);
+  assert.match(thermal, /data-action="example"/u);
+  assert.match(thermal, /data-action="copy"/u);
   const horsepower = renderGrowthForm('horsepower-calculator', copies['horsepower-calculator']);
   for (const name of ['mode', 'torqueUnit', 'torque', 'rpm', 'powerUnit', 'power']) assert.match(horsepower, new RegExp(`name="${name}"`, 'u'));
   assert.match(horsepower, /data-horsepower-field="power" hidden/u);

@@ -153,6 +153,8 @@ import heatPumpCopies from './heat-pump-calculator-final.mjs';
 import { heatPumpCalculatorEnglishCopy } from './heat-pump-calculator.en.mjs';
 import frictionCopies from './friction-calculator.mjs';
 import { frictionCalculatorEnglishCopy } from './friction-calculator.en.mjs';
+import thermalExpansionCopies from './thermal-expansion-calculator.mjs';
+import { thermalExpansionCalculatorEnglishCopy } from './thermal-expansion-calculator.en.mjs';
 import miterAngleCopies from './miter-angle-calculator-final.mjs';
 import { miterAngleCalculatorEnglishCopy } from './miter-angle-calculator.en.mjs';
 import voltageDropCopies from './voltage-drop-calculator-final.mjs';
@@ -626,6 +628,25 @@ registerGrowthLocaleExtension(source, 'friction-calculator', {
     fields: { ...frictionCopies.ru.fields, staticCoefficient: 'Коэффициент статического трения (μs)', kineticCoefficient: 'Коэффициент кинетического трения (μk)' },
   },
 }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'thermal-expansion-calculator', {
+  ...thermalExpansionCopies,
+  en: thermalExpansionCalculatorEnglishCopy,
+  ar: {
+    ...thermalExpansionCopies.ar,
+    fields: {
+      ...thermalExpansionCopies.ar.fields,
+      mode: 'نوع التمدد', areaMode: 'المساحة', volumeMode: 'الحجم',
+      areaUnit: 'وحدة المساحة', volumeUnit: 'وحدة الحجم',
+      accuracyNote: 'استخدم معاملًا مناسبًا للنوع المحدد (خطي أو مساحة أو حجم). لا تحوّل هذه الأداة المعاملات بين الأنواع ولا تختار خصائص المواد. تفترض تمددًا منتظمًا من الدرجة الأولى؛ وقد تختلف المواد حسب الحرارة والاتجاه والطور والرطوبة والقيود. ليست نصيحة هندسية أو للسلامة.',
+    },
+    messages: { ...thermalExpansionCopies.ar.messages, mode: 'نوع التمدد', dimensionChange: 'تغير البعد' },
+    additionalFaqs: [
+      thermalExpansionCopies.ar.additionalFaqs[0],
+      { ...thermalExpansionCopies.ar.additionalFaqs[1], answer: 'نعم. حدّد ما إذا كان المعامل لكل °C أو لكل °F، ثم اختر وحدة فرق الحرارة. يحوّل الحساب الفرق والمعامل على نحو متسق.' },
+      thermalExpansionCopies.ar.additionalFaqs[2],
+    ],
+  },
+}, 'friction-calculator');
 registerGrowthLocaleExtension(source, 'miter-angle-calculator', { ...miterAngleCopies, en: miterAngleCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'voltage-drop-calculator', { ...voltageDropCopies, en: voltageDropCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'molarity-calculator', { ...molarityCopies, en: molarityCalculatorEnglishCopy }, 'gravel-calculator');

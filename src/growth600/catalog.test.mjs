@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 103);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 103);
+  assert.equal(growthPilotTools.length, 104);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 104);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -68,6 +68,16 @@ test('friction calculator models Coulomb friction and incline motion without dup
   assert.deepEqual(tool.relatedExistingIds, ['force-calculator']);
   assert.match(tool.acceptance, /μs=0.*friction force is 0/u);
   assert.match(tool.boundary, /Coulomb/u);
+});
+
+test('thermal expansion calculator requires dimension-matched coefficients and has a zero-temperature acceptance case', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'thermal-expansion-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'thermal expansion calculator');
+  assert.match(tool.functions.join(' '), /linear, area, or volume/u);
+  assert.match(tool.acceptance, /zero temperature change preserves/u);
+  assert.match(tool.boundary, /does not infer material properties/u);
+  assert.deepEqual(tool.relatedExistingIds, ['unit-converter', 'heat-loss-calculator']);
 });
 
 test('Roth vs traditional compares user-entered tax scenarios without giving tax or account advice', () => {
