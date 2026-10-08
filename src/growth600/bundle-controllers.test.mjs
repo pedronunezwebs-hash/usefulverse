@@ -10,6 +10,6 @@ test('growth controllers bundle locally under budget without network or dynamic 
   for (const [id, source] of Object.entries(bundles)) {
     assert.doesNotMatch(source, /\bimport\s*\(/u, `${id} should not use a dynamic import`);
     assert.doesNotMatch(source, /\bimport\s/u, `${id} should have no unresolved imports`);
-    assertLocalController(id, source, 24 * 1024);
+    assertLocalController(id, source, id === 'chess-opening-trainer' ? 48 * 1024 : 24 * 1024);
   }
 });

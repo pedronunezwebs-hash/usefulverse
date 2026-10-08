@@ -25,7 +25,7 @@ for (const locale of localeEntries) {
 if (missing.length) throw new Error(`Growth600 release blocked: translated copy is missing for ${missing.join(', ')}.`);
 
 const outputDir = resolve(process.env.GROWTH600_DIST ?? resolve(root, 'dist-growth600'));
-const styles = (await readFile(resolve(root, 'src/growth600/site.css'), 'utf8')) + (await readFile(resolve(root, 'src/growth600/rtl-fixes.css'), 'utf8')) + (await readFile(resolve(root, 'src/growth600/tools/peg-solitaire/peg-solitaire.css'), 'utf8')) + (await readFile(resolve(root, 'src/growth600/tools/futoshiki/futoshiki.css'), 'utf8')) + (await readFile(resolve(root, 'src/growth600/tools/hashi-puzzle/hashi-puzzle.css'), 'utf8'));
+const styles = (await readFile(resolve(root, 'src/growth600/site.css'), 'utf8')) + (await readFile(resolve(root, 'src/growth600/rtl-fixes.css'), 'utf8')) + (await readFile(resolve(root, 'src/growth600/tools/peg-solitaire/peg-solitaire.css'), 'utf8')) + (await readFile(resolve(root, 'src/growth600/tools/futoshiki/futoshiki.css'), 'utf8')) + (await readFile(resolve(root, 'src/growth600/tools/hashi-puzzle/hashi-puzzle.css'), 'utf8')) + (await readFile(resolve(root, 'src/growth600/tools/chess-opening-trainer/chess-opening-trainer.css'), 'utf8'));
 const faviconSvg = await readFile(resolve(root, 'public/favicon.svg'), 'utf8');
 const modelRevision = '92a21aca5713f20faf9a87590cdfbdce2e34112c';
 const modelFolder = `Xenova/swin2SR-lightweight-x2-64`;

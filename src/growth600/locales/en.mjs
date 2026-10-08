@@ -72,6 +72,8 @@ import futoshikiCopies from './futoshiki.mjs';
 import { futoshikiEnglishCopy } from './futoshiki.en.mjs';
 import hashiPuzzleCopies from './hashi-puzzle.mjs';
 import { hashiPuzzleEnglishCopy } from './hashi-puzzle.en.mjs';
+import chessOpeningTrainerCopies from './chess-opening-trainer.mjs';
+import { chessOpeningTrainerEnglishCopy } from './chess-opening-trainer.en.mjs';
 import { workOrderGeneratorEnglishCopy } from './work-order-generator.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
@@ -768,5 +770,11 @@ const hashiPuzzleArabicCopy = {
   localizationStatus: 'machine-accepted',
 };
 registerGrowthLocaleExtension(source, 'hashi-puzzle', { ...hashiPuzzleCopies, en: hashiPuzzleEnglishCopy, es: hashiPuzzleSpanishCopy, ar: hashiPuzzleArabicCopy }, 'futoshiki');
+registerGrowthLocaleExtension(source, 'chess-opening-trainer', {
+  ...chessOpeningTrainerCopies,
+  en: chessOpeningTrainerEnglishCopy,
+  zh: { ...chessOpeningTrainerCopies.zh, title: '免费国际象棋开局训练器 | UsefulVerse' },
+  zh_tw: { ...chessOpeningTrainerCopies.zh_tw, title: '免費國際象棋開局訓練器 | UsefulVerse' },
+}, 'hashi-puzzle');
 
 export default Object.freeze(source);
