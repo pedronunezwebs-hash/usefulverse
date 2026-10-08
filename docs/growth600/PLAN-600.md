@@ -3698,13 +3698,14 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/travel-itinerary-planner/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `travel itinerary planner` — 4.400 búsquedas/mes US/en, KD 71; nivel B. CPC 3.95 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Días, visitas, horarios y reservas manuales, detectar solapes y exportar ICS/print. Sin API de viajes ni mapas obligatorios.
-- **Prueba de aceptación específica:** Nosolaparestriccionesdehoras
-- **Frontera con otras herramientas:** packing-list-maker: itinerariono equipaje. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
+- **Prueba de aceptación específica:** Un itinerario de tres días acepta paradas solo dentro del rango. Dos eventos 09:00–10:00 y 09:45–10:30 muestran un solapamiento de 15 min; una parada 10:40 tras terminar a las 10:30 muestra un margen de 10 min si se eligieron 30 min. Editar conserva el ID y el número de paradas. JSON vuelve a importarse; ICS usa líneas CRLF escapadas/dobladas y horas locales flotantes.
+- **Frontera con otras herramientas:** `fuel-cost-calculator` estima combustible/precio del viaje; esta herramienta organiza paradas y horarios, no coste. No se enlaza a una lista de equipaje inexistente ni se crean rutas por modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `trip itinerary maker` — 3.600/mes US/en; KD 45.
   - `travel itinerary planner free online`; `travel itinerary planner with example`; `travel itinerary planner no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Estado del checkpoint 2026-10-08:** motor, formulario, controlador, copy inglés y fixtures están implementados; 35 locales siguen como borradores y bloqueados por el gate. No se publica esta URL hasta cerrar idioma, QA visual y gates globales.
 
 ### 184 · Round Robin Tournament Generator
 

@@ -44,6 +44,7 @@ export function renderGrowthForm(toolId, copy) {
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
     'mood-tracker': ['date', 'mood', 'note', 'tags', 'saveConsent', 'privacyNote', 'consentHint', 'calendarLabel', 'monthLabel', 'selectedEntry', 'weekdaySun', 'weekdayMon', 'weekdayTue', 'weekdayWed', 'weekdayThu', 'weekdayFri', 'weekdaySat', 'mood1', 'mood2', 'mood3', 'mood4', 'mood5', 'tagCalm', 'tagAnxious', 'tagSad', 'tagHappy', 'tagTired', 'tagFocused', 'tagStressed', 'tagHopeful', 'tagGrateful', 'tagAngry', 'summaryLabel', 'averageLabel', 'countLabel', 'distributionLabel', 'noEntries', 'accuracyNote', 'importHint', 'sourceNote'],
     'journal-online': ['date', 'title', 'body', 'tags', 'search', 'dateFrom', 'dateTo', 'saveConsent', 'storageNote', 'encryptionNote', 'backupPassword', 'confirmPassword', 'entriesLabel', 'resultLabel', 'noEntries', 'countLabel', 'tagHint', 'importHint', 'passwordHint', 'exampleHint', 'exampleTitle', 'exampleBody', 'exampleTags', 'safetyNote'],
+    'travel-itinerary-planner': ['tripName', 'tripStartDate', 'tripEndDate', 'bufferMinutes', 'saveConsent', 'storageNote', 'itemDate', 'startTime', 'endTime', 'itemTitle', 'category', 'categories', 'location', 'reservation', 'notes', 'itineraryLabel', 'noTrip', 'noItems', 'itemCount', 'overlapCount', 'bufferWarningCount', 'conflictsLabel', 'backupFile', 'backupHint', 'timeZoneNote', 'reservationPrivacyNote', 'exampleTrip', 'exampleActivity', 'exampleMeal', 'exampleLocation', 'exampleReservation'],
     'auto-loan-refinance-calculator': ['balance', 'currentApr', 'currentMonths', 'newApr', 'newMonths', 'fees', 'feeTreatment'],
     'secret-santa-generator': ['names', 'exclusions'],
     'tire-size-calculator': ['originalSize', 'replacementSize', 'indicatedSpeed', 'speedUnit', 'fitmentNote'],
@@ -109,7 +110,8 @@ export function renderGrowthForm(toolId, copy) {
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
   'mood-tracker': ['saveEntry', 'updateEntry', 'example', 'reset', 'removeEntry', 'clearHistory', 'previousMonth', 'nextMonth', 'export', 'import', 'result'],
-  'journal-online': ['saveEntry', 'updateEntry', 'newEntry', 'example', 'reset', 'search', 'clearSearch', 'deleteEntry', 'clearAll', 'exportJson', 'importJson', 'saveBackup', 'result'],
+    'journal-online': ['saveEntry', 'updateEntry', 'newEntry', 'example', 'reset', 'search', 'clearSearch', 'deleteEntry', 'clearAll', 'exportJson', 'importJson', 'saveBackup', 'result'],
+    'travel-itinerary-planner': ['createTrip', 'saveItem', 'updateItem', 'newItem', 'deleteItem', 'deleteTrip', 'example', 'reset', 'exportIcs', 'exportJson', 'importJson', 'print', 'result'],
     'auto-loan-refinance-calculator': ['calculate', 'reset', 'copy', 'result'],
     'secret-santa-generator': ['generate', 'reset', 'copy', 'download', 'result', 'reveal', 'next', 'privacyNote'],
     'tire-size-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kmh', 'mph'],
@@ -1058,6 +1060,47 @@ export function renderGrowthForm(toolId, copy) {
         <section aria-labelledby="journal-selected-heading"><h3 id="journal-selected-heading">${escapeGrowthHtml(fields.resultLabel)}</h3><article data-selected-entry></article></section>
         <div class="actions"><button type="button" data-action="delete-entry" class="button button--secondary">${escapeGrowthHtml(actions.deleteEntry)}</button><button type="button" data-action="clear-all" class="button button--secondary">${escapeGrowthHtml(actions.clearAll)}</button><button type="button" data-action="export-json" class="button button--secondary">${escapeGrowthHtml(actions.exportJson)}</button><button type="button" data-action="save-backup" class="button button--secondary">${escapeGrowthHtml(actions.saveBackup)}</button></div>
         ${label('journal-import-file', actions.importJson, '<input id="journal-import-file" name="backupFile" type="file" accept=".json,application/json">')}<p class="hint">${escapeGrowthHtml(fields.importHint)}</p>
+      </section>
+    </form>`, copy);
+  }
+
+  if (toolId === 'travel-itinerary-planner') {
+    const categoryOptions = ['activity', 'meal', 'transport', 'stay', 'reservation', 'other'].map((category) => `<option value="${category}">${escapeGrowthHtml(fields.categories[category])}</option>`).join('');
+    return attachCopy(`<form id="tool-form" novalidate>
+      <section aria-labelledby="trip-details-heading"><h3 id="trip-details-heading">${escapeGrowthHtml(actions.createTrip)}</h3>
+        <div class="calculator-grid">
+          ${label('trip-name', fields.tripName, '<input id="trip-name" name="tripName" type="text" maxlength="140" required>')}
+          ${label('trip-start-date', fields.tripStartDate, '<input id="trip-start-date" name="tripStartDate" type="date" required>')}
+          ${label('trip-end-date', fields.tripEndDate, '<input id="trip-end-date" name="tripEndDate" type="date" required>')}
+          ${label('trip-buffer', fields.bufferMinutes, '<input id="trip-buffer" name="bufferMinutes" type="number" min="0" max="240" step="1" value="0" required>')}
+        </div>
+        <p class="hint">${escapeGrowthHtml(fields.limitNote)} ${escapeGrowthHtml(fields.timeZoneNote)}</p>
+        <button type="button" data-action="create-trip" class="button button--primary">${escapeGrowthHtml(actions.createTrip)}</button>
+      </section>
+      <section aria-labelledby="itinerary-item-heading"><h3 id="itinerary-item-heading">${escapeGrowthHtml(fields.itemTitle)}</h3>
+        <div class="calculator-grid">
+          ${label('item-date', fields.itemDate, '<input id="item-date" name="itemDate" type="date" required>')}
+          ${label('item-start-time', fields.startTime, '<input id="item-start-time" name="startTime" type="time" required>')}
+          ${label('item-end-time', fields.endTime, '<input id="item-end-time" name="endTime" type="time" required>')}
+          ${label('item-title', fields.itemTitle, '<input id="item-title" name="itemTitle" type="text" maxlength="140" required>')}
+          ${label('item-category', fields.category, `<select id="item-category" name="category">${categoryOptions}</select>`)}
+          ${label('item-location', fields.location, '<input id="item-location" name="location" type="text" maxlength="180">')}
+          ${label('item-reservation', fields.reservation, '<input id="item-reservation" name="reservation" type="text" maxlength="180">')}
+        </div>
+        ${label('item-notes', fields.notes, '<textarea id="item-notes" name="notes" rows="3" maxlength="2000"></textarea>')}
+        <p class="hint">${escapeGrowthHtml(fields.reservationPrivacyNote)}</p>
+        <div class="actions">${button('example', actions.example, 'secondary')}<button type="submit" data-action="save-item" class="button button--primary">${escapeGrowthHtml(actions.saveItem)}</button><button type="button" data-action="new-item" class="button button--secondary">${escapeGrowthHtml(actions.newItem)}</button>${button('reset', actions.reset, 'secondary')}<button type="button" data-action="delete-item" class="button button--secondary" disabled>${escapeGrowthHtml(actions.deleteItem)}</button></div>
+      </section>
+      <label class="choice" for="itinerary-save-consent"><input id="itinerary-save-consent" name="saveConsent" type="checkbox"><span>${escapeGrowthHtml(fields.saveConsent)}</span></label>
+      <p class="hint">${escapeGrowthHtml(fields.storageNote)}</p>
+      <p class="status" role="status" aria-live="polite" data-status></p>
+      <section class="result" data-result><h2>${escapeGrowthHtml(actions.result)}</h2>
+        <p data-trip-summary>${escapeGrowthHtml(fields.noTrip)}</p>
+        <p>${escapeGrowthHtml(fields.itemCount)}: <span data-item-count>0</span> · ${escapeGrowthHtml(fields.overlapCount)}: <span data-overlap-count>0</span> · ${escapeGrowthHtml(fields.bufferWarningCount)}: <span data-buffer-count>0</span></p>
+        <ul data-itinerary-list></ul><p data-empty>${escapeGrowthHtml(fields.noItems)}</p>
+        <section aria-labelledby="itinerary-conflicts-heading"><h3 id="itinerary-conflicts-heading">${escapeGrowthHtml(fields.conflictsLabel)}</h3><ul data-conflict-list></ul></section>
+        <div class="actions"><button type="button" data-action="export-ics" class="button button--primary">${escapeGrowthHtml(actions.exportIcs)}</button><button type="button" data-action="export-json" class="button button--secondary">${escapeGrowthHtml(actions.exportJson)}</button><button type="button" data-action="print" class="button button--secondary">${escapeGrowthHtml(actions.print)}</button><button type="button" data-action="delete-trip" class="button button--secondary">${escapeGrowthHtml(actions.deleteTrip)}</button></div>
+        ${label('itinerary-backup-file', actions.importJson, '<input id="itinerary-backup-file" name="backupFile" type="file" accept=".json,application/json">')}<p class="hint">${escapeGrowthHtml(fields.backupHint)}</p>
       </section>
     </form>`, copy);
   }

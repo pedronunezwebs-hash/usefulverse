@@ -384,6 +384,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/journal-online/logic.mjs',
   },
   {
+    id: 'travel-itinerary-planner',
+    category: 'travel',
+    type: 'itinerary-planner',
+    primaryIntent: 'travel itinerary planner',
+    secondaryIntents: ['trip itinerary maker', 'travel itinerary calendar', 'daily travel itinerary planner', 'travel itinerary with reservations'],
+    functions: ['create a dated multi-day trip and manually schedule activities, meals, transport, stays and reservations', 'store each stop’s local wall-clock date and time, place, booking reference and notes; edit or delete by stable ID', 'flag actual same-day time overlaps and separately warn when consecutive stops leave less than the user-selected connection buffer', 'export calendar events as an ICS file, export/import a validated JSON backup, or use the browser print dialog'],
+    acceptance: 'A 3-day trip accepts stops only inside the date range; same-day events 09:00–10:00 and 09:45–10:30 report a 15-minute overlap, while 10:40 after a 10:30 finish reports a 10-minute gap when the selected buffer is 30 minutes. Editing keeps the same ID and stop count. JSON round-trips. ICS uses escaped, folded CRLF lines and floating local times; no time-zone conversion, bookings, routing, travel-time estimate or network request is claimed.',
+    boundary: 'A manually entered itinerary organizer, not a booking service, live flight/hotel feed, map, navigation or route optimizer. Times are floating local wall-clock values; users must confirm the destination time zone and calendar behavior. Overnight items are not supported. Connection warnings compare schedule times with a user-entered buffer; they do not estimate travel time. Itinerary data stays in this browser tab unless the visitor explicitly enables this browser’s unencrypted local storage or exports a file. No travel API or paid service is used.',
+    relatedExistingIds: ['fuel-cost-calculator'],
+    logicModule: './tools/travel-itinerary-planner/logic.mjs',
+  },
+  {
     id: 'miter-angle-calculator',
     category: 'home-materials',
     type: 'calculator',
