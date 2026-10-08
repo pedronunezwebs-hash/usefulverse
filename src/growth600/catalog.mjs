@@ -708,6 +708,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/color-name-finder/logic.mjs',
   },
   {
+    id: 'photo-to-sketch',
+    category: 'image-tools',
+    type: 'image-editor',
+    primaryIntent: 'photo to sketch',
+    secondaryIntents: ['image to pencil sketch', 'turn photo into a sketch', 'pencil sketch effect online'],
+    functions: ['create a local grayscale pencil-style edge and tone effect from a supported raster image', 'adjust sketch intensity and fine-detail threshold', 'compare a reduced preview with the unchanged source', 'export a separate full-dimension PNG and cancel long processing'],
+    acceptance: 'A white RGBA input produces an unchanged white RGB output with the original alpha and dimensions; export never mutates the source buffer and rejects images above eight megapixels.',
+    boundary: 'A deterministic local pixel filter, not AI scene understanding or a hand-drawn reconstruction. Only supported still-image decoding is promised; animated input is exported as a still PNG and metadata is not retained. Processing is limited by device memory and CPU; no server/API or upload.',
+    relatedExistingIds: ['image-sharpener', 'image-color-picker'],
+    logicModule: './tools/photo-to-sketch/logic.mjs',
+  },
+  {
     id: 'weight-loss-calculator',
     category: 'health-math',
     type: 'calculator',

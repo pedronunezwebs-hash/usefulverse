@@ -21,6 +21,7 @@ export function renderGrowthForm(toolId, copy) {
     'image-color-picker': ['imageFile', 'accuracyNote', 'previewHint', 'zoom', 'currentColor', 'paletteLabel'],
     'image-region-redactor': ['imageFile', 'mode', 'strength', 'regionX', 'regionY', 'regionWidth', 'regionHeight', 'accuracyNote', 'dragHint', 'regionsLabel'],
     'image-sharpener': ['imageFile', 'amount', 'radius', 'threshold', 'compare', 'accuracyNote', 'previewHint', 'format', 'relatedRedactor', 'relatedCropper'],
+    'photo-to-sketch': ['imageFile', 'intensity', 'detail', 'compare', 'accuracyNote', 'previewHint'],
     'image-upscaler': ['imageFile', 'accuracyNote', 'progressHint', 'sourcePreview', 'resultPreview'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
@@ -96,6 +97,7 @@ export function renderGrowthForm(toolId, copy) {
     'image-color-picker': ['load', 'addSample', 'copyColor', 'copyPalette', 'remove', 'clear', 'reset'],
     'image-region-redactor': ['load', 'addRegion', 'undo', 'clear', 'export', 'example', 'download', 'removeRegion', 'black', 'pixelate', 'blur', 'png', 'jpeg'],
     'image-sharpener': ['load', 'export', 'download', 'original', 'sharpened', 'png', 'jpeg'],
+    'photo-to-sketch': ['load', 'export', 'cancel', 'download', 'original'],
     'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
@@ -224,6 +226,22 @@ export function renderGrowthForm(toolId, copy) {
     </div>
     <div class="field"><label for="sharpener-format">${escapeGrowthHtml(fields.format)}</label><select id="sharpener-format" name="format"><option value="image/png">${escapeGrowthHtml(labels.png)}</option><option value="image/jpeg">${escapeGrowthHtml(labels.jpeg)}</option></select></div>
     <div class="actions"><button type="button" data-action="export" class="button button--primary" disabled>${escapeGrowthHtml(labels.export)}</button>${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><a class="button button--primary" data-export hidden></a>
+  </form>`, copy);
+
+  if (toolId === 'photo-to-sketch') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('photo-sketch-file', fields.imageFile, '<input id="photo-sketch-file" name="imageFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/avif,image/bmp" required>')}
+    <div class="sketch-controls">
+      ${label('photo-sketch-intensity', fields.intensity, '<input id="photo-sketch-intensity" name="intensity" type="range" min="0.25" max="1.5" step="0.05" value="1">')}
+      ${label('photo-sketch-detail', fields.detail, '<input id="photo-sketch-detail" name="detail" type="range" min="0" max="100" step="1" value="8">')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div data-sketch-workbench hidden>
+      <p class="hint">${escapeGrowthHtml(fields.previewHint)}</p>
+      <label class="sharpener-compare"><input type="checkbox" name="compare"> ${escapeGrowthHtml(labels.original)}</label>
+      <canvas data-sketch-preview tabindex="0" role="img" aria-label="${escapeGrowthHtml(fields.previewHint)}"></canvas>
+    </div>
+    <div class="actions"><button type="button" data-action="export" class="button button--primary" disabled>${escapeGrowthHtml(labels.export)}</button><button type="button" data-action="cancel" class="button button--secondary" hidden>${escapeGrowthHtml(labels.cancel)}</button>${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><a class="button button--primary" data-export hidden></a>
   </form>`, copy);
 

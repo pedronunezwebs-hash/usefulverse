@@ -849,3 +849,15 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] B/X — sin bundle real ni prueba de interacción en navegador en esta continuación; esbuild/dependencias no se instalaron.
 - [ ] P/S — sin merge, deploy, sitemap de producción ni envíos a buscadores. No ejecutar PageSpeed/Lighthouse.
 - **Recuento vigente:** 72/323 candidatas con implementación inglesa; quedan 251 entradas por resolver, incluyendo una duplicada identificada que requiere sustitución. Las 277 herramientas base permanecen intactas. Color Name Finder no cuenta como localizada, publicada ni indexada.
+
+## Continuación · Photo To Sketch (#170 detallado del plan) · 2026-10-08
+
+- [x] C/F/E — filtro local de bordes/tonos para fotos, distinto del enfoque de nitidez: controles de intensidad y detalle, comparación reversible y exportación PNG separada. La ficha registra `photo to sketch` 3.600 búsquedas/mes US/en (KD 24) y `image to pencil sketch` 720 (KD 19); no hubo consultas nuevas ni gasto de DataForSEO.
+- [x] E — acepta PNG/JPEG/WebP/GIF/AVIF/BMP decodificables por el navegador, limita a 8 MP, conserva dimensiones y alfa, rechaza opciones inválidas, no muta los píxeles fuente y permite cancelar exportación en lotes. Los formatos animados salen como un fotograma; metadatos no se conservan. No se promete generación artística/IA.
+- [x] B — formulario con rangos accesibles, comparación, estado anunciado, cancelación, reset y PNG independiente. Explica el consumo local de CPU/memoria, el límite y que escritorio es preferible para imágenes grandes. Sin subida, API, almacenamiento ni procesamiento servidor.
+- [x] Integración — catálogo, renderer, CSS, extensión locale, FAQs, contrato y pruebas de build; la prueba confirma que los otros 35 idiomas siguen bloqueados en vez de publicar inglés como traducción.
+- [x] Verificación focalizada final: `node --test src/growth600/tools/photo-to-sketch/logic.test.mjs src/growth600/catalog.test.mjs src/growth600/forms.test.mjs src/growth600/locale-contract.test.mjs src/growth600/locale-utils.test.mjs src/growth600/render.test.mjs src/growth600/build.test.mjs` — **149/149 aprobadas**; `node --check` en lógica/controlador/copy/registro y `git diff --check` limpios. Build de prueba estático crea y elimina su salida temporal.
+- [ ] X — no se probó controlador en Chrome ni bundle optimizado real; no hay dependencias instaladas en este clon y no se descargaron. La comprobación no demuestra todas las variantes de decodificación/permisos/memoria del navegador.
+- [ ] L — la fuente inglesa pasa contrato y límites de metadatos; 35 idiomas permanecen como borradores `pending-tool-specific-translation` y se comprobó que el gate los rechaza.
+- [ ] P/S — sin merge, deploy, actualización del sitemap público o envíos a buscadores.
+- **Recuento vigente:** **73/323** candidatas con implementación inglesa. Quedan **250 filas** del plan por resolver, incluida una fila duplicada previamente detectada que debe sustituirse; las demás 249 son candidatas pendientes. Las 277 herramientas protegidas siguen intactas. Photo To Sketch no cuenta como completamente traducida, publicada ni indexada.
