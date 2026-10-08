@@ -10,7 +10,7 @@ function label(id, text, control) {
 }
 
 function button(action, text, kind = 'primary') {
-  const type = action === 'reset' ? 'reset' : ['calculate', 'generate', 'convert'].includes(action) ? 'submit' : 'button';
+  const type = action === 'reset' ? 'reset' : ['calculate', 'generate', 'convert', 'preview'].includes(action) ? 'submit' : 'button';
   return `<button type="${type}" data-action="${action}" class="button button--${kind}">${escapeGrowthHtml(text)}</button>`;
 }
 
@@ -56,6 +56,7 @@ export function renderGrowthForm(toolId, copy) {
     'force-calculator': ['mode', 'solveForce', 'solveMass', 'solveAcceleration', 'netMode', 'forceUnit', 'massUnit', 'accelerationUnit', 'force', 'mass', 'acceleration', 'forces', 'forcesHint', 'netMass', 'accuracyNote'],
     'horsepower-calculator': ['mode', 'solvePower', 'solveTorque', 'solveRpm', 'torque', 'torqueUnit', 'rpm', 'power', 'powerUnit', 'accuracyNote'],
     'rtf-converter': ['file', 'accuracyNote', 'limitNote', 'output'],
+    'csv-to-pdf': ['file', 'separator', 'encoding', 'hasHeader', 'pageSize', 'orientation', 'margin', 'accuracyNote', 'limitNote', 'resultCount', 'tableLabel'],
     'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
     'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
@@ -148,6 +149,7 @@ export function renderGrowthForm(toolId, copy) {
     'force-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'horsepower-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'rtf-converter': ['convert', 'reset', 'copy', 'download', 'print', 'result'],
+    'csv-to-pdf': ['preview', 'reset', 'example', 'print', 'result'],
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
@@ -1305,6 +1307,22 @@ export function renderGrowthForm(toolId, copy) {
       <textarea id="rtf-output" name="output" rows="12" maxlength="2097152" readonly spellcheck="false"></textarea>
       <div class="actions">${button('copy', actions.copy, 'secondary')}${button('download', actions.download, 'secondary')}${button('print', actions.print, 'secondary')}</div>
     </section>
+  </form>`, copy);
+
+  if (toolId === 'csv-to-pdf') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('csv-file', fields.file, '<input id="csv-file" name="file" type="file" accept=".csv,text/csv,text/plain" required>')}
+    <div class="form-grid">
+      ${label('csv-separator', fields.separator, `<select id="csv-separator" name="separator"><option value="auto">${escapeGrowthHtml(fields.auto)}</option><option value=",">${escapeGrowthHtml(fields.comma)}</option><option value=";">${escapeGrowthHtml(fields.semicolon)}</option><option value="tab">${escapeGrowthHtml(fields.tab)}</option><option value="|">${escapeGrowthHtml(fields.pipe)}</option></select>`)}
+      ${label('csv-encoding', fields.encoding, `<select id="csv-encoding" name="encoding"><option value="utf-8">UTF-8</option><option value="windows-1252">Windows-1252</option><option value="utf-16le">UTF-16 LE</option><option value="utf-16be">UTF-16 BE</option></select>`)}
+      ${label('csv-page-size', fields.pageSize, `<select id="csv-page-size" name="pageSize"><option value="a4">A4</option><option value="letter">Letter</option></select>`)}
+      ${label('csv-orientation', fields.orientation, `<select id="csv-orientation" name="orientation"><option value="landscape">${escapeGrowthHtml(fields.landscape)}</option><option value="portrait">${escapeGrowthHtml(fields.portrait)}</option></select>`)}
+      ${label('csv-margin', fields.margin, `<select id="csv-margin" name="margin"><option value="narrow">${escapeGrowthHtml(fields.narrow)}</option><option value="normal">${escapeGrowthHtml(fields.normal)}</option></select>`)}
+    </div>
+    <label class="check-row"><input type="checkbox" name="hasHeader" checked> ${escapeGrowthHtml(fields.hasHeader)}</label>
+    <p class="hint">${escapeGrowthHtml(fields.limitNote)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${submit('preview')}${button('example', actions.example, 'secondary')}${button('reset', actions.reset, 'secondary')}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><p data-csv-summary></p><div class="table-scroll"><table data-csv-preview><caption>${escapeGrowthHtml(fields.tableLabel)}</caption><thead></thead><tbody></tbody></table></div><p data-csv-preview-note></p><div class="actions">${button('print', actions.print, 'secondary')}</div></section>
   </form>`, copy);
 
   if (toolId === 'chemical-equation-balancer') return attachCopy(`<form id="tool-form" novalidate>

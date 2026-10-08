@@ -266,6 +266,10 @@ const copies = {
     name: 'RTF converter', actions: { ...actions, convert: 'Convert to text', print: 'Print or save as PDF' }, messages: { ...messages },
     fields: { file: 'Choose RTF file', limitNote: '5 MiB local limit.', accuracyNote: 'Text extraction only.', output: 'Extracted text' },
   },
+  'csv-to-pdf': {
+    name: 'CSV to PDF', actions: { ...actions, preview: 'Preview table', example: 'Load example', print: 'Print or save as PDF' }, messages: { ...messages },
+    fields: { file: 'Choose CSV file', separator: 'Separator', auto: 'Detect', comma: 'Comma', semicolon: 'Semicolon', tab: 'Tab', pipe: 'Pipe', encoding: 'Encoding', hasHeader: 'First row is headings', pageSize: 'Paper', orientation: 'Orientation', landscape: 'Landscape', portrait: 'Portrait', margin: 'Margins', narrow: 'Narrow', normal: 'Normal', accuracyNote: 'Plain data only.', limitNote: '5 MiB local limit.', resultCount: 'rows', columnCount: 'columns', previewLimit: 'First', tableLabel: 'CSV preview' },
+  },
   'compression-ratio-calculator': {
     name: 'Compression ratio calculator', actions: { ...actions, millimeters: 'Millimeters', inches: 'Inches' },
     messages: { ...messages, ratio: 'Static compression ratio', sweptVolume: 'Swept volume', clearanceVolume: 'Clearance volume', totalDisplacement: 'Total displacement', boreStroke: 'Bore to stroke' },
@@ -858,6 +862,20 @@ test('RTF converter form accepts one local RTF file and exposes copy, text downl
   assert.match(html, /type="file" accept="\.rtf,application\/rtf,text\/rtf"/u);
   assert.match(html, /name="output"[^>]+readonly/u);
   for (const action of ['convert', 'reset', 'copy', 'download', 'print']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
+  assert.match(html, /role="status" aria-live="polite"/u);
+  assert.doesNotMatch(html, /<form[^>]+action=/u);
+});
+
+test('CSV-to-PDF form labels local file, separator, encoding and print settings', () => {
+  const html = renderGrowthForm('csv-to-pdf', {
+    fields: { file: 'Choose CSV file', separator: 'Separator', auto: 'Detect', comma: 'Comma', semicolon: 'Semicolon', tab: 'Tab', pipe: 'Pipe', encoding: 'Encoding', hasHeader: 'First row is headings', pageSize: 'Paper', orientation: 'Orientation', landscape: 'Landscape', portrait: 'Portrait', margin: 'Margins', narrow: 'Narrow', normal: 'Normal', accuracyNote: 'Plain data only.', limitNote: '5 MiB local limit.', resultCount: 'rows', columnCount: 'columns', previewLimit: 'First', tableLabel: 'CSV preview' },
+    actions: { ...actions, preview: 'Preview table', example: 'Load example', print: 'Print or save as PDF', result: 'Printable table' },
+  });
+  assert.match(html, /type="file" accept="\.csv,text\/csv,text\/plain"/u);
+  assert.match(html, /name="encoding"/u);
+  assert.match(html, /name="hasHeader" checked/u);
+  assert.match(html, /data-csv-preview/u);
+  for (const action of ['preview', 'example', 'reset', 'print']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
   assert.match(html, /role="status" aria-live="polite"/u);
   assert.doesNotMatch(html, /<form[^>]+action=/u);
 });

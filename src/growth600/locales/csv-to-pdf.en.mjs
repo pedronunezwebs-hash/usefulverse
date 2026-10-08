@@ -1,0 +1,30 @@
+export const csvToPdfEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'CSV to PDF Converter',
+  title: 'CSV to PDF Converter Free | UsefulVerse',
+  description: 'Preview and print CSV tables to PDF for free. Local processing, no sign-up; files up to 5 MiB stay on your device.',
+  intro: 'Turn a CSV table into a clean printable page. Preview the rows, choose paper and layout, then use your browser’s print dialog to save as PDF.',
+  howQuestion: 'How do I convert a CSV file to PDF?',
+  howAnswer: 'Choose a CSV file, confirm its separator and text encoding, preview the table, set page options and select Print or save as PDF. The conversion stays in your browser.',
+  privacyQuestion: 'Is my CSV file uploaded or executed?',
+  privacyAnswer: 'No. The file is read locally. CSV values are displayed as text; formulas are not calculated and nothing is uploaded by this tool.',
+  fields: {
+    file: 'Choose a CSV file', separator: 'Column separator', encoding: 'Text encoding', auto: 'Detect automatically', comma: 'Comma', semicolon: 'Semicolon', tab: 'Tab', pipe: 'Vertical bar',
+    hasHeader: 'Use the first row as column headings', pageSize: 'Paper size', orientation: 'Page orientation', landscape: 'Landscape', portrait: 'Portrait', margin: 'Page margins', narrow: 'Narrow', normal: 'Normal',
+    accuracyNote: 'This prints plain table data only. It does not keep spreadsheet styling, formulas, charts or workbook sheets.',
+    limitNote: 'Local limits: 5 MiB, 2,000 data rows, 40 columns and 50,000 cells. A large table may take longer to print on a phone.',
+    resultCount: 'rows', columnCount: 'columns', previewLimit: 'Preview shows the first', tableLabel: 'CSV preview',
+  },
+  actions: { preview: 'Preview table', reset: 'Clear', example: 'Load example', print: 'Print or save as PDF', result: 'Printable table' },
+  messages: {
+    noFile: 'Choose a CSV file first.', invalidFile: 'Choose a .csv file and try again.', fileTooLarge: 'This file exceeds the 5 MiB local limit.',
+    invalidCsv: 'The CSV could not be read. Check its separator, encoding and quotation marks.', ready: 'Table preview is ready.', exampleLoaded: 'Example table loaded.',
+    printBlocked: 'Allow this site to open a print window, then try again.', noRows: 'This CSV has no printable rows.',
+  },
+  additionalFaqs: [
+    { question: 'Can I save the CSV table as a PDF?', answer: 'Yes. Preview it, choose Print or save as PDF, and select Save as PDF in your browser’s print dialog if available.' },
+    { question: 'Will formulas or spreadsheet formatting be preserved?', answer: 'No. CSV stores plain text values. This tool prints the displayed values and does not calculate formulas or preserve spreadsheet styles, charts or workbook tabs.' },
+    { question: 'What are the file and table limits?', answer: 'Files stay on your device and are limited to 5 MiB, 2,000 data rows, 40 columns and 50,000 cells so the browser can build a printable table.' },
+  ],
+  localizationStatus: 'approved',
+});
