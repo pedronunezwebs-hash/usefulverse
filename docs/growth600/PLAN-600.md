@@ -1164,14 +1164,14 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 178 · Acceleration Calculator
 
-- [x] **C/F/E/X/L/B/S locales validados — `acceleration-calculator`; P queda pendiente del pipeline de publicación**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/acceleration-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `acceleration-calculator`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/acceleration-calculator/`; otras 35 versiones con los prefijos del anexo.
 - **Demanda:** `acceleration calculator` — 2.900 búsquedas/mes US/en, KD 0; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Velocidades inicial/final, tiempo, posición y MRUA
 - **Prueba de aceptación específica:** De0 a20m/s en5s da4m/s²
 - **Frontera con otras herramientas:** cinemática de aceleración constante, con cuatro incógnitas; no es una URL por dirección inversa o modalidad. Evita prometer frenado real, resistencia o seguridad de vehículos.
 - **Implementación/riesgo:** motor local ligero; cuatro modos de cálculo y unidades métricas/imperiales, con conversión interna SI. Aceptación y bordes cubiertos por pruebas focalizadas; no sustituye consejo de ingeniería.
-- **Avance comprobado (2026-10-08):** 36 copias estáticas (42 cadenas por idioma), incluida la corrección de etiquetas de física árabes y dos rótulos Marathi que contenían un marcador de lote. Catálogo, formulario, controlador, contrato de locales y build pasan; suite focalizada 161/161 antes de dos ajustes de copy y contrato de locales 117/117 después. Suite total 1.269/1.269; `npm run check` valida 10.260 URLs originales sin cambios. Build aislado produce **3.132 URLs únicas** (86 herramientas × 36 idiomas + 36 portadas). Chrome: ejemplo 0→20 m/s en 5 s da 4 m/s² y 50 m; modo inverso e imperial verificados; móvil árabe RTL 390 px sin overflow, errores de consola ni recursos externos. Publicación todavía pendiente del pipeline; no ejecutado PageSpeed.
+- **Avance comprobado (2026-10-08):** 36 copias estáticas (42 cadenas por idioma), incluida la corrección de etiquetas de física árabes y dos rótulos Marathi que contenían un marcador de lote. Catálogo, formulario, controlador, contrato de locales y build pasan; suite focalizada 161/161 antes de dos ajustes de copy, contrato de locales/lógica 121/121 después. Suite total 1.269/1.269; `npm run check` valida 10.260 URLs originales sin cambios. Build aislado produce **3.132 URLs únicas** (86 herramientas × 36 idiomas + 36 portadas). Chrome: ejemplo 0→20 m/s en 5 s da 4 m/s² y 50 m; modo inverso e imperial verificados; móvil árabe RTL 390 px sin overflow, errores de consola ni recursos externos. PR #42 fusionado en `8c9ded9a`; el workflow 37789761618 publicó el sitio principal y 37790375128 publicó el hub. Comprobadas las rutas EN/ES/AR y el sitemap público actualizado con 3.132 URLs únicas. No ejecutado PageSpeed.
 - **Consultas secundarias del mismo propietario:**
   - `acceleration velocity calculator` — 30/mes US/en; KD 2.
   - `acceleration calculator free online`; `acceleration calculator with example`; `acceleration calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
