@@ -26,6 +26,8 @@ import imageSharpenerCopies from './image-sharpener-final.mjs';
 import { imageSharpenerEnglishCopy } from './image-sharpener.en.mjs';
 import photoToSketchCopies from './photo-to-sketch-final.mjs';
 import { photoToSketchEnglishCopy } from './photo-to-sketch.en.mjs';
+import schemaMarkupValidatorCopies from './schema-markup-validator-final.mjs';
+import { schemaMarkupValidatorEnglishCopy } from './schema-markup-validator.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
 import imageColorPickerCopies from './image-color-picker-final.mjs';
@@ -542,5 +544,6 @@ registerGrowthLocaleExtension(source, 'hitori', { ...hitoriCopies, en: hitoriEng
 registerGrowthLocaleExtension(source, 'nurikabe', { ...nurikabeCopies, en: nurikabeEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'color-name-finder', { ...colorNameFinderCopies, en: colorNameFinderEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'photo-to-sketch', { ...photoToSketchCopies, en: photoToSketchEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'schema-markup-validator', { ...schemaMarkupValidatorCopies, en: schemaMarkupValidatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

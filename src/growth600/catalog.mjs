@@ -720,6 +720,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/photo-to-sketch/logic.mjs',
   },
   {
+    id: 'schema-markup-validator',
+    category: 'developer-tools',
+    type: 'utility',
+    primaryIntent: 'schema markup validator',
+    secondaryIntents: ['structured data validator', 'JSON-LD validator', 'Schema.org markup checker'],
+    functions: ['parse pasted JSON-LD without uploading the markup', 'check Schema.org type and property names against a pinned local vocabulary release', 'report malformed JSON separately from unknown terms and non-blocking vocabulary warnings', 'show vocabulary version, checked entities and an example without fetching remote contexts or user URLs'],
+    acceptance: 'Malformed JSON reports a syntax error and is not accepted; an unknown @type is reported as a warning without claiming that a custom extension is necessarily invalid.',
+    boundary: 'Local JSON and Schema.org term check only; no HTML, Microdata, RDFa, remote @context resolution, page fetching, Google rich-result eligibility testing or guarantee of display. Schema.org domain/range usage is flexible, so the tool does not treat it as strict validation. Pasted markup stays in the browser; a compact versioned vocabulary is loaded from this same static site on demand.',
+    relatedExistingIds: [],
+    logicModule: './tools/schema-markup-validator/logic.mjs',
+  },
+  {
     id: 'weight-loss-calculator',
     category: 'health-math',
     type: 'calculator',

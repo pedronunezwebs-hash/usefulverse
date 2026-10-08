@@ -28,7 +28,9 @@ export function assertLocalController(toolId, source, maxBytes) {
   const bytes = Buffer.byteLength(source);
   if (bytes > maxBytes) throw new Error(`${toolId} controller exceeds the ${maxBytes}-byte initial runtime budget.`);
   const withoutSvgNamespace = source.replaceAll('http://www.w3.org/2000/svg', '');
-  if (/\b(?:fetch|XMLHttpRequest|WebSocket|EventSource)\b/u.test(source) || /https?:\/\//u.test(withoutSvgNamespace)) throw new Error(`${toolId} controller must not contact a remote service.`);
+  const localVocabularyFetch = /fetch\(new URL\(["']\/assets\/schemaorg-v30\.1\.json["'],location\.origin\)/u;
+  const withoutAllowedFetch = source.replace(localVocabularyFetch, '');
+  if (/\b(?:fetch|XMLHttpRequest|WebSocket|EventSource)\b/u.test(withoutAllowedFetch) || /https?:\/\//u.test(withoutSvgNamespace)) throw new Error(`${toolId} controller must not contact a remote service.`);
   if (/\beval\s*\(|\bnew\s+Function\b/u.test(source)) throw new Error(`${toolId} controller contains dynamic code execution.`);
 }
 

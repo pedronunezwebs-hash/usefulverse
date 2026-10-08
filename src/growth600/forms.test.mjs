@@ -10,6 +10,7 @@ const messages = { copied: 'Copied.', copyUnavailable: 'Copy is unavailable.', c
 const copies = {
   'image-sharpener': { name: 'Image sharpener', actions: { ...actions, load: 'Choose image', export: 'Prepare download', download: 'Download', original: 'Show original', sharpened: 'Sharpened preview', png: 'PNG', jpeg: 'JPEG' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', exporting: 'Sharpening…', exportFailed: 'Export failed.', exportReady: 'Image ready.' }, fields: { imageFile: 'Choose image', amount: 'Strength', radius: 'Radius', threshold: 'Threshold', compare: 'Show original', accuracyNote: 'Processed locally; 8 megapixel limit.', previewHint: 'Preview is reduced.', format: 'Format', relatedRedactor: 'Redact private details.', relatedCropper: 'Crop the image.' } },
   'photo-to-sketch': { name: 'Photo to sketch', actions: { ...actions, load: 'Choose image', export: 'Create sketch PNG', cancel: 'Cancel processing', download: 'Download sketch PNG', original: 'Show original' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', exporting: 'Creating sketch…', cancelled: 'Processing cancelled.', exportFailed: 'Export failed.', exportReady: 'Sketch ready.' }, fields: { imageFile: 'Choose image', intensity: 'Sketch intensity', detail: 'Fine-detail threshold', compare: 'Show original', accuracyNote: 'Local processing; maximum 8 megapixels.', previewHint: 'Reduced preview.' } },
+  'schema-markup-validator': { name: 'Schema markup validator', actions: { ...actions, validate: 'Validate markup', copySummary: 'Copy summary' }, messages: { ...messages, invalidJson: 'Invalid JSON.', rootNotObject: 'Expected an object.', inputTooLarge: 'Input too long.', loadingVocabulary: 'Loading terms.', vocabularyUnavailable: 'Terms unavailable.', valid: 'Valid.', invalid: 'Invalid.', unknownType: 'Unknown type.', unknownProperty: 'Unknown property.', noTypedEntity: 'No type.', exampleLoaded: 'Example loaded.' }, fields: { markup: 'Paste JSON-LD', accuracyNote: 'Local checks.', resultSummary: 'Summary', issues: 'Findings', googleNote: 'Not a Google test.' } },
   'image-upscaler': { name: 'Image upscaler', actions: { ...actions, upscale: 'Upscale 2×', cancel: 'Cancel', download: 'Download' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose image.', modelLoading: 'Loading model.', processing: 'Processing.', cancelled: 'Cancelled.', workerUnavailable: 'Worker unavailable.', processingFailed: 'Failed.', outputReady: 'Ready.' }, fields: { imageFile: 'Choose image', accuracyNote: 'Local model; 1 megapixel limit.', progressHint: 'Progress', sourcePreview: 'Original', resultPreview: 'Result' } },
   'image-region-redactor': { name: 'Image pixelator', actions: { ...actions, load: 'Choose image', addRegion: 'Add region', undo: 'Undo', clear: 'Clear regions', export: 'Apply redactions', removeRegion: 'Remove', black: 'Black', pixelate: 'Pixelate', blur: 'Blur', png: 'PNG', jpeg: 'JPEG' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image.', invalidRegion: 'Check the region.', regionAdded: 'Region added.', regionRemoved: 'Region removed.', regionsCleared: 'Regions cleared.', addRegionFirst: 'Add a region first.', exporting: 'Applying regions…', exportFailed: 'Export failed.', exportReady: 'Export ready.', region: 'Region' }, fields: { imageFile: 'Choose image', mode: 'Mode', strength: 'Strength', regionX: 'Left', regionY: 'Top', regionWidth: 'Width', regionHeight: 'Height', accuracyNote: 'Use black for sensitive details.', dragHint: 'Drag or enter exact coordinates.', regionsLabel: 'Regions', format: 'Format', relatedMosaic: 'Make a mosaic.', relatedCropper: 'Crop the image.' } },
   'wallpaper-calculator': { name: 'Wallpaper calculator', actions: { ...actions }, messages: { ...messages, netArea: 'Net wall area', strips: 'Strips', dropLength: 'Drop length', dropsPerRoll: 'Drops per roll', stripsToOrder: 'Strips to order', rolls: 'Rolls' }, fields: { unit: 'Unit', perimeter: 'Perimeter', wallHeight: 'Wall height', openingsArea: 'Opening area', rollWidth: 'Roll width', rollLength: 'Roll length', patternRepeat: 'Pattern repeat', wastePercent: 'Extra material', accuracyNote: 'Planning estimate only.', relatedPaintCalculator: 'Try paint calculator.' } },
@@ -555,6 +556,21 @@ test('photo-to-sketch form exposes local image controls, comparison, cancel and 
   assert.match(html, /data-action="reset"/u);
   assert.match(html, /data-export hidden/u);
   assert.match(html, /aria-live="polite"/u);
+});
+
+test('schema markup validator form labels pasted JSON-LD and offers example, check, reset and result controls', () => {
+  const html = renderGrowthForm('schema-markup-validator', {
+    name: 'Schema Markup Validator',
+    fields: { markup: 'Paste JSON-LD', accuracyNote: 'Local term checks.', resultSummary: 'Summary', issues: 'Findings', googleNote: 'Not a Google test.' },
+    actions: { validate: 'Validate markup', example: 'Load example', copySummary: 'Copy summary', reset: 'Reset' },
+    messages: { copied: 'Copied.', copyUnavailable: 'Copy unavailable.' },
+  });
+  assert.match(html, /name="markup"[^>]*maxlength="300000"/u);
+  assert.match(html, /data-action="example"/u);
+  assert.match(html, /data-action="validate"/u);
+  assert.match(html, /data-action="reset"/u);
+  assert.match(html, /data-validation-issues/u);
+  assert.match(html, /schema\.org\/docs\/terms\.html/u);
 });
 
 test('random team form exposes accessible participant, balance, constraint, seed, copy and CSV controls', () => {

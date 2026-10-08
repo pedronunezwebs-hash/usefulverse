@@ -22,6 +22,7 @@ export function renderGrowthForm(toolId, copy) {
     'image-region-redactor': ['imageFile', 'mode', 'strength', 'regionX', 'regionY', 'regionWidth', 'regionHeight', 'accuracyNote', 'dragHint', 'regionsLabel'],
     'image-sharpener': ['imageFile', 'amount', 'radius', 'threshold', 'compare', 'accuracyNote', 'previewHint', 'format', 'relatedRedactor', 'relatedCropper'],
     'photo-to-sketch': ['imageFile', 'intensity', 'detail', 'compare', 'accuracyNote', 'previewHint'],
+    'schema-markup-validator': ['markup', 'accuracyNote', 'resultSummary', 'issues', 'googleNote'],
     'image-upscaler': ['imageFile', 'accuracyNote', 'progressHint', 'sourcePreview', 'resultPreview'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
@@ -98,6 +99,7 @@ export function renderGrowthForm(toolId, copy) {
     'image-region-redactor': ['load', 'addRegion', 'undo', 'clear', 'export', 'example', 'download', 'removeRegion', 'black', 'pixelate', 'blur', 'png', 'jpeg'],
     'image-sharpener': ['load', 'export', 'download', 'original', 'sharpened', 'png', 'jpeg'],
     'photo-to-sketch': ['load', 'export', 'cancel', 'download', 'original'],
+    'schema-markup-validator': ['validate', 'example', 'copySummary'],
     'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
@@ -243,6 +245,15 @@ export function renderGrowthForm(toolId, copy) {
     </div>
     <div class="actions"><button type="button" data-action="export" class="button button--primary" disabled>${escapeGrowthHtml(labels.export)}</button><button type="button" data-action="cancel" class="button button--secondary" hidden>${escapeGrowthHtml(labels.cancel)}</button>${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><a class="button button--primary" data-export hidden></a>
+  </form>`, copy);
+
+  if (toolId === 'schema-markup-validator') return attachCopy(`<form id="tool-form" class="schema-markup-validator" novalidate>
+    ${label('schema-markup-input', fields.markup, '<textarea id="schema-markup-input" name="markup" rows="14" maxlength="300000" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" required></textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <p class="hint">Schema.org vocabulary version 30.1, licensed under <a href="https://schema.org/docs/terms.html" rel="noopener noreferrer">CC BY-SA 3.0</a>.</p>
+    <div class="actions"><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(actions.example)}</button><button type="submit" data-action="validate" class="button button--primary">${escapeGrowthHtml(actions.validate)}</button><button type="reset" data-action="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-validation-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.resultSummary)}</h2><p data-validation-summary></p><p class="hint">${escapeGrowthHtml(fields.googleNote)}</p><h3>${escapeGrowthHtml(fields.issues)}</h3><ul data-validation-issues></ul><button type="button" class="button button--secondary" data-action="copy-summary">${escapeGrowthHtml(actions.copySummary)}</button></section>
   </form>`, copy);
 
   if (toolId === 'image-upscaler') return attachCopy(`<form id="tool-form" data-worker-src="__WORKER_IMAGE_UPSCALER_WORKER__" novalidate>

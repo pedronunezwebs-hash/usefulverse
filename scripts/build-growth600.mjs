@@ -37,6 +37,7 @@ extraAssets['licenses/upscaler/THIRD-PARTY-NOTICES.md'] = await readFile(resolve
 extraAssets['licenses/upscaler/LICENSE-APACHE-2.0.txt'] = await readFile(resolve(root, 'public/growth600-models/LICENSE-APACHE-2.0.txt'));
 extraAssets['licenses/upscaler/LICENSE-MIT-ONNX-RUNTIME.txt'] = await readFile(resolve(root, 'public/growth600-models/LICENSE-MIT-ONNX-RUNTIME.txt'));
 const onnxVendor = resolve(root, 'node_modules/onnxruntime-web/dist');
+extraAssets['schemaorg-v30.1.json'] = await readFile(resolve(root, 'src/growth600/data/schemaorg-v30.1.json'));
 for (const filename of ['ort-wasm-simd-threaded.mjs', 'ort-wasm-simd-threaded.wasm']) {
   extraAssets[`vendor/onnx/${filename}`] = await readFile(resolve(onnxVendor, filename));
 }
