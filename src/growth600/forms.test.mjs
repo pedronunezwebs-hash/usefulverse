@@ -274,6 +274,11 @@ const copies = {
     name: 'Round Robin Tournament Generator', actions: { ...actions, generate: 'Create schedule', example: 'Load example', downloadCsv: 'Download CSV', print: 'Print or save as PDF' }, messages: { ...messages },
     fields: { participants: 'Teams or players, one per line', participantsHint: '2–32 unique names.', doubleRound: 'Create a return leg', shuffle: 'Shuffle the draw', scoringNote: '3 points for a win, 1 for a draw.', limitNote: '32 participant limit.', standingsLabel: 'Standings', rank: 'Rank', team: 'Team', played: 'Played', wins: 'Wins', draws: 'Draws', losses: 'Losses', goalsFor: 'For', goalsAgainst: 'Against', goalDifference: 'Goal difference', points: 'Points', round: 'Round', leg: 'Leg', home: 'Home', away: 'Away', bye: 'Bye', homeScore: 'Home score', awayScore: 'Away score', fixtureTableLabel: 'Fixtures' },
   },
+  'work-order-generator': {
+    name: 'Work order generator', actions: { ...actions, generate: 'Create work order', example: 'Load example', downloadCsv: 'Download CSV', print: 'Print or save as PDF', open: 'Open', inProgress: 'In progress', completed: 'Completed' },
+    messages: { ...messages, invalid: 'Check the work-order fields and line formats.', ready: 'Work order preview is ready.', createFirst: 'Create a work order first.', printBlocked: 'Allow the print window.', exampleLoaded: 'Example work order loaded.', downloadFailed: 'CSV download failed.' },
+    fields: { workOrderNumber: 'Work order number', issuedDate: 'Issue date', scheduledDate: 'Scheduled date', completedDate: 'Completion date', status: 'Job status', customer: 'Customer', contact: 'Contact', location: 'Service location', assignedTo: 'Assigned to', title: 'Job summary', details: 'Work details', tasks: 'Checklist', tasksHint: 'One task per line.', materials: 'Materials', materialsHint: 'Enter description, quantity and unit.', materialsFormat: 'Description | quantity | unit', labor: 'Labor activities', laborHint: 'Enter activity and hours.', laborFormat: 'Activity | hours', notes: 'Notes', limitNote: 'Up to 40 entries per section.', privacyNote: 'Runs locally.', previewTitle: 'Work order preview', checklist: 'Checklist', materialsLabel: 'Materials', laborLabel: 'Labor', description: 'Description', quantity: 'Quantity', unit: 'Unit', activity: 'Activity', hours: 'Hours', totalLaborHours: 'Total logged labor hours' },
+  },
   'compression-ratio-calculator': {
     name: 'Compression ratio calculator', actions: { ...actions, millimeters: 'Millimeters', inches: 'Inches' },
     messages: { ...messages, ratio: 'Static compression ratio', sweptVolume: 'Swept volume', clearanceVolume: 'Clearance volume', totalDisplacement: 'Total displacement', boreStroke: 'Bore to stroke' },
@@ -892,6 +897,27 @@ test('round-robin form exposes bounded participant input, league options, access
   assert.match(html, /data-round-robin-standings/u);
   assert.match(html, /data-round-robin-rounds/u);
   assert.match(html, /<table data-round-robin-standings><thead><\/thead><tbody><\/tbody><\/table>/u);
+  for (const action of ['generate', 'example', 'reset', 'downloadCsv', 'print']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
+  assert.match(html, /role="status" aria-live="polite"/u);
+  assert.doesNotMatch(html, /<form[^>]+action=/u);
+});
+
+test('work-order form collects service details and exposes local preview, CSV and print controls', () => {
+  const html = renderGrowthForm('work-order-generator', {
+    fields: {
+      workOrderNumber: 'Work order number', issuedDate: 'Issue date', scheduledDate: 'Scheduled date', completedDate: 'Completion date', status: 'Job status',
+      customer: 'Customer', contact: 'Contact', location: 'Service location', assignedTo: 'Assigned to', title: 'Job summary', details: 'Work details',
+      tasks: 'Checklist', tasksHint: 'One task per line.', materials: 'Materials', materialsHint: 'Enter description, quantity and unit.', materialsFormat: 'Description | quantity | unit',
+      labor: 'Labor activities', laborHint: 'Enter activity and hours.', laborFormat: 'Activity | hours', notes: 'Notes', limitNote: 'Up to 40 entries per section.', privacyNote: 'Runs locally.',
+      previewTitle: 'Work order preview', checklist: 'Checklist', materialsLabel: 'Materials', laborLabel: 'Labor', description: 'Description',
+      quantity: 'Quantity', unit: 'Unit', activity: 'Activity', hours: 'Hours', totalLaborHours: 'Total hours',
+    },
+    actions: { ...actions, generate: 'Create work order', downloadCsv: 'Download CSV', print: 'Print or save as PDF', open: 'Open', inProgress: 'In progress', completed: 'Completed' },
+    messages: { ready: 'Ready.', createFirst: 'Create one first.', printBlocked: 'Allow the print window.', exampleLoaded: 'Example loaded.' },
+  });
+  for (const name of ['issuedDate', 'scheduledDate', 'completedDate', 'status', 'customer', 'location', 'assignedTo', 'tasks', 'materials', 'labor']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  assert.match(html, /<option value="in-progress">In progress<\/option>/u);
+  assert.match(html, /data-work-order-preview/u);
   for (const action of ['generate', 'example', 'reset', 'downloadCsv', 'print']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
   assert.match(html, /role="status" aria-live="polite"/u);
   assert.doesNotMatch(html, /<form[^>]+action=/u);

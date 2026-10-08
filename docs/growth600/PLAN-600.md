@@ -3164,13 +3164,15 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 185 · Work Order Generator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `work-order-generator`**
+- [ ] **P/S pendientes — `work-order-generator`; producto y localización completos en rama, no contar hasta publicar.**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/work-order-generator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `work order template` — 2.900 búsquedas/mes US/en, KD 14; nivel B. CPC 11.94 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Encargo confirmado, materiales, horas, checklist, estado y copia imprimible; separar de presupuestos de venta existentes.
-- **Prueba de aceptación específica:** Trabajo terminadoregistrafechaconfirmada
+- **Prueba de aceptación específica:** Comprobar orden con checklist/materiales/horas; el estado «completado» requiere fecha válida, el total de horas coincide y CSV/impresión reflejan los datos sin tratar contenido como HTML.
 - **Frontera con otras herramientas:** quotation-generator: encargo y ejecución nopresupuesto. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Implementación local, sin API/servicio. Materiales: `descripción | cantidad | unidad`; mano de obra: `actividad | horas`; hasta 40 líneas en cada sección, con límites de texto/cantidad/horas y sanitización de fórmulas CSV. El formulario construye formatos desde etiquetas localizadas para evitar reordenación por traducción.
+- **Estado local (2026-10-09):** C/F ya medidos en este plan; no se repitió DataForSEO. L completada en 36 idiomas con traducción automática sencilla. Pruebas focales 169/169, regresión `npm test` 1.320/1.320, `npm run check` preserva las 10.260 URLs originales, `locale:release-check` pasa y el hub genera 3.348 páginas. Chrome local árabe RTL confirmó ejemplo, 1,75 horas totales y consola limpia. No PageSpeed/Lighthouse.
+- **Publicación:** Pendiente PR/CI/merge y comprobar despliegue, 36 rutas y sitemap público. Ninguna URL se cuenta como publicada todavía.
 - **Consultas secundarias del mismo propietario:**
   - `work order generator` — 140/mes US/en; KD 0.
   - `work order template free online`; `work order template with example`; `work order template no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

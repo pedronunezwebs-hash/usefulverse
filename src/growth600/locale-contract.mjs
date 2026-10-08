@@ -4,6 +4,7 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   'rtf-converter': ['converted', 'invalidFile', 'fileTooLarge', 'noText', 'copyUnavailable', 'printBlocked', 'downloaded'],
   'csv-to-pdf': ['noFile', 'invalidFile', 'fileTooLarge', 'invalidCsv', 'ready', 'exampleLoaded', 'printBlocked', 'noRows'],
   'round-robin-tournament-generator': ['noNames', 'invalidNames', 'scheduleReady', 'exampleLoaded', 'noSchedule', 'copied', 'copyUnavailable', 'printBlocked', 'invalidScore'],
+  'work-order-generator': ['ready', 'invalid', 'createFirst', 'printBlocked', 'exampleLoaded', 'downloaded', 'downloadFailed'],
   'image-color-picker': ['unsupportedImage', 'imageTooLarge', 'imageReady', 'selectImage', 'pixelSelected', 'sampleAdded', 'paletteFull', 'copiedColor', 'copiedPalette', 'copyUnavailable', 'paletteCleared'],
   'image-region-redactor': ['unsupportedImage', 'imageTooLarge', 'imageReady', 'selectImage', 'invalidRegion', 'regionAdded', 'regionRemoved', 'regionsCleared', 'addRegionFirst', 'exporting', 'exportFailed', 'exportReady', 'region'],
   'image-sharpener': ['unsupportedImage', 'imageTooLarge', 'imageReady', 'selectImage', 'exporting', 'exportFailed', 'exportReady'],
@@ -68,6 +69,7 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'rtf-converter': ['file', 'accuracyNote', 'limitNote', 'output'],
   'csv-to-pdf': ['file', 'separator', 'encoding', 'hasHeader', 'pageSize', 'orientation', 'margin', 'accuracyNote', 'limitNote', 'resultCount', 'columnCount', 'previewLimit', 'tableLabel'],
   'round-robin-tournament-generator': ['participants', 'participantsHint', 'doubleRound', 'shuffle', 'scoringNote', 'limitNote', 'standingsLabel', 'rank', 'team', 'played', 'wins', 'draws', 'losses', 'goalsFor', 'goalsAgainst', 'goalDifference', 'points', 'round', 'leg', 'home', 'away', 'bye', 'homeScore', 'awayScore', 'fixtureTableLabel'],
+  'work-order-generator': ['workOrderNumber', 'issuedDate', 'scheduledDate', 'completedDate', 'status', 'customer', 'contact', 'location', 'assignedTo', 'title', 'details', 'tasks', 'tasksHint', 'materials', 'materialsHint', 'materialsFormat', 'labor', 'laborHint', 'laborFormat', 'notes', 'limitNote', 'privacyNote', 'previewTitle', 'checklist', 'materialsLabel', 'laborLabel', 'description', 'quantity', 'unit', 'activity', 'hours', 'totalLaborHours'],
   'image-color-picker': ['imageFile', 'accuracyNote', 'previewHint', 'zoom', 'currentColor', 'paletteLabel', 'relatedSharpener', 'relatedRedactor'],
   'image-region-redactor': ['imageFile', 'mode', 'strength', 'regionX', 'regionY', 'regionWidth', 'regionHeight', 'accuracyNote', 'dragHint', 'regionsLabel', 'format', 'relatedMosaic', 'relatedCropper'],
   'image-sharpener': ['imageFile', 'amount', 'radius', 'threshold', 'compare', 'accuracyNote', 'previewHint', 'format', 'relatedRedactor', 'relatedCropper'],
@@ -132,6 +134,7 @@ export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   'rtf-converter': ['convert', 'reset', 'copy', 'download', 'print', 'result'],
   'csv-to-pdf': ['preview', 'reset', 'example', 'print', 'result'],
   'round-robin-tournament-generator': ['generate', 'reset', 'example', 'downloadCsv', 'print', 'result'],
+  'work-order-generator': ['generate', 'reset', 'example', 'downloadCsv', 'print', 'result', 'open', 'inProgress', 'completed'],
   'image-color-picker': ['load', 'addSample', 'copyColor', 'copyPalette', 'remove', 'clear', 'reset'],
   'image-region-redactor': ['load', 'addRegion', 'undo', 'clear', 'export', 'example', 'download', 'removeRegion', 'black', 'pixelate', 'blur', 'png', 'jpeg'],
   'image-sharpener': ['load', 'export', 'download', 'original', 'sharpened', 'png', 'jpeg', 'reset'],
@@ -218,6 +221,10 @@ export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, {
         if (typeof copy.fields?.[key] !== 'string' || !copy.fields[key].trim()) errors.push(`${locale.key}/${tool.id}: fields.${key} is missing`);
       }
       if (tool.id === 'travel-itinerary-planner' && ['activity', 'meal', 'transport', 'stay', 'reservation', 'other'].some((key) => typeof copy.fields?.categories?.[key] !== 'string' || !copy.fields.categories[key].trim())) errors.push(`${locale.key}/${tool.id}: all six category labels are required`);
+      if (tool.id === 'work-order-generator'
+        && ((copy.fields?.materialsFormat?.match(/\|/gu)?.length ?? 0) !== 2 || (copy.fields?.laborFormat?.match(/\|/gu)?.length ?? 0) !== 1)) {
+        errors.push(`${locale.key}/${tool.id}: localized material and labor formats must preserve their pipe separators`);
+      }
       for (const key of REQUIRED_TOOL_ACTIONS[tool.id] ?? []) {
         if (typeof copy.actions?.[key] !== 'string' || !copy.actions[key].trim()) errors.push(`${locale.key}/${tool.id}: actions.${key} is missing`);
       }
@@ -227,8 +234,8 @@ export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, {
           if (typeof copy.messages?.[key] === 'string' && !copy.messages[key].includes(token)) errors.push(`${locale.key}/${tool.id}: messages.${key} must preserve ${token}`);
         }
       }
-      const faqTools = ['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'mulch-calculator', 'paver-calculator', 'solar-panel-calculator', 'btu-calculator', 'brick-calculator', 'rafter-calculator', 'carpet-calculator', 'aquarium-calculator', 'image-region-redactor', 'image-sharpener', 'photo-to-sketch', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'hitori', 'nurikabe', 'color-name-finder', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'weight-loss-calculator', 'heloc-calculator', 'random-team-generator', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'laplace-transform-calculator', 'csv-to-pdf', 'round-robin-tournament-generator'];
-      const faqCount = ['csv-to-pdf', 'round-robin-tournament-generator'].includes(tool.id) ? 3 : 2;
+      const faqTools = ['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'mulch-calculator', 'paver-calculator', 'solar-panel-calculator', 'btu-calculator', 'brick-calculator', 'rafter-calculator', 'carpet-calculator', 'aquarium-calculator', 'image-region-redactor', 'image-sharpener', 'photo-to-sketch', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'hitori', 'nurikabe', 'color-name-finder', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'weight-loss-calculator', 'heloc-calculator', 'random-team-generator', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'laplace-transform-calculator', 'csv-to-pdf', 'round-robin-tournament-generator', 'work-order-generator'];
+      const faqCount = ['csv-to-pdf', 'round-robin-tournament-generator', 'work-order-generator'].includes(tool.id) ? 3 : 2;
       if (faqTools.includes(tool.id)
         && (!Array.isArray(copy.additionalFaqs) || copy.additionalFaqs.length !== faqCount
           || copy.additionalFaqs.some((faq) => !faq.question?.trim() || !faq.answer?.trim()))) {
