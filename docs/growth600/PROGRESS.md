@@ -2,15 +2,25 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## En curso · Font Pairing Tool (#283; implementación completa, publicación pendiente) · 2026-10-09
+## En curso · Roth Vs Traditional Calculator (#284; no publicado) · 2026-10-09
+
+- [x] C/F — Reutilizados los datos ya medidos en el plan: `roth ira vs traditional ira calculator` 590 búsquedas/mes US/en, KD 0; `roth vs traditional calculator` 320/mes, KD 5. CPC 2.61 USD (no CPM); sin llamadas nuevas ni gasto de DataForSEO.
+- [x] E/B — Comparación matemática local sobre el mismo presupuesto bruto anual; aportaciones al final del año; tasas actual/futura, rentabilidad y horizonte configurables. Muestra saldo Roth tras la tasa actual asumida y tradicional antes/después de tasa futura; límites explícitos, fuente informativa del IRS y aviso de que no es asesoramiento ni aplica reglas de elegibilidad/límites/deducciones.
+- [x] L — 36 copias estáticas traducidas desde inglés con el flujo Google Translate ya autorizado; títulos ≤60 y descripciones ≤160; la nota árabe fue corregida manualmente para evitar traducir “rates” como precios. Traducción automática, no revisión nativa.
+- [x] E/X — 5 pruebas de lógica más catálogo/formulario/locales/build; suite focal 189/189; `npm test` 1.390/1.390; `npm run check` conserva 10.260 URLs originales; `npm run locale:release-check` pasa. Build aislado del hub: 3.672 páginas (101 candidatas × 36 idiomas + 36 portadas).
+- [x] B — Chrome EN y AR RTL: cálculo igual con tasas iguales, validación de cambios, resultado/status se ocultan al editar; árabe a 500 px sin desbordamiento; consola limpia, solo HTML/CSS/JS/favicon locales. No se ejecutó PageSpeed/Lighthouse.
+- [ ] P/S — Falta PR, CI, merge, publicación del hub y verificación HTTP/sitemap.
+- **Estado:** 101 herramientas Growth600 implementadas en la rama; 100 publicadas en el hub, 222 todavía pendientes. Las 277 herramientas originales no se modificaron. Siguiente candidata después de esta: #285 Polygon Calculator.
+
+## Publicada · Font Pairing Tool (#283; candidata 100/323) · 2026-10-09
 
 - [x] C/F — Reutilizada la ficha: `font pair generator` 720 búsquedas/mes US/en, KD 37; `font pairing tool` 90/mes, KD 24. CPC 4.74 USD (no CPM). Sin gasto/llamadas nuevas a DataForSEO.
 - [x] E/B — Presets de tipografía, vista previa de jerarquía heading/body, tamaños/pesos/leading, intercambio y CSS exportable. Stacks del sistema; opción de elegir archivos locales hasta 8, 5 MiB por archivo/15 MiB total. Sin catálogo remoto, fuentes externas, upload al servidor, API o worker. Licencias de archivos fuera del alcance.
 - [x] L — Copia estática traducida desde inglés mediante el flujo Google Translate ya autorizado, 36 locales; títulos/descripciones bajo 60/160 caracteres y sin cortes dentro de palabras. Traducción automática, no revisión nativa.
 - [x] E/X — Lógica/catálogo/formulario 57/57; build/locale/bundler focal 128/128; suite global 1.382/1.382; `locale:release-check` pasa; guard de bundle y `git diff --check` limpios. El sitio principal mantiene 10.260 URLs. Build aislado del hub: 3.636 URLs (100 × 36 + 36 portadas).
 - [x] B — Chrome EN y AR RTL: seis presets, swap y reset; sin overflow, errores visibles ni peticiones remotas. En la carga inicial solo se pidieron HTML/CSS/JS/favicon locales. El control de archivos no permitió subir una fuente real por la restricción de acceso a archivos del navegador; sus límites/formato sí pasan unit tests. No PageSpeed/Lighthouse.
-- [ ] P/S — Falta crear PR, esperar CI, merge, confirmar deploy principal/hub, URL pública y sitemap; no está publicado todavía ni enviado manualmente a Search Console.
-- **Estado:** 100/323 candidatas implementadas en el código local; 223 pendientes. Las 277 herramientas originales no se modificaron. Siguiente candidata al publicar esta: #284 Roth vs Traditional Calculator.
+- [x] P/S — PR [#61](https://github.com/pedronunezwebs-hash/usefulverse/pull/61) fusionada en `636e134c860f019a169ca13cf230691a5fd23476`; validación PR 37849556075, deploy principal 37849893982 y publicación separada del hub 37850612894 correctos. Rutas públicas EN/ES/AR HTTP 200; el sitemap del hub devuelve 3.636 URLs y 36 variantes de la herramienta; el sitemap principal conserva 10.260. No se ejecutó PageSpeed/Lighthouse. Search Console no se pudo abrir en la sesión autenticada disponible; no afirmar envío manual ni indexación.
+- **Estado publicado:** 100/323 candidatas Growth600; 223 pendientes. Las 277 herramientas originales no se modificaron. Siguiente candidata: #284 Roth vs Traditional Calculator.
 
 ## Publicada · OpenAPI Editor (#282; 99.ª herramienta Growth600) · 2026-10-09
 

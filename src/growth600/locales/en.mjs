@@ -80,6 +80,8 @@ import openApiEditorCopies from './openapi-editor.mjs';
 import { openApiEditorEnglishCopy } from './openapi-editor.en.mjs';
 import fontPairingToolCopies from './font-pairing-tool.mjs';
 import { fontPairingToolEnglishCopy } from './font-pairing-tool.en.mjs';
+import rothVsTraditionalCopies from './roth-vs-traditional-calculator.mjs';
+import { rothVsTraditionalEnglishCopy } from './roth-vs-traditional-calculator.en.mjs';
 import { workOrderGeneratorEnglishCopy } from './work-order-generator.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
@@ -847,5 +849,41 @@ const fontPairingReleaseCopies = Object.fromEntries(
   }),
 );
 registerGrowthLocaleExtension(source, 'font-pairing-tool', fontPairingReleaseCopies, 'openapi-editor');
+const rothVsTraditionalReleaseCopies = Object.fromEntries(
+  Object.entries({ ...rothVsTraditionalCopies, en: rothVsTraditionalEnglishCopy }).map(([locale, copy]) => {
+    const brand = ' | UsefulVerse';
+    const localizedCopy = locale === 'ar' ? {
+      ...copy,
+      name: 'حاسبة مقارنة Roth IRA وIRA التقليدي',
+      fields: {
+        ...copy.fields,
+        accuracyNote: 'هذا توضيح فقط، وليس نصيحة ضريبية أو استثمارية أو بشأن الحساب. أدخل معدلاتك وافتراضاتك. لا تتحقق الأداة من أهلية IRA أو حدود المساهمة أو قواعد الخصم أو الرسوم أو التضخم أو ضرائب الولاية أو التوزيعات المطلوبة أو قواعد السحب المبكر.',
+      },
+    } : copy;
+    const rawPrefix = String(locale === 'en' ? localizedCopy.title : localizedCopy.name).split(/\s*\|\s*UsefulVerse/iu)[0].trim();
+    const limit = 60 - [...brand].length;
+    let prefix = [...rawPrefix].slice(0, limit).join('').trim();
+    const boundary = prefix.lastIndexOf(' ');
+    if ([...rawPrefix].length > limit && boundary >= 24) prefix = prefix.slice(0, boundary).trimEnd();
+    const fitDescription = (value) => {
+      const characters = [...String(value).replace(/\s+/gu, ' ').trim()];
+      if (characters.length <= 160) return characters.join('');
+      let fitted = characters.slice(0, 160).join('').trimEnd();
+      const boundaryAt = fitted.lastIndexOf(' ');
+      if (boundaryAt >= 96) fitted = fitted.slice(0, boundaryAt).trimEnd();
+      return fitted.replace(/[\s:;,–-]+$/u, '');
+    };
+    return [locale, {
+      ...localizedCopy,
+      title: `${prefix.replace(/[\s:;,–-]+$/u, '')}${brand}`,
+      description: fitDescription(copy.description),
+      copyLanguage: locale,
+      localizationStatus: 'machine-accepted',
+      localizationAcceptedBy: 'site-owner',
+      localizationAcceptedAt: '2026-10-09',
+    }];
+  }),
+);
+registerGrowthLocaleExtension(source, 'roth-vs-traditional-calculator', rothVsTraditionalReleaseCopies, 'openapi-editor');
 
 export default Object.freeze(source);

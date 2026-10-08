@@ -1264,3 +1264,17 @@ test('horsepower calculator has complete English copy and localized copy across 
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
   assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
+
+test('Roth vs traditional calculator has complete locale copy, bounded metadata and clear tax disclaimers in all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'roth-vs-traditional-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.fields.accuracyNote.length > 40, `${key}: disclaimer`);
+    assert.ok(copy.fields.irsSource.length > 0, `${key}: official IRS link label`);
+    assert.doesNotMatch(JSON.stringify(copy), /UVROTHIRA\d+X\d+END|undefined/iu, key);
+  }
+});

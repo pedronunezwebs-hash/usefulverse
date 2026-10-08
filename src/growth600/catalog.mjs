@@ -792,6 +792,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/font-pairing-tool/logic.mjs',
   },
   {
+    id: 'roth-vs-traditional-calculator',
+    category: 'finance-tools',
+    type: 'calculator',
+    primaryIntent: 'roth ira vs traditional ira calculator',
+    secondaryIntents: ['roth vs traditional calculator', 'Roth traditional IRA after-tax comparison', 'Roth vs traditional IRA by tax rate'],
+    functions: ['compare estimated after-tax values from the same user-entered pretax annual budget', 'accept separate current and future withdrawal tax-rate assumptions', 'model a user-entered annual return and year-end contributions for a bounded time horizon', 'show Roth contributions after current assumed tax, traditional balance before and after assumed withdrawal tax, and the estimated difference'],
+    acceptance: 'When current and future rates are equal, equal pretax budgets produce equal after-tax balances; changing only the future rate affects only the traditional scenario; zero return equals the sum of end-of-year contributions; invalid, non-finite and out-of-range values are rejected.',
+    boundary: 'Illustrative U.S. Roth-versus-traditional IRA arithmetic only, not tax, investment, eligibility or account advice. User supplies all tax and return assumptions. Does not apply current IRS contribution limits, income eligibility, deduction phase-outs, basis, fees, inflation, state taxes, required distributions, early-withdrawal rules or tax-rate changes over time. Annual contributions are made at year-end. No claims about which account is best; local browser calculation only.',
+    relatedExistingIds: ['compound-interest-calculator'],
+    logicModule: './tools/roth-vs-traditional-calculator/logic.mjs',
+  },
+  {
     id: 'color-name-finder',
     category: 'design-tools',
     type: 'utility',
