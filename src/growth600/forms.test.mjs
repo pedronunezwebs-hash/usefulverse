@@ -249,6 +249,7 @@ const copies = {
     fields: { tripName: 'Trip name', tripStartDate: 'First day', tripEndDate: 'Last day', bufferMinutes: 'Buffer', saveConsent: 'Save in this browser', storageNote: 'Optional local storage.', itemDate: 'Date', startTime: 'Start time', endTime: 'End time', itemTitle: 'Stop name', category: 'Type', categories: { activity: 'Activity', meal: 'Meal', transport: 'Transport', stay: 'Stay', reservation: 'Reservation', other: 'Other' }, location: 'Place', reservation: 'Booking details', notes: 'Notes', itineraryLabel: 'Itinerary', noTrip: 'Create a trip.', noItems: 'No stops.', itemCount: 'Stops', overlapCount: 'Overlaps', bufferWarningCount: 'Short connections', conflictsLabel: 'Schedule checks', backupFile: 'Import JSON', backupHint: 'JSON up to 1 MB.', limitNote: 'Maximum 366 days and 250 stops.', timeZoneNote: 'Times stay as entered.', reservationPrivacyNote: 'Do not enter passwords or card numbers.', exampleTrip: 'Kyoto weekend', exampleActivity: 'Temple visit', exampleMeal: 'Lunch', exampleLocation: 'Kyoto', exampleReservation: 'Example only' },
   },
   'polynomial-long-division-calculator': { name: 'Polynomial division', actions: { ...actions }, fields: { dividend: 'Dividend polynomial', divisor: 'Divisor polynomial', accuracyNote: 'Integer coefficients; degree up to 20.' } },
+  'half-life-calculator': { name: 'Half-life calculator', actions: { ...actions, solveRemaining: 'Remaining amount', solveInitial: 'Initial amount', solveElapsed: 'Elapsed time', solveHalfLife: 'Half-life' }, fields: { mode: 'Solve for', solveRemaining: 'Remaining amount', solveInitial: 'Initial amount', solveElapsed: 'Elapsed time', solveHalfLife: 'Half-life', initialAmount: 'Initial amount', remainingAmount: 'Remaining amount', halfLife: 'Half-life', elapsedTime: 'Elapsed time', timeUnit: 'Shared time unit', seconds: 'Seconds', minutes: 'Minutes', hours: 'Hours', days: 'Days', years: 'Years', accuracyNote: 'Use the same time unit.' } },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -442,6 +443,14 @@ test('polynomial long-division form labels both expressions and uses explicit ac
   assert.match(html, /<label for="polynomial-divisor">Divisor polynomial<\/label>/u);
   assert.match(html, /data-action="example"/u);
   assert.match(html, /data-action="calculate"/u);
+  assert.match(html, /role="status" aria-live="polite"/u);
+});
+
+test('half-life form exposes a solve mode, four labeled values, shared time unit and explicit actions', () => {
+  const html = renderGrowthForm('half-life-calculator', copies['half-life-calculator']);
+  for (const name of ['mode', 'initialAmount', 'remainingAmount', 'halfLife', 'elapsedTime', 'timeUnit']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  assert.match(html, /name="mode"><option value="remaining">Remaining amount/u);
+  assert.match(html, /name="timeUnit"><option value="seconds">Seconds/u);
   assert.match(html, /role="status" aria-live="polite"/u);
 });
 

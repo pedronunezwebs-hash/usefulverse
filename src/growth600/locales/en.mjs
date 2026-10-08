@@ -114,6 +114,8 @@ import travelItineraryPlannerCopies from './travel-itinerary-planner-final.mjs';
 import { travelItineraryPlannerEnglishCopy } from './travel-itinerary-planner.en.mjs';
 import polynomialLongDivisionCopies from './polynomial-long-division-calculator-final.mjs';
 import { polynomialLongDivisionCalculatorEnglishCopy } from './polynomial-long-division-calculator.en.mjs';
+import halfLifeCalculatorCopies from './half-life-calculator-final.mjs';
+import { halfLifeCalculatorEnglishCopy } from './half-life-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -518,5 +520,6 @@ registerGrowthLocaleExtension(source, 'mood-tracker', { ...moodTrackerCopies, en
 registerGrowthLocaleExtension(source, 'journal-online', { ...journalOnlineCopies, en: journalOnlineEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'travel-itinerary-planner', { ...travelItineraryPlannerCopies, en: travelItineraryPlannerEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'polynomial-long-division-calculator', { ...polynomialLongDivisionCopies, en: polynomialLongDivisionCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'half-life-calculator', { ...halfLifeCalculatorCopies, en: halfLifeCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

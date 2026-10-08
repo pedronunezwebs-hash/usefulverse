@@ -408,6 +408,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/polynomial-long-division-calculator/logic.mjs',
   },
   {
+    id: 'half-life-calculator',
+    category: 'science',
+    type: 'decay-calculator',
+    primaryIntent: 'half life calculator',
+    secondaryIntents: ['radioactive decay calculator', 'half life formula calculator', 'remaining amount after half life'],
+    functions: ['solve for initial amount, remaining amount, elapsed time or half-life from the other three values', 'show percent remaining and elapsed half-lives', 'use a selected shared time unit and an example that halves 100 to 50 after one half-life'],
+    acceptance: 'With initial amount 100, half-life 5730 years and elapsed time 5730 years, the remaining amount is 50 (50%). Solving elapsed time from 100 to 25 with half-life 10 returns 20 time units.',
+    boundary: 'Educational exponential-decay mathematics only. It does not provide medical, radiation-dose, exposure, shielding, contamination, safety or handling guidance. Initial/remaining amounts and half-life must be positive; elapsed time may be zero; decay remaining amount cannot exceed initial amount. Time inputs use the same selected unit. Non-finite and results outside the representable numeric range are rejected. Runs locally without upload or paid services.',
+    relatedExistingIds: ['compound-interest-calculator', 'percentage-calculator'],
+    logicModule: './tools/half-life-calculator/logic.mjs',
+  },
+  {
     id: 'miter-angle-calculator',
     category: 'home-materials',
     type: 'calculator',

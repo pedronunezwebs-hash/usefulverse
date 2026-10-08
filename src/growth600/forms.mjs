@@ -46,6 +46,7 @@ export function renderGrowthForm(toolId, copy) {
     'journal-online': ['date', 'title', 'body', 'tags', 'search', 'dateFrom', 'dateTo', 'saveConsent', 'storageNote', 'encryptionNote', 'backupPassword', 'confirmPassword', 'entriesLabel', 'resultLabel', 'noEntries', 'countLabel', 'tagHint', 'importHint', 'passwordHint', 'exampleHint', 'exampleTitle', 'exampleBody', 'exampleTags', 'safetyNote'],
     'travel-itinerary-planner': ['tripName', 'tripStartDate', 'tripEndDate', 'bufferMinutes', 'saveConsent', 'storageNote', 'itemDate', 'startTime', 'endTime', 'itemTitle', 'category', 'categories', 'location', 'reservation', 'notes', 'itineraryLabel', 'noTrip', 'noItems', 'itemCount', 'overlapCount', 'bufferWarningCount', 'conflictsLabel', 'backupFile', 'backupHint', 'timeZoneNote', 'reservationPrivacyNote', 'exampleTrip', 'exampleActivity', 'exampleMeal', 'exampleLocation', 'exampleReservation'],
     'polynomial-long-division-calculator': ['dividend', 'divisor', 'accuracyNote'],
+    'half-life-calculator': ['mode', 'solveRemaining', 'solveInitial', 'solveElapsed', 'solveHalfLife', 'initialAmount', 'remainingAmount', 'halfLife', 'elapsedTime', 'timeUnit', 'seconds', 'minutes', 'hours', 'days', 'years', 'accuracyNote'],
     'auto-loan-refinance-calculator': ['balance', 'currentApr', 'currentMonths', 'newApr', 'newMonths', 'fees', 'feeTreatment'],
     'secret-santa-generator': ['names', 'exclusions'],
     'tire-size-calculator': ['originalSize', 'replacementSize', 'indicatedSpeed', 'speedUnit', 'fitmentNote'],
@@ -114,6 +115,7 @@ export function renderGrowthForm(toolId, copy) {
     'journal-online': ['saveEntry', 'updateEntry', 'newEntry', 'example', 'reset', 'search', 'clearSearch', 'deleteEntry', 'clearAll', 'exportJson', 'importJson', 'saveBackup', 'result'],
     'travel-itinerary-planner': ['createTrip', 'saveItem', 'updateItem', 'newItem', 'deleteItem', 'deleteTrip', 'example', 'reset', 'exportIcs', 'exportJson', 'importJson', 'print', 'result'],
     'polynomial-long-division-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'half-life-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'auto-loan-refinance-calculator': ['calculate', 'reset', 'copy', 'result'],
     'secret-santa-generator': ['generate', 'reset', 'copy', 'download', 'result', 'reveal', 'next', 'privacyNote'],
     'tire-size-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kmh', 'mph'],
@@ -860,6 +862,19 @@ export function renderGrowthForm(toolId, copy) {
   if (toolId === 'polynomial-long-division-calculator') return attachCopy(`<form id="tool-form" novalidate>
     ${label('polynomial-dividend', fields.dividend, '<input id="polynomial-dividend" name="dividend" type="text" maxlength="256" value="x^2 - 1" autocomplete="off" spellcheck="false" required>')}
     ${label('polynomial-divisor', fields.divisor, '<input id="polynomial-divisor" name="divisor" type="text" maxlength="256" value="x - 1" autocomplete="off" spellcheck="false" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'half-life-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('decay-mode', fields.mode, `<select id="decay-mode" name="mode"><option value="remaining">${escapeGrowthHtml(fields.solveRemaining)}</option><option value="initial">${escapeGrowthHtml(fields.solveInitial)}</option><option value="elapsed">${escapeGrowthHtml(fields.solveElapsed)}</option><option value="halfLife">${escapeGrowthHtml(fields.solveHalfLife)}</option></select>`)}
+    ${label('decay-initial', fields.initialAmount, '<input id="decay-initial" name="initialAmount" type="number" min="0" max="1e100" step="any" inputmode="decimal" value="100" required>')}
+    ${label('decay-remaining', fields.remainingAmount, '<input id="decay-remaining" name="remainingAmount" type="number" min="0" max="1e100" step="any" inputmode="decimal" value="" required>')}
+    ${label('decay-half-life', fields.halfLife, '<input id="decay-half-life" name="halfLife" type="number" min="0" max="1e100" step="any" inputmode="decimal" value="10" required>')}
+    ${label('decay-elapsed', fields.elapsedTime, '<input id="decay-elapsed" name="elapsedTime" type="number" min="0" max="1e100" step="any" inputmode="decimal" value="10" required>')}
+    ${label('decay-time-unit', fields.timeUnit, `<select id="decay-time-unit" name="timeUnit"><option value="seconds">${escapeGrowthHtml(fields.seconds)}</option><option value="minutes">${escapeGrowthHtml(fields.minutes)}</option><option value="hours">${escapeGrowthHtml(fields.hours)}</option><option value="days">${escapeGrowthHtml(fields.days)}</option><option value="years">${escapeGrowthHtml(fields.years)}</option></select>`)}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>

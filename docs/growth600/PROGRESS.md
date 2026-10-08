@@ -22,7 +22,18 @@
 - [x] E — pruebas focalizadas de lógica, catálogo, formularios, contrato de locales y builder: **127/127 aprobadas**; `node --check` y `git diff --check` limpios.
 - [x] X — Chrome local aislado: ejemplo x²−1 entre x−1 devuelve x+1, resto 0 y dos pasos; caso 2x²+1 entre 2x+1 devuelve x−1/2, resto 3/2; sintaxis no admitida muestra error sin romper la página. En móvil 390×844 no hay overflow, no aparecen errores/avisos de consola y no hay peticiones externas.
 - [ ] B/P — no se validó bundle minificado final ni tamaño porque el clon carece de dependencias fijadas de build; no se instalaron. No se ha integrado ni desplegado, no se modificó ningún sitemap ni panel de buscadores. PageSpeed/Lighthouse no se ejecutó, conforme al plan.
-- **Recuento actual:** 65/323 candidatas implementadas en inglés; quedan 258 filas del plan (257 candidatas válidas + una reserva). Sumadas a las 277 herramientas protegidas, hay 342 implementaciones inglesas/base, pero esta ampliación no está publicada y las nuevas páginas no están listas en todos los idiomas.
+- **Recuento al cerrar #162:** 65/323 candidatas implementadas en inglés; quedaban 258 filas del plan (257 candidatas válidas + una reserva). Sumadas a las 277 herramientas protegidas, había 342 implementaciones inglesas/base, pero esta ampliación no estaba publicada y las nuevas páginas no estaban listas en todos los idiomas.
+
+## Continuación · Half-Life Calculator (#163) · 2026-10-08
+
+- [x] C/F — herramienta de decaimiento exponencial distinta del interés compuesto; resuelve cantidad inicial, cantidad restante, tiempo transcurrido o vida media con las otras tres variables. El plan registra `half life calculator` 3.600 búsquedas/mes US/en, KD 6, y `radioactive decay calculator` 1.000/mes, KD 0; sin nueva consulta ni gasto de DataForSEO.
+- [x] E/X — fórmula `remaining = initial × (1/2)^(elapsed/half-life)`, soluciones inversas y porcentaje/restos de vidas medias. Entradas acotadas, unidades de tiempo compartidas, validación para no crecimiento, cero, infinito, subdesbordamiento y resultados fuera de rango. Pruebas cubren cuatro incógnitas y errores.
+- [x] B — selector del valor por resolver que deshabilita y desmarca como obligatorio el campo desconocido, ejemplo 100→50 tras una vida media, salida/copia accesibles y advertencia explícita de que no es una herramienta médica, de dosis, exposición ni seguridad.
+- [x] L (fuente) — copy inglés completo, FAQs y metadatos dentro de límites. 35 idiomas adicionales son borradores estructurales, permanecen bloqueados y no se consideran traducciones listas.
+- [x] E — pruebas focalizadas de lógica, catálogo, formulario, contrato de localización y builder: **128/128 aprobadas**; `node --check` y `git diff --check` correctos.
+- [x] X — Chrome local aislado: calcula 50% después de una vida media; modo inverso calcula 20 unidades de tiempo para 100→25 con vida media 10; el ejemplo carga y calcula 50%; vista móvil emulada 390×844 sin overflow ni solicitudes externas, sin errores/avisos de consola.
+- [ ] B/P — falta validar bundle minificado/tamaño con dependencias de build; no se instalaron. No está integrada ni desplegada, no toca sitemaps ni paneles. No se ejecutó PageSpeed/Lighthouse.
+- **Recuento actual:** 66/323 candidatas implementadas en inglés; quedan 257 filas del plan (256 candidatas válidas + una reserva). Incluidas las 277 protegidas, son 343 implementaciones inglesas/base, no publicaciones listas: la ampliación permanece fuera de producción y faltan traducciones/gates.
 
 ## Avance de expansión · Brick Calculator
 
