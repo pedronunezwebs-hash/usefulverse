@@ -242,6 +242,11 @@ const copies = {
     messages: { ...messages, velocity: 'Speed', kineticEnergy: 'Kinetic energy', potentialEnergy: 'Gravitational potential energy', totalEnergy: 'Total mechanical energy' },
     fields: { mode: 'Calculation mode', energyMode: 'Calculate energy from speed', speedMode: 'Solve speed from kinetic energy', massKg: 'Mass (kg)', velocityMps: 'Speed (m/s)', kineticEnergyJ: 'Kinetic energy (J)', heightM: 'Height above the zero reference (m)', gravityMps2: 'Gravitational acceleration (m/s²)', accuracyNote: 'Ideal estimate; ignores energy losses.' },
   },
+  'resistor-color-code-calculator': {
+    name: 'Resistor color code calculator', actions: { ...actions, example: 'Try brown-black-red-gold' },
+    messages: { ...messages, resistance: 'Resistance', requestedResistance: 'Requested resistance', nominalResistance: 'Nearest nominal value', tolerance: 'Tolerance', bands: 'Band order', temperatureCoefficient: 'Temperature coefficient', rounding: 'Encoding note', nearestNominal: 'Rounded to nearest nominal.' },
+    fields: { mode: 'Choose a task', decodeMode: 'Decode bands', encodeMode: 'Find bands from resistance', bands: 'Band count', fourBands: '4 bands', fiveBands: '5 bands', sixBands: '6 bands', resistanceOhms: 'Resistance in ohms', tolerance: 'Tolerance', temperatureCoefficient: 'Temperature coefficient', accuracyNote: 'Standard 4–6 band codes.', band1: 'Band 1', band2: 'Band 2', band3: 'Band 3', band4: 'Band 4', band5: 'Band 5', band6: 'Band 6', black: 'Black', brown: 'Brown', red: 'Red', orange: 'Orange', yellow: 'Yellow', green: 'Green', blue: 'Blue', violet: 'Violet', gray: 'Gray', white: 'White', gold: 'Gold', silver: 'Silver', none: 'None', ppm250: '250 ppm/K', ppm100: '100 ppm/K', ppm50: '50 ppm/K', ppm25: '25 ppm/K', ppm20: '20 ppm/K', ppm15: '15 ppm/K', ppm10: '10 ppm/K', ppm5: '5 ppm/K', ppm1: '1 ppm/K', tolerance005: '0.05%', tolerance01: '0.1%', tolerance025: '0.25%', tolerance05: '0.5%', tolerance1: '1%', tolerance2: '2%', tolerance5: '5%', tolerance10: '10%', tolerance20: '20%' },
+  },
   'compression-ratio-calculator': {
     name: 'Compression ratio calculator', actions: { ...actions, millimeters: 'Millimeters', inches: 'Inches' },
     messages: { ...messages, ratio: 'Static compression ratio', sweptVolume: 'Swept volume', clearanceVolume: 'Clearance volume', totalDisplacement: 'Total displacement', boreStroke: 'Bore to stroke' },
@@ -392,6 +397,13 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(kinetic, /data-kinetic-energy-input hidden/u);
   assert.match(kinetic, /data-action="example"/u);
   assert.match(kinetic, /data-action="copy"/u);
+  const resistor = renderGrowthForm('resistor-color-code-calculator', copies['resistor-color-code-calculator']);
+  for (const name of ['mode', 'bands', 'resistanceOhms', 'tolerance', 'temperatureCoefficient', 'band1', 'band6']) assert.match(resistor, new RegExp(`name="${name}"`, 'u'));
+  assert.match(resistor, /data-resistor-decode/u);
+  assert.match(resistor, /data-resistor-encode hidden/u);
+  assert.match(resistor, /value="none"/u);
+  assert.match(resistor, /data-action="example"/u);
+  assert.match(resistor, /data-action="copy"/u);
   const compression = renderGrowthForm('compression-ratio-calculator', copies['compression-ratio-calculator']);
   for (const name of ['unit', 'volumeUnit', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders']) assert.match(compression, new RegExp(`name="${name}"`, 'u'));
   assert.match(compression, /min="1" max="16" step="1"/u);

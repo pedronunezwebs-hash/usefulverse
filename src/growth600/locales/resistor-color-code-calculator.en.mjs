@@ -1,0 +1,32 @@
+export const resistorColorCodeCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Resistor Color Code Calculator',
+  title: 'Resistor Color Code Calculator Free | UsefulVerse',
+  description: 'Decode 4, 5 or 6 resistor bands, or encode an ohm value. Free, local and no account.',
+  intro: 'Read a resistor color code into resistance and tolerance, or enter an ohm value to find its nearest standard band pattern. Choose 4, 5 or 6 bands; six-band codes also show temperature coefficient.',
+  howQuestion: 'How do you read a resistor color code?',
+  howAnswer: 'Read the bands from the end opposite the tolerance band. The first two or three bands are significant digits, the next is the multiplier, then tolerance; a sixth band gives temperature coefficient. For example, brown-black-red-gold means 10 × 100 Ω = 1,000 Ω with ±5% tolerance.',
+  privacyQuestion: 'Are my values uploaded?',
+  privacyAnswer: 'No. The color-code calculation runs in this browser; values are not uploaded or saved.',
+  fields: {
+    mode: 'Choose a task', decodeMode: 'Decode band colors', encodeMode: 'Find bands from resistance', bands: 'Number of bands',
+    fourBands: '4 bands · 2 significant digits', fiveBands: '5 bands · 3 significant digits', sixBands: '6 bands · includes temperature coefficient',
+    resistanceOhms: 'Resistance in ohms (Ω)', tolerance: 'Tolerance', temperatureCoefficient: 'Temperature coefficient',
+    band1: 'Band 1 · first digit', band2: 'Band 2 · second digit', band3: 'Band 3 · third digit or multiplier', band4: 'Band 4 · multiplier or tolerance', band5: 'Band 5 · tolerance', band6: 'Band 6 · temperature coefficient',
+    black: 'Black · 0', brown: 'Brown · 1', red: 'Red · 2', orange: 'Orange · 3', yellow: 'Yellow · 4', green: 'Green · 5', blue: 'Blue · 6', violet: 'Violet · 7', gray: 'Gray · 8', white: 'White · 9', gold: 'Gold', silver: 'Silver', none: 'No band',
+    ppm250: '250 ppm/K · black', ppm100: '100 ppm/K · brown', ppm50: '50 ppm/K · red', ppm25: '25 ppm/K · yellow', ppm20: '20 ppm/K · green', ppm15: '15 ppm/K · orange', ppm10: '10 ppm/K · blue', ppm5: '5 ppm/K · violet', ppm1: '1 ppm/K · gray',
+    tolerance005: '±0.05% · gray', tolerance01: '±0.1% · violet', tolerance025: '±0.25% · blue', tolerance05: '±0.5% · green', tolerance1: '±1% · brown', tolerance2: '±2% · red', tolerance5: '±5% · gold', tolerance10: '±10% · silver', tolerance20: '±20% · no band',
+    accuracyNote: 'Uses standard 4–6 band color codes. Reverse encoding chooses the closest representable nominal value and reports rounding. Real bands may be hard to distinguish; check the component datasheet. This does not verify circuit suitability, power rating or safety.',
+  },
+  actions: { calculate: 'Calculate', reset: 'Reset', copy: 'Copy result', example: 'Try brown-black-red-gold', result: 'Resistance result' },
+  messages: {
+    calculated: 'Calculation ready.', checkInputs: 'Check the band count, color order and resistance value.',
+    resistance: 'Resistance', requestedResistance: 'Requested resistance', nominalResistance: 'Nearest nominal value', tolerance: 'Tolerance',
+    bands: 'Band order', temperatureCoefficient: 'Temperature coefficient', rounding: 'Encoding note', nearestNominal: 'Rounded to the nearest representable standard band value.',
+  },
+  additionalFaqs: [
+    { question: 'What does brown-black-red-gold mean?', answer: 'Brown is 1, black is 0, red multiplies by 100, and gold means ±5% tolerance: 1,000 Ω ±5%.' },
+    { question: 'What changes between 4-, 5- and 6-band resistors?', answer: 'Four bands use two significant digits; five use three; six add a temperature-coefficient band.' },
+    { question: 'Does reverse encoding guarantee an exact resistor value?', answer: 'Not always. It selects the nearest value representable with the chosen band count and shows when rounding occurred.' },
+  ],
+});

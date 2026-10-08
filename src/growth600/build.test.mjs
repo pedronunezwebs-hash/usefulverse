@@ -119,6 +119,7 @@ function toolCopy(tool, language) {
     'gear-ratio-calculator': { stages: 'Driver teeth : driven teeth', stagesHint: 'One stage per line.', inputRpm: 'Input RPM', inputTorque: 'Input torque', driveType: 'Drive type', externalGears: 'External gears', chainDrive: 'Chain drive', efficiencyPercent: 'Efficiency per stage', accuracyNote: 'Ideal ratio arithmetic only.' },
     'density-calculator': { mode: 'Calculation mode', solveMode: 'Find a missing value', mixtureMode: 'Estimate a mixture', massKg: 'Mass (kg)', volumeM3: 'Volume (m3)', densityKgM3: 'Density (kg/m3)', components: 'Component mass,volume', componentsHint: 'One row per component.', accuracyNote: 'Mixture volumes are assumed additive.' },
     'kinetic-energy-calculator': { mode: 'Calculation mode', energyMode: 'Calculate energy from speed', speedMode: 'Solve speed from kinetic energy', massKg: 'Mass (kg)', velocityMps: 'Speed (m/s)', kineticEnergyJ: 'Kinetic energy (J)', heightM: 'Height above the zero reference (m)', gravityMps2: 'Gravitational acceleration (m/s²)', accuracyNote: 'Ideal estimate; ignores energy losses.' },
+    'resistor-color-code-calculator': { mode: 'Choose a task', decodeMode: 'Decode band colors', encodeMode: 'Find bands from resistance', bands: 'Number of bands', fourBands: '4 bands', fiveBands: '5 bands', sixBands: '6 bands', resistanceOhms: 'Resistance in ohms', tolerance: 'Tolerance', temperatureCoefficient: 'Temperature coefficient', accuracyNote: 'Uses standard color codes.', band1: 'Band 1', band2: 'Band 2', band3: 'Band 3', band4: 'Band 4', band5: 'Band 5', band6: 'Band 6', black: 'Black', brown: 'Brown', red: 'Red', orange: 'Orange', yellow: 'Yellow', green: 'Green', blue: 'Blue', violet: 'Violet', gray: 'Gray', white: 'White', gold: 'Gold', silver: 'Silver', none: 'None', ppm250: '250 ppm/K', ppm100: '100 ppm/K', ppm50: '50 ppm/K', ppm25: '25 ppm/K', ppm20: '20 ppm/K', ppm15: '15 ppm/K', ppm10: '10 ppm/K', ppm5: '5 ppm/K', ppm1: '1 ppm/K', tolerance005: '0.05%', tolerance01: '0.1%', tolerance025: '0.25%', tolerance05: '0.5%', tolerance1: '1%', tolerance2: '2%', tolerance5: '5%', tolerance10: '10%', tolerance20: '20%' },
     'compression-ratio-calculator': { unit: 'Measurement unit', volumeUnit: 'Volume unit', millimeters: 'Millimeters', inches: 'Inches', cubicCentimeters: 'Cubic centimeters', cubicInches: 'Cubic inches', bore: 'Bore', stroke: 'Stroke', chamberVolume: 'Chamber volume', gasketBore: 'Gasket bore', gasketThickness: 'Gasket thickness', deckClearance: 'Deck clearance', pistonCrownVolume: 'Piston dish/dome volume', cylinders: 'Cylinder count', accuracyNote: 'Static estimate only.' },
     'polynomial-long-division-calculator': { dividend: 'Dividend polynomial', divisor: 'Divisor polynomial', accuracyNote: 'Integer coefficients; maximum degree 20.' },
     'half-life-calculator': { mode: 'Value to solve', solveRemaining: 'Remaining amount', solveInitial: 'Initial amount', solveElapsed: 'Elapsed time', solveHalfLife: 'Half-life', initialAmount: 'Initial amount', remainingAmount: 'Remaining amount', halfLife: 'Half-life', elapsedTime: 'Elapsed time', timeUnit: 'Shared time unit', seconds: 'Seconds', minutes: 'Minutes', hours: 'Hours', days: 'Days', years: 'Years', accuracyNote: 'Educational equation only.' },
@@ -506,6 +507,16 @@ function toolCopy(tool, language) {
     ];
     localized.localizationStatus = 'approved';
   }
+  if (tool.id === 'resistor-color-code-calculator') {
+    Object.assign(localized.actions, { calculate: 'Calculate', example: 'Try brown-black-red-gold', reset: 'Clear', copy: 'Copy result' });
+    Object.assign(localized.messages, { resistance: 'Resistance', requestedResistance: 'Requested resistance', nominalResistance: 'Nearest nominal value', tolerance: 'Tolerance', bands: 'Band order', temperatureCoefficient: 'Temperature coefficient', rounding: 'Encoding note', nearestNominal: 'Rounded to the nearest representable nominal value.' });
+    localized.additionalFaqs = [
+      { question: 'What does brown-black-red-gold mean?', answer: 'Brown is 1, black is 0, red multiplies by 100, and gold means ±5% tolerance: 1,000 Ω ±5%.' },
+      { question: 'What changes between 4-, 5- and 6-band resistors?', answer: 'Four bands use two significant digits; five use three; six add a temperature-coefficient band.' },
+      { question: 'Does reverse encoding guarantee an exact value?', answer: 'Not always. It selects the nearest value representable with the chosen band count and reports rounding.' },
+    ];
+    localized.localizationStatus = 'approved';
+  }
   return localized;
 }
 
@@ -555,6 +566,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
     'gear-ratio-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'gear-ratio-calculator'), locale.key),
     'density-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'density-calculator'), locale.key),
     'kinetic-energy-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'kinetic-energy-calculator'), locale.key),
+    'resistor-color-code-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'resistor-color-code-calculator'), locale.key),
     'compression-ratio-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'compression-ratio-calculator'), locale.key),
     'goal-planner': toolCopy(growthPilotTools.find(({ id }) => id === 'goal-planner'), locale.key),
     'mind-map-maker': toolCopy(growthPilotTools.find(({ id }) => id === 'mind-map-maker'), locale.key),
@@ -582,6 +594,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
     'complex-number-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'complex-number-calculator'), locale.key),
     'density-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'density-calculator'), locale.key),
     'kinetic-energy-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'kinetic-energy-calculator'), locale.key),
+    'resistor-color-code-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'resistor-color-code-calculator'), locale.key),
   };
   const result = await buildGrowthStaticSite({
     outputDir,

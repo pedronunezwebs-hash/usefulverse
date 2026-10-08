@@ -49,6 +49,7 @@ import { calculateEngineCompression, compressionRatioFromVolumes } from './compr
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 import { calculateKineticEnergy } from './kinetic-energy-calculator/logic.mjs';
+import { decodeResistorBands, encodeResistorValue } from './resistor-color-code-calculator/logic.mjs';
 
 test('gravel calculator converts area and depth into volume, waste, weight and bags', () => {
   const result = calculateGravel({ areaM2: 10, depthM: 0.1, densityKgM3: 1600, wastePercent: 5, bagKg: 20 });
@@ -81,6 +82,27 @@ test('kinetic energy calculator solves direct, inverse-speed and reference-heigh
   assert.throws(() => calculateKineticEnergy({ mode: 'solve-speed', massKg: 2, kineticEnergyJ: -1 }), /Kinetic energy/u);
   assert.throws(() => calculateKineticEnergy({ massKg: 2, velocityMps: 2, gravityMps2: 0 }), /Gravity/u);
   assert.throws(() => calculateKineticEnergy({ mode: 'invalid', massKg: 2 }), /mode/u);
+});
+
+test('resistor color codes decode four, five and six bands and reverse-encode resistance', () => {
+  const four = decodeResistorBands({ bands: 4, colors: ['brown', 'black', 'red', 'gold'] });
+  assert.equal(four.ohms, 1000);
+  assert.equal(four.tolerancePercent, 5);
+  const five = decodeResistorBands({ bands: 5, colors: ['brown', 'black', 'black', 'brown', 'brown'] });
+  assert.equal(five.ohms, 1000);
+  assert.equal(five.tolerancePercent, 1);
+  const six = decodeResistorBands({ bands: 6, colors: ['brown', 'black', 'black', 'brown', 'brown', 'red'] });
+  assert.equal(six.ohms, 1000);
+  assert.equal(six.temperatureCoefficientPpm, 50);
+  const encoded = encodeResistorValue({ ohms: 1000, bands: 4, tolerancePercent: 5 });
+  assert.deepEqual(encoded.colors, ['brown', 'black', 'red', 'gold']);
+  const rounded = encodeResistorValue({ ohms: 1234, bands: 4, tolerancePercent: 5 });
+  assert.equal(rounded.rounded, true);
+  assert.ok(rounded.nominalOhms > 0);
+  assert.throws(() => decodeResistorBands({ bands: 4, colors: ['black', 'brown', 'red', 'gold'] }), /first significant/u);
+  assert.throws(() => decodeResistorBands({ bands: 4, colors: ['brown', 'black', 'none', 'gold'] }), /valid band/u);
+  assert.throws(() => encodeResistorValue({ ohms: 0, bands: 4 }), /greater than zero/u);
+  assert.throws(() => encodeResistorValue({ ohms: 1000, bands: 6, temperatureCoefficientPpm: 7 }), /temperature coefficient/u);
 });
 
 test('Ohm’s law calculator solves every pair and equivalent resistor networks', () => {
