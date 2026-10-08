@@ -1,6 +1,15 @@
 # UsefulVerse · progreso del plan 277 → 600
 
-Última verificación: 2026-10-08. Registro persistente de esta rama; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
+Última verificación: 2026-10-09. Registro persistente de esta rama; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
+
+## En implementación · Round Robin Tournament Generator (#184) · 2026-10-09
+
+- [x] C/F/B — Genera rondas de todos contra todos para 2–32 participantes, bye automático cuando el número es impar, liga de una o dos vueltas con localía inversa; permite mezclar el sorteo, anotar marcadores, calcular tabla 3/1/0 con desempates explícitos, descargar CSV seguro y abrir impresión/guardar como PDF. Entrada local; nombres como texto, sin HTML ejecutable ni subida.
+- [x] E — 8 pruebas unitarias de calendario, byes, vuelta inversa, aleatorización inyectable, validaciones, posiciones, límites de goles y CSV. Regresión completa `npm test`: 1.313/1.313; `locale:release-check` correcto; `npm run check` conserva las 10.260 URLs originales; `git diff --check` limpio. Build aislado local: 3.312 páginas (91 herramientas × 36 idiomas + 36 portadas), 3.454 archivos, 100.967.193 bytes.
+- [x] L/B — 36 copias estáticas desde inglés con Google Translate, aceptadas como traducción automática sencilla, no revisada por nativos; metadatos dentro de presupuesto. Se corrigieron manualmente las etiquetas y FAQs árabes que podían confundir (marcador local/visitante, descanso y clasificación). Sin llamada de traducción en tiempo de ejecución ni APIs pagadas.
+- [x] X — Chrome local inglés y árabe: ejemplo de cinco equipos genera 5 jornadas, 10 partidos, 5 descansos y 20 campos de marcador; al registrar Eagles 2–1 Tigers se actualiza la tabla y se asignan 3 puntos. Árabe verificado con `lang=ar`, `dir=rtl`, etiquetas de marcador localizadas y clasificación en vivo. Campos numéricos con `id`/`name`; consola de ambas páginas limpia.
+- [ ] P/S — Pendiente abrir PR, integrar con CI y publicar ambos sitios estáticos. Hasta completar eso, no contar como herramienta publicada ni como URL pública.
+- **Siguiente:** terminar este ciclo P/S, verificar sitemap del hub; luego auditar la ficha #183 `fertilizer-calculator` contra catálogo/sitemap (no duplicarla) y continuar con la siguiente candidata realmente pendiente.
 
 ## Publicada · RTF Converter (#181) · 2026-10-08
 
