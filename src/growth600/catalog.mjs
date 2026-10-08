@@ -756,6 +756,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/chess-opening-trainer/logic.mjs',
   },
   {
+    id: 'decibel-calculator',
+    category: 'science-math',
+    type: 'calculator',
+    primaryIntent: 'decibel calculator',
+    secondaryIntents: ['db calculator', 'decibel gain calculator', 'sum decibel levels calculator'],
+    functions: ['convert positive power or amplitude ratios to decibels and back', 'sum 2 to 20 incoherent sound levels with a numerically stable logarithmic calculation', 'apply positive gain or negative attenuation to an input level', 'show the selected formula and its scope without measuring sound or playing tones'],
+    acceptance: 'A power ratio of ten returns 10 dB; an amplitude ratio of ten returns 20 dB under equal-impedance assumptions; equal incoherent levels add 3.0103 dB; input and output ranges are bounded; invalid or incomplete values produce an accessible error without NaN or Infinity.',
+    boundary: 'Logarithmic ratio and level arithmetic only. It does not measure SPL, calibrate a microphone, reproduce audio, or predict perceived loudness. Amplitude ratios assume the same impedance. Level summation assumes uncorrelated/incoherent sources; correlated sources need phase-aware treatment and are out of scope.',
+    relatedExistingIds: [],
+    logicModule: './tools/decibel-calculator/logic.mjs',
+  },
+  {
     id: 'color-name-finder',
     category: 'design-tools',
     type: 'utility',

@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 97);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 97);
+  assert.equal(growthPilotTools.length, 98);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 98);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -24,6 +24,14 @@ test('chess opening trainer adds repertoire practice rather than another free-pl
   assert.equal(trainer.primaryIntent, 'chess openings practice');
   assert.match(trainer.acceptance, /standard starting position/u);
   assert.deepEqual(trainer.relatedExistingIds, ['chess-game', 'chess-clock']);
+});
+
+test('decibel calculator does logarithmic ratios and incoherent-level sums, not SPL measurement', () => {
+  const calculator = growthPilotTools.find(({ id }) => id === 'decibel-calculator');
+  assert.ok(calculator);
+  assert.equal(calculator.primaryIntent, 'decibel calculator');
+  assert.match(calculator.boundary, /does not measure SPL/u);
+  assert.match(calculator.functions.join(' '), /sum 2 to 20 incoherent sound levels/u);
 });
 
 test('the additive catalog rejects protected-ID collisions, duplicate IDs and incomplete contracts', () => {
