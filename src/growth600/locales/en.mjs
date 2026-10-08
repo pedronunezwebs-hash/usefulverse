@@ -56,6 +56,8 @@ import forceCalculatorCopies from './force-calculator.mjs';
 import { forceCalculatorEnglishCopy } from './force-calculator.en.mjs';
 import horsepowerCalculatorCopies from './horsepower-calculator.mjs';
 import { horsepowerCalculatorEnglishCopy } from './horsepower-calculator.en.mjs';
+import rtfConverterCopies from './rtf-converter.mjs';
+import { rtfConverterEnglishCopy } from './rtf-converter.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
 import imageColorPickerCopies from './image-color-picker-final.mjs';
@@ -610,5 +612,6 @@ const localizedHorsepowerCalculatorCopies = Object.fromEntries(Object.entries(ho
   return [language, { ...copy, ...spanish, fields: { ...copy.fields, ...spanish.fields }, messages: { ...copy.messages, ...spanish.messages }, description }];
 }));
 registerGrowthLocaleExtension(source, 'horsepower-calculator', { ...localizedHorsepowerCalculatorCopies, en: horsepowerCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'rtf-converter', { ...rtfConverterCopies, en: rtfConverterEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

@@ -1,6 +1,7 @@
 export const REQUIRED_GROWTH_COPY = Object.freeze(['name', 'title', 'description', 'intro', 'howQuestion', 'howAnswer', 'privacyQuestion', 'privacyAnswer']);
 export const REQUIRED_GROWTH_HOME_COPY = Object.freeze(['title', 'description', 'intro', 'directoryLabel', 'freeLabel', 'footerFree', 'skipToTool', 'home', 'languageLabel', 'breadcrumbLabel', 'faqLabel']);
 export const REQUIRED_TOOL_MESSAGES = Object.freeze({
+  'rtf-converter': ['converted', 'invalidFile', 'fileTooLarge', 'noText', 'copyUnavailable', 'printBlocked', 'downloaded'],
   'image-color-picker': ['unsupportedImage', 'imageTooLarge', 'imageReady', 'selectImage', 'pixelSelected', 'sampleAdded', 'paletteFull', 'copiedColor', 'copiedPalette', 'copyUnavailable', 'paletteCleared'],
   'image-region-redactor': ['unsupportedImage', 'imageTooLarge', 'imageReady', 'selectImage', 'invalidRegion', 'regionAdded', 'regionRemoved', 'regionsCleared', 'addRegionFirst', 'exporting', 'exportFailed', 'exportReady', 'region'],
   'image-sharpener': ['unsupportedImage', 'imageTooLarge', 'imageReady', 'selectImage', 'exporting', 'exportFailed', 'exportReady'],
@@ -62,6 +63,7 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   'travel-itinerary-planner': ['tripSaved', 'storageFailed', 'tripDeletedStorageFailed', 'checkTrip', 'createTripFirst', 'exampleLoaded', 'itemSaved', 'itemUpdated', 'checkItem', 'formCleared', 'itemDeleted', 'confirmDeleteTrip', 'tripDeleted', 'confirmRestore', 'localSaved', 'localRemoved', 'jsonDownloaded', 'icsDownloaded', 'backupTooLarge', 'noItemsToExport', 'exportFailed', 'confirmImport', 'importCancelled', 'imported', 'importFailed', 'overlap', 'shortConnection'],
 });
 export const REQUIRED_TOOL_FIELDS = Object.freeze({
+  'rtf-converter': ['file', 'accuracyNote', 'limitNote', 'output'],
   'image-color-picker': ['imageFile', 'accuracyNote', 'previewHint', 'zoom', 'currentColor', 'paletteLabel', 'relatedSharpener', 'relatedRedactor'],
   'image-region-redactor': ['imageFile', 'mode', 'strength', 'regionX', 'regionY', 'regionWidth', 'regionHeight', 'accuracyNote', 'dragHint', 'regionsLabel', 'format', 'relatedMosaic', 'relatedCropper'],
   'image-sharpener': ['imageFile', 'amount', 'radius', 'threshold', 'compare', 'accuracyNote', 'previewHint', 'format', 'relatedRedactor', 'relatedCropper'],
@@ -123,6 +125,7 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'travel-itinerary-planner': ['tripName', 'tripStartDate', 'tripEndDate', 'bufferMinutes', 'saveConsent', 'storageNote', 'itemDate', 'startTime', 'endTime', 'itemTitle', 'category', 'location', 'reservation', 'notes', 'itineraryLabel', 'noTrip', 'noItems', 'itemCount', 'overlapCount', 'bufferWarningCount', 'conflictsLabel', 'backupFile', 'backupHint', 'limitNote', 'timeZoneNote', 'reservationPrivacyNote', 'exampleTrip', 'exampleActivity', 'exampleMeal', 'exampleLocation', 'exampleReservation'],
 });
 export const REQUIRED_TOOL_ACTIONS = Object.freeze({
+  'rtf-converter': ['convert', 'reset', 'copy', 'download', 'print', 'result'],
   'image-color-picker': ['load', 'addSample', 'copyColor', 'copyPalette', 'remove', 'clear', 'reset'],
   'image-region-redactor': ['load', 'addRegion', 'undo', 'clear', 'export', 'example', 'download', 'removeRegion', 'black', 'pixelate', 'blur', 'png', 'jpeg'],
   'image-sharpener': ['load', 'export', 'download', 'original', 'sharpened', 'png', 'jpeg', 'reset'],

@@ -10,7 +10,7 @@ function label(id, text, control) {
 }
 
 function button(action, text, kind = 'primary') {
-  const type = action === 'reset' ? 'reset' : ['calculate', 'generate'].includes(action) ? 'submit' : 'button';
+  const type = action === 'reset' ? 'reset' : ['calculate', 'generate', 'convert'].includes(action) ? 'submit' : 'button';
   return `<button type="${type}" data-action="${action}" class="button button--${kind}">${escapeGrowthHtml(text)}</button>`;
 }
 
@@ -55,6 +55,7 @@ export function renderGrowthForm(toolId, copy) {
     'acceleration-calculator': ['mode', 'solveAcceleration', 'solveTime', 'solveFinalVelocity', 'solveDisplacement', 'units', 'metric', 'imperial', 'initialVelocity', 'finalVelocity', 'acceleration', 'timeSeconds', 'initialPosition', 'accuracyNote'],
     'force-calculator': ['mode', 'solveForce', 'solveMass', 'solveAcceleration', 'netMode', 'forceUnit', 'massUnit', 'accelerationUnit', 'force', 'mass', 'acceleration', 'forces', 'forcesHint', 'netMass', 'accuracyNote'],
     'horsepower-calculator': ['mode', 'solvePower', 'solveTorque', 'solveRpm', 'torque', 'torqueUnit', 'rpm', 'power', 'powerUnit', 'accuracyNote'],
+    'rtf-converter': ['file', 'accuracyNote', 'limitNote', 'output'],
     'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
     'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
@@ -146,6 +147,7 @@ export function renderGrowthForm(toolId, copy) {
     'acceleration-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'force-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'horsepower-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'rtf-converter': ['convert', 'reset', 'copy', 'download', 'print', 'result'],
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
@@ -201,7 +203,7 @@ export function renderGrowthForm(toolId, copy) {
   const missing = actionNames.filter((key) => !(actions[key] ?? fields[key])?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
   const labels = Object.fromEntries([...new Set([...actionNames, 'calculate', 'generate', 'reset', 'example', 'newGame', 'rules', 'reveal', 'next', 'copy', 'download', 'result', 'progress', 'perPerson', 'metric', 'imperial', 'rectangle', 'circle', 'triangle', 'meters', 'centimeters', 'feet', 'inches', 'kgPerCubicMeter', 'lbPerCubicFoot', 'kilograms', 'pounds', 'twoPlayers', 'computer', 'human', 'currentPlayer', 'opponent', 'privacyNote', 'kmh', 'mph'])].map((key) => [key, actions[key] ?? fields[key] ?? '']));
-  const submit = (name) => button(name === 'calculate' ? 'calculate' : 'generate', labels[name]);
+  const submit = (name) => button(name, labels[name]);
   const reset = button('reset', labels.reset, 'secondary');
 
   if (toolId === 'image-color-picker') return attachCopy(`<form id="tool-form" novalidate>
@@ -1289,6 +1291,20 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'rtf-converter') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('rtf-file', fields.file, '<input id="rtf-file" name="file" type="file" accept=".rtf,application/rtf,text/rtf" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.limitNote)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${submit('convert')}${button('reset', actions.reset, 'secondary')}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite">
+      <h2>${escapeGrowthHtml(actions.result)}</h2>
+      <label class="field" for="rtf-output">${escapeGrowthHtml(fields.output)}</label>
+      <textarea id="rtf-output" name="output" rows="12" maxlength="2097152" readonly spellcheck="false"></textarea>
+      <div class="actions">${button('copy', actions.copy, 'secondary')}${button('download', actions.download, 'secondary')}${button('print', actions.print, 'secondary')}</div>
+    </section>
   </form>`, copy);
 
   if (toolId === 'chemical-equation-balancer') return attachCopy(`<form id="tool-form" novalidate>
