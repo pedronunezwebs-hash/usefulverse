@@ -1172,3 +1172,10 @@ test('force calculator has complete English copy and localized copy across all 3
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
   assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
+
+test('horsepower calculator has complete English copy and localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'horsepower-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});

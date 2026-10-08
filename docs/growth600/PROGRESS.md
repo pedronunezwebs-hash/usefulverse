@@ -2,15 +2,21 @@
 
 Última verificación: 2026-10-08. Registro persistente de esta rama; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## En curso · Force Calculator (#179) · 2026-10-08
+## En curso · Horsepower Calculator (#180) · 2026-10-08
 
-- [x] C/F — herramienta de física 1D para resolver F = m × a y sumar de 2 a 5 fuerzas colineales con signo; incluye conversión N/kN/lbf, kg/lb y m/s²/ft/s² y un diagrama proporcional accesible. No sustituye cálculo vectorial, rozamiento, torque ni revisión de seguridad estructural.
-- [x] B/X — ejemplo, tres incógnitas, modo de fuerza neta, reinicio, copia, mensajes anunciados y cálculo íntegramente local. El diagrama muestra una marca sin flecha cuando una fuerza vale cero.
-- [x] L — textos estáticos en los 36 idiomas, derivados de la fuente inglesa con el flujo de traducción automática acordado; no son revisión nativa. Se corrigieron etiquetas ambiguas de aceleración en árabe.
-- [x] E — lógica, catálogo, formularios, contrato de locale y build focal: 163/163; `npm test`: 1.275/1.275; `npm run check`: 10.260 URLs del sitio protegido; build aislado: 3.168 URLs únicas (3.306 archivos, 97.538.927 bytes). `git diff --check` limpio.
-- [x] X — Chrome móvil 390 × 844 en árabe RTL: 2 kg × 3 m/s² = 6 N y 10 N − 4 N = 6 N; sin desbordamiento horizontal, errores de consola ni solicitudes externas. Se ajustó el título y algunas etiquetas árabes automáticas para que se entiendan mejor.
-- [ ] P/S — aún no integrado ni desplegado; no se ha modificado el sitemap público ni reenviado desde paneles. PageSpeed/Lighthouse no se ejecutó.
-- **Siguiente:** revisar diff final, abrir PR y publicar por el workflow del hub. La siguiente ficha del plan es #180 `horsepower-calculator`.
+- [x] C/F — potencia de eje ideal desde torque y RPM; despeja torque o RPM a partir de las otras magnitudes. Convierte N·m/lb·ft y W/kW/hp/PS; explica que no representa potencia medida en ruedas ni pérdidas reales.
+- [x] B/X — modos dinámicos, ejemplo, validación de ceros/singularidades, unidades, reset/copia y resultados accesibles. Verificado en Chrome: 100 N·m a 1.000 RPM → 10,471976 kW, 14,043150 hp y 14,237924 PS; modos inversos recuperan 95,492966 N·m y 1.000 RPM.
+- [x] L — 36 locales estáticos a partir del inglés mediante Google Translate; no revisión nativa. Ajustadas expresiones obvias del español y límites de metadescripción. Auditoría de build: todos los títulos ≤60 y descripciones ≤160 caracteres renderizados.
+- [x] E — lógica focal 5/5; regresión `npm test` 1.280/1.280; `npm run check` confirma 10.260 URLs protegidas; `locale:release-check` correcto. Build del hub: 3.204 URLs únicas (88 herramientas × 36 idiomas + 36 portadas; 3.343 archivos). `git diff --check` limpio.
+- [x] X — Chrome local: inglés funcional directo; español con cadenas revisadas; árabe `lang=ar`, `dir=rtl`, cálculo inverso funcional. Consola sin errores y recursos solo del mismo origen.
+- [ ] P/S — todavía no integrado ni desplegado; falta confirmar URL y sitemap públicos tras el flujo de publicación. No se ejecutó PageSpeed/Lighthouse ni se afirmará indexación.
+- **Siguiente:** cerrar diff/documentación, abrir PR, esperar CI, fusionar y verificar publicación/sitemap. Luego seguir con la ficha #181.
+
+## Publicada · Force Calculator (#179) · 2026-10-08
+
+- [x] PR #44 fusionado en `c4ea55cfe57bca860532363ccf3a055a97b6adc1`; pipeline del hub 37799721532 y ejecución manual 37800203046 finalizaron correctamente.
+- [x] Página EN responde HTTP 200; sitemap público verificado con 3.168 `<loc>` únicas. Los motores ya conocen la URL canónica; esto no prueba rastreo ni indexación y no se volvieron a usar paneles.
+- [x] 87/323 candidatas nuevas de Growth600 están publicadas al inicio de esta tarea; #180 es la siguiente candidata en curso. Las 277 herramientas originales permanecen protegidas.
 
 ## Completada y publicada · Acceleration Calculator (#178) · 2026-10-08
 

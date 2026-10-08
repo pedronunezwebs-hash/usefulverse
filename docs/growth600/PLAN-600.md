@@ -1179,9 +1179,9 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 179 · Force Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `force-calculator`**
-- **Estado local (2026-10-08):** motor, interfaz y traducción automática estática en 36 idiomas implementados; pruebas focales 163/163, suite completa 1.275/1.275 y `npm run check` (10.260 URLs protegidas) correctos. Build aislado: 3.168 URLs únicas (3.306 archivos). Chrome móvil 390 × 844 en árabe RTL comprobó F = m × a y fuerzas opuestas, sin overflow, errores de consola ni solicitudes externas. Falta integrar y desplegar; aún no está en producción.
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/force-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `force-calculator`**
+- **Estado (2026-10-08):** PR #44 fusionado; producción y sitemap confirmados con 3.168 URLs.
+- **Destino:** `https://tools.usefulverse.com/tools/force-calculator/`; otras 35 versiones con los prefijos del anexo.
 - **Demanda:** `force calculator` — 2.900 búsquedas/mes US/en, KD 0; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Masa/aceleración, fuerzas colineales y diagrama
 - **Prueba de aceptación específica:** 2kg por3m/s² da6N
@@ -1194,8 +1194,9 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 180 · Horsepower Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `horsepower-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/horsepower-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [~] **C/F/E/X/L/B completados localmente; P/S pendientes — `horsepower-calculator`**
+- **Estado local (2026-10-08):** motor estático y textos de 36 idiomas; regresión completa 1.280/1.280, `npm run check` (10.260 URLs protegidas) y control de localización correctos. Build del hub: 3.204 URLs únicas, 3.343 archivos. Browser QA EN/ES/AR: cálculo directo e inversos, RTL y consola sin errores; títulos ≤60/descripciones ≤160 caracteres renderizados. Sin PageSpeed/Lighthouse.
+- **Destino propuesto:** `https://tools.usefulverse.com/tools/horsepower-calculator/`; otras 35 versiones con los prefijos del anexo. Aún no publicado.
 - **Demanda:** `horsepower calculator` — 2.900 búsquedas/mes US/en, KD 0; nivel B. CPC 1.39 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Par, RPM y potencia con sistemas de unidades
 - **Prueba de aceptación específica:** Par cero da potencia cero

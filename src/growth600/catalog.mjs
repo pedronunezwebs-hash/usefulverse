@@ -1043,6 +1043,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['kinetic-energy-calculator', 'acceleration-calculator'],
     logicModule: './tools/force-calculator/logic.mjs',
   },
+  {
+    id: 'horsepower-calculator',
+    category: 'physics-math',
+    type: 'calculator',
+    primaryIntent: 'horsepower calculator',
+    secondaryIntents: ['engine power calculator', 'torque rpm horsepower calculator', 'metric horsepower calculator'],
+    functions: ['calculate shaft power from torque and RPM or solve for torque or RPM from the other two values', 'convert torque between N·m and lb·ft and power between W, kW, mechanical hp and metric PS', 'show all power-unit equivalents so users can distinguish mechanical and metric horsepower'],
+    acceptance: 'Zero torque at any non-negative RPM gives zero shaft power; 100 N·m at 1,000 RPM gives about 10.472 kW or 14.24 PS.',
+    boundary: 'Ideal steady rotational shaft power only. It does not model engine condition, measurement standards, drivetrain losses, wheel horsepower, vehicle performance, fuel use or transient torque. Mechanical horsepower and metric horsepower are distinct. Values remain in this browser.',
+    relatedExistingIds: ['gear-ratio-calculator'],
+    logicModule: './tools/horsepower-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {
