@@ -3133,13 +3133,15 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 181 · Rtf Converter
 
-- [ ] **C/F/E/X/L/B/P/S completos — `rtf-converter`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/rtf-converter/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [~] **C/F/E/X/L/B completados localmente; P/S pendientes — `rtf-converter`**
+- **Destino:** `https://tools.usefulverse.com/tools/rtf-converter/`; otras 35 versiones con los prefijos del anexo. No está publicado todavía.
 - **Demanda:** `rtf to pdf converter` — 2.900 búsquedas/mes US/en, KD 0; nivel B. CPC 1.15 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** RTF a texto/HTML sanitizado o PDF por impresión, con párrafos y formatos soportados visibles; rechazar construcciones no soportadas sin destruir el original.
-- **Prueba de aceptación específica:** ControlesRTF no se tratancomo texto literal
-- **Frontera con otras herramientas:** docx-editor: formatoRTF notDOCX. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Función implementada:** extrae texto legible de RTF local y conserva párrafos, tabulaciones, escapes, Unicode y símbolos comunes. Permite copiar/descargar texto o abrir la impresión del navegador para guardar como PDF. No convierte a HTML.
+- **Frontera y límites visibles:** procesa hasta 5 MiB en el dispositivo; ignora códigos de formato, imágenes, tablas y metadatos. El resultado no conserva el diseño original ni todas las características de Word; el archivo fuente no cambia ni se sube.
+- **Pruebas de aceptación:** las palabras de control RTF no aparecen como texto; se comprueban páginas malformadas, profundidad/tamaño máximos, caracteres escapados y fallos de lectura; validar también que el texto impreso use `textContent` y no se interprete como HTML.
+- **Frontera con otras herramientas:** conversión a texto/PDF impreso, no edición DOCX ni conservación de maquetación. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
+- **Estado local (2026-10-08):** lógica focal 9/9; regresión `npm test` 1.292/1.292; `npm run check` preserva las 10.260 URLs originales; `locale:release-check` correcto. Build local: 3.240 URLs únicas (89 herramientas × 36 idiomas + 36 portadas), 3.380 archivos. Chrome EN/AR: extracción de ejemplo, `dir=rtl` árabe y consola sin errores. Sin PageSpeed/Lighthouse.
+- **Siguiente paso:** abrir PR, pasar CI, fusionar y confirmar publicación y sitemap público antes de marcar P/S.
 - **Consultas secundarias del mismo propietario:**
   - `rtf converter` — 140/mes US/en; KD 0.
   - `rtf to pdf converter free online`; `rtf to pdf converter with example`; `rtf to pdf converter no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

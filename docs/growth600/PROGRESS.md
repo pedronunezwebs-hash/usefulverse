@@ -2,6 +2,15 @@
 
 Última verificación: 2026-10-08. Registro persistente de esta rama; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
+## En curso · RTF Converter (#181) · 2026-10-08
+
+- [x] C/F/B — Conversión local RTF→texto con párrafos, tabs, secuencias escapadas, Unicode y símbolos; límites de entrada/salida y profundidad, validación de cabecera/grupos/bloques binarios. Copiar/descargar texto y abrir diálogo de impresión a PDF; no conserva maquetación, imágenes, tablas ni todos los estilos. Archivo original intacto; no hay carga a servidor.
+- [x] L — Copia estática para 36 idiomas generada en lotes desde inglés con Google Translate; sin API pagada ni traducción en tiempo de ejecución. Títulos conservan `UsefulVerse` y cumplen el límite, descripciones ≤160; traducción automática no equivale a revisión nativa.
+- [x] E — Lógica focal 9/9; regresión total `npm test` 1.292/1.292; `npm run check` confirma 10.260 URLs originales intactas; `locale:release-check` correcto. Build local del hub: 3.240 URLs (89 herramientas × 36 idiomas + 36 portadas), 3.380 archivos. `git diff --check` limpio.
+- [x] X — Chrome local: extracción de RTF sintético mostró «Hello world», párrafo separado, `é` y em dash; estado accesible de éxito. Árabe comprobado con `lang=ar`, `dir=rtl`, controles en RTL y consola sin errores.
+- [ ] P/S — Pendiente abrir PR, CI, fusión, publicación del hub y verificación de las 36 rutas/sitemap. El sitemap público continúa en 3.204 URLs mientras #181 no se publique. No se ejecutó PageSpeed/Lighthouse.
+- **Siguiente:** cerrar PR de #181; tras publicar, continuar #182 `csv-to-pdf`. 88/323 candidatas siguen publicadas actualmente; 235 todavía pendientes.
+
 ## Publicada · Horsepower Calculator (#180) · 2026-10-08
 
 - [x] C/F — potencia de eje ideal desde torque y RPM; despeja torque o RPM a partir de las otras magnitudes. Convierte N·m/lb·ft y W/kW/hp/PS; explica que no representa potencia medida en ruedas ni pérdidas reales.
