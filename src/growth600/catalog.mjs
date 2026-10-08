@@ -804,6 +804,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/laplace-transform-calculator/logic.mjs',
   },
   {
+    id: 'vector-calculator',
+    category: 'math-statistics',
+    type: 'calculator',
+    primaryIntent: 'vector calculator',
+    secondaryIntents: ['vector operations calculator', '2D vector calculator', '3D vector calculator', 'dot product calculator', 'cross product calculator'],
+    functions: ['add and subtract 2D or 3D vectors', 'calculate dot and cross products, including the signed z-component for 2D cross products', 'calculate vector magnitudes, unit vectors, angle in degrees and projection of A onto B', 'show related magnitudes and dot product alongside the selected operation'],
+    acceptance: 'For A=(1,0,0) and B=(0,1,0), the dot product is 0 and the cross product is (0,0,1); in 2D the same cross product is the signed scalar z-component 1.',
+    boundary: 'Dimensionless component arithmetic; components must use compatible units if they represent physical quantities. Each component is limited to ±1,000,000,000. Angles are in degrees. Zero vectors cannot be normalized or used to define an angle; projection onto a zero vector is undefined. All calculations run locally without data lookups, APIs or server processing.',
+    relatedExistingIds: [],
+    logicModule: './tools/vector-calculator/logic.mjs',
+  },
+  {
     id: 'weight-loss-calculator',
     category: 'health-math',
     type: 'calculator',

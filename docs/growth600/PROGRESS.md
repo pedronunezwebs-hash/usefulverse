@@ -953,3 +953,16 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] X visual — falta QA real en Chrome/dispositivos; las pruebas automatizadas no la sustituyen.
 - [ ] P/S — no desplegada; sitemap e indexación de producción intactos.
 - **Recuento vigente:** **80/323** candidatas nuevas con implementación inglesa; quedan **243 filas** del plan, incluida una duplicada por sustituir. Las 277 originales siguen intactas. #196 no está traducida a todos los locales, publicada ni indexada.
+
+## Continuación · Vector Calculator (#200) · 2026-10-08
+
+- [x] C/F — reutilicé la investigación existente: `vector calculator`, 2.400 búsquedas/mes US/en, KD 5; `vector operations calculator`, 10/mes, KD 9. No se hicieron consultas adicionales ni se consumió cuota de DataForSEO.
+- [x] E — suma y resta 2D/3D; productos escalar y vectorial (en 2D muestra el componente z firmado); magnitudes, normalización, ángulo en grados y proyección de A sobre B. El ejemplo de ejes x/y confirma producto escalar 0 y producto vectorial `(0,0,1)`.
+- [x] B — aritmética local sin dependencias ni datos: límites explícitos de ±1.000.000.000 por componente; valida entradas, dimensiones y resultados; explica unidades compatibles y los casos no definidos de vector cero. El selector 2D oculta y desactiva z, se limpia cualquier resultado obsoleto, los errores visibles son localizables y el resultado se anuncia de forma accesible.
+- [x] Integración — catálogo aditivo, formulario, copy inglés con dos FAQs, borradores de los otros 35 idiomas con estado pendiente y contrato que impide publicarlos sin traducción aprobada. Las 277 herramientas originales no se modificaron.
+- [x] Pruebas focalizadas de lógica, controlador, catálogo, formulario, contrato de 36 locales, render y build: **158/158 aprobadas**. `node --check` pasó para lógica, controlador y módulos de copy; `git diff --check` limpio.
+- [x] Bundle independiente con Esbuild 0.28.2: **3.896 bytes** minificados. `assertLocalController` lo acepta bajo 24 KiB, sin llamadas remotas ni ejecución dinámica. Se borraron el paquete temporal instalado, su log npm y el bundle de prueba.
+- [ ] X visual — falta revisión interactiva real en Chrome/dispositivo; Node/build no la sustituyen.
+- [ ] L — solo el inglés está aprobado; los otros 35 idiomas continúan bloqueados como borradores sin traducción específica.
+- [ ] P/S — no fusionado ni desplegado; sitemap público e indexación no se tocaron.
+- **Recuento vigente:** **81/323** candidatas con implementación inglesa; quedan **242 candidatas únicas válidas y una fila duplicada que debe reemplazarse**. Las 277 herramientas existentes siguen intactas. Vector Calculator aún no se cuenta como completamente localizada, publicada o indexada.

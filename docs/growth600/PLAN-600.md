@@ -2398,11 +2398,12 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Función mínima y ampliaciones útiles:** Norma, producto escalar/vectorial, proyección y ángulo
 - **Prueba de aceptación específica:** Ejes x e y dan producto escalar0 y vector z
 - **Frontera con otras herramientas:** coordinate-geometry-calculator: vectores 2D/3D. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** D: dato/norma versionado, país y año visibles. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** no requiere tablas, normas por país ni datos versionados: es álgebra vectorial dimensional. Tratar unidades como valores compatibles introducidos por la persona y hacer explícita esa condición; el cálculo debe seguir local, acotado y comprobado con casos 2D/3D y vectores nulos.
 - **Consultas secundarias del mismo propietario:**
   - `vector operations calculator` — 10/mes US/en; KD 9.
   - `vector calculator free online`; `vector calculator with example`; `vector calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Avance de implementación (2026-10-08):** herramienta inglesa integrada en el catálogo aditivo, formulario, controlador local, FAQs, contrato de copy y pruebas del build. Incluye suma/resta, producto escalar/vectorial (en 2D indica su componente z con signo), magnitudes, normalización, ángulo en grados y proyección. Componentes limitados a ±1.000.000.000; rechaza entradas incompletas, resultados no finitos y operaciones no definidas con el vector cero. No usa datos, APIs ni servicios de servidor. Suite focalizada: **158/158 aprobadas**; controlador minificado: **3.896 bytes**, aceptado por `assertLocalController` bajo el límite de 24 KiB. Los otros 35 idiomas siguen como borradores bloqueados; falta QA visual real y publicación. Recuento de implementaciones inglesas: **81/323**.
 
 ### 202 · Cubic & Quartic Equation Calculator
 

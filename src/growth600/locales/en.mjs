@@ -40,6 +40,8 @@ import numberLineGraphingCopies from './number-line-graphing-tool-final.mjs';
 import { numberLineGraphingEnglishCopy } from './number-line-graphing-tool.en.mjs';
 import laplaceTransformCopies from './laplace-transform-calculator-final.mjs';
 import { laplaceTransformEnglishCopy } from './laplace-transform-calculator.en.mjs';
+import vectorCalculatorCopies from './vector-calculator-final.mjs';
+import { vectorCalculatorEnglishCopy } from './vector-calculator.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
 import imageColorPickerCopies from './image-color-picker-final.mjs';
@@ -563,5 +565,6 @@ registerGrowthLocaleExtension(source, 'severance-pay-calculator', { ...severance
 registerGrowthLocaleExtension(source, 'divisibility-calculator', { ...divisibilityCalculatorCopies, en: divisibilityCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'number-line-graphing-tool', { ...numberLineGraphingCopies, en: numberLineGraphingEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'laplace-transform-calculator', { ...laplaceTransformCopies, en: laplaceTransformEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'vector-calculator', { ...vectorCalculatorCopies, en: vectorCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

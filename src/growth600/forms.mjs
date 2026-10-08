@@ -29,6 +29,7 @@ export function renderGrowthForm(toolId, copy) {
     'divisibility-calculator': ['integer', 'divisors', 'accuracyNote', 'resultSummary', 'remainder', 'quotient', 'rule', 'rule1', 'rule2', 'rule3', 'rule4', 'rule5', 'rule6', 'rule7', 'rule8', 'rule9', 'rule10', 'rule11', 'rule12', 'rule13', 'rule25', 'rule100', 'rule1000', 'ruleGeneric'],
     'number-line-graphing-tool': ['intervals', 'intervalFormat', 'accuracyNote', 'chartDescription', 'exampleInput'],
     'laplace-transform-calculator': ['direction', 'forwardMode', 'inverseMode', 'expression', 'forwardHint', 'inverseHint', 'accuracyNote', 'resultSummary', 'region', 'forwardConvention', 'inverseConvention', 'forwardExample', 'inverseExample'],
+    'vector-calculator': ['dimension', 'dimension2d', 'dimension3d', 'operation', 'vectorA', 'vectorB', 'ax', 'ay', 'az', 'bx', 'by', 'bz', 'accuracyNote', 'resultSummary', 'zComponent', 'magnitudeAResult', 'magnitudeBResult', 'dotProductResult', 'exampleHint'],
     'image-upscaler': ['imageFile', 'accuracyNote', 'progressHint', 'sourcePreview', 'resultPreview'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
@@ -112,6 +113,7 @@ export function renderGrowthForm(toolId, copy) {
     'divisibility-calculator': ['calculate', 'example', 'commonDivisors', 'copy', 'reset'],
     'number-line-graphing-tool': ['calculate', 'example', 'downloadSvg', 'reset'],
     'laplace-transform-calculator': ['calculate', 'example', 'reset'],
+    'vector-calculator': ['calculate', 'example', 'reset', 'add', 'subtract', 'dot', 'cross', 'magnitudeA', 'magnitudeB', 'normalizeA', 'normalizeB', 'angle', 'projection'],
     'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
@@ -350,6 +352,27 @@ export function renderGrowthForm(toolId, copy) {
     <section class="result" data-laplace-result hidden aria-labelledby="laplace-result-title"><h2 id="laplace-result-title">${escapeGrowthHtml(fields.resultSummary)}</h2><div data-laplace-output></div><p class="hint" data-laplace-region></p></section>
     <p class="status" role="status" aria-live="polite" data-status></p>
   </form>`, copy);
+
+  if (toolId === 'vector-calculator') {
+    const component = (axis, field, value, isZ = false) => {
+      const id = `vector-${axis}-${field}`;
+      const wrapper = isZ ? ` data-vector-z hidden` : '';
+      const disabled = isZ ? ' disabled' : '';
+      return `<div class="field"${wrapper}><label for="${id}">${escapeGrowthHtml(fields[field])}</label><input id="${id}" name="${field}" type="number" inputmode="decimal" step="any" min="-1000000000" max="1000000000" value="${value}" required${disabled}></div>`;
+    };
+    const operationOptions = ['add', 'subtract', 'dot', 'cross', 'magnitudeA', 'magnitudeB', 'normalizeA', 'normalizeB', 'angle', 'projection']
+      .map((key) => `<option value="${key}"${key === 'dot' ? ' selected' : ''}>${escapeGrowthHtml(actions[key])}</option>`).join('');
+    return attachCopy(`<form id="tool-form" class="vector-calculator" novalidate>
+    ${label('vector-dimension', fields.dimension, `<select id="vector-dimension" name="dimension"><option value="2">${escapeGrowthHtml(fields.dimension2d)}</option><option value="3">${escapeGrowthHtml(fields.dimension3d)}</option></select>`)}
+    ${label('vector-operation', fields.operation, `<select id="vector-operation" name="operation">${operationOptions}</select>`)}
+    <fieldset><legend>${escapeGrowthHtml(fields.vectorA)}</legend><div class="fields">${component('a', 'ax', '1')}${component('a', 'ay', '2')}${component('a', 'az', '3', true)}</div></fieldset>
+    <fieldset><legend>${escapeGrowthHtml(fields.vectorB)}</legend><div class="fields">${component('b', 'bx', '3')}${component('b', 'by', '4')}${component('b', 'bz', '5', true)}</div></fieldset>
+    <p class="hint">${escapeGrowthHtml(fields.exampleHint)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('calculate', actions.calculate)}${button('example', actions.example, 'secondary')}${reset}</div>
+    <section class="result" data-vector-result hidden aria-labelledby="vector-result-title"><h2 id="vector-result-title">${escapeGrowthHtml(fields.resultSummary)}</h2><div data-vector-output></div></section>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+  </form>`, copy);
+  }
 
   if (toolId === 'image-upscaler') return attachCopy(`<form id="tool-form" data-worker-src="__WORKER_IMAGE_UPSCALER_WORKER__" novalidate>
     ${label('upscaler-file', fields.imageFile, '<input id="upscaler-file" name="imageFile" type="file" accept="image/png,image/jpeg,image/webp,image/avif,image/bmp" required>')}
