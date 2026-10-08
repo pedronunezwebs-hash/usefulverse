@@ -822,5 +822,7 @@ test('local controller guard permits the standard SVG XML namespace but still bl
   assert.doesNotThrow(() => assertLocalController('svg-export', 'const svg = \'<svg xmlns="http://www.w3.org/2000/svg"></svg>\';', 1024));
   assert.throws(() => assertLocalController('remote-controller', 'fetch("https://example.invalid/api")', 1024), /must not contact a remote service/u);
   assert.doesNotThrow(() => assertLocalController('schema-markup-validator', 'fetch(new URL("/assets/schemaorg-v30.1.json",location.origin),{credentials:"omit",cache:"force-cache"})', 1024));
+  assert.doesNotThrow(() => assertLocalController('schema-markup-validator', 'const vocabulary = "https://schema.org/";', 1024));
+  assert.throws(() => assertLocalController('remote-controller', 'fetch("https://schema.org/")', 1024), /must not contact a remote service/u);
   assert.throws(() => assertLocalController('schema-markup-validator', 'fetch(new URL(userInput,location.origin))', 1024), /must not contact a remote service/u);
 });

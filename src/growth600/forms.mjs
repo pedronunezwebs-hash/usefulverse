@@ -188,9 +188,9 @@ export function renderGrowthForm(toolId, copy) {
     'miter-angle-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'simpleMode', 'compoundMode'],
     'voltage-drop-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
   }[toolId];
-  const missing = actionNames.filter((key) => !actions[key]?.trim());
+  const missing = actionNames.filter((key) => !(actions[key] ?? fields[key])?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
-  const labels = Object.fromEntries([...new Set([...actionNames, 'calculate', 'generate', 'reset', 'example', 'newGame', 'rules', 'reveal', 'next', 'copy', 'download', 'result', 'progress', 'perPerson', 'metric', 'imperial', 'rectangle', 'circle', 'triangle', 'meters', 'centimeters', 'feet', 'inches', 'kgPerCubicMeter', 'lbPerCubicFoot', 'kilograms', 'pounds', 'twoPlayers', 'computer', 'human', 'currentPlayer', 'opponent', 'privacyNote', 'kmh', 'mph'])].map((key) => [key, actions[key] ?? '']));
+  const labels = Object.fromEntries([...new Set([...actionNames, 'calculate', 'generate', 'reset', 'example', 'newGame', 'rules', 'reveal', 'next', 'copy', 'download', 'result', 'progress', 'perPerson', 'metric', 'imperial', 'rectangle', 'circle', 'triangle', 'meters', 'centimeters', 'feet', 'inches', 'kgPerCubicMeter', 'lbPerCubicFoot', 'kilograms', 'pounds', 'twoPlayers', 'computer', 'human', 'currentPlayer', 'opponent', 'privacyNote', 'kmh', 'mph'])].map((key) => [key, actions[key] ?? fields[key] ?? '']));
   const submit = (name) => button(name === 'calculate' ? 'calculate' : 'generate', labels[name]);
   const reset = button('reset', labels.reset, 'secondary');
 

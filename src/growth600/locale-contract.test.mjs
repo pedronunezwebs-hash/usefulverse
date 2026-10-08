@@ -46,6 +46,19 @@ const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(a
   (await import(`./locales/${key}.mjs`)).default,
 ])));
 
+function assertMachineAcceptedGrowthToolInAllLocales(tool) {
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.localizationStatus, 'machine-accepted', key);
+    assert.equal(copy.localizationAcceptedBy, 'site-owner', key);
+    assert.match(copy.localizationAcceptedAt, /^\d{4}-\d{2}-\d{2}$/u, key);
+    assert.equal(copy.copyLanguage, key, key);
+    assert.notEqual(copy.intro, localizedCopies.en[tool.id].intro, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+}
+
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
 const sampleHome = (language) => ({ title: `${language} tools | UsefulVerse`, description: 'Free browser tools.', intro: 'Simple tools.', directoryLabel: 'Tools', freeLabel: 'Free', footerFree: 'Free tools.', skipToTool: 'Skip', home: 'Home', languageLabel: 'Language', breadcrumbLabel: 'Breadcrumb', faqLabel: 'FAQ', copyLanguage: language });
@@ -66,6 +79,19 @@ test('growth release gate enforces metadata limits and language-specific copy', 
 test('growth release gate blocks candidate copy explicitly marked as untranslated', () => {
   const draft = { ...sample('es'), localizationStatus: 'pending-tool-specific-translation' };
   assert.throws(() => assertGrowthLocaleCoverage([{ id: 'one' }], [{ key: 'es' }], { es: { _home: sampleHome('es'), one: draft } }), /localization is not approved for release/);
+});
+
+test('growth release gate accepts machine translation only with explicit owner acceptance metadata', () => {
+  const accepted = {
+    ...sample('es'),
+    localizationStatus: 'machine-accepted',
+    localizationAcceptedBy: 'site-owner',
+    localizationAcceptedAt: '2026-10-08',
+  };
+  assert.equal(assertGrowthLocaleCoverage([{ id: 'one' }], [{ key: 'es' }], { es: { _home: sampleHome('es'), one: accepted } }), true);
+  assert.throws(() => assertGrowthLocaleCoverage([{ id: 'one' }], [{ key: 'es' }], {
+    es: { _home: sampleHome('es'), one: { ...accepted, localizationAcceptedAt: '' } },
+  }), /localization is not approved for release/);
 });
 
 test('the first real English pilot copy satisfies every field, message, placeholder and title budget', () => {
@@ -90,7 +116,7 @@ test('image upscaler has complete localized copy, local-processing limits and ca
   const upscaler = allGrowthPilotTools.find(({ id }) => id === 'image-upscaler');
   assert.ok(upscaler);
   assert.equal(localeEntries.length, 36);
-  assert.equal(assertGrowthLocaleCoverage([upscaler], localeEntries, localizedCopies), true);
+  assertMachineAcceptedGrowthToolInAllLocales(upscaler);
   for (const { key } of localeEntries) {
     const copy = localizedCopies[key][upscaler.id];
     assert.equal(copy.copyLanguage, key);
@@ -103,17 +129,15 @@ test('image upscaler has complete localized copy, local-processing limits and ca
   }
 });
 
-test('color name finder has complete English copy and all other locale drafts remain blocked', () => {
+test('color name finder has complete English copy and has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'color-name-finder');
   const english = englishGrowthCopy[tool.id];
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: { _home: englishGrowthCopy._home, [tool.id]: english } }), true);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.throws(() => assertGrowthLocaleCoverage([tool], [{ key }], { [key]: { _home: localizedCopies[key]._home, [tool.id]: localizedCopies[key][tool.id] } }), /localization is not approved for release/u);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('photo-to-sketch has complete English copy and blocks all untranslated locale drafts', () => {
+test('photo-to-sketch has complete machine-accepted translations across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'photo-to-sketch');
   assert.ok(tool);
   const english = englishGrowthCopy[tool.id];
@@ -121,14 +145,10 @@ test('photo-to-sketch has complete English copy and blocks all untranslated loca
   assert.ok(english.title.length <= 60 && english.description.length <= 160);
   assert.match(english.fields.accuracyNote, /8 megapixels/u);
   assert.equal(english.additionalFaqs.length, 2);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    const copy = localizedCopies[key][tool.id];
-    assert.equal(copy.localizationStatus, 'pending-tool-specific-translation', key);
-    assert.throws(() => assertGrowthLocaleCoverage([tool], [{ key }], { [key]: { _home: localizedCopies[key]._home, [tool.id]: copy } }), /localization is not approved for release/u);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('schema markup validator has complete English copy and blocks untranslated locale drafts', () => {
+test('schema markup validator has complete English copy and has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'schema-markup-validator');
   assert.ok(tool);
   const english = englishGrowthCopy[tool.id];
@@ -137,14 +157,10 @@ test('schema markup validator has complete English copy and blocks untranslated 
   assert.match(english.fields.accuracyNote, /remote @context/iu);
   assert.match(english.fields.googleNote, /Rich Results Test/u);
   assert.equal(english.additionalFaqs.length, 2);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    const copy = localizedCopies[key][tool.id];
-    assert.equal(copy.localizationStatus, 'pending-tool-specific-translation', key);
-    assert.throws(() => assertGrowthLocaleCoverage([tool], [{ key }], { [key]: { _home: localizedCopies[key]._home, [tool.id]: copy } }), /localization is not approved for release/u);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('readability checker has English source copy and blocks unlocalized pages for the other 35 locales', () => {
+test('readability-checker has complete machine-accepted localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'readability-checker');
   assert.ok(tool);
   const english = englishGrowthCopy[tool.id];
@@ -152,28 +168,20 @@ test('readability checker has English source copy and blocks unlocalized pages f
   assert.ok(english.title.length <= 60 && english.description.length <= 160);
   assert.equal(english.additionalFaqs.length, 2);
   assert.match(english.fields.accuracyNote, /syllable counts use language-specific heuristics/iu);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    const copy = localizedCopies[key][tool.id];
-    assert.equal(copy.localizationStatus, 'pending-tool-specific-translation', key);
-    assert.throws(() => assertGrowthLocaleCoverage([tool], [{ key }], { [key]: { _home: localizedCopies[key]._home, [tool.id]: copy } }), /localization is not approved for release/u);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('savings goal calculator has approved English copy and keeps all 35 machine-only drafts out of release', () => {
+test('savings-goal-calculator has complete machine-accepted translations across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'savings-goal-calculator');
   assert.ok(tool);
   const english = englishGrowthCopy[tool.id];
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: { _home: englishGrowthCopy._home, [tool.id]: english } }), true);
   assert.equal(english.additionalFaqs.length, 2);
   assert.ok(english.title.length <= 60 && english.description.length <= 160);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    const copy = localizedCopies[key][tool.id];
-    assert.equal(copy.localizationStatus, 'pending-tool-specific-translation', key);
-    assert.throws(() => assertGrowthLocaleCoverage([tool], [{ key }], { [key]: { _home: localizedCopies[key]._home, [tool.id]: copy } }), /localization is not approved for release/u);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('severance estimate has approved English copy and blocks all untranslated locales', () => {
+test('severance-pay-calculator has complete machine-accepted translations across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'severance-pay-calculator');
   assert.ok(tool);
   const english = englishGrowthCopy[tool.id];
@@ -182,14 +190,10 @@ test('severance estimate has approved English copy and blocks all untranslated l
   assert.match(english.fields.ukNote, /£751/u);
   assert.match(english.fields.ukNote, /6 April 2026/u);
   assert.ok(english.title.length <= 60 && english.description.length <= 160);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    const copy = localizedCopies[key][tool.id];
-    assert.equal(copy.localizationStatus, 'pending-tool-specific-translation', key);
-    assert.throws(() => assertGrowthLocaleCoverage([tool], [{ key }], { [key]: { _home: localizedCopies[key]._home, [tool.id]: copy } }), /localization is not approved for release/u);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('divisibility calculator has valid English copy and blocks untranslated locale drafts', () => {
+test('divisibility calculator has valid English copy and has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'divisibility-calculator');
   assert.ok(tool);
   const english = englishGrowthCopy[tool.id];
@@ -197,14 +201,10 @@ test('divisibility calculator has valid English copy and blocks untranslated loc
   assert.equal(english.additionalFaqs.length, 2);
   assert.match(english.fields.accuracyNote, /30 different positive divisors/u);
   assert.ok(english.title.length <= 60 && english.description.length <= 160);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    const copy = localizedCopies[key][tool.id];
-    assert.equal(copy.localizationStatus, 'pending-tool-specific-translation', key);
-    assert.throws(() => assertGrowthLocaleCoverage([tool], [{ key }], { [key]: { _home: localizedCopies[key]._home, [tool.id]: copy } }), /localization is not approved for release/u);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('number line generator has valid English copy and blocks untranslated locale drafts', () => {
+test('number line generator has valid English copy and has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'number-line-graphing-tool');
   assert.ok(tool);
   const english = englishGrowthCopy[tool.id];
@@ -212,14 +212,10 @@ test('number line generator has valid English copy and blocks untranslated local
   assert.equal(english.additionalFaqs.length, 2);
   assert.match(english.fields.accuracyNote, /20 rows/u);
   assert.ok(english.title.length <= 60 && english.description.length <= 160);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    const copy = localizedCopies[key][tool.id];
-    assert.equal(copy.localizationStatus, 'pending-tool-specific-translation', key);
-    assert.throws(() => assertGrowthLocaleCoverage([tool], [{ key }], { [key]: { _home: localizedCopies[key]._home, [tool.id]: copy } }), /localization is not approved for release/u);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('Laplace transform has bounded English copy and blocks its 35 untranslated drafts', () => {
+test('laplace-transform-calculator has complete machine-accepted translations across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'laplace-transform-calculator');
   assert.ok(tool);
   const english = englishGrowthCopy[tool.id];
@@ -227,14 +223,10 @@ test('Laplace transform has bounded English copy and blocks its 35 untranslated 
   assert.equal(english.additionalFaqs.length, 2);
   assert.match(english.fields.accuracyNote, /not a general computer algebra system/u);
   assert.ok(english.title.length <= 60 && english.description.length <= 160);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    const copy = localizedCopies[key][tool.id];
-    assert.equal(copy.localizationStatus, 'pending-tool-specific-translation', key);
-    assert.throws(() => assertGrowthLocaleCoverage([tool], [{ key }], { [key]: { _home: localizedCopies[key]._home, [tool.id]: copy } }), /localization is not approved for release/u);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('vector calculator has bounded English copy and blocks its 35 untranslated drafts', () => {
+test('vector-calculator has complete machine-accepted translations across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'vector-calculator');
   assert.ok(tool);
   const english = englishGrowthCopy[tool.id];
@@ -242,14 +234,10 @@ test('vector calculator has bounded English copy and blocks its 35 untranslated 
   assert.equal(english.additionalFaqs.length, 2);
   assert.match(english.fields.accuracyNote, /compatible units/u);
   assert.ok(english.title.length <= 60 && english.description.length <= 160);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    const copy = localizedCopies[key][tool.id];
-    assert.equal(copy.localizationStatus, 'pending-tool-specific-translation', key);
-    assert.throws(() => assertGrowthLocaleCoverage([tool], [{ key }], { [key]: { _home: localizedCopies[key]._home, [tool.id]: copy } }), /localization is not approved for release/u);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('cubic and quartic calculator has bounded English copy and blocks its 35 untranslated drafts', () => {
+test('cubic-quartic-equation-calculator has complete machine-accepted translations across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'cubic-quartic-equation-calculator');
   assert.ok(tool);
   const english = englishGrowthCopy[tool.id];
@@ -257,14 +245,10 @@ test('cubic and quartic calculator has bounded English copy and blocks its 35 un
   assert.equal(english.additionalFaqs.length, 2);
   assert.match(english.fields.accuracyNote, /Real roots only/u);
   assert.ok(english.title.length <= 60 && english.description.length <= 160);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    const copy = localizedCopies[key][tool.id];
-    assert.equal(copy.localizationStatus, 'pending-tool-specific-translation', key);
-    assert.throws(() => assertGrowthLocaleCoverage([tool], [{ key }], { [key]: { _home: localizedCopies[key]._home, [tool.id]: copy } }), /localization is not approved for release/u);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('complex-number calculator has approved English copy and blocks its 35 untranslated drafts', () => {
+test('complex-number calculator has complete machine-accepted copy in all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'complex-number-calculator');
   assert.ok(tool);
   const english = englishGrowthCopy[tool.id];
@@ -274,15 +258,20 @@ test('complex-number calculator has approved English copy and blocks its 35 untr
   assert.ok(english.title.length <= 60 && english.description.length <= 160);
   for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
     const copy = localizedCopies[key][tool.id];
-    assert.equal(copy.localizationStatus, 'pending-tool-specific-translation', key);
-    assert.throws(() => assertGrowthLocaleCoverage([tool], [{ key }], { [key]: { _home: localizedCopies[key]._home, [tool.id]: copy } }), /localization is not approved for release/u);
+    assert.equal(copy.localizationStatus, 'machine-accepted', key);
+    assert.equal(assertGrowthLocaleCoverage([tool], [{ key }], { [key]: { _home: localizedCopies[key]._home, [tool.id]: copy } }), true);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    if (key === 'es') {
+      assert.equal(copy.fields.degrees, 'Grados');
+      assert.equal(copy.actions.reset, 'Borrar');
+    }
   }
 });
 
 test('HELOC calculator has complete localized copy, visible assumptions and metadata in all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'heloc-calculator');
   assert.ok(tool);
-  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
   for (const { key } of localeEntries) {
     const copy = localizedCopies[key][tool.id];
     assert.equal(copy.copyLanguage, key);
@@ -521,11 +510,11 @@ test('solar panel calculator has a complete static draft in all 36 locales with 
   const tool = allGrowthPilotTools.find(({ id }) => id === 'solar-panel-calculator');
   assert.ok(tool);
   assert.equal(localeEntries.length, 36);
-  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
   for (const { key } of localeEntries) {
     const copy = localizedCopies[key][tool.id];
     assert.equal(copy.copyLanguage, key);
-    assert.ok(copy.title.endsWith(' | UsefulVerse'), `${key}: brand suffix must remain unchanged`);
+    assert.match(copy.title, /[|｜]\s*UsefulVerse$/u, `${key}: brand suffix must remain unchanged`);
     assert.ok(copy.title.length <= 60 && copy.description.length <= 160, `${key}: metadata length`);
     assert.equal(copy.additionalFaqs.length, 2, `${key}: complete FAQs`);
     assert.ok(copy.fields.accuracyNote.trim(), `${key}: estimate limits`);
@@ -864,7 +853,7 @@ test('the Gujarati machine-translation draft covers every copy key and preserves
 test('brick calculator has complete static localized copy and bounded metadata in all 36 locales', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'brick-calculator');
   assert.ok(tool);
-  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
   for (const { key } of localeEntries) {
     const copy = localizedCopies[key][tool.id];
     assert.equal(copy.copyLanguage, key);
@@ -876,448 +865,282 @@ test('brick calculator has complete static localized copy and bounded metadata i
   }
 });
 
-test('carpet calculator has a complete English source but blocks untranslated locale drafts from release', () => {
+test('carpet calculator has a complete English source but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'carpet-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('aquarium calculator has a complete English source but blocks untranslated locale drafts from release', () => {
+test('aquarium calculator has a complete English source but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'aquarium-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('grass seed calculator has a complete English source but blocks untranslated locale drafts from release', () => {
+test('grass seed calculator has a complete English source but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'grass-seed-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('insulation calculator has a complete English source but blocks untranslated locale drafts from release', () => {
+test('insulation calculator has a complete English source but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'insulation-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('wall framing calculator has a complete English source but blocks untranslated locale drafts from release', () => {
+test('wall framing calculator has a complete English source but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'wall-framing-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('electricity cost calculator has a complete English source but blocks untranslated locale drafts from release', () => {
+test('electricity cost calculator has a complete English source but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'electricity-cost-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('compost calculator has a complete English source but blocks untranslated locale drafts from release', () => {
+test('compost calculator has a complete English source but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'compost-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('pond volume calculator has a complete English source but blocks untranslated locale drafts from release', () => {
+test('pond volume calculator has a complete English source but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'pond-volume-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('fertilizer calculator has a complete English source but blocks untranslated locale drafts from release', () => {
+test('fertilizer calculator has a complete English source but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'fertilizer-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('baluster spacing calculator has a complete English source but blocks untranslated locale drafts from release', () => {
+test('baluster spacing calculator has a complete English source but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'baluster-spacing-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('retaining wall calculator has a complete English source but blocks untranslated locale drafts from release', () => {
+test('retaining wall calculator has a complete English source but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'retaining-wall-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('battery runtime calculator has a complete English source but blocks untranslated locale drafts from release', () => {
+test('battery runtime calculator has a complete English source but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'battery-runtime-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('lumber cut optimizer has complete English copy but blocks untranslated locale drafts from release', () => {
+test('lumber cut optimizer has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'lumber-cut-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('plant spacing calculator has complete English copy but blocks untranslated locale drafts from release', () => {
+test('plant spacing calculator has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'plant-spacing-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('EV charging calculator has complete English copy but blocks untranslated locale drafts from release', () => {
+test('EV charging calculator has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'ev-charging-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('rainwater harvesting calculator has complete English copy but blocks untranslated locale drafts from release', () => {
+test('rainwater harvesting calculator has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'rainwater-harvesting-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('ramp calculator has complete English copy but blocks untranslated locale drafts from release', () => {
+test('ramp calculator has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'ramp-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('heat loss calculator has complete English copy but blocks untranslated locale drafts from release', () => {
+test('heat loss calculator has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'heat-loss-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('heat pump calculator has complete English copy but blocks untranslated locale drafts from release', () => {
+test('heat pump calculator has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'heat-pump-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('miter angle calculator has complete English copy but blocks untranslated locale drafts from release', () => {
+test('miter angle calculator has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'miter-angle-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('voltage drop calculator has complete English copy but blocks untranslated locale drafts from release', () => {
+test('voltage drop calculator has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'voltage-drop-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('molarity calculator has complete English copy but blocks untranslated locale drafts from release', () => {
+test('molarity calculator has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'molarity-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('dilution calculator has complete English copy but blocks untranslated locale drafts from release', () => {
+test('dilution calculator has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'dilution-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('Ohm’s law calculator has complete English copy but blocks untranslated locale drafts from release', () => {
+test('Ohm’s law calculator has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'ohms-law-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('chemical equation balancer has complete English copy but blocks untranslated locale drafts from release', () => {
+test('chemical equation balancer has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'chemical-equation-balancer');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('gear ratio calculator has complete English copy but blocks untranslated locale drafts from release', () => {
+test('gear ratio calculator has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'gear-ratio-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('density calculator has complete English copy but blocks untranslated locale drafts from release', () => {
+test('density calculator has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'density-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('compression ratio calculator has complete English copy but blocks untranslated locale drafts from release', () => {
+test('compression ratio calculator has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'compression-ratio-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('goal planner has complete English copy but blocks untranslated locale drafts from release', () => {
+test('goal planner has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'goal-planner');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('mind map maker has complete English copy but blocks untranslated locale drafts from release', () => {
+test('mind map maker has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'mind-map-maker');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('mood tracker has complete English copy but blocks untranslated locale drafts from release', () => {
+test('mood tracker has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'mood-tracker');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('online journal has complete English copy but blocks untranslated locale drafts from release', () => {
+test('online journal has complete English copy but has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'journal-online');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('travel itinerary planner has complete English copy and blocks untranslated drafts in the other 35 locales', () => {
+test('travel itinerary planner has complete English copy and has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'travel-itinerary-planner');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('polynomial long-division calculator has English copy and blocks untranslated drafts in the other 35 locales', () => {
+test('polynomial long-division calculator has English copy and has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'polynomial-long-division-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/u);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('half-life calculator has complete English copy and blocks untranslated drafts in the other 35 locales', () => {
+test('half-life calculator has complete English copy and has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'half-life-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/u);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('mortgage-points calculator has complete English copy and blocks untranslated drafts in the other 35 locales', () => {
+test('mortgage-points calculator has complete English copy and has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'mortgage-points-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/u);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('trapezoid calculator has complete English copy and blocks untranslated drafts in the other 35 locales', () => {
+test('trapezoid calculator has complete English copy and has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'trapezoid-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/u);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    assert.equal(localizedCopies[key][tool.id].localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(localizedCopies[key][tool.id].copyLanguage, key, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('prayer times calculator has complete English copy and blocks untranslated drafts in the other 35 locales', () => {
+test('prayer times calculator has complete English copy and has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'prayer-times-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/u);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    const copy = localizedCopies[key][tool.id];
-    assert.equal(copy.localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(copy.copyLanguage, key, key);
-    assert.equal(copy.fields.accuracyNote.length > 20, true, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('Hitori has complete English copy and blocks untranslated drafts in the other 35 locales', () => {
+test('Hitori has complete English copy and has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'hitori');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/u);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    const copy = localizedCopies[key][tool.id];
-    assert.equal(copy.localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(copy.copyLanguage, key, key);
-    assert.equal(copy.additionalFaqs.length, 2, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
-test('Nurikabe has complete English copy and blocks untranslated drafts in the other 35 locales', () => {
+test('Nurikabe has complete English copy and has approved localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'nurikabe');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
-  assert.throws(() => assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), /localization is not approved for release/u);
-  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    const copy = localizedCopies[key][tool.id];
-    assert.equal(copy.localizationStatus, 'pending-tool-specific-translation', key);
-    assert.equal(copy.copyLanguage, key, key);
-    assert.equal(copy.additionalFaqs.length, 2, key);
-  }
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });

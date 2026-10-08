@@ -198,7 +198,10 @@ export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, {
     for (const tool of tools) {
       const copy = languageCopy[tool.id];
       if (!copy) { errors.push(`${locale.key}/${tool.id}: translation is missing`); continue; }
-      if (copy.localizationStatus && copy.localizationStatus !== 'approved') errors.push(`${locale.key}/${tool.id}: localization is not approved for release`);
+      const ownerAcceptedMachineCopy = copy.localizationStatus === 'machine-accepted'
+        && copy.localizationAcceptedBy === 'site-owner'
+        && /^\d{4}-\d{2}-\d{2}$/u.test(copy.localizationAcceptedAt ?? '');
+      if (copy.localizationStatus && copy.localizationStatus !== 'approved' && !ownerAcceptedMachineCopy) errors.push(`${locale.key}/${tool.id}: localization is not approved for release`);
       for (const key of REQUIRED_GROWTH_COPY) {
         if (typeof copy[key] !== 'string' || !copy[key].trim()) errors.push(`${locale.key}/${tool.id}: ${key} is missing`);
       }
