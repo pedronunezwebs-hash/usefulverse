@@ -3164,15 +3164,15 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 185 · Work Order Generator
 
-- [ ] **P/S pendientes — `work-order-generator`; producto y localización completos en rama, no contar hasta publicar.**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/work-order-generator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `work-order-generator`; publicado y comprobado el 2026-10-09.**
+- **Destino:** `https://tools.usefulverse.com/tools/work-order-generator/`; otras 35 versiones con los prefijos del anexo. Hub sitemap verificado con 3.348 URLs únicas.
 - **Demanda:** `work order template` — 2.900 búsquedas/mes US/en, KD 14; nivel B. CPC 11.94 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Encargo confirmado, materiales, horas, checklist, estado y copia imprimible; separar de presupuestos de venta existentes.
 - **Prueba de aceptación específica:** Comprobar orden con checklist/materiales/horas; el estado «completado» requiere fecha válida, el total de horas coincide y CSV/impresión reflejan los datos sin tratar contenido como HTML.
 - **Frontera con otras herramientas:** quotation-generator: encargo y ejecución nopresupuesto. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** Implementación local, sin API/servicio. Materiales: `descripción | cantidad | unidad`; mano de obra: `actividad | horas`; hasta 40 líneas en cada sección, con límites de texto/cantidad/horas y sanitización de fórmulas CSV. El formulario construye formatos desde etiquetas localizadas para evitar reordenación por traducción.
-- **Estado local (2026-10-09):** C/F ya medidos en este plan; no se repitió DataForSEO. L completada en 36 idiomas con traducción automática sencilla. Pruebas focales 169/169, regresión `npm test` 1.320/1.320, `npm run check` preserva las 10.260 URLs originales, `locale:release-check` pasa y el hub genera 3.348 páginas. Chrome local árabe RTL confirmó ejemplo, 1,75 horas totales y consola limpia. No PageSpeed/Lighthouse.
-- **Publicación:** Pendiente PR/CI/merge y comprobar despliegue, 36 rutas y sitemap público. Ninguna URL se cuenta como publicada todavía.
+- **Estado de validación (2026-10-09):** C/F ya medidos en este plan; no se repitió DataForSEO. L completada en 36 idiomas con traducción automática sencilla. Pruebas focales build 172/172, regresión `npm test` 1.320/1.320, `npm run check` preserva las 10.260 URLs originales, `locale:release-check` pasa. Chrome local árabe RTL confirmó ejemplo, 1,75 horas totales y consola limpia. No PageSpeed/Lighthouse.
+- **Publicación verificada:** PR #51/commit `c6d5048256ee4a88549ee79dd15b37e75f5d2097`; CI 37820016811, deploy principal 37820464968, deploy del hub 37821071714. Rutas EN/ES/AR HTTP 200 con contenido localizado; sitemap HTTP 200, 3.348 URLs únicas e incluye variantes EN/ES/AR. Publicada no significa indexada.
 - **Consultas secundarias del mismo propietario:**
   - `work order generator` — 140/mes US/en; KD 0.
   - `work order template free online`; `work order template with example`; `work order template no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -4784,12 +4784,13 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 ### 186 · Slitherlink
 
 - [ ] **C/F/E/X/L/B/P/S completos — `slitherlink`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/slitherlink/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- **Destino propuesto:** `https://tools.usefulverse.com/tools/slitherlink/`; otras 35 versiones con los prefijos del anexo. P/S pendiente; no contar como publicado hasta verificar el despliegue y sitemap.
 - **Demanda:** `slitherlink` — 2.900 búsquedas/mes US/en, KD 18; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Bucle único, contadores, marcas, undo, checker y generación de puzzles comprobados.
 - **Prueba de aceptación específica:** Cada nodo del bucle tiene grado 2; no existen bucles separados ni una bifurcación.
 - **Frontera con otras herramientas:** nonogram: líneasno cuadradospintados. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Generador local de 4×4 a 6×6, con solver acotado que comprueba unicidad antes de aceptar cada tablero. Comprueba un único bucle continuo y pistas; sin backend, API o dependencias remotas. La generación usa CPU del dispositivo y puede tardar más en hardware lento; el navegador informa de ese límite.
+- **Estado de esta rama (2026-10-09):** lógica, formulario, copy en 36 idiomas y QA local completados. Suite focalizada 171/171; `npm test` 1.328/1.328; `npm run check` conserva las 10.260 URLs principales; `locale:release-check` pasa. Controlador minificado 9.873 B. Chrome EN/ES/AR comprobado, árabe RTL; consola limpia. Build/sitemap aislado con 3.384 URLs únicas. **Aún no publicado**; falta PR/CI/merge/deploy y sitemap público.
 - **Consultas secundarias del mismo propietario:**
   - `slitherlink puzzle online` — 10/mes US/en; KD —.
   - `slitherlink free online`; `slitherlink with example`; `slitherlink no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

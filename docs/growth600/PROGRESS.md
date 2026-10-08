@@ -2,6 +2,28 @@
 
 Última verificación: 2026-10-09. Registro persistente de esta rama; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
+## En implementación · Slitherlink (#186)
+
+- [x] C/F — Reutilizada la ficha y demanda existente: `slitherlink` 2.900 búsquedas/mes US/en, KD 18; `slitherlink puzzle online` 10/mes. Sin DataForSEO nuevo.
+- [x] Lógica + interfaz inicial — Motor propio para tableros 4×4 a 6×6: genera bucles a partir de poliominós, comprueba grado 2 y conectividad, cuenta pistas, ejecuta solver acotado y solo acepta puzzles con solución única; deja como máximo 20% de casillas sin pista. Formulario/controlador con cambiar tamaño, marcar líneas, comprobar, pista, deshacer y limpiar; controles etiquetados, pistas leídas como números y flechas para moverse. En el dispositivo, sin API/cuenta.
+- [x] L — Copias estáticas en 36 idiomas mediante Google Translate; nombre del juego conservado en las metadescripciones/títulos donde la traducción automática lo deformó, títulos y descripciones dentro de límites. Botones ES/AR corregidos manualmente; traducción aceptada como borrador automático, no revisión nativa ni llamada al visitar.
+- [x] E — Lógica, catálogo, formulario y contrato de localización: 171/171 pruebas focalizadas; suite general `npm test`: 1.328/1.328; `locale:release-check` pasa. 300 tableros deterministas (100 por tamaño 4/5/6) generados y verificados; únicos por solver acotado. Controlador minificado: 9.873 B (<24 KiB).
+- [x] X/B — Chrome EN/ES/AR comprobado sobre el build final: 60 aristas en tablero 5×5; marcar línea, pista, deshacer, limpiar y feedback de comprobación; árabe RTL con botones localizados; consola sin errores. `npm run check` mantiene el sitio principal en 10.260 URLs.
+- [x] Build/sitemap aislado: 3.384 locs únicas (93 herramientas × 36 locales + 36 portadas), 3.528 archivos, 102.888.467 bytes. No es sitemap público.
+- [ ] P/S — Pendiente PR/CI/merge, despliegue y verificación del sitemap público. No contar las 36 URLs como publicadas todavía.
+- **Decisión UX** — El usuario puede tocar/clicar líneas; hay pistas, comprobar, deshacer y limpiar. Estado accesible con botones etiquetados por orientación/coordenadas, tablero bidimensional navegable por flechas y pistas como etiquetas leídas por tecnologías de asistencia. La generación valida soluciones en el navegador; mensaje honesto sobre posible espera en dispositivos lentos.
+- **Último checkpoint:** gates locales y build final pasan; siguiente: preparar PR, esperar CI, fusionar/desplegar y comprobar rutas + sitemap público antes de marcar #186 completo.
+
+## Publicada · Work Order Generator (#185; 92.ª herramienta Growth600) · 2026-10-09
+
+- [x] C/F — Se reutilizó la medición del plan: `work order template` 2.900 búsquedas/mes US/en, KD 14; `work order generator` 140/mes, KD 0. Sin consultas nuevas a DataForSEO.
+- [x] E/B — Orden de servicio local con cliente, ubicación, responsable, fechas/estado, instrucciones, checklist, materiales y horas; lista horas; descarga CSV segura e impresión/guardar PDF. No es presupuesto, factura, nómina ni documento legal. Datos locales, sin precios, cuenta, servidor ni API.
+- [x] L — 36 traducciones estáticas desde inglés con Google Translate por lotes de parámetros individuales; etiquetas de formatos creadas con campos locales para conservar separadores. Aceptadas como traducción automática básica, sin revisión nativa ni peticiones de traducción al visitar.
+- [x] E/X — Suite focal build 172/172; `npm test` 1.320/1.320; `npm run check` conserva 10.260 URLs; `npm run locale:release-check` pasa. Chrome local AR RTL verificó ejemplo, 3 tareas, 2 materiales, 2 actividades, 1,75 h y consola limpia. Build aislado: 3.348 páginas (92 × 36 + 36 portadas), 3.491 archivos, 102.002.016 bytes.
+- [x] P/S — PR #51 fusionada en `c6d5048256ee4a88549ee79dd15b37e75f5d2097`; CI 37820016811 y deploy principal 37820464968 correctos. Deploy del hub verificado en workflow 37821071714. Rutas públicas EN/ES/AR HTTP 200 con los títulos y H1 propios; sitemap del hub HTTP 200 con **3.348 URLs únicas**, e incluye las 36 variantes. Publicación verificada; no equivale a indexación. No PageSpeed/Lighthouse.
+- [x] README actualizado a 92 herramientas Growth600 y 3.348 URLs públicas. **92/323 candidatas publicadas; 231 pendientes.** El inventario y sitemap del sitio principal siguen separados y conservan 10.260 URLs.
+- **Siguiente:** #186 Slitherlink; no repetir la investigación DataForSEO existente.
+
 ## Publicada · Round Robin Tournament Generator (#184) · 2026-10-09
 
 - [x] C/F/B — Genera rondas de todos contra todos para 2–32 participantes, bye automático cuando el número es impar, liga de una o dos vueltas con localía inversa; permite mezclar el sorteo, anotar marcadores, calcular tabla 3/1/0 con desempates explícitos, descargar CSV seguro y abrir impresión/guardar como PDF. Entrada local; nombres como texto, sin HTML ejecutable ni subida.
@@ -9,17 +31,16 @@
 - [x] L/B — 36 copias estáticas desde inglés con Google Translate, aceptadas como traducción automática sencilla, no revisada por nativos; metadatos dentro de presupuesto. Se corrigieron manualmente las etiquetas y FAQs árabes que podían confundir (marcador local/visitante, descanso y clasificación). Sin llamada de traducción en tiempo de ejecución ni APIs pagadas.
 - [x] X — Chrome local inglés y árabe: ejemplo de cinco equipos genera 5 jornadas, 10 partidos, 5 descansos y 20 campos de marcador; al registrar Eagles 2–1 Tigers se actualiza la tabla y se asignan 3 puntos. Árabe verificado con `lang=ar`, `dir=rtl`, etiquetas de marcador localizadas y clasificación en vivo. Campos numéricos con `id`/`name`; consola de ambas páginas limpia.
 - [x] P/S — El despliegue automático del hub terminó correctamente (workflow 37816919483); la publicación de #184 y su sitemap se verificaron después. Cuenta como publicada; no se afirma que ya esté indexada.
-- **Siguiente:** #185 Work Order Generator; #183 `fertilizer-calculator` continúa como herramienta ya existente, no duplicarla.
+- #183 `fertilizer-calculator` continúa como herramienta ya existente; no duplicarla.
 
-## En implementación · Work Order Generator (#185; 92.ª herramienta Growth600) · 2026-10-09
+## Checkpoint de implementación · Work Order Generator (#185) · 2026-10-09
 
 - [x] C/F — Reutilicé la medición del plan: `work order template` 2.900 búsquedas/mes US/en, KD 14; `work order generator` 140/mes, KD 0. Sin consultas nuevas a DataForSEO.
 - [x] E/B — Genera orden de servicio/mantenimiento con cliente, ubicación, responsable, fechas/estado, instrucciones, checklist verificable, materiales y horas; actualiza checks, suma horas y ofrece CSV seguro o impresión/guardar PDF. No es presupuesto, factura, nómina ni documento legal. No precios, cuentas, servidor ni APIs; los datos se quedan en la página.
 - [x] Límites/seguridad — Máximo 40 líneas por sección, cantidades y horas acotadas, fechas ISO comprobadas, estados explícitos y fecha obligatoria al marcar trabajo terminado. CSV entrecomilla Unicode y neutraliza prefijos de fórmulas; la vista previa e impresión usan `textContent`/DOM y mantienen RTL.
 - [x] L — 36 copias estáticas traducidas desde inglés con Google Translate en lotes de parámetros individuales para impedir que el servicio mezcle frases reordenando etiquetas. Borradores aceptados como traducción automática sencilla; no revisión nativa ni servicio ejecutado al visitar la web. Title ≤60, description ≤160; ejemplos de formato construidos con etiquetas locales para mantener el orden de delimitadores.
 - [x] E/X — Pruebas focalizadas con build 172/172 y `npm test` completo 1.320/1.320; `npm run check` conserva las 10.260 URLs protegidas; `npm run locale:release-check` correcto. Chrome local AR: carga del ejemplo, 3 tareas, 2 materiales y 2 actividades; suma 1,75 h; campos y formatos en árabe RTL; consola sin errores. Build aislado: 3.348 páginas (92 × 36 + 36 portadas), 3.491 archivos, 102.002.016 bytes.
-- [ ] P/S — Falta PR/CI/merge y verificar los deploys principal + hub, ruta y sitemap público. Todavía no contar estas 36 URLs como publicadas.
-- **Siguiente:** al cerrar P/S, #186 Slitherlink según el orden/ID del plan; reusar especificación y datos, sin repetir DataForSEO.
+- [x] P/S — Estado de publicación y evidencias registrados en la cabecera; entradas conservadas como detalle de implementación.
 
 ## Publicada · RTF Converter (#181) · 2026-10-08
 
