@@ -42,6 +42,7 @@ export function renderGrowthForm(toolId, copy) {
     'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
     'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
+    'mood-tracker': ['date', 'mood', 'note', 'tags', 'saveConsent', 'privacyNote', 'consentHint', 'calendarLabel', 'monthLabel', 'selectedEntry', 'weekdaySun', 'weekdayMon', 'weekdayTue', 'weekdayWed', 'weekdayThu', 'weekdayFri', 'weekdaySat', 'mood1', 'mood2', 'mood3', 'mood4', 'mood5', 'tagCalm', 'tagAnxious', 'tagSad', 'tagHappy', 'tagTired', 'tagFocused', 'tagStressed', 'tagHopeful', 'tagGrateful', 'tagAngry', 'summaryLabel', 'averageLabel', 'countLabel', 'distributionLabel', 'noEntries', 'accuracyNote', 'importHint', 'sourceNote'],
     'auto-loan-refinance-calculator': ['balance', 'currentApr', 'currentMonths', 'newApr', 'newMonths', 'fees', 'feeTreatment'],
     'secret-santa-generator': ['names', 'exclusions'],
     'tire-size-calculator': ['originalSize', 'replacementSize', 'indicatedSpeed', 'speedUnit', 'fitmentNote'],
@@ -106,6 +107,7 @@ export function renderGrowthForm(toolId, copy) {
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
+    'mood-tracker': ['saveEntry', 'updateEntry', 'example', 'reset', 'removeEntry', 'clearHistory', 'previousMonth', 'nextMonth', 'export', 'import', 'result'],
     'auto-loan-refinance-calculator': ['calculate', 'reset', 'copy', 'result'],
     'secret-santa-generator': ['generate', 'reset', 'copy', 'download', 'result', 'reveal', 'next', 'privacyNote'],
     'tire-size-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kmh', 'mph'],
@@ -995,6 +997,36 @@ export function renderGrowthForm(toolId, copy) {
       <label for="mind-map-import">${escapeGrowthHtml(actions.importJson)}</label><input id="mind-map-import" name="jsonFile" type="file" accept=".json,application/json"><p class="hint">${escapeGrowthHtml(fields.importHint)}</p>
     </section>
   </form>`, copy);
+
+  if (toolId === 'mood-tracker') {
+    const moodOptions = [1, 2, 3, 4, 5].map((score) => `<option value="${score}">${escapeGrowthHtml(fields[`mood${score}`])}</option>`).join('');
+    const tagKeys = ['Calm', 'Anxious', 'Sad', 'Happy', 'Tired', 'Focused', 'Stressed', 'Hopeful', 'Grateful', 'Angry'];
+    const tags = tagKeys.map((tag) => `<label class="choice"><input type="checkbox" name="tags" value="${tag.toLowerCase()}" data-mood-tag><span>${escapeGrowthHtml(fields[`tag${tag}`])}</span></label>`).join('');
+    const weekdays = ['weekdaySun', 'weekdayMon', 'weekdayTue', 'weekdayWed', 'weekdayThu', 'weekdayFri', 'weekdaySat'].map((key) => `<th scope="col">${escapeGrowthHtml(fields[key])}</th>`).join('');
+    return attachCopy(`<form id="tool-form" novalidate>
+      <div class="calculator-grid">
+        ${label('mood-date', fields.date, '<input id="mood-date" name="date" type="date" required>')}
+        ${label('mood-score', fields.mood, `<select id="mood-score" name="mood">${moodOptions}</select>`)}
+      </div>
+      <fieldset><legend>${escapeGrowthHtml(fields.tags)}</legend><div class="calculator-grid">${tags}</div></fieldset>
+      ${label('mood-note', fields.note, '<textarea id="mood-note" name="note" rows="3" maxlength="500"></textarea>')}
+      <label class="choice" for="mood-save-consent"><input id="mood-save-consent" name="saveConsent" type="checkbox"><span>${escapeGrowthHtml(fields.saveConsent)}</span></label>
+      <p class="hint">${escapeGrowthHtml(fields.consentHint)} ${escapeGrowthHtml(fields.privacyNote)}</p>
+      <p class="hint">${escapeGrowthHtml(fields.accuracyNote)} ${escapeGrowthHtml(fields.sourceNote)}</p>
+      <div class="actions">${button('example', actions.example, 'secondary')}<button type="submit" data-action="record" class="button button--primary">${escapeGrowthHtml(actions.saveEntry)}</button><button type="reset" data-action="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+      <p class="status" role="status" aria-live="polite" data-status></p>
+      <section class="result" data-result hidden><h2>${escapeGrowthHtml(actions.result)}</h2>
+        <section aria-labelledby="mood-calendar-heading"><h3 id="mood-calendar-heading">${escapeGrowthHtml(fields.calendarLabel)}</h3>
+          <div class="actions"><button type="button" data-action="previous-month" class="button button--secondary">${escapeGrowthHtml(actions.previousMonth)}</button><p data-calendar-month aria-live="polite"></p><button type="button" data-action="next-month" class="button button--secondary">${escapeGrowthHtml(actions.nextMonth)}</button></div>
+          <table class="mood-calendar" data-calendar aria-label="${escapeGrowthHtml(fields.calendarLabel)}"><thead><tr>${weekdays}</tr></thead><tbody></tbody></table>
+        </section>
+        <section aria-labelledby="mood-summary-heading"><h3 id="mood-summary-heading">${escapeGrowthHtml(fields.summaryLabel)}</h3><div data-summary></div><h4>${escapeGrowthHtml(fields.distributionLabel)}</h4><ul data-distribution></ul></section>
+        <section aria-labelledby="mood-selected-heading"><h3 id="mood-selected-heading">${escapeGrowthHtml(fields.selectedEntry)}</h3><div data-selected-entry></div><button type="button" data-action="delete-entry" class="button button--secondary">${escapeGrowthHtml(actions.removeEntry)}</button></section>
+        <div class="actions"><button type="button" data-action="export" class="button button--secondary">${escapeGrowthHtml(actions.export)}</button><button type="button" data-action="clear-history" class="button button--secondary">${escapeGrowthHtml(actions.clearHistory)}</button></div>
+        ${label('mood-backup-file', actions.import, '<input id="mood-backup-file" name="backupFile" type="file" accept=".json,application/json">')}<p class="hint">${escapeGrowthHtml(fields.importHint)}</p>
+      </section>
+    </form>`, copy);
+  }
 
   return attachCopy(`<section class="game" aria-label="${escapeGrowthHtml(copy.name)}"><div class="game-toolbar"><label for="mancala-mode">${escapeGrowthHtml(fields.mode)}</label><select id="mancala-mode" data-mode><option value="computer">${escapeGrowthHtml(labels.computer)}</option><option value="two-player">${escapeGrowthHtml(labels.twoPlayers)}</option></select>${button('new-game', labels.newGame, 'primary')}</div><p class="status" role="status" aria-live="polite" data-status></p><div class="mancala-board" data-board aria-label="${escapeGrowthHtml(fields.board)}"></div><section class="result" data-result hidden><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div></section><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);
 }

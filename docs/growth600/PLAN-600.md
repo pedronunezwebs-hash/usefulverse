@@ -3670,9 +3670,9 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/mood-tracker/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `mood tracker` — 4.400 búsquedas/mes US/en, KD 39; nivel B. CPC 0.86 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Registro privado de etiquetas y notas de ánimo, calendario, tendencias y backup; guardar solo con elección clara y no inferir diagnóstico.
-- **Prueba de aceptación específica:** Valoresocultos nopersisten sin consent
+- **Prueba de aceptación específica:** una entrada del 2026-10-08 con ánimo 5 y etiqueta `grateful` aparece en calendario y resumen; no existe en localStorage antes del consentimiento; al activarlo queda una entrada JSON local; al desactivarlo se borra la copia persistida pero permanece visible durante esta pestaña. Fechas fuera de 1900–2100, escala distinta de 1–5, etiquetas no permitidas, duplicados en backup y nota >500 caracteres se rechazan.
 - **Frontera con otras herramientas:** habit-tracker: registroemocional no hábito completado. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** lógica local, backup/import y formulario inglés implementados; sin API ni diagnóstico automatizado. 35 traducciones siguen pendientes: no publicar hasta copy específico, revisión y build para los 36 idiomas.
 - **Consultas secundarias del mismo propietario:**
   - `mood journal online` — 10/mes US/en; KD 65.
   - `mood tracker free online`; `mood tracker with example`; `mood tracker no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

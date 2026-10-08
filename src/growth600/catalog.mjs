@@ -360,6 +360,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/mind-map-maker/logic.mjs',
   },
   {
+    id: 'mood-tracker',
+    category: 'wellbeing',
+    type: 'personal-tracker',
+    primaryIntent: 'mood tracker',
+    secondaryIntents: ['mood journal online', 'mood calendar', 'mood tracker with notes', 'daily mood tracker'],
+    functions: ['record one self-rated 1–5 mood check-in per calendar day with optional emotion tags and a private note', 'browse check-ins in an accessible month calendar and edit or delete a day', 'summarize recorded values using a non-clinical weekly average and mood distribution without interpreting mental health', 'save only after explicit per-session consent, export a JSON backup and validate/import it locally'],
+    acceptance: 'With storage consent off, a check-in exists only in page memory and is absent after reload; with consent on, one check-in can be restored from this browser, edited by date, removed, exported and imported without duplicate dates.',
+    boundary: 'A private self-reflection log, not a diagnosis, treatment, medical record or crisis service. Mood scores are personal labels and summaries describe only recorded entries; they do not infer causes or clinical trends. Inputs stay in memory unless the visitor explicitly enables this browser’s local storage; no account, sync, analytics payload or upload is added. Shared devices and browser backups can expose locally stored notes.',
+    relatedExistingIds: [],
+    logicModule: './tools/mood-tracker/logic.mjs',
+  },
+  {
     id: 'miter-angle-calculator',
     category: 'home-materials',
     type: 'calculator',

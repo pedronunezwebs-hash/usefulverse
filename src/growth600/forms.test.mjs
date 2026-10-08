@@ -234,6 +234,10 @@ const copies = {
     messages: { ...messages, created: 'Map ready.', updated: 'Updated.', added: 'Idea added.', removed: 'Branch removed.', imported: 'Imported.', importFailed: 'Invalid backup.', checkTopic: 'Enter a topic.', checkIdea: 'Check the idea.', enterIdea: 'Enter an idea.' },
     fields: { centralTopic: 'Central topic', newIdea: 'New idea', privacyNote: 'Stays in this tab.', mapLabel: 'Mind map ideas', editIdea: 'Edit idea', moveTo: 'Move under', jsonFile: 'JSON backup', importHint: 'Maximum 500 KB.' },
   },
+  'mood-tracker': {
+    name: 'Mood Tracker', actions: { ...actions, saveEntry: 'Record check-in', updateEntry: 'Update check-in', removeEntry: 'Delete day', clearHistory: 'Clear all', previousMonth: 'Previous month', nextMonth: 'Next month', export: 'Download backup', import: 'Import backup' },
+    fields: { date: 'Check-in date', mood: 'Mood rating', note: 'Optional note', tags: 'Emotion tags', saveConsent: 'Save in this browser', privacyNote: 'No cloud sync.', consentHint: 'Storage is optional.', calendarLabel: 'Mood calendar', monthLabel: 'Month', selectedEntry: 'Selected check-in', weekdaySun: 'Sun', weekdayMon: 'Mon', weekdayTue: 'Tue', weekdayWed: 'Wed', weekdayThu: 'Thu', weekdayFri: 'Fri', weekdaySat: 'Sat', mood1: 'Very low', mood2: 'Low', mood3: 'Neutral', mood4: 'Good', mood5: 'Very good', tagCalm: 'Calm', tagAnxious: 'Anxious', tagSad: 'Sad', tagHappy: 'Happy', tagTired: 'Tired', tagFocused: 'Focused', tagStressed: 'Stressed', tagHopeful: 'Hopeful', tagGrateful: 'Grateful', tagAngry: 'Angry', summaryLabel: 'Last 7 days', averageLabel: 'Average', countLabel: 'Days', distributionLabel: 'Distribution', noEntries: 'No entries.', accuracyNote: 'Not a diagnostic tool.', importHint: 'JSON up to 500 KB.', sourceNote: 'Seek local support if needed.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -350,6 +354,12 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   for (const action of ['add-child', 'remove-node', 'move-node', 'move-up', 'move-down', 'toggle-node', 'undo', 'redo', 'export-svg', 'export-json']) assert.ok(mindMap.includes(`data-action="${action}"`) || ['add-child', 'remove-node', 'move-node', 'move-up', 'move-down', 'toggle-node'].includes(action));
   assert.match(mindMap, /name="jsonFile" type="file" accept="\.json,application\/json"/u);
   assert.match(mindMap, /data-mind-map/u);
+  const moodTracker = renderGrowthForm('mood-tracker', copies['mood-tracker']);
+  for (const name of ['date', 'mood', 'tags', 'note', 'saveConsent', 'backupFile']) assert.match(moodTracker, new RegExp(`name="${name}"`, 'u'));
+  assert.match(moodTracker, /data-calendar/u);
+  assert.match(moodTracker, /data-distribution/u);
+  assert.match(moodTracker, /type="checkbox"/u);
+  assert.match(moodTracker, /data-action="clear-history"/u);
   const asphalt = renderGrowthForm('asphalt-calculator', copies['asphalt-calculator']);
   assert.match(asphalt, /name="compactedThickness"/u);
   assert.match(asphalt, /name="pricePerTonne"/u);

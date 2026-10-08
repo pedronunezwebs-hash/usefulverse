@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 61/323 filas codificadas. Hay **262 herramientas únicas por implementar**: 261 candidatas válidas de la lista y una reserva de sustitución. `API Request Builder` ya existe entre las 277 protegidas y no cuenta como herramienta nueva. Mind Map Maker está implementada y probada en inglés, pero no publicada: faltan 35 traducciones. Las 277 originales permanecen intactas.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 62/323 filas codificadas. Quedan **261 herramientas por terminar**, incluida una reserva para sustituir `API Request Builder` (ya existe entre las 277 protegidas y no cuenta como nueva); 260 son candidatas válidas aún sin implementar. Mind Map Maker y Mood Tracker están implementadas y probadas en inglés, pero no publicadas: ambas esperan otras 35 traducciones. Las 277 originales permanecen intactas.
 
 ## Avance de implementación · motores del piloto
 
@@ -717,4 +717,16 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [x] E — suite focal de lógica, catálogo, formulario, contrato de locale, render, build y presupuestos de bundle: **126/126 aprobadas**. Build aislado: 2 páginas estáticas (home + herramienta), 9 archivos; controlador minificado **10.302 bytes**, bajo el presupuesto de 24 KiB. No se agregan APIs, Functions, almacenamiento remoto ni dependencias de producción.
 - [ ] L — fuente inglesa lista; los 35 locales restantes están explícitamente marcados `pending-tool-specific-translation`. La puerta de publicación lo bloquea.
 - [ ] P/S — sin merge/deploy, sin cambios al sitemap de producción y sin envío a buscadores. No se ejecutó PageSpeed/Lighthouse.
-- **Recuento neto actualizado:** 61 candidatas codificadas; 262 nuevas únicas por implementar (261 filas válidas restantes + una sustitución de API Request Builder). Mind Map Maker no se cuenta como publicada.
+- **Recuento neto actualizado antes de Mood Tracker:** 61 candidatas codificadas; 262 filas pendientes entonces (261 válidas + una reserva para sustituir API Request Builder). Mind Map Maker no se cuenta como publicada.
+
+## Continuación · Mood Tracker (#159) · 2026-10-08
+
+- [x] C/F — candidata añadida como diario breve de reflexión emocional, distinta de `habit-tracker`; no diagnostica ni interpreta tendencias. La demanda ya incluida en el plan: `mood tracker` 4.400 búsquedas/mes US/en, KD 39; no se hicieron llamadas nuevas a DataForSEO.
+- [x] E — una entrada por día con escala personal 1–5, etiquetas y nota opcionales, calendario, resumen descriptivo de siete días, distribución, backup JSON validado, importación y borrado.
+- [x] Privacidad local — no lee/escribe localStorage al abrir ni guarda sin consentimiento explícito; al desactivarlo elimina la copia persistida y conserva solo la memoria de esta pestaña. Aclara que las notas locales no son una bóveda cifrada y que no es una herramienta clínica.
+- [x] B/X — página inglesa renderizada y probada en Chrome: registro sin guardar automáticamente, activación del consentimiento, retirar consentimiento y borrar la copia persistida. Vista móvil emulada sin overflow horizontal; consola sin errores.
+- [x] E/B — suite focal de catálogo, formulario, contrato de locales, render, builder, bundles y lógica: **127/127 aprobadas**. Build estático aislado: 2 páginas (home + herramienta), 9 archivos, 41.406 bytes; bundle minificado **10.140 bytes**, bajo 24 KiB. Importación limitada a 500 KB.
+- [ ] L — inglés fuente listo; otras 35 traducciones marcadas `pending-tool-specific-translation`; el gate impide publicarlas como localizadas.
+- [ ] RTL visual — pendiente hasta disponer de traducciones aprobadas en árabe, persa y urdu.
+- [ ] P/S — sin merge/deploy, sitemap productivo intacto y sin envíos a buscadores. PageSpeed/Lighthouse no ejecutados.
+- **Recuento actualizado:** 62 candidatas codificadas; 261 filas por terminar, incluida una reserva de sustitución. De ellas, 260 son candidatas válidas aún sin implementar.
