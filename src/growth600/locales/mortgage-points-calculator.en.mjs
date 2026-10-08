@@ -1,0 +1,32 @@
+export const mortgagePointsCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Mortgage Points Calculator',
+  title: 'Mortgage Points Calculator Free | UsefulVerse',
+  description: 'Compare mortgage discount points, monthly payments, amortization and a payoff horizon. Free calculator, no account.',
+  intro: 'Enter the lender rates you were quoted to compare the upfront cost of discount points with monthly payments, remaining balance and estimated savings.',
+  howQuestion: 'How do mortgage discount points work?',
+  howAnswer: 'One discount point usually costs 1% of the loan amount. Enter the rate without points, the quoted rate with points and the point cost. This calculator compares the same principal and term using monthly amortization. The horizon result includes payment differences, remaining loan balances and the upfront point cost. It is an estimate, not a loan offer or financial advice; lender rules, taxes and other closing costs can change the result.',
+  privacyQuestion: 'Are my loan figures uploaded?',
+  privacyAnswer: 'No. The comparison runs locally in your browser. Your figures are not uploaded or saved.',
+  fields: {
+    principal: 'Loan amount',
+    termMonths: 'Loan term (months)',
+    rateWithoutPoints: 'Annual rate without points (%)',
+    rateWithPoints: 'Quoted annual rate with points (%)',
+    pointsPercent: 'Discount points paid upfront (%)',
+    horizonMonths: 'Months before expected payoff, sale or refinance',
+    monthsLabel: 'months',
+    accuracyNote: 'One point is modeled as 1% of the loan amount, paid in cash at closing. Enter actual quoted rates; no rate discount is assumed. Rates must be from 0% to 100%; loan term is 1–600 months. Currency is not converted. Taxes, tax deductibility, other fees, escrow, insurance and lender-specific rules are excluded. Estimates only, not financial advice.',
+  },
+  actions: { calculate: 'Compare points', reset: 'Reset', copy: 'Copy comparison', example: 'Load a sample quote', result: 'Mortgage points comparison' },
+  messages: {
+    copied: 'Comparison copied.', copyUnavailable: 'Copy is not available in this browser.', calculated: 'Comparison complete.', checkInputs: 'Check the loan, quoted rates and time horizon.', exampleLoaded: 'Sample quote loaded.',
+    pointCost: 'Upfront point cost', paymentWithoutPoints: 'Monthly payment without points', paymentWithPoints: 'Monthly payment with points', monthlyPaymentSavings: 'Monthly payment reduction',
+    lifetimeInterestSavings: 'Estimated interest difference over the full term', balanceWithoutPoints: 'Remaining balance without points', balanceWithPoints: 'Remaining balance with points', netBenefitAtHorizon: 'Net difference at selected horizon', paymentOnlyBreakEven: 'Payment-only break-even', netBreakEven: 'Break-even including remaining loan balance', noBreakEven: 'Not recovered within the loan term', noMonthlySavings: 'No monthly payment savings',
+  },
+  additionalFaqs: [
+    { question: 'How much does one mortgage point cost?', answer: 'The common convention is 1% of the mortgage principal. This tool uses the percentage you enter and does not infer point pricing from a rate quote.' },
+    { question: 'Does the break-even calculation include my remaining mortgage balance?', answer: 'The net break-even does: it compares payments made and remaining payoff balances, then subtracts the upfront point cost. The separate payment-only break-even uses monthly payment reduction alone.' },
+    { question: 'Does this tell me whether mortgage points are right for me?', answer: 'No. Results depend on actual lender quotes, how long you keep the loan, taxes, fees and personal circumstances. Compare written Loan Estimates and consult a qualified adviser if needed.' },
+  ],
+});

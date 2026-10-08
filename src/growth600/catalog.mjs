@@ -420,6 +420,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/half-life-calculator/logic.mjs',
   },
   {
+    id: 'mortgage-points-calculator',
+    category: 'finance',
+    type: 'mortgage-points-calculator',
+    primaryIntent: 'mortgage points calculator',
+    secondaryIntents: ['discount points calculator', 'mortgage points break even calculator', 'compare mortgage points and interest rates'],
+    functions: ['compare two lender-quoted rates for the same principal and term', 'model points as a cash upfront cost equal to a user-entered percentage of principal', 'calculate monthly payments, full-term interest, payoff horizon balances and net benefit', 'show payment-only and balance-inclusive break-even months separately'],
+    acceptance: 'For a positive points cost and identical rates, monthly payment and interest savings are zero, the horizon net benefit equals the negative upfront cost, and neither break-even is falsely reported.',
+    boundary: 'An educational comparison, not financial advice, a mortgage offer or a loan estimate. Rates are user-provided; no lender discount is assumed. Points are modeled as cash paid at closing equal to a percentage of principal. Taxes, deductibility, other closing costs, escrow, insurance, variable rates and lender-specific rules are excluded. Principal, APR, term and comparison horizon are bounded; calculations run locally.',
+    relatedExistingIds: ['loan-calculator', 'compound-interest-calculator'],
+    logicModule: './tools/mortgage-points-calculator/logic.mjs',
+  },
+  {
     id: 'miter-angle-calculator',
     category: 'home-materials',
     type: 'calculator',

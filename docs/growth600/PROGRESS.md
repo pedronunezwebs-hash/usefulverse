@@ -13,6 +13,17 @@
 - [ ] F3 — Infraestructura aditiva para catálogo, renderer/origen canónico, 36 idiomas, builds y límites de tamaño. Parcial: catálogo, renderer, gate estricto por idioma, formularios, builder/sitemap separados y paso de build CI están probados/preparados; los 36 módulos ya están presentes. Quedan verificación final de budgets/licencias y habilitar/ejecutar la operación de publicación después de los gates.
 - [ ] F4 — Piloto original de cinco familias: `gravel-calculator`, `molar-mass-calculator`, `auto-loan-refinance-calculator`, `secret-santa-generator`, `mancala`. Los cinco están publicados (PR #37; deployment de producción confirmado) y el sitemap público de 216 URLs responde correctamente. Falta confirmar en los paneles de buscadores el envío/lectura del sitemap para `tools.usefulverse.com`; F4/S no queda cerrado hasta verificarlo.
 
+## Continuación · Mortgage Points Calculator (#164) · 2026-10-08
+
+- [x] C/F — herramienta propia para comparar el coste pagado al cierre por puntos hipotecarios frente a dos APR cotizadas para el mismo principal y plazo. El plan registra `mortgage points calculator` 3.600 búsquedas/mes US/en, KD 7 y `discount points calculator` 3.600, KD 5; no se volvió a consultar DataForSEO.
+- [x] E/X — amortización mensual hasta 600 meses, APR 0–100%, coste inicial explícito y comparación configurable hasta el plazo. Informa pagos, intereses totales, saldos a horizonte, efecto neto y dos puntos de equilibrio diferentes; un coste positivo sin ahorro nunca se presenta como recuperado. Excluye impuestos/deducibilidad, cargos adicionales, escrow, seguros, tasas variables y reglas del prestamista.
+- [x] B — controles etiquetados, ejemplo, reinicio, copia, salida anunciada y cálculo local sin APIs ni subida. Incluye advertencia: estimación educativa, no oferta ni consejo financiero; comparar cotizaciones reales.
+- [x] L (fuente) — copy inglés con FAQs y supuestos explícitos. Los otros 35 idiomas son borradores estructurales marcados `pending-tool-specific-translation`; bloqueados para publicación.
+- [x] E — pruebas focalizadas de lógica, catálogo, formularios, contrato de localización y build: **130/130 aprobadas**; `node --check` y `git diff --check` limpios.
+- [x] X — Chrome local aislado: ejemplo calcula coste 2.000, reducción mensual 33,75 y neto estimado a 60 meses 519,23; con APR idéntica indica cero ahorros y que no se recupera el coste; principal inválido muestra error accesible. Móvil emulado 390×844 sin overflow; consola sin errores/avisos y solo solicitudes del propio servidor local.
+- [ ] B/P — no se validó el bundle minificado final ni su presupuesto con las dependencias de compilación fijadas. No está integrado ni desplegado, no se cambió sitemap ni se envió a buscadores. PageSpeed/Lighthouse no se ejecutó.
+- **Recuento al cerrar #164:** 67/323 candidatas implementadas en inglés; quedan 256 filas (255 candidatas válidas + una reserva). Incluidas las 277 herramientas protegidas, son 344 implementaciones inglesas/base; no equivale a páginas traducidas o publicadas.
+
 ## Continuación · Polynomial Long Division Calculator (#162) · 2026-10-08
 
 - [x] C/F — candidata distinta de la división entera existente: divide polinomios de una variable, devuelve cociente, resto y operaciones de cada paso. El plan registra `polynomial long division calculator` con 3.600 búsquedas mensuales US/en, KD 0; no se consultó DataForSEO de nuevo.
@@ -33,7 +44,7 @@
 - [x] E — pruebas focalizadas de lógica, catálogo, formulario, contrato de localización y builder: **128/128 aprobadas**; `node --check` y `git diff --check` correctos.
 - [x] X — Chrome local aislado: calcula 50% después de una vida media; modo inverso calcula 20 unidades de tiempo para 100→25 con vida media 10; el ejemplo carga y calcula 50%; vista móvil emulada 390×844 sin overflow ni solicitudes externas, sin errores/avisos de consola.
 - [ ] B/P — falta validar bundle minificado/tamaño con dependencias de build; no se instalaron. No está integrada ni desplegada, no toca sitemaps ni paneles. No se ejecutó PageSpeed/Lighthouse.
-- **Recuento actual:** 66/323 candidatas implementadas en inglés; quedan 257 filas del plan (256 candidatas válidas + una reserva). Incluidas las 277 protegidas, son 343 implementaciones inglesas/base, no publicaciones listas: la ampliación permanece fuera de producción y faltan traducciones/gates.
+- **Recuento al cerrar #163:** 66/323 candidatas implementadas en inglés; quedaban 257 filas del plan (256 candidatas válidas + una reserva). Incluidas las 277 protegidas, eran 343 implementaciones inglesas/base, no publicaciones listas: la ampliación permanece fuera de producción y faltan traducciones/gates.
 
 ## Avance de expansión · Brick Calculator
 

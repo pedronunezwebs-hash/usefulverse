@@ -116,6 +116,8 @@ import polynomialLongDivisionCopies from './polynomial-long-division-calculator-
 import { polynomialLongDivisionCalculatorEnglishCopy } from './polynomial-long-division-calculator.en.mjs';
 import halfLifeCalculatorCopies from './half-life-calculator-final.mjs';
 import { halfLifeCalculatorEnglishCopy } from './half-life-calculator.en.mjs';
+import mortgagePointsCalculatorCopies from './mortgage-points-calculator-final.mjs';
+import { mortgagePointsCalculatorEnglishCopy } from './mortgage-points-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -521,5 +523,6 @@ registerGrowthLocaleExtension(source, 'journal-online', { ...journalOnlineCopies
 registerGrowthLocaleExtension(source, 'travel-itinerary-planner', { ...travelItineraryPlannerCopies, en: travelItineraryPlannerEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'polynomial-long-division-calculator', { ...polynomialLongDivisionCopies, en: polynomialLongDivisionCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'half-life-calculator', { ...halfLifeCalculatorCopies, en: halfLifeCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'mortgage-points-calculator', { ...mortgagePointsCalculatorCopies, en: mortgagePointsCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

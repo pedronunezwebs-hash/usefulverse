@@ -1974,7 +1974,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Demanda:** `mortgage points calculator` — 3.600 búsquedas/mes US/en, KD 7; nivel B. CPC 4.39 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Comparar pagar puntos frente a intereses, horizonte y amortización
 - **Prueba de aceptación específica:** Coste positivo con ahorro cero no se recupera
-- **Frontera con otras herramientas:** mortgage-refinance-calculator: compra inicial de puntos. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
+- **Frontera con otras herramientas:** `loan-calculator` / refinanciación de automóvil: comparar un coste inicial de puntos para hipoteca y amortización a horizonte, no cuotas genéricas ni refinanciación de un vehículo. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `discount points calculator` — 3.600/mes US/en; KD 5.

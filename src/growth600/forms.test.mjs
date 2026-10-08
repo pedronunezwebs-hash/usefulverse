@@ -250,6 +250,7 @@ const copies = {
   },
   'polynomial-long-division-calculator': { name: 'Polynomial division', actions: { ...actions }, fields: { dividend: 'Dividend polynomial', divisor: 'Divisor polynomial', accuracyNote: 'Integer coefficients; degree up to 20.' } },
   'half-life-calculator': { name: 'Half-life calculator', actions: { ...actions, solveRemaining: 'Remaining amount', solveInitial: 'Initial amount', solveElapsed: 'Elapsed time', solveHalfLife: 'Half-life' }, fields: { mode: 'Solve for', solveRemaining: 'Remaining amount', solveInitial: 'Initial amount', solveElapsed: 'Elapsed time', solveHalfLife: 'Half-life', initialAmount: 'Initial amount', remainingAmount: 'Remaining amount', halfLife: 'Half-life', elapsedTime: 'Elapsed time', timeUnit: 'Shared time unit', seconds: 'Seconds', minutes: 'Minutes', hours: 'Hours', days: 'Days', years: 'Years', accuracyNote: 'Use the same time unit.' } },
+  'mortgage-points-calculator': { name: 'Mortgage points calculator', actions: { ...actions }, fields: { principal: 'Loan amount', termMonths: 'Loan term', rateWithoutPoints: 'Annual rate before points', rateWithPoints: 'Annual rate with points', pointsPercent: 'Points', horizonMonths: 'Comparison horizon', monthsLabel: 'months', accuracyNote: 'Estimate only.' } },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -451,6 +452,14 @@ test('half-life form exposes a solve mode, four labeled values, shared time unit
   for (const name of ['mode', 'initialAmount', 'remainingAmount', 'halfLife', 'elapsedTime', 'timeUnit']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
   assert.match(html, /name="mode"><option value="remaining">Remaining amount/u);
   assert.match(html, /name="timeUnit"><option value="seconds">Seconds/u);
+  assert.match(html, /role="status" aria-live="polite"/u);
+});
+
+test('mortgage-points form exposes quoted rates, point cost, term, horizon and accessible actions', () => {
+  const html = renderGrowthForm('mortgage-points-calculator', copies['mortgage-points-calculator']);
+  for (const name of ['principal', 'termMonths', 'rateWithoutPoints', 'rateWithPoints', 'pointsPercent', 'horizonMonths']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  assert.match(html, /name="rateWithPoints" type="number"[^>]+max="100"/u);
+  assert.match(html, /name="horizonMonths" type="number"[^>]+max="600"/u);
   assert.match(html, /role="status" aria-live="polite"/u);
 });
 

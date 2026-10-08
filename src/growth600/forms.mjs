@@ -47,6 +47,7 @@ export function renderGrowthForm(toolId, copy) {
     'travel-itinerary-planner': ['tripName', 'tripStartDate', 'tripEndDate', 'bufferMinutes', 'saveConsent', 'storageNote', 'itemDate', 'startTime', 'endTime', 'itemTitle', 'category', 'categories', 'location', 'reservation', 'notes', 'itineraryLabel', 'noTrip', 'noItems', 'itemCount', 'overlapCount', 'bufferWarningCount', 'conflictsLabel', 'backupFile', 'backupHint', 'timeZoneNote', 'reservationPrivacyNote', 'exampleTrip', 'exampleActivity', 'exampleMeal', 'exampleLocation', 'exampleReservation'],
     'polynomial-long-division-calculator': ['dividend', 'divisor', 'accuracyNote'],
     'half-life-calculator': ['mode', 'solveRemaining', 'solveInitial', 'solveElapsed', 'solveHalfLife', 'initialAmount', 'remainingAmount', 'halfLife', 'elapsedTime', 'timeUnit', 'seconds', 'minutes', 'hours', 'days', 'years', 'accuracyNote'],
+    'mortgage-points-calculator': ['principal', 'termMonths', 'rateWithoutPoints', 'rateWithPoints', 'pointsPercent', 'horizonMonths', 'monthsLabel', 'accuracyNote'],
     'auto-loan-refinance-calculator': ['balance', 'currentApr', 'currentMonths', 'newApr', 'newMonths', 'fees', 'feeTreatment'],
     'secret-santa-generator': ['names', 'exclusions'],
     'tire-size-calculator': ['originalSize', 'replacementSize', 'indicatedSpeed', 'speedUnit', 'fitmentNote'],
@@ -116,6 +117,7 @@ export function renderGrowthForm(toolId, copy) {
     'travel-itinerary-planner': ['createTrip', 'saveItem', 'updateItem', 'newItem', 'deleteItem', 'deleteTrip', 'example', 'reset', 'exportIcs', 'exportJson', 'importJson', 'print', 'result'],
     'polynomial-long-division-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'half-life-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'mortgage-points-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'auto-loan-refinance-calculator': ['calculate', 'reset', 'copy', 'result'],
     'secret-santa-generator': ['generate', 'reset', 'copy', 'download', 'result', 'reveal', 'next', 'privacyNote'],
     'tire-size-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kmh', 'mph'],
@@ -875,6 +877,19 @@ export function renderGrowthForm(toolId, copy) {
     ${label('decay-half-life', fields.halfLife, '<input id="decay-half-life" name="halfLife" type="number" min="0" max="1e100" step="any" inputmode="decimal" value="10" required>')}
     ${label('decay-elapsed', fields.elapsedTime, '<input id="decay-elapsed" name="elapsedTime" type="number" min="0" max="1e100" step="any" inputmode="decimal" value="10" required>')}
     ${label('decay-time-unit', fields.timeUnit, `<select id="decay-time-unit" name="timeUnit"><option value="seconds">${escapeGrowthHtml(fields.seconds)}</option><option value="minutes">${escapeGrowthHtml(fields.minutes)}</option><option value="hours">${escapeGrowthHtml(fields.hours)}</option><option value="days">${escapeGrowthHtml(fields.days)}</option><option value="years">${escapeGrowthHtml(fields.years)}</option></select>`)}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'mortgage-points-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('mortgage-principal', fields.principal, '<input id="mortgage-principal" name="principal" type="number" min="0" max="1e12" step="any" inputmode="decimal" value="200000" required>')}
+    ${label('mortgage-term', fields.termMonths, '<input id="mortgage-term" name="termMonths" type="number" min="1" max="600" step="1" inputmode="numeric" value="360" required>')}
+    ${label('mortgage-rate-before', fields.rateWithoutPoints, '<input id="mortgage-rate-before" name="rateWithoutPoints" type="number" min="0" max="100" step="any" inputmode="decimal" value="7.25" required>')}
+    ${label('mortgage-rate-after', fields.rateWithPoints, '<input id="mortgage-rate-after" name="rateWithPoints" type="number" min="0" max="100" step="any" inputmode="decimal" value="7" required>')}
+    ${label('mortgage-points-percent', fields.pointsPercent, '<input id="mortgage-points-percent" name="pointsPercent" type="number" min="0" max="100" step="any" inputmode="decimal" value="1" required>')}
+    ${label('mortgage-horizon', fields.horizonMonths, '<input id="mortgage-horizon" name="horizonMonths" type="number" min="0" max="600" step="1" inputmode="numeric" value="60" required>')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
