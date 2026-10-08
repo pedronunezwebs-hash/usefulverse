@@ -61,6 +61,7 @@ export function renderGrowthForm(toolId, copy) {
     'work-order-generator': ['workOrderNumber', 'issuedDate', 'scheduledDate', 'completedDate', 'status', 'customer', 'contact', 'location', 'assignedTo', 'title', 'details', 'tasks', 'tasksHint', 'materials', 'materialsHint', 'materialsFormat', 'labor', 'laborHint', 'laborFormat', 'notes', 'limitNote', 'privacyNote', 'previewTitle', 'checklist', 'materialsLabel', 'laborLabel', 'description', 'quantity', 'unit', 'activity', 'hours', 'totalLaborHours'],
     slitherlink: ['size', 'board', 'rules', 'accuracyNote', 'row', 'column', 'horizontal', 'vertical'],
     'peg-solitaire': ['board', 'rules', 'accuracyNote', 'hole', 'row', 'column', 'peg', 'empty'],
+    futoshiki: ['size', 'difficulty', 'board', 'rules', 'accuracyNote', 'cell', 'row', 'column'],
     'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
     'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
@@ -83,6 +84,7 @@ export function renderGrowthForm(toolId, copy) {
     nurikabe: ['difficulty', 'board', 'rules', 'accuracyNote', 'cell', 'row', 'column', 'sea', 'island'],
     slitherlink: ['size', 'board', 'rules', 'accuracyNote', 'row', 'column', 'horizontal', 'vertical'],
     'peg-solitaire': ['board', 'rules', 'accuracyNote', 'hole', 'row', 'column', 'peg', 'empty'],
+    futoshiki: ['size', 'difficulty', 'board', 'rules', 'accuracyNote', 'cell', 'row', 'column'],
     'color-name-finder': ['hexColor', 'colorPreview', 'nearestNames', 'exactMatchNote', 'paletteNote'],
   'weight-loss-calculator': ['currentWeight', 'targetWeight', 'dailyDeficit', 'unit', 'methodNote', 'healthNote', 'sourceNiddk', 'sourceCdc'],
     'heloc-calculator': ['creditLimit', 'balance', 'annualApr', 'drawMonths', 'repaymentMonths', 'currency', 'accuracyNote', 'relatedLoanCalculator'],
@@ -160,6 +162,7 @@ export function renderGrowthForm(toolId, copy) {
     'work-order-generator': ['generate', 'reset', 'example', 'downloadCsv', 'print', 'result', 'open', 'inProgress', 'completed'],
     slitherlink: ['newGame', 'checkBoard', 'hint', 'undo', 'clearMarks', 'rules', 'small', 'medium', 'large'],
     'peg-solitaire': ['newGame', 'hint', 'undo', 'rules', 'pegsRemaining'],
+    futoshiki: ['newGame', 'checkBoard', 'hint', 'undo', 'rules', 'small', 'medium', 'large', 'easy', 'regular', 'hard'],
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
@@ -182,6 +185,7 @@ export function renderGrowthForm(toolId, copy) {
     nurikabe: ['newGame', 'checkBoard', 'hint', 'clearMarks', 'easy', 'medium', 'hard'],
     slitherlink: ['newGame', 'checkBoard', 'hint', 'undo', 'clearMarks', 'rules', 'small', 'medium', 'large'],
     'peg-solitaire': ['newGame', 'hint', 'undo', 'rules', 'pegsRemaining'],
+    futoshiki: ['newGame', 'checkBoard', 'hint', 'undo', 'rules', 'small', 'medium', 'large', 'easy', 'regular', 'hard'],
     'color-name-finder': ['findName', 'copyName', 'copyHex', 'result'],
   'weight-loss-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilograms', 'pounds', 'dayUnit', 'weekUnit', 'kilocalories', 'perWeek'],
   'heloc-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -216,7 +220,7 @@ export function renderGrowthForm(toolId, copy) {
   }[toolId];
   const missing = actionNames.filter((key) => !(actions[key] ?? fields[key])?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
-  const labels = Object.fromEntries([...new Set([...actionNames, 'calculate', 'generate', 'reset', 'example', 'newGame', 'rules', 'reveal', 'next', 'copy', 'download', 'result', 'progress', 'perPerson', 'metric', 'imperial', 'rectangle', 'circle', 'triangle', 'meters', 'centimeters', 'feet', 'inches', 'kgPerCubicMeter', 'lbPerCubicFoot', 'kilograms', 'pounds', 'twoPlayers', 'computer', 'human', 'currentPlayer', 'opponent', 'privacyNote', 'kmh', 'mph'])].map((key) => [key, actions[key] ?? fields[key] ?? '']));
+  const labels = Object.fromEntries([...new Set([...actionNames, 'calculate', 'generate', 'reset', 'example', 'newGame', 'rules', 'reveal', 'next', 'copy', 'download', 'result', 'progress', 'perPerson', 'metric', 'imperial', 'rectangle', 'circle', 'triangle', 'meters', 'centimeters', 'feet', 'inches', 'kgPerCubicMeter', 'lbPerCubicFoot', 'kilograms', 'pounds', 'twoPlayers', 'computer', 'human', 'currentPlayer', 'opponent', 'privacyNote', 'kmh', 'mph', 'notes'])].map((key) => [key, actions[key] ?? fields[key] ?? '']));
   const submit = (name) => button(name, labels[name]);
   const reset = button('reset', labels.reset, 'secondary');
 
@@ -687,6 +691,12 @@ export function renderGrowthForm(toolId, copy) {
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section aria-labelledby="peg-solitaire-board-heading"><h2 id="peg-solitaire-board-heading">${escapeGrowthHtml(fields.board)}</h2><div class="peg-solitaire-board" data-board role="group" aria-label="${escapeGrowthHtml(fields.board)}"></div></section>
     <div class="actions"><button type="button" data-action="hint" class="button button--secondary">${escapeGrowthHtml(labels.hint)}</button><button type="button" data-action="undo" class="button button--secondary">${escapeGrowthHtml(labels.undo)}</button></div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);
+
+  if (toolId === 'futoshiki') return attachCopy(`<section class="game futoshiki-game" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="game-toolbar"><div class="field"><label for="futoshiki-size">${escapeGrowthHtml(fields.size)}</label><select id="futoshiki-size" data-size><option value="4">${escapeGrowthHtml(labels.small)}</option><option value="5" selected>${escapeGrowthHtml(labels.medium)}</option><option value="6">${escapeGrowthHtml(labels.large)}</option></select></div><div class="field"><label for="futoshiki-difficulty">${escapeGrowthHtml(fields.difficulty)}</label><select id="futoshiki-difficulty" data-difficulty><option value="easy">${escapeGrowthHtml(labels.easy)}</option><option value="medium" selected>${escapeGrowthHtml(labels.regular)}</option><option value="hard">${escapeGrowthHtml(labels.hard)}</option></select></div><button type="button" data-action="new-game" class="button button--primary">${escapeGrowthHtml(labels.newGame)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section aria-labelledby="futoshiki-board-heading"><h2 id="futoshiki-board-heading">${escapeGrowthHtml(fields.board)}</h2><div class="futoshiki-board" data-board role="group" aria-label="${escapeGrowthHtml(fields.board)}"></div></section>
+    <div class="actions"><button type="button" data-action="notes" class="button button--secondary" aria-pressed="false">${escapeGrowthHtml(labels.notes)}</button><button type="button" data-action="check-board" class="button button--primary">${escapeGrowthHtml(labels.checkBoard)}</button><button type="button" data-action="hint" class="button button--secondary">${escapeGrowthHtml(labels.hint)}</button><button type="button" data-action="undo" class="button button--secondary">${escapeGrowthHtml(labels.undo)}</button></div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);
 
   if (toolId === 'color-name-finder') return attachCopy(`<form id="tool-form" novalidate>
