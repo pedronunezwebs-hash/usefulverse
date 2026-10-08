@@ -549,6 +549,13 @@ function toolCopy(tool, language) {
     ];
     localized.localizationStatus = 'approved';
   }
+  if (tool.id === 'work-order-generator') {
+    localized.fields ??= {};
+    Object.assign(localized.fields, { workOrderNumber: 'Work order number', issuedDate: 'Issue date', scheduledDate: 'Scheduled date', completedDate: 'Completion date', status: 'Job status', customer: 'Customer', contact: 'Contact', location: 'Service location', assignedTo: 'Assigned to', title: 'Job summary', details: 'Work details', tasks: 'Checklist', tasksHint: 'One task per line.', materials: 'Materials', materialsHint: 'Enter description, quantity and unit.', materialsFormat: 'Description | quantity | unit', labor: 'Labor activities', laborHint: 'Enter activity and hours.', laborFormat: 'Activity | hours', notes: 'Notes', limitNote: 'Up to 40 entries per section.', privacyNote: 'Runs locally.', previewTitle: 'Work order preview', checklist: 'Checklist', materialsLabel: 'Materials', laborLabel: 'Labor', description: 'Description', quantity: 'Quantity', unit: 'Unit', activity: 'Activity', hours: 'Hours', totalLaborHours: 'Total logged labor hours' });
+    Object.assign(localized.actions, { generate: 'Create work order', reset: 'Clear', example: 'Load example', downloadCsv: 'Download CSV', print: 'Print or save as PDF', result: 'Work order', open: 'Open', inProgress: 'In progress', completed: 'Completed' });
+    Object.assign(localized.messages, { ready: 'Work order preview is ready.', invalid: 'Check the work-order fields and line formats.', createFirst: 'Create a work order first.', printBlocked: 'Allow the print window.', exampleLoaded: 'Example loaded.', downloaded: 'CSV downloaded.', downloadFailed: 'CSV download failed.' });
+    localized.additionalFaqs = [{ question: 'Is a work order an invoice?', answer: 'No. It tracks work to perform and does not include prices or payment terms.' }, { question: 'Can I track labor?', answer: 'Yes. Record task hours without calculating wages.' }, { question: 'How do I save it?', answer: 'Print to PDF or download a CSV copy.' }];
+  }
   return localized;
 }
 

@@ -1091,6 +1091,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['tournament-bracket-generator', 'random-team-generator'],
     logicModule: './tools/round-robin-tournament-generator/logic.mjs',
   },
+  {
+    id: 'work-order-generator',
+    category: 'productivity',
+    type: 'generator',
+    primaryIntent: 'work order template',
+    secondaryIntents: ['work order generator', 'job work order form', 'service work order template', 'printable work order form'],
+    functions: ['create a printable service or maintenance work order with customer, location, contact, assignee, issue and scheduled dates, job summary and notes', 'track a bounded checklist and open, in-progress or completed status with a required completion date', 'list required materials by description, quantity and unit, and log labor activities by hours without adding prices or tax', 'preview and print/save as PDF or export a spreadsheet-safe CSV; all entries remain in the browser'],
+    acceptance: 'A completed sample job can record its confirmed completion date, checked work items, two materials and 1.75 labor hours; the generated print and CSV show the same order values and totals. A completed order without a valid completion date is rejected.',
+    boundary: 'Job execution and service record template, not an estimate, quote, invoice, timesheet, contract, safety certification, work authorization or legal document. It calculates no prices, taxes or payroll and does not persist or transmit data. Users must confirm local recordkeeping, privacy, safety and legal requirements. Limits: 40 checklist/material/labor lines per section, bounded text fields; printing/PDF depends on the browser.',
+    relatedExistingIds: ['invoice-generator', 'task-list'],
+    logicModule: './tools/work-order-generator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

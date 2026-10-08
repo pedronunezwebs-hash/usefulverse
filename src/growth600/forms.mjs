@@ -58,6 +58,7 @@ export function renderGrowthForm(toolId, copy) {
     'rtf-converter': ['file', 'accuracyNote', 'limitNote', 'output'],
     'csv-to-pdf': ['file', 'separator', 'encoding', 'hasHeader', 'pageSize', 'orientation', 'margin', 'accuracyNote', 'limitNote', 'resultCount', 'tableLabel'],
     'round-robin-tournament-generator': ['participants', 'participantsHint', 'doubleRound', 'shuffle', 'scoringNote', 'limitNote', 'standingsLabel', 'rank', 'team', 'played', 'wins', 'draws', 'losses', 'goalsFor', 'goalsAgainst', 'goalDifference', 'points', 'round', 'leg', 'home', 'away', 'bye', 'homeScore', 'awayScore', 'fixtureTableLabel'],
+    'work-order-generator': ['workOrderNumber', 'issuedDate', 'scheduledDate', 'completedDate', 'status', 'customer', 'contact', 'location', 'assignedTo', 'title', 'details', 'tasks', 'tasksHint', 'materials', 'materialsHint', 'materialsFormat', 'labor', 'laborHint', 'laborFormat', 'notes', 'limitNote', 'privacyNote', 'previewTitle', 'checklist', 'materialsLabel', 'laborLabel', 'description', 'quantity', 'unit', 'activity', 'hours', 'totalLaborHours'],
     'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
     'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
@@ -152,6 +153,7 @@ export function renderGrowthForm(toolId, copy) {
     'rtf-converter': ['convert', 'reset', 'copy', 'download', 'print', 'result'],
     'csv-to-pdf': ['preview', 'reset', 'example', 'print', 'result'],
     'round-robin-tournament-generator': ['generate', 'reset', 'example', 'downloadCsv', 'print', 'result'],
+    'work-order-generator': ['generate', 'reset', 'example', 'downloadCsv', 'print', 'result', 'open', 'inProgress', 'completed'],
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
@@ -1340,6 +1342,33 @@ export function renderGrowthForm(toolId, copy) {
       <div data-round-robin-rounds></div>
       <div class="actions">${button('downloadCsv', actions.downloadCsv, 'secondary')}${button('print', actions.print, 'secondary')}</div>
     </section>
+  </form>`, copy);
+
+  if (toolId === 'work-order-generator') return attachCopy(`<form id="tool-form" novalidate>
+    <div class="form-grid">
+      ${label('wo-number', fields.workOrderNumber, '<input id="wo-number" name="number" type="text" maxlength="48" autocomplete="off">')}
+      ${label('wo-issued-date', fields.issuedDate, '<input id="wo-issued-date" name="issuedDate" type="date" required>')}
+      ${label('wo-scheduled-date', fields.scheduledDate, '<input id="wo-scheduled-date" name="scheduledDate" type="date">')}
+      ${label('wo-completed-date', fields.completedDate, '<input id="wo-completed-date" name="completedDate" type="date">')}
+      ${label('wo-status', fields.status, `<select id="wo-status" name="status"><option value="open">${escapeGrowthHtml(actions.open)}</option><option value="in-progress">${escapeGrowthHtml(actions.inProgress)}</option><option value="completed">${escapeGrowthHtml(actions.completed)}</option></select>`)}
+      ${label('wo-customer', fields.customer, '<input id="wo-customer" name="customer" type="text" maxlength="240" required autocomplete="off">')}
+      ${label('wo-contact', fields.contact, '<input id="wo-contact" name="contact" type="text" maxlength="240" autocomplete="off">')}
+      ${label('wo-location', fields.location, '<input id="wo-location" name="location" type="text" maxlength="240" autocomplete="off">')}
+      ${label('wo-assigned-to', fields.assignedTo, '<input id="wo-assigned-to" name="assignedTo" type="text" maxlength="240" autocomplete="off">')}
+    </div>
+    ${label('wo-title', fields.title, '<input id="wo-title" name="title" type="text" maxlength="160" required autocomplete="off">')}
+    ${label('wo-details', fields.details, '<textarea id="wo-details" name="details" rows="3" maxlength="4000"></textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.tasksHint)}</p>
+    ${label('wo-tasks', fields.tasks, '<textarea id="wo-tasks" name="tasks" rows="5" maxlength="10000"></textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.materialsHint)} <span class="format-example">${escapeGrowthHtml(fields.materialsFormat)}</span></p>
+    ${label('wo-materials', fields.materials, '<textarea id="wo-materials" name="materials" rows="4" maxlength="10000"></textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.laborHint)} <span class="format-example">${escapeGrowthHtml(fields.laborFormat)}</span></p>
+    ${label('wo-labor', fields.labor, '<textarea id="wo-labor" name="labor" rows="4" maxlength="10000"></textarea>')}
+    ${label('wo-notes', fields.notes, '<textarea id="wo-notes" name="notes" rows="3" maxlength="4000"></textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.limitNote)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <div class="actions">${submit('generate')}${button('example', actions.example, 'secondary')}${button('reset', actions.reset, 'secondary')}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.previewTitle)}</h2><div data-work-order-preview></div><div class="actions">${button('downloadCsv', actions.downloadCsv, 'secondary')}${button('print', actions.print, 'secondary')}</div></section>
   </form>`, copy);
 
   if (toolId === 'chemical-equation-balancer') return attachCopy(`<form id="tool-form" novalidate>

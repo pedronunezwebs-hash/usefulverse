@@ -63,6 +63,8 @@ import { csvToPdfEnglishCopy } from './csv-to-pdf.en.mjs';
 import roundRobinTournamentCopies from './round-robin-tournament-generator.mjs';
 import { roundRobinTournamentGeneratorEnglishCopy } from './round-robin-tournament-generator.en.mjs';
 import { roundRobinTournamentArabicCopy } from './round-robin-tournament-generator.ar.mjs';
+import workOrderCopies from './work-order-generator.mjs';
+import { workOrderGeneratorEnglishCopy } from './work-order-generator.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
 import imageColorPickerCopies from './image-color-picker-final.mjs';
@@ -620,5 +622,6 @@ registerGrowthLocaleExtension(source, 'horsepower-calculator', { ...localizedHor
 registerGrowthLocaleExtension(source, 'rtf-converter', { ...rtfConverterCopies, en: rtfConverterEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'csv-to-pdf', { ...csvToPdfCopies, en: csvToPdfEnglishCopy }, 'rtf-converter');
 registerGrowthLocaleExtension(source, 'round-robin-tournament-generator', { ...roundRobinTournamentCopies, en: roundRobinTournamentGeneratorEnglishCopy, ar: { ...roundRobinTournamentCopies.ar, ...roundRobinTournamentArabicCopy, fields: { ...roundRobinTournamentCopies.ar.fields, ...roundRobinTournamentArabicCopy.fields }, actions: { ...roundRobinTournamentCopies.ar.actions, ...roundRobinTournamentArabicCopy.actions }, messages: { ...roundRobinTournamentCopies.ar.messages, ...roundRobinTournamentArabicCopy.messages } } }, 'csv-to-pdf');
+registerGrowthLocaleExtension(source, 'work-order-generator', { ...workOrderCopies, en: workOrderGeneratorEnglishCopy }, 'csv-to-pdf');
 
 export default Object.freeze(source);
