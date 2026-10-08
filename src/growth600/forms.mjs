@@ -48,6 +48,7 @@ export function renderGrowthForm(toolId, copy) {
     'polynomial-long-division-calculator': ['dividend', 'divisor', 'accuracyNote'],
     'half-life-calculator': ['mode', 'solveRemaining', 'solveInitial', 'solveElapsed', 'solveHalfLife', 'initialAmount', 'remainingAmount', 'halfLife', 'elapsedTime', 'timeUnit', 'seconds', 'minutes', 'hours', 'days', 'years', 'accuracyNote'],
     'mortgage-points-calculator': ['principal', 'termMonths', 'rateWithoutPoints', 'rateWithPoints', 'pointsPercent', 'horizonMonths', 'monthsLabel', 'accuracyNote'],
+    'trapezoid-calculator': ['baseA', 'baseB', 'height', 'topOffset', 'unit', 'millimeters', 'centimeters', 'meters', 'inches', 'feet', 'accuracyNote', 'diagramLabel'],
     'auto-loan-refinance-calculator': ['balance', 'currentApr', 'currentMonths', 'newApr', 'newMonths', 'fees', 'feeTreatment'],
     'secret-santa-generator': ['names', 'exclusions'],
     'tire-size-calculator': ['originalSize', 'replacementSize', 'indicatedSpeed', 'speedUnit', 'fitmentNote'],
@@ -118,6 +119,7 @@ export function renderGrowthForm(toolId, copy) {
     'polynomial-long-division-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'half-life-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'mortgage-points-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'trapezoid-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'auto-loan-refinance-calculator': ['calculate', 'reset', 'copy', 'result'],
     'secret-santa-generator': ['generate', 'reset', 'copy', 'download', 'result', 'reveal', 'next', 'privacyNote'],
     'tire-size-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kmh', 'mph'],
@@ -890,6 +892,19 @@ export function renderGrowthForm(toolId, copy) {
     ${label('mortgage-rate-after', fields.rateWithPoints, '<input id="mortgage-rate-after" name="rateWithPoints" type="number" min="0" max="100" step="any" inputmode="decimal" value="7" required>')}
     ${label('mortgage-points-percent', fields.pointsPercent, '<input id="mortgage-points-percent" name="pointsPercent" type="number" min="0" max="100" step="any" inputmode="decimal" value="1" required>')}
     ${label('mortgage-horizon', fields.horizonMonths, '<input id="mortgage-horizon" name="horizonMonths" type="number" min="0" max="600" step="1" inputmode="numeric" value="60" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'trapezoid-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('trapezoid-base-a', fields.baseA, '<input id="trapezoid-base-a" name="baseA" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="6" required>')}
+    ${label('trapezoid-base-b', fields.baseB, '<input id="trapezoid-base-b" name="baseB" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="4" required>')}
+    ${label('trapezoid-height', fields.height, '<input id="trapezoid-height" name="height" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="3" required>')}
+    ${label('trapezoid-offset', fields.topOffset, '<input id="trapezoid-offset" name="topOffset" type="number" min="-1000000000" max="1000000000" step="any" inputmode="decimal" value="1" required>')}
+    ${label('trapezoid-unit', fields.unit, `<select id="trapezoid-unit" name="unit"><option value="mm">${escapeGrowthHtml(fields.millimeters)}</option><option value="cm">${escapeGrowthHtml(fields.centimeters)}</option><option value="m" selected>${escapeGrowthHtml(fields.meters)}</option><option value="in">${escapeGrowthHtml(fields.inches)}</option><option value="ft">${escapeGrowthHtml(fields.feet)}</option></select>`)}
+    <figure class="trapezoid-diagram"><svg viewBox="0 0 360 210" role="img" aria-labelledby="trapezoid-diagram-title"><title id="trapezoid-diagram-title">${escapeGrowthHtml(fields.diagramLabel)}</title><polygon data-trapezoid-shape points="30,180 330,180 270,100 90,100" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><line data-trapezoid-height-line x1="90" y1="100" x2="90" y2="180" stroke="currentColor" stroke-width="2" stroke-dasharray="5 5"/></svg><figcaption>${escapeGrowthHtml(fields.diagramLabel)}</figcaption></figure>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>

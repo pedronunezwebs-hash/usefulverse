@@ -2337,7 +2337,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Demanda:** `trapezoid area calculator` — 3.600 búsquedas/mes US/en, KD 10; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Bases, altura, lados, área y croquis
 - **Prueba de aceptación específica:** Bases4,6 y altura3 da área15
-- **Frontera con otras herramientas:** polygon-calculator: cuadrilátero irregular, no regular. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
+- **Frontera con otras herramientas:** `square-footage-calculator` resuelve área rectangular; esta herramienta resuelve el área de un trapecio desde sus dos bases paralelas y altura, y además deriva lados/perímetro según el desplazamiento de la base superior. No existe un `polygon-calculator` protegido en el catálogo actual. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `trapezoid calculator` — 2.400/mes US/en; KD 0.

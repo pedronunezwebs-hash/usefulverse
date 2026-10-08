@@ -251,6 +251,7 @@ const copies = {
   'polynomial-long-division-calculator': { name: 'Polynomial division', actions: { ...actions }, fields: { dividend: 'Dividend polynomial', divisor: 'Divisor polynomial', accuracyNote: 'Integer coefficients; degree up to 20.' } },
   'half-life-calculator': { name: 'Half-life calculator', actions: { ...actions, solveRemaining: 'Remaining amount', solveInitial: 'Initial amount', solveElapsed: 'Elapsed time', solveHalfLife: 'Half-life' }, fields: { mode: 'Solve for', solveRemaining: 'Remaining amount', solveInitial: 'Initial amount', solveElapsed: 'Elapsed time', solveHalfLife: 'Half-life', initialAmount: 'Initial amount', remainingAmount: 'Remaining amount', halfLife: 'Half-life', elapsedTime: 'Elapsed time', timeUnit: 'Shared time unit', seconds: 'Seconds', minutes: 'Minutes', hours: 'Hours', days: 'Days', years: 'Years', accuracyNote: 'Use the same time unit.' } },
   'mortgage-points-calculator': { name: 'Mortgage points calculator', actions: { ...actions }, fields: { principal: 'Loan amount', termMonths: 'Loan term', rateWithoutPoints: 'Annual rate before points', rateWithPoints: 'Annual rate with points', pointsPercent: 'Points', horizonMonths: 'Comparison horizon', monthsLabel: 'months', accuracyNote: 'Estimate only.' } },
+  'trapezoid-calculator': { name: 'Trapezoid calculator', actions: { ...actions }, fields: { baseA: 'Bottom base', baseB: 'Top base', height: 'Height', topOffset: 'Top base offset', unit: 'Unit', millimeters: 'Millimeters', centimeters: 'Centimeters', meters: 'Meters', inches: 'Inches', feet: 'Feet', accuracyNote: 'All dimensions must use one unit.', diagramLabel: 'Trapezoid geometry' } },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -461,6 +462,14 @@ test('mortgage-points form exposes quoted rates, point cost, term, horizon and a
   assert.match(html, /name="rateWithPoints" type="number"[^>]+max="100"/u);
   assert.match(html, /name="horizonMonths" type="number"[^>]+max="600"/u);
   assert.match(html, /role="status" aria-live="polite"/u);
+});
+
+test('trapezoid form labels bases, height, offset, units and its accessible sketch', () => {
+  const html = renderGrowthForm('trapezoid-calculator', copies['trapezoid-calculator']);
+  for (const id of ['trapezoid-base-a', 'trapezoid-base-b', 'trapezoid-height', 'trapezoid-offset', 'trapezoid-unit']) assert.match(html, new RegExp(`for="${id}"`, 'u'));
+  assert.match(html, /data-trapezoid-shape/u);
+  assert.match(html, /aria-labelledby="trapezoid-diagram-title"/u);
+  assert.match(html, /data-action="calculate"/u);
 });
 
 test('dominoes form exposes localized play modes, draw/block choices, board, stock and hand', () => {

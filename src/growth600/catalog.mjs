@@ -432,6 +432,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/mortgage-points-calculator/logic.mjs',
   },
   {
+    id: 'trapezoid-calculator',
+    category: 'math',
+    type: 'geometry-calculator',
+    primaryIntent: 'trapezoid area calculator',
+    secondaryIntents: ['trapezoid calculator', 'trapezoid perimeter calculator', 'trapezoid side length calculator'],
+    functions: ['calculate area from two parallel bases and perpendicular height', 'derive both side lengths and perimeter from the top-base horizontal offset', 'show a responsive geometric sketch and keep every length in one selected unit'],
+    acceptance: 'Bases 6 and 4, height 3 and top offset 1 return area 15 and equal side lengths √10; invalid offsets that make the side edges cross are rejected.',
+    boundary: 'A convex trapezoid with one pair of parallel horizontal bases. All entered lengths must use the same selected unit. The offset determines the non-parallel side lengths; the diagram is illustrative, not scale-accurate. Geometry only, not a construction specification.',
+    relatedExistingIds: ['square-footage-calculator'],
+    logicModule: './tools/trapezoid-calculator/logic.mjs',
+  },
+  {
     id: 'miter-angle-calculator',
     category: 'home-materials',
     type: 'calculator',

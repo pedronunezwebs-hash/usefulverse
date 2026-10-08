@@ -22,7 +22,18 @@
 - [x] E — pruebas focalizadas de lógica, catálogo, formularios, contrato de localización y build: **130/130 aprobadas**; `node --check` y `git diff --check` limpios.
 - [x] X — Chrome local aislado: ejemplo calcula coste 2.000, reducción mensual 33,75 y neto estimado a 60 meses 519,23; con APR idéntica indica cero ahorros y que no se recupera el coste; principal inválido muestra error accesible. Móvil emulado 390×844 sin overflow; consola sin errores/avisos y solo solicitudes del propio servidor local.
 - [ ] B/P — no se validó el bundle minificado final ni su presupuesto con las dependencias de compilación fijadas. No está integrado ni desplegado, no se cambió sitemap ni se envió a buscadores. PageSpeed/Lighthouse no se ejecutó.
-- **Recuento al cerrar #164:** 67/323 candidatas implementadas en inglés; quedan 256 filas (255 candidatas válidas + una reserva). Incluidas las 277 herramientas protegidas, son 344 implementaciones inglesas/base; no equivale a páginas traducidas o publicadas.
+- **Recuento al cerrar #164:** 67/323 candidatas implementadas en inglés; quedaban 256 filas (255 candidatas válidas + una reserva). Incluidas las 277 herramientas protegidas, eran 344 implementaciones inglesas/base; no equivale a páginas traducidas o publicadas.
+
+## Continuación · Trapezoid Calculator (#165) · 2026-10-08
+
+- [x] C/F — herramienta geométrica distinta del calculador de superficie rectangular: área de trapecio desde bases paralelas y altura, lados/perímetro desde desplazamiento de la base superior, y croquis. El plan registra `trapezoid area calculator` 3.600 búsquedas/mes US/en, KD 10; `trapezoid calculator` 2.400, KD 0. No hubo nueva consulta a DataForSEO.
+- [x] E/X — área `(baseA + baseB) × height / 2`; lados derivados con Pitágoras; valida dimensiones finitas acotadas y rechaza desplazamientos que cruzan lados/no formen un cuadrilátero convexo. Desplazamiento no cambia el área. Todas las longitudes deben usar una unidad común; el área se rotula en unidades cuadradas.
+- [x] B — controles etiquetados, selector mm/cm/m/in/ft, diagrama accesible que se ajusta a la geometría, ejemplo, reinicio, copia y errores anunciados; matemáticas locales, sin APIs.
+- [x] L (fuente) — copy inglés con supuestos, límites, FAQs y fórmula. Los otros 35 idiomas son borradores estructurales marcados pendientes y bloqueados para publicación.
+- [x] E — pruebas focalizadas de lógica, catálogo, formulario, contrato de localización y build: **131/131 aprobadas**; sintaxis y `git diff --check` correctos.
+- [x] X — Chrome local aislado: ejemplo de bases 6/4, altura 3 y desplazamiento 1 devuelve área 15, lados √10 y perímetro 16,3246; un desplazamiento que cruza lados muestra el error. Móvil emulado 390×844 sin overflow; consola sin errores/avisos y solo solicitudes al servidor local de QA.
+- [ ] B/P — el bundle minificado final y su presupuesto quedan sin validar porque este checkout no tiene la dependencia de build fijada. No se integró/desplegó, no se cambió sitemap ni se informó a buscadores. PageSpeed/Lighthouse no se ejecutó.
+- **Recuento al cerrar #165:** 68/323 candidatas implementadas en inglés; quedan 255 filas (254 candidatas válidas + una reserva). Incluidas las 277 protegidas, son 345 implementaciones inglesas/base; no son páginas traducidas ni publicadas.
 
 ## Continuación · Polynomial Long Division Calculator (#162) · 2026-10-08
 

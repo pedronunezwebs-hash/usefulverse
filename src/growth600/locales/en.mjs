@@ -118,6 +118,8 @@ import halfLifeCalculatorCopies from './half-life-calculator-final.mjs';
 import { halfLifeCalculatorEnglishCopy } from './half-life-calculator.en.mjs';
 import mortgagePointsCalculatorCopies from './mortgage-points-calculator-final.mjs';
 import { mortgagePointsCalculatorEnglishCopy } from './mortgage-points-calculator.en.mjs';
+import trapezoidCalculatorCopies from './trapezoid-calculator-final.mjs';
+import { trapezoidCalculatorEnglishCopy } from './trapezoid-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -524,5 +526,6 @@ registerGrowthLocaleExtension(source, 'travel-itinerary-planner', { ...travelIti
 registerGrowthLocaleExtension(source, 'polynomial-long-division-calculator', { ...polynomialLongDivisionCopies, en: polynomialLongDivisionCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'half-life-calculator', { ...halfLifeCalculatorCopies, en: halfLifeCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'mortgage-points-calculator', { ...mortgagePointsCalculatorCopies, en: mortgagePointsCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'trapezoid-calculator', { ...trapezoidCalculatorCopies, en: trapezoidCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);
