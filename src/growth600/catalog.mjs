@@ -672,6 +672,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/dominoes-game/logic.mjs',
   },
   {
+    id: 'hitori',
+    category: 'games',
+    type: 'game',
+    primaryIntent: 'hitori puzzle',
+    secondaryIntents: ['hitori puzzle online', 'play hitori online', 'hitori number puzzle'],
+    functions: ['generate a fresh, uniquely solvable 5×5 to 8×8 number grid at three difficulty settings', 'mark cells black while keeping black cells apart and all remaining white cells connected', 'check the live board against every Hitori rule', 'request a one-cell hint without revealing the full answer', 'start over with another local puzzle'],
+    acceptance: 'For each supported size and difficulty the generator returns a grid with exactly one rule-valid solution; a correct solution removes every row/column duplicate, has no orthogonally adjacent black cells, and leaves all white cells connected.',
+    boundary: 'Single-player Hitori logic puzzle with locally generated, uniqueness-checked boards. No account, network request, timer requirement, saved score or uploaded moves. Puzzles are not an official competition or newspaper puzzle.',
+    relatedExistingIds: [],
+    logicModule: './tools/hitori/logic.mjs',
+  },
+  {
     id: 'weight-loss-calculator',
     category: 'health-math',
     type: 'calculator',

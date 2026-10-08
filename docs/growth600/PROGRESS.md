@@ -812,3 +812,15 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — 35 locales estructurales `pending-tool-specific-translation`; el gate impide publicación.
 - [ ] B/P/S — falta medir el bundle real minificado y resolver la traducción antes de los gates globales de publicación. La revisión visual fue en inglés y RTL sigue pendiente de copy RTL real. No se hizo deploy, el sitemap público queda intacto y no se envió nada a buscadores; no se ejecutó PageSpeed/Lighthouse.
 - **Recuento vigente:** 64/323 candidatas adicionales implementadas en inglés; quedan 259 entradas del plan (258 válidas + una reserva). Las 277 herramientas base no se tocaron. Esta candidata no cuenta como publicada.
+
+## Continuación · Hitori (#167) · 2026-10-08
+
+- [x] C/F/E — candidato único incorporado al catálogo como rompecabezas Hitori, no sudoku ni nonogram. Tableros 5×5 a 8×8, tres niveles, selección con ratón/táctil y teclado, comprobación de reglas, pista de una celda y reinicio.
+- [x] Generador acotado — prueba de solución única con máximo de dos resultados, reglas de duplicados por fila/columna, negros no adyacentes y blancos conectados; si agota intentos usa una plantilla única validada y transformada aleatoriamente. La suite prueba las 12 combinaciones de tamaño/nivel y puzzles con semillas diferentes.
+- [x] Accesibilidad — rejilla/filas/celdas semánticas, nombres que anuncian coordenada/valor/color, `aria-pressed`, foco único y navegación por flechas; mensajes de estado para resolver, validar, pedir pista y cambiar marca.
+- [x] Integración — formulario y CSS del tablero; extensión de idioma; catálogo comprueba IDs únicos y no colisión con las 277 herramientas protegidas. El contrato exige campos, acciones, mensajes y dos FAQs.
+- [x] Pruebas focalizadas finales: `node --test src/growth600/catalog.test.mjs src/growth600/forms.test.mjs src/growth600/locale-contract.test.mjs src/growth600/render.test.mjs src/growth600/build.test.mjs src/growth600/tools/hitori/logic.test.mjs` — **141/141 aprobadas**. Incluye plantillas fallback únicas en las 12 combinaciones. `node --check` para lógica, controlador y fuentes de idioma; `git diff --check` limpio.
+- [ ] No se pudo medir el bundle real ni probar el controlador en Chrome en este entorno porque `node_modules` y `esbuild` no están disponibles; no instalé dependencias. No registrar como navegador verificado.
+- [ ] L — inglés listo; otros 35 idiomas permanecen `pending-tool-specific-translation`, comprobado por un test que exige que el release gate los rechace. Las traducciones de fixture de build no aprueban copy real ni abren el gate de producción.
+- [ ] P/S — no desplegado, sin merge y sin cambios ni envíos del sitemap de producción.
+- **Recuento vigente:** 70/323 candidatos con implementación inglesa en catálogo; 253 filas por resolver (252 válidas y una reserva, según el plan). Las 277 herramientas existentes están intactas. Hitori cuenta como implementación inglesa, no como herramienta completamente localizada/publicada.

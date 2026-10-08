@@ -57,6 +57,7 @@ export function renderGrowthForm(toolId, copy) {
     'asphalt-calculator': ['area', 'areaUnit', 'compactedThickness', 'thicknessUnit', 'density', 'densityUnit', 'wastePercent', 'pricePerTonne', 'accuracyNote', 'relatedConcreteCalculator'],
     mancala: ['mode'],
     'dominoes-game': ['mode', 'variant', 'board', 'stock', 'hand', 'opponentHand', 'accuracyNote'],
+    hitori: ['size', 'difficulty', 'board', 'rules', 'accuracyNote', 'cell', 'row', 'column', 'black', 'white'],
   'weight-loss-calculator': ['currentWeight', 'targetWeight', 'dailyDeficit', 'unit', 'methodNote', 'healthNote', 'sourceNiddk', 'sourceCdc'],
     'heloc-calculator': ['creditLimit', 'balance', 'annualApr', 'drawMonths', 'repaymentMonths', 'currency', 'accuracyNote', 'relatedLoanCalculator'],
     'random-team-generator': ['names', 'teamCount', 'separations', 'separationsHint', 'seed', 'seedHint', 'privacyNote'],
@@ -129,6 +130,7 @@ export function renderGrowthForm(toolId, copy) {
     'asphalt-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     mancala: ['newGame', 'rules', 'result', 'computer', 'twoPlayers'],
     'dominoes-game': ['newGame', 'draw', 'pass', 'playLeft', 'playRight', 'computer', 'twoPlayers', 'drawRule', 'blockRule'],
+    hitori: ['newGame', 'checkBoard', 'hint', 'clearMarks', 'easy', 'medium', 'hard'],
   'weight-loss-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilograms', 'pounds', 'dayUnit', 'weekUnit', 'kilocalories', 'perWeek'],
   'heloc-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
   'random-team-generator': ['generateTeams', 'reset', 'example', 'copy', 'download', 'result', 'team', 'participant', 'seedLabel'],
@@ -443,6 +445,15 @@ export function renderGrowthForm(toolId, copy) {
     <section aria-labelledby="domino-hand-heading"><h2 id="domino-hand-heading">${escapeGrowthHtml(fields.hand)}</h2><ul class="domino-hand" data-hand></ul></section><section data-opponent-hand hidden><h2>${escapeGrowthHtml(fields.opponentHand)}</h2><p data-opponent-count></p></section>
     <section class="result" data-result hidden><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div></section>
     <div class="actions"><button type="button" data-action="draw" class="button button--secondary">${escapeGrowthHtml(labels.draw)}</button><button type="button" data-action="pass" class="button button--secondary">${escapeGrowthHtml(labels.pass)}</button></div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);
+
+  if (toolId === 'hitori') return attachCopy(`<section class="game hitori-game" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="game-toolbar"><div class="field"><label for="hitori-size">${escapeGrowthHtml(fields.size)}</label><select id="hitori-size" data-size><option value="5">5 × 5</option><option value="6">6 × 6</option><option value="7">7 × 7</option><option value="8">8 × 8</option></select></div>
+      <div class="field"><label for="hitori-difficulty">${escapeGrowthHtml(fields.difficulty)}</label><select id="hitori-difficulty" data-difficulty><option value="easy">${escapeGrowthHtml(labels.easy)}</option><option value="medium">${escapeGrowthHtml(labels.medium)}</option><option value="hard">${escapeGrowthHtml(labels.hard)}</option></select></div>
+      <button type="button" data-action="new-game" class="button button--primary">${escapeGrowthHtml(labels.newGame)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section aria-labelledby="hitori-board-heading"><h2 id="hitori-board-heading">${escapeGrowthHtml(fields.board)}</h2><div class="hitori-grid" data-board role="grid" aria-label="${escapeGrowthHtml(fields.board)}"></div></section>
+    <div class="actions"><button type="button" data-action="check-board" class="button button--primary">${escapeGrowthHtml(labels.checkBoard)}</button><button type="button" data-action="hint" class="button button--secondary">${escapeGrowthHtml(labels.hint)}</button><button type="button" data-action="clear-marks" class="button button--secondary">${escapeGrowthHtml(labels.clearMarks)}</button></div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);
 
   if (toolId === 'weight-loss-calculator') return attachCopy(`<form id="tool-form" novalidate>

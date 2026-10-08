@@ -29,6 +29,8 @@ import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
 import imageColorPickerCopies from './image-color-picker-final.mjs';
 import { imageColorPickerEnglishCopy } from './image-color-picker.en.mjs';
 import dominoesCopies from './dominoes-game-final.mjs';
+import hitoriCopies from './hitori-final.mjs';
+import { hitoriEnglishCopy } from './hitori.en.mjs';
 import weightLossCopies from './weight-loss-calculator-final.mjs';
 import helocCopies from './heloc-calculator-final.mjs';
 import { helocCalculatorEnglishCopy } from './heloc-calculator.en.mjs';
@@ -530,5 +532,6 @@ registerGrowthLocaleExtension(source, 'half-life-calculator', { ...halfLifeCalcu
 registerGrowthLocaleExtension(source, 'mortgage-points-calculator', { ...mortgagePointsCalculatorCopies, en: mortgagePointsCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'trapezoid-calculator', { ...trapezoidCalculatorCopies, en: trapezoidCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'prayer-times-calculator', { ...prayerTimesCalculatorCopies, en: prayerTimesCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'hitori', { ...hitoriCopies, en: hitoriEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

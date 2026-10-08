@@ -34,6 +34,11 @@ const copies = {
     messages: { ...messages, played: 'Tile played.', drew: 'Tile drawn.', passed: 'Turn passed.', noMoves: 'No legal move.', stockEmpty: 'The stock is empty.' },
     fields: { mode: 'Play mode', variant: 'Rules', board: 'Domino line', stock: 'Tiles left', hand: 'Your tiles', opponentHand: 'Opponent tiles', accuracyNote: 'Local play only.', rules: 'Match one open end.' },
   },
+  hitori: {
+    name: 'Hitori puzzle', actions: { ...actions, newGame: 'New puzzle', checkBoard: 'Check board', hint: 'Hint', clearMarks: 'Clear marks', easy: 'Easy', medium: 'Medium', hard: 'Hard' },
+    messages: { ...messages },
+    fields: { size: 'Grid size', difficulty: 'Difficulty', board: 'Hitori grid', rules: 'Rules', accuracyNote: 'Unique local puzzles.', cell: 'Cell', row: 'row', column: 'column', black: 'black', white: 'white' },
+  },
   'weight-loss-calculator': {
     name: 'Weight loss scenario calculator', actions: { ...actions, dayUnit: 'days', weekUnit: 'weeks', kilocalories: 'kcal', perWeek: 'per week' },
     messages: { ...messages, weightToLose: 'Weight difference', energyEquivalent: 'Linear energy equivalent', timeline: 'Timeline', weeklyRate: 'Weekly rate', noDeficitChange: 'Zero modeled change.', paceNote: 'This is not a recommended target.' },
@@ -491,6 +496,16 @@ test('dominoes form exposes localized play modes, draw/block choices, board, sto
   assert.match(html, /data-action="draw"/u);
   assert.match(html, /data-action="pass"/u);
   assert.match(html, /aria-live="polite"/u);
+});
+
+test('Hitori form exposes localized grid settings, accessible game grid and rule actions', () => {
+  const html = renderGrowthForm('hitori', copies.hitori);
+  assert.match(html, /data-size/u);
+  assert.match(html, /data-difficulty/u);
+  assert.match(html, /role="grid"/u);
+  assert.match(html, /data-action="check-board"/u);
+  assert.match(html, /data-action="hint"/u);
+  assert.match(html, /data-action="clear-marks"/u);
 });
 
 test('random team form exposes accessible participant, balance, constraint, seed, copy and CSV controls', () => {
