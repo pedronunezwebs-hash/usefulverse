@@ -6,6 +6,12 @@
 
 Este bloque prevalece sobre notas históricas de etapas anteriores que describen despliegues o traducciones todavía pendientes en ese momento.
 
+- [x] Implementación local de la ficha #138/323, `kinetic-energy-calculator`: herramienta nueva y diferenciada; las 277 herramientas protegidas y las 83 ya publicadas permanecen intactas. La ficha conserva el contrato en `PLAN-600.md`.
+- [x] Gates locales C/F/E/X/L/B de la ficha #138: cálculo directo e inverso, energía potencial respecto a referencia, validaciones, copia, interfaz/SEO en 36 idiomas y rutas completas; 1.262 pruebas de la suite pasan. La revisión de navegador confirmó 9 J para 2 kg a 3 m/s, velocidad inversa 3 m/s desde 9 J, copia confirmada, cero errores de consola, cuatro solicitudes solo al origen local y sin overflow a 390 px. Muestra RTL árabe y CJK japonés completas.
+- [x] `npm run check`: 10.260 URLs del sitio principal, build check correcto. `npm run build:growth600`: 3.060 páginas (84 herramientas × 36 idiomas + 36 portadas), 3.195 archivos y 94.773.176 bytes; sitemap local con 3.060 `<loc>` únicos. Gate de copia en 36 idiomas: pasa. El flujo Google Translate omitió dos etiquetas maratíes en una respuesta; se tradujeron y validaron antes del build.
+- [ ] Gates P/S de la ficha #138: aún sin commit integrado, publicación pública, comprobación de URL/sitemap en producción ni reenvío del sitemap a buscadores. Hasta cerrar esos pasos, el hub productivo sigue en 83 herramientas y 3.024 URLs; no declarar la nueva URL publicada.
+- [ ] Próximo paso inmediato: revisar diff/CI, integrar la rama, publicar el hub `usefulverse-tools` con el workflow existente, validar en producción la URL y el sitemap con 3.060 URLs y actualizar estados de paneles accesibles. Después continuar la siguiente ficha pendiente única del plan, manteniendo intactas las 277 originales.
+
 - [x] Publicación de la tanda actual: PR #39 integrado en `main` mediante merge `ded42fed1b0b6893418f5442116bc6017022f72d`; los workflows `37755257144` (sitio principal) y `37755770160` (hub) finalizaron con éxito.
 - [x] Traducción: las 83 herramientas de Growth600 están en los 36 idiomas activos. Las 58 traducciones nuevas de esta tanda se hicieron rápidamente con Google Translate por bloques; son traducciones automáticas comprensibles, aprobadas como `machine-accepted`, no revisiones nativas. No repetir esta tanda al reanudar.
 - [x] Sitemap público del hub: `https://tools.usefulverse.com/sitemap.xml` respondió HTTP 200 con 3.024 URLs únicas (83 herramientas × 36 idiomas + 36 portadas). El sitemap del sitio principal conserva 10.260 URLs. Son hosts/sitemaps distintos.
@@ -14,7 +20,7 @@ Este bloque prevalece sobre notas históricas de etapas anteriores que describen
 - [x] Yandex Webmaster: propiedad separada de `https://tools.usefulverse.com` verificada como Owner por DNS TXT. Se añadió `https://tools.usefulverse.com/sitemap.xml`; Yandex confirmó que está en la cola de procesamiento (puede tardar 1–2 semanas). El TXT de verificación se conserva en Cloudflare DNS.
 - [ ] Naver Search Advisor: la pestaña del panel llegó a inicio de sesión. Falta que el propietario inicie sesión, confirmar/añadir la propiedad del subdominio, y enviar allí el sitemap. No se cambió configuración ni se envió nada a Naver.
 - [ ] Tras procesarse Google/Bing/Yandex/Naver, registrar fechas/estados visibles y distinguir “enviado”, “procesado”, “URLs descubiertas” e “indexado”. No afirmar indexación por el mero envío. Los sitemaps y `robots.txt` son públicos y favorecen el descubrimiento aunque un panel no esté accesible.
-- [ ] Próxima implementación: al retomar, leer este punto y `PLAN-600.md`, continuar en la primera ficha sin completar que siga siendo única y pendiente; no reescribir ni alterar las 277 herramientas protegidas ni duplicar las 83 ya publicadas. Confirmar el catálogo/plan actuales en `main` antes de escoger la ficha siguiente.
+- [ ] Próxima implementación tras cerrar P/S de #138: releer este punto y `PLAN-600.md`, continuar en la siguiente ficha única sin completar; no reescribir ni alterar las 277 herramientas protegidas ni duplicar las 83 herramientas del hub ya publicadas ni esta candidata pendiente de despliegue. Confirmar el catálogo/plan actuales en `main` antes de escoger la ficha siguiente.
 
 ### Método breve de traducción que se debe conservar
 

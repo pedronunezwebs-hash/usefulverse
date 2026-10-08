@@ -995,6 +995,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['scientific-calculator'],
     logicModule: './tools/complex-number-calculator/logic.mjs',
   },
+  {
+    id: 'kinetic-energy-calculator',
+    category: 'physics-math',
+    type: 'calculator',
+    primaryIntent: 'kinetic energy calculator',
+    secondaryIntents: ['kinetic and potential energy calculator', 'calculate speed from kinetic energy'],
+    functions: ['calculate kinetic energy from mass and speed', 'calculate gravitational potential energy relative to an explicitly chosen zero-height reference', 'solve speed from mass and kinetic energy', 'show the assumed gravitational acceleration and total mechanical energy without modeling losses'],
+    acceptance: 'A 2 kg object moving at 3 m/s has 9 J of kinetic energy; at zero reference height its gravitational potential energy is 0 J.',
+    boundary: 'Ideal classical mechanics estimate. Height is relative to the user-selected zero level; negative potential energy is valid below that level. It ignores friction, air resistance, rotation and relativistic effects. Gravity is entered by the user (9.80665 m/s² is the example default); no location-based value is inferred. Calculation stays in this browser.',
+    relatedExistingIds: ['unit-converter'],
+    logicModule: './tools/kinetic-energy-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {
