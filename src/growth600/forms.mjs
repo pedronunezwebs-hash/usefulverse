@@ -65,6 +65,7 @@ export function renderGrowthForm(toolId, copy) {
     'hashi-puzzle': ['difficulty', 'board', 'rules', 'accuracyNote', 'island', 'needs', 'current', 'bridge', 'to', 'toggleHint'],
     'chess-opening-trainer': ['opening', 'side', 'white', 'black', 'board', 'moves', 'progressLabel', 'square', 'empty', 'accuracyNote', 'rules', 'opening_italian', 'opening_sicilian', 'opening_ruy_lopez', 'opening_french', 'opening_caro_kann', 'opening_queens_gambit', 'opening_london', 'opening_scandinavian', 'opening_english', 'opening_kings_indian', 'piece_wp', 'piece_wn', 'piece_wb', 'piece_wr', 'piece_wq', 'piece_wk', 'piece_bp', 'piece_bn', 'piece_bb', 'piece_br', 'piece_bq', 'piece_bk'],
     'decibel-calculator': ['mode', 'powerMode', 'amplitudeMode', 'dbToPowerMode', 'dbToAmplitudeMode', 'sumMode', 'applyMode', 'ratio', 'inputDb', 'levels', 'inputLevel', 'gainDb', 'accuracyNote', 'assumptionsNote'],
+    'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
     'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
@@ -171,6 +172,7 @@ export function renderGrowthForm(toolId, copy) {
     'hashi-puzzle': ['newGame', 'checkBoard', 'hint', 'undo', 'clearBoard', 'rules', 'easy', 'regular', 'hard'],
     'chess-opening-trainer': ['newGame', 'hint', 'rules'],
     'decibel-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
@@ -247,6 +249,17 @@ export function renderGrowthForm(toolId, copy) {
     </div>
     <div class="actions">${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
+  </form>`, copy);
+
+  if (toolId === 'openapi-editor') return attachCopy(`<form id="tool-form" class="openapi-editor" novalidate>
+    ${label('openapi-format', fields.format, `<select id="openapi-format" name="format"><option value="auto">${escapeGrowthHtml(fields.autoFormat)}</option><option value="json">${escapeGrowthHtml(fields.jsonFormat)}</option><option value="yaml">${escapeGrowthHtml(fields.yamlFormat)}</option></select>`)}
+    ${label('openapi-document', fields.document, '<textarea id="openapi-document" name="document" rows="20" maxlength="300000" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-describedby="openapi-accuracy" required></textarea>')}
+    <p id="openapi-accuracy" class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <p class="hint"><label for="openapi-file">${escapeGrowthHtml(fields.upload)}</label> <input id="openapi-file" type="file" accept=".json,.yaml,.yml,application/json,text/yaml,application/yaml" data-openapi-file></p>
+    <p class="hint"><a href="/assets/licenses/js-yaml-LICENSE.txt" target="_blank" rel="noopener noreferrer">${escapeGrowthHtml(fields.yamlLicense)}</a></p>
+    <div class="actions"><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(actions.example)}</button><button type="button" data-action="format" class="button button--secondary">${escapeGrowthHtml(actions.format)}</button><button type="submit" data-action="validate" class="button button--primary">${escapeGrowthHtml(actions.validate)}</button><button type="button" data-action="download" class="button button--secondary">${escapeGrowthHtml(actions.download)}</button><button type="button" data-action="copy-report" class="button button--secondary">${escapeGrowthHtml(actions.copyReport)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-openapi-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.previewTitle)}</h2><p data-openapi-summary></p><ol data-openapi-operations></ol><h3>${escapeGrowthHtml(fields.issues)}</h3><ul data-openapi-issues></ul></section>
   </form>`, copy);
 
   if (toolId === 'image-region-redactor') return attachCopy(`<form id="tool-form" novalidate>

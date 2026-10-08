@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 98);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 98);
+  assert.equal(growthPilotTools.length, 99);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 99);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -32,6 +32,15 @@ test('decibel calculator does logarithmic ratios and incoherent-level sums, not 
   assert.equal(calculator.primaryIntent, 'decibel calculator');
   assert.match(calculator.boundary, /does not measure SPL/u);
   assert.match(calculator.functions.join(' '), /sum 2 to 20 incoherent sound levels/u);
+});
+
+test('OpenAPI editor stays a local contract editor and does not duplicate request-builder intent', () => {
+  const editor = growthPilotTools.find(({ id }) => id === 'openapi-editor');
+  assert.ok(editor);
+  assert.equal(editor.primaryIntent, 'swagger editor online');
+  assert.match(editor.boundary, /never fetched/u);
+  assert.match(editor.functions.join(' '), /without making API requests/u);
+  assert.deepEqual(editor.relatedExistingIds, ['api-request-builder', 'json-yaml-converter', 'schema-markup-validator']);
 });
 
 test('the additive catalog rejects protected-ID collisions, duplicate IDs and incomplete contracts', () => {
