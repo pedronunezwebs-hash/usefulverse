@@ -578,6 +578,19 @@ test('the first Google Translate Japanese draft covers every copy key and preser
   assert.equal(japaneseGrowthCopy.mancala.messages.turn, '{player}の番です。');
 });
 
+test('RTF Converter has machine-accepted complete copy in all 36 locales and stays within SEO metadata budgets', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'rtf-converter');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.fields.file.trim().length > 0, true, key);
+    assert.equal(copy.fields.limitNote.trim().length > 0, true, key);
+    assert.equal(copy.actions.print.trim().length > 0, true, key);
+    assert.equal(copy.additionalFaqs.length, 3, key);
+  }
+});
+
 test('the first Google Translate Korean draft covers every copy key and preserves required placeholders', () => {
   assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'ko' }], { ko: koreanGrowthCopy }), true);
   assert.ok(Object.values(koreanGrowthCopy).every((copy) => copy.copyLanguage === 'ko'));

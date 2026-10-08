@@ -1055,6 +1055,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['gear-ratio-calculator'],
     logicModule: './tools/horsepower-calculator/logic.mjs',
   },
+  {
+    id: 'rtf-converter',
+    category: 'document-tools',
+    type: 'document-converter',
+    primaryIntent: 'rtf to pdf converter',
+    secondaryIntents: ['rtf converter', 'rtf to text converter', 'open rtf file online'],
+    functions: ['extract readable paragraphs, tabs, Unicode text and common symbols from a local RTF file', 'ignore RTF control words and embedded metadata instead of exposing formatting codes as text', 'copy or download the extracted text, or open a print dialog to save it as PDF when the browser supports printing'],
+    acceptance: 'RTF control words are not shown as document text; Unicode and escaped characters remain readable; the original RTF file is never changed or uploaded.',
+    boundary: 'Extracts text only from RTF documents up to 5 MiB; it does not preserve the original layout, images, tables or all Word-specific formatting. PDF output uses the browser print dialog and its available fonts/printer settings. Conversion stays on the device; the source file remains unchanged.',
+    relatedExistingIds: ['pdf-document-converter'],
+    logicModule: './tools/rtf-converter/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

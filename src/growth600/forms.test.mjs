@@ -262,6 +262,10 @@ const copies = {
     messages: { ...messages, torque: 'Torque', rpm: 'Engine speed', power: 'Power', watts: 'Watts', kilowatts: 'Kilowatts', horsepower: 'Mechanical horsepower', metricHorsepower: 'Metric horsepower (PS)' },
     fields: { mode: 'Calculate', solvePower: 'Power from torque and RPM', solveTorque: 'Torque from power and RPM', solveRpm: 'RPM from power and torque', torque: 'Torque', torqueUnit: 'Torque unit', rpm: 'Engine speed (RPM)', power: 'Power', powerUnit: 'Power unit', accuracyNote: 'Ideal shaft power only.' },
   },
+  'rtf-converter': {
+    name: 'RTF converter', actions: { ...actions, convert: 'Convert to text', print: 'Print or save as PDF' }, messages: { ...messages },
+    fields: { file: 'Choose RTF file', limitNote: '5 MiB local limit.', accuracyNote: 'Text extraction only.', output: 'Extracted text' },
+  },
   'compression-ratio-calculator': {
     name: 'Compression ratio calculator', actions: { ...actions, millimeters: 'Millimeters', inches: 'Inches' },
     messages: { ...messages, ratio: 'Static compression ratio', sweptVolume: 'Swept volume', clearanceVolume: 'Clearance volume', totalDisplacement: 'Total displacement', boreStroke: 'Bore to stroke' },
@@ -844,4 +848,16 @@ test('pilot form renderer blocks missing translated fields or actions instead of
   assert.throws(() => renderGrowthForm('molar-mass-calculator', { actions, fields: {} }), /localized form fields/);
   assert.throws(() => renderGrowthForm('mancala', { name: 'Mancala', fields: copies.mancala.fields, actions: {} }), /localized form actions/);
   assert.throws(() => renderGrowthForm('unknown', { actions, fields: {} }), /localized form fields/);
+});
+
+test('RTF converter form accepts one local RTF file and exposes copy, text download and print-to-PDF actions', () => {
+  const html = renderGrowthForm('rtf-converter', {
+    fields: { file: 'Choose RTF file', limitNote: '5 MiB local limit.', accuracyNote: 'Text extraction only.', output: 'Extracted text' },
+    actions: { convert: 'Convert to text', reset: 'Clear', copy: 'Copy', download: 'Download text', print: 'Print or save as PDF', result: 'Converted text' },
+  });
+  assert.match(html, /type="file" accept="\.rtf,application\/rtf,text\/rtf"/u);
+  assert.match(html, /name="output"[^>]+readonly/u);
+  for (const action of ['convert', 'reset', 'copy', 'download', 'print']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
+  assert.match(html, /role="status" aria-live="polite"/u);
+  assert.doesNotMatch(html, /<form[^>]+action=/u);
 });
