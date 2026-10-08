@@ -768,6 +768,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/decibel-calculator/logic.mjs',
   },
   {
+    id: 'openapi-editor',
+    category: 'developer-tools',
+    type: 'editor',
+    primaryIntent: 'swagger editor online',
+    secondaryIntents: ['openapi editor', 'openapi yaml editor', 'openapi json editor'],
+    functions: ['edit and format OpenAPI 3.0/3.1 JSON or YAML locally', 'lint key OpenAPI structure and operation contracts', 'resolve local JSON Pointer references and reject remote references', 'preview paths, methods and response codes without making API requests', 'import and export a bounded local contract file'],
+    acceptance: 'A valid 3.1 contract previews operations; missing operationId/responses and unresolved or remote $ref are flagged; the editor never contacts a described API or a remote reference; large or malformed input is handled without locking the page.',
+    boundary: 'A practical structural lint and documentation preview, not complete official OpenAPI schema conformance, a generated client, request runner, security audit, or API availability checker. Only local JSON Pointer $ref is allowed; external references are rejected and never fetched.',
+    relatedExistingIds: ['api-request-builder', 'json-yaml-converter', 'schema-markup-validator'],
+    logicModule: './tools/openapi-editor/logic.mjs',
+  },
+  {
     id: 'color-name-finder',
     category: 'design-tools',
     type: 'utility',

@@ -76,6 +76,8 @@ import chessOpeningTrainerCopies from './chess-opening-trainer.mjs';
 import { chessOpeningTrainerEnglishCopy } from './chess-opening-trainer.en.mjs';
 import decibelCalculatorCopies from './decibel-calculator.mjs';
 import { decibelCalculatorEnglishCopy } from './decibel-calculator.en.mjs';
+import openApiEditorCopies from './openapi-editor.mjs';
+import { openApiEditorEnglishCopy } from './openapi-editor.en.mjs';
 import { workOrderGeneratorEnglishCopy } from './work-order-generator.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
@@ -785,5 +787,37 @@ registerGrowthLocaleExtension(source, 'decibel-calculator', {
   zh_tw: { ...decibelCalculatorCopies.zh_tw, title: '免費分貝計算器和 dB 轉換器 | UsefulVerse' },
   ja: { ...decibelCalculatorCopies.ja, title: '無料デシベル計算機・dB変換 | UsefulVerse' },
 }, 'complex-number-calculator');
+const openApiEditorTraditionalChineseCopy = {
+  ...openApiEditorCopies.zh_tw,
+  description: '在本機編輯及檢查 OpenAPI 3.0 或 3.1 的 JSON 與 YAML。免費編輯器，支援本機參照和文件預覽。',
+  howQuestion: '可以在這裡測試 API 端點嗎？',
+  fields: {
+    ...openApiEditorCopies.zh_tw.fields,
+    upload: '匯入 JSON 或 YAML 檔案（上限 300 KB）',
+    accuracyNote: '檢查常見的 OpenAPI 3.0/3.1 結構與本機參照；不代表完整的標準認證。遠端 $ref 連結會被拒絕，不會擷取。此工具不會連線至任何 API 端點。',
+  },
+  messages: {
+    ...openApiEditorCopies.zh_tw.messages,
+    formatted: '已在本機格式化文件。',
+    copyUnavailable: '無法使用剪貼簿。',
+    rootObject: '文件根節點必須是物件。',
+    version: '請使用 OpenAPI 3.0.x 或 3.1.x 版本。',
+    info: '請加入 info.title 和 info.version。',
+  },
+};
+const openApiEditorReleaseCopies = Object.fromEntries(
+  Object.entries({ ...openApiEditorCopies, en: openApiEditorEnglishCopy, zh_tw: openApiEditorTraditionalChineseCopy })
+    .map(([locale, copy]) => [locale, {
+      ...copy,
+      title: `${[...(copy.title.split(/\s*\|/u, 1)[0].trim())].slice(0, 47).join('').trim()} | UsefulVerse`,
+      copyLanguage: locale,
+      localizationStatus: 'machine-accepted',
+      localizationAcceptedBy: 'site-owner',
+      localizationAcceptedAt: '2026-10-09',
+    }]),
+);
+registerGrowthLocaleExtension(source, 'openapi-editor', {
+  ...openApiEditorReleaseCopies,
+}, 'decibel-calculator');
 
 export default Object.freeze(source);
