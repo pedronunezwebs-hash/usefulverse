@@ -108,6 +108,8 @@ import mindMapMakerCopies from './mind-map-maker-final.mjs';
 import { mindMapMakerEnglishCopy } from './mind-map-maker.en.mjs';
 import moodTrackerCopies from './mood-tracker-final.mjs';
 import { moodTrackerEnglishCopy } from './mood-tracker.en.mjs';
+import journalOnlineCopies from './journal-online-final.mjs';
+import { journalOnlineEnglishCopy } from './journal-online.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -509,5 +511,6 @@ registerGrowthLocaleExtension(source, 'compression-ratio-calculator', { ...compr
 registerGrowthLocaleExtension(source, 'goal-planner', { ...goalPlannerCopies, en: goalPlannerEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'mind-map-maker', { ...mindMapMakerCopies, en: mindMapMakerEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'mood-tracker', { ...moodTrackerCopies, en: moodTrackerEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'journal-online', { ...journalOnlineCopies, en: journalOnlineEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

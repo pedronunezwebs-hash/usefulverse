@@ -416,7 +416,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Función mínima y ampliaciones útiles:** Comparar neumáticos por ancho, perfil y llanta; diámetro, perímetro, giro, desviación de velocímetro y dibujo. No certificar compatibilidad mecánica.
 - **Prueba de aceptación específica:** 205/55R16 da diámetro nominal 631.9 mm; el mismo tamaño da diferencia cero.
 - **Frontera con otras herramientas:** unit-converter: geometría y comparación de neumáticos, no conversión de unidades aislada. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Motor y experiencia en inglés implementados; la lógica, el bundle local y el build están probados. Otras 35 traducciones permanecen pendientes. El caso específico se amplió a prueba de reemplazo, cifrado autenticado, límites distintos de backup cifrado y normal, y ausencia de red.
 - **Consultas secundarias del mismo propietario:**
   - `tire diameter calculator` — sin métrica obtenida; no atribuir volumen.
   - `tire size calculator free online`; `tire size calculator with example`; `tire size calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -3680,11 +3680,11 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 160 · Journal Online
 
-- [ ] **C/F/E/X/L/B/P/S completos — `journal-online`**
+- [ ] **C/F/E/X/L/B/P/S completos — `journal-online`** (motor y experiencia de escritorio implementados; faltan traducciones y gates globales)
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/journal-online/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `journal online` — 4.400 búsquedas/mes US/en, KD 51; nivel B. CPC 3.03 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Entradas por fecha, búsqueda local, exportación y borrado; cifrado opcional bien implementado y sin presentar local Storage como una caja fuerte.
-- **Prueba de aceptación específica:** Datosno se envían ybackup recuperable
+- **Prueba de aceptación específica:** Crear varias entradas el mismo día; editar sin duplicar; buscar por título/cuerpo/etiquetas y filtrar por fechas; eliminar una o todas; el guardado local solo ocurre tras consentimiento explícito y se elimina al desactivarlo; importar/exportar JSON válido; backup cifrado AES-GCM de ida y vuelta, contraseña incorrecta y archivo alterado rechazados; avisar si falla el borrado del almacenamiento; confirmar cero peticiones de red con datos de diario.
 - **Frontera con otras herramientas:** local-notepad: diaryestructurado no texto único. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**

@@ -372,6 +372,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/mood-tracker/logic.mjs',
   },
   {
+    id: 'journal-online',
+    category: 'productivity',
+    type: 'private-diary',
+    primaryIntent: 'journal online',
+    secondaryIntents: ['online journal with search', 'private journal in browser', 'daily journal online', 'journal backup and export'],
+    functions: ['write multiple dated journal entries with titles and optional tags', 'search entry titles, body text and tags and filter by a date range entirely in this browser', 'optionally save entries in this browser with a clear warning that browser storage is not a secure vault', 'export/import a validated portable JSON backup, or optionally encrypt a backup with the browser Web Crypto API and a user-held passphrase'],
+    acceptance: 'Create two dated entries with overlapping text; title/body/tag search and a date filter return only matches; edit and delete affect the stable entry ID. A plain JSON backup round-trips. An encrypted AES-GCM backup decrypts with the right passphrase and fails with a wrong one or altered ciphertext. Data is not saved unless storage is explicitly enabled; disabling it removes the persisted copy but keeps the active tab copy in memory.',
+    boundary: 'A single-device personal writing tool, not a cloud-synced diary, account, reminder service, password manager, therapy or clinical product. Browser persistence is plain browser storage and can be exposed by access to the browser profile; it is never described as encrypted. Only an explicitly exported encrypted backup uses AES-GCM with a key derived locally from a passphrase; the passphrase is not transmitted or stored. Losing it makes that encrypted backup unrecoverable. All work is local; no server, analytics payload or API is added.',
+    relatedExistingIds: ['local-notepad'],
+    logicModule: './tools/journal-online/logic.mjs',
+  },
+  {
     id: 'miter-angle-calculator',
     category: 'home-materials',
     type: 'calculator',

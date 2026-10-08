@@ -43,6 +43,7 @@ export function renderGrowthForm(toolId, copy) {
     'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
     'mood-tracker': ['date', 'mood', 'note', 'tags', 'saveConsent', 'privacyNote', 'consentHint', 'calendarLabel', 'monthLabel', 'selectedEntry', 'weekdaySun', 'weekdayMon', 'weekdayTue', 'weekdayWed', 'weekdayThu', 'weekdayFri', 'weekdaySat', 'mood1', 'mood2', 'mood3', 'mood4', 'mood5', 'tagCalm', 'tagAnxious', 'tagSad', 'tagHappy', 'tagTired', 'tagFocused', 'tagStressed', 'tagHopeful', 'tagGrateful', 'tagAngry', 'summaryLabel', 'averageLabel', 'countLabel', 'distributionLabel', 'noEntries', 'accuracyNote', 'importHint', 'sourceNote'],
+    'journal-online': ['date', 'title', 'body', 'tags', 'search', 'dateFrom', 'dateTo', 'saveConsent', 'storageNote', 'encryptionNote', 'backupPassword', 'confirmPassword', 'entriesLabel', 'resultLabel', 'noEntries', 'countLabel', 'tagHint', 'importHint', 'passwordHint', 'exampleHint', 'exampleTitle', 'exampleBody', 'exampleTags', 'safetyNote'],
     'auto-loan-refinance-calculator': ['balance', 'currentApr', 'currentMonths', 'newApr', 'newMonths', 'fees', 'feeTreatment'],
     'secret-santa-generator': ['names', 'exclusions'],
     'tire-size-calculator': ['originalSize', 'replacementSize', 'indicatedSpeed', 'speedUnit', 'fitmentNote'],
@@ -107,7 +108,8 @@ export function renderGrowthForm(toolId, copy) {
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
-    'mood-tracker': ['saveEntry', 'updateEntry', 'example', 'reset', 'removeEntry', 'clearHistory', 'previousMonth', 'nextMonth', 'export', 'import', 'result'],
+  'mood-tracker': ['saveEntry', 'updateEntry', 'example', 'reset', 'removeEntry', 'clearHistory', 'previousMonth', 'nextMonth', 'export', 'import', 'result'],
+  'journal-online': ['saveEntry', 'updateEntry', 'newEntry', 'example', 'reset', 'search', 'clearSearch', 'deleteEntry', 'clearAll', 'exportJson', 'importJson', 'saveBackup', 'result'],
     'auto-loan-refinance-calculator': ['calculate', 'reset', 'copy', 'result'],
     'secret-santa-generator': ['generate', 'reset', 'copy', 'download', 'result', 'reveal', 'next', 'privacyNote'],
     'tire-size-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kmh', 'mph'],
@@ -1024,6 +1026,38 @@ export function renderGrowthForm(toolId, copy) {
         <section aria-labelledby="mood-selected-heading"><h3 id="mood-selected-heading">${escapeGrowthHtml(fields.selectedEntry)}</h3><div data-selected-entry></div><button type="button" data-action="delete-entry" class="button button--secondary">${escapeGrowthHtml(actions.removeEntry)}</button></section>
         <div class="actions"><button type="button" data-action="export" class="button button--secondary">${escapeGrowthHtml(actions.export)}</button><button type="button" data-action="clear-history" class="button button--secondary">${escapeGrowthHtml(actions.clearHistory)}</button></div>
         ${label('mood-backup-file', actions.import, '<input id="mood-backup-file" name="backupFile" type="file" accept=".json,application/json">')}<p class="hint">${escapeGrowthHtml(fields.importHint)}</p>
+      </section>
+    </form>`, copy);
+  }
+
+  if (toolId === 'journal-online') {
+    return attachCopy(`<form id="tool-form" novalidate>
+      <div class="calculator-grid">
+        ${label('journal-date', fields.date, '<input id="journal-date" name="date" type="date" required>')}
+        ${label('journal-title', fields.title, '<input id="journal-title" name="title" type="text" maxlength="160" required>')}
+      </div>
+      ${label('journal-tags', fields.tags, '<input id="journal-tags" name="tags" type="text" maxlength="400" autocomplete="off">')}<p class="hint">${escapeGrowthHtml(fields.tagHint)}</p>
+      ${label('journal-body', fields.body, '<textarea id="journal-body" name="body" rows="8" maxlength="8000" required></textarea>')}
+      <label class="choice" for="journal-save-consent"><input id="journal-save-consent" name="saveConsent" type="checkbox"><span>${escapeGrowthHtml(fields.saveConsent)}</span></label>
+      <p class="hint">${escapeGrowthHtml(fields.storageNote)}</p>
+      <p class="hint">${escapeGrowthHtml(fields.encryptionNote)}</p>
+      ${label('journal-backup-password', fields.backupPassword, '<input id="journal-backup-password" name="backupPassword" type="password" minlength="12" maxlength="256" autocomplete="new-password">')}
+      ${label('journal-backup-confirm', fields.confirmPassword, '<input id="journal-backup-confirm" name="confirmPassword" type="password" minlength="12" maxlength="256" autocomplete="new-password">')}
+      <p class="hint">${escapeGrowthHtml(fields.passwordHint)}</p>
+      <div class="actions">${button('example', actions.example, 'secondary')}<button type="submit" data-action="record" class="button button--primary">${escapeGrowthHtml(actions.saveEntry)}</button><button type="button" data-action="new-entry" class="button button--secondary">${escapeGrowthHtml(actions.newEntry)}</button>${button('reset', actions.reset, 'secondary')}</div>
+      <p class="status" role="status" aria-live="polite" data-status></p>
+      <section class="result" data-result><h2>${escapeGrowthHtml(actions.result)}</h2>
+        <p class="hint">${escapeGrowthHtml(fields.safetyNote)}</p>
+        <div class="calculator-grid">
+          ${label('journal-search', fields.search, '<input id="journal-search" name="search" type="search" maxlength="200">')}
+          ${label('journal-from', fields.dateFrom, '<input id="journal-from" name="dateFrom" type="date">')}
+          ${label('journal-to', fields.dateTo, '<input id="journal-to" name="dateTo" type="date">')}
+        </div>
+        <div class="actions"><button type="button" data-action="search" class="button button--secondary">${escapeGrowthHtml(actions.search)}</button><button type="button" data-action="clear-search" class="button button--secondary">${escapeGrowthHtml(actions.clearSearch)}</button></div>
+        <section aria-labelledby="journal-entries-heading"><h3 id="journal-entries-heading">${escapeGrowthHtml(fields.entriesLabel)} (<span data-entry-count>0</span>)</h3><ul data-journal-list></ul><p data-empty hidden>${escapeGrowthHtml(fields.noEntries)}</p></section>
+        <section aria-labelledby="journal-selected-heading"><h3 id="journal-selected-heading">${escapeGrowthHtml(fields.resultLabel)}</h3><article data-selected-entry></article></section>
+        <div class="actions"><button type="button" data-action="delete-entry" class="button button--secondary">${escapeGrowthHtml(actions.deleteEntry)}</button><button type="button" data-action="clear-all" class="button button--secondary">${escapeGrowthHtml(actions.clearAll)}</button><button type="button" data-action="export-json" class="button button--secondary">${escapeGrowthHtml(actions.exportJson)}</button><button type="button" data-action="save-backup" class="button button--secondary">${escapeGrowthHtml(actions.saveBackup)}</button></div>
+        ${label('journal-import-file', actions.importJson, '<input id="journal-import-file" name="backupFile" type="file" accept=".json,application/json">')}<p class="hint">${escapeGrowthHtml(fields.importHint)}</p>
       </section>
     </form>`, copy);
   }
