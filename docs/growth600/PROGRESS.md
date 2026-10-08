@@ -2,15 +2,16 @@
 
 Última verificación: 2026-10-08. Registro persistente de esta rama; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## Implementación en curso · Acceleration Calculator (#178) · 2026-10-08
+## Completada y publicada · Acceleration Calculator (#178) · 2026-10-08
 
 - [x] C/F/E — contrato sin duplicación: cuatro incógnitas de cinemática 1D con aceleración constante; unidades métricas/imperiales; alcance y supuestos visibles. No se alteró ninguna herramienta existente.
 - [x] L — 36 idiomas como textos estáticos; textos automáticos aceptados según el flujo acordado. Reparados marcadores filtrados en Marathi y términos físicos árabes obvios; el resto no se presenta como traducción nativa revisada.
 - [x] B — formulario accesible con modos dinámicos, campos requeridos coherentes, ejemplo, reset, copia y resultados anunciados.
 - [x] E — focalizadas 161/161; luego cambios solo de copy (labels AR/MR), contrato de localización 117/117. Regresión total 1.269/1.269; `npm run check` pasó: 10.260 URLs protegidas sin cambios.
 - [x] X/B/S — build aislado: 3.132 rutas únicas (86 herramientas × 36 locales + 36 portadas), 3.269 archivos; prueba real de navegador EN/AR, aceptación 4 m/s² y 50 m, modo imperial 2 ft/s² y 25 ft, RTL móvil 390 px sin overflow ni errores/conexiones externas; etiquetas Marathi inspeccionadas.
-- [ ] P — PR/deploy todavía no ejecutados. Tras CI, merge y deploy se debe verificar la ruta pública, sitemap (esperado 3.132 `<loc>`), y actualizar este registro. Google/Bing/Yandex ya recibieron anteriormente la URL del sitemap; una versión XML nueva se publica con el deploy, sin prometer indexación. Naver sigue pendiente de comprobar en su panel.
-- [ ] Próxima candidata después de cerrar #178: #179 `force-calculator`; mantener #163 `half-life-calculator` como duplicado/no recrear.
+- [x] P — PR #42 fusionado en `main` mediante `8c9ded9afd741f4af7af16f2f50c8bc143d55546`; workflow 37789761618 publicó el sitio principal y workflow_dispatch 37790375128 publicó el hub separado. Rutas EN/ES/AR responden HTTP 200; títulos, lang/dir correctos. Sitemap público HTTP 200 con **3.132 `<loc>` únicas** e incluye las 36 rutas de la herramienta.
+- [x] S — el sitemap estático de producción cambió en la URL ya conocida. Google, Bing y Yandex habían recibido esa URL canónica anteriormente; en este turno no se volvió a pulsar “enviar” en sus paneles. No hay garantía de rastreo/indexación por publicar/enviar. Naver sigue pendiente de confirmar desde su panel.
+- [ ] Próxima candidata: #179 `force-calculator`; mantener #163 `half-life-calculator` como duplicado/no recrear.
 
 ## Punto de reanudación vigente · 2026-10-08
 
