@@ -1272,6 +1272,22 @@ test('force calculator has complete English copy and localized copy across all 3
   assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
+test('friction calculator has localized copy across all 36 languages and the Arabic heat-pump action is clear', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'friction-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  assert.equal(localizedCopies.ar['heat-pump-calculator'].actions.copy, 'نسخ التقدير');
+  assert.match(localizedCopies.ar['friction-calculator'].fields.normalForce, /القوة العمودية/u);
+  assert.match(localizedCopies.ru['friction-calculator'].howAnswer, /μs × normal force|μs × нормальная сила/u);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.fields.accuracyNote.length > 40, `${key}: physics boundary`);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, `${key}: metadata limits`);
+  }
+});
+
 test('horsepower calculator has complete English copy and localized copy across all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'horsepower-calculator');
   assert.ok(tool);

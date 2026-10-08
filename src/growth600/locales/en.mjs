@@ -151,6 +151,8 @@ import heatLossCopies from './heat-loss-calculator-final.mjs';
 import { heatLossCalculatorEnglishCopy } from './heat-loss-calculator.en.mjs';
 import heatPumpCopies from './heat-pump-calculator-final.mjs';
 import { heatPumpCalculatorEnglishCopy } from './heat-pump-calculator.en.mjs';
+import frictionCopies from './friction-calculator.mjs';
+import { frictionCalculatorEnglishCopy } from './friction-calculator.en.mjs';
 import miterAngleCopies from './miter-angle-calculator-final.mjs';
 import { miterAngleCalculatorEnglishCopy } from './miter-angle-calculator.en.mjs';
 import voltageDropCopies from './voltage-drop-calculator-final.mjs';
@@ -577,7 +579,53 @@ registerGrowthLocaleExtension(source, 'ev-charging-calculator', { ...evChargingC
 registerGrowthLocaleExtension(source, 'rainwater-harvesting-calculator', { ...rainwaterHarvestingCopies, en: rainwaterHarvestingCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'ramp-calculator', { ...rampCopies, en: rampCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'heat-loss-calculator', { ...heatLossCopies, en: heatLossCalculatorEnglishCopy }, 'gravel-calculator');
-registerGrowthLocaleExtension(source, 'heat-pump-calculator', { ...heatPumpCopies, en: heatPumpCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'heat-pump-calculator', {
+  ...heatPumpCopies,
+  en: heatPumpCalculatorEnglishCopy,
+  ar: { ...heatPumpCopies.ar, actions: { ...heatPumpCopies.ar.actions, copy: 'نسخ التقدير' } },
+}, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'friction-calculator', {
+  ...frictionCopies,
+  en: frictionCalculatorEnglishCopy,
+  ar: {
+    ...frictionCopies.ar,
+    title: 'حاسبة الاحتكاك مجانية | UsefulVerse',
+    howAnswer: 'يتكيف الاحتكاك الساكن حتى حده الأقصى μs × القوة العمودية. وإذا انزلق الجسم، يكون الاحتكاك الحركي μk × القوة العمودية ويعاكس اتجاه الحركة. وعلى المنحدر، تؤثر الجاذبية أيضًا على امتداد السطح.',
+    fields: {
+      ...frictionCopies.ar.fields,
+      normalForce: 'القوة العمودية المعروفة',
+      motionState: 'حالة الجسم',
+      atRest: 'يبدأ من السكون',
+      positiveSurfaceDirection: 'الاتجاه الموجب نحو أسفل المنحدر. وعلى سطح أفقي، هو المحور الموجب المختار. أدخل القوة المطبقة بإشارة موجبة أو سالبة حسب اتجاهها. استخدم معاملات مناسبة للمواد والظروف الفعلية.',
+      accuracyNote: 'تقدير مبسط وفق نموذج احتكاك كولومب. يتغير الاحتكاك الساكن حتى μsN؛ والاحتكاك الحركي μkN. تعتمد المعاملات على المواد والظروف. لا يحاكي هذا النموذج التدحرج أو التشوه أو الاهتزاز أو الحرارة أو التآكل أو حدود السلامة، وليس نصيحة هندسية.',
+    },
+    actions: {
+      ...frictionCopies.ar.actions,
+      normalMode: 'قوة عمودية معروفة', inclineMode: 'كتلة على منحدر',
+      newtons: 'نيوتن (N)', kilonewtons: 'كيلو نيوتن (kN)', poundsForce: 'رطل-قوة (lbf)', kilograms: 'كيلوغرام (kg)', pounds: 'رطل (lb)', example: 'جرّب مثالًا على منحدر',
+    },
+    messages: {
+      ...frictionCopies.ar.messages,
+      normalForce: 'القوة العمودية', gravityComponent: 'مركبة الجاذبية على امتداد السطح',
+      requiredStatic: 'قوة الاحتكاك اللازمة لمنع الحركة', maximumStatic: 'الحد الأقصى للاحتكاك الساكن',
+      frictionMagnitude: 'مقدار قوة الاحتكاك', frictionDirection: 'اتجاه قوة الاحتكاك', regime: 'حالة الحركة',
+      netForce: 'القوة المحصلة على امتداد السطح', acceleration: 'التسارع على امتداد السطح',
+      positiveDirection: 'الاتجاه الموجب على السطح', negativeDirection: 'الاتجاه السالب على السطح',
+      uphill: 'أعلى المنحدر', downhill: 'أسفل المنحدر', static: 'يبقى الجسم ساكنًا',
+      startsDownhill: 'يبدأ الجسم بالانزلاق إلى أسفل المنحدر', startsUphill: 'يبدأ الجسم بالانزلاق إلى أعلى المنحدر',
+    },
+    additionalFaqs: [
+      frictionCopies.ar.additionalFaqs[0],
+      { ...frictionCopies.ar.additionalFaqs[1], answer: 'بالنسبة لكتلة على منحدر مستقيم، القوة العمودية هي mg cos(θ)، والجاذبية على امتداد المنحدر هي mg sin(θ). تقارن الحاسبة قوة الجاذبية على المنحدر والقوة المطبقة بحد الاحتكاك الساكن.' },
+      frictionCopies.ar.additionalFaqs[2],
+    ],
+  },
+  ru: {
+    ...frictionCopies.ru,
+    howAnswer: 'Статическое трение подстраивается до предела μs × нормальная сила. Если объект скользит, кинетическое трение равно μk × нормальная сила и направлено против движения. На наклонной плоскости сила тяжести также действует вдоль поверхности.',
+    fields: { ...frictionCopies.ru.fields, staticCoefficient: 'Коэффициент статического трения (μs)', kineticCoefficient: 'Коэффициент кинетического трения (μk)' },
+  },
+}, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'miter-angle-calculator', { ...miterAngleCopies, en: miterAngleCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'voltage-drop-calculator', { ...voltageDropCopies, en: voltageDropCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'molarity-calculator', { ...molarityCopies, en: molarityCalculatorEnglishCopy }, 'gravel-calculator');

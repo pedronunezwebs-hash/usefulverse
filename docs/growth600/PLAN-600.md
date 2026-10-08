@@ -1517,7 +1517,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 287 · Friction Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `friction-calculator`**
+- [ ] **C/F/E/X/L/B/P/S completos — `friction-calculator`** (C/F/E/X/L/B terminados; pendiente P/S)
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/friction-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `friction calculator` — 590 búsquedas/mes US/en, KD 0; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Normal, coeficiente, inclinación y umbral estático
@@ -1528,6 +1528,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `friction force calculator` — 590/mes US/en; KD 0.
   - `friction calculator free online`; `friction calculator with example`; `friction calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Avance comprobado (2026-10-09):** motor local de Coulomb para fuerza normal conocida y plano inclinado, con fricción estática/cinética, sentido de movimiento, componente gravitatoria, fuerza neta y aceleración cuando se conoce la masa. El modo plano usa gravedad/coeficientes ingresados y declara sus límites; no dimensiona ni aconseja ingeniería. 36 copias estáticas; gates de locales y metadata aprobados. Suite focal 196/196, suite completa 1.406/1.406, `locale:release-check` y `npm run check` correctos; el sitemap principal conserva 10.260 URLs. Build separado 3.744 páginas para 103 herramientas × 36 idiomas + 36 portadas. Chrome real: ejemplo inclinado y página árabe RTL comprobados; sin overflow a viewport móvil de prueba ni errores de consola. No PageSpeed/Lighthouse. PR y despliegue aún pendientes; no cuenta todavía como publicado/indexado.
 
 ### 288 · Thermal Expansion Calculator
 

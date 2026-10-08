@@ -2,15 +2,25 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## En curso · Polygon Calculator (#285; no publicado) · 2026-10-09
+## En curso · Friction Calculator (#287) · 2026-10-09
+
+- [x] C/F — Se reutilizó la ficha del plan: `friction calculator`, 590 búsquedas/mes US/en, KD 0; `friction force calculator`, 590/mes. Sin nuevas consultas ni gasto de DataForSEO.
+- [x] E/B — Calculadora local de fricción de Coulomb en modo de fuerza normal conocida o masa en plano inclinado; μs/μk, fuerza adicional con signo, estado de movimiento, fuerzas y aceleración. Explica supuestos y límites; no ofrece consejo de ingeniería ni elige coeficientes seguros.
+- [x] L — Copias estáticas en los 36 idiomas activos, generadas con el flujo Google Translate aceptado por el propietario. Títulos/descripciones y contrato de locales pasan los gates; no se presentan como revisión nativa. Corregí manualmente en árabe la fuerza normal, el estado de reposo y las etiquetas SI tras ver la página real; la notación μs/μk rusa también está preservada.
+- [x] X/E — Suite focalizada **196/196** y suite completa **1.406/1.406** aprobadas; `locale:release-check` pasa; `npm run check` mantiene las **10.260 URLs** del sitio principal. Build aislado: **3.744 páginas** para 103 herramientas × 36 idiomas, más 36 portadas (3.900 archivos).
+- [x] B — Chrome árabe RTL real: modo de ejemplo en plano inclinado, 10 kg y 30° → normal 84,928 N, gravedad tangencial 49,033 N, fricción cinética 25,478 N, fuerza neta 23,555 N y aceleración 2,355 m/s²; etiquetas/unidades coherentes, sin overflow a ancho móvil de prueba ni errores de consola. No PageSpeed/Lighthouse.
+- [ ] P/S — PR, CI, fusión, despliegue del hub y comprobación de sitemap/URLs públicos aún pendientes. No se ha solicitado indexación manual ni se afirma indexación.
+- **Estado:** la herramienta está implementada y traducida en esta rama; aún no está publicada. El catálogo original de 277 herramientas no se modificó. La siguiente candidata planificada es #288 Thermal Expansion Calculator.
+
+## Publicada · Polygon Calculator (#285; candidata 102/323) · 2026-10-09
 
 - [x] C/F — Reutilizada la medición existente del plan: `polygon calculator` y `regular polygon calculator`, 590 búsquedas/mes US/en cada una, KD 0; sin llamadas nuevas a DataForSEO.
 - [x] E/B — Cálculo geométrico local para 4–1.000 lados; permite entrada por lado, distancia centro-lado o centro-vértice; deriva perímetro, área y ángulos; se excluyen triángulos para no competir con `triangle-calculator`.
 - [x] L — 36 borradores estáticos traducidos desde inglés; términos especializados descritos en lenguaje simple; título y descripción revisados por gates automáticos. Traducción automática, no revisión nativa.
 - [x] E/X — 5 pruebas de matemática y gates de catálogo, formularios, bundle y localización; suite focal 193/193, suite general 1.398/1.398, `npm run locale:release-check` pasa y `npm run check` conserva las 10.260 URLs de la web principal. Build aislado: 3.708 URLs (102 herramientas × 36 idiomas + 36 portadas).
 - [x] B — Chrome EN y AR: hexágono de lado 1 cm devuelve perímetro 6 cm, área 2,59807621 cm², apotema 0,8660254 cm y ángulos 120°/60°; árabe comprobado a 500 px sin overflow ni errores de consola. Sin PageSpeed/Lighthouse.
-- [ ] P/S — PR, CI, merge, despliegue y sitemap público pendientes.
-- **Estado previo a publicación:** 102 herramientas implementadas contando esta rama; 101 ya publicadas, 222 pendientes. El catálogo original de 277 herramientas no se modificó. Próxima candidata tras cerrar esta: #286.
+- [x] P/S — PR [#63](https://github.com/pedronunezwebs-hash/usefulverse/pull/63) fusionada como `22a36c5`; el CI y el despliegue aislado del hub (run 37854181493) finalizaron correctamente. Ruta pública HTTP 200; sitemap del hub contiene 3.708 URLs y el principal conserva 10.260. No se envió solicitud de indexación manual; publicado no equivale a indexado. No PageSpeed/Lighthouse.
+- **Estado publicado:** 102/323 candidatas Growth600; 221 pendientes. Las 277 herramientas originales permanecen intactas. La siguiente candidata de esta continuación es #287 Friction Calculator; #286 Heat Pump Calculator está registrada aparte en este plan.
 
 ## Publicada · Roth Vs Traditional Calculator (#284; candidata 101/323) · 2026-10-09
 
