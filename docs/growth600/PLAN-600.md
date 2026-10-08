@@ -1130,6 +1130,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `kinetic energy calculator free online`; `kinetic energy calculator with example`; `kinetic energy calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 
+- **Estado de implementación (2026-10-08):** implementación y QA local completos; C/F/E/X/L/B superados. 36 copias generadas con Google Translate y comprobadas por gate, incluido un ajuste de dos etiquetas maratíes que el traductor omitió. Suite completa 1.262/1.262; `npm run check` y build aislado correctos; navegador validó cálculo directo/inverso, copia, RTL árabe, CJK japonés, 390 px sin overflow y consola limpia. **P/S pendientes:** sin integración, producción ni envío del sitemap; conservar la casilla principal sin marcar hasta verificarlos.
+
 ### 158 · Resistor Color Code Calculator
 
 - [ ] **C/F/E/X/L/B/P/S completos — `resistor-color-code-calculator`**

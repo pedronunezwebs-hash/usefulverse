@@ -50,6 +50,7 @@ export function renderGrowthForm(toolId, copy) {
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
     'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
     'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
+    'kinetic-energy-calculator': ['mode', 'energyMode', 'speedMode', 'massKg', 'velocityMps', 'kineticEnergyJ', 'heightM', 'gravityMps2', 'accuracyNote'],
     'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
     'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
@@ -136,6 +137,7 @@ export function renderGrowthForm(toolId, copy) {
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
     'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'kinetic-energy-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
@@ -1190,6 +1192,23 @@ export function renderGrowthForm(toolId, copy) {
     </div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'kinetic-energy-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('kinetic-mode', fields.mode, `<select id="kinetic-mode" name="mode"><option value="energy">${escapeGrowthHtml(fields.energyMode)}</option><option value="solve-speed">${escapeGrowthHtml(fields.speedMode)}</option></select>`)}
+    ${label('kinetic-mass', fields.massKg, '<input id="kinetic-mass" name="massKg" type="number" min="0.000000000001" max="1000000000000" step="any" inputmode="decimal" value="2" required>')}
+    <div data-kinetic-solve>
+      ${label('kinetic-speed', fields.velocityMps, '<input id="kinetic-speed" name="velocityMps" type="number" min="0" max="1000000000000" step="any" inputmode="decimal" value="3" required>')}
+    </div>
+    <div data-kinetic-energy-input hidden>
+      ${label('kinetic-energy', fields.kineticEnergyJ, '<input id="kinetic-energy" name="kineticEnergyJ" type="number" min="0" max="1000000000000000000000000" step="any" inputmode="decimal">')}
+    </div>
+    ${label('kinetic-height', fields.heightM, '<input id="kinetic-height" name="heightM" type="number" min="-1000000000000" max="1000000000000" step="any" inputmode="decimal" value="0" required>')}
+    ${label('kinetic-gravity', fields.gravityMps2, '<input id="kinetic-gravity" name="gravityMps2" type="number" min="0.000000000001" max="100" step="any" inputmode="decimal" value="9.80665" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'chemical-equation-balancer') return attachCopy(`<form id="tool-form" novalidate>

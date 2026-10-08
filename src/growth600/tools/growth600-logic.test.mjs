@@ -48,6 +48,7 @@ import { calculateDensity, parseDensityComponents } from './density-calculator/l
 import { calculateEngineCompression, compressionRatioFromVolumes } from './compression-ratio-calculator/logic.mjs';
 import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
+import { calculateKineticEnergy } from './kinetic-energy-calculator/logic.mjs';
 
 test('gravel calculator converts area and depth into volume, waste, weight and bags', () => {
   const result = calculateGravel({ areaM2: 10, depthM: 0.1, densityKgM3: 1600, wastePercent: 5, bagKg: 20 });
@@ -61,6 +62,25 @@ test('gravel calculator converts area and depth into volume, waste, weight and b
   assert.equal(calculateTriangularArea(4, 3), 6);
   assert.throws(() => calculateGravel({ areaM2: 0, depthM: 1 }), /Area/);
   assert.throws(() => calculateGravel({ areaM2: 1, depthM: 1, wastePercent: 101 }), /Waste/);
+});
+
+test('kinetic energy calculator solves direct, inverse-speed and reference-height cases', () => {
+  const direct = calculateKineticEnergy({ massKg: 2, velocityMps: 3, heightM: 0 });
+  assert.equal(direct.kineticEnergyJ, 9);
+  assert.equal(direct.potentialEnergyJ, 0);
+  assert.equal(direct.totalMechanicalEnergyJ, 9);
+  const elevated = calculateKineticEnergy({ massKg: 2, velocityMps: 0, heightM: 5, gravityMps2: 9.8 });
+  assert.equal(elevated.potentialEnergyJ, 98);
+  const belowReference = calculateKineticEnergy({ massKg: 1, velocityMps: 0, heightM: -2, gravityMps2: 10 });
+  assert.equal(belowReference.potentialEnergyJ, -20);
+  const inverse = calculateKineticEnergy({ mode: 'solve-speed', massKg: 2, kineticEnergyJ: 9 });
+  assert.equal(inverse.velocityMps, 3);
+  assert.equal(inverse.kineticEnergyJ, 9);
+  assert.throws(() => calculateKineticEnergy({ massKg: 0, velocityMps: 2 }), /Mass/u);
+  assert.throws(() => calculateKineticEnergy({ massKg: 2, velocityMps: -1 }), /Speed/u);
+  assert.throws(() => calculateKineticEnergy({ mode: 'solve-speed', massKg: 2, kineticEnergyJ: -1 }), /Kinetic energy/u);
+  assert.throws(() => calculateKineticEnergy({ massKg: 2, velocityMps: 2, gravityMps2: 0 }), /Gravity/u);
+  assert.throws(() => calculateKineticEnergy({ mode: 'invalid', massKg: 2 }), /mode/u);
 });
 
 test('Ohm’s law calculator solves every pair and equivalent resistor networks', () => {

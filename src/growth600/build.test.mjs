@@ -118,6 +118,7 @@ function toolCopy(tool, language) {
     'chemical-equation-balancer': { equation: 'Unbalanced equation', formulaHint: 'Use neutral formulas and one arrow.', accuracyNote: 'Educational atom-count balancing only.' },
     'gear-ratio-calculator': { stages: 'Driver teeth : driven teeth', stagesHint: 'One stage per line.', inputRpm: 'Input RPM', inputTorque: 'Input torque', driveType: 'Drive type', externalGears: 'External gears', chainDrive: 'Chain drive', efficiencyPercent: 'Efficiency per stage', accuracyNote: 'Ideal ratio arithmetic only.' },
     'density-calculator': { mode: 'Calculation mode', solveMode: 'Find a missing value', mixtureMode: 'Estimate a mixture', massKg: 'Mass (kg)', volumeM3: 'Volume (m3)', densityKgM3: 'Density (kg/m3)', components: 'Component mass,volume', componentsHint: 'One row per component.', accuracyNote: 'Mixture volumes are assumed additive.' },
+    'kinetic-energy-calculator': { mode: 'Calculation mode', energyMode: 'Calculate energy from speed', speedMode: 'Solve speed from kinetic energy', massKg: 'Mass (kg)', velocityMps: 'Speed (m/s)', kineticEnergyJ: 'Kinetic energy (J)', heightM: 'Height above the zero reference (m)', gravityMps2: 'Gravitational acceleration (m/s²)', accuracyNote: 'Ideal estimate; ignores energy losses.' },
     'compression-ratio-calculator': { unit: 'Measurement unit', volumeUnit: 'Volume unit', millimeters: 'Millimeters', inches: 'Inches', cubicCentimeters: 'Cubic centimeters', cubicInches: 'Cubic inches', bore: 'Bore', stroke: 'Stroke', chamberVolume: 'Chamber volume', gasketBore: 'Gasket bore', gasketThickness: 'Gasket thickness', deckClearance: 'Deck clearance', pistonCrownVolume: 'Piston dish/dome volume', cylinders: 'Cylinder count', accuracyNote: 'Static estimate only.' },
     'polynomial-long-division-calculator': { dividend: 'Dividend polynomial', divisor: 'Divisor polynomial', accuracyNote: 'Integer coefficients; maximum degree 20.' },
     'half-life-calculator': { mode: 'Value to solve', solveRemaining: 'Remaining amount', solveInitial: 'Initial amount', solveElapsed: 'Elapsed time', solveHalfLife: 'Half-life', initialAmount: 'Initial amount', remainingAmount: 'Remaining amount', halfLife: 'Half-life', elapsedTime: 'Elapsed time', timeUnit: 'Shared time unit', seconds: 'Seconds', minutes: 'Minutes', hours: 'Hours', days: 'Days', years: 'Years', accuracyNote: 'Educational equation only.' },
@@ -495,6 +496,16 @@ function toolCopy(tool, language) {
     { question: 'How many pavers do I need?', answer: 'Enter the surface dimensions, the repeating module dimensions and the number of pavers in each module. Full modules are rounded up in the entered orientation.' },
     { question: 'Does this plan edge cuts or reuse offcuts?', answer: 'No. It counts complete repeat modules and reports perimeter; it does not generate a cut plan or determine whether offcuts can be reused.' },
   ];
+  if (tool.id === 'kinetic-energy-calculator') {
+    Object.assign(localized.actions, { calculate: 'Calculate energy', example: 'Try 2 kg at 3 m/s', reset: 'Clear', copy: 'Copy result' });
+    Object.assign(localized.messages, { velocity: 'Speed', kineticEnergy: 'Kinetic energy', potentialEnergy: 'Gravitational potential energy', totalEnergy: 'Total mechanical energy' });
+    localized.additionalFaqs = [
+      { question: 'Can I solve speed from kinetic energy?', answer: 'Yes. Select the solve-speed mode and enter mass and kinetic energy.' },
+      { question: 'Why can potential energy be negative?', answer: 'Potential energy is relative to the zero-height reference you choose.' },
+      { question: 'Does total energy include friction?', answer: 'No. It adds only kinetic energy and gravitational potential energy.' },
+    ];
+    localized.localizationStatus = 'approved';
+  }
   return localized;
 }
 
@@ -543,6 +554,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
     'chemical-equation-balancer': toolCopy(growthPilotTools.find(({ id }) => id === 'chemical-equation-balancer'), locale.key),
     'gear-ratio-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'gear-ratio-calculator'), locale.key),
     'density-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'density-calculator'), locale.key),
+    'kinetic-energy-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'kinetic-energy-calculator'), locale.key),
     'compression-ratio-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'compression-ratio-calculator'), locale.key),
     'goal-planner': toolCopy(growthPilotTools.find(({ id }) => id === 'goal-planner'), locale.key),
     'mind-map-maker': toolCopy(growthPilotTools.find(({ id }) => id === 'mind-map-maker'), locale.key),
@@ -569,6 +581,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
     'cubic-quartic-equation-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'cubic-quartic-equation-calculator'), locale.key),
     'complex-number-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'complex-number-calculator'), locale.key),
     'density-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'density-calculator'), locale.key),
+    'kinetic-energy-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'kinetic-energy-calculator'), locale.key),
   };
   const result = await buildGrowthStaticSite({
     outputDir,

@@ -237,6 +237,11 @@ const copies = {
     messages: { ...messages, mass: 'Mass', volume: 'Volume', density: 'Density', densityMetric: 'Metric density', densityImperial: 'US density', componentCount: 'Components' },
     fields: { mode: 'Mode', solveMode: 'Solve one value', mixtureMode: 'Estimate mixture', massKg: 'Mass in kg', volumeM3: 'Volume in m3', densityKgM3: 'Density in kg/m3', components: 'Mass,volume rows', componentsHint: 'One pair per row.', accuracyNote: 'Mixture assumes additive volumes.' },
   },
+  'kinetic-energy-calculator': {
+    name: 'Kinetic energy calculator', actions: { ...actions, calculate: 'Calculate energy', reset: 'Reset', copy: 'Copy result', example: 'Try 2 kg at 3 m/s' },
+    messages: { ...messages, velocity: 'Speed', kineticEnergy: 'Kinetic energy', potentialEnergy: 'Gravitational potential energy', totalEnergy: 'Total mechanical energy' },
+    fields: { mode: 'Calculation mode', energyMode: 'Calculate energy from speed', speedMode: 'Solve speed from kinetic energy', massKg: 'Mass (kg)', velocityMps: 'Speed (m/s)', kineticEnergyJ: 'Kinetic energy (J)', heightM: 'Height above the zero reference (m)', gravityMps2: 'Gravitational acceleration (m/s²)', accuracyNote: 'Ideal estimate; ignores energy losses.' },
+  },
   'compression-ratio-calculator': {
     name: 'Compression ratio calculator', actions: { ...actions, millimeters: 'Millimeters', inches: 'Inches' },
     messages: { ...messages, ratio: 'Static compression ratio', sweptVolume: 'Swept volume', clearanceVolume: 'Clearance volume', totalDisplacement: 'Total displacement', boreStroke: 'Bore to stroke' },
@@ -381,6 +386,12 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(density, /data-density-mixture/u);
   assert.match(density, /maxlength="1200"/u);
   assert.match(density, /data-action="copy"/u);
+  const kinetic = renderGrowthForm('kinetic-energy-calculator', copies['kinetic-energy-calculator']);
+  for (const name of ['mode', 'massKg', 'velocityMps', 'kineticEnergyJ', 'heightM', 'gravityMps2']) assert.match(kinetic, new RegExp(`name="${name}"`, 'u'));
+  assert.match(kinetic, /data-kinetic-solve/u);
+  assert.match(kinetic, /data-kinetic-energy-input hidden/u);
+  assert.match(kinetic, /data-action="example"/u);
+  assert.match(kinetic, /data-action="copy"/u);
   const compression = renderGrowthForm('compression-ratio-calculator', copies['compression-ratio-calculator']);
   for (const name of ['unit', 'volumeUnit', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders']) assert.match(compression, new RegExp(`name="${name}"`, 'u'));
   assert.match(compression, /min="1" max="16" step="1"/u);
