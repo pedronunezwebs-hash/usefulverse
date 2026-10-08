@@ -2,10 +2,32 @@
 
 Última verificación: 2026-10-08. Registro persistente de esta rama; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
+## Punto de reanudación vigente · 2026-10-08
+
+Este bloque prevalece sobre notas históricas de etapas anteriores que describen despliegues o traducciones todavía pendientes en ese momento.
+
+- [x] Publicación de la tanda actual: PR #39 integrado en `main` mediante merge `ded42fed1b0b6893418f5442116bc6017022f72d`; los workflows `37755257144` (sitio principal) y `37755770160` (hub) finalizaron con éxito.
+- [x] Traducción: las 83 herramientas de Growth600 están en los 36 idiomas activos. Las 58 traducciones nuevas de esta tanda se hicieron rápidamente con Google Translate por bloques; son traducciones automáticas comprensibles, aprobadas como `machine-accepted`, no revisiones nativas. No repetir esta tanda al reanudar.
+- [x] Sitemap público del hub: `https://tools.usefulverse.com/sitemap.xml` respondió HTTP 200 con 3.024 URLs únicas (83 herramientas × 36 idiomas + 36 portadas). El sitemap del sitio principal conserva 10.260 URLs. Son hosts/sitemaps distintos.
+- [x] Google Search Console: el sitemap del hub se reenvió el 2026-10-08 y la interfaz confirmó el envío correcto. La última lectura que mostraba el panel era del 2026-10-07 y 216 páginas descubiertas; eso es el dato anterior a la nueva lectura, no prueba de rastreo o indexación de las 3.024 URLs.
+- [x] Bing Webmaster: enviado `https://tools.usefulverse.com/sitemap.xml` desde la propiedad principal; el panel lo muestra con fecha 2026-10-08 y estado `Processing`, sin error. Su propiedad `tools.usefulverse.com` respondió “User is unauthorized to access the site”; por ello no asumir que las métricas estén asociadas a una propiedad propia del subdominio.
+- [x] Yandex Webmaster: propiedad separada de `https://tools.usefulverse.com` verificada como Owner por DNS TXT. Se añadió `https://tools.usefulverse.com/sitemap.xml`; Yandex confirmó que está en la cola de procesamiento (puede tardar 1–2 semanas). El TXT de verificación se conserva en Cloudflare DNS.
+- [ ] Naver Search Advisor: la pestaña del panel llegó a inicio de sesión. Falta que el propietario inicie sesión, confirmar/añadir la propiedad del subdominio, y enviar allí el sitemap. No se cambió configuración ni se envió nada a Naver.
+- [ ] Tras procesarse Google/Bing/Yandex/Naver, registrar fechas/estados visibles y distinguir “enviado”, “procesado”, “URLs descubiertas” e “indexado”. No afirmar indexación por el mero envío. Los sitemaps y `robots.txt` son públicos y favorecen el descubrimiento aunque un panel no esté accesible.
+- [ ] Próxima implementación: al retomar, leer este punto y `PLAN-600.md`, continuar en la primera ficha sin completar que siga siendo única y pendiente; no reescribir ni alterar las 277 herramientas protegidas ni duplicar las 83 ya publicadas. Confirmar el catálogo/plan actuales en `main` antes de escoger la ficha siguiente.
+
+### Método breve de traducción que se debe conservar
+
+- Traducir desde el texto inglés en tandas pequeñas mediante Google Translate, respetando su límite visible (aprox. 4.000 caracteres por bloque si sigue aplicando); priorizar rapidez y comprensión sencilla, no pulido nativo.
+- Incluir metadatos SEO, H1, textos visibles, controles, estados, errores, FAQ y avisos. Preservar placeholders, variables, etiquetas HTML, nombres propios, fórmulas, códigos, IDs y formatos exactamente.
+- Marcar el resultado como traducción automática; no afirmar revisión nativa. Revisar que no haya cadenas vacías, texto fuente olvidado o frases absurdas; probar una muestra RTL y una CJK cuando estén implicadas.
+- Ejecutar el gate de traducción, pruebas/build y conteo de sitemap antes de publicar. El gate no sustituye comprobar el despliegue y el estado de cada panel de buscador.
+- La copia que el propietario guarda en `~/Downloads/PLAN.md` difiere de la fuente actual del repositorio y conserva secciones anteriores a la implementación. En la reanudación, usar y releer `docs/growth600/PLAN-600.md` en `main`; no sustituirlo por esa copia descargada ni repetir el trabajo ya cerrado.
+
 ## Estado actual
 
-- [x] F0 — Arranque: leídas las instrucciones vigentes de la agencia, operación online, FABLE y Cloudflare; clon temporal aislado; plan y evidencia de DataForSEO localizados en GitHub. `gh auth status` confirma GitHub. La primera comprobación de `wrangler whoami` recibió un 502 con HTML y no hubo operaciones Cloudflare; en la comprobación más reciente de este turno `wrangler whoami` volvió a responder correctamente. No se modificó Cloudflare.
-- [x] F1 — Snapshot: `origin/main` está en `a8a8a2c9aaa240e7cc0195d9044d312a06309577`, merge de PR #38. Inventario real de base: 277 herramientas, 36 idiomas. El `PLAN.md` del usuario coincide byte por byte con `docs/growth600/PLAN-600.md`.
+- [x] F0 — Arranque: leídas las instrucciones vigentes de la agencia, operación online, FABLE y Cloudflare; clon temporal aislado; plan y evidencia de DataForSEO localizados en GitHub. `gh auth status` confirma GitHub. La primera comprobación de `wrangler whoami` recibió un 502 con HTML y no hubo operaciones Cloudflare en ese momento; en la comprobación más reciente de este turno volvió a responder correctamente. Para Yandex se añadió después únicamente el TXT de verificación de `tools.usefulverse.com`.
+- [x] F1 — Snapshot histórico inicial: `origin/main` estaba en `a8a8a2c9aaa240e7cc0195d9044d312a06309577`, merge de PR #38. Inventario base: 277 herramientas y 36 idiomas. **Corrección:** el `PLAN.md` actual de Descargas no coincide con la versión canónica `docs/growth600/PLAN-600.md` y es anterior a las verificaciones/publicaciones registradas aquí; usar el plan del repositorio.
 - [x] F1 — Línea base técnica inicial: `npm test`: 832 aprobados, 0 fallidos. `npm run check` completó; sitemap generado: 10.260 URLs. El build temporal contiene 10.728 archivos (incluye assets) y ocupa 495 MB; el proyecto tiene margen para crecer, pero no hasta 600 herramientas en una única salida Free.
 - [x] F2 — Capacidad y coste estático comprobados: la cuenta tiene los proyectos Pages `usefulverse` y `usefulverse-tools`. La documentación oficial consultada el 2026-10-08 mantiene el límite Free de 20.000 archivos por proyecto, hasta 500 builds al mes y máximo 25 MiB por archivo; no se añaden Pages Functions ni servicios de procesamiento. El proyecto de herramientas ya tiene `tools.usefulverse.com` asociado.
 - [x] F2 — Reservar el proyecto Pages gratuito `usefulverse-tools`: creado con Wrangler el 2026-10-07 y confirmado en la respuesta de Cloudflare. No se alteró `usefulverse`, DNS ni billing.
@@ -991,11 +1013,13 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - **Recuento:** **83/323** candidatas implementadas en inglés; quedan **239 candidatas únicas válidas más una fila duplicada/reserva por sustituir**. Las 277 originales permanecen intactas. Esto no significa 360 páginas publicadas ni localizadas.
 - **Siguiente reanudación:** traducir y revisar esta herramienta en los 35 idiomas; obtener dependencias reproducibles del repo sin alterar el lockfile; pasar X/B/P/S; después integrar/desplegar en el proyecto Pages de herramientas y actualizar/verificar su sitemap. Para pausar ahora, la rama debe conservar el respaldo remoto.
 
-## Continuación · traducción de la tanda existente · 2026-10-08
+## Continuación · traducción y publicación de la tanda existente · 2026-10-08
 
 - [x] L — los textos de las **83 herramientas** de Growth600 ya están disponibles en los **36 idiomas activos**. La tanda incluye 58 módulos de traducción completados en 35 destinos no ingleses; los cinco idiomas de la publicación piloto conservan sus traducciones aprobadas. Las traducciones nuevas se hicieron con Google Translate, se registran como `machine-accepted` a petición del propietario y no se presentan como revisadas por hablantes nativos.
 - [x] Preservación — no se modificó la lógica de herramientas ni el catálogo protegido de 277 herramientas.
 - [x] Validación — `npm run locale:release-check` pasó; `npm run check` generó 10.260 URLs del sitio principal; `npm test` pasó **1.260/1.260**; `npm run build:growth600` generó **3.024 páginas** (83 herramientas + 36 portadas × 36 idiomas), dentro del presupuesto estático configurado. `git diff --check` pasó.
 - [x] Correcciones de release descubiertas por el build: permitir como vocabulario estático la URL literal `schema.org` sin permitir solicitudes remotas; usar las etiquetas de `fields` como fallback cuando un control de formulario está definido ahí.
-- [ ] P/S — el build está listo, pero esta traducción todavía no está integrada ni desplegada en `tools.usefulverse.com`; el sitemap de producción y el envío a buscadores no se han cambiado en esta continuación.
-- **Alcance publicado antes de esta tanda:** el subdominio tenía el piloto de 5 herramientas y 216 URLs. La actualización completa generaría **3.024 URLs** en su sitemap, pero solo después de integrar y ejecutar el despliegue manual aprobado desde `main`.
+- [x] P — integrada por PR #39 y publicada en `tools.usefulverse.com`; ambos workflows de despliegue terminaron correctamente. Se verificaron rutas públicas de ejemplo con idiomas RTL/CJK y el sitemap final.
+- [x] S — sitemap de 3.024 URLs publicado y enviado en Google Search Console (Correcto; el panel aún refleja 216 URLs de la lectura anterior), Bing Webmaster (Processing) y Yandex Webmaster (en cola, hasta 1–2 semanas). Los paneles no confirman todavía el recuento nuevo/indexación.
+- [ ] S — Naver Search Advisor pendiente de inicio de sesión y envío manual del sitemap del hub; no confundir sitemap accesible o envío aceptado con rastreo/indexación.
+- **Alcance anterior a la publicación:** el hub tenía el piloto de 5 herramientas y 216 URLs. Tras la publicación, el sitemap pasó a **3.024 URLs**.
