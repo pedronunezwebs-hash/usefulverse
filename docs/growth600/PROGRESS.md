@@ -1,6 +1,6 @@
 # UsefulVerse · progreso del plan 277 → 600
 
-Última verificación: 2026-10-09. Registro persistente de esta rama; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
+Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
 ## Publicada · Slitherlink (#186; 93.ª herramienta Growth600) · 2026-10-09
 
@@ -13,9 +13,20 @@
 - [x] P/S — PR #52 fusionada en `eb166a30c889e94349a8bd55480d5ae1dec2c457`; CI 37824491231 y publicación principal 37824909881 correctos. Publicación separada del hub: workflow 37824928039 correcto. URLs EN/ES/AR y sitemap del hub comprobados públicamente: HTTP 200; título/H1/idioma correctos, árabe `dir=rtl`; sitemap contiene **3.384 URLs únicas** y las 36 variantes de Slitherlink.
 - **Decisión UX** — El usuario puede tocar/clicar líneas; hay pistas, comprobar, deshacer y limpiar. Estado accesible con botones etiquetados por orientación/coordenadas, tablero bidimensional navegable por flechas y pistas como etiquetas leídas por tecnologías de asistencia. La generación valida soluciones en el navegador; mensaje honesto sobre posible espera en dispositivos lentos.
 - [x] README actualizado a 93 herramientas Growth600 y 3.384 URLs públicas. **93/323 candidatas principales publicadas; 230 pendientes.** El sitemap principal permanece separado en 10.260 URLs. Publicación verificada; no equivale a indexación. No PageSpeed/Lighthouse.
-- **Siguiente:** #199 Peg Solitaire; no repetir la investigación DataForSEO existente.
+- **Siguiente en ese checkpoint:** #199 Peg Solitaire; no se repitió la investigación DataForSEO.
 
-## Checkpoint · Peg Solitaire (#199)
+## Publicada · Peg Solitaire (#199; 94.ª herramienta Growth600) · 2026-10-09
+
+- [x] C/F — Ficha del plan: `peg solitaire` 2.400 búsquedas/mes US/en, KD 4; CPC 0.35 USD, no CPM. Sin consultas nuevas a DataForSEO.
+- [x] E/B — Tablero clásico de 33 huecos, saltos ortogonales, estado ganado/bloqueado, pista de jugada legal, deshacer y reinicio; pista no promete resolver. Sin cuenta, API, almacenamiento, backend ni dependencia runtime.
+- [x] L — 36 copias estáticas generadas por lotes desde inglés; traducción aceptada como borrador automática. Ajustes ES/AR para evitar falsos sentidos sobre clavijas y tablero. Sin traducción en runtime.
+- [x] X/B — Suite focalizada 175/175; `npm test` 1.335/1.335 antes del ajuste visual de la pista y suite focalizada repetida después. `npm run check`: sitio principal sigue en 10.260 URLs; `locale:release-check` pasa. Chrome a 390 px EN/ES/AR probó movimiento, recuento, deshacer, pista, reinicio, `lang`/`dir`, teclado y ausencia de overflow/errores de consola.
+- [x] Build/sitemap — 3.420 URLs únicas (94 herramientas × 36 idiomas + 36 portadas), 3.565 archivos, 103.738.804 bytes.
+- [x] P/S — PR #53 fusionada en `64ee36f`; CI 37828766687, deploy principal 37829289936 y deploy del hub 37829832286 correctos. URLs EN/ES/AR y sitemap públicos HTTP 200; 3.420 URLs únicas, incluidas las 36 variantes.
+- [x] README actualizado a 94 herramientas Growth600 y 3.420 URLs. **94/323 candidatas principales publicadas; 229 pendientes.** El sitemap principal sigue separado en 10.260 URLs. Publicar no garantiza indexación; no se ejecutó PageSpeed/Lighthouse.
+- **Siguiente:** #222 Futoshiki; reutilizar demanda del plan, sin repetir DataForSEO.
+
+## Implementación de Peg Solitaire (#199; checkpoint previo al despliegue)
 
 - [x] F0/F1 — instrucciones releídas; rama aislada `codex/growth600-peg-solitaire-2026-10-09`, remoto `usefulverse.git`, sin cambios de terceros identificados.
 - [x] C/F — reutilizada la ficha del plan: `peg solitaire` 2.400 búsquedas/mes US/en, KD 4; CPC, no CPM. Sin consultas nuevas a DataForSEO.
@@ -23,7 +34,7 @@
 - [x] L — 36 copias estáticas generadas desde inglés por lotes, con aceptación explícita como traducción automática. ES/AR ajustados para corregir falsos sentidos detectados en tablero/estados/FAQ; límites de título/descripción y `hreflang` comprobados por los gates del hub.
 - [x] X/B — 175 pruebas focalizadas pasan; `npm test` 1.335/1.335; `npm run check` conserva el sitio principal en 10.260 URLs; `locale:release-check` pasa. Chrome real a 390 px verificó tablero y recuento, movimiento 32→31, undo 31→32, pista y reinicio; ES/AR con `lang`/dirección correctos; sin errores de consola. Página solo solicita CSS global y JS propio (4.0 KB); no carga modelos ni recursos remotos.
 - [x] Build/sitemap aislado — 3.420 `<loc>` únicas (94 herramientas × 36 idiomas + 36 portadas), 3.565 archivos, 103.738.804 bytes.
-- [ ] P/S — preparar y revisar PR; esperar CI; fusionar por el flujo autorizado, desplegar separadamente el hub y verificar en producción las rutas/sitemap públicos antes de marcar publicación.
+- [x] P/S — cerrado después; ver registro «Publicada · Peg Solitaire» anterior.
 
 ## Publicada · Work Order Generator (#185; 92.ª herramienta Growth600) · 2026-10-09
 
