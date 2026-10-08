@@ -792,6 +792,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/number-line-graphing-tool/logic.mjs',
   },
   {
+    id: 'laplace-transform-calculator',
+    category: 'math-statistics',
+    type: 'calculator',
+    primaryIntent: 'laplace transform calculator',
+    secondaryIntents: ['inverse laplace calculator', 'laplace transform of a function', 'laplace transform table calculator'],
+    functions: ['calculate unilateral transforms for bounded sums of constants, t powers, exponentials, sine and cosine terms', 'handle exponential shifts of supported polynomial and trigonometric terms and show the region of convergence', 'invert common simple poles, repeated shifted real poles and standard sine/cosine partial fractions', 'explain accepted notation and reject expressions outside the implemented table rather than returning guessed algebra'],
+    acceptance: 'The forward transform of 1 is 1/s; the inverse transform of 1/s is 1; the forward transform of exp(-2*t) is 1/(s+2) with Re(s)>-2.',
+    boundary: 'Bounded unilateral Laplace transform table, not a general symbolic algebra system. Forward syntax supports at most 12 terms and powers through t^8; inverse mode requires one already-separated partial-fraction term per line. No automatic partial-fraction decomposition, arbitrary products, piecewise/distribution inputs or numerical inversion. All calculations run locally without a remote math service.',
+    relatedExistingIds: ['polynomial-integral-calculator', 'polynomial-derivative-calculator'],
+    logicModule: './tools/laplace-transform-calculator/logic.mjs',
+  },
+  {
     id: 'weight-loss-calculator',
     category: 'health-math',
     type: 'calculator',

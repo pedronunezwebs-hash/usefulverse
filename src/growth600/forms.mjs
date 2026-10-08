@@ -28,6 +28,7 @@ export function renderGrowthForm(toolId, copy) {
     'severance-pay-calculator': ['mode', 'weeklyPay', 'yearsOfService', 'weeksPerYear', 'birthDate', 'employmentStartDate', 'redundancyDate', 'accuracyNote', 'customNote', 'ukNote', 'officialSource', 'estimate', 'appliedWeeklyPay', 'totalWeeks', 'rulesAsOf'],
     'divisibility-calculator': ['integer', 'divisors', 'accuracyNote', 'resultSummary', 'remainder', 'quotient', 'rule', 'rule1', 'rule2', 'rule3', 'rule4', 'rule5', 'rule6', 'rule7', 'rule8', 'rule9', 'rule10', 'rule11', 'rule12', 'rule13', 'rule25', 'rule100', 'rule1000', 'ruleGeneric'],
     'number-line-graphing-tool': ['intervals', 'intervalFormat', 'accuracyNote', 'chartDescription', 'exampleInput'],
+    'laplace-transform-calculator': ['direction', 'forwardMode', 'inverseMode', 'expression', 'forwardHint', 'inverseHint', 'accuracyNote', 'resultSummary', 'region', 'forwardConvention', 'inverseConvention', 'forwardExample', 'inverseExample'],
     'image-upscaler': ['imageFile', 'accuracyNote', 'progressHint', 'sourcePreview', 'resultPreview'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
@@ -110,6 +111,7 @@ export function renderGrowthForm(toolId, copy) {
     'severance-pay-calculator': ['calculate', 'example', 'copy', 'reset', 'customMode', 'ukMode'],
     'divisibility-calculator': ['calculate', 'example', 'commonDivisors', 'copy', 'reset'],
     'number-line-graphing-tool': ['calculate', 'example', 'downloadSvg', 'reset'],
+    'laplace-transform-calculator': ['calculate', 'example', 'reset'],
     'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
@@ -335,6 +337,17 @@ export function renderGrowthForm(toolId, copy) {
     <p class="hint">${escapeGrowthHtml(fields.intervalFormat)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('calculate', labels.calculate)}${button('example', labels.example, 'secondary')}<button type="button" data-action="download-svg" class="button button--secondary" disabled>${escapeGrowthHtml(labels.downloadSvg)}</button>${reset}</div>
     <section class="result" data-number-line-result hidden aria-labelledby="number-line-result-title"><h2 id="number-line-result-title">${escapeGrowthHtml(fields.chartDescription)}</h2><div data-number-line-chart></div></section>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+  </form>`, copy);
+
+  if (toolId === 'laplace-transform-calculator') return attachCopy(`<form id="tool-form" class="laplace-transform-calculator" novalidate>
+    ${label('laplace-direction', fields.direction, `<select id="laplace-direction" name="direction"><option value="forward">${escapeGrowthHtml(fields.forwardMode)}</option><option value="inverse">${escapeGrowthHtml(fields.inverseMode)}</option></select>`)}
+    ${label('laplace-expression', fields.expression, `<textarea id="laplace-expression" name="expression" rows="5" maxlength="500" spellcheck="false" autocapitalize="off" autocomplete="off" required>${escapeGrowthHtml(fields.forwardExample)}</textarea>`)}
+    <p class="hint" data-laplace-forward-hint>${escapeGrowthHtml(fields.forwardHint)}</p>
+    <p class="hint" data-laplace-inverse-hint hidden>${escapeGrowthHtml(fields.inverseHint)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('calculate', actions.calculate)}${button('example', actions.example, 'secondary')}${reset}</div>
+    <section class="result" data-laplace-result hidden aria-labelledby="laplace-result-title"><h2 id="laplace-result-title">${escapeGrowthHtml(fields.resultSummary)}</h2><div data-laplace-output></div><p class="hint" data-laplace-region></p></section>
     <p class="status" role="status" aria-live="polite" data-status></p>
   </form>`, copy);
 

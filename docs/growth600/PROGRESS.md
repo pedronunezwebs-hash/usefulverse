@@ -941,3 +941,15 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] P/S — no desplegado; sitemap público e indexación intactos.
 - **Bundle:** **4.888 bytes** minificados.
 - **Recuento vigente:** **79/323** candidatas nuevas con implementación inglesa. Quedan **244 filas** del plan, incluida una duplicada que debe reemplazarse por una propuesta única. Las 277 herramientas existentes siguen intactas. #176 no está localizada en todos los idiomas, publicada ni indexada.
+
+## Continuación · Laplace Transform Calculator (#196) · 2026-10-08
+
+- [x] C/F — se reutilizaron datos del plan, sin volver a consultar DataForSEO: `laplace transform calculator`, 2.400 búsquedas/mes US/en, KD 1; secundaria medida `inverse laplace calculator`, 1.900/mes, KD 7.
+- [x] E — dos direcciones: Laplace unilateral directa para sumas explícitas de constantes, potencias tⁿ, exp(a·t), senos/cosenos y exponenciales moduladas; inversa de polos simples/repetidos y fracciones parciales seno/coseno estándar, una por línea. Muestra región de convergencia en el cálculo directo.
+- [x] B — gramática acotada, máximo 500 caracteres/12 términos, potencias hasta t⁸, validación y rechazo de formas no soportadas. No estima algebra simbólica general ni calcula fracciones parciales automáticamente. Totalmente local y sin dependencias ni API de conversión.
+- [x] X — **159/159 pruebas** focales de lógica, controlador, catálogo, formulario, contrato de locales, render y build aprobadas; aceptación directa `1 → 1/s`, inversa `1/s → 1`, términos desplazados, seno/coseno y errores de sintaxis.
+- [x] L parcial — copy inglés, metadata con límites y dos FAQs; los otros 35 locales son borradores no aprobados. El gate los mantiene fuera de publicación.
+- [x] B — bundle minificado **6.719 bytes**, compilado con Esbuild 0.28.2 temporal desde el paquete ya presente en la caché local. `assertLocalController` lo acepta bajo 24 KiB y sin servicios remotos/código dinámico.
+- [ ] X visual — falta QA real en Chrome/dispositivos; las pruebas automatizadas no la sustituyen.
+- [ ] P/S — no desplegada; sitemap e indexación de producción intactos.
+- **Recuento vigente:** **80/323** candidatas nuevas con implementación inglesa; quedan **243 filas** del plan, incluida una duplicada por sustituir. Las 277 originales siguen intactas. #196 no está traducida a todos los locales, publicada ni indexada.
