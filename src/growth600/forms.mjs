@@ -24,6 +24,7 @@ export function renderGrowthForm(toolId, copy) {
     'photo-to-sketch': ['imageFile', 'intensity', 'detail', 'compare', 'accuracyNote', 'previewHint'],
     'schema-markup-validator': ['markup', 'accuracyNote', 'resultSummary', 'issues', 'googleNote'],
     'readability-checker': ['text', 'language', 'languageEn', 'languageEs', 'languageFr', 'languageDe', 'languageIt', 'accuracyNote', 'resultSummary', 'formula', 'wordCount', 'sentenceCount', 'characterCount', 'characterCountNoSpaces', 'letterCount', 'syllableEstimate', 'averageSentenceLength', 'averageWordLength', 'averageSyllablesPerWord', 'longWordCount'],
+    'savings-goal-calculator': ['mode', 'startingBalance', 'targetAmount', 'annualRatePercent', 'months', 'monthlyContribution', 'contributionTiming', 'accuracyNote', 'resultSummary', 'monthlyResult', 'monthsResult', 'projectedBalance', 'totalContributions', 'estimatedInterest', 'currencyNote'],
     'image-upscaler': ['imageFile', 'accuracyNote', 'progressHint', 'sourcePreview', 'resultPreview'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
@@ -102,6 +103,7 @@ export function renderGrowthForm(toolId, copy) {
     'photo-to-sketch': ['load', 'export', 'cancel', 'download', 'original'],
     'schema-markup-validator': ['validate', 'example', 'copySummary'],
     'readability-checker': ['calculate', 'example', 'copy', 'reset'],
+    'savings-goal-calculator': ['calculate', 'example', 'copy', 'reset', 'requiredContribution', 'monthsToGoal', 'beginning', 'end'],
     'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
@@ -280,6 +282,20 @@ export function renderGrowthForm(toolId, copy) {
       </dl>
       <p class="hint" data-readability-formula></p>
     </section>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+  </form>`, copy);
+
+  if (toolId === 'savings-goal-calculator') return attachCopy(`<form id="tool-form" class="savings-goal-calculator" novalidate>
+    ${label('savings-mode', fields.mode, `<select id="savings-mode" name="mode"><option value="required-contribution">${escapeGrowthHtml(labels.requiredContribution)}</option><option value="months-to-goal">${escapeGrowthHtml(labels.monthsToGoal)}</option></select>`)}
+    ${label('savings-starting-balance', fields.startingBalance, '<input id="savings-starting-balance" name="startingBalance" type="number" min="0" max="1000000000000" step="any" inputmode="decimal" value="0" required>')}
+    ${label('savings-target', fields.targetAmount, '<input id="savings-target" name="targetAmount" type="number" min="0.01" max="1000000000000" step="any" inputmode="decimal" value="1200" required>')}
+    ${label('savings-apr', fields.annualRatePercent, '<input id="savings-apr" name="annualRatePercent" type="number" min="0" max="100" step="any" inputmode="decimal" value="0" required>')}
+    ${label('savings-months', fields.months, '<input id="savings-months" name="months" type="number" min="1" max="1200" step="1" inputmode="numeric" value="12" required>')}
+    ${label('savings-contribution', fields.monthlyContribution, '<input id="savings-contribution" name="monthlyContribution" type="number" min="0" max="1000000000000" step="any" inputmode="decimal" value="100" required disabled>')}
+    ${label('savings-timing', fields.contributionTiming, `<select id="savings-timing" name="contributionTiming"><option value="end">${escapeGrowthHtml(labels.end)}</option><option value="beginning">${escapeGrowthHtml(labels.beginning)}</option></select>`)}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.currencyNote)}</p>
+    <div class="actions">${button('calculate', labels.calculate)}${button('example', labels.example, 'secondary')}${button('copy', labels.copy, 'secondary')}${reset}</div>
+    <section class="result" data-savings-result hidden aria-labelledby="savings-result-title"><h2 id="savings-result-title">${escapeGrowthHtml(fields.resultSummary)}</h2><p data-savings-primary></p><dl><div><dt>${escapeGrowthHtml(fields.projectedBalance)}</dt><dd data-savings-projected></dd></div><div><dt>${escapeGrowthHtml(fields.totalContributions)}</dt><dd data-savings-contributions></dd></div><div><dt>${escapeGrowthHtml(fields.estimatedInterest)}</dt><dd data-savings-interest></dd></div></dl></section>
     <p class="status" role="status" aria-live="polite" data-status></p>
   </form>`, copy);
 

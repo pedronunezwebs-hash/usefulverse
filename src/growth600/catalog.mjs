@@ -744,6 +744,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/readability-checker/logic.mjs',
   },
   {
+    id: 'savings-goal-calculator',
+    category: 'personal-finance',
+    type: 'calculator',
+    primaryIntent: 'savings goal calculator',
+    secondaryIntents: ['savings target calculator', 'how much to save each month calculator', 'time to savings goal calculator'],
+    functions: ['solve the monthly contribution needed for a target and a chosen number of months', 'solve the first whole month the target is reached for a fixed monthly contribution', 'include an optional current balance, nominal annual rate compounded monthly, and deposits at the beginning or end of each month', 'show projected amount, contributions and modeled interest separately, with an explicit 100-year cap'],
+    acceptance: 'With a zero starting balance, a 1,200 target, no interest and 12 months, required deposits equal 100 per month; with a fixed 100 monthly deposit, the target is first reached in month 12. Beginning-of-month deposits must require no more than end-of-month deposits at a positive rate.',
+    boundary: 'A goal-target calculation, not a generic savings-growth forecast, bank offer, investment return, financial advice or recommendation. Assumes a constant nominal annual rate divided into monthly periods and fixed deposits; excludes fees, tax, inflation, changing rates, missed deposits and product rules. Inputs are local and not stored. Use the same currency units for all money amounts.',
+    relatedExistingIds: ['compound-interest-calculator', 'goal-planner'],
+    logicModule: './tools/savings-goal-calculator/logic.mjs',
+  },
+  {
     id: 'weight-loss-calculator',
     category: 'health-math',
     type: 'calculator',

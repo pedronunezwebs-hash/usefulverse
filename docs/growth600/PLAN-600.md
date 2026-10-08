@@ -1983,18 +1983,19 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 173 · Savings Goal Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `savings-goal-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/savings-goal-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [ ] **C/F/E/X/L/B/P/S completos — `savings-goal-calculator` (implementación inglesa parcial; no publicada)**
+- **Destino propuesto:** `https://tools.usefulverse.com/tools/savings-goal-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarada publicada.
 - **Demanda:** `savings goal calculator` — 3.600 búsquedas/mes US/en, KD 36; nivel B. CPC 3.72 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Resolver aportación o plazo para una meta con fecha y saldo actual
 - **Prueba de aceptación específica:** Meta 1200 a 12 meses sin interés da 100 por mes
 - **Frontera con otras herramientas:** compound-interest-calculator: objetivo inverso, no proyección genérica. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** H: dependencia/cómputo bajo demanda; verificar licencia y compatibilidad. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** cálculo financiero determinista sin dependencia, red ni servidor. APR nominal dividida entre doce, capitalización mensual y aportaciones al inicio/fin del mes declaradas como supuestos; límite de 1.200 meses y entradas acotadas.
 - **Consultas secundarias del mismo propietario:**
   - `savings target calculator` — 3.600/mes US/en; KD 36.
   - `savings goal calculator free online`; `savings goal calculator with example`; `savings goal calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** DE/de `sparziel rechner` 70/mes, KD 18.
+- **Avance comprobado (2026-10-08):** C/F, lógica E, tests X del cálculo/controlador simulado, fuente inglesa L, formulario y copy B implementados. Pruebas focalizadas: **155/155 aprobadas**; bundle minificado temporal: **5.562 bytes** (presupuesto 24 KiB). Los 35 borradores locales están marcados pendientes y el gate los bloquea. Sin comprobación visual en Chrome, deploy, sitemap público ni envíos a buscadores; completar esos gates antes de declarar terminada.
 
 ### 174 · Severance Pay Calculator
 

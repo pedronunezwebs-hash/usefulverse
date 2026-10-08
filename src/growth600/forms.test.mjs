@@ -272,6 +272,7 @@ const copies = {
   'trapezoid-calculator': { name: 'Trapezoid calculator', actions: { ...actions }, fields: { baseA: 'Bottom base', baseB: 'Top base', height: 'Height', topOffset: 'Top base offset', unit: 'Unit', millimeters: 'Millimeters', centimeters: 'Centimeters', meters: 'Meters', inches: 'Inches', feet: 'Feet', accuracyNote: 'All dimensions must use one unit.', diagramLabel: 'Trapezoid geometry' } },
   'prayer-times-calculator': { name: 'Prayer times calculator', actions: { ...actions }, fields: { date: 'Date', latitude: 'Latitude', longitude: 'Longitude', utcOffset: 'UTC offset', method: 'Method', mwl: 'MWL', isna: 'ISNA', egypt: 'Egypt', makkah: 'Makkah', karachi: 'Karachi', france: 'France', russia: 'Russia', singapore: 'Singapore', asrMethod: 'Asr', standard: 'Standard', hanafi: 'Hanafi', highLatitudeMethod: 'High latitude', angleBased: 'Angle based', middleOfNight: 'Middle of night', oneSeventh: 'One-seventh', noAdjustment: 'None', ramadan: 'Ramadan', accuracyNote: 'Estimate only.' } },
 };
+copies['savings-goal-calculator'] = { name: 'Savings Goal Calculator', actions: { ...actions, requiredContribution: 'Monthly deposit needed', monthsToGoal: 'Time needed for my deposit', beginning: 'Beginning of month', end: 'End of month' }, messages: { ...messages }, fields: { mode: 'Calculation', startingBalance: 'Current savings', targetAmount: 'Savings target', annualRatePercent: 'Annual rate', months: 'Months', monthlyContribution: 'Monthly deposit', contributionTiming: 'Deposit timing', accuracyNote: 'Estimate only.', resultSummary: 'Estimate', monthlyResult: 'Required deposit', monthsResult: 'Months', projectedBalance: 'Projected balance', totalContributions: 'Deposits', estimatedInterest: 'Estimated interest', currencyNote: 'Use the same currency.' } };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
   for (const tool of growthPilotTools) {
@@ -584,6 +585,16 @@ test('readability checker labels source language and renders distinct metrics wi
   assert.match(html, /data-action="example"/u);
   assert.match(html, /data-action="copy"/u);
   assert.match(html, /aria-live="polite"/u);
+});
+
+test('savings goal form exposes both solve modes and an accessible estimate region', () => {
+  const html = renderGrowthForm('savings-goal-calculator', copies['savings-goal-calculator']);
+  for (const name of ['mode', 'startingBalance', 'targetAmount', 'annualRatePercent', 'months', 'monthlyContribution', 'contributionTiming']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  assert.match(html, /data-savings-result hidden/u);
+  assert.match(html, /name="monthlyContribution"[^>]*disabled(?![^>]*hidden)/u);
+  assert.match(html, /data-action="example"/u);
+  assert.match(html, /data-action="copy"/u);
+  assert.match(html, /role="status" aria-live="polite"/u);
 });
 
 test('random team form exposes accessible participant, balance, constraint, seed, copy and CSV controls', () => {

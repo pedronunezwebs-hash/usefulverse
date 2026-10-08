@@ -888,3 +888,16 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — copy inglesa aprobada; 35 idiomas siguen bloqueados hasta traducir la herramienta.
 - [ ] P/S — sin merge, deploy, sitemap público ni solicitud de indexación.
 - **Recuento vigente:** **75/323** candidatas nuevas con implementación inglesa; quedan **248 candidatas válidas** y **1 fila duplicada** que debe reemplazarse por una herramienta única antes de poder contar 600. Las 277 herramientas protegidas permanecen intactas. Esta candidata no se considera aún completamente localizada, publicada o indexada.
+
+## Continuación · Savings Goal Calculator (#173) · 2026-10-08
+
+- [x] C/F — candidata específica de ahorro inverso; DataForSEO ya indicaba `savings goal calculator` 3.600 búsquedas/mes US/en, KD 36; `savings target calculator` 3.600, KD 36 y Alemania `sparziel rechner` 70, KD 18. No repetí consultas ni consumí cuota.
+- [x] E — calcula la aportación mensual para un objetivo/plazo o el primer mes en que se alcanza un objetivo con aportación fija; saldo inicial y APR nominal opcionales; capitalización mensual; pagos al inicio o final de mes; contribuciones/interés/saldo desglosados. Rango de 0–100% APR, cantidades acotadas y plazo máximo de 1.200 meses. El caso matemático sin interés 1.200/12 da 100 al mes. Distingue meta ya alcanzada, inalcanzable y resultado que excede el horizonte.
+- [x] B — formulario accesible de dos modos con campos que se activan/desactivan coherentemente, ejemplo, copiar, limpiar y descarte de resultados obsoletos. Avisos de estimación, mismo código monetario en todos los importes, sin conversión de divisas ni consejo financiero.
+- [x] Integración — catálogo aditivo, render de formulario, contrato de campos/acciones/mensajes/FAQs, copy fuente en inglés y 35 borradores marcados `pending-tool-specific-translation`; gate de idiomas los rechaza. Enlaza como herramienta relacionada al compound-interest calculator y goal planner sin fusionar intenciones.
+- [x] Pruebas focalizadas: lógica, controlador con DOM simulado, catálogo, formulario, contrato de locales, render y build — **155/155 aprobadas**. Incluye goal acceptance, redondeo al primer mes, inicio/fin de período, tasa cero, tope 100 años, validación, alternancia de modos y ocultación de resultados obsoletos.
+- [x] Bundle compilado de manera aislada con Esbuild fijado en 0.28.2: **5.562 bytes minificados**, bajo el límite de 24 KiB. El paquete, la caché y el resultado se borraron del directorio temporal al terminar; el repositorio quedó sin dependencias instaladas.
+- [ ] X — no se validó la interacción visual real en Chrome ni la versión final del pipeline completo. Se intentó `npm test`, pero la batería total no es reproducible en este clon sin instalar dependencias del proyecto (fallan módulos ausentes como `prettier` y `esbuild`); las 155 pruebas focalizadas sí pasaron.
+- [ ] L — copy inglés aprobada; los otros 35 idiomas siguen bloqueados como borradores.
+- [ ] P/S — no hay merge/deploy, sitemap público ni solicitud de indexación.
+- **Recuento vigente:** **76/323** candidatas con implementación inglesa; quedan **247 candidatas válidas** y una fila duplicada del plan por sustituir. Las 277 herramientas protegidas siguen intactas. Esta herramienta no está completamente localizada, publicada ni indexada.
