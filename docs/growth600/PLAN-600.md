@@ -3149,14 +3149,14 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 182 · Csv To Pdf
 
-- [~] **C/F/E/X/L/B completados localmente; P/S pendientes — `csv-to-pdf`**
-- **Destino:** `https://tools.usefulverse.com/tools/csv-to-pdf/`; otras 35 versiones con los prefijos del anexo. Todavía no está publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `csv-to-pdf`**
+- **Destino:** `https://tools.usefulverse.com/tools/csv-to-pdf/`; 35 versiones adicionales con los prefijos del anexo.
 - **Demanda:** `csv to pdf` — 2.900 búsquedas/mes US/en, KD 0; nivel B. CPC 2.76 USD (no CPM).
 - **Implementación:** importa CSV local con separador automático o elegido, filas entrecomilladas/multilínea, UTF-8, Windows-1252 y UTF-16, encabezado opcional, vista previa accesible, orientación y papel A4/Carta, márgenes y diálogo de impresión del navegador para guardar como PDF.
 - **Pruebas de aceptación:** separadores citados, comillas escapadas, CRLF, Unicode, saltos de línea, ceros iniciales y contenido HTML literal permanecen en celdas seguras; CSV malformado y límites se rechazan; la impresión envuelve filas largas y repite cabecera; el original no cambia ni se transmite.
 - **Frontera con otras herramientas:** CSV no contiene fórmulas ejecutables ni formato de hoja; no reemplaza la conversión de libros XLSX. Usa el diálogo PDF nativo del navegador y permanece local.
 - **Estado local (2026-10-08):** lógica focal 9/9; suite `npm test` 1.303/1.303; `locale:release-check` correcto; `npm run check` preserva las 10.260 URLs originales. Build: 3.276 URLs únicas (90 herramientas × 36 locales + 36 portadas), 3.417 archivos. Chrome EN/AR: preview, texto hostil literal, impresión local y consola limpia. Traducciones automáticas sencillas en 36 idiomas, no revisadas como nativas. Sin PageSpeed/Lighthouse.
-- **Siguiente paso:** abrir PR, pasar CI, fusionar, publicar el hub aislado y confirmar las 36 rutas y el sitemap público antes de marcar P/S.
+- **Publicación comprobada (2026-10-08):** PR #48, merge `82475ab108062f93a6bae9cc55a847addb5cfb1b`; CI 37811428445 y deploy principal/hub 37812563433 correctos. Las rutas EN/ES/AR responden HTTP 200; el sitemap público responde HTTP 200 con 3.276 URLs y 36 rutas de CSV→PDF. Publicación no demuestra indexación.
 - **Consultas secundarias del mismo propietario:**
   - `table to pdf converter` — 10/mes US/en; KD 57.
   - `csv to pdf free online`; `csv to pdf with example`; `csv to pdf no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
