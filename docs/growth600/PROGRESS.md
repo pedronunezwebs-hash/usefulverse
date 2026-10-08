@@ -837,3 +837,15 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] RTL — sin revisión de render RTL; se hará cuando haya traducciones RTL reales.
 - [ ] P/S — sin merge ni deploy; no se alteraron sitemaps de producción ni se enviaron URLs a buscadores.
 - **Recuento vigente:** 71/323 candidatas nuevas con implementación inglesa en catálogo; quedan 252 filas por resolver (251 candidatas válidas y una reserva). Las 277 herramientas originales siguen intactas. Nurikabe no cuenta como localizada, publicada ni indexada.
+
+## Continuación · Color Name Finder (#169 detallado del plan) · 2026-10-08
+
+- [x] C/F — candidata única tras contrastar el catálogo protegido: buscar nombres CSS estándar desde HEX. El plan detallado registra `color name finder` (3.600 búsquedas mensuales US/en, KD 23); su tabla-resumen asigna el mismo número a `confidence interval calculator`, pero esa intención y URL ya existen en las 277 herramientas protegidas. No implementé ni conté esa duplicada; necesita reemplazo en el inventario maestro.
+- [x] E — paleta CSS estándar local (148 nombres, 139 valores RGB únicos, alias agrupados); normaliza HEX de 3/6 dígitos, calcula distancia perceptual en OKLab, ordena resultados de forma determinista, distingue coincidencia exacta de aproximación y limita el número de resultados.
+- [x] B — selector nativo de color, entrada HEX, validación accesible, resultados con muestras visuales, alias y distancia, botones para copiar nombre/HEX. Cálculo local; no sube ni persiste datos. Copy aclara que una aproximación no es un nombre universal u oficial.
+- [x] Integración — catálogo aditivo, módulo aislado, renderer, estilos, idioma fuente inglés, FAQs, pruebas y registro en el sitio piloto. El gate de publicación rechaza expresamente el copy pendiente de 35 idiomas.
+- [x] Verificación focalizada: `node --test src/growth600/tools/color-name-finder/logic.test.mjs src/growth600/catalog.test.mjs src/growth600/forms.test.mjs src/growth600/locale-contract.test.mjs src/growth600/locale-utils.test.mjs src/growth600/render.test.mjs src/growth600/build.test.mjs` — **148/148 aprobadas**; sintaxis de módulo/controlador/copy y `git diff --check` pasan. El test de build aislado crea y elimina sus salidas temporales.
+- [ ] L — solo copy inglesa aprobada; las otras 35 rutas son borradores estructurales, no traducciones.
+- [ ] B/X — sin bundle real ni prueba de interacción en navegador en esta continuación; esbuild/dependencias no se instalaron.
+- [ ] P/S — sin merge, deploy, sitemap de producción ni envíos a buscadores. No ejecutar PageSpeed/Lighthouse.
+- **Recuento vigente:** 72/323 candidatas con implementación inglesa; quedan 251 entradas por resolver, incluyendo una duplicada identificada que requiere sustitución. Las 277 herramientas base permanecen intactas. Color Name Finder no cuenta como localizada, publicada ni indexada.

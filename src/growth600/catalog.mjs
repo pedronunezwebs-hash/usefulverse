@@ -696,6 +696,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/nurikabe/logic.mjs',
   },
   {
+    id: 'color-name-finder',
+    category: 'design-tools',
+    type: 'utility',
+    primaryIntent: 'color name finder',
+    secondaryIntents: ['nearest color name', 'color name from hex', 'closest CSS color name'],
+    functions: ['accept a hex color or native color-picker value', 'rank the closest standardized CSS named colors using perceptual OKLab distance', 'show exact standard-name matches separately from nearest approximations', 'copy the suggested name or hex value without uploading color data'],
+    acceptance: 'Every exact CSS named color returns a zero-distance match; aliases with identical RGB values are grouped rather than presented as separate near matches; invalid hex input is rejected.',
+    boundary: 'Matches only the standardized opaque CSS named-color palette; a nearest match is descriptive, not an official or universal color name. Does not identify colors from image pixels (use the image color picker) or convert color spaces. Local browser computation only.',
+    relatedExistingIds: ['image-color-picker', 'color-converter'],
+    logicModule: './tools/color-name-finder/logic.mjs',
+  },
+  {
     id: 'weight-loss-calculator',
     category: 'health-math',
     type: 'calculator',

@@ -26,6 +26,7 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   'dominoes-game': ['playerOne', 'playerTwo', 'turn', 'played', 'drew', 'passed', 'noMoves', 'stockEmpty', 'playerOneWins', 'playerTwoWins', 'tie', 'gameOver'],
   hitori: ['newPuzzle', 'solved', 'duplicateWhite', 'adjacentBlack', 'disconnectedWhite', 'hintBlack', 'hintWhite', 'noHint', 'marksCleared', 'markedBlack', 'markedWhite', 'generationFailed'],
   nurikabe: ['newPuzzle', 'solved', 'clueInSea', 'seaSquare', 'seaDisconnected', 'islandsTouch', 'islandWithoutClue', 'islandSize', 'hintSea', 'hintIsland', 'noHint', 'marksCleared', 'markedSea', 'markedIsland', 'generationFailed'],
+  'color-name-finder': ['found', 'checkColor', 'copied', 'copyUnavailable', 'exactMatch', 'nearestMatch', 'distance'],
   'weight-loss-calculator': ['copied', 'copyUnavailable', 'checkInputs', 'estimateOnly', 'weightToLose', 'energyEquivalent', 'timeline', 'weeklyRate', 'noDeficitChange', 'paceNote'],
   'random-team-generator': ['copied', 'copyUnavailable', 'generated', 'checkInputs', 'invalidCount', 'duplicateName', 'invalidPair', 'unknownName', 'incompatible', 'searchLimit', 'downloadReady', 'seedUnavailable'],
   'mulch-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'bedArea', 'mulchDepth', 'volume', 'orderVolume', 'cubicYards', 'bags', 'estimatedCost', 'costNotEntered'],
@@ -75,6 +76,7 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'dominoes-game': ['mode', 'variant', 'board', 'stock', 'hand', 'opponentHand', 'accuracyNote', 'rules'],
   hitori: ['size', 'difficulty', 'board', 'rules', 'accuracyNote', 'cell', 'row', 'column', 'black', 'white'],
   nurikabe: ['difficulty', 'board', 'rules', 'accuracyNote', 'cell', 'row', 'column', 'sea', 'island'],
+  'color-name-finder': ['hexColor', 'colorPreview', 'nearestNames', 'exactMatchNote', 'paletteNote'],
   'weight-loss-calculator': ['currentWeight', 'targetWeight', 'dailyDeficit', 'unit', 'methodNote', 'healthNote', 'sourceNiddk', 'sourceCdc'],
   'random-team-generator': ['names', 'teamCount', 'separations', 'separationsHint', 'seed', 'seedHint', 'privacyNote', 'relatedNamePicker'],
   'mulch-calculator': ['shape', 'dimensionUnit', 'length', 'width', 'diameter', 'bedCount', 'depth', 'depthUnit', 'bagVolume', 'bagUnit', 'wastePercent', 'pricePerBag', 'currency', 'currencyNote', 'accuracyNote', 'relatedGravelCalculator', 'relatedSoilCalculator'],
@@ -134,6 +136,7 @@ export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   'dominoes-game': ['newGame', 'draw', 'pass', 'playLeft', 'playRight', 'computer', 'twoPlayers', 'drawRule', 'blockRule', 'rules', 'result'],
   hitori: ['newGame', 'checkBoard', 'hint', 'clearMarks', 'easy', 'medium', 'hard', 'rules'],
   nurikabe: ['newGame', 'checkBoard', 'hint', 'clearMarks', 'easy', 'medium', 'hard', 'rules'],
+  'color-name-finder': ['findName', 'copyName', 'copyHex', 'result'],
   'weight-loss-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilograms', 'pounds', 'dayUnit', 'weekUnit', 'kilocalories', 'perWeek'],
   'random-team-generator': ['generateTeams', 'reset', 'example', 'copy', 'download', 'result', 'team', 'participant', 'seedLabel'],
   'mulch-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'rectangle', 'circle', 'meters', 'feet', 'centimeters', 'millimeters', 'inches', 'liters', 'cubicFeet', 'squareMeters', 'squareFeet'],
@@ -179,7 +182,7 @@ export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, {
           if (typeof copy.messages?.[key] === 'string' && !copy.messages[key].includes(token)) errors.push(`${locale.key}/${tool.id}: messages.${key} must preserve ${token}`);
         }
       }
-      if (['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'mulch-calculator', 'paver-calculator', 'solar-panel-calculator', 'btu-calculator', 'brick-calculator', 'rafter-calculator', 'carpet-calculator', 'aquarium-calculator', 'image-region-redactor', 'image-sharpener', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'hitori', 'nurikabe', 'weight-loss-calculator', 'heloc-calculator', 'random-team-generator', 'mood-tracker', 'journal-online', 'travel-itinerary-planner'].includes(tool.id)
+      if (['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'mulch-calculator', 'paver-calculator', 'solar-panel-calculator', 'btu-calculator', 'brick-calculator', 'rafter-calculator', 'carpet-calculator', 'aquarium-calculator', 'image-region-redactor', 'image-sharpener', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'hitori', 'nurikabe', 'color-name-finder', 'weight-loss-calculator', 'heloc-calculator', 'random-team-generator', 'mood-tracker', 'journal-online', 'travel-itinerary-planner'].includes(tool.id)
         && (!Array.isArray(copy.additionalFaqs) || copy.additionalFaqs.length !== 2
           || copy.additionalFaqs.some((faq) => !faq.question?.trim() || !faq.answer?.trim()))) {
         errors.push(`${locale.key}/${tool.id}: two complete localized tool FAQs are required`);

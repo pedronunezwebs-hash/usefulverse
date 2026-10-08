@@ -44,6 +44,11 @@ const copies = {
     messages: { ...messages },
     fields: { difficulty: 'Difficulty', board: 'Nurikabe grid', rules: 'The sea cannot contain a 2×2 square.', accuracyNote: 'Unique local puzzles.', cell: 'Cell', row: 'row', column: 'column', sea: 'sea', island: 'island' },
   },
+  'color-name-finder': {
+    name: 'Color name finder', actions: { ...actions, findName: 'Find color name', copyName: 'Copy closest name', copyHex: 'Copy hex value', result: 'Color matches' },
+    messages: { ...messages, found: 'Ready.', checkColor: 'Enter a valid hex color.', copied: 'Copied.', copyUnavailable: 'Unavailable.', exactMatch: 'Exact match.', nearestMatch: 'Closest names.', distance: 'Distance' },
+    fields: { hexColor: 'Hex color', colorPreview: 'Choose a color', nearestNames: 'Closest CSS color names', exactMatchNote: 'Exact match.', paletteNote: 'Nearest names are approximations.' },
+  },
   'weight-loss-calculator': {
     name: 'Weight loss scenario calculator', actions: { ...actions, dayUnit: 'days', weekUnit: 'weeks', kilocalories: 'kcal', perWeek: 'per week' },
     messages: { ...messages, weightToLose: 'Weight difference', energyEquivalent: 'Linear energy equivalent', timeline: 'Timeline', weeklyRate: 'Weekly rate', noDeficitChange: 'Zero modeled change.', paceNote: 'This is not a recommended target.' },
@@ -523,6 +528,18 @@ test('Nurikabe form exposes accessible board, difficulty, rules and local puzzle
   assert.match(html, /data-action="hint"/u);
   assert.match(html, /data-action="clear-marks"/u);
   assert.match(html, /2×2/u);
+});
+
+test('color name finder form provides hex and native picker inputs, explicit results and copy actions', () => {
+  const html = renderGrowthForm('color-name-finder', copies['color-name-finder']);
+  assert.match(html, /name="hexColor"[^>]*maxlength="7"/u);
+  assert.match(html, /name="colorPicker" type="color"/u);
+  assert.match(html, /data-action="find-name"/u);
+  assert.match(html, /data-action="copy-name"/u);
+  assert.match(html, /data-action="copy-hex"/u);
+  assert.match(html, /data-exact-match hidden/u);
+  assert.match(html, /data-name-results/u);
+  assert.match(html, /aria-live="polite"/u);
 });
 
 test('random team form exposes accessible participant, balance, constraint, seed, copy and CSV controls', () => {
