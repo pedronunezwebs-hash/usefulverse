@@ -780,6 +780,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/openapi-editor/logic.mjs',
   },
   {
+    id: 'font-pairing-tool',
+    category: 'design-tools',
+    type: 'utility',
+    primaryIntent: 'font pair generator',
+    secondaryIntents: ['font pairing tool', 'font pair preview', 'heading and body font combinations'],
+    functions: ['compare heading and body font combinations using system stacks or font files selected from the device', 'preview a realistic heading and paragraph with adjustable type scale, weight and line height', 'swap the roles of the two fonts and choose from named pairing presets', 'copy a small CSS font-family and typography snippet without uploading selected font files'],
+    acceptance: 'The initial page makes no font requests; each of six built-in pairings previews immediately; a selected supported local font is loaded only after selection and never leaves the browser; CSS export uses validated generated family names and reflects selected sizes/weights; clear removes added FontFace entries and dynamic options.',
+    boundary: 'Font pairing and type-hierarchy preview only, not a font-file tester, font host, licensing checker or complete design-system generator. Built-in choices use system fonts; optional font files are selected and processed in this browser session only. The tool cannot verify font licences or guarantee that a system font exists on another device. No external font catalog, API, account, upload or server processing.',
+    relatedExistingIds: ['font-tester', 'color-palette-generator'],
+    logicModule: './tools/font-pairing-tool/logic.mjs',
+  },
+  {
     id: 'color-name-finder',
     category: 'design-tools',
     type: 'utility',

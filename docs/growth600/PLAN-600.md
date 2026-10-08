@@ -2897,15 +2897,16 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `csv editor free online`; `csv editor with example`; `csv editor no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 
-### 282 · Openapi Editor
+### 282 · OpenAPI Editor
 
-- [ ] **C/F/E/X/L/B/P/S completos — `openapi-editor`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/openapi-editor/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `openapi-editor` (publicada 2026-10-09; PR #60)**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/openapi-editor/`; 35 variantes con los prefijos del anexo. Las 36 URLs responden HTTP 200.
 - **Demanda:** `swagger editor online` — 720 búsquedas/mes US/en, KD 32; nivel C. CPC 8.7 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Contrato OpenAPI YAML/JSON con lint, referencias locales y preview; no hacer peticiones a endpoints ni resolver referencias externas silenciosamente.
-- **Prueba de aceptación específica:** Pathsinoperation válido/ inválidosegúnversión
+- **Prueba de aceptación específica superada:** OpenAPI 3.1 YAML de ejemplo produce una operación `GET /items/{itemId}`; se señalan contrato incompleto, operationId duplicado, respuesta no descrita, parámetro de ruta ausente y referencia no resuelta. Las referencias remotas se rechazan sin solicitud de red.
 - **Frontera con otras herramientas:** api-request-builder: contratodeAPI no comando. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** H: dependencia/cómputo bajo demanda; verificar licencia y compatibilidad. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo cerrados:** Parser `js-yaml` 4.3.2 con licencia MIT, paquete fijado y asset minificado de 43.8 KB cargado desde el mismo origen solo cuando se usa YAML; licencia incluida. JSON no descarga el parser. Límite de entrada 300 KB y 500 rutas; no es una certificación completa OpenAPI. No hay API, Worker ni coste de proceso remoto.
+- **Pruebas/publicación:** suite focal 63/63 y `npm test` 1.377/1.377; build del sitio principal conserva 10.260 URLs; build Growth600 3.600 URLs. Localización en 36 idiomas; títulos/descripciones, canonical y `hreflang` validados por build. Navegador en inglés, español, árabe y chino tradicional; consola limpia, sin peticiones a endpoints externos y sin desbordamiento en las muestras. No PageSpeed/Lighthouse. PR #60 y deploy confirmados; sitemap del hub contiene 3.600 URLs únicas (no implica indexación).
 - **Consultas secundarias del mismo propietario:**
   - `openapi editor` — 390/mes US/en; KD 41.
   - `swagger editor online free online`; `swagger editor online with example`; `swagger editor online no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -4280,17 +4281,19 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 283 · Font Pairing Tool
 
-- [ ] **C/F/E/X/L/B/P/S completos — `font-pairing-tool`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/font-pairing-tool/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [ ] **C/F/E/X/L/B completos — `font-pairing-tool`; P/S pendiente**
+- **Destino propuesto:** `https://tools.usefulverse.com/tools/font-pairing-tool/`; otras 35 versiones con los prefijos del anexo.
 - **Demanda:** `font pair generator` — 720 búsquedas/mes US/en, KD 37; nivel C. CPC 4.74 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Previsualizar pares con fuentes de sistema o aportadas por el usuario y presets licenciados; tamaños, jerarquía y exportar estilos, sin descargar catálogos globales al abrir.
-- **Prueba de aceptación específica:** No descargarfonts externasnoelegidas
+- **Función y frontera comprobadas:** Comparar jerarquía de encabezado/cuerpo con seis presets de stacks del sistema, escalas, pesos y altura de línea ajustables, vista previa, intercambio de roles y exportación CSS. Hasta ocho fuentes seleccionadas del dispositivo (TTF/OTF/WOFF/WOFF2), máximo 5 MiB por archivo/15 MiB total; se cargan en memoria del navegador solo al elegirlas, no se suben ni se descargan fuentes externas. El usuario debe comprobar las licencias; no se ofrecen presets externos bajo una licencia supuesta.
+- **Pruebas de aceptación superadas:** Cero solicitudes de fuente/red externa en carga inicial; los seis presets producen los pares definidos; intercambio y reset restauran valores coherentes; CSS solo acepta stacks y nombres internos permitidos. Las validaciones limitan formato, cantidad y tamaño, y limpiar elimina las entradas `FontFace` de la sesión. El upload real de una fuente no se pudo probar porque el control de navegador no permite acceder a ese archivo del sistema; formato/tamaño y lógica pasan pruebas automatizadas.
 - **Frontera con otras herramientas:** font-tester: combinaciones tipográficas no inspecciónfont. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Solo lectura local de archivo elegida por el usuario y uso temporal de memoria; límites explícitos y nota sobre recursos/licencia del dispositivo. No hay API, Worker ni procesamiento remoto.
+- **Pruebas/publicación:** suite focal 57/57; `npm test` 1.382/1.382; `npm run check` preserva 10.260 URLs del sitio principal; `locale:release-check` pasa. Build aislado: 3.636 URLs únicas (100 herramientas × 36 idiomas + 36 portadas). Chrome EN/AR: presets, swap, reset, LTR/RTL y ausencia de peticiones de fuentes externas; sin errores visibles. No se ejecutó PageSpeed/Lighthouse.
 - **Consultas secundarias del mismo propietario:**
   - `font pairing tool` — 90/mes US/en; KD 24.
   - `font pair generator free online`; `font pair generator with example`; `font pair generator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
-- **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Estado de la candidata:** implementación y cobertura estática en los 36 locales completadas; copy de máquina comprensible sin revisión nativa, con títulos/descripciones dentro de límites. Publicación pendiente de PR, merge y verificación online.
+- **Longtails funcionales:** ya cubiertas en preview de parejas heading/body, presets, jerarquía tipográfica, carga local y exportación CSS; no publicar una URL por modificador.
 
 ### 319 · Css Border Radius Generator
 
