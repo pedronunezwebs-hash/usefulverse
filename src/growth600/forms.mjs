@@ -56,6 +56,7 @@ export function renderGrowthForm(toolId, copy) {
     'acceleration-calculator': ['mode', 'solveAcceleration', 'solveTime', 'solveFinalVelocity', 'solveDisplacement', 'units', 'metric', 'imperial', 'initialVelocity', 'finalVelocity', 'acceleration', 'timeSeconds', 'initialPosition', 'accuracyNote'],
     'force-calculator': ['mode', 'solveForce', 'solveMass', 'solveAcceleration', 'netMode', 'forceUnit', 'massUnit', 'accelerationUnit', 'force', 'mass', 'acceleration', 'forces', 'forcesHint', 'netMass', 'accuracyNote'],
     'friction-calculator': ['mode', 'normalForce', 'mass', 'massUnit', 'angle', 'gravity', 'staticCoefficient', 'kineticCoefficient', 'appliedForce', 'forceUnit', 'motionState', 'atRest', 'movingUp', 'movingDown', 'positiveSurfaceDirection', 'accuracyNote'],
+    'thermal-expansion-calculator': ['mode', 'linearMode', 'areaMode', 'volumeMode', 'initialDimension', 'lengthUnit', 'areaUnit', 'volumeUnit', 'coefficient', 'coefficientTemperatureUnit', 'deltaTemperature', 'temperatureUnit', 'accuracyNote'],
     'horsepower-calculator': ['mode', 'solvePower', 'solveTorque', 'solveRpm', 'torque', 'torqueUnit', 'rpm', 'power', 'powerUnit', 'accuracyNote'],
     'rtf-converter': ['file', 'accuracyNote', 'limitNote', 'output'],
     'csv-to-pdf': ['file', 'separator', 'encoding', 'hasHeader', 'pageSize', 'orientation', 'margin', 'accuracyNote', 'limitNote', 'resultCount', 'tableLabel'],
@@ -167,6 +168,7 @@ export function renderGrowthForm(toolId, copy) {
     'acceleration-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'force-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'friction-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'normalMode', 'inclineMode', 'newtons', 'kilonewtons', 'poundsForce', 'kilograms', 'pounds'],
+    'thermal-expansion-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'millimeters', 'inches', 'feet', 'squareMeters', 'squareCentimeters', 'squareFeet', 'squareInches', 'cubicMeters', 'cubicCentimeters', 'liters', 'cubicFeet', 'cubicInches'],
     'horsepower-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'rtf-converter': ['convert', 'reset', 'copy', 'download', 'print', 'result'],
     'csv-to-pdf': ['preview', 'reset', 'example', 'print', 'result'],
@@ -241,7 +243,7 @@ export function renderGrowthForm(toolId, copy) {
   }[toolId];
   const missing = actionNames.filter((key) => !(actions[key] ?? fields[key])?.trim());
   if (missing.length) throw new Error(`Missing localized form actions for ${toolId}: ${missing.join(', ')}.`);
-  const labels = Object.fromEntries([...new Set([...actionNames, 'calculate', 'generate', 'reset', 'example', 'newGame', 'rules', 'reveal', 'next', 'copy', 'download', 'result', 'progress', 'perPerson', 'metric', 'imperial', 'rectangle', 'circle', 'triangle', 'meters', 'centimeters', 'feet', 'inches', 'kgPerCubicMeter', 'lbPerCubicFoot', 'kilograms', 'pounds', 'twoPlayers', 'computer', 'human', 'currentPlayer', 'opponent', 'privacyNote', 'kmh', 'mph', 'notes'])].map((key) => [key, actions[key] ?? fields[key] ?? '']));
+  const labels = Object.fromEntries([...new Set([...actionNames, 'calculate', 'generate', 'reset', 'example', 'newGame', 'rules', 'reveal', 'next', 'copy', 'download', 'result', 'progress', 'perPerson', 'metric', 'imperial', 'rectangle', 'circle', 'triangle', 'meters', 'centimeters', 'millimeters', 'squareMeters', 'squareCentimeters', 'squareFeet', 'squareInches', 'cubicMeters', 'cubicCentimeters', 'liters', 'cubicFeet', 'cubicInches', 'inches', 'kgPerCubicMeter', 'lbPerCubicFoot', 'kilograms', 'pounds', 'twoPlayers', 'computer', 'human', 'currentPlayer', 'opponent', 'privacyNote', 'kmh', 'mph', 'notes'])].map((key) => [key, actions[key] ?? fields[key] ?? '']));
   const submit = (name) => button(name, labels[name]);
   const reset = button('reset', labels.reset, 'secondary');
 
@@ -1462,6 +1464,21 @@ export function renderGrowthForm(toolId, copy) {
     ${label('friction-applied-force', fields.appliedForce, '<input id="friction-applied-force" name="appliedForce" type="number" min="-1000000000" max="1000000000" step="any" inputmode="decimal" value="0">')}
     ${label('friction-state', fields.motionState, `<select id="friction-state" name="motionState"><option value="rest">${escapeGrowthHtml(fields.atRest)}</option><option value="uphill">${escapeGrowthHtml(fields.movingUp)}</option><option value="downhill">${escapeGrowthHtml(fields.movingDown)}</option></select>`)}
     <p class="hint">${escapeGrowthHtml(fields.positiveSurfaceDirection)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'thermal-expansion-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('thermal-mode', fields.mode, `<select id="thermal-mode" name="mode"><option value="linear">${escapeGrowthHtml(fields.linearMode)}</option><option value="area">${escapeGrowthHtml(fields.areaMode)}</option><option value="volume">${escapeGrowthHtml(fields.volumeMode)}</option></select>`)}
+    ${label('thermal-initial-dimension', fields.initialDimension, '<input id="thermal-initial-dimension" name="initialDimension" type="number" min="0" max="1000000000000" step="any" inputmode="decimal" value="10" required>')}
+    <div data-thermal-unit="linear">${label('thermal-length-unit', fields.lengthUnit, `<select id="thermal-length-unit" name="lengthUnit"><option value="m">${escapeGrowthHtml(labels.meters)}</option><option value="cm">${escapeGrowthHtml(labels.centimeters)}</option><option value="mm">${escapeGrowthHtml(labels.millimeters)}</option><option value="in">${escapeGrowthHtml(labels.inches)}</option><option value="ft">${escapeGrowthHtml(labels.feet)}</option></select>`)}</div>
+    <div data-thermal-unit="area" hidden>${label('thermal-area-unit', fields.areaUnit, `<select id="thermal-area-unit" name="areaUnit" disabled><option value="m²">${escapeGrowthHtml(labels.squareMeters)}</option><option value="cm²">${escapeGrowthHtml(labels.squareCentimeters)}</option><option value="ft²">${escapeGrowthHtml(labels.squareFeet)}</option><option value="in²">${escapeGrowthHtml(labels.squareInches)}</option></select>`)}</div>
+    <div data-thermal-unit="volume" hidden>${label('thermal-volume-unit', fields.volumeUnit, `<select id="thermal-volume-unit" name="volumeUnit" disabled><option value="m³">${escapeGrowthHtml(labels.cubicMeters)}</option><option value="cm³">${escapeGrowthHtml(labels.cubicCentimeters)}</option><option value="L">${escapeGrowthHtml(labels.liters)}</option><option value="ft³">${escapeGrowthHtml(labels.cubicFeet)}</option><option value="in³">${escapeGrowthHtml(labels.cubicInches)}</option></select>`)}</div>
+    ${label('thermal-coefficient', fields.coefficient, '<input id="thermal-coefficient" name="coefficient" type="number" min="-0.01" max="0.01" step="any" inputmode="decimal" value="0.000012" required>')}
+    ${label('thermal-coefficient-temperature-unit', fields.coefficientTemperatureUnit, `<select id="thermal-coefficient-temperature-unit" name="coefficientTemperatureUnit"><option value="C">${escapeGrowthHtml(fields.perCelsius)}</option><option value="F">${escapeGrowthHtml(fields.perFahrenheit)}</option></select>`)}
+    ${label('thermal-delta-temperature', fields.deltaTemperature, '<input id="thermal-delta-temperature" name="deltaTemperature" type="number" min="-10000" max="10000" step="any" inputmode="decimal" value="50" required>')}
+    ${label('thermal-temperature-unit', fields.temperatureUnit, `<select id="thermal-temperature-unit" name="temperatureUnit"><option value="C">${escapeGrowthHtml(fields.celsius)}</option><option value="F">${escapeGrowthHtml(fields.fahrenheit)}</option></select>`)}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

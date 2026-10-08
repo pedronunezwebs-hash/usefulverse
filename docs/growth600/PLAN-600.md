@@ -1517,8 +1517,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 287 · Friction Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `friction-calculator`** (C/F/E/X/L/B terminados; pendiente P/S)
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/friction-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `friction-calculator`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/friction-calculator/`; otras 35 versiones con los prefijos del anexo.
 - **Demanda:** `friction calculator` — 590 búsquedas/mes US/en, KD 0; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Normal, coeficiente, inclinación y umbral estático
 - **Prueba de aceptación específica:** Mu0 da fuerza fricción0
@@ -1528,12 +1528,12 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `friction force calculator` — 590/mes US/en; KD 0.
   - `friction calculator free online`; `friction calculator with example`; `friction calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
-- **Avance comprobado (2026-10-09):** motor local de Coulomb para fuerza normal conocida y plano inclinado, con fricción estática/cinética, sentido de movimiento, componente gravitatoria, fuerza neta y aceleración cuando se conoce la masa. El modo plano usa gravedad/coeficientes ingresados y declara sus límites; no dimensiona ni aconseja ingeniería. 36 copias estáticas; gates de locales y metadata aprobados. Suite focal 196/196, suite completa 1.406/1.406, `locale:release-check` y `npm run check` correctos; el sitemap principal conserva 10.260 URLs. Build separado 3.744 páginas para 103 herramientas × 36 idiomas + 36 portadas. Chrome real: ejemplo inclinado y página árabe RTL comprobados; sin overflow a viewport móvil de prueba ni errores de consola. No PageSpeed/Lighthouse. PR y despliegue aún pendientes; no cuenta todavía como publicado/indexado.
+- **Publicado y comprobado (2026-10-09):** motor local de Coulomb para fuerza normal conocida y plano inclinado, con fricción estática/cinética, sentido de movimiento, componente gravitatoria, fuerza neta y aceleración cuando se conoce la masa. El modo plano usa gravedad/coeficientes ingresados y declara sus límites; no dimensiona ni aconseja ingeniería. 36 copias estáticas; gates de locales y metadata aprobados. Suite focal 196/196 y suite completa 1.406/1.406 aprobadas; `locale:release-check`, `npm run check`, CI y despliegue correctos. El sitemap principal conserva 10.260 URLs. El sitemap público del hub contiene 3.744 URLs (103 herramientas × 36 idiomas + 36 portadas) e incluye rutas inglesa y árabe, ambas HTTP 200. Chrome real: ejemplo inclinado y página árabe RTL comprobados; sin overflow en viewport móvil de prueba ni errores de consola. No PageSpeed/Lighthouse. Publicada no significa indexación garantizada; no se solicitó indexación manual.
 
 ### 288 · Thermal Expansion Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `thermal-expansion-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/thermal-expansion-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [ ] **C/F/E/X/L/B/P/S completos — `thermal-expansion-calculator`** (C/F/E/X/L/B terminados; pendiente P/S)
+- **Destino preparado, no publicado:** `https://tools.usefulverse.com/tools/thermal-expansion-calculator/`; otras 35 versiones con los prefijos del anexo.
 - **Demanda:** `thermal expansion calculator` — 590 búsquedas/mes US/en, KD 0; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Expansión lineal, superficial, volumétrica y coeficiente manual
 - **Prueba de aceptación específica:** DeltaT cero conserva longitud
@@ -1543,6 +1543,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `linear expansion calculator` — 590/mes US/en; KD 0.
   - `thermal expansion calculator free online`; `thermal expansion calculator with example`; `thermal expansion calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Avance comprobado (2026-10-09):** herramienta local, sin API ni dependencia de servidor; modos lineal/superficial/volumétrico, coeficiente del modo ingresado, unidades métricas e imperiales, conversión coherente de diferencias/coeficientes °C/°F, expansión negativa y límites físicos explícitos. 36 copias estáticas de Google Translate con suffix de marca asegurado y límites de título/descripción; árabe RTL corregido tras inspección. Pruebas focales 199/199, `locale:release-check`, suite general 1.416/1.416, `npm run check` (10.260 URLs principales) y build hub (3.780 URLs para 104 herramientas × 36 idiomas + 36 portadas) aprobados. Chrome EN probó lineal 10 m → 10,006 m, área 100 m² → 100,12 m² y volumen 1.000 L con coeficiente por °F/ΔT 18 °F → +0,36 L. Chrome AR verificó cálculo lineal, RTL y ancho móvil 390 px sin overflow ni errores de consola. No PageSpeed/Lighthouse. Pendiente PR/CI, despliegue y comprobar las URLs/sitemap públicos; no afirmar indexación.
 
 ### 290 · Capacitor Calculator
 

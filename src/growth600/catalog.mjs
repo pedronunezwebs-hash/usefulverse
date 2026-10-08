@@ -252,6 +252,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/heat-pump-calculator/logic.mjs',
   },
   {
+    id: 'thermal-expansion-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'thermal expansion calculator',
+    secondaryIntents: ['linear expansion calculator', 'area thermal expansion calculator', 'volume thermal expansion calculator'],
+    functions: ['calculate linear, area, or volume change from an entered initial dimension, matching expansion coefficient, and temperature difference', 'convert Celsius/Fahrenheit temperature differences and coefficients per Celsius/per Fahrenheit consistently', 'accept common metric and imperial length, area, or volume units and report results in the selected input unit', 'allow negative expansion coefficients and reject combinations that imply a negative final dimension'],
+    acceptance: 'A 10 m bar with coefficient 12 × 10⁻⁶ per °C and a +50 °C change expands by 0.006 m to 10.006 m; a zero temperature change preserves the original length.',
+    boundary: 'First-order uniform-expansion estimate only. The user supplies a coefficient appropriate to the mode (linear, area, or volume); the tool does not infer material properties or convert a linear coefficient to an area/volume coefficient. Real behavior may vary with temperature, material direction, phase, constraints, moisture and geometry. Not engineering or safety advice; local browser calculation only, no uploaded data.',
+    relatedExistingIds: ['unit-converter', 'heat-loss-calculator'],
+    logicModule: './tools/thermal-expansion-calculator/logic.mjs',
+  },
+  {
     id: 'molarity-calculator',
     category: 'science-engineering',
     type: 'calculator',

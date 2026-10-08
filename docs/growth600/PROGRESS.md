@@ -2,15 +2,25 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## En curso · Friction Calculator (#287) · 2026-10-09
+## En curso · Thermal Expansion Calculator (#288) · 2026-10-09
+
+- [x] C/F — Se reutiliza la ficha ya investigada: `thermal expansion calculator` y `linear expansion calculator`, 590 búsquedas/mes US/en, KD 0; sin repetir llamadas ni coste de DataForSEO.
+- [x] E/B — Calculadora local para expansión lineal, de área y volumen; pide el coeficiente adecuado a cada modo, distingue por °C/°F, admite unidades comunes y coeficientes negativos, y rechaza dimensiones finales negativas. Declara supuestos y que no elige materiales ni da consejo de ingeniería.
+- [x] L — 36 copias estáticas desde inglés con Google Translate (sin traducción en producción); títulos con marca final y ≤60 caracteres, descripciones ≤160. Tras revisar en Chrome, corregí manualmente las etiquetas árabes de área/volumen y el texto del cálculo.
+- [x] X — Focal **199/199**; suite completa **1.416/1.416**; `locale:release-check` aprobado; `npm run check` conserva **10.260 URLs** del sitio principal. Hub separado: **3.780 URLs** para 104 herramientas × 36 idiomas + 36 portadas (3.937 archivos).
+- [x] B — Chrome: lineal 10 m → +0,006 m / 10,006 m; área 100 m² → +0,12 m² / 100,12 m²; volumen 1.000 L con coeficiente 20×10⁻⁶/°F y ΔT 18 °F → +0,36 L. Árabe RTL confirma etiquetas corregidas, salida correcta y 390 px sin desbordamiento horizontal ni errores de consola. No PageSpeed/Lighthouse.
+- [ ] P/S — PR, CI, deploy y comprobaciones públicas del hub/sitemap aún pendientes. No se solicita indexación manual.
+- **Estado:** 104/323 candidatas Growth600 implementadas localmente (103 publicadas, esta pendiente); las 277 herramientas protegidas no se tocaron. Siguiente ficha según el plan: #289 Hijri Calendar Converter.
+
+## Publicada · Friction Calculator (#287) · 2026-10-09
 
 - [x] C/F — Se reutilizó la ficha del plan: `friction calculator`, 590 búsquedas/mes US/en, KD 0; `friction force calculator`, 590/mes. Sin nuevas consultas ni gasto de DataForSEO.
 - [x] E/B — Calculadora local de fricción de Coulomb en modo de fuerza normal conocida o masa en plano inclinado; μs/μk, fuerza adicional con signo, estado de movimiento, fuerzas y aceleración. Explica supuestos y límites; no ofrece consejo de ingeniería ni elige coeficientes seguros.
 - [x] L — Copias estáticas en los 36 idiomas activos, generadas con el flujo Google Translate aceptado por el propietario. Títulos/descripciones y contrato de locales pasan los gates; no se presentan como revisión nativa. Corregí manualmente en árabe la fuerza normal, el estado de reposo y las etiquetas SI tras ver la página real; la notación μs/μk rusa también está preservada.
 - [x] X/E — Suite focalizada **196/196** y suite completa **1.406/1.406** aprobadas; `locale:release-check` pasa; `npm run check` mantiene las **10.260 URLs** del sitio principal. Build aislado: **3.744 páginas** para 103 herramientas × 36 idiomas, más 36 portadas (3.900 archivos).
 - [x] B — Chrome árabe RTL real: modo de ejemplo en plano inclinado, 10 kg y 30° → normal 84,928 N, gravedad tangencial 49,033 N, fricción cinética 25,478 N, fuerza neta 23,555 N y aceleración 2,355 m/s²; etiquetas/unidades coherentes, sin overflow a ancho móvil de prueba ni errores de consola. No PageSpeed/Lighthouse.
-- [ ] P/S — PR, CI, fusión, despliegue del hub y comprobación de sitemap/URLs públicos aún pendientes. No se ha solicitado indexación manual ni se afirma indexación.
-- **Estado:** la herramienta está implementada y traducida en esta rama; aún no está publicada. El catálogo original de 277 herramientas no se modificó. La siguiente candidata planificada es #288 Thermal Expansion Calculator.
+- [x] P/S — PR [#64](https://github.com/pedronunezwebs-hash/usefulverse/pull/64) fusionada como `743039f`; CI y despliegues de UsefulVerse y el hub terminaron correctamente (runs 37856830249 y 37856839303). Las rutas EN y AR responden HTTP 200; sitemap público del hub: 3.744 URLs. No se envió solicitud de indexación manual; publicado no equivale a indexado.
+- **Estado publicado:** 103/323 candidatas Growth600; 220 pendientes. Las 277 herramientas originales permanecen intactas. La siguiente candidata en trabajo es #288 Thermal Expansion Calculator.
 
 ## Publicada · Polygon Calculator (#285; candidata 102/323) · 2026-10-09
 
