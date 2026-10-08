@@ -43,6 +43,7 @@ export function renderGrowthToolPage({ tool, locale, localeEntries, copy, origin
     ['relatedPaintCalculator', 'paint-calculator'],
     ['relatedLoanCalculator', 'loan-calculator'],
     ['relatedNamePicker', 'random-name-picker'],
+    ['relatedTaskList', 'task-list'],
     ['relatedTileCalculator', 'tile-calculator'],
   ].filter(([field]) => copy.fields?.[field]);
   const relatedTool = relatedTools.map(([field, id]) => `<p class="related-tool"><a href="https://usefulverse.com${localePath(locale.key, id)}">${escapeGrowthHtml(copy.fields[field])}</a></p>`).join('');

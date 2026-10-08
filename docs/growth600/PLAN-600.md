@@ -3637,6 +3637,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 ### 132 · Goal Planner
 
 - [ ] **C/F/E/X/L/B/P/S completos — `goal-planner`**
+- **Estado de implementación (2026-10-08):** motor, formulario y copy en inglés implementados como candidata #60 de la rama; suite focal pasa. Las otras 35 traducciones, prueba de navegador, revisión RTL y publicación siguen pendientes; no está en producción ni en el sitemap.
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/goal-planner/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `smart goals template` — 6.600 búsquedas/mes US/en, KD 30; nivel B. CPC 1.36 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Objetivo, métrica, plazo, hitos y seguimiento local; separar resultado final de la lista de tareas existente.

@@ -40,6 +40,7 @@ export function renderGrowthForm(toolId, copy) {
     'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
     'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
     'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
+    'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'auto-loan-refinance-calculator': ['balance', 'currentApr', 'currentMonths', 'newApr', 'newMonths', 'fees', 'feeTreatment'],
     'secret-santa-generator': ['names', 'exclusions'],
     'tire-size-calculator': ['originalSize', 'replacementSize', 'indicatedSpeed', 'speedUnit', 'fitmentNote'],
@@ -102,6 +103,7 @@ export function renderGrowthForm(toolId, copy) {
     'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'auto-loan-refinance-calculator': ['calculate', 'reset', 'copy', 'result'],
     'secret-santa-generator': ['generate', 'reset', 'copy', 'download', 'result', 'reveal', 'next', 'privacyNote'],
     'tire-size-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kmh', 'mph'],
@@ -951,6 +953,32 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'goal-planner') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('goal-title', fields.title, '<input id="goal-title" name="title" type="text" maxlength="120" autocomplete="off" required>')}
+    ${label('goal-outcome', fields.outcome, '<textarea id="goal-outcome" name="outcome" rows="2" maxlength="240" required></textarea>')}
+    ${label('goal-metric', fields.metric, '<input id="goal-metric" name="metric" type="text" maxlength="100" required>')}
+    ${label('goal-unit', fields.unit, '<input id="goal-unit" name="unit" type="text" maxlength="30" autocomplete="off">')}
+    <div class="calculator-grid">
+      ${label('goal-start-value', fields.startValue, '<input id="goal-start-value" name="startValue" type="number" step="any" required>')}
+      ${label('goal-target-value', fields.targetValue, '<input id="goal-target-value" name="targetValue" type="number" step="any" required>')}
+      ${label('goal-current-value', fields.currentValue, '<input id="goal-current-value" name="currentValue" type="number" step="any" required>')}
+    </div>
+    <div class="calculator-grid">
+      ${label('goal-start-date', fields.startDate, '<input id="goal-start-date" name="startDate" type="date" required>')}
+      ${label('goal-current-date', fields.currentDate, '<input id="goal-current-date" name="currentDate" type="date" required>')}
+      ${label('goal-due-date', fields.dueDate, '<input id="goal-due-date" name="dueDate" type="date" required>')}
+    </div>
+    ${label('goal-milestones', fields.milestones, '<textarea id="goal-milestones" name="milestones" rows="5" maxlength="9000" spellcheck="false"></textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.milestoneHint)}</p>
+    ${label('goal-backup-file', fields.backupFile, '<input id="goal-backup-file" name="backupFile" type="file" accept=".json,application/json">')}
+    <p class="hint">${escapeGrowthHtml(fields.backupHint)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('generate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><p data-summary></p><progress max="100" value="0" data-progress-bar aria-label="${escapeGrowthHtml(fields.progressLabel)}"></progress><p data-progress-copy></p><h3>${escapeGrowthHtml(fields.milestonesLabel)}</h3><ul data-milestones></ul><div class="actions"><button type="button" data-action="update-progress" class="button button--primary">${escapeGrowthHtml(actions.updateProgress)}</button><button type="button" data-action="copy" class="button button--secondary">${escapeGrowthHtml(actions.copy)}</button><button type="button" data-action="download" class="button button--secondary">${escapeGrowthHtml(actions.download)}</button></div></section>
   </form>`, copy);
 
   return attachCopy(`<section class="game" aria-label="${escapeGrowthHtml(copy.name)}"><div class="game-toolbar"><label for="mancala-mode">${escapeGrowthHtml(fields.mode)}</label><select id="mancala-mode" data-mode><option value="computer">${escapeGrowthHtml(labels.computer)}</option><option value="two-player">${escapeGrowthHtml(labels.twoPlayers)}</option></select>${button('new-game', labels.newGame, 'primary')}</div><p class="status" role="status" aria-live="polite" data-status></p><div class="mancala-board" data-board aria-label="${escapeGrowthHtml(fields.board)}"></div><section class="result" data-result hidden><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div></section><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);

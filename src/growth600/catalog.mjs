@@ -336,6 +336,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/compression-ratio-calculator/logic.mjs',
   },
   {
+    id: 'goal-planner',
+    category: 'productivity',
+    type: 'planner',
+    primaryIntent: 'goal planner',
+    secondaryIntents: ['smart goals template', 'goal planning worksheet', 'track goal progress'],
+    functions: ['turn a measurable outcome into a dated plan with a baseline, target, start date and deadline', 'add dated milestones inside the plan window and mark each milestone complete', 'record dated progress measurements and calculate directional progress toward the target', 'save one active plan locally in the current browser and download a JSON backup'],
+    acceptance: 'A plan starting 2026-02-01 and due 2026-06-01 accepts milestones on or after the start and on or before the deadline; it rejects a milestone before the start or after the deadline. Baseline 10, target 20 and current 15 reports 50% progress; a decrease target of 20 to 10 with current 15 also reports 50%.',
+    boundary: 'A private, single-plan goal tracker, not a task list, calendar sync, reminder service, coaching system or guarantee of achievement. Data is stored only in this browser when storage is available and can be cleared by the browser. Export a JSON backup to keep a copy. Progress is a simple linear comparison to the chosen baseline and target; it is not a measure of effort or probability of success.',
+    relatedExistingIds: ['task-list'],
+    logicModule: './tools/goal-planner/logic.mjs',
+  },
+  {
     id: 'miter-angle-calculator',
     category: 'home-materials',
     type: 'calculator',

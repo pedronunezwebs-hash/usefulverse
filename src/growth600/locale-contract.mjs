@@ -36,6 +36,7 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   'aquarium-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'tankVolume', 'substrateDisplacement', 'airSpace', 'waterVolume', 'waterMassKg', 'waterMassLb'],
   'density-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'mass', 'volume', 'density', 'densityMetric', 'densityImperial', 'componentCount'],
   'compression-ratio-calculator': ['copied', 'copyUnavailable', 'calculated', 'checkInputs', 'ratio', 'sweptVolume', 'clearanceVolume', 'totalDisplacement', 'boreStroke'],
+  'goal-planner': ['copied', 'copyUnavailable', 'generated', 'downloaded', 'importFailed', 'saved', 'storageUnavailable', 'checkInputs', 'current', 'day', 'days', 'remaining'],
 });
 export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'image-color-picker': ['imageFile', 'accuracyNote', 'previewHint', 'zoom', 'currentColor', 'paletteLabel', 'relatedSharpener', 'relatedRedactor'],
@@ -73,12 +74,14 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'aquarium-calculator': ['length', 'width', 'height', 'dimensionUnit', 'substrateDepth', 'substrateSolidPercent', 'airGap', 'accuracyNote'],
   'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
   'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
+  'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
 });
 export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   'image-color-picker': ['load', 'addSample', 'copyColor', 'copyPalette', 'remove', 'clear', 'reset'],
   'image-region-redactor': ['load', 'addRegion', 'undo', 'clear', 'export', 'example', 'download', 'removeRegion', 'black', 'pixelate', 'blur', 'png', 'jpeg'],
   'image-sharpener': ['load', 'export', 'download', 'original', 'sharpened', 'png', 'jpeg', 'reset'],
   'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
+  'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
   'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
   'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
   'fence-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'millimeters', 'feet', 'inches'],

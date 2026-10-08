@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 59/323; **264 por implementar**. Las 277 herramientas originales permanecen intactas. Ninguna candidata pendiente está desplegada por este cambio.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 60/323 filas del plan; **263 filas restantes**. Goal Planner eleva el recuento codificado a 60, pero sigue en inglés y no se publica. API Request Builder, otra fila del plan, ya existe entre las 277 protegidas y no cuenta como herramienta nueva: hay que sustituir esa fila por una reserva para que el objetivo final sea 323 herramientas nuevas únicas. En ese cómputo neto faltan 263 herramientas únicas. Las 277 originales permanecen intactas.
 
 ## Avance de implementación · motores del piloto
 
@@ -698,3 +698,13 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] X/E navegador — falta interacción visual con ruta generada, incluido cambiar unidades y comparar entradas equivalentes. No se declara comprobada.
 - [ ] L — inglés fuente completo; los otros 35 locales están marcados `pending-tool-specific-translation` y no pasan el gate de publicación.
 - [ ] P/S — no merge/deploy; sitemap productivo y paneles de buscadores no cambiaron. No se ejecutó PageSpeed/Lighthouse. Total de rama: 59 candidatas implementadas, 264 pendientes.
+
+## Continuación · Goal Planner (#132) · 2026-10-08
+
+- [x] C/F — candidata #60 codificada; plan medible con hitos, no una segunda lista de tareas. La investigación ya incluida en el plan indica `smart goals template` 6.600 búsquedas/mes US/en, KD 30 y `goal planner` 1.900/mes; sin llamadas adicionales a DataForSEO.
+- [x] E — progreso ascendente/descendente, límites acotados, fechas de calendario, hitos ordenados/comprobados, seguimiento hasta 366 mediciones, progreso retrospectivo sin reemplazar la medición más reciente, completar hitos y restauración JSON validada.
+- [x] B — formulario accesible en inglés, ejemplo con fechas dinámicas, guardado local optativo al crear, copia, descarga/restauración JSON (máximo 100 KB), reinicio y enlace a la lista de tareas. Sin APIs, dependencias de ejecución ni servicios con coste por uso.
+- [x] E — suite focal completa: catálogo, contrato, formulario, render, build, bundles y lógica; incluidos casos de entrada inválida, fecha pasada y backup malformado.
+- [ ] L — inglés fuente listo; otras 35 locales permanecen explícitamente `pending-tool-specific-translation`. El gate de publicación lo bloquea.
+- [ ] X — falta prueba de interacción en navegador y revisión visual RTL/escritorio; no se declara comprobado.
+- [ ] P/S — no merge/deploy ni cambio del sitemap productivo o paneles. No ejecutar PageSpeed/Lighthouse. Total: 60 candidatas del plan codificadas, 263 filas por resolver y un duplicado conocido que requiere una sustitución única.

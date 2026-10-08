@@ -102,6 +102,8 @@ import densityCopies from './density-calculator-final.mjs';
 import { densityCalculatorEnglishCopy } from './density-calculator.en.mjs';
 import compressionRatioCopies from './compression-ratio-calculator-final.mjs';
 import { compressionRatioCalculatorEnglishCopy } from './compression-ratio-calculator.en.mjs';
+import goalPlannerCopies from './goal-planner-final.mjs';
+import { goalPlannerEnglishCopy } from './goal-planner.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -500,5 +502,6 @@ registerGrowthLocaleExtension(source, 'chemical-equation-balancer', { ...chemica
 registerGrowthLocaleExtension(source, 'gear-ratio-calculator', { ...gearRatioCopies, en: gearRatioCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'density-calculator', { ...densityCopies, en: densityCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'compression-ratio-calculator', { ...compressionRatioCopies, en: compressionRatioCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'goal-planner', { ...goalPlannerCopies, en: goalPlannerEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

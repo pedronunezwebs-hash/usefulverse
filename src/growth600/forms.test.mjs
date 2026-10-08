@@ -224,6 +224,11 @@ const copies = {
     messages: { ...messages, ratio: 'Static compression ratio', sweptVolume: 'Swept volume', clearanceVolume: 'Clearance volume', totalDisplacement: 'Total displacement', boreStroke: 'Bore to stroke' },
     fields: { unit: 'Measurement unit', volumeUnit: 'Volume unit', millimeters: 'Millimeters', inches: 'Inches', cubicCentimeters: 'Cubic centimeters', cubicInches: 'Cubic inches', bore: 'Cylinder bore', stroke: 'Stroke', chamberVolume: 'Chamber volume', gasketBore: 'Gasket bore', gasketThickness: 'Gasket thickness', deckClearance: 'Deck clearance', pistonCrownVolume: 'Piston dish or dome volume', cylinders: 'Cylinder count', accuracyNote: 'Static estimate only.' },
   },
+  'goal-planner': {
+    name: 'Goal Planner', actions: { ...actions, updateProgress: 'Record progress' },
+    messages: { ...messages, generated: 'Plan created.', downloaded: 'Backup downloaded.', importFailed: 'Invalid backup.', saved: 'Saved.', storageUnavailable: 'Storage unavailable.', current: 'Current', day: 'day', days: 'days', remaining: 'remaining' },
+    fields: { title: 'Goal name', outcome: 'Specific outcome', metric: 'Progress measure', unit: 'Unit', startValue: 'Baseline', targetValue: 'Target', currentValue: 'Current', startDate: 'Start date', currentDate: 'Progress date', dueDate: 'Deadline', milestones: 'Milestones', milestoneHint: 'Use YYYY-MM-DD | description.', accuracyNote: 'Linear progress only.', privacyNote: 'Stored in this browser.', progressLabel: 'Progress toward target', milestonesLabel: 'Milestones', backupFile: 'Restore JSON backup', backupHint: 'Choose a file up to 100 KB.', relatedTaskList: 'Task list' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -239,6 +244,7 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(renderGrowthForm('molar-mass-calculator', copies['molar-mass-calculator']), /maxlength="160"/u);
   assert.match(renderGrowthForm('secret-santa-generator', copies['secret-santa-generator']), /data-reveal-name/u);
   assert.match(renderGrowthForm('mancala', copies.mancala), /data-board/u);
+  assert.match(renderGrowthForm('goal-planner', copies['goal-planner']), /id="goal-backup-file"[^>]+type="file"[^>]+accept="\.json,application\/json"/u);
   const colorPicker = renderGrowthForm('image-color-picker', copies['image-color-picker']);
   assert.match(colorPicker, /type="file" accept="image\/png,image\/jpeg,image\/webp,image\/gif,image\/avif,image\/bmp"/u);
   assert.match(colorPicker, /data-color-picker-preview tabindex="0" role="button"/u);
@@ -329,6 +335,12 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(compression, /min="1" max="16" step="1"/u);
   assert.match(compression, /data-action="example"/u);
   assert.match(compression, /data-action="copy"/u);
+  const goalPlanner = renderGrowthForm('goal-planner', copies['goal-planner']);
+  for (const name of ['title', 'outcome', 'metric', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones']) assert.match(goalPlanner, new RegExp(`name="${name}"`, 'u'));
+  assert.match(goalPlanner, /data-progress-bar/u);
+  assert.match(goalPlanner, /data-milestones/u);
+  assert.match(goalPlanner, /data-action="update-progress"/u);
+  assert.match(goalPlanner, /data-action="download"/u);
   const asphalt = renderGrowthForm('asphalt-calculator', copies['asphalt-calculator']);
   assert.match(asphalt, /name="compactedThickness"/u);
   assert.match(asphalt, /name="pricePerTonne"/u);
