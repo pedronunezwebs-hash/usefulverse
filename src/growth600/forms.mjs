@@ -45,6 +45,7 @@ export function renderGrowthForm(toolId, copy) {
     'mood-tracker': ['date', 'mood', 'note', 'tags', 'saveConsent', 'privacyNote', 'consentHint', 'calendarLabel', 'monthLabel', 'selectedEntry', 'weekdaySun', 'weekdayMon', 'weekdayTue', 'weekdayWed', 'weekdayThu', 'weekdayFri', 'weekdaySat', 'mood1', 'mood2', 'mood3', 'mood4', 'mood5', 'tagCalm', 'tagAnxious', 'tagSad', 'tagHappy', 'tagTired', 'tagFocused', 'tagStressed', 'tagHopeful', 'tagGrateful', 'tagAngry', 'summaryLabel', 'averageLabel', 'countLabel', 'distributionLabel', 'noEntries', 'accuracyNote', 'importHint', 'sourceNote'],
     'journal-online': ['date', 'title', 'body', 'tags', 'search', 'dateFrom', 'dateTo', 'saveConsent', 'storageNote', 'encryptionNote', 'backupPassword', 'confirmPassword', 'entriesLabel', 'resultLabel', 'noEntries', 'countLabel', 'tagHint', 'importHint', 'passwordHint', 'exampleHint', 'exampleTitle', 'exampleBody', 'exampleTags', 'safetyNote'],
     'travel-itinerary-planner': ['tripName', 'tripStartDate', 'tripEndDate', 'bufferMinutes', 'saveConsent', 'storageNote', 'itemDate', 'startTime', 'endTime', 'itemTitle', 'category', 'categories', 'location', 'reservation', 'notes', 'itineraryLabel', 'noTrip', 'noItems', 'itemCount', 'overlapCount', 'bufferWarningCount', 'conflictsLabel', 'backupFile', 'backupHint', 'timeZoneNote', 'reservationPrivacyNote', 'exampleTrip', 'exampleActivity', 'exampleMeal', 'exampleLocation', 'exampleReservation'],
+    'polynomial-long-division-calculator': ['dividend', 'divisor', 'accuracyNote'],
     'auto-loan-refinance-calculator': ['balance', 'currentApr', 'currentMonths', 'newApr', 'newMonths', 'fees', 'feeTreatment'],
     'secret-santa-generator': ['names', 'exclusions'],
     'tire-size-calculator': ['originalSize', 'replacementSize', 'indicatedSpeed', 'speedUnit', 'fitmentNote'],
@@ -112,6 +113,7 @@ export function renderGrowthForm(toolId, copy) {
   'mood-tracker': ['saveEntry', 'updateEntry', 'example', 'reset', 'removeEntry', 'clearHistory', 'previousMonth', 'nextMonth', 'export', 'import', 'result'],
     'journal-online': ['saveEntry', 'updateEntry', 'newEntry', 'example', 'reset', 'search', 'clearSearch', 'deleteEntry', 'clearAll', 'exportJson', 'importJson', 'saveBackup', 'result'],
     'travel-itinerary-planner': ['createTrip', 'saveItem', 'updateItem', 'newItem', 'deleteItem', 'deleteTrip', 'example', 'reset', 'exportIcs', 'exportJson', 'importJson', 'print', 'result'],
+    'polynomial-long-division-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'auto-loan-refinance-calculator': ['calculate', 'reset', 'copy', 'result'],
     'secret-santa-generator': ['generate', 'reset', 'copy', 'download', 'result', 'reveal', 'next', 'privacyNote'],
     'tire-size-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kmh', 'mph'],
@@ -853,6 +855,15 @@ export function renderGrowthForm(toolId, copy) {
     <div class="field" data-molarity-fields="molarMass">${label('molarity-molar-mass', fields.molarMass, '<input id="molarity-molar-mass" name="molarMass" type="number" min="0.00000000000000000000000000000000000000000000000001" max="1000000000" step="any" inputmode="decimal" value="58.44">')}</div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'polynomial-long-division-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('polynomial-dividend', fields.dividend, '<input id="polynomial-dividend" name="dividend" type="text" maxlength="256" value="x^2 - 1" autocomplete="off" spellcheck="false" required>')}
+    ${label('polynomial-divisor', fields.divisor, '<input id="polynomial-divisor" name="divisor" type="text" maxlength="256" value="x - 1" autocomplete="off" spellcheck="false" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'dilution-calculator') return attachCopy(`<form id="tool-form" novalidate>

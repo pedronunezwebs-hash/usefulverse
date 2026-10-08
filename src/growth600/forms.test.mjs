@@ -248,6 +248,7 @@ const copies = {
     messages: { ...messages, tripSaved: 'Saved.', storageFailed: 'Storage unavailable.', tripDeletedStorageFailed: 'Deleted in this tab, but browser copy remains.', checkTrip: 'Check trip.', createTripFirst: 'Create a trip first.', exampleLoaded: 'Example loaded.', itemSaved: 'Stop added.', itemUpdated: 'Stop updated.', checkItem: 'Check stop.', formCleared: 'Cleared.', itemDeleted: 'Deleted.', confirmDeleteTrip: 'Delete trip?', tripDeleted: 'Trip deleted.', confirmRestore: 'Restore?', localSaved: 'Saved locally.', localRemoved: 'Removed.', jsonDownloaded: 'JSON downloaded.', icsDownloaded: 'Calendar downloaded.', backupTooLarge: 'Too large.', noItemsToExport: 'Add a stop.', exportFailed: 'Export failed.', confirmImport: 'Replace?', importCancelled: 'Cancelled.', imported: 'Imported.', importFailed: 'Invalid backup.', overlap: '{first} overlaps {second} by {minutes} min.', shortConnection: '{first} to {second}: {minutes} min; {needed} min needed.' },
     fields: { tripName: 'Trip name', tripStartDate: 'First day', tripEndDate: 'Last day', bufferMinutes: 'Buffer', saveConsent: 'Save in this browser', storageNote: 'Optional local storage.', itemDate: 'Date', startTime: 'Start time', endTime: 'End time', itemTitle: 'Stop name', category: 'Type', categories: { activity: 'Activity', meal: 'Meal', transport: 'Transport', stay: 'Stay', reservation: 'Reservation', other: 'Other' }, location: 'Place', reservation: 'Booking details', notes: 'Notes', itineraryLabel: 'Itinerary', noTrip: 'Create a trip.', noItems: 'No stops.', itemCount: 'Stops', overlapCount: 'Overlaps', bufferWarningCount: 'Short connections', conflictsLabel: 'Schedule checks', backupFile: 'Import JSON', backupHint: 'JSON up to 1 MB.', limitNote: 'Maximum 366 days and 250 stops.', timeZoneNote: 'Times stay as entered.', reservationPrivacyNote: 'Do not enter passwords or card numbers.', exampleTrip: 'Kyoto weekend', exampleActivity: 'Temple visit', exampleMeal: 'Lunch', exampleLocation: 'Kyoto', exampleReservation: 'Example only' },
   },
+  'polynomial-long-division-calculator': { name: 'Polynomial division', actions: { ...actions }, fields: { dividend: 'Dividend polynomial', divisor: 'Divisor polynomial', accuracyNote: 'Integer coefficients; degree up to 20.' } },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -432,6 +433,16 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(deck, /name="boardWidth"[^>]+value="5\.5"/u);
   const payload = renderGrowthForm('secret-santa-generator', { ...copies['secret-santa-generator'], description: '</script><script>alert(1)</script>' });
   assert.doesNotMatch(payload, /<script>alert\(1\)<\/script>/u);
+});
+
+test('polynomial long-division form labels both expressions and uses explicit actions', () => {
+  const html = renderGrowthForm('polynomial-long-division-calculator', copies['polynomial-long-division-calculator']);
+  assert.match(html, /<label for="polynomial-dividend">Dividend polynomial<\/label>/u);
+  assert.match(html, /name="dividend" type="text" maxlength="256"/u);
+  assert.match(html, /<label for="polynomial-divisor">Divisor polynomial<\/label>/u);
+  assert.match(html, /data-action="example"/u);
+  assert.match(html, /data-action="calculate"/u);
+  assert.match(html, /role="status" aria-live="polite"/u);
 });
 
 test('dominoes form exposes localized play modes, draw/block choices, board, stock and hand', () => {

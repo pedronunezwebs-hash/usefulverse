@@ -13,12 +13,23 @@
 - [ ] F3 — Infraestructura aditiva para catálogo, renderer/origen canónico, 36 idiomas, builds y límites de tamaño. Parcial: catálogo, renderer, gate estricto por idioma, formularios, builder/sitemap separados y paso de build CI están probados/preparados; los 36 módulos ya están presentes. Quedan verificación final de budgets/licencias y habilitar/ejecutar la operación de publicación después de los gates.
 - [ ] F4 — Piloto original de cinco familias: `gravel-calculator`, `molar-mass-calculator`, `auto-loan-refinance-calculator`, `secret-santa-generator`, `mancala`. Los cinco están publicados (PR #37; deployment de producción confirmado) y el sitemap público de 216 URLs responde correctamente. Falta confirmar en los paneles de buscadores el envío/lectura del sitemap para `tools.usefulverse.com`; F4/S no queda cerrado hasta verificarlo.
 
+## Continuación · Polynomial Long Division Calculator (#162) · 2026-10-08
+
+- [x] C/F — candidata distinta de la división entera existente: divide polinomios de una variable, devuelve cociente, resto y operaciones de cada paso. El plan registra `polynomial long division calculator` con 3.600 búsquedas mensuales US/en, KD 0; no se consultó DataForSEO de nuevo.
+- [x] L (fuente) — copy inglés con límites explícitos: x, exponentes enteros, coeficientes de entrada enteros, grado máximo 20, 64 términos y 256 caracteres; resultados racionales exactos. Metadatos dentro del contrato. Las otras 35 localizaciones son solo borradores estructurales y siguen bloqueadas; esto no pasa la puerta de publicación.
+- [x] E/X — aritmética racional exacta con reducción por MCD, pasos acotados, rechazo de sintaxis no soportada y división por cero; cubiertos cociente exacto, fracciones, polinomios dispersos y entradas límite.
+- [x] B — formulario accesible, ejemplo/reset/copia y salida anunciada; sin API, subida, almacenamiento, servicio de pago o dependencia de procesamiento remoto.
+- [x] E — pruebas focalizadas de lógica, catálogo, formularios, contrato de locales y builder: **127/127 aprobadas**; `node --check` y `git diff --check` limpios.
+- [x] X — Chrome local aislado: ejemplo x²−1 entre x−1 devuelve x+1, resto 0 y dos pasos; caso 2x²+1 entre 2x+1 devuelve x−1/2, resto 3/2; sintaxis no admitida muestra error sin romper la página. En móvil 390×844 no hay overflow, no aparecen errores/avisos de consola y no hay peticiones externas.
+- [ ] B/P — no se validó bundle minificado final ni tamaño porque el clon carece de dependencias fijadas de build; no se instalaron. No se ha integrado ni desplegado, no se modificó ningún sitemap ni panel de buscadores. PageSpeed/Lighthouse no se ejecutó, conforme al plan.
+- **Recuento actual:** 65/323 candidatas implementadas en inglés; quedan 258 filas del plan (257 candidatas válidas + una reserva). Sumadas a las 277 herramientas protegidas, hay 342 implementaciones inglesas/base, pero esta ampliación no está publicada y las nuevas páginas no están listas en todos los idiomas.
+
 ## Avance de expansión · Brick Calculator
 
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Recuento vigente de candidatas adicionales:** 64/323 implementadas en inglés. Quedan 259 entradas del plan: 258 candidatas válidas sin implementar y una reserva para sustituir `API Request Builder` (ya existe entre las 277 protegidas y no cuenta como nueva). Mind Map Maker, Mood Tracker, Journal Online y Travel Itinerary Planner esperan las otras 35 traducciones cada una y no se consideran publicadas. Las 277 originales permanecen intactas.
+- **Recuento al cerrar Brick Calculator:** 64/323 implementadas en inglés. Quedaban 259 entradas del plan: 258 candidatas válidas sin implementar y una reserva para sustituir `API Request Builder` (ya existe entre las 277 protegidas y no cuenta como nueva). Mind Map Maker, Mood Tracker, Journal Online y Travel Itinerary Planner esperan las otras 35 traducciones cada una y no se consideran publicadas. Las 277 originales permanecen intactas.
 
 ## Avance de implementación · motores del piloto
 

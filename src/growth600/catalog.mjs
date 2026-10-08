@@ -396,6 +396,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/travel-itinerary-planner/logic.mjs',
   },
   {
+    id: 'polynomial-long-division-calculator',
+    category: 'math',
+    type: 'polynomial-calculator',
+    primaryIntent: 'polynomial long division calculator',
+    secondaryIntents: ['polynomial division calculator', 'divide polynomials with steps', 'polynomial quotient and remainder calculator'],
+    functions: ['parse bounded integer-coefficient polynomial expressions in x up to degree 20', 'show exact quotient and remainder using reduced integer fractions', 'show each quotient term, subtraction and new remainder in long-division order', 'copy a worked result and load the x² − 1 divided by x − 1 example'],
+    acceptance: 'Dividing x^2 - 1 by x - 1 returns quotient x + 1 and remainder 0 with two valid subtraction steps. Dividing x^2 by 2x + 1 returns quotient x/2 - 1/4 and remainder 1/4. Zero divisors, malformed terms and degrees above 20 are rejected.',
+    boundary: 'Polynomial long division in one variable x with integer input coefficients and exact rational quotient/remainder. It is distinct from integer long division and from factorization, derivatives or integrals. No arbitrary symbolic functions, decimal/fraction input coefficients, multiple variables or CAS are claimed. Maximum degree 20, 64 terms and 256 characters per expression; all calculations are local.',
+    relatedExistingIds: ['long-division-calculator', 'polynomial-factorization-calculator', 'polynomial-derivative-calculator'],
+    logicModule: './tools/polynomial-long-division-calculator/logic.mjs',
+  },
+  {
     id: 'miter-angle-calculator',
     category: 'home-materials',
     type: 'calculator',
