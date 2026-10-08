@@ -69,6 +69,7 @@ export function renderGrowthForm(toolId, copy) {
     'chess-opening-trainer': ['opening', 'side', 'white', 'black', 'board', 'moves', 'progressLabel', 'square', 'empty', 'accuracyNote', 'rules', 'opening_italian', 'opening_sicilian', 'opening_ruy_lopez', 'opening_french', 'opening_caro_kann', 'opening_queens_gambit', 'opening_london', 'opening_scandinavian', 'opening_english', 'opening_kings_indian', 'piece_wp', 'piece_wn', 'piece_wb', 'piece_wr', 'piece_wq', 'piece_wk', 'piece_bp', 'piece_bn', 'piece_bb', 'piece_br', 'piece_bq', 'piece_bk'],
     'decibel-calculator': ['mode', 'powerMode', 'amplitudeMode', 'dbToPowerMode', 'dbToAmplitudeMode', 'sumMode', 'applyMode', 'ratio', 'inputDb', 'levels', 'inputLevel', 'gainDb', 'accuracyNote', 'assumptionsNote'],
     'hijri-calendar-converter': ['mode', 'gregorianToHijri', 'hijriToGregorian', 'gregorianDate', 'gregorianYear', 'gregorianMonth', 'gregorianDay', 'hijriYear', 'hijriMonth', 'hijriDay', 'hijriMonths', 'methodNote'],
+    'capacitor-calculator': ['values', 'valuesHint', 'connection', 'series', 'parallel', 'unit', 'voltage', 'accuracyNote', 'resultEquivalent', 'resultCharge', 'resultEnergy', 'resultVoltage', 'capacitor', 'formulaNote'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -182,6 +183,7 @@ export function renderGrowthForm(toolId, copy) {
     'chess-opening-trainer': ['newGame', 'hint', 'rules'],
     'decibel-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'hijri-calendar-converter': ['convert', 'reset', 'example', 'result'],
+    'capacitor-calculator': ['calculate', 'reset', 'example', 'result'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
@@ -805,6 +807,16 @@ export function renderGrowthForm(toolId, copy) {
     <fieldset data-hijri-fields hidden><legend>${escapeGrowthHtml(fields.hijriToGregorian)}</legend>${label('hijri-year', fields.hijriYear, '<input id="hijri-year" name="hijriYear" type="number" min="1" max="10000" step="1" value="1445" inputmode="numeric" required>')}${label('hijri-month', fields.hijriMonth, `<select id="hijri-month" name="hijriMonth" required>${fields.hijriMonths.map((month, index) => `<option value="${index + 1}">${escapeGrowthHtml(month)}</option>`).join('')}</select>`)}${label('hijri-day', fields.hijriDay, '<input id="hijri-day" name="hijriDay" type="number" min="1" max="30" step="1" value="1" inputmode="numeric" required>')}</fieldset>
     <p class="hint">${escapeGrowthHtml(fields.methodNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${button('convert', actions.convert)}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div></section>
+  </form>`, copy);
+
+  if (toolId === 'capacitor-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('capacitor-values', fields.values, '<textarea id="capacitor-values" name="values" rows="5" maxlength="500" spellcheck="false" required></textarea>')}<p class="hint">${escapeGrowthHtml(fields.valuesHint)}</p>
+    ${label('capacitor-unit', fields.unit, `<select id="capacitor-unit" name="unit"><option value="F">F</option><option value="mF">mF</option><option value="uF">μF</option><option value="nF">nF</option><option value="pF">pF</option></select>`)}
+    ${label('capacitor-connection', fields.connection, `<select id="capacitor-connection" name="connection"><option value="series">${escapeGrowthHtml(fields.series)}</option><option value="parallel">${escapeGrowthHtml(fields.parallel)}</option></select>`)}
+    ${label('capacitor-voltage', fields.voltage, '<input id="capacitor-voltage" name="voltage" type="text" inputmode="decimal" maxlength="40">')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.formulaNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${button('calculate', actions.calculate)}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div></section>
   </form>`, copy);
 

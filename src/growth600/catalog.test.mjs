@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 105);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 105);
+  assert.equal(growthPilotTools.length, 106);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 106);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -87,6 +87,16 @@ test('Hijri calendar converter declares its fixed tabular method and distinction
   assert.match(tool.boundary, /not Umm al-Qura or a local moon-sighting decision/u);
   assert.match(tool.acceptance, /same tabular method/u);
   assert.deepEqual(tool.relatedExistingIds, ['date-calculator']);
+});
+
+test('capacitor calculator combines ideal capacitor networks and distinguishes component energy from resistor tools', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'capacitor-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'capacitor calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['ohms-law-calculator']);
+  assert.match(tool.functions.join(' '), /stored energy/u);
+  assert.match(tool.boundary, /no voltage-rating, tolerance, leakage or ESR model/u);
+  assert.match(tool.acceptance, /200 μF/u);
 });
 
 test('Roth vs traditional compares user-entered tax scenarios without giving tax or account advice', () => {
