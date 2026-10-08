@@ -3655,9 +3655,9 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/mind-map-maker/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `mind map maker` — 5.400 búsquedas/mes US/en, KD 69; nivel B. CPC 12.24 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Árbol de ideas editable, ramas, reordenar, colapsar, undo y SVG/JSON; estructura arbórea explícita y ciclos prohibidos.
-- **Prueba de aceptación específica:** Moverhijo nodejaciclo
+- **Prueba de aceptación específica:** al mover una idea a otra rama, el árbol se actualiza; intentar moverla bajo sí misma o uno de sus descendientes se rechaza y el mapa permanece válido.
 - **Frontera con otras herramientas:** diagram-maker: árbolinteractivo vsprocesolineal. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** motor y página en inglés implementados localmente; no usan servicios externos. L sigue bloqueado hasta completar las otras 35 traducciones. Suite focal 126/126, build aislado 2 páginas/9 archivos, bundle 10.302 B y flujo básico comprobado en Chrome móvil (390 × 844, sin overflow). Sin publicación ni sitemap de producción hasta superar localización y gates globales.
 - **Consultas secundarias del mismo propietario:**
   - `mind map online` — 880/mes US/en; KD 78.
   - `mind map maker free online`; `mind map maker with example`; `mind map maker no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

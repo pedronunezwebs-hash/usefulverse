@@ -348,6 +348,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/goal-planner/logic.mjs',
   },
   {
+    id: 'mind-map-maker',
+    category: 'creative',
+    type: 'editor',
+    primaryIntent: 'mind map maker',
+    secondaryIntents: ['mind map online', 'mind mapping tool', 'visual brainstorming tool'],
+    functions: ['build a branching idea tree from one central topic', 'edit, add, remove, move and reorder nodes', 'collapse branches and undo or redo up to 30 recent edits', 'export the full map as SVG or a portable JSON backup'],
+    acceptance: 'Create a root with two branches and one child; move that child to the other branch and verify the hierarchy and export. Attempt to move an ancestor below its descendant and reject the cycle without changing the map. Undo and redo the valid move exactly.',
+    boundary: 'A local tree editor for brainstorming, not a linear process diagram, collaborative canvas or cloud-synced workspace. Ideas remain in page memory unless the user exports a JSON file. SVG text is escaped and output is static.',
+    relatedExistingIds: ['diagram-maker'],
+    logicModule: './tools/mind-map-maker/logic.mjs',
+  },
+  {
     id: 'miter-angle-calculator',
     category: 'home-materials',
     type: 'calculator',

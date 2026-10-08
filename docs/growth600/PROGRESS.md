@@ -18,7 +18,7 @@
 - [x] C — Añadida `brick-calculator` (#116) como herramienta distinta de `tile-calculator`: estima ladrillos, hiladas aproximadas, huecos, capas de muro, desperdicio y volumen de mortero, con cálculo íntegramente local y copy estático en los 36 idiomas. No hubo nuevas consultas a DataForSEO.
 - [x] F/X/L — Motor con entradas acotadas, conversiones métricas/imperiales, huecos repetidos, límite para aperturas mayores que el muro, capas enteras y rendimiento de saco opcional. Formulario con ejemplo, reinicio, copia, anuncios accesibles y nota clara de que es una estimación no estructural.
 - [ ] E/B/P/S — Aún falta cerrar revisión funcional y visual del builder, integración/publicación, comprobar URL/sitemap público y confirmar envío/lectura de sitemap en paneles. La candidata sigue fuera de `main` y no debe contarse como publicada.
-- **Candidatas adicionales presentes en el catálogo de esta rama:** 60/323 filas del plan; **263 filas restantes**. Goal Planner eleva el recuento codificado a 60, pero sigue en inglés y no se publica. API Request Builder, otra fila del plan, ya existe entre las 277 protegidas y no cuenta como herramienta nueva: hay que sustituir esa fila por una reserva para que el objetivo final sea 323 herramientas nuevas únicas. En ese cómputo neto faltan 263 herramientas únicas. Las 277 originales permanecen intactas.
+- **Candidatas adicionales presentes en el catálogo de esta rama:** 61/323 filas codificadas. Hay **262 herramientas únicas por implementar**: 261 candidatas válidas de la lista y una reserva de sustitución. `API Request Builder` ya existe entre las 277 protegidas y no cuenta como herramienta nueva. Mind Map Maker está implementada y probada en inglés, pero no publicada: faltan 35 traducciones. Las 277 originales permanecen intactas.
 
 ## Avance de implementación · motores del piloto
 
@@ -708,3 +708,13 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — inglés fuente listo; otras 35 locales permanecen explícitamente `pending-tool-specific-translation`. El gate de publicación lo bloquea.
 - [ ] X — falta prueba de interacción en navegador y revisión visual RTL/escritorio; no se declara comprobado.
 - [ ] P/S — no merge/deploy ni cambio del sitemap productivo o paneles. No ejecutar PageSpeed/Lighthouse. Total: 60 candidatas del plan codificadas, 263 filas por resolver y un duplicado conocido que requiere una sustitución única.
+
+## Continuación · Mind Map Maker (#151) · 2026-10-08
+
+- [x] C/F — candidata añadida al catálogo aditivo, separada de `diagram-maker`: esta es una estructura radial/arbórea de ideas que se puede reordenar, no un editor de diagramas de flujo.
+- [x] E — motor local: crear/editar, añadir hijos, mover y reordenar ramas, colapsar, eliminar subárbol, historial undo/redo, validar importación JSON y exportar SVG/JSON. Rechaza ciclos, mover/eliminar la raíz, profundidad >40, texto >160 caracteres, más de 500 nodos y archivos JSON >500 KB. SVG escapa texto del usuario.
+- [x] B/X — formulario inglés accesible, ejemplo funcional y acciones verificadas en Chrome local: cargar ejemplo, añadir una rama y editarla; la edición se anuncia y queda en el árbol. Los controles dinámicos tienen `id`, `name` y etiqueta accesible; consola sin avisos tras la corrección. Viewport móvil 390 × 844: sin overflow horizontal.
+- [x] E — suite focal de lógica, catálogo, formulario, contrato de locale, render, build y presupuestos de bundle: **126/126 aprobadas**. Build aislado: 2 páginas estáticas (home + herramienta), 9 archivos; controlador minificado **10.302 bytes**, bajo el presupuesto de 24 KiB. No se agregan APIs, Functions, almacenamiento remoto ni dependencias de producción.
+- [ ] L — fuente inglesa lista; los 35 locales restantes están explícitamente marcados `pending-tool-specific-translation`. La puerta de publicación lo bloquea.
+- [ ] P/S — sin merge/deploy, sin cambios al sitemap de producción y sin envío a buscadores. No se ejecutó PageSpeed/Lighthouse.
+- **Recuento neto actualizado:** 61 candidatas codificadas; 262 nuevas únicas por implementar (261 filas válidas restantes + una sustitución de API Request Builder). Mind Map Maker no se cuenta como publicada.

@@ -27,7 +27,8 @@ async function writeRoute(root, route, content) {
 export function assertLocalController(toolId, source, maxBytes) {
   const bytes = Buffer.byteLength(source);
   if (bytes > maxBytes) throw new Error(`${toolId} controller exceeds the ${maxBytes}-byte initial runtime budget.`);
-  if (/\b(?:fetch|XMLHttpRequest|WebSocket|EventSource)\b/u.test(source) || /https?:\/\//u.test(source)) throw new Error(`${toolId} controller must not contact a remote service.`);
+  const withoutSvgNamespace = source.replaceAll('http://www.w3.org/2000/svg', '');
+  if (/\b(?:fetch|XMLHttpRequest|WebSocket|EventSource)\b/u.test(source) || /https?:\/\//u.test(withoutSvgNamespace)) throw new Error(`${toolId} controller must not contact a remote service.`);
   if (/\beval\s*\(|\bnew\s+Function\b/u.test(source)) throw new Error(`${toolId} controller contains dynamic code execution.`);
 }
 

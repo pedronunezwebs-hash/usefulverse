@@ -104,6 +104,8 @@ import compressionRatioCopies from './compression-ratio-calculator-final.mjs';
 import { compressionRatioCalculatorEnglishCopy } from './compression-ratio-calculator.en.mjs';
 import goalPlannerCopies from './goal-planner-final.mjs';
 import { goalPlannerEnglishCopy } from './goal-planner.en.mjs';
+import mindMapMakerCopies from './mind-map-maker-final.mjs';
+import { mindMapMakerEnglishCopy } from './mind-map-maker.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -503,5 +505,6 @@ registerGrowthLocaleExtension(source, 'gear-ratio-calculator', { ...gearRatioCop
 registerGrowthLocaleExtension(source, 'density-calculator', { ...densityCopies, en: densityCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'compression-ratio-calculator', { ...compressionRatioCopies, en: compressionRatioCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'goal-planner', { ...goalPlannerCopies, en: goalPlannerEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'mind-map-maker', { ...mindMapMakerCopies, en: mindMapMakerEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

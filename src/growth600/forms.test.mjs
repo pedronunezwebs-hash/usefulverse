@@ -229,6 +229,11 @@ const copies = {
     messages: { ...messages, generated: 'Plan created.', downloaded: 'Backup downloaded.', importFailed: 'Invalid backup.', saved: 'Saved.', storageUnavailable: 'Storage unavailable.', current: 'Current', day: 'day', days: 'days', remaining: 'remaining' },
     fields: { title: 'Goal name', outcome: 'Specific outcome', metric: 'Progress measure', unit: 'Unit', startValue: 'Baseline', targetValue: 'Target', currentValue: 'Current', startDate: 'Start date', currentDate: 'Progress date', dueDate: 'Deadline', milestones: 'Milestones', milestoneHint: 'Use YYYY-MM-DD | description.', accuracyNote: 'Linear progress only.', privacyNote: 'Stored in this browser.', progressLabel: 'Progress toward target', milestonesLabel: 'Milestones', backupFile: 'Restore JSON backup', backupHint: 'Choose a file up to 100 KB.', relatedTaskList: 'Task list' },
   },
+  'mind-map-maker': {
+    name: 'Mind Map Maker', actions: { ...actions, addChild: 'Add child idea', removeNode: 'Remove branch', moveUp: 'Move up', moveDown: 'Move down', moveNode: 'Move idea', collapse: 'Collapse branch', expand: 'Expand branch', undo: 'Undo', redo: 'Redo', exportSvg: 'Download SVG', exportJson: 'Download JSON', importJson: 'Import JSON backup' },
+    messages: { ...messages, created: 'Map ready.', updated: 'Updated.', added: 'Idea added.', removed: 'Branch removed.', imported: 'Imported.', importFailed: 'Invalid backup.', checkTopic: 'Enter a topic.', checkIdea: 'Check the idea.', enterIdea: 'Enter an idea.' },
+    fields: { centralTopic: 'Central topic', newIdea: 'New idea', privacyNote: 'Stays in this tab.', mapLabel: 'Mind map ideas', editIdea: 'Edit idea', moveTo: 'Move under', jsonFile: 'JSON backup', importHint: 'Maximum 500 KB.' },
+  },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -341,6 +346,10 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(goalPlanner, /data-milestones/u);
   assert.match(goalPlanner, /data-action="update-progress"/u);
   assert.match(goalPlanner, /data-action="download"/u);
+  const mindMap = renderGrowthForm('mind-map-maker', copies['mind-map-maker']);
+  for (const action of ['add-child', 'remove-node', 'move-node', 'move-up', 'move-down', 'toggle-node', 'undo', 'redo', 'export-svg', 'export-json']) assert.ok(mindMap.includes(`data-action="${action}"`) || ['add-child', 'remove-node', 'move-node', 'move-up', 'move-down', 'toggle-node'].includes(action));
+  assert.match(mindMap, /name="jsonFile" type="file" accept="\.json,application\/json"/u);
+  assert.match(mindMap, /data-mind-map/u);
   const asphalt = renderGrowthForm('asphalt-calculator', copies['asphalt-calculator']);
   assert.match(asphalt, /name="compactedThickness"/u);
   assert.match(asphalt, /name="pricePerTonne"/u);
