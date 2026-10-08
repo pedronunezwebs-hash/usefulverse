@@ -46,6 +46,20 @@ const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(a
   (await import(`./locales/${key}.mjs`)).default,
 ])));
 
+test('polygon calculator has 36 locale copies with clear geometric measurements', () => {
+  assert.equal(assertGrowthLocaleCoverage([allGrowthPilotTools.find(({ id }) => id === 'polygon-calculator')], localeEntries, localizedCopies), true);
+  assert.equal(localizedCopies.ar['polygon-calculator'].fields.circumradius, 'المسافة من المركز إلى الرأس');
+  assert.equal(localizedCopies.ar['polygon-calculator'].fields.computedApothem, 'المسافة العمودية من المركز إلى الضلع');
+  assert.equal(localizedCopies.ar['polygon-calculator'].fields.sides, 'عدد الأضلاع (4–1000)');
+  assert.equal(localizedCopies.ar['polygon-calculator'].fields.area, 'المساحة');
+  assert.equal(localizedCopies.ru['polygon-calculator'].fields.apothem, 'Расстояние от центра перпендикулярно к стороне');
+  assert.equal(localizedCopies.ur['polygon-calculator'].fields.computedCircumradius, 'مرکز سے راس تک فاصلہ');
+  for (const locale of localeEntries) {
+    const copy = localizedCopies[locale.key]['polygon-calculator'];
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, `${locale.key} metadata stays within snippet budgets`);
+  }
+});
+
 function assertMachineAcceptedGrowthToolInAllLocales(tool) {
   assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
   for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {

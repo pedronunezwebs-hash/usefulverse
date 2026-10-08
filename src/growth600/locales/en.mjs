@@ -82,6 +82,8 @@ import fontPairingToolCopies from './font-pairing-tool.mjs';
 import { fontPairingToolEnglishCopy } from './font-pairing-tool.en.mjs';
 import rothVsTraditionalCopies from './roth-vs-traditional-calculator.mjs';
 import { rothVsTraditionalEnglishCopy } from './roth-vs-traditional-calculator.en.mjs';
+import polygonCalculatorCopies from './polygon-calculator.mjs';
+import { polygonCalculatorEnglishCopy } from './polygon-calculator.en.mjs';
 import { workOrderGeneratorEnglishCopy } from './work-order-generator.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
@@ -885,5 +887,20 @@ const rothVsTraditionalReleaseCopies = Object.fromEntries(
   }),
 );
 registerGrowthLocaleExtension(source, 'roth-vs-traditional-calculator', rothVsTraditionalReleaseCopies, 'openapi-editor');
+const polygonReleaseCopies = Object.fromEntries(Object.entries({ ...polygonCalculatorCopies, en: polygonCalculatorEnglishCopy }).map(([locale, copy]) => {
+  if (locale === 'ru') return [locale, { ...copy, fields: { ...copy.fields, apothem: 'Расстояние от центра перпендикулярно к стороне', computedApothem: 'Расстояние от центра перпендикулярно к стороне', circumradius: 'Расстояние от центра до вершины', computedCircumradius: 'Расстояние от центра до вершины' } }];
+  if (locale === 'ur') return [locale, { ...copy, fields: { ...copy.fields, apothem: 'مرکز سے ضلع تک عمودی فاصلہ', computedApothem: 'مرکز سے ضلع تک عمودی فاصلہ', circumradius: 'مرکز سے راس تک فاصلہ', computedCircumradius: 'مرکز سے راس تک فاصلہ' } }];
+  return [locale, locale === 'ar' ? {
+    ...copy,
+    intro: 'احسب مضلعًا منتظمًا من 4 إلى 1000 ضلع. أدخل طول الضلع أو المسافة العمودية من المركز إلى الضلع أو المسافة من المركز إلى الرأس؛ ستظهر المساحة والمحيط والزوايا.',
+    howAnswer: 'اختر عدد الأضلاع وأدخل طول الضلع أو المسافة العمودية من المركز إلى الضلع أو المسافة من المركز إلى الرأس. استخدم وحدة واحدة؛ تظهر المساحة بوحدتها المربعة.',
+    fields: { ...copy.fields, sides: 'عدد الأضلاع (4–1000)', sideLength: 'طول الضلع', computedSide: 'طول الضلع', apothem: 'المسافة العمودية من المركز إلى الضلع', circumradius: 'المسافة من المركز إلى الرأس', computedApothem: 'المسافة العمودية من المركز إلى الضلع', computedCircumradius: 'المسافة من المركز إلى الرأس', area: 'المساحة', resultSummary: 'نتائج المضلع المنتظم', formulaNote: 'المساحة تساوي نصف حاصل ضرب المحيط في المسافة العمودية من المركز إلى الضلع. الزوايا معروضة بالدرجات.' },
+    additionalFaqs: [
+      { question: 'كيف أحسب مساحة مضلع منتظم؟', answer: 'أدخل عدد الأضلاع وطولًا معروفًا. تحسب الأداة المحيط والمسافة العمودية من المركز إلى الضلع، ثم تضربهما وتقسم الناتج على 2.' },
+      { question: 'ما الأطوال التي يمكنني إدخالها؟', answer: 'أدخل طول ضلع، أو المسافة العمودية من المركز إلى ضلع، أو المسافة من المركز إلى رأس. يحدد عدد الأضلاع الأبعاد الأخرى.' },
+    ],
+  } : copy];
+}));
+registerGrowthLocaleExtension(source, 'polygon-calculator', polygonReleaseCopies, 'roth-vs-traditional-calculator');
 
 export default Object.freeze(source);

@@ -2092,8 +2092,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 284 · Roth Vs Traditional Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `roth-vs-traditional-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/roth-vs-traditional-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `roth-vs-traditional-calculator`**
+- **Publicado:** `https://tools.usefulverse.com/tools/roth-vs-traditional-calculator/` y otras 35 versiones con los prefijos del anexo.
 - **Demanda:** `roth ira vs traditional ira calculator` — 590 búsquedas/mes US/en, KD 0; nivel C. CPC 2.61 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Comparar tasas actuales y futuras manuales y crecimiento después de impuestos
 - **Prueba de aceptación específica:** Tasas iguales y supuestos iguales comparables
@@ -2103,6 +2103,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `roth vs traditional calculator` — 320/mes US/en; KD 5.
   - `roth ira vs traditional ira calculator free online`; `roth ira vs traditional ira calculator with example`; `roth ira vs traditional ira calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Avance publicado (2026-10-09):** comparación local con aportaciones al final de año y mismo presupuesto antes de impuestos, tasas introducidas por usuario y nota expresa de que no asesora ni modela reglas de elegibilidad/contribución. 36 traducciones estáticas; PR #62 fusionada en `0e781e5`; validación PR 37851536013 y publicación principal/hub 37851994699 correctas. EN/ES/AR responden HTTP 200; sitemap del hub tiene 3.672 `<loc>` (101 × 36 + 36 portadas); sitemap principal conserva 10.260. No se envió manualmente en Search Console ni se comprobó indexación. No se ejecutó PageSpeed/Lighthouse. Sigue la #285.
 
 ### 301 · Investment Allocation Calculator
 
