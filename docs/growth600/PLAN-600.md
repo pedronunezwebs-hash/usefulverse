@@ -416,11 +416,13 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Función mínima y ampliaciones útiles:** Comparar neumáticos por ancho, perfil y llanta; diámetro, perímetro, giro, desviación de velocímetro y dibujo. No certificar compatibilidad mecánica.
 - **Prueba de aceptación específica:** 205/55R16 da diámetro nominal 631.9 mm; el mismo tamaño da diferencia cero.
 - **Frontera con otras herramientas:** unit-converter: geometría y comparación de neumáticos, no conversión de unidades aislada. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Motor y experiencia en inglés implementados; la lógica, el bundle local y el build están probados. Otras 35 traducciones permanecen pendientes. El caso específico se amplió a prueba de reemplazo, cifrado autenticado, límites distintos de backup cifrado y normal, y ausencia de red.
 - **Consultas secundarias del mismo propietario:**
   - `tire diameter calculator` — sin métrica obtenida; no atribuir volumen.
   - `tire size calculator free online`; `tire size calculator with example`; `tire size calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Avance comprobado (2026-10-08):** herramienta local en inglés implementada con modos directo/inverso para sumas acotadas de polinomios, exponentiales y seno/coseno; la inversa acepta términos parciales estándar ya separados. Muestra ROC, límites de sintaxis y resultado accesible; no usa CAS ni API externa. Suite focalizada (lógica, controlador, formulario, catálogo, contrato de 36 locales, render y build): **159/159 aprobadas**. Bundle minificado y validado por el guard local: **6.719 bytes**. Los otros 35 idiomas siguen pendientes, el release gate los bloquea; faltan QA visual y despliegue. Recuento: **80/323** candidatas con implementación inglesa; quedan 243 filas del plan, incluida una duplicada que debe sustituirse.
+- **Estado de implementación (2026-10-08):** motor local para las tres incógnitas, conversiones de unidades y estimación explícita de mezcla; formulario/controlador, copy inglés, límites y pruebas añadidos como candidata #58/323. Suite focal sin bundling: 174/174 aprobadas. Los 35 locales no ingleses siguen pendientes y bloqueados para publicación; build bundle y QA visual pendientes porque `esbuild` no está disponible en este clon. No desplegada.
 
 ### 031 · Gravel Calculator
 
@@ -860,9 +862,9 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/lumber-cut-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `cut list optimizer` — 1.900 búsquedas/mes US/en, KD 13; nivel B. CPC 3.2 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Optimizar cortes lineales con kerf y sobrantes; cotas de cómputo
-- **Prueba de aceptación específica:** Cortes no exceden tablón ni olvidan kerf
+- **Prueba de aceptación específica:** Cortes no exceden tablón ni olvidan kerf; la prueba local actual deja 1 mm al encajar 1.200 + 800 + 390 mm con kerf de 3 mm en tablón de 2.400 mm.
 - **Frontera con otras herramientas:** board-foot-calculator: optimización de cortes. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Motor local de asignación 1D best-fit-decreasing, con límite de 300 piezas/tablas y kerf por pieza. Es una heurística, no garantiza óptimo global; verificar unidades/formato y validar el despiece en el material real. Seguir los gates globales; el caso de aceptación no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `lumber cut calculator` — 70/mes US/en; KD 15.
   - `cut list optimizer free online`; `cut list optimizer with example`; `cut list optimizer no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -876,7 +878,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Función mínima y ampliaciones útiles:** Separación filas/plantas, rejilla triangular y conteo
 - **Prueba de aceptación específica:** Más separación reduce número plantas
 - **Frontera con otras herramientas:** room-planner: plantación y densidad. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Motor local por conteo geométrico sin iterar sobre cada planta; límite de 100.000 filas y 1.000.000 de plantas para acotar cómputo. Cuadrícula con bordes a media separación y triangular con filas alternadas a media separación. No prescribe distancias para especies; seguir los gates globales y probar unidades/formatos.
 - **Consultas secundarias del mismo propietario:**
   - `plant population calculator` — 170/mes US/en; KD 0.
   - `plant spacing calculator free online`; `plant spacing calculator with example`; `plant spacing calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -888,9 +890,9 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/ev-charging-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `ev charging calculator` — 1.000 búsquedas/mes US/en, KD 11; nivel B. CPC 7.77 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** SOC, capacidad utilizable, potencia, pérdidas, tiempo y tarifa
-- **Prueba de aceptación específica:** 50k Wh batería de20% a80% carga30k Wh antes de pérdidas
+- **Prueba de aceptación específica:** Una batería de50 kWh de20% a80% requiere30 kWh a la batería antes de pérdidas; calcular tiempo desde energía de red y potencia de cargador.
 - **Frontera con otras herramientas:** fuel-cost-calculator: carga eléctrica y tiempo. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Distinguir energía añadida a batería de energía tomada de red; tiempo con potencia de entrada constante y tarifa/coste opcional. Aclarar que la carga real suele reducir potencia al subir el estado de carga. No asumir modelo de coche, curva, tarifa ni seguridad de instalación; seguir gates globales.
 - **Consultas secundarias del mismo propietario:**
   - `electric car charging cost calculator` — 1.000/mes US/en; KD 24.
   - `ev charging calculator free online`; `ev charging calculator with example`; `ev charging calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -903,9 +905,9 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/rainwater-harvesting-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `rainwater harvesting calculator` — 1.000 búsquedas/mes US/en, KD 21; nivel B. CPC 0.91 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Cubierta, lluvia manual, escorrentía, depósito y balance mensual
-- **Prueba de aceptación específica:** 10mm sobre100m² ideal da1000L
+- **Prueba de aceptación específica:** 10 mm sobre 100 m² a 100% de escorrentía da 1.000 L antes de capacidad del depósito/demanda; conservar un balance que no exceda el tanque.
 - **Frontera con otras herramientas:** pool-volume-calculator: captación y almacenamiento. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Balance mensual de 12 valores de lluvia y 12 de demanda; incorpora área de cubierta, coeficiente de escorrentía, capacidad y almacenamiento inicial. Modelo ordena lluvia antes de demanda dentro del mes, y explicita que no representa cronología diaria, primera descarga, evaporación ni potabilidad. Procesamiento local acotado.
 - **Consultas secundarias del mismo propietario:**
   - `rainwater collection calculator` — 1.000/mes US/en; KD 29.
   - `rainwater harvesting calculator free online`; `rainwater harvesting calculator with example`; `rainwater harvesting calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -917,7 +919,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/ramp-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `ramp calculator` — 880 búsquedas/mes US/en, KD 0; nivel C. CPC 1.52 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Altura, pendiente objetivo, longitudes y descansos; norma elegida por usuario
-- **Prueba de aceptación específica:** 1m a1:12 necesita12m horizontal
+- **Prueba de aceptación específica:** 1 m a 1:12 necesita 12 m de recorrido horizontal y sqrt(145) m de superficie inclinada, antes de contar descansos.
 - **Frontera con otras herramientas:** slope-grade-calculator: diseño con descansos; no certificación accesibilidad. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** D: dato/norma versionado, país y año visibles. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
@@ -930,10 +932,10 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [ ] **C/F/E/X/L/B/P/S completos — `heat-loss-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/heat-loss-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `heat loss calculator` — 720 búsquedas/mes US/en, KD 3; nivel C. CPC 2.61 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** U valores, áreas, deltaT, ventilación y pérdidas por componente
-- **Prueba de aceptación específica:** U1 por10m² por20K da200W
+- **Función mínima y ampliaciones útiles:** calcular pérdidas de transmisión por separado para paredes, techo, ventanas y suelo a partir de área y valor U; sumar una aproximación de ventilación mediante volumen y renovaciones/hora; admitir áreas en m²/ft², volumen en m³/ft³ y diferencia térmica en K/°F; mostrar W y BTU/h.
+- **Prueba de aceptación específica:** U = 1 W/(m²·K) × 10 m² × diferencia de 20 K = 200 W para esa superficie. El total debe sumar transmisión de cada componente y ventilación de forma independiente.
 - **Frontera con otras herramientas:** btu-calculator: cargas detalladas, validar distinción de intención. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** cálculo estacionario simplificado y local. Los valores U y renovaciones de aire son datos ingresados por la persona. No equivale a un cálculo Manual J, una auditoría energética ni a dimensionar un sistema; deja fuera puentes térmicos, ganancias solares/internas, humedad, viento, ductos, clima local y operación dinámica. No recomendar equipos ni predecir facturas; mostrar esta frontera con claridad.
 - **Consultas secundarias del mismo propietario:**
   - `room heat loss calculator` — 20/mes US/en; KD 0.
   - `heat loss calculator free online`; `heat loss calculator with example`; `heat loss calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -944,10 +946,10 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [ ] **C/F/E/X/L/B/P/S completos — `heat-pump-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/heat-pump-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `heat pump calculator` — 590 búsquedas/mes US/en, KD 0; nivel C. CPC 3.61 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Demanda de calor, COP, tarifa y comparación de energía
-- **Prueba de aceptación específica:** 10k Wh calor yCOP5 consume2k Wh
+- **Función mínima y ampliaciones útiles:** convertir la potencia térmica introducida en kW o BTU/h; estimar potencia eléctrica y kWh diarios según COP y horas de uso; estimar coste horario/diario/30 días con tarifa y código de moneda introducidos; comparar con una resistencia idealizada de COP 1 para el mismo calor entregado.
+- **Prueba de aceptación específica:** 10 kW térmicos con COP 5 requieren 2 kW eléctricos; por 1 hora son 2 kWh. A una tarifa introducida de 0,20 unidades/kWh, el coste de esa hora es 0,40 unidades.
 - **Frontera con otras herramientas:** electricity-cost-calculator: rendimiento térmico y demanda. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** aritmética local; COP, potencia térmica, horario, tarifa y código ISO de moneda son entradas del usuario. COP cambia con clima y sistema. La comparación de resistencia presupone COP 1; las cifras mensuales repiten 30 días idénticos y no son una factura real. Sin rendimiento estacional, impuestos, cargos fijos, dimensionamiento, recomendación de compra ni asesoría.
 - **Consultas secundarias del mismo propietario:**
   - `heat pump running cost calculator` — 10/mes US/en; KD 0.
   - `heat pump calculator free online`; `heat pump calculator with example`; `heat pump calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -958,10 +960,10 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [ ] **C/F/E/X/L/B/P/S completos — `miter-angle-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/miter-angle-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `miter angle calculator` — 480 búsquedas/mes US/en, KD 0; nivel C. CPC 0.95 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Cortes a inglete simples/compuestos, grados y dibujo
-- **Prueba de aceptación específica:** Esquina90 da inglete45 simétrico
+- **Función mínima y ampliaciones útiles:** corte simple simétrico del ángulo interior; modo compuesto para moldura corona plana que devuelve magnitudes de inglete y bisel; diagrama accesible y ejemplo 90°/38°. Convención compuesta declarada: ángulo de resorte medido desde el reverso de la moldura que apoya en la pared.
+- **Prueba de aceptación específica:** esquina interior de 90° → inglete simple 45°; en modo compuesto con ángulo de resorte 38°, inglete ≈31,62° y bisel ≈33,86°, concordante con la tabla del [manual de sierra DEWALT](https://www.dewalt.com/GLOBALBOM/QU/DCS361B/20/Instruction_Manual/EN/NA379781_DCS361_NA.pdf).
 - **Frontera con otras herramientas:** protractor: calcular corte no medir ángulo. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** motor local ligero, entradas acotadas (interior 1°–179°, resorte 0°–90°), grados y redondeo de presentación a dos decimales. Fórmulas compuestas solo para moldura corona plana; resultados sin orientación izquierda/derecha. Verificar perfil, escala del fabricante y corte de prueba. Geometry only, no consejo estructural o de seguridad. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `compound miter calculator` — 260/mes US/en; KD 0.
   - `miter angle calculator free online`; `miter angle calculator with example`; `miter angle calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -995,10 +997,10 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [ ] **C/F/E/X/L/B/P/S completos — `voltage-drop-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/voltage-drop-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `voltage drop calculator` — 27.100 búsquedas/mes US/en, KD 21; nivel A. CPC 1.86 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Material, longitud ida/vuelta, corriente y sección; sin certificación eléctrica
-- **Prueba de aceptación específica:** Longitud cero da caída cero
-- **Frontera con otras herramientas:** ohms-law-calculator: cableado y resistividad. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Función mínima y ampliaciones útiles:** material cobre/aluminio, longitud de ida, corriente, sección transversal, voltaje, circuito DC/monofásico/trifásico equilibrado y factor de potencia para CA; caída en V y porcentaje, más voltaje estimado de carga.
+- **Prueba de aceptación específica:** longitud cero da caída cero; el caso de referencia 20 A, 30 m, 2,5 mm² de cobre, 230 V monofásico y factor de potencia 1 calcula 8,2752 V (≈3,598%).
+- **Frontera con otras herramientas:** la ficha sugiere ley de Ohm, pero no existe una herramienta con ese ID en el catálogo base ni en Growth600 actual; por tanto no añadir enlace roto. Mantener el alcance específico de pérdida resistiva en conductores, sin fingir diseño de circuitos. Aplicar además §6; no crear URLs duplicadas por fase o unidades.
+- **Implementación/riesgo:** fórmula resistiva local con resistividades nominales a 20 °C (cobre 0,01724 y aluminio 0,02806 Ω·mm²/m); 2·I·L·ρ/A para CC/monofásico y √3·I·L·ρ/A·cosφ para trifásico equilibrado. Contrastar con la [guía de cálculo de caída de tensión](https://www.electrical-installation.org/enwiki/Calculation_of_voltage_drop_in_steady_load_conditions) y los datos de resistividad comercial del [NIST](https://nvlpubs.nist.gov/nistpubs/bulletin/07/nbsbulletinv7n1p103_A2b.pdf). La aproximación omite calentamiento, reactancia CA, armónicos, conectores, método de instalación, ampacidad, protecciones y códigos; no calcular calibre ni certificar seguridad. Un electricista cualificado debe validar diseño y normativa local.
 - **Consultas secundarias del mismo propietario:**
   - `wire voltage drop calculator` — 260/mes US/en; KD 12.
   - `voltage drop calculator free online`; `voltage drop calculator with example`; `voltage drop calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -1010,10 +1012,10 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [ ] **C/F/E/X/L/B/P/S completos — `molarity-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/molarity-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `molarity calculator` — 22.200 búsquedas/mes US/en, KD 8; nivel A. CPC — USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Moles, masa, volumen, molaridad y preparación; sin procedimientos peligrosos
-- **Prueba de aceptación específica:** 1mol en2L da0.5M
+- **Función mínima y ampliaciones útiles:** Resolver molaridad desde moles y volumen final; moles desde M y volumen; volumen desde moles y M; y masa del soluto desde M, volumen final y masa molar ingresada. Incluir selector de incógnita, unidades mol/L (M), L/mL, ejemplo, modo de preparación aritmética y distinción breve entre molaridad y molalidad.
+- **Prueba de aceptación específica:** 1 mol en 2 L de solución final da 0,5 mol/L = 0,5 M; 0,5 M × 2 L × 58,44 g/mol da 58,44 g de soluto para la concentración/volumen objetivo.
 - **Frontera con otras herramientas:** stoichiometry-calculator: soluciones no reacción. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** L: aritmética local acotada, volumen convertido a litros, masa molar proporcionada por la persona. La concentración es cantidad de constituyente dividida por volumen de la mezcla/solución según IUPAC: [Gold Book, amount concentration](https://goldbook.iupac.org/terms/view/A00295). Mostrar explícitamente que es volumen final de solución, no volumen inicial de disolvente. Sin correcciones de pureza, hidratación, densidad, temperatura o no idealidad; no convertir el resultado en procedimiento químico ni consejo de laboratorio/medicina. Seguir los gates globales; el ejemplo no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `solution concentration calculator` — 210/mes US/en; KD 19.
   - `molarity calculator free online`; `molarity calculator with example`; `molarity calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -1025,10 +1027,10 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [ ] **C/F/E/X/L/B/P/S completos — `dilution-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/dilution-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `dilution calculator` — 14.800 búsquedas/mes US/en, KD 16; nivel A. CPC 5.58 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Dilución, serie de pasos y volúmenes finales
-- **Prueba de aceptación específica:** 10M por1L para2M exige5L final
+- **Función mínima y ampliaciones útiles:** modo directo `C₁V₁=C₂V₂` con alícuota de stock, volumen final y diluyente idealizado; modo de serie que divide un factor total en pasos iguales y muestra alícuota/diluyente por paso. Concentraciones en la misma unidad elegida y volúmenes L/mL.
+- **Prueba de aceptación específica:** stock 10 M → objetivo 2 M y 1 L final requiere 0,2 L de stock + 0,8 L de diluyente (asumiendo aditividad); factor total 10× repartido en 3 pasos da factor por paso `10^(1/3)`.
 - **Frontera con otras herramientas:** molarity-calculator: misma familia; flujo de dilución por serie distinto. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** motor local acotado; rechazar objetivo mayor que stock, volúmenes no positivos y pasos fraccionarios o >20. La serie calcula factores/volúmenes matemáticos, no un procedimiento de laboratorio. Concentraciones deben estar en unidades consistentes; volumen de diluyente es estimado y asume mezcla ideal con volúmenes aditivos. Sin pureza, compatibilidad, temperatura, incertidumbre ni peligros. Seguir el patrón de familia y gates globales.
 - **Consultas secundarias del mismo propietario:**
   - `c1v1 c2v2 calculator` — 880/mes US/en; KD 0.
   - `dilution calculator free online`; `dilution calculator with example`; `dilution calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -1039,53 +1041,59 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [ ] **C/F/E/X/L/B/P/S completos — `ohms-law-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/ohms-law-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `ohms law calculator` — 14.800 búsquedas/mes US/en, KD 31; nivel A. CPC 0.6 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Resolver V, I, R y potencia, serie/paralelo básico; integrar equivalentes de resistencias serie/paralelo en esta misma página.
-- **Prueba de aceptación específica:** 12V entre6ohm da2A y24W
-- **Frontera con otras herramientas:** unit-converter: magnitudes eléctricas relacionadas. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** H: dependencia/cómputo bajo demanda; verificar licencia y compatibilidad. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Función mínima y ampliaciones útiles:** Resolver voltaje, corriente, resistencia y potencia introduciendo cualquier pareja válida de valores. En la misma página, modo separado para equivalentes de 2–20 resistencias en serie o paralelo. Mostrar V, A, Ω y W, ejemplo, copiar, reiniciar y límites de cálculo.
+- **Prueba de aceptación específica:** 12 V entre 6 Ω da 2 A y 24 W; 2 Ω, 3 Ω y 6 Ω en paralelo dan 1 Ω. Probar las seis parejas posibles, entrada incompleta, cero/negativos, valores extremos y ambas topologías.
+- **Frontera con otras herramientas:** complementa `voltage-drop-calculator` (caída en conductor, no ley de Ohm de dos valores) y `unit-converter`; no crea URLs por fórmula, variable desconocida ni topología.
+- **Implementación/riesgo:** L: aritmética pura en JavaScript, sin dependencias ni procesamiento remoto. Las fórmulas de V=IR, P=VI, resistencia en serie y paralelo se contrastan con [OpenStax, resistors in series and parallel](https://openstax.org/books/university-physics-volume-2/pages/10-2-resistors-in-series-and-parallel) y [OpenStax, key equations](https://openstax.org/books/physics/pages/19-key-equations). Solo circuito resistivo DC ideal: no usar para certificar seguridad o seleccionar componentes; declarar límites, verificar hojas de datos y pedir revisión profesional.
 - **Consultas secundarias del mismo propietario:**
   - `voltage current resistance calculator` — 140/mes US/en; KD 14.
   - `ohms law calculator free online`; `ohms law calculator with example`; `ohms law calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** DE/de `ohmsches gesetz rechner` 480/mes, KD 0.
 
+- **Estado de implementación (2026-10-08):** motor local, dos modos, formulario accesible, ejemplo y resultado copiable implementados en el checkpoint de Growth600. El copy completo solo está listo en inglés; las otras 35 localizaciones permanecen bloqueadas como borradores. No desplegar hasta cerrar traducción y todos los gates C/F/E/X/L/B/P/S.
+
 ### 100 · Chemical Equation Balancer
 
-- [ ] **C/F/E/X/L/B/P/S completos — `chemical-equation-balancer`**
+- [ ] **C/F/E/X/L/B/P/S completos — `chemical-equation-balancer`** (motor/formulario implementados en esta rama; traducción, QA de navegador y publicación siguen abiertas)
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/chemical-equation-balancer/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `chemical equation balancer` — 12.100 búsquedas/mes US/en, KD 12; nivel A. CPC 2.2 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Balance por álgebra exacta, coeficientes mínimos y conservación
-- **Prueba de aceptación específica:** H2+O2=H2O da2,1,2
-- **Frontera con otras herramientas:** molecule-viewer: reacción no dibujo. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Función mínima y ampliaciones útiles:** recibir ecuación neutral con flecha y especies separadas por `+`; leer fórmulas con los elementos/paréntesis/grupos admitidos por el parser de masa molar; balancear por reducción racional exacta; mostrar coeficientes y conteo por elemento; copiar, reiniciar y ofrecer ejemplo. Si hay varias soluciones, mostrar que el resultado es una solución pequeña acotada, no afirmar un mínimo global.
+- **Prueba de aceptación específica:** `H2 + O2 -> H2O` devuelve `2H2 + O2 → 2H2O`; `Ca(OH)2 + HCl -> CaCl2 + H2O` devuelve `Ca(OH)2 + 2HCl → CaCl2 + 2H2O`. Probar también hierro y la ecuación subdeterminada C/CO/CO₂, sintaxis rota, especies repetidas, notación iónica y límites.
+- **Frontera con otras herramientas:** complementa `molar-mass-calculator` (masa de fórmula), no `molecule-viewer` inexistente. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
+- **Implementación/riesgo:** motor local sin librerías/API, fracciones exactas BigInt; parser reutilizado de masa molar. Acotar a 500 caracteres, 16 especies, 160 caracteres por fórmula y hasta tres variables libres con búsqueda acotada. No prometer química iónica/carga/electrones, predicción de reacción, rendimiento, seguridad ni mínimo global para sistemas con múltiples soluciones fuera del rango. Copy fuente inglés listo; los 35 borradores restantes no se publican sin traducción aprobada.
 - **Consultas secundarias del mismo propietario:**
   - `balance chemical equation calculator` — 5.400/mes US/en; KD 4.
   - `chemical equation balancer free online`; `chemical equation balancer with example`; `chemical equation balancer no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** DE/de `reaktionsgleichung ausgleichen` 880/mes, KD 0.
 
+- **Estado de implementación (2026-10-08):** motor, formulario semántico, controlador, pruebas y flujo visual inglés de escritorio/móvil implementados en la rama como candidata #56/323. Suite Growth600: 173/173 aprobadas. Falta revisión RTL, traducción específica de 35 idiomas y gates de publicación; no está desplegada.
+
 ### 102 · Gear Ratio Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `gear-ratio-calculator`**
+- [ ] **C/F/E/X/L/B/P/S completos — `gear-ratio-calculator`** (motor/formulario y QA de navegador implementados en rama; localización y publicación siguen abiertas)
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/gear-ratio-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `gear ratio calculator` — 12.100 búsquedas/mes US/en, KD 28; nivel A. CPC 0.83 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Dientes, multiplicación, cadenas, RPM y par ideal
-- **Prueba de aceptación específica:** 20:40 reduce velocidad a mitad
-- **Frontera con otras herramientas:** running-pace-calculator: transmisión mecánica. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Función mínima y ampliaciones útiles:** relación driven/driver de dientes para engranajes externos o cadena sin cruzar; 1–6 etapas con cálculo acumulado; RPM de salida; par de entrada y par ideal opcionales; eficiencia por etapa editable que se compone a través de las etapas; indicación de dirección bajo supuestos explícitos; copiar, ejemplo y reiniciar.
+- **Prueba de aceptación específica:** 20:40, 1.500 RPM y 10 N·m → ratio 2:1, 750 RPM, 20 N·m ideales; dos etapas 10:30 y 20:40 → 6:1, 1.800 RPM→300 RPM y, con 5 N·m y 90% de eficiencia por etapa, 24,3 N·m estimados.
+- **Frontera con otras herramientas:** no confundir con `running-pace-calculator`: una calcula transmisión mecánica; la otra ritmo de carrera. No se crea una URL separada para engranajes y piñones porque comparten la relación de dientes.
+- **Implementación/riesgo:** JavaScript local sin dependencias; acotar a 6 etapas, 100.000 dientes por componente, ratio acumulada de 10⁻⁹ a 10⁹, 1.000.000.000 RPM/par como máximo y eficiencia por etapa >0–100%. Asume par compuesto entre etapas; no modela geometría, idlers, deslizamiento, resistencia de diente/eje, lubricación ni cargas/seguridad. La eficiencia introducida por la persona es una hipótesis aplicada a cada etapa, no una medición. Sin calcular potencia, límites de diseño ni conformidad mecánica.
 - **Consultas secundarias del mismo propietario:**
   - `gear speed calculator` — 590/mes US/en; KD 28.
   - `gear ratio calculator free online`; `gear ratio calculator with example`; `gear ratio calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+
+- **Estado de implementación (2026-10-08):** herramienta local implementada como candidata #57/323, build estático y flujo escritorio/móvil revisados, suite focal **175/175**; bundle controlador 5.038 bytes. Copy fuente inglés listo, 35 locales aún pendientes y bloqueados por el gate de publicación; no está desplegada.
 
 ### 108 · Density Calculator
 
 - [ ] **C/F/E/X/L/B/P/S completos — `density-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/density-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `density calculator` — 9.900 búsquedas/mes US/en, KD 14; nivel B. CPC 5.62 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Masa, volumen, densidad y mezcla con supuestos
-- **Prueba de aceptación específica:** 10kg en2m³ da5kg/m³
-- **Frontera con otras herramientas:** volume-calculator: propiedades no geometría. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
+- **Función mínima y ampliaciones útiles:** Introducir exactamente dos de masa (kg), volumen (m³) y densidad (kg/m³) para resolver el tercero; informar también en g/cm³ y lb/ft³. Modo opcional de mezcla: hasta 12 filas masa,volumen, sumar ambas magnitudes y estimar la densidad agregada bajo la hipótesis explícita de volúmenes aditivos.
+- **Prueba de aceptación específica:** 10 kg en 2 m³ da 5 kg/m³ (0,005 g/cm³; aproximadamente 0,31214 lb/ft³). 10 kg a 5 kg/m³ da 2 m³; 2 m³ a 5 kg/m³ da 10 kg. Filas 2 kg/1 m³ y 3 kg/0,5 m³ dan 5 kg / 1,5 m³ / 3,333333 kg/m³.
+- **Frontera con otras herramientas:** `volume-calculator` resuelve geometría para obtener volumen; esta herramienta relaciona propiedades físicas de masa, volumen y densidad. No crear URL por valor desconocido o unidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `mass volume density calculator` — 720/mes US/en; KD 1.
@@ -1097,14 +1105,16 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [ ] **C/F/E/X/L/B/P/S completos — `compression-ratio-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/compression-ratio-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `compression ratio calculator` — 6.600 búsquedas/mes US/en, KD 23; nivel B. CPC 0.91 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Diámetro, carrera, cámara, junta y relación volumétrica
-- **Prueba de aceptación específica:** Volumen barrido9 y cámara1 da10:1
+- **Función mínima y ampliaciones útiles:** Calcular volumen barrido por cilindro desde diámetro y carrera; sumar volumen de cámara, junta comprimida, altura de deck con signo y cazoleta/cúpula del pistón para obtener volumen de holgura y relación estática. Unidades mm/in y cc/in³, cantidad de cilindros (1–16), desplazamiento total y relación diámetro/carrera.
+- **Prueba de aceptación específica:** 9 cc barridos + 1 cc de holgura → 10:1. Inputs equivalentes convertidos entre mm/cc e in/in³ producen la misma relación. Validar cúpula que reduzca holgura a cero/negativa, valores no finitos, unidad desconocida y límites de cilindros.
 - **Frontera con otras herramientas:** volume-calculator: motor y varios volúmenes. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `engine compression calculator` — 720/mes US/en; KD 7.
   - `compression ratio calculator free online`; `compression ratio calculator with example`; `compression ratio calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+
+- **Estado de implementación (2026-10-08):** motor de geometría local, formulario, controlador y copy completo en inglés implementados como candidata #59/323. Pruebas focales 176/176; builder/bundler 3/3; bundle 4.997 B. Las 35 traducciones específicas, la prueba visual en navegador y la publicación siguen pendientes; el release gate no permite sacarla aún.
 
 ### 138 · Kinetic Energy Calculator
 
@@ -1964,7 +1974,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Demanda:** `mortgage points calculator` — 3.600 búsquedas/mes US/en, KD 7; nivel B. CPC 4.39 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Comparar pagar puntos frente a intereses, horizonte y amortización
 - **Prueba de aceptación específica:** Coste positivo con ahorro cero no se recupera
-- **Frontera con otras herramientas:** mortgage-refinance-calculator: compra inicial de puntos. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
+- **Frontera con otras herramientas:** `loan-calculator` / refinanciación de automóvil: comparar un coste inicial de puntos para hipoteca y amortización a horizonte, no cuotas genéricas ni refinanciación de un vehículo. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `discount points calculator` — 3.600/mes US/en; KD 5.
@@ -1973,32 +1983,34 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 173 · Savings Goal Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `savings-goal-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/savings-goal-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [ ] **C/F/E/X/L/B/P/S completos — `savings-goal-calculator` (implementación inglesa parcial; no publicada)**
+- **Destino propuesto:** `https://tools.usefulverse.com/tools/savings-goal-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarada publicada.
 - **Demanda:** `savings goal calculator` — 3.600 búsquedas/mes US/en, KD 36; nivel B. CPC 3.72 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Resolver aportación o plazo para una meta con fecha y saldo actual
 - **Prueba de aceptación específica:** Meta 1200 a 12 meses sin interés da 100 por mes
 - **Frontera con otras herramientas:** compound-interest-calculator: objetivo inverso, no proyección genérica. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** H: dependencia/cómputo bajo demanda; verificar licencia y compatibilidad. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** cálculo financiero determinista sin dependencia, red ni servidor. APR nominal dividida entre doce, capitalización mensual y aportaciones al inicio/fin del mes declaradas como supuestos; límite de 1.200 meses y entradas acotadas.
 - **Consultas secundarias del mismo propietario:**
   - `savings target calculator` — 3.600/mes US/en; KD 36.
   - `savings goal calculator free online`; `savings goal calculator with example`; `savings goal calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** DE/de `sparziel rechner` 70/mes, KD 18.
+- **Avance comprobado (2026-10-08):** C/F, lógica E, tests X del cálculo/controlador simulado, fuente inglesa L, formulario y copy B implementados. Pruebas focalizadas: **155/155 aprobadas**; bundle minificado temporal: **5.562 bytes** (presupuesto 24 KiB). Los 35 borradores locales están marcados pendientes y el gate los bloquea. Sin comprobación visual en Chrome, deploy, sitemap público ni envíos a buscadores; completar esos gates antes de declarar terminada.
 
 ### 174 · Severance Pay Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `severance-pay-calculator`**
+- [ ] **C/F/E/X/L/B/P/S completos — `severance-pay-calculator` (implementación inglesa en curso; no publicada)**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/severance-pay-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `severance pay calculator` — 2.900 búsquedas/mes US/en, KD 0; nivel B. CPC 1.75 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Escenarios desde años de servicio y semanas por año; reglas oficiales versionadas UK opcionales
+- **Función mínima y ampliaciones útiles:** Escenarios desde años de servicio y semanas por año; estimación normativa opcional para Gran Bretaña, versionada desde 6 de abril de 2026
 - **Prueba de aceptación específica:** 10 años por 2 semanas por 500 da 10000
 - **Frontera con otras herramientas:** salary-to-hourly-calculator: indemnización, no sueldo periódico. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** D: dato/norma versionado, país y año visibles. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** D: dato/norma versionado, ámbito geográfico y fecha visibles. La estimación Great Britain/Gran Bretaña cubre Inglaterra, Escocia y Gales, no Irlanda del Norte; requiere salario semanal promedio en GBP, nacimiento, inicio de empleo y fecha final introducida. Cuenta los años completos hacia atrás desde el final del empleo y aplica 0,5/1/1,5 semanas según la edad al borde más antiguo de cada bloque anual, de modo que un año parcialmente pasado en una banda superior no se ascienda. El resultado no determina la fecha legal pertinente si el preaviso u otras circunstancias la modifican. Aplica mínimo general de 2 años, máximo 20 años, tope semanal £751 y máximo £22.530 bajo reglas desde 6 de abril de 2026. No determina elegibilidad ni modela indemnización contractual, continuidad controvertida, aviso, vacaciones, fiscalidad o circunstancias individuales; enlaza GOV.UK y la sección 162 de la Employment Rights Act 1996. El modo flexible es solo aritmética con supuestos del usuario. Seguir los gates globales; el caso de aceptación no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `redundancy pay calculator` — 70/mes US/en; KD 24.
   - `severance pay calculator free online`; `severance pay calculator with example`; `severance pay calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Avance comprobado (2026-10-08):** catálogo aditivo, motor, modos separados, formulario/controlador accesibles, fuente inglesa, dos FAQs y borradores de los otros idiomas integrados. La ley y los topes se contrastaron con [GOV.UK: statutory redundancy pay](https://www.gov.uk/redundancy-your-rights/redundancy-pay), [guía GOV.UK para empleadores](https://www.gov.uk/staff-redundant/redundancy-pay), [Employment Rights Act 1996, sección 162](https://www.legislation.gov.uk/ukpga/1996/18/section/162) y [Employment Rights (Increase of Limits) Order 2026](https://www.legislation.gov.uk/uksi/2026/310/made). Al revisar, corregí el cálculo: los años completos y sus bandas se cuentan hacia atrás desde el final del empleo, no desde los aniversarios de contratación. Suite focalizada actual: **155/155 aprobadas**, incluyendo el cumpleaños dentro de un bloque, límites, elegibilidad básica, años bisiestos, fechas inválidas, formulario, controlador simulado, contrato de idioma y build. Bundle independiente actual: **5.677 bytes**, bajo 24 KiB y aprobado por el guard local, sin red externa ni código dinámico. Los otros 35 locales siguen marcados `pending-tool-specific-translation` y bloqueados por el release gate. Falta inspección en navegador y traducción específica; no está publicada ni su sitemap enviado.
 
 ### 207 · Lifetime Value Calculator
 
@@ -2327,7 +2339,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Demanda:** `trapezoid area calculator` — 3.600 búsquedas/mes US/en, KD 10; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Bases, altura, lados, área y croquis
 - **Prueba de aceptación específica:** Bases4,6 y altura3 da área15
-- **Frontera con otras herramientas:** polygon-calculator: cuadrilátero irregular, no regular. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
+- **Frontera con otras herramientas:** `square-footage-calculator` resuelve área rectangular; esta herramienta resuelve el área de un trapecio desde sus dos bases paralelas y altura, y además deriva lados/perímetro según el desplazamiento de la base superior. No existe un `polygon-calculator` protegido en el catálogo actual. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `trapezoid calculator` — 2.400/mes US/en; KD 0.
@@ -2347,6 +2359,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `divisibility rules calculator` — 2.900/mes US/en; KD 0.
   - `divisibility calculator free online`; `divisibility calculator with example`; `divisibility calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Avance comprobado (2026-10-08):** motor exacto local, formulario/controlador con validación, cocientes/restos, reglas comunes, ejemplo, preset de divisores, copia y limpieza de resultados obsoletos. La suite focalizada pasa **157/157**. El bundle minificado es de **3.466 bytes**. Solo inglés está listo; 35 idiomas siguen bloqueados como borradores. Sin inspección visual real, despliegue ni sitemap actualizado. Recuento: **78/323** con implementación inglesa; 245 filas restantes incluyendo una duplicada que se debe sustituir.
 
 ### 176 · Number Line Graphing Tool
 
@@ -2361,6 +2374,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `number line graphing tool` — sin métrica obtenida; no atribuir volumen.
   - `number line generator free online`; `number line generator with example`; `number line generator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Avance comprobado (2026-10-08):** parser/formulario/controlador inglés para intervalos, puntos, fracciones y extremos infinitos abiertos; diagrama SVG accesible con círculos abiertos/cerrados y descarga del SVG. Suite focalizada conjunta con la candidata anterior: **163/163** aprobadas. Bundle minificado: **4.888 bytes**. Los otros 35 locales siguen bloqueados como borradores; faltan QA visual, traducciones específicas y publicación. Recuento: **79/323** con implementación inglesa; quedan 244 filas, incluida una duplicada por sustituir.
 
 ### 196 · Laplace Transform Calculator
 
@@ -2384,11 +2398,12 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Función mínima y ampliaciones útiles:** Norma, producto escalar/vectorial, proyección y ángulo
 - **Prueba de aceptación específica:** Ejes x e y dan producto escalar0 y vector z
 - **Frontera con otras herramientas:** coordinate-geometry-calculator: vectores 2D/3D. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** D: dato/norma versionado, país y año visibles. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** no requiere tablas, normas por país ni datos versionados: es álgebra vectorial dimensional. Tratar unidades como valores compatibles introducidos por la persona y hacer explícita esa condición; el cálculo debe seguir local, acotado y comprobado con casos 2D/3D y vectores nulos.
 - **Consultas secundarias del mismo propietario:**
   - `vector operations calculator` — 10/mes US/en; KD 9.
   - `vector calculator free online`; `vector calculator with example`; `vector calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Avance de implementación (2026-10-08):** herramienta inglesa integrada en el catálogo aditivo, formulario, controlador local, FAQs, contrato de copy y pruebas del build. Incluye suma/resta, producto escalar/vectorial (en 2D indica su componente z con signo), magnitudes, normalización, ángulo en grados y proyección. Componentes limitados a ±1.000.000.000; rechaza entradas incompletas, resultados no finitos y operaciones no definidas con el vector cero. No usa datos, APIs ni servicios de servidor. Suite focalizada: **158/158 aprobadas**; controlador minificado: **3.896 bytes**, aceptado por `assertLocalController` bajo el límite de 24 KiB. Los otros 35 idiomas siguen como borradores bloqueados; falta QA visual real y publicación. Recuento de implementaciones inglesas: **81/323**.
 
 ### 202 · Cubic & Quartic Equation Calculator
 
@@ -2396,13 +2411,14 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/cubic-quartic-equation-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `cubic equation calculator` — 2.400 búsquedas/mes US/en, KD 7; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Raíces cúbicas/cuarticas y multiplicidades con residuos numéricos
-- **Prueba de aceptación específica:** x^3-1 tiene raíz real1
+- **Prueba de aceptación específica:** x³ − 1 tiene raíz real 1, multiplicidad 1 y residuo próximo a cero.
 - **Frontera con otras herramientas:** equation-solver: polinomios de grado3-4. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** resolver raíces reales numéricamente mediante aislamiento por puntos críticos y bisección acotada; no anunciar raíces complejas, factorización simbólica ni certeza formal. Limitar coeficientes y descartar polinomios mal condicionados; mostrar residuo y límites visibles.
 - **Consultas secundarias del mismo propietario:**
   - `polynomial roots calculator` — 390/mes US/en; KD 0.
   - `cubic equation calculator free online`; `cubic equation calculator with example`; `cubic equation calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Avance de implementación (2026-10-08):** motor real local para grado 3/4, raíces distintas ordenadas, multiplicidad aproximada y residuo absoluto; ejemplo `x³−1`, cuártica con cuatro raíces, raíces dobles/triples y caso sin raíces reales. Formulario accesible cambia entre cúbica/cuártica y deshabilita el coeficiente principal extra en modo cúbico; resultados se insertan como texto y limpian al cambiar entradas. Coeficientes acotados a ±1.000.000; exige coeficiente líder no nulo y ratio mínimo 1e−12. 161/161 pruebas focalizadas aprobadas y otros 200 polinomios deterministas verificados; bundle 4.461 bytes, aceptado por `assertLocalController` (<24 KiB, sin red/código dinámico). Copy inglés aprobado, 35 idiomas siguen como borradores bloqueados; falta QA visual, traducción completa, publicación y sitemap. Recuento inglés: 82/323.
 
 ### 204 · Complex Number Calculator
 
@@ -2418,6 +2434,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `complex number calculator free online`; `complex number calculator with example`; `complex number calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** DE/de `komplexe zahlen rechner` 390/mes, KD 0.
+- **Avance de implementación (2026-10-08):** motor local para operaciones rectangulares, división numéricamente estable, módulo/argumento principal, conversiones polar-cartesiano en grados/radianes y raíces 2–12. Aceptación `i × i = −1`; inputs y resultados acotados, división por cero y argumento de cero informados con errores específicos. Formulario adaptable por operación, resultados con `textContent` y estado accesible; sin API ni subida. Pruebas focalizadas de lógica/controlador/formulario/catálogo/localización y build de contrato aprobadas. Copy inglés aprobado. Los otros 35 idiomas son borradores estructurales no traducidos, la verificación de bundle final requiere instalar la dependencia fijada ausente en el clon y la revisión visual de navegador está pendiente. **No publicada; no añadida al sitemap ni notificada a buscadores.** Ver `docs/growth600/PROGRESS.md`.
 
 ### 208 · Polar Graphing Calculator
 
@@ -3435,7 +3452,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/prayer-times-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `prayer time calculator` — 3.600 búsquedas/mes US/en, KD 13; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Coordenadas manuales, fecha, zona y método astronómico declarado; ajustes de latitudes altas y horarios sin geolocalización obligatoria.
-- **Prueba de aceptación específica:** Reproducir ejemplodelmétodoylatitudalta tratada
+- **Prueba de aceptación específica:** New York (40.7128, −74.0060), 20-mar-2026, UTC−4, ISNA, Asr estándar → sunrise 07:00, Dhuhr 13:04; UTC−5 desplaza el horario −60 min. En 89° N durante el solsticio de junio, sunrise/sunset deben salir como no disponibles. Para el caso en que hay salida/puesta pero no se alcanza el ángulo de twilight, comparar fallback seleccionado (angle/middle/seventh) y marcar que es una estimación.
 - **Frontera con otras herramientas:** date-calculator: horariosastronómicos; no ubicación automática. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
@@ -3627,6 +3644,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 ### 132 · Goal Planner
 
 - [ ] **C/F/E/X/L/B/P/S completos — `goal-planner`**
+- **Estado de implementación (2026-10-08):** motor, formulario y copy en inglés implementados como candidata #60 de la rama; suite focal pasa. Las otras 35 traducciones, prueba de navegador, revisión RTL y publicación siguen pendientes; no está en producción ni en el sitemap.
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/goal-planner/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `smart goals template` — 6.600 búsquedas/mes US/en, KD 30; nivel B. CPC 1.36 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Objetivo, métrica, plazo, hitos y seguimiento local; separar resultado final de la lista de tareas existente.
@@ -3644,9 +3662,9 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/mind-map-maker/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `mind map maker` — 5.400 búsquedas/mes US/en, KD 69; nivel B. CPC 12.24 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Árbol de ideas editable, ramas, reordenar, colapsar, undo y SVG/JSON; estructura arbórea explícita y ciclos prohibidos.
-- **Prueba de aceptación específica:** Moverhijo nodejaciclo
+- **Prueba de aceptación específica:** al mover una idea a otra rama, el árbol se actualiza; intentar moverla bajo sí misma o uno de sus descendientes se rechaza y el mapa permanece válido.
 - **Frontera con otras herramientas:** diagram-maker: árbolinteractivo vsprocesolineal. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** motor y página en inglés implementados localmente; no usan servicios externos. L sigue bloqueado hasta completar las otras 35 traducciones. Suite focal 126/126, build aislado 2 páginas/9 archivos, bundle 10.302 B y flujo básico comprobado en Chrome móvil (390 × 844, sin overflow). Sin publicación ni sitemap de producción hasta superar localización y gates globales.
 - **Consultas secundarias del mismo propietario:**
   - `mind map online` — 880/mes US/en; KD 78.
   - `mind map maker free online`; `mind map maker with example`; `mind map maker no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -3659,9 +3677,9 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/mood-tracker/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `mood tracker` — 4.400 búsquedas/mes US/en, KD 39; nivel B. CPC 0.86 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Registro privado de etiquetas y notas de ánimo, calendario, tendencias y backup; guardar solo con elección clara y no inferir diagnóstico.
-- **Prueba de aceptación específica:** Valoresocultos nopersisten sin consent
+- **Prueba de aceptación específica:** una entrada del 2026-10-08 con ánimo 5 y etiqueta `grateful` aparece en calendario y resumen; no existe en localStorage antes del consentimiento; al activarlo queda una entrada JSON local; al desactivarlo se borra la copia persistida pero permanece visible durante esta pestaña. Fechas fuera de 1900–2100, escala distinta de 1–5, etiquetas no permitidas, duplicados en backup y nota >500 caracteres se rechazan.
 - **Frontera con otras herramientas:** habit-tracker: registroemocional no hábito completado. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** lógica local, backup/import y formulario inglés implementados; sin API ni diagnóstico automatizado. 35 traducciones siguen pendientes: no publicar hasta copy específico, revisión y build para los 36 idiomas.
 - **Consultas secundarias del mismo propietario:**
   - `mood journal online` — 10/mes US/en; KD 65.
   - `mood tracker free online`; `mood tracker with example`; `mood tracker no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -3669,11 +3687,11 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 160 · Journal Online
 
-- [ ] **C/F/E/X/L/B/P/S completos — `journal-online`**
+- [ ] **C/F/E/X/L/B/P/S completos — `journal-online`** (motor y experiencia de escritorio implementados; faltan traducciones y gates globales)
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/journal-online/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `journal online` — 4.400 búsquedas/mes US/en, KD 51; nivel B. CPC 3.03 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Entradas por fecha, búsqueda local, exportación y borrado; cifrado opcional bien implementado y sin presentar local Storage como una caja fuerte.
-- **Prueba de aceptación específica:** Datosno se envían ybackup recuperable
+- **Prueba de aceptación específica:** Crear varias entradas el mismo día; editar sin duplicar; buscar por título/cuerpo/etiquetas y filtrar por fechas; eliminar una o todas; el guardado local solo ocurre tras consentimiento explícito y se elimina al desactivarlo; importar/exportar JSON válido; backup cifrado AES-GCM de ida y vuelta, contraseña incorrecta y archivo alterado rechazados; avisar si falla el borrado del almacenamiento; confirmar cero peticiones de red con datos de diario.
 - **Frontera con otras herramientas:** local-notepad: diaryestructurado no texto único. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
@@ -3687,13 +3705,14 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/travel-itinerary-planner/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `travel itinerary planner` — 4.400 búsquedas/mes US/en, KD 71; nivel B. CPC 3.95 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Días, visitas, horarios y reservas manuales, detectar solapes y exportar ICS/print. Sin API de viajes ni mapas obligatorios.
-- **Prueba de aceptación específica:** Nosolaparestriccionesdehoras
-- **Frontera con otras herramientas:** packing-list-maker: itinerariono equipaje. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
+- **Prueba de aceptación específica:** Un itinerario de tres días acepta paradas solo dentro del rango. Dos eventos 09:00–10:00 y 09:45–10:30 muestran un solapamiento de 15 min; una parada 10:40 tras terminar a las 10:30 muestra un margen de 10 min si se eligieron 30 min. Editar conserva el ID y el número de paradas. JSON vuelve a importarse; ICS usa líneas CRLF escapadas/dobladas y horas locales flotantes.
+- **Frontera con otras herramientas:** `fuel-cost-calculator` estima combustible/precio del viaje; esta herramienta organiza paradas y horarios, no coste. No se enlaza a una lista de equipaje inexistente ni se crean rutas por modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `trip itinerary maker` — 3.600/mes US/en; KD 45.
   - `travel itinerary planner free online`; `travel itinerary planner with example`; `travel itinerary planner no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Estado del checkpoint 2026-10-08:** motor, formulario, controlador, copy inglés y fixtures están implementados; 35 locales siguen como borradores y bloqueados por el gate. No se publica esta URL hasta cerrar idioma, QA visual y gates globales.
 
 ### 184 · Round Robin Tournament Generator
 
@@ -4085,7 +4104,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/image-sharpener/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `image sharpener` — 9.900 búsquedas/mes US/en, KD 23; nivel B. CPC 3.3 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Unsharp mask con radio, cantidad y umbral; comparar antes/después, deshacer y descargar copia. Ninguna solicitud con la imagen ni mejora de detalle inexistente prometida.
-- **Prueba de aceptación específica:** Amount0 conserva pixelraster
+- **Prueba de aceptación específica:** Amount0 conserva cada píxel RGBA decodificado dentro del procesamiento; salida PNG conserva sus valores, JPEG se reconoce como formato con pérdida
 - **Frontera con otras herramientas:** image-editor: mejoraedgefilter, soloadmitir si nofunción existente. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
@@ -4166,6 +4185,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 ### 172 · Readability Checker
 
 - [ ] **C/F/E/X/L/B/P/S completos — `readability-checker`**
+- [x] E/B — implementación base inglesa con índices separados para cinco idiomas, métricas de texto, límites y aviso de muestra; ver evidencias y tareas aún abiertas en `docs/growth600/PROGRESS.md` (2026-10-08). No se considera localizada, integralmente probada ni publicada.
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/readability-checker/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `readability checker` — 3.600 búsquedas/mes US/en, KD 34; nivel B. CPC 5.86 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Fórmulas de legibilidad apropiadas para cada idioma soportado, números intermedios y explicación. Donde no exista fórmula fiable, no aplicar Flesch inglés silenciosamente.

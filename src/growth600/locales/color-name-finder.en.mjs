@@ -1,0 +1,33 @@
+export const colorNameFinderEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Color name finder',
+  title: 'Color Name Finder Free & Unlimited | UsefulVerse',
+  description: 'Find the closest CSS color name for any hex code. Compare perceptual matches and copy a name or value. Free, unlimited use in your browser.',
+  intro: 'Enter a hex color or choose one to find exact and closest matches in the standard CSS named-color palette.',
+  howQuestion: 'How do I find a color name from a hex code?',
+  howAnswer: 'Enter a 3- or 6-digit hex value, with or without #, or use the color picker. Exact CSS named colors are marked separately. Other results are the closest standard names by perceptual OKLab distance; they are approximations, not universal names.',
+  privacyQuestion: 'Is my color uploaded?',
+  privacyAnswer: 'No. Matching runs locally in this browser. No color value is uploaded or saved by this tool.',
+  fields: {
+    hexColor: 'Hex color',
+    colorPreview: 'Choose a color',
+    nearestNames: 'Closest standard CSS color names',
+    exactMatchNote: 'This hex value exactly matches a standard CSS named color.',
+    paletteNote: 'Uses the standard CSS named-color palette. A closest match is an approximation, not an official or universal color name.',
+  },
+  actions: { findName: 'Find color name', copyName: 'Copy closest name', copyHex: 'Copy hex value', result: 'Color matches' },
+  messages: {
+    found: 'Color matches are ready.',
+    checkColor: 'Enter a valid 3- or 6-digit hex color.',
+    copied: 'Copied.',
+    copyUnavailable: 'Copy is unavailable in this browser.',
+    exactMatch: 'Exact standard CSS color match found.',
+    nearestMatch: 'Closest standard CSS color names found.',
+    distance: 'Perceptual distance',
+  },
+  additionalFaqs: [
+    { question: 'Does every hex color have an exact name?', answer: 'No. CSS defines a fixed named-color palette. For other values this tool shows the closest palette colors as approximations.' },
+    { question: 'Why can two CSS color names have the same value?', answer: 'Some standard names are aliases, such as aqua and cyan. The tool groups names that share the same exact RGB value.' },
+  ],
+  localizationStatus: 'approved',
+});

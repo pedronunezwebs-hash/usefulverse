@@ -1,0 +1,31 @@
+export const electricityCostCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Electricity Cost Calculator',
+  title: 'Electricity Cost Calculator Free | UsefulVerse',
+  description: 'Estimate appliance electricity use and bill cost from power, usage days and your kWh rate. Free and private in your browser.',
+  intro: 'Estimate energy and cost for up to four appliances. Enter their rated power and schedule, then your price per kWh and any fixed charge for the billing period.',
+  howQuestion: 'How do I calculate electricity cost for an appliance?',
+  howAnswer: 'Convert the appliance power to kilowatts, multiply by hours used on each active day and the number of active days, then multiply the energy in kWh by your entered price per kWh. The estimate uses the appliance rating and schedule you provide.',
+  privacyQuestion: 'Are appliance details or electricity rates uploaded?',
+  privacyAnswer: 'No. The estimate runs locally in this browser; appliance names, schedules and rates are not sent to a server or saved by this tool.',
+  fields: {
+    ratePerKwh: 'Your electricity price per kWh', billingDays: 'Days in this billing period', fixedCharge: 'Optional fixed charge for this period', currency: 'Currency code for display (for example USD or EUR)',
+    appliance1: 'Appliance 1', appliance2: 'Appliance 2 (optional)', appliance3: 'Appliance 3 (optional)', appliance4: 'Appliance 4 (optional)',
+    applianceName1: 'Appliance name (optional)', applianceName2: 'Appliance name (optional)', applianceName3: 'Appliance name (optional)', applianceName4: 'Appliance name (optional)',
+    power1: 'Rated power', power2: 'Rated power', power3: 'Rated power', power4: 'Rated power',
+    powerUnit1: 'Power unit', powerUnit2: 'Power unit', powerUnit3: 'Power unit', powerUnit4: 'Power unit',
+    quantity1: 'Number of identical appliances', quantity2: 'Number of identical appliances', quantity3: 'Number of identical appliances', quantity4: 'Number of identical appliances',
+    hours1: 'Hours used per active day', hours2: 'Hours used per active day', hours3: 'Hours used per active day', hours4: 'Hours used per active day',
+    activeDays1: 'Active days in this billing period', activeDays2: 'Active days in this billing period', activeDays3: 'Active days in this billing period', activeDays4: 'Active days in this billing period',
+    accuracyNote: 'Estimate only. Actual energy can differ because appliances cycle, draw standby power or use different settings. Your bill may also include time-of-use rates, taxes, tiered pricing and utility-specific fees. Enter the rate and fixed charge from your own bill; this tool does not fetch live rates or recommend plans.',
+  },
+  actions: { calculate: 'Estimate electricity cost', reset: 'Reset', copy: 'Copy result', example: 'Try an example', result: 'Electricity use estimate', meters: 'Meters', feet: 'Feet', watts: 'Watts', kilowatts: 'Kilowatts' },
+  messages: {
+    copied: 'Copied.', copyUnavailable: 'Copy is not available in this browser.', calculated: 'Estimate ready.', checkInputs: 'Check the billing period, rate and each appliance row. Complete every value in a row you use.',
+    energyKwh: 'Energy in this billing period', energyCost: 'Energy charge', fixedCharge: 'Fixed charge', totalCost: 'Estimated total for this period', averageDailyKwh: 'Average energy per day', averageDailyCost: 'Average cost per day', applianceBreakdown: 'Appliance estimate', quantity: 'units', hours: 'hours/day', days: 'days',
+  },
+  additionalFaqs: [
+    { question: 'How do I estimate the cost of running a 1,000 W appliance?', answer: 'At 1,000 W, the appliance uses 1 kWh for each hour it runs. Multiply that by your own price per kWh. For example, one hour at 0.20 per kWh costs 0.20 before fixed charges.' },
+    { question: 'Why can my actual bill differ from this estimate?', answer: 'The calculation uses rated power and the schedule you enter. Thermostats and motor loads cycle, devices may draw standby power, and your utility may apply time-of-use pricing, taxes, tiers or additional fees.' },
+  ],
+});

@@ -4,6 +4,49 @@ import { calculateCircularArea, calculateGravel, calculateRectangularArea, calcu
 import { calculateMolarMass, parseChemicalFormula } from './molar-mass-calculator/logic.mjs';
 import { compareAutoLoanRefinance, monthlyLoanPayment } from './auto-loan-refinance-calculator/logic.mjs';
 import { assignSecretSanta } from './secret-santa-generator/logic.mjs';
+import { compareMetricTireSizes, parseMetricTireSize } from './tire-size-calculator/logic.mjs';
+import { calculateStairGeometry } from './stair-calculator/logic.mjs';
+import { calculateAsphalt } from './asphalt-calculator/logic.mjs';
+import { calculateSoil } from './soil-calculator/logic.mjs';
+import { calculatePoolVolume } from './pool-volume-calculator/logic.mjs';
+import { calculateRoofPitch } from './roof-pitch-calculator/logic.mjs';
+import { calculateDrywall } from './drywall-calculator/logic.mjs';
+import { calculateRoofing } from './roofing-calculator/logic.mjs';
+import { calculateDeck } from './deck-calculator/logic.mjs';
+import { calculateFence } from './fence-calculator/logic.mjs';
+import { calculatePoolSalt } from './pool-salt-calculator/logic.mjs';
+import { calculateWallpaper } from './wallpaper-calculator/logic.mjs';
+import { calculateBrickMaterials } from './brick-calculator/logic.mjs';
+import { calculateRafter } from './rafter-calculator/logic.mjs';
+import { calculateCarpet } from './carpet-calculator/logic.mjs';
+import { calculateAquarium } from './aquarium-calculator/logic.mjs';
+import { calculateGrassSeed } from './grass-seed-calculator/logic.mjs';
+import { calculateInsulation } from './insulation-calculator/logic.mjs';
+import { calculateWallFraming } from './wall-framing-calculator/logic.mjs';
+import { calculateElectricityCost } from './electricity-cost-calculator/logic.mjs';
+import { calculateCompostMix } from './compost-calculator/logic.mjs';
+import { calculatePond } from './pond-volume-calculator/logic.mjs';
+import { calculateFertilizer } from './fertilizer-calculator/logic.mjs';
+import { calculateBalusterSpacing } from './baluster-spacing-calculator/logic.mjs';
+import { calculateRetainingWall } from './retaining-wall-calculator/logic.mjs';
+import { calculateBatteryRuntime } from './battery-runtime-calculator/logic.mjs';
+import { optimizeLumberCuts, parseCutList } from './lumber-cut-calculator/logic.mjs';
+import { calculatePlantSpacing } from './plant-spacing-calculator/logic.mjs';
+import { calculateEvCharging } from './ev-charging-calculator/logic.mjs';
+import { calculateRainwaterHarvesting, parseMonthlyValues } from './rainwater-harvesting-calculator/logic.mjs';
+import { calculateRamp } from './ramp-calculator/logic.mjs';
+import { calculateHeatLoss } from './heat-loss-calculator/logic.mjs';
+import { calculateHeatPump } from './heat-pump-calculator/logic.mjs';
+import { calculateMiterAngles } from './miter-angle-calculator/logic.mjs';
+import { calculateVoltageDrop } from './voltage-drop-calculator/logic.mjs';
+import { calculateMolarity } from './molarity-calculator/logic.mjs';
+import { calculateDilution } from './dilution-calculator/logic.mjs';
+import { calculateEquivalentResistance, solveOhmsLaw } from './ohms-law-calculator/logic.mjs';
+import { balanceChemicalEquation } from './chemical-equation-balancer/logic.mjs';
+import { calculateGearRatio } from './gear-ratio-calculator/logic.mjs';
+import { calculateDensity, parseDensityComponents } from './density-calculator/logic.mjs';
+import { calculateEngineCompression, compressionRatioFromVolumes } from './compression-ratio-calculator/logic.mjs';
+import { mapPointerRegion, normalizeRedactionRegion, validateImageSize, validateRedactionMode } from './image-region-redactor/logic.mjs';
 import { chooseMancalaMove, createMancalaGame, legalMancalaPits, playMancalaMove } from './mancala/logic.mjs';
 
 test('gravel calculator converts area and depth into volume, waste, weight and bags', () => {
@@ -18,6 +61,390 @@ test('gravel calculator converts area and depth into volume, waste, weight and b
   assert.equal(calculateTriangularArea(4, 3), 6);
   assert.throws(() => calculateGravel({ areaM2: 0, depthM: 1 }), /Area/);
   assert.throws(() => calculateGravel({ areaM2: 1, depthM: 1, wastePercent: 101 }), /Waste/);
+});
+
+test('Ohm’s law calculator solves every pair and equivalent resistor networks', () => {
+  const expected = { voltage: 12, current: 2, resistance: 6, power: 24 };
+  for (const values of [
+    { voltage: 12, current: 2 }, { voltage: 12, resistance: 6 }, { voltage: 12, power: 24 },
+    { current: 2, resistance: 6 }, { current: 2, power: 24 }, { resistance: 6, power: 24 },
+  ]) {
+    const result = solveOhmsLaw(values);
+    for (const key of Object.keys(expected)) assert.ok(Math.abs(result[key] - expected[key]) < 1e-10, `${key} from ${Object.keys(values)}`);
+  }
+  assert.equal(calculateEquivalentResistance([2, 3, 6], 'series').resistance, 11);
+  assert.ok(Math.abs(calculateEquivalentResistance([2, 3, 6], 'parallel').resistance - 1) < 1e-12);
+  assert.throws(() => solveOhmsLaw({ voltage: 12 }), /exactly two/u);
+  assert.throws(() => solveOhmsLaw({ voltage: 12, current: 0 }), /between/u);
+  assert.throws(() => solveOhmsLaw({ voltage: 12, current: 2, resistance: 6 }), /exactly two/u);
+  assert.throws(() => calculateEquivalentResistance([10], 'series'), /2 to 20/u);
+  assert.throws(() => calculateEquivalentResistance([10, 0], 'parallel'), /between/u);
+  assert.throws(() => calculateEquivalentResistance([10, 20], 'unknown'), /series or parallel/u);
+});
+
+test('chemical equation balancer conserves atoms for simple, grouped and underdetermined neutral equations', () => {
+  const water = balanceChemicalEquation('H2 + O2 -> H2O');
+  assert.equal(water.balancedEquation, '2H2 + O2 → 2H2O');
+  assert.deepEqual(water.coefficients, [2, 1, 2]);
+  assert.deepEqual(water.atomCounts, [{ element: 'H', reactants: 4, products: 4 }, { element: 'O', reactants: 2, products: 2 }]);
+
+  const acid = balanceChemicalEquation('Ca(OH)2 + HCl -> CaCl2 + H2O');
+  assert.equal(acid.balancedEquation, 'Ca(OH)2 + 2HCl → CaCl2 + 2H2O');
+  assert.ok(acid.atomCounts.every(({ reactants, products }) => reactants === products));
+
+  const iron = balanceChemicalEquation('Fe + O2 -> Fe2O3');
+  assert.deepEqual(iron.coefficients, [4, 3, 2]);
+
+  const underdetermined = balanceChemicalEquation('C + O2 -> CO + CO2');
+  assert.equal(underdetermined.balancedEquation, '3C + 2O2 → 2CO + CO2');
+  assert.equal(underdetermined.multipleSolutions, true);
+  assert.ok(underdetermined.atomCounts.every(({ reactants, products }) => reactants === products));
+  assert.equal(water.multipleSolutions, false);
+
+  for (const equation of ['', 'H2 + O2 H2O', 'H2 ->', 'H2 + + O2 -> H2O', 'Na+ + Cl- -> NaCl', 'H2 + O2 -> H2O -> H2O', 'H2 + H2 -> H2O', `${'H2 + '.repeat(8)}H2 -> H2O`]) {
+    assert.throws(() => balanceChemicalEquation(equation), undefined, equation);
+  }
+});
+
+test('gear ratio calculator composes stages, estimates RPM and torque, and labels drive direction', () => {
+  const single = calculateGearRatio({ stages: '20:40', inputRpm: 1500, inputTorque: 10, driveType: 'gears' });
+  assert.equal(single.ratio, 2);
+  assert.equal(single.outputRpm, 750);
+  assert.equal(single.idealOutputTorque, 20);
+  assert.equal(single.estimatedOutputTorque, 20);
+  assert.equal(single.outputDirection, 'reversed');
+
+  const compound = calculateGearRatio({ stages: '10:30\n20:40', inputRpm: 1800, inputTorque: 5, efficiencyPercent: 90, driveType: 'chain' });
+  assert.equal(compound.ratio, 6);
+  assert.equal(compound.outputRpm, 300);
+  assert.equal(compound.idealOutputTorque, 30);
+  assert.equal(compound.estimatedOutputTorque, 24.3);
+  assert.equal(compound.outputDirection, 'same');
+
+  const speedIncrease = calculateGearRatio({ stages: '40:20', inputRpm: 1200 });
+  assert.equal(speedIncrease.ratio, 0.5);
+  assert.equal(speedIncrease.outputRpm, 2400);
+  assert.equal(speedIncrease.idealOutputTorque, null);
+  assert.equal(speedIncrease.outputDirection, 'reversed');
+  assert.equal(calculateGearRatio({ stages: '20:40\n20:40', inputRpm: 1500 }).outputDirection, 'same');
+
+  for (const input of [
+    { stages: '', inputRpm: 1000 }, { stages: '20:40\ninvalid', inputRpm: 1000 },
+    { stages: '20.5:40', inputRpm: 1000 }, { stages: '0:40', inputRpm: 1000 },
+    { stages: '100001:40', inputRpm: 1000 }, { stages: Array.from({ length: 7 }, () => '2:3').join('\n'), inputRpm: 1000 },
+    { stages: Array.from({ length: 6 }, () => '1:100000').join('\n'), inputRpm: 1000 },
+    { stages: '20:40', inputRpm: 0 }, { stages: '20:40', inputRpm: 1000, inputTorque: -1 },
+    { stages: '20:40', inputRpm: 1000, efficiencyPercent: 0 }, { stages: '20:40', inputRpm: 1000, efficiencyPercent: 100.1 },
+    { stages: '20:40', inputRpm: 1000, driveType: 'belt' },
+  ]) assert.throws(() => calculateGearRatio(input));
+});
+
+test('density calculator solves each missing value, converts units and estimates additive mixtures', () => {
+  const density = calculateDensity({ massKg: 10, volumeM3: 2 });
+  assert.equal(density.densityKgM3, 5);
+  assert.equal(density.densityGcm3, 0.005);
+  assert.ok(Math.abs(density.densityLbFt3 - 0.3121398028805) < 1e-12);
+  assert.equal(calculateDensity({ massKg: 10, densityKgM3: 5 }).volumeM3, 2);
+  assert.equal(calculateDensity({ volumeM3: 2, densityKgM3: 5 }).massKg, 10);
+
+  const mixture = calculateDensity({ mode: 'mix', components: '2,1\n3,0.5' });
+  assert.equal(mixture.componentCount, 2);
+  assert.equal(mixture.massKg, 5);
+  assert.equal(mixture.volumeM3, 1.5);
+  assert.ok(Math.abs(mixture.densityKgM3 - (5 / 1.5)) < 1e-12);
+  assert.equal(parseDensityComponents('2;1')[0].volumeM3, 1);
+
+  assert.throws(() => calculateDensity({ massKg: 10 }), /exactly two/u);
+  assert.throws(() => calculateDensity({ massKg: 10, volumeM3: 2, densityKgM3: 5 }), /exactly two/u);
+  assert.throws(() => calculateDensity({ massKg: 0, volumeM3: 2 }), /greater than zero/u);
+  assert.throws(() => calculateDensity({ mode: 'unknown' }), /Choose solve or mix/u);
+  assert.throws(() => calculateDensity({ mode: 'mix', components: '2,1\nnot-a-row' }), /Component 2/u);
+  assert.throws(() => calculateDensity({ mode: 'mix', components: Array.from({ length: 13 }, () => '1,1').join('\n') }), /no more than 12/u);
+});
+
+test('compression ratio calculator combines bore, stroke, chamber, gasket, deck and piston crown volumes', () => {
+  assert.equal(compressionRatioFromVolumes(9, 1), 10);
+  const swept = (Math.PI * 86 ** 2 * 86) / 4_000;
+  const metric = calculateEngineCompression({ bore: 86, stroke: 86, chamberVolume: swept / 9, cylinders: 4 });
+  assert.ok(Math.abs(metric.compressionRatio - 10) < 1e-12);
+  assert.equal(metric.cylinderCount, 4);
+  assert.ok(Math.abs(metric.totalDisplacementCc - swept * 4) < 1e-10);
+
+  const imperial = calculateEngineCompression({ unit: 'in', volumeUnit: 'in3', bore: 86 / 25.4, stroke: 86 / 25.4, chamberVolume: (swept / 9) / 16.387064, cylinders: 4 });
+  assert.ok(Math.abs(imperial.compressionRatio - metric.compressionRatio) < 1e-10);
+
+  const adjustments = calculateEngineCompression({ bore: 86, stroke: 86, chamberVolume: 50, gasketBore: 87, gasketThickness: 0.8, deckClearance: 0.1, pistonCrownVolume: 2, cylinders: 4 });
+  assert.ok(adjustments.gasketVolumeCc > 0);
+  assert.ok(adjustments.deckVolumeCc > 0);
+  assert.ok(adjustments.clearanceVolumeCc > 52);
+  assert.throws(() => calculateEngineCompression({ unit: 'feet', bore: 86, stroke: 86, chamberVolume: 50 }), /millimeters or inches/u);
+  assert.throws(() => calculateEngineCompression({ volumeUnit: 'liters', bore: 86, stroke: 86, chamberVolume: 50 }), /cubic centimeters or cubic inches/u);
+  assert.throws(() => calculateEngineCompression({ bore: 0, stroke: 86, chamberVolume: 50 }), /outside the supported range/u);
+  assert.throws(() => calculateEngineCompression({ bore: 86, stroke: 86, chamberVolume: 0 }), /greater than zero/u);
+  assert.throws(() => calculateEngineCompression({ bore: 86, stroke: 86, chamberVolume: 20, pistonCrownVolume: -30 }), /Clearance volume/u);
+  assert.throws(() => calculateEngineCompression({ bore: 86, stroke: 86, chamberVolume: 50, gasketThickness: -1 }), /outside the supported range/u);
+  assert.throws(() => calculateEngineCompression({ bore: 86, stroke: 86, chamberVolume: 50, cylinders: 17 }), /whole number/u);
+});
+
+test('wallpaper calculator counts pattern-aligned drops, openings and allowance', () => {
+  const base = { perimeter: 12, wallHeight: 2.4, rollWidth: 0.53, rollLength: 10.05, wastePercent: 0, unit: 'm' };
+  assert.equal(calculateWallpaper(base).rollsNeeded, 6);
+  assert.equal(calculateWallpaper({ ...base, patternRepeat: 0.32 }).rollsNeeded, 8);
+  assert.equal(calculateWallpaper({ ...base, openingsArea: 2.4 }).stripsNeeded, 21);
+});
+
+test('brick calculator counts openings, layers, courses, mortar and bag yield', () => {
+  const wall = { wallLength: 10, wallHeight: 8, wallUnit: 'ft', brickLength: 7.625, brickHeight: 2.25, brickDepth: 3.625, brickUnit: 'in', joint: 0.375, jointUnit: 'in', wastePercent: 0 };
+  const closed = calculateBrickMaterials(wall);
+  const door = calculateBrickMaterials({ ...wall, openingWidth: 3, openingHeight: 7, openingCount: 1, wastePercent: 5, bagYieldLiters: 25 });
+  assert.ok(door.bricksToOrder < calculateBrickMaterials({ ...wall, wastePercent: 5 }).bricksToOrder);
+  const doubleWythe = calculateBrickMaterials({ ...wall, wythes: 2 });
+  assert.equal(doubleWythe.bricksToOrder, closed.bricksToOrder * 2);
+  assert.equal(doubleWythe.mortarLiters, closed.mortarLiters * 2);
+  assert.equal(door.courses, 37);
+  assert.ok(door.mortarLiters > 0);
+  assert.equal(door.mortarBags, Math.ceil(door.mortarLiters / 25));
+  const metric = calculateBrickMaterials({ wallLength: 3, wallHeight: 2.4, wallUnit: 'm', brickLength: 19, brickHeight: 5.7, brickDepth: 9, brickUnit: 'cm', joint: 1, jointUnit: 'cm' });
+  assert.ok(metric.bricksToOrder > 0);
+  assert.throws(() => calculateBrickMaterials({ ...wall, openingWidth: 11, openingHeight: 9, openingCount: 2 }), /Openings/u);
+  assert.throws(() => calculateBrickMaterials({ ...wall, openingWidth: 0, openingHeight: 4, openingCount: 1 }), /both opening/u);
+  assert.throws(() => calculateBrickMaterials({ ...wall, wythes: 1.5 }), /whole number/u);
+});
+
+test('rafter calculator handles span deduction, pitch, overhang and invalid geometry', () => {
+  const base = calculateRafter({ span: 20, rise: 6, ridgeThickness: 1.5, ridgeUnit: 'in', unit: 'ft', overhang: 0 });
+  assert.equal(base.horizontalRun, 9.9375);
+  assert.ok(Math.abs(base.rafterLength - Math.hypot(9.9375, 6)) < 1e-12);
+  const withOverhang = calculateRafter({ span: 20, rise: 6, ridgeThickness: 1.5, ridgeUnit: 'in', unit: 'ft', overhang: 1 });
+  assert.ok(withOverhang.rafterLength > base.rafterLength);
+  const pitchMode = calculateRafter({ span: 20, pitch: 3, ridgeThickness: 1.5, ridgeUnit: 'in', unit: 'ft', mode: 'pitch' });
+  assert.ok(Math.abs(pitchMode.rise - 2.484375) < 1e-12);
+  assert.ok(Math.abs(pitchMode.pitchPer12 - 3) < 1e-12);
+  const metric = calculateRafter({ span: 6, rise: 1.5, ridgeThickness: 0.1, overhang: 0.3, unit: 'm' });
+  assert.ok(metric.rafterLength > 0);
+  assert.throws(() => calculateRafter({ span: 1, rise: 1, ridgeThickness: 1, ridgeUnit: 'm', unit: 'm' }), /smaller than the span/u);
+  assert.throws(() => calculateRafter({ span: 20, pitch: 0, unit: 'ft', mode: 'pitch' }), /Pitch/u);
+});
+
+test('carpet calculator compares cut orientation, seams, rooms, allowance and units', () => {
+  const plan = calculateCarpet({ roomLength: 4, roomWidth: 5, rollWidth: 3, wastePercent: 0, unit: 'm', pileDirection: 'length' });
+  assert.equal(plan.chosen.cutsPerRoom, 2);
+  assert.equal(plan.chosen.seamsPerRoom, 1);
+  assert.equal(plan.chosen.cutLength, 4);
+  assert.equal(plan.chosen.orderedLength, 8);
+  assert.equal(plan.roomArea, 20);
+  const best = calculateCarpet({ roomLength: 4, roomWidth: 5, rollWidth: 3, wastePercent: 0, unit: 'm', pileDirection: 'either' });
+  assert.equal(best.chosen.pileDirection, 'length');
+  assert.ok(best.options.find((option) => option.pileDirection === 'width').orderedLength > best.chosen.orderedLength);
+  const twoRooms = calculateCarpet({ roomLength: 4, roomWidth: 5, rollWidth: 3, rooms: 2, wastePercent: 10, unit: 'm', pileDirection: 'length' });
+  assert.equal(twoRooms.chosen.orderedLength, 17.6);
+  const imperial = calculateCarpet({ roomLength: 12, roomWidth: 15, rollWidth: 10, unit: 'ft', wastePercent: 0, pileDirection: 'length' });
+  assert.equal(imperial.chosen.cutsPerRoom, 2);
+  assert.throws(() => calculateCarpet({ roomLength: 4, roomWidth: 5, rollWidth: 0 }), /Roll width/u);
+  assert.throws(() => calculateCarpet({ roomLength: 4, roomWidth: 5, rollWidth: 3, rooms: 1.5 }), /whole number/u);
+});
+
+test('aquarium calculator estimates net water, substrate, air space, gallons and water mass', () => {
+  const result = calculateAquarium({ length: 60, width: 30, height: 36, unit: 'cm', substrateDepth: 5, substrateSolidPercent: 50, airGap: 3 });
+  assert.equal(result.tankVolumeLiters, 64.8);
+  assert.equal(result.substrateDisplacementLiters, 4.5);
+  assert.ok(Math.abs(result.airSpaceLiters - 5.4) < 1e-10);
+  assert.ok(Math.abs(result.waterLiters - 54.9) < 1e-10);
+  assert.equal(result.waterMassKg, result.waterLiters);
+  assert.ok(Math.abs(calculateAquarium({ length: 10, width: 10, height: 10, unit: 'cm', substrateDepth: 0, substrateSolidPercent: 0, airGap: 0 }).waterMassKg - 1) < 1e-10);
+  assert.ok(Math.abs(calculateAquarium({ length: 24, width: 12, height: 12, unit: 'in', substrateDepth: 0, substrateSolidPercent: 0, airGap: 0 }).waterLiters - 56.634) < 0.01);
+  assert.throws(() => calculateAquarium({ length: 30, width: 30, height: 40, unit: 'cm', substrateDepth: 25, airGap: 15 }), /less than tank height/u);
+  assert.throws(() => calculateAquarium({ length: 30, width: 30, height: 40, unit: 'cm', substrateSolidPercent: 101 }), /from 0 to 100/u);
+});
+
+test('image redactor validates safe image sizes, exact regions, drag mapping and modes', () => {
+  assert.equal(validateImageSize(4000, 3000).pixels, 12_000_000);
+  assert.throws(() => validateImageSize(6000, 5000), /pixel count/u);
+  assert.deepEqual(normalizeRedactionRegion({ x: 5, y: 5, width: 20, height: 20 }, 100, 100), { x: 5, y: 5, width: 20, height: 20 });
+  assert.deepEqual(mapPointerRegion({ x: 10, y: 10 }, { x: 30, y: 35 }, 2, 2, 100, 100), { x: 20, y: 20, width: 40, height: 50 });
+  assert.equal(validateRedactionMode('black'), 'black');
+  assert.throws(() => validateRedactionMode('reversible'), /Choose/u);
+});
+
+test('soil calculator estimates raised-bed and pot fill volume and bag count', () => {
+  const cube = calculateSoil({ shape: 'rectangle', length: 1, width: 1, depth: 1 });
+  assert.equal(cube.volumePerContainerM3, 1);
+  assert.equal(cube.totalVolumeM3, 1);
+  assert.equal(cube.orderVolumeM3, 1);
+  assert.equal(cube.bagsToBuy, null);
+  const beds = calculateSoil({ shape: 'rectangle', length: 2, width: 1, depth: 0.3, containerCount: 2, wastePercent: 10, bagVolume: 40, bagUnit: 'l' });
+  assert.equal(beds.volumePerContainerM3, 0.6);
+  assert.equal(beds.totalVolumeM3, 1.2);
+  assert.equal(beds.orderVolumeM3, 1.32);
+  assert.equal(beds.bagsToBuy, 33);
+  const roundPot = calculateSoil({ shape: 'circle', diameter: 40, depth: 30, dimensionUnit: 'cm', bagVolume: 1, bagUnit: 'ft3' });
+  assert.ok(Math.abs(roundPot.volumePerContainerM3 - Math.PI * 0.2 ** 2 * 0.3) < 1e-12);
+  assert.equal(roundPot.bagsToBuy, 2);
+  assert.throws(() => calculateSoil({ shape: 'triangle', length: 1, width: 1, depth: 1 }), /shape/u);
+  assert.throws(() => calculateSoil({ shape: 'rectangle', length: 1, width: 1, depth: 1, containerCount: 1.5 }), /container count/iu);
+  assert.throws(() => calculateSoil({ shape: 'rectangle', length: 1, width: 1, depth: 1, wastePercent: 51 }), /waste/iu);
+});
+
+test('pool volume calculator handles shapes, sloped bottoms and gallon standards', () => {
+  const rectangular = calculatePoolVolume({ shape: 'rectangle', length: 2, width: 3, shallowDepth: 1, dimensionUnit: 'm' });
+  assert.equal(rectangular.volumeM3, 6);
+  assert.equal(rectangular.liters, 6000);
+  assert.equal(Math.round(rectangular.usGallons), 1585);
+  assert.equal(Math.round(rectangular.imperialGallons), 1320);
+  const slope = calculatePoolVolume({ shape: 'rectangle', length: 2, width: 3, floor: 'sloped', shallowDepth: 1, deepDepth: 2, dimensionUnit: 'm' });
+  assert.equal(slope.averageDepthM, 1.5);
+  assert.equal(slope.liters, 9000);
+  const circle = calculatePoolVolume({ shape: 'circle', diameter: 20, shallowDepth: 5, dimensionUnit: 'ft' });
+  assert.ok(Math.abs(circle.volumeM3 - Math.PI * 10 ** 2 * 5 * 0.3048 ** 3) < 1e-12);
+  const oval = calculatePoolVolume({ shape: 'oval', length: 8, width: 4, shallowDepth: 1, deepDepth: 2, floor: 'sloped' });
+  assert.ok(Math.abs(oval.volumeM3 - Math.PI * 8 * 4 / 4 * 1.5) < 1e-12);
+  assert.throws(() => calculatePoolVolume({ shape: 'rectangle', length: 2, width: 3, shallowDepth: 1, floor: 'sloped', deepDepth: 0 }), /Deep depth/u);
+  assert.throws(() => calculatePoolVolume({ shape: 'square', shallowDepth: 1 }), /shape/u);
+});
+
+test('roof pitch calculator reports pitch, slope, angles and optional overhang length', () => {
+  const equal = calculateRoofPitch({ rise: 3, run: 3, unit: 'm' });
+  assert.equal(equal.pitchRisePer12, 12);
+  assert.equal(equal.slopePercent, 100);
+  assert.equal(equal.angleDegrees, 45);
+  assert.ok(Math.abs(equal.angleRadians - Math.PI / 4) < 1e-12);
+  assert.ok(Math.abs(equal.rafterLengthM - Math.sqrt(18)) < 1e-12);
+  const overhang = calculateRoofPitch({ rise: 4, run: 12, overhang: 1, unit: 'ft' });
+  assert.equal(overhang.pitchRisePer12, 4);
+  assert.ok(Math.abs(overhang.slopePercent - 100 / 3) < 1e-12);
+  assert.ok(Math.abs(overhang.rafterLengthM - Math.hypot(4, 13) * 0.3048) < 1e-12);
+  assert.throws(() => calculateRoofPitch({ rise: 0, run: 10 }), /Rise/u);
+  assert.throws(() => calculateRoofPitch({ rise: 3, run: 0 }), /Run/u);
+  assert.throws(() => calculateRoofPitch({ rise: 3, run: 3, unit: 'yd' }), /unit/u);
+});
+
+test('drywall calculator estimates sheet coverage, seams, screws and optional cost', () => {
+  const room = calculateDrywall({ roomLength: 4, roomWidth: 3, wallHeight: 2.5, boardWidth: 1.2, boardHeight: 2.4, wastePercent: 0 });
+  assert.equal(room.grossWallAreaPerRoomM2, 35);
+  assert.equal(room.wallAreaM2, 35);
+  assert.equal(room.ceilingAreaM2, 12);
+  assert.equal(room.totalAreaM2, 47);
+  assert.equal(room.boards, 17);
+  assert.ok(room.boardCoverageM2 >= room.totalAreaM2);
+  assert.equal(room.estimatedScrews, 544);
+  assert.equal(room.approximateJointSeamLengthM, 48);
+  assert.equal(room.estimatedCost, null);
+
+  const multiRoom = calculateDrywall({ roomLength: 4, roomWidth: 3, wallHeight: 2.5, openingArea: 1.5, roomCount: 2, includeCeiling: false, wastePercent: 0, pricePerBoard: 12 });
+  assert.equal(multiRoom.wallAreaM2, 67);
+  assert.equal(multiRoom.ceilingAreaM2, 0);
+  assert.equal(multiRoom.boards, 24);
+  assert.equal(multiRoom.estimatedScrews, 768);
+  assert.equal(multiRoom.estimatedCost, 288);
+  const imperial = calculateDrywall({ roomLength: 10, roomWidth: 8, wallHeight: 8, openingArea: 20, includeCeiling: false, boardWidth: 4, boardHeight: 8, unit: 'ft', wastePercent: 0 });
+  assert.ok(Math.abs(imperial.totalAreaM2 / 0.3048 ** 2 - 268) < 1e-10);
+  assert.equal(imperial.boards, 9);
+  assert.ok(calculateDrywall({ roomLength: 4, roomWidth: 3, wallHeight: 2.5, wastePercent: 10 }).boards > room.boards);
+  assert.throws(() => calculateDrywall({ roomLength: 4, roomWidth: 3, wallHeight: 2.5, openingArea: 36 }), /Opening area/u);
+  assert.throws(() => calculateDrywall({ roomLength: 4, roomWidth: 3, wallHeight: 2.5, roomCount: 1.5 }), /whole number/u);
+  assert.throws(() => calculateDrywall({ roomLength: 4, roomWidth: 3, wallHeight: 2.5, screwsPerBoard: 32.5 }), /whole number/u);
+  assert.throws(() => calculateDrywall({ roomLength: 4, roomWidth: 3, wallHeight: 2.5, boardWidth: 0 }), /Board width/u);
+});
+
+test('roofing calculator increases projected area by pitch and rounds material bundles up', () => {
+  const result = calculateRoofing({ projectedArea: 1200, areaUnit: 'ft2', rise: 6, run: 12, pitchUnit: 'in', wastePercent: 10, bundlesPerSquare: 3, pricePerBundle: 36 });
+  assert.ok(result.roofAreaM2 / (0.3048 ** 2) > 1200);
+  assert.ok(Math.abs(result.roofAreaM2 / (0.3048 ** 2) - 1341.6407865) < 1e-6);
+  assert.ok(Math.abs(result.orderAreaM2 / (0.3048 ** 2) - 1475.8048652) < 1e-6);
+  assert.equal(Number(result.roofingSquares.toFixed(3)), 14.758);
+  assert.equal(result.bundles, 45);
+  assert.equal(result.estimatedCost, 1620);
+  const flat = calculateRoofing({ projectedArea: 100, areaUnit: 'm2', rise: 0, run: 12, pitchUnit: 'in', wastePercent: 0, bundlesPerSquare: 3 });
+  assert.equal(flat.roofAreaM2, 100);
+  assert.equal(flat.bundles, 33);
+  assert.throws(() => calculateRoofing({ projectedArea: 100, areaUnit: 'm2', rise: 6, run: 0, pitchUnit: 'in' }), /Run/u);
+  assert.throws(() => calculateRoofing({ projectedArea: 100, areaUnit: 'acre', rise: 6, run: 12, pitchUnit: 'in' }), /square metres/u);
+  assert.throws(() => calculateRoofing({ projectedArea: 100, areaUnit: 'm2', rise: 6, run: 12, pitchUnit: 'yd' }), /pitch unit/u);
+  assert.throws(() => calculateRoofing({ projectedArea: 100, areaUnit: 'm2', rise: 6, run: 12, pitchUnit: 'in', wastePercent: 31 }), /Waste/u);
+});
+
+test('deck calculator counts board rows, stock length, supported-run estimates and fasteners', () => {
+  const deck = calculateDeck({ length: 16, width: 12, unit: 'ft', boardWidth: 5.5, boardUnit: 'in', gap: 0.25, stockBoardLength: 16, joistSpacing: 16, wastePercent: 10, fastenersPerIntersection: 2, pricePerBoard: 20 });
+  assert.equal(deck.rows, 26);
+  assert.ok(Math.abs(deck.coveredWidthM / 0.3048 - 12.4375) < 1e-10);
+  assert.equal(deck.boards, 29);
+  assert.equal(deck.piecesPerRow, 1);
+  assert.equal(deck.supportLines, 13);
+  assert.equal(deck.estimatedFasteners, 676);
+  assert.equal(deck.totalJoints, 0);
+  assert.equal(deck.estimatedCost, 580);
+  const shorterStock = calculateDeck({ length: 16, width: 12, unit: 'ft', boardWidth: 5.5, boardUnit: 'in', gap: 0.25, stockBoardLength: 8, joistSpacing: 16, wastePercent: 0, fastenersPerIntersection: 2 });
+  assert.equal(shorterStock.jointsPerRow, 1);
+  assert.equal(shorterStock.totalJoints, 26);
+  assert.equal(shorterStock.boards, 52);
+  const conservativeCuts = calculateDeck({ length: 15, width: 12, unit: 'ft', boardWidth: 5.5, boardUnit: 'in', gap: 0.25, stockBoardLength: 8, joistSpacing: 16, wastePercent: 0, fastenersPerIntersection: 2 });
+  assert.equal(conservativeCuts.boards, 52);
+  assert.ok(conservativeCuts.boards > Math.ceil(conservativeCuts.orderLinearMetres / (8 * 0.3048)), 'without a cut map, short offcuts are not assumed reusable');
+  const metric = calculateDeck({ length: 4, width: 3, unit: 'm', boardWidth: 0.14, gap: 0.006, stockBoardLength: 4, joistSpacing: 0.4, wastePercent: 0, fastenersPerIntersection: 2 });
+  assert.equal(metric.rows, 21);
+  assert.equal(metric.supportLines, 11);
+  assert.equal(metric.estimatedFasteners, 462);
+  assert.throws(() => calculateDeck({ length: 4, width: 3, unit: 'yard', boardWidth: 0.14, gap: 0, stockBoardLength: 4, joistSpacing: 0.4 }), /supported length unit/u);
+  assert.throws(() => calculateDeck({ length: 4, width: 3, unit: 'm', boardWidth: 0, stockBoardLength: 4, joistSpacing: 0.4 }), /Board width/u);
+  assert.throws(() => calculateDeck({ length: 4, width: 3, unit: 'm', boardWidth: 0.14, gap: 0, stockBoardLength: 4, joistSpacing: 0.4, fastenersPerIntersection: 1.5 }), /whole number/u);
+});
+
+test('fence calculator counts endpoint posts, evenly split gates, panels, pickets, waste and optional costs', () => {
+  const fence = calculateFence({ length: 100, unit: 'ft', gateCount: 1, gateWidth: 48, materialUnit: 'in', postSpacing: 96, panelWidth: 96, picketWidth: 5.5, maxPicketGap: 2, picketHeight: 72, wastePercent: 10, pricePerPost: 25, pricePerGate: 120, pricePerPanel: 80, pricePerPicket: 8 });
+  assert.ok(Math.abs(fence.gateOpeningM - 4 * 0.3048) < 1e-12);
+  assert.equal(fence.sectionCount, 2);
+  assert.equal(fence.postSpansPerSection, 6);
+  assert.equal(fence.postCount, 14);
+  assert.equal(fence.panelCount, 12);
+  assert.equal(fence.orderedPanels, 14);
+  assert.equal(fence.picketsPerSection, 78);
+  assert.equal(fence.picketCount, 156);
+  assert.equal(fence.orderedPickets, 172);
+  assert.ok(fence.actualPicketGapM <= 2 * 0.0254);
+  assert.equal(fence.estimatedPanelOptionCost, 14 * 25 + 120 + 14 * 80);
+  assert.equal(fence.estimatedPicketOptionCost, 14 * 25 + 120 + 172 * 8);
+
+  const isolated = calculateFence({ length: 4, unit: 'm', gateCount: 0, gateWidth: 1, materialUnit: 'm', postSpacing: 100, panelWidth: 2, picketWidth: 0.1, maxPicketGap: 0.05, picketHeight: 1.8, wastePercent: 0 });
+  assert.equal(isolated.sectionCount, 1);
+  assert.equal(isolated.postCount, 2, 'an isolated fence section needs both end posts');
+  assert.equal(isolated.gateOpeningM, 0);
+  assert.equal(isolated.estimatedPanelOptionCost, null);
+  assert.equal(isolated.estimatedPicketOptionCost, null);
+
+  const metric = calculateFence({ length: 30, unit: 'm', gateCount: 2, gateWidth: 1.2, materialUnit: 'm', postSpacing: 2.4, panelWidth: 2.4, picketWidth: 0.15, maxPicketGap: 0.05, picketHeight: 1.8, wastePercent: 0 });
+  assert.equal(metric.sectionCount, 3);
+  assert.ok(metric.postCount >= 2 * metric.sectionCount);
+  assert.equal(metric.gateOpeningM, 2.4);
+  assert.throws(() => calculateFence({ length: 2, unit: 'm', gateCount: 1, gateWidth: 80, materialUnit: 'in', postSpacing: 8, panelWidth: 8, picketWidth: 6, maxPicketGap: 2, picketHeight: 6 }), /Gate openings/u);
+  assert.throws(() => calculateFence({ length: 100, unit: 'ft', gateCount: 1.5 }), /whole number/u);
+  assert.throws(() => calculateFence({ length: 100, unit: 'ft', gateCount: 0, wastePercent: 31 }), /Extra material/u);
+  assert.throws(() => calculateFence({ length: 100, unit: 'ft', postSpacing: 0 }), /Maximum post spacing/u);
+  assert.throws(() => calculateFence({ length: 100, unit: 'ft', materialUnit: 'm', maxPicketGap: 1.1 }), /must not exceed 1 meter/u);
+  assert.throws(() => calculateFence({ length: 1, unit: 'm', gateCount: 0, materialUnit: 'm', picketWidth: 1.1, maxPicketGap: 0.05 }), /must fit within/u);
+});
+
+test('pool salt calculator estimates dosage from volume and measured salinity without inventing a target', () => {
+  const acceptance = calculatePoolSalt({ volume: 1_000, volumeUnit: 'l', currentSalinityPpm: 0, targetSalinityPpm: 1_000, saltPurityPercent: 100, bagSize: 1, bagUnit: 'kg' });
+  assert.equal(acceptance.saltToAddKg, 1);
+  assert.equal(acceptance.bagsToBuy, 1);
+  assert.equal(acceptance.noSaltNeeded, false);
+
+  const purityAdjusted = calculatePoolSalt({ volume: 1_000, volumeUnit: 'l', currentSalinityPpm: 500, targetSalinityPpm: 1_500, saltPurityPercent: 99, bagSize: 2.5, bagUnit: 'lb' });
+  assert.ok(Math.abs(purityAdjusted.saltToAddKg - (1 / 0.99)) < 1e-12);
+  assert.equal(purityAdjusted.bagsToBuy, 1);
+
+  const gallons = calculatePoolSalt({ volume: 1_000, volumeUnit: 'us-gal', currentSalinityPpm: 0, targetSalinityPpm: 1_000 });
+  assert.ok(Math.abs(gallons.saltToAddKg - 3.785411784) < 1e-12);
+  const alreadyAtTarget = calculatePoolSalt({ volume: 1_000, volumeUnit: 'l', currentSalinityPpm: 3_000, targetSalinityPpm: 2_800 });
+  assert.equal(alreadyAtTarget.saltToAddKg, 0);
+  assert.equal(alreadyAtTarget.bagsToBuy, null);
+  assert.equal(alreadyAtTarget.noSaltNeeded, true);
+
+  assert.throws(() => calculatePoolSalt({ volume: 0, currentSalinityPpm: 0, targetSalinityPpm: 1_000 }), /Pool volume/u);
+  assert.throws(() => calculatePoolSalt({ volume: 1_000, currentSalinityPpm: -1, targetSalinityPpm: 1_000 }), /Current salinity/u);
+  assert.throws(() => calculatePoolSalt({ volume: 1_000, currentSalinityPpm: 0, targetSalinityPpm: 10_001 }), /Target salinity/u);
+  assert.throws(() => calculatePoolSalt({ volume: 1_000, currentSalinityPpm: 0, targetSalinityPpm: 1_000, saltPurityPercent: 0 }), /Salt purity/u);
+  assert.throws(() => calculatePoolSalt({ volume: 1_000, currentSalinityPpm: 0, targetSalinityPpm: 1_000, volumeUnit: 'cups' }), /supported volume/u);
 });
 
 test('molar-mass parser handles formulas, nested groups and supported isotopes', () => {
@@ -102,6 +529,69 @@ test('Mancala conserves seeds and implements extra turns, captures, endings and 
   assert.equal(playMancalaMove(initial, 6), null);
 });
 
+test('metric tire comparison computes nominal geometry and speedometer estimate', () => {
+  const size = parseMetricTireSize('205/55R16');
+  assert.ok(Math.abs(size.diameterMm - 631.9) < 0.1);
+  assert.ok(Math.abs(size.circumferenceMm - Math.PI * size.diameterMm) < 1e-9);
+  assert.equal(Number(size.sidewallMm.toFixed(2)), 112.75);
+
+  const same = compareMetricTireSizes('205/55R16', '205/55R16');
+  assert.equal(same.diameterDifferenceMm, 0);
+  assert.equal(same.circumferenceDifferenceMm, 0);
+  assert.equal(same.diameterChangePercent, 0);
+  assert.equal(same.estimatedActualSpeed, 100);
+  assert.equal(same.identicalSize, true);
+  assert.equal(compareMetricTireSizes('205 / 55 r 16', '205/55R16').identicalSize, true);
+
+  const larger = compareMetricTireSizes('205/55R16', '225/55R17', 60, 'mph');
+  assert.ok(larger.diameterDifferenceMm > 0);
+  assert.ok(larger.estimatedActualSpeed > 60);
+  assert.equal(larger.groundClearanceChangeMm, larger.diameterDifferenceMm / 2);
+  assert.throws(() => parseMetricTireSize('31x10.50R15'), /metric tire format/);
+  assert.throws(() => parseMetricTireSize('40/55R16'), /Width/);
+  assert.throws(() => parseMetricTireSize('205/10R16'), /Aspect ratio/);
+  assert.throws(() => compareMetricTireSizes('205/55R16', '205/55R16', 250, 'mph'), /Indicated speed/);
+  assert.throws(() => compareMetricTireSizes('205/55R16', '205/55R16', 0), /Indicated speed/);
+  assert.equal(compareMetricTireSizes('205/55R16', '205/55R16', 1).estimatedActualSpeed, 1);
+  assert.throws(() => compareMetricTireSizes(null, '205/55R16'), /metric tire format/);
+});
+
+test('stair geometry calculates risers, treads, run and stringer without claiming code compliance', () => {
+  const result = calculateStairGeometry(2.8, 16, 0.28, 'm');
+  assert.equal(result.riserCount, 16);
+  assert.equal(result.treadCount, 15);
+  assert.equal(result.riserHeight, 0.175);
+  assert.equal(result.totalRun, 4.2);
+  assert.ok(Math.abs(result.stringerLength - 5.04777) < 0.0001);
+  assert.ok(Math.abs(result.angleDegrees - 32.005) < 0.01);
+  assert.equal(calculateStairGeometry(110, 16, 11, 'in').unit, 'in');
+  assert.throws(() => calculateStairGeometry(2.8, 1, 0.28, 'm'), /between/u);
+  assert.throws(() => calculateStairGeometry(2.8, 16.5, 0.28, 'm'), /whole number/u);
+  assert.throws(() => calculateStairGeometry(2.8, 16, 0.05, 'm'), /between/u);
+  assert.throws(() => calculateStairGeometry(2.8, 16, 0.28, 'yard'), /unit/u);
+});
+
+test('asphalt calculator converts compacted layer to tonnage, cost and imperial units', () => {
+  const result = calculateAsphalt({ area: 100, areaUnit: 'm2', compactedThickness: 50, thicknessUnit: 'mm', density: 2400, densityUnit: 'kgm3', wastePercent: 0, pricePerTonne: 95 });
+  assert.equal(result.compactedVolumeM3, 5);
+  assert.equal(result.orderVolumeM3, 5);
+  assert.equal(result.estimatedMassKg, 12000);
+  assert.equal(result.metricTonnes, 12);
+  assert.equal(result.estimatedCost, 1140);
+  assert.ok(Math.abs(result.usShortTons - 13.227735) < 0.00001);
+  const withWaste = calculateAsphalt({ area: 100, compactedThickness: 50, density: 2400, wastePercent: 5 });
+  assert.equal(withWaste.orderVolumeM3, 5.25);
+  assert.equal(withWaste.metricTonnes, 12.6);
+  const imperial = calculateAsphalt({ area: 1076.391, areaUnit: 'ft2', compactedThickness: 1.9685, thicknessUnit: 'in', density: 149.826, densityUnit: 'lbft3' });
+  assert.ok(Math.abs(imperial.metricTonnes - 12) < 0.002);
+  assert.equal(calculateAsphalt({ area: 100, compactedThickness: 50 }).estimatedCost, null);
+  assert.throws(() => calculateAsphalt({ area: 0, compactedThickness: 50 }), /Area/u);
+  assert.throws(() => calculateAsphalt({ area: 100, compactedThickness: 0 }), /Compacted thickness/u);
+  assert.throws(() => calculateAsphalt({ area: 100, compactedThickness: 50, wastePercent: 31 }), /Waste/u);
+  assert.throws(() => calculateAsphalt({ area: 100, compactedThickness: 50, density: 9000 }), /Density/u);
+  assert.throws(() => calculateAsphalt({ area: 100, compactedThickness: 50, areaUnit: 'acre' }), /units/u);
+});
+
 test('Mancala keeps the original seed total over complete deterministic games', () => {
   for (let seed = 1; seed <= 12; seed += 1) {
     let state = createMancalaGame((seed % 8) + 1);
@@ -120,4 +610,446 @@ test('Mancala keeps the original seed total over complete deterministic games', 
     }
     assert.equal(state.over, true, `Game ${seed} did not terminate within 5000 moves.`);
   }
+});
+
+test('grass seed estimates user-selected rates, mix shares and whole bags', () => {
+  const metric = calculateGrassSeed({ area: 100, seedingRate: 30 });
+  assert.equal(metric.totalKg, 3);
+  assert.equal(metric.components[0].weightKg, 3);
+  const mixed = calculateGrassSeed({ area: 100, seedingRate: 30, percentA: 70, percentB: 30, varietyA: 'Rye', varietyB: 'Fescue', bagSize: 1.2 });
+  assert.equal(mixed.totalKg, 3);
+  assert.equal(mixed.components[0].weightKg, 2.1);
+  assert.equal(mixed.components[1].weightKg, 0.9);
+  assert.equal(mixed.bagsNeeded, 3);
+  assert.ok(Math.abs(mixed.estimatedPackedKg - 3.6) < 1e-12);
+  const imperial = calculateGrassSeed({ area: 1000, areaUnit: 'ft2', seedingRate: 5, rateUnit: 'lb-1000ft2', bagSize: 10, bagUnit: 'lb' });
+  assert.ok(Math.abs(imperial.totalLb - 5) < 1e-8);
+  assert.equal(imperial.bagsNeeded, 1);
+  assert.ok(Math.abs(calculateGrassSeed({ area: 1, areaUnit: 'acre', seedingRate: 1, rateUnit: 'lb-1000ft2' }).totalLb - 43.56) < 1e-7);
+  assert.throws(() => calculateGrassSeed({ area: 100, seedingRate: 30, percentA: 65, percentB: 30 }), /add up to 100/u);
+  assert.throws(() => calculateGrassSeed({ area: 100, seedingRate: 30, areaUnit: 'hectare' }), /supported/u);
+  assert.throws(() => calculateGrassSeed({ area: 100, seedingRate: -1 }), /Seeding rate/u);
+});
+
+test('insulation adds series layers, quantity and converts R/RSI with reciprocal U-factors', () => {
+  const rValue = calculateInsulation({ layers: [{ name: 'A', resistance: 2 }, { name: 'B', resistance: 3 }] });
+  assert.equal(rValue.rValue, 5);
+  assert.ok(Math.abs(rValue.rsi - 0.880550919) < 1e-9);
+  assert.equal(rValue.uFactorUs, 0.2);
+  assert.ok(Math.abs(rValue.uFactorSi - 1 / rValue.rsi) < 1e-12);
+  const metric = calculateInsulation({ unit: 'RSI', layers: [{ resistance: 1 }, { resistance: 2, quantity: 1 }, { resistance: 0.5, quantity: 2 }] });
+  assert.equal(metric.rsi, 4);
+  assert.ok(Math.abs(metric.rValue - (4 / 0.1761101838)) < 1e-10);
+  assert.equal(metric.layerCount, 3);
+  assert.throws(() => calculateInsulation({ layers: [{ resistance: 2, quantity: 1.5 }] }), /allowed range/u);
+  assert.throws(() => calculateInsulation({ layers: [{ resistance: 0 }] }), /above zero/u);
+  assert.throws(() => calculateInsulation({ unit: 'Rsi', layers: [{ resistance: 2 }] }), /Choose R or RSI/u);
+});
+
+test('wall framing includes both endpoints and positioned opening edges, with plate lengths', () => {
+  const result = calculateWallFraming({ wallLength: 8, wallHeight: 8, wallUnit: 'ft', spacing: 16, spacingUnit: 'in', openings: [{ start: 2, width: 3, breaksBottomPlate: true }] });
+  assert.equal(result.studCount, 7);
+  assert.deepEqual(result.studPositions, [0, 1, 2, 5, 6, 7, 8]);
+  assert.equal(result.studLinearLength, 56);
+  assert.equal(result.topPlateLength, 16);
+  assert.equal(result.bottomPlateLength, 5);
+  assert.equal(result.totalPlateLength, 21);
+  assert.equal(result.openingCount, 1);
+  const windowOpening = calculateWallFraming({ wallLength: 8, wallHeight: 8, wallUnit: 'ft', spacing: 16, spacingUnit: 'in', openings: [{ start: 2, width: 3 }] });
+  assert.equal(windowOpening.bottomPlateLength, 8);
+  const metric = calculateWallFraming({ wallLength: 3, wallHeight: 2.4, wallUnit: 'm', spacing: 600, spacingUnit: 'mm', topPlateRows: 2, bottomPlateRows: 0 });
+  assert.equal(metric.studPositions[0], 0);
+  assert.equal(metric.studPositions.at(-1), 3);
+  assert.equal(metric.bottomPlateLength, 0);
+  assert.ok(metric.studPositions.slice(1).every((position, index) => position - metric.studPositions[index] <= 0.6000001));
+  assert.throws(() => calculateWallFraming({ wallLength: 8, wallHeight: 8, spacing: 16, spacingUnit: 'in', openings: [{ start: 2, width: 4 }, { start: 5, width: 1 }] }), /overlap/u);
+  assert.throws(() => calculateWallFraming({ wallLength: 8, wallHeight: 8, spacing: 16, spacingUnit: 'in', openings: [{ start: 2, width: null }] }), /both the start and width/u);
+  assert.throws(() => calculateWallFraming({ wallLength: 8, wallHeight: 8, spacing: 16, spacingUnit: 'in', openings: [{ start: 0, width: 3 }] }), /leave wall at both ends/u);
+});
+
+test('electricity cost follows entered appliance schedules, kWh rate and fixed period charge', () => {
+  const acceptance = calculateElectricityCost({
+    appliances: [{ power: 1000, powerUnit: 'W', quantity: 1, hoursPerDay: 1, activeDays: 1 }],
+    ratePerKwh: 0.2, billingDays: 1,
+  });
+  assert.equal(acceptance.energyKwh, 1);
+  assert.equal(acceptance.energyCost, 0.2);
+  assert.equal(acceptance.totalCost, 0.2);
+  const multiple = calculateElectricityCost({
+    appliances: [
+      { name: 'Heater', power: 2, powerUnit: 'kW', quantity: 2, hoursPerDay: 3.5, activeDays: 2 },
+      { power: 500, powerUnit: 'W', quantity: 1, hoursPerDay: 4, activeDays: 2 },
+      {},
+    ],
+    ratePerKwh: 0.3, billingDays: 30, fixedCharge: 4,
+  });
+  assert.equal(multiple.appliances.length, 2);
+  assert.equal(multiple.energyKwh, 32);
+  assert.equal(multiple.energyCost, 9.6);
+  assert.equal(multiple.totalCost, 13.6);
+  assert.equal(multiple.averageDailyKwh, 32 / 30);
+  assert.throws(() => calculateElectricityCost({ appliances: [{ name: 'Only a name' }], ratePerKwh: 0.2 }), /Complete every value/u);
+  assert.throws(() => calculateElectricityCost({ appliances: [], ratePerKwh: 0.2 }), /at least one appliance/u);
+  assert.throws(() => calculateElectricityCost({ appliances: [{ power: 100, powerUnit: 'W', quantity: 1, hoursPerDay: 1, activeDays: 31 }], ratePerKwh: 0.2, billingDays: 30 }), /allowed range/u);
+  assert.throws(() => calculateElectricityCost({ appliances: [{ power: 100, powerUnit: 'MW', quantity: 1, hoursPerDay: 1, activeDays: 1 }], ratePerKwh: 0.2 }), /Choose W or kW/u);
+});
+
+test('compost mix derives carbon and nitrogen from dry matter and estimates moisture balance', () => {
+  assert.throws(() => calculateCompostMix({ materials: [], targetMoisturePercent: 50 }), /at least one material/u);
+  assert.throws(() => calculateCompostMix({ materials: [{ wetMass: 0, moisturePercent: 20, carbonPercent: 45, carbonNitrogenRatio: 30 }] }), /allowed range/u);
+  const result = calculateCompostMix({
+    massUnit: 'kg', targetMoisturePercent: 55,
+    materials: [
+      { name: 'Dry leaves', wetMass: 10, moisturePercent: 20, carbonPercent: 45, carbonNitrogenRatio: 60 },
+      { name: 'Food scraps', wetMass: 10, moisturePercent: 70, carbonPercent: 45, carbonNitrogenRatio: 15 },
+      {},
+    ],
+  });
+  assert.equal(result.wetMassKg, 20);
+  assert.equal(result.dryMassKg, 11);
+  assert.equal(result.waterKg, 9);
+  assert.equal(result.carbonKg, 4.95);
+  assert.ok(Math.abs(result.nitrogenKg - 0.15) < 1e-12);
+  assert.ok(Math.abs(result.carbonNitrogenRatio - 33) < 1e-10);
+  assert.equal(result.moisturePercent, 45);
+  assert.ok(Math.abs(result.waterToAddKg - 4.444444444444445) < 1e-10);
+  assert.equal(result.waterToRemoveKg, 0);
+  const dryTarget = calculateCompostMix({ materials: [{ wetMass: 10, moisturePercent: 60, carbonPercent: 40, carbonNitrogenRatio: 30 }], targetMoisturePercent: 40 });
+  assert.equal(dryTarget.waterToAddKg, 0);
+  assert.ok(dryTarget.waterToRemoveKg > 0);
+  assert.throws(() => calculateCompostMix({ massUnit: 'ton', materials: [{ wetMass: 10, moisturePercent: 20, carbonPercent: 45, carbonNitrogenRatio: 30 }] }), /Choose kilograms/u);
+  assert.throws(() => calculateCompostMix({ materials: [{ name: 'Leaves' }] }), /Complete every value/u);
+});
+
+test('pond volume separates average-depth water capacity from maximum-depth liner sizing', () => {
+  const example = calculatePond({ shape: 'rectangle', length: 5, width: 3, dimensionUnit: 'm', averageDepth: 0.6, maximumDepth: 0.8, edgeOverlap: 0.3, fillPercent: 90 });
+  assert.equal(example.footprintM2, 15);
+  assert.equal(example.geometricCapacityM3, 9);
+  assert.equal(example.filledVolumeM3, 8.1);
+  assert.equal(example.liters, 8100);
+  assert.ok(Math.abs(example.linerLength - 7.2) < 1e-12);
+  assert.ok(Math.abs(example.linerWidth - 5.2) < 1e-12);
+  assert.ok(Math.abs(example.linerArea - 37.44) < 1e-12);
+  const deeperWater = calculatePond({ shape: 'rectangle', length: 5, width: 3, dimensionUnit: 'm', averageDepth: 1, maximumDepth: 1, edgeOverlap: 0.3 });
+  assert.ok(deeperWater.filledVolumeM3 > example.filledVolumeM3);
+  const deeperLiner = calculatePond({ shape: 'rectangle', length: 5, width: 3, dimensionUnit: 'm', averageDepth: 0.6, maximumDepth: 1, edgeOverlap: 0.3, fillPercent: 90 });
+  assert.ok(deeperLiner.linerLength > example.linerLength);
+  const circle = calculatePond({ shape: 'circle', diameter: 4, dimensionUnit: 'm', averageDepth: 1, maximumDepth: 1.5, edgeOverlap: 0.25 });
+  assert.ok(Math.abs(circle.footprintM2 - Math.PI * 4) < 1e-12);
+  assert.equal(circle.linerLength, 7.5);
+  const oval = calculatePond({ shape: 'oval', length: 10, width: 4, dimensionUnit: 'm', averageDepth: 1, maximumDepth: 1, edgeOverlap: 0 });
+  assert.ok(Math.abs(oval.footprintM2 - Math.PI * 10) < 1e-12);
+  assert.throws(() => calculatePond({ shape: 'rectangle', length: 5, width: 3, dimensionUnit: 'm', averageDepth: 1, maximumDepth: 0.8 }), /cannot be less/u);
+  assert.throws(() => calculatePond({ shape: 'triangle', dimensionUnit: 'm' }), /Choose a rectangular/u);
+  assert.throws(() => calculatePond({ shape: 'circle', diameter: 4, dimensionUnit: 'yd', averageDepth: 1, maximumDepth: 1 }), /Choose meters/u);
+});
+
+test('fertilizer calculator applies label percentages to a batch or entered area rate', () => {
+  const batch = calculateFertilizer({ mode: 'product', productMass: 10, massUnit: 'kg', nitrogenPercent: 20, phosphatePercent: 10, potashPercent: 10 });
+  assert.equal(batch.productMass, 10);
+  assert.equal(batch.nitrogenMass, 2);
+  assert.equal(batch.phosphateMass, 1);
+  assert.equal(batch.potashMass, 1);
+  const area = calculateFertilizer({ mode: 'area', area: 100, areaUnit: 'm2', productRate: 2, rateUnit: 'kg100m2', massUnit: 'kg', nitrogenPercent: 20, phosphatePercent: 10, potashPercent: 5 });
+  assert.equal(area.productMass, 2);
+  assert.equal(area.nitrogenMass, 0.4);
+  const imperial = calculateFertilizer({ mode: 'area', area: 1, areaUnit: 'acre', productRate: 100, rateUnit: 'lbAcre', massUnit: 'lb', nitrogenPercent: 10, phosphatePercent: 0, potashPercent: 0 });
+  assert.ok(Math.abs(imperial.productMass - 100) < 1e-10);
+  assert.equal(imperial.nitrogenMass, 10);
+  assert.throws(() => calculateFertilizer({ mode: 'product', productMass: 0, nitrogenPercent: 20 }), /allowed range/u);
+  assert.throws(() => calculateFertilizer({ mode: 'area', area: 0, productRate: 2, nitrogenPercent: 20 }), /allowed range/u);
+  assert.throws(() => calculateFertilizer({ mode: 'product', productMass: 10, nitrogenPercent: 0, phosphatePercent: 0, potashPercent: 0 }), /non-zero/u);
+  assert.throws(() => calculateFertilizer({ mode: 'rate', productMass: 10, nitrogenPercent: 20 }), /Choose product amount/u);
+});
+
+test('baluster spacing distributes uniform gaps and finds a minimum count for a chosen maximum', () => {
+  const maximumGap = calculateBalusterSpacing({ mode: 'max-gap', openingWidth: 1200, balusterWidth: 40, maximumGap: 100, unit: 'mm' });
+  assert.equal(maximumGap.balusterCount, 8);
+  assert.equal(maximumGap.gapCount, 9);
+  assert.ok(Math.abs(maximumGap.clearGap - 97.777777778) < 1e-9);
+  assert.ok((1200 - 7 * 40) / 8 > 100, 'one fewer baluster would exceed the chosen maximum gap');
+  assert.equal(maximumGap.totalBalusterWidth + maximumGap.totalClearGap, 1200);
+  const fixedCount = calculateBalusterSpacing({ mode: 'count', openingWidth: 48, balusterWidth: 2, balusterCount: 7, unit: 'in' });
+  assert.equal(fixedCount.clearGap, 4.25);
+  const metric = calculateBalusterSpacing({ mode: 'count', openingWidth: 1.2, balusterWidth: 0.04, balusterCount: 10, unit: 'm' });
+  assert.ok(Math.abs(metric.clearGap - 0.072727273) < 1e-9);
+  assert.throws(() => calculateBalusterSpacing({ mode: 'count', openingWidth: 99, balusterWidth: 20, balusterCount: 5, unit: 'mm' }), /do not fit/u);
+  assert.throws(() => calculateBalusterSpacing({ mode: 'max-gap', openingWidth: 1200, balusterWidth: 1, maximumGap: 0.01, unit: 'mm' }), /1,000/u);
+  assert.throws(() => calculateBalusterSpacing({ mode: 'density', openingWidth: 1200, balusterWidth: 40, unit: 'mm', balusterCount: 10 }), /Choose maximum-gap/u);
+  assert.throws(() => calculateBalusterSpacing({ mode: 'count', openingWidth: 1, balusterWidth: 0.5, unit: 'yd', balusterCount: 2 }), /supported length/u);
+});
+
+test('retaining wall calculator estimates user-dimensioned blocks, base and backfill without structural claims', () => {
+  const estimate = calculateRetainingWall({ wallLength: 20, wallHeight: 4, wallUnit: 'ft', blockLength: 16, blockHeight: 6, blockDepth: 12, blockUnit: 'in', joint: 0.25, baseWidth: 2, baseDepth: 0.5, backfillThickness: 1, wastePercent: 5 });
+  assert.equal(estimate.courses, 8);
+  assert.equal(estimate.blocksPerCourse, 15);
+  assert.equal(estimate.blocksBeforeWaste, 120);
+  assert.equal(estimate.blocksToOrder, 126);
+  assert.ok(Math.abs(estimate.baseVolumeFt3 - 20) < 1e-10);
+  assert.ok(Math.abs(estimate.backfillVolumeFt3 - 80) < 1e-10);
+  const metric = calculateRetainingWall({ wallLength: 6, wallHeight: 1.2, wallUnit: 'm', blockLength: 40, blockHeight: 20, blockDepth: 20, blockUnit: 'cm', joint: 0, baseWidth: 0.5, baseDepth: 0.2, backfillThickness: 0.3, wastePercent: 0 });
+  assert.equal(metric.courses, 6);
+  assert.equal(metric.blocksPerCourse, 15);
+  assert.equal(metric.blocksToOrder, 90);
+  const zero = calculateRetainingWall({ wallLength: 6, wallHeight: 0, wallUnit: 'm', blockLength: 40, blockHeight: 20, blockDepth: 20, blockUnit: 'cm', joint: 0.5, baseWidth: 1, baseDepth: 1, backfillThickness: 1 });
+  assert.equal(zero.courses, 0);
+  assert.equal(zero.blocksToOrder, 0);
+  assert.equal(zero.baseOrderM3, 0);
+  assert.equal(zero.backfillOrderM3, 0);
+  assert.throws(() => calculateRetainingWall({ wallLength: 0, wallHeight: 1 }), /allowed range/u);
+  assert.throws(() => calculateRetainingWall({ wallLength: 5, wallHeight: 1, wallUnit: 'yd' }), /supported wall/u);
+});
+
+test('battery runtime converts Wh or Ah and applies user-entered discharge and efficiency', () => {
+  const ideal = calculateBatteryRuntime({ mode: 'energy', capacityEnergy: 100, energyUnit: 'Wh', loadWatts: 10, depthOfDischargePercent: 100, efficiencyPercent: 100 });
+  assert.equal(ideal.nominalEnergyWh, 100);
+  assert.equal(ideal.usableEnergyWh, 100);
+  assert.equal(ideal.runtimeHours, 10);
+  const losses = calculateBatteryRuntime({ mode: 'energy', capacityEnergy: 100, energyUnit: 'Wh', loadWatts: 10, depthOfDischargePercent: 80, efficiencyPercent: 90 });
+  assert.equal(losses.usableEnergyWh, 72);
+  assert.equal(losses.runtimeHours, 7.2);
+  assert.equal(losses.runtimeDays, 0.3);
+  const ampHours = calculateBatteryRuntime({ mode: 'ah', capacityAh: 20, voltage: 12, loadWatts: 24, depthOfDischargePercent: 50, efficiencyPercent: 80 });
+  assert.equal(ampHours.nominalEnergyWh, 240);
+  assert.equal(ampHours.usableEnergyWh, 96);
+  assert.equal(ampHours.runtimeHours, 4);
+  assert.equal(calculateBatteryRuntime({ mode: 'energy', capacityEnergy: 1, energyUnit: 'kWh', loadWatts: 100 }).runtimeHours, 10);
+  assert.equal(calculateBatteryRuntime({ mode: 'energy', capacityEnergy: 10, energyUnit: 'Wh', loadWatts: 100, depthOfDischargePercent: 0 }).runtimeHours, 0);
+  assert.throws(() => calculateBatteryRuntime({ mode: 'ah', capacityAh: 20, voltage: 0, loadWatts: 10 }), /allowed range/u);
+  assert.throws(() => calculateBatteryRuntime({ mode: 'other', loadWatts: 10 }), /Choose energy/u);
+  assert.throws(() => calculateBatteryRuntime({ mode: 'energy', capacityEnergy: 1, energyUnit: 'J', loadWatts: 10 }), /Choose Wh/u);
+});
+
+test('lumber cut optimizer accounts for kerf, packs deterministically and reports offcuts', () => {
+  const cuts = parseCutList('1200 x 1\n800 x 1\n390 x 1');
+  const plan = optimizeLumberCuts({ stockLength: 2400, kerf: 3, cuts });
+  assert.equal(plan.pieceCount, 3);
+  assert.equal(plan.boardCount, 1);
+  assert.equal(plan.totalCutLength, 2390);
+  assert.equal(plan.totalKerf, 9);
+  assert.equal(plan.boards[0].usedLength, 2399);
+  assert.equal(plan.boards[0].remainder, 1);
+  assert.equal(plan.totalOffcut, 1);
+  assert.equal(plan.theoreticalLowerBound, 1);
+  assert.deepEqual(optimizeLumberCuts({ stockLength: 2400, kerf: 3, cuts }).boards, plan.boards);
+  assert.deepEqual(parseCutList('600 × 2\n12,5'), [{ length: 600, quantity: 2 }, { length: 12.5, quantity: 1 }]);
+});
+
+test('lumber cut optimizer rejects overlength cuts, malformed quantities and excessive lists', () => {
+  assert.throws(() => optimizeLumberCuts({ stockLength: 1200, kerf: 3, cuts: [{ length: 1200, quantity: 1 }] }), /does not fit/u);
+  assert.throws(() => optimizeLumberCuts({ stockLength: 100, kerf: 0, cuts: [{ length: 101, quantity: 1 }] }), /does not fit/u);
+  assert.throws(() => parseCutList('600 × 0'), /whole number/u);
+  assert.throws(() => parseCutList('not a cut'), /cut line/u);
+  assert.throws(() => parseCutList(Array.from({ length: 301 }, () => '1').join('\n')), /no more than 300/u);
+  assert.throws(() => optimizeLumberCuts({ stockLength: 0, cuts: [{ length: 1, quantity: 1 }] }), /allowed range/u);
+});
+
+test('plant spacing counts centered grid and staggered layouts with unit-aware density', () => {
+  const grid = calculatePlantSpacing({ bedLength: 5, bedWidth: 3, inRowSpacing: 0.5, rowSpacing: 0.5, unit: 'm', pattern: 'grid' });
+  assert.equal(grid.rowCount, 6);
+  assert.equal(grid.plantsPerEvenRow, 10);
+  assert.equal(grid.totalPlants, 60);
+  assert.equal(grid.areaInSelectedUnit, 15);
+  assert.equal(grid.densityPerSelectedArea, 4);
+  const triangular = calculatePlantSpacing({ bedLength: 5, bedWidth: 3, inRowSpacing: 0.5, rowSpacing: 0.5, unit: 'm', pattern: 'triangular' });
+  assert.equal(triangular.rowCount, 6);
+  assert.equal(triangular.plantsPerEvenRow, 10);
+  assert.equal(triangular.plantsPerOddRow, 9);
+  assert.equal(triangular.totalPlants, 57);
+  const wider = calculatePlantSpacing({ bedLength: 5, bedWidth: 3, inRowSpacing: 1, rowSpacing: 1, unit: 'm', pattern: 'grid' });
+  assert.equal(wider.totalPlants, 15, 'increasing spacing should reduce plant count');
+  const feet = calculatePlantSpacing({ bedLength: 10, bedWidth: 10, inRowSpacing: 2, rowSpacing: 2, unit: 'ft', pattern: 'grid' });
+  assert.equal(feet.rowCount, 5);
+  assert.equal(feet.totalPlants, 25);
+  assert.equal(feet.areaInSelectedUnit, 100);
+});
+
+test('plant spacing validates bounds, patterns and caps dense layouts without large loops', () => {
+  assert.equal(calculatePlantSpacing({ bedLength: 1, bedWidth: 0.2, inRowSpacing: 1, rowSpacing: 1, pattern: 'triangular' }).totalPlants, 0);
+  assert.throws(() => calculatePlantSpacing({ bedLength: 0, bedWidth: 2, inRowSpacing: 1, rowSpacing: 1 }), /allowed range/u);
+  assert.throws(() => calculatePlantSpacing({ bedLength: 5, bedWidth: 3, inRowSpacing: 0.5, rowSpacing: 0.5, pattern: 'hex' }), /Choose grid/u);
+  assert.throws(() => calculatePlantSpacing({ bedLength: 1_000_000, bedWidth: 1_000_000, inRowSpacing: 0.001, rowSpacing: 0.001 }), /100,000 rows/u);
+  assert.throws(() => calculatePlantSpacing({ bedLength: 101, bedWidth: 101, inRowSpacing: 0.1, rowSpacing: 0.1 }), /1,000,000 plants/u);
+  assert.throws(() => calculatePlantSpacing({ bedLength: 3, bedWidth: 2, inRowSpacing: 1, rowSpacing: 1, unit: 'yd' }), /supported length/u);
+});
+
+test('EV charging estimates battery energy, grid energy, constant-power time and optional tariff cost', () => {
+  const estimate = calculateEvCharging({ batteryCapacityKwh: 50, startSocPercent: 20, targetSocPercent: 80, chargerPowerKw: 7.2, efficiencyPercent: 90, electricityRatePerKwh: 0.15, currency: 'USD' });
+  assert.equal(estimate.batteryEnergyKwh, 30);
+  assert.equal(estimate.gridEnergyKwh, 33.333333333333336);
+  assert.ok(Math.abs(estimate.chargingHours - 4.6296296296) < 1e-9);
+  assert.ok(Math.abs(estimate.estimatedCost - 5) < 1e-10);
+  const planExample = calculateEvCharging({ batteryCapacityKwh: 50, startSocPercent: 20, targetSocPercent: 80, chargerPowerKw: 7.2, efficiencyPercent: 90 });
+  assert.equal(planExample.gridEnergyKwh, 33.333333333333336);
+  assert.equal(planExample.estimatedCost, null);
+  assert.equal(calculateEvCharging({ batteryCapacityKwh: 50, startSocPercent: 80, targetSocPercent: 80, chargerPowerKw: 7.2, efficiencyPercent: 90, electricityRatePerKwh: 0 }).chargingHours, 0);
+});
+
+test('EV charging calculator rejects invalid charge targets, zero efficiency and malformed currency', () => {
+  assert.throws(() => calculateEvCharging({ batteryCapacityKwh: 50, startSocPercent: 81, targetSocPercent: 80, chargerPowerKw: 7 }), /at least/u);
+  assert.throws(() => calculateEvCharging({ batteryCapacityKwh: 50, startSocPercent: 0, targetSocPercent: 80, chargerPowerKw: 0 }), /allowed range/u);
+  assert.throws(() => calculateEvCharging({ batteryCapacityKwh: 50, startSocPercent: 0, targetSocPercent: 80, chargerPowerKw: 7, efficiencyPercent: 0 }), /allowed range/u);
+  assert.throws(() => calculateEvCharging({ batteryCapacityKwh: 50, startSocPercent: 0, targetSocPercent: 80, chargerPowerKw: 7, electricityRatePerKwh: 0.15, currency: 'US' }), /three-letter/u);
+});
+
+test('rainwater harvesting converts rainfall to collection and carries tank balance month by month', () => {
+  const rain = [10, ...Array(11).fill(0)];
+  const demand = [300, 600, ...Array(10).fill(0)];
+  const result = calculateRainwaterHarvesting({ catchmentArea: 100, areaUnit: 'm2', rainfallValues: rain, rainfallUnit: 'mm', runoffPercent: 100, tankCapacity: 800, tankUnit: 'L', startingStorage: 0, monthlyDemandValues: demand });
+  assert.equal(result.months[0].collectedLiters, 1000);
+  assert.equal(result.months[0].overflowLiters, 200);
+  assert.equal(result.months[0].endingStorageLiters, 500);
+  assert.equal(result.months[1].servedDemandLiters, 500);
+  assert.equal(result.months[1].unmetDemandLiters, 100);
+  assert.equal(result.months[1].endingStorageLiters, 0);
+  assert.equal(result.totalCollectedLiters, 1000);
+  assert.equal(result.totalDemandLiters, 900);
+  assert.equal(result.totalOverflowLiters, 200);
+  assert.equal(result.totalUnmetDemandLiters, 100);
+  const noTankLimit = calculateRainwaterHarvesting({ catchmentArea: 100, rainfallValues: rain, runoffPercent: 100, tankCapacity: 2000, monthlyDemandValues: Array(12).fill(0) });
+  assert.equal(noTankLimit.totalCollectedLiters, 1000);
+  assert.equal(noTankLimit.months[0].endingStorageLiters, 1000);
+  const imperial = calculateRainwaterHarvesting({ catchmentArea: 1, areaUnit: 'ft2', rainfallValues: [1, ...Array(11).fill(0)], rainfallUnit: 'in', runoffPercent: 100, tankCapacity: 10, tankUnit: 'gal', monthlyDemandValues: Array(12).fill(0) });
+  assert.ok(Math.abs(imperial.months[0].collectedLiters - 2.359737216) < 1e-9);
+  assert.ok(Math.abs(imperial.months[0].collectedLiters / 3.785411784 - 0.623376) < 1e-5);
+  assert.deepEqual(parseMonthlyValues(Array.from({ length: 12 }, () => '0,5').join('\n'))[0], 0.5);
+});
+
+test('rainwater monthly inputs require twelve valid values and tank storage stays bounded', () => {
+  assert.throws(() => parseMonthlyValues('1\n2'), /exactly 12/u);
+  assert.throws(() => parseMonthlyValues(Array.from({ length: 12 }, (_, index) => index === 4 ? '' : '1').join('\n')), /exactly 12/u);
+  assert.throws(() => parseMonthlyValues(Array.from({ length: 12 }, (_, index) => index === 4 ? '-1' : '1').join('\n')), /line 5/u);
+  assert.throws(() => calculateRainwaterHarvesting({ catchmentArea: 1, rainfallValues: Array(12).fill(1), tankCapacity: 10, startingStorage: 11, monthlyDemandValues: Array(12).fill(0) }), /allowed range/u);
+  assert.throws(() => calculateRainwaterHarvesting({ catchmentArea: 1, rainfallValues: Array(12).fill(1), tankCapacity: 10, monthlyDemandValues: Array(11).fill(0) }), /12 valid monthly demand/u);
+});
+
+test('ramp calculator converts rise and chosen 1:N ratio into run, surface and landing length', () => {
+  const result = calculateRamp({ rise: 1, slopeRatioDenominator: 12, unit: 'm' });
+  assert.equal(result.horizontalRun, 12);
+  assert.ok(Math.abs(result.rampSurface - Math.sqrt(145)) < 1e-12);
+  assert.equal(result.slopePercent, 100 / 12);
+  assert.ok(Math.abs(result.slopeAngleDegrees - 4.76364169) < 1e-8);
+  const landings = calculateRamp({ rise: 1, slopeRatioDenominator: 12, landingCount: 2, landingDepth: 1.5, unit: 'm' });
+  assert.equal(landings.horizontalRun, 12);
+  assert.equal(landings.landingRun, 3);
+  assert.equal(landings.totalHorizontalLength, 15);
+  const feet = calculateRamp({ rise: 12, slopeRatioDenominator: 12, landingCount: 0, unit: 'in' });
+  assert.equal(feet.horizontalRun, 144);
+  assert.equal(feet.totalHorizontalLength, 144);
+});
+
+test('ramp calculator rejects unsupported units, fractional ratio and excessive landing input', () => {
+  assert.throws(() => calculateRamp({ rise: 1, slopeRatioDenominator: 0 }), /allowed range/u);
+  assert.throws(() => calculateRamp({ rise: 1, slopeRatioDenominator: 12.5 }), /whole number/u);
+  assert.throws(() => calculateRamp({ rise: 1, slopeRatioDenominator: 12, landingCount: 1, landingDepth: 0 }), /allowed range/u);
+  assert.throws(() => calculateRamp({ rise: 1, slopeRatioDenominator: 12, landingCount: 101, landingDepth: 1 }), /from 0 to 100/u);
+  assert.throws(() => calculateRamp({ rise: 1, unit: 'yd' }), /supported length/u);
+});
+
+test('heat loss separates transmission components and ventilation and converts units', () => {
+  const metric = calculateHeatLoss({ areaUnit: 'm2', temperatureUnit: 'K', volumeUnit: 'm3', temperatureDifference: 20, wallArea: 10, wallUValue: 1, roofArea: 5, roofUValue: 0.5, windowArea: 2, windowUValue: 2, floorArea: 10, floorUValue: 0.3, roomVolume: 100, airChangesPerHour: 1 });
+  assert.equal(metric.components.walls.watts, 200);
+  assert.equal(metric.transmissionWatts, 390);
+  assert.equal(metric.ventilationWatts, 660);
+  assert.equal(metric.totalWatts, 1050);
+  assert.ok(Math.abs(metric.totalBtuPerHour - 3582.74871465) < 1e-8);
+  const imperial = calculateHeatLoss({ areaUnit: 'ft2', temperatureUnit: 'F', volumeUnit: 'ft3', temperatureDifference: 36, wallArea: 107.639104, wallUValue: 1, roofArea: 0, roofUValue: 0, windowArea: 0, windowUValue: 0, floorArea: 0, floorUValue: 0, roomVolume: 3531.466672, airChangesPerHour: 0 });
+  assert.ok(Math.abs(imperial.components.walls.watts - 200) < 1e-5);
+  assert.equal(imperial.deltaK, 20);
+  assert.ok(Math.abs(imperial.volumeM3 - 100) < 1e-8);
+});
+
+test('heat loss calculator rejects invalid units, negative inputs, and out-of-range assumptions', () => {
+  const valid = { temperatureDifference: 20, wallArea: 10, wallUValue: 1, roofArea: 0, roofUValue: 0, windowArea: 0, windowUValue: 0, floorArea: 0, floorUValue: 0, roomVolume: 0, airChangesPerHour: 0 };
+  assert.throws(() => calculateHeatLoss({ ...valid, areaUnit: 'yd2' }), /supported area/u);
+  assert.throws(() => calculateHeatLoss({ ...valid, wallArea: -1 }), /allowed range/u);
+  assert.throws(() => calculateHeatLoss({ ...valid, temperatureDifference: -1 }), /allowed range/u);
+  assert.throws(() => calculateHeatLoss({ ...valid, airChangesPerHour: 101 }), /allowed range/u);
+});
+
+test('heat pump calculator estimates electricity, 30-day cost and COP 1 comparison', () => {
+  const result = calculateHeatPump({ heatOutput: 10, heatOutputUnit: 'kW', cop: 5, electricityRatePerKwh: 0.2, hoursPerDay: 1, currency: 'eur' });
+  assert.equal(result.electricalInputKw, 2);
+  assert.equal(result.dailyEnergyKwh, 2);
+  assert.equal(result.monthlyEnergyKwh, 60);
+  assert.equal(result.dailyCost, 0.4);
+  assert.equal(result.monthlyCost, 12);
+  assert.equal(result.resistanceDailyEnergyKwh, 10);
+  assert.equal(result.dailyEnergyDifferenceKwh, 8);
+  assert.equal(result.dailyCostDifference, 1.6);
+  assert.equal(result.currency, 'EUR');
+  const btu = calculateHeatPump({ heatOutput: 3412.141633, heatOutputUnit: 'BTU/h', cop: 2, electricityRatePerKwh: 0, hoursPerDay: 24 });
+  assert.ok(Math.abs(btu.heatOutputKw - 1) < 1e-10);
+  assert.equal(btu.electricalInputKw, 0.5);
+  assert.equal(btu.dailyEnergyKwh, 12);
+});
+
+test('miter calculator returns simple and compound settings under the stated spring-angle convention', () => {
+  const simple = calculateMiterAngles({ cornerAngle: 90 });
+  assert.equal(simple.miterSawAngle, 45);
+  assert.equal(simple.bevelSawAngle, 0);
+  assert.equal(calculateMiterAngles({ cornerAngle: 120 }).miterSawAngle, 60);
+  const compound = calculateMiterAngles({ cornerAngle: 90, springAngle: 38, mode: 'compound' });
+  assert.ok(Math.abs(compound.miterSawAngle - 31.62) < 0.01);
+  assert.ok(Math.abs(compound.bevelSawAngle - 33.86) < 0.01);
+  assert.throws(() => calculateMiterAngles({ cornerAngle: 0 }), /allowed range/u);
+  assert.throws(() => calculateMiterAngles({ cornerAngle: 90, mode: 'compound', springAngle: 91 }), /allowed range/u);
+  assert.throws(() => calculateMiterAngles({ cornerAngle: 90, mode: 'unsupported' }), /Choose simple/u);
+});
+
+test('voltage drop calculator handles zero length, material, circuit factors and unit-safe estimates', () => {
+  const base = { material: 'copper', oneWayLengthM: 30, currentA: 20, crossSectionMm2: 2.5, supplyVoltageV: 230, circuit: 'single-phase', powerFactor: 1 };
+  const single = calculateVoltageDrop(base);
+  assert.ok(Math.abs(single.voltageDropV - 8.2752) < 1e-8);
+  assert.ok(Math.abs(single.voltageDropPercent - 3.5979130435) < 1e-8);
+  assert.equal(calculateVoltageDrop({ ...base, oneWayLengthM: 0 }).voltageDropV, 0);
+  assert.ok(Math.abs(calculateVoltageDrop({ ...base, circuit: 'three-phase' }).voltageDropV - single.voltageDropV * Math.sqrt(3) / 2) < 1e-10);
+  assert.ok(calculateVoltageDrop({ ...base, circuit: 'dc', powerFactor: 0 }).voltageDropV > 0);
+  assert.ok(calculateVoltageDrop({ ...base, material: 'aluminum' }).voltageDropV > single.voltageDropV);
+  assert.throws(() => calculateVoltageDrop({ ...base, material: 'steel' }), /Choose copper/u);
+  assert.throws(() => calculateVoltageDrop({ ...base, crossSectionMm2: 0 }), /allowed range/u);
+  assert.throws(() => calculateVoltageDrop({ ...base, circuit: 'unsupported' }), /Choose DC/u);
+  assert.throws(() => calculateVoltageDrop({ ...base, powerFactor: 1.1 }), /allowed range/u);
+});
+
+test('molarity calculator solves concentration, amount, volume and preparation mass with final solution volume', () => {
+  const base = { moles: 1, volume: 2, volumeUnit: 'L' };
+  const concentration = calculateMolarity({ mode: 'concentration', ...base });
+  assert.equal(concentration.value, 0.5);
+  assert.equal(concentration.unit, 'mol/L');
+  assert.equal(calculateMolarity({ mode: 'moles', molarity: 0.5, volume: 2000, volumeUnit: 'mL' }).value, 1);
+  assert.equal(calculateMolarity({ mode: 'volume', moles: 1, molarity: 0.5 }).value, 2);
+  assert.equal(calculateMolarity({ mode: 'solute-mass', molarity: 0.5, volume: 2, molarMass: 58.44 }).value, 58.44);
+  const prep = calculateMolarity({ mode: 'prepare-solution', molarity: 0.5, volume: 500, volumeUnit: 'mL', molarMass: 58.44 });
+  assert.equal(prep.value, 14.61);
+  assert.equal(prep.volumeLiters, 0.5);
+  assert.throws(() => calculateMolarity({ mode: 'volume', moles: 1, molarity: 0 }), /allowed range/u);
+  assert.throws(() => calculateMolarity({ mode: 'concentration', moles: 1, volume: 0 }), /allowed range/u);
+  assert.throws(() => calculateMolarity({ mode: 'solute-mass', molarity: 1, volume: 1, molarMass: 0 }), /allowed range/u);
+  assert.throws(() => calculateMolarity({ mode: 'concentration', moles: 1, volume: 1, volumeUnit: 'gallon' }), /Choose liters/u);
+});
+
+test('dilution calculator solves direct and equal serial dilution volumes with explicit bounds', () => {
+  const direct = calculateDilution({ mode: 'direct', stockConcentration: 10, targetConcentration: 2, finalVolume: 1, volumeUnit: 'L' });
+  assert.equal(direct.stockVolume, 0.2);
+  assert.equal(direct.diluentVolume, 0.8);
+  assert.equal(direct.dilutionFactor, 5);
+  const serial = calculateDilution({ mode: 'serial', stockConcentration: 1000, targetConcentration: 1, finalVolume: 10, volumeUnit: 'mL', steps: 3 });
+  assert.equal(serial.totalDilutionFactor, 1000);
+  assert.ok(Math.abs(serial.perStepFactor - 10) < 1e-12);
+  assert.ok(Math.abs(serial.transferVolume - 1) < 1e-12);
+  assert.ok(Math.abs(serial.diluentVolume - 9) < 1e-12);
+  assert.throws(() => calculateDilution({ stockConcentration: 1, targetConcentration: 2, finalVolume: 10 }), /cannot exceed/u);
+  assert.throws(() => calculateDilution({ mode: 'serial', stockConcentration: 10, targetConcentration: 1, finalVolume: 10, steps: 2.5 }), /whole number/u);
+  assert.throws(() => calculateDilution({ stockConcentration: 10, targetConcentration: 1, finalVolume: 10, volumeUnit: 'gallon' }), /Choose liters/u);
+  assert.throws(() => calculateDilution({ mode: 'unsupported', stockConcentration: 10, targetConcentration: 1, finalVolume: 10 }), /Choose direct/u);
+});
+
+test('heat pump calculator rejects invalid units, COP, hours, tariff and currency', () => {
+  const valid = { heatOutput: 1, cop: 3, electricityRatePerKwh: 0.2, hoursPerDay: 8 };
+  assert.throws(() => calculateHeatPump({ ...valid, heatOutputUnit: 'W' }), /Choose kW/u);
+  assert.throws(() => calculateHeatPump({ ...valid, cop: 0 }), /allowed range/u);
+  assert.throws(() => calculateHeatPump({ ...valid, hoursPerDay: 25 }), /allowed range/u);
+  assert.throws(() => calculateHeatPump({ ...valid, electricityRatePerKwh: -1 }), /allowed range/u);
+  assert.throws(() => calculateHeatPump({ ...valid, currency: 'US' }), /three-letter/u);
 });

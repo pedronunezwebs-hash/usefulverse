@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { assertGrowthLocaleCoverage } from './locale-contract.mjs';
-import { growthPilotTools } from './catalog.mjs';
+import { growthPilotTools as allGrowthPilotTools } from './catalog.mjs';
+import { localeEntries } from '../locales.mjs';
 import englishGrowthCopy from './locales/en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
 import portugueseGrowthCopy from './locales/pt.mjs';
@@ -39,6 +40,25 @@ import persianGrowthCopy from './locales/fa.mjs';
 import amharicGrowthCopy from './locales/am.mjs';
 import gujaratiGrowthCopy from './locales/gu.mjs';
 
+const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator'].includes(id));
+const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
+  key,
+  (await import(`./locales/${key}.mjs`)).default,
+])));
+
+function assertMachineAcceptedGrowthToolInAllLocales(tool) {
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.localizationStatus, 'machine-accepted', key);
+    assert.equal(copy.localizationAcceptedBy, 'site-owner', key);
+    assert.match(copy.localizationAcceptedAt, /^\d{4}-\d{2}-\d{2}$/u, key);
+    assert.equal(copy.copyLanguage, key, key);
+    assert.notEqual(copy.intro, localizedCopies.en[tool.id].intro, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+}
+
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
 const sampleHome = (language) => ({ title: `${language} tools | UsefulVerse`, description: 'Free browser tools.', intro: 'Simple tools.', directoryLabel: 'Tools', freeLabel: 'Free', footerFree: 'Free tools.', skipToTool: 'Skip', home: 'Home', languageLabel: 'Language', breadcrumbLabel: 'Breadcrumb', faqLabel: 'FAQ', copyLanguage: language });
@@ -56,9 +76,470 @@ test('growth release gate enforces metadata limits and language-specific copy', 
   assert.throws(() => assertGrowthLocaleCoverage([{ id: 'one' }], [{ key: 'en' }], { en: { _home: sampleHome('en'), one: { ...sample('es'), copyLanguage: 'es' } } }), /copy language does not match/);
 });
 
+test('growth release gate blocks candidate copy explicitly marked as untranslated', () => {
+  const draft = { ...sample('es'), localizationStatus: 'pending-tool-specific-translation' };
+  assert.throws(() => assertGrowthLocaleCoverage([{ id: 'one' }], [{ key: 'es' }], { es: { _home: sampleHome('es'), one: draft } }), /localization is not approved for release/);
+});
+
+test('growth release gate accepts machine translation only with explicit owner acceptance metadata', () => {
+  const accepted = {
+    ...sample('es'),
+    localizationStatus: 'machine-accepted',
+    localizationAcceptedBy: 'site-owner',
+    localizationAcceptedAt: '2026-10-08',
+  };
+  assert.equal(assertGrowthLocaleCoverage([{ id: 'one' }], [{ key: 'es' }], { es: { _home: sampleHome('es'), one: accepted } }), true);
+  assert.throws(() => assertGrowthLocaleCoverage([{ id: 'one' }], [{ key: 'es' }], {
+    es: { _home: sampleHome('es'), one: { ...accepted, localizationAcceptedAt: '' } },
+  }), /localization is not approved for release/);
+});
+
 test('the first real English pilot copy satisfies every field, message, placeholder and title budget', () => {
   assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'en' }], { en: englishGrowthCopy }), true);
   assert.ok(Object.values(englishGrowthCopy).every((copy) => copy.title.length <= 60));
+});
+
+test('image color picker has complete locale-specific copy and metadata in all 36 languages', () => {
+  const colorPicker = allGrowthPilotTools.find(({ id }) => id === 'image-color-picker');
+  assert.ok(colorPicker);
+  assert.equal(localeEntries.length, 36);
+  assert.equal(assertGrowthLocaleCoverage([colorPicker], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][colorPicker.id];
+    assert.equal(copy.copyLanguage, key);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('image upscaler has complete localized copy, local-processing limits and cancellation in all 36 languages', () => {
+  const upscaler = allGrowthPilotTools.find(({ id }) => id === 'image-upscaler');
+  assert.ok(upscaler);
+  assert.equal(localeEntries.length, 36);
+  assertMachineAcceptedGrowthToolInAllLocales(upscaler);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][upscaler.id];
+    assert.equal(copy.copyLanguage, key);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    assert.ok(copy.fields.accuracyNote.length > 20, `${key}: device limits are disclosed`);
+    assert.ok(copy.messages.imageTooLarge.length > 0 && copy.messages.cancelled.length > 0, key);
+    assert.ok(copy.actions.upscale.length > 0 && copy.actions.cancel.length > 0, key);
+    assert.doesNotMatch(JSON.stringify(copy), /UVZX\d{4}QXZ|undefined/iu, key);
+  }
+});
+
+test('color name finder has complete English copy and has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'color-name-finder');
+  const english = englishGrowthCopy[tool.id];
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: { _home: englishGrowthCopy._home, [tool.id]: english } }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('photo-to-sketch has complete machine-accepted translations across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'photo-to-sketch');
+  assert.ok(tool);
+  const english = englishGrowthCopy[tool.id];
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: { _home: englishGrowthCopy._home, [tool.id]: english } }), true);
+  assert.ok(english.title.length <= 60 && english.description.length <= 160);
+  assert.match(english.fields.accuracyNote, /8 megapixels/u);
+  assert.equal(english.additionalFaqs.length, 2);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('schema markup validator has complete English copy and has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'schema-markup-validator');
+  assert.ok(tool);
+  const english = englishGrowthCopy[tool.id];
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: { _home: englishGrowthCopy._home, [tool.id]: english } }), true);
+  assert.ok(english.title.length <= 60 && english.description.length <= 160);
+  assert.match(english.fields.accuracyNote, /remote @context/iu);
+  assert.match(english.fields.googleNote, /Rich Results Test/u);
+  assert.equal(english.additionalFaqs.length, 2);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('readability-checker has complete machine-accepted localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'readability-checker');
+  assert.ok(tool);
+  const english = englishGrowthCopy[tool.id];
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: { _home: englishGrowthCopy._home, [tool.id]: english } }), true);
+  assert.ok(english.title.length <= 60 && english.description.length <= 160);
+  assert.equal(english.additionalFaqs.length, 2);
+  assert.match(english.fields.accuracyNote, /syllable counts use language-specific heuristics/iu);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('savings-goal-calculator has complete machine-accepted translations across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'savings-goal-calculator');
+  assert.ok(tool);
+  const english = englishGrowthCopy[tool.id];
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: { _home: englishGrowthCopy._home, [tool.id]: english } }), true);
+  assert.equal(english.additionalFaqs.length, 2);
+  assert.ok(english.title.length <= 60 && english.description.length <= 160);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('severance-pay-calculator has complete machine-accepted translations across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'severance-pay-calculator');
+  assert.ok(tool);
+  const english = englishGrowthCopy[tool.id];
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: { _home: englishGrowthCopy._home, [tool.id]: english } }), true);
+  assert.equal(english.additionalFaqs.length, 2);
+  assert.match(english.fields.ukNote, /£751/u);
+  assert.match(english.fields.ukNote, /6 April 2026/u);
+  assert.ok(english.title.length <= 60 && english.description.length <= 160);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('divisibility calculator has valid English copy and has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'divisibility-calculator');
+  assert.ok(tool);
+  const english = englishGrowthCopy[tool.id];
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: { _home: englishGrowthCopy._home, [tool.id]: english } }), true);
+  assert.equal(english.additionalFaqs.length, 2);
+  assert.match(english.fields.accuracyNote, /30 different positive divisors/u);
+  assert.ok(english.title.length <= 60 && english.description.length <= 160);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('number line generator has valid English copy and has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'number-line-graphing-tool');
+  assert.ok(tool);
+  const english = englishGrowthCopy[tool.id];
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: { _home: englishGrowthCopy._home, [tool.id]: english } }), true);
+  assert.equal(english.additionalFaqs.length, 2);
+  assert.match(english.fields.accuracyNote, /20 rows/u);
+  assert.ok(english.title.length <= 60 && english.description.length <= 160);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('laplace-transform-calculator has complete machine-accepted translations across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'laplace-transform-calculator');
+  assert.ok(tool);
+  const english = englishGrowthCopy[tool.id];
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: { _home: englishGrowthCopy._home, [tool.id]: english } }), true);
+  assert.equal(english.additionalFaqs.length, 2);
+  assert.match(english.fields.accuracyNote, /not a general computer algebra system/u);
+  assert.ok(english.title.length <= 60 && english.description.length <= 160);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('vector-calculator has complete machine-accepted translations across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'vector-calculator');
+  assert.ok(tool);
+  const english = englishGrowthCopy[tool.id];
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: { _home: englishGrowthCopy._home, [tool.id]: english } }), true);
+  assert.equal(english.additionalFaqs.length, 2);
+  assert.match(english.fields.accuracyNote, /compatible units/u);
+  assert.ok(english.title.length <= 60 && english.description.length <= 160);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('cubic-quartic-equation-calculator has complete machine-accepted translations across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'cubic-quartic-equation-calculator');
+  assert.ok(tool);
+  const english = englishGrowthCopy[tool.id];
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: { _home: englishGrowthCopy._home, [tool.id]: english } }), true);
+  assert.equal(english.additionalFaqs.length, 2);
+  assert.match(english.fields.accuracyNote, /Real roots only/u);
+  assert.ok(english.title.length <= 60 && english.description.length <= 160);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('complex-number calculator has complete machine-accepted copy in all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'complex-number-calculator');
+  assert.ok(tool);
+  const english = englishGrowthCopy[tool.id];
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: { _home: englishGrowthCopy._home, [tool.id]: english } }), true);
+  assert.equal(english.additionalFaqs.length, 2);
+  assert.match(english.fields.accuracyNote, /degrees 2–12/u);
+  assert.ok(english.title.length <= 60 && english.description.length <= 160);
+  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.localizationStatus, 'machine-accepted', key);
+    assert.equal(assertGrowthLocaleCoverage([tool], [{ key }], { [key]: { _home: localizedCopies[key]._home, [tool.id]: copy } }), true);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    if (key === 'es') {
+      assert.equal(copy.fields.degrees, 'Grados');
+      assert.equal(copy.actions.reset, 'Borrar');
+    }
+  }
+});
+
+test('HELOC calculator has complete localized copy, visible assumptions and metadata in all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'heloc-calculator');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.copyLanguage, key);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    assert.ok(copy.fields.accuracyNote.trim().length > 30, `${key}: assumptions and financial caveat`);
+    if (key === 'ar') assert.doesNotMatch(copy.fields.annualApr, /السنوي السنوي/u);
+    assert.doesNotMatch(JSON.stringify(copy), /UVHL\d{4}QXZ|undefined/iu, key);
+  }
+});
+
+test('dominoes game has complete static copy and FAQs in all 36 languages', () => {
+  const dominoes = allGrowthPilotTools.find(({ id }) => id === 'dominoes-game');
+  assert.ok(dominoes);
+  assert.equal(assertGrowthLocaleCoverage([dominoes], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][dominoes.id];
+    assert.equal(copy.copyLanguage, key);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    assert.match(copy.messages.turn, /\{player\}/u, key);
+    assert.doesNotMatch(JSON.stringify(copy), /UVTOKEN|987654\d{4}456789|undefined/u, key);
+  }
+});
+
+test('weight-loss scenario has 36 localized cautious copy sets and official-source labels', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'weight-loss-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.copyLanguage, key);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.ok(copy.fields.healthNote.length > 20);
+    assert.ok(copy.fields.methodNote.length > 20);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('tire-size calculator has localized copy and complete controls in every supported language', () => {
+  const tireTool = allGrowthPilotTools.find(({ id }) => id === 'tire-size-calculator');
+  assert.ok(tireTool);
+  assert.equal(localeEntries.length, 36);
+  assert.equal(assertGrowthLocaleCoverage([tireTool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tireTool.id];
+    assert.ok(copy.fields.fitmentNote.trim().length > 0, `${key}: fitment limits should be present`);
+    assert.ok(copy.messages.sameSize.length > 0, `${key}: equality state should be localized`);
+    assert.ok(copy.actions.kmh.length > 0 && copy.actions.mph.length > 0, `${key}: speed units should be labeled`);
+  }
+});
+
+test('stair calculator has localized copy and two complete, localized FAQs in every supported language', () => {
+  const stairTool = allGrowthPilotTools.find(({ id }) => id === 'stair-calculator');
+  assert.ok(stairTool);
+  assert.equal(localeEntries.length, 36);
+  assert.equal(assertGrowthLocaleCoverage([stairTool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][stairTool.id];
+    assert.ok(copy.fields.codeNote.trim().length > 0, `${key}: code boundary should be present`);
+    assert.equal(copy.additionalFaqs.length, 2, `${key}: two additional FAQs should be localized`);
+    assert.ok(copy.actions.meters && copy.actions.feet && copy.actions.inches, `${key}: units should be labeled`);
+  }
+});
+
+test('asphalt calculator has 36 localized copies, estimates-only disclosures and complete FAQs', () => {
+  const asphaltTool = allGrowthPilotTools.find(({ id }) => id === 'asphalt-calculator');
+  assert.ok(asphaltTool);
+  assert.equal(assertGrowthLocaleCoverage([asphaltTool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][asphaltTool.id];
+    assert.ok(copy.fields.accuracyNote.trim().length > 0, `${key}: supplier-density caveat should be present`);
+    assert.ok(copy.fields.relatedConcreteCalculator.trim().length > 0, `${key}: related concrete tool should be linked`);
+    assert.equal(copy.additionalFaqs.length, 2, `${key}: two complete FAQs should be present`);
+    assert.doesNotMatch(JSON.stringify(copy), /88993745\d{4}/u, `${key}: translation marker must not leak`);
+  }
+});
+
+test('wallpaper calculator has complete localized copy, pattern guidance and boundaries in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'wallpaper-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.ok(copy.fields.accuracyNote.trim(), `${key}: estimate boundary should be present`);
+    assert.ok(copy.fields.relatedPaintCalculator.trim(), `${key}: related paint tool should be linked`);
+    assert.equal(copy.additionalFaqs.length, 2, `${key}: both FAQs should be localized`);
+    assert.doesNotMatch(JSON.stringify(copy), /UVWALL\d{4}X?|UVTOKEN\d+X/u, `${key}: translation markers must not leak`);
+  }
+});
+
+test('image region redactor has complete localized copy, privacy boundaries and FAQs in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'image-region-redactor');
+  assert.ok(tool);
+  assert.equal(localeEntries.length, 36);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.ok(copy.fields.accuracyNote.trim(), `${key}: privacy and size boundary should be present`);
+    assert.ok(copy.fields.imageFile.trim(), `${key}: supported image types must be described`);
+    assert.ok(copy.fields.relatedMosaic.trim() && copy.fields.relatedCropper.trim(), `${key}: related image tools should be linked`);
+    assert.equal(copy.additionalFaqs.length, 2, `${key}: two FAQs should be localized`);
+    assert.doesNotMatch(JSON.stringify(copy), /⟦R\d{3}⟧|UVIMG\d+X|undefined|:null/u, `${key}: no marker or missing copy`);
+  }
+  assert.match(localizedCopies.en[tool.id].fields.imageFile, /BMP/u, 'English copy names BMP as a supported format');
+});
+
+test('image sharpener has complete localized copy, device limits and FAQs in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'image-sharpener');
+  assert.ok(tool);
+  assert.equal(localeEntries.length, 36);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.ok(copy.fields.accuracyNote.trim(), `${key}: device and quality boundary should be present`);
+    assert.ok(copy.fields.imageFile.trim(), `${key}: input should be labeled`);
+    assert.ok(copy.fields.relatedRedactor.trim() && copy.fields.relatedCropper.trim(), `${key}: related tools should be linked`);
+    assert.equal(copy.additionalFaqs.length, 2, `${key}: two FAQs should be present`);
+    assert.doesNotMatch(JSON.stringify(copy), /UVS\d{3}X|UVSHARPEN\d{3}X|undefined|:null/u, `${key}: no translation marker or missing copy`);
+  }
+});
+
+test('soil calculator has 36 localized copies, container-fill boundary and complete FAQs', () => {
+  const soilTool = allGrowthPilotTools.find(({ id }) => id === 'soil-calculator');
+  assert.ok(soilTool);
+  assert.equal(assertGrowthLocaleCoverage([soilTool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][soilTool.id];
+    assert.ok(copy.fields.accuracyNote.trim().length > 0, `${key}: actual fill can differ`);
+    assert.equal(copy.additionalFaqs.length, 2, `${key}: two complete FAQs should be present`);
+    assert.ok(copy.actions.liters && copy.actions.cubicFeet, `${key}: bag volume units should be labeled`);
+    assert.doesNotMatch(JSON.stringify(copy), /UVSOIL\d{4}X|UVTOKEN\d+X/u, `${key}: translation markers must not leak`);
+  }
+});
+
+test('pool calculator has 36 complete localized copies and distinguishes gallon standards', () => {
+  const poolTool = allGrowthPilotTools.find(({ id }) => id === 'pool-volume-calculator');
+  assert.ok(poolTool);
+  assert.equal(assertGrowthLocaleCoverage([poolTool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][poolTool.id];
+    assert.ok(copy.fields.accuracyNote.trim());
+    assert.ok(copy.actions.sloped && copy.actions.oval && copy.actions.inches);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.doesNotMatch(JSON.stringify(copy), /UVPOOL\d{4}X|UVTOKEN\d+X/u, `${key}: translation markers must not leak`);
+  }
+});
+
+test('roof pitch calculator has all localized geometry labels, safety notes and FAQs', () => {
+  const roofTool = allGrowthPilotTools.find(({ id }) => id === 'roof-pitch-calculator');
+  assert.ok(roofTool);
+  assert.equal(assertGrowthLocaleCoverage([roofTool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][roofTool.id];
+    assert.ok(copy.fields.safetyNote.trim());
+    assert.ok(copy.actions.millimeters && copy.actions.feet && copy.actions.inches);
+    assert.equal(copy.additionalFaqs.length, 2);
+  }
+});
+
+test('drywall calculator localizes estimation limits, units and FAQs across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'drywall-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.ok(copy.fields.accuracyNote.trim());
+    assert.ok(copy.actions.withCeiling && copy.actions.wallsOnly && copy.actions.millimeters);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.doesNotMatch(JSON.stringify(copy), /\{count\}|UVTOKEN\d+X/u);
+  }
+});
+
+test('roofing calculator localizes material estimates, package coverage limits and FAQs across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'roofing-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.ok(copy.fields.safetyNote.trim());
+    assert.ok(copy.actions.squareFeet && copy.actions.squareMeters && copy.actions.inches);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.doesNotMatch(JSON.stringify(copy), /UVTOKEN\d+X|undefined|null/u, `${key}: no draft marker or missing copy`);
+  }
+});
+
+test('deck calculator localizes decking, stock-board joints, supports and safety notes in all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'deck-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.ok(copy.fields.safetyNote.trim());
+    assert.ok(copy.actions.meters && copy.actions.feet && copy.actions.inches);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.doesNotMatch(JSON.stringify(copy), /UVTOKEN\d+X|undefined|null/u, `${key}: no draft marker or missing copy`);
+  }
+});
+
+test('fence calculator localizes estimates, even-gate assumption and end-post FAQs in all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'fence-calculator');
+  assert.ok(tool);
+  assert.equal(localeEntries.length, 36);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.ok(copy.fields.accuracyNote.trim());
+    assert.ok(copy.actions.meters && copy.actions.feet && copy.actions.inches);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.doesNotMatch(JSON.stringify(copy), /UVTOKEN\d+X|undefined|null/u, `${key}: no draft marker or missing copy`);
+  }
+});
+
+test('pool salt calculator localizes manufacturer-target caveat and salinity FAQs in all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'pool-salt-calculator');
+  assert.ok(tool);
+  assert.equal(localeEntries.length, 36);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  assert.equal(localizedCopies.es[tool.id].name, 'Calculadora de sal para piscinas');
+  assert.equal(localizedCopies.es[tool.id].title, 'Calculadora de sal para piscina gratis | UsefulVerse');
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.ok(copy.fields.accuracyNote.trim());
+    assert.ok(copy.actions.liters && copy.actions.usGallons && copy.actions.imperialGallons);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.doesNotMatch(JSON.stringify(copy), /UVTOKEN\d+X|undefined|null/u, `${key}: no draft marker or missing copy`);
+  }
+  assert.match(localizedCopies.es[tool.id].privacyAnswer, /piscina/u);
+  assert.doesNotMatch(localizedCopies.es[tool.id].privacyAnswer, /grupo/u);
+  assert.equal(localizedCopies.ar[tool.id].actions.pounds, 'أرطال');
+  assert.equal(localizedCopies.ar[tool.id].actions.kilograms, 'كيلوغرامات');
+  assert.equal(localizedCopies.ar[tool.id].messages.saltToAdd, 'كمية الملح المطلوبة وفقًا للنقاء المُدخل');
+});
+
+test('solar panel calculator has a complete static draft in all 36 locales with intact brand metadata', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'solar-panel-calculator');
+  assert.ok(tool);
+  assert.equal(localeEntries.length, 36);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.copyLanguage, key);
+    assert.match(copy.title, /[|｜]\s*UsefulVerse$/u, `${key}: brand suffix must remain unchanged`);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, `${key}: metadata length`);
+    assert.equal(copy.additionalFaqs.length, 2, `${key}: complete FAQs`);
+    assert.ok(copy.fields.accuracyNote.trim(), `${key}: estimate limits`);
+    assert.doesNotMatch(JSON.stringify(copy), /UV(?:BEG|END|SOL)\d{4}QXZ|undefined|null/iu, `${key}: no translation markers or missing copy`);
+  }
+  assert.match(localizedCopies.es[tool.id].title, /UsefulVerse/u);
+});
+
+test('BTU calculator has 36 static localized drafts, honest load limits and bounded metadata', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'btu-calculator');
+  assert.ok(tool);
+  assert.equal(localeEntries.length, 36);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.copyLanguage, key);
+    assert.ok(copy.title.endsWith(' | UsefulVerse'));
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.doesNotMatch(`${copy.name} ${copy.title} ${copy.description}`, / {2,}|undefined|null/u);
+    assert.doesNotMatch(JSON.stringify(copy), /UVTOKEN\d+X|undefined|null/iu);
+  }
+  assert.match(localizedCopies.en[tool.id].fields.accuracyNote, /Manual J/u);
+  assert.match(localizedCopies.es[tool.id].intro, /aislamiento/u);
+  assert.match(localizedCopies.ar[tool.id].copyLanguage, /^ar$/u);
 });
 
 test('the first Google Translate Spanish draft covers every copy key and preserves required placeholders', () => {
@@ -367,4 +848,299 @@ test('the Gujarati machine-translation draft covers every copy key and preserves
   assert.equal(gujaratiGrowthCopy['auto-loan-refinance-calculator'].messages.monthCount, '{count} મહિના');
   assert.equal(gujaratiGrowthCopy['secret-santa-generator'].messages.privatePair, '{giver} {recipient}ને ભેટ આપે છે.');
   assert.equal(gujaratiGrowthCopy.mancala.messages.turn, '{player}નો વારો.');
+});
+
+test('brick calculator has complete static localized copy and bounded metadata in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'brick-calculator');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.copyLanguage, key);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    assert.ok(copy.fields.accuracyNote.length > 40, key);
+    assert.doesNotMatch(JSON.stringify(copy), /¤¤¤\d{4}¤¤¤|undefined|null/u, key);
+    if (key !== 'en') assert.notEqual(copy.intro, localizedCopies.en[tool.id].intro, key);
+  }
+});
+
+test('carpet calculator has a complete English source but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'carpet-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('aquarium calculator has a complete English source but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'aquarium-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('grass seed calculator has a complete English source but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'grass-seed-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('insulation calculator has a complete English source but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'insulation-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('wall framing calculator has a complete English source but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'wall-framing-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('electricity cost calculator has a complete English source but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'electricity-cost-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('compost calculator has a complete English source but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'compost-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('pond volume calculator has a complete English source but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'pond-volume-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('fertilizer calculator has a complete English source but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'fertilizer-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('baluster spacing calculator has a complete English source but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'baluster-spacing-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('retaining wall calculator has a complete English source but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'retaining-wall-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('battery runtime calculator has a complete English source but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'battery-runtime-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('lumber cut optimizer has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'lumber-cut-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('plant spacing calculator has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'plant-spacing-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('EV charging calculator has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'ev-charging-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('rainwater harvesting calculator has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'rainwater-harvesting-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('ramp calculator has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'ramp-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('heat loss calculator has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'heat-loss-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('heat pump calculator has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'heat-pump-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('miter angle calculator has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'miter-angle-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('voltage drop calculator has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'voltage-drop-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('molarity calculator has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'molarity-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('dilution calculator has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'dilution-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('Ohm’s law calculator has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'ohms-law-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('chemical equation balancer has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'chemical-equation-balancer');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('gear ratio calculator has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'gear-ratio-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('density calculator has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'density-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('compression ratio calculator has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'compression-ratio-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('goal planner has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'goal-planner');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('mind map maker has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'mind-map-maker');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('mood tracker has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'mood-tracker');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('online journal has complete English copy but has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'journal-online');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('travel itinerary planner has complete English copy and has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'travel-itinerary-planner');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('polynomial long-division calculator has English copy and has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'polynomial-long-division-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('half-life calculator has complete English copy and has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'half-life-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('mortgage-points calculator has complete English copy and has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'mortgage-points-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('trapezoid calculator has complete English copy and has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'trapezoid-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('prayer times calculator has complete English copy and has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'prayer-times-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('Hitori has complete English copy and has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'hitori');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('Nurikabe has complete English copy and has approved localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'nurikabe');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
 });

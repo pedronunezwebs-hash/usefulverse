@@ -40,3 +40,77 @@ test('Filipino route keeps its established BCP 47 page language while hreflang u
   assert.match(homeHtml, /hreflang="tl" href="https:\/\/tools\.usefulverse\.com\/tl\//u);
   assert.match(homeHtml, /href="\/favicon\.svg"/u);
 });
+
+test('tool renderer includes additional localized FAQs in page content and schema plus localized related route', () => {
+  const teamHtml = renderGrowthToolPage({
+    tool: { id: 'random-team-generator' }, locale: locales[1], localeEntries: locales,
+    copy: { ...copy, fields: { relatedNamePicker: 'Want to pick one winner? Try the random name picker.' } },
+    origin: 'https://tools.usefulverse.com', formHtml: '<form id="tool-form"></form>',
+  });
+  assert.match(teamHtml, /https:\/\/usefulverse\.com\/ar\/tools\/random-name-picker\//u);
+
+  const mulchHtml = renderGrowthToolPage({
+    tool: { id: 'mulch-calculator' }, locale: locales[1], localeEntries: locales,
+    copy: { ...copy, fields: { relatedGravelCalculator: 'Use gravel.', relatedSoilCalculator: 'Use soil.' }, additionalFaqs: [{ question: 'How many bags?', answer: 'Round up.' }] },
+    origin: 'https://tools.usefulverse.com', formHtml: '<form id="tool-form"></form>',
+  });
+  assert.match(mulchHtml, /https:\/\/tools\.usefulverse\.com\/ar\/tools\/gravel-calculator\//u);
+  assert.match(mulchHtml, /https:\/\/tools\.usefulverse\.com\/ar\/tools\/soil-calculator\//u);
+
+  const paverHtml = renderGrowthToolPage({
+    tool: { id: 'paver-calculator' }, locale: locales[1], localeEntries: locales,
+    copy: { ...copy, fields: { relatedTileCalculator: 'Use tile calculator.', relatedGravelCalculator: 'Use gravel calculator.' }, additionalFaqs: [{ question: 'How many pavers?', answer: 'Round up modules.' }] },
+    origin: 'https://tools.usefulverse.com', formHtml: '<form id="tool-form"></form>',
+  });
+  assert.match(paverHtml, /https:\/\/usefulverse\.com\/ar\/tools\/tile-calculator\//u);
+  assert.match(paverHtml, /https:\/\/tools\.usefulverse\.com\/ar\/tools\/gravel-calculator\//u);
+
+  const html = renderGrowthToolPage({
+    tool: { id: 'tire-size-calculator' }, locale: locales[1], localeEntries: locales,
+    copy: { ...copy, fields: { relatedUnitConverter: 'Convert measurements with the unit converter.' }, additionalFaqs: [{ question: 'Does this fit?', answer: 'This estimate cannot confirm fitment.' }] },
+    origin: 'https://tools.usefulverse.com', formHtml: '<form id="tool-form"></form>',
+  });
+  assert.match(html, /https:\/\/usefulverse\.com\/ar\/tools\/unit-converter\//u);
+  assert.match(html, /<summary>Does this fit\?<\/summary>/u);
+  assert.match(html, /"name":"Does this fit\?"/u);
+
+  const stairHtml = renderGrowthToolPage({
+    tool: { id: 'stair-calculator' }, locale: locales[1], localeEntries: locales,
+    copy: { ...copy, fields: { relatedUnitConverter: 'Convert measurements with the unit converter.' }, additionalFaqs: [{ question: 'Does it check codes?', answer: 'No, geometry only.' }] },
+    origin: 'https://tools.usefulverse.com', formHtml: '<form id="tool-form"></form>',
+  });
+  assert.match(stairHtml, /https:\/\/usefulverse\.com\/ar\/tools\/unit-converter\//u);
+  assert.match(stairHtml, /<summary>Does it check codes\?<\/summary>/u);
+
+  const asphaltHtml = renderGrowthToolPage({
+    tool: { id: 'asphalt-calculator' }, locale: locales[1], localeEntries: locales,
+    copy: { ...copy, fields: { relatedConcreteCalculator: 'Planning a concrete slab? Try the concrete calculator.' }, additionalFaqs: [{ question: 'What density should I use?', answer: 'Ask your supplier.' }] },
+    origin: 'https://tools.usefulverse.com', formHtml: '<form id="tool-form"></form>',
+  });
+  assert.match(asphaltHtml, /https:\/\/usefulverse\.com\/ar\/tools\/concrete-calculator\//u);
+  assert.match(asphaltHtml, /<summary>What density should I use\?<\/summary>/u);
+
+  const wallpaperHtml = renderGrowthToolPage({
+    tool: { id: 'wallpaper-calculator' }, locale: locales[1], localeEntries: locales,
+    copy: { ...copy, fields: { relatedPaintCalculator: 'Also need paint? Try the paint calculator.' } },
+    origin: 'https://tools.usefulverse.com', formHtml: '<form id="tool-form"></form>',
+  });
+  assert.match(wallpaperHtml, /https:\/\/usefulverse\.com\/ar\/tools\/paint-calculator\//u);
+
+  const redactorHtml = renderGrowthToolPage({
+    tool: { id: 'image-region-redactor' }, locale: locales[1], localeEntries: locales,
+    copy: { ...copy, fields: { relatedMosaic: 'Try a photo mosaic.', relatedCropper: 'Try the image cropper.' }, additionalFaqs: [{ question: 'Is blur enough?', answer: 'Use black for sensitive details.' }] },
+    origin: 'https://tools.usefulverse.com', formHtml: '<form id="tool-form"></form>',
+  });
+  assert.match(redactorHtml, /https:\/\/usefulverse\.com\/ar\/tools\/photo-mosaic-maker\//u);
+  assert.match(redactorHtml, /https:\/\/usefulverse\.com\/ar\/tools\/image-cropper\//u);
+  assert.match(redactorHtml, /<summary>Is blur enough\?<\/summary>/u);
+
+  const sharpenerHtml = renderGrowthToolPage({
+    tool: { id: 'image-sharpener' }, locale: locales[1], localeEntries: locales,
+    copy: { ...copy, fields: { relatedRedactor: 'Hide sensitive areas with the image redactor.' }, additionalFaqs: [{ question: 'Can it restore details?', answer: 'No, sharpening cannot restore information that was not captured.' }] },
+    origin: 'https://tools.usefulverse.com', formHtml: '<form id="tool-form"></form>',
+  });
+  assert.match(sharpenerHtml, /https:\/\/usefulverse\.com\/ar\/tools\/image-region-redactor\//u);
+  assert.match(sharpenerHtml, /<summary>Can it restore details\?<\/summary>/u);
+});
