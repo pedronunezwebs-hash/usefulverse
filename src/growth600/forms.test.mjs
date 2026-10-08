@@ -261,6 +261,12 @@ const copies = {
     messages: { ...messages, force: 'Force', netForce: 'Net force', mass: 'Mass', acceleration: 'Acceleration', diagram: 'Force diagram' },
     fields: { mode: 'Calculation mode', solveForce: 'Solve force', solveMass: 'Solve mass', solveAcceleration: 'Solve acceleration', netMode: 'Add collinear forces', forceUnit: 'Force unit', massUnit: 'Mass unit', accelerationUnit: 'Acceleration unit', force: 'Force', mass: 'Mass', acceleration: 'Acceleration', forces: 'Signed forces', forcesHint: 'Enter 2–5 forces on one line.', netMass: 'Object mass', accuracyNote: 'Ideal one-dimensional mechanics only.' },
   },
+  'friction-calculator': {
+    name: 'Friction calculator',
+    actions: { ...actions, normalMode: 'Known normal force', inclineMode: 'Mass on an incline', newtons: 'Newtons', kilonewtons: 'Kilonewtons', poundsForce: 'Pounds-force' },
+    messages: { ...messages, normalForce: 'Normal force', gravityComponent: 'Gravity along surface', requiredStatic: 'Static friction needed', maximumStatic: 'Maximum static friction', frictionMagnitude: 'Friction magnitude', frictionDirection: 'Friction direction', regime: 'Motion result', netForce: 'Net force', acceleration: 'Acceleration', noDirection: 'None', positiveDirection: 'Positive direction', negativeDirection: 'Negative direction', uphill: 'Up slope', downhill: 'Down slope', static: 'At rest', startsDownhill: 'Starts sliding down', startsUphill: 'Starts sliding up' },
+    fields: { mode: 'Calculation mode', normalForce: 'Normal force', mass: 'Mass', massUnit: 'Mass unit', angle: 'Incline angle', gravity: 'Gravity', staticCoefficient: 'Static coefficient', kineticCoefficient: 'Kinetic coefficient', appliedForce: 'Applied force', forceUnit: 'Force unit', motionState: 'Object state', atRest: 'At rest', movingUp: 'Moving up', movingDown: 'Moving down', positiveSurfaceDirection: 'Direction note', accuracyNote: 'Coulomb model only.' },
+  },
   'horsepower-calculator': {
     name: 'Horsepower calculator', actions: { ...actions, calculate: 'Calculate', example: 'Try 100 N·m at 1,000 RPM' },
     messages: { ...messages, torque: 'Torque', rpm: 'Engine speed', power: 'Power', watts: 'Watts', kilowatts: 'Kilowatts', horsepower: 'Mechanical horsepower', metricHorsepower: 'Metric horsepower (PS)' },
@@ -459,6 +465,13 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(force, /data-force-net hidden/u);
   assert.match(force, /data-action="example"/u);
   assert.match(force, /data-action="copy"/u);
+  const friction = renderGrowthForm('friction-calculator', copies['friction-calculator']);
+  assert.match(friction, /name="mode"/u);
+  assert.match(friction, /data-friction-fields="normal"/u);
+  assert.match(friction, /data-friction-fields="incline" hidden/u);
+  assert.match(friction, /name="staticCoefficient"/u);
+  assert.match(friction, /name="kineticCoefficient"/u);
+  assert.match(friction, /Coulomb model only\./u);
   const horsepower = renderGrowthForm('horsepower-calculator', copies['horsepower-calculator']);
   for (const name of ['mode', 'torqueUnit', 'torque', 'rpm', 'powerUnit', 'power']) assert.match(horsepower, new RegExp(`name="${name}"`, 'u'));
   assert.match(horsepower, /data-horsepower-field="power" hidden/u);

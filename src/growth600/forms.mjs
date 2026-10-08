@@ -55,6 +55,7 @@ export function renderGrowthForm(toolId, copy) {
     'resistor-color-code-calculator': ['mode', 'decodeMode', 'encodeMode', 'bands', 'fourBands', 'fiveBands', 'sixBands', 'resistanceOhms', 'tolerance', 'temperatureCoefficient', 'accuracyNote', 'band1', 'band2', 'band3', 'band4', 'band5', 'band6', 'black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'gray', 'white', 'gold', 'silver', 'none', 'ppm250', 'ppm100', 'ppm50', 'ppm25', 'ppm20', 'ppm15', 'ppm10', 'ppm5', 'ppm1', 'tolerance005', 'tolerance01', 'tolerance025', 'tolerance05', 'tolerance1', 'tolerance2', 'tolerance5', 'tolerance10', 'tolerance20'],
     'acceleration-calculator': ['mode', 'solveAcceleration', 'solveTime', 'solveFinalVelocity', 'solveDisplacement', 'units', 'metric', 'imperial', 'initialVelocity', 'finalVelocity', 'acceleration', 'timeSeconds', 'initialPosition', 'accuracyNote'],
     'force-calculator': ['mode', 'solveForce', 'solveMass', 'solveAcceleration', 'netMode', 'forceUnit', 'massUnit', 'accelerationUnit', 'force', 'mass', 'acceleration', 'forces', 'forcesHint', 'netMass', 'accuracyNote'],
+    'friction-calculator': ['mode', 'normalForce', 'mass', 'massUnit', 'angle', 'gravity', 'staticCoefficient', 'kineticCoefficient', 'appliedForce', 'forceUnit', 'motionState', 'atRest', 'movingUp', 'movingDown', 'positiveSurfaceDirection', 'accuracyNote'],
     'horsepower-calculator': ['mode', 'solvePower', 'solveTorque', 'solveRpm', 'torque', 'torqueUnit', 'rpm', 'power', 'powerUnit', 'accuracyNote'],
     'rtf-converter': ['file', 'accuracyNote', 'limitNote', 'output'],
     'csv-to-pdf': ['file', 'separator', 'encoding', 'hasHeader', 'pageSize', 'orientation', 'margin', 'accuracyNote', 'limitNote', 'resultCount', 'tableLabel'],
@@ -165,6 +166,7 @@ export function renderGrowthForm(toolId, copy) {
     'resistor-color-code-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'acceleration-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'force-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'friction-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'normalMode', 'inclineMode', 'newtons', 'kilonewtons', 'poundsForce', 'kilograms', 'pounds'],
     'horsepower-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'rtf-converter': ['convert', 'reset', 'copy', 'download', 'print', 'result'],
     'csv-to-pdf': ['preview', 'reset', 'example', 'print', 'result'],
@@ -1441,6 +1443,27 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'friction-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('friction-mode', fields.mode, `<select id="friction-mode" name="mode"><option value="normal">${escapeGrowthHtml(labels.normalMode)}</option><option value="incline">${escapeGrowthHtml(labels.inclineMode)}</option></select>`)}
+    <div data-friction-fields="normal">
+      ${label('normal-force', fields.normalForce, '<input id="normal-force" name="normalForce" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="100">')}
+    </div>
+    <div data-friction-fields="incline" hidden>
+      ${label('friction-mass', fields.mass, '<input id="friction-mass" name="mass" type="number" min="0.000001" max="1000000000" step="any" inputmode="decimal" value="10">')}
+      ${label('friction-mass-unit', fields.massUnit, `<select id="friction-mass-unit" name="massUnit"><option value="kg">${escapeGrowthHtml(labels.kilograms)}</option><option value="lb">${escapeGrowthHtml(labels.pounds)}</option></select>`)}
+      ${label('friction-angle', fields.angle, '<input id="friction-angle" name="angle" type="number" min="0" max="90" step="any" inputmode="decimal" value="30">')}
+      ${label('friction-gravity', fields.gravity, '<input id="friction-gravity" name="gravity" type="number" min="0.000001" max="100" step="any" inputmode="decimal" value="9.80665">')}
+    </div>
+    ${label('friction-static-coefficient', fields.staticCoefficient, '<input id="friction-static-coefficient" name="staticCoefficient" type="number" min="0" max="10" step="any" inputmode="decimal" value="0.6">')}
+    ${label('friction-kinetic-coefficient', fields.kineticCoefficient, '<input id="friction-kinetic-coefficient" name="kineticCoefficient" type="number" min="0" max="10" step="any" inputmode="decimal" value="0.4">')}
+    ${label('friction-unit', fields.forceUnit, `<select id="friction-unit" name="forceUnit"><option value="N">${escapeGrowthHtml(labels.newtons)}</option><option value="kN">${escapeGrowthHtml(labels.kilonewtons)}</option><option value="lbf">${escapeGrowthHtml(labels.poundsForce)}</option></select>`)}
+    ${label('friction-applied-force', fields.appliedForce, '<input id="friction-applied-force" name="appliedForce" type="number" min="-1000000000" max="1000000000" step="any" inputmode="decimal" value="0">')}
+    ${label('friction-state', fields.motionState, `<select id="friction-state" name="motionState"><option value="rest">${escapeGrowthHtml(fields.atRest)}</option><option value="uphill">${escapeGrowthHtml(fields.movingUp)}</option><option value="downhill">${escapeGrowthHtml(fields.movingDown)}</option></select>`)}
+    <p class="hint">${escapeGrowthHtml(fields.positiveSurfaceDirection)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'horsepower-calculator') return attachCopy(`<form id="tool-form" novalidate>

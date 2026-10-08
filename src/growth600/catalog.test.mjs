@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 102);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 102);
+  assert.equal(growthPilotTools.length, 103);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 103);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -59,6 +59,15 @@ test('polygon calculator covers regular N-gons without competing with the triang
   assert.deepEqual(tool.relatedExistingIds, ['triangle-calculator']);
   assert.match(tool.boundary, /4–1,000 sides/u);
   assert.match(tool.acceptance, /perimeter 6/u);
+});
+
+test('friction calculator models Coulomb friction and incline motion without duplicating net-force calculations', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'friction-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'friction calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['force-calculator']);
+  assert.match(tool.acceptance, /μs=0.*friction force is 0/u);
+  assert.match(tool.boundary, /Coulomb/u);
 });
 
 test('Roth vs traditional compares user-entered tax scenarios without giving tax or account advice', () => {

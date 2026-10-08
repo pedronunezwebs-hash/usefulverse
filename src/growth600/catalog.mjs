@@ -1152,6 +1152,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/acceleration-calculator/logic.mjs',
   },
   {
+    id: 'friction-calculator',
+    category: 'physics-math',
+    type: 'calculator',
+    primaryIntent: 'friction calculator',
+    secondaryIntents: ['friction force calculator', 'static friction calculator', 'inclined plane friction calculator'],
+    functions: ['calculate the maximum static friction from the normal force and static coefficient', 'compare downslope gravity plus an applied force with the static threshold', 'when sliding or already moving, calculate kinetic friction and net force', 'accept either a known normal force or mass and incline angle; convert N, kN and lbf inputs'],
+    acceptance: 'With μs=0, μk=0, normal force 100 N, no incline and no applied force, friction force is 0 N.',
+    boundary: 'Ideal rigid-body Coulomb friction on one surface. Static friction adjusts up to μsN; kinetic friction is μkN and opposes the specified or predicted motion. The incline model assumes uniform gravity and a straight plane; it excludes deformation, rolling, changing coefficients, vibration, air resistance and material lookup. Coefficients are user inputs, not recommendations for safety or engineering design. Calculations run locally in this browser.',
+    relatedExistingIds: ['force-calculator'],
+    logicModule: './tools/friction-calculator/logic.mjs',
+  },
+  {
     id: 'force-calculator',
     category: 'physics-math',
     type: 'calculator',
