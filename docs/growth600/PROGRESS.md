@@ -2,6 +2,17 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
+## Publicada · Hashi Puzzle (#260; 96.ª herramienta Growth600) · 2026-10-09
+
+- [x] C/F — Reutilizada la ficha del plan: `hashi puzzle` 1.000 búsquedas/mes US/en, KD 31; `bridges puzzle online` 10/mes, KD 17. Sin consulta nueva a DataForSEO.
+- [x] E/B — Puzzle de islas conectadas por puentes sencillos o dobles, con grados exactos, comprobación de cruces/conectividad, pista, deshacer, borrar y niveles. Generación y juego local; no duplica Kakuro ni Futoshiki.
+- [x] L — 36 páginas estáticas con metadatos, FAQ, hreflang y copy localizado; títulos y descripciones pasan el contrato multilingüe. Las traducciones automáticas se consideran borradores comprensibles, no revisión nativa.
+- [x] E/X — Tests del juego, formulario, catálogo y contratos pasan en el pipeline de GitHub; CI y builds principal/hub verdes. `npm run check` conserva las 10.260 URLs del catálogo principal.
+- [x] P/S — PR [#56](https://github.com/pedronunezwebs-hash/usefulverse/pull/56) fusionada en `8cda264a7c16d7e70f86576f22b72b8135058730`; validación/deploy principal 37836786097 y deploy del hub 37837845643 completados. Rutas públicas EN/ES/AR HTTP 200; inglés/español LTR y árabe RTL.
+- [x] Sitemap público del hub: **3.492 URLs únicas** (96 herramientas × 36 idiomas + 36 portadas), incluidas 36 variantes de Hashi; el sitemap principal conserva 10.260 URLs. Publicar/enviar sitemap no garantiza indexación.
+- [x] README actualizado a 96 herramientas Growth600 y 3.492 URLs del hub.
+- **Estado publicado:** 96/323 candidatas adicionales; 227 pendientes. Mantener intacto el catálogo original de 277. Siguiente herramienta en curso: #280 Chess Opening Trainer.
+
 ## Implementación · Futoshiki (#222; 95.ª herramienta Growth600) · 2026-10-09
 
 - [x] C/F — Reutilizada la medición ya incluida en el plan: `futoshiki` 1.900 búsquedas/mes US/en, KD 33; `futoshiki puzzle online` 10/mes, KD 7. Sin llamadas nuevas a DataForSEO.

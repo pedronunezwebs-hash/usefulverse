@@ -1,0 +1,10 @@
+.chess-opening-game { display: grid; gap: 1rem; }
+.chess-opening-controls { display: flex; flex-wrap: wrap; align-items: end; gap: .75rem; }
+.chess-opening-board { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); width: min(100%, 30rem); aspect-ratio: 1; margin-inline: auto; border: 2px solid var(--line, #d9e0ec); border-radius: .5rem; overflow: hidden; direction: ltr; }
+.chess-opening-square { display: grid; place-items: center; min-width: 0; padding: 0; border: 0; color: #1e293b; font-size: clamp(1.45rem, 8vw, 3rem); line-height: 1; cursor: pointer; }
+.chess-opening-square.is-light { background: #f0ead6; }
+.chess-opening-square.is-dark { background: #779556; }
+.chess-opening-square:focus-visible { outline: 3px solid #ffbf00; outline-offset: -3px; z-index: 1; }
+.chess-opening-square.is-selected { box-shadow: inset 0 0 0 4px #facc15; }
+.chess-opening-square.is-hint { box-shadow: inset 0 0 0 4px #38bdf8; }
+.chess-opening-moves { width: min(100%, 30rem); min-height: 5rem; direction: ltr; text-align: left; }

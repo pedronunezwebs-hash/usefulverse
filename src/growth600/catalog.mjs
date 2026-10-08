@@ -744,6 +744,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/hashi-puzzle/logic.mjs',
   },
   {
+    id: 'chess-opening-trainer',
+    category: 'games',
+    type: 'game',
+    primaryIntent: 'chess openings practice',
+    secondaryIntents: ['chess opening trainer', 'practice chess openings online', 'learn chess opening moves'],
+    functions: ['practice a focused set of common opening lines as White or Black', 'play legal moves on an accessible board and receive a clear correction when a move leaves the selected line', 'see SAN move history, opening name, move number and completion feedback', 'restart or choose another opening without saving a profile or uploading moves'],
+    acceptance: 'Every bundled line replays legally from the standard starting position; for either side, the expected move is taken from the selected line at the correct ply; a legal but off-line move is undone and feedback identifies the expected SAN move; no third-party runtime request occurs.',
+    boundary: 'Opening repertoire practice only, with a small hand-curated set of public chess opening lines and no claim to cover every variation. It is not a free-play game, engine analysis, tactics trainer, tournament database or personalized coaching. Board moves run locally and are not saved or uploaded.',
+    relatedExistingIds: ['chess-game', 'chess-clock'],
+    logicModule: './tools/chess-opening-trainer/logic.mjs',
+  },
+  {
     id: 'color-name-finder',
     category: 'design-tools',
     type: 'utility',

@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 96);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 96);
+  assert.equal(growthPilotTools.length, 97);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 97);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -16,6 +16,14 @@ test('Hashi is a distinct no-crossing connected-island puzzle, not a duplicate F
   assert.match(hashi.functions.join(' '), /one or two bridges/iu);
   assert.match(hashi.acceptance, /connected graph/u);
   assert.deepEqual(hashi.relatedExistingIds, ['futoshiki', 'kakuro']);
+});
+
+test('chess opening trainer adds repertoire practice rather than another free-play or tactics page', () => {
+  const trainer = growthPilotTools.find(({ id }) => id === 'chess-opening-trainer');
+  assert.ok(trainer);
+  assert.equal(trainer.primaryIntent, 'chess openings practice');
+  assert.match(trainer.acceptance, /standard starting position/u);
+  assert.deepEqual(trainer.relatedExistingIds, ['chess-game', 'chess-clock']);
 });
 
 test('the additive catalog rejects protected-ID collisions, duplicate IDs and incomplete contracts', () => {
