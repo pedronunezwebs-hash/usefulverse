@@ -2,21 +2,21 @@
 
 Última verificación: 2026-10-08. Registro persistente de esta rama; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## En curso · Horsepower Calculator (#180) · 2026-10-08
+## Publicada · Horsepower Calculator (#180) · 2026-10-08
 
 - [x] C/F — potencia de eje ideal desde torque y RPM; despeja torque o RPM a partir de las otras magnitudes. Convierte N·m/lb·ft y W/kW/hp/PS; explica que no representa potencia medida en ruedas ni pérdidas reales.
 - [x] B/X — modos dinámicos, ejemplo, validación de ceros/singularidades, unidades, reset/copia y resultados accesibles. Verificado en Chrome: 100 N·m a 1.000 RPM → 10,471976 kW, 14,043150 hp y 14,237924 PS; modos inversos recuperan 95,492966 N·m y 1.000 RPM.
 - [x] L — 36 locales estáticos a partir del inglés mediante Google Translate; no revisión nativa. Ajustadas expresiones obvias del español y límites de metadescripción. Auditoría de build: todos los títulos ≤60 y descripciones ≤160 caracteres renderizados.
-- [x] E — lógica focal 5/5; regresión `npm test` 1.280/1.280; `npm run check` confirma 10.260 URLs protegidas; `locale:release-check` correcto. Build del hub: 3.204 URLs únicas (88 herramientas × 36 idiomas + 36 portadas; 3.343 archivos). `git diff --check` limpio.
+- [x] E — lógica focal 5/5; regresión `npm test` 1.281/1.281; `npm run check` confirma 10.260 URLs protegidas; `locale:release-check` correcto. Build del hub: 3.204 URLs únicas (88 herramientas × 36 idiomas + 36 portadas; 3.343 archivos). `git diff --check` limpio.
 - [x] X — Chrome local: inglés funcional directo; español con cadenas revisadas; árabe `lang=ar`, `dir=rtl`, cálculo inverso funcional. Consola sin errores y recursos solo del mismo origen.
-- [ ] P/S — todavía no integrado ni desplegado; falta confirmar URL y sitemap públicos tras el flujo de publicación. No se ejecutó PageSpeed/Lighthouse ni se afirmará indexación.
-- **Siguiente:** cerrar diff/documentación, abrir PR, esperar CI, fusionar y verificar publicación/sitemap. Luego seguir con la ficha #181.
+- [x] P/S — PR #45 fusionada en `7f91d475cf09edc9b1fb6397382b90ecb85d91af`; CI y publicación principal 37804057904 correctos; publicación manual del hub 37804650210 correcta. EN/ES/AR responden HTTP 200; sitemap público HTTP 200 con 3.204 `<loc>` únicas e incluye las 36 versiones. Esto confirma publicación, no indexación. No se ejecutó PageSpeed/Lighthouse.
+- **Siguiente:** #181 `rtf-converter`; 88/323 candidatas adicionales publicadas y 235 pendientes.
 
 ## Publicada · Force Calculator (#179) · 2026-10-08
 
 - [x] PR #44 fusionado en `c4ea55cfe57bca860532363ccf3a055a97b6adc1`; pipeline del hub 37799721532 y ejecución manual 37800203046 finalizaron correctamente.
 - [x] Página EN responde HTTP 200; sitemap público verificado con 3.168 `<loc>` únicas. Los motores ya conocen la URL canónica; esto no prueba rastreo ni indexación y no se volvieron a usar paneles.
-- [x] 87/323 candidatas nuevas de Growth600 están publicadas al inicio de esta tarea; #180 es la siguiente candidata en curso. Las 277 herramientas originales permanecen protegidas.
+- [x] 87/323 candidatas nuevas de Growth600 estaban publicadas antes de #180. Las 277 herramientas originales permanecen protegidas.
 
 ## Completada y publicada · Acceleration Calculator (#178) · 2026-10-08
 

@@ -12,6 +12,17 @@ Browser-first collection of fast, private, static tools for everyday work.
 - CSS and JavaScript URLs are content-versioned during the build so CDN caches cannot serve an old runtime after a deploy.
 - HTML uses short browser and edge cache lifetimes; versioned assets remain immutable for repeat visits.
 
+## Separate tools hub
+
+The additional Growth600 tools are published as a separate static Cloudflare Pages site at
+[tools.usefulverse.com](https://tools.usefulverse.com/), so they do not replace or
+change the 277-tool catalog above. The hub currently contains 88 additional tools in
+the same 36 locales. Its canonical URL inventory and language alternates are listed in
+the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (3,204 URLs as of 2026-10-08);
+the staged candidate checklist and implementation record are in
+[docs/growth600/PLAN-600.md](docs/growth600/PLAN-600.md) and
+[docs/growth600/PROGRESS.md](docs/growth600/PROGRESS.md).
+
 ## Local development
 
 ```bash
