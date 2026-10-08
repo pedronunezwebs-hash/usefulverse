@@ -720,6 +720,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/peg-solitaire/logic.mjs',
   },
   {
+    id: 'futoshiki',
+    category: 'games',
+    type: 'game',
+    primaryIntent: 'futoshiki puzzle',
+    secondaryIntents: ['futoshiki puzzle online', 'play futoshiki online', 'futoshiki inequality puzzle'],
+    functions: ['generate fresh 4×4 to 6×6 Latin-square puzzles at three difficulties with a bounded uniqueness check', 'enter values with labeled cells and visible inequality signs between neighboring cells', 'check duplicate values by row and column and validate every greater-than or less-than clue', 'reveal one correct cell, undo a previous entry and start another randomized puzzle', 'use the puzzle entirely in the browser without an account, network request or saved progress'],
+    acceptance: 'Every accepted generated puzzle has exactly one complete solution; every solution uses each number once in every row and column and satisfies each adjacent-cell inequality. Invalid grid sizes, values and nonadjacent inequality definitions are rejected.',
+    boundary: 'Single-player Futoshiki (also called Unequal) Latin-square puzzle with local bounded generation and uniqueness checks. No account, network request, stored progress, multiplayer or official daily challenge. Generation runs in this device’s browser and may take longer on slower hardware.',
+    relatedExistingIds: ['sudoku'],
+    logicModule: './tools/futoshiki/logic.mjs',
+  },
+  {
     id: 'color-name-finder',
     category: 'design-tools',
     type: 'utility',

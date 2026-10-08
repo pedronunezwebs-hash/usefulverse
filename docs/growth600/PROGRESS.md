@@ -2,6 +2,17 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
+## Implementación · Futoshiki (#222; 95.ª herramienta Growth600) · 2026-10-09
+
+- [x] C/F — Reutilizada la medición ya incluida en el plan: `futoshiki` 1.900 búsquedas/mes US/en, KD 33; `futoshiki puzzle online` 10/mes, KD 7. Sin llamadas nuevas a DataForSEO.
+- [x] E/B — Puzzle Latin 4×4, 5×5 o 6×6 con desigualdades horizontales/verticales, dificultades, generador aleatorio con solución única verificada, comprobación, pista de una celda, deshacer hasta 100 acciones y modo de notas/candidatos. Explica que no usa las cajas 3×3 de Sudoku. Resolver/generar sucede localmente; sin API, dependencias runtime, almacenamiento ni cuenta.
+- [x] L — 36 páginas estáticas traducidas desde inglés por lotes de Google Translate. Español y árabe se ajustaron manualmente; traducciones restantes son borradores automáticos comprensibles, no revisión nativa. Metatítulos conservan `UsefulVerse` y máximo 60 caracteres; descripciones hasta 160; placeholders verificados.
+- [x] E/X — Suite focal de catálogo/formulario/contrato/lógica: 174/174; `npm test`: 1.342/1.342. `npm run check` conserva el sitio principal en 10.260 URLs; `locale:release-check` pasa para los 20 locales ampliados.
+- [x] X/B — Chrome local en ES/AR: botones y estados localizados, candidato añadible con anuncio accesible y undo correcto; tamaño 6 crea 36 celdas. Árabe conserva `lang=ar`, página RTL y cuadrícula LTR; español `lang=es`, LTR. Móvil 390 px y escritorio 1440 px sin desbordamiento; consola sin errores/avisos. No se ejecutó PageSpeed/Lighthouse.
+- [x] Build aislado — 3.456 páginas/URLs (95 herramientas × 36 idiomas + 36 portadas), 3.602 archivos, 104.673.047 bytes; sitemap con 3.456 `<loc>` únicas y 36 variantes de Futoshiki.
+- [ ] P/S — Publicación y comprobación pública pendientes.
+- **Estado antes de publicar:** 95/323 candidatas adicionales implementadas; 228 pendientes. Siguiente candidata del plan: #260 Hashi Puzzle. Mantener intacto el catálogo original de 277.
+
 ## Publicada · Slitherlink (#186; 93.ª herramienta Growth600) · 2026-10-09
 
 - [x] C/F — Reutilizada la ficha y demanda existente: `slitherlink` 2.900 búsquedas/mes US/en, KD 18; `slitherlink puzzle online` 10/mes. Sin DataForSEO nuevo.

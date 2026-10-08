@@ -68,6 +68,8 @@ import slitherlinkCopies from './slitherlink.mjs';
 import { slitherlinkEnglishCopy } from './slitherlink.en.mjs';
 import pegSolitaireCopies from './peg-solitaire.mjs';
 import { pegSolitaireEnglishCopy } from './peg-solitaire.en.mjs';
+import futoshikiCopies from './futoshiki.mjs';
+import { futoshikiEnglishCopy } from './futoshiki.en.mjs';
 import { workOrderGeneratorEnglishCopy } from './work-order-generator.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
@@ -685,5 +687,44 @@ const pegSolitaireArabicCopy = {
   ],
 };
 registerGrowthLocaleExtension(source, 'peg-solitaire', { ...pegSolitaireCopies, en: pegSolitaireEnglishCopy, es: pegSolitaireSpanishCopy, ar: pegSolitaireArabicCopy }, 'slitherlink');
+const futoshikiSpanishCopy = {
+  ...futoshikiCopies.es,
+  title: 'Futoshiki gratis en línea | UsefulVerse',
+  description: 'Juega Futoshiki gratis. Completa filas y columnas, sigue las desigualdades, comprueba la cuadrícula y usa pista o deshacer.',
+  intro: 'Completa cada fila y columna con todos los números una sola vez y respeta los signos de mayor y menor entre celdas vecinas.',
+  howQuestion: '¿Cómo se juega al Futoshiki?',
+  howAnswer: 'Completa cada fila y columna con los números del 1 al tamaño de la cuadrícula, sin repetir. Los signos entre celdas vecinas indican qué número es menor. Usa Comprobar para validar el tablero completo, Pista para revelar una respuesta o Deshacer para recuperar la entrada anterior.',
+  privacyQuestion: '¿Este Futoshiki es gratis y privado?',
+  privacyAnswer: 'Sí. El tablero y tus entradas se procesan en este navegador. UsefulVerse no sube ni guarda la partida.',
+  fields: { ...futoshikiCopies.es.fields, size: 'Tamaño de cuadrícula', difficulty: 'Dificultad', board: 'Cuadrícula del Futoshiki', rules: 'Completa cada fila y columna con todos los números del 1 al tamaño de la cuadrícula, sin repetir. En cada desigualdad entre celdas vecinas, la punta señala el número menor. Pulsa Notas para activar o quitar candidatos en una celda vacía; son recordatorios y no cuentan al comprobar.', accuracyNote: 'Cada puzzle se genera en este navegador y se comprueba que tenga una sola solución antes de mostrarse. Tus entradas no se suben ni se guardan.', cell: 'Celda', row: 'fila', column: 'columna', notes: 'notas' },
+  actions: { ...futoshikiCopies.es.actions, newGame: 'Nuevo puzzle', checkBoard: 'Comprobar puzzle', hint: 'Revelar una celda', undo: 'Deshacer entrada', notes: 'Notas', notesOn: 'Notas activadas', rules: 'Reglas', small: '4 × 4', medium: '5 × 5', large: '6 × 6', easy: 'Fácil', regular: 'Media', hard: 'Difícil' },
+  messages: { ...futoshikiCopies.es.messages, newPuzzle: 'Hay un nuevo puzzle de Futoshiki.', solved: '¡Correcto! Se cumplen las filas, las columnas y las desigualdades.', incomplete: 'Completa todas las celdas antes de comprobar la solución.', duplicateRow: 'Hay un número repetido en una fila.', duplicateColumn: 'Hay un número repetido en una columna.', inequality: 'No se cumple una o más desigualdades.', hint: 'Respuesta revelada en la fila {row}, columna {column}.', noHint: 'No quedan celdas por revelar.', undo: 'Se restauró la entrada anterior.', undoEmpty: 'No hay ninguna entrada que deshacer.', invalidValue: 'Escribe un número entero del 1 al {size}.', generationFailed: 'No se pudo crear el puzzle. Inténtalo de nuevo.', notesEnabled: 'Modo de notas activado. Escribe un número posible en una celda vacía para añadirlo o quitarlo.', notesDisabled: 'Modo de notas desactivado.', noteAdded: 'Se añadió el candidato {value}.', noteRemoved: 'Se quitó el candidato {value}.', cellCleared: 'Se borró la entrada.' },
+  additionalFaqs: [
+    { question: '¿Qué significan los signos de desigualdad en Futoshiki?', answer: 'El signo entre dos celdas vecinas indica qué número es menor. La punta señala el número menor y ambos valores también deben cumplir las reglas de fila y columna.' },
+    { question: '¿Se puede repetir un número en una fila o columna de Futoshiki?', answer: 'No. Cada fila y cada columna debe contener una vez todos los números del 1 al tamaño de la cuadrícula.' },
+    { question: '¿La pista resuelve todo el Futoshiki?', answer: 'No. La pista revela una celda de la solución comprobada. Puedes seguir resolviendo, pedir otra pista o deshacer la entrada revelada.' },
+  ],
+  localizationStatus: 'machine-accepted',
+};
+const futoshikiArabicCopy = {
+  ...futoshikiCopies.ar,
+  title: 'Futoshiki مجاني | UsefulVerse',
+  description: 'العب Futoshiki مجانًا. أكمل الصفوف والأعمدة واتبع إشارات المقارنة واستخدم التلميح أو التراجع.',
+  intro: 'أكمل كل صف وعمود بالأرقام دون تكرار، واتبع إشارات الأكبر والأصغر بين الخانات المتجاورة.',
+  howQuestion: 'كيف تلعب Futoshiki؟',
+  howAnswer: 'املأ كل صف وعمود بالأرقام من 1 إلى حجم الشبكة دون تكرار. تُظهر إشارات المقارنة بين الخانات المتجاورة أي الرقمين أصغر. استخدم التحقق لمراجعة الشبكة المكتملة، والتلميح لكشف إجابة واحدة، أو التراجع لاستعادة إدخالك السابق.',
+  privacyQuestion: 'هل لعبة Futoshiki مجانية وخاصة؟',
+  privacyAnswer: 'نعم. تعمل الألغاز والإدخالات في هذا المتصفح. لا يرفع UsefulVerse لعبتك ولا يحفظها.',
+  fields: { ...futoshikiCopies.ar.fields, size: 'حجم الشبكة', difficulty: 'الصعوبة', board: 'شبكة لغز Futoshiki', rules: 'املأ كل صف وعمود بالأرقام من 1 إلى حجم الشبكة مرة واحدة فقط. اتبع إشارات المقارنة بين الخانات المتجاورة: يشير الطرف الحاد إلى الرقم الأصغر. اختر الملاحظات لإضافة الأرقام المرشحة أو إزالتها من خانة فارغة؛ فهي للتذكير ولا تدخل في التحقق.', accuracyNote: 'يُنشأ كل لغز في هذا المتصفح ويُتحقق من أن له حلًا واحدًا قبل عرضه. لا تُرفع إدخالاتك ولا تُحفظ.', cell: 'خانة', row: 'صف', column: 'عمود', notes: 'ملاحظات' },
+  actions: { ...futoshikiCopies.ar.actions, newGame: 'لغز جديد', checkBoard: 'تحقق من اللغز', hint: 'كشف خانة واحدة', undo: 'تراجع عن الإدخال', notes: 'ملاحظات', notesOn: 'الملاحظات مفعلة', rules: 'القواعد', small: '4 × 4', medium: '5 × 5', large: '6 × 6', easy: 'سهل', regular: 'متوسط', hard: 'صعب' },
+  messages: { ...futoshikiCopies.ar.messages, newPuzzle: 'لغز Futoshiki جديد جاهز.', solved: 'صحيح! الصفوف والأعمدة وإشارات المقارنة متوافقة.', incomplete: 'أكمل كل الخانات قبل التحقق من الحل.', duplicateRow: 'يوجد رقم مكرر في أحد الصفوف.', duplicateColumn: 'يوجد رقم مكرر في أحد الأعمدة.', inequality: 'لم تتحقق إحدى إشارات المقارنة أو أكثر.', hint: 'كُشفت إجابة الصف {row} والعمود {column}.', noHint: 'لا توجد خانات أخرى لكشفها.', undo: 'تمت استعادة الإدخال السابق.', undoEmpty: 'لا يوجد إدخال للتراجع عنه.', invalidValue: 'أدخل عددًا صحيحًا من 1 إلى {size}.', generationFailed: 'تعذر إنشاء اللغز الآن. حاول مرة أخرى.', notesEnabled: 'تم تفعيل وضع الملاحظات. أدخل رقمًا مرشحًا في خانة فارغة لإضافته أو إزالته.', notesDisabled: 'تم إيقاف وضع الملاحظات.', noteAdded: 'تمت إضافة الرقم المرشح {value}.', noteRemoved: 'تمت إزالة الرقم المرشح {value}.', cellCleared: 'تم مسح الإدخال.' },
+  additionalFaqs: [
+    { question: 'ماذا تعني إشارات المقارنة في Futoshiki؟', answer: 'توضح الإشارة بين خانتين متجاورتين أي الرقمين أصغر. يشير الطرف الحاد إلى الرقم الأصغر، ويجب أيضًا أن يلتزم الرقمان بقواعد الصف والعمود.' },
+    { question: 'هل يمكن تكرار رقم في صف أو عمود Futoshiki؟', answer: 'لا. يجب أن يحتوي كل صف وكل عمود على الأرقام من 1 إلى حجم الشبكة مرة واحدة فقط.' },
+    { question: 'هل يحل التلميح لغز Futoshiki بالكامل؟', answer: 'لا. يكشف التلميح خانة واحدة من الحل الذي تم التحقق منه. يمكنك متابعة الحل أو طلب تلميح آخر أو التراجع عن الخانة المكشوفة.' },
+  ],
+  localizationStatus: 'machine-accepted',
+};
+registerGrowthLocaleExtension(source, 'futoshiki', { ...futoshikiCopies, en: futoshikiEnglishCopy, es: futoshikiSpanishCopy, ar: futoshikiArabicCopy }, 'peg-solitaire');
 
 export default Object.freeze(source);

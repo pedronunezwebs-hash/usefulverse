@@ -4812,13 +4812,13 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 222 · Futoshiki
 
-- [ ] **C/F/E/X/L/B/P/S completos — `futoshiki`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/futoshiki/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [ ] **C/F/E/X/L/B/P/S — `futoshiki`** (implementación y validación listas; P/S pendientes)
+- **Destino:** `https://tools.usefulverse.com/tools/futoshiki/`; otras 35 versiones con los prefijos del anexo. La publicación final se registra en `docs/growth600/PROGRESS.md`.
 - **Demanda:** `futoshiki` — 1.900 búsquedas/mes US/en, KD 33; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Cuadrícula Latin con desigualdades, notas, checker, hints y generación con unicidad comprobada.
 - **Prueba de aceptación específica:** Todas las desigualdades se cumplen; cada fila/columna contiene los valores permitidos una vez.
 - **Frontera con otras herramientas:** sudoku: desigualdades no bloques3x3. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** H: dependencia/cómputo bajo demanda; verificar licencia y compatibilidad. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Generador y solver propios, sin dependencia, llamada de red, almacenamiento ni API; cómputo acotado y bajo demanda en el navegador. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `futoshiki puzzle online` — 10/mes US/en; KD 7.
   - `futoshiki free online`; `futoshiki with example`; `futoshiki no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

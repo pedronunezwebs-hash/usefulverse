@@ -1,0 +1,30 @@
+export const futoshikiEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Futoshiki',
+  title: 'Free Futoshiki Puzzle Online | UsefulVerse',
+  description: 'Play free Futoshiki online. Fill a fresh Latin-square puzzle, follow the inequalities, check your grid, get a hint and undo moves.',
+  intro: 'Fill each row and column with every number once, then follow the greater-than and less-than clues between neighboring cells.',
+  howQuestion: 'How do you play Futoshiki?',
+  howAnswer: 'Fill each row and column with the numbers 1 through the grid size without repeating a number. The inequality signs between neighboring cells show which value is smaller. Use Check to validate the completed grid, Hint to reveal one answer, or Undo to restore your previous entries.',
+  privacyQuestion: 'Is this Futoshiki puzzle free and private?',
+  privacyAnswer: 'Yes. Puzzles and entries run in this browser. UsefulVerse does not upload or save your game.',
+  fields: {
+    size: 'Grid size', difficulty: 'Difficulty', board: 'Futoshiki puzzle grid', rules: 'Fill every row and column with each number from 1 to the grid size exactly once. Follow every inequality between adjacent cells: the pointed end faces the smaller value. Blank cells are part of the puzzle. Select Notes to toggle candidate numbers in an empty cell; notes are reminders and are ignored by the checker.',
+    accuracyNote: 'Each puzzle is generated in this browser and checked for exactly one solution before it is shown. Your entries are not uploaded or saved.',
+    cell: 'Cell', row: 'row', column: 'column', notes: 'notes',
+  },
+  actions: { newGame: 'New puzzle', checkBoard: 'Check puzzle', hint: 'Reveal one cell', undo: 'Undo entry', notes: 'Notes', notesOn: 'Notes on', rules: 'Rules', small: '4 × 4', medium: '5 × 5', large: '6 × 6', easy: 'Easy', regular: 'Medium', hard: 'Hard' },
+  messages: {
+    newPuzzle: 'A new Futoshiki puzzle is ready.', solved: 'Correct! Every row, column and inequality is satisfied.',
+    incomplete: 'Fill every cell before checking the completed solution.', duplicateRow: 'A row contains a repeated number.', duplicateColumn: 'A column contains a repeated number.', inequality: 'One or more inequality clues are not satisfied.',
+    hint: 'Revealed the answer at row {row}, column {column}.', noHint: 'There are no remaining cells to reveal.', undo: 'Your previous entry was restored.', undoEmpty: 'There is no entry to undo.',
+    notesEnabled: 'Notes mode is on. Enter a candidate number in an empty cell to add or remove it.', notesDisabled: 'Notes mode is off.', noteAdded: 'Candidate {value} added.', noteRemoved: 'Candidate {value} removed.', cellCleared: 'Your entry was cleared.',
+    invalidValue: 'Enter a whole number from 1 to {size}.', generationFailed: 'Could not make a puzzle just now. Try again.',
+  },
+  additionalFaqs: [
+    { question: 'What do the inequality signs mean in Futoshiki?', answer: 'A sign between two neighboring cells shows which number is smaller. The pointed end faces the smaller number; both values must also fit the row and column rules.' },
+    { question: 'Can a number repeat in a Futoshiki row or column?', answer: 'No. Every row and every column must contain each number from 1 through the grid size exactly once.' },
+    { question: 'Does the hint solve the whole Futoshiki puzzle?', answer: 'No. Hint fills one cell from the checked solution. You can continue solving, use another hint, or undo the revealed entry.' },
+  ],
+  localizationStatus: 'approved',
+});
