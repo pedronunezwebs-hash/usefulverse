@@ -1165,3 +1165,10 @@ test('acceleration calculator has complete English copy and localized copy acros
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
   assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
+
+test('force calculator has complete English copy and localized copy across all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'force-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
