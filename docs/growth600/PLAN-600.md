@@ -3445,7 +3445,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/prayer-times-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `prayer time calculator` — 3.600 búsquedas/mes US/en, KD 13; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Coordenadas manuales, fecha, zona y método astronómico declarado; ajustes de latitudes altas y horarios sin geolocalización obligatoria.
-- **Prueba de aceptación específica:** Reproducir ejemplodelmétodoylatitudalta tratada
+- **Prueba de aceptación específica:** New York (40.7128, −74.0060), 20-mar-2026, UTC−4, ISNA, Asr estándar → sunrise 07:00, Dhuhr 13:04; UTC−5 desplaza el horario −60 min. En 89° N durante el solsticio de junio, sunrise/sunset deben salir como no disponibles. Para el caso en que hay salida/puesta pero no se alcanza el ángulo de twilight, comparar fallback seleccionado (angle/middle/seventh) y marcar que es una estimación.
 - **Frontera con otras herramientas:** date-calculator: horariosastronómicos; no ubicación automática. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**

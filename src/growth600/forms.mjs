@@ -49,6 +49,7 @@ export function renderGrowthForm(toolId, copy) {
     'half-life-calculator': ['mode', 'solveRemaining', 'solveInitial', 'solveElapsed', 'solveHalfLife', 'initialAmount', 'remainingAmount', 'halfLife', 'elapsedTime', 'timeUnit', 'seconds', 'minutes', 'hours', 'days', 'years', 'accuracyNote'],
     'mortgage-points-calculator': ['principal', 'termMonths', 'rateWithoutPoints', 'rateWithPoints', 'pointsPercent', 'horizonMonths', 'monthsLabel', 'accuracyNote'],
     'trapezoid-calculator': ['baseA', 'baseB', 'height', 'topOffset', 'unit', 'millimeters', 'centimeters', 'meters', 'inches', 'feet', 'accuracyNote', 'diagramLabel'],
+    'prayer-times-calculator': ['date', 'latitude', 'longitude', 'utcOffset', 'method', 'asrMethod', 'highLatitudeMethod', 'ramadan', 'accuracyNote'],
     'auto-loan-refinance-calculator': ['balance', 'currentApr', 'currentMonths', 'newApr', 'newMonths', 'fees', 'feeTreatment'],
     'secret-santa-generator': ['names', 'exclusions'],
     'tire-size-calculator': ['originalSize', 'replacementSize', 'indicatedSpeed', 'speedUnit', 'fitmentNote'],
@@ -120,6 +121,7 @@ export function renderGrowthForm(toolId, copy) {
     'half-life-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'mortgage-points-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'trapezoid-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'prayer-times-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'auto-loan-refinance-calculator': ['calculate', 'reset', 'copy', 'result'],
     'secret-santa-generator': ['generate', 'reset', 'copy', 'download', 'result', 'reveal', 'next', 'privacyNote'],
     'tire-size-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kmh', 'mph'],
@@ -905,6 +907,21 @@ export function renderGrowthForm(toolId, copy) {
     ${label('trapezoid-offset', fields.topOffset, '<input id="trapezoid-offset" name="topOffset" type="number" min="-1000000000" max="1000000000" step="any" inputmode="decimal" value="1" required>')}
     ${label('trapezoid-unit', fields.unit, `<select id="trapezoid-unit" name="unit"><option value="mm">${escapeGrowthHtml(fields.millimeters)}</option><option value="cm">${escapeGrowthHtml(fields.centimeters)}</option><option value="m" selected>${escapeGrowthHtml(fields.meters)}</option><option value="in">${escapeGrowthHtml(fields.inches)}</option><option value="ft">${escapeGrowthHtml(fields.feet)}</option></select>`)}
     <figure class="trapezoid-diagram"><svg viewBox="0 0 360 210" role="img" aria-labelledby="trapezoid-diagram-title"><title id="trapezoid-diagram-title">${escapeGrowthHtml(fields.diagramLabel)}</title><polygon data-trapezoid-shape points="30,180 330,180 270,100 90,100" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/><line data-trapezoid-height-line x1="90" y1="100" x2="90" y2="180" stroke="currentColor" stroke-width="2" stroke-dasharray="5 5"/></svg><figcaption>${escapeGrowthHtml(fields.diagramLabel)}</figcaption></figure>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'prayer-times-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('prayer-date', fields.date, '<input id="prayer-date" name="date" type="date" min="1900-01-01" max="2100-12-31" value="2026-03-20" required>')}
+    ${label('prayer-latitude', fields.latitude, '<input id="prayer-latitude" name="latitude" type="number" min="-90" max="90" step="any" inputmode="decimal" value="40.7128" required>')}
+    ${label('prayer-longitude', fields.longitude, '<input id="prayer-longitude" name="longitude" type="number" min="-180" max="180" step="any" inputmode="decimal" value="-74.006" required>')}
+    ${label('prayer-utc-offset', fields.utcOffset, '<input id="prayer-utc-offset" name="utcOffsetHours" type="number" min="-12" max="14" step="0.25" inputmode="decimal" value="-4" required>')}
+    ${label('prayer-method', fields.method, `<select id="prayer-method" name="method"><option value="mwl">${escapeGrowthHtml(fields.mwl)}</option><option value="isna" selected>${escapeGrowthHtml(fields.isna)}</option><option value="egypt">${escapeGrowthHtml(fields.egypt)}</option><option value="makkah">${escapeGrowthHtml(fields.makkah)}</option><option value="karachi">${escapeGrowthHtml(fields.karachi)}</option><option value="france">${escapeGrowthHtml(fields.france)}</option><option value="russia">${escapeGrowthHtml(fields.russia)}</option><option value="singapore">${escapeGrowthHtml(fields.singapore)}</option></select>`)}
+    ${label('prayer-asr', fields.asrMethod, `<select id="prayer-asr" name="asrMethod"><option value="standard">${escapeGrowthHtml(fields.standard)}</option><option value="hanafi">${escapeGrowthHtml(fields.hanafi)}</option></select>`)}
+    ${label('prayer-high-latitude', fields.highLatitudeMethod, `<select id="prayer-high-latitude" name="highLatitudeMethod"><option value="angle" selected>${escapeGrowthHtml(fields.angleBased)}</option><option value="middle">${escapeGrowthHtml(fields.middleOfNight)}</option><option value="seventh">${escapeGrowthHtml(fields.oneSeventh)}</option><option value="none">${escapeGrowthHtml(fields.noAdjustment)}</option></select>`)}
+    <div class="field"><label for="prayer-ramadan">${escapeGrowthHtml(fields.ramadan)}</label><input id="prayer-ramadan" name="ramadan" type="checkbox"></div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>

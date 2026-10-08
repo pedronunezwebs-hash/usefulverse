@@ -444,6 +444,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/trapezoid-calculator/logic.mjs',
   },
   {
+    id: 'prayer-times-calculator',
+    category: 'time-date',
+    type: 'astronomical-prayer-times',
+    primaryIntent: 'prayer time calculator',
+    secondaryIntents: ['prayer times calculator', 'fajr time calculator', 'daily salah times by location'],
+    functions: ['calculate Fajr, sunrise, Dhuhr, Asr, sunset, Maghrib and Isha locally from a Gregorian date, manually entered coordinates and an explicit UTC offset', 'select a published angle-based method, standard or Hanafi Asr, optional Makkah Ramadan Isha interval, and an explicit higher-latitude adjustment', 'report unavailable polar sunrise/sunset honestly and apply high-latitude twilight fallback only when the selected method requires it', 'show the selected assumptions and copy the resulting local-clock schedule'],
+    acceptance: 'For New York (40.7128, -74.0060), 2026-03-20, UTC−4, ISNA and standard Asr, return an ordered same-day schedule with Dhuhr 13:04 and sunrise 07:00 (minute-rounded); UTC−5 moves each clock time back one hour without changing solar intervals. On 2026-06-21 at latitude 89°, sunrise/sunset are unavailable rather than fabricated.',
+    boundary: 'Approximate astronomical schedule using the stated method, manually entered coordinates and civil UTC offset; it is not an official local mosque timetable or religious ruling. Methods can differ by community, authority, elevation, local convention and precaution. User must verify method/offset with a trusted local authority. No auto-location, geocoding, notification, adhan audio, Ramadan calendar, or API. For twilight that does not occur, a user-selected high-latitude estimate is explicitly marked; no estimate is silently presented as observation.',
+    relatedExistingIds: ['date-calculator', 'time-zone-converter'],
+    logicModule: './tools/prayer-times-calculator/logic.mjs',
+  },
+  {
     id: 'miter-angle-calculator',
     category: 'home-materials',
     type: 'calculator',

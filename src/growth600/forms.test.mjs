@@ -252,6 +252,7 @@ const copies = {
   'half-life-calculator': { name: 'Half-life calculator', actions: { ...actions, solveRemaining: 'Remaining amount', solveInitial: 'Initial amount', solveElapsed: 'Elapsed time', solveHalfLife: 'Half-life' }, fields: { mode: 'Solve for', solveRemaining: 'Remaining amount', solveInitial: 'Initial amount', solveElapsed: 'Elapsed time', solveHalfLife: 'Half-life', initialAmount: 'Initial amount', remainingAmount: 'Remaining amount', halfLife: 'Half-life', elapsedTime: 'Elapsed time', timeUnit: 'Shared time unit', seconds: 'Seconds', minutes: 'Minutes', hours: 'Hours', days: 'Days', years: 'Years', accuracyNote: 'Use the same time unit.' } },
   'mortgage-points-calculator': { name: 'Mortgage points calculator', actions: { ...actions }, fields: { principal: 'Loan amount', termMonths: 'Loan term', rateWithoutPoints: 'Annual rate before points', rateWithPoints: 'Annual rate with points', pointsPercent: 'Points', horizonMonths: 'Comparison horizon', monthsLabel: 'months', accuracyNote: 'Estimate only.' } },
   'trapezoid-calculator': { name: 'Trapezoid calculator', actions: { ...actions }, fields: { baseA: 'Bottom base', baseB: 'Top base', height: 'Height', topOffset: 'Top base offset', unit: 'Unit', millimeters: 'Millimeters', centimeters: 'Centimeters', meters: 'Meters', inches: 'Inches', feet: 'Feet', accuracyNote: 'All dimensions must use one unit.', diagramLabel: 'Trapezoid geometry' } },
+  'prayer-times-calculator': { name: 'Prayer times calculator', actions: { ...actions }, fields: { date: 'Date', latitude: 'Latitude', longitude: 'Longitude', utcOffset: 'UTC offset', method: 'Method', mwl: 'MWL', isna: 'ISNA', egypt: 'Egypt', makkah: 'Makkah', karachi: 'Karachi', france: 'France', russia: 'Russia', singapore: 'Singapore', asrMethod: 'Asr', standard: 'Standard', hanafi: 'Hanafi', highLatitudeMethod: 'High latitude', angleBased: 'Angle based', middleOfNight: 'Middle of night', oneSeventh: 'One-seventh', noAdjustment: 'None', ramadan: 'Ramadan', accuracyNote: 'Estimate only.' } },
 };
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
@@ -470,6 +471,14 @@ test('trapezoid form labels bases, height, offset, units and its accessible sket
   assert.match(html, /data-trapezoid-shape/u);
   assert.match(html, /aria-labelledby="trapezoid-diagram-title"/u);
   assert.match(html, /data-action="calculate"/u);
+});
+
+test('prayer times form requires explicit civil time inputs and exposes convention/fallback choices', () => {
+  const html = renderGrowthForm('prayer-times-calculator', copies['prayer-times-calculator']);
+  for (const name of ['date', 'latitude', 'longitude', 'utcOffsetHours', 'method', 'asrMethod', 'highLatitudeMethod', 'ramadan']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  assert.match(html, /value="isna" selected/u);
+  assert.match(html, /value="angle" selected/u);
+  assert.match(html, /role="status" aria-live="polite"/u);
 });
 
 test('dominoes form exposes localized play modes, draw/block choices, board, stock and hand', () => {

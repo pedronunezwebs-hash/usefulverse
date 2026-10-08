@@ -120,6 +120,8 @@ import mortgagePointsCalculatorCopies from './mortgage-points-calculator-final.m
 import { mortgagePointsCalculatorEnglishCopy } from './mortgage-points-calculator.en.mjs';
 import trapezoidCalculatorCopies from './trapezoid-calculator-final.mjs';
 import { trapezoidCalculatorEnglishCopy } from './trapezoid-calculator.en.mjs';
+import prayerTimesCalculatorCopies from './prayer-times-calculator-final.mjs';
+import { prayerTimesCalculatorEnglishCopy } from './prayer-times-calculator.en.mjs';
 
 const poolSaltCopies = Object.freeze({
   ...poolSaltTranslations,
@@ -527,5 +529,6 @@ registerGrowthLocaleExtension(source, 'polynomial-long-division-calculator', { .
 registerGrowthLocaleExtension(source, 'half-life-calculator', { ...halfLifeCalculatorCopies, en: halfLifeCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'mortgage-points-calculator', { ...mortgagePointsCalculatorCopies, en: mortgagePointsCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'trapezoid-calculator', { ...trapezoidCalculatorCopies, en: trapezoidCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'prayer-times-calculator', { ...prayerTimesCalculatorCopies, en: prayerTimesCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

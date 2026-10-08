@@ -35,6 +35,18 @@
 - [ ] B/P — el bundle minificado final y su presupuesto quedan sin validar porque este checkout no tiene la dependencia de build fijada. No se integró/desplegó, no se cambió sitemap ni se informó a buscadores. PageSpeed/Lighthouse no se ejecutó.
 - **Recuento al cerrar #165:** 68/323 candidatas implementadas en inglés; quedan 255 filas (254 candidatas válidas + una reserva). Incluidas las 277 protegidas, son 345 implementaciones inglesas/base; no son páginas traducidas ni publicadas.
 
+## Continuación · Prayer Times Calculator (#166) · 2026-10-08
+
+- [x] C/F — herramienta local de horarios astronómicos para oración, separada del cálculo civil de fechas y conversión de zonas horarias. La demanda registrada en el plan es `prayer time calculator` 3.600 búsquedas/mes US/en, KD 13; no se volvió a consultar DataForSEO.
+- [x] E — fecha gregoriana 1900–2100, coordenadas manuales, offset UTC explícito (incluida hora de verano), ocho métodos de ángulo/intervalo, Asr estándar/Hanafi y alternativas de latitud alta. Modelo solar aproximado con ecuación del tiempo y declinación; muestra “Unavailable” cuando no existe salida/puesta y solo estima Fajr/Isha ausentes bajo la corrección elegida. Sin geolocalización, llamadas externas, carga ni almacenamiento.
+- [x] Aceptación reproducible del motor: New York, 2026-03-20, 40.7128/−74.006, UTC−4, ISNA → salida 07:00, Dhuhr 13:04, horarios ordenados; offset UTC−5 desplaza el reloj una hora conservando intervalos; Makkah Isha 90 minutos o 120 al marcar Ramadan; en 89° N no inventa amanecer ni ocaso.
+- [x] B — formulario con fecha/offset explícitos, selectores nombrados, ejemplo, cálculo, reset, copia, anuncios accesibles y aviso de que es un horario aproximado, no una autoridad religiosa/local. Las estimaciones de latitud alta se explicitan.
+- [x] E — pruebas focales de motor, catálogo, formulario, contrato de los 36 locales y build: **135/135 aprobadas**; aceptación, UTC/DST, métodos, Asr Hanafi, Ramadan, casos polares y entradas inválidas cubiertos.
+- [ ] X/B/P — no se completó una pasada visual en Chrome ni se midió el bundle minificado real; el checkout carece de las dependencias de build fijadas y no se instalaron. No se ejecutó PageSpeed/Lighthouse.
+- [ ] L — inglés completo; las otras 35 localizaciones son copias estructurales inglesas con `pending-tool-specific-translation` y continúan bloqueadas. No se ha integrado, desplegado, añadido al sitemap de producción ni enviado a buscadores.
+- **Método consultado:** [Pray Times: algoritmos y ajustes de latitud](https://praytime.info/docs/calculation), [parámetros de métodos](https://praytime.info/docs/methods), [U.S. Naval Observatory: ecuación del tiempo](https://aa.usno.navy.mil/faq/eqtime). Las convenciones pueden diferir; la interfaz recomienda verificar con una autoridad local.
+- **Recuento al cerrar #166:** 69/323 candidatas implementadas en inglés; quedan 254 filas (253 candidatas válidas + una reserva). Con las 277 herramientas originales intactas: 346 implementaciones inglesas/base, no 346 herramientas traducidas ni publicadas.
+
 ## Continuación · Polynomial Long Division Calculator (#162) · 2026-10-08
 
 - [x] C/F — candidata distinta de la división entera existente: divide polinomios de una variable, devuelve cociente, resto y operaciones de cada paso. El plan registra `polynomial long division calculator` con 3.600 búsquedas mensuales US/en, KD 0; no se consultó DataForSEO de nuevo.
