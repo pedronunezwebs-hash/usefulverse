@@ -4798,13 +4798,13 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 199 · Peg Solitaire
 
-- [ ] **C/F/E/X/L/B/P/S completos — `peg-solitaire`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/peg-solitaire/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `peg-solitaire`**
+- **Destino:** `https://tools.usefulverse.com/tools/peg-solitaire/` y otras 35 versiones con los prefijos del anexo. Publicado y sitemap público verificado.
 - **Demanda:** `peg solitaire` — 2.400 búsquedas/mes US/en, KD 4; nivel B. CPC 0.35 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Tablero inglés clásico de 33 huecos; saltos legales, pista de una jugada legal, deshacer y reinicio; anuncia victoria o bloqueo. La pista no promete una solución completa.
 - **Prueba de aceptación específica:** Salto consume la pieza intermedia y ocupa destino vacío; conteo disminuye exactamente una pieza por jugada.
 - **Frontera con otras herramientas:** solitaire: tablero de clavijasnocartas. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** Motor y control en el navegador, sin cuenta, API, almacenamiento ni descarga adicional. 36 copias estáticas; el árabe usa RTL y el tablero mantiene coordenadas de izquierda a derecha. Revisado en móvil y con movimiento/undo/hint/reinicio; no se midió PageSpeed.
+- **Estado (2026-10-09):** motor/controlador y 36 localizaciones estáticas. Suite focalizada 175/175; `npm test` 1.335/1.335 antes del último ajuste visual de pista, suite focalizada 175/175 repetida después; `npm run check` conserva las 10.260 URLs principales; `locale:release-check` pasa. Build aislado 3.420 URLs únicas; Chrome EN/ES/AR a 390 px, movimientos, deshacer, pista, reinicio, RTL y consola sin errores. PR #53 fusionada (`64ee36f`); CI 37828766687 y deploy principal 37829289936 correctos; publicación del hub 37829832286 correcta. URLs EN/ES/AR y sitemap público HTTP 200; **3.420 URLs únicas**, con las 36 variantes de Peg Solitaire. Publicado no equivale a indexado. No PageSpeed/Lighthouse.
 - **Consultas secundarias del mismo propietario:**
   - `peg solitaire online` — 260/mes US/en; KD 0.
   - `peg solitaire free online`; `peg solitaire with example`; `peg solitaire no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
