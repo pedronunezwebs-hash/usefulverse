@@ -732,6 +732,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/schema-markup-validator/logic.mjs',
   },
   {
+    id: 'readability-checker',
+    category: 'writing-tools',
+    type: 'text-analyzer',
+    primaryIntent: 'readability checker',
+    secondaryIntents: ['Flesch Reading Ease calculator', 'readability score', 'text readability analyzer'],
+    functions: ['count words, sentences, letters, characters, long words and estimated syllables locally', 'calculate a named language-appropriate index for English, Spanish, French, German or Italian', 'show intermediate averages and explain that syllable counts are estimates', 'decline to apply a readability formula for unsupported source languages instead of silently using English coefficients'],
+    acceptance: 'The same sample selects the correct distinct formula for each supported language; formula arithmetic matches its documented coefficients; unsupported source languages never receive a misleading score; empty text and short samples are labeled honestly.',
+    boundary: 'A structural estimate, not a comprehension test, writing-quality judgment or accessibility certification. Syllable segmentation is heuristic and short passages are especially noisy. Formula support is limited to the five listed languages; other language page translations do not imply formula support.',
+    relatedExistingIds: ['word-counter'],
+    logicModule: './tools/readability-checker/logic.mjs',
+  },
+  {
     id: 'weight-loss-calculator',
     category: 'health-math',
     type: 'calculator',

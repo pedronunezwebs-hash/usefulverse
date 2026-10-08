@@ -4178,6 +4178,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 ### 172 · Readability Checker
 
 - [ ] **C/F/E/X/L/B/P/S completos — `readability-checker`**
+- [x] E/B — implementación base inglesa con índices separados para cinco idiomas, métricas de texto, límites y aviso de muestra; ver evidencias y tareas aún abiertas en `docs/growth600/PROGRESS.md` (2026-10-08). No se considera localizada, integralmente probada ni publicada.
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/readability-checker/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `readability checker` — 3.600 búsquedas/mes US/en, KD 34; nivel B. CPC 5.86 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Fórmulas de legibilidad apropiadas para cada idioma soportado, números intermedios y explicación. Donde no exista fórmula fiable, no aplicar Flesch inglés silenciosamente.

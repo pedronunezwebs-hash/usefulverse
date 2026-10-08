@@ -23,6 +23,7 @@ export function renderGrowthForm(toolId, copy) {
     'image-sharpener': ['imageFile', 'amount', 'radius', 'threshold', 'compare', 'accuracyNote', 'previewHint', 'format', 'relatedRedactor', 'relatedCropper'],
     'photo-to-sketch': ['imageFile', 'intensity', 'detail', 'compare', 'accuracyNote', 'previewHint'],
     'schema-markup-validator': ['markup', 'accuracyNote', 'resultSummary', 'issues', 'googleNote'],
+    'readability-checker': ['text', 'language', 'languageEn', 'languageEs', 'languageFr', 'languageDe', 'languageIt', 'accuracyNote', 'resultSummary', 'formula', 'wordCount', 'sentenceCount', 'characterCount', 'characterCountNoSpaces', 'letterCount', 'syllableEstimate', 'averageSentenceLength', 'averageWordLength', 'averageSyllablesPerWord', 'longWordCount'],
     'image-upscaler': ['imageFile', 'accuracyNote', 'progressHint', 'sourcePreview', 'resultPreview'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
@@ -100,6 +101,7 @@ export function renderGrowthForm(toolId, copy) {
     'image-sharpener': ['load', 'export', 'download', 'original', 'sharpened', 'png', 'jpeg'],
     'photo-to-sketch': ['load', 'export', 'cancel', 'download', 'original'],
     'schema-markup-validator': ['validate', 'example', 'copySummary'],
+    'readability-checker': ['calculate', 'example', 'copy', 'reset'],
     'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
@@ -254,6 +256,31 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions"><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(actions.example)}</button><button type="submit" data-action="validate" class="button button--primary">${escapeGrowthHtml(actions.validate)}</button><button type="reset" data-action="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-validation-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.resultSummary)}</h2><p data-validation-summary></p><p class="hint">${escapeGrowthHtml(fields.googleNote)}</p><h3>${escapeGrowthHtml(fields.issues)}</h3><ul data-validation-issues></ul><button type="button" class="button button--secondary" data-action="copy-summary">${escapeGrowthHtml(actions.copySummary)}</button></section>
+  </form>`, copy);
+
+  if (toolId === 'readability-checker') return attachCopy(`<form id="tool-form" class="readability-checker" novalidate>
+    ${label('readability-language', fields.language, `<select id="readability-language" name="language"><option value="en">${escapeGrowthHtml(fields.languageEn)}</option><option value="es">${escapeGrowthHtml(fields.languageEs)}</option><option value="fr">${escapeGrowthHtml(fields.languageFr)}</option><option value="de">${escapeGrowthHtml(fields.languageDe)}</option><option value="it">${escapeGrowthHtml(fields.languageIt)}</option></select>`)}
+    ${label('readability-text', fields.text, '<textarea id="readability-text" name="text" rows="12" maxlength="100000" spellcheck="true" required></textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('calculate', labels.calculate)}${button('example', labels.example, 'secondary')}${button('copy', labels.copy, 'secondary')}${reset}</div>
+    <section class="result" data-readability-result hidden aria-labelledby="readability-result-title">
+      <h2 id="readability-result-title">${escapeGrowthHtml(fields.resultSummary)}</h2>
+      <p data-readability-score></p>
+      <dl class="readability-metrics">
+        <div><dt>${escapeGrowthHtml(fields.wordCount)}</dt><dd data-readability-words></dd></div>
+        <div><dt>${escapeGrowthHtml(fields.sentenceCount)}</dt><dd data-readability-sentences></dd></div>
+        <div><dt>${escapeGrowthHtml(fields.characterCount)}</dt><dd data-readability-characters></dd></div>
+        <div><dt>${escapeGrowthHtml(fields.characterCountNoSpaces)}</dt><dd data-readability-characters-no-spaces></dd></div>
+        <div><dt>${escapeGrowthHtml(fields.letterCount)}</dt><dd data-readability-letters></dd></div>
+        <div><dt>${escapeGrowthHtml(fields.syllableEstimate)}</dt><dd data-readability-syllables></dd></div>
+        <div><dt>${escapeGrowthHtml(fields.averageSentenceLength)}</dt><dd data-readability-average-sentence></dd></div>
+        <div><dt>${escapeGrowthHtml(fields.averageWordLength)}</dt><dd data-readability-average-word></dd></div>
+        <div><dt>${escapeGrowthHtml(fields.averageSyllablesPerWord)}</dt><dd data-readability-average-syllables></dd></div>
+        <div><dt>${escapeGrowthHtml(fields.longWordCount)}</dt><dd data-readability-long-words></dd></div>
+      </dl>
+      <p class="hint" data-readability-formula></p>
+    </section>
+    <p class="status" role="status" aria-live="polite" data-status></p>
   </form>`, copy);
 
   if (toolId === 'image-upscaler') return attachCopy(`<form id="tool-form" data-worker-src="__WORKER_IMAGE_UPSCALER_WORKER__" novalidate>

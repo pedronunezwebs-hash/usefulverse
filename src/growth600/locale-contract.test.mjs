@@ -40,7 +40,7 @@ import persianGrowthCopy from './locales/fa.mjs';
 import amharicGrowthCopy from './locales/am.mjs';
 import gujaratiGrowthCopy from './locales/gu.mjs';
 
-const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator'].includes(id));
+const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker'].includes(id));
 const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
   key,
   (await import(`./locales/${key}.mjs`)).default,
@@ -137,6 +137,21 @@ test('schema markup validator has complete English copy and blocks untranslated 
   assert.match(english.fields.accuracyNote, /remote @context/iu);
   assert.match(english.fields.googleNote, /Rich Results Test/u);
   assert.equal(english.additionalFaqs.length, 2);
+  for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.localizationStatus, 'pending-tool-specific-translation', key);
+    assert.throws(() => assertGrowthLocaleCoverage([tool], [{ key }], { [key]: { _home: localizedCopies[key]._home, [tool.id]: copy } }), /localization is not approved for release/u);
+  }
+});
+
+test('readability checker has English source copy and blocks unlocalized pages for the other 35 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'readability-checker');
+  assert.ok(tool);
+  const english = englishGrowthCopy[tool.id];
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: { _home: englishGrowthCopy._home, [tool.id]: english } }), true);
+  assert.ok(english.title.length <= 60 && english.description.length <= 160);
+  assert.equal(english.additionalFaqs.length, 2);
+  assert.match(english.fields.accuracyNote, /syllable counts use language-specific heuristics/iu);
   for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
     const copy = localizedCopies[key][tool.id];
     assert.equal(copy.localizationStatus, 'pending-tool-specific-translation', key);

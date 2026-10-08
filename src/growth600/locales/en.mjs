@@ -28,6 +28,8 @@ import photoToSketchCopies from './photo-to-sketch-final.mjs';
 import { photoToSketchEnglishCopy } from './photo-to-sketch.en.mjs';
 import schemaMarkupValidatorCopies from './schema-markup-validator-final.mjs';
 import { schemaMarkupValidatorEnglishCopy } from './schema-markup-validator.en.mjs';
+import readabilityCheckerCopies from './readability-checker-final.mjs';
+import { readabilityCheckerEnglishCopy } from './readability-checker.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
 import imageColorPickerCopies from './image-color-picker-final.mjs';
@@ -545,5 +547,6 @@ registerGrowthLocaleExtension(source, 'nurikabe', { ...nurikabeCopies, en: nurik
 registerGrowthLocaleExtension(source, 'color-name-finder', { ...colorNameFinderCopies, en: colorNameFinderEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'photo-to-sketch', { ...photoToSketchCopies, en: photoToSketchEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'schema-markup-validator', { ...schemaMarkupValidatorCopies, en: schemaMarkupValidatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'readability-checker', { ...readabilityCheckerCopies, en: readabilityCheckerEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);
