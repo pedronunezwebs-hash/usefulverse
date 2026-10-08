@@ -1503,8 +1503,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 281 · Decibel Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `decibel-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/decibel-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `decibel-calculator`**
+- **Publicado:** `https://tools.usefulverse.com/tools/decibel-calculator/` y 35 versiones localizadas; las 36 responden HTTP 200 y se incluyen en el sitemap público del hub.
 - **Demanda:** `decibel calculator` — 720 búsquedas/mes US/en, KD 19; nivel C. CPC 1.25 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Ganancia de amplitud/potencia, suma de niveles incoherentes y atenuación
 - **Prueba de aceptación específica:** Potencia diez veces da10dB
@@ -4840,8 +4840,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 280 · Chess Opening Trainer
 
-- [ ] **C/F/E/X/L/B/P/S completos — `chess-opening-trainer`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/chess-opening-trainer/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `chess-opening-trainer`**
+- **Publicado:** `https://tools.usefulverse.com/tools/chess-opening-trainer/` y 35 versiones localizadas; las 36 forman parte del sitemap público del hub.
 - **Demanda:** `chess openings practice` — 720 búsquedas/mes US/en, KD 17; nivel C. CPC 0.99 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Árbol de aperturas original/licenciado, repaso de variantes, respuestas y progreso local; no otra partida libre de ajedrez.
 - **Prueba de aceptación específica:** Cada variante son movimientos legales desde posición inicial; la desviación explica el movimiento esperado.
