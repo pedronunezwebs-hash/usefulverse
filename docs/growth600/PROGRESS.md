@@ -2,17 +2,28 @@
 
 Última verificación: 2026-10-09. Registro persistente de esta rama; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## En implementación · Slitherlink (#186)
+## Publicada · Slitherlink (#186; 93.ª herramienta Growth600) · 2026-10-09
 
 - [x] C/F — Reutilizada la ficha y demanda existente: `slitherlink` 2.900 búsquedas/mes US/en, KD 18; `slitherlink puzzle online` 10/mes. Sin DataForSEO nuevo.
 - [x] Lógica + interfaz inicial — Motor propio para tableros 4×4 a 6×6: genera bucles a partir de poliominós, comprueba grado 2 y conectividad, cuenta pistas, ejecuta solver acotado y solo acepta puzzles con solución única; deja como máximo 20% de casillas sin pista. Formulario/controlador con cambiar tamaño, marcar líneas, comprobar, pista, deshacer y limpiar; controles etiquetados, pistas leídas como números y flechas para moverse. En el dispositivo, sin API/cuenta.
 - [x] L — Copias estáticas en 36 idiomas mediante Google Translate; nombre del juego conservado en las metadescripciones/títulos donde la traducción automática lo deformó, títulos y descripciones dentro de límites. Botones ES/AR corregidos manualmente; traducción aceptada como borrador automático, no revisión nativa ni llamada al visitar.
 - [x] E — Lógica, catálogo, formulario y contrato de localización: 171/171 pruebas focalizadas; suite general `npm test`: 1.328/1.328; `locale:release-check` pasa. 300 tableros deterministas (100 por tamaño 4/5/6) generados y verificados; únicos por solver acotado. Controlador minificado: 9.873 B (<24 KiB).
 - [x] X/B — Chrome EN/ES/AR comprobado sobre el build final: 60 aristas en tablero 5×5; marcar línea, pista, deshacer, limpiar y feedback de comprobación; árabe RTL con botones localizados; consola sin errores. `npm run check` mantiene el sitio principal en 10.260 URLs.
-- [x] Build/sitemap aislado: 3.384 locs únicas (93 herramientas × 36 locales + 36 portadas), 3.528 archivos, 102.888.467 bytes. No es sitemap público.
-- [ ] P/S — Pendiente PR/CI/merge, despliegue y verificación del sitemap público. No contar las 36 URLs como publicadas todavía.
+- [x] Build/sitemap aislado: 3.384 locs únicas (93 herramientas × 36 locales + 36 portadas), 3.528 archivos, 102.888.467 bytes.
+- [x] P/S — PR #52 fusionada en `eb166a30c889e94349a8bd55480d5ae1dec2c457`; CI 37824491231 y publicación principal 37824909881 correctos. Publicación separada del hub: workflow 37824928039 correcto. URLs EN/ES/AR y sitemap del hub comprobados públicamente: HTTP 200; título/H1/idioma correctos, árabe `dir=rtl`; sitemap contiene **3.384 URLs únicas** y las 36 variantes de Slitherlink.
 - **Decisión UX** — El usuario puede tocar/clicar líneas; hay pistas, comprobar, deshacer y limpiar. Estado accesible con botones etiquetados por orientación/coordenadas, tablero bidimensional navegable por flechas y pistas como etiquetas leídas por tecnologías de asistencia. La generación valida soluciones en el navegador; mensaje honesto sobre posible espera en dispositivos lentos.
-- **Último checkpoint:** gates locales y build final pasan; siguiente: preparar PR, esperar CI, fusionar/desplegar y comprobar rutas + sitemap público antes de marcar #186 completo.
+- [x] README actualizado a 93 herramientas Growth600 y 3.384 URLs públicas. **93/323 candidatas principales publicadas; 230 pendientes.** El sitemap principal permanece separado en 10.260 URLs. Publicación verificada; no equivale a indexación. No PageSpeed/Lighthouse.
+- **Siguiente:** #199 Peg Solitaire; no repetir la investigación DataForSEO existente.
+
+## Checkpoint · Peg Solitaire (#199)
+
+- [x] F0/F1 — instrucciones releídas; rama aislada `codex/growth600-peg-solitaire-2026-10-09`, remoto `usefulverse.git`, sin cambios de terceros identificados.
+- [x] C/F — reutilizada la ficha del plan: `peg solitaire` 2.400 búsquedas/mes US/en, KD 4; CPC, no CPM. Sin consultas nuevas a DataForSEO.
+- [x] E/B — tablero inglés clásico 7×7/33 huecos, 32 clavijas y centro vacío; saltos ortogonales legales, victoria con una clavija, bloqueo sin jugadas, pista de una jugada legal (no promete resolver), deshacer hasta 100 jugadas y reinicio. No añade variantes redundantes, almacenamiento, cuenta, API, servicio ni dependencia runtime.
+- [x] L — 36 copias estáticas generadas desde inglés por lotes, con aceptación explícita como traducción automática. ES/AR ajustados para corregir falsos sentidos detectados en tablero/estados/FAQ; límites de título/descripción y `hreflang` comprobados por los gates del hub.
+- [x] X/B — 175 pruebas focalizadas pasan; `npm test` 1.335/1.335; `npm run check` conserva el sitio principal en 10.260 URLs; `locale:release-check` pasa. Chrome real a 390 px verificó tablero y recuento, movimiento 32→31, undo 31→32, pista y reinicio; ES/AR con `lang`/dirección correctos; sin errores de consola. Página solo solicita CSS global y JS propio (4.0 KB); no carga modelos ni recursos remotos.
+- [x] Build/sitemap aislado — 3.420 `<loc>` únicas (94 herramientas × 36 idiomas + 36 portadas), 3.565 archivos, 103.738.804 bytes.
+- [ ] P/S — preparar y revisar PR; esperar CI; fusionar por el flujo autorizado, desplegar separadamente el hub y verificar en producción las rutas/sitemap públicos antes de marcar publicación.
 
 ## Publicada · Work Order Generator (#185; 92.ª herramienta Growth600) · 2026-10-09
 

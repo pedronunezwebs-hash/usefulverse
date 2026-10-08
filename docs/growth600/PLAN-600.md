@@ -4783,14 +4783,14 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 186 · Slitherlink
 
-- [ ] **C/F/E/X/L/B/P/S completos — `slitherlink`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/slitherlink/`; otras 35 versiones con los prefijos del anexo. P/S pendiente; no contar como publicado hasta verificar el despliegue y sitemap.
+- [x] **C/F/E/X/L/B/P/S completos — `slitherlink`**
+- **Destino:** `https://tools.usefulverse.com/tools/slitherlink/` y otras 35 versiones con los prefijos del anexo. Publicado y sitemap público verificado.
 - **Demanda:** `slitherlink` — 2.900 búsquedas/mes US/en, KD 18; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Bucle único, contadores, marcas, undo, checker y generación de puzzles comprobados.
 - **Prueba de aceptación específica:** Cada nodo del bucle tiene grado 2; no existen bucles separados ni una bifurcación.
 - **Frontera con otras herramientas:** nonogram: líneasno cuadradospintados. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** Generador local de 4×4 a 6×6, con solver acotado que comprueba unicidad antes de aceptar cada tablero. Comprueba un único bucle continuo y pistas; sin backend, API o dependencias remotas. La generación usa CPU del dispositivo y puede tardar más en hardware lento; el navegador informa de ese límite.
-- **Estado de esta rama (2026-10-09):** lógica, formulario, copy en 36 idiomas y QA local completados. Suite focalizada 171/171; `npm test` 1.328/1.328; `npm run check` conserva las 10.260 URLs principales; `locale:release-check` pasa. Controlador minificado 9.873 B. Chrome EN/ES/AR comprobado, árabe RTL; consola limpia. Build/sitemap aislado con 3.384 URLs únicas. **Aún no publicado**; falta PR/CI/merge/deploy y sitemap público.
+- **Estado (2026-10-09):** lógica, formulario, copy en 36 idiomas y QA local completados. Suite focalizada 171/171; `npm test` 1.328/1.328; `npm run check` conserva las 10.260 URLs principales; `locale:release-check` pasa. Controlador minificado 9.873 B. Chrome EN/ES/AR comprobado, árabe RTL; consola limpia. Build/sitemap aislado con 3.384 URLs únicas. PR #52 fusionada (`eb166a30c889e94349a8bd55480d5ae1dec2c457`), CI 37824491231, deploy principal 37824909881 y deploy del hub 37824928039 correctos. Rutas EN/ES/AR y sitemap público HTTP 200; 3.384 `<loc>` únicas, incluidas las 36 variantes. Publicación no equivale a indexación; sin PageSpeed/Lighthouse.
 - **Consultas secundarias del mismo propietario:**
   - `slitherlink puzzle online` — 10/mes US/en; KD —.
   - `slitherlink free online`; `slitherlink with example`; `slitherlink no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -4801,10 +4801,10 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [ ] **C/F/E/X/L/B/P/S completos — `peg-solitaire`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/peg-solitaire/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `peg solitaire` — 2.400 búsquedas/mes US/en, KD 4; nivel B. CPC 0.35 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Tableros de clavijas, saltos legales, undo, hints y condición final anunciada.
+- **Función mínima y ampliaciones útiles:** Tablero inglés clásico de 33 huecos; saltos legales, pista de una jugada legal, deshacer y reinicio; anuncia victoria o bloqueo. La pista no promete una solución completa.
 - **Prueba de aceptación específica:** Salto consume la pieza intermedia y ocupa destino vacío; conteo disminuye exactamente una pieza por jugada.
 - **Frontera con otras herramientas:** solitaire: tablero de clavijasnocartas. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Motor y control en el navegador, sin cuenta, API, almacenamiento ni descarga adicional. 36 copias estáticas; el árabe usa RTL y el tablero mantiene coordenadas de izquierda a derecha. Revisado en móvil y con movimiento/undo/hint/reinicio; no se midió PageSpeed.
 - **Consultas secundarias del mismo propietario:**
   - `peg solitaire online` — 260/mes US/en; KD 0.
   - `peg solitaire free online`; `peg solitaire with example`; `peg solitaire no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

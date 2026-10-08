@@ -624,6 +624,30 @@ test('Slitherlink puzzle has static machine-accepted copy and preserved brand ti
   assert.equal(localizedCopies.ar.slitherlink.actions.checkBoard, 'تحقق من الحل');
 });
 
+test('Peg solitaire has complete static copy, localized controls and safe metadata in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'peg-solitaire');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const [locale, catalog] of Object.entries(localizedCopies)) {
+    const copy = catalog['peg-solitaire'];
+    assert.equal(copy.copyLanguage, locale);
+    assert.match(copy.title, /\| UsefulVerse$/u);
+    assert.ok(copy.title.length <= 60, `${locale}: title limit`);
+    assert.ok(copy.description.length <= 160, `${locale}: description limit`);
+    assert.equal(copy.additionalFaqs.length, 3, `${locale}: FAQ count`);
+    for (const key of ['board', 'rules', 'accuracyNote', 'hole', 'row', 'column', 'peg', 'empty']) assert.ok(copy.fields[key]?.trim(), `${locale}: missing ${key}`);
+    for (const key of ['newGame', 'hint', 'undo', 'rules', 'pegsRemaining']) assert.ok(copy.actions[key]?.trim(), `${locale}: missing action ${key}`);
+  }
+  assert.equal(localizedCopies.es['peg-solitaire'].title, 'Solitario de clavijas gratis | UsefulVerse');
+  assert.equal(localizedCopies.es['peg-solitaire'].actions.newGame, 'Nueva partida');
+  assert.match(localizedCopies.es['peg-solitaire'].howAnswer, /una sola clavija/u);
+  assert.doesNotMatch(JSON.stringify(localizedCopies.es['peg-solitaire'].additionalFaqs), /solitario peg/u);
+  assert.notEqual(localizedCopies.ar['peg-solitaire'].fields.board, 'English peg solitaire board');
+  assert.equal(localizedCopies.ar['peg-solitaire'].fields.peg, 'وتد');
+  assert.match(localizedCopies.ar['peg-solitaire'].messages.won, /وتد واحد/u);
+  assert.doesNotMatch(JSON.stringify(localizedCopies.ar['peg-solitaire']), /ربط/u);
+});
+
 test('Round Robin has machine-accepted complete copy in all 36 locales and stays within SEO metadata budgets', () => {
   for (const [locale, copy] of Object.entries(localizedCopies)) {
     const league = copy['round-robin-tournament-generator'];

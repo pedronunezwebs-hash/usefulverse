@@ -708,6 +708,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/slitherlink/logic.mjs',
   },
   {
+    id: 'peg-solitaire',
+    category: 'games',
+    type: 'game',
+    primaryIntent: 'peg solitaire',
+    secondaryIntents: ['peg solitaire online', 'English peg solitaire game', 'play peg jumping game'],
+    functions: ['classic 33-hole English cross board with its center hole empty', 'select a peg and an empty destination to make a legal horizontal or vertical jump', 'remove the jumped peg and count the remaining pegs', 'undo the previous jump, request a highlighted legal-move hint and restart', 'announce a win at one remaining peg or a loss when no legal jumps remain'],
+    acceptance: 'Each valid move jumps exactly two cells in a straight row or column over one occupied hole into an empty hole; the source and middle are emptied, destination is filled, and peg count decreases by one. Invalid moves do not change state.',
+    boundary: 'Classic single-player English peg solitaire only; other national boards and rules vary. No solver guarantee, multiplayer, account, network request, saved history or uploaded moves.',
+    relatedExistingIds: [],
+    logicModule: './tools/peg-solitaire/logic.mjs',
+  },
+  {
     id: 'color-name-finder',
     category: 'design-tools',
     type: 'utility',
