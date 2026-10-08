@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 99);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 99);
+  assert.equal(growthPilotTools.length, 100);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 100);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -41,6 +41,15 @@ test('OpenAPI editor stays a local contract editor and does not duplicate reques
   assert.match(editor.boundary, /never fetched/u);
   assert.match(editor.functions.join(' '), /without making API requests/u);
   assert.deepEqual(editor.relatedExistingIds, ['api-request-builder', 'json-yaml-converter', 'schema-markup-validator']);
+});
+
+test('font pairing compares type hierarchy without duplicating single-file font testing', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'font-pairing-tool');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'font pair generator');
+  assert.match(tool.boundary, /not a font-file tester/u);
+  assert.match(tool.acceptance, /initial page makes no font requests/u);
+  assert.deepEqual(tool.relatedExistingIds, ['font-tester', 'color-palette-generator']);
 });
 
 test('the additive catalog rejects protected-ID collisions, duplicate IDs and incomplete contracts', () => {

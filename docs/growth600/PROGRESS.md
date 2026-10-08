@@ -2,6 +2,26 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
+## En curso · Font Pairing Tool (#283; implementación completa, publicación pendiente) · 2026-10-09
+
+- [x] C/F — Reutilizada la ficha: `font pair generator` 720 búsquedas/mes US/en, KD 37; `font pairing tool` 90/mes, KD 24. CPC 4.74 USD (no CPM). Sin gasto/llamadas nuevas a DataForSEO.
+- [x] E/B — Presets de tipografía, vista previa de jerarquía heading/body, tamaños/pesos/leading, intercambio y CSS exportable. Stacks del sistema; opción de elegir archivos locales hasta 8, 5 MiB por archivo/15 MiB total. Sin catálogo remoto, fuentes externas, upload al servidor, API o worker. Licencias de archivos fuera del alcance.
+- [x] L — Copia estática traducida desde inglés mediante el flujo Google Translate ya autorizado, 36 locales; títulos/descripciones bajo 60/160 caracteres y sin cortes dentro de palabras. Traducción automática, no revisión nativa.
+- [x] E/X — Lógica/catálogo/formulario 57/57; build/locale/bundler focal 128/128; suite global 1.382/1.382; `locale:release-check` pasa; guard de bundle y `git diff --check` limpios. El sitio principal mantiene 10.260 URLs. Build aislado del hub: 3.636 URLs (100 × 36 + 36 portadas).
+- [x] B — Chrome EN y AR RTL: seis presets, swap y reset; sin overflow, errores visibles ni peticiones remotas. En la carga inicial solo se pidieron HTML/CSS/JS/favicon locales. El control de archivos no permitió subir una fuente real por la restricción de acceso a archivos del navegador; sus límites/formato sí pasan unit tests. No PageSpeed/Lighthouse.
+- [ ] P/S — Falta crear PR, esperar CI, merge, confirmar deploy principal/hub, URL pública y sitemap; no está publicado todavía ni enviado manualmente a Search Console.
+- **Estado:** 100/323 candidatas implementadas en el código local; 223 pendientes. Las 277 herramientas originales no se modificaron. Siguiente candidata al publicar esta: #284 Roth vs Traditional Calculator.
+
+## Publicada · OpenAPI Editor (#282; 99.ª herramienta Growth600) · 2026-10-09
+
+- [x] C/F — Reutilizada la evidencia de la ficha: `swagger editor online` 720 búsquedas/mes US/en, KD 32; `openapi editor` 390/mes, KD 41. CPC 8,70 USD (no CPM); sin llamadas nuevas a DataForSEO.
+- [x] E/B — Editor local OpenAPI 3.0/3.1 JSON/YAML con formato, importación local hasta 300 KB, preview de operaciones, lint estructural acotado, referencias JSON Pointer locales y rechazo de `$ref` remoto. No ejecuta endpoints, no baja referencias externas y no promete conformidad completa del estándar.
+- [x] L — 36 páginas estáticas con metadatos, FAQ, canonical y `hreflang`. Copia traducida desde inglés con Google Translate como borrador comprensible autorizado para publicar; no se presenta como revisión nativa. Títulos conservan `UsefulVerse` una sola vez y el contrato limita título/description.
+- [x] E/X — 8 tests específicos; suite focal 63/63; `npm test` 1.377/1.377; `npm run check` conserva 10.260 URLs principales; `locale:release-check` pasa. Build aislado: 3.600 URLs (99 × 36 + 36 portadas).
+- [x] B — Parser `js-yaml` 4.3.2 MIT (43.8 KB minificado) como archivo estático del mismo origen, se carga solo al usar YAML; licencia incluida. JSON no lo descarga. Chrome local: YAML de ejemplo aprobado, JSON parseado, `$ref` remoto rechazado, texto de contrato renderizado con `textContent`, AR RTL/zh-TW sin overflow y consola limpia. No se ejecutó PageSpeed/Lighthouse.
+- [x] P/S — PR [#60](https://github.com/pedronunezwebs-hash/usefulverse/pull/60) fusionada en `e2b8963353e3c1b544add93ca6d86c988a41d344`; CI/deploy principal 37846520218 y publicación del hub 37846877937 correctos. Se verificaron las 36 rutas HTTP 200, sus metadatos/canonical/hreflang y los assets/license HTTP 200. Sitemap público: 3.600 URLs únicas. Publicar no garantiza indexación.
+- **Estado:** 99/323 candidatas principales; 224 pendientes. Las 277 herramientas originales no se modificaron. Siguiente ficha: #283 Font Pairing Tool.
+
 ## Publicada · Decibel Calculator (#281; 98.ª herramienta Growth600) · 2026-10-09
 
 - [x] C/F — Reutilizada la ficha del plan: `decibel calculator` 720 búsquedas/mes US/en, KD 19; `db calculator` 480/mes, KD 3. CPC 1,25 USD (no CPM). Sin consultas nuevas a DataForSEO.

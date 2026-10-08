@@ -78,6 +78,8 @@ import decibelCalculatorCopies from './decibel-calculator.mjs';
 import { decibelCalculatorEnglishCopy } from './decibel-calculator.en.mjs';
 import openApiEditorCopies from './openapi-editor.mjs';
 import { openApiEditorEnglishCopy } from './openapi-editor.en.mjs';
+import fontPairingToolCopies from './font-pairing-tool.mjs';
+import { fontPairingToolEnglishCopy } from './font-pairing-tool.en.mjs';
 import { workOrderGeneratorEnglishCopy } from './work-order-generator.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
@@ -819,5 +821,31 @@ const openApiEditorReleaseCopies = Object.fromEntries(
 registerGrowthLocaleExtension(source, 'openapi-editor', {
   ...openApiEditorReleaseCopies,
 }, 'decibel-calculator');
+const fontPairingReleaseCopies = Object.fromEntries(
+  Object.entries({ ...fontPairingToolCopies, en: fontPairingToolEnglishCopy }).map(([locale, copy]) => {
+    const brand = ' | UsefulVerse';
+    const prefix = String(copy.title || copy.name).split(/\s*\|\s*UsefulVerse/iu)[0].trim();
+    const titleLimit = 60 - [...brand].length;
+    const fitMetadataText = (value, limit) => {
+      const characters = [...String(value).replace(/\s+/gu, ' ').trim()];
+      if (characters.length <= limit) return characters.join('');
+      let fitted = characters.slice(0, limit).join('').trimEnd();
+      const lastWordBoundary = fitted.lastIndexOf(' ');
+      if (lastWordBoundary >= Math.floor(limit * 0.6)) fitted = fitted.slice(0, lastWordBoundary).trimEnd();
+      return fitted.replace(/[\s:;,–-]+$/u, '');
+    };
+    const title = `${fitMetadataText(prefix, titleLimit)}${brand}`;
+    return [locale, {
+      ...copy,
+      title,
+      description: fitMetadataText(copy.description, 160),
+      copyLanguage: locale,
+      localizationStatus: 'machine-accepted',
+      localizationAcceptedBy: 'site-owner',
+      localizationAcceptedAt: '2026-10-09',
+    }];
+  }),
+);
+registerGrowthLocaleExtension(source, 'font-pairing-tool', fontPairingReleaseCopies, 'openapi-editor');
 
 export default Object.freeze(source);

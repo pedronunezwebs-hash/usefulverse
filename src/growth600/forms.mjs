@@ -1,4 +1,5 @@
 import { escapeGrowthHtml } from './render.mjs';
+import { FONT_PRESETS } from './tools/font-pairing-tool/logic.mjs';
 
 function attachCopy(html, copy) {
   const safeJson = JSON.stringify(copy).replaceAll('<', '\\u003c').replaceAll('>', '\\u003e').replaceAll('&', '\\u0026');
@@ -66,6 +67,7 @@ export function renderGrowthForm(toolId, copy) {
     'chess-opening-trainer': ['opening', 'side', 'white', 'black', 'board', 'moves', 'progressLabel', 'square', 'empty', 'accuracyNote', 'rules', 'opening_italian', 'opening_sicilian', 'opening_ruy_lopez', 'opening_french', 'opening_caro_kann', 'opening_queens_gambit', 'opening_london', 'opening_scandinavian', 'opening_english', 'opening_kings_indian', 'piece_wp', 'piece_wn', 'piece_wb', 'piece_wr', 'piece_wq', 'piece_wk', 'piece_bp', 'piece_bn', 'piece_bb', 'piece_br', 'piece_bq', 'piece_bk'],
     'decibel-calculator': ['mode', 'powerMode', 'amplitudeMode', 'dbToPowerMode', 'dbToAmplitudeMode', 'sumMode', 'applyMode', 'ratio', 'inputDb', 'levels', 'inputLevel', 'gainDb', 'accuracyNote', 'assumptionsNote'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
+    'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
     'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
@@ -173,6 +175,7 @@ export function renderGrowthForm(toolId, copy) {
     'chess-opening-trainer': ['newGame', 'hint', 'rules'],
     'decibel-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
+    'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
@@ -261,6 +264,38 @@ export function renderGrowthForm(toolId, copy) {
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-openapi-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.previewTitle)}</h2><p data-openapi-summary></p><ol data-openapi-operations></ol><h3>${escapeGrowthHtml(fields.issues)}</h3><ul data-openapi-issues></ul></section>
   </form>`, copy);
+
+  if (toolId === 'font-pairing-tool') {
+    const familyOptions = [
+      ['Georgia, "Times New Roman", serif', fields.familyGeorgia],
+      ['"Times New Roman", Times, serif', fields.familyTimes],
+      ['Arial, Helvetica, sans-serif', fields.familyArial],
+      ['Verdana, Geneva, sans-serif', fields.familyVerdana],
+      ['Trebuchet MS, Arial, sans-serif', fields.familyTrebuchet],
+      ['"Courier New", Courier, monospace', fields.familyMono],
+      ['system-ui, sans-serif', fields.familySystem],
+    ].map(([value, text]) => `<option value="${escapeGrowthHtml(value)}">${escapeGrowthHtml(text)}</option>`).join('');
+    const presetOptions = FONT_PRESETS.map(({ id }, index) => `<option value="${id}">${escapeGrowthHtml(fields[`preset${['Editorial', 'Modern', 'Classic', 'Technical', 'Friendly', 'System'][index]}`])}</option>`).join('');
+    return attachCopy(`<form id="tool-form" class="font-pairing-tool" novalidate>
+    ${label('font-preset', fields.preset, `<select id="font-preset" name="preset">${presetOptions}</select>`)}
+    <div class="font-pairing-families">
+      ${label('font-heading-family', fields.headingFont, `<select id="font-heading-family" name="headingFont">${familyOptions}</select>`)}
+      ${label('font-body-family', fields.bodyFont, `<select id="font-body-family" name="bodyFont">${familyOptions}</select>`)}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="font-pairing-controls">
+      ${label('font-heading-size', fields.headingSize, '<input id="font-heading-size" name="headingSize" type="range" min="20" max="96" step="1" value="48">')}
+      ${label('font-body-size', fields.bodySize, '<input id="font-body-size" name="bodySize" type="range" min="12" max="32" step="1" value="18">')}
+      ${label('font-heading-weight', fields.headingWeight, '<input id="font-heading-weight" name="headingWeight" type="range" min="100" max="900" step="100" value="700">')}
+      ${label('font-body-weight', fields.bodyWeight, '<input id="font-body-weight" name="bodyWeight" type="range" min="100" max="900" step="100" value="400">')}
+      ${label('font-line-height', fields.lineHeight, '<input id="font-line-height" name="lineHeight" type="range" min="1" max="2.2" step="0.05" value="1.6">')}
+    </div>
+    <section class="font-pairing-preview" aria-labelledby="font-preview-label"><h2 id="font-preview-label">${escapeGrowthHtml(fields.hierarchyLabel)}</h2><h3 data-font-heading>${escapeGrowthHtml(fields.sampleHeading)}</h3><p data-font-body>${escapeGrowthHtml(fields.sampleBody)}</p></section>
+    <div class="font-pairing-upload"><label for="font-pair-files">${escapeGrowthHtml(fields.fontFiles)}</label><input id="font-pair-files" type="file" accept=".woff,.woff2,.ttf,.otf,font/woff,font/woff2,font/ttf,font/otf" multiple data-font-files></div>
+    <div class="actions"><button type="button" data-action="apply-preset" class="button button--secondary">${escapeGrowthHtml(actions.applyPreset)}</button><button type="button" data-action="swap" class="button button--secondary">${escapeGrowthHtml(actions.swap)}</button><button type="button" data-action="copy-css" class="button button--primary">${escapeGrowthHtml(actions.copyCss)}</button><button type="button" data-action="clear-fonts" class="button button--secondary">${escapeGrowthHtml(actions.clearFonts)}</button>${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+  </form>`, copy);
+  }
 
   if (toolId === 'image-region-redactor') return attachCopy(`<form id="tool-form" novalidate>
     ${label('image-file', fields.imageFile, '<input id="image-file" name="imageFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/avif,image/bmp" required>')}

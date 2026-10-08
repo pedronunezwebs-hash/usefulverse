@@ -1,6 +1,7 @@
 export const REQUIRED_GROWTH_COPY = Object.freeze(['name', 'title', 'description', 'intro', 'howQuestion', 'howAnswer', 'privacyQuestion', 'privacyAnswer']);
 export const REQUIRED_GROWTH_HOME_COPY = Object.freeze(['title', 'description', 'intro', 'directoryLabel', 'freeLabel', 'footerFree', 'skipToTool', 'home', 'languageLabel', 'breadcrumbLabel', 'faqLabel']);
 export const REQUIRED_TOOL_MESSAGES = Object.freeze({
+  'font-pairing-tool': ['fontLoaded', 'fontLoadFailed', 'noFiles', 'tooMany', 'unsupported', 'fileTooLarge', 'totalTooLarge', 'copied', 'copyUnavailable', 'fontsCleared', 'presetApplied', 'rolesSwapped'],
   'rtf-converter': ['converted', 'invalidFile', 'fileTooLarge', 'noText', 'copyUnavailable', 'printBlocked', 'downloaded'],
   'csv-to-pdf': ['noFile', 'invalidFile', 'fileTooLarge', 'invalidCsv', 'ready', 'exampleLoaded', 'printBlocked', 'noRows'],
   'round-robin-tournament-generator': ['noNames', 'invalidNames', 'scheduleReady', 'exampleLoaded', 'noSchedule', 'copied', 'copyUnavailable', 'printBlocked', 'invalidScore'],
@@ -73,6 +74,7 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   'travel-itinerary-planner': ['tripSaved', 'storageFailed', 'tripDeletedStorageFailed', 'checkTrip', 'createTripFirst', 'exampleLoaded', 'itemSaved', 'itemUpdated', 'checkItem', 'formCleared', 'itemDeleted', 'confirmDeleteTrip', 'tripDeleted', 'confirmRestore', 'localSaved', 'localRemoved', 'jsonDownloaded', 'icsDownloaded', 'backupTooLarge', 'noItemsToExport', 'exportFailed', 'confirmImport', 'importCancelled', 'imported', 'importFailed', 'overlap', 'shortConnection'],
 });
 export const REQUIRED_TOOL_FIELDS = Object.freeze({
+  'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
   'rtf-converter': ['file', 'accuracyNote', 'limitNote', 'output'],
   'csv-to-pdf': ['file', 'separator', 'encoding', 'hasHeader', 'pageSize', 'orientation', 'margin', 'accuracyNote', 'limitNote', 'resultCount', 'columnCount', 'previewLimit', 'tableLabel'],
   'round-robin-tournament-generator': ['participants', 'participantsHint', 'doubleRound', 'shuffle', 'scoringNote', 'limitNote', 'standingsLabel', 'rank', 'team', 'played', 'wins', 'draws', 'losses', 'goalsFor', 'goalsAgainst', 'goalDifference', 'points', 'round', 'leg', 'home', 'away', 'bye', 'homeScore', 'awayScore', 'fixtureTableLabel'],
@@ -145,6 +147,7 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'travel-itinerary-planner': ['tripName', 'tripStartDate', 'tripEndDate', 'bufferMinutes', 'saveConsent', 'storageNote', 'itemDate', 'startTime', 'endTime', 'itemTitle', 'category', 'location', 'reservation', 'notes', 'itineraryLabel', 'noTrip', 'noItems', 'itemCount', 'overlapCount', 'bufferWarningCount', 'conflictsLabel', 'backupFile', 'backupHint', 'limitNote', 'timeZoneNote', 'reservationPrivacyNote', 'exampleTrip', 'exampleActivity', 'exampleMeal', 'exampleLocation', 'exampleReservation'],
 });
 export const REQUIRED_TOOL_ACTIONS = Object.freeze({
+  'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
   'rtf-converter': ['convert', 'reset', 'copy', 'download', 'print', 'result'],
   'csv-to-pdf': ['preview', 'reset', 'example', 'print', 'result'],
   'round-robin-tournament-generator': ['generate', 'reset', 'example', 'downloadCsv', 'print', 'result'],
@@ -256,8 +259,8 @@ export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, {
           if (typeof copy.messages?.[key] === 'string' && !copy.messages[key].includes(token)) errors.push(`${locale.key}/${tool.id}: messages.${key} must preserve ${token}`);
         }
       }
-      const faqTools = ['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'mulch-calculator', 'paver-calculator', 'solar-panel-calculator', 'btu-calculator', 'brick-calculator', 'rafter-calculator', 'carpet-calculator', 'aquarium-calculator', 'image-region-redactor', 'image-sharpener', 'photo-to-sketch', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'hitori', 'nurikabe', 'slitherlink', 'peg-solitaire', 'futoshiki', 'hashi-puzzle', 'chess-opening-trainer', 'decibel-calculator', 'openapi-editor', 'color-name-finder', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'weight-loss-calculator', 'heloc-calculator', 'random-team-generator', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'laplace-transform-calculator', 'csv-to-pdf', 'round-robin-tournament-generator', 'work-order-generator'];
-      const faqCount = ['csv-to-pdf', 'round-robin-tournament-generator', 'work-order-generator', 'slitherlink', 'peg-solitaire', 'futoshiki', 'hashi-puzzle', 'chess-opening-trainer', 'decibel-calculator', 'openapi-editor'].includes(tool.id) ? 3 : 2;
+      const faqTools = ['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'mulch-calculator', 'paver-calculator', 'solar-panel-calculator', 'btu-calculator', 'brick-calculator', 'rafter-calculator', 'carpet-calculator', 'aquarium-calculator', 'image-region-redactor', 'image-sharpener', 'photo-to-sketch', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'hitori', 'nurikabe', 'slitherlink', 'peg-solitaire', 'futoshiki', 'hashi-puzzle', 'chess-opening-trainer', 'decibel-calculator', 'openapi-editor', 'font-pairing-tool', 'color-name-finder', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'weight-loss-calculator', 'heloc-calculator', 'random-team-generator', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'laplace-transform-calculator', 'csv-to-pdf', 'round-robin-tournament-generator', 'work-order-generator'];
+      const faqCount = ['csv-to-pdf', 'round-robin-tournament-generator', 'work-order-generator', 'slitherlink', 'peg-solitaire', 'futoshiki', 'hashi-puzzle', 'chess-opening-trainer', 'decibel-calculator', 'openapi-editor', 'font-pairing-tool'].includes(tool.id) ? 3 : 2;
       if (faqTools.includes(tool.id)
         && (!Array.isArray(copy.additionalFaqs) || copy.additionalFaqs.length !== faqCount
           || copy.additionalFaqs.some((faq) => !faq.question?.trim() || !faq.answer?.trim()))) {
