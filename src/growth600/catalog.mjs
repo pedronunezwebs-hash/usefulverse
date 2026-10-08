@@ -1067,6 +1067,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['pdf-document-converter'],
     logicModule: './tools/rtf-converter/logic.mjs',
   },
+  {
+    id: 'csv-to-pdf',
+    category: 'document-tools',
+    type: 'document-converter',
+    primaryIntent: 'csv to pdf',
+    secondaryIntents: ['table to pdf converter', 'print csv to pdf', 'csv file to printable table'],
+    functions: ['parse a local UTF-8 or Windows-1252 CSV with comma, semicolon, tab or pipe separators', 'preview a bounded accessible table with optional first-row headers and printable page settings', 'print the table or save it as PDF from the browser without uploading the CSV or executing spreadsheet formulas'],
+    acceptance: 'Quoted commas, escaped quotes, multiline cells, Unicode and CRLF stay in the correct cells; long rows wrap instead of leaving the printable page; user data is inserted as text and never interpreted as markup or formulas.',
+    boundary: 'Handles UTF-8, UTF-16 and Windows-1252 text CSV up to 5 MiB, at most 2,000 data rows, 40 columns and 50,000 normalized cells. PDF creation uses the browser print dialog. Formatting, formulas, charts, multiple workbook sheets and spreadsheet layout are not included.',
+    relatedExistingIds: ['spreadsheet-converter', 'pdf-document-converter'],
+    logicModule: './tools/csv-to-pdf/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

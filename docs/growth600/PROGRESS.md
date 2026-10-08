@@ -2,14 +2,24 @@
 
 Última verificación: 2026-10-08. Registro persistente de esta rama; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## En curso · RTF Converter (#181) · 2026-10-08
+## Publicada · RTF Converter (#181) · 2026-10-08
 
 - [x] C/F/B — Conversión local RTF→texto con párrafos, tabs, secuencias escapadas, Unicode y símbolos; límites de entrada/salida y profundidad, validación de cabecera/grupos/bloques binarios. Copiar/descargar texto y abrir diálogo de impresión a PDF; no conserva maquetación, imágenes, tablas ni todos los estilos. Archivo original intacto; no hay carga a servidor.
 - [x] L — Copia estática para 36 idiomas generada en lotes desde inglés con Google Translate; sin API pagada ni traducción en tiempo de ejecución. Títulos conservan `UsefulVerse` y cumplen el límite, descripciones ≤160; traducción automática no equivale a revisión nativa.
 - [x] E — Lógica focal 9/9; regresión total `npm test` 1.292/1.292; `npm run check` confirma 10.260 URLs originales intactas; `locale:release-check` correcto. Build local del hub: 3.240 URLs (89 herramientas × 36 idiomas + 36 portadas), 3.380 archivos. `git diff --check` limpio.
 - [x] X — Chrome local: extracción de RTF sintético mostró «Hello world», párrafo separado, `é` y em dash; estado accesible de éxito. Árabe comprobado con `lang=ar`, `dir=rtl`, controles en RTL y consola sin errores.
-- [ ] P/S — Pendiente abrir PR, CI, fusión, publicación del hub y verificación de las 36 rutas/sitemap. El sitemap público continúa en 3.204 URLs mientras #181 no se publique. No se ejecutó PageSpeed/Lighthouse.
-- **Siguiente:** cerrar PR de #181; tras publicar, continuar #182 `csv-to-pdf`. 88/323 candidatas siguen publicadas actualmente; 235 todavía pendientes.
+- [x] P/S — PR #47 fusionada en `548163c5e7aa14b66c5879a89b00a5d19c2e7d16`; CI 37808096142, publicación principal 37808599909 y publicación separada del hub 37809172150 terminaron correctamente. La ruta RTF pública responde HTTP 200; el sitemap del hub devuelve HTTP 200 con 3.240 `<loc>` (89 herramientas × 36 idiomas + 36 portadas). Publicación verificada, no indexación. No se ejecutó PageSpeed/Lighthouse.
+- [x] README actualizado con 89 herramientas añadidas y 3.240 URLs públicas. 89/323 candidatas publicadas; 234 pendientes.
+
+## En curso · CSV to PDF (#182) · 2026-10-08
+
+- [x] C/F/B — CSV local con detección de coma, punto y coma, tabulación o barra vertical; UTF-8, Windows-1252 y UTF-16; encabezado opcional; vista previa accesible y controles A4/Carta, orientación y márgenes. Imprime desde el navegador para guardar como PDF; no ejecuta fórmulas ni sube datos. No conserva estilos, fórmulas, gráficas ni hojas de Excel.
+- [x] Límites visibles y comprobados: archivo ≤5 MiB, 2.000 filas de datos, 40 columnas y 50.000 celdas normalizadas; preview inicial de 100 filas. Datos largos envuelven en impresión y se insertan como texto.
+- [x] L — 36 copias estáticas; 35 idiomas adicionales traducidos desde inglés en lotes con Google Translate, aceptadas como traducción automática sencilla, sin revisión nativa ni llamadas de traducción en el sitio. Título incluye la marca y cabe en 60; descripción ≤160.
+- [x] E — pruebas focalizadas 9/9; conjunto de pruebas del repositorio 1.303/1.303; `npm run locale:release-check` correcto; `npm run check` conserva las 10.260 URLs del catálogo original. Build aislado del hub: 3.276 URLs (90 × 36 + 36 portadas), 3.417 archivos; contenido estático aprox. 100 MB.
+- [x] X — Chrome local EN/AR: ejemplo y preview funcionan; el árabe usa `lang=ar` y `dir=rtl`. CSV sintético con HTML literal, ceros iniciales y celda multilínea se muestra como texto sin crear elementos. Se comprobó la llamada a impresión y que el documento impreso contiene 2 filas; consola EN/AR limpia.
+- [ ] P/S — falta PR/CI/fusión, publicación del hub y confirmación pública de las 36 rutas/sitemap. No se ejecutó PageSpeed/Lighthouse.
+- **Siguiente:** terminar publicación de #182 y continuar con la próxima candidata no duplicada del plan. Aún no contar #182 dentro de las 89 públicas.
 
 ## Publicada · Horsepower Calculator (#180) · 2026-10-08
 

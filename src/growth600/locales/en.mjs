@@ -58,6 +58,8 @@ import horsepowerCalculatorCopies from './horsepower-calculator.mjs';
 import { horsepowerCalculatorEnglishCopy } from './horsepower-calculator.en.mjs';
 import rtfConverterCopies from './rtf-converter.mjs';
 import { rtfConverterEnglishCopy } from './rtf-converter.en.mjs';
+import csvToPdfCopies from './csv-to-pdf.mjs';
+import { csvToPdfEnglishCopy } from './csv-to-pdf.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
 import imageColorPickerCopies from './image-color-picker-final.mjs';
@@ -613,5 +615,6 @@ const localizedHorsepowerCalculatorCopies = Object.fromEntries(Object.entries(ho
 }));
 registerGrowthLocaleExtension(source, 'horsepower-calculator', { ...localizedHorsepowerCalculatorCopies, en: horsepowerCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'rtf-converter', { ...rtfConverterCopies, en: rtfConverterEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'csv-to-pdf', { ...csvToPdfCopies, en: csvToPdfEnglishCopy }, 'rtf-converter');
 
 export default Object.freeze(source);

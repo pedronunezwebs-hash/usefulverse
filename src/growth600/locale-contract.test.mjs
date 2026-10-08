@@ -591,6 +591,21 @@ test('RTF Converter has machine-accepted complete copy in all 36 locales and sta
   }
 });
 
+test('CSV to PDF has machine-accepted complete copy in all 36 locales and stays within SEO metadata budgets', () => {
+  for (const [locale, copy] of Object.entries(localizedCopies)) {
+    const csv = copy['csv-to-pdf'];
+    assert.equal(csv.copyLanguage, locale);
+    assert.equal(csv.localizationStatus, locale === 'en' ? 'approved' : 'machine-accepted');
+    if (locale !== 'en') assert.equal(csv.localizationAcceptedBy, 'site-owner');
+    assert.match(csv.title, /\| UsefulVerse$/u);
+    assert.ok(csv.title.length <= 60, `${locale} title exceeds 60 characters`);
+    assert.ok(csv.description.length <= 160, `${locale} description exceeds 160 characters`);
+    for (const key of ['file', 'separator', 'encoding', 'hasHeader', 'pageSize', 'orientation', 'margin', 'accuracyNote', 'limitNote', 'resultCount', 'columnCount', 'previewLimit', 'tableLabel']) assert.ok(csv.fields[key]?.trim(), `${locale} missing ${key}`);
+    for (const key of ['preview', 'reset', 'example', 'print', 'result']) assert.ok(csv.actions[key]?.trim(), `${locale} missing action ${key}`);
+    assert.equal(csv.additionalFaqs.length, 3);
+  }
+});
+
 test('the first Google Translate Korean draft covers every copy key and preserves required placeholders', () => {
   assert.equal(assertGrowthLocaleCoverage(growthPilotTools, [{ key: 'ko' }], { ko: koreanGrowthCopy }), true);
   assert.ok(Object.values(koreanGrowthCopy).every((copy) => copy.copyLanguage === 'ko'));
