@@ -696,6 +696,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/nurikabe/logic.mjs',
   },
   {
+    id: 'slitherlink',
+    category: 'games',
+    type: 'game',
+    primaryIntent: 'slitherlink',
+    secondaryIntents: ['slitherlink puzzle online', 'slitherlink loop puzzle', 'play slitherlink online'],
+    functions: ['generate a fresh, locally checked 4×4 to 6×6 number-and-loop puzzle', 'toggle horizontal and vertical line segments on a responsive accessible grid', 'check cell clues, vertex degrees and that the drawn segments form exactly one loop', 'undo the last move, clear all marks and request a single-segment hint', 'start a different randomized puzzle without an account, upload or saved score'],
+    acceptance: 'Every generated board has exactly one solution within the bounded solver; every loop vertex has degree 2, there are no separate loops, and each numbered cell equals its surrounding selected-edge count.',
+    boundary: 'Single-player Slitherlink/Fence puzzle with locally generated, bounded uniqueness checks. It has no account, network request, saved progress, multiplayer or official daily challenge. Runs in the browser and may take longer on a slower device.',
+    relatedExistingIds: ['hitori', 'nurikabe'],
+    logicModule: './tools/slitherlink/logic.mjs',
+  },
+  {
     id: 'color-name-finder',
     category: 'design-tools',
     type: 'utility',

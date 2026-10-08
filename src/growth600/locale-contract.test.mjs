@@ -606,6 +606,24 @@ test('CSV to PDF has machine-accepted complete copy in all 36 locales and stays 
   }
 });
 
+test('Slitherlink puzzle has static machine-accepted copy and preserved brand titles in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'slitherlink');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const [locale, catalog] of Object.entries(localizedCopies)) {
+    const copy = catalog.slitherlink;
+    assert.match(copy.title, /\| UsefulVerse$/u, `${locale}: keep exact brand suffix`);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, `${locale}: metadata budget`);
+    assert.equal(copy.additionalFaqs.length, 3, `${locale}: localized FAQ count`);
+    for (const key of ['size', 'board', 'rules', 'accuracyNote', 'row', 'column', 'horizontal', 'vertical']) assert.ok(copy.fields[key]?.trim(), `${locale}: missing ${key}`);
+    for (const key of ['newGame', 'checkBoard', 'hint', 'undo', 'clearMarks', 'rules']) assert.ok(copy.actions[key]?.trim(), `${locale}: missing ${key}`);
+  }
+  assert.equal(localizedCopies.es.slitherlink.title, 'Slitherlink gratis | UsefulVerse');
+  assert.equal(localizedCopies.es.slitherlink.actions.checkBoard, 'Comprobar tablero');
+  assert.equal(localizedCopies.ar.slitherlink.title, 'Slitherlink مجاني | UsefulVerse');
+  assert.equal(localizedCopies.ar.slitherlink.actions.checkBoard, 'تحقق من الحل');
+});
+
 test('Round Robin has machine-accepted complete copy in all 36 locales and stays within SEO metadata budgets', () => {
   for (const [locale, copy] of Object.entries(localizedCopies)) {
     const league = copy['round-robin-tournament-generator'];

@@ -64,6 +64,8 @@ import roundRobinTournamentCopies from './round-robin-tournament-generator.mjs';
 import { roundRobinTournamentGeneratorEnglishCopy } from './round-robin-tournament-generator.en.mjs';
 import { roundRobinTournamentArabicCopy } from './round-robin-tournament-generator.ar.mjs';
 import workOrderCopies from './work-order-generator.mjs';
+import slitherlinkCopies from './slitherlink.mjs';
+import { slitherlinkEnglishCopy } from './slitherlink.en.mjs';
 import { workOrderGeneratorEnglishCopy } from './work-order-generator.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
@@ -623,5 +625,24 @@ registerGrowthLocaleExtension(source, 'rtf-converter', { ...rtfConverterCopies, 
 registerGrowthLocaleExtension(source, 'csv-to-pdf', { ...csvToPdfCopies, en: csvToPdfEnglishCopy }, 'rtf-converter');
 registerGrowthLocaleExtension(source, 'round-robin-tournament-generator', { ...roundRobinTournamentCopies, en: roundRobinTournamentGeneratorEnglishCopy, ar: { ...roundRobinTournamentCopies.ar, ...roundRobinTournamentArabicCopy, fields: { ...roundRobinTournamentCopies.ar.fields, ...roundRobinTournamentArabicCopy.fields }, actions: { ...roundRobinTournamentCopies.ar.actions, ...roundRobinTournamentArabicCopy.actions }, messages: { ...roundRobinTournamentCopies.ar.messages, ...roundRobinTournamentArabicCopy.messages } } }, 'csv-to-pdf');
 registerGrowthLocaleExtension(source, 'work-order-generator', { ...workOrderCopies, en: workOrderGeneratorEnglishCopy }, 'csv-to-pdf');
+
+const slitherlinkSpanishCopy = {
+  ...slitherlinkCopies.es,
+  name: 'Slitherlink',
+  title: 'Slitherlink gratis | UsefulVerse',
+  description: 'Juega Slitherlink gratis: dibuja un único bucle según las pistas numéricas. Usa pistas, deshaz movimientos y comprueba el tablero.',
+  intro: 'Dibuja un único bucle cerrado por las líneas de la cuadrícula. Cada número indica cuántos de sus cuatro lados forman parte del bucle.',
+  howQuestion: '¿Cómo se juega a Slitherlink?',
+  howAnswer: 'Toca o haz clic en una arista para activarla o quitarla. El bucle debe ser continuo; cada esquina usada debe tener exactamente dos líneas y cada celda numerada, la cantidad indicada de lados. Usa «Comprobar tablero» para revisar errores, «Deshacer» para revertir un movimiento o «Pista» para recibir ayuda.',
+  privacyQuestion: '¿Se sube o guarda mi partida de Slitherlink?',
+  privacyAnswer: 'No. El tablero, las comprobaciones y las pistas se procesan en esta página. UsefulVerse no sube ni guarda tus movimientos.',
+  actions: { ...slitherlinkCopies.es.actions, checkBoard: 'Comprobar tablero', hint: 'Pista', clearMarks: 'Borrar líneas', rules: 'Reglas' },
+};
+const slitherlinkArabicCopy = {
+  ...slitherlinkCopies.ar,
+  title: 'Slitherlink مجاني | UsefulVerse',
+  actions: { ...slitherlinkCopies.ar.actions, checkBoard: 'تحقق من الحل', hint: 'تلميح', clearMarks: 'مسح الخطوط', rules: 'القواعد' },
+};
+registerGrowthLocaleExtension(source, 'slitherlink', { ...slitherlinkCopies, en: slitherlinkEnglishCopy, es: slitherlinkSpanishCopy, ar: slitherlinkArabicCopy }, 'nurikabe');
 
 export default Object.freeze(source);

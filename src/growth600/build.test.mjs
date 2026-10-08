@@ -482,6 +482,12 @@ function toolCopy(tool, language) {
     { question: 'What are the rules of Nurikabe?', answer: 'Each numbered island has one clue and exactly the number of cells shown. Islands cannot touch by sides. The sea must be connected and cannot contain a 2×2 block.' },
     { question: 'Does every puzzle have one solution?', answer: 'The local generator proves uniqueness before accepting a fresh board and uses a verified fallback if it reaches its attempt limit.' },
   ];
+  if (tool.id === 'slitherlink') {
+    localized.fields = { ...localized.fields, size: 'Board size', board: 'Slitherlink puzzle grid', rules: 'Rules', accuracyNote: 'Unique puzzles are generated locally; larger boards may take longer.', row: 'row', column: 'column', horizontal: 'horizontal edge', vertical: 'vertical edge' };
+    Object.assign(localized.actions, { newGame: 'New puzzle', checkBoard: 'Check loop', hint: 'Hint', undo: 'Undo', clearMarks: 'Clear lines', rules: 'Rules', small: 'Small', medium: 'Medium', large: 'Large' });
+    Object.assign(localized.messages, { newPuzzle: 'New puzzle ready.', solved: 'Correct single loop!', loopError: 'Make one continuous loop with no branches.', clueError: 'Some numbered clues do not have the right number of edges.', hintOn: 'Hint added one correct edge.', hintOff: 'Hint removed one incorrect edge.', noHint: 'No hint is available.', undoEmpty: 'Nothing to undo.', edgeOn: 'Line added.', edgeOff: 'Line removed.', marksCleared: 'Lines cleared.', generationFailed: 'Could not make a unique puzzle. Try again.' });
+    localized.additionalFaqs = [{ question: 'What is the goal of Slitherlink?', answer: 'Draw one continuous loop along grid edges. Each clue tells how many of its four surrounding edges belong to the loop.' }, { question: 'Does every new puzzle have one solution?', answer: 'The browser generator checks uniqueness before showing a puzzle.' }, { question: 'Does generating a puzzle use a server?', answer: 'No. Puzzle creation and checking run locally in this browser.' }];
+  }
   if (tool.id === 'color-name-finder') localized.additionalFaqs = [
     { question: 'Does every hex color have an exact name?', answer: 'No. CSS defines a fixed named-color palette; other values are matched approximately.' },
     { question: 'Why can two CSS names share a value?', answer: 'Some names are aliases, such as aqua and cyan, and share an exact RGB value.' },
