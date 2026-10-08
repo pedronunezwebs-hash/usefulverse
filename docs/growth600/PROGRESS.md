@@ -928,3 +928,16 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [ ] L — traducir y revisar las 35 lenguas pendientes antes del gate de publicación.
 - [ ] P/S — no desplegado, no sitemap público modificado y no se solicitó indexación.
 - **Recuento vigente:** **78/323** candidatas con implementación inglesa. Quedan **245 filas** del plan, una de las cuales está marcada previamente como duplicada y debe ser sustituida por una candidata única antes de poder alcanzar 600 herramientas únicas. Las 277 herramientas protegidas permanecen intactas. Esta herramienta nueva todavía no se cuenta como localizada, publicada o indexada.
+
+## Continuación · Number Line Graphing Tool (#176) · 2026-10-08
+
+- [x] C/F — intención y métricas ya investigadas en el plan: `number line generator`, 2.900 búsquedas/mes US/en, KD 0; variante `number line graphing tool` sin métrica medida. No repetí búsquedas ni consumí DataForSEO.
+- [x] E — crea gráficos desde hasta 20 intervalos/puntos, uno por línea; acepta decimales, fracciones y extremos infinitos abiertos. Distingue extremo abierto/cerrado y no pretende resolver desigualdades. Incluye salida SVG descargable.
+- [x] B — parser con límites explícitos, rechazo de intervalos vacíos/reversos, límite numérico, validación de fracciones/divisor no nulo, SVG construido con DOM/textContent, etiquetas de ticks localizadas y control para descargar SVG. Sin APIs ni procesamiento servidor.
+- [x] X — pruebas de parser, aceptación `(1,3]`, fracciones/puntos/infinito, límites, controlador simulado, formulario, catálogo, contrato de locale, render y build: suite focalizada conjunta **163/163 aprobadas**.
+- [x] Bundle aislado con Esbuild 0.28.2: **4.870 bytes minificados**, aceptado por `assertLocalController` (máximo 24 KiB; sin red remota/código dinámico). Caché, paquete y artefacto de comprobación temporal borrados.
+- [ ] X visual — aún falta revisión de uso real en Chrome/dispositivo.
+- [ ] L — inglés aprobado; los otros 35 idiomas son borradores explícitamente pendientes y continúan bloqueados para release.
+- [ ] P/S — no desplegado; sitemap público e indexación intactos.
+- **Bundle:** **4.888 bytes** minificados.
+- **Recuento vigente:** **79/323** candidatas nuevas con implementación inglesa. Quedan **244 filas** del plan, incluida una duplicada que debe reemplazarse por una propuesta única. Las 277 herramientas existentes siguen intactas. #176 no está localizada en todos los idiomas, publicada ni indexada.

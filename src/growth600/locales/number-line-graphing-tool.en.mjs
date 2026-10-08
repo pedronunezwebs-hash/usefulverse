@@ -1,0 +1,25 @@
+export const numberLineGraphingEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Number Line Generator',
+  title: 'Number Line Generator Free | UsefulVerse',
+  description: 'Graph intervals, fractions and points on a number line. Free, no account.',
+  intro: 'Plot interval notation and points on a clear, downloadable number line.',
+  howQuestion: 'How do I graph an interval on a number line?',
+  howAnswer: 'Enter one interval per line, such as (1, 3]. Use square brackets for included endpoints and parentheses for excluded endpoints. Fractions and one-sided infinity are supported.',
+  privacyQuestion: 'Are my intervals uploaded?',
+  privacyAnswer: 'No. The graph is generated in this browser; your input is not sent or stored.',
+  fields: {
+    intervals: 'Intervals or points (one per line)',
+    intervalFormat: 'Examples: (1, 3], [-2, 4), [1/2, 2], 5, (-∞, 3], [0, ∞).',
+    accuracyNote: 'Up to 20 rows. Fractions are placed as decimal coordinates for drawing. This tool plots intervals; it does not solve inequalities.',
+    chartDescription: 'Number line graph',
+    exampleInput: '(1, 3]\n[-2, 0)\n[5/2, 5/2]',
+  },
+  actions: { calculate: 'Create number line', example: 'Load example', downloadSvg: 'Download SVG', reset: 'Clear' },
+  messages: { calculated: 'Number line ready.', checkInputs: 'Check the interval format and endpoints.', exampleLoaded: 'Example loaded.', downloaded: 'SVG downloaded.' },
+  additionalFaqs: [
+    { question: 'What do open and closed circles mean?', answer: 'A hollow circle excludes that endpoint; a filled circle includes it.' },
+    { question: 'Can I plot fractions or infinity?', answer: 'Yes. Fractions are converted to decimal positions for the drawing. Infinity is allowed only as an open outside endpoint.' },
+  ],
+  localizationStatus: 'approved',
+});

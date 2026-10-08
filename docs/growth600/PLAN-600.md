@@ -2373,6 +2373,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `number line graphing tool` — sin métrica obtenida; no atribuir volumen.
   - `number line generator free online`; `number line generator with example`; `number line generator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Avance comprobado (2026-10-08):** parser/formulario/controlador inglés para intervalos, puntos, fracciones y extremos infinitos abiertos; diagrama SVG accesible con círculos abiertos/cerrados y descarga del SVG. Suite focalizada conjunta con la candidata anterior: **163/163** aprobadas. Bundle minificado: **4.888 bytes**. Los otros 35 locales siguen bloqueados como borradores; faltan QA visual, traducciones específicas y publicación. Recuento: **79/323** con implementación inglesa; quedan 244 filas, incluida una duplicada por sustituir.
 
 ### 196 · Laplace Transform Calculator
 

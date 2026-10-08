@@ -780,6 +780,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/divisibility-calculator/logic.mjs',
   },
   {
+    id: 'number-line-graphing-tool',
+    category: 'math-statistics',
+    type: 'generator',
+    primaryIntent: 'number line generator',
+    secondaryIntents: ['number line graphing tool', 'plot intervals on a number line', 'plot fractions on a number line'],
+    functions: ['plot up to 20 intervals or points from interval notation', 'accept finite decimals, fractions and one-sided infinite intervals', 'show open and closed endpoints accessibly', 'download the generated number line as a standalone SVG'],
+    acceptance: 'Input (1,3] draws an open endpoint at 1, a closed endpoint at 3, and a segment between them.',
+    boundary: 'Plots user-provided intervals; it does not solve inequalities. Each interval is entered on its own line; finite endpoints must be within ±1,000,000,000. Fractions are approximate decimal coordinates for drawing, not exact symbolic algebra. Runs locally and does not upload input.',
+    relatedExistingIds: [],
+    logicModule: './tools/number-line-graphing-tool/logic.mjs',
+  },
+  {
     id: 'weight-loss-calculator',
     category: 'health-math',
     type: 'calculator',

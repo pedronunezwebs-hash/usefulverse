@@ -36,6 +36,8 @@ import severancePayCalculatorCopies from './severance-pay-calculator-final.mjs';
 import { severancePayCalculatorEnglishCopy } from './severance-pay-calculator.en.mjs';
 import divisibilityCalculatorCopies from './divisibility-calculator-final.mjs';
 import { divisibilityCalculatorEnglishCopy } from './divisibility-calculator.en.mjs';
+import numberLineGraphingCopies from './number-line-graphing-tool-final.mjs';
+import { numberLineGraphingEnglishCopy } from './number-line-graphing-tool.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
 import imageColorPickerCopies from './image-color-picker-final.mjs';
@@ -557,5 +559,6 @@ registerGrowthLocaleExtension(source, 'readability-checker', { ...readabilityChe
 registerGrowthLocaleExtension(source, 'savings-goal-calculator', { ...savingsGoalCalculatorCopies, en: savingsGoalCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'severance-pay-calculator', { ...severancePayCalculatorCopies, en: severancePayCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'divisibility-calculator', { ...divisibilityCalculatorCopies, en: divisibilityCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'number-line-graphing-tool', { ...numberLineGraphingCopies, en: numberLineGraphingEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);
