@@ -804,6 +804,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/roth-vs-traditional-calculator/logic.mjs',
   },
   {
+    id: 'polygon-calculator',
+    category: 'science-math',
+    type: 'calculator',
+    primaryIntent: 'polygon calculator',
+    secondaryIntents: ['regular polygon calculator', 'regular polygon area calculator', 'polygon perimeter calculator'],
+    functions: ['calculate a regular polygon from its side length, apothem or circumradius', 'show area, perimeter, side length, apothem, circumradius, interior angle and central angle', 'support 4–1,000 sides and preserve the entered length unit in outputs, with squared units for area', 'show the exact assumptions and formula family used without drawing or uploading user data'],
+    acceptance: 'A regular hexagon with side length 1 has perimeter 6, area 3√3/2, apothem √3/2, interior angle 120° and central angle 60°; equivalent square inputs by apothem and circumradius produce equal area and perimeter; triangle inputs are rejected to avoid overlap with triangle-calculator.',
+    boundary: 'Regular convex polygons only, with 4–1,000 sides. Does not solve irregular polygons, infer a polygon from coordinates, or calculate triangle geometry; use the existing triangle calculator for triangles. Length values must use one consistent unit. This is geometric arithmetic only, processed locally in the browser.',
+    relatedExistingIds: ['triangle-calculator'],
+    logicModule: './tools/polygon-calculator/logic.mjs',
+  },
+  {
     id: 'color-name-finder',
     category: 'design-tools',
     type: 'utility',

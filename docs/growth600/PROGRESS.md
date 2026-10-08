@@ -2,15 +2,25 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## En curso · Roth Vs Traditional Calculator (#284; no publicado) · 2026-10-09
+## En curso · Polygon Calculator (#285; no publicado) · 2026-10-09
+
+- [x] C/F — Reutilizada la medición existente del plan: `polygon calculator` y `regular polygon calculator`, 590 búsquedas/mes US/en cada una, KD 0; sin llamadas nuevas a DataForSEO.
+- [x] E/B — Cálculo geométrico local para 4–1.000 lados; permite entrada por lado, distancia centro-lado o centro-vértice; deriva perímetro, área y ángulos; se excluyen triángulos para no competir con `triangle-calculator`.
+- [x] L — 36 borradores estáticos traducidos desde inglés; términos especializados descritos en lenguaje simple; título y descripción revisados por gates automáticos. Traducción automática, no revisión nativa.
+- [x] E/X — 5 pruebas de matemática y gates de catálogo, formularios, bundle y localización; suite focal 193/193, suite general 1.398/1.398, `npm run locale:release-check` pasa y `npm run check` conserva las 10.260 URLs de la web principal. Build aislado: 3.708 URLs (102 herramientas × 36 idiomas + 36 portadas).
+- [x] B — Chrome EN y AR: hexágono de lado 1 cm devuelve perímetro 6 cm, área 2,59807621 cm², apotema 0,8660254 cm y ángulos 120°/60°; árabe comprobado a 500 px sin overflow ni errores de consola. Sin PageSpeed/Lighthouse.
+- [ ] P/S — PR, CI, merge, despliegue y sitemap público pendientes.
+- **Estado previo a publicación:** 102 herramientas implementadas contando esta rama; 101 ya publicadas, 222 pendientes. El catálogo original de 277 herramientas no se modificó. Próxima candidata tras cerrar esta: #286.
+
+## Publicada · Roth Vs Traditional Calculator (#284; candidata 101/323) · 2026-10-09
 
 - [x] C/F — Reutilizados los datos ya medidos en el plan: `roth ira vs traditional ira calculator` 590 búsquedas/mes US/en, KD 0; `roth vs traditional calculator` 320/mes, KD 5. CPC 2.61 USD (no CPM); sin llamadas nuevas ni gasto de DataForSEO.
 - [x] E/B — Comparación matemática local sobre el mismo presupuesto bruto anual; aportaciones al final del año; tasas actual/futura, rentabilidad y horizonte configurables. Muestra saldo Roth tras la tasa actual asumida y tradicional antes/después de tasa futura; límites explícitos, fuente informativa del IRS y aviso de que no es asesoramiento ni aplica reglas de elegibilidad/límites/deducciones.
 - [x] L — 36 copias estáticas traducidas desde inglés con el flujo Google Translate ya autorizado; títulos ≤60 y descripciones ≤160; la nota árabe fue corregida manualmente para evitar traducir “rates” como precios. Traducción automática, no revisión nativa.
 - [x] E/X — 5 pruebas de lógica más catálogo/formulario/locales/build; suite focal 189/189; `npm test` 1.390/1.390; `npm run check` conserva 10.260 URLs originales; `npm run locale:release-check` pasa. Build aislado del hub: 3.672 páginas (101 candidatas × 36 idiomas + 36 portadas).
 - [x] B — Chrome EN y AR RTL: cálculo igual con tasas iguales, validación de cambios, resultado/status se ocultan al editar; árabe a 500 px sin desbordamiento; consola limpia, solo HTML/CSS/JS/favicon locales. No se ejecutó PageSpeed/Lighthouse.
-- [ ] P/S — Falta PR, CI, merge, publicación del hub y verificación HTTP/sitemap.
-- **Estado:** 101 herramientas Growth600 implementadas en la rama; 100 publicadas en el hub, 222 todavía pendientes. Las 277 herramientas originales no se modificaron. Siguiente candidata después de esta: #285 Polygon Calculator.
+- [x] P/S — PR [#62](https://github.com/pedronunezwebs-hash/usefulverse/pull/62) fusionada en `0e781e5`; validación PR 37851536013 y publicación principal/hub 37851994699 correctas. EN/ES/AR HTTP 200; sitemap del hub 3.672 URLs y sitemap principal 10.260. No se envió manualmente en Search Console ni se comprobó indexación. No PageSpeed/Lighthouse.
+- **Estado publicado:** 101/323 candidatas Growth600; 222 pendientes. Las 277 herramientas originales siguen intactas. Siguiente candidata: #285 Polygon Calculator.
 
 ## Publicada · Font Pairing Tool (#283; candidata 100/323) · 2026-10-09
 

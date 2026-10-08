@@ -328,6 +328,7 @@ copies['font-pairing-tool'] = { name: 'Font Pairing Tool', actions: { ...actions
 copies['roth-vs-traditional-calculator'] = { name: 'Roth vs Traditional IRA Calculator', actions: { ...actions, compare: 'Compare estimates', example: 'Load example', reset: 'Reset', result: 'Results' }, fields: Object.fromEntries(['annualContribution','currentTaxRate','futureTaxRate','annualReturn','years','budgetNote','accuracyNote','resultSummary','rothAnnualDeposit','rothAfterTax','traditionalBeforeTax','traditionalAfterTax','traditionalTax','taxPaidNow','estimatedDifference','totalBudget','irsSource'].map((key) => [key, key])) };
 copies['roth-vs-traditional-calculator'].fields.budgetNote = 'Compare the same pretax budget in each scenario.';
 copies['roth-vs-traditional-calculator'].fields.irsSource = 'IRS information about IRA distributions';
+copies['polygon-calculator'] = { name: 'Polygon Calculator', actions: { ...actions, calculate: 'Calculate', example: 'Load hexagon example', reset: 'Reset', copy: 'Copy results', result: 'Results' }, messages, fields: Object.fromEntries(['sides','dimensionMode','sideLength','apothem','circumradius','dimension','unit','accuracyNote','resultSummary','perimeter','area','computedSide','computedApothem','computedCircumradius','interiorAngle','centralAngle','formulaNote'].map((key) => [key, key])) };
 copies['number-line-graphing-tool'] = { name: 'Number Line Generator', actions: { ...actions, downloadSvg: 'Download SVG' }, messages: { ...messages, calculated: 'Number line ready.', checkInputs: 'Check interval endpoints.', exampleLoaded: 'Example loaded.', downloaded: 'SVG downloaded.' }, fields: { intervals: 'Intervals or points', intervalFormat: 'One interval per line.', accuracyNote: 'Up to 20 rows; fractions are plotted approximately.', chartDescription: 'Number line graph', exampleInput: '(1, 3]\n-2' } };
 copies['laplace-transform-calculator'] = { name: 'Laplace Transform Calculator', actions: { ...actions }, messages: { ...messages, calculated: 'Transform calculated.', checkInputs: 'Check inputs.', exampleLoaded: 'Example loaded.' }, fields: { direction: 'Transform direction', forwardMode: 'Laplace transform', inverseMode: 'Inverse Laplace transform', expression: 'Expression', forwardHint: 'Supported forms.', inverseHint: 'One term per line.', accuracyNote: 'Bounded table only.', resultSummary: 'Result', region: 'Region of convergence', forwardConvention: 'Unilateral transform.', inverseConvention: 'Unilateral inverse.', forwardExample: '1', inverseExample: '1/s' } };
 copies['vector-calculator'] = { name: 'Vector Calculator', actions: { ...actions, add: 'Add A + B', subtract: 'Subtract A − B', dot: 'Dot product', cross: 'Cross product', magnitudeA: 'Magnitude of A', magnitudeB: 'Magnitude of B', normalizeA: 'Normalize A', normalizeB: 'Normalize B', angle: 'Angle between A and B', projection: 'Project A onto B' }, messages: { ...messages, exampleLoaded: 'Example loaded.' }, fields: { dimension: 'Vector dimensions', dimension2d: '2D', dimension3d: '3D', operation: 'Operation', vectorA: 'Vector A', vectorB: 'Vector B', ax: 'A x component', ay: 'A y component', az: 'A z component', bx: 'B x component', by: 'B y component', bz: 'B z component', accuracyNote: 'Compatible units only.', resultSummary: 'Results', zComponent: 'z-component', magnitudeAResult: 'Magnitude of A', magnitudeBResult: 'Magnitude of B', dotProductResult: 'Dot product', exampleHint: 'Example hint' } };
@@ -714,6 +715,16 @@ test('Roth vs traditional form states the same pretax budget, input assumptions 
   assert.match(html, /publications\/p590b/u);
   assert.match(html, /data-roth-result hidden/u);
   for (const action of ['example', 'compare', 'reset']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
+  assert.match(html, /role="status" aria-live="polite"/u);
+});
+
+test('polygon form exposes bounded inputs, all measurement modes and accessible results', () => {
+  const html = renderGrowthForm('polygon-calculator', copies['polygon-calculator']);
+  assert.match(html, /name="sides" type="number" min="4" max="1000"/u);
+  assert.match(html, /value="circumradius"/u);
+  assert.match(html, /data-polygon-result hidden/u);
+  assert.match(html, /data-polygon-values/u);
+  for (const action of ['example', 'calculate', 'reset', 'copy']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
   assert.match(html, /role="status" aria-live="polite"/u);
 });
 

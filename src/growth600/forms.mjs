@@ -69,6 +69,7 @@ export function renderGrowthForm(toolId, copy) {
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
+    'polygon-calculator': ['sides', 'dimensionMode', 'sideLength', 'apothem', 'circumradius', 'dimension', 'unit', 'accuracyNote', 'resultSummary', 'perimeter', 'area', 'computedSide', 'computedApothem', 'computedCircumradius', 'interiorAngle', 'centralAngle', 'formulaNote'],
     'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
     'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
@@ -178,6 +179,7 @@ export function renderGrowthForm(toolId, copy) {
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
+    'polygon-calculator': ['calculate', 'example', 'reset', 'copy', 'result'],
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
@@ -1389,6 +1391,21 @@ export function renderGrowthForm(toolId, copy) {
       <div><dt>${escapeGrowthHtml(fields.estimatedDifference)}</dt><dd data-estimated-difference></dd></div>
       <div><dt>${escapeGrowthHtml(fields.totalBudget)}</dt><dd data-total-budget></dd></div>
     </dl><a href="https://www.irs.gov/publications/p590b" target="_blank" rel="noopener noreferrer">${escapeGrowthHtml(fields.irsSource)}</a></section>
+  </form>`, copy);
+
+  if (toolId === 'polygon-calculator') return attachCopy(`<form id="tool-form" class="polygon-calculator-form" novalidate>
+    <div class="calculator-grid">
+      ${label('polygon-sides', fields.sides, '<input id="polygon-sides" name="sides" type="number" min="4" max="1000" step="1" value="6" inputmode="numeric" required>')}
+      ${label('polygon-mode', fields.dimensionMode, `<select id="polygon-mode" name="mode"><option value="side">${escapeGrowthHtml(fields.sideLength)}</option><option value="apothem">${escapeGrowthHtml(fields.apothem)}</option><option value="circumradius">${escapeGrowthHtml(fields.circumradius)}</option></select>`)}
+    </div>
+    <div class="calculator-grid">
+      ${label('polygon-dimension', fields.dimension, '<input id="polygon-dimension" name="dimension" type="number" min="0.000000001" max="1000000000" step="any" value="1" inputmode="decimal" required>')}
+      ${label('polygon-unit', fields.unit, '<input id="polygon-unit" name="unit" type="text" maxlength="16" autocomplete="off">')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-polygon-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.resultSummary)}</h2><dl data-polygon-values></dl><p class="hint">${escapeGrowthHtml(fields.formulaNote)}</p><div class="actions">${button('copy', actions.copy, 'secondary')}</div></section>
   </form>`, copy);
 
   if (toolId === 'acceleration-calculator') return attachCopy(`<form id="tool-form" novalidate>
