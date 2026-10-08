@@ -7,7 +7,7 @@
 - [x] C/F — Se reutilizó la ficha ya investigada: `hijri calendar converter`, 590 búsquedas/mes US/en, KD 0; sin llamada nueva ni gasto de DataForSEO.
 - [x] E/B — Conversor local bidireccional entre gregoriano e Hijri con calendario civil tabular fijo de 30 años; valida límites y fechas imposibles. Declara que no es Umm al-Qura ni un cálculo por avistamiento y que no es guía religiosa.
 - [x] L — 36 copias estáticas traducidas desde inglés con el flujo aprobado; sin traducción en producción. Los textos informan el método y sus límites; no son revisión nativa.
-- [x] X parcial — Suite completa **1.410/1.410** aprobada; `locale:release-check` y `git diff --check` pasan. El número de catálogo se ajustará al integrar Thermal Expansion en `main`; build del hub tras sincronizar.
+- [x] X — Suite completa **1.420/1.420**; `locale:release-check`, `npm run check` y `git diff --check` pasan. La web original sigue en **10.260 URLs**. Build aislado actualizado: **3.816 URLs** (105 herramientas × 36 idiomas + 36 portadas; 3.974 archivos).
 - [x] B — Chrome EN y AR real: 11 Mar 2024 ↔ 1 Ramadan 1445; fecha imposible rechazada; RTL en 390 px sin overflow ni errores de consola. Se quitó “AH” de la salida para evitar mezcla innecesaria en árabe. No PageSpeed/Lighthouse.
 - [ ] P/S — PR, CI, fusión, deploy del hub y comprobaciones públicas aún pendientes. No se solicita indexación manual ni se afirma indexación.
 - **Estado:** implementada localmente en rama aislada; las 277 herramientas originales no se modificaron. La anterior (#288) quedó desplegada mientras esta rama se preparaba.
