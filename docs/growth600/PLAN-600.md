@@ -1194,9 +1194,9 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 180 · Horsepower Calculator
 
-- [~] **C/F/E/X/L/B completados localmente; P/S pendientes — `horsepower-calculator`**
-- **Estado local (2026-10-08):** motor estático y textos de 36 idiomas; regresión completa 1.280/1.280, `npm run check` (10.260 URLs protegidas) y control de localización correctos. Build del hub: 3.204 URLs únicas, 3.343 archivos. Browser QA EN/ES/AR: cálculo directo e inversos, RTL y consola sin errores; títulos ≤60/descripciones ≤160 caracteres renderizados. Sin PageSpeed/Lighthouse.
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/horsepower-calculator/`; otras 35 versiones con los prefijos del anexo. Aún no publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `horsepower-calculator`**
+- **Estado (2026-10-08):** motor estático y textos de 36 idiomas; regresión 1.281/1.281, `npm run check` (10.260 URLs protegidas) y control de localización correctos. Build del hub: 3.204 URLs únicas, 3.343 archivos. Browser QA EN/ES/AR: cálculo directo e inversos, RTL y consola sin errores; títulos ≤60/descripciones ≤160 caracteres renderizados. Sin PageSpeed/Lighthouse.
+- **Publicado:** `https://tools.usefulverse.com/tools/horsepower-calculator/` y sus otras 35 versiones. PR #45 fusionada en `7f91d475cf09edc9b1fb6397382b90ecb85d91af`; CI/publicación principal 37804057904 y publicación del hub 37804650210 correctos. Sitemap del hub público con 3.204 URLs.
 - **Demanda:** `horsepower calculator` — 2.900 búsquedas/mes US/en, KD 0; nivel B. CPC 1.39 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Par, RPM y potencia con sistemas de unidades
 - **Prueba de aceptación específica:** Par cero da potencia cero
