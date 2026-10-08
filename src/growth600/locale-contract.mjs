@@ -53,6 +53,8 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   'chess-opening-trainer': ['ready', 'progress', 'selectPiece', 'wrong', 'illegal', 'correct', 'opponentMove', 'lineComplete', 'hint'],
   'decibel-calculator': ['calculated', 'checkInputs', 'resultValue', 'linearRatio', 'levelCount'],
   'hijri-calendar-converter': ['converted', 'checkInputs', 'hijriLabel', 'gregorianLabel', 'leapYear', 'leapYes', 'leapNo'],
+  'capacitor-calculator': ['calculated', 'checkInputs'],
+  'capacitor-calculator': ['calculated', 'checkInputs'],
   'openapi-editor': ['empty', 'tooLarge', 'yamlUnavailable', 'invalidSyntax', 'valid', 'invalid', 'noOperations', 'operationCount', 'exampleLoaded', 'formatted', 'downloaded', 'copied', 'copyUnavailable', 'rootObject', 'version', 'info', 'paths', 'tooManyPaths', 'complexity', 'invalidPath', 'invalidPathItem', 'invalidOperation', 'operationId', 'duplicateOperationId', 'responses', 'responseDescription', 'parameter', 'pathParameter', 'remoteReference', 'unresolvedReference'],
   'color-name-finder': ['found', 'checkColor', 'copied', 'copyUnavailable', 'exactMatch', 'nearestMatch', 'distance'],
   'weight-loss-calculator': ['copied', 'copyUnavailable', 'checkInputs', 'estimateOnly', 'weightToLose', 'energyEquivalent', 'timeline', 'weeklyRate', 'noDeficitChange', 'paceNote'],
@@ -131,6 +133,8 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'chess-opening-trainer': ['opening', 'side', 'white', 'black', 'board', 'moves', 'progressLabel', 'square', 'empty', 'accuracyNote', 'rules', 'opening_italian', 'opening_sicilian', 'opening_ruy_lopez', 'opening_french', 'opening_caro_kann', 'opening_queens_gambit', 'opening_london', 'opening_scandinavian', 'opening_english', 'opening_kings_indian', 'piece_wp', 'piece_wn', 'piece_wb', 'piece_wr', 'piece_wq', 'piece_wk', 'piece_bp', 'piece_bn', 'piece_bb', 'piece_br', 'piece_bq', 'piece_bk'],
   'decibel-calculator': ['mode', 'powerMode', 'amplitudeMode', 'dbToPowerMode', 'dbToAmplitudeMode', 'sumMode', 'applyMode', 'ratio', 'inputDb', 'levels', 'levelsHint', 'inputLevel', 'gainDb', 'formula', 'accuracyNote', 'assumptionsNote'],
   'hijri-calendar-converter': ['mode', 'gregorianToHijri', 'hijriToGregorian', 'gregorianDate', 'gregorianYear', 'gregorianMonth', 'gregorianDay', 'hijriYear', 'hijriMonth', 'hijriDay', 'methodNote'],
+  'capacitor-calculator': ['values', 'valuesHint', 'connection', 'series', 'parallel', 'unit', 'voltage', 'accuracyNote', 'resultEquivalent', 'resultCharge', 'resultEnergy', 'resultVoltage', 'capacitor', 'formulaNote'],
+  'capacitor-calculator': ['values', 'valuesHint', 'connection', 'series', 'parallel', 'unit', 'voltage', 'accuracyNote', 'resultEquivalent', 'resultCharge', 'resultEnergy', 'resultVoltage', 'capacitor', 'formulaNote'],
   'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
   'color-name-finder': ['hexColor', 'colorPreview', 'nearestNames', 'exactMatchNote', 'paletteNote'],
   'weight-loss-calculator': ['currentWeight', 'targetWeight', 'dailyDeficit', 'unit', 'methodNote', 'healthNote', 'sourceNiddk', 'sourceCdc'],
@@ -219,6 +223,8 @@ export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   'chess-opening-trainer': ['newGame', 'hint', 'rules'],
   'decibel-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
   'hijri-calendar-converter': ['convert', 'reset', 'example', 'result'],
+  'capacitor-calculator': ['calculate', 'reset', 'example', 'result'],
+  'capacitor-calculator': ['calculate', 'reset', 'example', 'result'],
   'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
   'color-name-finder': ['findName', 'copyName', 'copyHex', 'result'],
   'weight-loss-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilograms', 'pounds', 'dayUnit', 'weekUnit', 'kilocalories', 'perWeek'],
@@ -261,6 +267,7 @@ export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, {
         if (typeof copy.fields?.[key] !== 'string' || !copy.fields[key].trim()) errors.push(`${locale.key}/${tool.id}: fields.${key} is missing`);
       }
       if (tool.id === 'hijri-calendar-converter' && (!Array.isArray(copy.fields?.hijriMonths) || copy.fields.hijriMonths.length !== 12 || copy.fields.hijriMonths.some((month) => typeof month !== 'string' || !month.trim()))) errors.push(`${locale.key}/${tool.id}: all twelve Hijri month names are required`);
+      if (tool.id === 'capacitor-calculator' && (!Array.isArray(copy.additionalFaqs) || copy.additionalFaqs.length !== 3)) errors.push(`${locale.key}/${tool.id}: exactly three capacitor FAQs are required`);
       if (tool.id === 'travel-itinerary-planner' && ['activity', 'meal', 'transport', 'stay', 'reservation', 'other'].some((key) => typeof copy.fields?.categories?.[key] !== 'string' || !copy.fields.categories[key].trim())) errors.push(`${locale.key}/${tool.id}: all six category labels are required`);
       if (tool.id === 'work-order-generator'
         && ((copy.fields?.materialsFormat?.match(/\|/gu)?.length ?? 0) !== 2 || (copy.fields?.laborFormat?.match(/\|/gu)?.length ?? 0) !== 1)) {
@@ -275,8 +282,8 @@ export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, {
           if (typeof copy.messages?.[key] === 'string' && !copy.messages[key].includes(token)) errors.push(`${locale.key}/${tool.id}: messages.${key} must preserve ${token}`);
         }
       }
-      const faqTools = ['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'mulch-calculator', 'paver-calculator', 'solar-panel-calculator', 'btu-calculator', 'brick-calculator', 'rafter-calculator', 'carpet-calculator', 'aquarium-calculator', 'image-region-redactor', 'image-sharpener', 'photo-to-sketch', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'hitori', 'nurikabe', 'slitherlink', 'peg-solitaire', 'futoshiki', 'hashi-puzzle', 'chess-opening-trainer', 'decibel-calculator', 'hijri-calendar-converter', 'openapi-editor', 'font-pairing-tool', 'roth-vs-traditional-calculator', 'polygon-calculator', 'friction-calculator', 'thermal-expansion-calculator', 'color-name-finder', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'weight-loss-calculator', 'heloc-calculator', 'random-team-generator', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'laplace-transform-calculator', 'csv-to-pdf', 'round-robin-tournament-generator', 'work-order-generator'];
-      const faqCount = ['csv-to-pdf', 'round-robin-tournament-generator', 'work-order-generator', 'slitherlink', 'peg-solitaire', 'futoshiki', 'hashi-puzzle', 'chess-opening-trainer', 'decibel-calculator', 'hijri-calendar-converter', 'openapi-editor', 'font-pairing-tool', 'roth-vs-traditional-calculator', 'friction-calculator', 'thermal-expansion-calculator'].includes(tool.id) ? 3 : 2;
+      const faqTools = ['deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'mulch-calculator', 'paver-calculator', 'solar-panel-calculator', 'btu-calculator', 'brick-calculator', 'rafter-calculator', 'carpet-calculator', 'aquarium-calculator', 'image-region-redactor', 'image-sharpener', 'photo-to-sketch', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'hitori', 'nurikabe', 'slitherlink', 'peg-solitaire', 'futoshiki', 'hashi-puzzle', 'chess-opening-trainer', 'decibel-calculator', 'hijri-calendar-converter', 'capacitor-calculator', 'openapi-editor', 'font-pairing-tool', 'roth-vs-traditional-calculator', 'polygon-calculator', 'friction-calculator', 'thermal-expansion-calculator', 'color-name-finder', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'weight-loss-calculator', 'heloc-calculator', 'random-team-generator', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'laplace-transform-calculator', 'csv-to-pdf', 'round-robin-tournament-generator', 'work-order-generator'];
+      const faqCount = ['csv-to-pdf', 'round-robin-tournament-generator', 'work-order-generator', 'slitherlink', 'peg-solitaire', 'futoshiki', 'hashi-puzzle', 'chess-opening-trainer', 'decibel-calculator', 'hijri-calendar-converter', 'capacitor-calculator', 'openapi-editor', 'font-pairing-tool', 'roth-vs-traditional-calculator', 'friction-calculator', 'thermal-expansion-calculator'].includes(tool.id) ? 3 : 2;
       if (faqTools.includes(tool.id)
         && (!Array.isArray(copy.additionalFaqs) || copy.additionalFaqs.length !== faqCount
           || copy.additionalFaqs.some((faq) => !faq.question?.trim() || !faq.answer?.trim()))) {

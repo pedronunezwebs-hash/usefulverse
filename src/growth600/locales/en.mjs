@@ -78,6 +78,9 @@ import decibelCalculatorCopies from './decibel-calculator.mjs';
 import { decibelCalculatorEnglishCopy } from './decibel-calculator.en.mjs';
 import hijriCalendarConverterCopies from './hijri-calendar-converter.mjs';
 import { hijriCalendarConverterEnglishCopy } from './hijri-calendar-converter.en.mjs';
+import capacitorCalculatorCopies from './capacitor-calculator.mjs';
+import { capacitorCalculatorEnglishCopy } from './capacitor-calculator.en.mjs';
+import { capacitorCalculatorTechnicalFixes, capacitorCalculatorTitles } from './capacitor-calculator.titles.mjs';
 import openApiEditorCopies from './openapi-editor.mjs';
 import { openApiEditorEnglishCopy } from './openapi-editor.en.mjs';
 import fontPairingToolCopies from './font-pairing-tool.mjs';
@@ -977,5 +980,9 @@ registerGrowthLocaleExtension(source, 'hijri-calendar-converter', {
   ...hijriCalendarConverterCopies,
   en: hijriCalendarConverterEnglishCopy,
 }, 'polygon-calculator');
+registerGrowthLocaleExtension(source, 'capacitor-calculator', {
+  ...Object.fromEntries(Object.entries(capacitorCalculatorCopies).map(([locale, copy]) => [locale, { ...copy, title: capacitorCalculatorTitles[locale] ?? copy.title, fields: { ...copy.fields, ...capacitorCalculatorTechnicalFixes[locale] } }])),
+  en: capacitorCalculatorEnglishCopy,
+}, 'hijri-calendar-converter');
 
 export default Object.freeze(source);

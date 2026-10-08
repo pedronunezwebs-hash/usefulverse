@@ -1558,6 +1558,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `capacitor series parallel calculator` — 110/mes US/en; KD 0.
   - `capacitor calculator free online`; `capacitor calculator with example`; `capacitor calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Avance comprobado (2026-10-09):** motor local, entradas localizadas y 36 copias estáticas; correcciones técnicas de carga eléctrica/topología revisadas. Pruebas focales 19/19; suite completa **1.427/1.427**; release locale y `npm run check` pasan (10.260 URLs de las 277 originales). Build del hub **3.852 rutas** y 4.011 archivos; bundle JS 5.382 bytes. Chrome EN/AR/RU confirmó ejemplos de paralelo/serie, validación, reset, RTL y ausencia de overflow/errores; carga sin terceros. Falta PR/CI/fusión/deploy y verificar sitemap público; no PageSpeed/Lighthouse.
 
 ### 292 · 555 Timer Calculator
 
@@ -3534,7 +3535,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 289 · Hijri Calendar Converter
 
-- [ ] **C/F/E/X/L/B/P/S completos — `hijri-calendar-converter`**
+- [x] **C/F/E/X/L/B/P/S completos — `hijri-calendar-converter`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/hijri-calendar-converter/`; otras 35 versiones con los prefijos del anexo. Pendiente de PR y publicación.
 - **Demanda:** `hijri calendar converter` — 590 búsquedas/mes US/en, KD 0; nivel C. CPC 0.08 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Conversión gregoriana e Hijri tabular, método visible y advertencia de diferencias observacionales; años y fechas inválidas rechazados.
@@ -3545,7 +3546,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `gregorian hijri converter` — sin métrica obtenida; no atribuir volumen.
   - `hijri calendar converter free online`; `hijri calendar converter with example`; `hijri calendar converter no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
-- **Avance comprobado (2026-10-09):** motor aritmético local del calendario civil tabular islámico, ciclo bisiesto de 30 años y rangos limitados; 36 copias lingüísticas estáticas. Suite general **1.420/1.420**, `locale:release-check`, `npm run check` (10.260 URLs originales) y build del hub **3.816 URLs** (105 herramientas × 36 idiomas + 36 portadas) pasan. Chrome EN/AR: 11 Mar 2024 ↔ 1 Ramadan 1445; fecha inválida rechazada; árabe RTL a 390 px, sin overflow ni errores de consola. No es Umm al-Qura, observación lunar ni guía religiosa. PR/deploy aún pendientes; no PageSpeed/Lighthouse.
+- **Cierre comprobado (2026-10-09):** motor aritmético local del calendario civil tabular islámico, ciclo bisiesto de 30 años y rangos limitados; 36 copias lingüísticas estáticas. Suite general **1.420/1.420**, `locale:release-check`, `npm run check` (10.260 URLs originales) y build del hub **3.816 URLs** (105 herramientas × 36 idiomas + 36 portadas) pasan. Chrome EN/AR: 11 Mar 2024 ↔ 1 Ramadan 1445; fecha inválida rechazada; árabe RTL a 390 px, sin overflow ni errores de consola. PR #66, CI y deploys principal/hub completados; público EN/AR HTTP 200 y sitemap hub 3.816 URLs. No es Umm al-Qura, observación lunar ni guía religiosa; no se afirma indexación. No PageSpeed/Lighthouse.
 
 ## Checklist · Organización y productividad
 

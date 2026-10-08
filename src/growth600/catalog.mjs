@@ -1259,6 +1259,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['date-calculator'],
     logicModule: './tools/hijri-calendar-converter/logic.mjs',
   },
+  {
+    id: 'capacitor-calculator',
+    category: 'calculators',
+    type: 'calculator',
+    primaryIntent: 'capacitor calculator',
+    secondaryIntents: ['capacitor series parallel calculator', 'capacitor charge and energy calculator'],
+    functions: ['combine 1 to 20 capacitor values in series or parallel', 'convert the equivalent capacitance to a selected shared unit', 'optionally calculate total charge and stored energy from source voltage', 'show ideal voltage and charge distribution for each capacitor'],
+    acceptance: 'Two 100 μF capacitors in parallel produce 200 μF; at 5 V the ideal network stores 1 mC and 0.0025 J.',
+    boundary: 'Ideal capacitors only; no voltage-rating, tolerance, leakage or ESR model and no engineering or safety advice. Values are calculated locally without an API.',
+    relatedExistingIds: ['ohms-law-calculator'],
+    logicModule: './tools/capacitor-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

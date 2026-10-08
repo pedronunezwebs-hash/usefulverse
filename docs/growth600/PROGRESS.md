@@ -2,21 +2,32 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## En curso · Hijri Calendar Converter (#289) · 2026-10-09
+## En curso · Capacitor Calculator (#290) · 2026-10-09
+
+- [x] C/F — Reutilizada la ficha ya contrastada: `capacitor calculator`, 590 búsquedas/mes US/en, KD 2; `capacitor series parallel calculator`, 110/mes, KD 0. CPC registrado de 4,29 USD; no es CPM. Sin nuevas llamadas ni gasto de DataForSEO.
+- [x] E — Separación de intención: red de capacitores, capacitancia equivalente, carga/energía ideal; distinta de la red de resistencias existente. No se altera el catálogo original de 277.
+- [x] B — Implementación local: conexión serie/paralelo, 1–20 entradas en una unidad compartida y tensión opcional para carga/energía y valores por capacitor. Prueba de aceptación: 2 × 100 μF en paralelo → 200 μF; a 5 V → 1 mC y 0,0025 J.
+- [x] L — 36 copias estáticas generadas; títulos claros y bajo 60 caracteres, con UsefulVerse intacto. Corregí etiquetas de carga eléctrica y conexiones serie/paralelo en los 36 idiomas tras detectar traducciones ambiguas. Traducción automática revisada en términos técnicos clave; no equivale a revisión nativa.
+- [x] X — Lógica 19/19 en pruebas focalizadas; suite completa **1.427/1.427**; `locale:release-check`, `npm run check` y `git diff --check` pasan. Original conserva **10.260 URLs**. Build hub **3.852 páginas** (106 × 36 + 36 portadas), 4.011 archivos, 115.623.399 bytes. Bundle de herramienta 5.382 bytes.
+- [x] B — Chrome: EN/AR/RU en build estático; árabe RTL y números arábigos locales funcionan. Caso paralelo 2×100 μF a 5 V → 200 μF, 1 mC, 2,5 mJ y 5 V por componente; serie 100/200 μF a 12 V → 66,666667 μF, 800 μC, 4,8 mJ y 8/4 V. Entrada inválida oculta resultado anterior; reset limpia. A 390 px CSS (Chrome reportó 500 px de viewport) sin overflow; consola limpia; carga solo HTML, CSS, bundle local y favicon. Sin PageSpeed/Lighthouse.
+- [ ] P/S — PR, CI remota, fusión, deploy y comprobación pública aún pendientes.
+- **Estado:** código y QA local listos; falta PR/CI/publicación. Hub #289 ya está desplegado y verificado (run `37860750067`; 3.816 URLs). No declarar #290 publicada ni pedir indexación hasta pasar los gates remotos.
+
+## Publicada · Hijri Calendar Converter (#289) · 2026-10-09
 
 - [x] C/F — Se reutilizó la ficha ya investigada: `hijri calendar converter`, 590 búsquedas/mes US/en, KD 0; sin llamada nueva ni gasto de DataForSEO.
 - [x] E/B — Conversor local bidireccional entre gregoriano e Hijri con calendario civil tabular fijo de 30 años; valida límites y fechas imposibles. Declara que no es Umm al-Qura ni un cálculo por avistamiento y que no es guía religiosa.
 - [x] L — 36 copias estáticas traducidas desde inglés con el flujo aprobado; sin traducción en producción. Los textos informan el método y sus límites; no son revisión nativa.
 - [x] X — Suite completa **1.420/1.420**; `locale:release-check`, `npm run check` y `git diff --check` pasan. La web original sigue en **10.260 URLs**. Build aislado actualizado: **3.816 URLs** (105 herramientas × 36 idiomas + 36 portadas; 3.974 archivos).
 - [x] B — Chrome EN y AR real: 11 Mar 2024 ↔ 1 Ramadan 1445; fecha imposible rechazada; RTL en 390 px sin overflow ni errores de consola. Se quitó “AH” de la salida para evitar mezcla innecesaria en árabe. No PageSpeed/Lighthouse.
-- [ ] P/S — PR, CI, fusión, deploy del hub y comprobaciones públicas aún pendientes. No se solicita indexación manual ni se afirma indexación.
-- **Estado:** implementada localmente en rama aislada; las 277 herramientas originales no se modificaron. La anterior (#288) quedó desplegada mientras esta rama se preparaba.
+- [x] P/S — PR [#66](https://github.com/pedronunezwebs-hash/usefulverse/pull/66), CI run `37860169696`, merge commit `42dfa253d0c1acf34ab4a9c7a1e814e52941c2e4`, deploy del sitio principal run `37860417059` y del hub run `37860750067` completados. EN y AR responden HTTP 200; sitemap del hub tiene **3.816 URLs únicas**, 36 de Hijri. No se envió indexación manual ni se afirma indexación.
+- **Estado publicado:** 105 candidatas Growth600 en el hub; originales 277 intactas. La siguiente ficha en progreso es #290 Capacitor Calculator. No PageSpeed/Lighthouse.
 
 ## Publicada · Thermal Expansion Calculator (#288) · 2026-10-09
 
 - [x] C/F/E/X/L/B — Validación documentada en el cambio anterior; datos ya medidos y traducciones estáticas en los 36 idiomas.
 - [x] P/S — Merge commit `4d999e338d76e924485b18606cbe75813c85167e`; despliegue principal run `37858771766` y publicación del hub run `37859095394` completados correctamente. Rutas EN y AR HTTP 200; título inglés correcto; el sitemap separado anuncia **3.780 URLs** (104 herramientas × 36 locales + 36 portadas). El sitemap principal sigue separado.
-- **Estado publicado:** 104 candidatas Growth600 publicadas; el siguiente elemento en trabajo es #289 Hijri Calendar Converter. Publicación no equivale a indexación; no se envió solicitud manual a buscadores. No PageSpeed/Lighthouse.
+- **Estado publicado:** 104 candidatas Growth600; luego se añadió #289 Hijri Calendar Converter (105 en total). Publicación no equivale a indexación; no se envió solicitud manual a buscadores. No PageSpeed/Lighthouse.
 
 ## Publicada · Friction Calculator (#287) · 2026-10-09
 
