@@ -52,6 +52,7 @@ export function renderGrowthForm(toolId, copy) {
     'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
     'kinetic-energy-calculator': ['mode', 'energyMode', 'speedMode', 'massKg', 'velocityMps', 'kineticEnergyJ', 'heightM', 'gravityMps2', 'accuracyNote'],
     'resistor-color-code-calculator': ['mode', 'decodeMode', 'encodeMode', 'bands', 'fourBands', 'fiveBands', 'sixBands', 'resistanceOhms', 'tolerance', 'temperatureCoefficient', 'accuracyNote', 'band1', 'band2', 'band3', 'band4', 'band5', 'band6', 'black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'gray', 'white', 'gold', 'silver', 'none', 'ppm250', 'ppm100', 'ppm50', 'ppm25', 'ppm20', 'ppm15', 'ppm10', 'ppm5', 'ppm1', 'tolerance005', 'tolerance01', 'tolerance025', 'tolerance05', 'tolerance1', 'tolerance2', 'tolerance5', 'tolerance10', 'tolerance20'],
+    'acceleration-calculator': ['mode', 'solveAcceleration', 'solveTime', 'solveFinalVelocity', 'solveDisplacement', 'units', 'metric', 'imperial', 'initialVelocity', 'finalVelocity', 'acceleration', 'timeSeconds', 'initialPosition', 'accuracyNote'],
     'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
     'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
@@ -140,6 +141,7 @@ export function renderGrowthForm(toolId, copy) {
     'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'kinetic-energy-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'resistor-color-code-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'acceleration-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
@@ -1236,6 +1238,20 @@ export function renderGrowthForm(toolId, copy) {
       <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
     </form>`, copy);
   }
+
+  if (toolId === 'acceleration-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('acceleration-mode', fields.mode, `<select id="acceleration-mode" name="mode"><option value="acceleration">${escapeGrowthHtml(fields.solveAcceleration)}</option><option value="time">${escapeGrowthHtml(fields.solveTime)}</option><option value="final-velocity">${escapeGrowthHtml(fields.solveFinalVelocity)}</option><option value="displacement">${escapeGrowthHtml(fields.solveDisplacement)}</option></select>`)}
+    ${label('acceleration-units', fields.units, `<select id="acceleration-units" name="units"><option value="metric">${escapeGrowthHtml(fields.metric)}</option><option value="imperial">${escapeGrowthHtml(fields.imperial)}</option></select>`)}
+    <div data-acceleration-field="initialVelocity">${label('initial-velocity', fields.initialVelocity, '<input id="initial-velocity" name="initialVelocity" type="number" min="-1000000000" max="1000000000" step="any" inputmode="decimal" value="0" required>')}</div>
+    <div data-acceleration-field="finalVelocity">${label('final-velocity', fields.finalVelocity, '<input id="final-velocity" name="finalVelocity" type="number" min="-1000000000" max="1000000000" step="any" inputmode="decimal" value="20" required>')}</div>
+    <div data-acceleration-field="acceleration" hidden>${label('motion-acceleration', fields.acceleration, '<input id="motion-acceleration" name="acceleration" type="number" min="-1000000000" max="1000000000" step="any" inputmode="decimal" value="4">')}</div>
+    <div data-acceleration-field="timeSeconds">${label('motion-time', fields.timeSeconds, '<input id="motion-time" name="timeSeconds" type="number" min="0.000000001" max="1000000000" step="any" inputmode="decimal" value="5" required>')}</div>
+    <div data-acceleration-field="initialPosition" hidden>${label('initial-position', fields.initialPosition, '<input id="initial-position" name="initialPosition" type="number" min="-1000000000" max="1000000000" step="any" inputmode="decimal" value="0">')}</div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
 
   if (toolId === 'chemical-equation-balancer') return attachCopy(`<form id="tool-form" novalidate>
     ${label('chemical-equation', fields.equation, '<textarea id="chemical-equation" name="equation" rows="3" maxlength="500" spellcheck="false" autocapitalize="off" autocomplete="off" required></textarea>')}

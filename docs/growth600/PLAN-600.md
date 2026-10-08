@@ -1134,8 +1134,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 158 · Resistor Color Code Calculator
 
-- [ ] **C/F/E/X/L/B completos — `resistor-color-code-calculator`; P/S pendientes**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/resistor-color-code-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `resistor-color-code-calculator`**
+- **Destino:** `https://tools.usefulverse.com/tools/resistor-color-code-calculator/` y 35 variantes localizadas, publicado en el hub.
 - **Demanda:** `resistor color code calculator` — 4.400 búsquedas/mes US/en, KD 29; nivel B. CPC 0.77 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** 4-6 bandas, tolerancia, temperatura y código inverso
 - **Prueba de aceptación específica:** Marrón negro rojo oro da1kΩ5%
@@ -1146,17 +1146,17 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `resistor color code calculator free online`; `resistor color code calculator with example`; `resistor color code calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** DE/de `widerstand farbcode rechner` 1.000/mes, KD 0.
-- **Estado de implementación (2026-10-08):** C/F/E/X/L/B completados en rama; pruebas totales 1.264/1.264. Construcción local: 3.096 páginas para 85 herramientas × 36 idiomas + 36 portadas. Navegador verificó decodificación de 4 bandas (1 kΩ ±5%), 6 bandas (1 kΩ ±1%, 50 ppm/K), codificación inversa, copia, ES/AR (RTL), viewport 390 px sin desbordamiento y consola limpia. Traducción Google Translate estática, 77 cadenas × 36 idiomas; no es revisión nativa. **P/S todavía pendientes:** integrar, desplegar, comprobar URLs/sitemap públicos y registrar la entrega en paneles accesibles; mantener la casilla principal sin marcar hasta entonces. Sin PageSpeed.
+- **Estado de implementación (2026-10-08):** C/F/E/X/L/B/P/S completos. 1.264 pruebas y CI 37785744156 aprobados. Build aislado: 3.096 páginas para 85 herramientas × 36 idiomas + 36 portadas. Navegador verificó 4 bandas (1 kΩ ±5%), 6 bandas (1 kΩ ±1%, 50 ppm/K), modo inverso, copiar, ES/AR (RTL), 390 px y consola limpia. 77 cadenas × 36 idiomas traducidas automáticamente con Google Translate; no es revisión nativa. Integrado mediante PR #41, merge `40e466c3`, Pages `78a117d0-1b8e-4e90-bb78-4a4f940fc755`; EN/ES/AR y sitemap públicos HTTP 200 con 3.096 `<loc>` únicos. Sin PageSpeed.
 
 ### 163 · Half Life Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `half-life-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/half-life-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [~] **No crear otra URL — `half-life-calculator` ya existe en el catálogo Growth600**, con lógica, control, página estática y traducciones. Cubre esta intención y debe permanecer intacta.
+- **Destino existente:** `https://tools.usefulverse.com/tools/half-life-calculator/` y sus versiones localizadas. El plan no cambia ni duplica el producto existente.
 - **Demanda:** `half life calculator` — 3.600 búsquedas/mes US/en, KD 6; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Exponencial, vida media, cantidad y tiempo; sin dosificación
 - **Prueba de aceptación específica:** Una vida media deja50%
 - **Frontera con otras herramientas:** compound-interest-calculator: desintegración física. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Estado:** candidata descartada por duplicación detectada durante la revisión; no se modificó la herramienta existente.
 - **Consultas secundarias del mismo propietario:**
   - `radioactive decay calculator` — 1.000/mes US/en; KD 0.
   - `half life calculator free online`; `half life calculator with example`; `half life calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -1164,13 +1164,14 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 178 · Acceleration Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `acceleration-calculator`**
+- [x] **C/F/E/X/L/B/S locales validados — `acceleration-calculator`; P queda pendiente del pipeline de publicación**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/acceleration-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `acceleration calculator` — 2.900 búsquedas/mes US/en, KD 0; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Velocidades inicial/final, tiempo, posición y MRUA
 - **Prueba de aceptación específica:** De0 a20m/s en5s da4m/s²
-- **Frontera con otras herramientas:** speed-distance-time-calculator: movimiento acelerado. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Frontera con otras herramientas:** cinemática de aceleración constante, con cuatro incógnitas; no es una URL por dirección inversa o modalidad. Evita prometer frenado real, resistencia o seguridad de vehículos.
+- **Implementación/riesgo:** motor local ligero; cuatro modos de cálculo y unidades métricas/imperiales, con conversión interna SI. Aceptación y bordes cubiertos por pruebas focalizadas; no sustituye consejo de ingeniería.
+- **Avance comprobado (2026-10-08):** 36 copias estáticas (42 cadenas por idioma), incluida la corrección de etiquetas de física árabes y dos rótulos Marathi que contenían un marcador de lote. Catálogo, formulario, controlador, contrato de locales y build pasan; suite focalizada 161/161 antes de dos ajustes de copy y contrato de locales 117/117 después. Suite total 1.269/1.269; `npm run check` valida 10.260 URLs originales sin cambios. Build aislado produce **3.132 URLs únicas** (86 herramientas × 36 idiomas + 36 portadas). Chrome: ejemplo 0→20 m/s en 5 s da 4 m/s² y 50 m; modo inverso e imperial verificados; móvil árabe RTL 390 px sin overflow, errores de consola ni recursos externos. Publicación todavía pendiente del pipeline; no ejecutado PageSpeed.
 - **Consultas secundarias del mismo propietario:**
   - `acceleration velocity calculator` — 30/mes US/en; KD 2.
   - `acceleration calculator free online`; `acceleration calculator with example`; `acceleration calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
