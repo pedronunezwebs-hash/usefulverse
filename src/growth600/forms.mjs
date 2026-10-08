@@ -64,6 +64,7 @@ export function renderGrowthForm(toolId, copy) {
     futoshiki: ['size', 'difficulty', 'board', 'rules', 'accuracyNote', 'cell', 'row', 'column'],
     'hashi-puzzle': ['difficulty', 'board', 'rules', 'accuracyNote', 'island', 'needs', 'current', 'bridge', 'to', 'toggleHint'],
     'chess-opening-trainer': ['opening', 'side', 'white', 'black', 'board', 'moves', 'progressLabel', 'square', 'empty', 'accuracyNote', 'rules', 'opening_italian', 'opening_sicilian', 'opening_ruy_lopez', 'opening_french', 'opening_caro_kann', 'opening_queens_gambit', 'opening_london', 'opening_scandinavian', 'opening_english', 'opening_kings_indian', 'piece_wp', 'piece_wn', 'piece_wb', 'piece_wr', 'piece_wq', 'piece_wk', 'piece_bp', 'piece_bn', 'piece_bb', 'piece_br', 'piece_bq', 'piece_bk'],
+    'decibel-calculator': ['mode', 'powerMode', 'amplitudeMode', 'dbToPowerMode', 'dbToAmplitudeMode', 'sumMode', 'applyMode', 'ratio', 'inputDb', 'levels', 'inputLevel', 'gainDb', 'accuracyNote', 'assumptionsNote'],
     'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
     'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
@@ -169,6 +170,7 @@ export function renderGrowthForm(toolId, copy) {
     futoshiki: ['newGame', 'checkBoard', 'hint', 'undo', 'rules', 'small', 'medium', 'large', 'easy', 'regular', 'hard'],
     'hashi-puzzle': ['newGame', 'checkBoard', 'hint', 'undo', 'clearBoard', 'rules', 'easy', 'regular', 'hard'],
     'chess-opening-trainer': ['newGame', 'hint', 'rules'],
+    'decibel-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
@@ -726,6 +728,17 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions"><button type="submit" data-action="find-name" class="button button--primary">${escapeGrowthHtml(labels.findName)}</button></div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><p data-exact-match hidden>${escapeGrowthHtml(fields.exactMatchNote)}</p><div data-name-results></div><button type="button" data-action="copy-name" class="button button--secondary">${escapeGrowthHtml(labels.copyName)}</button><button type="button" data-action="copy-hex" class="button button--secondary">${escapeGrowthHtml(labels.copyHex)}</button></section>
+  </form>`, copy);
+
+  if (toolId === 'decibel-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('decibel-mode', fields.mode, `<select id="decibel-mode" name="mode"><option value="power-ratio">${escapeGrowthHtml(fields.powerMode)}</option><option value="amplitude-ratio">${escapeGrowthHtml(fields.amplitudeMode)}</option><option value="db-to-power">${escapeGrowthHtml(fields.dbToPowerMode)}</option><option value="db-to-amplitude">${escapeGrowthHtml(fields.dbToAmplitudeMode)}</option><option value="sum-levels">${escapeGrowthHtml(fields.sumMode)}</option><option value="apply-gain">${escapeGrowthHtml(fields.applyMode)}</option></select>`)}
+    <div data-decibel-ratio>${label('decibel-ratio', fields.ratio, '<input id="decibel-ratio" name="ratio" type="number" min="1e-300" max="1e300" step="any" inputmode="decimal">')}</div>
+    <div data-decibel-input hidden>${label('decibel-input', fields.inputDb, '<input id="decibel-input" name="inputDb" type="number" min="-3000" max="3000" step="any" inputmode="decimal">')}</div>
+    <div data-decibel-levels hidden>${label('decibel-levels', fields.levels, '<textarea id="decibel-levels" name="levels" rows="5" maxlength="600" spellcheck="false"></textarea>')}<p class="hint">${escapeGrowthHtml(fields.levelsHint)}</p></div>
+    <div data-decibel-gain hidden>${label('decibel-input-level', fields.inputLevel, '<input id="decibel-input-level" name="inputLevel" type="number" min="-3000" max="3000" step="any" inputmode="decimal">')}${label('decibel-gain', fields.gainDb, '<input id="decibel-gain" name="gainDb" type="number" min="-3000" max="3000" step="any" inputmode="decimal">')}</div>
+    <p class="hint" data-decibel-ratio-note>${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.assumptionsNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'weight-loss-calculator') return attachCopy(`<form id="tool-form" novalidate>

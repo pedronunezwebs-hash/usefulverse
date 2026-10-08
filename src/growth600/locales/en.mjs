@@ -74,6 +74,8 @@ import hashiPuzzleCopies from './hashi-puzzle.mjs';
 import { hashiPuzzleEnglishCopy } from './hashi-puzzle.en.mjs';
 import chessOpeningTrainerCopies from './chess-opening-trainer.mjs';
 import { chessOpeningTrainerEnglishCopy } from './chess-opening-trainer.en.mjs';
+import decibelCalculatorCopies from './decibel-calculator.mjs';
+import { decibelCalculatorEnglishCopy } from './decibel-calculator.en.mjs';
 import { workOrderGeneratorEnglishCopy } from './work-order-generator.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
@@ -776,5 +778,12 @@ registerGrowthLocaleExtension(source, 'chess-opening-trainer', {
   zh: { ...chessOpeningTrainerCopies.zh, title: '免费国际象棋开局训练器 | UsefulVerse' },
   zh_tw: { ...chessOpeningTrainerCopies.zh_tw, title: '免費國際象棋開局訓練器 | UsefulVerse' },
 }, 'hashi-puzzle');
+registerGrowthLocaleExtension(source, 'decibel-calculator', {
+  ...decibelCalculatorCopies,
+  en: decibelCalculatorEnglishCopy,
+  zh: { ...decibelCalculatorCopies.zh, title: '免费分贝计算器和 dB 转换器 | UsefulVerse' },
+  zh_tw: { ...decibelCalculatorCopies.zh_tw, title: '免費分貝計算器和 dB 轉換器 | UsefulVerse' },
+  ja: { ...decibelCalculatorCopies.ja, title: '無料デシベル計算機・dB変換 | UsefulVerse' },
+}, 'complex-number-calculator');
 
 export default Object.freeze(source);

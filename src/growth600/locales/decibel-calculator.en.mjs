@@ -1,0 +1,25 @@
+export const decibelCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Decibel Calculator',
+  title: 'Free Decibel Calculator & dB Converter | UsefulVerse',
+  description: 'Convert power or amplitude ratios, add uncorrelated dB levels, or apply gain and attenuation. Free local calculator.',
+  intro: 'Convert ratios to decibels, convert dB back to linear ratios, add uncorrelated levels, or calculate the result of gain and attenuation.',
+  howQuestion: 'How do I use the decibel calculator?',
+  howAnswer: 'Choose a calculation. Enter a positive power or amplitude ratio, a dB value, multiple levels (one per line), or an input level and gain. The result and formula appear in your browser.',
+  privacyQuestion: 'Are my values uploaded?',
+  privacyAnswer: 'No. Calculations run locally in this browser; values are not uploaded or saved.',
+  fields: {
+    mode: 'Calculation', powerMode: 'Power ratio to dB', amplitudeMode: 'Amplitude ratio to dB', dbToPowerMode: 'dB to power ratio', dbToAmplitudeMode: 'dB to amplitude ratio', sumMode: 'Add uncorrelated levels', applyMode: 'Apply gain or attenuation',
+    ratio: 'Positive linear ratio', inputDb: 'Decibel value', levels: 'Levels in dB', levelsHint: 'Enter 2–20 levels, one per line. Use a period for the decimal separator.', inputLevel: 'Input level in dB', gainDb: 'Gain in dB (negative means attenuation)',
+    formula: 'Formula', resultSummary: 'Result', accuracyNote: 'Use ratios greater than zero. Supported values are bounded to keep calculations finite.',
+    assumptionsNote: 'Amplitude ratios assume the same impedance. Level addition assumes uncorrelated sources; this does not measure sound pressure or account for phase.',
+  },
+  actions: { calculate: 'Calculate', example: 'Try an example', reset: 'Reset values', copy: 'Copy result' },
+  messages: { calculated: 'Calculation complete.', checkInputs: 'Check the values and try again.', resultValue: 'Result', linearRatio: 'Linear ratio', levelCount: 'Levels added' },
+  additionalFaqs: [
+    { question: 'What is the difference between a power ratio and an amplitude ratio?', answer: 'Power ratios use 10 × log10(ratio). Amplitude ratios use 20 × log10(ratio) when both measurements have the same impedance.' },
+    { question: 'Why do two equal sound levels add about 3 dB?', answer: 'For uncorrelated sources, their powers add; two equal levels therefore increase by about 3.01 dB. Correlated signals need phase-aware calculation.' },
+    { question: 'Can this calculator measure dB SPL with my microphone?', answer: 'No. It does arithmetic on values you enter. It does not access a microphone, calibrate a sound meter, or measure acoustic pressure.' },
+  ],
+  localizationStatus: 'approved',
+});
