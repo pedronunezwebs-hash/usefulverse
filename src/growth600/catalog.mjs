@@ -1007,6 +1007,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['unit-converter'],
     logicModule: './tools/kinetic-energy-calculator/logic.mjs',
   },
+  {
+    id: 'resistor-color-code-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'resistor color code calculator',
+    secondaryIntents: ['resistor band calculator', 'resistor color code decoder', 'resistor color code chart calculator'],
+    functions: ['decode standard 4-, 5- and 6-band resistor colors into ohms and tolerance', 'decode six-band temperature coefficient when supplied', 'reverse-encode an entered resistance to the nearest representable standard band pattern', 'show the rounded nominal value and exact band order'],
+    acceptance: 'Brown-black-red-gold decodes to 1,000 Ω ±5%; 5-band brown-black-black-brown-brown decodes to 1,000 Ω ±1%; invalid first black band is rejected.',
+    boundary: 'Uses standard IEC resistor color-code mappings for 4–6 bands; reverse encoding selects the nearest representable nominal value with the chosen significant-digit count, and reports rounding. It does not infer component type, power rating, circuit suitability, safety or real measured resistance. Band colors may vary physically; verify the actual component marking and datasheet. Calculation runs locally in this browser.',
+    relatedExistingIds: ['ohms-law-calculator'],
+    logicModule: './tools/resistor-color-code-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

@@ -51,6 +51,7 @@ export function renderGrowthForm(toolId, copy) {
     'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
     'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
     'kinetic-energy-calculator': ['mode', 'energyMode', 'speedMode', 'massKg', 'velocityMps', 'kineticEnergyJ', 'heightM', 'gravityMps2', 'accuracyNote'],
+    'resistor-color-code-calculator': ['mode', 'decodeMode', 'encodeMode', 'bands', 'fourBands', 'fiveBands', 'sixBands', 'resistanceOhms', 'tolerance', 'temperatureCoefficient', 'accuracyNote', 'band1', 'band2', 'band3', 'band4', 'band5', 'band6', 'black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'gray', 'white', 'gold', 'silver', 'none', 'ppm250', 'ppm100', 'ppm50', 'ppm25', 'ppm20', 'ppm15', 'ppm10', 'ppm5', 'ppm1', 'tolerance005', 'tolerance01', 'tolerance025', 'tolerance05', 'tolerance1', 'tolerance2', 'tolerance5', 'tolerance10', 'tolerance20'],
     'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
     'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
@@ -138,6 +139,7 @@ export function renderGrowthForm(toolId, copy) {
     'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'kinetic-energy-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'resistor-color-code-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
@@ -1210,6 +1212,30 @@ export function renderGrowthForm(toolId, copy) {
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);
+
+  if (toolId === 'resistor-color-code-calculator') {
+    const palette = ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'gray', 'white', 'gold', 'silver', 'none'];
+    const select = (id, options, value) => label(id, fields[id], `<select id="${id}" name="${id}">${options.map(([optionValue, text]) => `<option value="${escapeGrowthHtml(optionValue)}"${optionValue === value ? ' selected' : ''}>${escapeGrowthHtml(text)}</option>`).join('')}</select>`);
+    const bandSelect = (number, initial) => select(`band${number}`, palette.map((value) => [value, fields[value]]), initial);
+    const colorInputs = Array.from({ length: 6 }, (_, index) => bandSelect(index + 1, ['brown', 'black', 'red', 'gold', 'brown', 'red'][index])).join('');
+    const bandOptions = [['4', fields.fourBands], ['5', fields.fiveBands], ['6', fields.sixBands]];
+    const toleranceOptions = [['0.05', fields.tolerance005], ['0.1', fields.tolerance01], ['0.25', fields.tolerance025], ['0.5', fields.tolerance05], ['1', fields.tolerance1], ['2', fields.tolerance2], ['5', fields.tolerance5], ['10', fields.tolerance10], ['20', fields.tolerance20]];
+    const tcrOptions = [['250', fields.ppm250], ['100', fields.ppm100], ['50', fields.ppm50], ['25', fields.ppm25], ['20', fields.ppm20], ['15', fields.ppm15], ['10', fields.ppm10], ['5', fields.ppm5], ['1', fields.ppm1]];
+    return attachCopy(`<form id="tool-form" novalidate>
+      ${select('mode', [['decode', fields.decodeMode], ['encode', fields.encodeMode]], 'decode')}
+      ${select('bands', bandOptions, '4')}
+      <fieldset data-resistor-decode><legend>${escapeGrowthHtml(fields.decodeMode)}</legend>${colorInputs}</fieldset>
+      <fieldset data-resistor-encode hidden><legend>${escapeGrowthHtml(fields.encodeMode)}</legend>
+        ${label('resistance-ohms', fields.resistanceOhms, '<input id="resistance-ohms" name="resistanceOhms" type="number" min="0.000000001" max="1000000000000000" step="any" value="1000" inputmode="decimal" required>')}
+        ${select('tolerance', toleranceOptions, '5')}
+        <div data-resistor-tcr hidden>${select('temperatureCoefficient', tcrOptions, '100')}</div>
+      </fieldset>
+      <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+      <div class="actions">${button('example', actions.example, 'secondary')}${button('calculate', actions.calculate)}${reset}</div>
+      <p class="status" role="status" aria-live="polite" data-status></p>
+      <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+    </form>`, copy);
+  }
 
   if (toolId === 'chemical-equation-balancer') return attachCopy(`<form id="tool-form" novalidate>
     ${label('chemical-equation', fields.equation, '<textarea id="chemical-equation" name="equation" rows="3" maxlength="500" spellcheck="false" autocapitalize="off" autocomplete="off" required></textarea>')}

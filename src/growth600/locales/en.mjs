@@ -48,6 +48,8 @@ import complexNumberCalculatorDrafts from './complex-number-calculator-final.mjs
 import { complexNumberCalculatorEnglishCopy } from './complex-number-calculator.en.mjs';
 import kineticEnergyCopies from './kinetic-energy-calculator.mjs';
 import { kineticEnergyCalculatorEnglishCopy } from './kinetic-energy-calculator.en.mjs';
+import resistorColorCodeCopies from './resistor-color-code-calculator.mjs';
+import { resistorColorCodeCalculatorEnglishCopy } from './resistor-color-code-calculator.en.mjs';
 import imageUpscalerDrafts from './image-upscaler-final.mjs';
 import { imageUpscalerEnglishCopy } from './image-upscaler.en.mjs';
 import imageColorPickerCopies from './image-color-picker-final.mjs';
@@ -575,5 +577,6 @@ registerGrowthLocaleExtension(source, 'vector-calculator', { ...vectorCalculator
 registerGrowthLocaleExtension(source, 'cubic-quartic-equation-calculator', { ...cubicQuarticEquationDrafts, en: cubicQuarticEquationCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'complex-number-calculator', { ...complexNumberCalculatorDrafts, en: complexNumberCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'kinetic-energy-calculator', { ...kineticEnergyCopies, en: kineticEnergyCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'resistor-color-code-calculator', { ...resistorColorCodeCopies, en: resistorColorCodeCalculatorEnglishCopy }, 'gravel-calculator');
 
 export default Object.freeze(source);

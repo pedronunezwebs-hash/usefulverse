@@ -1118,34 +1118,35 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 138 · Kinetic Energy Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `kinetic-energy-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/kinetic-energy-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `kinetic-energy-calculator`**
+- **Destino:** `https://tools.usefulverse.com/tools/kinetic-energy-calculator/` y 35 variantes localizadas, publicado en el hub.
 - **Demanda:** `kinetic energy calculator` — 5.400 búsquedas/mes US/en, KD 5; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Energía cinética/potencial, velocidad inversa y referencia altura
 - **Prueba de aceptación específica:** 2kg a3m/s da9J
 - **Frontera con otras herramientas:** force-calculator: energía no fuerza. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** cálculo local, sin API ni procesamiento servidor; límites y supuestos de gravedad/pérdidas indicados. No sustituye evaluación de ingeniería o seguridad.
 - **Consultas secundarias del mismo propietario:**
   - `kinetic potential energy calculator` — 10/mes US/en; KD 16.
   - `kinetic energy calculator free online`; `kinetic energy calculator with example`; `kinetic energy calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 
-- **Estado de implementación (2026-10-08):** implementación y QA local completos; C/F/E/X/L/B superados. 36 copias generadas con Google Translate y comprobadas por gate, incluido un ajuste de dos etiquetas maratíes que el traductor omitió. Suite completa 1.262/1.262; `npm run check` y build aislado correctos; navegador validó cálculo directo/inverso, copia, RTL árabe, CJK japonés, 390 px sin overflow y consola limpia. **P/S pendientes:** sin integración, producción ni envío del sitemap; conservar la casilla principal sin marcar hasta verificarlos.
+- **Estado de implementación (2026-10-08):** C/F/E/X/L/B/P/S cerrados. 36 copias estáticas con Google Translate y dos etiquetas maratíes ajustadas; 1.262 pruebas completas y CI 37781969260 aprobados. Verificados cálculo directo/inverso, copiar, RTL árabe, CJK japonés, 390 px y consola limpia. Integrado en `main` (1d14d20) y desplegado en Cloudflare (ce2460ae); URLs EN/ja/ar responden 200 y `https://tools.usefulverse.com/sitemap.xml` anuncia 3.060 URLs únicas. Sin pruebas PageSpeed.
 
 ### 158 · Resistor Color Code Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `resistor-color-code-calculator`**
+- [ ] **C/F/E/X/L/B completos — `resistor-color-code-calculator`; P/S pendientes**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/resistor-color-code-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `resistor color code calculator` — 4.400 búsquedas/mes US/en, KD 29; nivel B. CPC 0.77 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** 4-6 bandas, tolerancia, temperatura y código inverso
 - **Prueba de aceptación específica:** Marrón negro rojo oro da1kΩ5%
 - **Frontera con otras herramientas:** ohms-law-calculator: lectura de marcado no circuito. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** motor local sin API/servidor; rangos y bandas normalizadas; advierte que no determina idoneidad, potencia ni seguridad del circuito y que se verifique la hoja de datos.
 - **Consultas secundarias del mismo propietario:**
   - `resistor band calculator` — 320/mes US/en; KD 26.
   - `resistor color code calculator free online`; `resistor color code calculator with example`; `resistor color code calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** DE/de `widerstand farbcode rechner` 1.000/mes, KD 0.
+- **Estado de implementación (2026-10-08):** C/F/E/X/L/B completados en rama; pruebas totales 1.264/1.264. Construcción local: 3.096 páginas para 85 herramientas × 36 idiomas + 36 portadas. Navegador verificó decodificación de 4 bandas (1 kΩ ±5%), 6 bandas (1 kΩ ±1%, 50 ppm/K), codificación inversa, copia, ES/AR (RTL), viewport 390 px sin desbordamiento y consola limpia. Traducción Google Translate estática, 77 cadenas × 36 idiomas; no es revisión nativa. **P/S todavía pendientes:** integrar, desplegar, comprobar URLs/sitemap públicos y registrar la entrega en paneles accesibles; mantener la casilla principal sin marcar hasta entonces. Sin PageSpeed.
 
 ### 163 · Half Life Calculator
 
