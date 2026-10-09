@@ -1294,8 +1294,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 205 · Led Resistor Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `led-resistor-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/led-resistor-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `led-resistor-calculator`**
+- **Destino:** `https://tools.usefulverse.com/tools/led-resistor-calculator/`; las 36 versiones localizadas están publicadas.
 - **Demanda:** `led resistor calculator` — 2.400 búsquedas/mes US/en, KD 11; nivel B. CPC 1.28 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Caída LED, corriente, alimentación y potencia mínima
 - **Prueba de aceptación específica:** 12V menos2V con0.02A requiere500Ω
@@ -1305,6 +1305,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `led series resistor calculator` — 170/mes US/en; KD 18.
   - `led resistor calculator free online`; `led resistor calculator with example`; `led resistor calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Cierre verificado:** PR #96 fusionada como `ee6d0597450184fe64637cf4f339fc5af649508e`; CI `37929414805`, despliegue principal `37929894867` y publicación del hub `37930526779` exitosos. Sitemap HTTP 200 con 4.896 URLs únicas; las 36 rutas de esta herramienta devuelven HTTP 200 y canonical autorreferente. QA local EN/AR validó 12 V, 2 V, 20 mA → 500 Ω; E12 sugiere 560 Ω y calcula corriente/potencia. Sin PageSpeed/Lighthouse; indexación no comprobada.
 
 ### 212 · Flow Rate Calculator
 
