@@ -2,15 +2,25 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## En implementación local · Wilcoxon Signed Rank Test Calculator (#316) · 2026-10-09
+## Implementada localmente · Chinese Remainder Theorem Calculator (#323) · 2026-10-09
+
+- [x] C/F — Ficha del plan: `crt calculator`, 260 búsquedas/mes US/en, KD 0; secundaria `chinese remainder theorem calculator`, 140/mes. Sin nuevas consultas a DataForSEO.
+- [x] E/B — Solucionador CRT con `BigInt` exacto para 2–20 congruencias, incluido el caso no coprimo compatible; detecta incompatibilidad con gcd y diferencia, normaliza soluciones negativas y muestra la clase y módulo combinado. Entrada de pares o notación `x ≡ a (mod m)`, límites explícitos ±10¹², dígitos árabes/persas, ejemplo, copiar y reset. Sin APIs, dependencias, red, persistencia ni envío de entradas.
+- [x] L — 36 traducciones estáticas desde inglés generadas con Google Translate, aceptadas como traducción automática sencilla y no revisión nativa. Ajustado a mano el copy técnico árabe después de encontrar una traducción errónea de “least nonnegative”; no hay traducción en runtime.
+- [x] X — Suite completa **1.527/1.527**; `npm run check` mantiene las 10.260 URLs del sitio principal; `npm run locale:release-check` pasa. Build del hub: **4.284 páginas** (118 × 36 + 36 portadas), 4.455 archivos, 127.998.781 bytes. Sin PageSpeed/Lighthouse.
+- [x] B — Chrome a 390×844: `x ≡ 2 (mod 3)` y `x ≡ 3 (mod 5)` → `x ≡ 8 (mod 15)`; árabe acepta dígitos arábigo-índicos, `lang=ar`, `dir=rtl`, ancho 390/390 y consola limpia. No se probó cada idioma/dispositivo.
+- [ ] P/S — PR, integración, despliegue del hub y sitemap público pendientes; no se afirma indexación.
+- **Siguiente candidata sugerida:** #117 JSON Diff, ficha existente del plan; confirmar frontera del catálogo antes de empezar.
+
+## Publicada · Wilcoxon Signed Rank Test Calculator (#316) · 2026-10-09
 
 - [x] C/F — Candidata medida en el plan: `wilcoxon signed rank test calculator`, 320 búsquedas/mes US/en, KD 0. Sin nuevas consultas a DataForSEO.
 - [x] E/B — Diferencias pareadas después−antes; ceros omitidos; rangos medios en empates; sumas positiva/negativa; p bilateral exacta hasta 25 pares no nulos y aproximación normal bilateral con corrección de continuidad para muestras mayores. Caso todo-cero con explicación y sin p inventado. Tabla y CSV local; máximo 500 pares y magnitud ≤10¹², con supuestos/limitaciones explícitos.
 - [x] L — 36 traducciones estáticas de Google Translate; borrador automático aceptado, no revisión nativa. Etiquetas del método y copia árabe corregidas; sin traducción en runtime.
 - [x] X — Suite completa **1.517/1.517**; pruebas focales lógica/controlador/formulario/catálogo/contratos **218/218**. `npm run check` conserva **10.260 URLs** principales; `npm run locale:release-check` pasa. Hub: **4.248 rutas** (117 × 36 + 36 portadas), 4.418 archivos, 126.972.687 bytes. Sin cambios de CSS global: reutiliza la tabla existente y respeta el presupuesto de 24 KiB.
 - [x] B — Chrome local a 390×844: ejemplo calcula p=0,4375 y muestra sumas, 1 cero, 2 grupos empatados y CSV. Caso todo-cero anuncia estado y no muestra p. Árabe `lang=ar`, `dir=rtl`, ancho del documento 390/390 sin overflow, tabla desplazable internamente y consola limpia. Sin PageSpeed/Lighthouse.
-- [ ] P/S — PR, integración, deploy, verificación pública y sitemap pendientes.
-- **Siguiente:** #323 Chinese Remainder Theorem Calculator, tras cerrar P/S de esta candidata.
+- [x] P/S — PR #78 integrada como `8e7759e61de569fb2013a8b5751d5c13a69b2762`; CI PR `37887628046`, deploy principal `37888013549` y publicación del hub `37888370863`, todos exitosos. Rutas EN/AR y sitemap público HTTP 200; **4.248 URLs únicas**, 36 variantes Wilcoxon.
+- **Estado publicado:** 117 herramientas Growth600 adicionales; las 277 originales siguen intactas. No se afirma indexación ni envío manual a buscadores.
 
 ## Publicada · Spearman Correlation Calculator (#309) · 2026-10-09
 

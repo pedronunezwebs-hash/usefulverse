@@ -2725,13 +2725,13 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 316 · Wilcoxon Signed Rank Test Calculator
 
-- [x] **C/F/E/X/L/B** — funcionalidad, traducciones, pruebas y build local completados. Falta P/S: PR, integración, despliegue y comprobar sitemap público.
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/wilcoxon-signed-rank-test-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S** — herramienta publicada en 36 idiomas estáticos.
+- **Destino:** `https://tools.usefulverse.com/tools/wilcoxon-signed-rank-test-calculator/`; 36 variantes con los prefijos del anexo. Sitemap público verificado con 4.248 URLs únicas.
 - **Demanda:** `wilcoxon signed rank test calculator` — 320 búsquedas/mes US/en, KD 0; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Diferencias pareadas, ceros y corrección de empates
 - **Prueba de aceptación específica:** Diferencias todas cero requiere mensaje especial
 - **Frontera con otras herramientas:** mann-whitney-u-test-calculator: pares, no grupos independientes. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación local (2026-10-09):** diferencias después−antes; se omiten ceros y los empates absolutos reciben rangos medios. Prueba bilateral exacta de inversión de signos hasta 25 pares no nulos; aproximación normal bilateral con corrección de continuidad para muestras mayores. Muestra sumas positivas/negativas, p, método y tabla completa, con CSV local. Resultado dedicado sin p para diferencias todas cero. Entrada 2–500 pares y magnitud ≤10¹², con supuestos y limitaciones explícitos. 36 traducciones estáticas de Google Translate, incluida interfaz RTL árabe. Pruebas completas 1.517/1.517; `npm run check` conserva 10.260 URLs, `locale:release-check` pasa, build hub 4.248 rutas (117 × 36 + 36 portadas), 4.418 archivos. Chrome EN/AR a 390 px: ejemplo muestra p=0,4375, ceros/empates y tabla; la rama all-zero no inventa p; RTL no desborda y consola limpia. Sin PageSpeed/Lighthouse, coste API o DataForSEO nuevo. Falta P/S.
+- **Implementación/publicación (2026-10-09):** diferencias después−antes; ceros omitidos, empates con rangos medios, p bilateral exacta hasta 25 pares no nulos y aproximación normal bilateral con corrección de continuidad para muestras mayores. Sumas, método, tabla y CSV local; sin p inventado para el caso todo-cero. Entrada 2–500 pares, magnitud ≤10¹² y supuestos explícitos. 36 traducciones estáticas de Google Translate (no revisión nativa). Suite 1.517/1.517; sitio principal 10.260 URLs y release-check aprobados; build hub 4.248 páginas (117 × 36 + 36 portadas), 4.418 archivos. Chrome EN/AR 390 px confirma ejemplo, caso all-zero y RTL sin overflow. PR #78 (`8e7759e61de569fb2013a8b5751d5c13a69b2762`); CI `37887628046`, deploy principal `37888013549`, hub `37888370863`; rutas EN/AR y sitemap público con 4.248 URLs únicas, incluidas 36 variantes. No se afirma indexación ni envío manual; sin PageSpeed/Lighthouse ni nueva consulta DataForSEO.
 - **Consultas secundarias del mismo propietario:**
   - `paired wilcoxon calculator` — sin métrica obtenida; no atribuir volumen.
   - `wilcoxon signed rank test calculator free online`; `wilcoxon signed rank test calculator with example`; `wilcoxon signed rank test calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -2739,13 +2739,14 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 323 · Chinese Remainder Theorem Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `chinese-remainder-theorem-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/chinese-remainder-theorem-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B** — lógica, 36 traducciones estáticas, regresión, build y muestreo Chrome completados. PR/deploy/sitemap se registrarán al cerrar publicación.
+- **Destino:** `https://tools.usefulverse.com/tools/chinese-remainder-theorem-calculator/`; 36 versiones con los prefijos del anexo.
 - **Demanda:** `crt calculator` — 260 búsquedas/mes US/en, KD 0; nivel C. CPC 2.2 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Resolver sistema modular con módulos coprimos y detectar conflicto
 - **Prueba de aceptación específica:** x mod 3=2 y mod 5=3 da 8 mod15
 - **Frontera con otras herramientas:** system-of-equations-calculator: congruencias no ecuaciones reales. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** H: dependencia/cómputo bajo demanda; verificar licencia y compatibilidad. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** implementación propia con `BigInt` nativo; sin dependencia externa, API, worker ni costes por consulta. Límites de entrada y número de congruencias acotan el cálculo local.
+- **Implementación/QA local (2026-10-09):** admite pares `resto, módulo` y notación congruente; resuelve sistemas compatibles coprimos y no coprimos, informa conflictos y explica el cálculo combinado. Límites ±10¹², de 2 a 20 congruencias, dígitos árabes/persas. 36 copias estáticas generadas con Google Translate; traducción técnica árabe corregida manualmente tras detectar error en “least nonnegative”; no es revisión nativa. Regresión 1.527/1.527, `npm run check` preserva 10.260 URLs y release-check pasa; build 4.284 páginas (118 × 36 + 36 portadas), 4.455 archivos. Chrome EN/AR a 390 px: ejemplo → 8 mod 15, RTL sin overflow y consola limpia. Sin PageSpeed/Lighthouse ni llamada adicional DataForSEO.
 - **Consultas secundarias del mismo propietario:**
   - `chinese remainder theorem calculator` — 140/mes US/en; KD 0.
   - `crt calculator free online`; `crt calculator with example`; `crt calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
