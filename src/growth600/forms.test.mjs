@@ -240,6 +240,11 @@ const copies = {
     messages: { ...messages, calculated: 'Coefficients calculated.', calculatedConstant: 'Constant signal has a DC component only.', checkInputs: 'Check samples, period and harmonics.', copied: 'Copied.', copyUnavailable: 'Copy unavailable.' },
     fields: { samples: 'Samples', samplesHint: 'Four to 128 equally spaced values.', period: 'Period', periodHint: 'Frequency is one divided by period.', harmonics: 'Harmonics', harmonicsHint: 'Choose from zero through the available limit.', accuracyNote: 'Numeric estimate only.', formulaLabel: 'Real Fourier series', formula: 'DC and coefficients', resultDc: 'DC', resultFrequency: 'Fundamental frequency', resultHarmonics: 'Harmonics included', resultRms: 'RMS sample error', coefficient: 'Harmonic', coefficientA: 'Cosine coefficient', coefficientB: 'Sine coefficient', coefficientAmplitude: 'Amplitude', phase: 'Phase', radians: 'radians', frequencyUnit: 'per unit of time', chartLabel: 'Samples and reconstruction', samplesLegend: 'Samples', reconstructionLegend: 'Reconstruction' },
   },
+  'modular-inverse-calculator': {
+    name: 'Modular inverse calculator', actions: { ...actions, calculate: 'Calculate inverse', reset: 'Clear', example: 'Load 3 modulo 7', result: 'Results', copy: 'Copy result' },
+    messages: { ...messages },
+    fields: { a: 'Integer a', modulus: 'Modulus m (at least 2)', accuracyNote: 'Integer arithmetic only.', formulaLabel: 'Definition', formula: 'a × x ≡ 1 (mod m).', resultStatus: 'Status', resultGcd: 'GCD', resultResidue: 'Residue', resultInverse: 'Inverse', bezout: 'Bezout identity', step: 'Step', quotient: 'Quotient', remainder: 'Remainder', coefficientA: 'Coefficient of residue', coefficientModulus: 'Coefficient of modulus', existsLabel: 'Inverse exists', missingLabel: 'No inverse', verification: 'Verification' },
+  },
   'chemical-equation-balancer': {
     name: 'Chemical equation balancer', actions: { ...actions },
     messages: { ...messages, balancedEquation: 'Balanced equation', atomCheck: 'Atom count', leftSide: 'Reactants', rightSide: 'Products' },
@@ -462,6 +467,11 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(fourier, /data-action="constant"/u);
   assert.match(fourier, /data-fourier-formula/u);
   assert.match(fourier, /<textarea[^>]+maxlength="4096"/u);
+  const modularInverse = renderGrowthForm('modular-inverse-calculator', copies['modular-inverse-calculator']);
+  for (const name of ['a', 'modulus']) assert.match(modularInverse, new RegExp(`name="${name}"`, 'u'));
+  assert.match(modularInverse, /type="submit" data-action="calculate"/u);
+  assert.match(modularInverse, /data-action="example"/u);
+  assert.match(modularInverse, /data-action="copy"/u);
   const chemical = renderGrowthForm('chemical-equation-balancer', copies['chemical-equation-balancer']);
   assert.match(chemical, /name="equation"[^>]+maxlength="500"/u);
   assert.match(chemical, /for="chemical-equation"/u);

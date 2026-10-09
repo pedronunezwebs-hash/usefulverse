@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 109);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 109);
+  assert.equal(growthPilotTools.length, 110);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 110);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -126,6 +126,16 @@ test('Fourier series calculator uses sampled periodic data, not audio uploads or
   assert.match(tool.acceptance, /constant input.*DC = 5/su);
   assert.match(tool.boundary, /not an audio player/u);
   assert.deepEqual(tool.relatedExistingIds, ['audio-spectrogram', 'function-grapher']);
+});
+
+test('modular inverse calculator distinguishes inverse existence from modulo remainder', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'modular-inverse-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'modular inverse calculator');
+  assert.match(tool.acceptance, /inverse of 3 modulo 7 is 5/u);
+  assert.match(tool.functions.join(' '), /greatest common divisor/u);
+  assert.match(tool.boundary, /not a remainder calculator/u);
+  assert.deepEqual(tool.relatedExistingIds, ['gcd-lcm-calculator']);
 });
 
 test('Roth vs traditional compares user-entered tax scenarios without giving tax or account advice', () => {
