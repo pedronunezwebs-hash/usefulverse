@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 114);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 114);
+  assert.equal(growthPilotTools.length, 115);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 115);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -163,6 +163,16 @@ test('repeating decimal converter handles periodic notation without competing wi
   assert.match(tool.acceptance, /0\.\(3\).*1\/3/u);
   assert.match(tool.boundary, /not finite decimals/u);
   assert.deepEqual(tool.relatedExistingIds, ['fraction-calculator']);
+});
+
+test('SVD calculator handles compact rectangular reconstruction, distinct from basic matrix operations', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'singular-value-decomposition-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'svd calculator');
+  assert.match(tool.acceptance, /diagonal matrix.*3 and 2/su);
+  assert.match(tool.functions.join(' '), /rectangular matrix/u);
+  assert.match(tool.boundary, /floating-point tolerance/u);
+  assert.deepEqual(tool.relatedExistingIds, ['matrix-calculator']);
 });
 
 test('Roth vs traditional compares user-entered tax scenarios without giving tax or account advice', () => {

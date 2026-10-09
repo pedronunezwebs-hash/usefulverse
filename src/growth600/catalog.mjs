@@ -1367,6 +1367,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['function-grapher'],
     logicModule: './tools/parametric-equation-calculator/logic.mjs',
   },
+  {
+    id: 'singular-value-decomposition-calculator',
+    category: 'math-statistics',
+    type: 'calculator',
+    primaryIntent: 'svd calculator',
+    secondaryIntents: ['singular value decomposition calculator', 'matrix SVD calculator', 'SVD reconstruction calculator'],
+    functions: ['decompose a bounded rectangular matrix A into compact U, singular values, and V transpose', 'estimate numerical rank with a documented floating-point tolerance', 'reconstruct the original matrix and report Frobenius residual and relative error', 'download decomposition components and reconstruction as CSV files locally'],
+    acceptance: 'For a diagonal matrix diag(3,2), returns singular values 3 and 2 and reconstructs the input with negligible relative error.',
+    boundary: 'Numerical SVD for rectangular matrices from 2×2 to 8×8 and finite values within ±1,000,000. Uses a Jacobi eigensolver on a scaled Gram matrix; near-singular values and rank depend on floating-point tolerance. The returned compact factors reconstruct the input numerically; this is not an exact symbolic proof or a certified high-precision result. Data stays in the browser.',
+    relatedExistingIds: ['matrix-calculator'],
+    logicModule: './tools/singular-value-decomposition-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

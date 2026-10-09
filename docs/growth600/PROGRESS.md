@@ -22,15 +22,27 @@
 - [x] P/S — PR #74 integrada como `3e8430a59917a62ee4a95e65e9e63d25b53bda76`; CI de PR `37875365357` y publicación del hub `37875699978` correctos. Rutas EN/AR HTTP 200; sitemap público HTTP 200 con **4.104 URLs únicas** (113 × 36 + 36 portadas), confirmado también desde la URL de despliegue de Pages. No se envió indexación manual ni se afirma que estén indexadas.
 - **Estado publicado:** 113 herramientas Growth600 adicionales; las 277 originales siguen intactas. Sin PageSpeed/Lighthouse.
 
-## Implementación · Parametric Equation Calculator (#303) · 2026-10-09
+## Publicada · Parametric Equation Calculator (#303) · 2026-10-09
 
 - [x] C/F — Ficha existente del plan: `parametric graphing calculator`, 390 búsquedas/mes US/en, KD 0; secundaria `parametric equation calculator`, 260/mes, KD 14. Sin nuevas llamadas ni gasto de DataForSEO.
 - [x] E/B — Gráfica local de x(t), y(t), con intervalo creciente y muestreo acotado 50–1.500; parser matemático de gramática limitada (sin `eval`) para aritmética, pi/e y funciones reales documentadas. Maneja singularidades como muestras inválidas, grafica con SVG accesible, incluye círculo unitario y descarga coordenadas válidas t/x/y como CSV. Distingue curvas paramétricas de y=f(x); no afirma prueba simbólica ni detecta asintotas con certeza. Sin red, API, cuenta ni persistencia.
 - [x] L — 36 copias estáticas generadas por lotes con Google Translate desde inglés; aceptadas como borradores comprensibles, no revisión nativa. Se mantuvieron los identificadores/formato matemático, se corrigió el bloque árabe y los límites de metadatos; ninguna traducción ocurre en producción.
 - [x] X — Pruebas específicas de lógica/parser/controlador, catálogo, formularios y build; suite completa **1.492/1.492**. `npm run check` conserva las **10.260 URLs** del sitio principal; `npm run locale:release-check` pasa. Build Growth600 aislado: **4.140 rutas** (114 × 36 + 36 portadas), 4.307 archivos, 123.874.280 bytes.
 - [x] B — Chrome local EN a 390 px: círculo unitario, 360 muestras y CSV con 361 filas (encabezado + 360 puntos); entrada de código arbitrario rechazada y resultado anterior despejado. AR RTL: expresiones con dígitos árabes aceptadas, resultado 50/50, `lang=ar`/`dir=rtl`, sin desbordamiento a 390 px; consola limpia en comprobación final. Solo peticiones same-origin. No PageSpeed/Lighthouse.
-- [ ] P/S — implementación local lista; PR, CI, publicación del hub y confirmación pública del sitemap de 4.140 URLs aún pendientes.
+- [x] P/S — PR #75 fusionada como `b600c31750fa0fe4f922298b39701c559c7595c2`; CI de PR `37876147758` y despliegue principal `37876183625` correctos. Publicación manual del hub `37876549373` correcta. Rutas EN/AR y sitemap públicos HTTP 200; sitemap con **4.140 URLs únicas** (114 × 36 + 36 portadas). No se afirma indexación.
+- **Estado publicado:** 114 herramientas Growth600 adicionales; las 277 originales siguen intactas. Sin PageSpeed/Lighthouse.
 - **Siguiente herramienta del plan:** #306 Singular Value Decomposition Calculator. No repetir DataForSEO ni tocar las 277 originales.
+
+## En implementación local · Singular Value Decomposition Calculator (#306) · 2026-10-09
+
+- [x] C/F — Ficha medida ya existente: `svd calculator`, 390 búsquedas/mes US/en, KD 2; secundaria `singular value decomposition calculator`, 110/mes, KD 3. Sin consultas nuevas ni gasto de DataForSEO.
+- [x] E/B — Factorización SVD compacta local de matrices rectangulares 2×2 a 8×8: singular values, rango numérico estimado con tolerancia, U, Σ, Vᵀ, matriz reconstruida, error relativo/residuo de Frobenius y CSV. Parser admite separadores comunes, notación científica y dígitos árabes/persas; límites explícitos de dimensiones y magnitud. No `eval`, API, upload ni almacenamiento.
+- [x] L — 36 copias estáticas generadas por Google Translate desde inglés; se aceptan como traducción automática sencilla, no revisión nativa. SVD conserva símbolos matemáticos; árabe corregido manualmente. No hay traducción en runtime.
+- [x] X — Suites globales y focalizadas aprobadas; `npm run check` conserva 10.260 URLs del sitio principal; `npm run locale:release-check` pasa. Build aislado Growth600: **4.176 páginas** (115 × 36 + 36 portadas), 4.344 archivos, 124.858.548 bytes.
+- [x] B — Barridos locales de 2×2 a 8×8: error relativo máximo observado 6,33e-12 y error de ortogonalidad 2,66e-15. Chrome local EN y AR a 390 px: `diag(3,2)` produce valores 3 y 2 y error 0; árabe acepta dígitos `٣ ٠ / ٠ ٢`; `dir=rtl`, sin overflow, consola limpia. CSV y errores comprobados por tests; no descarga a Descargas.
+- [x] B — Bundle del controlador aislado: **7.584 bytes** (límite de 24 KiB), sin llamadas de red ni ejecución dinámica.
+- [ ] P/S — sin publicar aún. PR, CI, deploy y sitemap público siguen pendientes; no se afirma indexación. Sin PageSpeed/Lighthouse.
+- **Siguiente herramienta del plan:** #309 Spearman Correlation Calculator. Mantener intactas las 277 originales; no repetir DataForSEO.
 
 ## Publicada · Fourier Series Calculator (#293) · 2026-10-09
 
