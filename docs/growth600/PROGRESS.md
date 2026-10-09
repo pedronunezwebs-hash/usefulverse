@@ -4,7 +4,7 @@
 
 ## Estado público actual · 2026-10-09
 
-- **137 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **4.968 URLs** (137 × 36 + 36 páginas de idioma): **414 herramientas públicas en total** y 15.228 URLs entre los dos sitios. Esto no equivale a que los buscadores hayan indexado cada URL.
+- **138 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **5.004 URLs** (138 × 36 + 36 páginas de idioma): **415 herramientas públicas en total** y 15.264 URLs entre los dos sitios (10.260 + 5.004). Esto no equivale a que los buscadores hayan indexado cada URL.
 - #148 Text to Binary Converter: PR #81 integrada; despliegue principal `37891603568` y despliegue del hub `37892340212` correctos. EN/ES/AR responden HTTP 200.
 - #171 Schema Markup Validator, #172 Readability Checker y #173 Savings Goal Calculator ya aparecen en las 36 versiones públicas; verificaciones previas registradas debajo.
 - #189 Certificate Decoder: 36 rutas públicas; detalles de pruebas y despliegue anotados abajo.
@@ -22,17 +22,27 @@
 - #205 LED Resistor Calculator: PR [#96](https://github.com/pedronunezwebs-hash/usefulverse/pull/96) integrada como `ee6d0597450184fe64637cf4f339fc5af649508e`; CI `37929414805`, despliegue principal `37929894867` y publicación del hub `37930526779` correctos. Sitemap público HTTP 200 con **4.896 URLs únicas**; las 36 rutas de la herramienta responden HTTP 200 y canonical autorreferente. QA EN/AR validó el cálculo de 500 Ω, selección E12/E24 y potencia estimada con límites explícitos. Sin PageSpeed/Lighthouse ni afirmación de indexación.
 - #212 Flow Rate Calculator: PR [#97](https://github.com/pedronunezwebs-hash/usefulverse/pull/97) integrada como `71fd7323f35c238ef592ff525f4d8c2b7dbb60fa`; CI `37931992182`, despliegue principal `37932399268` y publicación del hub `37932777118` correctos. Sitemap HTTP 200 con **4.932 URLs únicas**; las 36 rutas responden HTTP 200 con canonical autorreferente. QA EN/AR local validó caudal y tiempo de llenado; no se afirma indexación.
 - #213 Reynolds Number Calculator: PR [#98](https://github.com/pedronunezwebs-hash/usefulverse/pull/98) fusionada como `5c1660a0250f881bbb0ddbf8e78d55c95f304964`; CI PR `37935068996`, deploy principal `37935552312` y hub `37935586544` exitosos. Sitemap público HTTP 200 con **4.968 URLs únicas**; comprobadas las 36 rutas HTTP 200 y canonical propio. QA Chrome EN/AR validó Re ≈49.810 para el ejemplo de agua y 50.000 en modo cinemático; AR RTL encaja a 390 px y consola limpia. Procesamiento local, 36 traducciones estáticas automáticas. Sin PageSpeed/Lighthouse ni afirmación de indexación.
-- `npm run check` conserva **10.260 URLs** del sitio principal. La siguiente candidata en curso es #229 Three Phase Power Calculator. No se mide PageSpeed/Lighthouse.
+- `npm run check` conserva **10.260 URLs** del sitio principal. La candidata en curso ahora es #230 Momentum Calculator. No se mide PageSpeed/Lighthouse.
 
-## En implementación local · Three Phase Power Calculator (#229)
+## Publicada · Three Phase Power Calculator (#229)
 
 - Usa la ficha ya investigada en el plan: `three phase power calculator`, 1.600 búsquedas/mes US/en, KD 0; CPC no disponible en la ficha. Sin consultas nuevas ni gasto DataForSEO.
 - Calcula potencias activa/aparente/reactiva a partir de tensión de línea, corriente de línea y PF; monofásica y trifásica balanceada; valores de fase en estrella/triángulo. Las fórmulas y supuestos se explican; PF es magnitud y Q se informa sin signo. No modela desequilibrio, armónicos, seguridad ni normativa. Todo local, sin API, subida, almacenamiento ni dependencia de runtime.
 - 36 borradores estáticos de Google Translate, traducción sencilla aceptada, no revisión nativa. Símbolos/formulas conservados y términos de potencia/corriente en árabe corregidos manualmente.
-- QA local: 5 pruebas de lógica; suite dirigida de catálogo/formulario/locales/build **272/272**; `npm run locale:release-check` pasa. Build del hub: **5.004 rutas** (138 herramientas × 36 + 36 portadas); las 36 rutas de la candidata en el build local responden HTTP 200 con canonical propio.
+- QA local: 5 pruebas de lógica; suite dirigida de catálogo/formulario/locales/build **272/272**; `npm run locale:release-check` pasa. Build del hub: **5.004 rutas** (138 herramientas × 36 + 36 portadas); las 36 rutas de la candidata responden HTTP 200 con canonical propio.
 - Chrome EN y AR: 400 V, 10 A, PF 0,8 trifásicos → **5.542,56 W**, **6.928,20 VA**, **4.156,92 var**; estrella y triángulo conservan potencia total y ajustan valores de fase. Monofásico usa S=VI sin el factor √3; entrada faltante muestra error. AR `dir=rtl` a 390 px y EN a 1365 px sin overflow ni errores de consola; petición same-origin solamente.
-- **P/S pendientes** (PR, CI, deploy principal/hub y sitemap público). Por ahora **414 herramientas públicas**; #229 aún no cuenta. No se afirma indexación ni se mide PageSpeed/Lighthouse.
-- **Siguiente candidata al cerrar #229:** #230 Momentum Calculator.
+- [x] P/S — PR #99 integrada como `8d215ca2726d0682a754a6d3a4e3415df15ea8ca`; CI PR `37938016624`, despliegue principal `37938508014` y publicación del hub `37938544108` correctos. Sitemap público HTTP 200 con **5.004 URLs**; EN y AR responden HTTP 200, están en el sitemap y tienen canonical autorreferente. Publicar no demuestra indexación ni envío manual. Sin PageSpeed/Lighthouse.
+- **Recuento tras publicación:** 138 Growth600 / 5.004 URLs del hub; 415 herramientas públicas y 15.264 URLs combinadas. Las 277 originales intactas.
+- **Siguiente candidata:** #230 Momentum Calculator.
+
+## En implementación local · Momentum Calculator (#230)
+
+- Usa solo la ficha ya incluida en el plan: `momentum calculator`, 1.600 búsquedas/mes US/en, KD 0; secundaria `collision calculator`, 70/mes, KD 0. Sin consultas nuevas a DataForSEO.
+- Calcula el momento total firmado y modela choques 1D con masas positivas, velocidades con dirección y coeficiente de restitución 0–1; muestra velocidades finales, momento antes/después y energía cinética antes/después y convertida. Declara el modelo clásico aislado y sus exclusiones (sin impulso externo, giro, deformación detallada ni relatividad). No es análisis de ingeniería/seguridad. Cálculo en navegador, sin API ni subida.
+- 36 traducciones estáticas sencillas de Google Translate, aceptadas como traducción automática, no revisión nativa; metadatos limitados y título con marca. Dos correcciones manuales en árabe para “borrar” y “coeficiente de restitución”.
+- QA de lógica/controlador/formulario/catálogo/locale/build focalizado y suite completa del repositorio en curso; casos esperados: masas 1 kg, velocidades +2/−1 m/s, e=1 → velocidades −1/+2, momento 1 kg·m/s y pérdida 0 J; e=0 → ambas +0,5 m/s y pérdida 2,25 J; modos y entrada incompleta limpian/rechazan correctamente.
+- QA Chrome local EN/AR y móvil 390 px: carga y copy accesibles, RTL árabe sin desbordamiento (390 px de documento), consola sin errores/avisos; interacciones centrales pasan. Falta repetir snapshot con la última regeneración estática de la corrección árabe.
+- Aún no fusionada/desplegada. No se suma al recuento público ni se declara indexada; sin PageSpeed/Lighthouse.
 
 ## Publicada · Beam Deflection Calculator (#203 del plan)
 
