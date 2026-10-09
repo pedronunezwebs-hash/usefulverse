@@ -1,0 +1,32 @@
+export const momentumCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Momentum Calculator',
+  title: 'Momentum Calculator Free | UsefulVerse',
+  description: 'Calculate one-dimensional momentum or model a two-object collision with signed speeds. Free and local.',
+  intro: 'Find total momentum for two objects moving along one line, or estimate their speeds after a collision. Set each direction with a positive or negative velocity and choose a coefficient of restitution from 0 to 1.',
+  howQuestion: 'How do you calculate momentum and collision speeds?',
+  howAnswer: 'Momentum is mass times velocity, p = mv, and the total is the signed sum for both objects. For a one-dimensional collision, this calculator uses the coefficient of restitution to estimate each final velocity. For example, equal 1 kg masses moving at +2 m/s and −1 m/s exchange speeds in an ideal elastic collision, while total momentum remains 1 kg·m/s.',
+  privacyQuestion: 'Are my values uploaded?',
+  privacyAnswer: 'No. The calculation runs in this browser; the values are not uploaded or saved.',
+  fields: {
+    mode: 'Calculation', momentumMode: 'Total momentum only', collisionMode: 'Model a collision',
+    mass1: 'Object 1 mass', mass2: 'Object 2 mass', massUnit: 'Mass unit', kilograms: 'Kilograms (kg)', grams: 'Grams (g)', tonnes: 'Metric tonnes (t)',
+    velocity1: 'Object 1 initial velocity', velocity2: 'Object 2 initial velocity', speedUnit: 'Velocity unit', metersPerSecond: 'Meters per second (m/s)', kilometersPerHour: 'Kilometers per hour (km/h)', feetPerSecond: 'Feet per second (ft/s)',
+    restitution: 'Coefficient of restitution (0–1)',
+    accuracyNote: 'One-dimensional classical model. Positive and negative velocities show direction. Collisions are treated as isolated: no external impulse, rotation, deformation detail or relativistic effects are modeled. A value of 1 is ideal elastic; 0 is perfectly inelastic. This is an educational estimate, not an engineering or safety assessment.',
+  },
+  actions: { calculate: 'Calculate', reset: 'Clear', copy: 'Copy result', example: 'Try equal masses colliding', result: 'Momentum result' },
+  messages: {
+    calculated: 'Calculation ready.',
+    checkInputs: 'Enter two positive masses, valid signed velocities, supported units, and a restitution value from 0 to 1.',
+    momentumBefore: 'Total momentum before collision', kineticEnergyBefore: 'Total kinetic energy before collision',
+    finalVelocity1: 'Object 1 final velocity', finalVelocity2: 'Object 2 final velocity', momentumAfter: 'Total momentum after collision',
+    kineticEnergyAfter: 'Total kinetic energy after collision', energyLoss: 'Kinetic energy converted or lost in the model',
+  },
+  additionalFaqs: [
+    { question: 'What does a negative velocity mean?', answer: 'It means the object moves in the opposite direction from the positive direction you chose. Keep the sign when entering both velocities; it affects total momentum and the collision result.' },
+    { question: 'What does the coefficient of restitution mean?', answer: 'It describes the relative separating speed after a one-dimensional impact compared with the approaching speed. Zero models a perfectly inelastic collision; one models an ideal elastic collision. Real materials can vary with impact conditions.' },
+    { question: 'Is momentum conserved in every collision?', answer: 'Total momentum is conserved in this model when the two-object system has no net external impulse. The calculator shows values before and after so you can compare them.' },
+    { question: 'Does this calculator cover angled or rotating collisions?', answer: 'No. It models motion on one straight line only. It does not calculate angles, rotation, object shape, sound, heat details or deformation.' },
+  ],
+});

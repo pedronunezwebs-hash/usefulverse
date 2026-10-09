@@ -315,6 +315,11 @@ const copies = {
     messages: { ...messages, calculated: 'AC power estimate calculated.', checkInputs: 'Check voltage, current, power factor and supported units.', activePower: 'Active power (P)', apparentPower: 'Apparent power (S)', reactivePower: 'Reactive power magnitude (Q)', lineVoltage: 'Line voltage', lineCurrent: 'Line current', phaseVoltage: 'Phase voltage', phaseCurrent: 'Phase current', powerFactor: 'Power factor', formula: 'Formula', singlePhaseFormula: 'S = V × I; P = S × PF; Q = S × √(1 − PF²)', threePhaseFormula: 'S = √3 × Vline × Iline; P = S × PF; Q = S × √(1 − PF²)' },
     fields: { system: 'AC system', singlePhase: 'Single phase', threePhase: 'Three phase (balanced)', topology: 'Three-phase connection', star: 'Star / wye', delta: 'Delta', lineVoltage: 'Line voltage', voltageUnit: 'Voltage unit', volts: 'Volts (V)', kilovolts: 'Kilovolts (kV)', lineCurrent: 'Line current', currentUnit: 'Current unit', amperes: 'Amperes (A)', kiloamperes: 'Kiloamperes (kA)', powerFactor: 'Power factor (0 to 1)', accuracyNote: 'Ideal balanced sinusoidal AC estimate; power factor is a magnitude and reactive power is unsigned.' },
   },
+  'momentum-calculator': {
+    name: 'Momentum calculator', actions: { ...actions, calculate: 'Calculate', reset: 'Clear', copy: 'Copy result', example: 'Try equal masses colliding', result: 'Momentum result' },
+    messages: { ...messages, calculated: 'Calculation ready.', checkInputs: 'Check two positive masses, signed velocities, units and restitution.', momentumBefore: 'Total momentum before collision', kineticEnergyBefore: 'Total kinetic energy before collision', finalVelocity1: 'Object 1 final velocity', finalVelocity2: 'Object 2 final velocity', momentumAfter: 'Total momentum after collision', kineticEnergyAfter: 'Total kinetic energy after collision', energyLoss: 'Kinetic energy converted or lost' },
+    fields: { mode: 'Calculation', momentumMode: 'Total momentum only', collisionMode: 'Model a collision', mass1: 'Object 1 mass', mass2: 'Object 2 mass', massUnit: 'Mass unit', kilograms: 'Kilograms (kg)', grams: 'Grams (g)', tonnes: 'Metric tonnes (t)', velocity1: 'Object 1 initial velocity', velocity2: 'Object 2 initial velocity', speedUnit: 'Velocity unit', metersPerSecond: 'Meters per second (m/s)', kilometersPerHour: 'Kilometers per hour (km/h)', feetPerSecond: 'Feet per second (ft/s)', restitution: 'Coefficient of restitution (0–1)', accuracyNote: 'One-dimensional classical model. Positive and negative velocities show direction. No external impulse, rotation or relativistic effects are modeled.' },
+  },
   'acceleration-calculator': {
     name: 'Acceleration calculator', actions: { ...actions, calculate: 'Calculate motion', example: 'Try 0 to 20 m/s in 5 seconds' },
     messages: { ...messages, acceleration: 'Acceleration', time: 'Elapsed time', initialVelocity: 'Initial velocity', finalVelocity: 'Final velocity', initialPosition: 'Initial position', displacement: 'Displacement', finalPosition: 'Final position' },
@@ -567,6 +572,11 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(kinetic, /data-kinetic-energy-input hidden/u);
   assert.match(kinetic, /data-action="example"/u);
   assert.match(kinetic, /data-action="copy"/u);
+  const momentum = renderGrowthForm('momentum-calculator', copies['momentum-calculator']);
+  for (const name of ['mode', 'mass1', 'mass2', 'massUnit', 'velocity1', 'velocity2', 'speedUnit', 'restitution']) assert.match(momentum, new RegExp(`name="${name}"`, 'u'));
+  assert.match(momentum, /data-restitution-field/u);
+  assert.match(momentum, /data-action="example"/u);
+  assert.match(momentum, /data-action="copy"/u);
   const resistor = renderGrowthForm('resistor-color-code-calculator', copies['resistor-color-code-calculator']);
   for (const name of ['mode', 'bands', 'resistanceOhms', 'tolerance', 'temperatureCoefficient', 'band1', 'band6']) assert.match(resistor, new RegExp(`name="${name}"`, 'u'));
   assert.match(resistor, /data-resistor-decode/u);

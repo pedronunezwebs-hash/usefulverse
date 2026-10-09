@@ -1260,6 +1260,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/kinetic-energy-calculator/logic.mjs',
   },
   {
+    id: 'momentum-calculator',
+    category: 'physics-math',
+    type: 'calculator',
+    primaryIntent: 'momentum calculator',
+    secondaryIntents: ['collision calculator', 'elastic collision calculator', 'inelastic collision calculator', 'two-object momentum conservation calculator'],
+    functions: ['calculate signed total momentum from the mass and velocity of two objects', 'estimate final velocities for a one-dimensional collision with coefficient of restitution from 0 to 1', 'compare total momentum and kinetic energy before and after impact', 'convert entered masses and velocities to SI for the calculation'],
+    acceptance: 'Two 1 kg masses at +2 m/s and −1 m/s in an ideal elastic collision exchange velocities; total momentum is 1 kg·m/s both before and after.',
+    boundary: 'One-dimensional classical two-body model only. Assumes no net external impulse during impact; restitution is bounded to 0–1. Does not model angles, rotation, shape, deformation detail, relativistic effects or real material data. This educational estimate is not an engineering or safety assessment. All values stay in this browser.',
+    relatedExistingIds: ['kinetic-energy-calculator'],
+    logicModule: './tools/momentum-calculator/logic.mjs',
+  },
+  {
     id: 'resistor-color-code-calculator',
     category: 'science-engineering',
     type: 'calculator',

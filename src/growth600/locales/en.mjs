@@ -48,6 +48,8 @@ import complexNumberCalculatorDrafts from './complex-number-calculator-final.mjs
 import { complexNumberCalculatorEnglishCopy } from './complex-number-calculator.en.mjs';
 import kineticEnergyCopies from './kinetic-energy-calculator.mjs';
 import { kineticEnergyCalculatorEnglishCopy } from './kinetic-energy-calculator.en.mjs';
+import momentumCopies from './momentum-calculator.mjs';
+import { momentumCalculatorEnglishCopy } from './momentum-calculator.en.mjs';
 import resistorColorCodeCopies from './resistor-color-code-calculator.mjs';
 import { resistorColorCodeCalculatorEnglishCopy } from './resistor-color-code-calculator.en.mjs';
 import accelerationCalculatorCopies from './acceleration-calculator.mjs';
@@ -760,6 +762,7 @@ registerGrowthLocaleExtension(source, 'vector-calculator', { ...vectorCalculator
 registerGrowthLocaleExtension(source, 'cubic-quartic-equation-calculator', { ...cubicQuarticEquationDrafts, en: cubicQuarticEquationCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'complex-number-calculator', { ...complexNumberCalculatorDrafts, en: complexNumberCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'kinetic-energy-calculator', { ...kineticEnergyCopies, en: kineticEnergyCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'momentum-calculator', { ...momentumCopies, en: momentumCalculatorEnglishCopy }, 'kinetic-energy-calculator');
 registerGrowthLocaleExtension(source, 'resistor-color-code-calculator', { ...resistorColorCodeCopies, en: resistorColorCodeCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'acceleration-calculator', { ...accelerationCalculatorCopies, en: accelerationCalculatorEnglishCopy }, 'gravel-calculator');
 const forceFreeLabels = { en: 'Free', es: 'Gratis', fr: 'Gratuit', pt: 'Grátis', de: 'Kostenlos', ja: '無料', ko: '무료', id: 'Gratis', hi: 'मुफ़्त', ar: 'مجانية', zh: '免费', bn: 'বিনামূল্যে', ru: 'Бесплатно', ur: 'مفت', tr: 'Ücretsiz', vi: 'Miễn phí', it: 'Gratis', zh_tw: '免費', bg: 'Безплатно', ca: 'Gratis', nl: 'Gratis', el: 'Δωρεάν', ms: 'Percuma', pl: 'Bezpłatnie', sv: 'Gratis', th: 'ฟรี', uk: 'Безкоштовно', sw: 'Bure', mr: 'मोफत', te: 'ఉచితం', ha: 'Kyauta', tl: 'Libre', ta: 'இலவசம்', fa: 'رایگان', am: 'ነጻ', gu: 'મફત' };

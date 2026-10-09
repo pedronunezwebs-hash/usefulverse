@@ -9,7 +9,7 @@ Fecha de investigación: 7 de octubre de 2026. Documento de planificación y che
 - [x] Comprobar la base de planificación: **277 herramientas y 36 idiomas**.
 - [x] Investigar demanda con un gasto acotado en DataForSEO y registrar los resultados reales.
 - [x] Consolidar variantes antes de fijar el nuevo catálogo, sin contar una dirección de conversión como otra herramienta.
-- [ ] Implementar las nuevas herramientas. **Ninguna de las candidatas de este documento está declarada implementada, comprobada o publicada por esta investigación.**
+- [ ] Implementar las nuevas herramientas. **Progreso al 9 de octubre de 2026: 138/323 herramientas Growth600 publicadas (415 en total con las 277 originales); #230 está en validación local.** Consultar `docs/growth600/PROGRESS.md` para el estado y evidencia de cada entrega; las métricas históricas no implican indexación.
 
 Snapshot consultado: rama `main`, commit `685f91adfc7818a54f6dc0a967e290d13137a3dd`. Catálogo: `src/catalog.mjs`; funciones y contratos representativos: `src/app.js`, módulos de lógica, `src/opportunity-tools.mjs`, `src/seo.mjs`, locales, build y documentación del repo. Se inspeccionaron los metadatos de las 277 herramientas y contratos clave para descartar duplicados; esto **no es una nueva auditoría funcional completa de las 277**.
 
@@ -1339,9 +1339,9 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 229 · Three Phase Power Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `three-phase-power-calculator`**
-- **Estado local:** C/F/E/X/L/B implementados y comprobados; P/S esperan PR, CI, deploy y comprobación pública. Recuento público aún 414, no incluir esta candidata hasta desplegarla.
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/three-phase-power-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `three-phase-power-calculator`**
+- **Estado:** publicada y comprobada en sus 36 locales; no se afirma indexación.
+- **Destino:** `https://tools.usefulverse.com/tools/three-phase-power-calculator/`; las otras 35 versiones usan los prefijos del anexo.
 - **Demanda:** `three phase power calculator` — 1.600 búsquedas/mes US/en, KD 0; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Monofásica/trifásica, estrella/triángulo, PF y magnitudes
 - **Prueba de aceptación específica:** sqrt3 V I PF en trifásica balanceada
@@ -1351,16 +1351,17 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `3 phase power calculator` — 1.600/mes US/en; KD 0.
   - `three phase power calculator free online`; `three phase power calculator with example`; `three phase power calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Cierre:** PR #99 integrada (`8d215ca2726d0682a754a6d3a4e3415df15ea8ca`); CI `37938016624`, deploy principal `37938508014`, publicación del hub `37938544108`. Sitemap HTTP 200 con 5.004 URLs. EN/AR verificadas HTTP 200, incluidas en sitemap y con canonical propio. Sin PageSpeed/Lighthouse; publicación no equivale a indexación.
 
 ### 230 · Momentum Calculator
 
 - [ ] **C/F/E/X/L/B/P/S completos — `momentum-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/momentum-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `momentum calculator` — 1.600 búsquedas/mes US/en, KD 0; nivel B. CPC — USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Momento y choques1D elásticos/inelásticos, conservación
+- **Función mínima y ampliaciones útiles:** momento con signo y choques 1D elásticos/inelásticos; velocidades iniciales/finales, conservación de momento, energía antes/después y energía convertida según coeficiente de restitución.
 - **Prueba de aceptación específica:** Masas iguales choque elástico intercambian velocidades
 - **Frontera con otras herramientas:** kinetic-energy-calculator: conservación de momento. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** motor local ligero; kg/g/toneladas y m/s, km/h o ft/s. Modelo clásico aislado, una dimensión; explicita límites educativos y no pretende análisis de ingeniería o seguridad. Sin API, dependencias externas ni carga de servidor. La suite global, build y revisión browser/RTL siguen gates obligatorios antes del deploy.
 - **Consultas secundarias del mismo propietario:**
   - `collision calculator` — 70/mes US/en; KD 0.
   - `momentum calculator free online`; `momentum calculator with example`; `momentum calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

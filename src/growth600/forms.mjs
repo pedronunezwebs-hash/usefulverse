@@ -62,6 +62,7 @@ export function renderGrowthForm(toolId, copy) {
     'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
     'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
     'kinetic-energy-calculator': ['mode', 'energyMode', 'speedMode', 'massKg', 'velocityMps', 'kineticEnergyJ', 'heightM', 'gravityMps2', 'accuracyNote'],
+    'momentum-calculator': ['mode', 'momentumMode', 'collisionMode', 'mass1', 'mass2', 'massUnit', 'kilograms', 'grams', 'tonnes', 'velocity1', 'velocity2', 'speedUnit', 'metersPerSecond', 'kilometersPerHour', 'feetPerSecond', 'restitution', 'accuracyNote'],
     'resistor-color-code-calculator': ['mode', 'decodeMode', 'encodeMode', 'bands', 'fourBands', 'fiveBands', 'sixBands', 'resistanceOhms', 'tolerance', 'temperatureCoefficient', 'accuracyNote', 'band1', 'band2', 'band3', 'band4', 'band5', 'band6', 'black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'gray', 'white', 'gold', 'silver', 'none', 'ppm250', 'ppm100', 'ppm50', 'ppm25', 'ppm20', 'ppm15', 'ppm10', 'ppm5', 'ppm1', 'tolerance005', 'tolerance01', 'tolerance025', 'tolerance05', 'tolerance1', 'tolerance2', 'tolerance5', 'tolerance10', 'tolerance20'],
     'acceleration-calculator': ['mode', 'solveAcceleration', 'solveTime', 'solveFinalVelocity', 'solveDisplacement', 'units', 'metric', 'imperial', 'initialVelocity', 'finalVelocity', 'acceleration', 'timeSeconds', 'initialPosition', 'accuracyNote'],
     'force-calculator': ['mode', 'solveForce', 'solveMass', 'solveAcceleration', 'netMode', 'forceUnit', 'massUnit', 'accelerationUnit', 'force', 'mass', 'acceleration', 'forces', 'forcesHint', 'netMass', 'accuracyNote'],
@@ -208,6 +209,7 @@ export function renderGrowthForm(toolId, copy) {
     'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'kinetic-energy-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'momentum-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'resistor-color-code-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'acceleration-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'force-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -1882,6 +1884,19 @@ export function renderGrowthForm(toolId, copy) {
     ${label('kinetic-gravity', fields.gravityMps2, '<input id="kinetic-gravity" name="gravityMps2" type="number" min="0.000000000001" max="100" step="any" inputmode="decimal" value="9.80665" required>')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'momentum-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('momentum-mode', fields.mode, `<select id="momentum-mode" name="mode"><option value="momentum">${escapeGrowthHtml(fields.momentumMode)}</option><option value="collision" selected>${escapeGrowthHtml(fields.collisionMode)}</option></select>`)}
+    <div class="calculator-grid">
+      <div class="field">${label('momentum-mass-1', fields.mass1, '<input id="momentum-mass-1" name="mass1" type="number" min="0.000000000001" max="1000000000000000" step="any" inputmode="decimal" value="1" required>')}${label('momentum-mass-2', fields.mass2, '<input id="momentum-mass-2" name="mass2" type="number" min="0.000000000001" max="1000000000000000" step="any" inputmode="decimal" value="1" required>')}${label('momentum-mass-unit', fields.massUnit, `<select id="momentum-mass-unit" name="massUnit"><option value="kg" selected>${escapeGrowthHtml(fields.kilograms)}</option><option value="g">${escapeGrowthHtml(fields.grams)}</option><option value="tonne">${escapeGrowthHtml(fields.tonnes)}</option></select>`)}</div>
+      <div class="field">${label('momentum-velocity-1', fields.velocity1, '<input id="momentum-velocity-1" name="velocity1" type="number" min="-3600000" max="3600000" step="any" inputmode="decimal" value="2" required>')}${label('momentum-velocity-2', fields.velocity2, '<input id="momentum-velocity-2" name="velocity2" type="number" min="-3600000" max="3600000" step="any" inputmode="decimal" value="-1" required>')}${label('momentum-speed-unit', fields.speedUnit, `<select id="momentum-speed-unit" name="speedUnit"><option value="m/s" selected>${escapeGrowthHtml(fields.metersPerSecond)}</option><option value="km/h">${escapeGrowthHtml(fields.kilometersPerHour)}</option><option value="ft/s">${escapeGrowthHtml(fields.feetPerSecond)}</option></select>`)}</div>
+      <div class="field" data-restitution-field>${label('momentum-restitution', fields.restitution, '<input id="momentum-restitution" name="restitution" type="number" min="0" max="1" step="any" inputmode="decimal" value="1" required>')}</div>
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

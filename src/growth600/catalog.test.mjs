@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 138);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 138);
+  assert.equal(growthPilotTools.length, 139);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 139);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -27,6 +27,16 @@ test('ideal gas law calculator solves one blank from PV=nRT and discloses model 
   assert.match(tool.acceptance, /1 atm.*22\.41397 L/u);
   assert.match(tool.boundary, /absolute temperature above 0 K/u);
   assert.match(tool.boundary, /no inputs are uploaded/u);
+});
+
+test('momentum calculator models a signed one-dimensional collision without duplicating kinetic-energy intent', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'momentum-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'momentum calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['kinetic-energy-calculator']);
+  assert.match(tool.acceptance, /exchange velocities.*momentum is 1/u);
+  assert.match(tool.functions.join(' '), /coefficient of restitution/u);
+  assert.match(tool.boundary, /One-dimensional classical.*no net external impulse/u);
 });
 
 test('torque calculator separates force moments from shaft-power calculations', () => {
