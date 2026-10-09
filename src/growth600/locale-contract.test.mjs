@@ -12,6 +12,8 @@ import pressureCalculatorCopies from './locales/pressure-calculator-final.mjs';
 import { pressureCalculatorEnglishCopy } from './locales/pressure-calculator.en.mjs';
 import pcbTraceWidthCopies from './locales/pcb-trace-width-calculator-final.mjs';
 import { pcbTraceWidthCalculatorEnglishCopy } from './locales/pcb-trace-width-calculator.en.mjs';
+import projectileMotionCopies from './locales/projectile-motion-calculator-final.mjs';
+import { projectileMotionCalculatorEnglishCopy } from './locales/projectile-motion-calculator.en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
 import portugueseGrowthCopy from './locales/pt.mjs';
 import germanGrowthCopy from './locales/de.mjs';
@@ -1555,6 +1557,22 @@ test('PCB trace width calculator has complete static copy and machine-accepted l
     assert.ok([...copy.description].length <= 160, locale.key);
   }
   assert.match(pcbTraceWidthCopies.ar.fields.accuracyNote, /IPC-2221/u);
+});
+
+test('projectile motion calculator has complete static copy and machine-accepted localization in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'projectile-motion-calculator');
+  assert.ok(tool);
+  assert.equal(projectileMotionCopies.en.name, projectileMotionCalculatorEnglishCopy.name);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const locale of localeEntries) {
+    const copy = projectileMotionCopies[locale.key];
+    assert.ok(copy.fields.speed && copy.fields.angleDegrees && copy.fields.initialHeight && copy.fields.plotDescription, locale.key);
+    assert.ok(copy.actions.playTrajectory && copy.actions.resetAnimation, locale.key);
+    assert.ok(copy.messages.time && copy.messages.range && copy.messages.impactSpeed, locale.key);
+    assert.ok([...copy.title].length <= 60, locale.key);
+    assert.ok([...copy.description].length <= 160, locale.key);
+  }
+  assert.match(projectileMotionCopies.ar.fields.accuracyNote, /مقاومة هواء/u);
 });
 
 test('chemical equation balancer has complete English copy but has approved localized copy across all 36 languages', () => {
