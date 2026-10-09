@@ -4,7 +4,7 @@
 
 ## Estado público actual · 2026-10-09
 
-- **128 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **4.644 URLs** (128 × 36 + 36 páginas de idioma). Esto no equivale a que los buscadores hayan indexado cada URL.
+- **129 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **4.680 URLs** (129 × 36 + 36 páginas de idioma). Esto no equivale a que los buscadores hayan indexado cada URL.
 - #148 Text to Binary Converter: PR #81 integrada; despliegue principal `37891603568` y despliegue del hub `37892340212` correctos. EN/ES/AR responden HTTP 200.
 - #171 Schema Markup Validator, #172 Readability Checker y #173 Savings Goal Calculator ya aparecen en las 36 versiones públicas; verificaciones previas registradas debajo.
 - #189 Certificate Decoder: 36 rutas públicas; detalles de pruebas y despliegue anotados abajo.
@@ -13,8 +13,9 @@
 - #223 Robots.txt Tester: PR [#85](https://github.com/pedronunezwebs-hash/usefulverse/pull/85) integrada en `3b9293def8c1cd4577a65d2fb30e9c99a7190e71`; CI `37900570648`, deploy principal `37900951430` y publicación del hub `37900970440` finalizaron correctamente. Rutas EN/AR HTTP 200; sitemap público con 4.500 URLs. Sin afirmación de indexación ni PageSpeed/Lighthouse.
 - #235 JSON to Excel: PR [#86](https://github.com/pedronunezwebs-hash/usefulverse/pull/86) integrada en `a92891ad1c8f06be223d6a077e486d41be0d4f97`; CI y deploy principal `37903140579`, publicación del hub `37903965314` completados. EN/AR responden HTTP 200; sitemap verificado con **4.536 URLs únicas**, incluidas las 36 localizaciones. Sin afirmación de indexación ni PageSpeed/Lighthouse.
 - #279 CSV Editor: PR [#89](https://github.com/pedronunezwebs-hash/usefulverse/pull/89) integrada en `386092975d0391e5ff70a91553b87716710bf7e5`; CI PR `37910003597`, despliegue principal `37910456234` y publicación del hub `37910981705` correctos. EN responde HTTP 200; sitemap público confirmado con **4.644 URLs únicas** y 36 variantes CSV. Publicación no equivale a indexación.
-- #193 pH Calculator: implementación, traducciones y QA local listas en la rama actual; build aislado de 4.680 páginas. PR/CI y publicación pendientes; todavía no aparece en el sitemap público.
-- `npm run check` conserva **10.260 URLs** del sitio principal; suite completa de la rama actual: **1.633/1.633**; `npm run locale:release-check` pasa.
+- #193 pH Calculator: PR #90, merge `24583f8b4af7ac8d8e2c1f2354bfc8fed4f22f2b`; CI PR `37912770314`, deploy principal `37913208934`, publicación del hub `37913602993`. EN/AR HTTP 200; sitemap con **4.680 URLs únicas** y 36 variantes. No equivale a indexación.
+- #194 Section Modulus Calculator: implementación en la rama actual, estática en 36 idiomas; suite actual **1.641/1.641**, `locale:release-check` y `npm run check` pasan; build aislado de **4.716 páginas**. Aún no publicada.
+- `npm run check` conserva **10.260 URLs** del sitio principal. No se mide PageSpeed/Lighthouse.
 
 ## Publicado · JSON to Excel (#235 del plan)
 
@@ -45,13 +46,21 @@
 - 36 traducciones estáticas generadas desde inglés con el traductor web gratuito; no hay traducción en runtime ni revisión nativa. Títulos y descripciones dentro de límites; se corrigieron términos ambiguos en chino, japonés y ruso y títulos truncados en alemán, búlgaro, griego, ucraniano y filipino.
 - Tests focales 252/252 y suite previa 1.624/1.624; PR #89, CI PR `37910003597`, despliegue principal `37910456234` y publicación del hub `37910981705` completados. La URL pública responde HTTP 200 y el sitemap tiene 4.644 URLs únicas. Chrome: CSV entrecomillado/multilínea editado y exportado correctamente; validación de tipos sin alterar datos; búsqueda, filas/columnas, undo/redo confirmados. Sin peticiones externas; árabe RTL 390×844 sin overflow ni avisos de consola. No equivale a indexación; no se midió PageSpeed/Lighthouse.
 
-## En implementación local · pH Calculator (#193)
+## Publicada · pH Calculator (#193) · 2026-10-09
 
 - 4 modelos locales: ácido/base fuerte y ácido/base monoprótico débil; concentración H⁺/OH⁻, pH, pOH y porcentaje estimado de ionización. Equilibrio débil resuelto numéricamente incluyendo autoionización del agua; a 25 °C. Expone que es una estimación ideal basada en concentraciones/actividades y no una medición ni consejo técnico.
 - 36 traducciones estáticas; `pH` y `pOH` se conservan como símbolos universales tras corregir traducciones ambiguas. Títulos ≤60 y descripciones ≤160 caracteres; traducción automática sencilla, no revisión nativa.
-- Lógica específica 6/6; suite completa 1.633/1.633; `locale:release-check` pasa; `npm run check` mantiene las 10.260 URLs principales; build aislado de Growth600: **4.680 páginas** (129 × 36 + 36 portadas).
+- Lógica específica 6/6; suite completa **1.633/1.633** en el PR; `locale:release-check` pasa; `npm run check` mantiene las 10.260 URLs principales; build aislado de Growth600: **4.680 páginas** (129 × 36 + 36 portadas).
 - Chrome EN: ejemplo [H⁺]=1e−7 → pH/pOH 7; modelo débil Ka=1e−5 a 0,1 mol/L → pH 3,00217; formulario muestra/oculta Ka según el modelo. Chrome AR en móvil 390×844: etiquetas pH/pOH diferenciadas, `dir=rtl`, ancho 390/390, sin errores de consola ni peticiones externas.
-- [ ] P/S — pendiente PR/CI, deploy y comprobación del sitemap público. No PageSpeed/Lighthouse.
+- [x] P/S — PR #90, CI PR `37912770314`, merge `24583f8b4af7ac8d8e2c1f2354bfc8fed4f22f2b`, deploy principal `37913208934` y publicación hub `37913602993`. EN/AR HTTP 200; sitemap público **4.680 URLs únicas**, incluidas sus 36 versiones. Publicación no es indexación. No PageSpeed/Lighthouse.
+
+## En implementación local · Section Modulus Calculator (#194)
+
+- Motor local para rectángulo, círculo, rectángulo hueco centrado, tubo circular y triángulo isósceles; reporta área, centroide, Ix/Iy y módulos Zx superior/inferior y Zy en la unidad elegida. Aclara que no calcula cargas, tensiones, pandeo ni seguridad estructural.
+- 36 traducciones estáticas generadas con traductor web gratuito; se corrigió manualmente terminología técnica árabe. Títulos ≤60 y descripciones ≤160 caracteres; traducción sencilla, no revisión nativa ni servicio de traducción en runtime.
+- Lógica 5/5; controlador/formulario/catálogo/localización integrados; suite completa **1.641/1.641**, `locale:release-check` y `git diff --check` pasan; `npm run check`: **10.260 URLs** principales; build aislado **4.716 páginas** (130 × 36 + 36 portadas).
+- Chrome EN: cuadrado 10×10 mm → Ix=Iy=833,333333 mm⁴ y Zx/Zy=166,666667 mm³. Triángulo 6×3 mm → centroide y=1 mm, Ix=4,5 mm⁴, Zx superior/inferior=2,25/4,5 mm³. Chrome AR en móvil 390×844: `dir=rtl`, sin desbordamiento, errores de consola ni solicitudes externas.
+- Aún no publicada ni presente en el sitemap público. No PageSpeed/Lighthouse.
 
 ## Herramientas verificadas en despliegue anterior · #171–#173
 

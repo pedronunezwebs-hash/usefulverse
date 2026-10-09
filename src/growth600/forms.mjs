@@ -47,6 +47,7 @@ export function renderGrowthForm(toolId, copy) {
     'molar-mass-calculator': ['formula'],
     'molarity-calculator': ['mode', 'moles', 'molarity', 'volume', 'volumeUnit', 'molarMass', 'accuracyNote'],
     'ph-calculator': ['mode', 'strongAcid', 'strongBase', 'weakAcid', 'weakBase', 'concentration', 'equilibriumConstant', 'accuracyNote'],
+    'section-modulus-calculator': ['shape', 'rectangle', 'circle', 'hollowRectangle', 'hollowCircle', 'triangle', 'width', 'height', 'diameter', 'outerWidth', 'outerHeight', 'innerWidth', 'innerHeight', 'outerDiameter', 'innerDiameter', 'unit', 'millimeters', 'centimeters', 'meters', 'inches', 'accuracyNote'],
     'dilution-calculator': ['mode', 'directMode', 'serialMode', 'stockConcentration', 'targetConcentration', 'finalVolume', 'volumeUnit', 'steps', 'accuracyNote'],
     'ohms-law-calculator': ['mode', 'solverMode', 'networkMode', 'voltage', 'current', 'resistance', 'power', 'topology', 'series', 'parallel', 'resistorValues', 'accuracyNote'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
@@ -184,6 +185,7 @@ export function renderGrowthForm(toolId, copy) {
     'molar-mass-calculator': ['calculate', 'reset', 'example', 'copy', 'result'],
     'molarity-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'milliliters'],
     'ph-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'section-modulus-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'dilution-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'milliliters'],
     'ohms-law-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -1596,6 +1598,17 @@ export function renderGrowthForm(toolId, copy) {
     ${label('ph-mode', fields.mode, `<select id="ph-mode" name="mode"><option value="strong-acid">${escapeGrowthHtml(fields.strongAcid)}</option><option value="strong-base">${escapeGrowthHtml(fields.strongBase)}</option><option value="weak-acid">${escapeGrowthHtml(fields.weakAcid)}</option><option value="weak-base">${escapeGrowthHtml(fields.weakBase)}</option></select>`)}
     ${label('ph-concentration', fields.concentration, '<input id="ph-concentration" name="concentration" type="number" min="0.00000000000001" max="10" step="any" inputmode="decimal" value="0.0000001" required>')}
     <div data-ph-constant>${label('ph-equilibrium-constant', fields.equilibriumConstant, '<input id="ph-equilibrium-constant" name="equilibriumConstant" type="number" min="0.00000000000001" max="1" step="any" inputmode="decimal" value="0.00001">')}</div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'section-modulus-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('section-shape', fields.shape, `<select id="section-shape" name="shape"><option value="rectangle">${escapeGrowthHtml(fields.rectangle)}</option><option value="circle">${escapeGrowthHtml(fields.circle)}</option><option value="hollow-rectangle">${escapeGrowthHtml(fields.hollowRectangle)}</option><option value="hollow-circle">${escapeGrowthHtml(fields.hollowCircle)}</option><option value="triangle">${escapeGrowthHtml(fields.triangle)}</option></select>`)}
+    <div data-section-shape="rectangle triangle">${label('section-width', fields.width, '<input id="section-width" name="width" type="number" min="0.0000000001" max="1000000" step="any" inputmode="decimal" value="10">')}${label('section-height', fields.height, '<input id="section-height" name="height" type="number" min="0.0000000001" max="1000000" step="any" inputmode="decimal" value="10">')}</div>
+    <div data-section-shape="circle">${label('section-diameter', fields.diameter, '<input id="section-diameter" name="diameter" type="number" min="0.0000000001" max="1000000" step="any" inputmode="decimal" value="10">')}</div>
+    <div data-section-shape="hollow-rectangle">${label('section-outer-width', fields.outerWidth, '<input id="section-outer-width" name="outerWidth" type="number" min="0.0000000001" max="1000000" step="any" inputmode="decimal" value="10">')}${label('section-outer-height', fields.outerHeight, '<input id="section-outer-height" name="outerHeight" type="number" min="0.0000000001" max="1000000" step="any" inputmode="decimal" value="8">')}${label('section-inner-width', fields.innerWidth, '<input id="section-inner-width" name="innerWidth" type="number" min="0.0000000001" max="1000000" step="any" inputmode="decimal" value="6">')}${label('section-inner-height', fields.innerHeight, '<input id="section-inner-height" name="innerHeight" type="number" min="0.0000000001" max="1000000" step="any" inputmode="decimal" value="4">')}</div>
+    <div data-section-shape="hollow-circle">${label('section-outer-diameter', fields.outerDiameter, '<input id="section-outer-diameter" name="outerDiameter" type="number" min="0.0000000001" max="1000000" step="any" inputmode="decimal" value="10">')}${label('section-inner-diameter', fields.innerDiameter, '<input id="section-inner-diameter" name="innerDiameter" type="number" min="0.0000000001" max="1000000" step="any" inputmode="decimal" value="6">')}</div>
+    ${label('section-unit', fields.unit, `<select id="section-unit" name="unit"><option value="mm">${escapeGrowthHtml(fields.millimeters)}</option><option value="cm">${escapeGrowthHtml(fields.centimeters)}</option><option value="m">${escapeGrowthHtml(fields.meters)}</option><option value="in">${escapeGrowthHtml(fields.inches)}</option></select>`)}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);
