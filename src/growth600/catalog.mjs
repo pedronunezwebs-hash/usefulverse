@@ -432,6 +432,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/transformer-calculator/logic.mjs',
   },
   {
+    id: 'stoichiometry-calculator',
+    category: 'science-chemistry',
+    type: 'calculator',
+    primaryIntent: 'stoichiometry calculator',
+    secondaryIntents: ['limiting reactant calculator', 'theoretical yield calculator', 'percent yield calculator'],
+    functions: ['balance a supported neutral reaction and show its coefficient ratios', 'enter mass in grams or amount in moles for each reactant and identify the limiting reactant or tied limiting reactants', 'calculate theoretical moles and mass for every product using the supported molar-mass table', 'optionally compare actual product mass with theoretical mass to calculate percent yield and show the calculation steps'],
+    acceptance: 'For 2 mol H2 and 1 mol O2 in 2H2 + O2 → 2H2O, water theoretical yield is 2 mol or about 36.03 g; an actual yield of 18.015 g is 50%.',
+    boundary: 'Educational stoichiometry for balanced, neutral molecular equations and elements supported by the molar-mass calculator. It does not model limiting purity, solutions, gases, equilibrium, side reactions, ionic/electron balance, kinetics, actual reaction conditions or hazards. A percent yield above 100% is shown as entered and may indicate moisture, impurities or measurement issues. Not a lab procedure or safety advice; follow qualified supervision and safety data. Inputs stay in the browser.',
+    relatedExistingIds: ['chemical-equation-balancer', 'molar-mass-calculator'],
+    logicModule: './tools/stoichiometry-calculator/logic.mjs',
+  },
+  {
     id: 'chemical-equation-balancer',
     category: 'science-engineering',
     type: 'calculator',

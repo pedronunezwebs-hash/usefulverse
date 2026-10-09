@@ -1582,5 +1582,17 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [x] X — **275/275 pruebas focalizadas**; suite global **1.719/1.719**; `npm run locale:release-check`; `npm run check` conserva las 10.260 URLs del sitio principal. Build de hub: **5.076 páginas** (140 herramientas × 36 idiomas + 36 portadas), 5.273 archivos. No se tocó el catálogo principal de 277 herramientas.
 - [x] QA de navegador — inglés: ejemplo 120 V, 100:50 → 60 V y Ns/Np=0,5. Árabe RTL: voltaje y corriente calculados; campos activos/desactivados según modo; viewport móvil 390×844 sin desbordamiento y consola sin errores ni avisos.
 - [x] Inventario — README regenerado desde ambos sitemaps de build: **10.260 URLs** principales y **5.076 URLs** del hub. El README indica 140 herramientas adicionales.
-- [ ] P/S — estos son resultados de build local: la ruta todavía no está declarada publicada ni enviada a buscadores. Esperar integración y despliegues verificados antes de marcarla [x] y actualizar el estado público.
-- **Recuento local:** **84/323** candidatas con implementación en catálogo y copy estático de 36 idiomas; quedan **239 candidatas válidas y una fila duplicada/reserva por sustituir** según el plan. El hub de este checkout genera 140 herramientas; no confundir ese inventario con producción hasta confirmar deploy.
+- [ ] P/S — PR #101 ya integró el código y el deploy principal `37948139492` terminó bien, pero la publicación separada del hub fue omitida por su gate manual. El sitemap público del hub continúa en 5.040 URLs: Transformer aún no suma a producción.
+- **Recuento local antes de Stoichiometry:** 84/323 candidatas.
+
+## En implementación local · Stoichiometry Calculator (#246)
+
+- Demanda reutilizada del plan, sin consultas nuevas: `stoichiometry calculator` 1.300 búsquedas/mes US/en, KD 4; secundaria `limiting reactant calculator` 480/mes, KD 0.
+- Balancea ecuaciones moleculares neutras compatibles y toma masas en gramos o moles para cada reactivo en el orden mostrado. Calcula reactivos limitantes, todos los productos teóricos, moles/masa y rendimiento porcentual opcional de un producto seleccionado. Reutiliza los módulos existentes de balanceo y masa molar; entrada/cálculo permanecen en el navegador, sin API o gasto de procesamiento.
+- Restricciones explícitas: solo fórmulas y elementos soportados por el sitio; no modela pureza, soluciones, equilibrio, condiciones, reacciones laterales, cinética ni riesgos de laboratorio. Un rendimiento superior a 100% se muestra y contextualiza.
+- 36 copias estáticas: 35 traducidas automáticamente desde inglés y árabe redactado específicamente; no son revisión nativa ni llamadas runtime. Títulos ≤60 y descripciones ≤160 validados en las 36.
+- Pruebas: lógica/controlador/formulario, cobertura lingüística y build; suite completa **1.728/1.728**, `npm run locale:release-check`, `npm run check` (**10.260 URLs principales**) y build aislado **5.112 páginas** (141 × 36 + 36 portadas).
+- QA Chrome: EN ejemplo H2/O2 → 2 mol H2O (36,03 g), rendimiento real de 18,015 g → 50%. AR en viewport 390×844 resolvió el mismo ejemplo; `dir=rtl`, ancho de documento 390 px, consola sin errores/avisos.
+- Inventario README: 10.260 URLs principales y 5.112 URLs del hub de esta build. Sin PageSpeed/Lighthouse.
+- **P/S pendiente:** PR y publicación separada del hub/sitemap; no sumar a producción hasta comprobarla.
+- **Recuento implementado en catálogo:** 85/323 candidatas; quedan 238 válidas y una fila duplicada/reserva por sustituir. No confundir las 141 entradas del catálogo Growth600 local con las 139 actualmente publicadas.

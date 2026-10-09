@@ -59,6 +59,7 @@ export function renderGrowthForm(toolId, copy) {
     'dilution-calculator': ['mode', 'directMode', 'serialMode', 'stockConcentration', 'targetConcentration', 'finalVolume', 'volumeUnit', 'steps', 'accuracyNote'],
     'ohms-law-calculator': ['mode', 'solverMode', 'networkMode', 'voltage', 'current', 'resistance', 'power', 'topology', 'series', 'parallel', 'resistorValues', 'accuracyNote'],
     'transformer-calculator': ['mode', 'voltageMode', 'ratioMode', 'currentMode', 'primaryVoltage', 'secondaryVoltage', 'primaryTurns', 'secondaryTurns', 'primaryCurrent', 'efficiencyPercent', 'accuracyNote'],
+    'stoichiometry-calculator': ['equation', 'inputMode', 'gramsMode', 'molesMode', 'reactantAmounts', 'reactantAmountsHint', 'products', 'actualProductMass', 'actualProductHint', 'accuracyNote'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
     'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
     'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
@@ -207,6 +208,7 @@ export function renderGrowthForm(toolId, copy) {
     'dilution-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'milliliters'],
     'ohms-law-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'transformer-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'stoichiometry-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
     'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -1883,6 +1885,19 @@ export function renderGrowthForm(toolId, copy) {
     ${label('transformer-efficiency', fields.efficiencyPercent, '<input id="transformer-efficiency" data-transformer-field name="efficiencyPercent" type="number" min="0.000000000001" max="100" step="any" inputmode="decimal" value="100">')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'stoichiometry-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('stoich-equation', fields.equation, '<textarea id="stoich-equation" name="equation" rows="2" maxlength="500" spellcheck="false" autocapitalize="off" autocomplete="off">H2 + O2 -&gt; H2O</textarea>')}
+    ${label('stoich-input-mode', fields.inputMode, `<select id="stoich-input-mode" name="inputMode"><option value="mass">${escapeGrowthHtml(fields.gramsMode)}</option><option value="moles">${escapeGrowthHtml(fields.molesMode)}</option></select>`)}
+    ${label('stoich-reactant-amounts', fields.reactantAmounts, '<textarea id="stoich-reactant-amounts" name="reactantAmounts" rows="4" maxlength="200" inputmode="decimal" spellcheck="false">4.032\n31.998</textarea>')}
+    <p class="hint" data-reactant-list aria-live="polite"></p><p class="hint">${escapeGrowthHtml(fields.reactantAmountsHint)}</p>
+    ${label('stoich-product', fields.products, '<select id="stoich-product" name="selectedProduct"><option value="H2O">H2O</option></select>')}
+    ${label('stoich-actual-mass', fields.actualProductMass, '<input id="stoich-actual-mass" name="actualProductMass" type="number" min="0" max="1000000000000" step="any" inputmode="decimal">')}
+    <p class="hint">${escapeGrowthHtml(fields.actualProductHint)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'kinetic-energy-calculator') return attachCopy(`<form id="tool-form" novalidate>
