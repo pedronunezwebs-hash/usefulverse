@@ -20,6 +20,9 @@
 .fourier-series-chart__samples { stroke: currentColor; stroke-width: 1; stroke-dasharray: 5 5; opacity: .65; }
 .fourier-series-chart__point { fill: currentColor; }
 .fourier-series-figure figcaption { margin-top: .5rem; text-align: center; }
+.parametric-curve-chart { display:block; width:100%; height:auto; aspect-ratio:8/5; border:1px solid var(--line); border-radius:.75rem; background:#fff; }
+.parametric-curve-chart__axes { fill:none; stroke:#a8b3ae; stroke-width:1.2; stroke-dasharray:4 5; }
+.parametric-curve-chart__line { stroke:var(--accent,#3659d9); stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round; }
 .a-b-test-calculator .calculator-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 .a-b-test-calculator fieldset { min-width: 0; margin: 0; padding: .75rem 1rem 1rem; border: 1px solid var(--line); border-radius: .85rem; background: #fff; }
 .a-b-test-calculator legend { padding: 0 .35rem; font-weight: 750; }
