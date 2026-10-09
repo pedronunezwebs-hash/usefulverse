@@ -2,7 +2,17 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## En curso · Capacitor Calculator (#290) · 2026-10-09
+## En curso · Body Water Calculator (#291) · 2026-10-09
+
+- [x] C/F — Reutilizada la ficha del inventario: `body water calculator`, 590 búsquedas/mes US/en, KD 6; `total body water calculator`, 590/mes, KD 0. CPC no se reporta como CPM; sin nueva llamada a DataForSEO.
+- [x] E/B — Estimación adulta local usando ecuaciones Watson (1980), entradas métricas/imperiales; muestra litros y fracción aproximada de masa corporal. No mide hidratación, no ofrece consumo recomendado ni uso clínico; rangos explícitos y limitaciones visibles.
+- [x] L — 36 traducciones estáticas desde inglés. Títulos reconstruidos desde nombres traducidos, ≤60 caracteres; descripciones ≤160. Se detectó y eliminó un marcador de traducción filtrado y se fijaron sin traducir los coeficientes para preservar la ecuación exacta. Borradores automáticos, no revisión nativa.
+- [x] X — Lógica y validación focal **70/70**; regresión `npm test` **1.432/1.432**; `npm run locale:release-check`, `npm run check` y `git diff --check` pasan. La web principal conserva **10.260 URLs**. Build del hub **3.888 URLs únicas** (107 × 36 + 36 portadas), 4.048 archivos y 116.607.832 bytes.
+- [x] B — Chrome EN/AR: 30 años, 175 cm, 70 kg → 41,92 L y 59,89%; unidades imperiales equivalentes producen el mismo valor; dígitos árabes parseados, edad 17 invalida y elimina resultado obsoleto; RTL a 390 px sin overflow, consola limpia. La carga del hub no incorpora traducción online.
+- [ ] P/S — PR, CI, fusión, deploy y sitemap público pendientes.
+- **Siguiente herramienta tras publicar:** #292 555 Timer Calculator. No PageSpeed/Lighthouse ni nueva investigación de DataForSEO.
+
+## Publicada · Capacitor Calculator (#290) · 2026-10-09
 
 - [x] C/F — Reutilizada la ficha ya contrastada: `capacitor calculator`, 590 búsquedas/mes US/en, KD 2; `capacitor series parallel calculator`, 110/mes, KD 0. CPC registrado de 4,29 USD; no es CPM. Sin nuevas llamadas ni gasto de DataForSEO.
 - [x] E — Separación de intención: red de capacitores, capacitancia equivalente, carga/energía ideal; distinta de la red de resistencias existente. No se altera el catálogo original de 277.
@@ -10,8 +20,8 @@
 - [x] L — 36 copias estáticas generadas; títulos claros y bajo 60 caracteres, con UsefulVerse intacto. Corregí etiquetas de carga eléctrica y conexiones serie/paralelo en los 36 idiomas tras detectar traducciones ambiguas. Traducción automática revisada en términos técnicos clave; no equivale a revisión nativa.
 - [x] X — Lógica 19/19 en pruebas focalizadas; suite completa **1.427/1.427**; `locale:release-check`, `npm run check` y `git diff --check` pasan. Original conserva **10.260 URLs**. Build hub **3.852 páginas** (106 × 36 + 36 portadas), 4.011 archivos, 115.623.399 bytes. Bundle de herramienta 5.382 bytes.
 - [x] B — Chrome: EN/AR/RU en build estático; árabe RTL y números arábigos locales funcionan. Caso paralelo 2×100 μF a 5 V → 200 μF, 1 mC, 2,5 mJ y 5 V por componente; serie 100/200 μF a 12 V → 66,666667 μF, 800 μC, 4,8 mJ y 8/4 V. Entrada inválida oculta resultado anterior; reset limpia. A 390 px CSS (Chrome reportó 500 px de viewport) sin overflow; consola limpia; carga solo HTML, CSS, bundle local y favicon. Sin PageSpeed/Lighthouse.
-- [ ] P/S — PR, CI remota, fusión, deploy y comprobación pública aún pendientes.
-- **Estado:** código y QA local listos; falta PR/CI/publicación. Hub #289 ya está desplegado y verificado (run `37860750067`; 3.816 URLs). No declarar #290 publicada ni pedir indexación hasta pasar los gates remotos.
+- [x] P/S — PR #67 fusionada; CI run `37862013320`, despliegue principal `37862359298` y del hub `37862369399` correctos. EN y AR responden HTTP 200; sitemap del hub tiene 3.852 URLs únicas, 36 de Capacitor.
+- **Estado:** publicada en 36 locales; publicar no confirma indexación y no se envió petición manual a buscadores. No PageSpeed/Lighthouse.
 
 ## Publicada · Hijri Calendar Converter (#289) · 2026-10-09
 

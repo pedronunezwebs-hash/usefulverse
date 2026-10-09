@@ -1,0 +1,25 @@
+export const bodyWaterCalculatorEnglishCopy = Object.freeze({
+  name: 'Body Water Calculator',
+  title: 'Free Body Water Calculator | UsefulVerse',
+  description: 'Estimate adult total body water with the published Watson equations. Free, local and no usage limit; not a hydration test.',
+  intro: 'Estimate total body water from adult age, height and weight using a published anthropometric equation. See the estimate in litres and as a share of entered body mass.',
+  howQuestion: 'How is total body water estimated?',
+  howAnswer: 'Choose one of the Watson equation variants, enter adult age, height and weight, then calculate. The result is a population-based estimate, not a direct measurement.',
+  privacyQuestion: 'Are my measurements uploaded?',
+  privacyAnswer: 'No. The calculation runs locally in this browser and the values are not uploaded or saved by this tool.',
+  fields: {
+    equation: 'Watson equation variant', watsonMale: 'Male equation', watsonFemale: 'Female equation', age: 'Age (years; adults 18–100)',
+    height: 'Height', heightUnit: 'Height unit', weight: 'Weight', weightUnit: 'Weight unit', centimeters: 'Centimeters (cm)', inches: 'Inches (in)', kilograms: 'Kilograms (kg)', pounds: 'Pounds (lb)',
+    accuracyNote: 'Estimate only; it does not measure hydration or tell you how much to drink. Watson’s 1980 adult equations use male/female categories from their source data and may not fit every person or population. Not for minors, pregnancy, dialysis, edema, diagnosis or clinical decisions. For health questions, ask a qualified clinician.',
+    resultLiters: 'Estimated total body water', resultPercent: 'Approximate share of body mass',
+    equationNote: 'Watson et al. (1980): male = 2.447 − 0.09516 × age + 0.1074 × height(cm) + 0.3362 × weight(kg); female = −2.097 + 0.1069 × height(cm) + 0.2466 × weight(kg). The percentage treats 1 L of water as approximately 1 kg.',
+  },
+  actions: { calculate: 'Calculate estimate', example: 'Try an example', reset: 'Clear', result: 'Estimate' },
+  messages: { calculated: 'Estimate calculated.', checkInputs: 'Check the adult age, height, weight and selected units.' },
+  additionalFaqs: [
+    { question: 'Is this a hydration or dehydration test?', answer: 'No. It estimates total body water from a population equation. It cannot measure hydration status or diagnose dehydration.' },
+    { question: 'What does the percentage mean?', answer: 'It is estimated litres divided by the entered body mass, treating 1 litre of water as about 1 kilogram. It is not a target or a healthy-range score.' },
+    { question: 'Who should not use this estimate for decisions?', answer: 'It is not intended for children, pregnancy, dialysis, edema or clinical decisions. A clinician can assess individual health context and direct measurements.' },
+  ],
+  copyLanguage: 'en', localizationStatus: 'approved',
+});

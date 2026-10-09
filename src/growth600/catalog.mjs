@@ -1271,6 +1271,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['ohms-law-calculator'],
     logicModule: './tools/capacitor-calculator/logic.mjs',
   },
+  {
+    id: 'body-water-calculator',
+    category: 'health-math',
+    type: 'calculator',
+    primaryIntent: 'body water calculator',
+    secondaryIntents: ['total body water calculator', 'body water percentage calculator', 'Watson total body water equation'],
+    functions: ['estimate adult total body water in litres from age, height and weight using either published Watson equation variant', 'show the equation family and an approximate fraction of entered body mass', 'accept metric or US customary height and weight units with transparent conversion', 'show the model limits and that the output is an estimate, not a measurement or hydration target'],
+    acceptance: 'For age 30, height 175 cm and weight 70 kg, the Watson male equation estimates 41.9212 L; the female equation estimates 33.8725 L. Neither result recommends fluid intake.',
+    boundary: 'Adult anthropometric estimate only, based on Watson et al. (1980), derived from adult dilution-study data. The equation variants use male/female categories from the source study and may not represent an individual; accuracy varies with body composition, age, population and health. It does not measure hydration, diagnose a condition, estimate a safe fluid intake or replace clinical assessment. No minors, pregnancy, edema, dialysis or other clinical use. Calculations stay in this browser.',
+    relatedExistingIds: ['bmr-tdee-calculator', 'body-fat-calculator'],
+    logicModule: './tools/body-water-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

@@ -81,6 +81,8 @@ import { hijriCalendarConverterEnglishCopy } from './hijri-calendar-converter.en
 import capacitorCalculatorCopies from './capacitor-calculator.mjs';
 import { capacitorCalculatorEnglishCopy } from './capacitor-calculator.en.mjs';
 import { capacitorCalculatorTechnicalFixes, capacitorCalculatorTitles } from './capacitor-calculator.titles.mjs';
+import bodyWaterCalculatorCopies from './body-water-calculator.mjs';
+import { bodyWaterCalculatorEnglishCopy } from './body-water-calculator.en.mjs';
 import openApiEditorCopies from './openapi-editor.mjs';
 import { openApiEditorEnglishCopy } from './openapi-editor.en.mjs';
 import fontPairingToolCopies from './font-pairing-tool.mjs';
@@ -984,5 +986,6 @@ registerGrowthLocaleExtension(source, 'capacitor-calculator', {
   ...Object.fromEntries(Object.entries(capacitorCalculatorCopies).map(([locale, copy]) => [locale, { ...copy, title: capacitorCalculatorTitles[locale] ?? copy.title, fields: { ...copy.fields, ...capacitorCalculatorTechnicalFixes[locale] } }])),
   en: capacitorCalculatorEnglishCopy,
 }, 'hijri-calendar-converter');
+registerGrowthLocaleExtension(source, 'body-water-calculator', { ...bodyWaterCalculatorCopies, en: bodyWaterCalculatorEnglishCopy }, 'capacitor-calculator');
 
 export default Object.freeze(source);

@@ -1547,8 +1547,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 290 · Capacitor Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `capacitor-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/capacitor-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `capacitor-calculator`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/capacitor-calculator/`; otras 35 versiones con los prefijos del anexo.
 - **Demanda:** `capacitor calculator` — 590 búsquedas/mes US/en, KD 2; nivel C. CPC 4.29 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Capacitancia equivalente, carga y energía
 - **Prueba de aceptación específica:** Dos100uF paralelo dan200uF
@@ -1558,7 +1558,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `capacitor series parallel calculator` — 110/mes US/en; KD 0.
   - `capacitor calculator free online`; `capacitor calculator with example`; `capacitor calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
-- **Avance comprobado (2026-10-09):** motor local, entradas localizadas y 36 copias estáticas; correcciones técnicas de carga eléctrica/topología revisadas. Pruebas focales 19/19; suite completa **1.427/1.427**; release locale y `npm run check` pasan (10.260 URLs de las 277 originales). Build del hub **3.852 rutas** y 4.011 archivos; bundle JS 5.382 bytes. Chrome EN/AR/RU confirmó ejemplos de paralelo/serie, validación, reset, RTL y ausencia de overflow/errores; carga sin terceros. Falta PR/CI/fusión/deploy y verificar sitemap público; no PageSpeed/Lighthouse.
+- **Publicación comprobada (2026-10-09):** motor local y 36 copias estáticas; pruebas focales 19/19; suite **1.427/1.427**; `locale:release-check` y `npm run check` pasan (10.260 URLs originales). Build del hub **3.852 URLs**. Chrome EN/AR/JA/RU confirmó circuitos, validación, reset, RTL y consola limpia. PR #67, CI run `37862013320`, merge `dbed4f4b199ee4691d03f9d91888cc7a77c08421`, deploy principal `37862359298` y deploy hub `37862369399` correctos. URLs EN/AR responden HTTP 200; sitemap del hub **3.852 URLs únicas**, 36 variantes. Publicado no implica indexado; no se envió petición manual. No PageSpeed/Lighthouse.
 
 ### 292 · 555 Timer Calculator
 
@@ -5117,7 +5117,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 ### 291 · Body Water Calculator
 
 - [ ] **C/F/E/X/L/B/P/S completos — `body-water-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/body-water-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- **Destino propuesto:** `https://tools.usefulverse.com/tools/body-water-calculator/`; otras 35 versiones con los prefijos del anexo. Publicación aún pendiente.
 - **Demanda:** `body water calculator` — 590 búsquedas/mes US/en, KD 6; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Ecuaciones adultas publicadas y límites de estimación
 - **Prueba de aceptación específica:** Ejemplo de fuente reproducido, no prescribir hidratación
@@ -5127,6 +5127,9 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `total body water calculator` — 590/mes US/en; KD 0.
   - `body water calculator free online`; `body water calculator with example`; `body water calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Implementación y límites:** estimación adulta de agua corporal con las ecuaciones Watson; acepta altura y peso métricos o imperiales, muestra litros y proporción aproximada del peso. No diagnostica hidratación ni recomienda ingesta; excluye menores y situaciones clínicas. Cálculo local, sin API/servidor.
+- **Fuente del método:** Watson et al. 1980, [PubMed](https://pubmed.ncbi.nlm.nih.gov/6986753/), [DOI](https://doi.org/10.1093/ajcn/33.1.27). Se conservan literalmente los coeficientes en todos los idiomas porque la traducción automática alteró algunos números en la muestra.
+- **Publicación comprobada (2026-10-09):** 36 copias estáticas; títulos ≤60 caracteres, descripciones ≤160. Pruebas focales 70/70, incluidos los cuatro casos de lógica; suite completa **1.432/1.432**; `locale:release-check`, `npm run check` (10.260 URLs originales), build del hub (**3.888 URLs únicas**, 107 × 36 + 36 portadas; 4.048 archivos) y `git diff --check` pasan. Chrome EN y AR: ejemplo 30 años/175 cm/70 kg → 41,92 L y 59,89%; unidades imperiales equivalentes dan el mismo resultado; números arábigos en árabe funcionan, edad inválida borra el resultado previo; RTL a 390 px sin overflow ni consola. PR/CI/merge/deploy y sitemap público se registrarán aquí al terminar esos gates. No PageSpeed/Lighthouse.
 
 ### 298 · Cycling Power Calculator
 

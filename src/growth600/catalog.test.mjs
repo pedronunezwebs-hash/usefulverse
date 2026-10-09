@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 106);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 106);
+  assert.equal(growthPilotTools.length, 107);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 107);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -97,6 +97,16 @@ test('capacitor calculator combines ideal capacitor networks and distinguishes c
   assert.match(tool.functions.join(' '), /stored energy/u);
   assert.match(tool.boundary, /no voltage-rating, tolerance, leakage or ESR model/u);
   assert.match(tool.acceptance, /200 μF/u);
+});
+
+test('body-water estimate names its adult source model and avoids hydration advice', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'body-water-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'body water calculator');
+  assert.match(tool.functions.join(' '), /Watson equation/u);
+  assert.match(tool.boundary, /does not measure hydration/u);
+  assert.match(tool.boundary, /No minors/u);
+  assert.match(tool.acceptance, /41\.9212 L/u);
 });
 
 test('Roth vs traditional compares user-entered tax scenarios without giving tax or account advice', () => {
