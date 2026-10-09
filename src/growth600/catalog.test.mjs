@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 131);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 131);
+  assert.equal(growthPilotTools.length, 132);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 132);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -17,6 +17,16 @@ test('frequency and wavelength calculator solves the wave relation, distinct fro
   assert.match(tool.acceptance, /100 MHz.*3 m/u);
   assert.match(tool.boundary, /approximate.*custom speed/u);
   assert.match(tool.boundary, /No upload, API, storage or server processing/u);
+});
+
+test('ideal gas law calculator solves one blank from PV=nRT and discloses model limits', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'ideal-gas-law-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'ideal gas law calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['molarity-calculator', 'molar-mass-calculator', 'density-calculator']);
+  assert.match(tool.acceptance, /1 atm.*22\.41397 L/u);
+  assert.match(tool.boundary, /absolute temperature above 0 K/u);
+  assert.match(tool.boundary, /no inputs are uploaded/u);
 });
 
 test('JSON to Excel is distinct from CSV and spreadsheet conversion and keeps imports local', () => {

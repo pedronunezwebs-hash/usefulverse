@@ -1238,8 +1238,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 197 · Frequency Wavelength Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `frequency-wavelength-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/frequency-wavelength-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `frequency-wavelength-calculator`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/frequency-wavelength-calculator/`; otras 35 versiones con los prefijos del anexo. PR #92 integrada y publicación del hub verificada; sitemap 4.752 URLs.
 - **Demanda:** `wavelength calculator` — 2.400 búsquedas/mes US/en, KD 2; nivel B. CPC 1.83 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Frecuencia, longitud y velocidad en medio elegido
 - **Prueba de aceptación específica:** c=300000000 y f=100MHz da3m
@@ -1258,7 +1258,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Función mínima y ampliaciones útiles:** Resolver P, V, n, T y unidades absolutas
 - **Prueba de aceptación específica:** Temperatura cero Kelvin se rechaza
 - **Frontera con otras herramientas:** density-calculator: estado gaseoso. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** H: dependencia/cómputo bajo demanda; verificar licencia y compatibilidad. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** L: cálculo de punto flotante local, sin dependencia. Usar unidades absolutas, detectar sobre/subdesbordamiento y mostrar la aproximación del modelo; los casos anotados en PROGRESS no sustituyen todos los gates de publicación.
 - **Consultas secundarias del mismo propietario:**
   - `pv nrt calculator` — 590/mes US/en; KD 0.
   - `ideal gas law calculator free online`; `ideal gas law calculator with example`; `ideal gas law calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

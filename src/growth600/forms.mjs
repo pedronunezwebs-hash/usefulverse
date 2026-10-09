@@ -49,6 +49,7 @@ export function renderGrowthForm(toolId, copy) {
     'ph-calculator': ['mode', 'strongAcid', 'strongBase', 'weakAcid', 'weakBase', 'concentration', 'equilibriumConstant', 'accuracyNote'],
     'section-modulus-calculator': ['shape', 'rectangle', 'circle', 'hollowRectangle', 'hollowCircle', 'triangle', 'width', 'height', 'diameter', 'outerWidth', 'outerHeight', 'innerWidth', 'innerHeight', 'outerDiameter', 'innerDiameter', 'unit', 'millimeters', 'centimeters', 'meters', 'inches', 'accuracyNote'],
     'frequency-wavelength-calculator': ['frequency', 'wavelength', 'speed', 'frequencyUnit', 'wavelengthUnit', 'speedUnit', 'medium', 'hz', 'khz', 'mhz', 'ghz', 'thz', 'nanometers', 'micrometers', 'millimeters', 'centimeters', 'meters', 'kilometers', 'metersPerSecond', 'kilometersPerSecond', 'custom', 'vacuum', 'air', 'water', 'glass', 'accuracyNote'],
+    'ideal-gas-law-calculator': ['pressure', 'volume', 'amount', 'temperature', 'pressureUnit', 'volumeUnit', 'amountUnit', 'temperatureUnit', 'pascal', 'kilopascal', 'megapascal', 'bar', 'atmosphere', 'torr', 'psi', 'cubicMeters', 'liters', 'milliliters', 'cubicFeet', 'mol', 'millimol', 'kilomol', 'kelvin', 'celsius', 'accuracyNote'],
     'dilution-calculator': ['mode', 'directMode', 'serialMode', 'stockConcentration', 'targetConcentration', 'finalVolume', 'volumeUnit', 'steps', 'accuracyNote'],
     'ohms-law-calculator': ['mode', 'solverMode', 'networkMode', 'voltage', 'current', 'resistance', 'power', 'topology', 'series', 'parallel', 'resistorValues', 'accuracyNote'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
@@ -188,6 +189,7 @@ export function renderGrowthForm(toolId, copy) {
     'ph-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'section-modulus-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'frequency-wavelength-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'ideal-gas-law-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'dilution-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'milliliters'],
     'ohms-law-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -1627,6 +1629,23 @@ export function renderGrowthForm(toolId, copy) {
     </div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'ideal-gas-law-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    <div class="calculator-grid">
+      ${label('gas-pressure', fields.pressure, '<input id="gas-pressure" name="pressure" type="number" min="0" max="1e18" step="any" inputmode="decimal" value="1" required>')}
+      ${label('gas-pressure-unit', fields.pressureUnit, `<select id="gas-pressure-unit" name="pressureUnit"><option value="Pa">${escapeGrowthHtml(fields.pascal)}</option><option value="kPa">${escapeGrowthHtml(fields.kilopascal)}</option><option value="MPa">${escapeGrowthHtml(fields.megapascal)}</option><option value="bar">${escapeGrowthHtml(fields.bar)}</option><option value="atm" selected>${escapeGrowthHtml(fields.atmosphere)}</option><option value="torr">${escapeGrowthHtml(fields.torr)}</option><option value="psi">${escapeGrowthHtml(fields.psi)}</option></select>`)}
+      ${label('gas-volume', fields.volume, '<input id="gas-volume" name="volume" type="number" min="0" max="1e15" step="any" inputmode="decimal" value="" required>')}
+      ${label('gas-volume-unit', fields.volumeUnit, `<select id="gas-volume-unit" name="volumeUnit"><option value="m³">${escapeGrowthHtml(fields.cubicMeters)}</option><option value="L" selected>${escapeGrowthHtml(fields.liters)}</option><option value="mL">${escapeGrowthHtml(fields.milliliters)}</option><option value="ft³">${escapeGrowthHtml(fields.cubicFeet)}</option></select>`)}
+      ${label('gas-amount', fields.amount, '<input id="gas-amount" name="amount" type="number" min="0" max="1e18" step="any" inputmode="decimal" value="1" required>')}
+      ${label('gas-amount-unit', fields.amountUnit, `<select id="gas-amount-unit" name="amountUnit"><option value="mol" selected>${escapeGrowthHtml(fields.mol)}</option><option value="mmol">${escapeGrowthHtml(fields.millimol)}</option><option value="kmol">${escapeGrowthHtml(fields.kilomol)}</option></select>`)}
+      ${label('gas-temperature', fields.temperature, '<input id="gas-temperature" name="temperature" type="number" min="-273.15" max="1e9" step="any" inputmode="decimal" value="273.15" required>')}
+      ${label('gas-temperature-unit', fields.temperatureUnit, `<select id="gas-temperature-unit" name="temperatureUnit"><option value="K" selected>${escapeGrowthHtml(fields.kelvin)}</option><option value="°C">${escapeGrowthHtml(fields.celsius)}</option></select>`)}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'polynomial-long-division-calculator') return attachCopy(`<form id="tool-form" novalidate>

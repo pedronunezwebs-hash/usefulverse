@@ -312,6 +312,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/frequency-wavelength-calculator/logic.mjs',
   },
   {
+    id: 'ideal-gas-law-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'ideal gas law calculator',
+    secondaryIntents: ['pv nrt calculator', 'ideal gas equation calculator', 'solve ideal gas law for pressure volume moles temperature'],
+    functions: ['solve exactly one missing pressure, volume, amount of gas or absolute temperature with PV=nRT', 'convert common SI and customary pressure, volume and amount units while preserving physical values when units change', 'accept kelvin or Celsius and reject temperatures at or below absolute zero', 'show all four values, units, equation and the model limits; keep arithmetic in the browser'],
+    acceptance: 'At 1 atm, 1 mol and 273.15 K, the missing volume is approximately 22.41397 L; changing a populated pressure from atm to kPa preserves the same physical pressure.',
+    boundary: 'Uses the ideal-gas approximation and standard gas constant; requires absolute pressure and absolute temperature above 0 K. Real gases may differ, especially at high pressure or low temperature. This is not chemical safety, vessel, process or engineering design advice; no inputs are uploaded or saved by the tool.',
+    relatedExistingIds: ['molarity-calculator', 'molar-mass-calculator', 'density-calculator'],
+    logicModule: './tools/ideal-gas-law-calculator/logic.mjs',
+  },
+  {
     id: 'dilution-calculator',
     category: 'science-engineering',
     type: 'calculator',

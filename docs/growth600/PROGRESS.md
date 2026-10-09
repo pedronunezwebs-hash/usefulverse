@@ -4,7 +4,7 @@
 
 ## Estado público actual · 2026-10-09
 
-- **130 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **4.716 URLs** (130 × 36 + 36 páginas de idioma). Esto no equivale a que los buscadores hayan indexado cada URL.
+- **131 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **4.752 URLs** (131 × 36 + 36 páginas de idioma). Esto no equivale a que los buscadores hayan indexado cada URL.
 - #148 Text to Binary Converter: PR #81 integrada; despliegue principal `37891603568` y despliegue del hub `37892340212` correctos. EN/ES/AR responden HTTP 200.
 - #171 Schema Markup Validator, #172 Readability Checker y #173 Savings Goal Calculator ya aparecen en las 36 versiones públicas; verificaciones previas registradas debajo.
 - #189 Certificate Decoder: 36 rutas públicas; detalles de pruebas y despliegue anotados abajo.
@@ -15,7 +15,7 @@
 - #279 CSV Editor: PR [#89](https://github.com/pedronunezwebs-hash/usefulverse/pull/89) integrada en `386092975d0391e5ff70a91553b87716710bf7e5`; CI PR `37910003597`, despliegue principal `37910456234` y publicación del hub `37910981705` correctos. EN responde HTTP 200; sitemap público confirmado con **4.644 URLs únicas** y 36 variantes CSV. Publicación no equivale a indexación.
 - #193 pH Calculator: PR #90, merge `24583f8b4af7ac8d8e2c1f2354bfc8fed4f22f2b`; CI PR `37912770314`, deploy principal `37913208934`, publicación del hub `37913602993`. EN/AR HTTP 200; sitemap con **4.680 URLs únicas** y 36 variantes. No equivale a indexación.
 - #194 Section Modulus Calculator: PR #91 integrada en `d017bb54cc9bbc22f69bb5f91bc417778214760f`; CI PR `37914418310`, despliegue principal `37914713795` y publicación del hub `37915222949` completados. EN/AR HTTP 200; sitemap público **4.716 URLs únicas**, incluidas sus 36 versiones. No equivale a indexación.
-- #197 Frequency & Wavelength Calculator: implementación local completa y traducción estática en 36 idiomas; suite completa **1.649/1.649**, `locale:release-check`, `npm run check` (10.260 URLs principales) y build aislado (**4.752 páginas**) pasan. QA Chrome: EN `100 MHz × 300.000.000 m/s → 3 m`; AR RTL a 390 px conserva 390 px de ancho, calcula el mismo resultado y no tiene errores de consola. Aún no se ha fusionado ni publicado; véase el registro de implementación al final.
+- #197 Frequency & Wavelength Calculator: PR #92 integrada en `31740ff9e4fef3893f7430f0e3dc79cb750e1c84`; CI PR `37917275415`, deploy principal `37917709058` y publicación del hub `37919442515` completados. Suite **1.649/1.649**, `locale:release-check`, `npm run check` (10.260 URLs principales) y build aislado (**4.752 páginas**) pasan. QA Chrome: EN `100 MHz × 300.000.000 m/s → 3 m`; AR RTL a 390 px conserva 390 px de ancho, calcula el mismo resultado y no tiene errores de consola. Rutas EN/AR y sitemap (4.752 URLs) HTTP 200; no equivale a indexación. No se midió PageSpeed/Lighthouse.
 - `npm run check` conserva **10.260 URLs** del sitio principal. No se mide PageSpeed/Lighthouse.
 
 ## Publicado · JSON to Excel (#235 del plan)
@@ -63,13 +63,22 @@
 - Chrome EN: cuadrado 10×10 mm → Ix=Iy=833,333333 mm⁴ y Zx/Zy=166,666667 mm³. Triángulo 6×3 mm → centroide y=1 mm, Ix=4,5 mm⁴, Zx superior/inferior=2,25/4,5 mm³. Chrome AR en móvil 390×844: `dir=rtl`, sin desbordamiento, errores de consola ni solicitudes externas.
 - [x] P/S — PR #91 integrada en `d017bb54cc9bbc22f69bb5f91bc417778214760f`; CI PR `37914418310`, deploy principal `37914713795` y publicación hub `37915222949`. Rutas EN/AR HTTP 200; sitemap público **4.716 URLs únicas** con las 36 variantes. No implica indexación. No PageSpeed/Lighthouse.
 
-## En implementación local · Frequency & Wavelength Calculator (#197)
+## Publicada · Frequency & Wavelength Calculator (#197) · 2026-10-09
 
 - Resuelve exactamente uno de frecuencia, longitud de onda o velocidad con `v = f × λ`; frecuencias Hz–THz, longitudes nm–km, velocidades m/s y km/s; permite luz en vacío/aire/agua/vidrio como aproximación o velocidad personalizada para sonido y otros medios. Límites numéricos, unidades, valores positivos y entradas exactamente completas validados. No es diseño de antenas ni herramienta de análisis de señal/seguridad.
 - Cálculo local sin API, dependencias ni procesamiento de servidor. Copy estático Google Translate en 36 idiomas; títulos ≤60 y descripciones ≤160, marca `UsefulVerse` preservada. Sin traducción en tiempo de ejecución ni revisión nativa.
 - Pruebas focales **255/255**; suite completa **1.649/1.649**; `npm run locale:release-check` pasa; `npm run check` conserva las **10.260 URLs principales**; build aislado Growth600 **4.752 páginas** (131 × 36 + 36 portadas).
 - Chrome EN: 100 MHz y 300.000.000 m/s calcula 3 m; expone fórmula y tres valores. Chrome AR a 390×844: `lang=ar`, `dir=rtl`, ancho 390/390, cálculo correcto y consola sin errores.
-- [ ] P/S — pendiente PR/CI, merge, deploy de sitio principal y publicación Growth600; sitemap público todavía es el de 4.716 URLs. No se midió PageSpeed/Lighthouse ni se afirma indexación.
+- [x] P/S — PR #92 integrada en `31740ff9e4fef3893f7430f0e3dc79cb750e1c84`; CI PR `37917275415`, deploy principal `37917709058`, publicación del hub `37919442515`. Rutas EN/AR HTTP 200; sitemap público **4.752 URLs únicas** con las 36 variantes. No implica indexación. No PageSpeed/Lighthouse.
+
+## En implementación local · Ideal Gas Law Calculator (#198)
+
+- Resuelve exactamente una incógnita de `PV = nRT` con R SI; convierte presión (Pa, kPa, MPa, bar, atm, torr, psi), volumen (m³, L, mL, ft³), cantidad (mol, mmol, kmol) y temperatura (K/°C). Unidades físicas equivalentes se convierten sin cambiar el estado calculado; exige presión absoluta y exactamente un campo vacío.
+- Rechaza entradas no positivas, temperatura bajo cero absoluto, cero kelvin, infinitos y resultados fuera de límites. Presenta sustitución y resultado en unidades elegidas; revela que la ley de gas ideal es aproximada y no sirve para diseñar/validar la seguridad de recipientes o procesos. Cálculo en navegador, sin API, upload ni dependencias.
+- 36 copias estáticas simples basadas en inglés (Google Translate web); títulos ≤60, descripciones ≤160 y marca UsefulVerse conservada. No hay traducción en runtime ni revisión nativa.
+- Suite completa **1.658/1.658** y focal **258/258**; `locale:release-check` y `npm run check` (10.260 URLs principales) pasan. Build aislado: **4.788 páginas** (132 × 36 + 36 portadas).
+- QA Chrome EN: ejemplo a 1 atm, 1 mol y 273,15 K calcula ~22,41397 L; al cambiar atm→kPa conserva la equivalencia. Temperatura −273,15 °C rechazada. AR `lang=ar`, RTL en móvil 390×844 sin overflow y el cálculo coincide.
+- P/S pendientes: aún no se ha fusionado ni desplegado; el hub público sigue en 4.752 URLs. No PageSpeed/Lighthouse ni afirmación de indexación.
 
 ## Herramientas verificadas en despliegue anterior · #171–#173
 

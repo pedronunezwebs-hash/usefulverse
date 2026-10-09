@@ -1,6 +1,6 @@
 # Plan de expansión a 600 herramientas · 2026-10-07
 
-Plan y registro vivo de implementación. Rama de trabajo actual: `codex/growth600-frequency-wavelength-20261009`; integrar en `main` tras superar CI y los gates de publicación de la candidata en curso.
+Plan y registro vivo de implementación. Rama de trabajo actual: `codex/growth600-ideal-gas-law-20261009`; integrar en `main` tras superar CI y los gates de publicación de la candidata en curso.
 
 - [Plan y checklist completo](PLAN-600.md): catálogo protegido de 277, 323 candidatas nuevas, 36 idiomas, fases, contratos y gates.
 - [Progreso de implementación](PROGRESS.md): fases verificadas, decisiones, pilotos y siguiente acción para reanudar.
@@ -11,6 +11,6 @@ Plan y registro vivo de implementación. Rama de trabajo actual: `codex/growth60
 Coste real DataForSEO: 0,24852 USD. No autoriza nuevas llamadas al reanudar.
 260 candidatas tienen al menos 1.000 búsquedas/mes en la query medida US/en; 63 tienen demanda media (260–880/mes). No son visitas garantizadas ni una previsión de CPM.
 
-Último deploy confirmado: #194 Section Modulus Calculator; 130 herramientas Growth600 en el hub, 4.716 URLs (130 × 36 + 36 portadas). La web principal se mantiene aparte con sus 10.260 URLs. #197 Frequency & Wavelength Calculator está en implementación local; no se presenta como publicada hasta confirmar CI, merge y despliegue.
+Último deploy confirmado: #197 Frequency & Wavelength Calculator; 131 herramientas Growth600 en el hub, 4.752 URLs (131 × 36 + 36 portadas). La web principal se mantiene aparte con sus 10.260 URLs. #198 Ideal Gas Law Calculator está en implementación local; no se presenta como publicada hasta confirmar CI, merge y despliegue.
 
 Las casillas de producto permanecen sin marcar hasta que cada herramienta supere C/F/E/X/L/B/P/S. No llamar implementado, probado, traducido, publicado o indexado a lo que solo está planificado. Consultar `PROGRESS.md` antes de cada tanda; no rehacer investigación ni duplicar herramientas.
