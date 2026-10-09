@@ -324,6 +324,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/ideal-gas-law-calculator/logic.mjs',
   },
   {
+    id: 'torque-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'torque calculator',
+    secondaryIntents: ['moment of force calculator', 'torque from force and lever arm', 'lever arm torque calculator', 'solve force from torque and distance'],
+    functions: ['calculate torque magnitude from force, lever arm distance and angle using τ = rF sin(θ)', 'solve for force or lever arm from known torque and the other input', 'convert force between N, kN and lbf, distance between m, cm, mm, ft and in, and torque between N·m, kN·m, lb·ft and lb·in', 'show perpendicular force and moment-arm components, direction, formula and a small lever diagram'],
+    acceptance: 'A 10 N perpendicular force 2 m from a pivot creates 20 N·m; at 30° it creates 10 N·m.',
+    boundary: 'Ideal static moment from one force about a fixed pivot. Angle is between the pivot-to-application vector and the force; positive is counterclockwise and negative clockwise. This is not a structural, lifting, automotive or safety design tool. It does not model multiple loads, friction, deformation or dynamic systems; calculations stay in the browser.',
+    relatedExistingIds: ['force-calculator', 'horsepower-calculator'],
+    logicModule: './tools/torque-calculator/logic.mjs',
+  },
+  {
     id: 'dilution-calculator',
     category: 'science-engineering',
     type: 'calculator',

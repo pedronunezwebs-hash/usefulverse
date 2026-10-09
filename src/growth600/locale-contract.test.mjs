@@ -42,6 +42,7 @@ import gujaratiGrowthCopy from './locales/gu.mjs';
 import sectionModulusCopies from './locales/section-modulus-calculator.mjs';
 import frequencyWavelengthCopies from './locales/frequency-wavelength-calculator.mjs';
 import idealGasLawCopies from './locales/ideal-gas-law-calculator.mjs';
+import torqueCalculatorCopies from './locales/torque-calculator.mjs';
 
 const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'ph-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'kinetic-energy-calculator', 'resistor-color-code-calculator', 'acceleration-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator'].includes(id));
 const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
@@ -85,6 +86,21 @@ test('ideal gas law calculator has static, bounded translations and absolute-tem
     assert.ok(copy.fields.accuracyNote.length > 30, `${key}: model and absolute-temperature limits disclosed`);
     assert.ok(copy.fields.pressure && copy.fields.volume && copy.fields.amount && copy.fields.temperature, key);
     assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('torque calculator has static, bounded translations and moment assumptions in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'torque-calculator');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = torqueCalculatorCopies[key];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.fields.accuracyNote.length > 70, `${key}: formula and limits disclosed`);
+    assert.ok(copy.fields.force && copy.fields.arm && copy.fields.angle && copy.messages.diagram, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    assert.notEqual(copy.additionalFaqs[0].question, copy.howQuestion, `${key}: FAQ must add a distinct question`);
+    assert.notEqual(copy.additionalFaqs[0].question, copy.privacyQuestion, `${key}: FAQs must not repeat the privacy question`);
   }
 });
 

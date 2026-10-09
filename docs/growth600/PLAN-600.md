@@ -1252,8 +1252,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 198 · Ideal Gas Law Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `ideal-gas-law-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/ideal-gas-law-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `ideal-gas-law-calculator`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/ideal-gas-law-calculator/`; 36 locales. PR #93 integrada; CI y publicación del hub `37920634145` completados. Sitemap público verificado con 4.788 URLs.
 - **Demanda:** `ideal gas law calculator` — 2.400 búsquedas/mes US/en, KD 3; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Resolver P, V, n, T y unidades absolutas
 - **Prueba de aceptación específica:** Temperatura cero Kelvin se rechaza
@@ -1267,7 +1267,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 ### 201 · Torque Calculator
 
 - [ ] **C/F/E/X/L/B/P/S completos — `torque-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/torque-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- **Destino propuesto:** `https://tools.usefulverse.com/tools/torque-calculator/`; 36 locales previstos. Implementación, traducción y QA local completados; pendiente CI, merge, despliegue y comprobación del sitemap.
 - **Demanda:** `torque calculator` — 2.400 búsquedas/mes US/en, KD 6; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Brazo, fuerza, ángulo, equilibrio y croquis
 - **Prueba de aceptación específica:** 10N a2m perpendicular da20Nm

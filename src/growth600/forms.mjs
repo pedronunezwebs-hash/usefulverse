@@ -50,6 +50,7 @@ export function renderGrowthForm(toolId, copy) {
     'section-modulus-calculator': ['shape', 'rectangle', 'circle', 'hollowRectangle', 'hollowCircle', 'triangle', 'width', 'height', 'diameter', 'outerWidth', 'outerHeight', 'innerWidth', 'innerHeight', 'outerDiameter', 'innerDiameter', 'unit', 'millimeters', 'centimeters', 'meters', 'inches', 'accuracyNote'],
     'frequency-wavelength-calculator': ['frequency', 'wavelength', 'speed', 'frequencyUnit', 'wavelengthUnit', 'speedUnit', 'medium', 'hz', 'khz', 'mhz', 'ghz', 'thz', 'nanometers', 'micrometers', 'millimeters', 'centimeters', 'meters', 'kilometers', 'metersPerSecond', 'kilometersPerSecond', 'custom', 'vacuum', 'air', 'water', 'glass', 'accuracyNote'],
     'ideal-gas-law-calculator': ['pressure', 'volume', 'amount', 'temperature', 'pressureUnit', 'volumeUnit', 'amountUnit', 'temperatureUnit', 'pascal', 'kilopascal', 'megapascal', 'bar', 'atmosphere', 'torr', 'psi', 'cubicMeters', 'liters', 'milliliters', 'cubicFeet', 'mol', 'millimol', 'kilomol', 'kelvin', 'celsius', 'accuracyNote'],
+    'torque-calculator': ['mode', 'solveTorque', 'solveForce', 'solveArm', 'force', 'forceUnit', 'newton', 'kilonewton', 'poundForce', 'arm', 'distanceUnit', 'meters', 'centimeters', 'millimeters', 'feet', 'inches', 'angle', 'torque', 'torqueUnit', 'newtonMeters', 'kilonewtonMeters', 'poundFeet', 'poundInches', 'direction', 'clockwise', 'counterclockwise', 'perpendicularForce', 'momentArm', 'accuracyNote'],
     'dilution-calculator': ['mode', 'directMode', 'serialMode', 'stockConcentration', 'targetConcentration', 'finalVolume', 'volumeUnit', 'steps', 'accuracyNote'],
     'ohms-law-calculator': ['mode', 'solverMode', 'networkMode', 'voltage', 'current', 'resistance', 'power', 'topology', 'series', 'parallel', 'resistorValues', 'accuracyNote'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
@@ -190,6 +191,7 @@ export function renderGrowthForm(toolId, copy) {
     'section-modulus-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'frequency-wavelength-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'ideal-gas-law-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'torque-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'dilution-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'milliliters'],
     'ohms-law-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -1641,6 +1643,21 @@ export function renderGrowthForm(toolId, copy) {
       ${label('gas-amount-unit', fields.amountUnit, `<select id="gas-amount-unit" name="amountUnit"><option value="mol" selected>${escapeGrowthHtml(fields.mol)}</option><option value="mmol">${escapeGrowthHtml(fields.millimol)}</option><option value="kmol">${escapeGrowthHtml(fields.kilomol)}</option></select>`)}
       ${label('gas-temperature', fields.temperature, '<input id="gas-temperature" name="temperature" type="number" min="-273.15" max="1e9" step="any" inputmode="decimal" value="273.15" required>')}
       ${label('gas-temperature-unit', fields.temperatureUnit, `<select id="gas-temperature-unit" name="temperatureUnit"><option value="K" selected>${escapeGrowthHtml(fields.kelvin)}</option><option value="°C">${escapeGrowthHtml(fields.celsius)}</option></select>`)}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'torque-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('torque-mode', fields.mode, `<select id="torque-mode" name="mode"><option value="solve-torque">${escapeGrowthHtml(fields.solveTorque)}</option><option value="solve-force">${escapeGrowthHtml(fields.solveForce)}</option><option value="solve-arm">${escapeGrowthHtml(fields.solveArm)}</option></select>`)}
+    <div class="calculator-grid">
+      <div data-torque-field="force">${label('torque-force', fields.force, '<input id="torque-force" name="force" type="number" min="0" max="1e12" step="any" inputmode="decimal" value="10" required>')}${label('torque-force-unit', fields.forceUnit, `<select id="torque-force-unit" name="forceUnit"><option value="N" selected>${escapeGrowthHtml(fields.newton)}</option><option value="kN">${escapeGrowthHtml(fields.kilonewton)}</option><option value="lbf">${escapeGrowthHtml(fields.poundForce)}</option></select>`)}</div>
+      <div data-torque-field="arm">${label('torque-arm', fields.arm, '<input id="torque-arm" name="arm" type="number" min="0" max="1e12" step="any" inputmode="decimal" value="2" required>')}${label('torque-distance-unit', fields.distanceUnit, `<select id="torque-distance-unit" name="distanceUnit"><option value="m" selected>${escapeGrowthHtml(fields.meters)}</option><option value="cm">${escapeGrowthHtml(fields.centimeters)}</option><option value="mm">${escapeGrowthHtml(fields.millimeters)}</option><option value="ft">${escapeGrowthHtml(fields.feet)}</option><option value="in">${escapeGrowthHtml(fields.inches)}</option></select>`)}</div>
+      ${label('torque-angle', fields.angle, '<input id="torque-angle" name="angle" type="number" min="0" max="180" step="any" inputmode="decimal" value="90" required>')}
+      <div data-torque-field="torque">${label('torque-value', fields.torque, '<input id="torque-value" name="torque" type="number" min="0" max="1e12" step="any" inputmode="decimal" value="" required>')}${label('torque-unit', fields.torqueUnit, `<select id="torque-unit" name="torqueUnit"><option value="N·m" selected>${escapeGrowthHtml(fields.newtonMeters)}</option><option value="kN·m">${escapeGrowthHtml(fields.kilonewtonMeters)}</option><option value="lb·ft">${escapeGrowthHtml(fields.poundFeet)}</option><option value="lb·in">${escapeGrowthHtml(fields.poundInches)}</option></select>`)}</div>
+      <div data-torque-field="direction">${label('torque-direction', fields.direction, `<select id="torque-direction" name="direction"><option value="counterclockwise" selected>${escapeGrowthHtml(fields.counterclockwise)}</option><option value="clockwise">${escapeGrowthHtml(fields.clockwise)}</option></select>`)}</div>
     </div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
