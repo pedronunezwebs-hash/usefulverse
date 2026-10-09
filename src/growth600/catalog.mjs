@@ -1464,6 +1464,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/json-to-excel/logic.mjs',
   },
   {
+    id: 'binary-base64-tool',
+    category: 'developer-data',
+    type: 'tool',
+    primaryIntent: 'base64 image encoder',
+    secondaryIntents: ['image to base64 converter', 'file to data uri', 'binary file to base64'],
+    functions: ['read one selected local file and encode its bytes as Base64 or a MIME-labelled data URI', 'show the detected MIME type, byte length and output size before copying or downloading text', 'preview common raster images from a local object URL without interpreting SVG or HTML as a preview', 'switch between raw Base64 and data-URI output without rereading or uploading the file'],
+    acceptance: 'A small PNG converts to a data URI with MIME image/png; decoding its Base64 portion returns the exact original bytes, and switching to raw Base64 removes only the data-URI prefix.',
+    boundary: 'Encodes bytes from a user-selected local file; it does not encode text, fetch remote URLs, decode Base64, upload, store, or execute the output. MIME comes from the browser file metadata and falls back to application/octet-stream; it does not verify the true file format. Only PNG, JPEG, GIF, WebP, BMP and AVIF are displayed in an image preview; SVG and active document types are never embedded in the page preview. One file up to 2 MiB. A 2 MiB file produces about 2.67 MiB of Base64 text and needs additional browser memory while encoding or copying.',
+    relatedExistingIds: ['base64-encoder-decoder'],
+    logicModule: './tools/binary-base64-tool/logic.mjs',
+  },
+  {
     id: 'har-viewer',
     category: 'developer-data',
     type: 'tool',

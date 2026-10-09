@@ -202,6 +202,19 @@ test('JSON to Excel has 36 static translations, preserves its executable example
   }
 });
 
+test('binary Base64 tool has 36 static translations and keeps its size/MIME safety disclosures', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'binary-base64-tool');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.fields.accuracyNote.length > 30, `${key}: MIME is not verified`);
+    assert.ok(copy.fields.fileHint.length > 20, `${key}: local 2 MiB limit disclosed`);
+    assert.ok(copy.actions.copy && copy.actions.download, key);
+  }
+});
+
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
 const sampleHome = (language) => ({ title: `${language} tools | UsefulVerse`, description: 'Free browser tools.', intro: 'Simple tools.', directoryLabel: 'Tools', freeLabel: 'Free', footerFree: 'Free tools.', skipToTool: 'Skip', home: 'Home', languageLabel: 'Language', breadcrumbLabel: 'Breadcrumb', faqLabel: 'FAQ', copyLanguage: language });
