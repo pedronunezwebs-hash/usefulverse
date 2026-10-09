@@ -230,6 +230,11 @@ const copies = {
     name: 'Body water calculator', actions: { ...actions }, messages: { ...messages },
     fields: { equation: 'Watson equation', watsonMale: 'Male equation', watsonFemale: 'Female equation', age: 'Adult age', height: 'Height', heightUnit: 'Height unit', weight: 'Weight', weightUnit: 'Weight unit', centimeters: 'Centimeters', inches: 'Inches', kilograms: 'Kilograms', pounds: 'Pounds', accuracyNote: 'Estimate only.', resultLiters: 'Estimated total body water', resultPercent: 'Approximate share', equationNote: 'Published equation.' },
   },
+  '555-timer-calculator': {
+    name: '555 timer calculator', actions: { ...actions, calculate: 'Calculate', reset: 'Clear', example: 'Try an example', result: 'Timing results', copy: 'Copy results' },
+    messages: { ...messages, calculated: 'Calculation ready.', checkInputs: 'Check the component values.', copied: 'Results copied.', copyUnavailable: 'Copy is unavailable.' },
+    fields: { mode: 'Circuit mode', astable: 'Astable oscillator', monostable: 'Monostable pulse', resistanceA: 'Resistor RA', resistanceB: 'Resistor RB', resistance: 'Resistor R', resistanceUnit: 'Resistance unit', ohms: 'Ohms (Ω)', kilohms: 'Kilohms (kΩ)', megohms: 'Megohms (MΩ)', capacitance: 'Capacitor C', capacitanceUnit: 'Capacitance unit', farads: 'Farads (F)', millifarads: 'Millifarads (mF)', microfarads: 'Microfarads (μF)', nanofarads: 'Nanofarads (nF)', picofarads: 'Picofarads (pF)', accuracyNote: 'Ideal timing only.', frequencyNote: 'Frequency note', highFrequencyWarning: 'Check datasheet above 100 kHz.', formulaNote: 'Formulas:', sourceLink: 'TI datasheet', resultFrequency: 'Frequency', resultPeriod: 'Period', resultHigh: 'Output high time', resultLow: 'Output low time', resultWaveformDuty: 'Waveform duty cycle', resultDischargeDuty: 'Discharge interval share', resultPulse: 'Output pulse width' },
+  },
   'chemical-equation-balancer': {
     name: 'Chemical equation balancer', actions: { ...actions },
     messages: { ...messages, balancedEquation: 'Balanced equation', atomCheck: 'Atom count', leftSide: 'Reactants', rightSide: 'Products' },
@@ -441,6 +446,12 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   for (const name of ['equation', 'age', 'height', 'heightUnit', 'weight', 'weightUnit']) assert.match(bodyWater, new RegExp(`name="${name}"`, 'u'));
   assert.match(bodyWater, /name="age" type="text" inputmode="numeric"/u);
   assert.match(bodyWater, /data-result hidden/u);
+  const timer555 = renderGrowthForm('555-timer-calculator', copies['555-timer-calculator']);
+  for (const name of ['mode', 'resistanceA', 'resistanceB', 'resistance', 'resistanceUnit', 'capacitance', 'capacitanceUnit']) assert.match(timer555, new RegExp(`name="${name}"`, 'u'));
+  assert.match(timer555, /data-555-mode="astable"/u);
+  assert.match(timer555, /data-555-mode="monostable" hidden/u);
+  assert.match(timer555, /ti\.com\/lit\/ds\/symlink\/ne555\.pdf/u);
+  assert.match(timer555, /data-action="copy"/u);
   const chemical = renderGrowthForm('chemical-equation-balancer', copies['chemical-equation-balancer']);
   assert.match(chemical, /name="equation"[^>]+maxlength="500"/u);
   assert.match(chemical, /for="chemical-equation"/u);

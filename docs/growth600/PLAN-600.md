@@ -1562,17 +1562,18 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 292 · 555 Timer Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `555-timer-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/555-timer-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
-- **Demanda:** `555 timer calculator` — 590 búsquedas/mes US/en, KD 23; nivel C. CPC 0.14 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Modos monoestable/astable, duty y frecuencia
-- **Prueba de aceptación específica:** Componentes positivos dan tiempos positivos
+- [x] **C/F/E/L/B implementados; X pasa localmente; P/S pendientes — `555-timer-calculator`**
+- **Destino:** `https://tools.usefulverse.com/tools/555-timer-calculator/`; otras 35 versiones estáticas en los idiomas del sitio (36 rutas).
+- **Demanda:** `555 timer calculator` — 590 búsquedas/mes US/en, KD 23; `555 astable calculator` — 140/mes, KD 17. CPC 0,14 USD (no CPM). Sin llamada nueva a DataForSEO.
+- **Función implementada:** Oscilador astable (frecuencia, período, tiempos alto/bajo, duty de salida y fracción de descarga) y monoestable (ancho de pulso aproximado); resistencias en Ω/kΩ/MΩ, condensadores F/mF/μF/nF/pF, ejemplos, copiar y limpiar. Cálculo estático en el navegador, sin API, upload ni procesamiento de servidor.
+- **Prueba de aceptación:** 10 kΩ + 10 kΩ + 10 μF → 4,810005 Hz, 207,9 ms, 138,6/69,3 ms y 66,6667%; monoestable 100 kΩ × 10 μF → 1,1 s. Valores inválidos limpian resultados antiguos; >100 kHz añade un aviso localizado para consultar la hoja de datos exacta.
 - **Frontera con otras herramientas:** online-timer: circuito integrado no reloj UI. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Fórmulas estimativas, no simulación SPICE. TI documenta tHIGH≈0,693(RA+RB)C, tLOW≈0,693RBC y tMONO≈1,1RC; el aviso también informa que un NE555 típico se recomienda a 100 kHz o menos para limitar distorsión. Ver la [hoja de datos TI NE555](https://www.ti.com/lit/ds/symlink/ne555.pdf); las tolerancias, fugas, temperatura, parasíticos y carga cambian el resultado.
 - **Consultas secundarias del mismo propietario:**
   - `555 astable calculator` — 140/mes US/en; KD 17.
   - `555 timer calculator free online`; `555 timer calculator with example`; `555 timer calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Verificación local (2026-10-09):** 36 textos estáticos traducidos automáticamente con el flujo Google Translate autorizado; ecuaciones preservadas y etiquetas localizadas. Metadatos ≤60/160; sin saltos. Gates focales **200/200**, suite global **1.438/1.438**, `locale:release-check` y `npm run check` pasan; sitio principal conserva 10.260 URLs; build separado: **3.924 páginas** (108 × 36 + 36 portadas; 4.085 archivos; 117.681.050 bytes). Chrome EN/AR: astable, monoestable y aviso >100 kHz correctos; árabe RTL a 390 px sin overflow/consola; carga inicial solo HTML/CSS/JS locales. Sin PageSpeed/Lighthouse. Traducción automática comprensible, no validación nativa.
 
 ### 310 · Inductor Calculator
 
@@ -5116,8 +5117,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 291 · Body Water Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `body-water-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/body-water-calculator/`; otras 35 versiones con los prefijos del anexo. Publicación aún pendiente.
+- [x] **C/F/E/X/L/B/P/S completos — `body-water-calculator`**
+- **Destino:** `https://tools.usefulverse.com/tools/body-water-calculator/`; 35 versiones adicionales, un total de 36.
 - **Demanda:** `body water calculator` — 590 búsquedas/mes US/en, KD 6; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Ecuaciones adultas publicadas y límites de estimación
 - **Prueba de aceptación específica:** Ejemplo de fuente reproducido, no prescribir hidratación
@@ -5129,7 +5130,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Implementación y límites:** estimación adulta de agua corporal con las ecuaciones Watson; acepta altura y peso métricos o imperiales, muestra litros y proporción aproximada del peso. No diagnostica hidratación ni recomienda ingesta; excluye menores y situaciones clínicas. Cálculo local, sin API/servidor.
 - **Fuente del método:** Watson et al. 1980, [PubMed](https://pubmed.ncbi.nlm.nih.gov/6986753/), [DOI](https://doi.org/10.1093/ajcn/33.1.27). Se conservan literalmente los coeficientes en todos los idiomas porque la traducción automática alteró algunos números en la muestra.
-- **Publicación comprobada (2026-10-09):** 36 copias estáticas; títulos ≤60 caracteres, descripciones ≤160. Pruebas focales 70/70, incluidos los cuatro casos de lógica; suite completa **1.432/1.432**; `locale:release-check`, `npm run check` (10.260 URLs originales), build del hub (**3.888 URLs únicas**, 107 × 36 + 36 portadas; 4.048 archivos) y `git diff --check` pasan. Chrome EN y AR: ejemplo 30 años/175 cm/70 kg → 41,92 L y 59,89%; unidades imperiales equivalentes dan el mismo resultado; números arábigos en árabe funcionan, edad inválida borra el resultado previo; RTL a 390 px sin overflow ni consola. PR/CI/merge/deploy y sitemap público se registrarán aquí al terminar esos gates. No PageSpeed/Lighthouse.
+- **Publicación comprobada (2026-10-09):** 36 copias estáticas; títulos ≤60 caracteres, descripciones ≤160. Pruebas focales 70/70; suite completa previa al siguiente trabajo **1.432/1.432**; `locale:release-check`, `npm run check` (10.260 URLs originales) y build del hub (3.888 URLs, 107 × 36 + 36 portadas; 4.048 archivos). Chrome EN/AR: ejemplo 30 años/175 cm/70 kg → 41,92 L y 59,89%; unidades imperiales equivalentes dan el mismo resultado; números arábigos en árabe funcionan; edad inválida borra el resultado previo; RTL a 390 px sin overflow ni consola. PR [#68](https://github.com/pedronunezwebs-hash/usefulverse/pull/68), CI **37863855116**, merge `8ffc4dd9f896139e8bb1d07f15a16dd6708a8a25`, publicación del hub **37864335180**; URLs EN/AR HTTP 200 y sitemap público con **3.888 URLs únicas**, incluidas las 36 rutas. No se pidió indexación manual; publicar no garantiza indexación. No PageSpeed/Lighthouse.
 
 ### 298 · Cycling Power Calculator
 

@@ -2,15 +2,24 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## En curso · Body Water Calculator (#291) · 2026-10-09
+## En curso · 555 Timer Calculator (#292) · 2026-10-09
+
+- [x] C/F — Ficha reutilizada del plan: `555 timer calculator`, 590 búsquedas/mes US/en, KD 23; `555 astable calculator`, 140/mes, KD 17; CPC 0,14 USD (no CPM). No se hicieron llamadas adicionales a DataForSEO.
+- [x] E/B — Cálculo local del 555 astable (frecuencia, período, tiempos alto/bajo, ciclo de forma de onda y fracción de descarga) y monoestable (pulso ≈1,1RC), unidades de resistencias/capacitancia, ejemplos y aviso sobre la variación del circuito real. Distingue temporizador electrónico de `online-timer`; sin API, servidor, archivos ni coste por uso.
+- [x] L — 36 copias estáticas basadas en inglés y traducción Google automática. Fórmulas matemáticas idénticas; las etiquetas del modo/ciclo y el aviso de frecuencia están localizados. Títulos ≤60 y descripciones ≤160, sin saltos de línea. Traducción automática, no revisión nativa.
+- [x] X — Lógica: 5 pruebas específicas; gates focales de catálogo/formulario/build/locales **200/200**; `npm test` **1.438/1.438**, `npm run locale:release-check` y `npm run check` pasan. El sitio principal conserva 10.260 URLs; el build Growth600 genera **3.924 páginas** (108 × 36 + 36 portadas; 4.085 archivos; 117.681.050 bytes).
+- [x] B — Chrome local EN y AR: ejemplo astable 10 kΩ/10 kΩ/10 μF → 4,810005 Hz, 207,9 ms, tiempos 138,6/69,3 ms y duty 66,6667%; ejemplo monoestable 100 kΩ/10 μF → 1,1 s. A 10 pF, 4,810005 MHz; el aviso >100 kHz aparece en EN/AR. Árabe RTL a 390 px sin overflow; sin errores/avisos de consola ni peticiones de terceros.
+- [ ] P/S — PR/CI/deploy y sitemap público pendientes.
+
+## Publicada · Body Water Calculator (#291) · 2026-10-09
 
 - [x] C/F — Reutilizada la ficha del inventario: `body water calculator`, 590 búsquedas/mes US/en, KD 6; `total body water calculator`, 590/mes, KD 0. CPC no se reporta como CPM; sin nueva llamada a DataForSEO.
 - [x] E/B — Estimación adulta local usando ecuaciones Watson (1980), entradas métricas/imperiales; muestra litros y fracción aproximada de masa corporal. No mide hidratación, no ofrece consumo recomendado ni uso clínico; rangos explícitos y limitaciones visibles.
 - [x] L — 36 traducciones estáticas desde inglés. Títulos reconstruidos desde nombres traducidos, ≤60 caracteres; descripciones ≤160. Se detectó y eliminó un marcador de traducción filtrado y se fijaron sin traducir los coeficientes para preservar la ecuación exacta. Borradores automáticos, no revisión nativa.
 - [x] X — Lógica y validación focal **70/70**; regresión `npm test` **1.432/1.432**; `npm run locale:release-check`, `npm run check` y `git diff --check` pasan. La web principal conserva **10.260 URLs**. Build del hub **3.888 URLs únicas** (107 × 36 + 36 portadas), 4.048 archivos y 116.607.832 bytes.
 - [x] B — Chrome EN/AR: 30 años, 175 cm, 70 kg → 41,92 L y 59,89%; unidades imperiales equivalentes producen el mismo valor; dígitos árabes parseados, edad 17 invalida y elimina resultado obsoleto; RTL a 390 px sin overflow, consola limpia. La carga del hub no incorpora traducción online.
-- [ ] P/S — PR, CI, fusión, deploy y sitemap público pendientes.
-- **Siguiente herramienta tras publicar:** #292 555 Timer Calculator. No PageSpeed/Lighthouse ni nueva investigación de DataForSEO.
+- [x] P/S — PR [#68](https://github.com/pedronunezwebs-hash/usefulverse/pull/68) fusionada en `8ffc4dd9f896139e8bb1d07f15a16dd6708a8a25`; pipeline principal **37863855116** y publicación del hub **37864335180** correctos. URLs EN/AR HTTP 200. Sitemap público: **3.888 URLs únicas**, con las 36 variantes de Body Water. No se envió una solicitud manual a buscadores ni se afirma indexación. No PageSpeed/Lighthouse.
+- **Siguiente candidata:** #292 555 Timer Calculator. No PageSpeed/Lighthouse ni nueva investigación de DataForSEO.
 
 ## Publicada · Capacitor Calculator (#290) · 2026-10-09
 

@@ -1283,6 +1283,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['bmr-tdee-calculator', 'body-fat-calculator'],
     logicModule: './tools/body-water-calculator/logic.mjs',
   },
+  {
+    id: '555-timer-calculator',
+    category: 'calculators',
+    type: 'calculator',
+    primaryIntent: '555 timer calculator',
+    secondaryIntents: ['555 astable calculator', '555 monostable calculator', '555 frequency and duty cycle calculator'],
+    functions: ['calculate NE555 astable high time, low time, period, frequency and two clearly distinguished duty percentages from RA, RB and capacitance', 'calculate a monostable output pulse width from resistance and capacitance', 'accept ohm, kΩ or MΩ and F, mF, μF, nF or pF, with localized numeric input', 'show the ideal equations, an example, component-tolerance caveats and the typical NE555 frequency guidance from the cited datasheet'],
+    acceptance: 'Astable RA = RB = 10 kΩ and C = 10 μF gives tHigh = 0.1386 s, tLow = 0.0693 s, period = 0.2079 s and waveform duty ≈66.67%; monostable R = 100 kΩ and C = 10 μF gives 1.1 s.',
+    boundary: 'Ideal first-order timing calculator for the conventional 555 circuits only. It does not simulate a specific manufacturer, voltage, temperature, component tolerance, leakage, parasitics, output loading or startup. It is not a circuit safety or production-design approval; verify the selected IC datasheet and measure hardware. Calculation runs locally in this browser.',
+    relatedExistingIds: ['online-timer'],
+    logicModule: './tools/555-timer-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {
