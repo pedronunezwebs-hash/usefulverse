@@ -228,6 +228,32 @@ test('JSON model generator has 36 static translations and keeps language, scope 
   }
 });
 
+test('CSV editor has 36 static translations with its limits, local-data promise, history and encoding scope', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'csv-editor');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.fields.accuracyNote.length > 45, `${key}: limits and UTF-8 scope disclosed`);
+    assert.ok(copy.fields.privacyNote.length > 20, `${key}: no autosave disclosure`);
+    assert.ok(copy.actions.load && copy.actions.undo && copy.actions.redo && copy.actions.export, key);
+  }
+});
+
+test('CSV editor has 36 static translations and keeps data-locality, limits, undo and encoding disclosures', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'csv-editor');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.fields.accuracyNote.length > 45, `${key}: limits and UTF-8 scope disclosed`);
+    assert.ok(copy.fields.privacyNote.length > 20, `${key}: no autosave disclosure`);
+    assert.ok(copy.actions.load && copy.actions.undo && copy.actions.redo && copy.actions.export, key);
+  }
+});
+
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
 const sampleHome = (language) => ({ title: `${language} tools | UsefulVerse`, description: 'Free browser tools.', intro: 'Simple tools.', directoryLabel: 'Tools', freeLabel: 'Free', footerFree: 'Free tools.', skipToTool: 'Skip', home: 'Home', languageLabel: 'Language', breadcrumbLabel: 'Breadcrumb', faqLabel: 'FAQ', copyLanguage: language });

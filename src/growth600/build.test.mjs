@@ -50,6 +50,8 @@ import { jsonToExcelEnglishCopy } from './locales/json-to-excel.en.mjs';
 import { binaryBase64ToolEnglishCopy } from './locales/binary-base64-tool.en.mjs';
 import jsonModelGeneratorCopies from './locales/json-model-generator.mjs';
 import { jsonModelGeneratorEnglishCopy } from './locales/json-model-generator.en.mjs';
+import csvEditorCopies from './locales/csv-editor.mjs';
+import { csvEditorEnglishCopy } from './locales/csv-editor.en.mjs';
 
 const actions = { calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', updateProgress: 'Record progress', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', feet: 'Feet', inches: 'Inches', liters: 'Liters', cubicFeet: 'Cubic feet', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Computer', twoPlayers: 'Two players', privacyNote: 'Private on this device.', riseMode: 'Rise', pitchMode: 'Pitch' };
 const messages = { copied: 'Copied.', copyUnavailable: 'Copy unavailable.', calculated: 'Done.', sameSize: 'Sizes match.', checkInputs: 'Check entries.', diameter: 'Outside diameter', sidewall: 'Sidewall height', circumference: 'Circumference', revolutions: 'Revolutions per kilometre', diameterDifference: 'Diameter difference', diameterChange: 'Diameter change', groundClearance: 'Ground-clearance change', actualSpeed: 'Actual speed estimate', area: 'Area', volume: 'Volume', volumePerContainer: 'Volume per container', totalVolume: 'Total soil volume', orderVolume: 'Order volume', estimatedWeight: 'Estimated weight', bagsToBuy: 'Bags to buy', invalidFormula: 'Check formula.', atomCount: 'atoms', molarMass: 'Molar mass', estimateOnly: 'Estimate only.', currentPayment: 'Current payment', newPayment: 'New payment', paymentDifference: 'Difference', currentTotal: 'Current total', newTotal: 'New total', estimatedDifference: 'Estimated savings', breakEven: 'Break-even', noBreakEven: 'No break-even', monthCount: '{count} months', privatePair: '{giver} gives to {recipient}', allRevealed: 'All revealed.', drawReady: 'Ready.', checkNamesAndRules: 'Check entries.', downloaded: 'Downloaded.', pit: 'Pit', seeds: 'seeds', playerOne: 'Player one', playerTwo: 'Player two', playerOneWins: 'Player one wins.', playerTwoWins: 'Player two wins.', tie: 'Tie.', gameOver: 'Game over.', turn: '{player} turn.', effectiveRun: 'Horizontal run to ridge', rafterLength: 'Geometric rafter length', pitch: 'Pitch (rise per 12)', roofAngle: 'Roof angle', plumbCut: 'Plumb-cut angle', overhangRun: 'Horizontal overhang' };
@@ -60,6 +62,7 @@ function toolCopy(tool, language) {
   if (tool.id === 'json-to-excel') return { ...structuredClone(jsonToExcelEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09' };
   if (tool.id === 'binary-base64-tool') return { ...structuredClone(binaryBase64ToolEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09' };
   if (tool.id === 'json-model-generator') return structuredClone(jsonModelGeneratorCopies[language]);
+  if (tool.id === 'csv-editor') return structuredClone(csvEditorCopies[language]);
   const name = `${tool.id} ${language}`;
   const fields = {
     'image-region-redactor': { imageFile: 'Choose a raster image', mode: 'Redaction style', strength: 'Pixel size or blur amount', regionX: 'Left position in pixels', regionY: 'Top position in pixels', regionWidth: 'Region width in pixels', regionHeight: 'Region height in pixels', accuracyNote: 'Use black for private details; large images need enough memory.', dragHint: 'Drag to select or enter exact coordinates.', regionsLabel: 'Selected regions', format: 'Export format', relatedMosaic: 'Try a whole-image mosaic.', relatedCropper: 'Try the image cropper.' },
@@ -799,7 +802,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   const controllerBundles = Object.fromEntries(growthPilotTools.map((tool) => [tool.id, `document.querySelector('[data-tool="${tool.id}"]');`]));
   const workerBundles = { 'image-upscaler-worker': 'self.addEventListener("message",()=>{});' };
   const extraAssets = { 'models-test/config.json': '{"upscale":2}', 'models-test/onnx/model.onnx': Buffer.from([1, 2, 3]) };
-  const toolStyles = { 'har-viewer': '.har-viewer__table{border-collapse:collapse}', 'robots-txt-tester': '.robots-txt-tester__decision{display:grid}', 'binary-base64-tool': '.binary-base64-tool img{max-width:100%}' };
+  const toolStyles = { 'har-viewer': '.har-viewer__table{border-collapse:collapse}', 'robots-txt-tester': '.robots-txt-tester__decision{display:grid}', 'binary-base64-tool': '.binary-base64-tool img{max-width:100%}', 'csv-editor': '.csv-editor__table-scroll{overflow:auto}' };
   const fixtureCopyByLocale = { en: englishGrowthCopy, es: spanishGrowthCopy, fr: frenchGrowthCopy, pt: portugueseGrowthCopy, de: germanGrowthCopy, ja: japaneseGrowthCopy, ko: koreanGrowthCopy, id: indonesianGrowthCopy, hi: hindiGrowthCopy, ar: arabicGrowthCopy, zh: simplifiedChineseGrowthCopy, bn: bengaliGrowthCopy, ru: russianGrowthCopy, ur: urduGrowthCopy, tr: turkishGrowthCopy, vi: vietnameseGrowthCopy, it: italianGrowthCopy, zh_tw: traditionalChineseGrowthCopy, bg: bulgarianGrowthCopy, ca: catalanGrowthCopy, nl: dutchGrowthCopy, el: greekGrowthCopy, ms: malayGrowthCopy, pl: polishGrowthCopy, sv: swedishGrowthCopy, th: thaiGrowthCopy, uk: ukrainianGrowthCopy, sw: swahiliGrowthCopy, mr: marathiGrowthCopy, te: teluguGrowthCopy, ha: hausaGrowthCopy, tl: filipinoGrowthCopy, ta: tamilGrowthCopy, fa: persianGrowthCopy, am: amharicGrowthCopy, gu: gujaratiGrowthCopy };
   for (const locale of smallLocales) fixtureCopyByLocale[locale.key] = {
     ...fixtureCopyByLocale[locale.key],
@@ -920,6 +923,12 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   const robotsStylePath = robotsPage.match(/href="(\/assets\/robots-txt-tester\.[a-f0-9]+\.css)"/u)?.[1];
   assert.ok(robotsStylePath, 'robots tester route links its own content-hashed stylesheet');
   assert.match(await readFile(join(outputDir, robotsStylePath), 'utf8'), /robots-txt-tester__decision/u);
+  const csvPage = await readFile(join(outputDir, 'tools/csv-editor/index.html'), 'utf8');
+  const csvStylePath = csvPage.match(/href="(\/assets\/csv-editor\.[a-f0-9]+\.css)"/u)?.[1];
+  assert.ok(csvStylePath, 'CSV editor route links its own content-hashed stylesheet');
+  assert.match(await readFile(join(outputDir, csvStylePath), 'utf8'), /csv-editor__table-scroll/u);
+  assert.match(csvPage, /Types are for checking only/u);
+  assert.doesNotMatch(enPage, /csv-editor\.[a-f0-9]+\.css/u, 'CSV-only CSS is not loaded on unrelated pages');
   assert.match(robotsPage, /maxlength="200000"/u);
   assert.match(robotsPage, /not a complete emulator/u);
   assert.match(await readFile(join(outputDir, 'ar/tools/robots-txt-tester/index.html'), 'utf8'), /<html lang="ar" dir="rtl">/u);
@@ -1093,7 +1102,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   const files = await readdir(join(outputDir, 'assets'));
   // Top-level entries include shared and tool-only stylesheets, one controller
   // per tool, the model worker, and the models directory (nested contents).
-  assert.equal(files.length, growthPilotTools.length + 6);
+  assert.equal(files.length, growthPilotTools.length + 7);
   assert.ok((await stat(join(outputDir, 'assets', files[0]))).isFile());
 });
 

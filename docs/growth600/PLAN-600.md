@@ -2896,8 +2896,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 273 · JSON to TypeScript, C# & Java Models
 
-- [ ] **C/F/E/X/L/B/P/S completos — `json-model-generator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/json-model-generator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `json-model-generator` (publicada 2026-10-09; PR #88)**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/json-model-generator/`; otras 35 versiones con los prefijos del anexo. Las 36 rutas y el sitemap se verificaron tras publicar.
 - **Demanda:** `json to csharp` — 720 búsquedas/mes US/en, KD 1; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Inferir modelos TypeScript, C# y Java desde ejemplos JSON; opcionales, arrays, null y nombres editables. Un solo propietario SEO para generar código de modelos.
 - **Prueba de aceptación específica:** `null` más cadena produce una unión declarada y los campos ausentes en elementos de muestra se marcan opcionales.
@@ -2907,7 +2907,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `json to typescript` — 480/mes US/en; KD 19.
   - `json to csharp free online`; `json to csharp with example`; `json to csharp no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
-- **Checkpoint local (2026-10-09; pendiente de publicar):** lógica, formulario, controlador, copy y 36 traducciones estáticas implementados. Suite focal 246/246, suite completa 1.610/1.610; `locale:release-check`, build principal (10.260 URLs) y hub (4.608 páginas; 127 × 36 + 36 portadas) pasan. Chrome confirma generación TypeScript/C#/Java, copiar código, árabe RTL 390×844 sin overflow ni errores de consola. Falta PR/CI, despliegue y verificar las 36 rutas y sitemap. Sin PageSpeed/Lighthouse ni afirmación de indexación.
+- **Pruebas/publicación (2026-10-09):** lógica TypeScript/C#/Java en el navegador, sin dependencia ni red. Tests focales 246/246, suite completa 1.610/1.610; release locale y builds principal (10.260 URLs) y hub (4.608 páginas; 127 × 36 + 36 portadas) aprobados. Chrome confirma generación de los tres lenguajes, copiar código y árabe RTL 390×844 sin overflow ni errores de consola. PR #88 integrada en `708905c9`; deploy principal `37907098650` y publicación del hub `37907444978` exitosos. Sitemap público: 4.608 URLs únicas; EN/AR HTTP 200. Sin PageSpeed/Lighthouse ni afirmación de indexación.
 
 ### 279 · Csv Editor
 
@@ -2917,11 +2917,12 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Función mínima y ampliaciones útiles:** Editor de celdas y columnas, búsqueda, tipos, undo y exportación con delimitador/encoding; manejar comillas y filas multilinea sin perder datos.
 - **Prueba de aceptación específica:** Comillas y multilinea sobreviven edición
 - **Frontera con otras herramientas:** csv-viewer: vista no editable, contrato nuevo. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** H: dependencia/cómputo bajo demanda; verificar licencia y compatibilidad. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Parser local ligero, sin dependencia ni red; límites para evitar presión excesiva de memoria. Los tipos de columna son comprobaciones seleccionadas por la persona: no cambian ni se incluyen en los valores CSV.
 - **Consultas secundarias del mismo propietario:**
   - `edit csv online` — 390/mes US/en; KD 0.
   - `csv editor free online`; `csv editor with example`; `csv editor no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Checkpoint local (2026-10-09; listo para PR):** 36 traducciones estáticas; títulos ≤60 y descripciones ≤160 caracteres. Tests específicos 252/252 y suite completa 1.624/1.624; `locale:release-check`, build principal (10.260 URLs) y hub (4.644 páginas: 128 × 36 + 36 portadas) pasan. Chrome verificó carga/edición/exportación con CSV entrecomillado y multilinea, validación de tipos sin alterar datos, búsqueda, filas/columnas, undo/redo y exportación UTF-8; sin peticiones externas. Árabe RTL 390×844 sin desbordamiento ni errores de consola. No se midió PageSpeed/Lighthouse. Falta PR/CI, deploy y comprobar las 36 rutas/sitemap público.
 
 ### 282 · OpenAPI Editor
 

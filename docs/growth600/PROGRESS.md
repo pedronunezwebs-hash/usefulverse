@@ -4,7 +4,7 @@
 
 ## Estado público actual · 2026-10-09
 
-- **126 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **4.572 URLs** (126 × 36 + 36 páginas de idioma). Esto no equivale a que los buscadores hayan indexado cada URL.
+- **127 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **4.608 URLs** (127 × 36 + 36 páginas de idioma). Esto no equivale a que los buscadores hayan indexado cada URL.
 - #148 Text to Binary Converter: PR #81 integrada; despliegue principal `37891603568` y despliegue del hub `37892340212` correctos. EN/ES/AR responden HTTP 200.
 - #171 Schema Markup Validator, #172 Readability Checker y #173 Savings Goal Calculator ya aparecen en las 36 versiones públicas; verificaciones previas registradas debajo.
 - #189 Certificate Decoder: 36 rutas públicas; detalles de pruebas y despliegue anotados abajo.
@@ -12,7 +12,7 @@
 - #215 HAR Viewer: PR #84 integrada en `4e4bab2f2b3a0386c23894b9542fbc091e1ce224`; CI y despliegues principal/hub (run `37899114343`) correctos. EN/AR y sitemap público HTTP 200; **4.464 URLs únicas**, incluidas sus 36 versiones. La herramienta procesa HAR localmente y minimiza valores sensibles; sin PageSpeed/Lighthouse ni afirmación de indexación.
 - #223 Robots.txt Tester: PR [#85](https://github.com/pedronunezwebs-hash/usefulverse/pull/85) integrada en `3b9293def8c1cd4577a65d2fb30e9c99a7190e71`; CI `37900570648`, deploy principal `37900951430` y publicación del hub `37900970440` finalizaron correctamente. Rutas EN/AR HTTP 200; sitemap público con 4.500 URLs. Sin afirmación de indexación ni PageSpeed/Lighthouse.
 - #235 JSON to Excel: PR [#86](https://github.com/pedronunezwebs-hash/usefulverse/pull/86) integrada en `a92891ad1c8f06be223d6a077e486d41be0d4f97`; CI y deploy principal `37903140579`, publicación del hub `37903965314` completados. EN/AR responden HTTP 200; sitemap verificado con **4.536 URLs únicas**, incluidas las 36 localizaciones. Sin afirmación de indexación ni PageSpeed/Lighthouse.
-- `npm run check` conserva **10.260 URLs** del sitio principal; suite completa de la rama de trabajo: **1.599/1.599**; `npm run locale:release-check` pasa.
+- `npm run check` conserva **10.260 URLs** del sitio principal; suite completa de la rama de trabajo con #279: **1.624/1.624**; `npm run locale:release-check` pasa.
 
 ## Publicado · JSON to Excel (#235 del plan)
 
@@ -29,12 +29,19 @@
 - Chrome: PNG creado en memoria, vista previa 2×1 válida y roundtrip de bytes exacto; modo Base64 omite solo el prefijo data URI. Sobre el límite, aviso localizado y no codifica. Árabe en móvil de 390 px, RTL sin overflow; consola sin errores.
 - [x] P/S: PR #87 integrada en `a048d6c3294a3a88f01c4701006bd2fa871b656b`; CI y deploy principal `37904982465` correctos; publicación del hub `37905658056` completada. URL EN/AR HTTP 200; sitemap público con **4.572 entradas únicas** y 36 rutas de la herramienta. No se afirma indexación ni se ejecutó PageSpeed/Lighthouse.
 
-## En implementación local · JSON Model Generator (#273)
+## Publicada · JSON Model Generator (#273) · 2026-10-09
 
 - Genera borradores TypeScript, C# y Java localmente desde JSON; infiere opcionales, null, arrays, objetos anidados y uniones. Limita entrada a 500 KB, 30.000 nodos, profundidad 24 y muestreo de 300 elementos por array. Trata raíces escalares y arrays de primitivos mediante wrappers; nombres y propiedades normalizados para evitar colisiones. Java usa nombres completos `java.util.List` sin declaraciones import dentro del módulo.
 - 36 copias estáticas desde inglés. Se corrigieron manualmente cadenas árabes evidentes que Google Translate había convertido en falsos amigos; no se presentan como revisión nativa. No hay traducción en runtime.
 - Tests focalizados **246/246**; suite completa **1.610/1.610**; `npm run locale:release-check` pasa; `npm run check` conserva **10.260 URLs principales**; build del hub **4.608 páginas** (127 × 36 + 36 portadas; 4.791 archivos, 138.454.969 bytes).
-- Chrome: ejemplo TypeScript, generación C# y Java, acción de copiar confirmada en el navegador; árabe móvil a 390×844 con `lang=ar`, `dir=rtl`, ancho de documento 390/390 y consola limpia. Aún falta PR/CI, despliegue y comprobar sus 36 URLs junto con el sitemap. No PageSpeed/Lighthouse.
+- [x] PR #88 integrada en `708905c9`; CI y deploy principal `37907098650` correctos; publicación del hub `37907444978`. 36 variantes públicas, EN/AR HTTP 200 y sitemap con 4.608 URLs únicas. No PageSpeed/Lighthouse ni afirmación de indexación.
+
+## En implementación local · CSV Editor (#279)
+
+- Editor estático en navegador: detecta coma, punto y coma, tabulador o barra vertical; soporta BOM, comillas escapadas, CRLF y saltos de línea en celdas, repara filas desiguales con celdas vacías y deja elegir si la primera fila es encabezado.
+- Edición acotada de celdas/encabezados, validación opcional de texto/número/fecha ISO/booleano sin transformar datos, búsqueda, 25 filas por página, añadir/eliminar filas y columnas, undo/redo de 50 pasos y exportación UTF-8 con delimitador elegido y BOM opcional. Máximo 5 MiB, 5.000 filas de datos, 80 columnas, 80.000 celdas y 20.000 caracteres/celda.
+- 36 traducciones estáticas generadas desde inglés con el traductor web gratuito; no hay traducción en runtime ni revisión nativa. Títulos y descripciones dentro de límites; se corrigieron términos ambiguos en chino, japonés y ruso y títulos truncados en alemán, búlgaro, griego, ucraniano y filipino.
+- Tests focales 252/252 y suite completa 1.624/1.624; `locale:release-check` pasa. `npm run check` conserva 10.260 URLs principales; el build aislado tiene 4.644 páginas y 4.829 archivos. Chrome: CSV entrecomillado/multilínea editado y exportado correctamente; validación de tipos sin alterar valores; búsqueda, filas/columnas, undo/redo confirmados. Sin peticiones externas; árabe RTL 390×844 sin overflow ni avisos de consola. PR/deploy pendientes; sin PageSpeed/Lighthouse ni afirmación de indexación.
 
 ## Herramientas verificadas en despliegue anterior · #171–#173
 

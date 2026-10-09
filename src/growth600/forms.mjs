@@ -11,7 +11,7 @@ function label(id, text, control) {
 }
 
 function button(action, text, kind = 'primary') {
-  const type = action === 'reset' ? 'reset' : ['calculate', 'compare', 'generate', 'convert', 'preview', 'test'].includes(action) ? 'submit' : 'button';
+  const type = action === 'reset' ? 'reset' : ['calculate', 'compare', 'generate', 'convert', 'preview', 'test', 'load'].includes(action) ? 'submit' : 'button';
   return `<button type="${type}" data-action="${action}" class="button button--${kind}">${escapeGrowthHtml(text)}</button>`;
 }
 
@@ -89,6 +89,7 @@ export function renderGrowthForm(toolId, copy) {
     'json-to-excel': ['jsonInput', 'jsonHint', 'dataset', 'datasetHint', 'rootObject', 'preview', 'tableLabel', 'rowCount', 'columnCount', 'previewLimit', 'flattenNote', 'privacyNote'],
     'binary-base64-tool': ['file', 'fileHint', 'outputFormat', 'base64Only', 'dataUri', 'accuracyNote', 'mimeType', 'fileSize', 'bytes', 'outputSize', 'characters', 'imagePreview', 'result', 'output'],
     'json-model-generator': ['json', 'jsonHint', 'language', 'typescript', 'csharp', 'java', 'rootName', 'rootNameHint', 'accuracyNote', 'privacyNote', 'output', 'result'],
+    'csv-editor': ['file', 'paste', 'delimiter', 'autoDelimiter', 'comma', 'semicolon', 'tab', 'pipe', 'hasHeader', 'search', 'searchHint', 'tableLabel', 'row', 'column', 'accuracyNote', 'privacyNote', 'rowsSummary', 'columnsSummary', 'filteredSummary', 'page', 'of', 'noMatches', 'exportDelimiter', 'utf8Bom', 'columnType', 'textType', 'numberType', 'dateType', 'booleanType', 'typeSummary', 'typeHint', 'result'],
     'har-viewer': ['file', 'paste', 'pasteHint', 'privacyWarning', 'search', 'method', 'statusFilter', 'all', 'errorsOnly', 'successOnly', 'totalRequests', 'failedRequests', 'transferred', 'totalTime', 'slowest', 'request', 'response', 'duration', 'size', 'waterfall', 'results', 'shown', 'of', 'noMatches', 'methodLabel', 'statusLabel', 'urlLabel', 'durationLabel', 'sizeLabel', 'timingNote', 'unknownDate', 'invalid', 'tooMany'],
     'robots-txt-tester': ['robotsText', 'robotsHint', 'userAgent', 'userAgentHint', 'urls', 'urlsHint', 'scopeNote', 'agentGroup', 'noSpecificGroup', 'ruleCount', 'diagnostics', 'ignored', 'malformed', 'allowed', 'blocked', 'winningRule', 'defaultRule'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
@@ -224,6 +225,7 @@ export function renderGrowthForm(toolId, copy) {
   'json-to-excel': ['preview', 'example', 'reset', 'download'],
   'binary-base64-tool': ['convert', 'reset', 'copy', 'download'],
   'json-model-generator': ['example', 'generate', 'reset', 'copy', 'download'],
+  'csv-editor': ['load', 'example', 'reset', 'addRow', 'addColumn', 'deleteRow', 'deleteColumn', 'undo', 'redo', 'previous', 'next', 'export', 'copy', 'result'],
     'har-viewer': ['analyze', 'example', 'reset', 'showMore', 'result'],
     'robots-txt-tester': ['test', 'example', 'reset', 'result'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
@@ -1100,6 +1102,36 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('generate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.result)}</h2><label for="json-model-output">${escapeGrowthHtml(fields.output)}</label><textarea id="json-model-output" name="output" data-json-model-output rows="16" readonly spellcheck="false"></textarea><div class="actions">${button('copy', actions.copy, 'secondary')}${button('download', actions.download, 'secondary')}</div></section>
+  </form>`, copy);
+
+  if (toolId === 'csv-editor') return attachCopy(`<form id="tool-form" class="csv-editor" novalidate>
+    ${label('csv-file', fields.file, '<input id="csv-file" name="csvFile" type="file" accept=".csv,text/csv,text/plain">')}
+    ${label('csv-paste', fields.paste, '<textarea id="csv-paste" name="csvText" rows="8" maxlength="5242880" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off"></textarea>')}
+    <div class="csv-editor__options">
+      ${label('csv-delimiter', fields.delimiter, `<select id="csv-delimiter" name="delimiter"><option value="auto">${escapeGrowthHtml(fields.autoDelimiter)}</option><option value=",">${escapeGrowthHtml(fields.comma)}</option><option value=";">${escapeGrowthHtml(fields.semicolon)}</option><option value="&#9;">${escapeGrowthHtml(fields.tab)}</option><option value="|">${escapeGrowthHtml(fields.pipe)}</option></select>`)}
+      ${label('csv-header', fields.hasHeader, '<input id="csv-header" name="hasHeader" type="checkbox" checked>')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <p class="hint" id="csv-type-hint">${escapeGrowthHtml(fields.typeHint)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('load')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite">
+      <h2>${escapeGrowthHtml(actions.result)}</h2>
+      <p class="hint" data-csv-summary></p>
+      ${label('csv-search', fields.search, '<input id="csv-search" name="search" type="search" autocomplete="off">')}
+      <p class="hint">${escapeGrowthHtml(fields.searchHint)}</p>
+      <div class="actions">${button('undo', actions.undo, 'secondary')}${button('redo', actions.redo, 'secondary')}${button('addRow', actions.addRow, 'secondary')}${button('addColumn', actions.addColumn, 'secondary')}</div>
+      <div class="table-scroll csv-editor__table-scroll"><table class="csv-editor__table"><caption>${escapeGrowthHtml(fields.tableLabel)}</caption><thead data-csv-head></thead><tbody data-csv-body></tbody></table></div>
+      <p class="hint" data-csv-empty hidden>${escapeGrowthHtml(fields.noMatches)}</p>
+      <p class="hint" data-csv-page></p>
+      <div class="actions">${button('previous', actions.previous, 'secondary')}${button('next', actions.next, 'secondary')}</div>
+      <div class="csv-editor__options">
+        ${label('csv-export-delimiter', fields.exportDelimiter, `<select id="csv-export-delimiter" name="exportDelimiter"><option value=",">${escapeGrowthHtml(fields.comma)}</option><option value=";">${escapeGrowthHtml(fields.semicolon)}</option><option value="&#9;">${escapeGrowthHtml(fields.tab)}</option><option value="|">${escapeGrowthHtml(fields.pipe)}</option></select>`)}
+        ${label('csv-bom', fields.utf8Bom, '<input id="csv-bom" name="bom" type="checkbox">')}
+      </div>
+      <div class="actions">${button('copy', actions.copy, 'secondary')}${button('export', actions.export)}</div>
+    </section>
   </form>`, copy);
 
   if (toolId === 'har-viewer') return attachCopy(`<form id="tool-form" class="har-viewer" novalidate>

@@ -1476,6 +1476,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/binary-base64-tool/logic.mjs',
   },
   {
+    id: 'csv-editor',
+    category: 'developer-data',
+    type: 'tool',
+    primaryIntent: 'csv editor',
+    secondaryIntents: ['edit csv online', 'edit csv rows and columns', 'search csv data online'],
+    functions: ['paste CSV text or open one local CSV file and detect comma, semicolon, tab or pipe delimiters', 'choose whether the first record is a header and edit cells or column names in a paginated grid', 'assign a review type (text, decimal number, ISO date or Boolean) to each column and flag non-matching non-empty cells without converting their values', 'search rows, add or remove rows and columns, and undo or redo up to 50 local edits', 'export as correctly escaped UTF-8 CSV with a selected delimiter and optional BOM'],
+    acceptance: 'A quoted cell containing a comma, doubled quote and embedded newline survives import, edit and export; parsing the exported CSV reproduces the edited table exactly. A number column flags a text value as a mismatch and CSV export preserves that original text unchanged.',
+    boundary: 'Local CSV editor only; it does not upload, autosave, infer or serialize column types, convert legacy encodings, or merge files. Column types are user-selected checks: blank values are ignored; decimal numbers use a dot and optional exponent, dates require valid YYYY-MM-DD, and Boolean values accept true/false/0/1. Type metadata is not written into the CSV. Accepts input up to 5 MiB, 5,000 data rows, 80 columns, 80,000 cells and 20,000 characters per cell. Exports UTF-8, optionally with BOM; files and edits stay in the current browser session until exported. Keep a backup of important source data.',
+    relatedExistingIds: ['csv-viewer', 'csv-to-pdf'],
+    logicModule: './tools/csv-editor/logic.mjs',
+  },
+  {
     id: 'json-model-generator',
     category: 'developer-data',
     type: 'tool',
