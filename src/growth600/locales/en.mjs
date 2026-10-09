@@ -99,6 +99,8 @@ import parametricEquationCopies from './parametric-equation-calculator.mjs';
 import { parametricEquationEnglishCopy } from './parametric-equation-calculator.en.mjs';
 import singularValueDecompositionCopies from './singular-value-decomposition-calculator.mjs';
 import { singularValueDecompositionEnglishCopy } from './singular-value-decomposition-calculator.en.mjs';
+import spearmanCorrelationCopies from './spearman-correlation-calculator.mjs';
+import { spearmanCorrelationEnglishCopy } from './spearman-correlation-calculator.en.mjs';
 import openApiEditorCopies from './openapi-editor.mjs';
 import { openApiEditorEnglishCopy } from './openapi-editor.en.mjs';
 import fontPairingToolCopies from './font-pairing-tool.mjs';
@@ -1076,5 +1078,27 @@ registerGrowthLocaleExtension(source, 'investment-allocation-calculator', { ...i
 registerGrowthLocaleExtension(source, 'repeating-decimal-to-fraction', { ...repeatingDecimalCopies, en: repeatingDecimalEnglishCopy }, 'investment-allocation-calculator');
 registerGrowthLocaleExtension(source, 'parametric-equation-calculator', { ...parametricEquationCopies, en: parametricEquationEnglishCopy }, 'repeating-decimal-to-fraction');
 registerGrowthLocaleExtension(source, 'singular-value-decomposition-calculator', { ...singularValueDecompositionCopies, en: singularValueDecompositionEnglishCopy }, 'parametric-equation-calculator');
+const spearmanArabic = spearmanCorrelationCopies.ar;
+registerGrowthLocaleExtension(source, 'spearman-correlation-calculator', {
+  ...spearmanCorrelationCopies,
+  en: spearmanCorrelationEnglishCopy,
+  ar: {
+    ...spearmanArabic,
+    fields: {
+      ...spearmanArabic.fields,
+      pairs: 'القيم المقترنة (س، ص)',
+      pairsHint: 'أدخل زوجًا واحدًا في كل سطر، مثل 1, 10. استخدم فاصلة أو فاصلة منقوطة أو مسافة للفصل بين الرقمين، ونقطة للأعداد العشرية. أدخل من 2 إلى 500 زوج.',
+      accuracyNote: 'القيم المتساوية تحصل على متوسط رتبها. يصف rho الارتباط الرتيب بين الرتب، ولا يثبت السببية. لا تحسب هذه الأداة قيمة p أو فاصل الثقة.',
+      resultRho: 'معامل سبيرمان rho',
+      resultCount: 'عدد الأزواج',
+      rankX: 'رتبة س',
+      rankY: 'رتبة ص',
+      resultTable: 'القيم المدخلة ورتبها',
+      tiesNote: 'تم استخدام متوسط الرتب للقيم المتساوية.',
+      chartLabel: 'مخطط مبعثر لمتوسط رتب القيم س وص',
+    },
+    actions: { ...spearmanArabic.actions, reset: 'مسح' },
+  },
+}, 'singular-value-decomposition-calculator');
 
 export default Object.freeze(source);

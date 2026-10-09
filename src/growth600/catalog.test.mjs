@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 115);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 115);
+  assert.equal(growthPilotTools.length, 116);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 116);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -32,6 +32,15 @@ test('decibel calculator does logarithmic ratios and incoherent-level sums, not 
   assert.equal(calculator.primaryIntent, 'decibel calculator');
   assert.match(calculator.boundary, /does not measure SPL/u);
   assert.match(calculator.functions.join(' '), /sum 2 to 20 incoherent sound levels/u);
+});
+
+test('Spearman calculator handles rank ties and stays distinct from Pearson linear regression', () => {
+  const calculator = growthPilotTools.find(({ id }) => id === 'spearman-correlation-calculator');
+  assert.ok(calculator);
+  assert.equal(calculator.primaryIntent, 'spearman correlation calculator');
+  assert.deepEqual(calculator.relatedExistingIds, ['linear-regression-calculator']);
+  assert.match(calculator.functions.join(' '), /tied values by assigning their average ranks/u);
+  assert.match(calculator.boundary, /does not calculate a p-value/u);
 });
 
 test('OpenAPI editor stays a local contract editor and does not duplicate request-builder intent', () => {

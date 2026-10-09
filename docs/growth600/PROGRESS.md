@@ -2,6 +2,28 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
+## Publicada · Singular Value Decomposition Calculator (#306) · 2026-10-09
+
+- [x] C/F — Ficha ya medida: `svd calculator`, 390 búsquedas/mes US/en, KD 2; secundaria `singular value decomposition calculator`, 110/mes, KD 3. Sin nuevas llamadas ni coste de DataForSEO.
+- [x] E/B — SVD local de matrices rectangulares 2×2–8×8: U, Σ, Vᵀ, valores singulares, rango numérico con tolerancia explícita, reconstrucción y residuos. Entrada numérica acotada, sin `eval`, API, carga de archivos o persistencia; CSV generado en el dispositivo.
+- [x] L — 36 copias estáticas traducidas con Google Translate desde inglés; traducción automática aceptada, no revisión nativa. Se conservan símbolos matemáticos y se corrigió manualmente el copy árabe.
+- [x] X — Tests completos y suites específicas aprobados en CI; `npm run check` conserva las 10.260 URLs principales, `locale:release-check` pasa y el hub genera **4.176 páginas** (115 × 36 + 36 portadas), 4.344 archivos, 124.858.548 bytes. Bundle del controlador: 7.584 bytes.
+- [x] B — Barridos numéricos 2×2–8×8; error relativo máximo 6,33e-12 y error de ortogonalidad 2,66e-15. Chrome móvil EN/AR: diagonal 3,2 devuelve valores singulares 3 y 2, error de reconstrucción cero; dígitos árabes, RTL, sin overflow ni errores de consola.
+- [x] P/S — PR #76 integrada en `e645cbf020f79540f9f2cd344c2324e1ca3a95eb`; CI PR `37884506038`, deploy principal `37884830082` y publicación del hub `37885059577`, todos exitosos. Rutas EN/AR HTTP 200; sitemap público HTTP 200 con **4.176 URLs únicas** y 36 rutas SVD. No se afirma indexación ni se envió indexación manual.
+- **Estado publicado:** 115 herramientas Growth600 adicionales; las 277 originales permanecen intactas. Sin PageSpeed/Lighthouse.
+- **Siguiente herramienta:** #309 Spearman Correlation Calculator. Sin consultas nuevas a DataForSEO ni cambios a las 277 originales.
+
+## En implementación local · Spearman Correlation Calculator (#309) · 2026-10-09
+
+- [x] C/F — Ficha del plan: `spearman correlation calculator`, 390 búsquedas/mes US/en, KD 5; secundaria `rank correlation calculator`, 10/mes. No se repitió investigación ni se hicieron llamadas a DataForSEO.
+- [x] E/B — Implementación local con rangos promedio para empates, Spearman rho como correlación de rangos, diagrama SVG accesible de rangos, tabla inspeccionable y exportación CSV. 2–500 pares con límites numéricos explícitos; no calcula p-value ni intervalo de confianza, no interpreta causalidad y rechaza series constantes. Entradas permanecen en el navegador.
+- [x] L — 36 copias estáticas traducidas desde inglés con Google Translate, aceptadas como traducción automática sencilla y no revisión nativa. Se corrigieron manualmente etiquetas de tabla/campo árabes que eran confusas; no hay traducción en runtime.
+- [x] X — Suites específicas (85/85), suite completa (1.509/1.509), `npm run check` conserva 10.260 URLs del sitio principal, `locale:release-check` pasa. Build hub: 4.212 páginas (116 × 36 + 36 portadas), 4.381 archivos. Sin PageSpeed/Lighthouse.
+- [x] B — Chrome local EN/AR a 390 px sobre el build final: ejemplo creciente produce rho=1, cinco puntos SVG y tabla; la etiqueta del gráfico es accesible. Árabe `lang=ar`/`dir=rtl`, sin desbordamiento (390/390 px) y consola sin mensajes; botón de borrar localizado.
+- Bundle del controlador aislado: **6.298 bytes** (límite 24 KiB), sin red, `eval` ni almacenamiento.
+- [ ] P/S — PR, integración, deploy y verificación pública/sitemap pendientes; no se afirma indexación.
+- **Siguiente herramienta del plan:** #316 Wilcoxon Signed Rank Test Calculator, tras cerrar todos los gates de #309.
+
 ## Publicada · Investment Allocation Calculator (#301) · 2026-10-09
 
 - [x] C/F — Ficha ya medida del plan: `portfolio allocation calculator`, 390 búsquedas/mes US/en, KD 0; secundaria `investment allocation calculator`, 20/mes, KD 0. CPC 6.10 USD (no CPM); sin nuevas llamadas ni gasto de DataForSEO.
@@ -32,17 +54,6 @@
 - [x] P/S — PR #75 fusionada como `b600c31750fa0fe4f922298b39701c559c7595c2`; CI de PR `37876147758` y despliegue principal `37876183625` correctos. Publicación manual del hub `37876549373` correcta. Rutas EN/AR y sitemap públicos HTTP 200; sitemap con **4.140 URLs únicas** (114 × 36 + 36 portadas). No se afirma indexación.
 - **Estado publicado:** 114 herramientas Growth600 adicionales; las 277 originales siguen intactas. Sin PageSpeed/Lighthouse.
 - **Siguiente herramienta del plan:** #306 Singular Value Decomposition Calculator. No repetir DataForSEO ni tocar las 277 originales.
-
-## En implementación local · Singular Value Decomposition Calculator (#306) · 2026-10-09
-
-- [x] C/F — Ficha medida ya existente: `svd calculator`, 390 búsquedas/mes US/en, KD 2; secundaria `singular value decomposition calculator`, 110/mes, KD 3. Sin consultas nuevas ni gasto de DataForSEO.
-- [x] E/B — Factorización SVD compacta local de matrices rectangulares 2×2 a 8×8: singular values, rango numérico estimado con tolerancia, U, Σ, Vᵀ, matriz reconstruida, error relativo/residuo de Frobenius y CSV. Parser admite separadores comunes, notación científica y dígitos árabes/persas; límites explícitos de dimensiones y magnitud. No `eval`, API, upload ni almacenamiento.
-- [x] L — 36 copias estáticas generadas por Google Translate desde inglés; se aceptan como traducción automática sencilla, no revisión nativa. SVD conserva símbolos matemáticos; árabe corregido manualmente. No hay traducción en runtime.
-- [x] X — Suites globales y focalizadas aprobadas; `npm run check` conserva 10.260 URLs del sitio principal; `npm run locale:release-check` pasa. Build aislado Growth600: **4.176 páginas** (115 × 36 + 36 portadas), 4.344 archivos, 124.858.548 bytes.
-- [x] B — Barridos locales de 2×2 a 8×8: error relativo máximo observado 6,33e-12 y error de ortogonalidad 2,66e-15. Chrome local EN y AR a 390 px: `diag(3,2)` produce valores 3 y 2 y error 0; árabe acepta dígitos `٣ ٠ / ٠ ٢`; `dir=rtl`, sin overflow, consola limpia. CSV y errores comprobados por tests; no descarga a Descargas.
-- [x] B — Bundle del controlador aislado: **7.584 bytes** (límite de 24 KiB), sin llamadas de red ni ejecución dinámica.
-- [ ] P/S — sin publicar aún. PR, CI, deploy y sitemap público siguen pendientes; no se afirma indexación. Sin PageSpeed/Lighthouse.
-- **Siguiente herramienta del plan:** #309 Spearman Correlation Calculator. Mantener intactas las 277 originales; no repetir DataForSEO.
 
 ## Publicada · Fourier Series Calculator (#293) · 2026-10-09
 
