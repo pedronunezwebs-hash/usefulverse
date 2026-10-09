@@ -492,6 +492,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/pulley-calculator/logic.mjs',
   },
   {
+    id: 'rlc-circuit-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'resonant frequency calculator',
+    secondaryIntents: ['rlc circuit calculator', 'rlc resonance calculator', 'series parallel RLC impedance calculator'],
+    functions: ['calculate ideal LC resonant frequency, topology-specific quality factor Q and bandwidth for series or parallel RLC circuits', 'calculate inductive and capacitive reactance plus complex impedance magnitude and phase at a user-selected frequency', 'estimate RMS source current and show a local log-frequency impedance response curve around resonance'],
+    acceptance: 'For R=10 ohms, L=10 mH and C=1 uF, resonance is about 1,591.55 Hz; at resonance a series circuit has impedance 10 ohms and phase 0 degrees, with Q=10 and bandwidth about 159.15 Hz.',
+    boundary: 'Ideal lumped, linear RLC model only, with one resistor, inductor and capacitor in the selected series or parallel topology. Does not model component tolerances, parasitics, coil resistance, source impedance, nonlinear parts, transmission lines, load coupling, safety, or certify/build a real circuit. The parallel model uses R in parallel with L and C. Verify with datasheets and a qualified professional before using real hardware; inputs stay in this browser.',
+    relatedExistingIds: ['frequency-wavelength-calculator'],
+    logicModule: './tools/rlc-circuit-calculator/logic.mjs',
+  },
+  {
     id: 'chemical-equation-balancer',
     category: 'science-engineering',
     type: 'calculator',

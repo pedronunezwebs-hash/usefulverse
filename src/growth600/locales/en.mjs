@@ -248,6 +248,8 @@ import projectileMotionCopies from './projectile-motion-calculator-final.mjs';
 import { projectileMotionCalculatorEnglishCopy } from './projectile-motion-calculator.en.mjs';
 import pulleyCalculatorCopies from './pulley-calculator-final.mjs';
 import { pulleyCalculatorEnglishCopy } from './pulley-calculator.en.mjs';
+import rlcCircuitCalculatorCopies from './rlc-circuit-calculator-final.mjs';
+import { rlcCircuitCalculatorEnglishCopy } from './rlc-circuit-calculator.en.mjs';
 import chemicalEquationCopies from './chemical-equation-balancer-final.mjs';
 import { chemicalEquationBalancerEnglishCopy } from './chemical-equation-balancer.en.mjs';
 import gearRatioCopies from './gear-ratio-calculator-final.mjs';
@@ -751,6 +753,7 @@ registerGrowthLocaleExtension(source, 'pressure-calculator', { ...pressureCalcul
 registerGrowthLocaleExtension(source, 'pcb-trace-width-calculator', { ...pcbTraceWidthCopies, en: pcbTraceWidthCalculatorEnglishCopy }, 'pressure-calculator');
 registerGrowthLocaleExtension(source, 'projectile-motion-calculator', { ...projectileMotionCopies, en: projectileMotionCalculatorEnglishCopy }, 'pcb-trace-width-calculator');
 registerGrowthLocaleExtension(source, 'pulley-calculator', { ...pulleyCalculatorCopies, en: pulleyCalculatorEnglishCopy }, 'projectile-motion-calculator');
+registerGrowthLocaleExtension(source, 'rlc-circuit-calculator', { ...rlcCircuitCalculatorCopies, en: rlcCircuitCalculatorEnglishCopy }, 'pulley-calculator');
 registerGrowthLocaleExtension(source, 'chemical-equation-balancer', { ...chemicalEquationCopies, en: chemicalEquationBalancerEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'gear-ratio-calculator', { ...gearRatioCopies, en: gearRatioCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'density-calculator', { ...densityCopies, en: densityCalculatorEnglishCopy }, 'gravel-calculator');
