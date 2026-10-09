@@ -8,6 +8,8 @@ import transformerCopies from './locales/transformer-calculator-final.mjs';
 import { transformerCalculatorEnglishCopy } from './locales/transformer-calculator.en.mjs';
 import stoichiometryCopies from './locales/stoichiometry-calculator-final.mjs';
 import { stoichiometryCalculatorEnglishCopy } from './locales/stoichiometry-calculator.en.mjs';
+import pressureCalculatorCopies from './locales/pressure-calculator-final.mjs';
+import { pressureCalculatorEnglishCopy } from './locales/pressure-calculator.en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
 import portugueseGrowthCopy from './locales/pt.mjs';
 import germanGrowthCopy from './locales/de.mjs';
@@ -1520,6 +1522,21 @@ test('stoichiometry calculator has complete static copy and machine-accepted loc
     assert.ok([...copy.description].length <= 160, locale.key);
   }
   assert.match(stoichiometryCopies.ar.fields.equation, /التفاعل/u);
+});
+
+test('pressure calculator has complete static copy and machine-assisted localization in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'pressure-calculator');
+  assert.ok(tool);
+  assert.equal(pressureCalculatorCopies.en.name, pressureCalculatorEnglishCopy.name);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const locale of localeEntries) {
+    const copy = pressureCalculatorCopies[locale.key];
+    assert.ok(copy.fields.mode && copy.fields.accuracyNote && copy.fields.density, locale.key);
+    assert.ok(copy.messages.pressure && copy.messages.pressurePascals, locale.key);
+    assert.ok([...copy.title].length <= 60, locale.key);
+    assert.ok([...copy.description].length <= 160, locale.key);
+  }
+  assert.match(pressureCalculatorCopies.ar.fields.mode, /الحساب/u);
 });
 
 test('chemical equation balancer has complete English copy but has approved localized copy across all 36 languages', () => {

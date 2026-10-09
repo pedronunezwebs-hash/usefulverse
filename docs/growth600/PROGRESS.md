@@ -4,7 +4,7 @@
 
 ## Estado público actual · 2026-10-09
 
-- **139 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **5.040 URLs** (139 × 36 + 36 páginas de idioma): **416 herramientas públicas en total** y 15.300 URLs entre los dos sitios (10.260 + 5.040). Esto no equivale a que los buscadores hayan indexado cada URL.
+- **141 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **5.112 URLs** (141 × 36 + 36 páginas de idioma): **418 herramientas públicas en total** y 15.372 URLs entre los dos sitios (10.260 + 5.112). Esto no equivale a que los buscadores hayan indexado cada URL.
 - #148 Text to Binary Converter: PR #81 integrada; despliegue principal `37891603568` y despliegue del hub `37892340212` correctos. EN/ES/AR responden HTTP 200.
 - #171 Schema Markup Validator, #172 Readability Checker y #173 Savings Goal Calculator ya aparecen en las 36 versiones públicas; verificaciones previas registradas debajo.
 - #189 Certificate Decoder: 36 rutas públicas; detalles de pruebas y despliegue anotados abajo.
@@ -1582,7 +1582,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [x] X — **275/275 pruebas focalizadas**; suite global **1.719/1.719**; `npm run locale:release-check`; `npm run check` conserva las 10.260 URLs del sitio principal. Build de hub: **5.076 páginas** (140 herramientas × 36 idiomas + 36 portadas), 5.273 archivos. No se tocó el catálogo principal de 277 herramientas.
 - [x] QA de navegador — inglés: ejemplo 120 V, 100:50 → 60 V y Ns/Np=0,5. Árabe RTL: voltaje y corriente calculados; campos activos/desactivados según modo; viewport móvil 390×844 sin desbordamiento y consola sin errores ni avisos.
 - [x] Inventario — README regenerado desde ambos sitemaps de build: **10.260 URLs** principales y **5.076 URLs** del hub. El README indica 140 herramientas adicionales.
-- [ ] P/S — PR #101 ya integró el código y el deploy principal `37948139492` terminó bien, pero la publicación separada del hub fue omitida por su gate manual. El sitemap público del hub continúa en 5.040 URLs: Transformer aún no suma a producción.
+- [x] P/S — PR #101 integrada; el deploy principal `37948139492` y la publicación separada del hub quedaron verificados en el seguimiento posterior. Ya está incluida en las 141 herramientas y 5.112 URLs públicas anotadas arriba.
 - **Recuento local antes de Stoichiometry:** 84/323 candidatas.
 
 ## En implementación local · Stoichiometry Calculator (#246)
@@ -1594,5 +1594,17 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - Pruebas: lógica/controlador/formulario, cobertura lingüística y build; suite completa **1.728/1.728**, `npm run locale:release-check`, `npm run check` (**10.260 URLs principales**) y build aislado **5.112 páginas** (141 × 36 + 36 portadas).
 - QA Chrome: EN ejemplo H2/O2 → 2 mol H2O (36,03 g), rendimiento real de 18,015 g → 50%. AR en viewport 390×844 resolvió el mismo ejemplo; `dir=rtl`, ancho de documento 390 px, consola sin errores/avisos.
 - Inventario README: 10.260 URLs principales y 5.112 URLs del hub de esta build. Sin PageSpeed/Lighthouse.
-- **P/S pendiente:** PR y publicación separada del hub/sitemap; no sumar a producción hasta comprobarla.
-- **Recuento implementado en catálogo:** 85/323 candidatas; quedan 238 válidas y una fila duplicada/reserva por sustituir. No confundir las 141 entradas del catálogo Growth600 local con las 139 actualmente publicadas.
+- [x] **P/S:** PR [#102](https://github.com/pedronunezwebs-hash/usefulverse/pull/102), merge `86071a570f33ac481101f56cb786249651199051`; CI PR `37950223733`, despliegue principal `37950719922` y publicación del hub `37951324980` correctos. Sitemap público del hub verificado en 5.112 URLs y rutas EN/AR HTTP 200.
+- **Recuento implementado antes de Pressure:** 85/323 candidatas; quedan 238 válidas y una fila duplicada/reserva por sustituir.
+
+## En implementación local · Pressure Calculator (#249) · 2026-10-09
+
+- Demanda reutilizada del plan, sin llamadas nuevas: `pressure calculator`, 1.300 búsquedas/mes US/en, KD 12; secundaria `force area pressure calculator`, 50/mes, KD 0.
+- Dos modos: presión media F/A con unidades métricas/imperiales y presión hidrostática manométrica ρgh con densidad y profundidad editables. No sustituye análisis de presión absoluta, dinámica de fluidos ni diseño/certificación de recipientes.
+- Implementación 100% local, sin servicios, dependencias, API ni subida de archivos. Entradas positivas y finitas; resultado en Pa y unidades derivadas; ejemplo 100 N / 2 m² = 50 Pa.
+- 36 copias estáticas preparadas a partir del inglés (traducción automática simple; no revisión nativa); límites de title/description validados. RTL/CJK respetan las convenciones comunes de locale y el copy específico en árabe está comprobado en navegador.
+- Pruebas dirigidas: **281/281**; suite global **1.735/1.735**; `locale:release-check` y `npm run check` pasan. Build Growth600 aislado: **5.148 rutas** (142 herramientas × 36 + 36 portadas). QA Chrome EN y AR RTL: fuerza/área 50 Pa; hidrostática 9.806,65 Pa; controles de modo y ejemplo funcionan, consola limpia. No se hizo PageSpeed/Lighthouse.
+- README regenerado desde builds: 10.260 URLs del sitio principal y 5.148 del futuro build Growth600. La cifra del hub en README es de build local hasta verificar publicación.
+- [x] Suite global y revisión de diff completadas antes del PR.
+- [ ] P/S — PR, despliegues, sitemap público y verificación de rutas aún pendientes; no sumar a las herramientas públicas hasta confirmarlos.
+- **Recuento local:** 86/323 candidatas; quedan 237 válidas y una fila duplicada/reserva por sustituir. El hub público sigue en 141 herramientas / 5.112 URLs mientras esta candidata no se publique.

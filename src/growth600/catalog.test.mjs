@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 141);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 141);
+  assert.equal(growthPilotTools.length, 142);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 142);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -48,6 +48,16 @@ test('stoichiometry calculator estimates limiting reactants and yield without du
   assert.match(tool.functions.join(' '), /percent yield/u);
   assert.match(tool.acceptance, /2 mol H2.*1 mol O2.*2 mol.*36\.03 g/u);
   assert.match(tool.boundary, /ionic\/electron balance.*hazards/u);
+});
+
+test('pressure calculator separates average force over area from static-fluid gauge pressure', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'pressure-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'pressure calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['force-calculator', 'flow-rate-calculator']);
+  assert.match(tool.acceptance, /100 N.*2 m².*50 Pa/u);
+  assert.match(tool.functions.join(' '), /hydrostatic gauge pressure/u);
+  assert.match(tool.boundary, /atmospheric pressure.*not uploaded/u);
 });
 
 test('torque calculator separates force moments from shaft-power calculations', () => {

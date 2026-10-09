@@ -1403,17 +1403,20 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 249 · Pressure Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `pressure-calculator`**
+- [x] **C/F/E/L/B/X local — `pressure-calculator`; P/S pendiente**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/pressure-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `pressure calculator` — 1.300 búsquedas/mes US/en, KD 12; nivel B. CPC — USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Fuerza por área y presión hidrostática
-- **Prueba de aceptación específica:** 100N sobre2m² da50Pa
+- **Función mínima y ampliaciones útiles:** [x] presión media fuerza/área con unidades métricas e imperiales; [x] presión hidrostática manométrica ρgh, densidad/profundidad editables y ejemplo guiado.
+- **Prueba de aceptación específica:** [x] 100 N / 2 m² = 50 Pa; [x] agua a 1 m (ρ=1000 kg/m³) ≈ 9.806,65 Pa.
 - **Frontera con otras herramientas:** force-calculator: presión y columna de líquido. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** [x] motor local ligero sin dependencias, API ni servicios; valida entradas positivas/finita y presenta Pa/unidades derivadas. Se limita a presión manométrica de fluido en reposo; no calcula presión absoluta/dinámica ni certifica recipientes o seguridad.
 - **Consultas secundarias del mismo propietario:**
   - `force area pressure calculator` — 50/mes US/en; KD 0.
   - `pressure calculator free online`; `pressure calculator with example`; `pressure calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- [x] **L:** 36 textos estáticos derivados del inglés con traducción automática sencilla; no se presentan como revisión nativa. Límites de title/description verificados por contrato.
+- [x] **X:** 281 pruebas focalizadas y suite global **1.735/1.735**; `npm run locale:release-check`; `npm run check` conserva 10.260 URLs principales; build Growth600 aislado de 5.148 rutas.
+- [ ] **P/S:** PR, publicación al proyecto Cloudflare `usefulverse-tools`, sitemap público y eventual envío a buscadores aún pendientes; no contar como herramienta pública hasta verificarlos.
 
 ### 251 · Pcb Trace Width Calculator
 

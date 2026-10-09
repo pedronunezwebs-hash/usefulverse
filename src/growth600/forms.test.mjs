@@ -29,6 +29,7 @@ import torqueCalculatorCopies from './locales/torque-calculator.mjs';
 import { beamDeflectionCalculatorEnglishCopy } from './locales/beam-deflection-calculator.en.mjs';
 import { transformerCalculatorEnglishCopy } from './locales/transformer-calculator.en.mjs';
 import { stoichiometryCalculatorEnglishCopy } from './locales/stoichiometry-calculator.en.mjs';
+import { pressureCalculatorEnglishCopy } from './locales/pressure-calculator.en.mjs';
 
 const actions = {
   calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', millimeters: 'Millimeters', feet: 'Feet', inches: 'Inches', squareMeters: 'Square meters', squareFeet: 'Square feet', cubicMeters: 'Cubic meters', cubicFeet: 'Cubic feet', kelvin: 'Kelvin difference', fahrenheit: 'Fahrenheit difference', kilowatts: 'Kilowatts (kW)', btuPerHour: 'BTU per hour (BTU/h)', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.', kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only', productionMode: 'Estimate array output', sizingMode: 'Size for daily use', years: 'years', add: 'Add', subtract: 'Subtract', multiply: 'Multiply', divide: 'Divide', magnitude: 'Modulus', argument: 'Argument', rectangularToPolar: 'Rectangular to polar', polarToRectangular: 'Polar to rectangular', roots: 'Nth roots',
@@ -37,6 +38,7 @@ const messages = { copied: 'Copied.', copyUnavailable: 'Copy is unavailable.', c
 const copies = {
   'transformer-calculator': transformerCalculatorEnglishCopy,
   'stoichiometry-calculator': stoichiometryCalculatorEnglishCopy,
+  'pressure-calculator': pressureCalculatorEnglishCopy,
   'image-sharpener': { name: 'Image sharpener', actions: { ...actions, load: 'Choose image', export: 'Prepare download', download: 'Download', original: 'Show original', sharpened: 'Sharpened preview', png: 'PNG', jpeg: 'JPEG' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', exporting: 'Sharpening…', exportFailed: 'Export failed.', exportReady: 'Image ready.' }, fields: { imageFile: 'Choose image', amount: 'Strength', radius: 'Radius', threshold: 'Threshold', compare: 'Show original', accuracyNote: 'Processed locally; 8 megapixel limit.', previewHint: 'Preview is reduced.', format: 'Format', relatedRedactor: 'Redact private details.', relatedCropper: 'Crop the image.' } },
   'photo-to-sketch': { name: 'Photo to sketch', actions: { ...actions, load: 'Choose image', export: 'Create sketch PNG', cancel: 'Cancel processing', download: 'Download sketch PNG', original: 'Show original' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', exporting: 'Creating sketch…', cancelled: 'Processing cancelled.', exportFailed: 'Export failed.', exportReady: 'Sketch ready.' }, fields: { imageFile: 'Choose image', intensity: 'Sketch intensity', detail: 'Fine-detail threshold', compare: 'Show original', accuracyNote: 'Local processing; maximum 8 megapixels.', previewHint: 'Reduced preview.' } },
   'schema-markup-validator': { name: 'Schema markup validator', actions: { ...actions, validate: 'Validate markup', copySummary: 'Copy summary' }, messages: { ...messages, invalidJson: 'Invalid JSON.', rootNotObject: 'Expected an object.', inputTooLarge: 'Input too long.', loadingVocabulary: 'Loading terms.', vocabularyUnavailable: 'Terms unavailable.', valid: 'Valid.', invalid: 'Invalid.', unknownType: 'Unknown type.', unknownProperty: 'Unknown property.', noTypedEntity: 'No type.', exampleLoaded: 'Example loaded.' }, fields: { markup: 'Paste JSON-LD', accuracyNote: 'Local checks.', resultSummary: 'Summary', issues: 'Findings', googleNote: 'Not a Google test.' } },
@@ -1452,4 +1454,11 @@ test('stoichiometry form exposes ordered reactant inputs and optional actual yie
   assert.match(html, /name="actualProductMass"/u);
   assert.match(html, /role="status" aria-live="polite"/u);
   assert.doesNotMatch(html, /<form[^>]+action=/u);
+});
+
+test('pressure form offers average-force and hydrostatic modes with unit controls and local result messaging', () => {
+  const html = renderGrowthForm('pressure-calculator', pressureCalculatorEnglishCopy);
+  for (const expected of ['data-pressure-inputs="force-area"', 'data-pressure-inputs="hydrostatic"', 'name="forceUnit"', 'name="areaUnit"', 'name="densityUnit"', 'name="depthUnit"', 'name="gravity"', 'name="pressureUnit"']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /role="status" aria-live="polite"/u);
+  assert.match(html, /gauge pressure/u);
 });

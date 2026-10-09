@@ -60,6 +60,7 @@ export function renderGrowthForm(toolId, copy) {
     'ohms-law-calculator': ['mode', 'solverMode', 'networkMode', 'voltage', 'current', 'resistance', 'power', 'topology', 'series', 'parallel', 'resistorValues', 'accuracyNote'],
     'transformer-calculator': ['mode', 'voltageMode', 'ratioMode', 'currentMode', 'primaryVoltage', 'secondaryVoltage', 'primaryTurns', 'secondaryTurns', 'primaryCurrent', 'efficiencyPercent', 'accuracyNote'],
     'stoichiometry-calculator': ['equation', 'inputMode', 'gramsMode', 'molesMode', 'reactantAmounts', 'reactantAmountsHint', 'products', 'actualProductMass', 'actualProductHint', 'accuracyNote'],
+    'pressure-calculator': ['mode', 'forceAreaMode', 'hydrostaticMode', 'force', 'forceUnit', 'area', 'areaUnit', 'density', 'densityUnit', 'depth', 'depthUnit', 'gravity', 'pressureUnit', 'accuracyNote'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
     'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
     'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
@@ -209,6 +210,7 @@ export function renderGrowthForm(toolId, copy) {
     'ohms-law-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'transformer-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'stoichiometry-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'pressure-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
     'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -2022,6 +2024,28 @@ export function renderGrowthForm(toolId, copy) {
       <p class="hint">${escapeGrowthHtml(fields.forcesHint)}</p>
       ${label('net-force-mass', fields.netMass, '<input id="net-force-mass" name="netMass" type="number" min="0.000000001" max="1000000000000" step="any" inputmode="decimal">')}
     </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'pressure-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('pressure-mode', fields.mode, `<select id="pressure-mode" name="mode"><option value="force-area">${escapeGrowthHtml(fields.forceAreaMode)}</option><option value="hydrostatic">${escapeGrowthHtml(fields.hydrostaticMode)}</option></select>`)}
+    <div data-pressure-inputs="force-area">
+      ${label('pressure-force', fields.force, '<input id="pressure-force" name="force" type="number" min="0" max="1000000000000" step="any" inputmode="decimal" value="100">')}
+      ${label('pressure-force-unit', fields.forceUnit, '<select id="pressure-force-unit" name="forceUnit"><option value="N">N</option><option value="kN">kN</option><option value="lbf">lbf</option></select>')}
+      ${label('pressure-area', fields.area, '<input id="pressure-area" name="area" type="number" min="0.000000001" max="1000000000000" step="any" inputmode="decimal" value="2">')}
+      ${label('pressure-area-unit', fields.areaUnit, '<select id="pressure-area-unit" name="areaUnit"><option value="m2">m²</option><option value="cm2">cm²</option><option value="mm2">mm²</option><option value="ft2">ft²</option><option value="in2">in²</option></select>')}
+    </div>
+    <div data-pressure-inputs="hydrostatic" hidden>
+      ${label('pressure-density', fields.density, '<input id="pressure-density" name="density" type="number" min="0.000001" max="1000000000" step="any" inputmode="decimal" value="1000">')}
+      ${label('pressure-density-unit', fields.densityUnit, '<select id="pressure-density-unit" name="densityUnit"><option value="kgm3">kg/m³</option><option value="lbft3">lb/ft³</option></select>')}
+      ${label('pressure-depth', fields.depth, '<input id="pressure-depth" name="depth" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="1">')}
+      ${label('pressure-depth-unit', fields.depthUnit, '<select id="pressure-depth-unit" name="depthUnit"><option value="m">m</option><option value="cm">cm</option><option value="ft">ft</option><option value="in">in</option></select>')}
+      ${label('pressure-gravity', fields.gravity, '<input id="pressure-gravity" name="gravity" type="number" min="0.000001" max="100" step="any" inputmode="decimal" value="9.80665">')}
+    </div>
+    ${label('pressure-output-unit', fields.pressureUnit, '<select id="pressure-output-unit" name="pressureUnit"><option value="Pa">Pa</option><option value="kPa">kPa</option><option value="MPa">MPa</option><option value="bar">bar</option><option value="atm">atm</option><option value="psi">psi</option><option value="torr">torr</option></select>')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
