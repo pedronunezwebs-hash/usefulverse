@@ -2,6 +2,21 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
+## En implementación local · Wilcoxon Signed Rank Test Calculator (#316) · 2026-10-09
+
+- [x] C/F — Candidata medida en el plan: `wilcoxon signed rank test calculator`, 320 búsquedas/mes US/en, KD 0. Sin nuevas consultas a DataForSEO.
+- [x] E/B — Diferencias pareadas después−antes; ceros omitidos; rangos medios en empates; sumas positiva/negativa; p bilateral exacta hasta 25 pares no nulos y aproximación normal bilateral con corrección de continuidad para muestras mayores. Caso todo-cero con explicación y sin p inventado. Tabla y CSV local; máximo 500 pares y magnitud ≤10¹², con supuestos/limitaciones explícitos.
+- [x] L — 36 traducciones estáticas de Google Translate; borrador automático aceptado, no revisión nativa. Etiquetas del método y copia árabe corregidas; sin traducción en runtime.
+- [x] X — Suite completa **1.517/1.517**; pruebas focales lógica/controlador/formulario/catálogo/contratos **218/218**. `npm run check` conserva **10.260 URLs** principales; `npm run locale:release-check` pasa. Hub: **4.248 rutas** (117 × 36 + 36 portadas), 4.418 archivos, 126.972.687 bytes. Sin cambios de CSS global: reutiliza la tabla existente y respeta el presupuesto de 24 KiB.
+- [x] B — Chrome local a 390×844: ejemplo calcula p=0,4375 y muestra sumas, 1 cero, 2 grupos empatados y CSV. Caso todo-cero anuncia estado y no muestra p. Árabe `lang=ar`, `dir=rtl`, ancho del documento 390/390 sin overflow, tabla desplazable internamente y consola limpia. Sin PageSpeed/Lighthouse.
+- [ ] P/S — PR, integración, deploy, verificación pública y sitemap pendientes.
+- **Siguiente:** #323 Chinese Remainder Theorem Calculator, tras cerrar P/S de esta candidata.
+
+## Publicada · Spearman Correlation Calculator (#309) · 2026-10-09
+
+- [x] P/S — PR #77 integrada como `1b66000e55efccffb44b588dd4437b4ab1acf55a`; CI PR `37886315394`, deploy principal `37886610317`, despliegue del hub `37887070482`. URL pública EN y sitemap HTTP 200; sitemap con **4.212 URLs únicas** y 36 variantes Spearman. No se declara indexación ni se envió solicitud manual. Sin PageSpeed/Lighthouse.
+- **Estado publicado:** 116 herramientas Growth600 adicionales; las 277 originales siguen intactas.
+
 ## Publicada · Singular Value Decomposition Calculator (#306) · 2026-10-09
 
 - [x] C/F — Ficha ya medida: `svd calculator`, 390 búsquedas/mes US/en, KD 2; secundaria `singular value decomposition calculator`, 110/mes, KD 3. Sin nuevas llamadas ni coste de DataForSEO.

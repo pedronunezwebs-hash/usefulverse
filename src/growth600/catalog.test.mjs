@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 116);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 116);
+  assert.equal(growthPilotTools.length, 117);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 117);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -41,6 +41,15 @@ test('Spearman calculator handles rank ties and stays distinct from Pearson line
   assert.deepEqual(calculator.relatedExistingIds, ['linear-regression-calculator']);
   assert.match(calculator.functions.join(' '), /tied values by assigning their average ranks/u);
   assert.match(calculator.boundary, /does not calculate a p-value/u);
+});
+
+test('Wilcoxon signed-rank calculator handles paired differences, zeros, ties and exact/approximate thresholds', () => {
+  const calculator = growthPilotTools.find(({ id }) => id === 'wilcoxon-signed-rank-test-calculator');
+  assert.equal(calculator.primaryIntent, 'wilcoxon signed rank test calculator');
+  assert.match(calculator.acceptance, /every before\/after pair is identical/u);
+  assert.match(calculator.boundary, /after minus before/u);
+  assert.match(calculator.boundary, /symmetric differences/u);
+  assert.deepEqual(calculator.relatedExistingIds, []);
 });
 
 test('OpenAPI editor stays a local contract editor and does not duplicate request-builder intent', () => {

@@ -1391,6 +1391,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['linear-regression-calculator'],
     logicModule: './tools/spearman-correlation-calculator/logic.mjs',
   },
+  {
+    id: 'wilcoxon-signed-rank-test-calculator',
+    category: 'math-statistics',
+    type: 'calculator',
+    primaryIntent: 'wilcoxon signed rank test calculator',
+    secondaryIntents: ['paired wilcoxon calculator', 'signed rank test calculator', 'wilcoxon signed rank calculator'],
+    functions: ['compare paired before/after values with the two-sided Wilcoxon signed-rank test', 'exclude zero differences and assign average ranks to tied absolute differences', 'use an exact sign-flip distribution for up to 25 nonzero pairs and a continuity-corrected normal approximation above that threshold', 'show positive and negative rank sums, zero/tied counts, p-value, method, and a local CSV of ranked pairs'],
+    acceptance: 'If every before/after pair is identical, report zero nonzero differences and a dedicated no-test result instead of inventing a p-value.',
+    boundary: 'For 2–500 paired finite values within ±1,000,000,000,000. Differences are after minus before; zero differences are omitted from ranking. Exact two-sided p-values use the sign-flip distribution of average ranks for at most 25 nonzero pairs; larger samples use a normal approximation with continuity correction. The inference assumes an appropriate paired design and symmetric differences under the null; it is not a causal claim or medical advice. Inputs remain in the browser.',
+    relatedExistingIds: [],
+    logicModule: './tools/wilcoxon-signed-rank-test-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

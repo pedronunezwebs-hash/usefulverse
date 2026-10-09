@@ -2710,8 +2710,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 309 · Spearman Correlation Calculator
 
-- [x] **C/F/E/X/L/B** — implementación y verificación local completadas; falta P/S hasta integrar, desplegar y comprobar públicamente.
-- **Destino:** `https://tools.usefulverse.com/tools/spearman-correlation-calculator/` y 35 rutas localizadas; todavía no declarado publicado.
+- [x] **C/F/E/X/L/B/P/S** — Spearman está implementado, verificado y publicado en los 36 idiomas.
+- **Destino:** `https://tools.usefulverse.com/tools/spearman-correlation-calculator/` y 35 rutas localizadas; sitemap público comprobado.
 - **Demanda:** `spearman correlation calculator` — 390 búsquedas/mes US/en, KD 5; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Rangos con empates, rho, gráfico y explicación
 - **Prueba de aceptación específica:** Series crecientes iguales dan rho1
@@ -2721,17 +2721,17 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `rank correlation calculator` — 10/mes US/en; KD —.
   - `spearman correlation calculator free online`; `spearman correlation calculator with example`; `spearman correlation calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
-- **Implementación local (2026-10-09):** rangos promedio para empates, rho calculado como Pearson sobre rangos, diagrama SVG accesible de dispersión de rangos, tabla y exportación CSV local; 2–500 pares y límite de magnitud ±10¹². No calcula p-value/intervalo de confianza ni implica causalidad; rechaza series constantes. 36 copias estáticas de Google Translate (no revisión nativa), con algunas etiquetas árabes corregidas manualmente. Suite completa 1.509/1.509; pruebas focales 85/85; release-check y `npm run check` pasan. Build: 4.212 rutas (116 × 36 + 36 portadas), 4.381 archivos; controlador 6.298 bytes. Chrome EN/AR a 390 px confirma rho=1, cinco puntos, etiqueta accesible, RTL sin overflow y consola limpia. Sin PageSpeed/Lighthouse ni consultas nuevas a DataForSEO. PR/deploy/sitemap público aún pendientes.
+- **Implementación publicada (2026-10-09):** rangos promedio para empates, rho calculado como Pearson sobre rangos, diagrama SVG accesible de dispersión de rangos, tabla y exportación CSV local; 2–500 pares y límite de magnitud ±10¹². No calcula p-value/intervalo de confianza ni implica causalidad; rechaza series constantes. 36 copias estáticas de Google Translate (no revisión nativa), con algunas etiquetas árabes corregidas manualmente. Suite completa 1.509/1.509; pruebas focales 85/85; release-check y `npm run check` pasan. Build: 4.212 rutas (116 × 36 + 36 portadas), 4.381 archivos; controlador 6.298 bytes. Chrome EN/AR a 390 px confirma rho=1, cinco puntos, etiqueta accesible, RTL sin overflow y consola limpia. PR #77 integrada como `1b66000e55efccffb44b588dd4437b4ab1acf55a`; CI PR `37886315394`, deploy principal `37886610317`, deploy del hub `37887070482`. Página EN y sitemap público HTTP 200; el sitemap enumera 4.212 URLs únicas y 36 variantes Spearman. Sin PageSpeed/Lighthouse ni consultas nuevas a DataForSEO.
 
 ### 316 · Wilcoxon Signed Rank Test Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `wilcoxon-signed-rank-test-calculator`**
+- [x] **C/F/E/X/L/B** — funcionalidad, traducciones, pruebas y build local completados. Falta P/S: PR, integración, despliegue y comprobar sitemap público.
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/wilcoxon-signed-rank-test-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `wilcoxon signed rank test calculator` — 320 búsquedas/mes US/en, KD 0; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Diferencias pareadas, ceros y corrección de empates
 - **Prueba de aceptación específica:** Diferencias todas cero requiere mensaje especial
 - **Frontera con otras herramientas:** mann-whitney-u-test-calculator: pares, no grupos independientes. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación local (2026-10-09):** diferencias después−antes; se omiten ceros y los empates absolutos reciben rangos medios. Prueba bilateral exacta de inversión de signos hasta 25 pares no nulos; aproximación normal bilateral con corrección de continuidad para muestras mayores. Muestra sumas positivas/negativas, p, método y tabla completa, con CSV local. Resultado dedicado sin p para diferencias todas cero. Entrada 2–500 pares y magnitud ≤10¹², con supuestos y limitaciones explícitos. 36 traducciones estáticas de Google Translate, incluida interfaz RTL árabe. Pruebas completas 1.517/1.517; `npm run check` conserva 10.260 URLs, `locale:release-check` pasa, build hub 4.248 rutas (117 × 36 + 36 portadas), 4.418 archivos. Chrome EN/AR a 390 px: ejemplo muestra p=0,4375, ceros/empates y tabla; la rama all-zero no inventa p; RTL no desborda y consola limpia. Sin PageSpeed/Lighthouse, coste API o DataForSEO nuevo. Falta P/S.
 - **Consultas secundarias del mismo propietario:**
   - `paired wilcoxon calculator` — sin métrica obtenida; no atribuir volumen.
   - `wilcoxon signed rank test calculator free online`; `wilcoxon signed rank test calculator with example`; `wilcoxon signed rank test calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
