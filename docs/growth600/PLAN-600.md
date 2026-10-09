@@ -2762,7 +2762,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 117 · Json Diff
 
-- [ ] **C/F/E/X/L/B/P/S completos — `json-diff`** (implementación local en progreso; no publicada aún)
+- [x] **C/F/E/X/L/B/P/S completos — `json-diff` (publicada)**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/json-diff/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `json diff` — 8.100 búsquedas/mes US/en, KD 14; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Comparación semántica de objetos, orden de claves irrelevante, arrays por índice/ID y JSON Patch; los textos permanecen locales.
@@ -2773,6 +2773,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `json compare online` — 2.900/mes US/en; KD 16.
   - `json diff free online`; `json diff with example`; `json diff no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Publicación verificada (2026-10-09):** PR #80, merge `a5623dff218c56d78e893e87f89e4a7f2ab098ce`; CI `37890180221`, deploy principal `37890504845`, hub `37890916012`; URLs EN/AR y sitemap HTTP 200, 4.320 URLs únicas con 36 variantes JSON Diff. No implica indexación ni envío manual.
 
 ### 148 · Text To Binary Converter
 

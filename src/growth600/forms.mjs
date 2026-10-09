@@ -83,6 +83,7 @@ export function renderGrowthForm(toolId, copy) {
     'wilcoxon-signed-rank-test-calculator': ['pairs', 'pairsHint', 'accuracyNote', 'resultStatus', 'resultCount', 'nonzeroLabel', 'zeroCount', 'tiedCount', 'positiveRankSum', 'negativeRankSum', 'pValue', 'method', 'methodExact', 'methodApproximation', 'methodNotAvailable', 'resultTable', 'before', 'after', 'difference', 'absoluteRank', 'signedRank'],
     'chinese-remainder-theorem-calculator': ['congruences', 'congruencesHint', 'accuracyNote', 'resultStatus', 'resultResidue', 'resultModulus', 'combinedEquation', 'equationCount', 'conflictAt', 'conflictGcd', 'difference', 'stepLabel'],
     'json-diff': ['before', 'after', 'beforeHint', 'afterHint', 'arrayMode', 'arrayIndex', 'arrayKeyMode', 'arrayKey', 'arrayKeyHint', 'accuracyNote', 'results', 'added', 'removed', 'changed', 'changeList', 'noChanges', 'path', 'oldValue', 'newValue', 'patch', 'patchHint', 'invalid', 'operation', 'tooMany'],
+    'text-to-binary-converter': ['mode', 'textToBinary', 'binaryToText', 'textInput', 'textHint', 'binaryInput', 'binaryHint', 'groupBytes', 'accuracyNote', 'output', 'result', 'copyHint'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -210,6 +211,7 @@ export function renderGrowthForm(toolId, copy) {
     'wilcoxon-signed-rank-test-calculator': ['calculate', 'reset', 'example', 'result', 'downloadCsv'],
     'chinese-remainder-theorem-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'json-diff': ['compare', 'example', 'reset', 'result', 'copy', 'copyPatch', 'downloadPatch'],
+    'text-to-binary-converter': ['convert', 'example', 'reset', 'result', 'copy', 'download'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
@@ -1015,6 +1017,17 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('compare')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div><h3>${escapeGrowthHtml(fields.changeList)}</h3><ol data-diff-list></ol><h3>${escapeGrowthHtml(fields.patch)}</h3><p class="hint">${escapeGrowthHtml(fields.patchHint)}</p><textarea id="json-diff-patch" name="patch" data-json-patch rows="10" readonly spellcheck="false" aria-label="${escapeGrowthHtml(fields.patch)}"></textarea><div class="actions">${button('copy', actions.copy, 'secondary')}${button('copyPatch', actions.copyPatch, 'secondary')}${button('downloadPatch', actions.downloadPatch, 'secondary')}</div></section>
+  </form>`, copy);
+
+  if (toolId === 'text-to-binary-converter') return attachCopy(`<form id="tool-form" class="text-to-binary-converter" novalidate>
+    ${label('text-binary-mode', fields.mode, `<select id="text-binary-mode" name="mode"><option value="encode">${escapeGrowthHtml(fields.textToBinary)}</option><option value="decode">${escapeGrowthHtml(fields.binaryToText)}</option></select>`)}
+    <div data-text-input>${label('text-binary-text', fields.textInput, `<textarea id="text-binary-text" name="textInput" rows="8" maxlength="20000" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" required>${escapeGrowthHtml(copy.exampleText)}</textarea>`)}<p class="hint">${escapeGrowthHtml(fields.textHint)}</p></div>
+    <div data-binary-input hidden>${label('text-binary-bits', fields.binaryInput, `<textarea id="text-binary-bits" name="binaryInput" rows="8" maxlength="200000" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" disabled required>${escapeGrowthHtml(copy.exampleBinary)}</textarea>`)}<p class="hint">${escapeGrowthHtml(fields.binaryHint)}</p></div>
+    <label class="checkbox"><input id="text-binary-group" name="groupBytes" type="checkbox" checked><span>${escapeGrowthHtml(fields.groupBytes)}</span></label>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('convert')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><label for="text-binary-output">${escapeGrowthHtml(fields.output)}</label><textarea id="text-binary-output" name="output" data-binary-output rows="10" readonly spellcheck="false"></textarea><p class="hint">${escapeGrowthHtml(fields.copyHint)}</p><div class="actions">${button('copy', actions.copy, 'secondary')}${button('download', actions.download, 'secondary')}</div></section>
   </form>`, copy);
 
   if (toolId === 'weight-loss-calculator') return attachCopy(`<form id="tool-form" novalidate>
