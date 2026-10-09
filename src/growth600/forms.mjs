@@ -76,6 +76,7 @@ export function renderGrowthForm(toolId, copy) {
     'modular-inverse-calculator': ['a', 'modulus', 'accuracyNote', 'formulaLabel', 'formula', 'resultStatus', 'resultGcd', 'resultResidue', 'resultInverse', 'bezout', 'step', 'quotient', 'remainder', 'coefficientA', 'coefficientModulus', 'existsLabel', 'missingLabel', 'verification'],
     'a-b-test-calculator': ['groupA', 'groupB', 'visitorsA', 'conversionsA', 'visitorsB', 'conversionsB', 'accuracyNote', 'rateA', 'rateB', 'difference', 'percentagePoints', 'relativeLift', 'notAvailable', 'intervalA', 'intervalB', 'intervalDifference', 'pValue', 'conclusion', 'significant', 'inconclusive', 'method', 'methodNote'],
     'investment-allocation-calculator': ['assetCount', 'asset', 'assetName', 'currentValue', 'targetWeight', 'currencyCode', 'contribution', 'accuracyNote', 'resultSummary', 'currentTotal', 'contributionTotal', 'projectedTotal', 'targetValue', 'contributionShare', 'difference'],
+    'repeating-decimal-to-fraction': ['decimal', 'inputHint', 'accuracyNote', 'resultSummary', 'simplified', 'mixedNumber', 'derivation'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -196,6 +197,7 @@ export function renderGrowthForm(toolId, copy) {
     'modular-inverse-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'a-b-test-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'investment-allocation-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
+    'repeating-decimal-to-fraction': ['calculate', 'reset', 'example', 'result', 'copy'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
@@ -928,6 +930,14 @@ export function renderGrowthForm(toolId, copy) {
       <div class="investment-allocation-table-scroll"><table class="investment-allocation-table"><thead><tr><th scope="col">${escapeGrowthHtml(fields.asset)}</th><th scope="col">${escapeGrowthHtml(fields.targetWeight)}</th><th scope="col">${escapeGrowthHtml(fields.currentValue)}</th><th scope="col">${escapeGrowthHtml(fields.targetValue)}</th><th scope="col">${escapeGrowthHtml(fields.contributionShare)}</th><th scope="col">${escapeGrowthHtml(fields.difference)}</th></tr></thead><tbody data-allocation-rows></tbody></table></div>
       <div class="actions">${button('copy', actions.copy, 'secondary')}</div>
     </section>
+  </form>`, copy);
+
+  if (toolId === 'repeating-decimal-to-fraction') return attachCopy(`<form id="tool-form" class="repeating-decimal-to-fraction" novalidate>
+    ${label('repeating-decimal-input', fields.decimal, `<input id="repeating-decimal-input" name="decimal" type="text" inputmode="decimal" value="0.1(6)" placeholder="${escapeGrowthHtml(fields.inputHint)}" maxlength="52" autocomplete="off" spellcheck="false" required>`)}
+    <p class="hint">${escapeGrowthHtml(fields.inputHint)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'weight-loss-calculator') return attachCopy(`<form id="tool-form" novalidate>

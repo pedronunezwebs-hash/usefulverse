@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 112);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 112);
+  assert.equal(growthPilotTools.length, 113);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 113);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -154,6 +154,15 @@ test('investment allocation calculator applies user-set targets without recommen
   assert.match(tool.acceptance, /6,000 and 4,000/u);
   assert.match(tool.boundary, /does not recommend an allocation/u);
   assert.deepEqual(tool.relatedExistingIds, ['compound-interest-calculator']);
+});
+
+test('repeating decimal converter handles periodic notation without competing with finite fraction arithmetic', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'repeating-decimal-to-fraction');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'repeating decimal to fraction calculator');
+  assert.match(tool.acceptance, /0\.\(3\).*1\/3/u);
+  assert.match(tool.boundary, /not finite decimals/u);
+  assert.deepEqual(tool.relatedExistingIds, ['fraction-calculator']);
 });
 
 test('Roth vs traditional compares user-entered tax scenarios without giving tax or account advice', () => {

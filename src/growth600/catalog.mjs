@@ -1343,6 +1343,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['compound-interest-calculator'],
     logicModule: './tools/investment-allocation-calculator/logic.mjs',
   },
+  {
+    id: 'repeating-decimal-to-fraction',
+    category: 'math-statistics',
+    type: 'calculator',
+    primaryIntent: 'repeating decimal to fraction calculator',
+    secondaryIntents: ['recurring decimal to fraction calculator', 'convert repeating decimals to fractions', 'repeating decimal fraction conversion steps'],
+    functions: ['parse conventional parentheses notation for the repeating block', 'convert repeating decimals to exact reduced fractions using integer arithmetic', 'show the exact subtraction components and optional mixed-number form', 'bound whole, non-repeating and repeating digits to keep calculations safe'],
+    acceptance: '0.(3) returns exactly 1/3; 0.1(6) returns exactly 1/6; 1.2(34) returns exactly 611/495.',
+    boundary: 'Handles recurring decimal notation with the repeat in parentheses, not finite decimals, arbitrary typed expressions, or general fraction arithmetic. Accepts 1–18 repeating digits, up to 18 non-repeating digits and 12 whole-number digits. The exact calculation is local and uses BigInt; no API, account or upload.',
+    relatedExistingIds: ['fraction-calculator'],
+    logicModule: './tools/repeating-decimal-to-fraction/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

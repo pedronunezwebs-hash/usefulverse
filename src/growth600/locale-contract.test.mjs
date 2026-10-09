@@ -132,6 +132,20 @@ test('investment allocation calculator includes static copy, three FAQs and boun
   assert.match(localizedCopies.en[tool.id].fields.accuracyNote, /not investment advice/u);
 });
 
+test('repeating-decimal conversion has static copy and exact-decimal FAQ coverage in all locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'repeating-decimal-to-fraction');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, `${key}: metadata limits`);
+    assert.ok(copy.fields.decimal && copy.fields.inputHint && copy.fields.derivation, key);
+    assert.ok(copy.actions.calculate && copy.actions.copy && copy.messages.checkInputs, key);
+  }
+  assert.match(localizedCopies.en[tool.id].description, /0\.\(3\)/u);
+});
+
 function assertMachineAcceptedGrowthToolInAllLocales(tool) {
   assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
   for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
@@ -1378,5 +1392,18 @@ test('Roth vs traditional calculator has complete locale copy, bounded metadata 
     assert.ok(copy.fields.accuracyNote.length > 40, `${key}: disclaimer`);
     assert.ok(copy.fields.irsSource.length > 0, `${key}: official IRS link label`);
     assert.doesNotMatch(JSON.stringify(copy), /UVROTHIRA\d+X\d+END|undefined/iu, key);
+  }
+});
+
+test('repeating decimal calculator preserves the period-and-parentheses notation in every locale', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'repeating-decimal-to-fraction');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.ok(copy.title.length <= 60, `${key}: title limit`);
+    assert.ok(copy.description.length <= 160, `${key}: description limit`);
+    assert.match(copy.fields.inputHint, /0\.\(3\).*0\.1\(6\).*1\.2\(34\)/u, `${key}: exact notation`);
+    assert.match(copy.fields.accuracyNote, /1.*18|18.*1/u, `${key}: repeating period guidance`);
   }
 });
