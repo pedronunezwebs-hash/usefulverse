@@ -86,6 +86,7 @@ export function renderGrowthForm(toolId, copy) {
     'text-to-binary-converter': ['mode', 'textToBinary', 'binaryToText', 'textInput', 'textHint', 'binaryInput', 'binaryHint', 'groupBytes', 'accuracyNote', 'output', 'result', 'copyHint'],
     'certificate-decoder': ['certificate', 'upload', 'supported', 'accuracyNote', 'resultTitle', 'subject', 'issuer', 'commonName', 'organizationName', 'countryName', 'localityName', 'stateOrProvinceName', 'organizationalUnitName', 'streetAddress', 'serialNumber', 'notBefore', 'notAfter', 'alternativeNames', 'fingerprint', 'noAlternativeNames', 'unlistedAttribute'],
     'json-to-xml-converter': ['mode', 'jsonToXml', 'xmlToJson', 'jsonInput', 'jsonHint', 'xmlInput', 'xmlHint', 'rootName', 'indent', 'accuracyNote', 'output', 'result', 'copyHint'],
+    'json-to-excel': ['jsonInput', 'jsonHint', 'dataset', 'datasetHint', 'rootObject', 'preview', 'tableLabel', 'rowCount', 'columnCount', 'previewLimit', 'flattenNote', 'privacyNote'],
     'har-viewer': ['file', 'paste', 'pasteHint', 'privacyWarning', 'search', 'method', 'statusFilter', 'all', 'errorsOnly', 'successOnly', 'totalRequests', 'failedRequests', 'transferred', 'totalTime', 'slowest', 'request', 'response', 'duration', 'size', 'waterfall', 'results', 'shown', 'of', 'noMatches', 'methodLabel', 'statusLabel', 'urlLabel', 'durationLabel', 'sizeLabel', 'timingNote', 'unknownDate', 'invalid', 'tooMany'],
     'robots-txt-tester': ['robotsText', 'robotsHint', 'userAgent', 'userAgentHint', 'urls', 'urlsHint', 'scopeNote', 'agentGroup', 'noSpecificGroup', 'ruleCount', 'diagnostics', 'ignored', 'malformed', 'allowed', 'blocked', 'winningRule', 'defaultRule'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
@@ -218,6 +219,7 @@ export function renderGrowthForm(toolId, copy) {
     'text-to-binary-converter': ['convert', 'example', 'reset', 'result', 'copy', 'download'],
     'certificate-decoder': ['decode', 'example', 'reset', 'copySummary'],
     'json-to-xml-converter': ['convert', 'example', 'reset', 'copy', 'download'],
+    'json-to-excel': ['preview', 'example', 'reset', 'download'],
     'har-viewer': ['analyze', 'example', 'reset', 'showMore', 'result'],
     'robots-txt-tester': ['test', 'example', 'reset', 'result'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
@@ -1058,6 +1060,17 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('convert')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.result)}</h2><label for="json-xml-output">${escapeGrowthHtml(fields.output)}</label><textarea id="json-xml-output" name="output" data-json-xml-output rows="12" readonly spellcheck="false"></textarea><p class="hint">${escapeGrowthHtml(fields.copyHint)}</p><div class="actions">${button('copy', actions.copy, 'secondary')}${button('download', actions.download, 'secondary')}</div></section>
+  </form>`, copy);
+
+  if (toolId === 'json-to-excel') return attachCopy(`<form id="tool-form" class="json-to-excel" novalidate>
+    ${label('json-excel-source', fields.jsonInput, `<textarea id="json-excel-source" name="jsonInput" rows="10" maxlength="2000000" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" required></textarea>`)}
+    <p class="hint">${escapeGrowthHtml(fields.jsonHint)}</p>
+    ${label('json-excel-dataset', fields.dataset, `<select id="json-excel-dataset" name="dataset"><option value="$root">${escapeGrowthHtml(fields.datasetHint)}</option></select>`)}
+    <p class="hint">${escapeGrowthHtml(fields.flattenNote)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${button('preview', actions.preview)}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.preview)}</h2><p class="hint" data-json-excel-count></p><p class="hint">${escapeGrowthHtml(fields.previewLimit)}</p><div class="table-scroll"><table><caption>${escapeGrowthHtml(fields.tableLabel)}</caption><thead data-json-excel-head></thead><tbody data-json-excel-body></tbody></table></div>${button('download', actions.download, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'har-viewer') return attachCopy(`<form id="tool-form" class="har-viewer" novalidate>

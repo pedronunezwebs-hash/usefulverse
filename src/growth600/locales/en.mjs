@@ -117,6 +117,8 @@ import harViewerCopies from './har-viewer.mjs';
 import { harViewerEnglishCopy } from './har-viewer.en.mjs';
 import robotsTxtTesterCopies from './robots-txt-tester.mjs';
 import { robotsTxtTesterEnglishCopy } from './robots-txt-tester.en.mjs';
+import jsonToExcelCopies from './json-to-excel.mjs';
+import { jsonToExcelEnglishCopy } from './json-to-excel.en.mjs';
 import openApiEditorCopies from './openapi-editor.mjs';
 import { openApiEditorEnglishCopy } from './openapi-editor.en.mjs';
 import fontPairingToolCopies from './font-pairing-tool.mjs';
@@ -1124,5 +1126,6 @@ registerGrowthLocaleExtension(source, 'certificate-decoder', { ...certificateDec
 registerGrowthLocaleExtension(source, 'json-to-xml-converter', { ...jsonToXmlCopies, en: jsonToXmlEnglishCopy }, 'certificate-decoder');
 registerGrowthLocaleExtension(source, 'har-viewer', { ...harViewerCopies, en: harViewerEnglishCopy }, 'json-to-xml-converter');
 registerGrowthLocaleExtension(source, 'robots-txt-tester', { ...robotsTxtTesterCopies, en: robotsTxtTesterEnglishCopy }, 'har-viewer');
+registerGrowthLocaleExtension(source, 'json-to-excel', { ...jsonToExcelCopies, en: jsonToExcelEnglishCopy }, 'robots-txt-tester');
 
 export default Object.freeze(source);
