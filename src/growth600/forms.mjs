@@ -74,6 +74,7 @@ export function renderGrowthForm(toolId, copy) {
     '555-timer-calculator': ['mode', 'astable', 'monostable', 'resistanceA', 'resistanceB', 'resistance', 'resistanceUnit', 'ohms', 'kilohms', 'megohms', 'capacitance', 'capacitanceUnit', 'farads', 'millifarads', 'microfarads', 'nanofarads', 'picofarads', 'accuracyNote', 'frequencyNote', 'highFrequencyWarning', 'formulaNote', 'resultFrequency', 'resultPeriod', 'resultHigh', 'resultLow', 'resultWaveformDuty', 'resultDischargeDuty', 'resultPulse'],
     'fourier-series-calculator': ['samples', 'samplesHint', 'period', 'periodHint', 'harmonics', 'harmonicsHint', 'accuracyNote', 'formulaLabel', 'formula', 'resultDc', 'resultFrequency', 'resultHarmonics', 'resultRms', 'coefficient', 'coefficientA', 'coefficientB', 'coefficientAmplitude', 'phase', 'radians', 'frequencyUnit', 'chartLabel', 'samplesLegend', 'reconstructionLegend'],
     'modular-inverse-calculator': ['a', 'modulus', 'accuracyNote', 'formulaLabel', 'formula', 'resultStatus', 'resultGcd', 'resultResidue', 'resultInverse', 'bezout', 'step', 'quotient', 'remainder', 'coefficientA', 'coefficientModulus', 'existsLabel', 'missingLabel', 'verification'],
+    'a-b-test-calculator': ['groupA', 'groupB', 'visitorsA', 'conversionsA', 'visitorsB', 'conversionsB', 'accuracyNote', 'rateA', 'rateB', 'difference', 'percentagePoints', 'relativeLift', 'notAvailable', 'intervalA', 'intervalB', 'intervalDifference', 'pValue', 'conclusion', 'significant', 'inconclusive', 'method', 'methodNote'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -192,6 +193,7 @@ export function renderGrowthForm(toolId, copy) {
     '555-timer-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'fourier-series-calculator': ['calculate', 'reset', 'example', 'constant', 'result', 'copy'],
     'modular-inverse-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
+    'a-b-test-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
@@ -878,6 +880,22 @@ export function renderGrowthForm(toolId, copy) {
     </div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <p class="hint"><strong>${escapeGrowthHtml(fields.formulaLabel)}:</strong> <span>${escapeGrowthHtml(fields.formula)}</span></p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'a-b-test-calculator') return attachCopy(`<form id="tool-form" class="a-b-test-calculator" novalidate>
+    <div class="calculator-grid">
+      <fieldset><legend>${escapeGrowthHtml(fields.groupA)}</legend>
+        ${label('ab-visitors-a', fields.visitorsA, '<input id="ab-visitors-a" name="visitorsA" type="text" inputmode="numeric" value="500" maxlength="16" required>')}
+        ${label('ab-conversions-a', fields.conversionsA, '<input id="ab-conversions-a" name="conversionsA" type="text" inputmode="numeric" value="30" maxlength="16" required>')}
+      </fieldset>
+      <fieldset><legend>${escapeGrowthHtml(fields.groupB)}</legend>
+        ${label('ab-visitors-b', fields.visitorsB, '<input id="ab-visitors-b" name="visitorsB" type="text" inputmode="numeric" value="500" maxlength="16" required>')}
+        ${label('ab-conversions-b', fields.conversionsB, '<input id="ab-conversions-b" name="conversionsB" type="text" inputmode="numeric" value="40" maxlength="16" required>')}
+      </fieldset>
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);

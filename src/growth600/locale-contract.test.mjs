@@ -105,6 +105,19 @@ test('modular inverse calculator has complete translated copies and preserves it
   }
 });
 
+test('A/B test calculator has 36 copies, explicit group labels, three FAQs, and bounded metadata', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'a-b-test-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, `${key}: metadata limits`);
+    assert.ok(copy.fields.groupA && copy.fields.groupB && copy.fields.methodNote, key);
+    assert.ok(copy.actions.example && copy.messages.inconclusive, key);
+  }
+});
+
 function assertMachineAcceptedGrowthToolInAllLocales(tool) {
   assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
   for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {

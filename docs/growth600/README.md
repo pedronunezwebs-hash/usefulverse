@@ -1,6 +1,6 @@
 # Plan de expansión a 600 herramientas · 2026-10-07
 
-Plan y registro vivo de implementación. La rama de continuación actual es `codex/growth600-friction-2026-10-09`; el avance se integra en `main` tras superar CI y los gates de publicación de la tanda.
+Plan y registro vivo de implementación. La rama de entrega actual es `codex/growth600-ab-test-release-2026-10-09`; integrar en `main` tras superar CI y los gates de publicación de la tanda.
 
 - [Plan y checklist completo](PLAN-600.md): catálogo protegido de 277, 323 candidatas nuevas, 36 idiomas, fases, contratos y gates.
 - [Progreso de implementación](PROGRESS.md): fases verificadas, decisiones, pilotos y siguiente acción para reanudar.
