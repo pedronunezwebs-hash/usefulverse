@@ -81,6 +81,7 @@ export function renderGrowthForm(toolId, copy) {
     'singular-value-decomposition-calculator': ['matrix', 'matrixHint', 'accuracyNote', 'resultRank', 'resultSingularValues', 'resultReconstructionError', 'resultOriginal', 'resultU', 'resultSigma', 'resultVt', 'resultReconstructed', 'resultFrobenius'],
     'spearman-correlation-calculator': ['pairs', 'pairsHint', 'accuracyNote', 'resultRho', 'resultCount', 'rankX', 'rankY', 'resultTable', 'tiesNote'],
     'wilcoxon-signed-rank-test-calculator': ['pairs', 'pairsHint', 'accuracyNote', 'resultStatus', 'resultCount', 'nonzeroLabel', 'zeroCount', 'tiedCount', 'positiveRankSum', 'negativeRankSum', 'pValue', 'method', 'methodExact', 'methodApproximation', 'methodNotAvailable', 'resultTable', 'before', 'after', 'difference', 'absoluteRank', 'signedRank'],
+    'chinese-remainder-theorem-calculator': ['congruences', 'congruencesHint', 'accuracyNote', 'resultStatus', 'resultResidue', 'resultModulus', 'combinedEquation', 'equationCount', 'conflictAt', 'conflictGcd', 'difference', 'stepLabel'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -206,6 +207,7 @@ export function renderGrowthForm(toolId, copy) {
     'singular-value-decomposition-calculator': ['calculate', 'reset', 'example', 'result', 'downloadCsv'],
     'spearman-correlation-calculator': ['calculate', 'reset', 'example', 'result', 'downloadCsv'],
     'wilcoxon-signed-rank-test-calculator': ['calculate', 'reset', 'example', 'result', 'downloadCsv'],
+    'chinese-remainder-theorem-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
@@ -988,6 +990,15 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><p data-result-status></p><p data-result-count></p><p data-result-zero></p><p data-result-ties></p><p data-result-positive></p><p data-result-negative></p><p data-result-p></p><p data-result-method></p><div data-result-content></div><div class="actions">${button('downloadCsv', actions.downloadCsv, 'secondary')}</div></section>
+  </form>`, copy);
+
+  if (toolId === 'chinese-remainder-theorem-calculator') return attachCopy(`<form id="tool-form" class="chinese-remainder-calculator" novalidate>
+    ${label('crt-congruences', fields.congruences, '<textarea id="crt-congruences" name="congruences" rows="7" maxlength="2400" spellcheck="false" required>' + escapeGrowthHtml(copy.exampleCongruences) + '</textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.congruencesHint)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'weight-loss-calculator') return attachCopy(`<form id="tool-form" novalidate>

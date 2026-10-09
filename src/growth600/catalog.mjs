@@ -1403,6 +1403,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: [],
     logicModule: './tools/wilcoxon-signed-rank-test-calculator/logic.mjs',
   },
+  {
+    id: 'chinese-remainder-theorem-calculator',
+    category: 'math-statistics',
+    type: 'calculator',
+    primaryIntent: 'chinese remainder theorem calculator',
+    secondaryIntents: ['crt calculator', 'modular congruence calculator', 'chinese remainder theorem solver'],
+    functions: ['solve 2–20 integer congruences using exact BigInt arithmetic', 'combine coprime or compatible non-coprime moduli and detect incompatible systems', 'show the least nonnegative solution and combined modulus, with intermediate combinations', 'accept negative and Arabic/Persian digit inputs and copy a local result'],
+    acceptance: 'x ≡ 2 (mod 3) and x ≡ 3 (mod 5) returns x ≡ 8 (mod 15); x ≡ 2 (mod 4) and x ≡ 6 (mod 8) returns 6 (mod 8); x ≡ 1 (mod 4) and x ≡ 2 (mod 6) reports no solution.',
+    boundary: 'Solves 2–20 integer congruences with moduli ≥2 and absolute input values ≤10¹². Uses exact local BigInt arithmetic. Compatible non-coprime systems are supported; incompatible systems are reported. It does not factor integers, prove primality or solve inequalities. Inputs stay in this browser.',
+    relatedExistingIds: ['modular-inverse-calculator', 'system-of-equations-calculator'],
+    logicModule: './tools/chinese-remainder-theorem-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {
