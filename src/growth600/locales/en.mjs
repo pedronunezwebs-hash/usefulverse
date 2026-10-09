@@ -85,6 +85,8 @@ import bodyWaterCalculatorCopies from './body-water-calculator.mjs';
 import { bodyWaterCalculatorEnglishCopy } from './body-water-calculator.en.mjs';
 import timer555Copies from './555-timer-calculator.mjs';
 import { timer555EnglishCopy } from './555-timer-calculator.en.mjs';
+import fourierSeriesCopies from './fourier-series-calculator.mjs';
+import { fourierSeriesEnglishCopy } from './fourier-series-calculator.en.mjs';
 import openApiEditorCopies from './openapi-editor.mjs';
 import { openApiEditorEnglishCopy } from './openapi-editor.en.mjs';
 import fontPairingToolCopies from './font-pairing-tool.mjs';
@@ -990,5 +992,14 @@ registerGrowthLocaleExtension(source, 'capacitor-calculator', {
 }, 'hijri-calendar-converter');
 registerGrowthLocaleExtension(source, 'body-water-calculator', { ...bodyWaterCalculatorCopies, en: bodyWaterCalculatorEnglishCopy }, 'capacitor-calculator');
 registerGrowthLocaleExtension(source, '555-timer-calculator', { ...timer555Copies, en: timer555EnglishCopy }, 'body-water-calculator');
+Object.assign(fourierSeriesCopies.fr.fields, { resultRms: 'Erreur RMS des échantillons', radians: 'radians' });
+Object.assign(fourierSeriesCopies.sw.fields, { formulaLabel: 'Mfululizo halisi wa Fourier', coefficient: 'Harmoniki', coefficientA: 'Mgawo wa kosini aₙ', coefficientB: 'Mgawo wa sine bₙ', coefficientAmplitude: 'Amplitudo', radians: 'radiani', reconstructionLegend: 'Ujenzi upya wa Fourier' });
+Object.assign(fourierSeriesCopies.sw.actions, { reset: 'Futa' });
+Object.assign(fourierSeriesCopies.ha, { name: 'Kalkuleta na jerin Fourier' });
+Object.assign(fourierSeriesCopies.ha.fields, { formulaLabel: 'Jerin Fourier na gaske', resultDc: 'Bangaren DC (matsakaici)', resultRms: 'Kuskuren RMS na samfurori', coefficient: 'Harmoniki', coefficientA: 'Coefficient na cosine aₙ', coefficientB: 'Coefficient na sine bₙ', coefficientAmplitude: 'Girman sigina', radians: 'radian' });
+Object.assign(fourierSeriesCopies.tl, { name: 'Kalkulador ng Seryeng Fourier' });
+Object.assign(fourierSeriesCopies.tl.fields, { formulaLabel: 'Tunay na seryeng Fourier', resultDc: 'Bahaging DC (karaniwang halaga)', resultRms: 'Error RMS ng mga sample', coefficient: 'Harmoniko', coefficientA: 'Koepisyent ng cosine aₙ', coefficientB: 'Koepisyent ng sine bₙ', coefficientAmplitude: 'Amplitud', phase: 'Yugto', radians: 'radyan', reconstructionLegend: 'Muling pagkakabuo ng Fourier' });
+Object.assign(fourierSeriesCopies.tl.actions, { reset: 'I-clear' });
+registerGrowthLocaleExtension(source, 'fourier-series-calculator', { ...fourierSeriesCopies, en: fourierSeriesEnglishCopy }, '555-timer-calculator');
 
 export default Object.freeze(source);

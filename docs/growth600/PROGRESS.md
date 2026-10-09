@@ -2,14 +2,27 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## En curso · 555 Timer Calculator (#292) · 2026-10-09
+## En curso · Fourier Series Calculator (#293) · 2026-10-09
+
+- [x] C/F — Reutilizada la ficha del plan: `fourier series calculator`, 480 búsquedas/mes US/en, KD 0; `fourier coefficients calculator`, 480/mes, KD 0. Sin consultas nuevas a DataForSEO ni gasto de API.
+- [x] E/B — Calculadora local de coeficientes reales de Fourier a partir de 4–128 muestras numéricas uniformes de un periodo; límite armónico inferior al Nyquist, componente DC, coeficientes seno/coseno, amplitud/fase, reconstrucción y error RMS sobre muestras. No acepta archivos de audio, no analiza espectros, no integra expresiones simbólicas ni sube datos. Gráfica SVG accesible.
+- [x] X lógica/integración — pruebas específicas de lógica, formulario, catálogo, controlador y render pasan; regresión completa **1.447/1.447**. `npm run locale:release-check` pasa para las 20 lenguas expandidas; contrato del tool y auditoría del módulo confirman 36 copias, fórmula matemática idéntica, FAQs 3/idioma y metadata dentro de 60/160 caracteres.
+- [x] B — controlador aislado minificado **7.365 bytes**, bajo el presupuesto de 24 KiB; guard de build acepta sin red ni código dinámico.
+- [x] L — 36 copias estáticas derivadas del inglés con traducción automática Google solicitada/autorizada; metadatos saneados, fórmula inmutable y nombres/campos/mensajes/FAQs traducidos. Aceptada como traducción automática, no revisión nativa; sin traductor en producción.
+- [x] X/B local — `npm run check` conserva 10.260 URLs del sitio principal; build Growth600 genera **3.960 rutas únicas** (109 herramientas × 36 + 36 portadas; 4.122 archivos, 118.764.343 bytes). Chrome EN/AR: coeficientes de seno conocidos, DC constante, caso no constante con cero armónicos, entrada inválida limpia resultados; dígitos árabes funcionan, RTL sin overflow y consola limpia. Sin peticiones de terceros; carga solo HTML/CSS/JS/favicons del build. No PageSpeed/Lighthouse.
+- [ ] P/S — PR, CI, despliegue del hub y sitemap público pendientes.
+- **Estado real:** 108 herramientas del hub están publicadas y verificadas; #293 es la herramienta 109 del build local, todavía no publicada. No afirmar indexación ni envío manual a buscadores.
+- **Siguiente candidata:** #299 Modular Inverse Calculator. No PageSpeed/Lighthouse ni nueva investigación de DataForSEO.
+
+## Publicada · 555 Timer Calculator (#292) · 2026-10-09
 
 - [x] C/F — Ficha reutilizada del plan: `555 timer calculator`, 590 búsquedas/mes US/en, KD 23; `555 astable calculator`, 140/mes, KD 17; CPC 0,14 USD (no CPM). No se hicieron llamadas adicionales a DataForSEO.
 - [x] E/B — Cálculo local del 555 astable (frecuencia, período, tiempos alto/bajo, ciclo de forma de onda y fracción de descarga) y monoestable (pulso ≈1,1RC), unidades de resistencias/capacitancia, ejemplos y aviso sobre la variación del circuito real. Distingue temporizador electrónico de `online-timer`; sin API, servidor, archivos ni coste por uso.
 - [x] L — 36 copias estáticas basadas en inglés y traducción Google automática. Fórmulas matemáticas idénticas; las etiquetas del modo/ciclo y el aviso de frecuencia están localizados. Títulos ≤60 y descripciones ≤160, sin saltos de línea. Traducción automática, no revisión nativa.
 - [x] X — Lógica: 5 pruebas específicas; gates focales de catálogo/formulario/build/locales **200/200**; `npm test` **1.438/1.438**, `npm run locale:release-check` y `npm run check` pasan. El sitio principal conserva 10.260 URLs; el build Growth600 genera **3.924 páginas** (108 × 36 + 36 portadas; 4.085 archivos; 117.681.050 bytes).
 - [x] B — Chrome local EN y AR: ejemplo astable 10 kΩ/10 kΩ/10 μF → 4,810005 Hz, 207,9 ms, tiempos 138,6/69,3 ms y duty 66,6667%; ejemplo monoestable 100 kΩ/10 μF → 1,1 s. A 10 pF, 4,810005 MHz; el aviso >100 kHz aparece en EN/AR. Árabe RTL a 390 px sin overflow; sin errores/avisos de consola ni peticiones de terceros.
-- [ ] P/S — PR/CI/deploy y sitemap público pendientes.
+- [x] P/S — PR #69 integrada en `92a9553079e019c26d9250bf1636415f2f9b0a1e`; pipeline principal `37865313492` y publicación del hub `37866007189` terminaron correctamente. Rutas EN/AR HTTP 200; sitemap público HTTP 200 con **3.924 URLs únicas**, incluidas las 36 variantes de 555. Sin envío manual ni afirmación de indexación.
+- **No PageSpeed/Lighthouse.**
 
 ## Publicada · Body Water Calculator (#291) · 2026-10-09
 
@@ -19,7 +32,7 @@
 - [x] X — Lógica y validación focal **70/70**; regresión `npm test` **1.432/1.432**; `npm run locale:release-check`, `npm run check` y `git diff --check` pasan. La web principal conserva **10.260 URLs**. Build del hub **3.888 URLs únicas** (107 × 36 + 36 portadas), 4.048 archivos y 116.607.832 bytes.
 - [x] B — Chrome EN/AR: 30 años, 175 cm, 70 kg → 41,92 L y 59,89%; unidades imperiales equivalentes producen el mismo valor; dígitos árabes parseados, edad 17 invalida y elimina resultado obsoleto; RTL a 390 px sin overflow, consola limpia. La carga del hub no incorpora traducción online.
 - [x] P/S — PR [#68](https://github.com/pedronunezwebs-hash/usefulverse/pull/68) fusionada en `8ffc4dd9f896139e8bb1d07f15a16dd6708a8a25`; pipeline principal **37863855116** y publicación del hub **37864335180** correctos. URLs EN/AR HTTP 200. Sitemap público: **3.888 URLs únicas**, con las 36 variantes de Body Water. No se envió una solicitud manual a buscadores ni se afirma indexación. No PageSpeed/Lighthouse.
-- **Siguiente candidata:** #292 555 Timer Calculator. No PageSpeed/Lighthouse ni nueva investigación de DataForSEO.
+- **Siguiente candidata:** #293 Fourier Series Calculator. No PageSpeed/Lighthouse ni nueva investigación de DataForSEO.
 
 ## Publicada · Capacitor Calculator (#290) · 2026-10-09
 

@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 108);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 108);
+  assert.equal(growthPilotTools.length, 109);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 109);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -116,6 +116,16 @@ test('555 timer calculator keeps astable and monostable circuit timing distinct 
   assert.match(tool.functions.join(' '), /astable high time, low time, period, frequency/u);
   assert.match(tool.boundary, /does not simulate a specific manufacturer/u);
   assert.deepEqual(tool.relatedExistingIds, ['online-timer']);
+});
+
+test('Fourier series calculator uses sampled periodic data, not audio uploads or symbolic expressions', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'fourier-series-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'fourier series calculator');
+  assert.match(tool.functions.join(' '), /4–128 equally spaced numeric samples/u);
+  assert.match(tool.acceptance, /constant input.*DC = 5/su);
+  assert.match(tool.boundary, /not an audio player/u);
+  assert.deepEqual(tool.relatedExistingIds, ['audio-spectrogram', 'function-grapher']);
 });
 
 test('Roth vs traditional compares user-entered tax scenarios without giving tax or account advice', () => {
