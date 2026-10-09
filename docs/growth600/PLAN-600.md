@@ -1210,8 +1210,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 193 · Ph Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `ph-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/ph-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `ph-calculator`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/ph-calculator/` + otras 35 versiones; sitemap público confirmado. Ver gates y pruebas en `docs/growth600/PROGRESS.md`.
 - **Demanda:** `ph calculator` — 2.400 búsquedas/mes US/en, KD 0; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Ácido/base fuerte y débil acotados, pH/pOH y método
 - **Prueba de aceptación específica:** ConcentraciónH+1e-7 da pH7 bajo supuesto25C
@@ -1225,11 +1225,11 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 ### 194 · Section Modulus Calculator
 
 - [ ] **C/F/E/X/L/B/P/S completos — `section-modulus-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/section-modulus-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- **Destino propuesto:** `https://tools.usefulverse.com/tools/section-modulus-calculator/`; otras 35 versiones con los prefijos del anexo. Implementación/QA local en `docs/growth600/PROGRESS.md`; aún no publicado.
 - **Demanda:** `moment of inertia calculator` — 2.400 búsquedas/mes US/en, KD 0; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Secciones simples, centroide, Ix/Iy y módulo
 - **Prueba de aceptación específica:** Cuadrado tiene Ix=Iy
-- **Frontera con otras herramientas:** beam-deflection-calculator: propiedades de sección no carga. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
+- **Frontera con otras herramientas:** beam-deflection-calculator: propiedades de sección no carga; no aparece como ruta activa en el catálogo actual. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `section modulus calculator` — 480/mes US/en; KD 2.

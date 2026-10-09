@@ -288,6 +288,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/ph-calculator/logic.mjs',
   },
   {
+    id: 'section-modulus-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'moment of inertia calculator',
+    secondaryIntents: ['section modulus calculator', 'second moment of area calculator', 'area moment of inertia calculator'],
+    functions: ['calculate area and centroid coordinates for solid rectangle, solid circle, centered hollow rectangle, circular tube and triangle cross-sections', 'calculate centroidal Ix and Iy in the same user-selected length unit as the dimensions', 'report elastic section modulus about x with separate top and bottom values for an asymmetric triangle, and about y', 'show a clear structural-design boundary and keep all inputs in the browser'],
+    acceptance: 'A 10 × 10 square has Ix=Iy=10⁴/12 length⁴ and equal x-axis section moduli; the centered hollow rectangle is derived by subtracting the void; triangle centroid lies at h/3 above its base.',
+    boundary: 'Ideal prismatic geometry only for a small set of simple shapes. Hollow sections are centered; moments are about centroidal axes parallel to the entered dimensions. Not an I-beam/section database, stress or load-capacity check, buckling analysis, connection design or code-compliance tool. Material, loads, end conditions, imperfections and safety factors are not modeled. Have structural decisions reviewed by a qualified engineer; calculations are local and inputs are not uploaded.',
+    relatedExistingIds: ['trapezoid-calculator'],
+    logicModule: './tools/section-modulus-calculator/logic.mjs',
+  },
+  {
     id: 'dilution-calculator',
     category: 'science-engineering',
     type: 'calculator',
