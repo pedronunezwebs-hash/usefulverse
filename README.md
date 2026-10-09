@@ -16,9 +16,9 @@ Browser-first collection of fast, private, static tools for everyday work.
 
 The additional Growth600 tools are published as a separate static Cloudflare Pages site at
 [tools.usefulverse.com](https://tools.usefulverse.com/), so they do not replace or
-change the 277-tool catalog above. The hub contains 130 additional tools in
+change the 277-tool catalog above. The hub contains 131 additional tools in
 the same 36 locales. Its canonical URL inventory and language alternates are listed in
-the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (4,716 URLs after the Section Modulus Calculator release);
+the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (4,752 URLs after the Frequency & Wavelength Calculator release);
 the staged candidate checklist and implementation record are in
 [docs/growth600/PLAN-600.md](docs/growth600/PLAN-600.md) and
 [docs/growth600/PROGRESS.md](docs/growth600/PROGRESS.md).

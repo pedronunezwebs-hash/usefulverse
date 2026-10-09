@@ -1,0 +1,26 @@
+export const idealGasLawCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Ideal Gas Law Calculator',
+  title: 'Ideal Gas Law Calculator Free | UsefulVerse',
+  description: 'Solve pressure, volume, moles or temperature with PV = nRT and unit conversion. Free, unlimited browser calculations; no account.',
+  intro: 'Solve one missing value in the ideal gas equation. Enter any three values, choose units, and calculate the fourth in the browser.',
+  howQuestion: 'How do I use the ideal gas law calculator?',
+  howAnswer: 'Use PV = nRT, where P is absolute pressure, V is volume, n is amount of gas in moles, T is absolute temperature in kelvin and R = 8.314462618 J/(mol·K). Enter exactly three positive values and leave the value to solve blank. Unit conversions are handled automatically.',
+  privacyQuestion: 'Are my gas-law values uploaded?',
+  privacyAnswer: 'No. The calculation runs locally in this browser. Values you enter are not uploaded or saved by this tool.',
+  fields: {
+    pressure: 'Pressure (absolute)', volume: 'Volume', amount: 'Amount of gas', temperature: 'Temperature',
+    pressureUnit: 'Pressure unit', volumeUnit: 'Volume unit', amountUnit: 'Amount unit', temperatureUnit: 'Temperature unit',
+    pascal: 'Pascals (Pa)', kilopascal: 'Kilopascals (kPa)', megapascal: 'Megapascals (MPa)', bar: 'Bar', atmosphere: 'Atmospheres (atm)', torr: 'Torr', psi: 'Pounds per square inch (psi)',
+    cubicMeters: 'Cubic metres (m³)', liters: 'Litres (L)', milliliters: 'Millilitres (mL)', cubicFeet: 'Cubic feet (ft³)',
+    mol: 'Moles (mol)', millimol: 'Millimoles (mmol)', kilomol: 'Kilomoles (kmol)', kelvin: 'Kelvin (K)', celsius: 'Degrees Celsius (°C)',
+    accuracyNote: 'This uses the ideal-gas model and the standard gas constant. Enter absolute pressure, not gauge pressure. Temperature must be above 0 K (−273.15 °C). Real gases can differ, especially at high pressure or low temperature; use this as an estimate, not a safety or engineering design check.',
+  },
+  actions: { calculate: 'Calculate missing value', reset: 'Reset', copy: 'Copy results', example: 'Try the 1 atm example', result: 'Ideal gas law result' },
+  messages: { calculated: 'Missing value calculated.', checkInputs: 'Enter exactly three positive values, choose valid units and leave the value to solve blank. Temperature must be above absolute zero.', copied: 'Results copied.', copyUnavailable: 'Copy is not available in this browser.', solved: 'Calculated value', pressure: 'Pressure', volume: 'Volume', amount: 'Amount of gas', temperature: 'Temperature', formula: 'Equation', exampleLoaded: 'The 1 atm example is ready.' },
+  additionalFaqs: [
+    { question: 'What is the ideal gas law equation?', answer: 'The equation is PV = nRT. Use absolute pressure, volume, amount of gas in moles and temperature in kelvin with R = 8.314462618 J/(mol·K). This calculator converts supported units to consistent SI units before solving.' },
+    { question: 'Can I enter Celsius or pressure in atmospheres?', answer: 'Yes. Choose degrees Celsius or kelvin and units including Pa, kPa, MPa, bar, atm, torr or psi. Celsius is converted to absolute temperature; temperatures at or below absolute zero are rejected.' },
+    { question: 'Is the ideal gas law accurate for every gas?', answer: 'No. It is an approximation for gas behaviour. Real gases can depart from the model, especially near condensation, at high pressure or at low temperature. This tool does not assess gas hazards, containers or safe operating conditions.' },
+  ],
+});
