@@ -176,6 +176,19 @@ test('HAR viewer has complete static translations, privacy warnings and preserve
   }
 });
 
+test('robots tester has 36 static translations, local-only scope and safe snippet metadata', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'robots-txt-tester');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.equal(copy.exampleRobots, localizedCopies.en[tool.id].exampleRobots, `${key}: sample rules remain executable`);
+    assert.match(copy.fields.scopeNote, /robots\.txt/u, `${key}: product protocol remains recognizable`);
+    assert.ok(copy.messages.tooComplex, `${key}: bounded-work message`);
+  }
+});
+
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
 const sampleHome = (language) => ({ title: `${language} tools | UsefulVerse`, description: 'Free browser tools.', intro: 'Simple tools.', directoryLabel: 'Tools', freeLabel: 'Free', footerFree: 'Free tools.', skipToTool: 'Skip', home: 'Home', languageLabel: 'Language', breadcrumbLabel: 'Breadcrumb', faqLabel: 'FAQ', copyLanguage: language });

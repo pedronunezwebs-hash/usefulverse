@@ -1464,6 +1464,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/har-viewer/logic.mjs',
   },
   {
+    id: 'robots-txt-tester',
+    category: 'developer-tools',
+    type: 'tool',
+    primaryIntent: 'robots txt tester',
+    secondaryIntents: ['robots txt validator', 'test robots txt rules', 'robots txt checker for urls'],
+    functions: ['paste robots.txt rules and enter a crawler product token plus up to 100 target URLs', 'show the selected crawler group and each URL decision with its winning Allow or Disallow rule', 'report malformed lines and unsupported directives without fetching any URL or file', 'test rules locally with bounded input and a local example'],
+    acceptance: 'For Googlebot, Disallow: /private blocks /private/report, Allow: /private/public overrides it for /private/public/article, and unrelated paths are allowed by default; a wildcard-only group applies to other bot tokens.',
+    boundary: 'Local preview of common robots.txt Allow/Disallow semantics only; not a complete emulator for every crawler and not a substitute for Google/Bing live testing. Does not fetch robots.txt or URLs. Unsupported directives (including Crawl-delay and Sitemap) are reported but not applied. A robots.txt file is public crawler guidance, not access control, and does not guarantee crawling, indexing or ranking. Limits: 200 KB, 5,000 lines, 2,000 rules, 100 URLs, 4,096 characters per URL and a fixed total comparison-work budget.',
+    relatedExistingIds: ['robots-txt-generator'],
+    logicModule: './tools/robots-txt-tester/logic.mjs',
+  },
+  {
     id: 'chinese-remainder-theorem-calculator',
     category: 'math-statistics',
     type: 'calculator',

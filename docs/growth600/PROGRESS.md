@@ -4,13 +4,21 @@
 
 ## Estado público actual · 2026-10-09
 
-- **122 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap de `tools.usefulverse.com` tiene **4.428 URLs** (122 × 36 + 36 páginas de idioma). Esto no equivale a que los buscadores ya hayan indexado cada URL.
+- **123 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap de `tools.usefulverse.com` tiene **4.464 URLs** (123 × 36 + 36 páginas de idioma). Esto no equivale a que los buscadores ya hayan indexado cada URL.
 - #148 Text to Binary Converter: PR #81 integrada; despliegue principal `37891603568` y despliegue del hub `37892340212` correctos. EN/ES/AR responden HTTP 200.
 - #171 Schema Markup Validator, #172 Readability Checker y #173 Savings Goal Calculator ya aparecen en las 36 versiones públicas; verificaciones previas registradas debajo.
 - #189 Certificate Decoder: 36 rutas públicas; detalles de pruebas y despliegue anotados abajo.
 - #195 JSON↔XML Converter: 36 rutas públicas; PR #83 y publicación del hub verificadas, sitemap público actualizado a 4.428 URLs únicas.
-- #215 HAR Viewer: implementación local lista; falta PR/CI, publicación del hub y verificación pública. El build aislado contiene 4.464 URLs únicas (123 × 36 + 36 portadas); no contarla como publicada hasta que el despliegue termine.
+- #215 HAR Viewer: PR #84 integrada en `4e4bab2f2b3a0386c23894b9542fbc091e1ce224`; CI y despliegues principal/hub (run `37899114343`) correctos. EN/AR y sitemap público HTTP 200; **4.464 URLs únicas**, incluidas sus 36 versiones. La herramienta procesa HAR localmente y minimiza valores sensibles; sin PageSpeed/Lighthouse ni afirmación de indexación.
 - `npm run check` conserva **10.260 URLs** del sitio principal; suite actual: **1.574/1.574**; `npm run locale:release-check` pasa para los 36 locales.
+
+## En implementación local · Robots.txt Tester (#223 del plan)
+
+- Herramientas públicas al iniciar: 123 Growth600; la #124 aún no cuenta como publicada.
+- El checkout actual añade un comprobador local de reglas `Allow`/`Disallow` para URLs introducidas por la persona y un token de crawler. Usa selección de grupo más específico, comodines `*` y `$`, precedencia de ruta más específica y límite de cómputo; no consulta ni visita las URLs.
+- Tests del motor, presupuestos contra entradas abusivas, formulario, catálogo, contrato de 36 locales y build pasan; suite general **1.584/1.584**. Release check de los 36 idiomas, `npm run check` (**10.260 URLs principales**) y build aislado (**4.500 páginas; 124 × 36 + 36 portadas**) pasan.
+- Chrome local a 390 px: EN y AR; el ejemplo bloquea `/private` y permite `/private/public`, árabe RTL, ancho 390/390, cero errores de consola y solo solicitudes locales para documento, CSS y controlador.
+- [ ] PR/CI, integración, despliegue público y comprobación del sitemap: pendientes. No se declara publicado ni indexado; no se midió PageSpeed/Lighthouse.
 
 ## Herramientas verificadas en despliegue anterior · #171–#173
 

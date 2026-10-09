@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 123);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 123);
+  assert.equal(growthPilotTools.length, 124);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 124);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -100,6 +100,17 @@ test('HAR viewer analyzes local captures while redacting query values and withho
   assert.match(tool.boundary, /No network import, upload/u);
   assert.match(tool.boundary, /Sensitive query values/u);
   assert.deepEqual(tool.relatedExistingIds, ['url-parser']);
+});
+
+test('robots tester previews local rules without claiming crawler equivalence or duplicating the generator', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'robots-txt-tester');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'robots txt tester');
+  assert.deepEqual(tool.relatedExistingIds, ['robots-txt-generator']);
+  assert.match(tool.functions.join(' '), /winning Allow or Disallow rule/u);
+  assert.match(tool.boundary, /not a complete emulator/u);
+  assert.match(tool.boundary, /does not guarantee crawling/u);
+  assert.match(tool.boundary, /Does not fetch robots\.txt or URLs/u);
 });
 
 test('OpenAPI editor stays a local contract editor and does not duplicate request-builder intent', () => {
