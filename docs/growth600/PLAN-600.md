@@ -1454,7 +1454,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 257 · Pulley Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `pulley-calculator`**
+- [ ] **P/S — `pulley-calculator`** (código, funcionalidad, contenido, locales y QA local completos; falta PR/CI/deploy y verificación pública)
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/pulley-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `pulley calculator` — 1.000 búsquedas/mes US/en, KD 11; nivel B. CPC 0.94 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Diámetros, centros, longitud de correa, RPM y croquis
@@ -1465,6 +1465,10 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `belt length calculator` — 1.000/mes US/en; KD 2.
   - `pulley calculator free online`; `pulley calculator with example`; `pulley calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Avance local (9 oct 2026):** motor local para longitud aproximada de correa abierta, RPM conducida, relación, velocidad lineal, ángulo de envoltura y croquis SVG; unidades mm/in; límites/validación; ejemplo, restablecer, copiar, contenido de límites/seguridad y 4 FAQs. Sin endpoint, dependencia ni procesamiento remoto. 36 locales estáticos por lotes desde inglés (Google Translate); árabe revisado y corregido manualmente; traducciones automáticas no nativas. Prueba dirigida 291/291; suite completa 1.760/1.760; `check`, `locale:release-check`, build del hub (5.256 URLs), inventario README (10.260 sitio principal + 5.256 hub) y `git diff --check` pasan. Chrome móvil 390×844 en inglés/árabe: cálculo correcto (100/200/500 mm y 1.500 RPM → 1.476 mm, 750 RPM, 7,854 m/s, 168,522°), RTL árabe y sin desbordamiento horizontal. Las 277 herramientas originales no se modificaron.
+- **Publicación previa relacionada:** el hub de #252 quedó desplegado en el workflow 37958892046; público EN/AR devuelve HTTP 200 y sitemap público 5.220 URLs. No incluye esta candidata.
+- **Inventario local:** README generado con las rutas del build local; no considerar las 5.256 del hub como públicas hasta que #257 despliegue y la lectura pública las confirme.
+- [ ] **P/S restantes:** revisión del diff, crear PR, CI, merge/deploy principal, publicar hub y verificar rutas EN/AR/sitemap público. No afirmar indexación.
 
 ### 266 · Rlc Circuit Calculator
 

@@ -10551,7 +10551,7 @@ These are the canonical URLs for the additional tools and their localized pages.
 
 <!-- BEGIN GENERATED GROWTH600 URL INVENTORY -->
 
-Generated from `dist-growth600/sitemap.xml`: **5,220 canonical URLs**.
+Generated from `dist-growth600/sitemap.xml`: **5,256 canonical URLs**.
 
 ```text
 https://tools.usefulverse.com/
@@ -10595,6 +10595,7 @@ https://tools.usefulverse.com/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/tools/pressure-calculator/
 https://tools.usefulverse.com/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/tools/pulley-calculator/
 https://tools.usefulverse.com/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/tools/density-calculator/
@@ -10740,6 +10741,7 @@ https://tools.usefulverse.com/es/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/es/tools/pressure-calculator/
 https://tools.usefulverse.com/es/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/es/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/es/tools/pulley-calculator/
 https://tools.usefulverse.com/es/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/es/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/es/tools/density-calculator/
@@ -10885,6 +10887,7 @@ https://tools.usefulverse.com/fr/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/fr/tools/pressure-calculator/
 https://tools.usefulverse.com/fr/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/fr/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/fr/tools/pulley-calculator/
 https://tools.usefulverse.com/fr/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/fr/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/fr/tools/density-calculator/
@@ -11030,6 +11033,7 @@ https://tools.usefulverse.com/pt-br/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/pt-br/tools/pressure-calculator/
 https://tools.usefulverse.com/pt-br/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/pt-br/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/pt-br/tools/pulley-calculator/
 https://tools.usefulverse.com/pt-br/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/pt-br/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/pt-br/tools/density-calculator/
@@ -11175,6 +11179,7 @@ https://tools.usefulverse.com/de/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/de/tools/pressure-calculator/
 https://tools.usefulverse.com/de/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/de/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/de/tools/pulley-calculator/
 https://tools.usefulverse.com/de/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/de/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/de/tools/density-calculator/
@@ -11320,6 +11325,7 @@ https://tools.usefulverse.com/ja/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/ja/tools/pressure-calculator/
 https://tools.usefulverse.com/ja/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/ja/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/ja/tools/pulley-calculator/
 https://tools.usefulverse.com/ja/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ja/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ja/tools/density-calculator/
@@ -11465,6 +11471,7 @@ https://tools.usefulverse.com/ko/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/ko/tools/pressure-calculator/
 https://tools.usefulverse.com/ko/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/ko/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/ko/tools/pulley-calculator/
 https://tools.usefulverse.com/ko/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ko/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ko/tools/density-calculator/
@@ -11610,6 +11617,7 @@ https://tools.usefulverse.com/id/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/id/tools/pressure-calculator/
 https://tools.usefulverse.com/id/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/id/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/id/tools/pulley-calculator/
 https://tools.usefulverse.com/id/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/id/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/id/tools/density-calculator/
@@ -11755,6 +11763,7 @@ https://tools.usefulverse.com/hi/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/hi/tools/pressure-calculator/
 https://tools.usefulverse.com/hi/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/hi/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/hi/tools/pulley-calculator/
 https://tools.usefulverse.com/hi/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/hi/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/hi/tools/density-calculator/
@@ -11900,6 +11909,7 @@ https://tools.usefulverse.com/ar/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/ar/tools/pressure-calculator/
 https://tools.usefulverse.com/ar/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/ar/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/ar/tools/pulley-calculator/
 https://tools.usefulverse.com/ar/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ar/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ar/tools/density-calculator/
@@ -12045,6 +12055,7 @@ https://tools.usefulverse.com/zh-cn/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/zh-cn/tools/pressure-calculator/
 https://tools.usefulverse.com/zh-cn/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/zh-cn/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/zh-cn/tools/pulley-calculator/
 https://tools.usefulverse.com/zh-cn/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/zh-cn/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/zh-cn/tools/density-calculator/
@@ -12190,6 +12201,7 @@ https://tools.usefulverse.com/bn/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/bn/tools/pressure-calculator/
 https://tools.usefulverse.com/bn/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/bn/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/bn/tools/pulley-calculator/
 https://tools.usefulverse.com/bn/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/bn/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/bn/tools/density-calculator/
@@ -12335,6 +12347,7 @@ https://tools.usefulverse.com/ru/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/ru/tools/pressure-calculator/
 https://tools.usefulverse.com/ru/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/ru/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/ru/tools/pulley-calculator/
 https://tools.usefulverse.com/ru/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ru/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ru/tools/density-calculator/
@@ -12480,6 +12493,7 @@ https://tools.usefulverse.com/ur/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/ur/tools/pressure-calculator/
 https://tools.usefulverse.com/ur/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/ur/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/ur/tools/pulley-calculator/
 https://tools.usefulverse.com/ur/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ur/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ur/tools/density-calculator/
@@ -12625,6 +12639,7 @@ https://tools.usefulverse.com/tr/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/tr/tools/pressure-calculator/
 https://tools.usefulverse.com/tr/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/tr/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/tr/tools/pulley-calculator/
 https://tools.usefulverse.com/tr/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/tr/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/tr/tools/density-calculator/
@@ -12770,6 +12785,7 @@ https://tools.usefulverse.com/vi/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/vi/tools/pressure-calculator/
 https://tools.usefulverse.com/vi/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/vi/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/vi/tools/pulley-calculator/
 https://tools.usefulverse.com/vi/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/vi/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/vi/tools/density-calculator/
@@ -12915,6 +12931,7 @@ https://tools.usefulverse.com/it/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/it/tools/pressure-calculator/
 https://tools.usefulverse.com/it/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/it/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/it/tools/pulley-calculator/
 https://tools.usefulverse.com/it/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/it/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/it/tools/density-calculator/
@@ -13060,6 +13077,7 @@ https://tools.usefulverse.com/zh-tw/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/zh-tw/tools/pressure-calculator/
 https://tools.usefulverse.com/zh-tw/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/zh-tw/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/zh-tw/tools/pulley-calculator/
 https://tools.usefulverse.com/zh-tw/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/zh-tw/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/zh-tw/tools/density-calculator/
@@ -13205,6 +13223,7 @@ https://tools.usefulverse.com/bg/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/bg/tools/pressure-calculator/
 https://tools.usefulverse.com/bg/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/bg/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/bg/tools/pulley-calculator/
 https://tools.usefulverse.com/bg/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/bg/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/bg/tools/density-calculator/
@@ -13350,6 +13369,7 @@ https://tools.usefulverse.com/ca/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/ca/tools/pressure-calculator/
 https://tools.usefulverse.com/ca/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/ca/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/ca/tools/pulley-calculator/
 https://tools.usefulverse.com/ca/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ca/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ca/tools/density-calculator/
@@ -13495,6 +13515,7 @@ https://tools.usefulverse.com/nl/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/nl/tools/pressure-calculator/
 https://tools.usefulverse.com/nl/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/nl/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/nl/tools/pulley-calculator/
 https://tools.usefulverse.com/nl/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/nl/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/nl/tools/density-calculator/
@@ -13640,6 +13661,7 @@ https://tools.usefulverse.com/el/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/el/tools/pressure-calculator/
 https://tools.usefulverse.com/el/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/el/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/el/tools/pulley-calculator/
 https://tools.usefulverse.com/el/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/el/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/el/tools/density-calculator/
@@ -13785,6 +13807,7 @@ https://tools.usefulverse.com/ms/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/ms/tools/pressure-calculator/
 https://tools.usefulverse.com/ms/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/ms/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/ms/tools/pulley-calculator/
 https://tools.usefulverse.com/ms/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ms/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ms/tools/density-calculator/
@@ -13930,6 +13953,7 @@ https://tools.usefulverse.com/pl/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/pl/tools/pressure-calculator/
 https://tools.usefulverse.com/pl/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/pl/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/pl/tools/pulley-calculator/
 https://tools.usefulverse.com/pl/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/pl/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/pl/tools/density-calculator/
@@ -14075,6 +14099,7 @@ https://tools.usefulverse.com/sv/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/sv/tools/pressure-calculator/
 https://tools.usefulverse.com/sv/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/sv/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/sv/tools/pulley-calculator/
 https://tools.usefulverse.com/sv/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/sv/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/sv/tools/density-calculator/
@@ -14220,6 +14245,7 @@ https://tools.usefulverse.com/th/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/th/tools/pressure-calculator/
 https://tools.usefulverse.com/th/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/th/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/th/tools/pulley-calculator/
 https://tools.usefulverse.com/th/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/th/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/th/tools/density-calculator/
@@ -14365,6 +14391,7 @@ https://tools.usefulverse.com/uk/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/uk/tools/pressure-calculator/
 https://tools.usefulverse.com/uk/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/uk/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/uk/tools/pulley-calculator/
 https://tools.usefulverse.com/uk/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/uk/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/uk/tools/density-calculator/
@@ -14510,6 +14537,7 @@ https://tools.usefulverse.com/sw/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/sw/tools/pressure-calculator/
 https://tools.usefulverse.com/sw/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/sw/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/sw/tools/pulley-calculator/
 https://tools.usefulverse.com/sw/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/sw/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/sw/tools/density-calculator/
@@ -14655,6 +14683,7 @@ https://tools.usefulverse.com/mr/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/mr/tools/pressure-calculator/
 https://tools.usefulverse.com/mr/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/mr/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/mr/tools/pulley-calculator/
 https://tools.usefulverse.com/mr/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/mr/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/mr/tools/density-calculator/
@@ -14800,6 +14829,7 @@ https://tools.usefulverse.com/te/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/te/tools/pressure-calculator/
 https://tools.usefulverse.com/te/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/te/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/te/tools/pulley-calculator/
 https://tools.usefulverse.com/te/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/te/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/te/tools/density-calculator/
@@ -14945,6 +14975,7 @@ https://tools.usefulverse.com/ha/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/ha/tools/pressure-calculator/
 https://tools.usefulverse.com/ha/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/ha/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/ha/tools/pulley-calculator/
 https://tools.usefulverse.com/ha/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ha/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ha/tools/density-calculator/
@@ -15090,6 +15121,7 @@ https://tools.usefulverse.com/tl/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/tl/tools/pressure-calculator/
 https://tools.usefulverse.com/tl/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/tl/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/tl/tools/pulley-calculator/
 https://tools.usefulverse.com/tl/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/tl/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/tl/tools/density-calculator/
@@ -15235,6 +15267,7 @@ https://tools.usefulverse.com/ta/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/ta/tools/pressure-calculator/
 https://tools.usefulverse.com/ta/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/ta/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/ta/tools/pulley-calculator/
 https://tools.usefulverse.com/ta/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ta/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ta/tools/density-calculator/
@@ -15380,6 +15413,7 @@ https://tools.usefulverse.com/fa/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/fa/tools/pressure-calculator/
 https://tools.usefulverse.com/fa/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/fa/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/fa/tools/pulley-calculator/
 https://tools.usefulverse.com/fa/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/fa/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/fa/tools/density-calculator/
@@ -15525,6 +15559,7 @@ https://tools.usefulverse.com/am/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/am/tools/pressure-calculator/
 https://tools.usefulverse.com/am/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/am/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/am/tools/pulley-calculator/
 https://tools.usefulverse.com/am/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/am/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/am/tools/density-calculator/
@@ -15670,6 +15705,7 @@ https://tools.usefulverse.com/gu/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/gu/tools/pressure-calculator/
 https://tools.usefulverse.com/gu/tools/pcb-trace-width-calculator/
 https://tools.usefulverse.com/gu/tools/projectile-motion-calculator/
+https://tools.usefulverse.com/gu/tools/pulley-calculator/
 https://tools.usefulverse.com/gu/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/gu/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/gu/tools/density-calculator/

@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 144);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 144);
+  assert.equal(growthPilotTools.length, 145);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 145);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -17,6 +17,16 @@ test('frequency and wavelength calculator solves the wave relation, distinct fro
   assert.match(tool.acceptance, /100 MHz.*3 m/u);
   assert.match(tool.boundary, /approximate.*custom speed/u);
   assert.match(tool.boundary, /No upload, API, storage or server processing/u);
+});
+
+test('pulley calculator covers belt geometry and shaft speed separately from toothed gear trains', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'pulley-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'pulley calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['gear-ratio-calculator']);
+  assert.match(tool.functions.join(' '), /open two-pulley belt pitch length/u);
+  assert.match(tool.acceptance, /100 mm.*200 mm.*1,476 mm.*750 output RPM/u);
+  assert.match(tool.boundary, /does not select a catalog belt.*not uploaded/u);
 });
 
 test('ideal gas law calculator solves one blank from PV=nRT and discloses model limits', () => {

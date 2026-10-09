@@ -480,6 +480,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/projectile-motion-calculator/logic.mjs',
   },
   {
+    id: 'pulley-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'pulley calculator',
+    secondaryIntents: ['belt length calculator', 'pulley speed calculator', 'belt drive calculator'],
+    functions: ['estimate an open two-pulley belt pitch length from driver and driven diameters and center distance', 'calculate ideal driven RPM from pulley diameters and input RPM, including speed increases or reductions', 'show belt linear speed, approximate small-pulley wrap angle and a labeled local geometry sketch'],
+    acceptance: 'A 100 mm driver, 200 mm driven pulley, 500 mm center distance and 1,500 input RPM estimate a 1,476 mm open-belt length and 750 output RPM; equal pulleys preserve input RPM.',
+    boundary: 'Approximate ideal geometry for two pulleys and one open belt only. Length is a common pitch-length approximation; it does not select a catalog belt, account for belt thickness/profile, tension, slip, wear, tolerances, idlers, crossed drives, load, power, guarding or safety. Check the manufacturer’s sizing data and a qualified professional before purchase or operation. Runs locally; inputs are not uploaded.',
+    relatedExistingIds: ['gear-ratio-calculator'],
+    logicModule: './tools/pulley-calculator/logic.mjs',
+  },
+  {
     id: 'chemical-equation-balancer',
     category: 'science-engineering',
     type: 'calculator',

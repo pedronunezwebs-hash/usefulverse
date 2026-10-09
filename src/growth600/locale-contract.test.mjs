@@ -14,6 +14,8 @@ import pcbTraceWidthCopies from './locales/pcb-trace-width-calculator-final.mjs'
 import { pcbTraceWidthCalculatorEnglishCopy } from './locales/pcb-trace-width-calculator.en.mjs';
 import projectileMotionCopies from './locales/projectile-motion-calculator-final.mjs';
 import { projectileMotionCalculatorEnglishCopy } from './locales/projectile-motion-calculator.en.mjs';
+import pulleyCalculatorCopies from './locales/pulley-calculator-final.mjs';
+import { pulleyCalculatorEnglishCopy } from './locales/pulley-calculator.en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
 import portugueseGrowthCopy from './locales/pt.mjs';
 import germanGrowthCopy from './locales/de.mjs';
@@ -1573,6 +1575,21 @@ test('projectile motion calculator has complete static copy and machine-accepted
     assert.ok([...copy.description].length <= 160, locale.key);
   }
   assert.match(projectileMotionCopies.ar.fields.accuracyNote, /مقاومة هواء/u);
+});
+
+test('pulley calculator has complete static copy and machine-accepted localization in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'pulley-calculator');
+  assert.ok(tool);
+  assert.equal(pulleyCalculatorCopies.en.name, pulleyCalculatorEnglishCopy.name);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const locale of localeEntries) {
+    const copy = pulleyCalculatorCopies[locale.key];
+    assert.ok(copy.fields.driverDiameter && copy.fields.drivenDiameter && copy.fields.accuracyNote, locale.key);
+    assert.ok(copy.actions.calculate && copy.messages.beltLength && copy.messages.outputRpm, locale.key);
+    assert.ok([...copy.title].length <= 60, locale.key);
+    assert.ok([...copy.description].length <= 160, locale.key);
+  }
+  assert.match(pulleyCalculatorCopies.ar.fields.accuracyNote, /الأبعاد/u);
 });
 
 test('chemical equation balancer has complete English copy but has approved localized copy across all 36 languages', () => {
