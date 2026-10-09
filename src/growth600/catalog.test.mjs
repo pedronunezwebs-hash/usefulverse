@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 125);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 125);
+  assert.equal(growthPilotTools.length, 126);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 126);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -16,6 +16,16 @@ test('JSON to Excel is distinct from CSV and spreadsheet conversion and keeps im
   assert.deepEqual(tool.relatedExistingIds, ['json-to-csv', 'spreadsheet-converter']);
   assert.match(tool.acceptance, /"001" remains "001"/u);
   assert.match(tool.boundary, /no upload, API, fetch/u);
+});
+
+test('binary Base64 encodes selected file bytes rather than duplicating text Base64 conversion', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'binary-base64-tool');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'base64 image encoder');
+  assert.deepEqual(tool.relatedExistingIds, ['base64-encoder-decoder']);
+  assert.match(tool.acceptance, /decoding its Base64 portion returns the exact original bytes/u);
+  assert.match(tool.boundary, /does not encode text, fetch remote URLs, decode Base64/u);
+  assert.match(tool.boundary, /2 MiB/u);
 });
 
 test('Hashi is a distinct no-crossing connected-island puzzle, not a duplicate Futoshiki or Kakuro page', () => {

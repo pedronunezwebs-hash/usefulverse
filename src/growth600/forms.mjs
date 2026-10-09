@@ -87,6 +87,7 @@ export function renderGrowthForm(toolId, copy) {
     'certificate-decoder': ['certificate', 'upload', 'supported', 'accuracyNote', 'resultTitle', 'subject', 'issuer', 'commonName', 'organizationName', 'countryName', 'localityName', 'stateOrProvinceName', 'organizationalUnitName', 'streetAddress', 'serialNumber', 'notBefore', 'notAfter', 'alternativeNames', 'fingerprint', 'noAlternativeNames', 'unlistedAttribute'],
     'json-to-xml-converter': ['mode', 'jsonToXml', 'xmlToJson', 'jsonInput', 'jsonHint', 'xmlInput', 'xmlHint', 'rootName', 'indent', 'accuracyNote', 'output', 'result', 'copyHint'],
     'json-to-excel': ['jsonInput', 'jsonHint', 'dataset', 'datasetHint', 'rootObject', 'preview', 'tableLabel', 'rowCount', 'columnCount', 'previewLimit', 'flattenNote', 'privacyNote'],
+    'binary-base64-tool': ['file', 'fileHint', 'outputFormat', 'base64Only', 'dataUri', 'accuracyNote', 'mimeType', 'fileSize', 'bytes', 'outputSize', 'characters', 'imagePreview', 'result', 'output'],
     'har-viewer': ['file', 'paste', 'pasteHint', 'privacyWarning', 'search', 'method', 'statusFilter', 'all', 'errorsOnly', 'successOnly', 'totalRequests', 'failedRequests', 'transferred', 'totalTime', 'slowest', 'request', 'response', 'duration', 'size', 'waterfall', 'results', 'shown', 'of', 'noMatches', 'methodLabel', 'statusLabel', 'urlLabel', 'durationLabel', 'sizeLabel', 'timingNote', 'unknownDate', 'invalid', 'tooMany'],
     'robots-txt-tester': ['robotsText', 'robotsHint', 'userAgent', 'userAgentHint', 'urls', 'urlsHint', 'scopeNote', 'agentGroup', 'noSpecificGroup', 'ruleCount', 'diagnostics', 'ignored', 'malformed', 'allowed', 'blocked', 'winningRule', 'defaultRule'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
@@ -219,7 +220,8 @@ export function renderGrowthForm(toolId, copy) {
     'text-to-binary-converter': ['convert', 'example', 'reset', 'result', 'copy', 'download'],
     'certificate-decoder': ['decode', 'example', 'reset', 'copySummary'],
     'json-to-xml-converter': ['convert', 'example', 'reset', 'copy', 'download'],
-    'json-to-excel': ['preview', 'example', 'reset', 'download'],
+  'json-to-excel': ['preview', 'example', 'reset', 'download'],
+  'binary-base64-tool': ['convert', 'reset', 'copy', 'download'],
     'har-viewer': ['analyze', 'example', 'reset', 'showMore', 'result'],
     'robots-txt-tester': ['test', 'example', 'reset', 'result'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
@@ -1071,6 +1073,16 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${button('preview', actions.preview)}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.preview)}</h2><p class="hint" data-json-excel-count></p><p class="hint">${escapeGrowthHtml(fields.previewLimit)}</p><div class="table-scroll"><table><caption>${escapeGrowthHtml(fields.tableLabel)}</caption><thead data-json-excel-head></thead><tbody data-json-excel-body></tbody></table></div>${button('download', actions.download, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'binary-base64-tool') return attachCopy(`<form id="tool-form" class="binary-base64-tool" novalidate>
+    ${label('binary-base64-file', fields.file, '<input id="binary-base64-file" name="binaryFile" type="file">')}
+    <p class="hint">${escapeGrowthHtml(fields.fileHint)}</p>
+    ${label('binary-base64-format', fields.outputFormat, `<select id="binary-base64-format" name="outputFormat"><option value="data-uri">${escapeGrowthHtml(fields.dataUri)}</option><option value="base64">${escapeGrowthHtml(fields.base64Only)}</option></select>`)}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${submit('convert')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.result)}</h2><p class="hint" data-base64-meta></p><label for="binary-base64-output">${escapeGrowthHtml(fields.output)}</label><textarea id="binary-base64-output" name="output" data-base64-output rows="8" readonly spellcheck="false"></textarea><img data-base64-preview hidden alt=""><div class="actions">${button('copy', actions.copy, 'secondary')}${button('download', actions.download, 'secondary')}</div></section>
   </form>`, copy);
 
   if (toolId === 'har-viewer') return attachCopy(`<form id="tool-form" class="har-viewer" novalidate>

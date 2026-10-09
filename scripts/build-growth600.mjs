@@ -37,6 +37,7 @@ const styles = minifyCss((await Promise.all(styleFiles.map((file) => readFile(re
 const toolStyles = {
   'har-viewer': minifyCss(await readFile(resolve(root, 'src/growth600/tools/har-viewer/har-viewer.css'), 'utf8'), { comments: 'exclamation' }).css,
   'robots-txt-tester': minifyCss(await readFile(resolve(root, 'src/growth600/tools/robots-txt-tester/robots-txt-tester.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'binary-base64-tool': minifyCss(await readFile(resolve(root, 'src/growth600/tools/binary-base64-tool/binary-base64-tool.css'), 'utf8'), { comments: 'exclamation' }).css,
 };
 const faviconSvg = await readFile(resolve(root, 'public/favicon.svg'), 'utf8');
 const modelRevision = '92a21aca5713f20faf9a87590cdfbdce2e34112c';
