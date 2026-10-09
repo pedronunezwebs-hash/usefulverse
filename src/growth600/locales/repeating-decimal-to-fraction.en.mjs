@@ -1,0 +1,27 @@
+export const repeatingDecimalEnglishCopy = Object.freeze({
+  name: 'Repeating Decimal to Fraction Calculator',
+  title: 'Repeating Decimal to Fraction Calculator | UsefulVerse',
+  description: 'Convert a repeating decimal such as 0.(3) or 1.2(34) to an exact simplified fraction. Free, private and in your browser.',
+  intro: 'Use parentheses to mark the repeating digits, such as 0.(3), 0.1(6), or 1.2(34). Get the exact fraction and a short subtraction proof.',
+  howQuestion: 'How do you convert a repeating decimal to a fraction?',
+  howAnswer: 'Enter the whole part, any non-repeating digits, and the repeating block in parentheses. The calculator shifts the decimal point, subtracts equal repeating tails, then reduces the exact fraction with integer arithmetic.',
+  privacyQuestion: 'Is my decimal uploaded?',
+  privacyAnswer: 'No. Conversion runs in this browser. Your input is not uploaded or saved by this tool.',
+  fields: {
+    decimal: 'Repeating decimal',
+    inputHint: 'Examples: 0.(3), 0.1(6), 1.2(34), −2.(3)',
+    accuracyNote: 'Use a period as the decimal mark and parentheses around 1–18 repeating digits. Up to 12 whole-number digits and 18 non-repeating digits are supported. Finite decimals belong in the fraction calculator.',
+    resultSummary: 'Exact fraction',
+    simplified: 'Simplified result',
+    mixedNumber: 'Mixed-number form',
+    derivation: 'Exact subtraction method',
+  },
+  actions: { calculate: 'Convert to fraction', example: 'Load 0.1(6) example', reset: 'Clear', result: 'Conversion result', copy: 'Copy fraction' },
+  messages: { calculated: 'Repeating decimal converted exactly.', checkInputs: 'Enter a repeating decimal such as 0.(3) or 1.2(34).', copied: 'Fraction copied.', copyUnavailable: 'Copy is unavailable in this browser.' },
+  additionalFaqs: [
+    { question: 'What fraction is 0.(3)?', answer: '0.(3) means 0.333… with 3 repeating, which is exactly 1/3.' },
+    { question: 'How do I enter 0.1666…?', answer: 'Write 0.1(6): the 1 is the non-repeating part and the 6 repeats. The exact result is 1/6.' },
+    { question: 'How is a repeating decimal different from a finite decimal?', answer: 'A repeating decimal has a repeating block, marked here in parentheses. Use the regular fraction calculator for a decimal that ends.' },
+  ],
+  copyLanguage: 'en',
+});

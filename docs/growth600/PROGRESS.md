@@ -2,15 +2,25 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## En curso · Investment Allocation Calculator (#301) · 2026-10-09
+## Publicada · Investment Allocation Calculator (#301) · 2026-10-09
 
 - [x] C/F — Ficha ya medida del plan: `portfolio allocation calculator`, 390 búsquedas/mes US/en, KD 0; secundaria `investment allocation calculator`, 20/mes, KD 0. CPC 6.10 USD (no CPM); sin nuevas llamadas ni gasto de DataForSEO.
 - [x] E/B — Cálculo local para 2–8 activos, pesos objetivo que suman 100%, valor meta, reparto opcional de aportación y diferencia meta−actual. Validación estricta de cantidades/moneda y límites; no recomienda inversiones, predice rendimientos, calcula impuestos/comisiones ni emite instrucciones de compraventa. Sin red, cuenta, almacenamiento o servidor.
 - [x] L — 36 traducciones estáticas generadas desde inglés con Google Translate. Metadatos dentro de los límites y Arabic UI revisada/corregida manualmente tras hallar traducciones literales confusas. Traducción automática aceptada, no revisión nativa ni servicio de runtime.
 - [x] X — Suite completa **1.473/1.473**; `npm run check` conserva 10.260 URLs del sitio principal; `npm run locale:release-check` pasa. Build del hub: **4.068 rutas únicas** (112 × 36 + 36 portadas), 4.233 archivos, 121.935.907 bytes. Presupuesto conjunto CSS respetado al minificar en build con `csso`; sin cambiar hojas fuente.
 - [x] B — Chrome local EN y AR: ejemplo 6.000 + 4.000 = 10.000, objetivos 6.000/4.000; estado anunciado. Árabe RTL verificado; tabla desplazable dentro del panel a 390 px, sin overflow del documento. Consola limpia y solo peticiones same-origin.
-- [ ] P/S — PR, CI, despliegue del hub y sitemap público pendientes. No publicado aún; no afirmar indexación ni envío manual.
-- **Siguiente acción:** terminar gates/diff, abrir PR, esperar CI, integrar y lanzar flujo de publicación del hub. Tras confirmar HTTP 200 y sitemap con 4.068 URLs, actualizar esta ficha y el README; seguir con #302 Repeating Decimal to Fraction Calculator.
+- [x] P/S — PR #73 integrada; CI principal `37873877741` y publicación del hub `37874322931` correctos. EN/AR HTTP 200; sitemap público HTTP 200 con **4.068 URLs únicas** (112 × 36 + 36 portadas). No se solicitó indexación manual ni se afirma que las páginas estén indexadas.
+- **Estado publicado:** 112 herramientas Growth600 adicionales; las 277 originales siguen intactas. Sin PageSpeed/Lighthouse.
+
+## En curso · Repeating Decimal to Fraction Calculator (#302) · 2026-10-09
+
+- [x] C/F — ficha reutilizada del plan: `repeating decimal to fraction calculator`, 390 búsquedas/mes US/en, KD 0; sin nueva consulta ni coste de DataForSEO.
+- [x] E/B — acepta `0.(3)`, `0.1(6)`, `1.2(34)`, enteros con signo y hasta 18 cifras periódicas; usa `BigInt`, reduce exactamente y muestra la resta algebraica. Incluye número mixto, ejemplo, copiar, reset y manejo de límites/errores. Distingue explícitamente decimales periódicos de los finitos de `fraction-calculator`; sin API, upload, persistencia ni servicio de ejecución.
+- [x] L — 36 copias estáticas traducidas por Google desde el inglés, aceptadas como traducción automática sencilla, no revisión nativa. Se normalizó la puntuación de los ejemplos para que coincida con el parser; se corrigieron títulos y etiquetas de reset de varios idiomas y el copy árabe principal. Sin traducción en runtime.
+- [x] X — **1.484/1.484 pruebas globales**; locale contract **134/134**, suite funcional específica **7/7**, `npm run locale:release-check` aprobado; `npm run check` preserva 10.260 URLs del sitio principal. Build Growth600 final: **4.104 URLs** (113 × 36 + 36 portadas), 4.270 archivos y 122.866.350 bytes.
+- [x] B — Bundle de controlador **3.191 bytes**. Chrome local EN: `1.2(34)` → `611/495`, forma mixta y demostración correctas; `0.1(6)` → `1/6`. AR acepta `٠.(٣)` → `1/3`; RTL a ancho mínimo reportado de 500 px sin overflow, consola limpia y solo solicitudes same-origin.
+- [ ] P/S — todavía no hay PR ni despliegue para #302; no anunciar publicada/indexada. Tras los gates: integrar, disparar la publicación manual separada del hub y comprobar 4.104 URLs en sitemap.
+- **Siguiente acción:** suite completa final; si pasa, abrir PR, esperar CI, integrar, desplegar el hub y verificar rutas/sitemap. Después continuar con #303 Parametric Equation Calculator.
 
 ## Publicada · Fourier Series Calculator (#293) · 2026-10-09
 

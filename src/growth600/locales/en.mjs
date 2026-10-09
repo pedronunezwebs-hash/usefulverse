@@ -93,6 +93,8 @@ import abTestCopies from './a-b-test-calculator.mjs';
 import { abTestEnglishCopy } from './a-b-test-calculator.en.mjs';
 import investmentAllocationCopies from './investment-allocation-calculator.mjs';
 import { investmentAllocationEnglishCopy } from './investment-allocation-calculator.en.mjs';
+import repeatingDecimalCopies from './repeating-decimal-to-fraction.mjs';
+import { repeatingDecimalEnglishCopy } from './repeating-decimal-to-fraction.en.mjs';
 import openApiEditorCopies from './openapi-editor.mjs';
 import { openApiEditorEnglishCopy } from './openapi-editor.en.mjs';
 import fontPairingToolCopies from './font-pairing-tool.mjs';
@@ -1067,5 +1069,6 @@ Object.assign(investmentAllocationCopies.ar, {
   ],
 });
 registerGrowthLocaleExtension(source, 'investment-allocation-calculator', { ...investmentAllocationCopies, en: investmentAllocationEnglishCopy }, 'a-b-test-calculator');
+registerGrowthLocaleExtension(source, 'repeating-decimal-to-fraction', { ...repeatingDecimalCopies, en: repeatingDecimalEnglishCopy }, 'investment-allocation-calculator');
 
 export default Object.freeze(source);

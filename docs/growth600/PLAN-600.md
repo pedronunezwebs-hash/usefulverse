@@ -2112,7 +2112,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 301 · Investment Allocation Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `investment-allocation-calculator`**
+- [x] **C/F/E/X/L/B/P/S completos — `investment-allocation-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/investment-allocation-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `portfolio allocation calculator` — 390 búsquedas/mes US/en, KD 0; nivel C. CPC 6.1 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Distribuir aportación y rebalancear cartera por porcentajes objetivo
@@ -2123,6 +2123,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `investment allocation calculator` — 20/mes US/en; KD 0.
   - `portfolio allocation calculator free online`; `portfolio allocation calculator with example`; `portfolio allocation calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+
+- **Publicado (2026-10-09):** PR #73 integrada; workflow principal `37873877741` y workflow de publicación independiente del hub `37874322931` correctos. EN/AR HTTP 200; sitemap público con **4.068 URLs únicas** (112 herramientas × 36 idiomas + 36 portadas). No se envió indexación manual ni se afirma indexación.
 
 ### 315 · Customer Acquisition Cost Calculator
 
@@ -2672,6 +2674,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Consultas secundarias del mismo propietario:**
   - `repeating decimal to fraction calculator free online`; `repeating decimal to fraction calculator with example`; `repeating decimal to fraction calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+
+- **Estado local (2026-10-09):** lógica exacta con `BigInt`, notación normalizada en 36 copias estáticas, corrección manual del bloque árabe y etiquetas confusas; sin DataForSEO adicional ni servicio online en producción. Pruebas específicas 7/7, locale contract 134/134, suite completa 1.484/1.484, `locale:release-check` pasa, `npm run check` mantiene 10.260 URLs, build aislado 4.104 rutas únicas. Bundle 3.191 bytes. Chrome EN/AR, notación árabe, RTL, consola y solicitudes externas comprobados. **PR/despliegue/sitemap de producción pendientes**; no afirmar indexación.
 
 ### 303 · Parametric Equation Calculator
 
