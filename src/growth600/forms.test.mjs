@@ -235,6 +235,11 @@ const copies = {
     messages: { ...messages, calculated: 'Calculation ready.', checkInputs: 'Check the component values.', copied: 'Results copied.', copyUnavailable: 'Copy is unavailable.' },
     fields: { mode: 'Circuit mode', astable: 'Astable oscillator', monostable: 'Monostable pulse', resistanceA: 'Resistor RA', resistanceB: 'Resistor RB', resistance: 'Resistor R', resistanceUnit: 'Resistance unit', ohms: 'Ohms (Ω)', kilohms: 'Kilohms (kΩ)', megohms: 'Megohms (MΩ)', capacitance: 'Capacitor C', capacitanceUnit: 'Capacitance unit', farads: 'Farads (F)', millifarads: 'Millifarads (mF)', microfarads: 'Microfarads (μF)', nanofarads: 'Nanofarads (nF)', picofarads: 'Picofarads (pF)', accuracyNote: 'Ideal timing only.', frequencyNote: 'Frequency note', highFrequencyWarning: 'Check datasheet above 100 kHz.', formulaNote: 'Formulas:', sourceLink: 'TI datasheet', resultFrequency: 'Frequency', resultPeriod: 'Period', resultHigh: 'Output high time', resultLow: 'Output low time', resultWaveformDuty: 'Waveform duty cycle', resultDischargeDuty: 'Discharge interval share', resultPulse: 'Output pulse width' },
   },
+  'fourier-series-calculator': {
+    name: 'Fourier series calculator', actions: { ...actions, calculate: 'Calculate', reset: 'Clear', example: 'Sine example', constant: 'Constant example', result: 'Fourier results', copy: 'Copy coefficients' },
+    messages: { ...messages, calculated: 'Coefficients calculated.', calculatedConstant: 'Constant signal has a DC component only.', checkInputs: 'Check samples, period and harmonics.', copied: 'Copied.', copyUnavailable: 'Copy unavailable.' },
+    fields: { samples: 'Samples', samplesHint: 'Four to 128 equally spaced values.', period: 'Period', periodHint: 'Frequency is one divided by period.', harmonics: 'Harmonics', harmonicsHint: 'Choose from zero through the available limit.', accuracyNote: 'Numeric estimate only.', formulaLabel: 'Real Fourier series', formula: 'DC and coefficients', resultDc: 'DC', resultFrequency: 'Fundamental frequency', resultHarmonics: 'Harmonics included', resultRms: 'RMS sample error', coefficient: 'Harmonic', coefficientA: 'Cosine coefficient', coefficientB: 'Sine coefficient', coefficientAmplitude: 'Amplitude', phase: 'Phase', radians: 'radians', frequencyUnit: 'per unit of time', chartLabel: 'Samples and reconstruction', samplesLegend: 'Samples', reconstructionLegend: 'Reconstruction' },
+  },
   'chemical-equation-balancer': {
     name: 'Chemical equation balancer', actions: { ...actions },
     messages: { ...messages, balancedEquation: 'Balanced equation', atomCheck: 'Atom count', leftSide: 'Reactants', rightSide: 'Products' },
@@ -452,6 +457,11 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(timer555, /data-555-mode="monostable" hidden/u);
   assert.match(timer555, /ti\.com\/lit\/ds\/symlink\/ne555\.pdf/u);
   assert.match(timer555, /data-action="copy"/u);
+  const fourier = renderGrowthForm('fourier-series-calculator', copies['fourier-series-calculator']);
+  for (const name of ['samples', 'period', 'harmonics']) assert.match(fourier, new RegExp(`name="${name}"`, 'u'));
+  assert.match(fourier, /data-action="constant"/u);
+  assert.match(fourier, /data-fourier-formula/u);
+  assert.match(fourier, /<textarea[^>]+maxlength="4096"/u);
   const chemical = renderGrowthForm('chemical-equation-balancer', copies['chemical-equation-balancer']);
   assert.match(chemical, /name="equation"[^>]+maxlength="500"/u);
   assert.match(chemical, /for="chemical-equation"/u);

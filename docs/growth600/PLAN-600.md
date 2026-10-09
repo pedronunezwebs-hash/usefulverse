@@ -1562,7 +1562,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 292 · 555 Timer Calculator
 
-- [x] **C/F/E/L/B implementados; X pasa localmente; P/S pendientes — `555-timer-calculator`**
+- [x] **C/F/E/X/L/B/P/S completos — `555-timer-calculator`**
 - **Destino:** `https://tools.usefulverse.com/tools/555-timer-calculator/`; otras 35 versiones estáticas en los idiomas del sitio (36 rutas).
 - **Demanda:** `555 timer calculator` — 590 búsquedas/mes US/en, KD 23; `555 astable calculator` — 140/mes, KD 17. CPC 0,14 USD (no CPM). Sin llamada nueva a DataForSEO.
 - **Función implementada:** Oscilador astable (frecuencia, período, tiempos alto/bajo, duty de salida y fracción de descarga) y monoestable (ancho de pulso aproximado); resistencias en Ω/kΩ/MΩ, condensadores F/mF/μF/nF/pF, ejemplos, copiar y limpiar. Cálculo estático en el navegador, sin API, upload ni procesamiento de servidor.
@@ -1574,6 +1574,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `555 timer calculator free online`; `555 timer calculator with example`; `555 timer calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Verificación local (2026-10-09):** 36 textos estáticos traducidos automáticamente con el flujo Google Translate autorizado; ecuaciones preservadas y etiquetas localizadas. Metadatos ≤60/160; sin saltos. Gates focales **200/200**, suite global **1.438/1.438**, `locale:release-check` y `npm run check` pasan; sitio principal conserva 10.260 URLs; build separado: **3.924 páginas** (108 × 36 + 36 portadas; 4.085 archivos; 117.681.050 bytes). Chrome EN/AR: astable, monoestable y aviso >100 kHz correctos; árabe RTL a 390 px sin overflow/consola; carga inicial solo HTML/CSS/JS locales. Sin PageSpeed/Lighthouse. Traducción automática comprensible, no validación nativa.
+- **Publicación comprobada (2026-10-09):** PR #69 fusionada; workflows principal `37865313492` y hub `37866007189` correctos. URLs EN/AR HTTP 200; sitemap público HTTP 200 con **3.924 URLs únicas** e incluye los 36 idiomas. No se envió solicitud manual de indexación; publicación no implica indexación.
 
 ### 310 · Inductor Calculator
 
@@ -2617,13 +2618,13 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 293 · Fourier Series Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `fourier-series-calculator`**
+- [x] **C/F/E/X/L/B completos; P/S pendientes — `fourier-series-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/fourier-series-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `fourier series calculator` — 480 búsquedas/mes US/en, KD 0; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Coeficientes periódicos numéricos, armónicos y reconstrucción
 - **Prueba de aceptación específica:** Señal constante tiene solo DC
 - **Frontera con otras herramientas:** audio-spectrogram: funciones analíticas, no sonido. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Avance local (2026-10-09):** motor numérico en navegador para muestras uniformes, componente DC, coeficientes reales seno/coseno, amplitud/fase, reconstrucción y error RMS; 4–128 datos, amplitud y periodo acotados, frecuencia por unidad temporal y armónicos por debajo de Nyquist. Aceptación señal constante = DC únicamente; sin audio, CAS, subida, API ni cálculo servidor. SVG accesible, copy localizado y mensajes de error que eliminan resultados obsoletos. Suite focal y regresión **1.447/1.447**; `locale:release-check`, `npm run check` y auditoría de 36 copias pasan. Bundle minificado **7.365 bytes** (<24 KiB). Build local: **3.960 páginas** (109 × 36 + 36 portadas). Chrome EN/AR cubre coeficientes, señal constante, armónicos cero, dígitos árabes, error, RTL y consola/red. 36 traducciones automáticas estáticas, fórmula preservada; no revisión nativa. Sin PageSpeed/Lighthouse. Falta PR/CI/deploy y verificar sitemap público.
 - **Consultas secundarias del mismo propietario:**
   - `fourier coefficients calculator` — 480/mes US/en; KD 0.
   - `fourier series calculator free online`; `fourier series calculator with example`; `fourier series calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

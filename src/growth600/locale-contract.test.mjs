@@ -75,6 +75,22 @@ test('thermal expansion calculator has complete static copy and snippet-sized me
   }
 });
 
+test('Fourier calculator has 36 translated copies and fixes technical labels left in English', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'fourier-series-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  assert.equal(localizedCopies.tl[tool.id].name, 'Kalkulador ng Seryeng Fourier');
+  assert.equal(localizedCopies.tl[tool.id].fields.coefficientA, 'Koepisyent ng cosine aₙ');
+  assert.equal(localizedCopies.sw[tool.id].actions.reset, 'Futa');
+  assert.equal(localizedCopies.ha[tool.id].name, 'Kalkuleta na jerin Fourier');
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, `${key}: metadata budgets`);
+    assert.equal(copy.fields.formula, localizedCopies.en[tool.id].fields.formula, `${key}: formula stays exact`);
+  }
+});
+
 function assertMachineAcceptedGrowthToolInAllLocales(tool) {
   assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
   for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {

@@ -72,6 +72,7 @@ export function renderGrowthForm(toolId, copy) {
     'capacitor-calculator': ['values', 'valuesHint', 'connection', 'series', 'parallel', 'unit', 'voltage', 'accuracyNote', 'resultEquivalent', 'resultCharge', 'resultEnergy', 'resultVoltage', 'capacitor', 'formulaNote'],
     'body-water-calculator': ['equation', 'watsonMale', 'watsonFemale', 'age', 'height', 'heightUnit', 'weight', 'weightUnit', 'centimeters', 'inches', 'kilograms', 'pounds', 'accuracyNote', 'resultLiters', 'resultPercent', 'equationNote'],
     '555-timer-calculator': ['mode', 'astable', 'monostable', 'resistanceA', 'resistanceB', 'resistance', 'resistanceUnit', 'ohms', 'kilohms', 'megohms', 'capacitance', 'capacitanceUnit', 'farads', 'millifarads', 'microfarads', 'nanofarads', 'picofarads', 'accuracyNote', 'frequencyNote', 'highFrequencyWarning', 'formulaNote', 'resultFrequency', 'resultPeriod', 'resultHigh', 'resultLow', 'resultWaveformDuty', 'resultDischargeDuty', 'resultPulse'],
+    'fourier-series-calculator': ['samples', 'samplesHint', 'period', 'periodHint', 'harmonics', 'harmonicsHint', 'accuracyNote', 'formulaLabel', 'formula', 'resultDc', 'resultFrequency', 'resultHarmonics', 'resultRms', 'coefficient', 'coefficientA', 'coefficientB', 'coefficientAmplitude', 'phase', 'radians', 'frequencyUnit', 'chartLabel', 'samplesLegend', 'reconstructionLegend'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -188,6 +189,7 @@ export function renderGrowthForm(toolId, copy) {
     'capacitor-calculator': ['calculate', 'reset', 'example', 'result'],
     'body-water-calculator': ['calculate', 'reset', 'example', 'result'],
     '555-timer-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
+    'fourier-series-calculator': ['calculate', 'reset', 'example', 'constant', 'result', 'copy'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
@@ -850,6 +852,20 @@ export function renderGrowthForm(toolId, copy) {
     ${label('timer-555-capacitance-unit', fields.capacitanceUnit, `<select id="timer-555-capacitance-unit" name="capacitanceUnit"><option value="F">${escapeGrowthHtml(fields.farads)}</option><option value="mF">${escapeGrowthHtml(fields.millifarads)}</option><option value="uF" selected>${escapeGrowthHtml(fields.microfarads)}</option><option value="nF">${escapeGrowthHtml(fields.nanofarads)}</option><option value="pF">${escapeGrowthHtml(fields.picofarads)}</option></select>`)}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.formulaNote)} <a href="https://www.ti.com/lit/ds/symlink/ne555.pdf" rel="noreferrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'fourier-series-calculator') return attachCopy(`<form id="tool-form" class="fourier-series-calculator" novalidate>
+    ${label('fourier-samples', fields.samples, '<textarea id="fourier-samples" name="samples" rows="8" maxlength="4096" spellcheck="false" required>0\n1\n0\n-1</textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.samplesHint)}</p>
+    <div class="calculator-grid">
+      ${label('fourier-period', fields.period, '<input id="fourier-period" name="period" type="text" inputmode="decimal" value="1" maxlength="40" required>')}
+      ${label('fourier-harmonics', fields.harmonics, '<input id="fourier-harmonics" name="harmonics" type="text" inputmode="numeric" value="1" maxlength="4" required>')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.periodHint)}</p><p class="hint">${escapeGrowthHtml(fields.harmonicsHint)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <p class="hint"><strong>${escapeGrowthHtml(fields.formulaLabel)}:</strong> <span data-fourier-formula>${escapeGrowthHtml(fields.formula)}</span></p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${button('constant', actions.constant, 'secondary')}${button('calculate', actions.calculate)}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 

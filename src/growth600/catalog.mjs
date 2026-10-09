@@ -1295,6 +1295,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['online-timer'],
     logicModule: './tools/555-timer-calculator/logic.mjs',
   },
+  {
+    id: 'fourier-series-calculator',
+    category: 'math-statistics',
+    type: 'calculator',
+    primaryIntent: 'fourier series calculator',
+    secondaryIntents: ['fourier coefficients calculator', 'fourier series reconstruction calculator', 'fourier harmonic calculator'],
+    functions: ['estimate real Fourier coefficients from 4–128 equally spaced numeric samples spanning one period without repeating the endpoint', 'choose a bounded number of harmonics and report DC, fundamental frequency, cosine/sine coefficients, amplitude and phase', 'reconstruct and plot the selected finite series against the original samples, with RMS error evaluated at those sample points', 'load sine-wave and constant-signal examples and copy a readable coefficient report'],
+    acceptance: 'A constant input such as sixteen samples all equal to 5 has DC = 5, all selected cosine/sine coefficients = 0 within floating-point tolerance, a flat reconstruction and RMS error 0. A sampled 2 + 3 sin(2πt/T) input returns DC = 2 and first sine coefficient = 3 within tolerance.',
+    boundary: 'Numerical real-series estimate from uniformly spaced samples only; not symbolic integration, a general expression parser, and not an audio player or audio spectrum analyzer. The endpoint of a period must not be repeated. Harmonics are bounded below the Nyquist limit; discontinuities can show Gibbs overshoot, and RMS error describes only the supplied samples. No audio or sample data is uploaded or retained.',
+    relatedExistingIds: ['audio-spectrogram', 'function-grapher'],
+    logicModule: './tools/fourier-series-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {
