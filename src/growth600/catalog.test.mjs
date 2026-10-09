@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 110);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 110);
+  assert.equal(growthPilotTools.length, 111);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 111);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -136,6 +136,15 @@ test('modular inverse calculator distinguishes inverse existence from modulo rem
   assert.match(tool.functions.join(' '), /greatest common divisor/u);
   assert.match(tool.boundary, /not a remainder calculator/u);
   assert.deepEqual(tool.relatedExistingIds, ['gcd-lcm-calculator']);
+});
+
+test('A/B test calculator estimates between-group evidence, not a single conversion rate', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'a-b-test-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'a b test calculator');
+  assert.ok(tool.functions.some((entry) => entry.includes('Newcombe')));
+  assert.match(tool.boundary, /false positives|false-positive|sequential/iu);
+  assert.deepEqual(tool.relatedExistingIds, ['percentage-calculator']);
 });
 
 test('Roth vs traditional compares user-entered tax scenarios without giving tax or account advice', () => {

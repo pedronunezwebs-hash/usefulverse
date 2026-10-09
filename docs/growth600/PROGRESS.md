@@ -13,16 +13,27 @@
 - [x] P/S — PR #70 integrada en `69c50b13b7af7682940be358d75dce19fb07f69b`; pipeline principal `37867472931` y publicación del hub `37867798312` correctos. Rutas EN/AR HTTP 200; sitemap público HTTP 200 con **3.960 URLs únicas** (109 × 36 + 36 portadas). No se envió indexación manual ni se afirma indexación.
 - **Estado publicado:** 109 herramientas adicionales; las 277 originales permanecen intactas. No PageSpeed/Lighthouse.
 
-## En curso · Modular Inverse Calculator (#299) · 2026-10-09
+## Publicada · Modular Inverse Calculator (#299) · 2026-10-09
 
 - [x] C/F — Ficha ya medida del plan: `modular inverse calculator`, 480 búsquedas/mes US/en, KD 11; `multiplicative inverse modulo calculator`, 480/mes, KD 11. Sin nuevas llamadas ni gasto DataForSEO.
 - [x] E/B — Inverso multiplicativo con enteros firmados, normalización de residuo, existencia por mcd, coeficientes de Bézout y pasos del algoritmo de Euclides; cálculo y verificación en navegador con `BigInt`, sin API, cuenta, red ni subida. Límites absolutos de 10¹²; el módulo debe ser ≥2. Diferencia explícita frente a calculadora de resto.
 - [x] L — 36 traducciones estáticas de Google desde inglés, aceptadas como borradores automáticos sencillos, no revisión nativa. Notación matemática idéntica y no traducida; explicación localizada. Títulos/descripciones dentro de límites. Se corrigieron a mano el español técnico incorrecto en el término de fórmula compartido y la etiqueta árabe del módulo.
 - [x] X — Pruebas específicas de lógica/controlador, contrato de 36 locales, build y formularios; `npm run locale:release-check` pasa. `npm run check` conserva las **10.260 URLs** del sitio principal. Suite completa **1.456/1.456**. Build local del hub: **3.996 rutas** (110 × 36 + 36 portadas; 4.159 archivos, 119.670.862 bytes). Sin PageSpeed/Lighthouse.
 - [x] B — Chrome EN: 3 mod 7 → inverso 5, identidad de Bézout y pasos Euclidianos; −3 mod 7 → 2; 6 mod 9 indica que no hay inverso. Chrome AR RTL: dígitos arábigos ٣ y ٧ → ٥; texto correcto, sin desbordamiento a viewport medible de 500 px ni consola. Sin red de terceros.
-- [ ] P/S — PR/CI, despliegue del hub y sitemap público pendientes.
-- **Estado:** 109 herramientas del hub están publicadas; #299 es la 110.ª generación local y no se cuenta publicada hasta validar el flujo remoto. No declarar indexación ni envío manual a buscadores.
-- **Siguiente candidata tras publicar:** #300 A/B Test Calculator. Sin PageSpeed/Lighthouse ni nueva investigación de DataForSEO.
+- [x] P/S — PR #71 integrada como `d2e86473078c03f4b40a6ed1839a7a023b256aed`; CI `37869480634`, publicación principal `37869993966` y publicación del hub `37870639147` correctas. EN/AR HTTP 200; sitemap público con 3.996 URLs únicas, 36 de Modular Inverse. No se envió indexación manual ni se afirma indexación.
+- **Estado publicado:** 110 herramientas Growth600 adicionales; las 277 originales permanecen intactas. No PageSpeed/Lighthouse.
+- **Siguiente candidata:** #300 A/B Test Calculator. Sin PageSpeed/Lighthouse ni nueva investigación de DataForSEO.
+
+## En curso · A/B Test Calculator (#300) · 2026-10-09
+
+- [x] C/F — Ficha existente: `a b test calculator`, 480 búsquedas/mes US/en, KD 55; CPC 27,22 USD (no CPM). Secundaria `ab testing significance calculator`, 50/mes, KD 0. Sin llamadas adicionales a DataForSEO.
+- [x] E/B — Comparación local de dos grupos independientes con conteos de visitas y conversiones, tasas, diferencia absoluta en puntos porcentuales, lift relativo, IC Wilson por grupo, IC Newcombe de diferencia y prueba z bilateral agrupada aproximada (α=.05). Incluye limitaciones: independencia, consultas repetidas, comparaciones múltiples, exposición desigual/cluster y ausencia de atribución causal. Sin red, API, cuenta ni subida.
+- [x] L — 36 copias estáticas de Google Translate desde inglés; traducción automática sencilla, no revisión nativa. Títulos reparados dentro de 60 caracteres; nombres A/B y notación estadística coherentes. Sin traducción online.
+- [x] X — Lógica/controlador/formulario/localización/build; suite completa **1.464/1.464**, `npm run check` conserva 10.260 URLs del sitio principal y `npm run locale:release-check` pasa. Build del hub: 4.032 rutas (111 × 36 + 36 portadas), 4.196 archivos, 120.681.277 bytes. No PageSpeed/Lighthouse.
+- [x] B — Chrome EN/AR: 500/30 vs 500/40 da 6%, 8%, +2 pp y p≈0,2152 (inconcluso); entrada inválida 501/500 informa error y limpia resultado anterior; RTL a 500 px, consola limpia y sin peticiones externas.
+- [ ] P/S — PR/CI, publicación del hub y sitemap público pendientes.
+- **Estado:** no publicada hasta completar PR, CI, deploy y sitemap público. No afirmar indexación ni envío manual a buscadores.
+- **Siguiente candidata:** verificar la secuencia del plan antes de escoger: los números saltan del #300 al #302; revisar #301 (Investment Allocation Calculator) y no inventar/reordenar.
 
 ## Publicada · 555 Timer Calculator (#292) · 2026-10-09
 

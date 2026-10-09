@@ -89,6 +89,8 @@ import fourierSeriesCopies from './fourier-series-calculator.mjs';
 import { fourierSeriesEnglishCopy } from './fourier-series-calculator.en.mjs';
 import modularInverseCopies from './modular-inverse-calculator.mjs';
 import { modularInverseEnglishCopy } from './modular-inverse-calculator.en.mjs';
+import abTestCopies from './a-b-test-calculator.mjs';
+import { abTestEnglishCopy } from './a-b-test-calculator.en.mjs';
 import openApiEditorCopies from './openapi-editor.mjs';
 import { openApiEditorEnglishCopy } from './openapi-editor.en.mjs';
 import fontPairingToolCopies from './font-pairing-tool.mjs';
@@ -1037,5 +1039,6 @@ Object.assign(modularInverseCopies.ar, {
   ],
 });
 registerGrowthLocaleExtension(source, 'modular-inverse-calculator', { ...modularInverseCopies, en: modularInverseEnglishCopy }, 'fourier-series-calculator');
+registerGrowthLocaleExtension(source, 'a-b-test-calculator', { ...abTestCopies, en: abTestEnglishCopy }, 'modular-inverse-calculator');
 
 export default Object.freeze(source);

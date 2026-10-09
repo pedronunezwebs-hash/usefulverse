@@ -1319,6 +1319,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['gcd-lcm-calculator'],
     logicModule: './tools/modular-inverse-calculator/logic.mjs',
   },
+  {
+    id: 'a-b-test-calculator',
+    category: 'math-statistics',
+    type: 'calculator',
+    primaryIntent: 'a b test calculator',
+    secondaryIntents: ['ab testing significance calculator', 'a b test conversion rate calculator', 'two proportion significance calculator'],
+    functions: ['compare conversion rates from two independent groups', 'show absolute percentage-point difference and relative lift', 'show Wilson confidence intervals for each group and a Newcombe interval for the difference', 'run a two-sided pooled two-proportion z-test at a fixed 5% threshold and explain limits'],
+    acceptance: 'Two groups with 1,000 visitors and 80 conversions each show equal 8% rates, zero difference, and p = 1; a much larger predeclared difference in large samples can cross the approximate 5% threshold.',
+    boundary: 'Approximate two-sided pooled two-proportion z-test with 95% Wilson and Newcombe intervals; assumes independent groups and a predefined binary event. Does not handle sequential peeking, multiple comparisons, clustering, unequal exposure, causal attribution, or guarantee a winner. Counts are whole numbers up to 1,000,000,000,000. Calculation stays in the browser.',
+    relatedExistingIds: ['percentage-calculator'],
+    logicModule: './tools/a-b-test-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {
