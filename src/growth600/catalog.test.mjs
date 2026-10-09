@@ -4,9 +4,19 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 130);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 130);
+  assert.equal(growthPilotTools.length, 131);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 131);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
+});
+
+test('frequency and wavelength calculator solves the wave relation, distinct from unit conversion and antenna geometry', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'frequency-wavelength-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'wavelength calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['unit-converter']);
+  assert.match(tool.acceptance, /100 MHz.*3 m/u);
+  assert.match(tool.boundary, /approximate.*custom speed/u);
+  assert.match(tool.boundary, /No upload, API, storage or server processing/u);
 });
 
 test('JSON to Excel is distinct from CSV and spreadsheet conversion and keeps imports local', () => {

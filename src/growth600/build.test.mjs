@@ -55,6 +55,7 @@ import { csvEditorEnglishCopy } from './locales/csv-editor.en.mjs';
 import phCalculatorCopies from './locales/ph-calculator.mjs';
 import { phCalculatorEnglishCopy } from './locales/ph-calculator.en.mjs';
 import sectionModulusCopies from './locales/section-modulus-calculator.mjs';
+import frequencyWavelengthCopies from './locales/frequency-wavelength-calculator.mjs';
 
 const actions = { calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', updateProgress: 'Record progress', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', feet: 'Feet', inches: 'Inches', liters: 'Liters', cubicFeet: 'Cubic feet', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Computer', twoPlayers: 'Two players', privacyNote: 'Private on this device.', riseMode: 'Rise', pitchMode: 'Pitch' };
 const messages = { copied: 'Copied.', copyUnavailable: 'Copy unavailable.', calculated: 'Done.', sameSize: 'Sizes match.', checkInputs: 'Check entries.', diameter: 'Outside diameter', sidewall: 'Sidewall height', circumference: 'Circumference', revolutions: 'Revolutions per kilometre', diameterDifference: 'Diameter difference', diameterChange: 'Diameter change', groundClearance: 'Ground-clearance change', actualSpeed: 'Actual speed estimate', area: 'Area', volume: 'Volume', volumePerContainer: 'Volume per container', totalVolume: 'Total soil volume', orderVolume: 'Order volume', estimatedWeight: 'Estimated weight', bagsToBuy: 'Bags to buy', invalidFormula: 'Check formula.', atomCount: 'atoms', molarMass: 'Molar mass', estimateOnly: 'Estimate only.', currentPayment: 'Current payment', newPayment: 'New payment', paymentDifference: 'Difference', currentTotal: 'Current total', newTotal: 'New total', estimatedDifference: 'Estimated savings', breakEven: 'Break-even', noBreakEven: 'No break-even', monthCount: '{count} months', privatePair: '{giver} gives to {recipient}', allRevealed: 'All revealed.', drawReady: 'Ready.', checkNamesAndRules: 'Check entries.', downloaded: 'Downloaded.', pit: 'Pit', seeds: 'seeds', playerOne: 'Player one', playerTwo: 'Player two', playerOneWins: 'Player one wins.', playerTwoWins: 'Player two wins.', tie: 'Tie.', gameOver: 'Game over.', turn: '{player} turn.', effectiveRun: 'Horizontal run to ridge', rafterLength: 'Geometric rafter length', pitch: 'Pitch (rise per 12)', roofAngle: 'Roof angle', plumbCut: 'Plumb-cut angle', overhangRun: 'Horizontal overhang' };
@@ -68,6 +69,7 @@ function toolCopy(tool, language) {
   if (tool.id === 'csv-editor') return structuredClone(csvEditorCopies[language]);
   if (tool.id === 'ph-calculator') return structuredClone(phCalculatorCopies[language]);
   if (tool.id === 'section-modulus-calculator') return structuredClone(sectionModulusCopies[language]);
+  if (tool.id === 'frequency-wavelength-calculator') return structuredClone(frequencyWavelengthCopies[language]);
   const name = `${tool.id} ${language}`;
   const fields = {
     'image-region-redactor': { imageFile: 'Choose a raster image', mode: 'Redaction style', strength: 'Pixel size or blur amount', regionX: 'Left position in pixels', regionY: 'Top position in pixels', regionWidth: 'Region width in pixels', regionHeight: 'Region height in pixels', accuracyNote: 'Use black for private details; large images need enough memory.', dragHint: 'Drag to select or enter exact coordinates.', regionsLabel: 'Selected regions', format: 'Export format', relatedMosaic: 'Try a whole-image mosaic.', relatedCropper: 'Try the image cropper.' },
@@ -835,6 +837,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
     'molarity-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'molarity-calculator'), locale.key),
     'ph-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'ph-calculator'), locale.key),
     'section-modulus-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'section-modulus-calculator'), locale.key),
+    'frequency-wavelength-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'frequency-wavelength-calculator'), locale.key),
     'dilution-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'dilution-calculator'), locale.key),
     'ohms-law-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'ohms-law-calculator'), locale.key),
     'chemical-equation-balancer': toolCopy(growthPilotTools.find(({ id }) => id === 'chemical-equation-balancer'), locale.key),
