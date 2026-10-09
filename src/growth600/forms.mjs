@@ -82,6 +82,7 @@ export function renderGrowthForm(toolId, copy) {
     'spearman-correlation-calculator': ['pairs', 'pairsHint', 'accuracyNote', 'resultRho', 'resultCount', 'rankX', 'rankY', 'resultTable', 'tiesNote'],
     'wilcoxon-signed-rank-test-calculator': ['pairs', 'pairsHint', 'accuracyNote', 'resultStatus', 'resultCount', 'nonzeroLabel', 'zeroCount', 'tiedCount', 'positiveRankSum', 'negativeRankSum', 'pValue', 'method', 'methodExact', 'methodApproximation', 'methodNotAvailable', 'resultTable', 'before', 'after', 'difference', 'absoluteRank', 'signedRank'],
     'chinese-remainder-theorem-calculator': ['congruences', 'congruencesHint', 'accuracyNote', 'resultStatus', 'resultResidue', 'resultModulus', 'combinedEquation', 'equationCount', 'conflictAt', 'conflictGcd', 'difference', 'stepLabel'],
+    'json-diff': ['before', 'after', 'beforeHint', 'afterHint', 'arrayMode', 'arrayIndex', 'arrayKeyMode', 'arrayKey', 'arrayKeyHint', 'accuracyNote', 'results', 'added', 'removed', 'changed', 'changeList', 'noChanges', 'path', 'oldValue', 'newValue', 'patch', 'patchHint', 'invalid', 'operation', 'tooMany'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -208,6 +209,7 @@ export function renderGrowthForm(toolId, copy) {
     'spearman-correlation-calculator': ['calculate', 'reset', 'example', 'result', 'downloadCsv'],
     'wilcoxon-signed-rank-test-calculator': ['calculate', 'reset', 'example', 'result', 'downloadCsv'],
     'chinese-remainder-theorem-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
+    'json-diff': ['compare', 'example', 'reset', 'result', 'copy', 'copyPatch', 'downloadPatch'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
@@ -999,6 +1001,20 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'json-diff') return attachCopy(`<form id="tool-form" class="json-diff" novalidate>
+    ${label('json-diff-before', fields.before, '<textarea id="json-diff-before" name="before" rows="12" maxlength="200000" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" required>' + escapeGrowthHtml(copy.exampleBefore) + '</textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.beforeHint)}</p>
+    ${label('json-diff-after', fields.after, '<textarea id="json-diff-after" name="after" rows="12" maxlength="200000" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" required>' + escapeGrowthHtml(copy.exampleAfter) + '</textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.afterHint)}</p>
+    ${label('json-diff-array-mode', fields.arrayMode, `<select id="json-diff-array-mode" name="arrayMode"><option value="index">${escapeGrowthHtml(fields.arrayIndex)}</option><option value="key">${escapeGrowthHtml(fields.arrayKeyMode)}</option></select>`)}
+    ${label('json-diff-array-key', fields.arrayKey, '<input id="json-diff-array-key" name="arrayKey" type="text" maxlength="80" value="id" autocomplete="off" autocapitalize="off" spellcheck="false">')}
+    <p class="hint">${escapeGrowthHtml(fields.arrayKeyHint)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('compare')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div><h3>${escapeGrowthHtml(fields.changeList)}</h3><ol data-diff-list></ol><h3>${escapeGrowthHtml(fields.patch)}</h3><p class="hint">${escapeGrowthHtml(fields.patchHint)}</p><textarea id="json-diff-patch" name="patch" data-json-patch rows="10" readonly spellcheck="false" aria-label="${escapeGrowthHtml(fields.patch)}"></textarea><div class="actions">${button('copy', actions.copy, 'secondary')}${button('copyPatch', actions.copyPatch, 'secondary')}${button('downloadPatch', actions.downloadPatch, 'secondary')}</div></section>
   </form>`, copy);
 
   if (toolId === 'weight-loss-calculator') return attachCopy(`<form id="tool-form" novalidate>

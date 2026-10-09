@@ -2739,14 +2739,14 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 323 · Chinese Remainder Theorem Calculator
 
-- [x] **C/F/E/X/L/B** — lógica, 36 traducciones estáticas, regresión, build y muestreo Chrome completados. PR/deploy/sitemap se registrarán al cerrar publicación.
+- [x] **C/F/E/X/L/B/P/S** — completa y publicada en 36 idiomas estáticos.
 - **Destino:** `https://tools.usefulverse.com/tools/chinese-remainder-theorem-calculator/`; 36 versiones con los prefijos del anexo.
 - **Demanda:** `crt calculator` — 260 búsquedas/mes US/en, KD 0; nivel C. CPC 2.2 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Resolver sistema modular con módulos coprimos y detectar conflicto
 - **Prueba de aceptación específica:** x mod 3=2 y mod 5=3 da 8 mod15
 - **Frontera con otras herramientas:** system-of-equations-calculator: congruencias no ecuaciones reales. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** implementación propia con `BigInt` nativo; sin dependencia externa, API, worker ni costes por consulta. Límites de entrada y número de congruencias acotan el cálculo local.
-- **Implementación/QA local (2026-10-09):** admite pares `resto, módulo` y notación congruente; resuelve sistemas compatibles coprimos y no coprimos, informa conflictos y explica el cálculo combinado. Límites ±10¹², de 2 a 20 congruencias, dígitos árabes/persas. 36 copias estáticas generadas con Google Translate; traducción técnica árabe corregida manualmente tras detectar error en “least nonnegative”; no es revisión nativa. Regresión 1.527/1.527, `npm run check` preserva 10.260 URLs y release-check pasa; build 4.284 páginas (118 × 36 + 36 portadas), 4.455 archivos. Chrome EN/AR a 390 px: ejemplo → 8 mod 15, RTL sin overflow y consola limpia. Sin PageSpeed/Lighthouse ni llamada adicional DataForSEO.
+- **Implementación/publicación (2026-10-09):** admite pares `resto, módulo` y notación congruente; resuelve sistemas compatibles coprimos y no coprimos, informa conflictos y explica el cálculo combinado. Límites ±10¹², de 2 a 20 congruencias, dígitos árabes/persas. 36 copias estáticas generadas con Google Translate; traducción técnica árabe corregida manualmente tras detectar error en “least nonnegative”; no es revisión nativa. Regresión 1.527/1.527, `npm run check` preserva 10.260 URLs y release-check pasa; build 4.284 páginas (118 × 36 + 36 portadas), 4.455 archivos. Chrome EN/AR a 390 px: ejemplo → 8 mod 15, RTL sin overflow y consola limpia. PR #79 integrada en `0182616563777929c6ce09125e3cc4b86eacefa4`; CI `37889002769`, deploy principal `37889311273` y hub `37889323303`, todos exitosos. URLs EN/AR y sitemap público HTTP 200, 4.284 URLs únicas y 36 variantes CRT. No se afirma indexación ni envío manual. Sin PageSpeed/Lighthouse ni llamada adicional DataForSEO.
 - **Consultas secundarias del mismo propietario:**
   - `chinese remainder theorem calculator` — 140/mes US/en; KD 0.
   - `crt calculator free online`; `crt calculator with example`; `crt calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -2762,7 +2762,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 117 · Json Diff
 
-- [ ] **C/F/E/X/L/B/P/S completos — `json-diff`**
+- [ ] **C/F/E/X/L/B/P/S completos — `json-diff`** (implementación local en progreso; no publicada aún)
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/json-diff/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `json diff` — 8.100 búsquedas/mes US/en, KD 14; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Comparación semántica de objetos, orden de claves irrelevante, arrays por índice/ID y JSON Patch; los textos permanecen locales.
