@@ -34,6 +34,9 @@ const styleFiles = [
   'src/growth600/tools/chess-opening-trainer/chess-opening-trainer.css',
 ];
 const styles = minifyCss((await Promise.all(styleFiles.map((file) => readFile(resolve(root, file), 'utf8')))).join(''), { comments: 'exclamation' }).css;
+const toolStyles = {
+  'har-viewer': minifyCss(await readFile(resolve(root, 'src/growth600/tools/har-viewer/har-viewer.css'), 'utf8'), { comments: 'exclamation' }).css,
+};
 const faviconSvg = await readFile(resolve(root, 'public/favicon.svg'), 'utf8');
 const modelRevision = '92a21aca5713f20faf9a87590cdfbdce2e34112c';
 const modelFolder = `Xenova/swin2SR-lightweight-x2-64`;
@@ -66,6 +69,7 @@ const result = await buildGrowthStaticSite({
   localeEntries,
   copyByLocale,
   controllerBundles: await bundleGrowthControllers(),
+  toolStyles,
   workerBundles: { 'image-upscaler-worker': workerBuild.outputFiles[0].text },
   // ONNX Runtime's pinned static browser bundle uses Function internally for
   // its own dispatch; no user-controlled source reaches this worker.

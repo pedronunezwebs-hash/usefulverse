@@ -4,11 +4,13 @@
 
 ## Estado público actual · 2026-10-09
 
-- **121 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap de `tools.usefulverse.com` tiene **4.392 URLs** (121 × 36 + 36 páginas de idioma). Esto no equivale a que los buscadores ya hayan indexado cada URL.
+- **122 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap de `tools.usefulverse.com` tiene **4.428 URLs** (122 × 36 + 36 páginas de idioma). Esto no equivale a que los buscadores ya hayan indexado cada URL.
 - #148 Text to Binary Converter: PR #81 integrada; despliegue principal `37891603568` y despliegue del hub `37892340212` correctos. EN/ES/AR responden HTTP 200.
 - #171 Schema Markup Validator, #172 Readability Checker y #173 Savings Goal Calculator ya aparecen en las 36 versiones públicas; verificaciones previas registradas debajo.
 - #189 Certificate Decoder: 36 rutas públicas; detalles de pruebas y despliegue anotados abajo.
-- `npm run check` conserva **10.260 URLs** del sitio principal; suite actual: **1.553/1.553**; `npm run locale:release-check` pasa para los 36 locales.
+- #195 JSON↔XML Converter: 36 rutas públicas; PR #83 y publicación del hub verificadas, sitemap público actualizado a 4.428 URLs únicas.
+- #215 HAR Viewer: implementación local lista; falta PR/CI, publicación del hub y verificación pública. El build aislado contiene 4.464 URLs únicas (123 × 36 + 36 portadas); no contarla como publicada hasta que el despliegue termine.
+- `npm run check` conserva **10.260 URLs** del sitio principal; suite actual: **1.574/1.574**; `npm run locale:release-check` pasa para los 36 locales.
 
 ## Herramientas verificadas en despliegue anterior · #171–#173
 

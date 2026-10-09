@@ -1452,6 +1452,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/json-to-xml-converter/logic.mjs',
   },
   {
+    id: 'har-viewer',
+    category: 'developer-data',
+    type: 'tool',
+    primaryIntent: 'har analyzer',
+    secondaryIntents: ['har viewer', 'http archive viewer', 'analyze har file locally'],
+    functions: ['read HAR 1.2 or JSON captures from a local file or pasted text without uploading', 'summarize request count, HTTP errors, response content size, summed request time and slowest request', 'filter by sanitized URL, method and successful/error status', 'show a compact chronological waterfall for up to 100 matching entries at once'],
+    acceptance: 'Two HAR entries with timestamps 20 ms apart and request durations 48 ms and 180 ms yield 2 requests, one HTTP error, summed request time 228 ms, and a waterfall where the second request begins later; query values and request bodies are never shown.',
+    boundary: 'Local HAR 1.2 JSON inspection only. No network import, upload, request replay, body/header display or export. Sensitive query values and URL credentials are masked in the request list, but hosts and URL paths can still identify private systems; users must inspect the original capture before sharing. Maximum input 5 MiB, 5,000 entries, 120,000 JSON values and depth 48; only 100 matching rows render per page. Response body contents and page-load time are not reconstructed; request durations may overlap, so their sum is not page-load time.',
+    relatedExistingIds: ['url-parser'],
+    logicModule: './tools/har-viewer/logic.mjs',
+  },
+  {
     id: 'chinese-remainder-theorem-calculator',
     category: 'math-statistics',
     type: 'calculator',
