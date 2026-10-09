@@ -1416,6 +1416,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/json-diff/logic.mjs',
   },
   {
+    id: 'text-to-binary-converter',
+    category: 'developer-data',
+    type: 'tool',
+    primaryIntent: 'binary to text converter',
+    secondaryIntents: ['text to binary converter', 'utf-8 binary converter', 'binary text decoder'],
+    functions: ['encode text as exact UTF-8 bytes displayed as eight-bit binary groups', 'decode whitespace-separated or compact complete binary bytes as strict UTF-8 text', 'preserve accented characters, combining sequences, line breaks, emoji and a leading byte-order mark', 'copy or download the local conversion result and optionally group output bytes with spaces'],
+    acceptance: 'Converting ñ produces UTF-8 bytes C3 B1 (11000011 10110001), and decoding those groups returns ñ; a multibyte emoji also round-trips without byte loss.',
+    boundary: 'Converts plain text and UTF-8 bytes, not integers between numeric bases, ASCII code points, or arbitrary encodings. Binary input may contain whitespace but must contain only 0/1 bits in complete 8-bit bytes and decode as strictly valid UTF-8. Text is limited to 20,000 UTF-16 code units; binary is limited to 160,000 bits. Uses browser TextEncoder/TextDecoder only; no API, upload or server processing.',
+    relatedExistingIds: ['binary-converter', 'base64-encoder-decoder', 'text-diff-checker'],
+    logicModule: './tools/text-to-binary-converter/logic.mjs',
+  },
+  {
     id: 'chinese-remainder-theorem-calculator',
     category: 'math-statistics',
     type: 'calculator',

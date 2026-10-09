@@ -2,7 +2,7 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## En implementación local · JSON Diff (#117) · 2026-10-09
+## Publicada · JSON Diff (#117) · 2026-10-09
 
 - [x] C/F — reutiliza la ficha ya investigada: `json diff`, 8.100 búsquedas/mes US/en, KD 14; secundaria `json compare online`, 2.900. Sin DataForSEO nuevo.
 - [x] E — comparación semántica (no diff de líneas), orden de claves de objetos ignorado, arrays por posición o propiedad única, resumen de altas/bajas/cambios y patch JSON descargable/copiable. #117 es distinta del comparador textual existente y del formateador JSON.
@@ -10,8 +10,20 @@
 - [x] L — copy y metadata estáticos disponibles en los 36 idiomas, generados con Google Translate; traducción automática básica, no revisión nativa. Copy inglés y tres FAQs específicos.
 - [x] X — pruebas específicas **91/91**; suite completa **1.537/1.537**; `npm run check` conserva **10.260 URLs** principales y `npm run locale:release-check` pasa. Build aislado: **4.320 páginas** (119 × 36 + 36 portadas), 4.492 archivos, 129.087.882 bytes.
 - [x] B — Chrome EN con comparación de arrays por ID; Chrome AR a 390×844: ejemplo con cambios/altas y patch, `lang=ar`, `dir=rtl`, ancho 390/390, cero avisos/errores. No se probó cada idioma/dispositivo. Sin PageSpeed/Lighthouse.
-- [ ] P/S — no hay PR ni despliegue de JSON Diff; no modificar todavía sitemap público.
-- **Recuento publicado vigente:** 118 herramientas Growth600 / 4.284 URLs de hub, incluido #323. JSON Diff todavía no se cuenta como publicado.
+- [x] P/S — PR #80 integrada como `a5623dff218c56d78e893e87f89e4a7f2ab098ce`; CI PR `37890180221`, deploy principal `37890504845` y deploy separado del hub `37890916012`, todos exitosos. Rutas EN/AR y sitemap HTTP 200; **4.320 URLs únicas**, 36 variantes JSON Diff. No se afirma indexación ni envío manual.
+- **Recuento publicado:** 119 herramientas Growth600 / 4.320 URLs de hub, incluido #323; las 277 originales intactas.
+- **Siguiente candidata:** #148 Text to Binary Converter.
+
+## En implementación local · Text to Binary Converter (#148) · 2026-10-09
+
+- [x] C/F — ficha existente del plan: `binary to text converter`, 5.400 búsquedas/mes US/en, KD 38; secundaria `text to binary converter`, 1.900. Sin consultas nuevas ni coste DataForSEO.
+- [x] E/B — conversión texto↔bytes UTF-8 reales, con agrupación opcional y exportación local; conserva Unicode, BOM y saltos. Rechaza bits incompletos, UTF-8 inválido y entradas excesivas. `TextEncoder`/`TextDecoder` nativos; sin dependencia, red, servidor ni carga de archivos.
+- [x] L — copy y metadata traducidos estáticamente a los 36 idiomas con el flujo automático de Google Translate aceptado por el propietario; borrador comprensible, no revisión nativa.
+- [x] X — pruebas focales **91/91**; suite global rerun **1.545/1.545**; `npm run check` conserva **10.260 URLs** principales; `npm run locale:release-check` pasa. Build separado: **4.356 páginas** (120 × 36 + 36 portadas), 4.529 archivos, 130.181.912 bytes. Controlador: 3.336 bytes.
+- [x] B — Chrome EN codifica y decodifica `ñ 👋` en UTF-8; rechaza byte inválido. Árabe `lang=ar`, `dir=rtl`, viewport 390×844 sin overflow ni mensajes de consola. No se midió PageSpeed/Lighthouse ni se probaron todos los navegadores/idiomas individualmente.
+- [ ] P/S — falta PR, CI, integración y deploy público; no incrementar sitemap público todavía.
+- **Recuento publicado vigente:** 119 herramientas Growth600 / 4.320 URLs.
+- **Siguiente candidata tras publicación:** #171 Schema Markup Validator.
 
 ## Publicada · Chinese Remainder Theorem Calculator (#323) · 2026-10-09
 
@@ -22,7 +34,6 @@
 - [x] B — Chrome a 390×844: `x ≡ 2 (mod 3)` y `x ≡ 3 (mod 5)` → `x ≡ 8 (mod 15)`; árabe acepta dígitos arábigo-índicos, `lang=ar`, `dir=rtl`, ancho 390/390 y consola limpia. No se probó cada idioma/dispositivo.
 - [x] P/S — PR #79 integrada como `0182616563777929c6ce09125e3cc4b86eacefa4`; CI `37889002769`, deploy principal `37889311273`, deploy del hub `37889323303`, todos exitosos. URLs EN/AR y sitemap HTTP 200; 4.284 URLs únicas y 36 variantes CRT. No se afirma indexación ni envío manual.
 - **Recuento publicado:** 118 herramientas Growth600 / 4.284 URLs de hub; las 277 originales intactas.
-- **Siguiente candidata:** #117 JSON Diff, ya iniciada en esta continuación.
 
 ## Publicada · Wilcoxon Signed Rank Test Calculator (#316) · 2026-10-09
 

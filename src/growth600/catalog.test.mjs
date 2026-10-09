@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 119);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 119);
+  assert.equal(growthPilotTools.length, 120);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 120);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -60,6 +60,16 @@ test('JSON Diff compares structure rather than source lines and stays distinct f
   assert.match(tool.acceptance, /key order/u);
   assert.match(tool.functions.join(' '), /match object records/u);
   assert.match(tool.boundary, /array indexes/u);
+});
+
+test('text/binary conversion preserves UTF-8 and stays distinct from numeric base conversion', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'text-to-binary-converter');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'binary to text converter');
+  assert.deepEqual(tool.relatedExistingIds, ['binary-converter', 'base64-encoder-decoder', 'text-diff-checker']);
+  assert.match(tool.acceptance, /ñ produces UTF-8 bytes/u);
+  assert.match(tool.boundary, /not integers between numeric bases/u);
+  assert.match(tool.boundary, /strictly valid UTF-8/u);
 });
 
 test('OpenAPI editor stays a local contract editor and does not duplicate request-builder intent', () => {
