@@ -65,6 +65,7 @@ export function renderGrowthForm(toolId, copy) {
     'projectile-motion-calculator': ['speed', 'speedUnit', 'metersPerSecond', 'kilometersPerHour', 'milesPerHour', 'angleDegrees', 'initialHeight', 'lengthUnit', 'meters', 'feet', 'gravity', 'accuracyNote', 'plotTitle', 'plotDescription', 'motionReduced'],
     'pulley-calculator': ['driverDiameter', 'drivenDiameter', 'centerDistance', 'diameterUnit', 'millimeters', 'inches', 'inputRpm', 'accuracyNote', 'sketchTitle', 'sketchDescription'],
     'rlc-circuit-calculator': ['topology', 'series', 'parallel', 'resistance', 'inductance', 'inductanceUnit', 'henries', 'millihenries', 'microhenries', 'capacitance', 'capacitanceUnit', 'farads', 'microfarads', 'nanofarads', 'picofarads', 'frequency', 'frequencyUnit', 'hertz', 'kilohertz', 'voltage', 'accuracyNote', 'chartTitle', 'chartDescription'],
+    'antenna-length-calculator': ['mode', 'dipole', 'monopole', 'frequency', 'frequencyUnit', 'hz', 'khz', 'mhz', 'ghz', 'shorteningFactor', 'accuracyNote'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
     'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
     'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
@@ -219,6 +220,7 @@ export function renderGrowthForm(toolId, copy) {
     'projectile-motion-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'playTrajectory', 'resetAnimation'],
     'pulley-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'rlc-circuit-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'antenna-length-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
     'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -2119,6 +2121,17 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}<div data-rlc-chart hidden><h3>${escapeGrowthHtml(fields.chartTitle)}</h3><svg data-rlc-response viewBox="0 0 560 240" role="img" aria-label="${escapeGrowthHtml(fields.chartDescription)}" focusable="false"></svg></div></section>
+  </form>`, copy);
+
+  if (toolId === 'antenna-length-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('antenna-mode', fields.mode, `<select id="antenna-mode" name="mode"><option value="dipole">${escapeGrowthHtml(fields.dipole)}</option><option value="monopole">${escapeGrowthHtml(fields.monopole)}</option></select>`)}
+    ${label('antenna-frequency', fields.frequency, '<input id="antenna-frequency" name="frequency" type="number" min="0.000000001" max="1000000" step="any" inputmode="decimal" value="100" required>')}
+    ${label('antenna-frequency-unit', fields.frequencyUnit, `<select id="antenna-frequency-unit" name="frequencyUnit"><option value="Hz">${escapeGrowthHtml(fields.hz)}</option><option value="kHz">${escapeGrowthHtml(fields.khz)}</option><option value="MHz" selected>${escapeGrowthHtml(fields.mhz)}</option><option value="GHz">${escapeGrowthHtml(fields.ghz)}</option></select>`)}
+    ${label('antenna-shortening-factor', fields.shorteningFactor, '<input id="antenna-shortening-factor" name="shorteningFactor" type="number" min="0.70" max="1" step="0.01" inputmode="decimal" value="0.95" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'friction-calculator') return attachCopy(`<form id="tool-form" novalidate>

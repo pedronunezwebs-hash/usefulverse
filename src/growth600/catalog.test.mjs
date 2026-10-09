@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 146);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 146);
+  assert.equal(growthPilotTools.length, 147);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 147);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -37,6 +37,16 @@ test('RLC calculator covers resonant response and impedance separately from RC t
   assert.match(tool.functions.join(' '), /quality factor Q and bandwidth/u);
   assert.match(tool.acceptance, /1,591\.55 Hz.*Q=10/u);
   assert.match(tool.boundary, /parallel model uses R in parallel with L and C.*not uploaded|inputs stay in this browser/u);
+});
+
+test('antenna calculator adds element geometry beyond frequency/wavelength conversion', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'antenna-length-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'dipole antenna calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['frequency-wavelength-calculator']);
+  assert.match(tool.acceptance, /100 MHz.*1\.5 m total.*0\.75 m per leg/u);
+  assert.match(tool.functions.join(' '), /shortening factor/u);
+  assert.match(tool.boundary, /not a universal correction.*no values uploaded/u);
 });
 
 test('ideal gas law calculator solves one blank from PV=nRT and discloses model limits', () => {

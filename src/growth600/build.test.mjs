@@ -13,6 +13,7 @@ import pcbTraceWidthCopies from './locales/pcb-trace-width-calculator-final.mjs'
 import projectileMotionCopies from './locales/projectile-motion-calculator-final.mjs';
 import pulleyCalculatorCopies from './locales/pulley-calculator-final.mjs';
 import rlcCircuitCalculatorCopies from './locales/rlc-circuit-calculator-final.mjs';
+import antennaLengthCalculatorCopies from './locales/antenna-length-calculator-final.mjs';
 import { buildGrowthStaticSite } from './build.mjs';
 import englishGrowthCopy from './locales/en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
@@ -82,6 +83,7 @@ function toolCopy(tool, language) {
   if (tool.id === 'projectile-motion-calculator') return structuredClone(projectileMotionCopies[language]);
   if (tool.id === 'pulley-calculator') return structuredClone(pulleyCalculatorCopies[language]);
   if (tool.id === 'rlc-circuit-calculator') return structuredClone(rlcCircuitCalculatorCopies[language]);
+  if (tool.id === 'antenna-length-calculator') return structuredClone(antennaLengthCalculatorCopies[language]);
   if (tool.id === 'json-to-xml-converter') return { ...structuredClone(jsonToXmlEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09' };
   if (tool.id === 'har-viewer') return { ...structuredClone(harViewerEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09' };
   if (tool.id === 'robots-txt-tester') return structuredClone(robotsTxtTesterCopies[language]);
@@ -910,6 +912,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
     'vector-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'vector-calculator'), locale.key),
     'cubic-quartic-equation-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'cubic-quartic-equation-calculator'), locale.key),
     'complex-number-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'complex-number-calculator'), locale.key),
+    'antenna-length-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'antenna-length-calculator'), locale.key),
     'density-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'density-calculator'), locale.key),
     'kinetic-energy-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'kinetic-energy-calculator'), locale.key),
     'resistor-color-code-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'resistor-color-code-calculator'), locale.key),

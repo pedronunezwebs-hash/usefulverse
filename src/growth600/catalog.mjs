@@ -504,6 +504,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/rlc-circuit-calculator/logic.mjs',
   },
   {
+    id: 'antenna-length-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'dipole antenna calculator',
+    secondaryIntents: ['antenna length calculator', 'quarter wave antenna calculator', 'half wave dipole length calculator'],
+    functions: ['estimate free-space wavelength and ideal half-wave dipole or quarter-wave monopole length from operating frequency', 'apply an editable conductor shortening factor and show both the ideal length and a practical starting estimate', 'show the total dipole length, each equal dipole leg, and metric/imperial results with explicit formulas'],
+    acceptance: 'At 100 MHz, free-space wavelength is about 3 m and ideal half-wave dipole length is about 1.5 m total (about 0.75 m per leg) before any shortening factor.',
+    boundary: 'Basic straight-conductor geometry in free space only. The adjustable factor is a starting estimate, not a universal correction or coaxial velocity factor. Feed, element diameter, ground, nearby objects and installation affect resonance and tuning. Does not predict impedance, gain, pattern, matching, legal compliance or safety; measure/tune the installed antenna and follow applicable radio and installation rules. Runs locally; no values uploaded.',
+    relatedExistingIds: ['frequency-wavelength-calculator'],
+    logicModule: './tools/antenna-length-calculator/logic.mjs',
+  },
+  {
     id: 'chemical-equation-balancer',
     category: 'science-engineering',
     type: 'calculator',
