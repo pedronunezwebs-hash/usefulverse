@@ -31,6 +31,7 @@ import { transformerCalculatorEnglishCopy } from './locales/transformer-calculat
 import { stoichiometryCalculatorEnglishCopy } from './locales/stoichiometry-calculator.en.mjs';
 import { pressureCalculatorEnglishCopy } from './locales/pressure-calculator.en.mjs';
 import { pcbTraceWidthCalculatorEnglishCopy } from './locales/pcb-trace-width-calculator.en.mjs';
+import { projectileMotionCalculatorEnglishCopy } from './locales/projectile-motion-calculator.en.mjs';
 
 const actions = {
   calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', millimeters: 'Millimeters', feet: 'Feet', inches: 'Inches', squareMeters: 'Square meters', squareFeet: 'Square feet', cubicMeters: 'Cubic meters', cubicFeet: 'Cubic feet', kelvin: 'Kelvin difference', fahrenheit: 'Fahrenheit difference', kilowatts: 'Kilowatts (kW)', btuPerHour: 'BTU per hour (BTU/h)', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.', kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only', productionMode: 'Estimate array output', sizingMode: 'Size for daily use', years: 'years', add: 'Add', subtract: 'Subtract', multiply: 'Multiply', divide: 'Divide', magnitude: 'Modulus', argument: 'Argument', rectangularToPolar: 'Rectangular to polar', polarToRectangular: 'Polar to rectangular', roots: 'Nth roots',
@@ -41,6 +42,7 @@ const copies = {
   'stoichiometry-calculator': stoichiometryCalculatorEnglishCopy,
   'pressure-calculator': pressureCalculatorEnglishCopy,
   'pcb-trace-width-calculator': pcbTraceWidthCalculatorEnglishCopy,
+  'projectile-motion-calculator': projectileMotionCalculatorEnglishCopy,
   'image-sharpener': { name: 'Image sharpener', actions: { ...actions, load: 'Choose image', export: 'Prepare download', download: 'Download', original: 'Show original', sharpened: 'Sharpened preview', png: 'PNG', jpeg: 'JPEG' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', exporting: 'Sharpening…', exportFailed: 'Export failed.', exportReady: 'Image ready.' }, fields: { imageFile: 'Choose image', amount: 'Strength', radius: 'Radius', threshold: 'Threshold', compare: 'Show original', accuracyNote: 'Processed locally; 8 megapixel limit.', previewHint: 'Preview is reduced.', format: 'Format', relatedRedactor: 'Redact private details.', relatedCropper: 'Crop the image.' } },
   'photo-to-sketch': { name: 'Photo to sketch', actions: { ...actions, load: 'Choose image', export: 'Create sketch PNG', cancel: 'Cancel processing', download: 'Download sketch PNG', original: 'Show original' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', exporting: 'Creating sketch…', cancelled: 'Processing cancelled.', exportFailed: 'Export failed.', exportReady: 'Sketch ready.' }, fields: { imageFile: 'Choose image', intensity: 'Sketch intensity', detail: 'Fine-detail threshold', compare: 'Show original', accuracyNote: 'Local processing; maximum 8 megapixels.', previewHint: 'Reduced preview.' } },
   'schema-markup-validator': { name: 'Schema markup validator', actions: { ...actions, validate: 'Validate markup', copySummary: 'Copy summary' }, messages: { ...messages, invalidJson: 'Invalid JSON.', rootNotObject: 'Expected an object.', inputTooLarge: 'Input too long.', loadingVocabulary: 'Loading terms.', vocabularyUnavailable: 'Terms unavailable.', valid: 'Valid.', invalid: 'Invalid.', unknownType: 'Unknown type.', unknownProperty: 'Unknown property.', noTypedEntity: 'No type.', exampleLoaded: 'Example loaded.' }, fields: { markup: 'Paste JSON-LD', accuracyNote: 'Local checks.', resultSummary: 'Summary', issues: 'Findings', googleNote: 'Not a Google test.' } },
@@ -1472,4 +1474,11 @@ test('PCB trace width form offers width and current estimates, selectable layer,
   assert.match(html, /href="https:\/\/www\.electronics\.org\/ipc-design-standards"[^>]*rel="noopener noreferrer"/u);
   assert.match(html, /role="status" aria-live="polite"/u);
   assert.match(html, /not certification or a safety guarantee/u);
+});
+
+test('projectile form exposes speed, angle, height, unit controls, accessible plot, and on-demand animation actions', () => {
+  const html = renderGrowthForm('projectile-motion-calculator', projectileMotionCalculatorEnglishCopy);
+  for (const expected of ['name="speed"', 'name="speedUnit"', 'name="angleDegrees"', 'name="initialHeight"', 'name="lengthUnit"', 'name="gravity"', 'data-trajectory-visual hidden', 'data-trajectory-plot', 'role="img"', 'data-action="playTrajectory"', 'data-action="resetAnimation"']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /no air resistance/u);
+  assert.match(html, /role="status" aria-live="polite"/u);
 });

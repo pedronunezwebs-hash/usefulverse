@@ -1607,7 +1607,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [x] P/S — PR [#103](https://github.com/pedronunezwebs-hash/usefulverse/pull/103), merge `3bc6aaad0e33853813210d64daecae2e6b2ab825`; CI PR `37952645952`, despliegue principal `37952987554` y hub `37953439014` correctos. Sitemap público 5.148; EN/AR HTTP 200. La publicación no implica que buscadores hayan rastreado/indexado.
 - **Recuento local tras Pressure:** 86/323 candidatas; quedan 237 válidas y una fila duplicada/reserva por sustituir.
 
-## En implementación local · PCB Trace Width Calculator (#251) · 2026-10-09
+## Publicada · PCB Trace Width Calculator (#251) · 2026-10-09
 
 - Demanda del plan, sin volver a llamar a DataForSEO: `pcb trace width calculator`, 1.300 búsquedas/mes US/en, KD 38; secundaria `pcb current calculator`, 50/mes, KD 0.
 - Dos modos: estimar ancho desde corriente/cobre/ΔT y estimar corriente con ancho conocido; diferencia capa interna/externa; resultados mm, mil y área transversal.
@@ -1616,6 +1616,19 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - 36 copias estáticas a partir del inglés; árabe redactado específicamente. Títulos ≤60 y descripciones ≤160 validados; traducción automática sencilla para el resto, no revisión nativa.
 - Suite global **1.743/1.743**; `npm run locale:release-check`, `npm run check` (**10.260 URLs principales**) y `git diff --check` pasan. Build aislado: **5.184 páginas** (143 herramientas × 36 + 36 portadas; 5.384 archivos, ~155 MB).
 - QA Chrome EN y AR: ejemplos en los dos modos calculan ancho/capacidad, corriente cero queda rechazada con el resultado oculto; árabe `dir=rtl`, sin overflow en viewport medido de 500 px; link al catálogo oficial IPC presente y protegido con `rel=noopener noreferrer`. Consola sin errores/avisos. No se ejecutó PageSpeed/Lighthouse.
-- README de la rama refleja 277 herramientas principales + 143 Growth600; inventario local 10.260 + 5.184 URLs. El hub público continúa en **142 herramientas / 5.148 URLs** hasta completar la publicación; esta ruta aún no es pública.
-- **Recuento local tras añadirla:** 87/323 candidatas; quedan 236 válidas y una fila duplicada/reserva por sustituir.
-- [ ] **P/S:** revisión final de diff, PR, CI, deploy principal, publicación del hub y verificación del sitemap/rutas EN/AR pendientes. No se afirma indexación.
+- README refleja 277 herramientas principales + 143 Growth600; sitemaps 10.260 + 5.184 URLs. Página y sitemap públicos ya verificados; indexación por buscadores no se infiere.
+- **Recuento publicado tras #251:** 87/323 candidatas; quedan 236 válidas y una fila duplicada/reserva por sustituir.
+- [x] **P/S:** PR [#104](https://github.com/pedronunezwebs-hash/usefulverse/pull/104), merge `66197be33cf2fcc99ffe85f320e9d8e216235d36`; CI PR `37954779950`, deploy principal `37955139597`, publicación del hub `37955715882`. Sitemap público **5.184 URLs** y rutas EN/AR HTTP 200. Publicar no garantiza indexación.
+
+## En implementación local · Projectile Motion Calculator (#252) · 2026-10-09
+
+- Demanda reutilizada del plan, sin consulta nueva a DataForSEO: `projectile motion calculator`, 1.000 búsquedas/mes US/en, KD 0; CPC no informado. Secundaria `projectile calculator`, 140/mes, KD 0.
+- Física puntual ideal: velocidad de salida, ángulo 0–90°, altura inicial y gravedad constante; velocidad en m/s, km/h o mph; alturas/distancias en m o ft. Resultados: duración, alcance, altura máxima, tiempo al ápice y velocidad de impacto. Gráfica SVG accesible, animación solo al solicitarla y respeto de `prefers-reduced-motion`.
+- Límites declarados: sin resistencia del aire, viento, sustentación, giro, obstáculos ni cambio de gravedad; aterriza en el nivel cero y no predice ni certifica trayectorias reales. Todo local, sin llamadas/API ni dependencias nuevas.
+- Seis pruebas de lógica pasan (lanzamiento 45°, vertical de alcance cero, altura inicial, conversión de unidades, muestreo y límites). Suite focal 289/289 y global **1.752/1.752**.
+- 36 copias estáticas: inglés, árabe ajustado específicamente y 34 traducidas automáticamente por lotes; no revisión nativa. `npm run locale:release-check` pasa y los límites SEO quedan dentro del contrato.
+- Builds comprobados: sitio principal **10.260 URLs**; hub **5.220 páginas** (144 herramientas × 36 + 36 portadas; 5.421 archivos, 156.113.154 bytes). README regenerado; `git diff --check` pasa.
+- QA Chrome EN/AR móvil 390×844: ejemplo 45° con tiempo 2,88419 s, alcance 40,78865 m y altura máxima 10,19716 m; tiro vertical de alcance cero; la animación responde al botón y se reinicia; el modo de movimiento reducido muestra el estado localizado sin animar. Árabe RTL y resultados localizados, sin overflow ni errores de consola tras corregir una carrera en callbacks RAF. No se ejecutó PageSpeed/Lighthouse ni se probaron los 36 idiomas uno a uno.
+- **Estado:** rama `codex/growth600-projectile-motion-20261009`, local solamente; no contar como pública hasta P/S.
+- **Recuento de implementación:** 88/323 candidatas; 235 válidas y una fila duplicada/reserva por reemplazar. Publicado sigue en 143 Growth600 / 5.184 URLs hasta completar release.
+- [ ] **P/S:** diff final, PR, CI, deploy principal, publicación del hub y verificación pública EN/AR/sitemap pendientes. No se afirma indexación.

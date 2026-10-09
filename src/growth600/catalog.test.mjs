@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 143);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 143);
+  assert.equal(growthPilotTools.length, 144);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 144);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -58,6 +58,17 @@ test('pressure calculator separates average force over area from static-fluid ga
   assert.match(tool.acceptance, /100 N.*2 m².*50 Pa/u);
   assert.match(tool.functions.join(' '), /hydrostatic gauge pressure/u);
   assert.match(tool.boundary, /atmospheric pressure.*not uploaded/u);
+});
+
+test('projectile calculator is distinct from graphing and energy tools and discloses its ideal model', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'projectile-motion-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'projectile motion calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['kinetic-energy-calculator', 'function-grapher']);
+  assert.match(tool.functions.join(' '), /initial height.*constant gravity/u);
+  assert.match(tool.functions.join(' '), /reduced-motion/u);
+  assert.match(tool.acceptance, /90-degree vertical launch.*zero horizontal.*range/u);
+  assert.match(tool.boundary, /no air resistance.*wind.*spin/u);
 });
 
 test('PCB trace width calculator estimates copper capacity without duplicating cable voltage-drop intent', () => {

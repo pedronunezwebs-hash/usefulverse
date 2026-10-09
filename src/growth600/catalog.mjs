@@ -468,6 +468,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/pcb-trace-width-calculator/logic.mjs',
   },
   {
+    id: 'projectile-motion-calculator',
+    category: 'science-physics',
+    type: 'calculator',
+    primaryIntent: 'projectile motion calculator',
+    secondaryIntents: ['projectile calculator', 'projectile range calculator', 'projectile trajectory calculator'],
+    functions: ['calculate an ideal projectile path with launch speed, angle, initial height and constant gravity, without air resistance', 'report flight time, horizontal range, peak height, time to peak and impact speed in selected units', 'plot the trajectory and let the visitor replay its motion on demand, respecting reduced-motion preferences'],
+    acceptance: 'A 90-degree vertical launch has zero horizontal velocity and range; a 20 m/s launch at 45 degrees from ground level under 9.80665 m/s² travels about 40.79 m and reaches about 10.20 m high.',
+    boundary: 'Introductory point-mass model with constant gravity and no air resistance, wind, lift, spin, obstacles or changing altitude reference. Assumes landing at height zero and upward launch angles from 0 to 90 degrees. Not a prediction for real projectiles or safety guidance. Calculation and optional animation run locally in the browser.',
+    relatedExistingIds: ['kinetic-energy-calculator', 'function-grapher'],
+    logicModule: './tools/projectile-motion-calculator/logic.mjs',
+  },
+  {
     id: 'chemical-equation-balancer',
     category: 'science-engineering',
     type: 'calculator',

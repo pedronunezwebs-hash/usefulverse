@@ -1420,15 +1420,15 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 251 · Pcb Trace Width Calculator
 
-- [x] **C/F/E/X/L/B — `pcb-trace-width-calculator` completos localmente; P/S pendientes.**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/pcb-trace-width-calculator/`; otras 35 versiones con los prefijos del anexo. El hub público sigue en 142 herramientas / 5.148 URLs hasta el release de esta candidata.
+- [x] **C/F/E/X/L/B/P/S — `pcb-trace-width-calculator` publicada.**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/pcb-trace-width-calculator/`; otras 35 versiones con los prefijos del anexo. Hub publicado con 143 herramientas / 5.184 URLs.
 - **Demanda:** `pcb trace width calculator` — 1.300 búsquedas/mes US/en, KD 38; nivel B. CPC 1.36 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** [x] cálculo inverso de ancho/corriente; [x] peso de cobre y ΔT; [x] capa interna/externa; [x] resultados mm/mil/área y enlace al catálogo oficial IPC.
 - **Prueba de aceptación específica:** [x] corriente cero produce caso no dimensionable; [x] modos y resultados aceptados comprobados en navegador EN/AR.
 - **Frontera con otras herramientas:** voltage-drop-calculator: PCB y térmica, no cable. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** [x] motor local ligero; [x] controles y límites de entrada; [x] aproxima el modelo clásico IPC-2221, sin atribuir certificación/seguridad ni sustituir revisión de ingeniería.
 - **Verificación local:** [x] suite 1.743/1.743, release locales, build principal 10.260 URLs, build Growth600 5.184 URLs, Chrome EN/AR RTL. Sin PageSpeed/Lighthouse.
-- [ ] **P/S:** PR, CI, despliegue, hub y sitemap público aún por verificar.
+- [x] **P/S:** PR [#104](https://github.com/pedronunezwebs-hash/usefulverse/pull/104), merge `66197be33cf2fcc99ffe85f320e9d8e216235d36`; CI `37954779950`, deploy principal `37955139597`, hub `37955715882`; EN/AR y sitemap público verificados.
 - **Consultas secundarias del mismo propietario:**
   - `pcb current calculator` — 50/mes US/en; KD 0.
   - `pcb trace width calculator free online`; `pcb trace width calculator with example`; `pcb trace width calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -1436,8 +1436,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 252 · Projectile Motion Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `projectile-motion-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/projectile-motion-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [ ] **C/F/E/X/L/B completos — `projectile-motion-calculator`**
+- **Destino propuesto:** `https://tools.usefulverse.com/tools/projectile-motion-calculator/`; otras 35 versiones con los prefijos del anexo. Implementación, traducciones automáticas y QA local completas; PR/deploy y sitemap público pendientes.
 - **Demanda:** `projectile motion calculator` — 1.000 búsquedas/mes US/en, KD 0; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Trayectoria sin arrastre, altura inicial, alcance y animación
 - **Prueba de aceptación específica:** Lanzamiento vertical sin componente x da alcance0
@@ -1447,6 +1447,10 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `projectile calculator` — 140/mes US/en; KD 0.
   - `projectile motion calculator free online`; `projectile motion calculator with example`; `projectile motion calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Avance:** motor, formulario y controller SVG/animación; seis pruebas de lógica. 36 copias estáticas (inglés, árabe ajustado y 34 traducciones automáticas desde inglés, sin revisión nativa). Suite dirigida 289/289; suite global 1.752/1.752; `locale:release-check`, build principal (10.260 URLs), build del hub (5.220 URLs) y `git diff --check` pasan. Chrome móvil 390×844 EN/AR: ejemplo a 45°, lanzamiento vertical con alcance cero, reproducción/reinicio, movimiento reducido, RTL árabe sin términos ingleses en resultados; sin desbordamiento ni errores de consola tras corregir una carrera de animación.
+- **Inventario local:** README generado con 10.260 URLs del sitio y 5.220 del hub; son rutas compiladas, no publicadas/indexadas.
+- **Recuento tras implementación local:** 88/323 candidatas; 235 candidatas válidas y una fila duplicada/reserva por reemplazar. Las 277 herramientas originales permanecen intactas.
+- [ ] **P/S:** revisión final del diff, PR, CI, deploy principal, publicación del hub y verificación de rutas EN/AR/sitemap público pendientes. No afirmar indexación.
 
 ### 257 · Pulley Calculator
 

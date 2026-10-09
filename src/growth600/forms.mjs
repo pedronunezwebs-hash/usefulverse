@@ -62,6 +62,7 @@ export function renderGrowthForm(toolId, copy) {
     'stoichiometry-calculator': ['equation', 'inputMode', 'gramsMode', 'molesMode', 'reactantAmounts', 'reactantAmountsHint', 'products', 'actualProductMass', 'actualProductHint', 'accuracyNote'],
     'pressure-calculator': ['mode', 'forceAreaMode', 'hydrostaticMode', 'force', 'forceUnit', 'area', 'areaUnit', 'density', 'densityUnit', 'depth', 'depthUnit', 'gravity', 'pressureUnit', 'accuracyNote'],
     'pcb-trace-width-calculator': ['mode', 'requiredWidthMode', 'currentCapacityMode', 'conductor', 'external', 'internal', 'current', 'copperWeight', 'temperatureRise', 'width', 'widthUnit', 'accuracyNote'],
+    'projectile-motion-calculator': ['speed', 'speedUnit', 'metersPerSecond', 'kilometersPerHour', 'milesPerHour', 'angleDegrees', 'initialHeight', 'lengthUnit', 'meters', 'feet', 'gravity', 'accuracyNote', 'plotTitle', 'plotDescription', 'motionReduced'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
     'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
     'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
@@ -213,6 +214,7 @@ export function renderGrowthForm(toolId, copy) {
     'stoichiometry-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'pressure-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'pcb-trace-width-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'projectile-motion-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'playTrajectory', 'resetAnimation'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
     'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -2070,6 +2072,21 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'projectile-motion-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('projectile-speed', fields.speed, '<input id="projectile-speed" name="speed" type="number" min="0" max="10000" step="any" inputmode="decimal" value="20" required>')}
+    ${label('projectile-speed-unit', fields.speedUnit, `<select id="projectile-speed-unit" name="speedUnit"><option value="m/s">${escapeGrowthHtml(fields.metersPerSecond)}</option><option value="km/h">${escapeGrowthHtml(fields.kilometersPerHour)}</option><option value="mph">${escapeGrowthHtml(fields.milesPerHour)}</option></select>`)}
+    ${label('projectile-angle', fields.angleDegrees, '<input id="projectile-angle" name="angleDegrees" type="number" min="0" max="90" step="any" inputmode="decimal" value="45" required>')}
+    ${label('projectile-height', fields.initialHeight, '<input id="projectile-height" name="initialHeight" type="number" min="0" max="1000000" step="any" inputmode="decimal" value="0" required>')}
+    ${label('projectile-length-unit', fields.lengthUnit, `<select id="projectile-length-unit" name="lengthUnit"><option value="m">${escapeGrowthHtml(fields.meters)}</option><option value="ft">${escapeGrowthHtml(fields.feet)}</option></select>`)}
+    ${label('projectile-gravity', fields.gravity, '<input id="projectile-gravity" name="gravity" type="number" min="0.000001" max="100" step="any" inputmode="decimal" value="9.80665" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}
+      <div data-trajectory-visual hidden><h3 data-trajectory-title>${escapeGrowthHtml(fields.plotTitle)}</h3><svg data-trajectory-plot viewBox="0 0 600 320" role="img" aria-label="${escapeGrowthHtml(fields.plotDescription)}" focusable="false"></svg><div class="actions">${button('playTrajectory', actions.playTrajectory, 'secondary')}${button('resetAnimation', actions.resetAnimation, 'secondary')}</div></div>
+    </section>
   </form>`, copy);
 
   if (toolId === 'friction-calculator') return attachCopy(`<form id="tool-form" novalidate>
