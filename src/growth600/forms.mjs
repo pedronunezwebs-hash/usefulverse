@@ -51,6 +51,7 @@ export function renderGrowthForm(toolId, copy) {
     'frequency-wavelength-calculator': ['frequency', 'wavelength', 'speed', 'frequencyUnit', 'wavelengthUnit', 'speedUnit', 'medium', 'hz', 'khz', 'mhz', 'ghz', 'thz', 'nanometers', 'micrometers', 'millimeters', 'centimeters', 'meters', 'kilometers', 'metersPerSecond', 'kilometersPerSecond', 'custom', 'vacuum', 'air', 'water', 'glass', 'accuracyNote'],
     'ideal-gas-law-calculator': ['pressure', 'volume', 'amount', 'temperature', 'pressureUnit', 'volumeUnit', 'amountUnit', 'temperatureUnit', 'pascal', 'kilopascal', 'megapascal', 'bar', 'atmosphere', 'torr', 'psi', 'cubicMeters', 'liters', 'milliliters', 'cubicFeet', 'mol', 'millimol', 'kilomol', 'kelvin', 'celsius', 'accuracyNote'],
     'torque-calculator': ['mode', 'solveTorque', 'solveForce', 'solveArm', 'force', 'forceUnit', 'newton', 'kilonewton', 'poundForce', 'arm', 'distanceUnit', 'meters', 'centimeters', 'millimeters', 'feet', 'inches', 'angle', 'torque', 'torqueUnit', 'newtonMeters', 'kilonewtonMeters', 'poundFeet', 'poundInches', 'direction', 'clockwise', 'counterclockwise', 'perpendicularForce', 'momentArm', 'accuracyNote'],
+    'beam-deflection-calculator': ['support', 'simplySupported', 'cantilever', 'loadCase', 'pointLoad', 'uniformLoad', 'span', 'lengthUnit', 'meters', 'centimeters', 'millimeters', 'inches', 'feet', 'load', 'forceUnit', 'newtons', 'kilonewtons', 'poundsForce', 'modulus', 'modulusUnit', 'pascals', 'megapascals', 'gigapascals', 'psi', 'ksi', 'inertia', 'inertiaUnit', 'mm4', 'cm4', 'm4', 'in4', 'ft4', 'loadUnitHint', 'accuracyNote', 'sourceNote'],
     'dilution-calculator': ['mode', 'directMode', 'serialMode', 'stockConcentration', 'targetConcentration', 'finalVolume', 'volumeUnit', 'steps', 'accuracyNote'],
     'ohms-law-calculator': ['mode', 'solverMode', 'networkMode', 'voltage', 'current', 'resistance', 'power', 'topology', 'series', 'parallel', 'resistorValues', 'accuracyNote'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
@@ -192,6 +193,7 @@ export function renderGrowthForm(toolId, copy) {
     'frequency-wavelength-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'ideal-gas-law-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'torque-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'beam-deflection-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'dilution-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'milliliters'],
     'ohms-law-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -1663,6 +1665,26 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'beam-deflection-calculator') return attachCopy(`<form id="tool-form" class="beam-deflection-calculator" novalidate>
+    <div class="calculator-grid">
+      ${label('beam-support', fields.support, `<select id="beam-support" name="support"><option value="simply-supported">${escapeGrowthHtml(fields.simplySupported)}</option><option value="cantilever">${escapeGrowthHtml(fields.cantilever)}</option></select>`)}
+      ${label('beam-load-case', fields.loadCase, `<select id="beam-load-case" name="loadCase"><option value="point">${escapeGrowthHtml(fields.pointLoad)}</option><option value="uniform">${escapeGrowthHtml(fields.uniformLoad)}</option></select>`)}
+      ${label('beam-span', fields.span, '<input id="beam-span" name="span" type="number" min="0.000001" max="1000000" step="any" inputmode="decimal" value="4" required>')}
+      ${label('beam-length-unit', fields.lengthUnit, `<select id="beam-length-unit" name="spanUnit"><option value="m">${escapeGrowthHtml(fields.meters)}</option><option value="mm">${escapeGrowthHtml(fields.millimeters)}</option><option value="cm">${escapeGrowthHtml(fields.centimeters)}</option><option value="in">${escapeGrowthHtml(fields.inches)}</option><option value="ft">${escapeGrowthHtml(fields.feet)}</option></select>`)}
+      <div class="field"><label id="beam-load-label" for="beam-load">${escapeGrowthHtml(fields.pointLoad)}</label><input id="beam-load" name="load" type="number" min="0" max="1000000000000" step="any" inputmode="decimal" value="1000" required><p class="hint" id="beam-load-hint"></p></div>
+      ${label('beam-force-unit', fields.forceUnit, `<select id="beam-force-unit" name="forceUnit"><option value="N">${escapeGrowthHtml(fields.newtons)}</option><option value="kN">${escapeGrowthHtml(fields.kilonewtons)}</option><option value="lbf">${escapeGrowthHtml(fields.poundsForce)}</option></select>`)}
+      ${label('beam-modulus', fields.modulus, '<input id="beam-modulus" name="modulus" type="number" min="0.000001" max="100000000000000" step="any" inputmode="decimal" value="200" required>')}
+      ${label('beam-modulus-unit', fields.modulusUnit, `<select id="beam-modulus-unit" name="modulusUnit"><option value="GPa">${escapeGrowthHtml(fields.gigapascals)}</option><option value="MPa">${escapeGrowthHtml(fields.megapascals)}</option><option value="Pa">${escapeGrowthHtml(fields.pascals)}</option><option value="psi">${escapeGrowthHtml(fields.psi)}</option><option value="ksi">${escapeGrowthHtml(fields.ksi)}</option></select>`)}
+      ${label('beam-inertia', fields.inertia, '<input id="beam-inertia" name="inertia" type="number" min="0.000000000001" max="1000000" step="any" inputmode="decimal" value="0.000008" required>')}
+      ${label('beam-inertia-unit', fields.inertiaUnit, `<select id="beam-inertia-unit" name="inertiaUnit"><option value="m⁴">${escapeGrowthHtml(fields.m4)}</option><option value="mm⁴">${escapeGrowthHtml(fields.mm4)}</option><option value="cm⁴">${escapeGrowthHtml(fields.cm4)}</option><option value="in⁴">${escapeGrowthHtml(fields.in4)}</option><option value="ft⁴">${escapeGrowthHtml(fields.ft4)}</option></select>`)}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <p class="hint"><a href="https://mechref.engr.illinois.edu/sol/deflection.html" target="_blank" rel="noopener noreferrer">${escapeGrowthHtml(fields.sourceNote)}</a></p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'polynomial-long-division-calculator') return attachCopy(`<form id="tool-form" novalidate>

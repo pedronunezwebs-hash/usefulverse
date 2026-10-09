@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 133);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 133);
+  assert.equal(growthPilotTools.length, 134);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 134);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -38,6 +38,17 @@ test('torque calculator separates force moments from shaft-power calculations', 
   assert.match(tool.functions.join(' '), /lever arm.*angle/u);
   assert.match(tool.boundary, /not a structural.*safety design tool/u);
   assert.match(tool.boundary, /calculations stay in the browser/u);
+});
+
+test('beam deflection calculator covers four elastic textbook cases without claiming structural approval', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'beam-deflection-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'beam deflection calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['force-calculator', 'section-modulus-calculator']);
+  assert.match(tool.acceptance, /4 m.*1,000 N.*0\.8333 mm/u);
+  assert.match(tool.functions.join(' '), /uniform load.*deflection curve/u);
+  assert.match(tool.boundary, /Euler–Bernoulli.*qualified structural engineer/u);
+  assert.match(tool.boundary, /no upload/u);
 });
 
 test('JSON to Excel is distinct from CSV and spreadsheet conversion and keeps imports local', () => {

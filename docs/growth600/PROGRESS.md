@@ -4,7 +4,7 @@
 
 ## Estado público actual · 2026-10-09
 
-- **132 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **4.788 URLs** (132 × 36 + 36 páginas de idioma): **409 herramientas públicas en total** y 15.048 URLs entre los dos sitios. Esto no equivale a que los buscadores hayan indexado cada URL.
+- **133 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **4.824 URLs** (133 × 36 + 36 páginas de idioma): **410 herramientas públicas en total** y 15.084 URLs entre los dos sitios. Esto no equivale a que los buscadores hayan indexado cada URL.
 - #148 Text to Binary Converter: PR #81 integrada; despliegue principal `37891603568` y despliegue del hub `37892340212` correctos. EN/ES/AR responden HTTP 200.
 - #171 Schema Markup Validator, #172 Readability Checker y #173 Savings Goal Calculator ya aparecen en las 36 versiones públicas; verificaciones previas registradas debajo.
 - #189 Certificate Decoder: 36 rutas públicas; detalles de pruebas y despliegue anotados abajo.
@@ -17,6 +17,7 @@
 - #194 Section Modulus Calculator: PR #91 integrada en `d017bb54cc9bbc22f69bb5f91bc417778214760f`; CI PR `37914418310`, despliegue principal `37914713795` y publicación del hub `37915222949` completados. EN/AR HTTP 200; sitemap público **4.716 URLs únicas**, incluidas sus 36 versiones. No equivale a indexación.
 - #197 Frequency & Wavelength Calculator: PR #92 integrada en `31740ff9e4fef3893f7430f0e3dc79cb750e1c84`; CI PR `37917275415`, deploy principal `37917709058` y publicación del hub `37919442515` completados. Suite **1.649/1.649**, `locale:release-check`, `npm run check` (10.260 URLs principales) y build aislado (**4.752 páginas**) pasan. QA Chrome: EN `100 MHz × 300.000.000 m/s → 3 m`; AR RTL a 390 px conserva 390 px de ancho, calcula el mismo resultado y no tiene errores de consola. Rutas EN/AR y sitemap (4.752 URLs) HTTP 200; no equivale a indexación. No se midió PageSpeed/Lighthouse.
 - #198 Ideal Gas Law Calculator: PR #93 integrada en `2aca1084e1a0a934ac035af8aad14550e04ea5b6`; CI/deploy y publicación del hub `37920634145` completados. El sitemap público responde HTTP 200 con **4.788 URLs**, sin la ruta Torque. Cuenta como la herramienta #132 de Growth600.
+- #201 Torque Calculator: PR #94 integrada en `d2a37fa5d3277bcbb043bc89d491e3037b2230c6`; CI PR `37923822746`, deploy principal `37924248092` y publicación del hub `37924710004` completados. Sitemap HTTP 200 con **4.824 URLs únicas**, exactamente 36 variantes Torque; las 36 rutas responden HTTP 200 y tienen canonical autorreferente. No se afirma indexación ni envío manual a buscadores.
 - `npm run check` conserva **10.260 URLs** del sitio principal. No se mide PageSpeed/Lighthouse.
 
 ## Publicado · JSON to Excel (#235 del plan)
@@ -81,7 +82,7 @@
 - QA Chrome EN: ejemplo a 1 atm, 1 mol y 273,15 K calcula ~22,41397 L; al cambiar atm→kPa conserva la equivalencia. Temperatura −273,15 °C rechazada. AR `lang=ar`, RTL en móvil 390×844 sin overflow y el cálculo coincide.
 - [x] P/S: PR #93 integrada; el workflow principal y publicación del hub `37920634145` finalizaron correctamente. La ruta y el sitemap público confirman 4.788 URLs únicas. No equivale a indexación; no PageSpeed/Lighthouse.
 
-## En implementación local · Torque Calculator (#201)
+## Publicada · Torque Calculator (#201) · 2026-10-09
 
 - Demanda ya investigada: `torque calculator`, 2.400 búsquedas/mes US/en, KD 6; sin nueva consulta ni gasto DataForSEO. Intención diferenciada del cálculo de fuerza y del horsepower (potencia de eje).
 - Calcula torque, o despeja fuerza/brazo, con fuerza, brazo perpendicular/ángulo, dirección horaria/antihoraria y cinco unidades para fuerza/distancia/torque; muestra componentes, fórmula y croquis. Rechaza valores incompletos/incompatibles y casos geométricos degenerados; el aviso delimita expresamente uso ideal/no estructural.
@@ -89,7 +90,17 @@
 - Calidad de metadata verificada por build para 36 idiomas: título ≤60, descripción ≤160 y `UsefulVerse` conservado. Se evitó repetir exactamente la FAQ principal en las adicionales.
 - Suite global **1.668/1.668** antes de añadir una aserción focal de etiquetas ES; suite de formularios actual **69/69**, catálogo/locales/build específicos pasan. `npm run locale:release-check` pasa. `npm run check` conserva las **10.260 URLs** del dominio principal. Build aislado: **4.824 páginas** (133 × 36 + 36 portadas; 5.014 archivos; 144.605.995 bytes).
 - QA Chrome local ES y AR: 10 N × 2 m a 90° da **20 N·m** antihorario, fórmula/componentes presentes. AR `lang=ar`, `dir=rtl`, no overflow en el viewport revisado ni errores de consola. No equivale a verificar todo idioma/dispositivo.
-- P/S pendientes: no abrir como publicada hasta fusionar tras CI, activar deploy estático del hub y comprobar sitemap/rutas públicas. No PageSpeed/Lighthouse ni afirmación de indexación.
+- P/S completados: PR #94 integrada; CI PR `37923822746`, deploy principal `37924248092` y publicación del hub `37924710004`. Sitemap público HTTP 200 con 4.824 URLs únicas, incluidas las 36 variantes. Las 36 rutas responden HTTP 200 y su canonical coincide con la URL propia. Publicar no equivale a indexación; no se enviaron solicitudes manuales a paneles de buscadores. No PageSpeed/Lighthouse.
+- **Recuento tras Torque:** 133 herramientas Growth600 y 410 públicas en total; el sitemap del hub contiene 4.824 URLs (más las 10.260 del dominio principal, 15.084 combinadas).
+
+## En implementación local · Beam Deflection Calculator (#203)
+
+- Demanda ya investigada: `beam deflection calculator`, 1.000 búsquedas/mes US/en, KD 0; sin nueva consulta DataForSEO.
+- Cálculo de flecha máxima, ubicación, momento flector y curva para cuatro casos clásicos: viga simplemente apoyada o en voladizo, con carga puntual central/extremo o carga uniformemente distribuida. Conversión SI/imperial explícita. Alcance Euler–Bernoulli de pequeñas deflexiones y advertencia visible: solo educativo; no sirve para dimensionar, aprobar ni certificar estructuras.
+- Cálculo estático local, sin APIs, dependencias nuevas ni procesamiento de servidor. Google Translate gratuito se usa solo al generar los borradores locales: las 36 traducciones quedan estáticas y el sitio no consulta al traductor. Se corrigieron en árabe nombres de unidades y términos de ingeniería mal interpretados.
+- [x] F/X — 5 pruebas de fórmula, unidades, validación y límites; la suite global **1.677/1.677** pasa. Pruebas dirigidas recientes **153/153**; `npm run locale:release-check` pasa; `npm run check` mantiene las **10.260 URLs principales**. Build local del hub: **4.860 páginas** (134 × 36 + 36 portadas), 5.051 archivos, 145.697.596 bytes; sitemap con 4.860 URLs únicas y 36 rutas beam con canonical propio.
+- [x] L/B local — metadata dentro del límite (título ≤60; descripción ≤160) en 36 idiomas. Chrome EN: ejemplo 4 m / 1.000 N / E=200 GPa / I=8×10⁻⁶ m⁴ da 0,00083333 m de flecha máxima, 2 m de ubicación y 1.000 N·m. También comprobadas carga uniforme 1 kN/m (0,00208333 m) y voladizo con carga terminal (0,01333333 m). Chrome AR: mismas cifras, copia de resultados disponible y unidades mixtas legibles en RTL. No se revisó individualmente cada idioma ni dispositivo; no PageSpeed/Lighthouse.
+- P/S pendientes hasta PR, CI, merge, deploy principal/hub y verificación de las 36 rutas públicas. No se afirma indexación.
 
 ## Herramientas verificadas en despliegue anterior · #171–#173
 

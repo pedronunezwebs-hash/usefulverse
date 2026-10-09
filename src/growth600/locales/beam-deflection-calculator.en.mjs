@@ -1,0 +1,33 @@
+export const beamDeflectionCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Beam Deflection Calculator',
+  title: 'Beam Deflection Calculator Free | UsefulVerse',
+  description: 'Estimate beam deflection for four classic load cases. Free browser calculator with clear units and limits; no account.',
+  intro: 'Estimate elastic beam deflection for common point and uniform loads, compare supports and view the deflection curve.',
+  howQuestion: 'How do you estimate beam deflection?',
+  howAnswer: 'Choose a simply supported beam or a cantilever, then a centered point load or a uniform load across the full span. Enter the span, load, elastic modulus and second moment of area. The calculator uses textbook small-deflection beam equations and shows the maximum displacement and its location.',
+  privacyQuestion: 'Are my beam inputs uploaded?',
+  privacyAnswer: 'No. All arithmetic and the chart run in this browser; your values are not uploaded or saved by this tool.',
+  fields: {
+    support: 'Support condition', simplySupported: 'Simply supported at both ends', cantilever: 'Cantilever fixed at one end',
+    loadCase: 'Load case', pointLoad: 'Point load at center / free end', uniformLoad: 'Uniform load over full span',
+    span: 'Beam span', lengthUnit: 'Length unit', meters: 'Meters (m)', centimeters: 'Centimeters (cm)', millimeters: 'Millimeters (mm)', inches: 'Inches (in)', feet: 'Feet (ft)',
+    load: 'Applied load', forceUnit: 'Force unit', newtons: 'Newtons (N)', kilonewtons: 'Kilonewtons (kN)', poundsForce: 'Pounds-force (lbf)',
+    modulus: 'Young’s modulus', modulusUnit: 'Modulus unit', pascals: 'Pascals (Pa)', megapascals: 'Megapascals (MPa)', gigapascals: 'Gigapascals (GPa)', psi: 'Pounds per square inch (psi)', ksi: 'Kips per square inch (ksi)',
+    inertia: 'Second moment of area, I', inertiaUnit: 'I unit', mm4: 'mm⁴', cm4: 'cm⁴', m4: 'm⁴', in4: 'in⁴', ft4: 'ft⁴',
+    loadUnitHint: 'For a point load, enter force. For a uniform load, enter force per selected length unit.',
+    accuracyNote: 'Textbook Euler–Bernoulli estimate: straight prismatic beam, constant E and I, linear elasticity and small deflection. Only the listed classic support/load cases are modeled. It omits shear deformation, self-weight, other loads, stability, connections and design-code checks. Educational only—not for selecting or certifying a real structure. Consult a qualified structural engineer.',
+    sourceNote: 'Read the University of Illinois beam-deflection notes and assumptions.',
+  },
+  actions: { calculate: 'Calculate deflection', reset: 'Reset', copy: 'Copy results', example: 'Load example', result: 'Beam estimate' },
+  messages: {
+    calculated: 'Beam estimate calculated.', checkInputs: 'Check all values and selected units.', exampleLoaded: 'Example calculated.',
+    maxDeflection: 'Maximum deflection', location: 'Location of maximum', maxMoment: 'Maximum bending moment', flexuralRigidity: 'Flexural rigidity E·I',
+    curveLabel: 'Estimated beam deflection curve', simplySupported: 'Simply supported', cantilever: 'Cantilever', pointLoad: 'Point load', uniformLoad: 'Uniform load',
+  },
+  additionalFaqs: [
+    { question: 'Which beam cases does this calculator include?', answer: 'It covers a simply supported beam or cantilever with either a centered point load or a uniform load across the full span. Other support conditions, off-center point loads, multiple loads and changing cross-sections are outside its scope.' },
+    { question: 'What is the second moment of area?', answer: 'The second moment of area I describes cross-section geometry about a bending axis. It is not mass moment of inertia. Use the value for the correct axis and keep its units consistent with the selected unit field.' },
+    { question: 'Can I use this result to approve a beam?', answer: 'No. This educational estimate omits many structural checks, including shear, strength, stability, connections, load combinations and local codes. A qualified structural engineer must assess a real design.' },
+  ],
+});

@@ -1266,8 +1266,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 201 · Torque Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `torque-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/torque-calculator/`; 36 locales previstos. Implementación, traducción y QA local completados; pendiente CI, merge, despliegue y comprobación del sitemap.
+- [x] **C/F/E/X/L/B/P/S completos — `torque-calculator`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/torque-calculator/`; 36 locales. PR #94 integrada, CI y despliegues principal/hub completados; sitemap confirmado con 4.824 URLs únicas y 36 rutas Torque, todas HTTP 200 y con canonical autorreferente. La publicación no implica indexación.
 - **Demanda:** `torque calculator` — 2.400 búsquedas/mes US/en, KD 6; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Brazo, fuerza, ángulo, equilibrio y croquis
 - **Prueba de aceptación específica:** 10N a2m perpendicular da20Nm
