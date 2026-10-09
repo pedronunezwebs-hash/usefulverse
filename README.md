@@ -16,9 +16,9 @@ Browser-first collection of fast, private, static tools for everyday work.
 
 The additional Growth600 tools are published as a separate static Cloudflare Pages site at
 [tools.usefulverse.com](https://tools.usefulverse.com/), so they do not replace or
-change the 277-tool catalog above. The hub contains 132 additional tools in
+change the 277-tool catalog above. The hub contains 134 additional tools in
 the same 36 locales. Its canonical URL inventory and language alternates are listed in
-the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (4,788 URLs after the Ideal Gas Law Calculator release);
+the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (4,860 URLs after the Beam Deflection Calculator release);
 the staged candidate checklist and implementation record are in
 [docs/growth600/PLAN-600.md](docs/growth600/PLAN-600.md) and
 [docs/growth600/PROGRESS.md](docs/growth600/PROGRESS.md).
@@ -10551,7 +10551,7 @@ These are the canonical URLs for the additional tools and their localized pages.
 
 <!-- BEGIN GENERATED GROWTH600 URL INVENTORY -->
 
-Generated from `dist-growth600/sitemap.xml`: **4,824 canonical URLs**.
+Generated from `dist-growth600/sitemap.xml`: **4,860 canonical URLs**.
 
 ```text
 https://tools.usefulverse.com/
@@ -10583,6 +10583,7 @@ https://tools.usefulverse.com/tools/section-modulus-calculator/
 https://tools.usefulverse.com/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/tools/torque-calculator/
+https://tools.usefulverse.com/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/tools/dilution-calculator/
 https://tools.usefulverse.com/tools/ohms-law-calculator/
 https://tools.usefulverse.com/tools/chemical-equation-balancer/
@@ -10717,6 +10718,7 @@ https://tools.usefulverse.com/es/tools/section-modulus-calculator/
 https://tools.usefulverse.com/es/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/es/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/es/tools/torque-calculator/
+https://tools.usefulverse.com/es/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/es/tools/dilution-calculator/
 https://tools.usefulverse.com/es/tools/ohms-law-calculator/
 https://tools.usefulverse.com/es/tools/chemical-equation-balancer/
@@ -10851,6 +10853,7 @@ https://tools.usefulverse.com/fr/tools/section-modulus-calculator/
 https://tools.usefulverse.com/fr/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/fr/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/fr/tools/torque-calculator/
+https://tools.usefulverse.com/fr/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/fr/tools/dilution-calculator/
 https://tools.usefulverse.com/fr/tools/ohms-law-calculator/
 https://tools.usefulverse.com/fr/tools/chemical-equation-balancer/
@@ -10985,6 +10988,7 @@ https://tools.usefulverse.com/pt-br/tools/section-modulus-calculator/
 https://tools.usefulverse.com/pt-br/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/pt-br/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/pt-br/tools/torque-calculator/
+https://tools.usefulverse.com/pt-br/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/pt-br/tools/dilution-calculator/
 https://tools.usefulverse.com/pt-br/tools/ohms-law-calculator/
 https://tools.usefulverse.com/pt-br/tools/chemical-equation-balancer/
@@ -11119,6 +11123,7 @@ https://tools.usefulverse.com/de/tools/section-modulus-calculator/
 https://tools.usefulverse.com/de/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/de/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/de/tools/torque-calculator/
+https://tools.usefulverse.com/de/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/de/tools/dilution-calculator/
 https://tools.usefulverse.com/de/tools/ohms-law-calculator/
 https://tools.usefulverse.com/de/tools/chemical-equation-balancer/
@@ -11253,6 +11258,7 @@ https://tools.usefulverse.com/ja/tools/section-modulus-calculator/
 https://tools.usefulverse.com/ja/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/ja/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/ja/tools/torque-calculator/
+https://tools.usefulverse.com/ja/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/ja/tools/dilution-calculator/
 https://tools.usefulverse.com/ja/tools/ohms-law-calculator/
 https://tools.usefulverse.com/ja/tools/chemical-equation-balancer/
@@ -11387,6 +11393,7 @@ https://tools.usefulverse.com/ko/tools/section-modulus-calculator/
 https://tools.usefulverse.com/ko/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/ko/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/ko/tools/torque-calculator/
+https://tools.usefulverse.com/ko/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/ko/tools/dilution-calculator/
 https://tools.usefulverse.com/ko/tools/ohms-law-calculator/
 https://tools.usefulverse.com/ko/tools/chemical-equation-balancer/
@@ -11521,6 +11528,7 @@ https://tools.usefulverse.com/id/tools/section-modulus-calculator/
 https://tools.usefulverse.com/id/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/id/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/id/tools/torque-calculator/
+https://tools.usefulverse.com/id/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/id/tools/dilution-calculator/
 https://tools.usefulverse.com/id/tools/ohms-law-calculator/
 https://tools.usefulverse.com/id/tools/chemical-equation-balancer/
@@ -11655,6 +11663,7 @@ https://tools.usefulverse.com/hi/tools/section-modulus-calculator/
 https://tools.usefulverse.com/hi/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/hi/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/hi/tools/torque-calculator/
+https://tools.usefulverse.com/hi/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/hi/tools/dilution-calculator/
 https://tools.usefulverse.com/hi/tools/ohms-law-calculator/
 https://tools.usefulverse.com/hi/tools/chemical-equation-balancer/
@@ -11789,6 +11798,7 @@ https://tools.usefulverse.com/ar/tools/section-modulus-calculator/
 https://tools.usefulverse.com/ar/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/ar/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/ar/tools/torque-calculator/
+https://tools.usefulverse.com/ar/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/ar/tools/dilution-calculator/
 https://tools.usefulverse.com/ar/tools/ohms-law-calculator/
 https://tools.usefulverse.com/ar/tools/chemical-equation-balancer/
@@ -11923,6 +11933,7 @@ https://tools.usefulverse.com/zh-cn/tools/section-modulus-calculator/
 https://tools.usefulverse.com/zh-cn/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/zh-cn/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/zh-cn/tools/torque-calculator/
+https://tools.usefulverse.com/zh-cn/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/zh-cn/tools/dilution-calculator/
 https://tools.usefulverse.com/zh-cn/tools/ohms-law-calculator/
 https://tools.usefulverse.com/zh-cn/tools/chemical-equation-balancer/
@@ -12057,6 +12068,7 @@ https://tools.usefulverse.com/bn/tools/section-modulus-calculator/
 https://tools.usefulverse.com/bn/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/bn/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/bn/tools/torque-calculator/
+https://tools.usefulverse.com/bn/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/bn/tools/dilution-calculator/
 https://tools.usefulverse.com/bn/tools/ohms-law-calculator/
 https://tools.usefulverse.com/bn/tools/chemical-equation-balancer/
@@ -12191,6 +12203,7 @@ https://tools.usefulverse.com/ru/tools/section-modulus-calculator/
 https://tools.usefulverse.com/ru/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/ru/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/ru/tools/torque-calculator/
+https://tools.usefulverse.com/ru/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/ru/tools/dilution-calculator/
 https://tools.usefulverse.com/ru/tools/ohms-law-calculator/
 https://tools.usefulverse.com/ru/tools/chemical-equation-balancer/
@@ -12325,6 +12338,7 @@ https://tools.usefulverse.com/ur/tools/section-modulus-calculator/
 https://tools.usefulverse.com/ur/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/ur/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/ur/tools/torque-calculator/
+https://tools.usefulverse.com/ur/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/ur/tools/dilution-calculator/
 https://tools.usefulverse.com/ur/tools/ohms-law-calculator/
 https://tools.usefulverse.com/ur/tools/chemical-equation-balancer/
@@ -12459,6 +12473,7 @@ https://tools.usefulverse.com/tr/tools/section-modulus-calculator/
 https://tools.usefulverse.com/tr/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/tr/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/tr/tools/torque-calculator/
+https://tools.usefulverse.com/tr/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/tr/tools/dilution-calculator/
 https://tools.usefulverse.com/tr/tools/ohms-law-calculator/
 https://tools.usefulverse.com/tr/tools/chemical-equation-balancer/
@@ -12593,6 +12608,7 @@ https://tools.usefulverse.com/vi/tools/section-modulus-calculator/
 https://tools.usefulverse.com/vi/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/vi/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/vi/tools/torque-calculator/
+https://tools.usefulverse.com/vi/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/vi/tools/dilution-calculator/
 https://tools.usefulverse.com/vi/tools/ohms-law-calculator/
 https://tools.usefulverse.com/vi/tools/chemical-equation-balancer/
@@ -12727,6 +12743,7 @@ https://tools.usefulverse.com/it/tools/section-modulus-calculator/
 https://tools.usefulverse.com/it/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/it/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/it/tools/torque-calculator/
+https://tools.usefulverse.com/it/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/it/tools/dilution-calculator/
 https://tools.usefulverse.com/it/tools/ohms-law-calculator/
 https://tools.usefulverse.com/it/tools/chemical-equation-balancer/
@@ -12861,6 +12878,7 @@ https://tools.usefulverse.com/zh-tw/tools/section-modulus-calculator/
 https://tools.usefulverse.com/zh-tw/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/zh-tw/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/zh-tw/tools/torque-calculator/
+https://tools.usefulverse.com/zh-tw/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/zh-tw/tools/dilution-calculator/
 https://tools.usefulverse.com/zh-tw/tools/ohms-law-calculator/
 https://tools.usefulverse.com/zh-tw/tools/chemical-equation-balancer/
@@ -12995,6 +13013,7 @@ https://tools.usefulverse.com/bg/tools/section-modulus-calculator/
 https://tools.usefulverse.com/bg/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/bg/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/bg/tools/torque-calculator/
+https://tools.usefulverse.com/bg/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/bg/tools/dilution-calculator/
 https://tools.usefulverse.com/bg/tools/ohms-law-calculator/
 https://tools.usefulverse.com/bg/tools/chemical-equation-balancer/
@@ -13129,6 +13148,7 @@ https://tools.usefulverse.com/ca/tools/section-modulus-calculator/
 https://tools.usefulverse.com/ca/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/ca/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/ca/tools/torque-calculator/
+https://tools.usefulverse.com/ca/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/ca/tools/dilution-calculator/
 https://tools.usefulverse.com/ca/tools/ohms-law-calculator/
 https://tools.usefulverse.com/ca/tools/chemical-equation-balancer/
@@ -13263,6 +13283,7 @@ https://tools.usefulverse.com/nl/tools/section-modulus-calculator/
 https://tools.usefulverse.com/nl/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/nl/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/nl/tools/torque-calculator/
+https://tools.usefulverse.com/nl/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/nl/tools/dilution-calculator/
 https://tools.usefulverse.com/nl/tools/ohms-law-calculator/
 https://tools.usefulverse.com/nl/tools/chemical-equation-balancer/
@@ -13397,6 +13418,7 @@ https://tools.usefulverse.com/el/tools/section-modulus-calculator/
 https://tools.usefulverse.com/el/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/el/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/el/tools/torque-calculator/
+https://tools.usefulverse.com/el/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/el/tools/dilution-calculator/
 https://tools.usefulverse.com/el/tools/ohms-law-calculator/
 https://tools.usefulverse.com/el/tools/chemical-equation-balancer/
@@ -13531,6 +13553,7 @@ https://tools.usefulverse.com/ms/tools/section-modulus-calculator/
 https://tools.usefulverse.com/ms/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/ms/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/ms/tools/torque-calculator/
+https://tools.usefulverse.com/ms/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/ms/tools/dilution-calculator/
 https://tools.usefulverse.com/ms/tools/ohms-law-calculator/
 https://tools.usefulverse.com/ms/tools/chemical-equation-balancer/
@@ -13665,6 +13688,7 @@ https://tools.usefulverse.com/pl/tools/section-modulus-calculator/
 https://tools.usefulverse.com/pl/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/pl/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/pl/tools/torque-calculator/
+https://tools.usefulverse.com/pl/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/pl/tools/dilution-calculator/
 https://tools.usefulverse.com/pl/tools/ohms-law-calculator/
 https://tools.usefulverse.com/pl/tools/chemical-equation-balancer/
@@ -13799,6 +13823,7 @@ https://tools.usefulverse.com/sv/tools/section-modulus-calculator/
 https://tools.usefulverse.com/sv/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/sv/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/sv/tools/torque-calculator/
+https://tools.usefulverse.com/sv/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/sv/tools/dilution-calculator/
 https://tools.usefulverse.com/sv/tools/ohms-law-calculator/
 https://tools.usefulverse.com/sv/tools/chemical-equation-balancer/
@@ -13933,6 +13958,7 @@ https://tools.usefulverse.com/th/tools/section-modulus-calculator/
 https://tools.usefulverse.com/th/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/th/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/th/tools/torque-calculator/
+https://tools.usefulverse.com/th/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/th/tools/dilution-calculator/
 https://tools.usefulverse.com/th/tools/ohms-law-calculator/
 https://tools.usefulverse.com/th/tools/chemical-equation-balancer/
@@ -14067,6 +14093,7 @@ https://tools.usefulverse.com/uk/tools/section-modulus-calculator/
 https://tools.usefulverse.com/uk/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/uk/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/uk/tools/torque-calculator/
+https://tools.usefulverse.com/uk/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/uk/tools/dilution-calculator/
 https://tools.usefulverse.com/uk/tools/ohms-law-calculator/
 https://tools.usefulverse.com/uk/tools/chemical-equation-balancer/
@@ -14201,6 +14228,7 @@ https://tools.usefulverse.com/sw/tools/section-modulus-calculator/
 https://tools.usefulverse.com/sw/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/sw/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/sw/tools/torque-calculator/
+https://tools.usefulverse.com/sw/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/sw/tools/dilution-calculator/
 https://tools.usefulverse.com/sw/tools/ohms-law-calculator/
 https://tools.usefulverse.com/sw/tools/chemical-equation-balancer/
@@ -14335,6 +14363,7 @@ https://tools.usefulverse.com/mr/tools/section-modulus-calculator/
 https://tools.usefulverse.com/mr/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/mr/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/mr/tools/torque-calculator/
+https://tools.usefulverse.com/mr/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/mr/tools/dilution-calculator/
 https://tools.usefulverse.com/mr/tools/ohms-law-calculator/
 https://tools.usefulverse.com/mr/tools/chemical-equation-balancer/
@@ -14469,6 +14498,7 @@ https://tools.usefulverse.com/te/tools/section-modulus-calculator/
 https://tools.usefulverse.com/te/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/te/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/te/tools/torque-calculator/
+https://tools.usefulverse.com/te/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/te/tools/dilution-calculator/
 https://tools.usefulverse.com/te/tools/ohms-law-calculator/
 https://tools.usefulverse.com/te/tools/chemical-equation-balancer/
@@ -14603,6 +14633,7 @@ https://tools.usefulverse.com/ha/tools/section-modulus-calculator/
 https://tools.usefulverse.com/ha/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/ha/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/ha/tools/torque-calculator/
+https://tools.usefulverse.com/ha/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/ha/tools/dilution-calculator/
 https://tools.usefulverse.com/ha/tools/ohms-law-calculator/
 https://tools.usefulverse.com/ha/tools/chemical-equation-balancer/
@@ -14737,6 +14768,7 @@ https://tools.usefulverse.com/tl/tools/section-modulus-calculator/
 https://tools.usefulverse.com/tl/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/tl/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/tl/tools/torque-calculator/
+https://tools.usefulverse.com/tl/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/tl/tools/dilution-calculator/
 https://tools.usefulverse.com/tl/tools/ohms-law-calculator/
 https://tools.usefulverse.com/tl/tools/chemical-equation-balancer/
@@ -14871,6 +14903,7 @@ https://tools.usefulverse.com/ta/tools/section-modulus-calculator/
 https://tools.usefulverse.com/ta/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/ta/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/ta/tools/torque-calculator/
+https://tools.usefulverse.com/ta/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/ta/tools/dilution-calculator/
 https://tools.usefulverse.com/ta/tools/ohms-law-calculator/
 https://tools.usefulverse.com/ta/tools/chemical-equation-balancer/
@@ -15005,6 +15038,7 @@ https://tools.usefulverse.com/fa/tools/section-modulus-calculator/
 https://tools.usefulverse.com/fa/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/fa/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/fa/tools/torque-calculator/
+https://tools.usefulverse.com/fa/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/fa/tools/dilution-calculator/
 https://tools.usefulverse.com/fa/tools/ohms-law-calculator/
 https://tools.usefulverse.com/fa/tools/chemical-equation-balancer/
@@ -15139,6 +15173,7 @@ https://tools.usefulverse.com/am/tools/section-modulus-calculator/
 https://tools.usefulverse.com/am/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/am/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/am/tools/torque-calculator/
+https://tools.usefulverse.com/am/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/am/tools/dilution-calculator/
 https://tools.usefulverse.com/am/tools/ohms-law-calculator/
 https://tools.usefulverse.com/am/tools/chemical-equation-balancer/
@@ -15273,6 +15308,7 @@ https://tools.usefulverse.com/gu/tools/section-modulus-calculator/
 https://tools.usefulverse.com/gu/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/gu/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/gu/tools/torque-calculator/
+https://tools.usefulverse.com/gu/tools/beam-deflection-calculator/
 https://tools.usefulverse.com/gu/tools/dilution-calculator/
 https://tools.usefulverse.com/gu/tools/ohms-law-calculator/
 https://tools.usefulverse.com/gu/tools/chemical-equation-balancer/

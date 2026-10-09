@@ -336,6 +336,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/torque-calculator/logic.mjs',
   },
   {
+    id: 'beam-deflection-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'beam deflection calculator',
+    secondaryIntents: ['beam calculator', 'beam deflection under point load', 'beam deflection under uniform load', 'cantilever beam deflection calculator'],
+    functions: ['estimate elastic deflection for simply supported and cantilever beams under a centered point load or full-span uniform load', 'enter span, load, elastic modulus and second moment of area with explicit compatible units', 'show maximum deflection, location, bending moment, flexural rigidity and a sampled deflection curve', 'state the Euler–Bernoulli small-deflection assumptions and the educational-only design boundary'],
+    acceptance: 'With a simply supported 4 m beam, centered 1,000 N point load, E=200 GPa and I=8×10⁻⁶ m⁴, maximum deflection is about 0.8333 mm; zero applied load gives zero deflection.',
+    boundary: 'Ideal prismatic, linearly elastic, constant-EI Euler–Bernoulli beam with small deflection and the selected textbook load/support case only. Ignores shear deformation, self-weight, multiple/off-center loads, stability, yielding, connections, lateral-torsional buckling, code limits and load combinations. Educational estimate only; never use to approve, size or certify a real structure. Ask a qualified structural engineer. All calculations run locally; no upload or server processing.',
+    relatedExistingIds: ['force-calculator', 'section-modulus-calculator'],
+    logicModule: './tools/beam-deflection-calculator/logic.mjs',
+  },
+  {
     id: 'dilution-calculator',
     category: 'science-engineering',
     type: 'calculator',
