@@ -75,6 +75,7 @@ export function renderGrowthForm(toolId, copy) {
     'fourier-series-calculator': ['samples', 'samplesHint', 'period', 'periodHint', 'harmonics', 'harmonicsHint', 'accuracyNote', 'formulaLabel', 'formula', 'resultDc', 'resultFrequency', 'resultHarmonics', 'resultRms', 'coefficient', 'coefficientA', 'coefficientB', 'coefficientAmplitude', 'phase', 'radians', 'frequencyUnit', 'chartLabel', 'samplesLegend', 'reconstructionLegend'],
     'modular-inverse-calculator': ['a', 'modulus', 'accuracyNote', 'formulaLabel', 'formula', 'resultStatus', 'resultGcd', 'resultResidue', 'resultInverse', 'bezout', 'step', 'quotient', 'remainder', 'coefficientA', 'coefficientModulus', 'existsLabel', 'missingLabel', 'verification'],
     'a-b-test-calculator': ['groupA', 'groupB', 'visitorsA', 'conversionsA', 'visitorsB', 'conversionsB', 'accuracyNote', 'rateA', 'rateB', 'difference', 'percentagePoints', 'relativeLift', 'notAvailable', 'intervalA', 'intervalB', 'intervalDifference', 'pValue', 'conclusion', 'significant', 'inconclusive', 'method', 'methodNote'],
+    'investment-allocation-calculator': ['assetCount', 'asset', 'assetName', 'currentValue', 'targetWeight', 'currencyCode', 'contribution', 'accuracyNote', 'resultSummary', 'currentTotal', 'contributionTotal', 'projectedTotal', 'targetValue', 'contributionShare', 'difference'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -194,6 +195,7 @@ export function renderGrowthForm(toolId, copy) {
     'fourier-series-calculator': ['calculate', 'reset', 'example', 'constant', 'result', 'copy'],
     'modular-inverse-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'a-b-test-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
+    'investment-allocation-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
@@ -898,6 +900,34 @@ export function renderGrowthForm(toolId, copy) {
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'investment-allocation-calculator') return attachCopy(`<form id="tool-form" class="investment-allocation-calculator" novalidate>
+    <div class="calculator-grid">
+      ${label('allocation-asset-count', fields.assetCount, `<select id="allocation-asset-count" name="assetCount">${Array.from({ length: 7 }, (_, index) => `<option value="${index + 2}"${index === 0 ? ' selected' : ''}>${index + 2}</option>`).join('')}</select>`)}
+      ${label('allocation-currency', fields.currencyCode, '<input id="allocation-currency" name="currencyCode" type="text" value="USD" maxlength="3" pattern="[A-Za-z]{3}" autocomplete="off" required>')}
+      ${label('allocation-contribution', fields.contribution, '<input id="allocation-contribution" name="contribution" type="text" inputmode="decimal" value="0" maxlength="24" required>')}
+    </div>
+    <div class="investment-allocation-assets">${Array.from({ length: 8 }, (_, index) => {
+      const number = index + 1;
+      const hidden = number > 2 ? ' hidden' : '';
+      const disabled = number > 2 ? ' disabled' : '';
+      const current = number === 1 ? '6000' : number === 2 ? '4000' : '';
+      const weight = number === 1 ? '60' : number === 2 ? '40' : '';
+      return `<fieldset class="investment-allocation-row" data-allocation-row data-index="${number}"${hidden}><legend>${escapeGrowthHtml(fields.asset)} ${number}</legend>
+        ${label(`allocation-name-${number}`, fields.assetName, `<input id="allocation-name-${number}" name="assetName${number}" type="text" value="${escapeGrowthHtml(fields.asset)} ${number}" maxlength="32" autocomplete="off" required${disabled}>`)}
+        ${label(`allocation-current-${number}`, fields.currentValue, `<input id="allocation-current-${number}" name="currentValue${number}" type="text" inputmode="decimal" value="${current}" maxlength="24" required${disabled}>`)}
+        ${label(`allocation-weight-${number}`, fields.targetWeight, `<input id="allocation-weight-${number}" name="targetWeight${number}" type="text" inputmode="decimal" value="${weight}" maxlength="12" required${disabled}>`)}
+      </fieldset>`;
+    }).join('')}</div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-allocation-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2>
+      <div class="allocation-totals"><p><strong>${escapeGrowthHtml(fields.currentTotal)}:</strong> <span data-current-total></span></p><p><strong>${escapeGrowthHtml(fields.contributionTotal)}:</strong> <span data-contribution-total></span></p><p><strong>${escapeGrowthHtml(fields.projectedTotal)}:</strong> <span data-projected-total></span></p></div>
+      <div class="investment-allocation-table-scroll"><table class="investment-allocation-table"><thead><tr><th scope="col">${escapeGrowthHtml(fields.asset)}</th><th scope="col">${escapeGrowthHtml(fields.targetWeight)}</th><th scope="col">${escapeGrowthHtml(fields.currentValue)}</th><th scope="col">${escapeGrowthHtml(fields.targetValue)}</th><th scope="col">${escapeGrowthHtml(fields.contributionShare)}</th><th scope="col">${escapeGrowthHtml(fields.difference)}</th></tr></thead><tbody data-allocation-rows></tbody></table></div>
+      <div class="actions">${button('copy', actions.copy, 'secondary')}</div>
+    </section>
   </form>`, copy);
 
   if (toolId === 'weight-loss-calculator') return attachCopy(`<form id="tool-form" novalidate>

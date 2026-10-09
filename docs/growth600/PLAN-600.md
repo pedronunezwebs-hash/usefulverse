@@ -2647,12 +2647,12 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 300 · A B Test Calculator
 
-- [ ] **C/F/E/X/L/B — `a-b-test-calculator` completos; P/S pendientes**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/a-b-test-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `a-b-test-calculator`**
+- **Publicado:** `https://tools.usefulverse.com/tools/a-b-test-calculator/`; otras 35 versiones con los prefijos del anexo.
 - **Demanda:** `a b test calculator` — 480 búsquedas/mes US/en, KD 55; nivel C. CPC 27.22 USD (no CPM).
 - **Función entregada:** tasas y comparación entre dos grupos independientes; diferencia absoluta y lift relativo; intervalos Wilson/Newcombe; prueba z bilateral agrupada, explicación de α=.05, ejemplos, manejo accesible de errores y limitaciones estadísticas. Sin servidor ni llamadas de red.
 - **Pruebas de aceptación:** grupos idénticos muestran diferencia 0; 500/30 vs 500/40 da 6%, 8%, +2 pp y p≈0,2152 (no significativo al 5%); conversiones superiores a visitas se rechazan y limpian resultado anterior.
-- **Avance verificado (2026-10-09):** suite completa **1.464/1.464**, `npm run locale:release-check`, `npm run check` y gates de catálogo/formulario/build pasan; 36 traducciones estáticas automáticas; build local 4.032 rutas (111 × 36 + 36 portadas), 4.196 archivos, 120.681.277 bytes. Chrome EN/AR y RTL verificados, sin peticiones externas. Traducción automática, no revisión nativa. No PageSpeed/Lighthouse. Pendientes PR/CI/deploy/sitemap público; ver `PROGRESS.md`.
+- **Publicado (2026-10-09):** suite completa **1.464/1.464**, `npm run locale:release-check`, `npm run check` y gates de catálogo/formulario/build pasan; 36 traducciones estáticas automáticas; build local 4.032 rutas (111 × 36 + 36 portadas), 4.196 archivos, 120.681.277 bytes. Chrome EN/AR y RTL verificados, sin peticiones externas. PR #72, CI `37871295972`, despliegue principal `37871634054` y publicación del hub `37872370399` correctos. EN/ES/AR HTTP 200; sitemap público con 4.032 URLs únicas. Traducción automática, no revisión nativa. No PageSpeed/Lighthouse ni indexación manual.
 - **Frontera con otras herramientas:** conversion-rate-calculator: inferencia, no tasa aislada. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**

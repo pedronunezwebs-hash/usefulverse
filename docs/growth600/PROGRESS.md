@@ -2,6 +2,16 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
+## En curso · Investment Allocation Calculator (#301) · 2026-10-09
+
+- [x] C/F — Ficha ya medida del plan: `portfolio allocation calculator`, 390 búsquedas/mes US/en, KD 0; secundaria `investment allocation calculator`, 20/mes, KD 0. CPC 6.10 USD (no CPM); sin nuevas llamadas ni gasto de DataForSEO.
+- [x] E/B — Cálculo local para 2–8 activos, pesos objetivo que suman 100%, valor meta, reparto opcional de aportación y diferencia meta−actual. Validación estricta de cantidades/moneda y límites; no recomienda inversiones, predice rendimientos, calcula impuestos/comisiones ni emite instrucciones de compraventa. Sin red, cuenta, almacenamiento o servidor.
+- [x] L — 36 traducciones estáticas generadas desde inglés con Google Translate. Metadatos dentro de los límites y Arabic UI revisada/corregida manualmente tras hallar traducciones literales confusas. Traducción automática aceptada, no revisión nativa ni servicio de runtime.
+- [x] X — Suite completa **1.473/1.473**; `npm run check` conserva 10.260 URLs del sitio principal; `npm run locale:release-check` pasa. Build del hub: **4.068 rutas únicas** (112 × 36 + 36 portadas), 4.233 archivos, 121.935.907 bytes. Presupuesto conjunto CSS respetado al minificar en build con `csso`; sin cambiar hojas fuente.
+- [x] B — Chrome local EN y AR: ejemplo 6.000 + 4.000 = 10.000, objetivos 6.000/4.000; estado anunciado. Árabe RTL verificado; tabla desplazable dentro del panel a 390 px, sin overflow del documento. Consola limpia y solo peticiones same-origin.
+- [ ] P/S — PR, CI, despliegue del hub y sitemap público pendientes. No publicado aún; no afirmar indexación ni envío manual.
+- **Siguiente acción:** terminar gates/diff, abrir PR, esperar CI, integrar y lanzar flujo de publicación del hub. Tras confirmar HTTP 200 y sitemap con 4.068 URLs, actualizar esta ficha y el README; seguir con #302 Repeating Decimal to Fraction Calculator.
+
 ## Publicada · Fourier Series Calculator (#293) · 2026-10-09
 
 - [x] C/F — Reutilizada la ficha del plan: `fourier series calculator`, 480 búsquedas/mes US/en, KD 0; `fourier coefficients calculator`, 480/mes, KD 0. Sin consultas nuevas a DataForSEO ni gasto de API.
@@ -24,16 +34,16 @@
 - **Estado publicado:** 110 herramientas Growth600 adicionales; las 277 originales permanecen intactas. No PageSpeed/Lighthouse.
 - **Siguiente candidata:** #300 A/B Test Calculator. Sin PageSpeed/Lighthouse ni nueva investigación de DataForSEO.
 
-## En curso · A/B Test Calculator (#300) · 2026-10-09
+## Publicada · A/B Test Calculator (#300) · 2026-10-09
 
 - [x] C/F — Ficha existente: `a b test calculator`, 480 búsquedas/mes US/en, KD 55; CPC 27,22 USD (no CPM). Secundaria `ab testing significance calculator`, 50/mes, KD 0. Sin llamadas adicionales a DataForSEO.
 - [x] E/B — Comparación local de dos grupos independientes con conteos de visitas y conversiones, tasas, diferencia absoluta en puntos porcentuales, lift relativo, IC Wilson por grupo, IC Newcombe de diferencia y prueba z bilateral agrupada aproximada (α=.05). Incluye limitaciones: independencia, consultas repetidas, comparaciones múltiples, exposición desigual/cluster y ausencia de atribución causal. Sin red, API, cuenta ni subida.
 - [x] L — 36 copias estáticas de Google Translate desde inglés; traducción automática sencilla, no revisión nativa. Títulos reparados dentro de 60 caracteres; nombres A/B y notación estadística coherentes. Sin traducción online.
 - [x] X — Lógica/controlador/formulario/localización/build; suite completa **1.464/1.464**, `npm run check` conserva 10.260 URLs del sitio principal y `npm run locale:release-check` pasa. Build del hub: 4.032 rutas (111 × 36 + 36 portadas), 4.196 archivos, 120.681.277 bytes. No PageSpeed/Lighthouse.
 - [x] B — Chrome EN/AR: 500/30 vs 500/40 da 6%, 8%, +2 pp y p≈0,2152 (inconcluso); entrada inválida 501/500 informa error y limpia resultado anterior; RTL a 500 px, consola limpia y sin peticiones externas.
-- [ ] P/S — PR/CI, publicación del hub y sitemap público pendientes.
-- **Estado:** no publicada hasta completar PR, CI, deploy y sitemap público. No afirmar indexación ni envío manual a buscadores.
-- **Siguiente candidata:** verificar la secuencia del plan antes de escoger: los números saltan del #300 al #302; revisar #301 (Investment Allocation Calculator) y no inventar/reordenar.
+- [x] P/S — PR #72 integrada como `c249372ff8344dcaac0fed4bc000b02e1f65543c`; CI PR `37871295972`, despliegue principal `37871634054` y publicación del hub `37872370399` completados. EN/ES/AR HTTP 200; sitemap público con 4.032 URLs únicas y las 36 variantes de A/B. No se envió indexación manual ni se afirma indexación.
+- **Estado publicado:** 111 herramientas adicionales en el hub; las 277 originales permanecen intactas. No PageSpeed/Lighthouse.
+- **Siguiente candidata:** #301 Investment Allocation Calculator; no rehacer DataForSEO.
 
 ## Publicada · 555 Timer Calculator (#292) · 2026-10-09
 

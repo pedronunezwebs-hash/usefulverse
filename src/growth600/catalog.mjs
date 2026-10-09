@@ -1331,6 +1331,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['percentage-calculator'],
     logicModule: './tools/a-b-test-calculator/logic.mjs',
   },
+  {
+    id: 'investment-allocation-calculator',
+    category: 'finance-tools',
+    type: 'calculator',
+    primaryIntent: 'portfolio allocation calculator',
+    secondaryIntents: ['investment allocation calculator', 'portfolio rebalancing calculator', 'asset allocation percentage calculator'],
+    functions: ['enter 2–8 portfolio holdings and user-chosen target percentages', 'estimate each holding’s target value from the entered portfolio total', 'optionally split a new contribution using those target weights', 'show each holding’s target-minus-current difference and a copyable summary'],
+    acceptance: 'For a 10,000 portfolio with target weights of 60% and 40%, target values are 6,000 and 4,000 and the weights total 100%; an optional 4,000 contribution is split into 2,400 and 1,600.',
+    boundary: 'Arithmetic for user-entered portfolio values and target weights only. It does not recommend an allocation, identify securities, forecast returns, model taxes/fees, place trades or assess suitability. Target-minus-current differences are not trading instructions. Values stay in the browser and no account, API or upload is used.',
+    relatedExistingIds: ['compound-interest-calculator'],
+    logicModule: './tools/investment-allocation-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

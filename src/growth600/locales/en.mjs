@@ -91,6 +91,8 @@ import modularInverseCopies from './modular-inverse-calculator.mjs';
 import { modularInverseEnglishCopy } from './modular-inverse-calculator.en.mjs';
 import abTestCopies from './a-b-test-calculator.mjs';
 import { abTestEnglishCopy } from './a-b-test-calculator.en.mjs';
+import investmentAllocationCopies from './investment-allocation-calculator.mjs';
+import { investmentAllocationEnglishCopy } from './investment-allocation-calculator.en.mjs';
 import openApiEditorCopies from './openapi-editor.mjs';
 import { openApiEditorEnglishCopy } from './openapi-editor.en.mjs';
 import fontPairingToolCopies from './font-pairing-tool.mjs';
@@ -1040,5 +1042,30 @@ Object.assign(modularInverseCopies.ar, {
 });
 registerGrowthLocaleExtension(source, 'modular-inverse-calculator', { ...modularInverseCopies, en: modularInverseEnglishCopy }, 'fourier-series-calculator');
 registerGrowthLocaleExtension(source, 'a-b-test-calculator', { ...abTestCopies, en: abTestEnglishCopy }, 'modular-inverse-calculator');
+Object.assign(investmentAllocationCopies.ar, {
+  name: 'حاسبة توزيع أصول المحفظة',
+  title: 'حاسبة توزيع أصول المحفظة مجانًا | UsefulVerse',
+  intro: 'أدخل الأصول التي تملكها حاليًا والنسب المستهدفة التي اخترتها. اعرض القيمة المستهدفة وحصة المساهمة والفرق الحسابي لكل أصل.',
+  howQuestion: 'كيف تعمل حاسبة توزيع أصول المحفظة؟',
+  howAnswer: 'أدخل من أصلين إلى 8 أصول، مع القيمة الحالية والنسبة المستهدفة لكل منها. يجب أن يكون مجموع النسب 100%. تطبق الحاسبة هذه النسب على قيمة المحفظة، ويمكنها أيضًا احتساب مساهمة جديدة.',
+  privacyQuestion: 'هل تُرسل معلومات محفظتي؟',
+  privacyAnswer: 'لا. يجري الحساب في هذا المتصفح فقط. لا يتصل بحساب مالي ولا يعرّف الأوراق المالية ولا يرسل قيمك إلى خادم.',
+  fields: {
+    ...investmentAllocationCopies.ar.fields,
+    assetCount: 'عدد الأصول', asset: 'الأصل', assetName: 'اسم الأصل',
+    currentValue: 'القيمة الحالية', targetWeight: 'النسبة المستهدفة (%)',
+    currencyCode: 'رمز العملة من 3 أحرف', contribution: 'مساهمة جديدة اختيارية',
+    currentTotal: 'إجمالي قيمة المحفظة الحالية', contributionTotal: 'المساهمة الجديدة',
+    projectedTotal: 'الإجمالي بعد المساهمة', targetValue: 'القيمة المستهدفة',
+    contributionShare: 'حصة الأصل من المساهمة', difference: 'الفرق (المستهدف − الحالي)',
+    accuracyNote: 'حسابات فقط، وليست نصيحة استثمارية أو توصية بتوزيع معين. اختر النسب المستهدفة بنفسك. الفرق هو القيمة المستهدفة ناقص القيمة الحالية، وليس أمرًا بالتداول. لا تحسب الأداة العوائد أو الضرائب أو الرسوم أو مدى ملاءمة الاستثمار.',
+  },
+  additionalFaqs: [
+    { question: 'كيف أحسب توزيع المحفظة بنسبة 60/40؟', answer: 'اضرب إجمالي قيمة المحفظة في كل نسبة مستهدفة. إذا كان الإجمالي 10,000، فقيمة 60% هي 6,000 وقيمة 40% هي 4,000.' },
+    { question: 'هل يمكنني إضافة مساهمة جديدة؟', answer: 'نعم. أدخل المبلغ وستعرض الأداة كيفية توزيعه حسب النسب المستهدفة والقيم المستهدفة بعد الإضافة.' },
+    { question: 'هل تخبرني الأداة بما ينبغي أن أستثمر فيه؟', answer: 'لا. تطبق الأداة النسب والقيم التي تدخلها فقط، ولا تقترح أصولًا أو تقدم نصيحة استثمارية.' },
+  ],
+});
+registerGrowthLocaleExtension(source, 'investment-allocation-calculator', { ...investmentAllocationCopies, en: investmentAllocationEnglishCopy }, 'a-b-test-calculator');
 
 export default Object.freeze(source);

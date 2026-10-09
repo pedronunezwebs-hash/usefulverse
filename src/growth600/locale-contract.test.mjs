@@ -118,6 +118,20 @@ test('A/B test calculator has 36 copies, explicit group labels, three FAQs, and 
   }
 });
 
+test('investment allocation calculator includes static copy, three FAQs and bounded metadata in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'investment-allocation-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, `${key}: metadata limits`);
+    assert.ok(copy.fields.targetWeight && copy.fields.difference && copy.fields.accuracyNote, key);
+    assert.ok(copy.actions.calculate && copy.actions.copy && copy.messages.checkInputs, key);
+  }
+  assert.match(localizedCopies.en[tool.id].fields.accuracyNote, /not investment advice/u);
+});
+
 function assertMachineAcceptedGrowthToolInAllLocales(tool) {
   assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
   for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
