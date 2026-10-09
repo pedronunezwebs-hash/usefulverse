@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 127);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 127);
+  assert.equal(growthPilotTools.length, 128);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 128);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -36,6 +36,17 @@ test('JSON model generator drafts typed models without duplicating schema valida
   assert.match(tool.acceptance, /string \| null/u);
   assert.match(tool.boundary, /does not validate JSON against a schema/u);
   assert.match(tool.boundary, /no dependencies, upload, API/iu);
+});
+
+test('CSV editor adds editable rows and cells without duplicating the read-only CSV viewer', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'csv-editor');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'csv editor');
+  assert.deepEqual(tool.relatedExistingIds, ['csv-viewer', 'csv-to-pdf']);
+  assert.match(tool.functions.join(' '), /undo or redo/u);
+  assert.match(tool.acceptance, /embedded newline.*reproduces the edited table/u);
+  assert.match(tool.boundary, /does not upload, autosave/u);
+  assert.match(tool.boundary, /5 MiB.*5,000 data rows.*80 columns.*80,000 cells/u);
 });
 
 test('Hashi is a distinct no-crossing connected-island puzzle, not a duplicate Futoshiki or Kakuro page', () => {
