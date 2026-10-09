@@ -1,5 +1,7 @@
 import { localePath } from '../locales.mjs';
 
+const naverSiteVerification = 'bc9fbc32a2bafece04bd4bb67eddf28e1b34d296';
+
 export function escapeGrowthHtml(value) {
   return String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
 }
@@ -65,6 +67,7 @@ export function renderGrowthToolPage({ tool, locale, localeEntries, copy, origin
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="naver-site-verification" content="${naverSiteVerification}">
   <title>${escapeGrowthHtml(copy.title)}</title>
   <meta name="description" content="${escapeGrowthHtml(copy.description)}">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -109,6 +112,7 @@ export function renderGrowthHomePage({ tools, locale, localeEntries, copy, origi
   return `<!doctype html>
 <html lang="${escapeGrowthHtml(locale.code)}" dir="${direction}"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="naver-site-verification" content="${naverSiteVerification}">
   <title>${escapeGrowthHtml(copy.title)}</title><meta name="description" content="${escapeGrowthHtml(copy.description)}">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="canonical" href="${canonical}">${alternates}
