@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 137);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 137);
+  assert.equal(growthPilotTools.length, 138);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 138);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -77,6 +77,15 @@ test('Reynolds number calculator distinguishes viscosity formulas and limits pip
   assert.match(tool.acceptance, /Re ≈ 49,810.*zero velocity gives Re = 0/u);
   assert.match(tool.boundary, /not guarantees.*no universal regime/u);
   assert.deepEqual(tool.relatedExistingIds, ['flow-rate-calculator', 'density-calculator']);
+});
+
+test('three-phase power calculator covers AC power magnitudes and is distinct from DC Ohm law', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'three-phase-power-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'three phase power calculator');
+  assert.match(tool.acceptance, /√3 × 400 × 10 × 0\.8/u);
+  assert.match(tool.boundary, /balanced three-phase load.*reactive power is reported unsigned/u);
+  assert.deepEqual(tool.relatedExistingIds, ['ohms-law-calculator', 'voltage-drop-calculator']);
 });
 
 test('JSON to Excel is distinct from CSV and spreadsheet conversion and keeps imports local', () => {

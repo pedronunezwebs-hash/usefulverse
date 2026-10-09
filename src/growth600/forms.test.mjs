@@ -310,6 +310,11 @@ const copies = {
     messages: { ...messages, calculated: 'Reynolds number calculated.', checkInputs: 'Check the required values and supported units.', reynoldsNumber: 'Reynolds number (Re)', regime: 'Pipe-flow regime estimate', flowContext: 'Flow context', velocity: 'Velocity converted to SI', characteristicLength: 'Characteristic length in SI', density: 'Density converted to SI', dynamicViscosity: 'Dynamic viscosity in SI', kinematicViscosity: 'Kinematic viscosity in SI', laminarRegime: 'Laminar estimate', transitionalRegime: 'Transitional estimate', turbulentRegime: 'Turbulent estimate', contextDependent: 'Context-dependent', formula: 'Formula', dynamicFormula: 'Re = ρ × v × L ÷ μ', kinematicFormula: 'Re = v × L ÷ ν' },
     fields: { geometry: 'Flow context', pipeFlow: 'Pipe flow', externalFlow: 'Flow around an object', viscosityType: 'Viscosity values', dynamic: 'Dynamic viscosity and density', kinematic: 'Kinematic viscosity', velocity: 'Average velocity', velocityUnit: 'Velocity unit', metersPerSecond: 'm/s', centimetersPerSecond: 'cm/s', feetPerSecond: 'ft/s', kilometersPerHour: 'km/h', characteristicLength: 'Characteristic length', lengthUnit: 'Length unit', meters: 'm', centimeters: 'cm', millimeters: 'mm', inches: 'in', feet: 'ft', density: 'Density', densityUnit: 'Density unit', kilogramsPerCubicMeter: 'kg/m³', gramsPerCubicCentimeter: 'g/cm³', poundsPerCubicFoot: 'lb/ft³', dynamicViscosity: 'Dynamic viscosity', dynamicViscosityUnit: 'Dynamic viscosity unit', pascalSeconds: 'Pa·s', millipascalSeconds: 'mPa·s', centipoise: 'cP', poundsPerFootSecond: 'lb/(ft·s)', kinematicViscosity: 'Kinematic viscosity', kinematicViscosityUnit: 'Kinematic viscosity unit', squareMetersPerSecond: 'm²/s', squareMillimetersPerSecond: 'mm²/s', centistokes: 'cSt', squareFeetPerSecond: 'ft²/s', accuracyNote: 'Conventional estimate only.' },
   },
+  'three-phase-power-calculator': {
+    name: 'Three phase power calculator', actions: { ...actions, calculate: 'Calculate AC power', reset: 'Reset', copy: 'Copy results', example: 'Try 400 V, 10 A and PF 0.8', result: 'Power estimate' },
+    messages: { ...messages, calculated: 'AC power estimate calculated.', checkInputs: 'Check voltage, current, power factor and supported units.', activePower: 'Active power (P)', apparentPower: 'Apparent power (S)', reactivePower: 'Reactive power magnitude (Q)', lineVoltage: 'Line voltage', lineCurrent: 'Line current', phaseVoltage: 'Phase voltage', phaseCurrent: 'Phase current', powerFactor: 'Power factor', formula: 'Formula', singlePhaseFormula: 'S = V × I; P = S × PF; Q = S × √(1 − PF²)', threePhaseFormula: 'S = √3 × Vline × Iline; P = S × PF; Q = S × √(1 − PF²)' },
+    fields: { system: 'AC system', singlePhase: 'Single phase', threePhase: 'Three phase (balanced)', topology: 'Three-phase connection', star: 'Star / wye', delta: 'Delta', lineVoltage: 'Line voltage', voltageUnit: 'Voltage unit', volts: 'Volts (V)', kilovolts: 'Kilovolts (kV)', lineCurrent: 'Line current', currentUnit: 'Current unit', amperes: 'Amperes (A)', kiloamperes: 'Kiloamperes (kA)', powerFactor: 'Power factor (0 to 1)', accuracyNote: 'Ideal balanced sinusoidal AC estimate; power factor is a magnitude and reactive power is unsigned.' },
+  },
   'acceleration-calculator': {
     name: 'Acceleration calculator', actions: { ...actions, calculate: 'Calculate motion', example: 'Try 0 to 20 m/s in 5 seconds' },
     messages: { ...messages, acceleration: 'Acceleration', time: 'Elapsed time', initialVelocity: 'Initial velocity', finalVelocity: 'Final velocity', initialPosition: 'Initial position', displacement: 'Displacement', finalPosition: 'Final position' },
@@ -586,6 +591,12 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(reynolds, /type="number" min="0"/u);
   assert.match(reynolds, /data-action="example"/u);
   assert.match(reynolds, /data-action="copy"/u);
+  const threePhase = renderGrowthForm('three-phase-power-calculator', copies['three-phase-power-calculator']);
+  for (const name of ['system', 'topology', 'lineVoltage', 'voltageUnit', 'lineCurrent', 'currentUnit', 'powerFactor']) assert.match(threePhase, new RegExp(`name="${name}"`, 'u'));
+  assert.match(threePhase, /data-ac-field="three-phase"/u);
+  assert.match(threePhase, /name="powerFactor" type="number" min="0" max="1"/u);
+  assert.match(threePhase, /data-action="example"/u);
+  assert.match(threePhase, /data-action="copy"/u);
   assert.match(resistor, /data-action="example"/u);
   assert.match(resistor, /data-action="copy"/u);
   const acceleration = renderGrowthForm('acceleration-calculator', copies['acceleration-calculator']);
