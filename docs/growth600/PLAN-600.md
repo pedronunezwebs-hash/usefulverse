@@ -421,6 +421,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `tire diameter calculator` — sin métrica obtenida; no atribuir volumen.
   - `tire size calculator free online`; `tire size calculator with example`; `tire size calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Cierre (2026-10-09):** PR #81 integrada; pipeline principal y publicación del hub correctos. Muestras EN/ES/AR HTTP 200 y sitemap sin duplicados. Traducción automática básica, no revisión nativa; no se afirma indexación.
 - **Avance comprobado (2026-10-08):** herramienta local en inglés implementada con modos directo/inverso para sumas acotadas de polinomios, exponentiales y seno/coseno; la inversa acepta términos parciales estándar ya separados. Muestra ROC, límites de sintaxis y resultado accesible; no usa CAS ni API externa. Suite focalizada (lógica, controlador, formulario, catálogo, contrato de 36 locales, render y build): **159/159 aprobadas**. Bundle minificado y validado por el guard local: **6.719 bytes**. Los otros 35 idiomas siguen pendientes, el release gate los bloquea; faltan QA visual y despliegue. Recuento: **80/323** candidatas con implementación inglesa; quedan 243 filas del plan, incluida una duplicada que debe sustituirse.
 - **Estado de implementación (2026-10-08):** motor local para las tres incógnitas, conversiones de unidades y estimación explícita de mezcla; formulario/controlador, copy inglés, límites y pruebas añadidos como candidata #58/323. Suite focal sin bundling: 174/174 aprobadas. Los 35 locales no ingleses siguen pendientes y bloqueados para publicación; build bundle y QA visual pendientes porque `esbuild` no está disponible en este clon. No desplegada.
 
@@ -1994,8 +1995,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 173 · Savings Goal Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `savings-goal-calculator` (implementación inglesa parcial; no publicada)**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/savings-goal-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarada publicada.
+- [x] **C/F/E/X/L/B/P/S completos — `savings-goal-calculator`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/savings-goal-calculator/` + 35 variantes localizadas, presentes en el sitemap público. QA funcional y RTL documentados en `docs/growth600/PROGRESS.md`.
 - **Demanda:** `savings goal calculator` — 3.600 búsquedas/mes US/en, KD 36; nivel B. CPC 3.72 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Resolver aportación o plazo para una meta con fecha y saldo actual
 - **Prueba de aceptación específica:** Meta 1200 a 12 meses sin interés da 100 por mes
@@ -2006,7 +2007,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `savings goal calculator free online`; `savings goal calculator with example`; `savings goal calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** DE/de `sparziel rechner` 70/mes, KD 18.
-- **Avance comprobado (2026-10-08):** C/F, lógica E, tests X del cálculo/controlador simulado, fuente inglesa L, formulario y copy B implementados. Pruebas focalizadas: **155/155 aprobadas**; bundle minificado temporal: **5.562 bytes** (presupuesto 24 KiB). Los 35 borradores locales están marcados pendientes y el gate los bloquea. Sin comprobación visual en Chrome, deploy, sitemap público ni envíos a buscadores; completar esos gates antes de declarar terminada.
+- **Cierre (2026-10-09):** aparece en 36 rutas públicas; la muestra meta 1.200/12 meses/0 % devuelve 100 al mes. RTL AR comprobado en 390 px sin overflow ni errores de consola. Sin PageSpeed/Lighthouse ni afirmación de indexación.
 
 ### 174 · Severance Pay Calculator
 
@@ -2777,8 +2778,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 148 · Text To Binary Converter
 
-- [ ] **C/F/E/X/L/B/P/S completos — `text-to-binary-converter`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/text-to-binary-converter/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `text-to-binary-converter`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/text-to-binary-converter/` + 35 variantes localizadas; incluido en el sitemap público de 4.356 URLs únicas.
 - **Demanda:** `binary to text converter` — 5.400 búsquedas/mes US/en, KD 38; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Texto↔bytes binarios UTF-8, errores de decodificación, agrupación y exportación; conservar caracteres Unicode, no convertir solo un entero.
 - **Prueba de aceptación específica:** Texto ñ produce bytes UTF8 correctos
@@ -2791,8 +2792,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 171 · Schema Markup Validator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `schema-markup-validator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/schema-markup-validator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `schema-markup-validator`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/schema-markup-validator/` + 35 variantes localizadas, presentes en el sitemap público. QA funcional y RTL documentados en `docs/growth600/PROGRESS.md`.
 - **Demanda:** `schema markup validator` — 3.600 búsquedas/mes US/en, KD 32; nivel B. CPC 16.59 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Parsear JSON-LD y vocabulario Schema.org versionado, señalar campos y errores; no prometer validación Google ni rich results garantizados.
 - **Prueba de aceptación específica:** JSONinválido nopasa; tipo desconocido reportado
@@ -2805,8 +2806,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 189 · Certificate Decoder
 
-- [ ] **C/F/E/X/L/B/P/S completos — `certificate-decoder`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/certificate-decoder/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `certificate-decoder`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/certificate-decoder/` + 35 variantes localizadas; aparecen en el sitemap público.
 - **Demanda:** `certificate decoder` — 2.900 búsquedas/mes US/en, KD 29; nivel B. CPC 18.32 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Leer X.509 PEM/DER, SAN, emisor, fechas y fingerprints; decodificar no equivale a verificar una cadena de confianza.
 - **Prueba de aceptación específica:** Fixture conocido devuelve CN yfecha
@@ -2816,6 +2817,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `pem certificate decoder` — 90/mes US/en; KD 16.
   - `certificate decoder free online`; `certificate decoder with example`; `certificate decoder no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Cierre (2026-10-09):** 36 locales estáticos; fixture X.509 de prueba devuelve subject/issuer, serial, fechas, SAN y SHA-256. 5 tests de parser pasan; suite global 1.553/1.553; build hub 4.392 páginas; `npm run check` conserva 10.260 URLs principales; release-locale pasa. Chrome AR a 390 px: decodificación funcional, menú de idiomas abre dentro del viewport, resultado largo se envuelve (390/390), consola limpia. Sin PageSpeed/Lighthouse ni afirmación de indexación.
 
 ### 195 · Json To Xml Converter
 
@@ -4216,9 +4218,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 172 · Readability Checker
 
-- [ ] **C/F/E/X/L/B/P/S completos — `readability-checker`**
-- [x] E/B — implementación base inglesa con índices separados para cinco idiomas, métricas de texto, límites y aviso de muestra; ver evidencias y tareas aún abiertas en `docs/growth600/PROGRESS.md` (2026-10-08). No se considera localizada, integralmente probada ni publicada.
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/readability-checker/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `readability-checker`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/readability-checker/` + 35 variantes localizadas, presentes en el sitemap público. QA funcional y RTL documentados en `docs/growth600/PROGRESS.md`.
 - **Demanda:** `readability checker` — 3.600 búsquedas/mes US/en, KD 34; nivel B. CPC 5.86 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Fórmulas de legibilidad apropiadas para cada idioma soportado, números intermedios y explicación. Donde no exista fórmula fiable, no aplicar Flesch inglés silenciosamente.
 - **Prueba de aceptación específica:** Ejemploverificado coincideconfórmula

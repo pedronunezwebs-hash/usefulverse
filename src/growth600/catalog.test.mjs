@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 120);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 120);
+  assert.equal(growthPilotTools.length, 121);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 121);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -70,6 +70,16 @@ test('text/binary conversion preserves UTF-8 and stays distinct from numeric bas
   assert.match(tool.acceptance, /ñ produces UTF-8 bytes/u);
   assert.match(tool.boundary, /not integers between numeric bases/u);
   assert.match(tool.boundary, /strictly valid UTF-8/u);
+});
+
+test('X.509 decoder reads local PEM/DER fields without claiming trust verification', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'certificate-decoder');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'certificate decoder');
+  assert.deepEqual(tool.relatedExistingIds, ['jwt-decoder', 'json-ld-generator']);
+  assert.match(tool.functions.join(' '), /subject alternative names/u);
+  assert.match(tool.acceptance, /fixture.example.invalid/u);
+  assert.match(tool.boundary, /does not verify/u);
 });
 
 test('OpenAPI editor stays a local contract editor and does not duplicate request-builder intent', () => {

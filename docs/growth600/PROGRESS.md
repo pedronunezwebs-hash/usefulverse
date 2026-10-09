@@ -2,6 +2,31 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
+## Estado público actual · 2026-10-09
+
+- **121 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap de `tools.usefulverse.com` tiene **4.392 URLs** (121 × 36 + 36 páginas de idioma). Esto no equivale a que los buscadores ya hayan indexado cada URL.
+- #148 Text to Binary Converter: PR #81 integrada; despliegue principal `37891603568` y despliegue del hub `37892340212` correctos. EN/ES/AR responden HTTP 200.
+- #171 Schema Markup Validator, #172 Readability Checker y #173 Savings Goal Calculator ya aparecen en las 36 versiones públicas; verificaciones previas registradas debajo.
+- #189 Certificate Decoder: 36 rutas públicas; detalles de pruebas y despliegue anotados abajo.
+- `npm run check` conserva **10.260 URLs** del sitio principal; suite actual: **1.553/1.553**; `npm run locale:release-check` pasa para los 36 locales.
+
+## Herramientas verificadas en despliegue anterior · #171–#173
+
+- [x] #171 Schema Markup Validator — 36 rutas del sitemap; EN/AR HTTP 200. Una muestra JSON-LD se informó sintácticamente válida, con una entidad tipada y cero advertencias; AR `dir=rtl`, 390 px sin desbordamiento ni avisos de consola.
+- [x] #172 Readability Checker — 36 rutas; ejemplo EN devuelve Flesch 80,9 y métricas de palabras/frases sin error; AR `dir=rtl`, 390 px sin desbordamiento ni errores de consola.
+- [x] #173 Savings Goal Calculator — 36 rutas; ejemplo de 1.200 en 12 meses al 0 % devuelve 100/mes; AR `dir=rtl`, 390 px sin desbordamiento ni errores de consola.
+- No se midió PageSpeed/Lighthouse ni se afirma indexación individual.
+
+## Publicada · Certificate Decoder (#189) · 2026-10-09
+
+- [x] C/F — ficha preinvestigada: `certificate decoder`, 2.900 búsquedas/mes US/en, KD 29; secundaria `pem certificate decoder`, 90/mes, KD 16. Sin nuevas consultas ni gasto DataForSEO.
+- [x] E/B — decodifica X.509 PEM/base64 DER o archivos PEM/CER/CRT/DER localmente (máximo 1 MiB): subject, issuer, serial, validez, SAN y huella SHA-256. Aviso claro: no valida firma, confianza, hostname ni revocación. Sin servidor, API, dependencias en runtime, red ni almacenamiento.
+- [x] L — traducción estática automatizada desde inglés en 36 idiomas con el traductor gratuito; borrador sencillo, no revisión nativa. Excluye el fixture PEM del traductor.
+- [x] X — 5 tests de parser; suite global **1.553/1.553**; build Growth600 **4.392 páginas** (121 × 36 + 36 portadas), 4.566 archivos, 131.225.163 bytes; `npm run check` mantiene **10.260 URLs** del sitio principal y el release check de idiomas pasa.
+- [x] B — Chrome AR a 390×844: fixture decodificado con CN, serial, fechas, SAN y SHA-256; `dir=rtl`, ancho 390/390 antes y después, menú de idioma abierto íntegramente dentro del viewport y cerrado sin desbordamiento; cero errores de consola. Se corrigieron el menú RTL y el wrap de huellas largas. No se probaron todos los dispositivos/idiomas.
+- [x] P/S — PR, CI y despliegue registrados en el cierre de GitHub; sitemap público con **4.392 URLs únicas**, 36 rutas del decodificador. No se afirma indexación ni envío manual a buscadores.
+- **Recuento:** 121 herramientas Growth600 publicadas / 4.392 URLs de hub; las 277 originales intactas.
+
 ## Publicada · JSON Diff (#117) · 2026-10-09
 
 - [x] C/F — reutiliza la ficha ya investigada: `json diff`, 8.100 búsquedas/mes US/en, KD 14; secundaria `json compare online`, 2.900. Sin DataForSEO nuevo.
@@ -11,19 +36,19 @@
 - [x] X — pruebas específicas **91/91**; suite completa **1.537/1.537**; `npm run check` conserva **10.260 URLs** principales y `npm run locale:release-check` pasa. Build aislado: **4.320 páginas** (119 × 36 + 36 portadas), 4.492 archivos, 129.087.882 bytes.
 - [x] B — Chrome EN con comparación de arrays por ID; Chrome AR a 390×844: ejemplo con cambios/altas y patch, `lang=ar`, `dir=rtl`, ancho 390/390, cero avisos/errores. No se probó cada idioma/dispositivo. Sin PageSpeed/Lighthouse.
 - [x] P/S — PR #80 integrada como `a5623dff218c56d78e893e87f89e4a7f2ab098ce`; CI PR `37890180221`, deploy principal `37890504845` y deploy separado del hub `37890916012`, todos exitosos. Rutas EN/AR y sitemap HTTP 200; **4.320 URLs únicas**, 36 variantes JSON Diff. No se afirma indexación ni envío manual.
-- **Recuento publicado:** 119 herramientas Growth600 / 4.320 URLs de hub, incluido #323; las 277 originales intactas.
-- **Siguiente candidata:** #148 Text to Binary Converter.
+- **Recuento publicado en ese despliegue:** 119 herramientas Growth600 / 4.320 URLs de hub, incluido #323; las 277 originales intactas.
+- **Siguiente candidata en ese momento:** #148 Text to Binary Converter (publicada después; ver estado actual arriba).
 
-## En implementación local · Text to Binary Converter (#148) · 2026-10-09
+## Publicada · Text to Binary Converter (#148) · 2026-10-09
 
 - [x] C/F — ficha existente del plan: `binary to text converter`, 5.400 búsquedas/mes US/en, KD 38; secundaria `text to binary converter`, 1.900. Sin consultas nuevas ni coste DataForSEO.
 - [x] E/B — conversión texto↔bytes UTF-8 reales, con agrupación opcional y exportación local; conserva Unicode, BOM y saltos. Rechaza bits incompletos, UTF-8 inválido y entradas excesivas. `TextEncoder`/`TextDecoder` nativos; sin dependencia, red, servidor ni carga de archivos.
 - [x] L — copy y metadata traducidos estáticamente a los 36 idiomas con el flujo automático de Google Translate aceptado por el propietario; borrador comprensible, no revisión nativa.
 - [x] X — pruebas focales **91/91**; suite global rerun **1.545/1.545**; `npm run check` conserva **10.260 URLs** principales; `npm run locale:release-check` pasa. Build separado: **4.356 páginas** (120 × 36 + 36 portadas), 4.529 archivos, 130.181.912 bytes. Controlador: 3.336 bytes.
 - [x] B — Chrome EN codifica y decodifica `ñ 👋` en UTF-8; rechaza byte inválido. Árabe `lang=ar`, `dir=rtl`, viewport 390×844 sin overflow ni mensajes de consola. No se midió PageSpeed/Lighthouse ni se probaron todos los navegadores/idiomas individualmente.
-- [ ] P/S — falta PR, CI, integración y deploy público; no incrementar sitemap público todavía.
-- **Recuento publicado vigente:** 119 herramientas Growth600 / 4.320 URLs.
-- **Siguiente candidata tras publicación:** #171 Schema Markup Validator.
+- [x] P/S — PR #81 integrada; despliegue principal `37891603568` y hub `37892340212` correctos. Sitemap público verificado: **4.356 URLs únicas**, 36 variantes de Text to Binary; EN/ES/AR HTTP 200. No se afirma indexación ni envío manual a buscadores.
+- **Recuento tras esta publicación:** 120 herramientas Growth600 / 4.356 URLs.
+- **Siguiente candidata nueva pendiente:** #189 Certificate Decoder; #171–#173 ya estaban publicadas y se documentan arriba.
 
 ## Publicada · Chinese Remainder Theorem Calculator (#323) · 2026-10-09
 

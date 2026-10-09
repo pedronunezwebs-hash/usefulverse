@@ -109,6 +109,8 @@ import jsonDiffCopies from './json-diff.mjs';
 import { jsonDiffEnglishCopy } from './json-diff.en.mjs';
 import textToBinaryCopies from './text-to-binary.mjs';
 import { textToBinaryEnglishCopy } from './text-to-binary.en.mjs';
+import certificateDecoderCopies from './certificate-decoder.mjs';
+import { certificateDecoderEnglishCopy } from './certificate-decoder.en.mjs';
 import openApiEditorCopies from './openapi-editor.mjs';
 import { openApiEditorEnglishCopy } from './openapi-editor.en.mjs';
 import fontPairingToolCopies from './font-pairing-tool.mjs';
@@ -1112,5 +1114,6 @@ registerGrowthLocaleExtension(source, 'wilcoxon-signed-rank-test-calculator', { 
 registerGrowthLocaleExtension(source, 'chinese-remainder-theorem-calculator', { ...chineseRemainderCopies, en: chineseRemainderEnglishCopy }, 'wilcoxon-signed-rank-test-calculator');
 registerGrowthLocaleExtension(source, 'json-diff', { ...jsonDiffCopies, en: jsonDiffEnglishCopy }, 'chinese-remainder-theorem-calculator');
 registerGrowthLocaleExtension(source, 'text-to-binary-converter', { ...textToBinaryCopies, en: textToBinaryEnglishCopy }, 'json-diff');
+registerGrowthLocaleExtension(source, 'certificate-decoder', { ...certificateDecoderCopies, en: certificateDecoderEnglishCopy }, 'text-to-binary-converter');
 
 export default Object.freeze(source);

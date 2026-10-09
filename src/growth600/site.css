@@ -34,6 +34,9 @@
 .investment-allocation-table { width: 100%; border-collapse: collapse; }
 .investment-allocation-table th, .investment-allocation-table td { padding: .55rem; border-bottom: 1px solid var(--line); text-align: start; white-space: nowrap; }
 @media (max-width: 620px) { .investment-allocation-assets { grid-template-columns: 1fr; } }
+.language-menu:not([open])>nav { display: none; }
+.language-menu:dir(rtl)>nav { left: 0; right: auto; }
+.result dd { overflow-wrap: anywhere; }
 .svd-result-matrix { margin-block: 1rem; max-width: 100%; overflow: auto; }
 .svd-result-matrix__table { border-collapse: collapse; font-variant-numeric: tabular-nums; }
 .svd-result-matrix__table td { min-width: 4.5rem; padding: .45rem .65rem; border: 1px solid var(--line); text-align: end; }

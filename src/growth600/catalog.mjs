@@ -1428,6 +1428,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/text-to-binary-converter/logic.mjs',
   },
   {
+    id: 'certificate-decoder',
+    category: 'developer-tools',
+    type: 'utility',
+    primaryIntent: 'certificate decoder',
+    secondaryIntents: ['x509 certificate decoder', 'pem certificate decoder', 'ssl certificate details'],
+    functions: ['decode one local X.509 PEM/base64 certificate or select a DER file', 'show subject and issuer names, serial, UTC validity dates and common DNS, email, URI and IP subject alternative names', 'compute a SHA-256 fingerprint of the exact certificate bytes', 'copy a plain-text summary without uploading or storing the certificate'],
+    acceptance: 'The bundled synthetic X.509 fixture decodes common name fixture.example.invalid, the matching issuer, its expected UTC validity dates, DNS alternatives and IPv4 192.0.2.1.',
+    boundary: 'Decodes fields only; does not verify signatures, trust chains, hostnames, revocation, identity, or safety. It does not fetch URLs or remote issuer certificates. One certificate, maximum 1 MiB; DER is supported through a local file and PEM/base64 DER through paste. Uses bounded local ASN.1 parsing and Web Crypto SHA-256; no API, upload or server processing.',
+    relatedExistingIds: ['jwt-decoder', 'json-ld-generator'],
+    logicModule: './tools/certificate-decoder/logic.mjs',
+  },
+  {
     id: 'chinese-remainder-theorem-calculator',
     category: 'math-statistics',
     type: 'calculator',
