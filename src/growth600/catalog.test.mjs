@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 111);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 111);
+  assert.equal(growthPilotTools.length, 112);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 112);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -145,6 +145,15 @@ test('A/B test calculator estimates between-group evidence, not a single convers
   assert.ok(tool.functions.some((entry) => entry.includes('Newcombe')));
   assert.match(tool.boundary, /false positives|false-positive|sequential/iu);
   assert.deepEqual(tool.relatedExistingIds, ['percentage-calculator']);
+});
+
+test('investment allocation calculator applies user-set targets without recommending securities', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'investment-allocation-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'portfolio allocation calculator');
+  assert.match(tool.acceptance, /6,000 and 4,000/u);
+  assert.match(tool.boundary, /does not recommend an allocation/u);
+  assert.deepEqual(tool.relatedExistingIds, ['compound-interest-calculator']);
 });
 
 test('Roth vs traditional compares user-entered tax scenarios without giving tax or account advice', () => {

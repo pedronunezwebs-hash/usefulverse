@@ -3,6 +3,7 @@ import test from 'node:test';
 import { growthPilotTools } from './catalog.mjs';
 import { renderGrowthForm } from './forms.mjs';
 import { abTestEnglishCopy } from './locales/a-b-test-calculator.en.mjs';
+import { investmentAllocationEnglishCopy } from './locales/investment-allocation-calculator.en.mjs';
 
 const actions = {
   calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', millimeters: 'Millimeters', feet: 'Feet', inches: 'Inches', squareMeters: 'Square meters', squareFeet: 'Square feet', cubicMeters: 'Cubic meters', cubicFeet: 'Cubic feet', kelvin: 'Kelvin difference', fahrenheit: 'Fahrenheit difference', kilowatts: 'Kilowatts (kW)', btuPerHour: 'BTU per hour (BTU/h)', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.', kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only', productionMode: 'Estimate array output', sizingMode: 'Size for daily use', years: 'years', add: 'Add', subtract: 'Subtract', multiply: 'Multiply', divide: 'Divide', magnitude: 'Modulus', argument: 'Argument', rectangularToPolar: 'Rectangular to polar', polarToRectangular: 'Polar to rectangular', roots: 'Nth roots',
@@ -352,6 +353,9 @@ const copies = {
 };
 copies['a-b-test-calculator'] = {
   ...abTestEnglishCopy,
+};
+copies['investment-allocation-calculator'] = {
+  ...investmentAllocationEnglishCopy,
 };
 copies['savings-goal-calculator'] = { name: 'Savings Goal Calculator', actions: { ...actions, requiredContribution: 'Monthly deposit needed', monthsToGoal: 'Time needed for my deposit', beginning: 'Beginning of month', end: 'End of month' }, messages: { ...messages }, fields: { mode: 'Calculation', startingBalance: 'Current savings', targetAmount: 'Savings target', annualRatePercent: 'Annual rate', months: 'Months', monthlyContribution: 'Monthly deposit', contributionTiming: 'Deposit timing', accuracyNote: 'Estimate only.', resultSummary: 'Estimate', monthlyResult: 'Required deposit', monthsResult: 'Months', projectedBalance: 'Projected balance', totalContributions: 'Deposits', estimatedInterest: 'Estimated interest', currencyNote: 'Use the same currency.' } };
 copies['severance-pay-calculator'] = { name: 'Severance Pay Calculator', actions: { ...actions, customMode: 'Custom assumptions', ukMode: 'Great Britain statutory estimate' }, messages: { ...messages, calculationFailed: 'Could not calculate.', exampleLoaded: 'Example loaded.', calculateFirst: 'Calculate first.', belowServiceMinimum: 'Fewer than two completed years.', capApplied: 'A cap applied.', noCapApplied: 'No cap applied.', customAssumptions: 'Custom assumptions.' }, fields: { mode: 'Calculation type', weeklyPay: 'Average gross weekly pay', yearsOfService: 'Years of service', weeksPerYear: 'Weeks per year', birthDate: 'Birth date', employmentStartDate: 'Employment start date', redundancyDate: 'Redundancy date', accuracyNote: 'Estimate only.', customNote: 'Uses your assumptions.', ukNote: 'Great Britain estimate; enter GBP.', officialSource: 'Official guidance', estimate: 'Estimated amount', appliedWeeklyPay: 'Weekly pay used', totalWeeks: 'Weeks of pay', rulesAsOf: 'Rules from', resultSummary: 'Estimate details' } };
@@ -751,6 +755,18 @@ test('decibel calculator form keeps mode-specific controls bounded and announced
   for (const action of ['example', 'calculate', 'reset', 'copy']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
   assert.match(html, /role="status" aria-live="polite"/u);
   assert.match(html, /data-result hidden aria-live="polite"/u);
+});
+
+test('investment allocation form renders bounded holding rows, clear estimates and local-copy actions', () => {
+  const html = renderGrowthForm('investment-allocation-calculator', investmentAllocationEnglishCopy);
+  assert.match(html, /name="assetCount"/u);
+  assert.match(html, /name="currencyCode"/u);
+  assert.match(html, /name="contribution"/u);
+  assert.equal((html.match(/data-allocation-row/g) ?? []).length, 9); // Eight rows and the table body target share the allocation prefix.
+  assert.match(html, /data-allocation-result hidden/u);
+  assert.match(html, /data-allocation-rows/u);
+  assert.match(html, /not investment advice/u);
+  for (const action of ['example', 'calculate', 'reset', 'copy']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
 });
 
 test('OpenAPI editor exposes local JSON/YAML editing, bounded file input and safe preview controls', () => {

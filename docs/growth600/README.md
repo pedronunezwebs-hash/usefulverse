@@ -1,6 +1,6 @@
 # Plan de expansión a 600 herramientas · 2026-10-07
 
-Plan y registro vivo de implementación. La rama de entrega actual es `codex/growth600-ab-test-release-2026-10-09`; integrar en `main` tras superar CI y los gates de publicación de la tanda.
+Plan y registro vivo de implementación. La rama de entrega actual es `codex/growth600-investment-allocation-2026-10-09`; integrar en `main` tras superar CI y los gates de publicación de la tanda.
 
 - [Plan y checklist completo](PLAN-600.md): catálogo protegido de 277, 323 candidatas nuevas, 36 idiomas, fases, contratos y gates.
 - [Progreso de implementación](PROGRESS.md): fases verificadas, decisiones, pilotos y siguiente acción para reanudar.
@@ -10,5 +10,7 @@ Plan y registro vivo de implementación. La rama de entrega actual es `codex/gro
 
 Coste real DataForSEO: 0,24852 USD. No autoriza nuevas llamadas al reanudar.
 260 candidatas tienen al menos 1.000 búsquedas/mes en la query medida US/en; 63 tienen demanda media (260–880/mes). No son visitas garantizadas ni una previsión de CPM.
+
+Último deploy confirmado antes de #301: 111 herramientas Growth600 en el hub, 4.032 URLs (111 × 36 + 36 portadas). La web principal se mantiene aparte con sus 10.260 URLs.
 
 Las casillas de producto permanecen sin marcar hasta que cada herramienta supere C/F/E/X/L/B/P/S. No llamar implementado, probado, traducido, publicado o indexado a lo que solo está planificado. Consultar `PROGRESS.md` antes de cada tanda; no rehacer investigación ni duplicar herramientas.
