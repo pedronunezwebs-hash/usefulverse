@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 136);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 136);
+  assert.equal(growthPilotTools.length, 137);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 137);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -68,6 +68,15 @@ test('flow rate calculator solves area, velocity, flow and tank fill time withou
   assert.match(tool.acceptance, /2 m².*3 m\/s.*6 m³\/s/u);
   assert.match(tool.boundary, /pressure loss.*pump performance/u);
   assert.deepEqual(tool.relatedExistingIds, ['pool-volume-calculator', 'rainwater-harvesting-calculator']);
+});
+
+test('Reynolds number calculator distinguishes viscosity formulas and limits pipe regimes to internal flow', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'reynolds-number-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'reynolds number calculator');
+  assert.match(tool.acceptance, /Re ≈ 49,810.*zero velocity gives Re = 0/u);
+  assert.match(tool.boundary, /not guarantees.*no universal regime/u);
+  assert.deepEqual(tool.relatedExistingIds, ['flow-rate-calculator', 'density-calculator']);
 });
 
 test('JSON to Excel is distinct from CSV and spreadsheet conversion and keeps imports local', () => {
