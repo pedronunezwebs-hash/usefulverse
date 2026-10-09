@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 118);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 118);
+  assert.equal(growthPilotTools.length, 119);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 119);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -50,6 +50,16 @@ test('Wilcoxon signed-rank calculator handles paired differences, zeros, ties an
   assert.match(calculator.boundary, /after minus before/u);
   assert.match(calculator.boundary, /symmetric differences/u);
   assert.deepEqual(calculator.relatedExistingIds, []);
+});
+
+test('JSON Diff compares structure rather than source lines and stays distinct from text diff', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'json-diff');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'json diff');
+  assert.deepEqual(tool.relatedExistingIds, ['text-diff-checker', 'json-formatter']);
+  assert.match(tool.acceptance, /key order/u);
+  assert.match(tool.functions.join(' '), /match object records/u);
+  assert.match(tool.boundary, /array indexes/u);
 });
 
 test('OpenAPI editor stays a local contract editor and does not duplicate request-builder intent', () => {

@@ -2,15 +2,27 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## Implementada localmente · Chinese Remainder Theorem Calculator (#323) · 2026-10-09
+## En implementación local · JSON Diff (#117) · 2026-10-09
+
+- [x] C/F — reutiliza la ficha ya investigada: `json diff`, 8.100 búsquedas/mes US/en, KD 14; secundaria `json compare online`, 2.900. Sin DataForSEO nuevo.
+- [x] E — comparación semántica (no diff de líneas), orden de claves de objetos ignorado, arrays por posición o propiedad única, resumen de altas/bajas/cambios y patch JSON descargable/copiable. #117 es distinta del comparador textual existente y del formateador JSON.
+- [x] B — parseo local, límite de 200.000 caracteres/documento, 20.000 nodos, profundidad 64 y 500 cambios; JSON Pointer escapa `~` y `/`; resultados insertados con `textContent`. El patch sigue índices de array incluso al comparar visualmente por ID, advertido en UI. Sin API, dependencia, servidor ni subidas.
+- [x] L — copy y metadata estáticos disponibles en los 36 idiomas, generados con Google Translate; traducción automática básica, no revisión nativa. Copy inglés y tres FAQs específicos.
+- [x] X — pruebas específicas **91/91**; suite completa **1.537/1.537**; `npm run check` conserva **10.260 URLs** principales y `npm run locale:release-check` pasa. Build aislado: **4.320 páginas** (119 × 36 + 36 portadas), 4.492 archivos, 129.087.882 bytes.
+- [x] B — Chrome EN con comparación de arrays por ID; Chrome AR a 390×844: ejemplo con cambios/altas y patch, `lang=ar`, `dir=rtl`, ancho 390/390, cero avisos/errores. No se probó cada idioma/dispositivo. Sin PageSpeed/Lighthouse.
+- [ ] P/S — no hay PR ni despliegue de JSON Diff; no modificar todavía sitemap público.
+- **Recuento publicado vigente:** 118 herramientas Growth600 / 4.284 URLs de hub, incluido #323. JSON Diff todavía no se cuenta como publicado.
+
+## Publicada · Chinese Remainder Theorem Calculator (#323) · 2026-10-09
 
 - [x] C/F — Ficha del plan: `crt calculator`, 260 búsquedas/mes US/en, KD 0; secundaria `chinese remainder theorem calculator`, 140/mes. Sin nuevas consultas a DataForSEO.
 - [x] E/B — Solucionador CRT con `BigInt` exacto para 2–20 congruencias, incluido el caso no coprimo compatible; detecta incompatibilidad con gcd y diferencia, normaliza soluciones negativas y muestra la clase y módulo combinado. Entrada de pares o notación `x ≡ a (mod m)`, límites explícitos ±10¹², dígitos árabes/persas, ejemplo, copiar y reset. Sin APIs, dependencias, red, persistencia ni envío de entradas.
 - [x] L — 36 traducciones estáticas desde inglés generadas con Google Translate, aceptadas como traducción automática sencilla y no revisión nativa. Ajustado a mano el copy técnico árabe después de encontrar una traducción errónea de “least nonnegative”; no hay traducción en runtime.
 - [x] X — Suite completa **1.527/1.527**; `npm run check` mantiene las 10.260 URLs del sitio principal; `npm run locale:release-check` pasa. Build del hub: **4.284 páginas** (118 × 36 + 36 portadas), 4.455 archivos, 127.998.781 bytes. Sin PageSpeed/Lighthouse.
 - [x] B — Chrome a 390×844: `x ≡ 2 (mod 3)` y `x ≡ 3 (mod 5)` → `x ≡ 8 (mod 15)`; árabe acepta dígitos arábigo-índicos, `lang=ar`, `dir=rtl`, ancho 390/390 y consola limpia. No se probó cada idioma/dispositivo.
-- [ ] P/S — PR, integración, despliegue del hub y sitemap público pendientes; no se afirma indexación.
-- **Siguiente candidata sugerida:** #117 JSON Diff, ficha existente del plan; confirmar frontera del catálogo antes de empezar.
+- [x] P/S — PR #79 integrada como `0182616563777929c6ce09125e3cc4b86eacefa4`; CI `37889002769`, deploy principal `37889311273`, deploy del hub `37889323303`, todos exitosos. URLs EN/AR y sitemap HTTP 200; 4.284 URLs únicas y 36 variantes CRT. No se afirma indexación ni envío manual.
+- **Recuento publicado:** 118 herramientas Growth600 / 4.284 URLs de hub; las 277 originales intactas.
+- **Siguiente candidata:** #117 JSON Diff, ya iniciada en esta continuación.
 
 ## Publicada · Wilcoxon Signed Rank Test Calculator (#316) · 2026-10-09
 

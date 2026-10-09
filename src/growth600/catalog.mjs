@@ -1404,6 +1404,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/wilcoxon-signed-rank-test-calculator/logic.mjs',
   },
   {
+    id: 'json-diff',
+    category: 'developer-data',
+    type: 'tool',
+    primaryIntent: 'json diff',
+    secondaryIntents: ['json compare online', 'compare json files', 'json patch generator'],
+    functions: ['compare parsed JSON structures while ignoring object key order', 'compare arrays by position or match object records by a unique string or number property', 'list added, removed and changed values with readable paths', 'copy the summary or export a local JSON Patch document'],
+    acceptance: 'Objects with the same values but different key order show no differences; a changed nested value is reported at its path and the generated patch transforms the original document.',
+    boundary: 'Compares valid JSON only; it does not compare comments, formatting or source lines. Documents are limited to 200,000 characters each, nesting to 64 levels, visited values to 20,000 per document and displayed changes to 500. ID matching requires every item in each compared array to have a unique string/number key. Exported JSON Patch uses array indexes (RFC 6902 operations). Input remains local; no upload or API.',
+    relatedExistingIds: ['text-diff-checker', 'json-formatter'],
+    logicModule: './tools/json-diff/logic.mjs',
+  },
+  {
     id: 'chinese-remainder-theorem-calculator',
     category: 'math-statistics',
     type: 'calculator',

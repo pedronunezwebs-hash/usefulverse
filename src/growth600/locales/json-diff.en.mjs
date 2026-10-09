@@ -1,0 +1,18 @@
+export const jsonDiffEnglishCopy = Object.freeze({
+  copyLanguage: 'en', name: 'JSON Diff', title: 'JSON Diff Tool Free & Unlimited | UsefulVerse', description: 'Compare JSON online for free. Find added, removed and changed values, match arrays by ID and export a JSON Patch. No upload or account.',
+  intro: 'Compare two JSON documents by structure, not by line order. Object key order is ignored. Review changes, match object arrays by a key, and copy or download a JSON Patch. Your data stays in this browser.',
+  howQuestion: 'How do I compare two JSON files?', howAnswer: 'Paste the original JSON on the left and the new JSON on the right, then choose Compare. Keys in objects can appear in any order. Arrays compare by position unless you enter a key such as id to match records.',
+  privacyQuestion: 'Is my JSON uploaded?', privacyAnswer: 'No. Parsing and comparison run in this browser. The tool does not upload or save your JSON. Each document is limited to 200,000 characters.',
+  exampleBefore: '{\n  "name": "UsefulVerse",\n  "version": 1,\n  "features": [\n    {"id": "local", "enabled": true},\n    {"id": "free", "enabled": true}\n  ]\n}',
+  exampleAfter: '{\n  "features": [\n    {"enabled": true, "id": "free"},\n    {"id": "local", "enabled": false},\n    {"id": "private", "enabled": true}\n  ],\n  "name": "UsefulVerse",\n  "version": 2\n}',
+  fields: {
+    before: 'Original JSON', after: 'New JSON', beforeHint: 'Paste the earlier JSON document.', afterHint: 'Paste the updated JSON document.', arrayMode: 'Match arrays', arrayIndex: 'By position', arrayKeyMode: 'By object key', arrayKey: 'Array key property', arrayKeyHint: 'For arrays of objects, enter a stable property such as id. Keys must be present and unique in each array.', accuracyNote: 'Each JSON document can contain up to 200,000 characters. Comparison stops after 500 listed changes. Arrays can be compared by position or by a unique string/number property.', results: 'Comparison results', added: 'Added', removed: 'Removed', changed: 'Changed', changeList: 'Changes', noChanges: 'The JSON documents have the same structure and values.', path: 'Path', oldValue: 'Before', newValue: 'After', patch: 'JSON Patch (array positions)', patchHint: 'This RFC 6902-style patch uses array indexes, even when the visual comparison matches records by ID.', invalid: 'Check both JSON documents and the array key.', operation: 'Operation', tooMany: 'There are too many changes to display. Reduce the documents or compare a smaller section.',
+  },
+  actions: { compare: 'Compare JSON', example: 'Load example', reset: 'Clear', result: 'JSON comparison', copy: 'Copy summary', copyPatch: 'Copy JSON Patch', downloadPatch: 'Download patch' },
+  messages: { compared: 'JSON comparison complete.', noChanges: 'No differences found.', copied: 'Copied to clipboard.', copyUnavailable: 'Clipboard is not available in this browser.', downloaded: 'JSON Patch downloaded.', invalid: 'Check the JSON syntax and array key settings.' },
+  additionalFaqs: [
+    { question: 'Does JSON Diff ignore object key order?', answer: 'Yes. Keys inside JSON objects are compared by name, so moving a key does not count as a change. Array order is meaningful unless you choose a unique object key for matching.' },
+    { question: 'Can I compare arrays of objects by ID?', answer: 'Yes. Choose “By object key” and enter a property such as id. Every item in each array must contain a unique string or number in that property.' },
+    { question: 'Can I export the differences?', answer: 'Yes. Copy the summary or download a JSON Patch. The patch uses array positions and follows common RFC 6902 operations; review it before applying it to important data.' },
+  ],
+});
