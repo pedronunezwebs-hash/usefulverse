@@ -276,6 +276,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/molarity-calculator/logic.mjs',
   },
   {
+    id: 'ph-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'ph calculator',
+    secondaryIntents: ['ph poh calculator', 'strong acid ph calculator', 'weak acid ph calculator', 'weak base ph calculator'],
+    functions: ['estimate pH and pOH for idealized strong acid/base concentration models and monoprotic weak acid/base equilibrium', 'solve weak equilibrium with mass balance and water autoionization at 25 °C', 'show hydrogen and hydroxide concentrations, estimated ionization and assumptions in the result'],
+    acceptance: 'An entered hydrogen-ion concentration of 1 × 10⁻⁷ mol/L returns pH 7 and pOH 7 in this ideal 25 °C model.',
+    boundary: 'Educational ideal dilute-solution estimate only. Uses concentrations as activities; assumes strong species fully dissociate and weak species have one ionization step; fixes pKw at 14.00 for 25 °C. Does not model polyprotic acids, buffers, salts, activity coefficients, titration, temperature variation or solution interactions. Not lab, medical, food, pool or soil advice; calculations run locally without upload.',
+    relatedExistingIds: ['molarity-calculator', 'molar-mass-calculator'],
+    logicModule: './tools/ph-calculator/logic.mjs',
+  },
+  {
     id: 'dilution-calculator',
     category: 'science-engineering',
     type: 'calculator',

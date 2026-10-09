@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 128);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 128);
+  assert.equal(growthPilotTools.length, 129);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 129);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -47,6 +47,16 @@ test('CSV editor adds editable rows and cells without duplicating the read-only 
   assert.match(tool.acceptance, /embedded newline.*reproduces the edited table/u);
   assert.match(tool.boundary, /does not upload, autosave/u);
   assert.match(tool.boundary, /5 MiB.*5,000 data rows.*80 columns.*80,000 cells/u);
+});
+
+test('pH calculator has a distinct acid-base equilibrium intent and states its ideal-solution scope', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'ph-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'ph calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['molarity-calculator', 'molar-mass-calculator']);
+  assert.match(tool.functions.join(' '), /weak acid\/base equilibrium/u);
+  assert.match(tool.acceptance, /1 × 10⁻⁷ mol\/L returns pH 7/u);
+  assert.match(tool.boundary, /25 °C/u);
 });
 
 test('Hashi is a distinct no-crossing connected-island puzzle, not a duplicate Futoshiki or Kakuro page', () => {

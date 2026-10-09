@@ -46,6 +46,7 @@ export function renderGrowthForm(toolId, copy) {
     'gravel-calculator': ['shape', 'depth', 'length', 'width', 'diameter', 'base', 'triangleHeight', 'dimensionUnit', 'depthUnit', 'density', 'densityUnit', 'waste', 'bagSize', 'bagUnit'],
     'molar-mass-calculator': ['formula'],
     'molarity-calculator': ['mode', 'moles', 'molarity', 'volume', 'volumeUnit', 'molarMass', 'accuracyNote'],
+    'ph-calculator': ['mode', 'strongAcid', 'strongBase', 'weakAcid', 'weakBase', 'concentration', 'equilibriumConstant', 'accuracyNote'],
     'dilution-calculator': ['mode', 'directMode', 'serialMode', 'stockConcentration', 'targetConcentration', 'finalVolume', 'volumeUnit', 'steps', 'accuracyNote'],
     'ohms-law-calculator': ['mode', 'solverMode', 'networkMode', 'voltage', 'current', 'resistance', 'power', 'topology', 'series', 'parallel', 'resistorValues', 'accuracyNote'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
@@ -182,6 +183,7 @@ export function renderGrowthForm(toolId, copy) {
     'gravel-calculator': ['calculate', 'reset', 'copy', 'result', 'rectangle', 'circle', 'triangle', 'meters', 'centimeters', 'feet', 'inches', 'kgPerCubicMeter', 'lbPerCubicFoot', 'kilograms', 'pounds'],
     'molar-mass-calculator': ['calculate', 'reset', 'example', 'copy', 'result'],
     'molarity-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'milliliters'],
+    'ph-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'dilution-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'milliliters'],
     'ohms-law-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -1586,6 +1588,14 @@ export function renderGrowthForm(toolId, copy) {
     <div class="field" data-molarity-fields="molarity">${label('molarity-value', fields.molarity, '<input id="molarity-value" name="molarity" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="0.5">')}</div>
     <div class="field" data-molarity-fields="volume">${label('molarity-volume', fields.volume, '<input id="molarity-volume" name="volume" type="number" min="0" max="1000000000000" step="any" inputmode="decimal" value="2">')}<label for="molarity-volume-unit">${escapeGrowthHtml(fields.volumeUnit)}</label><select id="molarity-volume-unit" name="volumeUnit"><option value="L">${escapeGrowthHtml(labels.liters)}</option><option value="mL">${escapeGrowthHtml(labels.milliliters)}</option></select></div>
     <div class="field" data-molarity-fields="molarMass">${label('molarity-molar-mass', fields.molarMass, '<input id="molarity-molar-mass" name="molarMass" type="number" min="0.00000000000000000000000000000000000000000000000001" max="1000000000" step="any" inputmode="decimal" value="58.44">')}</div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'ph-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('ph-mode', fields.mode, `<select id="ph-mode" name="mode"><option value="strong-acid">${escapeGrowthHtml(fields.strongAcid)}</option><option value="strong-base">${escapeGrowthHtml(fields.strongBase)}</option><option value="weak-acid">${escapeGrowthHtml(fields.weakAcid)}</option><option value="weak-base">${escapeGrowthHtml(fields.weakBase)}</option></select>`)}
+    ${label('ph-concentration', fields.concentration, '<input id="ph-concentration" name="concentration" type="number" min="0.00000000000001" max="10" step="any" inputmode="decimal" value="0.0000001" required>')}
+    <div data-ph-constant>${label('ph-equilibrium-constant', fields.equilibriumConstant, '<input id="ph-equilibrium-constant" name="equilibriumConstant" type="number" min="0.00000000000001" max="1" step="any" inputmode="decimal" value="0.00001">')}</div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);
