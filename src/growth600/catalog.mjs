@@ -300,6 +300,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/section-modulus-calculator/logic.mjs',
   },
   {
+    id: 'frequency-wavelength-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'wavelength calculator',
+    secondaryIntents: ['frequency wavelength calculator', 'wavelength from frequency calculator', 'wave speed calculator'],
+    functions: ['solve exactly one missing value among wave frequency, wavelength and propagation speed using v=f×λ', 'convert Hz through THz, nm through km, and m/s or km/s without mixing the displayed units', 'offer approximate optical light-speed presets for vacuum, air, water and glass, plus custom speed for sound or other waves', 'show the solved value, all three values, units and the equation while keeping calculation inputs in the browser'],
+    acceptance: 'With frequency 100 MHz and speed 300,000,000 m/s and wavelength blank, the calculator returns 3 m; entering 2 kHz and 75 cm with speed blank returns 1,500 m/s.',
+    boundary: 'Uses the basic traveling-wave relationship v=f×λ only; all three values must describe the same wave in the same medium and exactly one must be left blank. Optical preset speeds are approximate and conditions vary; choose an appropriate custom speed for sound or other wave types. It does not model dispersion, attenuation, Doppler shift, signals, antenna geometry or safety. No upload, API, storage or server processing.',
+    relatedExistingIds: ['unit-converter'],
+    logicModule: './tools/frequency-wavelength-calculator/logic.mjs',
+  },
+  {
     id: 'dilution-calculator',
     category: 'science-engineering',
     type: 'calculator',

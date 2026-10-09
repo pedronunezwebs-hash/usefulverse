@@ -48,6 +48,7 @@ export function renderGrowthForm(toolId, copy) {
     'molarity-calculator': ['mode', 'moles', 'molarity', 'volume', 'volumeUnit', 'molarMass', 'accuracyNote'],
     'ph-calculator': ['mode', 'strongAcid', 'strongBase', 'weakAcid', 'weakBase', 'concentration', 'equilibriumConstant', 'accuracyNote'],
     'section-modulus-calculator': ['shape', 'rectangle', 'circle', 'hollowRectangle', 'hollowCircle', 'triangle', 'width', 'height', 'diameter', 'outerWidth', 'outerHeight', 'innerWidth', 'innerHeight', 'outerDiameter', 'innerDiameter', 'unit', 'millimeters', 'centimeters', 'meters', 'inches', 'accuracyNote'],
+    'frequency-wavelength-calculator': ['frequency', 'wavelength', 'speed', 'frequencyUnit', 'wavelengthUnit', 'speedUnit', 'medium', 'hz', 'khz', 'mhz', 'ghz', 'thz', 'nanometers', 'micrometers', 'millimeters', 'centimeters', 'meters', 'kilometers', 'metersPerSecond', 'kilometersPerSecond', 'custom', 'vacuum', 'air', 'water', 'glass', 'accuracyNote'],
     'dilution-calculator': ['mode', 'directMode', 'serialMode', 'stockConcentration', 'targetConcentration', 'finalVolume', 'volumeUnit', 'steps', 'accuracyNote'],
     'ohms-law-calculator': ['mode', 'solverMode', 'networkMode', 'voltage', 'current', 'resistance', 'power', 'topology', 'series', 'parallel', 'resistorValues', 'accuracyNote'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
@@ -186,6 +187,7 @@ export function renderGrowthForm(toolId, copy) {
     'molarity-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'milliliters'],
     'ph-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'section-modulus-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'frequency-wavelength-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'dilution-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'milliliters'],
     'ohms-law-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -1609,6 +1611,20 @@ export function renderGrowthForm(toolId, copy) {
     <div data-section-shape="hollow-rectangle">${label('section-outer-width', fields.outerWidth, '<input id="section-outer-width" name="outerWidth" type="number" min="0.0000000001" max="1000000" step="any" inputmode="decimal" value="10">')}${label('section-outer-height', fields.outerHeight, '<input id="section-outer-height" name="outerHeight" type="number" min="0.0000000001" max="1000000" step="any" inputmode="decimal" value="8">')}${label('section-inner-width', fields.innerWidth, '<input id="section-inner-width" name="innerWidth" type="number" min="0.0000000001" max="1000000" step="any" inputmode="decimal" value="6">')}${label('section-inner-height', fields.innerHeight, '<input id="section-inner-height" name="innerHeight" type="number" min="0.0000000001" max="1000000" step="any" inputmode="decimal" value="4">')}</div>
     <div data-section-shape="hollow-circle">${label('section-outer-diameter', fields.outerDiameter, '<input id="section-outer-diameter" name="outerDiameter" type="number" min="0.0000000001" max="1000000" step="any" inputmode="decimal" value="10">')}${label('section-inner-diameter', fields.innerDiameter, '<input id="section-inner-diameter" name="innerDiameter" type="number" min="0.0000000001" max="1000000" step="any" inputmode="decimal" value="6">')}</div>
     ${label('section-unit', fields.unit, `<select id="section-unit" name="unit"><option value="mm">${escapeGrowthHtml(fields.millimeters)}</option><option value="cm">${escapeGrowthHtml(fields.centimeters)}</option><option value="m">${escapeGrowthHtml(fields.meters)}</option><option value="in">${escapeGrowthHtml(fields.inches)}</option></select>`)}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'frequency-wavelength-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    <div class="calculator-grid">
+      ${label('wave-frequency', fields.frequency, '<input id="wave-frequency" name="frequency" type="number" min="0" max="1e24" step="any" inputmode="decimal" value="100" required>')}
+      ${label('wave-frequency-unit', fields.frequencyUnit, `<select id="wave-frequency-unit" name="frequencyUnit"><option value="Hz">${escapeGrowthHtml(fields.hz)}</option><option value="kHz">${escapeGrowthHtml(fields.khz)}</option><option value="MHz" selected>${escapeGrowthHtml(fields.mhz)}</option><option value="GHz">${escapeGrowthHtml(fields.ghz)}</option><option value="THz">${escapeGrowthHtml(fields.thz)}</option></select>`)}
+      ${label('wave-wavelength', fields.wavelength, '<input id="wave-wavelength" name="wavelength" type="number" min="0" max="1e18" step="any" inputmode="decimal">')}
+      ${label('wave-wavelength-unit', fields.wavelengthUnit, `<select id="wave-wavelength-unit" name="wavelengthUnit"><option value="nm">${escapeGrowthHtml(fields.nanometers)}</option><option value="μm">${escapeGrowthHtml(fields.micrometers)}</option><option value="mm">${escapeGrowthHtml(fields.millimeters)}</option><option value="cm">${escapeGrowthHtml(fields.centimeters)}</option><option value="m" selected>${escapeGrowthHtml(fields.meters)}</option><option value="km">${escapeGrowthHtml(fields.kilometers)}</option></select>`)}
+      ${label('wave-speed', fields.speed, '<input id="wave-speed" name="speed" type="number" min="0" max="1e12" step="any" inputmode="decimal" value="300000000">')}
+      ${label('wave-speed-unit', fields.speedUnit, `<select id="wave-speed-unit" name="speedUnit"><option value="m/s" selected>${escapeGrowthHtml(fields.metersPerSecond)}</option><option value="km/s">${escapeGrowthHtml(fields.kilometersPerSecond)}</option></select>`)}
+      ${label('wave-medium', fields.medium, `<select id="wave-medium" name="medium"><option value="custom" selected>${escapeGrowthHtml(fields.custom)}</option><option value="vacuum">${escapeGrowthHtml(fields.vacuum)}</option><option value="air">${escapeGrowthHtml(fields.air)}</option><option value="water">${escapeGrowthHtml(fields.water)}</option><option value="glass">${escapeGrowthHtml(fields.glass)}</option></select>`)}
+    </div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

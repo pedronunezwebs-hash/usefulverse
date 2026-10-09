@@ -1224,8 +1224,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 194 · Section Modulus Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `section-modulus-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/section-modulus-calculator/`; otras 35 versiones con los prefijos del anexo. Implementación/QA local en `docs/growth600/PROGRESS.md`; aún no publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `section-modulus-calculator`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/section-modulus-calculator/` y las otras 35 versiones; sitemap del hub confirmado tras PR #91. Gates detallados en `docs/growth600/PROGRESS.md`.
 - **Demanda:** `moment of inertia calculator` — 2.400 búsquedas/mes US/en, KD 0; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Secciones simples, centroide, Ix/Iy y módulo
 - **Prueba de aceptación específica:** Cuadrado tiene Ix=Iy

@@ -1,0 +1,25 @@
+export const frequencyWavelengthCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Frequency & Wavelength Calculator',
+  title: 'Wavelength Calculator Free | UsefulVerse',
+  description: 'Solve frequency, wavelength or wave speed with unit conversion and medium presets. Free, unlimited browser use; no account.',
+  intro: 'Use the wave equation to solve one missing value: frequency, wavelength or propagation speed. Choose compatible units or a medium preset.',
+  howQuestion: 'How do I calculate wavelength from frequency?',
+  howAnswer: 'Use v = f × λ, where v is wave speed, f is frequency and λ is wavelength. To find wavelength, divide speed by frequency. For example, 300,000,000 m/s ÷ 100,000,000 Hz = 3 m. Enter any two values and leave the third blank.',
+  privacyQuestion: 'Are my values uploaded?',
+  privacyAnswer: 'No. The calculation runs in this browser; entered values are not uploaded or saved by this tool.',
+  fields: {
+    frequency: 'Frequency', wavelength: 'Wavelength', speed: 'Wave speed', frequencyUnit: 'Frequency unit', wavelengthUnit: 'Wavelength unit', speedUnit: 'Speed unit', medium: 'Optional light-speed preset',
+    hz: 'Hertz (Hz)', khz: 'Kilohertz (kHz)', mhz: 'Megahertz (MHz)', ghz: 'Gigahertz (GHz)', thz: 'Terahertz (THz)',
+    nanometers: 'Nanometers (nm)', micrometers: 'Micrometers (µm)', millimeters: 'Millimeters (mm)', centimeters: 'Centimeters (cm)', meters: 'Meters (m)', kilometers: 'Kilometers (km)',
+    metersPerSecond: 'Meters per second (m/s)', kilometersPerSecond: 'Kilometers per second (km/s)', custom: 'Custom / enter speed', vacuum: 'Vacuum (light)', air: 'Air (light, approximate)', water: 'Water (light, approximate)', glass: 'Glass (light, approximate)',
+    accuracyNote: 'Enter exactly two positive values and leave the third blank. Presets are rough optical light-speed estimates; actual speed depends on wave type, material, wavelength and conditions. For sound or another medium, choose Custom and enter a suitable speed. This is a relation calculator, not a signal, antenna or safety analysis.',
+  },
+  actions: { calculate: 'Calculate missing value', reset: 'Reset', copy: 'Copy results', example: 'Try 100 MHz in vacuum', result: 'Wave calculation' },
+  messages: { calculated: 'Missing value calculated.', checkInputs: 'Enter exactly two positive values, choose valid units and leave the value to solve blank.', copied: 'Results copied.', copyUnavailable: 'Copy is not available in this browser.', frequency: 'Frequency', wavelength: 'Wavelength', speed: 'Wave speed', solved: 'Calculated value', formula: 'Relation', exampleLoaded: 'The 100 MHz example is ready.' },
+  additionalFaqs: [
+    { question: 'What is the wave equation?', answer: 'For a traveling wave, speed v equals frequency f multiplied by wavelength λ. If you know any two positive values, you can calculate the third, provided all quantities describe the same wave in the same medium.' },
+    { question: 'Does the speed of every wave equal the speed of light?', answer: 'No. Light speed depends on the material, while sound and other waves have their own speeds. The presets are approximate optical light-speed examples only; choose Custom and enter a suitable speed for other cases.' },
+    { question: 'Can I use this as an antenna design calculator?', answer: 'It only calculates the basic frequency–wavelength–speed relationship. Antenna length also depends on antenna geometry, feed, surroundings and a shortening factor, so this tool does not predict an antenna’s final physical length.' },
+  ],
+});

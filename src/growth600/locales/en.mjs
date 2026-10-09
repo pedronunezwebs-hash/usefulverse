@@ -214,6 +214,8 @@ import phCalculatorCopies from './ph-calculator.mjs';
 import { phCalculatorEnglishCopy } from './ph-calculator.en.mjs';
 import sectionModulusCopies from './section-modulus-calculator.mjs';
 import { sectionModulusCalculatorEnglishCopy } from './section-modulus-calculator.en.mjs';
+import frequencyWavelengthCopies from './frequency-wavelength-calculator.mjs';
+import { frequencyWavelengthCalculatorEnglishCopy } from './frequency-wavelength-calculator.en.mjs';
 import dilutionCopies from './dilution-calculator-final.mjs';
 import { dilutionCalculatorEnglishCopy } from './dilution-calculator.en.mjs';
 import ohmsLawCopies from './ohms-law-calculator-final.mjs';
@@ -705,6 +707,7 @@ registerGrowthLocaleExtension(source, 'voltage-drop-calculator', { ...voltageDro
 registerGrowthLocaleExtension(source, 'molarity-calculator', { ...molarityCopies, en: molarityCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'ph-calculator', { ...phCalculatorCopies, en: phCalculatorEnglishCopy }, 'molarity-calculator');
 registerGrowthLocaleExtension(source, 'section-modulus-calculator', { ...sectionModulusCopies, en: sectionModulusCalculatorEnglishCopy }, 'ph-calculator');
+registerGrowthLocaleExtension(source, 'frequency-wavelength-calculator', { ...frequencyWavelengthCopies, en: frequencyWavelengthCalculatorEnglishCopy }, 'section-modulus-calculator');
 registerGrowthLocaleExtension(source, 'dilution-calculator', { ...dilutionCopies, en: dilutionCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'ohms-law-calculator', { ...ohmsLawCopies, en: ohmsLawCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'chemical-equation-balancer', { ...chemicalEquationCopies, en: chemicalEquationBalancerEnglishCopy }, 'gravel-calculator');
