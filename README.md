@@ -18,7 +18,8 @@ The additional Growth600 tools are published as a separate static Cloudflare Pag
 [tools.usefulverse.com](https://tools.usefulverse.com/), so they do not replace or
 change the 277-tool catalog above. The current build contains 143 additional tools in
 the same 36 locales. Its canonical URL inventory and language alternates are listed in
-the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (5,184 URLs in this build);
+the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (5,328 URLs in the
+current public sitemap: 147 tools and 36 localized hub home pages);
 the staged candidate checklist and implementation record are in
 [docs/growth600/PLAN-600.md](docs/growth600/PLAN-600.md) and
 [docs/growth600/PROGRESS.md](docs/growth600/PROGRESS.md).

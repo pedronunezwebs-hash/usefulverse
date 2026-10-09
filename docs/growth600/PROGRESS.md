@@ -4,7 +4,7 @@
 
 ## Estado público actual · 2026-10-10
 
-- **146 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **5.292 URLs** (146 × 36 + 36 páginas de idioma): **423 herramientas públicas en total** y 15.552 URLs entre los dos sitios (10.260 + 5.292). Esto no equivale a que los buscadores hayan indexado cada URL.
+- **147 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **5.328 URLs** (147 × 36 + 36 páginas de idioma): **424 herramientas públicas en total** y 15.588 URLs entre los dos sitemaps (10.260 + 5.328). Esto no equivale a que los buscadores hayan indexado cada URL.
 - #148 Text to Binary Converter: PR #81 integrada; despliegue principal `37891603568` y despliegue del hub `37892340212` correctos. EN/ES/AR responden HTTP 200.
 - #171 Schema Markup Validator, #172 Readability Checker y #173 Savings Goal Calculator ya aparecen en las 36 versiones públicas; verificaciones previas registradas debajo.
 - #189 Certificate Decoder: 36 rutas públicas; detalles de pruebas y despliegue anotados abajo.
@@ -1649,12 +1649,14 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - **Recuento del checklist:** 90/323 entradas implementadas, 233 pendientes válidas y una fila duplicada/reserva a sustituir. No se volvió a consultar DataForSEO ni se usó PageSpeed/Lighthouse.
 - [x] C/F/E/X/L/B/P/S.
 
-## En implementación local · Antenna Length Calculator (#267) · 2026-10-10
+## Publicada · Antenna Length Calculator (#267) · 2026-10-10
 
 - Demanda reutilizada del plan, sin llamada nueva: `dipole antenna calculator` 880/mes US/en, KD 3; secundaria `antenna length calculator` 480/mes, KD 3.
 - Estima λ en espacio libre, dipolo ideal de media onda, monopolo de cuarto de onda, factor de acortamiento editable, longitud total y por brazo, con salida métrica e imperial. A 100 MHz y factor 1, dipolo ideal ≈1,49896 m total y ≈0,74948 m por brazo; factor 0,95 da una longitud inicial menor, claramente etiquetada. Los límites del campo se ajustan al cambiar Hz/kHz/MHz/GHz y corresponden al rango validado por el cálculo.
 - Alcance limitado a geometría básica; no predice adaptación, impedancia, ganancia, patrón, cumplimiento ni seguridad. El factor no es la velocidad del coaxial; el entorno y montaje requieren medir y sintonizar.
 - Lógica y contenido local, sin servicios ni dependencias. 36 textos estáticos por traducción automática desde inglés; árabe técnico ajustado; no se afirma revisión nativa. Suite **1.775/1.775**, pruebas focales **297/297**, `npm run locale:release-check` y `npm run check` (10.260 URLs principales) pasan. Build aislado **5.328 páginas** (147 herramientas × 36 + 36 portadas); README regenerado con 10.260 URLs principales y 5.328 del hub.
 - Chrome EN y AR a 390×844: ejemplo de dipolo de 100 MHz y monopolo concuerdan con pruebas; AR `lang=ar`, `dir=rtl`, sin overflow ni errores de consola. No PageSpeed/Lighthouse.
-- **Recuento:** 91/323 entradas del checklist implementadas; 232 restantes válidas y una fila duplicada/reserva por sustituir. Sitemap público aún permanece en 5.292 URLs / 146 herramientas Growth600.
-- [ ] P/S: crear PR, esperar CI, integrar, desplegar hub y verificar URLs EN/AR y sitemap público.
+- **Publicación:** PR #108 fusionada en `5f4094acc12bf2f29034c49db62589c94adf2899`; CI `37964511933`, despliegue principal `37964951299` y publicación del hub `37965391224` completados correctamente.
+- **Verificación pública:** páginas EN, ES y AR responden HTTP 200; las rutas localizadas llevan `lang` correcto y árabe `dir=rtl`. El sitemap HTTP 200 contiene 5.328 URLs únicas e incluye las 36 rutas nuevas. El sitemap principal sigue en 10.260; total de ambos sitemaps: 15.588 URLs.
+- **Paneles de búsqueda:** Search Console aceptó hoy el reenvío de `https://tools.usefulverse.com/sitemap.xml` (última lectura/descubrimiento aún antiguos mientras Google lo procesa). Bing confirmó el envío para procesamiento; panel aún marca “Processing” y 3.0K URLs. Yandex ya tiene el sitemap del hub en cola de procesamiento; sus datos pueden tardar. Pedro autorizó verificar `https://tools.usefulverse.com` en Naver; la etiqueta pública de verificación está incluida en esta actualización y, tras publicarla, se confirmará la propiedad y se enviará allí el sitemap. Brave no ofrece envío manual ordinario; rastrea mediante enlaces, robots.txt y sitemap.
+- **Recuento del plan:** 91/323 entradas implementadas; 232 restantes válidas y una fila duplicada/reserva por sustituir. Esta herramienta ya cuenta como pública. Los envíos de sitemap solicitan rastreo, no garantizan indexación.
