@@ -1,0 +1,30 @@
+export const robotsTxtTesterEnglishCopy = Object.freeze({
+  copyLanguage: 'en', name: 'Robots.txt Tester', title: 'Robots.txt Tester Free | UsefulVerse',
+  description: 'Test pasted robots.txt rules against URLs and a crawler token. See the matching Allow or Disallow rule in your browser, free.',
+  intro: 'Paste robots.txt text, enter a crawler product token and test up to 100 URLs. Results are calculated on this device; nothing is fetched or uploaded.',
+  howQuestion: 'How do I test a robots.txt rule?',
+  howAnswer: 'Paste the file contents, enter a crawler token such as Googlebot, add one full URL per line, and choose Test rules. The preview shows the selected group and the matching rule, if any.',
+  privacyQuestion: 'Does this tester fetch my website or upload my URLs?',
+  privacyAnswer: 'No. It only reads the text and URLs you enter in this browser. It does not fetch robots.txt, visit URLs, or upload your data.',
+  exampleRobots: 'User-agent: Googlebot\nDisallow: /private\nAllow: /private/public\nUser-agent: *\nDisallow: /draft\n',
+  fields: {
+    robotsText: 'robots.txt contents', robotsHint: 'Paste rules here. Maximum 200 KB, 5,000 lines and 2,000 Allow/Disallow rules.',
+    userAgent: 'Crawler product token', userAgentHint: 'Example: Googlebot. Enter the token only, not a full browser User-Agent string.',
+    urls: 'URLs to test', urlsHint: 'Enter one full HTTP or HTTPS URL per line, up to 100. This tool does not open them.',
+    scopeNote: 'This is a local preview of common Allow/Disallow rules, not a complete emulator for every crawler. Unsupported directives are reported as ignored. robots.txt is not access control and does not guarantee crawling, indexing or ranking.',
+    agentGroup: 'Selected group', noSpecificGroup: 'No matching group; default access applies', ruleCount: 'Rules parsed',
+    diagnostics: 'Notes', ignored: 'unsupported or out-of-group records ignored', malformed: 'invalid lines',
+    allowed: 'Allowed by these rules', blocked: 'Blocked by these rules', winningRule: 'Matching rule', defaultRule: 'No matching rule; allowed by default',
+  },
+  actions: { test: 'Test rules', example: 'Load example', reset: 'Clear', result: 'Test results' },
+  messages: {
+    evaluated: 'Rules tested locally.', emptyRobots: 'Paste robots.txt contents first.', emptyUrls: 'Enter at least one URL.', tooLarge: 'The pasted file exceeds 200 KB.', tooComplex: 'This test would require too many comparisons. Try fewer rules or URLs.',
+    tooManyLines: 'The file exceeds 5,000 lines.', tooManyRules: 'The file exceeds 2,000 Allow/Disallow rules.', tooManyUrls: 'Test up to 100 URLs at a time.',
+    invalidAgent: 'Enter one crawler product token without spaces.', invalidUrl: 'Enter a valid HTTP or HTTPS URL, up to 4,096 characters.', invalid: 'Check the pasted rules, crawler token and URLs.',
+  },
+  additionalFaqs: [
+    { question: 'Does robots.txt stop people from opening a page?', answer: 'No. It gives crawler instructions; it does not protect private data. Use authentication or server access controls for private pages.' },
+    { question: 'Does an allowed URL have to appear in search results?', answer: 'No. Allowing a crawl does not guarantee that a search engine will crawl, index or rank a URL.' },
+    { question: 'Does this tool check Google, Bing or another crawler live?', answer: 'No. It previews common rules for the crawler token you enter. It does not contact any search engine or website.' },
+  ],
+});

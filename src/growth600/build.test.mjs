@@ -45,12 +45,14 @@ import amharicGrowthCopy from './locales/am.mjs';
 import gujaratiGrowthCopy from './locales/gu.mjs';
 import { jsonToXmlEnglishCopy } from './locales/json-to-xml-converter.en.mjs';
 import { harViewerEnglishCopy } from './locales/har-viewer.en.mjs';
+import robotsTxtTesterCopies from './locales/robots-txt-tester.mjs';
 
 const actions = { calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', updateProgress: 'Record progress', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', feet: 'Feet', inches: 'Inches', liters: 'Liters', cubicFeet: 'Cubic feet', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Computer', twoPlayers: 'Two players', privacyNote: 'Private on this device.', riseMode: 'Rise', pitchMode: 'Pitch' };
 const messages = { copied: 'Copied.', copyUnavailable: 'Copy unavailable.', calculated: 'Done.', sameSize: 'Sizes match.', checkInputs: 'Check entries.', diameter: 'Outside diameter', sidewall: 'Sidewall height', circumference: 'Circumference', revolutions: 'Revolutions per kilometre', diameterDifference: 'Diameter difference', diameterChange: 'Diameter change', groundClearance: 'Ground-clearance change', actualSpeed: 'Actual speed estimate', area: 'Area', volume: 'Volume', volumePerContainer: 'Volume per container', totalVolume: 'Total soil volume', orderVolume: 'Order volume', estimatedWeight: 'Estimated weight', bagsToBuy: 'Bags to buy', invalidFormula: 'Check formula.', atomCount: 'atoms', molarMass: 'Molar mass', estimateOnly: 'Estimate only.', currentPayment: 'Current payment', newPayment: 'New payment', paymentDifference: 'Difference', currentTotal: 'Current total', newTotal: 'New total', estimatedDifference: 'Estimated savings', breakEven: 'Break-even', noBreakEven: 'No break-even', monthCount: '{count} months', privatePair: '{giver} gives to {recipient}', allRevealed: 'All revealed.', drawReady: 'Ready.', checkNamesAndRules: 'Check entries.', downloaded: 'Downloaded.', pit: 'Pit', seeds: 'seeds', playerOne: 'Player one', playerTwo: 'Player two', playerOneWins: 'Player one wins.', playerTwoWins: 'Player two wins.', tie: 'Tie.', gameOver: 'Game over.', turn: '{player} turn.', effectiveRun: 'Horizontal run to ridge', rafterLength: 'Geometric rafter length', pitch: 'Pitch (rise per 12)', roofAngle: 'Roof angle', plumbCut: 'Plumb-cut angle', overhangRun: 'Horizontal overhang' };
 function toolCopy(tool, language) {
   if (tool.id === 'json-to-xml-converter') return { ...structuredClone(jsonToXmlEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09' };
   if (tool.id === 'har-viewer') return { ...structuredClone(harViewerEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09' };
+  if (tool.id === 'robots-txt-tester') return structuredClone(robotsTxtTesterCopies[language]);
   const name = `${tool.id} ${language}`;
   const fields = {
     'image-region-redactor': { imageFile: 'Choose a raster image', mode: 'Redaction style', strength: 'Pixel size or blur amount', regionX: 'Left position in pixels', regionY: 'Top position in pixels', regionWidth: 'Region width in pixels', regionHeight: 'Region height in pixels', accuracyNote: 'Use black for private details; large images need enough memory.', dragHint: 'Drag to select or enter exact coordinates.', regionsLabel: 'Selected regions', format: 'Export format', relatedMosaic: 'Try a whole-image mosaic.', relatedCropper: 'Try the image cropper.' },
@@ -790,7 +792,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   const controllerBundles = Object.fromEntries(growthPilotTools.map((tool) => [tool.id, `document.querySelector('[data-tool="${tool.id}"]');`]));
   const workerBundles = { 'image-upscaler-worker': 'self.addEventListener("message",()=>{});' };
   const extraAssets = { 'models-test/config.json': '{"upscale":2}', 'models-test/onnx/model.onnx': Buffer.from([1, 2, 3]) };
-  const toolStyles = { 'har-viewer': '.har-viewer__table{border-collapse:collapse}' };
+  const toolStyles = { 'har-viewer': '.har-viewer__table{border-collapse:collapse}', 'robots-txt-tester': '.robots-txt-tester__decision{display:grid}' };
   const fixtureCopyByLocale = { en: englishGrowthCopy, es: spanishGrowthCopy, fr: frenchGrowthCopy, pt: portugueseGrowthCopy, de: germanGrowthCopy, ja: japaneseGrowthCopy, ko: koreanGrowthCopy, id: indonesianGrowthCopy, hi: hindiGrowthCopy, ar: arabicGrowthCopy, zh: simplifiedChineseGrowthCopy, bn: bengaliGrowthCopy, ru: russianGrowthCopy, ur: urduGrowthCopy, tr: turkishGrowthCopy, vi: vietnameseGrowthCopy, it: italianGrowthCopy, zh_tw: traditionalChineseGrowthCopy, bg: bulgarianGrowthCopy, ca: catalanGrowthCopy, nl: dutchGrowthCopy, el: greekGrowthCopy, ms: malayGrowthCopy, pl: polishGrowthCopy, sv: swedishGrowthCopy, th: thaiGrowthCopy, uk: ukrainianGrowthCopy, sw: swahiliGrowthCopy, mr: marathiGrowthCopy, te: teluguGrowthCopy, ha: hausaGrowthCopy, tl: filipinoGrowthCopy, ta: tamilGrowthCopy, fa: persianGrowthCopy, am: amharicGrowthCopy, gu: gujaratiGrowthCopy };
   for (const locale of smallLocales) fixtureCopyByLocale[locale.key] = {
     ...fixtureCopyByLocale[locale.key],
@@ -907,6 +909,13 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   const harStylePath = harPage.match(/href="(\/assets\/har-viewer\.[a-f0-9]+\.css)"/u)?.[1];
   assert.ok(harStylePath, 'HAR route links its own content-hashed stylesheet');
   assert.match(await readFile(join(outputDir, harStylePath), 'utf8'), /har-viewer__table/u);
+  const robotsPage = await readFile(join(outputDir, 'tools/robots-txt-tester/index.html'), 'utf8');
+  const robotsStylePath = robotsPage.match(/href="(\/assets\/robots-txt-tester\.[a-f0-9]+\.css)"/u)?.[1];
+  assert.ok(robotsStylePath, 'robots tester route links its own content-hashed stylesheet');
+  assert.match(await readFile(join(outputDir, robotsStylePath), 'utf8'), /robots-txt-tester__decision/u);
+  assert.match(robotsPage, /maxlength="200000"/u);
+  assert.match(robotsPage, /not a complete emulator/u);
+  assert.match(await readFile(join(outputDir, 'ar/tools/robots-txt-tester/index.html'), 'utf8'), /<html lang="ar" dir="rtl">/u);
   const frPage = await readFile(join(outputDir, 'fr/tools/gravel-calculator/index.html'), 'utf8');
   assert.match(frPage, /<html lang="fr" dir="ltr">/u);
   assert.match(frPage, /Calculateur de gravier/u);
@@ -1077,7 +1086,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   const files = await readdir(join(outputDir, 'assets'));
   // Top-level entries include shared and tool-only stylesheets, one controller
   // per tool, the model worker, and the models directory (nested contents).
-  assert.equal(files.length, growthPilotTools.length + 4);
+  assert.equal(files.length, growthPilotTools.length + 5);
   assert.ok((await stat(join(outputDir, 'assets', files[0]))).isFile());
 });
 

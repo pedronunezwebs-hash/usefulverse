@@ -11,7 +11,7 @@ function label(id, text, control) {
 }
 
 function button(action, text, kind = 'primary') {
-  const type = action === 'reset' ? 'reset' : ['calculate', 'compare', 'generate', 'convert', 'preview'].includes(action) ? 'submit' : 'button';
+  const type = action === 'reset' ? 'reset' : ['calculate', 'compare', 'generate', 'convert', 'preview', 'test'].includes(action) ? 'submit' : 'button';
   return `<button type="${type}" data-action="${action}" class="button button--${kind}">${escapeGrowthHtml(text)}</button>`;
 }
 
@@ -87,6 +87,7 @@ export function renderGrowthForm(toolId, copy) {
     'certificate-decoder': ['certificate', 'upload', 'supported', 'accuracyNote', 'resultTitle', 'subject', 'issuer', 'commonName', 'organizationName', 'countryName', 'localityName', 'stateOrProvinceName', 'organizationalUnitName', 'streetAddress', 'serialNumber', 'notBefore', 'notAfter', 'alternativeNames', 'fingerprint', 'noAlternativeNames', 'unlistedAttribute'],
     'json-to-xml-converter': ['mode', 'jsonToXml', 'xmlToJson', 'jsonInput', 'jsonHint', 'xmlInput', 'xmlHint', 'rootName', 'indent', 'accuracyNote', 'output', 'result', 'copyHint'],
     'har-viewer': ['file', 'paste', 'pasteHint', 'privacyWarning', 'search', 'method', 'statusFilter', 'all', 'errorsOnly', 'successOnly', 'totalRequests', 'failedRequests', 'transferred', 'totalTime', 'slowest', 'request', 'response', 'duration', 'size', 'waterfall', 'results', 'shown', 'of', 'noMatches', 'methodLabel', 'statusLabel', 'urlLabel', 'durationLabel', 'sizeLabel', 'timingNote', 'unknownDate', 'invalid', 'tooMany'],
+    'robots-txt-tester': ['robotsText', 'robotsHint', 'userAgent', 'userAgentHint', 'urls', 'urlsHint', 'scopeNote', 'agentGroup', 'noSpecificGroup', 'ruleCount', 'diagnostics', 'ignored', 'malformed', 'allowed', 'blocked', 'winningRule', 'defaultRule'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -218,6 +219,7 @@ export function renderGrowthForm(toolId, copy) {
     'certificate-decoder': ['decode', 'example', 'reset', 'copySummary'],
     'json-to-xml-converter': ['convert', 'example', 'reset', 'copy', 'download'],
     'har-viewer': ['analyze', 'example', 'reset', 'showMore', 'result'],
+    'robots-txt-tester': ['test', 'example', 'reset', 'result'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
@@ -1079,6 +1081,19 @@ export function renderGrowthForm(toolId, copy) {
       <p class="hint" data-har-empty hidden>${escapeGrowthHtml(fields.noMatches)}</p>
       ${button('showMore', actions.showMore, 'secondary')}
     </section>
+  </form>`, copy);
+
+  if (toolId === 'robots-txt-tester') return attachCopy(`<form id="tool-form" class="robots-txt-tester" novalidate>
+    ${label('robots-txt-source', fields.robotsText, `<textarea id="robots-txt-source" name="robotsText" class="robots-txt-tester__source" rows="10" maxlength="200000" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" required></textarea>`)}
+    <p class="hint">${escapeGrowthHtml(fields.robotsHint)}</p>
+    ${label('robots-txt-agent', fields.userAgent, '<input id="robots-txt-agent" name="userAgent" type="text" maxlength="80" value="Googlebot" autocomplete="off" spellcheck="false" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.userAgentHint)}</p>
+    ${label('robots-txt-urls', fields.urls, `<textarea id="robots-txt-urls" name="urls" class="robots-txt-tester__url-list" rows="6" maxlength="409600" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" required></textarea>`)}
+    <p class="hint">${escapeGrowthHtml(fields.urlsHint)}</p>
+    <p class="hint robots-txt-tester__scope">${escapeGrowthHtml(fields.scopeNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('test')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div></section>
   </form>`, copy);
 
   if (toolId === 'weight-loss-calculator') return attachCopy(`<form id="tool-form" novalidate>
