@@ -226,6 +226,10 @@ const copies = {
     messages: { ...messages, solvedVoltage: 'Voltage', solvedCurrent: 'Current', solvedResistance: 'Resistance', solvedPower: 'Power', equivalentResistance: 'Equivalent resistance', resistorCount: 'Resistor count', topology: 'Connection' },
     fields: { mode: 'Mode', solverMode: 'Solve values', networkMode: 'Equivalent resistance', voltage: 'Voltage (V)', current: 'Current (A)', resistance: 'Resistance (Ω)', power: 'Power (W)', topology: 'Connection', series: 'Series', parallel: 'Parallel', resistorValues: 'Resistor values', accuracyNote: 'Ideal DC arithmetic only.' },
   },
+  'body-water-calculator': {
+    name: 'Body water calculator', actions: { ...actions }, messages: { ...messages },
+    fields: { equation: 'Watson equation', watsonMale: 'Male equation', watsonFemale: 'Female equation', age: 'Adult age', height: 'Height', heightUnit: 'Height unit', weight: 'Weight', weightUnit: 'Weight unit', centimeters: 'Centimeters', inches: 'Inches', kilograms: 'Kilograms', pounds: 'Pounds', accuracyNote: 'Estimate only.', resultLiters: 'Estimated total body water', resultPercent: 'Approximate share', equationNote: 'Published equation.' },
+  },
   'chemical-equation-balancer': {
     name: 'Chemical equation balancer', actions: { ...actions },
     messages: { ...messages, balancedEquation: 'Balanced equation', atomCheck: 'Atom count', leftSide: 'Reactants', rightSide: 'Products' },
@@ -433,6 +437,10 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(ohms, /data-ohms-network hidden/u);
   assert.match(ohms, /max="1000000000000"/u);
   assert.match(ohms, /data-action="copy"/u);
+  const bodyWater = renderGrowthForm('body-water-calculator', copies['body-water-calculator']);
+  for (const name of ['equation', 'age', 'height', 'heightUnit', 'weight', 'weightUnit']) assert.match(bodyWater, new RegExp(`name="${name}"`, 'u'));
+  assert.match(bodyWater, /name="age" type="text" inputmode="numeric"/u);
+  assert.match(bodyWater, /data-result hidden/u);
   const chemical = renderGrowthForm('chemical-equation-balancer', copies['chemical-equation-balancer']);
   assert.match(chemical, /name="equation"[^>]+maxlength="500"/u);
   assert.match(chemical, /for="chemical-equation"/u);

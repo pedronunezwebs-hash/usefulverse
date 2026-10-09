@@ -70,6 +70,7 @@ export function renderGrowthForm(toolId, copy) {
     'decibel-calculator': ['mode', 'powerMode', 'amplitudeMode', 'dbToPowerMode', 'dbToAmplitudeMode', 'sumMode', 'applyMode', 'ratio', 'inputDb', 'levels', 'inputLevel', 'gainDb', 'accuracyNote', 'assumptionsNote'],
     'hijri-calendar-converter': ['mode', 'gregorianToHijri', 'hijriToGregorian', 'gregorianDate', 'gregorianYear', 'gregorianMonth', 'gregorianDay', 'hijriYear', 'hijriMonth', 'hijriDay', 'hijriMonths', 'methodNote'],
     'capacitor-calculator': ['values', 'valuesHint', 'connection', 'series', 'parallel', 'unit', 'voltage', 'accuracyNote', 'resultEquivalent', 'resultCharge', 'resultEnergy', 'resultVoltage', 'capacitor', 'formulaNote'],
+    'body-water-calculator': ['equation', 'watsonMale', 'watsonFemale', 'age', 'height', 'heightUnit', 'weight', 'weightUnit', 'centimeters', 'inches', 'kilograms', 'pounds', 'accuracyNote', 'resultLiters', 'resultPercent', 'equationNote'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -184,6 +185,7 @@ export function renderGrowthForm(toolId, copy) {
     'decibel-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'hijri-calendar-converter': ['convert', 'reset', 'example', 'result'],
     'capacitor-calculator': ['calculate', 'reset', 'example', 'result'],
+    'body-water-calculator': ['calculate', 'reset', 'example', 'result'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
@@ -818,6 +820,18 @@ export function renderGrowthForm(toolId, copy) {
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.formulaNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${button('calculate', actions.calculate)}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div></section>
+  </form>`, copy);
+
+  if (toolId === 'body-water-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('body-water-equation', fields.equation, `<select id="body-water-equation" name="equation"><option value="male">${escapeGrowthHtml(fields.watsonMale)}</option><option value="female">${escapeGrowthHtml(fields.watsonFemale)}</option></select>`)}
+    ${label('body-water-age', fields.age, '<input id="body-water-age" name="age" type="text" inputmode="numeric" value="30" required>')}
+    ${label('body-water-height', fields.height, '<input id="body-water-height" name="height" type="text" inputmode="decimal" value="175" required>')}
+    ${label('body-water-height-unit', fields.heightUnit, `<select id="body-water-height-unit" name="heightUnit"><option value="cm">${escapeGrowthHtml(fields.centimeters)}</option><option value="in">${escapeGrowthHtml(fields.inches)}</option></select>`)}
+    ${label('body-water-weight', fields.weight, '<input id="body-water-weight" name="weight" type="text" inputmode="decimal" value="70" required>')}
+    ${label('body-water-weight-unit', fields.weightUnit, `<select id="body-water-weight-unit" name="weightUnit"><option value="kg">${escapeGrowthHtml(fields.kilograms)}</option><option value="lb">${escapeGrowthHtml(fields.pounds)}</option></select>`)}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.equationNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'weight-loss-calculator') return attachCopy(`<form id="tool-form" novalidate>
