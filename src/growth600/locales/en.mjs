@@ -83,6 +83,8 @@ import { capacitorCalculatorEnglishCopy } from './capacitor-calculator.en.mjs';
 import { capacitorCalculatorTechnicalFixes, capacitorCalculatorTitles } from './capacitor-calculator.titles.mjs';
 import bodyWaterCalculatorCopies from './body-water-calculator.mjs';
 import { bodyWaterCalculatorEnglishCopy } from './body-water-calculator.en.mjs';
+import timer555Copies from './555-timer-calculator.mjs';
+import { timer555EnglishCopy } from './555-timer-calculator.en.mjs';
 import openApiEditorCopies from './openapi-editor.mjs';
 import { openApiEditorEnglishCopy } from './openapi-editor.en.mjs';
 import fontPairingToolCopies from './font-pairing-tool.mjs';
@@ -987,5 +989,6 @@ registerGrowthLocaleExtension(source, 'capacitor-calculator', {
   en: capacitorCalculatorEnglishCopy,
 }, 'hijri-calendar-converter');
 registerGrowthLocaleExtension(source, 'body-water-calculator', { ...bodyWaterCalculatorCopies, en: bodyWaterCalculatorEnglishCopy }, 'capacitor-calculator');
+registerGrowthLocaleExtension(source, '555-timer-calculator', { ...timer555Copies, en: timer555EnglishCopy }, 'body-water-calculator');
 
 export default Object.freeze(source);

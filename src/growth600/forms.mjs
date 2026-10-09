@@ -71,6 +71,7 @@ export function renderGrowthForm(toolId, copy) {
     'hijri-calendar-converter': ['mode', 'gregorianToHijri', 'hijriToGregorian', 'gregorianDate', 'gregorianYear', 'gregorianMonth', 'gregorianDay', 'hijriYear', 'hijriMonth', 'hijriDay', 'hijriMonths', 'methodNote'],
     'capacitor-calculator': ['values', 'valuesHint', 'connection', 'series', 'parallel', 'unit', 'voltage', 'accuracyNote', 'resultEquivalent', 'resultCharge', 'resultEnergy', 'resultVoltage', 'capacitor', 'formulaNote'],
     'body-water-calculator': ['equation', 'watsonMale', 'watsonFemale', 'age', 'height', 'heightUnit', 'weight', 'weightUnit', 'centimeters', 'inches', 'kilograms', 'pounds', 'accuracyNote', 'resultLiters', 'resultPercent', 'equationNote'],
+    '555-timer-calculator': ['mode', 'astable', 'monostable', 'resistanceA', 'resistanceB', 'resistance', 'resistanceUnit', 'ohms', 'kilohms', 'megohms', 'capacitance', 'capacitanceUnit', 'farads', 'millifarads', 'microfarads', 'nanofarads', 'picofarads', 'accuracyNote', 'frequencyNote', 'highFrequencyWarning', 'formulaNote', 'resultFrequency', 'resultPeriod', 'resultHigh', 'resultLow', 'resultWaveformDuty', 'resultDischargeDuty', 'resultPulse'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -186,6 +187,7 @@ export function renderGrowthForm(toolId, copy) {
     'hijri-calendar-converter': ['convert', 'reset', 'example', 'result'],
     'capacitor-calculator': ['calculate', 'reset', 'example', 'result'],
     'body-water-calculator': ['calculate', 'reset', 'example', 'result'],
+    '555-timer-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
@@ -832,6 +834,23 @@ export function renderGrowthForm(toolId, copy) {
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <p class="hint">${escapeGrowthHtml(fields.equationNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === '555-timer-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('timer-555-mode', fields.mode, `<select id="timer-555-mode" name="mode"><option value="astable">${escapeGrowthHtml(fields.astable)}</option><option value="monostable">${escapeGrowthHtml(fields.monostable)}</option></select>`)}
+    <div data-555-mode="astable">
+      ${label('timer-555-r-a', fields.resistanceA, '<input id="timer-555-r-a" name="resistanceA" type="text" inputmode="decimal" value="10" required>')}
+      ${label('timer-555-r-b', fields.resistanceB, '<input id="timer-555-r-b" name="resistanceB" type="text" inputmode="decimal" value="10" required>')}
+    </div>
+    <div data-555-mode="monostable" hidden>
+      ${label('timer-555-r', fields.resistance, '<input id="timer-555-r" name="resistance" type="text" inputmode="decimal" value="100" required>')}
+    </div>
+    ${label('timer-555-resistance-unit', fields.resistanceUnit, `<select id="timer-555-resistance-unit" name="resistanceUnit"><option value="ohm">${escapeGrowthHtml(fields.ohms)}</option><option value="kohm" selected>${escapeGrowthHtml(fields.kilohms)}</option><option value="Mohm">${escapeGrowthHtml(fields.megohms)}</option></select>`)}
+    ${label('timer-555-capacitance', fields.capacitance, '<input id="timer-555-capacitance" name="capacitance" type="text" inputmode="decimal" value="10" required>')}
+    ${label('timer-555-capacitance-unit', fields.capacitanceUnit, `<select id="timer-555-capacitance-unit" name="capacitanceUnit"><option value="F">${escapeGrowthHtml(fields.farads)}</option><option value="mF">${escapeGrowthHtml(fields.millifarads)}</option><option value="uF" selected>${escapeGrowthHtml(fields.microfarads)}</option><option value="nF">${escapeGrowthHtml(fields.nanofarads)}</option><option value="pF">${escapeGrowthHtml(fields.picofarads)}</option></select>`)}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.formulaNote)} <a href="https://www.ti.com/lit/ds/symlink/ne555.pdf" rel="noreferrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'weight-loss-calculator') return attachCopy(`<form id="tool-form" novalidate>

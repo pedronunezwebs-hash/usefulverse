@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 107);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 107);
+  assert.equal(growthPilotTools.length, 108);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 108);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -107,6 +107,15 @@ test('body-water estimate names its adult source model and avoids hydration advi
   assert.match(tool.boundary, /does not measure hydration/u);
   assert.match(tool.boundary, /No minors/u);
   assert.match(tool.acceptance, /41\.9212 L/u);
+});
+
+test('555 timer calculator keeps astable and monostable circuit timing distinct from a user timer', () => {
+  const tool = growthPilotTools.find(({ id }) => id === '555-timer-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, '555 timer calculator');
+  assert.match(tool.functions.join(' '), /astable high time, low time, period, frequency/u);
+  assert.match(tool.boundary, /does not simulate a specific manufacturer/u);
+  assert.deepEqual(tool.relatedExistingIds, ['online-timer']);
 });
 
 test('Roth vs traditional compares user-entered tax scenarios without giving tax or account advice', () => {
