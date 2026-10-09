@@ -215,6 +215,19 @@ test('binary Base64 tool has 36 static translations and keeps its size/MIME safe
   }
 });
 
+test('JSON model generator has 36 static translations and keeps language, scope and compiler-claim disclosures', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'json-model-generator');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.fields.accuracyNote.length > 40, `${key}: inference, not compiler verification`);
+    assert.ok(copy.fields.privacyNote.length > 20, `${key}: local-only disclosure`);
+    assert.ok(copy.actions.generate && copy.actions.download, key);
+  }
+});
+
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
 const sampleHome = (language) => ({ title: `${language} tools | UsefulVerse`, description: 'Free browser tools.', intro: 'Simple tools.', directoryLabel: 'Tools', freeLabel: 'Free', footerFree: 'Free tools.', skipToTool: 'Skip', home: 'Home', languageLabel: 'Language', breadcrumbLabel: 'Breadcrumb', faqLabel: 'FAQ', copyLanguage: language });

@@ -2881,8 +2881,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 270 · Binary Files to Base64 & Data URI
 
-- [ ] **C/F/E/X/L/B/P/S completos — `binary-base64-tool`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/binary-base64-tool/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `binary-base64-tool` (publicada 2026-10-09; PR #87)**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/binary-base64-tool/`; 35 versiones con los prefijos del anexo. Las 36 rutas se incluyen en el sitemap público.
 - **Demanda:** `base64 image encoder` — 880 búsquedas/mes US/en, KD 42; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Archivo a data URI, vista previa MIME y exportación sin upload
 - **Prueba de aceptación específica:** PNG roundtrip recupera bytes idénticos
@@ -2892,21 +2892,22 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `image to base64 converter` — 390/mes US/en; KD 31.
   - `base64 image encoder free online`; `base64 image encoder with example`; `base64 image encoder no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
-- **Checkpoint local (2026-10-09; no publicada):** `binary-base64-tool` codifica archivos locales (máx. 2 MiB) como Base64 o URI de datos, permite vista previa solo de PNG/JPEG/GIF/WebP/BMP/AVIF, y copia/descarga texto; el MIME del navegador se trata como metadato, no como verificación de seguridad. 36 traducciones estáticas, sin servicio/API de traducción en runtime. Tests dirigidos 239/239 y suite completa 1.599/1.599; `npm run locale:release-check`, build principal (10.260 URLs) y hub (4.572 páginas; 126 × 36 + 36 portadas) pasan. Chrome verificó una imagen PNG real 2×1, vista previa y roundtrip exacto; modo Base64 sin prefijo; rechazo localizado sobre 2 MiB; árabe móvil RTL a 390 px sin overflow ni errores de consola. Falta PR/CI, publicación y verificar sitemap/URLs públicas. Sin PageSpeed/Lighthouse ni afirmación de indexación.
+- **Pruebas/publicación (2026-10-09):** codifica archivos locales (máx. 2 MiB) como Base64 o URI de datos; vista previa solo PNG/JPEG/GIF/WebP/BMP/AVIF; copia/descarga texto. El MIME del navegador es metadato, no verificación de seguridad. 36 traducciones estáticas, sin traducción runtime. Tests dirigidos 239/239 y suite 1.599/1.599; build principal 10.260 URLs y hub 4.572 páginas. Chrome confirmó PNG 2×1 y roundtrip exacto, Base64 sin prefijo, rechazo localizado del exceso de tamaño y árabe RTL sin overflow. PR #87 merge `a048d6c3294a3a88f01c4701006bd2fa871b656b`, deploy principal `37904982465`, hub `37905658056`; rutas EN/AR y sitemap con 4.572 URLs únicas verificados. Sin PageSpeed/Lighthouse ni afirmación de indexación.
 
 ### 273 · JSON to TypeScript, C# & Java Models
 
 - [ ] **C/F/E/X/L/B/P/S completos — `json-model-generator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/json-model-generator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `json to csharp` — 720 búsquedas/mes US/en, KD 1; nivel C. CPC — USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Inferir modelos Type Script, C# y Java desde ejemplos JSON; opcionales, arrays, null y nombres editables. Un solo propietario SEO para generar código de modelos.
-- **Prueba de aceptación específica:** Null másstring produce unión declarada
+- **Función mínima y ampliaciones útiles:** Inferir modelos TypeScript, C# y Java desde ejemplos JSON; opcionales, arrays, null y nombres editables. Un solo propietario SEO para generar código de modelos.
+- **Prueba de aceptación específica:** `null` más cadena produce una unión declarada y los campos ausentes en elementos de muestra se marcan opcionales.
 - **Frontera con otras herramientas:** json-schema-validator: genera tipos no validar datos. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** H: dependencia/cómputo bajo demanda; verificar licencia y compatibilidad. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Motor local ligero, sin dependencia ni red. El muestreo no reemplaza un esquema ni garantiza que el código compile; validar salida y límites; seguir gates globales.
 - **Consultas secundarias del mismo propietario:**
   - `json to typescript` — 480/mes US/en; KD 19.
   - `json to csharp free online`; `json to csharp with example`; `json to csharp no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Checkpoint local (2026-10-09; pendiente de publicar):** lógica, formulario, controlador, copy y 36 traducciones estáticas implementados. Suite focal 246/246, suite completa 1.610/1.610; `locale:release-check`, build principal (10.260 URLs) y hub (4.608 páginas; 127 × 36 + 36 portadas) pasan. Chrome confirma generación TypeScript/C#/Java, copiar código, árabe RTL 390×844 sin overflow ni errores de consola. Falta PR/CI, despliegue y verificar las 36 rutas y sitemap. Sin PageSpeed/Lighthouse ni afirmación de indexación.
 
 ### 279 · Csv Editor
 

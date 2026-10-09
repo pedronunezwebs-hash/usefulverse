@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 126);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 126);
+  assert.equal(growthPilotTools.length, 127);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 127);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -26,6 +26,16 @@ test('binary Base64 encodes selected file bytes rather than duplicating text Bas
   assert.match(tool.acceptance, /decoding its Base64 portion returns the exact original bytes/u);
   assert.match(tool.boundary, /does not encode text, fetch remote URLs, decode Base64/u);
   assert.match(tool.boundary, /2 MiB/u);
+});
+
+test('JSON model generator drafts typed models without duplicating schema validation or spreadsheet export', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'json-model-generator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'json to csharp');
+  assert.deepEqual(tool.relatedExistingIds, ['json-schema-validator', 'json-to-excel', 'json-to-csv']);
+  assert.match(tool.acceptance, /string \| null/u);
+  assert.match(tool.boundary, /does not validate JSON against a schema/u);
+  assert.match(tool.boundary, /no dependencies, upload, API/iu);
 });
 
 test('Hashi is a distinct no-crossing connected-island puzzle, not a duplicate Futoshiki or Kakuro page', () => {
