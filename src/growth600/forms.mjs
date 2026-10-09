@@ -63,6 +63,7 @@ export function renderGrowthForm(toolId, copy) {
     'pressure-calculator': ['mode', 'forceAreaMode', 'hydrostaticMode', 'force', 'forceUnit', 'area', 'areaUnit', 'density', 'densityUnit', 'depth', 'depthUnit', 'gravity', 'pressureUnit', 'accuracyNote'],
     'pcb-trace-width-calculator': ['mode', 'requiredWidthMode', 'currentCapacityMode', 'conductor', 'external', 'internal', 'current', 'copperWeight', 'temperatureRise', 'width', 'widthUnit', 'accuracyNote'],
     'projectile-motion-calculator': ['speed', 'speedUnit', 'metersPerSecond', 'kilometersPerHour', 'milesPerHour', 'angleDegrees', 'initialHeight', 'lengthUnit', 'meters', 'feet', 'gravity', 'accuracyNote', 'plotTitle', 'plotDescription', 'motionReduced'],
+    'pulley-calculator': ['driverDiameter', 'drivenDiameter', 'centerDistance', 'diameterUnit', 'millimeters', 'inches', 'inputRpm', 'accuracyNote', 'sketchTitle', 'sketchDescription'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
     'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
     'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
@@ -215,6 +216,7 @@ export function renderGrowthForm(toolId, copy) {
     'pressure-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'pcb-trace-width-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'projectile-motion-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'playTrajectory', 'resetAnimation'],
+    'pulley-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
     'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -2087,6 +2089,18 @@ export function renderGrowthForm(toolId, copy) {
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}
       <div data-trajectory-visual hidden><h3 data-trajectory-title>${escapeGrowthHtml(fields.plotTitle)}</h3><svg data-trajectory-plot viewBox="0 0 600 320" role="img" aria-label="${escapeGrowthHtml(fields.plotDescription)}" focusable="false"></svg><div class="actions">${button('playTrajectory', actions.playTrajectory, 'secondary')}${button('resetAnimation', actions.resetAnimation, 'secondary')}</div></div>
     </section>
+  </form>`, copy);
+
+  if (toolId === 'pulley-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('pulley-driver-diameter', fields.driverDiameter, '<input id="pulley-driver-diameter" name="driverDiameter" type="number" min="0.000001" max="1000000" step="any" inputmode="decimal" value="100" required>')}
+    ${label('pulley-driven-diameter', fields.drivenDiameter, '<input id="pulley-driven-diameter" name="drivenDiameter" type="number" min="0.000001" max="1000000" step="any" inputmode="decimal" value="200" required>')}
+    ${label('pulley-center-distance', fields.centerDistance, '<input id="pulley-center-distance" name="centerDistance" type="number" min="0.000001" max="1000000" step="any" inputmode="decimal" value="500" required>')}
+    ${label('pulley-diameter-unit', fields.diameterUnit, `<select id="pulley-diameter-unit" name="unit"><option value="mm">${escapeGrowthHtml(fields.millimeters)}</option><option value="in">${escapeGrowthHtml(fields.inches)}</option></select>`)}
+    ${label('pulley-input-rpm', fields.inputRpm, '<input id="pulley-input-rpm" name="inputRpm" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="1500" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}<div data-pulley-visual hidden><h3>${escapeGrowthHtml(fields.sketchTitle)}</h3><svg data-pulley-sketch viewBox="0 0 560 220" role="img" aria-label="${escapeGrowthHtml(fields.sketchDescription)}" focusable="false"></svg></div></section>
   </form>`, copy);
 
   if (toolId === 'friction-calculator') return attachCopy(`<form id="tool-form" novalidate>
