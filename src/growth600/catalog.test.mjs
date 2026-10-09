@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 142);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 142);
+  assert.equal(growthPilotTools.length, 143);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 143);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -58,6 +58,16 @@ test('pressure calculator separates average force over area from static-fluid ga
   assert.match(tool.acceptance, /100 N.*2 m².*50 Pa/u);
   assert.match(tool.functions.join(' '), /hydrostatic gauge pressure/u);
   assert.match(tool.boundary, /atmospheric pressure.*not uploaded/u);
+});
+
+test('PCB trace width calculator estimates copper capacity without duplicating cable voltage-drop intent', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'pcb-trace-width-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'pcb trace width calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['voltage-drop-calculator', 'ohms-law-calculator']);
+  assert.match(tool.acceptance, /zero current.*not dimensionable/u);
+  assert.match(tool.functions.join(' '), /internal or external layer/u);
+  assert.match(tool.boundary, /Legacy IPC-2221.*Not IPC certification/u);
 });
 
 test('torque calculator separates force moments from shaft-power calculations', () => {

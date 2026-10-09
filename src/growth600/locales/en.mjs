@@ -242,6 +242,8 @@ import stoichiometryCopies from './stoichiometry-calculator-final.mjs';
 import { stoichiometryCalculatorEnglishCopy } from './stoichiometry-calculator.en.mjs';
 import pressureCalculatorCopies from './pressure-calculator-final.mjs';
 import { pressureCalculatorEnglishCopy } from './pressure-calculator.en.mjs';
+import pcbTraceWidthCopies from './pcb-trace-width-calculator-final.mjs';
+import { pcbTraceWidthCalculatorEnglishCopy } from './pcb-trace-width-calculator.en.mjs';
 import chemicalEquationCopies from './chemical-equation-balancer-final.mjs';
 import { chemicalEquationBalancerEnglishCopy } from './chemical-equation-balancer.en.mjs';
 import gearRatioCopies from './gear-ratio-calculator-final.mjs';
@@ -742,6 +744,7 @@ registerGrowthLocaleExtension(source, 'ohms-law-calculator', { ...ohmsLawCopies,
 registerGrowthLocaleExtension(source, 'transformer-calculator', { ...transformerCopies, en: transformerCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'stoichiometry-calculator', { ...stoichiometryCopies, en: stoichiometryCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'pressure-calculator', { ...pressureCalculatorCopies, en: pressureCalculatorEnglishCopy }, 'stoichiometry-calculator');
+registerGrowthLocaleExtension(source, 'pcb-trace-width-calculator', { ...pcbTraceWidthCopies, en: pcbTraceWidthCalculatorEnglishCopy }, 'pressure-calculator');
 registerGrowthLocaleExtension(source, 'chemical-equation-balancer', { ...chemicalEquationCopies, en: chemicalEquationBalancerEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'gear-ratio-calculator', { ...gearRatioCopies, en: gearRatioCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'density-calculator', { ...densityCopies, en: densityCalculatorEnglishCopy }, 'gravel-calculator');

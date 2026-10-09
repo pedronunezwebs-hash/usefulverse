@@ -4,7 +4,7 @@
 
 ## Estado público actual · 2026-10-09
 
-- **141 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **5.112 URLs** (141 × 36 + 36 páginas de idioma): **418 herramientas públicas en total** y 15.372 URLs entre los dos sitios (10.260 + 5.112). Esto no equivale a que los buscadores hayan indexado cada URL.
+- **142 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **5.148 URLs** (142 × 36 + 36 páginas de idioma): **419 herramientas públicas en total** y 15.408 URLs entre los dos sitios (10.260 + 5.148). Esto no equivale a que los buscadores hayan indexado cada URL.
 - #148 Text to Binary Converter: PR #81 integrada; despliegue principal `37891603568` y despliegue del hub `37892340212` correctos. EN/ES/AR responden HTTP 200.
 - #171 Schema Markup Validator, #172 Readability Checker y #173 Savings Goal Calculator ya aparecen en las 36 versiones públicas; verificaciones previas registradas debajo.
 - #189 Certificate Decoder: 36 rutas públicas; detalles de pruebas y despliegue anotados abajo.
@@ -1604,7 +1604,18 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - Implementación 100% local, sin servicios, dependencias, API ni subida de archivos. Entradas positivas y finitas; resultado en Pa y unidades derivadas; ejemplo 100 N / 2 m² = 50 Pa.
 - 36 copias estáticas preparadas a partir del inglés (traducción automática simple; no revisión nativa); límites de title/description validados. RTL/CJK respetan las convenciones comunes de locale y el copy específico en árabe está comprobado en navegador.
 - Pruebas dirigidas: **281/281**; suite global **1.735/1.735**; `locale:release-check` y `npm run check` pasan. Build Growth600 aislado: **5.148 rutas** (142 herramientas × 36 + 36 portadas). QA Chrome EN y AR RTL: fuerza/área 50 Pa; hidrostática 9.806,65 Pa; controles de modo y ejemplo funcionan, consola limpia. No se hizo PageSpeed/Lighthouse.
-- README regenerado desde builds: 10.260 URLs del sitio principal y 5.148 del futuro build Growth600. La cifra del hub en README es de build local hasta verificar publicación.
-- [x] Suite global y revisión de diff completadas antes del PR.
-- [ ] P/S — PR, despliegues, sitemap público y verificación de rutas aún pendientes; no sumar a las herramientas públicas hasta confirmarlos.
-- **Recuento local:** 86/323 candidatas; quedan 237 válidas y una fila duplicada/reserva por sustituir. El hub público sigue en 141 herramientas / 5.112 URLs mientras esta candidata no se publique.
+- [x] P/S — PR [#103](https://github.com/pedronunezwebs-hash/usefulverse/pull/103), merge `3bc6aaad0e33853813210d64daecae2e6b2ab825`; CI PR `37952645952`, despliegue principal `37952987554` y hub `37953439014` correctos. Sitemap público 5.148; EN/AR HTTP 200. La publicación no implica que buscadores hayan rastreado/indexado.
+- **Recuento local tras Pressure:** 86/323 candidatas; quedan 237 válidas y una fila duplicada/reserva por sustituir.
+
+## En implementación local · PCB Trace Width Calculator (#251) · 2026-10-09
+
+- Demanda del plan, sin volver a llamar a DataForSEO: `pcb trace width calculator`, 1.300 búsquedas/mes US/en, KD 38; secundaria `pcb current calculator`, 50/mes, KD 0.
+- Dos modos: estimar ancho desde corriente/cobre/ΔT y estimar corriente con ancho conocido; diferencia capa interna/externa; resultados mm, mil y área transversal.
+- Modelo aproximado clásico IPC-2221, k=0.048 exterior y 0.024 interior, no conformidad ni garantía de seguridad. No modela stack-up, planos cercanos, etching/plating, airflow, pulses, temperatura ambiente ni tolerancias; se enlaza el catálogo oficial IPC y se recomienda revisión profesional.
+- Motor local, sin APIs ni nuevos paquetes. Cero se rechaza como no dimensionable. 36 locales en proceso de traducción estática vía Google Translate por lotes; revisión nativa no afirmada; árabe ajustado manualmente.
+- 36 copias estáticas a partir del inglés; árabe redactado específicamente. Títulos ≤60 y descripciones ≤160 validados; traducción automática sencilla para el resto, no revisión nativa.
+- Suite global **1.743/1.743**; `npm run locale:release-check`, `npm run check` (**10.260 URLs principales**) y `git diff --check` pasan. Build aislado: **5.184 páginas** (143 herramientas × 36 + 36 portadas; 5.384 archivos, ~155 MB).
+- QA Chrome EN y AR: ejemplos en los dos modos calculan ancho/capacidad, corriente cero queda rechazada con el resultado oculto; árabe `dir=rtl`, sin overflow en viewport medido de 500 px; link al catálogo oficial IPC presente y protegido con `rel=noopener noreferrer`. Consola sin errores/avisos. No se ejecutó PageSpeed/Lighthouse.
+- README de la rama refleja 277 herramientas principales + 143 Growth600; inventario local 10.260 + 5.184 URLs. El hub público continúa en **142 herramientas / 5.148 URLs** hasta completar la publicación; esta ruta aún no es pública.
+- **Recuento local tras añadirla:** 87/323 candidatas; quedan 236 válidas y una fila duplicada/reserva por sustituir.
+- [ ] **P/S:** revisión final de diff, PR, CI, deploy principal, publicación del hub y verificación del sitemap/rutas EN/AR pendientes. No se afirma indexación.

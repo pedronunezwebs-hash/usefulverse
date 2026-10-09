@@ -1403,8 +1403,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 249 · Pressure Calculator
 
-- [x] **C/F/E/L/B/X local — `pressure-calculator`; P/S pendiente**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/pressure-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S — `pressure-calculator`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/pressure-calculator/`; otras 35 versiones con los prefijos del anexo.
 - **Demanda:** `pressure calculator` — 1.300 búsquedas/mes US/en, KD 12; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** [x] presión media fuerza/área con unidades métricas e imperiales; [x] presión hidrostática manométrica ρgh, densidad/profundidad editables y ejemplo guiado.
 - **Prueba de aceptación específica:** [x] 100 N / 2 m² = 50 Pa; [x] agua a 1 m (ρ=1000 kg/m³) ≈ 9.806,65 Pa.
@@ -1416,17 +1416,19 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - [x] **L:** 36 textos estáticos derivados del inglés con traducción automática sencilla; no se presentan como revisión nativa. Límites de title/description verificados por contrato.
 - [x] **X:** 281 pruebas focalizadas y suite global **1.735/1.735**; `npm run locale:release-check`; `npm run check` conserva 10.260 URLs principales; build Growth600 aislado de 5.148 rutas.
-- [ ] **P/S:** PR, publicación al proyecto Cloudflare `usefulverse-tools`, sitemap público y eventual envío a buscadores aún pendientes; no contar como herramienta pública hasta verificarlos.
+- [x] **P/S:** PR [#103](https://github.com/pedronunezwebs-hash/usefulverse/pull/103), merge `3bc6aaad0e33853813210d64daecae2e6b2ab825`; CI PR `37952645952`, deploy principal `37952987554`, publicación del hub `37953439014`. Sitemap público con 5.148 URLs; páginas EN/AR HTTP 200. No se afirma indexación.
 
 ### 251 · Pcb Trace Width Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `pcb-trace-width-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/pcb-trace-width-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B — `pcb-trace-width-calculator` completos localmente; P/S pendientes.**
+- **Destino propuesto:** `https://tools.usefulverse.com/tools/pcb-trace-width-calculator/`; otras 35 versiones con los prefijos del anexo. El hub público sigue en 142 herramientas / 5.148 URLs hasta el release de esta candidata.
 - **Demanda:** `pcb trace width calculator` — 1.300 búsquedas/mes US/en, KD 38; nivel B. CPC 1.36 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Corriente, cobre, subida térmica y fórmula IPC citada
-- **Prueba de aceptación específica:** Corriente cero produce caso no dimensionable
+- **Función mínima y ampliaciones útiles:** [x] cálculo inverso de ancho/corriente; [x] peso de cobre y ΔT; [x] capa interna/externa; [x] resultados mm/mil/área y enlace al catálogo oficial IPC.
+- **Prueba de aceptación específica:** [x] corriente cero produce caso no dimensionable; [x] modos y resultados aceptados comprobados en navegador EN/AR.
 - **Frontera con otras herramientas:** voltage-drop-calculator: PCB y térmica, no cable. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** [x] motor local ligero; [x] controles y límites de entrada; [x] aproxima el modelo clásico IPC-2221, sin atribuir certificación/seguridad ni sustituir revisión de ingeniería.
+- **Verificación local:** [x] suite 1.743/1.743, release locales, build principal 10.260 URLs, build Growth600 5.184 URLs, Chrome EN/AR RTL. Sin PageSpeed/Lighthouse.
+- [ ] **P/S:** PR, CI, despliegue, hub y sitemap público aún por verificar.
 - **Consultas secundarias del mismo propietario:**
   - `pcb current calculator` — 50/mes US/en; KD 0.
   - `pcb trace width calculator free online`; `pcb trace width calculator with example`; `pcb trace width calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
