@@ -2695,8 +2695,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 306 · Singular Value Decomposition Calculator
 
-- [x] **C/F/E/X/L/B** — implementación y validación local completadas; falta P/S hasta desplegar y verificar en producción.
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/singular-value-decomposition-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S** — publicada y verificada en producción.
+- **Destino:** `https://tools.usefulverse.com/tools/singular-value-decomposition-calculator/` y 35 versiones estáticas localizadas.
 - **Demanda:** `svd calculator` — 390 búsquedas/mes US/en, KD 2; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Descomposición SVD, rango, reconstrucción y error
 - **Prueba de aceptación específica:** Reconstrucción U S Vt recupera entrada
@@ -2706,12 +2706,12 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `singular value decomposition calculator` — 110/mes US/en; KD 3.
   - `svd calculator free online`; `svd calculator with example`; `svd calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
-- **Implementación local (2026-10-09):** C/F/E/X/L/B completas. SVD compacta local para matrices 2×2 a 8×8, entradas acotadas, rango con tolerancia visible, reconstrucción/residuo, CSV y 36 copias estáticas traducidas desde inglés (borradores automáticos aceptados, no revisión nativa). Suites locales completas aprobadas; build aislado: 4.176 páginas (115 × 36 + 36 portadas). EN/AR probadas en Chrome móvil; testigo diagonal recupera singular values 3 y 2, error 0; dígitos árabes procesados, RTL sin overflow y consola limpia. P/S quedan pendientes de PR, merge, deploy y comprobación pública.
+- **Publicado (2026-10-09):** SVD compacta local para matrices 2×2 a 8×8, entradas acotadas, rango con tolerancia visible, reconstrucción/residuo, CSV y 36 copias estáticas traducidas desde inglés (borradores automáticos aceptados, no revisión nativa). Suites aprobadas; build: 4.176 páginas (115 × 36 + 36 portadas). Chrome EN/AR móvil: matriz diagonal devuelve valores 3 y 2, residuo 0; dígitos árabes procesados, RTL sin overflow y consola limpia. PR #76 integrada (`e645cbf020f79540f9f2cd344c2324e1ca3a95eb`); CI `37884506038`, deploy principal `37884830082`, deploy del hub `37885059577`, todos exitosos. Sitemap público con 4.176 URLs únicas y 36 rutas SVD. No se afirma indexación; sin PageSpeed/Lighthouse.
 
 ### 309 · Spearman Correlation Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `spearman-correlation-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/spearman-correlation-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B** — implementación y verificación local completadas; falta P/S hasta integrar, desplegar y comprobar públicamente.
+- **Destino:** `https://tools.usefulverse.com/tools/spearman-correlation-calculator/` y 35 rutas localizadas; todavía no declarado publicado.
 - **Demanda:** `spearman correlation calculator` — 390 búsquedas/mes US/en, KD 5; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Rangos con empates, rho, gráfico y explicación
 - **Prueba de aceptación específica:** Series crecientes iguales dan rho1
@@ -2721,6 +2721,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `rank correlation calculator` — 10/mes US/en; KD —.
   - `spearman correlation calculator free online`; `spearman correlation calculator with example`; `spearman correlation calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Implementación local (2026-10-09):** rangos promedio para empates, rho calculado como Pearson sobre rangos, diagrama SVG accesible de dispersión de rangos, tabla y exportación CSV local; 2–500 pares y límite de magnitud ±10¹². No calcula p-value/intervalo de confianza ni implica causalidad; rechaza series constantes. 36 copias estáticas de Google Translate (no revisión nativa), con algunas etiquetas árabes corregidas manualmente. Suite completa 1.509/1.509; pruebas focales 85/85; release-check y `npm run check` pasan. Build: 4.212 rutas (116 × 36 + 36 portadas), 4.381 archivos; controlador 6.298 bytes. Chrome EN/AR a 390 px confirma rho=1, cinco puntos, etiqueta accesible, RTL sin overflow y consola limpia. Sin PageSpeed/Lighthouse ni consultas nuevas a DataForSEO. PR/deploy/sitemap público aún pendientes.
 
 ### 316 · Wilcoxon Signed Rank Test Calculator
 

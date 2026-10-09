@@ -79,6 +79,7 @@ export function renderGrowthForm(toolId, copy) {
     'repeating-decimal-to-fraction': ['decimal', 'inputHint', 'accuracyNote', 'resultSummary', 'simplified', 'mixedNumber', 'derivation'],
     'parametric-equation-calculator': ['xExpression', 'yExpression', 'tMin', 'tMax', 'samples', 'expressionHint', 'accuracyNote', 'chartLabel', 'resultCount'],
     'singular-value-decomposition-calculator': ['matrix', 'matrixHint', 'accuracyNote', 'resultRank', 'resultSingularValues', 'resultReconstructionError', 'resultOriginal', 'resultU', 'resultSigma', 'resultVt', 'resultReconstructed', 'resultFrobenius'],
+    'spearman-correlation-calculator': ['pairs', 'pairsHint', 'accuracyNote', 'resultRho', 'resultCount', 'rankX', 'rankY', 'resultTable', 'tiesNote'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -202,6 +203,7 @@ export function renderGrowthForm(toolId, copy) {
     'repeating-decimal-to-fraction': ['calculate', 'reset', 'example', 'result', 'copy'],
     'parametric-equation-calculator': ['calculate', 'reset', 'example', 'result', 'downloadCsv'],
     'singular-value-decomposition-calculator': ['calculate', 'reset', 'example', 'result', 'downloadCsv'],
+    'spearman-correlation-calculator': ['calculate', 'reset', 'example', 'result', 'downloadCsv'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
@@ -966,6 +968,15 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><p data-result-rank></p><p data-result-singular-values></p><p data-result-error></p><div data-result-content></div><div class="actions">${button('downloadCsv', actions.downloadCsv, 'secondary')}</div></section>
+  </form>`, copy);
+
+  if (toolId === 'spearman-correlation-calculator') return attachCopy(`<form id="tool-form" class="spearman-calculator" novalidate>
+    ${label('spearman-pairs', fields.pairs, '<textarea id="spearman-pairs" name="pairs" rows="7" maxlength="20000" spellcheck="false" required>' + escapeGrowthHtml('1, 10\n2, 20\n3, 30\n4, 40\n5, 50') + '</textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.pairsHint)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><p data-result-rho></p><p data-result-count></p><p data-result-ties></p><div data-result-content></div><div class="actions">${button('downloadCsv', actions.downloadCsv, 'secondary')}</div></section>
   </form>`, copy);
 
   if (toolId === 'weight-loss-calculator') return attachCopy(`<form id="tool-form" novalidate>

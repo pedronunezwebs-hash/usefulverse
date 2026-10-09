@@ -1379,6 +1379,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['matrix-calculator'],
     logicModule: './tools/singular-value-decomposition-calculator/logic.mjs',
   },
+  {
+    id: 'spearman-correlation-calculator',
+    category: 'math-statistics',
+    type: 'calculator',
+    primaryIntent: 'spearman correlation calculator',
+    secondaryIntents: ['rank correlation calculator', 'Spearman rank coefficient calculator', 'Spearman rho calculator'],
+    functions: ['calculate Spearman rho as Pearson correlation applied to paired ranks', 'handle tied values by assigning their average ranks', 'show each input pair and its ranks for transparent checking', 'export the local result table as CSV'],
+    acceptance: 'For pairs (1,10), (2,20), (3,30), returns rho=1; for x values (1,1,3,4), returns average ranks (1.5,1.5,3,4).',
+    boundary: 'Descriptive Spearman rank correlation for 2–500 paired finite numeric observations bounded by ±1,000,000,000,000. Ties use average ranks. Rho is undefined if either variable is constant. This tool does not calculate a p-value, confidence interval or prove causation; inference depends on study design and assumptions. Inputs remain in the browser.',
+    relatedExistingIds: ['linear-regression-calculator'],
+    logicModule: './tools/spearman-correlation-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {
