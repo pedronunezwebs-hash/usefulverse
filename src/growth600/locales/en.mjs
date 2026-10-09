@@ -210,6 +210,8 @@ import voltageDropCopies from './voltage-drop-calculator-final.mjs';
 import { voltageDropCalculatorEnglishCopy } from './voltage-drop-calculator.en.mjs';
 import molarityCopies from './molarity-calculator-final.mjs';
 import { molarityCalculatorEnglishCopy } from './molarity-calculator.en.mjs';
+import phCalculatorCopies from './ph-calculator.mjs';
+import { phCalculatorEnglishCopy } from './ph-calculator.en.mjs';
 import dilutionCopies from './dilution-calculator-final.mjs';
 import { dilutionCalculatorEnglishCopy } from './dilution-calculator.en.mjs';
 import ohmsLawCopies from './ohms-law-calculator-final.mjs';
@@ -699,6 +701,7 @@ registerGrowthLocaleExtension(source, 'thermal-expansion-calculator', {
 registerGrowthLocaleExtension(source, 'miter-angle-calculator', { ...miterAngleCopies, en: miterAngleCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'voltage-drop-calculator', { ...voltageDropCopies, en: voltageDropCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'molarity-calculator', { ...molarityCopies, en: molarityCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'ph-calculator', { ...phCalculatorCopies, en: phCalculatorEnglishCopy }, 'molarity-calculator');
 registerGrowthLocaleExtension(source, 'dilution-calculator', { ...dilutionCopies, en: dilutionCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'ohms-law-calculator', { ...ohmsLawCopies, en: ohmsLawCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'chemical-equation-balancer', { ...chemicalEquationCopies, en: chemicalEquationBalancerEnglishCopy }, 'gravel-calculator');

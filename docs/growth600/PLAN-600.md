@@ -2911,8 +2911,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 279 · Csv Editor
 
-- [ ] **C/F/E/X/L/B/P/S completos — `csv-editor`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/csv-editor/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `csv-editor` (publicado 2026-10-09; PR #89)**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/csv-editor/`; las 36 versiones aparecen en el sitemap público.
 - **Demanda:** `csv editor` — 720 búsquedas/mes US/en, KD 10; nivel C. CPC 2.85 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Editor de celdas y columnas, búsqueda, tipos, undo y exportación con delimitador/encoding; manejar comillas y filas multilinea sin perder datos.
 - **Prueba de aceptación específica:** Comillas y multilinea sobreviven edición
@@ -2922,7 +2922,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `edit csv online` — 390/mes US/en; KD 0.
   - `csv editor free online`; `csv editor with example`; `csv editor no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
-- **Checkpoint local (2026-10-09; listo para PR):** 36 traducciones estáticas; títulos ≤60 y descripciones ≤160 caracteres. Tests específicos 252/252 y suite completa 1.624/1.624; `locale:release-check`, build principal (10.260 URLs) y hub (4.644 páginas: 128 × 36 + 36 portadas) pasan. Chrome verificó carga/edición/exportación con CSV entrecomillado y multilinea, validación de tipos sin alterar datos, búsqueda, filas/columnas, undo/redo y exportación UTF-8; sin peticiones externas. Árabe RTL 390×844 sin desbordamiento ni errores de consola. No se midió PageSpeed/Lighthouse. Falta PR/CI, deploy y comprobar las 36 rutas/sitemap público.
+- **Pruebas/publicación (2026-10-09):** 36 traducciones estáticas; títulos ≤60 y descripciones ≤160 caracteres. Tests específicos 252/252 y suite completa previa 1.624/1.624; release check y build principal (10.260 URLs) pasan. Chrome verificó carga/edición/exportación con CSV entrecomillado y multilinea, validación de tipos sin alterar datos, búsqueda, filas/columnas, undo/redo y exportación UTF-8; sin peticiones externas. Árabe RTL 390×844 sin desbordamiento ni errores de consola. PR #89 integrada en `386092975d0391e5ff70a91553b87716710bf7e5`, CI PR `37910003597`, deploy principal `37910456234` y publicación del hub `37910981705`; EN HTTP 200 y sitemap público con 4.644 URLs únicas (128 × 36 + 36 portadas). Sin PageSpeed/Lighthouse; publicar no garantiza indexación.
 
 ### 282 · OpenAPI Editor
 
