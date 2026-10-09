@@ -4,7 +4,7 @@
 
 ## Estado público actual · 2026-10-09
 
-- **134 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **4.860 URLs** (134 × 36 + 36 páginas de idioma): **411 herramientas públicas en total** y 15.120 URLs entre los dos sitios. Esto no equivale a que los buscadores hayan indexado cada URL.
+- **135 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **4.896 URLs** (135 × 36 + 36 páginas de idioma): **412 herramientas públicas en total** y 15.156 URLs entre los dos sitios. Esto no equivale a que los buscadores hayan indexado cada URL.
 - #148 Text to Binary Converter: PR #81 integrada; despliegue principal `37891603568` y despliegue del hub `37892340212` correctos. EN/ES/AR responden HTTP 200.
 - #171 Schema Markup Validator, #172 Readability Checker y #173 Savings Goal Calculator ya aparecen en las 36 versiones públicas; verificaciones previas registradas debajo.
 - #189 Certificate Decoder: 36 rutas públicas; detalles de pruebas y despliegue anotados abajo.
@@ -19,7 +19,8 @@
 - #198 Ideal Gas Law Calculator: PR #93 integrada en `2aca1084e1a0a934ac035af8aad14550e04ea5b6`; CI/deploy y publicación del hub `37920634145` completados. El sitemap público responde HTTP 200 con **4.788 URLs**, sin la ruta Torque. Cuenta como la herramienta #132 de Growth600.
 - #201 Torque Calculator: PR #94 integrada en `d2a37fa5d3277bcbb043bc89d491e3037b2230c6`; CI PR `37923822746`, deploy principal `37924248092` y publicación del hub `37924710004` completados. Sitemap HTTP 200 con **4.824 URLs únicas**, exactamente 36 variantes Torque; las 36 rutas responden HTTP 200 y tienen canonical autorreferente. No se afirma indexación ni envío manual a buscadores.
 - #203 Beam Deflection Calculator: PR [#95](https://github.com/pedronunezwebs-hash/usefulverse/pull/95) integrada en `d63a3a355d55d48bd5a1968a2a4a6fcf3d95e22f`; CI PR `37927224340`, publicación principal `37927684168` y hub `37928230741` correctas. Suite PR y gates de build/locale/hub pasaron. El hub responde con sitemap HTTP 200 y **4.860 URLs únicas**, incluidas las 36 variantes de Beam Deflection; las 36 rutas retornan HTTP 200 y canonical autorreferente. QA funcional local EN/AR comprobó carga central 1 kN en viga simple de 4 m (0,8333 mm), carga uniforme 1 kN/m (2,0833 mm) y voladizo (13,333 mm), incluido RTL sin overflow ni errores de consola. 36 borradores estáticos de Google Translate, sin traducción en runtime ni revisión nativa. Herramienta educativa Euler–Bernoulli; no certifica ni diseña estructuras. No se midió PageSpeed/Lighthouse ni se afirma indexación.
-- `npm run check` conserva **10.260 URLs** del sitio principal. No se mide PageSpeed/Lighthouse.
+- #205 LED Resistor Calculator: PR [#96](https://github.com/pedronunezwebs-hash/usefulverse/pull/96) integrada como `ee6d0597450184fe64637cf4f339fc5af649508e`; CI `37929414805`, despliegue principal `37929894867` y publicación del hub `37930526779` correctos. Sitemap público HTTP 200 con **4.896 URLs únicas**; las 36 rutas de la herramienta responden HTTP 200 y canonical autorreferente. QA EN/AR validó el cálculo de 500 Ω, selección E12/E24 y potencia estimada con límites explícitos. Sin PageSpeed/Lighthouse ni afirmación de indexación.
+- `npm run check` conserva **10.260 URLs** del sitio principal. La siguiente candidata en curso es #212 Flow Rate Calculator. No se mide PageSpeed/Lighthouse.
 
 ## Publicada · Beam Deflection Calculator (#203 del plan)
 
@@ -29,8 +30,8 @@
 - Pruebas de lógica focales **5/5**; suite CI completa verde; `npm run locale:release-check`; `npm run check` mantiene **10.260 URLs** principales; build del hub **4.860 páginas** (134 × 36 + 36 páginas de idioma).
 - QA local: EN comprobó 0,8333 mm para 4 m/1.000 N/E=200 GPa/I=8.000 mm⁴, más caso uniforme y voladizo; AR RTL calculó igual, mantuvo 390/390 px y consola limpia.
 - [x] P/S — PR #95; CI `37927224340`; despliegues `37927684168` (principal) y `37928230741` (hub). Las 36 URL localizadas públicas son HTTP 200 con canonical propio; sitemap contiene **4.860 URL únicas**. Publicación no equivale a indexación; no hubo envío manual a buscadores ni PageSpeed/Lighthouse.
-- **Recuento tras publicación:** 134 herramientas Growth600 / 4.860 URLs de hub; 411 herramientas públicas y 15.120 URLs sumando el sitio principal. Las 277 originales quedan intactas.
-- **Siguiente candidata:** #205 Led Resistor Calculator; detalles/estado actual en `PLAN-600.md`.
+- **Recuento tras publicación:** 135 herramientas Growth600 / 4.896 URLs de hub; 412 herramientas públicas y 15.156 URLs sumando el sitio principal. Las 277 originales quedan intactas.
+- **Siguiente candidata en curso:** #212 Flow Rate Calculator; estado y checklist en `PLAN-600.md`.
 
 ## Publicado · JSON to Excel (#235 del plan)
 

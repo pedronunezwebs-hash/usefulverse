@@ -300,6 +300,11 @@ const copies = {
     messages: { ...messages, totalLedVoltage: 'Total LED voltage', resistorVoltage: 'Resistor voltage', requiredResistance: 'Required resistance', standardResistor: 'Suggested standard resistor', actualCurrent: 'Estimated current', resistorPower: 'Resistor power', minimumPowerRating: 'Suggested power rating', powerRatingExceeds: 'Choose a higher-rated part' },
     fields: { supplyVoltage: 'Supply voltage (V)', forwardVoltage: 'Forward voltage per LED (V)', ledCount: 'LED count', targetCurrentMa: 'Target current (mA)', standardSeries: 'Preferred series', e12: 'E12', e24: 'E24', accuracyNote: 'Ideal DC estimate only.' },
   },
+  'flow-rate-calculator': {
+    name: 'Flow rate calculator', actions: { ...actions, calculate: 'Calculate flow', reset: 'Reset', copy: 'Copy results', example: 'Try area 2 m² and velocity 3 m/s', result: 'Flow estimate', solved: 'Calculated value' },
+    messages: { ...messages, calculated: 'Flow estimate calculated.', checkInputs: 'Check the required values and supported units.', flowRate: 'Volumetric flow rate', area: 'Cross-sectional area', velocity: 'Average flow velocity', fillTime: 'Estimated fill time', formula: 'Relationship', formulaValue: 'Q = A × v; fill time = volume ÷ flow rate', volume: 'Tank volume' },
+    fields: { mode: 'What do you want to calculate?', solveFlow: 'Flow rate from area and velocity', solveArea: 'Cross-sectional area', solveVelocity: 'Average velocity', estimateFillTime: 'Tank fill time', area: 'Cross-sectional area', areaUnit: 'Area unit', squareMeters: 'Square meters', squareCentimeters: 'Square centimeters', squareFeet: 'Square feet', squareInches: 'Square inches', velocity: 'Average flow velocity', velocityUnit: 'Velocity unit', metersPerSecond: 'Meters per second', centimetersPerSecond: 'Centimeters per second', metersPerMinute: 'Meters per minute', feetPerSecond: 'Feet per second', flowRate: 'Known flow rate', flowUnit: 'Flow-rate unit', cubicMetersPerSecond: 'Cubic meters per second', litersPerSecond: 'Liters per second', litersPerMinute: 'Liters per minute', cubicMetersPerHour: 'Cubic meters per hour', gallonsPerMinute: 'US gallons per minute', tankVolume: 'Tank volume', volumeUnit: 'Volume unit', cubicMeters: 'Cubic meters', liters: 'Liters', usGallons: 'US gallons', timeUnit: 'Time unit', seconds: 'Seconds', minutes: 'Minutes', hours: 'Hours', accuracyNote: 'Steady-flow estimate only.' },
+  },
   'acceleration-calculator': {
     name: 'Acceleration calculator', actions: { ...actions, calculate: 'Calculate motion', example: 'Try 0 to 20 m/s in 5 seconds' },
     messages: { ...messages, acceleration: 'Acceleration', time: 'Elapsed time', initialVelocity: 'Initial velocity', finalVelocity: 'Final velocity', initialPosition: 'Initial position', displacement: 'Displacement', finalPosition: 'Final position' },
@@ -561,6 +566,12 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   for (const name of ['supplyVoltage', 'forwardVoltage', 'ledCount', 'targetCurrentMa', 'series']) assert.match(ledResistor, new RegExp(`name="${name}"`, 'u'));
   assert.match(ledResistor, /value="E12"/u);
   assert.match(ledResistor, /data-action="copy"/u);
+  const flowRate = renderGrowthForm('flow-rate-calculator', copies['flow-rate-calculator']);
+  for (const name of ['mode', 'area', 'areaUnit', 'velocity', 'velocityUnit', 'flowRate', 'flowUnit', 'tankVolume', 'volumeUnit', 'timeUnit']) assert.match(flowRate, new RegExp(`name="${name}"`, 'u'));
+  for (const mode of ['flow', 'area', 'velocity', 'fill-time']) assert.match(flowRate, new RegExp(`value="${mode}"`, 'u'));
+  for (const field of ['area', 'velocity', 'flowRate', 'tankVolume']) assert.match(flowRate, new RegExp(`data-flow-field="${field}"`, 'u'));
+  assert.match(flowRate, /data-action="example"/u);
+  assert.match(flowRate, /data-action="copy"/u);
   assert.match(resistor, /data-action="example"/u);
   assert.match(resistor, /data-action="copy"/u);
   const acceleration = renderGrowthForm('acceleration-calculator', copies['acceleration-calculator']);

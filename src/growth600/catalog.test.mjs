@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 135);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 135);
+  assert.equal(growthPilotTools.length, 136);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 136);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -59,6 +59,15 @@ test('LED resistor calculator is distinct from general Ohm and resistor color-co
   assert.match(tool.acceptance, /12 V.*500 Ω.*560 Ω/u);
   assert.match(tool.functions.join(' '), /round upward.*E12 or E24/u);
   assert.match(tool.boundary, /2× estimate.*not a safety certification/u);
+});
+
+test('flow rate calculator solves area, velocity, flow and tank fill time without duplicating pressure or volume tools', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'flow-rate-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'flow rate calculator');
+  assert.match(tool.acceptance, /2 m².*3 m\/s.*6 m³\/s/u);
+  assert.match(tool.boundary, /pressure loss.*pump performance/u);
+  assert.deepEqual(tool.relatedExistingIds, ['pool-volume-calculator', 'rainwater-harvesting-calculator']);
 });
 
 test('JSON to Excel is distinct from CSV and spreadsheet conversion and keeps imports local', () => {

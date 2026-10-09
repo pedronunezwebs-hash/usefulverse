@@ -1,0 +1,30 @@
+export const flowRateCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en', name: 'Flow Rate Calculator', title: 'Flow Rate Calculator Free & Unlimited | UsefulVerse',
+  description: 'Calculate flow from area and velocity, solve a missing value, or estimate tank fill time. Free, unlimited and local.',
+  intro: 'Calculate volumetric flow from cross-sectional area and fluid velocity, solve for area or velocity, or estimate how long a tank takes to fill. Choose common metric or US customary units.',
+  howQuestion: 'How do I calculate flow rate?',
+  howAnswer: 'For steady flow through a section, volumetric flow rate Q equals cross-sectional area A multiplied by average velocity v: Q = A × v. To estimate filling time, divide container volume by flow rate. Real systems can vary with pressure, friction, fittings, fluid properties and changing levels.',
+  privacyQuestion: 'Are my flow values uploaded?',
+  privacyAnswer: 'No. Calculations run in this browser. Values you enter are not uploaded or saved by this tool.',
+  fields: {
+    mode: 'What do you want to calculate?', solveFlow: 'Flow rate from area and velocity', solveArea: 'Cross-sectional area', solveVelocity: 'Average velocity', estimateFillTime: 'Tank fill time',
+    area: 'Cross-sectional area', areaUnit: 'Area unit', squareMeters: 'Square meters (m²)', squareCentimeters: 'Square centimeters (cm²)', squareFeet: 'Square feet (ft²)', squareInches: 'Square inches (in²)',
+    velocity: 'Average flow velocity', velocityUnit: 'Velocity unit', metersPerSecond: 'Meters per second (m/s)', centimetersPerSecond: 'Centimeters per second (cm/s)', metersPerMinute: 'Meters per minute (m/min)', feetPerSecond: 'Feet per second (ft/s)',
+    flowRate: 'Known flow rate', flowUnit: 'Flow-rate unit', cubicMetersPerSecond: 'Cubic meters per second (m³/s)', litersPerSecond: 'Liters per second (L/s)', litersPerMinute: 'Liters per minute (L/min)', cubicMetersPerHour: 'Cubic meters per hour (m³/h)', gallonsPerMinute: 'US gallons per minute (US gal/min)',
+    tankVolume: 'Tank or container volume', volumeUnit: 'Volume unit', cubicMeters: 'Cubic meters (m³)', liters: 'Liters (L)', usGallons: 'US gallons (US gal)',
+    timeUnit: 'Fill-time unit', seconds: 'Seconds', minutes: 'Minutes', hours: 'Hours',
+    accuracyNote: 'Steady, incompressible-flow estimate using Q = A × v. Enter positive values and matching units. This does not model pressure loss, pipe roughness, fittings, turbulence, fluid changes, pump performance, leaks or changing tank levels. Use measured or manufacturer-provided values for real systems; this is not plumbing or engineering design advice. Calculations stay in this browser.',
+  },
+  actions: { calculate: 'Calculate', reset: 'Reset', copy: 'Copy results', example: 'Try area 2 m² and velocity 3 m/s', result: 'Flow estimate', solved: 'Calculated value' },
+  messages: {
+    calculated: 'Flow estimate calculated.', checkInputs: 'Check the required values and supported units.', flowRate: 'Volumetric flow rate', area: 'Cross-sectional area', velocity: 'Average flow velocity', fillTime: 'Estimated fill time',
+    formula: 'Relationship', formulaValue: 'Q = A × v; t = V ÷ Q', volume: 'Tank volume',
+  },
+  additionalFaqs: [
+    { question: 'What is the flow rate for a 2 m² section moving at 3 m/s?', answer: 'Using Q = A × v, 2 m² × 3 m/s = 6 m³/s. This is an ideal volumetric estimate for the entered average velocity.' },
+    { question: 'How do I calculate pipe flow rate?', answer: 'Multiply the pipe cross-sectional area by average fluid velocity. For a circular pipe, area is π times the internal diameter squared divided by four; use the inside diameter, not the outside diameter.' },
+    { question: 'How do I estimate how long a tank takes to fill?', answer: 'Divide the tank volume by the flow rate, using compatible volume and time units. The estimate assumes flow remains constant and the tank does not overflow or lose fluid.' },
+    { question: 'Does this calculate pressure loss or pump size?', answer: 'No. It only relates area, average velocity and volumetric flow, or estimates fill duration. Pressure loss and pump selection also depend on fluid, pipe length and roughness, fittings, elevation and system operating conditions.' },
+  ],
+  localizationStatus: 'approved', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09',
+});

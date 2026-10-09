@@ -360,6 +360,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/led-resistor-calculator/logic.mjs',
   },
   {
+    id: 'flow-rate-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'flow rate calculator',
+    secondaryIntents: ['pipe flow calculator', 'volumetric flow rate calculator', 'tank fill time calculator'],
+    functions: ['calculate volumetric flow Q = area × average velocity or solve cross-sectional area or velocity from known flow', 'convert area, velocity and flow rate across common metric and US customary units', 'estimate tank/container fill time from volume and a constant flow rate'],
+    acceptance: 'A 2 m² cross-section at 3 m/s gives 6 m³/s; 1 m³ fills in 16.6667 minutes at 1 L/s.',
+    boundary: 'Steady incompressible-flow arithmetic only. Does not model pressure loss, friction, pipe roughness, fittings, fluid changes, pump performance, leaks, compressibility or changing tank levels. Verify real system measurements and manufacturer data; not plumbing or engineering design advice. Inputs stay in this browser.',
+    relatedExistingIds: ['pool-volume-calculator', 'rainwater-harvesting-calculator'],
+    logicModule: './tools/flow-rate-calculator/logic.mjs',
+  },
+  {
     id: 'dilution-calculator',
     category: 'science-engineering',
     type: 'calculator',

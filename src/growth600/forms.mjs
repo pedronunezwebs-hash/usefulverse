@@ -53,6 +53,7 @@ export function renderGrowthForm(toolId, copy) {
     'torque-calculator': ['mode', 'solveTorque', 'solveForce', 'solveArm', 'force', 'forceUnit', 'newton', 'kilonewton', 'poundForce', 'arm', 'distanceUnit', 'meters', 'centimeters', 'millimeters', 'feet', 'inches', 'angle', 'torque', 'torqueUnit', 'newtonMeters', 'kilonewtonMeters', 'poundFeet', 'poundInches', 'direction', 'clockwise', 'counterclockwise', 'perpendicularForce', 'momentArm', 'accuracyNote'],
     'beam-deflection-calculator': ['support', 'simplySupported', 'cantilever', 'loadCase', 'pointLoad', 'uniformLoad', 'span', 'lengthUnit', 'meters', 'centimeters', 'millimeters', 'inches', 'feet', 'load', 'forceUnit', 'newtons', 'kilonewtons', 'poundsForce', 'modulus', 'modulusUnit', 'pascals', 'megapascals', 'gigapascals', 'psi', 'ksi', 'inertia', 'inertiaUnit', 'mm4', 'cm4', 'm4', 'in4', 'ft4', 'loadUnitHint', 'accuracyNote', 'sourceNote'],
     'led-resistor-calculator': ['supplyVoltage', 'forwardVoltage', 'ledCount', 'targetCurrentMa', 'standardSeries', 'e12', 'e24', 'accuracyNote'],
+    'flow-rate-calculator': ['mode', 'solveFlow', 'solveArea', 'solveVelocity', 'estimateFillTime', 'area', 'areaUnit', 'squareMeters', 'squareCentimeters', 'squareFeet', 'squareInches', 'velocity', 'velocityUnit', 'metersPerSecond', 'centimetersPerSecond', 'metersPerMinute', 'feetPerSecond', 'flowRate', 'flowUnit', 'cubicMetersPerSecond', 'litersPerSecond', 'litersPerMinute', 'cubicMetersPerHour', 'gallonsPerMinute', 'tankVolume', 'volumeUnit', 'cubicMeters', 'liters', 'usGallons', 'timeUnit', 'seconds', 'minutes', 'hours', 'accuracyNote'],
     'dilution-calculator': ['mode', 'directMode', 'serialMode', 'stockConcentration', 'targetConcentration', 'finalVolume', 'volumeUnit', 'steps', 'accuracyNote'],
     'ohms-law-calculator': ['mode', 'solverMode', 'networkMode', 'voltage', 'current', 'resistance', 'power', 'topology', 'series', 'parallel', 'resistorValues', 'accuracyNote'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
@@ -196,6 +197,7 @@ export function renderGrowthForm(toolId, copy) {
     'torque-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'beam-deflection-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'led-resistor-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'flow-rate-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'solved'],
     'dilution-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'milliliters'],
     'ohms-law-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -1697,6 +1699,21 @@ export function renderGrowthForm(toolId, copy) {
       ${label('led-target-current', fields.targetCurrentMa, '<input id="led-target-current" name="targetCurrentMa" type="number" min="0.000000001" max="1000000" step="any" value="20" inputmode="decimal" required>')}
     </div>
     ${label('led-standard-series', fields.standardSeries, `<select id="led-standard-series" name="series"><option value="E12">${escapeGrowthHtml(fields.e12)}</option><option value="E24">${escapeGrowthHtml(fields.e24)}</option></select>`)}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${button('calculate', actions.calculate)}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'flow-rate-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('flow-mode', fields.mode, `<select id="flow-mode" name="mode"><option value="flow">${escapeGrowthHtml(fields.solveFlow)}</option><option value="area">${escapeGrowthHtml(fields.solveArea)}</option><option value="velocity">${escapeGrowthHtml(fields.solveVelocity)}</option><option value="fill-time">${escapeGrowthHtml(fields.estimateFillTime)}</option></select>`)}
+    <div class="calculator-grid">
+      <div class="field" data-flow-field="area">${label('flow-area', fields.area, '<input id="flow-area" name="area" type="number" min="0.000000001" max="1000000000000" step="any" value="2" inputmode="decimal">')}${label('flow-area-unit', fields.areaUnit, `<select id="flow-area-unit" name="areaUnit"><option value="m²">${escapeGrowthHtml(fields.squareMeters)}</option><option value="cm²">${escapeGrowthHtml(fields.squareCentimeters)}</option><option value="ft²">${escapeGrowthHtml(fields.squareFeet)}</option><option value="in²">${escapeGrowthHtml(fields.squareInches)}</option></select>`)}</div>
+      <div class="field" data-flow-field="velocity">${label('flow-velocity', fields.velocity, '<input id="flow-velocity" name="velocity" type="number" min="0.000000001" max="1000000000000" step="any" value="3" inputmode="decimal">')}${label('flow-velocity-unit', fields.velocityUnit, `<select id="flow-velocity-unit" name="velocityUnit"><option value="m/s">${escapeGrowthHtml(fields.metersPerSecond)}</option><option value="cm/s">${escapeGrowthHtml(fields.centimetersPerSecond)}</option><option value="m/min">${escapeGrowthHtml(fields.metersPerMinute)}</option><option value="ft/s">${escapeGrowthHtml(fields.feetPerSecond)}</option></select>`)}</div>
+      <div class="field" data-flow-field="flowRate">${label('flow-rate', fields.flowRate, '<input id="flow-rate" name="flowRate" type="number" min="0.000000001" max="1000000000000" step="any" value="6" inputmode="decimal">')}${label('flow-rate-unit', fields.flowUnit, `<select id="flow-rate-unit" name="flowUnit"><option value="m³/s">${escapeGrowthHtml(fields.cubicMetersPerSecond)}</option><option value="L/s">${escapeGrowthHtml(fields.litersPerSecond)}</option><option value="L/min">${escapeGrowthHtml(fields.litersPerMinute)}</option><option value="m³/h">${escapeGrowthHtml(fields.cubicMetersPerHour)}</option><option value="US gal/min">${escapeGrowthHtml(fields.gallonsPerMinute)}</option></select>`)}</div>
+      <div class="field" data-flow-field="tankVolume">${label('flow-volume', fields.tankVolume, '<input id="flow-volume" name="tankVolume" type="number" min="0.000000001" max="1000000000000" step="any" value="1" inputmode="decimal">')}${label('flow-volume-unit', fields.volumeUnit, `<select id="flow-volume-unit" name="volumeUnit"><option value="m³">${escapeGrowthHtml(fields.cubicMeters)}</option><option value="L">${escapeGrowthHtml(fields.liters)}</option><option value="US gal">${escapeGrowthHtml(fields.usGallons)}</option></select>`)}</div>
+    </div>
+    ${label('flow-time-unit', fields.timeUnit, `<select id="flow-time-unit" name="timeUnit"><option value="s">${escapeGrowthHtml(fields.seconds)}</option><option value="min" selected>${escapeGrowthHtml(fields.minutes)}</option><option value="h">${escapeGrowthHtml(fields.hours)}</option></select>`)}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${button('calculate', actions.calculate)}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>

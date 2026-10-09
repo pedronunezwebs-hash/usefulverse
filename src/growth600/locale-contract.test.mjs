@@ -45,6 +45,7 @@ import idealGasLawCopies from './locales/ideal-gas-law-calculator.mjs';
 import torqueCalculatorCopies from './locales/torque-calculator.mjs';
 import beamDeflectionCopies from './locales/beam-deflection-calculator.mjs';
 import ledResistorCopies from './locales/led-resistor-calculator.mjs';
+import flowRateCopies from './locales/flow-rate-calculator.mjs';
 
 const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'ph-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'kinetic-energy-calculator', 'resistor-color-code-calculator', 'acceleration-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator'].includes(id));
 const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
@@ -137,6 +138,25 @@ test('LED resistor calculator has static translations and current/power caveats 
   assert.equal(ledResistorCopies.es.title, 'Calculadora de resistencia LED gratis | UsefulVerse');
   assert.equal(ledResistorCopies.ar.fields.targetCurrentMa, 'التيار المستهدف (mA)');
   assert.equal(ledResistorCopies.ar.fields.e24, 'E24 — خيارات أكثر');
+});
+
+test('flow rate calculator has static localized flow, unit and hydraulic-scope copy in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'flow-rate-calculator');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = flowRateCopies[key];
+    assert.equal(copy.additionalFaqs.length, 4, key);
+    assert.ok(copy.fields.mode && copy.fields.area && copy.fields.velocity && copy.fields.flowRate && copy.fields.tankVolume && copy.fields.accuracyNote, key);
+    assert.ok(copy.messages.flowRate && copy.messages.fillTime && copy.messages.formulaValue, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    if (key !== 'en') {
+      assert.notEqual(copy.name, flowRateCopies.en.name, `${key}: tool name is translated`);
+      assert.notEqual(copy.intro, flowRateCopies.en.intro, `${key}: page introduction is translated`);
+      assert.notEqual(copy.fields.accuracyNote, flowRateCopies.en.fields.accuracyNote, `${key}: model limits are translated`);
+    }
+  }
+  assert.match(flowRateCopies.en.fields.accuracyNote, /pressure loss.*not plumbing or engineering design advice/u);
 });
 
 test('section modulus calculator has static, bounded translations in all 36 locales', () => {
