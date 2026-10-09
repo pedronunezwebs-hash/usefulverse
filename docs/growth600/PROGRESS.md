@@ -2,7 +2,7 @@
 
 Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## En curso · Fourier Series Calculator (#293) · 2026-10-09
+## Publicada · Fourier Series Calculator (#293) · 2026-10-09
 
 - [x] C/F — Reutilizada la ficha del plan: `fourier series calculator`, 480 búsquedas/mes US/en, KD 0; `fourier coefficients calculator`, 480/mes, KD 0. Sin consultas nuevas a DataForSEO ni gasto de API.
 - [x] E/B — Calculadora local de coeficientes reales de Fourier a partir de 4–128 muestras numéricas uniformes de un periodo; límite armónico inferior al Nyquist, componente DC, coeficientes seno/coseno, amplitud/fase, reconstrucción y error RMS sobre muestras. No acepta archivos de audio, no analiza espectros, no integra expresiones simbólicas ni sube datos. Gráfica SVG accesible.
@@ -10,9 +10,19 @@
 - [x] B — controlador aislado minificado **7.365 bytes**, bajo el presupuesto de 24 KiB; guard de build acepta sin red ni código dinámico.
 - [x] L — 36 copias estáticas derivadas del inglés con traducción automática Google solicitada/autorizada; metadatos saneados, fórmula inmutable y nombres/campos/mensajes/FAQs traducidos. Aceptada como traducción automática, no revisión nativa; sin traductor en producción.
 - [x] X/B local — `npm run check` conserva 10.260 URLs del sitio principal; build Growth600 genera **3.960 rutas únicas** (109 herramientas × 36 + 36 portadas; 4.122 archivos, 118.764.343 bytes). Chrome EN/AR: coeficientes de seno conocidos, DC constante, caso no constante con cero armónicos, entrada inválida limpia resultados; dígitos árabes funcionan, RTL sin overflow y consola limpia. Sin peticiones de terceros; carga solo HTML/CSS/JS/favicons del build. No PageSpeed/Lighthouse.
-- [ ] P/S — PR, CI, despliegue del hub y sitemap público pendientes.
-- **Estado real:** 108 herramientas del hub están publicadas y verificadas; #293 es la herramienta 109 del build local, todavía no publicada. No afirmar indexación ni envío manual a buscadores.
-- **Siguiente candidata:** #299 Modular Inverse Calculator. No PageSpeed/Lighthouse ni nueva investigación de DataForSEO.
+- [x] P/S — PR #70 integrada en `69c50b13b7af7682940be358d75dce19fb07f69b`; pipeline principal `37867472931` y publicación del hub `37867798312` correctos. Rutas EN/AR HTTP 200; sitemap público HTTP 200 con **3.960 URLs únicas** (109 × 36 + 36 portadas). No se envió indexación manual ni se afirma indexación.
+- **Estado publicado:** 109 herramientas adicionales; las 277 originales permanecen intactas. No PageSpeed/Lighthouse.
+
+## En curso · Modular Inverse Calculator (#299) · 2026-10-09
+
+- [x] C/F — Ficha ya medida del plan: `modular inverse calculator`, 480 búsquedas/mes US/en, KD 11; `multiplicative inverse modulo calculator`, 480/mes, KD 11. Sin nuevas llamadas ni gasto DataForSEO.
+- [x] E/B — Inverso multiplicativo con enteros firmados, normalización de residuo, existencia por mcd, coeficientes de Bézout y pasos del algoritmo de Euclides; cálculo y verificación en navegador con `BigInt`, sin API, cuenta, red ni subida. Límites absolutos de 10¹²; el módulo debe ser ≥2. Diferencia explícita frente a calculadora de resto.
+- [x] L — 36 traducciones estáticas de Google desde inglés, aceptadas como borradores automáticos sencillos, no revisión nativa. Notación matemática idéntica y no traducida; explicación localizada. Títulos/descripciones dentro de límites. Se corrigieron a mano el español técnico incorrecto en el término de fórmula compartido y la etiqueta árabe del módulo.
+- [x] X — Pruebas específicas de lógica/controlador, contrato de 36 locales, build y formularios; `npm run locale:release-check` pasa. `npm run check` conserva las **10.260 URLs** del sitio principal. Suite completa **1.456/1.456**. Build local del hub: **3.996 rutas** (110 × 36 + 36 portadas; 4.159 archivos, 119.670.862 bytes). Sin PageSpeed/Lighthouse.
+- [x] B — Chrome EN: 3 mod 7 → inverso 5, identidad de Bézout y pasos Euclidianos; −3 mod 7 → 2; 6 mod 9 indica que no hay inverso. Chrome AR RTL: dígitos arábigos ٣ y ٧ → ٥; texto correcto, sin desbordamiento a viewport medible de 500 px ni consola. Sin red de terceros.
+- [ ] P/S — PR/CI, despliegue del hub y sitemap público pendientes.
+- **Estado:** 109 herramientas del hub están publicadas; #299 es la 110.ª generación local y no se cuenta publicada hasta validar el flujo remoto. No declarar indexación ni envío manual a buscadores.
+- **Siguiente candidata tras publicar:** #300 A/B Test Calculator. Sin PageSpeed/Lighthouse ni nueva investigación de DataForSEO.
 
 ## Publicada · 555 Timer Calculator (#292) · 2026-10-09
 

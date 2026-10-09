@@ -73,6 +73,7 @@ export function renderGrowthForm(toolId, copy) {
     'body-water-calculator': ['equation', 'watsonMale', 'watsonFemale', 'age', 'height', 'heightUnit', 'weight', 'weightUnit', 'centimeters', 'inches', 'kilograms', 'pounds', 'accuracyNote', 'resultLiters', 'resultPercent', 'equationNote'],
     '555-timer-calculator': ['mode', 'astable', 'monostable', 'resistanceA', 'resistanceB', 'resistance', 'resistanceUnit', 'ohms', 'kilohms', 'megohms', 'capacitance', 'capacitanceUnit', 'farads', 'millifarads', 'microfarads', 'nanofarads', 'picofarads', 'accuracyNote', 'frequencyNote', 'highFrequencyWarning', 'formulaNote', 'resultFrequency', 'resultPeriod', 'resultHigh', 'resultLow', 'resultWaveformDuty', 'resultDischargeDuty', 'resultPulse'],
     'fourier-series-calculator': ['samples', 'samplesHint', 'period', 'periodHint', 'harmonics', 'harmonicsHint', 'accuracyNote', 'formulaLabel', 'formula', 'resultDc', 'resultFrequency', 'resultHarmonics', 'resultRms', 'coefficient', 'coefficientA', 'coefficientB', 'coefficientAmplitude', 'phase', 'radians', 'frequencyUnit', 'chartLabel', 'samplesLegend', 'reconstructionLegend'],
+    'modular-inverse-calculator': ['a', 'modulus', 'accuracyNote', 'formulaLabel', 'formula', 'resultStatus', 'resultGcd', 'resultResidue', 'resultInverse', 'bezout', 'step', 'quotient', 'remainder', 'coefficientA', 'coefficientModulus', 'existsLabel', 'missingLabel', 'verification'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -190,6 +191,7 @@ export function renderGrowthForm(toolId, copy) {
     'body-water-calculator': ['calculate', 'reset', 'example', 'result'],
     '555-timer-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'fourier-series-calculator': ['calculate', 'reset', 'example', 'constant', 'result', 'copy'],
+    'modular-inverse-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
@@ -866,6 +868,17 @@ export function renderGrowthForm(toolId, copy) {
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <p class="hint"><strong>${escapeGrowthHtml(fields.formulaLabel)}:</strong> <span data-fourier-formula>${escapeGrowthHtml(fields.formula)}</span></p>
     <div class="actions">${button('example', actions.example, 'secondary')}${button('constant', actions.constant, 'secondary')}${button('calculate', actions.calculate)}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'modular-inverse-calculator') return attachCopy(`<form id="tool-form" class="modular-inverse-calculator" novalidate>
+    <div class="calculator-grid">
+      ${label('modular-inverse-a', fields.a, '<input id="modular-inverse-a" name="a" type="text" inputmode="numeric" value="3" maxlength="16" required>')}
+      ${label('modular-inverse-modulus', fields.modulus, '<input id="modular-inverse-modulus" name="modulus" type="text" inputmode="numeric" value="7" maxlength="16" required>')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <p class="hint"><strong>${escapeGrowthHtml(fields.formulaLabel)}:</strong> <span>${escapeGrowthHtml(fields.formula)}</span></p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 

@@ -1307,6 +1307,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['audio-spectrogram', 'function-grapher'],
     logicModule: './tools/fourier-series-calculator/logic.mjs',
   },
+  {
+    id: 'modular-inverse-calculator',
+    category: 'math-statistics',
+    type: 'calculator',
+    primaryIntent: 'modular inverse calculator',
+    secondaryIntents: ['multiplicative inverse modulo calculator', 'modular multiplicative inverse calculator', 'extended Euclidean algorithm inverse calculator'],
+    functions: ['find the least nonnegative modular inverse for signed integers', 'explain existence using the greatest common divisor', 'show exact Euclidean quotients, remainders and Bezout coefficients', 'verify the result with multiplication modulo the entered modulus'],
+    acceptance: 'The inverse of 3 modulo 7 is 5; for 6 modulo 9 no inverse exists and gcd = 3.',
+    boundary: 'Exact integer arithmetic for inputs up to 1,000,000,000,000 in absolute value and modulus 2 or greater. This computes modular multiplication inverses, not a remainder calculator or a general symbolic algebra expression. All work stays in the browser.',
+    relatedExistingIds: ['gcd-lcm-calculator'],
+    logicModule: './tools/modular-inverse-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

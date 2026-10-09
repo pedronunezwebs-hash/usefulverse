@@ -87,6 +87,8 @@ import timer555Copies from './555-timer-calculator.mjs';
 import { timer555EnglishCopy } from './555-timer-calculator.en.mjs';
 import fourierSeriesCopies from './fourier-series-calculator.mjs';
 import { fourierSeriesEnglishCopy } from './fourier-series-calculator.en.mjs';
+import modularInverseCopies from './modular-inverse-calculator.mjs';
+import { modularInverseEnglishCopy } from './modular-inverse-calculator.en.mjs';
 import openApiEditorCopies from './openapi-editor.mjs';
 import { openApiEditorEnglishCopy } from './openapi-editor.en.mjs';
 import fontPairingToolCopies from './font-pairing-tool.mjs';
@@ -1001,5 +1003,39 @@ Object.assign(fourierSeriesCopies.tl, { name: 'Kalkulador ng Seryeng Fourier' })
 Object.assign(fourierSeriesCopies.tl.fields, { formulaLabel: 'Tunay na seryeng Fourier', resultDc: 'Bahaging DC (karaniwang halaga)', resultRms: 'Error RMS ng mga sample', coefficient: 'Harmoniko', coefficientA: 'Koepisyent ng cosine aₙ', coefficientB: 'Koepisyent ng sine bₙ', coefficientAmplitude: 'Amplitud', phase: 'Yugto', radians: 'radyan', reconstructionLegend: 'Muling pagkakabuo ng Fourier' });
 Object.assign(fourierSeriesCopies.tl.actions, { reset: 'I-clear' });
 registerGrowthLocaleExtension(source, 'fourier-series-calculator', { ...fourierSeriesCopies, en: fourierSeriesEnglishCopy }, '555-timer-calculator');
+Object.assign(modularInverseCopies.ar, {
+  name: 'حاسبة المعكوس الضربي بترديد عدد',
+  title: 'حاسبة المعكوس الضربي بترديد عدد مجانًا | UsefulVerse',
+  intro: 'أوجد العدد x بحيث يكون باقي قسمة a × x على m مساويًا 1. اعرف ما إذا كان المعكوس موجودًا، والقاسم المشترك الأكبر، وخطوات خوارزمية إقليدس الممتدة.',
+  howQuestion: 'كيف أحسب المعكوس الضربي بترديد عدد؟',
+  howAnswer: 'أدخل العدد الصحيح a والمودولو m (2 أو أكبر). يوجد المعكوس فقط عندما يكون القاسم المشترك الأكبر بين a وm هو 1. تُعرض النتيجة ضمن المجال من 0 إلى m − 1 ويتم التحقق منها بالضرب بترديد m.',
+  fields: {
+    ...modularInverseCopies.ar.fields,
+    a: 'العدد الصحيح a',
+    modulus: 'المودولو m (2 على الأقل)',
+    accuracyNote: 'حساب بأعداد صحيحة فقط. الحد المطلق للمدخلات هو 1,000,000,000,000. يوجد المعكوس الضربي بترديد m فقط إذا كان القاسم المشترك الأكبر بين a وm يساوي 1.',
+    resultStatus: 'حالة المعكوس',
+    resultGcd: 'القاسم المشترك الأكبر',
+    resultResidue: 'باقي قسمة a على m',
+    resultInverse: 'المعكوس الضربي x',
+    bezout: 'متطابقة بيزو',
+    step: 'خطوة إقليدس',
+    quotient: 'ناتج القسمة',
+    remainder: 'الباقي',
+    coefficientA: 'معامل الباقي',
+    coefficientModulus: 'معامل المودولو',
+    existsLabel: 'يوجد معكوس ضربي',
+    missingLabel: 'لا يوجد معكوس لهذه القيم',
+    verification: 'التحقق',
+  },
+  actions: { ...modularInverseCopies.ar.actions, calculate: 'احسب المعكوس', example: 'مثال: 3 بترديد 7', reset: 'مسح', result: 'نتيجة المعكوس الضربي', copy: 'نسخ النتيجة' },
+  messages: { ...modularInverseCopies.ar.messages, calculated: 'تم حساب المعكوس الضربي.', noInverse: 'لا يوجد معكوس ضربي لأن القاسم المشترك الأكبر ليس 1.', checkInputs: 'أدخل أعدادًا صحيحة ضمن الحد المدعوم ومقياسًا لا يقل عن 2.', copied: 'تم نسخ النتيجة.', copyUnavailable: 'النسخ غير متاح في هذا المتصفح.' },
+  additionalFaqs: [
+    { question: 'ما هو معكوس 3 بترديد 7؟', answer: 'هو 5 لأن حاصل 3 × 5 يترك باقيًا قدره 1 عند القسمة على 7.' },
+    { question: 'متى يوجد معكوس ضربي بترديد m؟', answer: 'يوجد بالضبط عندما يكون القاسم المشترك الأكبر بين العدد a والمقياس m هو 1.' },
+    { question: 'ماذا لو كان العدد المدخل سالبًا؟', answer: 'يحوّل الحاسب العدد أولًا إلى باقيه القياسي بين 0 وm − 1، وهذا لا يغير وجود المعكوس.' },
+  ],
+});
+registerGrowthLocaleExtension(source, 'modular-inverse-calculator', { ...modularInverseCopies, en: modularInverseEnglishCopy }, 'fourier-series-calculator');
 
 export default Object.freeze(source);

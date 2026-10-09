@@ -2618,13 +2618,13 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 293 · Fourier Series Calculator
 
-- [x] **C/F/E/X/L/B completos; P/S pendientes — `fourier-series-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/fourier-series-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `fourier-series-calculator`**
+- **Publicado:** PR #70; commit `69c50b13b7af7682940be358d75dce19fb07f69b`; pipelines `37867472931` (sitio principal) y `37867798312` (hub); 36 versiones y sitemap público con 3.960 URLs únicas verificado. Publicado no equivale a indexado.
 - **Demanda:** `fourier series calculator` — 480 búsquedas/mes US/en, KD 0; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Coeficientes periódicos numéricos, armónicos y reconstrucción
 - **Prueba de aceptación específica:** Señal constante tiene solo DC
 - **Frontera con otras herramientas:** audio-spectrogram: funciones analíticas, no sonido. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Avance local (2026-10-09):** motor numérico en navegador para muestras uniformes, componente DC, coeficientes reales seno/coseno, amplitud/fase, reconstrucción y error RMS; 4–128 datos, amplitud y periodo acotados, frecuencia por unidad temporal y armónicos por debajo de Nyquist. Aceptación señal constante = DC únicamente; sin audio, CAS, subida, API ni cálculo servidor. SVG accesible, copy localizado y mensajes de error que eliminan resultados obsoletos. Suite focal y regresión **1.447/1.447**; `locale:release-check`, `npm run check` y auditoría de 36 copias pasan. Bundle minificado **7.365 bytes** (<24 KiB). Build local: **3.960 páginas** (109 × 36 + 36 portadas). Chrome EN/AR cubre coeficientes, señal constante, armónicos cero, dígitos árabes, error, RTL y consola/red. 36 traducciones automáticas estáticas, fórmula preservada; no revisión nativa. Sin PageSpeed/Lighthouse. Falta PR/CI/deploy y verificar sitemap público.
+- **Avance verificado (2026-10-09):** motor numérico en navegador para muestras uniformes, componente DC, coeficientes reales seno/coseno, amplitud/fase, reconstrucción y error RMS; 4–128 datos, amplitud y periodo acotados, frecuencia por unidad temporal y armónicos por debajo de Nyquist. Aceptación señal constante = DC únicamente; sin audio, CAS, subida, API ni cálculo servidor. SVG accesible, copy localizado y mensajes de error que eliminan resultados obsoletos. Suite focal y regresión **1.447/1.447**; `locale:release-check`, `npm run check` y auditoría de 36 copias pasan. Bundle minificado **7.365 bytes** (<24 KiB). Build: **3.960 páginas** (109 × 36 + 36 portadas). Chrome EN/AR cubre coeficientes, señal constante, armónicos cero, dígitos árabes, error, RTL y consola/red. 36 traducciones automáticas estáticas; no revisión nativa. Rutas EN/AR y sitemap público verificados tras PR #70 y los workflows registrados en `PROGRESS.md`. Sin PageSpeed/Lighthouse.
 - **Consultas secundarias del mismo propietario:**
   - `fourier coefficients calculator` — 480/mes US/en; KD 0.
   - `fourier series calculator free online`; `fourier series calculator with example`; `fourier series calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -2632,13 +2632,14 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 299 · Modular Inverse Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `modular-inverse-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/modular-inverse-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [ ] **C/F/E/X/L/B completos; P/S pendientes — `modular-inverse-calculator`**
+- **Destino propuesto:** `https://tools.usefulverse.com/tools/modular-inverse-calculator/`; otras 35 versiones con los prefijos del anexo.
 - **Demanda:** `modular inverse calculator` — 480 búsquedas/mes US/en, KD 11; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Algoritmo de Euclides extendido, pasos y existencia
 - **Prueba de aceptación específica:** Inverso de 3 módulo 7 da 5
 - **Frontera con otras herramientas:** modulo-calculator: resolver inverso no resto. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Motor local con `BigInt`; módulo ≥2 y entradas dentro de ±10¹². Muestra inverso solo si mcd=1; no compite con una calculadora de resto. Sin servidor ni API.
+- **Avance (2026-10-09):** suite completa 1.456/1.456, check de locales, build de 3.996 rutas (110 × 36 + 36 portadas); aceptación 3 mod 7 = 5 y no-inverso 6 mod 9; Chrome EN/AR y RTL confirmados. Traducción automática estática, no revisión nativa. Pendientes PR/CI/despliegue/sitemap público.
 - **Consultas secundarias del mismo propietario:**
   - `multiplicative inverse modulo calculator` — 480/mes US/en; KD 11.
   - `modular inverse calculator free online`; `modular inverse calculator with example`; `modular inverse calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

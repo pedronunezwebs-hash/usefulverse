@@ -91,6 +91,20 @@ test('Fourier calculator has 36 translated copies and fixes technical labels lef
   }
 });
 
+test('modular inverse calculator has complete translated copies and preserves its mathematical definition', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'modular-inverse-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  assert.equal(localizedCopies.en[tool.id].fields.formula, 'a × x ≡ 1 (mod m).');
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, `${key}: metadata limits`);
+    assert.equal(copy.fields.formula, localizedCopies.en[tool.id].fields.formula, `${key}: formula remains exact`);
+    assert.ok(copy.fields.resultInverse && copy.fields.resultGcd && copy.fields.accuracyNote.length > 30, key);
+  }
+});
+
 function assertMachineAcceptedGrowthToolInAllLocales(tool) {
   assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
   for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
