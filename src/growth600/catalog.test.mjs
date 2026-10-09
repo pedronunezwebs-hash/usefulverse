@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 145);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 145);
+  assert.equal(growthPilotTools.length, 146);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 146);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -27,6 +27,16 @@ test('pulley calculator covers belt geometry and shaft speed separately from too
   assert.match(tool.functions.join(' '), /open two-pulley belt pitch length/u);
   assert.match(tool.acceptance, /100 mm.*200 mm.*1,476 mm.*750 output RPM/u);
   assert.match(tool.boundary, /does not select a catalog belt.*not uploaded/u);
+});
+
+test('RLC calculator covers resonant response and impedance separately from RC time constants', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'rlc-circuit-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'resonant frequency calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['frequency-wavelength-calculator']);
+  assert.match(tool.functions.join(' '), /quality factor Q and bandwidth/u);
+  assert.match(tool.acceptance, /1,591\.55 Hz.*Q=10/u);
+  assert.match(tool.boundary, /parallel model uses R in parallel with L and C.*not uploaded|inputs stay in this browser/u);
 });
 
 test('ideal gas law calculator solves one blank from PV=nRT and discloses model limits', () => {

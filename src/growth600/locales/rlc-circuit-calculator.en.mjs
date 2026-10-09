@@ -1,0 +1,30 @@
+export const rlcCircuitCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en', localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09',
+  name: 'RLC Circuit Calculator', title: 'RLC Circuit Calculator Free & Unlimited | UsefulVerse',
+  description: 'Find RLC resonance, Q, bandwidth and impedance for series or parallel circuits. Free, local and unlimited.',
+  intro: 'Choose a series or parallel RLC model, enter component values, and inspect resonance plus impedance at a frequency you choose.',
+  howQuestion: 'How do you calculate RLC resonance?',
+  howAnswer: 'For ideal lumped components, resonant frequency is 1/(2π√(LC)). Quality factor and bandwidth depend on whether the resistor is in series or parallel. This calculator also evaluates complex impedance at your selected frequency.',
+  privacyQuestion: 'Are my circuit values uploaded?', privacyAnswer: 'No. The math and response curve run in this browser; your entered values are not uploaded or saved.',
+  fields: {
+    topology: 'Circuit topology', series: 'Series RLC', parallel: 'Parallel RLC', resistance: 'Resistance (Ω)', inductance: 'Inductance', inductanceUnit: 'Inductance unit',
+    henries: 'Henries (H)', millihenries: 'Millihenries (mH)', microhenries: 'Microhenries (µH)', capacitance: 'Capacitance', capacitanceUnit: 'Capacitance unit',
+    farads: 'Farads (F)', microfarads: 'Microfarads (µF)', nanofarads: 'Nanofarads (nF)', picofarads: 'Picofarads (pF)',
+    frequency: 'Frequency to evaluate', frequencyUnit: 'Frequency unit', hertz: 'Hertz (Hz)', kilohertz: 'Kilohertz (kHz)', voltage: 'Source voltage (V RMS)',
+    accuracyNote: 'Ideal lumped, linear RLC model only. Parallel mode means R, L and C are all in parallel. It ignores tolerances, parasitics, coil resistance, source impedance, nonlinear parts, load coupling and safety. It does not certify a real circuit or select parts. Check datasheets and consult a qualified professional before building or using real hardware. Runs locally; no upload.',
+    chartTitle: 'Impedance across frequency', chartDescription: 'Log-frequency sweep from one tenth to ten times the resonant frequency. The curve shows ideal impedance magnitude for the selected series or parallel topology.',
+  },
+  actions: { calculate: 'Calculate RLC circuit', reset: 'Reset', copy: 'Copy results', example: 'Load example', result: 'RLC results' },
+  messages: {
+    copied: 'Results copied.', copyUnavailable: 'Copy is not available in this browser.', calculated: 'RLC estimate calculated.', checkInputs: 'Check R, L, C, frequency, voltage, topology and units.',
+    model: 'Model', resonance: 'Resonant frequency', qualityFactor: 'Quality factor (Q)', bandwidth: 'Approximate bandwidth', inductiveReactance: 'Inductive reactance (XL)',
+    capacitiveReactance: 'Capacitive reactance (XC)', complexImpedance: 'Complex impedance (R + jX)', impedanceMagnitudePhase: 'Impedance magnitude / phase', current: 'Source current (ideal RMS)',
+  },
+  additionalFaqs: [
+    { question: 'What is the resonant frequency formula?', answer: 'For an ideal inductor L and capacitor C, f₀ = 1/(2π√(LC)). Use henries and farads to obtain hertz. The resistor changes damping and Q, not this ideal LC resonance formula.' },
+    { question: 'How do series and parallel RLC circuits differ?', answer: 'At resonance, an ideal series RLC has minimum impedance equal to R; an ideal parallel RLC has maximum impedance equal to R. Current and voltage behavior therefore differ even though ideal f₀ is the same.' },
+    { question: 'How are Q and bandwidth calculated?', answer: 'For the series model, Q = ω₀L/R and bandwidth is R/(2πL). For the parallel model, Q = R/(ω₀L) and bandwidth is 1/(2πRC). These are ideal single-resonance relationships.' },
+    { question: 'Does this model include real component tolerances?', answer: 'No. It assumes ideal, linear, lumped R, L and C components. Parasitics, inductor winding resistance, source impedance, loading and component variation can shift or damp real circuits.' },
+    { question: 'Can this calculator certify a circuit as safe?', answer: 'No. It is an educational estimate, not a design approval or safety assessment. Confirm component ratings and real-world behavior with datasheets and qualified engineering review.' },
+  ],
+});

@@ -64,6 +64,7 @@ export function renderGrowthForm(toolId, copy) {
     'pcb-trace-width-calculator': ['mode', 'requiredWidthMode', 'currentCapacityMode', 'conductor', 'external', 'internal', 'current', 'copperWeight', 'temperatureRise', 'width', 'widthUnit', 'accuracyNote'],
     'projectile-motion-calculator': ['speed', 'speedUnit', 'metersPerSecond', 'kilometersPerHour', 'milesPerHour', 'angleDegrees', 'initialHeight', 'lengthUnit', 'meters', 'feet', 'gravity', 'accuracyNote', 'plotTitle', 'plotDescription', 'motionReduced'],
     'pulley-calculator': ['driverDiameter', 'drivenDiameter', 'centerDistance', 'diameterUnit', 'millimeters', 'inches', 'inputRpm', 'accuracyNote', 'sketchTitle', 'sketchDescription'],
+    'rlc-circuit-calculator': ['topology', 'series', 'parallel', 'resistance', 'inductance', 'inductanceUnit', 'henries', 'millihenries', 'microhenries', 'capacitance', 'capacitanceUnit', 'farads', 'microfarads', 'nanofarads', 'picofarads', 'frequency', 'frequencyUnit', 'hertz', 'kilohertz', 'voltage', 'accuracyNote', 'chartTitle', 'chartDescription'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
     'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
     'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
@@ -217,6 +218,7 @@ export function renderGrowthForm(toolId, copy) {
     'pcb-trace-width-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'projectile-motion-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'playTrajectory', 'resetAnimation'],
     'pulley-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'rlc-circuit-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
     'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -2101,6 +2103,22 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}<div data-pulley-visual hidden><h3>${escapeGrowthHtml(fields.sketchTitle)}</h3><svg data-pulley-sketch viewBox="0 0 560 220" role="img" aria-label="${escapeGrowthHtml(fields.sketchDescription)}" focusable="false"></svg></div></section>
+  </form>`, copy);
+
+  if (toolId === 'rlc-circuit-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('rlc-topology', fields.topology, `<select id="rlc-topology" name="mode"><option value="series">${escapeGrowthHtml(fields.series)}</option><option value="parallel">${escapeGrowthHtml(fields.parallel)}</option></select>`)}
+    ${label('rlc-resistance', fields.resistance, '<input id="rlc-resistance" name="resistance" type="number" min="0.000000001" max="1000000000000" step="any" inputmode="decimal" value="10" required>')}
+    ${label('rlc-inductance', fields.inductance, '<input id="rlc-inductance" name="inductance" type="number" min="0.000000001" max="1000000000000000" step="any" inputmode="decimal" value="10" required>')}
+    ${label('rlc-inductance-unit', fields.inductanceUnit, `<select id="rlc-inductance-unit" name="inductanceUnit"><option value="mH">${escapeGrowthHtml(fields.millihenries)}</option><option value="H">${escapeGrowthHtml(fields.henries)}</option><option value="uH">${escapeGrowthHtml(fields.microhenries)}</option></select>`)}
+    ${label('rlc-capacitance', fields.capacitance, '<input id="rlc-capacitance" name="capacitance" type="number" min="0.000000001" max="1000000000000000" step="any" inputmode="decimal" value="1" required>')}
+    ${label('rlc-capacitance-unit', fields.capacitanceUnit, `<select id="rlc-capacitance-unit" name="capacitanceUnit"><option value="uF">${escapeGrowthHtml(fields.microfarads)}</option><option value="F">${escapeGrowthHtml(fields.farads)}</option><option value="nF">${escapeGrowthHtml(fields.nanofarads)}</option><option value="pF">${escapeGrowthHtml(fields.picofarads)}</option></select>`)}
+    ${label('rlc-frequency', fields.frequency, '<input id="rlc-frequency" name="frequency" type="number" min="0.000000001" max="1000000000000" step="any" inputmode="decimal" value="1591.549431" required>')}
+    ${label('rlc-frequency-unit', fields.frequencyUnit, `<select id="rlc-frequency-unit" name="frequencyUnit"><option value="Hz">${escapeGrowthHtml(fields.hertz)}</option><option value="kHz">${escapeGrowthHtml(fields.kilohertz)}</option></select>`)}
+    ${label('rlc-voltage', fields.voltage, '<input id="rlc-voltage" name="voltage" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="5">')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}<div data-rlc-chart hidden><h3>${escapeGrowthHtml(fields.chartTitle)}</h3><svg data-rlc-response viewBox="0 0 560 240" role="img" aria-label="${escapeGrowthHtml(fields.chartDescription)}" focusable="false"></svg></div></section>
   </form>`, copy);
 
   if (toolId === 'friction-calculator') return attachCopy(`<form id="tool-form" novalidate>

@@ -4,7 +4,7 @@
 
 ## Estado público actual · 2026-10-09
 
-- **142 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **5.148 URLs** (142 × 36 + 36 páginas de idioma): **419 herramientas públicas en total** y 15.408 URLs entre los dos sitios (10.260 + 5.148). Esto no equivale a que los buscadores hayan indexado cada URL.
+- **145 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **5.256 URLs** (145 × 36 + 36 páginas de idioma): **422 herramientas públicas en total** y 15.516 URLs entre los dos sitios (10.260 + 5.256). Esto no equivale a que los buscadores hayan indexado cada URL.
 - #148 Text to Binary Converter: PR #81 integrada; despliegue principal `37891603568` y despliegue del hub `37892340212` correctos. EN/ES/AR responden HTTP 200.
 - #171 Schema Markup Validator, #172 Readability Checker y #173 Savings Goal Calculator ya aparecen en las 36 versiones públicas; verificaciones previas registradas debajo.
 - #189 Certificate Decoder: 36 rutas públicas; detalles de pruebas y despliegue anotados abajo.
@@ -1632,3 +1632,18 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - **Estado:** rama `codex/growth600-projectile-motion-20261009`, local solamente; no contar como pública hasta P/S.
 - **Recuento de implementación:** 88/323 candidatas; 235 válidas y una fila duplicada/reserva por reemplazar. Publicado sigue en 143 Growth600 / 5.184 URLs hasta completar release.
 - [ ] **P/S:** diff final, PR, CI, deploy principal, publicación del hub y verificación pública EN/AR/sitemap pendientes. No se afirma indexación.
+
+## Publicadas · Projectile Motion Calculator (#252) y Pulley Calculator (#257) · 2026-10-09
+
+- Projectile Motion Calculator ya figura en el sitemap público del hub y su ruta EN responde con título/canonical propios; la ruta AR también había sido verificada en el cierre previo del lote. Pulley Calculator quedó integrada mediante PR #106 (`1f519eccb574ba4e54acd0641867450fa4db6358`); el workflow del hub 37960788952 finalizó correctamente.
+- Verificación directa del hub: `tools/projectile-motion-calculator/`, `tools/pulley-calculator/` y sus rutas árabes responden HTTP 200; ambas páginas entregan título y canonical propios. Sitemap `https://tools.usefulverse.com/sitemap.xml`: 5.256 entradas = 145 herramientas × 36 locales + 36 portadas localizadas; 422 herramientas incluyendo las 277 originales.
+- La build local actual incluye además la siguiente RLC candidata: 146 herramientas × 36 rutas + 36 portadas = 5.292 páginas estáticas; esa cifra todavía no es pública.
+- No se infiere rastreo/indexación y no se ejecutó PageSpeed/Lighthouse.
+
+## En implementación local · RLC Circuit Calculator (#266) · 2026-10-09
+
+- 36 copias estáticas generadas desde inglés por lotes; árabe ajustado manualmente. No se afirma revisión nativa ni traducción perfecta.
+- Modelo RLC ideal serie/paralelo con frecuencia resonante, Q, ancho de banda, reactancias, impedancia compleja/fase, corriente RMS y respuesta SVG de 61 puntos; límites y unidades validados. Todo el cálculo ocurre en el navegador, sin API, dependencia nueva o coste de procesamiento.
+- Gates locales: suite completa **1.767/1.767**; `npm run check` mantiene **10.260 URLs** del sitio principal; `npm run locale:release-check`, build del hub **5.292 páginas** y `git diff --check` pasan. Chrome móvil 390×844: el ejemplo serie da f0=1,5915494 kHz, Q=10, BW=159,1549431 Hz, XL=XC=100 Ω y 0,5 A RMS; árabe RTL traducido, sin overflow ni consola con errores/avisos.
+- **Estado local:** candidata #90 de 323 implementaciones del plan; 233 válidas pendientes y una fila duplicada/reserva por reemplazar. No pública hasta completar PR/CI/deploy/verificación sitemap.
+- [ ] P/S: revisar diff, PR, CI, integrar, desplegar/publicar hub y verificar EN/AR y sitemap.

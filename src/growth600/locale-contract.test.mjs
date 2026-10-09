@@ -16,6 +16,8 @@ import projectileMotionCopies from './locales/projectile-motion-calculator-final
 import { projectileMotionCalculatorEnglishCopy } from './locales/projectile-motion-calculator.en.mjs';
 import pulleyCalculatorCopies from './locales/pulley-calculator-final.mjs';
 import { pulleyCalculatorEnglishCopy } from './locales/pulley-calculator.en.mjs';
+import rlcCircuitCalculatorCopies from './locales/rlc-circuit-calculator-final.mjs';
+import { rlcCircuitCalculatorEnglishCopy } from './locales/rlc-circuit-calculator.en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
 import portugueseGrowthCopy from './locales/pt.mjs';
 import germanGrowthCopy from './locales/de.mjs';
@@ -1590,6 +1592,22 @@ test('pulley calculator has complete static copy and machine-accepted localizati
     assert.ok([...copy.description].length <= 160, locale.key);
   }
   assert.match(pulleyCalculatorCopies.ar.fields.accuracyNote, /الأبعاد/u);
+});
+
+test('RLC calculator has complete static copy and machine-accepted localization in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'rlc-circuit-calculator');
+  assert.ok(tool);
+  assert.equal(rlcCircuitCalculatorCopies.en.name, rlcCircuitCalculatorEnglishCopy.name);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const locale of localeEntries) {
+    const copy = rlcCircuitCalculatorCopies[locale.key];
+    assert.ok(copy.fields.topology && copy.fields.resistance && copy.fields.inductance && copy.fields.capacitance, locale.key);
+    assert.ok(copy.actions.calculate && copy.messages.resonance && copy.messages.impedanceMagnitudePhase, locale.key);
+    assert.equal(copy.additionalFaqs.length, 5, locale.key);
+    assert.ok([...copy.title].length <= 60, locale.key);
+    assert.ok([...copy.description].length <= 160, locale.key);
+  }
+  assert.match(rlcCircuitCalculatorCopies.ar.fields.accuracyNote, /مركّز/u);
 });
 
 test('chemical equation balancer has complete English copy but has approved localized copy across all 36 languages', () => {
