@@ -2851,8 +2851,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 223 · Robots Txt Tester
 
-- [ ] **C/F/E/X/L/B/P/S completos — `robots-txt-tester`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/robots-txt-tester/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `robots-txt-tester`**
+- **Publicado:** `https://tools.usefulverse.com/tools/robots-txt-tester/` y las otras 35 versiones. PR #85 integrada; CI `37900570648`, deploy principal `37900951430` y publicación del hub `37900970440` correctos. Sitemap público verificado: 4.500 URLs, incluidas las 36 variantes. EN/AR HTTP 200. No se afirma indexación; sin PageSpeed/Lighthouse.
 - **Demanda:** `robots txt tester` — 1.900 búsquedas/mes US/en, KD 35; nivel B. CPC 11.02 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Evaluar un robots.txt aportado frente a URLs y user-agent, explicar regla ganadora; no rastrear sitios ni modificar robots actual de Useful Verse.
 - **Prueba de aceptación específica:** Disallow/private bloquea solo rutacorrespondiente
@@ -2862,6 +2862,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `robots txt validator` — 880/mes US/en; KD 35.
   - `robots txt tester free online`; `robots txt tester with example`; `robots txt tester no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+
 
 ### 235 · Json To Excel
 
@@ -2876,6 +2877,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `json to xlsx converter` — 880/mes US/en; KD 0.
   - `json to excel free online`; `json to excel with example`; `json to excel no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Checkpoint local (2026-10-09; sin publicar):** JSON pegado se convierte localmente en una hoja XLSX; autoelige el primer arreglo de nivel superior, admite elegir otras matrices o el objeto raíz, aplana campos anidados y conserva arreglos internos como JSON. Cadenas "001" y fórmulas aparentes permanecen texto inerte. 36 traducciones estáticas; sin servicio de traducción en runtime. Límites de entrada, nodos, profundidad, filas, columnas, celdas, longitud de celda y tamaño de descarga aplicados. Tests específicos y suite completa **1.592/1.592**, release locales, `npm run check` (**10.260 URLs principales**) y build Growth600 (**4.536 páginas; 125 × 36 + 36 portadas**) pasan. QA Chrome EN/AR a 390 px: ejemplo con 3 registros, XLSX interceptado como archivo ZIP válido; `001` visible sin perder cero, AR `dir=rtl` y `scrollWidth=390`, consola limpia. Falta PR/CI, publicar, verificar rutas y sitemap. No PageSpeed/Lighthouse ni afirmación de indexación.
 
 ### 270 · Binary Files to Base64 & Data URI
 

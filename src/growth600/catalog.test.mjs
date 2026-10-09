@@ -4,9 +4,18 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 124);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 124);
+  assert.equal(growthPilotTools.length, 125);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 125);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
+});
+
+test('JSON to Excel is distinct from CSV and spreadsheet conversion and keeps imports local', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'json-to-excel');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'json to excel');
+  assert.deepEqual(tool.relatedExistingIds, ['json-to-csv', 'spreadsheet-converter']);
+  assert.match(tool.acceptance, /"001" remains "001"/u);
+  assert.match(tool.boundary, /no upload, API, fetch/u);
 });
 
 test('Hashi is a distinct no-crossing connected-island puzzle, not a duplicate Futoshiki or Kakuro page', () => {

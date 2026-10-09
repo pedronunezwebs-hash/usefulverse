@@ -1,0 +1,32 @@
+export const jsonToExcelEnglishCopy = Object.freeze({
+  copyLanguage: 'en', name: 'JSON to Excel', title: 'JSON to Excel Free Converter | UsefulVerse',
+  description: 'Convert JSON arrays and nested objects into an XLSX spreadsheet in your browser. Keep text IDs like 001. Free, no upload or account.',
+  intro: 'Turn a JSON array or an array inside an object into an Excel workbook. Preview flattened nested fields, keep string IDs such as 001, and download XLSX locally. Nothing is uploaded.',
+  howQuestion: 'How do I convert JSON to Excel?',
+  howAnswer: 'Paste valid JSON and choose Preview. Pick a named top-level array if the JSON has several, check the columns, then download the XLSX file. Nested objects become dotted column names.',
+  privacyQuestion: 'Is my JSON uploaded or are formulas run?',
+  privacyAnswer: 'No. Your JSON is parsed in this browser and the workbook is created on your device. Formula-like strings are written as text, not executed. Input and workbook sizes are capped to protect browser memory.',
+  exampleJson: '{\n  "records": [\n    { "id": "001", "name": "Ada", "profile": { "city": "Oslo" }, "amount": 12.5 },\n    { "id": "002", "name": "Lin", "profile": { "city": "Lima" }, "amount": 9 },\n    { "id": "=1+1", "name": "Text stays text", "profile": { "city": "Tokyo" }, "amount": 0 }\n  ]\n}',
+  fields: {
+    jsonInput: 'JSON input', jsonHint: 'Paste an array, an object, or an object with top-level arrays. Maximum 2 MB.',
+    dataset: 'Rows to export', datasetHint: 'Choose a top-level array or keep the root object as one row.', rootObject: 'Root object (one row)',
+    preview: 'Workbook preview', tableLabel: 'Spreadsheet preview', rowCount: 'Rows', columnCount: 'Columns',
+    previewLimit: 'Showing up to 25 rows and 12 columns. The XLSX download includes all accepted rows and columns.',
+    flattenNote: 'Nested object fields use dotted column names. Arrays inside a record stay as JSON text.',
+    privacyNote: 'Everything runs here in your browser. No upload. Formula-like strings are saved as plain text.',
+  },
+  actions: { preview: 'Preview JSON', example: 'Load example', reset: 'Clear', download: 'Download Excel file' },
+  messages: {
+    previewReady: 'Spreadsheet preview is ready.', downloaded: 'Excel workbook downloaded.', emptyInput: 'Paste JSON first.', tooLarge: 'JSON is larger than the 2 MB limit.',
+    invalidJson: 'This is not valid JSON. Check commas, quotes and brackets.', tooManyValues: 'JSON has more than 50,000 values.', tooDeep: 'JSON nesting exceeds 32 levels.',
+    tooManyRows: 'A dataset has more than 20,000 rows.', tooManyColumns: 'The spreadsheet would have more than 200 columns.', tooManyCells: 'The spreadsheet would have more than 200,000 cells.',
+    valueTooLong: 'A cell value is longer than the 32,000-character limit.', emptyDataset: 'This array has no rows to export.', invalidDataset: 'Choose a dataset from the list.',
+    workbookTooLarge: 'The generated workbook exceeds the 12 MiB download limit.', invalidNumber: 'JSON contains a number that cannot be exported safely.', noPreview: 'Preview the JSON before downloading.', noData: 'No spreadsheet rows were found.',
+    invalid: 'Could not prepare this spreadsheet. Check the JSON and limits.', copyUnavailable: 'Clipboard is unavailable in this browser.',
+  },
+  additionalFaqs: [
+    { question: 'How do I convert a JSON array to Excel?', answer: 'Paste the JSON array, preview it and download the XLSX workbook. For an object that contains arrays, choose which top-level array should become spreadsheet rows.' },
+    { question: 'Can nested JSON fields become spreadsheet columns?', answer: 'Yes. Nested objects flatten into dotted columns such as profile.city. Arrays inside a record stay as compact JSON text so their structure is not silently expanded into extra rows.' },
+    { question: 'Will IDs like 001 lose their leading zeros?', answer: 'No. JSON strings are written as spreadsheet text, including numeric-looking IDs such as 001. JSON numbers remain numbers. Formula-like strings are stored as text and are not run.' },
+  ],
+});

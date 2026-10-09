@@ -25,6 +25,17 @@ test('PDF text to XLSX emits a readable OOXML workbook with escaped Unicode valu
   assert.match(html, /Sample/u);
 });
 
+test('XLSX can preserve numeric-looking strings as inert text without changing existing defaults', () => {
+  const defaultBytes = createXlsx([['id'], ['001']]);
+  const textBytes = createXlsx([['id'], ['001'], ['=1+1']], 'Data', { preserveStrings: true });
+  const defaultXml = new TextDecoder().decode(unzipSync(defaultBytes)['xl/worksheets/sheet1.xml']);
+  const textXml = new TextDecoder().decode(unzipSync(textBytes)['xl/worksheets/sheet1.xml']);
+  assert.match(defaultXml, /<c r="A2" t="inlineStr">/u);
+  assert.match(textXml, /<c r="A2" t="inlineStr"><is><t xml:space="preserve">001<\/t>/u);
+  assert.match(textXml, /<c r="A3" t="inlineStr"><is><t xml:space="preserve">=1\+1<\/t>/u);
+  assert.doesNotMatch(textXml, /<f>/u);
+});
+
 test('XLSX print parser handles shared strings, inline strings, sparse cells and escapes HTML', () => {
   const files = {
     '[Content_Types].xml': strToU8('<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/></Types>'),

@@ -28,10 +28,15 @@ export function assertLocalController(toolId, source, maxBytes) {
   const bytes = Buffer.byteLength(source);
   if (bytes > maxBytes) throw new Error(`${toolId} controller exceeds the ${maxBytes}-byte initial runtime budget.`);
   const withoutSvgNamespace = source.replaceAll('http://www.w3.org/2000/svg', '');
-  const withoutSchemaVocabulary = withoutSvgNamespace.replaceAll(/https?:\/\/schema\.org\/?/gu, '');
+  const withoutPackageNamespaces = withoutSvgNamespace
+    .replaceAll(/https?:\/\/schema\.org\/?/gu, '')
+    .replaceAll('http://schemas.openxmlformats.org/package/2006/content-types', '')
+    .replaceAll('http://schemas.openxmlformats.org/package/2006/relationships', '')
+    .replaceAll('http://schemas.openxmlformats.org/spreadsheetml/2006/main', '')
+    .replaceAll('http://schemas.openxmlformats.org/officeDocument/2006/relationships', '');
   const localVocabularyFetch = /fetch\(new URL\(["']\/assets\/schemaorg-v30\.1\.json["'],location\.origin\)/u;
   const withoutAllowedFetch = source.replace(localVocabularyFetch, '');
-  if (/\b(?:fetch|XMLHttpRequest|WebSocket|EventSource)\b/u.test(withoutAllowedFetch) || /https?:\/\//u.test(withoutSchemaVocabulary)) throw new Error(`${toolId} controller must not contact a remote service.`);
+  if (/\b(?:fetch|XMLHttpRequest|WebSocket|EventSource)\b/u.test(withoutAllowedFetch) || /https?:\/\//u.test(withoutPackageNamespaces)) throw new Error(`${toolId} controller must not contact a remote service.`);
   if (/\beval\s*\(|\bnew\s+Function\b/u.test(source)) throw new Error(`${toolId} controller contains dynamic code execution.`);
 }
 

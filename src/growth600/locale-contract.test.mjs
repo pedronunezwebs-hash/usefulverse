@@ -189,6 +189,19 @@ test('robots tester has 36 static translations, local-only scope and safe snippe
   }
 });
 
+test('JSON to Excel has 36 static translations, preserves its executable example and local-only disclosures', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'json-to-excel');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.equal(copy.exampleJson, localizedCopies.en[tool.id].exampleJson, `${key}: JSON fixture remains valid and unchanged`);
+    assert.match(copy.title, /UsefulVerse/u, `${key}: brand retained`);
+    assert.ok(copy.fields.privacyNote.length > 30, `${key}: local processing disclosed`);
+  }
+});
+
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
 const sampleHome = (language) => ({ title: `${language} tools | UsefulVerse`, description: 'Free browser tools.', intro: 'Simple tools.', directoryLabel: 'Tools', freeLabel: 'Free', footerFree: 'Free tools.', skipToTool: 'Skip', home: 'Home', languageLabel: 'Language', breadcrumbLabel: 'Breadcrumb', faqLabel: 'FAQ', copyLanguage: language });

@@ -1452,6 +1452,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/json-to-xml-converter/logic.mjs',
   },
   {
+    id: 'json-to-excel',
+    category: 'developer-data',
+    type: 'tool',
+    primaryIntent: 'json to excel',
+    secondaryIntents: ['json to xlsx converter', 'convert json array to spreadsheet', 'json nested data to excel'],
+    functions: ['convert a top-level JSON array or choose a named array inside an object, with a one-row root-object option', 'flatten nested objects into escaped dotted column paths and keep nested arrays as readable JSON text', 'preview a bounded sample and create one local XLSX worksheet without running formula-like strings', 'preserve numeric-looking JSON strings such as 001 as text and keep JSON numeric values numeric'],
+    acceptance: 'In the records dataset, the string identifier "001" remains "001" in the XLSX cell, nested profile.city becomes a column, number 12.5 remains numeric, and a string beginning = is stored as inert inline text.',
+    boundary: 'Browser-only JSON-to-XLSX export, not a spreadsheet editor, formula evaluator, or full data-model converter. Supports one worksheet and array/object/scalar JSON values; named arrays are top-level object properties only. Nested objects flatten to dotted headers (dots and backslashes in original keys are escaped); arrays inside records remain compact JSON text. Duplicate JSON object keys follow JSON.parse behavior. Input stays on-device; no upload, API, fetch, storage, or formula execution. Limits: 2 MB input, 50,000 values, depth 32, 20,000 records, 200 columns, 200,000 cells, 32,000 characters per cell and 12 MiB generated workbook. Spreadsheet apps may apply their own display formatting to numeric cells; strings are emitted as explicit text cells.',
+    relatedExistingIds: ['json-to-csv', 'spreadsheet-converter'],
+    logicModule: './tools/json-to-excel/logic.mjs',
+  },
+  {
     id: 'har-viewer',
     category: 'developer-data',
     type: 'tool',

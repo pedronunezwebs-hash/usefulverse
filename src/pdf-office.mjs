@@ -71,19 +71,19 @@ function columnName(index) {
   return name;
 }
 
-function cellXml(value, reference) {
+function cellXml(value, reference, preserveStrings = false) {
   const text = String(value ?? '');
   if (!text) return `<c r="${reference}"/>`;
-  if (/^-?(?:0|[1-9]\d*)(?:\.\d+)?$/u.test(text)) return `<c r="${reference}"><v>${text}</v></c>`;
+  if (!preserveStrings && /^-?(?:0|[1-9]\d*)(?:\.\d+)?$/u.test(text)) return `<c r="${reference}"><v>${text}</v></c>`;
   return `<c r="${reference}" t="inlineStr"><is><t xml:space="preserve">${xmlEscape(text)}</t></is></c>`;
 }
 
-export function createXlsx(rows, sheetName = 'Extracted PDF text') {
+export function createXlsx(rows, sheetName = 'Extracted PDF text', { preserveStrings = false } = {}) {
   if (!Array.isArray(rows) || rows.length < 2 || rows.length > 100_000) throw new RangeError('The spreadsheet needs readable rows and must contain fewer than 100,000 rows.');
   const maxColumns = Math.max(...rows.map((row) => row.length));
   if (maxColumns > 200) throw new RangeError('This PDF produced more than 200 columns. Narrow the document or use PDF to Word instead.');
   const safeSheetName = String(sheetName).replace(/[\\/?*\[\]:]/gu, ' ').trim().slice(0, 31) || 'Extracted text';
-  const sheetRows = rows.map((row, rowIndex) => `<row r="${rowIndex + 1}">${row.map((value, columnIndex) => cellXml(value, `${columnName(columnIndex)}${rowIndex + 1}`)).join('')}</row>`).join('');
+  const sheetRows = rows.map((row, rowIndex) => `<row r="${rowIndex + 1}">${row.map((value, columnIndex) => cellXml(value, `${columnName(columnIndex)}${rowIndex + 1}`, preserveStrings && typeof value === 'string')).join('')}</row>`).join('');
   const files = {
     '[Content_Types].xml': strToU8('<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/></Types>'),
     '_rels/.rels': strToU8('<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>'),

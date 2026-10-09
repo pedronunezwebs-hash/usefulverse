@@ -4,21 +4,22 @@
 
 ## Estado público actual · 2026-10-09
 
-- **123 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap de `tools.usefulverse.com` tiene **4.464 URLs** (123 × 36 + 36 páginas de idioma). Esto no equivale a que los buscadores ya hayan indexado cada URL.
+- **124 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **4.500 URLs** (124 × 36 + 36 páginas de idioma). Esto no equivale a que los buscadores hayan indexado cada URL.
 - #148 Text to Binary Converter: PR #81 integrada; despliegue principal `37891603568` y despliegue del hub `37892340212` correctos. EN/ES/AR responden HTTP 200.
 - #171 Schema Markup Validator, #172 Readability Checker y #173 Savings Goal Calculator ya aparecen en las 36 versiones públicas; verificaciones previas registradas debajo.
 - #189 Certificate Decoder: 36 rutas públicas; detalles de pruebas y despliegue anotados abajo.
 - #195 JSON↔XML Converter: 36 rutas públicas; PR #83 y publicación del hub verificadas, sitemap público actualizado a 4.428 URLs únicas.
 - #215 HAR Viewer: PR #84 integrada en `4e4bab2f2b3a0386c23894b9542fbc091e1ce224`; CI y despliegues principal/hub (run `37899114343`) correctos. EN/AR y sitemap público HTTP 200; **4.464 URLs únicas**, incluidas sus 36 versiones. La herramienta procesa HAR localmente y minimiza valores sensibles; sin PageSpeed/Lighthouse ni afirmación de indexación.
-- `npm run check` conserva **10.260 URLs** del sitio principal; suite actual: **1.574/1.574**; `npm run locale:release-check` pasa para los 36 locales.
+- #223 Robots.txt Tester: PR [#85](https://github.com/pedronunezwebs-hash/usefulverse/pull/85) integrada en `3b9293def8c1cd4577a65d2fb30e9c99a7190e71`; CI `37900570648`, deploy principal `37900951430` y publicación del hub `37900970440` finalizaron correctamente. Rutas EN/AR HTTP 200; sitemap público con 4.500 URLs. Sin afirmación de indexación ni PageSpeed/Lighthouse.
+- `npm run check` conserva **10.260 URLs** del sitio principal; suite completa actual: **1.592/1.592**; `npm run locale:release-check` pasa.
 
-## En implementación local · Robots.txt Tester (#223 del plan)
+## En implementación local · JSON to Excel (#235 del plan)
 
-- Herramientas públicas al iniciar: 123 Growth600; la #124 aún no cuenta como publicada.
-- El checkout actual añade un comprobador local de reglas `Allow`/`Disallow` para URLs introducidas por la persona y un token de crawler. Usa selección de grupo más específico, comodines `*` y `$`, precedencia de ruta más específica y límite de cómputo; no consulta ni visita las URLs.
-- Tests del motor, presupuestos contra entradas abusivas, formulario, catálogo, contrato de 36 locales y build pasan; suite general **1.584/1.584**. Release check de los 36 idiomas, `npm run check` (**10.260 URLs principales**) y build aislado (**4.500 páginas; 124 × 36 + 36 portadas**) pasan.
-- Chrome local a 390 px: EN y AR; el ejemplo bloquea `/private` y permite `/private/public`, árabe RTL, ancho 390/390, cero errores de consola y solo solicitudes locales para documento, CSS y controlador.
-- [ ] PR/CI, integración, despliegue público y comprobación del sitemap: pendientes. No se declara publicado ni indexado; no se midió PageSpeed/Lighthouse.
+- Pasa arreglos JSON raíz o arreglos de nivel superior de un objeto a una hoja XLSX; aplana objetos anidados con rutas de encabezado escapadas y conserva arreglos internos como texto JSON. El arreglo nombrado se preselecciona si existe.
+- Preserva cadenas numéricas como `001` y exporta valores que parecen fórmulas como cadenas XLSX inertes. Sin servidor, API, fetch, upload, almacenamiento ni fórmulas ejecutables. Límites explícitos: 2 MB, 50.000 valores, profundidad 32, 20.000 filas, 200 columnas, 200.000 celdas, 32.000 caracteres/celda y 12 MiB exportados.
+- 36 copias estáticas traducidas desde inglés; no hay llamadas de traducción en el sitio. Suite completa **1.592/1.592**, release check, tests de formulario/catálogo/XLSX/contrato de locales, build principal **10.260 URLs** y build local del hub **4.536 páginas** (125 × 36 + 36 portadas; 4.716 archivos) pasan.
+- Chrome QA local: EN prueba los tres registros del ejemplo, columnas `id`, `name`, `profile.city` y `amount`; descarga interceptada en memoria como XLSX válido (firma ZIP `PK\x03\x04`, 1.719 bytes), conserva `001` y `=1+1` como texto. AR a 390×844 tiene `lang=ar`, `dir=rtl`, `scrollWidth=390` y cero errores de consola.
+- [ ] PR/CI, integración, despliegue público y verificación de sus 36 URLs/sitemap: pendientes. La herramienta no cuenta aún como publicada; no se midió PageSpeed/Lighthouse.
 
 ## Herramientas verificadas en despliegue anterior · #171–#173
 
