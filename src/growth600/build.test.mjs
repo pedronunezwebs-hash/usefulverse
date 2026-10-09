@@ -8,6 +8,7 @@ import { tools as currentTools } from '../catalog.mjs';
 import { growthPilotTools } from './catalog.mjs';
 import { transformerCalculatorEnglishCopy } from './locales/transformer-calculator.en.mjs';
 import stoichiometryCopies from './locales/stoichiometry-calculator-final.mjs';
+import pressureCalculatorCopies from './locales/pressure-calculator-final.mjs';
 import { buildGrowthStaticSite } from './build.mjs';
 import englishGrowthCopy from './locales/en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
@@ -72,6 +73,7 @@ const messages = { copied: 'Copied.', copyUnavailable: 'Copy unavailable.', calc
 function toolCopy(tool, language) {
   if (tool.id === 'transformer-calculator') return transformerCalculatorEnglishCopy;
   if (tool.id === 'stoichiometry-calculator') return structuredClone(stoichiometryCopies[language]);
+  if (tool.id === 'pressure-calculator') return structuredClone(pressureCalculatorCopies[language]);
   if (tool.id === 'json-to-xml-converter') return { ...structuredClone(jsonToXmlEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09' };
   if (tool.id === 'har-viewer') return { ...structuredClone(harViewerEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09' };
   if (tool.id === 'robots-txt-tester') return structuredClone(robotsTxtTesterCopies[language]);

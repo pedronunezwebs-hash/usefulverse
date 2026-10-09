@@ -444,6 +444,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/stoichiometry-calculator/logic.mjs',
   },
   {
+    id: 'pressure-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'pressure calculator',
+    secondaryIntents: ['pressure from force and area', 'hydrostatic pressure calculator', 'force area pressure calculator'],
+    functions: ['calculate average pressure from a normal force and contact area with selectable force, area, and pressure units', 'estimate hydrostatic gauge pressure from user-entered fluid density, depth, and gravitational acceleration', 'show the selected model and converted inputs with the result so the assumptions are transparent'],
+    acceptance: '100 N divided by 2 m² returns 50 Pa; water at 1,000 kg/m³ and 1 m depth under 9.80665 m/s² returns 9,806.65 Pa gauge.',
+    boundary: 'Ideal average pressure p=F/A or hydrostatic gauge pressure Δp=ρgh only. The force model assumes the entered normal force is evenly distributed over the entered area; it does not calculate stress concentrations. The liquid model assumes a static uniform-density fluid and does not include atmospheric pressure, flow, pressure loss, temperature, compressibility, vessel loads or safety ratings. Not engineering or safety advice; verify real systems with qualified professionals. Calculations run locally and inputs are not uploaded.',
+    relatedExistingIds: ['force-calculator', 'flow-rate-calculator'],
+    logicModule: './tools/pressure-calculator/logic.mjs',
+  },
+  {
     id: 'chemical-equation-balancer',
     category: 'science-engineering',
     type: 'calculator',
