@@ -13,6 +13,7 @@ import { chineseRemainderEnglishCopy } from './locales/chinese-remainder-theorem
 import { jsonDiffEnglishCopy } from './locales/json-diff.en.mjs';
 import { textToBinaryEnglishCopy } from './locales/text-to-binary.en.mjs';
 import { certificateDecoderEnglishCopy } from './locales/certificate-decoder.en.mjs';
+import { jsonToXmlEnglishCopy } from './locales/json-to-xml-converter.en.mjs';
 
 const actions = {
   calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', millimeters: 'Millimeters', feet: 'Feet', inches: 'Inches', squareMeters: 'Square meters', squareFeet: 'Square feet', cubicMeters: 'Cubic meters', cubicFeet: 'Cubic feet', kelvin: 'Kelvin difference', fahrenheit: 'Fahrenheit difference', kilowatts: 'Kilowatts (kW)', btuPerHour: 'BTU per hour (BTU/h)', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.', kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only', productionMode: 'Estimate array output', sizingMode: 'Size for daily use', years: 'years', add: 'Add', subtract: 'Subtract', multiply: 'Multiply', divide: 'Divide', magnitude: 'Modulus', argument: 'Argument', rectangularToPolar: 'Rectangular to polar', polarToRectangular: 'Polar to rectangular', roots: 'Nth roots',
@@ -375,6 +376,7 @@ copies['chinese-remainder-theorem-calculator'] = { ...chineseRemainderEnglishCop
 copies['json-diff'] = { ...jsonDiffEnglishCopy };
 copies['text-to-binary-converter'] = { ...textToBinaryEnglishCopy };
 copies['certificate-decoder'] = { ...certificateDecoderEnglishCopy };
+copies['json-to-xml-converter'] = { ...jsonToXmlEnglishCopy };
 copies['savings-goal-calculator'] = { name: 'Savings Goal Calculator', actions: { ...actions, requiredContribution: 'Monthly deposit needed', monthsToGoal: 'Time needed for my deposit', beginning: 'Beginning of month', end: 'End of month' }, messages: { ...messages }, fields: { mode: 'Calculation', startingBalance: 'Current savings', targetAmount: 'Savings target', annualRatePercent: 'Annual rate', months: 'Months', monthlyContribution: 'Monthly deposit', contributionTiming: 'Deposit timing', accuracyNote: 'Estimate only.', resultSummary: 'Estimate', monthlyResult: 'Required deposit', monthsResult: 'Months', projectedBalance: 'Projected balance', totalContributions: 'Deposits', estimatedInterest: 'Estimated interest', currencyNote: 'Use the same currency.' } };
 copies['severance-pay-calculator'] = { name: 'Severance Pay Calculator', actions: { ...actions, customMode: 'Custom assumptions', ukMode: 'Great Britain statutory estimate' }, messages: { ...messages, calculationFailed: 'Could not calculate.', exampleLoaded: 'Example loaded.', calculateFirst: 'Calculate first.', belowServiceMinimum: 'Fewer than two completed years.', capApplied: 'A cap applied.', noCapApplied: 'No cap applied.', customAssumptions: 'Custom assumptions.' }, fields: { mode: 'Calculation type', weeklyPay: 'Average gross weekly pay', yearsOfService: 'Years of service', weeksPerYear: 'Weeks per year', birthDate: 'Birth date', employmentStartDate: 'Employment start date', redundancyDate: 'Redundancy date', accuracyNote: 'Estimate only.', customNote: 'Uses your assumptions.', ukNote: 'Great Britain estimate; enter GBP.', officialSource: 'Official guidance', estimate: 'Estimated amount', appliedWeeklyPay: 'Weekly pay used', totalWeeks: 'Weeks of pay', rulesAsOf: 'Rules from', resultSummary: 'Estimate details' } };
 copies['divisibility-calculator'] = { name: 'Divisibility Calculator', actions: { ...actions, commonDivisors: 'Test common divisors' }, messages: { ...messages, calculated: 'Results ready.', checkInputs: 'Check entries.', exampleLoaded: 'Example loaded.', commonDivisorsLoaded: 'Common divisors loaded.', calculateFirst: 'Check a number first.', divisible: 'Divisible', notDivisible: 'Not divisible' }, fields: { integer: 'Whole number', divisors: 'Divisors', accuracyNote: 'Checks up to 30 positive divisors.', resultSummary: 'Results', remainder: 'Remainder', quotient: 'Exact quotient', rule: 'Rule', rule1: 'Divisible by 1.', rule2: 'Last digit is even.', rule3: 'Digit sum divisible by 3.', rule4: 'Last two digits divisible by 4.', rule5: 'Last digit is 0 or 5.', rule6: 'Divisible by 2 and 3.', rule7: 'Double last digit and subtract.', rule8: 'Last three digits divisible by 8.', rule9: 'Digit sum divisible by 9.', rule10: 'Last digit is 0.', rule11: 'Alternating digit sum divisible by 11.', rule12: 'Divisible by 3 and 4.', rule13: 'Multiply last digit by 4 and add.', rule25: 'Last two digits are 00, 25, 50 or 75.', rule100: 'Last two digits are 00.', rule1000: 'Last three digits are 000.', ruleGeneric: 'Use the exact remainder.' } };
@@ -401,7 +403,7 @@ test('all pilot forms render semantic labels, explicit actions and localized str
     assert.ok(html.length > 100, `${tool.id} form should render`);
     assert.match(html, /aria-live="polite"/u, `${tool.id} should announce state/results`);
     assert.doesNotMatch(html, /\son[a-z]+=/iu, `${tool.id} must not use inline event handlers`);
-    assert.doesNotMatch(html, /undefined|null/u, `${tool.id} must not emit missing values`);
+    assert.doesNotMatch(html, />undefined<|>null</u, `${tool.id} must not emit missing values`);
   }
   assert.match(renderGrowthForm('gravel-calculator', copies['gravel-calculator']), /for="length"/u);
   assert.doesNotMatch(renderGrowthForm('gravel-calculator', copies['gravel-calculator']), /name="area"/u);
@@ -870,6 +872,19 @@ test('certificate decoder form supports bounded local PEM/DER input and safe res
   assert.match(html, /data-result-content/u);
   for (const action of ['example', 'decode', 'reset', 'copySummary']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
   assert.doesNotMatch(html, /value="-----BEGIN CERTIFICATE-----/u);
+});
+
+test('JSON/XML converter form exposes bidirectional bounded inputs and local output actions', () => {
+  const html = renderGrowthForm('json-to-xml-converter', jsonToXmlEnglishCopy);
+  assert.match(html, /name="mode"/u);
+  assert.match(html, /name="jsonInput"[^>]*maxlength="200000"/u);
+  assert.match(html, /name="xmlInput"[^>]*maxlength="200000"/u);
+  assert.match(html, /name="rootName"/u);
+  assert.match(html, /name="indent"/u);
+  assert.match(html, /data-json-xml-output/u);
+  for (const action of ['example', 'convert', 'reset', 'copy', 'download']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
+  assert.match(html, /data-tool-copy/u);
+  assert.doesNotMatch(html.slice(html.indexOf('<form')), /https?:\/\//u);
 });
 
 test('OpenAPI editor exposes local JSON/YAML editing, bounded file input and safe preview controls', () => {

@@ -1,0 +1,33 @@
+export const jsonToXmlEnglishCopy = Object.freeze({
+  copyLanguage: 'en', name: 'JSON to XML Converter', title: 'JSON to XML Converter Free | UsefulVerse',
+  description: 'Convert JSON to XML and XML to JSON in your browser. Map arrays and attributes locally with clear format limits. Free, no upload or account.',
+  intro: 'Convert JSON and XML in either direction on this device. Repeated XML elements become JSON arrays; JSON arrays become repeated elements. Attributes use @name and element text uses #text. No file is uploaded.',
+  howQuestion: 'How do I convert JSON to XML?',
+  howAnswer: 'Choose a direction, paste valid JSON or XML, set the XML root name if needed, and select Convert. JSON arrays become repeated XML elements, while repeated XML child names become JSON arrays.',
+  privacyQuestion: 'Is my JSON or XML uploaded?',
+  privacyAnswer: 'No. Conversion runs locally in your browser. Input is limited to 200,000 characters, and XML DTD/entity declarations are blocked.',
+  exampleJson: '{\n  "person": {\n    "@id": "42",\n    "name": "Ada",\n    "tag": ["math", "computing"]\n  }\n}',
+  exampleXml: '<?xml version="1.0"?>\n<people>\n  <person id="42">\n    <name>Ada</name>\n    <tag>math</tag>\n    <tag>computing</tag>\n  </person>\n</people>',
+  fields: {
+    mode: 'Conversion direction', jsonToXml: 'JSON to XML', xmlToJson: 'XML to JSON',
+    jsonInput: 'JSON input', jsonHint: 'Objects become nested elements. Use @name for attributes and #text for element text.',
+    xmlInput: 'XML input', xmlHint: 'Repeated child elements become arrays. Attributes use @name; mixed text is normalized.',
+    rootName: 'XML root element name', indent: 'Indentation', accuracyNote: 'Conversion is not type-preserving: XML text becomes JSON strings; null, empty values, comments and formatting may not round-trip exactly.',
+    output: 'Converted output', result: 'Result', copyHint: 'Review the output before using it in another system.',
+  },
+  actions: { convert: 'Convert', example: 'Load example', reset: 'Clear', copy: 'Copy output', download: 'Download output' },
+  messages: {
+    converted: 'Conversion complete in your browser.', 'empty-input': 'Enter JSON or XML first.', 'too-large': 'Input exceeds the 200,000-character limit.',
+    'invalid-json': 'Check the JSON syntax and try again.', 'invalid-xml': 'Check the XML syntax and try again.', 'invalid-xml-name': 'Use a valid simple XML name: letters, numbers, underscore, dot or hyphen; it must not start with a number.',
+    'too-deep': 'Input exceeds the 64-level nesting limit.', 'too-many-nodes': 'XML exceeds the 20,000-element limit.', 'too-many-array-items': 'An array exceeds the 5,000-item limit.',
+    'doctype-blocked': 'XML DTD and entity declarations are not supported.', 'attribute-must-be-scalar': 'XML attributes must contain a string, number, boolean or null.',
+    'unknown-reserved-key': 'Use @name for attributes and #text for text; other keys starting with # are unsupported.', 'invalid-indent': 'Choose a supported indentation size.',
+    'expected-scalar': 'This JSON value cannot be represented as an XML text value.', 'xml-parser-unavailable': 'XML parsing is unavailable in this browser.',
+    invalid: 'Conversion failed. Check the input and supported XML names.', copied: 'Output copied.', copyUnavailable: 'Clipboard is unavailable in this browser.', downloaded: 'Output downloaded.',
+  },
+  additionalFaqs: [
+    { question: 'How are JSON arrays represented in XML?', answer: 'Each array value becomes another element with the same name. When converted back, repeated child element names are grouped into a JSON array. A top-level array is wrapped in your selected root with item child elements.' },
+    { question: 'Does JSON to XML preserve data types?', answer: 'No. XML element text has no JSON number or boolean type, so XML to JSON returns text values as strings. Null and empty values can also become indistinguishable.' },
+    { question: 'Is XML DTD or external entity processing supported?', answer: 'No. DTD and entity declarations are blocked. The tool parses input locally and does not fetch external resources.' },
+  ],
+});
