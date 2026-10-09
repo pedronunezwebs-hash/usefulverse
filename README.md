@@ -16,9 +16,9 @@ Browser-first collection of fast, private, static tools for everyday work.
 
 The additional Growth600 tools are published as a separate static Cloudflare Pages site at
 [tools.usefulverse.com](https://tools.usefulverse.com/), so they do not replace or
-change the 277-tool catalog above. The hub contains 140 additional tools in
+change the 277-tool catalog above. The current build contains 141 additional tools in
 the same 36 locales. Its canonical URL inventory and language alternates are listed in
-the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (5,076 URLs after the Transformer Calculator release);
+the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (5,112 URLs in this build);
 the staged candidate checklist and implementation record are in
 [docs/growth600/PLAN-600.md](docs/growth600/PLAN-600.md) and
 [docs/growth600/PROGRESS.md](docs/growth600/PROGRESS.md).
@@ -10551,7 +10551,7 @@ These are the canonical URLs for the additional tools and their localized pages.
 
 <!-- BEGIN GENERATED GROWTH600 URL INVENTORY -->
 
-Generated from `dist-growth600/sitemap.xml`: **5,076 canonical URLs**.
+Generated from `dist-growth600/sitemap.xml`: **5,112 canonical URLs**.
 
 ```text
 https://tools.usefulverse.com/
@@ -10591,6 +10591,7 @@ https://tools.usefulverse.com/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/tools/dilution-calculator/
 https://tools.usefulverse.com/tools/ohms-law-calculator/
 https://tools.usefulverse.com/tools/transformer-calculator/
+https://tools.usefulverse.com/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/tools/density-calculator/
@@ -10732,6 +10733,7 @@ https://tools.usefulverse.com/es/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/es/tools/dilution-calculator/
 https://tools.usefulverse.com/es/tools/ohms-law-calculator/
 https://tools.usefulverse.com/es/tools/transformer-calculator/
+https://tools.usefulverse.com/es/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/es/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/es/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/es/tools/density-calculator/
@@ -10873,6 +10875,7 @@ https://tools.usefulverse.com/fr/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/fr/tools/dilution-calculator/
 https://tools.usefulverse.com/fr/tools/ohms-law-calculator/
 https://tools.usefulverse.com/fr/tools/transformer-calculator/
+https://tools.usefulverse.com/fr/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/fr/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/fr/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/fr/tools/density-calculator/
@@ -11014,6 +11017,7 @@ https://tools.usefulverse.com/pt-br/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/pt-br/tools/dilution-calculator/
 https://tools.usefulverse.com/pt-br/tools/ohms-law-calculator/
 https://tools.usefulverse.com/pt-br/tools/transformer-calculator/
+https://tools.usefulverse.com/pt-br/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/pt-br/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/pt-br/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/pt-br/tools/density-calculator/
@@ -11155,6 +11159,7 @@ https://tools.usefulverse.com/de/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/de/tools/dilution-calculator/
 https://tools.usefulverse.com/de/tools/ohms-law-calculator/
 https://tools.usefulverse.com/de/tools/transformer-calculator/
+https://tools.usefulverse.com/de/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/de/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/de/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/de/tools/density-calculator/
@@ -11296,6 +11301,7 @@ https://tools.usefulverse.com/ja/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/ja/tools/dilution-calculator/
 https://tools.usefulverse.com/ja/tools/ohms-law-calculator/
 https://tools.usefulverse.com/ja/tools/transformer-calculator/
+https://tools.usefulverse.com/ja/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/ja/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ja/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ja/tools/density-calculator/
@@ -11437,6 +11443,7 @@ https://tools.usefulverse.com/ko/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/ko/tools/dilution-calculator/
 https://tools.usefulverse.com/ko/tools/ohms-law-calculator/
 https://tools.usefulverse.com/ko/tools/transformer-calculator/
+https://tools.usefulverse.com/ko/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/ko/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ko/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ko/tools/density-calculator/
@@ -11578,6 +11585,7 @@ https://tools.usefulverse.com/id/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/id/tools/dilution-calculator/
 https://tools.usefulverse.com/id/tools/ohms-law-calculator/
 https://tools.usefulverse.com/id/tools/transformer-calculator/
+https://tools.usefulverse.com/id/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/id/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/id/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/id/tools/density-calculator/
@@ -11719,6 +11727,7 @@ https://tools.usefulverse.com/hi/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/hi/tools/dilution-calculator/
 https://tools.usefulverse.com/hi/tools/ohms-law-calculator/
 https://tools.usefulverse.com/hi/tools/transformer-calculator/
+https://tools.usefulverse.com/hi/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/hi/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/hi/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/hi/tools/density-calculator/
@@ -11860,6 +11869,7 @@ https://tools.usefulverse.com/ar/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/ar/tools/dilution-calculator/
 https://tools.usefulverse.com/ar/tools/ohms-law-calculator/
 https://tools.usefulverse.com/ar/tools/transformer-calculator/
+https://tools.usefulverse.com/ar/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/ar/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ar/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ar/tools/density-calculator/
@@ -12001,6 +12011,7 @@ https://tools.usefulverse.com/zh-cn/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/zh-cn/tools/dilution-calculator/
 https://tools.usefulverse.com/zh-cn/tools/ohms-law-calculator/
 https://tools.usefulverse.com/zh-cn/tools/transformer-calculator/
+https://tools.usefulverse.com/zh-cn/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/zh-cn/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/zh-cn/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/zh-cn/tools/density-calculator/
@@ -12142,6 +12153,7 @@ https://tools.usefulverse.com/bn/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/bn/tools/dilution-calculator/
 https://tools.usefulverse.com/bn/tools/ohms-law-calculator/
 https://tools.usefulverse.com/bn/tools/transformer-calculator/
+https://tools.usefulverse.com/bn/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/bn/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/bn/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/bn/tools/density-calculator/
@@ -12283,6 +12295,7 @@ https://tools.usefulverse.com/ru/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/ru/tools/dilution-calculator/
 https://tools.usefulverse.com/ru/tools/ohms-law-calculator/
 https://tools.usefulverse.com/ru/tools/transformer-calculator/
+https://tools.usefulverse.com/ru/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/ru/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ru/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ru/tools/density-calculator/
@@ -12424,6 +12437,7 @@ https://tools.usefulverse.com/ur/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/ur/tools/dilution-calculator/
 https://tools.usefulverse.com/ur/tools/ohms-law-calculator/
 https://tools.usefulverse.com/ur/tools/transformer-calculator/
+https://tools.usefulverse.com/ur/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/ur/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ur/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ur/tools/density-calculator/
@@ -12565,6 +12579,7 @@ https://tools.usefulverse.com/tr/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/tr/tools/dilution-calculator/
 https://tools.usefulverse.com/tr/tools/ohms-law-calculator/
 https://tools.usefulverse.com/tr/tools/transformer-calculator/
+https://tools.usefulverse.com/tr/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/tr/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/tr/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/tr/tools/density-calculator/
@@ -12706,6 +12721,7 @@ https://tools.usefulverse.com/vi/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/vi/tools/dilution-calculator/
 https://tools.usefulverse.com/vi/tools/ohms-law-calculator/
 https://tools.usefulverse.com/vi/tools/transformer-calculator/
+https://tools.usefulverse.com/vi/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/vi/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/vi/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/vi/tools/density-calculator/
@@ -12847,6 +12863,7 @@ https://tools.usefulverse.com/it/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/it/tools/dilution-calculator/
 https://tools.usefulverse.com/it/tools/ohms-law-calculator/
 https://tools.usefulverse.com/it/tools/transformer-calculator/
+https://tools.usefulverse.com/it/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/it/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/it/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/it/tools/density-calculator/
@@ -12988,6 +13005,7 @@ https://tools.usefulverse.com/zh-tw/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/zh-tw/tools/dilution-calculator/
 https://tools.usefulverse.com/zh-tw/tools/ohms-law-calculator/
 https://tools.usefulverse.com/zh-tw/tools/transformer-calculator/
+https://tools.usefulverse.com/zh-tw/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/zh-tw/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/zh-tw/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/zh-tw/tools/density-calculator/
@@ -13129,6 +13147,7 @@ https://tools.usefulverse.com/bg/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/bg/tools/dilution-calculator/
 https://tools.usefulverse.com/bg/tools/ohms-law-calculator/
 https://tools.usefulverse.com/bg/tools/transformer-calculator/
+https://tools.usefulverse.com/bg/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/bg/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/bg/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/bg/tools/density-calculator/
@@ -13270,6 +13289,7 @@ https://tools.usefulverse.com/ca/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/ca/tools/dilution-calculator/
 https://tools.usefulverse.com/ca/tools/ohms-law-calculator/
 https://tools.usefulverse.com/ca/tools/transformer-calculator/
+https://tools.usefulverse.com/ca/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/ca/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ca/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ca/tools/density-calculator/
@@ -13411,6 +13431,7 @@ https://tools.usefulverse.com/nl/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/nl/tools/dilution-calculator/
 https://tools.usefulverse.com/nl/tools/ohms-law-calculator/
 https://tools.usefulverse.com/nl/tools/transformer-calculator/
+https://tools.usefulverse.com/nl/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/nl/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/nl/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/nl/tools/density-calculator/
@@ -13552,6 +13573,7 @@ https://tools.usefulverse.com/el/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/el/tools/dilution-calculator/
 https://tools.usefulverse.com/el/tools/ohms-law-calculator/
 https://tools.usefulverse.com/el/tools/transformer-calculator/
+https://tools.usefulverse.com/el/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/el/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/el/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/el/tools/density-calculator/
@@ -13693,6 +13715,7 @@ https://tools.usefulverse.com/ms/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/ms/tools/dilution-calculator/
 https://tools.usefulverse.com/ms/tools/ohms-law-calculator/
 https://tools.usefulverse.com/ms/tools/transformer-calculator/
+https://tools.usefulverse.com/ms/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/ms/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ms/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ms/tools/density-calculator/
@@ -13834,6 +13857,7 @@ https://tools.usefulverse.com/pl/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/pl/tools/dilution-calculator/
 https://tools.usefulverse.com/pl/tools/ohms-law-calculator/
 https://tools.usefulverse.com/pl/tools/transformer-calculator/
+https://tools.usefulverse.com/pl/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/pl/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/pl/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/pl/tools/density-calculator/
@@ -13975,6 +13999,7 @@ https://tools.usefulverse.com/sv/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/sv/tools/dilution-calculator/
 https://tools.usefulverse.com/sv/tools/ohms-law-calculator/
 https://tools.usefulverse.com/sv/tools/transformer-calculator/
+https://tools.usefulverse.com/sv/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/sv/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/sv/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/sv/tools/density-calculator/
@@ -14116,6 +14141,7 @@ https://tools.usefulverse.com/th/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/th/tools/dilution-calculator/
 https://tools.usefulverse.com/th/tools/ohms-law-calculator/
 https://tools.usefulverse.com/th/tools/transformer-calculator/
+https://tools.usefulverse.com/th/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/th/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/th/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/th/tools/density-calculator/
@@ -14257,6 +14283,7 @@ https://tools.usefulverse.com/uk/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/uk/tools/dilution-calculator/
 https://tools.usefulverse.com/uk/tools/ohms-law-calculator/
 https://tools.usefulverse.com/uk/tools/transformer-calculator/
+https://tools.usefulverse.com/uk/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/uk/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/uk/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/uk/tools/density-calculator/
@@ -14398,6 +14425,7 @@ https://tools.usefulverse.com/sw/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/sw/tools/dilution-calculator/
 https://tools.usefulverse.com/sw/tools/ohms-law-calculator/
 https://tools.usefulverse.com/sw/tools/transformer-calculator/
+https://tools.usefulverse.com/sw/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/sw/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/sw/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/sw/tools/density-calculator/
@@ -14539,6 +14567,7 @@ https://tools.usefulverse.com/mr/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/mr/tools/dilution-calculator/
 https://tools.usefulverse.com/mr/tools/ohms-law-calculator/
 https://tools.usefulverse.com/mr/tools/transformer-calculator/
+https://tools.usefulverse.com/mr/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/mr/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/mr/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/mr/tools/density-calculator/
@@ -14680,6 +14709,7 @@ https://tools.usefulverse.com/te/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/te/tools/dilution-calculator/
 https://tools.usefulverse.com/te/tools/ohms-law-calculator/
 https://tools.usefulverse.com/te/tools/transformer-calculator/
+https://tools.usefulverse.com/te/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/te/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/te/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/te/tools/density-calculator/
@@ -14821,6 +14851,7 @@ https://tools.usefulverse.com/ha/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/ha/tools/dilution-calculator/
 https://tools.usefulverse.com/ha/tools/ohms-law-calculator/
 https://tools.usefulverse.com/ha/tools/transformer-calculator/
+https://tools.usefulverse.com/ha/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/ha/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ha/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ha/tools/density-calculator/
@@ -14962,6 +14993,7 @@ https://tools.usefulverse.com/tl/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/tl/tools/dilution-calculator/
 https://tools.usefulverse.com/tl/tools/ohms-law-calculator/
 https://tools.usefulverse.com/tl/tools/transformer-calculator/
+https://tools.usefulverse.com/tl/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/tl/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/tl/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/tl/tools/density-calculator/
@@ -15103,6 +15135,7 @@ https://tools.usefulverse.com/ta/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/ta/tools/dilution-calculator/
 https://tools.usefulverse.com/ta/tools/ohms-law-calculator/
 https://tools.usefulverse.com/ta/tools/transformer-calculator/
+https://tools.usefulverse.com/ta/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/ta/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ta/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ta/tools/density-calculator/
@@ -15244,6 +15277,7 @@ https://tools.usefulverse.com/fa/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/fa/tools/dilution-calculator/
 https://tools.usefulverse.com/fa/tools/ohms-law-calculator/
 https://tools.usefulverse.com/fa/tools/transformer-calculator/
+https://tools.usefulverse.com/fa/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/fa/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/fa/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/fa/tools/density-calculator/
@@ -15385,6 +15419,7 @@ https://tools.usefulverse.com/am/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/am/tools/dilution-calculator/
 https://tools.usefulverse.com/am/tools/ohms-law-calculator/
 https://tools.usefulverse.com/am/tools/transformer-calculator/
+https://tools.usefulverse.com/am/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/am/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/am/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/am/tools/density-calculator/
@@ -15526,6 +15561,7 @@ https://tools.usefulverse.com/gu/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/gu/tools/dilution-calculator/
 https://tools.usefulverse.com/gu/tools/ohms-law-calculator/
 https://tools.usefulverse.com/gu/tools/transformer-calculator/
+https://tools.usefulverse.com/gu/tools/stoichiometry-calculator/
 https://tools.usefulverse.com/gu/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/gu/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/gu/tools/density-calculator/

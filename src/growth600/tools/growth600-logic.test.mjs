@@ -43,6 +43,7 @@ import { calculateMolarity } from './molarity-calculator/logic.mjs';
 import { calculateDilution } from './dilution-calculator/logic.mjs';
 import { calculateEquivalentResistance, solveOhmsLaw } from './ohms-law-calculator/logic.mjs';
 import { calculateTransformer } from './transformer-calculator/logic.mjs';
+import { calculateStoichiometry } from './stoichiometry-calculator/logic.mjs';
 import { balanceChemicalEquation } from './chemical-equation-balancer/logic.mjs';
 import { calculateGearRatio } from './gear-ratio-calculator/logic.mjs';
 import { calculateDensity, parseDensityComponents } from './density-calculator/logic.mjs';
@@ -73,6 +74,15 @@ test('transformer calculator covers voltage, turns ratio, current and invalid in
   assert.equal(calculateTransformer({ mode: 'ratio', primaryVoltage: 120, secondaryVoltage: 60 }).turnsRatio, 0.5);
   assert.equal(calculateTransformer({ mode: 'current', primaryCurrent: 2, primaryTurns: 100, secondaryTurns: 50, efficiencyPercent: 90 }).secondaryCurrent, 3.6);
   assert.throws(() => calculateTransformer({ mode: 'current', primaryCurrent: 2, primaryTurns: 100, secondaryTurns: 50, efficiencyPercent: 0 }), /Efficiency/u);
+});
+
+test('stoichiometry uses shared balancing and molar-mass logic to calculate limiting reagent and yield', () => {
+  const result = calculateStoichiometry({ equation: 'H2 + O2 -> H2O', reactantAmounts: [4.032, 31.998], actualProductMass: 18.015 });
+  assert.deepEqual(result.limitingReactants, ['H2', 'O2']);
+  assert.equal(result.balancedEquation, '2H2 + O2 → 2H2O');
+  assert.equal(result.theoreticalProductMoles, 2);
+  assert.ok(Math.abs(result.theoreticalProductMass - 36.03) < 1e-10);
+  assert.equal(result.percentYield, 50);
 });
 
 test('kinetic energy calculator solves direct, inverse-speed and reference-height cases', () => {

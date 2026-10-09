@@ -6,6 +6,8 @@ import { localeEntries } from '../locales.mjs';
 import englishGrowthCopy from './locales/en.mjs';
 import transformerCopies from './locales/transformer-calculator-final.mjs';
 import { transformerCalculatorEnglishCopy } from './locales/transformer-calculator.en.mjs';
+import stoichiometryCopies from './locales/stoichiometry-calculator-final.mjs';
+import { stoichiometryCalculatorEnglishCopy } from './locales/stoichiometry-calculator.en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
 import portugueseGrowthCopy from './locales/pt.mjs';
 import germanGrowthCopy from './locales/de.mjs';
@@ -1503,6 +1505,21 @@ test('transformer calculator has complete static copy and machine-accepted local
   assert.ok(tool);
   assert.equal(transformerCopies.en.name, transformerCalculatorEnglishCopy.name);
   assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('stoichiometry calculator has complete static copy and machine-accepted localization in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'stoichiometry-calculator');
+  assert.ok(tool);
+  assert.equal(stoichiometryCopies.en.name, stoichiometryCalculatorEnglishCopy.name);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const locale of localeEntries) {
+    const copy = stoichiometryCopies[locale.key];
+    assert.ok(copy.fields.equation && copy.fields.reactantAmounts && copy.fields.accuracyNote, locale.key);
+    assert.ok(copy.messages.limitingReactants && copy.messages.percentYield, locale.key);
+    assert.ok([...copy.title].length <= 60, locale.key);
+    assert.ok([...copy.description].length <= 160, locale.key);
+  }
+  assert.match(stoichiometryCopies.ar.fields.equation, /التفاعل/u);
 });
 
 test('chemical equation balancer has complete English copy but has approved localized copy across all 36 languages', () => {

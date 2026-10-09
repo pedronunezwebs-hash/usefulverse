@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 140);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 140);
+  assert.equal(growthPilotTools.length, 141);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 141);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -37,6 +37,17 @@ test('momentum calculator models a signed one-dimensional collision without dupl
   assert.match(tool.acceptance, /exchange velocities.*momentum is 1/u);
   assert.match(tool.functions.join(' '), /coefficient of restitution/u);
   assert.match(tool.boundary, /One-dimensional classical.*no net external impulse/u);
+});
+
+test('stoichiometry calculator estimates limiting reactants and yield without duplicating equation balancing or molar mass', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'stoichiometry-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'stoichiometry calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['chemical-equation-balancer', 'molar-mass-calculator']);
+  assert.match(tool.functions.join(' '), /limiting reactant/u);
+  assert.match(tool.functions.join(' '), /percent yield/u);
+  assert.match(tool.acceptance, /2 mol H2.*1 mol O2.*2 mol.*36\.03 g/u);
+  assert.match(tool.boundary, /ionic\/electron balance.*hazards/u);
 });
 
 test('torque calculator separates force moments from shaft-power calculations', () => {

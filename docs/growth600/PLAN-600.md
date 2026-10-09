@@ -9,7 +9,7 @@ Fecha de investigación: 7 de octubre de 2026. Documento de planificación y che
 - [x] Comprobar la base de planificación: **277 herramientas y 36 idiomas**.
 - [x] Investigar demanda con un gasto acotado en DataForSEO y registrar los resultados reales.
 - [x] Consolidar variantes antes de fijar el nuevo catálogo, sin contar una dirección de conversión como otra herramienta.
-- [ ] Implementar las nuevas herramientas. **Progreso al 9 de octubre de 2026: 139/323 herramientas Growth600 publicadas (416 en total con las 277 originales); #234 está en validación local.** Consultar `docs/growth600/PROGRESS.md` para el estado y evidencia de cada entrega; las métricas históricas no implican indexación.
+- [ ] Implementar las nuevas herramientas. **Progreso al 9 de octubre de 2026: 139/323 herramientas Growth600 publicadas (416 en total con las 277 originales); #234 está integrada en `main`, pero su publicación al hub sigue pendiente.** Consultar `docs/growth600/PROGRESS.md` para el estado y evidencia de cada entrega; las métricas históricas no implican indexación.
 
 Snapshot consultado: rama `main`, commit `685f91adfc7818a54f6dc0a967e290d13137a3dd`. Catálogo: `src/catalog.mjs`; funciones y contratos representativos: `src/app.js`, módulos de lógica, `src/opportunity-tools.mjs`, `src/seo.mjs`, locales, build y documentación del repo. Se inspeccionaron los metadatos de las 277 herramientas y contratos clave para descartar duplicados; esto **no es una nueva auditoría funcional completa de las 277**.
 
@@ -1386,13 +1386,16 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 246 · Stoichiometry Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `stoichiometry-calculator`**
+- [x] **C/F/E/X/L/B — lógica, experiencia, pruebas, traducción y límites completados; P/S pendiente — `stoichiometry-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/stoichiometry-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `stoichiometry calculator` — 1.300 búsquedas/mes US/en, KD 4; nivel B. CPC 2.03 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Reactivos, masas, moles, limitante, rendimiento y explicación
-- **Prueba de aceptación específica:** 2molH2 y1molO2 generan2molH2O teórico
+- **Función mínima y ampliaciones útiles:** [x] reactivos, masas/moles, limitante, rendimiento porcentual, varios productos y explicación; entradas explícitas en orden de reacción.
+- **Prueba de aceptación específica:** [x] 2 mol H2 y 1 mol O2 generan 2 mol H2O teóricos (~36,03 g); 18,015 g reales → 50%.
 - **Frontera con otras herramientas:** chemical-equation-balancer: cantidades no solo balance. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** [x] motor local sin dependencia nueva; comparte el balanceador de ecuaciones y la tabla de masa molar. Acepta fórmulas moleculares neutras y los elementos ya soportados; no simula pureza, equilibrio, condiciones, reacciones laterales ni seguridad de laboratorio.
+- **Validación local:** [x] suite global 1.728/1.728; `npm run locale:release-check`; `npm run check` mantiene 10.260 URLs principales; hub aislado 5.112 rutas (141 × 36 + 36 portadas). Chrome EN resolvió rendimiento teórico y porcentaje; AR RTL a 390 px dio el mismo resultado, sin overflow ni avisos/errores de consola. Traducciones automáticas estáticas; copy árabe redactado específicamente, no revisión nativa. Sin PageSpeed/Lighthouse.
+- **Inventario:** README generado con 10.260 URLs principales y 5.112 rutas del hub en este build.
+- [ ] **P/S:** PR, publicación al proyecto Cloudflare `usefulverse-tools`, sitemap público y eventual envío a buscadores aún pendientes; no contar como herramienta pública hasta verificarlos.
 - **Consultas secundarias del mismo propietario:**
   - `limiting reactant calculator` — 480/mes US/en; KD 0.
   - `stoichiometry calculator free online`; `stoichiometry calculator with example`; `stoichiometry calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
