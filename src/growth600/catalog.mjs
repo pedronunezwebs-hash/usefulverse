@@ -456,6 +456,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/pressure-calculator/logic.mjs',
   },
   {
+    id: 'pcb-trace-width-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'pcb trace width calculator',
+    secondaryIntents: ['pcb current calculator', 'printed circuit board trace current capacity'],
+    functions: ['estimate PCB copper trace width from current, copper weight, allowable temperature rise, and internal or external layer', 'estimate current capacity for a specified width and copper weight using the same explicit model', 'show width in mil and mm and disclose the empirical model and assumptions'],
+    acceptance: 'zero current is rejected as not dimensionable; 2 A, 1 oz copper, 10 °C rise on an external trace returns a finite positive width estimate.',
+    boundary: 'Legacy IPC-2221 empirical current/temperature-rise approximation only, using separate k values for internal and external conductors. Not IPC certification or a guarantee of safe design; it omits board stack-up, copper roughness, plating, etching, nearby planes, airflow, pulse/current duty, ambient temperature and manufacturing tolerances. Use the current applicable IPC standard, thermal simulation, and qualified engineering review for real products. Calculations run locally; inputs are not uploaded.',
+    relatedExistingIds: ['voltage-drop-calculator', 'ohms-law-calculator'],
+    logicModule: './tools/pcb-trace-width-calculator/logic.mjs',
+  },
+  {
     id: 'chemical-equation-balancer',
     category: 'science-engineering',
     type: 'calculator',

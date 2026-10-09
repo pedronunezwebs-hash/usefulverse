@@ -10,6 +10,8 @@ import stoichiometryCopies from './locales/stoichiometry-calculator-final.mjs';
 import { stoichiometryCalculatorEnglishCopy } from './locales/stoichiometry-calculator.en.mjs';
 import pressureCalculatorCopies from './locales/pressure-calculator-final.mjs';
 import { pressureCalculatorEnglishCopy } from './locales/pressure-calculator.en.mjs';
+import pcbTraceWidthCopies from './locales/pcb-trace-width-calculator-final.mjs';
+import { pcbTraceWidthCalculatorEnglishCopy } from './locales/pcb-trace-width-calculator.en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
 import portugueseGrowthCopy from './locales/pt.mjs';
 import germanGrowthCopy from './locales/de.mjs';
@@ -1537,6 +1539,22 @@ test('pressure calculator has complete static copy and machine-assisted localiza
     assert.ok([...copy.description].length <= 160, locale.key);
   }
   assert.match(pressureCalculatorCopies.ar.fields.mode, /الحساب/u);
+});
+
+test('PCB trace width calculator has complete static copy and machine-accepted localization in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'pcb-trace-width-calculator');
+  assert.ok(tool);
+  assert.equal(pcbTraceWidthCopies.en.name, pcbTraceWidthCalculatorEnglishCopy.name);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const locale of localeEntries) {
+    const copy = pcbTraceWidthCopies[locale.key];
+    assert.ok(copy.fields.mode && copy.fields.copperWeight && copy.fields.accuracyNote, locale.key);
+    assert.ok(copy.fields.formulaNote && copy.fields.sourceLink && copy.fields.resultWidth, locale.key);
+    assert.ok(copy.messages.calculated && copy.messages.checkInputs, locale.key);
+    assert.ok([...copy.title].length <= 60, locale.key);
+    assert.ok([...copy.description].length <= 160, locale.key);
+  }
+  assert.match(pcbTraceWidthCopies.ar.fields.accuracyNote, /IPC-2221/u);
 });
 
 test('chemical equation balancer has complete English copy but has approved localized copy across all 36 languages', () => {

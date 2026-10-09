@@ -1,0 +1,25 @@
+export const pcbTraceWidthCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en', name: 'PCB Trace Width Calculator',
+  title: 'PCB Trace Width Calculator Free & Unlimited | UsefulVerse',
+  description: 'Estimate PCB trace width or current from copper weight and temperature rise with the classic IPC-2221 model. Free, local and unlimited.',
+  intro: 'Estimate a printed-circuit-board copper trace width from current, copper weight, layer position and allowed temperature rise—or estimate current for a known width.',
+  howQuestion: 'How do you estimate PCB trace width?',
+  howAnswer: 'Choose a width or current-capacity estimate, select an internal or external copper layer, and enter current, copper weight and temperature rise. The calculator uses the classic IPC-2221 empirical equation and reports width in mil and millimetres.',
+  privacyQuestion: 'Are my PCB values uploaded?',
+  privacyAnswer: 'No. The estimate runs in this browser; values are not uploaded or saved.',
+  fields: {
+    mode: 'Calculation', requiredWidthMode: 'Estimate required trace width', currentCapacityMode: 'Estimate current for a known width',
+    conductor: 'Copper layer', external: 'External layer', internal: 'Internal layer', current: 'Current (A)',
+    copperWeight: 'Copper weight (oz/ft²)', temperatureRise: 'Allowed temperature rise (°C)', width: 'Trace width', widthUnit: 'Width unit',
+    accuracyNote: 'Classic IPC-2221 empirical approximation: I = k × ΔT^0.44 × A^0.725; A is cross-sectional area in square mils, with k=0.048 external and 0.024 internal. This is not certification or a safety guarantee. It omits board stack-up, etching, plating, copper roughness, nearby planes, airflow, pulses, ambient temperature and manufacturing tolerances. Check the current applicable IPC standard and have real designs reviewed. The standard text may require purchase. Runs locally; no upload.',
+    formulaNote: 'Model: I = k × ΔT^0.44 × A^0.725. Width = A ÷ copper thickness.',
+    sourceLink: 'IPC standards catalog', resultWidth: 'Estimated trace width', resultCurrent: 'Estimated current', resultMil: 'Width (mil)', resultMm: 'Width (mm)', resultArea: 'Copper cross-section (mil²)', resultModel: 'Model and layer',
+  },
+  actions: { calculate: 'Estimate', example: 'Load example', reset: 'Clear', copy: 'Copy results', result: 'PCB trace estimate' },
+  messages: { copied: 'Results copied.', copyUnavailable: 'Copy is not available in this browser.', calculated: 'Estimate complete.', checkInputs: 'Enter positive current, copper weight, width and temperature rise within the supported ranges.', externalModel: 'External copper · k=0.048', internalModel: 'Internal copper · k=0.024' },
+  additionalFaqs: [
+    { question: 'What formula does this PCB trace calculator use?', answer: 'It uses the classic IPC-2221 empirical relationship I = k × ΔT^0.44 × A^0.725, where current is in amperes, temperature rise is in °C, and cross-section is in square mils. The k value differs for external and internal traces.' },
+    { question: 'Why does the estimate depend on whether the trace is internal or external?', answer: 'The classic model uses different empirical constants for internal and external conductors. Real heat flow also depends on the board stack-up, copper planes, airflow and manufacturing, which this simple estimate does not model.' },
+    { question: 'Is this a safe width or IPC-compliant design?', answer: 'No. It is an approximate educational estimate, not certification or a safety guarantee. Use the current applicable standard, thermal analysis and qualified review for a real board. IPC lists IPC-2221 and IPC-2152 in its standards catalog.' },
+  ],
+});

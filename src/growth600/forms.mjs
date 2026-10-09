@@ -61,6 +61,7 @@ export function renderGrowthForm(toolId, copy) {
     'transformer-calculator': ['mode', 'voltageMode', 'ratioMode', 'currentMode', 'primaryVoltage', 'secondaryVoltage', 'primaryTurns', 'secondaryTurns', 'primaryCurrent', 'efficiencyPercent', 'accuracyNote'],
     'stoichiometry-calculator': ['equation', 'inputMode', 'gramsMode', 'molesMode', 'reactantAmounts', 'reactantAmountsHint', 'products', 'actualProductMass', 'actualProductHint', 'accuracyNote'],
     'pressure-calculator': ['mode', 'forceAreaMode', 'hydrostaticMode', 'force', 'forceUnit', 'area', 'areaUnit', 'density', 'densityUnit', 'depth', 'depthUnit', 'gravity', 'pressureUnit', 'accuracyNote'],
+    'pcb-trace-width-calculator': ['mode', 'requiredWidthMode', 'currentCapacityMode', 'conductor', 'external', 'internal', 'current', 'copperWeight', 'temperatureRise', 'width', 'widthUnit', 'accuracyNote'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
     'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
     'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
@@ -211,6 +212,7 @@ export function renderGrowthForm(toolId, copy) {
     'transformer-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'stoichiometry-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'pressure-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'pcb-trace-width-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
     'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -2047,6 +2049,24 @@ export function renderGrowthForm(toolId, copy) {
     </div>
     ${label('pressure-output-unit', fields.pressureUnit, '<select id="pressure-output-unit" name="pressureUnit"><option value="Pa">Pa</option><option value="kPa">kPa</option><option value="MPa">MPa</option><option value="bar">bar</option><option value="atm">atm</option><option value="psi">psi</option><option value="torr">torr</option></select>')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'pcb-trace-width-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('pcb-trace-mode', fields.mode, `<select id="pcb-trace-mode" name="mode"><option value="required-width">${escapeGrowthHtml(fields.requiredWidthMode)}</option><option value="current-capacity">${escapeGrowthHtml(fields.currentCapacityMode)}</option></select>`)}
+    ${label('pcb-trace-conductor', fields.conductor, `<select id="pcb-trace-conductor" name="conductor"><option value="external">${escapeGrowthHtml(fields.external)}</option><option value="internal">${escapeGrowthHtml(fields.internal)}</option></select>`)}
+    <div data-pcb-trace-inputs="required-width">
+      ${label('pcb-trace-current', fields.current, '<input id="pcb-trace-current" name="currentA" type="number" min="0.000001" max="1000000" step="any" inputmode="decimal" value="2">')}
+    </div>
+    <div data-pcb-trace-inputs="current-capacity" hidden>
+      ${label('pcb-trace-width', fields.width, '<input id="pcb-trace-width" name="width" type="number" min="0.000001" max="1000000000" step="any" inputmode="decimal" value="1">')}
+      ${label('pcb-trace-width-unit', fields.widthUnit, '<select id="pcb-trace-width-unit" name="widthUnit"><option value="mm">mm</option><option value="mil">mil</option></select>')}
+    </div>
+    ${label('pcb-trace-copper', fields.copperWeight, '<input id="pcb-trace-copper" name="copperWeightOz" type="number" min="0.000001" max="20" step="any" inputmode="decimal" value="1">')}
+    ${label('pcb-trace-temperature-rise', fields.temperatureRise, '<input id="pcb-trace-temperature-rise" name="temperatureRiseC" type="number" min="0.000001" max="500" step="any" inputmode="decimal" value="10">')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)} <a href="https://www.electronics.org/ipc-design-standards" target="_blank" rel="noopener noreferrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
