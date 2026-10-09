@@ -4,7 +4,7 @@
 
 ## Estado público actual · 2026-10-09
 
-- **133 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **4.824 URLs** (133 × 36 + 36 páginas de idioma): **410 herramientas públicas en total** y 15.084 URLs entre los dos sitios. Esto no equivale a que los buscadores hayan indexado cada URL.
+- **134 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **4.860 URLs** (134 × 36 + 36 páginas de idioma): **411 herramientas públicas en total** y 15.120 URLs entre los dos sitios. Esto no equivale a que los buscadores hayan indexado cada URL.
 - #148 Text to Binary Converter: PR #81 integrada; despliegue principal `37891603568` y despliegue del hub `37892340212` correctos. EN/ES/AR responden HTTP 200.
 - #171 Schema Markup Validator, #172 Readability Checker y #173 Savings Goal Calculator ya aparecen en las 36 versiones públicas; verificaciones previas registradas debajo.
 - #189 Certificate Decoder: 36 rutas públicas; detalles de pruebas y despliegue anotados abajo.
@@ -18,7 +18,19 @@
 - #197 Frequency & Wavelength Calculator: PR #92 integrada en `31740ff9e4fef3893f7430f0e3dc79cb750e1c84`; CI PR `37917275415`, deploy principal `37917709058` y publicación del hub `37919442515` completados. Suite **1.649/1.649**, `locale:release-check`, `npm run check` (10.260 URLs principales) y build aislado (**4.752 páginas**) pasan. QA Chrome: EN `100 MHz × 300.000.000 m/s → 3 m`; AR RTL a 390 px conserva 390 px de ancho, calcula el mismo resultado y no tiene errores de consola. Rutas EN/AR y sitemap (4.752 URLs) HTTP 200; no equivale a indexación. No se midió PageSpeed/Lighthouse.
 - #198 Ideal Gas Law Calculator: PR #93 integrada en `2aca1084e1a0a934ac035af8aad14550e04ea5b6`; CI/deploy y publicación del hub `37920634145` completados. El sitemap público responde HTTP 200 con **4.788 URLs**, sin la ruta Torque. Cuenta como la herramienta #132 de Growth600.
 - #201 Torque Calculator: PR #94 integrada en `d2a37fa5d3277bcbb043bc89d491e3037b2230c6`; CI PR `37923822746`, deploy principal `37924248092` y publicación del hub `37924710004` completados. Sitemap HTTP 200 con **4.824 URLs únicas**, exactamente 36 variantes Torque; las 36 rutas responden HTTP 200 y tienen canonical autorreferente. No se afirma indexación ni envío manual a buscadores.
+- #203 Beam Deflection Calculator: PR [#95](https://github.com/pedronunezwebs-hash/usefulverse/pull/95) integrada en `d63a3a355d55d48bd5a1968a2a4a6fcf3d95e22f`; CI PR `37927224340`, publicación principal `37927684168` y hub `37928230741` correctas. Suite PR y gates de build/locale/hub pasaron. El hub responde con sitemap HTTP 200 y **4.860 URLs únicas**, incluidas las 36 variantes de Beam Deflection; las 36 rutas retornan HTTP 200 y canonical autorreferente. QA funcional local EN/AR comprobó carga central 1 kN en viga simple de 4 m (0,8333 mm), carga uniforme 1 kN/m (2,0833 mm) y voladizo (13,333 mm), incluido RTL sin overflow ni errores de consola. 36 borradores estáticos de Google Translate, sin traducción en runtime ni revisión nativa. Herramienta educativa Euler–Bernoulli; no certifica ni diseña estructuras. No se midió PageSpeed/Lighthouse ni se afirma indexación.
 - `npm run check` conserva **10.260 URLs** del sitio principal. No se mide PageSpeed/Lighthouse.
+
+## Publicada · Beam Deflection Calculator (#203 del plan)
+
+- Implementa cuatro casos clásicos de viga Euler–Bernoulli (viga simplemente apoyada o voladizo; carga puntual o carga uniforme), conversiones explícitas SI/imperiales, deflexión máxima y ubicación, momento máximo, rigidez EI y curva SVG ligera.
+- Límites y unidades declarados; solo estimación elástica lineal y pequeñas deflexiones. No calcula resistencia, cortante, pandeo, uniones, combinaciones ni cumplimiento de códigos. Copy advierte que es educativo y no sustituye a una persona ingeniera estructural.
+- 36 copias estáticas desde inglés, aceptadas como traducción automática sencilla, sin servicio de traducción en runtime. Símbolos y nombres técnicos ajustados para árabe; no se presentan como revisión nativa.
+- Pruebas de lógica focales **5/5**; suite CI completa verde; `npm run locale:release-check`; `npm run check` mantiene **10.260 URLs** principales; build del hub **4.860 páginas** (134 × 36 + 36 páginas de idioma).
+- QA local: EN comprobó 0,8333 mm para 4 m/1.000 N/E=200 GPa/I=8.000 mm⁴, más caso uniforme y voladizo; AR RTL calculó igual, mantuvo 390/390 px y consola limpia.
+- [x] P/S — PR #95; CI `37927224340`; despliegues `37927684168` (principal) y `37928230741` (hub). Las 36 URL localizadas públicas son HTTP 200 con canonical propio; sitemap contiene **4.860 URL únicas**. Publicación no equivale a indexación; no hubo envío manual a buscadores ni PageSpeed/Lighthouse.
+- **Recuento tras publicación:** 134 herramientas Growth600 / 4.860 URLs de hub; 411 herramientas públicas y 15.120 URLs sumando el sitio principal. Las 277 originales quedan intactas.
+- **Siguiente candidata:** #205 Led Resistor Calculator; detalles/estado actual en `PLAN-600.md`.
 
 ## Publicado · JSON to Excel (#235 del plan)
 

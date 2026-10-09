@@ -52,6 +52,7 @@ export function renderGrowthForm(toolId, copy) {
     'ideal-gas-law-calculator': ['pressure', 'volume', 'amount', 'temperature', 'pressureUnit', 'volumeUnit', 'amountUnit', 'temperatureUnit', 'pascal', 'kilopascal', 'megapascal', 'bar', 'atmosphere', 'torr', 'psi', 'cubicMeters', 'liters', 'milliliters', 'cubicFeet', 'mol', 'millimol', 'kilomol', 'kelvin', 'celsius', 'accuracyNote'],
     'torque-calculator': ['mode', 'solveTorque', 'solveForce', 'solveArm', 'force', 'forceUnit', 'newton', 'kilonewton', 'poundForce', 'arm', 'distanceUnit', 'meters', 'centimeters', 'millimeters', 'feet', 'inches', 'angle', 'torque', 'torqueUnit', 'newtonMeters', 'kilonewtonMeters', 'poundFeet', 'poundInches', 'direction', 'clockwise', 'counterclockwise', 'perpendicularForce', 'momentArm', 'accuracyNote'],
     'beam-deflection-calculator': ['support', 'simplySupported', 'cantilever', 'loadCase', 'pointLoad', 'uniformLoad', 'span', 'lengthUnit', 'meters', 'centimeters', 'millimeters', 'inches', 'feet', 'load', 'forceUnit', 'newtons', 'kilonewtons', 'poundsForce', 'modulus', 'modulusUnit', 'pascals', 'megapascals', 'gigapascals', 'psi', 'ksi', 'inertia', 'inertiaUnit', 'mm4', 'cm4', 'm4', 'in4', 'ft4', 'loadUnitHint', 'accuracyNote', 'sourceNote'],
+    'led-resistor-calculator': ['supplyVoltage', 'forwardVoltage', 'ledCount', 'targetCurrentMa', 'standardSeries', 'e12', 'e24', 'accuracyNote'],
     'dilution-calculator': ['mode', 'directMode', 'serialMode', 'stockConcentration', 'targetConcentration', 'finalVolume', 'volumeUnit', 'steps', 'accuracyNote'],
     'ohms-law-calculator': ['mode', 'solverMode', 'networkMode', 'voltage', 'current', 'resistance', 'power', 'topology', 'series', 'parallel', 'resistorValues', 'accuracyNote'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
@@ -194,6 +195,7 @@ export function renderGrowthForm(toolId, copy) {
     'ideal-gas-law-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'torque-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'beam-deflection-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'led-resistor-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'dilution-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'milliliters'],
     'ohms-law-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -1683,6 +1685,20 @@ export function renderGrowthForm(toolId, copy) {
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <p class="hint"><a href="https://mechref.engr.illinois.edu/sol/deflection.html" target="_blank" rel="noopener noreferrer">${escapeGrowthHtml(fields.sourceNote)}</a></p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'led-resistor-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    <div class="calculator-grid">
+      ${label('led-supply-voltage', fields.supplyVoltage, '<input id="led-supply-voltage" name="supplyVoltage" type="number" min="0.000000001" max="1000000" step="any" value="12" inputmode="decimal" required>')}
+      ${label('led-forward-voltage', fields.forwardVoltage, '<input id="led-forward-voltage" name="forwardVoltage" type="number" min="0.000000001" max="1000000" step="any" value="2" inputmode="decimal" required>')}
+      ${label('led-count', fields.ledCount, '<input id="led-count" name="ledCount" type="number" min="1" max="100" step="1" value="1" inputmode="numeric" required>')}
+      ${label('led-target-current', fields.targetCurrentMa, '<input id="led-target-current" name="targetCurrentMa" type="number" min="0.000000001" max="1000000" step="any" value="20" inputmode="decimal" required>')}
+    </div>
+    ${label('led-standard-series', fields.standardSeries, `<select id="led-standard-series" name="series"><option value="E12">${escapeGrowthHtml(fields.e12)}</option><option value="E24">${escapeGrowthHtml(fields.e24)}</option></select>`)}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${button('calculate', actions.calculate)}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

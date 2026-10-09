@@ -348,6 +348,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/beam-deflection-calculator/logic.mjs',
   },
   {
+    id: 'led-resistor-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'led resistor calculator',
+    secondaryIntents: ['led series resistor calculator', 'calculate resistor for led circuit'],
+    functions: ['calculate the required series resistance from supply voltage, LED forward voltage, series LED count and target current', 'round upward to a preferred E12 or E24 resistor value so the estimated current does not exceed the requested target', 'show the resulting current, resistor dissipation and a conservative next standard power rating'],
+    acceptance: '12 V supply, one 2 V LED and 20 mA target requires 500 Ω; E12 recommends 560 Ω, giving about 17.86 mA and 0.179 W dissipation.',
+    boundary: 'Ideal DC series-circuit estimate only. It omits LED forward-voltage variation, temperature, supply tolerance, switching, wiring and component derating details; verify actual datasheets and limits. The suggested power rating is a simple 2× estimate, not a safety certification. Educational use only; not a substitute for qualified electrical review. Inputs stay in this browser.',
+    relatedExistingIds: ['ohms-law-calculator', 'resistor-color-code-calculator'],
+    logicModule: './tools/led-resistor-calculator/logic.mjs',
+  },
+  {
     id: 'dilution-calculator',
     category: 'science-engineering',
     type: 'calculator',

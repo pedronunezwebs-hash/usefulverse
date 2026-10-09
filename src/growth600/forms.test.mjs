@@ -295,6 +295,11 @@ const copies = {
     messages: { ...messages, resistance: 'Resistance', requestedResistance: 'Requested resistance', nominalResistance: 'Nearest nominal value', tolerance: 'Tolerance', bands: 'Band order', temperatureCoefficient: 'Temperature coefficient', rounding: 'Encoding note', nearestNominal: 'Rounded to nearest nominal.' },
     fields: { mode: 'Choose a task', decodeMode: 'Decode bands', encodeMode: 'Find bands from resistance', bands: 'Band count', fourBands: '4 bands', fiveBands: '5 bands', sixBands: '6 bands', resistanceOhms: 'Resistance in ohms', tolerance: 'Tolerance', temperatureCoefficient: 'Temperature coefficient', accuracyNote: 'Standard 4–6 band codes.', band1: 'Band 1', band2: 'Band 2', band3: 'Band 3', band4: 'Band 4', band5: 'Band 5', band6: 'Band 6', black: 'Black', brown: 'Brown', red: 'Red', orange: 'Orange', yellow: 'Yellow', green: 'Green', blue: 'Blue', violet: 'Violet', gray: 'Gray', white: 'White', gold: 'Gold', silver: 'Silver', none: 'None', ppm250: '250 ppm/K', ppm100: '100 ppm/K', ppm50: '50 ppm/K', ppm25: '25 ppm/K', ppm20: '20 ppm/K', ppm15: '15 ppm/K', ppm10: '10 ppm/K', ppm5: '5 ppm/K', ppm1: '1 ppm/K', tolerance005: '0.05%', tolerance01: '0.1%', tolerance025: '0.25%', tolerance05: '0.5%', tolerance1: '1%', tolerance2: '2%', tolerance5: '5%', tolerance10: '10%', tolerance20: '20%' },
   },
+  'led-resistor-calculator': {
+    name: 'LED resistor calculator', actions: { ...actions, example: 'Try 12 V, one 2 V LED, 20 mA' },
+    messages: { ...messages, totalLedVoltage: 'Total LED voltage', resistorVoltage: 'Resistor voltage', requiredResistance: 'Required resistance', standardResistor: 'Suggested standard resistor', actualCurrent: 'Estimated current', resistorPower: 'Resistor power', minimumPowerRating: 'Suggested power rating', powerRatingExceeds: 'Choose a higher-rated part' },
+    fields: { supplyVoltage: 'Supply voltage (V)', forwardVoltage: 'Forward voltage per LED (V)', ledCount: 'LED count', targetCurrentMa: 'Target current (mA)', standardSeries: 'Preferred series', e12: 'E12', e24: 'E24', accuracyNote: 'Ideal DC estimate only.' },
+  },
   'acceleration-calculator': {
     name: 'Acceleration calculator', actions: { ...actions, calculate: 'Calculate motion', example: 'Try 0 to 20 m/s in 5 seconds' },
     messages: { ...messages, acceleration: 'Acceleration', time: 'Elapsed time', initialVelocity: 'Initial velocity', finalVelocity: 'Final velocity', initialPosition: 'Initial position', displacement: 'Displacement', finalPosition: 'Final position' },
@@ -552,6 +557,10 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(resistor, /data-resistor-decode/u);
   assert.match(resistor, /data-resistor-encode hidden/u);
   assert.match(resistor, /value="none"/u);
+  const ledResistor = renderGrowthForm('led-resistor-calculator', copies['led-resistor-calculator']);
+  for (const name of ['supplyVoltage', 'forwardVoltage', 'ledCount', 'targetCurrentMa', 'series']) assert.match(ledResistor, new RegExp(`name="${name}"`, 'u'));
+  assert.match(ledResistor, /value="E12"/u);
+  assert.match(ledResistor, /data-action="copy"/u);
   assert.match(resistor, /data-action="example"/u);
   assert.match(resistor, /data-action="copy"/u);
   const acceleration = renderGrowthForm('acceleration-calculator', copies['acceleration-calculator']);
