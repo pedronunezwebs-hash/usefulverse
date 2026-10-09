@@ -16,9 +16,9 @@ Browser-first collection of fast, private, static tools for everyday work.
 
 The additional Growth600 tools are published as a separate static Cloudflare Pages site at
 [tools.usefulverse.com](https://tools.usefulverse.com/), so they do not replace or
-change the 277-tool catalog above. The hub contains 134 additional tools in
+change the 277-tool catalog above. The hub contains 140 additional tools in
 the same 36 locales. Its canonical URL inventory and language alternates are listed in
-the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (4,860 URLs after the Beam Deflection Calculator release);
+the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (5,076 URLs after the Transformer Calculator release);
 the staged candidate checklist and implementation record are in
 [docs/growth600/PLAN-600.md](docs/growth600/PLAN-600.md) and
 [docs/growth600/PROGRESS.md](docs/growth600/PROGRESS.md).
@@ -10551,7 +10551,7 @@ These are the canonical URLs for the additional tools and their localized pages.
 
 <!-- BEGIN GENERATED GROWTH600 URL INVENTORY -->
 
-Generated from `dist-growth600/sitemap.xml`: **4,860 canonical URLs**.
+Generated from `dist-growth600/sitemap.xml`: **5,076 canonical URLs**.
 
 ```text
 https://tools.usefulverse.com/
@@ -10584,8 +10584,13 @@ https://tools.usefulverse.com/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/tools/torque-calculator/
 https://tools.usefulverse.com/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/tools/led-resistor-calculator/
+https://tools.usefulverse.com/tools/flow-rate-calculator/
+https://tools.usefulverse.com/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/tools/dilution-calculator/
 https://tools.usefulverse.com/tools/ohms-law-calculator/
+https://tools.usefulverse.com/tools/transformer-calculator/
 https://tools.usefulverse.com/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/tools/density-calculator/
@@ -10656,6 +10661,7 @@ https://tools.usefulverse.com/tools/pond-volume-calculator/
 https://tools.usefulverse.com/tools/fertilizer-calculator/
 https://tools.usefulverse.com/tools/complex-number-calculator/
 https://tools.usefulverse.com/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/tools/momentum-calculator/
 https://tools.usefulverse.com/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/tools/acceleration-calculator/
 https://tools.usefulverse.com/tools/friction-calculator/
@@ -10719,8 +10725,13 @@ https://tools.usefulverse.com/es/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/es/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/es/tools/torque-calculator/
 https://tools.usefulverse.com/es/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/es/tools/led-resistor-calculator/
+https://tools.usefulverse.com/es/tools/flow-rate-calculator/
+https://tools.usefulverse.com/es/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/es/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/es/tools/dilution-calculator/
 https://tools.usefulverse.com/es/tools/ohms-law-calculator/
+https://tools.usefulverse.com/es/tools/transformer-calculator/
 https://tools.usefulverse.com/es/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/es/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/es/tools/density-calculator/
@@ -10791,6 +10802,7 @@ https://tools.usefulverse.com/es/tools/pond-volume-calculator/
 https://tools.usefulverse.com/es/tools/fertilizer-calculator/
 https://tools.usefulverse.com/es/tools/complex-number-calculator/
 https://tools.usefulverse.com/es/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/es/tools/momentum-calculator/
 https://tools.usefulverse.com/es/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/es/tools/acceleration-calculator/
 https://tools.usefulverse.com/es/tools/friction-calculator/
@@ -10854,8 +10866,13 @@ https://tools.usefulverse.com/fr/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/fr/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/fr/tools/torque-calculator/
 https://tools.usefulverse.com/fr/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/fr/tools/led-resistor-calculator/
+https://tools.usefulverse.com/fr/tools/flow-rate-calculator/
+https://tools.usefulverse.com/fr/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/fr/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/fr/tools/dilution-calculator/
 https://tools.usefulverse.com/fr/tools/ohms-law-calculator/
+https://tools.usefulverse.com/fr/tools/transformer-calculator/
 https://tools.usefulverse.com/fr/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/fr/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/fr/tools/density-calculator/
@@ -10926,6 +10943,7 @@ https://tools.usefulverse.com/fr/tools/pond-volume-calculator/
 https://tools.usefulverse.com/fr/tools/fertilizer-calculator/
 https://tools.usefulverse.com/fr/tools/complex-number-calculator/
 https://tools.usefulverse.com/fr/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/fr/tools/momentum-calculator/
 https://tools.usefulverse.com/fr/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/fr/tools/acceleration-calculator/
 https://tools.usefulverse.com/fr/tools/friction-calculator/
@@ -10989,8 +11007,13 @@ https://tools.usefulverse.com/pt-br/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/pt-br/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/pt-br/tools/torque-calculator/
 https://tools.usefulverse.com/pt-br/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/pt-br/tools/led-resistor-calculator/
+https://tools.usefulverse.com/pt-br/tools/flow-rate-calculator/
+https://tools.usefulverse.com/pt-br/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/pt-br/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/pt-br/tools/dilution-calculator/
 https://tools.usefulverse.com/pt-br/tools/ohms-law-calculator/
+https://tools.usefulverse.com/pt-br/tools/transformer-calculator/
 https://tools.usefulverse.com/pt-br/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/pt-br/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/pt-br/tools/density-calculator/
@@ -11061,6 +11084,7 @@ https://tools.usefulverse.com/pt-br/tools/pond-volume-calculator/
 https://tools.usefulverse.com/pt-br/tools/fertilizer-calculator/
 https://tools.usefulverse.com/pt-br/tools/complex-number-calculator/
 https://tools.usefulverse.com/pt-br/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/pt-br/tools/momentum-calculator/
 https://tools.usefulverse.com/pt-br/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/pt-br/tools/acceleration-calculator/
 https://tools.usefulverse.com/pt-br/tools/friction-calculator/
@@ -11124,8 +11148,13 @@ https://tools.usefulverse.com/de/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/de/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/de/tools/torque-calculator/
 https://tools.usefulverse.com/de/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/de/tools/led-resistor-calculator/
+https://tools.usefulverse.com/de/tools/flow-rate-calculator/
+https://tools.usefulverse.com/de/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/de/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/de/tools/dilution-calculator/
 https://tools.usefulverse.com/de/tools/ohms-law-calculator/
+https://tools.usefulverse.com/de/tools/transformer-calculator/
 https://tools.usefulverse.com/de/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/de/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/de/tools/density-calculator/
@@ -11196,6 +11225,7 @@ https://tools.usefulverse.com/de/tools/pond-volume-calculator/
 https://tools.usefulverse.com/de/tools/fertilizer-calculator/
 https://tools.usefulverse.com/de/tools/complex-number-calculator/
 https://tools.usefulverse.com/de/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/de/tools/momentum-calculator/
 https://tools.usefulverse.com/de/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/de/tools/acceleration-calculator/
 https://tools.usefulverse.com/de/tools/friction-calculator/
@@ -11259,8 +11289,13 @@ https://tools.usefulverse.com/ja/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/ja/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/ja/tools/torque-calculator/
 https://tools.usefulverse.com/ja/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/ja/tools/led-resistor-calculator/
+https://tools.usefulverse.com/ja/tools/flow-rate-calculator/
+https://tools.usefulverse.com/ja/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/ja/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/ja/tools/dilution-calculator/
 https://tools.usefulverse.com/ja/tools/ohms-law-calculator/
+https://tools.usefulverse.com/ja/tools/transformer-calculator/
 https://tools.usefulverse.com/ja/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ja/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ja/tools/density-calculator/
@@ -11331,6 +11366,7 @@ https://tools.usefulverse.com/ja/tools/pond-volume-calculator/
 https://tools.usefulverse.com/ja/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ja/tools/complex-number-calculator/
 https://tools.usefulverse.com/ja/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/ja/tools/momentum-calculator/
 https://tools.usefulverse.com/ja/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/ja/tools/acceleration-calculator/
 https://tools.usefulverse.com/ja/tools/friction-calculator/
@@ -11394,8 +11430,13 @@ https://tools.usefulverse.com/ko/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/ko/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/ko/tools/torque-calculator/
 https://tools.usefulverse.com/ko/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/ko/tools/led-resistor-calculator/
+https://tools.usefulverse.com/ko/tools/flow-rate-calculator/
+https://tools.usefulverse.com/ko/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/ko/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/ko/tools/dilution-calculator/
 https://tools.usefulverse.com/ko/tools/ohms-law-calculator/
+https://tools.usefulverse.com/ko/tools/transformer-calculator/
 https://tools.usefulverse.com/ko/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ko/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ko/tools/density-calculator/
@@ -11466,6 +11507,7 @@ https://tools.usefulverse.com/ko/tools/pond-volume-calculator/
 https://tools.usefulverse.com/ko/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ko/tools/complex-number-calculator/
 https://tools.usefulverse.com/ko/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/ko/tools/momentum-calculator/
 https://tools.usefulverse.com/ko/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/ko/tools/acceleration-calculator/
 https://tools.usefulverse.com/ko/tools/friction-calculator/
@@ -11529,8 +11571,13 @@ https://tools.usefulverse.com/id/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/id/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/id/tools/torque-calculator/
 https://tools.usefulverse.com/id/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/id/tools/led-resistor-calculator/
+https://tools.usefulverse.com/id/tools/flow-rate-calculator/
+https://tools.usefulverse.com/id/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/id/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/id/tools/dilution-calculator/
 https://tools.usefulverse.com/id/tools/ohms-law-calculator/
+https://tools.usefulverse.com/id/tools/transformer-calculator/
 https://tools.usefulverse.com/id/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/id/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/id/tools/density-calculator/
@@ -11601,6 +11648,7 @@ https://tools.usefulverse.com/id/tools/pond-volume-calculator/
 https://tools.usefulverse.com/id/tools/fertilizer-calculator/
 https://tools.usefulverse.com/id/tools/complex-number-calculator/
 https://tools.usefulverse.com/id/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/id/tools/momentum-calculator/
 https://tools.usefulverse.com/id/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/id/tools/acceleration-calculator/
 https://tools.usefulverse.com/id/tools/friction-calculator/
@@ -11664,8 +11712,13 @@ https://tools.usefulverse.com/hi/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/hi/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/hi/tools/torque-calculator/
 https://tools.usefulverse.com/hi/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/hi/tools/led-resistor-calculator/
+https://tools.usefulverse.com/hi/tools/flow-rate-calculator/
+https://tools.usefulverse.com/hi/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/hi/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/hi/tools/dilution-calculator/
 https://tools.usefulverse.com/hi/tools/ohms-law-calculator/
+https://tools.usefulverse.com/hi/tools/transformer-calculator/
 https://tools.usefulverse.com/hi/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/hi/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/hi/tools/density-calculator/
@@ -11736,6 +11789,7 @@ https://tools.usefulverse.com/hi/tools/pond-volume-calculator/
 https://tools.usefulverse.com/hi/tools/fertilizer-calculator/
 https://tools.usefulverse.com/hi/tools/complex-number-calculator/
 https://tools.usefulverse.com/hi/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/hi/tools/momentum-calculator/
 https://tools.usefulverse.com/hi/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/hi/tools/acceleration-calculator/
 https://tools.usefulverse.com/hi/tools/friction-calculator/
@@ -11799,8 +11853,13 @@ https://tools.usefulverse.com/ar/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/ar/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/ar/tools/torque-calculator/
 https://tools.usefulverse.com/ar/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/ar/tools/led-resistor-calculator/
+https://tools.usefulverse.com/ar/tools/flow-rate-calculator/
+https://tools.usefulverse.com/ar/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/ar/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/ar/tools/dilution-calculator/
 https://tools.usefulverse.com/ar/tools/ohms-law-calculator/
+https://tools.usefulverse.com/ar/tools/transformer-calculator/
 https://tools.usefulverse.com/ar/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ar/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ar/tools/density-calculator/
@@ -11871,6 +11930,7 @@ https://tools.usefulverse.com/ar/tools/pond-volume-calculator/
 https://tools.usefulverse.com/ar/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ar/tools/complex-number-calculator/
 https://tools.usefulverse.com/ar/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/ar/tools/momentum-calculator/
 https://tools.usefulverse.com/ar/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/ar/tools/acceleration-calculator/
 https://tools.usefulverse.com/ar/tools/friction-calculator/
@@ -11934,8 +11994,13 @@ https://tools.usefulverse.com/zh-cn/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/zh-cn/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/zh-cn/tools/torque-calculator/
 https://tools.usefulverse.com/zh-cn/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/zh-cn/tools/led-resistor-calculator/
+https://tools.usefulverse.com/zh-cn/tools/flow-rate-calculator/
+https://tools.usefulverse.com/zh-cn/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/zh-cn/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/zh-cn/tools/dilution-calculator/
 https://tools.usefulverse.com/zh-cn/tools/ohms-law-calculator/
+https://tools.usefulverse.com/zh-cn/tools/transformer-calculator/
 https://tools.usefulverse.com/zh-cn/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/zh-cn/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/zh-cn/tools/density-calculator/
@@ -12006,6 +12071,7 @@ https://tools.usefulverse.com/zh-cn/tools/pond-volume-calculator/
 https://tools.usefulverse.com/zh-cn/tools/fertilizer-calculator/
 https://tools.usefulverse.com/zh-cn/tools/complex-number-calculator/
 https://tools.usefulverse.com/zh-cn/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/zh-cn/tools/momentum-calculator/
 https://tools.usefulverse.com/zh-cn/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/zh-cn/tools/acceleration-calculator/
 https://tools.usefulverse.com/zh-cn/tools/friction-calculator/
@@ -12069,8 +12135,13 @@ https://tools.usefulverse.com/bn/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/bn/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/bn/tools/torque-calculator/
 https://tools.usefulverse.com/bn/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/bn/tools/led-resistor-calculator/
+https://tools.usefulverse.com/bn/tools/flow-rate-calculator/
+https://tools.usefulverse.com/bn/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/bn/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/bn/tools/dilution-calculator/
 https://tools.usefulverse.com/bn/tools/ohms-law-calculator/
+https://tools.usefulverse.com/bn/tools/transformer-calculator/
 https://tools.usefulverse.com/bn/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/bn/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/bn/tools/density-calculator/
@@ -12141,6 +12212,7 @@ https://tools.usefulverse.com/bn/tools/pond-volume-calculator/
 https://tools.usefulverse.com/bn/tools/fertilizer-calculator/
 https://tools.usefulverse.com/bn/tools/complex-number-calculator/
 https://tools.usefulverse.com/bn/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/bn/tools/momentum-calculator/
 https://tools.usefulverse.com/bn/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/bn/tools/acceleration-calculator/
 https://tools.usefulverse.com/bn/tools/friction-calculator/
@@ -12204,8 +12276,13 @@ https://tools.usefulverse.com/ru/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/ru/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/ru/tools/torque-calculator/
 https://tools.usefulverse.com/ru/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/ru/tools/led-resistor-calculator/
+https://tools.usefulverse.com/ru/tools/flow-rate-calculator/
+https://tools.usefulverse.com/ru/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/ru/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/ru/tools/dilution-calculator/
 https://tools.usefulverse.com/ru/tools/ohms-law-calculator/
+https://tools.usefulverse.com/ru/tools/transformer-calculator/
 https://tools.usefulverse.com/ru/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ru/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ru/tools/density-calculator/
@@ -12276,6 +12353,7 @@ https://tools.usefulverse.com/ru/tools/pond-volume-calculator/
 https://tools.usefulverse.com/ru/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ru/tools/complex-number-calculator/
 https://tools.usefulverse.com/ru/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/ru/tools/momentum-calculator/
 https://tools.usefulverse.com/ru/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/ru/tools/acceleration-calculator/
 https://tools.usefulverse.com/ru/tools/friction-calculator/
@@ -12339,8 +12417,13 @@ https://tools.usefulverse.com/ur/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/ur/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/ur/tools/torque-calculator/
 https://tools.usefulverse.com/ur/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/ur/tools/led-resistor-calculator/
+https://tools.usefulverse.com/ur/tools/flow-rate-calculator/
+https://tools.usefulverse.com/ur/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/ur/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/ur/tools/dilution-calculator/
 https://tools.usefulverse.com/ur/tools/ohms-law-calculator/
+https://tools.usefulverse.com/ur/tools/transformer-calculator/
 https://tools.usefulverse.com/ur/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ur/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ur/tools/density-calculator/
@@ -12411,6 +12494,7 @@ https://tools.usefulverse.com/ur/tools/pond-volume-calculator/
 https://tools.usefulverse.com/ur/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ur/tools/complex-number-calculator/
 https://tools.usefulverse.com/ur/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/ur/tools/momentum-calculator/
 https://tools.usefulverse.com/ur/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/ur/tools/acceleration-calculator/
 https://tools.usefulverse.com/ur/tools/friction-calculator/
@@ -12474,8 +12558,13 @@ https://tools.usefulverse.com/tr/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/tr/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/tr/tools/torque-calculator/
 https://tools.usefulverse.com/tr/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/tr/tools/led-resistor-calculator/
+https://tools.usefulverse.com/tr/tools/flow-rate-calculator/
+https://tools.usefulverse.com/tr/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/tr/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/tr/tools/dilution-calculator/
 https://tools.usefulverse.com/tr/tools/ohms-law-calculator/
+https://tools.usefulverse.com/tr/tools/transformer-calculator/
 https://tools.usefulverse.com/tr/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/tr/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/tr/tools/density-calculator/
@@ -12546,6 +12635,7 @@ https://tools.usefulverse.com/tr/tools/pond-volume-calculator/
 https://tools.usefulverse.com/tr/tools/fertilizer-calculator/
 https://tools.usefulverse.com/tr/tools/complex-number-calculator/
 https://tools.usefulverse.com/tr/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/tr/tools/momentum-calculator/
 https://tools.usefulverse.com/tr/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/tr/tools/acceleration-calculator/
 https://tools.usefulverse.com/tr/tools/friction-calculator/
@@ -12609,8 +12699,13 @@ https://tools.usefulverse.com/vi/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/vi/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/vi/tools/torque-calculator/
 https://tools.usefulverse.com/vi/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/vi/tools/led-resistor-calculator/
+https://tools.usefulverse.com/vi/tools/flow-rate-calculator/
+https://tools.usefulverse.com/vi/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/vi/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/vi/tools/dilution-calculator/
 https://tools.usefulverse.com/vi/tools/ohms-law-calculator/
+https://tools.usefulverse.com/vi/tools/transformer-calculator/
 https://tools.usefulverse.com/vi/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/vi/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/vi/tools/density-calculator/
@@ -12681,6 +12776,7 @@ https://tools.usefulverse.com/vi/tools/pond-volume-calculator/
 https://tools.usefulverse.com/vi/tools/fertilizer-calculator/
 https://tools.usefulverse.com/vi/tools/complex-number-calculator/
 https://tools.usefulverse.com/vi/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/vi/tools/momentum-calculator/
 https://tools.usefulverse.com/vi/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/vi/tools/acceleration-calculator/
 https://tools.usefulverse.com/vi/tools/friction-calculator/
@@ -12744,8 +12840,13 @@ https://tools.usefulverse.com/it/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/it/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/it/tools/torque-calculator/
 https://tools.usefulverse.com/it/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/it/tools/led-resistor-calculator/
+https://tools.usefulverse.com/it/tools/flow-rate-calculator/
+https://tools.usefulverse.com/it/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/it/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/it/tools/dilution-calculator/
 https://tools.usefulverse.com/it/tools/ohms-law-calculator/
+https://tools.usefulverse.com/it/tools/transformer-calculator/
 https://tools.usefulverse.com/it/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/it/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/it/tools/density-calculator/
@@ -12816,6 +12917,7 @@ https://tools.usefulverse.com/it/tools/pond-volume-calculator/
 https://tools.usefulverse.com/it/tools/fertilizer-calculator/
 https://tools.usefulverse.com/it/tools/complex-number-calculator/
 https://tools.usefulverse.com/it/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/it/tools/momentum-calculator/
 https://tools.usefulverse.com/it/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/it/tools/acceleration-calculator/
 https://tools.usefulverse.com/it/tools/friction-calculator/
@@ -12879,8 +12981,13 @@ https://tools.usefulverse.com/zh-tw/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/zh-tw/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/zh-tw/tools/torque-calculator/
 https://tools.usefulverse.com/zh-tw/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/zh-tw/tools/led-resistor-calculator/
+https://tools.usefulverse.com/zh-tw/tools/flow-rate-calculator/
+https://tools.usefulverse.com/zh-tw/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/zh-tw/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/zh-tw/tools/dilution-calculator/
 https://tools.usefulverse.com/zh-tw/tools/ohms-law-calculator/
+https://tools.usefulverse.com/zh-tw/tools/transformer-calculator/
 https://tools.usefulverse.com/zh-tw/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/zh-tw/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/zh-tw/tools/density-calculator/
@@ -12951,6 +13058,7 @@ https://tools.usefulverse.com/zh-tw/tools/pond-volume-calculator/
 https://tools.usefulverse.com/zh-tw/tools/fertilizer-calculator/
 https://tools.usefulverse.com/zh-tw/tools/complex-number-calculator/
 https://tools.usefulverse.com/zh-tw/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/zh-tw/tools/momentum-calculator/
 https://tools.usefulverse.com/zh-tw/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/zh-tw/tools/acceleration-calculator/
 https://tools.usefulverse.com/zh-tw/tools/friction-calculator/
@@ -13014,8 +13122,13 @@ https://tools.usefulverse.com/bg/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/bg/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/bg/tools/torque-calculator/
 https://tools.usefulverse.com/bg/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/bg/tools/led-resistor-calculator/
+https://tools.usefulverse.com/bg/tools/flow-rate-calculator/
+https://tools.usefulverse.com/bg/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/bg/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/bg/tools/dilution-calculator/
 https://tools.usefulverse.com/bg/tools/ohms-law-calculator/
+https://tools.usefulverse.com/bg/tools/transformer-calculator/
 https://tools.usefulverse.com/bg/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/bg/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/bg/tools/density-calculator/
@@ -13086,6 +13199,7 @@ https://tools.usefulverse.com/bg/tools/pond-volume-calculator/
 https://tools.usefulverse.com/bg/tools/fertilizer-calculator/
 https://tools.usefulverse.com/bg/tools/complex-number-calculator/
 https://tools.usefulverse.com/bg/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/bg/tools/momentum-calculator/
 https://tools.usefulverse.com/bg/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/bg/tools/acceleration-calculator/
 https://tools.usefulverse.com/bg/tools/friction-calculator/
@@ -13149,8 +13263,13 @@ https://tools.usefulverse.com/ca/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/ca/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/ca/tools/torque-calculator/
 https://tools.usefulverse.com/ca/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/ca/tools/led-resistor-calculator/
+https://tools.usefulverse.com/ca/tools/flow-rate-calculator/
+https://tools.usefulverse.com/ca/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/ca/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/ca/tools/dilution-calculator/
 https://tools.usefulverse.com/ca/tools/ohms-law-calculator/
+https://tools.usefulverse.com/ca/tools/transformer-calculator/
 https://tools.usefulverse.com/ca/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ca/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ca/tools/density-calculator/
@@ -13221,6 +13340,7 @@ https://tools.usefulverse.com/ca/tools/pond-volume-calculator/
 https://tools.usefulverse.com/ca/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ca/tools/complex-number-calculator/
 https://tools.usefulverse.com/ca/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/ca/tools/momentum-calculator/
 https://tools.usefulverse.com/ca/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/ca/tools/acceleration-calculator/
 https://tools.usefulverse.com/ca/tools/friction-calculator/
@@ -13284,8 +13404,13 @@ https://tools.usefulverse.com/nl/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/nl/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/nl/tools/torque-calculator/
 https://tools.usefulverse.com/nl/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/nl/tools/led-resistor-calculator/
+https://tools.usefulverse.com/nl/tools/flow-rate-calculator/
+https://tools.usefulverse.com/nl/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/nl/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/nl/tools/dilution-calculator/
 https://tools.usefulverse.com/nl/tools/ohms-law-calculator/
+https://tools.usefulverse.com/nl/tools/transformer-calculator/
 https://tools.usefulverse.com/nl/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/nl/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/nl/tools/density-calculator/
@@ -13356,6 +13481,7 @@ https://tools.usefulverse.com/nl/tools/pond-volume-calculator/
 https://tools.usefulverse.com/nl/tools/fertilizer-calculator/
 https://tools.usefulverse.com/nl/tools/complex-number-calculator/
 https://tools.usefulverse.com/nl/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/nl/tools/momentum-calculator/
 https://tools.usefulverse.com/nl/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/nl/tools/acceleration-calculator/
 https://tools.usefulverse.com/nl/tools/friction-calculator/
@@ -13419,8 +13545,13 @@ https://tools.usefulverse.com/el/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/el/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/el/tools/torque-calculator/
 https://tools.usefulverse.com/el/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/el/tools/led-resistor-calculator/
+https://tools.usefulverse.com/el/tools/flow-rate-calculator/
+https://tools.usefulverse.com/el/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/el/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/el/tools/dilution-calculator/
 https://tools.usefulverse.com/el/tools/ohms-law-calculator/
+https://tools.usefulverse.com/el/tools/transformer-calculator/
 https://tools.usefulverse.com/el/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/el/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/el/tools/density-calculator/
@@ -13491,6 +13622,7 @@ https://tools.usefulverse.com/el/tools/pond-volume-calculator/
 https://tools.usefulverse.com/el/tools/fertilizer-calculator/
 https://tools.usefulverse.com/el/tools/complex-number-calculator/
 https://tools.usefulverse.com/el/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/el/tools/momentum-calculator/
 https://tools.usefulverse.com/el/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/el/tools/acceleration-calculator/
 https://tools.usefulverse.com/el/tools/friction-calculator/
@@ -13554,8 +13686,13 @@ https://tools.usefulverse.com/ms/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/ms/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/ms/tools/torque-calculator/
 https://tools.usefulverse.com/ms/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/ms/tools/led-resistor-calculator/
+https://tools.usefulverse.com/ms/tools/flow-rate-calculator/
+https://tools.usefulverse.com/ms/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/ms/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/ms/tools/dilution-calculator/
 https://tools.usefulverse.com/ms/tools/ohms-law-calculator/
+https://tools.usefulverse.com/ms/tools/transformer-calculator/
 https://tools.usefulverse.com/ms/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ms/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ms/tools/density-calculator/
@@ -13626,6 +13763,7 @@ https://tools.usefulverse.com/ms/tools/pond-volume-calculator/
 https://tools.usefulverse.com/ms/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ms/tools/complex-number-calculator/
 https://tools.usefulverse.com/ms/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/ms/tools/momentum-calculator/
 https://tools.usefulverse.com/ms/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/ms/tools/acceleration-calculator/
 https://tools.usefulverse.com/ms/tools/friction-calculator/
@@ -13689,8 +13827,13 @@ https://tools.usefulverse.com/pl/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/pl/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/pl/tools/torque-calculator/
 https://tools.usefulverse.com/pl/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/pl/tools/led-resistor-calculator/
+https://tools.usefulverse.com/pl/tools/flow-rate-calculator/
+https://tools.usefulverse.com/pl/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/pl/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/pl/tools/dilution-calculator/
 https://tools.usefulverse.com/pl/tools/ohms-law-calculator/
+https://tools.usefulverse.com/pl/tools/transformer-calculator/
 https://tools.usefulverse.com/pl/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/pl/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/pl/tools/density-calculator/
@@ -13761,6 +13904,7 @@ https://tools.usefulverse.com/pl/tools/pond-volume-calculator/
 https://tools.usefulverse.com/pl/tools/fertilizer-calculator/
 https://tools.usefulverse.com/pl/tools/complex-number-calculator/
 https://tools.usefulverse.com/pl/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/pl/tools/momentum-calculator/
 https://tools.usefulverse.com/pl/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/pl/tools/acceleration-calculator/
 https://tools.usefulverse.com/pl/tools/friction-calculator/
@@ -13824,8 +13968,13 @@ https://tools.usefulverse.com/sv/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/sv/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/sv/tools/torque-calculator/
 https://tools.usefulverse.com/sv/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/sv/tools/led-resistor-calculator/
+https://tools.usefulverse.com/sv/tools/flow-rate-calculator/
+https://tools.usefulverse.com/sv/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/sv/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/sv/tools/dilution-calculator/
 https://tools.usefulverse.com/sv/tools/ohms-law-calculator/
+https://tools.usefulverse.com/sv/tools/transformer-calculator/
 https://tools.usefulverse.com/sv/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/sv/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/sv/tools/density-calculator/
@@ -13896,6 +14045,7 @@ https://tools.usefulverse.com/sv/tools/pond-volume-calculator/
 https://tools.usefulverse.com/sv/tools/fertilizer-calculator/
 https://tools.usefulverse.com/sv/tools/complex-number-calculator/
 https://tools.usefulverse.com/sv/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/sv/tools/momentum-calculator/
 https://tools.usefulverse.com/sv/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/sv/tools/acceleration-calculator/
 https://tools.usefulverse.com/sv/tools/friction-calculator/
@@ -13959,8 +14109,13 @@ https://tools.usefulverse.com/th/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/th/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/th/tools/torque-calculator/
 https://tools.usefulverse.com/th/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/th/tools/led-resistor-calculator/
+https://tools.usefulverse.com/th/tools/flow-rate-calculator/
+https://tools.usefulverse.com/th/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/th/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/th/tools/dilution-calculator/
 https://tools.usefulverse.com/th/tools/ohms-law-calculator/
+https://tools.usefulverse.com/th/tools/transformer-calculator/
 https://tools.usefulverse.com/th/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/th/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/th/tools/density-calculator/
@@ -14031,6 +14186,7 @@ https://tools.usefulverse.com/th/tools/pond-volume-calculator/
 https://tools.usefulverse.com/th/tools/fertilizer-calculator/
 https://tools.usefulverse.com/th/tools/complex-number-calculator/
 https://tools.usefulverse.com/th/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/th/tools/momentum-calculator/
 https://tools.usefulverse.com/th/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/th/tools/acceleration-calculator/
 https://tools.usefulverse.com/th/tools/friction-calculator/
@@ -14094,8 +14250,13 @@ https://tools.usefulverse.com/uk/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/uk/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/uk/tools/torque-calculator/
 https://tools.usefulverse.com/uk/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/uk/tools/led-resistor-calculator/
+https://tools.usefulverse.com/uk/tools/flow-rate-calculator/
+https://tools.usefulverse.com/uk/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/uk/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/uk/tools/dilution-calculator/
 https://tools.usefulverse.com/uk/tools/ohms-law-calculator/
+https://tools.usefulverse.com/uk/tools/transformer-calculator/
 https://tools.usefulverse.com/uk/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/uk/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/uk/tools/density-calculator/
@@ -14166,6 +14327,7 @@ https://tools.usefulverse.com/uk/tools/pond-volume-calculator/
 https://tools.usefulverse.com/uk/tools/fertilizer-calculator/
 https://tools.usefulverse.com/uk/tools/complex-number-calculator/
 https://tools.usefulverse.com/uk/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/uk/tools/momentum-calculator/
 https://tools.usefulverse.com/uk/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/uk/tools/acceleration-calculator/
 https://tools.usefulverse.com/uk/tools/friction-calculator/
@@ -14229,8 +14391,13 @@ https://tools.usefulverse.com/sw/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/sw/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/sw/tools/torque-calculator/
 https://tools.usefulverse.com/sw/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/sw/tools/led-resistor-calculator/
+https://tools.usefulverse.com/sw/tools/flow-rate-calculator/
+https://tools.usefulverse.com/sw/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/sw/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/sw/tools/dilution-calculator/
 https://tools.usefulverse.com/sw/tools/ohms-law-calculator/
+https://tools.usefulverse.com/sw/tools/transformer-calculator/
 https://tools.usefulverse.com/sw/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/sw/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/sw/tools/density-calculator/
@@ -14301,6 +14468,7 @@ https://tools.usefulverse.com/sw/tools/pond-volume-calculator/
 https://tools.usefulverse.com/sw/tools/fertilizer-calculator/
 https://tools.usefulverse.com/sw/tools/complex-number-calculator/
 https://tools.usefulverse.com/sw/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/sw/tools/momentum-calculator/
 https://tools.usefulverse.com/sw/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/sw/tools/acceleration-calculator/
 https://tools.usefulverse.com/sw/tools/friction-calculator/
@@ -14364,8 +14532,13 @@ https://tools.usefulverse.com/mr/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/mr/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/mr/tools/torque-calculator/
 https://tools.usefulverse.com/mr/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/mr/tools/led-resistor-calculator/
+https://tools.usefulverse.com/mr/tools/flow-rate-calculator/
+https://tools.usefulverse.com/mr/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/mr/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/mr/tools/dilution-calculator/
 https://tools.usefulverse.com/mr/tools/ohms-law-calculator/
+https://tools.usefulverse.com/mr/tools/transformer-calculator/
 https://tools.usefulverse.com/mr/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/mr/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/mr/tools/density-calculator/
@@ -14436,6 +14609,7 @@ https://tools.usefulverse.com/mr/tools/pond-volume-calculator/
 https://tools.usefulverse.com/mr/tools/fertilizer-calculator/
 https://tools.usefulverse.com/mr/tools/complex-number-calculator/
 https://tools.usefulverse.com/mr/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/mr/tools/momentum-calculator/
 https://tools.usefulverse.com/mr/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/mr/tools/acceleration-calculator/
 https://tools.usefulverse.com/mr/tools/friction-calculator/
@@ -14499,8 +14673,13 @@ https://tools.usefulverse.com/te/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/te/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/te/tools/torque-calculator/
 https://tools.usefulverse.com/te/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/te/tools/led-resistor-calculator/
+https://tools.usefulverse.com/te/tools/flow-rate-calculator/
+https://tools.usefulverse.com/te/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/te/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/te/tools/dilution-calculator/
 https://tools.usefulverse.com/te/tools/ohms-law-calculator/
+https://tools.usefulverse.com/te/tools/transformer-calculator/
 https://tools.usefulverse.com/te/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/te/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/te/tools/density-calculator/
@@ -14571,6 +14750,7 @@ https://tools.usefulverse.com/te/tools/pond-volume-calculator/
 https://tools.usefulverse.com/te/tools/fertilizer-calculator/
 https://tools.usefulverse.com/te/tools/complex-number-calculator/
 https://tools.usefulverse.com/te/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/te/tools/momentum-calculator/
 https://tools.usefulverse.com/te/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/te/tools/acceleration-calculator/
 https://tools.usefulverse.com/te/tools/friction-calculator/
@@ -14634,8 +14814,13 @@ https://tools.usefulverse.com/ha/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/ha/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/ha/tools/torque-calculator/
 https://tools.usefulverse.com/ha/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/ha/tools/led-resistor-calculator/
+https://tools.usefulverse.com/ha/tools/flow-rate-calculator/
+https://tools.usefulverse.com/ha/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/ha/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/ha/tools/dilution-calculator/
 https://tools.usefulverse.com/ha/tools/ohms-law-calculator/
+https://tools.usefulverse.com/ha/tools/transformer-calculator/
 https://tools.usefulverse.com/ha/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ha/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ha/tools/density-calculator/
@@ -14706,6 +14891,7 @@ https://tools.usefulverse.com/ha/tools/pond-volume-calculator/
 https://tools.usefulverse.com/ha/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ha/tools/complex-number-calculator/
 https://tools.usefulverse.com/ha/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/ha/tools/momentum-calculator/
 https://tools.usefulverse.com/ha/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/ha/tools/acceleration-calculator/
 https://tools.usefulverse.com/ha/tools/friction-calculator/
@@ -14769,8 +14955,13 @@ https://tools.usefulverse.com/tl/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/tl/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/tl/tools/torque-calculator/
 https://tools.usefulverse.com/tl/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/tl/tools/led-resistor-calculator/
+https://tools.usefulverse.com/tl/tools/flow-rate-calculator/
+https://tools.usefulverse.com/tl/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/tl/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/tl/tools/dilution-calculator/
 https://tools.usefulverse.com/tl/tools/ohms-law-calculator/
+https://tools.usefulverse.com/tl/tools/transformer-calculator/
 https://tools.usefulverse.com/tl/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/tl/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/tl/tools/density-calculator/
@@ -14841,6 +15032,7 @@ https://tools.usefulverse.com/tl/tools/pond-volume-calculator/
 https://tools.usefulverse.com/tl/tools/fertilizer-calculator/
 https://tools.usefulverse.com/tl/tools/complex-number-calculator/
 https://tools.usefulverse.com/tl/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/tl/tools/momentum-calculator/
 https://tools.usefulverse.com/tl/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/tl/tools/acceleration-calculator/
 https://tools.usefulverse.com/tl/tools/friction-calculator/
@@ -14904,8 +15096,13 @@ https://tools.usefulverse.com/ta/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/ta/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/ta/tools/torque-calculator/
 https://tools.usefulverse.com/ta/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/ta/tools/led-resistor-calculator/
+https://tools.usefulverse.com/ta/tools/flow-rate-calculator/
+https://tools.usefulverse.com/ta/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/ta/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/ta/tools/dilution-calculator/
 https://tools.usefulverse.com/ta/tools/ohms-law-calculator/
+https://tools.usefulverse.com/ta/tools/transformer-calculator/
 https://tools.usefulverse.com/ta/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ta/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ta/tools/density-calculator/
@@ -14976,6 +15173,7 @@ https://tools.usefulverse.com/ta/tools/pond-volume-calculator/
 https://tools.usefulverse.com/ta/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ta/tools/complex-number-calculator/
 https://tools.usefulverse.com/ta/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/ta/tools/momentum-calculator/
 https://tools.usefulverse.com/ta/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/ta/tools/acceleration-calculator/
 https://tools.usefulverse.com/ta/tools/friction-calculator/
@@ -15039,8 +15237,13 @@ https://tools.usefulverse.com/fa/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/fa/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/fa/tools/torque-calculator/
 https://tools.usefulverse.com/fa/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/fa/tools/led-resistor-calculator/
+https://tools.usefulverse.com/fa/tools/flow-rate-calculator/
+https://tools.usefulverse.com/fa/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/fa/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/fa/tools/dilution-calculator/
 https://tools.usefulverse.com/fa/tools/ohms-law-calculator/
+https://tools.usefulverse.com/fa/tools/transformer-calculator/
 https://tools.usefulverse.com/fa/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/fa/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/fa/tools/density-calculator/
@@ -15111,6 +15314,7 @@ https://tools.usefulverse.com/fa/tools/pond-volume-calculator/
 https://tools.usefulverse.com/fa/tools/fertilizer-calculator/
 https://tools.usefulverse.com/fa/tools/complex-number-calculator/
 https://tools.usefulverse.com/fa/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/fa/tools/momentum-calculator/
 https://tools.usefulverse.com/fa/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/fa/tools/acceleration-calculator/
 https://tools.usefulverse.com/fa/tools/friction-calculator/
@@ -15174,8 +15378,13 @@ https://tools.usefulverse.com/am/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/am/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/am/tools/torque-calculator/
 https://tools.usefulverse.com/am/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/am/tools/led-resistor-calculator/
+https://tools.usefulverse.com/am/tools/flow-rate-calculator/
+https://tools.usefulverse.com/am/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/am/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/am/tools/dilution-calculator/
 https://tools.usefulverse.com/am/tools/ohms-law-calculator/
+https://tools.usefulverse.com/am/tools/transformer-calculator/
 https://tools.usefulverse.com/am/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/am/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/am/tools/density-calculator/
@@ -15246,6 +15455,7 @@ https://tools.usefulverse.com/am/tools/pond-volume-calculator/
 https://tools.usefulverse.com/am/tools/fertilizer-calculator/
 https://tools.usefulverse.com/am/tools/complex-number-calculator/
 https://tools.usefulverse.com/am/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/am/tools/momentum-calculator/
 https://tools.usefulverse.com/am/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/am/tools/acceleration-calculator/
 https://tools.usefulverse.com/am/tools/friction-calculator/
@@ -15309,8 +15519,13 @@ https://tools.usefulverse.com/gu/tools/frequency-wavelength-calculator/
 https://tools.usefulverse.com/gu/tools/ideal-gas-law-calculator/
 https://tools.usefulverse.com/gu/tools/torque-calculator/
 https://tools.usefulverse.com/gu/tools/beam-deflection-calculator/
+https://tools.usefulverse.com/gu/tools/led-resistor-calculator/
+https://tools.usefulverse.com/gu/tools/flow-rate-calculator/
+https://tools.usefulverse.com/gu/tools/reynolds-number-calculator/
+https://tools.usefulverse.com/gu/tools/three-phase-power-calculator/
 https://tools.usefulverse.com/gu/tools/dilution-calculator/
 https://tools.usefulverse.com/gu/tools/ohms-law-calculator/
+https://tools.usefulverse.com/gu/tools/transformer-calculator/
 https://tools.usefulverse.com/gu/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/gu/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/gu/tools/density-calculator/
@@ -15381,6 +15596,7 @@ https://tools.usefulverse.com/gu/tools/pond-volume-calculator/
 https://tools.usefulverse.com/gu/tools/fertilizer-calculator/
 https://tools.usefulverse.com/gu/tools/complex-number-calculator/
 https://tools.usefulverse.com/gu/tools/kinetic-energy-calculator/
+https://tools.usefulverse.com/gu/tools/momentum-calculator/
 https://tools.usefulverse.com/gu/tools/resistor-color-code-calculator/
 https://tools.usefulverse.com/gu/tools/acceleration-calculator/
 https://tools.usefulverse.com/gu/tools/friction-calculator/

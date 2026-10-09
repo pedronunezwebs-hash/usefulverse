@@ -58,6 +58,7 @@ export function renderGrowthForm(toolId, copy) {
     'three-phase-power-calculator': ['system', 'singlePhase', 'threePhase', 'topology', 'star', 'delta', 'lineVoltage', 'voltageUnit', 'volts', 'kilovolts', 'lineCurrent', 'currentUnit', 'amperes', 'kiloamperes', 'powerFactor', 'accuracyNote'],
     'dilution-calculator': ['mode', 'directMode', 'serialMode', 'stockConcentration', 'targetConcentration', 'finalVolume', 'volumeUnit', 'steps', 'accuracyNote'],
     'ohms-law-calculator': ['mode', 'solverMode', 'networkMode', 'voltage', 'current', 'resistance', 'power', 'topology', 'series', 'parallel', 'resistorValues', 'accuracyNote'],
+    'transformer-calculator': ['mode', 'voltageMode', 'ratioMode', 'currentMode', 'primaryVoltage', 'secondaryVoltage', 'primaryTurns', 'secondaryTurns', 'primaryCurrent', 'efficiencyPercent', 'accuracyNote'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
     'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
     'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
@@ -205,6 +206,7 @@ export function renderGrowthForm(toolId, copy) {
     'three-phase-power-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'dilution-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'milliliters'],
     'ohms-law-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'transformer-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
     'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -1867,6 +1869,18 @@ export function renderGrowthForm(toolId, copy) {
       ${label('ohms-topology', fields.topology, `<select id="ohms-topology" name="topology"><option value="series">${escapeGrowthHtml(fields.series)}</option><option value="parallel">${escapeGrowthHtml(fields.parallel)}</option></select>`)}
       ${label('ohms-resistor-values', fields.resistorValues, '<textarea id="ohms-resistor-values" name="resistorValues" rows="4" maxlength="500" spellcheck="false"></textarea>')}
     </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'transformer-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('transformer-mode', fields.mode, `<select id="transformer-mode" name="mode"><option value="voltage">${escapeGrowthHtml(fields.voltageMode)}</option><option value="ratio">${escapeGrowthHtml(fields.ratioMode)}</option><option value="current">${escapeGrowthHtml(fields.currentMode)}</option></select>`)}
+    ${label('transformer-primary-voltage', fields.primaryVoltage, '<input id="transformer-primary-voltage" data-transformer-field name="primaryVoltage" type="number" min="0.000000000001" max="1000000000000" step="any" inputmode="decimal" value="120">')}
+    ${label('transformer-secondary-voltage', fields.secondaryVoltage, '<input id="transformer-secondary-voltage" data-transformer-field name="secondaryVoltage" type="number" min="0.000000000001" max="1000000000000" step="any" inputmode="decimal">')}
+    ${label('transformer-primary-turns', fields.primaryTurns, '<input id="transformer-primary-turns" data-transformer-field name="primaryTurns" type="number" min="0.000000000001" max="1000000000000" step="any" inputmode="decimal" value="100">')}
+    ${label('transformer-secondary-turns', fields.secondaryTurns, '<input id="transformer-secondary-turns" data-transformer-field name="secondaryTurns" type="number" min="0.000000000001" max="1000000000000" step="any" inputmode="decimal" value="50">')}
+    ${label('transformer-primary-current', fields.primaryCurrent, '<input id="transformer-primary-current" data-transformer-field name="primaryCurrent" type="number" min="0.000000000001" max="1000000000000" step="any" inputmode="decimal">')}
+    ${label('transformer-efficiency', fields.efficiencyPercent, '<input id="transformer-efficiency" data-transformer-field name="efficiencyPercent" type="number" min="0.000000000001" max="100" step="any" inputmode="decimal" value="100">')}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

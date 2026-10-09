@@ -27,12 +27,14 @@ import { idealGasLawCalculatorEnglishCopy } from './locales/ideal-gas-law-calcul
 import { torqueCalculatorEnglishCopy } from './locales/torque-calculator.en.mjs';
 import torqueCalculatorCopies from './locales/torque-calculator.mjs';
 import { beamDeflectionCalculatorEnglishCopy } from './locales/beam-deflection-calculator.en.mjs';
+import { transformerCalculatorEnglishCopy } from './locales/transformer-calculator.en.mjs';
 
 const actions = {
   calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', millimeters: 'Millimeters', feet: 'Feet', inches: 'Inches', squareMeters: 'Square meters', squareFeet: 'Square feet', cubicMeters: 'Cubic meters', cubicFeet: 'Cubic feet', kelvin: 'Kelvin difference', fahrenheit: 'Fahrenheit difference', kilowatts: 'Kilowatts (kW)', btuPerHour: 'BTU per hour (BTU/h)', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.', kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only', productionMode: 'Estimate array output', sizingMode: 'Size for daily use', years: 'years', add: 'Add', subtract: 'Subtract', multiply: 'Multiply', divide: 'Divide', magnitude: 'Modulus', argument: 'Argument', rectangularToPolar: 'Rectangular to polar', polarToRectangular: 'Polar to rectangular', roots: 'Nth roots',
 };
 const messages = { copied: 'Copied.', copyUnavailable: 'Copy is unavailable.', calculated: 'Calculation complete.', sameSize: 'These tire sizes are the same.', checkInputs: 'Check your entries.', diameter: 'Nominal outside diameter', sidewall: 'Sidewall height', circumference: 'Nominal circumference', revolutions: 'Revolutions per kilometre', diameterDifference: 'Diameter difference', diameterChange: 'Diameter change', groundClearance: 'Estimated ground-clearance change', actualSpeed: 'Estimated actual speed', area: 'Area', volume: 'Volume', liters: 'Litres', usGallons: 'US gallons', imperialGallons: 'Imperial gallons', averageDepth: 'Average depth', orderVolume: 'Order volume', estimatedWeight: 'Estimated weight', bagsToBuy: 'Bags to buy', invalidFormula: 'Check the chemical formula.', atomCount: 'atoms', molarMass: 'Molar mass', estimateOnly: 'Estimate only; compare lender offers.', currentPayment: 'Current monthly payment', newPayment: 'New monthly payment', paymentDifference: 'Monthly payment difference', currentTotal: 'Current remaining total', newTotal: 'New loan total', estimatedDifference: 'Estimated savings (negative means higher cost)', breakEven: 'Break-even', noBreakEven: 'No break-even within the compared terms', monthCount: '{count} months', privatePair: '{giver} gives to {recipient}', allRevealed: 'All pairs revealed.', drawReady: 'Draw ready. Reveal one person at a time.', checkNamesAndRules: 'Check the names and exclusions.', downloaded: 'Downloaded.', riserHeight: 'Riser height', treadCount: 'Tread count', totalRun: 'Total run', angle: 'Angle', stringerLength: 'Stringer length', diagram: 'Stair side view', pit: 'Pit', seeds: 'seeds', playerOne: 'Player one', playerTwo: 'Player two', playerOneWins: 'Player one wins.', playerTwoWins: 'Player two wins.', tie: 'Tie game.', gameOver: 'Game over.', turn: '{player} to move.', angleDegrees: 'Angle', angleRadians: 'Angle in radians', slopePercent: 'Slope', pitch: 'Rise per 12 run', rafterLength: 'Rafter length', wallArea: 'Net wall area', ceilingArea: 'Ceiling area', totalArea: 'Total surface area', boardCount: 'Whole boards', boardCoverage: 'Board coverage', estimatedScrews: 'Estimated screws', jointSeams: 'Joint seams', estimatedCost: 'Estimated cost', costNotEntered: 'Enter price.', costEstimateNote: 'Currency is not assumed.' };
 const copies = {
+  'transformer-calculator': transformerCalculatorEnglishCopy,
   'image-sharpener': { name: 'Image sharpener', actions: { ...actions, load: 'Choose image', export: 'Prepare download', download: 'Download', original: 'Show original', sharpened: 'Sharpened preview', png: 'PNG', jpeg: 'JPEG' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', exporting: 'Sharpening…', exportFailed: 'Export failed.', exportReady: 'Image ready.' }, fields: { imageFile: 'Choose image', amount: 'Strength', radius: 'Radius', threshold: 'Threshold', compare: 'Show original', accuracyNote: 'Processed locally; 8 megapixel limit.', previewHint: 'Preview is reduced.', format: 'Format', relatedRedactor: 'Redact private details.', relatedCropper: 'Crop the image.' } },
   'photo-to-sketch': { name: 'Photo to sketch', actions: { ...actions, load: 'Choose image', export: 'Create sketch PNG', cancel: 'Cancel processing', download: 'Download sketch PNG', original: 'Show original' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', exporting: 'Creating sketch…', cancelled: 'Processing cancelled.', exportFailed: 'Export failed.', exportReady: 'Sketch ready.' }, fields: { imageFile: 'Choose image', intensity: 'Sketch intensity', detail: 'Fine-detail threshold', compare: 'Show original', accuracyNote: 'Local processing; maximum 8 megapixels.', previewHint: 'Reduced preview.' } },
   'schema-markup-validator': { name: 'Schema markup validator', actions: { ...actions, validate: 'Validate markup', copySummary: 'Copy summary' }, messages: { ...messages, invalidJson: 'Invalid JSON.', rootNotObject: 'Expected an object.', inputTooLarge: 'Input too long.', loadingVocabulary: 'Loading terms.', vocabularyUnavailable: 'Terms unavailable.', valid: 'Valid.', invalid: 'Invalid.', unknownType: 'Unknown type.', unknownProperty: 'Unknown property.', noTypedEntity: 'No type.', exampleLoaded: 'Example loaded.' }, fields: { markup: 'Paste JSON-LD', accuracyNote: 'Local checks.', resultSummary: 'Summary', issues: 'Findings', googleNote: 'Not a Google test.' } },
@@ -1384,7 +1386,6 @@ test('RTF converter form accepts one local RTF file and exposes copy, text downl
   assert.match(html, /role="status" aria-live="polite"/u);
   assert.doesNotMatch(html, /<form[^>]+action=/u);
 });
-
 test('CSV-to-PDF form labels local file, separator, encoding and print settings', () => {
   const html = renderGrowthForm('csv-to-pdf', {
     fields: { file: 'Choose CSV file', separator: 'Separator', auto: 'Detect', comma: 'Comma', semicolon: 'Semicolon', tab: 'Tab', pipe: 'Pipe', encoding: 'Encoding', hasHeader: 'First row is headings', pageSize: 'Paper', orientation: 'Orientation', landscape: 'Landscape', portrait: 'Portrait', margin: 'Margins', narrow: 'Narrow', normal: 'Normal', accuracyNote: 'Plain data only.', limitNote: '5 MiB local limit.', resultCount: 'rows', columnCount: 'columns', previewLimit: 'First', tableLabel: 'CSV preview' },
@@ -1398,7 +1399,6 @@ test('CSV-to-PDF form labels local file, separator, encoding and print settings'
   assert.match(html, /role="status" aria-live="polite"/u);
   assert.doesNotMatch(html, /<form[^>]+action=/u);
 });
-
 test('round-robin form exposes bounded participant input, league options, accessible standings and exports', () => {
   const html = renderGrowthForm('round-robin-tournament-generator', copies['round-robin-tournament-generator']);
   assert.match(html, /name="participants" rows="8" maxlength="1600" required/u);
@@ -1429,6 +1429,15 @@ test('work-order form collects service details and exposes local preview, CSV an
   assert.match(html, /<option value="in-progress">In progress<\/option>/u);
   assert.match(html, /data-work-order-preview/u);
   for (const action of ['generate', 'example', 'reset', 'downloadCsv', 'print']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
+  assert.match(html, /role="status" aria-live="polite"/u);
+  assert.doesNotMatch(html, /<form[^>]+action=/u);
+});
+
+test('transformer form exposes all modes and a local accessible result surface', () => {
+  const html = renderGrowthForm('transformer-calculator', transformerCalculatorEnglishCopy);
+  assert.match(html, /name="mode"/u);
+  assert.match(html, /data-transformer-field name="primaryTurns"/u);
+  assert.match(html, /data-transformer-field name="efficiencyPercent"/u);
   assert.match(html, /role="status" aria-live="polite"/u);
   assert.doesNotMatch(html, /<form[^>]+action=/u);
 });

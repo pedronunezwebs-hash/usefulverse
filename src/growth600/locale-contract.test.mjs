@@ -4,6 +4,8 @@ import { assertGrowthLocaleCoverage } from './locale-contract.mjs';
 import { growthPilotTools as allGrowthPilotTools } from './catalog.mjs';
 import { localeEntries } from '../locales.mjs';
 import englishGrowthCopy from './locales/en.mjs';
+import transformerCopies from './locales/transformer-calculator-final.mjs';
+import { transformerCalculatorEnglishCopy } from './locales/transformer-calculator.en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
 import portugueseGrowthCopy from './locales/pt.mjs';
 import germanGrowthCopy from './locales/de.mjs';
@@ -1493,6 +1495,13 @@ test('Ohm’s law calculator has complete English copy but has approved localize
   const tool = allGrowthPilotTools.find(({ id }) => id === 'ohms-law-calculator');
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('transformer calculator has complete static copy and machine-accepted localization in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'transformer-calculator');
+  assert.ok(tool);
+  assert.equal(transformerCopies.en.name, transformerCalculatorEnglishCopy.name);
   assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 

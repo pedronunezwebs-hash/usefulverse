@@ -42,6 +42,7 @@ import { calculateVoltageDrop } from './voltage-drop-calculator/logic.mjs';
 import { calculateMolarity } from './molarity-calculator/logic.mjs';
 import { calculateDilution } from './dilution-calculator/logic.mjs';
 import { calculateEquivalentResistance, solveOhmsLaw } from './ohms-law-calculator/logic.mjs';
+import { calculateTransformer } from './transformer-calculator/logic.mjs';
 import { balanceChemicalEquation } from './chemical-equation-balancer/logic.mjs';
 import { calculateGearRatio } from './gear-ratio-calculator/logic.mjs';
 import { calculateDensity, parseDensityComponents } from './density-calculator/logic.mjs';
@@ -63,6 +64,15 @@ test('gravel calculator converts area and depth into volume, waste, weight and b
   assert.equal(calculateTriangularArea(4, 3), 6);
   assert.throws(() => calculateGravel({ areaM2: 0, depthM: 1 }), /Area/);
   assert.throws(() => calculateGravel({ areaM2: 1, depthM: 1, wastePercent: 101 }), /Waste/);
+});
+
+test('transformer calculator covers voltage, turns ratio, current and invalid inputs', () => {
+  const voltage = calculateTransformer({ mode: 'voltage', primaryVoltage: 120, primaryTurns: 100, secondaryTurns: 50 });
+  assert.equal(voltage.secondaryVoltage, 60);
+  assert.equal(voltage.turnsRatio, 0.5);
+  assert.equal(calculateTransformer({ mode: 'ratio', primaryVoltage: 120, secondaryVoltage: 60 }).turnsRatio, 0.5);
+  assert.equal(calculateTransformer({ mode: 'current', primaryCurrent: 2, primaryTurns: 100, secondaryTurns: 50, efficiencyPercent: 90 }).secondaryCurrent, 3.6);
+  assert.throws(() => calculateTransformer({ mode: 'current', primaryCurrent: 2, primaryTurns: 100, secondaryTurns: 50, efficiencyPercent: 0 }), /Efficiency/u);
 });
 
 test('kinetic energy calculator solves direct, inverse-speed and reference-height cases', () => {

@@ -420,6 +420,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/ohms-law-calculator/logic.mjs',
   },
   {
+    id: 'transformer-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'transformer calculator',
+    secondaryIntents: ['transformer turns ratio calculator', 'transformer voltage calculator', 'transformer current ratio calculator'],
+    functions: ['calculate ideal secondary voltage from primary voltage and primary/secondary turns', 'find the turns ratio from primary and secondary voltage', 'estimate secondary current from primary current, turns ratio and a user-entered efficiency'],
+    acceptance: 'A 2:1 primary-to-secondary turns ratio with 120 V input yields 60 V ideal secondary voltage.',
+    boundary: 'Educational ideal-transformer arithmetic only; assumes sinusoidal steady-state RMS values and the turns ratio convention Ns/Np. Does not select transformer ratings or model core saturation, frequency, losses beyond a user-entered efficiency, winding resistance, inrush, isolation, wiring or shock/fire risk. Not electrical design or safety advice; consult datasheets and a qualified professional. Inputs stay in this browser.',
+    relatedExistingIds: ['ohms-law-calculator', 'three-phase-power-calculator'],
+    logicModule: './tools/transformer-calculator/logic.mjs',
+  },
+  {
     id: 'chemical-equation-balancer',
     category: 'science-engineering',
     type: 'calculator',
