@@ -236,6 +236,8 @@ import dilutionCopies from './dilution-calculator-final.mjs';
 import { dilutionCalculatorEnglishCopy } from './dilution-calculator.en.mjs';
 import ohmsLawCopies from './ohms-law-calculator-final.mjs';
 import { ohmsLawCalculatorEnglishCopy } from './ohms-law-calculator.en.mjs';
+import transformerCopies from './transformer-calculator-final.mjs';
+import { transformerCalculatorEnglishCopy } from './transformer-calculator.en.mjs';
 import chemicalEquationCopies from './chemical-equation-balancer-final.mjs';
 import { chemicalEquationBalancerEnglishCopy } from './chemical-equation-balancer.en.mjs';
 import gearRatioCopies from './gear-ratio-calculator-final.mjs';
@@ -733,6 +735,7 @@ registerGrowthLocaleExtension(source, 'reynolds-number-calculator', { ...reynold
 registerGrowthLocaleExtension(source, 'three-phase-power-calculator', { ...threePhasePowerCopies, en: threePhasePowerCalculatorEnglishCopy }, 'reynolds-number-calculator');
 registerGrowthLocaleExtension(source, 'dilution-calculator', { ...dilutionCopies, en: dilutionCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'ohms-law-calculator', { ...ohmsLawCopies, en: ohmsLawCalculatorEnglishCopy }, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'transformer-calculator', { ...transformerCopies, en: transformerCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'chemical-equation-balancer', { ...chemicalEquationCopies, en: chemicalEquationBalancerEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'gear-ratio-calculator', { ...gearRatioCopies, en: gearRatioCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'density-calculator', { ...densityCopies, en: densityCalculatorEnglishCopy }, 'gravel-calculator');

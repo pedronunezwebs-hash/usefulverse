@@ -9,7 +9,7 @@ Fecha de investigación: 7 de octubre de 2026. Documento de planificación y che
 - [x] Comprobar la base de planificación: **277 herramientas y 36 idiomas**.
 - [x] Investigar demanda con un gasto acotado en DataForSEO y registrar los resultados reales.
 - [x] Consolidar variantes antes de fijar el nuevo catálogo, sin contar una dirección de conversión como otra herramienta.
-- [ ] Implementar las nuevas herramientas. **Progreso al 9 de octubre de 2026: 138/323 herramientas Growth600 publicadas (415 en total con las 277 originales); #230 está en validación local.** Consultar `docs/growth600/PROGRESS.md` para el estado y evidencia de cada entrega; las métricas históricas no implican indexación.
+- [ ] Implementar las nuevas herramientas. **Progreso al 9 de octubre de 2026: 139/323 herramientas Growth600 publicadas (416 en total con las 277 originales); #234 está en validación local.** Consultar `docs/growth600/PROGRESS.md` para el estado y evidencia de cada entrega; las métricas históricas no implican indexación.
 
 Snapshot consultado: rama `main`, commit `685f91adfc7818a54f6dc0a967e290d13137a3dd`. Catálogo: `src/catalog.mjs`; funciones y contratos representativos: `src/app.js`, módulos de lógica, `src/opportunity-tools.mjs`, `src/seo.mjs`, locales, build y documentación del repo. Se inspeccionaron los metadatos de las 277 herramientas y contratos clave para descartar duplicados; esto **no es una nueva auditoría funcional completa de las 277**.
 
@@ -1355,8 +1355,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 230 · Momentum Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `momentum-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/momentum-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `momentum-calculator`**
+- **Destino:** `https://tools.usefulverse.com/tools/momentum-calculator/`; otras 35 versiones con los prefijos del anexo. Publicada.
 - **Demanda:** `momentum calculator` — 1.600 búsquedas/mes US/en, KD 0; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** momento con signo y choques 1D elásticos/inelásticos; velocidades iniciales/finales, conservación de momento, energía antes/después y energía convertida según coeficiente de restitución.
 - **Prueba de aceptación específica:** Masas iguales choque elástico intercambian velocidades
@@ -1366,20 +1366,23 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `collision calculator` — 70/mes US/en; KD 0.
   - `momentum calculator free online`; `momentum calculator with example`; `momentum calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Cierre:** PR #100 integrada en `3ff28627199f7e1a6ed8c12ef44c0e63d402640f`; CI y publicación del hub en run `37942408044` correctos. Sitemap público incluye las 36 rutas y responde HTTP 200 con 5.040 URLs. Publicar no demuestra indexación. Sin PageSpeed/Lighthouse.
 
 ### 234 · Transformer Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `transformer-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/transformer-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B completos; P/S pendientes — `transformer-calculator`**
+- **Destino:** `https://tools.usefulverse.com/tools/transformer-calculator/`; otras 35 versiones con los prefijos del anexo. La publicación está pendiente.
 - **Demanda:** `transformer calculator` — 1.600 búsquedas/mes US/en, KD 3; nivel B. CPC 5.9 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Relación vueltas, tensión, corriente y eficiencia
 - **Prueba de aceptación específica:** Ratio2:1 transforma120V ideal a60V
 - **Frontera con otras herramientas:** ohms-law-calculator: transformador ideal. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** H: dependencia/cómputo bajo demanda; verificar licencia y compatibilidad. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** motor aritmético local ligero, sin dependencias, red, servidor ni coste extra. Se explicitan las hipótesis de transformador ideal y los límites eléctricos; no sustituye selección de equipo ni consejo de seguridad.
 - **Consultas secundarias del mismo propietario:**
   - `transformer turns ratio calculator` — 260/mes US/en; KD 0.
   - `transformer calculator free online`; `transformer calculator with example`; `transformer calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- QA: prueba de aceptación 120 V y relación 100:50 → 60 V; cálculo de corriente 2 A con 90 % → 3,6 A; modos/validaciones; suite dirigida 275/275, suite global 1.719/1.719, `locale:release-check`, `npm run check` (10.260 URLs originales) y build aislado (5.076 páginas) pasan. Chrome EN/AR, modo RTL a 390 px sin desbordamiento ni errores de consola. Traducciones estáticas sencillas a 36 locales; copy árabe técnico ajustado manualmente. Sin PageSpeed/Lighthouse.
+- [ ] P/S — PR, despliegues y sitemap público aún pendientes; no contar entre las herramientas públicas hasta verificarlos.
 
 ### 246 · Stoichiometry Calculator
 

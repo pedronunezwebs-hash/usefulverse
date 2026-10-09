@@ -4,7 +4,7 @@
 
 ## Estado público actual · 2026-10-09
 
-- **138 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **5.004 URLs** (138 × 36 + 36 páginas de idioma): **415 herramientas públicas en total** y 15.264 URLs entre los dos sitios (10.260 + 5.004). Esto no equivale a que los buscadores hayan indexado cada URL.
+- **139 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **5.040 URLs** (139 × 36 + 36 páginas de idioma): **416 herramientas públicas en total** y 15.300 URLs entre los dos sitios (10.260 + 5.040). Esto no equivale a que los buscadores hayan indexado cada URL.
 - #148 Text to Binary Converter: PR #81 integrada; despliegue principal `37891603568` y despliegue del hub `37892340212` correctos. EN/ES/AR responden HTTP 200.
 - #171 Schema Markup Validator, #172 Readability Checker y #173 Savings Goal Calculator ya aparecen en las 36 versiones públicas; verificaciones previas registradas debajo.
 - #189 Certificate Decoder: 36 rutas públicas; detalles de pruebas y despliegue anotados abajo.
@@ -22,7 +22,7 @@
 - #205 LED Resistor Calculator: PR [#96](https://github.com/pedronunezwebs-hash/usefulverse/pull/96) integrada como `ee6d0597450184fe64637cf4f339fc5af649508e`; CI `37929414805`, despliegue principal `37929894867` y publicación del hub `37930526779` correctos. Sitemap público HTTP 200 con **4.896 URLs únicas**; las 36 rutas de la herramienta responden HTTP 200 y canonical autorreferente. QA EN/AR validó el cálculo de 500 Ω, selección E12/E24 y potencia estimada con límites explícitos. Sin PageSpeed/Lighthouse ni afirmación de indexación.
 - #212 Flow Rate Calculator: PR [#97](https://github.com/pedronunezwebs-hash/usefulverse/pull/97) integrada como `71fd7323f35c238ef592ff525f4d8c2b7dbb60fa`; CI `37931992182`, despliegue principal `37932399268` y publicación del hub `37932777118` correctos. Sitemap HTTP 200 con **4.932 URLs únicas**; las 36 rutas responden HTTP 200 con canonical autorreferente. QA EN/AR local validó caudal y tiempo de llenado; no se afirma indexación.
 - #213 Reynolds Number Calculator: PR [#98](https://github.com/pedronunezwebs-hash/usefulverse/pull/98) fusionada como `5c1660a0250f881bbb0ddbf8e78d55c95f304964`; CI PR `37935068996`, deploy principal `37935552312` y hub `37935586544` exitosos. Sitemap público HTTP 200 con **4.968 URLs únicas**; comprobadas las 36 rutas HTTP 200 y canonical propio. QA Chrome EN/AR validó Re ≈49.810 para el ejemplo de agua y 50.000 en modo cinemático; AR RTL encaja a 390 px y consola limpia. Procesamiento local, 36 traducciones estáticas automáticas. Sin PageSpeed/Lighthouse ni afirmación de indexación.
-- `npm run check` conserva **10.260 URLs** del sitio principal. La candidata en curso ahora es #230 Momentum Calculator. No se mide PageSpeed/Lighthouse.
+- `npm run check` conserva **10.260 URLs** del sitio principal. La candidata local en curso es #234 Transformer Calculator; su publicación está pendiente. No se mide PageSpeed/Lighthouse.
 
 ## Publicada · Three Phase Power Calculator (#229)
 
@@ -35,14 +35,22 @@
 - **Recuento tras publicación:** 138 Growth600 / 5.004 URLs del hub; 415 herramientas públicas y 15.264 URLs combinadas. Las 277 originales intactas.
 - **Siguiente candidata:** #230 Momentum Calculator.
 
-## En implementación local · Momentum Calculator (#230)
+## Publicada · Momentum Calculator (#230)
 
-- Usa solo la ficha ya incluida en el plan: `momentum calculator`, 1.600 búsquedas/mes US/en, KD 0; secundaria `collision calculator`, 70/mes, KD 0. Sin consultas nuevas a DataForSEO.
-- Calcula el momento total firmado y modela choques 1D con masas positivas, velocidades con dirección y coeficiente de restitución 0–1; muestra velocidades finales, momento antes/después y energía cinética antes/después y convertida. Declara el modelo clásico aislado y sus exclusiones (sin impulso externo, giro, deformación detallada ni relatividad). No es análisis de ingeniería/seguridad. Cálculo en navegador, sin API ni subida.
-- 36 traducciones estáticas sencillas de Google Translate, aceptadas como traducción automática, no revisión nativa; metadatos limitados y título con marca. Dos correcciones manuales en árabe para “borrar” y “coeficiente de restitución”.
-- QA de lógica/controlador/formulario/catálogo/locale/build focalizado y suite completa del repositorio en curso; casos esperados: masas 1 kg, velocidades +2/−1 m/s, e=1 → velocidades −1/+2, momento 1 kg·m/s y pérdida 0 J; e=0 → ambas +0,5 m/s y pérdida 2,25 J; modos y entrada incompleta limpian/rechazan correctamente.
-- QA Chrome local EN/AR y móvil 390 px: carga y copy accesibles, RTL árabe sin desbordamiento (390 px de documento), consola sin errores/avisos; interacciones centrales pasan. Falta repetir snapshot con la última regeneración estática de la corrección árabe.
-- Aún no fusionada/desplegada. No se suma al recuento público ni se declara indexada; sin PageSpeed/Lighthouse.
+- Datos de demanda reutilizados del plan, sin llamadas nuevas a DataForSEO: `momentum calculator`, 1.600 búsquedas/mes US/en, KD 0; secundaria `collision calculator`, 70/mes, KD 0.
+- Calcula momento firmado y choques unidimensionales con coeficiente de restitución, velocidades finales, conservación del momento y energía antes/después. Límites del modelo clásico aislado explicados; procesamiento local, sin API ni subida.
+- 36 traducciones estáticas sencillas; no se presentan como revisión nativa y no hay traducción en runtime. Copy técnico árabe ajustado manualmente.
+- Publicada mediante PR #100. CI/deploy principal `37941441970` y publicación del hub `37942408044` completados; sitemap público verificado con **5.040 URLs**, incluidas las 36 variantes. Publicación no equivale a indexación. Sin PageSpeed/Lighthouse.
+
+## En implementación local · Transformer Calculator (#234)
+
+- Reutiliza la investigación del plan, sin gasto adicional: `transformer calculator`, 1.600 búsquedas/mes US/en, KD 3; `transformer turns ratio calculator`, 260/mes, KD 0.
+- Tres modos locales: tensión secundaria desde vueltas y tensión primaria; relación de vueltas desde las dos tensiones; estimación de corriente secundaria desde corriente primaria, relación y eficiencia ingresada. Suposiciones de transformador ideal y límites de seguridad claramente advertidos. Sin red, API, subida ni dependencia añadida.
+- 36 traducciones estáticas sencillas desde inglés; corrección manual de etiquetas árabes técnicas; ninguna traducción en runtime.
+- Prueba de aceptación: 120 V y relación 100:50 → 60 V; 2 A al 90 % → 3,6 A. Suite focal **275/275**, suite completa **1.719/1.719**, `npm run locale:release-check`, `npm run check` (10.260 URLs originales) y build aislado (**5.076 páginas**) pasan.
+- Chrome local: EN y AR; cálculo de tensión/relación/corriente, Arabic RTL en 390 px sin overflow ni errores de consola. No se ejecutó PageSpeed/Lighthouse.
+- PR/deploy y sitemap público pendientes; aún no suma al recuento público.
+- **Siguiente candidata elegible:** #246 Stoichiometry Calculator, después de cerrar P/S de esta entrega.
 
 ## Publicada · Beam Deflection Calculator (#203 del plan)
 
@@ -1564,3 +1572,15 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [x] S — sitemap de 3.024 URLs publicado y enviado en Google Search Console (Correcto; el panel aún refleja 216 URLs de la lectura anterior), Bing Webmaster (Processing) y Yandex Webmaster (en cola, hasta 1–2 semanas). Los paneles no confirman todavía el recuento nuevo/indexación.
 - [ ] S — Naver Search Advisor pendiente de inicio de sesión y envío manual del sitemap del hub; no confundir sitemap accesible o envío aceptado con rastreo/indexación.
 - **Alcance anterior a la publicación:** el hub tenía el piloto de 5 herramientas y 216 URLs. Tras la publicación, el sitemap pasó a **3.024 URLs**.
+
+## Continuación · Transformer Calculator (#234) · 2026-10-09
+
+- [x] C/F — reutilicé la investigación existente del plan: `transformer calculator`, 1.600 búsquedas/mes US/en, KD 3; variante `transformer turns ratio calculator`, 260/mes, KD 0. No repetí consultas ni consumí cuota de DataForSEO.
+- [x] E — tres modos separados: tensión secundaria desde Vp/Np/Ns; relación Ns/Np desde tensiones; y corriente secundaria estimada desde Ip/Np/Ns con eficiencia editable. Ejemplo de aceptación: 120 V, Np:Ns = 2:1 → 60 V ideal; 2 A primarios → 3,6 A secundarios al 90% de eficiencia.
+- [x] B — cálculo local sin dependencia, API, función de servidor ni datos subidos. Valida magnitudes positivas, eficiencia 0–100, resultados finitos y rango. Distingue la convención Ns/Np y declara que es una estimación didáctica RMS; no elige capacidad ni certifica aislamiento, cableado o seguridad eléctrica.
+- [x] L — Google Translate generó copias estáticas para los 35 locales adicionales; inglés es fuente. Se corrigieron manualmente los términos eléctricos principales del árabe tras la QA (primario/secundario, número de espiras y seguridad). Las traducciones son automáticas, no revisión nativa. Títulos y descripciones respetan límites por contrato.
+- [x] X — **275/275 pruebas focalizadas**; suite global **1.719/1.719**; `npm run locale:release-check`; `npm run check` conserva las 10.260 URLs del sitio principal. Build de hub: **5.076 páginas** (140 herramientas × 36 idiomas + 36 portadas), 5.273 archivos. No se tocó el catálogo principal de 277 herramientas.
+- [x] QA de navegador — inglés: ejemplo 120 V, 100:50 → 60 V y Ns/Np=0,5. Árabe RTL: voltaje y corriente calculados; campos activos/desactivados según modo; viewport móvil 390×844 sin desbordamiento y consola sin errores ni avisos.
+- [x] Inventario — README regenerado desde ambos sitemaps de build: **10.260 URLs** principales y **5.076 URLs** del hub. El README indica 140 herramientas adicionales.
+- [ ] P/S — estos son resultados de build local: la ruta todavía no está declarada publicada ni enviada a buscadores. Esperar integración y despliegues verificados antes de marcarla [x] y actualizar el estado público.
+- **Recuento local:** **84/323** candidatas con implementación en catálogo y copy estático de 36 idiomas; quedan **239 candidatas válidas y una fila duplicada/reserva por sustituir** según el plan. El hub de este checkout genera 140 herramientas; no confundir ese inventario con producción hasta confirmar deploy.
