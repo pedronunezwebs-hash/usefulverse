@@ -1,0 +1,33 @@
+export const reynoldsNumberCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en', name: 'Reynolds Number Calculator', title: 'Reynolds Number Calculator Free & Unlimited | UsefulVerse',
+  description: 'Calculate Reynolds number from velocity, characteristic length and dynamic or kinematic viscosity. Free, unlimited and local.',
+  intro: 'Calculate the dimensionless Reynolds number using fluid density and dynamic viscosity, or enter kinematic viscosity directly. Choose a pipe-flow context for conventional regime ranges; external-flow interpretation depends on geometry and conditions.',
+  howQuestion: 'How do I calculate Reynolds number?',
+  howAnswer: 'For dynamic viscosity, Re = ρvL/μ. With kinematic viscosity, Re = vL/ν. Density ρ, average speed v, characteristic length L, dynamic viscosity μ and kinematic viscosity ν must use compatible units. The result has no units.',
+  privacyQuestion: 'Are my fluid values uploaded?',
+  privacyAnswer: 'No. Calculations run in this browser. Values you enter are not uploaded or saved by this tool.',
+  fields: {
+    geometry: 'Flow context', pipeFlow: 'Internal pipe flow', externalFlow: 'External flow around an object',
+    viscosityType: 'Viscosity data available', dynamic: 'Dynamic viscosity and density', kinematic: 'Kinematic viscosity',
+    velocity: 'Average fluid velocity', velocityUnit: 'Velocity unit', metersPerSecond: 'Meters per second (m/s)', centimetersPerSecond: 'Centimeters per second (cm/s)', feetPerSecond: 'Feet per second (ft/s)', kilometersPerHour: 'Kilometers per hour (km/h)',
+    characteristicLength: 'Characteristic length', lengthUnit: 'Length unit', meters: 'Meters (m)', centimeters: 'Centimeters (cm)', millimeters: 'Millimeters (mm)', inches: 'Inches (in)', feet: 'Feet (ft)',
+    density: 'Fluid density', densityUnit: 'Density unit', kilogramsPerCubicMeter: 'Kilograms per cubic meter (kg/m³)', gramsPerCubicCentimeter: 'Grams per cubic centimeter (g/cm³)', poundsPerCubicFoot: 'Pounds per cubic foot (lb/ft³)',
+    dynamicViscosity: 'Dynamic viscosity', dynamicViscosityUnit: 'Dynamic-viscosity unit', pascalSeconds: 'Pascal-seconds (Pa·s)', millipascalSeconds: 'Millipascal-seconds (mPa·s)', centipoise: 'Centipoise (cP)', poundsPerFootSecond: 'Pounds per foot-second (lb/(ft·s))',
+    kinematicViscosity: 'Kinematic viscosity', kinematicViscosityUnit: 'Kinematic-viscosity unit', squareMetersPerSecond: 'Square meters per second (m²/s)', squareMillimetersPerSecond: 'Square millimeters per second (mm²/s)', centistokes: 'Centistokes (cSt)', squareFeetPerSecond: 'Square feet per second (ft²/s)',
+    accuracyNote: 'Dimensionless estimate using Re = ρvL/μ or Re = vL/ν. For internal pipe flow, laminar/transitional/turbulent boundaries around Re 2,300 and 4,000 are common engineering approximations, not universal guarantees. Entrance effects, roughness, geometry, disturbances and fluid conditions matter. External-flow regimes depend on geometry and the chosen length scale, so no universal category is assigned. Use measured/manufacturer data; this is not engineering design advice. Zero velocity gives Re = 0. Calculations stay in this browser.',
+  },
+  actions: { calculate: 'Calculate Reynolds number', reset: 'Reset', copy: 'Copy results', example: 'Try water in a 5 cm pipe at 1 m/s', result: 'Reynolds number estimate' },
+  messages: {
+    calculated: 'Reynolds number calculated.', checkInputs: 'Check the required values and supported units.',
+    reynoldsNumber: 'Reynolds number (Re)', regime: 'Pipe-flow regime estimate', flowContext: 'Flow context', velocity: 'Velocity converted to SI', characteristicLength: 'Characteristic length in SI', density: 'Density converted to SI', dynamicViscosity: 'Dynamic viscosity in SI', kinematicViscosity: 'Kinematic viscosity in SI',
+    laminarRegime: 'Laminar (conventional estimate)', transitionalRegime: 'Transitional (conventional estimate)', turbulentRegime: 'Turbulent (conventional estimate)', contextDependent: 'Context-dependent; no universal category',
+    formula: 'Formula', dynamicFormula: 'Re = ρvL/μ', kinematicFormula: 'Re = vL/ν',
+  },
+  additionalFaqs: [
+    { question: 'What is the Reynolds number formula?', answer: 'Using dynamic viscosity, Re = ρvL/μ. Using kinematic viscosity, Re = vL/ν. Use the average velocity and characteristic dimension appropriate to the geometry, and keep units compatible.' },
+    { question: 'What does Reynolds number mean for pipe flow?', answer: 'It compares inertial and viscous effects. Values below about 2,300 are often treated as laminar, about 2,300–4,000 as transitional and above about 4,000 as turbulent for conventional internal pipe flow. These are practical approximations, not universal boundaries.' },
+    { question: 'Does zero velocity give a Reynolds number of zero?', answer: 'Yes. With zero velocity and otherwise valid positive length and viscosity, Re = 0.' },
+    { question: 'Can I use the pipe-flow categories for an object in a moving fluid?', answer: 'Not automatically. External-flow behavior depends on object shape, chosen length scale, surface and flow conditions. This tool shows that the regime is context-dependent instead of assigning a universal category.' },
+  ],
+  localizationStatus: 'approved', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09',
+});

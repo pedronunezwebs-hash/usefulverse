@@ -1309,8 +1309,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 212 · Flow Rate Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `flow-rate-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/flow-rate-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `flow-rate-calculator`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/flow-rate-calculator/`; las 36 versiones publicadas. PR #97, CI `37931992182`, despliegue principal `37932399268`, publicación del hub `37932777118`; sitemap HTTP 200 con 4.932 URLs, 36 rutas y canonicals autorreferentes verificados.
 - **Demanda:** `flow rate calculator` — 1.900 búsquedas/mes US/en, KD 0; nivel B. CPC 3.54 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Sección, velocidad, caudal y llenar depósito
 - **Prueba de aceptación específica:** Sección2m² a3m/s da6m³/s
@@ -1320,10 +1320,12 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `pipe flow calculator` — 880/mes US/en; KD 3.
   - `flow rate calculator free online`; `flow rate calculator with example`; `flow rate calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Cierre verificado:** 2 m² × 3 m/s → 6 m³/s; 1 m³ a 1 L/s → 16,6667 min. QA local EN/AR confirmó selector de modo y campos condicionales. Publicar no equivale a indexación; no se midió PageSpeed/Lighthouse.
 
 ### 213 · Reynolds Number Calculator
 
 - [ ] **C/F/E/X/L/B/P/S completos — `reynolds-number-calculator`**
+- **Estado local:** C/F/E/X/L/B implementados y comprobados según `docs/growth600/PROGRESS.md`; P/S pendientes de PR, CI, despliegue y verificación pública. No marcar completo antes de cerrar P/S.
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/reynolds-number-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `reynolds number calculator` — 1.900 búsquedas/mes US/en, KD 0; nivel B. CPC 3.7 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Densidad, velocidad, longitud, viscosidad y régimen contextual

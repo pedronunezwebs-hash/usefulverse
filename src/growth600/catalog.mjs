@@ -372,6 +372,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/flow-rate-calculator/logic.mjs',
   },
   {
+    id: 'reynolds-number-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'reynolds number calculator',
+    secondaryIntents: ['reynolds calculator', 'reynolds number for pipe flow', 'reynolds number from kinematic viscosity'],
+    functions: ['calculate Re = density × velocity × characteristic length ÷ dynamic viscosity or velocity × length ÷ kinematic viscosity', 'convert common SI and US customary units for density, velocity, length and viscosity', 'show conventional internal-pipe regime ranges while identifying external-flow classification as context-dependent'],
+    acceptance: 'Water at 20°C using density 998.2 kg/m³, velocity 1 m/s, length 0.05 m and dynamic viscosity 0.001002 Pa·s gives Re ≈ 49,810; zero velocity gives Re = 0.',
+    boundary: 'Dimensionless educational estimate only. Pipe transition ranges around Re 2,300 and 4,000 are conventional approximations, not guarantees; geometry, entrance effects, roughness, disturbances and fluid state matter. External-flow thresholds depend on geometry and characteristic length; no universal regime is assigned. Verify inputs and use qualified engineering judgment. Inputs stay in this browser.',
+    relatedExistingIds: ['flow-rate-calculator', 'density-calculator'],
+    logicModule: './tools/reynolds-number-calculator/logic.mjs',
+  },
+  {
     id: 'dilution-calculator',
     category: 'science-engineering',
     type: 'calculator',
