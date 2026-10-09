@@ -121,6 +121,8 @@ import jsonToExcelCopies from './json-to-excel.mjs';
 import { jsonToExcelEnglishCopy } from './json-to-excel.en.mjs';
 import binaryBase64ToolCopies from './binary-base64-tool.mjs';
 import { binaryBase64ToolEnglishCopy } from './binary-base64-tool.en.mjs';
+import jsonModelGeneratorCopies from './json-model-generator.mjs';
+import { jsonModelGeneratorEnglishCopy } from './json-model-generator.en.mjs';
 import openApiEditorCopies from './openapi-editor.mjs';
 import { openApiEditorEnglishCopy } from './openapi-editor.en.mjs';
 import fontPairingToolCopies from './font-pairing-tool.mjs';
@@ -1130,5 +1132,6 @@ registerGrowthLocaleExtension(source, 'har-viewer', { ...harViewerCopies, en: ha
 registerGrowthLocaleExtension(source, 'robots-txt-tester', { ...robotsTxtTesterCopies, en: robotsTxtTesterEnglishCopy }, 'har-viewer');
 registerGrowthLocaleExtension(source, 'json-to-excel', { ...jsonToExcelCopies, en: jsonToExcelEnglishCopy }, 'robots-txt-tester');
 registerGrowthLocaleExtension(source, 'binary-base64-tool', { ...binaryBase64ToolCopies, en: binaryBase64ToolEnglishCopy }, 'json-to-excel');
+registerGrowthLocaleExtension(source, 'json-model-generator', { ...jsonModelGeneratorCopies, en: jsonModelGeneratorEnglishCopy }, 'binary-base64-tool');
 
 export default Object.freeze(source);

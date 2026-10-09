@@ -4,7 +4,7 @@
 
 ## Estado público actual · 2026-10-09
 
-- **125 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **4.536 URLs** (125 × 36 + 36 páginas de idioma). Esto no equivale a que los buscadores hayan indexado cada URL.
+- **126 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **4.572 URLs** (126 × 36 + 36 páginas de idioma). Esto no equivale a que los buscadores hayan indexado cada URL.
 - #148 Text to Binary Converter: PR #81 integrada; despliegue principal `37891603568` y despliegue del hub `37892340212` correctos. EN/ES/AR responden HTTP 200.
 - #171 Schema Markup Validator, #172 Readability Checker y #173 Savings Goal Calculator ya aparecen en las 36 versiones públicas; verificaciones previas registradas debajo.
 - #189 Certificate Decoder: 36 rutas públicas; detalles de pruebas y despliegue anotados abajo.
@@ -22,12 +22,19 @@
 - Chrome QA local: EN prueba los tres registros del ejemplo, columnas `id`, `name`, `profile.city` y `amount`; descarga interceptada en memoria como XLSX válido (firma ZIP `PK\x03\x04`, 1.719 bytes), conserva `001` y `=1+1` como texto. AR a 390×844 tiene `lang=ar`, `dir=rtl`, `scrollWidth=390` y cero errores de consola.
 - [x] Publicación: PR #86 integrada; workflow principal y publicación del hub correctos; sitemap público contiene 4.536 URLs únicas e incluye las 36 localizaciones. No equivale a indexación; no se midió PageSpeed/Lighthouse.
 
-## En implementación local · Binary Files to Base64 & Data URI (#270 del plan)
+## Publicada · Binary Files to Base64 & Data URI (#270 del plan)
 
 - Convierte un archivo local de hasta 2 MiB a data URI MIME o Base64 puro; la vista previa se limita a PNG/JPEG/GIF/WebP/BMP/AVIF. MIME provisto por el navegador no valida el formato real; SVG y documentos no se abren en vista previa. Copiar/descargar texto de salida. Sin upload, API ni almacenamiento.
 - 36 traducciones estáticas; tests dirigidos 239/239 y suite completa 1.599/1.599; `locale:release-check` pasa. `npm run check`: 10.260 URLs; hub: 4.572 páginas (126 × 36 + 36 portadas).
 - Chrome: PNG creado en memoria, vista previa 2×1 válida y roundtrip de bytes exacto; modo Base64 omite solo el prefijo data URI. Sobre el límite, aviso localizado y no codifica. Árabe en móvil de 390 px, RTL sin overflow; consola sin errores.
-- [x] C/F/E/X/L/B completos en local. [ ] P/S: falta PR, integración, despliegue y comprobar las 36 URLs más el sitemap. No ejecutar PageSpeed/Lighthouse ni afirmar indexación.
+- [x] P/S: PR #87 integrada en `a048d6c3294a3a88f01c4701006bd2fa871b656b`; CI y deploy principal `37904982465` correctos; publicación del hub `37905658056` completada. URL EN/AR HTTP 200; sitemap público con **4.572 entradas únicas** y 36 rutas de la herramienta. No se afirma indexación ni se ejecutó PageSpeed/Lighthouse.
+
+## En implementación local · JSON Model Generator (#273)
+
+- Genera borradores TypeScript, C# y Java localmente desde JSON; infiere opcionales, null, arrays, objetos anidados y uniones. Limita entrada a 500 KB, 30.000 nodos, profundidad 24 y muestreo de 300 elementos por array. Trata raíces escalares y arrays de primitivos mediante wrappers; nombres y propiedades normalizados para evitar colisiones. Java usa nombres completos `java.util.List` sin declaraciones import dentro del módulo.
+- 36 copias estáticas desde inglés. Se corrigieron manualmente cadenas árabes evidentes que Google Translate había convertido en falsos amigos; no se presentan como revisión nativa. No hay traducción en runtime.
+- Tests focalizados **246/246**; suite completa **1.610/1.610**; `npm run locale:release-check` pasa; `npm run check` conserva **10.260 URLs principales**; build del hub **4.608 páginas** (127 × 36 + 36 portadas; 4.791 archivos, 138.454.969 bytes).
+- Chrome: ejemplo TypeScript, generación C# y Java, acción de copiar confirmada en el navegador; árabe móvil a 390×844 con `lang=ar`, `dir=rtl`, ancho de documento 390/390 y consola limpia. Aún falta PR/CI, despliegue y comprobar sus 36 URLs junto con el sitemap. No PageSpeed/Lighthouse.
 
 ## Herramientas verificadas en despliegue anterior · #171–#173
 

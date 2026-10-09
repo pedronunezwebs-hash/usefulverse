@@ -1476,6 +1476,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/binary-base64-tool/logic.mjs',
   },
   {
+    id: 'json-model-generator',
+    category: 'developer-data',
+    type: 'tool',
+    primaryIntent: 'json to csharp',
+    secondaryIntents: ['json to typescript', 'json to java classes', 'generate models from json', 'json to class generator'],
+    functions: ['infer TypeScript interfaces, C# classes and Java model classes from pasted JSON', 'merge object samples and arrays, mark fields missing from some records as optional, and preserve observed nullability', 'let the user choose a language and a bounded root type name, then copy or download generated source', 'keep input and generated models in the browser without validating or sending the JSON to a server'],
+    acceptance: 'For [{"name":null},{"name":"Ada"}], the generated TypeScript declares name as string | null; object samples where a field is absent mark that field optional.',
+    boundary: 'Infers approximate model declarations from sample JSON; it does not validate JSON against a schema, verify that generated code compiles, infer date/time semantics, or preserve runtime validation. C# and Java represent heterogeneous unions as object/Object; Java nullability and optionality are comments because Java reference fields can be null and are not presence-tracked. Inference samples at most 300 array elements. Input is limited to 500 KB, 30,000 visited schema nodes and depth 24. No dependencies, upload, API or server processing.',
+    relatedExistingIds: ['json-schema-validator', 'json-to-excel', 'json-to-csv'],
+    logicModule: './tools/json-model-generator/logic.mjs',
+  },
+  {
     id: 'har-viewer',
     category: 'developer-data',
     type: 'tool',

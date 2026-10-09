@@ -88,6 +88,7 @@ export function renderGrowthForm(toolId, copy) {
     'json-to-xml-converter': ['mode', 'jsonToXml', 'xmlToJson', 'jsonInput', 'jsonHint', 'xmlInput', 'xmlHint', 'rootName', 'indent', 'accuracyNote', 'output', 'result', 'copyHint'],
     'json-to-excel': ['jsonInput', 'jsonHint', 'dataset', 'datasetHint', 'rootObject', 'preview', 'tableLabel', 'rowCount', 'columnCount', 'previewLimit', 'flattenNote', 'privacyNote'],
     'binary-base64-tool': ['file', 'fileHint', 'outputFormat', 'base64Only', 'dataUri', 'accuracyNote', 'mimeType', 'fileSize', 'bytes', 'outputSize', 'characters', 'imagePreview', 'result', 'output'],
+    'json-model-generator': ['json', 'jsonHint', 'language', 'typescript', 'csharp', 'java', 'rootName', 'rootNameHint', 'accuracyNote', 'privacyNote', 'output', 'result'],
     'har-viewer': ['file', 'paste', 'pasteHint', 'privacyWarning', 'search', 'method', 'statusFilter', 'all', 'errorsOnly', 'successOnly', 'totalRequests', 'failedRequests', 'transferred', 'totalTime', 'slowest', 'request', 'response', 'duration', 'size', 'waterfall', 'results', 'shown', 'of', 'noMatches', 'methodLabel', 'statusLabel', 'urlLabel', 'durationLabel', 'sizeLabel', 'timingNote', 'unknownDate', 'invalid', 'tooMany'],
     'robots-txt-tester': ['robotsText', 'robotsHint', 'userAgent', 'userAgentHint', 'urls', 'urlsHint', 'scopeNote', 'agentGroup', 'noSpecificGroup', 'ruleCount', 'diagnostics', 'ignored', 'malformed', 'allowed', 'blocked', 'winningRule', 'defaultRule'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
@@ -222,6 +223,7 @@ export function renderGrowthForm(toolId, copy) {
     'json-to-xml-converter': ['convert', 'example', 'reset', 'copy', 'download'],
   'json-to-excel': ['preview', 'example', 'reset', 'download'],
   'binary-base64-tool': ['convert', 'reset', 'copy', 'download'],
+  'json-model-generator': ['example', 'generate', 'reset', 'copy', 'download'],
     'har-viewer': ['analyze', 'example', 'reset', 'showMore', 'result'],
     'robots-txt-tester': ['test', 'example', 'reset', 'result'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
@@ -1083,6 +1085,21 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${submit('convert')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.result)}</h2><p class="hint" data-base64-meta></p><label for="binary-base64-output">${escapeGrowthHtml(fields.output)}</label><textarea id="binary-base64-output" name="output" data-base64-output rows="8" readonly spellcheck="false"></textarea><img data-base64-preview hidden alt=""><div class="actions">${button('copy', actions.copy, 'secondary')}${button('download', actions.download, 'secondary')}</div></section>
+  </form>`, copy);
+
+  if (toolId === 'json-model-generator') return attachCopy(`<form id="tool-form" class="json-model-generator" novalidate>
+    ${label('json-model-input', fields.json, '<textarea id="json-model-input" name="json" rows="10" maxlength="500000" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" required></textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.jsonHint)}</p>
+    <div class="json-model-generator__options">
+      ${label('json-model-language', fields.language, `<select id="json-model-language" name="language"><option value="typescript">${escapeGrowthHtml(fields.typescript)}</option><option value="csharp">${escapeGrowthHtml(fields.csharp)}</option><option value="java">${escapeGrowthHtml(fields.java)}</option></select>`)}
+      ${label('json-model-root', fields.rootName, '<input id="json-model-root" name="rootName" type="text" maxlength="48" value="Root" autocomplete="off" spellcheck="false">')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.rootNameHint)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('generate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.result)}</h2><label for="json-model-output">${escapeGrowthHtml(fields.output)}</label><textarea id="json-model-output" name="output" data-json-model-output rows="16" readonly spellcheck="false"></textarea><div class="actions">${button('copy', actions.copy, 'secondary')}${button('download', actions.download, 'secondary')}</div></section>
   </form>`, copy);
 
   if (toolId === 'har-viewer') return attachCopy(`<form id="tool-form" class="har-viewer" novalidate>
