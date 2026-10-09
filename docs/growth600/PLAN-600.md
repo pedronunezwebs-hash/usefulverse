@@ -1324,9 +1324,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 213 · Reynolds Number Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `reynolds-number-calculator`**
-- **Estado local:** C/F/E/X/L/B implementados y comprobados según `docs/growth600/PROGRESS.md`; P/S pendientes de PR, CI, despliegue y verificación pública. No marcar completo antes de cerrar P/S.
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/reynolds-number-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `reynolds-number-calculator`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/reynolds-number-calculator/`; 36 versiones publicadas. PR #98, CI `37935068996`, deploy principal `37935552312`, publicación del hub `37935586544`; sitemap HTTP 200 con 4.968 URLs y 36 rutas/canonicals comprobados.
 - **Demanda:** `reynolds number calculator` — 1.900 búsquedas/mes US/en, KD 0; nivel B. CPC 3.7 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Densidad, velocidad, longitud, viscosidad y régimen contextual
 - **Prueba de aceptación específica:** Velocidad cero da Re0
@@ -1336,10 +1335,12 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `reynolds calculator` — 1.900/mes US/en; KD 4.
   - `reynolds number calculator free online`; `reynolds number calculator with example`; `reynolds number calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Cierre verificado:** Re ≈49.810 para agua en ejemplo dinámico; Re=50.000 con ν=1 cSt; velocidad cero → Re=0. QA EN/AR y RTL a 390 px sin overflow ni errores de consola. No se afirma indexación; no PageSpeed/Lighthouse.
 
 ### 229 · Three Phase Power Calculator
 
 - [ ] **C/F/E/X/L/B/P/S completos — `three-phase-power-calculator`**
+- **Estado local:** C/F/E/X/L/B implementados y comprobados; P/S esperan PR, CI, deploy y comprobación pública. Recuento público aún 414, no incluir esta candidata hasta desplegarla.
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/three-phase-power-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `three phase power calculator` — 1.600 búsquedas/mes US/en, KD 0; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Monofásica/trifásica, estrella/triángulo, PF y magnitudes

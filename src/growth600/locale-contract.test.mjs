@@ -47,6 +47,7 @@ import beamDeflectionCopies from './locales/beam-deflection-calculator.mjs';
 import ledResistorCopies from './locales/led-resistor-calculator.mjs';
 import flowRateCopies from './locales/flow-rate-calculator.mjs';
 import reynoldsNumberCopies from './locales/reynolds-number-calculator.mjs';
+import threePhasePowerCopies from './locales/three-phase-power-calculator.mjs';
 
 const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'ph-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'kinetic-energy-calculator', 'resistor-color-code-calculator', 'acceleration-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator'].includes(id));
 const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
@@ -176,6 +177,27 @@ test('Reynolds number calculator has localized scope and invariant equations in 
     }
   }
   assert.match(reynoldsNumberCopies.en.fields.accuracyNote, /External-flow regimes depend on geometry and the chosen length scale, so no universal category is assigned/u);
+});
+
+test('three-phase power calculator has static scope and invariant formulas in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'three-phase-power-calculator');
+  assert.ok(tool);
+  assert.equal(Object.keys(threePhasePowerCopies).length, 36);
+  for (const { key } of localeEntries) {
+    const copy = threePhasePowerCopies[key];
+    assert.ok(copy.name && copy.intro && copy.description && copy.fields.system && copy.fields.topology && copy.fields.accuracyNote, key);
+    assert.equal(copy.messages.singlePhaseFormula, 'S = V × I; P = S × PF; Q = S × √(1 − PF²)', `${key}: single-phase equation remains invariant`);
+    assert.equal(copy.messages.threePhaseFormula, 'S = √3 × Vline × Iline; P = S × PF; Q = S × √(1 − PF²)', `${key}: three-phase equation remains invariant`);
+    if (key !== 'en') {
+      assert.notEqual(copy.name, threePhasePowerCopies.en.name, `${key}: localized name`);
+      assert.notEqual(copy.intro, threePhasePowerCopies.en.intro, `${key}: localized introduction`);
+      assert.notEqual(copy.fields.accuracyNote, threePhasePowerCopies.en.fields.accuracyNote, `${key}: localized safety scope`);
+    }
+  }
+  assert.match(threePhasePowerCopies.en.fields.accuracyNote, /Harmonics, phase imbalance.*not modeled/u);
+  assert.equal(threePhasePowerCopies.ar.messages.activePower, 'القدرة الفعالة (P)');
+  assert.equal(threePhasePowerCopies.ar.messages.lineCurrent, 'تيار الخط');
+  assert.equal(threePhasePowerCopies.ar.fields.lineVoltage, 'جهد الخط');
 });
 
 test('section modulus calculator has static, bounded translations in all 36 locales', () => {

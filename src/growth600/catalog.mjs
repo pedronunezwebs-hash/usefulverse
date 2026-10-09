@@ -384,6 +384,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/reynolds-number-calculator/logic.mjs',
   },
   {
+    id: 'three-phase-power-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'three phase power calculator',
+    secondaryIntents: ['3 phase power calculator', 'three phase active power calculator', 'star delta phase voltage calculator'],
+    functions: ['estimate active, apparent and reactive power from line voltage, line current and power factor', 'switch between single-phase and balanced three-phase AC', 'show star/wye or delta phase voltage and current relationships'],
+    acceptance: 'A balanced three-phase system at 400 V line voltage, 10 A line current and PF 0.8 gives P = √3 × 400 × 10 × 0.8 ≈ 5,542.6 W.',
+    boundary: 'Ideal sinusoidal AC estimate; assumes a balanced three-phase load. Power factor is treated as a magnitude and reactive power is reported unsigned. Does not model harmonics, phase imbalance, conductor sizing, protection, equipment ratings, electrical safety or code compliance. Use qualified engineering judgment for real installations. Inputs stay in this browser.',
+    relatedExistingIds: ['ohms-law-calculator', 'voltage-drop-calculator'],
+    logicModule: './tools/three-phase-power-calculator/logic.mjs',
+  },
+  {
     id: 'dilution-calculator',
     category: 'science-engineering',
     type: 'calculator',

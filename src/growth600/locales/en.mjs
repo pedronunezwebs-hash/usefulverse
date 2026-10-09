@@ -228,6 +228,8 @@ import flowRateCopies from './flow-rate-calculator.mjs';
 import { flowRateCalculatorEnglishCopy } from './flow-rate-calculator.en.mjs';
 import reynoldsNumberCopies from './reynolds-number-calculator.mjs';
 import { reynoldsNumberCalculatorEnglishCopy } from './reynolds-number-calculator.en.mjs';
+import threePhasePowerCopies from './three-phase-power-calculator.mjs';
+import { threePhasePowerCalculatorEnglishCopy } from './three-phase-power-calculator.en.mjs';
 import dilutionCopies from './dilution-calculator-final.mjs';
 import { dilutionCalculatorEnglishCopy } from './dilution-calculator.en.mjs';
 import ohmsLawCopies from './ohms-law-calculator-final.mjs';
@@ -726,6 +728,7 @@ registerGrowthLocaleExtension(source, 'beam-deflection-calculator', { ...beamDef
 registerGrowthLocaleExtension(source, 'led-resistor-calculator', { ...ledResistorCopies, en: ledResistorCalculatorEnglishCopy }, 'beam-deflection-calculator');
 registerGrowthLocaleExtension(source, 'flow-rate-calculator', { ...flowRateCopies, en: flowRateCalculatorEnglishCopy }, 'led-resistor-calculator');
 registerGrowthLocaleExtension(source, 'reynolds-number-calculator', { ...reynoldsNumberCopies, en: reynoldsNumberCalculatorEnglishCopy }, 'flow-rate-calculator');
+registerGrowthLocaleExtension(source, 'three-phase-power-calculator', { ...threePhasePowerCopies, en: threePhasePowerCalculatorEnglishCopy }, 'reynolds-number-calculator');
 registerGrowthLocaleExtension(source, 'dilution-calculator', { ...dilutionCopies, en: dilutionCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'ohms-law-calculator', { ...ohmsLawCopies, en: ohmsLawCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'chemical-equation-balancer', { ...chemicalEquationCopies, en: chemicalEquationBalancerEnglishCopy }, 'gravel-calculator');
