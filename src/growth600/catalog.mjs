@@ -1440,6 +1440,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/certificate-decoder/logic.mjs',
   },
   {
+    id: 'json-to-xml-converter',
+    category: 'developer-data',
+    type: 'tool',
+    primaryIntent: 'xml to json converter',
+    secondaryIntents: ['json to xml converter', 'json xml converter online', 'convert xml to json with arrays'],
+    functions: ['convert JSON to XML and XML to JSON locally in either direction', 'map object properties to elements, arrays to repeated elements, and repeated child names back to arrays', 'map JSON @attribute and #text keys to XML attributes and text using a selectable root name', 'copy or download JSON/XML output with readable indentation and clear error messages'],
+    acceptance: 'JSON {"items":[{"@id":"a","name":"one"},{"@id":"b","name":"two"}]} converts to repeated item elements and back to a JSON array with both @id values preserved; malformed XML and DTD/entity declarations are rejected.',
+    boundary: 'JSON arrays become repeated elements; a top-level array is wrapped in the selected root with item child elements. Attributes use @name and text uses #text. XML text becomes JSON strings, so numbers/booleans, null versus empty values, mixed-content order, comments, processing instructions, CDATA boundaries and original formatting are not guaranteed to round-trip. XML-generated JSON preserves XML names; JSON-generated XML accepts simple ASCII names only (no namespaces). Input is limited to 200,000 characters, depth 64 and 20,000 visited values/elements; arrays are limited to 5,000 entries. DTD and entity declarations are blocked; no external fetch, upload, API or server processing.',
+    relatedExistingIds: ['json-yaml-converter', 'xml-formatter'],
+    logicModule: './tools/json-to-xml-converter/logic.mjs',
+  },
+  {
     id: 'chinese-remainder-theorem-calculator',
     category: 'math-statistics',
     type: 'calculator',

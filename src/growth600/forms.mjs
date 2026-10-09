@@ -85,6 +85,7 @@ export function renderGrowthForm(toolId, copy) {
     'json-diff': ['before', 'after', 'beforeHint', 'afterHint', 'arrayMode', 'arrayIndex', 'arrayKeyMode', 'arrayKey', 'arrayKeyHint', 'accuracyNote', 'results', 'added', 'removed', 'changed', 'changeList', 'noChanges', 'path', 'oldValue', 'newValue', 'patch', 'patchHint', 'invalid', 'operation', 'tooMany'],
     'text-to-binary-converter': ['mode', 'textToBinary', 'binaryToText', 'textInput', 'textHint', 'binaryInput', 'binaryHint', 'groupBytes', 'accuracyNote', 'output', 'result', 'copyHint'],
     'certificate-decoder': ['certificate', 'upload', 'supported', 'accuracyNote', 'resultTitle', 'subject', 'issuer', 'commonName', 'organizationName', 'countryName', 'localityName', 'stateOrProvinceName', 'organizationalUnitName', 'streetAddress', 'serialNumber', 'notBefore', 'notAfter', 'alternativeNames', 'fingerprint', 'noAlternativeNames', 'unlistedAttribute'],
+    'json-to-xml-converter': ['mode', 'jsonToXml', 'xmlToJson', 'jsonInput', 'jsonHint', 'xmlInput', 'xmlHint', 'rootName', 'indent', 'accuracyNote', 'output', 'result', 'copyHint'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -214,6 +215,7 @@ export function renderGrowthForm(toolId, copy) {
     'json-diff': ['compare', 'example', 'reset', 'result', 'copy', 'copyPatch', 'downloadPatch'],
     'text-to-binary-converter': ['convert', 'example', 'reset', 'result', 'copy', 'download'],
     'certificate-decoder': ['decode', 'example', 'reset', 'copySummary'],
+    'json-to-xml-converter': ['convert', 'example', 'reset', 'copy', 'download'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
@@ -1040,6 +1042,18 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('decode')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div>${button('copySummary', actions.copySummary, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'json-to-xml-converter') return attachCopy(`<form id="tool-form" class="json-to-xml-converter" novalidate>
+    ${label('json-xml-mode', fields.mode, `<select id="json-xml-mode" name="mode"><option value="jsonToXml">${escapeGrowthHtml(fields.jsonToXml)}</option><option value="xmlToJson">${escapeGrowthHtml(fields.xmlToJson)}</option></select>`)}
+    <div data-json-input>${label('json-xml-json', fields.jsonInput, `<textarea id="json-xml-json" name="jsonInput" rows="10" maxlength="200000" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" required></textarea>`)}<p class="hint">${escapeGrowthHtml(fields.jsonHint)}</p></div>
+    <div data-xml-input hidden>${label('json-xml-xml', fields.xmlInput, `<textarea id="json-xml-xml" name="xmlInput" rows="10" maxlength="200000" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" disabled required></textarea>`)}<p class="hint">${escapeGrowthHtml(fields.xmlHint)}</p></div>
+    ${label('json-xml-root', fields.rootName, '<input id="json-xml-root" name="rootName" type="text" maxlength="128" value="root" autocomplete="off" spellcheck="false">')}
+    ${label('json-xml-indent', fields.indent, '<select id="json-xml-indent" name="indent"><option value="2">2</option><option value="0">0</option><option value="4">4</option></select>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('convert')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.result)}</h2><label for="json-xml-output">${escapeGrowthHtml(fields.output)}</label><textarea id="json-xml-output" name="output" data-json-xml-output rows="12" readonly spellcheck="false"></textarea><p class="hint">${escapeGrowthHtml(fields.copyHint)}</p><div class="actions">${button('copy', actions.copy, 'secondary')}${button('download', actions.download, 'secondary')}</div></section>
   </form>`, copy);
 
   if (toolId === 'weight-loss-calculator') return attachCopy(`<form id="tool-form" novalidate>

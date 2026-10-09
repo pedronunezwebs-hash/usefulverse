@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 121);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 121);
+  assert.equal(growthPilotTools.length, 122);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 122);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -80,6 +80,16 @@ test('X.509 decoder reads local PEM/DER fields without claiming trust verificati
   assert.match(tool.functions.join(' '), /subject alternative names/u);
   assert.match(tool.acceptance, /fixture.example.invalid/u);
   assert.match(tool.boundary, /does not verify/u);
+});
+
+test('JSON/XML converter is bidirectional with explicit lossy mappings and blocked DTDs', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'json-to-xml-converter');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'xml to json converter');
+  assert.deepEqual(tool.relatedExistingIds, ['json-yaml-converter', 'xml-formatter']);
+  assert.match(tool.acceptance, /repeated item elements/u);
+  assert.match(tool.boundary, /DTD and entity declarations are blocked/u);
+  assert.match(tool.boundary, /not guaranteed to round-trip/u);
 });
 
 test('OpenAPI editor stays a local contract editor and does not duplicate request-builder intent', () => {
