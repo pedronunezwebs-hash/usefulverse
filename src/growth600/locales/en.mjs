@@ -101,6 +101,8 @@ import singularValueDecompositionCopies from './singular-value-decomposition-cal
 import { singularValueDecompositionEnglishCopy } from './singular-value-decomposition-calculator.en.mjs';
 import spearmanCorrelationCopies from './spearman-correlation-calculator.mjs';
 import { spearmanCorrelationEnglishCopy } from './spearman-correlation-calculator.en.mjs';
+import wilcoxonSignedRankCopies from './wilcoxon-signed-rank-test-calculator.mjs';
+import { wilcoxonSignedRankEnglishCopy } from './wilcoxon-signed-rank-test-calculator.en.mjs';
 import openApiEditorCopies from './openapi-editor.mjs';
 import { openApiEditorEnglishCopy } from './openapi-editor.en.mjs';
 import fontPairingToolCopies from './font-pairing-tool.mjs';
@@ -1100,5 +1102,6 @@ registerGrowthLocaleExtension(source, 'spearman-correlation-calculator', {
     actions: { ...spearmanArabic.actions, reset: 'مسح' },
   },
 }, 'singular-value-decomposition-calculator');
+registerGrowthLocaleExtension(source, 'wilcoxon-signed-rank-test-calculator', { ...wilcoxonSignedRankCopies, en: wilcoxonSignedRankEnglishCopy }, 'spearman-correlation-calculator');
 
 export default Object.freeze(source);
