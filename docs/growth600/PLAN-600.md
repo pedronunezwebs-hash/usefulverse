@@ -2679,7 +2679,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 303 · Parametric Equation Calculator
 
-- [~] **C/F/E/X/L/B completos — `parametric-equation-calculator`; P/S pendiente**
+- [x] **C/F/E/X/L/B/P/S completos — `parametric-equation-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/parametric-equation-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `parametric graphing calculator` — 390 búsquedas/mes US/en, KD 0; nivel C. CPC sin dato documentado en el registro; no es CPM.
 - **Función mínima y ampliaciones útiles:** Curvas x(t), y(t), rango y puntos con exportación
@@ -2691,21 +2691,22 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `parametric graphing calculator free online`; `parametric graphing calculator with example`; `parametric graphing calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 
-- **Estado local (2026-10-09):** parser numérico acotado sin `eval`, gráfica x(t)/y(t) con SVG y descarga CSV local, 36 copias estáticas derivadas con Google Translate y revisión puntual de notación/árabe. Suite global 1.492/1.492; `locale:release-check` pasa; catálogo principal estable en 10.260 URLs; hub de prueba 4.140 rutas. Chrome EN/AR probado; publicación aún pendiente. No PageSpeed/Lighthouse.
+- **Publicado (2026-10-09):** parser numérico acotado sin `eval`, gráfica x(t)/y(t) con SVG y descarga CSV local, 36 copias estáticas derivadas con Google Translate y revisión puntual de notación/árabe. PR #75 fusionada; validación principal y publicación del hub `37876549373` correctas. EN/AR HTTP 200; sitemap con 4.140 URLs únicas. No se afirma indexación ni se hizo PageSpeed/Lighthouse.
 
 ### 306 · Singular Value Decomposition Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `singular-value-decomposition-calculator`**
+- [x] **C/F/E/X/L/B** — implementación y validación local completadas; falta P/S hasta desplegar y verificar en producción.
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/singular-value-decomposition-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `svd calculator` — 390 búsquedas/mes US/en, KD 2; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Descomposición SVD, rango, reconstrucción y error
 - **Prueba de aceptación específica:** Reconstrucción U S Vt recupera entrada
-- **Frontera con otras herramientas:** eigenvalue-calculator: descomposición rectangular. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
+- **Frontera con otras herramientas:** `matrix-calculator` resuelve determinante, inversa y transpuesta de matrices pequeñas; SVD factoriza matrices rectangulares en U, Σ y Vᵀ. No se encontró una calculadora de eigenvalores en el catálogo protegido. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `singular value decomposition calculator` — 110/mes US/en; KD 3.
   - `svd calculator free online`; `svd calculator with example`; `svd calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Implementación local (2026-10-09):** C/F/E/X/L/B completas. SVD compacta local para matrices 2×2 a 8×8, entradas acotadas, rango con tolerancia visible, reconstrucción/residuo, CSV y 36 copias estáticas traducidas desde inglés (borradores automáticos aceptados, no revisión nativa). Suites locales completas aprobadas; build aislado: 4.176 páginas (115 × 36 + 36 portadas). EN/AR probadas en Chrome móvil; testigo diagonal recupera singular values 3 y 2, error 0; dígitos árabes procesados, RTL sin overflow y consola limpia. P/S quedan pendientes de PR, merge, deploy y comprobación pública.
 
 ### 309 · Spearman Correlation Calculator
 

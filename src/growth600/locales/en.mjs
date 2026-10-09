@@ -97,6 +97,8 @@ import repeatingDecimalCopies from './repeating-decimal-to-fraction.mjs';
 import { repeatingDecimalEnglishCopy } from './repeating-decimal-to-fraction.en.mjs';
 import parametricEquationCopies from './parametric-equation-calculator.mjs';
 import { parametricEquationEnglishCopy } from './parametric-equation-calculator.en.mjs';
+import singularValueDecompositionCopies from './singular-value-decomposition-calculator.mjs';
+import { singularValueDecompositionEnglishCopy } from './singular-value-decomposition-calculator.en.mjs';
 import openApiEditorCopies from './openapi-editor.mjs';
 import { openApiEditorEnglishCopy } from './openapi-editor.en.mjs';
 import fontPairingToolCopies from './font-pairing-tool.mjs';
@@ -1073,5 +1075,6 @@ Object.assign(investmentAllocationCopies.ar, {
 registerGrowthLocaleExtension(source, 'investment-allocation-calculator', { ...investmentAllocationCopies, en: investmentAllocationEnglishCopy }, 'a-b-test-calculator');
 registerGrowthLocaleExtension(source, 'repeating-decimal-to-fraction', { ...repeatingDecimalCopies, en: repeatingDecimalEnglishCopy }, 'investment-allocation-calculator');
 registerGrowthLocaleExtension(source, 'parametric-equation-calculator', { ...parametricEquationCopies, en: parametricEquationEnglishCopy }, 'repeating-decimal-to-fraction');
+registerGrowthLocaleExtension(source, 'singular-value-decomposition-calculator', { ...singularValueDecompositionCopies, en: singularValueDecompositionEnglishCopy }, 'parametric-equation-calculator');
 
 export default Object.freeze(source);

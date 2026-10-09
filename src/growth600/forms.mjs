@@ -78,6 +78,7 @@ export function renderGrowthForm(toolId, copy) {
     'investment-allocation-calculator': ['assetCount', 'asset', 'assetName', 'currentValue', 'targetWeight', 'currencyCode', 'contribution', 'accuracyNote', 'resultSummary', 'currentTotal', 'contributionTotal', 'projectedTotal', 'targetValue', 'contributionShare', 'difference'],
     'repeating-decimal-to-fraction': ['decimal', 'inputHint', 'accuracyNote', 'resultSummary', 'simplified', 'mixedNumber', 'derivation'],
     'parametric-equation-calculator': ['xExpression', 'yExpression', 'tMin', 'tMax', 'samples', 'expressionHint', 'accuracyNote', 'chartLabel', 'resultCount'],
+    'singular-value-decomposition-calculator': ['matrix', 'matrixHint', 'accuracyNote', 'resultRank', 'resultSingularValues', 'resultReconstructionError', 'resultOriginal', 'resultU', 'resultSigma', 'resultVt', 'resultReconstructed', 'resultFrobenius'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -200,6 +201,7 @@ export function renderGrowthForm(toolId, copy) {
     'investment-allocation-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'repeating-decimal-to-fraction': ['calculate', 'reset', 'example', 'result', 'copy'],
     'parametric-equation-calculator': ['calculate', 'reset', 'example', 'result', 'downloadCsv'],
+    'singular-value-decomposition-calculator': ['calculate', 'reset', 'example', 'result', 'downloadCsv'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
@@ -955,6 +957,15 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><p data-result-count></p><div data-result-content></div><div class="actions">${button('downloadCsv', actions.downloadCsv, 'secondary')}</div></section>
+  </form>`, copy);
+
+  if (toolId === 'singular-value-decomposition-calculator') return attachCopy(`<form id="tool-form" class="svd-calculator" novalidate>
+    ${label('svd-matrix', fields.matrix, '<textarea id="svd-matrix" name="matrix" rows="5" maxlength="1200" spellcheck="false" required>' + escapeGrowthHtml('3 0\n0 2') + '</textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.matrixHint)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><p data-result-rank></p><p data-result-singular-values></p><p data-result-error></p><div data-result-content></div><div class="actions">${button('downloadCsv', actions.downloadCsv, 'secondary')}</div></section>
   </form>`, copy);
 
   if (toolId === 'weight-loss-calculator') return attachCopy(`<form id="tool-form" novalidate>
