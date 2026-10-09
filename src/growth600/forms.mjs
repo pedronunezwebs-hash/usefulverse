@@ -77,6 +77,7 @@ export function renderGrowthForm(toolId, copy) {
     'a-b-test-calculator': ['groupA', 'groupB', 'visitorsA', 'conversionsA', 'visitorsB', 'conversionsB', 'accuracyNote', 'rateA', 'rateB', 'difference', 'percentagePoints', 'relativeLift', 'notAvailable', 'intervalA', 'intervalB', 'intervalDifference', 'pValue', 'conclusion', 'significant', 'inconclusive', 'method', 'methodNote'],
     'investment-allocation-calculator': ['assetCount', 'asset', 'assetName', 'currentValue', 'targetWeight', 'currencyCode', 'contribution', 'accuracyNote', 'resultSummary', 'currentTotal', 'contributionTotal', 'projectedTotal', 'targetValue', 'contributionShare', 'difference'],
     'repeating-decimal-to-fraction': ['decimal', 'inputHint', 'accuracyNote', 'resultSummary', 'simplified', 'mixedNumber', 'derivation'],
+    'parametric-equation-calculator': ['xExpression', 'yExpression', 'tMin', 'tMax', 'samples', 'expressionHint', 'accuracyNote', 'chartLabel', 'resultCount'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -198,6 +199,7 @@ export function renderGrowthForm(toolId, copy) {
     'a-b-test-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'investment-allocation-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'repeating-decimal-to-fraction': ['calculate', 'reset', 'example', 'result', 'copy'],
+    'parametric-equation-calculator': ['calculate', 'reset', 'example', 'result', 'downloadCsv'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
@@ -938,6 +940,21 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'parametric-equation-calculator') return attachCopy(`<form id="tool-form" class="parametric-equation-calculator" novalidate>
+    ${label('parametric-x', fields.xExpression, '<input id="parametric-x" name="xExpression" type="text" value="cos(t)" maxlength="120" autocomplete="off" spellcheck="false" required>')}
+    ${label('parametric-y', fields.yExpression, '<input id="parametric-y" name="yExpression" type="text" value="sin(t)" maxlength="120" autocomplete="off" spellcheck="false" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.expressionHint)}</p>
+    <div class="calculator-grid">
+      ${label('parametric-t-min', fields.tMin, '<input id="parametric-t-min" name="tMin" type="number" step="any" value="0" required>')}
+      ${label('parametric-t-max', fields.tMax, '<input id="parametric-t-max" name="tMax" type="number" step="any" value="6.283185307179586" required>')}
+      ${label('parametric-samples', fields.samples, '<input id="parametric-samples" name="samples" type="number" min="50" max="1500" step="1" value="360" required>')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><p data-result-count></p><div data-result-content></div><div class="actions">${button('downloadCsv', actions.downloadCsv, 'secondary')}</div></section>
   </form>`, copy);
 
   if (toolId === 'weight-loss-calculator') return attachCopy(`<form id="tool-form" novalidate>

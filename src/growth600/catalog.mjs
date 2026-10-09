@@ -1355,6 +1355,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['fraction-calculator'],
     logicModule: './tools/repeating-decimal-to-fraction/logic.mjs',
   },
+  {
+    id: 'parametric-equation-calculator',
+    category: 'math-statistics',
+    type: 'calculator',
+    primaryIntent: 'parametric graphing calculator',
+    secondaryIntents: ['parametric equation calculator', 'parametric curve calculator', 'x(t) y(t) graph calculator'],
+    functions: ['plot a curve from separate x(t) and y(t) expressions using a shared parameter t', 'set the parameter interval and sample resolution with bounded inputs', 'support arithmetic, powers, pi, e and a documented whitelist of common real functions without evaluating JavaScript', 'export sampled t, x and y coordinates as a local CSV file'],
+    acceptance: 'x(t)=cos(t), y(t)=sin(t), t from 0 to 2π draws the unit circle and returns a first point near (1, 0); increasing the sample count adds plotted points without changing the curve.',
+    boundary: 'Numerical parametric plotting only. Uses radians and finite floating-point samples; it does not provide symbolic simplification, implicit curves, proof of continuity, or reliable asymptote detection. Expressions are parsed by a bounded local parser, never eval, and are not uploaded. Coordinates outside the display range are omitted; verify important results independently.',
+    relatedExistingIds: ['function-grapher'],
+    logicModule: './tools/parametric-equation-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

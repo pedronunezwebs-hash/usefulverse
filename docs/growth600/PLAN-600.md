@@ -2664,7 +2664,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 302 · Repeating Decimal to Fraction Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `repeating-decimal-to-fraction`**
+- [x] **C/F/E/X/L/B/P/S completos — `repeating-decimal-to-fraction`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/repeating-decimal-to-fraction/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `repeating decimal to fraction calculator` — 390 búsquedas/mes US/en, KD 0; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Decimales periódicos exactos y demostración con periodo configurable
@@ -2675,13 +2675,13 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `repeating decimal to fraction calculator free online`; `repeating decimal to fraction calculator with example`; `repeating decimal to fraction calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 
-- **Estado local (2026-10-09):** lógica exacta con `BigInt`, notación normalizada en 36 copias estáticas, corrección manual del bloque árabe y etiquetas confusas; sin DataForSEO adicional ni servicio online en producción. Pruebas específicas 7/7, locale contract 134/134, suite completa 1.484/1.484, `locale:release-check` pasa, `npm run check` mantiene 10.260 URLs, build aislado 4.104 rutas únicas. Bundle 3.191 bytes. Chrome EN/AR, notación árabe, RTL, consola y solicitudes externas comprobados. **PR/despliegue/sitemap de producción pendientes**; no afirmar indexación.
+- **Publicado (2026-10-09):** lógica exacta con `BigInt`, 36 copias estáticas, PR #74 integrada (`3e8430a`), CI y publicación del hub `37875699978` correctos. Sitemap público HTTP 200 con 4.104 URLs únicas y rutas EN/AR HTTP 200. No se afirma indexación.
 
 ### 303 · Parametric Equation Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `parametric-equation-calculator`**
+- [~] **C/F/E/X/L/B completos — `parametric-equation-calculator`; P/S pendiente**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/parametric-equation-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
-- **Demanda:** `parametric graphing calculator` — 390 búsquedas/mes US/en, KD 0; nivel C. CPC — USD (no CPM).
+- **Demanda:** `parametric graphing calculator` — 390 búsquedas/mes US/en, KD 0; nivel C. CPC sin dato documentado en el registro; no es CPM.
 - **Función mínima y ampliaciones útiles:** Curvas x(t), y(t), rango y puntos con exportación
 - **Prueba de aceptación específica:** cos(t), sin(t) dibuja círculo unitario
 - **Frontera con otras herramientas:** function-grapher: curva paramétrica no y=f(x). Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
@@ -2690,6 +2690,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `parametric equation calculator` — 260/mes US/en; KD 14.
   - `parametric graphing calculator free online`; `parametric graphing calculator with example`; `parametric graphing calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+
+- **Estado local (2026-10-09):** parser numérico acotado sin `eval`, gráfica x(t)/y(t) con SVG y descarga CSV local, 36 copias estáticas derivadas con Google Translate y revisión puntual de notación/árabe. Suite global 1.492/1.492; `locale:release-check` pasa; catálogo principal estable en 10.260 URLs; hub de prueba 4.140 rutas. Chrome EN/AR probado; publicación aún pendiente. No PageSpeed/Lighthouse.
 
 ### 306 · Singular Value Decomposition Calculator
 
