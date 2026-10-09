@@ -1,10 +1,10 @@
 # UsefulVerse · progreso del plan 277 → 600
 
-Última verificación: 2026-10-09. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
+Última verificación: 2026-10-10. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## Estado público actual · 2026-10-09
+## Estado público actual · 2026-10-10
 
-- **145 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **5.256 URLs** (145 × 36 + 36 páginas de idioma): **422 herramientas públicas en total** y 15.516 URLs entre los dos sitios (10.260 + 5.256). Esto no equivale a que los buscadores hayan indexado cada URL.
+- **146 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **5.292 URLs** (146 × 36 + 36 páginas de idioma): **423 herramientas públicas en total** y 15.552 URLs entre los dos sitios (10.260 + 5.292). Esto no equivale a que los buscadores hayan indexado cada URL.
 - #148 Text to Binary Converter: PR #81 integrada; despliegue principal `37891603568` y despliegue del hub `37892340212` correctos. EN/ES/AR responden HTTP 200.
 - #171 Schema Markup Validator, #172 Readability Checker y #173 Savings Goal Calculator ya aparecen en las 36 versiones públicas; verificaciones previas registradas debajo.
 - #189 Certificate Decoder: 36 rutas públicas; detalles de pruebas y despliegue anotados abajo.
@@ -1640,10 +1640,21 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - La build local actual incluye además la siguiente RLC candidata: 146 herramientas × 36 rutas + 36 portadas = 5.292 páginas estáticas; esa cifra todavía no es pública.
 - No se infiere rastreo/indexación y no se ejecutó PageSpeed/Lighthouse.
 
-## En implementación local · RLC Circuit Calculator (#266) · 2026-10-09
+## Publicada · RLC Circuit Calculator (#266) · 2026-10-10
 
 - 36 copias estáticas generadas desde inglés por lotes; árabe ajustado manualmente. No se afirma revisión nativa ni traducción perfecta.
 - Modelo RLC ideal serie/paralelo con frecuencia resonante, Q, ancho de banda, reactancias, impedancia compleja/fase, corriente RMS y respuesta SVG de 61 puntos; límites y unidades validados. Todo el cálculo ocurre en el navegador, sin API, dependencia nueva o coste de procesamiento.
 - Gates locales: suite completa **1.767/1.767**; `npm run check` mantiene **10.260 URLs** del sitio principal; `npm run locale:release-check`, build del hub **5.292 páginas** y `git diff --check` pasan. Chrome móvil 390×844: el ejemplo serie da f0=1,5915494 kHz, Q=10, BW=159,1549431 Hz, XL=XC=100 Ω y 0,5 A RMS; árabe RTL traducido, sin overflow ni consola con errores/avisos.
-- **Estado local:** candidata #90 de 323 implementaciones del plan; 233 válidas pendientes y una fila duplicada/reserva por reemplazar. No pública hasta completar PR/CI/deploy/verificación sitemap.
-- [ ] P/S: revisar diff, PR, CI, integrar, desplegar/publicar hub y verificar EN/AR y sitemap.
+- **Publicación:** PR #107 integrada en `0160b11202d1ab57ed543ac0b2b25bdfe3ea7a7d`; CI completo; deploy principal `37962218392`; publicación del hub `37962246670`. EN y AR HTTP 200 con title/canonical propios; `lang=ar`, `dir=rtl`; sitemap pasó de 5.256 a **5.292 URLs** e incluye las 36 rutas RLC. La publicación no acredita indexación.
+- **Recuento del checklist:** 90/323 entradas implementadas, 233 pendientes válidas y una fila duplicada/reserva a sustituir. No se volvió a consultar DataForSEO ni se usó PageSpeed/Lighthouse.
+- [x] C/F/E/X/L/B/P/S.
+
+## En implementación local · Antenna Length Calculator (#267) · 2026-10-10
+
+- Demanda reutilizada del plan, sin llamada nueva: `dipole antenna calculator` 880/mes US/en, KD 3; secundaria `antenna length calculator` 480/mes, KD 3.
+- Estima λ en espacio libre, dipolo ideal de media onda, monopolo de cuarto de onda, factor de acortamiento editable, longitud total y por brazo, con salida métrica e imperial. A 100 MHz y factor 1, dipolo ideal ≈1,49896 m total y ≈0,74948 m por brazo; factor 0,95 da una longitud inicial menor, claramente etiquetada. Los límites del campo se ajustan al cambiar Hz/kHz/MHz/GHz y corresponden al rango validado por el cálculo.
+- Alcance limitado a geometría básica; no predice adaptación, impedancia, ganancia, patrón, cumplimiento ni seguridad. El factor no es la velocidad del coaxial; el entorno y montaje requieren medir y sintonizar.
+- Lógica y contenido local, sin servicios ni dependencias. 36 textos estáticos por traducción automática desde inglés; árabe técnico ajustado; no se afirma revisión nativa. Suite **1.775/1.775**, pruebas focales **297/297**, `npm run locale:release-check` y `npm run check` (10.260 URLs principales) pasan. Build aislado **5.328 páginas** (147 herramientas × 36 + 36 portadas); README regenerado con 10.260 URLs principales y 5.328 del hub.
+- Chrome EN y AR a 390×844: ejemplo de dipolo de 100 MHz y monopolo concuerdan con pruebas; AR `lang=ar`, `dir=rtl`, sin overflow ni errores de consola. No PageSpeed/Lighthouse.
+- **Recuento:** 91/323 entradas del checklist implementadas; 232 restantes válidas y una fila duplicada/reserva por sustituir. Sitemap público aún permanece en 5.292 URLs / 146 herramientas Growth600.
+- [ ] P/S: crear PR, esperar CI, integrar, desplegar hub y verificar URLs EN/AR y sitemap público.

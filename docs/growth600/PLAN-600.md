@@ -9,7 +9,7 @@ Fecha de investigación: 7 de octubre de 2026. Documento de planificación y che
 - [x] Comprobar la base de planificación: **277 herramientas y 36 idiomas**.
 - [x] Investigar demanda con un gasto acotado en DataForSEO y registrar los resultados reales.
 - [x] Consolidar variantes antes de fijar el nuevo catálogo, sin contar una dirección de conversión como otra herramienta.
-- [ ] Implementar las nuevas herramientas. **Progreso comprobado el 9 de octubre de 2026: 145/323 candidatas Growth600 públicas (422 herramientas incluyendo las 277 originales); #266 RLC está lista localmente, todavía no publicada.** Consultar `docs/growth600/PROGRESS.md` para el estado y evidencia de cada entrega; la disponibilidad pública no implica indexación.
+- [ ] Implementar las nuevas herramientas. **Progreso comprobado el 10 de octubre de 2026: 146 herramientas Growth600 públicas (423 incluyendo las 277 originales); 91/323 entradas de este checklist implementadas, con #267 lista localmente y aún no publicada.** Consultar `docs/growth600/PROGRESS.md` para la evidencia; disponibilidad pública no implica indexación.
 
 Snapshot consultado: rama `main`, commit `685f91adfc7818a54f6dc0a967e290d13137a3dd`. Catálogo: `src/catalog.mjs`; funciones y contratos representativos: `src/app.js`, módulos de lógica, `src/opportunity-tools.mjs`, `src/seo.mjs`, locales, build y documentación del repo. Se inspeccionaron los metadatos de las 277 herramientas y contratos clave para descartar duplicados; esto **no es una nueva auditoría funcional completa de las 277**.
 
@@ -1473,8 +1473,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 266 · Rlc Circuit Calculator
 
-- [x] **C/F/E/X/L/B — `rlc-circuit-calculator`**; [ ] **P/S — PR, CI, deploy y verificación pública**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/rlc-circuit-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S — `rlc-circuit-calculator`**
+- **Destino:** `https://tools.usefulverse.com/tools/rlc-circuit-calculator/`; 35 localizaciones adicionales.
 - **Demanda:** `resonant frequency calculator` — 880 búsquedas/mes US/en, KD 0; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Resonancia, Q, ancho de banda y impedancia
 - **Prueba de aceptación específica:** L y C positivos dan frecuencia real positiva
@@ -1485,13 +1485,14 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `resonant frequency calculator free online`; `resonant frequency calculator with example`; `resonant frequency calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Avance local (9 oct 2026):** circuito RLC serie/paralelo; frecuencia de resonancia, Q, ancho de banda, reactancias, impedancia compleja/magnitud/fase, corriente RMS y curva logarítmica de 61 puntos; entradas/unidades validadas, ejemplo, reinicio, accesibilidad y notas del modelo ideal. Cálculo íntegramente local, sin endpoint ni dependencias nuevas. 36 traducciones estáticas por lotes desde inglés (Google Translate); árabe ajustado manualmente; traducción automática no nativa. Suite completa 1.767/1.767, `npm run check` pasa con sitemap principal de 10.260 URLs, build local del hub de 5.292 URLs y `git diff --check` pasa. Chrome móvil 390×844: el ejemplo serie devuelve f0=1,5915494 kHz, Q=10, BW=159,1549431 Hz, XL=XC=100 Ω y corriente 0,5 A RMS; variante árabe con `lang=ar`, `dir=rtl`, resultados traducidos y sin overflow; sin errores/avisos de consola.
-- **Inventario local:** README generado con 10.260 URLs del sitio principal y 5.292 del hub. El inventario local no acredita publicación ni indexación.
-- [ ] **P/S restantes:** revisar/stagear solo archivos propios, crear PR, esperar CI, integrar/desplegar, publicar el hub y verificar rutas EN/AR y sitemap público.
+- **Publicación:** PR #107 integrada en el merge `0160b11202d1ab57ed543ac0b2b25bdfe3ea7a7d`; CI y deploy principal `37962218392` y publicación del hub `37962246670` finalizaron correctamente. EN y AR devuelven HTTP 200, canonicals propios, `lang` y dirección correctos. Sitemap público 5.292 entradas; incluye las 36 rutas RLC.
+- **Inventario:** README refleja 10.260 URLs principales y 5.292 del hub; corresponde con los sitemaps públicos actuales. No implica indexación.
+- **Recuento del checklist:** 90/323 entradas implementadas; 233 restantes válidas, además de una fila duplicada/reserva por reemplazar. Las 277 herramientas originales no se tocaron.
 
 ### 267 · Antenna Length Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `antenna-length-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/antenna-length-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B — `antenna-length-calculator`**; [ ] **P/S — PR, CI, deploy y verificación pública**
+- **Destino:** `https://tools.usefulverse.com/tools/antenna-length-calculator/`; otras 35 localizaciones.
 - **Demanda:** `dipole antenna calculator` — 880 búsquedas/mes US/en, KD 3; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Media/quarter wavelength con factor acortamiento editable
 - **Prueba de aceptación específica:** 100MHz en vacío media onda1.5m
@@ -1501,6 +1502,9 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `antenna length calculator` — 480/mes US/en; KD 3.
   - `dipole antenna calculator free online`; `dipole antenna calculator with example`; `dipole antenna calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Avance local (10 oct 2026):** estima longitud de onda en espacio libre, dipolo ideal de media onda o monopolo de cuarto de onda, factor de acortamiento editable, longitud total/por brazo, salida métrica e imperial y fórmula. Los límites accesibles se ajustan al cambiar entre Hz/kHz/MHz/GHz y coinciden con el rango físico validado. 36 copias estáticas de traducción automática desde inglés; árabe técnico ajustado manualmente; sin API, traducción runtime ni dependencia nueva. Suite **1.775/1.775**, focal **297/297**, `npm run locale:release-check`, `npm run check` (10.260 URLs principales), build separado **5.328 páginas** (147 herramientas × 36 + 36 portadas), metadata y `git diff --check` pasan. Chrome móvil 390×844: EN verifica dipolo de 100 MHz, monopolo y límites de las cuatro unidades; AR tiene `lang=ar`, `dir=rtl` y resultado equivalente, sin overflow ni errores de consola. Sin PageSpeed/Lighthouse.
+- **Diferenciación:** no duplica frequency-wavelength-calculator; aquella resuelve la relación de onda y esta calcula dimensiones básicas del elemento e incluye factor de acortamiento, dejando explícitos los límites de sintonía/instalación.
+- [ ] **P/S restantes:** crear PR, esperar CI, integrar/desplegar, publicar el hub y verificar las rutas EN/AR y sitemap público.
 
 ### 272 · Specific Heat Calculator
 

@@ -18,6 +18,8 @@ import pulleyCalculatorCopies from './locales/pulley-calculator-final.mjs';
 import { pulleyCalculatorEnglishCopy } from './locales/pulley-calculator.en.mjs';
 import rlcCircuitCalculatorCopies from './locales/rlc-circuit-calculator-final.mjs';
 import { rlcCircuitCalculatorEnglishCopy } from './locales/rlc-circuit-calculator.en.mjs';
+import antennaLengthCalculatorCopies from './locales/antenna-length-calculator-final.mjs';
+import { antennaLengthCalculatorEnglishCopy } from './locales/antenna-length-calculator.en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
 import portugueseGrowthCopy from './locales/pt.mjs';
 import germanGrowthCopy from './locales/de.mjs';
@@ -1608,6 +1610,22 @@ test('RLC calculator has complete static copy and machine-accepted localization 
     assert.ok([...copy.description].length <= 160, locale.key);
   }
   assert.match(rlcCircuitCalculatorCopies.ar.fields.accuracyNote, /مركّز/u);
+});
+
+test('antenna length calculator has complete static, bounded copy across all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'antenna-length-calculator');
+  assert.ok(tool);
+  assert.equal(antennaLengthCalculatorCopies.en.name, antennaLengthCalculatorEnglishCopy.name);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const locale of localeEntries) {
+    const copy = antennaLengthCalculatorCopies[locale.key];
+    assert.ok(copy.fields.mode && copy.fields.frequency && copy.fields.shorteningFactor && copy.fields.accuracyNote, locale.key);
+    assert.ok(copy.actions.calculate && copy.messages.wavelength && copy.messages.adjustedLength && copy.messages.elementLength, locale.key);
+    assert.equal(copy.additionalFaqs.length, 4, locale.key);
+    assert.ok([...copy.title].length <= 60, locale.key);
+    assert.ok([...copy.description].length <= 160, locale.key);
+  }
+  assert.match(antennaLengthCalculatorCopies.ar.fields.accuracyNote, /موصل/u);
 });
 
 test('chemical equation balancer has complete English copy but has approved localized copy across all 36 languages', () => {
