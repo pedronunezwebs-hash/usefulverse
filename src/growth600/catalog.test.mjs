@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 132);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 132);
+  assert.equal(growthPilotTools.length, 133);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 133);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -27,6 +27,17 @@ test('ideal gas law calculator solves one blank from PV=nRT and discloses model 
   assert.match(tool.acceptance, /1 atm.*22\.41397 L/u);
   assert.match(tool.boundary, /absolute temperature above 0 K/u);
   assert.match(tool.boundary, /no inputs are uploaded/u);
+});
+
+test('torque calculator separates force moments from shaft-power calculations', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'torque-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'torque calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['force-calculator', 'horsepower-calculator']);
+  assert.match(tool.acceptance, /10 N.*2 m.*20 N·m/u);
+  assert.match(tool.functions.join(' '), /lever arm.*angle/u);
+  assert.match(tool.boundary, /not a structural.*safety design tool/u);
+  assert.match(tool.boundary, /calculations stay in the browser/u);
 });
 
 test('JSON to Excel is distinct from CSV and spreadsheet conversion and keeps imports local', () => {
