@@ -113,6 +113,8 @@ import certificateDecoderCopies from './certificate-decoder.mjs';
 import { certificateDecoderEnglishCopy } from './certificate-decoder.en.mjs';
 import jsonToXmlCopies from './json-to-xml-converter.mjs';
 import { jsonToXmlEnglishCopy } from './json-to-xml-converter.en.mjs';
+import harViewerCopies from './har-viewer.mjs';
+import { harViewerEnglishCopy } from './har-viewer.en.mjs';
 import openApiEditorCopies from './openapi-editor.mjs';
 import { openApiEditorEnglishCopy } from './openapi-editor.en.mjs';
 import fontPairingToolCopies from './font-pairing-tool.mjs';
@@ -1118,5 +1120,6 @@ registerGrowthLocaleExtension(source, 'json-diff', { ...jsonDiffCopies, en: json
 registerGrowthLocaleExtension(source, 'text-to-binary-converter', { ...textToBinaryCopies, en: textToBinaryEnglishCopy }, 'json-diff');
 registerGrowthLocaleExtension(source, 'certificate-decoder', { ...certificateDecoderCopies, en: certificateDecoderEnglishCopy }, 'text-to-binary-converter');
 registerGrowthLocaleExtension(source, 'json-to-xml-converter', { ...jsonToXmlCopies, en: jsonToXmlEnglishCopy }, 'certificate-decoder');
+registerGrowthLocaleExtension(source, 'har-viewer', { ...harViewerCopies, en: harViewerEnglishCopy }, 'json-to-xml-converter');
 
 export default Object.freeze(source);

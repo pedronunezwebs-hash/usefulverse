@@ -159,6 +159,23 @@ function assertMachineAcceptedGrowthToolInAllLocales(tool) {
   }
 }
 
+test('HAR viewer has complete static translations, privacy warnings and preserved HAR fixtures in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'har-viewer');
+  assert.ok(tool);
+  assert.equal(localeEntries.length, 36);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  const english = localizedCopies.en[tool.id];
+  assert.equal(english.additionalFaqs.length, 3);
+  assert.match(english.fields.privacyWarning, /never uploads/u);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.equal(copy.exampleHar, english.exampleHar, `${key}: HAR fixture remains valid JSON`);
+    assert.ok(copy.fields.privacyWarning.length > 80, `${key}: privacy caveat stays clear`);
+    assert.match(copy.title, /UsefulVerse/u, `${key}: brand retained`);
+  }
+});
+
 const tools = [{ id: 'one' }, { id: 'two' }];
 const locales = [{ key: 'en' }, { key: 'es' }];
 const sampleHome = (language) => ({ title: `${language} tools | UsefulVerse`, description: 'Free browser tools.', intro: 'Simple tools.', directoryLabel: 'Tools', freeLabel: 'Free', footerFree: 'Free tools.', skipToTool: 'Skip', home: 'Home', languageLabel: 'Language', breadcrumbLabel: 'Breadcrumb', faqLabel: 'FAQ', copyLanguage: language });

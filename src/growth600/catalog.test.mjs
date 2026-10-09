@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 122);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 122);
+  assert.equal(growthPilotTools.length, 123);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 123);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -90,6 +90,16 @@ test('JSON/XML converter is bidirectional with explicit lossy mappings and block
   assert.match(tool.acceptance, /repeated item elements/u);
   assert.match(tool.boundary, /DTD and entity declarations are blocked/u);
   assert.match(tool.boundary, /not guaranteed to round-trip/u);
+});
+
+test('HAR viewer analyzes local captures while redacting query values and withholding request data', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'har-viewer');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'har analyzer');
+  assert.match(tool.functions.join(' '), /without uploading/u);
+  assert.match(tool.boundary, /No network import, upload/u);
+  assert.match(tool.boundary, /Sensitive query values/u);
+  assert.deepEqual(tool.relatedExistingIds, ['url-parser']);
 });
 
 test('OpenAPI editor stays a local contract editor and does not duplicate request-builder intent', () => {

@@ -36,7 +36,7 @@ export function assertLocalController(toolId, source, maxBytes) {
 }
 
 async function buildGrowthStaticSiteIntoDirectory({
-  outputDir, origin, localeEntries, copyByLocale, controllerBundles, styles, workerBundles = {}, extraAssets = {}, trustedWorkerDynamicCode = [],
+  outputDir, origin, localeEntries, copyByLocale, controllerBundles, styles, toolStyles = {}, workerBundles = {}, extraAssets = {}, trustedWorkerDynamicCode = [],
   faviconSvg,
   currentTools, tools = growthPilotTools, maxFiles = 18_500,
   maxAssetBytes = 24 * 1024, maxFileBytes = 25 * 1024 * 1024,
@@ -66,13 +66,24 @@ async function buildGrowthStaticSiteIntoDirectory({
     if (!name || name.startsWith('/') || name.split('/').includes('..') || !(typeof contents === 'string' || Buffer.isBuffer(contents) || contents instanceof Uint8Array)) throw new Error(`Invalid static asset: ${name}.`);
     if (Buffer.from(contents).byteLength > maxFileBytes) throw new Error(`${name} exceeds Cloudflare's per-file maximum.`);
   }
+  for (const [toolId, source] of Object.entries(toolStyles)) {
+    if (!tools.some(({ id }) => id === toolId) || typeof source !== 'string' || !source.trim()) throw new Error(`Invalid tool stylesheet: ${toolId}.`);
+    if (Buffer.byteLength(source) > maxAssetBytes) throw new Error(`${toolId} stylesheet exceeds the ${maxAssetBytes}-byte budget.`);
+  }
   if (Buffer.byteLength(styles) > maxAssetBytes) throw new Error(`Growth stylesheet exceeds the ${maxAssetBytes}-byte budget.`);
 
   await mkdir(join(outputDir, 'assets'), { recursive: true });
   await writeFile(join(outputDir, 'favicon.svg'), faviconSvg);
-  const version = sha(Buffer.concat([Buffer.from(styles), ...tools.map(({ id }) => Buffer.from(controllerBundles[id])), ...Object.entries(workerBundles).flatMap(([name, source]) => [Buffer.from(name), Buffer.from(source)]), ...Object.entries(extraAssets).flatMap(([name, contents]) => [Buffer.from(name), Buffer.from(contents)])]));
+  const version = sha(Buffer.concat([Buffer.from(styles), ...Object.entries(toolStyles).flatMap(([name, source]) => [Buffer.from(name), Buffer.from(source)]), ...tools.map(({ id }) => Buffer.from(controllerBundles[id])), ...Object.entries(workerBundles).flatMap(([name, source]) => [Buffer.from(name), Buffer.from(source)]), ...Object.entries(extraAssets).flatMap(([name, contents]) => [Buffer.from(name), Buffer.from(contents)])]));
   await writeFile(join(outputDir, 'assets', `growth600.${version}.css`), styles);
   const assetFiles = new Map([[`assets/growth600.${version}.css`, Buffer.byteLength(styles)]]);
+  const toolStylePaths = {};
+  for (const [toolId, source] of Object.entries(toolStyles)) {
+    const filename = `${toolId}.${sha(source)}.css`;
+    await writeFile(join(outputDir, 'assets', filename), source);
+    toolStylePaths[toolId] = `/assets/${filename}`;
+    assetFiles.set(`assets/${filename}`, Buffer.byteLength(source));
+  }
   for (const tool of tools) {
     const filename = `${tool.id}.${sha(controllerBundles[tool.id])}.js`;
     await writeFile(join(outputDir, 'assets', filename), controllerBundles[tool.id]);
@@ -106,6 +117,7 @@ async function buildGrowthStaticSiteIntoDirectory({
       let html = renderGrowthToolPage({ tool, locale, localeEntries, copy: { ...localeCopy._home, ...copy }, origin, assetVersion: version, formHtml });
       html = html.replace(`/assets/growth600.css?v=${version}`, `/assets/growth600.${version}.css`)
         .replace(`/assets/${tool.id}.js?v=${version}`, `/assets/${tool.id}.${sha(controllerBundles[tool.id])}.js`);
+      if (toolStylePaths[tool.id]) html = html.replace('</head>', `  <link rel="stylesheet" href="${toolStylePaths[tool.id]}">\n</head>`);
       const route = localePath(locale.key, tool.id);
       await writeRoute(outputDir, route, html);
       canonicalUrls.push(`${new URL(origin).origin}${route}`);

@@ -86,6 +86,7 @@ export function renderGrowthForm(toolId, copy) {
     'text-to-binary-converter': ['mode', 'textToBinary', 'binaryToText', 'textInput', 'textHint', 'binaryInput', 'binaryHint', 'groupBytes', 'accuracyNote', 'output', 'result', 'copyHint'],
     'certificate-decoder': ['certificate', 'upload', 'supported', 'accuracyNote', 'resultTitle', 'subject', 'issuer', 'commonName', 'organizationName', 'countryName', 'localityName', 'stateOrProvinceName', 'organizationalUnitName', 'streetAddress', 'serialNumber', 'notBefore', 'notAfter', 'alternativeNames', 'fingerprint', 'noAlternativeNames', 'unlistedAttribute'],
     'json-to-xml-converter': ['mode', 'jsonToXml', 'xmlToJson', 'jsonInput', 'jsonHint', 'xmlInput', 'xmlHint', 'rootName', 'indent', 'accuracyNote', 'output', 'result', 'copyHint'],
+    'har-viewer': ['file', 'paste', 'pasteHint', 'privacyWarning', 'search', 'method', 'statusFilter', 'all', 'errorsOnly', 'successOnly', 'totalRequests', 'failedRequests', 'transferred', 'totalTime', 'slowest', 'request', 'response', 'duration', 'size', 'waterfall', 'results', 'shown', 'of', 'noMatches', 'methodLabel', 'statusLabel', 'urlLabel', 'durationLabel', 'sizeLabel', 'timingNote', 'unknownDate', 'invalid', 'tooMany'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -216,6 +217,7 @@ export function renderGrowthForm(toolId, copy) {
     'text-to-binary-converter': ['convert', 'example', 'reset', 'result', 'copy', 'download'],
     'certificate-decoder': ['decode', 'example', 'reset', 'copySummary'],
     'json-to-xml-converter': ['convert', 'example', 'reset', 'copy', 'download'],
+    'har-viewer': ['analyze', 'example', 'reset', 'showMore', 'result'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
@@ -1054,6 +1056,29 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('convert')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.result)}</h2><label for="json-xml-output">${escapeGrowthHtml(fields.output)}</label><textarea id="json-xml-output" name="output" data-json-xml-output rows="12" readonly spellcheck="false"></textarea><p class="hint">${escapeGrowthHtml(fields.copyHint)}</p><div class="actions">${button('copy', actions.copy, 'secondary')}${button('download', actions.download, 'secondary')}</div></section>
+  </form>`, copy);
+
+  if (toolId === 'har-viewer') return attachCopy(`<form id="tool-form" class="har-viewer" novalidate>
+    ${label('har-file', fields.file, '<input id="har-file" name="harFile" type="file" accept=".har,.json,application/json,application/har+json">')}
+    <p class="hint">${escapeGrowthHtml(fields.pasteHint)}</p>
+    ${label('har-paste', fields.paste, '<textarea id="har-paste" name="harText" rows="8" maxlength="5242880" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off"></textarea>')}
+    <p class="hint har-viewer__warning">${escapeGrowthHtml(fields.privacyWarning)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('analyze')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>
+      <p class="hint">${escapeGrowthHtml(fields.timingNote)}</p>
+      <div class="har-viewer__filters" data-har-filters hidden>
+        ${label('har-search', fields.search, '<input id="har-search" name="query" type="search" autocomplete="off">')}
+        ${label('har-method', fields.method, '<select id="har-method" name="method"><option value="all"></option></select>')}
+        ${label('har-status', fields.statusFilter, `<select id="har-status" name="status"><option value="all">${escapeGrowthHtml(fields.all)}</option><option value="errors">${escapeGrowthHtml(fields.errorsOnly)}</option><option value="successful">${escapeGrowthHtml(fields.successOnly)}</option></select>`)}
+      </div>
+      <p class="hint" data-har-count></p>
+      <div class="table-scroll har-viewer__table-scroll"><table class="har-viewer__table"><caption>${escapeGrowthHtml(fields.results)}</caption><thead><tr>
+        <th scope="col">${escapeGrowthHtml(fields.request)}</th><th scope="col">${escapeGrowthHtml(fields.response)}</th><th scope="col">${escapeGrowthHtml(fields.duration)}</th><th scope="col">${escapeGrowthHtml(fields.size)}</th><th scope="col">${escapeGrowthHtml(fields.waterfall)}</th>
+      </tr></thead><tbody data-har-rows></tbody></table></div>
+      <p class="hint" data-har-empty hidden>${escapeGrowthHtml(fields.noMatches)}</p>
+      ${button('showMore', actions.showMore, 'secondary')}
+    </section>
   </form>`, copy);
 
   if (toolId === 'weight-loss-calculator') return attachCopy(`<form id="tool-form" novalidate>
