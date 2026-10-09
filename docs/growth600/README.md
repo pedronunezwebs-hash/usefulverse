@@ -11,6 +11,6 @@ Plan y registro vivo de implementación. Rama de trabajo actual: `codex/growth60
 Coste real DataForSEO: 0,24852 USD. No autoriza nuevas llamadas al reanudar.
 260 candidatas tienen al menos 1.000 búsquedas/mes en la query medida US/en; 63 tienen demanda media (260–880/mes). No son visitas garantizadas ni una previsión de CPM.
 
-Último deploy confirmado: #201 Torque Calculator; 133 herramientas Growth600 en el hub, 4.824 URLs (133 × 36 + 36 portadas). La web principal se mantiene aparte con sus 10.260 URLs. Total actual antes de Beam Deflection: 410 herramientas públicas y 15.084 URLs entre ambos sitios. PR #94, CI, despliegues y 36 rutas/canonicals comprobados. La publicación no equivale a indexación.
+Último deploy confirmado: #203 Beam Deflection Calculator; 134 herramientas Growth600 en el hub, 4.860 URLs (134 × 36 + 36 portadas). La web principal se mantiene aparte con sus 10.260 URLs. Total actual: 411 herramientas públicas y 15.120 URLs entre ambos sitios. PR #95, CI, despliegues, 36 rutas y canonicals comprobados. La publicación no equivale a indexación.
 
 Las casillas de producto permanecen sin marcar hasta que cada herramienta supere C/F/E/X/L/B/P/S. No llamar implementado, probado, traducido, publicado o indexado a lo que solo está planificado. Consultar `PROGRESS.md` antes de cada tanda; no rehacer investigación ni duplicar herramientas.

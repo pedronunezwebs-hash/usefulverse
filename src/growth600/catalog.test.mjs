@@ -4,8 +4,8 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 134);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 134);
+  assert.equal(growthPilotTools.length, 135);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 135);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -49,6 +49,16 @@ test('beam deflection calculator covers four elastic textbook cases without clai
   assert.match(tool.functions.join(' '), /uniform load.*deflection curve/u);
   assert.match(tool.boundary, /Euler–Bernoulli.*qualified structural engineer/u);
   assert.match(tool.boundary, /no upload/u);
+});
+
+test('LED resistor calculator is distinct from general Ohm and resistor color-code tools', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'led-resistor-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'led resistor calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['ohms-law-calculator', 'resistor-color-code-calculator']);
+  assert.match(tool.acceptance, /12 V.*500 Ω.*560 Ω/u);
+  assert.match(tool.functions.join(' '), /round upward.*E12 or E24/u);
+  assert.match(tool.boundary, /2× estimate.*not a safety certification/u);
 });
 
 test('JSON to Excel is distinct from CSV and spreadsheet conversion and keeps imports local', () => {

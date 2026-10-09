@@ -222,6 +222,8 @@ import torqueCalculatorCopies from './torque-calculator.mjs';
 import { torqueCalculatorEnglishCopy } from './torque-calculator.en.mjs';
 import beamDeflectionCopies from './beam-deflection-calculator.mjs';
 import { beamDeflectionCalculatorEnglishCopy } from './beam-deflection-calculator.en.mjs';
+import ledResistorCopies from './led-resistor-calculator.mjs';
+import { ledResistorCalculatorEnglishCopy } from './led-resistor-calculator.en.mjs';
 import dilutionCopies from './dilution-calculator-final.mjs';
 import { dilutionCalculatorEnglishCopy } from './dilution-calculator.en.mjs';
 import ohmsLawCopies from './ohms-law-calculator-final.mjs';
@@ -717,6 +719,7 @@ registerGrowthLocaleExtension(source, 'frequency-wavelength-calculator', { ...fr
 registerGrowthLocaleExtension(source, 'ideal-gas-law-calculator', { ...idealGasLawCopies, en: idealGasLawCalculatorEnglishCopy }, 'frequency-wavelength-calculator');
 registerGrowthLocaleExtension(source, 'torque-calculator', { ...torqueCalculatorCopies, en: torqueCalculatorEnglishCopy }, 'ideal-gas-law-calculator');
 registerGrowthLocaleExtension(source, 'beam-deflection-calculator', { ...beamDeflectionCopies, en: beamDeflectionCalculatorEnglishCopy }, 'torque-calculator');
+registerGrowthLocaleExtension(source, 'led-resistor-calculator', { ...ledResistorCopies, en: ledResistorCalculatorEnglishCopy }, 'beam-deflection-calculator');
 registerGrowthLocaleExtension(source, 'dilution-calculator', { ...dilutionCopies, en: dilutionCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'ohms-law-calculator', { ...ohmsLawCopies, en: ohmsLawCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'chemical-equation-balancer', { ...chemicalEquationCopies, en: chemicalEquationBalancerEnglishCopy }, 'gravel-calculator');

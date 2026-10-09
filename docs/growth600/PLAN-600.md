@@ -1280,8 +1280,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 203 · Beam Deflection Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `beam-deflection-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/beam-deflection-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `beam-deflection-calculator`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/beam-deflection-calculator/`; 35 versiones localizadas adicionales. Sitemap verificado: 36 variantes, todas HTTP 200 y canonical autorreferente.
 - **Demanda:** `beam calculator` — 2.400 búsquedas/mes US/en, KD 8; nivel B. CPC 2.1 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Vigas simples, cargas definidas, diagramas, flecha; solo educativo
 - **Prueba de aceptación específica:** Carga cero da deformación cero
