@@ -53,6 +53,8 @@ import { rcTimeConstantCalculatorEnglishCopy } from './locales/rc-time-constant-
 import rcTimeConstantCalculatorCopies from './locales/rc-time-constant-calculator-final.mjs';
 import { reverseMortgageCalculatorEnglishCopy } from './locales/reverse-mortgage-calculator.en.mjs';
 import reverseMortgageCalculatorCopies from './locales/reverse-mortgage-calculator-final.mjs';
+import { carDepreciationCalculatorEnglishCopy } from './locales/car-depreciation-calculator.en.mjs';
+import carDepreciationCalculatorCopies from './locales/car-depreciation-calculator-final.mjs';
 
 const actions = {
   calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', millimeters: 'Millimeters', feet: 'Feet', inches: 'Inches', squareMeters: 'Square meters', squareFeet: 'Square feet', cubicMeters: 'Cubic meters', cubicFeet: 'Cubic feet', kelvin: 'Kelvin difference', fahrenheit: 'Fahrenheit difference', kilowatts: 'Kilowatts (kW)', btuPerHour: 'BTU per hour (BTU/h)', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.', kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only', productionMode: 'Estimate array output', sizingMode: 'Size for daily use', years: 'years', add: 'Add', subtract: 'Subtract', multiply: 'Multiply', divide: 'Divide', magnitude: 'Modulus', argument: 'Argument', rectangularToPolar: 'Rectangular to polar', polarToRectangular: 'Polar to rectangular', roots: 'Nth roots',
@@ -79,6 +81,7 @@ const copies = {
   'specific-heat-calculator': specificHeatCalculatorEnglishCopy,
   'rc-time-constant-calculator': rcTimeConstantCalculatorEnglishCopy,
   'reverse-mortgage-calculator': reverseMortgageCalculatorEnglishCopy,
+  'car-depreciation-calculator': carDepreciationCalculatorEnglishCopy,
   'hebrew-calendar-converter': hebrewCalendarConverterEnglishCopy,
   'absolute-value-calculator': absoluteValueCalculatorEnglishCopy,
   'image-splitter': { name: 'Image splitter', actions: { ...actions, choose: 'Choose image', export: 'Split and prepare ZIP', cancel: 'Cancel', download: 'Download tile ZIP' }, messages: { ...messages }, fields: { imageFile: 'Choose an image', mode: 'Split by', gridMode: 'Rows and columns', tileSizeMode: 'Fixed tile dimensions', columns: 'Columns', rows: 'Rows', tileWidth: 'Tile width', tileHeight: 'Tile height', overlap: 'Overlap', accuracyNote: 'Local image processing.', previewHint: 'Image grid preview.', imageReady: 'Image ready' } },
@@ -1655,6 +1658,26 @@ test('reverse mortgage localization files contain distinct copy and three comple
     for (const group of [copy.actions, copy.messages]) {
       for (const value of Object.values(group)) assert.doesNotMatch(value, /^[\p{P}\p{S}\s]+$/u, locale);
     }
+  }
+});
+
+test('car depreciation form distinguishes user assumptions from market value and exposes all scenario controls', () => {
+  const html = renderGrowthForm('car-depreciation-calculator', carDepreciationCalculatorEnglishCopy);
+  for (const expected of ['name="purchasePrice"', 'name="yearsOwned"', 'name="odometerAtPurchase"', 'name="currentDistance"', 'name="annualDistance"', 'name="distanceUnit"', 'name="annualDepreciationPercent"', 'name="distanceDepreciationPercent"', 'name="projectionYears"', 'name="currency"', 'data-action="example"', 'data-action="calculate"', 'data-action="reset"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /not a vehicle appraisal/u);
+  assert.match(html, /does not convert currencies/u);
+  assert.match(html, /data-result-content/u);
+});
+
+test('car depreciation localized copy is complete in all 36 locales and has no punctuation-only actions or statuses', () => {
+  assert.equal(Object.keys(carDepreciationCalculatorCopies).length, 36);
+  for (const [locale, copy] of Object.entries(carDepreciationCalculatorCopies)) {
+    assert.equal(copy.copyLanguage, locale);
+    assert.ok(copy.title.includes('UsefulVerse'), locale);
+    assert.equal(copy.additionalFaqs.length, 3, locale);
+    assert.ok(copy.additionalFaqs.every(({ question, answer }) => question?.trim() && answer?.trim()), locale);
+    assert.ok(copy.fields.formulaNote?.trim(), locale);
+    for (const group of [copy.actions, copy.messages]) for (const value of Object.values(group)) assert.doesNotMatch(value, /^[\p{P}\p{S}\s]+$/u, locale);
   }
 });
 

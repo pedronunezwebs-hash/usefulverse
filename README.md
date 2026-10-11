@@ -16,10 +16,10 @@ Browser-first collection of fast, private, static tools for everyday work.
 
 The additional Growth600 tools are published on a separate static Cloudflare Pages site at
 [tools.usefulverse.com](https://tools.usefulverse.com/), so they do not replace or
-change the 277-tool catalog above. Production currently has 162 additional tools in
-the same 36 locales. The current candidate branch adds Reverse Mortgage Calculator
-as tool 163, with a build of 5,904 canonical URLs, pending merge and hub deployment.
-Once published, the two sites will contain 440 tool implementations and 16,164
+change the 277-tool catalog above. Production currently has 163 additional tools in
+the same 36 locales. This branch adds Car Depreciation Calculator as tool 164,
+with a local build of 5,940 canonical URLs, pending merge and hub deployment.
+Once published, the two sites will contain 441 tool implementations and 16,200
 sitemap URLs. The staged checklist and implementation record are in
 [docs/growth600/PLAN-600.md](docs/growth600/PLAN-600.md) and
 [docs/growth600/PROGRESS.md](docs/growth600/PROGRESS.md).
@@ -10552,7 +10552,7 @@ These are the canonical URLs for the additional tools and their localized pages.
 
 <!-- BEGIN GENERATED GROWTH600 URL INVENTORY -->
 
-Generated from `dist-growth600/sitemap.xml`: **5,904 canonical URLs**.
+Generated from `dist-growth600/sitemap.xml`: **5,940 canonical URLs**.
 
 ```text
 https://tools.usefulverse.com/
@@ -10719,6 +10719,7 @@ https://tools.usefulverse.com/tools/markdown-editor/
 https://tools.usefulverse.com/tools/julian-date-converter/
 https://tools.usefulverse.com/tools/529-calculator/
 https://tools.usefulverse.com/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/es/
 https://tools.usefulverse.com/es/tools/btu-calculator/
 https://tools.usefulverse.com/es/tools/solar-panel-calculator/
@@ -10883,6 +10884,7 @@ https://tools.usefulverse.com/es/tools/markdown-editor/
 https://tools.usefulverse.com/es/tools/julian-date-converter/
 https://tools.usefulverse.com/es/tools/529-calculator/
 https://tools.usefulverse.com/es/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/es/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/fr/
 https://tools.usefulverse.com/fr/tools/btu-calculator/
 https://tools.usefulverse.com/fr/tools/solar-panel-calculator/
@@ -11047,6 +11049,7 @@ https://tools.usefulverse.com/fr/tools/markdown-editor/
 https://tools.usefulverse.com/fr/tools/julian-date-converter/
 https://tools.usefulverse.com/fr/tools/529-calculator/
 https://tools.usefulverse.com/fr/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/fr/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/pt-br/
 https://tools.usefulverse.com/pt-br/tools/btu-calculator/
 https://tools.usefulverse.com/pt-br/tools/solar-panel-calculator/
@@ -11211,6 +11214,7 @@ https://tools.usefulverse.com/pt-br/tools/markdown-editor/
 https://tools.usefulverse.com/pt-br/tools/julian-date-converter/
 https://tools.usefulverse.com/pt-br/tools/529-calculator/
 https://tools.usefulverse.com/pt-br/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/pt-br/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/de/
 https://tools.usefulverse.com/de/tools/btu-calculator/
 https://tools.usefulverse.com/de/tools/solar-panel-calculator/
@@ -11375,6 +11379,7 @@ https://tools.usefulverse.com/de/tools/markdown-editor/
 https://tools.usefulverse.com/de/tools/julian-date-converter/
 https://tools.usefulverse.com/de/tools/529-calculator/
 https://tools.usefulverse.com/de/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/de/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/ja/
 https://tools.usefulverse.com/ja/tools/btu-calculator/
 https://tools.usefulverse.com/ja/tools/solar-panel-calculator/
@@ -11539,6 +11544,7 @@ https://tools.usefulverse.com/ja/tools/markdown-editor/
 https://tools.usefulverse.com/ja/tools/julian-date-converter/
 https://tools.usefulverse.com/ja/tools/529-calculator/
 https://tools.usefulverse.com/ja/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/ja/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/ko/
 https://tools.usefulverse.com/ko/tools/btu-calculator/
 https://tools.usefulverse.com/ko/tools/solar-panel-calculator/
@@ -11703,6 +11709,7 @@ https://tools.usefulverse.com/ko/tools/markdown-editor/
 https://tools.usefulverse.com/ko/tools/julian-date-converter/
 https://tools.usefulverse.com/ko/tools/529-calculator/
 https://tools.usefulverse.com/ko/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/ko/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/id/
 https://tools.usefulverse.com/id/tools/btu-calculator/
 https://tools.usefulverse.com/id/tools/solar-panel-calculator/
@@ -11867,6 +11874,7 @@ https://tools.usefulverse.com/id/tools/markdown-editor/
 https://tools.usefulverse.com/id/tools/julian-date-converter/
 https://tools.usefulverse.com/id/tools/529-calculator/
 https://tools.usefulverse.com/id/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/id/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/hi/
 https://tools.usefulverse.com/hi/tools/btu-calculator/
 https://tools.usefulverse.com/hi/tools/solar-panel-calculator/
@@ -12031,6 +12039,7 @@ https://tools.usefulverse.com/hi/tools/markdown-editor/
 https://tools.usefulverse.com/hi/tools/julian-date-converter/
 https://tools.usefulverse.com/hi/tools/529-calculator/
 https://tools.usefulverse.com/hi/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/hi/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/ar/
 https://tools.usefulverse.com/ar/tools/btu-calculator/
 https://tools.usefulverse.com/ar/tools/solar-panel-calculator/
@@ -12195,6 +12204,7 @@ https://tools.usefulverse.com/ar/tools/markdown-editor/
 https://tools.usefulverse.com/ar/tools/julian-date-converter/
 https://tools.usefulverse.com/ar/tools/529-calculator/
 https://tools.usefulverse.com/ar/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/ar/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/zh-cn/
 https://tools.usefulverse.com/zh-cn/tools/btu-calculator/
 https://tools.usefulverse.com/zh-cn/tools/solar-panel-calculator/
@@ -12359,6 +12369,7 @@ https://tools.usefulverse.com/zh-cn/tools/markdown-editor/
 https://tools.usefulverse.com/zh-cn/tools/julian-date-converter/
 https://tools.usefulverse.com/zh-cn/tools/529-calculator/
 https://tools.usefulverse.com/zh-cn/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/zh-cn/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/bn/
 https://tools.usefulverse.com/bn/tools/btu-calculator/
 https://tools.usefulverse.com/bn/tools/solar-panel-calculator/
@@ -12523,6 +12534,7 @@ https://tools.usefulverse.com/bn/tools/markdown-editor/
 https://tools.usefulverse.com/bn/tools/julian-date-converter/
 https://tools.usefulverse.com/bn/tools/529-calculator/
 https://tools.usefulverse.com/bn/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/bn/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/ru/
 https://tools.usefulverse.com/ru/tools/btu-calculator/
 https://tools.usefulverse.com/ru/tools/solar-panel-calculator/
@@ -12687,6 +12699,7 @@ https://tools.usefulverse.com/ru/tools/markdown-editor/
 https://tools.usefulverse.com/ru/tools/julian-date-converter/
 https://tools.usefulverse.com/ru/tools/529-calculator/
 https://tools.usefulverse.com/ru/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/ru/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/ur/
 https://tools.usefulverse.com/ur/tools/btu-calculator/
 https://tools.usefulverse.com/ur/tools/solar-panel-calculator/
@@ -12851,6 +12864,7 @@ https://tools.usefulverse.com/ur/tools/markdown-editor/
 https://tools.usefulverse.com/ur/tools/julian-date-converter/
 https://tools.usefulverse.com/ur/tools/529-calculator/
 https://tools.usefulverse.com/ur/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/ur/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/tr/
 https://tools.usefulverse.com/tr/tools/btu-calculator/
 https://tools.usefulverse.com/tr/tools/solar-panel-calculator/
@@ -13015,6 +13029,7 @@ https://tools.usefulverse.com/tr/tools/markdown-editor/
 https://tools.usefulverse.com/tr/tools/julian-date-converter/
 https://tools.usefulverse.com/tr/tools/529-calculator/
 https://tools.usefulverse.com/tr/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/tr/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/vi/
 https://tools.usefulverse.com/vi/tools/btu-calculator/
 https://tools.usefulverse.com/vi/tools/solar-panel-calculator/
@@ -13179,6 +13194,7 @@ https://tools.usefulverse.com/vi/tools/markdown-editor/
 https://tools.usefulverse.com/vi/tools/julian-date-converter/
 https://tools.usefulverse.com/vi/tools/529-calculator/
 https://tools.usefulverse.com/vi/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/vi/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/it/
 https://tools.usefulverse.com/it/tools/btu-calculator/
 https://tools.usefulverse.com/it/tools/solar-panel-calculator/
@@ -13343,6 +13359,7 @@ https://tools.usefulverse.com/it/tools/markdown-editor/
 https://tools.usefulverse.com/it/tools/julian-date-converter/
 https://tools.usefulverse.com/it/tools/529-calculator/
 https://tools.usefulverse.com/it/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/it/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/zh-tw/
 https://tools.usefulverse.com/zh-tw/tools/btu-calculator/
 https://tools.usefulverse.com/zh-tw/tools/solar-panel-calculator/
@@ -13507,6 +13524,7 @@ https://tools.usefulverse.com/zh-tw/tools/markdown-editor/
 https://tools.usefulverse.com/zh-tw/tools/julian-date-converter/
 https://tools.usefulverse.com/zh-tw/tools/529-calculator/
 https://tools.usefulverse.com/zh-tw/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/zh-tw/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/bg/
 https://tools.usefulverse.com/bg/tools/btu-calculator/
 https://tools.usefulverse.com/bg/tools/solar-panel-calculator/
@@ -13671,6 +13689,7 @@ https://tools.usefulverse.com/bg/tools/markdown-editor/
 https://tools.usefulverse.com/bg/tools/julian-date-converter/
 https://tools.usefulverse.com/bg/tools/529-calculator/
 https://tools.usefulverse.com/bg/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/bg/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/ca/
 https://tools.usefulverse.com/ca/tools/btu-calculator/
 https://tools.usefulverse.com/ca/tools/solar-panel-calculator/
@@ -13835,6 +13854,7 @@ https://tools.usefulverse.com/ca/tools/markdown-editor/
 https://tools.usefulverse.com/ca/tools/julian-date-converter/
 https://tools.usefulverse.com/ca/tools/529-calculator/
 https://tools.usefulverse.com/ca/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/ca/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/nl/
 https://tools.usefulverse.com/nl/tools/btu-calculator/
 https://tools.usefulverse.com/nl/tools/solar-panel-calculator/
@@ -13999,6 +14019,7 @@ https://tools.usefulverse.com/nl/tools/markdown-editor/
 https://tools.usefulverse.com/nl/tools/julian-date-converter/
 https://tools.usefulverse.com/nl/tools/529-calculator/
 https://tools.usefulverse.com/nl/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/nl/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/el/
 https://tools.usefulverse.com/el/tools/btu-calculator/
 https://tools.usefulverse.com/el/tools/solar-panel-calculator/
@@ -14163,6 +14184,7 @@ https://tools.usefulverse.com/el/tools/markdown-editor/
 https://tools.usefulverse.com/el/tools/julian-date-converter/
 https://tools.usefulverse.com/el/tools/529-calculator/
 https://tools.usefulverse.com/el/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/el/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/ms/
 https://tools.usefulverse.com/ms/tools/btu-calculator/
 https://tools.usefulverse.com/ms/tools/solar-panel-calculator/
@@ -14327,6 +14349,7 @@ https://tools.usefulverse.com/ms/tools/markdown-editor/
 https://tools.usefulverse.com/ms/tools/julian-date-converter/
 https://tools.usefulverse.com/ms/tools/529-calculator/
 https://tools.usefulverse.com/ms/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/ms/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/pl/
 https://tools.usefulverse.com/pl/tools/btu-calculator/
 https://tools.usefulverse.com/pl/tools/solar-panel-calculator/
@@ -14491,6 +14514,7 @@ https://tools.usefulverse.com/pl/tools/markdown-editor/
 https://tools.usefulverse.com/pl/tools/julian-date-converter/
 https://tools.usefulverse.com/pl/tools/529-calculator/
 https://tools.usefulverse.com/pl/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/pl/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/sv/
 https://tools.usefulverse.com/sv/tools/btu-calculator/
 https://tools.usefulverse.com/sv/tools/solar-panel-calculator/
@@ -14655,6 +14679,7 @@ https://tools.usefulverse.com/sv/tools/markdown-editor/
 https://tools.usefulverse.com/sv/tools/julian-date-converter/
 https://tools.usefulverse.com/sv/tools/529-calculator/
 https://tools.usefulverse.com/sv/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/sv/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/th/
 https://tools.usefulverse.com/th/tools/btu-calculator/
 https://tools.usefulverse.com/th/tools/solar-panel-calculator/
@@ -14819,6 +14844,7 @@ https://tools.usefulverse.com/th/tools/markdown-editor/
 https://tools.usefulverse.com/th/tools/julian-date-converter/
 https://tools.usefulverse.com/th/tools/529-calculator/
 https://tools.usefulverse.com/th/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/th/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/uk/
 https://tools.usefulverse.com/uk/tools/btu-calculator/
 https://tools.usefulverse.com/uk/tools/solar-panel-calculator/
@@ -14983,6 +15009,7 @@ https://tools.usefulverse.com/uk/tools/markdown-editor/
 https://tools.usefulverse.com/uk/tools/julian-date-converter/
 https://tools.usefulverse.com/uk/tools/529-calculator/
 https://tools.usefulverse.com/uk/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/uk/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/sw/
 https://tools.usefulverse.com/sw/tools/btu-calculator/
 https://tools.usefulverse.com/sw/tools/solar-panel-calculator/
@@ -15147,6 +15174,7 @@ https://tools.usefulverse.com/sw/tools/markdown-editor/
 https://tools.usefulverse.com/sw/tools/julian-date-converter/
 https://tools.usefulverse.com/sw/tools/529-calculator/
 https://tools.usefulverse.com/sw/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/sw/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/mr/
 https://tools.usefulverse.com/mr/tools/btu-calculator/
 https://tools.usefulverse.com/mr/tools/solar-panel-calculator/
@@ -15311,6 +15339,7 @@ https://tools.usefulverse.com/mr/tools/markdown-editor/
 https://tools.usefulverse.com/mr/tools/julian-date-converter/
 https://tools.usefulverse.com/mr/tools/529-calculator/
 https://tools.usefulverse.com/mr/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/mr/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/te/
 https://tools.usefulverse.com/te/tools/btu-calculator/
 https://tools.usefulverse.com/te/tools/solar-panel-calculator/
@@ -15475,6 +15504,7 @@ https://tools.usefulverse.com/te/tools/markdown-editor/
 https://tools.usefulverse.com/te/tools/julian-date-converter/
 https://tools.usefulverse.com/te/tools/529-calculator/
 https://tools.usefulverse.com/te/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/te/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/ha/
 https://tools.usefulverse.com/ha/tools/btu-calculator/
 https://tools.usefulverse.com/ha/tools/solar-panel-calculator/
@@ -15639,6 +15669,7 @@ https://tools.usefulverse.com/ha/tools/markdown-editor/
 https://tools.usefulverse.com/ha/tools/julian-date-converter/
 https://tools.usefulverse.com/ha/tools/529-calculator/
 https://tools.usefulverse.com/ha/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/ha/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/tl/
 https://tools.usefulverse.com/tl/tools/btu-calculator/
 https://tools.usefulverse.com/tl/tools/solar-panel-calculator/
@@ -15803,6 +15834,7 @@ https://tools.usefulverse.com/tl/tools/markdown-editor/
 https://tools.usefulverse.com/tl/tools/julian-date-converter/
 https://tools.usefulverse.com/tl/tools/529-calculator/
 https://tools.usefulverse.com/tl/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/tl/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/ta/
 https://tools.usefulverse.com/ta/tools/btu-calculator/
 https://tools.usefulverse.com/ta/tools/solar-panel-calculator/
@@ -15967,6 +15999,7 @@ https://tools.usefulverse.com/ta/tools/markdown-editor/
 https://tools.usefulverse.com/ta/tools/julian-date-converter/
 https://tools.usefulverse.com/ta/tools/529-calculator/
 https://tools.usefulverse.com/ta/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/ta/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/fa/
 https://tools.usefulverse.com/fa/tools/btu-calculator/
 https://tools.usefulverse.com/fa/tools/solar-panel-calculator/
@@ -16131,6 +16164,7 @@ https://tools.usefulverse.com/fa/tools/markdown-editor/
 https://tools.usefulverse.com/fa/tools/julian-date-converter/
 https://tools.usefulverse.com/fa/tools/529-calculator/
 https://tools.usefulverse.com/fa/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/fa/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/am/
 https://tools.usefulverse.com/am/tools/btu-calculator/
 https://tools.usefulverse.com/am/tools/solar-panel-calculator/
@@ -16295,6 +16329,7 @@ https://tools.usefulverse.com/am/tools/markdown-editor/
 https://tools.usefulverse.com/am/tools/julian-date-converter/
 https://tools.usefulverse.com/am/tools/529-calculator/
 https://tools.usefulverse.com/am/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/am/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/gu/
 https://tools.usefulverse.com/gu/tools/btu-calculator/
 https://tools.usefulverse.com/gu/tools/solar-panel-calculator/
@@ -16459,4 +16494,5 @@ https://tools.usefulverse.com/gu/tools/markdown-editor/
 https://tools.usefulverse.com/gu/tools/julian-date-converter/
 https://tools.usefulverse.com/gu/tools/529-calculator/
 https://tools.usefulverse.com/gu/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/gu/tools/car-depreciation-calculator/
 ```<!-- END GENERATED GROWTH600 URL INVENTORY -->

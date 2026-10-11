@@ -1772,11 +1772,23 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - **Verificación pública:** sitemap `https://tools.usefulverse.com/sitemap.xml` HTTP 200 con **5.868 URLs únicas**; el sitemap principal mantiene **10.260 URLs**. No se infiere indexación.
 - **Recuento después de #275:** 162 herramientas Growth600 + 277 originales = 439 implementaciones; 16.128 URLs entre ambos sitemaps. Plan: 95/323 fichas únicas antes de #101.
 
-## En preparación de publicación · Reverse Mortgage Calculator (#101) · 2026-10-11
+## Publicada · Reverse Mortgage Calculator (#101) · 2026-10-11
 
 - Demanda reutilizada del plan: `reverse mortgage calculator`, 12.100 búsquedas/mes US/en, KD 17; `reverse mortgage balance calculator`, 10/mes. CPC 30,95 USD, no CPM. No se repitió DataForSEO.
 - Proyección local del saldo con saldo inicial, cargos financiados, anticipos mensuales, cuota de servicio, APR nominal y plazo hasta 50 años. Tabla anual, saldo e intereses acumulados; escenario opcional de valor de vivienda con tasa constante elegida. No es cotización, estimación legal, elegibilidad, asesoramiento ni tasación; excluye reglas de prestamistas/programas, seguros, impuestos, costos de venta y tasas variables.
 - Cálculo solo en navegador, sin API, subida, dependencia ni procesamiento del servidor. Capitaliza APR nominal mensualmente; suma flujos mensuales al final del mes y cargos iniciales al mes cero. Límites: 600 meses, tasa anual 0–100% y saldos/flujos ≤10.000 millones.
 - 36 copias estáticas derivadas del inglés con Google Translate gratuito; no son revisión nativa. Se corrigieron respuestas que quedaron en puntuación aislada en árabe, griego y hausa, con una prueba de regresión. `npm run locale:release-check` aprobado.
 - `npm test` **1.904/1.904**; `npm run check` **10.260 URLs principales**; build Growth600 **5.904 páginas** (163 × 36 + 36 portadas). Chrome EN/AR confirma saldo sin flujos/interés, escenario con interés/anticipos/cuotas/valor de vivienda, reinicio, `lang=ar`, `dir=rtl`, móvil 390 px sin desbordamiento y consola limpia. No PageSpeed/Lighthouse.
-- **Estado:** listo localmente; PR/CI/despliegue y verificación pública pendientes. Si se publica: 163 Growth600 + 277 originales = 440 herramientas y 16.164 URLs entre sitemaps.
+- **Publicación:** PR [#128](https://github.com/pedronunezwebs-hash/usefulverse/pull/128) integrada en `7df5d15d0cdf94d11bdfb150d89951b5ec23605c`; CI del PR `38149443928`, deploy principal `38149721940` y publicación del hub `38149941491` completados.
+- **Verificación pública:** sitemap `https://tools.usefulverse.com/sitemap.xml` HTTP 200 con 5.904 URLs únicas; EN/ES/AR de Reverse Mortgage Calculator responden HTTP 200. Sitemap principal permanece en 10.260; total combinado: 16.164 URLs. El despliegue/sitemap no acredita indexación.
+- **Recuento después de #101:** 163 herramientas Growth600 + 277 originales = 440 implementaciones. Progreso: 96/323 fichas únicas; continuar con #118 sin repetir DataForSEO ni PageSpeed/Lighthouse.
+
+## En implementación local · Car Depreciation Calculator (#118) · 2026-10-11
+
+- Demanda reutilizada del plan, sin llamadas nuevas: `car depreciation calculator` 8.100 búsquedas/mes US/en, KD 22; secundaria `vehicle depreciation calculator` 8.100/mes, KD 23; CPC 2,54 USD (no CPM).
+- Escenario a partir de precio de compra, años, odómetro al comprar y actual, distancia anual prevista y tasas hipotéticas anual y por 10.000 unidades. Calcula solo la distancia recorrida desde la compra; proyecta valores, edad y odómetro por año y ofrece tabla/gráfica. Selector mi/km convierte ambos odómetros, distancia anual y tasa para preservar equivalencia; moneda solo formatea y no convierte divisas.
+- El modelo es aritmético, no precio de mercado/tasación/oferta ni asesoría. Excluye marca/modelo/estado/ubicación/historial/demanda; cálculo local sin API, Function, dependencia adicional ni coste por uso.
+- 36 copias estáticas vía traducción automática gratuita desde inglés; no revisión nativa. Se corrigió manualmente el copy árabe con errores claros y se validaron títulos/descripciones.
+- Gates locales: suite global **1.912/1.912**; `npm run locale:release-check`; build principal **10.260 URLs**; build Growth600 **5.940 URLs** (164 × 36 + 36 portadas). Chrome: ejemplo 10.000 → 9.000; coche usado da 13.802,15 ahora y 6.788,75 a cinco años; conversión mi/km conserva valor; odómetro actual inferior al de compra se rechaza y los cambios borran resultados anteriores. AR RTL a 390×844 sin overflow ni solicitudes externas. No PageSpeed/Lighthouse.
+- **Estado:** implementación lista localmente; diff, PR, CI, deploy y verificación pública pendientes. Si se publica: 164 Growth600 + 277 originales = 441 herramientas y 16.200 URLs entre ambos sitemaps.
+- **Recuento previsto tras #118:** 97/323 fichas únicas; reanudar con la siguiente ficha abierta indicada por `PLAN-600.md`. No repetir DataForSEO, no rehacer herramientas completadas y no confundir deployment con indexación.

@@ -1955,6 +1955,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['loan-calculator', 'mortgage-points-calculator', 'compound-interest-calculator'],
     logicModule: './tools/reverse-mortgage-calculator/logic.mjs',
   },
+  {
+    id: 'car-depreciation-calculator',
+    category: 'personal-finance',
+    type: 'calculator',
+    primaryIntent: 'car depreciation calculator',
+    secondaryIntents: ['vehicle depreciation calculator', 'car depreciation by year and mileage', 'estimated car value after depreciation'],
+    functions: ['estimate a current vehicle-value scenario from purchase price, age, odometer and user-selected depreciation rates', 'project annual values using separate constant age-based and distance-based rates', 'show estimated loss and future odometer in a selectable distance unit and display currency'],
+    acceptance: 'A $10,000 purchase price, 10% annual depreciation, zero distance depreciation and zero distance driven projects to $9,000 after one year.',
+    boundary: 'Arithmetic scenario only, not a market valuation, dealer or trade-in quote, sale price, loan payoff or financial advice. Uses constant user-entered annual and per-10,000-distance-unit depreciation rates. Excludes make, model, trim, condition, location, history, maintenance, accidents, market listings, taxes, financing, transaction costs and future market demand. Currency selection changes display only and does not convert values. All processing stays in this browser.',
+    relatedExistingIds: ['fuel-cost-calculator', 'loan-calculator', 'tire-size-calculator'],
+    logicModule: './tools/car-depreciation-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

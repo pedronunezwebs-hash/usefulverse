@@ -138,6 +138,7 @@ export function renderGrowthForm(toolId, copy) {
     'half-life-calculator': ['mode', 'solveRemaining', 'solveInitial', 'solveElapsed', 'solveHalfLife', 'initialAmount', 'remainingAmount', 'halfLife', 'elapsedTime', 'timeUnit', 'seconds', 'minutes', 'hours', 'days', 'years', 'accuracyNote'],
     'mortgage-points-calculator': ['principal', 'termMonths', 'rateWithoutPoints', 'rateWithPoints', 'pointsPercent', 'horizonMonths', 'monthsLabel', 'accuracyNote'],
     'reverse-mortgage-calculator': ['startingBalance', 'upfrontFees', 'monthlyAdvance', 'monthlyFee', 'annualRatePercent', 'years', 'homeValue', 'annualHomeChangePercent', 'currencyNote', 'assumptionsNote'],
+    'car-depreciation-calculator': ['purchasePrice', 'yearsOwned', 'odometerAtPurchase', 'currentDistance', 'annualDistance', 'distanceUnit', 'kilometers', 'miles', 'annualDepreciationPercent', 'distanceDepreciationPercent', 'projectionYears', 'currency', 'currencyNote', 'modelNote', 'accuracyNote'],
     'trapezoid-calculator': ['baseA', 'baseB', 'height', 'topOffset', 'unit', 'millimeters', 'centimeters', 'meters', 'inches', 'feet', 'accuracyNote', 'diagramLabel'],
     'prayer-times-calculator': ['date', 'latitude', 'longitude', 'utcOffset', 'method', 'asrMethod', 'highLatitudeMethod', 'ramadan', 'accuracyNote'],
     'auto-loan-refinance-calculator': ['balance', 'currentApr', 'currentMonths', 'newApr', 'newMonths', 'fees', 'feeTreatment'],
@@ -309,6 +310,7 @@ export function renderGrowthForm(toolId, copy) {
     'half-life-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'mortgage-points-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'reverse-mortgage-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'car-depreciation-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'trapezoid-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'prayer-times-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'auto-loan-refinance-calculator': ['calculate', 'reset', 'copy', 'result'],
@@ -1967,6 +1969,22 @@ export function renderGrowthForm(toolId, copy) {
     ${label('home-value', fields.homeValue, '<input id="home-value" name="homeValue" type="number" min="0" max="10000000000" step="any" inputmode="decimal">')}
     ${label('annual-home-change-percent', fields.annualHomeChangePercent, '<input id="annual-home-change-percent" name="annualHomeChangePercent" type="number" min="-100" max="100" step="any" inputmode="decimal" value="0" required>')}
     <p class="hint">${escapeGrowthHtml(fields.currencyNote)}</p><p class="hint">${escapeGrowthHtml(fields.assumptionsNote)}</p><p class="hint">${escapeGrowthHtml(fields.formulaNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'car-depreciation-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('car-purchase-price', fields.purchasePrice, '<input id="car-purchase-price" name="purchasePrice" type="number" min="0.01" max="1000000000" step="any" inputmode="decimal" value="20000" required>')}
+    ${label('car-years-owned', fields.yearsOwned, '<input id="car-years-owned" name="yearsOwned" type="number" min="0" max="50" step="any" inputmode="decimal" value="3" required>')}
+    ${label('car-odometer-purchase', fields.odometerAtPurchase, '<input id="car-odometer-purchase" name="odometerAtPurchase" type="number" min="0" max="10000000" step="any" inputmode="decimal" value="18000" required>')}
+    ${label('car-current-distance', fields.currentDistance, '<input id="car-current-distance" name="currentDistance" type="number" min="0" max="10000000" step="any" inputmode="decimal" value="36000" required>')}
+    ${label('car-annual-distance', fields.annualDistance, '<input id="car-annual-distance" name="annualDistance" type="number" min="0" max="10000000" step="any" inputmode="decimal" value="12000" required>')}
+    ${label('car-distance-unit', fields.distanceUnit, `<select id="car-distance-unit" name="distanceUnit"><option value="km">${escapeGrowthHtml(fields.kilometers)}</option><option value="mi" selected>${escapeGrowthHtml(fields.miles)}</option></select>`)}
+    ${label('car-annual-depreciation', fields.annualDepreciationPercent, '<input id="car-annual-depreciation" name="annualDepreciationPercent" type="number" min="0" max="100" step="any" inputmode="decimal" value="10" required>')}
+    ${label('car-distance-depreciation', fields.distanceDepreciationPercent, '<input id="car-distance-depreciation" name="distanceDepreciationPercent" type="number" min="0" max="100" step="any" inputmode="decimal" value="3" required>')}
+    ${label('car-projection-years', fields.projectionYears, '<input id="car-projection-years" name="projectionYears" type="number" min="0" max="50" step="1" inputmode="numeric" value="5" required>')}
+    ${label('car-currency', fields.currency, '<select id="car-currency" name="currency"><option>USD</option><option>EUR</option><option>GBP</option><option>CAD</option><option>AUD</option><option>JPY</option><option>CNY</option><option>INR</option><option>BRL</option><option>MXN</option><option>CHF</option><option>NZD</option></select>')}
+    <p class="hint">${escapeGrowthHtml(fields.currencyNote)}</p><p class="hint">${escapeGrowthHtml(fields.modelNote)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);

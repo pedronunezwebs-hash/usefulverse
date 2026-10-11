@@ -9,7 +9,7 @@ Fecha de investigación: 7 de octubre de 2026. Documento de planificación y che
 - [x] Comprobar la base de planificación: **277 herramientas y 36 idiomas**.
 - [x] Investigar demanda con un gasto acotado en DataForSEO y registrar los resultados reales.
 - [x] Consolidar variantes antes de fijar el nuevo catálogo, sin contar una dirección de conversión como otra herramienta.
-- [ ] Implementar las nuevas herramientas. **Estado comprobado el 11 de octubre de 2026: la producción tiene 162 herramientas Growth600 y 277 originales; los sitemaps públicos contienen 5.868 + 10.260 URLs. Reverse Mortgage Calculator (#101) está implementada y validada en esta rama, aún pendiente de PR/deploy.** El progreso del plan se cuenta por candidatas únicas de las 323 fichas; consultar `docs/growth600/PROGRESS.md` y no inferir indexación del despliegue.
+- [ ] Implementar las nuevas herramientas. **Estado comprobado el 11 de octubre de 2026: producción tiene 163 herramientas Growth600 y 277 originales; los sitemaps públicos contienen 5.904 + 10.260 URLs. Esta rama implementa Car Depreciation Calculator (#118) como herramienta 164, todavía pendiente de PR/deploy.** El progreso del plan se cuenta por candidatas únicas de las 323 fichas; consultar `docs/growth600/PROGRESS.md` y no inferir indexación del despliegue.
 
 Snapshot consultado: rama `main`, commit `685f91adfc7818a54f6dc0a967e290d13137a3dd`. Catálogo: `src/catalog.mjs`; funciones y contratos representativos: `src/app.js`, módulos de lógica, `src/opportunity-tools.mjs`, `src/seo.mjs`, locales, build y documentación del repo. Se inspeccionaron los metadatos de las 277 herramientas y contratos clave para descartar duplicados; esto **no es una nueva auditoría funcional completa de las 277**.
 
@@ -1954,7 +1954,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 101 · Reverse Mortgage Calculator
 
-- [x] **C/F/E/X/L/B completos — `reverse-mortgage-calculator`; P/S pendientes de CI, PR y deploy.**
+- [x] **C/F/E/X/L/B/P/S completos — `reverse-mortgage-calculator`.**
 - **Destino:** `https://tools.usefulverse.com/tools/reverse-mortgage-calculator/`; 35 versiones con los prefijos del anexo.
 - **Demanda:** `reverse mortgage calculator` — 12.100 búsquedas/mes US/en, KD 17; nivel A. CPC 30.95 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Proyección matemática de saldo con anticipos, comisiones e intereses; sin cotización comercial
@@ -1966,10 +1966,11 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `reverse mortgage calculator free online`; `reverse mortgage calculator with example`; `reverse mortgage calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Implementado localmente:** formulario y 36 copias estáticas, tabla anual, SVG accesible, botones de ejemplo/copia/reinicio, límites y tres FAQs. Pruebas aritméticas, de locales, formulario, catálogo y build aprobadas; sin API ni coste de procesamiento. Traducción automática sencilla (no revisión nativa); etiquetas de estado defectuosas corregidas manualmente. Chrome EN/AR, escenarios con/sin valor de vivienda, RTL móvil 390 px y consola limpia. No PageSpeed/Lighthouse.
+- **Publicado (2026-10-11):** PR #128 merge `7df5d15d0cdf94d11bdfb150d89951b5ec23605c`; CI `38149443928`, deploy principal `38149721940`, hub `38149941491`. Sitemap público 5.904 URLs; EN/ES/AR HTTP 200. La publicación no garantiza indexación.
 
 ### 118 · Car Depreciation Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `car-depreciation-calculator`**
+- [x] **C/F/E/X/L/B completos — `car-depreciation-calculator`; P/S pendientes de PR, CI, deploy y comprobación pública.**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/car-depreciation-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `car depreciation calculator` — 8.100 búsquedas/mes US/en, KD 22; nivel B. CPC 2.54 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Curva de valor por años y kilómetros con tasas elegidas; no precios vivos
@@ -1981,6 +1982,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `car depreciation calculator free online`; `car depreciation calculator with example`; `car depreciation calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** DE/de `wertverlust auto rechner` 320/mes, KD 100.
+- **Implementado localmente (2026-10-11):** compara odómetro de compra con odómetro actual; calcula solo la distancia recorrida desde que se compró el vehículo, aplica por separado las tasas anuales/de distancia elegidas y proyecta edad/odómetro por año. Selector km/mi convierte odómetro inicial, actual y distancia anual junto con su tasa para mantener equivalente el escenario; la moneda cambia el formato, no hace cambio de divisa. Tabla y gráfica SVG accesibles, ejemplo, reinicio y copia. Aviso claro: cálculo hipotético, no tasación/mercado/asesoría. Procesamiento local, sin API, Function, dependencia nueva ni coste por uso.
+- **QA y build local:** caso mínimo 10.000 × 10% anual → 9.000 a un año; usado con 3 años/18.000→36.000 mi, 10% anual/3% por 10.000 mi: valor actual 13.802,15 y a cinco años 6.788,75; el mismo resultado se conserva tras convertir a km. Odómetro actual menor que el de compra se rechaza y editar el formulario borra resultados obsoletos. 36 copias estáticas desde Google Translate, con términos/metadatos revisados; ajustes manuales en árabe; traducción automática no equivale a revisión nativa. Suite global 1.912/1.912; `locale:release-check`, build principal (10.260) y hub (5.940) pasan. Chrome EN + AR RTL a 390×844: cálculo y tabla responden, sin overflow ni recursos externos; no PageSpeed/Lighthouse.
 
 ### 129 · Bond Calculator
 
