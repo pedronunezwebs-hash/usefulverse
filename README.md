@@ -16,11 +16,12 @@ Browser-first collection of fast, private, static tools for everyday work.
 
 The additional Growth600 tools are published on a separate static Cloudflare Pages site at
 [tools.usefulverse.com](https://tools.usefulverse.com/), so they do not replace or
-change the 277-tool catalog above. Production currently has 163 additional tools in
-the same 36 locales. This branch adds Car Depreciation Calculator as tool 164,
-with a local build of 5,940 canonical URLs, pending merge and hub deployment.
-Once published, the two sites will contain 441 tool implementations and 16,200
-sitemap URLs. The staged checklist and implementation record are in
+change the 277-tool catalog above. Production currently has 164 additional tools in
+the same 36 locales. The prepared local release contains 170 tools (6,156 canonical
+sitemap URLs, including 36 localized hub pages); it is pending direct upload and
+public sitemap verification. The expected combined total after that upload is 447
+tool implementations and 16,416 sitemap URLs (10,260 on UsefulVerse and 6,156 on
+the tools hub). The staged checklist and implementation record are in
 [docs/growth600/PLAN-600.md](docs/growth600/PLAN-600.md) and
 [docs/growth600/PROGRESS.md](docs/growth600/PROGRESS.md).
 
@@ -10552,7 +10553,7 @@ These are the canonical URLs for the additional tools and their localized pages.
 
 <!-- BEGIN GENERATED GROWTH600 URL INVENTORY -->
 
-Generated from `dist-growth600/sitemap.xml`: **5,940 canonical URLs**.
+Generated from `dist-growth600/sitemap.xml`: **6,156 canonical URLs**.
 
 ```text
 https://tools.usefulverse.com/
@@ -10674,6 +10675,12 @@ https://tools.usefulverse.com/tools/fertilizer-calculator/
 https://tools.usefulverse.com/tools/complex-number-calculator/
 https://tools.usefulverse.com/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/tools/bond-calculator/
+https://tools.usefulverse.com/tools/stock-profit-calculator/
+https://tools.usefulverse.com/tools/pension-calculator/
+https://tools.usefulverse.com/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/tools/week-number-calculator/
 https://tools.usefulverse.com/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/tools/momentum-calculator/
 https://tools.usefulverse.com/tools/resistor-color-code-calculator/
@@ -10839,6 +10846,12 @@ https://tools.usefulverse.com/es/tools/fertilizer-calculator/
 https://tools.usefulverse.com/es/tools/complex-number-calculator/
 https://tools.usefulverse.com/es/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/es/tools/bond-calculator/
+https://tools.usefulverse.com/es/tools/stock-profit-calculator/
+https://tools.usefulverse.com/es/tools/pension-calculator/
+https://tools.usefulverse.com/es/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/es/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/es/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/es/tools/week-number-calculator/
 https://tools.usefulverse.com/es/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/es/tools/momentum-calculator/
 https://tools.usefulverse.com/es/tools/resistor-color-code-calculator/
@@ -11004,6 +11017,12 @@ https://tools.usefulverse.com/fr/tools/fertilizer-calculator/
 https://tools.usefulverse.com/fr/tools/complex-number-calculator/
 https://tools.usefulverse.com/fr/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/fr/tools/bond-calculator/
+https://tools.usefulverse.com/fr/tools/stock-profit-calculator/
+https://tools.usefulverse.com/fr/tools/pension-calculator/
+https://tools.usefulverse.com/fr/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/fr/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/fr/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/fr/tools/week-number-calculator/
 https://tools.usefulverse.com/fr/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/fr/tools/momentum-calculator/
 https://tools.usefulverse.com/fr/tools/resistor-color-code-calculator/
@@ -11169,6 +11188,12 @@ https://tools.usefulverse.com/pt-br/tools/fertilizer-calculator/
 https://tools.usefulverse.com/pt-br/tools/complex-number-calculator/
 https://tools.usefulverse.com/pt-br/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/pt-br/tools/bond-calculator/
+https://tools.usefulverse.com/pt-br/tools/stock-profit-calculator/
+https://tools.usefulverse.com/pt-br/tools/pension-calculator/
+https://tools.usefulverse.com/pt-br/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/pt-br/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/pt-br/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/pt-br/tools/week-number-calculator/
 https://tools.usefulverse.com/pt-br/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/pt-br/tools/momentum-calculator/
 https://tools.usefulverse.com/pt-br/tools/resistor-color-code-calculator/
@@ -11334,6 +11359,12 @@ https://tools.usefulverse.com/de/tools/fertilizer-calculator/
 https://tools.usefulverse.com/de/tools/complex-number-calculator/
 https://tools.usefulverse.com/de/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/de/tools/bond-calculator/
+https://tools.usefulverse.com/de/tools/stock-profit-calculator/
+https://tools.usefulverse.com/de/tools/pension-calculator/
+https://tools.usefulverse.com/de/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/de/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/de/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/de/tools/week-number-calculator/
 https://tools.usefulverse.com/de/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/de/tools/momentum-calculator/
 https://tools.usefulverse.com/de/tools/resistor-color-code-calculator/
@@ -11499,6 +11530,12 @@ https://tools.usefulverse.com/ja/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ja/tools/complex-number-calculator/
 https://tools.usefulverse.com/ja/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/ja/tools/bond-calculator/
+https://tools.usefulverse.com/ja/tools/stock-profit-calculator/
+https://tools.usefulverse.com/ja/tools/pension-calculator/
+https://tools.usefulverse.com/ja/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/ja/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/ja/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/ja/tools/week-number-calculator/
 https://tools.usefulverse.com/ja/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/ja/tools/momentum-calculator/
 https://tools.usefulverse.com/ja/tools/resistor-color-code-calculator/
@@ -11664,6 +11701,12 @@ https://tools.usefulverse.com/ko/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ko/tools/complex-number-calculator/
 https://tools.usefulverse.com/ko/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/ko/tools/bond-calculator/
+https://tools.usefulverse.com/ko/tools/stock-profit-calculator/
+https://tools.usefulverse.com/ko/tools/pension-calculator/
+https://tools.usefulverse.com/ko/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/ko/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/ko/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/ko/tools/week-number-calculator/
 https://tools.usefulverse.com/ko/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/ko/tools/momentum-calculator/
 https://tools.usefulverse.com/ko/tools/resistor-color-code-calculator/
@@ -11829,6 +11872,12 @@ https://tools.usefulverse.com/id/tools/fertilizer-calculator/
 https://tools.usefulverse.com/id/tools/complex-number-calculator/
 https://tools.usefulverse.com/id/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/id/tools/bond-calculator/
+https://tools.usefulverse.com/id/tools/stock-profit-calculator/
+https://tools.usefulverse.com/id/tools/pension-calculator/
+https://tools.usefulverse.com/id/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/id/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/id/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/id/tools/week-number-calculator/
 https://tools.usefulverse.com/id/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/id/tools/momentum-calculator/
 https://tools.usefulverse.com/id/tools/resistor-color-code-calculator/
@@ -11994,6 +12043,12 @@ https://tools.usefulverse.com/hi/tools/fertilizer-calculator/
 https://tools.usefulverse.com/hi/tools/complex-number-calculator/
 https://tools.usefulverse.com/hi/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/hi/tools/bond-calculator/
+https://tools.usefulverse.com/hi/tools/stock-profit-calculator/
+https://tools.usefulverse.com/hi/tools/pension-calculator/
+https://tools.usefulverse.com/hi/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/hi/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/hi/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/hi/tools/week-number-calculator/
 https://tools.usefulverse.com/hi/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/hi/tools/momentum-calculator/
 https://tools.usefulverse.com/hi/tools/resistor-color-code-calculator/
@@ -12159,6 +12214,12 @@ https://tools.usefulverse.com/ar/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ar/tools/complex-number-calculator/
 https://tools.usefulverse.com/ar/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/ar/tools/bond-calculator/
+https://tools.usefulverse.com/ar/tools/stock-profit-calculator/
+https://tools.usefulverse.com/ar/tools/pension-calculator/
+https://tools.usefulverse.com/ar/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/ar/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/ar/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/ar/tools/week-number-calculator/
 https://tools.usefulverse.com/ar/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/ar/tools/momentum-calculator/
 https://tools.usefulverse.com/ar/tools/resistor-color-code-calculator/
@@ -12324,6 +12385,12 @@ https://tools.usefulverse.com/zh-cn/tools/fertilizer-calculator/
 https://tools.usefulverse.com/zh-cn/tools/complex-number-calculator/
 https://tools.usefulverse.com/zh-cn/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/zh-cn/tools/bond-calculator/
+https://tools.usefulverse.com/zh-cn/tools/stock-profit-calculator/
+https://tools.usefulverse.com/zh-cn/tools/pension-calculator/
+https://tools.usefulverse.com/zh-cn/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/zh-cn/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/zh-cn/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/zh-cn/tools/week-number-calculator/
 https://tools.usefulverse.com/zh-cn/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/zh-cn/tools/momentum-calculator/
 https://tools.usefulverse.com/zh-cn/tools/resistor-color-code-calculator/
@@ -12489,6 +12556,12 @@ https://tools.usefulverse.com/bn/tools/fertilizer-calculator/
 https://tools.usefulverse.com/bn/tools/complex-number-calculator/
 https://tools.usefulverse.com/bn/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/bn/tools/bond-calculator/
+https://tools.usefulverse.com/bn/tools/stock-profit-calculator/
+https://tools.usefulverse.com/bn/tools/pension-calculator/
+https://tools.usefulverse.com/bn/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/bn/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/bn/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/bn/tools/week-number-calculator/
 https://tools.usefulverse.com/bn/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/bn/tools/momentum-calculator/
 https://tools.usefulverse.com/bn/tools/resistor-color-code-calculator/
@@ -12654,6 +12727,12 @@ https://tools.usefulverse.com/ru/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ru/tools/complex-number-calculator/
 https://tools.usefulverse.com/ru/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/ru/tools/bond-calculator/
+https://tools.usefulverse.com/ru/tools/stock-profit-calculator/
+https://tools.usefulverse.com/ru/tools/pension-calculator/
+https://tools.usefulverse.com/ru/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/ru/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/ru/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/ru/tools/week-number-calculator/
 https://tools.usefulverse.com/ru/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/ru/tools/momentum-calculator/
 https://tools.usefulverse.com/ru/tools/resistor-color-code-calculator/
@@ -12819,6 +12898,12 @@ https://tools.usefulverse.com/ur/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ur/tools/complex-number-calculator/
 https://tools.usefulverse.com/ur/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/ur/tools/bond-calculator/
+https://tools.usefulverse.com/ur/tools/stock-profit-calculator/
+https://tools.usefulverse.com/ur/tools/pension-calculator/
+https://tools.usefulverse.com/ur/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/ur/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/ur/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/ur/tools/week-number-calculator/
 https://tools.usefulverse.com/ur/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/ur/tools/momentum-calculator/
 https://tools.usefulverse.com/ur/tools/resistor-color-code-calculator/
@@ -12984,6 +13069,12 @@ https://tools.usefulverse.com/tr/tools/fertilizer-calculator/
 https://tools.usefulverse.com/tr/tools/complex-number-calculator/
 https://tools.usefulverse.com/tr/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/tr/tools/bond-calculator/
+https://tools.usefulverse.com/tr/tools/stock-profit-calculator/
+https://tools.usefulverse.com/tr/tools/pension-calculator/
+https://tools.usefulverse.com/tr/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/tr/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/tr/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/tr/tools/week-number-calculator/
 https://tools.usefulverse.com/tr/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/tr/tools/momentum-calculator/
 https://tools.usefulverse.com/tr/tools/resistor-color-code-calculator/
@@ -13149,6 +13240,12 @@ https://tools.usefulverse.com/vi/tools/fertilizer-calculator/
 https://tools.usefulverse.com/vi/tools/complex-number-calculator/
 https://tools.usefulverse.com/vi/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/vi/tools/bond-calculator/
+https://tools.usefulverse.com/vi/tools/stock-profit-calculator/
+https://tools.usefulverse.com/vi/tools/pension-calculator/
+https://tools.usefulverse.com/vi/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/vi/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/vi/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/vi/tools/week-number-calculator/
 https://tools.usefulverse.com/vi/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/vi/tools/momentum-calculator/
 https://tools.usefulverse.com/vi/tools/resistor-color-code-calculator/
@@ -13314,6 +13411,12 @@ https://tools.usefulverse.com/it/tools/fertilizer-calculator/
 https://tools.usefulverse.com/it/tools/complex-number-calculator/
 https://tools.usefulverse.com/it/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/it/tools/bond-calculator/
+https://tools.usefulverse.com/it/tools/stock-profit-calculator/
+https://tools.usefulverse.com/it/tools/pension-calculator/
+https://tools.usefulverse.com/it/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/it/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/it/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/it/tools/week-number-calculator/
 https://tools.usefulverse.com/it/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/it/tools/momentum-calculator/
 https://tools.usefulverse.com/it/tools/resistor-color-code-calculator/
@@ -13479,6 +13582,12 @@ https://tools.usefulverse.com/zh-tw/tools/fertilizer-calculator/
 https://tools.usefulverse.com/zh-tw/tools/complex-number-calculator/
 https://tools.usefulverse.com/zh-tw/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/zh-tw/tools/bond-calculator/
+https://tools.usefulverse.com/zh-tw/tools/stock-profit-calculator/
+https://tools.usefulverse.com/zh-tw/tools/pension-calculator/
+https://tools.usefulverse.com/zh-tw/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/zh-tw/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/zh-tw/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/zh-tw/tools/week-number-calculator/
 https://tools.usefulverse.com/zh-tw/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/zh-tw/tools/momentum-calculator/
 https://tools.usefulverse.com/zh-tw/tools/resistor-color-code-calculator/
@@ -13644,6 +13753,12 @@ https://tools.usefulverse.com/bg/tools/fertilizer-calculator/
 https://tools.usefulverse.com/bg/tools/complex-number-calculator/
 https://tools.usefulverse.com/bg/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/bg/tools/bond-calculator/
+https://tools.usefulverse.com/bg/tools/stock-profit-calculator/
+https://tools.usefulverse.com/bg/tools/pension-calculator/
+https://tools.usefulverse.com/bg/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/bg/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/bg/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/bg/tools/week-number-calculator/
 https://tools.usefulverse.com/bg/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/bg/tools/momentum-calculator/
 https://tools.usefulverse.com/bg/tools/resistor-color-code-calculator/
@@ -13809,6 +13924,12 @@ https://tools.usefulverse.com/ca/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ca/tools/complex-number-calculator/
 https://tools.usefulverse.com/ca/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/ca/tools/bond-calculator/
+https://tools.usefulverse.com/ca/tools/stock-profit-calculator/
+https://tools.usefulverse.com/ca/tools/pension-calculator/
+https://tools.usefulverse.com/ca/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/ca/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/ca/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/ca/tools/week-number-calculator/
 https://tools.usefulverse.com/ca/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/ca/tools/momentum-calculator/
 https://tools.usefulverse.com/ca/tools/resistor-color-code-calculator/
@@ -13974,6 +14095,12 @@ https://tools.usefulverse.com/nl/tools/fertilizer-calculator/
 https://tools.usefulverse.com/nl/tools/complex-number-calculator/
 https://tools.usefulverse.com/nl/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/nl/tools/bond-calculator/
+https://tools.usefulverse.com/nl/tools/stock-profit-calculator/
+https://tools.usefulverse.com/nl/tools/pension-calculator/
+https://tools.usefulverse.com/nl/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/nl/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/nl/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/nl/tools/week-number-calculator/
 https://tools.usefulverse.com/nl/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/nl/tools/momentum-calculator/
 https://tools.usefulverse.com/nl/tools/resistor-color-code-calculator/
@@ -14139,6 +14266,12 @@ https://tools.usefulverse.com/el/tools/fertilizer-calculator/
 https://tools.usefulverse.com/el/tools/complex-number-calculator/
 https://tools.usefulverse.com/el/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/el/tools/bond-calculator/
+https://tools.usefulverse.com/el/tools/stock-profit-calculator/
+https://tools.usefulverse.com/el/tools/pension-calculator/
+https://tools.usefulverse.com/el/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/el/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/el/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/el/tools/week-number-calculator/
 https://tools.usefulverse.com/el/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/el/tools/momentum-calculator/
 https://tools.usefulverse.com/el/tools/resistor-color-code-calculator/
@@ -14304,6 +14437,12 @@ https://tools.usefulverse.com/ms/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ms/tools/complex-number-calculator/
 https://tools.usefulverse.com/ms/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/ms/tools/bond-calculator/
+https://tools.usefulverse.com/ms/tools/stock-profit-calculator/
+https://tools.usefulverse.com/ms/tools/pension-calculator/
+https://tools.usefulverse.com/ms/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/ms/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/ms/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/ms/tools/week-number-calculator/
 https://tools.usefulverse.com/ms/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/ms/tools/momentum-calculator/
 https://tools.usefulverse.com/ms/tools/resistor-color-code-calculator/
@@ -14469,6 +14608,12 @@ https://tools.usefulverse.com/pl/tools/fertilizer-calculator/
 https://tools.usefulverse.com/pl/tools/complex-number-calculator/
 https://tools.usefulverse.com/pl/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/pl/tools/bond-calculator/
+https://tools.usefulverse.com/pl/tools/stock-profit-calculator/
+https://tools.usefulverse.com/pl/tools/pension-calculator/
+https://tools.usefulverse.com/pl/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/pl/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/pl/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/pl/tools/week-number-calculator/
 https://tools.usefulverse.com/pl/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/pl/tools/momentum-calculator/
 https://tools.usefulverse.com/pl/tools/resistor-color-code-calculator/
@@ -14634,6 +14779,12 @@ https://tools.usefulverse.com/sv/tools/fertilizer-calculator/
 https://tools.usefulverse.com/sv/tools/complex-number-calculator/
 https://tools.usefulverse.com/sv/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/sv/tools/bond-calculator/
+https://tools.usefulverse.com/sv/tools/stock-profit-calculator/
+https://tools.usefulverse.com/sv/tools/pension-calculator/
+https://tools.usefulverse.com/sv/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/sv/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/sv/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/sv/tools/week-number-calculator/
 https://tools.usefulverse.com/sv/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/sv/tools/momentum-calculator/
 https://tools.usefulverse.com/sv/tools/resistor-color-code-calculator/
@@ -14799,6 +14950,12 @@ https://tools.usefulverse.com/th/tools/fertilizer-calculator/
 https://tools.usefulverse.com/th/tools/complex-number-calculator/
 https://tools.usefulverse.com/th/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/th/tools/bond-calculator/
+https://tools.usefulverse.com/th/tools/stock-profit-calculator/
+https://tools.usefulverse.com/th/tools/pension-calculator/
+https://tools.usefulverse.com/th/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/th/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/th/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/th/tools/week-number-calculator/
 https://tools.usefulverse.com/th/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/th/tools/momentum-calculator/
 https://tools.usefulverse.com/th/tools/resistor-color-code-calculator/
@@ -14964,6 +15121,12 @@ https://tools.usefulverse.com/uk/tools/fertilizer-calculator/
 https://tools.usefulverse.com/uk/tools/complex-number-calculator/
 https://tools.usefulverse.com/uk/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/uk/tools/bond-calculator/
+https://tools.usefulverse.com/uk/tools/stock-profit-calculator/
+https://tools.usefulverse.com/uk/tools/pension-calculator/
+https://tools.usefulverse.com/uk/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/uk/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/uk/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/uk/tools/week-number-calculator/
 https://tools.usefulverse.com/uk/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/uk/tools/momentum-calculator/
 https://tools.usefulverse.com/uk/tools/resistor-color-code-calculator/
@@ -15129,6 +15292,12 @@ https://tools.usefulverse.com/sw/tools/fertilizer-calculator/
 https://tools.usefulverse.com/sw/tools/complex-number-calculator/
 https://tools.usefulverse.com/sw/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/sw/tools/bond-calculator/
+https://tools.usefulverse.com/sw/tools/stock-profit-calculator/
+https://tools.usefulverse.com/sw/tools/pension-calculator/
+https://tools.usefulverse.com/sw/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/sw/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/sw/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/sw/tools/week-number-calculator/
 https://tools.usefulverse.com/sw/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/sw/tools/momentum-calculator/
 https://tools.usefulverse.com/sw/tools/resistor-color-code-calculator/
@@ -15294,6 +15463,12 @@ https://tools.usefulverse.com/mr/tools/fertilizer-calculator/
 https://tools.usefulverse.com/mr/tools/complex-number-calculator/
 https://tools.usefulverse.com/mr/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/mr/tools/bond-calculator/
+https://tools.usefulverse.com/mr/tools/stock-profit-calculator/
+https://tools.usefulverse.com/mr/tools/pension-calculator/
+https://tools.usefulverse.com/mr/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/mr/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/mr/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/mr/tools/week-number-calculator/
 https://tools.usefulverse.com/mr/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/mr/tools/momentum-calculator/
 https://tools.usefulverse.com/mr/tools/resistor-color-code-calculator/
@@ -15459,6 +15634,12 @@ https://tools.usefulverse.com/te/tools/fertilizer-calculator/
 https://tools.usefulverse.com/te/tools/complex-number-calculator/
 https://tools.usefulverse.com/te/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/te/tools/bond-calculator/
+https://tools.usefulverse.com/te/tools/stock-profit-calculator/
+https://tools.usefulverse.com/te/tools/pension-calculator/
+https://tools.usefulverse.com/te/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/te/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/te/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/te/tools/week-number-calculator/
 https://tools.usefulverse.com/te/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/te/tools/momentum-calculator/
 https://tools.usefulverse.com/te/tools/resistor-color-code-calculator/
@@ -15624,6 +15805,12 @@ https://tools.usefulverse.com/ha/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ha/tools/complex-number-calculator/
 https://tools.usefulverse.com/ha/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/ha/tools/bond-calculator/
+https://tools.usefulverse.com/ha/tools/stock-profit-calculator/
+https://tools.usefulverse.com/ha/tools/pension-calculator/
+https://tools.usefulverse.com/ha/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/ha/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/ha/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/ha/tools/week-number-calculator/
 https://tools.usefulverse.com/ha/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/ha/tools/momentum-calculator/
 https://tools.usefulverse.com/ha/tools/resistor-color-code-calculator/
@@ -15789,6 +15976,12 @@ https://tools.usefulverse.com/tl/tools/fertilizer-calculator/
 https://tools.usefulverse.com/tl/tools/complex-number-calculator/
 https://tools.usefulverse.com/tl/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/tl/tools/bond-calculator/
+https://tools.usefulverse.com/tl/tools/stock-profit-calculator/
+https://tools.usefulverse.com/tl/tools/pension-calculator/
+https://tools.usefulverse.com/tl/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/tl/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/tl/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/tl/tools/week-number-calculator/
 https://tools.usefulverse.com/tl/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/tl/tools/momentum-calculator/
 https://tools.usefulverse.com/tl/tools/resistor-color-code-calculator/
@@ -15954,6 +16147,12 @@ https://tools.usefulverse.com/ta/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ta/tools/complex-number-calculator/
 https://tools.usefulverse.com/ta/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/ta/tools/bond-calculator/
+https://tools.usefulverse.com/ta/tools/stock-profit-calculator/
+https://tools.usefulverse.com/ta/tools/pension-calculator/
+https://tools.usefulverse.com/ta/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/ta/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/ta/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/ta/tools/week-number-calculator/
 https://tools.usefulverse.com/ta/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/ta/tools/momentum-calculator/
 https://tools.usefulverse.com/ta/tools/resistor-color-code-calculator/
@@ -16119,6 +16318,12 @@ https://tools.usefulverse.com/fa/tools/fertilizer-calculator/
 https://tools.usefulverse.com/fa/tools/complex-number-calculator/
 https://tools.usefulverse.com/fa/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/fa/tools/bond-calculator/
+https://tools.usefulverse.com/fa/tools/stock-profit-calculator/
+https://tools.usefulverse.com/fa/tools/pension-calculator/
+https://tools.usefulverse.com/fa/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/fa/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/fa/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/fa/tools/week-number-calculator/
 https://tools.usefulverse.com/fa/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/fa/tools/momentum-calculator/
 https://tools.usefulverse.com/fa/tools/resistor-color-code-calculator/
@@ -16284,6 +16489,12 @@ https://tools.usefulverse.com/am/tools/fertilizer-calculator/
 https://tools.usefulverse.com/am/tools/complex-number-calculator/
 https://tools.usefulverse.com/am/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/am/tools/bond-calculator/
+https://tools.usefulverse.com/am/tools/stock-profit-calculator/
+https://tools.usefulverse.com/am/tools/pension-calculator/
+https://tools.usefulverse.com/am/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/am/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/am/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/am/tools/week-number-calculator/
 https://tools.usefulverse.com/am/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/am/tools/momentum-calculator/
 https://tools.usefulverse.com/am/tools/resistor-color-code-calculator/
@@ -16449,6 +16660,12 @@ https://tools.usefulverse.com/gu/tools/fertilizer-calculator/
 https://tools.usefulverse.com/gu/tools/complex-number-calculator/
 https://tools.usefulverse.com/gu/tools/eigenvalue-calculator/
 https://tools.usefulverse.com/gu/tools/bond-calculator/
+https://tools.usefulverse.com/gu/tools/stock-profit-calculator/
+https://tools.usefulverse.com/gu/tools/pension-calculator/
+https://tools.usefulverse.com/gu/tools/lifetime-value-calculator/
+https://tools.usefulverse.com/gu/tools/polar-graphing-calculator/
+https://tools.usefulverse.com/gu/tools/boolean-algebra-calculator/
+https://tools.usefulverse.com/gu/tools/week-number-calculator/
 https://tools.usefulverse.com/gu/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/gu/tools/momentum-calculator/
 https://tools.usefulverse.com/gu/tools/resistor-color-code-calculator/

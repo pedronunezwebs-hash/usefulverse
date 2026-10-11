@@ -3588,8 +3588,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/week-number-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `week number calculator` — 1.900 búsquedas/mes US/en, KD 0; nivel B. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Semanas ISO y sistema alternativo elegido, primer/último día de semana y año de semana diferente del año civil cuando corresponda.
-- **Prueba de aceptación específica:** 2021-01-01 es semanaISO53de2020
-- **Frontera con otras herramientas:** date-calculator: clasificaciónsemanano diferencia. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
+- **Prueba de aceptación específica:** 2021-01-01 pertenece a la semana ISO 53 del año ISO 2020, desde el lunes 2020-12-28 hasta el domingo 2021-01-03; con semanas que comienzan en domingo y semana 1 que contiene el 1 de enero, es la semana 1, desde el domingo 2020-12-27 hasta el sábado 2021-01-02.
+- **Frontera con otras herramientas:** `date-calculator` cubre aritmética entre fechas, no numeración ISO de semanas; `julian-date-converter` convierte calendarios. No crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `iso week calculator` — 1.900/mes US/en; KD 17.

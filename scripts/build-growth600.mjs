@@ -24,6 +24,7 @@ import pensionCalculatorCopies from '../src/growth600/locales/pension-calculator
 import lifetimeValueCalculatorCopies from '../src/growth600/locales/lifetime-value-calculator-final.mjs';
 import polarGraphingCalculatorCopies from '../src/growth600/locales/polar-graphing-calculator-final.mjs';
 import booleanAlgebraCalculatorCopies from '../src/growth600/locales/boolean-algebra-calculator-final.mjs';
+import weekNumberCalculatorCopies from '../src/growth600/locales/week-number-calculator-final.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const localeDir = resolve(root, 'src/growth600/locales');
@@ -72,6 +73,8 @@ for (const { key } of localeEntries) {
   copyByLocale[key] = { ...copyByLocale[key], 'polar-graphing-calculator': polarGraphingCalculatorCopies[key] };
   if (!booleanAlgebraCalculatorCopies[key]) throw new Error(`Growth600 release blocked: Boolean Algebra Calculator copy is missing for ${key}.`);
   copyByLocale[key] = { ...copyByLocale[key], 'boolean-algebra-calculator': booleanAlgebraCalculatorCopies[key] };
+  if (!weekNumberCalculatorCopies[key]) throw new Error(`Growth600 release blocked: Week Number Calculator copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'week-number-calculator': weekNumberCalculatorCopies[key] };
 }
 
 const outputDir = resolve(process.env.GROWTH600_DIST ?? resolve(root, 'dist-growth600'));
@@ -85,6 +88,7 @@ const styleFiles = [
 const styles = minifyCss((await Promise.all(styleFiles.map((file) => readFile(resolve(root, file), 'utf8')))).join(''), { comments: 'exclamation' }).css;
 const toolStyles = {
   'boolean-algebra-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/boolean-algebra-calculator/boolean-algebra-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'slitherlink': minifyCss(await readFile(resolve(root, 'src/growth600/tools/slitherlink/slitherlink.css'), 'utf8'), { comments: 'exclamation' }).css,
   'har-viewer': minifyCss(await readFile(resolve(root, 'src/growth600/tools/har-viewer/har-viewer.css'), 'utf8'), { comments: 'exclamation' }).css,
   'robots-txt-tester': minifyCss(await readFile(resolve(root, 'src/growth600/tools/robots-txt-tester/robots-txt-tester.css'), 'utf8'), { comments: 'exclamation' }).css,
   'binary-base64-tool': minifyCss(await readFile(resolve(root, 'src/growth600/tools/binary-base64-tool/binary-base64-tool.css'), 'utf8'), { comments: 'exclamation' }).css,

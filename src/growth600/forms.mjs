@@ -41,6 +41,7 @@ export function renderGrowthForm(toolId, copy) {
     'lifetime-value-calculator': ['monthlyRevenue', 'grossMarginPercent', 'monthlyChurnPercent', 'customerAcquisitionCost', 'currencyCode', 'accuracyNote', 'resultSummary', 'monthlyGrossProfit', 'expectedLifetimeMonths', 'lifetimeValue', 'cacPaybackMonths', 'lifetimeValueToCac'],
     'polar-graphing-calculator': ['radiusExpression', 'angleMin', 'angleMax', 'angleUnit', 'radians', 'degrees', 'samples', 'accuracyNote', 'chartLabel', 'resultCount'],
     'boolean-algebra-calculator': ['expression', 'expressionHint', 'accuracyNote', 'simplifiedSop', 'simplifiedPos', 'variables', 'minterms', 'truthTableLabel', 'result', 'kmapTitle'],
+    'week-number-calculator': ['date', 'mode', 'isoMode', 'customMode', 'weekStart', 'sunday', 'monday', 'saturday', 'accuracyNote'],
     'image-upscaler': ['imageFile', 'accuracyNote', 'progressHint', 'sourcePreview', 'resultPreview'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
@@ -218,6 +219,7 @@ export function renderGrowthForm(toolId, copy) {
     'lifetime-value-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'polar-graphing-calculator': ['calculate', 'reset', 'example', 'result', 'copy', 'downloadCsv'],
     'boolean-algebra-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
+    'week-number-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
@@ -1237,6 +1239,16 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div><div class="actions">${button('copy', actions.copy, 'secondary')}</div></section>
+  </form>`, copy);
+
+  if (toolId === 'week-number-calculator') return attachCopy(`<form id="tool-form" class="week-number-calculator" novalidate>
+    ${label('week-date', fields.date, '<input id="week-date" name="date" type="date" value="2021-01-01" required>')}
+    ${label('week-mode', fields.mode, `<select id="week-mode" name="mode"><option value="iso">${escapeGrowthHtml(fields.isoMode)}</option><option value="custom">${escapeGrowthHtml(fields.customMode)}</option></select>`)}
+    <div data-week-input="custom" hidden>${label('week-start', fields.weekStart, `<select id="week-start" name="weekStart"><option value="sunday">${escapeGrowthHtml(fields.sunday)}</option><option value="monday">${escapeGrowthHtml(fields.monday)}</option><option value="saturday">${escapeGrowthHtml(fields.saturday)}</option></select>`)}</div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'repeating-decimal-to-fraction') return attachCopy(`<form id="tool-form" class="repeating-decimal-to-fraction" novalidate>

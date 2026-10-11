@@ -21,8 +21,8 @@ import { calculatePolarGraph } from './tools/polar-graphing-calculator/logic.mjs
 import { calculateBooleanAlgebra } from './tools/boolean-algebra-calculator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 169);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 169);
+  assert.equal(growthPilotTools.length, 170);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 170);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -38,6 +38,13 @@ test('Boolean algebra minimizes expressions and adds Karnaugh views beyond truth
   assert.ok(tautology.rows.every(({ result }) => result));
   assert.equal(calculateBooleanAlgebra({ expression: '!(A & B)' }).pos, '(!A | !B)');
   assert.deepEqual(calculateBooleanAlgebra({ expression: '(A & B) | (A & !B)' }).sop, 'A');
+});
+
+test('week number calculator is additive and distinguishes ISO week-year from custom calendar weeks', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'week-number-calculator');
+  assert.ok(tool);
+  assert.deepEqual(tool.relatedExistingIds, ['date-calculator', 'julian-date-converter']);
+  assert.match(tool.boundary, /does not convert time zones or fiscal weeks/u);
 });
 
 test('pension calculator is distinct from the existing retirement projection', () => {

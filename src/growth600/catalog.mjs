@@ -1476,6 +1476,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/boolean-algebra-calculator/logic.mjs',
   },
   {
+    id: 'week-number-calculator',
+    category: 'date-time',
+    type: 'calculator',
+    primaryIntent: 'week number calculator',
+    secondaryIntents: ['iso week calculator', 'week of year calculator', 'week number from date'],
+    functions: ['find the ISO 8601 week number and week-year from a civil date', 'compare the ISO result with a calendar-week rule whose first day is Sunday, Monday or Saturday', 'show the exact UTC civil dates covered by that week', 'explain when the ISO week-year differs from the calendar year'],
+    acceptance: '2021-01-01 is ISO week 53 of week-year 2020, from Monday 2020-12-28 through Sunday 2021-01-03; under a Sunday-start rule where week 1 contains January 1, it is week 1 from Sunday 2020-12-27 through Saturday 2021-01-02.',
+    boundary: 'Calendar arithmetic only. ISO 8601 weeks start Monday and week 1 contains January 4. The custom mode numbers the week containing January 1 as week 1 and labels it with the civil year; it is not a locale’s official rule unless those settings match. Uses UTC date-only arithmetic and does not convert time zones or fiscal weeks. No API, upload or storage.',
+    relatedExistingIds: ['date-calculator', 'julian-date-converter'],
+    logicModule: './tools/week-number-calculator/logic.mjs',
+  },
+  {
     id: 'kinetic-energy-calculator',
     category: 'physics-math',
     type: 'calculator',

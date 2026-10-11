@@ -36,6 +36,8 @@ import polarGraphingCalculatorCopies from './polar-graphing-calculator-final.mjs
 import { polarGraphingCalculatorEnglishCopy } from './polar-graphing-calculator.en.mjs';
 import booleanAlgebraCalculatorCopies from './boolean-algebra-calculator-final.mjs';
 import { booleanAlgebraCalculatorEnglishCopy } from './boolean-algebra-calculator.en.mjs';
+import weekNumberCalculatorCopies from './week-number-calculator-final.mjs';
+import { weekNumberCalculatorEnglishCopy } from './week-number-calculator.en.mjs';
 import drywallCopies from './drywall-calculator.mjs';
 import { drywallEnglishCopy } from './drywall-calculator.en.mjs';
 import roofingCopies from './roofing-calculator.mjs';
@@ -1254,5 +1256,6 @@ registerGrowthLocaleExtension(source, 'pension-calculator', { ...pensionCalculat
 registerGrowthLocaleExtension(source, 'lifetime-value-calculator', { ...lifetimeValueCalculatorCopies, en: lifetimeValueCalculatorEnglishCopy }, 'pension-calculator');
 registerGrowthLocaleExtension(source, 'polar-graphing-calculator', { ...polarGraphingCalculatorCopies, en: polarGraphingCalculatorEnglishCopy }, 'parametric-equation-calculator');
 registerGrowthLocaleExtension(source, 'boolean-algebra-calculator', { ...booleanAlgebraCalculatorCopies, en: booleanAlgebraCalculatorEnglishCopy }, 'polar-graphing-calculator');
+registerGrowthLocaleExtension(source, 'week-number-calculator', { ...weekNumberCalculatorCopies, en: weekNumberCalculatorEnglishCopy }, 'boolean-algebra-calculator');
 
 export default Object.freeze(source);

@@ -36,6 +36,7 @@ import pensionCalculatorCopies from './locales/pension-calculator-final.mjs';
 import lifetimeValueCalculatorCopies from './locales/lifetime-value-calculator-final.mjs';
 import polarGraphingCalculatorCopies from './locales/polar-graphing-calculator-final.mjs';
 import booleanAlgebraCalculatorCopies from './locales/boolean-algebra-calculator-final.mjs';
+import weekNumberCalculatorCopies from './locales/week-number-calculator-final.mjs';
 import { buildGrowthStaticSite } from './build.mjs';
 import englishGrowthCopy from './locales/en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
@@ -131,6 +132,7 @@ function toolCopy(tool, language) {
   if (tool.id === 'lifetime-value-calculator') return structuredClone(lifetimeValueCalculatorCopies[language]);
   if (tool.id === 'polar-graphing-calculator') return structuredClone(polarGraphingCalculatorCopies[language]);
   if (tool.id === 'boolean-algebra-calculator') return structuredClone(booleanAlgebraCalculatorCopies[language]);
+  if (tool.id === 'week-number-calculator') return structuredClone(weekNumberCalculatorCopies[language]);
   if (tool.id === 'json-to-xml-converter') return { ...structuredClone(jsonToXmlEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09' };
   if (tool.id === 'har-viewer') return { ...structuredClone(harViewerEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09' };
   if (tool.id === 'robots-txt-tester') return structuredClone(robotsTxtTesterCopies[language]);
@@ -891,6 +893,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   const workerBundles = { 'image-upscaler-worker': 'self.addEventListener("message",()=>{});' };
   const extraAssets = { 'models-test/config.json': '{"upscale":2}', 'models-test/onnx/model.onnx': Buffer.from([1, 2, 3]) };
   const toolStyles = { 'boolean-algebra-calculator': '.boolean-algebra-table-wrap{overflow:auto}', 'har-viewer': '.har-viewer__table{border-collapse:collapse}', 'robots-txt-tester': '.robots-txt-tester__decision{display:grid}', 'binary-base64-tool': '.binary-base64-tool img{max-width:100%}', 'csv-editor': '.csv-editor__table-scroll{overflow:auto}', 'logic-grid-puzzle': '.logic-grid-table{table-layout:fixed}', 'markdown-editor': '.markdown-editor{max-width:70rem}', 'purchase-order-generator': '.purchase-order-table-scroll{overflow:auto}', 'eigenvalue-calculator': '.eigenvalue-results__list{display:grid;gap:1rem}', 'bond-calculator': '[data-bond-chart]{display:block;width:100%}', 'waist-to-hip-ratio-calculator': '.waist-to-hip-ratio-calculator .result{font-variant-numeric:tabular-nums}', 'hebrew-calendar-converter': '.hebrew-calendar-converter fieldset{display:grid}', 'absolute-value-calculator': '.absolute-value-calculator fieldset{display:grid}', 'rc-time-constant-calculator': '.rc-time-constant-calculator [data-rc-chart]{display:block;width:100%}', 'reverse-mortgage-calculator': '.reverse-mortgage-calculator table{overflow:auto}' };
+  toolStyles.slitherlink = '.slitherlink-board{display:grid}';
   const fixtureCopyByLocale = { en: englishGrowthCopy, es: spanishGrowthCopy, fr: frenchGrowthCopy, pt: portugueseGrowthCopy, de: germanGrowthCopy, ja: japaneseGrowthCopy, ko: koreanGrowthCopy, id: indonesianGrowthCopy, hi: hindiGrowthCopy, ar: arabicGrowthCopy, zh: simplifiedChineseGrowthCopy, bn: bengaliGrowthCopy, ru: russianGrowthCopy, ur: urduGrowthCopy, tr: turkishGrowthCopy, vi: vietnameseGrowthCopy, it: italianGrowthCopy, zh_tw: traditionalChineseGrowthCopy, bg: bulgarianGrowthCopy, ca: catalanGrowthCopy, nl: dutchGrowthCopy, el: greekGrowthCopy, ms: malayGrowthCopy, pl: polishGrowthCopy, sv: swedishGrowthCopy, th: thaiGrowthCopy, uk: ukrainianGrowthCopy, sw: swahiliGrowthCopy, mr: marathiGrowthCopy, te: teluguGrowthCopy, ha: hausaGrowthCopy, tl: filipinoGrowthCopy, ta: tamilGrowthCopy, fa: persianGrowthCopy, am: amharicGrowthCopy, gu: gujaratiGrowthCopy };
   for (const locale of smallLocales) fixtureCopyByLocale[locale.key] = {
     ...fixtureCopyByLocale[locale.key],
@@ -1032,6 +1035,11 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   assert.match(await readFile(join(outputDir, csvStylePath), 'utf8'), /csv-editor__table-scroll/u);
   assert.match(csvPage, /Types are for checking only/u);
   assert.doesNotMatch(enPage, /csv-editor\.[a-f0-9]+\.css/u, 'CSV-only CSS is not loaded on unrelated pages');
+  const slitherlinkPage = await readFile(join(outputDir, 'tools/slitherlink/index.html'), 'utf8');
+  const slitherlinkStylePath = slitherlinkPage.match(/href="(\/assets\/slitherlink\.[a-f0-9]+\.css)"/u)?.[1];
+  assert.ok(slitherlinkStylePath, 'Slitherlink route loads its own stylesheet');
+  assert.match(await readFile(join(outputDir, slitherlinkStylePath), 'utf8'), /slitherlink-board/u);
+  assert.doesNotMatch(enPage, /slitherlink\.[a-f0-9]+\.css/u, 'Slitherlink-only CSS is not loaded on unrelated pages');
   assert.match(robotsPage, /maxlength="200000"/u);
   assert.match(robotsPage, /not a complete emulator/u);
   assert.match(await readFile(join(outputDir, 'ar/tools/robots-txt-tester/index.html'), 'utf8'), /<html lang="ar" dir="rtl">/u);
@@ -1206,7 +1214,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   // Top-level entries include shared and tool-only stylesheets, one controller
   // per tool, the model worker, the models directory (nested contents), and
   // the dedicated stylesheet for each page that needs one.
-  assert.equal(files.length, growthPilotTools.length + 18);
+  assert.equal(files.length, growthPilotTools.length + 19);
   assert.ok((await stat(join(outputDir, 'assets', files[0]))).isFile());
 });
 

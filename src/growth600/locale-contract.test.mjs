@@ -2,6 +2,11 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { assertGrowthLocaleCoverage } from './locale-contract.mjs';
 import { growthPilotTools as allGrowthPilotTools } from './catalog.mjs';
+import retainingWallCopies from './locales/retaining-wall-calculator-final.mjs';
+import { retainingWallCalculatorEnglishCopy } from './locales/retaining-wall-calculator.en.mjs';
+import batteryRuntimeCopies from './locales/battery-runtime-calculator-final.mjs';
+import lumberCutCopies from './locales/lumber-cut-calculator-final.mjs';
+import plantSpacingCopies from './locales/plant-spacing-calculator-final.mjs';
 import { localeEntries } from '../locales.mjs';
 import englishGrowthCopy from './locales/en.mjs';
 import transformerCopies from './locales/transformer-calculator-final.mjs';
@@ -83,11 +88,13 @@ import polarGraphingCalculatorCopies from './locales/polar-graphing-calculator-f
 import { polarGraphingCalculatorEnglishCopy } from './locales/polar-graphing-calculator.en.mjs';
 import booleanAlgebraCalculatorCopies from './locales/boolean-algebra-calculator-final.mjs';
 import { booleanAlgebraCalculatorEnglishCopy } from './locales/boolean-algebra-calculator.en.mjs';
+import weekNumberCalculatorCopies from './locales/week-number-calculator-final.mjs';
+import { weekNumberCalculatorEnglishCopy } from './locales/week-number-calculator.en.mjs';
 
 const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['markdown-editor', 'purchase-order-generator', 'bond-calculator', 'waist-to-hip-ratio-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'ph-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'kinetic-energy-calculator', 'resistor-color-code-calculator', 'acceleration-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator'].includes(id));
 const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
   key,
-  { ...(await import(`./locales/${key}.mjs`)).default, 'purchase-order-generator': purchaseOrderGeneratorCopies[key], 'eigenvalue-calculator': eigenvalueCalculatorCopies[key], 'bond-calculator': bondCalculatorCopies[key], 'waist-to-hip-ratio-calculator': waistToHipRatioCopies[key], 'stock-profit-calculator': key === 'en' ? stockProfitCalculatorEnglishCopy : stockProfitCalculatorCopies[key], 'pension-calculator': pensionCalculatorCopies[key], 'lifetime-value-calculator': lifetimeValueCalculatorCopies[key], 'polar-graphing-calculator': polarGraphingCalculatorCopies[key], 'boolean-algebra-calculator': key === 'en' ? booleanAlgebraCalculatorEnglishCopy : booleanAlgebraCalculatorCopies[key] },
+  { ...(await import(`./locales/${key}.mjs`)).default, 'purchase-order-generator': purchaseOrderGeneratorCopies[key], 'eigenvalue-calculator': eigenvalueCalculatorCopies[key], 'bond-calculator': bondCalculatorCopies[key], 'waist-to-hip-ratio-calculator': waistToHipRatioCopies[key], 'stock-profit-calculator': key === 'en' ? stockProfitCalculatorEnglishCopy : stockProfitCalculatorCopies[key], 'pension-calculator': pensionCalculatorCopies[key], 'lifetime-value-calculator': lifetimeValueCalculatorCopies[key], 'polar-graphing-calculator': polarGraphingCalculatorCopies[key], 'boolean-algebra-calculator': key === 'en' ? booleanAlgebraCalculatorEnglishCopy : booleanAlgebraCalculatorCopies[key], 'week-number-calculator': key === 'en' ? weekNumberCalculatorEnglishCopy : weekNumberCalculatorCopies[key] },
 ])));
 
 test('section modulus calculator has static, bounded translations in all 36 locales', () => {
@@ -359,6 +366,7 @@ function assertMachineAcceptedGrowthToolInAllLocales(tool) {
     ...(tool.id === 'lifetime-value-calculator' ? { 'lifetime-value-calculator': lifetimeValueCalculatorCopies[key] } : {}),
     ...(tool.id === 'polar-graphing-calculator' ? { 'polar-graphing-calculator': polarGraphingCalculatorCopies[key] } : {}),
     ...(tool.id === 'boolean-algebra-calculator' ? { 'boolean-algebra-calculator': key === 'en' ? booleanAlgebraCalculatorEnglishCopy : booleanAlgebraCalculatorCopies[key] } : {}),
+    ...(tool.id === 'week-number-calculator' ? { 'week-number-calculator': key === 'en' ? weekNumberCalculatorEnglishCopy : weekNumberCalculatorCopies[key] } : {}),
     ...(tool.id === 'waist-to-hip-ratio-calculator' ? { 'waist-to-hip-ratio-calculator': waistToHipRatioCopies[key] } : {}),
   }]));
   assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, copies), true);
@@ -1551,6 +1559,19 @@ test('retaining wall calculator has a complete English source but has approved l
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
   assertMachineAcceptedGrowthToolInAllLocales(tool);
+  assert.equal(retainingWallCopies.it.actions.reset, 'Reimposta');
+  assert.equal(retainingWallCopies.nl.actions.reset, 'Opnieuw instellen');
+  assert.equal(retainingWallCopies.ca.actions.meters, 'Metres');
+  for (const locale of Object.keys(retainingWallCopies).filter((key) => key !== 'en')) {
+    for (const section of ['fields', 'actions', 'messages']) {
+      for (const [key, value] of Object.entries(retainingWallCopies[locale][section] ?? {})) {
+        const sourceValue = retainingWallCalculatorEnglishCopy[section]?.[key];
+        if (value !== 'Metres' || !(locale === 'ca' && key === 'meters')) {
+          assert.notEqual(value, sourceValue, `${locale}.${section}.${key} remains English`);
+        }
+      }
+    }
+  }
 });
 
 test('battery runtime calculator has a complete English source but has approved localized copy across all 36 languages', () => {
@@ -1558,6 +1579,9 @@ test('battery runtime calculator has a complete English source but has approved 
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
   assertMachineAcceptedGrowthToolInAllLocales(tool);
+  assert.equal(batteryRuntimeCopies.it.actions.calculate, 'Calcola autonomia');
+  assert.equal(batteryRuntimeCopies.it.actions.reset, 'Reimposta');
+  assert.equal(batteryRuntimeCopies.nl.actions.reset, 'Opnieuw instellen');
 });
 
 test('lumber cut optimizer has complete English copy but has approved localized copy across all 36 languages', () => {
@@ -1565,6 +1589,9 @@ test('lumber cut optimizer has complete English copy but has approved localized 
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
   assertMachineAcceptedGrowthToolInAllLocales(tool);
+  assert.equal(lumberCutCopies.it.actions.reset, 'Reimposta');
+  assert.equal(lumberCutCopies.nl.actions.reset, 'Opnieuw instellen');
+  assert.equal(lumberCutCopies.nl.actions.millimeters, 'Millimeter (mm)');
 });
 
 test('plant spacing calculator has complete English copy but has approved localized copy across all 36 languages', () => {
@@ -1572,6 +1599,9 @@ test('plant spacing calculator has complete English copy but has approved locali
   assert.ok(tool);
   assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: englishGrowthCopy }), true);
   assertMachineAcceptedGrowthToolInAllLocales(tool);
+  assert.equal(plantSpacingCopies.it.actions.reset, 'Reimposta');
+  assert.equal(plantSpacingCopies.nl.actions.reset, 'Opnieuw instellen');
+  assert.equal(plantSpacingCopies.nl.actions.meters, 'Meter (m)');
 });
 
 test('EV charging calculator has complete English copy but has approved localized copy across all 36 languages', () => {
@@ -2067,4 +2097,23 @@ test('Boolean algebra has 36 static translations, bounded SEO metadata and intac
     if (key !== 'en') assert.notEqual(copy.intro, booleanAlgebraCalculatorEnglishCopy.intro, `${key}: translated intro`);
   }
   assert.match(booleanAlgebraCalculatorEnglishCopy.accuracyNote ?? booleanAlgebraCalculatorEnglishCopy.fields.accuracyNote, /formal proof/u);
+});
+
+test('week number calculator has 36 static translations and clear ISO/custom rules', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'week-number-calculator');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = key === 'en' ? weekNumberCalculatorEnglishCopy : weekNumberCalculatorCopies[key];
+    assert.equal(copy.copyLanguage, key, `${key}: language`);
+    assert.equal(copy.additionalFaqs.length, 3, `${key}: FAQs`);
+    assert.ok(Array.from(copy.title).length <= 60 && Array.from(copy.description).length <= 160, `${key}: SEO metadata`);
+    assert.ok(copy.fields.isoMode && copy.fields.customMode && copy.fields.accuracyNote, `${key}: conventions and limits`);
+    assert.ok(copy.actions.calculate && copy.actions.reset && copy.actions.example && copy.actions.copy, `${key}: actions`);
+    assert.ok(copy.messages.weekNumber && copy.messages.weekYear && copy.messages.weekStarts && copy.messages.weekEnds, `${key}: result labels`);
+    assert.doesNotMatch(JSON.stringify(copy), /QZWN|undefined/iu, `${key}: translation markers`);
+    if (key !== 'en') assert.notEqual(copy.intro, weekNumberCalculatorEnglishCopy.intro, `${key}: translated intro`);
+  }
+  assert.match(weekNumberCalculatorEnglishCopy.howAnswer, /January 4/u);
+  assert.match(weekNumberCalculatorEnglishCopy.fields.accuracyNote, /fiscal-calendar/u);
 });

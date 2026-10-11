@@ -60,6 +60,7 @@ import { pensionCalculatorEnglishCopy } from './locales/pension-calculator.en.mj
 import { lifetimeValueCalculatorEnglishCopy } from './locales/lifetime-value-calculator.en.mjs';
 import { polarGraphingCalculatorEnglishCopy } from './locales/polar-graphing-calculator.en.mjs';
 import { booleanAlgebraCalculatorEnglishCopy } from './locales/boolean-algebra-calculator.en.mjs';
+import { weekNumberCalculatorEnglishCopy } from './locales/week-number-calculator.en.mjs';
 
 const actions = {
   calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', millimeters: 'Millimeters', feet: 'Feet', inches: 'Inches', squareMeters: 'Square meters', squareFeet: 'Square feet', cubicMeters: 'Cubic meters', cubicFeet: 'Cubic feet', kelvin: 'Kelvin difference', fahrenheit: 'Fahrenheit difference', kilowatts: 'Kilowatts (kW)', btuPerHour: 'BTU per hour (BTU/h)', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.', kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only', productionMode: 'Estimate array output', sizingMode: 'Size for daily use', years: 'years', add: 'Add', subtract: 'Subtract', multiply: 'Multiply', divide: 'Divide', magnitude: 'Modulus', argument: 'Argument', rectangularToPolar: 'Rectangular to polar', polarToRectangular: 'Polar to rectangular', roots: 'Nth roots',
@@ -92,6 +93,7 @@ const copies = {
   'lifetime-value-calculator': lifetimeValueCalculatorEnglishCopy,
   'polar-graphing-calculator': polarGraphingCalculatorEnglishCopy,
   'boolean-algebra-calculator': booleanAlgebraCalculatorEnglishCopy,
+  'week-number-calculator': weekNumberCalculatorEnglishCopy,
   'hebrew-calendar-converter': hebrewCalendarConverterEnglishCopy,
   'absolute-value-calculator': absoluteValueCalculatorEnglishCopy,
   'image-splitter': { name: 'Image splitter', actions: { ...actions, choose: 'Choose image', export: 'Split and prepare ZIP', cancel: 'Cancel', download: 'Download tile ZIP' }, messages: { ...messages }, fields: { imageFile: 'Choose an image', mode: 'Split by', gridMode: 'Rows and columns', tileSizeMode: 'Fixed tile dimensions', columns: 'Columns', rows: 'Rows', tileWidth: 'Tile width', tileHeight: 'Tile height', overlap: 'Overlap', accuracyNote: 'Local image processing.', previewHint: 'Image grid preview.', imageReady: 'Image ready' } },
@@ -796,6 +798,19 @@ test('Boolean algebra form exposes one bounded expression field and localized si
   assert.match(html, /data-action="calculate"/u);
   assert.match(html, /data-action="copy"/u);
   assert.match(html, /data-result-content/u);
+});
+
+test('week number form exposes ISO and explicit custom-week conventions', () => {
+  const html = renderGrowthForm('week-number-calculator', copies['week-number-calculator']);
+  assert.match(html, /name="date" type="date" value="2021-01-01"/u);
+  assert.match(html, /name="mode"/u);
+  assert.match(html, /value="iso"/u);
+  assert.match(html, /value="custom"/u);
+  assert.match(html, /data-week-input="custom" hidden/u);
+  for (const day of ['sunday', 'monday', 'saturday']) assert.match(html, new RegExp(`value="${day}"`, 'u'));
+  assert.match(html, /data-action="calculate"/u);
+  assert.match(html, /data-action="example"/u);
+  assert.match(html, /data-action="copy"/u);
 });
 
 test('polynomial long-division form labels both expressions and uses explicit actions', () => {
