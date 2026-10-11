@@ -40,6 +40,7 @@ import { fiveTwentyNineCalculatorEnglishCopy } from './locales/529-calculator.en
 import { julianDateConverterEnglishCopy } from './locales/julian-date-converter.en.mjs';
 import { intervalTimerEnglishCopy } from './locales/interval-timer.en.mjs';
 import { logicGridPuzzleEnglishCopy } from './locales/logic-grid-puzzle.en.mjs';
+import { markdownEditorEnglishCopy } from './locales/markdown-editor.en.mjs';
 
 const actions = {
   calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', millimeters: 'Millimeters', feet: 'Feet', inches: 'Inches', squareMeters: 'Square meters', squareFeet: 'Square feet', cubicMeters: 'Cubic meters', cubicFeet: 'Cubic feet', kelvin: 'Kelvin difference', fahrenheit: 'Fahrenheit difference', kilowatts: 'Kilowatts (kW)', btuPerHour: 'BTU per hour (BTU/h)', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.', kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only', productionMode: 'Estimate array output', sizingMode: 'Size for daily use', years: 'years', add: 'Add', subtract: 'Subtract', multiply: 'Multiply', divide: 'Divide', magnitude: 'Modulus', argument: 'Argument', rectangularToPolar: 'Rectangular to polar', polarToRectangular: 'Polar to rectangular', roots: 'Nth roots',
@@ -59,6 +60,7 @@ const copies = {
   'julian-date-converter': julianDateConverterEnglishCopy,
   'interval-timer': intervalTimerEnglishCopy,
   'logic-grid-puzzle': logicGridPuzzleEnglishCopy,
+  'markdown-editor': markdownEditorEnglishCopy,
   'image-splitter': { name: 'Image splitter', actions: { ...actions, choose: 'Choose image', export: 'Split and prepare ZIP', cancel: 'Cancel', download: 'Download tile ZIP' }, messages: { ...messages }, fields: { imageFile: 'Choose an image', mode: 'Split by', gridMode: 'Rows and columns', tileSizeMode: 'Fixed tile dimensions', columns: 'Columns', rows: 'Rows', tileWidth: 'Tile width', tileHeight: 'Tile height', overlap: 'Overlap', accuracyNote: 'Local image processing.', previewHint: 'Image grid preview.', imageReady: 'Image ready' } },
   'image-sharpener': { name: 'Image sharpener', actions: { ...actions, load: 'Choose image', export: 'Prepare download', download: 'Download', original: 'Show original', sharpened: 'Sharpened preview', png: 'PNG', jpeg: 'JPEG' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', exporting: 'Sharpening…', exportFailed: 'Export failed.', exportReady: 'Image ready.' }, fields: { imageFile: 'Choose image', amount: 'Strength', radius: 'Radius', threshold: 'Threshold', compare: 'Show original', accuracyNote: 'Processed locally; 8 megapixel limit.', previewHint: 'Preview is reduced.', format: 'Format', relatedRedactor: 'Redact private details.', relatedCropper: 'Crop the image.' } },
   'photo-to-sketch': { name: 'Photo to sketch', actions: { ...actions, load: 'Choose image', export: 'Create sketch PNG', cancel: 'Cancel processing', download: 'Download sketch PNG', original: 'Show original' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', exporting: 'Creating sketch…', cancelled: 'Processing cancelled.', exportFailed: 'Export failed.', exportReady: 'Sketch ready.' }, fields: { imageFile: 'Choose image', intensity: 'Sketch intensity', detail: 'Fine-detail threshold', compare: 'Show original', accuracyNote: 'Local processing; maximum 8 megapixels.', previewHint: 'Reduced preview.' } },
@@ -1546,4 +1548,11 @@ test('image splitter exposes a local raster input, bounded grid controls, overla
   });
   for (const expected of ['accept="image/png,image/jpeg,image/webp,image/gif,image/avif,image/bmp"', 'name="mode"', 'value="grid"', 'value="tile-size"', 'name="columns" type="number" min="1" max="20"', 'name="rows" type="number" min="1" max="20"', 'name="tileWidth" type="number"', 'name="tileHeight" type="number"', 'name="overlap" type="number" min="0" max="256"', 'data-splitter-size hidden', 'data-splitter-preview role="img"', 'data-action="choose"', 'data-action="export"', 'data-action="cancel"', 'data-export hidden', 'role="status" aria-live="polite"']) assert.ok(html.includes(expected), expected);
   assert.doesNotMatch(html, /name="example"/u);
+});
+
+test('Markdown editor does not ship untranslated English placeholder content', () => {
+  const html = renderGrowthForm('markdown-editor', markdownEditorEnglishCopy);
+  assert.match(html, /<textarea[^>]+data-editor[^>]+maxlength="500000"/u);
+  assert.doesNotMatch(html, /placeholder=/u);
+  assert.doesNotMatch(html, /Write \*\*Markdown\*\* here/u);
 });

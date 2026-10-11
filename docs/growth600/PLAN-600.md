@@ -3168,7 +3168,9 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 122 · Markdown Editor
 
-- [ ] **C/F/E/X/L/B/P/S completos — `markdown-editor`**
+- [ ] **P/S pendientes — `markdown-editor`**
+- [x] C/F/E/X/L/B: ficha revisada frente al convertidor existente; funciones y límite de 500.000 caracteres implementados; aceptación de contenido activo probada; tests focales y gates de build/locales aprobados; 36 copias estáticas; prueba visual móvil en árabe RTL sin overflow ni errores de consola.
+- [ ] P/S: PR integrada, despliegue del sitio principal y del hub, URL/sitemap público confirmados.
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/markdown-editor/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `markdown editor` — 8.100 búsquedas/mes US/en, KD 45; nivel B. CPC 7.44 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Editor persistente con undo, tablas, tareas, navegación, preview seguro y exportación Markdown; no hacer otra página de conversión Markdown↔HTML.
@@ -3179,6 +3181,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `markdown editor online` — 1.600/mes US/en; KD 42.
   - `markdown editor free online`; `markdown editor with example`; `markdown editor no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Checkpoint local (2026-10-11; no publicado):** editor Markdown con barra de formato (encabezados, énfasis, enlaces, código, citas, listas, tareas y tabla), deshacer/rehacer, vista previa aislada y sanitizada, conteo de palabras/caracteres, copia/descarga `.md` y autoguardado local opcional; borrar elimina el borrador de esta herramienta. Sin cuenta, API, subida, llamadas remotas ni coste por uso. Marked/DOMPurify se cargan desde assets estáticos del mismo origen solo al abrir la vista previa; sandbox + CSP y saneamiento bloquean scripts, enlaces externos, formularios e incrustaciones. Aceptación con HTML/script inerte; lógica/controlador/catálogo/formulario/locales/build probados. Suite completa **1.829/1.829**, `npm run locale:release-check` y `git diff --check` aprobados; `npm run check` conserva **10.260 URLs** del sitio principal; build Growth600 **5.580 páginas** (154 herramientas × 36 + 36 portadas). Chrome móvil 390×844 en AR: `lang=ar`, `dir=rtl`, ancho de documento 390 px y consola limpia. README contiene inventario generado de la compilación candidata; recuentos públicos no cambian hasta P/S.
 
 ### 127 · Purchase Order Generator
 

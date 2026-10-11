@@ -13,6 +13,14 @@
 - Al reanudar: continuar por la siguiente ficha abierta de `PLAN-600.md`; no rehacer #088, #120, #121 ni DataForSEO.
 - El progreso público anterior a #086 se conserva como historial debajo; sus cantidades ya no representan el estado actual. Las candidatas de reserva no cuentan como herramientas.
 
+## En implementación local · #122 Markdown Editor · 2026-10-11
+
+- Los recuentos públicos de arriba son los vigentes antes de la próxima publicación: 153 herramientas Growth600 y 5.544 URLs del hub. No contar #122 como publicado todavía.
+- Implementación candidata: editor Markdown con barra de formato, edición con undo/redo, preview aislado y sanitizado, conteos, copia/descarga y autoguardado opcional exclusivamente local. La vista previa usa Marked y DOMPurify como assets estáticos del mismo origen y los carga únicamente cuando se abre; no hay servicio remoto, API, subida ni coste por archivo/uso.
+- La prueba de aceptación comprobó texto Markdown con `<script>`: renderiza el contenido esperado de manera inerte, dentro de un `iframe sandbox` con CSP restrictiva. Se bloquean enlaces externos, imágenes remotas, formularios e incrustaciones en la vista previa.
+- Verificación candidata: suite completa **1.829/1.829**; release check de locales aprobado; build principal conserva **10.260 URLs**; build Growth600 **5.580 páginas** (154 herramientas × 36 idiomas + 36 portadas). Chrome móvil 390×844 en árabe: `lang=ar`, `dir=rtl`, `scrollWidth=390`, sin errores de consola. Solo cargan recursos del mismo origen y las bibliotecas de preview aparecen tras la acción de abrirla.
+- **Siguiente paso al retomar:** finalizar revisión del diff, abrir PR de #122, esperar CI, integrar solo con gates verdes, comprobar ambos despliegues y las 36 rutas/canonical/sitemap del hub. Después re-enviar `https://tools.usefulverse.com/sitemap.xml` desde Google Search Console (el sitemap anterior ya se reenvió, pero antes de publicar #122). Actualizar entonces recuentos públicos y checklist P/S. Siguiente ficha planificada: #127 Purchase Order Generator. No repetir DataForSEO ni modificar las 277 originales.
+
 ## Estado público actual · 2026-10-10
 
 - **147 herramientas Growth600 publicadas** además del catálogo original protegido de 277; todas en 36 locales. El sitemap público de `tools.usefulverse.com` responde HTTP 200 con **5.328 URLs** (147 × 36 + 36 páginas de idioma): **424 herramientas públicas en total** y 15.588 URLs entre los dos sitemaps (10.260 + 5.328). Esto no equivale a que los buscadores hayan indexado cada URL.

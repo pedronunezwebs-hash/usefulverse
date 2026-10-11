@@ -3,11 +3,27 @@ import test from 'node:test';
 import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 import { checkLogicGridMarks, createLogicGridPuzzle, solveLogicGrid } from './tools/logic-grid-puzzle/logic.mjs';
+import { countMarkdown, insertMarkdown } from './tools/markdown-editor/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 153);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 153);
+  assert.equal(growthPilotTools.length, 154);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 154);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
+});
+
+test('Markdown editor adds a local, bounded editing workflow rather than a duplicate format converter', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'markdown-editor');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'markdown editor');
+  assert.deepEqual(tool.relatedExistingIds, ['markdown-html-converter']);
+  assert.match(tool.boundary, /500,000 characters.*optional and local/u);
+  assert.match(tool.acceptance, /script.*inert text/u);
+  assert.deepEqual(countMarkdown('# Hello\n\nworld 123'), { words: 3, characters: 18 });
+  const inserted = insertMarkdown('start end', 6, 9, 'bold');
+  assert.equal(inserted.value, 'start **end**');
+  assert.equal(inserted.value.slice(inserted.selectionStart, inserted.selectionEnd), 'end');
+  assert.match(insertMarkdown('', 0, 0, 'table').value, /^\|  \|  \|\n\| --- \| --- \|\n\|  \|  \|\n$/u);
+  assert.throws(() => insertMarkdown('x', 0, 1, 'invalid'), /Unsupported Markdown/u);
 });
 
 test('interval timer adds work/rest rounds and sound without duplicating Pomodoro or a plain countdown', () => {

@@ -68,8 +68,9 @@ import reynoldsNumberCopies from './locales/reynolds-number-calculator.mjs';
 import threePhasePowerCopies from './locales/three-phase-power-calculator.mjs';
 import momentumCopies from './locales/momentum-calculator.mjs';
 import logicGridPuzzleCopies from './locales/logic-grid-puzzle-final.mjs';
+import markdownEditorCopies from './locales/markdown-editor-final.mjs';
 
-const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'ph-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'kinetic-energy-calculator', 'resistor-color-code-calculator', 'acceleration-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator'].includes(id));
+const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['markdown-editor', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'ph-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'kinetic-energy-calculator', 'resistor-color-code-calculator', 'acceleration-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator'].includes(id));
 const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
   key,
   (await import(`./locales/${key}.mjs`)).default,
@@ -334,14 +335,17 @@ test('repeating-decimal conversion has static copy and exact-decimal FAQ coverag
 });
 
 function assertMachineAcceptedGrowthToolInAllLocales(tool) {
-  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  const copies = tool.id === 'markdown-editor'
+    ? Object.fromEntries(localeEntries.map(({ key }) => [key, { ...localizedCopies[key], 'markdown-editor': markdownEditorCopies[key] }]))
+    : localizedCopies;
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, copies), true);
   for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
-    const copy = localizedCopies[key][tool.id];
+    const copy = copies[key][tool.id];
     assert.equal(copy.localizationStatus, 'machine-accepted', key);
     assert.equal(copy.localizationAcceptedBy, 'site-owner', key);
     assert.match(copy.localizationAcceptedAt, /^\d{4}-\d{2}-\d{2}$/u, key);
     assert.equal(copy.copyLanguage, key, key);
-    assert.notEqual(copy.intro, localizedCopies.en[tool.id].intro, key);
+    assert.notEqual(copy.intro, copies.en[tool.id].intro, key);
     assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
   }
 }
@@ -368,6 +372,21 @@ test('logic grid puzzle has complete static translations and four distinct local
   assert.equal(logicGridPuzzleCopies.ar.actions.hard, 'صعب');
   assert.equal(logicGridPuzzleCopies.ar.messages.unmarked, 'تمت إزالة العلامة.');
   assert.equal(logicGridPuzzleCopies.en.fields.categoryGroups[0].name, 'People');
+});
+
+test('Markdown editor has static translations, safe-preview copy and accurate metadata for all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'markdown-editor');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = markdownEditorCopies[key];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.fields.editor && copy.fields.preview && copy.fields.autosave, key);
+    assert.ok(copy.actions.showPreview && copy.actions.hidePreview && copy.actions.download, key);
+    assert.ok(copy.messages.previewFailed && copy.messages.tooLong, key);
+    assert.ok(copy.title.toLowerCase().includes(copy.name.toLowerCase()), `${key}: title retains localized name`);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, `${key}: bounded metadata`);
+  }
 });
 
 test('HAR viewer has complete static translations, privacy warnings and preserved HAR fixtures in all 36 locales', () => {
