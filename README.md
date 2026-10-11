@@ -16,10 +16,10 @@ Browser-first collection of fast, private, static tools for everyday work.
 
 The additional Growth600 tools are published on a separate static Cloudflare Pages site at
 [tools.usefulverse.com](https://tools.usefulverse.com/), so they do not replace or
-change the 277-tool catalog above. The hub contains 156 additional tools in
+change the 277-tool catalog above. The hub contains 157 additional tools in
 the same 36 locales. Its canonical URL inventory and language alternates are listed in
-the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (5,652 URLs in this
-build: 156 tools and 36 localized hub home pages; 433 tool implementations
+the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (5,688 URLs in this
+build: 157 tools and 36 localized hub home pages; 434 tool implementations
 across the two sites);
 the staged checklist and implementation record are in
 [docs/growth600/PLAN-600.md](docs/growth600/PLAN-600.md) and
@@ -10553,7 +10553,7 @@ These are the canonical URLs for the additional tools and their localized pages.
 
 <!-- BEGIN GENERATED GROWTH600 URL INVENTORY -->
 
-Generated from `dist-growth600/sitemap.xml`: **5,688 canonical URLs**.
+Generated from `dist-growth600/sitemap.xml`: **5,724 canonical URLs**.
 
 ```text
 https://tools.usefulverse.com/
@@ -10686,6 +10686,7 @@ https://tools.usefulverse.com/tools/work-order-generator/
 https://tools.usefulverse.com/tools/purchase-order-generator/
 https://tools.usefulverse.com/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/tools/capacitor-calculator/
+https://tools.usefulverse.com/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/tools/body-water-calculator/
 https://tools.usefulverse.com/tools/555-timer-calculator/
 https://tools.usefulverse.com/tools/fourier-series-calculator/
@@ -10844,6 +10845,7 @@ https://tools.usefulverse.com/es/tools/work-order-generator/
 https://tools.usefulverse.com/es/tools/purchase-order-generator/
 https://tools.usefulverse.com/es/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/es/tools/capacitor-calculator/
+https://tools.usefulverse.com/es/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/es/tools/body-water-calculator/
 https://tools.usefulverse.com/es/tools/555-timer-calculator/
 https://tools.usefulverse.com/es/tools/fourier-series-calculator/
@@ -11002,6 +11004,7 @@ https://tools.usefulverse.com/fr/tools/work-order-generator/
 https://tools.usefulverse.com/fr/tools/purchase-order-generator/
 https://tools.usefulverse.com/fr/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/fr/tools/capacitor-calculator/
+https://tools.usefulverse.com/fr/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/fr/tools/body-water-calculator/
 https://tools.usefulverse.com/fr/tools/555-timer-calculator/
 https://tools.usefulverse.com/fr/tools/fourier-series-calculator/
@@ -11160,6 +11163,7 @@ https://tools.usefulverse.com/pt-br/tools/work-order-generator/
 https://tools.usefulverse.com/pt-br/tools/purchase-order-generator/
 https://tools.usefulverse.com/pt-br/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/pt-br/tools/capacitor-calculator/
+https://tools.usefulverse.com/pt-br/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/pt-br/tools/body-water-calculator/
 https://tools.usefulverse.com/pt-br/tools/555-timer-calculator/
 https://tools.usefulverse.com/pt-br/tools/fourier-series-calculator/
@@ -11318,6 +11322,7 @@ https://tools.usefulverse.com/de/tools/work-order-generator/
 https://tools.usefulverse.com/de/tools/purchase-order-generator/
 https://tools.usefulverse.com/de/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/de/tools/capacitor-calculator/
+https://tools.usefulverse.com/de/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/de/tools/body-water-calculator/
 https://tools.usefulverse.com/de/tools/555-timer-calculator/
 https://tools.usefulverse.com/de/tools/fourier-series-calculator/
@@ -11476,6 +11481,7 @@ https://tools.usefulverse.com/ja/tools/work-order-generator/
 https://tools.usefulverse.com/ja/tools/purchase-order-generator/
 https://tools.usefulverse.com/ja/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/ja/tools/capacitor-calculator/
+https://tools.usefulverse.com/ja/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/ja/tools/body-water-calculator/
 https://tools.usefulverse.com/ja/tools/555-timer-calculator/
 https://tools.usefulverse.com/ja/tools/fourier-series-calculator/
@@ -11634,6 +11640,7 @@ https://tools.usefulverse.com/ko/tools/work-order-generator/
 https://tools.usefulverse.com/ko/tools/purchase-order-generator/
 https://tools.usefulverse.com/ko/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/ko/tools/capacitor-calculator/
+https://tools.usefulverse.com/ko/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/ko/tools/body-water-calculator/
 https://tools.usefulverse.com/ko/tools/555-timer-calculator/
 https://tools.usefulverse.com/ko/tools/fourier-series-calculator/
@@ -11792,6 +11799,7 @@ https://tools.usefulverse.com/id/tools/work-order-generator/
 https://tools.usefulverse.com/id/tools/purchase-order-generator/
 https://tools.usefulverse.com/id/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/id/tools/capacitor-calculator/
+https://tools.usefulverse.com/id/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/id/tools/body-water-calculator/
 https://tools.usefulverse.com/id/tools/555-timer-calculator/
 https://tools.usefulverse.com/id/tools/fourier-series-calculator/
@@ -11950,6 +11958,7 @@ https://tools.usefulverse.com/hi/tools/work-order-generator/
 https://tools.usefulverse.com/hi/tools/purchase-order-generator/
 https://tools.usefulverse.com/hi/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/hi/tools/capacitor-calculator/
+https://tools.usefulverse.com/hi/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/hi/tools/body-water-calculator/
 https://tools.usefulverse.com/hi/tools/555-timer-calculator/
 https://tools.usefulverse.com/hi/tools/fourier-series-calculator/
@@ -12108,6 +12117,7 @@ https://tools.usefulverse.com/ar/tools/work-order-generator/
 https://tools.usefulverse.com/ar/tools/purchase-order-generator/
 https://tools.usefulverse.com/ar/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/ar/tools/capacitor-calculator/
+https://tools.usefulverse.com/ar/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/ar/tools/body-water-calculator/
 https://tools.usefulverse.com/ar/tools/555-timer-calculator/
 https://tools.usefulverse.com/ar/tools/fourier-series-calculator/
@@ -12266,6 +12276,7 @@ https://tools.usefulverse.com/zh-cn/tools/work-order-generator/
 https://tools.usefulverse.com/zh-cn/tools/purchase-order-generator/
 https://tools.usefulverse.com/zh-cn/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/zh-cn/tools/capacitor-calculator/
+https://tools.usefulverse.com/zh-cn/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/zh-cn/tools/body-water-calculator/
 https://tools.usefulverse.com/zh-cn/tools/555-timer-calculator/
 https://tools.usefulverse.com/zh-cn/tools/fourier-series-calculator/
@@ -12424,6 +12435,7 @@ https://tools.usefulverse.com/bn/tools/work-order-generator/
 https://tools.usefulverse.com/bn/tools/purchase-order-generator/
 https://tools.usefulverse.com/bn/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/bn/tools/capacitor-calculator/
+https://tools.usefulverse.com/bn/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/bn/tools/body-water-calculator/
 https://tools.usefulverse.com/bn/tools/555-timer-calculator/
 https://tools.usefulverse.com/bn/tools/fourier-series-calculator/
@@ -12582,6 +12594,7 @@ https://tools.usefulverse.com/ru/tools/work-order-generator/
 https://tools.usefulverse.com/ru/tools/purchase-order-generator/
 https://tools.usefulverse.com/ru/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/ru/tools/capacitor-calculator/
+https://tools.usefulverse.com/ru/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/ru/tools/body-water-calculator/
 https://tools.usefulverse.com/ru/tools/555-timer-calculator/
 https://tools.usefulverse.com/ru/tools/fourier-series-calculator/
@@ -12740,6 +12753,7 @@ https://tools.usefulverse.com/ur/tools/work-order-generator/
 https://tools.usefulverse.com/ur/tools/purchase-order-generator/
 https://tools.usefulverse.com/ur/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/ur/tools/capacitor-calculator/
+https://tools.usefulverse.com/ur/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/ur/tools/body-water-calculator/
 https://tools.usefulverse.com/ur/tools/555-timer-calculator/
 https://tools.usefulverse.com/ur/tools/fourier-series-calculator/
@@ -12898,6 +12912,7 @@ https://tools.usefulverse.com/tr/tools/work-order-generator/
 https://tools.usefulverse.com/tr/tools/purchase-order-generator/
 https://tools.usefulverse.com/tr/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/tr/tools/capacitor-calculator/
+https://tools.usefulverse.com/tr/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/tr/tools/body-water-calculator/
 https://tools.usefulverse.com/tr/tools/555-timer-calculator/
 https://tools.usefulverse.com/tr/tools/fourier-series-calculator/
@@ -13056,6 +13071,7 @@ https://tools.usefulverse.com/vi/tools/work-order-generator/
 https://tools.usefulverse.com/vi/tools/purchase-order-generator/
 https://tools.usefulverse.com/vi/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/vi/tools/capacitor-calculator/
+https://tools.usefulverse.com/vi/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/vi/tools/body-water-calculator/
 https://tools.usefulverse.com/vi/tools/555-timer-calculator/
 https://tools.usefulverse.com/vi/tools/fourier-series-calculator/
@@ -13214,6 +13230,7 @@ https://tools.usefulverse.com/it/tools/work-order-generator/
 https://tools.usefulverse.com/it/tools/purchase-order-generator/
 https://tools.usefulverse.com/it/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/it/tools/capacitor-calculator/
+https://tools.usefulverse.com/it/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/it/tools/body-water-calculator/
 https://tools.usefulverse.com/it/tools/555-timer-calculator/
 https://tools.usefulverse.com/it/tools/fourier-series-calculator/
@@ -13372,6 +13389,7 @@ https://tools.usefulverse.com/zh-tw/tools/work-order-generator/
 https://tools.usefulverse.com/zh-tw/tools/purchase-order-generator/
 https://tools.usefulverse.com/zh-tw/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/zh-tw/tools/capacitor-calculator/
+https://tools.usefulverse.com/zh-tw/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/zh-tw/tools/body-water-calculator/
 https://tools.usefulverse.com/zh-tw/tools/555-timer-calculator/
 https://tools.usefulverse.com/zh-tw/tools/fourier-series-calculator/
@@ -13530,6 +13548,7 @@ https://tools.usefulverse.com/bg/tools/work-order-generator/
 https://tools.usefulverse.com/bg/tools/purchase-order-generator/
 https://tools.usefulverse.com/bg/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/bg/tools/capacitor-calculator/
+https://tools.usefulverse.com/bg/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/bg/tools/body-water-calculator/
 https://tools.usefulverse.com/bg/tools/555-timer-calculator/
 https://tools.usefulverse.com/bg/tools/fourier-series-calculator/
@@ -13688,6 +13707,7 @@ https://tools.usefulverse.com/ca/tools/work-order-generator/
 https://tools.usefulverse.com/ca/tools/purchase-order-generator/
 https://tools.usefulverse.com/ca/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/ca/tools/capacitor-calculator/
+https://tools.usefulverse.com/ca/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/ca/tools/body-water-calculator/
 https://tools.usefulverse.com/ca/tools/555-timer-calculator/
 https://tools.usefulverse.com/ca/tools/fourier-series-calculator/
@@ -13846,6 +13866,7 @@ https://tools.usefulverse.com/nl/tools/work-order-generator/
 https://tools.usefulverse.com/nl/tools/purchase-order-generator/
 https://tools.usefulverse.com/nl/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/nl/tools/capacitor-calculator/
+https://tools.usefulverse.com/nl/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/nl/tools/body-water-calculator/
 https://tools.usefulverse.com/nl/tools/555-timer-calculator/
 https://tools.usefulverse.com/nl/tools/fourier-series-calculator/
@@ -14004,6 +14025,7 @@ https://tools.usefulverse.com/el/tools/work-order-generator/
 https://tools.usefulverse.com/el/tools/purchase-order-generator/
 https://tools.usefulverse.com/el/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/el/tools/capacitor-calculator/
+https://tools.usefulverse.com/el/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/el/tools/body-water-calculator/
 https://tools.usefulverse.com/el/tools/555-timer-calculator/
 https://tools.usefulverse.com/el/tools/fourier-series-calculator/
@@ -14162,6 +14184,7 @@ https://tools.usefulverse.com/ms/tools/work-order-generator/
 https://tools.usefulverse.com/ms/tools/purchase-order-generator/
 https://tools.usefulverse.com/ms/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/ms/tools/capacitor-calculator/
+https://tools.usefulverse.com/ms/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/ms/tools/body-water-calculator/
 https://tools.usefulverse.com/ms/tools/555-timer-calculator/
 https://tools.usefulverse.com/ms/tools/fourier-series-calculator/
@@ -14320,6 +14343,7 @@ https://tools.usefulverse.com/pl/tools/work-order-generator/
 https://tools.usefulverse.com/pl/tools/purchase-order-generator/
 https://tools.usefulverse.com/pl/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/pl/tools/capacitor-calculator/
+https://tools.usefulverse.com/pl/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/pl/tools/body-water-calculator/
 https://tools.usefulverse.com/pl/tools/555-timer-calculator/
 https://tools.usefulverse.com/pl/tools/fourier-series-calculator/
@@ -14478,6 +14502,7 @@ https://tools.usefulverse.com/sv/tools/work-order-generator/
 https://tools.usefulverse.com/sv/tools/purchase-order-generator/
 https://tools.usefulverse.com/sv/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/sv/tools/capacitor-calculator/
+https://tools.usefulverse.com/sv/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/sv/tools/body-water-calculator/
 https://tools.usefulverse.com/sv/tools/555-timer-calculator/
 https://tools.usefulverse.com/sv/tools/fourier-series-calculator/
@@ -14636,6 +14661,7 @@ https://tools.usefulverse.com/th/tools/work-order-generator/
 https://tools.usefulverse.com/th/tools/purchase-order-generator/
 https://tools.usefulverse.com/th/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/th/tools/capacitor-calculator/
+https://tools.usefulverse.com/th/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/th/tools/body-water-calculator/
 https://tools.usefulverse.com/th/tools/555-timer-calculator/
 https://tools.usefulverse.com/th/tools/fourier-series-calculator/
@@ -14794,6 +14820,7 @@ https://tools.usefulverse.com/uk/tools/work-order-generator/
 https://tools.usefulverse.com/uk/tools/purchase-order-generator/
 https://tools.usefulverse.com/uk/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/uk/tools/capacitor-calculator/
+https://tools.usefulverse.com/uk/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/uk/tools/body-water-calculator/
 https://tools.usefulverse.com/uk/tools/555-timer-calculator/
 https://tools.usefulverse.com/uk/tools/fourier-series-calculator/
@@ -14952,6 +14979,7 @@ https://tools.usefulverse.com/sw/tools/work-order-generator/
 https://tools.usefulverse.com/sw/tools/purchase-order-generator/
 https://tools.usefulverse.com/sw/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/sw/tools/capacitor-calculator/
+https://tools.usefulverse.com/sw/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/sw/tools/body-water-calculator/
 https://tools.usefulverse.com/sw/tools/555-timer-calculator/
 https://tools.usefulverse.com/sw/tools/fourier-series-calculator/
@@ -15110,6 +15138,7 @@ https://tools.usefulverse.com/mr/tools/work-order-generator/
 https://tools.usefulverse.com/mr/tools/purchase-order-generator/
 https://tools.usefulverse.com/mr/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/mr/tools/capacitor-calculator/
+https://tools.usefulverse.com/mr/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/mr/tools/body-water-calculator/
 https://tools.usefulverse.com/mr/tools/555-timer-calculator/
 https://tools.usefulverse.com/mr/tools/fourier-series-calculator/
@@ -15268,6 +15297,7 @@ https://tools.usefulverse.com/te/tools/work-order-generator/
 https://tools.usefulverse.com/te/tools/purchase-order-generator/
 https://tools.usefulverse.com/te/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/te/tools/capacitor-calculator/
+https://tools.usefulverse.com/te/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/te/tools/body-water-calculator/
 https://tools.usefulverse.com/te/tools/555-timer-calculator/
 https://tools.usefulverse.com/te/tools/fourier-series-calculator/
@@ -15426,6 +15456,7 @@ https://tools.usefulverse.com/ha/tools/work-order-generator/
 https://tools.usefulverse.com/ha/tools/purchase-order-generator/
 https://tools.usefulverse.com/ha/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/ha/tools/capacitor-calculator/
+https://tools.usefulverse.com/ha/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/ha/tools/body-water-calculator/
 https://tools.usefulverse.com/ha/tools/555-timer-calculator/
 https://tools.usefulverse.com/ha/tools/fourier-series-calculator/
@@ -15584,6 +15615,7 @@ https://tools.usefulverse.com/tl/tools/work-order-generator/
 https://tools.usefulverse.com/tl/tools/purchase-order-generator/
 https://tools.usefulverse.com/tl/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/tl/tools/capacitor-calculator/
+https://tools.usefulverse.com/tl/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/tl/tools/body-water-calculator/
 https://tools.usefulverse.com/tl/tools/555-timer-calculator/
 https://tools.usefulverse.com/tl/tools/fourier-series-calculator/
@@ -15742,6 +15774,7 @@ https://tools.usefulverse.com/ta/tools/work-order-generator/
 https://tools.usefulverse.com/ta/tools/purchase-order-generator/
 https://tools.usefulverse.com/ta/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/ta/tools/capacitor-calculator/
+https://tools.usefulverse.com/ta/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/ta/tools/body-water-calculator/
 https://tools.usefulverse.com/ta/tools/555-timer-calculator/
 https://tools.usefulverse.com/ta/tools/fourier-series-calculator/
@@ -15900,6 +15933,7 @@ https://tools.usefulverse.com/fa/tools/work-order-generator/
 https://tools.usefulverse.com/fa/tools/purchase-order-generator/
 https://tools.usefulverse.com/fa/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/fa/tools/capacitor-calculator/
+https://tools.usefulverse.com/fa/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/fa/tools/body-water-calculator/
 https://tools.usefulverse.com/fa/tools/555-timer-calculator/
 https://tools.usefulverse.com/fa/tools/fourier-series-calculator/
@@ -16058,6 +16092,7 @@ https://tools.usefulverse.com/am/tools/work-order-generator/
 https://tools.usefulverse.com/am/tools/purchase-order-generator/
 https://tools.usefulverse.com/am/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/am/tools/capacitor-calculator/
+https://tools.usefulverse.com/am/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/am/tools/body-water-calculator/
 https://tools.usefulverse.com/am/tools/555-timer-calculator/
 https://tools.usefulverse.com/am/tools/fourier-series-calculator/
@@ -16216,6 +16251,7 @@ https://tools.usefulverse.com/gu/tools/work-order-generator/
 https://tools.usefulverse.com/gu/tools/purchase-order-generator/
 https://tools.usefulverse.com/gu/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/gu/tools/capacitor-calculator/
+https://tools.usefulverse.com/gu/tools/waist-to-hip-ratio-calculator/
 https://tools.usefulverse.com/gu/tools/body-water-calculator/
 https://tools.usefulverse.com/gu/tools/555-timer-calculator/
 https://tools.usefulverse.com/gu/tools/fourier-series-calculator/

@@ -6,11 +6,12 @@ import { checkLogicGridMarks, createLogicGridPuzzle, solveLogicGrid } from './to
 import { countMarkdown, insertMarkdown } from './tools/markdown-editor/logic.mjs';
 import { createPurchaseOrder } from './tools/purchase-order-generator/logic.mjs';
 import { calculateEigenpairs } from './tools/eigenvalue-calculator/logic.mjs';
+import { calculateWaistHipRatio } from './tools/waist-to-hip-ratio-calculator/logic.mjs';
 import { buildBondYieldCurve, calculateBondPrice, solveBondYield } from './tools/bond-calculator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 157);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 157);
+  assert.equal(growthPilotTools.length, 158);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 158);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -28,6 +29,15 @@ test('bond calculator has a distinct fixed-coupon intent and matches the par-yie
   assert.ok(calculateBondPrice({ ...terms, yieldPercent: '6' }).price < 1000);
   assert.ok(calculateBondPrice({ ...terms, yieldPercent: '4' }).price > 1000);
   assert.equal(buildBondYieldCurve(terms, 5).length, 41);
+});
+
+test('waist-to-hip ratio is a unitless arithmetic tool, distinct from body-fat estimation and health diagnosis', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'waist-to-hip-ratio-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'waist to hip ratio calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['body-fat-calculator']);
+  assert.match(tool.boundary, /does not.*assess health risk or diagnose/u);
+  assert.equal(calculateWaistHipRatio({ waist: 80, hip: 100, unit: 'cm' }).ratio, 0.8);
 });
 
 test('eigenvalue calculator is additive and validates symmetric eigenpairs', () => {

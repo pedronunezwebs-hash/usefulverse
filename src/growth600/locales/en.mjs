@@ -12,6 +12,8 @@ import eigenvalueCalculatorCopies from './eigenvalue-calculator-final.mjs';
 import { eigenvalueCalculatorEnglishCopy } from './eigenvalue-calculator.en.mjs';
 import bondCalculatorCopies from './bond-calculator-final.mjs';
 import { bondCalculatorEnglishCopy } from './bond-calculator.en.mjs';
+import waistToHipRatioCopies from './waist-to-hip-ratio-calculator-final.mjs';
+import { waistToHipRatioEnglishCopy } from './waist-to-hip-ratio-calculator.en.mjs';
 import drywallCopies from './drywall-calculator.mjs';
 import { drywallEnglishCopy } from './drywall-calculator.en.mjs';
 import roofingCopies from './roofing-calculator.mjs';
@@ -1218,5 +1220,6 @@ registerGrowthLocaleExtension(source, 'json-model-generator', { ...jsonModelGene
 registerGrowthLocaleExtension(source, 'csv-editor', { ...csvEditorCopies, en: csvEditorEnglishCopy }, 'json-model-generator');
 registerGrowthLocaleExtension(source, 'eigenvalue-calculator', { ...eigenvalueCalculatorCopies, en: eigenvalueCalculatorEnglishCopy }, 'csv-editor');
 registerGrowthLocaleExtension(source, 'bond-calculator', { ...bondCalculatorCopies, en: bondCalculatorEnglishCopy }, 'eigenvalue-calculator');
+registerGrowthLocaleExtension(source, 'waist-to-hip-ratio-calculator', { ...waistToHipRatioCopies, en: waistToHipRatioEnglishCopy }, 'bond-calculator');
 
 export default Object.freeze(source);

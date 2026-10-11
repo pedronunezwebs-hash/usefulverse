@@ -1,0 +1,2 @@
+.waist-to-hip-ratio-calculator .calculator-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr))}
+.waist-to-hip-ratio-calculator .result{font-variant-numeric:tabular-nums}

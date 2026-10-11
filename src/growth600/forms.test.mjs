@@ -17,6 +17,7 @@ import { jsonToXmlEnglishCopy } from './locales/json-to-xml-converter.en.mjs';
 import { harViewerEnglishCopy } from './locales/har-viewer.en.mjs';
 import { robotsTxtTesterEnglishCopy } from './locales/robots-txt-tester.en.mjs';
 import { jsonToExcelEnglishCopy } from './locales/json-to-excel.en.mjs';
+import { waistToHipRatioEnglishCopy } from './locales/waist-to-hip-ratio-calculator.en.mjs';
 import { binaryBase64ToolEnglishCopy } from './locales/binary-base64-tool.en.mjs';
 import { jsonModelGeneratorEnglishCopy } from './locales/json-model-generator.en.mjs';
 import { csvEditorEnglishCopy } from './locales/csv-editor.en.mjs';
@@ -289,6 +290,9 @@ const copies = {
   'body-water-calculator': {
     name: 'Body water calculator', actions: { ...actions }, messages: { ...messages },
     fields: { equation: 'Watson equation', watsonMale: 'Male equation', watsonFemale: 'Female equation', age: 'Adult age', height: 'Height', heightUnit: 'Height unit', weight: 'Weight', weightUnit: 'Weight unit', centimeters: 'Centimeters', inches: 'Inches', kilograms: 'Kilograms', pounds: 'Pounds', accuracyNote: 'Estimate only.', resultLiters: 'Estimated total body water', resultPercent: 'Approximate share', equationNote: 'Published equation.' },
+  },
+  'waist-to-hip-ratio-calculator': {
+    ...waistToHipRatioEnglishCopy,
   },
   '555-timer-calculator': {
     name: '555 timer calculator', actions: { ...actions, calculate: 'Calculate', reset: 'Clear', example: 'Try an example', result: 'Timing results', copy: 'Copy results' },
@@ -1581,4 +1585,10 @@ test('bond calculator exposes localized modes, assumptions and an accessible res
   for (const expected of ['name="mode"', 'value="price"', 'value="yield"', 'name="faceValue"', 'name="couponPercent"', 'name="years"', 'name="frequency"', 'name="yieldPercent"', 'name="marketPrice"', 'data-bond-field="market-price" hidden', 'data-bond-chart', 'data-action="example"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
   assert.match(html, /not investment advice/u);
   assert.match(html, /whole number of coupon periods/u);
+});
+
+test('waist-to-hip ratio form requires matching units and exposes local copyable arithmetic', () => {
+  const html = renderGrowthForm('waist-to-hip-ratio-calculator', waistToHipRatioEnglishCopy);
+  for (const expected of ['name="waist"', 'name="hip"', 'name="unit"', 'value="cm"', 'value="in"', 'data-action="example"', 'data-action="calculate"', 'data-action="reset"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /not a health assessment/u);
 });
