@@ -97,6 +97,7 @@ export function renderGrowthForm(toolId, copy) {
     'decibel-calculator': ['mode', 'powerMode', 'amplitudeMode', 'dbToPowerMode', 'dbToAmplitudeMode', 'sumMode', 'applyMode', 'ratio', 'inputDb', 'levels', 'inputLevel', 'gainDb', 'accuracyNote', 'assumptionsNote'],
     'hijri-calendar-converter': ['mode', 'gregorianToHijri', 'hijriToGregorian', 'gregorianDate', 'gregorianYear', 'gregorianMonth', 'gregorianDay', 'hijriYear', 'hijriMonth', 'hijriDay', 'hijriMonths', 'methodNote'],
     'hebrew-calendar-converter': ['direction', 'gregorianToHebrew', 'hebrewToGregorian', 'gregorianDate', 'hebrewDate', 'gregorianInput', 'hebrewYear', 'hebrewMonth', 'hebrewDay', 'methodNote', 'yearType', 'leapYes', 'leapNo'],
+    'absolute-value-calculator': ['mode', 'numberMode', 'equationMode', 'inequalityMode', 'value', 'coefficient', 'offset', 'relation', 'target', 'equals', 'lessThan', 'lessOrEqual', 'greaterThan', 'greaterOrEqual', 'limitsNote', 'formulaNote', 'resultValue', 'resultSolution', 'numberLine', 'allReal', 'noSolution', 'solutionLabel', 'orSeparator'],
     'capacitor-calculator': ['values', 'valuesHint', 'connection', 'series', 'parallel', 'unit', 'voltage', 'accuracyNote', 'resultEquivalent', 'resultCharge', 'resultEnergy', 'resultVoltage', 'capacitor', 'formulaNote'],
     'body-water-calculator': ['equation', 'watsonMale', 'watsonFemale', 'age', 'height', 'heightUnit', 'weight', 'weightUnit', 'centimeters', 'inches', 'kilograms', 'pounds', 'accuracyNote', 'resultLiters', 'resultPercent', 'equationNote'],
     'waist-to-hip-ratio-calculator': ['waist', 'hip', 'unit', 'centimeters', 'inches', 'accuracyNote', 'resultRatio', 'formulaNote'],
@@ -264,6 +265,7 @@ export function renderGrowthForm(toolId, copy) {
     'decibel-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'hijri-calendar-converter': ['convert', 'reset', 'example', 'result'],
     'hebrew-calendar-converter': ['convert', 'reset', 'example', 'result', 'copy'],
+    'absolute-value-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'capacitor-calculator': ['calculate', 'reset', 'example', 'result'],
     'body-water-calculator': ['calculate', 'reset', 'example', 'result'],
     'waist-to-hip-ratio-calculator': ['calculate', 'reset', 'example', 'copy', 'result'],
@@ -987,6 +989,21 @@ export function renderGrowthForm(toolId, copy) {
     <fieldset data-hebrew-fields hidden><legend>${escapeGrowthHtml(fields.hebrewDate)}</legend>${label('hebrew-year', fields.hebrewYear, '<input id="hebrew-year" name="hebrewYear" type="number" min="1" max="15000" step="1" value="5784" inputmode="numeric" required>')}${label('hebrew-month', fields.hebrewMonth, '<select id="hebrew-month" name="hebrewMonth" required></select>')}${label('hebrew-day', fields.hebrewDay, '<input id="hebrew-day" name="hebrewDay" type="number" min="1" max="30" step="1" value="1" inputmode="numeric" required>')}</fieldset>
     <p class="hint">${escapeGrowthHtml(fields.methodNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${button('convert', actions.convert)}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'absolute-value-calculator') return attachCopy(`<form id="tool-form" class="absolute-value-calculator" novalidate>
+    ${label('absolute-mode', fields.mode, `<select id="absolute-mode" name="mode"><option value="number">${escapeGrowthHtml(fields.numberMode)}</option><option value="equation">${escapeGrowthHtml(fields.equationMode)}</option><option value="inequality">${escapeGrowthHtml(fields.inequalityMode)}</option></select>`)}
+    <div data-number-fields>${label('absolute-value', fields.value, '<input id="absolute-value" name="value" type="text" inputmode="decimal" maxlength="40" value="-12.5" required>')}</div>
+    <div data-solver-fields hidden>
+      ${label('absolute-coefficient', fields.coefficient, '<input id="absolute-coefficient" name="a" type="text" inputmode="decimal" maxlength="40" value="1" required>')}
+      ${label('absolute-offset', fields.offset, '<input id="absolute-offset" name="b" type="text" inputmode="decimal" maxlength="40" value="0" required>')}
+      ${label('absolute-relation', fields.relation, `<select id="absolute-relation" name="relation"><option value="=">${escapeGrowthHtml(fields.equals)}</option><option value="<">${escapeGrowthHtml(fields.lessThan)}</option><option value="<=">${escapeGrowthHtml(fields.lessOrEqual)}</option><option value=">">${escapeGrowthHtml(fields.greaterThan)}</option><option value=">=">${escapeGrowthHtml(fields.greaterOrEqual)}</option></select>`)}
+      ${label('absolute-target', fields.target, '<input id="absolute-target" name="c" type="text" inputmode="decimal" maxlength="40" value="3" required>')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.limitsNote)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.formulaNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${button('calculate', actions.calculate)}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 

@@ -9,10 +9,11 @@ import { calculateEigenpairs } from './tools/eigenvalue-calculator/logic.mjs';
 import { calculateWaistHipRatio } from './tools/waist-to-hip-ratio-calculator/logic.mjs';
 import { buildBondYieldCurve, calculateBondPrice, solveBondYield } from './tools/bond-calculator/logic.mjs';
 import { gregorianToHebrew, hebrewToGregorian, isHebrewLeapYear } from './tools/hebrew-calendar-converter/logic.mjs';
+import { calculateAbsoluteValue } from './tools/absolute-value-calculator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 159);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 159);
+  assert.equal(growthPilotTools.length, 160);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 160);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -52,6 +53,17 @@ test('Hebrew calendar converter handles Adar II, round-trips dates and states it
   assert.deepEqual(purimDate, { year: 5784, month: 7, day: 1, monthKey: 'adarII', leapYear: true });
   assert.deepEqual(hebrewToGregorian({ year: 5784, month: 7, day: 1 }), { year: 2024, month: 3, day: 11 });
   assert.equal(isHebrewLeapYear(5783), false);
+});
+
+test('absolute value calculator solves bounded linear equations and inequalities, distinct from a general algebra solver', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'absolute-value-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'absolute value calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['scientific-calculator', 'number-line-graphing-tool']);
+  assert.match(tool.boundary, /not a general symbolic algebra system/u);
+  assert.deepEqual(calculateAbsoluteValue({ mode: 'equation', a: 1, b: 0, relation: '=', c: 3 }).solution, { kind: 'points', points: [-3, 3] });
+  assert.deepEqual(calculateAbsoluteValue({ mode: 'inequality', a: 2, b: -4, relation: '<=', c: 6 }).solution.intervals[0], { lower: -1, upper: 5, lowerInclusive: true, upperInclusive: true });
+  assert.deepEqual(calculateAbsoluteValue({ mode: 'inequality', a: 1, b: 0, relation: '>', c: 3 }).solution.intervals[1], { lower: 3, upper: Infinity, lowerInclusive: false, upperInclusive: false });
 });
 
 test('eigenvalue calculator is additive and validates symmetric eigenpairs', () => {
