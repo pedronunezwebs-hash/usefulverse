@@ -39,6 +39,7 @@ export function renderGrowthForm(toolId, copy) {
     'stock-profit-calculator': ['lotCount', 'purchaseLot', 'quantity', 'purchasePrice', 'purchaseFee', 'saleMethod', 'averageCost', 'fifo', 'sharesSold', 'salePrice', 'saleFee', 'currencyCode', 'accuracyNote', 'resultSummary', 'sharesOwned', 'sharesRemaining', 'purchaseCost', 'costBasis', 'grossProceeds', 'netProceeds', 'realizedProfit', 'returnPercent', 'averageCostPerShare', 'remainingBasis', 'breakevenSalePrice'],
     'pension-calculator': ['finalSalary', 'yearsOfService', 'accrualPercent', 'commutationPercent', 'commutationFactor', 'currencyCode', 'accuracyNote', 'resultSummary', 'annualPension', 'monthlyPension', 'convertedAnnualPension', 'lumpSum', 'remainingAnnualPension'],
     'lifetime-value-calculator': ['monthlyRevenue', 'grossMarginPercent', 'monthlyChurnPercent', 'customerAcquisitionCost', 'currencyCode', 'accuracyNote', 'resultSummary', 'monthlyGrossProfit', 'expectedLifetimeMonths', 'lifetimeValue', 'cacPaybackMonths', 'lifetimeValueToCac'],
+    'polar-graphing-calculator': ['radiusExpression', 'angleMin', 'angleMax', 'angleUnit', 'radians', 'degrees', 'samples', 'accuracyNote', 'chartLabel', 'resultCount'],
     'image-upscaler': ['imageFile', 'accuracyNote', 'progressHint', 'sourcePreview', 'resultPreview'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
@@ -214,6 +215,7 @@ export function renderGrowthForm(toolId, copy) {
     'stock-profit-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'pension-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'lifetime-value-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
+    'polar-graphing-calculator': ['calculate', 'reset', 'example', 'result', 'copy', 'downloadCsv'],
     'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
@@ -1210,6 +1212,20 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'polar-graphing-calculator') return attachCopy(`<form id="tool-form" class="polar-graphing-calculator" novalidate>
+    <div class="calculator-grid">
+      ${label('polar-radius', fields.radiusExpression, '<input id="polar-radius" name="radiusExpression" type="text" value="1" maxlength="120" autocomplete="off" spellcheck="false" required>')}
+      ${label('polar-angle-unit', fields.angleUnit, `<select id="polar-angle-unit" name="angleUnit"><option value="radians">${escapeGrowthHtml(fields.radians)}</option><option value="degrees" selected>${escapeGrowthHtml(fields.degrees)}</option></select>`)}
+      ${label('polar-angle-min', fields.angleMin, '<input id="polar-angle-min" name="angleMin" type="text" inputmode="decimal" value="0" maxlength="16" required>')}
+      ${label('polar-angle-max', fields.angleMax, '<input id="polar-angle-max" name="angleMax" type="text" inputmode="decimal" value="360" maxlength="16" required>')}
+      ${label('polar-samples', fields.samples, '<input id="polar-samples" name="samples" type="number" min="50" max="1500" step="1" value="361" required>')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><p data-result-count></p><div data-result-content></div>${button('copy', actions.copy, 'secondary')}${button('downloadCsv', actions.downloadCsv, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'repeating-decimal-to-fraction') return attachCopy(`<form id="tool-form" class="repeating-decimal-to-fraction" novalidate>

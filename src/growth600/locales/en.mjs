@@ -32,6 +32,8 @@ import pensionCalculatorCopies from './pension-calculator-final.mjs';
 import { pensionCalculatorEnglishCopy } from './pension-calculator.en.mjs';
 import lifetimeValueCalculatorCopies from './lifetime-value-calculator-final.mjs';
 import { lifetimeValueCalculatorEnglishCopy } from './lifetime-value-calculator.en.mjs';
+import polarGraphingCalculatorCopies from './polar-graphing-calculator-final.mjs';
+import { polarGraphingCalculatorEnglishCopy } from './polar-graphing-calculator.en.mjs';
 import drywallCopies from './drywall-calculator.mjs';
 import { drywallEnglishCopy } from './drywall-calculator.en.mjs';
 import roofingCopies from './roofing-calculator.mjs';
@@ -1248,5 +1250,6 @@ registerGrowthLocaleExtension(source, 'car-depreciation-calculator', { ...carDep
 registerGrowthLocaleExtension(source, 'stock-profit-calculator', { ...stockProfitCalculatorCopies, en: stockProfitCalculatorEnglishCopy }, 'car-depreciation-calculator');
 registerGrowthLocaleExtension(source, 'pension-calculator', { ...pensionCalculatorCopies, en: pensionCalculatorEnglishCopy }, 'stock-profit-calculator');
 registerGrowthLocaleExtension(source, 'lifetime-value-calculator', { ...lifetimeValueCalculatorCopies, en: lifetimeValueCalculatorEnglishCopy }, 'pension-calculator');
+registerGrowthLocaleExtension(source, 'polar-graphing-calculator', { ...polarGraphingCalculatorCopies, en: polarGraphingCalculatorEnglishCopy }, 'parametric-equation-calculator');
 
 export default Object.freeze(source);

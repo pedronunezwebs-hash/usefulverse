@@ -2524,6 +2524,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `polar equation graphing calculator` — 1.900/mes US/en; KD 0.
   - `polar graphing calculator free online`; `polar graphing calculator with example`; `polar graphing calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Estado local comprobado (2026-10-11):** C/F/E/X/L/B completados en rama local. Fórmula polar con grados/radianes, parser seguro reutilizado, discontinuidades delimitadas, vista SVG accesible, resumen copiable y CSV local. `r=1`, 0–360° forma el círculo unitario y los trigonométricos siguen la unidad elegida. Copy estático en 36 idiomas; se corrigieron fallbacks completos de la traducción automática. Suite enfocada **349/349**, total **1.939/1.939**, build local de muestra y revisión de 20 locales aprobados. No comprobado visualmente en navegador ni publicado; P/S pendientes. Sin PageSpeed.
 
 ### 209 · Boolean Algebra Calculator
 

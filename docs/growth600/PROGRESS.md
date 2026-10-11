@@ -1817,6 +1817,14 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - Gates locales: lógica nueva 4/4; suite integral **1.932/1.932**; localización expandida aprobada para 20 locales; contrato de 36 idiomas y pruebas de build enfocadas **336/336**. Build de prueba confirmó generación de rutas/sitemap estáticos. No se hizo PageSpeed.
 - **Estado:** C/F/E/X/L/B local completos; P/S pendientes. No se verificó interacción visual real en navegador y no se ha publicado ni añadido a los sitemaps públicos. No abrir workflow Actions hasta verificar margen/cupo y decidir la protección de presupuesto.
 
+## Implementación local · Polar Graphing Calculator (#208) · 2026-10-11
+
+- Demanda reutilizada del plan, sin consultas nuevas: `polar graphing calculator` 1.900 búsquedas/mes US/en, KD 0; CPC no disponible en la ficha del plan. También cubre la consulta propietaria `polar equation graphing calculator`, sin URL separada.
+- Grafica `r(θ)` por muestreo limitado de 50–1.500 puntos, en grados/radianes; proporciona resumen de coordenadas y CSV local con ángulo, radio, x e y. `r=1` entre 0° y 360° forma el círculo unitario. Cada eje trigonométrico usa la unidad seleccionada; se filtran discontinuidades/valores extremos. Reutiliza el parser restringido existente (sin `eval`) y no altera su comportamiento paramétrico por defecto en radianes. Sin API, dependencias, subida o gasto por uso.
+- 36 traducciones estáticas simples. Se repararon a mano unas frases y etiquetas que Google Translate había devuelto sin traducir en hindi, árabe, chino simplificado, italiano, búlgaro, catalán, suajili, maratí, telugu, tagalo, tamil, persa y amárico; no son traducciones nativas.
+- Gates: suite polar/catálogo/formulario/localización/build **349/349**; suite integral **1.939/1.939**; `npm run locale:release-check` aprobado para 20 locales. Los tests del build generan rutas y sitemap de muestra; esto no cambia el sitemap público.
+- **Estado:** C/F/E/X/L/B local completos; P/S pendientes. No hice interacción visual real en navegador ni envié URL/sitemap a buscadores. Sin PR, push ni deploy mientras Actions siga cerca de la cuota no confirmada.
+
 ## Reconciliación del plan · Mortgage Points Calculator (#164) · 2026-10-11
 
 - La entrada antigua de #164 decía que faltaba publicar, pero ya es parte de producción: aparece en el sitemap público y las 36 rutas devolvieron HTTP 200 en una comprobación directa. Los títulos localizados no repiten el título inglés. No reconstruirla ni volver a sumarla al total.

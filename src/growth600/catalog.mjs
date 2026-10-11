@@ -1452,6 +1452,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/lifetime-value-calculator/logic.mjs',
   },
   {
+    id: 'polar-graphing-calculator',
+    category: 'math-statistics',
+    type: 'calculator',
+    primaryIntent: 'polar graphing calculator',
+    secondaryIntents: ['polar equation graphing calculator', 'polar curve calculator', 'plot polar coordinates'],
+    functions: ['plot radius r as a bounded function of angle θ with radians or degrees', 'include unit-aware sine, cosine and tangent from the existing safe expression parser', 'show sampled polar and Cartesian coordinates in an accessible graph with finite-range guards', 'copy results and export the sampled angle, radius, x and y values as a local CSV file'],
+    acceptance: 'r=1 from 0 to 360 degrees returns 361 points forming a unit circle, with the first point at (1, 0) and the quarter-turn point at (0, 1).',
+    boundary: 'Numerical polar plotting only; no symbolic algebra, proof of continuity, asymptote detection or implicit graphing. Trigonometric functions follow the selected angle unit; coordinates use bounded floating-point samples. The safe expression parser never evaluates JavaScript. The graph and CSV are generated locally; no formula or data is uploaded.',
+    relatedExistingIds: ['parametric-equation-calculator'],
+    logicModule: './tools/polar-graphing-calculator/logic.mjs',
+  },
+  {
     id: 'kinetic-energy-calculator',
     category: 'physics-math',
     type: 'calculator',

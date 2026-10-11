@@ -17,10 +17,11 @@ import { calculateCarDepreciation } from './tools/car-depreciation-calculator/lo
 import { calculateStockProfit } from './tools/stock-profit-calculator/logic.mjs';
 import { calculatePension } from './tools/pension-calculator/logic.mjs';
 import { calculateLifetimeValue } from './tools/lifetime-value-calculator/logic.mjs';
+import { calculatePolarGraph } from './tools/polar-graphing-calculator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 167);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 167);
+  assert.equal(growthPilotTools.length, 168);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 168);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -42,6 +43,17 @@ test('customer LTV uses monthly gross profit and churn, separate from company va
   const result = calculateLifetimeValue({ monthlyRevenue: 100, grossMarginPercent: 50, monthlyChurnPercent: 5, customerAcquisitionCost: 100 });
   assert.equal(result.lifetimeValue, 1000);
   assert.equal(result.lifetimeValueToCac, 10);
+});
+
+test('polar graphing is a dedicated r(theta) view distinct from general parametric plotting', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'polar-graphing-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'polar graphing calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['parametric-equation-calculator']);
+  assert.match(tool.boundary, /safe expression parser/u);
+  const graph = calculatePolarGraph({ radiusExpression: '1', angleMin: 0, angleMax: 360, angleUnit: 'degrees', samples: 361 });
+  assert.equal(graph.validCount, 361);
+  assert.ok(Math.abs(graph.points[90].x) < 1e-12 && Math.abs(graph.points[90].y - 1) < 1e-12);
 });
 
 test('stock profit calculator estimates a distinct one-sale realized result with fees and lot methods', () => {

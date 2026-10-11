@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { calculateParametricCurve } from './logic.mjs';
+import { calculateParametricCurve, compileParametricExpression } from './logic.mjs';
 
 const circle = () => calculateParametricCurve({ xExpression: 'cos(t)', yExpression: 'sin(t)', tMin: 0, tMax: 2 * Math.PI, samples: 361 });
 
@@ -42,4 +42,12 @@ test('normalizes Arabic-Indic and Persian digits plus typographic minus signs', 
   const result = calculateParametricCurve({ xExpression: '−٢ + t', yExpression: '۳', tMin: 0, tMax: 1, samples: 50 });
   assert.equal(result.points[0].x, -2);
   assert.equal(result.points[0].y, 3);
+});
+
+test('compiled expressions are reusable, unit-aware and keep the existing parametric default in radians', () => {
+  const radians = compileParametricExpression('cos(t)');
+  const degrees = compileParametricExpression('cos(t)', { angleUnit: 'degrees' });
+  assert.ok(Math.abs(radians(Math.PI) + 1) < 1e-12);
+  assert.ok(Math.abs(degrees(180) + 1) < 1e-12);
+  assert.throws(() => compileParametricExpression('t', { angleUnit: 'turns' }), RangeError);
 });

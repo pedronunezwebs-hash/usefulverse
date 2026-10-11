@@ -58,6 +58,7 @@ import carDepreciationCalculatorCopies from './locales/car-depreciation-calculat
 import { stockProfitCalculatorEnglishCopy } from './locales/stock-profit-calculator.en.mjs';
 import { pensionCalculatorEnglishCopy } from './locales/pension-calculator.en.mjs';
 import { lifetimeValueCalculatorEnglishCopy } from './locales/lifetime-value-calculator.en.mjs';
+import { polarGraphingCalculatorEnglishCopy } from './locales/polar-graphing-calculator.en.mjs';
 
 const actions = {
   calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', millimeters: 'Millimeters', feet: 'Feet', inches: 'Inches', squareMeters: 'Square meters', squareFeet: 'Square feet', cubicMeters: 'Cubic meters', cubicFeet: 'Cubic feet', kelvin: 'Kelvin difference', fahrenheit: 'Fahrenheit difference', kilowatts: 'Kilowatts (kW)', btuPerHour: 'BTU per hour (BTU/h)', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.', kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only', productionMode: 'Estimate array output', sizingMode: 'Size for daily use', years: 'years', add: 'Add', subtract: 'Subtract', multiply: 'Multiply', divide: 'Divide', magnitude: 'Modulus', argument: 'Argument', rectangularToPolar: 'Rectangular to polar', polarToRectangular: 'Polar to rectangular', roots: 'Nth roots',
@@ -88,6 +89,7 @@ const copies = {
   'stock-profit-calculator': stockProfitCalculatorEnglishCopy,
   'pension-calculator': pensionCalculatorEnglishCopy,
   'lifetime-value-calculator': lifetimeValueCalculatorEnglishCopy,
+  'polar-graphing-calculator': polarGraphingCalculatorEnglishCopy,
   'hebrew-calendar-converter': hebrewCalendarConverterEnglishCopy,
   'absolute-value-calculator': absoluteValueCalculatorEnglishCopy,
   'image-splitter': { name: 'Image splitter', actions: { ...actions, choose: 'Choose image', export: 'Split and prepare ZIP', cancel: 'Cancel', download: 'Download tile ZIP' }, messages: { ...messages }, fields: { imageFile: 'Choose an image', mode: 'Split by', gridMode: 'Rows and columns', tileSizeMode: 'Fixed tile dimensions', columns: 'Columns', rows: 'Rows', tileWidth: 'Tile width', tileHeight: 'Tile height', overlap: 'Overlap', accuracyNote: 'Local image processing.', previewHint: 'Image grid preview.', imageReady: 'Image ready' } },

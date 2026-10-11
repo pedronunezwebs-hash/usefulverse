@@ -102,15 +102,18 @@ function parse(expression) {
   return ast;
 }
 
-function evaluate(node, t) {
+function evaluate(node, t, angleUnit = 'radians') {
   switch (node.type) {
     case 'number': return node.value;
     case 'variable': return t;
-    case 'unary': return node.op === '-' ? -evaluate(node.argument, t) : evaluate(node.argument, t);
-    case 'call': return FUNCTIONS[node.name](evaluate(node.argument, t));
+    case 'unary': return node.op === '-' ? -evaluate(node.argument, t, angleUnit) : evaluate(node.argument, t, angleUnit);
+    case 'call': {
+      const argument = evaluate(node.argument, t, angleUnit);
+      return FUNCTIONS[node.name](angleUnit === 'degrees' && ['sin', 'cos', 'tan'].includes(node.name) ? argument * Math.PI / 180 : argument);
+    }
     case 'binary': {
-      const left = evaluate(node.left, t);
-      const right = evaluate(node.right, t);
+      const left = evaluate(node.left, t, angleUnit);
+      const right = evaluate(node.right, t, angleUnit);
       if (node.op === '+') return left + right;
       if (node.op === '-') return left - right;
       if (node.op === '*') return left * right;
@@ -119,6 +122,17 @@ function evaluate(node, t) {
     }
     default: throw new TypeError('Invalid expression tree.');
   }
+}
+
+/** Compile one bounded expression for safe reuse by other local graphing tools. */
+export function compileParametricExpression(expression, { angleUnit = 'radians' } = {}) {
+  if (!['radians', 'degrees'].includes(angleUnit)) throw new RangeError('Choose radians or degrees.');
+  const tree = parse(expression);
+  return (parameter) => {
+    const value = Number(parameter);
+    if (!Number.isFinite(value) || Math.abs(value) > 10000) throw new RangeError('The parameter must be finite and within the supported range.');
+    return evaluate(tree, value, angleUnit);
+  };
 }
 
 export function calculateParametricCurve({ xExpression, yExpression, tMin, tMax, samples }) {
