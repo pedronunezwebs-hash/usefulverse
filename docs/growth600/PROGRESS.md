@@ -4,7 +4,7 @@
 
 ## Estado público actual · 2026-10-11
 
-- **153 herramientas Growth600** junto al catálogo protegido de 277; **430 herramientas públicas en total**. Todas se publican en 36 locales. Sitemap del hub: **5.544 URLs** (153 × 36 + 36 portadas); sitemap principal: **10.260 URLs**; total combinado: **15.804 URLs**. Publicación y sitemap no implican indexación.
+- **154 herramientas Growth600 publicadas** junto al catálogo protegido de 277; **431 herramientas públicas en total**. Todas están publicadas en 36 locales. Verificación directa actual: sitemap del hub HTTP 200 con **5.580 URLs únicas** (154 × 36 + 36 portadas); sitemap principal: **10.260 URLs**; total combinado: **15.840 URLs**. La presencia en sitemap no demuestra indexación.
 - #086 529 Calculator: PR #114 integrada en `c9e18cb0dc4ef8128aed06545ce108047b918a2d`; CI/despliegue principal `38120717651` y publicación separada del hub `38120973293` correctos.
 - #087 Dilution Calculator ya estaba publicada antes de esta reanudación; en esta sesión se comprobó que EN y AR devuelven HTTP 200 y que sus 36 variantes están incluidas en el sitemap público. No se rehízo.
 - #088 Julian Date Converter: PR #115 integrada en `10366aafca353b192d24dbae9a945e9eb19fb8d6`; CI `38122981697`, despliegue principal `38123224930` y publicación separada del hub `38123636699` correctos. Sitemap público: 5.472 URLs y exactamente 36 rutas para la herramienta; la publicación no implica indexación.
@@ -13,13 +13,22 @@
 - Al reanudar: continuar por la siguiente ficha abierta de `PLAN-600.md`; no rehacer #088, #120, #121 ni DataForSEO.
 - El progreso público anterior a #086 se conserva como historial debajo; sus cantidades ya no representan el estado actual. Las candidatas de reserva no cuentan como herramientas.
 
-## En implementación local · #122 Markdown Editor · 2026-10-11
+## Publicada · #122 Markdown Editor · 2026-10-11
 
-- Los recuentos públicos de arriba son los vigentes antes de la próxima publicación: 153 herramientas Growth600 y 5.544 URLs del hub. No contar #122 como publicado todavía.
+- #122 cuenta entre las 154 herramientas Growth600 públicas; el sitemap público verificado ahora contiene 5.580 URLs únicas (154 × 36 + 36 portadas).
 - Implementación candidata: editor Markdown con barra de formato, edición con undo/redo, preview aislado y sanitizado, conteos, copia/descarga y autoguardado opcional exclusivamente local. La vista previa usa Marked y DOMPurify como assets estáticos del mismo origen y los carga únicamente cuando se abre; no hay servicio remoto, API, subida ni coste por archivo/uso.
 - La prueba de aceptación comprobó texto Markdown con `<script>`: renderiza el contenido esperado de manera inerte, dentro de un `iframe sandbox` con CSP restrictiva. Se bloquean enlaces externos, imágenes remotas, formularios e incrustaciones en la vista previa.
 - Verificación candidata: suite completa **1.829/1.829**; release check de locales aprobado; build principal conserva **10.260 URLs**; build Growth600 **5.580 páginas** (154 herramientas × 36 idiomas + 36 portadas). Chrome móvil 390×844 en árabe: `lang=ar`, `dir=rtl`, `scrollWidth=390`, sin errores de consola. Solo cargan recursos del mismo origen y las bibliotecas de preview aparecen tras la acción de abrirla.
-- **Siguiente paso al retomar:** finalizar revisión del diff, abrir PR de #122, esperar CI, integrar solo con gates verdes, comprobar ambos despliegues y las 36 rutas/canonical/sitemap del hub. Después re-enviar `https://tools.usefulverse.com/sitemap.xml` desde Google Search Console (el sitemap anterior ya se reenvió, pero antes de publicar #122). Actualizar entonces recuentos públicos y checklist P/S. Siguiente ficha planificada: #127 Purchase Order Generator. No repetir DataForSEO ni modificar las 277 originales.
+- **Publicación:** PR #119 integrada en `eb944a6b5733412803b4090cd2e243af7ea51817`; CI `38129951887` correcto. No repetir DataForSEO ni modificar las 277 originales.
+
+## Implementación local · #127 Purchase Order Generator · 2026-10-11
+
+- Estado: C/F/E/X/L/B implementados y comprobados localmente; P/S todavía pendientes. No contar la candidata en el catálogo público hasta desplegar el hub y verificar sus 36 rutas.
+- Intención precompra diferenciada de factura/recibo: comprador, proveedor, fechas, moneda, hasta 50 partidas, subtotal, impuesto opcional, envío, términos, notas, impresión/PDF del navegador y CSV. Entrada numérica estricta con `BigInt`, redondeo por precisión de moneda y límites explícitos; CSV neutraliza fórmulas. Todo local, sin cuenta, API, subida, guardado automático ni coste por uso.
+- 36 copias estáticas de traducción automática; se conserva el formato numérico universal en el ejemplo para que el botón funcione en todos los idiomas. No se presentan como revisión nativa.
+- Pruebas focales **310/310** y suite completa **1.836/1.836** aprobadas; `npm run locale:release-check`; `npm run check` conserva **10.260 URLs**; build aislado del hub **5.616 páginas** (155 × 36 + 36 portadas).
+- Chrome local: ejemplo EN totaliza **$54.99**; AR conserva `lang=ar`, `dir=rtl`, `scrollWidth=390` en viewport 390 px y calcula la misma suma; consola sin errores. No se midió PageSpeed/Lighthouse.
+- **Siguiente:** abrir PR, esperar el workflow completo, integrar solo con gates verdes, desplegar el hub con el workflow aprobado y comprobar sitemap más las 36 URLs/canonical. Después actualizar inventario README y recuentos públicos. No reenviar sitemap a Google/Naver: no forma parte de este pedido.
 
 ## Estado público actual · 2026-10-10
 

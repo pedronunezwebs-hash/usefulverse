@@ -1,0 +1,42 @@
+export const purchaseOrderGeneratorEnglishCopy = Object.freeze({
+  name: 'Purchase Order Generator',
+  title: 'Purchase Order Generator Free | UsefulVerse',
+  description: 'Create and print a free purchase order with item totals, tax, shipping and terms. No account or upload; your draft stays in this browser.',
+  intro: 'Create a clear purchase order for a supplier, calculate item totals and prepare a print-ready copy. This is a purchasing document—not an invoice.',
+  howQuestion: 'How do I create a purchase order?',
+  howAnswer: 'Enter the buyer and supplier, dates, and items as description | quantity | unit price. Create the preview, review it, then print or download a CSV.',
+  privacyQuestion: 'Are my purchase order details uploaded or saved?',
+  privacyAnswer: 'No. This tool runs in your browser and does not save or upload the form. Any file you print or download contains the details you entered.',
+  howTo: [
+    'Enter the buyer, supplier, purchase order number and dates.',
+    'Add one item per line as description | quantity | unit price, then choose currency and optional tax or shipping.',
+    'Create the preview, check every detail, then print or download the CSV.',
+  ],
+  example: { label: 'Load a sample order', values: ['Copy paper | 2 | 12.50', 'Ink cartridge | 3 | 7.25'] },
+  actions: {
+    generate: 'Create purchase order', reset: 'Clear', example: 'Load example', result: 'Purchase order preview',
+    downloadCsv: 'Download CSV', print: 'Print / save as PDF',
+  },
+  fields: {
+    purchaseOrderNumber: 'Purchase order number', issueDate: 'Order date', deliveryDate: 'Requested delivery date', currency: 'Currency',
+    currencyHint: 'Supported currency codes: USD, EUR, GBP, CAD, AUD, JPY, CNY, INR, BRL, MXN, CHF and NZD.',
+    buyer: 'Buyer / company', buyerAddress: 'Buyer address', supplier: 'Supplier / vendor', supplierAddress: 'Supplier address',
+    items: 'Items', itemsHint: 'One per line: description | quantity | unit price. Up to 50 lines; quantities and prices support up to 6 decimal places.',
+    taxPercent: 'Tax rate (%)', shipping: 'Shipping amount', paymentTerms: 'Payment terms', deliveryTerms: 'Delivery instructions', notes: 'Notes',
+    description: 'Description', quantity: 'Quantity', unitPrice: 'Unit price', lineTotal: 'Line total', subtotal: 'Subtotal', tax: 'Tax', shippingLabel: 'Shipping', total: 'Order total',
+    privacyNote: 'Your entries stay in this browser and are not saved by this tool. The CSV and print view contain the details you entered.',
+    limitNote: 'This template does not determine tax rules, purchasing approval, contract terms or legal compliance. Review the order before sending it.',
+    previewTitle: 'Purchase order preview',
+  },
+  messages: {
+    ready: 'Purchase order preview is ready.', invalid: 'Check the required fields, dates, currency and item lines.',
+    createFirst: 'Create the purchase order preview first.', printBlocked: 'Allow the print window in your browser and try again.',
+    downloaded: 'CSV file downloaded.', downloadFailed: 'Could not prepare the CSV. Try again.', exampleLoaded: 'Sample order loaded.', cleared: 'Purchase order cleared.',
+  },
+  additionalFaqs: [
+    { question: 'What is the difference between a purchase order and an invoice?', answer: 'A purchase order records what a buyer is requesting from a supplier. An invoice requests payment for goods or services supplied. This tool creates a purchase order template, not an invoice.' },
+    { question: 'Can I add tax, shipping and item quantities?', answer: 'Yes. Add a quantity and unit price for each item, then enter an optional tax percentage and shipping amount. The preview calculates rounded line amounts and the order total in the selected currency.' },
+    { question: 'Is this purchase order generator free and private?', answer: 'Yes. It works in your browser without an account, upload or paid API. This page does not save the form; downloaded or printed copies contain the information you entered.' },
+  ],
+  sources: [],
+});

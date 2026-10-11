@@ -9,7 +9,7 @@ Fecha de investigación: 7 de octubre de 2026. Documento de planificación y che
 - [x] Comprobar la base de planificación: **277 herramientas y 36 idiomas**.
 - [x] Investigar demanda con un gasto acotado en DataForSEO y registrar los resultados reales.
 - [x] Consolidar variantes antes de fijar el nuevo catálogo, sin contar una dirección de conversión como otra herramienta.
-- [ ] Implementar las nuevas herramientas. **Progreso comprobado el 10 de octubre de 2026: 147 herramientas Growth600 públicas (424 incluyendo las 277 originales); 91/323 entradas de este checklist implementadas. #267 está publicada y verificada; quedan 232 candidatas válidas y una fila duplicada/reserva por sustituir.** Consultar `docs/growth600/PROGRESS.md` para la evidencia; disponibilidad pública no implica indexación.
+- [ ] Implementar las nuevas herramientas. **Progreso comprobado el 11 de octubre de 2026: 154 herramientas Growth600 públicas (431 incluyendo las 277 originales); la meta de 600 requiere 169 herramientas nuevas más. #122 Markdown Editor es la última publicación confirmada; #127 Purchase Order Generator está implementada localmente y pendiente de publicación.** Consultar `docs/growth600/PROGRESS.md` para la evidencia; disponibilidad pública no implica indexación.
 
 Snapshot consultado: rama `main`, commit `685f91adfc7818a54f6dc0a967e290d13137a3dd`. Catálogo: `src/catalog.mjs`; funciones y contratos representativos: `src/app.js`, módulos de lógica, `src/opportunity-tools.mjs`, `src/seo.mjs`, locales, build y documentación del repo. Se inspeccionaron los metadatos de las 277 herramientas y contratos clave para descartar duplicados; esto **no es una nueva auditoría funcional completa de las 277**.
 
@@ -3185,7 +3185,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 127 · Purchase Order Generator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `purchase-order-generator`**
+- [ ] **C/F/E/X/L/B/P/S completos — `purchase-order-generator`** (C/F/E/X/L/B locales completos; P/S pendientes)
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/purchase-order-generator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `purchase order template` — 6.600 búsquedas/mes US/en, KD 0; nivel B. CPC 7.3 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Proveedor, pedido, partidas, cantidades, moneda y condiciones; totales, numeración y print. Orden de compra, no factura ni recibo.
@@ -3196,6 +3196,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `purchase order generator` — 390/mes US/en; KD 8.
   - `purchase order template free online`; `purchase order template with example`; `purchase order template no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Checkpoint local (2026-10-11; no publicado):** formulario y generador precompra con partidas, totales, impresión/PDF del navegador y CSV local seguro; sin API, servidor, cuenta ni almacenamiento. 36 copias estáticas sencillas; ejemplo ejecutable con números universales. Suite completa 1.836/1.836, gate de idiomas aprobado, build principal 10.260 URLs y build del hub 5.616 páginas; Chrome EN/AR RTL comprobó total $54.99 y ancho 390 px sin errores de consola. Faltan PR/CI, deploy del hub y verificación de 36 rutas/canonical/sitemap para marcar P/S.
 
 ### 181 · Rtf Converter
 

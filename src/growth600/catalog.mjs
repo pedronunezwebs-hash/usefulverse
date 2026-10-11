@@ -1488,6 +1488,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/work-order-generator/logic.mjs',
   },
   {
+    id: 'purchase-order-generator',
+    category: 'productivity',
+    type: 'generator',
+    primaryIntent: 'purchase order template',
+    secondaryIntents: ['purchase order generator', 'purchase order form', 'printable purchase order template', 'purchase order with item totals'],
+    functions: ['create a print-ready purchase order with buyer, supplier, order number, dates, currency and terms', 'enter up to 50 line items with quantities and unit prices, then calculate rounded line totals, optional tax, shipping and the order total', 'print or save a PDF using the browser or export a spreadsheet-safe CSV', 'work locally without account, upload, cloud storage or paid service'],
+    acceptance: 'Two copies of an item at 12.50 and three at 7.25 produce a 46.75 subtotal; at 8% tax and 4.50 shipping, the total is 54.99 USD.',
+    boundary: 'Purchase request template, not an invoice, receipt, contract, approval workflow, tax determination or legal document. Tax and shipping are user-entered; verify currency, tax rules, terms and supplier details before sending. Supports USD, EUR, GBP, CAD, AUD, JPY, CNY, INR, BRL, MXN, CHF and NZD; 1–50 lines, up to 6 decimals for quantity and unit price. No account, API, upload or automatic saving; processing stays in the browser.',
+    relatedExistingIds: ['invoice-generator', 'work-order-generator'],
+    logicModule: './tools/purchase-order-generator/logic.mjs',
+  },
+  {
     id: 'hijri-calendar-converter',
     category: 'date-time',
     type: 'converter',

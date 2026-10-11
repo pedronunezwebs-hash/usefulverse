@@ -11,7 +11,7 @@ Plan y registro vivo de implementación. La última herramienta publicada es #12
 Coste real DataForSEO: 0,24852 USD. No autoriza nuevas llamadas al reanudar.
 260 candidatas tienen al menos 1.000 búsquedas/mes en la query medida US/en; 63 tienen demanda media (260–880/mes). No son visitas garantizadas ni una previsión de CPM.
 
-Último deploy confirmado: #120 Interval Timer; 152 herramientas Growth600 en el hub, 5.508 URLs (152 × 36 + 36 portadas), y 10.260 URLs en el sitio principal. Total público: 429 herramientas y 15.768 URLs. PR #116, CI y ambos despliegues confirmados; publicar no equivale a indexación.
+Último deploy confirmado: #122 Markdown Editor, PR #119. El hub tiene 154 herramientas Growth600 y 5.580 URLs (154 × 36 + 36 portadas); el sitemap principal tiene 10.260 URLs. Total público: 431 herramientas y 15.840 URLs. La siguiente candidata #127 Purchase Order Generator está en implementación local; no contarla hasta publicar y comprobar el sitemap. Publicar no equivale a indexación.
 
 Siguiente candidata por retomar: #121 Logic Grid Puzzle. No se repite investigación de DataForSEO ni se mide PageSpeed/Lighthouse sin petición expresa.
 

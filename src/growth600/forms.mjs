@@ -86,6 +86,7 @@ export function renderGrowthForm(toolId, copy) {
     'csv-to-pdf': ['file', 'separator', 'encoding', 'hasHeader', 'pageSize', 'orientation', 'margin', 'accuracyNote', 'limitNote', 'resultCount', 'tableLabel'],
     'round-robin-tournament-generator': ['participants', 'participantsHint', 'doubleRound', 'shuffle', 'scoringNote', 'limitNote', 'standingsLabel', 'rank', 'team', 'played', 'wins', 'draws', 'losses', 'goalsFor', 'goalsAgainst', 'goalDifference', 'points', 'round', 'leg', 'home', 'away', 'bye', 'homeScore', 'awayScore', 'fixtureTableLabel'],
     'work-order-generator': ['workOrderNumber', 'issuedDate', 'scheduledDate', 'completedDate', 'status', 'customer', 'contact', 'location', 'assignedTo', 'title', 'details', 'tasks', 'tasksHint', 'materials', 'materialsHint', 'materialsFormat', 'labor', 'laborHint', 'laborFormat', 'notes', 'limitNote', 'privacyNote', 'previewTitle', 'checklist', 'materialsLabel', 'laborLabel', 'description', 'quantity', 'unit', 'activity', 'hours', 'totalLaborHours'],
+    'purchase-order-generator': ['purchaseOrderNumber', 'issueDate', 'deliveryDate', 'currency', 'currencyHint', 'buyer', 'buyerAddress', 'supplier', 'supplierAddress', 'items', 'itemsHint', 'taxPercent', 'shipping', 'paymentTerms', 'deliveryTerms', 'notes', 'description', 'quantity', 'unitPrice', 'lineTotal', 'subtotal', 'tax', 'shippingLabel', 'total', 'privacyNote', 'limitNote', 'previewTitle'],
     slitherlink: ['size', 'board', 'rules', 'accuracyNote', 'row', 'column', 'horizontal', 'vertical'],
     'peg-solitaire': ['board', 'rules', 'accuracyNote', 'hole', 'row', 'column', 'peg', 'empty'],
     futoshiki: ['size', 'difficulty', 'board', 'rules', 'accuracyNote', 'cell', 'row', 'column'],
@@ -248,6 +249,7 @@ export function renderGrowthForm(toolId, copy) {
     'csv-to-pdf': ['preview', 'reset', 'example', 'print', 'result'],
     'round-robin-tournament-generator': ['generate', 'reset', 'example', 'downloadCsv', 'print', 'result'],
     'work-order-generator': ['generate', 'reset', 'example', 'downloadCsv', 'print', 'result', 'open', 'inProgress', 'completed'],
+    'purchase-order-generator': ['generate', 'reset', 'example', 'downloadCsv', 'print', 'result'],
     slitherlink: ['newGame', 'checkBoard', 'hint', 'undo', 'clearMarks', 'rules', 'small', 'medium', 'large'],
     'peg-solitaire': ['newGame', 'hint', 'undo', 'rules', 'pegsRemaining'],
     futoshiki: ['newGame', 'checkBoard', 'hint', 'undo', 'rules', 'small', 'medium', 'large', 'easy', 'regular', 'hard'],
@@ -2370,6 +2372,33 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${submit('generate')}${button('example', actions.example, 'secondary')}${button('reset', actions.reset, 'secondary')}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.previewTitle)}</h2><div data-work-order-preview></div><div class="actions">${button('downloadCsv', actions.downloadCsv, 'secondary')}${button('print', actions.print, 'secondary')}</div></section>
+  </form>`, copy);
+
+  if (toolId === 'purchase-order-generator') return attachCopy(`<form id="tool-form" novalidate>
+    <div class="form-grid">
+      ${label('po-number', fields.purchaseOrderNumber, '<input id="po-number" name="number" type="text" maxlength="48" autocomplete="off">')}
+      ${label('po-issued', fields.issueDate, '<input id="po-issued" name="issuedDate" type="date" required>')}
+      ${label('po-delivery-date', fields.deliveryDate, '<input id="po-delivery-date" name="deliveryDate" type="date">')}
+      ${label('po-currency', fields.currency, `<select id="po-currency" name="currency">${['USD', 'EUR', 'GBP', 'CAD', 'AUD', 'JPY', 'CNY', 'INR', 'BRL', 'MXN', 'CHF', 'NZD'].map((code) => `<option value="${code}">${code}</option>`).join('')}</select>`)}
+      ${label('po-buyer', fields.buyer, '<input id="po-buyer" name="buyer" type="text" maxlength="240" required autocomplete="organization">')}
+      ${label('po-supplier', fields.supplier, '<input id="po-supplier" name="supplier" type="text" maxlength="240" required autocomplete="off">')}
+    </div>
+    ${label('po-buyer-address', fields.buyerAddress, '<textarea id="po-buyer-address" name="buyerAddress" rows="2" maxlength="2400" autocomplete="street-address"></textarea>')}
+    ${label('po-supplier-address', fields.supplierAddress, '<textarea id="po-supplier-address" name="supplierAddress" rows="2" maxlength="2400"></textarea>')}
+    ${label('po-items', fields.items, '<textarea id="po-items" name="items" rows="6" maxlength="16000" required spellcheck="false"></textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.itemsHint)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.currencyHint)}</p>
+    <div class="form-grid">
+      ${label('po-tax', fields.taxPercent, '<input id="po-tax" name="taxPercent" type="number" min="0" max="100" step="0.000001" inputmode="decimal">')}
+      ${label('po-shipping', fields.shipping, '<input id="po-shipping" name="shipping" type="number" min="0" max="1000000000" step="0.000001" inputmode="decimal">')}
+      ${label('po-payment-terms', fields.paymentTerms, '<input id="po-payment-terms" name="paymentTerms" type="text" maxlength="500">')}
+      ${label('po-delivery-terms', fields.deliveryTerms, '<input id="po-delivery-terms" name="deliveryTerms" type="text" maxlength="500">')}
+    </div>
+    ${label('po-notes', fields.notes, '<textarea id="po-notes" name="notes" rows="3" maxlength="2400"></textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p><p class="hint">${escapeGrowthHtml(fields.limitNote)}</p>
+    <div class="actions">${submit('generate')}${button('example', actions.example, 'secondary')}${button('reset', actions.reset, 'secondary')}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.previewTitle)}</h2><div data-purchase-order-preview></div><div class="actions">${button('downloadCsv', actions.downloadCsv, 'secondary')}${button('print', actions.print, 'secondary')}</div></section>
   </form>`, copy);
 
   if (toolId === 'chemical-equation-balancer') return attachCopy(`<form id="tool-form" novalidate>
