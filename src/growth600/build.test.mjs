@@ -100,12 +100,15 @@ import { imageSplitterEnglishCopy } from './locales/image-splitter.en.mjs';
 import { imageSplitterArabicCopy } from './locales/image-splitter.ar.mjs';
 import { inductorCalculatorEnglishCopy } from './locales/inductor-calculator.en.mjs';
 import { centripetalForceCalculatorEnglishCopy } from './locales/centripetal-force-calculator.en.mjs';
+import { writingTrackerEnglishCopy } from './locales/writing-tracker.en.mjs';
+import writingTrackerCopies from './locales/writing-tracker-final.mjs';
 
 const actions = { calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', updateProgress: 'Record progress', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', feet: 'Feet', inches: 'Inches', liters: 'Liters', cubicFeet: 'Cubic feet', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Computer', twoPlayers: 'Two players', privacyNote: 'Private on this device.', riseMode: 'Rise', pitchMode: 'Pitch' };
 const messages = { copied: 'Copied.', copyUnavailable: 'Copy unavailable.', calculated: 'Done.', sameSize: 'Sizes match.', checkInputs: 'Check entries.', diameter: 'Outside diameter', sidewall: 'Sidewall height', circumference: 'Circumference', revolutions: 'Revolutions per kilometre', diameterDifference: 'Diameter difference', diameterChange: 'Diameter change', groundClearance: 'Ground-clearance change', actualSpeed: 'Actual speed estimate', area: 'Area', volume: 'Volume', volumePerContainer: 'Volume per container', totalVolume: 'Total soil volume', orderVolume: 'Order volume', estimatedWeight: 'Estimated weight', bagsToBuy: 'Bags to buy', invalidFormula: 'Check formula.', atomCount: 'atoms', molarMass: 'Molar mass', estimateOnly: 'Estimate only.', currentPayment: 'Current payment', newPayment: 'New payment', paymentDifference: 'Difference', currentTotal: 'Current total', newTotal: 'New total', estimatedDifference: 'Estimated savings', breakEven: 'Break-even', noBreakEven: 'No break-even', monthCount: '{count} months', privatePair: '{giver} gives to {recipient}', allRevealed: 'All revealed.', drawReady: 'Ready.', checkNamesAndRules: 'Check entries.', downloaded: 'Downloaded.', pit: 'Pit', seeds: 'seeds', playerOne: 'Player one', playerTwo: 'Player two', playerOneWins: 'Player one wins.', playerTwoWins: 'Player two wins.', tie: 'Tie.', gameOver: 'Game over.', turn: '{player} turn.', effectiveRun: 'Horizontal run to ridge', rafterLength: 'Geometric rafter length', pitch: 'Pitch (rise per 12)', roofAngle: 'Roof angle', plumbCut: 'Plumb-cut angle', overhangRun: 'Horizontal overhang' };
 function toolCopy(tool, language) {
   if (tool.id === 'inductor-calculator') return structuredClone(inductorCalculatorEnglishCopy);
   if (tool.id === 'centripetal-force-calculator') return structuredClone(centripetalForceCalculatorEnglishCopy);
+  if (tool.id === 'writing-tracker') return structuredClone(language === 'en' ? writingTrackerEnglishCopy : writingTrackerCopies[language]);
   if (tool.id === 'transformer-calculator') return transformerCalculatorEnglishCopy;
   if (tool.id === 'image-splitter') return structuredClone(language === 'en' ? imageSplitterEnglishCopy : language === 'ar' ? imageSplitterArabicCopy : imageSplitterCopies[language]);
   if (tool.id === 'stoichiometry-calculator') return structuredClone(stoichiometryCopies[language]);
@@ -896,7 +899,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   const controllerBundles = Object.fromEntries(growthPilotTools.map((tool) => [tool.id, `document.querySelector('[data-tool="${tool.id}"]');`]));
   const workerBundles = { 'image-upscaler-worker': 'self.addEventListener("message",()=>{});' };
   const extraAssets = { 'models-test/config.json': '{"upscale":2}', 'models-test/onnx/model.onnx': Buffer.from([1, 2, 3]) };
-  const toolStyles = { 'boolean-algebra-calculator': '.boolean-algebra-table-wrap{overflow:auto}', 'har-viewer': '.har-viewer__table{border-collapse:collapse}', 'robots-txt-tester': '.robots-txt-tester__decision{display:grid}', 'binary-base64-tool': '.binary-base64-tool img{max-width:100%}', 'csv-editor': '.csv-editor__table-scroll{overflow:auto}', 'logic-grid-puzzle': '.logic-grid-table{table-layout:fixed}', 'markdown-editor': '.markdown-editor{max-width:70rem}', 'purchase-order-generator': '.purchase-order-table-scroll{overflow:auto}', 'eigenvalue-calculator': '.eigenvalue-results__list{display:grid;gap:1rem}', 'bond-calculator': '[data-bond-chart]{display:block;width:100%}', 'waist-to-hip-ratio-calculator': '.waist-to-hip-ratio-calculator .result{font-variant-numeric:tabular-nums}', 'hebrew-calendar-converter': '.hebrew-calendar-converter fieldset{display:grid}', 'absolute-value-calculator': '.absolute-value-calculator fieldset{display:grid}', 'rc-time-constant-calculator': '.rc-time-constant-calculator [data-rc-chart]{display:block;width:100%}', 'reverse-mortgage-calculator': '.reverse-mortgage-calculator table{overflow:auto}' };
+  const toolStyles = { 'boolean-algebra-calculator': '.boolean-algebra-table-wrap{overflow:auto}', 'har-viewer': '.har-viewer__table{border-collapse:collapse}', 'robots-txt-tester': '.robots-txt-tester__decision{display:grid}', 'binary-base64-tool': '.binary-base64-tool img{max-width:100%}', 'csv-editor': '.csv-editor__table-scroll{overflow:auto}', 'logic-grid-puzzle': '.logic-grid-table{table-layout:fixed}', 'markdown-editor': '.markdown-editor{max-width:70rem}', 'purchase-order-generator': '.purchase-order-table-scroll{overflow:auto}', 'eigenvalue-calculator': '.eigenvalue-results__list{display:grid;gap:1rem}', 'bond-calculator': '[data-bond-chart]{display:block;width:100%}', 'waist-to-hip-ratio-calculator': '.waist-to-hip-ratio-calculator .result{font-variant-numeric:tabular-nums}', 'hebrew-calendar-converter': '.hebrew-calendar-converter fieldset{display:grid}', 'absolute-value-calculator': '.absolute-value-calculator fieldset{display:grid}', 'rc-time-constant-calculator': '.rc-time-constant-calculator [data-rc-chart]{display:block;width:100%}', 'reverse-mortgage-calculator': '.reverse-mortgage-calculator table{overflow:auto}', 'writing-tracker': '.writing-tracker [data-writing-history]{display:grid;gap:.5rem}' };
   toolStyles.slitherlink = '.slitherlink-board{display:grid}';
   const fixtureCopyByLocale = { en: englishGrowthCopy, es: spanishGrowthCopy, fr: frenchGrowthCopy, pt: portugueseGrowthCopy, de: germanGrowthCopy, ja: japaneseGrowthCopy, ko: koreanGrowthCopy, id: indonesianGrowthCopy, hi: hindiGrowthCopy, ar: arabicGrowthCopy, zh: simplifiedChineseGrowthCopy, bn: bengaliGrowthCopy, ru: russianGrowthCopy, ur: urduGrowthCopy, tr: turkishGrowthCopy, vi: vietnameseGrowthCopy, it: italianGrowthCopy, zh_tw: traditionalChineseGrowthCopy, bg: bulgarianGrowthCopy, ca: catalanGrowthCopy, nl: dutchGrowthCopy, el: greekGrowthCopy, ms: malayGrowthCopy, pl: polishGrowthCopy, sv: swedishGrowthCopy, th: thaiGrowthCopy, uk: ukrainianGrowthCopy, sw: swahiliGrowthCopy, mr: marathiGrowthCopy, te: teluguGrowthCopy, ha: hausaGrowthCopy, tl: filipinoGrowthCopy, ta: tamilGrowthCopy, fa: persianGrowthCopy, am: amharicGrowthCopy, gu: gujaratiGrowthCopy };
   for (const locale of smallLocales) fixtureCopyByLocale[locale.key] = {
@@ -932,6 +935,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
     'dilution-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'dilution-calculator'), locale.key),
     'ohms-law-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'ohms-law-calculator'), locale.key),
     'chemical-equation-balancer': toolCopy(growthPilotTools.find(({ id }) => id === 'chemical-equation-balancer'), locale.key),
+    'writing-tracker': toolCopy(growthPilotTools.find(({ id }) => id === 'writing-tracker'), locale.key),
     'gear-ratio-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'gear-ratio-calculator'), locale.key),
     'density-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'density-calculator'), locale.key),
     'kinetic-energy-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'kinetic-energy-calculator'), locale.key),
@@ -1044,6 +1048,11 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   assert.ok(slitherlinkStylePath, 'Slitherlink route loads its own stylesheet');
   assert.match(await readFile(join(outputDir, slitherlinkStylePath), 'utf8'), /slitherlink-board/u);
   assert.doesNotMatch(enPage, /slitherlink\.[a-f0-9]+\.css/u, 'Slitherlink-only CSS is not loaded on unrelated pages');
+  const writingTrackerPage = await readFile(join(outputDir, 'tools/writing-tracker/index.html'), 'utf8');
+  const writingTrackerStylePath = writingTrackerPage.match(/href="(\/assets\/writing-tracker\.[a-f0-9]+\.css)"/u)?.[1];
+  assert.ok(writingTrackerStylePath, 'Writing Tracker route loads its own content-hashed stylesheet');
+  assert.match(await readFile(join(outputDir, writingTrackerStylePath), 'utf8'), /data-writing-history/u);
+  assert.doesNotMatch(enPage, /writing-tracker\.[a-f0-9]+\.css/u, 'Writing Tracker CSS is not loaded on unrelated pages');
   assert.match(robotsPage, /maxlength="200000"/u);
   assert.match(robotsPage, /not a complete emulator/u);
   assert.match(await readFile(join(outputDir, 'ar/tools/robots-txt-tester/index.html'), 'utf8'), /<html lang="ar" dir="rtl">/u);
@@ -1218,7 +1227,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   // Top-level entries include shared and tool-only stylesheets, one controller
   // per tool, the model worker, the models directory (nested contents), and
   // the dedicated stylesheet for each page that needs one.
-  assert.equal(files.length, growthPilotTools.length + 19);
+  assert.equal(files.length, growthPilotTools.length + 20);
   assert.ok((await stat(join(outputDir, 'assets', files[0]))).isFile());
 });
 

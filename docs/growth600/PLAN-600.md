@@ -9,7 +9,7 @@ Fecha de investigación: 7 de octubre de 2026. Documento de planificación y che
 - [x] Comprobar la base de planificación: **277 herramientas y 36 idiomas**.
 - [x] Investigar demanda con un gasto acotado en DataForSEO y registrar los resultados reales.
 - [x] Consolidar variantes antes de fijar el nuevo catálogo, sin contar una dirección de conversión como otra herramienta.
-- [ ] Implementar las nuevas herramientas. **Estado comprobado el 11 de octubre de 2026: producción tiene 164 herramientas Growth600 y 277 originales; los sitemaps públicos contienen 5.940 + 10.260 URLs. Car Depreciation Calculator (#118) ya está publicada. Esta rama implementa Stock Profit Calculator (#142) y Pension Calculator (#147) como candidatas 165–166; build local previsto de 6.012 URLs para el hub. Ambas siguen sin publicar.** El progreso del plan se cuenta por candidatas únicas de las 323 fichas; consultar `docs/growth600/PROGRESS.md` y no inferir indexación del despliegue.
+- [ ] Implementar las nuevas herramientas. **Estado comprobado el 12 de octubre de 2026: 173 herramientas Growth600 desplegadas y 277 originales protegidas; sitemaps públicos de 6.264 + 10.260 URLs. Restan 150 candidatas para llegar a 600 herramientas totales; consultar `docs/growth600/PROGRESS.md`.** El progreso del plan se cuenta por candidatas únicas de las 323 fichas; no inferir indexación del despliegue.
 
 Snapshot consultado: rama `main`, commit `685f91adfc7818a54f6dc0a967e290d13137a3dd`. Catálogo: `src/catalog.mjs`; funciones y contratos representativos: `src/app.js`, módulos de lógica, `src/opportunity-tools.mjs`, `src/seo.mjs`, locales, build y documentación del repo. Se inspeccionaron los metadatos de las 277 herramientas y contratos clave para descartar duplicados; esto **no es una nueva auditoría funcional completa de las 277**.
 
@@ -3980,13 +3980,13 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 312 · Writing Tracker
 
-- [ ] **C/F/E/X/L/B/P/S completos — `writing-tracker`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/writing-tracker/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `writing-tracker`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/writing-tracker/` + otras 35 rutas localizadas; sitemap público actualizado y comprobado el 12-oct-2026. Evidencia en `docs/growth600/PROGRESS.md`.
 - **Demanda:** `writing tracker` — 390 búsquedas/mes US/en, KD 9; nivel C. CPC 9.7 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Sesiones y proyectos, metas de palabras, tendencia y exportación; historial, no repetir un contador instantáneo de texto.
-- **Prueba de aceptación específica:** Sesionesnosuman dosveces
+- **Prueba de aceptación específica:** una sesión editada conserva su ID y no cuenta dos veces; probar metas, fechas, límite de historial e importación JSON acotada.
 - **Frontera con otras herramientas:** word-counter: historialdeproyectos no conteoinstantáneo. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** motor local; historial de sesión solo en la pestaña de forma predeterminada y persistencia optativa explícita en localStorage; importación/exportación JSON local con validación y tamaño limitado. Sin cuenta, servicio ni API.
 - **Consultas secundarias del mismo propietario:**
   - `daily writing tracker` — 10/mes US/en; KD —.
   - `writing tracker free online`; `writing tracker with example`; `writing tracker no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

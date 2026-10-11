@@ -62,6 +62,7 @@ export function renderGrowthForm(toolId, copy) {
     'torque-calculator': ['mode', 'solveTorque', 'solveForce', 'solveArm', 'force', 'forceUnit', 'newton', 'kilonewton', 'poundForce', 'arm', 'distanceUnit', 'meters', 'centimeters', 'millimeters', 'feet', 'inches', 'angle', 'torque', 'torqueUnit', 'newtonMeters', 'kilonewtonMeters', 'poundFeet', 'poundInches', 'direction', 'clockwise', 'counterclockwise', 'perpendicularForce', 'momentArm', 'accuracyNote'],
     'inductor-calculator': ['mode', 'inductanceMode', 'turnsMode', 'turns', 'targetInductance', 'diameter', 'length', 'wireDiameter', 'dimensionUnit', 'millimeters', 'centimeters', 'inches', 'accuracyNote', 'turnsResult', 'inductanceMicrohenries', 'inductanceMillihenries', 'inductanceHenries', 'targetValue', 'fitCheck'],
     'centripetal-force-calculator': ['mass', 'massUnit', 'kilograms', 'grams', 'pounds', 'radius', 'lengthUnit', 'meters', 'centimeters', 'millimeters', 'feet', 'inches', 'inputMode', 'speedMode', 'rotationMode', 'speed', 'speedUnit', 'metersPerSecond', 'kilometersPerHour', 'milesPerHour', 'frequency', 'frequencyUnit', 'revolutionsPerMinute', 'hertz', 'accuracyNote', 'centripetalForce', 'poundForce', 'acceleration', 'gForce', 'speedResult', 'frequencyResult'],
+    'writing-tracker': ['projectName', 'projectGoal', 'projectSelect', 'date', 'words', 'minutes', 'note', 'persistConsent', 'privacyNote', 'storageNote', 'historyLabel', 'trendLabel', 'todayLabel', 'weekLabel', 'sessionCount', 'goalProgress', 'noProjects', 'noSessions', 'backupFile', 'backupHint', 'selectedProject', 'editSession', 'deleteSession', 'wordsUnit', 'minutesUnit'],
     'beam-deflection-calculator': ['support', 'simplySupported', 'cantilever', 'loadCase', 'pointLoad', 'uniformLoad', 'span', 'lengthUnit', 'meters', 'centimeters', 'millimeters', 'inches', 'feet', 'load', 'forceUnit', 'newtons', 'kilonewtons', 'poundsForce', 'modulus', 'modulusUnit', 'pascals', 'megapascals', 'gigapascals', 'psi', 'ksi', 'inertia', 'inertiaUnit', 'mm4', 'cm4', 'm4', 'in4', 'ft4', 'loadUnitHint', 'accuracyNote', 'sourceNote'],
     'led-resistor-calculator': ['supplyVoltage', 'forwardVoltage', 'ledCount', 'targetCurrentMa', 'standardSeries', 'e12', 'e24', 'accuracyNote'],
     'flow-rate-calculator': ['mode', 'solveFlow', 'solveArea', 'solveVelocity', 'estimateFillTime', 'area', 'areaUnit', 'squareMeters', 'squareCentimeters', 'squareFeet', 'squareInches', 'velocity', 'velocityUnit', 'metersPerSecond', 'centimetersPerSecond', 'metersPerMinute', 'feetPerSecond', 'flowRate', 'flowUnit', 'cubicMetersPerSecond', 'litersPerSecond', 'litersPerMinute', 'cubicMetersPerHour', 'gallonsPerMinute', 'tankVolume', 'volumeUnit', 'cubicMeters', 'liters', 'usGallons', 'timeUnit', 'seconds', 'minutes', 'hours', 'accuracyNote'],
@@ -242,6 +243,7 @@ export function renderGrowthForm(toolId, copy) {
     'torque-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'inductor-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'centripetal-force-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'writing-tracker': ['addProject', 'saveSession', 'updateSession', 'reset', 'example', 'export', 'import', 'copy', 'result', 'showMore'],
     'beam-deflection-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'led-resistor-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'flow-rate-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'solved'],
@@ -1285,6 +1287,30 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'writing-tracker') return attachCopy(`<form id="tool-form" class="writing-tracker" novalidate>
+    <fieldset><legend>${escapeGrowthHtml(fields.selectedProject)}</legend><div class="calculator-grid">
+      ${label('writing-project-name', fields.projectName, '<input id="writing-project-name" name="projectName" type="text" maxlength="80" autocomplete="off" required>')}
+      ${label('writing-project-goal', fields.projectGoal, '<input id="writing-project-goal" name="projectGoal" type="number" min="1" max="100000000" step="1" inputmode="numeric">')}
+    </div><button class="button button--secondary" type="button" data-action="add-project">${escapeGrowthHtml(actions.addProject)}</button><label>${escapeGrowthHtml(fields.projectSelect)}<select name="projectSelect" data-project-select required></select></label></fieldset>
+    <div class="calculator-grid">
+      ${label('writing-date', fields.date, '<input id="writing-date" name="date" type="date" required>')}
+      ${label('writing-words', fields.words, '<input id="writing-words" name="words" type="number" min="0" max="10000000" step="1" inputmode="numeric" value="0" required>')}
+      ${label('writing-minutes', fields.minutes, '<input id="writing-minutes" name="minutes" type="number" min="1" max="1440" step="1" inputmode="numeric">')}
+      ${label('writing-note', fields.note, '<input id="writing-note" name="note" type="text" maxlength="300" autocomplete="off">')}
+    </div><input type="hidden" name="sessionId" value="">
+    <p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p><p class="hint">${escapeGrowthHtml(fields.storageNote)}</p>
+    <label class="check-row"><input type="checkbox" name="persistConsent"> ${escapeGrowthHtml(fields.persistConsent)}</label>
+    <div class="actions">${button('example', actions.example, 'secondary')}${button('reset', actions.reset, 'secondary')}<button class="button" type="submit" data-session-submit>${escapeGrowthHtml(actions.saveSession)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2>
+      <div class="calculator-grid"><p><strong>${escapeGrowthHtml(fields.todayLabel)}</strong><br><span data-today-words>0</span> ${escapeGrowthHtml(fields.wordsUnit)}</p><p><strong>${escapeGrowthHtml(fields.weekLabel)}</strong><br><span data-week-words>0</span> ${escapeGrowthHtml(fields.wordsUnit)}</p><p><strong>${escapeGrowthHtml(fields.sessionCount)}</strong><br><span data-week-sessions>0</span></p><p data-goal-wrap hidden><strong>${escapeGrowthHtml(fields.goalProgress)}</strong><br><progress data-goal-progress max="100" value="0"></progress> <span data-goal-copy></span></p></div>
+      <h3>${escapeGrowthHtml(fields.trendLabel)}</h3><ol data-writing-trend></ol>
+      <div class="actions">${button('copy', actions.copy, 'secondary')}${button('export', actions.export, 'secondary')}${button('import', actions.import, 'secondary')}<input class="visually-hidden" type="file" name="backupFile" accept="application/json,.json"></div>
+      <p class="hint">${escapeGrowthHtml(fields.backupHint)}</p><h3>${escapeGrowthHtml(fields.historyLabel)}</h3><ol data-writing-history></ol><button class="button button--secondary" type="button" data-action="show-more" hidden>${escapeGrowthHtml(actions.showMore)}</button>
+      <p data-writing-empty>${escapeGrowthHtml(fields.noProjects)}</p>
+    </section>
   </form>`, copy);
 
   if (toolId === 'repeating-decimal-to-fraction') return attachCopy(`<form id="tool-form" class="repeating-decimal-to-fraction" novalidate>

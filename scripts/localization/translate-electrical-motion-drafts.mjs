@@ -4,10 +4,12 @@ import { localeEntries } from '../../src/locales.mjs';
 import { inductorCalculatorEnglishCopy } from '../../src/growth600/locales/inductor-calculator.en.mjs';
 import { centripetalForceCalculatorEnglishCopy } from '../../src/growth600/locales/centripetal-force-calculator.en.mjs';
 import torqueCalculatorCopies from '../../src/growth600/locales/torque-calculator.mjs';
+import { writingTrackerEnglishCopy } from '../../src/growth600/locales/writing-tracker.en.mjs';
 
 const jobs = [
   ['inductor-calculator', inductorCalculatorEnglishCopy],
   ['centripetal-force-calculator', centripetalForceCalculatorEnglishCopy],
+  ['writing-tracker', writingTrackerEnglishCopy],
 ];
 const omitted = new Set(['copyLanguage', 'localizationStatus', 'localizationAcceptedBy', 'localizationAcceptedAt', 'title']);
 const freeWord = { es: 'gratis', fr: 'gratuit', pt: 'grátis', de: 'kostenlos', ja: '無料', ko: '무료', id: 'gratis', hi: 'मुफ़्त', ar: 'مجانا', zh: '免费', bn: 'বিনামূল্যে', ru: 'бесплатно', ur: 'مفت', tr: 'ücretsiz', vi: 'miễn phí', it: 'gratis', zh_tw: '免費', bg: 'безплатно', ca: 'gratuït', nl: 'gratis', el: 'δωρεάν', ms: 'percuma', pl: 'za darmo', sv: 'gratis', th: 'ฟรี', uk: 'безкоштовно', sw: 'bure', mr: 'मोफत', te: 'ఉచితం', ha: 'kyauta', tl: 'libre', ta: 'இலவசம்', fa: 'رایگان', am: 'ነፃ', gu: 'મફત' };

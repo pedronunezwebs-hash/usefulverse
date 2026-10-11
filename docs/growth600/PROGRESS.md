@@ -4,11 +4,11 @@
 
 ## Estado público actual · 2026-10-12
 
-- **Producción:** 172 herramientas Growth600 en 36 locales, **6.228 URLs** en `https://tools.usefulverse.com/sitemap.xml`; catálogo principal protegido de 277 herramientas y 10.260 URLs. Total combinado: **449 herramientas y 16.488 URLs**. La presencia en sitemap no demuestra indexación.
-- El 12-oct se desplegaron directamente a Cloudflare Pages, proyecto `usefulverse-tools`, rama `main`, Stock Profit Calculator, Pension Calculator, Customer Lifetime Value Calculator, Polar Graphing Calculator, Boolean Algebra Calculator, Week Number Calculator, Inductor Calculator y Centripetal Force Calculator, además de las correcciones incluidas en el checkout. No hubo push a `main`, workflow de GitHub Actions ni consumo de sus minutos. Deployment: `https://88b780a1.usefulverse-tools.pages.dev`.
-- Antes de publicar este lote: `npm test` **1.965/1.965**; `npm run locale:release-check` aprobado; `npm run check` del sitio principal conservó **10.260 URLs**; build Growth600 **6.228 URLs / 6.474 archivos**, sin archivos superiores al límite individual de Pages; `git diff --check` limpio.
-- Tras publicar: sitemap HTTP 200 con **6.228 URLs únicas** y exactamente 36 rutas por cada herramienta nueva. Para ambas, EN/ES/AR/JA responden HTTP 200, con formulario, `lang` y canonical autorreferente. La rama fuente `codex/growth600-stock-profit-20261011` quedó respaldada en GitHub en `a29a996`; no hubo workflow de Actions (la lista de ejecuciones de la rama sigue vacía). No se afirma rastreo/indexación.
-- README URL inventory generado desde los builds: **10.260 URLs principales y 6.228 del hub**. No se midió PageSpeed/Lighthouse.
+- **Producción:** 173 herramientas Growth600 en 36 locales, **6.264 URLs** en `https://tools.usefulverse.com/sitemap.xml`; catálogo principal protegido de 277 herramientas y 10.260 URLs. Total combinado: **450 herramientas y 16.524 URLs**. La presencia en sitemap no demuestra indexación.
+- El 12-oct se desplegaron directamente a Cloudflare Pages, proyecto `usefulverse-tools`, rama `main`, Stock Profit Calculator, Pension Calculator, Customer Lifetime Value Calculator, Polar Graphing Calculator, Boolean Algebra Calculator, Week Number Calculator, Inductor Calculator, Centripetal Force Calculator y Writing Tracker. No hubo push a `main`, workflow de GitHub Actions ni consumo de sus minutos. Últimos deployments: `https://88b780a1.usefulverse-tools.pages.dev` (#310–311) y `https://b6d8b527.usefulverse-tools.pages.dev` (#312).
+- Antes de publicar #312: `npm test` **1.972/1.972**; `npm run locale:release-check` aprobado; build Growth600 **6.264 páginas / 6.512 archivos**, 183.750.484 bytes; build estático, sin Functions ni APIs. `git diff --check` limpio. No se ejecutó PageSpeed/Lighthouse.
+- Tras publicar #312: sitemap HTTP 200 con **6.264 URLs únicas** y exactamente 36 rutas de Writing Tracker. EN/ES/AR/JA responden HTTP 200 con formulario, idioma, dirección y canonical. La rama `codex/growth600-stock-profit-20261011` no inició workflow de Actions (lista vacía). No se afirma rastreo/indexación.
+- README URL inventory generado desde los builds: **10.260 URLs principales y 6.264 del hub**.
 
 ## Publicadas · #310–311 · 2026-10-12
 
@@ -18,6 +18,14 @@
 - Aceptación: bobina de 40 vueltas, diámetro medio 20 mm, longitud 50 mm y alambre 0,8 mm → **10,6766315 µH**; duplicar vueltas cuadruplica la inductancia con la misma geometría útil. Fuerza: 2 kg, 3 m/s y radio 1,5 m → **12 N**; duplicar velocidad multiplica fuerza por cuatro. Tests de entradas inválidas/unidades incluidos.
 - Suite completa local: **1.965/1.965**; `npm run locale:release-check` aprobado; `npm run check` conserva **10.260 URLs**; build estático del hub: **6.228 URLs**, 172 herramientas × 36 locales + 36 portadas. `git diff --check` limpio. Sin PageSpeed/Lighthouse.
 - **Publicado y verificado:** ambas herramientas aparecen 36 veces en el sitemap público HTTP 200; sitemap total 6.228 URLs únicas. EN/ES/AR/JA de cada ruta responden HTTP 200 con formulario presente, idioma declarado y canonical autorreferente. Implementación servida desde Cloudflare Pages; sin funciones ni APIs de procesamiento. La presencia en el sitemap no implica indexación.
+
+## Publicada · #312 Writing Tracker · 2026-10-12
+
+- Intención delimitada frente a Word Counter: historial de escritura por proyecto y sesiones, metas, tendencias de 7 días e informes exportables; 390 búsquedas/mes US/en, KD 9 según el plan existente. No se repitió DataForSEO.
+- Pruebas: sesiones se actualizan por ID sin duplicarse; fechas, metas y cantidades están acotadas; resumen por proyecto y semana; importación JSON limitada a 300 KB y validada; edición/borrado/exportación locales. Por defecto los datos solo viven en la pestaña; localStorage se ofrece mediante consentimiento explícito. No se envían textos ni métricas a servidor.
+- 36 copias estáticas traducidas automáticamente por fragmentos con el método existente; release gate aprobado, metadatos dentro del límite y tres FAQs. No se presentan como revisadas por nativos.
+- Verificación previa: `npm test` **1.972/1.972**, `npm run locale:release-check`, build **6.264 páginas** (173 herramientas × 36 + 36 portadas), sitemap sin duplicados; CSS minificado por ruta y no cargado en páginas ajenas. EN/ES/AR/JA comprobados en HTML construido para controles, canonical, lang/dir y formulario.
+- **Publicación directa Cloudflare Pages**, sin Actions: `https://b6d8b527.usefulverse-tools.pages.dev`. Sitemap en vivo HTTP 200 con **6.264 URLs únicas**; Writing Tracker aparece en sus **36 locales**. EN/ES/AR/JA en vivo HTTP 200 con formulario y canonical; la publicación no implica indexación. No se ejecutó PageSpeed/Lighthouse.
 
 Las notas históricas que siguen describen su fecha correspondiente y no sustituyen este estado actual.
 

@@ -81,6 +81,7 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   '555-timer-calculator': ['calculated', 'checkInputs', 'copied', 'copyUnavailable'],
   'inductor-calculator': ['calculated', 'exampleLoaded', 'checkInputs', 'fitYes', 'fitNo', 'copied', 'copyUnavailable'],
   'centripetal-force-calculator': ['calculated', 'exampleLoaded', 'checkInputs', 'copied', 'copyUnavailable'],
+  'writing-tracker': ['projectAdded', 'sessionSaved', 'sessionUpdated', 'sessionDeleted', 'saved', 'storageUnavailable', 'saveDisabled', 'backupDownloaded', 'backupRestored', 'backupInvalid', 'fileTooLarge', 'checkProject', 'checkSession', 'projectRequired', 'copied', 'copyUnavailable', 'confirmDelete', 'exampleLoaded', 'empty'],
   'fourier-series-calculator': ['calculated', 'calculatedConstant', 'checkInputs', 'copied', 'copyUnavailable'],
   'modular-inverse-calculator': ['calculated', 'noInverse', 'checkInputs', 'copied', 'copyUnavailable'],
   'a-b-test-calculator': ['significant', 'inconclusive', 'checkInputs', 'copied', 'copyUnavailable'],

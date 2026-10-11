@@ -384,6 +384,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/centripetal-force-calculator/logic.mjs',
   },
   {
+    id: 'writing-tracker',
+    category: 'writing-tools',
+    type: 'tracker',
+    primaryIntent: 'writing tracker',
+    secondaryIntents: ['daily writing tracker', 'writing progress tracker', 'word count goal tracker'],
+    functions: ['create separate writing projects with optional word goals', 'record dated sessions with words, optional minutes and a note; edit an entry by its stable ID without double counting', 'show today and rolling seven-day totals with a daily trend; paginate local session history', 'optionally save in this browser and export or import a bounded JSON backup'],
+    acceptance: 'Adding a 250-word session and editing its same ID to 300 words yields one session and 300 total words, not 550. The seven-day summary groups by date and ignores other projects.',
+    boundary: 'A single-device writing log, not a word counter, cloud journal, sync service or productivity judgment. Entries remain in memory until the visitor opts into this browser’s local storage; the browser copy is not encrypted. JSON export/import is explicit. No upload, account, analytics payload or server processing.',
+    relatedExistingIds: ['word-counter', 'goal-planner'],
+    logicModule: './tools/writing-tracker/logic.mjs',
+  },
+  {
     id: 'beam-deflection-calculator',
     category: 'science-engineering',
     type: 'calculator',

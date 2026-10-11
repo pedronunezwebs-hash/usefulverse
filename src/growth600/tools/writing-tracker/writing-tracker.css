@@ -1,0 +1,12 @@
+.writing-tracker fieldset{min-inline-size:0;margin:0 0 1rem;padding:.75rem 1rem 1rem;border:1px solid var(--line);border-radius:.85rem;background:#fff}
+.writing-tracker legend{padding-inline:.35rem;font-weight:750}
+.writing-tracker fieldset .field{max-width:none}
+.writing-tracker .check-row{display:flex;align-items:flex-start;gap:.6rem;margin:1rem 0;max-width:48rem}
+.writing-tracker .check-row input{inline-size:1.2rem;block-size:1.2rem;flex:0 0 auto;margin-block-start:.2rem}
+.writing-tracker [data-writing-trend],.writing-tracker [data-writing-history]{padding-inline-start:1.5rem}
+.writing-tracker [data-writing-trend] li{display:grid;grid-template-columns:minmax(9rem,auto) minmax(6rem,1fr);align-items:center;gap:.75rem;margin-block:.5rem}
+.writing-tracker [data-writing-trend] progress{inline-size:100%;min-inline-size:0}
+.writing-tracker [data-writing-history] li{padding-block:.65rem;border-block-end:1px solid var(--line);overflow-wrap:anywhere}
+.writing-tracker [data-writing-history] li p{margin-block:.2rem .6rem}
+.writing-tracker [data-goal-progress]{inline-size:min(100%,18rem);vertical-align:middle}
+@media(max-width:620px){.writing-tracker [data-writing-trend] li{grid-template-columns:1fr;gap:.15rem}}

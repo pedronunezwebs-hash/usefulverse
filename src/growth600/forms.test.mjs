@@ -30,6 +30,7 @@ import { idealGasLawCalculatorEnglishCopy } from './locales/ideal-gas-law-calcul
 import { torqueCalculatorEnglishCopy } from './locales/torque-calculator.en.mjs';
 import { inductorCalculatorEnglishCopy } from './locales/inductor-calculator.en.mjs';
 import { centripetalForceCalculatorEnglishCopy } from './locales/centripetal-force-calculator.en.mjs';
+import { writingTrackerEnglishCopy } from './locales/writing-tracker.en.mjs';
 import torqueCalculatorCopies from './locales/torque-calculator.mjs';
 import { beamDeflectionCalculatorEnglishCopy } from './locales/beam-deflection-calculator.en.mjs';
 import { transformerCalculatorEnglishCopy } from './locales/transformer-calculator.en.mjs';
@@ -497,6 +498,7 @@ copies['json-to-xml-converter'] = { ...jsonToXmlEnglishCopy };
   copies['torque-calculator'] = { ...torqueCalculatorEnglishCopy };
   copies['inductor-calculator'] = { ...inductorCalculatorEnglishCopy };
   copies['centripetal-force-calculator'] = { ...centripetalForceCalculatorEnglishCopy };
+  copies['writing-tracker'] = { ...writingTrackerEnglishCopy };
   copies['beam-deflection-calculator'] = { ...beamDeflectionCalculatorEnglishCopy };
 copies['savings-goal-calculator'] = { name: 'Savings Goal Calculator', actions: { ...actions, requiredContribution: 'Monthly deposit needed', monthsToGoal: 'Time needed for my deposit', beginning: 'Beginning of month', end: 'End of month' }, messages: { ...messages }, fields: { mode: 'Calculation', startingBalance: 'Current savings', targetAmount: 'Savings target', annualRatePercent: 'Annual rate', months: 'Months', monthlyContribution: 'Monthly deposit', contributionTiming: 'Deposit timing', accuracyNote: 'Estimate only.', resultSummary: 'Estimate', monthlyResult: 'Required deposit', monthsResult: 'Months', projectedBalance: 'Projected balance', totalContributions: 'Deposits', estimatedInterest: 'Estimated interest', currencyNote: 'Use the same currency.' } };
 copies['severance-pay-calculator'] = { name: 'Severance Pay Calculator', actions: { ...actions, customMode: 'Custom assumptions', ukMode: 'Great Britain statutory estimate' }, messages: { ...messages, calculationFailed: 'Could not calculate.', exampleLoaded: 'Example loaded.', calculateFirst: 'Calculate first.', belowServiceMinimum: 'Fewer than two completed years.', capApplied: 'A cap applied.', noCapApplied: 'No cap applied.', customAssumptions: 'Custom assumptions.' }, fields: { mode: 'Calculation type', weeklyPay: 'Average gross weekly pay', yearsOfService: 'Years of service', weeksPerYear: 'Weeks per year', birthDate: 'Birth date', employmentStartDate: 'Employment start date', redundancyDate: 'Redundancy date', accuracyNote: 'Estimate only.', customNote: 'Uses your assumptions.', ukNote: 'Great Britain estimate; enter GBP.', officialSource: 'Official guidance', estimate: 'Estimated amount', appliedWeeklyPay: 'Weekly pay used', totalWeeks: 'Weeks of pay', rulesAsOf: 'Rules from', resultSummary: 'Estimate details' } };
@@ -1746,4 +1748,11 @@ test('new physics calculators render every control, accessible status and action
   for (const value of ['name="mode"', 'name="turns"', 'name="targetInductance"', 'name="diameter"', 'name="length"', 'name="wireDiameter"', 'data-inductor-input="target"', 'data-action="example"', 'data-action="calculate"', 'data-action="reset"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(inductor.includes(value), value);
   const centripetal = renderGrowthForm('centripetal-force-calculator', centripetalForceCalculatorEnglishCopy);
   for (const value of ['name="mass"', 'name="radius"', 'name="mode"', 'name="speed"', 'name="frequency"', 'data-motion-input="rotation"', 'value="in"', 'data-action="example"', 'data-action="calculate"', 'data-action="reset"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(centripetal.includes(value), value);
+});
+
+test('writing tracker exposes project/session history, opt-in local storage and bounded backup controls', () => {
+  const html = renderGrowthForm('writing-tracker', writingTrackerEnglishCopy);
+  for (const value of ['name="projectName"', 'name="projectGoal"', 'name="projectSelect"', 'name="date"', 'name="words"', 'name="minutes"', 'name="sessionId"', 'name="persistConsent"', 'data-writing-trend', 'data-writing-history', 'data-action="export"', 'data-action="import"', 'data-action="show-more"', 'aria-live="polite"']) assert.ok(html.includes(value), value);
+  assert.match(html, /Save my tracker in this browser/u);
+  assert.match(html, /No account, upload or cloud sync/u);
 });
