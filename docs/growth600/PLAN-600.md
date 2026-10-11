@@ -2037,8 +2037,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 164 · Mortgage Points Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `mortgage-points-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/mortgage-points-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `mortgage-points-calculator`; ya estaba publicada en producción antes de esta reanudación, no volver a construirla ni contarla otra vez.**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/mortgage-points-calculator/` y otras 35 versiones con los prefijos del anexo.
 - **Demanda:** `mortgage points calculator` — 3.600 búsquedas/mes US/en, KD 7; nivel B. CPC 4.39 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Comparar pagar puntos frente a intereses, horizonte y amortización
 - **Prueba de aceptación específica:** Coste positivo con ahorro cero no se recupera
@@ -2048,6 +2048,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `discount points calculator` — 3.600/mes US/en; KD 5.
   - `mortgage points calculator free online`; `mortgage points calculator with example`; `mortgage points calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Auditoría pública (11-oct-2026):** confirmada en el sitemap del hub; las 36 URLs devolvieron HTTP 200, y los 35 títulos no ingleses difieren del título EN. Esto prueba presencia/rutas, no indexación en buscadores.
 
 ### 173 · Savings Goal Calculator
 

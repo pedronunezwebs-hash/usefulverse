@@ -1807,3 +1807,9 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - 36 traducciones estáticas gratuitas desde inglés; no revisión nativa. El traductor dejó el párrafo de introducción en inglés para tagalo; se corrigieron localmente también las instrucciones/privacidad de ese idioma y se añadió una prueba para impedir ese fallback.
 - Gates locales: suite **1.926/1.926**, contratos de locale **170/170**, `npm run locale:release-check`; build principal **10.260 URLs**, hub **6.012 URLs**. Chrome EN y AR validados; el resultado del canje coincide con el caso esperado y la página árabe usa RTL sin overflow a 390 px; consola sin mensajes. No PageSpeed/Lighthouse.
 - **Estado:** C/F/E/X/L/B local completos; P/S pendientes. Sin PR ni despliegue; se retiene localmente mientras Actions esté cerca de su cuota para evitar cargos.
+
+## Reconciliación del plan · Mortgage Points Calculator (#164) · 2026-10-11
+
+- La entrada antigua de #164 decía que faltaba publicar, pero ya es parte de producción: aparece en el sitemap público y las 36 rutas devolvieron HTTP 200 en una comprobación directa. Los títulos localizados no repiten el título inglés. No reconstruirla ni volver a sumarla al total.
+- Los gates funcionales, límites, interacción local y cálculo de ejemplo están registrados en la entrada histórica de #164 arriba; la pasada de pruebas global de este turno incluye sus tests. La presencia y respuesta HTTP no prueban indexación en Google/Bing/Yandex.
+- Siguiente ficha candidata no publicada en el orden del plan: #207 Lifetime Value Calculator; #173 Savings Goal Calculator y #174 Severance Pay Calculator ya existen en el catálogo y se han encontrado en el sitemap público, así que deben reconciliarse como existentes, no duplicarse.
