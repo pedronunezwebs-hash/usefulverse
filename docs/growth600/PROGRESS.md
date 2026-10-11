@@ -1,6 +1,13 @@
 # UsefulVerse · progreso del plan 277 → 600
 
-Última verificación: 2026-10-10. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
+Última verificación: 2026-10-11. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
+
+## Estado público actual · 2026-10-11
+
+- **148 herramientas Growth600** publicadas junto al catálogo original protegido de 277, todas en 36 locales. `https://tools.usefulverse.com/sitemap.xml` responde HTTP 200 con **5.364 URLs únicas** (148 × 36 + 36 portadas); el sitemap principal responde HTTP 200 con **10.260 URLs**. Total de ambos sitemaps: **15.624 URLs**. La publicación no implica indexación.
+- #268 Effective Interest Rate Calculator: PR #111 fusionada en `1b17856e5ffc0781a1df313eb4a1fdcb0d7883c1`; CI y deploy principal `38115604120`, publicación separada del hub `38115851965`. Rutas EN/ES/AR y sitemap público comprobados. Detalles de función, pruebas y límites en la ficha #268 de `PLAN-600.md`.
+- **Reanudación:** retomar en la siguiente candidata pendiente de `PLAN-600.md`; antes de implementarla comprobar slug, función e intención frente al catálogo original de 277 y a las 148 herramientas del hub para evitar duplicados. Mantener 36 locales, render estático, procesamiento local y gates C/F/E/X/L/B/P/S. No repetir PageSpeed/Lighthouse ni búsquedas de DataForSEO salvo petición expresa.
+- Recuento del plan: **92/323 candidatas implementadas; 231 pendientes válidas y una fila duplicada/reserva** según la clasificación existente. No tratar la fila de reserva como herramienta; conservarla para sustituirla por una candidata investigada que no se canibalice.
 
 ## Estado público actual · 2026-10-10
 
