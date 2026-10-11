@@ -24,6 +24,8 @@ import rcTimeConstantCalculatorCopies from './rc-time-constant-calculator-final.
 import { rcTimeConstantCalculatorEnglishCopy } from './rc-time-constant-calculator.en.mjs';
 import reverseMortgageCalculatorCopies from './reverse-mortgage-calculator-final.mjs';
 import { reverseMortgageCalculatorEnglishCopy } from './reverse-mortgage-calculator.en.mjs';
+import carDepreciationCalculatorCopies from './car-depreciation-calculator-final.mjs';
+import { carDepreciationCalculatorEnglishCopy } from './car-depreciation-calculator.en.mjs';
 import drywallCopies from './drywall-calculator.mjs';
 import { drywallEnglishCopy } from './drywall-calculator.en.mjs';
 import roofingCopies from './roofing-calculator.mjs';
@@ -1236,5 +1238,6 @@ registerGrowthLocaleExtension(source, 'absolute-value-calculator', { ...absolute
 registerGrowthLocaleExtension(source, 'specific-heat-calculator', { ...specificHeatCalculatorCopies, en: specificHeatCalculatorEnglishCopy }, 'thermal-expansion-calculator');
 registerGrowthLocaleExtension(source, 'rc-time-constant-calculator', { ...rcTimeConstantCalculatorCopies, en: rcTimeConstantCalculatorEnglishCopy }, 'specific-heat-calculator');
 registerGrowthLocaleExtension(source, 'reverse-mortgage-calculator', { ...reverseMortgageCalculatorCopies, en: reverseMortgageCalculatorEnglishCopy }, 'mortgage-points-calculator');
+registerGrowthLocaleExtension(source, 'car-depreciation-calculator', { ...carDepreciationCalculatorCopies, en: carDepreciationCalculatorEnglishCopy }, 'reverse-mortgage-calculator');
 
 export default Object.freeze(source);

@@ -18,6 +18,7 @@ import absoluteValueCalculatorCopies from '../src/growth600/locales/absolute-val
 import specificHeatCalculatorCopies from '../src/growth600/locales/specific-heat-calculator-final.mjs';
 import rcTimeConstantCalculatorCopies from '../src/growth600/locales/rc-time-constant-calculator-final.mjs';
 import reverseMortgageCalculatorCopies from '../src/growth600/locales/reverse-mortgage-calculator-final.mjs';
+import carDepreciationCalculatorCopies from '../src/growth600/locales/car-depreciation-calculator-final.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const localeDir = resolve(root, 'src/growth600/locales');
@@ -54,6 +55,8 @@ for (const { key } of localeEntries) {
   if (!rcTimeConstantCalculatorCopies[key]) throw new Error(`Growth600 release blocked: RC Time Constant Calculator copy is missing for ${key}.`);
   copyByLocale[key] = { ...copyByLocale[key], 'rc-time-constant-calculator': rcTimeConstantCalculatorCopies[key] };
   copyByLocale[key] = { ...copyByLocale[key], 'reverse-mortgage-calculator': reverseMortgageCalculatorCopies[key] };
+  if (!carDepreciationCalculatorCopies[key]) throw new Error(`Growth600 release blocked: Car Depreciation Calculator copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'car-depreciation-calculator': carDepreciationCalculatorCopies[key] };
 }
 
 const outputDir = resolve(process.env.GROWTH600_DIST ?? resolve(root, 'dist-growth600'));

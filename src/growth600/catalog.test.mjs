@@ -13,10 +13,11 @@ import { calculateAbsoluteValue } from './tools/absolute-value-calculator/logic.
 import { calculateSpecificHeat } from './tools/specific-heat-calculator/logic.mjs';
 import { calculateRcTimeConstant, calculateRcTransient } from './tools/rc-time-constant-calculator/logic.mjs';
 import { calculateReverseMortgage } from './tools/reverse-mortgage-calculator/logic.mjs';
+import { calculateCarDepreciation } from './tools/car-depreciation-calculator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 163);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 163);
+  assert.equal(growthPilotTools.length, 164);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 164);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -101,6 +102,15 @@ test('reverse mortgage calculator models a rising balance without overlapping or
   assert.ok(Math.abs(projection.endingBalance - (10000 * (1.01 ** 12) + (110 * ((1.01 ** 12 - 1) / 0.01)))) < 1e-8);
   assert.equal(projection.totalAdvances, 1200);
   assert.equal(projection.totalMonthlyFees, 120);
+});
+
+test('car depreciation is a user-assumption scenario distinct from loan payoff and fuel cost', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'car-depreciation-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'car depreciation calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['fuel-cost-calculator', 'loan-calculator', 'tire-size-calculator']);
+  assert.match(tool.boundary, /not a market valuation.*financial advice/u);
+  assert.equal(calculateCarDepreciation({ purchasePrice: 10000, yearsOwned: 0, currentDistance: 0, annualDistance: 0, annualDepreciationPercent: 10, distanceDepreciationPercent: 0, projectionYears: 1 }).projectedValue, 9000);
 });
 
 test('eigenvalue calculator is additive and validates symmetric eigenpairs', () => {
