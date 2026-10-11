@@ -66,6 +66,7 @@ export function renderGrowthForm(toolId, copy) {
     'pulley-calculator': ['driverDiameter', 'drivenDiameter', 'centerDistance', 'diameterUnit', 'millimeters', 'inches', 'inputRpm', 'accuracyNote', 'sketchTitle', 'sketchDescription'],
     'rlc-circuit-calculator': ['topology', 'series', 'parallel', 'resistance', 'inductance', 'inductanceUnit', 'henries', 'millihenries', 'microhenries', 'capacitance', 'capacitanceUnit', 'farads', 'microfarads', 'nanofarads', 'picofarads', 'frequency', 'frequencyUnit', 'hertz', 'kilohertz', 'voltage', 'accuracyNote', 'chartTitle', 'chartDescription'],
     'antenna-length-calculator': ['mode', 'dipole', 'monopole', 'frequency', 'frequencyUnit', 'hz', 'khz', 'mhz', 'ghz', 'shorteningFactor', 'accuracyNote'],
+    'effective-interest-rate-calculator': ['mode', 'aprToApy', 'apyToApr', 'rate', 'frequency', 'annual', 'semiannual', 'quarterly', 'monthly', 'twiceMonthly', 'biweekly', 'weekly', 'daily', 'continuous', 'accuracyNote'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
     'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
     'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
@@ -221,6 +222,7 @@ export function renderGrowthForm(toolId, copy) {
     'pulley-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'rlc-circuit-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'antenna-length-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'effective-interest-rate-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
     'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -2128,6 +2130,16 @@ export function renderGrowthForm(toolId, copy) {
     ${label('antenna-frequency', fields.frequency, '<input id="antenna-frequency" name="frequency" type="number" min="0.000000001" max="1000000" step="any" inputmode="decimal" value="100" required>')}
     ${label('antenna-frequency-unit', fields.frequencyUnit, `<select id="antenna-frequency-unit" name="frequencyUnit"><option value="Hz">${escapeGrowthHtml(fields.hz)}</option><option value="kHz">${escapeGrowthHtml(fields.khz)}</option><option value="MHz" selected>${escapeGrowthHtml(fields.mhz)}</option><option value="GHz">${escapeGrowthHtml(fields.ghz)}</option></select>`)}
     ${label('antenna-shortening-factor', fields.shorteningFactor, '<input id="antenna-shortening-factor" name="shorteningFactor" type="number" min="0.70" max="1" step="0.01" inputmode="decimal" value="0.95" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'effective-interest-rate-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('effective-interest-mode', fields.mode, `<select id="effective-interest-mode" name="mode"><option value="apr-to-apy">${escapeGrowthHtml(fields.aprToApy)}</option><option value="apy-to-apr">${escapeGrowthHtml(fields.apyToApr)}</option></select>`)}
+    ${label('effective-interest-rate', fields.rate, '<input id="effective-interest-rate" name="ratePercent" type="number" min="0" max="1000000" step="any" inputmode="decimal" value="12" required>')}
+    ${label('effective-interest-frequency', fields.frequency, `<select id="effective-interest-frequency" name="frequency"><option value="annual">${escapeGrowthHtml(fields.annual)}</option><option value="semiannual">${escapeGrowthHtml(fields.semiannual)}</option><option value="quarterly">${escapeGrowthHtml(fields.quarterly)}</option><option value="monthly" selected>${escapeGrowthHtml(fields.monthly)}</option><option value="twiceMonthly">${escapeGrowthHtml(fields.twiceMonthly)}</option><option value="biweekly">${escapeGrowthHtml(fields.biweekly)}</option><option value="weekly">${escapeGrowthHtml(fields.weekly)}</option><option value="daily">${escapeGrowthHtml(fields.daily)}</option><option value="continuous">${escapeGrowthHtml(fields.continuous)}</option></select>`)}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>

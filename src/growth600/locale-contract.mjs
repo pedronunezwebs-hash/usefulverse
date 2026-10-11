@@ -1,6 +1,7 @@
 export const REQUIRED_GROWTH_COPY = Object.freeze(['name', 'title', 'description', 'intro', 'howQuestion', 'howAnswer', 'privacyQuestion', 'privacyAnswer']);
 export const REQUIRED_GROWTH_HOME_COPY = Object.freeze(['title', 'description', 'intro', 'directoryLabel', 'freeLabel', 'footerFree', 'skipToTool', 'home', 'languageLabel', 'breadcrumbLabel', 'faqLabel']);
 export const REQUIRED_TOOL_MESSAGES = Object.freeze({
+  'effective-interest-rate-calculator': ['copied', 'copyUnavailable', 'calculated', 'exampleLoaded', 'checkInputs', 'apr', 'apy', 'periodicRate', 'formula', 'compounding'],
   'beam-deflection-calculator': ['calculated', 'checkInputs', 'exampleLoaded', 'maxDeflection', 'location', 'maxMoment', 'flexuralRigidity', 'curveLabel'],
   'font-pairing-tool': ['fontLoaded', 'fontLoadFailed', 'noFiles', 'tooMany', 'unsupported', 'fileTooLarge', 'totalTooLarge', 'copied', 'copyUnavailable', 'fontsCleared', 'presetApplied', 'rolesSwapped'],
   'roth-vs-traditional-calculator': ['calculated', 'checkInputs'],
@@ -104,6 +105,7 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   'travel-itinerary-planner': ['tripSaved', 'storageFailed', 'tripDeletedStorageFailed', 'checkTrip', 'createTripFirst', 'exampleLoaded', 'itemSaved', 'itemUpdated', 'checkItem', 'formCleared', 'itemDeleted', 'confirmDeleteTrip', 'tripDeleted', 'confirmRestore', 'localSaved', 'localRemoved', 'jsonDownloaded', 'icsDownloaded', 'backupTooLarge', 'noItemsToExport', 'exportFailed', 'confirmImport', 'importCancelled', 'imported', 'importFailed', 'overlap', 'shortConnection'],
 });
 export const REQUIRED_TOOL_FIELDS = Object.freeze({
+  'effective-interest-rate-calculator': ['mode', 'aprToApy', 'apyToApr', 'rate', 'frequency', 'annual', 'semiannual', 'quarterly', 'monthly', 'twiceMonthly', 'biweekly', 'weekly', 'daily', 'continuous', 'accuracyNote'],
   'beam-deflection-calculator': ['support', 'simplySupported', 'cantilever', 'loadCase', 'pointLoad', 'uniformLoad', 'span', 'lengthUnit', 'meters', 'centimeters', 'millimeters', 'inches', 'feet', 'load', 'forceUnit', 'newtons', 'kilonewtons', 'poundsForce', 'modulus', 'modulusUnit', 'pascals', 'megapascals', 'gigapascals', 'psi', 'ksi', 'inertia', 'inertiaUnit', 'mm4', 'cm4', 'm4', 'in4', 'ft4', 'loadUnitHint', 'accuracyNote', 'sourceNote'],
   'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
   'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -207,6 +209,7 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'travel-itinerary-planner': ['tripName', 'tripStartDate', 'tripEndDate', 'bufferMinutes', 'saveConsent', 'storageNote', 'itemDate', 'startTime', 'endTime', 'itemTitle', 'category', 'location', 'reservation', 'notes', 'itineraryLabel', 'noTrip', 'noItems', 'itemCount', 'overlapCount', 'bufferWarningCount', 'conflictsLabel', 'backupFile', 'backupHint', 'limitNote', 'timeZoneNote', 'reservationPrivacyNote', 'exampleTrip', 'exampleActivity', 'exampleMeal', 'exampleLocation', 'exampleReservation'],
 });
 export const REQUIRED_TOOL_ACTIONS = Object.freeze({
+  'effective-interest-rate-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
   'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
   'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
   'polygon-calculator': ['calculate', 'example', 'reset', 'copy', 'result'],
