@@ -36,6 +36,7 @@ import { pulleyCalculatorEnglishCopy } from './locales/pulley-calculator.en.mjs'
 import { rlcCircuitCalculatorEnglishCopy } from './locales/rlc-circuit-calculator.en.mjs';
 import { antennaLengthCalculatorEnglishCopy } from './locales/antenna-length-calculator.en.mjs';
 import { effectiveInterestRateCalculatorEnglishCopy } from './locales/effective-interest-rate-calculator.en.mjs';
+import { fiveTwentyNineCalculatorEnglishCopy } from './locales/529-calculator.en.mjs';
 
 const actions = {
   calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', millimeters: 'Millimeters', feet: 'Feet', inches: 'Inches', squareMeters: 'Square meters', squareFeet: 'Square feet', cubicMeters: 'Cubic meters', cubicFeet: 'Cubic feet', kelvin: 'Kelvin difference', fahrenheit: 'Fahrenheit difference', kilowatts: 'Kilowatts (kW)', btuPerHour: 'BTU per hour (BTU/h)', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.', kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only', productionMode: 'Estimate array output', sizingMode: 'Size for daily use', years: 'years', add: 'Add', subtract: 'Subtract', multiply: 'Multiply', divide: 'Divide', magnitude: 'Modulus', argument: 'Argument', rectangularToPolar: 'Rectangular to polar', polarToRectangular: 'Polar to rectangular', roots: 'Nth roots',
@@ -51,6 +52,7 @@ const copies = {
   'rlc-circuit-calculator': rlcCircuitCalculatorEnglishCopy,
   'antenna-length-calculator': antennaLengthCalculatorEnglishCopy,
   'effective-interest-rate-calculator': effectiveInterestRateCalculatorEnglishCopy,
+  '529-calculator': fiveTwentyNineCalculatorEnglishCopy,
   'image-splitter': { name: 'Image splitter', actions: { ...actions, choose: 'Choose image', export: 'Split and prepare ZIP', cancel: 'Cancel', download: 'Download tile ZIP' }, messages: { ...messages }, fields: { imageFile: 'Choose an image', mode: 'Split by', gridMode: 'Rows and columns', tileSizeMode: 'Fixed tile dimensions', columns: 'Columns', rows: 'Rows', tileWidth: 'Tile width', tileHeight: 'Tile height', overlap: 'Overlap', accuracyNote: 'Local image processing.', previewHint: 'Image grid preview.', imageReady: 'Image ready' } },
   'image-sharpener': { name: 'Image sharpener', actions: { ...actions, load: 'Choose image', export: 'Prepare download', download: 'Download', original: 'Show original', sharpened: 'Sharpened preview', png: 'PNG', jpeg: 'JPEG' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', exporting: 'Sharpening…', exportFailed: 'Export failed.', exportReady: 'Image ready.' }, fields: { imageFile: 'Choose image', amount: 'Strength', radius: 'Radius', threshold: 'Threshold', compare: 'Show original', accuracyNote: 'Processed locally; 8 megapixel limit.', previewHint: 'Preview is reduced.', format: 'Format', relatedRedactor: 'Redact private details.', relatedCropper: 'Crop the image.' } },
   'photo-to-sketch': { name: 'Photo to sketch', actions: { ...actions, load: 'Choose image', export: 'Create sketch PNG', cancel: 'Cancel processing', download: 'Download sketch PNG', original: 'Show original' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', exporting: 'Creating sketch…', cancelled: 'Processing cancelled.', exportFailed: 'Export failed.', exportReady: 'Sketch ready.' }, fields: { imageFile: 'Choose image', intensity: 'Sketch intensity', detail: 'Fine-detail threshold', compare: 'Show original', accuracyNote: 'Local processing; maximum 8 megapixels.', previewHint: 'Reduced preview.' } },
@@ -1510,6 +1512,12 @@ test('antenna length form exposes dipole/monopole, frequency units and an editab
   const html = renderGrowthForm('antenna-length-calculator', antennaLengthCalculatorEnglishCopy);
   for (const expected of ['name="mode"', 'value="dipole"', 'value="monopole"', 'name="frequency"', 'min="0.000000001" max="1000000"', 'name="frequencyUnit"', 'name="shorteningFactor"', 'role="status" aria-live="polite"', 'data-action="example"', 'data-action="copy"']) assert.ok(html.includes(expected), expected);
   assert.match(html, /not a design certification/u);
+});
+
+test('529 form exposes bounded local savings assumptions, currency, example and result controls', () => {
+  const html = renderGrowthForm('529-calculator', fiveTwentyNineCalculatorEnglishCopy);
+  for (const expected of ['name="currentSavings"', 'name="monthlyContribution"', 'name="yearsUntilCollege" type="number" min="0" max="50"', 'name="annualCostToday"', 'name="collegeYears" type="number" min="1" max="8"', 'name="tuitionInflationPercent"', 'name="annualReturnPercent"', 'name="scholarshipPerYear"', 'name="currency"', 'value="USD"', 'value="AUD"', 'data-action="example"', 'data-action="calculate"', 'data-action="copy"', 'data-result hidden', 'role="status" aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /Not investment, tax or financial advice/u);
 });
 
 test('image splitter exposes a local raster input, bounded grid controls, overlap, accessible preview and ZIP actions', () => {

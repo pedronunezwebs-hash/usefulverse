@@ -68,6 +68,7 @@ export function renderGrowthForm(toolId, copy) {
     'rlc-circuit-calculator': ['topology', 'series', 'parallel', 'resistance', 'inductance', 'inductanceUnit', 'henries', 'millihenries', 'microhenries', 'capacitance', 'capacitanceUnit', 'farads', 'microfarads', 'nanofarads', 'picofarads', 'frequency', 'frequencyUnit', 'hertz', 'kilohertz', 'voltage', 'accuracyNote', 'chartTitle', 'chartDescription'],
     'antenna-length-calculator': ['mode', 'dipole', 'monopole', 'frequency', 'frequencyUnit', 'hz', 'khz', 'mhz', 'ghz', 'shorteningFactor', 'accuracyNote'],
     'effective-interest-rate-calculator': ['mode', 'aprToApy', 'apyToApr', 'rate', 'frequency', 'annual', 'semiannual', 'quarterly', 'monthly', 'twiceMonthly', 'biweekly', 'weekly', 'daily', 'continuous', 'accuracyNote'],
+    '529-calculator': ['currentSavings', 'monthlyContribution', 'yearsUntilCollege', 'annualCostToday', 'collegeYears', 'tuitionInflationPercent', 'annualReturnPercent', 'scholarshipPerYear', 'currency', 'accuracyNote'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
     'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
     'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
@@ -225,6 +226,7 @@ export function renderGrowthForm(toolId, copy) {
     'rlc-circuit-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'antenna-length-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'effective-interest-rate-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    '529-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
     'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -2158,6 +2160,22 @@ export function renderGrowthForm(toolId, copy) {
     ${label('effective-interest-mode', fields.mode, `<select id="effective-interest-mode" name="mode"><option value="apr-to-apy">${escapeGrowthHtml(fields.aprToApy)}</option><option value="apy-to-apr">${escapeGrowthHtml(fields.apyToApr)}</option></select>`)}
     ${label('effective-interest-rate', fields.rate, '<input id="effective-interest-rate" name="ratePercent" type="number" min="0" max="1000000" step="any" inputmode="decimal" value="12" required>')}
     ${label('effective-interest-frequency', fields.frequency, `<select id="effective-interest-frequency" name="frequency"><option value="annual">${escapeGrowthHtml(fields.annual)}</option><option value="semiannual">${escapeGrowthHtml(fields.semiannual)}</option><option value="quarterly">${escapeGrowthHtml(fields.quarterly)}</option><option value="monthly" selected>${escapeGrowthHtml(fields.monthly)}</option><option value="twiceMonthly">${escapeGrowthHtml(fields.twiceMonthly)}</option><option value="biweekly">${escapeGrowthHtml(fields.biweekly)}</option><option value="weekly">${escapeGrowthHtml(fields.weekly)}</option><option value="daily">${escapeGrowthHtml(fields.daily)}</option><option value="continuous">${escapeGrowthHtml(fields.continuous)}</option></select>`)}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === '529-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('529-current-savings', fields.currentSavings, '<input id="529-current-savings" name="currentSavings" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="0" required>')}
+    ${label('529-monthly-contribution', fields.monthlyContribution, '<input id="529-monthly-contribution" name="monthlyContribution" type="number" min="0" max="10000000" step="any" inputmode="decimal" value="200" required>')}
+    ${label('529-years-until-college', fields.yearsUntilCollege, '<input id="529-years-until-college" name="yearsUntilCollege" type="number" min="0" max="50" step="1" inputmode="numeric" value="10" required>')}
+    ${label('529-annual-cost', fields.annualCostToday, '<input id="529-annual-cost" name="annualCostToday" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="10000" required>')}
+    ${label('529-college-years', fields.collegeYears, '<input id="529-college-years" name="collegeYears" type="number" min="1" max="8" step="1" inputmode="numeric" value="4" required>')}
+    ${label('529-tuition-inflation', fields.tuitionInflationPercent, '<input id="529-tuition-inflation" name="tuitionInflationPercent" type="number" min="0" max="30" step="any" inputmode="decimal" value="3" required>')}
+    ${label('529-annual-return', fields.annualReturnPercent, '<input id="529-annual-return" name="annualReturnPercent" type="number" min="0" max="30" step="any" inputmode="decimal" value="5" required>')}
+    ${label('529-scholarship', fields.scholarshipPerYear, '<input id="529-scholarship" name="scholarshipPerYear" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="0" required>')}
+    ${label('529-currency', fields.currency, `<select id="529-currency" name="currency"><option value="USD">USD</option><option value="EUR">EUR</option><option value="GBP">GBP</option><option value="CAD">CAD</option><option value="AUD">AUD</option><option value="JPY">JPY</option></select>`)}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>

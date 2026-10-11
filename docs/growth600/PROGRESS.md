@@ -4,10 +4,11 @@
 
 ## Estado público actual · 2026-10-11
 
-- **148 herramientas Growth600** publicadas junto al catálogo original protegido de 277, todas en 36 locales. `https://tools.usefulverse.com/sitemap.xml` responde HTTP 200 con **5.364 URLs únicas** (148 × 36 + 36 portadas); el sitemap principal responde HTTP 200 con **10.260 URLs**. Total de ambos sitemaps: **15.624 URLs**. La publicación no implica indexación.
+- **Estado público anterior a #086:** 149 herramientas Growth600 junto al catálogo protegido de 277, todas en 36 locales. El sitemap del hub contiene **5.400 URLs** (149 × 36 + 36 portadas); el principal conserva **10.260 URLs**, total **15.660**. Publicación y sitemap no implican indexación.
 - #268 Effective Interest Rate Calculator: PR #111 fusionada en `1b17856e5ffc0781a1df313eb4a1fdcb0d7883c1`; CI y deploy principal `38115604120`, publicación separada del hub `38115851965`. Rutas EN/ES/AR y sitemap público comprobados. Detalles de función, pruebas y límites en la ficha #268 de `PLAN-600.md`.
 - **Reanudación:** retomar en la siguiente candidata pendiente de `PLAN-600.md`; antes de implementarla comprobar slug, función e intención frente al catálogo original de 277 y a las 148 herramientas del hub para evitar duplicados. Mantener 36 locales, render estático, procesamiento local y gates C/F/E/X/L/B/P/S. No repetir PageSpeed/Lighthouse ni búsquedas de DataForSEO salvo petición expresa.
-- Recuento del plan: **92/323 candidatas implementadas; 231 pendientes válidas y una fila duplicada/reserva** según la clasificación existente. No tratar la fila de reserva como herramienta; conservarla para sustituirla por una candidata investigada que no se canibalice.
+- **Siguiente paso de publicación:** #086 529 Calculator ya está implementada y pasa gates locales; antes de fusionarla, el estado público sigue en 149 Growth600 y 5.400 URLs del hub. No anunciar #086 como publicada hasta verificar el deploy.
+- Recuento público anterior a #086: **93/323 candidatas implementadas; 230 pendientes válidas y una fila duplicada/reserva** según la clasificación existente. No tratar la fila de reserva como herramienta; conservarla para sustituirla por una candidata investigada que no se canibalice.
 
 ## Estado público actual · 2026-10-10
 
@@ -1669,12 +1670,23 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - **Paneles de búsqueda:** Search Console aceptó hoy el reenvío de `https://tools.usefulverse.com/sitemap.xml` (última lectura/descubrimiento aún antiguos mientras Google lo procesa). Bing confirmó el envío para procesamiento; panel aún marca “Processing” y 3.0K URLs. Yandex ya tiene el sitemap del hub en cola de procesamiento; sus datos pueden tardar. Naver verificó el subdominio y muestra `sitemap.xml` en la lista de sitemaps enviados (10 oct 2026). Brave no ofrece envío manual ordinario; rastrea mediante enlaces, robots.txt y sitemap. Ninguno de estos envíos garantiza indexación.
 - **Recuento del plan:** 91/323 entradas implementadas; 232 restantes válidas y una fila duplicada/reserva por sustituir. Esta herramienta ya cuenta como pública. Los envíos de sitemap solicitan rastreo, no garantizan indexación.
 
-## En implementación local · Effective Interest Rate Calculator (#268) · 2026-10-11
+## Publicada · Effective Interest Rate Calculator (#268) · 2026-10-11
 
 - Conversor local entre APR nominal y APY efectivo, en ambos sentidos, con capitalización anual, semestral, trimestral, mensual, dos veces al mes, quincenal, semanal, diaria y continua. Muestra la tasa periódica y la fórmula; no proyecta saldos ni duplica el compound-interest calculator.
 - Pruebas de lógica cubren el ejemplo de aceptación (12% APR mensual → 12,682503% APY), conversión inversa, capitalización anual y continua, cero, límites y coherencia de frecuencias. El cálculo usa `log1p`/`expm1` para estabilidad numérica y rechaza resultados fuera de rango.
 - Copia estática en 36 locales; formulario etiquetado, sin cuenta, subida, API, dependencias nuevas ni procesamiento servidor. Incluye aviso de que la conversión no representa una declaración legal APR ni asesoramiento financiero.
 - Suite completa local **1.783/1.783** y `npm run locale:release-check` pasan. `npm run check` conserva **10.260 URLs** del sitio principal; build Growth600 genera **5.364 URLs** (148 herramientas × 36 + 36 portadas). `README.md` regenerado desde ambos sitemaps locales.
 - QA Chrome local: ejemplo mensual 12% → 12,682503% APY; inversa devuelve 12% APR. Árabe usa `lang=ar`, `dir=rtl`, formulario traducido, 3 FAQs sin repetición, sin overflow a 390 px (documento coincide con viewport) y sin errores de consola. No PageSpeed/Lighthouse.
-- **Pendiente de publicar:** revisar diff final, crear PR, esperar CI, integrar, desplegar el sitio principal y lanzar publicación manual del hub; después verificar rutas EN/ES/AR y el sitemap público. No se afirma indexación hasta comprobar paneles.
-- Recuento de trabajo: 92 candidatas implementadas localmente; el recuento público continúa en 91 hasta completar P/S. La #268 del plan no se marca completa hasta el deploy y verificación pública.
+- **Publicación:** PR #111 fusionada; checkpoint documental PR #112; deploy principal `38116336812`. Sitemap anterior al siguiente release: 5.364 URLs del hub.
+- **Recuento tras #268:** 92/323 candidatas Growth600 públicas; 231 pendientes. Las herramientas originales permanecen intactas.
+
+## Publicada · Image Splitter (#085) · 2026-10-11
+
+- `image splitter`: 14.800 búsquedas/mes US/en, KD 5 (dato del plan; sin nuevas consultas DataForSEO ni gasto de API). Cálculo local con rejilla o teselas de tamaño fijo, solapamiento opcional y ZIP con manifest JSON para reconstrucción sin huecos.
+- 36 copias estáticas; textos automáticos desde inglés y árabe ajustado específicamente; no se presentan como revisión nativa. Modo offline y sin dependencias/servicios/API de procesamiento añadidos. Entrada raster limitada a 12 MP y salida a 100 teselas para proteger la memoria del dispositivo; se recomienda ordenador en imágenes grandes.
+- Suite global **1.794/1.794**, `npm run locale:release-check` pasa para 20 idiomas ampliados; build aislado **5.400 URLs** (149 herramientas × 36 + 36 portadas). `README.md` regenerado desde ambos sitemaps y `git diff --check` pasa.
+- QA Chrome con imagen sintética 13×7: las salidas ZIP en modo rejilla 4×3 y teselas 5×3 px (2 px de solapamiento) reconstruyen todos los píxeles exactamente y el enlace de descarga permanece visible. Árabe: `lang=ar`, `dir=rtl`, viewport/documento 390 px, modo fijo y FAQ presentes, sin texto erróneo de código postal ni errores de consola. No PageSpeed/Lighthouse.
+- **Publicación:** PR [#113](https://github.com/pedronunezwebs-hash/usefulverse/pull/113), merge `ecaad6ec3ea64563568c46f08bdb101ce0fe5df0`; CI PR `38117948851`, despliegue principal `38118173819` y hub `38118413789` exitosos.
+- **Verificación pública:** EN/ES/AR HTTP 200 con títulos localizados propios. Sitemap público del hub: **5.400 URLs únicas**, incluye 36 rutas nuevas; sitemap principal: **10.260 URLs**; total: **15.660**.
+- **Aviso de indexación:** el sitemap público y robots.txt están actualizados. No se envió una nueva solicitud IndexNow porque el CLI actual solo admite URLs en `usefulverse.com` y no tiene configurada la clave/ruta del host `tools.usefulverse.com`; no se afirma reenvío manual ni indexación de Google, Bing, Yandex o Naver.
+- **Recuento:** 93/323 candidatas Growth600 públicas; 230 pendientes. Siguiente ficha según el plan: #086, 529 Calculator.
