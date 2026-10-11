@@ -70,6 +70,7 @@ export function renderGrowthForm(toolId, copy) {
     'effective-interest-rate-calculator': ['mode', 'aprToApy', 'apyToApr', 'rate', 'frequency', 'annual', 'semiannual', 'quarterly', 'monthly', 'twiceMonthly', 'biweekly', 'weekly', 'daily', 'continuous', 'accuracyNote'],
     '529-calculator': ['currentSavings', 'monthlyContribution', 'yearsUntilCollege', 'annualCostToday', 'collegeYears', 'tuitionInflationPercent', 'annualReturnPercent', 'scholarshipPerYear', 'currency', 'accuracyNote'],
     'julian-date-converter': ['direction', 'toJulian', 'toUtc', 'utcDate', 'julianValue', 'dateKind', 'jd', 'mjd', 'accuracyNote'],
+    'interval-timer': ['preset', 'workSeconds', 'restSeconds', 'rounds', 'prepSeconds', 'secondsUnit', 'sound', 'soundHint', 'accuracyNote', 'phaseLabel', 'roundLabel', 'remainingLabel', 'totalLabel', 'progressLabel', 'prep', 'work', 'rest', 'complete'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
     'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
     'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
@@ -229,6 +230,7 @@ export function renderGrowthForm(toolId, copy) {
     'effective-interest-rate-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     '529-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'julian-date-converter': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'interval-timer': ['start', 'pause', 'resume', 'reset'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
     'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -2197,6 +2199,27 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'interval-timer') return attachCopy(`<form id="tool-form" class="interval-timer-form" novalidate>
+    ${label('interval-preset', fields.preset, `<select id="interval-preset" name="preset"><option value="custom">${escapeGrowthHtml(fields.custom)}</option><option value="tabata">${escapeGrowthHtml(fields.tabata)}</option><option value="hiit">${escapeGrowthHtml(fields.hiit)}</option></select>`)}
+    <div class="calculator-grid">
+      ${label('interval-work', fields.workSeconds, '<input id="interval-work" name="workSeconds" type="number" inputmode="numeric" min="1" max="7200" step="1" value="20" required>')}
+      ${label('interval-rest', fields.restSeconds, '<input id="interval-rest" name="restSeconds" type="number" inputmode="numeric" min="0" max="3600" step="1" value="10" required>')}
+      ${label('interval-rounds', fields.rounds, '<input id="interval-rounds" name="rounds" type="number" inputmode="numeric" min="1" max="99" step="1" value="8" required>')}
+      ${label('interval-prep', fields.prepSeconds, '<input id="interval-prep" name="prepSeconds" type="number" inputmode="numeric" min="0" max="300" step="1" value="0" required>')}
+    </div>
+    <label class="field interval-sound"><span>${escapeGrowthHtml(fields.sound)}</span><span><input name="sound" type="checkbox" checked> ${escapeGrowthHtml(fields.soundHint)}</span></label>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('start', actions.start)}${button('pause', actions.pause, 'secondary')}${button('resume', actions.resume, 'secondary')}${button('reset', actions.reset, 'secondary')}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="interval-display" aria-live="off">
+      <p><strong data-phase-label>${escapeGrowthHtml(fields.phaseLabel)}</strong>: <span data-phase>—</span></p>
+      <p>${escapeGrowthHtml(fields.roundLabel)}: <span data-round>—</span></p>
+      <p>${escapeGrowthHtml(fields.remainingLabel)}: <strong data-remaining>00:00</strong></p>
+      <p>${escapeGrowthHtml(fields.totalLabel)}: <span data-total>—</span></p>
+      <label class="field" for="interval-progress">${escapeGrowthHtml(fields.progressLabel)}<progress id="interval-progress" data-progress max="1" value="0"></progress></label>
+    </section>
   </form>`, copy);
 
   if (toolId === 'friction-calculator') return attachCopy(`<form id="tool-form" novalidate>

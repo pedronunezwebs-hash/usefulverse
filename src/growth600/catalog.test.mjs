@@ -4,9 +4,19 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 151);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 151);
+  assert.equal(growthPilotTools.length, 152);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 152);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
+});
+
+test('interval timer adds work/rest rounds and sound without duplicating Pomodoro or a plain countdown', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'interval-timer');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'interval timer');
+  assert.deepEqual(tool.relatedExistingIds, ['online-timer']);
+  assert.match(tool.acceptance, /8-round 20-second work \/ 10-second rest.*230 seconds/u);
+  assert.match(tool.boundary, /sleeping devices may delay.*Sound starts only after the user presses Start/u);
+  assert.match(tool.boundary, /no account, upload, API, storage or usage charge/u);
 });
 
 test('frequency and wavelength calculator solves the wave relation, distinct from unit conversion and antenna geometry', () => {

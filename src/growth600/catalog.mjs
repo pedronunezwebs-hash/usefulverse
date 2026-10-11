@@ -1788,6 +1788,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/effective-interest-rate-calculator/logic.mjs',
   },
   {
+    id: 'interval-timer',
+    category: 'health-fitness',
+    type: 'timer',
+    primaryIntent: 'interval timer',
+    secondaryIntents: ['HIIT interval timer', 'work rest timer', 'Tabata timer', 'custom interval workout timer'],
+    functions: ['run configurable work and rest phases with an optional preparation countdown and up to 99 rounds', 'include named HIIT and Tabata presets while keeping all interval lengths editable', 'start, pause, resume and reset without accumulating timer drift, deriving phase and remaining time from a monotonic session timestamp', 'play optional phase cues and a distinct finish chime only after the user starts the timer; explain browser background and sleep limits'],
+    acceptance: 'An 8-round 20-second work / 10-second rest session lasts 230 seconds because no rest follows the final work interval; pause/resume preserves the remaining phase time.',
+    boundary: 'A browser-based interval timer, not a system alarm or guaranteed background notification. Browsers and sleeping devices may delay JavaScript and audio; keep the page open and awake for best timing. Sound starts only after the user presses Start, needs no notification permission, and can be disabled. Settings and session data stay in the current page; no account, upload, API, storage or usage charge.',
+    relatedExistingIds: ['online-timer'],
+    logicModule: './tools/interval-timer/logic.mjs',
+  },
+  {
     id: 'julian-date-converter',
     category: 'date-time',
     type: 'converter',
