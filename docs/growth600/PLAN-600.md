@@ -1927,17 +1927,18 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 086 · 529 Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `529-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/529-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `529-calculator`**
+- **Destino:** `https://tools.usefulverse.com/tools/529-calculator/`; 36 rutas localizadas estáticas.
 - **Demanda:** `529 calculator` — 14.800 búsquedas/mes US/en, KD 10; nivel A. CPC 1.54 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Ahorro educativo, años hasta universidad, inflación de matrícula y becas manuales
 - **Prueba de aceptación específica:** Meta 10000 y plazo cero exige 10000 ahora
 - **Frontera con otras herramientas:** compound-interest-calculator: brecha educativa y calendario de matrícula. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Motor local y acotado. Modelo educativo: cada año de matrícula se paga al inicio del año de estudio, con inflación de matrícula; las becas ingresadas se fijan por año en dólares de ese momento y se limitan al importe de matrícula del año. Las aportaciones mensuales se modelan al final del mes. Descuenta a la fecha de matrícula los años futuros de estudio con el mismo rendimiento efectivo supuesto para antes y durante la universidad. No predice rendimientos, no aplica reglas fiscales o contractuales de un plan 529 y no incluye alojamiento, comida, libros o tasas; no es asesoramiento financiero, fiscal ni de inversión. Todo se calcula localmente, sin cuenta, subida, almacenamiento, API ni dependencia de servidor.
 - **Consultas secundarias del mismo propietario:**
   - `college savings calculator` — 4.400/mes US/en; KD 11.
   - `529 calculator free online`; `529 calculator with example`; `529 calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Estado local (2026-10-11):** lógica, formulario, SEO localizado y FAQ; copy estática generada para 36 locales con Google Translate, con correcciones puntuales de cadenas RTL y algunas etiquetas. Son borradores automáticos, no revisión nativa. Suite completa **1.801/1.801**; `locale:release-check` pasa; `npm run check` conserva **10.260 URLs** del sitio principal; build aislado genera **5.436 URLs** del hub (150 × 36 + 36 portadas), con controlador de **5.597 bytes**. QA Chrome EN/AR: caso de coste 10.000, un año, plazo/rendimiento/inflación/beca cero → objetivo 10.000 y ahorro adicional hoy 10.000; etiquetas accesibles, `dir=rtl` y sin overflow en 390 px ni 1365 px, consola limpia. Publicación aún pendiente hasta merge y despliegue del hub.
 
 ### 101 · Reverse Mortgage Calculator
 
@@ -4145,11 +4146,11 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 085 · Image Splitter
 
-- [ ] **C/F/E/X/L/B/P/S completos — `image-splitter`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/image-splitter/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `image-splitter`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/image-splitter/` + 35 versiones localizadas; las 36 aparecen en el sitemap público del hub.
 - **Demanda:** `image splitter` — 14.800 búsquedas/mes US/en, KD 5; nivel A. CPC 2.05 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Dividir por rejilla o tamaño, ordenar teselas, opción de solapamiento y descargar un ZIP. El conjunto debe reconstruir la imagen original sin huecos.
-- **Prueba de aceptación específica:** Teselas reconstruyen raster original sinhuecos
+- **Función implementada:** división por rejilla o dimensiones fijas en píxeles, teselas con nombre/orden por fila y columna, solapamiento opcional y ZIP con mapa de coordenadas y rectángulos de núcleo para ensamblar el original sin huecos.
+- **Prueba de aceptación específica:** un raster sintético 13×7 se reconstruye píxel por píxel tanto en rejilla 4×3 como en teselas de 5×3 px, con solapamiento de 2 px; los rectángulos de núcleo cubren cada píxel original exactamente una vez.
 - **Frontera con otras herramientas:** image-cropper: particiónpor lotes no recorteindividual. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
@@ -4157,6 +4158,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `image splitter free online`; `image splitter with example`; `image splitter no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** DE/de `bild aufteilen` 70/mes, KD 0.
+- **Implementación/publicación (2026-10-11):** PR [#113](https://github.com/pedronunezwebs-hash/usefulverse/pull/113), merge `ecaad6ec3ea64563568c46f08bdb101ce0fe5df0`; CI PR `38117948851`, deploy principal `38118173819` y publicación del hub `38118413789` correctos. Suite **1.794/1.794**, `locale:release-check` pasa para 20 idiomas ampliados; build de hub **5.400 URLs** (149 herramientas × 36 + 36 portadas). Chrome confirmó reconstrucción de píxeles exacta en ambos modos, ZIP descargable y árabe RTL a 390 px sin overflow ni errores de consola. Sin PageSpeed/Lighthouse ni gasto DataForSEO.
+- **Verificación pública:** rutas EN/ES/AR HTTP 200; sitemap `https://tools.usefulverse.com/sitemap.xml` HTTP 200, **5.400 URLs únicas**, incluidas las 36 variantes de Image Splitter. El sitemap principal continúa en 10.260; suma de ambos: 15.660 URLs. Esto confirma publicación y descubrimiento por sitemap, no indexación.
 
 ### 098 · Image Region Redactor: Pixelate or Blur
 

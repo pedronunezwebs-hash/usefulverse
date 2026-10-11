@@ -14,12 +14,13 @@ Browser-first collection of fast, private, static tools for everyday work.
 
 ## Separate tools hub
 
-The additional Growth600 tools are published as a separate static Cloudflare Pages site at
+The additional Growth600 tools are built for a separate static Cloudflare Pages site at
 [tools.usefulverse.com](https://tools.usefulverse.com/), so they do not replace or
-change the 277-tool catalog above. The current build contains 148 additional tools in
+change the 277-tool catalog above. The current release candidate contains 150 additional tools in
 the same 36 locales. Its canonical URL inventory and language alternates are listed in
-the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (5,364 URLs in the
-current build: 148 tools and 36 localized hub home pages);
+the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (5,436 URLs in the
+current build: 150 tools and 36 localized hub home pages; 427 tool implementations
+across the two sites);
 the staged candidate checklist and implementation record are in
 [docs/growth600/PLAN-600.md](docs/growth600/PLAN-600.md) and
 [docs/growth600/PROGRESS.md](docs/growth600/PROGRESS.md).
@@ -10552,7 +10553,7 @@ These are the canonical URLs for the additional tools and their localized pages.
 
 <!-- BEGIN GENERATED GROWTH600 URL INVENTORY -->
 
-Generated from `dist-growth600/sitemap.xml`: **5,364 canonical URLs**.
+Generated from `dist-growth600/sitemap.xml`: **5,436 canonical URLs**.
 
 ```text
 https://tools.usefulverse.com/
@@ -10562,6 +10563,7 @@ https://tools.usefulverse.com/tools/paver-calculator/
 https://tools.usefulverse.com/tools/image-color-picker/
 https://tools.usefulverse.com/tools/image-region-redactor/
 https://tools.usefulverse.com/tools/image-sharpener/
+https://tools.usefulverse.com/tools/image-splitter/
 https://tools.usefulverse.com/tools/image-upscaler/
 https://tools.usefulverse.com/tools/wallpaper-calculator/
 https://tools.usefulverse.com/tools/mulch-calculator/
@@ -10704,6 +10706,7 @@ https://tools.usefulverse.com/tools/har-viewer/
 https://tools.usefulverse.com/tools/robots-txt-tester/
 https://tools.usefulverse.com/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/tools/529-calculator/
 https://tools.usefulverse.com/es/
 https://tools.usefulverse.com/es/tools/btu-calculator/
 https://tools.usefulverse.com/es/tools/solar-panel-calculator/
@@ -10711,6 +10714,7 @@ https://tools.usefulverse.com/es/tools/paver-calculator/
 https://tools.usefulverse.com/es/tools/image-color-picker/
 https://tools.usefulverse.com/es/tools/image-region-redactor/
 https://tools.usefulverse.com/es/tools/image-sharpener/
+https://tools.usefulverse.com/es/tools/image-splitter/
 https://tools.usefulverse.com/es/tools/image-upscaler/
 https://tools.usefulverse.com/es/tools/wallpaper-calculator/
 https://tools.usefulverse.com/es/tools/mulch-calculator/
@@ -10853,6 +10857,7 @@ https://tools.usefulverse.com/es/tools/har-viewer/
 https://tools.usefulverse.com/es/tools/robots-txt-tester/
 https://tools.usefulverse.com/es/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/es/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/es/tools/529-calculator/
 https://tools.usefulverse.com/fr/
 https://tools.usefulverse.com/fr/tools/btu-calculator/
 https://tools.usefulverse.com/fr/tools/solar-panel-calculator/
@@ -10860,6 +10865,7 @@ https://tools.usefulverse.com/fr/tools/paver-calculator/
 https://tools.usefulverse.com/fr/tools/image-color-picker/
 https://tools.usefulverse.com/fr/tools/image-region-redactor/
 https://tools.usefulverse.com/fr/tools/image-sharpener/
+https://tools.usefulverse.com/fr/tools/image-splitter/
 https://tools.usefulverse.com/fr/tools/image-upscaler/
 https://tools.usefulverse.com/fr/tools/wallpaper-calculator/
 https://tools.usefulverse.com/fr/tools/mulch-calculator/
@@ -11002,6 +11008,7 @@ https://tools.usefulverse.com/fr/tools/har-viewer/
 https://tools.usefulverse.com/fr/tools/robots-txt-tester/
 https://tools.usefulverse.com/fr/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/fr/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/fr/tools/529-calculator/
 https://tools.usefulverse.com/pt-br/
 https://tools.usefulverse.com/pt-br/tools/btu-calculator/
 https://tools.usefulverse.com/pt-br/tools/solar-panel-calculator/
@@ -11009,6 +11016,7 @@ https://tools.usefulverse.com/pt-br/tools/paver-calculator/
 https://tools.usefulverse.com/pt-br/tools/image-color-picker/
 https://tools.usefulverse.com/pt-br/tools/image-region-redactor/
 https://tools.usefulverse.com/pt-br/tools/image-sharpener/
+https://tools.usefulverse.com/pt-br/tools/image-splitter/
 https://tools.usefulverse.com/pt-br/tools/image-upscaler/
 https://tools.usefulverse.com/pt-br/tools/wallpaper-calculator/
 https://tools.usefulverse.com/pt-br/tools/mulch-calculator/
@@ -11151,6 +11159,7 @@ https://tools.usefulverse.com/pt-br/tools/har-viewer/
 https://tools.usefulverse.com/pt-br/tools/robots-txt-tester/
 https://tools.usefulverse.com/pt-br/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/pt-br/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/pt-br/tools/529-calculator/
 https://tools.usefulverse.com/de/
 https://tools.usefulverse.com/de/tools/btu-calculator/
 https://tools.usefulverse.com/de/tools/solar-panel-calculator/
@@ -11158,6 +11167,7 @@ https://tools.usefulverse.com/de/tools/paver-calculator/
 https://tools.usefulverse.com/de/tools/image-color-picker/
 https://tools.usefulverse.com/de/tools/image-region-redactor/
 https://tools.usefulverse.com/de/tools/image-sharpener/
+https://tools.usefulverse.com/de/tools/image-splitter/
 https://tools.usefulverse.com/de/tools/image-upscaler/
 https://tools.usefulverse.com/de/tools/wallpaper-calculator/
 https://tools.usefulverse.com/de/tools/mulch-calculator/
@@ -11300,6 +11310,7 @@ https://tools.usefulverse.com/de/tools/har-viewer/
 https://tools.usefulverse.com/de/tools/robots-txt-tester/
 https://tools.usefulverse.com/de/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/de/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/de/tools/529-calculator/
 https://tools.usefulverse.com/ja/
 https://tools.usefulverse.com/ja/tools/btu-calculator/
 https://tools.usefulverse.com/ja/tools/solar-panel-calculator/
@@ -11307,6 +11318,7 @@ https://tools.usefulverse.com/ja/tools/paver-calculator/
 https://tools.usefulverse.com/ja/tools/image-color-picker/
 https://tools.usefulverse.com/ja/tools/image-region-redactor/
 https://tools.usefulverse.com/ja/tools/image-sharpener/
+https://tools.usefulverse.com/ja/tools/image-splitter/
 https://tools.usefulverse.com/ja/tools/image-upscaler/
 https://tools.usefulverse.com/ja/tools/wallpaper-calculator/
 https://tools.usefulverse.com/ja/tools/mulch-calculator/
@@ -11449,6 +11461,7 @@ https://tools.usefulverse.com/ja/tools/har-viewer/
 https://tools.usefulverse.com/ja/tools/robots-txt-tester/
 https://tools.usefulverse.com/ja/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/ja/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/ja/tools/529-calculator/
 https://tools.usefulverse.com/ko/
 https://tools.usefulverse.com/ko/tools/btu-calculator/
 https://tools.usefulverse.com/ko/tools/solar-panel-calculator/
@@ -11456,6 +11469,7 @@ https://tools.usefulverse.com/ko/tools/paver-calculator/
 https://tools.usefulverse.com/ko/tools/image-color-picker/
 https://tools.usefulverse.com/ko/tools/image-region-redactor/
 https://tools.usefulverse.com/ko/tools/image-sharpener/
+https://tools.usefulverse.com/ko/tools/image-splitter/
 https://tools.usefulverse.com/ko/tools/image-upscaler/
 https://tools.usefulverse.com/ko/tools/wallpaper-calculator/
 https://tools.usefulverse.com/ko/tools/mulch-calculator/
@@ -11598,6 +11612,7 @@ https://tools.usefulverse.com/ko/tools/har-viewer/
 https://tools.usefulverse.com/ko/tools/robots-txt-tester/
 https://tools.usefulverse.com/ko/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/ko/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/ko/tools/529-calculator/
 https://tools.usefulverse.com/id/
 https://tools.usefulverse.com/id/tools/btu-calculator/
 https://tools.usefulverse.com/id/tools/solar-panel-calculator/
@@ -11605,6 +11620,7 @@ https://tools.usefulverse.com/id/tools/paver-calculator/
 https://tools.usefulverse.com/id/tools/image-color-picker/
 https://tools.usefulverse.com/id/tools/image-region-redactor/
 https://tools.usefulverse.com/id/tools/image-sharpener/
+https://tools.usefulverse.com/id/tools/image-splitter/
 https://tools.usefulverse.com/id/tools/image-upscaler/
 https://tools.usefulverse.com/id/tools/wallpaper-calculator/
 https://tools.usefulverse.com/id/tools/mulch-calculator/
@@ -11747,6 +11763,7 @@ https://tools.usefulverse.com/id/tools/har-viewer/
 https://tools.usefulverse.com/id/tools/robots-txt-tester/
 https://tools.usefulverse.com/id/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/id/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/id/tools/529-calculator/
 https://tools.usefulverse.com/hi/
 https://tools.usefulverse.com/hi/tools/btu-calculator/
 https://tools.usefulverse.com/hi/tools/solar-panel-calculator/
@@ -11754,6 +11771,7 @@ https://tools.usefulverse.com/hi/tools/paver-calculator/
 https://tools.usefulverse.com/hi/tools/image-color-picker/
 https://tools.usefulverse.com/hi/tools/image-region-redactor/
 https://tools.usefulverse.com/hi/tools/image-sharpener/
+https://tools.usefulverse.com/hi/tools/image-splitter/
 https://tools.usefulverse.com/hi/tools/image-upscaler/
 https://tools.usefulverse.com/hi/tools/wallpaper-calculator/
 https://tools.usefulverse.com/hi/tools/mulch-calculator/
@@ -11896,6 +11914,7 @@ https://tools.usefulverse.com/hi/tools/har-viewer/
 https://tools.usefulverse.com/hi/tools/robots-txt-tester/
 https://tools.usefulverse.com/hi/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/hi/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/hi/tools/529-calculator/
 https://tools.usefulverse.com/ar/
 https://tools.usefulverse.com/ar/tools/btu-calculator/
 https://tools.usefulverse.com/ar/tools/solar-panel-calculator/
@@ -11903,6 +11922,7 @@ https://tools.usefulverse.com/ar/tools/paver-calculator/
 https://tools.usefulverse.com/ar/tools/image-color-picker/
 https://tools.usefulverse.com/ar/tools/image-region-redactor/
 https://tools.usefulverse.com/ar/tools/image-sharpener/
+https://tools.usefulverse.com/ar/tools/image-splitter/
 https://tools.usefulverse.com/ar/tools/image-upscaler/
 https://tools.usefulverse.com/ar/tools/wallpaper-calculator/
 https://tools.usefulverse.com/ar/tools/mulch-calculator/
@@ -12045,6 +12065,7 @@ https://tools.usefulverse.com/ar/tools/har-viewer/
 https://tools.usefulverse.com/ar/tools/robots-txt-tester/
 https://tools.usefulverse.com/ar/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/ar/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/ar/tools/529-calculator/
 https://tools.usefulverse.com/zh-cn/
 https://tools.usefulverse.com/zh-cn/tools/btu-calculator/
 https://tools.usefulverse.com/zh-cn/tools/solar-panel-calculator/
@@ -12052,6 +12073,7 @@ https://tools.usefulverse.com/zh-cn/tools/paver-calculator/
 https://tools.usefulverse.com/zh-cn/tools/image-color-picker/
 https://tools.usefulverse.com/zh-cn/tools/image-region-redactor/
 https://tools.usefulverse.com/zh-cn/tools/image-sharpener/
+https://tools.usefulverse.com/zh-cn/tools/image-splitter/
 https://tools.usefulverse.com/zh-cn/tools/image-upscaler/
 https://tools.usefulverse.com/zh-cn/tools/wallpaper-calculator/
 https://tools.usefulverse.com/zh-cn/tools/mulch-calculator/
@@ -12194,6 +12216,7 @@ https://tools.usefulverse.com/zh-cn/tools/har-viewer/
 https://tools.usefulverse.com/zh-cn/tools/robots-txt-tester/
 https://tools.usefulverse.com/zh-cn/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/zh-cn/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/zh-cn/tools/529-calculator/
 https://tools.usefulverse.com/bn/
 https://tools.usefulverse.com/bn/tools/btu-calculator/
 https://tools.usefulverse.com/bn/tools/solar-panel-calculator/
@@ -12201,6 +12224,7 @@ https://tools.usefulverse.com/bn/tools/paver-calculator/
 https://tools.usefulverse.com/bn/tools/image-color-picker/
 https://tools.usefulverse.com/bn/tools/image-region-redactor/
 https://tools.usefulverse.com/bn/tools/image-sharpener/
+https://tools.usefulverse.com/bn/tools/image-splitter/
 https://tools.usefulverse.com/bn/tools/image-upscaler/
 https://tools.usefulverse.com/bn/tools/wallpaper-calculator/
 https://tools.usefulverse.com/bn/tools/mulch-calculator/
@@ -12343,6 +12367,7 @@ https://tools.usefulverse.com/bn/tools/har-viewer/
 https://tools.usefulverse.com/bn/tools/robots-txt-tester/
 https://tools.usefulverse.com/bn/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/bn/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/bn/tools/529-calculator/
 https://tools.usefulverse.com/ru/
 https://tools.usefulverse.com/ru/tools/btu-calculator/
 https://tools.usefulverse.com/ru/tools/solar-panel-calculator/
@@ -12350,6 +12375,7 @@ https://tools.usefulverse.com/ru/tools/paver-calculator/
 https://tools.usefulverse.com/ru/tools/image-color-picker/
 https://tools.usefulverse.com/ru/tools/image-region-redactor/
 https://tools.usefulverse.com/ru/tools/image-sharpener/
+https://tools.usefulverse.com/ru/tools/image-splitter/
 https://tools.usefulverse.com/ru/tools/image-upscaler/
 https://tools.usefulverse.com/ru/tools/wallpaper-calculator/
 https://tools.usefulverse.com/ru/tools/mulch-calculator/
@@ -12492,6 +12518,7 @@ https://tools.usefulverse.com/ru/tools/har-viewer/
 https://tools.usefulverse.com/ru/tools/robots-txt-tester/
 https://tools.usefulverse.com/ru/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/ru/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/ru/tools/529-calculator/
 https://tools.usefulverse.com/ur/
 https://tools.usefulverse.com/ur/tools/btu-calculator/
 https://tools.usefulverse.com/ur/tools/solar-panel-calculator/
@@ -12499,6 +12526,7 @@ https://tools.usefulverse.com/ur/tools/paver-calculator/
 https://tools.usefulverse.com/ur/tools/image-color-picker/
 https://tools.usefulverse.com/ur/tools/image-region-redactor/
 https://tools.usefulverse.com/ur/tools/image-sharpener/
+https://tools.usefulverse.com/ur/tools/image-splitter/
 https://tools.usefulverse.com/ur/tools/image-upscaler/
 https://tools.usefulverse.com/ur/tools/wallpaper-calculator/
 https://tools.usefulverse.com/ur/tools/mulch-calculator/
@@ -12641,6 +12669,7 @@ https://tools.usefulverse.com/ur/tools/har-viewer/
 https://tools.usefulverse.com/ur/tools/robots-txt-tester/
 https://tools.usefulverse.com/ur/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/ur/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/ur/tools/529-calculator/
 https://tools.usefulverse.com/tr/
 https://tools.usefulverse.com/tr/tools/btu-calculator/
 https://tools.usefulverse.com/tr/tools/solar-panel-calculator/
@@ -12648,6 +12677,7 @@ https://tools.usefulverse.com/tr/tools/paver-calculator/
 https://tools.usefulverse.com/tr/tools/image-color-picker/
 https://tools.usefulverse.com/tr/tools/image-region-redactor/
 https://tools.usefulverse.com/tr/tools/image-sharpener/
+https://tools.usefulverse.com/tr/tools/image-splitter/
 https://tools.usefulverse.com/tr/tools/image-upscaler/
 https://tools.usefulverse.com/tr/tools/wallpaper-calculator/
 https://tools.usefulverse.com/tr/tools/mulch-calculator/
@@ -12790,6 +12820,7 @@ https://tools.usefulverse.com/tr/tools/har-viewer/
 https://tools.usefulverse.com/tr/tools/robots-txt-tester/
 https://tools.usefulverse.com/tr/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/tr/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/tr/tools/529-calculator/
 https://tools.usefulverse.com/vi/
 https://tools.usefulverse.com/vi/tools/btu-calculator/
 https://tools.usefulverse.com/vi/tools/solar-panel-calculator/
@@ -12797,6 +12828,7 @@ https://tools.usefulverse.com/vi/tools/paver-calculator/
 https://tools.usefulverse.com/vi/tools/image-color-picker/
 https://tools.usefulverse.com/vi/tools/image-region-redactor/
 https://tools.usefulverse.com/vi/tools/image-sharpener/
+https://tools.usefulverse.com/vi/tools/image-splitter/
 https://tools.usefulverse.com/vi/tools/image-upscaler/
 https://tools.usefulverse.com/vi/tools/wallpaper-calculator/
 https://tools.usefulverse.com/vi/tools/mulch-calculator/
@@ -12939,6 +12971,7 @@ https://tools.usefulverse.com/vi/tools/har-viewer/
 https://tools.usefulverse.com/vi/tools/robots-txt-tester/
 https://tools.usefulverse.com/vi/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/vi/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/vi/tools/529-calculator/
 https://tools.usefulverse.com/it/
 https://tools.usefulverse.com/it/tools/btu-calculator/
 https://tools.usefulverse.com/it/tools/solar-panel-calculator/
@@ -12946,6 +12979,7 @@ https://tools.usefulverse.com/it/tools/paver-calculator/
 https://tools.usefulverse.com/it/tools/image-color-picker/
 https://tools.usefulverse.com/it/tools/image-region-redactor/
 https://tools.usefulverse.com/it/tools/image-sharpener/
+https://tools.usefulverse.com/it/tools/image-splitter/
 https://tools.usefulverse.com/it/tools/image-upscaler/
 https://tools.usefulverse.com/it/tools/wallpaper-calculator/
 https://tools.usefulverse.com/it/tools/mulch-calculator/
@@ -13088,6 +13122,7 @@ https://tools.usefulverse.com/it/tools/har-viewer/
 https://tools.usefulverse.com/it/tools/robots-txt-tester/
 https://tools.usefulverse.com/it/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/it/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/it/tools/529-calculator/
 https://tools.usefulverse.com/zh-tw/
 https://tools.usefulverse.com/zh-tw/tools/btu-calculator/
 https://tools.usefulverse.com/zh-tw/tools/solar-panel-calculator/
@@ -13095,6 +13130,7 @@ https://tools.usefulverse.com/zh-tw/tools/paver-calculator/
 https://tools.usefulverse.com/zh-tw/tools/image-color-picker/
 https://tools.usefulverse.com/zh-tw/tools/image-region-redactor/
 https://tools.usefulverse.com/zh-tw/tools/image-sharpener/
+https://tools.usefulverse.com/zh-tw/tools/image-splitter/
 https://tools.usefulverse.com/zh-tw/tools/image-upscaler/
 https://tools.usefulverse.com/zh-tw/tools/wallpaper-calculator/
 https://tools.usefulverse.com/zh-tw/tools/mulch-calculator/
@@ -13237,6 +13273,7 @@ https://tools.usefulverse.com/zh-tw/tools/har-viewer/
 https://tools.usefulverse.com/zh-tw/tools/robots-txt-tester/
 https://tools.usefulverse.com/zh-tw/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/zh-tw/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/zh-tw/tools/529-calculator/
 https://tools.usefulverse.com/bg/
 https://tools.usefulverse.com/bg/tools/btu-calculator/
 https://tools.usefulverse.com/bg/tools/solar-panel-calculator/
@@ -13244,6 +13281,7 @@ https://tools.usefulverse.com/bg/tools/paver-calculator/
 https://tools.usefulverse.com/bg/tools/image-color-picker/
 https://tools.usefulverse.com/bg/tools/image-region-redactor/
 https://tools.usefulverse.com/bg/tools/image-sharpener/
+https://tools.usefulverse.com/bg/tools/image-splitter/
 https://tools.usefulverse.com/bg/tools/image-upscaler/
 https://tools.usefulverse.com/bg/tools/wallpaper-calculator/
 https://tools.usefulverse.com/bg/tools/mulch-calculator/
@@ -13386,6 +13424,7 @@ https://tools.usefulverse.com/bg/tools/har-viewer/
 https://tools.usefulverse.com/bg/tools/robots-txt-tester/
 https://tools.usefulverse.com/bg/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/bg/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/bg/tools/529-calculator/
 https://tools.usefulverse.com/ca/
 https://tools.usefulverse.com/ca/tools/btu-calculator/
 https://tools.usefulverse.com/ca/tools/solar-panel-calculator/
@@ -13393,6 +13432,7 @@ https://tools.usefulverse.com/ca/tools/paver-calculator/
 https://tools.usefulverse.com/ca/tools/image-color-picker/
 https://tools.usefulverse.com/ca/tools/image-region-redactor/
 https://tools.usefulverse.com/ca/tools/image-sharpener/
+https://tools.usefulverse.com/ca/tools/image-splitter/
 https://tools.usefulverse.com/ca/tools/image-upscaler/
 https://tools.usefulverse.com/ca/tools/wallpaper-calculator/
 https://tools.usefulverse.com/ca/tools/mulch-calculator/
@@ -13535,6 +13575,7 @@ https://tools.usefulverse.com/ca/tools/har-viewer/
 https://tools.usefulverse.com/ca/tools/robots-txt-tester/
 https://tools.usefulverse.com/ca/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/ca/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/ca/tools/529-calculator/
 https://tools.usefulverse.com/nl/
 https://tools.usefulverse.com/nl/tools/btu-calculator/
 https://tools.usefulverse.com/nl/tools/solar-panel-calculator/
@@ -13542,6 +13583,7 @@ https://tools.usefulverse.com/nl/tools/paver-calculator/
 https://tools.usefulverse.com/nl/tools/image-color-picker/
 https://tools.usefulverse.com/nl/tools/image-region-redactor/
 https://tools.usefulverse.com/nl/tools/image-sharpener/
+https://tools.usefulverse.com/nl/tools/image-splitter/
 https://tools.usefulverse.com/nl/tools/image-upscaler/
 https://tools.usefulverse.com/nl/tools/wallpaper-calculator/
 https://tools.usefulverse.com/nl/tools/mulch-calculator/
@@ -13684,6 +13726,7 @@ https://tools.usefulverse.com/nl/tools/har-viewer/
 https://tools.usefulverse.com/nl/tools/robots-txt-tester/
 https://tools.usefulverse.com/nl/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/nl/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/nl/tools/529-calculator/
 https://tools.usefulverse.com/el/
 https://tools.usefulverse.com/el/tools/btu-calculator/
 https://tools.usefulverse.com/el/tools/solar-panel-calculator/
@@ -13691,6 +13734,7 @@ https://tools.usefulverse.com/el/tools/paver-calculator/
 https://tools.usefulverse.com/el/tools/image-color-picker/
 https://tools.usefulverse.com/el/tools/image-region-redactor/
 https://tools.usefulverse.com/el/tools/image-sharpener/
+https://tools.usefulverse.com/el/tools/image-splitter/
 https://tools.usefulverse.com/el/tools/image-upscaler/
 https://tools.usefulverse.com/el/tools/wallpaper-calculator/
 https://tools.usefulverse.com/el/tools/mulch-calculator/
@@ -13833,6 +13877,7 @@ https://tools.usefulverse.com/el/tools/har-viewer/
 https://tools.usefulverse.com/el/tools/robots-txt-tester/
 https://tools.usefulverse.com/el/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/el/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/el/tools/529-calculator/
 https://tools.usefulverse.com/ms/
 https://tools.usefulverse.com/ms/tools/btu-calculator/
 https://tools.usefulverse.com/ms/tools/solar-panel-calculator/
@@ -13840,6 +13885,7 @@ https://tools.usefulverse.com/ms/tools/paver-calculator/
 https://tools.usefulverse.com/ms/tools/image-color-picker/
 https://tools.usefulverse.com/ms/tools/image-region-redactor/
 https://tools.usefulverse.com/ms/tools/image-sharpener/
+https://tools.usefulverse.com/ms/tools/image-splitter/
 https://tools.usefulverse.com/ms/tools/image-upscaler/
 https://tools.usefulverse.com/ms/tools/wallpaper-calculator/
 https://tools.usefulverse.com/ms/tools/mulch-calculator/
@@ -13982,6 +14028,7 @@ https://tools.usefulverse.com/ms/tools/har-viewer/
 https://tools.usefulverse.com/ms/tools/robots-txt-tester/
 https://tools.usefulverse.com/ms/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/ms/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/ms/tools/529-calculator/
 https://tools.usefulverse.com/pl/
 https://tools.usefulverse.com/pl/tools/btu-calculator/
 https://tools.usefulverse.com/pl/tools/solar-panel-calculator/
@@ -13989,6 +14036,7 @@ https://tools.usefulverse.com/pl/tools/paver-calculator/
 https://tools.usefulverse.com/pl/tools/image-color-picker/
 https://tools.usefulverse.com/pl/tools/image-region-redactor/
 https://tools.usefulverse.com/pl/tools/image-sharpener/
+https://tools.usefulverse.com/pl/tools/image-splitter/
 https://tools.usefulverse.com/pl/tools/image-upscaler/
 https://tools.usefulverse.com/pl/tools/wallpaper-calculator/
 https://tools.usefulverse.com/pl/tools/mulch-calculator/
@@ -14131,6 +14179,7 @@ https://tools.usefulverse.com/pl/tools/har-viewer/
 https://tools.usefulverse.com/pl/tools/robots-txt-tester/
 https://tools.usefulverse.com/pl/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/pl/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/pl/tools/529-calculator/
 https://tools.usefulverse.com/sv/
 https://tools.usefulverse.com/sv/tools/btu-calculator/
 https://tools.usefulverse.com/sv/tools/solar-panel-calculator/
@@ -14138,6 +14187,7 @@ https://tools.usefulverse.com/sv/tools/paver-calculator/
 https://tools.usefulverse.com/sv/tools/image-color-picker/
 https://tools.usefulverse.com/sv/tools/image-region-redactor/
 https://tools.usefulverse.com/sv/tools/image-sharpener/
+https://tools.usefulverse.com/sv/tools/image-splitter/
 https://tools.usefulverse.com/sv/tools/image-upscaler/
 https://tools.usefulverse.com/sv/tools/wallpaper-calculator/
 https://tools.usefulverse.com/sv/tools/mulch-calculator/
@@ -14280,6 +14330,7 @@ https://tools.usefulverse.com/sv/tools/har-viewer/
 https://tools.usefulverse.com/sv/tools/robots-txt-tester/
 https://tools.usefulverse.com/sv/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/sv/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/sv/tools/529-calculator/
 https://tools.usefulverse.com/th/
 https://tools.usefulverse.com/th/tools/btu-calculator/
 https://tools.usefulverse.com/th/tools/solar-panel-calculator/
@@ -14287,6 +14338,7 @@ https://tools.usefulverse.com/th/tools/paver-calculator/
 https://tools.usefulverse.com/th/tools/image-color-picker/
 https://tools.usefulverse.com/th/tools/image-region-redactor/
 https://tools.usefulverse.com/th/tools/image-sharpener/
+https://tools.usefulverse.com/th/tools/image-splitter/
 https://tools.usefulverse.com/th/tools/image-upscaler/
 https://tools.usefulverse.com/th/tools/wallpaper-calculator/
 https://tools.usefulverse.com/th/tools/mulch-calculator/
@@ -14429,6 +14481,7 @@ https://tools.usefulverse.com/th/tools/har-viewer/
 https://tools.usefulverse.com/th/tools/robots-txt-tester/
 https://tools.usefulverse.com/th/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/th/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/th/tools/529-calculator/
 https://tools.usefulverse.com/uk/
 https://tools.usefulverse.com/uk/tools/btu-calculator/
 https://tools.usefulverse.com/uk/tools/solar-panel-calculator/
@@ -14436,6 +14489,7 @@ https://tools.usefulverse.com/uk/tools/paver-calculator/
 https://tools.usefulverse.com/uk/tools/image-color-picker/
 https://tools.usefulverse.com/uk/tools/image-region-redactor/
 https://tools.usefulverse.com/uk/tools/image-sharpener/
+https://tools.usefulverse.com/uk/tools/image-splitter/
 https://tools.usefulverse.com/uk/tools/image-upscaler/
 https://tools.usefulverse.com/uk/tools/wallpaper-calculator/
 https://tools.usefulverse.com/uk/tools/mulch-calculator/
@@ -14578,6 +14632,7 @@ https://tools.usefulverse.com/uk/tools/har-viewer/
 https://tools.usefulverse.com/uk/tools/robots-txt-tester/
 https://tools.usefulverse.com/uk/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/uk/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/uk/tools/529-calculator/
 https://tools.usefulverse.com/sw/
 https://tools.usefulverse.com/sw/tools/btu-calculator/
 https://tools.usefulverse.com/sw/tools/solar-panel-calculator/
@@ -14585,6 +14640,7 @@ https://tools.usefulverse.com/sw/tools/paver-calculator/
 https://tools.usefulverse.com/sw/tools/image-color-picker/
 https://tools.usefulverse.com/sw/tools/image-region-redactor/
 https://tools.usefulverse.com/sw/tools/image-sharpener/
+https://tools.usefulverse.com/sw/tools/image-splitter/
 https://tools.usefulverse.com/sw/tools/image-upscaler/
 https://tools.usefulverse.com/sw/tools/wallpaper-calculator/
 https://tools.usefulverse.com/sw/tools/mulch-calculator/
@@ -14727,6 +14783,7 @@ https://tools.usefulverse.com/sw/tools/har-viewer/
 https://tools.usefulverse.com/sw/tools/robots-txt-tester/
 https://tools.usefulverse.com/sw/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/sw/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/sw/tools/529-calculator/
 https://tools.usefulverse.com/mr/
 https://tools.usefulverse.com/mr/tools/btu-calculator/
 https://tools.usefulverse.com/mr/tools/solar-panel-calculator/
@@ -14734,6 +14791,7 @@ https://tools.usefulverse.com/mr/tools/paver-calculator/
 https://tools.usefulverse.com/mr/tools/image-color-picker/
 https://tools.usefulverse.com/mr/tools/image-region-redactor/
 https://tools.usefulverse.com/mr/tools/image-sharpener/
+https://tools.usefulverse.com/mr/tools/image-splitter/
 https://tools.usefulverse.com/mr/tools/image-upscaler/
 https://tools.usefulverse.com/mr/tools/wallpaper-calculator/
 https://tools.usefulverse.com/mr/tools/mulch-calculator/
@@ -14876,6 +14934,7 @@ https://tools.usefulverse.com/mr/tools/har-viewer/
 https://tools.usefulverse.com/mr/tools/robots-txt-tester/
 https://tools.usefulverse.com/mr/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/mr/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/mr/tools/529-calculator/
 https://tools.usefulverse.com/te/
 https://tools.usefulverse.com/te/tools/btu-calculator/
 https://tools.usefulverse.com/te/tools/solar-panel-calculator/
@@ -14883,6 +14942,7 @@ https://tools.usefulverse.com/te/tools/paver-calculator/
 https://tools.usefulverse.com/te/tools/image-color-picker/
 https://tools.usefulverse.com/te/tools/image-region-redactor/
 https://tools.usefulverse.com/te/tools/image-sharpener/
+https://tools.usefulverse.com/te/tools/image-splitter/
 https://tools.usefulverse.com/te/tools/image-upscaler/
 https://tools.usefulverse.com/te/tools/wallpaper-calculator/
 https://tools.usefulverse.com/te/tools/mulch-calculator/
@@ -15025,6 +15085,7 @@ https://tools.usefulverse.com/te/tools/har-viewer/
 https://tools.usefulverse.com/te/tools/robots-txt-tester/
 https://tools.usefulverse.com/te/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/te/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/te/tools/529-calculator/
 https://tools.usefulverse.com/ha/
 https://tools.usefulverse.com/ha/tools/btu-calculator/
 https://tools.usefulverse.com/ha/tools/solar-panel-calculator/
@@ -15032,6 +15093,7 @@ https://tools.usefulverse.com/ha/tools/paver-calculator/
 https://tools.usefulverse.com/ha/tools/image-color-picker/
 https://tools.usefulverse.com/ha/tools/image-region-redactor/
 https://tools.usefulverse.com/ha/tools/image-sharpener/
+https://tools.usefulverse.com/ha/tools/image-splitter/
 https://tools.usefulverse.com/ha/tools/image-upscaler/
 https://tools.usefulverse.com/ha/tools/wallpaper-calculator/
 https://tools.usefulverse.com/ha/tools/mulch-calculator/
@@ -15174,6 +15236,7 @@ https://tools.usefulverse.com/ha/tools/har-viewer/
 https://tools.usefulverse.com/ha/tools/robots-txt-tester/
 https://tools.usefulverse.com/ha/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/ha/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/ha/tools/529-calculator/
 https://tools.usefulverse.com/tl/
 https://tools.usefulverse.com/tl/tools/btu-calculator/
 https://tools.usefulverse.com/tl/tools/solar-panel-calculator/
@@ -15181,6 +15244,7 @@ https://tools.usefulverse.com/tl/tools/paver-calculator/
 https://tools.usefulverse.com/tl/tools/image-color-picker/
 https://tools.usefulverse.com/tl/tools/image-region-redactor/
 https://tools.usefulverse.com/tl/tools/image-sharpener/
+https://tools.usefulverse.com/tl/tools/image-splitter/
 https://tools.usefulverse.com/tl/tools/image-upscaler/
 https://tools.usefulverse.com/tl/tools/wallpaper-calculator/
 https://tools.usefulverse.com/tl/tools/mulch-calculator/
@@ -15323,6 +15387,7 @@ https://tools.usefulverse.com/tl/tools/har-viewer/
 https://tools.usefulverse.com/tl/tools/robots-txt-tester/
 https://tools.usefulverse.com/tl/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/tl/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/tl/tools/529-calculator/
 https://tools.usefulverse.com/ta/
 https://tools.usefulverse.com/ta/tools/btu-calculator/
 https://tools.usefulverse.com/ta/tools/solar-panel-calculator/
@@ -15330,6 +15395,7 @@ https://tools.usefulverse.com/ta/tools/paver-calculator/
 https://tools.usefulverse.com/ta/tools/image-color-picker/
 https://tools.usefulverse.com/ta/tools/image-region-redactor/
 https://tools.usefulverse.com/ta/tools/image-sharpener/
+https://tools.usefulverse.com/ta/tools/image-splitter/
 https://tools.usefulverse.com/ta/tools/image-upscaler/
 https://tools.usefulverse.com/ta/tools/wallpaper-calculator/
 https://tools.usefulverse.com/ta/tools/mulch-calculator/
@@ -15472,6 +15538,7 @@ https://tools.usefulverse.com/ta/tools/har-viewer/
 https://tools.usefulverse.com/ta/tools/robots-txt-tester/
 https://tools.usefulverse.com/ta/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/ta/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/ta/tools/529-calculator/
 https://tools.usefulverse.com/fa/
 https://tools.usefulverse.com/fa/tools/btu-calculator/
 https://tools.usefulverse.com/fa/tools/solar-panel-calculator/
@@ -15479,6 +15546,7 @@ https://tools.usefulverse.com/fa/tools/paver-calculator/
 https://tools.usefulverse.com/fa/tools/image-color-picker/
 https://tools.usefulverse.com/fa/tools/image-region-redactor/
 https://tools.usefulverse.com/fa/tools/image-sharpener/
+https://tools.usefulverse.com/fa/tools/image-splitter/
 https://tools.usefulverse.com/fa/tools/image-upscaler/
 https://tools.usefulverse.com/fa/tools/wallpaper-calculator/
 https://tools.usefulverse.com/fa/tools/mulch-calculator/
@@ -15621,6 +15689,7 @@ https://tools.usefulverse.com/fa/tools/har-viewer/
 https://tools.usefulverse.com/fa/tools/robots-txt-tester/
 https://tools.usefulverse.com/fa/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/fa/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/fa/tools/529-calculator/
 https://tools.usefulverse.com/am/
 https://tools.usefulverse.com/am/tools/btu-calculator/
 https://tools.usefulverse.com/am/tools/solar-panel-calculator/
@@ -15628,6 +15697,7 @@ https://tools.usefulverse.com/am/tools/paver-calculator/
 https://tools.usefulverse.com/am/tools/image-color-picker/
 https://tools.usefulverse.com/am/tools/image-region-redactor/
 https://tools.usefulverse.com/am/tools/image-sharpener/
+https://tools.usefulverse.com/am/tools/image-splitter/
 https://tools.usefulverse.com/am/tools/image-upscaler/
 https://tools.usefulverse.com/am/tools/wallpaper-calculator/
 https://tools.usefulverse.com/am/tools/mulch-calculator/
@@ -15770,6 +15840,7 @@ https://tools.usefulverse.com/am/tools/har-viewer/
 https://tools.usefulverse.com/am/tools/robots-txt-tester/
 https://tools.usefulverse.com/am/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/am/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/am/tools/529-calculator/
 https://tools.usefulverse.com/gu/
 https://tools.usefulverse.com/gu/tools/btu-calculator/
 https://tools.usefulverse.com/gu/tools/solar-panel-calculator/
@@ -15777,6 +15848,7 @@ https://tools.usefulverse.com/gu/tools/paver-calculator/
 https://tools.usefulverse.com/gu/tools/image-color-picker/
 https://tools.usefulverse.com/gu/tools/image-region-redactor/
 https://tools.usefulverse.com/gu/tools/image-sharpener/
+https://tools.usefulverse.com/gu/tools/image-splitter/
 https://tools.usefulverse.com/gu/tools/image-upscaler/
 https://tools.usefulverse.com/gu/tools/wallpaper-calculator/
 https://tools.usefulverse.com/gu/tools/mulch-calculator/
@@ -15919,4 +15991,5 @@ https://tools.usefulverse.com/gu/tools/har-viewer/
 https://tools.usefulverse.com/gu/tools/robots-txt-tester/
 https://tools.usefulverse.com/gu/tools/chinese-remainder-theorem-calculator/
 https://tools.usefulverse.com/gu/tools/effective-interest-rate-calculator/
+https://tools.usefulverse.com/gu/tools/529-calculator/
 ```<!-- END GENERATED GROWTH600 URL INVENTORY -->

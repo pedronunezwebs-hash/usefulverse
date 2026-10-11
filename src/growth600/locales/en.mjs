@@ -257,6 +257,8 @@ import antennaLengthCalculatorCopies from './antenna-length-calculator-final.mjs
 import { antennaLengthCalculatorEnglishCopy } from './antenna-length-calculator.en.mjs';
 import effectiveInterestRateCalculatorCopies from './effective-interest-rate-calculator-final.mjs';
 import { effectiveInterestRateCalculatorEnglishCopy } from './effective-interest-rate-calculator.en.mjs';
+import fiveTwentyNineCalculatorCopies from './529-calculator-final.mjs';
+import { fiveTwentyNineCalculatorEnglishCopy } from './529-calculator.en.mjs';
 import chemicalEquationCopies from './chemical-equation-balancer-final.mjs';
 import { chemicalEquationBalancerEnglishCopy } from './chemical-equation-balancer.en.mjs';
 import gearRatioCopies from './gear-ratio-calculator-final.mjs';
@@ -764,6 +766,7 @@ registerGrowthLocaleExtension(source, 'pulley-calculator', { ...pulleyCalculator
 registerGrowthLocaleExtension(source, 'rlc-circuit-calculator', { ...rlcCircuitCalculatorCopies, en: rlcCircuitCalculatorEnglishCopy }, 'pulley-calculator');
 registerGrowthLocaleExtension(source, 'antenna-length-calculator', { ...antennaLengthCalculatorCopies, en: antennaLengthCalculatorEnglishCopy }, 'rlc-circuit-calculator');
 registerGrowthLocaleExtension(source, 'effective-interest-rate-calculator', { ...effectiveInterestRateCalculatorCopies, en: effectiveInterestRateCalculatorEnglishCopy }, 'antenna-length-calculator');
+registerGrowthLocaleExtension(source, '529-calculator', { ...fiveTwentyNineCalculatorCopies, en: fiveTwentyNineCalculatorEnglishCopy }, 'effective-interest-rate-calculator');
 registerGrowthLocaleExtension(source, 'chemical-equation-balancer', { ...chemicalEquationCopies, en: chemicalEquationBalancerEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'gear-ratio-calculator', { ...gearRatioCopies, en: gearRatioCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'density-calculator', { ...densityCopies, en: densityCalculatorEnglishCopy }, 'gravel-calculator');

@@ -1,0 +1,30 @@
+export const fiveTwentyNineCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: '529 College Savings Calculator',
+  title: '529 Calculator — Free College Savings Planner | UsefulVerse',
+  description: 'Estimate future college costs, scholarships, 529 savings and the monthly amount needed. Free planning calculator, no account.',
+  intro: 'Estimate future college costs, subtract a scholarship estimate, and compare the amount needed at enrollment with projected savings. The model treats tuition as paid at the start of each study year and discounts later years using your assumed return.',
+  howQuestion: 'How much should I save in a 529 plan for college?',
+  howAnswer: 'Enter today’s annual college cost, years until enrollment, study length, current savings, monthly deposits, estimated return, tuition inflation and scholarship per year. It estimates the fund needed at enrollment, then the monthly contribution that may reach it under those assumptions. Tuition is modeled as paid at the start of each study year.',
+  privacyQuestion: 'Are my financial details uploaded?',
+  privacyAnswer: 'No. The estimate runs in this browser. The calculator does not ask for an account, upload your inputs or store them after you leave.',
+  fields: {
+    currentSavings: 'Current college savings', monthlyContribution: 'Monthly contribution', yearsUntilCollege: 'Years until college starts',
+    annualCostToday: 'Annual college cost today', collegeYears: 'Years in college', tuitionInflationPercent: 'Annual tuition inflation (%)',
+    annualReturnPercent: 'Assumed annual return (%)', scholarshipPerYear: 'Scholarship per college year (future dollars)', currency: 'Display currency',
+    accuracyNote: 'Estimate only. Assumes month-end deposits, a steady effective annual return before fees/taxes both before and during college, tuition paid at the start of each study year, tuition inflation and a fixed scholarship per year. It excludes room, food, books, fees, taxes and account rules. Returns and costs can change. Not investment, tax or financial advice. Check current plan rules and eligible expenses.',
+  },
+  actions: { calculate: 'Estimate college savings', reset: 'Reset', copy: 'Copy estimate', example: 'Load example', result: 'College funding estimate' },
+  messages: {
+    calculated: 'Estimate calculated.', checkInputs: 'Check the values and ranges.', exampleLoaded: 'Example loaded.',
+    target: 'Estimated college fund needed at enrollment', grossCost: 'Projected tuition before scholarships', scholarships: 'Scholarship estimate over college',
+    projectedSavings: 'Savings projected at enrollment', fundingGap: 'Estimated funding gap', monthlyNeeded: 'Monthly deposit needed from now',
+    amountNeededNow: 'Additional savings needed today', noTime: 'No time remains; compare the target with savings today.',
+    assumption: 'Assumed annual return',
+  },
+  additionalFaqs: [
+    { question: 'Does the estimate include room and board?', answer: 'No. Enter the annual cost you want to plan for; the projection covers that amount as tuition-like cost only. Add room, food, books or fees to the input yourself if you want to include them.' },
+    { question: 'Does a 529 plan guarantee this return or target?', answer: 'No. Return and tuition inflation are user-entered assumptions, not predictions or guarantees. The estimate assumes the same return before and during college, but actual performance, fees, taxes, costs and plan rules can change the result.' },
+    { question: 'Can I include a scholarship?', answer: 'Yes. Enter an estimated fixed scholarship amount for each college year. The calculator caps it at that year’s projected tuition and subtracts it from the funding target.' },
+  ],
+});

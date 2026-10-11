@@ -1787,6 +1787,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['compound-interest-calculator'],
     logicModule: './tools/effective-interest-rate-calculator/logic.mjs',
   },
+  {
+    id: '529-calculator',
+    category: 'personal-finance',
+    type: 'calculator',
+    primaryIntent: '529 calculator',
+    secondaryIntents: ['college savings calculator', '529 college savings calculator', 'college fund calculator with tuition inflation'],
+    functions: ['project user-entered annual college costs to enrollment using tuition inflation and study duration', 'subtract a fixed annual scholarship estimate, capped at projected tuition', 'project current savings and end-of-month contributions using a user-entered effective annual return', 'estimate the monthly contribution or amount needed today to meet the net college target'],
+    acceptance: 'With annual college cost $10,000, no inflation, no scholarship, one college year and zero years until enrollment, the target is $10,000 and the calculator reports $10,000 needed today, with no monthly estimate.',
+    boundary: 'Scenario estimate only. Scholarship is a fixed future-dollar amount per study year; annual return and tuition inflation are steady user assumptions. Excludes room, food, books, fees, taxes, plan/account rules and changing returns. Not investment, tax or financial advice. All calculations run locally with no upload, storage, API or account.',
+    relatedExistingIds: ['compound-interest-calculator', 'savings-goal-calculator'],
+    logicModule: './tools/529-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {
