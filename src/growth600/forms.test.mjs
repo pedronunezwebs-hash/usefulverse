@@ -18,6 +18,7 @@ import { harViewerEnglishCopy } from './locales/har-viewer.en.mjs';
 import { robotsTxtTesterEnglishCopy } from './locales/robots-txt-tester.en.mjs';
 import { jsonToExcelEnglishCopy } from './locales/json-to-excel.en.mjs';
 import { waistToHipRatioEnglishCopy } from './locales/waist-to-hip-ratio-calculator.en.mjs';
+import { hebrewCalendarConverterEnglishCopy } from './locales/hebrew-calendar-converter.en.mjs';
 import { binaryBase64ToolEnglishCopy } from './locales/binary-base64-tool.en.mjs';
 import { jsonModelGeneratorEnglishCopy } from './locales/json-model-generator.en.mjs';
 import { csvEditorEnglishCopy } from './locales/csv-editor.en.mjs';
@@ -68,6 +69,7 @@ const copies = {
   'purchase-order-generator': purchaseOrderGeneratorEnglishCopy,
   'eigenvalue-calculator': eigenvalueCalculatorEnglishCopy,
   'bond-calculator': bondCalculatorEnglishCopy,
+  'hebrew-calendar-converter': hebrewCalendarConverterEnglishCopy,
   'image-splitter': { name: 'Image splitter', actions: { ...actions, choose: 'Choose image', export: 'Split and prepare ZIP', cancel: 'Cancel', download: 'Download tile ZIP' }, messages: { ...messages }, fields: { imageFile: 'Choose an image', mode: 'Split by', gridMode: 'Rows and columns', tileSizeMode: 'Fixed tile dimensions', columns: 'Columns', rows: 'Rows', tileWidth: 'Tile width', tileHeight: 'Tile height', overlap: 'Overlap', accuracyNote: 'Local image processing.', previewHint: 'Image grid preview.', imageReady: 'Image ready' } },
   'image-sharpener': { name: 'Image sharpener', actions: { ...actions, load: 'Choose image', export: 'Prepare download', download: 'Download', original: 'Show original', sharpened: 'Sharpened preview', png: 'PNG', jpeg: 'JPEG' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', exporting: 'Sharpening…', exportFailed: 'Export failed.', exportReady: 'Image ready.' }, fields: { imageFile: 'Choose image', amount: 'Strength', radius: 'Radius', threshold: 'Threshold', compare: 'Show original', accuracyNote: 'Processed locally; 8 megapixel limit.', previewHint: 'Preview is reduced.', format: 'Format', relatedRedactor: 'Redact private details.', relatedCropper: 'Crop the image.' } },
   'photo-to-sketch': { name: 'Photo to sketch', actions: { ...actions, load: 'Choose image', export: 'Create sketch PNG', cancel: 'Cancel processing', download: 'Download sketch PNG', original: 'Show original' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', exporting: 'Creating sketch…', cancelled: 'Processing cancelled.', exportFailed: 'Export failed.', exportReady: 'Sketch ready.' }, fields: { imageFile: 'Choose image', intensity: 'Sketch intensity', detail: 'Fine-detail threshold', compare: 'Show original', accuracyNote: 'Local processing; maximum 8 megapixels.', previewHint: 'Reduced preview.' } },
@@ -1591,4 +1593,10 @@ test('waist-to-hip ratio form requires matching units and exposes local copyable
   const html = renderGrowthForm('waist-to-hip-ratio-calculator', waistToHipRatioEnglishCopy);
   for (const expected of ['name="waist"', 'name="hip"', 'name="unit"', 'value="cm"', 'value="in"', 'data-action="example"', 'data-action="calculate"', 'data-action="reset"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
   assert.match(html, /not a health assessment/u);
+});
+
+test('Hebrew calendar converter renders accessible bidirectional inputs, month controls and a copy action', () => {
+  const html = renderGrowthForm('hebrew-calendar-converter', hebrewCalendarConverterEnglishCopy);
+  for (const expected of ['name="direction"', 'name="gregorianDate"', 'name="hebrewYear"', 'name="hebrewMonth"', 'name="hebrewDay"', 'data-gregorian-fields', 'data-hebrew-fields', 'data-action="example"', 'data-action="convert"', 'data-action="reset"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /begins at sunset/u);
 });

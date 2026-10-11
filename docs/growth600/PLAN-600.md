@@ -3487,17 +3487,18 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 133 · Hebrew Calendar Converter
 
-- [ ] **C/F/E/X/L/B/P/S completos — `hebrew-calendar-converter`**
+- [ ] **C/F/E/X/L/B/P/S completos — `hebrew-calendar-converter`** (C/F/E/X/L/B aprobados localmente; P/S pendientes de publicación y comprobación pública)
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/hebrew-calendar-converter/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `hebrew calendar converter` — 6.600 búsquedas/mes US/en, KD 31; nivel B. CPC 4.73 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Conversión bidireccional, meses de años bisiestos y salida legible; documentar calendario y límites históricos.
-- **Prueba de aceptación específica:** AdarII soloañosbisiestos
+- **Prueba de aceptación específica:** 2024-03-11 ↔ 1 Adar II 5784 (año bisiesto); Adar II debe rechazarse en un año común; no inferir hora de ocaso ni fecha religiosa local.
 - **Frontera con otras herramientas:** hijri-calendar-converter: sistema calendárico distinto. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `hebrew date converter` — 6.600/mes US/en; KD 27.
   - `hebrew calendar converter free online`; `hebrew calendar converter with example`; `hebrew calendar converter no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Estado local (2026-10-11):** implementación y 36 copias estáticas completas; suite global **1.871/1.871**, gates focales **317/317**, `locale:release-check`, build principal **10.260 URLs** y hub **5.760 páginas** pasan. Chrome EN/AR comprueba conversión, RTL y reset árabe; **P/S siguen pendientes** de PR, deploy y sitemap público.
 
 ### 149 · Moon Phase Calculator
 

@@ -4,7 +4,7 @@
 
 ## Estado público actual · 2026-10-11
 
-- **157 herramientas Growth600 publicadas** junto al catálogo protegido de 277; **434 herramientas públicas en total**. Todas están publicadas en 36 locales. Verificación directa actual: sitemap del hub HTTP 200 con **5.688 URLs únicas** (157 × 36 + 36 portadas); sitemap principal: **10.260 URLs**; total combinado: **15.948 URLs**. La presencia en sitemap no demuestra indexación.
+- **Estado que ya está en producción:** 158 herramientas Growth600 junto al catálogo protegido de 277; **435 herramientas públicas** en total. El hub publicado tiene 5.724 URLs (158 × 36 + 36 portadas); sitemap principal: **10.260 URLs**; total público actual: **15.984 URLs**. La presencia en sitemap no demuestra indexación.
 - #086 529 Calculator: PR #114 integrada en `c9e18cb0dc4ef8128aed06545ce108047b918a2d`; CI/despliegue principal `38120717651` y publicación separada del hub `38120973293` correctos.
 - #087 Dilution Calculator ya estaba publicada antes de esta reanudación; en esta sesión se comprobó que EN y AR devuelven HTTP 200 y que sus 36 variantes están incluidas en el sitemap público. No se rehízo.
 - #088 Julian Date Converter: PR #115 integrada en `10366aafca353b192d24dbae9a945e9eb19fb8d6`; CI `38122981697`, despliegue principal `38123224930` y publicación separada del hub `38123636699` correctos. Sitemap público: 5.472 URLs y exactamente 36 rutas para la herramienta; la publicación no implica indexación.
@@ -12,7 +12,9 @@
 - #121 Logic Grid Puzzle: PR [#117](https://github.com/pedronunezwebs-hash/usefulverse/pull/117) integrada como `883b3d59ea4cec326ecefbd49753cd9ae566f2c9`; CI del PR `38127230223`, despliegue principal `38127481303` y publicación del hub `38127722424` correctos. 1.822/1.822 pruebas, builds y locales pasan. Sus 36 rutas están en el sitemap público HTTP 200; rutas EN/AR/JA devuelven HTTP 200. Sin PageSpeed/Lighthouse ni investigación SEO repetida.
 - #128 Eigenvalue Calculator: PR [#121](https://github.com/pedronunezwebs-hash/usefulverse/pull/121) integrada en `9f4aa340c734f270e721d961bea53a6e48a1f657`; CI y despliegue principal/hub `38134437590` y `38134716948` correctos.
 - #129 Bond Calculator: PR [#122](https://github.com/pedronunezwebs-hash/usefulverse/pull/122), merge `13a866ef52a89167442886913b6b601699a32382`; CI principal `38136698154` y publicación estática del hub `38136718685` correctos. Verificación directa: sitemap HTTP 200 con **5.688 URLs únicas**, exactamente 36 variantes; EN y AR sirven el nuevo título/HTML y canonical propio. La publicación no demuestra indexación. No se midió PageSpeed/Lighthouse.
-- Al reanudar: cerrar PR/publicación de #130 Waist To Hip Ratio Calculator; después seguir la siguiente ficha abierta de `PLAN-600.md`. No rehacer #088, #120, #121, #128, #129 ni DataForSEO.
+- #130 Waist To Hip Ratio Calculator: PR [#123](https://github.com/pedronunezwebs-hash/usefulverse/pull/123), merge `f5abdb60abc9d565fdc5d9e74a1019bc8c327f62`; deploy principal `38138160890` y hub `38138711675` correctos. Verificación directa: sitemap del hub HTTP 200 con **5.724 URLs únicas** y exactamente 36 variantes de WHR; EN y AR responden HTTP 200; sitemap principal HTTP 200 con **10.260 URLs**. Publicación no demuestra indexación. No se midió PageSpeed/Lighthouse.
+- #131 Compression Ratio Calculator y #132 Goal Planner ya estaban publicadas al reanudar; se comprobaron sus 36 rutas en el sitemap y no se rehacen.
+- #133 Hebrew Calendar Converter está implementada y superó los gates locales; queda integrar, desplegar y verificarla en producción. Después seguir la siguiente ficha abierta de `PLAN-600.md`. No rehacer #088, #120, #121, #128, #129, #130 ni DataForSEO.
 - El progreso público anterior a #086 se conserva como historial debajo; sus cantidades ya no representan el estado actual. Las candidatas de reserva no cuentan como herramientas.
 
 ## Publicada · #122 Markdown Editor · 2026-10-11
@@ -32,18 +34,27 @@
 - Chrome local: ejemplo EN totaliza **$54.99**; AR conserva `lang=ar`, `dir=rtl`, `scrollWidth=390` en viewport 390 px y calcula la misma suma; consola sin errores. No se midió PageSpeed/Lighthouse.
 - **Publicación confirmada:** PR [#120](https://github.com/pedronunezwebs-hash/usefulverse/pull/120), merge `9e0b781e800235ed98147930a3afcbee4c4927a`; CI PR `38132486533`; despliegue principal `38132732589` y hub `38132761847` correctos. Sitemap del hub HTTP 200 con **5.616 URLs únicas** y exactamente 36 rutas Purchase Order Generator. EN/ES/AR/JA HTTP 200, canonical autorreferente. No reenvié el sitemap a Google/Naver; esta conversación corrigió que esa petición era para otro chat.
 
-## Implementación local · #130 Waist To Hip Ratio Calculator · 2026-10-11
+## Publicada · #130 Waist To Hip Ratio Calculator · 2026-10-11
 
 - Intención propia: cociente cintura/cadera como operación aritmética, sin competir con calculadoras de grasa corporal ni asignar categorías de salud. 6.600 búsquedas/mes US/en, KD 20; secundaria `waist hip ratio calculator`, 6.600/mes, KD 12; CPC 1,02 USD (no CPM). Datos del plan existente; no se repitió DataForSEO.
 - Aceptación: 80/100 cm y 32/40 in devuelven 0,8. Solo unidades iguales (`cm`/`in`); entradas positivas finitas y ≤500; no hay umbrales ni diagnóstico. Datos locales, sin guardar/subir.
 - 36 traducciones estáticas de Google Translate (no revisión nativa). Títulos ≤60 con UsefulVerse y textos SEO ≤160. Dos FAQs adicionales no repiten las preguntas generales sobre cálculo/privacidad; se conserva la advertencia médica.
-- Gates focales/build/locales **315/315**; `npm test` **1.861/1.861** aprobadas antes de ajustar las FAQs, y las pruebas focales finales **315/315** volvieron a pasar. Build Growth600 **5.724 páginas** y sitemap local **5.724 URLs únicas** (158 herramientas × 36 + 36 portadas); exactamente 36 rutas de la nueva herramienta. `git diff --check` limpio.
+- Gates focales/build/locales **315/315**; `npm test` **1.871/1.871** aprobadas y `npm run locale:release-check`. Build Growth600 **5.724 páginas** y sitemap local **5.724 URLs únicas** (158 herramientas × 36 + 36 portadas); exactamente 36 rutas de la nueva herramienta. `git diff --check` limpio.
 - Chrome aislado EN: cálculo predeterminado da 0,8 y expone copiar resultado; AR: `lang=ar`, `dir=rtl`, controles traducidos, FAQs únicas y consola limpia. No se midió PageSpeed/Lighthouse.
-- **Estado:** implementación local. PR, publicación pública y sitemap público aún pendientes; no afirmar URLs publicadas.
+- **Publicación:** PR #123 integrada en `f5abdb60abc9d565fdc5d9e74a1019bc8c327f62`; despliegue principal `38138160890` y publicación del hub `38138711675` correctos. En vivo, las 36 variantes aparecen en el sitemap; EN y AR devuelven HTTP 200. No se afirma indexación.
+
+## Lista para publicar · #133 Hebrew Calendar Converter · 2026-10-11
+
+- Intención medida en el plan ya existente: `hebrew calendar converter` 6.600 búsquedas/mes US/en, KD 31; `hebrew date converter` 6.600, KD 27; CPC 4,73 USD (no CPM). No se repitió DataForSEO.
+- Conversión bidireccional local con el calendario hebreo de `Intl.DateTimeFormat`; Adar I/II y año bisiesto; se informa que las fechas hebreas comienzan al atardecer, que el resultado es civil a medianoche y que no se calcula el ocaso ni se da orientación religiosa. Sin llamadas, subida o guardado de datos.
+- Pruebas de aceptación incluyen 11 de marzo de 2024 ↔ 1 Adar II 5784, mes ausente en año común, fechas inválidas y salida limitada por la capacidad de `Intl` del navegador. Lógica y formulario probados; botón de ejemplo/copia/reset en UI.
+- 36 copias estáticas sencillas generadas sin API de traducción en ejecución. `npm run locale:release-check` aprobado; se corrigieron etiquetas de acción evidentemente mal traducidas, incluido el reset en árabe. No son traducciones revisadas por nativos.
+- Suite completa **1.871/1.871**, gate focal y contratos **317/317**, build principal **10.260 URLs** y build separado **5.760 páginas** (159 × 36 + 36 portadas). Chrome local: EN y AR; se verificó conversión, salida de año bisiesto, texto de limitaciones, `lang=ar`, `dir=rtl`, botón árabe de reset y ausencia de errores de consola. No PageSpeed/Lighthouse.
+- **Estado:** lista para integrar. Aún no hay PR, despliegue, sitemap público con #133 ni evidencia de indexación; no marcar P/S hasta comprobarlo.
 
 ## Estado para reanudar
 
-- La candidata que sigue después de #130 es **#131 Compression Ratio Calculator**; consultar su ficha y los gates en `PLAN-600.md`. Las 277 originales permanecen protegidas. No repetir DataForSEO.
+- La candidata en curso es **#133 Hebrew Calendar Converter**; #131 y #132 ya están publicadas. Al cerrar los gates y publicar #133, continuar por la siguiente ficha pendiente real de `PLAN-600.md`. Las 277 originales permanecen protegidas. No repetir DataForSEO.
 
 ## Estado público actual · 2026-10-10
 
