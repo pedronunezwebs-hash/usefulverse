@@ -1,0 +1,5 @@
+.rc-time-constant-calculator [data-rc-chart]{display:block;width:100%;max-width:38rem;height:auto;margin-block:1rem;border:1px solid var(--line,#dbe2ec);border-radius:.75rem;background:var(--surface,#fff)}
+.rc-time-constant-calculator [data-rc-chart] polyline{fill:none;stroke:var(--accent,#5a63e8);stroke-width:3;vector-effect:non-scaling-stroke}
+.rc-time-constant-calculator [data-rc-chart] line{stroke:currentColor;stroke-opacity:.32;vector-effect:non-scaling-stroke}
+.rc-time-constant-calculator [data-rc-chart] text{fill:currentColor;font:12px system-ui,sans-serif}
+.rc-time-constant-calculator .result{font-variant-numeric:tabular-nums}

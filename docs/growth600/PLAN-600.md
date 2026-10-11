@@ -9,7 +9,7 @@ Fecha de investigación: 7 de octubre de 2026. Documento de planificación y che
 - [x] Comprobar la base de planificación: **277 herramientas y 36 idiomas**.
 - [x] Investigar demanda con un gasto acotado en DataForSEO y registrar los resultados reales.
 - [x] Consolidar variantes antes de fijar el nuevo catálogo, sin contar una dirección de conversión como otra herramienta.
-- [ ] Implementar las nuevas herramientas. **Estado comprobado el 11 de octubre de 2026: la producción tiene 160 herramientas Growth600 y 277 originales. Specific Heat Calculator está validada en esta rama y eleva la build a 161 adicionales; falta PR/deploy.** El progreso del plan se cuenta por candidatas únicas de las 323 fichas; consultar `docs/growth600/PROGRESS.md` y no inferir indexación del despliegue.
+- [ ] Implementar las nuevas herramientas. **Estado comprobado el 11 de octubre de 2026: la producción tiene 161 herramientas Growth600 y 277 originales; los sitemaps públicos contienen 5.832 + 10.260 URLs. RC Time Constant Calculator (#275) está implementada y validada en esta rama, aún pendiente de PR/deploy.** El progreso del plan se cuenta por candidatas únicas de las 323 fichas; consultar `docs/growth600/PROGRESS.md` y no inferir indexación del despliegue.
 
 Snapshot consultado: rama `main`, commit `685f91adfc7818a54f6dc0a967e290d13137a3dd`. Catálogo: `src/catalog.mjs`; funciones y contratos representativos: `src/app.js`, módulos de lógica, `src/opportunity-tools.mjs`, `src/seo.mjs`, locales, build y documentación del repo. Se inspeccionaron los metadatos de las 277 herramientas y contratos clave para descartar duplicados; esto **no es una nueva auditoría funcional completa de las 277**.
 
@@ -1515,8 +1515,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [x] X — casos de aceptación y límites comprobados con pruebas unitarias, contrato de formulario/locales/build y navegador; ver detalle y cifras en `docs/growth600/PROGRESS.md`.
 - [x] L — 36 versiones estáticas preparadas desde inglés mediante traducción automática por lotes; QA visible de árabe RTL y japonés, sin afirmar revisión nativa.
 - [x] B — procesamiento exclusivamente local, controladores y CSS dentro de presupuesto; no API, Functions ni dependencia/coste de procesamiento nuevo.
-- [ ] P/S — PR, CI remoto, deploy, sitemap público y rutas públicas propios aún pendientes.
-- **Destino:** `https://tools.usefulverse.com/tools/specific-heat-calculator/`; 35 versiones localizadas en las rutas del anexo. No marcar publicado hasta verificar el deploy.
+- [x] P/S — PR #126 fusionada; CI y despliegues principal/hub verificados; sitemap y rutas públicas responden correctamente.
+- **Publicado:** `https://tools.usefulverse.com/tools/specific-heat-calculator/` y 35 versiones localizadas. No se infiere indexación.
 - **Demanda:** `specific heat calculator` — 720 búsquedas/mes US/en, KD 0; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Q, m, c, deltaT, mezcla térmica ideal y pérdidas manuales
 - **Prueba de aceptación específica:** 1kg con c1000 ydelta10 da10000J
@@ -1529,13 +1529,18 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 275 · Rc Time Constant Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `rc-time-constant-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/rc-time-constant-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] C/F — demanda del plan reutilizada (`rc time constant calculator`, 720/mes US/en, KD 3; sin consulta nueva) y distinción frente a `capacitor-calculator`.
+- [x] E — `rc-time-constant-calculator`: calcula τ, respuesta de carga/descarga a un instante, tiempo hasta umbral, tiempo 10–90% y curva SVG.
+- [x] X — pruebas de lógica, contratos formulario/locales/build y Chrome funcional en EN/AR móvil; ver `PROGRESS.md`.
+- [x] L — 36 variantes estáticas automáticas desde inglés; símbolos/unidades preservados, QA de árabe RTL. Sin declarar revisión nativa.
+- [x] B — motor, controlador y CSS locales; sin API, Functions, dependencias ni coste de procesamiento de servidor.
+- [ ] P/S — PR, CI remoto, despliegue, sitemap y rutas públicas pendientes.
+- **Destino:** `https://tools.usefulverse.com/tools/rc-time-constant-calculator/` y 35 versiones localizadas; pendiente de publicación.
 - **Demanda:** `rc time constant calculator` — 720 búsquedas/mes US/en, KD 3; nivel C. CPC 1.84 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Carga/descarga, tau, umbrales y gráfico
 - **Prueba de aceptación específica:** 1000Ω por100uF da0.1s
 - **Frontera con otras herramientas:** capacitor-calculator: evolución temporal. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** motor local; usa Ω/kΩ/MΩ, F/mF/µF/nF/pF y s/ms/µs. Modelo ideal de primer orden, con límites y advertencias visibles; no incluye resistencias parásitas, fuga, tolerancias, carga ni retardo.
 - **Consultas secundarias del mismo propietario:**
   - `rc circuit calculator` — 590/mes US/en; KD 9.
   - `rc time constant calculator free online`; `rc time constant calculator with example`; `rc time constant calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

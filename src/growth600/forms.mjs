@@ -84,6 +84,7 @@ export function renderGrowthForm(toolId, copy) {
     'friction-calculator': ['mode', 'normalForce', 'mass', 'massUnit', 'angle', 'gravity', 'staticCoefficient', 'kineticCoefficient', 'appliedForce', 'forceUnit', 'motionState', 'atRest', 'movingUp', 'movingDown', 'positiveSurfaceDirection', 'accuracyNote'],
     'thermal-expansion-calculator': ['mode', 'linearMode', 'areaMode', 'volumeMode', 'initialDimension', 'lengthUnit', 'areaUnit', 'volumeUnit', 'coefficient', 'coefficientTemperatureUnit', 'deltaTemperature', 'temperatureUnit', 'accuracyNote'],
     'specific-heat-calculator': ['mode', 'singleMode', 'mixingMode', 'solveFor', 'solveEnergy', 'solveMass', 'solveSpecificHeat', 'solveTemperatureChange', 'mass', 'mass1', 'mass2', 'massUnit', 'kilograms', 'grams', 'pounds', 'ounces', 'specificHeat', 'specificHeat1', 'specificHeat2', 'specificHeatUnit', 'joulesPerKilogram', 'kilojoulesPerKilogram', 'joulesPerGram', 'caloriesPerGram', 'btuPerPound', 'temperatureChange', 'temperature1', 'temperature2', 'temperatureUnit', 'celsius', 'fahrenheit', 'heatEnergy', 'heatLoss', 'energyUnit', 'joules', 'kilojoules', 'calories', 'kilocalories', 'btu', 'accuracyNote', 'mixingNote', 'outputUnitsNote', 'formulaNote'],
+    'rc-time-constant-calculator': ['mode', 'voltageMode', 'timeMode', 'resistance', 'resistanceUnit', 'ohms', 'kiloohms', 'megaohms', 'capacitance', 'capacitanceUnit', 'farads', 'millifarads', 'microfarads', 'nanofarads', 'picofarads', 'initialVoltage', 'finalVoltage', 'time', 'targetVoltage', 'timeUnit', 'seconds', 'milliseconds', 'microseconds', 'timeConstant', 'voltageAtTime', 'timeToTarget', 'riseTime', 'responseFraction', 'graphLabel', 'timeAxis', 'voltageAxis', 'accuracyNote', 'formulaNote', 'thresholdNote'],
     'horsepower-calculator': ['mode', 'solvePower', 'solveTorque', 'solveRpm', 'torque', 'torqueUnit', 'rpm', 'power', 'powerUnit', 'accuracyNote'],
     'rtf-converter': ['file', 'accuracyNote', 'limitNote', 'output'],
     'csv-to-pdf': ['file', 'separator', 'encoding', 'hasHeader', 'pageSize', 'orientation', 'margin', 'accuracyNote', 'limitNote', 'resultCount', 'tableLabel'],
@@ -253,6 +254,7 @@ export function renderGrowthForm(toolId, copy) {
     'friction-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'normalMode', 'inclineMode', 'newtons', 'kilonewtons', 'poundsForce', 'kilograms', 'pounds'],
     'thermal-expansion-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'millimeters', 'inches', 'feet', 'squareMeters', 'squareCentimeters', 'squareFeet', 'squareInches', 'cubicMeters', 'cubicCentimeters', 'liters', 'cubicFeet', 'cubicInches'],
     'specific-heat-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'rc-time-constant-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'horsepower-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'rtf-converter': ['convert', 'reset', 'copy', 'download', 'print', 'result'],
     'csv-to-pdf': ['preview', 'reset', 'example', 'print', 'result'],
@@ -1017,6 +1019,24 @@ export function renderGrowthForm(toolId, copy) {
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.formulaNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${button('calculate', actions.calculate)}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div></section>
+  </form>`, copy);
+
+  if (toolId === 'rc-time-constant-calculator') return attachCopy(`<form id="tool-form" class="rc-time-constant-calculator" novalidate>
+    ${label('rc-mode', fields.mode, `<select id="rc-mode" name="mode"><option value="voltage">${escapeGrowthHtml(fields.voltageMode)}</option><option value="time">${escapeGrowthHtml(fields.timeMode)}</option></select>`)}
+    <div class="calculator-grid">
+      ${label('rc-resistance', fields.resistance, '<input id="rc-resistance" name="resistance" type="text" inputmode="decimal" value="1000" maxlength="40" required>')}
+      ${label('rc-resistance-unit', fields.resistanceUnit, `<select id="rc-resistance-unit" name="resistanceUnit"><option value="ohm">${escapeGrowthHtml(fields.ohms)}</option><option value="kohm">${escapeGrowthHtml(fields.kiloohms)}</option><option value="mohm">${escapeGrowthHtml(fields.megaohms)}</option></select>`)}
+      ${label('rc-capacitance', fields.capacitance, '<input id="rc-capacitance" name="capacitance" type="text" inputmode="decimal" value="100" maxlength="40" required>')}
+      ${label('rc-capacitance-unit', fields.capacitanceUnit, `<select id="rc-capacitance-unit" name="capacitanceUnit"><option value="F">${escapeGrowthHtml(fields.farads)}</option><option value="mF">${escapeGrowthHtml(fields.millifarads)}</option><option value="uF" selected>${escapeGrowthHtml(fields.microfarads)}</option><option value="nF">${escapeGrowthHtml(fields.nanofarads)}</option><option value="pF">${escapeGrowthHtml(fields.picofarads)}</option></select>`)}
+      ${label('rc-initial-voltage', fields.initialVoltage, '<input id="rc-initial-voltage" name="initialVoltage" type="text" inputmode="decimal" value="0" maxlength="40" required>')}
+      ${label('rc-final-voltage', fields.finalVoltage, '<input id="rc-final-voltage" name="finalVoltage" type="text" inputmode="decimal" value="5" maxlength="40" required>')}
+      ${label('rc-time', fields.time, `<span data-rc-time-field><input id="rc-time" name="time" type="text" inputmode="decimal" value="0.1" maxlength="40" required></span>`)}
+      ${label('rc-target-voltage', fields.targetVoltage, `<span data-rc-target-field hidden><input id="rc-target-voltage" name="targetVoltage" type="text" inputmode="decimal" value="3.16" maxlength="40" disabled></span>`)}
+      ${label('rc-time-unit', fields.timeUnit, `<select id="rc-time-unit" name="timeUnit"><option value="s">${escapeGrowthHtml(fields.seconds)}</option><option value="ms">${escapeGrowthHtml(fields.milliseconds)}</option><option value="us">${escapeGrowthHtml(fields.microseconds)}</option></select>`)}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.formulaNote)}</p><p class="hint">${escapeGrowthHtml(fields.thresholdNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${button('calculate', actions.calculate)}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'body-water-calculator') return attachCopy(`<form id="tool-form" novalidate>

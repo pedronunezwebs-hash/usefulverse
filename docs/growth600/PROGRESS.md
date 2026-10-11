@@ -1746,7 +1746,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - **Verificación pública:** EN/ES/AR HTTP 200 con títulos localizados propios. Sitemap público del hub: **5.400 URLs únicas**, incluye 36 rutas nuevas; sitemap principal: **10.260 URLs**; total: **15.660**.
 - **Aviso de indexación:** el sitemap público y robots.txt están actualizados. No se envió una nueva solicitud IndexNow porque el CLI actual solo admite URLs en `usefulverse.com` y no tiene configurada la clave/ruta del host `tools.usefulverse.com`; no se afirma reenvío manual ni indexación de Google, Bing, Yandex o Naver.
 - **Recuento:** 93/323 candidatas Growth600 públicas; 230 pendientes. Siguiente ficha según el plan: #086, 529 Calculator.
-# En preparación de publicación · Specific Heat Calculator (#272) · 2026-10-11
+# Publicada · Specific Heat Calculator (#272) · 2026-10-11
 
 - [x] C/F — demanda reutilizada del plan: `specific heat calculator`, 720 búsquedas/mes US/en, KD 0; `heat capacity calculator`, 210/mes, KD 0. Sin nuevas llamadas a DataForSEO.
 - [x] E — despeja Q, masa, calor específico o ΔT en `Q = m·c·ΔT`; incluye estimación de equilibrio térmico de dos materiales y pérdidas/ganancias manuales. Se distingue de Heat Loss Calculator y Thermal Expansion Calculator.
@@ -1755,5 +1755,18 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - [x] X — `npm test` **1.889/1.889**; `npm run locale:release-check`; `npm run check` en salida aislada (**10.260 URLs principales**); build Growth600 aislada **5.832 páginas** (161 herramientas × 36 + 36 portadas); `git diff --check` y `node --check` pasan.
 - [x] Browser QA local en 390×844: ejemplo en árabe RTL → **10.000 J**; mezcla de masas/capacidades iguales a 80 °F y 20 °F → **50 °F** y pérdida ingresada 0 J; en japonés el ejemplo también produce 10.000 J. `lang`/`dir` correctos; ancho de documento 390 px; sin errores ni avisos de consola.
 - [x] Producción inspeccionada antes del release: el sitemap tiene **5.796 URLs únicas**, no incluye esta herramienta; la ruta candidata todavía sirve la portada/canonical raíz, por lo que no se cuenta como publicada.
-- [ ] P/S — PR, CI remoto, deploy del sitio y del hub, rutas/sitemap públicos aún pendientes.
-- **Recuento de plan:** 94/323 candidatas con implementación local si se suma esta ficha; producción permanece en 160 herramientas Growth600 + 277 originales hasta su publicación. No se infiere indexación.
+- [x] P/S — PR #126 fusionada; CI 38144625378 y deploy principal 38144863401 y hub 38145133620 aprobados.
+- **Verificación pública:** sitemap tools.usefulverse.com HTTP 200 con 5.832 URLs; sitemap principal HTTP 200 con 10.260 URLs. Rutas EN/ES/AR HTTP 200 con canonical propio, títulos localizados y fórmula presente. No se infiere indexación.
+- **Recuento tras #272:** producción: 161 herramientas Growth600 + 277 originales; 438 implementaciones y 16.092 URLs. Progreso del plan: 94/323 fichas previas; no se infiere indexación.
+
+## En preparación de publicación · RC Time Constant Calculator (#275) · 2026-10-11
+
+- Demanda ya medida en el plan: `rc time constant calculator`, 720 búsquedas/mes US/en, KD 3; secundaria `rc circuit calculator`, 590/mes, KD 9. Sin nueva llamada a DataForSEO. CPC no equivale a CPM ni garantiza tráfico.
+- Motor local de τ=RC, respuesta exponencial de carga/descarga, umbral temporal, fracción completada y rise/fall 10–90%; gráfico SVG construido al calcular. No simula parásitos, tolerancias ni cargas; no sustituye diseño eléctrico.
+- Unidades: Ω/kΩ/MΩ, F/mF/µF/nF/pF y s/ms/µs; validación de finitud y cotas.
+- 36 variantes estáticas traducidas automáticamente desde inglés con Google Translate por lotes. No es revisión nativa. Inglés y árabe RTL comprobados; traducción no altera fórmulas, unidades ni resultados.
+- Sin API, Functions, cargas, dependencias nuevas o coste de procesamiento/servidor. El cálculo ocurre en el navegador.
+- Validación local: `npm test` **1.897/1.897**, `npm run locale:release-check`, build aislada principal **10.260** páginas y build hub **5.868** páginas (162 herramientas × 36 + 36 portadas); `git diff --check` pasa.
+- Chrome local: 1 kΩ × 100 µF → τ=0,1 s; 0→5 V a 0,1 s → 3,160603 V; descarga 10→1 V → 0,230259 s. Gráfico visible; árabe `lang=ar`, `dir=rtl`, 390 px sin overflow y consola limpia. No PageSpeed/Lighthouse.
+- **No publicado todavía:** la ruta de producción actualmente responde con canonical a la portada; no se considera una URL de herramienta. P/S se cierra solo con PR/CI/deploy y sitemap/rutas públicas verificados.
+- **Siguiente acción:** crear PR #275; tras CI, integrar y publicar el hub; verificar rutas y sitemap; regenerar inventario de URLs y continuar con la siguiente ficha abierta del plan. No repetir DataForSEO.

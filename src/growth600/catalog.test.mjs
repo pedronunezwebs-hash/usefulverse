@@ -11,10 +11,11 @@ import { buildBondYieldCurve, calculateBondPrice, solveBondYield } from './tools
 import { gregorianToHebrew, hebrewToGregorian, isHebrewLeapYear } from './tools/hebrew-calendar-converter/logic.mjs';
 import { calculateAbsoluteValue } from './tools/absolute-value-calculator/logic.mjs';
 import { calculateSpecificHeat } from './tools/specific-heat-calculator/logic.mjs';
+import { calculateRcTimeConstant, calculateRcTransient } from './tools/rc-time-constant-calculator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 161);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 161);
+  assert.equal(growthPilotTools.length, 162);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 162);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -75,6 +76,17 @@ test('specific heat calculator solves sensible heat and ideal mixing without dup
   assert.match(tool.boundary, /constant specific heat.*phase change/u);
   assert.equal(calculateSpecificHeat({ mass: 1, specificHeat: 1000, temperatureChange: 10 }).value, 10000);
   assert.equal(calculateSpecificHeat({ mode: 'mixing', mass1: 1, specificHeat1: 1000, temperature1: 80, mass2: 1, specificHeat2: 1000, temperature2: 20 }).finalTemperatureC, 50);
+});
+
+test('RC time constant calculator models a first-order response distinct from equivalent capacitor networks', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'rc-time-constant-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'rc time constant calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['capacitor-calculator', '555-timer-calculator', 'rlc-circuit-calculator']);
+  assert.match(tool.boundary, /single-pole.*RC step response/u);
+  assert.ok(Math.abs(calculateRcTimeConstant({ resistance: 1000, capacitance: 100, capacitanceUnit: 'uF' }).tauSeconds - 0.1) < 1e-14);
+  assert.ok(Math.abs(calculateRcTransient({ resistance: 1000, capacitance: 100, capacitanceUnit: 'uF', finalVoltage: 5, time: 0.1 }).voltage - 3.1606027941) < 1e-9);
+  assert.ok(Math.abs(calculateRcTransient({ resistance: 1000, capacitance: 100, capacitanceUnit: 'uF', initialVoltage: 10, targetVoltage: 1 }).timeSeconds - 0.1 * Math.log(10)) < 1e-14);
 });
 
 test('eigenvalue calculator is additive and validates symmetric eigenpairs', () => {
