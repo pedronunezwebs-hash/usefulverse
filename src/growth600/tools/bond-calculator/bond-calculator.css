@@ -1,0 +1,4 @@
+[data-tool="bond-calculator"] .bond-calculator__chart{display:block;width:100%;height:auto;max-height:18rem;margin-block:1rem;color:var(--text,#172033);overflow:visible}
+[data-tool="bond-calculator"] [data-result-content] dl{display:grid;grid-template-columns:minmax(10rem,1fr) auto;gap:.4rem 1rem;max-width:36rem;margin:0}
+[data-tool="bond-calculator"] [data-result-content] dt,[data-tool="bond-calculator"] [data-result-content] dd{margin:0;padding:.4rem 0;border-bottom:1px solid var(--line)}
+[data-tool="bond-calculator"] [data-result-content] dd{text-align:end;font-variant-numeric:tabular-nums}

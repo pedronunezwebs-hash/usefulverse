@@ -9,7 +9,7 @@ Fecha de investigación: 7 de octubre de 2026. Documento de planificación y che
 - [x] Comprobar la base de planificación: **277 herramientas y 36 idiomas**.
 - [x] Investigar demanda con un gasto acotado en DataForSEO y registrar los resultados reales.
 - [x] Consolidar variantes antes de fijar el nuevo catálogo, sin contar una dirección de conversión como otra herramienta.
-- [ ] Implementar las nuevas herramientas. **Progreso comprobado el 11 de octubre de 2026: 155 herramientas Growth600 públicas (432 incluyendo las 277 originales); quedan 168 herramientas nuevas para llegar a 600. #127 Purchase Order Generator es la última publicación confirmada; la siguiente candidata es #128 Eigenvalue Calculator.** Consultar `docs/growth600/PROGRESS.md` para la evidencia; disponibilidad pública no implica indexación.
+- [ ] Implementar las nuevas herramientas. **Progreso comprobado el 11 de octubre de 2026: 156 herramientas Growth600 públicas (433 incluyendo las 277 originales); quedan 167 herramientas nuevas para llegar a 600. #128 Eigenvalue Calculator es la última publicación confirmada; la siguiente candidata es #129 Bond Calculator.** Consultar `docs/growth600/PROGRESS.md` para la evidencia; disponibilidad pública no implica indexación.
 
 Snapshot consultado: rama `main`, commit `685f91adfc7818a54f6dc0a967e290d13137a3dd`. Catálogo: `src/catalog.mjs`; funciones y contratos representativos: `src/app.js`, módulos de lógica, `src/opportunity-tools.mjs`, `src/seo.mjs`, locales, build y documentación del repo. Se inspeccionaron los metadatos de las 277 herramientas y contratos clave para descartar duplicados; esto **no es una nueva auditoría funcional completa de las 277**.
 
@@ -1973,8 +1973,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 129 · Bond Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `bond-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/bond-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B — `bond-calculator`; P/S pendiente de integrar y publicar**
+- **Destino propuesto:** `https://tools.usefulverse.com/tools/bond-calculator/`; otras 35 versiones con los prefijos del anexo. El build local incluye las 36 rutas; aún no están públicas.
 - **Demanda:** `bond calculator` — 6.600 búsquedas/mes US/en, KD 10; nivel B. CPC 2.94 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Precio, cupón, vencimiento, YTM numérico y curva precio-rendimiento
 - **Prueba de aceptación específica:** Bono a par con cupón 5% tiene YTM 5%
@@ -2286,8 +2286,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 128 · Eigenvalue Calculator
 
-- [ ] **C/F/E/X/L/B completos — `eigenvalue-calculator`; P/S pendiente**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/eigenvalue-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `eigenvalue-calculator`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/eigenvalue-calculator/` y 35 variantes; PR #121 integrada, sus rutas y canonical están en el sitemap público.
 - **Demanda:** `eigenvalue calculator` — 6.600 búsquedas/mes US/en, KD 3; nivel B. CPC 0.08 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Autovalores/autovectores y verificación A v=lambda v
 - **Prueba de aceptación específica:** Diagonal2,3 devuelve2,3

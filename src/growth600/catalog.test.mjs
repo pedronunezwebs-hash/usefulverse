@@ -6,11 +6,28 @@ import { checkLogicGridMarks, createLogicGridPuzzle, solveLogicGrid } from './to
 import { countMarkdown, insertMarkdown } from './tools/markdown-editor/logic.mjs';
 import { createPurchaseOrder } from './tools/purchase-order-generator/logic.mjs';
 import { calculateEigenpairs } from './tools/eigenvalue-calculator/logic.mjs';
+import { buildBondYieldCurve, calculateBondPrice, solveBondYield } from './tools/bond-calculator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 156);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 156);
+  assert.equal(growthPilotTools.length, 157);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 157);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
+});
+
+test('bond calculator has a distinct fixed-coupon intent and matches the par-yield acceptance case', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'bond-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'bond calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['compound-interest-calculator']);
+  assert.match(tool.boundary, /not investment advice/u);
+  assert.match(tool.boundary, /accrued interest/u);
+  const terms = { faceValue: '1000', couponPercent: '5', years: '5', frequency: 'annual' };
+  const parYield = solveBondYield({ ...terms, marketPrice: '1000' });
+  assert.ok(Math.abs(parYield.yieldPercent - 5) < 1e-9);
+  assert.ok(Math.abs(calculateBondPrice({ ...terms, yieldPercent: '5' }).price - 1000) < 1e-9);
+  assert.ok(calculateBondPrice({ ...terms, yieldPercent: '6' }).price < 1000);
+  assert.ok(calculateBondPrice({ ...terms, yieldPercent: '4' }).price > 1000);
+  assert.equal(buildBondYieldCurve(terms, 5).length, 41);
 });
 
 test('eigenvalue calculator is additive and validates symmetric eigenpairs', () => {

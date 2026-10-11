@@ -35,6 +35,7 @@ export function renderGrowthForm(toolId, copy) {
     'cubic-quartic-equation-calculator': ['degree', 'degree3', 'degree4', 'a4', 'a3', 'a2', 'a1', 'a0', 'accuracyNote', 'resultSummary', 'root', 'multiplicity', 'residual', 'noRealRoots', 'nonRealRootsNote', 'exampleHint'],
     'complex-number-calculator': ['operation', 'realA', 'imaginaryA', 'realB', 'imaginaryB', 'radius', 'angle', 'angleUnit', 'degrees', 'radians', 'degree', 'resultSummary', 'resultReal', 'resultImaginary', 'modulus', 'argument', 'polar', 'rootNumber', 'zeroArgumentNote', 'accuracyNote', 'exampleHint'],
     'eigenvalue-calculator': ['matrix', 'matrixHint', 'accuracyNote', 'resultSummary', 'eigenvalue', 'eigenvector', 'residual'],
+    'bond-calculator': ['mode', 'priceMode', 'yieldMode', 'faceValue', 'couponPercent', 'years', 'frequency', 'annual', 'semiannual', 'quarterly', 'monthly', 'yieldPercent', 'marketPrice', 'accuracyNote', 'resultSummary', 'yieldToMaturity', 'estimatedPrice', 'couponPayment', 'currentYield', 'totalCoupons', 'premiumDiscount', 'periods', 'chartTitle', 'chartDescription', 'chartYield', 'chartPrice'],
     'image-upscaler': ['imageFile', 'accuracyNote', 'progressHint', 'sourcePreview', 'resultPreview'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
@@ -199,6 +200,7 @@ export function renderGrowthForm(toolId, copy) {
     'cubic-quartic-equation-calculator': ['calculate', 'example', 'reset'],
     'complex-number-calculator': ['calculate', 'example', 'reset', 'add', 'subtract', 'multiply', 'divide', 'magnitude', 'argument', 'rectangularToPolar', 'polarToRectangular', 'roots'],
     'eigenvalue-calculator': ['calculate', 'example', 'reset', 'copy'],
+    'bond-calculator': ['calculate', 'example', 'reset', 'copy', 'result'],
     'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
@@ -629,6 +631,22 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('calculate', actions.calculate)}${button('example', actions.example, 'secondary')}${button('reset', actions.reset, 'secondary')}</div>
     <section class="result" data-eigen-result hidden aria-labelledby="eigen-result-title"><h2 id="eigen-result-title">${escapeGrowthHtml(fields.resultSummary)}</h2><div class="eigenvalue-results" data-eigen-output></div><div class="actions">${button('copy', actions.copy, 'secondary')}</div></section>
     <p class="status" role="status" aria-live="polite" data-status></p>
+  </form>`, copy);
+
+  if (toolId === 'bond-calculator') return attachCopy(`<form id="tool-form" class="bond-calculator" novalidate>
+    ${label('bond-mode', fields.mode, `<select id="bond-mode" name="mode"><option value="price">${escapeGrowthHtml(fields.priceMode)}</option><option value="yield">${escapeGrowthHtml(fields.yieldMode)}</option></select>`)}
+    <div class="calculator-grid">
+      ${label('bond-face-value', fields.faceValue, '<input id="bond-face-value" name="faceValue" type="number" min="0.01" max="1000000000000" step="any" inputmode="decimal" value="1000" required>')}
+      ${label('bond-coupon-rate', fields.couponPercent, '<input id="bond-coupon-rate" name="couponPercent" type="number" min="0" max="1000" step="any" inputmode="decimal" value="5" required>')}
+      ${label('bond-years', fields.years, '<input id="bond-years" name="years" type="number" min="0.01" max="100" step="any" inputmode="decimal" value="5" required>')}
+      ${label('bond-frequency', fields.frequency, `<select id="bond-frequency" name="frequency"><option value="annual">${escapeGrowthHtml(fields.annual)}</option><option value="semiannual">${escapeGrowthHtml(fields.semiannual)}</option><option value="quarterly">${escapeGrowthHtml(fields.quarterly)}</option><option value="monthly">${escapeGrowthHtml(fields.monthly)}</option></select>`)}
+      <div class="field" data-bond-field="yield">${label('bond-yield', fields.yieldPercent, '<input id="bond-yield" name="yieldPercent" type="number" min="-1199.999988" max="1000000" step="any" inputmode="decimal" value="5" required>')}</div>
+      <div class="field" data-bond-field="market-price" hidden>${label('bond-market-price', fields.marketPrice, '<input id="bond-market-price" name="marketPrice" type="number" min="0.01" max="1000000000000" step="any" inputmode="decimal" value="1000" required>')}</div>
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div><svg data-bond-chart class="bond-calculator__chart"></svg>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'image-upscaler') return attachCopy(`<form id="tool-form" data-worker-src="__WORKER_IMAGE_UPSCALER_WORKER__" novalidate>

@@ -10,6 +10,8 @@ import { roofPitchCalculatorEnglishCopy } from './roof-pitch-calculator.en.mjs';
 import { registerGrowthLocaleExtension } from '../locale-utils.mjs';
 import eigenvalueCalculatorCopies from './eigenvalue-calculator-final.mjs';
 import { eigenvalueCalculatorEnglishCopy } from './eigenvalue-calculator.en.mjs';
+import bondCalculatorCopies from './bond-calculator-final.mjs';
+import { bondCalculatorEnglishCopy } from './bond-calculator.en.mjs';
 import drywallCopies from './drywall-calculator.mjs';
 import { drywallEnglishCopy } from './drywall-calculator.en.mjs';
 import roofingCopies from './roofing-calculator.mjs';
@@ -1215,5 +1217,6 @@ registerGrowthLocaleExtension(source, 'binary-base64-tool', { ...binaryBase64Too
 registerGrowthLocaleExtension(source, 'json-model-generator', { ...jsonModelGeneratorCopies, en: jsonModelGeneratorEnglishCopy }, 'binary-base64-tool');
 registerGrowthLocaleExtension(source, 'csv-editor', { ...csvEditorCopies, en: csvEditorEnglishCopy }, 'json-model-generator');
 registerGrowthLocaleExtension(source, 'eigenvalue-calculator', { ...eigenvalueCalculatorCopies, en: eigenvalueCalculatorEnglishCopy }, 'csv-editor');
+registerGrowthLocaleExtension(source, 'bond-calculator', { ...bondCalculatorCopies, en: bondCalculatorEnglishCopy }, 'eigenvalue-calculator');
 
 export default Object.freeze(source);

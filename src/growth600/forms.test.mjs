@@ -43,6 +43,7 @@ import { logicGridPuzzleEnglishCopy } from './locales/logic-grid-puzzle.en.mjs';
 import { markdownEditorEnglishCopy } from './locales/markdown-editor.en.mjs';
 import { purchaseOrderGeneratorEnglishCopy } from './locales/purchase-order-generator.en.mjs';
 import { eigenvalueCalculatorEnglishCopy } from './locales/eigenvalue-calculator.en.mjs';
+import { bondCalculatorEnglishCopy } from './locales/bond-calculator.en.mjs';
 
 const actions = {
   calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', millimeters: 'Millimeters', feet: 'Feet', inches: 'Inches', squareMeters: 'Square meters', squareFeet: 'Square feet', cubicMeters: 'Cubic meters', cubicFeet: 'Cubic feet', kelvin: 'Kelvin difference', fahrenheit: 'Fahrenheit difference', kilowatts: 'Kilowatts (kW)', btuPerHour: 'BTU per hour (BTU/h)', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.', kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only', productionMode: 'Estimate array output', sizingMode: 'Size for daily use', years: 'years', add: 'Add', subtract: 'Subtract', multiply: 'Multiply', divide: 'Divide', magnitude: 'Modulus', argument: 'Argument', rectangularToPolar: 'Rectangular to polar', polarToRectangular: 'Polar to rectangular', roots: 'Nth roots',
@@ -65,6 +66,7 @@ const copies = {
   'markdown-editor': markdownEditorEnglishCopy,
   'purchase-order-generator': purchaseOrderGeneratorEnglishCopy,
   'eigenvalue-calculator': eigenvalueCalculatorEnglishCopy,
+  'bond-calculator': bondCalculatorEnglishCopy,
   'image-splitter': { name: 'Image splitter', actions: { ...actions, choose: 'Choose image', export: 'Split and prepare ZIP', cancel: 'Cancel', download: 'Download tile ZIP' }, messages: { ...messages }, fields: { imageFile: 'Choose an image', mode: 'Split by', gridMode: 'Rows and columns', tileSizeMode: 'Fixed tile dimensions', columns: 'Columns', rows: 'Rows', tileWidth: 'Tile width', tileHeight: 'Tile height', overlap: 'Overlap', accuracyNote: 'Local image processing.', previewHint: 'Image grid preview.', imageReady: 'Image ready' } },
   'image-sharpener': { name: 'Image sharpener', actions: { ...actions, load: 'Choose image', export: 'Prepare download', download: 'Download', original: 'Show original', sharpened: 'Sharpened preview', png: 'PNG', jpeg: 'JPEG' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', exporting: 'Sharpening…', exportFailed: 'Export failed.', exportReady: 'Image ready.' }, fields: { imageFile: 'Choose image', amount: 'Strength', radius: 'Radius', threshold: 'Threshold', compare: 'Show original', accuracyNote: 'Processed locally; 8 megapixel limit.', previewHint: 'Preview is reduced.', format: 'Format', relatedRedactor: 'Redact private details.', relatedCropper: 'Crop the image.' } },
   'photo-to-sketch': { name: 'Photo to sketch', actions: { ...actions, load: 'Choose image', export: 'Create sketch PNG', cancel: 'Cancel processing', download: 'Download sketch PNG', original: 'Show original' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', exporting: 'Creating sketch…', cancelled: 'Processing cancelled.', exportFailed: 'Export failed.', exportReady: 'Sketch ready.' }, fields: { imageFile: 'Choose image', intensity: 'Sketch intensity', detail: 'Fine-detail threshold', compare: 'Show original', accuracyNote: 'Local processing; maximum 8 megapixels.', previewHint: 'Reduced preview.' } },
@@ -1572,4 +1574,11 @@ test('eigenvalue calculator form explains its symmetric-matrix limits and expose
   const html = renderGrowthForm('eigenvalue-calculator', eigenvalueCalculatorEnglishCopy);
   for (const expected of ['id="eigen-matrix" name="matrix"', 'data-eigen-result hidden', 'data-eigen-output', 'data-action="calculate"', 'data-action="example"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
   assert.match(html, /real symmetric matrices only/u);
+});
+
+test('bond calculator exposes localized modes, assumptions and an accessible result curve', () => {
+  const html = renderGrowthForm('bond-calculator', bondCalculatorEnglishCopy);
+  for (const expected of ['name="mode"', 'value="price"', 'value="yield"', 'name="faceValue"', 'name="couponPercent"', 'name="years"', 'name="frequency"', 'name="yieldPercent"', 'name="marketPrice"', 'data-bond-field="market-price" hidden', 'data-bond-chart', 'data-action="example"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /not investment advice/u);
+  assert.match(html, /whole number of coupon periods/u);
 });
