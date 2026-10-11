@@ -1812,6 +1812,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/logic-grid-puzzle/logic.mjs',
   },
   {
+    id: 'markdown-editor',
+    category: 'writing',
+    type: 'editor',
+    primaryIntent: 'markdown editor',
+    secondaryIntents: ['markdown editor online', 'markdown editor with live preview', 'markdown editor with tables', 'markdown editor with checklist', 'markdown editor autosave'],
+    functions: ['edit Markdown with a focused writing surface, toolbar insertions, custom undo and redo, and a rendered preview', 'insert headings, emphasis, links, code, quotes, ordered and unordered lists, task lists, and tables at the current selection', 'optionally autosave a bounded draft to local browser storage and restore it on this device', 'copy or download a Markdown file and show live word and character counts'],
+    acceptance: 'Previewing `# Title\n\n<script>alert(1)</script> **safe**` renders the heading and bold text while showing the script as inert text; autosave restoration works when enabled and is cleared by Clear.',
+    boundary: 'Markdown editor and preview, not a collaborative editor or a Markdown-to-HTML converter. The input is capped at 500,000 characters; preview parsing and sanitization load only when preview is first opened. Draft saving is optional and local to this browser; disabling it removes this tool’s saved draft. No account, upload, API, server processing or usage charge. Keep sensitive text out of shared devices.',
+    relatedExistingIds: ['markdown-html-converter'],
+    logicModule: './tools/markdown-editor/logic.mjs',
+  },
+  {
     id: 'julian-date-converter',
     category: 'date-time',
     type: 'converter',

@@ -8,6 +8,7 @@ import { tools as currentTools } from '../src/catalog.mjs';
 import { growthPilotTools } from '../src/growth600/catalog.mjs';
 import { bundleGrowthControllers } from '../src/growth600/bundle-controllers.mjs';
 import { buildGrowthStaticSite } from '../src/growth600/build.mjs';
+import markdownEditorCopies from '../src/growth600/locales/markdown-editor-final.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const localeDir = resolve(root, 'src/growth600/locales');
@@ -24,6 +25,10 @@ for (const locale of localeEntries) {
   }
 }
 if (missing.length) throw new Error(`Growth600 release blocked: translated copy is missing for ${missing.join(', ')}.`);
+for (const { key } of localeEntries) {
+  if (!markdownEditorCopies[key]) throw new Error(`Growth600 release blocked: Markdown Editor copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'markdown-editor': markdownEditorCopies[key] };
+}
 
 const outputDir = resolve(process.env.GROWTH600_DIST ?? resolve(root, 'dist-growth600'));
 const styleFiles = [
@@ -40,6 +45,7 @@ const toolStyles = {
   'binary-base64-tool': minifyCss(await readFile(resolve(root, 'src/growth600/tools/binary-base64-tool/binary-base64-tool.css'), 'utf8'), { comments: 'exclamation' }).css,
   'csv-editor': minifyCss(await readFile(resolve(root, 'src/growth600/tools/csv-editor/csv-editor.css'), 'utf8'), { comments: 'exclamation' }).css,
   'logic-grid-puzzle': minifyCss(await readFile(resolve(root, 'src/growth600/tools/logic-grid-puzzle/logic-grid-puzzle.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'markdown-editor': minifyCss(await readFile(resolve(root, 'src/growth600/tools/markdown-editor/markdown-editor.css'), 'utf8'), { comments: 'exclamation' }).css,
 };
 const faviconSvg = await readFile(resolve(root, 'public/favicon.svg'), 'utf8');
 const modelRevision = '92a21aca5713f20faf9a87590cdfbdce2e34112c';
@@ -48,6 +54,10 @@ const modelAssetRoot = `models-image-upscaler-${modelRevision}/${modelFolder}`;
 const extraAssets = Object.fromEntries(await Promise.all([
   'config.json', 'preprocessor_config.json', 'onnx/model_q4.onnx',
 ].map(async (path) => [`${modelAssetRoot}/${path}`, await readFile(resolve(root, 'public/growth600-models', modelFolder, path))])));
+extraAssets['vendor/marked-18.0.14.umd.js'] = await readFile(resolve(root, 'node_modules/marked/lib/marked.umd.js'));
+extraAssets['vendor/purify-3.4.16.min.js'] = await readFile(resolve(root, 'node_modules/dompurify/dist/purify.min.js'));
+extraAssets['licenses/marked-LICENSE.txt'] = await readFile(resolve(root, 'node_modules/marked/LICENSE'));
+extraAssets['licenses/DOMPurify-LICENSE.txt'] = await readFile(resolve(root, 'node_modules/dompurify/LICENSE'));
 const yamlParserBuild = await build({
   entryPoints: [resolve(root, 'node_modules/js-yaml/dist/js-yaml.mjs')],
   bundle: true, format: 'esm', platform: 'browser', target: ['es2020'], minify: true, write: false, logLevel: 'silent',

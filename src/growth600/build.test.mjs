@@ -20,6 +20,7 @@ import julianDateConverterCopies from './locales/julian-date-converter-final.mjs
 import intervalTimerCopies from './locales/interval-timer-final.mjs';
 import logicGridPuzzleCopies from './locales/logic-grid-puzzle-final.mjs';
 import { logicGridPuzzleEnglishCopy } from './locales/logic-grid-puzzle.en.mjs';
+import markdownEditorCopies from './locales/markdown-editor-final.mjs';
 import { buildGrowthStaticSite } from './build.mjs';
 import englishGrowthCopy from './locales/en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
@@ -99,6 +100,7 @@ function toolCopy(tool, language) {
   if (tool.id === 'julian-date-converter') return structuredClone(julianDateConverterCopies[language]);
   if (tool.id === 'interval-timer') return structuredClone(intervalTimerCopies[language]);
   if (tool.id === 'logic-grid-puzzle') return structuredClone(language === 'en' ? logicGridPuzzleEnglishCopy : logicGridPuzzleCopies[language]);
+  if (tool.id === 'markdown-editor') return structuredClone(markdownEditorCopies[language]);
   if (tool.id === 'json-to-xml-converter') return { ...structuredClone(jsonToXmlEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09' };
   if (tool.id === 'har-viewer') return { ...structuredClone(harViewerEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09' };
   if (tool.id === 'robots-txt-tester') return structuredClone(robotsTxtTesterCopies[language]);
@@ -858,7 +860,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   const controllerBundles = Object.fromEntries(growthPilotTools.map((tool) => [tool.id, `document.querySelector('[data-tool="${tool.id}"]');`]));
   const workerBundles = { 'image-upscaler-worker': 'self.addEventListener("message",()=>{});' };
   const extraAssets = { 'models-test/config.json': '{"upscale":2}', 'models-test/onnx/model.onnx': Buffer.from([1, 2, 3]) };
-  const toolStyles = { 'har-viewer': '.har-viewer__table{border-collapse:collapse}', 'robots-txt-tester': '.robots-txt-tester__decision{display:grid}', 'binary-base64-tool': '.binary-base64-tool img{max-width:100%}', 'csv-editor': '.csv-editor__table-scroll{overflow:auto}', 'logic-grid-puzzle': '.logic-grid-table{table-layout:fixed}' };
+  const toolStyles = { 'har-viewer': '.har-viewer__table{border-collapse:collapse}', 'robots-txt-tester': '.robots-txt-tester__decision{display:grid}', 'binary-base64-tool': '.binary-base64-tool img{max-width:100%}', 'csv-editor': '.csv-editor__table-scroll{overflow:auto}', 'logic-grid-puzzle': '.logic-grid-table{table-layout:fixed}', 'markdown-editor': '.markdown-editor{max-width:70rem}' };
   const fixtureCopyByLocale = { en: englishGrowthCopy, es: spanishGrowthCopy, fr: frenchGrowthCopy, pt: portugueseGrowthCopy, de: germanGrowthCopy, ja: japaneseGrowthCopy, ko: koreanGrowthCopy, id: indonesianGrowthCopy, hi: hindiGrowthCopy, ar: arabicGrowthCopy, zh: simplifiedChineseGrowthCopy, bn: bengaliGrowthCopy, ru: russianGrowthCopy, ur: urduGrowthCopy, tr: turkishGrowthCopy, vi: vietnameseGrowthCopy, it: italianGrowthCopy, zh_tw: traditionalChineseGrowthCopy, bg: bulgarianGrowthCopy, ca: catalanGrowthCopy, nl: dutchGrowthCopy, el: greekGrowthCopy, ms: malayGrowthCopy, pl: polishGrowthCopy, sv: swedishGrowthCopy, th: thaiGrowthCopy, uk: ukrainianGrowthCopy, sw: swahiliGrowthCopy, mr: marathiGrowthCopy, te: teluguGrowthCopy, ha: hausaGrowthCopy, tl: filipinoGrowthCopy, ta: tamilGrowthCopy, fa: persianGrowthCopy, am: amharicGrowthCopy, gu: gujaratiGrowthCopy };
   for (const locale of smallLocales) fixtureCopyByLocale[locale.key] = {
     ...fixtureCopyByLocale[locale.key],
@@ -916,6 +918,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
     hitori: toolCopy(growthPilotTools.find(({ id }) => id === 'hitori'), locale.key),
     nurikabe: toolCopy(growthPilotTools.find(({ id }) => id === 'nurikabe'), locale.key),
     'logic-grid-puzzle': toolCopy(growthPilotTools.find(({ id }) => id === 'logic-grid-puzzle'), locale.key),
+    'markdown-editor': toolCopy(growthPilotTools.find(({ id }) => id === 'markdown-editor'), locale.key),
     'color-name-finder': toolCopy(growthPilotTools.find(({ id }) => id === 'color-name-finder'), locale.key),
     'photo-to-sketch': toolCopy(growthPilotTools.find(({ id }) => id === 'photo-to-sketch'), locale.key),
     'schema-markup-validator': toolCopy(growthPilotTools.find(({ id }) => id === 'schema-markup-validator'), locale.key),
@@ -1166,7 +1169,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   const files = await readdir(join(outputDir, 'assets'));
   // Top-level entries include shared and tool-only stylesheets, one controller
   // per tool, the model worker, and the models directory (nested contents).
-  assert.equal(files.length, growthPilotTools.length + 8);
+  assert.equal(files.length, growthPilotTools.length + 9);
   assert.ok((await stat(join(outputDir, 'assets', files[0]))).isFile());
 });
 

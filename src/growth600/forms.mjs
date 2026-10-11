@@ -141,6 +141,7 @@ export function renderGrowthForm(toolId, copy) {
     hitori: ['size', 'difficulty', 'board', 'rules', 'accuracyNote', 'cell', 'row', 'column', 'black', 'white'],
     nurikabe: ['difficulty', 'board', 'rules', 'accuracyNote', 'cell', 'row', 'column', 'sea', 'island'],
     'logic-grid-puzzle': ['difficulty', 'board', 'clues', 'categoryPair', 'categoryGroups', 'same', 'different', 'unmarked', 'sameMark', 'differentMark', 'rules', 'accuracyNote'],
+    'markdown-editor': ['editor', 'editorHint', 'preview', 'previewHint', 'autosave', 'words', 'characters', 'storageNote'],
     slitherlink: ['size', 'board', 'rules', 'accuracyNote', 'row', 'column', 'horizontal', 'vertical'],
     'peg-solitaire': ['board', 'rules', 'accuracyNote', 'hole', 'row', 'column', 'peg', 'empty'],
     futoshiki: ['size', 'difficulty', 'board', 'rules', 'accuracyNote', 'cell', 'row', 'column'],
@@ -302,6 +303,7 @@ export function renderGrowthForm(toolId, copy) {
     hitori: ['newGame', 'checkBoard', 'hint', 'clearMarks', 'easy', 'medium', 'hard'],
     nurikabe: ['newGame', 'checkBoard', 'hint', 'clearMarks', 'easy', 'medium', 'hard'],
     'logic-grid-puzzle': ['newGame', 'checkBoard', 'hint', 'clearMarks', 'easy', 'medium', 'hard', 'rules'],
+    'markdown-editor': ['heading', 'bold', 'italic', 'link', 'code', 'quote', 'bulletList', 'numberList', 'checklist', 'table', 'undo', 'redo', 'showPreview', 'hidePreview', 'copy', 'download', 'clear'],
     slitherlink: ['newGame', 'checkBoard', 'hint', 'undo', 'clearMarks', 'rules', 'small', 'medium', 'large'],
     'peg-solitaire': ['newGame', 'hint', 'undo', 'rules', 'pegsRemaining'],
     futoshiki: ['newGame', 'checkBoard', 'hint', 'undo', 'rules', 'small', 'medium', 'large', 'easy', 'regular', 'hard'],
@@ -867,6 +869,21 @@ export function renderGrowthForm(toolId, copy) {
       <table class="logic-grid-table" data-board><caption data-pair-caption></caption><thead data-head></thead><tbody data-body></tbody></table></section>
     <div class="actions"><button type="button" data-action="check-board" class="button button--primary">${escapeGrowthHtml(labels.checkBoard)}</button><button type="button" data-action="hint" class="button button--secondary">${escapeGrowthHtml(labels.hint)}</button><button type="button" data-action="clear-marks" class="button button--secondary">${escapeGrowthHtml(labels.clearMarks)}</button></div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);
+
+  if (toolId === 'markdown-editor') return attachCopy(`<section class="markdown-editor" data-tool="markdown-editor" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="markdown-editor-toolbar" role="toolbar" aria-label="${escapeGrowthHtml(copy.name)}">
+      ${['heading', 'bold', 'italic', 'link', 'code', 'quote', 'bulletList', 'numberList', 'checklist', 'table'].map((action) => `<button type="button" class="button button--secondary" data-insert="${action}">${escapeGrowthHtml(labels[action])}</button>`).join('')}
+      <span class="markdown-editor-toolbar__spacer"></span>
+      <button type="button" class="button button--secondary" data-action="undo">${escapeGrowthHtml(labels.undo)}</button><button type="button" class="button button--secondary" data-action="redo">${escapeGrowthHtml(labels.redo)}</button>
+    </div>
+    <div class="markdown-editor-layout">
+      <section class="markdown-editor-pane"><label class="field-label" for="markdown-editor-input">${escapeGrowthHtml(fields.editor)}</label><textarea id="markdown-editor-input" data-editor maxlength="500000" rows="18" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea><p class="hint">${escapeGrowthHtml(fields.editorHint)}</p></section>
+      <section class="markdown-editor-pane markdown-editor-pane--preview"><h2>${escapeGrowthHtml(fields.preview)}</h2><iframe data-preview title="${escapeGrowthHtml(fields.preview)}" sandbox="" hidden></iframe><p class="hint">${escapeGrowthHtml(fields.previewHint)}</p></section>
+    </div>
+    <div class="markdown-editor-options"><label><input type="checkbox" data-autosave checked> ${escapeGrowthHtml(fields.autosave)}</label><p class="hint">${escapeGrowthHtml(fields.storageNote)}</p><output data-counts aria-live="polite"></output></div>
+    <div class="actions"><button type="button" data-action="preview" class="button button--primary">${escapeGrowthHtml(labels.showPreview)}</button><button type="button" data-action="copy" class="button button--secondary">${escapeGrowthHtml(labels.copy)}</button><button type="button" data-action="download" class="button button--secondary">${escapeGrowthHtml(labels.download)}</button><button type="button" data-action="clear" class="button button--secondary">${escapeGrowthHtml(labels.clear)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p>
+  </section>`, copy);
 
   if (toolId === 'slitherlink') return attachCopy(`<section class="game slitherlink-game" aria-label="${escapeGrowthHtml(copy.name)}">
     <div class="game-toolbar"><div class="field"><label for="slitherlink-size">${escapeGrowthHtml(fields.size)}</label><select id="slitherlink-size" data-size><option value="4">4 × 4</option><option value="5" selected>5 × 5</option><option value="6">6 × 6</option></select></div>
