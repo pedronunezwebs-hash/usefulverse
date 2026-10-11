@@ -38,6 +38,7 @@ import { antennaLengthCalculatorEnglishCopy } from './locales/antenna-length-cal
 import { effectiveInterestRateCalculatorEnglishCopy } from './locales/effective-interest-rate-calculator.en.mjs';
 import { fiveTwentyNineCalculatorEnglishCopy } from './locales/529-calculator.en.mjs';
 import { julianDateConverterEnglishCopy } from './locales/julian-date-converter.en.mjs';
+import { intervalTimerEnglishCopy } from './locales/interval-timer.en.mjs';
 
 const actions = {
   calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', millimeters: 'Millimeters', feet: 'Feet', inches: 'Inches', squareMeters: 'Square meters', squareFeet: 'Square feet', cubicMeters: 'Cubic meters', cubicFeet: 'Cubic feet', kelvin: 'Kelvin difference', fahrenheit: 'Fahrenheit difference', kilowatts: 'Kilowatts (kW)', btuPerHour: 'BTU per hour (BTU/h)', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.', kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only', productionMode: 'Estimate array output', sizingMode: 'Size for daily use', years: 'years', add: 'Add', subtract: 'Subtract', multiply: 'Multiply', divide: 'Divide', magnitude: 'Modulus', argument: 'Argument', rectangularToPolar: 'Rectangular to polar', polarToRectangular: 'Polar to rectangular', roots: 'Nth roots',
@@ -55,6 +56,7 @@ const copies = {
   'effective-interest-rate-calculator': effectiveInterestRateCalculatorEnglishCopy,
   '529-calculator': fiveTwentyNineCalculatorEnglishCopy,
   'julian-date-converter': julianDateConverterEnglishCopy,
+  'interval-timer': intervalTimerEnglishCopy,
   'image-splitter': { name: 'Image splitter', actions: { ...actions, choose: 'Choose image', export: 'Split and prepare ZIP', cancel: 'Cancel', download: 'Download tile ZIP' }, messages: { ...messages }, fields: { imageFile: 'Choose an image', mode: 'Split by', gridMode: 'Rows and columns', tileSizeMode: 'Fixed tile dimensions', columns: 'Columns', rows: 'Rows', tileWidth: 'Tile width', tileHeight: 'Tile height', overlap: 'Overlap', accuracyNote: 'Local image processing.', previewHint: 'Image grid preview.', imageReady: 'Image ready' } },
   'image-sharpener': { name: 'Image sharpener', actions: { ...actions, load: 'Choose image', export: 'Prepare download', download: 'Download', original: 'Show original', sharpened: 'Sharpened preview', png: 'PNG', jpeg: 'JPEG' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', exporting: 'Sharpening…', exportFailed: 'Export failed.', exportReady: 'Image ready.' }, fields: { imageFile: 'Choose image', amount: 'Strength', radius: 'Radius', threshold: 'Threshold', compare: 'Show original', accuracyNote: 'Processed locally; 8 megapixel limit.', previewHint: 'Preview is reduced.', format: 'Format', relatedRedactor: 'Redact private details.', relatedCropper: 'Crop the image.' } },
   'photo-to-sketch': { name: 'Photo to sketch', actions: { ...actions, load: 'Choose image', export: 'Create sketch PNG', cancel: 'Cancel processing', download: 'Download sketch PNG', original: 'Show original' }, messages: { ...messages, unsupportedImage: 'Unsupported image.', imageTooLarge: 'Image too large.', imageReady: 'Image ready.', selectImage: 'Choose an image first.', exporting: 'Creating sketch…', cancelled: 'Processing cancelled.', exportFailed: 'Export failed.', exportReady: 'Sketch ready.' }, fields: { imageFile: 'Choose image', intensity: 'Sketch intensity', detail: 'Fine-detail threshold', compare: 'Show original', accuracyNote: 'Local processing; maximum 8 megapixels.', previewHint: 'Reduced preview.' } },
@@ -1527,6 +1529,12 @@ test('Julian date converter exposes both directions, UTC labeling and the calend
   for (const expected of ['name="direction"', 'value="to-jd"', 'value="to-utc"', 'type="datetime-local"', 'name="utcDate"', 'name="dateKind"', 'value="mjd"', 'name="julianValue"', 'data-action="example"', 'data-action="calculate"', 'data-action="copy"', 'data-result hidden', 'role="status" aria-live="polite"']) assert.ok(html.includes(expected), expected);
   assert.match(html, /proleptic Gregorian calendar and UTC/u);
   assert.match(html, /Leap seconds are not represented/u);
+});
+
+test('interval timer form has bounded localized controls, audio opt-out, visual state and accessible status', () => {
+  const html = renderGrowthForm('interval-timer', intervalTimerEnglishCopy);
+  for (const expected of ['name="preset"', 'name="workSeconds" type="number" inputmode="numeric" min="1" max="7200"', 'name="restSeconds" type="number" inputmode="numeric" min="0" max="3600"', 'name="rounds" type="number" inputmode="numeric" min="1" max="99"', 'name="prepSeconds" type="number" inputmode="numeric" min="0" max="300"', 'name="sound" type="checkbox" checked', 'data-action="start"', 'data-action="pause"', 'data-action="resume"', 'data-action="reset"', 'data-remaining', 'data-progress', 'role="status" aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /Browsers may delay timers and sound/u);
 });
 
 test('image splitter exposes a local raster input, bounded grid controls, overlap, accessible preview and ZIP actions', () => {

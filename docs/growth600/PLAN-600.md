@@ -3465,18 +3465,19 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 120 · Interval Timer
 
-- [ ] **C/F/E/X/L/B/P/S completos — `interval-timer`**
+- [x] **C/F/E/X/L/B — implementados y comprobados; P/S pendientes — `interval-timer`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/interval-timer/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `interval timer` — 8.100 búsquedas/mes US/en, KD 34; nivel B. CPC 1.02 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Secuencias de trabajo/descanso, vueltas, presets, audio probado y opcional, pausa y reanudación. Medir con marcas temporales, no acumulando intervalos.
-- **Prueba de aceptación específica:** Cicloscumplentiempos ypausa no pierdefase
-- **Frontera con otras herramientas:** online-timer: programaciónmultifaseentrenamiento vs Pomodoro. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Prueba de aceptación específica:** 8 rondas de 20 s de trabajo y 10 s de descanso duran 230 s: no se añade descanso tras la última ronda. Pausar y reanudar conserva la fase y el tiempo restante; editar los ajustes después de terminar inicia una vista limpia.
+- **Frontera con otras herramientas:** `online-timer` resuelve una cuenta atrás sencilla; Pomodoro estructura sesiones de concentración y descansos; esta herramienta ejecuta intervalos de entrenamiento configurables. No crear otra URL por preset, dirección o modalidad.
+- **Implementación/riesgo:** motor y controlador locales, temporizador basado en reloj monotónico y señales opcionales con Web Audio tras una acción del usuario. Los navegadores pueden retrasar el código/audio en segundo plano o durante la suspensión del dispositivo; no se ofrece como alarma del sistema.
 - **Consultas secundarias del mismo propietario:**
   - `hiit interval timer` — 260/mes US/en; KD 13.
   - `interval timer free online`; `interval timer with example`; `interval timer no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** DE/de `intervall timer` 1.600/mes, KD 9.
+- **Estado local (2026-10-11):** C/F/E/X/L/B completos. 36 copias estáticas sencillas (traducción automática, sin revisión nativa ni llamada de traducción en runtime); suite completa **1.813/1.813** y `npm run locale:release-check` pasan. `npm run check` conserva las **10.260** URLs del sitio principal. Build aislado: **5.508 páginas** (152 × 36 + 36 portadas), 5.717 archivos. Chrome EN/AR a 390 px confirmó presets, trabajo/descanso, pausa/reanudación, fin de sesión, edición tras terminar, RTL y ausencia de overflow/errores de consola; sonido opcional probado tras clic real. No se midió PageSpeed/Lighthouse. P/S pendientes hasta CI, integración, despliegues y sitemap público verificados.
 
 ### 133 · Hebrew Calendar Converter
 

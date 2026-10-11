@@ -17,6 +17,7 @@ import antennaLengthCalculatorCopies from './locales/antenna-length-calculator-f
 import effectiveInterestRateCalculatorCopies from './locales/effective-interest-rate-calculator-final.mjs';
 import fiveTwentyNineCalculatorCopies from './locales/529-calculator-final.mjs';
 import julianDateConverterCopies from './locales/julian-date-converter-final.mjs';
+import intervalTimerCopies from './locales/interval-timer-final.mjs';
 import { buildGrowthStaticSite } from './build.mjs';
 import englishGrowthCopy from './locales/en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
@@ -94,6 +95,7 @@ function toolCopy(tool, language) {
   if (tool.id === 'effective-interest-rate-calculator') return structuredClone(effectiveInterestRateCalculatorCopies[language]);
   if (tool.id === '529-calculator') return structuredClone(fiveTwentyNineCalculatorCopies[language]);
   if (tool.id === 'julian-date-converter') return structuredClone(julianDateConverterCopies[language]);
+  if (tool.id === 'interval-timer') return structuredClone(intervalTimerCopies[language]);
   if (tool.id === 'json-to-xml-converter') return { ...structuredClone(jsonToXmlEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09' };
   if (tool.id === 'har-viewer') return { ...structuredClone(harViewerEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09' };
   if (tool.id === 'robots-txt-tester') return structuredClone(robotsTxtTesterCopies[language]);

@@ -2,13 +2,14 @@
 
 Última verificación: 2026-10-11. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## Estado público actual · 2026-10-11
+## Estado público actual al reanudar · 2026-10-11
 
-- **150 herramientas Growth600** junto al catálogo protegido de 277; **427 herramientas públicas en total**. Todas se publican en 36 locales. Sitemap del hub: **5.436 URLs** (150 × 36 + 36 portadas); sitemap principal: **10.260 URLs**; total combinado: **15.696 URLs**. Publicación y sitemap no implican indexación.
+- **151 herramientas Growth600** junto al catálogo protegido de 277; **428 herramientas públicas en total**. Todas se publican en 36 locales. Sitemap del hub: **5.472 URLs** (151 × 36 + 36 portadas); sitemap principal: **10.260 URLs**; total combinado: **15.732 URLs**. Publicación y sitemap no implican indexación.
 - #086 529 Calculator: PR #114 integrada en `c9e18cb0dc4ef8128aed06545ce108047b918a2d`; CI/despliegue principal `38120717651` y publicación separada del hub `38120973293` correctos.
 - #087 Dilution Calculator ya estaba publicada antes de esta reanudación; en esta sesión se comprobó que EN y AR devuelven HTTP 200 y que sus 36 variantes están incluidas en el sitemap público. No se rehízo.
-- **En curso:** #088 Julian Date Converter. Código y traducciones estáticas en la rama aislada `codex/growth600-julian-date-converter-20261011`; después de publicar, la cuenta prevista es 151 Growth600, 428 herramientas totales, 5.472 URLs del hub y 15.732 URLs combinadas.
-- Reanudar siempre leyendo primero `PLAN-600.md` y esta sección, continuar en la siguiente candidata pendiente y comprobar slug, función e intención frente al catálogo original protegido y las herramientas del hub. Mantener 36 locales, render estático y procesamiento local. No repetir PageSpeed/Lighthouse ni llamadas a DataForSEO salvo petición expresa.
+- #088 Julian Date Converter: PR #115 integrada en `10366aafca353b192d24dbae9a945e9eb19fb8d6`; CI `38122981697`, despliegue principal `38123224930` y publicación separada del hub `38123636699` correctos. Sitemap público: 5.472 URLs y exactamente 36 rutas para la herramienta; la publicación no implica indexación.
+- **En curso:** #120 Interval Timer está implementado y probado en la rama aislada `codex/growth600-interval-timer-20261011`; `npm test` 1.813/1.813, `npm run locale:release-check` y `npm run check` (10.260 URLs) pasan. Build candidato del hub: 5.508 URLs (152 × 36 + 36 portadas). CI/PR/despliegues/verificación pública pendientes; el consumo real de Actions no se pudo leer con el permiso actual, así que no se ha activado un workflow que pudiera consumir minutos.
+- Reanudar leyendo primero `PLAN-600.md` y esta sección; no rehacer #088 ni investigación DataForSEO. Siguiente candidata tras cerrar #120: #121 Logic Grid Puzzle. Mantener 36 locales, render estático y procesamiento local. No repetir PageSpeed/Lighthouse ni llamadas a DataForSEO salvo petición expresa. La cuota general gratuita de Actions es mensual, pero revisar consumo/budget de la cuenta antes de abrir PR o ejecutar workflows privados.
 - El progreso público anterior a #086 se conserva como historial debajo; sus cantidades ya no representan el estado actual. Las candidatas de reserva no cuentan como herramientas.
 
 ## Estado público actual · 2026-10-10
