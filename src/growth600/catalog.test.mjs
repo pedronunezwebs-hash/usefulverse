@@ -16,10 +16,11 @@ import { calculateReverseMortgage } from './tools/reverse-mortgage-calculator/lo
 import { calculateCarDepreciation } from './tools/car-depreciation-calculator/logic.mjs';
 import { calculateStockProfit } from './tools/stock-profit-calculator/logic.mjs';
 import { calculatePension } from './tools/pension-calculator/logic.mjs';
+import { calculateLifetimeValue } from './tools/lifetime-value-calculator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 166);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 166);
+  assert.equal(growthPilotTools.length, 167);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 167);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -30,6 +31,17 @@ test('pension calculator is distinct from the existing retirement projection', (
   assert.deepEqual(tool.relatedExistingIds, []);
   assert.match(tool.boundary, /not an entitlement/u);
   assert.equal(calculatePension({ finalSalary: 50000, yearsOfService: 30, accrualPercent: 2, commutationPercent: 0, commutationFactor: 12 }).annualPension, 30000);
+});
+
+test('customer LTV uses monthly gross profit and churn, separate from company valuation', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'lifetime-value-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'customer lifetime value calculator');
+  assert.deepEqual(tool.relatedExistingIds, []);
+  assert.match(tool.boundary, /not a valuation, forecast/u);
+  const result = calculateLifetimeValue({ monthlyRevenue: 100, grossMarginPercent: 50, monthlyChurnPercent: 5, customerAcquisitionCost: 100 });
+  assert.equal(result.lifetimeValue, 1000);
+  assert.equal(result.lifetimeValueToCac, 10);
 });
 
 test('stock profit calculator estimates a distinct one-sale realized result with fees and lot methods', () => {

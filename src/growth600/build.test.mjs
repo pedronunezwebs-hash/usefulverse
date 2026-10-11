@@ -33,6 +33,7 @@ import reverseMortgageCalculatorCopies from './locales/reverse-mortgage-calculat
 import carDepreciationCalculatorCopies from './locales/car-depreciation-calculator-final.mjs';
 import stockProfitCalculatorCopies from './locales/stock-profit-calculator-final.mjs';
 import pensionCalculatorCopies from './locales/pension-calculator-final.mjs';
+import lifetimeValueCalculatorCopies from './locales/lifetime-value-calculator-final.mjs';
 import { buildGrowthStaticSite } from './build.mjs';
 import englishGrowthCopy from './locales/en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
@@ -125,6 +126,7 @@ function toolCopy(tool, language) {
   if (tool.id === 'car-depreciation-calculator') return structuredClone(carDepreciationCalculatorCopies[language]);
   if (tool.id === 'stock-profit-calculator') return structuredClone(stockProfitCalculatorCopies[language]);
   if (tool.id === 'pension-calculator') return structuredClone(pensionCalculatorCopies[language]);
+  if (tool.id === 'lifetime-value-calculator') return structuredClone(lifetimeValueCalculatorCopies[language]);
   if (tool.id === 'json-to-xml-converter') return { ...structuredClone(jsonToXmlEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09' };
   if (tool.id === 'har-viewer') return { ...structuredClone(harViewerEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09' };
   if (tool.id === 'robots-txt-tester') return structuredClone(robotsTxtTesterCopies[language]);

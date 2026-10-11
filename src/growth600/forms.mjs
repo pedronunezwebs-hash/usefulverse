@@ -38,6 +38,7 @@ export function renderGrowthForm(toolId, copy) {
     'bond-calculator': ['mode', 'priceMode', 'yieldMode', 'faceValue', 'couponPercent', 'years', 'frequency', 'annual', 'semiannual', 'quarterly', 'monthly', 'yieldPercent', 'marketPrice', 'accuracyNote', 'resultSummary', 'yieldToMaturity', 'estimatedPrice', 'couponPayment', 'currentYield', 'totalCoupons', 'premiumDiscount', 'periods', 'chartTitle', 'chartDescription', 'chartYield', 'chartPrice'],
     'stock-profit-calculator': ['lotCount', 'purchaseLot', 'quantity', 'purchasePrice', 'purchaseFee', 'saleMethod', 'averageCost', 'fifo', 'sharesSold', 'salePrice', 'saleFee', 'currencyCode', 'accuracyNote', 'resultSummary', 'sharesOwned', 'sharesRemaining', 'purchaseCost', 'costBasis', 'grossProceeds', 'netProceeds', 'realizedProfit', 'returnPercent', 'averageCostPerShare', 'remainingBasis', 'breakevenSalePrice'],
     'pension-calculator': ['finalSalary', 'yearsOfService', 'accrualPercent', 'commutationPercent', 'commutationFactor', 'currencyCode', 'accuracyNote', 'resultSummary', 'annualPension', 'monthlyPension', 'convertedAnnualPension', 'lumpSum', 'remainingAnnualPension'],
+    'lifetime-value-calculator': ['monthlyRevenue', 'grossMarginPercent', 'monthlyChurnPercent', 'customerAcquisitionCost', 'currencyCode', 'accuracyNote', 'resultSummary', 'monthlyGrossProfit', 'expectedLifetimeMonths', 'lifetimeValue', 'cacPaybackMonths', 'lifetimeValueToCac'],
     'image-upscaler': ['imageFile', 'accuracyNote', 'progressHint', 'sourcePreview', 'resultPreview'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
@@ -212,6 +213,7 @@ export function renderGrowthForm(toolId, copy) {
     'bond-calculator': ['calculate', 'example', 'reset', 'copy', 'result'],
     'stock-profit-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'pension-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
+    'lifetime-value-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
@@ -1189,6 +1191,20 @@ export function renderGrowthForm(toolId, copy) {
       ${label('pension-commutation', fields.commutationPercent, '<input id="pension-commutation" name="commutationPercent" type="text" inputmode="decimal" value="0" maxlength="12" required>')}
       ${label('pension-factor', fields.commutationFactor, '<input id="pension-factor" name="commutationFactor" type="text" inputmode="decimal" value="12" maxlength="12" required>')}
       ${label('pension-currency', fields.currencyCode, '<input id="pension-currency" name="currencyCode" type="text" value="USD" maxlength="3" pattern="[A-Za-z]{3}" autocomplete="off" required>')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'lifetime-value-calculator') return attachCopy(`<form id="tool-form" class="lifetime-value-calculator" novalidate>
+    <div class="calculator-grid">
+      ${label('ltv-monthly-revenue', fields.monthlyRevenue, '<input id="ltv-monthly-revenue" name="monthlyRevenue" type="text" inputmode="decimal" value="100" maxlength="24" required>')}
+      ${label('ltv-margin', fields.grossMarginPercent, '<input id="ltv-margin" name="grossMarginPercent" type="text" inputmode="decimal" value="50" maxlength="12" required>')}
+      ${label('ltv-churn', fields.monthlyChurnPercent, '<input id="ltv-churn" name="monthlyChurnPercent" type="text" inputmode="decimal" value="5" maxlength="12" required>')}
+      ${label('ltv-cac', fields.customerAcquisitionCost, '<input id="ltv-cac" name="customerAcquisitionCost" type="text" inputmode="decimal" value="0" maxlength="24" required>')}
+      ${label('ltv-currency', fields.currencyCode, '<input id="ltv-currency" name="currencyCode" type="text" value="USD" maxlength="3" pattern="[A-Za-z]{3}" autocomplete="off" required>')}
     </div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>

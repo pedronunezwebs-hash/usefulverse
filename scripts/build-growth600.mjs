@@ -21,6 +21,7 @@ import reverseMortgageCalculatorCopies from '../src/growth600/locales/reverse-mo
 import carDepreciationCalculatorCopies from '../src/growth600/locales/car-depreciation-calculator-final.mjs';
 import stockProfitCalculatorCopies from '../src/growth600/locales/stock-profit-calculator-final.mjs';
 import pensionCalculatorCopies from '../src/growth600/locales/pension-calculator-final.mjs';
+import lifetimeValueCalculatorCopies from '../src/growth600/locales/lifetime-value-calculator-final.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const localeDir = resolve(root, 'src/growth600/locales');
@@ -63,6 +64,8 @@ for (const { key } of localeEntries) {
   copyByLocale[key] = { ...copyByLocale[key], 'stock-profit-calculator': stockProfitCalculatorCopies[key] };
   if (!pensionCalculatorCopies[key]) throw new Error(`Growth600 release blocked: Pension Calculator copy is missing for ${key}.`);
   copyByLocale[key] = { ...copyByLocale[key], 'pension-calculator': pensionCalculatorCopies[key] };
+  if (!lifetimeValueCalculatorCopies[key]) throw new Error(`Growth600 release blocked: Customer Lifetime Value Calculator copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'lifetime-value-calculator': lifetimeValueCalculatorCopies[key] };
 }
 
 const outputDir = resolve(process.env.GROWTH600_DIST ?? resolve(root, 'dist-growth600'));

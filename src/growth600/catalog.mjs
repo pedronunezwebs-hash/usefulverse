@@ -1440,6 +1440,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/pension-calculator/logic.mjs',
   },
   {
+    id: 'lifetime-value-calculator',
+    category: 'business-finance',
+    type: 'calculator',
+    primaryIntent: 'customer lifetime value calculator',
+    secondaryIntents: ['lifetime value calculator', 'customer lifetime value calculator with churn', 'LTV to CAC calculator'],
+    functions: ['estimate customer lifetime value from monthly revenue per customer, gross margin and constant monthly customer churn', 'show estimated average customer lifetime in months and monthly gross profit', 'optionally compare the estimate with customer acquisition cost using an LTV-to-CAC ratio and gross-profit payback months', 'format the displayed amounts in a user-entered currency without exchange-rate conversion'],
+    acceptance: 'Monthly revenue 100, gross margin 50% and monthly churn 5% estimate customer lifetime value 1,000 before acquisition cost or overhead.',
+    boundary: 'Simple unit-economics illustration, not a valuation, forecast, accounting figure or business advice. Assumes constant monthly revenue, gross margin and churn; it does not model cohort variation, expansion/contraction, discounting, time value, retention curves, refunds, fixed costs, taxes or changing customer behavior. Customer acquisition cost is optional and user-entered. Currency only changes display formatting. Runs locally; inputs are not uploaded or saved.',
+    relatedExistingIds: [],
+    logicModule: './tools/lifetime-value-calculator/logic.mjs',
+  },
+  {
     id: 'kinetic-energy-calculator',
     category: 'physics-math',
     type: 'calculator',

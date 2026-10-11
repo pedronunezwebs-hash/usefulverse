@@ -2090,6 +2090,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Prueba de aceptación específica:** Ingreso 100, margen 50%, churn 5% da LTV simple 1000
 - **Frontera con otras herramientas:** profit-margin-calculator: retención y economía de clientes. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Estado local comprobado (2026-10-11):** C/F/E/X/L/B completados en rama local. Aceptación `100 × 50% ÷ 5% = 1.000`; CAC opcional ilustra payback y LTV:CAC sin tratarlo como valoración. Se generaron copias estáticas en 36 idiomas. Suite integral **1.932/1.932**, contrato enfocado **336/336**, contrato de lanzamiento de 20 locales aprobado y build aislado genera rutas. No comprobado en navegador ni publicado; P/S siguen pendientes. Sin PageSpeed.
 - **Consultas secundarias del mismo propietario:**
   - `lifetime value calculator` — 480/mes US/en; KD 30.
   - `customer lifetime value calculator free online`; `customer lifetime value calculator with example`; `customer lifetime value calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

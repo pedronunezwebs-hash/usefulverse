@@ -1808,6 +1808,15 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - Gates locales: suite **1.926/1.926**, contratos de locale **170/170**, `npm run locale:release-check`; build principal **10.260 URLs**, hub **6.012 URLs**. Chrome EN y AR validados; el resultado del canje coincide con el caso esperado y la página árabe usa RTL sin overflow a 390 px; consola sin mensajes. No PageSpeed/Lighthouse.
 - **Estado:** C/F/E/X/L/B local completos; P/S pendientes. Sin PR ni despliegue; se retiene localmente mientras Actions esté cerca de su cuota para evitar cargos.
 
+## Implementación local · Customer Lifetime Value Calculator (#207) · 2026-10-11
+
+- Demanda reutilizada del plan; no se hicieron consultas nuevas: `customer lifetime value calculator` 2.400 búsquedas/mes US/en, KD 27; CPC 8,23 USD (no CPM). Secundaria: `lifetime value calculator` 480/mes.
+- Calcula LTV simple como ingresos mensuales por cliente × margen bruto ÷ churn mensual constante; informa beneficio bruto mensual y vida esperada. CAC opcional añade meses de recuperación desde el beneficio bruto y ratio LTV:CAC. El ejemplo 100, 50% y 5% devuelve 1.000; con CAC 100, ratio 10× y recuperación 2 meses. El código valida ceros, rangos, desbordamiento y código de moneda; no convierte divisas.
+- La página declara las hipótesis y excluye descuento temporal, cohortes variables, expansión, reembolsos, gastos generales e impuestos; no se presenta como valoración ni previsión. Cálculo local, sin API, servidor o coste por uso.
+- Traducción estática sencilla desde inglés para los otros 35 idiomas, sin llamadas de traducción durante el uso. Título conserva `UsefulVerse` en ≤60 caracteres y descripción ≤160. No es revisión nativa.
+- Gates locales: lógica nueva 4/4; suite integral **1.932/1.932**; localización expandida aprobada para 20 locales; contrato de 36 idiomas y pruebas de build enfocadas **336/336**. Build de prueba confirmó generación de rutas/sitemap estáticos. No se hizo PageSpeed.
+- **Estado:** C/F/E/X/L/B local completos; P/S pendientes. No se verificó interacción visual real en navegador y no se ha publicado ni añadido a los sitemaps públicos. No abrir workflow Actions hasta verificar margen/cupo y decidir la protección de presupuesto.
+
 ## Reconciliación del plan · Mortgage Points Calculator (#164) · 2026-10-11
 
 - La entrada antigua de #164 decía que faltaba publicar, pero ya es parte de producción: aparece en el sitemap público y las 36 rutas devolvieron HTTP 200 en una comprobación directa. Los títulos localizados no repiten el título inglés. No reconstruirla ni volver a sumarla al total.
