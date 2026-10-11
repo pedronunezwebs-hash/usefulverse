@@ -67,6 +67,7 @@ import flowRateCopies from './locales/flow-rate-calculator.mjs';
 import reynoldsNumberCopies from './locales/reynolds-number-calculator.mjs';
 import threePhasePowerCopies from './locales/three-phase-power-calculator.mjs';
 import momentumCopies from './locales/momentum-calculator.mjs';
+import logicGridPuzzleCopies from './locales/logic-grid-puzzle-final.mjs';
 
 const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'ph-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'kinetic-energy-calculator', 'resistor-color-code-calculator', 'acceleration-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator'].includes(id));
 const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
@@ -344,6 +345,30 @@ function assertMachineAcceptedGrowthToolInAllLocales(tool) {
     assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
   }
 }
+
+test('logic grid puzzle has complete static translations and four distinct localized categories in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'logic-grid-puzzle');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    const categories = copy.fields.categoryGroups;
+    assert.equal(categories.length, 4, key);
+    for (const category of categories) {
+      assert.ok(category.name.trim(), `${key}: category name`);
+      assert.equal(category.values.length, 4, `${key}: four values`);
+      assert.equal(new Set(category.values.map((value) => value.trim().toLowerCase())).size, 4, `${key}: distinct values`);
+    }
+    assert.equal(copy.additionalFaqs.length, 2, key);
+    assert.ok(copy.messages.hintSame.includes('{left}') && copy.messages.hintSame.includes('{right}'), `${key}: hint placeholders`);
+    assert.ok(copy.title.toLowerCase().includes(copy.name.toLowerCase()), `${key}: title retains localized tool name`);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, `${key}: bounded metadata`);
+  }
+  assert.equal(logicGridPuzzleCopies.ar.fields.unmarked, 'غير محدد');
+  assert.equal(logicGridPuzzleCopies.ar.actions.hard, 'صعب');
+  assert.equal(logicGridPuzzleCopies.ar.messages.unmarked, 'تمت إزالة العلامة.');
+  assert.equal(logicGridPuzzleCopies.en.fields.categoryGroups[0].name, 'People');
+});
 
 test('HAR viewer has complete static translations, privacy warnings and preserved HAR fixtures in all 36 locales', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'har-viewer');

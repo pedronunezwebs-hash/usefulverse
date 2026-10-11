@@ -2,10 +2,11 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
+import { checkLogicGridMarks, createLogicGridPuzzle, solveLogicGrid } from './tools/logic-grid-puzzle/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 152);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 152);
+  assert.equal(growthPilotTools.length, 153);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 153);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -17,6 +18,19 @@ test('interval timer adds work/rest rounds and sound without duplicating Pomodor
   assert.match(tool.acceptance, /8-round 20-second work \/ 10-second rest.*230 seconds/u);
   assert.match(tool.boundary, /sleeping devices may delay.*Sound starts only after the user presses Start/u);
   assert.match(tool.boundary, /no account, upload, API, storage or usage charge/u);
+});
+
+test('logic grid is an original locally solved matching puzzle, distinct from number-placement and island puzzles', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'logic-grid-puzzle');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'logic grid puzzle');
+  assert.deepEqual(tool.relatedExistingIds, ['nurikabe', 'hitori', 'sudoku']);
+  assert.match(tool.functions.join(' '), /exhaustively verify a single assignment/u);
+  assert.match(tool.acceptance, /exactly one valid assignment/u);
+  assert.match(tool.boundary, /No model download, account, upload, network call or stored play history/u);
+  const puzzle = createLogicGridPuzzle({ random: () => 0.43 });
+  assert.equal(solveLogicGrid(puzzle.clues).length, 1);
+  assert.equal(checkLogicGridMarks(puzzle, []).status, 'incomplete');
 });
 
 test('frequency and wavelength calculator solves the wave relation, distinct from unit conversion and antenna geometry', () => {
