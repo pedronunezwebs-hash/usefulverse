@@ -64,6 +64,7 @@ export function renderGrowthForm(toolId, copy) {
     'centripetal-force-calculator': ['mass', 'massUnit', 'kilograms', 'grams', 'pounds', 'radius', 'lengthUnit', 'meters', 'centimeters', 'millimeters', 'feet', 'inches', 'inputMode', 'speedMode', 'rotationMode', 'speed', 'speedUnit', 'metersPerSecond', 'kilometersPerHour', 'milesPerHour', 'frequency', 'frequencyUnit', 'revolutionsPerMinute', 'hertz', 'accuracyNote', 'centripetalForce', 'poundForce', 'acceleration', 'gForce', 'speedResult', 'frequencyResult'],
     'writing-tracker': ['projectName', 'projectGoal', 'projectSelect', 'date', 'words', 'minutes', 'note', 'persistConsent', 'privacyNote', 'storageNote', 'historyLabel', 'trendLabel', 'todayLabel', 'weekLabel', 'sessionCount', 'goalProgress', 'noProjects', 'noSessions', 'backupFile', 'backupHint', 'selectedProject', 'editSession', 'deleteSession', 'wordsUnit', 'minutesUnit'],
     'aes-encryption-tool': ['operation', 'encryptMode', 'decryptMode', 'payloadType', 'textType', 'fileType', 'passphrase', 'iterations', 'inputText', 'inputFile', 'output', 'privacyNote', 'securityNote', 'limitsNote', 'deviceNote', 'downloadName'],
+    'jwt-encoder': ['algorithm', 'claims', 'secret', 'expiration', 'token', 'headerPreview', 'claimsPreview', 'localNote', 'securityNote', 'purposeNote', 'secretLimit'],
     'beam-deflection-calculator': ['support', 'simplySupported', 'cantilever', 'loadCase', 'pointLoad', 'uniformLoad', 'span', 'lengthUnit', 'meters', 'centimeters', 'millimeters', 'inches', 'feet', 'load', 'forceUnit', 'newtons', 'kilonewtons', 'poundsForce', 'modulus', 'modulusUnit', 'pascals', 'megapascals', 'gigapascals', 'psi', 'ksi', 'inertia', 'inertiaUnit', 'mm4', 'cm4', 'm4', 'in4', 'ft4', 'loadUnitHint', 'accuracyNote', 'sourceNote'],
     'led-resistor-calculator': ['supplyVoltage', 'forwardVoltage', 'ledCount', 'targetCurrentMa', 'standardSeries', 'e12', 'e24', 'accuracyNote'],
     'flow-rate-calculator': ['mode', 'solveFlow', 'solveArea', 'solveVelocity', 'estimateFillTime', 'area', 'areaUnit', 'squareMeters', 'squareCentimeters', 'squareFeet', 'squareInches', 'velocity', 'velocityUnit', 'metersPerSecond', 'centimetersPerSecond', 'metersPerMinute', 'feetPerSecond', 'flowRate', 'flowUnit', 'cubicMetersPerSecond', 'litersPerSecond', 'litersPerMinute', 'cubicMetersPerHour', 'gallonsPerMinute', 'tankVolume', 'volumeUnit', 'cubicMeters', 'liters', 'usGallons', 'timeUnit', 'seconds', 'minutes', 'hours', 'accuracyNote'],
@@ -246,6 +247,7 @@ export function renderGrowthForm(toolId, copy) {
     'centripetal-force-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'writing-tracker': ['addProject', 'saveSession', 'updateSession', 'reset', 'example', 'export', 'import', 'copy', 'result', 'showMore'],
     'aes-encryption-tool': ['encrypt', 'decrypt', 'example', 'copy', 'download', 'reset', 'result'],
+    'jwt-encoder': ['sign', 'example', 'copy', 'reset', 'result'],
     'beam-deflection-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'led-resistor-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'flow-rate-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'solved'],
@@ -1332,6 +1334,24 @@ export function renderGrowthForm(toolId, copy) {
       <label>${escapeGrowthHtml(fields.output)}<textarea name="output" data-aes-output rows="8" readonly spellcheck="false"></textarea></label>
       <p><a data-aes-download hidden>${escapeGrowthHtml(fields.downloadName)}</a></p>
       <div class="actions">${button('copy', actions.copy, 'secondary')}<button class="button button--secondary" type="button" data-action="download" data-aes-download-container hidden>${escapeGrowthHtml(actions.download)}</button></div>
+    </section>
+  </form>`, copy);
+
+  if (toolId === 'jwt-encoder') return attachCopy(`<form id="tool-form" class="jwt-encoder" novalidate>
+    <div class="calculator-grid">
+      ${label('jwt-algorithm', fields.algorithm, '<select id="jwt-algorithm" name="algorithm"><option>HS256</option><option>HS384</option><option>HS512</option></select>')}
+      ${label('jwt-expiration', fields.expiration, '<input id="jwt-expiration" name="expiration" type="number" min="1" max="5256000" step="1" inputmode="numeric">')}
+    </div>
+    ${label('jwt-claims', fields.claims, '<textarea id="jwt-claims" name="claims" rows="8" maxlength="196608" spellcheck="false" required>{"sub":"test-user","role":"viewer"}</textarea>')}
+    ${label('jwt-secret', fields.secret, '<input id="jwt-secret" name="secret" type="password" maxlength="4096" autocomplete="new-password" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.localNote)}</p><p class="hint">${escapeGrowthHtml(fields.securityNote)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.purposeNote)}</p><p class="hint">${escapeGrowthHtml(fields.secretLimit)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}<button class="button" type="submit" data-jwt-submit>${escapeGrowthHtml(actions.sign)}</button>${button('reset', actions.reset, 'secondary')}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2>
+      <label>${escapeGrowthHtml(fields.token)}<textarea name="token" data-jwt-token rows="5" readonly spellcheck="false"></textarea></label>
+      <div class="calculator-grid"><label>${escapeGrowthHtml(fields.headerPreview)}<textarea data-jwt-header rows="4" readonly spellcheck="false"></textarea></label><label>${escapeGrowthHtml(fields.claimsPreview)}<textarea data-jwt-claims-preview rows="6" readonly spellcheck="false"></textarea></label></div>
+      ${button('copy', actions.copy, 'secondary')}
     </section>
   </form>`, copy);
 

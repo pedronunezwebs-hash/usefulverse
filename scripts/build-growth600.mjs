@@ -29,6 +29,7 @@ import inductorCalculatorCopies from '../src/growth600/locales/inductor-calculat
 import centripetalForceCalculatorCopies from '../src/growth600/locales/centripetal-force-calculator-final.mjs';
 import writingTrackerCopies from '../src/growth600/locales/writing-tracker-final.mjs';
 import aesEncryptionToolCopies from '../src/growth600/locales/aes-encryption-tool-final.mjs';
+import jwtEncoderCopies from '../src/growth600/locales/jwt-encoder-final.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const localeDir = resolve(root, 'src/growth600/locales');
@@ -87,6 +88,8 @@ for (const { key } of localeEntries) {
   copyByLocale[key] = { ...copyByLocale[key], 'writing-tracker': writingTrackerCopies[key] };
   if (!aesEncryptionToolCopies[key]) throw new Error(`Growth600 release blocked: AES Encryption Tool copy is missing for ${key}.`);
   copyByLocale[key] = { ...copyByLocale[key], 'aes-encryption-tool': aesEncryptionToolCopies[key] };
+  if (!jwtEncoderCopies[key]) throw new Error(`Growth600 release blocked: JWT Encoder copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'jwt-encoder': jwtEncoderCopies[key] };
 }
 
 const outputDir = resolve(process.env.GROWTH600_DIST ?? resolve(root, 'dist-growth600'));

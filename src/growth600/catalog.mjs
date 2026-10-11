@@ -2087,6 +2087,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['pdf-protect-unlock'],
     logicModule: './tools/aes-encryption-tool/logic.mjs',
   },
+  {
+    id: 'jwt-encoder',
+    category: 'developer-data',
+    type: 'tool',
+    primaryIntent: 'jwt encoder',
+    secondaryIntents: ['jwt builder', 'create signed JWT locally', 'JWT with expiration generator'],
+    functions: ['create a compact JWT from a JSON object of claims', 'sign locally with HS256, HS384 or HS512 using Web Crypto', 'optionally add issued-at and expiration timestamps', 'preview the header and claims before copying the token'],
+    acceptance: 'A generated HS256 token verifies against an independent HMAC implementation; Unicode claims survive round-trip decoding, and unsupported algorithms are rejected.',
+    boundary: 'Creates and signs HMAC JWTs locally in this browser; it does not authenticate users, verify identities, issue tokens for a service, validate a token against an issuer, or replace secure key management. HMAC uses the same secret to sign and verify; anyone who receives the secret can create tokens. Never use a production secret in a public tool. Claims and secret remain in the current tab and are not uploaded or saved, but browser extensions or a compromised device may access page content. Use only non-sensitive test data, and have a qualified engineer review production authentication. No upload, account, server processing or persistence.',
+    relatedExistingIds: ['jwt-decoder'],
+    logicModule: './tools/jwt-encoder/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

@@ -32,6 +32,7 @@ import { inductorCalculatorEnglishCopy } from './locales/inductor-calculator.en.
 import { centripetalForceCalculatorEnglishCopy } from './locales/centripetal-force-calculator.en.mjs';
 import { writingTrackerEnglishCopy } from './locales/writing-tracker.en.mjs';
 import { aesEncryptionToolEnglishCopy } from './locales/aes-encryption-tool.en.mjs';
+import { jwtEncoderEnglishCopy } from './locales/jwt-encoder.en.mjs';
 import torqueCalculatorCopies from './locales/torque-calculator.mjs';
 import { beamDeflectionCalculatorEnglishCopy } from './locales/beam-deflection-calculator.en.mjs';
 import { transformerCalculatorEnglishCopy } from './locales/transformer-calculator.en.mjs';
@@ -501,6 +502,7 @@ copies['json-to-xml-converter'] = { ...jsonToXmlEnglishCopy };
   copies['centripetal-force-calculator'] = { ...centripetalForceCalculatorEnglishCopy };
   copies['writing-tracker'] = { ...writingTrackerEnglishCopy };
   copies['aes-encryption-tool'] = { ...aesEncryptionToolEnglishCopy };
+  copies['jwt-encoder'] = { ...jwtEncoderEnglishCopy };
   copies['beam-deflection-calculator'] = { ...beamDeflectionCalculatorEnglishCopy };
 copies['savings-goal-calculator'] = { name: 'Savings Goal Calculator', actions: { ...actions, requiredContribution: 'Monthly deposit needed', monthsToGoal: 'Time needed for my deposit', beginning: 'Beginning of month', end: 'End of month' }, messages: { ...messages }, fields: { mode: 'Calculation', startingBalance: 'Current savings', targetAmount: 'Savings target', annualRatePercent: 'Annual rate', months: 'Months', monthlyContribution: 'Monthly deposit', contributionTiming: 'Deposit timing', accuracyNote: 'Estimate only.', resultSummary: 'Estimate', monthlyResult: 'Required deposit', monthsResult: 'Months', projectedBalance: 'Projected balance', totalContributions: 'Deposits', estimatedInterest: 'Estimated interest', currencyNote: 'Use the same currency.' } };
 copies['severance-pay-calculator'] = { name: 'Severance Pay Calculator', actions: { ...actions, customMode: 'Custom assumptions', ukMode: 'Great Britain statutory estimate' }, messages: { ...messages, calculationFailed: 'Could not calculate.', exampleLoaded: 'Example loaded.', calculateFirst: 'Calculate first.', belowServiceMinimum: 'Fewer than two completed years.', capApplied: 'A cap applied.', noCapApplied: 'No cap applied.', customAssumptions: 'Custom assumptions.' }, fields: { mode: 'Calculation type', weeklyPay: 'Average gross weekly pay', yearsOfService: 'Years of service', weeksPerYear: 'Weeks per year', birthDate: 'Birth date', employmentStartDate: 'Employment start date', redundancyDate: 'Redundancy date', accuracyNote: 'Estimate only.', customNote: 'Uses your assumptions.', ukNote: 'Great Britain estimate; enter GBP.', officialSource: 'Official guidance', estimate: 'Estimated amount', appliedWeeklyPay: 'Weekly pay used', totalWeeks: 'Weeks of pay', rulesAsOf: 'Rules from', resultSummary: 'Estimate details' } };
@@ -1765,4 +1767,12 @@ test('AES tool exposes local encryption controls, visible limits and no passphra
   assert.match(html, /nothing is uploaded/u);
   assert.match(html, /8 MiB/u);
   assert.doesNotMatch(html, /localStorage|autocomplete="on"/u);
+});
+
+test('JWT encoder exposes local HMAC signing, test-secret warnings and previews', () => {
+  const html = renderGrowthForm('jwt-encoder', jwtEncoderEnglishCopy);
+  for (const value of ['name="algorithm"', 'HS256', 'HS384', 'HS512', 'name="claims"', 'name="secret"', 'type="password"', 'name="expiration"', 'data-jwt-token', 'data-jwt-header', 'data-jwt-claims-preview', 'aria-live="polite"']) assert.ok(html.includes(value), value);
+  assert.match(html, /Use test data only/u);
+  assert.match(html, /does not authenticate users/u);
+  assert.doesNotMatch(html, /localStorage|sessionStorage|autocomplete="on"/u);
 });

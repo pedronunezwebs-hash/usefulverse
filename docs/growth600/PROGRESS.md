@@ -4,11 +4,11 @@
 
 ## Estado público actual · 2026-10-12
 
-- **Producción:** 174 herramientas Growth600 en 36 locales, **6.300 URLs** en `https://tools.usefulverse.com/sitemap.xml`; catálogo principal protegido de 277 herramientas y 10.260 URLs. Total combinado: **451 herramientas y 16.560 URLs**. La presencia en sitemap no demuestra indexación.
+- **Producción:** 175 herramientas Growth600 en 36 locales, **6.336 URLs** en `https://tools.usefulverse.com/sitemap.xml`; catálogo principal protegido de 277 herramientas y 10.260 URLs. Total combinado: **452 herramientas y 16.596 URLs**. La presencia en sitemap no demuestra indexación.
 - El 12-oct se desplegaron directamente a Cloudflare Pages, proyecto `usefulverse-tools`, rama `main`, Stock Profit Calculator, Pension Calculator, Customer Lifetime Value Calculator, Polar Graphing Calculator, Boolean Algebra Calculator, Week Number Calculator, Inductor Calculator, Centripetal Force Calculator, Writing Tracker y AES Encryption Tool. No hubo push a `main`, workflow de GitHub Actions ni consumo de sus minutos. Últimos deployments: `https://88b780a1.usefulverse-tools.pages.dev` (#310–311), `https://b6d8b527.usefulverse-tools.pages.dev` (#312) y `https://3f5009d6.usefulverse-tools.pages.dev` (#313). Código #312 y #313 respaldado en la rama `codex/growth600-stock-profit-20261011`, commits `43bc254` y `bb215c5`.
-- Antes de publicar #313: `npm test` **1.977/1.977**; `npm run locale:release-check` aprobado; build Growth600 **6.300 páginas / 6.549 archivos**, 184.696.765 bytes; build estático, sin Functions ni APIs. `git diff --check` limpio. No se ejecutó PageSpeed/Lighthouse.
-- Tras publicar #313: sitemap HTTP 200 con **6.300 URLs únicas** y exactamente 36 rutas AES. EN/ES/AR/JA responden HTTP 200; formularios, canonical y bundles del controlador también responden 200. La rama `codex/growth600-stock-profit-20261011` no inició workflow de Actions (lista vacía). No se afirma rastreo/indexación.
-- README URL inventory generado desde los builds: **10.260 URLs principales y 6.300 del hub**.
+- Antes de publicar #314: `npm test` **1.982/1.982**; `npm run locale:release-check` aprobado; build Growth600 **6.336 páginas / 6.586 archivos**, 185.497.625 bytes; build estático, sin Functions ni APIs. `git diff --check` limpio. No se ejecutó PageSpeed/Lighthouse.
+- Tras publicar #314: sitemap HTTP 200 con **6.336 URLs únicas** y exactamente 36 rutas JWT Encoder. EN/ES/AR/JA responden HTTP 200; formularios, canonical y bundles del controlador también responden 200. La rama `codex/growth600-stock-profit-20261011` no inició workflow de Actions (lista vacía). No se afirma rastreo/indexación.
+- README URL inventory generado desde los builds: **10.260 URLs principales y 6.336 del hub**.
 
 ## Publicadas · #310–311 · 2026-10-12
 
@@ -26,6 +26,14 @@
 - 36 copias estáticas traducidas automáticamente por fragmentos con el método existente; release gate aprobado, metadatos dentro del límite y tres FAQs. No se presentan como revisadas por nativos.
 - Verificación previa: `npm test` **1.972/1.972**, `npm run locale:release-check`, build **6.264 páginas** (173 herramientas × 36 + 36 portadas), sitemap sin duplicados; CSS minificado por ruta y no cargado en páginas ajenas. EN/ES/AR/JA comprobados en HTML construido para controles, canonical, lang/dir y formulario.
 - **Publicación directa Cloudflare Pages**, sin Actions: `https://b6d8b527.usefulverse-tools.pages.dev`. Sitemap en vivo HTTP 200 con **6.264 URLs únicas**; Writing Tracker aparece en sus **36 locales**. EN/ES/AR/JA en vivo HTTP 200 con formulario y canonical; la publicación no implica indexación. No se ejecutó PageSpeed/Lighthouse.
+
+## Publicada · #314 JWT Encoder · 2026-10-12
+
+- Intención propia frente a JWT Decoder: crear y firmar tokens HMAC localmente, sin verificar usuarios; 390 búsquedas/mes US/en para `jwt encoder`, KD 16. CPC 6,43 USD (no CPM), reutilizado del plan sin nueva llamada a DataForSEO.
+- Web Crypto HS256/HS384/HS512, objeto JSON como claims, caducidad opcional entera entre 1 minuto y 10 años, límite explícito de bytes. El secreto no se guarda ni se envía; nunca usar secretos de producción. Copy aclara que firmar no autentica. Sin Functions, red, cuenta, API ni persistencia.
+- 36 traducciones estáticas automáticas desde inglés con el flujo Google Translate ya empleado; aceptadas como simples, no revisión nativa. Metadatos y FAQs incluidas.
+- Tests focales **355/355**, `npm test` **1.982/1.982**, `npm run locale:release-check` aprobado. Build: **6.336 páginas / 6.586 archivos**, 185.497.625 bytes, 6.336 URLs únicas y 36 JWT. EN/ES/AR/JA: formulario, canonical y `lang`; árabe RTL. Sin PageSpeed/Lighthouse.
+- **Publicado directamente en Cloudflare Pages**, sin activar GitHub Actions: `https://tools.usefulverse.com/tools/jwt-encoder/`. Sitemap público actualizado/verificado en HTTP 200 con **6.336 URLs únicas**, la ruta aparece en 36 locales y sus controladores responden HTTP 200. Publicación no equivale a indexación.
 
 ## Publicada · #313 AES Encryption Tool · 2026-10-12
 
@@ -331,7 +339,7 @@ Las notas históricas que siguen describen su fecha correspondiente y no sustitu
 - [x] B — Chrome local EN/AR a 390 px sobre el build final: ejemplo creciente produce rho=1, cinco puntos SVG y tabla; la etiqueta del gráfico es accesible. Árabe `lang=ar`/`dir=rtl`, sin desbordamiento (390/390 px) y consola sin mensajes; botón de borrar localizado.
 - Bundle del controlador aislado: **6.298 bytes** (límite 24 KiB), sin red, `eval` ni almacenamiento.
 - [ ] P/S — PR, integración, deploy y verificación pública/sitemap pendientes; no se afirma indexación.
-- **Siguiente herramienta del plan:** #316 Wilcoxon Signed Rank Test Calculator, tras cerrar todos los gates de #309.
+- **Siguiente herramienta del plan:** #317 GraphQL Formatter; #315 y #316 constan como publicados en los registros anteriores. Continuar sin repetir DataForSEO ni modificar las 277 herramientas originales.
 
 ## Publicada · Investment Allocation Calculator (#301) · 2026-10-09
 

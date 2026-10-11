@@ -3072,13 +3072,15 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 314 · Jwt Encoder
 
-- [ ] **C/F/E/X/L/B/P/S completos — `jwt-encoder`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/jwt-encoder/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `jwt-encoder`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/jwt-encoder/` + otras 35 rutas localizadas. Sitemap público actualizado y comprobado el 12-oct-2026; evidencia en `docs/growth600/PROGRESS.md`.
 - **Demanda:** `jwt encoder` — 390 búsquedas/mes US/en, KD 16; nivel C. CPC 6.43 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Construir y firmar JWT con algoritmos permitidos y secreto local, expiración y preview; no interpretar emisión como autenticación ni verificar usuarios.
-- **Prueba de aceptación específica:** TokenHS256 verifica contra vector
+- **Prueba de aceptación específica:** token HMAC valida contra Web Crypto independiente para HS256/384/512; payload y firma coinciden.
 - **Frontera con otras herramientas:** jwt-decoder: emitir y firmar no inspeccionar. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** implementación local con Web Crypto (HS256/384/512), solo cabecera `alg`/`typ`, objeto JSON en claims, secreto de entrada no persistido, caducidad opcional entera de 1 minuto a 10 años y límites de bytes explícitos. No valida identidad, no autentica, no hace llamadas de red y desaconseja secretos reales/de producción; trabajar en HTTPS con secreto de prueba desechable.
+- [x] **C/F/E/X/L/B/P/S:** 36 copias estáticas traducidas desde inglés mediante el flujo Google Translate existente; no se presentan como revisión nativa. `npm run locale:release-check` aprobado. Suites enfocadas 355/355; completas 1.982/1.982. Build estático 6.336 páginas (175 herramientas × 36 + 36 portadas), 6.586 archivos, 185.497.625 bytes; sitemap 6.336 URLs únicas, 36 JWT. EN/ES/AR/JA del build tienen formulario, canonical y `lang`; árabe `dir=rtl`. Sin PageSpeed/Lighthouse.
+- [x] **Publicado directamente en Cloudflare Pages:** `https://tools.usefulverse.com/tools/jwt-encoder/`; sitemap público HTTP 200 actualizado a 6.336 URLs únicas y 36 rutas JWT. EN/ES/AR/JA y sus controladores responden HTTP 200. Sin GitHub Actions; presencia en sitemap no implica indexación.
 - **Consultas secundarias del mismo propietario:**
   - `jwt builder` — 30/mes US/en; KD 24.
   - `jwt encoder free online`; `jwt encoder with example`; `jwt encoder no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
