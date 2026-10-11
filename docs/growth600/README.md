@@ -1,6 +1,6 @@
 # Plan de expansión a 600 herramientas · 2026-10-07
 
-Plan y registro vivo de implementación. La última herramienta publicada es #120; la siguiente candidata pendiente es #121.
+Plan y registro vivo de implementación. La última herramienta publicada es #128 Eigenvalue Calculator; la siguiente candidata pendiente es #129 Bond Calculator.
 
 - [Plan y checklist completo](PLAN-600.md): catálogo protegido de 277, 323 candidatas nuevas, 36 idiomas, fases, contratos y gates.
 - [Progreso de implementación](PROGRESS.md): fases verificadas, decisiones, pilotos y siguiente acción para reanudar.
@@ -11,8 +11,8 @@ Plan y registro vivo de implementación. La última herramienta publicada es #12
 Coste real DataForSEO: 0,24852 USD. No autoriza nuevas llamadas al reanudar.
 260 candidatas tienen al menos 1.000 búsquedas/mes en la query medida US/en; 63 tienen demanda media (260–880/mes). No son visitas garantizadas ni una previsión de CPM.
 
-Último deploy confirmado: #122 Markdown Editor, PR #119. El hub tiene 154 herramientas Growth600 y 5.580 URLs (154 × 36 + 36 portadas); el sitemap principal tiene 10.260 URLs. Total público: 431 herramientas y 15.840 URLs. La siguiente candidata #127 Purchase Order Generator está en implementación local; no contarla hasta publicar y comprobar el sitemap. Publicar no equivale a indexación.
+Último deploy confirmado: #128 Eigenvalue Calculator, PR #121. El hub tiene 156 herramientas Growth600 y 5.652 URLs (156 × 36 + 36 portadas); el sitemap principal tiene 10.260 URLs. Total público: 433 herramientas y 15.912 URLs. #129 Bond Calculator es la siguiente candidata del plan. Publicar no equivale a indexación.
 
-Siguiente candidata por retomar: #121 Logic Grid Puzzle. No se repite investigación de DataForSEO ni se mide PageSpeed/Lighthouse sin petición expresa.
+Siguiente candidata por retomar: #129 Bond Calculator. No se repite investigación de DataForSEO ni se mide PageSpeed/Lighthouse sin petición expresa.
 
 Las casillas de producto permanecen sin marcar hasta que cada herramienta supere C/F/E/X/L/B/P/S. No llamar implementado, probado, traducido, publicado o indexado a lo que solo está planificado. Consultar `PROGRESS.md` antes de cada tanda; no rehacer investigación ni duplicar herramientas.

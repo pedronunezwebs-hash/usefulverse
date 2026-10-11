@@ -1,0 +1,38 @@
+export const bondCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Bond Calculator',
+  title: 'Bond Calculator Free & Unlimited | UsefulVerse',
+  description: 'Estimate bond price or yield to maturity from coupon, face value and term. Free, unlimited calculations run locally in your browser.',
+  intro: 'Estimate a fixed-rate bond price from its yield, or solve an approximate yield to maturity from a quoted market price. Review the assumptions and price–yield curve before using the result.',
+  howQuestion: 'How do I calculate a bond price or yield to maturity?',
+  howAnswer: 'Enter the face value, annual coupon rate, years to maturity and coupon frequency. Choose price-from-yield to discount the scheduled coupon and principal payments, or choose yield-from-price to numerically solve the nominal annual yield that matches a market price.',
+  privacyQuestion: 'Are my bond inputs uploaded?',
+  privacyAnswer: 'No. The calculation runs in this browser. Inputs are not uploaded or saved by this tool.',
+  howTo: [
+    'Choose whether to estimate a price from yield or solve yield from a market price.',
+    'Enter face value, annual coupon rate, maturity and coupon frequency.',
+    'Calculate and compare the result with the displayed assumptions and curve.',
+  ],
+  example: { label: 'Load a 5% coupon bond priced at par', values: [] },
+  actions: { calculate: 'Calculate bond value', example: 'Load par-bond example', reset: 'Reset', copy: 'Copy results', result: 'Bond estimate' },
+  fields: {
+    mode: 'Calculation mode', priceMode: 'Price from a yield', yieldMode: 'Yield from a market price',
+    faceValue: 'Face (par) value', couponPercent: 'Annual coupon rate (%)', years: 'Years to maturity', frequency: 'Coupon payments per year',
+    annual: 'Annual (1)', semiannual: 'Semiannual (2)', quarterly: 'Quarterly (4)', monthly: 'Monthly (12)',
+    yieldPercent: 'Nominal annual yield (%)', marketPrice: 'Market price',
+    accuracyNote: 'Educational estimate only, not investment advice. Assumes fixed coupons paid at regular intervals, principal repaid at maturity, nominal annual yield compounded at the selected coupon frequency, and no accrued interest, taxes, fees, default, call features, inflation or reinvestment effects. Maturity must be a whole number of coupon periods. Yield is numerical and approximate; confirm bond terms and market conventions independently.',
+    resultSummary: 'Estimated bond results', yieldToMaturity: 'Yield to maturity (nominal annual)', estimatedPrice: 'Estimated price', couponPayment: 'Coupon payment per period', currentYield: 'Current yield', totalCoupons: 'Total scheduled coupons', premiumDiscount: 'Premium / discount to face value', periods: 'Coupon periods',
+    chartTitle: 'Estimated price–yield curve', chartDescription: 'Bond price generally moves in the opposite direction to yield. The curve uses the entered fixed coupon and maturity assumptions.', chartYield: 'Nominal annual yield (%)', chartPrice: 'Estimated price',
+  },
+  messages: {
+    calculated: 'Bond estimate calculated.', exampleLoaded: 'Example loaded: 5% coupon, 5 years, annual payments, price at par.', checkInputs: 'Check the bond values and try again.', copied: 'Results copied.', copyUnavailable: 'Copy is unavailable in this browser.', invalidPeriods: 'Choose a maturity that contains a whole number of coupon periods (up to 1,200).', yieldOutOfRange: 'The market price is outside the supported numerical yield range.',
+  },
+  additionalFaqs: [
+    { question: 'What yield does a 5% coupon bond have when it is priced at par?', answer: 'Under the calculator assumptions, a bond with a 5% annual coupon rate, a market price equal to face value and regular coupon payments has a nominal yield to maturity of 5%.' },
+    { question: 'Why do bond prices and yields move in opposite directions?', answer: 'A bond price is the present value of its scheduled coupons and principal. A higher discount yield reduces that present value; a lower yield increases it.' },
+    { question: 'Is current yield the same as yield to maturity?', answer: 'No. Current yield is the annual coupon divided by the current price. Yield to maturity also accounts for the price difference from face value and the time remaining, under the stated cash-flow assumptions.' },
+    { question: 'Does this estimate include accrued interest or taxes?', answer: 'No. It models regular fixed coupon payments and principal repayment only. It does not calculate clean-versus-dirty price, accrued interest, taxes, fees, credit risk or optional redemption.' },
+  ],
+  sources: [],
+  localizationStatus: 'approved',
+});

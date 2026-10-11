@@ -16,10 +16,10 @@ Browser-first collection of fast, private, static tools for everyday work.
 
 The additional Growth600 tools are published on a separate static Cloudflare Pages site at
 [tools.usefulverse.com](https://tools.usefulverse.com/), so they do not replace or
-change the 277-tool catalog above. The hub contains 154 additional tools in
+change the 277-tool catalog above. The hub contains 156 additional tools in
 the same 36 locales. Its canonical URL inventory and language alternates are listed in
-the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (5,580 URLs in this
-build: 154 tools and 36 localized hub home pages; 431 tool implementations
+the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (5,652 URLs in this
+build: 156 tools and 36 localized hub home pages; 433 tool implementations
 across the two sites);
 the staged checklist and implementation record are in
 [docs/growth600/PLAN-600.md](docs/growth600/PLAN-600.md) and
@@ -10553,7 +10553,7 @@ These are the canonical URLs for the additional tools and their localized pages.
 
 <!-- BEGIN GENERATED GROWTH600 URL INVENTORY -->
 
-Generated from `dist-growth600/sitemap.xml`: **5,580 canonical URLs**.
+Generated from `dist-growth600/sitemap.xml`: **5,688 canonical URLs**.
 
 ```text
 https://tools.usefulverse.com/
@@ -10670,6 +10670,8 @@ https://tools.usefulverse.com/tools/compost-calculator/
 https://tools.usefulverse.com/tools/pond-volume-calculator/
 https://tools.usefulverse.com/tools/fertilizer-calculator/
 https://tools.usefulverse.com/tools/complex-number-calculator/
+https://tools.usefulverse.com/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/tools/bond-calculator/
 https://tools.usefulverse.com/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/tools/momentum-calculator/
 https://tools.usefulverse.com/tools/resistor-color-code-calculator/
@@ -10681,6 +10683,7 @@ https://tools.usefulverse.com/tools/rtf-converter/
 https://tools.usefulverse.com/tools/csv-to-pdf/
 https://tools.usefulverse.com/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/tools/work-order-generator/
+https://tools.usefulverse.com/tools/purchase-order-generator/
 https://tools.usefulverse.com/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/tools/capacitor-calculator/
 https://tools.usefulverse.com/tools/body-water-calculator/
@@ -10825,6 +10828,8 @@ https://tools.usefulverse.com/es/tools/compost-calculator/
 https://tools.usefulverse.com/es/tools/pond-volume-calculator/
 https://tools.usefulverse.com/es/tools/fertilizer-calculator/
 https://tools.usefulverse.com/es/tools/complex-number-calculator/
+https://tools.usefulverse.com/es/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/es/tools/bond-calculator/
 https://tools.usefulverse.com/es/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/es/tools/momentum-calculator/
 https://tools.usefulverse.com/es/tools/resistor-color-code-calculator/
@@ -10836,6 +10841,7 @@ https://tools.usefulverse.com/es/tools/rtf-converter/
 https://tools.usefulverse.com/es/tools/csv-to-pdf/
 https://tools.usefulverse.com/es/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/es/tools/work-order-generator/
+https://tools.usefulverse.com/es/tools/purchase-order-generator/
 https://tools.usefulverse.com/es/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/es/tools/capacitor-calculator/
 https://tools.usefulverse.com/es/tools/body-water-calculator/
@@ -10980,6 +10986,8 @@ https://tools.usefulverse.com/fr/tools/compost-calculator/
 https://tools.usefulverse.com/fr/tools/pond-volume-calculator/
 https://tools.usefulverse.com/fr/tools/fertilizer-calculator/
 https://tools.usefulverse.com/fr/tools/complex-number-calculator/
+https://tools.usefulverse.com/fr/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/fr/tools/bond-calculator/
 https://tools.usefulverse.com/fr/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/fr/tools/momentum-calculator/
 https://tools.usefulverse.com/fr/tools/resistor-color-code-calculator/
@@ -10991,6 +10999,7 @@ https://tools.usefulverse.com/fr/tools/rtf-converter/
 https://tools.usefulverse.com/fr/tools/csv-to-pdf/
 https://tools.usefulverse.com/fr/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/fr/tools/work-order-generator/
+https://tools.usefulverse.com/fr/tools/purchase-order-generator/
 https://tools.usefulverse.com/fr/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/fr/tools/capacitor-calculator/
 https://tools.usefulverse.com/fr/tools/body-water-calculator/
@@ -11135,6 +11144,8 @@ https://tools.usefulverse.com/pt-br/tools/compost-calculator/
 https://tools.usefulverse.com/pt-br/tools/pond-volume-calculator/
 https://tools.usefulverse.com/pt-br/tools/fertilizer-calculator/
 https://tools.usefulverse.com/pt-br/tools/complex-number-calculator/
+https://tools.usefulverse.com/pt-br/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/pt-br/tools/bond-calculator/
 https://tools.usefulverse.com/pt-br/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/pt-br/tools/momentum-calculator/
 https://tools.usefulverse.com/pt-br/tools/resistor-color-code-calculator/
@@ -11146,6 +11157,7 @@ https://tools.usefulverse.com/pt-br/tools/rtf-converter/
 https://tools.usefulverse.com/pt-br/tools/csv-to-pdf/
 https://tools.usefulverse.com/pt-br/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/pt-br/tools/work-order-generator/
+https://tools.usefulverse.com/pt-br/tools/purchase-order-generator/
 https://tools.usefulverse.com/pt-br/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/pt-br/tools/capacitor-calculator/
 https://tools.usefulverse.com/pt-br/tools/body-water-calculator/
@@ -11290,6 +11302,8 @@ https://tools.usefulverse.com/de/tools/compost-calculator/
 https://tools.usefulverse.com/de/tools/pond-volume-calculator/
 https://tools.usefulverse.com/de/tools/fertilizer-calculator/
 https://tools.usefulverse.com/de/tools/complex-number-calculator/
+https://tools.usefulverse.com/de/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/de/tools/bond-calculator/
 https://tools.usefulverse.com/de/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/de/tools/momentum-calculator/
 https://tools.usefulverse.com/de/tools/resistor-color-code-calculator/
@@ -11301,6 +11315,7 @@ https://tools.usefulverse.com/de/tools/rtf-converter/
 https://tools.usefulverse.com/de/tools/csv-to-pdf/
 https://tools.usefulverse.com/de/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/de/tools/work-order-generator/
+https://tools.usefulverse.com/de/tools/purchase-order-generator/
 https://tools.usefulverse.com/de/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/de/tools/capacitor-calculator/
 https://tools.usefulverse.com/de/tools/body-water-calculator/
@@ -11445,6 +11460,8 @@ https://tools.usefulverse.com/ja/tools/compost-calculator/
 https://tools.usefulverse.com/ja/tools/pond-volume-calculator/
 https://tools.usefulverse.com/ja/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ja/tools/complex-number-calculator/
+https://tools.usefulverse.com/ja/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/ja/tools/bond-calculator/
 https://tools.usefulverse.com/ja/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/ja/tools/momentum-calculator/
 https://tools.usefulverse.com/ja/tools/resistor-color-code-calculator/
@@ -11456,6 +11473,7 @@ https://tools.usefulverse.com/ja/tools/rtf-converter/
 https://tools.usefulverse.com/ja/tools/csv-to-pdf/
 https://tools.usefulverse.com/ja/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/ja/tools/work-order-generator/
+https://tools.usefulverse.com/ja/tools/purchase-order-generator/
 https://tools.usefulverse.com/ja/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/ja/tools/capacitor-calculator/
 https://tools.usefulverse.com/ja/tools/body-water-calculator/
@@ -11600,6 +11618,8 @@ https://tools.usefulverse.com/ko/tools/compost-calculator/
 https://tools.usefulverse.com/ko/tools/pond-volume-calculator/
 https://tools.usefulverse.com/ko/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ko/tools/complex-number-calculator/
+https://tools.usefulverse.com/ko/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/ko/tools/bond-calculator/
 https://tools.usefulverse.com/ko/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/ko/tools/momentum-calculator/
 https://tools.usefulverse.com/ko/tools/resistor-color-code-calculator/
@@ -11611,6 +11631,7 @@ https://tools.usefulverse.com/ko/tools/rtf-converter/
 https://tools.usefulverse.com/ko/tools/csv-to-pdf/
 https://tools.usefulverse.com/ko/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/ko/tools/work-order-generator/
+https://tools.usefulverse.com/ko/tools/purchase-order-generator/
 https://tools.usefulverse.com/ko/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/ko/tools/capacitor-calculator/
 https://tools.usefulverse.com/ko/tools/body-water-calculator/
@@ -11755,6 +11776,8 @@ https://tools.usefulverse.com/id/tools/compost-calculator/
 https://tools.usefulverse.com/id/tools/pond-volume-calculator/
 https://tools.usefulverse.com/id/tools/fertilizer-calculator/
 https://tools.usefulverse.com/id/tools/complex-number-calculator/
+https://tools.usefulverse.com/id/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/id/tools/bond-calculator/
 https://tools.usefulverse.com/id/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/id/tools/momentum-calculator/
 https://tools.usefulverse.com/id/tools/resistor-color-code-calculator/
@@ -11766,6 +11789,7 @@ https://tools.usefulverse.com/id/tools/rtf-converter/
 https://tools.usefulverse.com/id/tools/csv-to-pdf/
 https://tools.usefulverse.com/id/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/id/tools/work-order-generator/
+https://tools.usefulverse.com/id/tools/purchase-order-generator/
 https://tools.usefulverse.com/id/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/id/tools/capacitor-calculator/
 https://tools.usefulverse.com/id/tools/body-water-calculator/
@@ -11910,6 +11934,8 @@ https://tools.usefulverse.com/hi/tools/compost-calculator/
 https://tools.usefulverse.com/hi/tools/pond-volume-calculator/
 https://tools.usefulverse.com/hi/tools/fertilizer-calculator/
 https://tools.usefulverse.com/hi/tools/complex-number-calculator/
+https://tools.usefulverse.com/hi/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/hi/tools/bond-calculator/
 https://tools.usefulverse.com/hi/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/hi/tools/momentum-calculator/
 https://tools.usefulverse.com/hi/tools/resistor-color-code-calculator/
@@ -11921,6 +11947,7 @@ https://tools.usefulverse.com/hi/tools/rtf-converter/
 https://tools.usefulverse.com/hi/tools/csv-to-pdf/
 https://tools.usefulverse.com/hi/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/hi/tools/work-order-generator/
+https://tools.usefulverse.com/hi/tools/purchase-order-generator/
 https://tools.usefulverse.com/hi/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/hi/tools/capacitor-calculator/
 https://tools.usefulverse.com/hi/tools/body-water-calculator/
@@ -12065,6 +12092,8 @@ https://tools.usefulverse.com/ar/tools/compost-calculator/
 https://tools.usefulverse.com/ar/tools/pond-volume-calculator/
 https://tools.usefulverse.com/ar/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ar/tools/complex-number-calculator/
+https://tools.usefulverse.com/ar/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/ar/tools/bond-calculator/
 https://tools.usefulverse.com/ar/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/ar/tools/momentum-calculator/
 https://tools.usefulverse.com/ar/tools/resistor-color-code-calculator/
@@ -12076,6 +12105,7 @@ https://tools.usefulverse.com/ar/tools/rtf-converter/
 https://tools.usefulverse.com/ar/tools/csv-to-pdf/
 https://tools.usefulverse.com/ar/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/ar/tools/work-order-generator/
+https://tools.usefulverse.com/ar/tools/purchase-order-generator/
 https://tools.usefulverse.com/ar/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/ar/tools/capacitor-calculator/
 https://tools.usefulverse.com/ar/tools/body-water-calculator/
@@ -12220,6 +12250,8 @@ https://tools.usefulverse.com/zh-cn/tools/compost-calculator/
 https://tools.usefulverse.com/zh-cn/tools/pond-volume-calculator/
 https://tools.usefulverse.com/zh-cn/tools/fertilizer-calculator/
 https://tools.usefulverse.com/zh-cn/tools/complex-number-calculator/
+https://tools.usefulverse.com/zh-cn/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/zh-cn/tools/bond-calculator/
 https://tools.usefulverse.com/zh-cn/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/zh-cn/tools/momentum-calculator/
 https://tools.usefulverse.com/zh-cn/tools/resistor-color-code-calculator/
@@ -12231,6 +12263,7 @@ https://tools.usefulverse.com/zh-cn/tools/rtf-converter/
 https://tools.usefulverse.com/zh-cn/tools/csv-to-pdf/
 https://tools.usefulverse.com/zh-cn/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/zh-cn/tools/work-order-generator/
+https://tools.usefulverse.com/zh-cn/tools/purchase-order-generator/
 https://tools.usefulverse.com/zh-cn/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/zh-cn/tools/capacitor-calculator/
 https://tools.usefulverse.com/zh-cn/tools/body-water-calculator/
@@ -12375,6 +12408,8 @@ https://tools.usefulverse.com/bn/tools/compost-calculator/
 https://tools.usefulverse.com/bn/tools/pond-volume-calculator/
 https://tools.usefulverse.com/bn/tools/fertilizer-calculator/
 https://tools.usefulverse.com/bn/tools/complex-number-calculator/
+https://tools.usefulverse.com/bn/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/bn/tools/bond-calculator/
 https://tools.usefulverse.com/bn/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/bn/tools/momentum-calculator/
 https://tools.usefulverse.com/bn/tools/resistor-color-code-calculator/
@@ -12386,6 +12421,7 @@ https://tools.usefulverse.com/bn/tools/rtf-converter/
 https://tools.usefulverse.com/bn/tools/csv-to-pdf/
 https://tools.usefulverse.com/bn/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/bn/tools/work-order-generator/
+https://tools.usefulverse.com/bn/tools/purchase-order-generator/
 https://tools.usefulverse.com/bn/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/bn/tools/capacitor-calculator/
 https://tools.usefulverse.com/bn/tools/body-water-calculator/
@@ -12530,6 +12566,8 @@ https://tools.usefulverse.com/ru/tools/compost-calculator/
 https://tools.usefulverse.com/ru/tools/pond-volume-calculator/
 https://tools.usefulverse.com/ru/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ru/tools/complex-number-calculator/
+https://tools.usefulverse.com/ru/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/ru/tools/bond-calculator/
 https://tools.usefulverse.com/ru/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/ru/tools/momentum-calculator/
 https://tools.usefulverse.com/ru/tools/resistor-color-code-calculator/
@@ -12541,6 +12579,7 @@ https://tools.usefulverse.com/ru/tools/rtf-converter/
 https://tools.usefulverse.com/ru/tools/csv-to-pdf/
 https://tools.usefulverse.com/ru/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/ru/tools/work-order-generator/
+https://tools.usefulverse.com/ru/tools/purchase-order-generator/
 https://tools.usefulverse.com/ru/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/ru/tools/capacitor-calculator/
 https://tools.usefulverse.com/ru/tools/body-water-calculator/
@@ -12685,6 +12724,8 @@ https://tools.usefulverse.com/ur/tools/compost-calculator/
 https://tools.usefulverse.com/ur/tools/pond-volume-calculator/
 https://tools.usefulverse.com/ur/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ur/tools/complex-number-calculator/
+https://tools.usefulverse.com/ur/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/ur/tools/bond-calculator/
 https://tools.usefulverse.com/ur/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/ur/tools/momentum-calculator/
 https://tools.usefulverse.com/ur/tools/resistor-color-code-calculator/
@@ -12696,6 +12737,7 @@ https://tools.usefulverse.com/ur/tools/rtf-converter/
 https://tools.usefulverse.com/ur/tools/csv-to-pdf/
 https://tools.usefulverse.com/ur/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/ur/tools/work-order-generator/
+https://tools.usefulverse.com/ur/tools/purchase-order-generator/
 https://tools.usefulverse.com/ur/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/ur/tools/capacitor-calculator/
 https://tools.usefulverse.com/ur/tools/body-water-calculator/
@@ -12840,6 +12882,8 @@ https://tools.usefulverse.com/tr/tools/compost-calculator/
 https://tools.usefulverse.com/tr/tools/pond-volume-calculator/
 https://tools.usefulverse.com/tr/tools/fertilizer-calculator/
 https://tools.usefulverse.com/tr/tools/complex-number-calculator/
+https://tools.usefulverse.com/tr/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/tr/tools/bond-calculator/
 https://tools.usefulverse.com/tr/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/tr/tools/momentum-calculator/
 https://tools.usefulverse.com/tr/tools/resistor-color-code-calculator/
@@ -12851,6 +12895,7 @@ https://tools.usefulverse.com/tr/tools/rtf-converter/
 https://tools.usefulverse.com/tr/tools/csv-to-pdf/
 https://tools.usefulverse.com/tr/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/tr/tools/work-order-generator/
+https://tools.usefulverse.com/tr/tools/purchase-order-generator/
 https://tools.usefulverse.com/tr/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/tr/tools/capacitor-calculator/
 https://tools.usefulverse.com/tr/tools/body-water-calculator/
@@ -12995,6 +13040,8 @@ https://tools.usefulverse.com/vi/tools/compost-calculator/
 https://tools.usefulverse.com/vi/tools/pond-volume-calculator/
 https://tools.usefulverse.com/vi/tools/fertilizer-calculator/
 https://tools.usefulverse.com/vi/tools/complex-number-calculator/
+https://tools.usefulverse.com/vi/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/vi/tools/bond-calculator/
 https://tools.usefulverse.com/vi/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/vi/tools/momentum-calculator/
 https://tools.usefulverse.com/vi/tools/resistor-color-code-calculator/
@@ -13006,6 +13053,7 @@ https://tools.usefulverse.com/vi/tools/rtf-converter/
 https://tools.usefulverse.com/vi/tools/csv-to-pdf/
 https://tools.usefulverse.com/vi/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/vi/tools/work-order-generator/
+https://tools.usefulverse.com/vi/tools/purchase-order-generator/
 https://tools.usefulverse.com/vi/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/vi/tools/capacitor-calculator/
 https://tools.usefulverse.com/vi/tools/body-water-calculator/
@@ -13150,6 +13198,8 @@ https://tools.usefulverse.com/it/tools/compost-calculator/
 https://tools.usefulverse.com/it/tools/pond-volume-calculator/
 https://tools.usefulverse.com/it/tools/fertilizer-calculator/
 https://tools.usefulverse.com/it/tools/complex-number-calculator/
+https://tools.usefulverse.com/it/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/it/tools/bond-calculator/
 https://tools.usefulverse.com/it/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/it/tools/momentum-calculator/
 https://tools.usefulverse.com/it/tools/resistor-color-code-calculator/
@@ -13161,6 +13211,7 @@ https://tools.usefulverse.com/it/tools/rtf-converter/
 https://tools.usefulverse.com/it/tools/csv-to-pdf/
 https://tools.usefulverse.com/it/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/it/tools/work-order-generator/
+https://tools.usefulverse.com/it/tools/purchase-order-generator/
 https://tools.usefulverse.com/it/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/it/tools/capacitor-calculator/
 https://tools.usefulverse.com/it/tools/body-water-calculator/
@@ -13305,6 +13356,8 @@ https://tools.usefulverse.com/zh-tw/tools/compost-calculator/
 https://tools.usefulverse.com/zh-tw/tools/pond-volume-calculator/
 https://tools.usefulverse.com/zh-tw/tools/fertilizer-calculator/
 https://tools.usefulverse.com/zh-tw/tools/complex-number-calculator/
+https://tools.usefulverse.com/zh-tw/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/zh-tw/tools/bond-calculator/
 https://tools.usefulverse.com/zh-tw/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/zh-tw/tools/momentum-calculator/
 https://tools.usefulverse.com/zh-tw/tools/resistor-color-code-calculator/
@@ -13316,6 +13369,7 @@ https://tools.usefulverse.com/zh-tw/tools/rtf-converter/
 https://tools.usefulverse.com/zh-tw/tools/csv-to-pdf/
 https://tools.usefulverse.com/zh-tw/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/zh-tw/tools/work-order-generator/
+https://tools.usefulverse.com/zh-tw/tools/purchase-order-generator/
 https://tools.usefulverse.com/zh-tw/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/zh-tw/tools/capacitor-calculator/
 https://tools.usefulverse.com/zh-tw/tools/body-water-calculator/
@@ -13460,6 +13514,8 @@ https://tools.usefulverse.com/bg/tools/compost-calculator/
 https://tools.usefulverse.com/bg/tools/pond-volume-calculator/
 https://tools.usefulverse.com/bg/tools/fertilizer-calculator/
 https://tools.usefulverse.com/bg/tools/complex-number-calculator/
+https://tools.usefulverse.com/bg/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/bg/tools/bond-calculator/
 https://tools.usefulverse.com/bg/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/bg/tools/momentum-calculator/
 https://tools.usefulverse.com/bg/tools/resistor-color-code-calculator/
@@ -13471,6 +13527,7 @@ https://tools.usefulverse.com/bg/tools/rtf-converter/
 https://tools.usefulverse.com/bg/tools/csv-to-pdf/
 https://tools.usefulverse.com/bg/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/bg/tools/work-order-generator/
+https://tools.usefulverse.com/bg/tools/purchase-order-generator/
 https://tools.usefulverse.com/bg/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/bg/tools/capacitor-calculator/
 https://tools.usefulverse.com/bg/tools/body-water-calculator/
@@ -13615,6 +13672,8 @@ https://tools.usefulverse.com/ca/tools/compost-calculator/
 https://tools.usefulverse.com/ca/tools/pond-volume-calculator/
 https://tools.usefulverse.com/ca/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ca/tools/complex-number-calculator/
+https://tools.usefulverse.com/ca/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/ca/tools/bond-calculator/
 https://tools.usefulverse.com/ca/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/ca/tools/momentum-calculator/
 https://tools.usefulverse.com/ca/tools/resistor-color-code-calculator/
@@ -13626,6 +13685,7 @@ https://tools.usefulverse.com/ca/tools/rtf-converter/
 https://tools.usefulverse.com/ca/tools/csv-to-pdf/
 https://tools.usefulverse.com/ca/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/ca/tools/work-order-generator/
+https://tools.usefulverse.com/ca/tools/purchase-order-generator/
 https://tools.usefulverse.com/ca/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/ca/tools/capacitor-calculator/
 https://tools.usefulverse.com/ca/tools/body-water-calculator/
@@ -13770,6 +13830,8 @@ https://tools.usefulverse.com/nl/tools/compost-calculator/
 https://tools.usefulverse.com/nl/tools/pond-volume-calculator/
 https://tools.usefulverse.com/nl/tools/fertilizer-calculator/
 https://tools.usefulverse.com/nl/tools/complex-number-calculator/
+https://tools.usefulverse.com/nl/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/nl/tools/bond-calculator/
 https://tools.usefulverse.com/nl/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/nl/tools/momentum-calculator/
 https://tools.usefulverse.com/nl/tools/resistor-color-code-calculator/
@@ -13781,6 +13843,7 @@ https://tools.usefulverse.com/nl/tools/rtf-converter/
 https://tools.usefulverse.com/nl/tools/csv-to-pdf/
 https://tools.usefulverse.com/nl/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/nl/tools/work-order-generator/
+https://tools.usefulverse.com/nl/tools/purchase-order-generator/
 https://tools.usefulverse.com/nl/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/nl/tools/capacitor-calculator/
 https://tools.usefulverse.com/nl/tools/body-water-calculator/
@@ -13925,6 +13988,8 @@ https://tools.usefulverse.com/el/tools/compost-calculator/
 https://tools.usefulverse.com/el/tools/pond-volume-calculator/
 https://tools.usefulverse.com/el/tools/fertilizer-calculator/
 https://tools.usefulverse.com/el/tools/complex-number-calculator/
+https://tools.usefulverse.com/el/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/el/tools/bond-calculator/
 https://tools.usefulverse.com/el/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/el/tools/momentum-calculator/
 https://tools.usefulverse.com/el/tools/resistor-color-code-calculator/
@@ -13936,6 +14001,7 @@ https://tools.usefulverse.com/el/tools/rtf-converter/
 https://tools.usefulverse.com/el/tools/csv-to-pdf/
 https://tools.usefulverse.com/el/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/el/tools/work-order-generator/
+https://tools.usefulverse.com/el/tools/purchase-order-generator/
 https://tools.usefulverse.com/el/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/el/tools/capacitor-calculator/
 https://tools.usefulverse.com/el/tools/body-water-calculator/
@@ -14080,6 +14146,8 @@ https://tools.usefulverse.com/ms/tools/compost-calculator/
 https://tools.usefulverse.com/ms/tools/pond-volume-calculator/
 https://tools.usefulverse.com/ms/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ms/tools/complex-number-calculator/
+https://tools.usefulverse.com/ms/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/ms/tools/bond-calculator/
 https://tools.usefulverse.com/ms/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/ms/tools/momentum-calculator/
 https://tools.usefulverse.com/ms/tools/resistor-color-code-calculator/
@@ -14091,6 +14159,7 @@ https://tools.usefulverse.com/ms/tools/rtf-converter/
 https://tools.usefulverse.com/ms/tools/csv-to-pdf/
 https://tools.usefulverse.com/ms/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/ms/tools/work-order-generator/
+https://tools.usefulverse.com/ms/tools/purchase-order-generator/
 https://tools.usefulverse.com/ms/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/ms/tools/capacitor-calculator/
 https://tools.usefulverse.com/ms/tools/body-water-calculator/
@@ -14235,6 +14304,8 @@ https://tools.usefulverse.com/pl/tools/compost-calculator/
 https://tools.usefulverse.com/pl/tools/pond-volume-calculator/
 https://tools.usefulverse.com/pl/tools/fertilizer-calculator/
 https://tools.usefulverse.com/pl/tools/complex-number-calculator/
+https://tools.usefulverse.com/pl/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/pl/tools/bond-calculator/
 https://tools.usefulverse.com/pl/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/pl/tools/momentum-calculator/
 https://tools.usefulverse.com/pl/tools/resistor-color-code-calculator/
@@ -14246,6 +14317,7 @@ https://tools.usefulverse.com/pl/tools/rtf-converter/
 https://tools.usefulverse.com/pl/tools/csv-to-pdf/
 https://tools.usefulverse.com/pl/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/pl/tools/work-order-generator/
+https://tools.usefulverse.com/pl/tools/purchase-order-generator/
 https://tools.usefulverse.com/pl/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/pl/tools/capacitor-calculator/
 https://tools.usefulverse.com/pl/tools/body-water-calculator/
@@ -14390,6 +14462,8 @@ https://tools.usefulverse.com/sv/tools/compost-calculator/
 https://tools.usefulverse.com/sv/tools/pond-volume-calculator/
 https://tools.usefulverse.com/sv/tools/fertilizer-calculator/
 https://tools.usefulverse.com/sv/tools/complex-number-calculator/
+https://tools.usefulverse.com/sv/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/sv/tools/bond-calculator/
 https://tools.usefulverse.com/sv/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/sv/tools/momentum-calculator/
 https://tools.usefulverse.com/sv/tools/resistor-color-code-calculator/
@@ -14401,6 +14475,7 @@ https://tools.usefulverse.com/sv/tools/rtf-converter/
 https://tools.usefulverse.com/sv/tools/csv-to-pdf/
 https://tools.usefulverse.com/sv/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/sv/tools/work-order-generator/
+https://tools.usefulverse.com/sv/tools/purchase-order-generator/
 https://tools.usefulverse.com/sv/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/sv/tools/capacitor-calculator/
 https://tools.usefulverse.com/sv/tools/body-water-calculator/
@@ -14545,6 +14620,8 @@ https://tools.usefulverse.com/th/tools/compost-calculator/
 https://tools.usefulverse.com/th/tools/pond-volume-calculator/
 https://tools.usefulverse.com/th/tools/fertilizer-calculator/
 https://tools.usefulverse.com/th/tools/complex-number-calculator/
+https://tools.usefulverse.com/th/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/th/tools/bond-calculator/
 https://tools.usefulverse.com/th/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/th/tools/momentum-calculator/
 https://tools.usefulverse.com/th/tools/resistor-color-code-calculator/
@@ -14556,6 +14633,7 @@ https://tools.usefulverse.com/th/tools/rtf-converter/
 https://tools.usefulverse.com/th/tools/csv-to-pdf/
 https://tools.usefulverse.com/th/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/th/tools/work-order-generator/
+https://tools.usefulverse.com/th/tools/purchase-order-generator/
 https://tools.usefulverse.com/th/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/th/tools/capacitor-calculator/
 https://tools.usefulverse.com/th/tools/body-water-calculator/
@@ -14700,6 +14778,8 @@ https://tools.usefulverse.com/uk/tools/compost-calculator/
 https://tools.usefulverse.com/uk/tools/pond-volume-calculator/
 https://tools.usefulverse.com/uk/tools/fertilizer-calculator/
 https://tools.usefulverse.com/uk/tools/complex-number-calculator/
+https://tools.usefulverse.com/uk/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/uk/tools/bond-calculator/
 https://tools.usefulverse.com/uk/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/uk/tools/momentum-calculator/
 https://tools.usefulverse.com/uk/tools/resistor-color-code-calculator/
@@ -14711,6 +14791,7 @@ https://tools.usefulverse.com/uk/tools/rtf-converter/
 https://tools.usefulverse.com/uk/tools/csv-to-pdf/
 https://tools.usefulverse.com/uk/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/uk/tools/work-order-generator/
+https://tools.usefulverse.com/uk/tools/purchase-order-generator/
 https://tools.usefulverse.com/uk/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/uk/tools/capacitor-calculator/
 https://tools.usefulverse.com/uk/tools/body-water-calculator/
@@ -14855,6 +14936,8 @@ https://tools.usefulverse.com/sw/tools/compost-calculator/
 https://tools.usefulverse.com/sw/tools/pond-volume-calculator/
 https://tools.usefulverse.com/sw/tools/fertilizer-calculator/
 https://tools.usefulverse.com/sw/tools/complex-number-calculator/
+https://tools.usefulverse.com/sw/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/sw/tools/bond-calculator/
 https://tools.usefulverse.com/sw/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/sw/tools/momentum-calculator/
 https://tools.usefulverse.com/sw/tools/resistor-color-code-calculator/
@@ -14866,6 +14949,7 @@ https://tools.usefulverse.com/sw/tools/rtf-converter/
 https://tools.usefulverse.com/sw/tools/csv-to-pdf/
 https://tools.usefulverse.com/sw/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/sw/tools/work-order-generator/
+https://tools.usefulverse.com/sw/tools/purchase-order-generator/
 https://tools.usefulverse.com/sw/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/sw/tools/capacitor-calculator/
 https://tools.usefulverse.com/sw/tools/body-water-calculator/
@@ -15010,6 +15094,8 @@ https://tools.usefulverse.com/mr/tools/compost-calculator/
 https://tools.usefulverse.com/mr/tools/pond-volume-calculator/
 https://tools.usefulverse.com/mr/tools/fertilizer-calculator/
 https://tools.usefulverse.com/mr/tools/complex-number-calculator/
+https://tools.usefulverse.com/mr/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/mr/tools/bond-calculator/
 https://tools.usefulverse.com/mr/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/mr/tools/momentum-calculator/
 https://tools.usefulverse.com/mr/tools/resistor-color-code-calculator/
@@ -15021,6 +15107,7 @@ https://tools.usefulverse.com/mr/tools/rtf-converter/
 https://tools.usefulverse.com/mr/tools/csv-to-pdf/
 https://tools.usefulverse.com/mr/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/mr/tools/work-order-generator/
+https://tools.usefulverse.com/mr/tools/purchase-order-generator/
 https://tools.usefulverse.com/mr/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/mr/tools/capacitor-calculator/
 https://tools.usefulverse.com/mr/tools/body-water-calculator/
@@ -15165,6 +15252,8 @@ https://tools.usefulverse.com/te/tools/compost-calculator/
 https://tools.usefulverse.com/te/tools/pond-volume-calculator/
 https://tools.usefulverse.com/te/tools/fertilizer-calculator/
 https://tools.usefulverse.com/te/tools/complex-number-calculator/
+https://tools.usefulverse.com/te/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/te/tools/bond-calculator/
 https://tools.usefulverse.com/te/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/te/tools/momentum-calculator/
 https://tools.usefulverse.com/te/tools/resistor-color-code-calculator/
@@ -15176,6 +15265,7 @@ https://tools.usefulverse.com/te/tools/rtf-converter/
 https://tools.usefulverse.com/te/tools/csv-to-pdf/
 https://tools.usefulverse.com/te/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/te/tools/work-order-generator/
+https://tools.usefulverse.com/te/tools/purchase-order-generator/
 https://tools.usefulverse.com/te/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/te/tools/capacitor-calculator/
 https://tools.usefulverse.com/te/tools/body-water-calculator/
@@ -15320,6 +15410,8 @@ https://tools.usefulverse.com/ha/tools/compost-calculator/
 https://tools.usefulverse.com/ha/tools/pond-volume-calculator/
 https://tools.usefulverse.com/ha/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ha/tools/complex-number-calculator/
+https://tools.usefulverse.com/ha/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/ha/tools/bond-calculator/
 https://tools.usefulverse.com/ha/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/ha/tools/momentum-calculator/
 https://tools.usefulverse.com/ha/tools/resistor-color-code-calculator/
@@ -15331,6 +15423,7 @@ https://tools.usefulverse.com/ha/tools/rtf-converter/
 https://tools.usefulverse.com/ha/tools/csv-to-pdf/
 https://tools.usefulverse.com/ha/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/ha/tools/work-order-generator/
+https://tools.usefulverse.com/ha/tools/purchase-order-generator/
 https://tools.usefulverse.com/ha/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/ha/tools/capacitor-calculator/
 https://tools.usefulverse.com/ha/tools/body-water-calculator/
@@ -15475,6 +15568,8 @@ https://tools.usefulverse.com/tl/tools/compost-calculator/
 https://tools.usefulverse.com/tl/tools/pond-volume-calculator/
 https://tools.usefulverse.com/tl/tools/fertilizer-calculator/
 https://tools.usefulverse.com/tl/tools/complex-number-calculator/
+https://tools.usefulverse.com/tl/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/tl/tools/bond-calculator/
 https://tools.usefulverse.com/tl/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/tl/tools/momentum-calculator/
 https://tools.usefulverse.com/tl/tools/resistor-color-code-calculator/
@@ -15486,6 +15581,7 @@ https://tools.usefulverse.com/tl/tools/rtf-converter/
 https://tools.usefulverse.com/tl/tools/csv-to-pdf/
 https://tools.usefulverse.com/tl/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/tl/tools/work-order-generator/
+https://tools.usefulverse.com/tl/tools/purchase-order-generator/
 https://tools.usefulverse.com/tl/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/tl/tools/capacitor-calculator/
 https://tools.usefulverse.com/tl/tools/body-water-calculator/
@@ -15630,6 +15726,8 @@ https://tools.usefulverse.com/ta/tools/compost-calculator/
 https://tools.usefulverse.com/ta/tools/pond-volume-calculator/
 https://tools.usefulverse.com/ta/tools/fertilizer-calculator/
 https://tools.usefulverse.com/ta/tools/complex-number-calculator/
+https://tools.usefulverse.com/ta/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/ta/tools/bond-calculator/
 https://tools.usefulverse.com/ta/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/ta/tools/momentum-calculator/
 https://tools.usefulverse.com/ta/tools/resistor-color-code-calculator/
@@ -15641,6 +15739,7 @@ https://tools.usefulverse.com/ta/tools/rtf-converter/
 https://tools.usefulverse.com/ta/tools/csv-to-pdf/
 https://tools.usefulverse.com/ta/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/ta/tools/work-order-generator/
+https://tools.usefulverse.com/ta/tools/purchase-order-generator/
 https://tools.usefulverse.com/ta/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/ta/tools/capacitor-calculator/
 https://tools.usefulverse.com/ta/tools/body-water-calculator/
@@ -15785,6 +15884,8 @@ https://tools.usefulverse.com/fa/tools/compost-calculator/
 https://tools.usefulverse.com/fa/tools/pond-volume-calculator/
 https://tools.usefulverse.com/fa/tools/fertilizer-calculator/
 https://tools.usefulverse.com/fa/tools/complex-number-calculator/
+https://tools.usefulverse.com/fa/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/fa/tools/bond-calculator/
 https://tools.usefulverse.com/fa/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/fa/tools/momentum-calculator/
 https://tools.usefulverse.com/fa/tools/resistor-color-code-calculator/
@@ -15796,6 +15897,7 @@ https://tools.usefulverse.com/fa/tools/rtf-converter/
 https://tools.usefulverse.com/fa/tools/csv-to-pdf/
 https://tools.usefulverse.com/fa/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/fa/tools/work-order-generator/
+https://tools.usefulverse.com/fa/tools/purchase-order-generator/
 https://tools.usefulverse.com/fa/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/fa/tools/capacitor-calculator/
 https://tools.usefulverse.com/fa/tools/body-water-calculator/
@@ -15940,6 +16042,8 @@ https://tools.usefulverse.com/am/tools/compost-calculator/
 https://tools.usefulverse.com/am/tools/pond-volume-calculator/
 https://tools.usefulverse.com/am/tools/fertilizer-calculator/
 https://tools.usefulverse.com/am/tools/complex-number-calculator/
+https://tools.usefulverse.com/am/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/am/tools/bond-calculator/
 https://tools.usefulverse.com/am/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/am/tools/momentum-calculator/
 https://tools.usefulverse.com/am/tools/resistor-color-code-calculator/
@@ -15951,6 +16055,7 @@ https://tools.usefulverse.com/am/tools/rtf-converter/
 https://tools.usefulverse.com/am/tools/csv-to-pdf/
 https://tools.usefulverse.com/am/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/am/tools/work-order-generator/
+https://tools.usefulverse.com/am/tools/purchase-order-generator/
 https://tools.usefulverse.com/am/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/am/tools/capacitor-calculator/
 https://tools.usefulverse.com/am/tools/body-water-calculator/
@@ -16095,6 +16200,8 @@ https://tools.usefulverse.com/gu/tools/compost-calculator/
 https://tools.usefulverse.com/gu/tools/pond-volume-calculator/
 https://tools.usefulverse.com/gu/tools/fertilizer-calculator/
 https://tools.usefulverse.com/gu/tools/complex-number-calculator/
+https://tools.usefulverse.com/gu/tools/eigenvalue-calculator/
+https://tools.usefulverse.com/gu/tools/bond-calculator/
 https://tools.usefulverse.com/gu/tools/kinetic-energy-calculator/
 https://tools.usefulverse.com/gu/tools/momentum-calculator/
 https://tools.usefulverse.com/gu/tools/resistor-color-code-calculator/
@@ -16106,6 +16213,7 @@ https://tools.usefulverse.com/gu/tools/rtf-converter/
 https://tools.usefulverse.com/gu/tools/csv-to-pdf/
 https://tools.usefulverse.com/gu/tools/round-robin-tournament-generator/
 https://tools.usefulverse.com/gu/tools/work-order-generator/
+https://tools.usefulverse.com/gu/tools/purchase-order-generator/
 https://tools.usefulverse.com/gu/tools/hijri-calendar-converter/
 https://tools.usefulverse.com/gu/tools/capacitor-calculator/
 https://tools.usefulverse.com/gu/tools/body-water-calculator/

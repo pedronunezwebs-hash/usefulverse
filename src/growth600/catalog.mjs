@@ -1368,6 +1368,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/eigenvalue-calculator/logic.mjs',
   },
   {
+    id: 'bond-calculator',
+    category: 'finance',
+    type: 'calculator',
+    primaryIntent: 'bond calculator',
+    secondaryIntents: ['bond yield calculator', 'bond price calculator', 'yield to maturity calculator'],
+    functions: ['estimate a fixed-coupon bond price by discounting scheduled coupon and principal payments using a nominal annual yield compounded at the selected coupon frequency', 'numerically solve a nominal annual yield to maturity from a market price using bounded bisection', 'show coupon payment, current yield or premium/discount and a local price–yield curve', 'support annual, semiannual, quarterly and monthly coupons while requiring maturity to contain a whole number of payment periods'],
+    acceptance: 'A face-value 1,000 bond with a 5% annual coupon, five years to maturity, annual payments and a market price of 1,000 solves to a 5% nominal annual yield; pricing the same bond at a 5% yield returns 1,000.',
+    boundary: 'Educational fixed-rate bond estimate, not investment advice or a market quote. Assumes regular fixed coupon dates, principal repaid at maturity and nominal annual yield compounded at the chosen payment frequency. Excludes accrued interest, clean/dirty price conventions, fees, taxes, defaults, calls, inflation, reinvestment and market day-count conventions. Maturity must be a whole number of coupon periods (up to 1,200); numerical yields are approximate and bounded. All calculations and chart data run locally; inputs are not uploaded or saved.',
+    relatedExistingIds: ['compound-interest-calculator'],
+    logicModule: './tools/bond-calculator/logic.mjs',
+  },
+  {
     id: 'kinetic-energy-calculator',
     category: 'physics-math',
     type: 'calculator',
