@@ -1,0 +1,26 @@
+export const waistToHipRatioEnglishCopy = Object.freeze({
+  name: 'Waist to Hip Ratio Calculator',
+  title: 'Waist to Hip Ratio Calculator Free | UsefulVerse',
+  description: 'Calculate a waist-to-hip ratio from two measurements. Free, private and unlimited in your browser, with cm or inches and no health diagnosis.',
+  intro: 'Enter waist and hip measurements in the same unit to calculate their ratio. The result is a simple arithmetic value, not a health assessment.',
+  howQuestion: 'How do I calculate a waist-to-hip ratio?',
+  howAnswer: 'Divide the waist measurement by the hip measurement, using the same unit for both. For example, 80 cm ÷ 100 cm = 0.8.',
+  privacyQuestion: 'Are my measurements uploaded?',
+  privacyAnswer: 'No. The calculation runs in this browser. The measurements are not uploaded or saved by this tool.',
+  fields: {
+    waist: 'Waist measurement',
+    hip: 'Hip measurement',
+    unit: 'Measurement unit',
+    centimeters: 'Centimeters (cm)',
+    inches: 'Inches (in)',
+    accuracyNote: 'Use the same unit for both measurements. The ratio is unitless. This calculator does not interpret health risk or diagnose a condition.',
+    resultRatio: 'Waist-to-hip ratio',
+    formulaNote: 'Formula: waist measurement ÷ hip measurement.',
+  },
+  actions: { calculate: 'Calculate ratio', example: 'Try example', reset: 'Reset', copy: 'Copy result', result: 'Your result' },
+  messages: { calculated: 'Ratio calculated.', checkInputs: 'Enter two measurements greater than 0 and choose cm or inches.', copied: 'Result copied.', copyUnavailable: 'Copy is not available in this browser.', exampleLoaded: 'Example calculated.' },
+  additionalFaqs: [
+    { question: 'Can I enter centimeters or inches?', answer: 'Yes. Choose one unit and enter both measurements in that same unit. The resulting ratio has no unit.' },
+    { question: 'Does this result diagnose a health condition?', answer: 'No. This page only divides two measurements. It does not apply health thresholds or provide a diagnosis; discuss health questions with a qualified healthcare professional.' },
+  ],
+});

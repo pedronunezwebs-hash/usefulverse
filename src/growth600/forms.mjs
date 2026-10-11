@@ -98,6 +98,7 @@ export function renderGrowthForm(toolId, copy) {
     'hijri-calendar-converter': ['mode', 'gregorianToHijri', 'hijriToGregorian', 'gregorianDate', 'gregorianYear', 'gregorianMonth', 'gregorianDay', 'hijriYear', 'hijriMonth', 'hijriDay', 'hijriMonths', 'methodNote'],
     'capacitor-calculator': ['values', 'valuesHint', 'connection', 'series', 'parallel', 'unit', 'voltage', 'accuracyNote', 'resultEquivalent', 'resultCharge', 'resultEnergy', 'resultVoltage', 'capacitor', 'formulaNote'],
     'body-water-calculator': ['equation', 'watsonMale', 'watsonFemale', 'age', 'height', 'heightUnit', 'weight', 'weightUnit', 'centimeters', 'inches', 'kilograms', 'pounds', 'accuracyNote', 'resultLiters', 'resultPercent', 'equationNote'],
+    'waist-to-hip-ratio-calculator': ['waist', 'hip', 'unit', 'centimeters', 'inches', 'accuracyNote', 'resultRatio', 'formulaNote'],
     '555-timer-calculator': ['mode', 'astable', 'monostable', 'resistanceA', 'resistanceB', 'resistance', 'resistanceUnit', 'ohms', 'kilohms', 'megohms', 'capacitance', 'capacitanceUnit', 'farads', 'millifarads', 'microfarads', 'nanofarads', 'picofarads', 'accuracyNote', 'frequencyNote', 'highFrequencyWarning', 'formulaNote', 'resultFrequency', 'resultPeriod', 'resultHigh', 'resultLow', 'resultWaveformDuty', 'resultDischargeDuty', 'resultPulse'],
     'fourier-series-calculator': ['samples', 'samplesHint', 'period', 'periodHint', 'harmonics', 'harmonicsHint', 'accuracyNote', 'formulaLabel', 'formula', 'resultDc', 'resultFrequency', 'resultHarmonics', 'resultRms', 'coefficient', 'coefficientA', 'coefficientB', 'coefficientAmplitude', 'phase', 'radians', 'frequencyUnit', 'chartLabel', 'samplesLegend', 'reconstructionLegend'],
     'modular-inverse-calculator': ['a', 'modulus', 'accuracyNote', 'formulaLabel', 'formula', 'resultStatus', 'resultGcd', 'resultResidue', 'resultInverse', 'bezout', 'step', 'quotient', 'remainder', 'coefficientA', 'coefficientModulus', 'existsLabel', 'missingLabel', 'verification'],
@@ -263,6 +264,7 @@ export function renderGrowthForm(toolId, copy) {
     'hijri-calendar-converter': ['convert', 'reset', 'example', 'result'],
     'capacitor-calculator': ['calculate', 'reset', 'example', 'result'],
     'body-water-calculator': ['calculate', 'reset', 'example', 'result'],
+    'waist-to-hip-ratio-calculator': ['calculate', 'reset', 'example', 'copy', 'result'],
     '555-timer-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'fourier-series-calculator': ['calculate', 'reset', 'example', 'constant', 'result', 'copy'],
     'modular-inverse-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
@@ -997,6 +999,17 @@ export function renderGrowthForm(toolId, copy) {
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <p class="hint">${escapeGrowthHtml(fields.equationNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'waist-to-hip-ratio-calculator') return attachCopy(`<form id="tool-form" class="waist-to-hip-ratio-calculator" novalidate>
+    <div class="calculator-grid">
+      ${label('waist-to-hip-waist', fields.waist, '<input id="waist-to-hip-waist" name="waist" type="text" inputmode="decimal" value="80" required>')}
+      ${label('waist-to-hip-hip', fields.hip, '<input id="waist-to-hip-hip" name="hip" type="text" inputmode="decimal" value="100" required>')}
+      ${label('waist-to-hip-unit', fields.unit, `<select id="waist-to-hip-unit" name="unit"><option value="cm">${escapeGrowthHtml(fields.centimeters)}</option><option value="in">${escapeGrowthHtml(fields.inches)}</option></select>`)}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.formulaNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === '555-timer-calculator') return attachCopy(`<form id="tool-form" novalidate>

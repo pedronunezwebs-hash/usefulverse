@@ -9,7 +9,7 @@ Fecha de investigación: 7 de octubre de 2026. Documento de planificación y che
 - [x] Comprobar la base de planificación: **277 herramientas y 36 idiomas**.
 - [x] Investigar demanda con un gasto acotado en DataForSEO y registrar los resultados reales.
 - [x] Consolidar variantes antes de fijar el nuevo catálogo, sin contar una dirección de conversión como otra herramienta.
-- [ ] Implementar las nuevas herramientas. **Progreso comprobado el 11 de octubre de 2026: 156 herramientas Growth600 públicas (433 incluyendo las 277 originales); quedan 167 herramientas nuevas para llegar a 600. #128 Eigenvalue Calculator es la última publicación confirmada; la siguiente candidata es #129 Bond Calculator.** Consultar `docs/growth600/PROGRESS.md` para la evidencia; disponibilidad pública no implica indexación.
+- [ ] Implementar las nuevas herramientas. **Progreso comprobado el 11 de octubre de 2026: 157 herramientas Growth600 públicas (434 incluyendo las 277 originales); quedan 166 herramientas nuevas para llegar a 600. #129 Bond Calculator es la última publicación confirmada; #130 Waist To Hip Ratio Calculator está en implementación local.** Consultar `docs/growth600/PROGRESS.md` para la evidencia; disponibilidad pública no implica indexación.
 
 Snapshot consultado: rama `main`, commit `685f91adfc7818a54f6dc0a967e290d13137a3dd`. Catálogo: `src/catalog.mjs`; funciones y contratos representativos: `src/app.js`, módulos de lógica, `src/opportunity-tools.mjs`, `src/seo.mjs`, locales, build y documentación del repo. Se inspeccionaron los metadatos de las 277 herramientas y contratos clave para descartar duplicados; esto **no es una nueva auditoría funcional completa de las 277**.
 
@@ -1973,8 +1973,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 129 · Bond Calculator
 
-- [x] **C/F/E/X/L/B — `bond-calculator`; P/S pendiente de integrar y publicar**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/bond-calculator/`; otras 35 versiones con los prefijos del anexo. El build local incluye las 36 rutas; aún no están públicas.
+- [x] **C/F/E/X/L/B/P/S completos — `bond-calculator`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/bond-calculator/` y otras 35 versiones; PR #122 integrada, las rutas y canonical constan en el sitemap público.
 - **Demanda:** `bond calculator` — 6.600 búsquedas/mes US/en, KD 10; nivel B. CPC 2.94 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Precio, cupón, vencimiento, YTM numérico y curva precio-rendimiento
 - **Prueba de aceptación específica:** Bono a par con cupón 5% tiene YTM 5%
@@ -2297,7 +2297,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `eigenvector calculator` — 2.400/mes US/en; KD 0.
   - `eigenvalue calculator free online`; `eigenvalue calculator with example`; `eigenvalue calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
-- **Checkpoint local (2026-10-11; todavía no publicado):** Jacobi local para matrices simétricas reales 2×2–8×8, escala finita ±1.000.000, eigenpairs ordenados, vectores unitarios y residual explícito. No pretende resolver matrices no simétricas ni valores complejos. 36 copias estáticas de inglés; no hay traducción en runtime. Incluye ejemplo, validación, copiar resultado y alcance numérico en la interfaz. Suite completa **1.845/1.845**, `locale:release-check`, `git diff --check`, `npm run check` (10.260 URLs principales) y build Growth600 (**5.652 páginas**, 156 × 36 + 36 portadas; 5.873 archivos) pasan. Chrome EN confirma eigenpares de 2×2; Chrome AR a 390×844 confirma RTL sin overflow, eigenvalores 0,58578644 / 2 / 3,4142136 para un caso 3×3, residual bajo y consola limpia. Se corrigió una traducción árabe incompleta en el encabezado. No se midió PageSpeed/Lighthouse. Faltan PR/CI, deploy principal + hub, verificación pública de las 36 URLs y sitemap; los recuentos públicos no cambian hasta entonces.
+- **Publicado:** PR #121 integrada; sus 36 rutas y canonical constan en el sitemap público. El hub pasó a 5.652 URLs con este despliegue. No se midió PageSpeed/Lighthouse.
 
 ### 136 · Absolute Value Calculator
 
@@ -5100,8 +5100,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 130 · Waist To Hip Ratio Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `waist-to-hip-ratio-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/waist-to-hip-ratio-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [ ] **C/F/E/X/L/B/P/S completos — `waist-to-hip-ratio-calculator` (C/F/E/X/L/B completados localmente; P/S pendientes de integración/publicación)**
+- **Destino propuesto:** `https://tools.usefulverse.com/tools/waist-to-hip-ratio-calculator/`; otras 35 versiones con los prefijos del anexo. La compilación local contiene las 36 rutas; aún no son públicas.
 - **Demanda:** `waist to hip ratio calculator` — 6.600 búsquedas/mes US/en, KD 20; nivel B. CPC 1.02 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Cintura, cadera, razón y explicación sin diagnóstico individual
 - **Prueba de aceptación específica:** Cintura80 cadera100 da0.8

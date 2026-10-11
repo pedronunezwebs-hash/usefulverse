@@ -4,14 +4,15 @@
 
 ## Estado público actual · 2026-10-11
 
-- **156 herramientas Growth600 publicadas** junto al catálogo protegido de 277; **433 herramientas públicas en total**. Todas están publicadas en 36 locales. Verificación directa actual: sitemap del hub HTTP 200 con **5.652 URLs únicas** (156 × 36 + 36 portadas); sitemap principal: **10.260 URLs**; total combinado: **15.912 URLs**. La presencia en sitemap no demuestra indexación.
+- **157 herramientas Growth600 publicadas** junto al catálogo protegido de 277; **434 herramientas públicas en total**. Todas están publicadas en 36 locales. Verificación directa actual: sitemap del hub HTTP 200 con **5.688 URLs únicas** (157 × 36 + 36 portadas); sitemap principal: **10.260 URLs**; total combinado: **15.948 URLs**. La presencia en sitemap no demuestra indexación.
 - #086 529 Calculator: PR #114 integrada en `c9e18cb0dc4ef8128aed06545ce108047b918a2d`; CI/despliegue principal `38120717651` y publicación separada del hub `38120973293` correctos.
 - #087 Dilution Calculator ya estaba publicada antes de esta reanudación; en esta sesión se comprobó que EN y AR devuelven HTTP 200 y que sus 36 variantes están incluidas en el sitemap público. No se rehízo.
 - #088 Julian Date Converter: PR #115 integrada en `10366aafca353b192d24dbae9a945e9eb19fb8d6`; CI `38122981697`, despliegue principal `38123224930` y publicación separada del hub `38123636699` correctos. Sitemap público: 5.472 URLs y exactamente 36 rutas para la herramienta; la publicación no implica indexación.
 - #120 Interval Timer: PR [#116](https://github.com/pedronunezwebs-hash/usefulverse/pull/116), merge `70e6c5ae6ed3e54be773d8728fd751e6f0541aa9`; CI del PR `38125164839`, despliegue principal `38125429052` y hub `38125697362` correctos. Suite local y CI **1.813/1.813**; `npm run locale:release-check`; `npm run check` conserva **10.260 URLs**. Sitemap público del hub HTTP 200 con **5.508 URLs únicas**; sitemap principal HTTP 200 con **10.260**. Las 36 rutas de Interval Timer devuelven HTTP 200 y canonical autorreferente; EN/AR interacción probada previamente en Chrome. No se midió PageSpeed/Lighthouse ni se afirma indexación.
 - #121 Logic Grid Puzzle: PR [#117](https://github.com/pedronunezwebs-hash/usefulverse/pull/117) integrada como `883b3d59ea4cec326ecefbd49753cd9ae566f2c9`; CI del PR `38127230223`, despliegue principal `38127481303` y publicación del hub `38127722424` correctos. 1.822/1.822 pruebas, builds y locales pasan. Sus 36 rutas están en el sitemap público HTTP 200; rutas EN/AR/JA devuelven HTTP 200. Sin PageSpeed/Lighthouse ni investigación SEO repetida.
-- #128 Eigenvalue Calculator: PR [#121](https://github.com/pedronunezwebs-hash/usefulverse/pull/121) integrada en `9f4aa340c734f270e721d961bea53a6e48a1f657`; CI y despliegue principal/hub `38134437590` y `38134716948` correctos. El sitemap del hub HTTP 200 incluye **5.652 URLs únicas**; sus 36 rutas tienen canonical propio. No se midió PageSpeed/Lighthouse ni se afirma indexación.
-- Al reanudar: continuar por la siguiente ficha abierta de `PLAN-600.md`; no rehacer #088, #120, #121, #128 ni DataForSEO.
+- #128 Eigenvalue Calculator: PR [#121](https://github.com/pedronunezwebs-hash/usefulverse/pull/121) integrada en `9f4aa340c734f270e721d961bea53a6e48a1f657`; CI y despliegue principal/hub `38134437590` y `38134716948` correctos.
+- #129 Bond Calculator: PR [#122](https://github.com/pedronunezwebs-hash/usefulverse/pull/122), merge `13a866ef52a89167442886913b6b601699a32382`; CI principal `38136698154` y publicación estática del hub `38136718685` correctos. Verificación directa: sitemap HTTP 200 con **5.688 URLs únicas**, exactamente 36 variantes; EN y AR sirven el nuevo título/HTML y canonical propio. La publicación no demuestra indexación. No se midió PageSpeed/Lighthouse.
+- Al reanudar: cerrar PR/publicación de #130 Waist To Hip Ratio Calculator; después seguir la siguiente ficha abierta de `PLAN-600.md`. No rehacer #088, #120, #121, #128, #129 ni DataForSEO.
 - El progreso público anterior a #086 se conserva como historial debajo; sus cantidades ya no representan el estado actual. Las candidatas de reserva no cuentan como herramientas.
 
 ## Publicada · #122 Markdown Editor · 2026-10-11
@@ -31,10 +32,18 @@
 - Chrome local: ejemplo EN totaliza **$54.99**; AR conserva `lang=ar`, `dir=rtl`, `scrollWidth=390` en viewport 390 px y calcula la misma suma; consola sin errores. No se midió PageSpeed/Lighthouse.
 - **Publicación confirmada:** PR [#120](https://github.com/pedronunezwebs-hash/usefulverse/pull/120), merge `9e0b781e800235ed98147930a3afcbee4c4927a`; CI PR `38132486533`; despliegue principal `38132732589` y hub `38132761847` correctos. Sitemap del hub HTTP 200 con **5.616 URLs únicas** y exactamente 36 rutas Purchase Order Generator. EN/ES/AR/JA HTTP 200, canonical autorreferente. No reenvié el sitemap a Google/Naver; esta conversación corrigió que esa petición era para otro chat.
 
+## Implementación local · #130 Waist To Hip Ratio Calculator · 2026-10-11
+
+- Intención propia: cociente cintura/cadera como operación aritmética, sin competir con calculadoras de grasa corporal ni asignar categorías de salud. 6.600 búsquedas/mes US/en, KD 20; secundaria `waist hip ratio calculator`, 6.600/mes, KD 12; CPC 1,02 USD (no CPM). Datos del plan existente; no se repitió DataForSEO.
+- Aceptación: 80/100 cm y 32/40 in devuelven 0,8. Solo unidades iguales (`cm`/`in`); entradas positivas finitas y ≤500; no hay umbrales ni diagnóstico. Datos locales, sin guardar/subir.
+- 36 traducciones estáticas de Google Translate (no revisión nativa). Títulos ≤60 con UsefulVerse y textos SEO ≤160. Dos FAQs adicionales no repiten las preguntas generales sobre cálculo/privacidad; se conserva la advertencia médica.
+- Gates focales/build/locales **315/315**; `npm test` **1.861/1.861** aprobadas antes de ajustar las FAQs, y las pruebas focales finales **315/315** volvieron a pasar. Build Growth600 **5.724 páginas** y sitemap local **5.724 URLs únicas** (158 herramientas × 36 + 36 portadas); exactamente 36 rutas de la nueva herramienta. `git diff --check` limpio.
+- Chrome aislado EN: cálculo predeterminado da 0,8 y expone copiar resultado; AR: `lang=ar`, `dir=rtl`, controles traducidos, FAQs únicas y consola limpia. No se midió PageSpeed/Lighthouse.
+- **Estado:** implementación local. PR, publicación pública y sitemap público aún pendientes; no afirmar URLs publicadas.
+
 ## Estado para reanudar
 
-- Completado localmente en esta rama: **#129 Bond Calculator** (`bond-calculator`), 6.600 búsquedas/mes US/en, KD 10; secundaria `bond yield calculator`, 720/mes, KD 12. Precio de bono de cupón fijo, YTM numérico por bisección y curva precio-rendimiento; frecuencia anual/semestral/trimestral/mensual. Supuestos, límites numéricos y exclusiones educativos explícitos; cálculos locales. 36 traducciones automáticas estáticas (no revisión nativa), con copy RTL árabe y FAQs corregidos manualmente. Suite **1.854/1.854**, `npm run locale:release-check` aprobado, build aislado **5.688 páginas** (157 × 36 + 36 portadas), sitemap local con 5.688 URLs únicas. Chrome móvil árabe 390×844: RTL sin overflow, FAQ sin preguntas repetidas, controles traducidos y consola sin errores. PR/publicación del hub aún pendientes. No se midió PageSpeed/Lighthouse.
-- **Quedan 167 herramientas Growth600** para alcanzar 600 en total (156 adicionales publicadas + las 277 originales; #129 aún en revisión local). Cerrar publicación de #129 antes de continuar en el orden de `PLAN-600.md`; no repetir DataForSEO ni reauditar las 277.
+- La candidata que sigue después de #130 es **#131 Compression Ratio Calculator**; consultar su ficha y los gates en `PLAN-600.md`. Las 277 originales permanecen protegidas. No repetir DataForSEO.
 
 ## Estado público actual · 2026-10-10
 

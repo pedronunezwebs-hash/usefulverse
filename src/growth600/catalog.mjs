@@ -1548,6 +1548,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/capacitor-calculator/logic.mjs',
   },
   {
+    id: 'waist-to-hip-ratio-calculator',
+    category: 'health-math',
+    type: 'calculator',
+    primaryIntent: 'waist to hip ratio calculator',
+    secondaryIntents: ['waist hip ratio calculator', 'waist circumference to hip circumference ratio'],
+    functions: ['divide a waist measurement by a hip measurement entered in the same selected unit', 'accept centimeters or inches and return the dimensionless ratio with the entered measurements', 'show the simple formula and a worked example, with no population-specific category or health-risk interpretation', 'calculate locally without uploading or saving measurement inputs'],
+    acceptance: 'A waist measurement of 80 cm and hip measurement of 100 cm returns a unitless ratio of 0.8; equivalent measurements of 32 in and 40 in return 0.8.',
+    boundary: 'Arithmetic only: waist divided by hip. It does not define or verify a measurement protocol, apply sex-, age- or population-specific thresholds, assess health risk or diagnose a condition. Discuss interpretation and health questions with a qualified healthcare professional. Enter both measurements in the same unit; each input must be greater than zero and no more than 500 cm or inches. Calculation is local and inputs are not uploaded or saved.',
+    relatedExistingIds: ['body-fat-calculator'],
+    logicModule: './tools/waist-to-hip-ratio-calculator/logic.mjs',
+  },
+  {
     id: 'body-water-calculator',
     category: 'health-math',
     type: 'calculator',
