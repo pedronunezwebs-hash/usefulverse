@@ -1584,6 +1584,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/capacitor-calculator/logic.mjs',
   },
   {
+    id: 'rc-time-constant-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'rc time constant calculator',
+    secondaryIntents: ['rc circuit calculator', 'rc charging calculator', 'rc discharging calculator', 'time constant calculator', 'time to voltage calculator'],
+    functions: ['calculate τ = R·C with Ω/kΩ/MΩ and F/mF/μF/nF/pF units', 'calculate capacitor voltage at elapsed time for rising, falling or offset first-order step responses', 'solve time required to reach a voltage threshold strictly between initial and final values', 'report ideal 10–90% rise/fall time, fractional response and an accessible local SVG curve'],
+    acceptance: '1,000 Ω × 100 μF gives τ = 0.1 s; a 0-to-5 V step reaches about 3.1606 V after 0.1 s; a 10-to-0 V response reaches 1 V after 0.1·ln(10) s.',
+    boundary: 'Ideal single-pole lumped RC step response only. Assumes constant R and C, instantaneous input step, and no source resistance, tolerance, leakage, parasitics, loading, saturation or switching delay. Not circuit-design or safety advice. Calculations run locally and entered values are not uploaded.',
+    relatedExistingIds: ['capacitor-calculator', '555-timer-calculator', 'rlc-circuit-calculator'],
+    logicModule: './tools/rc-time-constant-calculator/logic.mjs',
+  },
+  {
     id: 'waist-to-hip-ratio-calculator',
     category: 'health-math',
     type: 'calculator',

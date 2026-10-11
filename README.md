@@ -16,11 +16,11 @@ Browser-first collection of fast, private, static tools for everyday work.
 
 The additional Growth600 tools are published on a separate static Cloudflare Pages site at
 [tools.usefulverse.com](https://tools.usefulverse.com/), so they do not replace or
-change the 277-tool catalog above. Production currently has 160 additional tools in
-the same 36 locales. The current candidate branch adds Specific Heat Calculator; its
-build contains 161 additional tools and 5,832 canonical URLs, pending merge and hub
-deployment. Once published, the two sites will contain 438 tool implementations and
-16,092 sitemap URLs. The staged checklist and implementation record are in
+change the 277-tool catalog above. Production currently has 161 additional tools in
+the same 36 locales. The current candidate branch adds RC Time Constant Calculator
+as tool 162, with a build of 5,868 canonical URLs, pending merge and hub deployment.
+Once published, the two sites will contain 439 tool implementations and 16,128
+sitemap URLs. The staged checklist and implementation record are in
 [docs/growth600/PLAN-600.md](docs/growth600/PLAN-600.md) and
 [docs/growth600/PROGRESS.md](docs/growth600/PROGRESS.md).
 

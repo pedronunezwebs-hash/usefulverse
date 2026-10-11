@@ -20,6 +20,8 @@ import absoluteValueCalculatorCopies from './absolute-value-calculator-final.mjs
 import { absoluteValueCalculatorEnglishCopy } from './absolute-value-calculator.en.mjs';
 import specificHeatCalculatorCopies from './specific-heat-calculator-final.mjs';
 import { specificHeatCalculatorEnglishCopy } from './specific-heat-calculator.en.mjs';
+import rcTimeConstantCalculatorCopies from './rc-time-constant-calculator-final.mjs';
+import { rcTimeConstantCalculatorEnglishCopy } from './rc-time-constant-calculator.en.mjs';
 import drywallCopies from './drywall-calculator.mjs';
 import { drywallEnglishCopy } from './drywall-calculator.en.mjs';
 import roofingCopies from './roofing-calculator.mjs';
@@ -1230,5 +1232,6 @@ registerGrowthLocaleExtension(source, 'waist-to-hip-ratio-calculator', { ...wais
 registerGrowthLocaleExtension(source, 'hebrew-calendar-converter', { ...hebrewCalendarConverterCopies, en: hebrewCalendarConverterEnglishCopy }, 'waist-to-hip-ratio-calculator');
 registerGrowthLocaleExtension(source, 'absolute-value-calculator', { ...absoluteValueCalculatorCopies, en: absoluteValueCalculatorEnglishCopy }, 'hebrew-calendar-converter');
 registerGrowthLocaleExtension(source, 'specific-heat-calculator', { ...specificHeatCalculatorCopies, en: specificHeatCalculatorEnglishCopy }, 'thermal-expansion-calculator');
+registerGrowthLocaleExtension(source, 'rc-time-constant-calculator', { ...rcTimeConstantCalculatorCopies, en: rcTimeConstantCalculatorEnglishCopy }, 'specific-heat-calculator');
 
 export default Object.freeze(source);

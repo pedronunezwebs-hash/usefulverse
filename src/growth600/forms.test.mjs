@@ -49,6 +49,8 @@ import { eigenvalueCalculatorEnglishCopy } from './locales/eigenvalue-calculator
 import { bondCalculatorEnglishCopy } from './locales/bond-calculator.en.mjs';
 import { specificHeatCalculatorEnglishCopy } from './locales/specific-heat-calculator.en.mjs';
 import specificHeatCalculatorCopies from './locales/specific-heat-calculator-final.mjs';
+import { rcTimeConstantCalculatorEnglishCopy } from './locales/rc-time-constant-calculator.en.mjs';
+import rcTimeConstantCalculatorCopies from './locales/rc-time-constant-calculator-final.mjs';
 
 const actions = {
   calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', millimeters: 'Millimeters', feet: 'Feet', inches: 'Inches', squareMeters: 'Square meters', squareFeet: 'Square feet', cubicMeters: 'Cubic meters', cubicFeet: 'Cubic feet', kelvin: 'Kelvin difference', fahrenheit: 'Fahrenheit difference', kilowatts: 'Kilowatts (kW)', btuPerHour: 'BTU per hour (BTU/h)', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.', kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only', productionMode: 'Estimate array output', sizingMode: 'Size for daily use', years: 'years', add: 'Add', subtract: 'Subtract', multiply: 'Multiply', divide: 'Divide', magnitude: 'Modulus', argument: 'Argument', rectangularToPolar: 'Rectangular to polar', polarToRectangular: 'Polar to rectangular', roots: 'Nth roots',
@@ -73,6 +75,7 @@ const copies = {
   'eigenvalue-calculator': eigenvalueCalculatorEnglishCopy,
   'bond-calculator': bondCalculatorEnglishCopy,
   'specific-heat-calculator': specificHeatCalculatorEnglishCopy,
+  'rc-time-constant-calculator': rcTimeConstantCalculatorEnglishCopy,
   'hebrew-calendar-converter': hebrewCalendarConverterEnglishCopy,
   'absolute-value-calculator': absoluteValueCalculatorEnglishCopy,
   'image-splitter': { name: 'Image splitter', actions: { ...actions, choose: 'Choose image', export: 'Split and prepare ZIP', cancel: 'Cancel', download: 'Download tile ZIP' }, messages: { ...messages }, fields: { imageFile: 'Choose an image', mode: 'Split by', gridMode: 'Rows and columns', tileSizeMode: 'Fixed tile dimensions', columns: 'Columns', rows: 'Rows', tileWidth: 'Tile width', tileHeight: 'Tile height', overlap: 'Overlap', accuracyNote: 'Local image processing.', previewHint: 'Image grid preview.', imageReady: 'Image ready' } },
@@ -1620,6 +1623,13 @@ test('specific heat calculator renders separate equation and material-mixing for
   assert.match(html, /values are not uploaded or saved/u);
   assert.match(html, /data-specific-field="energy" hidden/u);
   assert.doesNotMatch(html, /data-specific-field="heatEnergy"/u);
+});
+
+test('RC time constant calculator exposes voltage and threshold-time modes with units, graph and limits', () => {
+  const html = renderGrowthForm('rc-time-constant-calculator', rcTimeConstantCalculatorEnglishCopy);
+  for (const expected of ['name="mode"', 'value="voltage"', 'value="time"', 'name="resistance"', 'name="resistanceUnit"', 'name="capacitance"', 'name="capacitanceUnit"', 'name="initialVoltage"', 'name="finalVoltage"', 'data-rc-time-field', 'data-rc-target-field hidden', 'name="timeUnit"', 'data-action="calculate"', 'data-action="reset"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /instantaneous input step/u);
+  assert.match(html, /strictly between/u);
 });
 
 test('specific heat localized unit labels retain standard SI and customary symbols in all locales', () => {
