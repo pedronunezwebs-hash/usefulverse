@@ -18,11 +18,26 @@ import { calculateStockProfit } from './tools/stock-profit-calculator/logic.mjs'
 import { calculatePension } from './tools/pension-calculator/logic.mjs';
 import { calculateLifetimeValue } from './tools/lifetime-value-calculator/logic.mjs';
 import { calculatePolarGraph } from './tools/polar-graphing-calculator/logic.mjs';
+import { calculateBooleanAlgebra } from './tools/boolean-algebra-calculator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 168);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 168);
+  assert.equal(growthPilotTools.length, 169);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 169);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
+});
+
+test('Boolean algebra minimizes expressions and adds Karnaugh views beyond truth-table enumeration', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'boolean-algebra-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'boolean algebra calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['truth-table-generator']);
+  assert.match(tool.boundary, /never evaluates JavaScript/u);
+  const tautology = calculateBooleanAlgebra({ expression: 'A OR NOT A' });
+  assert.equal(tautology.sop, '1');
+  assert.equal(tautology.pos, '1');
+  assert.ok(tautology.rows.every(({ result }) => result));
+  assert.equal(calculateBooleanAlgebra({ expression: '!(A & B)' }).pos, '(!A | !B)');
+  assert.deepEqual(calculateBooleanAlgebra({ expression: '(A & B) | (A & !B)' }).sop, 'A');
 });
 
 test('pension calculator is distinct from the existing retirement projection', () => {

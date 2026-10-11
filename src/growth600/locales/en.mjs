@@ -34,6 +34,8 @@ import lifetimeValueCalculatorCopies from './lifetime-value-calculator-final.mjs
 import { lifetimeValueCalculatorEnglishCopy } from './lifetime-value-calculator.en.mjs';
 import polarGraphingCalculatorCopies from './polar-graphing-calculator-final.mjs';
 import { polarGraphingCalculatorEnglishCopy } from './polar-graphing-calculator.en.mjs';
+import booleanAlgebraCalculatorCopies from './boolean-algebra-calculator-final.mjs';
+import { booleanAlgebraCalculatorEnglishCopy } from './boolean-algebra-calculator.en.mjs';
 import drywallCopies from './drywall-calculator.mjs';
 import { drywallEnglishCopy } from './drywall-calculator.en.mjs';
 import roofingCopies from './roofing-calculator.mjs';
@@ -1251,5 +1253,6 @@ registerGrowthLocaleExtension(source, 'stock-profit-calculator', { ...stockProfi
 registerGrowthLocaleExtension(source, 'pension-calculator', { ...pensionCalculatorCopies, en: pensionCalculatorEnglishCopy }, 'stock-profit-calculator');
 registerGrowthLocaleExtension(source, 'lifetime-value-calculator', { ...lifetimeValueCalculatorCopies, en: lifetimeValueCalculatorEnglishCopy }, 'pension-calculator');
 registerGrowthLocaleExtension(source, 'polar-graphing-calculator', { ...polarGraphingCalculatorCopies, en: polarGraphingCalculatorEnglishCopy }, 'parametric-equation-calculator');
+registerGrowthLocaleExtension(source, 'boolean-algebra-calculator', { ...booleanAlgebraCalculatorCopies, en: booleanAlgebraCalculatorEnglishCopy }, 'polar-graphing-calculator');
 
 export default Object.freeze(source);

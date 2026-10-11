@@ -40,6 +40,7 @@ export function renderGrowthForm(toolId, copy) {
     'pension-calculator': ['finalSalary', 'yearsOfService', 'accrualPercent', 'commutationPercent', 'commutationFactor', 'currencyCode', 'accuracyNote', 'resultSummary', 'annualPension', 'monthlyPension', 'convertedAnnualPension', 'lumpSum', 'remainingAnnualPension'],
     'lifetime-value-calculator': ['monthlyRevenue', 'grossMarginPercent', 'monthlyChurnPercent', 'customerAcquisitionCost', 'currencyCode', 'accuracyNote', 'resultSummary', 'monthlyGrossProfit', 'expectedLifetimeMonths', 'lifetimeValue', 'cacPaybackMonths', 'lifetimeValueToCac'],
     'polar-graphing-calculator': ['radiusExpression', 'angleMin', 'angleMax', 'angleUnit', 'radians', 'degrees', 'samples', 'accuracyNote', 'chartLabel', 'resultCount'],
+    'boolean-algebra-calculator': ['expression', 'expressionHint', 'accuracyNote', 'simplifiedSop', 'simplifiedPos', 'variables', 'minterms', 'truthTableLabel', 'result', 'kmapTitle'],
     'image-upscaler': ['imageFile', 'accuracyNote', 'progressHint', 'sourcePreview', 'resultPreview'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
@@ -216,6 +217,7 @@ export function renderGrowthForm(toolId, copy) {
     'pension-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'lifetime-value-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'polar-graphing-calculator': ['calculate', 'reset', 'example', 'result', 'copy', 'downloadCsv'],
+    'boolean-algebra-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
@@ -1226,6 +1228,15 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><p data-result-count></p><div data-result-content></div>${button('copy', actions.copy, 'secondary')}${button('downloadCsv', actions.downloadCsv, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'boolean-algebra-calculator') return attachCopy(`<form id="tool-form" class="boolean-algebra-calculator" novalidate>
+    ${label('boolean-expression', fields.expression, '<input id="boolean-expression" name="expression" type="text" value="A | !A" maxlength="180" autocomplete="off" spellcheck="false" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.expressionHint)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div><div class="actions">${button('copy', actions.copy, 'secondary')}</div></section>
   </form>`, copy);
 
   if (toolId === 'repeating-decimal-to-fraction') return attachCopy(`<form id="tool-form" class="repeating-decimal-to-fraction" novalidate>

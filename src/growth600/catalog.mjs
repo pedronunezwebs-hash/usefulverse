@@ -1464,6 +1464,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/polar-graphing-calculator/logic.mjs',
   },
   {
+    id: 'boolean-algebra-calculator',
+    category: 'math-statistics',
+    type: 'calculator',
+    primaryIntent: 'boolean algebra calculator',
+    secondaryIntents: ['boolean simplifier', 'boolean expression simplifier', 'Karnaugh map calculator'],
+    functions: ['parse bounded Boolean expressions with variables A–F, constants, NOT, AND, XOR and OR', 'minimize the expression in sum-of-products and product-of-sums forms with an exact bounded implicant search', 'show an equivalent truth table and a Gray-ordered Karnaugh map for two to four variables', 'copy the simplified forms and locally check every listed input combination'],
+    acceptance: 'A OR NOT A simplifies to 1 and every row is true; !(A & B) simplifies to (!A | !B).',
+    boundary: 'Boolean truth-table and minimization aid, not a circuit simulator, hardware timing analysis or formal proof system. Supports at most six variables and bounded expression length, tokens and implicant-search work; Karnaugh maps are shown only for two to four variables. Simplification is exact for the accepted expression syntax, but tied minimal forms may differ. The parser never evaluates JavaScript. Runs locally; expressions are not uploaded or saved.',
+    relatedExistingIds: ['truth-table-generator'],
+    logicModule: './tools/boolean-algebra-calculator/logic.mjs',
+  },
+  {
     id: 'kinetic-energy-calculator',
     category: 'physics-math',
     type: 'calculator',

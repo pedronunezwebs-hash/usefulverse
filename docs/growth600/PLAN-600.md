@@ -434,7 +434,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Función mínima y ampliaciones útiles:** Volumen, densidad y peso para capas y figuras de patio
 - **Prueba de aceptación específica:** 10m² por0.1m da1m³
 - **Frontera con otras herramientas:** concrete-calculator: áridos y densidad granular. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** motor local, parser sin `eval`, máximo seis variables y búsqueda exacta acotada; validar salida SOP/POS contra la tabla de verdad. Estilo y controlador exclusivos y pequeños, render DOM con `textContent` y textos de cada idioma empaquetados estáticamente. Revisar formalización/límites en el copy; no afirmar que sea simulador ni prueba formal.
 - **Consultas secundarias del mismo propietario:**
   - `gravel volume calculator` — 260/mes US/en; KD 0.
   - `gravel calculator free online`; `gravel calculator with example`; `gravel calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -2528,7 +2528,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 209 · Boolean Algebra Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `boolean-algebra-calculator`**
+- [ ] **P/S pendientes — `boolean-algebra-calculator`; C/F/E/X/L/B locales completados**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/boolean-algebra-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `boolean algebra calculator` — 1.900 búsquedas/mes US/en, KD 0; nivel B. CPC 3.08 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Simplificación lógica y Karnaugh con equivalencia verificable

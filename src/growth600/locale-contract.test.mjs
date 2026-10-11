@@ -81,11 +81,13 @@ import lifetimeValueCalculatorCopies from './locales/lifetime-value-calculator-f
 import { lifetimeValueCalculatorEnglishCopy } from './locales/lifetime-value-calculator.en.mjs';
 import polarGraphingCalculatorCopies from './locales/polar-graphing-calculator-final.mjs';
 import { polarGraphingCalculatorEnglishCopy } from './locales/polar-graphing-calculator.en.mjs';
+import booleanAlgebraCalculatorCopies from './locales/boolean-algebra-calculator-final.mjs';
+import { booleanAlgebraCalculatorEnglishCopy } from './locales/boolean-algebra-calculator.en.mjs';
 
 const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['markdown-editor', 'purchase-order-generator', 'bond-calculator', 'waist-to-hip-ratio-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'ph-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'kinetic-energy-calculator', 'resistor-color-code-calculator', 'acceleration-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator'].includes(id));
 const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
   key,
-  { ...(await import(`./locales/${key}.mjs`)).default, 'purchase-order-generator': purchaseOrderGeneratorCopies[key], 'eigenvalue-calculator': eigenvalueCalculatorCopies[key], 'bond-calculator': bondCalculatorCopies[key], 'waist-to-hip-ratio-calculator': waistToHipRatioCopies[key], 'stock-profit-calculator': key === 'en' ? stockProfitCalculatorEnglishCopy : stockProfitCalculatorCopies[key], 'pension-calculator': pensionCalculatorCopies[key], 'lifetime-value-calculator': lifetimeValueCalculatorCopies[key], 'polar-graphing-calculator': polarGraphingCalculatorCopies[key] },
+  { ...(await import(`./locales/${key}.mjs`)).default, 'purchase-order-generator': purchaseOrderGeneratorCopies[key], 'eigenvalue-calculator': eigenvalueCalculatorCopies[key], 'bond-calculator': bondCalculatorCopies[key], 'waist-to-hip-ratio-calculator': waistToHipRatioCopies[key], 'stock-profit-calculator': key === 'en' ? stockProfitCalculatorEnglishCopy : stockProfitCalculatorCopies[key], 'pension-calculator': pensionCalculatorCopies[key], 'lifetime-value-calculator': lifetimeValueCalculatorCopies[key], 'polar-graphing-calculator': polarGraphingCalculatorCopies[key], 'boolean-algebra-calculator': key === 'en' ? booleanAlgebraCalculatorEnglishCopy : booleanAlgebraCalculatorCopies[key] },
 ])));
 
 test('section modulus calculator has static, bounded translations in all 36 locales', () => {
@@ -356,6 +358,7 @@ function assertMachineAcceptedGrowthToolInAllLocales(tool) {
     ...(tool.id === 'pension-calculator' ? { 'pension-calculator': pensionCalculatorCopies[key] } : {}),
     ...(tool.id === 'lifetime-value-calculator' ? { 'lifetime-value-calculator': lifetimeValueCalculatorCopies[key] } : {}),
     ...(tool.id === 'polar-graphing-calculator' ? { 'polar-graphing-calculator': polarGraphingCalculatorCopies[key] } : {}),
+    ...(tool.id === 'boolean-algebra-calculator' ? { 'boolean-algebra-calculator': key === 'en' ? booleanAlgebraCalculatorEnglishCopy : booleanAlgebraCalculatorCopies[key] } : {}),
     ...(tool.id === 'waist-to-hip-ratio-calculator' ? { 'waist-to-hip-ratio-calculator': waistToHipRatioCopies[key] } : {}),
   }]));
   assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, copies), true);
@@ -2048,4 +2051,20 @@ test('polar graphing calculator has static localized copy with angle units and p
     if (key !== 'en') assert.notEqual(copy.intro, polarGraphingCalculatorEnglishCopy.intro, `${key}: translated intro`);
   }
   assert.match(polarGraphingCalculatorEnglishCopy.fields.accuracyNote, /not symbolic proof/u);
+});
+
+test('Boolean algebra has 36 static translations, bounded SEO metadata and intact operator symbols', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'boolean-algebra-calculator');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = key === 'en' ? booleanAlgebraCalculatorEnglishCopy : booleanAlgebraCalculatorCopies[key];
+    assert.equal(copy.copyLanguage, key, `${key}: language`);
+    assert.equal(copy.additionalFaqs.length, 2, `${key}: FAQs`);
+    assert.ok(Array.from(copy.title).length <= 60 && Array.from(copy.description).length <= 160, `${key}: SEO metadata`);
+    for (const symbol of ['!', '&', '^', '|']) assert.ok(copy.fields.expressionHint.includes(symbol), `${key}: operator ${symbol}`);
+    assert.ok(copy.actions.calculate && copy.actions.copy && copy.messages.checkInputs, `${key}: tool actions`);
+    if (key !== 'en') assert.notEqual(copy.intro, booleanAlgebraCalculatorEnglishCopy.intro, `${key}: translated intro`);
+  }
+  assert.match(booleanAlgebraCalculatorEnglishCopy.accuracyNote ?? booleanAlgebraCalculatorEnglishCopy.fields.accuracyNote, /formal proof/u);
 });

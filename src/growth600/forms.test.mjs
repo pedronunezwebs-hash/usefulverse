@@ -59,6 +59,7 @@ import { stockProfitCalculatorEnglishCopy } from './locales/stock-profit-calcula
 import { pensionCalculatorEnglishCopy } from './locales/pension-calculator.en.mjs';
 import { lifetimeValueCalculatorEnglishCopy } from './locales/lifetime-value-calculator.en.mjs';
 import { polarGraphingCalculatorEnglishCopy } from './locales/polar-graphing-calculator.en.mjs';
+import { booleanAlgebraCalculatorEnglishCopy } from './locales/boolean-algebra-calculator.en.mjs';
 
 const actions = {
   calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', millimeters: 'Millimeters', feet: 'Feet', inches: 'Inches', squareMeters: 'Square meters', squareFeet: 'Square feet', cubicMeters: 'Cubic meters', cubicFeet: 'Cubic feet', kelvin: 'Kelvin difference', fahrenheit: 'Fahrenheit difference', kilowatts: 'Kilowatts (kW)', btuPerHour: 'BTU per hour (BTU/h)', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.', kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only', productionMode: 'Estimate array output', sizingMode: 'Size for daily use', years: 'years', add: 'Add', subtract: 'Subtract', multiply: 'Multiply', divide: 'Divide', magnitude: 'Modulus', argument: 'Argument', rectangularToPolar: 'Rectangular to polar', polarToRectangular: 'Polar to rectangular', roots: 'Nth roots',
@@ -90,6 +91,7 @@ const copies = {
   'pension-calculator': pensionCalculatorEnglishCopy,
   'lifetime-value-calculator': lifetimeValueCalculatorEnglishCopy,
   'polar-graphing-calculator': polarGraphingCalculatorEnglishCopy,
+  'boolean-algebra-calculator': booleanAlgebraCalculatorEnglishCopy,
   'hebrew-calendar-converter': hebrewCalendarConverterEnglishCopy,
   'absolute-value-calculator': absoluteValueCalculatorEnglishCopy,
   'image-splitter': { name: 'Image splitter', actions: { ...actions, choose: 'Choose image', export: 'Split and prepare ZIP', cancel: 'Cancel', download: 'Download tile ZIP' }, messages: { ...messages }, fields: { imageFile: 'Choose an image', mode: 'Split by', gridMode: 'Rows and columns', tileSizeMode: 'Fixed tile dimensions', columns: 'Columns', rows: 'Rows', tileWidth: 'Tile width', tileHeight: 'Tile height', overlap: 'Overlap', accuracyNote: 'Local image processing.', previewHint: 'Image grid preview.', imageReady: 'Image ready' } },
@@ -784,6 +786,16 @@ test('all pilot forms render semantic labels, explicit actions and localized str
   assert.match(deck, /name="boardWidth"[^>]+value="5\.5"/u);
   const payload = renderGrowthForm('secret-santa-generator', { ...copies['secret-santa-generator'], description: '</script><script>alert(1)</script>' });
   assert.doesNotMatch(payload, /<script>alert\(1\)<\/script>/u);
+});
+
+test('Boolean algebra form exposes one bounded expression field and localized simplification actions', () => {
+  const html = renderGrowthForm('boolean-algebra-calculator', copies['boolean-algebra-calculator']);
+  assert.match(html, /name="expression"[^>]+maxlength="180"/u);
+  assert.match(html, /A \| !A/u);
+  assert.match(html, /data-action="example"/u);
+  assert.match(html, /data-action="calculate"/u);
+  assert.match(html, /data-action="copy"/u);
+  assert.match(html, /data-result-content/u);
 });
 
 test('polynomial long-division form labels both expressions and uses explicit actions', () => {
