@@ -1800,6 +1800,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/interval-timer/logic.mjs',
   },
   {
+    id: 'logic-grid-puzzle',
+    category: 'games',
+    type: 'game',
+    primaryIntent: 'logic grid puzzle',
+    secondaryIntents: ['logic puzzle online', 'logic grid puzzle generator', 'logic grid puzzle with hints'],
+    functions: ['generate a fresh locally randomized four-category matching puzzle at three difficulty settings', 'present original, explicit match/not-match clues and six accessible 4×4 relationship grids', 'let players mark, check, clear and request one-cell hints', 'exhaustively verify a single assignment before showing a puzzle and never claim uniqueness if the bounded solver cannot prove it'],
+    acceptance: 'Every accepted puzzle has exactly one valid assignment among all 13,824 possible combinations; invalid or contradictory marks are never reported solved.',
+    boundary: 'An original compact matching-grid puzzle, not a free-form story-puzzle library or a claim to reproduce a branded game. The local solver enumerates a fixed 4×4×4 model under a strict limit; generation and play use this device only. No model download, account, upload, network call or stored play history.',
+    relatedExistingIds: ['nurikabe', 'hitori', 'sudoku'],
+    logicModule: './tools/logic-grid-puzzle/logic.mjs',
+  },
+  {
     id: 'julian-date-converter',
     category: 'date-time',
     type: 'converter',

@@ -3465,8 +3465,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 120 · Interval Timer
 
-- [x] **C/F/E/X/L/B — implementados y comprobados; P/S pendientes — `interval-timer`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/interval-timer/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `interval-timer`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/interval-timer/` y las otras 35 versiones con los prefijos del anexo; estado público y sitemap registrados debajo.
 - **Demanda:** `interval timer` — 8.100 búsquedas/mes US/en, KD 34; nivel B. CPC 1.02 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Secuencias de trabajo/descanso, vueltas, presets, audio probado y opcional, pausa y reanudación. Medir con marcas temporales, no acumulando intervalos.
 - **Prueba de aceptación específica:** 8 rondas de 20 s de trabajo y 10 s de descanso duran 230 s: no se añade descanso tras la última ronda. Pausar y reanudar conserva la fase y el tiempo restante; editar los ajustes después de terminar inicia una vista limpia.
@@ -3477,7 +3477,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `interval timer free online`; `interval timer with example`; `interval timer no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** DE/de `intervall timer` 1.600/mes, KD 9.
-- **Estado local (2026-10-11):** C/F/E/X/L/B completos. 36 copias estáticas sencillas (traducción automática, sin revisión nativa ni llamada de traducción en runtime); suite completa **1.813/1.813** y `npm run locale:release-check` pasan. `npm run check` conserva las **10.260** URLs del sitio principal. Build aislado: **5.508 páginas** (152 × 36 + 36 portadas), 5.717 archivos. Chrome EN/AR a 390 px confirmó presets, trabajo/descanso, pausa/reanudación, fin de sesión, edición tras terminar, RTL y ausencia de overflow/errores de consola; sonido opcional probado tras clic real. No se midió PageSpeed/Lighthouse. P/S pendientes hasta CI, integración, despliegues y sitemap público verificados.
+- **Estado publicado (2026-10-11):** 36 copias estáticas sencillas (traducción automática, sin revisión nativa ni llamada de traducción en runtime); suite **1.813/1.813**, `npm run locale:release-check`, `npm run check` (**10.260 URLs**) y CI pasan. Build aislado: **5.508 páginas** (152 × 36 + 36 portadas). Chrome EN/AR a 390 px confirmó presets, trabajo/descanso, pausa/reanudación, fin de sesión, edición tras terminar, RTL y ausencia de overflow/errores de consola; sonido opcional probado tras clic real. Rutas públicas: las 36 versiones HTTP 200, canonical autorreferente; sitemap público HTTP 200 con 5.508 URLs únicas. PR [#116](https://github.com/pedronunezwebs-hash/usefulverse/pull/116), merge `70e6c5ae6ed3e54be773d8728fd751e6f0541aa9`; CI `38125164839`, deploy principal `38125429052`, deploy del hub `38125697362`. Publicar no equivale a indexar. No se midió PageSpeed/Lighthouse.
 
 ### 133 · Hebrew Calendar Converter
 
@@ -4782,17 +4782,18 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 121 · Logic Grid Puzzle
 
-- [ ] **C/F/E/X/L/B/P/S completos — `logic-grid-puzzle`**
+- [x] **C/F/E/X/L/B superados; P/S pendientes — `logic-grid-puzzle`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/logic-grid-puzzle/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `logic grid puzzle` — 8.100 búsquedas/mes US/en, KD 38; nivel B. CPC 1.11 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Entidades y pistas originales, matriz de exclusiones, notas, checker, hints y generador/banco con soluciones verificadas.
 - **Prueba de aceptación específica:** Existe exactamente una asignación que satisface las pistas cuando se promete unicidad.
 - **Frontera con otras herramientas:** nurikabe: deducciónsemántica no islas. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** H: dependencia/cómputo bajo demanda; verificar licencia y compatibilidad. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Sin dependencias externas: solver exhaustivo acotado (13.824 asignaciones), generación local y páginas HTML/CSS/JS estáticas. No API, modelos, subida ni almacenamiento. Se muestra un puzzle solo tras probar unicidad; si el presupuesto seguro falla, se anuncia el error sin presentar uno dudoso.
 - **Consultas secundarias del mismo propietario:**
   - `logic puzzle online` — 5.400/mes US/en; KD 40.
   - `logic grid puzzle free online`; `logic grid puzzle with example`; `logic grid puzzle no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Estado local (2026-10-11):** 36 copias estáticas de traducción automática; se ajustaron títulos para conservar el nombre de la herramienta y las etiquetas RTL defectuosas detectadas en árabe. `npm test`: **1.822/1.822**; chequeo de locales; build del hub: **5.544 páginas** (153 × 36 + 36 portadas). Chrome local confirmó tablero, pistas, ciclo de marcas, hint, feedback de tablero incompleto, modo difícil, RTL árabe a 390 px sin overflow ni errores de consola. La carga pide solo HTML/CSS/JS locales. CI, integración, URL pública y sitemap quedan pendientes.
 
 ### 143 · Sokoban
 

@@ -5,6 +5,7 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   '529-calculator': ['calculated', 'checkInputs', 'exampleLoaded', 'target', 'grossCost', 'scholarships', 'projectedSavings', 'fundingGap', 'monthlyNeeded', 'amountNeededNow', 'noTime', 'assumption'],
   'julian-date-converter': ['calculated', 'checkInputs', 'exampleLoaded', 'jd', 'mjd', 'utc', 'dayFraction', 'calendar', 'calendarValue', 'timeScale', 'precision'],
   'interval-timer': ['started', 'paused', 'resumed', 'reset', 'finished', 'checkInputs', 'workCue', 'restCue', 'prepCue', 'soundUnavailable'],
+  'logic-grid-puzzle': ['newPuzzle', 'solved', 'incomplete', 'conflict', 'incorrect', 'hintSame', 'hintDifferent', 'noHint', 'marksCleared', 'markedSame', 'markedDifferent', 'unmarked', 'generationFailed'],
   'beam-deflection-calculator': ['calculated', 'checkInputs', 'exampleLoaded', 'maxDeflection', 'location', 'maxMoment', 'flexuralRigidity', 'curveLabel'],
   'font-pairing-tool': ['fontLoaded', 'fontLoadFailed', 'noFiles', 'tooMany', 'unsupported', 'fileTooLarge', 'totalTooLarge', 'copied', 'copyUnavailable', 'fontsCleared', 'presetApplied', 'rolesSwapped'],
   'roth-vs-traditional-calculator': ['calculated', 'checkInputs'],
@@ -113,6 +114,7 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   '529-calculator': ['currentSavings', 'monthlyContribution', 'yearsUntilCollege', 'annualCostToday', 'collegeYears', 'tuitionInflationPercent', 'annualReturnPercent', 'scholarshipPerYear', 'currency', 'accuracyNote'],
   'julian-date-converter': ['direction', 'toJulian', 'toUtc', 'utcDate', 'julianValue', 'dateKind', 'jd', 'mjd', 'accuracyNote'],
   'interval-timer': ['preset', 'workSeconds', 'restSeconds', 'rounds', 'prepSeconds', 'secondsUnit', 'sound', 'soundHint', 'accuracyNote', 'phaseLabel', 'roundLabel', 'remainingLabel', 'totalLabel', 'progressLabel', 'prep', 'work', 'rest', 'complete'],
+  'logic-grid-puzzle': ['difficulty', 'board', 'clues', 'categoryPair', 'same', 'different', 'unmarked', 'sameMark', 'differentMark', 'rules', 'accuracyNote'],
   'beam-deflection-calculator': ['support', 'simplySupported', 'cantilever', 'loadCase', 'pointLoad', 'uniformLoad', 'span', 'lengthUnit', 'meters', 'centimeters', 'millimeters', 'inches', 'feet', 'load', 'forceUnit', 'newtons', 'kilonewtons', 'poundsForce', 'modulus', 'modulusUnit', 'pascals', 'megapascals', 'gigapascals', 'psi', 'ksi', 'inertia', 'inertiaUnit', 'mm4', 'cm4', 'm4', 'in4', 'ft4', 'loadUnitHint', 'accuracyNote', 'sourceNote'],
   'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
   'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
@@ -221,6 +223,7 @@ export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   '529-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
   'julian-date-converter': ['calculate', 'reset', 'copy', 'example', 'result'],
   'interval-timer': ['start', 'pause', 'resume', 'reset'],
+  'logic-grid-puzzle': ['newGame', 'checkBoard', 'hint', 'clearMarks', 'easy', 'medium', 'hard', 'rules'],
   'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
   'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
   'polygon-calculator': ['calculate', 'example', 'reset', 'copy', 'result'],
@@ -322,7 +325,7 @@ export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   'aquarium-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'feet', 'inches', 'liters', 'usGallons', 'imperialGallons'],
 });
 const MESSAGE_PLACEHOLDERS = Object.freeze({ monthCount: ['{count}'], privatePair: ['{giver}', '{recipient}'], turn: ['{player}'], overlap: ['{first}', '{second}', '{minutes}'], shortConnection: ['{first}', '{second}', '{minutes}', '{needed}'], invalidValue: ['{size}'] });
-const TOOL_MESSAGE_PLACEHOLDERS = Object.freeze({ futoshiki: Object.freeze({ hint: ['{row}', '{column}'], invalidValue: ['{size}'], noteAdded: ['{value}'], noteRemoved: ['{value}'] }), 'hashi-puzzle': Object.freeze({ hint: ['{count}'], bridgeChanged: ['{count}'] }), 'chess-opening-trainer': Object.freeze({ ready: ['{opening}', '{move}'], progress: ['{played}', '{total}'], wrong: ['{expected}'], opponentMove: ['{moves}'] }) });
+const TOOL_MESSAGE_PLACEHOLDERS = Object.freeze({ futoshiki: Object.freeze({ hint: ['{row}', '{column}'], invalidValue: ['{size}'], noteAdded: ['{value}'], noteRemoved: ['{value}'] }), 'hashi-puzzle': Object.freeze({ hint: ['{count}'], bridgeChanged: ['{count}'] }), 'chess-opening-trainer': Object.freeze({ ready: ['{opening}', '{move}'], progress: ['{played}', '{total}'], wrong: ['{expected}'], opponentMove: ['{moves}'] }), 'logic-grid-puzzle': Object.freeze({ hintSame: ['{left}', '{right}'], hintDifferent: ['{left}', '{right}'] }) });
 
 export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, { titleMax = 60, descriptionMax = 160 } = {}) {
   const errors = [];
@@ -348,6 +351,13 @@ export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, {
       }
       for (const key of REQUIRED_TOOL_FIELDS[tool.id] ?? []) {
         if (typeof copy.fields?.[key] !== 'string' || !copy.fields[key].trim()) errors.push(`${locale.key}/${tool.id}: fields.${key} is missing`);
+      }
+      if (tool.id === 'logic-grid-puzzle'
+        && (!Array.isArray(copy.fields?.categoryGroups) || copy.fields.categoryGroups.length !== 4
+          || copy.fields.categoryGroups.some((group) => !group?.name?.trim() || !Array.isArray(group.values)
+            || group.values.length !== 4 || group.values.some((value) => typeof value !== 'string' || !value.trim())
+            || new Set(group.values.map((value) => value.trim().toLowerCase())).size !== 4))) {
+        errors.push(`${locale.key}/${tool.id}: four localized categories with four distinct values each are required`);
       }
       if (tool.id === 'hijri-calendar-converter' && (!Array.isArray(copy.fields?.hijriMonths) || copy.fields.hijriMonths.length !== 12 || copy.fields.hijriMonths.some((month) => typeof month !== 'string' || !month.trim()))) errors.push(`${locale.key}/${tool.id}: all twelve Hijri month names are required`);
       if (tool.id === 'capacitor-calculator' && (!Array.isArray(copy.additionalFaqs) || copy.additionalFaqs.length !== 3)) errors.push(`${locale.key}/${tool.id}: exactly three capacitor FAQs are required`);
