@@ -5,11 +5,24 @@ import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 import { checkLogicGridMarks, createLogicGridPuzzle, solveLogicGrid } from './tools/logic-grid-puzzle/logic.mjs';
 import { countMarkdown, insertMarkdown } from './tools/markdown-editor/logic.mjs';
 import { createPurchaseOrder } from './tools/purchase-order-generator/logic.mjs';
+import { calculateEigenpairs } from './tools/eigenvalue-calculator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 155);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 155);
+  assert.equal(growthPilotTools.length, 156);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 156);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
+});
+
+test('eigenvalue calculator is additive and validates symmetric eigenpairs', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'eigenvalue-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'eigenvalue calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['matrix-calculator']);
+  assert.match(tool.boundary, /real symmetric matrices only/u);
+  const report = calculateEigenpairs('2 1\n1 2');
+  assert.ok(Math.abs(report.eigenpairs[0].eigenvalue - 1) < 1e-10);
+  assert.ok(Math.abs(report.eigenpairs[1].eigenvalue - 3) < 1e-10);
+  assert.ok(report.eigenpairs.every(({ residual }) => residual < 1e-10));
 });
 
 test('purchase order generator has a distinct pre-purchase intent and correct acceptance total', () => {

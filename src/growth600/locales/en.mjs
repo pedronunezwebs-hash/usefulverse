@@ -8,6 +8,8 @@ import { poolVolumeCalculatorEnglishCopy } from './pool-volume-calculator.en.mjs
 import roofCopies from './roof-pitch-calculator.mjs';
 import { roofPitchCalculatorEnglishCopy } from './roof-pitch-calculator.en.mjs';
 import { registerGrowthLocaleExtension } from '../locale-utils.mjs';
+import eigenvalueCalculatorCopies from './eigenvalue-calculator-final.mjs';
+import { eigenvalueCalculatorEnglishCopy } from './eigenvalue-calculator.en.mjs';
 import drywallCopies from './drywall-calculator.mjs';
 import { drywallEnglishCopy } from './drywall-calculator.en.mjs';
 import roofingCopies from './roofing-calculator.mjs';
@@ -1212,5 +1214,6 @@ registerGrowthLocaleExtension(source, 'json-to-excel', { ...jsonToExcelCopies, e
 registerGrowthLocaleExtension(source, 'binary-base64-tool', { ...binaryBase64ToolCopies, en: binaryBase64ToolEnglishCopy }, 'json-to-excel');
 registerGrowthLocaleExtension(source, 'json-model-generator', { ...jsonModelGeneratorCopies, en: jsonModelGeneratorEnglishCopy }, 'binary-base64-tool');
 registerGrowthLocaleExtension(source, 'csv-editor', { ...csvEditorCopies, en: csvEditorEnglishCopy }, 'json-model-generator');
+registerGrowthLocaleExtension(source, 'eigenvalue-calculator', { ...eigenvalueCalculatorCopies, en: eigenvalueCalculatorEnglishCopy }, 'csv-editor');
 
 export default Object.freeze(source);
