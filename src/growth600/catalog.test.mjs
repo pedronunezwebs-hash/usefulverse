@@ -14,11 +14,33 @@ import { calculateSpecificHeat } from './tools/specific-heat-calculator/logic.mj
 import { calculateRcTimeConstant, calculateRcTransient } from './tools/rc-time-constant-calculator/logic.mjs';
 import { calculateReverseMortgage } from './tools/reverse-mortgage-calculator/logic.mjs';
 import { calculateCarDepreciation } from './tools/car-depreciation-calculator/logic.mjs';
+import { calculateStockProfit } from './tools/stock-profit-calculator/logic.mjs';
+import { calculatePension } from './tools/pension-calculator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 164);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 164);
+  assert.equal(growthPilotTools.length, 166);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 166);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
+});
+
+test('pension calculator is distinct from the existing retirement projection', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'pension-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'pension calculator');
+  assert.deepEqual(tool.relatedExistingIds, []);
+  assert.match(tool.boundary, /not an entitlement/u);
+  assert.equal(calculatePension({ finalSalary: 50000, yearsOfService: 30, accrualPercent: 2, commutationPercent: 0, commutationFactor: 12 }).annualPension, 30000);
+});
+
+test('stock profit calculator estimates a distinct one-sale realized result with fees and lot methods', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'stock-profit-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'stock profit calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['roi-cagr-calculator']);
+  assert.match(tool.boundary, /not investment, tax or accounting advice/u);
+  const result = calculateStockProfit({ lots: [{ quantity: 10, price: 20 }], sharesSold: 10, salePrice: 30 });
+  assert.equal(result.profit, 100);
+  assert.throws(() => calculateStockProfit({ lots: [{ quantity: 10, price: 20 }], sharesSold: 11, salePrice: 30 }), /Shares to sell/u);
 });
 
 test('bond calculator has a distinct fixed-coupon intent and matches the par-yield acceptance case', () => {

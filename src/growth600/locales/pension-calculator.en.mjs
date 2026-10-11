@@ -1,0 +1,25 @@
+export const pensionCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en', localizationStatus: 'approved',
+  name: 'Pension Calculator', title: 'Pension Calculator Free & Unlimited | UsefulVerse',
+  description: 'Estimate a defined-benefit pension and optional lump-sum conversion. Free, unlimited and private in your browser.',
+  intro: 'Estimate a simple defined-benefit pension from pensionable final salary, service years and accrual rate. Optionally illustrate exchanging part of the annual pension for a lump sum.',
+  howQuestion: 'How is a defined-benefit pension estimated?',
+  howAnswer: 'This illustration multiplies pensionable final salary by service years and the annual accrual rate. For example, 50,000 × 30 × 2% estimates 30,000 per year before any scheme-specific adjustments.',
+  privacyQuestion: 'Are my pension figures uploaded?',
+  privacyAnswer: 'No. All arithmetic runs in this browser. The salary, service and pension assumptions are not uploaded or saved by this tool.',
+  howTo: ['Enter pensionable final salary, years of service and the accrual rate stated by your scheme.', 'To illustrate a lump sum, enter the share of annual pension exchanged and the scheme commutation factor.', 'Calculate and compare the annual and monthly pension before and after conversion with the indicative lump sum.'],
+  example: { label: 'Load 50,000 salary, 30 years and 2% accrual', values: [] },
+  actions: { calculate: 'Estimate pension', example: 'Load example', reset: 'Reset', copy: 'Copy results', result: 'Illustrative estimate' },
+  fields: {
+    finalSalary: 'Pensionable final salary', yearsOfService: 'Years of pensionable service', accrualPercent: 'Annual accrual rate (%)', commutationPercent: 'Annual pension exchanged for lump sum (%)', commutationFactor: 'Scheme lump-sum factor', currencyCode: 'Display currency code (3 letters)',
+    accuracyNote: 'Simple illustration, not a pension entitlement or financial/tax advice. Scheme formula, caps, retirement age, indexation, survivor benefits and tax can change results. Use the accrual and commutation factors from official scheme documents. Currency only formats figures; it does not convert them.',
+    resultSummary: 'Illustrative pension results', annualPension: 'Annual pension before conversion', monthlyPension: 'Monthly pension after conversion', convertedAnnualPension: 'Annual pension exchanged', lumpSum: 'Indicative lump sum', remainingAnnualPension: 'Annual pension after conversion',
+  },
+  messages: { calculated: 'Pension estimate calculated.', exampleLoaded: 'Example loaded: 50,000 × 30 years × 2%.', checkInputs: 'Check salary, years, percentages, factor and currency.', copied: 'Results copied.', copyUnavailable: 'Copy is not available in this browser.' },
+  additionalFaqs: [
+    { question: 'How much pension is 30 years at 2% on a salary of 50,000?', answer: 'Using the simple defined-benefit formula, 50,000 × 30 × 0.02 equals 30,000 per year before scheme-specific adjustments.' },
+    { question: 'What is a pension commutation factor?', answer: 'It is a scheme-defined factor used to estimate a cash lump sum in exchange for giving up part of an annual pension. Enter the factor from your official scheme terms; it is not universal.' },
+    { question: 'Does this include pension tax or cost-of-living increases?', answer: 'No. It does not model tax, indexation, inflation, early or late retirement adjustments, survivor benefits, salary averaging or scheme-specific limits.' },
+    { question: 'Is this suitable for every pension?', answer: 'No. It illustrates one simplified defined-benefit formula. Defined-contribution pots, state pensions and schemes with different formulas need their own official calculators or provider figures.' },
+  ],
+});

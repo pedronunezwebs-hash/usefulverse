@@ -19,6 +19,8 @@ import specificHeatCalculatorCopies from '../src/growth600/locales/specific-heat
 import rcTimeConstantCalculatorCopies from '../src/growth600/locales/rc-time-constant-calculator-final.mjs';
 import reverseMortgageCalculatorCopies from '../src/growth600/locales/reverse-mortgage-calculator-final.mjs';
 import carDepreciationCalculatorCopies from '../src/growth600/locales/car-depreciation-calculator-final.mjs';
+import stockProfitCalculatorCopies from '../src/growth600/locales/stock-profit-calculator-final.mjs';
+import pensionCalculatorCopies from '../src/growth600/locales/pension-calculator-final.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const localeDir = resolve(root, 'src/growth600/locales');
@@ -57,6 +59,10 @@ for (const { key } of localeEntries) {
   copyByLocale[key] = { ...copyByLocale[key], 'reverse-mortgage-calculator': reverseMortgageCalculatorCopies[key] };
   if (!carDepreciationCalculatorCopies[key]) throw new Error(`Growth600 release blocked: Car Depreciation Calculator copy is missing for ${key}.`);
   copyByLocale[key] = { ...copyByLocale[key], 'car-depreciation-calculator': carDepreciationCalculatorCopies[key] };
+  if (!stockProfitCalculatorCopies[key]) throw new Error(`Growth600 release blocked: Stock Profit Calculator copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'stock-profit-calculator': stockProfitCalculatorCopies[key] };
+  if (!pensionCalculatorCopies[key]) throw new Error(`Growth600 release blocked: Pension Calculator copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'pension-calculator': pensionCalculatorCopies[key] };
 }
 
 const outputDir = resolve(process.env.GROWTH600_DIST ?? resolve(root, 'dist-growth600'));

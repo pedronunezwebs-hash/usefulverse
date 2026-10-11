@@ -26,6 +26,10 @@ import reverseMortgageCalculatorCopies from './reverse-mortgage-calculator-final
 import { reverseMortgageCalculatorEnglishCopy } from './reverse-mortgage-calculator.en.mjs';
 import carDepreciationCalculatorCopies from './car-depreciation-calculator-final.mjs';
 import { carDepreciationCalculatorEnglishCopy } from './car-depreciation-calculator.en.mjs';
+import stockProfitCalculatorCopies from './stock-profit-calculator-final.mjs';
+import { stockProfitCalculatorEnglishCopy } from './stock-profit-calculator.en.mjs';
+import pensionCalculatorCopies from './pension-calculator-final.mjs';
+import { pensionCalculatorEnglishCopy } from './pension-calculator.en.mjs';
 import drywallCopies from './drywall-calculator.mjs';
 import { drywallEnglishCopy } from './drywall-calculator.en.mjs';
 import roofingCopies from './roofing-calculator.mjs';
@@ -1239,5 +1243,7 @@ registerGrowthLocaleExtension(source, 'specific-heat-calculator', { ...specificH
 registerGrowthLocaleExtension(source, 'rc-time-constant-calculator', { ...rcTimeConstantCalculatorCopies, en: rcTimeConstantCalculatorEnglishCopy }, 'specific-heat-calculator');
 registerGrowthLocaleExtension(source, 'reverse-mortgage-calculator', { ...reverseMortgageCalculatorCopies, en: reverseMortgageCalculatorEnglishCopy }, 'mortgage-points-calculator');
 registerGrowthLocaleExtension(source, 'car-depreciation-calculator', { ...carDepreciationCalculatorCopies, en: carDepreciationCalculatorEnglishCopy }, 'reverse-mortgage-calculator');
+registerGrowthLocaleExtension(source, 'stock-profit-calculator', { ...stockProfitCalculatorCopies, en: stockProfitCalculatorEnglishCopy }, 'car-depreciation-calculator');
+registerGrowthLocaleExtension(source, 'pension-calculator', { ...pensionCalculatorCopies, en: pensionCalculatorEnglishCopy }, 'stock-profit-calculator');
 
 export default Object.freeze(source);

@@ -9,7 +9,7 @@ Fecha de investigación: 7 de octubre de 2026. Documento de planificación y che
 - [x] Comprobar la base de planificación: **277 herramientas y 36 idiomas**.
 - [x] Investigar demanda con un gasto acotado en DataForSEO y registrar los resultados reales.
 - [x] Consolidar variantes antes de fijar el nuevo catálogo, sin contar una dirección de conversión como otra herramienta.
-- [ ] Implementar las nuevas herramientas. **Estado comprobado el 11 de octubre de 2026: producción tiene 163 herramientas Growth600 y 277 originales; los sitemaps públicos contienen 5.904 + 10.260 URLs. Esta rama implementa Car Depreciation Calculator (#118) como herramienta 164, todavía pendiente de PR/deploy.** El progreso del plan se cuenta por candidatas únicas de las 323 fichas; consultar `docs/growth600/PROGRESS.md` y no inferir indexación del despliegue.
+- [ ] Implementar las nuevas herramientas. **Estado comprobado el 11 de octubre de 2026: producción tiene 164 herramientas Growth600 y 277 originales; los sitemaps públicos contienen 5.940 + 10.260 URLs. Car Depreciation Calculator (#118) ya está publicada. Esta rama implementa Stock Profit Calculator (#142) y Pension Calculator (#147) como candidatas 165–166; build local previsto de 6.012 URLs para el hub. Ambas siguen sin publicar.** El progreso del plan se cuenta por candidatas únicas de las 323 fichas; consultar `docs/growth600/PROGRESS.md` y no inferir indexación del despliegue.
 
 Snapshot consultado: rama `main`, commit `685f91adfc7818a54f6dc0a967e290d13137a3dd`. Catálogo: `src/catalog.mjs`; funciones y contratos representativos: `src/app.js`, módulos de lógica, `src/opportunity-tools.mjs`, `src/seo.mjs`, locales, build y documentación del repo. Se inspeccionaron los metadatos de las 277 herramientas y contratos clave para descartar duplicados; esto **no es una nueva auditoría funcional completa de las 277**.
 
@@ -1970,8 +1970,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 118 · Car Depreciation Calculator
 
-- [x] **C/F/E/X/L/B completos — `car-depreciation-calculator`; P/S pendientes de PR, CI, deploy y comprobación pública.**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/car-depreciation-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `car-depreciation-calculator`.**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/car-depreciation-calculator/` y otras 35 versiones; PR #129 integrada, el sitemap público las incluye.
 - **Demanda:** `car depreciation calculator` — 8.100 búsquedas/mes US/en, KD 22; nivel B. CPC 2.54 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Curva de valor por años y kilómetros con tasas elegidas; no precios vivos
 - **Prueba de aceptación específica:** 10000 y 10% anual da 9000 tras un año
@@ -1984,6 +1984,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Otras métricas muestreadas:** DE/de `wertverlust auto rechner` 320/mes, KD 100.
 - **Implementado localmente (2026-10-11):** compara odómetro de compra con odómetro actual; calcula solo la distancia recorrida desde que se compró el vehículo, aplica por separado las tasas anuales/de distancia elegidas y proyecta edad/odómetro por año. Selector km/mi convierte odómetro inicial, actual y distancia anual junto con su tasa para mantener equivalente el escenario; la moneda cambia el formato, no hace cambio de divisa. Tabla y gráfica SVG accesibles, ejemplo, reinicio y copia. Aviso claro: cálculo hipotético, no tasación/mercado/asesoría. Procesamiento local, sin API, Function, dependencia nueva ni coste por uso.
 - **QA y build local:** caso mínimo 10.000 × 10% anual → 9.000 a un año; usado con 3 años/18.000→36.000 mi, 10% anual/3% por 10.000 mi: valor actual 13.802,15 y a cinco años 6.788,75; el mismo resultado se conserva tras convertir a km. Odómetro actual menor que el de compra se rechaza y editar el formulario borra resultados obsoletos. 36 copias estáticas desde Google Translate, con términos/metadatos revisados; ajustes manuales en árabe; traducción automática no equivale a revisión nativa. Suite global 1.912/1.912; `locale:release-check`, build principal (10.260) y hub (5.940) pasan. Chrome EN + AR RTL a 390×844: cálculo y tabla responden, sin overflow ni recursos externos; no PageSpeed/Lighthouse.
+- **Publicación:** PR #129 integrada en `2e0b22d076303da1d2c357106b0952290bf1121c`; CI `38152535234`, deploy principal `38152846302`, hub `38153504680` completados. Sitemap público verificado con 5.940 URLs únicas e incluye la ficha.
 
 ### 129 · Bond Calculator
 
@@ -2001,8 +2002,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 142 · Stock Profit Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `stock-profit-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/stock-profit-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B completos — `stock-profit-calculator`; P/S pendientes de PR, CI, deploy y comprobación pública.**
+- **Destino preparado:** `https://tools.usefulverse.com/tools/stock-profit-calculator/`; otras 35 versiones con los prefijos del anexo. Aún no está en producción.
 - **Demanda:** `stock profit calculator` — 5.400 búsquedas/mes US/en, KD 16; nivel B. CPC 2.95 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Precio compra/venta, comisiones, tamaño y lotes con coste medio
 - **Prueba de aceptación específica:** 10 títulos comprados a 20 y vendidos a 30 da 100 antes de gastos
@@ -2013,10 +2014,14 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `stock profit calculator free online`; `stock profit calculator with example`; `stock profit calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** DE/de `aktien gewinn rechner` 210/mes, KD 0.
+- **Implementado localmente (2026-10-11):** lotes de compra, comisiones, venta parcial/total y método de coste medio ponderado o FIFO; calcula base asignada, ganancia/pérdida estimada antes de impuestos, saldo de acciones y precio de equilibrio. Moneda solo cambia el formato, no convierte. 36 traducciones estáticas; correcciones puntuales de marca y etiquetas. Aviso sobre impuestos, diferencias por jurisdicción y operaciones no modeladas; cálculo local sin API, Function, dependencia nueva ni coste por uso.
+- **QA local:** suite completa **1.920/1.920** antes de las aserciones de localización finales; suite de locales **169/169** y `npm run locale:release-check` pasan. Build principal **10.260 URLs**; hub **5.976 URLs** (165 × 36 + 36 portadas). Chrome EN: 10 acciones compradas a 20 y vendidas a 30 producen 100 antes de comisiones. Chrome AR `dir=rtl` a 390 px: mismo cálculo, ancho 390/390 y consola limpia. No PageSpeed/Lighthouse.
+- **Límite de publicación:** la captura de GitHub Actions marca 1.804/2.000 minutos usados; no pude consultar un contador más nuevo por falta del permiso de facturación/API. No iniciar otro workflow hasta confirmar margen o configurar un presupuesto de Actions de 0 USD con bloqueo, para evitar cargos.
 
 ### 147 · Pension Calculator
 
 - [ ] **C/F/E/X/L/B/P/S completos — `pension-calculator`**
+- [x] **C/F/E/X/L/B local — `pension-calculator`; P/S aún pendientes.** Build local con 36 idiomas; todavía no hay PR ni publicación.
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/pension-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `pension calculator` — 5.400 búsquedas/mes US/en, KD 31; nivel B. CPC 3.72 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Prestación definida desde sueldo, servicio y factor; renta frente a pago único
@@ -2027,6 +2032,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `pension lump sum calculator` — 210/mes US/en; KD 9.
   - `pension calculator free online`; `pension calculator with example`; `pension calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Implementación local (2026-10-11):** prestación definida simple `salario pensionable × años de servicio × devengo anual`; permite modelar el canje parcial con porcentaje y factor de conversión introducido según las condiciones oficiales del plan. Muestra anualidad original, porción cedida, pago único y anualidad restante. Sin deducciones, indexación, topes, edad de jubilación, sobrevivientes ni asesoramiento. El ID `retirement-calculator` citado por el borrador no existe en el catálogo canónico; no se creó ni se enlazó un duplicado.
+- **QA local:** suite completa **1.926/1.926**; contratos de localización **170/170**; `npm run locale:release-check` aprobado. Build principal **10.260 URLs** y hub **6.012 URLs** (166 × 36 + 36 portadas). Chrome EN: el caso 50.000 × 30 × 2% entrega 30.000/año; al canjear 25% con factor 12 muestra 7.500/año cedidos, pago único 90.000 y 22.500/año restantes. Chrome AR `dir=rtl` en 390 px: `scrollWidth=390`, sin solicitudes externas ni mensajes de consola. No PageSpeed/Lighthouse.
 
 ### 164 · Mortgage Points Calculator
 

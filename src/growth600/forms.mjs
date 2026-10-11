@@ -36,6 +36,8 @@ export function renderGrowthForm(toolId, copy) {
     'complex-number-calculator': ['operation', 'realA', 'imaginaryA', 'realB', 'imaginaryB', 'radius', 'angle', 'angleUnit', 'degrees', 'radians', 'degree', 'resultSummary', 'resultReal', 'resultImaginary', 'modulus', 'argument', 'polar', 'rootNumber', 'zeroArgumentNote', 'accuracyNote', 'exampleHint'],
     'eigenvalue-calculator': ['matrix', 'matrixHint', 'accuracyNote', 'resultSummary', 'eigenvalue', 'eigenvector', 'residual'],
     'bond-calculator': ['mode', 'priceMode', 'yieldMode', 'faceValue', 'couponPercent', 'years', 'frequency', 'annual', 'semiannual', 'quarterly', 'monthly', 'yieldPercent', 'marketPrice', 'accuracyNote', 'resultSummary', 'yieldToMaturity', 'estimatedPrice', 'couponPayment', 'currentYield', 'totalCoupons', 'premiumDiscount', 'periods', 'chartTitle', 'chartDescription', 'chartYield', 'chartPrice'],
+    'stock-profit-calculator': ['lotCount', 'purchaseLot', 'quantity', 'purchasePrice', 'purchaseFee', 'saleMethod', 'averageCost', 'fifo', 'sharesSold', 'salePrice', 'saleFee', 'currencyCode', 'accuracyNote', 'resultSummary', 'sharesOwned', 'sharesRemaining', 'purchaseCost', 'costBasis', 'grossProceeds', 'netProceeds', 'realizedProfit', 'returnPercent', 'averageCostPerShare', 'remainingBasis', 'breakevenSalePrice'],
+    'pension-calculator': ['finalSalary', 'yearsOfService', 'accrualPercent', 'commutationPercent', 'commutationFactor', 'currencyCode', 'accuracyNote', 'resultSummary', 'annualPension', 'monthlyPension', 'convertedAnnualPension', 'lumpSum', 'remainingAnnualPension'],
     'image-upscaler': ['imageFile', 'accuracyNote', 'progressHint', 'sourcePreview', 'resultPreview'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
@@ -208,6 +210,8 @@ export function renderGrowthForm(toolId, copy) {
     'complex-number-calculator': ['calculate', 'example', 'reset', 'add', 'subtract', 'multiply', 'divide', 'magnitude', 'argument', 'rectangularToPolar', 'polarToRectangular', 'roots'],
     'eigenvalue-calculator': ['calculate', 'example', 'reset', 'copy'],
     'bond-calculator': ['calculate', 'example', 'reset', 'copy', 'result'],
+    'stock-profit-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
+    'pension-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
@@ -1150,6 +1154,46 @@ export function renderGrowthForm(toolId, copy) {
       <div class="investment-allocation-table-scroll"><table class="investment-allocation-table"><thead><tr><th scope="col">${escapeGrowthHtml(fields.asset)}</th><th scope="col">${escapeGrowthHtml(fields.targetWeight)}</th><th scope="col">${escapeGrowthHtml(fields.currentValue)}</th><th scope="col">${escapeGrowthHtml(fields.targetValue)}</th><th scope="col">${escapeGrowthHtml(fields.contributionShare)}</th><th scope="col">${escapeGrowthHtml(fields.difference)}</th></tr></thead><tbody data-allocation-rows></tbody></table></div>
       <div class="actions">${button('copy', actions.copy, 'secondary')}</div>
     </section>
+  </form>`, copy);
+
+  if (toolId === 'stock-profit-calculator') return attachCopy(`<form id="tool-form" class="stock-profit-calculator" novalidate>
+    <div class="calculator-grid">
+      ${label('stock-lot-count', fields.lotCount, `<select id="stock-lot-count" name="lotCount">${Array.from({ length: 10 }, (_, index) => `<option value="${index + 1}"${index === 0 ? ' selected' : ''}>${index + 1}</option>`).join('')}</select>`)}
+      ${label('stock-currency', fields.currencyCode, '<input id="stock-currency" name="currencyCode" type="text" value="USD" maxlength="3" pattern="[A-Za-z]{3}" autocomplete="off" required>')}
+      ${label('stock-method', fields.saleMethod, `<select id="stock-method" name="method"><option value="average">${escapeGrowthHtml(fields.averageCost)}</option><option value="fifo">${escapeGrowthHtml(fields.fifo)}</option></select>`)}
+      ${label('stock-shares-sold', fields.sharesSold, '<input id="stock-shares-sold" name="sharesSold" type="text" inputmode="decimal" value="10" maxlength="24" required>')}
+      ${label('stock-sale-price', fields.salePrice, '<input id="stock-sale-price" name="salePrice" type="text" inputmode="decimal" value="30" maxlength="24" required>')}
+      ${label('stock-sale-fee', fields.saleFee, '<input id="stock-sale-fee" name="saleFee" type="text" inputmode="decimal" value="0" maxlength="24" required>')}
+    </div>
+    <div class="investment-allocation-assets">${Array.from({ length: 10 }, (_, index) => {
+      const number = index + 1;
+      const hidden = number > 1 ? ' hidden' : '';
+      const disabled = number > 1 ? ' disabled' : '';
+      return `<fieldset class="investment-allocation-row" data-stock-lot data-index="${number}"${hidden}><legend>${escapeGrowthHtml(fields.purchaseLot)} ${number}</legend>
+        ${label(`stock-quantity-${number}`, fields.quantity, `<input id="stock-quantity-${number}" name="quantity${number}" type="text" inputmode="decimal" value="10" maxlength="24" required${disabled}>`)}
+        ${label(`stock-purchase-price-${number}`, fields.purchasePrice, `<input id="stock-purchase-price-${number}" name="purchasePrice${number}" type="text" inputmode="decimal" value="20" maxlength="24" required${disabled}>`)}
+        ${label(`stock-purchase-fee-${number}`, fields.purchaseFee, `<input id="stock-purchase-fee-${number}" name="purchaseFee${number}" type="text" inputmode="decimal" value="0" maxlength="24" required${disabled}>`)}
+      </fieldset>`;
+    }).join('')}</div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'pension-calculator') return attachCopy(`<form id="tool-form" class="pension-calculator" novalidate>
+    <div class="calculator-grid">
+      ${label('pension-salary', fields.finalSalary, '<input id="pension-salary" name="finalSalary" type="text" inputmode="decimal" value="50000" maxlength="24" required>')}
+      ${label('pension-service-years', fields.yearsOfService, '<input id="pension-service-years" name="yearsOfService" type="text" inputmode="decimal" value="30" maxlength="12" required>')}
+      ${label('pension-accrual', fields.accrualPercent, '<input id="pension-accrual" name="accrualPercent" type="text" inputmode="decimal" value="2" maxlength="12" required>')}
+      ${label('pension-commutation', fields.commutationPercent, '<input id="pension-commutation" name="commutationPercent" type="text" inputmode="decimal" value="0" maxlength="12" required>')}
+      ${label('pension-factor', fields.commutationFactor, '<input id="pension-factor" name="commutationFactor" type="text" inputmode="decimal" value="12" maxlength="12" required>')}
+      ${label('pension-currency', fields.currencyCode, '<input id="pension-currency" name="currencyCode" type="text" value="USD" maxlength="3" pattern="[A-Za-z]{3}" autocomplete="off" required>')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'repeating-decimal-to-fraction') return attachCopy(`<form id="tool-form" class="repeating-decimal-to-fraction" novalidate>
