@@ -16,12 +16,11 @@ Browser-first collection of fast, private, static tools for everyday work.
 
 The additional Growth600 tools are published on a separate static Cloudflare Pages site at
 [tools.usefulverse.com](https://tools.usefulverse.com/), so they do not replace or
-change the 277-tool catalog above. Production currently has 164 additional tools in
-the same 36 locales. The prepared local release contains 170 tools (6,156 canonical
-sitemap URLs, including 36 localized hub pages); it is pending direct upload and
-public sitemap verification. The expected combined total after that upload is 447
-tool implementations and 16,416 sitemap URLs (10,260 on UsefulVerse and 6,156 on
-the tools hub). The staged checklist and implementation record are in
+change the 277-tool catalog above. Production currently has 170 additional tools in
+the same 36 locales (6,156 canonical sitemap URLs, including 36 localized hub pages).
+The two sites contain 447 tool implementations and 16,416 sitemap URLs combined
+(10,260 on UsefulVerse and 6,156 on the tools hub). The latest six tools were uploaded
+directly to Cloudflare Pages without a GitHub Actions run. The staged checklist and implementation record are in
 [docs/growth600/PLAN-600.md](docs/growth600/PLAN-600.md) and
 [docs/growth600/PROGRESS.md](docs/growth600/PROGRESS.md).
 

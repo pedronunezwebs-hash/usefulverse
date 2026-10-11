@@ -1,6 +1,16 @@
 # UsefulVerse · progreso del plan 277 → 600
 
-Última verificación: 2026-10-11. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
+Última verificación: 2026-10-12. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
+
+## Estado público actual · 2026-10-12
+
+- **Producción:** 170 herramientas Growth600 en 36 locales, **6.156 URLs** en `https://tools.usefulverse.com/sitemap.xml`; catálogo principal protegido de 277 herramientas y 10.260 URLs. Total combinado: **447 herramientas y 16.416 URLs**. La presencia en sitemap no demuestra indexación.
+- El 12-oct se desplegaron directamente a Cloudflare Pages Stock Profit Calculator, Pension Calculator, Customer Lifetime Value Calculator, Polar Graphing Calculator, Boolean Algebra Calculator y Week Number Calculator, además de las correcciones incluidas en el checkout. Se usó `wrangler pages deploy` sobre el proyecto `usefulverse-tools`, rama de producción `main`; no hubo push a `main`, workflow de GitHub Actions ni consumo de sus minutos.
+- Antes de publicar: `npm test` **1.956/1.956**; `npm run locale:release-check` aprobado; `npm run check` del sitio principal conservó **10.260 URLs**; build Growth600 **6.156 URLs / 6.400 archivos**, sin archivos superiores al límite individual de Pages; `git diff --check` limpio.
+- Tras publicar: sitemap HTTP 200 con **6.156 URLs únicas** y 36 entradas para cada herramienta nueva; las rutas EN/ES/AR de las seis devuelven HTTP 200 con canonical propio. La rama fuente respaldada es `codex/growth600-stock-profit-20261011`, commit `d1f50b1` más la actualización documental de este cierre. No se volvió a enviar el sitemap en paneles de buscadores y no se afirma rastreo/indexación.
+- README URL inventory generado desde los sitemaps de build con **10.260 URLs principales y 6.156 del hub**. No se midió PageSpeed/Lighthouse.
+
+Las notas históricas que siguen describen su fecha correspondiente y no sustituyen este estado actual.
 
 ## Estado público actual · 2026-10-11
 
