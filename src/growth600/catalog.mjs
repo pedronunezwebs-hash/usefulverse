@@ -1092,6 +1092,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/openapi-editor/logic.mjs',
   },
   {
+    id: 'graphql-formatter',
+    category: 'developer-tools',
+    type: 'formatter',
+    primaryIntent: 'graphql formatter',
+    secondaryIntents: ['graphql validator online'],
+    functions: ['parse and format GraphQL operations, fragments, and schema definition language locally', 'show definition names and useful syntax-error locations', 'import and format a document by pasting text without executing a query'],
+    acceptance: 'A compact query formats deterministically; valid SDL is parsed; malformed syntax reports a line and column; inputs above the byte/token bounds fail promptly; no query or schema is sent to a network endpoint.',
+    boundary: 'Syntax parsing and formatting only, not schema validation, query execution, introspection, endpoint testing, or security analysis. Parser is a small static asset fetched only when the user formats. Input stays in the page and is not stored or uploaded.',
+    relatedExistingIds: ['json-formatter', 'openapi-editor'],
+    logicModule: './tools/graphql-formatter/logic.mjs',
+  },
+  {
     id: 'font-pairing-tool',
     category: 'design-tools',
     type: 'utility',

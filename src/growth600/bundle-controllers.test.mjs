@@ -11,6 +11,9 @@ test('growth controllers bundle locally under budget without network or dynamic 
     if (id === 'openapi-editor') {
       assert.match(source, /import\(new URL\("\/assets\/vendor\/js-yaml-4\.3\.2\.mjs",location\.origin\)\.href\)/u, 'YAML parser may load lazily from the same-origin static asset');
       assert.equal((source.match(/\bimport\s*\(/gu) ?? []).length, 1, 'OpenAPI editor has exactly one lazy local import');
+    } else if (id === 'graphql-formatter') {
+      assert.match(source, /import\(new URL\("\/assets\/vendor\/graphql-formatter-16\.11\.0\.mjs",location\.origin\)\.href\)/u, 'GraphQL parser may load lazily from the same-origin static asset');
+      assert.equal((source.match(/\bimport\s*\(/gu) ?? []).length, 1, 'GraphQL formatter has exactly one lazy local import');
     } else {
       assert.doesNotMatch(source, /\bimport\s*\(/u, `${id} should not use a dynamic import`);
     }

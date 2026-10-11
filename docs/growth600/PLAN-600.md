@@ -3088,13 +3088,15 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 317 · Graphql Formatter
 
-- [ ] **C/F/E/X/L/B/P/S completos — `graphql-formatter`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/graphql-formatter/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `graphql-formatter`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/graphql-formatter/` + 35 rutas localizadas. Sitemap verificado el 12-oct-2026; evidencia en `docs/growth600/PROGRESS.md`.
 - **Demanda:** `graphql formatter` — 320 búsquedas/mes US/en, KD 0; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Parser de queries y SDL, formato y error con ubicación; no ejecutar queries ni enviar datos a un GraphQL remoto.
-- **Prueba de aceptación específica:** Querymalformada no ejecuta
+- **Prueba de aceptación específica:** query compacta y SDL formatean determinísticamente; sintaxis incorrecta informa línea/columna; topes de bytes y tokens se aplican.
 - **Frontera con otras herramientas:** json-formatter: lenguaje GraphQL distinto. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** H: dependencia/cómputo bajo demanda; verificar licencia y compatibilidad. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** GraphQL.js 16.11.0 (MIT), parse/printer empaquetado en módulo ESM de 40.482 bytes, carga solo tras pulsar Formatear; controlador 2.128 bytes. Máximo 512 KiB y 50.000 tokens. No ejecuta operaciones ni valida contra endpoint/schema; documento local y no persistido.
+- [x] **C/F/E/X/L/B/P/S:** 36 copias estáticas traducidas de inglés con Google Translate, no revisión nativa; metadatos ≤60/160 caracteres y FAQs específicas. Focal 355/355, suite global 1.986/1.986, locale release gate aprobado. Build 6.372 páginas (176 × 36 + 36 portadas), 6.626 archivos, 186.240.869 bytes; sitemap 6.372 URL únicas con 36 rutas nuevas. EN/ES/AR/JA y zh-TW con formulario/canonical.
+- [x] **Publicado directo en Cloudflare Pages:** URL canónica y las 35 rutas localizadas. Sitemap público HTTP 200 con 6.372 URL únicas; páginas, controlador y parser HTTP 200. Sin GitHub Actions. Presencia en sitemap no demuestra indexación.
 - **Consultas secundarias del mismo propietario:**
   - `graphql validator online` — 10/mes US/en; KD 16.
   - `graphql formatter free online`; `graphql formatter with example`; `graphql formatter no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

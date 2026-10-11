@@ -136,6 +136,7 @@ export function renderGrowthForm(toolId, copy) {
     'har-viewer': ['file', 'paste', 'pasteHint', 'privacyWarning', 'search', 'method', 'statusFilter', 'all', 'errorsOnly', 'successOnly', 'totalRequests', 'failedRequests', 'transferred', 'totalTime', 'slowest', 'request', 'response', 'duration', 'size', 'waterfall', 'results', 'shown', 'of', 'noMatches', 'methodLabel', 'statusLabel', 'urlLabel', 'durationLabel', 'sizeLabel', 'timingNote', 'unknownDate', 'invalid', 'tooMany'],
     'robots-txt-tester': ['robotsText', 'robotsHint', 'userAgent', 'userAgentHint', 'urls', 'urlsHint', 'scopeNote', 'agentGroup', 'noSpecificGroup', 'ruleCount', 'diagnostics', 'ignored', 'malformed', 'allowed', 'blocked', 'winningRule', 'defaultRule'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
+    'graphql-formatter': ['document', 'accuracyNote', 'output', 'definitionCount', 'graphqlLicense'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
     'polygon-calculator': ['sides', 'dimensionMode', 'sideLength', 'apothem', 'circumradius', 'dimension', 'unit', 'accuracyNote', 'resultSummary', 'perimeter', 'area', 'computedSide', 'computedApothem', 'computedCircumradius', 'interiorAngle', 'centralAngle', 'formulaNote'],
@@ -319,6 +320,7 @@ export function renderGrowthForm(toolId, copy) {
     'har-viewer': ['analyze', 'example', 'reset', 'showMore', 'result'],
     'robots-txt-tester': ['test', 'example', 'reset', 'result'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
+    'graphql-formatter': ['format', 'example', 'copy', 'clear'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
     'polygon-calculator': ['calculate', 'example', 'reset', 'copy', 'result'],
@@ -413,6 +415,15 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions"><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(actions.example)}</button><button type="button" data-action="format" class="button button--secondary">${escapeGrowthHtml(actions.format)}</button><button type="submit" data-action="validate" class="button button--primary">${escapeGrowthHtml(actions.validate)}</button><button type="button" data-action="download" class="button button--secondary">${escapeGrowthHtml(actions.download)}</button><button type="button" data-action="copy-report" class="button button--secondary">${escapeGrowthHtml(actions.copyReport)}</button></div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-openapi-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.previewTitle)}</h2><p data-openapi-summary></p><ol data-openapi-operations></ol><h3>${escapeGrowthHtml(fields.issues)}</h3><ul data-openapi-issues></ul></section>
+  </form>`, copy);
+
+  if (toolId === 'graphql-formatter') return attachCopy(`<form id="tool-form" class="graphql-formatter" novalidate>
+    ${label('graphql-document', fields.document, '<textarea id="graphql-document" name="document" rows="16" maxlength="524288" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-describedby="graphql-accuracy" required></textarea>')}
+    <p id="graphql-accuracy" class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <p class="hint"><a href="/assets/licenses/graphql-js-LICENSE.txt" target="_blank" rel="noopener noreferrer">${escapeGrowthHtml(fields.graphqlLicense)}</a></p>
+    <div class="actions"><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(actions.example)}</button><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.format)}</button><button type="button" data-action="copy" class="button button--secondary">${escapeGrowthHtml(actions.copy)}</button><button type="button" data-action="clear" class="button button--secondary">${escapeGrowthHtml(actions.clear)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-graphql-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.output)}</h2><p data-graphql-definitions></p><pre data-graphql-output></pre></section>
   </form>`, copy);
 
   if (toolId === 'font-pairing-tool') {

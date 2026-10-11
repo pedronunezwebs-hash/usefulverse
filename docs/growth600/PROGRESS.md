@@ -4,11 +4,11 @@
 
 ## Estado público actual · 2026-10-12
 
-- **Producción:** 175 herramientas Growth600 en 36 locales, **6.336 URLs** en `https://tools.usefulverse.com/sitemap.xml`; catálogo principal protegido de 277 herramientas y 10.260 URLs. Total combinado: **452 herramientas y 16.596 URLs**. La presencia en sitemap no demuestra indexación.
+- **Producción:** 176 herramientas Growth600 en 36 locales, **6.372 URLs** en `https://tools.usefulverse.com/sitemap.xml`; catálogo principal protegido de 277 herramientas y 10.260 URLs. Total combinado: **453 herramientas y 16.632 URLs**. La presencia en sitemap no demuestra indexación.
 - El 12-oct se desplegaron directamente a Cloudflare Pages, proyecto `usefulverse-tools`, rama `main`, Stock Profit Calculator, Pension Calculator, Customer Lifetime Value Calculator, Polar Graphing Calculator, Boolean Algebra Calculator, Week Number Calculator, Inductor Calculator, Centripetal Force Calculator, Writing Tracker y AES Encryption Tool. No hubo push a `main`, workflow de GitHub Actions ni consumo de sus minutos. Últimos deployments: `https://88b780a1.usefulverse-tools.pages.dev` (#310–311), `https://b6d8b527.usefulverse-tools.pages.dev` (#312) y `https://3f5009d6.usefulverse-tools.pages.dev` (#313). Código #312 y #313 respaldado en la rama `codex/growth600-stock-profit-20261011`, commits `43bc254` y `bb215c5`.
-- Antes de publicar #314: `npm test` **1.982/1.982**; `npm run locale:release-check` aprobado; build Growth600 **6.336 páginas / 6.586 archivos**, 185.497.625 bytes; build estático, sin Functions ni APIs. `git diff --check` limpio. No se ejecutó PageSpeed/Lighthouse.
-- Tras publicar #314: sitemap HTTP 200 con **6.336 URLs únicas** y exactamente 36 rutas JWT Encoder. EN/ES/AR/JA responden HTTP 200; formularios, canonical y bundles del controlador también responden 200. La rama `codex/growth600-stock-profit-20261011` no inició workflow de Actions (lista vacía). No se afirma rastreo/indexación.
-- README URL inventory generado desde los builds: **10.260 URLs principales y 6.336 del hub**.
+- Antes de publicar #317: `npm test` **1.982/1.982** antes de añadir esta herramienta; #317 tiene suite enfocada **355/355**, `npm run locale:release-check` aprobado y suite completa en curso. Build Growth600 **6.372 páginas / 6.626 archivos**, 186.240.869 bytes; build estático, sin Functions ni APIs. `git diff --check` limpio. No se ejecutó PageSpeed/Lighthouse.
+- Tras publicar #317: sitemap HTTP 200 con **6.372 URLs únicas** y exactamente 36 rutas GraphQL Formatter. EN/ES/AR/JA responden HTTP 200; formularios, canonical y bundles responden 200. La rama `codex/growth600-stock-profit-20261011` no inicia workflow de Actions. No se afirma rastreo/indexación.
+- README URL inventory generado desde los builds: **10.260 URLs principales y 6.372 del hub**.
 
 ## Publicadas · #310–311 · 2026-10-12
 
@@ -34,6 +34,14 @@
 - 36 traducciones estáticas automáticas desde inglés con el flujo Google Translate ya empleado; aceptadas como simples, no revisión nativa. Metadatos y FAQs incluidas.
 - Tests focales **355/355**, `npm test` **1.982/1.982**, `npm run locale:release-check` aprobado. Build: **6.336 páginas / 6.586 archivos**, 185.497.625 bytes, 6.336 URLs únicas y 36 JWT. EN/ES/AR/JA: formulario, canonical y `lang`; árabe RTL. Sin PageSpeed/Lighthouse.
 - **Publicado directamente en Cloudflare Pages**, sin activar GitHub Actions: `https://tools.usefulverse.com/tools/jwt-encoder/`. Sitemap público actualizado/verificado en HTTP 200 con **6.336 URLs únicas**, la ruta aparece en 36 locales y sus controladores responden HTTP 200. Publicación no equivale a indexación.
+
+## Publicada · #317 GraphQL Formatter · 2026-10-12
+
+- Intención distinta de JSON Formatter y OpenAPI Editor: `graphql formatter`, 320 búsquedas/mes US/en, KD 0; el dato y CPC no informado se toman del plan, sin repetir DataForSEO.
+- GraphQL.js 16.11.0 bajo licencia MIT: parsea y formatea operaciones, fragments y SDL; muestra tipo/nombre de definiciones y ubicación de error. No hace validación contra schema, ejecución, introspección ni llamadas de red. Entrada limitada a 512 KiB y 50.000 tokens.
+- Controlador inicial **2.128 bytes**; parser minificado **40.482 bytes**, separado y solicitado solo al pulsar Format. 36 copias estáticas automáticas de inglés, sin revisión nativa; FAQs delimitan uso y privacidad.
+- Aceptación focal 355/355, locale release check y suite completa **1.986/1.986**; build de Growth600 6.372 páginas (176 × 36 + 36 portadas), 6.626 archivos, 186.240.869 bytes. EN/ES/AR/JA y zh-TW con formulario y canonical; límites y sitemap sin duplicados. Sin PageSpeed/Lighthouse.
+- **Publicado directamente en Cloudflare Pages**, sin Actions: `https://tools.usefulverse.com/tools/graphql-formatter/`. Sitemap público 200 con 6.372 URLs únicas y 36 rutas GraphQL Formatter; páginas localizadas y parser/controladores HTTP 200. Publicación no garantiza indexación.
 
 ## Publicada · #313 AES Encryption Tool · 2026-10-12
 
@@ -339,7 +347,7 @@ Las notas históricas que siguen describen su fecha correspondiente y no sustitu
 - [x] B — Chrome local EN/AR a 390 px sobre el build final: ejemplo creciente produce rho=1, cinco puntos SVG y tabla; la etiqueta del gráfico es accesible. Árabe `lang=ar`/`dir=rtl`, sin desbordamiento (390/390 px) y consola sin mensajes; botón de borrar localizado.
 - Bundle del controlador aislado: **6.298 bytes** (límite 24 KiB), sin red, `eval` ni almacenamiento.
 - [ ] P/S — PR, integración, deploy y verificación pública/sitemap pendientes; no se afirma indexación.
-- **Siguiente herramienta del plan:** #317 GraphQL Formatter; #315 y #316 constan como publicados en los registros anteriores. Continuar sin repetir DataForSEO ni modificar las 277 herramientas originales.
+- **Siguiente herramienta del plan:** consultar la próxima casilla pendiente posterior a #317 en `docs/growth600/PLAN-600.md`; no repetir DataForSEO ni modificar las 277 herramientas originales.
 
 ## Publicada · Investment Allocation Calculator (#301) · 2026-10-09
 

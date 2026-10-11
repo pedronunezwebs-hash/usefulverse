@@ -1,0 +1,11 @@
+.graphql-formatter textarea,
+.graphql-formatter pre {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  tab-size: 2;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.graphql-formatter textarea { min-height: 15rem; }
+.graphql-formatter pre { max-height: 32rem; padding: 1rem; border: 1px solid var(--border, #d7dce4); border-radius: .75rem; white-space: pre; }

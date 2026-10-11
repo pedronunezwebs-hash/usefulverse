@@ -10552,7 +10552,7 @@ These are the canonical URLs for the additional tools and their localized pages.
 
 <!-- BEGIN GENERATED GROWTH600 URL INVENTORY -->
 
-Generated from `dist-growth600/sitemap.xml`: **6,336 canonical URLs**.
+Generated from `dist-growth600/sitemap.xml`: **6,372 canonical URLs**.
 
 ```text
 https://tools.usefulverse.com/
@@ -10647,6 +10647,7 @@ https://tools.usefulverse.com/tools/hashi-puzzle/
 https://tools.usefulverse.com/tools/chess-opening-trainer/
 https://tools.usefulverse.com/tools/decibel-calculator/
 https://tools.usefulverse.com/tools/openapi-editor/
+https://tools.usefulverse.com/tools/graphql-formatter/
 https://tools.usefulverse.com/tools/font-pairing-tool/
 https://tools.usefulverse.com/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/tools/polygon-calculator/
@@ -10823,6 +10824,7 @@ https://tools.usefulverse.com/es/tools/hashi-puzzle/
 https://tools.usefulverse.com/es/tools/chess-opening-trainer/
 https://tools.usefulverse.com/es/tools/decibel-calculator/
 https://tools.usefulverse.com/es/tools/openapi-editor/
+https://tools.usefulverse.com/es/tools/graphql-formatter/
 https://tools.usefulverse.com/es/tools/font-pairing-tool/
 https://tools.usefulverse.com/es/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/es/tools/polygon-calculator/
@@ -10999,6 +11001,7 @@ https://tools.usefulverse.com/fr/tools/hashi-puzzle/
 https://tools.usefulverse.com/fr/tools/chess-opening-trainer/
 https://tools.usefulverse.com/fr/tools/decibel-calculator/
 https://tools.usefulverse.com/fr/tools/openapi-editor/
+https://tools.usefulverse.com/fr/tools/graphql-formatter/
 https://tools.usefulverse.com/fr/tools/font-pairing-tool/
 https://tools.usefulverse.com/fr/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/fr/tools/polygon-calculator/
@@ -11175,6 +11178,7 @@ https://tools.usefulverse.com/pt-br/tools/hashi-puzzle/
 https://tools.usefulverse.com/pt-br/tools/chess-opening-trainer/
 https://tools.usefulverse.com/pt-br/tools/decibel-calculator/
 https://tools.usefulverse.com/pt-br/tools/openapi-editor/
+https://tools.usefulverse.com/pt-br/tools/graphql-formatter/
 https://tools.usefulverse.com/pt-br/tools/font-pairing-tool/
 https://tools.usefulverse.com/pt-br/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/pt-br/tools/polygon-calculator/
@@ -11351,6 +11355,7 @@ https://tools.usefulverse.com/de/tools/hashi-puzzle/
 https://tools.usefulverse.com/de/tools/chess-opening-trainer/
 https://tools.usefulverse.com/de/tools/decibel-calculator/
 https://tools.usefulverse.com/de/tools/openapi-editor/
+https://tools.usefulverse.com/de/tools/graphql-formatter/
 https://tools.usefulverse.com/de/tools/font-pairing-tool/
 https://tools.usefulverse.com/de/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/de/tools/polygon-calculator/
@@ -11527,6 +11532,7 @@ https://tools.usefulverse.com/ja/tools/hashi-puzzle/
 https://tools.usefulverse.com/ja/tools/chess-opening-trainer/
 https://tools.usefulverse.com/ja/tools/decibel-calculator/
 https://tools.usefulverse.com/ja/tools/openapi-editor/
+https://tools.usefulverse.com/ja/tools/graphql-formatter/
 https://tools.usefulverse.com/ja/tools/font-pairing-tool/
 https://tools.usefulverse.com/ja/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/ja/tools/polygon-calculator/
@@ -11703,6 +11709,7 @@ https://tools.usefulverse.com/ko/tools/hashi-puzzle/
 https://tools.usefulverse.com/ko/tools/chess-opening-trainer/
 https://tools.usefulverse.com/ko/tools/decibel-calculator/
 https://tools.usefulverse.com/ko/tools/openapi-editor/
+https://tools.usefulverse.com/ko/tools/graphql-formatter/
 https://tools.usefulverse.com/ko/tools/font-pairing-tool/
 https://tools.usefulverse.com/ko/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/ko/tools/polygon-calculator/
@@ -11879,6 +11886,7 @@ https://tools.usefulverse.com/id/tools/hashi-puzzle/
 https://tools.usefulverse.com/id/tools/chess-opening-trainer/
 https://tools.usefulverse.com/id/tools/decibel-calculator/
 https://tools.usefulverse.com/id/tools/openapi-editor/
+https://tools.usefulverse.com/id/tools/graphql-formatter/
 https://tools.usefulverse.com/id/tools/font-pairing-tool/
 https://tools.usefulverse.com/id/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/id/tools/polygon-calculator/
@@ -12055,6 +12063,7 @@ https://tools.usefulverse.com/hi/tools/hashi-puzzle/
 https://tools.usefulverse.com/hi/tools/chess-opening-trainer/
 https://tools.usefulverse.com/hi/tools/decibel-calculator/
 https://tools.usefulverse.com/hi/tools/openapi-editor/
+https://tools.usefulverse.com/hi/tools/graphql-formatter/
 https://tools.usefulverse.com/hi/tools/font-pairing-tool/
 https://tools.usefulverse.com/hi/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/hi/tools/polygon-calculator/
@@ -12231,6 +12240,7 @@ https://tools.usefulverse.com/ar/tools/hashi-puzzle/
 https://tools.usefulverse.com/ar/tools/chess-opening-trainer/
 https://tools.usefulverse.com/ar/tools/decibel-calculator/
 https://tools.usefulverse.com/ar/tools/openapi-editor/
+https://tools.usefulverse.com/ar/tools/graphql-formatter/
 https://tools.usefulverse.com/ar/tools/font-pairing-tool/
 https://tools.usefulverse.com/ar/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/ar/tools/polygon-calculator/
@@ -12407,6 +12417,7 @@ https://tools.usefulverse.com/zh-cn/tools/hashi-puzzle/
 https://tools.usefulverse.com/zh-cn/tools/chess-opening-trainer/
 https://tools.usefulverse.com/zh-cn/tools/decibel-calculator/
 https://tools.usefulverse.com/zh-cn/tools/openapi-editor/
+https://tools.usefulverse.com/zh-cn/tools/graphql-formatter/
 https://tools.usefulverse.com/zh-cn/tools/font-pairing-tool/
 https://tools.usefulverse.com/zh-cn/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/zh-cn/tools/polygon-calculator/
@@ -12583,6 +12594,7 @@ https://tools.usefulverse.com/bn/tools/hashi-puzzle/
 https://tools.usefulverse.com/bn/tools/chess-opening-trainer/
 https://tools.usefulverse.com/bn/tools/decibel-calculator/
 https://tools.usefulverse.com/bn/tools/openapi-editor/
+https://tools.usefulverse.com/bn/tools/graphql-formatter/
 https://tools.usefulverse.com/bn/tools/font-pairing-tool/
 https://tools.usefulverse.com/bn/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/bn/tools/polygon-calculator/
@@ -12759,6 +12771,7 @@ https://tools.usefulverse.com/ru/tools/hashi-puzzle/
 https://tools.usefulverse.com/ru/tools/chess-opening-trainer/
 https://tools.usefulverse.com/ru/tools/decibel-calculator/
 https://tools.usefulverse.com/ru/tools/openapi-editor/
+https://tools.usefulverse.com/ru/tools/graphql-formatter/
 https://tools.usefulverse.com/ru/tools/font-pairing-tool/
 https://tools.usefulverse.com/ru/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/ru/tools/polygon-calculator/
@@ -12935,6 +12948,7 @@ https://tools.usefulverse.com/ur/tools/hashi-puzzle/
 https://tools.usefulverse.com/ur/tools/chess-opening-trainer/
 https://tools.usefulverse.com/ur/tools/decibel-calculator/
 https://tools.usefulverse.com/ur/tools/openapi-editor/
+https://tools.usefulverse.com/ur/tools/graphql-formatter/
 https://tools.usefulverse.com/ur/tools/font-pairing-tool/
 https://tools.usefulverse.com/ur/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/ur/tools/polygon-calculator/
@@ -13111,6 +13125,7 @@ https://tools.usefulverse.com/tr/tools/hashi-puzzle/
 https://tools.usefulverse.com/tr/tools/chess-opening-trainer/
 https://tools.usefulverse.com/tr/tools/decibel-calculator/
 https://tools.usefulverse.com/tr/tools/openapi-editor/
+https://tools.usefulverse.com/tr/tools/graphql-formatter/
 https://tools.usefulverse.com/tr/tools/font-pairing-tool/
 https://tools.usefulverse.com/tr/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/tr/tools/polygon-calculator/
@@ -13287,6 +13302,7 @@ https://tools.usefulverse.com/vi/tools/hashi-puzzle/
 https://tools.usefulverse.com/vi/tools/chess-opening-trainer/
 https://tools.usefulverse.com/vi/tools/decibel-calculator/
 https://tools.usefulverse.com/vi/tools/openapi-editor/
+https://tools.usefulverse.com/vi/tools/graphql-formatter/
 https://tools.usefulverse.com/vi/tools/font-pairing-tool/
 https://tools.usefulverse.com/vi/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/vi/tools/polygon-calculator/
@@ -13463,6 +13479,7 @@ https://tools.usefulverse.com/it/tools/hashi-puzzle/
 https://tools.usefulverse.com/it/tools/chess-opening-trainer/
 https://tools.usefulverse.com/it/tools/decibel-calculator/
 https://tools.usefulverse.com/it/tools/openapi-editor/
+https://tools.usefulverse.com/it/tools/graphql-formatter/
 https://tools.usefulverse.com/it/tools/font-pairing-tool/
 https://tools.usefulverse.com/it/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/it/tools/polygon-calculator/
@@ -13639,6 +13656,7 @@ https://tools.usefulverse.com/zh-tw/tools/hashi-puzzle/
 https://tools.usefulverse.com/zh-tw/tools/chess-opening-trainer/
 https://tools.usefulverse.com/zh-tw/tools/decibel-calculator/
 https://tools.usefulverse.com/zh-tw/tools/openapi-editor/
+https://tools.usefulverse.com/zh-tw/tools/graphql-formatter/
 https://tools.usefulverse.com/zh-tw/tools/font-pairing-tool/
 https://tools.usefulverse.com/zh-tw/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/zh-tw/tools/polygon-calculator/
@@ -13815,6 +13833,7 @@ https://tools.usefulverse.com/bg/tools/hashi-puzzle/
 https://tools.usefulverse.com/bg/tools/chess-opening-trainer/
 https://tools.usefulverse.com/bg/tools/decibel-calculator/
 https://tools.usefulverse.com/bg/tools/openapi-editor/
+https://tools.usefulverse.com/bg/tools/graphql-formatter/
 https://tools.usefulverse.com/bg/tools/font-pairing-tool/
 https://tools.usefulverse.com/bg/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/bg/tools/polygon-calculator/
@@ -13991,6 +14010,7 @@ https://tools.usefulverse.com/ca/tools/hashi-puzzle/
 https://tools.usefulverse.com/ca/tools/chess-opening-trainer/
 https://tools.usefulverse.com/ca/tools/decibel-calculator/
 https://tools.usefulverse.com/ca/tools/openapi-editor/
+https://tools.usefulverse.com/ca/tools/graphql-formatter/
 https://tools.usefulverse.com/ca/tools/font-pairing-tool/
 https://tools.usefulverse.com/ca/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/ca/tools/polygon-calculator/
@@ -14167,6 +14187,7 @@ https://tools.usefulverse.com/nl/tools/hashi-puzzle/
 https://tools.usefulverse.com/nl/tools/chess-opening-trainer/
 https://tools.usefulverse.com/nl/tools/decibel-calculator/
 https://tools.usefulverse.com/nl/tools/openapi-editor/
+https://tools.usefulverse.com/nl/tools/graphql-formatter/
 https://tools.usefulverse.com/nl/tools/font-pairing-tool/
 https://tools.usefulverse.com/nl/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/nl/tools/polygon-calculator/
@@ -14343,6 +14364,7 @@ https://tools.usefulverse.com/el/tools/hashi-puzzle/
 https://tools.usefulverse.com/el/tools/chess-opening-trainer/
 https://tools.usefulverse.com/el/tools/decibel-calculator/
 https://tools.usefulverse.com/el/tools/openapi-editor/
+https://tools.usefulverse.com/el/tools/graphql-formatter/
 https://tools.usefulverse.com/el/tools/font-pairing-tool/
 https://tools.usefulverse.com/el/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/el/tools/polygon-calculator/
@@ -14519,6 +14541,7 @@ https://tools.usefulverse.com/ms/tools/hashi-puzzle/
 https://tools.usefulverse.com/ms/tools/chess-opening-trainer/
 https://tools.usefulverse.com/ms/tools/decibel-calculator/
 https://tools.usefulverse.com/ms/tools/openapi-editor/
+https://tools.usefulverse.com/ms/tools/graphql-formatter/
 https://tools.usefulverse.com/ms/tools/font-pairing-tool/
 https://tools.usefulverse.com/ms/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/ms/tools/polygon-calculator/
@@ -14695,6 +14718,7 @@ https://tools.usefulverse.com/pl/tools/hashi-puzzle/
 https://tools.usefulverse.com/pl/tools/chess-opening-trainer/
 https://tools.usefulverse.com/pl/tools/decibel-calculator/
 https://tools.usefulverse.com/pl/tools/openapi-editor/
+https://tools.usefulverse.com/pl/tools/graphql-formatter/
 https://tools.usefulverse.com/pl/tools/font-pairing-tool/
 https://tools.usefulverse.com/pl/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/pl/tools/polygon-calculator/
@@ -14871,6 +14895,7 @@ https://tools.usefulverse.com/sv/tools/hashi-puzzle/
 https://tools.usefulverse.com/sv/tools/chess-opening-trainer/
 https://tools.usefulverse.com/sv/tools/decibel-calculator/
 https://tools.usefulverse.com/sv/tools/openapi-editor/
+https://tools.usefulverse.com/sv/tools/graphql-formatter/
 https://tools.usefulverse.com/sv/tools/font-pairing-tool/
 https://tools.usefulverse.com/sv/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/sv/tools/polygon-calculator/
@@ -15047,6 +15072,7 @@ https://tools.usefulverse.com/th/tools/hashi-puzzle/
 https://tools.usefulverse.com/th/tools/chess-opening-trainer/
 https://tools.usefulverse.com/th/tools/decibel-calculator/
 https://tools.usefulverse.com/th/tools/openapi-editor/
+https://tools.usefulverse.com/th/tools/graphql-formatter/
 https://tools.usefulverse.com/th/tools/font-pairing-tool/
 https://tools.usefulverse.com/th/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/th/tools/polygon-calculator/
@@ -15223,6 +15249,7 @@ https://tools.usefulverse.com/uk/tools/hashi-puzzle/
 https://tools.usefulverse.com/uk/tools/chess-opening-trainer/
 https://tools.usefulverse.com/uk/tools/decibel-calculator/
 https://tools.usefulverse.com/uk/tools/openapi-editor/
+https://tools.usefulverse.com/uk/tools/graphql-formatter/
 https://tools.usefulverse.com/uk/tools/font-pairing-tool/
 https://tools.usefulverse.com/uk/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/uk/tools/polygon-calculator/
@@ -15399,6 +15426,7 @@ https://tools.usefulverse.com/sw/tools/hashi-puzzle/
 https://tools.usefulverse.com/sw/tools/chess-opening-trainer/
 https://tools.usefulverse.com/sw/tools/decibel-calculator/
 https://tools.usefulverse.com/sw/tools/openapi-editor/
+https://tools.usefulverse.com/sw/tools/graphql-formatter/
 https://tools.usefulverse.com/sw/tools/font-pairing-tool/
 https://tools.usefulverse.com/sw/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/sw/tools/polygon-calculator/
@@ -15575,6 +15603,7 @@ https://tools.usefulverse.com/mr/tools/hashi-puzzle/
 https://tools.usefulverse.com/mr/tools/chess-opening-trainer/
 https://tools.usefulverse.com/mr/tools/decibel-calculator/
 https://tools.usefulverse.com/mr/tools/openapi-editor/
+https://tools.usefulverse.com/mr/tools/graphql-formatter/
 https://tools.usefulverse.com/mr/tools/font-pairing-tool/
 https://tools.usefulverse.com/mr/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/mr/tools/polygon-calculator/
@@ -15751,6 +15780,7 @@ https://tools.usefulverse.com/te/tools/hashi-puzzle/
 https://tools.usefulverse.com/te/tools/chess-opening-trainer/
 https://tools.usefulverse.com/te/tools/decibel-calculator/
 https://tools.usefulverse.com/te/tools/openapi-editor/
+https://tools.usefulverse.com/te/tools/graphql-formatter/
 https://tools.usefulverse.com/te/tools/font-pairing-tool/
 https://tools.usefulverse.com/te/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/te/tools/polygon-calculator/
@@ -15927,6 +15957,7 @@ https://tools.usefulverse.com/ha/tools/hashi-puzzle/
 https://tools.usefulverse.com/ha/tools/chess-opening-trainer/
 https://tools.usefulverse.com/ha/tools/decibel-calculator/
 https://tools.usefulverse.com/ha/tools/openapi-editor/
+https://tools.usefulverse.com/ha/tools/graphql-formatter/
 https://tools.usefulverse.com/ha/tools/font-pairing-tool/
 https://tools.usefulverse.com/ha/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/ha/tools/polygon-calculator/
@@ -16103,6 +16134,7 @@ https://tools.usefulverse.com/tl/tools/hashi-puzzle/
 https://tools.usefulverse.com/tl/tools/chess-opening-trainer/
 https://tools.usefulverse.com/tl/tools/decibel-calculator/
 https://tools.usefulverse.com/tl/tools/openapi-editor/
+https://tools.usefulverse.com/tl/tools/graphql-formatter/
 https://tools.usefulverse.com/tl/tools/font-pairing-tool/
 https://tools.usefulverse.com/tl/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/tl/tools/polygon-calculator/
@@ -16279,6 +16311,7 @@ https://tools.usefulverse.com/ta/tools/hashi-puzzle/
 https://tools.usefulverse.com/ta/tools/chess-opening-trainer/
 https://tools.usefulverse.com/ta/tools/decibel-calculator/
 https://tools.usefulverse.com/ta/tools/openapi-editor/
+https://tools.usefulverse.com/ta/tools/graphql-formatter/
 https://tools.usefulverse.com/ta/tools/font-pairing-tool/
 https://tools.usefulverse.com/ta/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/ta/tools/polygon-calculator/
@@ -16455,6 +16488,7 @@ https://tools.usefulverse.com/fa/tools/hashi-puzzle/
 https://tools.usefulverse.com/fa/tools/chess-opening-trainer/
 https://tools.usefulverse.com/fa/tools/decibel-calculator/
 https://tools.usefulverse.com/fa/tools/openapi-editor/
+https://tools.usefulverse.com/fa/tools/graphql-formatter/
 https://tools.usefulverse.com/fa/tools/font-pairing-tool/
 https://tools.usefulverse.com/fa/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/fa/tools/polygon-calculator/
@@ -16631,6 +16665,7 @@ https://tools.usefulverse.com/am/tools/hashi-puzzle/
 https://tools.usefulverse.com/am/tools/chess-opening-trainer/
 https://tools.usefulverse.com/am/tools/decibel-calculator/
 https://tools.usefulverse.com/am/tools/openapi-editor/
+https://tools.usefulverse.com/am/tools/graphql-formatter/
 https://tools.usefulverse.com/am/tools/font-pairing-tool/
 https://tools.usefulverse.com/am/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/am/tools/polygon-calculator/
@@ -16807,6 +16842,7 @@ https://tools.usefulverse.com/gu/tools/hashi-puzzle/
 https://tools.usefulverse.com/gu/tools/chess-opening-trainer/
 https://tools.usefulverse.com/gu/tools/decibel-calculator/
 https://tools.usefulverse.com/gu/tools/openapi-editor/
+https://tools.usefulverse.com/gu/tools/graphql-formatter/
 https://tools.usefulverse.com/gu/tools/font-pairing-tool/
 https://tools.usefulverse.com/gu/tools/roth-vs-traditional-calculator/
 https://tools.usefulverse.com/gu/tools/polygon-calculator/

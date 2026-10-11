@@ -30,6 +30,7 @@ import centripetalForceCalculatorCopies from '../src/growth600/locales/centripet
 import writingTrackerCopies from '../src/growth600/locales/writing-tracker-final.mjs';
 import aesEncryptionToolCopies from '../src/growth600/locales/aes-encryption-tool-final.mjs';
 import jwtEncoderCopies from '../src/growth600/locales/jwt-encoder-final.mjs';
+import graphqlFormatterCopies from '../src/growth600/locales/graphql-formatter-final.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const localeDir = resolve(root, 'src/growth600/locales');
@@ -90,6 +91,8 @@ for (const { key } of localeEntries) {
   copyByLocale[key] = { ...copyByLocale[key], 'aes-encryption-tool': aesEncryptionToolCopies[key] };
   if (!jwtEncoderCopies[key]) throw new Error(`Growth600 release blocked: JWT Encoder copy is missing for ${key}.`);
   copyByLocale[key] = { ...copyByLocale[key], 'jwt-encoder': jwtEncoderCopies[key] };
+  if (!graphqlFormatterCopies[key]) throw new Error(`Growth600 release blocked: GraphQL Formatter copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'graphql-formatter': graphqlFormatterCopies[key] };
 }
 
 const outputDir = resolve(process.env.GROWTH600_DIST ?? resolve(root, 'dist-growth600'));
@@ -120,6 +123,7 @@ const toolStyles = {
   'rc-time-constant-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/rc-time-constant-calculator/rc-time-constant-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
   'reverse-mortgage-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/reverse-mortgage-calculator/reverse-mortgage-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
   'writing-tracker': minifyCss(await readFile(resolve(root, 'src/growth600/tools/writing-tracker/writing-tracker.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'graphql-formatter': minifyCss(await readFile(resolve(root, 'src/growth600/tools/graphql-formatter/graphql-formatter.css'), 'utf8'), { comments: 'exclamation' }).css,
 };
 const faviconSvg = await readFile(resolve(root, 'public/favicon.svg'), 'utf8');
 const modelRevision = '92a21aca5713f20faf9a87590cdfbdce2e34112c';
@@ -139,6 +143,13 @@ const yamlParserBuild = await build({
 if (Buffer.byteLength(yamlParserBuild.outputFiles[0].text) > 64 * 1024) throw new Error('The lazily loaded YAML parser exceeded its 64 KiB runtime asset budget.');
 extraAssets['vendor/js-yaml-4.3.2.mjs'] = yamlParserBuild.outputFiles[0].text;
 extraAssets['licenses/js-yaml-LICENSE.txt'] = await readFile(resolve(root, 'node_modules/js-yaml/LICENSE'));
+const graphqlParserBuild = await build({
+  entryPoints: [resolve(root, 'src/growth600/tools/graphql-formatter/logic.mjs')],
+  bundle: true, format: 'esm', platform: 'browser', target: ['es2020'], minify: true, write: false, logLevel: 'silent',
+});
+if (Buffer.byteLength(graphqlParserBuild.outputFiles[0].text) > 64 * 1024) throw new Error('The lazily loaded GraphQL parser exceeded its 64 KiB runtime asset budget.');
+extraAssets['vendor/graphql-formatter-16.11.0.mjs'] = graphqlParserBuild.outputFiles[0].text;
+extraAssets['licenses/graphql-js-LICENSE.txt'] = await readFile(resolve(root, 'node_modules/graphql/LICENSE'));
 extraAssets['licenses/upscaler/THIRD-PARTY-NOTICES.md'] = await readFile(resolve(root, 'public/growth600-models/THIRD-PARTY-NOTICES.md'));
 extraAssets['licenses/upscaler/LICENSE-APACHE-2.0.txt'] = await readFile(resolve(root, 'public/growth600-models/LICENSE-APACHE-2.0.txt'));
 extraAssets['licenses/upscaler/LICENSE-MIT-ONNX-RUNTIME.txt'] = await readFile(resolve(root, 'public/growth600-models/LICENSE-MIT-ONNX-RUNTIME.txt'));
