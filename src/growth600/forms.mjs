@@ -83,6 +83,7 @@ export function renderGrowthForm(toolId, copy) {
     'force-calculator': ['mode', 'solveForce', 'solveMass', 'solveAcceleration', 'netMode', 'forceUnit', 'massUnit', 'accelerationUnit', 'force', 'mass', 'acceleration', 'forces', 'forcesHint', 'netMass', 'accuracyNote'],
     'friction-calculator': ['mode', 'normalForce', 'mass', 'massUnit', 'angle', 'gravity', 'staticCoefficient', 'kineticCoefficient', 'appliedForce', 'forceUnit', 'motionState', 'atRest', 'movingUp', 'movingDown', 'positiveSurfaceDirection', 'accuracyNote'],
     'thermal-expansion-calculator': ['mode', 'linearMode', 'areaMode', 'volumeMode', 'initialDimension', 'lengthUnit', 'areaUnit', 'volumeUnit', 'coefficient', 'coefficientTemperatureUnit', 'deltaTemperature', 'temperatureUnit', 'accuracyNote'],
+    'specific-heat-calculator': ['mode', 'singleMode', 'mixingMode', 'solveFor', 'solveEnergy', 'solveMass', 'solveSpecificHeat', 'solveTemperatureChange', 'mass', 'mass1', 'mass2', 'massUnit', 'kilograms', 'grams', 'pounds', 'ounces', 'specificHeat', 'specificHeat1', 'specificHeat2', 'specificHeatUnit', 'joulesPerKilogram', 'kilojoulesPerKilogram', 'joulesPerGram', 'caloriesPerGram', 'btuPerPound', 'temperatureChange', 'temperature1', 'temperature2', 'temperatureUnit', 'celsius', 'fahrenheit', 'heatEnergy', 'heatLoss', 'energyUnit', 'joules', 'kilojoules', 'calories', 'kilocalories', 'btu', 'accuracyNote', 'mixingNote', 'outputUnitsNote', 'formulaNote'],
     'horsepower-calculator': ['mode', 'solvePower', 'solveTorque', 'solveRpm', 'torque', 'torqueUnit', 'rpm', 'power', 'powerUnit', 'accuracyNote'],
     'rtf-converter': ['file', 'accuracyNote', 'limitNote', 'output'],
     'csv-to-pdf': ['file', 'separator', 'encoding', 'hasHeader', 'pageSize', 'orientation', 'margin', 'accuracyNote', 'limitNote', 'resultCount', 'tableLabel'],
@@ -251,6 +252,7 @@ export function renderGrowthForm(toolId, copy) {
     'force-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'friction-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'normalMode', 'inclineMode', 'newtons', 'kilonewtons', 'poundsForce', 'kilograms', 'pounds'],
     'thermal-expansion-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'millimeters', 'inches', 'feet', 'squareMeters', 'squareCentimeters', 'squareFeet', 'squareInches', 'cubicMeters', 'cubicCentimeters', 'liters', 'cubicFeet', 'cubicInches'],
+    'specific-heat-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'horsepower-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'rtf-converter': ['convert', 'reset', 'copy', 'download', 'print', 'result'],
     'csv-to-pdf': ['preview', 'reset', 'example', 'print', 'result'],
@@ -2354,6 +2356,36 @@ export function renderGrowthForm(toolId, copy) {
     ${label('thermal-delta-temperature', fields.deltaTemperature, '<input id="thermal-delta-temperature" name="deltaTemperature" type="number" min="-10000" max="10000" step="any" inputmode="decimal" value="50" required>')}
     ${label('thermal-temperature-unit', fields.temperatureUnit, `<select id="thermal-temperature-unit" name="temperatureUnit"><option value="C">${escapeGrowthHtml(fields.celsius)}</option><option value="F">${escapeGrowthHtml(fields.fahrenheit)}</option></select>`)}
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'specific-heat-calculator') return attachCopy(`<form id="tool-form" class="specific-heat-calculator" novalidate>
+    ${label('specific-heat-mode', fields.mode, `<select id="specific-heat-mode" name="mode"><option value="single">${escapeGrowthHtml(fields.singleMode)}</option><option value="mixing">${escapeGrowthHtml(fields.mixingMode)}</option></select>`)}
+    <div class="form-grid">
+      ${label('specific-heat-mass-unit', fields.massUnit, `<select id="specific-heat-mass-unit" name="massUnit"><option value="kg">${escapeGrowthHtml(fields.kilograms)}</option><option value="g">${escapeGrowthHtml(fields.grams)}</option><option value="lb">${escapeGrowthHtml(fields.pounds)}</option><option value="oz">${escapeGrowthHtml(fields.ounces)}</option></select>`)}
+      ${label('specific-heat-c-unit', fields.specificHeatUnit, `<select id="specific-heat-c-unit" name="specificHeatUnit"><option value="J/kg°C">${escapeGrowthHtml(fields.joulesPerKilogram)}</option><option value="kJ/kg°C">${escapeGrowthHtml(fields.kilojoulesPerKilogram)}</option><option value="J/g°C">${escapeGrowthHtml(fields.joulesPerGram)}</option><option value="cal/g°C">${escapeGrowthHtml(fields.caloriesPerGram)}</option><option value="BTU/lb°F">${escapeGrowthHtml(fields.btuPerPound)}</option></select>`)}
+      ${label('specific-heat-temperature-unit', fields.temperatureUnit, `<select id="specific-heat-temperature-unit" name="temperatureUnit"><option value="°C">${escapeGrowthHtml(fields.celsius)}</option><option value="°F">${escapeGrowthHtml(fields.fahrenheit)}</option></select>`)}
+      ${label('specific-heat-energy-unit', fields.energyUnit, `<select id="specific-heat-energy-unit" name="energyUnit"><option value="J">${escapeGrowthHtml(fields.joules)}</option><option value="kJ">${escapeGrowthHtml(fields.kilojoules)}</option><option value="cal">${escapeGrowthHtml(fields.calories)}</option><option value="kcal">${escapeGrowthHtml(fields.kilocalories)}</option><option value="BTU">${escapeGrowthHtml(fields.btu)}</option></select>`)}
+    </div>
+    <fieldset data-specific-single><legend>${escapeGrowthHtml(fields.singleMode)}</legend>
+      ${label('specific-heat-solve', fields.solveFor, `<select id="specific-heat-solve" name="solveFor"><option value="energy">${escapeGrowthHtml(fields.solveEnergy)}</option><option value="mass">${escapeGrowthHtml(fields.solveMass)}</option><option value="specificHeat">${escapeGrowthHtml(fields.solveSpecificHeat)}</option><option value="temperatureChange">${escapeGrowthHtml(fields.solveTemperatureChange)}</option></select>`)}
+      <div data-specific-field="mass">${label('specific-heat-mass', fields.mass, '<input id="specific-heat-mass" name="mass" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="1">')}</div>
+      <div data-specific-field="specificHeat">${label('specific-heat-capacity', fields.specificHeat, '<input id="specific-heat-capacity" name="specificHeat" type="number" min="0" max="100000000" step="any" inputmode="decimal" value="1000">')}</div>
+      <div data-specific-field="temperatureChange">${label('specific-heat-delta', fields.temperatureChange, '<input id="specific-heat-delta" name="temperatureChange" type="number" min="-1000000" max="1000000" step="any" inputmode="decimal" value="10">')}</div>
+      <div data-specific-field="energy" hidden>${label('specific-heat-energy', fields.heatEnergy, '<input id="specific-heat-energy" name="heatEnergy" type="number" min="-1000000000000000" max="1000000000000000" step="any" inputmode="decimal" value="10000">')}</div>
+    </fieldset>
+    <fieldset data-specific-mixing hidden disabled><legend>${escapeGrowthHtml(fields.mixingMode)}</legend>
+      ${label('specific-heat-mass-one', fields.mass1, '<input id="specific-heat-mass-one" name="mass1" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="1">')}
+      ${label('specific-heat-capacity-one', fields.specificHeat1, '<input id="specific-heat-capacity-one" name="specificHeat1" type="number" min="0" max="100000000" step="any" inputmode="decimal" value="1000">')}
+      ${label('specific-heat-temp-one', fields.temperature1, '<input id="specific-heat-temp-one" name="temperature1" type="number" min="-273.15" max="1000000" step="any" inputmode="decimal" value="80">')}
+      ${label('specific-heat-mass-two', fields.mass2, '<input id="specific-heat-mass-two" name="mass2" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="1">')}
+      ${label('specific-heat-capacity-two', fields.specificHeat2, '<input id="specific-heat-capacity-two" name="specificHeat2" type="number" min="0" max="100000000" step="any" inputmode="decimal" value="1000">')}
+      ${label('specific-heat-temp-two', fields.temperature2, '<input id="specific-heat-temp-two" name="temperature2" type="number" min="-273.15" max="1000000" step="any" inputmode="decimal" value="20">')}
+      ${label('specific-heat-loss', fields.heatLoss, '<input id="specific-heat-loss" name="heatLoss" type="number" min="-1000000000000000" max="1000000000000000" step="any" inputmode="decimal" value="0">')}
+      <p class="hint">${escapeGrowthHtml(fields.mixingNote)}</p>
+    </fieldset>
+    <p class="hint">${escapeGrowthHtml(fields.outputUnitsNote)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.formulaNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
   </form>`, copy);

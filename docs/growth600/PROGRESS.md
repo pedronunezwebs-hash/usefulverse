@@ -4,7 +4,7 @@
 
 ## Estado público actual · 2026-10-11
 
-- **Estado que ya está en producción:** 159 herramientas Growth600 junto al catálogo protegido de 277; **436 herramientas públicas** en total. El hub publicado tiene 5.760 URLs (159 × 36 + 36 portadas); sitemap principal: **10.260 URLs**; total público actual: **16.020 URLs**. La presencia en sitemap no demuestra indexación.
+- **Estado verificado justo antes de esta rama:** 160 herramientas Growth600 junto al catálogo protegido de 277; **437 herramientas públicas** en total. El hub publicado tiene 5.796 URLs (160 × 36 + 36 portadas); sitemap principal: **10.260 URLs**; total público: **16.056 URLs**. Absolute Value Calculator (#136) quedó integrada en PR #125 y está incluida. La presencia en sitemap no demuestra indexación.
 - #086 529 Calculator: PR #114 integrada en `c9e18cb0dc4ef8128aed06545ce108047b918a2d`; CI/despliegue principal `38120717651` y publicación separada del hub `38120973293` correctos.
 - #087 Dilution Calculator ya estaba publicada antes de esta reanudación; en esta sesión se comprobó que EN y AR devuelven HTTP 200 y que sus 36 variantes están incluidas en el sitemap público. No se rehízo.
 - #088 Julian Date Converter: PR #115 integrada en `10366aafca353b192d24dbae9a945e9eb19fb8d6`; CI `38122981697`, despliegue principal `38123224930` y publicación separada del hub `38123636699` correctos. Sitemap público: 5.472 URLs y exactamente 36 rutas para la herramienta; la publicación no implica indexación.
@@ -15,7 +15,7 @@
 - #130 Waist To Hip Ratio Calculator: PR [#123](https://github.com/pedronunezwebs-hash/usefulverse/pull/123), merge `f5abdb60abc9d565fdc5d9e74a1019bc8c327f62`; deploy principal `38138160890` y hub `38138711675` correctos. Verificación directa: sitemap del hub HTTP 200 con **5.724 URLs únicas** y exactamente 36 variantes de WHR; EN y AR responden HTTP 200; sitemap principal HTTP 200 con **10.260 URLs**. Publicación no demuestra indexación. No se midió PageSpeed/Lighthouse.
 - #131 Compression Ratio Calculator y #132 Goal Planner ya estaban publicadas al reanudar; se comprobaron sus 36 rutas en el sitemap y no se rehacen.
 - #133 Hebrew Calendar Converter: PR #124 integrada en `1243db4aace7180742bd909fdb49add3440f3797`; pipeline principal/hub `38140134922` correcto. Sitemap público HTTP 200 con **5.760 URLs**; sus 36 rutas están publicadas. La publicación no prueba indexación.
-- #136 Absolute Value Calculator: implementación completa en la rama actual, gates locales aprobados y 36 variantes presentes en el build aislado de 5.796 páginas; falta PR/publicación. Después seguir la siguiente ficha abierta de `PLAN-600.md`. No rehacer #088, #120, #121, #128, #129, #130, #133 ni DataForSEO.
+- #136 Absolute Value Calculator: PR #125 integrada en `b68cfe3f539a3069a51568518c6c3c0cb9d0238b`; aparece en el sitemap público de 5.796 URLs. No rehacer #088, #120, #121, #128, #129, #130, #133 ni #136.
 - El progreso público anterior a #086 se conserva como historial debajo; sus cantidades ya no representan el estado actual. Las candidatas de reserva no cuentan como herramientas.
 
 ## Publicada · #122 Markdown Editor · 2026-10-11
@@ -1746,3 +1746,14 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - **Verificación pública:** EN/ES/AR HTTP 200 con títulos localizados propios. Sitemap público del hub: **5.400 URLs únicas**, incluye 36 rutas nuevas; sitemap principal: **10.260 URLs**; total: **15.660**.
 - **Aviso de indexación:** el sitemap público y robots.txt están actualizados. No se envió una nueva solicitud IndexNow porque el CLI actual solo admite URLs en `usefulverse.com` y no tiene configurada la clave/ruta del host `tools.usefulverse.com`; no se afirma reenvío manual ni indexación de Google, Bing, Yandex o Naver.
 - **Recuento:** 93/323 candidatas Growth600 públicas; 230 pendientes. Siguiente ficha según el plan: #086, 529 Calculator.
+# En preparación de publicación · Specific Heat Calculator (#272) · 2026-10-11
+
+- [x] C/F — demanda reutilizada del plan: `specific heat calculator`, 720 búsquedas/mes US/en, KD 0; `heat capacity calculator`, 210/mes, KD 0. Sin nuevas llamadas a DataForSEO.
+- [x] E — despeja Q, masa, calor específico o ΔT en `Q = m·c·ΔT`; incluye estimación de equilibrio térmico de dos materiales y pérdidas/ganancias manuales. Se distingue de Heat Loss Calculator y Thermal Expansion Calculator.
+- [x] B — cálculo y datos permanecen en el navegador; sin API, subida, Functions, dependencia nueva ni coste de procesamiento. Advierte sobre calor específico constante, cambios de fase y otros intercambios no modelados.
+- [x] L — 36 copias estáticas. Google Translate por lotes desde el copy inglés; unidades físicas y símbolos canónicos preservados. Traducción automática, no revisión nativa.
+- [x] X — `npm test` **1.889/1.889**; `npm run locale:release-check`; `npm run check` en salida aislada (**10.260 URLs principales**); build Growth600 aislada **5.832 páginas** (161 herramientas × 36 + 36 portadas); `git diff --check` y `node --check` pasan.
+- [x] Browser QA local en 390×844: ejemplo en árabe RTL → **10.000 J**; mezcla de masas/capacidades iguales a 80 °F y 20 °F → **50 °F** y pérdida ingresada 0 J; en japonés el ejemplo también produce 10.000 J. `lang`/`dir` correctos; ancho de documento 390 px; sin errores ni avisos de consola.
+- [x] Producción inspeccionada antes del release: el sitemap tiene **5.796 URLs únicas**, no incluye esta herramienta; la ruta candidata todavía sirve la portada/canonical raíz, por lo que no se cuenta como publicada.
+- [ ] P/S — PR, CI remoto, deploy del sitio y del hub, rutas/sitemap públicos aún pendientes.
+- **Recuento de plan:** 94/323 candidatas con implementación local si se suma esta ficha; producción permanece en 160 herramientas Growth600 + 277 originales hasta su publicación. No se infiere indexación.
