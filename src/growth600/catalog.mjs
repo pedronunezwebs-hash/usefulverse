@@ -1356,6 +1356,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/complex-number-calculator/logic.mjs',
   },
   {
+    id: 'eigenvalue-calculator',
+    category: 'physics-math',
+    type: 'calculator',
+    primaryIntent: 'eigenvalue calculator',
+    secondaryIntents: ['eigenvector calculator', 'symmetric matrix eigenvalue calculator', 'eigenvalue decomposition calculator'],
+    functions: ['calculate the real eigenvalues and normalized eigenvectors of a real symmetric matrix', 'show the residual for each eigenpair so users can check A v = λ v', 'accept matrices from 2×2 through 8×8 with rows separated by lines and values separated by commas or spaces', 'sort eigenvalues from smallest to largest and copy the numeric result'],
+    acceptance: 'The diagonal matrix [[2,0],[0,3]] returns eigenvalues 2 and 3 with unit eigenvectors; for [[2,1],[1,2]], eigenvalues are 1 and 3 and both eigenpairs satisfy A v = λ v within numerical tolerance.',
+    boundary: 'Jacobi rotations for finite real symmetric matrices only; non-symmetric matrices and complex eigenvalues are not supported. Matrix dimension is 2–8 and each entry is bounded to ±1,000,000. Eigenvectors are normalized and their sign is arbitrary. Results use floating-point arithmetic and should be checked for critical work. Processing stays in this browser.',
+    relatedExistingIds: ['matrix-calculator'],
+    logicModule: './tools/eigenvalue-calculator/logic.mjs',
+  },
+  {
     id: 'kinetic-energy-calculator',
     category: 'physics-math',
     type: 'calculator',

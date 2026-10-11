@@ -34,6 +34,7 @@ export function renderGrowthForm(toolId, copy) {
     'vector-calculator': ['dimension', 'dimension2d', 'dimension3d', 'operation', 'vectorA', 'vectorB', 'ax', 'ay', 'az', 'bx', 'by', 'bz', 'accuracyNote', 'resultSummary', 'zComponent', 'magnitudeAResult', 'magnitudeBResult', 'dotProductResult', 'exampleHint'],
     'cubic-quartic-equation-calculator': ['degree', 'degree3', 'degree4', 'a4', 'a3', 'a2', 'a1', 'a0', 'accuracyNote', 'resultSummary', 'root', 'multiplicity', 'residual', 'noRealRoots', 'nonRealRootsNote', 'exampleHint'],
     'complex-number-calculator': ['operation', 'realA', 'imaginaryA', 'realB', 'imaginaryB', 'radius', 'angle', 'angleUnit', 'degrees', 'radians', 'degree', 'resultSummary', 'resultReal', 'resultImaginary', 'modulus', 'argument', 'polar', 'rootNumber', 'zeroArgumentNote', 'accuracyNote', 'exampleHint'],
+    'eigenvalue-calculator': ['matrix', 'matrixHint', 'accuracyNote', 'resultSummary', 'eigenvalue', 'eigenvector', 'residual'],
     'image-upscaler': ['imageFile', 'accuracyNote', 'progressHint', 'sourcePreview', 'resultPreview'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
@@ -197,6 +198,7 @@ export function renderGrowthForm(toolId, copy) {
     'vector-calculator': ['calculate', 'example', 'reset', 'add', 'subtract', 'dot', 'cross', 'magnitudeA', 'magnitudeB', 'normalizeA', 'normalizeB', 'angle', 'projection'],
     'cubic-quartic-equation-calculator': ['calculate', 'example', 'reset'],
     'complex-number-calculator': ['calculate', 'example', 'reset', 'add', 'subtract', 'multiply', 'divide', 'magnitude', 'argument', 'rectangularToPolar', 'polarToRectangular', 'roots'],
+    'eigenvalue-calculator': ['calculate', 'example', 'reset', 'copy'],
     'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
@@ -620,6 +622,14 @@ export function renderGrowthForm(toolId, copy) {
     <p class="status" role="status" aria-live="polite" data-status></p>
   </form>`, copy);
   }
+
+  if (toolId === 'eigenvalue-calculator') return attachCopy(`<form id="tool-form" class="eigenvalue-calculator" novalidate>
+    ${label('eigen-matrix', fields.matrix, '<textarea id="eigen-matrix" name="matrix" rows="5" spellcheck="false" autocapitalize="off" autocomplete="off" required>2, 0\n0, 3</textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.matrixHint)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('calculate', actions.calculate)}${button('example', actions.example, 'secondary')}${button('reset', actions.reset, 'secondary')}</div>
+    <section class="result" data-eigen-result hidden aria-labelledby="eigen-result-title"><h2 id="eigen-result-title">${escapeGrowthHtml(fields.resultSummary)}</h2><div class="eigenvalue-results" data-eigen-output></div><div class="actions">${button('copy', actions.copy, 'secondary')}</div></section>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+  </form>`, copy);
 
   if (toolId === 'image-upscaler') return attachCopy(`<form id="tool-form" data-worker-src="__WORKER_IMAGE_UPSCALER_WORKER__" novalidate>
     ${label('upscaler-file', fields.imageFile, '<input id="upscaler-file" name="imageFile" type="file" accept="image/png,image/jpeg,image/webp,image/avif,image/bmp" required>')}

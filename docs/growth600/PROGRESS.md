@@ -4,7 +4,7 @@
 
 ## Estado público actual · 2026-10-11
 
-- **154 herramientas Growth600 publicadas** junto al catálogo protegido de 277; **431 herramientas públicas en total**. Todas están publicadas en 36 locales. Verificación directa actual: sitemap del hub HTTP 200 con **5.580 URLs únicas** (154 × 36 + 36 portadas); sitemap principal: **10.260 URLs**; total combinado: **15.840 URLs**. La presencia en sitemap no demuestra indexación.
+- **155 herramientas Growth600 publicadas** junto al catálogo protegido de 277; **432 herramientas públicas en total**. Todas están publicadas en 36 locales. Verificación directa actual: sitemap del hub HTTP 200 con **5.616 URLs únicas** (155 × 36 + 36 portadas); sitemap principal: **10.260 URLs**; total combinado: **15.876 URLs**. La presencia en sitemap no demuestra indexación.
 - #086 529 Calculator: PR #114 integrada en `c9e18cb0dc4ef8128aed06545ce108047b918a2d`; CI/despliegue principal `38120717651` y publicación separada del hub `38120973293` correctos.
 - #087 Dilution Calculator ya estaba publicada antes de esta reanudación; en esta sesión se comprobó que EN y AR devuelven HTTP 200 y que sus 36 variantes están incluidas en el sitemap público. No se rehízo.
 - #088 Julian Date Converter: PR #115 integrada en `10366aafca353b192d24dbae9a945e9eb19fb8d6`; CI `38122981697`, despliegue principal `38123224930` y publicación separada del hub `38123636699` correctos. Sitemap público: 5.472 URLs y exactamente 36 rutas para la herramienta; la publicación no implica indexación.
@@ -23,12 +23,17 @@
 
 ## Implementación local · #127 Purchase Order Generator · 2026-10-11
 
-- Estado: C/F/E/X/L/B implementados y comprobados localmente; P/S todavía pendientes. No contar la candidata en el catálogo público hasta desplegar el hub y verificar sus 36 rutas.
+- Implementación local y gates: C/F/E/X/L/B completados antes de publicar.
 - Intención precompra diferenciada de factura/recibo: comprador, proveedor, fechas, moneda, hasta 50 partidas, subtotal, impuesto opcional, envío, términos, notas, impresión/PDF del navegador y CSV. Entrada numérica estricta con `BigInt`, redondeo por precisión de moneda y límites explícitos; CSV neutraliza fórmulas. Todo local, sin cuenta, API, subida, guardado automático ni coste por uso.
 - 36 copias estáticas de traducción automática; se conserva el formato numérico universal en el ejemplo para que el botón funcione en todos los idiomas. No se presentan como revisión nativa.
 - Pruebas focales **310/310** y suite completa **1.836/1.836** aprobadas; `npm run locale:release-check`; `npm run check` conserva **10.260 URLs**; build aislado del hub **5.616 páginas** (155 × 36 + 36 portadas).
 - Chrome local: ejemplo EN totaliza **$54.99**; AR conserva `lang=ar`, `dir=rtl`, `scrollWidth=390` en viewport 390 px y calcula la misma suma; consola sin errores. No se midió PageSpeed/Lighthouse.
-- **Siguiente:** abrir PR, esperar el workflow completo, integrar solo con gates verdes, desplegar el hub con el workflow aprobado y comprobar sitemap más las 36 URLs/canonical. Después actualizar inventario README y recuentos públicos. No reenviar sitemap a Google/Naver: no forma parte de este pedido.
+- **Publicación confirmada:** PR [#120](https://github.com/pedronunezwebs-hash/usefulverse/pull/120), merge `9e0b781e800235ed98147930a3afcbee4c4927a`; CI PR `38132486533`; despliegue principal `38132732589` y hub `38132761847` correctos. Sitemap del hub HTTP 200 con **5.616 URLs únicas** y exactamente 36 rutas Purchase Order Generator. EN/ES/AR/JA HTTP 200, canonical autorreferente. No reenvié el sitemap a Google/Naver; esta conversación corrigió que esa petición era para otro chat.
+
+## Estado para reanudar
+
+- En curso: **#128 Eigenvalue Calculator** (`eigenvalue-calculator`), 6.600 búsquedas/mes US/en, KD 3; secundaria `eigenvector calculator`, 2.400/mes, KD 0. Motor Jacobi para matrices simétricas reales, autovalores/autovectores normalizados y residual `‖Av−λv‖`; deliberadamente no afirma soporte de matrices generales o valores complejos. Las 36 traducciones son estáticas. Suite completa **1.845/1.845**, release check aprobado; `npm run check` conserva **10.260 URLs** y el build aislado del hub tiene **5.652 páginas** (156 × 36 + 36 portadas). Chrome EN verificó matrices 2×2; AR móvil 390×844 verificó RTL sin overflow, el ejemplo 3×3 y resumen traducido corregido; consola sin errores. No se midió PageSpeed/Lighthouse. **P/S aún pendiente**; los recuentos públicos siguen en #127 hasta comprobar el despliegue del hub.
+- **Quedan 168 herramientas Growth600** para alcanzar 600 en total (155 adicionales publicadas + las 277 originales). Cerrar #128 antes de continuar en el orden de `PLAN-600.md`; no repetir DataForSEO ni reauditar las 277.
 
 ## Estado público actual · 2026-10-10
 

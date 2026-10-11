@@ -9,7 +9,7 @@ Fecha de investigación: 7 de octubre de 2026. Documento de planificación y che
 - [x] Comprobar la base de planificación: **277 herramientas y 36 idiomas**.
 - [x] Investigar demanda con un gasto acotado en DataForSEO y registrar los resultados reales.
 - [x] Consolidar variantes antes de fijar el nuevo catálogo, sin contar una dirección de conversión como otra herramienta.
-- [ ] Implementar las nuevas herramientas. **Progreso comprobado el 11 de octubre de 2026: 154 herramientas Growth600 públicas (431 incluyendo las 277 originales); la meta de 600 requiere 169 herramientas nuevas más. #122 Markdown Editor es la última publicación confirmada; #127 Purchase Order Generator está implementada localmente y pendiente de publicación.** Consultar `docs/growth600/PROGRESS.md` para la evidencia; disponibilidad pública no implica indexación.
+- [ ] Implementar las nuevas herramientas. **Progreso comprobado el 11 de octubre de 2026: 155 herramientas Growth600 públicas (432 incluyendo las 277 originales); quedan 168 herramientas nuevas para llegar a 600. #127 Purchase Order Generator es la última publicación confirmada; la siguiente candidata es #128 Eigenvalue Calculator.** Consultar `docs/growth600/PROGRESS.md` para la evidencia; disponibilidad pública no implica indexación.
 
 Snapshot consultado: rama `main`, commit `685f91adfc7818a54f6dc0a967e290d13137a3dd`. Catálogo: `src/catalog.mjs`; funciones y contratos representativos: `src/app.js`, módulos de lógica, `src/opportunity-tools.mjs`, `src/seo.mjs`, locales, build y documentación del repo. Se inspeccionaron los metadatos de las 277 herramientas y contratos clave para descartar duplicados; esto **no es una nueva auditoría funcional completa de las 277**.
 
@@ -421,6 +421,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `tire diameter calculator` — sin métrica obtenida; no atribuir volumen.
   - `tire size calculator free online`; `tire size calculator with example`; `tire size calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Checkpoint local (2026-10-11; no publicado):** calculador por rotaciones de Jacobi para matrices reales simétricas 2×2–8×8, autovectores normalizados, orden ascendente, residual por par, ejemplo diagonal y copia de resultados. Límites explícitos para entradas ±1.000.000; rechaza matrices no simétricas, tamaño/formato inválido y falta de convergencia. Suite de lógica 5/5, catálogo/formulario/localización inicial aprobados; 36 copias estáticas sencillas desde Google Translate. Faltan suite final, build reproducible, prueba en navegador móvil/RTL, gates del repo, PR, despliegue y verificación pública. La herramienta no se cuenta todavía entre las publicadas.
 - **Cierre (2026-10-09):** PR #81 integrada; pipeline principal y publicación del hub correctos. Muestras EN/ES/AR HTTP 200 y sitemap sin duplicados. Traducción automática básica, no revisión nativa; no se afirma indexación.
 - **Avance comprobado (2026-10-08):** herramienta local en inglés implementada con modos directo/inverso para sumas acotadas de polinomios, exponentiales y seno/coseno; la inversa acepta términos parciales estándar ya separados. Muestra ROC, límites de sintaxis y resultado accesible; no usa CAS ni API externa. Suite focalizada (lógica, controlador, formulario, catálogo, contrato de 36 locales, render y build): **159/159 aprobadas**. Bundle minificado y validado por el guard local: **6.719 bytes**. Los otros 35 idiomas siguen pendientes, el release gate los bloquea; faltan QA visual y despliegue. Recuento: **80/323** candidatas con implementación inglesa; quedan 243 filas del plan, incluida una duplicada que debe sustituirse.
 - **Estado de implementación (2026-10-08):** motor local para las tres incógnitas, conversiones de unidades y estimación explícita de mezcla; formulario/controlador, copy inglés, límites y pruebas añadidos como candidata #58/323. Suite focal sin bundling: 174/174 aprobadas. Los 35 locales no ingleses siguen pendientes y bloqueados para publicación; build bundle y QA visual pendientes porque `esbuild` no está disponible en este clon. No desplegada.
@@ -2285,7 +2286,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 128 · Eigenvalue Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `eigenvalue-calculator`**
+- [ ] **C/F/E/X/L/B completos — `eigenvalue-calculator`; P/S pendiente**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/eigenvalue-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `eigenvalue calculator` — 6.600 búsquedas/mes US/en, KD 3; nivel B. CPC 0.08 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Autovalores/autovectores y verificación A v=lambda v
@@ -2296,6 +2297,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `eigenvector calculator` — 2.400/mes US/en; KD 0.
   - `eigenvalue calculator free online`; `eigenvalue calculator with example`; `eigenvalue calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Checkpoint local (2026-10-11; todavía no publicado):** Jacobi local para matrices simétricas reales 2×2–8×8, escala finita ±1.000.000, eigenpairs ordenados, vectores unitarios y residual explícito. No pretende resolver matrices no simétricas ni valores complejos. 36 copias estáticas de inglés; no hay traducción en runtime. Incluye ejemplo, validación, copiar resultado y alcance numérico en la interfaz. Suite completa **1.845/1.845**, `locale:release-check`, `git diff --check`, `npm run check` (10.260 URLs principales) y build Growth600 (**5.652 páginas**, 156 × 36 + 36 portadas; 5.873 archivos) pasan. Chrome EN confirma eigenpares de 2×2; Chrome AR a 390×844 confirma RTL sin overflow, eigenvalores 0,58578644 / 2 / 3,4142136 para un caso 3×3, residual bajo y consola limpia. Se corrigió una traducción árabe incompleta en el encabezado. No se midió PageSpeed/Lighthouse. Faltan PR/CI, deploy principal + hub, verificación pública de las 36 URLs y sitemap; los recuentos públicos no cambian hasta entonces.
 
 ### 136 · Absolute Value Calculator
 
@@ -3185,8 +3187,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 127 · Purchase Order Generator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `purchase-order-generator`** (C/F/E/X/L/B locales completos; P/S pendientes)
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/purchase-order-generator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `purchase-order-generator`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/purchase-order-generator/`; 35 versiones adicionales con los prefijos del anexo. Las 36 rutas figuran en el sitemap público.
 - **Demanda:** `purchase order template` — 6.600 búsquedas/mes US/en, KD 0; nivel B. CPC 7.3 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Proveedor, pedido, partidas, cantidades, moneda y condiciones; totales, numeración y print. Orden de compra, no factura ni recibo.
 - **Prueba de aceptación específica:** Sumapartidas coincidecontotal
@@ -3196,7 +3198,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `purchase order generator` — 390/mes US/en; KD 8.
   - `purchase order template free online`; `purchase order template with example`; `purchase order template no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
-- **Checkpoint local (2026-10-11; no publicado):** formulario y generador precompra con partidas, totales, impresión/PDF del navegador y CSV local seguro; sin API, servidor, cuenta ni almacenamiento. 36 copias estáticas sencillas; ejemplo ejecutable con números universales. Suite completa 1.836/1.836, gate de idiomas aprobado, build principal 10.260 URLs y build del hub 5.616 páginas; Chrome EN/AR RTL comprobó total $54.99 y ancho 390 px sin errores de consola. Faltan PR/CI, deploy del hub y verificación de 36 rutas/canonical/sitemap para marcar P/S.
+- **Publicación confirmada (2026-10-11):** PR [#120](https://github.com/pedronunezwebs-hash/usefulverse/pull/120), merge `9e0b781e800235ed98147930a3afcbee4c4927a`; CI PR `38132486533`; deploy principal `38132732589` y hub `38132761847` correctos. Suite **1.836/1.836**, gate de idiomas aprobado; build principal 10.260 URLs y build del hub 5.616 páginas. El sitemap público responde HTTP 200, contiene **5.616 URLs únicas** y exactamente 36 rutas de la herramienta; EN, ES, AR y JA responden HTTP 200 con canonical autorreferente. Chrome EN/AR RTL comprobó total $54.99 y ancho 390 px sin errores de consola. Publicación no equivale a indexación; no se reenviaron sitemaps a Search Console.
 
 ### 181 · Rtf Converter
 

@@ -1,0 +1,4 @@
+[data-tool="eigenvalue-calculator"] textarea{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;min-height:8rem;resize:vertical}
+[data-tool="eigenvalue-calculator"] .eigenvalue-results__list{display:grid;gap:1rem;padding-inline-start:1.5rem}
+[data-tool="eigenvalue-calculator"] .eigenvalue-results__list li{padding:1rem;border:1px solid var(--line);border-radius:1rem;overflow-wrap:anywhere}
+[data-tool="eigenvalue-calculator"] .eigenvalue-results__list h3{margin-block-start:0}

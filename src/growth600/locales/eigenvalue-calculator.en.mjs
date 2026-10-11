@@ -1,0 +1,36 @@
+export const eigenvalueCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Eigenvalue Calculator',
+  title: 'Eigenvalue Calculator Free | UsefulVerse',
+  description: 'Find eigenvalues, eigenvectors and residuals for a real symmetric matrix. Free online calculator; values stay in your browser.',
+  intro: 'Calculate and check eigenpairs for a real symmetric matrix. See normalized eigenvectors and the residual for each result.',
+  howQuestion: 'How do I find the eigenvalues of a matrix?',
+  howAnswer: 'Enter a square real symmetric matrix, one row per line, with values separated by commas or spaces. Calculate to view sorted eigenvalues, normalized eigenvectors and residuals.',
+  privacyQuestion: 'Are my matrix values uploaded?',
+  privacyAnswer: 'No. The calculation runs locally in this browser. Matrix values are not uploaded or saved by this tool.',
+  howTo: [
+    'Enter a real symmetric square matrix with 2 to 8 rows.',
+    'Separate values with commas or spaces and put each row on a new line.',
+    'Calculate, then check each eigenvalue, normalized eigenvector and residual.',
+  ],
+  example: { label: 'Load a matrix with eigenvalues 2 and 3', values: ['2, 0\n0, 3'] },
+  actions: { calculate: 'Calculate eigenpairs', example: 'Load example', reset: 'Clear', copy: 'Copy results' },
+  fields: {
+    matrix: 'Real symmetric matrix', matrixHint: 'Enter 2–8 rows, one per line. Separate values with commas, spaces or semicolons. Example: 2, 0 on the first line and 0, 3 on the second.',
+    accuracyNote: 'Supports finite real symmetric matrices only, from 2×2 to 8×8; each value must be within ±1,000,000. Non-symmetric matrices and complex eigenvalues are not supported. Eigenvectors have unit length; their sign may vary. Floating-point results are approximate.',
+    resultSummary: 'Eigenpairs, sorted by eigenvalue', eigenvalue: 'Eigenvalue', eigenvector: 'Normalized eigenvector', residual: 'Residual ‖Av − λv‖',
+  },
+  messages: {
+    calculated: 'Eigenpairs calculated.', copied: 'Results copied.', copyUnavailable: 'Clipboard is unavailable in this browser.',
+    checkInputs: 'Check the matrix and try again.', emptyMatrix: 'Enter a matrix first.', invalidSize: 'Use a square matrix from 2×2 to 8×8.',
+    notSquare: 'Every row must have the same number of values as there are rows.', notSymmetric: 'This matrix is not symmetric; Aᵢⱼ must equal Aⱼᵢ.',
+    invalidEntry: 'Use finite numeric values from −1,000,000 to 1,000,000.', didNotConverge: 'The numerical method did not converge for this input.',
+    exampleLoaded: 'Example loaded: eigenvalues 2 and 3.',
+  },
+  additionalFaqs: [
+    { question: 'What matrix types does this eigenvalue calculator support?', answer: 'It supports real symmetric square matrices from 2×2 through 8×8. It does not calculate eigenvalues for non-symmetric matrices or complex eigenvalues.' },
+    { question: 'How can I check an eigenvector?', answer: 'For each result, compare A multiplied by the displayed normalized vector with the eigenvalue multiplied by that vector. The residual reports the norm of their difference; values near zero indicate a close numerical match.' },
+    { question: 'Why can an eigenvector have a different sign?', answer: 'If v is an eigenvector, −v is also an eigenvector for the same eigenvalue. The tool chooses a consistent sign where possible, but sign is not mathematically unique.' },
+  ],
+  sources: [],
+});
