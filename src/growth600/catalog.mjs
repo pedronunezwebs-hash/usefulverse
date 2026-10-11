@@ -1763,6 +1763,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['modular-inverse-calculator', 'system-of-equations-calculator'],
     logicModule: './tools/chinese-remainder-theorem-calculator/logic.mjs',
   },
+  {
+    id: 'effective-interest-rate-calculator',
+    category: 'personal-finance',
+    type: 'calculator',
+    primaryIntent: 'effective interest rate calculator',
+    secondaryIntents: ['apr to apy calculator', 'apy to apr calculator', 'nominal to effective annual rate calculator'],
+    functions: ['convert a user-entered nominal APR to effective annual APY for annual, semiannual, quarterly, monthly, twice-monthly, biweekly, weekly, daily or continuous compounding', 'perform the inverse APY-to-nominal-APR conversion using the same compounding convention', 'show the periodic rate for discrete compounding and the equation used', 'keep the tool focused on rate equivalence rather than projecting an account balance or loan schedule'],
+    acceptance: 'A 12% nominal APR compounded monthly returns about 12.6825% APY and a 1% monthly periodic rate; selecting annual compounding returns 12% APY.',
+    boundary: 'Mathematical rate conversion only. APR and APY labels may have jurisdiction-specific legal definitions and disclosures; this calculator does not determine a lender’s legally disclosed APR, fees, taxes, account terms, return, or investment outcome. Rates are user-entered, non-negative and numerically bounded; zero fees or payment timing are assumed. Not financial advice. All calculations run locally without upload, API, account or storage.',
+    relatedExistingIds: ['compound-interest-calculator'],
+    logicModule: './tools/effective-interest-rate-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

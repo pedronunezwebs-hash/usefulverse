@@ -20,6 +20,8 @@ import rlcCircuitCalculatorCopies from './locales/rlc-circuit-calculator-final.m
 import { rlcCircuitCalculatorEnglishCopy } from './locales/rlc-circuit-calculator.en.mjs';
 import antennaLengthCalculatorCopies from './locales/antenna-length-calculator-final.mjs';
 import { antennaLengthCalculatorEnglishCopy } from './locales/antenna-length-calculator.en.mjs';
+import effectiveInterestRateCalculatorCopies from './locales/effective-interest-rate-calculator-final.mjs';
+import { effectiveInterestRateCalculatorEnglishCopy } from './locales/effective-interest-rate-calculator.en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
 import portugueseGrowthCopy from './locales/pt.mjs';
 import germanGrowthCopy from './locales/de.mjs';
@@ -1626,6 +1628,25 @@ test('antenna length calculator has complete static, bounded copy across all 36 
     assert.ok([...copy.description].length <= 160, locale.key);
   }
   assert.match(antennaLengthCalculatorCopies.ar.fields.accuracyNote, /موصل/u);
+});
+
+test('effective interest rate calculator has static copy, guarded formulas and all 36 localized variants', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'effective-interest-rate-calculator');
+  assert.ok(tool);
+  assert.equal(localeEntries.length, 36);
+  assert.equal(effectiveInterestRateCalculatorCopies.en.name, effectiveInterestRateCalculatorEnglishCopy.name);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.ok(copy.fields.mode && copy.fields.rate && copy.fields.frequency && copy.fields.monthly && copy.fields.accuracyNote, key);
+    assert.ok(copy.actions.calculate && copy.messages.apr && copy.messages.apy && copy.messages.periodicRate && copy.messages.formula, key);
+    assert.equal(copy.additionalFaqs.length, key === 'en' ? 2 : 1, key);
+    assert.ok([...copy.title].length <= 60, `${key}: title limit`);
+    assert.ok([...copy.description].length <= 160, `${key}: description limit`);
+    assert.doesNotMatch(JSON.stringify(copy), /undefined/iu, key);
+  }
+  assert.match(effectiveInterestRateCalculatorCopies.es.fields.accuracyNote, /asesoramiento financiero/u);
+  assert.match(effectiveInterestRateCalculatorCopies.ar.privacyAnswer, /لا/u);
 });
 
 test('chemical equation balancer has complete English copy but has approved localized copy across all 36 languages', () => {
