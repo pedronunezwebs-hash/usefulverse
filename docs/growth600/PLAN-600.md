@@ -9,7 +9,7 @@ Fecha de investigación: 7 de octubre de 2026. Documento de planificación y che
 - [x] Comprobar la base de planificación: **277 herramientas y 36 idiomas**.
 - [x] Investigar demanda con un gasto acotado en DataForSEO y registrar los resultados reales.
 - [x] Consolidar variantes antes de fijar el nuevo catálogo, sin contar una dirección de conversión como otra herramienta.
-- [ ] Implementar las nuevas herramientas. **Estado comprobado el 11 de octubre de 2026: la producción tiene 161 herramientas Growth600 y 277 originales; los sitemaps públicos contienen 5.832 + 10.260 URLs. RC Time Constant Calculator (#275) está implementada y validada en esta rama, aún pendiente de PR/deploy.** El progreso del plan se cuenta por candidatas únicas de las 323 fichas; consultar `docs/growth600/PROGRESS.md` y no inferir indexación del despliegue.
+- [ ] Implementar las nuevas herramientas. **Estado comprobado el 11 de octubre de 2026: la producción tiene 162 herramientas Growth600 y 277 originales; los sitemaps públicos contienen 5.868 + 10.260 URLs. Reverse Mortgage Calculator (#101) está implementada y validada en esta rama, aún pendiente de PR/deploy.** El progreso del plan se cuenta por candidatas únicas de las 323 fichas; consultar `docs/growth600/PROGRESS.md` y no inferir indexación del despliegue.
 
 Snapshot consultado: rama `main`, commit `685f91adfc7818a54f6dc0a967e290d13137a3dd`. Catálogo: `src/catalog.mjs`; funciones y contratos representativos: `src/app.js`, módulos de lógica, `src/opportunity-tools.mjs`, `src/seo.mjs`, locales, build y documentación del repo. Se inspeccionaron los metadatos de las 277 herramientas y contratos clave para descartar duplicados; esto **no es una nueva auditoría funcional completa de las 277**.
 
@@ -1954,17 +1954,18 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 101 · Reverse Mortgage Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `reverse-mortgage-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/reverse-mortgage-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B completos — `reverse-mortgage-calculator`; P/S pendientes de CI, PR y deploy.**
+- **Destino:** `https://tools.usefulverse.com/tools/reverse-mortgage-calculator/`; 35 versiones con los prefijos del anexo.
 - **Demanda:** `reverse mortgage calculator` — 12.100 búsquedas/mes US/en, KD 17; nivel A. CPC 30.95 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Proyección matemática de saldo con anticipos, comisiones e intereses; sin cotización comercial
 - **Prueba de aceptación específica:** Anticipo cero e interés cero deja saldo inicial
 - **Frontera con otras herramientas:** loan-calculator: saldo creciente, no aprobación ni pagos deudores. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Motor local acotado (600 meses, tasa anual de 0–100%, saldo y flujos ≤10.000 millones). Capitaliza APR nominal mensualmente; suma anticipos y cuotas al fin de mes y cargos iniciales financiados en mes cero. Valor de vivienda opcional con tasa anual constante elegida por el usuario; no es una tasación.
 - **Consultas secundarias del mismo propietario:**
   - `reverse mortgage balance calculator` — 10/mes US/en; KD —.
   - `reverse mortgage calculator free online`; `reverse mortgage calculator with example`; `reverse mortgage calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Implementado localmente:** formulario y 36 copias estáticas, tabla anual, SVG accesible, botones de ejemplo/copia/reinicio, límites y tres FAQs. Pruebas aritméticas, de locales, formulario, catálogo y build aprobadas; sin API ni coste de procesamiento. Traducción automática sencilla (no revisión nativa); etiquetas de estado defectuosas corregidas manualmente. Chrome EN/AR, escenarios con/sin valor de vivienda, RTL móvil 390 px y consola limpia. No PageSpeed/Lighthouse.
 
 ### 118 · Car Depreciation Calculator
 

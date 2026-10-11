@@ -17,6 +17,7 @@ import hebrewCalendarConverterCopies from '../src/growth600/locales/hebrew-calen
 import absoluteValueCalculatorCopies from '../src/growth600/locales/absolute-value-calculator-final.mjs';
 import specificHeatCalculatorCopies from '../src/growth600/locales/specific-heat-calculator-final.mjs';
 import rcTimeConstantCalculatorCopies from '../src/growth600/locales/rc-time-constant-calculator-final.mjs';
+import reverseMortgageCalculatorCopies from '../src/growth600/locales/reverse-mortgage-calculator-final.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const localeDir = resolve(root, 'src/growth600/locales');
@@ -52,6 +53,7 @@ for (const { key } of localeEntries) {
   copyByLocale[key] = { ...copyByLocale[key], 'specific-heat-calculator': specificHeatCalculatorCopies[key] };
   if (!rcTimeConstantCalculatorCopies[key]) throw new Error(`Growth600 release blocked: RC Time Constant Calculator copy is missing for ${key}.`);
   copyByLocale[key] = { ...copyByLocale[key], 'rc-time-constant-calculator': rcTimeConstantCalculatorCopies[key] };
+  copyByLocale[key] = { ...copyByLocale[key], 'reverse-mortgage-calculator': reverseMortgageCalculatorCopies[key] };
 }
 
 const outputDir = resolve(process.env.GROWTH600_DIST ?? resolve(root, 'dist-growth600'));
@@ -78,6 +80,7 @@ const toolStyles = {
   'absolute-value-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/absolute-value-calculator/absolute-value-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
   'specific-heat-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/specific-heat-calculator/specific-heat-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
   'rc-time-constant-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/rc-time-constant-calculator/rc-time-constant-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'reverse-mortgage-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/reverse-mortgage-calculator/reverse-mortgage-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
 };
 const faviconSvg = await readFile(resolve(root, 'public/favicon.svg'), 'utf8');
 const modelRevision = '92a21aca5713f20faf9a87590cdfbdce2e34112c';

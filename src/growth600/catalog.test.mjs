@@ -12,10 +12,11 @@ import { gregorianToHebrew, hebrewToGregorian, isHebrewLeapYear } from './tools/
 import { calculateAbsoluteValue } from './tools/absolute-value-calculator/logic.mjs';
 import { calculateSpecificHeat } from './tools/specific-heat-calculator/logic.mjs';
 import { calculateRcTimeConstant, calculateRcTransient } from './tools/rc-time-constant-calculator/logic.mjs';
+import { calculateReverseMortgage } from './tools/reverse-mortgage-calculator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 162);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 162);
+  assert.equal(growthPilotTools.length, 163);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 163);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -87,6 +88,19 @@ test('RC time constant calculator models a first-order response distinct from eq
   assert.ok(Math.abs(calculateRcTimeConstant({ resistance: 1000, capacitance: 100, capacitanceUnit: 'uF' }).tauSeconds - 0.1) < 1e-14);
   assert.ok(Math.abs(calculateRcTransient({ resistance: 1000, capacitance: 100, capacitanceUnit: 'uF', finalVoltage: 5, time: 0.1 }).voltage - 3.1606027941) < 1e-9);
   assert.ok(Math.abs(calculateRcTransient({ resistance: 1000, capacitance: 100, capacitanceUnit: 'uF', initialVoltage: 10, targetVoltage: 1 }).timeSeconds - 0.1 * Math.log(10)) < 1e-14);
+});
+
+test('reverse mortgage calculator models a rising balance without overlapping ordinary loan payment intent', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'reverse-mortgage-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'reverse mortgage calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['loan-calculator', 'mortgage-points-calculator', 'compound-interest-calculator']);
+  assert.match(tool.boundary, /not a lender quote.*financial advice/u);
+  assert.equal(calculateReverseMortgage({ startingBalance: 10000, years: 10 }).endingBalance, 10000);
+  const projection = calculateReverseMortgage({ startingBalance: 10000, annualRatePercent: 12, years: 1, monthlyAdvance: 100, monthlyFee: 10 });
+  assert.ok(Math.abs(projection.endingBalance - (10000 * (1.01 ** 12) + (110 * ((1.01 ** 12 - 1) / 0.01)))) < 1e-8);
+  assert.equal(projection.totalAdvances, 1200);
+  assert.equal(projection.totalMonthlyFees, 120);
 });
 
 test('eigenvalue calculator is additive and validates symmetric eigenpairs', () => {

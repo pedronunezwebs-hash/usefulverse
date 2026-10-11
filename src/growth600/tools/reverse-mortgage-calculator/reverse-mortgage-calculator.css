@@ -1,0 +1,4 @@
+.reverse-mortgage-calculator [data-reverse-mortgage-chart]{display:block;width:100%;height:auto;margin-block:1rem}
+.reverse-mortgage-calculator table{display:block;max-width:100%;overflow-x:auto;border-collapse:collapse}
+.reverse-mortgage-calculator th,.reverse-mortgage-calculator td{padding:.55rem .75rem;text-align:start;border-bottom:1px solid var(--border,#dbe2ee);white-space:nowrap}
+.reverse-mortgage-calculator__legend{display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;padding-inline-start:1.2rem}
