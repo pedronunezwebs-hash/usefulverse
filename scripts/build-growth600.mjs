@@ -25,6 +25,8 @@ import lifetimeValueCalculatorCopies from '../src/growth600/locales/lifetime-val
 import polarGraphingCalculatorCopies from '../src/growth600/locales/polar-graphing-calculator-final.mjs';
 import booleanAlgebraCalculatorCopies from '../src/growth600/locales/boolean-algebra-calculator-final.mjs';
 import weekNumberCalculatorCopies from '../src/growth600/locales/week-number-calculator-final.mjs';
+import inductorCalculatorCopies from '../src/growth600/locales/inductor-calculator-final.mjs';
+import centripetalForceCalculatorCopies from '../src/growth600/locales/centripetal-force-calculator-final.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const localeDir = resolve(root, 'src/growth600/locales');
@@ -75,6 +77,10 @@ for (const { key } of localeEntries) {
   copyByLocale[key] = { ...copyByLocale[key], 'boolean-algebra-calculator': booleanAlgebraCalculatorCopies[key] };
   if (!weekNumberCalculatorCopies[key]) throw new Error(`Growth600 release blocked: Week Number Calculator copy is missing for ${key}.`);
   copyByLocale[key] = { ...copyByLocale[key], 'week-number-calculator': weekNumberCalculatorCopies[key] };
+  if (!inductorCalculatorCopies[key]) throw new Error(`Growth600 release blocked: Inductor Calculator copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'inductor-calculator': inductorCalculatorCopies[key] };
+  if (!centripetalForceCalculatorCopies[key]) throw new Error(`Growth600 release blocked: Centripetal Force Calculator copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'centripetal-force-calculator': centripetalForceCalculatorCopies[key] };
 }
 
 const outputDir = resolve(process.env.GROWTH600_DIST ?? resolve(root, 'dist-growth600'));

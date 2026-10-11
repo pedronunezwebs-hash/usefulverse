@@ -90,11 +90,15 @@ import booleanAlgebraCalculatorCopies from './locales/boolean-algebra-calculator
 import { booleanAlgebraCalculatorEnglishCopy } from './locales/boolean-algebra-calculator.en.mjs';
 import weekNumberCalculatorCopies from './locales/week-number-calculator-final.mjs';
 import { weekNumberCalculatorEnglishCopy } from './locales/week-number-calculator.en.mjs';
+import inductorCalculatorCopies from './locales/inductor-calculator-final.mjs';
+import { inductorCalculatorEnglishCopy } from './locales/inductor-calculator.en.mjs';
+import centripetalForceCalculatorCopies from './locales/centripetal-force-calculator-final.mjs';
+import { centripetalForceCalculatorEnglishCopy } from './locales/centripetal-force-calculator.en.mjs';
 
 const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['markdown-editor', 'purchase-order-generator', 'bond-calculator', 'waist-to-hip-ratio-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'ph-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'kinetic-energy-calculator', 'resistor-color-code-calculator', 'acceleration-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator'].includes(id));
 const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
   key,
-  { ...(await import(`./locales/${key}.mjs`)).default, 'purchase-order-generator': purchaseOrderGeneratorCopies[key], 'eigenvalue-calculator': eigenvalueCalculatorCopies[key], 'bond-calculator': bondCalculatorCopies[key], 'waist-to-hip-ratio-calculator': waistToHipRatioCopies[key], 'stock-profit-calculator': key === 'en' ? stockProfitCalculatorEnglishCopy : stockProfitCalculatorCopies[key], 'pension-calculator': pensionCalculatorCopies[key], 'lifetime-value-calculator': lifetimeValueCalculatorCopies[key], 'polar-graphing-calculator': polarGraphingCalculatorCopies[key], 'boolean-algebra-calculator': key === 'en' ? booleanAlgebraCalculatorEnglishCopy : booleanAlgebraCalculatorCopies[key], 'week-number-calculator': key === 'en' ? weekNumberCalculatorEnglishCopy : weekNumberCalculatorCopies[key] },
+  { ...(await import(`./locales/${key}.mjs`)).default, 'purchase-order-generator': purchaseOrderGeneratorCopies[key], 'eigenvalue-calculator': eigenvalueCalculatorCopies[key], 'bond-calculator': bondCalculatorCopies[key], 'waist-to-hip-ratio-calculator': waistToHipRatioCopies[key], 'stock-profit-calculator': key === 'en' ? stockProfitCalculatorEnglishCopy : stockProfitCalculatorCopies[key], 'pension-calculator': pensionCalculatorCopies[key], 'lifetime-value-calculator': lifetimeValueCalculatorCopies[key], 'polar-graphing-calculator': polarGraphingCalculatorCopies[key], 'boolean-algebra-calculator': key === 'en' ? booleanAlgebraCalculatorEnglishCopy : booleanAlgebraCalculatorCopies[key], 'week-number-calculator': key === 'en' ? weekNumberCalculatorEnglishCopy : weekNumberCalculatorCopies[key], 'inductor-calculator': key === 'en' ? inductorCalculatorEnglishCopy : inductorCalculatorCopies[key], 'centripetal-force-calculator': key === 'en' ? centripetalForceCalculatorEnglishCopy : centripetalForceCalculatorCopies[key] },
 ])));
 
 test('section modulus calculator has static, bounded translations in all 36 locales', () => {
@@ -367,6 +371,8 @@ function assertMachineAcceptedGrowthToolInAllLocales(tool) {
     ...(tool.id === 'polar-graphing-calculator' ? { 'polar-graphing-calculator': polarGraphingCalculatorCopies[key] } : {}),
     ...(tool.id === 'boolean-algebra-calculator' ? { 'boolean-algebra-calculator': key === 'en' ? booleanAlgebraCalculatorEnglishCopy : booleanAlgebraCalculatorCopies[key] } : {}),
     ...(tool.id === 'week-number-calculator' ? { 'week-number-calculator': key === 'en' ? weekNumberCalculatorEnglishCopy : weekNumberCalculatorCopies[key] } : {}),
+    ...(tool.id === 'inductor-calculator' ? { 'inductor-calculator': key === 'en' ? inductorCalculatorEnglishCopy : inductorCalculatorCopies[key] } : {}),
+    ...(tool.id === 'centripetal-force-calculator' ? { 'centripetal-force-calculator': key === 'en' ? centripetalForceCalculatorEnglishCopy : centripetalForceCalculatorCopies[key] } : {}),
     ...(tool.id === 'waist-to-hip-ratio-calculator' ? { 'waist-to-hip-ratio-calculator': waistToHipRatioCopies[key] } : {}),
   }]));
   assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, copies), true);
@@ -2116,4 +2122,27 @@ test('week number calculator has 36 static translations and clear ISO/custom rul
   }
   assert.match(weekNumberCalculatorEnglishCopy.howAnswer, /January 4/u);
   assert.match(weekNumberCalculatorEnglishCopy.fields.accuracyNote, /fiscal-calendar/u);
+});
+
+test('inductor and centripetal calculators have complete 36-locale copies and bounded SEO metadata', () => {
+  for (const [toolId, source, packs] of [
+    ['inductor-calculator', inductorCalculatorEnglishCopy, inductorCalculatorCopies],
+    ['centripetal-force-calculator', centripetalForceCalculatorEnglishCopy, centripetalForceCalculatorCopies],
+  ]) {
+    const tool = allGrowthPilotTools.find(({ id }) => id === toolId);
+    assert.ok(tool, toolId);
+    assertMachineAcceptedGrowthToolInAllLocales(tool);
+    assert.equal(Object.keys(packs).length, 36, `${toolId}: 36 static locale packs`);
+    for (const { key } of localeEntries) {
+      const copy = key === 'en' ? source : packs[key];
+      assert.equal(copy.copyLanguage, key, `${toolId}/${key}: locale`);
+      assert.equal(copy.additionalFaqs.length, 3, `${toolId}/${key}: useful FAQs`);
+      assert.ok(Array.from(copy.title).length <= 60 && Array.from(copy.description).length <= 160, `${toolId}/${key}: metadata bounds`);
+      assert.ok(copy.fields.accuracyNote && copy.actions.calculate && copy.actions.reset && copy.actions.example && copy.actions.copy, `${toolId}/${key}: usable localized UI`);
+      assert.doesNotMatch(JSON.stringify(copy), /UVBRANDTOKENX|QZUV|undefined/iu, `${toolId}/${key}: no translation markers`);
+      if (key !== 'en') assert.notEqual(copy.intro, source.intro, `${toolId}/${key}: translated intro`);
+    }
+  }
+  assert.match(inductorCalculatorEnglishCopy.howAnswer, /10\.68 µH/u);
+  assert.match(centripetalForceCalculatorEnglishCopy.howAnswer, /10\.67 N/u);
 });

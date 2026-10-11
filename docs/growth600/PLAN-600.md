@@ -1623,13 +1623,13 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 310 · Inductor Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `inductor-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/inductor-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `inductor-calculator`**
+- **Destino:** `https://tools.usefulverse.com/tools/inductor-calculator/`; 35 versiones localizadas con los prefijos del anexo.
 - **Demanda:** `inductance calculator` — 390 búsquedas/mes US/en, KD 6; nivel C. CPC — USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Bobinas con fórmulas geométricas aproximadas y número de vueltas
-- **Prueba de aceptación específica:** Mayor vueltas aumenta inductancia según método
+- **Función implementada:** estimación de inductancia de bobina de aire por Wheeler, modo directo o cálculo de vueltas enteras para objetivo, unidades, ancho del hilo/ajuste físico, ejemplo y explicación de aproximación.
+- **Prueba de aceptación específica:** 40 vueltas, diámetro medio 20 mm, longitud 50 mm y hilo 0,8 mm → 10,6766315 µH; duplicar vueltas cuadruplica inductancia. Tests de límites/física y dimensiones incluidos.
 - **Frontera con otras herramientas:** rlc-circuit-calculator: diseño de bobina no circuito. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** cálculo estático local, sin API. Wheeler es una aproximación para bobinas de aire, no diseño certificado; las propiedades del núcleo y geometría real alteran el valor.
 - **Consultas secundarias del mismo propietario:**
   - `inductor calculator` — 210/mes US/en; KD 35.
   - `inductance calculator free online`; `inductance calculator with example`; `inductance calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -1637,13 +1637,13 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 311 · Centripetal Force Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `centripetal-force-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/centripetal-force-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `centripetal-force-calculator`**
+- **Destino:** `https://tools.usefulverse.com/tools/centripetal-force-calculator/`; 35 versiones localizadas con los prefijos del anexo.
 - **Demanda:** `centripetal force calculator` — 390 búsquedas/mes US/en, KD 9; nivel C. CPC — USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Radio, velocidad, frecuencia, aceleración y fuerza
-- **Prueba de aceptación específica:** Duplicar velocidad cuadruplica fuerza
+- **Función implementada:** cálculo desde velocidad tangencial o frecuencia/periodo/velocidad angular; masa, radio, conversiones de unidades, aceleración centrípeta, fuerza y fórmula explicada.
+- **Prueba de aceptación específica:** masa 2 kg, radio 3 m y velocidad 4 m/s → aceleración 5,3333 m/s² y fuerza 10,6667 N; duplicar velocidad multiplica fuerza por cuatro. Test de unidades equivalentes y límites incluido.
 - **Frontera con otras herramientas:** torque-calculator: movimiento circular. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** cálculo estático local, sin API. Modelo de movimiento circular uniforme; no predice fuerzas adicionales ni valida por sí solo un sistema mecánico real.
 - **Consultas secundarias del mismo propietario:**
   - `circular motion calculator` — 30/mes US/en; KD 0.
   - `centripetal force calculator free online`; `centripetal force calculator with example`; `centripetal force calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

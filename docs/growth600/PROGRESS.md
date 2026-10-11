@@ -4,11 +4,20 @@
 
 ## Estado público actual · 2026-10-12
 
-- **Producción:** 170 herramientas Growth600 en 36 locales, **6.156 URLs** en `https://tools.usefulverse.com/sitemap.xml`; catálogo principal protegido de 277 herramientas y 10.260 URLs. Total combinado: **447 herramientas y 16.416 URLs**. La presencia en sitemap no demuestra indexación.
-- El 12-oct se desplegaron directamente a Cloudflare Pages Stock Profit Calculator, Pension Calculator, Customer Lifetime Value Calculator, Polar Graphing Calculator, Boolean Algebra Calculator y Week Number Calculator, además de las correcciones incluidas en el checkout. Se usó `wrangler pages deploy` sobre el proyecto `usefulverse-tools`, rama de producción `main`; no hubo push a `main`, workflow de GitHub Actions ni consumo de sus minutos.
-- Antes de publicar: `npm test` **1.956/1.956**; `npm run locale:release-check` aprobado; `npm run check` del sitio principal conservó **10.260 URLs**; build Growth600 **6.156 URLs / 6.400 archivos**, sin archivos superiores al límite individual de Pages; `git diff --check` limpio.
-- Tras publicar: sitemap HTTP 200 con **6.156 URLs únicas** y 36 entradas para cada herramienta nueva; las rutas EN/ES/AR de las seis devuelven HTTP 200 con canonical propio. La rama fuente respaldada es `codex/growth600-stock-profit-20261011`, commit `d1f50b1` más la actualización documental de este cierre. No se volvió a enviar el sitemap en paneles de buscadores y no se afirma rastreo/indexación.
-- README URL inventory generado desde los sitemaps de build con **10.260 URLs principales y 6.156 del hub**. No se midió PageSpeed/Lighthouse.
+- **Producción:** 172 herramientas Growth600 en 36 locales, **6.228 URLs** en `https://tools.usefulverse.com/sitemap.xml`; catálogo principal protegido de 277 herramientas y 10.260 URLs. Total combinado: **449 herramientas y 16.488 URLs**. La presencia en sitemap no demuestra indexación.
+- El 12-oct se desplegaron directamente a Cloudflare Pages, proyecto `usefulverse-tools`, rama `main`, Stock Profit Calculator, Pension Calculator, Customer Lifetime Value Calculator, Polar Graphing Calculator, Boolean Algebra Calculator, Week Number Calculator, Inductor Calculator y Centripetal Force Calculator, además de las correcciones incluidas en el checkout. No hubo push a `main`, workflow de GitHub Actions ni consumo de sus minutos. Deployment: `https://88b780a1.usefulverse-tools.pages.dev`.
+- Antes de publicar este lote: `npm test` **1.965/1.965**; `npm run locale:release-check` aprobado; `npm run check` del sitio principal conservó **10.260 URLs**; build Growth600 **6.228 URLs / 6.474 archivos**, sin archivos superiores al límite individual de Pages; `git diff --check` limpio.
+- Tras publicar: sitemap HTTP 200 con **6.228 URLs únicas** y exactamente 36 rutas por cada herramienta nueva. Para ambas, EN/ES/AR/JA responden HTTP 200, con formulario, `lang` y canonical autorreferente. La rama fuente es `codex/growth600-stock-profit-20261011`; el push de respaldo está pendiente al terminar este cierre. No se afirma rastreo/indexación.
+- README URL inventory generado desde los builds: **10.260 URLs principales y 6.228 del hub**. No se midió PageSpeed/Lighthouse.
+
+## Publicadas · #310–311 · 2026-10-12
+
+- #310 Inductor Calculator: motor local Wheeler para inductancia estimada de bobina de aire, modo inverso para vueltas enteras, control de ajuste del alambre, unidades métricas/imperiales, explicación de supuestos y límites; sin API ni procesamiento remoto.
+- #311 Centripetal Force Calculator: masa, radio y velocidad tangencial o frecuencia/periodo/velocidad angular; convierte unidades, deriva aceleración y fuerza y explica `F = mv²/r`; no se solapa con torque ni requiere red.
+- Cada herramienta tiene rutas/copy estáticos en los 36 locales. Traducción automática comprensible desde Google Translate por fragmentos; no se presenta como revisión nativa. Títulos/descripciones pasan los límites del gate SEO.
+- Aceptación: bobina de 40 vueltas, diámetro medio 20 mm, longitud 50 mm y alambre 0,8 mm → **10,6766315 µH**; duplicar vueltas cuadruplica la inductancia con la misma geometría útil. Fuerza: 2 kg, 3 m/s y radio 1,5 m → **12 N**; duplicar velocidad multiplica fuerza por cuatro. Tests de entradas inválidas/unidades incluidos.
+- Suite completa local: **1.965/1.965**; `npm run locale:release-check` aprobado; `npm run check` conserva **10.260 URLs**; build estático del hub: **6.228 URLs**, 172 herramientas × 36 locales + 36 portadas. `git diff --check` limpio. Sin PageSpeed/Lighthouse.
+- **Publicado y verificado:** ambas herramientas aparecen 36 veces en el sitemap público HTTP 200; sitemap total 6.228 URLs únicas. EN/ES/AR/JA de cada ruta responden HTTP 200 con formulario presente, idioma declarado y canonical autorreferente. Implementación servida desde Cloudflare Pages; sin funciones ni APIs de procesamiento. La presencia en el sitemap no implica indexación.
 
 Las notas históricas que siguen describen su fecha correspondiente y no sustituyen este estado actual.
 

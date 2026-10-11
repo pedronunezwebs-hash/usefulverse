@@ -28,6 +28,8 @@ import { sectionModulusCalculatorEnglishCopy } from './locales/section-modulus-c
 import { frequencyWavelengthCalculatorEnglishCopy } from './locales/frequency-wavelength-calculator.en.mjs';
 import { idealGasLawCalculatorEnglishCopy } from './locales/ideal-gas-law-calculator.en.mjs';
 import { torqueCalculatorEnglishCopy } from './locales/torque-calculator.en.mjs';
+import { inductorCalculatorEnglishCopy } from './locales/inductor-calculator.en.mjs';
+import { centripetalForceCalculatorEnglishCopy } from './locales/centripetal-force-calculator.en.mjs';
 import torqueCalculatorCopies from './locales/torque-calculator.mjs';
 import { beamDeflectionCalculatorEnglishCopy } from './locales/beam-deflection-calculator.en.mjs';
 import { transformerCalculatorEnglishCopy } from './locales/transformer-calculator.en.mjs';
@@ -493,6 +495,8 @@ copies['json-to-xml-converter'] = { ...jsonToXmlEnglishCopy };
   copies['frequency-wavelength-calculator'] = { ...frequencyWavelengthCalculatorEnglishCopy };
   copies['ideal-gas-law-calculator'] = { ...idealGasLawCalculatorEnglishCopy };
   copies['torque-calculator'] = { ...torqueCalculatorEnglishCopy };
+  copies['inductor-calculator'] = { ...inductorCalculatorEnglishCopy };
+  copies['centripetal-force-calculator'] = { ...centripetalForceCalculatorEnglishCopy };
   copies['beam-deflection-calculator'] = { ...beamDeflectionCalculatorEnglishCopy };
 copies['savings-goal-calculator'] = { name: 'Savings Goal Calculator', actions: { ...actions, requiredContribution: 'Monthly deposit needed', monthsToGoal: 'Time needed for my deposit', beginning: 'Beginning of month', end: 'End of month' }, messages: { ...messages }, fields: { mode: 'Calculation', startingBalance: 'Current savings', targetAmount: 'Savings target', annualRatePercent: 'Annual rate', months: 'Months', monthlyContribution: 'Monthly deposit', contributionTiming: 'Deposit timing', accuracyNote: 'Estimate only.', resultSummary: 'Estimate', monthlyResult: 'Required deposit', monthsResult: 'Months', projectedBalance: 'Projected balance', totalContributions: 'Deposits', estimatedInterest: 'Estimated interest', currencyNote: 'Use the same currency.' } };
 copies['severance-pay-calculator'] = { name: 'Severance Pay Calculator', actions: { ...actions, customMode: 'Custom assumptions', ukMode: 'Great Britain statutory estimate' }, messages: { ...messages, calculationFailed: 'Could not calculate.', exampleLoaded: 'Example loaded.', calculateFirst: 'Calculate first.', belowServiceMinimum: 'Fewer than two completed years.', capApplied: 'A cap applied.', noCapApplied: 'No cap applied.', customAssumptions: 'Custom assumptions.' }, fields: { mode: 'Calculation type', weeklyPay: 'Average gross weekly pay', yearsOfService: 'Years of service', weeksPerYear: 'Weeks per year', birthDate: 'Birth date', employmentStartDate: 'Employment start date', redundancyDate: 'Redundancy date', accuracyNote: 'Estimate only.', customNote: 'Uses your assumptions.', ukNote: 'Great Britain estimate; enter GBP.', officialSource: 'Official guidance', estimate: 'Estimated amount', appliedWeeklyPay: 'Weekly pay used', totalWeeks: 'Weeks of pay', rulesAsOf: 'Rules from', resultSummary: 'Estimate details' } };
@@ -1735,4 +1739,11 @@ test('specific heat localized unit labels retain standard SI and customary symbo
     assert.equal(copy.fields.btuPerPound, 'BTU/(lb·°F)', locale);
     assert.equal(copy.fields.btu, 'BTU', locale);
   }
+});
+
+test('new physics calculators render every control, accessible status and action', () => {
+  const inductor = renderGrowthForm('inductor-calculator', inductorCalculatorEnglishCopy);
+  for (const value of ['name="mode"', 'name="turns"', 'name="targetInductance"', 'name="diameter"', 'name="length"', 'name="wireDiameter"', 'data-inductor-input="target"', 'data-action="example"', 'data-action="calculate"', 'data-action="reset"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(inductor.includes(value), value);
+  const centripetal = renderGrowthForm('centripetal-force-calculator', centripetalForceCalculatorEnglishCopy);
+  for (const value of ['name="mass"', 'name="radius"', 'name="mode"', 'name="speed"', 'name="frequency"', 'data-motion-input="rotation"', 'value="in"', 'data-action="example"', 'data-action="calculate"', 'data-action="reset"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(centripetal.includes(value), value);
 });

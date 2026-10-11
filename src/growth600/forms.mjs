@@ -60,6 +60,8 @@ export function renderGrowthForm(toolId, copy) {
     'frequency-wavelength-calculator': ['frequency', 'wavelength', 'speed', 'frequencyUnit', 'wavelengthUnit', 'speedUnit', 'medium', 'hz', 'khz', 'mhz', 'ghz', 'thz', 'nanometers', 'micrometers', 'millimeters', 'centimeters', 'meters', 'kilometers', 'metersPerSecond', 'kilometersPerSecond', 'custom', 'vacuum', 'air', 'water', 'glass', 'accuracyNote'],
     'ideal-gas-law-calculator': ['pressure', 'volume', 'amount', 'temperature', 'pressureUnit', 'volumeUnit', 'amountUnit', 'temperatureUnit', 'pascal', 'kilopascal', 'megapascal', 'bar', 'atmosphere', 'torr', 'psi', 'cubicMeters', 'liters', 'milliliters', 'cubicFeet', 'mol', 'millimol', 'kilomol', 'kelvin', 'celsius', 'accuracyNote'],
     'torque-calculator': ['mode', 'solveTorque', 'solveForce', 'solveArm', 'force', 'forceUnit', 'newton', 'kilonewton', 'poundForce', 'arm', 'distanceUnit', 'meters', 'centimeters', 'millimeters', 'feet', 'inches', 'angle', 'torque', 'torqueUnit', 'newtonMeters', 'kilonewtonMeters', 'poundFeet', 'poundInches', 'direction', 'clockwise', 'counterclockwise', 'perpendicularForce', 'momentArm', 'accuracyNote'],
+    'inductor-calculator': ['mode', 'inductanceMode', 'turnsMode', 'turns', 'targetInductance', 'diameter', 'length', 'wireDiameter', 'dimensionUnit', 'millimeters', 'centimeters', 'inches', 'accuracyNote', 'turnsResult', 'inductanceMicrohenries', 'inductanceMillihenries', 'inductanceHenries', 'targetValue', 'fitCheck'],
+    'centripetal-force-calculator': ['mass', 'massUnit', 'kilograms', 'grams', 'pounds', 'radius', 'lengthUnit', 'meters', 'centimeters', 'millimeters', 'feet', 'inches', 'inputMode', 'speedMode', 'rotationMode', 'speed', 'speedUnit', 'metersPerSecond', 'kilometersPerHour', 'milesPerHour', 'frequency', 'frequencyUnit', 'revolutionsPerMinute', 'hertz', 'accuracyNote', 'centripetalForce', 'poundForce', 'acceleration', 'gForce', 'speedResult', 'frequencyResult'],
     'beam-deflection-calculator': ['support', 'simplySupported', 'cantilever', 'loadCase', 'pointLoad', 'uniformLoad', 'span', 'lengthUnit', 'meters', 'centimeters', 'millimeters', 'inches', 'feet', 'load', 'forceUnit', 'newtons', 'kilonewtons', 'poundsForce', 'modulus', 'modulusUnit', 'pascals', 'megapascals', 'gigapascals', 'psi', 'ksi', 'inertia', 'inertiaUnit', 'mm4', 'cm4', 'm4', 'in4', 'ft4', 'loadUnitHint', 'accuracyNote', 'sourceNote'],
     'led-resistor-calculator': ['supplyVoltage', 'forwardVoltage', 'ledCount', 'targetCurrentMa', 'standardSeries', 'e12', 'e24', 'accuracyNote'],
     'flow-rate-calculator': ['mode', 'solveFlow', 'solveArea', 'solveVelocity', 'estimateFillTime', 'area', 'areaUnit', 'squareMeters', 'squareCentimeters', 'squareFeet', 'squareInches', 'velocity', 'velocityUnit', 'metersPerSecond', 'centimetersPerSecond', 'metersPerMinute', 'feetPerSecond', 'flowRate', 'flowUnit', 'cubicMetersPerSecond', 'litersPerSecond', 'litersPerMinute', 'cubicMetersPerHour', 'gallonsPerMinute', 'tankVolume', 'volumeUnit', 'cubicMeters', 'liters', 'usGallons', 'timeUnit', 'seconds', 'minutes', 'hours', 'accuracyNote'],
@@ -238,6 +240,8 @@ export function renderGrowthForm(toolId, copy) {
     'frequency-wavelength-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'ideal-gas-law-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'torque-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'inductor-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'centripetal-force-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'beam-deflection-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'led-resistor-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'flow-rate-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'solved'],
@@ -1245,6 +1249,38 @@ export function renderGrowthForm(toolId, copy) {
     ${label('week-date', fields.date, '<input id="week-date" name="date" type="date" value="2021-01-01" required>')}
     ${label('week-mode', fields.mode, `<select id="week-mode" name="mode"><option value="iso">${escapeGrowthHtml(fields.isoMode)}</option><option value="custom">${escapeGrowthHtml(fields.customMode)}</option></select>`)}
     <div data-week-input="custom" hidden>${label('week-start', fields.weekStart, `<select id="week-start" name="weekStart"><option value="sunday">${escapeGrowthHtml(fields.sunday)}</option><option value="monday">${escapeGrowthHtml(fields.monday)}</option><option value="saturday">${escapeGrowthHtml(fields.saturday)}</option></select>`)}</div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'inductor-calculator') return attachCopy(`<form id="tool-form" class="inductor-calculator" novalidate>
+    ${label('inductor-mode', fields.mode, `<select id="inductor-mode" name="mode"><option value="inductance">${escapeGrowthHtml(fields.inductanceMode)}</option><option value="turns">${escapeGrowthHtml(fields.turnsMode)}</option></select>`)}
+    <div class="calculator-grid">
+      <div data-inductor-input="turns">${label('inductor-turns', fields.turns, '<input id="inductor-turns" name="turns" type="number" min="1" max="50000" step="1" value="40" required>')}</div>
+      <div data-inductor-input="target" hidden>${label('inductor-target', fields.targetInductance, '<input id="inductor-target" name="targetInductance" type="number" min="0.000000000001" max="1000000000000" step="any" value="20" required>')}</div>
+      ${label('inductor-diameter', fields.diameter, '<input id="inductor-diameter" name="diameter" type="number" min="0.01" max="2000" step="any" value="20" required>')}
+      ${label('inductor-length', fields.length, '<input id="inductor-length" name="length" type="number" min="0.01" max="2000" step="any" value="50" required>')}
+      ${label('inductor-wire', fields.wireDiameter, '<input id="inductor-wire" name="wireDiameter" type="number" min="0" max="100" step="any" value="0.8" required>')}
+      ${label('inductor-unit', fields.dimensionUnit, `<select id="inductor-unit" name="dimensionUnit"><option value="mm">${escapeGrowthHtml(fields.millimeters)}</option><option value="cm">${escapeGrowthHtml(fields.centimeters)}</option><option value="in">${escapeGrowthHtml(fields.inches)}</option></select>`)}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'centripetal-force-calculator') return attachCopy(`<form id="tool-form" class="centripetal-force-calculator" novalidate>
+    <div class="calculator-grid">
+      ${label('centripetal-mass', fields.mass, '<input id="centripetal-mass" name="mass" type="number" min="0.000000000001" step="any" value="2" required>')}
+      ${label('centripetal-mass-unit', fields.massUnit, `<select id="centripetal-mass-unit" name="massUnit"><option value="kg">${escapeGrowthHtml(fields.kilograms)}</option><option value="g">${escapeGrowthHtml(fields.grams)}</option><option value="lb">${escapeGrowthHtml(fields.pounds)}</option></select>`)}
+      ${label('centripetal-radius', fields.radius, '<input id="centripetal-radius" name="radius" type="number" min="0.000000001" step="any" value="3" required>')}
+      ${label('centripetal-length-unit', fields.lengthUnit, `<select id="centripetal-length-unit" name="lengthUnit"><option value="m">${escapeGrowthHtml(fields.meters)}</option><option value="cm">${escapeGrowthHtml(fields.centimeters)}</option><option value="mm">${escapeGrowthHtml(fields.millimeters)}</option><option value="ft">${escapeGrowthHtml(fields.feet)}</option><option value="in">${escapeGrowthHtml(fields.inches)}</option></select>`)}
+      ${label('centripetal-mode', fields.inputMode, `<select id="centripetal-mode" name="mode"><option value="speed">${escapeGrowthHtml(fields.speedMode)}</option><option value="rotation">${escapeGrowthHtml(fields.rotationMode)}</option></select>`)}
+      <div data-motion-input="speed">${label('centripetal-speed', fields.speed, '<input id="centripetal-speed" name="speed" type="number" min="0" step="any" value="4" required>')}${label('centripetal-speed-unit', fields.speedUnit, `<select id="centripetal-speed-unit" name="speedUnit"><option value="m/s">${escapeGrowthHtml(fields.metersPerSecond)}</option><option value="km/h">${escapeGrowthHtml(fields.kilometersPerHour)}</option><option value="mph">${escapeGrowthHtml(fields.milesPerHour)}</option></select>`)}</div>
+      <div data-motion-input="rotation" hidden>${label('centripetal-frequency', fields.frequency, '<input id="centripetal-frequency" name="frequency" type="number" min="0" step="any" value="12.732395447" required>')}${label('centripetal-frequency-unit', fields.frequencyUnit, `<select id="centripetal-frequency-unit" name="frequencyUnit"><option value="rpm">${escapeGrowthHtml(fields.revolutionsPerMinute)}</option><option value="hz">${escapeGrowthHtml(fields.hertz)}</option></select>`)}</div>
+    </div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
