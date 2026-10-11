@@ -588,6 +588,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/hebrew-calendar-converter/logic.mjs',
   },
   {
+    id: 'absolute-value-calculator',
+    category: 'math',
+    type: 'calculator',
+    primaryIntent: 'absolute value calculator',
+    secondaryIntents: ['absolute value equation calculator', 'absolute value inequality solver', 'absolute value number line'],
+    functions: ['calculate the nonnegative absolute value of a signed number', 'solve equations of the form |a·x + b| = c, including zero and impossible targets', 'solve strict and inclusive linear absolute value inequalities as points, intervals or exterior rays', 'show the solution set in interval notation and on a number line'],
+    acceptance: '|x| = 3 returns x = −3 or x = 3; |2x − 4| ≤ 6 returns [−1, 5]; |x| > 3 returns (−∞, −3) ∪ (3, ∞). Negative equation targets have no solution; constant expressions return all real numbers or none as appropriate.',
+    boundary: 'Supports only |a·x + b| compared with one real target, plus the absolute value of one number. Inputs are bounded to ±10¹². It is not a general symbolic algebra system and does not solve quadratics, nested absolute values, multiple variables or arbitrary expressions. All arithmetic runs locally.',
+    relatedExistingIds: ['scientific-calculator', 'number-line-graphing-tool'],
+    logicModule: './tools/absolute-value-calculator/logic.mjs',
+  },
+  {
     id: 'goal-planner',
     category: 'productivity',
     type: 'planner',

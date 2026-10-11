@@ -1,6 +1,6 @@
 # Plan de expansión a 600 herramientas · 2026-10-07
 
-Plan y registro vivo de implementación. La última herramienta publicada es #130 Waist To Hip Ratio Calculator; #133 Hebrew Calendar Converter ya superó los gates locales y espera publicación. #131 Compression Ratio Calculator y #132 Goal Planner ya estaban publicadas y no se duplican.
+Plan y registro vivo de implementación. La última herramienta publicada es #133 Hebrew Calendar Converter; #136 Absolute Value Calculator ya superó los gates locales y está lista para integrar. #131 Compression Ratio Calculator y #132 Goal Planner ya estaban publicadas y no se duplican.
 
 - [Plan y checklist completo](PLAN-600.md): catálogo protegido de 277, 323 candidatas nuevas, 36 idiomas, fases, contratos y gates.
 - [Progreso de implementación](PROGRESS.md): fases verificadas, decisiones, pilotos y siguiente acción para reanudar.
@@ -11,8 +11,8 @@ Plan y registro vivo de implementación. La última herramienta publicada es #13
 Coste real DataForSEO: 0,24852 USD. No autoriza nuevas llamadas al reanudar.
 260 candidatas tienen al menos 1.000 búsquedas/mes en la query medida US/en; 63 tienen demanda media (260–880/mes). No son visitas garantizadas ni una previsión de CPM.
 
-Último deploy confirmado: #130 Waist To Hip Ratio Calculator, PR [#123](https://github.com/pedronunezwebs-hash/usefulverse/pull/123); deploy principal `38138160890` y publicación del hub `38138711675` correctos. Ese es el estado que aún está en producción: 158 herramientas Growth600 y 5.724 URLs (158 × 36 + 36 portadas); el sitemap principal tiene 10.260 URLs. Total público actual: 435 herramientas y 15.984 URLs. Sus 36 variantes están en el sitemap; EN y AR responden HTTP 200. Publicar no equivale a indexación.
+Último deploy confirmado: #133 Hebrew Calendar Converter, integrado en el commit `1243db4aace7180742bd909fdb49add3440f3797`; el pipeline `38140134922` publicó el hub correctamente. Ese es el estado que está en producción: 159 herramientas Growth600 y 5.760 URLs (159 × 36 + 36 portadas); el sitemap principal tiene 10.260 URLs. Total público actual: 436 herramientas y 16.020 URLs. Sus 36 variantes están en el sitemap; EN y AR responden HTTP 200. Publicar no equivale a indexación.
 
-La candidata local #133 Hebrew Calendar Converter ya está implementada, traducida y validada; falta integrar y publicar. Al completar ese flujo, no rehacer #131/#132, no repetir investigación de DataForSEO ni medir PageSpeed/Lighthouse sin petición expresa.
+La candidata local #136 Absolute Value Calculator ya está implementada, traducida y validada; falta integrar y publicar. Al completar ese flujo, continuar con la siguiente ficha abierta de `PLAN-600.md`, no rehacer #131/#132, no repetir investigación de DataForSEO ni medir PageSpeed/Lighthouse sin petición expresa.
 
 Las casillas de producto permanecen sin marcar hasta que cada herramienta supere C/F/E/X/L/B/P/S. No llamar implementado, probado, traducido, publicado o indexado a lo que solo está planificado. Consultar `PROGRESS.md` antes de cada tanda; no rehacer investigación ni duplicar herramientas.
