@@ -1759,7 +1759,7 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - **Verificación pública:** sitemap tools.usefulverse.com HTTP 200 con 5.832 URLs; sitemap principal HTTP 200 con 10.260 URLs. Rutas EN/ES/AR HTTP 200 con canonical propio, títulos localizados y fórmula presente. No se infiere indexación.
 - **Recuento tras #272:** producción: 161 herramientas Growth600 + 277 originales; 438 implementaciones y 16.092 URLs. Progreso del plan: 94/323 fichas previas; no se infiere indexación.
 
-## En preparación de publicación · RC Time Constant Calculator (#275) · 2026-10-11
+## Publicada · RC Time Constant Calculator (#275) · 2026-10-11
 
 - Demanda ya medida en el plan: `rc time constant calculator`, 720 búsquedas/mes US/en, KD 3; secundaria `rc circuit calculator`, 590/mes, KD 9. Sin nueva llamada a DataForSEO. CPC no equivale a CPM ni garantiza tráfico.
 - Motor local de τ=RC, respuesta exponencial de carga/descarga, umbral temporal, fracción completada y rise/fall 10–90%; gráfico SVG construido al calcular. No simula parásitos, tolerancias ni cargas; no sustituye diseño eléctrico.
@@ -1768,5 +1768,15 @@ Este era el checkpoint inicial previo a #104 y quedó superado. El conteo actual
 - Sin API, Functions, cargas, dependencias nuevas o coste de procesamiento/servidor. El cálculo ocurre en el navegador.
 - Validación local: `npm test` **1.897/1.897**, `npm run locale:release-check`, build aislada principal **10.260** páginas y build hub **5.868** páginas (162 herramientas × 36 + 36 portadas); `git diff --check` pasa.
 - Chrome local: 1 kΩ × 100 µF → τ=0,1 s; 0→5 V a 0,1 s → 3,160603 V; descarga 10→1 V → 0,230259 s. Gráfico visible; árabe `lang=ar`, `dir=rtl`, 390 px sin overflow y consola limpia. No PageSpeed/Lighthouse.
-- **No publicado todavía:** la ruta de producción actualmente responde con canonical a la portada; no se considera una URL de herramienta. P/S se cierra solo con PR/CI/deploy y sitemap/rutas públicas verificados.
-- **Siguiente acción:** crear PR #275; tras CI, integrar y publicar el hub; verificar rutas y sitemap; regenerar inventario de URLs y continuar con la siguiente ficha abierta del plan. No repetir DataForSEO.
+- **Publicación:** PR #127 integrada en `8e0213f`; CI correcto; despliegue principal `38147187635` y publicación del hub `38147409593` correctos.
+- **Verificación pública:** sitemap `https://tools.usefulverse.com/sitemap.xml` HTTP 200 con **5.868 URLs únicas**; el sitemap principal mantiene **10.260 URLs**. No se infiere indexación.
+- **Recuento después de #275:** 162 herramientas Growth600 + 277 originales = 439 implementaciones; 16.128 URLs entre ambos sitemaps. Plan: 95/323 fichas únicas antes de #101.
+
+## En preparación de publicación · Reverse Mortgage Calculator (#101) · 2026-10-11
+
+- Demanda reutilizada del plan: `reverse mortgage calculator`, 12.100 búsquedas/mes US/en, KD 17; `reverse mortgage balance calculator`, 10/mes. CPC 30,95 USD, no CPM. No se repitió DataForSEO.
+- Proyección local del saldo con saldo inicial, cargos financiados, anticipos mensuales, cuota de servicio, APR nominal y plazo hasta 50 años. Tabla anual, saldo e intereses acumulados; escenario opcional de valor de vivienda con tasa constante elegida. No es cotización, estimación legal, elegibilidad, asesoramiento ni tasación; excluye reglas de prestamistas/programas, seguros, impuestos, costos de venta y tasas variables.
+- Cálculo solo en navegador, sin API, subida, dependencia ni procesamiento del servidor. Capitaliza APR nominal mensualmente; suma flujos mensuales al final del mes y cargos iniciales al mes cero. Límites: 600 meses, tasa anual 0–100% y saldos/flujos ≤10.000 millones.
+- 36 copias estáticas derivadas del inglés con Google Translate gratuito; no son revisión nativa. Se corrigieron respuestas que quedaron en puntuación aislada en árabe, griego y hausa, con una prueba de regresión. `npm run locale:release-check` aprobado.
+- `npm test` **1.904/1.904**; `npm run check` **10.260 URLs principales**; build Growth600 **5.904 páginas** (163 × 36 + 36 portadas). Chrome EN/AR confirma saldo sin flujos/interés, escenario con interés/anticipos/cuotas/valor de vivienda, reinicio, `lang=ar`, `dir=rtl`, móvil 390 px sin desbordamiento y consola limpia. No PageSpeed/Lighthouse.
+- **Estado:** listo localmente; PR/CI/despliegue y verificación pública pendientes. Si se publica: 163 Growth600 + 277 originales = 440 herramientas y 16.164 URLs entre sitemaps.

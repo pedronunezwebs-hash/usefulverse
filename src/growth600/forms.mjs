@@ -137,6 +137,7 @@ export function renderGrowthForm(toolId, copy) {
     'polynomial-long-division-calculator': ['dividend', 'divisor', 'accuracyNote'],
     'half-life-calculator': ['mode', 'solveRemaining', 'solveInitial', 'solveElapsed', 'solveHalfLife', 'initialAmount', 'remainingAmount', 'halfLife', 'elapsedTime', 'timeUnit', 'seconds', 'minutes', 'hours', 'days', 'years', 'accuracyNote'],
     'mortgage-points-calculator': ['principal', 'termMonths', 'rateWithoutPoints', 'rateWithPoints', 'pointsPercent', 'horizonMonths', 'monthsLabel', 'accuracyNote'],
+    'reverse-mortgage-calculator': ['startingBalance', 'upfrontFees', 'monthlyAdvance', 'monthlyFee', 'annualRatePercent', 'years', 'homeValue', 'annualHomeChangePercent', 'currencyNote', 'assumptionsNote'],
     'trapezoid-calculator': ['baseA', 'baseB', 'height', 'topOffset', 'unit', 'millimeters', 'centimeters', 'meters', 'inches', 'feet', 'accuracyNote', 'diagramLabel'],
     'prayer-times-calculator': ['date', 'latitude', 'longitude', 'utcOffset', 'method', 'asrMethod', 'highLatitudeMethod', 'ramadan', 'accuracyNote'],
     'auto-loan-refinance-calculator': ['balance', 'currentApr', 'currentMonths', 'newApr', 'newMonths', 'fees', 'feeTreatment'],
@@ -307,6 +308,7 @@ export function renderGrowthForm(toolId, copy) {
     'polynomial-long-division-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'half-life-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'mortgage-points-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'reverse-mortgage-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'trapezoid-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'prayer-times-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'auto-loan-refinance-calculator': ['calculate', 'reset', 'copy', 'result'],
@@ -1953,6 +1955,20 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'reverse-mortgage-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('starting-balance', fields.startingBalance, '<input id="starting-balance" name="startingBalance" type="number" min="0" max="10000000000" step="any" inputmode="decimal" required>')}
+    ${label('upfront-fees', fields.upfrontFees, '<input id="upfront-fees" name="upfrontFees" type="number" min="0" max="10000000000" step="any" inputmode="decimal" value="0" required>')}
+    ${label('monthly-advance', fields.monthlyAdvance, '<input id="monthly-advance" name="monthlyAdvance" type="number" min="0" max="10000000000" step="any" inputmode="decimal" value="0" required>')}
+    ${label('monthly-fee', fields.monthlyFee, '<input id="monthly-fee" name="monthlyFee" type="number" min="0" max="10000000000" step="any" inputmode="decimal" value="0" required>')}
+    ${label('annual-rate-percent', fields.annualRatePercent, '<input id="annual-rate-percent" name="annualRatePercent" type="number" min="0" max="100" step="any" inputmode="decimal" required>')}
+    ${label('years', fields.years, '<input id="years" name="years" type="number" min="0" max="50" step="1" inputmode="numeric" required>')}
+    ${label('home-value', fields.homeValue, '<input id="home-value" name="homeValue" type="number" min="0" max="10000000000" step="any" inputmode="decimal">')}
+    ${label('annual-home-change-percent', fields.annualHomeChangePercent, '<input id="annual-home-change-percent" name="annualHomeChangePercent" type="number" min="-100" max="100" step="any" inputmode="decimal" value="0" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.currencyNote)}</p><p class="hint">${escapeGrowthHtml(fields.assumptionsNote)}</p><p class="hint">${escapeGrowthHtml(fields.formulaNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'trapezoid-calculator') return attachCopy(`<form id="tool-form" novalidate>

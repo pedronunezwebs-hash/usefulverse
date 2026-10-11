@@ -51,6 +51,8 @@ import { specificHeatCalculatorEnglishCopy } from './locales/specific-heat-calcu
 import specificHeatCalculatorCopies from './locales/specific-heat-calculator-final.mjs';
 import { rcTimeConstantCalculatorEnglishCopy } from './locales/rc-time-constant-calculator.en.mjs';
 import rcTimeConstantCalculatorCopies from './locales/rc-time-constant-calculator-final.mjs';
+import { reverseMortgageCalculatorEnglishCopy } from './locales/reverse-mortgage-calculator.en.mjs';
+import reverseMortgageCalculatorCopies from './locales/reverse-mortgage-calculator-final.mjs';
 
 const actions = {
   calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', millimeters: 'Millimeters', feet: 'Feet', inches: 'Inches', squareMeters: 'Square meters', squareFeet: 'Square feet', cubicMeters: 'Cubic meters', cubicFeet: 'Cubic feet', kelvin: 'Kelvin difference', fahrenheit: 'Fahrenheit difference', kilowatts: 'Kilowatts (kW)', btuPerHour: 'BTU per hour (BTU/h)', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.', kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only', productionMode: 'Estimate array output', sizingMode: 'Size for daily use', years: 'years', add: 'Add', subtract: 'Subtract', multiply: 'Multiply', divide: 'Divide', magnitude: 'Modulus', argument: 'Argument', rectangularToPolar: 'Rectangular to polar', polarToRectangular: 'Polar to rectangular', roots: 'Nth roots',
@@ -76,6 +78,7 @@ const copies = {
   'bond-calculator': bondCalculatorEnglishCopy,
   'specific-heat-calculator': specificHeatCalculatorEnglishCopy,
   'rc-time-constant-calculator': rcTimeConstantCalculatorEnglishCopy,
+  'reverse-mortgage-calculator': reverseMortgageCalculatorEnglishCopy,
   'hebrew-calendar-converter': hebrewCalendarConverterEnglishCopy,
   'absolute-value-calculator': absoluteValueCalculatorEnglishCopy,
   'image-splitter': { name: 'Image splitter', actions: { ...actions, choose: 'Choose image', export: 'Split and prepare ZIP', cancel: 'Cancel', download: 'Download tile ZIP' }, messages: { ...messages }, fields: { imageFile: 'Choose an image', mode: 'Split by', gridMode: 'Rows and columns', tileSizeMode: 'Fixed tile dimensions', columns: 'Columns', rows: 'Rows', tileWidth: 'Tile width', tileHeight: 'Tile height', overlap: 'Overlap', accuracyNote: 'Local image processing.', previewHint: 'Image grid preview.', imageReady: 'Image ready' } },
@@ -1630,6 +1633,29 @@ test('RC time constant calculator exposes voltage and threshold-time modes with 
   for (const expected of ['name="mode"', 'value="voltage"', 'value="time"', 'name="resistance"', 'name="resistanceUnit"', 'name="capacitance"', 'name="capacitanceUnit"', 'name="initialVoltage"', 'name="finalVoltage"', 'data-rc-time-field', 'data-rc-target-field hidden', 'name="timeUnit"', 'data-action="calculate"', 'data-action="reset"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
   assert.match(html, /instantaneous input step/u);
   assert.match(html, /strictly between/u);
+});
+
+test('reverse mortgage calculator explains assumptions and renders local-only scenario fields', () => {
+  const html = renderGrowthForm('reverse-mortgage-calculator', reverseMortgageCalculatorEnglishCopy);
+  for (const expected of ['name="startingBalance"', 'name="upfrontFees"', 'name="monthlyAdvance"', 'name="monthlyFee"', 'name="annualRatePercent"', 'name="years"', 'name="homeValue"', 'name="annualHomeChangePercent"', 'data-action="example"', 'data-action="calculate"', 'data-action="reset"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /not a lender quote.*financial advice/u);
+  assert.match(html, /one currency throughout/u);
+  assert.match(html, /not a valuation/u);
+  assert.match(html, /data-result-content/u);
+});
+
+test('reverse mortgage localization files contain distinct copy and three complete FAQs for every locale', () => {
+  assert.equal(Object.keys(reverseMortgageCalculatorCopies).length, 36);
+  for (const [locale, copy] of Object.entries(reverseMortgageCalculatorCopies)) {
+    assert.equal(copy.copyLanguage, locale);
+    assert.ok(copy.title.includes('UsefulVerse'), locale);
+    assert.equal(copy.additionalFaqs.length, 3, locale);
+    assert.ok(copy.additionalFaqs.every(({ question, answer }) => question?.trim() && answer?.trim()), locale);
+    assert.ok(copy.fields.formulaNote?.trim(), locale);
+    for (const group of [copy.actions, copy.messages]) {
+      for (const value of Object.values(group)) assert.doesNotMatch(value, /^[\p{P}\p{S}\s]+$/u, locale);
+    }
+  }
 });
 
 test('specific heat localized unit labels retain standard SI and customary symbols in all locales', () => {

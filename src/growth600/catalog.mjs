@@ -1943,6 +1943,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['compound-interest-calculator', 'savings-goal-calculator'],
     logicModule: './tools/529-calculator/logic.mjs',
   },
+  {
+    id: 'reverse-mortgage-calculator',
+    category: 'personal-finance',
+    type: 'calculator',
+    primaryIntent: 'reverse mortgage calculator',
+    secondaryIntents: ['reverse mortgage balance calculator', 'reverse mortgage loan balance projection', 'reverse mortgage interest and fees calculator'],
+    functions: ['project a user-entered opening balance with optional financed upfront fees, monthly draws, servicing fees and nominal annual interest', 'show yearly balance checkpoints, accrued interest, total advances and an optional home-value/equity scenario', 'let visitors change assumptions without submitting financial or property data to a service'],
+    acceptance: 'An opening balance of $10,000, with no draws, fees or interest for 10 years, remains $10,000.',
+    boundary: 'Illustrative arithmetic only, not a lender quote, loan estimate, eligibility check, legal reverse-mortgage calculation or financial advice. User-entered nominal annual rate is compounded monthly; monthly advances and fees are added at month end; upfront fees are added at month zero. Optional home appreciation is a constant user assumption. Excludes lender/program rules, insurance, taxes, closing costs not entered, changing rates, longevity, non-recourse provisions and sale costs. All calculations stay in this browser.',
+    relatedExistingIds: ['loan-calculator', 'mortgage-points-calculator', 'compound-interest-calculator'],
+    logicModule: './tools/reverse-mortgage-calculator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

@@ -22,6 +22,8 @@ import specificHeatCalculatorCopies from './specific-heat-calculator-final.mjs';
 import { specificHeatCalculatorEnglishCopy } from './specific-heat-calculator.en.mjs';
 import rcTimeConstantCalculatorCopies from './rc-time-constant-calculator-final.mjs';
 import { rcTimeConstantCalculatorEnglishCopy } from './rc-time-constant-calculator.en.mjs';
+import reverseMortgageCalculatorCopies from './reverse-mortgage-calculator-final.mjs';
+import { reverseMortgageCalculatorEnglishCopy } from './reverse-mortgage-calculator.en.mjs';
 import drywallCopies from './drywall-calculator.mjs';
 import { drywallEnglishCopy } from './drywall-calculator.en.mjs';
 import roofingCopies from './roofing-calculator.mjs';
@@ -1233,5 +1235,6 @@ registerGrowthLocaleExtension(source, 'hebrew-calendar-converter', { ...hebrewCa
 registerGrowthLocaleExtension(source, 'absolute-value-calculator', { ...absoluteValueCalculatorCopies, en: absoluteValueCalculatorEnglishCopy }, 'hebrew-calendar-converter');
 registerGrowthLocaleExtension(source, 'specific-heat-calculator', { ...specificHeatCalculatorCopies, en: specificHeatCalculatorEnglishCopy }, 'thermal-expansion-calculator');
 registerGrowthLocaleExtension(source, 'rc-time-constant-calculator', { ...rcTimeConstantCalculatorCopies, en: rcTimeConstantCalculatorEnglishCopy }, 'specific-heat-calculator');
+registerGrowthLocaleExtension(source, 'reverse-mortgage-calculator', { ...reverseMortgageCalculatorCopies, en: reverseMortgageCalculatorEnglishCopy }, 'mortgage-points-calculator');
 
 export default Object.freeze(source);
