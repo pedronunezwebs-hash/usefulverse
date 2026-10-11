@@ -69,11 +69,12 @@ import threePhasePowerCopies from './locales/three-phase-power-calculator.mjs';
 import momentumCopies from './locales/momentum-calculator.mjs';
 import logicGridPuzzleCopies from './locales/logic-grid-puzzle-final.mjs';
 import markdownEditorCopies from './locales/markdown-editor-final.mjs';
+import purchaseOrderGeneratorCopies from './locales/purchase-order-generator-final.mjs';
 
-const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['markdown-editor', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'ph-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'kinetic-energy-calculator', 'resistor-color-code-calculator', 'acceleration-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator'].includes(id));
+const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['markdown-editor', 'purchase-order-generator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'ph-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'kinetic-energy-calculator', 'resistor-color-code-calculator', 'acceleration-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator'].includes(id));
 const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
   key,
-  (await import(`./locales/${key}.mjs`)).default,
+  { ...(await import(`./locales/${key}.mjs`)).default, 'purchase-order-generator': purchaseOrderGeneratorCopies[key] },
 ])));
 
 test('section modulus calculator has static, bounded translations in all 36 locales', () => {
@@ -335,9 +336,11 @@ test('repeating-decimal conversion has static copy and exact-decimal FAQ coverag
 });
 
 function assertMachineAcceptedGrowthToolInAllLocales(tool) {
-  const copies = tool.id === 'markdown-editor'
-    ? Object.fromEntries(localeEntries.map(({ key }) => [key, { ...localizedCopies[key], 'markdown-editor': markdownEditorCopies[key] }]))
-    : localizedCopies;
+  const copies = Object.fromEntries(localeEntries.map(({ key }) => [key, {
+    ...localizedCopies[key],
+    ...(tool.id === 'markdown-editor' ? { 'markdown-editor': markdownEditorCopies[key] } : {}),
+    ...(tool.id === 'purchase-order-generator' ? { 'purchase-order-generator': purchaseOrderGeneratorCopies[key] } : {}),
+  }]));
   assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, copies), true);
   for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
     const copy = copies[key][tool.id];
@@ -386,6 +389,23 @@ test('Markdown editor has static translations, safe-preview copy and accurate me
     assert.ok(copy.messages.previewFailed && copy.messages.tooLong, key);
     assert.ok(copy.title.toLowerCase().includes(copy.name.toLowerCase()), `${key}: title retains localized name`);
     assert.ok(copy.title.length <= 60 && copy.description.length <= 160, `${key}: bounded metadata`);
+  }
+});
+
+test('Purchase Order Generator has static translations and valid example syntax in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'purchase-order-generator');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = purchaseOrderGeneratorCopies[key];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.fields.items && copy.fields.itemsHint && copy.fields.currencyHint, key);
+    assert.ok(copy.actions.generate && copy.actions.downloadCsv && copy.actions.print, key);
+    assert.ok(copy.messages.invalid && copy.messages.downloadFailed, key);
+    assert.ok(copy.title.toLowerCase().includes(copy.name.toLowerCase()), `${key}: title retains localized name`);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, `${key}: bounded metadata`);
+    assert.equal(copy.example.values.length, 2, key);
+    for (const line of copy.example.values) assert.equal((line.match(/\|/gu) ?? []).length, 2, `${key}: stable line-item syntax`);
   }
 });
 

@@ -4,11 +4,22 @@ import { tools } from '../catalog.mjs';
 import { assertGrowthCatalogIsAdditive, growthPilotTools } from './catalog.mjs';
 import { checkLogicGridMarks, createLogicGridPuzzle, solveLogicGrid } from './tools/logic-grid-puzzle/logic.mjs';
 import { countMarkdown, insertMarkdown } from './tools/markdown-editor/logic.mjs';
+import { createPurchaseOrder } from './tools/purchase-order-generator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 154);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 154);
+  assert.equal(growthPilotTools.length, 155);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 155);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
+});
+
+test('purchase order generator has a distinct pre-purchase intent and correct acceptance total', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'purchase-order-generator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'purchase order template');
+  assert.deepEqual(tool.relatedExistingIds, ['invoice-generator', 'work-order-generator']);
+  const order = createPurchaseOrder({ issuedDate: '2026-10-11', currency: 'USD', buyer: 'Buyer', supplier: 'Supplier', taxPercent: '8', shipping: '4.50', lines: [{ description: 'Paper', quantity: '2', unitPrice: '12.50' }, { description: 'Ink', quantity: '3', unitPrice: '7.25' }] }, { locale: 'en-US' });
+  assert.equal(order.subtotalMinor, 4675);
+  assert.equal(order.totalMinor, 5499);
 });
 
 test('Markdown editor adds a local, bounded editing workflow rather than a duplicate format converter', () => {
