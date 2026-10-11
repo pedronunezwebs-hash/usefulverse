@@ -1788,6 +1788,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/effective-interest-rate-calculator/logic.mjs',
   },
   {
+    id: 'julian-date-converter',
+    category: 'date-time',
+    type: 'converter',
+    primaryIntent: 'julian date converter',
+    secondaryIntents: ['julian day calculator', 'modified julian date converter', 'JD to UTC converter', 'UTC to Julian Date calculator'],
+    functions: ['convert Gregorian UTC date and time to Julian Date and Modified Julian Date', 'convert JD or MJD back to UTC with millisecond rounding', 'show UTC day fraction, calendar convention, and time scale', 'validate leap years, dates, ranges, and unsupported leap seconds explicitly'],
+    acceptance: '2000-01-01T12:00:00Z returns JD 2451545 and MJD 51544.5; inverse JD 2451545 returns 2000-01-01T12:00:00.000Z.',
+    boundary: 'Uses the proleptic Gregorian calendar and UTC, not local civil time or historical calendar cutovers. Leap seconds are not represented. Reverse conversion rounds to the nearest millisecond; supported years are 0001–9999. No astronomy ephemeris, time-zone lookup, API, upload, or storage.',
+    relatedExistingIds: ['timestamp-converter', 'date-calculator'],
+    logicModule: './tools/julian-date-converter/logic.mjs',
+  },
+  {
     id: '529-calculator',
     category: 'personal-finance',
     type: 'calculator',

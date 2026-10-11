@@ -259,6 +259,8 @@ import effectiveInterestRateCalculatorCopies from './effective-interest-rate-cal
 import { effectiveInterestRateCalculatorEnglishCopy } from './effective-interest-rate-calculator.en.mjs';
 import fiveTwentyNineCalculatorCopies from './529-calculator-final.mjs';
 import { fiveTwentyNineCalculatorEnglishCopy } from './529-calculator.en.mjs';
+import julianDateConverterCopies from './julian-date-converter-final.mjs';
+import { julianDateConverterEnglishCopy } from './julian-date-converter.en.mjs';
 import chemicalEquationCopies from './chemical-equation-balancer-final.mjs';
 import { chemicalEquationBalancerEnglishCopy } from './chemical-equation-balancer.en.mjs';
 import gearRatioCopies from './gear-ratio-calculator-final.mjs';
@@ -767,6 +769,7 @@ registerGrowthLocaleExtension(source, 'rlc-circuit-calculator', { ...rlcCircuitC
 registerGrowthLocaleExtension(source, 'antenna-length-calculator', { ...antennaLengthCalculatorCopies, en: antennaLengthCalculatorEnglishCopy }, 'rlc-circuit-calculator');
 registerGrowthLocaleExtension(source, 'effective-interest-rate-calculator', { ...effectiveInterestRateCalculatorCopies, en: effectiveInterestRateCalculatorEnglishCopy }, 'antenna-length-calculator');
 registerGrowthLocaleExtension(source, '529-calculator', { ...fiveTwentyNineCalculatorCopies, en: fiveTwentyNineCalculatorEnglishCopy }, 'effective-interest-rate-calculator');
+registerGrowthLocaleExtension(source, 'julian-date-converter', { ...julianDateConverterCopies, en: julianDateConverterEnglishCopy }, '529-calculator');
 registerGrowthLocaleExtension(source, 'chemical-equation-balancer', { ...chemicalEquationCopies, en: chemicalEquationBalancerEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'gear-ratio-calculator', { ...gearRatioCopies, en: gearRatioCalculatorEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'density-calculator', { ...densityCopies, en: densityCalculatorEnglishCopy }, 'gravel-calculator');

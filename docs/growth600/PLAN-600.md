@@ -1025,8 +1025,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 087 · Dilution Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `dilution-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/dilution-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `dilution-calculator`**
+- **Destino:** `https://tools.usefulverse.com/tools/dilution-calculator/`; 36 rutas localizadas estáticas.
 - **Demanda:** `dilution calculator` — 14.800 búsquedas/mes US/en, KD 16; nivel A. CPC 5.58 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** modo directo `C₁V₁=C₂V₂` con alícuota de stock, volumen final y diluyente idealizado; modo de serie que divide un factor total en pasos iguales y muestra alícuota/diluyente por paso. Concentraciones en la misma unidad elegida y volúmenes L/mL.
 - **Prueba de aceptación específica:** stock 10 M → objetivo 2 M y 1 L final requiere 0,2 L de stock + 0,8 L de diluyente (asumiendo aditividad); factor total 10× repartido en 3 pasos da factor por paso `10^(1/3)`.
@@ -1036,6 +1036,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `c1v1 c2v2 calculator` — 880/mes US/en; KD 0.
   - `dilution calculator free online`; `dilution calculator with example`; `dilution calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Estado comprobado (2026-10-11):** herramienta ya publicada; EN y AR responden HTTP 200, y el sitemap público contiene sus 36 variantes. La lógica y la ficha de release pertenecen a una entrega anterior; no se duplica ni se atribuye aquí un PR que no se ha vuelto a comprobar.
 
 ### 089 · Ohms Law Calculator
 
@@ -1938,7 +1939,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `college savings calculator` — 4.400/mes US/en; KD 11.
   - `529 calculator free online`; `529 calculator with example`; `529 calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
-- **Estado local (2026-10-11):** lógica, formulario, SEO localizado y FAQ; copy estática generada para 36 locales con Google Translate, con correcciones puntuales de cadenas RTL y algunas etiquetas. Son borradores automáticos, no revisión nativa. Suite completa **1.801/1.801**; `locale:release-check` pasa; `npm run check` conserva **10.260 URLs** del sitio principal; build aislado genera **5.436 URLs** del hub (150 × 36 + 36 portadas), con controlador de **5.597 bytes**. QA Chrome EN/AR: caso de coste 10.000, un año, plazo/rendimiento/inflación/beca cero → objetivo 10.000 y ahorro adicional hoy 10.000; etiquetas accesibles, `dir=rtl` y sin overflow en 390 px ni 1365 px, consola limpia. Publicación aún pendiente hasta merge y despliegue del hub.
+- **Estado publicado (2026-10-11):** PR #114 integrada en `c9e18cb0dc4ef8128aed06545ce108047b918a2d`; CI/despliegue principal `38120717651` y publicación del hub `38120973293` correctos. El estado público queda anotado en `docs/growth600/PROGRESS.md`.
 
 ### 101 · Reverse Mortgage Calculator
 
@@ -3449,17 +3450,18 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 088 · Julian Date Converter
 
-- [ ] **C/F/E/X/L/B/P/S completos — `julian-date-converter`**
+- [ ] **C/F/E/X/L/B/P/S completos — `julian-date-converter`** (P/S pendientes de publicación)
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/julian-date-converter/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `julian date converter` — 14.800 búsquedas/mes US/en, KD 24; nivel A. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Fecha UTC a JD/MJD y vuelta, fracción de día, calendario aplicado y precisión. JD 2451545 corresponde a 2000-01-01 12:00 UTC.
-- **Prueba de aceptación específica:** 2000-01-01T12Z daJD2451545
+- **Prueba de aceptación específica:** `2000-01-01T12:00:00Z` → JD `2451545`, MJD `51544.5`; ida y vuelta hasta milisegundos, incluidos cambio de día y límites de años.
 - **Frontera con otras herramientas:** timestamp-converter: calendarioastronómico noepoch Unix. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `julian day calculator` — 14.800/mes US/en; KD 31.
   - `julian date converter free online`; `julian date converter with example`; `julian date converter no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Estado local (2026-10-11):** C/F/E/X/L/B completados; 36 copias estáticas, con revisión de controles, FAQ, metadata, etiquetas de calendario y Arabic RTL. Suite enfocada **302/302**, `locale:release-check` pasa y el build separado genera **5.472 páginas**; el build principal conserva **10.260**. Chrome: caso J2000 correcto en EN/AR, dirección RTL válida, sin errores de consola ni overflow al tamaño accesible del viewport. No se midió PageSpeed/Lighthouse. **P/S siguen pendientes** hasta integración, despliegue, URL pública y sitemap verificados.
 
 ### 120 · Interval Timer
 

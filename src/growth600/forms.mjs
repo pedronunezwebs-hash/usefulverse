@@ -69,6 +69,7 @@ export function renderGrowthForm(toolId, copy) {
     'antenna-length-calculator': ['mode', 'dipole', 'monopole', 'frequency', 'frequencyUnit', 'hz', 'khz', 'mhz', 'ghz', 'shorteningFactor', 'accuracyNote'],
     'effective-interest-rate-calculator': ['mode', 'aprToApy', 'apyToApr', 'rate', 'frequency', 'annual', 'semiannual', 'quarterly', 'monthly', 'twiceMonthly', 'biweekly', 'weekly', 'daily', 'continuous', 'accuracyNote'],
     '529-calculator': ['currentSavings', 'monthlyContribution', 'yearsUntilCollege', 'annualCostToday', 'collegeYears', 'tuitionInflationPercent', 'annualReturnPercent', 'scholarshipPerYear', 'currency', 'accuracyNote'],
+    'julian-date-converter': ['direction', 'toJulian', 'toUtc', 'utcDate', 'julianValue', 'dateKind', 'jd', 'mjd', 'accuracyNote'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
     'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
     'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
@@ -227,6 +228,7 @@ export function renderGrowthForm(toolId, copy) {
     'antenna-length-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'effective-interest-rate-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     '529-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'julian-date-converter': ['calculate', 'reset', 'copy', 'example', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
     'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -2176,6 +2178,21 @@ export function renderGrowthForm(toolId, copy) {
     ${label('529-annual-return', fields.annualReturnPercent, '<input id="529-annual-return" name="annualReturnPercent" type="number" min="0" max="30" step="any" inputmode="decimal" value="5" required>')}
     ${label('529-scholarship', fields.scholarshipPerYear, '<input id="529-scholarship" name="scholarshipPerYear" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="0" required>')}
     ${label('529-currency', fields.currency, `<select id="529-currency" name="currency"><option value="USD">USD</option><option value="EUR">EUR</option><option value="GBP">GBP</option><option value="CAD">CAD</option><option value="AUD">AUD</option><option value="JPY">JPY</option></select>`)}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'julian-date-converter') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('jd-direction', fields.direction, `<select id="jd-direction" name="direction"><option value="to-jd">${escapeGrowthHtml(fields.toJulian)}</option><option value="to-utc">${escapeGrowthHtml(fields.toUtc)}</option></select>`)}
+    <div data-jd-input="utc">
+      ${label('jd-utc-date', fields.utcDate, '<input id="jd-utc-date" name="utcDate" type="datetime-local" step="0.001" value="2000-01-01T12:00:00" required>')}
+    </div>
+    <div data-jd-input="value" hidden>
+      ${label('jd-date-kind', fields.dateKind, `<select id="jd-date-kind" name="dateKind"><option value="jd">${escapeGrowthHtml(fields.jd)}</option><option value="mjd">${escapeGrowthHtml(fields.mjd)}</option></select>`)}
+      ${label('jd-value', fields.julianValue, '<input id="jd-value" name="julianValue" type="number" step="any" inputmode="decimal" value="2451545" required>')}
+    </div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>

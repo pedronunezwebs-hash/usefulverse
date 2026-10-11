@@ -4,11 +4,12 @@
 
 ## Estado público actual · 2026-10-11
 
-- **Estado público anterior a #086:** 149 herramientas Growth600 junto al catálogo protegido de 277, todas en 36 locales. El sitemap del hub contiene **5.400 URLs** (149 × 36 + 36 portadas); el principal conserva **10.260 URLs**, total **15.660**. Publicación y sitemap no implican indexación.
-- #268 Effective Interest Rate Calculator: PR #111 fusionada en `1b17856e5ffc0781a1df313eb4a1fdcb0d7883c1`; CI y deploy principal `38115604120`, publicación separada del hub `38115851965`. Rutas EN/ES/AR y sitemap público comprobados. Detalles de función, pruebas y límites en la ficha #268 de `PLAN-600.md`.
-- **Reanudación:** retomar en la siguiente candidata pendiente de `PLAN-600.md`; antes de implementarla comprobar slug, función e intención frente al catálogo original de 277 y a las 148 herramientas del hub para evitar duplicados. Mantener 36 locales, render estático, procesamiento local y gates C/F/E/X/L/B/P/S. No repetir PageSpeed/Lighthouse ni búsquedas de DataForSEO salvo petición expresa.
-- **Siguiente paso de publicación:** #086 529 Calculator ya está implementada y pasa gates locales; antes de fusionarla, el estado público sigue en 149 Growth600 y 5.400 URLs del hub. No anunciar #086 como publicada hasta verificar el deploy.
-- Recuento público anterior a #086: **93/323 candidatas implementadas; 230 pendientes válidas y una fila duplicada/reserva** según la clasificación existente. No tratar la fila de reserva como herramienta; conservarla para sustituirla por una candidata investigada que no se canibalice.
+- **150 herramientas Growth600** junto al catálogo protegido de 277; **427 herramientas públicas en total**. Todas se publican en 36 locales. Sitemap del hub: **5.436 URLs** (150 × 36 + 36 portadas); sitemap principal: **10.260 URLs**; total combinado: **15.696 URLs**. Publicación y sitemap no implican indexación.
+- #086 529 Calculator: PR #114 integrada en `c9e18cb0dc4ef8128aed06545ce108047b918a2d`; CI/despliegue principal `38120717651` y publicación separada del hub `38120973293` correctos.
+- #087 Dilution Calculator ya estaba publicada antes de esta reanudación; en esta sesión se comprobó que EN y AR devuelven HTTP 200 y que sus 36 variantes están incluidas en el sitemap público. No se rehízo.
+- **En curso:** #088 Julian Date Converter. Código y traducciones estáticas en la rama aislada `codex/growth600-julian-date-converter-20261011`; después de publicar, la cuenta prevista es 151 Growth600, 428 herramientas totales, 5.472 URLs del hub y 15.732 URLs combinadas.
+- Reanudar siempre leyendo primero `PLAN-600.md` y esta sección, continuar en la siguiente candidata pendiente y comprobar slug, función e intención frente al catálogo original protegido y las herramientas del hub. Mantener 36 locales, render estático y procesamiento local. No repetir PageSpeed/Lighthouse ni llamadas a DataForSEO salvo petición expresa.
+- El progreso público anterior a #086 se conserva como historial debajo; sus cantidades ya no representan el estado actual. Las candidatas de reserva no cuentan como herramientas.
 
 ## Estado público actual · 2026-10-10
 
