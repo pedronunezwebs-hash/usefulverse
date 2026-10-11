@@ -2115,8 +2115,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 268 · Effective Interest Rate Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `effective-interest-rate-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/effective-interest-rate-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `effective-interest-rate-calculator`**
+- **Publicado (2026-10-11):** `https://tools.usefulverse.com/tools/effective-interest-rate-calculator/` y sus otras 35 versiones localizadas. PR #111, merge `1b17856e5ffc0781a1df313eb4a1fdcb0d7883c1`; CI del merge `38115604120`; deploy separado del hub `38115851965`. Sitemap público HTTP 200, 5.364 URLs únicas; versiones EN/ES/AR HTTP 200, canonical propio y `lang` correcto; árabe `dir=rtl`. No implica indexación. No se midió PageSpeed/Lighthouse.
 - **Demanda:** `effective interest rate calculator` — 880 búsquedas/mes US/en, KD 7; nivel C. CPC 14.04 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** APR nominal, frecuencias, APY y conversión inversa
 - **Prueba de aceptación específica:** 12% mensual compuesto da 12.6825% APY
@@ -2127,6 +2127,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `effective interest rate calculator free online`; `effective interest rate calculator with example`; `effective interest rate calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** DE/de `effektivzins rechner` 90/mes, KD 0.
+- **P/S completados:** gates completos, deploy del sitio principal y del hub correctos, páginas y sitemap público verificados. Los paneles pueden tardar en reflejar el nuevo contenido.
 
 ### 284 · Roth Vs Traditional Calculator
 
