@@ -8,10 +8,11 @@ import { createPurchaseOrder } from './tools/purchase-order-generator/logic.mjs'
 import { calculateEigenpairs } from './tools/eigenvalue-calculator/logic.mjs';
 import { calculateWaistHipRatio } from './tools/waist-to-hip-ratio-calculator/logic.mjs';
 import { buildBondYieldCurve, calculateBondPrice, solveBondYield } from './tools/bond-calculator/logic.mjs';
+import { gregorianToHebrew, hebrewToGregorian, isHebrewLeapYear } from './tools/hebrew-calendar-converter/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 158);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 158);
+  assert.equal(growthPilotTools.length, 159);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 159);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -38,6 +39,19 @@ test('waist-to-hip ratio is a unitless arithmetic tool, distinct from body-fat e
   assert.deepEqual(tool.relatedExistingIds, ['body-fat-calculator']);
   assert.match(tool.boundary, /does not.*assess health risk or diagnose/u);
   assert.equal(calculateWaistHipRatio({ waist: 80, hip: 100, unit: 'cm' }).ratio, 0.8);
+});
+
+test('Hebrew calendar converter handles Adar II, round-trips dates and states its sunset boundary', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'hebrew-calendar-converter');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'hebrew calendar converter');
+  assert.deepEqual(tool.relatedExistingIds, ['hijri-calendar-converter']);
+  assert.match(tool.boundary, /Intl\.DateTimeFormat/u);
+  assert.match(tool.boundary, /sunset/u);
+  const purimDate = gregorianToHebrew({ year: 2024, month: 3, day: 11 });
+  assert.deepEqual(purimDate, { year: 5784, month: 7, day: 1, monthKey: 'adarII', leapYear: true });
+  assert.deepEqual(hebrewToGregorian({ year: 5784, month: 7, day: 1 }), { year: 2024, month: 3, day: 11 });
+  assert.equal(isHebrewLeapYear(5783), false);
 });
 
 test('eigenvalue calculator is additive and validates symmetric eigenpairs', () => {

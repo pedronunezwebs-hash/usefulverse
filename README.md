@@ -16,10 +16,10 @@ Browser-first collection of fast, private, static tools for everyday work.
 
 The additional Growth600 tools are published on a separate static Cloudflare Pages site at
 [tools.usefulverse.com](https://tools.usefulverse.com/), so they do not replace or
-change the 277-tool catalog above. The hub contains 157 additional tools in
+change the 277-tool catalog above. The hub contains 159 additional tools in
 the same 36 locales. Its canonical URL inventory and language alternates are listed in
-the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (5,688 URLs in this
-build: 157 tools and 36 localized hub home pages; 434 tool implementations
+the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (5,760 URLs in this
+build: 159 tools and 36 localized hub home pages; 436 tool implementations
 across the two sites);
 the staged checklist and implementation record are in
 [docs/growth600/PLAN-600.md](docs/growth600/PLAN-600.md) and
@@ -10553,7 +10553,7 @@ These are the canonical URLs for the additional tools and their localized pages.
 
 <!-- BEGIN GENERATED GROWTH600 URL INVENTORY -->
 
-Generated from `dist-growth600/sitemap.xml`: **5,724 canonical URLs**.
+Generated from `dist-growth600/sitemap.xml`: **5,760 canonical URLs**.
 
 ```text
 https://tools.usefulverse.com/
@@ -10605,6 +10605,7 @@ https://tools.usefulverse.com/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/tools/density-calculator/
 https://tools.usefulverse.com/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/tools/goal-planner/
 https://tools.usefulverse.com/tools/mind-map-maker/
 https://tools.usefulverse.com/tools/mood-tracker/
@@ -10764,6 +10765,7 @@ https://tools.usefulverse.com/es/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/es/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/es/tools/density-calculator/
 https://tools.usefulverse.com/es/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/es/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/es/tools/goal-planner/
 https://tools.usefulverse.com/es/tools/mind-map-maker/
 https://tools.usefulverse.com/es/tools/mood-tracker/
@@ -10923,6 +10925,7 @@ https://tools.usefulverse.com/fr/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/fr/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/fr/tools/density-calculator/
 https://tools.usefulverse.com/fr/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/fr/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/fr/tools/goal-planner/
 https://tools.usefulverse.com/fr/tools/mind-map-maker/
 https://tools.usefulverse.com/fr/tools/mood-tracker/
@@ -11082,6 +11085,7 @@ https://tools.usefulverse.com/pt-br/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/pt-br/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/pt-br/tools/density-calculator/
 https://tools.usefulverse.com/pt-br/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/pt-br/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/pt-br/tools/goal-planner/
 https://tools.usefulverse.com/pt-br/tools/mind-map-maker/
 https://tools.usefulverse.com/pt-br/tools/mood-tracker/
@@ -11241,6 +11245,7 @@ https://tools.usefulverse.com/de/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/de/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/de/tools/density-calculator/
 https://tools.usefulverse.com/de/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/de/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/de/tools/goal-planner/
 https://tools.usefulverse.com/de/tools/mind-map-maker/
 https://tools.usefulverse.com/de/tools/mood-tracker/
@@ -11400,6 +11405,7 @@ https://tools.usefulverse.com/ja/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ja/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ja/tools/density-calculator/
 https://tools.usefulverse.com/ja/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/ja/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/ja/tools/goal-planner/
 https://tools.usefulverse.com/ja/tools/mind-map-maker/
 https://tools.usefulverse.com/ja/tools/mood-tracker/
@@ -11559,6 +11565,7 @@ https://tools.usefulverse.com/ko/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ko/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ko/tools/density-calculator/
 https://tools.usefulverse.com/ko/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/ko/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/ko/tools/goal-planner/
 https://tools.usefulverse.com/ko/tools/mind-map-maker/
 https://tools.usefulverse.com/ko/tools/mood-tracker/
@@ -11718,6 +11725,7 @@ https://tools.usefulverse.com/id/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/id/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/id/tools/density-calculator/
 https://tools.usefulverse.com/id/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/id/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/id/tools/goal-planner/
 https://tools.usefulverse.com/id/tools/mind-map-maker/
 https://tools.usefulverse.com/id/tools/mood-tracker/
@@ -11877,6 +11885,7 @@ https://tools.usefulverse.com/hi/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/hi/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/hi/tools/density-calculator/
 https://tools.usefulverse.com/hi/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/hi/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/hi/tools/goal-planner/
 https://tools.usefulverse.com/hi/tools/mind-map-maker/
 https://tools.usefulverse.com/hi/tools/mood-tracker/
@@ -12036,6 +12045,7 @@ https://tools.usefulverse.com/ar/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ar/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ar/tools/density-calculator/
 https://tools.usefulverse.com/ar/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/ar/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/ar/tools/goal-planner/
 https://tools.usefulverse.com/ar/tools/mind-map-maker/
 https://tools.usefulverse.com/ar/tools/mood-tracker/
@@ -12195,6 +12205,7 @@ https://tools.usefulverse.com/zh-cn/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/zh-cn/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/zh-cn/tools/density-calculator/
 https://tools.usefulverse.com/zh-cn/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/zh-cn/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/zh-cn/tools/goal-planner/
 https://tools.usefulverse.com/zh-cn/tools/mind-map-maker/
 https://tools.usefulverse.com/zh-cn/tools/mood-tracker/
@@ -12354,6 +12365,7 @@ https://tools.usefulverse.com/bn/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/bn/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/bn/tools/density-calculator/
 https://tools.usefulverse.com/bn/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/bn/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/bn/tools/goal-planner/
 https://tools.usefulverse.com/bn/tools/mind-map-maker/
 https://tools.usefulverse.com/bn/tools/mood-tracker/
@@ -12513,6 +12525,7 @@ https://tools.usefulverse.com/ru/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ru/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ru/tools/density-calculator/
 https://tools.usefulverse.com/ru/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/ru/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/ru/tools/goal-planner/
 https://tools.usefulverse.com/ru/tools/mind-map-maker/
 https://tools.usefulverse.com/ru/tools/mood-tracker/
@@ -12672,6 +12685,7 @@ https://tools.usefulverse.com/ur/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ur/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ur/tools/density-calculator/
 https://tools.usefulverse.com/ur/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/ur/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/ur/tools/goal-planner/
 https://tools.usefulverse.com/ur/tools/mind-map-maker/
 https://tools.usefulverse.com/ur/tools/mood-tracker/
@@ -12831,6 +12845,7 @@ https://tools.usefulverse.com/tr/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/tr/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/tr/tools/density-calculator/
 https://tools.usefulverse.com/tr/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/tr/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/tr/tools/goal-planner/
 https://tools.usefulverse.com/tr/tools/mind-map-maker/
 https://tools.usefulverse.com/tr/tools/mood-tracker/
@@ -12990,6 +13005,7 @@ https://tools.usefulverse.com/vi/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/vi/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/vi/tools/density-calculator/
 https://tools.usefulverse.com/vi/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/vi/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/vi/tools/goal-planner/
 https://tools.usefulverse.com/vi/tools/mind-map-maker/
 https://tools.usefulverse.com/vi/tools/mood-tracker/
@@ -13149,6 +13165,7 @@ https://tools.usefulverse.com/it/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/it/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/it/tools/density-calculator/
 https://tools.usefulverse.com/it/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/it/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/it/tools/goal-planner/
 https://tools.usefulverse.com/it/tools/mind-map-maker/
 https://tools.usefulverse.com/it/tools/mood-tracker/
@@ -13308,6 +13325,7 @@ https://tools.usefulverse.com/zh-tw/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/zh-tw/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/zh-tw/tools/density-calculator/
 https://tools.usefulverse.com/zh-tw/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/zh-tw/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/zh-tw/tools/goal-planner/
 https://tools.usefulverse.com/zh-tw/tools/mind-map-maker/
 https://tools.usefulverse.com/zh-tw/tools/mood-tracker/
@@ -13467,6 +13485,7 @@ https://tools.usefulverse.com/bg/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/bg/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/bg/tools/density-calculator/
 https://tools.usefulverse.com/bg/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/bg/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/bg/tools/goal-planner/
 https://tools.usefulverse.com/bg/tools/mind-map-maker/
 https://tools.usefulverse.com/bg/tools/mood-tracker/
@@ -13626,6 +13645,7 @@ https://tools.usefulverse.com/ca/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ca/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ca/tools/density-calculator/
 https://tools.usefulverse.com/ca/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/ca/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/ca/tools/goal-planner/
 https://tools.usefulverse.com/ca/tools/mind-map-maker/
 https://tools.usefulverse.com/ca/tools/mood-tracker/
@@ -13785,6 +13805,7 @@ https://tools.usefulverse.com/nl/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/nl/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/nl/tools/density-calculator/
 https://tools.usefulverse.com/nl/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/nl/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/nl/tools/goal-planner/
 https://tools.usefulverse.com/nl/tools/mind-map-maker/
 https://tools.usefulverse.com/nl/tools/mood-tracker/
@@ -13944,6 +13965,7 @@ https://tools.usefulverse.com/el/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/el/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/el/tools/density-calculator/
 https://tools.usefulverse.com/el/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/el/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/el/tools/goal-planner/
 https://tools.usefulverse.com/el/tools/mind-map-maker/
 https://tools.usefulverse.com/el/tools/mood-tracker/
@@ -14103,6 +14125,7 @@ https://tools.usefulverse.com/ms/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ms/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ms/tools/density-calculator/
 https://tools.usefulverse.com/ms/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/ms/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/ms/tools/goal-planner/
 https://tools.usefulverse.com/ms/tools/mind-map-maker/
 https://tools.usefulverse.com/ms/tools/mood-tracker/
@@ -14262,6 +14285,7 @@ https://tools.usefulverse.com/pl/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/pl/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/pl/tools/density-calculator/
 https://tools.usefulverse.com/pl/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/pl/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/pl/tools/goal-planner/
 https://tools.usefulverse.com/pl/tools/mind-map-maker/
 https://tools.usefulverse.com/pl/tools/mood-tracker/
@@ -14421,6 +14445,7 @@ https://tools.usefulverse.com/sv/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/sv/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/sv/tools/density-calculator/
 https://tools.usefulverse.com/sv/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/sv/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/sv/tools/goal-planner/
 https://tools.usefulverse.com/sv/tools/mind-map-maker/
 https://tools.usefulverse.com/sv/tools/mood-tracker/
@@ -14580,6 +14605,7 @@ https://tools.usefulverse.com/th/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/th/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/th/tools/density-calculator/
 https://tools.usefulverse.com/th/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/th/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/th/tools/goal-planner/
 https://tools.usefulverse.com/th/tools/mind-map-maker/
 https://tools.usefulverse.com/th/tools/mood-tracker/
@@ -14739,6 +14765,7 @@ https://tools.usefulverse.com/uk/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/uk/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/uk/tools/density-calculator/
 https://tools.usefulverse.com/uk/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/uk/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/uk/tools/goal-planner/
 https://tools.usefulverse.com/uk/tools/mind-map-maker/
 https://tools.usefulverse.com/uk/tools/mood-tracker/
@@ -14898,6 +14925,7 @@ https://tools.usefulverse.com/sw/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/sw/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/sw/tools/density-calculator/
 https://tools.usefulverse.com/sw/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/sw/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/sw/tools/goal-planner/
 https://tools.usefulverse.com/sw/tools/mind-map-maker/
 https://tools.usefulverse.com/sw/tools/mood-tracker/
@@ -15057,6 +15085,7 @@ https://tools.usefulverse.com/mr/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/mr/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/mr/tools/density-calculator/
 https://tools.usefulverse.com/mr/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/mr/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/mr/tools/goal-planner/
 https://tools.usefulverse.com/mr/tools/mind-map-maker/
 https://tools.usefulverse.com/mr/tools/mood-tracker/
@@ -15216,6 +15245,7 @@ https://tools.usefulverse.com/te/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/te/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/te/tools/density-calculator/
 https://tools.usefulverse.com/te/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/te/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/te/tools/goal-planner/
 https://tools.usefulverse.com/te/tools/mind-map-maker/
 https://tools.usefulverse.com/te/tools/mood-tracker/
@@ -15375,6 +15405,7 @@ https://tools.usefulverse.com/ha/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ha/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ha/tools/density-calculator/
 https://tools.usefulverse.com/ha/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/ha/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/ha/tools/goal-planner/
 https://tools.usefulverse.com/ha/tools/mind-map-maker/
 https://tools.usefulverse.com/ha/tools/mood-tracker/
@@ -15534,6 +15565,7 @@ https://tools.usefulverse.com/tl/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/tl/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/tl/tools/density-calculator/
 https://tools.usefulverse.com/tl/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/tl/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/tl/tools/goal-planner/
 https://tools.usefulverse.com/tl/tools/mind-map-maker/
 https://tools.usefulverse.com/tl/tools/mood-tracker/
@@ -15693,6 +15725,7 @@ https://tools.usefulverse.com/ta/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/ta/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ta/tools/density-calculator/
 https://tools.usefulverse.com/ta/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/ta/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/ta/tools/goal-planner/
 https://tools.usefulverse.com/ta/tools/mind-map-maker/
 https://tools.usefulverse.com/ta/tools/mood-tracker/
@@ -15852,6 +15885,7 @@ https://tools.usefulverse.com/fa/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/fa/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/fa/tools/density-calculator/
 https://tools.usefulverse.com/fa/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/fa/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/fa/tools/goal-planner/
 https://tools.usefulverse.com/fa/tools/mind-map-maker/
 https://tools.usefulverse.com/fa/tools/mood-tracker/
@@ -16011,6 +16045,7 @@ https://tools.usefulverse.com/am/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/am/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/am/tools/density-calculator/
 https://tools.usefulverse.com/am/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/am/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/am/tools/goal-planner/
 https://tools.usefulverse.com/am/tools/mind-map-maker/
 https://tools.usefulverse.com/am/tools/mood-tracker/
@@ -16170,6 +16205,7 @@ https://tools.usefulverse.com/gu/tools/chemical-equation-balancer/
 https://tools.usefulverse.com/gu/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/gu/tools/density-calculator/
 https://tools.usefulverse.com/gu/tools/compression-ratio-calculator/
+https://tools.usefulverse.com/gu/tools/hebrew-calendar-converter/
 https://tools.usefulverse.com/gu/tools/goal-planner/
 https://tools.usefulverse.com/gu/tools/mind-map-maker/
 https://tools.usefulverse.com/gu/tools/mood-tracker/

@@ -96,6 +96,7 @@ export function renderGrowthForm(toolId, copy) {
     'chess-opening-trainer': ['opening', 'side', 'white', 'black', 'board', 'moves', 'progressLabel', 'square', 'empty', 'accuracyNote', 'rules', 'opening_italian', 'opening_sicilian', 'opening_ruy_lopez', 'opening_french', 'opening_caro_kann', 'opening_queens_gambit', 'opening_london', 'opening_scandinavian', 'opening_english', 'opening_kings_indian', 'piece_wp', 'piece_wn', 'piece_wb', 'piece_wr', 'piece_wq', 'piece_wk', 'piece_bp', 'piece_bn', 'piece_bb', 'piece_br', 'piece_bq', 'piece_bk'],
     'decibel-calculator': ['mode', 'powerMode', 'amplitudeMode', 'dbToPowerMode', 'dbToAmplitudeMode', 'sumMode', 'applyMode', 'ratio', 'inputDb', 'levels', 'inputLevel', 'gainDb', 'accuracyNote', 'assumptionsNote'],
     'hijri-calendar-converter': ['mode', 'gregorianToHijri', 'hijriToGregorian', 'gregorianDate', 'gregorianYear', 'gregorianMonth', 'gregorianDay', 'hijriYear', 'hijriMonth', 'hijriDay', 'hijriMonths', 'methodNote'],
+    'hebrew-calendar-converter': ['direction', 'gregorianToHebrew', 'hebrewToGregorian', 'gregorianDate', 'hebrewDate', 'gregorianInput', 'hebrewYear', 'hebrewMonth', 'hebrewDay', 'methodNote', 'yearType', 'leapYes', 'leapNo'],
     'capacitor-calculator': ['values', 'valuesHint', 'connection', 'series', 'parallel', 'unit', 'voltage', 'accuracyNote', 'resultEquivalent', 'resultCharge', 'resultEnergy', 'resultVoltage', 'capacitor', 'formulaNote'],
     'body-water-calculator': ['equation', 'watsonMale', 'watsonFemale', 'age', 'height', 'heightUnit', 'weight', 'weightUnit', 'centimeters', 'inches', 'kilograms', 'pounds', 'accuracyNote', 'resultLiters', 'resultPercent', 'equationNote'],
     'waist-to-hip-ratio-calculator': ['waist', 'hip', 'unit', 'centimeters', 'inches', 'accuracyNote', 'resultRatio', 'formulaNote'],
@@ -262,6 +263,7 @@ export function renderGrowthForm(toolId, copy) {
     'chess-opening-trainer': ['newGame', 'hint', 'rules'],
     'decibel-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'hijri-calendar-converter': ['convert', 'reset', 'example', 'result'],
+    'hebrew-calendar-converter': ['convert', 'reset', 'example', 'result', 'copy'],
     'capacitor-calculator': ['calculate', 'reset', 'example', 'result'],
     'body-water-calculator': ['calculate', 'reset', 'example', 'result'],
     'waist-to-hip-ratio-calculator': ['calculate', 'reset', 'example', 'copy', 'result'],
@@ -977,6 +979,15 @@ export function renderGrowthForm(toolId, copy) {
     <p class="hint">${escapeGrowthHtml(fields.methodNote)}</p>
     <div class="actions">${button('example', actions.example, 'secondary')}${button('convert', actions.convert)}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div></section>
+  </form>`, copy);
+
+  if (toolId === 'hebrew-calendar-converter') return attachCopy(`<form id="tool-form" class="hebrew-calendar-converter" novalidate>
+    ${label('hebrew-direction', fields.direction, `<select id="hebrew-direction" name="direction"><option value="gregorian-to-hebrew">${escapeGrowthHtml(fields.gregorianToHebrew)}</option><option value="hebrew-to-gregorian">${escapeGrowthHtml(fields.hebrewToGregorian)}</option></select>`)}
+    <fieldset data-gregorian-fields><legend>${escapeGrowthHtml(fields.gregorianDate)}</legend>${label('hebrew-gregorian-date', fields.gregorianInput, '<input id="hebrew-gregorian-date" name="gregorianDate" type="date" min="0001-01-01" max="9999-12-31" value="2024-03-11" required>')}</fieldset>
+    <fieldset data-hebrew-fields hidden><legend>${escapeGrowthHtml(fields.hebrewDate)}</legend>${label('hebrew-year', fields.hebrewYear, '<input id="hebrew-year" name="hebrewYear" type="number" min="1" max="15000" step="1" value="5784" inputmode="numeric" required>')}${label('hebrew-month', fields.hebrewMonth, '<select id="hebrew-month" name="hebrewMonth" required></select>')}${label('hebrew-day', fields.hebrewDay, '<input id="hebrew-day" name="hebrewDay" type="number" min="1" max="30" step="1" value="1" inputmode="numeric" required>')}</fieldset>
+    <p class="hint">${escapeGrowthHtml(fields.methodNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${button('convert', actions.convert)}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 
   if (toolId === 'capacitor-calculator') return attachCopy(`<form id="tool-form" novalidate>

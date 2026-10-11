@@ -14,6 +14,8 @@ import bondCalculatorCopies from './bond-calculator-final.mjs';
 import { bondCalculatorEnglishCopy } from './bond-calculator.en.mjs';
 import waistToHipRatioCopies from './waist-to-hip-ratio-calculator-final.mjs';
 import { waistToHipRatioEnglishCopy } from './waist-to-hip-ratio-calculator.en.mjs';
+import hebrewCalendarConverterCopies from './hebrew-calendar-converter-final.mjs';
+import { hebrewCalendarConverterEnglishCopy } from './hebrew-calendar-converter.en.mjs';
 import drywallCopies from './drywall-calculator.mjs';
 import { drywallEnglishCopy } from './drywall-calculator.en.mjs';
 import roofingCopies from './roofing-calculator.mjs';
@@ -1221,5 +1223,6 @@ registerGrowthLocaleExtension(source, 'csv-editor', { ...csvEditorCopies, en: cs
 registerGrowthLocaleExtension(source, 'eigenvalue-calculator', { ...eigenvalueCalculatorCopies, en: eigenvalueCalculatorEnglishCopy }, 'csv-editor');
 registerGrowthLocaleExtension(source, 'bond-calculator', { ...bondCalculatorCopies, en: bondCalculatorEnglishCopy }, 'eigenvalue-calculator');
 registerGrowthLocaleExtension(source, 'waist-to-hip-ratio-calculator', { ...waistToHipRatioCopies, en: waistToHipRatioEnglishCopy }, 'bond-calculator');
+registerGrowthLocaleExtension(source, 'hebrew-calendar-converter', { ...hebrewCalendarConverterCopies, en: hebrewCalendarConverterEnglishCopy }, 'waist-to-hip-ratio-calculator');
 
 export default Object.freeze(source);

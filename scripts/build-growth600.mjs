@@ -13,6 +13,7 @@ import purchaseOrderGeneratorCopies from '../src/growth600/locales/purchase-orde
 import eigenvalueCalculatorCopies from '../src/growth600/locales/eigenvalue-calculator-final.mjs';
 import bondCalculatorCopies from '../src/growth600/locales/bond-calculator-final.mjs';
 import waistToHipRatioCopies from '../src/growth600/locales/waist-to-hip-ratio-calculator-final.mjs';
+import hebrewCalendarConverterCopies from '../src/growth600/locales/hebrew-calendar-converter-final.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const localeDir = resolve(root, 'src/growth600/locales');
@@ -40,6 +41,8 @@ for (const { key } of localeEntries) {
   copyByLocale[key] = { ...copyByLocale[key], 'bond-calculator': bondCalculatorCopies[key] };
   if (!waistToHipRatioCopies[key]) throw new Error(`Growth600 release blocked: Waist to Hip Ratio copy is missing for ${key}.`);
   copyByLocale[key] = { ...copyByLocale[key], 'waist-to-hip-ratio-calculator': waistToHipRatioCopies[key] };
+  if (!hebrewCalendarConverterCopies[key]) throw new Error(`Growth600 release blocked: Hebrew Calendar Converter copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'hebrew-calendar-converter': hebrewCalendarConverterCopies[key] };
 }
 
 const outputDir = resolve(process.env.GROWTH600_DIST ?? resolve(root, 'dist-growth600'));
@@ -62,6 +65,7 @@ const toolStyles = {
   'eigenvalue-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/eigenvalue-calculator/eigenvalue-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
   'bond-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/bond-calculator/bond-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
   'waist-to-hip-ratio-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/waist-to-hip-ratio-calculator/waist-to-hip-ratio-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'hebrew-calendar-converter': minifyCss(await readFile(resolve(root, 'src/growth600/tools/hebrew-calendar-converter/hebrew-calendar-converter.css'), 'utf8'), { comments: 'exclamation' }).css,
 };
 const faviconSvg = await readFile(resolve(root, 'public/favicon.svg'), 'utf8');
 const modelRevision = '92a21aca5713f20faf9a87590cdfbdce2e34112c';

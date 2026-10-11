@@ -576,6 +576,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/compression-ratio-calculator/logic.mjs',
   },
   {
+    id: 'hebrew-calendar-converter',
+    category: 'date-time',
+    type: 'converter',
+    primaryIntent: 'hebrew calendar converter',
+    secondaryIntents: ['hebrew date converter', 'gregorian hebrew converter', 'convert hebrew date to gregorian'],
+    functions: ['convert Gregorian civil dates to the browser’s built-in Hebrew calendar', 'convert valid Hebrew year/month/day values back to Gregorian civil dates', 'show Hebrew leap years with Adar I and Adar II as separate months', 'state that Hebrew calendar days begin at sunset and are not translated to local sunset times'],
+    acceptance: 'Gregorian 2024-03-11 converts to 1 Adar II 5784; 2023-09-16 converts to 1 Tishri 5784. Both directions round-trip, and Adar II is only selectable in Hebrew leap years.',
+    boundary: 'Uses the Hebrew calendar implemented by the visitor’s browser Intl.DateTimeFormat, with Gregorian output restricted to years 1–9999. No local sunset/time-zone calculation, holiday lookup, moon observation, religious ruling or network service. Browser calendar-data differences and community conventions are possible; dates are civil midnight dates while the Hebrew day begins at sunset.',
+    relatedExistingIds: ['hijri-calendar-converter'],
+    logicModule: './tools/hebrew-calendar-converter/logic.mjs',
+  },
+  {
     id: 'goal-planner',
     category: 'productivity',
     type: 'planner',
