@@ -22,6 +22,7 @@ export function renderGrowthForm(toolId, copy) {
     'image-color-picker': ['imageFile', 'accuracyNote', 'previewHint', 'zoom', 'currentColor', 'paletteLabel'],
     'image-region-redactor': ['imageFile', 'mode', 'strength', 'regionX', 'regionY', 'regionWidth', 'regionHeight', 'accuracyNote', 'dragHint', 'regionsLabel'],
     'image-sharpener': ['imageFile', 'amount', 'radius', 'threshold', 'compare', 'accuracyNote', 'previewHint', 'format', 'relatedRedactor', 'relatedCropper'],
+    'image-splitter': ['imageFile', 'mode', 'gridMode', 'tileSizeMode', 'columns', 'rows', 'tileWidth', 'tileHeight', 'overlap', 'accuracyNote', 'previewHint', 'imageReady'],
     'photo-to-sketch': ['imageFile', 'intensity', 'detail', 'compare', 'accuracyNote', 'previewHint'],
     'schema-markup-validator': ['markup', 'accuracyNote', 'resultSummary', 'issues', 'googleNote'],
     'readability-checker': ['text', 'language', 'languageEn', 'languageEs', 'languageFr', 'languageDe', 'languageIt', 'accuracyNote', 'resultSummary', 'formula', 'wordCount', 'sentenceCount', 'characterCount', 'characterCountNoSpaces', 'letterCount', 'syllableEstimate', 'averageSentenceLength', 'averageWordLength', 'averageSyllablesPerWord', 'longWordCount'],
@@ -178,6 +179,7 @@ export function renderGrowthForm(toolId, copy) {
     'image-color-picker': ['load', 'addSample', 'copyColor', 'copyPalette', 'remove', 'clear', 'reset'],
     'image-region-redactor': ['load', 'addRegion', 'undo', 'clear', 'export', 'example', 'download', 'removeRegion', 'black', 'pixelate', 'blur', 'png', 'jpeg'],
     'image-sharpener': ['load', 'export', 'download', 'original', 'sharpened', 'png', 'jpeg'],
+    'image-splitter': ['choose', 'export', 'cancel', 'download', 'reset'],
     'photo-to-sketch': ['load', 'export', 'cancel', 'download', 'original'],
     'schema-markup-validator': ['validate', 'example', 'copySummary'],
     'readability-checker': ['calculate', 'example', 'copy', 'reset'],
@@ -430,6 +432,22 @@ export function renderGrowthForm(toolId, copy) {
     </div>
     <div class="field"><label for="sharpener-format">${escapeGrowthHtml(fields.format)}</label><select id="sharpener-format" name="format"><option value="image/png">${escapeGrowthHtml(labels.png)}</option><option value="image/jpeg">${escapeGrowthHtml(labels.jpeg)}</option></select></div>
     <div class="actions"><button type="button" data-action="export" class="button button--primary" disabled>${escapeGrowthHtml(labels.export)}</button>${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><a class="button button--primary" data-export hidden></a>
+  </form>`, copy);
+
+  if (toolId === 'image-splitter') return attachCopy(`<form id="tool-form" novalidate>
+    ${label('image-splitter-file', fields.imageFile, '<input id="image-splitter-file" name="imageFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/avif,image/bmp" required>')}
+    ${label('image-splitter-mode', fields.mode, `<select id="image-splitter-mode" name="mode"><option value="grid">${escapeGrowthHtml(fields.gridMode)}</option><option value="tile-size">${escapeGrowthHtml(fields.tileSizeMode)}</option></select>`)}
+    <div class="image-splitter-controls">
+      <div data-splitter-grid>${label('image-splitter-columns', fields.columns, '<input id="image-splitter-columns" name="columns" type="number" min="1" max="20" step="1" value="3" inputmode="numeric">')}
+      ${label('image-splitter-rows', fields.rows, '<input id="image-splitter-rows" name="rows" type="number" min="1" max="20" step="1" value="3" inputmode="numeric">')}</div>
+      <div data-splitter-size hidden>${label('image-splitter-tile-width', fields.tileWidth, '<input id="image-splitter-tile-width" name="tileWidth" type="number" min="1" max="12000000" step="1" value="512" inputmode="numeric">')}
+      ${label('image-splitter-tile-height', fields.tileHeight, '<input id="image-splitter-tile-height" name="tileHeight" type="number" min="1" max="12000000" step="1" value="512" inputmode="numeric">')}</div>
+      ${label('image-splitter-overlap', fields.overlap, '<input id="image-splitter-overlap" name="overlap" type="number" min="0" max="256" step="1" value="0" inputmode="numeric">')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div data-splitter-workbench hidden><p data-image-ready></p><canvas data-splitter-preview role="img" aria-label="${escapeGrowthHtml(fields.previewHint)}"></canvas></div>
+    <div class="actions"><button type="button" data-action="choose" class="button button--secondary">${escapeGrowthHtml(actions.choose)}</button><button type="button" data-action="export" class="button button--primary" disabled>${escapeGrowthHtml(actions.export)}</button><button type="button" data-action="cancel" class="button button--secondary" hidden>${escapeGrowthHtml(actions.cancel)}</button>${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p><a class="button button--primary" data-export hidden></a>
   </form>`, copy);
 

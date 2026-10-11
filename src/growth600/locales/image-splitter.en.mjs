@@ -1,0 +1,30 @@
+export const imageSplitterEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Image Splitter',
+  title: 'Image Splitter — Free Grid & Tile ZIP | UsefulVerse',
+  description: 'Split an image into grid tiles, add overlap, and download PNG pieces plus a stitching map. Free, local and unlimited use.',
+  intro: 'Divide one picture into an even grid of PNG tiles. Optional overlap helps with large-format printing and panorama workflows; a ZIP manifest records exact crop and core coordinates for gap-free reconstruction.',
+  howQuestion: 'How do I split an image into equal tiles?',
+  howAnswer: 'Choose a raster image, enter the number of columns and rows, and optionally set an overlap in pixels. Download one ZIP containing the PNG tiles and a JSON map. For seamless assembly, use each tile’s core rectangle from the map; the overlapping edge pixels are there as extra working area.',
+  privacyQuestion: 'Is my image uploaded?',
+  privacyAnswer: 'No. Your image is decoded, split and zipped in this browser. Nothing is uploaded or saved by the tool; reset the page to release its preview and temporary download.',
+  fields: {
+    imageFile: 'Choose an image (PNG, JPEG, WebP, GIF, AVIF or BMP)',
+    mode: 'Split by', gridMode: 'Number of rows and columns', tileSizeMode: 'Fixed tile dimensions',
+    columns: 'Columns (1–20)', rows: 'Rows (1–20)', tileWidth: 'Tile width (pixels)', tileHeight: 'Tile height (pixels)', overlap: 'Extra overlap on each inner edge (pixels)',
+    accuracyNote: 'The source is limited to 12 megapixels and 100 tiles to control browser memory. Large grids can use substantial memory; a computer is recommended. Animated images are split from the first frame only. Output tiles are PNG.',
+    previewHint: 'Preview of the selected image and tile grid.', imageReady: 'Image ready',
+  },
+  actions: { choose: 'Choose image', export: 'Split and prepare ZIP', cancel: 'Cancel', download: 'Download tile ZIP', reset: 'Reset' },
+  messages: {
+    unsupportedImage: 'Choose an image format this browser can decode.', imageTooLarge: 'This image is over the 12-megapixel limit. Choose a smaller image.',
+    selectImage: 'Choose an image first.', invalidGrid: 'Enter whole-number rows and columns within the limits.',
+    exporting: 'Splitting tiles and creating the ZIP on this device…', exportFailed: 'The browser could not create the ZIP. Try fewer tiles or a smaller image.',
+    exportReady: 'Your tile ZIP and stitching map are ready.', imageLoaded: 'Image loaded.', cancelled: 'Tile export cancelled.',
+  },
+  additionalFaqs: [
+    { question: 'How do I reassemble the original image?', answer: 'Open manifest.json in the ZIP. Place each tile at its source x/y position and, when overlap is enabled, crop to that tile’s core rectangle. The core rectangles cover the full original canvas exactly once, without gaps.' },
+    { question: 'Does overlap add pixels to the final image?', answer: 'No. Overlap adds neighboring pixels around internal tile edges for print or editing workflows. The manifest marks a non-overlapping core inside each tile so the original dimensions can be reconstructed.' },
+    { question: 'Can I split by a fixed tile size?', answer: 'Yes. Choose fixed tile dimensions and enter a width and height in pixels. Edge tiles shrink to fit the image. Use the ZIP manifest core rectangles to reassemble the image without gaps.' },
+  ],
+});

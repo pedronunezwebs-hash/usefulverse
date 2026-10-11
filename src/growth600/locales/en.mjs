@@ -24,6 +24,9 @@ import imageRegionRedactorCopies from './image-region-redactor-final.mjs';
 import { imageRegionRedactorEnglishCopy } from './image-region-redactor.en.mjs';
 import imageSharpenerCopies from './image-sharpener-final.mjs';
 import { imageSharpenerEnglishCopy } from './image-sharpener.en.mjs';
+import imageSplitterCopies from './image-splitter-final.mjs';
+import { imageSplitterEnglishCopy } from './image-splitter.en.mjs';
+import { imageSplitterArabicCopy } from './image-splitter.ar.mjs';
 import photoToSketchCopies from './photo-to-sketch-final.mjs';
 import { photoToSketchEnglishCopy } from './photo-to-sketch.en.mjs';
 import schemaMarkupValidatorCopies from './schema-markup-validator-final.mjs';
@@ -431,6 +434,7 @@ registerGrowthLocaleExtension(source, 'pool-salt-calculator', poolSaltCopies, 'g
 registerGrowthLocaleExtension(source, 'wallpaper-calculator', localizedWallpaperCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'image-region-redactor', imageRegionRedactorCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'image-sharpener', imageSharpenerCopies, 'gravel-calculator');
+registerGrowthLocaleExtension(source, 'image-splitter', { ...imageSplitterCopies, en: imageSplitterEnglishCopy, ar: imageSplitterArabicCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'image-upscaler', { ...imageUpscalerDrafts, en: imageUpscalerEnglishCopy }, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'image-color-picker', imageColorPickerCopies, 'gravel-calculator');
 registerGrowthLocaleExtension(source, 'dominoes-game', dominoesCopies, 'gravel-calculator');

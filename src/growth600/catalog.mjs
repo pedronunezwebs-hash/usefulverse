@@ -72,6 +72,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/image-sharpener/logic.mjs',
   },
   {
+    id: 'image-splitter',
+    category: 'image-tools',
+    type: 'image-editor',
+    primaryIntent: 'image splitter',
+    secondaryIntents: ['split image into tiles', 'split image into grid', 'image tile generator'],
+    functions: ['split a local raster image into an even grid or fixed pixel-size PNG tiles', 'add optional overlapping edge pixels for print or editing workflows', 'download one ZIP with the tiles and a coordinate manifest whose core rectangles reconstruct the source without gaps'],
+    acceptance: 'A 13 × 7 source split into a 4 × 3 grid or 5 × 3-pixel tiles has core rectangles that cover every original pixel exactly once; overlap changes crop bounds but not the gap-free core map.',
+    boundary: 'Grid/tile splitting and packaging, not single-region cropping or collage composition. Browser-local, 12-megapixel and 100-tile limits protect device memory; a desktop is recommended for large jobs. Animated sources use the first frame; output is PNG. The original file is never modified or uploaded.',
+    relatedExistingIds: ['image-cropper', 'photo-mosaic-maker', 'image-sharpener'],
+    logicModule: './tools/image-splitter/logic.mjs',
+  },
+  {
     id: 'image-upscaler',
     category: 'image-tools',
     type: 'image-editor',
