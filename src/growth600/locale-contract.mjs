@@ -82,6 +82,7 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   'inductor-calculator': ['calculated', 'exampleLoaded', 'checkInputs', 'fitYes', 'fitNo', 'copied', 'copyUnavailable'],
   'centripetal-force-calculator': ['calculated', 'exampleLoaded', 'checkInputs', 'copied', 'copyUnavailable'],
   'writing-tracker': ['projectAdded', 'sessionSaved', 'sessionUpdated', 'sessionDeleted', 'saved', 'storageUnavailable', 'saveDisabled', 'backupDownloaded', 'backupRestored', 'backupInvalid', 'fileTooLarge', 'checkProject', 'checkSession', 'projectRequired', 'copied', 'copyUnavailable', 'confirmDelete', 'exampleLoaded', 'empty'],
+  'aes-encryption-tool': ['encrypted', 'decrypted', 'checkInputs', 'wrongKey', 'cryptoUnavailable', 'copied', 'copyUnavailable', 'downloaded', 'exampleLoaded', 'textRequired', 'fileRequired', 'busy'],
   'fourier-series-calculator': ['calculated', 'calculatedConstant', 'checkInputs', 'copied', 'copyUnavailable'],
   'modular-inverse-calculator': ['calculated', 'noInverse', 'checkInputs', 'copied', 'copyUnavailable'],
   'a-b-test-calculator': ['significant', 'inconclusive', 'checkInputs', 'copied', 'copyUnavailable'],
@@ -254,6 +255,7 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
   'mood-tracker': ['date', 'mood', 'note', 'tags', 'saveConsent', 'privacyNote', 'consentHint', 'calendarLabel', 'monthLabel', 'selectedEntry', 'weekdaySun', 'weekdayMon', 'weekdayTue', 'weekdayWed', 'weekdayThu', 'weekdayFri', 'weekdaySat', 'mood1', 'mood2', 'mood3', 'mood4', 'mood5', 'tagCalm', 'tagAnxious', 'tagSad', 'tagHappy', 'tagTired', 'tagFocused', 'tagStressed', 'tagHopeful', 'tagGrateful', 'tagAngry', 'summaryLabel', 'averageLabel', 'countLabel', 'distributionLabel', 'noEntries', 'accuracyNote', 'importHint', 'sourceNote'],
   'journal-online': ['date', 'title', 'body', 'tags', 'search', 'dateFrom', 'dateTo', 'saveConsent', 'storageNote', 'encryptionNote', 'backupPassword', 'confirmPassword', 'entriesLabel', 'resultLabel', 'noEntries', 'countLabel', 'tagHint', 'importHint', 'passwordHint', 'exampleHint', 'exampleTitle', 'exampleBody', 'exampleTags', 'safetyNote'],
+  'aes-encryption-tool': ['operation', 'encryptMode', 'decryptMode', 'payloadType', 'textType', 'fileType', 'passphrase', 'iterations', 'inputText', 'inputFile', 'output', 'privacyNote', 'securityNote', 'limitsNote', 'deviceNote', 'downloadName'],
   'travel-itinerary-planner': ['tripName', 'tripStartDate', 'tripEndDate', 'bufferMinutes', 'saveConsent', 'storageNote', 'itemDate', 'startTime', 'endTime', 'itemTitle', 'category', 'location', 'reservation', 'notes', 'itineraryLabel', 'noTrip', 'noItems', 'itemCount', 'overlapCount', 'bufferWarningCount', 'conflictsLabel', 'backupFile', 'backupHint', 'limitNote', 'timeZoneNote', 'reservationPrivacyNote', 'exampleTrip', 'exampleActivity', 'exampleMeal', 'exampleLocation', 'exampleReservation'],
 });
 export const REQUIRED_TOOL_ACTIONS = Object.freeze({
@@ -297,6 +299,7 @@ export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   'mood-tracker': ['saveEntry', 'updateEntry', 'example', 'reset', 'removeEntry', 'clearHistory', 'previousMonth', 'nextMonth', 'export', 'import', 'result'],
   'journal-online': ['saveEntry', 'updateEntry', 'newEntry', 'example', 'reset', 'search', 'clearSearch', 'deleteEntry', 'clearAll', 'exportJson', 'importJson', 'saveBackup', 'result'],
   'travel-itinerary-planner': ['createTrip', 'saveItem', 'updateItem', 'newItem', 'deleteItem', 'deleteTrip', 'example', 'reset', 'exportIcs', 'exportJson', 'importJson', 'print', 'result'],
+  'aes-encryption-tool': ['encrypt', 'decrypt', 'example', 'copy', 'download', 'reset', 'result'],
   'polynomial-long-division-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
   'half-life-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
   'mortgage-points-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],

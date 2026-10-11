@@ -102,6 +102,8 @@ import { inductorCalculatorEnglishCopy } from './locales/inductor-calculator.en.
 import { centripetalForceCalculatorEnglishCopy } from './locales/centripetal-force-calculator.en.mjs';
 import { writingTrackerEnglishCopy } from './locales/writing-tracker.en.mjs';
 import writingTrackerCopies from './locales/writing-tracker-final.mjs';
+import { aesEncryptionToolEnglishCopy } from './locales/aes-encryption-tool.en.mjs';
+import aesEncryptionToolCopies from './locales/aes-encryption-tool-final.mjs';
 
 const actions = { calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', updateProgress: 'Record progress', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', feet: 'Feet', inches: 'Inches', liters: 'Liters', cubicFeet: 'Cubic feet', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Computer', twoPlayers: 'Two players', privacyNote: 'Private on this device.', riseMode: 'Rise', pitchMode: 'Pitch' };
 const messages = { copied: 'Copied.', copyUnavailable: 'Copy unavailable.', calculated: 'Done.', sameSize: 'Sizes match.', checkInputs: 'Check entries.', diameter: 'Outside diameter', sidewall: 'Sidewall height', circumference: 'Circumference', revolutions: 'Revolutions per kilometre', diameterDifference: 'Diameter difference', diameterChange: 'Diameter change', groundClearance: 'Ground-clearance change', actualSpeed: 'Actual speed estimate', area: 'Area', volume: 'Volume', volumePerContainer: 'Volume per container', totalVolume: 'Total soil volume', orderVolume: 'Order volume', estimatedWeight: 'Estimated weight', bagsToBuy: 'Bags to buy', invalidFormula: 'Check formula.', atomCount: 'atoms', molarMass: 'Molar mass', estimateOnly: 'Estimate only.', currentPayment: 'Current payment', newPayment: 'New payment', paymentDifference: 'Difference', currentTotal: 'Current total', newTotal: 'New total', estimatedDifference: 'Estimated savings', breakEven: 'Break-even', noBreakEven: 'No break-even', monthCount: '{count} months', privatePair: '{giver} gives to {recipient}', allRevealed: 'All revealed.', drawReady: 'Ready.', checkNamesAndRules: 'Check entries.', downloaded: 'Downloaded.', pit: 'Pit', seeds: 'seeds', playerOne: 'Player one', playerTwo: 'Player two', playerOneWins: 'Player one wins.', playerTwoWins: 'Player two wins.', tie: 'Tie.', gameOver: 'Game over.', turn: '{player} turn.', effectiveRun: 'Horizontal run to ridge', rafterLength: 'Geometric rafter length', pitch: 'Pitch (rise per 12)', roofAngle: 'Roof angle', plumbCut: 'Plumb-cut angle', overhangRun: 'Horizontal overhang' };
@@ -109,6 +111,7 @@ function toolCopy(tool, language) {
   if (tool.id === 'inductor-calculator') return structuredClone(inductorCalculatorEnglishCopy);
   if (tool.id === 'centripetal-force-calculator') return structuredClone(centripetalForceCalculatorEnglishCopy);
   if (tool.id === 'writing-tracker') return structuredClone(language === 'en' ? writingTrackerEnglishCopy : writingTrackerCopies[language]);
+  if (tool.id === 'aes-encryption-tool') return structuredClone(language === 'en' ? aesEncryptionToolEnglishCopy : aesEncryptionToolCopies[language]);
   if (tool.id === 'transformer-calculator') return transformerCalculatorEnglishCopy;
   if (tool.id === 'image-splitter') return structuredClone(language === 'en' ? imageSplitterEnglishCopy : language === 'ar' ? imageSplitterArabicCopy : imageSplitterCopies[language]);
   if (tool.id === 'stoichiometry-calculator') return structuredClone(stoichiometryCopies[language]);
@@ -936,6 +939,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
     'ohms-law-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'ohms-law-calculator'), locale.key),
     'chemical-equation-balancer': toolCopy(growthPilotTools.find(({ id }) => id === 'chemical-equation-balancer'), locale.key),
     'writing-tracker': toolCopy(growthPilotTools.find(({ id }) => id === 'writing-tracker'), locale.key),
+    'aes-encryption-tool': toolCopy(growthPilotTools.find(({ id }) => id === 'aes-encryption-tool'), locale.key),
     'gear-ratio-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'gear-ratio-calculator'), locale.key),
     'density-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'density-calculator'), locale.key),
     'kinetic-energy-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'kinetic-energy-calculator'), locale.key),

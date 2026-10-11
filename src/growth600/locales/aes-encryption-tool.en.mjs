@@ -1,0 +1,32 @@
+export const aesEncryptionToolEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'AES Encryption Tool',
+  title: 'AES Encryption Tool Free | UsefulVerse',
+  description: 'Encrypt or decrypt text and small files locally with AES-256-GCM. No upload or account. Your browser and device handle the work.',
+  intro: 'Encrypt text or one small file in your browser with authenticated AES-256-GCM. Nothing is uploaded. The selected PBKDF2 work factor trades a little waiting time for more password-guessing work.',
+  howQuestion: 'How do I encrypt text or a file with AES?',
+  howAnswer: 'Choose Encrypt, select text or a local file, and enter a long passphrase. Download or copy the versioned JSON container. To decrypt it, choose Decrypt and provide that container and the same passphrase. A wrong passphrase or changed data fails authentication and does not return plaintext.',
+  privacyQuestion: 'Are my passphrase and files uploaded?',
+  privacyAnswer: 'No. Encryption and decryption run in this browser with Web Crypto. Your passphrase and selected content are not sent to UsefulVerse or stored by this tool. Save the encrypted output yourself; losing your passphrase means the data cannot be recovered.',
+  fields: {
+    operation: 'Operation', encryptMode: 'Encrypt', decryptMode: 'Decrypt', payloadType: 'Content type', textType: 'Text', fileType: 'Local file',
+    passphrase: 'Passphrase (12–256 characters)', iterations: 'PBKDF2 work factor', inputText: 'Text input or encrypted JSON container',
+    inputFile: 'Choose a local file or encrypted JSON container', output: 'Output', privacyNote: 'Your passphrase and content stay in this browser tab; nothing is uploaded or saved by this tool.',
+    securityNote: 'Use a long, unique passphrase and keep a separate backup. If you lose it, encrypted content cannot be recovered. This is not an audited security product.',
+    limitsNote: 'Limit: 1 MiB of text or 8 MiB per source file; encrypted JSON containers are limited to 12 MiB. Larger files need another tool.',
+    deviceNote: 'PBKDF2 and file encryption use your device. A higher work factor or larger file may take longer, especially on a phone; a computer is recommended.',
+    resultKind: 'Result type', downloadName: 'Download decrypted file',
+  },
+  actions: { encrypt: 'Encrypt locally', decrypt: 'Decrypt locally', example: 'Load example', copy: 'Copy output', download: 'Download container', reset: 'Clear', result: 'Result' },
+  messages: {
+    encrypted: 'Encrypted container ready. Save it before leaving this page.', decrypted: 'Decryption succeeded.', checkInputs: 'Check the content, passphrase and size limits.',
+    wrongKey: 'Could not decrypt. Check the passphrase or container; no plaintext was produced.', cryptoUnavailable: 'Secure browser encryption is unavailable. Use a current browser over HTTPS.',
+    copied: 'Copied.', copyUnavailable: 'Copy is unavailable in this browser.', downloaded: 'Download started.', exampleLoaded: 'Example loaded.',
+    textRequired: 'Enter text first.', fileRequired: 'Choose a file first.', busy: 'Working locally…',
+  },
+  additionalFaqs: [
+    { question: 'What happens if I use the wrong passphrase?', answer: 'AES-GCM authenticates the encrypted data. If the passphrase or container is wrong or altered, decryption fails and this tool does not return plaintext.' },
+    { question: 'Can UsefulVerse recover my passphrase?', answer: 'No. The tool does not send or save it. Keep your own passphrase and a separate copy of the encrypted container; without the passphrase, the encrypted content is unrecoverable.' },
+    { question: 'Does the tool have a file-size limit?', answer: 'Yes. Text is limited to 1 MiB, source files to 8 MiB, and encrypted JSON containers to 12 MiB so the browser can process them locally.' },
+  ],
+});

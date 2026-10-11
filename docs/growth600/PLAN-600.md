@@ -9,7 +9,7 @@ Fecha de investigación: 7 de octubre de 2026. Documento de planificación y che
 - [x] Comprobar la base de planificación: **277 herramientas y 36 idiomas**.
 - [x] Investigar demanda con un gasto acotado en DataForSEO y registrar los resultados reales.
 - [x] Consolidar variantes antes de fijar el nuevo catálogo, sin contar una dirección de conversión como otra herramienta.
-- [ ] Implementar las nuevas herramientas. **Estado comprobado el 12 de octubre de 2026: 173 herramientas Growth600 desplegadas y 277 originales protegidas; sitemaps públicos de 6.264 + 10.260 URLs. Restan 150 candidatas para llegar a 600 herramientas totales; consultar `docs/growth600/PROGRESS.md`.** El progreso del plan se cuenta por candidatas únicas de las 323 fichas; no inferir indexación del despliegue.
+- [ ] Implementar las nuevas herramientas. **Estado comprobado el 12 de octubre de 2026: 174 herramientas Growth600 desplegadas y 277 originales protegidas; sitemaps públicos de 6.300 + 10.260 URLs. Restan 149 candidatas para llegar a 600 herramientas totales; consultar `docs/growth600/PROGRESS.md`.** El progreso del plan se cuenta por candidatas únicas de las 323 fichas; no inferir indexación del despliegue.
 
 Snapshot consultado: rama `main`, commit `685f91adfc7818a54f6dc0a967e290d13137a3dd`. Catálogo: `src/catalog.mjs`; funciones y contratos representativos: `src/app.js`, módulos de lógica, `src/opportunity-tools.mjs`, `src/seo.mjs`, locales, build y documentación del repo. Se inspeccionaron los metadatos de las 277 herramientas y contratos clave para descartar duplicados; esto **no es una nueva auditoría funcional completa de las 277**.
 
@@ -3058,13 +3058,13 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 313 · Aes Encryption Tool
 
-- [ ] **C/F/E/X/L/B/P/S completos — `aes-encryption-tool`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/aes-encryption-tool/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `aes-encryption-tool`**
+- **Destino publicado:** `https://tools.usefulverse.com/tools/aes-encryption-tool/` + otras 35 rutas localizadas. Sitemap público actualizado y verificado el 12-oct-2026; detalle en `docs/growth600/PROGRESS.md`.
 - **Demanda:** `aes decrypt online` — 390 búsquedas/mes US/en, KD 12; nivel C. CPC 10.49 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** AES-GCM local, texto/archivos, PBKDF2 parametrizado, salt/IV aleatorios y contenedor versionado; clave incorrecta falla de forma autenticada y no revela basura.
 - **Prueba de aceptación específica:** Clave incorrecta no produce plaintext
 - **Frontera con otras herramientas:** pdf-protect-unlock: cifrado de datos generales. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** Web Crypto AES-256-GCM con autenticación; PBKDF2-SHA-256 y 310.000/600.000/1.000.000 iteraciones; salt/IV aleatorios y metadata autenticada. Texto máx. 1 MiB, archivo 8 MiB y contenedor JSON 12 MiB. Clave no persistida; aviso de pérdida de passphrase, trabajo de dispositivo y HTTPS. Sin API, subidas ni gastos de servidor.
 - **Consultas secundarias del mismo propietario:**
   - `aes encryption tool` — 90/mes US/en; KD 18.
   - `aes decrypt online free online`; `aes decrypt online with example`; `aes decrypt online no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

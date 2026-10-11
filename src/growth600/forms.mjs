@@ -63,6 +63,7 @@ export function renderGrowthForm(toolId, copy) {
     'inductor-calculator': ['mode', 'inductanceMode', 'turnsMode', 'turns', 'targetInductance', 'diameter', 'length', 'wireDiameter', 'dimensionUnit', 'millimeters', 'centimeters', 'inches', 'accuracyNote', 'turnsResult', 'inductanceMicrohenries', 'inductanceMillihenries', 'inductanceHenries', 'targetValue', 'fitCheck'],
     'centripetal-force-calculator': ['mass', 'massUnit', 'kilograms', 'grams', 'pounds', 'radius', 'lengthUnit', 'meters', 'centimeters', 'millimeters', 'feet', 'inches', 'inputMode', 'speedMode', 'rotationMode', 'speed', 'speedUnit', 'metersPerSecond', 'kilometersPerHour', 'milesPerHour', 'frequency', 'frequencyUnit', 'revolutionsPerMinute', 'hertz', 'accuracyNote', 'centripetalForce', 'poundForce', 'acceleration', 'gForce', 'speedResult', 'frequencyResult'],
     'writing-tracker': ['projectName', 'projectGoal', 'projectSelect', 'date', 'words', 'minutes', 'note', 'persistConsent', 'privacyNote', 'storageNote', 'historyLabel', 'trendLabel', 'todayLabel', 'weekLabel', 'sessionCount', 'goalProgress', 'noProjects', 'noSessions', 'backupFile', 'backupHint', 'selectedProject', 'editSession', 'deleteSession', 'wordsUnit', 'minutesUnit'],
+    'aes-encryption-tool': ['operation', 'encryptMode', 'decryptMode', 'payloadType', 'textType', 'fileType', 'passphrase', 'iterations', 'inputText', 'inputFile', 'output', 'privacyNote', 'securityNote', 'limitsNote', 'deviceNote', 'downloadName'],
     'beam-deflection-calculator': ['support', 'simplySupported', 'cantilever', 'loadCase', 'pointLoad', 'uniformLoad', 'span', 'lengthUnit', 'meters', 'centimeters', 'millimeters', 'inches', 'feet', 'load', 'forceUnit', 'newtons', 'kilonewtons', 'poundsForce', 'modulus', 'modulusUnit', 'pascals', 'megapascals', 'gigapascals', 'psi', 'ksi', 'inertia', 'inertiaUnit', 'mm4', 'cm4', 'm4', 'in4', 'ft4', 'loadUnitHint', 'accuracyNote', 'sourceNote'],
     'led-resistor-calculator': ['supplyVoltage', 'forwardVoltage', 'ledCount', 'targetCurrentMa', 'standardSeries', 'e12', 'e24', 'accuracyNote'],
     'flow-rate-calculator': ['mode', 'solveFlow', 'solveArea', 'solveVelocity', 'estimateFillTime', 'area', 'areaUnit', 'squareMeters', 'squareCentimeters', 'squareFeet', 'squareInches', 'velocity', 'velocityUnit', 'metersPerSecond', 'centimetersPerSecond', 'metersPerMinute', 'feetPerSecond', 'flowRate', 'flowUnit', 'cubicMetersPerSecond', 'litersPerSecond', 'litersPerMinute', 'cubicMetersPerHour', 'gallonsPerMinute', 'tankVolume', 'volumeUnit', 'cubicMeters', 'liters', 'usGallons', 'timeUnit', 'seconds', 'minutes', 'hours', 'accuracyNote'],
@@ -244,6 +245,7 @@ export function renderGrowthForm(toolId, copy) {
     'inductor-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'centripetal-force-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'writing-tracker': ['addProject', 'saveSession', 'updateSession', 'reset', 'example', 'export', 'import', 'copy', 'result', 'showMore'],
+    'aes-encryption-tool': ['encrypt', 'decrypt', 'example', 'copy', 'download', 'reset', 'result'],
     'beam-deflection-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'led-resistor-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'flow-rate-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'solved'],
@@ -1310,6 +1312,26 @@ export function renderGrowthForm(toolId, copy) {
       <div class="actions">${button('copy', actions.copy, 'secondary')}${button('export', actions.export, 'secondary')}${button('import', actions.import, 'secondary')}<input class="visually-hidden" type="file" name="backupFile" accept="application/json,.json"></div>
       <p class="hint">${escapeGrowthHtml(fields.backupHint)}</p><h3>${escapeGrowthHtml(fields.historyLabel)}</h3><ol data-writing-history></ol><button class="button button--secondary" type="button" data-action="show-more" hidden>${escapeGrowthHtml(actions.showMore)}</button>
       <p data-writing-empty>${escapeGrowthHtml(fields.noProjects)}</p>
+    </section>
+  </form>`, copy);
+
+  if (toolId === 'aes-encryption-tool') return attachCopy(`<form id="tool-form" class="aes-encryption-tool" novalidate>
+    <div class="calculator-grid">
+      ${label('aes-operation', fields.operation, `<select id="aes-operation" name="operation"><option value="encrypt">${escapeGrowthHtml(fields.encryptMode)}</option><option value="decrypt">${escapeGrowthHtml(fields.decryptMode)}</option></select>`)}
+      ${label('aes-payload-type', fields.payloadType, `<select id="aes-payload-type" name="payloadType"><option value="text">${escapeGrowthHtml(fields.textType)}</option><option value="file">${escapeGrowthHtml(fields.fileType)}</option></select>`)}
+      ${label('aes-passphrase', fields.passphrase, '<input id="aes-passphrase" name="passphrase" type="password" minlength="12" maxlength="256" autocomplete="new-password" required>')}
+      <div data-aes-iterations>${label('aes-iterations', fields.iterations, '<select id="aes-iterations" name="iterations"><option value="310000">310,000</option><option value="600000" selected>600,000</option><option value="1000000">1,000,000</option></select>')}</div>
+    </div>
+    <div data-aes-text>${label('aes-input-text', fields.inputText, '<textarea id="aes-input-text" name="inputText" rows="7" maxlength="1048576"></textarea>')}</div>
+    <div data-aes-file hidden>${label('aes-input-file', fields.inputFile, '<input id="aes-input-file" name="inputFile" type="file">')}</div>
+    <p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p><p class="hint">${escapeGrowthHtml(fields.securityNote)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.limitsNote)}</p><p class="hint">${escapeGrowthHtml(fields.deviceNote)}</p>
+    <div class="actions"><button class="button" type="submit" data-aes-submit>${escapeGrowthHtml(actions.encrypt)}</button>${button('example', actions.example, 'secondary')}${button('reset', actions.reset, 'secondary')}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2>
+      <label>${escapeGrowthHtml(fields.output)}<textarea name="output" data-aes-output rows="8" readonly spellcheck="false"></textarea></label>
+      <p><a data-aes-download hidden>${escapeGrowthHtml(fields.downloadName)}</a></p>
+      <div class="actions">${button('copy', actions.copy, 'secondary')}<button class="button button--secondary" type="button" data-action="download" data-aes-download-container hidden>${escapeGrowthHtml(actions.download)}</button></div>
     </section>
   </form>`, copy);
 

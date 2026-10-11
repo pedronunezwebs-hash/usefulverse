@@ -21,11 +21,12 @@ import { calculatePolarGraph } from './tools/polar-graphing-calculator/logic.mjs
 import { calculateBooleanAlgebra } from './tools/boolean-algebra-calculator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 173);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 173);
+  assert.equal(growthPilotTools.length, 174);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 174);
   assert.ok(growthPilotTools.some(({ id }) => id === 'inductor-calculator'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'centripetal-force-calculator'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'writing-tracker'));
+  assert.ok(growthPilotTools.some(({ id }) => id === 'aes-encryption-tool'));
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 

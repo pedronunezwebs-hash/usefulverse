@@ -4,11 +4,11 @@
 
 ## Estado público actual · 2026-10-12
 
-- **Producción:** 173 herramientas Growth600 en 36 locales, **6.264 URLs** en `https://tools.usefulverse.com/sitemap.xml`; catálogo principal protegido de 277 herramientas y 10.260 URLs. Total combinado: **450 herramientas y 16.524 URLs**. La presencia en sitemap no demuestra indexación.
-- El 12-oct se desplegaron directamente a Cloudflare Pages, proyecto `usefulverse-tools`, rama `main`, Stock Profit Calculator, Pension Calculator, Customer Lifetime Value Calculator, Polar Graphing Calculator, Boolean Algebra Calculator, Week Number Calculator, Inductor Calculator, Centripetal Force Calculator y Writing Tracker. No hubo push a `main`, workflow de GitHub Actions ni consumo de sus minutos. Últimos deployments: `https://88b780a1.usefulverse-tools.pages.dev` (#310–311) y `https://b6d8b527.usefulverse-tools.pages.dev` (#312). Código #312 respaldado en la rama `codex/growth600-stock-profit-20261011`, commit `43bc254`.
-- Antes de publicar #312: `npm test` **1.972/1.972**; `npm run locale:release-check` aprobado; build Growth600 **6.264 páginas / 6.512 archivos**, 183.750.484 bytes; build estático, sin Functions ni APIs. `git diff --check` limpio. No se ejecutó PageSpeed/Lighthouse.
-- Tras publicar #312: sitemap HTTP 200 con **6.264 URLs únicas** y exactamente 36 rutas de Writing Tracker. EN/ES/AR/JA responden HTTP 200 con formulario, idioma, dirección y canonical. La rama `codex/growth600-stock-profit-20261011` no inició workflow de Actions (lista vacía). No se afirma rastreo/indexación.
-- README URL inventory generado desde los builds: **10.260 URLs principales y 6.264 del hub**.
+- **Producción:** 174 herramientas Growth600 en 36 locales, **6.300 URLs** en `https://tools.usefulverse.com/sitemap.xml`; catálogo principal protegido de 277 herramientas y 10.260 URLs. Total combinado: **451 herramientas y 16.560 URLs**. La presencia en sitemap no demuestra indexación.
+- El 12-oct se desplegaron directamente a Cloudflare Pages, proyecto `usefulverse-tools`, rama `main`, Stock Profit Calculator, Pension Calculator, Customer Lifetime Value Calculator, Polar Graphing Calculator, Boolean Algebra Calculator, Week Number Calculator, Inductor Calculator, Centripetal Force Calculator, Writing Tracker y AES Encryption Tool. No hubo push a `main`, workflow de GitHub Actions ni consumo de sus minutos. Últimos deployments: `https://88b780a1.usefulverse-tools.pages.dev` (#310–311), `https://b6d8b527.usefulverse-tools.pages.dev` (#312) y `https://3f5009d6.usefulverse-tools.pages.dev` (#313). Código #312 respaldado en la rama `codex/growth600-stock-profit-20261011`, commit `43bc254`.
+- Antes de publicar #313: `npm test` **1.977/1.977**; `npm run locale:release-check` aprobado; build Growth600 **6.300 páginas / 6.549 archivos**, 184.696.765 bytes; build estático, sin Functions ni APIs. `git diff --check` limpio. No se ejecutó PageSpeed/Lighthouse.
+- Tras publicar #313: sitemap HTTP 200 con **6.300 URLs únicas** y exactamente 36 rutas AES. EN/ES/AR/JA responden HTTP 200; formularios, canonical y bundles del controlador también responden 200. La rama `codex/growth600-stock-profit-20261011` no inició workflow de Actions (lista vacía). No se afirma rastreo/indexación.
+- README URL inventory generado desde los builds: **10.260 URLs principales y 6.300 del hub**.
 
 ## Publicadas · #310–311 · 2026-10-12
 
@@ -26,6 +26,15 @@
 - 36 copias estáticas traducidas automáticamente por fragmentos con el método existente; release gate aprobado, metadatos dentro del límite y tres FAQs. No se presentan como revisadas por nativos.
 - Verificación previa: `npm test` **1.972/1.972**, `npm run locale:release-check`, build **6.264 páginas** (173 herramientas × 36 + 36 portadas), sitemap sin duplicados; CSS minificado por ruta y no cargado en páginas ajenas. EN/ES/AR/JA comprobados en HTML construido para controles, canonical, lang/dir y formulario.
 - **Publicación directa Cloudflare Pages**, sin Actions: `https://b6d8b527.usefulverse-tools.pages.dev`. Sitemap en vivo HTTP 200 con **6.264 URLs únicas**; Writing Tracker aparece en sus **36 locales**. EN/ES/AR/JA en vivo HTTP 200 con formulario y canonical; la publicación no implica indexación. No se ejecutó PageSpeed/Lighthouse.
+
+## Publicada · #313 AES Encryption Tool · 2026-10-12
+
+- Intención propia frente a la herramienta existente de proteger PDF: cifrado autenticado de texto y archivos locales, AES-GCM bidireccional; 390 búsquedas/mes US/en para `aes decrypt online`, KD 12, según el plan. No se repitió DataForSEO.
+- Web Crypto, AES-256-GCM con tag de 128 bits; clave derivada en dispositivo con PBKDF2-HMAC-SHA-256, opciones 310.000/600.000/1.000.000 iteraciones, salt aleatorio de 16 bytes y IV de 12 bytes. Un contenedor versionado autentica los metadatos y ciphertext. Contraseña equivocada o modificación no entrega texto plano. Archivo binario comprobado byte a byte.
+- Límites visibles: 12–256 caracteres de passphrase; texto 1 MiB, archivo 8 MiB, contenedor 12 MiB. No persiste claves ni inputs, sin API/subida; se explica que perder la passphrase vuelve irrecuperable el contenedor, y que el equipo determina el tiempo. No afirma seguridad absoluta ni sustituye copias de seguridad probadas.
+- 36 copias estáticas traducidas automáticamente por fragmentos con el método ya utilizado; release gate y SEO metadata pasan; no revisión nativa. Tests específicos cubren round-trip UTF-8, datos binarios, clave incorrecta, ciphertext/metadata alterados, passphrase y límites. Suite completa **1.977/1.977**.
+- Build **6.300 páginas** (174 × 36 + 36 portadas), **6.549 archivos**; sin assets, APIs ni servicios de conversión externos. EN/ES/AR/JA del build comprobados para formularios, passphrase, canonical y `lang/dir`.
+- **Publicación directa Cloudflare Pages**, sin Actions ni consumo de minutos: `https://3f5009d6.usefulverse-tools.pages.dev`. Sitemap vivo HTTP 200 con **6.300 URLs únicas** y 36 rutas AES; EN/ES/AR/JA y los bundles correspondientes responden HTTP 200. La publicación no demuestra indexación. No PageSpeed/Lighthouse.
 
 Las notas históricas que siguen describen su fecha correspondiente y no sustituyen este estado actual.
 

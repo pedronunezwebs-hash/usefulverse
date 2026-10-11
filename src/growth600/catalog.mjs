@@ -2075,6 +2075,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['fuel-cost-calculator', 'loan-calculator', 'tire-size-calculator'],
     logicModule: './tools/car-depreciation-calculator/logic.mjs',
   },
+  {
+    id: 'aes-encryption-tool',
+    category: 'developer-data',
+    type: 'tool',
+    primaryIntent: 'aes decrypt online',
+    secondaryIntents: ['aes encryption tool', 'encrypt text with AES-GCM', 'encrypt a file with AES online'],
+    functions: ['encrypt or decrypt UTF-8 text and local files with Web Crypto AES-256-GCM', 'derive a key locally from a passphrase with PBKDF2-HMAC-SHA-256 and a per-container random salt', 'generate a fresh 96-bit IV and 128-bit authentication tag for each encryption', 'export a versioned JSON container whose metadata is authenticated along with ciphertext'],
+    acceptance: 'Encrypting text round-trips exactly with the same passphrase; a wrong passphrase, altered ciphertext, or altered filename produces an authentication error and no plaintext. A local binary file round-trips byte-for-byte.',
+    boundary: 'Local browser encryption/decryption for UTF-8 text up to 1 MiB or one file up to 8 MiB. Uses AES-256-GCM, PBKDF2-HMAC-SHA-256 with 310,000, 600,000 or 1,000,000 iterations, random 16-byte salt and 12-byte IV. A passphrase of 12–256 characters is required. The browser never uploads or stores the passphrase or content. Losing the passphrase prevents recovery; this tool is not a password manager, audited security product or substitute for tested backups. Device speed affects processing; use a computer for larger files or higher PBKDF2 work factors.',
+    relatedExistingIds: ['pdf-protect-unlock'],
+    logicModule: './tools/aes-encryption-tool/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

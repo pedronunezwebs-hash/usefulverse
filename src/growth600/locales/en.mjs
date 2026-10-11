@@ -261,6 +261,8 @@ import centripetalForceCalculatorCopies from './centripetal-force-calculator-fin
 import { centripetalForceCalculatorEnglishCopy } from './centripetal-force-calculator.en.mjs';
 import writingTrackerCopies from './writing-tracker-final.mjs';
 import { writingTrackerEnglishCopy } from './writing-tracker.en.mjs';
+import aesEncryptionToolCopies from './aes-encryption-tool-final.mjs';
+import { aesEncryptionToolEnglishCopy } from './aes-encryption-tool.en.mjs';
 import beamDeflectionCopies from './beam-deflection-calculator.mjs';
 import { beamDeflectionCalculatorEnglishCopy } from './beam-deflection-calculator.en.mjs';
 import ledResistorCopies from './led-resistor-calculator.mjs';
@@ -795,6 +797,7 @@ registerGrowthLocaleExtension(source, 'torque-calculator', { ...torqueCalculator
 registerGrowthLocaleExtension(source, 'inductor-calculator', { ...inductorCalculatorCopies, en: inductorCalculatorEnglishCopy }, 'torque-calculator');
 registerGrowthLocaleExtension(source, 'centripetal-force-calculator', { ...centripetalForceCalculatorCopies, en: centripetalForceCalculatorEnglishCopy }, 'inductor-calculator');
 registerGrowthLocaleExtension(source, 'writing-tracker', { ...writingTrackerCopies, en: writingTrackerEnglishCopy }, 'centripetal-force-calculator');
+registerGrowthLocaleExtension(source, 'aes-encryption-tool', { ...aesEncryptionToolCopies, en: aesEncryptionToolEnglishCopy }, 'writing-tracker');
 registerGrowthLocaleExtension(source, 'beam-deflection-calculator', { ...beamDeflectionCopies, en: beamDeflectionCalculatorEnglishCopy }, 'torque-calculator');
 registerGrowthLocaleExtension(source, 'led-resistor-calculator', { ...ledResistorCopies, en: ledResistorCalculatorEnglishCopy }, 'beam-deflection-calculator');
 registerGrowthLocaleExtension(source, 'flow-rate-calculator', { ...flowRateCopies, en: flowRateCalculatorEnglishCopy }, 'led-resistor-calculator');
