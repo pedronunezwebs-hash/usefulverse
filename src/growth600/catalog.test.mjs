@@ -10,10 +10,11 @@ import { calculateWaistHipRatio } from './tools/waist-to-hip-ratio-calculator/lo
 import { buildBondYieldCurve, calculateBondPrice, solveBondYield } from './tools/bond-calculator/logic.mjs';
 import { gregorianToHebrew, hebrewToGregorian, isHebrewLeapYear } from './tools/hebrew-calendar-converter/logic.mjs';
 import { calculateAbsoluteValue } from './tools/absolute-value-calculator/logic.mjs';
+import { calculateSpecificHeat } from './tools/specific-heat-calculator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 160);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 160);
+  assert.equal(growthPilotTools.length, 161);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 161);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -64,6 +65,16 @@ test('absolute value calculator solves bounded linear equations and inequalities
   assert.deepEqual(calculateAbsoluteValue({ mode: 'equation', a: 1, b: 0, relation: '=', c: 3 }).solution, { kind: 'points', points: [-3, 3] });
   assert.deepEqual(calculateAbsoluteValue({ mode: 'inequality', a: 2, b: -4, relation: '<=', c: 6 }).solution.intervals[0], { lower: -1, upper: 5, lowerInclusive: true, upperInclusive: true });
   assert.deepEqual(calculateAbsoluteValue({ mode: 'inequality', a: 1, b: 0, relation: '>', c: 3 }).solution.intervals[1], { lower: 3, upper: Infinity, lowerInclusive: false, upperInclusive: false });
+});
+
+test('specific heat calculator solves sensible heat and ideal mixing without duplicating building heat loss', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'specific-heat-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'specific heat calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['heat-loss-calculator', 'thermal-expansion-calculator']);
+  assert.match(tool.boundary, /constant specific heat.*phase change/u);
+  assert.equal(calculateSpecificHeat({ mass: 1, specificHeat: 1000, temperatureChange: 10 }).value, 10000);
+  assert.equal(calculateSpecificHeat({ mode: 'mixing', mass1: 1, specificHeat1: 1000, temperature1: 80, mass2: 1, specificHeat2: 1000, temperature2: 20 }).finalTemperatureC, 50);
 });
 
 test('eigenvalue calculator is additive and validates symmetric eigenpairs', () => {

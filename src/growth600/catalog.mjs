@@ -276,6 +276,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/thermal-expansion-calculator/logic.mjs',
   },
   {
+    id: 'specific-heat-calculator',
+    category: 'science-engineering',
+    type: 'calculator',
+    primaryIntent: 'specific heat calculator',
+    secondaryIntents: ['heat capacity calculator', 'specific heat equation calculator', 'heat mixing calculator'],
+    functions: ['solve Q = m·c·ΔT for heat energy, mass, specific heat capacity or temperature difference with common metric and US customary units', 'estimate ideal equilibrium temperature for two mixed materials using their masses and specific heat capacities', 'let the user enter heat lost from or added to the mixed system, with visible assumptions and copyable results'],
+    acceptance: 'A 1 kg sample with specific heat 1,000 J/(kg·°C) and a 10 °C change requires 10,000 J. Equal masses with equal heat capacity starting at 80 °C and 20 °C mix to 50 °C when heat loss is zero.',
+    boundary: 'Educational sensible-heat estimate only. Assumes constant specific heat over the entered range and does not model phase change, temperature-dependent material properties, evaporation, reaction, or unentered heat transfer. Mixing assumes ideal equilibrium and user-entered heat loss. Not engineering, laboratory, or safety advice; verify material data for real applications. Values remain in the browser.',
+    relatedExistingIds: ['heat-loss-calculator', 'thermal-expansion-calculator'],
+    logicModule: './tools/specific-heat-calculator/logic.mjs',
+  },
+  {
     id: 'molarity-calculator',
     category: 'science-engineering',
     type: 'calculator',

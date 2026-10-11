@@ -47,6 +47,8 @@ import { markdownEditorEnglishCopy } from './locales/markdown-editor.en.mjs';
 import { purchaseOrderGeneratorEnglishCopy } from './locales/purchase-order-generator.en.mjs';
 import { eigenvalueCalculatorEnglishCopy } from './locales/eigenvalue-calculator.en.mjs';
 import { bondCalculatorEnglishCopy } from './locales/bond-calculator.en.mjs';
+import { specificHeatCalculatorEnglishCopy } from './locales/specific-heat-calculator.en.mjs';
+import specificHeatCalculatorCopies from './locales/specific-heat-calculator-final.mjs';
 
 const actions = {
   calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', millimeters: 'Millimeters', feet: 'Feet', inches: 'Inches', squareMeters: 'Square meters', squareFeet: 'Square feet', cubicMeters: 'Cubic meters', cubicFeet: 'Cubic feet', kelvin: 'Kelvin difference', fahrenheit: 'Fahrenheit difference', kilowatts: 'Kilowatts (kW)', btuPerHour: 'BTU per hour (BTU/h)', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.', kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only', productionMode: 'Estimate array output', sizingMode: 'Size for daily use', years: 'years', add: 'Add', subtract: 'Subtract', multiply: 'Multiply', divide: 'Divide', magnitude: 'Modulus', argument: 'Argument', rectangularToPolar: 'Rectangular to polar', polarToRectangular: 'Polar to rectangular', roots: 'Nth roots',
@@ -70,6 +72,7 @@ const copies = {
   'purchase-order-generator': purchaseOrderGeneratorEnglishCopy,
   'eigenvalue-calculator': eigenvalueCalculatorEnglishCopy,
   'bond-calculator': bondCalculatorEnglishCopy,
+  'specific-heat-calculator': specificHeatCalculatorEnglishCopy,
   'hebrew-calendar-converter': hebrewCalendarConverterEnglishCopy,
   'absolute-value-calculator': absoluteValueCalculatorEnglishCopy,
   'image-splitter': { name: 'Image splitter', actions: { ...actions, choose: 'Choose image', export: 'Split and prepare ZIP', cancel: 'Cancel', download: 'Download tile ZIP' }, messages: { ...messages }, fields: { imageFile: 'Choose an image', mode: 'Split by', gridMode: 'Rows and columns', tileSizeMode: 'Fixed tile dimensions', columns: 'Columns', rows: 'Rows', tileWidth: 'Tile width', tileHeight: 'Tile height', overlap: 'Overlap', accuracyNote: 'Local image processing.', previewHint: 'Image grid preview.', imageReady: 'Image ready' } },
@@ -1608,4 +1611,34 @@ test('absolute value calculator exposes numeric, equation and inequality modes w
   for (const expected of ['name="mode"', 'value="number"', 'value="equation"', 'value="inequality"', 'data-number-fields', 'data-solver-fields hidden', 'name="value"', 'name="a"', 'name="b"', 'name="relation"', 'name="c"', 'value="<="', 'value=">="', 'data-action="example"', 'data-action="calculate"', 'data-action="reset"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
   assert.match(html, /not a general symbolic algebra solver/u);
   assert.match(html, /type="application\/json" data-tool-copy/u);
+});
+
+test('specific heat calculator renders separate equation and material-mixing forms with clear assumptions', () => {
+  const html = renderGrowthForm('specific-heat-calculator', specificHeatCalculatorEnglishCopy);
+  for (const expected of ['name="mode"', 'value="single"', 'value="mixing"', 'name="solveFor"', 'data-specific-field="mass"', 'name="specificHeat"', 'name="temperatureChange"', 'name="heatEnergy"', 'data-specific-field="energy" hidden', 'data-specific-mixing hidden disabled', 'name="mass1"', 'name="temperature1"', 'name="mass2"', 'name="heatLoss"', 'name="massUnit"', 'name="specificHeatUnit"', 'name="temperatureUnit"', 'name="energyUnit"', 'data-action="example"', 'data-action="calculate"', 'data-action="reset"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /phase changes and temperature-dependent material properties are not modeled/u);
+  assert.match(html, /values are not uploaded or saved/u);
+  assert.match(html, /data-specific-field="energy" hidden/u);
+  assert.doesNotMatch(html, /data-specific-field="heatEnergy"/u);
+});
+
+test('specific heat localized unit labels retain standard SI and customary symbols in all locales', () => {
+  for (const [locale, copy] of Object.entries(specificHeatCalculatorCopies)) {
+    assert.match(copy.fields.kilograms, /\(kg\)$/u, locale);
+    assert.match(copy.fields.grams, /\(g\)$/u, locale);
+    assert.match(copy.fields.pounds, /\(lb\)$/u, locale);
+    assert.match(copy.fields.ounces, /\(oz\)$/u, locale);
+    assert.match(copy.fields.celsius, /\(°C\)$/u, locale);
+    assert.match(copy.fields.fahrenheit, /\(°F\)$/u, locale);
+    assert.match(copy.fields.joules, /\(J\)$/u, locale);
+    assert.match(copy.fields.kilojoules, /\(kJ\)$/u, locale);
+    assert.match(copy.fields.calories, /\(cal\)$/u, locale);
+    assert.match(copy.fields.kilocalories, /\(kcal\)$/u, locale);
+    assert.equal(copy.fields.joulesPerKilogram, 'J/(kg·°C)', locale);
+    assert.equal(copy.fields.kilojoulesPerKilogram, 'kJ/(kg·°C)', locale);
+    assert.equal(copy.fields.joulesPerGram, 'J/(g·°C)', locale);
+    assert.equal(copy.fields.caloriesPerGram, 'cal/(g·°C)', locale);
+    assert.equal(copy.fields.btuPerPound, 'BTU/(lb·°F)', locale);
+    assert.equal(copy.fields.btu, 'BTU', locale);
+  }
 });

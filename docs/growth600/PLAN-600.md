@@ -9,7 +9,7 @@ Fecha de investigación: 7 de octubre de 2026. Documento de planificación y che
 - [x] Comprobar la base de planificación: **277 herramientas y 36 idiomas**.
 - [x] Investigar demanda con un gasto acotado en DataForSEO y registrar los resultados reales.
 - [x] Consolidar variantes antes de fijar el nuevo catálogo, sin contar una dirección de conversión como otra herramienta.
-- [ ] Implementar las nuevas herramientas. **Estado público al 11 de octubre de 2026: 159 herramientas Growth600 (436 incluyendo las 277 originales); #133 Hebrew Calendar Converter es la última publicación confirmada. #136 Absolute Value Calculator está implementada y validada localmente, pendiente de integrar/publicar. Quedan 164 candidatas del objetivo de 323 por añadir para llegar a 600 herramientas totales.** Consultar `docs/growth600/PROGRESS.md` para la evidencia; disponibilidad pública no implica indexación.
+- [ ] Implementar las nuevas herramientas. **Estado comprobado el 11 de octubre de 2026: la producción tiene 160 herramientas Growth600 y 277 originales. Specific Heat Calculator está validada en esta rama y eleva la build a 161 adicionales; falta PR/deploy.** El progreso del plan se cuenta por candidatas únicas de las 323 fichas; consultar `docs/growth600/PROGRESS.md` y no inferir indexación del despliegue.
 
 Snapshot consultado: rama `main`, commit `685f91adfc7818a54f6dc0a967e290d13137a3dd`. Catálogo: `src/catalog.mjs`; funciones y contratos representativos: `src/app.js`, módulos de lógica, `src/opportunity-tools.mjs`, `src/seo.mjs`, locales, build y documentación del repo. Se inspeccionaron los metadatos de las 277 herramientas y contratos clave para descartar duplicados; esto **no es una nueva auditoría funcional completa de las 277**.
 
@@ -1510,13 +1510,18 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 272 · Specific Heat Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `specific-heat-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/specific-heat-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] C/F — demanda y separación de intención contrastadas con el plan; sin nueva llamada pagada.
+- [x] E — `specific-heat-calculator`: despeja Q, m, c o ΔT; añade mezcla ideal de dos materiales con pérdida/ganancia de calor manual.
+- [x] X — casos de aceptación y límites comprobados con pruebas unitarias, contrato de formulario/locales/build y navegador; ver detalle y cifras en `docs/growth600/PROGRESS.md`.
+- [x] L — 36 versiones estáticas preparadas desde inglés mediante traducción automática por lotes; QA visible de árabe RTL y japonés, sin afirmar revisión nativa.
+- [x] B — procesamiento exclusivamente local, controladores y CSS dentro de presupuesto; no API, Functions ni dependencia/coste de procesamiento nuevo.
+- [ ] P/S — PR, CI remoto, deploy, sitemap público y rutas públicas propios aún pendientes.
+- **Destino:** `https://tools.usefulverse.com/tools/specific-heat-calculator/`; 35 versiones localizadas en las rutas del anexo. No marcar publicado hasta verificar el deploy.
 - **Demanda:** `specific heat calculator` — 720 búsquedas/mes US/en, KD 0; nivel C. CPC — USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Q, m, c, deltaT, mezcla térmica ideal y pérdidas manuales
 - **Prueba de aceptación específica:** 1kg con c1000 ydelta10 da10000J
 - **Frontera con otras herramientas:** heat-loss-calculator: calor sensible de material no habitación. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** completado localmente con motor ligero; alcance y unidades quedan descritos en la ficha de progreso. Los gates globales no se infieren solo del caso de aceptación.
 - **Consultas secundarias del mismo propietario:**
   - `heat capacity calculator` — 210/mes US/en; KD 0.
   - `specific heat calculator free online`; `specific heat calculator with example`; `specific heat calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.

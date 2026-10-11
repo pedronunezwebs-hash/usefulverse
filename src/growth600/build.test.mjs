@@ -27,6 +27,7 @@ import bondCalculatorCopies from './locales/bond-calculator-final.mjs';
 import waistToHipRatioCopies from './locales/waist-to-hip-ratio-calculator-final.mjs';
 import hebrewCalendarConverterCopies from './locales/hebrew-calendar-converter-final.mjs';
 import absoluteValueCalculatorCopies from './locales/absolute-value-calculator-final.mjs';
+import specificHeatCalculatorCopies from './locales/specific-heat-calculator-final.mjs';
 import { buildGrowthStaticSite } from './build.mjs';
 import englishGrowthCopy from './locales/en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
@@ -113,6 +114,7 @@ function toolCopy(tool, language) {
   if (tool.id === 'waist-to-hip-ratio-calculator') return structuredClone(waistToHipRatioCopies[language]);
   if (tool.id === 'hebrew-calendar-converter') return structuredClone(hebrewCalendarConverterCopies[language]);
   if (tool.id === 'absolute-value-calculator') return structuredClone(absoluteValueCalculatorCopies[language]);
+  if (tool.id === 'specific-heat-calculator') return structuredClone(specificHeatCalculatorCopies[language]);
   if (tool.id === 'json-to-xml-converter') return { ...structuredClone(jsonToXmlEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09' };
   if (tool.id === 'har-viewer') return { ...structuredClone(harViewerEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-09' };
   if (tool.id === 'robots-txt-tester') return structuredClone(robotsTxtTesterCopies[language]);

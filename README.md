@@ -16,12 +16,11 @@ Browser-first collection of fast, private, static tools for everyday work.
 
 The additional Growth600 tools are published on a separate static Cloudflare Pages site at
 [tools.usefulverse.com](https://tools.usefulverse.com/), so they do not replace or
-change the 277-tool catalog above. The hub contains 159 additional tools in
-the same 36 locales. Its canonical URL inventory and language alternates are listed in
-the [tools hub sitemap](https://tools.usefulverse.com/sitemap.xml) (5,760 URLs in this
-build: 159 tools and 36 localized hub home pages; 436 tool implementations
-across the two sites);
-the staged checklist and implementation record are in
+change the 277-tool catalog above. Production currently has 160 additional tools in
+the same 36 locales. The current candidate branch adds Specific Heat Calculator; its
+build contains 161 additional tools and 5,832 canonical URLs, pending merge and hub
+deployment. Once published, the two sites will contain 438 tool implementations and
+16,092 sitemap URLs. The staged checklist and implementation record are in
 [docs/growth600/PLAN-600.md](docs/growth600/PLAN-600.md) and
 [docs/growth600/PROGRESS.md](docs/growth600/PROGRESS.md).
 
@@ -10553,7 +10552,7 @@ These are the canonical URLs for the additional tools and their localized pages.
 
 <!-- BEGIN GENERATED GROWTH600 URL INVENTORY -->
 
-Generated from `dist-growth600/sitemap.xml`: **5,760 canonical URLs**.
+Generated from `dist-growth600/sitemap.xml`: **5,832 canonical URLs**.
 
 ```text
 https://tools.usefulverse.com/
@@ -10580,6 +10579,7 @@ https://tools.usefulverse.com/tools/ramp-calculator/
 https://tools.usefulverse.com/tools/heat-loss-calculator/
 https://tools.usefulverse.com/tools/heat-pump-calculator/
 https://tools.usefulverse.com/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/tools/specific-heat-calculator/
 https://tools.usefulverse.com/tools/molarity-calculator/
 https://tools.usefulverse.com/tools/ph-calculator/
 https://tools.usefulverse.com/tools/section-modulus-calculator/
@@ -10606,6 +10606,7 @@ https://tools.usefulverse.com/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/tools/density-calculator/
 https://tools.usefulverse.com/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/tools/absolute-value-calculator/
 https://tools.usefulverse.com/tools/goal-planner/
 https://tools.usefulverse.com/tools/mind-map-maker/
 https://tools.usefulverse.com/tools/mood-tracker/
@@ -10740,6 +10741,7 @@ https://tools.usefulverse.com/es/tools/ramp-calculator/
 https://tools.usefulverse.com/es/tools/heat-loss-calculator/
 https://tools.usefulverse.com/es/tools/heat-pump-calculator/
 https://tools.usefulverse.com/es/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/es/tools/specific-heat-calculator/
 https://tools.usefulverse.com/es/tools/molarity-calculator/
 https://tools.usefulverse.com/es/tools/ph-calculator/
 https://tools.usefulverse.com/es/tools/section-modulus-calculator/
@@ -10766,6 +10768,7 @@ https://tools.usefulverse.com/es/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/es/tools/density-calculator/
 https://tools.usefulverse.com/es/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/es/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/es/tools/absolute-value-calculator/
 https://tools.usefulverse.com/es/tools/goal-planner/
 https://tools.usefulverse.com/es/tools/mind-map-maker/
 https://tools.usefulverse.com/es/tools/mood-tracker/
@@ -10900,6 +10903,7 @@ https://tools.usefulverse.com/fr/tools/ramp-calculator/
 https://tools.usefulverse.com/fr/tools/heat-loss-calculator/
 https://tools.usefulverse.com/fr/tools/heat-pump-calculator/
 https://tools.usefulverse.com/fr/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/fr/tools/specific-heat-calculator/
 https://tools.usefulverse.com/fr/tools/molarity-calculator/
 https://tools.usefulverse.com/fr/tools/ph-calculator/
 https://tools.usefulverse.com/fr/tools/section-modulus-calculator/
@@ -10926,6 +10930,7 @@ https://tools.usefulverse.com/fr/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/fr/tools/density-calculator/
 https://tools.usefulverse.com/fr/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/fr/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/fr/tools/absolute-value-calculator/
 https://tools.usefulverse.com/fr/tools/goal-planner/
 https://tools.usefulverse.com/fr/tools/mind-map-maker/
 https://tools.usefulverse.com/fr/tools/mood-tracker/
@@ -11060,6 +11065,7 @@ https://tools.usefulverse.com/pt-br/tools/ramp-calculator/
 https://tools.usefulverse.com/pt-br/tools/heat-loss-calculator/
 https://tools.usefulverse.com/pt-br/tools/heat-pump-calculator/
 https://tools.usefulverse.com/pt-br/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/pt-br/tools/specific-heat-calculator/
 https://tools.usefulverse.com/pt-br/tools/molarity-calculator/
 https://tools.usefulverse.com/pt-br/tools/ph-calculator/
 https://tools.usefulverse.com/pt-br/tools/section-modulus-calculator/
@@ -11086,6 +11092,7 @@ https://tools.usefulverse.com/pt-br/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/pt-br/tools/density-calculator/
 https://tools.usefulverse.com/pt-br/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/pt-br/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/pt-br/tools/absolute-value-calculator/
 https://tools.usefulverse.com/pt-br/tools/goal-planner/
 https://tools.usefulverse.com/pt-br/tools/mind-map-maker/
 https://tools.usefulverse.com/pt-br/tools/mood-tracker/
@@ -11220,6 +11227,7 @@ https://tools.usefulverse.com/de/tools/ramp-calculator/
 https://tools.usefulverse.com/de/tools/heat-loss-calculator/
 https://tools.usefulverse.com/de/tools/heat-pump-calculator/
 https://tools.usefulverse.com/de/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/de/tools/specific-heat-calculator/
 https://tools.usefulverse.com/de/tools/molarity-calculator/
 https://tools.usefulverse.com/de/tools/ph-calculator/
 https://tools.usefulverse.com/de/tools/section-modulus-calculator/
@@ -11246,6 +11254,7 @@ https://tools.usefulverse.com/de/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/de/tools/density-calculator/
 https://tools.usefulverse.com/de/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/de/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/de/tools/absolute-value-calculator/
 https://tools.usefulverse.com/de/tools/goal-planner/
 https://tools.usefulverse.com/de/tools/mind-map-maker/
 https://tools.usefulverse.com/de/tools/mood-tracker/
@@ -11380,6 +11389,7 @@ https://tools.usefulverse.com/ja/tools/ramp-calculator/
 https://tools.usefulverse.com/ja/tools/heat-loss-calculator/
 https://tools.usefulverse.com/ja/tools/heat-pump-calculator/
 https://tools.usefulverse.com/ja/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/ja/tools/specific-heat-calculator/
 https://tools.usefulverse.com/ja/tools/molarity-calculator/
 https://tools.usefulverse.com/ja/tools/ph-calculator/
 https://tools.usefulverse.com/ja/tools/section-modulus-calculator/
@@ -11406,6 +11416,7 @@ https://tools.usefulverse.com/ja/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ja/tools/density-calculator/
 https://tools.usefulverse.com/ja/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/ja/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/ja/tools/absolute-value-calculator/
 https://tools.usefulverse.com/ja/tools/goal-planner/
 https://tools.usefulverse.com/ja/tools/mind-map-maker/
 https://tools.usefulverse.com/ja/tools/mood-tracker/
@@ -11540,6 +11551,7 @@ https://tools.usefulverse.com/ko/tools/ramp-calculator/
 https://tools.usefulverse.com/ko/tools/heat-loss-calculator/
 https://tools.usefulverse.com/ko/tools/heat-pump-calculator/
 https://tools.usefulverse.com/ko/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/ko/tools/specific-heat-calculator/
 https://tools.usefulverse.com/ko/tools/molarity-calculator/
 https://tools.usefulverse.com/ko/tools/ph-calculator/
 https://tools.usefulverse.com/ko/tools/section-modulus-calculator/
@@ -11566,6 +11578,7 @@ https://tools.usefulverse.com/ko/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ko/tools/density-calculator/
 https://tools.usefulverse.com/ko/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/ko/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/ko/tools/absolute-value-calculator/
 https://tools.usefulverse.com/ko/tools/goal-planner/
 https://tools.usefulverse.com/ko/tools/mind-map-maker/
 https://tools.usefulverse.com/ko/tools/mood-tracker/
@@ -11700,6 +11713,7 @@ https://tools.usefulverse.com/id/tools/ramp-calculator/
 https://tools.usefulverse.com/id/tools/heat-loss-calculator/
 https://tools.usefulverse.com/id/tools/heat-pump-calculator/
 https://tools.usefulverse.com/id/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/id/tools/specific-heat-calculator/
 https://tools.usefulverse.com/id/tools/molarity-calculator/
 https://tools.usefulverse.com/id/tools/ph-calculator/
 https://tools.usefulverse.com/id/tools/section-modulus-calculator/
@@ -11726,6 +11740,7 @@ https://tools.usefulverse.com/id/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/id/tools/density-calculator/
 https://tools.usefulverse.com/id/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/id/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/id/tools/absolute-value-calculator/
 https://tools.usefulverse.com/id/tools/goal-planner/
 https://tools.usefulverse.com/id/tools/mind-map-maker/
 https://tools.usefulverse.com/id/tools/mood-tracker/
@@ -11860,6 +11875,7 @@ https://tools.usefulverse.com/hi/tools/ramp-calculator/
 https://tools.usefulverse.com/hi/tools/heat-loss-calculator/
 https://tools.usefulverse.com/hi/tools/heat-pump-calculator/
 https://tools.usefulverse.com/hi/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/hi/tools/specific-heat-calculator/
 https://tools.usefulverse.com/hi/tools/molarity-calculator/
 https://tools.usefulverse.com/hi/tools/ph-calculator/
 https://tools.usefulverse.com/hi/tools/section-modulus-calculator/
@@ -11886,6 +11902,7 @@ https://tools.usefulverse.com/hi/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/hi/tools/density-calculator/
 https://tools.usefulverse.com/hi/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/hi/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/hi/tools/absolute-value-calculator/
 https://tools.usefulverse.com/hi/tools/goal-planner/
 https://tools.usefulverse.com/hi/tools/mind-map-maker/
 https://tools.usefulverse.com/hi/tools/mood-tracker/
@@ -12020,6 +12037,7 @@ https://tools.usefulverse.com/ar/tools/ramp-calculator/
 https://tools.usefulverse.com/ar/tools/heat-loss-calculator/
 https://tools.usefulverse.com/ar/tools/heat-pump-calculator/
 https://tools.usefulverse.com/ar/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/ar/tools/specific-heat-calculator/
 https://tools.usefulverse.com/ar/tools/molarity-calculator/
 https://tools.usefulverse.com/ar/tools/ph-calculator/
 https://tools.usefulverse.com/ar/tools/section-modulus-calculator/
@@ -12046,6 +12064,7 @@ https://tools.usefulverse.com/ar/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ar/tools/density-calculator/
 https://tools.usefulverse.com/ar/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/ar/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/ar/tools/absolute-value-calculator/
 https://tools.usefulverse.com/ar/tools/goal-planner/
 https://tools.usefulverse.com/ar/tools/mind-map-maker/
 https://tools.usefulverse.com/ar/tools/mood-tracker/
@@ -12180,6 +12199,7 @@ https://tools.usefulverse.com/zh-cn/tools/ramp-calculator/
 https://tools.usefulverse.com/zh-cn/tools/heat-loss-calculator/
 https://tools.usefulverse.com/zh-cn/tools/heat-pump-calculator/
 https://tools.usefulverse.com/zh-cn/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/zh-cn/tools/specific-heat-calculator/
 https://tools.usefulverse.com/zh-cn/tools/molarity-calculator/
 https://tools.usefulverse.com/zh-cn/tools/ph-calculator/
 https://tools.usefulverse.com/zh-cn/tools/section-modulus-calculator/
@@ -12206,6 +12226,7 @@ https://tools.usefulverse.com/zh-cn/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/zh-cn/tools/density-calculator/
 https://tools.usefulverse.com/zh-cn/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/zh-cn/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/zh-cn/tools/absolute-value-calculator/
 https://tools.usefulverse.com/zh-cn/tools/goal-planner/
 https://tools.usefulverse.com/zh-cn/tools/mind-map-maker/
 https://tools.usefulverse.com/zh-cn/tools/mood-tracker/
@@ -12340,6 +12361,7 @@ https://tools.usefulverse.com/bn/tools/ramp-calculator/
 https://tools.usefulverse.com/bn/tools/heat-loss-calculator/
 https://tools.usefulverse.com/bn/tools/heat-pump-calculator/
 https://tools.usefulverse.com/bn/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/bn/tools/specific-heat-calculator/
 https://tools.usefulverse.com/bn/tools/molarity-calculator/
 https://tools.usefulverse.com/bn/tools/ph-calculator/
 https://tools.usefulverse.com/bn/tools/section-modulus-calculator/
@@ -12366,6 +12388,7 @@ https://tools.usefulverse.com/bn/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/bn/tools/density-calculator/
 https://tools.usefulverse.com/bn/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/bn/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/bn/tools/absolute-value-calculator/
 https://tools.usefulverse.com/bn/tools/goal-planner/
 https://tools.usefulverse.com/bn/tools/mind-map-maker/
 https://tools.usefulverse.com/bn/tools/mood-tracker/
@@ -12500,6 +12523,7 @@ https://tools.usefulverse.com/ru/tools/ramp-calculator/
 https://tools.usefulverse.com/ru/tools/heat-loss-calculator/
 https://tools.usefulverse.com/ru/tools/heat-pump-calculator/
 https://tools.usefulverse.com/ru/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/ru/tools/specific-heat-calculator/
 https://tools.usefulverse.com/ru/tools/molarity-calculator/
 https://tools.usefulverse.com/ru/tools/ph-calculator/
 https://tools.usefulverse.com/ru/tools/section-modulus-calculator/
@@ -12526,6 +12550,7 @@ https://tools.usefulverse.com/ru/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ru/tools/density-calculator/
 https://tools.usefulverse.com/ru/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/ru/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/ru/tools/absolute-value-calculator/
 https://tools.usefulverse.com/ru/tools/goal-planner/
 https://tools.usefulverse.com/ru/tools/mind-map-maker/
 https://tools.usefulverse.com/ru/tools/mood-tracker/
@@ -12660,6 +12685,7 @@ https://tools.usefulverse.com/ur/tools/ramp-calculator/
 https://tools.usefulverse.com/ur/tools/heat-loss-calculator/
 https://tools.usefulverse.com/ur/tools/heat-pump-calculator/
 https://tools.usefulverse.com/ur/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/ur/tools/specific-heat-calculator/
 https://tools.usefulverse.com/ur/tools/molarity-calculator/
 https://tools.usefulverse.com/ur/tools/ph-calculator/
 https://tools.usefulverse.com/ur/tools/section-modulus-calculator/
@@ -12686,6 +12712,7 @@ https://tools.usefulverse.com/ur/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ur/tools/density-calculator/
 https://tools.usefulverse.com/ur/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/ur/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/ur/tools/absolute-value-calculator/
 https://tools.usefulverse.com/ur/tools/goal-planner/
 https://tools.usefulverse.com/ur/tools/mind-map-maker/
 https://tools.usefulverse.com/ur/tools/mood-tracker/
@@ -12820,6 +12847,7 @@ https://tools.usefulverse.com/tr/tools/ramp-calculator/
 https://tools.usefulverse.com/tr/tools/heat-loss-calculator/
 https://tools.usefulverse.com/tr/tools/heat-pump-calculator/
 https://tools.usefulverse.com/tr/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/tr/tools/specific-heat-calculator/
 https://tools.usefulverse.com/tr/tools/molarity-calculator/
 https://tools.usefulverse.com/tr/tools/ph-calculator/
 https://tools.usefulverse.com/tr/tools/section-modulus-calculator/
@@ -12846,6 +12874,7 @@ https://tools.usefulverse.com/tr/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/tr/tools/density-calculator/
 https://tools.usefulverse.com/tr/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/tr/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/tr/tools/absolute-value-calculator/
 https://tools.usefulverse.com/tr/tools/goal-planner/
 https://tools.usefulverse.com/tr/tools/mind-map-maker/
 https://tools.usefulverse.com/tr/tools/mood-tracker/
@@ -12980,6 +13009,7 @@ https://tools.usefulverse.com/vi/tools/ramp-calculator/
 https://tools.usefulverse.com/vi/tools/heat-loss-calculator/
 https://tools.usefulverse.com/vi/tools/heat-pump-calculator/
 https://tools.usefulverse.com/vi/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/vi/tools/specific-heat-calculator/
 https://tools.usefulverse.com/vi/tools/molarity-calculator/
 https://tools.usefulverse.com/vi/tools/ph-calculator/
 https://tools.usefulverse.com/vi/tools/section-modulus-calculator/
@@ -13006,6 +13036,7 @@ https://tools.usefulverse.com/vi/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/vi/tools/density-calculator/
 https://tools.usefulverse.com/vi/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/vi/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/vi/tools/absolute-value-calculator/
 https://tools.usefulverse.com/vi/tools/goal-planner/
 https://tools.usefulverse.com/vi/tools/mind-map-maker/
 https://tools.usefulverse.com/vi/tools/mood-tracker/
@@ -13140,6 +13171,7 @@ https://tools.usefulverse.com/it/tools/ramp-calculator/
 https://tools.usefulverse.com/it/tools/heat-loss-calculator/
 https://tools.usefulverse.com/it/tools/heat-pump-calculator/
 https://tools.usefulverse.com/it/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/it/tools/specific-heat-calculator/
 https://tools.usefulverse.com/it/tools/molarity-calculator/
 https://tools.usefulverse.com/it/tools/ph-calculator/
 https://tools.usefulverse.com/it/tools/section-modulus-calculator/
@@ -13166,6 +13198,7 @@ https://tools.usefulverse.com/it/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/it/tools/density-calculator/
 https://tools.usefulverse.com/it/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/it/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/it/tools/absolute-value-calculator/
 https://tools.usefulverse.com/it/tools/goal-planner/
 https://tools.usefulverse.com/it/tools/mind-map-maker/
 https://tools.usefulverse.com/it/tools/mood-tracker/
@@ -13300,6 +13333,7 @@ https://tools.usefulverse.com/zh-tw/tools/ramp-calculator/
 https://tools.usefulverse.com/zh-tw/tools/heat-loss-calculator/
 https://tools.usefulverse.com/zh-tw/tools/heat-pump-calculator/
 https://tools.usefulverse.com/zh-tw/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/zh-tw/tools/specific-heat-calculator/
 https://tools.usefulverse.com/zh-tw/tools/molarity-calculator/
 https://tools.usefulverse.com/zh-tw/tools/ph-calculator/
 https://tools.usefulverse.com/zh-tw/tools/section-modulus-calculator/
@@ -13326,6 +13360,7 @@ https://tools.usefulverse.com/zh-tw/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/zh-tw/tools/density-calculator/
 https://tools.usefulverse.com/zh-tw/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/zh-tw/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/zh-tw/tools/absolute-value-calculator/
 https://tools.usefulverse.com/zh-tw/tools/goal-planner/
 https://tools.usefulverse.com/zh-tw/tools/mind-map-maker/
 https://tools.usefulverse.com/zh-tw/tools/mood-tracker/
@@ -13460,6 +13495,7 @@ https://tools.usefulverse.com/bg/tools/ramp-calculator/
 https://tools.usefulverse.com/bg/tools/heat-loss-calculator/
 https://tools.usefulverse.com/bg/tools/heat-pump-calculator/
 https://tools.usefulverse.com/bg/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/bg/tools/specific-heat-calculator/
 https://tools.usefulverse.com/bg/tools/molarity-calculator/
 https://tools.usefulverse.com/bg/tools/ph-calculator/
 https://tools.usefulverse.com/bg/tools/section-modulus-calculator/
@@ -13486,6 +13522,7 @@ https://tools.usefulverse.com/bg/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/bg/tools/density-calculator/
 https://tools.usefulverse.com/bg/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/bg/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/bg/tools/absolute-value-calculator/
 https://tools.usefulverse.com/bg/tools/goal-planner/
 https://tools.usefulverse.com/bg/tools/mind-map-maker/
 https://tools.usefulverse.com/bg/tools/mood-tracker/
@@ -13620,6 +13657,7 @@ https://tools.usefulverse.com/ca/tools/ramp-calculator/
 https://tools.usefulverse.com/ca/tools/heat-loss-calculator/
 https://tools.usefulverse.com/ca/tools/heat-pump-calculator/
 https://tools.usefulverse.com/ca/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/ca/tools/specific-heat-calculator/
 https://tools.usefulverse.com/ca/tools/molarity-calculator/
 https://tools.usefulverse.com/ca/tools/ph-calculator/
 https://tools.usefulverse.com/ca/tools/section-modulus-calculator/
@@ -13646,6 +13684,7 @@ https://tools.usefulverse.com/ca/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ca/tools/density-calculator/
 https://tools.usefulverse.com/ca/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/ca/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/ca/tools/absolute-value-calculator/
 https://tools.usefulverse.com/ca/tools/goal-planner/
 https://tools.usefulverse.com/ca/tools/mind-map-maker/
 https://tools.usefulverse.com/ca/tools/mood-tracker/
@@ -13780,6 +13819,7 @@ https://tools.usefulverse.com/nl/tools/ramp-calculator/
 https://tools.usefulverse.com/nl/tools/heat-loss-calculator/
 https://tools.usefulverse.com/nl/tools/heat-pump-calculator/
 https://tools.usefulverse.com/nl/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/nl/tools/specific-heat-calculator/
 https://tools.usefulverse.com/nl/tools/molarity-calculator/
 https://tools.usefulverse.com/nl/tools/ph-calculator/
 https://tools.usefulverse.com/nl/tools/section-modulus-calculator/
@@ -13806,6 +13846,7 @@ https://tools.usefulverse.com/nl/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/nl/tools/density-calculator/
 https://tools.usefulverse.com/nl/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/nl/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/nl/tools/absolute-value-calculator/
 https://tools.usefulverse.com/nl/tools/goal-planner/
 https://tools.usefulverse.com/nl/tools/mind-map-maker/
 https://tools.usefulverse.com/nl/tools/mood-tracker/
@@ -13940,6 +13981,7 @@ https://tools.usefulverse.com/el/tools/ramp-calculator/
 https://tools.usefulverse.com/el/tools/heat-loss-calculator/
 https://tools.usefulverse.com/el/tools/heat-pump-calculator/
 https://tools.usefulverse.com/el/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/el/tools/specific-heat-calculator/
 https://tools.usefulverse.com/el/tools/molarity-calculator/
 https://tools.usefulverse.com/el/tools/ph-calculator/
 https://tools.usefulverse.com/el/tools/section-modulus-calculator/
@@ -13966,6 +14008,7 @@ https://tools.usefulverse.com/el/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/el/tools/density-calculator/
 https://tools.usefulverse.com/el/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/el/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/el/tools/absolute-value-calculator/
 https://tools.usefulverse.com/el/tools/goal-planner/
 https://tools.usefulverse.com/el/tools/mind-map-maker/
 https://tools.usefulverse.com/el/tools/mood-tracker/
@@ -14100,6 +14143,7 @@ https://tools.usefulverse.com/ms/tools/ramp-calculator/
 https://tools.usefulverse.com/ms/tools/heat-loss-calculator/
 https://tools.usefulverse.com/ms/tools/heat-pump-calculator/
 https://tools.usefulverse.com/ms/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/ms/tools/specific-heat-calculator/
 https://tools.usefulverse.com/ms/tools/molarity-calculator/
 https://tools.usefulverse.com/ms/tools/ph-calculator/
 https://tools.usefulverse.com/ms/tools/section-modulus-calculator/
@@ -14126,6 +14170,7 @@ https://tools.usefulverse.com/ms/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ms/tools/density-calculator/
 https://tools.usefulverse.com/ms/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/ms/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/ms/tools/absolute-value-calculator/
 https://tools.usefulverse.com/ms/tools/goal-planner/
 https://tools.usefulverse.com/ms/tools/mind-map-maker/
 https://tools.usefulverse.com/ms/tools/mood-tracker/
@@ -14260,6 +14305,7 @@ https://tools.usefulverse.com/pl/tools/ramp-calculator/
 https://tools.usefulverse.com/pl/tools/heat-loss-calculator/
 https://tools.usefulverse.com/pl/tools/heat-pump-calculator/
 https://tools.usefulverse.com/pl/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/pl/tools/specific-heat-calculator/
 https://tools.usefulverse.com/pl/tools/molarity-calculator/
 https://tools.usefulverse.com/pl/tools/ph-calculator/
 https://tools.usefulverse.com/pl/tools/section-modulus-calculator/
@@ -14286,6 +14332,7 @@ https://tools.usefulverse.com/pl/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/pl/tools/density-calculator/
 https://tools.usefulverse.com/pl/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/pl/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/pl/tools/absolute-value-calculator/
 https://tools.usefulverse.com/pl/tools/goal-planner/
 https://tools.usefulverse.com/pl/tools/mind-map-maker/
 https://tools.usefulverse.com/pl/tools/mood-tracker/
@@ -14420,6 +14467,7 @@ https://tools.usefulverse.com/sv/tools/ramp-calculator/
 https://tools.usefulverse.com/sv/tools/heat-loss-calculator/
 https://tools.usefulverse.com/sv/tools/heat-pump-calculator/
 https://tools.usefulverse.com/sv/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/sv/tools/specific-heat-calculator/
 https://tools.usefulverse.com/sv/tools/molarity-calculator/
 https://tools.usefulverse.com/sv/tools/ph-calculator/
 https://tools.usefulverse.com/sv/tools/section-modulus-calculator/
@@ -14446,6 +14494,7 @@ https://tools.usefulverse.com/sv/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/sv/tools/density-calculator/
 https://tools.usefulverse.com/sv/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/sv/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/sv/tools/absolute-value-calculator/
 https://tools.usefulverse.com/sv/tools/goal-planner/
 https://tools.usefulverse.com/sv/tools/mind-map-maker/
 https://tools.usefulverse.com/sv/tools/mood-tracker/
@@ -14580,6 +14629,7 @@ https://tools.usefulverse.com/th/tools/ramp-calculator/
 https://tools.usefulverse.com/th/tools/heat-loss-calculator/
 https://tools.usefulverse.com/th/tools/heat-pump-calculator/
 https://tools.usefulverse.com/th/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/th/tools/specific-heat-calculator/
 https://tools.usefulverse.com/th/tools/molarity-calculator/
 https://tools.usefulverse.com/th/tools/ph-calculator/
 https://tools.usefulverse.com/th/tools/section-modulus-calculator/
@@ -14606,6 +14656,7 @@ https://tools.usefulverse.com/th/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/th/tools/density-calculator/
 https://tools.usefulverse.com/th/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/th/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/th/tools/absolute-value-calculator/
 https://tools.usefulverse.com/th/tools/goal-planner/
 https://tools.usefulverse.com/th/tools/mind-map-maker/
 https://tools.usefulverse.com/th/tools/mood-tracker/
@@ -14740,6 +14791,7 @@ https://tools.usefulverse.com/uk/tools/ramp-calculator/
 https://tools.usefulverse.com/uk/tools/heat-loss-calculator/
 https://tools.usefulverse.com/uk/tools/heat-pump-calculator/
 https://tools.usefulverse.com/uk/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/uk/tools/specific-heat-calculator/
 https://tools.usefulverse.com/uk/tools/molarity-calculator/
 https://tools.usefulverse.com/uk/tools/ph-calculator/
 https://tools.usefulverse.com/uk/tools/section-modulus-calculator/
@@ -14766,6 +14818,7 @@ https://tools.usefulverse.com/uk/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/uk/tools/density-calculator/
 https://tools.usefulverse.com/uk/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/uk/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/uk/tools/absolute-value-calculator/
 https://tools.usefulverse.com/uk/tools/goal-planner/
 https://tools.usefulverse.com/uk/tools/mind-map-maker/
 https://tools.usefulverse.com/uk/tools/mood-tracker/
@@ -14900,6 +14953,7 @@ https://tools.usefulverse.com/sw/tools/ramp-calculator/
 https://tools.usefulverse.com/sw/tools/heat-loss-calculator/
 https://tools.usefulverse.com/sw/tools/heat-pump-calculator/
 https://tools.usefulverse.com/sw/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/sw/tools/specific-heat-calculator/
 https://tools.usefulverse.com/sw/tools/molarity-calculator/
 https://tools.usefulverse.com/sw/tools/ph-calculator/
 https://tools.usefulverse.com/sw/tools/section-modulus-calculator/
@@ -14926,6 +14980,7 @@ https://tools.usefulverse.com/sw/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/sw/tools/density-calculator/
 https://tools.usefulverse.com/sw/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/sw/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/sw/tools/absolute-value-calculator/
 https://tools.usefulverse.com/sw/tools/goal-planner/
 https://tools.usefulverse.com/sw/tools/mind-map-maker/
 https://tools.usefulverse.com/sw/tools/mood-tracker/
@@ -15060,6 +15115,7 @@ https://tools.usefulverse.com/mr/tools/ramp-calculator/
 https://tools.usefulverse.com/mr/tools/heat-loss-calculator/
 https://tools.usefulverse.com/mr/tools/heat-pump-calculator/
 https://tools.usefulverse.com/mr/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/mr/tools/specific-heat-calculator/
 https://tools.usefulverse.com/mr/tools/molarity-calculator/
 https://tools.usefulverse.com/mr/tools/ph-calculator/
 https://tools.usefulverse.com/mr/tools/section-modulus-calculator/
@@ -15086,6 +15142,7 @@ https://tools.usefulverse.com/mr/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/mr/tools/density-calculator/
 https://tools.usefulverse.com/mr/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/mr/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/mr/tools/absolute-value-calculator/
 https://tools.usefulverse.com/mr/tools/goal-planner/
 https://tools.usefulverse.com/mr/tools/mind-map-maker/
 https://tools.usefulverse.com/mr/tools/mood-tracker/
@@ -15220,6 +15277,7 @@ https://tools.usefulverse.com/te/tools/ramp-calculator/
 https://tools.usefulverse.com/te/tools/heat-loss-calculator/
 https://tools.usefulverse.com/te/tools/heat-pump-calculator/
 https://tools.usefulverse.com/te/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/te/tools/specific-heat-calculator/
 https://tools.usefulverse.com/te/tools/molarity-calculator/
 https://tools.usefulverse.com/te/tools/ph-calculator/
 https://tools.usefulverse.com/te/tools/section-modulus-calculator/
@@ -15246,6 +15304,7 @@ https://tools.usefulverse.com/te/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/te/tools/density-calculator/
 https://tools.usefulverse.com/te/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/te/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/te/tools/absolute-value-calculator/
 https://tools.usefulverse.com/te/tools/goal-planner/
 https://tools.usefulverse.com/te/tools/mind-map-maker/
 https://tools.usefulverse.com/te/tools/mood-tracker/
@@ -15380,6 +15439,7 @@ https://tools.usefulverse.com/ha/tools/ramp-calculator/
 https://tools.usefulverse.com/ha/tools/heat-loss-calculator/
 https://tools.usefulverse.com/ha/tools/heat-pump-calculator/
 https://tools.usefulverse.com/ha/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/ha/tools/specific-heat-calculator/
 https://tools.usefulverse.com/ha/tools/molarity-calculator/
 https://tools.usefulverse.com/ha/tools/ph-calculator/
 https://tools.usefulverse.com/ha/tools/section-modulus-calculator/
@@ -15406,6 +15466,7 @@ https://tools.usefulverse.com/ha/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ha/tools/density-calculator/
 https://tools.usefulverse.com/ha/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/ha/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/ha/tools/absolute-value-calculator/
 https://tools.usefulverse.com/ha/tools/goal-planner/
 https://tools.usefulverse.com/ha/tools/mind-map-maker/
 https://tools.usefulverse.com/ha/tools/mood-tracker/
@@ -15540,6 +15601,7 @@ https://tools.usefulverse.com/tl/tools/ramp-calculator/
 https://tools.usefulverse.com/tl/tools/heat-loss-calculator/
 https://tools.usefulverse.com/tl/tools/heat-pump-calculator/
 https://tools.usefulverse.com/tl/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/tl/tools/specific-heat-calculator/
 https://tools.usefulverse.com/tl/tools/molarity-calculator/
 https://tools.usefulverse.com/tl/tools/ph-calculator/
 https://tools.usefulverse.com/tl/tools/section-modulus-calculator/
@@ -15566,6 +15628,7 @@ https://tools.usefulverse.com/tl/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/tl/tools/density-calculator/
 https://tools.usefulverse.com/tl/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/tl/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/tl/tools/absolute-value-calculator/
 https://tools.usefulverse.com/tl/tools/goal-planner/
 https://tools.usefulverse.com/tl/tools/mind-map-maker/
 https://tools.usefulverse.com/tl/tools/mood-tracker/
@@ -15700,6 +15763,7 @@ https://tools.usefulverse.com/ta/tools/ramp-calculator/
 https://tools.usefulverse.com/ta/tools/heat-loss-calculator/
 https://tools.usefulverse.com/ta/tools/heat-pump-calculator/
 https://tools.usefulverse.com/ta/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/ta/tools/specific-heat-calculator/
 https://tools.usefulverse.com/ta/tools/molarity-calculator/
 https://tools.usefulverse.com/ta/tools/ph-calculator/
 https://tools.usefulverse.com/ta/tools/section-modulus-calculator/
@@ -15726,6 +15790,7 @@ https://tools.usefulverse.com/ta/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/ta/tools/density-calculator/
 https://tools.usefulverse.com/ta/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/ta/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/ta/tools/absolute-value-calculator/
 https://tools.usefulverse.com/ta/tools/goal-planner/
 https://tools.usefulverse.com/ta/tools/mind-map-maker/
 https://tools.usefulverse.com/ta/tools/mood-tracker/
@@ -15860,6 +15925,7 @@ https://tools.usefulverse.com/fa/tools/ramp-calculator/
 https://tools.usefulverse.com/fa/tools/heat-loss-calculator/
 https://tools.usefulverse.com/fa/tools/heat-pump-calculator/
 https://tools.usefulverse.com/fa/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/fa/tools/specific-heat-calculator/
 https://tools.usefulverse.com/fa/tools/molarity-calculator/
 https://tools.usefulverse.com/fa/tools/ph-calculator/
 https://tools.usefulverse.com/fa/tools/section-modulus-calculator/
@@ -15886,6 +15952,7 @@ https://tools.usefulverse.com/fa/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/fa/tools/density-calculator/
 https://tools.usefulverse.com/fa/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/fa/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/fa/tools/absolute-value-calculator/
 https://tools.usefulverse.com/fa/tools/goal-planner/
 https://tools.usefulverse.com/fa/tools/mind-map-maker/
 https://tools.usefulverse.com/fa/tools/mood-tracker/
@@ -16020,6 +16087,7 @@ https://tools.usefulverse.com/am/tools/ramp-calculator/
 https://tools.usefulverse.com/am/tools/heat-loss-calculator/
 https://tools.usefulverse.com/am/tools/heat-pump-calculator/
 https://tools.usefulverse.com/am/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/am/tools/specific-heat-calculator/
 https://tools.usefulverse.com/am/tools/molarity-calculator/
 https://tools.usefulverse.com/am/tools/ph-calculator/
 https://tools.usefulverse.com/am/tools/section-modulus-calculator/
@@ -16046,6 +16114,7 @@ https://tools.usefulverse.com/am/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/am/tools/density-calculator/
 https://tools.usefulverse.com/am/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/am/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/am/tools/absolute-value-calculator/
 https://tools.usefulverse.com/am/tools/goal-planner/
 https://tools.usefulverse.com/am/tools/mind-map-maker/
 https://tools.usefulverse.com/am/tools/mood-tracker/
@@ -16180,6 +16249,7 @@ https://tools.usefulverse.com/gu/tools/ramp-calculator/
 https://tools.usefulverse.com/gu/tools/heat-loss-calculator/
 https://tools.usefulverse.com/gu/tools/heat-pump-calculator/
 https://tools.usefulverse.com/gu/tools/thermal-expansion-calculator/
+https://tools.usefulverse.com/gu/tools/specific-heat-calculator/
 https://tools.usefulverse.com/gu/tools/molarity-calculator/
 https://tools.usefulverse.com/gu/tools/ph-calculator/
 https://tools.usefulverse.com/gu/tools/section-modulus-calculator/
@@ -16206,6 +16276,7 @@ https://tools.usefulverse.com/gu/tools/gear-ratio-calculator/
 https://tools.usefulverse.com/gu/tools/density-calculator/
 https://tools.usefulverse.com/gu/tools/compression-ratio-calculator/
 https://tools.usefulverse.com/gu/tools/hebrew-calendar-converter/
+https://tools.usefulverse.com/gu/tools/absolute-value-calculator/
 https://tools.usefulverse.com/gu/tools/goal-planner/
 https://tools.usefulverse.com/gu/tools/mind-map-maker/
 https://tools.usefulverse.com/gu/tools/mood-tracker/

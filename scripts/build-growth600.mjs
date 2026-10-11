@@ -15,6 +15,7 @@ import bondCalculatorCopies from '../src/growth600/locales/bond-calculator-final
 import waistToHipRatioCopies from '../src/growth600/locales/waist-to-hip-ratio-calculator-final.mjs';
 import hebrewCalendarConverterCopies from '../src/growth600/locales/hebrew-calendar-converter-final.mjs';
 import absoluteValueCalculatorCopies from '../src/growth600/locales/absolute-value-calculator-final.mjs';
+import specificHeatCalculatorCopies from '../src/growth600/locales/specific-heat-calculator-final.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const localeDir = resolve(root, 'src/growth600/locales');
@@ -46,6 +47,8 @@ for (const { key } of localeEntries) {
   copyByLocale[key] = { ...copyByLocale[key], 'hebrew-calendar-converter': hebrewCalendarConverterCopies[key] };
   if (!absoluteValueCalculatorCopies[key]) throw new Error(`Growth600 release blocked: Absolute Value Calculator copy is missing for ${key}.`);
   copyByLocale[key] = { ...copyByLocale[key], 'absolute-value-calculator': absoluteValueCalculatorCopies[key] };
+  if (!specificHeatCalculatorCopies[key]) throw new Error(`Growth600 release blocked: Specific Heat Calculator copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'specific-heat-calculator': specificHeatCalculatorCopies[key] };
 }
 
 const outputDir = resolve(process.env.GROWTH600_DIST ?? resolve(root, 'dist-growth600'));
@@ -70,6 +73,7 @@ const toolStyles = {
   'waist-to-hip-ratio-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/waist-to-hip-ratio-calculator/waist-to-hip-ratio-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
   'hebrew-calendar-converter': minifyCss(await readFile(resolve(root, 'src/growth600/tools/hebrew-calendar-converter/hebrew-calendar-converter.css'), 'utf8'), { comments: 'exclamation' }).css,
   'absolute-value-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/absolute-value-calculator/absolute-value-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'specific-heat-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/specific-heat-calculator/specific-heat-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
 };
 const faviconSvg = await readFile(resolve(root, 'public/favicon.svg'), 'utf8');
 const modelRevision = '92a21aca5713f20faf9a87590cdfbdce2e34112c';
