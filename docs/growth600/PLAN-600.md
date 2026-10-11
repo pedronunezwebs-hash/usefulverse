@@ -4782,8 +4782,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 121 · Logic Grid Puzzle
 
-- [x] **C/F/E/X/L/B superados; P/S pendientes — `logic-grid-puzzle`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/logic-grid-puzzle/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `logic-grid-puzzle`**
+- **Destino:** `https://tools.usefulverse.com/tools/logic-grid-puzzle/`; 35 versiones adicionales con los prefijos del anexo.
 - **Demanda:** `logic grid puzzle` — 8.100 búsquedas/mes US/en, KD 38; nivel B. CPC 1.11 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Entidades y pistas originales, matriz de exclusiones, notas, checker, hints y generador/banco con soluciones verificadas.
 - **Prueba de aceptación específica:** Existe exactamente una asignación que satisface las pistas cuando se promete unicidad.
@@ -4793,7 +4793,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `logic puzzle online` — 5.400/mes US/en; KD 40.
   - `logic grid puzzle free online`; `logic grid puzzle with example`; `logic grid puzzle no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
-- **Estado local (2026-10-11):** 36 copias estáticas de traducción automática; se ajustaron títulos para conservar el nombre de la herramienta y las etiquetas RTL defectuosas detectadas en árabe. `npm test`: **1.822/1.822**; chequeo de locales; build del hub: **5.544 páginas** (153 × 36 + 36 portadas). Chrome local confirmó tablero, pistas, ciclo de marcas, hint, feedback de tablero incompleto, modo difícil, RTL árabe a 390 px sin overflow ni errores de consola. La carga pide solo HTML/CSS/JS locales. CI, integración, URL pública y sitemap quedan pendientes.
+- **Implementación y verificación (2026-10-11):** 36 copias estáticas de traducción automática; se ajustaron títulos y etiquetas RTL detectadas en árabe. Suite local **1.822/1.822**, `npm run locale:release-check`, `npm run check` (10.260 URLs principales) y CI completos pasan. Build aislado del hub: **5.544 páginas** (153 × 36 + 36 portadas). Chrome EN/AR a 390 px comprobó tablero, pistas, ciclos de marcas, hint, feedback incompleto y dificultad; sin overflow ni errores de consola. Solo descarga HTML/CSS/JS locales. Sitemap del hub HTTP 200 con **5.544 URLs únicas**, exactamente 36 rutas de la herramienta; sitemap principal HTTP 200 con **10.260**. EN/AR/JA devuelven HTTP 200. PR [#117](https://github.com/pedronunezwebs-hash/usefulverse/pull/117), merge `883b3d59ea4cec326ecefbd49753cd9ae566f2c9`; CI del PR `38127230223`, despliegue principal `38127481303` y publicación del hub `38127722424` correctos. Publicar no implica indexación. No se midió PageSpeed/Lighthouse ni se repitió DataForSEO.
 
 ### 143 · Sokoban
 
