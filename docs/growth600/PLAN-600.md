@@ -3102,19 +3102,20 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `graphql formatter free online`; `graphql formatter with example`; `graphql formatter no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 
-### 321 · Rsa Key Generator
+### 321 · RSA Key Generator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `rsa-key-generator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/rsa-key-generator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `rsa-key-generator`**
+- **Publicado:** `https://tools.usefulverse.com/tools/rsa-key-generator/`; otras 35 versiones con los prefijos del anexo. Sitemap público verificado con las 36 rutas.
 - **Demanda:** `rsa key generator` — 320 búsquedas/mes US/en, KD 22; nivel C. CPC — USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Claves Web Crypto, formatos SPKI/PKCS8, fingerprint y cifrado de mensajes del tamaño permitido; no confundir clave pública con certificado ni prometer certificados de confianza.
-- **Prueba de aceptación específica:** Encrypt/decrypt recupera entrada
+- **Función implementada:** Web Crypto RSA-OAEP/SHA-256, claves 2048/3072/4096-bit, public SPKI PEM, private PKCS8 PEM, fingerprint SHA-256, copiar/descargar y demo local de cifrado/descifrado para mensajes dentro del máximo de bytes UTF-8. No cifra archivos ni confunde claves con certificados, firmas o identidad.
+- **Prueba de aceptación específica:** en Chrome local generó el par, cifró el ejemplo y lo descifró recuperando exactamente la entrada; sin errores de consola. Suite lógica/formulario/catálogo/locales **354/354** y suite global **1.991/1.991**.
 - **Frontera con otras herramientas:** aes-encryption-tool: claves asimétricas y formatos. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación/riesgo:** ejecuta por completo en el dispositivo, sin API/Functions/upload/persistencia; advierte no usar claves de producción. RSA limita el tamaño del mensaje y la generación de 4096 bits puede tardar más en móvil.
 - **Consultas secundarias del mismo propietario:**
   - `rsa encryption online` — 210/mes US/en; KD 0.
   - `rsa key generator free online`; `rsa key generator with example`; `rsa key generator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
-- **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Longtails funcionales:** title y description dentro de los límites del gate, seis FAQs útiles y ejemplo propio; las 36 traducciones son automáticas desde inglés, entendibles pero no revisadas por nativos. No crear URLs por modificador.
+- **Verificación y publicación (2026-10-12):** `npm run locale:release-check`, `npm run check`, `npm run build:growth600`, `npm run docs:urls` y `git diff --check` correctos. Build 6.408 rutas/6.664 archivos; mayor asset 14.264.838 bytes, bajo el límite individual de Pages. Publicado directamente a Pages (deployment `651f298f-ef8e-4001-8127-8c71367af571`), sin Actions; código respaldado en `codex/growth600-rsa-key-generator-20261012`, commit `0e6cb17`. Sitemap público 6.408 URLs únicas, 36 RSA. EN/ES/AR/JA/zh-TW HTTP 200, canonical/idioma correctos; árabe RTL. Publicación no implica indexación. Sin PageSpeed/Lighthouse.
 
 ### 322 · Log Analyzer
 
