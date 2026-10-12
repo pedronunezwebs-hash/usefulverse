@@ -9,7 +9,7 @@ Fecha de investigación: 7 de octubre de 2026. Documento de planificación y che
 - [x] Comprobar la base de planificación: **277 herramientas y 36 idiomas**.
 - [x] Investigar demanda con un gasto acotado en DataForSEO y registrar los resultados reales.
 - [x] Consolidar variantes antes de fijar el nuevo catálogo, sin contar una dirección de conversión como otra herramienta.
-- [ ] Implementar las nuevas herramientas. **Estado comprobado el 12 de octubre de 2026: 174 herramientas Growth600 desplegadas y 277 originales protegidas; sitemaps públicos de 6.300 + 10.260 URLs. Restan 149 candidatas para llegar a 600 herramientas totales; consultar `docs/growth600/PROGRESS.md`.** El progreso del plan se cuenta por candidatas únicas de las 323 fichas; no inferir indexación del despliegue.
+- [ ] Implementar las nuevas herramientas. **Estado comprobado el 12 de octubre de 2026: 179 herramientas Growth600 desplegadas y 277 originales protegidas; sitemaps públicos de 6.480 + 10.260 URLs. Restan 144 candidatas para llegar a 600 herramientas totales; consultar `docs/growth600/PROGRESS.md`.** El progreso del plan se cuenta por candidatas únicas de las 323 fichas; no inferir indexación del despliegue.
 
 Snapshot consultado: rama `main`, commit `685f91adfc7818a54f6dc0a967e290d13137a3dd`. Catálogo: `src/catalog.mjs`; funciones y contratos representativos: `src/app.js`, módulos de lógica, `src/opportunity-tools.mjs`, `src/seo.mjs`, locales, build y documentación del repo. Se inspeccionaron los metadatos de las 277 herramientas y contratos clave para descartar duplicados; esto **no es una nueva auditoría funcional completa de las 277**.
 
@@ -1659,8 +1659,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 006 · Inflation Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `inflation-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/inflation-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `inflation-calculator`**
+- **Destino:** `https://tools.usefulverse.com/tools/inflation-calculator/`; 36 versiones publicadas en el mismo host.
 - **Demanda:** `inflation calculator` — 550.000 búsquedas/mes US/en, KD 70; nivel A. CPC 2.87 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Índice CPI oficial estático por año US y tasa manual para otros mercados
 - **Prueba de aceptación específica:** Índice de 100 a 110 transforma 100 en 110
@@ -1671,6 +1671,11 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `inflation calculator free online`; `inflation calculator with example`; `inflation calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** CA/en `inflation calculator` 33.100/mes, KD 78; UK/en `inflation calculator` 60.500/mes, KD 51; AU/en `inflation calculator` 14.800/mes, KD 75; DE/de `inflationsrechner` 14.800/mes, KD 0.
+- **Implementación y límites:** modo CPI-U de EE. UU. con promedios anuales estáticos oficiales BLS, 1913–2025; modo de tasa anual manual para escenarios de otros mercados. Presenta equivalente, cambio acumulado y tasa anual equivalente. No mezcla inflación con inversiones, impuestos ni cambio de divisa; dataset congelado, no API ni previsión.
+- **Pruebas:** 6 pruebas del motor (límites 1913/2025, ratio del índice, capitalización, deflación, tasa cero y valores extremos); formularios y catálogos validados; copy estático en 36 idiomas; títulos ≤60 y descripciones ≤160 caracteres. Suite completa **2.009/2.009**, locale release check aprobado, `npm run check` conserva **10.260 URLs** de UsefulVerse y build Growth600 genera **6.480 URLs** únicas (179 × 36 + 36 portadas), 6.740 archivos. No se ejecutó PageSpeed/Lighthouse.
+- **QA de navegador:** ejemplo CPI 2020–2025 → 124,39 desde 100; tasa personalizada de 3% por 10 años → 134,39; Reset oculta el resultado. Árabe: `lang=ar`, `dir=rtl`, ejemplo correcto. Chino tradicional: ruta `/zh-tw/`, `lang=zh-TW`, ejemplo correcto y formato numérico válido. Sin errores de consola en los flujos probados.
+- **Fuente de datos:** BLS, serie CPI-U CUUR0000SA0, índice de promedio anual; valores históricos estáticos con cita en la página. El modo de otro país es una hipótesis introducida por la persona, no una tasa oficial.
+- **Costes/deploy:** archivos estáticos, sin Functions/Workers/APIs de procesamiento, modelos ni persistencia. Reutiliza 36 rutas por herramienta. Sin DataForSEO adicional, sin GitHub Actions y sin PageSpeed. Evidencia de rama, Pages y sitemap vivo en `docs/growth600/PROGRESS.md`.
 
 ### 007 · Retirement Calculator
 

@@ -2,15 +2,26 @@
 
 Última verificación: 2026-10-12. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## Estado actual · 2026-10-12 · #322 publicada; #006 siguiente en la cola
+## Estado actual · 2026-10-12 · #006 Inflation Calculator publicada
 
-- **Estado público confirmado tras #322:** 178 herramientas Growth600 en 36 locales, **6.444 URLs** en `https://tools.usefulverse.com/sitemap.xml`; catálogo principal protegido de 277 herramientas y 10.260 URLs. Total: **455 herramientas y 16.704 URLs**. La presencia en sitemap no demuestra indexación.
+- **Estado público confirmado tras #006:** 179 herramientas Growth600 en 36 locales, **6.480 URLs** en `https://tools.usefulverse.com/sitemap.xml`; catálogo principal protegido de 277 herramientas y 10.260 URLs. Total: **456 herramientas y 16.740 URLs**. La presencia en sitemap no demuestra indexación.
+- **#006 Inflation Calculator:** CPI-U anual de EE. UU. (BLS, 1913–2025) y escenario de tasa anual manual para otros mercados. Dos modos, valor equivalente, cambio acumulado, tasa anual equivalente, supuestos y FAQs. 36 copias estáticas. Suite **2.009/2.009**; locale release check; build principal **10.260** URLs; Growth600 **6.480** URLs/6.740 archivos. Chrome: CPI 2020–25 con 100 → 124,39; 3% × 10 años → 134,39; árabe RTL y chino tradicional verificados.
+- **Publicación #006:** `https://5d93d3eb.usefulverse-tools.pages.dev`, deployment ID `5d93d3eb-8033-42c7-8cdf-93eedcb305d0`, producción del proyecto estático `usefulverse-tools`. Sitemap público HTTP 200, **6.480 URLs únicas**, Inflation Calculator exactamente en 36 locales. EN/ES/AR/JA/zh-TW devuelven HTTP 200, formulario y canonical correctos; Arabic `dir=rtl`. Código fuente respaldado en GitHub en `codex/growth600-log-analyzer-20261012`, commit `9aa050c`, sin GitHub Actions ni cambio de `main`. Esto no demuestra indexación.
+- **Progreso de las 323 fichas:** 179 implementadas y publicadas; **144 candidatas restantes**. Siguiente en la secuencia del plan: **#007 Retirement Calculator**, distinta de inversión, interés compuesto y pensión por sus fases de acumulación/retiro. No llamar implementada ninguna de las 144 restantes.
 - **#322 Log Analyzer:** gates locales aprobados, rama respaldada y publicación directa verificada; deploy `https://3900cb66.usefulverse-tools.pages.dev`. Sitemap único con 6.444 URLs y 36 variantes; cinco locales EN/ES/AR/JA/zh-TW responden 200.
-- **Siguiente candidata:** #006 Inflation Calculator, ausente del catálogo Growth600 y con intención distinta de ROI/CAGR. Reutilizar el DataForSEO registrado en el plan; no hacer llamadas nuevas.
 - #321 RSA Key Generator se desplegó directamente a Cloudflare Pages, proyecto `usefulverse-tools`, rama `main`, deployment `https://651f298f.usefulverse-tools.pages.dev` (ID `651f298f-ef8e-4001-8127-8c71367af571`). Código respaldado online en `codex/growth600-rsa-key-generator-20261012`, commit `0e6cb17`; no se hizo push a `main`, no corrieron GitHub Actions y no se consumieron sus minutos.
 - Verificación de #321: focal **354/354**, suite completa **1.991/1.991**, `npm run locale:release-check`, `npm run check` (10.260 URLs principales), `npm run build:growth600` (6.408 páginas, 6.664 archivos, 187.215.294 bytes), `npm run docs:urls` y `git diff --check` aprobados. Máximo archivo 14.264.838 bytes (<25 MiB); build estático sin Functions ni `_worker.js`. No se ejecutó PageSpeed/Lighthouse.
 - QA en navegador local: generó claves RSA, cifró y descifró el ejemplo con recuperación exacta; consola sin errores. Producción: la página EN/ES/AR/JA/zh-TW responde HTTP 200 con canonical y `lang` correctos; árabe declara RTL. Sitemap público HTTP 200 con **6.408 URLs únicas**, incluidas exactamente 36 rutas RSA. Publicar no demuestra rastreo ni indexación.
 - `README.md` registra el inventario de **10.260 URLs principales y 6.408 del hub**. No se enviaron solicitudes manuales a paneles de buscadores.
+
+## Publicada · #006 Inflation Calculator · 2026-10-12
+
+- Intención: comparar nivel de precios histórico o proyectar una tasa asumida, distinta de retorno de inversión/compound interest. Métricas y longtails reutilizados del plan DataForSEO; no se repitió investigación.
+- Modo CPI-U con datos BLS estáticos 1913–2025 y modo tasa compuesta manual (-99,99% a 1.000%; 1–200 años). Calcula equivalente, variación acumulada y tasa anualizada; muestra límites, moneda sin conversión, falta de proyección y alcance nacional. Ninguna tasa externa se presenta como oficial.
+- 36 textos estáticos creados desde inglés mediante Google Translate gratuito por lotes pequeños; una etiqueta hindi sin traducir fue corregida. Sin revisión nativa ni traductor al usar la página. Metadatos pasan 60/160 caracteres.
+- Tests motor **6/6**; tests de contrato de inflación **4/4**; suite global **2.009/2.009**; locale release check y `npm run check` correctos. Build: **6.480 rutas**, **6.740 archivos**, **189.093.118 bytes**, sin archivo individual por encima de 25 MiB. Sin PageSpeed/Lighthouse.
+- Chrome local: ejemplo de BLS 2020–2025 convierte 100 a **124,39**; 3% anual durante 10 años convierte 100 a **134,39**; Reset limpia resultados. Árabe con RTL y chino tradicional con ruta `/zh-tw/` muestran controles localizados y resultados.
+- **Publicado con Wrangler direct upload** al proyecto estático `usefulverse-tools`, deployment `5d93d3eb-8033-42c7-8cdf-93eedcb305d0`; fuente respaldada en rama privada commit `9aa050c`, sin Actions. Sitemap público HTTP 200 con 6.480 URLs únicas y 36 rutas de Inflation Calculator. Publicación no demuestra indexación.
 
 ## Publicada · #322 Log Analyzer · 2026-10-12
 
