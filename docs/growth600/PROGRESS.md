@@ -2,13 +2,23 @@
 
 Última verificación: 2026-10-12. Registro persistente de Growth600; las casillas de producto del plan solo cambian con evidencia de los gates C/F/E/X/L/B/P/S.
 
-## Estado público actual · 2026-10-12
+## Estado actual · 2026-10-12 · #322 en verificación previa al despliegue
 
-- **Producción:** 177 herramientas Growth600 en 36 locales, **6.408 URLs** en `https://tools.usefulverse.com/sitemap.xml`; catálogo principal protegido de 277 herramientas y 10.260 URLs. Total combinado: **454 herramientas y 16.668 URLs**. La presencia en sitemap no demuestra indexación.
+- **Último estado público confirmado:** 177 herramientas Growth600 en 36 locales, **6.408 URLs** en `https://tools.usefulverse.com/sitemap.xml`; catálogo principal protegido de 277 herramientas y 10.260 URLs. Total público previo: **454 herramientas y 16.668 URLs**. La presencia en sitemap no demuestra indexación.
+- **#322 Log Analyzer:** implementación y verificación local terminadas; falta respaldo GitHub de esta rama, publicación directa y comprobación del sitemap/HTML en producción. No contarla todavía como publicada.
 - #321 RSA Key Generator se desplegó directamente a Cloudflare Pages, proyecto `usefulverse-tools`, rama `main`, deployment `https://651f298f.usefulverse-tools.pages.dev` (ID `651f298f-ef8e-4001-8127-8c71367af571`). Código respaldado online en `codex/growth600-rsa-key-generator-20261012`, commit `0e6cb17`; no se hizo push a `main`, no corrieron GitHub Actions y no se consumieron sus minutos.
 - Verificación de #321: focal **354/354**, suite completa **1.991/1.991**, `npm run locale:release-check`, `npm run check` (10.260 URLs principales), `npm run build:growth600` (6.408 páginas, 6.664 archivos, 187.215.294 bytes), `npm run docs:urls` y `git diff --check` aprobados. Máximo archivo 14.264.838 bytes (<25 MiB); build estático sin Functions ni `_worker.js`. No se ejecutó PageSpeed/Lighthouse.
 - QA en navegador local: generó claves RSA, cifró y descifró el ejemplo con recuperación exacta; consola sin errores. Producción: la página EN/ES/AR/JA/zh-TW responde HTTP 200 con canonical y `lang` correctos; árabe declara RTL. Sitemap público HTTP 200 con **6.408 URLs únicas**, incluidas exactamente 36 rutas RSA. Publicar no demuestra rastreo ni indexación.
 - `README.md` registra el inventario de **10.260 URLs principales y 6.408 del hub**. No se enviaron solicitudes manuales a paneles de buscadores.
+
+## Implementada localmente · #322 Log Analyzer · 2026-10-12
+
+- Intención delimitada frente a CSV Viewer y HAR Viewer: analizar NCSA Common/Combined de acceso, no registros CSV, HAR, JSON/error ni seguridad. Se reutilizó `log analyzer` (320 búsquedas/mes US/en; KD 24; CPC 57,71 USD, no CPM) de la investigación existente, sin repetir DataForSEO.
+- Lector/analizador en el navegador para texto pegado o archivo local; agrega códigos HTTP, métodos, rutas sin query y días UTC; filtros combinables, tabla paginada a 200 filas y CSV del resultado filtrado. Las líneas inválidas cuentan aparte. La exportación neutraliza fórmulas y excluye IP salvo consentimiento explícito; la UI no revela IP, referer ni user-agent.
+- Límites visibles: 5 MiB, 20.000 líneas no vacías y 8.192 caracteres por línea. Aviso de privacidad por IP/URLs/user-agent y recomendación de computadora para logs grandes. Sin subida, API, Functions, persistencia ni costo por uso.
+- 36 traducciones estáticas automáticas desde inglés con el flujo Google Translate por lotes; no revisión nativa. Se corrigió el botón árabe “Clear” a «مسح». Sin traductor en tiempo de uso.
+- Tests focales: **111/111**; contrato/copy localizado: **178/178**; suite completa: **2.000/2.000**. `npm run locale:release-check` aprobado; `npm run check` conserva **10.260 URLs** principales; `npm run build:growth600` genera **6.444 páginas** (178 × 36 + 36 portadas), 6.702 archivos y 188.209.752 bytes. Máximo individual 14.264.838 bytes (<25 MiB); build estático sin `_worker.js` ni Functions.
+- QA Chrome local: cargar ejemplo → 5 solicitudes válidas, 1 línea inválida, 4.129 bytes, estados 200=3/404=1/500=1; filtro 404 → una fila. Árabe móvil: `lang=ar`, `dir=rtl`, viewport/documento 390 px, sin desbordamiento. Publicación y sitemap de producción siguen pendientes de este gate.
 
 ## Publicada · #321 RSA Key Generator · 2026-10-12
 

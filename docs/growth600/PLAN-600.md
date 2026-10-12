@@ -3119,17 +3119,19 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 322 · Log Analyzer
 
-- [ ] **C/F/E/X/L/B/P/S completos — `log-analyzer`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/log-analyzer/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B completos — `log-analyzer`**; publicación aún pendiente hasta confirmar el deployment y el sitemap público.
+- **Destino:** `https://tools.usefulverse.com/tools/log-analyzer/` y las otras 35 versiones por locale.
 - **Demanda:** `log analyzer` — 320 búsquedas/mes US/en, KD 24; nivel C. CPC 57.71 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Importar access logs locales con parser declarado, filtros, agrupación de códigos/fechas y CSV; señalar líneas inválidas y no enviar IPs a servidores.
-- **Prueba de aceptación específica:** Líneas inválidas se cuentan y muestran
-- **Frontera con otras herramientas:** csv-viewer: formatoslogs yagrupación errores. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Función:** analizar NCSA Common/Combined de Nginx/Apache pegado o seleccionado desde el dispositivo; agrupar por estado, método, ruta sin query y día UTC; componer filtros y exportar el resultado visible a CSV. Cuenta filas inválidas, muestra hasta 200 filas por vez, y permite incluir IP en CSV solo con opt-in.
+- **Prueba de aceptación:** el ejemplo integrado devuelve 5 solicitudes válidas, 1 línea inválida, estados 200=3/404=1/500=1 y 4.129 bytes; conserva fechas y zonas horarias, elimina query strings de rutas, neutraliza fórmulas CSV y no incluye IP por defecto. Máximo 5 MiB, 20.000 líneas no vacías y 8.192 caracteres por línea.
+- **Frontera:** analiza logs de acceso en formato texto; `csv-viewer` es para tablas delimitadas y `har-viewer` para capturas HAR. No interpreta logs JSON/error, no se conecta a servidores, no hace tail en vivo ni es un escáner de seguridad.
+- **Coste/privacidad:** procesamiento local, sin API, Functions, subida, cuenta, almacenamiento persistente ni servicio de conversión. Explica datos sensibles y recomienda computadora para logs grandes.
+- **Traducción:** 36 copias estáticas creadas desde inglés por lotes con Google Translate; texto directo y comprensible, no revisión nativa. Se corrigió manualmente el botón árabe de borrar. No hay traducción remota en runtime.
+- **Verificación local:** `npm test` 2.000/2.000; `npm run locale:release-check`; `npm run check` conserva 10.260 URLs principales; build Growth600 6.444 páginas (178 × 36 + 36 portadas), 6.702 archivos/188.209.752 bytes; mayor archivo 14.264.838 bytes (<25 MiB), sin `_worker.js` ni Functions. Navegador local: ejemplo/filtro correctos; árabe móvil 390 px, RTL y sin desbordamiento. No PageSpeed/Lighthouse.
 - **Consultas secundarias del mismo propietario:**
   - `log file analyzer online` — 10/mes US/en; KD 37.
   - `log analyzer free online`; `log analyzer with example`; `log analyzer no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
-- **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Longtails cubiertas dentro de una URL:** ejemplos Nginx/Apache, análisis de códigos HTTP, rutas, días, filtros, archivos locales y exportación CSV; preguntas sobre privacidad, formatos y límites, sin crear URLs por modificador.
 
 ## Checklist · Documentos y formatos
 

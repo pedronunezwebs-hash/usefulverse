@@ -21,8 +21,8 @@ import { calculatePolarGraph } from './tools/polar-graphing-calculator/logic.mjs
 import { calculateBooleanAlgebra } from './tools/boolean-algebra-calculator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 177);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 177);
+  assert.equal(growthPilotTools.length, 178);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 178);
   assert.ok(growthPilotTools.some(({ id }) => id === 'inductor-calculator'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'centripetal-force-calculator'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'writing-tracker'));
@@ -30,6 +30,7 @@ test('the current growth IDs are unique and additive to the protected catalog', 
   assert.ok(growthPilotTools.some(({ id }) => id === 'jwt-encoder'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'graphql-formatter'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'rsa-key-generator'));
+  assert.ok(growthPilotTools.some(({ id }) => id === 'log-analyzer'));
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -81,6 +82,16 @@ test('RSA key generator is distinct from AES and certificate decoding with a cle
   assert.deepEqual(tool.relatedExistingIds, ['aes-encryption-tool', 'certificate-decoder']);
   assert.match(tool.boundary, /short-message demonstration/u);
   assert.match(tool.boundary, /not .*digital signature/u);
+});
+
+test('Log Analyzer targets access logs rather than HAR archives or generic CSV files', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'log-analyzer');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'log analyzer');
+  assert.deepEqual(tool.relatedExistingIds, ['har-viewer', 'csv-viewer']);
+  assert.match(tool.boundary, /NCSA Common\/Combined access logs/u);
+  assert.match(tool.boundary, /not server error logs, JSON logs, HAR archives/u);
+  assert.match(tool.acceptance, /over-20,000-line inputs are rejected/u);
 });
 
 test('polar graphing is a dedicated r(theta) view distinct from general parametric plotting', () => {

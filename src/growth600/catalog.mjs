@@ -2123,6 +2123,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['aes-encryption-tool', 'certificate-decoder'],
     logicModule: './tools/rsa-key-generator/logic.mjs',
   },
+  {
+    id: 'log-analyzer',
+    category: 'developer-data',
+    type: 'tool',
+    primaryIntent: 'log analyzer',
+    secondaryIntents: ['Nginx access log analyzer', 'Apache access log analyzer', 'analyze web server access log', 'access log analyzer online'],
+    functions: ['parse NCSA Common and Combined Nginx/Apache access-log lines locally', 'summarize request counts, status codes, HTTP methods, UTC days and most-requested paths', 'filter valid rows by text, status, method and date range', 'count unsupported or malformed non-empty lines and export filtered CSV with optional client IPs'],
+    acceptance: 'The included sample yields 5 valid requests, 1 invalid line, status counts 200=3/404=1/500=1 and 4,129 reported response bytes; query strings do not split route summaries; oversized or over-20,000-line inputs are rejected before analysis.',
+    boundary: 'Browser-only analyzer for NCSA Common/Combined access logs, not server error logs, JSON logs, HAR archives, live tailing, remote server access or a security scanner. Maximum 5 MiB and 20,000 non-empty lines per run; device memory affects larger analyses. IPs stay in in-memory rows but are hidden and excluded from CSV unless explicitly selected. Logs can contain sensitive personal data; use only data you are permitted to process and clear the tab after use. No upload, API, server processing or persistence.',
+    relatedExistingIds: ['har-viewer', 'csv-viewer'],
+    logicModule: './tools/log-analyzer/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

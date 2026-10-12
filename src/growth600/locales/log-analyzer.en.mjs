@@ -1,0 +1,25 @@
+export const logAnalyzerEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Access Log Analyzer',
+  title: 'Access Log Analyzer Free Online | UsefulVerse',
+  description: 'Analyze Nginx or Apache access logs locally. Filter status, methods and dates, inspect request summaries, and export CSV. Free; no upload.',
+  intro: 'Paste or select an Nginx/Apache access log to count valid requests, spot invalid lines, filter traffic and export a CSV summary. Processing stays in this tab.',
+  howQuestion: 'How do I analyze an access log?',
+  howAnswer: 'Paste log lines or select a local .log or .txt file, then choose Analyze. The tool supports NCSA Common and Combined access-log lines; it does not fetch server logs for you.',
+  privacyQuestion: 'Are my access logs uploaded?',
+  privacyAnswer: 'No. The file is read by your browser and analyzed in this tab. It is not sent to UsefulVerse or saved by this tool. Clear the page when finished, especially on a shared device.',
+  fields: {
+    file: 'Choose a local log file', paste: 'Paste access log lines', pasteHint: 'Supports NCSA Common/Combined lines (host ident auth [date] "request" status bytes, optionally followed by referer and user agent). One request per line.',
+    privacyWarning: 'Logs may contain personal data such as IP addresses, URLs or user agents. Use only data you are allowed to process. Nothing is uploaded; avoid shared devices for sensitive logs.',
+    sizeLimit: 'Free local processing: up to 5 MiB and 20,000 non-empty lines per analysis. Large logs can use more memory; a computer is recommended.',
+    summaryTitle: 'Request summary', totalRequests: 'Valid requests', invalidLines: 'Invalid lines', transferred: 'Reported response bytes', statusBreakdown: 'Status codes', methodBreakdown: 'Methods', topPaths: 'Most requested paths', dailyRequests: 'Requests by UTC day',
+    search: 'Search path, method, status or date', method: 'Method', statusFilter: 'Status', all: 'All', from: 'From date', to: 'To date', results: 'Filtered requests', shown: 'Showing {count} of {total}', noMatches: 'No requests match these filters.', includeIp: 'Include client IP addresses in CSV', resultTime: 'Time (UTC)', path: 'Path (query strings removed)', statusLabel: 'Status', bytes: 'Bytes', referer: 'Referer', userAgent: 'User agent', privacyNote: 'Client IPs are hidden in the results and omitted from CSV unless you opt in. Routes are grouped without query strings to reduce sensitive-data exposure.',
+  },
+  actions: { example: 'Load example', analyze: 'Analyze log', export: 'Export filtered CSV', clear: 'Clear', reset: 'Reset filters', result: 'Analysis results' },
+  messages: { analyzed: 'Access log analyzed locally.', noRows: 'No valid access-log lines were found.', invalidDetails: 'These lines were not included in the request totals.', fileTooLarge: 'The selected file exceeds the 5 MiB limit.', tooManyLines: 'The log exceeds the 20,000-line limit.', readError: 'Could not read this file. Try a plain-text .log or .txt file.', exported: 'CSV downloaded.', cleared: 'Log data cleared.', exampleLoaded: 'Example access log loaded.', filtersReset: 'Filters reset.', clipboardUnavailable: 'Nothing was exported.' },
+  additionalFaqs: [
+    { question: 'Which access-log formats are supported?', answer: 'The analyzer accepts NCSA Common and Combined lines with a bracketed date, quoted request, three-digit status and byte count. Combined referer and user-agent fields are optional. Other layouts, JSON logs and web-server error logs are not supported.' },
+    { question: 'Why are some log lines marked invalid?', answer: 'A line is counted as invalid when it does not match the supported NCSA structure or contains an invalid date, request, status or byte count. Invalid lines are counted, not repaired or included in the request totals.' },
+    { question: 'Can I analyze a whole server or stream live logs?', answer: 'No. This browser tool analyzes only text you paste or choose locally, up to 5 MiB and 20,000 non-empty lines. It does not connect to a server, tail files, query a database or process logs in the cloud.' },
+  ],
+});

@@ -102,11 +102,13 @@ import graphqlFormatterCopies from './locales/graphql-formatter-final.mjs';
 import { graphqlFormatterEnglishCopy } from './locales/graphql-formatter.en.mjs';
 import rsaKeyGeneratorCopies from './locales/rsa-key-generator-final.mjs';
 import { rsaKeyGeneratorEnglishCopy } from './locales/rsa-key-generator.en.mjs';
+import logAnalyzerCopies from './locales/log-analyzer-final.mjs';
+import { logAnalyzerEnglishCopy } from './locales/log-analyzer.en.mjs';
 
-const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['markdown-editor', 'purchase-order-generator', 'bond-calculator', 'waist-to-hip-ratio-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'ph-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'kinetic-energy-calculator', 'resistor-color-code-calculator', 'acceleration-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator'].includes(id));
+const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['markdown-editor', 'purchase-order-generator', 'bond-calculator', 'waist-to-hip-ratio-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'ph-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'kinetic-energy-calculator', 'resistor-color-code-calculator', 'acceleration-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator', 'log-analyzer'].includes(id));
 const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
   key,
-  { ...(await import(`./locales/${key}.mjs`)).default, 'purchase-order-generator': purchaseOrderGeneratorCopies[key], 'eigenvalue-calculator': eigenvalueCalculatorCopies[key], 'bond-calculator': bondCalculatorCopies[key], 'waist-to-hip-ratio-calculator': waistToHipRatioCopies[key], 'stock-profit-calculator': key === 'en' ? stockProfitCalculatorEnglishCopy : stockProfitCalculatorCopies[key], 'pension-calculator': pensionCalculatorCopies[key], 'lifetime-value-calculator': lifetimeValueCalculatorCopies[key], 'polar-graphing-calculator': polarGraphingCalculatorCopies[key], 'boolean-algebra-calculator': key === 'en' ? booleanAlgebraCalculatorEnglishCopy : booleanAlgebraCalculatorCopies[key], 'week-number-calculator': key === 'en' ? weekNumberCalculatorEnglishCopy : weekNumberCalculatorCopies[key], 'inductor-calculator': key === 'en' ? inductorCalculatorEnglishCopy : inductorCalculatorCopies[key], 'centripetal-force-calculator': key === 'en' ? centripetalForceCalculatorEnglishCopy : centripetalForceCalculatorCopies[key], 'writing-tracker': key === 'en' ? writingTrackerEnglishCopy : writingTrackerCopies[key], 'jwt-encoder': key === 'en' ? jwtEncoderEnglishCopy : jwtEncoderCopies[key], 'graphql-formatter': key === 'en' ? graphqlFormatterEnglishCopy : graphqlFormatterCopies[key], 'rsa-key-generator': key === 'en' ? rsaKeyGeneratorEnglishCopy : rsaKeyGeneratorCopies[key] },
+  { ...(await import(`./locales/${key}.mjs`)).default, 'purchase-order-generator': purchaseOrderGeneratorCopies[key], 'eigenvalue-calculator': eigenvalueCalculatorCopies[key], 'bond-calculator': bondCalculatorCopies[key], 'waist-to-hip-ratio-calculator': waistToHipRatioCopies[key], 'stock-profit-calculator': key === 'en' ? stockProfitCalculatorEnglishCopy : stockProfitCalculatorCopies[key], 'pension-calculator': pensionCalculatorCopies[key], 'lifetime-value-calculator': lifetimeValueCalculatorCopies[key], 'polar-graphing-calculator': key === 'en' ? polarGraphingCalculatorEnglishCopy : polarGraphingCalculatorCopies[key], 'boolean-algebra-calculator': key === 'en' ? booleanAlgebraCalculatorEnglishCopy : booleanAlgebraCalculatorCopies[key], 'week-number-calculator': key === 'en' ? weekNumberCalculatorEnglishCopy : weekNumberCalculatorCopies[key], 'inductor-calculator': key === 'en' ? inductorCalculatorEnglishCopy : inductorCalculatorCopies[key], 'centripetal-force-calculator': key === 'en' ? centripetalForceCalculatorEnglishCopy : centripetalForceCalculatorCopies[key], 'writing-tracker': key === 'en' ? writingTrackerEnglishCopy : writingTrackerCopies[key], 'jwt-encoder': key === 'en' ? jwtEncoderEnglishCopy : jwtEncoderCopies[key], 'graphql-formatter': key === 'en' ? graphqlFormatterEnglishCopy : graphqlFormatterCopies[key], 'rsa-key-generator': key === 'en' ? rsaKeyGeneratorEnglishCopy : rsaKeyGeneratorCopies[key], 'log-analyzer': logAnalyzerCopies[key] },
 ])));
 
 test('section modulus calculator has static, bounded translations in all 36 locales', () => {
@@ -2191,4 +2193,25 @@ test('JWT encoder has static copy in all locales and clearly separates signing f
   }
   assert.match(jwtEncoderEnglishCopy.boundary ?? JSON.stringify(jwtEncoderEnglishCopy), /does not authenticate users/u);
   assert.match(jwtEncoderEnglishCopy.fields.securityNote, /production secret/u);
+});
+
+test('Log Analyzer has static accepted access-log copy in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'log-analyzer');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  assert.equal(Object.keys(logAnalyzerCopies).length, 36);
+  for (const { key } of localeEntries) {
+    const copy = key === 'en' ? logAnalyzerEnglishCopy : logAnalyzerCopies[key];
+    assert.equal(copy.copyLanguage, key, key);
+    assert.ok(Array.from(copy.title).length <= 60 && Array.from(copy.description).length <= 160, key);
+    assert.ok(copy.fields.file && copy.fields.paste && copy.actions.analyze && copy.messages.invalidDetails, key);
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    if (key !== 'en') {
+      assert.equal(copy.localizationStatus, 'machine-accepted', key);
+      assert.equal(copy.localizationAcceptedBy, 'site-owner', key);
+      assert.match(copy.localizationAcceptedAt, /^\d{4}-\d{2}-\d{2}$/u, key);
+    }
+  }
+  assert.equal(logAnalyzerCopies.ar.actions.clear, 'مسح');
+  assert.match(tool.boundary, /5 MiB/u);
 });

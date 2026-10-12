@@ -138,6 +138,7 @@ export function renderGrowthForm(toolId, copy) {
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'graphql-formatter': ['document', 'accuracyNote', 'output', 'definitionCount', 'graphqlLicense'],
     'rsa-key-generator': ['keySize', 'cryptoNote', 'privateKeyWarning', 'publicKey', 'privateKey', 'fingerprint', 'demoTitle', 'demoMessage', 'demoHint', 'encryptedMessage', 'decryptedMessage', 'algorithmNote'],
+    'log-analyzer': ['file', 'paste', 'pasteHint', 'privacyWarning', 'sizeLimit', 'summaryTitle', 'totalRequests', 'invalidLines', 'transferred', 'statusBreakdown', 'methodBreakdown', 'topPaths', 'dailyRequests', 'search', 'method', 'statusFilter', 'all', 'from', 'to', 'results', 'shown', 'noMatches', 'includeIp', 'resultTime', 'path', 'statusLabel', 'bytes', 'referer', 'userAgent', 'privacyNote'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
     'polygon-calculator': ['sides', 'dimensionMode', 'sideLength', 'apothem', 'circumradius', 'dimension', 'unit', 'accuracyNote', 'resultSummary', 'perimeter', 'area', 'computedSide', 'computedApothem', 'computedCircumradius', 'interiorAngle', 'centralAngle', 'formulaNote'],
@@ -323,6 +324,7 @@ export function renderGrowthForm(toolId, copy) {
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'graphql-formatter': ['format', 'example', 'copy', 'clear'],
     'rsa-key-generator': ['generate', 'copyPublic', 'downloadPublic', 'copyPrivate', 'downloadPrivate', 'copyFingerprint', 'example', 'encrypt', 'decrypt', 'reset', 'result'],
+    'log-analyzer': ['example', 'analyze', 'export', 'clear', 'reset', 'result'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
     'polygon-calculator': ['calculate', 'example', 'reset', 'copy', 'result'],
@@ -448,6 +450,29 @@ export function renderGrowthForm(toolId, copy) {
       <p class="hint">${escapeGrowthHtml(fields.algorithmNote)}</p>
     </section>
     <div class="actions">${reset}</div><p class="status" role="status" aria-live="polite" data-status></p>
+  </form>`, copy);
+
+  if (toolId === 'log-analyzer') return attachCopy(`<form id="tool-form" class="log-analyzer" novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.privacyWarning)}</p><p class="hint">${escapeGrowthHtml(fields.sizeLimit)}</p>
+    ${label('log-file', fields.file, '<input id="log-file" type="file" accept=".log,.txt,text/plain,application/octet-stream">')}
+    ${label('log-paste', fields.paste, `<textarea id="log-paste" name="logText" rows="12" spellcheck="false" placeholder="${escapeGrowthHtml(fields.pasteHint)}"></textarea>`)}
+    <p class="hint">${escapeGrowthHtml(fields.pasteHint)}</p>
+    <div class="actions"><button type="button" class="button button--secondary" data-action="example">${escapeGrowthHtml(actions.example)}</button><button type="submit" class="button button--primary" data-action="analyze">${escapeGrowthHtml(actions.analyze)}</button><button type="button" class="button button--secondary" data-action="clear">${escapeGrowthHtml(actions.clear)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="log-analyzer__results" data-log-results hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2>
+      <div class="log-analyzer__summary" data-log-summary></div><p class="hint" data-log-invalid hidden></p>
+      <div class="log-analyzer__grid"><section><h3>${escapeGrowthHtml(fields.statusBreakdown)}</h3><div data-log-statuses></div></section><section><h3>${escapeGrowthHtml(fields.methodBreakdown)}</h3><div data-log-methods></div></section><section><h3>${escapeGrowthHtml(fields.topPaths)}</h3><div data-log-paths></div></section><section><h3>${escapeGrowthHtml(fields.dailyRequests)}</h3><div data-log-days></div></section></div>
+      <h3>${escapeGrowthHtml(fields.results)}</h3><div class="log-analyzer__filters">
+        ${label('log-search', fields.search, '<input id="log-search" type="search" data-filter="search">')}
+        ${label('log-status-filter', fields.statusFilter, '<select id="log-status-filter" data-filter="status"></select>')}
+        ${label('log-method-filter', fields.method, '<select id="log-method-filter" data-filter="method"></select>')}
+        ${label('log-date-from', fields.from, '<input id="log-date-from" type="date" data-filter="from">')}
+        ${label('log-date-to', fields.to, '<input id="log-date-to" type="date" data-filter="to">')}
+      </div>
+      <p data-log-shown></p><div class="log-analyzer__table-wrap"><table><thead><tr><th>${escapeGrowthHtml(fields.resultTime)}</th><th>${escapeGrowthHtml(fields.method)}</th><th>${escapeGrowthHtml(fields.path)}</th><th>${escapeGrowthHtml(fields.statusLabel)}</th><th>${escapeGrowthHtml(fields.bytes)}</th></tr></thead><tbody data-log-rows></tbody></table></div>
+      <label class="log-analyzer__ip"><input type="checkbox" data-log-include-ip> ${escapeGrowthHtml(fields.includeIp)}</label><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+      <div class="actions"><button type="button" class="button button--primary" data-action="export">${escapeGrowthHtml(actions.export)}</button><button type="button" class="button button--secondary" data-action="reset">${escapeGrowthHtml(actions.reset)}</button></div>
+    </section>
   </form>`, copy);
 
   if (toolId === 'font-pairing-tool') {
