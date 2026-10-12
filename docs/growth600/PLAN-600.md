@@ -3119,7 +3119,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 322 · Log Analyzer
 
-- [x] **C/F/E/X/L/B completos — `log-analyzer`**; publicación aún pendiente hasta confirmar el deployment y el sitemap público.
+- [x] **C/F/E/X/L/B/P/S completos — `log-analyzer`** (publicada y verificada).
 - **Destino:** `https://tools.usefulverse.com/tools/log-analyzer/` y las otras 35 versiones por locale.
 - **Demanda:** `log analyzer` — 320 búsquedas/mes US/en, KD 24; nivel C. CPC 57.71 USD (no CPM).
 - **Función:** analizar NCSA Common/Combined de Nginx/Apache pegado o seleccionado desde el dispositivo; agrupar por estado, método, ruta sin query y día UTC; componer filtros y exportar el resultado visible a CSV. Cuenta filas inválidas, muestra hasta 200 filas por vez, y permite incluir IP en CSV solo con opt-in.
@@ -3128,6 +3128,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Coste/privacidad:** procesamiento local, sin API, Functions, subida, cuenta, almacenamiento persistente ni servicio de conversión. Explica datos sensibles y recomienda computadora para logs grandes.
 - **Traducción:** 36 copias estáticas creadas desde inglés por lotes con Google Translate; texto directo y comprensible, no revisión nativa. Se corrigió manualmente el botón árabe de borrar. No hay traducción remota en runtime.
 - **Verificación local:** `npm test` 2.000/2.000; `npm run locale:release-check`; `npm run check` conserva 10.260 URLs principales; build Growth600 6.444 páginas (178 × 36 + 36 portadas), 6.702 archivos/188.209.752 bytes; mayor archivo 14.264.838 bytes (<25 MiB), sin `_worker.js` ni Functions. Navegador local: ejemplo/filtro correctos; árabe móvil 390 px, RTL y sin desbordamiento. No PageSpeed/Lighthouse.
+- **Publicado y verificado (2026-10-12):** despliegue directo a Cloudflare Pages `https://3900cb66.usefulverse-tools.pages.dev`, sin GitHub Actions. El sitemap público devuelve HTTP 200 con **6.444 URLs únicas**, incluidas exactamente 36 variantes de Log Analyzer. EN/ES/AR/JA/zh-TW devuelven HTTP 200. Fuente respaldada en la rama `codex/growth600-log-analyzer-20261012`, commit `2169b2a`; el dominio `tools.usefulverse.com` sirve esta publicación.
 - **Consultas secundarias del mismo propietario:**
   - `log file analyzer online` — 10/mes US/en; KD 37.
   - `log analyzer free online`; `log analyzer with example`; `log analyzer no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
