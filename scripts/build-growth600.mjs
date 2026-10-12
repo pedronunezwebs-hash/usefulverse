@@ -35,6 +35,21 @@ import rsaKeyGeneratorCopies from '../src/growth600/locales/rsa-key-generator-fi
 import logAnalyzerCopies from '../src/growth600/locales/log-analyzer-final.mjs';
 import inflationCalculatorCopies from '../src/growth600/locales/inflation-calculator-final.mjs';
 import retirementCalculatorCopies from '../src/growth600/locales/retirement-calculator-final.mjs';
+import textToSpeechCopies from '../src/growth600/locales/text-to-speech-final.mjs';
+import worldClockCopies from '../src/growth600/locales/world-clock-final.mjs';
+import euchreCopies from '../src/growth600/locales/euchre-final.mjs';
+import nameGeneratorCopies from '../src/growth600/locales/name-generator-final.mjs';
+import cribbageCopies from '../src/growth600/locales/cribbage-final.mjs';
+import fourOhOneKCalculatorCopies from '../src/growth600/locales/401k-calculator-final.mjs';
+import ginRummyCopies from '../src/growth600/locales/gin-rummy-final.mjs';
+import familyTreeMakerCopies from '../src/growth600/locales/family-tree-maker-final.mjs';
+import dividendCalculatorCopies from '../src/growth600/locales/dividend-calculator-final.mjs';
+import netWorthCalculatorCopies from '../src/growth600/locales/net-worth-calculator-final.mjs';
+import randomWordGeneratorCopies from '../src/growth600/locales/random-word-generator-final.mjs';
+import breathingExerciseCopies from '../src/growth600/locales/breathing-exercise-final.mjs';
+import alarmClockCopies from '../src/growth600/locales/alarm-clock-final.mjs';
+import imageVectorizerCopies from '../src/growth600/locales/image-vectorizer-final.mjs';
+import vo2MaxCalculatorCopies from '../src/growth600/locales/vo2-max-calculator-final.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const localeDir = resolve(root, 'src/growth600/locales');
@@ -105,6 +120,36 @@ for (const { key } of localeEntries) {
   copyByLocale[key] = { ...copyByLocale[key], 'inflation-calculator': inflationCalculatorCopies[key] };
   if (!retirementCalculatorCopies[key]) throw new Error(`Growth600 release blocked: Retirement Calculator copy is missing for ${key}.`);
   copyByLocale[key] = { ...copyByLocale[key], 'retirement-calculator': retirementCalculatorCopies[key] };
+  if (!textToSpeechCopies[key]) throw new Error(`Growth600 release blocked: Text to Speech copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'text-to-speech': textToSpeechCopies[key] };
+  if (!worldClockCopies[key]) throw new Error(`Growth600 release blocked: World Clock copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'world-clock': worldClockCopies[key] };
+  if (!euchreCopies[key]) throw new Error(`Growth600 release blocked: Euchre copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], euchre: euchreCopies[key] };
+  if (!nameGeneratorCopies[key]) throw new Error(`Growth600 release blocked: Name Generator copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'name-generator': nameGeneratorCopies[key] };
+  if (!randomWordGeneratorCopies[key]) throw new Error(`Growth600 release blocked: Random Word Generator copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'random-word-generator': randomWordGeneratorCopies[key] };
+  if (!breathingExerciseCopies[key]) throw new Error(`Growth600 release blocked: Breathing Exercise copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'breathing-exercise': breathingExerciseCopies[key] };
+  if (!alarmClockCopies[key]) throw new Error(`Growth600 release blocked: Online Alarm Clock copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'alarm-clock': alarmClockCopies[key] };
+  if (!imageVectorizerCopies[key]) throw new Error(`Growth600 release blocked: Image Vectorizer copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'image-vectorizer': imageVectorizerCopies[key] };
+  if (!vo2MaxCalculatorCopies[key]) throw new Error(`Growth600 release blocked: VO2 Max Calculator copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'vo2-max-calculator': vo2MaxCalculatorCopies[key] };
+  if (!cribbageCopies[key]) throw new Error(`Growth600 release blocked: Cribbage copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], cribbage: cribbageCopies[key] };
+  if (!fourOhOneKCalculatorCopies[key]) throw new Error(`Growth600 release blocked: 401(k) Calculator copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], '401k-calculator': fourOhOneKCalculatorCopies[key] };
+  if (!ginRummyCopies[key]) throw new Error(`Growth600 release blocked: Gin Rummy copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'gin-rummy': ginRummyCopies[key] };
+  if (!familyTreeMakerCopies[key]) throw new Error(`Growth600 release blocked: Family Tree Maker copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'family-tree-maker': familyTreeMakerCopies[key] };
+  if (!dividendCalculatorCopies[key]) throw new Error(`Growth600 release blocked: Dividend Calculator copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'dividend-calculator': dividendCalculatorCopies[key] };
+  if (!netWorthCalculatorCopies[key]) throw new Error(`Growth600 release blocked: Net Worth Calculator copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'net-worth-calculator': netWorthCalculatorCopies[key] };
 }
 
 const outputDir = resolve(process.env.GROWTH600_DIST ?? resolve(root, 'dist-growth600'));
@@ -129,6 +174,19 @@ const toolStyles = {
   'eigenvalue-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/eigenvalue-calculator/eigenvalue-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
   'bond-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/bond-calculator/bond-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
   'waist-to-hip-ratio-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/waist-to-hip-ratio-calculator/waist-to-hip-ratio-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'body-surface-area-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/body-surface-area-calculator/body-surface-area-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'weekly-planner': minifyCss(await readFile(resolve(root, 'src/growth600/tools/weekly-planner/weekly-planner.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'overtime-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/overtime-calculator/overtime-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'meeting-minutes-template': minifyCss(await readFile(resolve(root, 'src/growth600/tools/meeting-minutes-template/meeting-minutes-template.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'dots-and-boxes': minifyCss(await readFile(resolve(root, 'src/growth600/tools/dots-and-boxes/dots-and-boxes.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'color-mixer': minifyCss(await readFile(resolve(root, 'src/growth600/tools/color-mixer/color-mixer.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'blackjack-game': minifyCss(await readFile(resolve(root, 'src/growth600/tools/blackjack-game/blackjack-game.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'debt-to-income-ratio-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/debt-to-income-ratio-calculator/debt-to-income-ratio-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'car-lease-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/car-lease-calculator/car-lease-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'fire-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/fire-calculator/fire-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'email-signature-generator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/email-signature-generator/email-signature-generator.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'image-vectorizer': minifyCss(await readFile(resolve(root, 'src/growth600/tools/image-vectorizer/image-vectorizer.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'vo2-max-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/vo2-max-calculator/vo2-max-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
   'hebrew-calendar-converter': minifyCss(await readFile(resolve(root, 'src/growth600/tools/hebrew-calendar-converter/hebrew-calendar-converter.css'), 'utf8'), { comments: 'exclamation' }).css,
   'absolute-value-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/absolute-value-calculator/absolute-value-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
   'specific-heat-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/specific-heat-calculator/specific-heat-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
@@ -140,6 +198,19 @@ const toolStyles = {
   'log-analyzer': minifyCss(await readFile(resolve(root, 'src/growth600/tools/log-analyzer/log-analyzer.css'), 'utf8'), { comments: 'exclamation' }).css,
   'inflation-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/inflation-calculator/inflation-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
   'retirement-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/retirement-calculator/retirement-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
+  '401k-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/401k-calculator/401k-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'text-to-speech': minifyCss(await readFile(resolve(root, 'src/growth600/tools/text-to-speech/text-to-speech.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'world-clock': minifyCss(await readFile(resolve(root, 'src/growth600/tools/world-clock/world-clock.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'euchre': minifyCss(await readFile(resolve(root, 'src/growth600/tools/euchre/euchre.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'name-generator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/name-generator/name-generator.css'), 'utf8'), { comments: 'exclamation' }).css,
+  cribbage: minifyCss(await readFile(resolve(root, 'src/growth600/tools/cribbage/cribbage.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'gin-rummy': minifyCss(await readFile(resolve(root, 'src/growth600/tools/gin-rummy/gin-rummy.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'family-tree-maker': minifyCss(await readFile(resolve(root, 'src/growth600/tools/family-tree-maker/family-tree-maker.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'dividend-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/dividend-calculator/dividend-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'net-worth-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/net-worth-calculator/net-worth-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'random-word-generator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/random-word-generator/random-word-generator.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'breathing-exercise': minifyCss(await readFile(resolve(root, 'src/growth600/tools/breathing-exercise/breathing-exercise.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'alarm-clock': minifyCss(await readFile(resolve(root, 'src/growth600/tools/alarm-clock/alarm-clock.css'), 'utf8'), { comments: 'exclamation' }).css,
 };
 const faviconSvg = await readFile(resolve(root, 'public/favicon.svg'), 'utf8');
 const modelRevision = '92a21aca5713f20faf9a87590cdfbdce2e34112c';
@@ -148,6 +219,12 @@ const modelAssetRoot = `models-image-upscaler-${modelRevision}/${modelFolder}`;
 const extraAssets = Object.fromEntries(await Promise.all([
   'config.json', 'preprocessor_config.json', 'onnx/model_q4.onnx',
 ].map(async (path) => [`${modelAssetRoot}/${path}`, await readFile(resolve(root, 'public/growth600-models', modelFolder, path))])));
+const randomWordDictionaryBuild = await build({
+  entryPoints: [resolve(root, 'src/growth600/tools/random-word-generator/dictionaries.mjs')],
+  bundle: true, format: 'esm', platform: 'browser', target: ['es2020'], minify: true, write: false, logLevel: 'silent',
+});
+if (Buffer.byteLength(randomWordDictionaryBuild.outputFiles[0].text) > 128 * 1024) throw new Error('The lazily loaded random-word dictionaries exceeded their 128 KiB static asset budget.');
+extraAssets['vendor/random-word-generator-dictionaries.mjs'] = randomWordDictionaryBuild.outputFiles[0].text;
 extraAssets['vendor/marked-18.0.14.umd.js'] = await readFile(resolve(root, 'node_modules/marked/lib/marked.umd.js'));
 extraAssets['vendor/purify-3.4.16.min.js'] = await readFile(resolve(root, 'node_modules/dompurify/dist/purify.min.js'));
 extraAssets['licenses/marked-LICENSE.txt'] = await readFile(resolve(root, 'node_modules/marked/LICENSE'));
@@ -183,6 +260,7 @@ const result = await buildGrowthStaticSite({
   origin: 'https://tools.usefulverse.com',
   localeEntries,
   copyByLocale,
+  tools: growthPilotTools,
   controllerBundles: await bundleGrowthControllers(),
   toolStyles,
   workerBundles: { 'image-upscaler-worker': workerBuild.outputFiles[0].text },

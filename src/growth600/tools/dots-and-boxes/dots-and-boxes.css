@@ -1,0 +1,18 @@
+.dots-and-boxes { display: grid; gap: 1rem; }
+.dots-and-boxes__settings { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: 1rem; }
+.dots-and-boxes__score { font-weight: 700; font-variant-numeric: tabular-nums; }
+.dots-and-boxes__board { display: grid; grid-template-columns: repeat(var(--board-columns, 9), minmax(0, 1fr)); width: min(100%, 34rem); aspect-ratio: 1; margin-inline: auto; touch-action: manipulation; }
+.dots-and-boxes__dot, .dots-and-boxes__line, .dots-and-boxes__box { min-width: 0; min-height: 0; align-self: stretch; justify-self: stretch; }
+.dots-and-boxes__dot { place-self: center; z-index: 1; width: 42%; aspect-ratio: 1; border-radius: 50%; background: var(--text, #18212f); }
+.dots-and-boxes__line { position: relative; padding: 0; border: 0; border-radius: 999px; background: transparent; cursor: pointer; }
+.dots-and-boxes__line::after { position: absolute; content: ''; display: block; inset: 15% 0; border-radius: inherit; background: color-mix(in srgb, var(--border, #c8ced8) 76%, transparent); transition: background-color .12s ease, transform .12s ease; }
+.dots-and-boxes__line--v::after { inset: 0 15%; }
+.dots-and-boxes__line:not(:disabled):hover::after { background: var(--accent, #6477ff); transform: scale(1.18); }
+.dots-and-boxes__line:focus-visible { outline: 2px solid var(--accent, #6477ff); outline-offset: 1px; }
+.dots-and-boxes__line.is-drawn::after { inset: 0; background: var(--text, #18212f); }
+.dots-and-boxes__line--v.is-drawn::after { inset: 0; }
+.dots-and-boxes__box { display: grid; place-items: center; border-radius: .35rem; font-weight: 800; font-size: clamp(.8rem, 4vw, 1.5rem); }
+.dots-and-boxes__box--player-1 { background: color-mix(in srgb, var(--accent, #6477ff) 20%, transparent); color: var(--text, #18212f); }
+.dots-and-boxes__box--player-2 { background: color-mix(in srgb, var(--accent-secondary, #ef8d6e) 24%, transparent); color: var(--text, #18212f); }
+.dots-and-boxes__note { max-width: 68ch; }
+@media (prefers-reduced-motion: reduce) { .dots-and-boxes__line::after { transition: none; } }

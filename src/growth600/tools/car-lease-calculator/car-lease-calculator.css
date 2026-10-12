@@ -1,0 +1,2 @@
+.car-lease-calculator { display: grid; gap: 1rem; }
+.car-lease-calculator .result [data-result-content] { display: grid; gap: .5rem; }

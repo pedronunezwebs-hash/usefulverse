@@ -14,6 +14,9 @@ test('growth controllers bundle locally under budget without network or dynamic 
     } else if (id === 'graphql-formatter') {
       assert.match(source, /import\(new URL\("\/assets\/vendor\/graphql-formatter-16\.11\.0\.mjs",location\.origin\)\.href\)/u, 'GraphQL parser may load lazily from the same-origin static asset');
       assert.equal((source.match(/\bimport\s*\(/gu) ?? []).length, 1, 'GraphQL formatter has exactly one lazy local import');
+    } else if (id === 'random-word-generator') {
+      assert.match(source, /import\(new URL\("\/assets\/vendor\/random-word-generator-dictionaries\.mjs",location\.origin\)\.href\)/u, 'locale dictionaries may load lazily from the same-origin static asset');
+      assert.equal((source.match(/\bimport\s*\(/gu) ?? []).length, 1, 'word dictionaries have exactly one lazy local import');
     } else {
       assert.doesNotMatch(source, /\bimport\s*\(/u, `${id} should not use a dynamic import`);
     }

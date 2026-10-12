@@ -42,6 +42,8 @@ export function renderGrowthForm(toolId, copy) {
     'polar-graphing-calculator': ['radiusExpression', 'angleMin', 'angleMax', 'angleUnit', 'radians', 'degrees', 'samples', 'accuracyNote', 'chartLabel', 'resultCount'],
     'boolean-algebra-calculator': ['expression', 'expressionHint', 'accuracyNote', 'simplifiedSop', 'simplifiedPos', 'variables', 'minterms', 'truthTableLabel', 'result', 'kmapTitle'],
     'week-number-calculator': ['date', 'mode', 'isoMode', 'customMode', 'weekStart', 'sunday', 'monday', 'saturday', 'accuracyNote'],
+    'text-to-speech': ['textLabel', 'textPlaceholder', 'voiceLabel', 'browserDefault', 'remoteToggle', 'remoteNotice', 'rateLabel', 'pitchLabel', 'localVoice', 'remoteVoice', 'voiceProgress', 'privacyNote'],
+    'world-clock': ['yourLocalTime', 'addCity', 'timeZone', 'hourFormat', 'twelveHour', 'twentyFourHour', 'utcOffset', 'difference', 'clockList', 'maxClocks', 'accuracyNote'],
     'image-upscaler': ['imageFile', 'accuracyNote', 'progressHint', 'sourcePreview', 'resultPreview'],
     'wallpaper-calculator': ['unit', 'perimeter', 'wallHeight', 'openingsArea', 'rollWidth', 'rollLength', 'patternRepeat', 'wastePercent', 'accuracyNote', 'relatedPaintCalculator'],
     'pool-salt-calculator': ['volume', 'volumeUnit', 'currentSalinityPpm', 'targetSalinityPpm', 'saltPurityPercent', 'bagSize', 'bagUnit', 'accuracyNote'],
@@ -84,6 +86,9 @@ export function renderGrowthForm(toolId, copy) {
     '529-calculator': ['currentSavings', 'monthlyContribution', 'yearsUntilCollege', 'annualCostToday', 'collegeYears', 'tuitionInflationPercent', 'annualReturnPercent', 'scholarshipPerYear', 'currency', 'accuracyNote'],
     'julian-date-converter': ['direction', 'toJulian', 'toUtc', 'utcDate', 'julianValue', 'dateKind', 'jd', 'mjd', 'accuracyNote'],
     'interval-timer': ['preset', 'workSeconds', 'restSeconds', 'rounds', 'prepSeconds', 'secondsUnit', 'sound', 'soundHint', 'accuracyNote', 'phaseLabel', 'roundLabel', 'remainingLabel', 'totalLabel', 'progressLabel', 'prep', 'work', 'rest', 'complete'],
+    'breathing-exercise': ['pattern', 'custom', 'balanced', 'box', 'fourSevenEight', 'inhale', 'holdIn', 'exhale', 'holdOut', 'duration', 'sound', 'soundHint', 'motionNote', 'safetyNote', 'phase', 'cycle', 'remaining', 'inhaleCue', 'holdCue', 'exhaleCue', 'complete'],
+    'alarm-clock': ['alarmTime', 'sound', 'soundHint', 'accuracyNote', 'scheduledFor', 'timeRemaining', 'alarmRinging'],
+    'dividend-calculator': ['shares', 'sharePrice', 'annualDividendPerShare', 'paymentsPerYear', 'annual', 'semiannual', 'quarterly', 'monthly', 'dividendGrowthPercent', 'priceGrowthPercent', 'years', 'reinvestDividends', 'currencyCode', 'accuracyNote', 'startingInvestment', 'currentAnnualIncome', 'currentIncomePerPayment', 'currentYield', 'yieldOnCost', 'projectedShares', 'projectedSharePrice', 'projectedAnnualIncome', 'projectedPortfolioValue', 'totalReinvested', 'year'],
     'chemical-equation-balancer': ['equation', 'formulaHint', 'accuracyNote'],
     'gear-ratio-calculator': ['stages', 'stagesHint', 'inputRpm', 'inputTorque', 'driveType', 'externalGears', 'chainDrive', 'efficiencyPercent', 'accuracyNote'],
     'density-calculator': ['mode', 'solveMode', 'mixtureMode', 'massKg', 'volumeM3', 'densityKgM3', 'components', 'componentsHint', 'accuracyNote'],
@@ -113,6 +118,19 @@ export function renderGrowthForm(toolId, copy) {
     'absolute-value-calculator': ['mode', 'numberMode', 'equationMode', 'inequalityMode', 'value', 'coefficient', 'offset', 'relation', 'target', 'equals', 'lessThan', 'lessOrEqual', 'greaterThan', 'greaterOrEqual', 'limitsNote', 'formulaNote', 'resultValue', 'resultSolution', 'numberLine', 'allReal', 'noSolution', 'solutionLabel', 'orSeparator'],
     'capacitor-calculator': ['values', 'valuesHint', 'connection', 'series', 'parallel', 'unit', 'voltage', 'accuracyNote', 'resultEquivalent', 'resultCharge', 'resultEnergy', 'resultVoltage', 'capacitor', 'formulaNote'],
     'body-water-calculator': ['equation', 'watsonMale', 'watsonFemale', 'age', 'height', 'heightUnit', 'weight', 'weightUnit', 'centimeters', 'inches', 'kilograms', 'pounds', 'accuracyNote', 'resultLiters', 'resultPercent', 'equationNote'],
+    'body-surface-area-calculator': ['height', 'heightUnit', 'weight', 'weightUnit', 'centimeters', 'inches', 'kilograms', 'pounds', 'accuracyNote', 'safetyNote', 'mosteller', 'duBois', 'difference', 'formulaNote'],
+    'weekly-planner': ['day', 'title', 'start', 'end', 'category', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'work', 'personal', 'study', 'health', 'other', 'blocks', 'empty', 'overnight', 'overlap', 'accuracyNote', 'privacyNote', 'backupFile'],
+    'overtime-calculator': ['totalHours', 'hourlyRate', 'thresholdHours', 'overtimeMultiplier', 'regularHours', 'overtimeHours', 'regularPay', 'overtimePay', 'totalPay', 'blendedHourlyRate', 'accuracyNote', 'legalNote', 'privacyNote'],
+    'meeting-minutes-template': ['title', 'date', 'facilitator', 'attendees', 'agenda', 'decisions', 'actions', 'accuracyNote', 'privacyNote', 'actionHint', 'preview'],
+    'dots-and-boxes': ['boardSize', 'threeByThree', 'fourByFour', 'fiveByFive', 'mode', 'computer', 'twoPlayer', 'playerOne', 'playerTwo', 'turn', 'score', 'rules', 'computerNote', 'boardLabel', 'horizontalLine', 'verticalLine', 'boxOwned', 'emptyBox', 'accuracyNote', 'privacyNote'],
+    'color-mixer': ['colors', 'color', 'colorHex', 'weight', 'addColor', 'removeColor', 'mixingSpace', 'srgb', 'linear', 'steps', 'accuracyNote', 'pigmentNote', 'privacyNote', 'resultHex', 'resultRgb', 'resultHsl', 'preview', 'ramp'],
+    'blackjack-game': ['decks', 'oneDeck', 'twoDecks', 'fourDecks', 'sixDecks', 'hitSoft17', 'rules', 'rulesText', 'noWager', 'dealer', 'player', 'score', 'total', 'soft', 'bust', 'blackjack', 'hiddenCard', 'cardDescription', 'ace', 'jack', 'queen', 'king', 'spades', 'hearts', 'diamonds', 'clubs', 'wins', 'losses', 'pushes', 'accuracyNote', 'privacyNote'],
+    'debt-to-income-ratio-calculator': ['grossIncome', 'housing', 'debts', 'debt1', 'debt2', 'debt3', 'debt4', 'currencyNote', 'housingRatio', 'totalRatio', 'totalDebt', 'accuracyNote', 'privacyNote', 'exampleHint'],
+    'car-lease-calculator': ['capitalizedCost', 'residualValue', 'termMonths', 'moneyFactor', 'capCostReduction', 'taxPercent', 'currencyNote', 'accuracyNote', 'privacyNote', 'formulaNote', 'monthlyDepreciation', 'monthlyRentCharge', 'monthlyPretaxPayment', 'estimatedMonthlyTax', 'estimatedMonthlyPayment', 'estimatedPaymentsPlusCapReduction'],
+    'fire-calculator': ['annualSpending', 'withdrawalRatePercent', 'currentPortfolio', 'monthlyContribution', 'expectedAnnualReturnPercent', 'inflationPercent', 'currencyNote', 'accuracyNote', 'privacyNote', 'formulaNote', 'targetAmount', 'realAnnualGrowthPercent', 'monthsToTarget', 'yearsToTarget', 'projectedBalance', 'unreachable'],
+    'email-signature-generator': ['fullName', 'jobTitle', 'organization', 'email', 'phone', 'website', 'location', 'accentColor', 'logoFile', 'logoAlt', 'logoHint', 'clientNote', 'privacyNote', 'resultTitle', 'htmlLabel'],
+    'image-vectorizer': ['imageFile', 'detail', 'paletteCount', 'alphaThreshold', 'mergeRuns', 'detailHint', 'accuracyNote', 'privacyNote', 'resultTitle', 'dimensions', 'colorsUsed', 'pathSections'],
+    'vo2-max-calculator': ['method', 'cooper', 'rockport', 'distance', 'distanceUnit', 'meters', 'kilometers', 'miles', 'age', 'weight', 'weightUnit', 'kilograms', 'pounds', 'equationSex', 'maleCoefficient', 'femaleCoefficient', 'walkMinutes', 'walkSeconds', 'finishHeartRate', 'protocolNote', 'accuracyNote', 'safetyNote', 'sourceNote', 'privacyNote', 'resultTitle', 'unitLabel', 'formulaLabel'],
     'waist-to-hip-ratio-calculator': ['waist', 'hip', 'unit', 'centimeters', 'inches', 'accuracyNote', 'resultRatio', 'formulaNote'],
     '555-timer-calculator': ['mode', 'astable', 'monostable', 'resistanceA', 'resistanceB', 'resistance', 'resistanceUnit', 'ohms', 'kilohms', 'megohms', 'capacitance', 'capacitanceUnit', 'farads', 'millifarads', 'microfarads', 'nanofarads', 'picofarads', 'accuracyNote', 'frequencyNote', 'highFrequencyWarning', 'formulaNote', 'resultFrequency', 'resultPeriod', 'resultHigh', 'resultLow', 'resultWaveformDuty', 'resultDischargeDuty', 'resultPulse'],
     'fourier-series-calculator': ['samples', 'samplesHint', 'period', 'periodHint', 'harmonics', 'harmonicsHint', 'accuracyNote', 'formulaLabel', 'formula', 'resultDc', 'resultFrequency', 'resultHarmonics', 'resultRms', 'coefficient', 'coefficientA', 'coefficientB', 'coefficientAmplitude', 'phase', 'radians', 'frequencyUnit', 'chartLabel', 'samplesLegend', 'reconstructionLegend'],
@@ -141,12 +159,15 @@ export function renderGrowthForm(toolId, copy) {
     'log-analyzer': ['file', 'paste', 'pasteHint', 'privacyWarning', 'sizeLimit', 'summaryTitle', 'totalRequests', 'invalidLines', 'transferred', 'statusBreakdown', 'methodBreakdown', 'topPaths', 'dailyRequests', 'search', 'method', 'statusFilter', 'all', 'from', 'to', 'results', 'shown', 'noMatches', 'includeIp', 'resultTime', 'path', 'statusLabel', 'bytes', 'referer', 'userAgent', 'privacyNote'],
     'inflation-calculator': ['mode', 'usCpiMode', 'customMode', 'amount', 'amountHint', 'startYear', 'endYear', 'annualRatePercent', 'years', 'accuracyNote', 'resultSummary', 'adjustedAmount', 'cumulativeChange', 'annualizedRate', 'sourceNote'],
     'retirement-calculator': ['currentAge', 'retirementAge', 'planThroughAge', 'currentSavings', 'monthlyContribution', 'annualReturnPercent', 'conservativeReturnPercent', 'annualWithdrawal', 'annualInflationPercent', 'assumptionsNote', 'resultsTitle', 'measure', 'scenarioBase', 'scenarioConservative', 'totalContributions', 'balanceAtRetirement', 'balanceAtRetirementToday', 'endingBalance', 'depletionAge', 'noDepletion'],
+    '401k-calculator': ['annualSalary', 'currentBalance', 'employeeContributionPercent', 'employerMatchPercent', 'matchLimitPercent', 'vestingPercent', 'years', 'annualReturnPercent', 'assumptionsNote', 'resultTitle', 'annualEmployeeContribution', 'annualEmployerMatch', 'annualVestedMatch', 'totalAnnualContribution', 'projectedBalance', 'projectedVestedBalance', 'year'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
     'polygon-calculator': ['sides', 'dimensionMode', 'sideLength', 'apothem', 'circumradius', 'dimension', 'unit', 'accuracyNote', 'resultSummary', 'perimeter', 'area', 'computedSide', 'computedApothem', 'computedCircumradius', 'interiorAngle', 'centralAngle', 'formulaNote'],
     'compression-ratio-calculator': ['unit', 'volumeUnit', 'millimeters', 'inches', 'cubicCentimeters', 'cubicInches', 'bore', 'stroke', 'chamberVolume', 'gasketBore', 'gasketThickness', 'deckClearance', 'pistonCrownVolume', 'cylinders', 'accuracyNote'],
     'goal-planner': ['title', 'outcome', 'metric', 'unit', 'startValue', 'targetValue', 'currentValue', 'startDate', 'currentDate', 'dueDate', 'milestones', 'milestoneHint', 'accuracyNote', 'privacyNote', 'progressLabel', 'milestonesLabel', 'backupFile', 'backupHint', 'relatedTaskList'],
     'mind-map-maker': ['centralTopic', 'newIdea', 'privacyNote', 'mapLabel', 'editIdea', 'moveTo', 'jsonFile', 'importHint'],
+    'family-tree-maker': ['personName', 'birthDate', 'deathDate', 'notes', 'parent', 'child', 'relationship', 'biological', 'adoptive', 'foster', 'people', 'emptyTree', 'privacyNote'],
+    'net-worth-calculator': ['currencyCode', 'date', 'assets', 'liabilities', 'assetCash', 'assetInvestments', 'assetProperty', 'assetVehicles', 'assetOther', 'liabilityCreditCards', 'liabilityMortgage', 'liabilityStudentLoans', 'liabilityAutoLoans', 'liabilityOther', 'consent', 'privacyNote', 'totalAssets', 'totalLiabilities', 'netWorth', 'debtToAsset', 'snapshotHistory', 'noSnapshots'],
     'mood-tracker': ['date', 'mood', 'note', 'tags', 'saveConsent', 'privacyNote', 'consentHint', 'calendarLabel', 'monthLabel', 'selectedEntry', 'weekdaySun', 'weekdayMon', 'weekdayTue', 'weekdayWed', 'weekdayThu', 'weekdayFri', 'weekdaySat', 'mood1', 'mood2', 'mood3', 'mood4', 'mood5', 'tagCalm', 'tagAnxious', 'tagSad', 'tagHappy', 'tagTired', 'tagFocused', 'tagStressed', 'tagHopeful', 'tagGrateful', 'tagAngry', 'summaryLabel', 'averageLabel', 'countLabel', 'distributionLabel', 'noEntries', 'accuracyNote', 'importHint', 'sourceNote'],
     'journal-online': ['date', 'title', 'body', 'tags', 'search', 'dateFrom', 'dateTo', 'saveConsent', 'storageNote', 'encryptionNote', 'backupPassword', 'confirmPassword', 'entriesLabel', 'resultLabel', 'noEntries', 'countLabel', 'tagHint', 'importHint', 'passwordHint', 'exampleHint', 'exampleTitle', 'exampleBody', 'exampleTags', 'safetyNote'],
     'travel-itinerary-planner': ['tripName', 'tripStartDate', 'tripEndDate', 'bufferMinutes', 'saveConsent', 'storageNote', 'itemDate', 'startTime', 'endTime', 'itemTitle', 'category', 'categories', 'location', 'reservation', 'notes', 'itineraryLabel', 'noTrip', 'noItems', 'itemCount', 'overlapCount', 'bufferWarningCount', 'conflictsLabel', 'backupFile', 'backupHint', 'timeZoneNote', 'reservationPrivacyNote', 'exampleTrip', 'exampleActivity', 'exampleMeal', 'exampleLocation', 'exampleReservation'],
@@ -164,6 +185,13 @@ export function renderGrowthForm(toolId, copy) {
     'asphalt-calculator': ['area', 'areaUnit', 'compactedThickness', 'thicknessUnit', 'density', 'densityUnit', 'wastePercent', 'pricePerTonne', 'accuracyNote', 'relatedConcreteCalculator'],
     mancala: ['mode'],
     'dominoes-game': ['mode', 'variant', 'board', 'stock', 'hand', 'opponentHand', 'accuracyNote'],
+    euchre: ['score', 'target', 'you', 'dealer', 'maker', 'trump', 'upcard', 'yourHand', 'currentTrick', 'tricksWon', 'biddingRound', 'roundOne', 'roundTwo', 'chooseTrump', 'clubs', 'diamonds', 'hearts', 'spades', 'rules', 'accuracyNote', 'rulesText', 'localBot', 'playerSouth', 'seatNorth', 'seatEast', 'seatWest'],
+    'name-generator': ['type', 'fantasy', 'business', 'username', 'count', 'keyword', 'keywordHint', 'seed', 'seedHint', 'suggestionNote'],
+    'random-word-generator': ['category', 'allCategories', 'nature', 'places', 'objects', 'actions', 'minimumLength', 'maximumLength', 'count', 'seed', 'seedHint', 'dictionaryNote'],
+    'breathing-exercise': ['pattern', 'custom', 'balanced', 'box', 'fourSevenEight', 'inhale', 'holdIn', 'exhale', 'holdOut', 'duration', 'sound', 'soundHint', 'motionNote', 'safetyNote', 'phase', 'cycle', 'remaining', 'inhaleCue', 'holdCue', 'exhaleCue', 'complete'],
+    'alarm-clock': ['alarmTime', 'sound', 'soundHint', 'accuracyNote', 'scheduledFor', 'timeRemaining', 'alarmRinging'],
+    cribbage: ['mode', 'hand', 'crib', 'card', 'starter', 'rank', 'suit', 'clubs', 'diamonds', 'hearts', 'spades', 'rulesNote', 'fifteens', 'pairs', 'runs', 'flush', 'nobs'],
+    'gin-rummy': ['yourHand', 'opponentHand', 'stock', 'discardPile', 'deadwood', 'score', 'turn', 'rulesNote', 'knockHint', 'hiddenCard', 'drawPrompt', 'discardPrompt', 'rank', 'clubs', 'diamonds', 'hearts', 'spades', 'ace', 'jack', 'queen', 'king'],
     hitori: ['size', 'difficulty', 'board', 'rules', 'accuracyNote', 'cell', 'row', 'column', 'black', 'white'],
     nurikabe: ['difficulty', 'board', 'rules', 'accuracyNote', 'cell', 'row', 'column', 'sea', 'island'],
     'logic-grid-puzzle': ['difficulty', 'board', 'clues', 'categoryPair', 'categoryGroups', 'same', 'different', 'unmarked', 'sameMark', 'differentMark', 'rules', 'accuracyNote'],
@@ -230,6 +258,8 @@ export function renderGrowthForm(toolId, copy) {
     'polar-graphing-calculator': ['calculate', 'reset', 'example', 'result', 'copy', 'downloadCsv'],
     'boolean-algebra-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'week-number-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
+    'text-to-speech': ['play', 'pause', 'resume', 'stop', 'example', 'clear', 'result'],
+    'world-clock': ['add', 'remove', 'result', 'reset'],
     'image-upscaler': ['upscale', 'cancel', 'download', 'reset'],
     'wallpaper-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet'],
     'pool-salt-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'liters', 'usGallons', 'imperialGallons', 'kilograms', 'pounds'],
@@ -272,6 +302,9 @@ export function renderGrowthForm(toolId, copy) {
     '529-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'julian-date-converter': ['calculate', 'reset', 'copy', 'example', 'result'],
     'interval-timer': ['start', 'pause', 'resume', 'reset'],
+    'breathing-exercise': ['start', 'pause', 'resume', 'reset'],
+    'alarm-clock': ['schedule', 'testSound', 'cancel', 'snooze', 'stop'],
+    'dividend-calculator': ['calculate', 'example', 'reset', 'copy', 'result'],
     'chemical-equation-balancer': ['calculate', 'reset', 'copy', 'example', 'result'],
     'gear-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'density-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
@@ -301,6 +334,19 @@ export function renderGrowthForm(toolId, copy) {
     'absolute-value-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'capacitor-calculator': ['calculate', 'reset', 'example', 'result'],
     'body-water-calculator': ['calculate', 'reset', 'example', 'result'],
+    'body-surface-area-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
+    'weekly-planner': ['addBlock', 'removeBlock', 'download', 'import', 'print', 'reset', 'result'],
+    'overtime-calculator': ['calculate', 'example', 'reset', 'result', 'copy'],
+    'meeting-minutes-template': ['preview', 'download', 'print', 'reset', 'result'],
+    'dots-and-boxes': ['newGame', 'result'],
+    'color-mixer': ['calculate', 'addColor', 'removeColor', 'example', 'reset', 'copy', 'download', 'result'],
+    'blackjack-game': ['start', 'hit', 'stand', 'double', 'split', 'nextRound', 'newShoe', 'result'],
+    'debt-to-income-ratio-calculator': ['calculate', 'example', 'reset', 'result', 'copy'],
+    'car-lease-calculator': ['calculate', 'example', 'reset', 'result', 'copy'],
+    'fire-calculator': ['calculate', 'example', 'reset', 'result', 'copy'],
+    'email-signature-generator': ['generate', 'copy', 'copyHtml', 'download', 'reset'],
+    'image-vectorizer': ['generate', 'download', 'reset'],
+    'vo2-max-calculator': ['calculate', 'example', 'reset', 'result', 'copy'],
     'waist-to-hip-ratio-calculator': ['calculate', 'reset', 'example', 'copy', 'result'],
     '555-timer-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
     'fourier-series-calculator': ['calculate', 'reset', 'example', 'constant', 'result', 'copy'],
@@ -329,12 +375,15 @@ export function renderGrowthForm(toolId, copy) {
     'log-analyzer': ['example', 'analyze', 'export', 'clear', 'reset', 'result'],
     'inflation-calculator': ['calculate', 'reset', 'example', 'result'],
     'retirement-calculator': ['calculate', 'reset', 'example', 'result'],
+    '401k-calculator': ['calculate', 'reset', 'example', 'result'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
     'polygon-calculator': ['calculate', 'example', 'reset', 'copy', 'result'],
     'compression-ratio-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'goal-planner': ['generate', 'reset', 'example', 'result', 'copy', 'download', 'updateProgress'],
     'mind-map-maker': ['generate', 'reset', 'example', 'result', 'addChild', 'removeNode', 'moveUp', 'moveDown', 'moveNode', 'collapse', 'expand', 'undo', 'redo', 'exportSvg', 'exportJson', 'importJson'],
+    'family-tree-maker': ['addPerson', 'linkPeople', 'exportSvg', 'exportGedcom', 'reset', 'result'],
+    'net-worth-calculator': ['calculate', 'saveSnapshot', 'exportCsv', 'deleteHistory', 'result'],
   'mood-tracker': ['saveEntry', 'updateEntry', 'example', 'reset', 'removeEntry', 'clearHistory', 'previousMonth', 'nextMonth', 'export', 'import', 'result'],
     'journal-online': ['saveEntry', 'updateEntry', 'newEntry', 'example', 'reset', 'search', 'clearSearch', 'deleteEntry', 'clearAll', 'exportJson', 'importJson', 'saveBackup', 'result'],
     'travel-itinerary-planner': ['createTrip', 'saveItem', 'updateItem', 'newItem', 'deleteItem', 'deleteTrip', 'example', 'reset', 'exportIcs', 'exportJson', 'importJson', 'print', 'result'],
@@ -352,6 +401,13 @@ export function renderGrowthForm(toolId, copy) {
     'asphalt-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     mancala: ['newGame', 'rules', 'result', 'computer', 'twoPlayers'],
     'dominoes-game': ['newGame', 'draw', 'pass', 'playLeft', 'playRight', 'computer', 'twoPlayers', 'drawRule', 'blockRule'],
+    euchre: ['newGame', 'pass', 'orderUp', 'nameTrump', 'discard', 'play', 'result', 'rules', 'closeRules'],
+    cribbage: ['scoreHand', 'reset', 'result'],
+    'gin-rummy': ['newGame', 'drawStock', 'drawDiscard', 'discard', 'knock'],
+    'name-generator': ['generateNames', 'reset', 'example', 'copy', 'download', 'result'],
+    'random-word-generator': ['generateWords', 'reset', 'example', 'copy', 'download', 'result'],
+    'breathing-exercise': ['start', 'pause', 'resume', 'reset'],
+    'alarm-clock': ['schedule', 'testSound', 'cancel', 'snooze', 'stop'],
     hitori: ['newGame', 'checkBoard', 'hint', 'clearMarks', 'easy', 'medium', 'hard'],
     nurikabe: ['newGame', 'checkBoard', 'hint', 'clearMarks', 'easy', 'medium', 'hard'],
     'logic-grid-puzzle': ['newGame', 'checkBoard', 'hint', 'clearMarks', 'easy', 'medium', 'hard', 'rules'],
@@ -522,6 +578,23 @@ export function renderGrowthForm(toolId, copy) {
         <tr><th scope="row">${escapeGrowthHtml(fields.depletionAge)}</th><td data-retirement-depletion></td><td data-retirement-conservative-depletion></td></tr>
       </tbody></table></div>
     </section>
+  </form>`, copy);
+
+  if (toolId === '401k-calculator') return attachCopy(`<form id="tool-form" class="401k-calculator" novalidate>
+    ${label('401k-salary', fields.annualSalary, '<input id="401k-salary" name="annualSalary" type="number" min="0" max="1000000000000" step="any" value="80000" required inputmode="decimal">')}
+    ${label('401k-balance', fields.currentBalance, '<input id="401k-balance" name="currentBalance" type="number" min="0" max="1000000000000" step="any" value="25000" required inputmode="decimal">')}
+    ${label('401k-employee', fields.employeeContributionPercent, '<input id="401k-employee" name="employeeContributionPercent" type="number" min="0" max="100" step="any" value="6" required inputmode="decimal">')}
+    ${label('401k-match', fields.employerMatchPercent, '<input id="401k-match" name="employerMatchPercent" type="number" min="0" max="500" step="any" value="50" required inputmode="decimal">')}
+    ${label('401k-match-limit', fields.matchLimitPercent, '<input id="401k-match-limit" name="matchLimitPercent" type="number" min="0" max="100" step="any" value="4" required inputmode="decimal">')}
+    ${label('401k-vesting', fields.vestingPercent, '<input id="401k-vesting" name="vestingPercent" type="number" min="0" max="100" step="any" value="100" required inputmode="decimal">')}
+    ${label('401k-years', fields.years, '<input id="401k-years" name="years" type="number" min="0" max="60" step="1" value="20" required inputmode="numeric">')}
+    ${label('401k-return', fields.annualReturnPercent, '<input id="401k-return" name="annualReturnPercent" type="number" min="-99.99" max="100" step="any" value="6" required inputmode="decimal">')}
+    <p class="hint">${escapeGrowthHtml(fields.assumptionsNote)}</p>
+    <div class="actions"><button type="button" class="button button--secondary" data-action="example">${escapeGrowthHtml(actions.example)}</button>${button('calculate', actions.calculate)}${button('reset', actions.reset, 'secondary')}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="401k-calculator__results" data-401k-results hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><dl>
+      <div><dt>${escapeGrowthHtml(fields.annualEmployeeContribution)}</dt><dd data-401k-employee></dd></div><div><dt>${escapeGrowthHtml(fields.annualEmployerMatch)}</dt><dd data-401k-match></dd></div><div><dt>${escapeGrowthHtml(fields.annualVestedMatch)}</dt><dd data-401k-vested-match></dd></div><div><dt>${escapeGrowthHtml(fields.totalAnnualContribution)}</dt><dd data-401k-total></dd></div><div><dt>${escapeGrowthHtml(fields.projectedBalance)}</dt><dd data-401k-balance></dd></div><div><dt>${escapeGrowthHtml(fields.projectedVestedBalance)}</dt><dd data-401k-vested-balance></dd></div>
+    </dl><div class="table-scroll"><table><caption>${escapeGrowthHtml(fields.year)}</caption><thead><tr><th scope="col">${escapeGrowthHtml(fields.year)}</th><th scope="col">${escapeGrowthHtml(fields.projectedBalance)}</th><th scope="col">${escapeGrowthHtml(fields.projectedVestedBalance)}</th></tr></thead><tbody data-401k-years></tbody></table></div></section>
   </form>`, copy);
 
   if (toolId === 'font-pairing-tool') {
@@ -1060,6 +1133,16 @@ export function renderGrowthForm(toolId, copy) {
     <p class="status" data-status role="status" aria-live="polite"></p>
   </section>`, copy);
 
+  if (toolId === 'euchre') return attachCopy(`<section class="game euchre-game" data-tool="euchre" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="game-toolbar"><div class="field"><label for="euchre-target">${escapeGrowthHtml(fields.target)}</label><select id="euchre-target" data-target><option value="5">5</option><option value="7">7</option><option value="10" selected>10</option></select></div><button type="button" data-action="new-game" class="button button--primary">${escapeGrowthHtml(actions.newGame)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p>
+    <section class="euchre-score" aria-label="${escapeGrowthHtml(fields.score)}"><h2>${escapeGrowthHtml(fields.score)}</h2><p><span>${escapeGrowthHtml(fields.you)}</span>: <strong data-score="0">0</strong> · <span>${escapeGrowthHtml(fields.seatNorth)} / ${escapeGrowthHtml(fields.seatEast)}</span>: <strong data-score="1">0</strong></p><p>${escapeGrowthHtml(fields.dealer)}: <span data-dealer></span> · ${escapeGrowthHtml(fields.upcard)}: <span data-upcard></span> · ${escapeGrowthHtml(fields.trump)}: <span data-trump></span></p><p>${escapeGrowthHtml(fields.tricksWon)}: <span data-tricks></span></p></section>
+    <section class="euchre-bidding" data-bidding hidden aria-labelledby="euchre-bidding-title"><h2 id="euchre-bidding-title" data-bidding-title></h2><div class="field" data-trump-choice hidden><label for="euchre-trump">${escapeGrowthHtml(fields.chooseTrump)}</label><select id="euchre-trump" data-trump-choice-select><option value="clubs">${escapeGrowthHtml(fields.clubs)}</option><option value="diamonds">${escapeGrowthHtml(fields.diamonds)}</option><option value="hearts">${escapeGrowthHtml(fields.hearts)}</option><option value="spades">${escapeGrowthHtml(fields.spades)}</option></select></div><div class="actions"><button type="button" data-action="order-up" class="button button--primary" hidden>${escapeGrowthHtml(actions.orderUp)}</button><button type="button" data-action="name-trump" class="button button--primary" hidden>${escapeGrowthHtml(actions.nameTrump)}</button><button type="button" data-action="pass" class="button button--secondary" hidden>${escapeGrowthHtml(actions.pass)}</button></div></section>
+    <section aria-labelledby="euchre-trick-title"><h2 id="euchre-trick-title">${escapeGrowthHtml(fields.currentTrick)}</h2><ol class="euchre-trick" data-trick aria-live="off"></ol></section>
+    <section aria-labelledby="euchre-hand-title"><h2 id="euchre-hand-title">${escapeGrowthHtml(fields.yourHand)}</h2><ol class="euchre-hand" data-hand></ol><button type="button" data-action="discard" class="button button--secondary" hidden>${escapeGrowthHtml(actions.discard)}</button></section>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><p data-result-content></p></section>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><details class="rules"><summary>${escapeGrowthHtml(actions.rules)}</summary><p>${escapeGrowthHtml(fields.rulesText)}</p></details></section>`, copy);
+
   if (toolId === 'slitherlink') return attachCopy(`<section class="game slitherlink-game" aria-label="${escapeGrowthHtml(copy.name)}">
     <div class="game-toolbar"><div class="field"><label for="slitherlink-size">${escapeGrowthHtml(fields.size)}</label><select id="slitherlink-size" data-size><option value="4">4 × 4</option><option value="5" selected>5 × 5</option><option value="6">6 × 6</option></select></div>
       <button type="button" data-action="new-game" class="button button--primary">${escapeGrowthHtml(labels.newGame)}</button></div>
@@ -1184,6 +1267,183 @@ export function renderGrowthForm(toolId, copy) {
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
     <p class="hint">${escapeGrowthHtml(fields.equationNote)}</p>
     <div class="actions">${button('example', labels.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'body-surface-area-calculator') return attachCopy(`<form id="tool-form" class="body-surface-area-calculator" novalidate>
+    <div class="calculator-grid">
+      ${label('bsa-height', fields.height, '<input id="bsa-height" name="height" type="text" inputmode="decimal" value="170" required>')}
+      ${label('bsa-height-unit', fields.heightUnit, `<select id="bsa-height-unit" name="heightUnit"><option value="cm">${escapeGrowthHtml(fields.centimeters)}</option><option value="in">${escapeGrowthHtml(fields.inches)}</option></select>`)}
+      ${label('bsa-weight', fields.weight, '<input id="bsa-weight" name="weight" type="text" inputmode="decimal" value="70" required>')}
+      ${label('bsa-weight-unit', fields.weightUnit, `<select id="bsa-weight-unit" name="weightUnit"><option value="kg">${escapeGrowthHtml(fields.kilograms)}</option><option value="lb">${escapeGrowthHtml(fields.pounds)}</option></select>`)}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.safetyNote)}</p><p class="hint">${escapeGrowthHtml(fields.formulaNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'weekly-planner') return attachCopy(`<form id="tool-form" class="weekly-planner-form" novalidate>
+    <div class="calculator-grid">
+      ${label('weekly-planner-day', fields.day, `<select id="weekly-planner-day" name="day"><option value="0">${escapeGrowthHtml(fields.sunday)}</option><option value="1">${escapeGrowthHtml(fields.monday)}</option><option value="2">${escapeGrowthHtml(fields.tuesday)}</option><option value="3">${escapeGrowthHtml(fields.wednesday)}</option><option value="4">${escapeGrowthHtml(fields.thursday)}</option><option value="5">${escapeGrowthHtml(fields.friday)}</option><option value="6">${escapeGrowthHtml(fields.saturday)}</option></select>`)}
+      ${label('weekly-planner-title', fields.title, '<input id="weekly-planner-title" name="title" type="text" maxlength="120" required>')}
+      ${label('weekly-planner-start', fields.start, '<input id="weekly-planner-start" name="start" type="time" value="09:00" required>')}
+      ${label('weekly-planner-end', fields.end, '<input id="weekly-planner-end" name="end" type="time" value="10:00" required>')}
+      ${label('weekly-planner-category', fields.category, `<select id="weekly-planner-category" name="category"><option value="work">${escapeGrowthHtml(fields.work)}</option><option value="personal">${escapeGrowthHtml(fields.personal)}</option><option value="study">${escapeGrowthHtml(fields.study)}</option><option value="health">${escapeGrowthHtml(fields.health)}</option><option value="other">${escapeGrowthHtml(fields.other)}</option></select>`)}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <div class="actions">${button('addBlock', actions.addBlock)}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-weekly-blocks></div></section>
+    <div class="weekly-planner__actions">${button('download', actions.download, 'secondary')}${button('import', actions.import, 'secondary')}${button('print', actions.print, 'secondary')}${button('reset', actions.reset, 'secondary')}</div>
+    <input type="file" name="backupFile" accept="application/json,.json" hidden aria-label="${escapeGrowthHtml(fields.backupFile)}">
+  </form>`, copy);
+
+  if (toolId === 'overtime-calculator') return attachCopy(`<form id="tool-form" class="overtime-calculator" novalidate>
+    <div class="calculator-grid">
+      ${label('overtime-total-hours', fields.totalHours, '<input id="overtime-total-hours" name="totalHours" type="text" inputmode="decimal" maxlength="24" value="45" required>')}
+      ${label('overtime-hourly-rate', fields.hourlyRate, '<input id="overtime-hourly-rate" name="hourlyRate" type="text" inputmode="decimal" maxlength="24" value="20" required>')}
+      ${label('overtime-threshold', fields.thresholdHours, '<input id="overtime-threshold" name="thresholdHours" type="text" inputmode="decimal" maxlength="24" value="40" required>')}
+      ${label('overtime-multiplier', fields.overtimeMultiplier, '<input id="overtime-multiplier" name="overtimeMultiplier" type="text" inputmode="decimal" maxlength="24" value="1.5" required>')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.legalNote)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'meeting-minutes-template') return attachCopy(`<form id="tool-form" class="meeting-minutes-template" novalidate>
+    ${label('meeting-minutes-title', fields.title, '<input id="meeting-minutes-title" name="title" type="text" maxlength="160" required>')}
+    <div class="calculator-grid">${label('meeting-minutes-date', fields.date, '<input id="meeting-minutes-date" name="date" type="date">')}${label('meeting-minutes-facilitator', fields.facilitator, '<input id="meeting-minutes-facilitator" name="facilitator" type="text" maxlength="120">')}</div>
+    ${label('meeting-minutes-attendees', fields.attendees, '<textarea id="meeting-minutes-attendees" name="attendees" rows="5" maxlength="20000"></textarea>')}
+    ${label('meeting-minutes-agenda', fields.agenda, '<textarea id="meeting-minutes-agenda" name="agenda" rows="5" maxlength="10000"></textarea>')}
+    ${label('meeting-minutes-decisions', fields.decisions, '<textarea id="meeting-minutes-decisions" name="decisions" rows="5" maxlength="20000"></textarea>')}
+    ${label('meeting-minutes-actions', fields.actions, '<textarea id="meeting-minutes-actions" name="actions" rows="6" maxlength="20000"></textarea>')}<p class="hint">${escapeGrowthHtml(fields.actionHint)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <div class="actions">${submit('preview')}${button('download', actions.download, 'secondary')}${button('print', actions.print, 'secondary')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden><h2>${escapeGrowthHtml(actions.result)}</h2><pre data-minutes-preview hidden></pre></section>
+  </form>`, copy);
+
+  if (toolId === 'dots-and-boxes') return attachCopy(`<form id="tool-form" class="dots-and-boxes" novalidate>
+    <div class="dots-and-boxes__settings">
+      ${label('dots-board-size', fields.boardSize, `<select id="dots-board-size" name="boardSize"><option value="3">${escapeGrowthHtml(fields.threeByThree)}</option><option value="4" selected>${escapeGrowthHtml(fields.fourByFour)}</option><option value="5">${escapeGrowthHtml(fields.fiveByFive)}</option></select>`)}
+      ${label('dots-mode', fields.mode, `<select id="dots-mode" name="mode"><option value="computer">${escapeGrowthHtml(fields.computer)}</option><option value="two-player">${escapeGrowthHtml(fields.twoPlayer)}</option></select>`)}
+    </div>
+    <p class="hint dots-and-boxes__note">${escapeGrowthHtml(fields.rules)} ${escapeGrowthHtml(fields.computerNote)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <p class="dots-and-boxes__score" data-dots-score aria-live="polite"></p>
+    <div class="dots-and-boxes__board" data-dots-board role="group" aria-label="${escapeGrowthHtml(fields.boardLabel)}"></div>
+    <div class="actions">${button('newGame', actions.newGame)}</div>
+    <p class="status" data-dots-status role="status" aria-live="polite"></p>
+  </form>`, copy);
+
+  if (toolId === 'color-mixer') return attachCopy(`<form id="tool-form" class="color-mixer" novalidate>
+    <fieldset class="color-mixer__fieldset"><legend>${escapeGrowthHtml(fields.colors)}</legend><div data-color-list>
+      <div class="color-mixer__row" data-color-row data-index="0"><div class="color-mixer__sample">${label('color-mixer-color-0', fields.color, '<input id="color-mixer-color-0" name="color-0" type="color" value="#FF0000" required>')}${label('color-mixer-hex-0', fields.colorHex, '<input id="color-mixer-hex-0" name="color-hex-0" type="text" value="#FF0000" maxlength="7" pattern="#?[0-9A-Fa-f]{3}([0-9A-Fa-f]{3})?" required>')}</div>${label('color-mixer-weight-0', fields.weight, '<input id="color-mixer-weight-0" name="weight-0" type="number" min="0" max="1000" step="any" value="50" required>')}<button type="button" class="button button--secondary" data-action="removeColor" aria-label="${escapeGrowthHtml(actions.removeColor)}">${escapeGrowthHtml(actions.removeColor)}</button></div>
+      <div class="color-mixer__row" data-color-row data-index="1"><div class="color-mixer__sample">${label('color-mixer-color-1', fields.color, '<input id="color-mixer-color-1" name="color-1" type="color" value="#0000FF" required>')}${label('color-mixer-hex-1', fields.colorHex, '<input id="color-mixer-hex-1" name="color-hex-1" type="text" value="#0000FF" maxlength="7" pattern="#?[0-9A-Fa-f]{3}([0-9A-Fa-f]{3})?" required>')}</div>${label('color-mixer-weight-1', fields.weight, '<input id="color-mixer-weight-1" name="weight-1" type="number" min="0" max="1000" step="any" value="50" required>')}<button type="button" class="button button--secondary" data-action="removeColor" aria-label="${escapeGrowthHtml(actions.removeColor)}">${escapeGrowthHtml(actions.removeColor)}</button></div>
+    </div><button type="button" class="button button--secondary" data-action="addColor">${escapeGrowthHtml(actions.addColor)}</button></fieldset>
+    <div class="calculator-grid">${label('color-mixer-space', fields.mixingSpace, `<select id="color-mixer-space" name="space"><option value="srgb">${escapeGrowthHtml(fields.srgb)}</option><option value="linear">${escapeGrowthHtml(fields.linear)}</option></select>`)}${label('color-mixer-steps', fields.steps, '<input id="color-mixer-steps" name="steps" type="number" min="2" max="16" step="1" value="5" required>')}</div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.pigmentNote)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${button('reset', actions.reset, 'secondary')}</div><p class="status" data-status role="status" aria-live="polite"></p>
+    <section class="result color-mixer__result" data-color-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><span class="color-mixer__swatch" data-color-swatch role="img" aria-label="${escapeGrowthHtml(fields.preview)}"></span><p>${escapeGrowthHtml(fields.resultHex)}: <output data-mixed-hex></output> ${button('copy', actions.copy, 'secondary')}</p><p>${escapeGrowthHtml(fields.resultRgb)}: <output data-mixed-rgb></output></p><p>${escapeGrowthHtml(fields.resultHsl)}: <output data-mixed-hsl></output></p><h3>${escapeGrowthHtml(fields.ramp)}</h3><div class="color-mixer__ramp" data-color-ramp></div>${button('download', actions.download, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'blackjack-game') return attachCopy(`<form id="tool-form" class="blackjack-game" novalidate>
+    <div class="blackjack-game__settings">${label('blackjack-decks', fields.decks, `<select id="blackjack-decks" name="decks"><option value="1">${escapeGrowthHtml(fields.oneDeck)}</option><option value="2">${escapeGrowthHtml(fields.twoDecks)}</option><option value="4" selected>${escapeGrowthHtml(fields.fourDecks)}</option><option value="6">${escapeGrowthHtml(fields.sixDecks)}</option></select>`)}
+      <label class="blackjack-game__check"><input name="hitSoft17" type="checkbox"> ${escapeGrowthHtml(fields.hitSoft17)}</label></div>
+    <p class="hint">${escapeGrowthHtml(fields.rulesText)}</p><p class="hint">${escapeGrowthHtml(fields.noWager)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <section class="blackjack-game__table" data-blackjack-table aria-label="${escapeGrowthHtml(fields.score)}" hidden>
+      <div class="blackjack-game__dealer"><h3>${escapeGrowthHtml(fields.dealer)}</h3><div data-blackjack-dealer></div><p data-blackjack-dealer-total></p></div>
+      <div class="blackjack-game__players" data-blackjack-players></div>
+      <p class="blackjack-game__stats" data-blackjack-stats></p>
+    </section>
+    <div class="actions"><button class="button" type="button" data-action="start">${escapeGrowthHtml(actions.start)}</button><button class="button button--secondary" type="button" data-action="hit" disabled>${escapeGrowthHtml(actions.hit)}</button><button class="button button--secondary" type="button" data-action="stand" disabled>${escapeGrowthHtml(actions.stand)}</button><button class="button button--secondary" type="button" data-action="double" disabled>${escapeGrowthHtml(actions.double)}</button><button class="button button--secondary" type="button" data-action="split" disabled>${escapeGrowthHtml(actions.split)}</button><button class="button button--secondary" type="button" data-action="nextRound" disabled>${escapeGrowthHtml(actions.nextRound)}</button><button class="button button--secondary" type="button" data-action="newShoe">${escapeGrowthHtml(actions.newShoe)}</button></div>
+    <p class="status" data-blackjack-status role="status" aria-live="polite"></p>
+  </form>`, copy);
+
+  if (toolId === 'debt-to-income-ratio-calculator') return attachCopy(`<form id="tool-form" class="debt-to-income-ratio-calculator" novalidate>
+    <div class="calculator-grid">${label('dti-income', fields.grossIncome, '<input id="dti-income" name="grossMonthlyIncome" type="text" inputmode="decimal" maxlength="24" required>')}${label('dti-housing', fields.housing, '<input id="dti-housing" name="housingPayment" type="text" inputmode="decimal" maxlength="24" value="0" required>')}</div>
+    <fieldset><legend>${escapeGrowthHtml(fields.debts)}</legend><div class="calculator-grid">${label('dti-debt-1', fields.debt1, '<input id="dti-debt-1" name="debt1" type="text" inputmode="decimal" maxlength="24" value="0" required>')}${label('dti-debt-2', fields.debt2, '<input id="dti-debt-2" name="debt2" type="text" inputmode="decimal" maxlength="24" value="0" required>')}${label('dti-debt-3', fields.debt3, '<input id="dti-debt-3" name="debt3" type="text" inputmode="decimal" maxlength="24" value="0" required>')}${label('dti-debt-4', fields.debt4, '<input id="dti-debt-4" name="debt4" type="text" inputmode="decimal" maxlength="24" value="0" required>')}</div></fieldset>
+    <p class="hint">${escapeGrowthHtml(fields.currencyNote)}</p><p class="hint">${escapeGrowthHtml(fields.exampleHint)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-dti-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><dl data-dti-values></dl>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'car-lease-calculator') return attachCopy(`<form id="tool-form" class="car-lease-calculator" novalidate>
+    <div class="calculator-grid">
+      ${label('car-lease-cap-cost', fields.capitalizedCost, '<input id="car-lease-cap-cost" name="capitalizedCost" type="text" inputmode="decimal" maxlength="24" value="12000" required>')}
+      ${label('car-lease-residual', fields.residualValue, '<input id="car-lease-residual" name="residualValue" type="text" inputmode="decimal" maxlength="24" value="0" required>')}
+      ${label('car-lease-term', fields.termMonths, '<input id="car-lease-term" name="termMonths" type="text" inputmode="numeric" maxlength="3" value="36" required>')}
+      ${label('car-lease-money-factor', fields.moneyFactor, '<input id="car-lease-money-factor" name="moneyFactor" type="text" inputmode="decimal" maxlength="16" value="0" required>')}
+      ${label('car-lease-reduction', fields.capCostReduction, '<input id="car-lease-reduction" name="capCostReduction" type="text" inputmode="decimal" maxlength="24" value="0" required>')}
+      ${label('car-lease-tax', fields.taxPercent, '<input id="car-lease-tax" name="taxPercent" type="text" inputmode="decimal" maxlength="12" value="0" required>')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.currencyNote)}</p><p class="hint">${escapeGrowthHtml(fields.formulaNote)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'fire-calculator') return attachCopy(`<form id="tool-form" class="fire-calculator" novalidate>
+    <div class="calculator-grid">
+      ${label('fire-annual-spending', fields.annualSpending, '<input id="fire-annual-spending" name="annualSpending" type="text" inputmode="decimal" maxlength="24" value="40000" required>')}
+      ${label('fire-withdrawal-rate', fields.withdrawalRatePercent, '<input id="fire-withdrawal-rate" name="withdrawalRatePercent" type="text" inputmode="decimal" maxlength="12" value="4" required>')}
+      ${label('fire-current-portfolio', fields.currentPortfolio, '<input id="fire-current-portfolio" name="currentPortfolio" type="text" inputmode="decimal" maxlength="24" value="0" required>')}
+      ${label('fire-monthly-contribution', fields.monthlyContribution, '<input id="fire-monthly-contribution" name="monthlyContribution" type="text" inputmode="decimal" maxlength="24" value="0" required>')}
+      ${label('fire-return', fields.expectedAnnualReturnPercent, '<input id="fire-return" name="expectedAnnualReturnPercent" type="text" inputmode="decimal" maxlength="12" value="0" required>')}
+      ${label('fire-inflation', fields.inflationPercent, '<input id="fire-inflation" name="inflationPercent" type="text" inputmode="decimal" maxlength="12" value="0" required>')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.currencyNote)}</p><p class="hint">${escapeGrowthHtml(fields.formulaNote)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'email-signature-generator') return attachCopy(`<form id="tool-form" class="email-signature-generator" novalidate>
+    <div class="calculator-grid">
+      ${label('signature-name', fields.fullName, '<input id="signature-name" name="fullName" type="text" maxlength="120" autocomplete="name" required>')}
+      ${label('signature-role', fields.jobTitle, '<input id="signature-role" name="jobTitle" type="text" maxlength="120" autocomplete="organization-title">')}
+      ${label('signature-organization', fields.organization, '<input id="signature-organization" name="organization" type="text" maxlength="120" autocomplete="organization">')}
+      ${label('signature-email', fields.email, '<input id="signature-email" name="email" type="email" maxlength="120" autocomplete="email">')}
+      ${label('signature-phone', fields.phone, '<input id="signature-phone" name="phone" type="tel" maxlength="32" autocomplete="tel">')}
+      ${label('signature-website', fields.website, '<input id="signature-website" name="website" type="url" maxlength="500" placeholder="https://example.com" autocomplete="url">')}
+      ${label('signature-location', fields.location, '<input id="signature-location" name="location" type="text" maxlength="120">')}
+      ${label('signature-accent', fields.accentColor, '<input id="signature-accent" name="accentColor" type="color" value="#3157d5">')}
+      ${label('signature-logo', fields.logoFile, '<input id="signature-logo" name="logoFile" type="file" accept="image/png,image/jpeg,image/gif">')}
+      ${label('signature-logo-alt', fields.logoAlt, '<input id="signature-logo-alt" name="logoAlt" type="text" maxlength="120">')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.logoHint)}</p><p class="hint">${escapeGrowthHtml(fields.clientNote)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <div class="actions">${submit('generate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-signature-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div class="email-signature-generator__preview" data-signature-preview></div><label for="signature-html-source">${escapeGrowthHtml(fields.htmlLabel)}</label><textarea id="signature-html-source" data-signature-html readonly rows="8"></textarea><div class="actions">${button('copy', actions.copy, 'secondary')}${button('copyHtml', actions.copyHtml, 'secondary')}${button('download', actions.download, 'secondary')}</div></section>
+  </form>`, copy);
+
+  if (toolId === 'image-vectorizer') return attachCopy(`<form id="tool-form" class="image-vectorizer" novalidate>
+    ${label('image-vectorizer-file', fields.imageFile, '<input id="image-vectorizer-file" name="imageFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif" required>')}
+    <div class="calculator-grid">
+      ${label('image-vectorizer-detail', fields.detail, '<select id="image-vectorizer-detail" name="detail"><option value="64">64 px</option><option value="128">128 px</option><option value="192">192 px</option><option value="256" selected>256 px</option></select>')}
+      ${label('image-vectorizer-colors', fields.paletteCount, '<select id="image-vectorizer-colors" name="paletteCount"><option>2</option><option>4</option><option selected>8</option><option>12</option><option>16</option></select>')}
+      ${label('image-vectorizer-alpha', fields.alphaThreshold, '<input id="image-vectorizer-alpha" name="alphaThreshold" type="range" min="0" max="255" value="128"><output data-alpha-value>128</output>')}
+    </div>
+    <label class="field field--checkbox" for="image-vectorizer-merge"><input id="image-vectorizer-merge" name="mergeRuns" type="checkbox" checked> ${escapeGrowthHtml(fields.mergeRuns)}</label>
+    <p class="hint">${escapeGrowthHtml(fields.detailHint)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <div class="actions">${submit('generate')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-vector-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><dl data-vector-stats></dl><img data-vector-preview alt="SVG vector preview"><div class="actions">${button('download', actions.download, 'secondary')}</div></section>
+  </form>`, copy);
+
+  if (toolId === 'vo2-max-calculator') return attachCopy(`<form id="tool-form" class="vo2-max-calculator" novalidate>
+    ${label('vo2-method', fields.method, `<select id="vo2-method" name="method"><option value="cooper">${escapeGrowthHtml(fields.cooper)}</option><option value="rockport">${escapeGrowthHtml(fields.rockport)}</option></select>`)}
+    <fieldset data-vo2-cooper><legend>${escapeGrowthHtml(fields.cooper)}</legend><div class="calculator-grid">
+      ${label('vo2-distance', fields.distance, '<input id="vo2-distance" name="distance" type="text" inputmode="decimal" value="2400" required>')}
+      ${label('vo2-distance-unit', fields.distanceUnit, `<select id="vo2-distance-unit" name="distanceUnit"><option value="m">${escapeGrowthHtml(fields.meters)}</option><option value="km">${escapeGrowthHtml(fields.kilometers)}</option><option value="mi">${escapeGrowthHtml(fields.miles)}</option></select>`)}
+    </div></fieldset>
+    <fieldset data-vo2-rockport hidden disabled><legend>${escapeGrowthHtml(fields.rockport)}</legend><p class="hint">${escapeGrowthHtml(fields.protocolNote)}</p><div class="calculator-grid">
+      ${label('vo2-age', fields.age, '<input id="vo2-age" name="age" type="number" min="30" max="69" step="1" value="35" required>')}
+      ${label('vo2-weight', fields.weight, '<input id="vo2-weight" name="weight" type="text" inputmode="decimal" value="70" required>')}
+      ${label('vo2-weight-unit', fields.weightUnit, `<select id="vo2-weight-unit" name="weightUnit"><option value="kg">${escapeGrowthHtml(fields.kilograms)}</option><option value="lb">${escapeGrowthHtml(fields.pounds)}</option></select>`)}
+      ${label('vo2-sex-coefficient', fields.equationSex, `<select id="vo2-sex-coefficient" name="equationSex"><option value="female">${escapeGrowthHtml(fields.femaleCoefficient)}</option><option value="male">${escapeGrowthHtml(fields.maleCoefficient)}</option></select>`)}
+      ${label('vo2-walk-minutes', fields.walkMinutes, '<input id="vo2-walk-minutes" name="walkMinutes" type="number" min="8" max="30" step="1" value="16" required>')}
+      ${label('vo2-walk-seconds', fields.walkSeconds, '<input id="vo2-walk-seconds" name="walkSeconds" type="number" min="0" max="59" step="1" value="0" required>')}
+      ${label('vo2-finish-heart-rate', fields.finishHeartRate, '<input id="vo2-finish-heart-rate" name="finishHeartRate" type="number" min="40" max="220" step="1" value="140" required>')}
+    </div></fieldset>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.safetyNote)}</p><p class="hint">${escapeGrowthHtml(fields.sourceNote)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <div class="actions">${submit('calculate')}${button('example', actions.example, 'secondary')}${reset}</div><p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-vo2-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><p data-vo2-value></p><p>${escapeGrowthHtml(fields.unitLabel)}</p><p><strong>${escapeGrowthHtml(fields.formulaLabel)}:</strong> <span data-vo2-method></span></p><div class="actions">${button('copy', actions.copy, 'secondary')}</div></section>
   </form>`, copy);
 
   if (toolId === 'waist-to-hip-ratio-calculator') return attachCopy(`<form id="tool-form" class="waist-to-hip-ratio-calculator" novalidate>
@@ -1368,6 +1628,35 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'text-to-speech') return attachCopy(`<form id="tool-form" class="text-to-speech" novalidate>
+    ${label('speech-text', fields.textLabel, `<textarea id="speech-text" name="text" rows="9" placeholder="${escapeGrowthHtml(fields.textPlaceholder)}" spellcheck="true" aria-describedby="speech-count speech-privacy" required></textarea>`)}
+    <p class="hint"><span data-character-count>0</span> / 30,000</p>
+    ${label('speech-voice', fields.voiceLabel, '<select id="speech-voice" name="voice"><option value="">'+escapeGrowthHtml(fields.browserDefault)+'</option></select>')}
+    ${label('speech-rate', fields.rateLabel, '<input id="speech-rate" name="rate" type="range" min="0.5" max="2" step="0.1" value="1"><output data-rate-value>1×</output>')}
+    ${label('speech-pitch', fields.pitchLabel, '<input id="speech-pitch" name="pitch" type="range" min="0.5" max="2" step="0.1" value="1"><output data-pitch-value>1×</output>')}
+    <div class="field"><label><input type="checkbox" name="showRemote"> ${escapeGrowthHtml(fields.remoteToggle)}</label><p class="hint">${escapeGrowthHtml(fields.remoteNotice)}</p></div>
+    <p class="hint" id="speech-privacy">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${button('clear', actions.clear, 'secondary')}${button('play', actions.play)}${button('pause', actions.pause, 'secondary')}${button('resume', actions.resume, 'secondary')}${button('stop', actions.stop, 'secondary')}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-speech-progress hidden aria-live="off"><h2>${escapeGrowthHtml(actions.result)}</h2><label for="speech-progress">${escapeGrowthHtml(fields.voiceProgress)}</label><progress id="speech-progress" max="100" value="0"></progress></section>
+  </form>`, copy);
+
+  if (toolId === 'world-clock') return attachCopy(`<form id="tool-form" class="world-clock" novalidate>
+    <div class="world-clock__controls">
+      ${label('world-clock-zone', fields.timeZone, '<select id="world-clock-zone" name="zone"></select>')}
+      ${label('world-clock-format', fields.hourFormat, `<select id="world-clock-format" name="hourFormat"><option value="24">${escapeGrowthHtml(fields.twentyFourHour)}</option><option value="12">${escapeGrowthHtml(fields.twelveHour)}</option></select>`)}
+      <button type="button" data-action="add" class="button button--primary">${escapeGrowthHtml(actions.add)}</button>
+      <button type="button" data-action="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button>
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.maxClocks)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <section class="world-clock__list" aria-labelledby="world-clock-list-title">
+      <h2 id="world-clock-list-title">${escapeGrowthHtml(fields.clockList)}</h2>
+      <ol data-world-clocks aria-live="off"></ol>
+    </section>
+    <p class="status" role="status" aria-live="polite" data-status></p>
   </form>`, copy);
 
   if (toolId === 'inductor-calculator') return attachCopy(`<form id="tool-form" class="inductor-calculator" novalidate>
@@ -1707,6 +1996,80 @@ export function renderGrowthForm(toolId, copy) {
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div><p class="hint" data-team-seed-output></p><div class="actions"><button type="button" data-action="copy" class="button button--secondary" disabled>${escapeGrowthHtml(labels.copy)}</button><button type="button" data-action="download" class="button button--secondary" disabled>${escapeGrowthHtml(labels.download)}</button></div></section>
   </form>`, copy);
+
+  if (toolId === 'name-generator') return attachCopy(`<form id="tool-form" class="name-generator" novalidate>
+    ${label('name-generator-type', fields.type, `<select id="name-generator-type" name="type"><option value="fantasy">${escapeGrowthHtml(fields.fantasy)}</option><option value="business">${escapeGrowthHtml(fields.business)}</option><option value="username">${escapeGrowthHtml(fields.username)}</option></select>`)}
+    ${label('name-generator-count', fields.count, '<input id="name-generator-count" name="count" type="number" min="1" max="20" value="10" step="1" inputmode="numeric" required>')}
+    ${label('name-generator-keyword', fields.keyword, '<input id="name-generator-keyword" name="keyword" type="text" maxlength="40" autocomplete="off">')}<p class="hint">${escapeGrowthHtml(fields.keywordHint)}</p>
+    ${label('name-generator-seed', fields.seed, '<input id="name-generator-seed" name="seed" type="text" maxlength="80" autocomplete="off" required>')}<p class="hint">${escapeGrowthHtml(fields.seedHint)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.suggestionNote)}</p>
+    <div class="actions"><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(labels.example)}</button><button type="submit" data-action="generateNames" class="button button--primary">${escapeGrowthHtml(labels.generateNames)}</button><button type="reset" data-action="reset" class="button button--secondary">${escapeGrowthHtml(labels.reset)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><ol data-name-results></ol><p class="hint" data-name-seed></p><div class="actions"><button type="button" data-action="copy" class="button button--secondary" disabled>${escapeGrowthHtml(labels.copy)}</button><button type="button" data-action="download" class="button button--secondary" disabled>${escapeGrowthHtml(labels.download)}</button></div></section>
+  </form>`, copy);
+
+  if (toolId === 'random-word-generator') return attachCopy(`<form id="tool-form" class="random-word-generator" novalidate>
+    ${label('random-word-category', fields.category, `<select id="random-word-category" name="category"><option value="all">${escapeGrowthHtml(fields.allCategories)}</option><option value="nature">${escapeGrowthHtml(fields.nature)}</option><option value="places">${escapeGrowthHtml(fields.places)}</option><option value="objects">${escapeGrowthHtml(fields.objects)}</option><option value="actions">${escapeGrowthHtml(fields.actions)}</option></select>`)}
+    <div class="random-word-generator__range">${label('random-word-min-length', fields.minimumLength, '<input id="random-word-min-length" name="minLength" type="number" min="1" max="64" value="1" inputmode="numeric" required>')}${label('random-word-max-length', fields.maximumLength, '<input id="random-word-max-length" name="maxLength" type="number" min="1" max="64" value="24" inputmode="numeric" required>')}</div>
+    ${label('random-word-count', fields.count, '<input id="random-word-count" name="count" type="number" min="1" max="100" value="10" inputmode="numeric" required>')}
+    ${label('random-word-seed', fields.seed, '<input id="random-word-seed" name="seed" type="text" maxlength="80" autocomplete="off">')}<p class="hint">${escapeGrowthHtml(fields.seedHint)}</p><p class="hint">${escapeGrowthHtml(fields.dictionaryNote)}</p>
+    <div class="actions"><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(labels.example)}</button><button type="submit" data-action="generateWords" class="button button--primary">${escapeGrowthHtml(labels.generateWords)}</button><button type="reset" data-action="reset" class="button button--secondary">${escapeGrowthHtml(labels.reset)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p><section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><ol data-word-results></ol><div class="actions"><button type="button" data-action="copy" class="button button--secondary" disabled>${escapeGrowthHtml(labels.copy)}</button><button type="button" data-action="download" class="button button--secondary" disabled>${escapeGrowthHtml(labels.download)}</button></div></section>
+  </form>`, copy);
+
+  if (toolId === 'cribbage') {
+    const suitOptions = ['clubs', 'diamonds', 'hearts', 'spades'].map((suit) => `<option value="${suit}">${escapeGrowthHtml(fields[suit])}</option>`).join('');
+    const cardSelect = (index) => {
+      const defaultRank = index < 4 ? index + 1 : 5;
+      const rankOptions = `<option value="1"${defaultRank === 1 ? ' selected' : ''}>A</option>${Array.from({ length: 12 }, (_, offset) => { const rank = offset + 2; return `<option value="${rank}"${defaultRank === rank ? ' selected' : ''}>${rank === 11 ? 'J' : rank === 12 ? 'Q' : rank === 13 ? 'K' : rank}</option>`; }).join('')}`;
+      const legend = index === 4 ? fields.starter : `${fields.card} ${index + 1}`;
+      return `<fieldset class="cribbage-card"><legend>${escapeGrowthHtml(legend)}</legend><div class="field"><label for="cribbage-rank-${index}">${escapeGrowthHtml(fields.rank)}</label><select id="cribbage-rank-${index}" data-rank>${rankOptions}</select></div><div class="field"><label for="cribbage-suit-${index}">${escapeGrowthHtml(fields.suit)}</label><select id="cribbage-suit-${index}" data-suit>${suitOptions}</select></div></fieldset>`;
+    };
+    return attachCopy(`<section class="cribbage-score-tool" data-tool="cribbage" aria-label="${escapeGrowthHtml(copy.name)}">
+      <div class="field"><label for="cribbage-mode">${escapeGrowthHtml(fields.mode)}</label><select id="cribbage-mode" data-mode><option value="hand">${escapeGrowthHtml(fields.hand)}</option><option value="crib">${escapeGrowthHtml(fields.crib)}</option></select></div>
+      <div class="cribbage-cards">${[0, 1, 2, 3, 4].map(cardSelect).join('')}</div>
+      <p class="hint">${escapeGrowthHtml(fields.rulesNote)}</p>
+      <div class="actions"><button type="button" class="button button--primary" data-action="score-hand">${escapeGrowthHtml(labels.scoreHand)}</button><button type="button" class="button button--secondary" data-action="reset">${escapeGrowthHtml(labels.reset)}</button></div>
+      <section class="tool-result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><p data-total></p><dl data-breakdown></dl></section>
+      <section class="cribbage-match" aria-labelledby="cribbage-game-title">
+        <h2 id="cribbage-game-title">${escapeGrowthHtml(fields.game)}</h2>
+        <p class="hint">${escapeGrowthHtml(fields.localMatchNote)}</p>
+        <div class="field"><label for="cribbage-target">${escapeGrowthHtml(fields.target)}</label><input id="cribbage-target" data-target type="number" min="31" max="121" step="1" value="121"></div>
+        <div class="actions"><button type="button" class="button button--primary" data-action="start-match">${escapeGrowthHtml(actions.startMatch)}</button><button type="button" class="button button--secondary" data-action="new-match" hidden>${escapeGrowthHtml(actions.newMatch)}</button></div>
+        <section data-match-board hidden aria-live="polite">
+          <p><strong>${escapeGrowthHtml(fields.matchScore)}:</strong> ${escapeGrowthHtml(fields.you)} <span data-player-score>0</span> — <span data-computer-score>0</span> ${escapeGrowthHtml(fields.computer)}</p>
+          <p><strong>${escapeGrowthHtml(fields.dealer)}:</strong> <span data-dealer></span> · <strong>${escapeGrowthHtml(fields.starterCard)}:</strong> <span data-starter></span></p>
+          <p><strong>${escapeGrowthHtml(fields.peggingCount)}:</strong> <span data-pegging-count>0</span> / 31 · <strong>${escapeGrowthHtml(fields.currentTurn)}:</strong> <span data-turn></span></p>
+          <p class="hint" data-phase-instruction>${escapeGrowthHtml(fields.selectDiscards)}</p>
+          <h3>${escapeGrowthHtml(fields.yourCards)}</h3><div class="cribbage-match__hand" data-match-hand></div>
+          <div class="actions"><button type="button" class="button button--primary" data-action="send-discards" disabled>${escapeGrowthHtml(actions.sendDiscards)}</button><button type="button" class="button button--secondary" data-action="say-go" disabled>${escapeGrowthHtml(actions.sayGo)}</button></div>
+          <h3>${escapeGrowthHtml(fields.computerCards)}</h3><div class="cribbage-match__hand" data-computer-hand></div>
+          <p class="tool-status" data-match-status role="status" aria-live="polite"></p>
+        </section>
+      </section>
+      <p class="tool-status" data-tool-status role="status" aria-live="polite"></p>
+    </section>`, copy);
+  }
+
+  if (toolId === 'gin-rummy') return attachCopy(`<section class="gin-rummy" data-tool="gin-rummy" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="gin-rummy__controls">
+      <button type="button" class="button button--primary" data-action="new-game">${escapeGrowthHtml(actions.newGame)}</button>
+      <button type="button" class="button button--secondary" data-action="draw-stock">${escapeGrowthHtml(actions.drawStock)}</button>
+      <button type="button" class="button button--secondary" data-action="draw-discard">${escapeGrowthHtml(actions.drawDiscard)}</button>
+      <label><input type="checkbox" data-knock> ${escapeGrowthHtml(actions.knock)}</label>
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.rulesNote)}</p>
+    <div class="gin-rummy__summary">
+      <p><strong>${escapeGrowthHtml(fields.score)}:</strong> <span data-score>0</span></p>
+      <p><strong>${escapeGrowthHtml(fields.deadwood)}:</strong> <span data-deadwood>0</span></p>
+      <p><strong>${escapeGrowthHtml(fields.stock)}:</strong> <span data-stock-count>31</span></p>
+      <p><strong>${escapeGrowthHtml(fields.discardPile)}:</strong> <span data-discard-top>—</span></p>
+    </div>
+    <section class="gin-rummy__zone" aria-labelledby="gin-rummy-your-hand"><h2 id="gin-rummy-your-hand">${escapeGrowthHtml(fields.yourHand)}</h2><div class="gin-rummy__cards" data-hand aria-label="${escapeGrowthHtml(fields.yourHand)}"></div>
+      <p class="hint">${escapeGrowthHtml(fields.knockHint)}</p>
+    </section>
+    <section class="gin-rummy__zone" aria-labelledby="gin-rummy-opponent"><h2 id="gin-rummy-opponent">${escapeGrowthHtml(fields.opponentHand)}</h2><div class="gin-rummy__cards" data-opponent-hand aria-label="${escapeGrowthHtml(fields.opponentHand)}"></div></section>
+    <p class="tool-status" data-status role="status" aria-live="polite"></p>
+  </section>`, copy);
 
   if (toolId === 'mulch-calculator') return attachCopy(`<form id="tool-form" novalidate>
     ${label('shape', fields.shape, `<select id="shape" name="shape"><option value="rectangle">${escapeGrowthHtml(labels.rectangle)}</option><option value="circle">${escapeGrowthHtml(labels.circle)}</option></select>`)}
@@ -2690,6 +3053,59 @@ export function renderGrowthForm(toolId, copy) {
     </section>
   </form>`, copy);
 
+  if (toolId === 'breathing-exercise') return attachCopy(`<form id="tool-form" class="breathing-exercise-form" novalidate>
+    ${label('breathing-pattern', fields.pattern, `<select id="breathing-pattern" name="pattern"><option value="balanced">${escapeGrowthHtml(fields.balanced)}</option><option value="box" selected>${escapeGrowthHtml(fields.box)}</option><option value="478">${escapeGrowthHtml(fields.fourSevenEight)}</option><option value="custom">${escapeGrowthHtml(fields.custom)}</option></select>`)}
+    <div class="breathing-settings">
+      ${label('breathing-inhale', fields.inhale, '<input id="breathing-inhale" name="inhaleSeconds" type="number" min="1" max="30" step="1" value="4" inputmode="numeric" required>')}
+      ${label('breathing-hold-in', fields.holdIn, '<input id="breathing-hold-in" name="holdAfterInhaleSeconds" type="number" min="0" max="30" step="1" value="4" inputmode="numeric" required>')}
+      ${label('breathing-exhale', fields.exhale, '<input id="breathing-exhale" name="exhaleSeconds" type="number" min="1" max="30" step="1" value="4" inputmode="numeric" required>')}
+      ${label('breathing-hold-out', fields.holdOut, '<input id="breathing-hold-out" name="holdAfterExhaleSeconds" type="number" min="0" max="30" step="1" value="4" inputmode="numeric" required>')}
+      ${label('breathing-duration', fields.duration, '<input id="breathing-duration" name="durationSeconds" type="number" min="30" max="3600" step="1" value="60" inputmode="numeric" required>')}
+    </div>
+    <label class="field interval-sound"><span>${escapeGrowthHtml(fields.sound)}</span><span><input name="sound" type="checkbox"> ${escapeGrowthHtml(fields.soundHint)}</span></label>
+    <p class="hint">${escapeGrowthHtml(fields.motionNote)}</p><p class="hint">${escapeGrowthHtml(fields.safetyNote)}</p>
+    <div class="actions">${button('start', actions.start)}${button('pause', actions.pause, 'secondary')}${button('resume', actions.resume, 'secondary')}${button('reset', actions.reset, 'secondary')}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="breathing-readout" aria-live="off">
+      <p>${escapeGrowthHtml(fields.phase)}: <strong data-breathing-phase>${escapeGrowthHtml(fields.inhaleCue)}</strong></p>
+      <div class="breathing-orb is-inhale" data-breathing-orb aria-hidden="true"><span>${escapeGrowthHtml(fields.inhaleCue)}</span></div>
+      <p>${escapeGrowthHtml(fields.cycle)}: <span data-breathing-cycle>1</span></p>
+      <p>${escapeGrowthHtml(fields.remaining)}: <strong data-breathing-remaining>01:00</strong></p>
+      <label class="field" for="breathing-progress">${escapeGrowthHtml(fields.remaining)}<progress id="breathing-progress" data-breathing-progress max="1" value="0"></progress></label>
+    </section>
+  </form>`, copy);
+
+  if (toolId === 'alarm-clock') return attachCopy(`<form id="tool-form" class="alarm-clock-form" novalidate>
+    ${label('alarm-clock-time', fields.alarmTime, '<input id="alarm-clock-time" name="alarmTime" type="datetime-local" step="60" required>')}
+    <label class="field alarm-clock-sound"><span>${escapeGrowthHtml(fields.sound)}</span><span><input name="sound" type="checkbox"> ${escapeGrowthHtml(fields.soundHint)}</span></label>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('schedule', actions.schedule)}${button('testSound', actions.testSound, 'secondary')}${button('cancel', actions.cancel, 'secondary')}${button('snooze', actions.snooze, 'secondary')}${button('stop', actions.stop, 'secondary')}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="alarm-clock-display" aria-live="off">
+      <p>${escapeGrowthHtml(fields.scheduledFor)}: <strong data-alarm-target>—</strong></p>
+      <p>${escapeGrowthHtml(fields.timeRemaining)}: <strong data-alarm-remaining>—</strong></p>
+      <p class="alarm-clock-display__ringing" data-alarm-ringing hidden>${escapeGrowthHtml(fields.alarmRinging)}</p>
+    </section>
+  </form>`, copy);
+
+  if (toolId === 'dividend-calculator') return attachCopy(`<form id="tool-form" class="dividend-calculator-form" novalidate>
+    <div class="calculator-grid">
+      ${label('dividend-shares', fields.shares, '<input id="dividend-shares" name="shares" type="number" min="0.000001" max="1000000000" step="any" inputmode="decimal" value="100" required>')}
+      ${label('dividend-share-price', fields.sharePrice, '<input id="dividend-share-price" name="sharePrice" type="number" min="0.000001" max="1000000000" step="any" inputmode="decimal" value="40" required>')}
+      ${label('dividend-per-share', fields.annualDividendPerShare, '<input id="dividend-per-share" name="annualDividendPerShare" type="number" min="0" max="1000000000" step="any" inputmode="decimal" value="2" required>')}
+      ${label('dividend-frequency', fields.paymentsPerYear, `<select id="dividend-frequency" name="paymentsPerYear"><option value="1">${escapeGrowthHtml(fields.annual)}</option><option value="2">${escapeGrowthHtml(fields.semiannual)}</option><option value="4" selected>${escapeGrowthHtml(fields.quarterly)}</option><option value="12">${escapeGrowthHtml(fields.monthly)}</option></select>`)}
+      ${label('dividend-growth', fields.dividendGrowthPercent, '<input id="dividend-growth" name="dividendGrowthPercent" type="number" min="-99" max="1000" step="any" inputmode="decimal" value="0">')}
+      ${label('dividend-price-growth', fields.priceGrowthPercent, '<input id="dividend-price-growth" name="priceGrowthPercent" type="number" min="-99" max="1000" step="any" inputmode="decimal" value="0">')}
+      ${label('dividend-years', fields.years, '<input id="dividend-years" name="years" type="number" min="1" max="50" step="1" inputmode="numeric" value="10" required>')}
+      ${label('dividend-currency', fields.currencyCode, '<input id="dividend-currency" name="currencyCode" type="text" minlength="3" maxlength="3" pattern="[A-Za-z]{3}" value="USD" autocomplete="off" required>')}
+    </div>
+    <label class="field dividend-reinvest"><span><input name="reinvestDividends" type="checkbox"> ${escapeGrowthHtml(fields.reinvestDividends)}</span></label>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(copy.actions.result)}</h2><div data-result-content></div>${button('copy', copy.actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
   if (toolId === 'friction-calculator') return attachCopy(`<form id="tool-form" novalidate>
     ${label('friction-mode', fields.mode, `<select id="friction-mode" name="mode"><option value="normal">${escapeGrowthHtml(labels.normalMode)}</option><option value="incline">${escapeGrowthHtml(labels.inclineMode)}</option></select>`)}
     <div data-friction-fields="normal">
@@ -2962,6 +3378,45 @@ export function renderGrowthForm(toolId, copy) {
       <label for="mind-map-import">${escapeGrowthHtml(actions.importJson)}</label><input id="mind-map-import" name="jsonFile" type="file" accept=".json,application/json"><p class="hint">${escapeGrowthHtml(fields.importHint)}</p>
     </section>
   </form>`, copy);
+
+  if (toolId === 'family-tree-maker') return attachCopy(`<form id="tool-form" class="family-tree-maker-form" novalidate>
+    <fieldset><legend>${escapeGrowthHtml(fields.people)}</legend>
+      ${label('family-tree-person-name', fields.personName, '<input id="family-tree-person-name" name="personName" type="text" maxlength="100" autocomplete="off" required>')}
+      <div class="calculator-grid">${label('family-tree-birth', fields.birthDate, '<input id="family-tree-birth" name="birthDate" type="date">')}${label('family-tree-death', fields.deathDate, '<input id="family-tree-death" name="deathDate" type="date">')}</div>
+      ${label('family-tree-notes', fields.notes, '<textarea id="family-tree-notes" name="notes" rows="2" maxlength="500"></textarea>')}
+      <button type="button" data-action="addPerson" class="button button--primary">${escapeGrowthHtml(actions.addPerson)}</button>
+    </fieldset>
+    <fieldset><legend>${escapeGrowthHtml(actions.linkPeople)}</legend>
+      ${label('family-tree-parent', fields.parent, '<select id="family-tree-parent" name="parentId" required><option value=""></option></select>')}
+      ${label('family-tree-child', fields.child, '<select id="family-tree-child" name="childId" required><option value=""></option></select>')}
+      ${label('family-tree-relationship', fields.relationship, `<select id="family-tree-relationship" name="relationship"><option value="biological">${escapeGrowthHtml(fields.biological)}</option><option value="adoptive">${escapeGrowthHtml(fields.adoptive)}</option><option value="foster">${escapeGrowthHtml(fields.foster)}</option></select>`)}
+      <button type="button" data-action="linkPeople" class="button button--secondary">${escapeGrowthHtml(actions.linkPeople)}</button>
+    </fieldset>
+    <p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <div class="actions"><button type="button" data-action="exportSvg" class="button button--secondary">${escapeGrowthHtml(actions.exportSvg)}</button><button type="button" data-action="exportGedcom" class="button button--secondary">${escapeGrowthHtml(actions.exportGedcom)}</button><button type="button" data-action="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden><h2>${escapeGrowthHtml(actions.result)}</h2><ul data-family-people aria-label="${escapeGrowthHtml(fields.people)}"></ul><div data-family-svg></div></section>
+  </form>`, copy);
+
+  if (toolId === 'net-worth-calculator') {
+    const fieldsList = [
+      ['assetCash', 'asset', 'cash'], ['assetInvestments', 'asset', 'investments'], ['assetProperty', 'asset', 'property'], ['assetVehicles', 'asset', 'vehicles'], ['assetOther', 'asset', 'other'],
+      ['liabilityCreditCards', 'liability', 'creditCards'], ['liabilityMortgage', 'liability', 'mortgage'], ['liabilityStudentLoans', 'liability', 'studentLoans'], ['liabilityAutoLoans', 'liability', 'autoLoans'], ['liabilityOther', 'liability', 'other'],
+    ];
+    const renderEntry = ([labelKey, type, key]) => label(`net-worth-${key}`, fields[labelKey], `<input id="net-worth-${key}" name="${type}-${key}" type="number" min="0" max="1000000000000" step="any" inputmode="decimal" value="0">`);
+    const assetEntries = fieldsList.slice(0, 5).map(renderEntry).join('');
+    const liabilityEntries = fieldsList.slice(5).map(renderEntry).join('');
+    return attachCopy(`<form id="tool-form" class="net-worth-calculator-form" novalidate>
+      <div class="calculator-grid">${label('net-worth-currency', fields.currencyCode, '<input id="net-worth-currency" name="currencyCode" type="text" minlength="3" maxlength="3" pattern="[A-Za-z]{3}" value="USD" required>')}${label('net-worth-date', fields.date, '<input id="net-worth-date" name="date" type="date" required>')}</div>
+      <fieldset><legend>${escapeGrowthHtml(fields.assets)}</legend>${assetEntries}</fieldset>
+      <fieldset><legend>${escapeGrowthHtml(fields.liabilities)}</legend>${liabilityEntries}</fieldset>
+      <label class="choice" for="net-worth-consent"><input id="net-worth-consent" name="consent" type="checkbox"><span>${escapeGrowthHtml(fields.consent)}</span></label>
+      <p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+      <div class="actions"><button type="submit" data-action="calculate" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="button" data-action="saveSnapshot" class="button button--secondary" disabled>${escapeGrowthHtml(actions.saveSnapshot)}</button><button type="button" data-action="exportCsv" class="button button--secondary">${escapeGrowthHtml(actions.exportCsv)}</button><button type="button" data-action="deleteHistory" class="button button--secondary">${escapeGrowthHtml(actions.deleteHistory)}</button></div>
+      <p class="status" role="status" aria-live="polite" data-status></p>
+      <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-net-worth-results></div><h3>${escapeGrowthHtml(fields.snapshotHistory)}</h3><ul data-net-worth-history></ul></section>
+    </form>`, copy);
+  }
 
   if (toolId === 'mood-tracker') {
     const moodOptions = [1, 2, 3, 4, 5].map((score) => `<option value="${score}">${escapeGrowthHtml(fields[`mood${score}`])}</option>`).join('');

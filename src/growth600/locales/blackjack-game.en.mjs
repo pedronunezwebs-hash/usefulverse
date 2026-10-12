@@ -1,0 +1,32 @@
+export const blackjackGameEnglishCopy = Object.freeze({
+  copyLanguage: 'en', localizationStatus: 'approved', name: 'Blackjack Practice Game',
+  title: 'Blackjack Game — Free Practice, No Bets | UsefulVerse',
+  description: 'Play free blackjack practice in your browser. Learn hit, stand, double, and split with clear rules, no bets, and no real money.',
+  intro: 'Practice a hand of blackjack against the dealer. Learn the card values, hit, stand, double, or split matching pairs. No bets, prizes, accounts, or real money.',
+  howQuestion: 'How do you play blackjack?',
+  howAnswer: 'Try to get closer to 21 than the dealer without going over. Aces count as 1 or 11, face cards count as 10, and matching pairs can be split under the displayed rules.',
+  privacyQuestion: 'Does this blackjack game use real money?',
+  privacyAnswer: 'No. This is a local practice game with no wagers, deposits, prizes, or real-money features.',
+  fields: Object.freeze({
+    decks: 'Decks in the shoe', oneDeck: '1 deck', twoDecks: '2 decks', fourDecks: '4 decks', sixDecks: '6 decks',
+    hitSoft17: 'Dealer hits soft 17', rules: 'Rules', rulesText: 'Dealer stands on soft 17 unless you select the option above. Double is allowed on a two-card hand. Split matching ranks up to four hands; split aces receive one card each and stand.',
+    noWager: 'Practice only. There are no bets, chips with value, deposits, prizes, or real money.', dealer: 'Dealer', player: 'Your hand', score: 'Practice results',
+    total: 'Total', soft: 'Soft hand', bust: 'Bust', blackjack: 'Blackjack', hiddenCard: 'Hidden card',
+    cardDescription: '{rank} of {suit}', ace: 'Ace', jack: 'Jack', queen: 'Queen', king: 'King',
+    spades: 'spades', hearts: 'hearts', diamonds: 'diamonds', clubs: 'clubs',
+    wins: 'Hands won', losses: 'Hands lost', pushes: 'Ties', accuracyNote: 'This is a practice simulation. It does not teach or recommend gambling, and results do not guarantee outcomes in any casino.', privacyNote: 'The game runs in this browser tab. It does not upload or automatically save your cards or results.',
+  }),
+  actions: Object.freeze({ start: 'Deal practice hand', hit: 'Hit', stand: 'Stand', double: 'Double', split: 'Split', nextRound: 'Deal next hand', newShoe: 'Start a new shoe', result: 'Hand status' }),
+  messages: Object.freeze({
+    yourTurn: 'Your turn. Choose hit, stand, or an available option.', dealerTurn: 'Dealer is playing.',
+    natural: 'Blackjack! You win this hand.', dealerNatural: 'Dealer has blackjack. You lose this hand.', naturalPush: 'Both have blackjack. This hand is a tie.',
+    win: 'You win this hand.', loss: 'Dealer wins this hand.', push: 'This hand is a tie.',
+    bust: 'You went over 21. Dealer wins this hand.', dealerBust: 'Dealer went over 21. You win.', handStarted: 'New practice hand dealt.', shoeStarted: 'New practice shoe shuffled.',
+    checkInputs: 'Choose valid game rules and try again.', noRound: 'Deal a hand to begin.',
+  }),
+  additionalFaqs: Object.freeze([
+    Object.freeze({ question: 'Can I bet or win money in this blackjack game?', answer: 'No. It is a practice simulation only. There are no bets, deposits, prizes, cash, or real-money features.' }),
+    Object.freeze({ question: 'When can I split a blackjack hand?', answer: 'You can split the first two cards when their ranks match, up to four hands. Split aces receive one card each and then stand.' }),
+    Object.freeze({ question: 'How are aces counted?', answer: 'An ace starts as 11. If that would make the hand exceed 21, it counts as 1 instead. The hand total updates using that rule.' }),
+  ]),
+});

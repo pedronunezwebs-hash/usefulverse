@@ -1,0 +1,27 @@
+export const vo2MaxCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en', localizationStatus: 'approved', name: 'VO2 Max Calculator',
+  title: 'VO2 Max Calculator Free | UsefulVerse',
+  description: 'Estimate VO2 max with the Cooper run or Rockport walk test. Free browser calculator with clear method limits.',
+  intro: 'Estimate aerobic capacity from a 12-minute Cooper run or a one-mile Rockport walk. Select the method whose test you completed and enter its measurements.',
+  howQuestion: 'How can I estimate VO2 max with a field test?',
+  howAnswer: 'The Cooper estimate uses distance covered in 12 minutes. The Rockport estimate uses a one-mile fast walk, age, weight, the equation’s male/female coefficient, walk time, and finishing heart rate. Each is a population-based prediction, not a lab measurement.',
+  privacyQuestion: 'Are my fitness test results uploaded?',
+  privacyAnswer: 'No. The estimate is calculated in this browser tab and is not uploaded or automatically saved.',
+  fields: Object.freeze({
+    method: 'Field test', cooper: 'Cooper 12-minute run', rockport: 'Rockport one-mile walk', distance: 'Distance covered in 12 minutes', distanceUnit: 'Distance unit', meters: 'Meters', kilometers: 'Kilometers', miles: 'Miles',
+    age: 'Age (years)', weight: 'Body weight', weightUnit: 'Weight unit', kilograms: 'Kilograms', pounds: 'Pounds', equationSex: 'Equation coefficient', maleCoefficient: 'Male coefficient (1)', femaleCoefficient: 'Female coefficient (0)',
+    walkMinutes: 'One-mile walk time (minutes)', walkSeconds: 'Additional seconds', finishHeartRate: 'Heart rate immediately after the walk (bpm)',
+    protocolNote: 'Rockport protocol: walk one measured mile as quickly as you safely can; record the time and heart rate immediately at the finish. Do not run this test.',
+    accuracyNote: 'Field-test equations only estimate aerobic capacity. Results can differ from a supervised laboratory measurement and may not fit every person or population. No fitness category or diagnosis is assigned.',
+    safetyNote: 'The Cooper test is strenuous. Do not attempt a maximal effort if you are unwell, have symptoms, or have been advised to avoid vigorous exercise. Stop if you feel unwell; ask a qualified clinician about personal safety.',
+    sourceNote: 'Sources: Cooper, JAMA. 1968;203(3):201–204. doi:10.1001/jama.1968.03140030033008. Kline et al., Med Sci Sports Exerc. 1987;19(3):253–259. PMID:3600239.',
+    privacyNote: 'Your entries stay in this browser tab. They are not uploaded or automatically saved.', resultTitle: 'Estimated VO2 max', unitLabel: 'Milliliters of oxygen per kilogram per minute', formulaLabel: 'Method used', resultCooper: 'Cooper 12-minute run estimate', resultRockport: 'Rockport one-mile walk estimate',
+  }),
+  actions: Object.freeze({ calculate: 'Estimate VO2 max', example: 'Load example', reset: 'Reset', result: 'VO2 max estimate', copy: 'Copy result' }),
+  messages: Object.freeze({ calculated: 'Estimate calculated.', checkInputs: 'Check the test method and measurements.', copied: 'Result copied.', copyUnavailable: 'Copy is not available in this browser.' }),
+  additionalFaqs: Object.freeze([
+    Object.freeze({ question: 'What does the Cooper test estimate use?', answer: 'It uses the distance covered during a 12-minute run. The estimate is a regression from a field test; it is not a direct oxygen-consumption measurement.' }),
+    Object.freeze({ question: 'What measurements does the Rockport walk estimate need?', answer: 'The original equation uses a one-mile walk time, finishing heart rate, age, weight, and a binary sex coefficient. Its source study involved healthy adults ages 30–69; the result should not be treated as a universal prediction.' }),
+    Object.freeze({ question: 'Is a VO2 max field-test estimate a medical result?', answer: 'No. It is an approximate fitness estimate and can differ from laboratory testing. It does not diagnose health or determine whether exercise is safe for you.' }),
+  ]),
+});

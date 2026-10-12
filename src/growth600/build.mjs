@@ -49,6 +49,8 @@ async function buildGrowthStaticSiteIntoDirectory({
   if (!outputDir || !Array.isArray(localeEntries) || !localeEntries.length || !styles || !faviconSvg) throw new TypeError('Build directory, locales, stylesheet and favicon are required.');
   if (await stat(outputDir).then(() => true, () => false)) throw new Error(`Refusing to overwrite an existing growth build directory: ${outputDir}`);
   assertGrowthCatalogIsAdditive(currentTools ?? [], tools);
+  const minimumPageCount = localeEntries.length * (tools.length + 1);
+  if (minimumPageCount > maxFiles) throw new Error(`Growth Pages project requires at least ${minimumPageCount} pages; safety cap is ${maxFiles}.`);
   assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale);
   for (const locale of localeEntries) {
     const home = copyByLocale[locale.key]._home;

@@ -18,6 +18,19 @@ import { harViewerEnglishCopy } from './locales/har-viewer.en.mjs';
 import { robotsTxtTesterEnglishCopy } from './locales/robots-txt-tester.en.mjs';
 import { jsonToExcelEnglishCopy } from './locales/json-to-excel.en.mjs';
 import { waistToHipRatioEnglishCopy } from './locales/waist-to-hip-ratio-calculator.en.mjs';
+import { bodySurfaceAreaCalculatorEnglishCopy } from './locales/body-surface-area-calculator.en.mjs';
+import { weeklyPlannerEnglishCopy } from './locales/weekly-planner.en.mjs';
+import { overtimeCalculatorEnglishCopy } from './locales/overtime-calculator.en.mjs';
+import { meetingMinutesTemplateEnglishCopy } from './locales/meeting-minutes-template.en.mjs';
+import { dotsAndBoxesEnglishCopy } from './locales/dots-and-boxes.en.mjs';
+import { colorMixerEnglishCopy } from './locales/color-mixer.en.mjs';
+import { blackjackGameEnglishCopy } from './locales/blackjack-game.en.mjs';
+import { debtToIncomeRatioEnglishCopy } from './locales/debt-to-income-ratio-calculator.en.mjs';
+import { carLeaseCalculatorEnglishCopy } from './locales/car-lease-calculator.en.mjs';
+import { fireCalculatorEnglishCopy } from './locales/fire-calculator.en.mjs';
+import { emailSignatureGeneratorEnglishCopy } from './locales/email-signature-generator.en.mjs';
+import { imageVectorizerEnglishCopy } from './locales/image-vectorizer.en.mjs';
+import { vo2MaxCalculatorEnglishCopy } from './locales/vo2-max-calculator.en.mjs';
 import { hebrewCalendarConverterEnglishCopy } from './locales/hebrew-calendar-converter.en.mjs';
 import { absoluteValueCalculatorEnglishCopy } from './locales/absolute-value-calculator.en.mjs';
 import { binaryBase64ToolEnglishCopy } from './locales/binary-base64-tool.en.mjs';
@@ -38,6 +51,19 @@ import { rsaKeyGeneratorEnglishCopy } from './locales/rsa-key-generator.en.mjs';
 import { logAnalyzerEnglishCopy } from './locales/log-analyzer.en.mjs';
 import { inflationCalculatorEnglishCopy } from './locales/inflation-calculator.en.mjs';
 import { retirementCalculatorEnglishCopy } from './locales/retirement-calculator.en.mjs';
+import { fourOhOneKCalculatorEnglishCopy } from './locales/401k-calculator.en.mjs';
+import { textToSpeechEnglishCopy } from './locales/text-to-speech.en.mjs';
+import { worldClockEnglishCopy } from './locales/world-clock.en.mjs';
+import { euchreEnglishCopy } from './locales/euchre.en.mjs';
+import { nameGeneratorEnglishCopy } from './locales/name-generator.en.mjs';
+import { randomWordGeneratorEnglishCopy } from './locales/random-word-generator.en.mjs';
+import { breathingExerciseEnglishCopy } from './locales/breathing-exercise.en.mjs';
+import { alarmClockEnglishCopy } from './locales/alarm-clock.en.mjs';
+import { dividendCalculatorEnglishCopy } from './locales/dividend-calculator.en.mjs';
+import { familyTreeMakerEnglishCopy } from './locales/family-tree-maker.en.mjs';
+import { netWorthCalculatorEnglishCopy } from './locales/net-worth-calculator.en.mjs';
+import { cribbageEnglishCopy } from './locales/cribbage.en.mjs';
+import { ginRummyEnglishCopy } from './locales/gin-rummy.en.mjs';
 import torqueCalculatorCopies from './locales/torque-calculator.mjs';
 import { beamDeflectionCalculatorEnglishCopy } from './locales/beam-deflection-calculator.en.mjs';
 import { transformerCalculatorEnglishCopy } from './locales/transformer-calculator.en.mjs';
@@ -73,10 +99,11 @@ import { booleanAlgebraCalculatorEnglishCopy } from './locales/boolean-algebra-c
 import { weekNumberCalculatorEnglishCopy } from './locales/week-number-calculator.en.mjs';
 
 const actions = {
-  calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', millimeters: 'Millimeters', feet: 'Feet', inches: 'Inches', squareMeters: 'Square meters', squareFeet: 'Square feet', cubicMeters: 'Cubic meters', cubicFeet: 'Cubic feet', kelvin: 'Kelvin difference', fahrenheit: 'Fahrenheit difference', kilowatts: 'Kilowatts (kW)', btuPerHour: 'BTU per hour (BTU/h)', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.', kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only', productionMode: 'Estimate array output', sizingMode: 'Size for daily use', years: 'years', add: 'Add', subtract: 'Subtract', multiply: 'Multiply', divide: 'Divide', magnitude: 'Modulus', argument: 'Argument', rectangularToPolar: 'Rectangular to polar', polarToRectangular: 'Polar to rectangular', roots: 'Nth roots',
+  calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', copyHtml: 'Copy HTML', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', millimeters: 'Millimeters', feet: 'Feet', inches: 'Inches', squareMeters: 'Square meters', squareFeet: 'Square feet', cubicMeters: 'Cubic meters', cubicFeet: 'Cubic feet', kelvin: 'Kelvin difference', fahrenheit: 'Fahrenheit difference', kilowatts: 'Kilowatts (kW)', btuPerHour: 'BTU per hour (BTU/h)', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.', kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only', productionMode: 'Estimate array output', sizingMode: 'Size for daily use', years: 'years', add: 'Add', subtract: 'Subtract', multiply: 'Multiply', divide: 'Divide', magnitude: 'Modulus', argument: 'Argument', rectangularToPolar: 'Rectangular to polar', polarToRectangular: 'Polar to rectangular', roots: 'Nth roots',
 };
 const messages = { copied: 'Copied.', copyUnavailable: 'Copy is unavailable.', calculated: 'Calculation complete.', sameSize: 'These tire sizes are the same.', checkInputs: 'Check your entries.', diameter: 'Nominal outside diameter', sidewall: 'Sidewall height', circumference: 'Nominal circumference', revolutions: 'Revolutions per kilometre', diameterDifference: 'Diameter difference', diameterChange: 'Diameter change', groundClearance: 'Estimated ground-clearance change', actualSpeed: 'Estimated actual speed', area: 'Area', volume: 'Volume', liters: 'Litres', usGallons: 'US gallons', imperialGallons: 'Imperial gallons', averageDepth: 'Average depth', orderVolume: 'Order volume', estimatedWeight: 'Estimated weight', bagsToBuy: 'Bags to buy', invalidFormula: 'Check the chemical formula.', atomCount: 'atoms', molarMass: 'Molar mass', estimateOnly: 'Estimate only; compare lender offers.', currentPayment: 'Current monthly payment', newPayment: 'New monthly payment', paymentDifference: 'Monthly payment difference', currentTotal: 'Current remaining total', newTotal: 'New loan total', estimatedDifference: 'Estimated savings (negative means higher cost)', breakEven: 'Break-even', noBreakEven: 'No break-even within the compared terms', monthCount: '{count} months', privatePair: '{giver} gives to {recipient}', allRevealed: 'All pairs revealed.', drawReady: 'Draw ready. Reveal one person at a time.', checkNamesAndRules: 'Check the names and exclusions.', downloaded: 'Downloaded.', riserHeight: 'Riser height', treadCount: 'Tread count', totalRun: 'Total run', angle: 'Angle', stringerLength: 'Stringer length', diagram: 'Stair side view', pit: 'Pit', seeds: 'seeds', playerOne: 'Player one', playerTwo: 'Player two', playerOneWins: 'Player one wins.', playerTwoWins: 'Player two wins.', tie: 'Tie game.', gameOver: 'Game over.', turn: '{player} to move.', angleDegrees: 'Angle', angleRadians: 'Angle in radians', slopePercent: 'Slope', pitch: 'Rise per 12 run', rafterLength: 'Rafter length', wallArea: 'Net wall area', ceilingArea: 'Ceiling area', totalArea: 'Total surface area', boardCount: 'Whole boards', boardCoverage: 'Board coverage', estimatedScrews: 'Estimated screws', jointSeams: 'Joint seams', estimatedCost: 'Estimated cost', costNotEntered: 'Enter price.', costEstimateNote: 'Currency is not assumed.' };
 const copies = {
+  '401k-calculator': fourOhOneKCalculatorEnglishCopy,
   'transformer-calculator': transformerCalculatorEnglishCopy,
   'stoichiometry-calculator': stoichiometryCalculatorEnglishCopy,
   'pressure-calculator': pressureCalculatorEnglishCopy,
@@ -136,6 +163,29 @@ const copies = {
     messages: { ...messages, played: 'Tile played.', drew: 'Tile drawn.', passed: 'Turn passed.', noMoves: 'No legal move.', stockEmpty: 'The stock is empty.' },
     fields: { mode: 'Play mode', variant: 'Rules', board: 'Domino line', stock: 'Tiles left', hand: 'Your tiles', opponentHand: 'Opponent tiles', accuracyNote: 'Local play only.', rules: 'Match one open end.' },
   },
+  euchre: euchreEnglishCopy,
+  'name-generator': nameGeneratorEnglishCopy,
+  'random-word-generator': randomWordGeneratorEnglishCopy,
+  'breathing-exercise': breathingExerciseEnglishCopy,
+  'alarm-clock': alarmClockEnglishCopy,
+  'dividend-calculator': dividendCalculatorEnglishCopy,
+  'family-tree-maker': familyTreeMakerEnglishCopy,
+  'net-worth-calculator': netWorthCalculatorEnglishCopy,
+  'body-surface-area-calculator': bodySurfaceAreaCalculatorEnglishCopy,
+  'weekly-planner': weeklyPlannerEnglishCopy,
+  'overtime-calculator': overtimeCalculatorEnglishCopy,
+  'meeting-minutes-template': meetingMinutesTemplateEnglishCopy,
+  'dots-and-boxes': dotsAndBoxesEnglishCopy,
+  'color-mixer': colorMixerEnglishCopy,
+  'blackjack-game': blackjackGameEnglishCopy,
+  'debt-to-income-ratio-calculator': debtToIncomeRatioEnglishCopy,
+  'car-lease-calculator': carLeaseCalculatorEnglishCopy,
+  'fire-calculator': fireCalculatorEnglishCopy,
+  'email-signature-generator': emailSignatureGeneratorEnglishCopy,
+  'image-vectorizer': imageVectorizerEnglishCopy,
+  'vo2-max-calculator': vo2MaxCalculatorEnglishCopy,
+  cribbage: cribbageEnglishCopy,
+  'gin-rummy': ginRummyEnglishCopy,
   hitori: {
     name: 'Hitori puzzle', actions: { ...actions, newGame: 'New puzzle', checkBoard: 'Check board', hint: 'Hint', clearMarks: 'Clear marks', easy: 'Easy', medium: 'Medium', hard: 'Hard' },
     messages: { ...messages },
@@ -513,6 +563,8 @@ copies['json-to-xml-converter'] = { ...jsonToXmlEnglishCopy };
   copies['log-analyzer'] = { ...logAnalyzerEnglishCopy };
   copies['inflation-calculator'] = { ...inflationCalculatorEnglishCopy };
   copies['retirement-calculator'] = { ...retirementCalculatorEnglishCopy };
+  copies['text-to-speech'] = { ...textToSpeechEnglishCopy };
+  copies['world-clock'] = { ...worldClockEnglishCopy };
   copies['beam-deflection-calculator'] = { ...beamDeflectionCalculatorEnglishCopy };
 copies['savings-goal-calculator'] = { name: 'Savings Goal Calculator', actions: { ...actions, requiredContribution: 'Monthly deposit needed', monthsToGoal: 'Time needed for my deposit', beginning: 'Beginning of month', end: 'End of month' }, messages: { ...messages }, fields: { mode: 'Calculation', startingBalance: 'Current savings', targetAmount: 'Savings target', annualRatePercent: 'Annual rate', months: 'Months', monthlyContribution: 'Monthly deposit', contributionTiming: 'Deposit timing', accuracyNote: 'Estimate only.', resultSummary: 'Estimate', monthlyResult: 'Required deposit', monthsResult: 'Months', projectedBalance: 'Projected balance', totalContributions: 'Deposits', estimatedInterest: 'Estimated interest', currencyNote: 'Use the same currency.' } };
 copies['severance-pay-calculator'] = { name: 'Severance Pay Calculator', actions: { ...actions, customMode: 'Custom assumptions', ukMode: 'Great Britain statutory estimate' }, messages: { ...messages, calculationFailed: 'Could not calculate.', exampleLoaded: 'Example loaded.', calculateFirst: 'Calculate first.', belowServiceMinimum: 'Fewer than two completed years.', capApplied: 'A cap applied.', noCapApplied: 'No cap applied.', customAssumptions: 'Custom assumptions.' }, fields: { mode: 'Calculation type', weeklyPay: 'Average gross weekly pay', yearsOfService: 'Years of service', weeksPerYear: 'Weeks per year', birthDate: 'Birth date', employmentStartDate: 'Employment start date', redundancyDate: 'Redundancy date', accuracyNote: 'Estimate only.', customNote: 'Uses your assumptions.', ukNote: 'Great Britain estimate; enter GBP.', officialSource: 'Official guidance', estimate: 'Estimated amount', appliedWeeklyPay: 'Weekly pay used', totalWeeks: 'Weeks of pay', rulesAsOf: 'Rules from', resultSummary: 'Estimate details' } };
@@ -885,6 +937,187 @@ test('dominoes form exposes localized play modes, draw/block choices, board, sto
   assert.match(html, /data-action="draw"/u);
   assert.match(html, /data-action="pass"/u);
   assert.match(html, /aria-live="polite"/u);
+});
+
+test('Euchre form exposes localized score, bidding, trump, hand, trick and rules controls', () => {
+  const html = renderGrowthForm('euchre', copies.euchre);
+  for (const marker of ['data-target', 'data-score="0"', 'data-dealer', 'data-upcard', 'data-trump', 'data-tricks', 'data-bidding', 'data-trump-choice-select', 'data-trick', 'data-hand']) assert.ok(html.includes(marker), marker);
+  for (const action of ['new-game', 'order-up', 'name-trump', 'pass', 'discard']) assert.ok(html.includes(`data-action="${action}"`), action);
+  assert.match(html, /role="status" aria-live="polite"/u);
+});
+
+test('Name Generator renders bounded style, keyword, reproducible seed, list and local export controls', () => {
+  const html = renderGrowthForm('name-generator', copies['name-generator']);
+  for (const value of ['fantasy', 'business', 'username']) assert.ok(html.includes(`value="${value}"`), value);
+  for (const marker of ['maxlength="40"', 'maxlength="80"', 'data-name-results', 'data-name-seed', 'data-action="generateNames"', 'data-action="download"']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /trademarks, usernames and domains are not checked/u);
+  assert.match(html, /role="status" aria-live="polite"/u);
+});
+
+test('Random Word Generator renders category and length filters with copy and download actions', () => {
+  const html = renderGrowthForm('random-word-generator', randomWordGeneratorEnglishCopy);
+  for (const marker of ['name="category"', 'name="minLength"', 'name="maxLength"', 'name="count"', 'name="seed"', 'data-word-results', 'data-action="generateWords"', 'data-action="copy"', 'data-action="download"']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /not a translation or frequency dictionary/u);
+  assert.match(html, /role="status" aria-live="polite"/u);
+});
+
+test('Breathing Exercise renders presets, bounded controls, visual timing, optional sound and clear safety limits', () => {
+  const html = renderGrowthForm('breathing-exercise', breathingExerciseEnglishCopy);
+  for (const marker of ['name="pattern"', 'value="478"', 'name="inhaleSeconds"', 'max="30"', 'name="durationSeconds"', 'max="3600"', 'name="sound"', 'data-breathing-orb', 'data-breathing-progress', 'data-action="start"', 'data-action="pause"', 'data-action="resume"', 'data-action="reset"']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /not medical care/u);
+  assert.match(html, /reduced motion/u);
+  assert.match(html, /role="status" aria-live="polite"/u);
+});
+
+test('Online Alarm Clock renders local date/time, optional sound, snooze and browser timing limits', () => {
+  const html = renderGrowthForm('alarm-clock', alarmClockEnglishCopy);
+  for (const marker of ['name="alarmTime"', 'type="datetime-local"', 'name="sound"', 'data-action="schedule"', 'data-action="testSound"', 'data-action="snooze"', 'data-action="stop"', 'data-alarm-remaining']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /page open and the device awake/u);
+  assert.match(html, /role="status" aria-live="polite"/u);
+});
+
+test('Dividend Calculator renders the inputs needed for income, yield and optional DRIP projections', () => {
+  const html = renderGrowthForm('dividend-calculator', dividendCalculatorEnglishCopy);
+  for (const marker of ['name="shares"', 'name="sharePrice"', 'name="annualDividendPerShare"', 'name="paymentsPerYear"', 'name="dividendGrowthPercent"', 'name="priceGrowthPercent"', 'name="years"', 'name="currencyCode"', 'name="reinvestDividends"', 'data-action="example"', 'data-action="calculate"', 'data-action="copy"']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /no live prices, taxes, fees or inflation/u);
+  assert.match(html, /not guarantees or investment advice/u);
+});
+
+test('Family Tree Maker renders separate person and parent-link flows with local export actions', () => {
+  const html = renderGrowthForm('family-tree-maker', familyTreeMakerEnglishCopy);
+  for (const marker of ['name="personName"', 'name="birthDate"', 'name="deathDate"', 'name="notes"', 'name="parentId"', 'name="childId"', 'name="relationship"', 'data-action="addPerson"', 'data-action="linkPeople"', 'data-action="exportSvg"', 'data-action="exportGedcom"', 'data-family-svg']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /Family details can be sensitive/u);
+  assert.match(html, /not uploaded/u);
+});
+
+test('Net Worth Calculator renders balance categories and a separate local-storage consent gate', () => {
+  const html = renderGrowthForm('net-worth-calculator', netWorthCalculatorEnglishCopy);
+  for (const marker of ['name="asset-cash"', 'name="asset-investments"', 'name="liability-creditCards"', 'name="liability-mortgage"', 'name="currencyCode"', 'name="date"', 'name="consent"', 'data-action="saveSnapshot"', 'data-action="exportCsv"', 'data-action="deleteHistory"']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /Browser storage is off unless you check the consent box/u);
+  assert.match(html, /Saving is optional, local to this browser/u);
+});
+
+test('Body Surface Area Calculator renders unit choices, both formula estimates and clinical limits', () => {
+  const html = renderGrowthForm('body-surface-area-calculator', bodySurfaceAreaCalculatorEnglishCopy);
+  for (const marker of ['name="height"', 'name="heightUnit"', 'name="weight"', 'name="weightUnit"', 'value="cm"', 'value="in"', 'value="kg"', 'value="lb"', 'data-action="example"', 'data-action="calculate"', 'data-action="copy"']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /Do not use these estimates for medication doses/u);
+  assert.match(html, /data-result-content/u);
+});
+
+test('Weekly Planner renders day blocks, conflict-capable schedule and explicit local backup controls', () => {
+  const html = renderGrowthForm('weekly-planner', weeklyPlannerEnglishCopy);
+  for (const marker of ['name="day"', 'name="title"', 'name="start"', 'name="end"', 'name="category"', 'data-weekly-blocks', 'data-action="addBlock"', 'data-action="download"', 'data-action="import"', 'data-action="print"', 'name="backupFile"']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /does not account for time zones/u);
+  assert.match(html, /no automatic storage or upload/u);
+});
+
+test('Overtime Calculator requires user-entered pay assumptions and disclaims jurisdiction rules', () => {
+  const html = renderGrowthForm('overtime-calculator', overtimeCalculatorEnglishCopy);
+  for (const marker of ['name="totalHours"', 'name="hourlyRate"', 'name="thresholdHours"', 'name="overtimeMultiplier"', 'data-action="example"', 'data-action="calculate"', 'data-action="copy"']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /No country or employer rules are assumed/u);
+  assert.match(html, /not stored or uploaded/u);
+});
+
+test('Meeting Minutes Template captures structured notes and owned/date action items locally', () => {
+  const html = renderGrowthForm('meeting-minutes-template', meetingMinutesTemplateEnglishCopy);
+  for (const marker of ['name="title"', 'name="date"', 'name="facilitator"', 'name="attendees"', 'name="agenda"', 'name="decisions"', 'name="actions"', 'data-minutes-preview', 'data-action="preview"', 'data-action="download"', 'data-action="print"']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /not an automatic meeting recorder/u);
+  assert.match(html, /does not automatically save or upload/u);
+});
+
+test('Dots and Boxes exposes a keyboard/touch board, local modes and accessible score/status', () => {
+  const html = renderGrowthForm('dots-and-boxes', dotsAndBoxesEnglishCopy);
+  for (const marker of ['name="boardSize"', 'name="mode"', 'value="computer"', 'value="two-player"', 'data-dots-board', 'data-dots-score', 'data-dots-status', 'data-action="newGame"', 'role="group"']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /simple local strategy/u);
+  assert.match(html, /No account, upload, online opponent/u);
+  assert.equal(dotsAndBoxesEnglishCopy.additionalFaqs.length, 3);
+});
+
+test('Color Mixer renders bounded local color rows, explicit math modes and export actions', () => {
+  const html = renderGrowthForm('color-mixer', colorMixerEnglishCopy);
+  for (const marker of ['name="color-0"', 'name="color-hex-0"', 'name="weight-0"', 'name="space"', 'name="steps"', 'data-action="addColor"', 'data-action="calculate"', 'data-action="copy"', 'data-action="download"', 'data-color-ramp']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /not how real paint or pigments will mix/u);
+  assert.match(html, /not uploaded or automatically saved/u);
+  assert.equal(colorMixerEnglishCopy.additionalFaqs.length, 3);
+});
+
+test('Blackjack renders a practice-only table and gates hit, double and split controls in its local controller', () => {
+  const html = renderGrowthForm('blackjack-game', blackjackGameEnglishCopy);
+  for (const marker of ['name="decks"', 'name="hitSoft17"', 'data-blackjack-table', 'data-blackjack-dealer', 'data-blackjack-players', 'data-blackjack-stats', 'data-action="start"', 'data-action="hit"', 'data-action="stand"', 'data-action="double"', 'data-action="split"', 'data-action="nextRound"', 'data-action="newShoe"', 'aria-live="polite"']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /no bets, chips with value, deposits, prizes, or real money/u);
+  assert.match(html, /does not upload or automatically save/u);
+  assert.equal(blackjackGameEnglishCopy.additionalFaqs.length, 3);
+});
+
+test('Debt-to-Income form separates gross income, housing, other debt and the no-approval boundary', () => {
+  const html = renderGrowthForm('debt-to-income-ratio-calculator', debtToIncomeRatioEnglishCopy);
+  for (const marker of ['name="grossMonthlyIncome"', 'name="housingPayment"', 'name="debt1"', 'name="debt4"', 'data-dti-values', 'data-action="calculate"', 'data-action="example"', 'data-action="copy"']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /does not determine approval or a safe borrowing amount/u);
+  assert.match(html, /They are not uploaded or automatically saved/u);
+  assert.equal(debtToIncomeRatioEnglishCopy.additionalFaqs.length, 3);
+});
+
+test('Car Lease form exposes the lease-specific inputs, formulas and cost boundary', () => {
+  const html = renderGrowthForm('car-lease-calculator', carLeaseCalculatorEnglishCopy);
+  for (const marker of ['name="capitalizedCost"', 'name="residualValue"', 'name="termMonths"', 'name="moneyFactor"', 'name="capCostReduction"', 'name="taxPercent"', 'data-action="calculate"', 'data-action="example"', 'data-action="copy"']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /Tax is applied only to the estimated pre-tax monthly payment/u);
+  assert.match(html, /not uploaded or automatically saved/u);
+  assert.equal(carLeaseCalculatorEnglishCopy.additionalFaqs.length, 3);
+});
+
+test('FIRE form distinguishes the target formula from the assumption-based timeline', () => {
+  const html = renderGrowthForm('fire-calculator', fireCalculatorEnglishCopy);
+  for (const marker of ['name="annualSpending"', 'name="withdrawalRatePercent"', 'name="currentPortfolio"', 'name="monthlyContribution"', 'name="expectedAnnualReturnPercent"', 'name="inflationPercent"', 'data-action="calculate"', 'data-action="example"', 'data-action="copy"']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /does not promise financial independence/u);
+  assert.match(html, /not uploaded or automatically saved/u);
+  assert.equal(fireCalculatorEnglishCopy.additionalFaqs.length, 3);
+});
+
+test('Email Signature Generator renders safe local identity, optional logo, preview and copy/download actions', () => {
+  const html = renderGrowthForm('email-signature-generator', emailSignatureGeneratorEnglishCopy);
+  for (const marker of ['name="fullName"', 'name="jobTitle"', 'name="organization"', 'name="email"', 'name="phone"', 'name="website"', 'name="accentColor"', 'name="logoFile"', 'accept="image/png,image/jpeg,image/gif"', 'data-signature-preview', 'data-signature-html', 'data-action="generate"', 'data-action="copy"', 'data-action="copyHtml"', 'data-action="download"', 'aria-live="polite"']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /some email apps remove embedded images/u);
+  assert.match(html, /not uploaded or automatically saved/u);
+  assert.equal(emailSignatureGeneratorEnglishCopy.additionalFaqs.length, 3);
+});
+
+test('Image Vectorizer exposes bounded raster controls and a real downloadable SVG preview', () => {
+  const html = renderGrowthForm('image-vectorizer', imageVectorizerEnglishCopy);
+  for (const marker of ['name="imageFile"', 'accept="image/png,image/jpeg,image/webp,image/gif"', 'name="detail"', 'name="paletteCount"', 'name="alphaThreshold"', 'name="mergeRuns"', 'data-vector-preview', 'data-vector-stats', 'data-action="generate"', 'data-action="download"', 'aria-live="polite"']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /does not smooth curves or reproduce photo detail/u);
+  assert.match(html, /not uploaded or automatically saved/u);
+  assert.equal(imageVectorizerEnglishCopy.additionalFaqs.length, 3);
+});
+
+test('VO2 Max calculator renders separate Cooper and Rockport field-test inputs and safety/source notes', () => {
+  const html = renderGrowthForm('vo2-max-calculator', vo2MaxCalculatorEnglishCopy);
+  for (const marker of ['name="method"', 'data-vo2-cooper', 'data-vo2-rockport', 'name="distance"', 'name="distanceUnit"', 'name="age"', 'name="weight"', 'name="equationSex"', 'name="walkMinutes"', 'name="walkSeconds"', 'name="finishHeartRate"', 'data-vo2-value', 'data-action="calculate"', 'data-action="example"', 'data-action="copy"']) assert.ok(html.includes(marker), marker);
+  assert.match(html, /not a lab measurement/u);
+  assert.match(html, /PMID:3600239/u);
+  assert.match(html, /not uploaded or automatically saved/u);
+  assert.equal(vo2MaxCalculatorEnglishCopy.additionalFaqs.length, 3);
+});
+
+test('Cribbage renders hand scoring plus an accessible full-match board and controls', () => {
+  const html = renderGrowthForm('cribbage', copies.cribbage);
+  assert.equal((html.match(/data-rank/gu) ?? []).length, 5);
+  assert.equal((html.match(/data-suit/gu) ?? []).length, 5);
+  assert.match(html, /data-mode/u);
+  assert.match(html, /value="crib"/u);
+  assert.match(html, /data-action="score-hand"/u);
+  for (const marker of ['data-action="start-match"', 'data-action="new-match"', 'data-action="send-discards"', 'data-action="say-go"', 'data-match-board', 'data-target', 'data-match-hand', 'data-computer-hand', 'data-match-status', 'aria-live="polite"']) assert.ok(html.includes(marker), marker);
+});
+
+test('Gin Rummy renders a private-hand board, stock/discard actions and knock option', () => {
+  const html = renderGrowthForm('gin-rummy', copies['gin-rummy']);
+  assert.match(html, /data-tool="gin-rummy"/u);
+  assert.match(html, /data-hand[^>]+aria-label=/u);
+  assert.match(html, /data-opponent-hand[^>]+aria-label=/u);
+  assert.match(html, /data-action="draw-stock"/u);
+  assert.match(html, /data-action="draw-discard"/u);
+  assert.match(html, /data-action="new-game"/u);
+  assert.match(html, /data-knock/u);
+  assert.match(html, /role="status" aria-live="polite"/u);
 });
 
 test('Hitori form exposes localized grid settings, accessible game grid and rule actions', () => {
@@ -1820,5 +2053,29 @@ test('Retirement Calculator renders the complete comparison form and accessible 
   const html = renderGrowthForm('retirement-calculator', retirementCalculatorEnglishCopy);
   for (const value of ['name="currentAge"', 'name="retirementAge"', 'name="planThroughAge"', 'name="monthlyContribution"', 'name="annualReturnPercent"', 'name="conservativeReturnPercent"', 'name="annualWithdrawal"', 'name="annualInflationPercent"', 'data-retirement-results', 'data-retirement-conservative-ending', 'data-retirement-depletion', 'aria-live="polite"']) assert.ok(html.includes(value), value);
   assert.match(html, /Taxes, fees, pensions, benefits, market volatility/u);
+  assert.doesNotMatch(html, /fetch\(|localStorage/u);
+});
+
+test('401(k) Calculator renders match, vesting and projection controls with accessible results', () => {
+  const html = renderGrowthForm('401k-calculator', fourOhOneKCalculatorEnglishCopy);
+  for (const value of ['name="annualSalary"', 'name="employeeContributionPercent"', 'name="employerMatchPercent"', 'name="matchLimitPercent"', 'name="vestingPercent"', 'name="years"', 'data-401k-results', 'data-401k-years', 'aria-live="polite"']) assert.ok(html.includes(value), value);
+  assert.match(html, /does not apply IRS limits/u);
+  assert.doesNotMatch(html, /fetch\(|localStorage/u);
+});
+
+test('Text to Speech renders a bounded accessible reader with explicit remote-voice controls', () => {
+  const html = renderGrowthForm('text-to-speech', textToSpeechEnglishCopy);
+  for (const value of ['name="text"', 'name="voice"', 'name="showRemote"', 'name="rate"', 'name="pitch"', 'data-character-count', 'data-speech-progress', 'data-action="play"', 'data-action="pause"', 'data-action="resume"', 'data-action="stop"', 'aria-live="polite"']) assert.ok(html.includes(value), value);
+  assert.match(html, /30,000/u);
+  assert.match(html, /not a guarantee/u);
+  assert.match(html, /Does this create an MP3/u);
+  assert.doesNotMatch(html, /data-action="download"/u);
+});
+
+test('World Clock renders city and format selectors, live clock list, and status controls', () => {
+  const html = renderGrowthForm('world-clock', worldClockEnglishCopy);
+  for (const value of ['name="zone"', 'name="hourFormat"', 'data-action="add"', 'data-action="reset"', 'data-world-clocks', 'aria-live="polite"']) assert.ok(html.includes(value), value);
+  assert.match(html, /up to 8 clocks/u);
+  assert.match(html, /No location permission is requested/u);
   assert.doesNotMatch(html, /fetch\(|localStorage/u);
 });

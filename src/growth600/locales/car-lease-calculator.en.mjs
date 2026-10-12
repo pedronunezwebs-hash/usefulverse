@@ -1,0 +1,25 @@
+export const carLeaseCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en', localizationStatus: 'approved', name: 'Car Lease Calculator',
+  title: 'Car Lease Calculator Free | UsefulVerse',
+  description: 'Estimate a car lease payment from price, residual value, term, money factor, cap reduction, and tax. Free, private estimate.',
+  intro: 'Estimate monthly lease payments from the capitalized cost, residual value, lease length, money factor, any cap-cost reduction, and a tax rate you enter.',
+  howQuestion: 'How is a car lease payment estimated?',
+  howAnswer: 'The estimate separates monthly depreciation from the rent charge: depreciation is adjusted capitalized cost minus residual value, divided by the term; the rent charge is their sum multiplied by the money factor. An optional entered tax rate is applied to the pre-tax payment.',
+  privacyQuestion: 'Are my lease details uploaded?',
+  privacyAnswer: 'No. The estimate runs in this browser tab. Inputs are not uploaded or automatically saved.',
+  fields: Object.freeze({
+    capitalizedCost: 'Capitalized cost before reduction', residualValue: 'Estimated residual value', termMonths: 'Lease term (months)', moneyFactor: 'Money factor', capCostReduction: 'Capitalized-cost reduction', taxPercent: 'Tax rate (%)',
+    currencyNote: 'Use one currency for every money amount. Enter the money factor as a decimal, such as 0.002.',
+    accuracyNote: 'Illustrative arithmetic only. A lease quote can include fees, taxes on different bases, incentives, mileage limits, due-at-signing amounts and local rules not modeled here. Verify every number with the lessor.',
+    privacyNote: 'Your entries stay in this browser tab. They are not uploaded or automatically saved.',
+    formulaNote: 'Adjusted cost = capitalized cost − reduction. Monthly depreciation = (adjusted cost − residual) ÷ months. Monthly rent charge = (adjusted cost + residual) × money factor. Tax is applied only to the estimated pre-tax monthly payment.',
+    monthlyDepreciation: 'Monthly depreciation', monthlyRentCharge: 'Monthly rent charge', monthlyPretaxPayment: 'Estimated payment before tax', estimatedMonthlyTax: 'Estimated monthly tax', estimatedMonthlyPayment: 'Estimated monthly payment', estimatedPaymentsPlusCapReduction: 'Payments over term plus cap reduction',
+  }),
+  actions: Object.freeze({ calculate: 'Estimate payment', example: 'Load example', reset: 'Reset', result: 'Lease estimate', copy: 'Copy results' }),
+  messages: Object.freeze({ calculated: 'Lease estimate calculated.', checkInputs: 'Check the amounts, money factor, tax rate, and lease term.', copied: 'Results copied.', copyUnavailable: 'Copy is not available in this browser.' }),
+  additionalFaqs: Object.freeze([
+    Object.freeze({ question: 'What is the money factor?', answer: 'It is a lease pricing input used by this estimate in the rent-charge formula. Enter the factor from a quote; this tool does not convert an APR or verify a lender’s method.' }),
+    Object.freeze({ question: 'Does the monthly estimate include every lease charge?', answer: 'No. The optional tax is applied to this estimate’s pre-tax payment only. Registration, acquisition and disposition fees, insurance, mileage charges, local tax treatment, incentives and amounts due at signing may change an actual quote.' }),
+    Object.freeze({ question: 'Is this a loan payment calculator?', answer: 'No. A lease estimate includes a residual value and a rent charge. It does not calculate ownership, a loan amortization schedule, vehicle value, or whether a lease is affordable.' }),
+  ]),
+});

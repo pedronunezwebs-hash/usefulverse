@@ -1,0 +1,12 @@
+.color-mixer { display: grid; gap: 1rem; }
+.color-mixer__fieldset { min-width: 0; margin: 0; padding: 1rem; border: 1px solid var(--border, #d8dce5); border-radius: .75rem; }
+.color-mixer__fieldset legend { padding-inline: .35rem; font-weight: 700; }
+.color-mixer__row { display: grid; grid-template-columns: minmax(0, 2fr) minmax(7rem, .7fr) auto; align-items: end; gap: .75rem; margin-block: .75rem; }
+.color-mixer__sample { display: grid; grid-template-columns: minmax(3.5rem, .6fr) minmax(7rem, 1fr); gap: .6rem; align-items: end; }
+.color-mixer__sample input[type="color"] { width: 100%; min-height: 2.75rem; padding: .2rem; }
+.color-mixer__result { display: grid; gap: .55rem; }
+.color-mixer__swatch { display: block; width: min(100%, 26rem); height: 4rem; border: 1px solid var(--border, #d8dce5); border-radius: .6rem; }
+.color-mixer__ramp { display: flex; min-height: 2.8rem; overflow: hidden; border-radius: .6rem; }
+.color-mixer__ramp-swatch { flex: 1 1 0; min-width: 0; }
+.color-mixer__row .button:disabled { opacity: .55; cursor: not-allowed; }
+@media (max-width: 36rem) { .color-mixer__row { grid-template-columns: minmax(0, 1fr) auto; } .color-mixer__sample { grid-column: 1 / -1; } .color-mixer__row > .field { min-width: 0; } }

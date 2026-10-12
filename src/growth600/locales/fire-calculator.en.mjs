@@ -1,0 +1,25 @@
+export const fireCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en', localizationStatus: 'approved', name: 'FIRE Calculator',
+  title: 'FIRE Calculator Free | UsefulVerse',
+  description: 'Estimate a financial independence target and timeline from spending, withdrawal rate, savings, returns, and inflation. Free and private.',
+  intro: 'Estimate the portfolio target implied by your annual spending and chosen withdrawal rate, then model how current savings and monthly contributions might approach it.',
+  howQuestion: 'How do you calculate a FIRE number?',
+  howAnswer: 'Divide annual spending by a withdrawal-rate fraction. For example, 40,000 divided by 4% gives a 1,000,000 target. The timeline then applies the entered nominal-return and inflation assumptions to the current portfolio and monthly contributions.',
+  privacyQuestion: 'Are my financial inputs uploaded?',
+  privacyAnswer: 'No. The scenario is calculated in this browser tab and is not uploaded or automatically saved.',
+  fields: Object.freeze({
+    annualSpending: 'Expected annual spending', withdrawalRatePercent: 'Withdrawal rate (%)', currentPortfolio: 'Current investable portfolio', monthlyContribution: 'Monthly contribution', expectedAnnualReturnPercent: 'Assumed annual return (%)', inflationPercent: 'Assumed inflation (%)',
+    currencyNote: 'Use the same currency for all money amounts. Enter assumptions as percentages; the projection converts the entered nominal return and inflation into a real growth rate.',
+    accuracyNote: 'Scenario math only. Returns, inflation, spending, taxes, fees, benefits, sequence risk, and future rules are uncertain or not modeled. This is not investment, tax, or retirement advice; it does not promise financial independence.',
+    privacyNote: 'Your entries stay in this browser tab. They are not uploaded or automatically saved.',
+    formulaNote: 'Target portfolio = annual spending ÷ (withdrawal rate ÷ 100). Timeline applies monthly real growth derived from your entered nominal return and inflation, then adds each monthly contribution at month-end.',
+    targetAmount: 'Portfolio target', realAnnualGrowthPercent: 'Assumed annual growth after inflation', monthsToTarget: 'Months to target', yearsToTarget: 'Years to target', projectedBalance: 'Projected balance at target or 100-year limit', unreachable: 'Target not reached within the 100-year projection',
+  }),
+  actions: Object.freeze({ calculate: 'Estimate timeline', example: 'Load example', reset: 'Reset', result: 'FIRE scenario', copy: 'Copy results' }),
+  messages: Object.freeze({ calculated: 'Scenario calculated.', checkInputs: 'Check spending, withdrawal rate, savings, return, and inflation inputs.', copied: 'Results copied.', copyUnavailable: 'Copy is not available in this browser.' }),
+  additionalFaqs: Object.freeze([
+    Object.freeze({ question: 'What is the FIRE target formula?', answer: 'This tool divides annual spending by the withdrawal-rate fraction you enter. At 40,000 annual spending and 4%, that arithmetic target is 1,000,000; it is not a guarantee that the amount will last.' }),
+    Object.freeze({ question: 'Does the calculator guarantee a date for financial independence?', answer: 'No. It illustrates one deterministic scenario from your assumptions. Actual returns and inflation vary, while taxes, fees, changing spending, benefits, and sequence-of-returns risk can change outcomes.' }),
+    Object.freeze({ question: 'Is a 4% withdrawal rate safe for everyone?', answer: 'This tool does not establish a safe rate. A rate’s suitability depends on horizon, portfolio, fees, taxes, inflation, market sequence, and individual circumstances. Consider qualified independent advice.' }),
+  ]),
+});

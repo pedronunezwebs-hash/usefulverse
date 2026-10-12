@@ -1,0 +1,1 @@
+.vo2-max-calculator fieldset{border:1px solid var(--border,#d9dee8);border-radius:.75rem;margin:1rem 0;padding:1rem}.vo2-max-calculator legend{font-weight:700;padding:0 .35rem}.vo2-max-calculator [data-vo2-result]{text-align:center}.vo2-max-calculator [data-vo2-value]{font-size:clamp(2rem,8vw,3.5rem);font-weight:800;font-variant-numeric:tabular-nums}

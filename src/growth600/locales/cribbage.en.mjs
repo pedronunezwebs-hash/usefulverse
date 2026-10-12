@@ -1,0 +1,27 @@
+export const cribbageEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  localizationStatus: 'approved',
+  name: 'Cribbage Score Calculator and Game',
+  title: 'Cribbage Game & Score Calculator | UsefulVerse',
+  description: 'Play Cribbage against a local computer and score hands, pegging and the crib. Free, private, no account or network opponent.',
+  intro: 'Play a full local Cribbage match against a simple computer opponent, or score any hand or crib by entering four cards and the starter.',
+  howQuestion: 'Can I play a full Cribbage game here?',
+  howAnswer: 'Start a local match, discard two of your six cards to the crib, then play legal cards toward 31. Score fifteens, pairs and runs; say go when you cannot play. Count the non-dealer hand, dealer hand and crib. The default target is 121 points and can be lowered for a shorter match.',
+  privacyQuestion: 'Does this cribbage scorer upload my cards?',
+  privacyAnswer: 'No. The match and scoring run in this browser. There is no online opponent, account, upload or saved match.',
+  fields: {
+    mode: 'Score type', hand: 'Hand', crib: 'Crib', card: 'Card', starter: 'Starter card', rank: 'Rank', suit: 'Suit',
+    clubs: 'Clubs', diamonds: 'Diamonds', hearts: 'Hearts', spades: 'Spades',
+    ace: 'Ace', jack: 'Jack', queen: 'Queen', king: 'King',
+    fifteens: 'Fifteens', pairs: 'Pairs', runs: 'Runs', flush: 'Flush', nobs: 'Nobs',
+    rulesNote: 'Choose hand or crib, then enter four different cards and a different starter. The full local match is below; it uses a simple computer opponent and is not multiplayer.',
+    game: 'Play a match', yourCards: 'Your cards', computerCards: 'Computer cards', matchScore: 'Match score', dealer: 'Dealer', starterCard: 'Starter', selectDiscards: 'Select two cards to put in the crib.', peggingCount: 'Count', currentTurn: 'Turn', computer: 'Computer', you: 'You', target: 'Points to win', localMatchNote: 'A fresh shuffled deck is dealt in your browser. Match state is not saved.',
+  },
+  actions: { scoreHand: 'Score hand', reset: 'Reset', result: 'Score breakdown', startMatch: 'Start match', sendDiscards: 'Put two cards in the crib', playCard: 'Play card', sayGo: 'Say go', newMatch: 'New match' },
+  messages: { invalidCards: 'Choose five different physical cards.', scored: 'Cribbage score: {total} points.', selectTwo: 'Select exactly two cards to discard.', playerPegging: 'Your turn to play a card or say go.', computerPegging: 'The computer is playing.', pegged: '{card} played. Count: {count}. {points} points.', go: 'You said go. The computer may continue.', handCount: '{who} scored {points} points for {kind}.', matchWon: '{who} won the match with {points} points.', roundReady: 'The next hand is ready. Select two cards for the crib.', invalidMove: 'That move is not legal. Choose a card that keeps the count at 31 or less.', matchStarted: 'New local match dealt.', heels: 'The dealer scored 2 points for heels.' },
+  additionalFaqs: [
+    { question: 'How many points is a 15 in cribbage?', answer: 'Each distinct combination of cards that totals 15 scores two points. Several different combinations can score in the same hand.' },
+    { question: 'How is a crib flush counted?', answer: 'All four crib cards and the starter must share a suit for five points. Unlike a regular hand, four matching crib cards without the starter do not score a flush.' },
+    { question: 'Can I play against another person?', answer: 'No. The match is local against a simple browser opponent. There is no online multiplayer or saved match.' },
+  ],
+});

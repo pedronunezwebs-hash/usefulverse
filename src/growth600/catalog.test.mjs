@@ -21,10 +21,26 @@ import { calculatePension } from './tools/pension-calculator/logic.mjs';
 import { calculateLifetimeValue } from './tools/lifetime-value-calculator/logic.mjs';
 import { calculatePolarGraph } from './tools/polar-graphing-calculator/logic.mjs';
 import { calculateBooleanAlgebra } from './tools/boolean-algebra-calculator/logic.mjs';
+import { alarmStateAt, parseLocalAlarmDateTime, snoozedAlarmTarget } from './tools/alarm-clock/logic.mjs';
+import { calculateDividendProjection } from './tools/dividend-calculator/logic.mjs';
+import { addNetWorthSnapshot, calculateNetWorth } from './tools/net-worth-calculator/logic.mjs';
+import { calculateBodySurfaceArea } from './tools/body-surface-area-calculator/logic.mjs';
+import { addWeeklyBlock, findWeeklyOverlaps } from './tools/weekly-planner/logic.mjs';
+import { calculateOvertime } from './tools/overtime-calculator/logic.mjs';
+import { createMeetingMinutes, renderMeetingMinutesMarkdown } from './tools/meeting-minutes-template/logic.mjs';
+import { createDotsAndBoxesGame, playDotsAndBoxesEdge } from './tools/dots-and-boxes/logic.mjs';
+import { mixColors } from './tools/color-mixer/logic.mjs';
+import { createBlackjackGame, scoreBlackjackHand, splitBlackjackHand } from './tools/blackjack-game/logic.mjs';
+import { calculateDebtToIncome } from './tools/debt-to-income-ratio-calculator/logic.mjs';
+import { calculateCarLease } from './tools/car-lease-calculator/logic.mjs';
+import { calculateFireTarget } from './tools/fire-calculator/logic.mjs';
+import { createEmailSignature } from './tools/email-signature-generator/logic.mjs';
+import { traceRasterToSvg } from './tools/image-vectorizer/logic.mjs';
+import { estimateCooperVo2Max, estimateRockportVo2Max } from './tools/vo2-max-calculator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 180);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 180);
+  assert.equal(growthPilotTools.length, 206);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 206);
   assert.ok(growthPilotTools.some(({ id }) => id === 'inductor-calculator'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'centripetal-force-calculator'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'writing-tracker'));
@@ -35,7 +51,118 @@ test('the current growth IDs are unique and additive to the protected catalog', 
   assert.ok(growthPilotTools.some(({ id }) => id === 'log-analyzer'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'inflation-calculator'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'retirement-calculator'));
+  assert.ok(growthPilotTools.some(({ id }) => id === 'text-to-speech'));
+  assert.ok(growthPilotTools.some(({ id }) => id === 'world-clock'));
+  assert.ok(growthPilotTools.some(({ id }) => id === 'breathing-exercise'));
+  assert.ok(growthPilotTools.some(({ id }) => id === 'name-generator'));
+  assert.ok(growthPilotTools.some(({ id }) => id === 'cribbage'));
+  assert.ok(growthPilotTools.some(({ id }) => id === 'gin-rummy'));
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
+});
+
+test('Weekly Planner catalog acceptance covers overnight and adjacent blocks', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'weekly-planner');
+  assert.ok(tool);
+  const blocks = addWeeklyBlock(addWeeklyBlock([], { day: 0, title: 'Night shift', start: '23:00', end: '01:00' }), { day: 1, title: 'Early appointment', start: '00:30', end: '02:00' });
+  assert.equal(findWeeklyOverlaps(blocks).length, 1);
+  assert.equal(tool.relatedExistingIds.includes('goal-planner'), true);
+});
+
+test('Overtime Calculator catalog acceptance uses only the entered overtime threshold and multiplier', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'overtime-calculator');
+  assert.ok(tool);
+  const result = calculateOvertime({ totalHours: 45, hourlyRate: 20, thresholdHours: 40, overtimeMultiplier: 1.5 });
+  assert.equal(result.totalPay, 950);
+  assert.match(tool.boundary, /no jurisdiction/u);
+});
+
+test('Meeting Minutes Template catalog acceptance exports an action with its owner and date', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'meeting-minutes-template');
+  assert.ok(tool);
+  const minutes = createMeetingMinutes({ title: 'Review', actions: 'Review draft | Sam | 2026-10-16' });
+  assert.match(renderMeetingMinutesMarkdown(minutes), /Review draft — Owner: Sam — Due: 2026-10-16/u);
+});
+
+test('Dots and Boxes catalog acceptance awards one completed box and keeps the scoring player', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'dots-and-boxes');
+  assert.ok(tool);
+  let game = createDotsAndBoxesGame(2, 'two-player');
+  for (const move of [['h', 0, 0], ['v', 0, 0], ['h', 1, 0]]) game = playDotsAndBoxesEdge(game, ...move);
+  game = playDotsAndBoxesEdge(game, 'v', 0, 1);
+  assert.deepEqual([...game.scores], [0, 1]);
+  assert.equal(game.currentPlayer, 1);
+  assert.deepEqual(tool.relatedExistingIds, []);
+});
+
+test('Color Mixer catalog acceptance separates sRGB and linear light from physical paint mixing', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'color-mixer');
+  assert.ok(tool);
+  assert.equal(mixColors([{ hex: '#ff0000', weight: 50 }, { hex: '#0000ff', weight: 50 }], 'srgb').hex, '#800080');
+  assert.equal(mixColors([{ hex: '#ff0000', weight: 50 }, { hex: '#0000ff', weight: 50 }], 'linear').hex, '#BC00BC');
+  assert.match(tool.boundary, /not a physical paint\/pigment prediction/u);
+  assert.deepEqual(tool.relatedExistingIds, ['color-palette-generator', 'color-converter']);
+});
+
+test('Blackjack catalog acceptance is practice-only and correctly values an ace', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'blackjack-game');
+  assert.ok(tool);
+  assert.match(tool.boundary, /no gambling advice, bets, deposits, cash, prizes/u);
+  assert.equal(scoreBlackjackHand([{ rank: 1, suit: 'spades' }, { rank: 13, suit: 'clubs' }]).blackjack, true);
+  const game = createBlackjackGame({ decks: 1, random: () => 0.5 });
+  assert.ok(['player', 'complete'].includes(game.phase));
+  assert.deepEqual(tool.relatedExistingIds, ['solitaire']);
+});
+
+test('Debt-to-Income catalog acceptance distinguishes DTI math from a loan payment estimate', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'debt-to-income-ratio-calculator');
+  assert.ok(tool);
+  assert.equal(calculateDebtToIncome({ grossMonthlyIncome: 5000, monthlyDebts: [2000] }).totalRatio, 40);
+  assert.deepEqual(tool.relatedExistingIds, ['loan-calculator']);
+  assert.match(tool.boundary, /does not assess creditworthiness, predict approval/u);
+});
+
+test('Car Lease Calculator separates depreciation from rent charge and loan amortization', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'car-lease-calculator');
+  assert.ok(tool);
+  assert.equal(calculateCarLease({ capitalizedCost: 12000, residualValue: 0, termMonths: 36, moneyFactor: 0 }).monthlyDepreciation.toFixed(2), '333.33');
+  assert.deepEqual(tool.relatedExistingIds, ['loan-calculator', 'auto-loan-refinance-calculator', 'car-depreciation-calculator']);
+  assert.match(tool.boundary, /not a lender quote or affordability recommendation/u);
+});
+
+test('FIRE calculator shows the spending/withdrawal target without presenting it as a forecast guarantee', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'fire-calculator');
+  assert.ok(tool);
+  assert.equal(calculateFireTarget({ annualSpending: 40000, withdrawalRatePercent: 4 }).targetAmount, 1_000_000);
+  assert.deepEqual(tool.relatedExistingIds, ['retirement-calculator', 'savings-goal-calculator']);
+  assert.match(tool.boundary, /not a safe withdrawal recommendation, investment forecast/u);
+});
+
+test('Email Signature Generator escapes content and rejects executable links', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'email-signature-generator');
+  assert.ok(tool);
+  assert.deepEqual(tool.relatedExistingIds, ['html-email-builder']);
+  assert.match(createEmailSignature({ fullName: '<script>alert(1)</script>', website: 'usefulverse.com' }).html, /&lt;script&gt;/u);
+  assert.throws(() => createEmailSignature({ fullName: 'Name', website: 'javascript:alert(1)' }), RangeError);
+  assert.match(tool.boundary, /Email apps handle HTML and embedded images differently/u);
+});
+
+test('Image Vectorizer emits local SVG path geometry without wrapping the bitmap', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'image-vectorizer');
+  const result = traceRasterToSvg({ width: 2, height: 2, data: new Uint8ClampedArray([255, 0, 0, 255, 255, 0, 0, 255, 0, 0, 255, 255, 0, 0, 255, 255]), colorCount: 2 });
+  assert.ok(tool);
+  assert.deepEqual(tool.relatedExistingIds, ['image-format-converter', 'image-sharpener', 'photo-to-sketch']);
+  assert.match(result.svg, /<path/u);
+  assert.doesNotMatch(result.svg, /<image|data:image/iu);
+  assert.match(tool.boundary, /not smooth Bézier tracing/u);
+});
+
+test('VO2 Max calculator keeps two field-test equations distinct and labels their limits', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'vo2-max-calculator');
+  assert.ok(tool);
+  assert.match(tool.boundary, /not direct laboratory VO2 measurement/u);
+  assert.match(tool.boundary, /ages 30–69/u);
+  assert.ok(Math.abs(estimateCooperVo2Max({ distance: 2.4, unit: 'km' }).vo2Max - 42.3544) < 0.001);
+  assert.ok(Math.abs(estimateRockportVo2Max({ age: 30, weight: 70, sexCoefficient: 'male', minutes: 15, finishHeartRate: 150 }).vo2Max - 43.2215) < 0.01);
 });
 
 test('Boolean algebra minimizes expressions and adds Karnaugh views beyond truth-table enumeration', () => {
@@ -59,6 +186,26 @@ test('week number calculator is additive and distinguishes ISO week-year from cu
   assert.match(tool.boundary, /does not convert time zones or fiscal weeks/u);
 });
 
+test('name generator groups high-intent variants without claiming name or domain availability', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'name-generator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'fantasy name generator');
+  assert.ok(tool.secondaryIntents.includes('business name generator'));
+  assert.ok(tool.secondaryIntents.includes('random username generator'));
+  assert.deepEqual(tool.relatedExistingIds, ['random-name-picker']);
+  assert.match(tool.boundary, /does not search the web/u);
+  assert.match(tool.boundary, /does not .*guarantee uniqueness/u);
+});
+
+test('cribbage match and scorer have a distinct card-game intent and disclose their local-opponent boundary', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'cribbage');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'cribbage');
+  assert.deepEqual(tool.relatedExistingIds, []);
+  assert.match(tool.boundary, /local match against a simple deterministic browser opponent/u);
+  assert.ok(tool.functions.some((feature) => feature.includes('peg legal cards up to 31')));
+});
+
 test('pension calculator is distinct from the existing retirement projection', () => {
   const tool = growthPilotTools.find(({ id }) => id === 'pension-calculator');
   assert.ok(tool);
@@ -80,6 +227,23 @@ test('retirement calculator compares accumulation, inflation-adjusted withdrawal
   assert.ok(result.base.balanceAtRetirementInTodayMoney < result.base.balanceAtRetirement);
   const empty = calculateRetirementProjection({ currentAge: 35, retirementAge: 65, planThroughAge: 90, currentSavings: 0, monthlyContribution: 0, annualReturnPercent: 0, conservativeReturnPercent: 0, annualWithdrawal: 12000, annualInflationPercent: 0 });
   assert.equal(empty.base.depletedAtAge, 65);
+});
+
+test('401(k) calculator separates user-entered match and vesting from retirement forecasting', () => {
+  const tool = growthPilotTools.find(({ id }) => id === '401k-calculator');
+  assert.ok(tool);
+  assert.equal(tool.acceptance.includes('a 50% employer match on that eligible contribution is $2,000'), true);
+  assert.match(tool.boundary, /not an IRS contribution-limit check/u);
+  assert.deepEqual(tool.relatedExistingIds, ['retirement-calculator', 'compound-interest-calculator']);
+});
+
+test('Gin Rummy adds a local no-layoff card game distinct from Cribbage scoring', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'gin-rummy');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'gin rummy');
+  assert.equal(tool.relatedExistingIds.includes('cribbage'), false);
+  assert.match(tool.boundary, /no-layoff knock variant/u);
+  assert.match(tool.acceptance, /undercut by an opponent/u);
 });
 
 test('customer LTV uses monthly gross profit and churn, separate from company valuation', () => {
@@ -281,6 +445,73 @@ test('interval timer adds work/rest rounds and sound without duplicating Pomodor
   assert.match(tool.acceptance, /8-round 20-second work \/ 10-second rest.*230 seconds/u);
   assert.match(tool.boundary, /sleeping devices may delay.*Sound starts only after the user presses Start/u);
   assert.match(tool.boundary, /no account, upload, API, storage or usage charge/u);
+});
+
+test('breathing exercise guides paced breaths without duplicating a generic timer or claiming treatment', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'breathing-exercise');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'breathing exercise');
+  assert.ok(tool.secondaryIntents.includes('box breathing timer'));
+  assert.ok(tool.relatedExistingIds.includes('interval-timer'));
+  assert.match(tool.boundary, /not medical advice/u);
+  assert.match(tool.acceptance, /partial cycle/u);
+});
+
+test('online alarm clock stays a one-shot local alarm and does not claim reliable background notifications', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'alarm-clock');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'online alarm clock');
+  assert.deepEqual(tool.relatedExistingIds, ['online-timer', 'interval-timer']);
+  assert.match(tool.acceptance, /exactly five minutes/u);
+  assert.match(tool.boundary, /not a guaranteed system alarm/u);
+  const now = new Date(2030, 0, 1, 9).getTime();
+  const target = parseLocalAlarmDateTime('2030-01-01T10:00', now);
+  assert.equal(alarmStateAt(target, target).phase, 'ringing');
+  assert.equal(snoozedAlarmTarget(now), now + 300_000);
+});
+
+test('dividend calculator owns share-income and DRIP intent without market data or investment promises', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'dividend-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'dividend calculator');
+  assert.ok(tool.secondaryIntents.includes('dividend reinvestment calculator'));
+  assert.deepEqual(tool.relatedExistingIds, ['compound-interest-calculator', 'stock-profit-calculator']);
+  assert.match(tool.acceptance, /100 shares paying an annual dividend of \$2 per share produce \$200/u);
+  assert.match(tool.boundary, /no live stock prices/u);
+  const projection = calculateDividendProjection({ shares: 100, sharePrice: 40, annualDividendPerShare: 2, paymentsPerYear: 4, years: 10 });
+  assert.equal(projection.currentAnnualIncome, 200);
+  assert.equal(projection.currentIncomePerPayment, 50);
+  assert.equal(projection.projectedAnnualIncome, 200);
+});
+
+test('family tree maker is a manual private genealogy chart, separate from a mind map', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'family-tree-maker');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'family tree maker');
+  assert.deepEqual(tool.relatedExistingIds, ['mind-map-maker']);
+  assert.match(tool.acceptance, /linking B → A is rejected as a cycle/u);
+  assert.match(tool.boundary, /not a genealogy database/u);
+});
+
+test('net worth calculator stays a user-entered private balance sheet and compares same-currency snapshots only', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'net-worth-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'net worth calculator');
+  assert.match(tool.acceptance, /net worth 60,000 and a debt-to-asset ratio of 40%/u);
+  assert.match(tool.boundary, /no account, bank sync, market data, upload or server processing/u);
+  const items = [{ type: 'asset', category: 'Cash', amount: 100_000 }, { type: 'liability', category: 'Debt', amount: 40_000 }];
+  assert.equal(calculateNetWorth(items).netWorth, 60_000);
+  assert.equal(addNetWorthSnapshot([], { date: '2026-01-01', currency: 'USD', items })[0].netWorth, 60_000);
+});
+
+test('body surface area calculator compares published adult estimates without turning them into dosing advice', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'body-surface-area-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'body surface area calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['adult-bmi-calculator', 'body-water-calculator', 'body-fat-calculator']);
+  assert.match(tool.functions.join(' '), /Mosteller and Du Bois/u);
+  assert.match(tool.boundary, /Not for medication dosing/u);
+  assert.ok(Math.abs(calculateBodySurfaceArea({ height: 170, weight: 70 }).mosteller - 1.818) < 0.001);
 });
 
 test('logic grid is an original locally solved matching puzzle, distinct from number-placement and island puzzles', () => {

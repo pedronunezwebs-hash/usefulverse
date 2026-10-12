@@ -1,0 +1,4 @@
+.meeting-minutes-template { display: grid; gap: 1rem; }
+.meeting-minutes-template textarea { min-height: 7rem; }
+.meeting-minutes-template [data-minutes-preview] { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; border: 1px solid var(--border, #d8dce5); border-radius: .75rem; }
+@media print { .meeting-minutes-template .actions, .meeting-minutes-template .status, .meeting-minutes-template > .hint { display: none !important; } }

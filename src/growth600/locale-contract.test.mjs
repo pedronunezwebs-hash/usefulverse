@@ -1,6 +1,10 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { assertGrowthLocaleCoverage } from './locale-contract.mjs';
+import { nameGeneratorEnglishCopy } from './locales/name-generator.en.mjs';
+import { randomWordGeneratorEnglishCopy } from './locales/random-word-generator.en.mjs';
+import { randomWordGeneratorSpanishCopy } from './locales/random-word-generator.es.mjs';
+import randomWordGeneratorCopies from './locales/random-word-generator-final.mjs';
 import { growthPilotTools as allGrowthPilotTools } from './catalog.mjs';
 import retainingWallCopies from './locales/retaining-wall-calculator-final.mjs';
 import { retainingWallCalculatorEnglishCopy } from './locales/retaining-wall-calculator.en.mjs';
@@ -108,12 +112,38 @@ import inflationCalculatorCopies from './locales/inflation-calculator-final.mjs'
 import { inflationCalculatorEnglishCopy } from './locales/inflation-calculator.en.mjs';
 import retirementCalculatorCopies from './locales/retirement-calculator-final.mjs';
 import { retirementCalculatorEnglishCopy } from './locales/retirement-calculator.en.mjs';
+import textToSpeechCopies from './locales/text-to-speech-final.mjs';
+import worldClockCopies from './locales/world-clock-final.mjs';
+import euchreCopies from './locales/euchre-final.mjs';
+import nameGeneratorCopies from './locales/name-generator-final.mjs';
+import cribbageCopies from './locales/cribbage-final.mjs';
+import ginRummyCopies from './locales/gin-rummy-final.mjs';
+import breathingExerciseCopies from './locales/breathing-exercise-final.mjs';
+import fourOhOneKCalculatorCopies from './locales/401k-calculator-final.mjs';
+import familyTreeMakerCopies from './locales/family-tree-maker-final.mjs';
+import dividendCalculatorCopies from './locales/dividend-calculator-final.mjs';
+import netWorthCalculatorCopies from './locales/net-worth-calculator-final.mjs';
 
-const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['markdown-editor', 'purchase-order-generator', 'bond-calculator', 'waist-to-hip-ratio-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'ph-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'kinetic-energy-calculator', 'resistor-color-code-calculator', 'acceleration-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator', 'log-analyzer', 'inflation-calculator', 'retirement-calculator'].includes(id));
+const extensionLocaleTools = ['text-to-speech', 'world-clock', 'euchre', 'name-generator', 'random-word-generator', 'breathing-exercise', 'alarm-clock', 'image-vectorizer', 'vo2-max-calculator', 'cribbage', '401k-calculator', 'gin-rummy', 'family-tree-maker', 'dividend-calculator', 'net-worth-calculator'];
+const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['markdown-editor', 'purchase-order-generator', 'bond-calculator', 'waist-to-hip-ratio-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'ph-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'kinetic-energy-calculator', 'resistor-color-code-calculator', 'acceleration-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator', 'log-analyzer', 'inflation-calculator', 'retirement-calculator', ...extensionLocaleTools].includes(id));
 const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
   key,
   { ...(await import(`./locales/${key}.mjs`)).default, 'purchase-order-generator': purchaseOrderGeneratorCopies[key], 'eigenvalue-calculator': eigenvalueCalculatorCopies[key], 'bond-calculator': bondCalculatorCopies[key], 'waist-to-hip-ratio-calculator': waistToHipRatioCopies[key], 'stock-profit-calculator': key === 'en' ? stockProfitCalculatorEnglishCopy : stockProfitCalculatorCopies[key], 'pension-calculator': pensionCalculatorCopies[key], 'lifetime-value-calculator': lifetimeValueCalculatorCopies[key], 'polar-graphing-calculator': key === 'en' ? polarGraphingCalculatorEnglishCopy : polarGraphingCalculatorCopies[key], 'boolean-algebra-calculator': key === 'en' ? booleanAlgebraCalculatorEnglishCopy : booleanAlgebraCalculatorCopies[key], 'week-number-calculator': key === 'en' ? weekNumberCalculatorEnglishCopy : weekNumberCalculatorCopies[key], 'inductor-calculator': key === 'en' ? inductorCalculatorEnglishCopy : inductorCalculatorCopies[key], 'centripetal-force-calculator': key === 'en' ? centripetalForceCalculatorEnglishCopy : centripetalForceCalculatorCopies[key], 'writing-tracker': key === 'en' ? writingTrackerEnglishCopy : writingTrackerCopies[key], 'jwt-encoder': key === 'en' ? jwtEncoderEnglishCopy : jwtEncoderCopies[key], 'graphql-formatter': key === 'en' ? graphqlFormatterEnglishCopy : graphqlFormatterCopies[key], 'rsa-key-generator': key === 'en' ? rsaKeyGeneratorEnglishCopy : rsaKeyGeneratorCopies[key], 'log-analyzer': logAnalyzerCopies[key], 'inflation-calculator': key === 'en' ? inflationCalculatorEnglishCopy : inflationCalculatorCopies[key], 'retirement-calculator': key === 'en' ? retirementCalculatorEnglishCopy : retirementCalculatorCopies[key] },
 ])));
+for (const { key } of localeEntries) {
+  localizedCopies[key]['text-to-speech'] = textToSpeechCopies[key];
+  localizedCopies[key]['world-clock'] = worldClockCopies[key];
+  if (randomWordGeneratorCopies[key]) localizedCopies[key]['random-word-generator'] = randomWordGeneratorCopies[key];
+  localizedCopies[key].euchre = euchreCopies[key];
+  localizedCopies[key]['name-generator'] = nameGeneratorCopies[key];
+  localizedCopies[key].cribbage = cribbageCopies[key];
+  localizedCopies[key]['gin-rummy'] = ginRummyCopies[key];
+  localizedCopies[key]['breathing-exercise'] = breathingExerciseCopies[key];
+  localizedCopies[key]['401k-calculator'] = fourOhOneKCalculatorCopies[key];
+  localizedCopies[key]['family-tree-maker'] = familyTreeMakerCopies[key];
+  localizedCopies[key]['dividend-calculator'] = dividendCalculatorCopies[key];
+  localizedCopies[key]['net-worth-calculator'] = netWorthCalculatorCopies[key];
+}
 
 test('section modulus calculator has static, bounded translations in all 36 locales', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'section-modulus-calculator');
@@ -150,6 +180,21 @@ test('ideal gas law calculator has static, bounded translations and absolute-tem
     assert.equal(copy.additionalFaqs.length, 3, key);
     assert.ok(copy.fields.accuracyNote.length > 30, `${key}: model and absolute-temperature limits disclosed`);
     assert.ok(copy.fields.pressure && copy.fields.volume && copy.fields.amount && copy.fields.temperature, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('Random Word Generator has static copy and a runnable example in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'random-word-generator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  assert.equal(randomWordGeneratorEnglishCopy.fields.nature, 'Nature');
+  assert.equal(randomWordGeneratorSpanishCopy.fields.nature, 'Naturaleza');
+  for (const { key } of localeEntries) {
+    const copy = randomWordGeneratorCopies[key];
+    assert.equal(copy.copyLanguage, key, key);
+    assert.ok(copy.localizationStatus, key);
+    assert.ok(copy.additionalFaqs.length >= 2, key);
     assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
   }
 });
@@ -2273,4 +2318,18 @@ test('Retirement Calculator has complete static copy and clear projection limits
   }
   assert.match(retirementCalculatorEnglishCopy.fields.assumptionsNote, /not .*guaranteed forecast/u);
   assert.match(tool.boundary, /not a forecast/u);
+});
+
+test('Text to Speech passes the full localized-copy release contract in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'text-to-speech');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+});
+
+test('Name Generator English copy meets the static metadata, FAQ, field, action and message contract', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'name-generator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], [{ key: 'en' }], { en: { _home: englishGrowthCopy._home, 'name-generator': { ...nameGeneratorEnglishCopy, copyLanguage: 'en', localizationStatus: 'approved' } } }), true);
+  assert.match(nameGeneratorEnglishCopy.fields.suggestionNote, /trademarks, usernames and domains are not checked/u);
 });

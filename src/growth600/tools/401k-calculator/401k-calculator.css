@@ -1,0 +1,8 @@
+.\34 01k-calculator__results { margin-top: 1.5rem; }
+.\34 01k-calculator__results[hidden] { display: none; }
+.\34 01k-calculator__results .table-scroll { max-width: 100%; overflow-x: auto; }
+.\34 01k-calculator__results table { border-collapse: collapse; min-width: 25rem; width: 100%; }
+.\34 01k-calculator__results th, .\34 01k-calculator__results td { border-bottom: 1px solid var(--border, #d8deea); padding: .7rem; text-align: start; }
+.\34 01k-calculator__results dl { display: grid; gap: .7rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
+.\34 01k-calculator__results dl div { border: 1px solid var(--border, #d8deea); border-radius: .75rem; padding: .8rem; }
+.\34 01k-calculator__results dd { font-size: 1.2rem; font-weight: 650; margin: .35rem 0 0; }

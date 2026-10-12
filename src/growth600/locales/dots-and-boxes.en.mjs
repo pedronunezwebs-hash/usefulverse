@@ -1,0 +1,30 @@
+export const dotsAndBoxesEnglishCopy = Object.freeze({
+  copyLanguage: 'en', localizationStatus: 'approved', name: 'Dots and Boxes',
+  title: 'Dots and Boxes — Free Game | UsefulVerse',
+  description: 'Play Dots and Boxes free in your browser. Choose a board, play locally against the computer or a friend, and score boxes by drawing lines.',
+  intro: 'Draw lines between dots, complete boxes, and keep your turn when you score. Play a friend on the same device or try the simple local computer opponent.',
+  howQuestion: 'How do you play Dots and Boxes?',
+  howAnswer: 'Take turns drawing one line between neighboring dots. Complete the fourth side of a box to claim it, score one point, and take another turn.',
+  privacyQuestion: 'Does this game save or upload my moves?',
+  privacyAnswer: 'No. The game runs in this browser and does not automatically save or upload your moves.',
+  fields: Object.freeze({
+    boardSize: 'Board size', threeByThree: '3 × 3 boxes', fourByFour: '4 × 4 boxes', fiveByFive: '5 × 5 boxes',
+    mode: 'Game mode', computer: 'Play against the local computer', twoPlayer: 'Two players on this device',
+    playerOne: 'Player 1', playerTwo: 'Player 2', turn: 'Turn', score: 'Score', rules: 'Draw one line per turn. Complete a box to score a point and take another turn.',
+    computerNote: 'The computer opponent uses a simple local strategy. It is not an online player.',
+    boardLabel: 'Dots and Boxes game board', horizontalLine: 'Draw horizontal line at row {row}, column {column}', verticalLine: 'Draw vertical line at row {row}, column {column}',
+    boxOwned: 'Player {player} owns this box', emptyBox: 'Unclaimed box', accuracyNote: 'A completed box is scored once. A scoring move keeps the same player’s turn.',
+    privacyNote: 'The game runs in this browser. No account, upload, online opponent, or automatic save.',
+  }),
+  actions: Object.freeze({ newGame: 'New game', result: 'Game status' }),
+  messages: Object.freeze({
+    playerTurn: 'Player {player} to move.', computerTurn: 'Computer is choosing a line.',
+    boxScored: 'Player {player} completed {count} box(es) and gets another turn.',
+    gameWon: 'Player {player} wins with {score} boxes.', gameTied: 'The game is tied.', gameStarted: 'New game started.', invalidMove: 'That line cannot be played. Choose an open line.',
+  }),
+  additionalFaqs: Object.freeze([
+    Object.freeze({ question: 'How do you play Dots and Boxes?', answer: 'Take turns drawing one line between neighboring dots. Complete the fourth side of a box to claim it, score one point, and take another turn.' }),
+    Object.freeze({ question: 'Can I play Dots and Boxes with a friend?', answer: 'Yes. Choose two-player mode to take turns on the same device, or play against a simple local computer opponent.' }),
+    Object.freeze({ question: 'Does this game save or upload my moves?', answer: 'No. The game runs in this browser and does not automatically save or upload your moves.' }),
+  ]),
+});

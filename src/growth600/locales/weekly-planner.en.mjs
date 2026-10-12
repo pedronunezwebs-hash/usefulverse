@@ -1,0 +1,26 @@
+export const weeklyPlannerEnglishCopy = Object.freeze({
+  copyLanguage: 'en', localizationStatus: 'approved', name: 'Weekly Planner',
+  title: 'Weekly Planner Free | UsefulVerse',
+  description: 'Plan a weekly schedule, spot overlapping time blocks, and print or back up your plan. Free, with no account.',
+  intro: 'Build a simple weekly time-block schedule for work, personal plans, study, or health. Overnight blocks and schedule conflicts are shown clearly.',
+  howQuestion: 'How do I make a weekly schedule?',
+  howAnswer: 'Add a title, day, start time, end time, and category for each block. Blocks can cross midnight. Overlapping time is flagged, including across Sunday and Monday.',
+  privacyQuestion: 'Is my weekly schedule uploaded or saved?',
+  privacyAnswer: 'No. Your schedule stays in this browser tab unless you choose to download a JSON backup. Import a backup you selected from your device.',
+  fields: {
+    day: 'Day', title: 'Activity', start: 'Start time', end: 'End time', category: 'Category',
+    sunday: 'Sunday', monday: 'Monday', tuesday: 'Tuesday', wednesday: 'Wednesday', thursday: 'Thursday', friday: 'Friday', saturday: 'Saturday',
+    work: 'Work', personal: 'Personal', study: 'Study', health: 'Health', other: 'Other',
+    blocks: 'Weekly schedule', empty: 'No time blocks yet.', overnight: 'Ends the next day', overlap: 'Overlaps',
+    accuracyNote: 'A repeating weekly plan uses local wall-clock times; it does not account for time zones, daylight-saving changes, calendar events, or reminders.',
+    privacyNote: 'The plan stays in memory in this tab. Download a JSON backup to keep it; no automatic storage or upload.',
+    backupFile: 'Choose a weekly plan JSON backup',
+  },
+  actions: { addBlock: 'Add time block', removeBlock: 'Remove', download: 'Download JSON backup', import: 'Import backup', print: 'Print schedule', reset: 'Clear plan', result: 'Weekly schedule' },
+  messages: { added: 'Time block added.', removed: 'Time block removed.', checkInputs: 'Check the activity and time range.', overlapFound: 'Schedule updated. Overlapping blocks are marked.', noOverlap: 'Schedule updated. No overlaps found.', downloaded: 'Backup downloaded.', imported: 'Weekly plan imported.', importFailed: 'This backup is not valid or is not supported.', cleared: 'Weekly plan cleared.' },
+  additionalFaqs: [
+    { question: 'Can a weekly planner include overnight shifts?', answer: 'Yes. Choose an end time earlier than the start time to create a block that ends the next day. Blocks up to 18 hours are supported.' },
+    { question: 'Does the weekly schedule detect conflicts?', answer: 'Yes. It checks time blocks on the same day and across midnight, including a Sunday block that overlaps Monday.' },
+    { question: 'Does this planner sync with Google Calendar?', answer: 'No. It works locally in this tab and has no calendar connection or reminder service. You can print the plan or download and import a JSON backup.' },
+  ],
+});

@@ -9,7 +9,7 @@ Fecha de investigación: 7 de octubre de 2026. Documento de planificación y che
 - [x] Comprobar la base de planificación: **277 herramientas y 36 idiomas**.
 - [x] Investigar demanda con un gasto acotado en DataForSEO y registrar los resultados reales.
 - [x] Consolidar variantes antes de fijar el nuevo catálogo, sin contar una dirección de conversión como otra herramienta.
-- [ ] Implementar las nuevas herramientas. **Estado comprobado el 12 de octubre de 2026: 179 herramientas Growth600 desplegadas y 277 originales protegidas; sitemaps públicos de 6.480 + 10.260 URLs. Restan 144 candidatas para llegar a 600 herramientas totales; consultar `docs/growth600/PROGRESS.md`.** El progreso del plan se cuenta por candidatas únicas de las 323 fichas; no inferir indexación del despliegue.
+- [ ] Implementar las nuevas herramientas. **Estado local al 13-oct-2026:** 206 herramientas Growth600 con copy/rutas en 36 idiomas; junto con las 277 originales protegidas suman 483, quedan 117 candidatas únicas para el objetivo de 600. Build local: sitemap del hub con 7.452 URLs; README actualizado desde sitemaps local (10.260 + 7.452). Aún requiere push, despliegue directo y verificación pública antes de marcar el lote como publicado. No inferir indexación del despliegue.
 
 Snapshot consultado: rama `main`, commit `685f91adfc7818a54f6dc0a967e290d13137a3dd`. Catálogo: `src/catalog.mjs`; funciones y contratos representativos: `src/app.js`, módulos de lógica, `src/opportunity-tools.mjs`, `src/seo.mjs`, locales, build y documentación del repo. Se inspeccionaron los metadatos de las 277 herramientas y contratos clave para descartar duplicados; esto **no es una nueva auditoría funcional completa de las 277**.
 
@@ -1702,6 +1702,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Prueba de aceptación específica:** Match 50% sobre 4000 da 2000
 - **Frontera con otras herramientas:** retirement-calculator: reglas de aportación del plan US. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** D: dato/norma versionado, país y año visibles. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación local (12-oct-2026):** motor de aportaciones y employer match con tasa/límite editables, porcentaje de vesting introducido por el usuario, horizonte de 0–60 años, retorno supuesto y saldos total/consolidado con checkpoints anuales. Sin límites fiscales en vivo. Focal de lógica 7/7 y renderer 1/1 aprobados. Solo copy inglés; faltan 35 locales, suite de contrato/build y QA real. Se mantiene `[ ] C/F/E/X/L/B/P/S`; no cuenta como herramienta terminada ni publicada. Ver `PROGRESS.md`.
 - **Consultas secundarias del mismo propietario:**
   - `401k contribution calculator` — 3.600/mes US/en; KD 13.
   - `401k calculator free online`; `401k calculator with example`; `401k calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -1868,6 +1869,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `dividend calculator free online`; `dividend calculator with example`; `dividend calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** CA/en `dividend calculator` 3.600/mes, KD 1; UK/en `dividend calculator` 4.400/mes, KD 4; AU/en `dividend calculator` 880/mes, KD 9; DE/de `dividendenrechner` 1.900/mes, KD 0.
+- **Implementación local (2026-10-13):** motor/formulario/controlador en `src/growth600/tools/dividend-calculator/`; ingresos anuales y por pago, yield actual/yield-on-cost, proyección editable a 50 años y DRIP opcional con participaciones fraccionarias. No consulta cotizaciones ni tasas externas. Copy EN solamente; faltan 35 locales, integración release y build/QA integral. 222 pruebas combinadas focales de esta tanda pasan; no se marca como publicado.
 
 ### 063 · Net Worth Calculator
 
@@ -1883,6 +1885,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `net worth calculator free online`; `net worth calculator with example`; `net worth calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** CA/en `net worth calculator` 1.900/mes, KD 15; UK/en `net worth calculator` 1.000/mes, KD 33; AU/en `net worth calculator` 1.000/mes, KD 32; DE/de `vermögen berechnen` 70/mes, KD 2.
+- **Implementación local (2026-10-13):** balance por categorías de activos/pasivos, comparación solo en la misma moneda, historial opcional con consentimiento explícito en localStorage y exportación CSV que neutraliza fórmulas. No conecta bancos ni valora activos. Copy EN solamente; faltan 35 locales, build y QA de navegador; no está publicada.
 
 ### 066 · Overtime Calculator
 
@@ -1898,6 +1901,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `overtime calculator free online`; `overtime calculator with example`; `overtime calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** CA/en `overtime calculator` 590/mes, KD 8; UK/en `overtime calculator` 1.300/mes, KD 0; AU/en `overtime calculator` 390/mes, KD 4.
+- **Implementación local (2026-10-13):** lógica, controlador, formulario y estilos integrados; tarifa, umbral y multiplicador son editables y el ejemplo 45 h / umbral 40 / 1,5× / tarifa 20 da 950. No presupone reglas de país/empleador, horas elegibles, impuestos ni salario neto. Copy EN solamente; faltan 35 locales, build y QA de navegador. La casilla global permanece abierta.
 
 ### 076 · Debt To Income Ratio Calculator
 
@@ -1914,6 +1918,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** CA/en `debt to income ratio calculator` 720/mes, KD 42; UK/en `debt to income ratio calculator` 320/mes, KD 36; AU/en `debt to income ratio calculator` 170/mes, KD 21.
 
+- **Implementación local (2026-10-13):** DTI de vivienda y total a partir de ingreso bruto, coste de vivienda y cuatro pagos; ejemplo 2.000 / 5.000 = 40%. Muestra cantidades y porcentajes, sin recomendación crediticia ni promesa de aprobación. Solo EN; faltan 35 locales, build global, QA visual y gates completos; no publicado.
+
 ### 079 · Car Lease Calculator
 
 - [ ] **C/F/E/X/L/B/P/S completos — `car-lease-calculator`**
@@ -1928,6 +1934,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `car lease calculator free online`; `car lease calculator with example`; `car lease calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** DE/de `leasingrechner` 1.600/mes, KD 12.
+- **Implementación local (2026-10-13):** motor, controlador, formulario y estilos separan depreciación, rent charge, pago antes de impuestos, impuesto manual y estimación mensual; la reducción baja el capital ajustado. Aceptación 12.000 / 36 = 333,33 antes de otros cargos. Incluye límites, ejemplo, copia y tres FAQs. Solo EN; faltan 35 locales, build global, QA visual y gates completos; no publicado.
 
 ### 080 · Fire Calculator
 
@@ -1942,6 +1949,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `financial independence calculator` — 1.600/mes US/en; KD 34.
   - `fire calculator free online`; `fire calculator with example`; `fire calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Implementación local (2026-10-13):** objetivo de cartera = gasto anual ÷ tasa de retirada; proyección mensual con aportaciones al final de cada mes y crecimiento real derivado de rendimiento nominal e inflación. Añade cartera y aportación actuales, tres escenarios de supuestos, copia del resultado, límites numéricos, mensajes accesibles y FAQs que aclaran que no es asesoría ni una fecha garantizada. Aceptación: 40.000 / 4% = 1.000.000. La inflación de −100% se rechaza para evitar división por cero. Solo EN; faltan 35 locales, build global, QA visual y gates completos; no publicado.
 
 ### 086 · 529 Calculator
 
@@ -3177,6 +3185,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `meeting minutes template free online`; `meeting minutes template with example`; `meeting minutes template no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** CA/en `meeting minutes template` 3.600/mes, KD 9; UK/en `meeting minutes template` 3.600/mes, KD 9; AU/en `meeting minutes template` 4.400/mes, KD 12.
+- **Implementación local (2026-10-13):** formulario estructurado para agenda, asistentes, decisiones y acciones con responsable y fecha; preview, exportación Markdown e impresión. Valida fechas/calendario, límites de tamaño y asistentes duplicados. No graba audio, inventa acuerdos ni guarda/sube notas automáticamente. Copy EN solamente; faltan 35 locales, build y QA de navegador. La casilla global permanece abierta.
 
 ### 081 · Email Signature Generator
 
@@ -3191,6 +3200,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `html email signature maker` — 720/mes US/en; KD 39.
   - `email signature generator free online`; `email signature generator with example`; `email signature generator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Implementación local (2026-10-13):** generador de firma HTML en tabla con estilos en línea, vista previa, copia rich-text/HTML y descarga independiente. Escapa contenido; limita enlaces web a HTTPS y valida correo, teléfono y color; acepta logo local PNG/JPEG/GIF hasta 512 KiB y 1.600 px por lado. Advierte que los clientes de correo varían y pueden quitar imágenes incrustadas. Sin llamadas de red, upload, almacenamiento automático ni dependencia. Solo EN; faltan 35 locales, build y QA en navegador. La casilla global permanece abierta.
 
 ### 119 · PDF Form & Annotation Flattener
 
@@ -3705,6 +3715,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `family tree maker free online`; `family tree maker with example`; `family tree maker no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** CA/en `family tree maker` 3.600/mes, KD 33; UK/en `family tree maker` 6.600/mes, KD 18; AU/en `family tree maker` 3.600/mes, KD 16; DE/de `stammbaum erstellen` 8.100/mes, KD 0.
+- **Implementación local (2026-10-13):** editor manual de personas/fechas/notas, enlaces parentales con tipo y prevención de duplicados/ciclos, vista SVG y exportaciones SVG/GEDCOM 5.5.1. Datos en memoria; advierte que la genealogía es sensible y no se sube. 222 pruebas combinadas focales de esta tanda pasan. Solo EN; faltan 35 locales, build y prueba de importación en software genealógico; no publicada.
 
 ### 065 · Weekly Planner
 
@@ -3720,6 +3731,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `weekly planner free online`; `weekly planner with example`; `weekly planner no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** DE/de `wochenplan erstellen` 390/mes, KD 0.
+- **Implementación local (2026-10-13):** formulario de siete días con categorías, turnos nocturnos de hasta 18 horas, detección de solapes entre días y frontera domingo/lunes, imprimir y backup JSON importado/descargado explícitamente. Sin persistencia automática, calendario, recordatorios, API, subida ni datos de zona horaria. Pruebas de lógica (4), catálogo y formulario pasan en la suite focal de 210 pruebas; faltan 35 traducciones, build global y QA en navegador; no publicada.
 
 ### 069 · Random Team Generator
 
@@ -4064,7 +4076,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/name-generator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `fantasy name generator` — 165.000 búsquedas/mes US/en, KD 15; nivel A. CPC 2.47 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Suite local de nombres de negocios, usuarios y personajes con reglas distintas, diccionarios originales/licenciados, filtros, seed y favoritos; nunca afirmar disponibilidad de marcas o dominios.
-- **Prueba de aceptación específica:** No afirmarmarcadisponible
+- **Prueba de aceptación específica:** la misma combinación de tipo, keyword y semilla reproduce exactamente la misma lista de sugerencias únicas; otra semilla puede cambiarla. La interfaz indica claramente que no verifica marcas, nombres comerciales, dominios ni disponibilidad de usernames.
 - **Frontera con otras herramientas:** random-name-picker: generanombresnocoge lista. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** H: dependencia/cómputo bajo demanda; verificar licencia y compatibilidad. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
@@ -4079,10 +4091,10 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - [ ] **C/F/E/X/L/B/P/S completos — `random-word-generator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/random-word-generator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `random word generator` — 135.000 búsquedas/mes US/en, KD 21; nivel A. CPC 3.74 USD (no CPM).
-- **Función mínima y ampliaciones útiles:** Palabras de un diccionario por idioma, filtros de longitud/categoría y generación sin repetir; copiar, guardar listas y cambiar semilla.
-- **Prueba de aceptación específica:** Palabrasdelidiomaelegido, sinrellenoinglés
-- **Frontera con otras herramientas:** lorem-ipsum-generator: estímuloléxico no textoplaceholder. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
-- **Implementación/riesgo:** H: dependencia/cómputo bajo demanda; verificar licencia y compatibilidad. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Función mínima y ampliaciones útiles:** Palabras de un diccionario por idioma, filtros inclusivos de longitud/categoría y selección sin repetición; copiar o descargar la lista y reutilizar una semilla visible para repetirla.
+- **Prueba de aceptación específica:** cada palabra sale del diccionario estático del idioma activo y cumple categoría/longitud; no hay repeticiones. Si falta diccionario o no hay suficientes coincidencias, se informa sin sustituir por inglés.
+- **Frontera con otras herramientas:** `lorem-ipsum-generator` crea texto de relleno; este producto elige palabras para actividades, escritura y juegos. Aplicar además las consolidaciones de §6; no crear otra URL por modalidad.
+- **Implementación/riesgo:** sin dependencia externa: diccionarios estáticos pequeños y procesamiento local. Declarar que la lista es curada y limitada, no un diccionario de traducción ni frecuencia. Seguir los gates globales; los casos actuales no sustituyen todos los tests.
 - **Consultas secundarias del mismo propietario:**
   - `random words generator` — 1.900/mes US/en; KD 36.
   - `random word generator free online`; `random word generator with example`; `random word generator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -4176,6 +4188,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `mix paint colors online` — 10/mes US/en; KD 19.
   - `color mixer free online`; `color mixer with example`; `color mixer no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Implementación local (2026-10-13):** mezcla matemática de 2–8 colores HEX con pesos; modo sRGB y linear-light declarado; salida HEX/RGB/HSL, rampa editable de 2–16 swatches, copiar HEX y descarga CSS. 50/50 rojo/azul: `#800080` en sRGB y `#BC00BC` en luz lineal. No ofrece modelo de pigmentos/pintura. Solo EN; faltan 35 locales, build y QA de navegador. Casilla global abierta.
 
 ### 082 · Image Vectorizer
 
@@ -4191,6 +4204,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `image vectorizer free online`; `image vectorizer with example`; `image vectorizer no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** DE/de `bild vektorisieren` 880/mes, KD 12.
+- **Implementación local (2026-10-13):** trazador pixel-grid sin librerías: cuantiza a 2–16 colores, aplica umbral alfa, reduce el lado mayor a 64–256 px y combina franjas iguales en paths SVG; preview/descarga sin incrustar el original. Enfoque deliberadamente limitado a logos/arte plano: no genera curvas Bézier ni preserva detalle fotográfico. 5 tests del motor; suite focal de catálogo/formulario incluida. Solo EN; faltan 35 idiomas, build release y QA real. No está lista/publicada ni se marca completa.
 
 ### 085 · Image Splitter
 
@@ -4205,6 +4219,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `split image into tiles` — 20/mes US/en; KD 18.
   - `image splitter free online`; `image splitter with example`; `image splitter no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Implementación local (2026-10-13):** ecuación Cooper de 12 minutos con unidades m/km/mi; ecuación Rockport/Kline para caminata de una milla con edad 30–69, peso kg/lb, coeficiente hombre/mujer explícito, minutos/segundos y pulso al terminar. Incluye fuentes Cooper 1968 (doi:10.1001/jama.1968.03140030033008) y Kline 1987 (PMID 3600239), límites de esfuerzo/salud y cálculo local. Cinco tests de motor más integración focal. Solo EN; faltan 35 idiomas, build release y QA real. No está lista/publicada ni se marca completa.
 - **Otras métricas muestreadas:** DE/de `bild aufteilen` 70/mes, KD 0.
 - **Implementación/publicación (2026-10-11):** PR [#113](https://github.com/pedronunezwebs-hash/usefulverse/pull/113), merge `ecaad6ec3ea64563568c46f08bdb101ce0fe5df0`; CI PR `38117948851`, deploy principal `38118173819` y publicación del hub `38118413789` correctos. Suite **1.794/1.794**, `locale:release-check` pasa para 20 idiomas ampliados; build de hub **5.400 URLs** (149 herramientas × 36 + 36 portadas). Chrome confirmó reconstrucción de píxeles exacta en ambos modos, ZIP descargable y árabe RTL a 390 px sin overflow ni errores de consola. Sin PageSpeed/Lighthouse ni gasto DataForSEO.
 - **Verificación pública:** rutas EN/ES/AR HTTP 200; sitemap `https://tools.usefulverse.com/sitemap.xml` HTTP 200, **5.400 URLs únicas**, incluidas las 36 variantes de Image Splitter. El sitemap principal continúa en 10.260; suma de ambos: 15.660 URLs. Esto confirma publicación y descubrimiento por sitemap, no indexación.
@@ -4511,6 +4526,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Demanda:** `cribbage` — 165.000 búsquedas/mes US/en, KD 33; nivel A. CPC 1.65 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Pegging, pares, runs, quince, crib, show y bot local, con explicación de score.
 - **Prueba de aceptación específica:** Una combinación que suma 15 vale 2; las combinaciones de score se cuentan sin duplicar identidades.
+- **Checkpoint local (2026-10-12; sin publicar):** motor de partida completo contra bot y UI con descarte, pegging hasta 31, go, marcador, heels, conteo en orden, cambio de dealer y target configurable 31–121; se conserva el scorer individual. 17 tests de lógica/match y pruebas estructurales de catálogo/formulario/copy pasan en el subset. EN/ES únicamente; build completo, navegador real, otras 34 traducciones y despliegue pendientes. La casilla C/F/E/X/L/B/P/S permanece sin marcar.
 - **Frontera con otras herramientas:** gin-rummy: puntuaciónsuma ypegging distinta. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
 - **Consultas secundarias del mismo propietario:**
@@ -4712,6 +4728,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `dots boxes game online` — sin métrica obtenida; no atribuir volumen.
   - `dots and boxes free online`; `dots and boxes with example`; `dots and boxes no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Implementación local (2026-10-13):** motor de líneas/cajas con turnos extra y conteo exactamente una vez, fin/empate, bot heurístico local y modo dos personas en el mismo dispositivo. UI con 3×3/4×4/5×5, controles de línea accesibles por teclado/touch y marcador vivo. Sin red ni guardado. Solo copy EN; faltan 35 locales, build y QA de navegador. La casilla global permanece abierta.
 
 ### 074 · Chess Analysis Board
 
@@ -4740,6 +4757,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `blackjack practice` — 1.900/mes US/en; KD 39.
   - `blackjack game free online`; `blackjack game with example`; `blackjack game no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+
+- **Implementación local (2026-10-13):** motor y mesa de práctica en navegador con shoe de 1–6 barajas, hit/stand/double/split, ases 1/11, soft-17 configurable, score y reglas visibles. Seis pruebas del motor y contratos focales. Solo copy EN; no hay apuestas, recompensas ni dinero real. Faltan 35 locales, build global, QA visual y gates C/F/E/X/L/B/P/S; no publicado.
 
 ### 090 · Tripeaks Solitaire
 
@@ -5079,6 +5098,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `body surface area calculator free online`; `body surface area calculator with example`; `body surface area calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** CA/en `body surface area calculator` 1.900/mes, KD 0; UK/en `body surface area calculator` 2.400/mes, KD 0; AU/en `body surface area calculator` 1.600/mes, KD 0.
+- **Implementación local (2026-10-13):** compara Mosteller y Du Bois con conversión cm/in y kg/lb; 170 cm/70 kg da 1,818 m² y 1,810 m² respectivamente. Rango adulto explícito; sin interpretación de salud ni dosificación. Fórmulas comprobadas en la literatura primaria (Mosteller y Du Bois/du Bois). Motor, formulario, controlador, copy EN y CSS integrados localmente; suite focal combinada de la sesión 222/222. Faltan 35 locales, build/QA integral y comprobación de publicación; no marcar gates completos.
 
 ### 084 · Vo2 Max Calculator
 

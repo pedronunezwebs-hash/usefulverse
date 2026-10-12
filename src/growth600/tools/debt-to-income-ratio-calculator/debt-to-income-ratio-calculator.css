@@ -1,0 +1,6 @@
+.debt-to-income-ratio-calculator { display: grid; gap: 1rem; }
+.debt-to-income-ratio-calculator fieldset { min-width: 0; padding: 1rem; border: 1px solid var(--border, #c8ced8); border-radius: .75rem; }
+.debt-to-income-ratio-calculator fieldset legend { padding-inline: .35rem; font-weight: 700; }
+.debt-to-income-ratio-calculator [data-dti-values] { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .7rem 1rem; margin: 0; }
+.debt-to-income-ratio-calculator [data-dti-values] dt { font-weight: 600; }
+.debt-to-income-ratio-calculator [data-dti-values] dd { margin: 0; font-variant-numeric: tabular-nums; text-align: end; }

@@ -18,6 +18,7 @@ import effectiveInterestRateCalculatorCopies from './locales/effective-interest-
 import fiveTwentyNineCalculatorCopies from './locales/529-calculator-final.mjs';
 import julianDateConverterCopies from './locales/julian-date-converter-final.mjs';
 import intervalTimerCopies from './locales/interval-timer-final.mjs';
+import alarmClockCopies from './locales/alarm-clock-final.mjs';
 import logicGridPuzzleCopies from './locales/logic-grid-puzzle-final.mjs';
 import { logicGridPuzzleEnglishCopy } from './locales/logic-grid-puzzle.en.mjs';
 import markdownEditorCopies from './locales/markdown-editor-final.mjs';
@@ -31,6 +32,13 @@ import specificHeatCalculatorCopies from './locales/specific-heat-calculator-fin
 import rcTimeConstantCalculatorCopies from './locales/rc-time-constant-calculator-final.mjs';
 import reverseMortgageCalculatorCopies from './locales/reverse-mortgage-calculator-final.mjs';
 import carDepreciationCalculatorCopies from './locales/car-depreciation-calculator-final.mjs';
+import textToSpeechCopies from './locales/text-to-speech-final.mjs';
+import worldClockCopies from './locales/world-clock-final.mjs';
+import { euchreEnglishCopy } from './locales/euchre.en.mjs';
+import euchreCopies from './locales/euchre-final.mjs';
+import { nameGeneratorEnglishCopy } from './locales/name-generator.en.mjs';
+import { cribbageEnglishCopy } from './locales/cribbage.en.mjs';
+import { ginRummyEnglishCopy } from './locales/gin-rummy.en.mjs';
 import stockProfitCalculatorCopies from './locales/stock-profit-calculator-final.mjs';
 import pensionCalculatorCopies from './locales/pension-calculator-final.mjs';
 import lifetimeValueCalculatorCopies from './locales/lifetime-value-calculator-final.mjs';
@@ -75,6 +83,18 @@ import persianGrowthCopy from './locales/fa.mjs';
 import amharicGrowthCopy from './locales/am.mjs';
 import gujaratiGrowthCopy from './locales/gu.mjs';
 import { jsonToXmlEnglishCopy } from './locales/json-to-xml-converter.en.mjs';
+import { weeklyPlannerEnglishCopy } from './locales/weekly-planner.en.mjs';
+import { overtimeCalculatorEnglishCopy } from './locales/overtime-calculator.en.mjs';
+import { meetingMinutesTemplateEnglishCopy } from './locales/meeting-minutes-template.en.mjs';
+import { dotsAndBoxesEnglishCopy } from './locales/dots-and-boxes.en.mjs';
+import { colorMixerEnglishCopy } from './locales/color-mixer.en.mjs';
+import { blackjackGameEnglishCopy } from './locales/blackjack-game.en.mjs';
+import { debtToIncomeRatioEnglishCopy } from './locales/debt-to-income-ratio-calculator.en.mjs';
+import { carLeaseCalculatorEnglishCopy } from './locales/car-lease-calculator.en.mjs';
+import { fireCalculatorEnglishCopy } from './locales/fire-calculator.en.mjs';
+import { emailSignatureGeneratorEnglishCopy } from './locales/email-signature-generator.en.mjs';
+import { imageVectorizerEnglishCopy } from './locales/image-vectorizer.en.mjs';
+import { vo2MaxCalculatorEnglishCopy } from './locales/vo2-max-calculator.en.mjs';
 import { harViewerEnglishCopy } from './locales/har-viewer.en.mjs';
 import robotsTxtTesterCopies from './locales/robots-txt-tester.mjs';
 import { jsonToExcelEnglishCopy } from './locales/json-to-excel.en.mjs';
@@ -116,10 +136,42 @@ import inflationCalculatorCopies from './locales/inflation-calculator-final.mjs'
 import { inflationCalculatorEnglishCopy } from './locales/inflation-calculator.en.mjs';
 import retirementCalculatorCopies from './locales/retirement-calculator-final.mjs';
 import { retirementCalculatorEnglishCopy } from './locales/retirement-calculator.en.mjs';
+import familyTreeMakerCopies from './locales/family-tree-maker-final.mjs';
+import fourOhOneKCalculatorCopies from './locales/401k-calculator-final.mjs';
+import nameGeneratorCopies from './locales/name-generator-final.mjs';
+import randomWordGeneratorCopies from './locales/random-word-generator-final.mjs';
+import breathingExerciseCopies from './locales/breathing-exercise-final.mjs';
+import dividendCalculatorCopies from './locales/dividend-calculator-final.mjs';
+import netWorthCalculatorCopies from './locales/net-worth-calculator-final.mjs';
+import cribbageCopies from './locales/cribbage-final.mjs';
 
-const actions = { calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', updateProgress: 'Record progress', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', feet: 'Feet', inches: 'Inches', liters: 'Liters', cubicFeet: 'Cubic feet', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Computer', twoPlayers: 'Two players', privacyNote: 'Private on this device.', riseMode: 'Rise', pitchMode: 'Pitch' };
+const actions = { calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', copyHtml: 'Copy HTML', download: 'Download', updateProgress: 'Record progress', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', feet: 'Feet', inches: 'Inches', liters: 'Liters', cubicFeet: 'Cubic feet', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Computer', twoPlayers: 'Two players', privacyNote: 'Private on this device.', riseMode: 'Rise', pitchMode: 'Pitch' };
 const messages = { copied: 'Copied.', copyUnavailable: 'Copy unavailable.', calculated: 'Done.', sameSize: 'Sizes match.', checkInputs: 'Check entries.', diameter: 'Outside diameter', sidewall: 'Sidewall height', circumference: 'Circumference', revolutions: 'Revolutions per kilometre', diameterDifference: 'Diameter difference', diameterChange: 'Diameter change', groundClearance: 'Ground-clearance change', actualSpeed: 'Actual speed estimate', area: 'Area', volume: 'Volume', volumePerContainer: 'Volume per container', totalVolume: 'Total soil volume', orderVolume: 'Order volume', estimatedWeight: 'Estimated weight', bagsToBuy: 'Bags to buy', invalidFormula: 'Check formula.', atomCount: 'atoms', molarMass: 'Molar mass', estimateOnly: 'Estimate only.', currentPayment: 'Current payment', newPayment: 'New payment', paymentDifference: 'Difference', currentTotal: 'Current total', newTotal: 'New total', estimatedDifference: 'Estimated savings', breakEven: 'Break-even', noBreakEven: 'No break-even', monthCount: '{count} months', privatePair: '{giver} gives to {recipient}', allRevealed: 'All revealed.', drawReady: 'Ready.', checkNamesAndRules: 'Check entries.', downloaded: 'Downloaded.', pit: 'Pit', seeds: 'seeds', playerOne: 'Player one', playerTwo: 'Player two', playerOneWins: 'Player one wins.', playerTwoWins: 'Player two wins.', tie: 'Tie.', gameOver: 'Game over.', turn: '{player} turn.', effectiveRun: 'Horizontal run to ridge', rafterLength: 'Geometric rafter length', pitch: 'Pitch (rise per 12)', roofAngle: 'Roof angle', plumbCut: 'Plumb-cut angle', overhangRun: 'Horizontal overhang' };
 function toolCopy(tool, language) {
+  if (tool.id === 'weekly-planner') return { ...structuredClone(weeklyPlannerEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-13' }; // Synthetic copy fixture only; production still requires real translations.
+  if (tool.id === 'overtime-calculator') return { ...structuredClone(overtimeCalculatorEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-13' }; // Synthetic copy fixture only; production still requires real translations.
+  if (tool.id === 'meeting-minutes-template') return { ...structuredClone(meetingMinutesTemplateEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-13' }; // Synthetic copy fixture only; production still requires real translations.
+  if (tool.id === 'dots-and-boxes') return { ...structuredClone(dotsAndBoxesEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-13' }; // Synthetic copy fixture only; production still requires real translations.
+  if (tool.id === 'color-mixer') return { ...structuredClone(colorMixerEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-13' }; // Synthetic copy fixture only; production still requires real translations.
+  if (tool.id === 'blackjack-game') return { ...structuredClone(blackjackGameEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-13' }; // Synthetic copy fixture only; production still requires real translations.
+  if (tool.id === 'debt-to-income-ratio-calculator') return { ...structuredClone(debtToIncomeRatioEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-13' }; // Synthetic copy fixture only; production still requires real translations.
+  if (tool.id === 'car-lease-calculator') return { ...structuredClone(carLeaseCalculatorEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-13' }; // Synthetic copy fixture only; production still requires real translations.
+  if (tool.id === 'fire-calculator') return { ...structuredClone(fireCalculatorEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-13' }; // Synthetic copy fixture only; production still requires real translations.
+  if (tool.id === 'email-signature-generator') return { ...structuredClone(emailSignatureGeneratorEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-13' }; // Synthetic copy fixture only; production still requires real translations.
+  if (tool.id === 'image-vectorizer') return { ...structuredClone(imageVectorizerEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-13' }; // Synthetic copy fixture only; production still requires real translations.
+  if (tool.id === 'vo2-max-calculator') return { ...structuredClone(vo2MaxCalculatorEnglishCopy), copyLanguage: language, localizationStatus: 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-13' }; // Synthetic copy fixture only; production still requires real translations.
+  if (tool.id === 'euchre') return { ...structuredClone(euchreEnglishCopy), copyLanguage: language, localizationStatus: language === 'en' ? 'approved' : 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-12' };
+  if (tool.id === 'family-tree-maker') return structuredClone(familyTreeMakerCopies[language]);
+  if (tool.id === '401k-calculator') return structuredClone(fourOhOneKCalculatorCopies[language]);
+  if (tool.id === 'name-generator') return structuredClone(nameGeneratorCopies[language]);
+  if (tool.id === 'random-word-generator') return structuredClone(randomWordGeneratorCopies[language]);
+  if (tool.id === 'breathing-exercise') return structuredClone(breathingExerciseCopies[language]);
+  if (tool.id === 'dividend-calculator') return structuredClone(dividendCalculatorCopies[language]);
+  if (tool.id === 'net-worth-calculator') return structuredClone(netWorthCalculatorCopies[language]);
+  if (tool.id === 'cribbage') return structuredClone(cribbageCopies[language]);
+  if (tool.id === 'name-generator') return { ...structuredClone(nameGeneratorEnglishCopy), copyLanguage: language, localizationStatus: language === 'en' ? 'approved' : 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-12' };
+  if (tool.id === 'cribbage') return { ...structuredClone(cribbageEnglishCopy), copyLanguage: language, localizationStatus: language === 'en' ? 'approved' : 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-12' };
+  if (tool.id === 'gin-rummy') return { ...structuredClone(ginRummyEnglishCopy), copyLanguage: language, localizationStatus: language === 'en' ? 'approved' : 'machine-accepted', localizationAcceptedBy: 'site-owner', localizationAcceptedAt: '2026-10-12' };
   if (tool.id === 'inductor-calculator') return structuredClone(inductorCalculatorEnglishCopy);
   if (tool.id === 'centripetal-force-calculator') return structuredClone(centripetalForceCalculatorEnglishCopy);
   if (tool.id === 'writing-tracker') return structuredClone(language === 'en' ? writingTrackerEnglishCopy : writingTrackerCopies[language]);
@@ -143,6 +195,7 @@ function toolCopy(tool, language) {
   if (tool.id === '529-calculator') return structuredClone(fiveTwentyNineCalculatorCopies[language]);
   if (tool.id === 'julian-date-converter') return structuredClone(julianDateConverterCopies[language]);
   if (tool.id === 'interval-timer') return structuredClone(intervalTimerCopies[language]);
+  if (tool.id === 'alarm-clock') return structuredClone(alarmClockCopies[language]);
   if (tool.id === 'logic-grid-puzzle') return structuredClone(language === 'en' ? logicGridPuzzleEnglishCopy : logicGridPuzzleCopies[language]);
   if (tool.id === 'markdown-editor') return structuredClone(markdownEditorCopies[language]);
   if (tool.id === 'purchase-order-generator') return structuredClone(purchaseOrderGeneratorCopies[language]);
@@ -416,6 +469,7 @@ function toolCopy(tool, language) {
   if (tool.id === 'hijri-calendar-converter') Object.assign(fields, { mode: 'Direction', gregorianToHijri: 'Gregorian to Hijri', hijriToGregorian: 'Hijri to Gregorian', gregorianDate: 'Gregorian date', gregorianYear: 'Year', gregorianMonth: 'Month', gregorianDay: 'Day', hijriYear: 'Year AH', hijriMonth: 'Month', hijriDay: 'Day', hijriMonths: ['Muharram', 'Safar', 'Rabi al-Awwal', 'Rabi al-Thani', 'Jumada al-Awwal', 'Jumada al-Thani', 'Rajab', 'Sha’ban', 'Ramadan', 'Shawwal', 'Dhu al-Qadah', 'Dhu al-Hijjah'], methodNote: 'Tabular calendar.' });
   if (tool.id === 'capacitor-calculator') Object.assign(fields, { values: 'Capacitance values', valuesHint: 'One per line.', connection: 'Connection', series: 'Series', parallel: 'Parallel', unit: 'Unit', voltage: 'Voltage (optional)', accuracyNote: 'Ideal capacitors only.', resultEquivalent: 'Equivalent capacitance', resultCharge: 'Charge', resultEnergy: 'Energy', resultVoltage: 'Voltage', capacitor: 'Capacitor', formulaNote: 'Parallel values add; series use reciprocal sum.' });
   if (tool.id === 'body-water-calculator') Object.assign(fields, { equation: 'Watson equation variant', watsonMale: 'Male equation', watsonFemale: 'Female equation', age: 'Age in years', height: 'Height', heightUnit: 'Height unit', weight: 'Weight', weightUnit: 'Weight unit', centimeters: 'Centimeters', inches: 'Inches', kilograms: 'Kilograms', pounds: 'Pounds', accuracyNote: 'Adult estimate only; not a hydration test or fluid-intake target.', resultLiters: 'Estimated total body water', resultPercent: 'Approximate share of body mass', equationNote: 'Watson et al. (1980): male = 2.447 − 0.09516 × age + 0.1074 × height(cm) + 0.3362 × weight(kg); female = −2.097 + 0.1069 × height(cm) + 0.2466 × weight(kg).' });
+  if (tool.id === 'body-surface-area-calculator') Object.assign(fields, { height: 'Height', heightUnit: 'Height unit', weight: 'Weight', weightUnit: 'Weight unit', centimeters: 'Centimeters (cm)', inches: 'Inches (in)', kilograms: 'Kilograms (kg)', pounds: 'Pounds (lb)', accuracyNote: 'Adult estimate only; supported ranges are 50–250 cm and 10–500 kg or equivalent units.', safetyNote: 'Not for medication doses, diagnosis or treatment decisions. Not for children.', mosteller: 'Mosteller estimate', duBois: 'Du Bois estimate', difference: 'Difference between formulas', formulaNote: 'Mosteller: square root of height(cm) × weight(kg) ÷ 3600. Du Bois: 0.007184 × weight(kg)^0.425 × height(cm)^0.725.' });
   if (tool.id === '555-timer-calculator') Object.assign(fields, { mode: 'Circuit mode', astable: 'Astable oscillator', monostable: 'Monostable pulse', resistanceA: 'Resistor RA', resistanceB: 'Resistor RB', resistance: 'Resistor R', resistanceUnit: 'Resistance unit', ohms: 'Ohms (Ω)', kilohms: 'Kilohms (kΩ)', megohms: 'Megohms (MΩ)', capacitance: 'Capacitor C', capacitanceUnit: 'Capacitance unit', farads: 'Farads (F)', millifarads: 'Millifarads (mF)', microfarads: 'Microfarads (μF)', nanofarads: 'Nanofarads (nF)', picofarads: 'Picofarads (pF)', accuracyNote: 'Ideal timing only.', frequencyNote: 'Frequency note', highFrequencyWarning: 'Check datasheet above 100 kHz.', formulaNote: 'Formulas: tHIGH=0.693(RA+RB)C, tLOW=0.693RBC, f≈1.44/((RA+2RB)C), tMONO≈1.1RC.', sourceLink: 'TI datasheet', resultFrequency: 'Frequency', resultPeriod: 'Period', resultHigh: 'Output high time', resultLow: 'Output low time', resultWaveformDuty: 'Waveform duty cycle', resultDischargeDuty: 'Discharge interval share', resultPulse: 'Output pulse width' });
   if (tool.id === 'fourier-series-calculator') Object.assign(fields, { samples: 'Signal samples', samplesHint: 'Enter 4–128 equally spaced values, one per line or separated by semicolons.', period: 'Period', periodHint: 'Use one consistent time unit.', harmonics: 'Highest harmonic', harmonicsHint: 'The maximum depends on sample count.', accuracyNote: 'Numeric estimate only.', formulaLabel: 'Formula', formula: 'DC = mean(x); real Fourier series.', resultDc: 'DC component', resultFrequency: 'Fundamental frequency', resultHarmonics: 'Harmonics included', resultRms: 'RMS sample error', coefficient: 'Harmonic', coefficientA: 'Cosine coefficient', coefficientB: 'Sine coefficient', coefficientAmplitude: 'Amplitude', phase: 'Phase', radians: 'radians', frequencyUnit: 'per unit of time', chartLabel: 'Input samples and Fourier reconstruction', samplesLegend: 'Input samples', reconstructionLegend: 'Reconstruction' });
   if (tool.id === 'modular-inverse-calculator') Object.assign(fields, { a: 'Integer a', modulus: 'Modulus m', accuracyNote: 'Integer arithmetic only.', formulaLabel: 'Definition', formula: 'a × x ≡ 1 (mod m).', resultStatus: 'Inverse status', resultGcd: 'GCD', resultResidue: 'Residue', resultInverse: 'Inverse', bezout: 'Bezout identity', step: 'Step', quotient: 'Quotient', remainder: 'Remainder', coefficientA: 'Residue coefficient', coefficientModulus: 'Modulus coefficient', existsLabel: 'Inverse exists', missingLabel: 'No inverse', verification: 'Verification' });
@@ -427,6 +481,7 @@ function toolCopy(tool, language) {
   if (tool.id === 'hijri-calendar-converter') Object.assign(actions, { convert: 'Convert date', example: 'Try an example', reset: 'Reset', result: 'Converted date' });
   if (tool.id === 'capacitor-calculator') Object.assign(actions, { calculate: 'Calculate', example: 'Try an example', reset: 'Clear', result: 'Results' });
   if (tool.id === 'body-water-calculator') Object.assign(actions, { calculate: 'Calculate estimate', example: 'Try an example', reset: 'Clear', result: 'Estimate' });
+  if (tool.id === 'body-surface-area-calculator') Object.assign(actions, { calculate: 'Calculate estimates', example: 'Try an example', reset: 'Clear', result: 'Estimated body surface area', copy: 'Copy results' });
   if (tool.id === '555-timer-calculator') Object.assign(actions, { calculate: 'Calculate timing', example: 'Try an example', reset: 'Clear', result: 'Timing results', copy: 'Copy results' });
   if (tool.id === 'fourier-series-calculator') Object.assign(actions, { calculate: 'Calculate series', example: 'Load sine example', constant: 'Load constant example', reset: 'Clear', result: 'Fourier results', copy: 'Copy coefficients' });
   if (tool.id === 'modular-inverse-calculator') Object.assign(actions, { calculate: 'Calculate inverse', example: 'Load 3 modulo 7', reset: 'Clear', result: 'Modular inverse results', copy: 'Copy result' });
@@ -571,6 +626,11 @@ function toolCopy(tool, language) {
     { question: 'Is this a hydration or dehydration test?', answer: 'No. It estimates total body water from a population equation. It cannot measure hydration status or diagnose dehydration.' },
     { question: 'What does the percentage mean?', answer: 'It is estimated litres divided by the entered body mass, treating 1 litre as about 1 kilogram. It is not a target or healthy-range score.' },
     { question: 'Who should not use this estimate for decisions?', answer: 'It is not intended for children, pregnancy, dialysis, edema or clinical decisions. Ask a qualified clinician about individual health.' },
+  ];
+  if (tool.id === 'body-surface-area-calculator') localized.additionalFaqs = [
+    { question: 'Why do the formulas give different results?', answer: 'They model height and weight differently. This is arithmetic only and does not determine which estimate is clinically appropriate.' },
+    { question: 'Can I use the estimate to calculate a medicine dose?', answer: 'No. Follow medication instructions from a qualified healthcare professional.' },
+    { question: 'Is it designed for children?', answer: 'No. This page is limited to adult estimates and has no pediatric formulas.' },
   ];
   if (tool.id === '555-timer-calculator') localized.additionalFaqs = [
     { question: 'What is the difference between astable and monostable mode?', answer: 'Astable mode repeats high and low intervals as an oscillator. Monostable mode produces one output pulse after a trigger; this calculator estimates its ideal width.' },
@@ -909,10 +969,15 @@ function toolCopy(tool, language) {
 }
 
 function createCopy(languages) {
-  return Object.fromEntries(languages.map((locale) => [locale.key, {
-    _home: { copyLanguage: locale.key, title: `UsefulVerse ${locale.key} tools | UsefulVerse`, description: 'Free browser tools with no account required.', intro: 'Small, useful tools that run in your browser.', directoryLabel: 'Everyday tools', freeLabel: 'Free, no usage limit', footerFree: 'Free browser tools.', skipToTool: 'Skip to tool', home: 'Home', languageLabel: 'Language', breadcrumbLabel: 'Breadcrumb', faqLabel: 'FAQ' },
-    ...Object.fromEntries(growthPilotTools.map((tool) => [tool.id, toolCopy(tool, locale.key)])),
-  }]));
+  return Object.fromEntries(languages.map((locale) => {
+    const copy = {
+      _home: { copyLanguage: locale.key, title: `UsefulVerse ${locale.key} tools | UsefulVerse`, description: 'Free browser tools with no account required.', intro: 'Small, useful tools that run in your browser.', directoryLabel: 'Everyday tools', freeLabel: 'Free, no usage limit', footerFree: 'Free browser tools.', skipToTool: 'Skip to tool', home: 'Home', languageLabel: 'Language', breadcrumbLabel: 'Breadcrumb', faqLabel: 'FAQ' },
+      ...Object.fromEntries(growthPilotTools.map((tool) => [tool.id, toolCopy(tool, locale.key)])),
+    };
+    if (textToSpeechCopies[locale.key]) copy['text-to-speech'] = textToSpeechCopies[locale.key];
+    if (worldClockCopies[locale.key]) copy['world-clock'] = worldClockCopies[locale.key];
+    return [locale.key, copy];
+  }));
 }
 
 test('separate static build writes only localized hub routes, its sitemap and bounded hashed assets', async (context) => {
@@ -923,8 +988,20 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   const controllerBundles = Object.fromEntries(growthPilotTools.map((tool) => [tool.id, `document.querySelector('[data-tool="${tool.id}"]');`]));
   const workerBundles = { 'image-upscaler-worker': 'self.addEventListener("message",()=>{});' };
   const extraAssets = { 'models-test/config.json': '{"upscale":2}', 'models-test/onnx/model.onnx': Buffer.from([1, 2, 3]) };
-  const toolStyles = { 'boolean-algebra-calculator': '.boolean-algebra-table-wrap{overflow:auto}', 'har-viewer': '.har-viewer__table{border-collapse:collapse}', 'robots-txt-tester': '.robots-txt-tester__decision{display:grid}', 'binary-base64-tool': '.binary-base64-tool img{max-width:100%}', 'csv-editor': '.csv-editor__table-scroll{overflow:auto}', 'logic-grid-puzzle': '.logic-grid-table{table-layout:fixed}', 'markdown-editor': '.markdown-editor{max-width:70rem}', 'purchase-order-generator': '.purchase-order-table-scroll{overflow:auto}', 'eigenvalue-calculator': '.eigenvalue-results__list{display:grid;gap:1rem}', 'bond-calculator': '[data-bond-chart]{display:block;width:100%}', 'waist-to-hip-ratio-calculator': '.waist-to-hip-ratio-calculator .result{font-variant-numeric:tabular-nums}', 'hebrew-calendar-converter': '.hebrew-calendar-converter fieldset{display:grid}', 'absolute-value-calculator': '.absolute-value-calculator fieldset{display:grid}', 'rc-time-constant-calculator': '.rc-time-constant-calculator [data-rc-chart]{display:block;width:100%}', 'reverse-mortgage-calculator': '.reverse-mortgage-calculator table{overflow:auto}', 'writing-tracker': '.writing-tracker [data-writing-history]{display:grid;gap:.5rem}' };
+  const toolStyles = { 'boolean-algebra-calculator': '.boolean-algebra-table-wrap{overflow:auto}', 'har-viewer': '.har-viewer__table{border-collapse:collapse}', 'robots-txt-tester': '.robots-txt-tester__decision{display:grid}', 'binary-base64-tool': '.binary-base64-tool img{max-width:100%}', 'csv-editor': '.csv-editor__table-scroll{overflow:auto}', 'logic-grid-puzzle': '.logic-grid-table{table-layout:fixed}', 'markdown-editor': '.markdown-editor{max-width:70rem}', 'purchase-order-generator': '.purchase-order-table-scroll{overflow:auto}', 'eigenvalue-calculator': '.eigenvalue-results__list{display:grid;gap:1rem}', 'bond-calculator': '[data-bond-chart]{display:block;width:100%}', 'waist-to-hip-ratio-calculator': '.waist-to-hip-ratio-calculator .result{font-variant-numeric:tabular-nums}', 'hebrew-calendar-converter': '.hebrew-calendar-converter fieldset{display:grid}', 'absolute-value-calculator': '.absolute-value-calculator fieldset{display:grid}', 'rc-time-constant-calculator': '.rc-time-constant-calculator [data-rc-chart]{display:block;width:100%}', 'reverse-mortgage-calculator': '.reverse-mortgage-calculator table{overflow:auto}', 'writing-tracker': '.writing-tracker [data-writing-history]{display:grid;gap:.5rem}', 'world-clock': '.world-clock__controls{display:flex;flex-wrap:wrap;gap:1rem}' };
   toolStyles.slitherlink = '.slitherlink-board{display:grid}';
+  toolStyles['weekly-planner'] = '.weekly-planner__day{border-block-start:1px solid #ddd}';
+  toolStyles['overtime-calculator'] = '.overtime-calculator{display:grid;gap:1rem}';
+  toolStyles['meeting-minutes-template'] = '.meeting-minutes-template pre{white-space:pre-wrap}';
+  toolStyles['dots-and-boxes'] = '.dots-and-boxes__board{display:grid}';
+  toolStyles['color-mixer'] = '.color-mixer__row{display:grid}';
+  toolStyles['blackjack-game'] = '.blackjack-game__card{display:grid}';
+  toolStyles['debt-to-income-ratio-calculator'] = '.debt-to-income-ratio-calculator [data-dti-values]{display:grid}';
+  toolStyles['car-lease-calculator'] = '.car-lease-calculator{display:grid}';
+  toolStyles['fire-calculator'] = '.fire-calculator{display:grid}';
+  toolStyles['email-signature-generator'] = '.email-signature-generator{display:grid}';
+  toolStyles['image-vectorizer'] = '.image-vectorizer{display:grid}';
+  toolStyles['vo2-max-calculator'] = '.vo2-max-calculator{display:grid}';
   const fixtureCopyByLocale = { en: englishGrowthCopy, es: spanishGrowthCopy, fr: frenchGrowthCopy, pt: portugueseGrowthCopy, de: germanGrowthCopy, ja: japaneseGrowthCopy, ko: koreanGrowthCopy, id: indonesianGrowthCopy, hi: hindiGrowthCopy, ar: arabicGrowthCopy, zh: simplifiedChineseGrowthCopy, bn: bengaliGrowthCopy, ru: russianGrowthCopy, ur: urduGrowthCopy, tr: turkishGrowthCopy, vi: vietnameseGrowthCopy, it: italianGrowthCopy, zh_tw: traditionalChineseGrowthCopy, bg: bulgarianGrowthCopy, ca: catalanGrowthCopy, nl: dutchGrowthCopy, el: greekGrowthCopy, ms: malayGrowthCopy, pl: polishGrowthCopy, sv: swedishGrowthCopy, th: thaiGrowthCopy, uk: ukrainianGrowthCopy, sw: swahiliGrowthCopy, mr: marathiGrowthCopy, te: teluguGrowthCopy, ha: hausaGrowthCopy, tl: filipinoGrowthCopy, ta: tamilGrowthCopy, fa: persianGrowthCopy, am: amharicGrowthCopy, gu: gujaratiGrowthCopy };
   for (const locale of smallLocales) fixtureCopyByLocale[locale.key] = {
     ...fixtureCopyByLocale[locale.key],
@@ -966,6 +1043,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
     'density-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'density-calculator'), locale.key),
     'kinetic-energy-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'kinetic-energy-calculator'), locale.key),
     'resistor-color-code-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'resistor-color-code-calculator'), locale.key),
+    'gin-rummy': toolCopy(growthPilotTools.find(({ id }) => id === 'gin-rummy'), locale.key),
     'log-analyzer': toolCopy(growthPilotTools.find(({ id }) => id === 'log-analyzer'), locale.key),
     'inflation-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'inflation-calculator'), locale.key),
     'retirement-calculator': structuredClone(locale.key === 'en' ? retirementCalculatorEnglishCopy : retirementCalculatorCopies[locale.key]),
@@ -993,6 +1071,12 @@ test('separate static build writes only localized hub routes, its sitemap and bo
     'eigenvalue-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'eigenvalue-calculator'), locale.key),
     'bond-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'bond-calculator'), locale.key),
     'waist-to-hip-ratio-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'waist-to-hip-ratio-calculator'), locale.key),
+    'body-surface-area-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'body-surface-area-calculator'), locale.key),
+    'weekly-planner': toolCopy(growthPilotTools.find(({ id }) => id === 'weekly-planner'), locale.key),
+    'overtime-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'overtime-calculator'), locale.key),
+    'meeting-minutes-template': toolCopy(growthPilotTools.find(({ id }) => id === 'meeting-minutes-template'), locale.key),
+    'dots-and-boxes': toolCopy(growthPilotTools.find(({ id }) => id === 'dots-and-boxes'), locale.key),
+    'color-mixer': toolCopy(growthPilotTools.find(({ id }) => id === 'color-mixer'), locale.key),
     'hebrew-calendar-converter': toolCopy(growthPilotTools.find(({ id }) => id === 'hebrew-calendar-converter'), locale.key),
     'absolute-value-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'absolute-value-calculator'), locale.key),
     'color-name-finder': toolCopy(growthPilotTools.find(({ id }) => id === 'color-name-finder'), locale.key),
@@ -1012,6 +1096,22 @@ test('separate static build writes only localized hub routes, its sitemap and bo
     'kinetic-energy-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'kinetic-energy-calculator'), locale.key),
     'resistor-color-code-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'resistor-color-code-calculator'), locale.key),
   };
+  for (const locale of smallLocales) {
+    fixtureCopyByLocale[locale.key] = {
+      ...fixtureCopyByLocale[locale.key],
+      'text-to-speech': textToSpeechCopies[locale.key],
+      'world-clock': worldClockCopies[locale.key],
+      'euchre': euchreCopies[locale.key],
+      'family-tree-maker': familyTreeMakerCopies[locale.key],
+      '401k-calculator': fourOhOneKCalculatorCopies[locale.key],
+      'name-generator': nameGeneratorCopies[locale.key],
+      'random-word-generator': randomWordGeneratorCopies[locale.key],
+      'breathing-exercise': breathingExerciseCopies[locale.key],
+      'dividend-calculator': dividendCalculatorCopies[locale.key],
+      'net-worth-calculator': netWorthCalculatorCopies[locale.key],
+      'cribbage': cribbageCopies[locale.key],
+    };
+  }
   const result = await buildGrowthStaticSite({
     outputDir,
     origin: 'https://tools.usefulverse.com',
@@ -1256,7 +1356,8 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   // Top-level entries include shared and tool-only stylesheets, one controller
   // per tool, the model worker, the models directory (nested contents), and
   // the dedicated stylesheet for each page that needs one.
-  assert.equal(files.length, growthPilotTools.length + 20);
+  const extraAssetRootEntries = new Set(Object.keys(extraAssets).map((path) => path.split('/')[0])).size;
+  assert.equal(files.length, growthPilotTools.length + 1 + Object.keys(toolStyles).length + Object.keys(workerBundles).length + extraAssetRootEntries);
   assert.ok((await stat(join(outputDir, 'assets', files[0]))).isFile());
 });
 

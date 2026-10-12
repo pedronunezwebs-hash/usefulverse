@@ -1,0 +1,30 @@
+export const alarmClockEnglishCopy = Object.freeze({
+  copyLanguage: 'en', localizationStatus: 'approved', name: 'Online Alarm Clock',
+  title: 'Online Alarm Clock Free with Snooze | UsefulVerse',
+  description: 'Set a free browser alarm for a local date and time, test an optional sound, then stop or snooze it for five minutes.',
+  intro: 'Set one alarm for a time in the next seven days. Keep this page open and your device awake; browser alarms are not a replacement for a system alarm.',
+  howQuestion: 'How do I set an online alarm?',
+  howAnswer: 'Choose a future date and time in your device’s local time zone, then select Set alarm. Sound is optional. You can test it first, snooze for five minutes or stop it when it rings.',
+  privacyQuestion: 'Does this alarm send data or work after I close the page?',
+  privacyAnswer: 'No data is sent or saved. The alarm runs in this page only and cannot alert you reliably if the tab closes, the browser pauses it or the device sleeps.',
+  fields: {
+    alarmTime: 'Alarm date and time (your local time)', sound: 'Sound', soundHint: 'Play an optional sound when it rings',
+    accuracyNote: 'Keep this page open and the device awake. Browser throttling, sleep, shutdown or connection/device problems can delay or prevent an alarm. Use a system alarm for anything important.',
+    scheduledFor: 'Scheduled for', timeRemaining: 'Time remaining', alarmRinging: 'Your alarm is ringing.',
+  },
+  actions: { schedule: 'Set alarm', testSound: 'Test sound', cancel: 'Cancel alarm', snooze: 'Snooze 5 minutes', stop: 'Stop alarm' },
+  messages: {
+    scheduled: 'Alarm set for {time}. Keep this page open.', cancelled: 'Alarm cancelled.',
+    ringing: 'Your alarm is ringing.', snoozed: 'Snoozed for five minutes.', stopped: 'Alarm stopped.',
+    checkTime: 'Choose a future local time within the next seven days.',
+    invalidTime: 'That local time does not exist because of a clock change. Choose another time.',
+    soundUnavailable: 'Sound could not play here. Keep the page open and use a system alarm for important reminders.',
+    soundTested: 'Sound test played.',
+  },
+  example: {},
+  additionalFaqs: [
+    { question: 'Will the alarm ring if I close the tab?', answer: 'No. This is an in-page alarm, not an operating-system alarm or notification. Keep the page open and the device awake; for important reminders, use your device’s alarm app.' },
+    { question: 'Can I snooze the alarm?', answer: 'Yes. When it rings, choose Snooze 5 minutes to schedule it again from the current time.' },
+    { question: 'Does the alarm use my location or save my time?', answer: 'No. It uses the local time configured on your device. The alarm is held only in the open page and is not uploaded or saved.' },
+  ],
+});

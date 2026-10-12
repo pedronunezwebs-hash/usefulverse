@@ -1,10 +1,36 @@
 export const REQUIRED_GROWTH_COPY = Object.freeze(['name', 'title', 'description', 'intro', 'howQuestion', 'howAnswer', 'privacyQuestion', 'privacyAnswer']);
 export const REQUIRED_GROWTH_HOME_COPY = Object.freeze(['title', 'description', 'intro', 'directoryLabel', 'freeLabel', 'footerFree', 'skipToTool', 'home', 'languageLabel', 'breadcrumbLabel', 'faqLabel']);
 export const REQUIRED_TOOL_MESSAGES = Object.freeze({
+  '401k-calculator': ['calculated', 'invalid'],
+  'world-clock': ['added', 'removed', 'alreadyShown', 'maxReached', 'invalidZone', 'reset'],
+  euchre: ['bidding', 'chooseDiscard', 'chooseCard', 'botTurn', 'cardPlayed', 'invalidAction', 'handScored', 'redealt', 'teamWins', 'southTeam', 'northTeam', 'roundLabel', 'noTrump'],
+  'name-generator': ['generated', 'copied', 'copyUnavailable', 'downloaded', 'checkInputs', 'seedUnavailable', 'exampleLoaded'],
+  'random-word-generator': ['generated', 'copied', 'copyUnavailable', 'downloaded', 'checkInputs', 'seedUnavailable', 'notEnoughWords', 'localeUnavailable'],
+  cribbage: ['invalidCards', 'scored', 'selectTwo', 'playerPegging', 'computerPegging', 'pegged', 'go', 'handCount', 'matchWon', 'roundReady', 'invalidMove', 'matchStarted', 'heels'],
+  'gin-rummy': ['chooseDraw', 'chooseDiscard', 'opponentThinking', 'drewStock', 'drewDiscard', 'invalidKnock', 'roundGinYou', 'roundGinOpponent', 'roundKnockYou', 'roundKnockOpponent', 'undercutYou', 'undercutOpponent', 'stockEmpty', 'gameStarted'],
+  'text-to-speech': ['noVoices', 'unsupported', 'selectVoice', 'emptyText', 'tooLong', 'remoteConfirm', 'paused', 'resumed', 'stopped', 'finished', 'playbackError', 'exampleLoaded', 'textCleared', 'playbackStarted'],
   'effective-interest-rate-calculator': ['copied', 'copyUnavailable', 'calculated', 'exampleLoaded', 'checkInputs', 'apr', 'apy', 'periodicRate', 'formula', 'compounding'],
   '529-calculator': ['calculated', 'checkInputs', 'exampleLoaded', 'target', 'grossCost', 'scholarships', 'projectedSavings', 'fundingGap', 'monthlyNeeded', 'amountNeededNow', 'noTime', 'assumption'],
   'julian-date-converter': ['calculated', 'checkInputs', 'exampleLoaded', 'jd', 'mjd', 'utc', 'dayFraction', 'calendar', 'calendarValue', 'timeScale', 'precision'],
   'interval-timer': ['started', 'paused', 'resumed', 'reset', 'finished', 'checkInputs', 'workCue', 'restCue', 'prepCue', 'soundUnavailable'],
+  'breathing-exercise': ['started', 'paused', 'resumed', 'reset', 'finished', 'checkInputs', 'soundUnavailable', 'inhaleCue', 'holdCue', 'exhaleCue'],
+  'alarm-clock': ['scheduled', 'cancelled', 'ringing', 'snoozed', 'stopped', 'checkTime', 'invalidTime', 'soundUnavailable', 'soundTested'],
+  'dividend-calculator': ['calculated', 'checkInputs', 'exampleLoaded'],
+  'family-tree-maker': ['personAdded', 'linkAdded', 'invalidEntry', 'emptyTree', 'exported'],
+  'net-worth-calculator': ['calculated', 'checkInputs', 'consentRequired', 'saved', 'deleted', 'nothingToExport', 'storageUnavailable', 'exported'],
+  'body-surface-area-calculator': ['calculated', 'checkInputs', 'copied', 'copyUnavailable'],
+  'weekly-planner': ['added', 'removed', 'checkInputs', 'overlapFound', 'noOverlap', 'downloaded', 'imported', 'importFailed', 'cleared'],
+  'overtime-calculator': ['calculated', 'checkInputs', 'copied', 'copyUnavailable'],
+  'meeting-minutes-template': ['previewReady', 'checkInputs', 'downloaded', 'cleared'],
+  'dots-and-boxes': ['playerTurn', 'computerTurn', 'boxScored', 'gameWon', 'gameTied', 'gameStarted', 'invalidMove'],
+  'color-mixer': ['calculated', 'checkInputs', 'colorAdded', 'colorLimit', 'colorRemoved', 'colorMinimum', 'copied', 'copyUnavailable', 'downloaded', 'reset'],
+  'blackjack-game': ['yourTurn', 'dealerTurn', 'natural', 'dealerNatural', 'naturalPush', 'win', 'loss', 'push', 'bust', 'dealerBust', 'handStarted', 'shoeStarted', 'checkInputs', 'noRound'],
+  'debt-to-income-ratio-calculator': ['calculated', 'checkInputs', 'copied', 'copyUnavailable'],
+  'car-lease-calculator': ['calculated', 'checkInputs', 'copied', 'copyUnavailable'],
+  'fire-calculator': ['calculated', 'checkInputs', 'copied', 'copyUnavailable'],
+  'email-signature-generator': ['generated', 'checkInputs', 'copied', 'copiedHtml', 'copyUnavailable', 'downloaded', 'logoUnavailable'],
+  'image-vectorizer': ['selectImage', 'invalidImage', 'imageTooLarge', 'imageDimensions', 'traceFailed', 'generated', 'downloaded', 'noVisiblePixels', 'tooManyPaths'],
+  'vo2-max-calculator': ['calculated', 'checkInputs', 'copied', 'copyUnavailable'],
   'logic-grid-puzzle': ['newPuzzle', 'solved', 'incomplete', 'conflict', 'incorrect', 'hintSame', 'hintDifferent', 'noHint', 'marksCleared', 'markedSame', 'markedDifferent', 'unmarked', 'generationFailed'],
   'markdown-editor': ['ready', 'previewReady', 'copied', 'copyUnavailable', 'downloaded', 'cleared', 'restored', 'saved', 'storageUnavailable', 'storageDisabled', 'tooLong', 'empty', 'previewFailed', 'undoUnavailable', 'redoUnavailable'],
   'purchase-order-generator': ['ready', 'invalid', 'createFirst', 'printBlocked', 'downloaded', 'downloadFailed', 'exampleLoaded', 'cleared'],
@@ -133,10 +159,32 @@ export const REQUIRED_TOOL_MESSAGES = Object.freeze({
   'travel-itinerary-planner': ['tripSaved', 'storageFailed', 'tripDeletedStorageFailed', 'checkTrip', 'createTripFirst', 'exampleLoaded', 'itemSaved', 'itemUpdated', 'checkItem', 'formCleared', 'itemDeleted', 'confirmDeleteTrip', 'tripDeleted', 'confirmRestore', 'localSaved', 'localRemoved', 'jsonDownloaded', 'icsDownloaded', 'backupTooLarge', 'noItemsToExport', 'exportFailed', 'confirmImport', 'importCancelled', 'imported', 'importFailed', 'overlap', 'shortConnection'],
 });
 export const REQUIRED_TOOL_FIELDS = Object.freeze({
+  '401k-calculator': ['annualSalary', 'currentBalance', 'employeeContributionPercent', 'employerMatchPercent', 'matchLimitPercent', 'vestingPercent', 'years', 'annualReturnPercent', 'assumptionsNote', 'resultTitle', 'annualEmployeeContribution', 'annualEmployerMatch', 'annualVestedMatch', 'totalAnnualContribution', 'projectedBalance', 'projectedVestedBalance', 'year'],
+  'world-clock': ['yourLocalTime', 'addCity', 'timeZone', 'hourFormat', 'twelveHour', 'twentyFourHour', 'utcOffset', 'difference', 'clockList', 'maxClocks', 'accuracyNote'],
+  euchre: ['score', 'target', 'you', 'dealer', 'maker', 'trump', 'upcard', 'yourHand', 'currentTrick', 'tricksWon', 'biddingRound', 'roundOne', 'roundTwo', 'chooseTrump', 'clubs', 'diamonds', 'hearts', 'spades', 'rules', 'accuracyNote', 'rulesText', 'localBot', 'playerSouth', 'seatNorth', 'seatEast', 'seatWest'],
+  'text-to-speech': ['textLabel', 'textPlaceholder', 'voiceLabel', 'browserDefault', 'remoteToggle', 'remoteNotice', 'rateLabel', 'pitchLabel', 'localVoice', 'remoteVoice', 'voiceProgress', 'privacyNote'],
   'effective-interest-rate-calculator': ['mode', 'aprToApy', 'apyToApr', 'rate', 'frequency', 'annual', 'semiannual', 'quarterly', 'monthly', 'twiceMonthly', 'biweekly', 'weekly', 'daily', 'continuous', 'accuracyNote'],
   '529-calculator': ['currentSavings', 'monthlyContribution', 'yearsUntilCollege', 'annualCostToday', 'collegeYears', 'tuitionInflationPercent', 'annualReturnPercent', 'scholarshipPerYear', 'currency', 'accuracyNote'],
   'julian-date-converter': ['direction', 'toJulian', 'toUtc', 'utcDate', 'julianValue', 'dateKind', 'jd', 'mjd', 'accuracyNote'],
   'interval-timer': ['preset', 'workSeconds', 'restSeconds', 'rounds', 'prepSeconds', 'secondsUnit', 'sound', 'soundHint', 'accuracyNote', 'phaseLabel', 'roundLabel', 'remainingLabel', 'totalLabel', 'progressLabel', 'prep', 'work', 'rest', 'complete'],
+  'breathing-exercise': ['pattern', 'custom', 'balanced', 'box', 'fourSevenEight', 'inhale', 'holdIn', 'exhale', 'holdOut', 'duration', 'sound', 'soundHint', 'motionNote', 'safetyNote', 'phase', 'cycle', 'remaining', 'inhaleCue', 'holdCue', 'exhaleCue', 'complete'],
+  'alarm-clock': ['alarmTime', 'sound', 'soundHint', 'accuracyNote', 'scheduledFor', 'timeRemaining', 'alarmRinging'],
+  'dividend-calculator': ['shares', 'sharePrice', 'annualDividendPerShare', 'paymentsPerYear', 'annual', 'semiannual', 'quarterly', 'monthly', 'dividendGrowthPercent', 'priceGrowthPercent', 'years', 'reinvestDividends', 'currencyCode', 'accuracyNote', 'startingInvestment', 'currentAnnualIncome', 'currentIncomePerPayment', 'currentYield', 'yieldOnCost', 'projectedShares', 'projectedSharePrice', 'projectedAnnualIncome', 'projectedPortfolioValue', 'totalReinvested', 'year'],
+  'family-tree-maker': ['personName', 'birthDate', 'deathDate', 'notes', 'parent', 'child', 'relationship', 'biological', 'adoptive', 'foster', 'people', 'emptyTree', 'privacyNote'],
+  'net-worth-calculator': ['currencyCode', 'date', 'assets', 'liabilities', 'assetCash', 'assetInvestments', 'assetProperty', 'assetVehicles', 'assetOther', 'liabilityCreditCards', 'liabilityMortgage', 'liabilityStudentLoans', 'liabilityAutoLoans', 'liabilityOther', 'consent', 'privacyNote', 'totalAssets', 'totalLiabilities', 'netWorth', 'debtToAsset', 'snapshotHistory', 'noSnapshots'],
+  'body-surface-area-calculator': ['height', 'heightUnit', 'weight', 'weightUnit', 'centimeters', 'inches', 'kilograms', 'pounds', 'accuracyNote', 'safetyNote', 'mosteller', 'duBois', 'difference', 'formulaNote'],
+  'weekly-planner': ['day', 'title', 'start', 'end', 'category', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'work', 'personal', 'study', 'health', 'other', 'blocks', 'empty', 'overnight', 'overlap', 'accuracyNote', 'privacyNote', 'backupFile'],
+  'overtime-calculator': ['totalHours', 'hourlyRate', 'thresholdHours', 'overtimeMultiplier', 'regularHours', 'overtimeHours', 'regularPay', 'overtimePay', 'totalPay', 'blendedHourlyRate', 'accuracyNote', 'legalNote', 'privacyNote'],
+  'meeting-minutes-template': ['title', 'date', 'facilitator', 'attendees', 'agenda', 'decisions', 'actions', 'accuracyNote', 'privacyNote', 'actionHint', 'preview'],
+  'dots-and-boxes': ['boardSize', 'threeByThree', 'fourByFour', 'fiveByFive', 'mode', 'computer', 'twoPlayer', 'playerOne', 'playerTwo', 'turn', 'score', 'rules', 'computerNote', 'boardLabel', 'horizontalLine', 'verticalLine', 'boxOwned', 'emptyBox', 'accuracyNote', 'privacyNote'],
+  'color-mixer': ['colors', 'color', 'colorHex', 'weight', 'addColor', 'removeColor', 'mixingSpace', 'srgb', 'linear', 'steps', 'accuracyNote', 'pigmentNote', 'privacyNote', 'resultHex', 'resultRgb', 'resultHsl', 'preview', 'ramp'],
+  'blackjack-game': ['decks', 'oneDeck', 'twoDecks', 'fourDecks', 'sixDecks', 'hitSoft17', 'rules', 'rulesText', 'noWager', 'dealer', 'player', 'score', 'total', 'soft', 'bust', 'blackjack', 'hiddenCard', 'cardDescription', 'ace', 'jack', 'queen', 'king', 'spades', 'hearts', 'diamonds', 'clubs', 'wins', 'losses', 'pushes', 'accuracyNote', 'privacyNote'],
+  'debt-to-income-ratio-calculator': ['grossIncome', 'housing', 'debts', 'debt1', 'debt2', 'debt3', 'debt4', 'currencyNote', 'housingRatio', 'totalRatio', 'totalDebt', 'accuracyNote', 'privacyNote', 'exampleHint'],
+  'car-lease-calculator': ['capitalizedCost', 'residualValue', 'termMonths', 'moneyFactor', 'capCostReduction', 'taxPercent', 'currencyNote', 'accuracyNote', 'privacyNote', 'formulaNote', 'monthlyDepreciation', 'monthlyRentCharge', 'monthlyPretaxPayment', 'estimatedMonthlyTax', 'estimatedMonthlyPayment', 'estimatedPaymentsPlusCapReduction'],
+  'fire-calculator': ['annualSpending', 'withdrawalRatePercent', 'currentPortfolio', 'monthlyContribution', 'expectedAnnualReturnPercent', 'inflationPercent', 'currencyNote', 'accuracyNote', 'privacyNote', 'formulaNote', 'targetAmount', 'realAnnualGrowthPercent', 'monthsToTarget', 'yearsToTarget', 'projectedBalance', 'unreachable'],
+  'email-signature-generator': ['fullName', 'jobTitle', 'organization', 'email', 'phone', 'website', 'location', 'accentColor', 'logoFile', 'logoAlt', 'logoHint', 'clientNote', 'privacyNote', 'resultTitle', 'htmlLabel'],
+  'image-vectorizer': ['imageFile', 'detail', 'paletteCount', 'alphaThreshold', 'mergeRuns', 'detailHint', 'accuracyNote', 'privacyNote', 'resultTitle', 'dimensions', 'colorsUsed', 'pathSections'],
+  'vo2-max-calculator': ['method', 'cooper', 'rockport', 'distance', 'distanceUnit', 'meters', 'kilometers', 'miles', 'age', 'weight', 'weightUnit', 'kilograms', 'pounds', 'equationSex', 'maleCoefficient', 'femaleCoefficient', 'walkMinutes', 'walkSeconds', 'finishHeartRate', 'protocolNote', 'accuracyNote', 'safetyNote', 'sourceNote', 'privacyNote', 'resultTitle', 'unitLabel', 'formulaLabel'],
   'logic-grid-puzzle': ['difficulty', 'board', 'clues', 'categoryPair', 'same', 'different', 'unmarked', 'sameMark', 'differentMark', 'rules', 'accuracyNote'],
   'markdown-editor': ['editor', 'editorHint', 'preview', 'previewHint', 'autosave', 'words', 'characters', 'storageNote'],
   'purchase-order-generator': ['purchaseOrderNumber', 'issueDate', 'deliveryDate', 'currency', 'currencyHint', 'buyer', 'buyerAddress', 'supplier', 'supplierAddress', 'items', 'itemsHint', 'taxPercent', 'shipping', 'paymentTerms', 'deliveryTerms', 'notes', 'description', 'quantity', 'unitPrice', 'lineTotal', 'subtotal', 'tax', 'shippingLabel', 'total', 'privacyNote', 'limitNote', 'previewTitle'],
@@ -235,6 +283,10 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'color-name-finder': ['hexColor', 'colorPreview', 'nearestNames', 'exactMatchNote', 'paletteNote'],
   'weight-loss-calculator': ['currentWeight', 'targetWeight', 'dailyDeficit', 'unit', 'methodNote', 'healthNote', 'sourceNiddk', 'sourceCdc'],
   'random-team-generator': ['names', 'teamCount', 'separations', 'separationsHint', 'seed', 'seedHint', 'privacyNote', 'relatedNamePicker'],
+  'name-generator': ['type', 'fantasy', 'business', 'username', 'count', 'keyword', 'keywordHint', 'seed', 'seedHint', 'suggestionNote'],
+  'random-word-generator': ['category', 'allCategories', 'nature', 'places', 'objects', 'actions', 'minimumLength', 'maximumLength', 'count', 'seed', 'seedHint', 'dictionaryNote'],
+  cribbage: ['mode', 'hand', 'crib', 'card', 'starter', 'rank', 'suit', 'clubs', 'diamonds', 'hearts', 'spades', 'ace', 'jack', 'queen', 'king', 'rulesNote', 'fifteens', 'pairs', 'runs', 'flush', 'nobs', 'game', 'yourCards', 'computerCards', 'matchScore', 'dealer', 'starterCard', 'selectDiscards', 'peggingCount', 'currentTurn', 'computer', 'you', 'target', 'localMatchNote'],
+  'gin-rummy': ['yourHand', 'opponentHand', 'stock', 'discardPile', 'deadwood', 'score', 'turn', 'rulesNote', 'knockHint', 'hiddenCard', 'drawPrompt', 'discardPrompt', 'rank', 'clubs', 'diamonds', 'hearts', 'spades', 'ace', 'jack', 'queen', 'king'],
   'mulch-calculator': ['shape', 'dimensionUnit', 'length', 'width', 'diameter', 'bedCount', 'depth', 'depthUnit', 'bagVolume', 'bagUnit', 'wastePercent', 'pricePerBag', 'currency', 'currencyNote', 'accuracyNote', 'relatedGravelCalculator', 'relatedSoilCalculator'],
   'paver-calculator': ['length', 'width', 'surfaceUnit', 'moduleLength', 'moduleWidth', 'moduleUnit', 'paversPerModule', 'paverWastePercent', 'baseDepth', 'baseDepthUnit', 'baseWastePercent', 'pricePerPaver', 'basePricePerM3', 'currency', 'unitsNote', 'accuracyNote', 'relatedTileCalculator', 'relatedGravelCalculator'],
   'solar-panel-calculator': ['mode', 'dailyTargetKwh', 'panelCount', 'panelWatts', 'peakSunHours', 'lossPercent', 'panelLengthM', 'panelWidthM', 'electricityRate', 'systemCost', 'currency', 'assumptionNote', 'accuracyNote'],
@@ -265,10 +317,32 @@ export const REQUIRED_TOOL_FIELDS = Object.freeze({
   'travel-itinerary-planner': ['tripName', 'tripStartDate', 'tripEndDate', 'bufferMinutes', 'saveConsent', 'storageNote', 'itemDate', 'startTime', 'endTime', 'itemTitle', 'category', 'location', 'reservation', 'notes', 'itineraryLabel', 'noTrip', 'noItems', 'itemCount', 'overlapCount', 'bufferWarningCount', 'conflictsLabel', 'backupFile', 'backupHint', 'limitNote', 'timeZoneNote', 'reservationPrivacyNote', 'exampleTrip', 'exampleActivity', 'exampleMeal', 'exampleLocation', 'exampleReservation'],
 });
 export const REQUIRED_TOOL_ACTIONS = Object.freeze({
+  '401k-calculator': ['calculate', 'reset', 'example', 'result'],
+  'world-clock': ['add', 'remove', 'result', 'reset'],
+  euchre: ['newGame', 'pass', 'orderUp', 'nameTrump', 'discard', 'play', 'result', 'rules', 'closeRules'],
+  'text-to-speech': ['play', 'pause', 'resume', 'stop', 'example', 'clear', 'result'],
   'effective-interest-rate-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
   '529-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
   'julian-date-converter': ['calculate', 'reset', 'copy', 'example', 'result'],
   'interval-timer': ['start', 'pause', 'resume', 'reset'],
+  'breathing-exercise': ['start', 'pause', 'resume', 'reset'],
+  'alarm-clock': ['schedule', 'testSound', 'cancel', 'snooze', 'stop'],
+  'dividend-calculator': ['calculate', 'example', 'reset', 'copy', 'result'],
+  'family-tree-maker': ['addPerson', 'linkPeople', 'exportSvg', 'exportGedcom', 'reset', 'result'],
+  'net-worth-calculator': ['calculate', 'saveSnapshot', 'exportCsv', 'deleteHistory', 'result'],
+  'body-surface-area-calculator': ['calculate', 'reset', 'example', 'result', 'copy'],
+  'weekly-planner': ['addBlock', 'removeBlock', 'download', 'import', 'print', 'reset', 'result'],
+  'overtime-calculator': ['calculate', 'example', 'reset', 'result', 'copy'],
+  'meeting-minutes-template': ['preview', 'download', 'print', 'reset', 'result'],
+  'dots-and-boxes': ['newGame', 'result'],
+  'color-mixer': ['calculate', 'addColor', 'removeColor', 'example', 'reset', 'copy', 'download', 'result'],
+  'blackjack-game': ['start', 'hit', 'stand', 'double', 'split', 'nextRound', 'newShoe', 'result'],
+  'debt-to-income-ratio-calculator': ['calculate', 'example', 'reset', 'result', 'copy'],
+  'car-lease-calculator': ['calculate', 'example', 'reset', 'result', 'copy'],
+  'fire-calculator': ['calculate', 'example', 'reset', 'result', 'copy'],
+  'email-signature-generator': ['generate', 'copy', 'copyHtml', 'download', 'reset'],
+  'image-vectorizer': ['generate', 'download', 'reset'],
+  'vo2-max-calculator': ['calculate', 'example', 'reset', 'result', 'copy'],
   'logic-grid-puzzle': ['newGame', 'checkBoard', 'hint', 'clearMarks', 'easy', 'medium', 'hard', 'rules'],
   'markdown-editor': ['heading', 'bold', 'italic', 'link', 'code', 'quote', 'bulletList', 'numberList', 'checklist', 'table', 'undo', 'redo', 'showPreview', 'hidePreview', 'copy', 'download', 'clear'],
   'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
@@ -383,6 +457,10 @@ export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   'color-name-finder': ['findName', 'copyName', 'copyHex', 'result'],
   'weight-loss-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'kilograms', 'pounds', 'dayUnit', 'weekUnit', 'kilocalories', 'perWeek'],
   'random-team-generator': ['generateTeams', 'reset', 'example', 'copy', 'download', 'result', 'team', 'participant', 'seedLabel'],
+  'name-generator': ['generateNames', 'reset', 'example', 'copy', 'download', 'result'],
+  'random-word-generator': ['generateWords', 'reset', 'example', 'copy', 'download', 'result'],
+  cribbage: ['scoreHand', 'reset', 'result', 'startMatch', 'sendDiscards', 'playCard', 'sayGo', 'newMatch'],
+  'gin-rummy': ['newGame', 'drawStock', 'drawDiscard', 'discard', 'knock'],
   'mulch-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'rectangle', 'circle', 'meters', 'feet', 'centimeters', 'millimeters', 'inches', 'liters', 'cubicFeet', 'squareMeters', 'squareFeet'],
   'paver-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'feet', 'centimeters', 'inches', 'millimeters', 'squareMeters', 'squareFeet'],
   'solar-panel-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'productionMode', 'sizingMode', 'years'],
@@ -393,7 +471,7 @@ export const REQUIRED_TOOL_ACTIONS = Object.freeze({
   'aquarium-calculator': ['calculate', 'reset', 'copy', 'example', 'result', 'meters', 'centimeters', 'feet', 'inches', 'liters', 'usGallons', 'imperialGallons'],
 });
 const MESSAGE_PLACEHOLDERS = Object.freeze({ monthCount: ['{count}'], privatePair: ['{giver}', '{recipient}'], turn: ['{player}'], overlap: ['{first}', '{second}', '{minutes}'], shortConnection: ['{first}', '{second}', '{minutes}', '{needed}'], invalidValue: ['{size}'] });
-const TOOL_MESSAGE_PLACEHOLDERS = Object.freeze({ futoshiki: Object.freeze({ hint: ['{row}', '{column}'], invalidValue: ['{size}'], noteAdded: ['{value}'], noteRemoved: ['{value}'] }), 'hashi-puzzle': Object.freeze({ hint: ['{count}'], bridgeChanged: ['{count}'] }), 'chess-opening-trainer': Object.freeze({ ready: ['{opening}', '{move}'], progress: ['{played}', '{total}'], wrong: ['{expected}'], opponentMove: ['{moves}'] }), 'logic-grid-puzzle': Object.freeze({ hintSame: ['{left}', '{right}'], hintDifferent: ['{left}', '{right}'] }) });
+const TOOL_MESSAGE_PLACEHOLDERS = Object.freeze({ futoshiki: Object.freeze({ hint: ['{row}', '{column}'], invalidValue: ['{size}'], noteAdded: ['{value}'], noteRemoved: ['{value}'] }), 'hashi-puzzle': Object.freeze({ hint: ['{count}'], bridgeChanged: ['{count}'] }), 'chess-opening-trainer': Object.freeze({ ready: ['{opening}', '{move}'], progress: ['{played}', '{total}'], wrong: ['{expected}'], opponentMove: ['{moves}'] }), 'logic-grid-puzzle': Object.freeze({ hintSame: ['{left}', '{right}'], hintDifferent: ['{left}', '{right}'] }), 'gin-rummy': Object.freeze({ roundGinYou: ['{points}'], roundGinOpponent: ['{points}'], roundKnockYou: ['{points}'], roundKnockOpponent: ['{points}'], undercutYou: ['{points}'], undercutOpponent: ['{points}'] }) });
 
 export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, { titleMax = 60, descriptionMax = 160 } = {}) {
   const errors = [];
@@ -450,10 +528,22 @@ export function assertGrowthLocaleCoverage(tools, localeEntries, copyByLocale, {
           if (typeof copy.messages?.[key] === 'string' && !copy.messages[key].includes(token)) errors.push(`${locale.key}/${tool.id}: messages.${key} must preserve ${token}`);
         }
       }
-      const faqTools = ['529-calculator', 'julian-date-converter', 'interval-timer', 'deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'mulch-calculator', 'paver-calculator', 'solar-panel-calculator', 'btu-calculator', 'brick-calculator', 'rafter-calculator', 'carpet-calculator', 'aquarium-calculator', 'image-region-redactor', 'image-sharpener', 'image-splitter', 'photo-to-sketch', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'hitori', 'nurikabe', 'slitherlink', 'peg-solitaire', 'futoshiki', 'hashi-puzzle', 'chess-opening-trainer', 'decibel-calculator', 'hijri-calendar-converter', 'hebrew-calendar-converter', 'absolute-value-calculator', 'capacitor-calculator', 'body-water-calculator', '555-timer-calculator', 'fourier-series-calculator', 'modular-inverse-calculator', 'a-b-test-calculator', 'investment-allocation-calculator', 'repeating-decimal-to-fraction', 'parametric-equation-calculator', 'singular-value-decomposition-calculator', 'spearman-correlation-calculator', 'wilcoxon-signed-rank-test-calculator', 'chinese-remainder-theorem-calculator', 'json-diff', 'text-to-binary-converter', 'certificate-decoder', 'json-to-xml-converter', 'json-to-excel', 'binary-base64-tool', 'json-model-generator', 'har-viewer', 'robots-txt-tester', 'openapi-editor', 'font-pairing-tool', 'roth-vs-traditional-calculator', 'polygon-calculator', 'friction-calculator', 'thermal-expansion-calculator', 'color-name-finder', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'weight-loss-calculator', 'heloc-calculator', 'random-team-generator', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'laplace-transform-calculator', 'csv-to-pdf', 'round-robin-tournament-generator', 'work-order-generator', 'purchase-order-generator', 'inductor-calculator', 'centripetal-force-calculator'];
+      const faqTools = ['401k-calculator', '529-calculator', 'julian-date-converter', 'interval-timer', 'deck-calculator', 'roofing-calculator', 'drywall-calculator', 'roof-pitch-calculator', 'pool-volume-calculator', 'soil-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'wallpaper-calculator', 'mulch-calculator', 'paver-calculator', 'solar-panel-calculator', 'btu-calculator', 'brick-calculator', 'rafter-calculator', 'carpet-calculator', 'aquarium-calculator', 'image-region-redactor', 'image-sharpener', 'image-splitter', 'photo-to-sketch', 'image-upscaler', 'image-color-picker', 'dominoes-game', 'hitori', 'nurikabe', 'slitherlink', 'peg-solitaire', 'futoshiki', 'hashi-puzzle', 'chess-opening-trainer', 'decibel-calculator', 'hijri-calendar-converter', 'hebrew-calendar-converter', 'absolute-value-calculator', 'capacitor-calculator', 'body-water-calculator', '555-timer-calculator', 'fourier-series-calculator', 'modular-inverse-calculator', 'a-b-test-calculator', 'investment-allocation-calculator', 'repeating-decimal-to-fraction', 'parametric-equation-calculator', 'singular-value-decomposition-calculator', 'spearman-correlation-calculator', 'wilcoxon-signed-rank-test-calculator', 'chinese-remainder-theorem-calculator', 'json-diff', 'text-to-binary-converter', 'certificate-decoder', 'json-to-xml-converter', 'json-to-excel', 'binary-base64-tool', 'json-model-generator', 'har-viewer', 'robots-txt-tester', 'openapi-editor', 'font-pairing-tool', 'roth-vs-traditional-calculator', 'polygon-calculator', 'friction-calculator', 'thermal-expansion-calculator', 'color-name-finder', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'weight-loss-calculator', 'heloc-calculator', 'random-team-generator', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'laplace-transform-calculator', 'csv-to-pdf', 'round-robin-tournament-generator', 'work-order-generator', 'purchase-order-generator', 'inductor-calculator', 'centripetal-force-calculator'];
       faqTools.push('bond-calculator', 'waist-to-hip-ratio-calculator', 'specific-heat-calculator', 'rc-time-constant-calculator', 'reverse-mortgage-calculator', 'car-depreciation-calculator');
       faqTools.push('pension-calculator');
-      const faqCount = ['bond-calculator', 'pension-calculator'].includes(tool.id) ? 4 : ['529-calculator', 'julian-date-converter', 'interval-timer', 'image-splitter', 'csv-to-pdf', 'round-robin-tournament-generator', 'work-order-generator', 'purchase-order-generator', 'slitherlink', 'peg-solitaire', 'futoshiki', 'hashi-puzzle', 'chess-opening-trainer', 'decibel-calculator', 'hijri-calendar-converter', 'hebrew-calendar-converter', 'absolute-value-calculator', 'capacitor-calculator', 'body-water-calculator', '555-timer-calculator', 'fourier-series-calculator', 'modular-inverse-calculator', 'a-b-test-calculator', 'investment-allocation-calculator', 'repeating-decimal-to-fraction', 'parametric-equation-calculator', 'singular-value-decomposition-calculator', 'spearman-correlation-calculator', 'wilcoxon-signed-rank-test-calculator', 'chinese-remainder-theorem-calculator', 'json-diff', 'text-to-binary-converter', 'certificate-decoder', 'json-to-xml-converter', 'json-to-excel', 'binary-base64-tool', 'json-model-generator', 'har-viewer', 'robots-txt-tester', 'openapi-editor', 'font-pairing-tool', 'roth-vs-traditional-calculator', 'friction-calculator', 'thermal-expansion-calculator', 'markdown-editor', 'specific-heat-calculator', 'rc-time-constant-calculator', 'reverse-mortgage-calculator', 'car-depreciation-calculator', 'inductor-calculator', 'centripetal-force-calculator'].includes(tool.id) ? 3 : 2;
+      faqTools.push('text-to-speech');
+      faqTools.push('world-clock');
+      faqTools.push('euchre');
+      faqTools.push('name-generator');
+      faqTools.push('cribbage');
+      faqTools.push('gin-rummy');
+      faqTools.push('alarm-clock');
+      faqTools.push('dividend-calculator');
+      faqTools.push('family-tree-maker');
+      faqTools.push('net-worth-calculator', 'body-surface-area-calculator', 'weekly-planner', 'overtime-calculator', 'meeting-minutes-template', 'dots-and-boxes', 'color-mixer', 'blackjack-game', 'debt-to-income-ratio-calculator', 'car-lease-calculator', 'fire-calculator', 'email-signature-generator', 'image-vectorizer', 'vo2-max-calculator');
+      const faqCount = ['bond-calculator', 'pension-calculator'].includes(tool.id) ? 4 : ['401k-calculator', 'world-clock', 'text-to-speech', '529-calculator', 'julian-date-converter', 'interval-timer', 'image-splitter', 'csv-to-pdf', 'round-robin-tournament-generator', 'work-order-generator', 'purchase-order-generator', 'slitherlink', 'peg-solitaire', 'futoshiki', 'hashi-puzzle', 'chess-opening-trainer', 'decibel-calculator', 'hijri-calendar-converter', 'hebrew-calendar-converter', 'absolute-value-calculator', 'capacitor-calculator', 'body-water-calculator', '555-timer-calculator', 'fourier-series-calculator', 'modular-inverse-calculator', 'a-b-test-calculator', 'investment-allocation-calculator', 'repeating-decimal-to-fraction', 'parametric-equation-calculator', 'singular-value-decomposition-calculator', 'spearman-correlation-calculator', 'wilcoxon-signed-rank-test-calculator', 'chinese-remainder-theorem-calculator', 'json-diff', 'text-to-binary-converter', 'certificate-decoder', 'json-to-xml-converter', 'json-to-excel', 'binary-base64-tool', 'json-model-generator', 'har-viewer', 'robots-txt-tester', 'openapi-editor', 'font-pairing-tool', 'roth-vs-traditional-calculator', 'friction-calculator', 'thermal-expansion-calculator', 'markdown-editor', 'specific-heat-calculator', 'rc-time-constant-calculator', 'reverse-mortgage-calculator', 'car-depreciation-calculator', 'inductor-calculator', 'centripetal-force-calculator', 'euchre', 'cribbage', 'gin-rummy', 'alarm-clock', 'dividend-calculator', 'family-tree-maker', 'net-worth-calculator', 'body-surface-area-calculator', 'weekly-planner', 'overtime-calculator', 'meeting-minutes-template', 'dots-and-boxes', 'color-mixer', 'blackjack-game', 'debt-to-income-ratio-calculator', 'car-lease-calculator', 'fire-calculator', 'email-signature-generator', 'image-vectorizer', 'vo2-max-calculator'].includes(tool.id) ? 3 : 2;
+      if (tool.id === 'breathing-exercise' && (!Array.isArray(copy.additionalFaqs) || copy.additionalFaqs.length !== 3 || copy.additionalFaqs.some((faq) => !faq.question?.trim() || !faq.answer?.trim()))) errors.push(`${locale.key}/${tool.id}: three complete localized tool FAQs are required`);
+      if (tool.id === 'alarm-clock' && (!Array.isArray(copy.additionalFaqs) || copy.additionalFaqs.length !== 3 || copy.additionalFaqs.some((faq) => !faq.question?.trim() || !faq.answer?.trim()))) errors.push(`${locale.key}/${tool.id}: three complete localized tool FAQs are required`);
       if (tool.id === 'markdown-editor' && (!Array.isArray(copy.additionalFaqs) || copy.additionalFaqs.length !== 3 || copy.additionalFaqs.some((faq) => !faq.question?.trim() || !faq.answer?.trim()))) errors.push(`${locale.key}/${tool.id}: three complete localized tool FAQs are required`);
       if (faqTools.includes(tool.id)
         && (!Array.isArray(copy.additionalFaqs) || copy.additionalFaqs.length !== faqCount

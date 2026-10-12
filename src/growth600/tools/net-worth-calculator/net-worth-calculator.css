@@ -1,0 +1,4 @@
+.net-worth-calculator-form { display: grid; gap: 1rem; }
+.net-worth-calculator-form fieldset { display: grid; gap: .75rem; min-width: 0; }
+.net-worth-calculator-form [data-net-worth-results] dl { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .5rem 1rem; }
+.net-worth-calculator-form [data-net-worth-results] dd { margin: 0; font-variant-numeric: tabular-nums; text-align: end; }
