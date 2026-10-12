@@ -137,6 +137,7 @@ export function renderGrowthForm(toolId, copy) {
     'robots-txt-tester': ['robotsText', 'robotsHint', 'userAgent', 'userAgentHint', 'urls', 'urlsHint', 'scopeNote', 'agentGroup', 'noSpecificGroup', 'ruleCount', 'diagnostics', 'ignored', 'malformed', 'allowed', 'blocked', 'winningRule', 'defaultRule'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
     'graphql-formatter': ['document', 'accuracyNote', 'output', 'definitionCount', 'graphqlLicense'],
+    'rsa-key-generator': ['keySize', 'cryptoNote', 'privateKeyWarning', 'publicKey', 'privateKey', 'fingerprint', 'demoTitle', 'demoMessage', 'demoHint', 'encryptedMessage', 'decryptedMessage', 'algorithmNote'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
     'polygon-calculator': ['sides', 'dimensionMode', 'sideLength', 'apothem', 'circumradius', 'dimension', 'unit', 'accuracyNote', 'resultSummary', 'perimeter', 'area', 'computedSide', 'computedApothem', 'computedCircumradius', 'interiorAngle', 'centralAngle', 'formulaNote'],
@@ -321,6 +322,7 @@ export function renderGrowthForm(toolId, copy) {
     'robots-txt-tester': ['test', 'example', 'reset', 'result'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
     'graphql-formatter': ['format', 'example', 'copy', 'clear'],
+    'rsa-key-generator': ['generate', 'copyPublic', 'downloadPublic', 'copyPrivate', 'downloadPrivate', 'copyFingerprint', 'example', 'encrypt', 'decrypt', 'reset', 'result'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
     'polygon-calculator': ['calculate', 'example', 'reset', 'copy', 'result'],
@@ -424,6 +426,28 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions"><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(actions.example)}</button><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.format)}</button><button type="button" data-action="copy" class="button button--secondary">${escapeGrowthHtml(actions.copy)}</button><button type="button" data-action="clear" class="button button--secondary">${escapeGrowthHtml(actions.clear)}</button></div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-graphql-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.output)}</h2><p data-graphql-definitions></p><pre data-graphql-output></pre></section>
+  </form>`, copy);
+
+  if (toolId === 'rsa-key-generator') return attachCopy(`<form id="tool-form" class="rsa-key-generator" novalidate>
+    ${label('rsa-key-size', fields.keySize, '<select id="rsa-key-size" name="keySize"><option value="2048">2048-bit</option><option value="3072">3072-bit</option><option value="4096">4096-bit</option></select>')}
+    <p class="hint">${escapeGrowthHtml(fields.cryptoNote)}</p>
+    <div class="actions"><button type="button" class="button button--primary" data-action="generate">${escapeGrowthHtml(actions.generate)}</button></div>
+    <section class="rsa-key-generator__section" data-rsa-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2>
+      <h3>${escapeGrowthHtml(fields.publicKey)}</h3><textarea class="rsa-key-generator__key" data-rsa-public readonly spellcheck="false"></textarea>
+      <div class="actions"><button type="button" class="button button--secondary" data-action="copy-public">${escapeGrowthHtml(actions.copyPublic)}</button><button type="button" class="button button--secondary" data-action="download-public">${escapeGrowthHtml(actions.downloadPublic)}</button></div>
+      <h3>${escapeGrowthHtml(fields.fingerprint)}</h3><output data-rsa-fingerprint></output><div class="actions"><button type="button" class="button button--secondary" data-action="copy-fingerprint">${escapeGrowthHtml(actions.copyFingerprint)}</button></div>
+      <h3>${escapeGrowthHtml(fields.privateKey)}</h3><p class="hint">${escapeGrowthHtml(fields.privateKeyWarning)}</p><textarea class="rsa-key-generator__key" data-rsa-private readonly spellcheck="false"></textarea>
+      <div class="actions"><button type="button" class="button button--secondary" data-action="copy-private">${escapeGrowthHtml(actions.copyPrivate)}</button><button type="button" class="button button--secondary" data-action="download-private">${escapeGrowthHtml(actions.downloadPrivate)}</button></div>
+    </section>
+    <section class="rsa-key-generator__section"><h2>${escapeGrowthHtml(fields.demoTitle)}</h2>
+      ${label('rsa-demo-message', fields.demoMessage, '<textarea id="rsa-demo-message" name="demoMessage" class="rsa-key-generator__message" maxlength="4096" required></textarea>')}
+      <p class="hint" data-rsa-message-hint>${escapeGrowthHtml(fields.demoHint).replace('{limit}', '190')}</p>
+      <div class="actions"><button type="button" class="button button--secondary" data-action="example">${escapeGrowthHtml(actions.example)}</button><button type="button" class="button button--primary" data-action="encrypt">${escapeGrowthHtml(actions.encrypt)}</button><button type="button" class="button button--secondary" data-action="decrypt">${escapeGrowthHtml(actions.decrypt)}</button></div>
+      ${label('rsa-encrypted-message', fields.encryptedMessage, '<textarea id="rsa-encrypted-message" name="ciphertext" class="rsa-key-generator__message" spellcheck="false"></textarea>')}
+      ${label('rsa-decrypted-message', fields.decryptedMessage, '<textarea id="rsa-decrypted-message" name="plaintext" class="rsa-key-generator__message" readonly></textarea>')}
+      <p class="hint">${escapeGrowthHtml(fields.algorithmNote)}</p>
+    </section>
+    <div class="actions">${reset}</div><p class="status" role="status" aria-live="polite" data-status></p>
   </form>`, copy);
 
   if (toolId === 'font-pairing-tool') {

@@ -21,14 +21,15 @@ import { calculatePolarGraph } from './tools/polar-graphing-calculator/logic.mjs
 import { calculateBooleanAlgebra } from './tools/boolean-algebra-calculator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 176);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 176);
+  assert.equal(growthPilotTools.length, 177);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 177);
   assert.ok(growthPilotTools.some(({ id }) => id === 'inductor-calculator'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'centripetal-force-calculator'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'writing-tracker'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'aes-encryption-tool'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'jwt-encoder'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'graphql-formatter'));
+  assert.ok(growthPilotTools.some(({ id }) => id === 'rsa-key-generator'));
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -71,6 +72,15 @@ test('customer LTV uses monthly gross profit and churn, separate from company va
   const result = calculateLifetimeValue({ monthlyRevenue: 100, grossMarginPercent: 50, monthlyChurnPercent: 5, customerAcquisitionCost: 100 });
   assert.equal(result.lifetimeValue, 1000);
   assert.equal(result.lifetimeValueToCac, 10);
+});
+
+test('RSA key generator is distinct from AES and certificate decoding with a clear short-message boundary', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'rsa-key-generator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'rsa key generator');
+  assert.deepEqual(tool.relatedExistingIds, ['aes-encryption-tool', 'certificate-decoder']);
+  assert.match(tool.boundary, /short-message demonstration/u);
+  assert.match(tool.boundary, /not .*digital signature/u);
 });
 
 test('polar graphing is a dedicated r(theta) view distinct from general parametric plotting', () => {

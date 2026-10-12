@@ -2111,6 +2111,18 @@ export const growthPilotTools = Object.freeze([
     relatedExistingIds: ['jwt-decoder'],
     logicModule: './tools/jwt-encoder/logic.mjs',
   },
+  {
+    id: 'rsa-key-generator',
+    category: 'developer-data',
+    type: 'tool',
+    primaryIntent: 'rsa key generator',
+    secondaryIntents: ['generate RSA public and private key', 'RSA key pair PEM generator', 'RSA-OAEP encrypt text online'],
+    functions: ['generate RSA-OAEP 2048, 3072 or 4096-bit key pairs with Web Crypto', 'export public SPKI PEM and private PKCS8 PEM on explicit user action', 'show a SHA-256 fingerprint of the public key', 'encrypt and decrypt short UTF-8 messages locally and enforce the OAEP-SHA-256 byte limit'],
+    acceptance: 'Generated PEM keys import as SPKI/PKCS8; encryption and decryption recover Unicode input; UTF-8 byte limits are 190/318/446 for 2048/3072/4096 bits; malformed ciphertext and unsupported sizes fail safely; all computation stays local.',
+    boundary: 'RSA-OAEP short-message demonstration only, not file encryption, a digital signature, identity proof, trusted certificate, key-management product or audited security application. Private-key export is explicit and users must safeguard it. Larger data requires an appropriately reviewed hybrid-encryption design. Uses Web Crypto in the browser; no upload, persistence, API or server function.',
+    relatedExistingIds: ['aes-encryption-tool', 'certificate-decoder'],
+    logicModule: './tools/rsa-key-generator/logic.mjs',
+  },
 ]);
 
 export function assertGrowthCatalogIsAdditive(currentTools, additions = growthPilotTools) {

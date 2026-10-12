@@ -267,6 +267,8 @@ import jwtEncoderCopies from './jwt-encoder-final.mjs';
 import { jwtEncoderEnglishCopy } from './jwt-encoder.en.mjs';
 import graphqlFormatterCopies from './graphql-formatter-final.mjs';
 import { graphqlFormatterEnglishCopy } from './graphql-formatter.en.mjs';
+import rsaKeyGeneratorCopies from './rsa-key-generator-final.mjs';
+import { rsaKeyGeneratorEnglishCopy } from './rsa-key-generator.en.mjs';
 import beamDeflectionCopies from './beam-deflection-calculator.mjs';
 import { beamDeflectionCalculatorEnglishCopy } from './beam-deflection-calculator.en.mjs';
 import ledResistorCopies from './led-resistor-calculator.mjs';
@@ -804,6 +806,7 @@ registerGrowthLocaleExtension(source, 'writing-tracker', { ...writingTrackerCopi
 registerGrowthLocaleExtension(source, 'aes-encryption-tool', { ...aesEncryptionToolCopies, en: aesEncryptionToolEnglishCopy }, 'writing-tracker');
 registerGrowthLocaleExtension(source, 'jwt-encoder', { ...jwtEncoderCopies, en: jwtEncoderEnglishCopy }, 'aes-encryption-tool');
 registerGrowthLocaleExtension(source, 'graphql-formatter', { ...graphqlFormatterCopies, en: graphqlFormatterEnglishCopy }, 'jwt-encoder');
+registerGrowthLocaleExtension(source, 'rsa-key-generator', { ...rsaKeyGeneratorCopies, en: rsaKeyGeneratorEnglishCopy }, 'graphql-formatter');
 registerGrowthLocaleExtension(source, 'beam-deflection-calculator', { ...beamDeflectionCopies, en: beamDeflectionCalculatorEnglishCopy }, 'torque-calculator');
 registerGrowthLocaleExtension(source, 'led-resistor-calculator', { ...ledResistorCopies, en: ledResistorCalculatorEnglishCopy }, 'beam-deflection-calculator');
 registerGrowthLocaleExtension(source, 'flow-rate-calculator', { ...flowRateCopies, en: flowRateCalculatorEnglishCopy }, 'led-resistor-calculator');

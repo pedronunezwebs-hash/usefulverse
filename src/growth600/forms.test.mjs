@@ -34,6 +34,7 @@ import { writingTrackerEnglishCopy } from './locales/writing-tracker.en.mjs';
 import { aesEncryptionToolEnglishCopy } from './locales/aes-encryption-tool.en.mjs';
 import { jwtEncoderEnglishCopy } from './locales/jwt-encoder.en.mjs';
 import { graphqlFormatterEnglishCopy } from './locales/graphql-formatter.en.mjs';
+import { rsaKeyGeneratorEnglishCopy } from './locales/rsa-key-generator.en.mjs';
 import torqueCalculatorCopies from './locales/torque-calculator.mjs';
 import { beamDeflectionCalculatorEnglishCopy } from './locales/beam-deflection-calculator.en.mjs';
 import { transformerCalculatorEnglishCopy } from './locales/transformer-calculator.en.mjs';
@@ -505,6 +506,7 @@ copies['json-to-xml-converter'] = { ...jsonToXmlEnglishCopy };
   copies['aes-encryption-tool'] = { ...aesEncryptionToolEnglishCopy };
   copies['jwt-encoder'] = { ...jwtEncoderEnglishCopy };
   copies['graphql-formatter'] = { ...graphqlFormatterEnglishCopy };
+  copies['rsa-key-generator'] = { ...rsaKeyGeneratorEnglishCopy };
   copies['beam-deflection-calculator'] = { ...beamDeflectionCalculatorEnglishCopy };
 copies['savings-goal-calculator'] = { name: 'Savings Goal Calculator', actions: { ...actions, requiredContribution: 'Monthly deposit needed', monthsToGoal: 'Time needed for my deposit', beginning: 'Beginning of month', end: 'End of month' }, messages: { ...messages }, fields: { mode: 'Calculation', startingBalance: 'Current savings', targetAmount: 'Savings target', annualRatePercent: 'Annual rate', months: 'Months', monthlyContribution: 'Monthly deposit', contributionTiming: 'Deposit timing', accuracyNote: 'Estimate only.', resultSummary: 'Estimate', monthlyResult: 'Required deposit', monthsResult: 'Months', projectedBalance: 'Projected balance', totalContributions: 'Deposits', estimatedInterest: 'Estimated interest', currencyNote: 'Use the same currency.' } };
 copies['severance-pay-calculator'] = { name: 'Severance Pay Calculator', actions: { ...actions, customMode: 'Custom assumptions', ukMode: 'Great Britain statutory estimate' }, messages: { ...messages, calculationFailed: 'Could not calculate.', exampleLoaded: 'Example loaded.', calculateFirst: 'Calculate first.', belowServiceMinimum: 'Fewer than two completed years.', capApplied: 'A cap applied.', noCapApplied: 'No cap applied.', customAssumptions: 'Custom assumptions.' }, fields: { mode: 'Calculation type', weeklyPay: 'Average gross weekly pay', yearsOfService: 'Years of service', weeksPerYear: 'Weeks per year', birthDate: 'Birth date', employmentStartDate: 'Employment start date', redundancyDate: 'Redundancy date', accuracyNote: 'Estimate only.', customNote: 'Uses your assumptions.', ukNote: 'Great Britain estimate; enter GBP.', officialSource: 'Official guidance', estimate: 'Estimated amount', appliedWeeklyPay: 'Weekly pay used', totalWeeks: 'Weeks of pay', rulesAsOf: 'Rules from', resultSummary: 'Estimate details' } };
@@ -1784,4 +1786,11 @@ test('GraphQL formatter renders a parser-backed editor with local-only boundarie
   for (const value of ['name="document"', 'maxlength="524288"', 'data-graphql-output', 'data-graphql-definitions', 'graphql-js-LICENSE.txt', 'data-action="example"', 'data-action="copy"', 'data-action="clear"', 'aria-live="polite"']) assert.ok(html.includes(value), value);
   assert.match(html, /does not validate against a schema or run queries/u);
   assert.doesNotMatch(html, /localStorage|sessionStorage/u);
+});
+
+test('RSA key generator renders explicit key exports and a bounded local message demo', () => {
+  const html = renderGrowthForm('rsa-key-generator', rsaKeyGeneratorEnglishCopy);
+  for (const value of ['name="keySize"', 'data-action="generate"', 'data-action="download-private"', 'name="ciphertext"', 'name="plaintext"', 'data-rsa-fingerprint', 'aria-live="polite"']) assert.ok(html.includes(value), value);
+  assert.match(html, /PKCS8 PEM/u);
+  assert.match(html, /UTF-8 bytes/u);
 });
