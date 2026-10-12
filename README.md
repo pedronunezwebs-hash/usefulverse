@@ -10553,7 +10553,7 @@ These are the canonical URLs for the additional tools and their localized pages.
 
 <!-- BEGIN GENERATED GROWTH600 URL INVENTORY -->
 
-Generated from `dist-growth600/sitemap.xml`: **6,480 canonical URLs**.
+Generated from `dist-growth600/sitemap.xml`: **6,516 canonical URLs**.
 
 ```text
 https://tools.usefulverse.com/
@@ -10730,6 +10730,7 @@ https://tools.usefulverse.com/tools/markdown-editor/
 https://tools.usefulverse.com/tools/julian-date-converter/
 https://tools.usefulverse.com/tools/529-calculator/
 https://tools.usefulverse.com/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/tools/retirement-calculator/
 https://tools.usefulverse.com/tools/inflation-calculator/
 https://tools.usefulverse.com/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/tools/aes-encryption-tool/
@@ -10910,6 +10911,7 @@ https://tools.usefulverse.com/es/tools/markdown-editor/
 https://tools.usefulverse.com/es/tools/julian-date-converter/
 https://tools.usefulverse.com/es/tools/529-calculator/
 https://tools.usefulverse.com/es/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/es/tools/retirement-calculator/
 https://tools.usefulverse.com/es/tools/inflation-calculator/
 https://tools.usefulverse.com/es/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/es/tools/aes-encryption-tool/
@@ -11090,6 +11092,7 @@ https://tools.usefulverse.com/fr/tools/markdown-editor/
 https://tools.usefulverse.com/fr/tools/julian-date-converter/
 https://tools.usefulverse.com/fr/tools/529-calculator/
 https://tools.usefulverse.com/fr/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/fr/tools/retirement-calculator/
 https://tools.usefulverse.com/fr/tools/inflation-calculator/
 https://tools.usefulverse.com/fr/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/fr/tools/aes-encryption-tool/
@@ -11270,6 +11273,7 @@ https://tools.usefulverse.com/pt-br/tools/markdown-editor/
 https://tools.usefulverse.com/pt-br/tools/julian-date-converter/
 https://tools.usefulverse.com/pt-br/tools/529-calculator/
 https://tools.usefulverse.com/pt-br/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/pt-br/tools/retirement-calculator/
 https://tools.usefulverse.com/pt-br/tools/inflation-calculator/
 https://tools.usefulverse.com/pt-br/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/pt-br/tools/aes-encryption-tool/
@@ -11450,6 +11454,7 @@ https://tools.usefulverse.com/de/tools/markdown-editor/
 https://tools.usefulverse.com/de/tools/julian-date-converter/
 https://tools.usefulverse.com/de/tools/529-calculator/
 https://tools.usefulverse.com/de/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/de/tools/retirement-calculator/
 https://tools.usefulverse.com/de/tools/inflation-calculator/
 https://tools.usefulverse.com/de/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/de/tools/aes-encryption-tool/
@@ -11630,6 +11635,7 @@ https://tools.usefulverse.com/ja/tools/markdown-editor/
 https://tools.usefulverse.com/ja/tools/julian-date-converter/
 https://tools.usefulverse.com/ja/tools/529-calculator/
 https://tools.usefulverse.com/ja/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/ja/tools/retirement-calculator/
 https://tools.usefulverse.com/ja/tools/inflation-calculator/
 https://tools.usefulverse.com/ja/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/ja/tools/aes-encryption-tool/
@@ -11810,6 +11816,7 @@ https://tools.usefulverse.com/ko/tools/markdown-editor/
 https://tools.usefulverse.com/ko/tools/julian-date-converter/
 https://tools.usefulverse.com/ko/tools/529-calculator/
 https://tools.usefulverse.com/ko/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/ko/tools/retirement-calculator/
 https://tools.usefulverse.com/ko/tools/inflation-calculator/
 https://tools.usefulverse.com/ko/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/ko/tools/aes-encryption-tool/
@@ -11990,6 +11997,7 @@ https://tools.usefulverse.com/id/tools/markdown-editor/
 https://tools.usefulverse.com/id/tools/julian-date-converter/
 https://tools.usefulverse.com/id/tools/529-calculator/
 https://tools.usefulverse.com/id/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/id/tools/retirement-calculator/
 https://tools.usefulverse.com/id/tools/inflation-calculator/
 https://tools.usefulverse.com/id/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/id/tools/aes-encryption-tool/
@@ -12170,6 +12178,7 @@ https://tools.usefulverse.com/hi/tools/markdown-editor/
 https://tools.usefulverse.com/hi/tools/julian-date-converter/
 https://tools.usefulverse.com/hi/tools/529-calculator/
 https://tools.usefulverse.com/hi/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/hi/tools/retirement-calculator/
 https://tools.usefulverse.com/hi/tools/inflation-calculator/
 https://tools.usefulverse.com/hi/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/hi/tools/aes-encryption-tool/
@@ -12350,6 +12359,7 @@ https://tools.usefulverse.com/ar/tools/markdown-editor/
 https://tools.usefulverse.com/ar/tools/julian-date-converter/
 https://tools.usefulverse.com/ar/tools/529-calculator/
 https://tools.usefulverse.com/ar/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/ar/tools/retirement-calculator/
 https://tools.usefulverse.com/ar/tools/inflation-calculator/
 https://tools.usefulverse.com/ar/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/ar/tools/aes-encryption-tool/
@@ -12530,6 +12540,7 @@ https://tools.usefulverse.com/zh-cn/tools/markdown-editor/
 https://tools.usefulverse.com/zh-cn/tools/julian-date-converter/
 https://tools.usefulverse.com/zh-cn/tools/529-calculator/
 https://tools.usefulverse.com/zh-cn/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/zh-cn/tools/retirement-calculator/
 https://tools.usefulverse.com/zh-cn/tools/inflation-calculator/
 https://tools.usefulverse.com/zh-cn/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/zh-cn/tools/aes-encryption-tool/
@@ -12710,6 +12721,7 @@ https://tools.usefulverse.com/bn/tools/markdown-editor/
 https://tools.usefulverse.com/bn/tools/julian-date-converter/
 https://tools.usefulverse.com/bn/tools/529-calculator/
 https://tools.usefulverse.com/bn/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/bn/tools/retirement-calculator/
 https://tools.usefulverse.com/bn/tools/inflation-calculator/
 https://tools.usefulverse.com/bn/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/bn/tools/aes-encryption-tool/
@@ -12890,6 +12902,7 @@ https://tools.usefulverse.com/ru/tools/markdown-editor/
 https://tools.usefulverse.com/ru/tools/julian-date-converter/
 https://tools.usefulverse.com/ru/tools/529-calculator/
 https://tools.usefulverse.com/ru/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/ru/tools/retirement-calculator/
 https://tools.usefulverse.com/ru/tools/inflation-calculator/
 https://tools.usefulverse.com/ru/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/ru/tools/aes-encryption-tool/
@@ -13070,6 +13083,7 @@ https://tools.usefulverse.com/ur/tools/markdown-editor/
 https://tools.usefulverse.com/ur/tools/julian-date-converter/
 https://tools.usefulverse.com/ur/tools/529-calculator/
 https://tools.usefulverse.com/ur/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/ur/tools/retirement-calculator/
 https://tools.usefulverse.com/ur/tools/inflation-calculator/
 https://tools.usefulverse.com/ur/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/ur/tools/aes-encryption-tool/
@@ -13250,6 +13264,7 @@ https://tools.usefulverse.com/tr/tools/markdown-editor/
 https://tools.usefulverse.com/tr/tools/julian-date-converter/
 https://tools.usefulverse.com/tr/tools/529-calculator/
 https://tools.usefulverse.com/tr/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/tr/tools/retirement-calculator/
 https://tools.usefulverse.com/tr/tools/inflation-calculator/
 https://tools.usefulverse.com/tr/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/tr/tools/aes-encryption-tool/
@@ -13430,6 +13445,7 @@ https://tools.usefulverse.com/vi/tools/markdown-editor/
 https://tools.usefulverse.com/vi/tools/julian-date-converter/
 https://tools.usefulverse.com/vi/tools/529-calculator/
 https://tools.usefulverse.com/vi/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/vi/tools/retirement-calculator/
 https://tools.usefulverse.com/vi/tools/inflation-calculator/
 https://tools.usefulverse.com/vi/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/vi/tools/aes-encryption-tool/
@@ -13610,6 +13626,7 @@ https://tools.usefulverse.com/it/tools/markdown-editor/
 https://tools.usefulverse.com/it/tools/julian-date-converter/
 https://tools.usefulverse.com/it/tools/529-calculator/
 https://tools.usefulverse.com/it/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/it/tools/retirement-calculator/
 https://tools.usefulverse.com/it/tools/inflation-calculator/
 https://tools.usefulverse.com/it/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/it/tools/aes-encryption-tool/
@@ -13790,6 +13807,7 @@ https://tools.usefulverse.com/zh-tw/tools/markdown-editor/
 https://tools.usefulverse.com/zh-tw/tools/julian-date-converter/
 https://tools.usefulverse.com/zh-tw/tools/529-calculator/
 https://tools.usefulverse.com/zh-tw/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/zh-tw/tools/retirement-calculator/
 https://tools.usefulverse.com/zh-tw/tools/inflation-calculator/
 https://tools.usefulverse.com/zh-tw/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/zh-tw/tools/aes-encryption-tool/
@@ -13970,6 +13988,7 @@ https://tools.usefulverse.com/bg/tools/markdown-editor/
 https://tools.usefulverse.com/bg/tools/julian-date-converter/
 https://tools.usefulverse.com/bg/tools/529-calculator/
 https://tools.usefulverse.com/bg/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/bg/tools/retirement-calculator/
 https://tools.usefulverse.com/bg/tools/inflation-calculator/
 https://tools.usefulverse.com/bg/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/bg/tools/aes-encryption-tool/
@@ -14150,6 +14169,7 @@ https://tools.usefulverse.com/ca/tools/markdown-editor/
 https://tools.usefulverse.com/ca/tools/julian-date-converter/
 https://tools.usefulverse.com/ca/tools/529-calculator/
 https://tools.usefulverse.com/ca/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/ca/tools/retirement-calculator/
 https://tools.usefulverse.com/ca/tools/inflation-calculator/
 https://tools.usefulverse.com/ca/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/ca/tools/aes-encryption-tool/
@@ -14330,6 +14350,7 @@ https://tools.usefulverse.com/nl/tools/markdown-editor/
 https://tools.usefulverse.com/nl/tools/julian-date-converter/
 https://tools.usefulverse.com/nl/tools/529-calculator/
 https://tools.usefulverse.com/nl/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/nl/tools/retirement-calculator/
 https://tools.usefulverse.com/nl/tools/inflation-calculator/
 https://tools.usefulverse.com/nl/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/nl/tools/aes-encryption-tool/
@@ -14510,6 +14531,7 @@ https://tools.usefulverse.com/el/tools/markdown-editor/
 https://tools.usefulverse.com/el/tools/julian-date-converter/
 https://tools.usefulverse.com/el/tools/529-calculator/
 https://tools.usefulverse.com/el/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/el/tools/retirement-calculator/
 https://tools.usefulverse.com/el/tools/inflation-calculator/
 https://tools.usefulverse.com/el/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/el/tools/aes-encryption-tool/
@@ -14690,6 +14712,7 @@ https://tools.usefulverse.com/ms/tools/markdown-editor/
 https://tools.usefulverse.com/ms/tools/julian-date-converter/
 https://tools.usefulverse.com/ms/tools/529-calculator/
 https://tools.usefulverse.com/ms/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/ms/tools/retirement-calculator/
 https://tools.usefulverse.com/ms/tools/inflation-calculator/
 https://tools.usefulverse.com/ms/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/ms/tools/aes-encryption-tool/
@@ -14870,6 +14893,7 @@ https://tools.usefulverse.com/pl/tools/markdown-editor/
 https://tools.usefulverse.com/pl/tools/julian-date-converter/
 https://tools.usefulverse.com/pl/tools/529-calculator/
 https://tools.usefulverse.com/pl/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/pl/tools/retirement-calculator/
 https://tools.usefulverse.com/pl/tools/inflation-calculator/
 https://tools.usefulverse.com/pl/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/pl/tools/aes-encryption-tool/
@@ -15050,6 +15074,7 @@ https://tools.usefulverse.com/sv/tools/markdown-editor/
 https://tools.usefulverse.com/sv/tools/julian-date-converter/
 https://tools.usefulverse.com/sv/tools/529-calculator/
 https://tools.usefulverse.com/sv/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/sv/tools/retirement-calculator/
 https://tools.usefulverse.com/sv/tools/inflation-calculator/
 https://tools.usefulverse.com/sv/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/sv/tools/aes-encryption-tool/
@@ -15230,6 +15255,7 @@ https://tools.usefulverse.com/th/tools/markdown-editor/
 https://tools.usefulverse.com/th/tools/julian-date-converter/
 https://tools.usefulverse.com/th/tools/529-calculator/
 https://tools.usefulverse.com/th/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/th/tools/retirement-calculator/
 https://tools.usefulverse.com/th/tools/inflation-calculator/
 https://tools.usefulverse.com/th/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/th/tools/aes-encryption-tool/
@@ -15410,6 +15436,7 @@ https://tools.usefulverse.com/uk/tools/markdown-editor/
 https://tools.usefulverse.com/uk/tools/julian-date-converter/
 https://tools.usefulverse.com/uk/tools/529-calculator/
 https://tools.usefulverse.com/uk/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/uk/tools/retirement-calculator/
 https://tools.usefulverse.com/uk/tools/inflation-calculator/
 https://tools.usefulverse.com/uk/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/uk/tools/aes-encryption-tool/
@@ -15590,6 +15617,7 @@ https://tools.usefulverse.com/sw/tools/markdown-editor/
 https://tools.usefulverse.com/sw/tools/julian-date-converter/
 https://tools.usefulverse.com/sw/tools/529-calculator/
 https://tools.usefulverse.com/sw/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/sw/tools/retirement-calculator/
 https://tools.usefulverse.com/sw/tools/inflation-calculator/
 https://tools.usefulverse.com/sw/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/sw/tools/aes-encryption-tool/
@@ -15770,6 +15798,7 @@ https://tools.usefulverse.com/mr/tools/markdown-editor/
 https://tools.usefulverse.com/mr/tools/julian-date-converter/
 https://tools.usefulverse.com/mr/tools/529-calculator/
 https://tools.usefulverse.com/mr/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/mr/tools/retirement-calculator/
 https://tools.usefulverse.com/mr/tools/inflation-calculator/
 https://tools.usefulverse.com/mr/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/mr/tools/aes-encryption-tool/
@@ -15950,6 +15979,7 @@ https://tools.usefulverse.com/te/tools/markdown-editor/
 https://tools.usefulverse.com/te/tools/julian-date-converter/
 https://tools.usefulverse.com/te/tools/529-calculator/
 https://tools.usefulverse.com/te/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/te/tools/retirement-calculator/
 https://tools.usefulverse.com/te/tools/inflation-calculator/
 https://tools.usefulverse.com/te/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/te/tools/aes-encryption-tool/
@@ -16130,6 +16160,7 @@ https://tools.usefulverse.com/ha/tools/markdown-editor/
 https://tools.usefulverse.com/ha/tools/julian-date-converter/
 https://tools.usefulverse.com/ha/tools/529-calculator/
 https://tools.usefulverse.com/ha/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/ha/tools/retirement-calculator/
 https://tools.usefulverse.com/ha/tools/inflation-calculator/
 https://tools.usefulverse.com/ha/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/ha/tools/aes-encryption-tool/
@@ -16310,6 +16341,7 @@ https://tools.usefulverse.com/tl/tools/markdown-editor/
 https://tools.usefulverse.com/tl/tools/julian-date-converter/
 https://tools.usefulverse.com/tl/tools/529-calculator/
 https://tools.usefulverse.com/tl/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/tl/tools/retirement-calculator/
 https://tools.usefulverse.com/tl/tools/inflation-calculator/
 https://tools.usefulverse.com/tl/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/tl/tools/aes-encryption-tool/
@@ -16490,6 +16522,7 @@ https://tools.usefulverse.com/ta/tools/markdown-editor/
 https://tools.usefulverse.com/ta/tools/julian-date-converter/
 https://tools.usefulverse.com/ta/tools/529-calculator/
 https://tools.usefulverse.com/ta/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/ta/tools/retirement-calculator/
 https://tools.usefulverse.com/ta/tools/inflation-calculator/
 https://tools.usefulverse.com/ta/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/ta/tools/aes-encryption-tool/
@@ -16670,6 +16703,7 @@ https://tools.usefulverse.com/fa/tools/markdown-editor/
 https://tools.usefulverse.com/fa/tools/julian-date-converter/
 https://tools.usefulverse.com/fa/tools/529-calculator/
 https://tools.usefulverse.com/fa/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/fa/tools/retirement-calculator/
 https://tools.usefulverse.com/fa/tools/inflation-calculator/
 https://tools.usefulverse.com/fa/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/fa/tools/aes-encryption-tool/
@@ -16850,6 +16884,7 @@ https://tools.usefulverse.com/am/tools/markdown-editor/
 https://tools.usefulverse.com/am/tools/julian-date-converter/
 https://tools.usefulverse.com/am/tools/529-calculator/
 https://tools.usefulverse.com/am/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/am/tools/retirement-calculator/
 https://tools.usefulverse.com/am/tools/inflation-calculator/
 https://tools.usefulverse.com/am/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/am/tools/aes-encryption-tool/
@@ -17030,6 +17065,7 @@ https://tools.usefulverse.com/gu/tools/markdown-editor/
 https://tools.usefulverse.com/gu/tools/julian-date-converter/
 https://tools.usefulverse.com/gu/tools/529-calculator/
 https://tools.usefulverse.com/gu/tools/reverse-mortgage-calculator/
+https://tools.usefulverse.com/gu/tools/retirement-calculator/
 https://tools.usefulverse.com/gu/tools/inflation-calculator/
 https://tools.usefulverse.com/gu/tools/car-depreciation-calculator/
 https://tools.usefulverse.com/gu/tools/aes-encryption-tool/

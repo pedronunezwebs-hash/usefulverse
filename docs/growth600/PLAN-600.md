@@ -1679,8 +1679,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 007 · Retirement Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `retirement-calculator`**
-- **Destino propuesto:** `https://tools.usefulverse.com/tools/retirement-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
+- [x] **C/F/E/X/L/B/P/S completos — `retirement-calculator`**
+- **Destino:** `https://tools.usefulverse.com/tools/retirement-calculator/`; otras 35 versiones con los prefijos del anexo. Publicada tras QA; ver evidencia en `PROGRESS.md`.
 - **Demanda:** `retirement calculator` — 368.000 búsquedas/mes US/en, KD 54; nivel A. CPC 2.64 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Acumulación y retirada, inflación, horizonte y escenarios conservadores
 - **Prueba de aceptación específica:** Retirada nula no reduce saldo
@@ -1690,6 +1690,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `retirement savings calculator` — 22.200/mes US/en; KD 48.
   - `retirement calculator free online`; `retirement calculator with example`; `retirement calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Implementación #007 (12-oct-2026):** proyección local de acumulación/retirada con aportación mensual a fin de periodo, escenario base y conservador, inflación de retiros, montos nominales y en poder adquisitivo actual, horizonte y agotamiento estimado. Aceptación, overflow, retorno no positivo y gastos que agotan el fondo cubiertos en el motor; 36 textos estáticos. Verificación de publicación y sitemap documentada en `PROGRESS.md`; esto no acredita indexación.
 - **Otras métricas muestreadas:** CA/en `retirement calculator` 12.100/mes, KD 47; UK/en `retirement calculator` 8.100/mes, KD 29; AU/en `retirement calculator` 6.600/mes, KD 4; DE/de `rentenrechner` 60.500/mes, KD 35.
 
 ### 014 · 401K Calculator

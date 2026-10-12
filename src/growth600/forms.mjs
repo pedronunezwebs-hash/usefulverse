@@ -140,6 +140,7 @@ export function renderGrowthForm(toolId, copy) {
     'rsa-key-generator': ['keySize', 'cryptoNote', 'privateKeyWarning', 'publicKey', 'privateKey', 'fingerprint', 'demoTitle', 'demoMessage', 'demoHint', 'encryptedMessage', 'decryptedMessage', 'algorithmNote'],
     'log-analyzer': ['file', 'paste', 'pasteHint', 'privacyWarning', 'sizeLimit', 'summaryTitle', 'totalRequests', 'invalidLines', 'transferred', 'statusBreakdown', 'methodBreakdown', 'topPaths', 'dailyRequests', 'search', 'method', 'statusFilter', 'all', 'from', 'to', 'results', 'shown', 'noMatches', 'includeIp', 'resultTime', 'path', 'statusLabel', 'bytes', 'referer', 'userAgent', 'privacyNote'],
     'inflation-calculator': ['mode', 'usCpiMode', 'customMode', 'amount', 'amountHint', 'startYear', 'endYear', 'annualRatePercent', 'years', 'accuracyNote', 'resultSummary', 'adjustedAmount', 'cumulativeChange', 'annualizedRate', 'sourceNote'],
+    'retirement-calculator': ['currentAge', 'retirementAge', 'planThroughAge', 'currentSavings', 'monthlyContribution', 'annualReturnPercent', 'conservativeReturnPercent', 'annualWithdrawal', 'annualInflationPercent', 'assumptionsNote', 'resultsTitle', 'measure', 'scenarioBase', 'scenarioConservative', 'totalContributions', 'balanceAtRetirement', 'balanceAtRetirementToday', 'endingBalance', 'depletionAge', 'noDepletion'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
     'polygon-calculator': ['sides', 'dimensionMode', 'sideLength', 'apothem', 'circumradius', 'dimension', 'unit', 'accuracyNote', 'resultSummary', 'perimeter', 'area', 'computedSide', 'computedApothem', 'computedCircumradius', 'interiorAngle', 'centralAngle', 'formulaNote'],
@@ -327,6 +328,7 @@ export function renderGrowthForm(toolId, copy) {
     'rsa-key-generator': ['generate', 'copyPublic', 'downloadPublic', 'copyPrivate', 'downloadPrivate', 'copyFingerprint', 'example', 'encrypt', 'decrypt', 'reset', 'result'],
     'log-analyzer': ['example', 'analyze', 'export', 'clear', 'reset', 'result'],
     'inflation-calculator': ['calculate', 'reset', 'example', 'result'],
+    'retirement-calculator': ['calculate', 'reset', 'example', 'result'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
     'polygon-calculator': ['calculate', 'example', 'reset', 'copy', 'result'],
@@ -496,6 +498,30 @@ export function renderGrowthForm(toolId, copy) {
       <dl><div><dt>${escapeGrowthHtml(fields.adjustedAmount)}</dt><dd data-inflation-adjusted></dd></div><div><dt>${escapeGrowthHtml(fields.cumulativeChange)}</dt><dd data-inflation-cumulative></dd></div><div><dt>${escapeGrowthHtml(fields.annualizedRate)}</dt><dd data-inflation-annualized></dd></div></dl>
     </section>
     <p class="hint">${escapeGrowthHtml(fields.sourceNote)} <a href="https://www.bls.gov/cpi/" rel="noopener noreferrer" target="_blank">Bureau of Labor Statistics</a>.</p>
+  </form>`, copy);
+
+  if (toolId === 'retirement-calculator') return attachCopy(`<form id="tool-form" class="retirement-calculator" novalidate>
+    ${label('retirement-current-age', fields.currentAge, '<input id="retirement-current-age" name="currentAge" type="number" min="18" max="99" step="1" value="35" required inputmode="numeric">')}
+    ${label('retirement-age', fields.retirementAge, '<input id="retirement-age" name="retirementAge" type="number" min="19" max="100" step="1" value="65" required inputmode="numeric">')}
+    ${label('retirement-plan-age', fields.planThroughAge, '<input id="retirement-plan-age" name="planThroughAge" type="number" min="20" max="110" step="1" value="90" required inputmode="numeric">')}
+    ${label('retirement-savings', fields.currentSavings, '<input id="retirement-savings" name="currentSavings" type="number" min="0" max="1000000000000" step="any" value="10000" required inputmode="decimal">')}
+    ${label('retirement-contribution', fields.monthlyContribution, '<input id="retirement-contribution" name="monthlyContribution" type="number" min="0" max="1000000000000" step="any" value="500" required inputmode="decimal">')}
+    ${label('retirement-return', fields.annualReturnPercent, '<input id="retirement-return" name="annualReturnPercent" type="number" min="-99.99" max="100" step="any" value="6" required inputmode="decimal">')}
+    ${label('retirement-conservative-return', fields.conservativeReturnPercent, '<input id="retirement-conservative-return" name="conservativeReturnPercent" type="number" min="-99.99" max="100" step="any" value="3" required inputmode="decimal">')}
+    ${label('retirement-withdrawal', fields.annualWithdrawal, '<input id="retirement-withdrawal" name="annualWithdrawal" type="number" min="0" max="1000000000000" step="any" value="30000" required inputmode="decimal">')}
+    ${label('retirement-inflation', fields.annualInflationPercent, '<input id="retirement-inflation" name="annualInflationPercent" type="number" min="-20" max="100" step="any" value="2" required inputmode="decimal">')}
+    <p class="hint">${escapeGrowthHtml(fields.assumptionsNote)}</p>
+    <div class="actions"><button type="button" class="button button--secondary" data-action="example">${escapeGrowthHtml(actions.example)}</button>${button('calculate', actions.calculate)}${button('reset', actions.reset, 'secondary')}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="retirement-calculator__results" data-retirement-results hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.resultsTitle)}</h2>
+      <div class="table-scroll"><table><caption>${escapeGrowthHtml(actions.result)}</caption><thead><tr><th scope="col">${escapeGrowthHtml(fields.measure)}</th><th scope="col">${escapeGrowthHtml(fields.scenarioBase)}</th><th scope="col">${escapeGrowthHtml(fields.scenarioConservative)}</th></tr></thead><tbody>
+        <tr><th scope="row">${escapeGrowthHtml(fields.totalContributions)}</th><td data-retirement-contributions></td><td data-retirement-conservative-contributions></td></tr>
+        <tr><th scope="row">${escapeGrowthHtml(fields.balanceAtRetirement)}</th><td data-retirement-at-age></td><td data-retirement-conservative-at-age></td></tr>
+        <tr><th scope="row">${escapeGrowthHtml(fields.balanceAtRetirementToday)}</th><td data-retirement-today></td><td data-retirement-conservative-today></td></tr>
+        <tr><th scope="row">${escapeGrowthHtml(fields.endingBalance)}</th><td data-retirement-ending></td><td data-retirement-conservative-ending></td></tr>
+        <tr><th scope="row">${escapeGrowthHtml(fields.depletionAge)}</th><td data-retirement-depletion></td><td data-retirement-conservative-depletion></td></tr>
+      </tbody></table></div>
+    </section>
   </form>`, copy);
 
   if (toolId === 'font-pairing-tool') {

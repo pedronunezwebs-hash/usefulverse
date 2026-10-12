@@ -15,6 +15,7 @@ import { calculateRcTimeConstant, calculateRcTransient } from './tools/rc-time-c
 import { calculateReverseMortgage } from './tools/reverse-mortgage-calculator/logic.mjs';
 import { calculateCarDepreciation } from './tools/car-depreciation-calculator/logic.mjs';
 import { calculateCpiInflation, calculateCustomInflation } from './tools/inflation-calculator/logic.mjs';
+import { calculateRetirementProjection } from './tools/retirement-calculator/logic.mjs';
 import { calculateStockProfit } from './tools/stock-profit-calculator/logic.mjs';
 import { calculatePension } from './tools/pension-calculator/logic.mjs';
 import { calculateLifetimeValue } from './tools/lifetime-value-calculator/logic.mjs';
@@ -22,8 +23,8 @@ import { calculatePolarGraph } from './tools/polar-graphing-calculator/logic.mjs
 import { calculateBooleanAlgebra } from './tools/boolean-algebra-calculator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 179);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 179);
+  assert.equal(growthPilotTools.length, 180);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 180);
   assert.ok(growthPilotTools.some(({ id }) => id === 'inductor-calculator'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'centripetal-force-calculator'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'writing-tracker'));
@@ -33,6 +34,7 @@ test('the current growth IDs are unique and additive to the protected catalog', 
   assert.ok(growthPilotTools.some(({ id }) => id === 'rsa-key-generator'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'log-analyzer'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'inflation-calculator'));
+  assert.ok(growthPilotTools.some(({ id }) => id === 'retirement-calculator'));
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -64,6 +66,20 @@ test('pension calculator is distinct from the existing retirement projection', (
   assert.deepEqual(tool.relatedExistingIds, []);
   assert.match(tool.boundary, /not an entitlement/u);
   assert.equal(calculatePension({ finalSalary: 50000, yearsOfService: 30, accrualPercent: 2, commutationPercent: 0, commutationFactor: 12 }).annualPension, 30000);
+});
+
+test('retirement calculator compares accumulation, inflation-adjusted withdrawals, and explicit assumptions', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'retirement-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'retirement calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['pension-calculator', 'compound-interest-calculator', 'savings-goal-calculator']);
+  assert.match(tool.boundary, /sequence-of-returns risk/u);
+  const result = calculateRetirementProjection({ currentAge: 35, retirementAge: 65, planThroughAge: 90, currentSavings: 10000, monthlyContribution: 500, annualReturnPercent: 6, conservativeReturnPercent: 3, annualWithdrawal: 30000, annualInflationPercent: 2 });
+  assert.equal(result.totalContributions, 190000);
+  assert.ok(result.base.balanceAtRetirement > result.conservative.balanceAtRetirement);
+  assert.ok(result.base.balanceAtRetirementInTodayMoney < result.base.balanceAtRetirement);
+  const empty = calculateRetirementProjection({ currentAge: 35, retirementAge: 65, planThroughAge: 90, currentSavings: 0, monthlyContribution: 0, annualReturnPercent: 0, conservativeReturnPercent: 0, annualWithdrawal: 12000, annualInflationPercent: 0 });
+  assert.equal(empty.base.depletedAtAge, 65);
 });
 
 test('customer LTV uses monthly gross profit and churn, separate from company valuation', () => {

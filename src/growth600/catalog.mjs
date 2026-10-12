@@ -2076,6 +2076,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/reverse-mortgage-calculator/logic.mjs',
   },
   {
+    id: 'retirement-calculator',
+    category: 'personal-finance',
+    type: 'calculator',
+    primaryIntent: 'retirement calculator',
+    secondaryIntents: ['retirement savings calculator', 'retirement withdrawal calculator', 'retirement income projection', 'retirement calculator with inflation'],
+    functions: ['project current savings and end-of-month contributions to a chosen retirement age under a user-entered annual return assumption', 'compare base and conservative return scenarios side by side', 'model annual withdrawals that rise yearly by a user-entered inflation assumption', 'show the projected retirement balance in today’s purchasing power, ending balance at a planning age and estimated age funds reach zero'],
+    acceptance: 'Starting at age 35 with $10,000, contributing $500 monthly for 30 years at 6% nominal annual return compounded monthly produces a positive projected balance; starting with zero savings and contributions reports depletion at retirement age, while a $12,000 annual withdrawal with positive funds is reduced monthly and reports a modeled depletion after the withdrawal that first exhausts the balance.',
+    boundary: 'Illustrative deterministic arithmetic only, not a forecast, probability, safe-withdrawal rule, plan recommendation or financial/tax/investment advice. Constant returns are user assumptions and do not model volatility, fees, taxes, pensions, public benefits, changing contributions or sequence-of-returns risk. Amounts use one currency unit with no conversion. Runs locally; inputs are not uploaded or stored.',
+    relatedExistingIds: ['pension-calculator', 'compound-interest-calculator', 'savings-goal-calculator'],
+    logicModule: './tools/retirement-calculator/logic.mjs',
+  },
+  {
     id: 'inflation-calculator',
     category: 'personal-finance',
     type: 'calculator',
