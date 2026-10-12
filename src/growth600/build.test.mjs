@@ -112,6 +112,8 @@ import { rsaKeyGeneratorEnglishCopy } from './locales/rsa-key-generator.en.mjs';
 import rsaKeyGeneratorCopies from './locales/rsa-key-generator-final.mjs';
 import { logAnalyzerEnglishCopy } from './locales/log-analyzer.en.mjs';
 import logAnalyzerCopies from './locales/log-analyzer-final.mjs';
+import inflationCalculatorCopies from './locales/inflation-calculator-final.mjs';
+import { inflationCalculatorEnglishCopy } from './locales/inflation-calculator.en.mjs';
 
 const actions = { calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', updateProgress: 'Record progress', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', feet: 'Feet', inches: 'Inches', liters: 'Liters', cubicFeet: 'Cubic feet', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Computer', twoPlayers: 'Two players', privacyNote: 'Private on this device.', riseMode: 'Rise', pitchMode: 'Pitch' };
 const messages = { copied: 'Copied.', copyUnavailable: 'Copy unavailable.', calculated: 'Done.', sameSize: 'Sizes match.', checkInputs: 'Check entries.', diameter: 'Outside diameter', sidewall: 'Sidewall height', circumference: 'Circumference', revolutions: 'Revolutions per kilometre', diameterDifference: 'Diameter difference', diameterChange: 'Diameter change', groundClearance: 'Ground-clearance change', actualSpeed: 'Actual speed estimate', area: 'Area', volume: 'Volume', volumePerContainer: 'Volume per container', totalVolume: 'Total soil volume', orderVolume: 'Order volume', estimatedWeight: 'Estimated weight', bagsToBuy: 'Bags to buy', invalidFormula: 'Check formula.', atomCount: 'atoms', molarMass: 'Molar mass', estimateOnly: 'Estimate only.', currentPayment: 'Current payment', newPayment: 'New payment', paymentDifference: 'Difference', currentTotal: 'Current total', newTotal: 'New total', estimatedDifference: 'Estimated savings', breakEven: 'Break-even', noBreakEven: 'No break-even', monthCount: '{count} months', privatePair: '{giver} gives to {recipient}', allRevealed: 'All revealed.', drawReady: 'Ready.', checkNamesAndRules: 'Check entries.', downloaded: 'Downloaded.', pit: 'Pit', seeds: 'seeds', playerOne: 'Player one', playerTwo: 'Player two', playerOneWins: 'Player one wins.', playerTwoWins: 'Player two wins.', tie: 'Tie.', gameOver: 'Game over.', turn: '{player} turn.', effectiveRun: 'Horizontal run to ridge', rafterLength: 'Geometric rafter length', pitch: 'Pitch (rise per 12)', roofAngle: 'Roof angle', plumbCut: 'Plumb-cut angle', overhangRun: 'Horizontal overhang' };
@@ -124,6 +126,7 @@ function toolCopy(tool, language) {
   if (tool.id === 'graphql-formatter') return structuredClone(language === 'en' ? graphqlFormatterEnglishCopy : graphqlFormatterCopies[language]);
   if (tool.id === 'rsa-key-generator') return structuredClone(language === 'en' ? rsaKeyGeneratorEnglishCopy : rsaKeyGeneratorCopies[language]);
   if (tool.id === 'log-analyzer') return structuredClone(language === 'en' ? logAnalyzerEnglishCopy : logAnalyzerCopies[language]);
+  if (tool.id === 'inflation-calculator') return structuredClone(language === 'en' ? inflationCalculatorEnglishCopy : inflationCalculatorCopies[language]);
   if (tool.id === 'transformer-calculator') return transformerCalculatorEnglishCopy;
   if (tool.id === 'image-splitter') return structuredClone(language === 'en' ? imageSplitterEnglishCopy : language === 'ar' ? imageSplitterArabicCopy : imageSplitterCopies[language]);
   if (tool.id === 'stoichiometry-calculator') return structuredClone(stoichiometryCopies[language]);
@@ -961,6 +964,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
     'kinetic-energy-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'kinetic-energy-calculator'), locale.key),
     'resistor-color-code-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'resistor-color-code-calculator'), locale.key),
     'log-analyzer': toolCopy(growthPilotTools.find(({ id }) => id === 'log-analyzer'), locale.key),
+    'inflation-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'inflation-calculator'), locale.key),
     'acceleration-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'acceleration-calculator'), locale.key),
     'force-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'force-calculator'), locale.key),
     'friction-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'friction-calculator'), locale.key),

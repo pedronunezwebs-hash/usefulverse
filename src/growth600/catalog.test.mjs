@@ -14,6 +14,7 @@ import { calculateSpecificHeat } from './tools/specific-heat-calculator/logic.mj
 import { calculateRcTimeConstant, calculateRcTransient } from './tools/rc-time-constant-calculator/logic.mjs';
 import { calculateReverseMortgage } from './tools/reverse-mortgage-calculator/logic.mjs';
 import { calculateCarDepreciation } from './tools/car-depreciation-calculator/logic.mjs';
+import { calculateCpiInflation, calculateCustomInflation } from './tools/inflation-calculator/logic.mjs';
 import { calculateStockProfit } from './tools/stock-profit-calculator/logic.mjs';
 import { calculatePension } from './tools/pension-calculator/logic.mjs';
 import { calculateLifetimeValue } from './tools/lifetime-value-calculator/logic.mjs';
@@ -21,8 +22,8 @@ import { calculatePolarGraph } from './tools/polar-graphing-calculator/logic.mjs
 import { calculateBooleanAlgebra } from './tools/boolean-algebra-calculator/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 178);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 178);
+  assert.equal(growthPilotTools.length, 179);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 179);
   assert.ok(growthPilotTools.some(({ id }) => id === 'inductor-calculator'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'centripetal-force-calculator'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'writing-tracker'));
@@ -31,6 +32,7 @@ test('the current growth IDs are unique and additive to the protected catalog', 
   assert.ok(growthPilotTools.some(({ id }) => id === 'graphql-formatter'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'rsa-key-generator'));
   assert.ok(growthPilotTools.some(({ id }) => id === 'log-analyzer'));
+  assert.ok(growthPilotTools.some(({ id }) => id === 'inflation-calculator'));
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 
@@ -206,6 +208,16 @@ test('car depreciation is a user-assumption scenario distinct from loan payoff a
   assert.deepEqual(tool.relatedExistingIds, ['fuel-cost-calculator', 'loan-calculator', 'tire-size-calculator']);
   assert.match(tool.boundary, /not a market valuation.*financial advice/u);
   assert.equal(calculateCarDepreciation({ purchasePrice: 10000, yearsOwned: 0, currentDistance: 0, annualDistance: 0, annualDepreciationPercent: 10, distanceDepreciationPercent: 0, projectionYears: 1 }).projectedValue, 9000);
+});
+
+test('inflation calculator uses historical price indexes rather than investment returns', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'inflation-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'inflation calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['roi-cagr-calculator', 'compound-interest-calculator']);
+  assert.match(tool.boundary, /not a personal budget.*purchasing basket/u);
+  assert.ok(Math.abs(calculateCpiInflation({ amount: 100, startYear: 2020, endYear: 2025 }).adjustedAmount - 124.393) < 0.001);
+  assert.ok(Math.abs(calculateCustomInflation({ amount: 100, annualRatePercent: 10, years: 2 }).adjustedAmount - 121) < 1e-12);
 });
 
 test('eigenvalue calculator is additive and validates symmetric eigenpairs', () => {

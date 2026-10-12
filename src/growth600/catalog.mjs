@@ -2076,6 +2076,18 @@ export const growthPilotTools = Object.freeze([
     logicModule: './tools/reverse-mortgage-calculator/logic.mjs',
   },
   {
+    id: 'inflation-calculator',
+    category: 'personal-finance',
+    type: 'calculator',
+    primaryIntent: 'inflation calculator',
+    secondaryIntents: ['purchasing power calculator', 'US CPI inflation calculator', 'historical dollar value calculator'],
+    functions: ['adjust an amount between two years using static annual-average U.S. CPI-U values from 1913 through 2025', 'calculate a compounded scenario from a user-entered annual inflation rate for other countries or custom assumptions', 'show cumulative price-level change and an equivalent annual rate without fetching market data'],
+    acceptance: 'An amount of 100 with a start index of 100 and end index of 110 becomes 110, a 10% cumulative price-level increase; US CPI mode reports an amount of 100 from 2020 to 2025 as 100 × 321.943 ÷ 258.811.',
+    boundary: 'Historical estimate, not a personal budget, purchasing basket, official inflation forecast, currency conversion, tax calculation or financial advice. U.S. mode uses BLS CPI-U U.S. city average all-items annual averages (1982–84=100) through 2025; it cannot represent an individual household, a specific category or another country. Other scenarios use the constant annual rate entered by the visitor and are not official national CPI. No live data, external API, upload, account or persistence; all calculations run locally.',
+    relatedExistingIds: ['roi-cagr-calculator', 'compound-interest-calculator'],
+    logicModule: './tools/inflation-calculator/logic.mjs',
+  },
+  {
     id: 'car-depreciation-calculator',
     category: 'personal-finance',
     type: 'calculator',

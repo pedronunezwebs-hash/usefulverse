@@ -1,0 +1,8 @@
+.inflation-calculator [data-inflation-cpi-fields],
+.inflation-calculator [data-inflation-custom-fields] { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 1rem; }
+.inflation-calculator [hidden] { display: none !important; }
+.inflation-calculator__results { margin-block: 1.5rem; padding: 1rem; border: 1px solid var(--border, #d7dde5); border-radius: 1rem; background: var(--surface, #fff); }
+.inflation-calculator__results dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: .8rem; margin: 0; }
+.inflation-calculator__results dl div { padding: .9rem; border-radius: .75rem; background: var(--surface-muted, #f4f6f8); }
+.inflation-calculator__results dt { font-size: .92rem; }
+.inflation-calculator__results dd { margin: .35rem 0 0; font-size: 1.3rem; font-weight: 700; overflow-wrap: anywhere; }

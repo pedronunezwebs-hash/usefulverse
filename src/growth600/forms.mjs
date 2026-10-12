@@ -139,6 +139,7 @@ export function renderGrowthForm(toolId, copy) {
     'graphql-formatter': ['document', 'accuracyNote', 'output', 'definitionCount', 'graphqlLicense'],
     'rsa-key-generator': ['keySize', 'cryptoNote', 'privateKeyWarning', 'publicKey', 'privateKey', 'fingerprint', 'demoTitle', 'demoMessage', 'demoHint', 'encryptedMessage', 'decryptedMessage', 'algorithmNote'],
     'log-analyzer': ['file', 'paste', 'pasteHint', 'privacyWarning', 'sizeLimit', 'summaryTitle', 'totalRequests', 'invalidLines', 'transferred', 'statusBreakdown', 'methodBreakdown', 'topPaths', 'dailyRequests', 'search', 'method', 'statusFilter', 'all', 'from', 'to', 'results', 'shown', 'noMatches', 'includeIp', 'resultTime', 'path', 'statusLabel', 'bytes', 'referer', 'userAgent', 'privacyNote'],
+    'inflation-calculator': ['mode', 'usCpiMode', 'customMode', 'amount', 'amountHint', 'startYear', 'endYear', 'annualRatePercent', 'years', 'accuracyNote', 'resultSummary', 'adjustedAmount', 'cumulativeChange', 'annualizedRate', 'sourceNote'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
     'polygon-calculator': ['sides', 'dimensionMode', 'sideLength', 'apothem', 'circumradius', 'dimension', 'unit', 'accuracyNote', 'resultSummary', 'perimeter', 'area', 'computedSide', 'computedApothem', 'computedCircumradius', 'interiorAngle', 'centralAngle', 'formulaNote'],
@@ -325,6 +326,7 @@ export function renderGrowthForm(toolId, copy) {
     'graphql-formatter': ['format', 'example', 'copy', 'clear'],
     'rsa-key-generator': ['generate', 'copyPublic', 'downloadPublic', 'copyPrivate', 'downloadPrivate', 'copyFingerprint', 'example', 'encrypt', 'decrypt', 'reset', 'result'],
     'log-analyzer': ['example', 'analyze', 'export', 'clear', 'reset', 'result'],
+    'inflation-calculator': ['calculate', 'reset', 'example', 'result'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
     'polygon-calculator': ['calculate', 'example', 'reset', 'copy', 'result'],
@@ -473,6 +475,27 @@ export function renderGrowthForm(toolId, copy) {
       <label class="log-analyzer__ip"><input type="checkbox" data-log-include-ip> ${escapeGrowthHtml(fields.includeIp)}</label><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
       <div class="actions"><button type="button" class="button button--primary" data-action="export">${escapeGrowthHtml(actions.export)}</button><button type="button" class="button button--secondary" data-action="reset">${escapeGrowthHtml(actions.reset)}</button></div>
     </section>
+  </form>`, copy);
+
+  if (toolId === 'inflation-calculator') return attachCopy(`<form id="tool-form" class="inflation-calculator" novalidate>
+    ${label('inflation-mode', fields.mode, `<select id="inflation-mode" name="mode"><option value="us-cpi">${escapeGrowthHtml(fields.usCpiMode)}</option><option value="custom-rate">${escapeGrowthHtml(fields.customMode)}</option></select>`)}
+    ${label('inflation-amount', fields.amount, '<input id="inflation-amount" name="amount" type="number" min="0.01" max="1000000000000" step="any" value="100" required inputmode="decimal">')}
+    <p class="hint">${escapeGrowthHtml(fields.amountHint)}</p>
+    <div data-inflation-cpi-fields>
+      ${label('inflation-start-year', fields.startYear, '<input id="inflation-start-year" name="startYear" type="number" min="1913" max="2024" step="1" value="2020" required inputmode="numeric">')}
+      ${label('inflation-end-year', fields.endYear, '<input id="inflation-end-year" name="endYear" type="number" min="1914" max="2025" step="1" value="2025" required inputmode="numeric">')}
+    </div>
+    <div data-inflation-custom-fields hidden>
+      ${label('inflation-rate', fields.annualRatePercent, '<input id="inflation-rate" name="annualRatePercent" type="number" min="-99.99" max="1000" step="any" value="3" inputmode="decimal" disabled>')}
+      ${label('inflation-years', fields.years, '<input id="inflation-years" name="years" type="number" min="1" max="200" step="1" value="10" inputmode="numeric" disabled>')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions"><button type="button" class="button button--secondary" data-action="example">${escapeGrowthHtml(actions.example)}</button>${button('calculate', actions.calculate)}${button('reset', actions.reset, 'secondary')}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="inflation-calculator__results" data-inflation-results hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><p data-inflation-summary></p>
+      <dl><div><dt>${escapeGrowthHtml(fields.adjustedAmount)}</dt><dd data-inflation-adjusted></dd></div><div><dt>${escapeGrowthHtml(fields.cumulativeChange)}</dt><dd data-inflation-cumulative></dd></div><div><dt>${escapeGrowthHtml(fields.annualizedRate)}</dt><dd data-inflation-annualized></dd></div></dl>
+    </section>
+    <p class="hint">${escapeGrowthHtml(fields.sourceNote)} <a href="https://www.bls.gov/cpi/" rel="noopener noreferrer" target="_blank">Bureau of Labor Statistics</a>.</p>
   </form>`, copy);
 
   if (toolId === 'font-pairing-tool') {

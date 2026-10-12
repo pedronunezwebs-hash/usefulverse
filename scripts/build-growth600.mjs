@@ -33,6 +33,7 @@ import jwtEncoderCopies from '../src/growth600/locales/jwt-encoder-final.mjs';
 import graphqlFormatterCopies from '../src/growth600/locales/graphql-formatter-final.mjs';
 import rsaKeyGeneratorCopies from '../src/growth600/locales/rsa-key-generator-final.mjs';
 import logAnalyzerCopies from '../src/growth600/locales/log-analyzer-final.mjs';
+import inflationCalculatorCopies from '../src/growth600/locales/inflation-calculator-final.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const localeDir = resolve(root, 'src/growth600/locales');
@@ -99,6 +100,8 @@ for (const { key } of localeEntries) {
   copyByLocale[key] = { ...copyByLocale[key], 'rsa-key-generator': rsaKeyGeneratorCopies[key] };
   if (!logAnalyzerCopies[key]) throw new Error(`Growth600 release blocked: Log Analyzer copy is missing for ${key}.`);
   copyByLocale[key] = { ...copyByLocale[key], 'log-analyzer': logAnalyzerCopies[key] };
+  if (!inflationCalculatorCopies[key]) throw new Error(`Growth600 release blocked: Inflation Calculator copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], 'inflation-calculator': inflationCalculatorCopies[key] };
 }
 
 const outputDir = resolve(process.env.GROWTH600_DIST ?? resolve(root, 'dist-growth600'));
@@ -132,6 +135,7 @@ const toolStyles = {
   'graphql-formatter': minifyCss(await readFile(resolve(root, 'src/growth600/tools/graphql-formatter/graphql-formatter.css'), 'utf8'), { comments: 'exclamation' }).css,
   'rsa-key-generator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/rsa-key-generator/rsa-key-generator.css'), 'utf8'), { comments: 'exclamation' }).css,
   'log-analyzer': minifyCss(await readFile(resolve(root, 'src/growth600/tools/log-analyzer/log-analyzer.css'), 'utf8'), { comments: 'exclamation' }).css,
+  'inflation-calculator': minifyCss(await readFile(resolve(root, 'src/growth600/tools/inflation-calculator/inflation-calculator.css'), 'utf8'), { comments: 'exclamation' }).css,
 };
 const faviconSvg = await readFile(resolve(root, 'public/favicon.svg'), 'utf8');
 const modelRevision = '92a21aca5713f20faf9a87590cdfbdce2e34112c';

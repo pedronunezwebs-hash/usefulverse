@@ -36,6 +36,7 @@ import { jwtEncoderEnglishCopy } from './locales/jwt-encoder.en.mjs';
 import { graphqlFormatterEnglishCopy } from './locales/graphql-formatter.en.mjs';
 import { rsaKeyGeneratorEnglishCopy } from './locales/rsa-key-generator.en.mjs';
 import { logAnalyzerEnglishCopy } from './locales/log-analyzer.en.mjs';
+import { inflationCalculatorEnglishCopy } from './locales/inflation-calculator.en.mjs';
 import torqueCalculatorCopies from './locales/torque-calculator.mjs';
 import { beamDeflectionCalculatorEnglishCopy } from './locales/beam-deflection-calculator.en.mjs';
 import { transformerCalculatorEnglishCopy } from './locales/transformer-calculator.en.mjs';
@@ -509,6 +510,7 @@ copies['json-to-xml-converter'] = { ...jsonToXmlEnglishCopy };
   copies['graphql-formatter'] = { ...graphqlFormatterEnglishCopy };
   copies['rsa-key-generator'] = { ...rsaKeyGeneratorEnglishCopy };
   copies['log-analyzer'] = { ...logAnalyzerEnglishCopy };
+  copies['inflation-calculator'] = { ...inflationCalculatorEnglishCopy };
   copies['beam-deflection-calculator'] = { ...beamDeflectionCalculatorEnglishCopy };
 copies['savings-goal-calculator'] = { name: 'Savings Goal Calculator', actions: { ...actions, requiredContribution: 'Monthly deposit needed', monthsToGoal: 'Time needed for my deposit', beginning: 'Beginning of month', end: 'End of month' }, messages: { ...messages }, fields: { mode: 'Calculation', startingBalance: 'Current savings', targetAmount: 'Savings target', annualRatePercent: 'Annual rate', months: 'Months', monthlyContribution: 'Monthly deposit', contributionTiming: 'Deposit timing', accuracyNote: 'Estimate only.', resultSummary: 'Estimate', monthlyResult: 'Required deposit', monthsResult: 'Months', projectedBalance: 'Projected balance', totalContributions: 'Deposits', estimatedInterest: 'Estimated interest', currencyNote: 'Use the same currency.' } };
 copies['severance-pay-calculator'] = { name: 'Severance Pay Calculator', actions: { ...actions, customMode: 'Custom assumptions', ukMode: 'Great Britain statutory estimate' }, messages: { ...messages, calculationFailed: 'Could not calculate.', exampleLoaded: 'Example loaded.', calculateFirst: 'Calculate first.', belowServiceMinimum: 'Fewer than two completed years.', capApplied: 'A cap applied.', noCapApplied: 'No cap applied.', customAssumptions: 'Custom assumptions.' }, fields: { mode: 'Calculation type', weeklyPay: 'Average gross weekly pay', yearsOfService: 'Years of service', weeksPerYear: 'Weeks per year', birthDate: 'Birth date', employmentStartDate: 'Employment start date', redundancyDate: 'Redundancy date', accuracyNote: 'Estimate only.', customNote: 'Uses your assumptions.', ukNote: 'Great Britain estimate; enter GBP.', officialSource: 'Official guidance', estimate: 'Estimated amount', appliedWeeklyPay: 'Weekly pay used', totalWeeks: 'Weeks of pay', rulesAsOf: 'Rules from', resultSummary: 'Estimate details' } };
@@ -1803,4 +1805,11 @@ test('Log Analyzer renders a local, bounded access-log workflow with safe IP exp
   assert.match(html, /Nothing is uploaded/u);
   assert.match(html, /20,000 non-empty lines/u);
   assert.doesNotMatch(html, /checked(?:\s|>)/u);
+});
+
+test('Inflation Calculator renders both local scenarios and links to its CPI source', () => {
+  const html = renderGrowthForm('inflation-calculator', inflationCalculatorEnglishCopy);
+  for (const value of ['name="mode"', 'name="amount"', 'name="startYear"', 'name="endYear"', 'name="annualRatePercent"', 'name="years"', 'data-inflation-adjusted', 'data-inflation-cumulative', 'data-inflation-annualized', 'https://www.bls.gov/cpi/']) assert.ok(html.includes(value), value);
+  assert.match(html, /not your personal basket or a live forecast/u);
+  assert.doesNotMatch(html, /localStorage|fetch\(/u);
 });
