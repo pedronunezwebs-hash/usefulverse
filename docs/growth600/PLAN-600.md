@@ -9,7 +9,7 @@ Fecha de investigación: 7 de octubre de 2026. Documento de planificación y che
 - [x] Comprobar la base de planificación: **277 herramientas y 36 idiomas**.
 - [x] Investigar demanda con un gasto acotado en DataForSEO y registrar los resultados reales.
 - [x] Consolidar variantes antes de fijar el nuevo catálogo, sin contar una dirección de conversión como otra herramienta.
-- [ ] Implementar las nuevas herramientas. **Estado local al 13-oct-2026:** 206 herramientas Growth600 con copy/rutas en 36 idiomas; junto con las 277 originales protegidas suman 483, quedan 117 candidatas únicas para el objetivo de 600. Build local: sitemap del hub con 7.452 URLs; README actualizado desde sitemaps local (10.260 + 7.452). Aún requiere push, despliegue directo y verificación pública antes de marcar el lote como publicado. No inferir indexación del despliegue.
+- [ ] Implementar las nuevas herramientas. **Estado verificado al 13-oct-2026:** lote de 206 herramientas Growth600 publicado con copy/rutas en 36 idiomas; junto con las 277 originales protegidas suman 483, quedan 117 candidatas únicas para el objetivo de 600. Build y sitemap del hub: 7.452 URLs; README registra 10.260 + 7.452 URLs. Deployment Cloudflare Pages `1a78308f-6391-47f0-96ad-799b5eb6900c`; sitemap y rutas de muestra HTTP 200. No inferir indexación del despliegue.
 
 Snapshot consultado: rama `main`, commit `685f91adfc7818a54f6dc0a967e290d13137a3dd`. Catálogo: `src/catalog.mjs`; funciones y contratos representativos: `src/app.js`, módulos de lógica, `src/opportunity-tools.mjs`, `src/seo.mjs`, locales, build y documentación del repo. Se inspeccionaron los metadatos de las 277 herramientas y contratos clave para descartar duplicados; esto **no es una nueva auditoría funcional completa de las 277**.
 

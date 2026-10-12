@@ -6,12 +6,14 @@
 - **Build aislado listo:** **7.452 URLs** (206 × 36 + 36 portadas), 7.767 archivos y 214.521.944 bytes. Sitemap local generado; README actualizado desde ambos sitemaps: **10.260 URLs principales + 7.452 del hub**. Son URLs generadas, no prueba de indexación.
 - **Verificaciones:** `npm test` **2.231/2.231**; `npm run locale:release-check` aprobado para 20 locales ampliados; `npm run check` principal aprobado con **10.260 URLs**; build Growth600 aprobado; prueba focal de build **3/3**; `git diff --check` limpio.
 - **Trabajo añadido en este cierre:** corrección de fixtures de localización para ocho herramientas y del conteo dinámico de assets; preflight de límite de archivos; módulos/copias completos ya conectados para Family Tree Maker, 401(k), Name Generator, Random Word Generator, Breathing Exercise, Dividend Calculator, Net Worth Calculator y Cribbage. No se tocaron funciones del catálogo original.
-- **Estado externo al actualizar este apunte:** pendiente todavía commit/push y un despliegue estático directo a Cloudflare Pages. El branch push no activa el workflow (este escucha `main`); Git LFS contiene 0 objetos. La publicación no usa Functions, APIs de conversión ni Actions.
-- **Cierre después de publicar:** comprobar SHA remoto, URL del hub, rutas nuevas, sitemap público y estado de deployment; dejar anotados el total y la fecha. No afirmar indexación. Mantener en el plan las **117 candidatas restantes**.
+- **Publicación verificada:** commit `a2785b8` en `codex/growth600-text-to-speech-20261012`; push remoto confirmado. Cloudflare Pages deployment `1a78308f-6391-47f0-96ad-799b5eb6900c`, entorno Production, rama `main`, URL de deployment `https://1a78308f.usefulverse-tools.pages.dev`. Build estático directo; no se invocaron Workers Functions ni Actions.
+- **Sitemap público del hub:** `https://tools.usefulverse.com/sitemap.xml`, HTTP 200, **7.452 URLs únicas**. El README registra 10.260 URLs principales + 7.452 del hub (**17.712** en total). Verificadas en vivo rutas EN/ES/AR de Text to Speech y Family Tree Maker, y Net Worth Calculator EN/ES. Publicar no demuestra indexación.
+- **Coste/uso observado:** sin gasto de GitHub; push a rama que no dispara el workflow y 0 objetos LFS. Un deployment estático de Pages dentro de la cuota vigente; no se añadieron Workers, Functions, APIs ni recursos de pago.
+- **Siguiente:** mantener en el plan las **117 candidatas restantes**; no repetir DataForSEO ni las 206 ya existentes. No afirmar que el objetivo global 600 esté completo ni que cada URL esté indexada.
 - **Traducciones:** Google Translate por bloques de texto con marca/tokens protegidos, metadatos acotados y contratos automáticos; son traducciones automáticas entendibles, no revisión nativa. No se usó API pagada.
 - **Limpieza:** los builds en `dist`, `dist-growth600` y `/tmp/usefulverse-growth600-20261013-final` y la caché temporal se retiran solo después de confirmar respaldo remoto y deploy. No borrar el checkout mientras haya cambios no respaldados.
 
-Última verificación local: 2026-10-13. El inventario público solo cambia tras comprobar el deploy.
+Última verificación pública: 2026-10-13. El inventario público se reconcilió con el sitemap servido tras el deploy.
 
 ### #082 Image Vectorizer y #084 VO2 Max Calculator · trabajo local · 2026-10-13
 
