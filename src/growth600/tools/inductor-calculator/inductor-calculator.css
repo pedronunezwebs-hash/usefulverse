@@ -1,0 +1,2 @@
+[data-air-core-fields], [data-toroid-fields] { grid-column: 1 / -1; }
+[data-air-core-fields][hidden], [data-toroid-fields][hidden] { display: none; }

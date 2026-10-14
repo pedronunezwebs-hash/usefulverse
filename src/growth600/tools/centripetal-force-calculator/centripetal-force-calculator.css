@@ -1,0 +1,2 @@
+[data-speed-fields], [data-frequency-fields] { grid-column: 1 / -1; }
+[data-speed-fields][hidden], [data-frequency-fields][hidden] { display: none; }

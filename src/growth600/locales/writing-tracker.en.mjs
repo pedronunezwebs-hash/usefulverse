@@ -1,0 +1,38 @@
+export const writingTrackerEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Writing tracker',
+  title: 'Writing Tracker Free | UsefulVerse',
+  description: 'Track writing projects, word goals and dated sessions. Review your progress and export a private local CSV for free.',
+  intro: 'Track writing over time instead of recounting a document. Create projects, record each session once, see progress toward a word goal and export your history. Your data stays in this browser.',
+  howQuestion: 'How does a writing tracker count my progress?',
+  howAnswer: 'Create a project with an optional word goal, then record the words and minutes from each writing session. A session has a stable ID: editing it replaces the old entry instead of adding the same words again.',
+  privacyQuestion: 'Where is my writing history stored?',
+  privacyAnswer: 'The project and session log is saved in this browser on this device. It is not uploaded to a server. Export a CSV if you want a separate copy; clearing browser storage removes the saved log.',
+  fields: {
+    projectName: 'Project name', projectGoal: 'Word-count goal (optional)',
+    sessionProject: 'Project', chooseProject: 'Choose a project', sessionDate: 'Session date', sessionWords: 'Words written',
+    sessionMinutes: 'Minutes (optional)', sessionNote: 'Note (optional)', accuracyNote: 'This tracker records the totals you enter; it does not read or count a document. Saved history stays in this browser and may be lost if browser data is cleared. Export a CSV backup when you need one.',
+    projectsHeading: 'Projects', sessionsHeading: 'Recent writing sessions', summaryHeading: 'Your writing progress',
+    totalWords: 'Words recorded', totalMinutes: 'Minutes recorded', sessionCount: 'Sessions', activeDays: 'Writing days', currentStreak: 'Current writing streak',
+    noProjects: 'Create a project to start tracking.', noSessions: 'No writing sessions yet.',
+    projectGoalNone: 'No word goal set', projectRemaining: '{count} words to goal', projectReached: 'Goal reached',
+    date: 'Date', words: 'Words', minutes: 'Minutes', note: 'Note',
+  },
+  actions: {
+    addProject: 'Add project', recordSession: 'Record session', updateSession: 'Update session',
+    example: 'Load example', exportCsv: 'Export CSV',
+    edit: 'Edit', delete: 'Delete', deleteProject: 'Delete project', cancelEdit: 'Cancel edit',
+  },
+  messages: {
+    projectAdded: 'Project added.', sessionSaved: 'Session saved.', sessionUpdated: 'Session updated; its words were not counted twice.',
+    sessionDeleted: 'Session deleted.', projectDeleted: 'Project and its sessions deleted.',
+    checkProject: 'Check the project name and word goal.', checkSession: 'Check the project, date, words and minutes.',
+    storageSaved: 'Saved on this device.', storageUnavailable: 'Browser storage is unavailable or full; export a CSV before closing this page.',
+    confirmDeleteProject: 'Delete this project and every writing session recorded for it? This cannot be undone.',
+    copied: 'Export ready.',
+  },
+  additionalFaqs: [
+    { question: 'Does editing a session add its words a second time?', answer: 'No. Each session keeps a stable ID. Saving an edit replaces that session record, so the total uses the revised word count once.' },
+    { question: 'Does this tracker count words in a document automatically?', answer: 'No. Enter the word total from your writing app after a session. This page tracks dated progress and project goals; it does not open or upload your documents.' },
+  ],
+});

@@ -1,0 +1,5 @@
+.aes-encryption-tool { display: grid; gap: 1rem; }
+.aes-encryption-tool textarea { width: 100%; min-height: 13rem; resize: vertical; font: 500 .9rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.aes-encryption-tool [data-output-text] { overflow-wrap: anywhere; }
+.aes-encryption-tool [data-file-input][hidden], .aes-encryption-tool [data-text-input][hidden], .aes-encryption-tool [hidden] { display: none !important; }
+.aes-encryption-tool .hint { max-width: 78ch; }

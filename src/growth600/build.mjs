@@ -60,7 +60,8 @@ async function buildGrowthStaticSiteIntoDirectory({
   }
   for (const tool of tools) {
     if (typeof controllerBundles?.[tool.id] !== 'string' || !controllerBundles[tool.id].trim()) throw new Error(`Missing isolated browser controller for ${tool.id}.`);
-    assertLocalController(tool.id, controllerBundles[tool.id], tool.id === 'chess-opening-trainer' ? 48 * 1024 : maxAssetBytes);
+    const controllerBudget = ['chess-opening-trainer', 'chess-puzzles', 'chess-analysis-board'].includes(tool.id) ? 48 * 1024 : maxAssetBytes;
+    assertLocalController(tool.id, controllerBundles[tool.id], controllerBudget);
   }
   for (const [name, source] of Object.entries(workerBundles)) {
     if (!/^[a-z0-9-]+$/u.test(name) || typeof source !== 'string' || !source.trim()) throw new Error(`Invalid worker bundle: ${name}.`);

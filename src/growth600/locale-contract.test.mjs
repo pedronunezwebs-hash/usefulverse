@@ -2,6 +2,23 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { assertGrowthLocaleCoverage } from './locale-contract.mjs';
 import { growthPilotTools as allGrowthPilotTools } from './catalog.mjs';
+import graphqlFormatterCopies from './locales/graphql-formatter-final.mjs';
+import choreChartMakerCopies from './locales/chore-chart-maker-final.mjs';
+import cssBorderRadiusGeneratorCopies from './locales/css-border-radius-generator-final.mjs';
+import rentalYieldCalculatorCopies from './locales/rental-yield-calculator-final.mjs';
+import rsaKeyGeneratorCopies from './locales/rsa-key-generator-final.mjs';
+import logAnalyzerCopies from './locales/log-analyzer-final.mjs';
+import pyramidSolitaireCopies from './locales/pyramid-solitaire-final.mjs';
+import rebusPuzzlesCopies from './locales/rebus-puzzles-final.mjs';
+import killerSudokuCopies from './locales/killer-sudoku-final.mjs';
+import sudokuSolverCopies from './locales/sudoku-solver-final.mjs';
+import hangmanGameCopies from './locales/hangman-game-final.mjs';
+import aimTrainerCopies from './locales/aim-trainer-final.mjs';
+import chessPuzzlesCopies from './locales/chess-puzzles-final.mjs';
+import dotsAndBoxesCopies from './locales/dots-and-boxes-final.mjs';
+import chessAnalysisBoardCopies from './locales/chess-analysis-board-final.mjs';
+import blackjackGameCopies from './locales/blackjack-game-final.mjs';
+import tripeaksSolitaireCopies from './locales/tripeaks-solitaire-final.mjs';
 import { localeEntries } from '../locales.mjs';
 import englishGrowthCopy from './locales/en.mjs';
 import transformerCopies from './locales/transformer-calculator-final.mjs';
@@ -73,12 +90,71 @@ import purchaseOrderGeneratorCopies from './locales/purchase-order-generator-fin
 import eigenvalueCalculatorCopies from './locales/eigenvalue-calculator-final.mjs';
 import bondCalculatorCopies from './locales/bond-calculator-final.mjs';
 import waistToHipRatioCopies from './locales/waist-to-hip-ratio-calculator-final.mjs';
+import heartsGameCopies from './locales/hearts-game-final.mjs';
+import typingPracticeCopies from './locales/typing-practice-final.mjs';
+import sokobanCopies from './locales/sokoban-final.mjs';
+import mazeGeneratorCopies from './locales/maze-generator-final.mjs';
+import sleepCalculatorCopies from './locales/sleep-calculator-final.mjs';
+import leanBodyMassCalculatorCopies from './locales/lean-body-mass-calculator-final.mjs';
+import cyclingPowerCalculatorCopies from './locales/cycling-power-calculator-final.mjs';
+import inductorCalculatorCopies from './locales/inductor-calculator-final.mjs';
+import centripetalForceCalculatorCopies from './locales/centripetal-force-calculator-final.mjs';
+import writingTrackerCopies from './locales/writing-tracker-final.mjs';
+import aesEncryptionToolCopies from './locales/aes-encryption-tool-final.mjs';
+import jwtEncoderCopies from './locales/jwt-encoder-final.mjs';
+import customerAcquisitionCostCalculatorCopies from './locales/customer-acquisition-cost-calculator-final.mjs';
 
-const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['markdown-editor', 'purchase-order-generator', 'bond-calculator', 'waist-to-hip-ratio-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'ph-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'kinetic-energy-calculator', 'resistor-color-code-calculator', 'acceleration-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator'].includes(id));
+const growthPilotTools = allGrowthPilotTools.filter(({ id }) => !['markdown-editor', 'purchase-order-generator', 'bond-calculator', 'waist-to-hip-ratio-calculator', 'hearts-game', 'typing-practice', 'sokoban', 'maze-generator', 'sleep-calculator', 'lean-body-mass-calculator', 'tire-size-calculator', 'stair-calculator', 'asphalt-calculator', 'carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'ph-calculator', 'dilution-calculator', 'ohms-law-calculator', 'chemical-equation-balancer', 'gear-ratio-calculator', 'density-calculator', 'kinetic-energy-calculator', 'resistor-color-code-calculator', 'acceleration-calculator', 'compression-ratio-calculator', 'goal-planner', 'mind-map-maker', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'polynomial-long-division-calculator', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'prayer-times-calculator', 'hitori', 'nurikabe', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'readability-checker', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'number-line-graphing-tool', 'laplace-transform-calculator', 'vector-calculator', 'cubic-quartic-equation-calculator', 'complex-number-calculator', 'graphql-formatter', 'chore-chart-maker', 'css-border-radius-generator', 'rental-yield-calculator', 'rsa-key-generator', 'log-analyzer', 'pyramid-solitaire', 'dots-and-boxes', 'chess-analysis-board', 'blackjack-game', 'tripeaks-solitaire'].includes(id));
 const localizedCopies = Object.fromEntries(await Promise.all(localeEntries.map(async ({ key }) => [
   key,
-  { ...(await import(`./locales/${key}.mjs`)).default, 'purchase-order-generator': purchaseOrderGeneratorCopies[key], 'eigenvalue-calculator': eigenvalueCalculatorCopies[key], 'bond-calculator': bondCalculatorCopies[key], 'waist-to-hip-ratio-calculator': waistToHipRatioCopies[key] },
+  { ...(await import(`./locales/${key}.mjs`)).default, 'purchase-order-generator': purchaseOrderGeneratorCopies[key], 'eigenvalue-calculator': eigenvalueCalculatorCopies[key], 'bond-calculator': bondCalculatorCopies[key], 'waist-to-hip-ratio-calculator': waistToHipRatioCopies[key], 'hearts-game': heartsGameCopies[key], 'typing-practice': typingPracticeCopies[key], sokoban: sokobanCopies[key], 'maze-generator': mazeGeneratorCopies[key], 'sleep-calculator': sleepCalculatorCopies[key], 'lean-body-mass-calculator': leanBodyMassCalculatorCopies[key], 'cycling-power-calculator': cyclingPowerCalculatorCopies[key] },
 ])));
+for (const { key } of localeEntries) {
+  localizedCopies[key]['graphql-formatter'] = graphqlFormatterCopies[key];
+  localizedCopies[key]['chore-chart-maker'] = choreChartMakerCopies[key];
+  localizedCopies[key]['css-border-radius-generator'] = cssBorderRadiusGeneratorCopies[key];
+  localizedCopies[key]['rental-yield-calculator'] = rentalYieldCalculatorCopies[key];
+  localizedCopies[key]['rsa-key-generator'] = rsaKeyGeneratorCopies[key];
+  localizedCopies[key]['log-analyzer'] = logAnalyzerCopies[key];
+  localizedCopies[key]['pyramid-solitaire'] = pyramidSolitaireCopies[key];
+  localizedCopies[key]['rebus-puzzles'] = rebusPuzzlesCopies[key];
+  localizedCopies[key]['killer-sudoku'] = killerSudokuCopies[key];
+  localizedCopies[key]['sudoku-solver'] = sudokuSolverCopies[key];
+  localizedCopies[key]['hangman-game'] = hangmanGameCopies[key];
+  localizedCopies[key]['aim-trainer'] = aimTrainerCopies[key];
+  localizedCopies[key]['chess-puzzles'] = chessPuzzlesCopies[key];
+  localizedCopies[key]['dots-and-boxes'] = dotsAndBoxesCopies[key];
+  localizedCopies[key]['chess-analysis-board'] = chessAnalysisBoardCopies[key];
+  localizedCopies[key]['blackjack-game'] = blackjackGameCopies[key];
+  localizedCopies[key]['tripeaks-solitaire'] = tripeaksSolitaireCopies[key];
+  localizedCopies[key]['inductor-calculator'] = inductorCalculatorCopies[key];
+  localizedCopies[key]['centripetal-force-calculator'] = centripetalForceCalculatorCopies[key];
+  localizedCopies[key]['writing-tracker'] = writingTrackerCopies[key];
+  localizedCopies[key]['aes-encryption-tool'] = aesEncryptionToolCopies[key];
+  localizedCopies[key]['jwt-encoder'] = jwtEncoderCopies[key];
+  localizedCopies[key]['customer-acquisition-cost-calculator'] = customerAcquisitionCostCalculatorCopies[key];
+}
+// Its accepted machine-localized copies are asserted below, not in the base locale fixtures.
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'cycling-power-calculator'), 1);
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'inductor-calculator'), 1);
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'centripetal-force-calculator'), 1);
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'writing-tracker'), 1);
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'aes-encryption-tool'), 1);
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'jwt-encoder'), 1);
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'customer-acquisition-cost-calculator'), 1);
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'graphql-formatter'), 1);
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'chore-chart-maker'), 1);
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'css-border-radius-generator'), 1);
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'rental-yield-calculator'), 1);
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'rsa-key-generator'), 1);
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'log-analyzer'), 1);
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'pyramid-solitaire'), 1);
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'rebus-puzzles'), 1);
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'killer-sudoku'), 1);
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'sudoku-solver'), 1);
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'hangman-game'), 1);
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'aim-trainer'), 1);
+growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'chess-puzzles'), 1);
 
 test('section modulus calculator has static, bounded translations in all 36 locales', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'section-modulus-calculator');
@@ -346,6 +422,16 @@ function assertMachineAcceptedGrowthToolInAllLocales(tool) {
     ...(tool.id === 'eigenvalue-calculator' ? { 'eigenvalue-calculator': eigenvalueCalculatorCopies[key] } : {}),
     ...(tool.id === 'bond-calculator' ? { 'bond-calculator': bondCalculatorCopies[key] } : {}),
     ...(tool.id === 'waist-to-hip-ratio-calculator' ? { 'waist-to-hip-ratio-calculator': waistToHipRatioCopies[key] } : {}),
+    ...(tool.id === 'inductor-calculator' ? { 'inductor-calculator': inductorCalculatorCopies[key] } : {}),
+    ...(tool.id === 'centripetal-force-calculator' ? { 'centripetal-force-calculator': centripetalForceCalculatorCopies[key] } : {}),
+    ...(tool.id === 'writing-tracker' ? { 'writing-tracker': writingTrackerCopies[key] } : {}),
+    ...(tool.id === 'aes-encryption-tool' ? { 'aes-encryption-tool': aesEncryptionToolCopies[key] } : {}),
+    ...(tool.id === 'jwt-encoder' ? { 'jwt-encoder': jwtEncoderCopies[key] } : {}),
+    ...(tool.id === 'customer-acquisition-cost-calculator' ? { 'customer-acquisition-cost-calculator': customerAcquisitionCostCalculatorCopies[key] } : {}),
+    ...(tool.id === 'graphql-formatter' ? { 'graphql-formatter': graphqlFormatterCopies[key] } : {}),
+    ...(tool.id === 'chore-chart-maker' ? { 'chore-chart-maker': choreChartMakerCopies[key] } : {}),
+    ...(tool.id === 'css-border-radius-generator' ? { 'css-border-radius-generator': cssBorderRadiusGeneratorCopies[key] } : {}),
+    ...(tool.id === 'rental-yield-calculator' ? { 'rental-yield-calculator': rentalYieldCalculatorCopies[key] } : {}),
   }]));
   assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, copies), true);
   for (const { key } of localeEntries.filter(({ key }) => key !== 'en')) {
@@ -806,6 +892,89 @@ test('dominoes game has complete static copy and FAQs in all 36 languages', () =
     assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
     assert.match(copy.messages.turn, /\{player\}/u, key);
     assert.doesNotMatch(JSON.stringify(copy), /UVTOKEN|987654\d{4}456789|undefined/u, key);
+  }
+});
+
+test('Hearts game has static localized copy, metadata and rule FAQs in all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'hearts-game');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = heartsGameCopies[key];
+    assert.equal(copy.copyLanguage, key);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    assert.match(copy.messages.selectThree, /\{count\}/u, key);
+    assert.doesNotMatch(JSON.stringify(copy), /UVTOKEN|987654\d{4}456789|undefined/u, key);
+  }
+});
+
+test('typing practice has static localized lessons, bounded metadata and distinguishing FAQs in all 36 languages', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'typing-practice');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = typingPracticeCopies[key];
+    assert.equal(copy.copyLanguage, key);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    for (const placeholder of ['{correct}', '{total}', '{accuracy}']) assert.ok(copy.messages.inputProgress.includes(placeholder), key);
+    assert.doesNotMatch(JSON.stringify(copy), /UVTOKEN|987654\d{4}456789|undefined/u, key);
+  }
+});
+
+test('Sokoban has static rule copy, safe metadata and complete 36-locale controls', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'sokoban');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = sokobanCopies[key];
+    assert.equal(copy.copyLanguage, key);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    for (const placeholder of ['{level}', '{moves}', '{pushes}']) assert.ok(copy.messages.levelComplete.includes(placeholder), key);
+    assert.doesNotMatch(JSON.stringify(copy), /UVTOKEN|987654\d{4}456789|undefined/u, key);
+  }
+});
+
+test('maze generator has complete static copy, bounded metadata and two localized FAQs in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'maze-generator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = mazeGeneratorCopies[key];
+    assert.equal(copy.copyLanguage, key);
+    assert.equal(copy.additionalFaqs.length, 2);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    for (const placeholder of ['{moves}']) assert.ok(copy.messages.solved.includes(placeholder), key);
+  }
+});
+
+test('sleep calculator has complete localized copy, bounded metadata and safe sleep guidance in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'sleep-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = sleepCalculatorCopies[key];
+    assert.equal(copy.copyLanguage, key);
+    assert.equal(copy.additionalFaqs.length, 3);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    for (const placeholder of ['{time}']) assert.ok(copy.messages.calculated.includes(placeholder), key);
+    for (const placeholder of ['{duration}', '{latency}', '{day}']) assert.ok(copy.messages.result.includes(placeholder), key);
+  }
+});
+
+test('lean body mass calculator has localized copy, source attribution, and bounded metadata in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'lean-body-mass-calculator');
+  assert.ok(tool);
+  assert.equal(assertGrowthLocaleCoverage([tool], localeEntries, localizedCopies), true);
+  for (const { key } of localeEntries) {
+    const copy = leanBodyMassCalculatorCopies[key];
+    assert.equal(copy.copyLanguage, key);
+    assert.equal(copy.additionalFaqs.length, 3);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    assert.ok(copy.fields.accuracyNote.length > 60, key);
+    for (const placeholder of ['{fatMass}', '{leanPercent}', '{unit}']) assert.ok(copy.messages.result.includes(placeholder), key);
   }
 });
 
@@ -1941,6 +2110,108 @@ test('horsepower calculator has complete English copy and localized copy across 
   assertMachineAcceptedGrowthToolInAllLocales(tool);
 });
 
+test('cycling power calculator has translated copy for all 36 locales and bounded SEO metadata', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'cycling-power-calculator');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  const containsNullish = (value) => value === null || value === undefined
+    || (Array.isArray(value) && value.some(containsNullish))
+    || (typeof value === 'object' && value !== null && Object.values(value).some(containsNullish));
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 2, key);
+    assert.ok(copy.fields.accuracyNote.length > 100, `${key}: steady-speed limitations`);
+    assert.ok(copy.fields.unitSystem && copy.fields.metric && copy.fields.imperial, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    assert.equal(containsNullish(copy), false, key);
+  }
+});
+
+test('inductor calculator has approved static copy in all 36 locales and honest method limits', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'inductor-calculator');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.copyLanguage, key);
+    assert.equal(copy.additionalFaqs.length, 2, key);
+    assert.ok(copy.fields.accuracyNote.length > 100, `${key}: approximation limits`);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    assert.ok(copy.fields.airCore && copy.fields.toroid && copy.messages.methodWheeler && copy.messages.methodAl, key);
+  }
+});
+
+test('centripetal force calculator has static translated copy in all 36 locales and bounded classical-motion claims', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'centripetal-force-calculator');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 2, key);
+    assert.ok(copy.fields.accuracyNote.length > 20, `${key}: classical-model limits`);
+    assert.ok(copy.fields.mass && copy.fields.radius && copy.fields.frequency, key);
+    assert.ok(copy.howAnswer.includes('v²/r') && copy.howAnswer.includes('F = ma') && copy.howAnswer.includes('2πrf'), `${key}: preserve standard circular-motion formulas`);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('writing tracker has static copy in all locales and discloses local storage and manual session entry', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'writing-tracker');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 2, key);
+    assert.ok(copy.fields.accuracyNote.length > 30, `${key}: local storage limits`);
+    assert.ok(copy.fields.projectName && copy.fields.sessionWords && copy.actions.exportCsv, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('AES encryption tool has static copy in all 36 locales with honest local-processing and recovery limits', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'aes-encryption-tool');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.equal(copy.copyLanguage, key);
+    assert.ok(copy.fields.password && copy.fields.sourceText && copy.fields.sourceFile, key);
+    assert.match(copy.fields.accuracyNote, /16/u, key);
+    assert.ok(copy.messages.wrongOrDamaged && copy.messages.unsupportedCrypto, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('JWT encoder has static copy in all 36 locales and never equates signature validity with authentication', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'jwt-encoder');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.equal(copy.copyLanguage, key);
+    assert.ok(copy.fields.payload && copy.fields.token && copy.fields.secret, key);
+    assert.ok(copy.fields.accuracyNote.length > 50, key);
+    assert.ok(copy.messages.invalidSignature && copy.messages.verified, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('CAC calculator has a complete 36-locale matrix with bounded SEO metadata and acquisition-scope caveats', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'customer-acquisition-cost-calculator');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = localizedCopies[key][tool.id];
+    assert.equal(copy.additionalFaqs.length, 2, key);
+    assert.equal(copy.copyLanguage, key);
+    for (const field of ['marketingSpend', 'newCustomers', 'currency', 'monthlyRevenue', 'grossMargin', 'accuracyNote', 'payback']) assert.ok(copy.fields[field]?.trim(), `${key}: ${field}`);
+    assert.ok(copy.messages.calculated && copy.messages.checkInputs, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
 test('Roth vs traditional calculator has complete locale copy, bounded metadata and clear tax disclaimers in all 36 languages', () => {
   const tool = allGrowthPilotTools.find(({ id }) => id === 'roth-vs-traditional-calculator');
   assert.ok(tool);
@@ -1965,5 +2236,243 @@ test('repeating decimal calculator preserves the period-and-parentheses notation
     assert.ok(copy.description.length <= 160, `${key}: description limit`);
     assert.match(copy.fields.inputHint, /0\.\(3\).*0\.1\(6\).*1\.2\(34\)/u, `${key}: exact notation`);
     assert.match(copy.fields.accuracyNote, /1.*18|18.*1/u, `${key}: repeating period guidance`);
+  }
+});
+
+test('GraphQL formatter has static machine-accepted copy in all 36 locales with bounded metadata', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'graphql-formatter');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = graphqlFormatterCopies[key];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.equal(copy.copyLanguage, key);
+    assert.ok(copy.fields.source && copy.fields.output && copy.fields.accuracyNote, key);
+    assert.ok(copy.messages.syntaxError && copy.messages.location, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('chore chart maker has translated labels, balanced-schedule caveats and bounded metadata in all locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'chore-chart-maker');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = choreChartMakerCopies[key];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.equal(copy.copyLanguage, key, key);
+    assert.ok(copy.fields.people && copy.fields.chores && copy.fields.startDate && copy.fields.assignedToLabel, key);
+    assert.ok(copy.actions.generate && copy.actions.print && copy.actions.downloadCsv, key);
+    assert.ok(copy.messages.generated && copy.messages.invalidChores, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('CSS radius generator has static localized copy and browser-normalization guidance in all locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'css-border-radius-generator');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = cssBorderRadiusGeneratorCopies[key];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.equal(copy.copyLanguage, key, key);
+    assert.ok(copy.fields.topLeft && copy.fields.bottomRight && copy.fields.horizontal && copy.fields.vertical, key);
+    assert.ok(copy.actions.copy && copy.actions.download && copy.messages.invalid, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('rental yield calculator has complete 36-locale copy and distinguishes operating yield from investment advice', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'rental-yield-calculator');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = rentalYieldCalculatorCopies[key];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.equal(copy.copyLanguage, key, key);
+    assert.ok(copy.fields.currencySymbol && copy.fields.vacancyPercent && copy.fields.netOperatingIncome, key);
+    assert.ok(copy.messages.calculated && copy.messages.checkInputs, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('RSA key generator has complete static localized copy and honest local key limits in all locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'rsa-key-generator');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = rsaKeyGeneratorCopies[key];
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.equal(copy.copyLanguage, key, key);
+    assert.ok(copy.fields.publicKey && copy.fields.privateKey && copy.fields.fingerprint && copy.fields.encryptionNote, key);
+    assert.ok(copy.actions.generate && copy.actions.encrypt && copy.actions.decrypt, key);
+    assert.ok(copy.messages.generated && copy.messages.encrypted && copy.messages.decrypted, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('access log analyzer has 36 static copies and precise format/privacy limits', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'log-analyzer');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = logAnalyzerCopies[key];
+    assert.equal(copy.copyLanguage, key, key);
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.fields.formatNote && copy.fields.privacyNote && copy.fields.invalidLineNumbers, key);
+    assert.ok(copy.actions.analyze && copy.actions.exportCsv && copy.messages.noAnalysis, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('Pyramid Solitaire has static copy in all 36 locales and discloses its exact deal rules', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'pyramid-solitaire');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = pyramidSolitaireCopies[key];
+    assert.equal(copy.copyLanguage, key, key);
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.fields.rules && copy.fields.ruleAppliesNext && copy.fields.suitHearts, key);
+    assert.ok(copy.actions.newGame && copy.actions.restart && copy.actions.undo && copy.actions.recycle, key);
+    assert.ok(copy.messages.won && copy.messages.invalidPair && copy.messages.selected, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('Rebus Puzzles has static copy in all 36 locales and clearly discloses its English-only finite puzzle set', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'rebus-puzzles');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = rebusPuzzlesCopies[key];
+    assert.equal(copy.copyLanguage, key, key);
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.fields.puzzlesLanguageNote && copy.fields.answerHint, key);
+    assert.ok(copy.actions.check && copy.actions.hint && copy.actions.next, key);
+    assert.ok(copy.messages.correct && copy.messages.incorrect && copy.messages.completed, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('Killer Sudoku has static translated copy and accurately describes its unique-solution cage rules in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'killer-sudoku');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = killerSudokuCopies[key];
+    assert.equal(copy.copyLanguage, key, key);
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.fields.rules && copy.fields.accuracyNote && copy.fields.cageSum, key);
+    assert.ok(copy.actions.newGame && copy.actions.checkBoard && copy.actions.hint, key);
+    assert.ok(copy.messages.solved && copy.messages.generationFailed, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('Sudoku Solver has static copy in all locales and distinguishes every solver outcome', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'sudoku-solver');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = sudokuSolverCopies[key];
+    assert.equal(copy.copyLanguage, key, key);
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.fields.accuracyNote && copy.fields.nakedSingle && copy.fields.hiddenSingle, key);
+    assert.ok(copy.actions.solve && copy.actions.step && copy.actions.example, key);
+    assert.ok(copy.messages.unique && copy.messages.multiple && copy.messages.searchLimited && copy.messages.unsatisfiable, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('Hangman Game has static copy and a usable localized word bank in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'hangman-game');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = hangmanGameCopies[key];
+    assert.equal(copy.copyLanguage, key, key);
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.wordBank.length >= 18, `${key}: enough static words for replay`);
+    assert.ok(new Set(copy.wordBank.map((word) => word.normalize('NFD').toLowerCase())).size >= 14, `${key}: useful word variety`);
+    assert.ok(copy.fields.rules && copy.fields.privacyNote && copy.actions.newWord && copy.messages.duplicate, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('Aim Trainer has static copy and round controls in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'aim-trainer');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = aimTrainerCopies[key];
+    assert.equal(copy.copyLanguage, key, key);
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.fields.duration15 && copy.fields.duration30 && copy.fields.duration60, key);
+    assert.ok(copy.actions.start && copy.actions.restart && copy.messages.hit && copy.messages.miss, key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('Chess Puzzles has translated controls and verified-puzzle FAQs in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'chess-puzzles');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = chessPuzzlesCopies[key];
+    assert.equal(copy.copyLanguage, key, key);
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.fields.board && copy.fields.instructions && copy.fields.piece_wk && copy.fields.piece_bk, key);
+    assert.ok(copy.actions.newPuzzle && copy.actions.hint && copy.actions.clearSelection, key);
+    assert.ok(copy.messages.solved && copy.messages.selected.includes('{piece}'), key);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('Dots and Boxes has static controls and game outcomes in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'dots-and-boxes');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = dotsAndBoxesCopies[key];
+    assert.equal(copy.copyLanguage, key, key);
+    assert.ok(copy.fields.size3 && copy.fields.size4 && copy.fields.size5 && copy.fields.twoPlayers, key);
+    assert.ok(copy.actions.newGame && copy.messages.won && copy.messages.tie, key);
+    assert.ok(copy.messages.won.includes('{player}') && copy.messages.won.includes('{count}'), `${key}: winner placeholders`);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('Chess Analysis Board local engine controls and claims exist in all 36 locales', () => {
+  const tool = allGrowthPilotTools.find(({ id }) => id === 'chess-analysis-board');
+  assert.ok(tool);
+  assertMachineAcceptedGrowthToolInAllLocales(tool);
+  for (const { key } of localeEntries) {
+    const copy = chessAnalysisBoardCopies[key];
+    assert.equal(copy.copyLanguage, key, key);
+    assert.equal(copy.additionalFaqs.length, 3, key);
+    assert.ok(copy.fields.fen && copy.fields.pgn && copy.actions.loadFen && copy.messages.invalidPgn, key);
+    assert.ok(copy.fields.analysisNote.length > 12 && copy.fields.engineTitle && copy.fields.engineLines && copy.fields.engineLicense, `${key}: engine controls and licence note are present`);
+    assert.ok(copy.actions.analyze && copy.actions.stop && copy.messages.engineLoading && copy.messages.analysisStopped, `${key}: engine actions and messages are localized`);
+    assert.ok(copy.privacyAnswer.length > 20 && copy.fields.privacyNote.length > 10, `${key}: local-processing disclosure is present`);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+  }
+});
+
+test('Blackjack practice and Tripeaks Solitaire have complete static copy in all 36 locales', () => {
+  for (const [id, copies, required] of [
+    ['blackjack-game', blackjackGameCopies, (copy) => copy.fields.suit_spades && copy.fields.hand && copy.actions.double && copy.actions.split && copy.messages.invalidSplit],
+    ['tripeaks-solitaire', tripeaksSolitaireCopies, (copy) => copy.fields.exposed && copy.fields.score && copy.actions.undo && copy.messages.stuck],
+  ]) {
+    const tool = allGrowthPilotTools.find((entry) => entry.id === id);
+    assert.ok(tool);
+    assertMachineAcceptedGrowthToolInAllLocales(tool);
+    for (const { key } of localeEntries) {
+      const copy = copies[key];
+      assert.equal(copy.copyLanguage, key, key);
+      assert.equal(copy.additionalFaqs.length, id === 'blackjack-game' ? 4 : 3, key);
+      assert.ok(required(copy), `${key}: localized interactive copy`);
+      assert.ok(copy.title.length <= 60 && copy.description.length <= 160, key);
+    }
   }
 });

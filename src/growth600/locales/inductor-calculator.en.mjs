@@ -1,0 +1,30 @@
+export const inductorCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Inductor calculator',
+  title: 'Inductor Calculator Free | UsefulVerse',
+  description: 'Estimate air-core coil inductance or use a toroid core AL value. Find inductance and turns locally, free online.',
+  intro: 'Estimate a single-layer air-core solenoid with Wheeler’s approximation, or calculate a toroid from its manufacturer’s AL value. Enter turns to estimate inductance; add a target to find the whole number of turns needed.',
+  howQuestion: 'How do I calculate an inductor’s inductance?',
+  howAnswer: 'For an air-core single-layer solenoid, Wheeler’s approximation uses coil radius, winding length and turns. For a toroid, use the core manufacturer’s AL factor: inductance equals AL times turns squared. The answer is an estimate, not a measurement.',
+  privacyQuestion: 'Are my coil dimensions uploaded?',
+  privacyAnswer: 'No. The calculation runs in this browser. Dimensions and core values are not uploaded or saved by this tool.',
+  fields: {
+    mode: 'Coil model', airCore: 'Air-core single-layer solenoid', toroid: 'Toroid with manufacturer AL value',
+    turns: 'Number of turns', dimensionUnit: 'Dimension unit', coilDiameter: 'Coil diameter', coilLength: 'Winding length',
+    alValue: 'Core AL value (nH/turn²)', targetInductance: 'Target inductance (optional)', targetUnit: 'Target unit',
+    accuracyNote: 'Estimate only. The air-core model uses Wheeler’s single-layer approximation and is a rough guide when coil diameter is less than 3× winding length. It omits wire thickness, spacing, nearby metal, frequency, parasitic capacitance and measurement conditions. For a toroid, enter the AL factor from its exact core datasheet; AL and permeability can change with frequency, temperature, DC bias, gap and manufacturing tolerance. Verify any real design with the core manufacturer and measurement.',
+    method: 'Calculation method', wheelerRange: 'Geometry is inside the stated Wheeler range.', outsideWheelerRange: 'Geometry is outside the stated Wheeler range; treat the estimate with extra caution.',
+  },
+  actions: { calculate: 'Calculate inductance', example: 'Load example', reset: 'Reset', copy: 'Copy results', result: 'Inductance estimate', airExample: 'Try a 10-turn, 20 mm air-core coil', toroidExample: 'Try AL 100 nH/turn² and 10 turns' },
+  messages: {
+    calculated: 'Inductance estimate ready.', checkInputs: 'Check turns, coil dimensions, AL value and target.',
+    inductance: 'Estimated inductance', turns: 'Entered turns', targetTurns: 'Turns needed for target',
+    targetNotReached: 'The rounded-up turns give at least the requested target.',
+    methodWheeler: 'Wheeler single-layer air-core approximation', methodAl: 'Manufacturer core AL factor',
+    copied: 'Results copied.', copyUnavailable: 'Copy is unavailable in this browser.',
+  },
+  additionalFaqs: [
+    { question: 'What does an AL value mean?', answer: 'AL is a core maker’s inductance factor, commonly in nanohenries per turn squared. Use the value for the exact core and conditions in its datasheet; this calculator does not assume a generic ferrite or powder material.' },
+    { question: 'Can I use this estimate to build a power inductor?', answer: 'Use it for an initial estimate only. This page does not check saturation, core loss, temperature rise, winding current, insulation, self-resonance or safety margins. Follow the core and wire manufacturers’ design data and verify a real build.' },
+  ],
+});

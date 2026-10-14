@@ -1,0 +1,15 @@
+.chore-chart-maker textarea { min-height: 7rem; }
+.chore-schedule { display: grid; gap: 1rem; }
+.chore-week { min-width: 0; border: 1px solid var(--border, #d8deea); border-radius: 1rem; padding: 1rem; background: var(--surface, #fff); break-inside: avoid; }
+.chore-week h3 { margin-top: 0; }
+.chore-table { width: 100%; border-collapse: collapse; }
+.chore-table th, .chore-table td { padding: .65rem .75rem; border-bottom: 1px solid var(--border, #d8deea); text-align: start; }
+.chore-table th:last-child, .chore-table td:last-child { text-align: end; }
+.chore-table tbody tr:last-child td { border-bottom: 0; }
+@media print {
+  body * { visibility: hidden !important; }
+  [data-chore-result], [data-chore-result] * { visibility: visible !important; }
+  [data-chore-result] { position: absolute; inset: 0; width: 100%; padding: 0; }
+  [data-chore-result] .actions { display: none !important; }
+  .chore-week { border-color: #888; }
+}

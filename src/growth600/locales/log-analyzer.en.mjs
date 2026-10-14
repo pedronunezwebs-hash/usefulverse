@@ -1,0 +1,17 @@
+export const logAnalyzerEnglishCopy = Object.freeze({
+  copyLanguage: 'en', name: 'Access Log Analyzer', title: 'Access Log Analyzer Free | UsefulVerse',
+  description: 'Analyze Apache or Nginx combined access logs in your browser. Free, local and no account needed; log contents are not uploaded.',
+  intro: 'Review request counts by HTTP status, method and UTC date. This tool reads Apache/Nginx combined access logs on this device and does not upload the log.',
+  howQuestion: 'How do I analyze an access log?',
+  howAnswer: 'Paste a log or choose a local file in Apache/Nginx combined format, then analyze it. Filter by status class and date range, and export the aggregate summary as CSV.',
+  privacyQuestion: 'Does this log analyzer upload IP addresses or log data?',
+  privacyAnswer: 'No. Parsing and summaries run in your browser. The report does not include IP addresses, user agents, referrers, request paths or the original invalid lines.',
+  fields: { file: 'Choose a local .log or .txt file', logs: 'Paste Apache/Nginx combined access logs', formatNote: 'Supported format: Apache/Nginx combined access log only. Maximum 10 MiB, 100,000 lines and 8,192 characters per line.', privacyNote: 'Logs can contain personal or confidential data. Processing stays in this browser; the summary excludes IPs, paths, user agents, referrers and original line contents.', statusClass: 'HTTP status class', allStatuses: 'All statuses', status2xx: '2xx success', status3xx: '3xx redirect', status4xx: '4xx client error', status5xx: '5xx server error', fromDate: 'From date (UTC)', toDate: 'To date (UTC)', resultTitle: 'Log summary', totalLines: 'Non-empty lines', parsedLines: 'Parsed lines', invalidLines: 'Invalid or unsupported lines', matchedRequests: 'Requests matching filters', transferredBytes: 'Reported response bytes', invalidLineNumbers: 'Invalid line numbers (first 20)', statusTable: 'Requests by status', methodTable: 'Requests by method', dayTable: 'Requests by UTC date', statusLabel: 'Status', methodLabel: 'Method', dateLabel: 'UTC date', requests: 'Requests', noData: 'No requests match these filters.', accuracyNote: 'Bytes use the value in each log line; “-” counts as zero. Dates are grouped by UTC after applying the logged offset. This is a summary, not a security audit or traffic measurement.' },
+  actions: { analyze: 'Analyze log', example: 'Load example', reset: 'Clear', exportCsv: 'Download summary CSV' },
+  messages: { analyzed: 'Log analyzed locally.', checkInput: 'Paste a supported log or choose a file.', noAnalysis: 'Analyze a log before exporting.', fileTooLarge: 'The file exceeds the 10 MiB local limit.', readFailed: 'The selected file could not be read.', downloaded: 'Summary CSV downloaded.', noMatches: 'No requests match the filters.' },
+  additionalFaqs: [
+    { question: 'Which log format is supported?', answer: 'This version supports Apache/Nginx combined access log lines with a date, quoted request, three-digit status and response byte count. Other formats are counted as unsupported lines rather than guessed.' },
+    { question: 'Are invalid lines shown in the report?', answer: 'The report gives the number of invalid or unsupported non-empty lines and up to 20 line numbers. It does not echo their text, which may contain private data.' },
+    { question: 'Does the tool report slow requests or URLs?', answer: 'No. The declared log fields do not reliably include response duration, and this privacy-focused summary does not show request paths, query strings, IPs, user agents or referrers.' },
+  ],
+});
