@@ -10,8 +10,8 @@
   "files": [
     {
       "path": "PLAN-NORUEGA-SUIZA.md",
-      "bytes": 406101,
-      "sha256": "516afb8a46d8350e53c9d1937f8bd79cf217d96082c61e68bbea728559a032ea"
+      "bytes": 406726,
+      "sha256": "7ea38bd8f9aed5c4ceae7a53f82aaf36958267273c88b4a78249b46257f11895"
     },
     {
       "path": "inventory.json",
@@ -60,13 +60,19 @@
     },
     {
       "path": "verification.json",
-      "bytes": 879,
-      "sha256": "221768dd66912f42c4d4a264172f40c908b99f72688608d933a0a3a1ddac78e7"
+      "bytes": 935,
+      "sha256": "54b2c3a9ed78293444e5d51d66270f073f96ed41d3a3164d370b35e8c1a6f5ff"
     },
     {
       "path": "research-evidence.json.gz",
       "bytes": 661058,
       "sha256": "e9386bc491967472f68c943c7eb057691fb479b9cc2f69a515259e5c848f3455"
+    },
+    {
+      "path": "delivery-receipt.json",
+      "bytes": 556,
+      "sha256": "9d327bfd18e66cebeb6dcf062b8f6becf8789fddb17ff69266e02a588d86aac9"
     }
-  ]
+  ],
+  "finalizedAt": "2026-10-15T10:15:00.119Z"
 }

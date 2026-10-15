@@ -1993,7 +1993,7 @@ Tarifa consultada de Labs: 0,012 USD/tarea + 0,00012 USD/resultado; sin clickstr
 
 Los términos solicitados sin resultado siguen en los JSON de peticiones; no se transforman en ceros ni se ocultaron cambiándolos por queries más amplias. El libro de gasto coteja coste de respuesta con la petición guardada. La investigación queda cerrada: **ninguna llamada adicional de pago se autoriza por reabrir este archivo**.
 
-**Respaldo documental previsto:** [carpeta privada del plan](https://github.com/pedronunezwebs-hash/usefulverse/tree/docs/no-ch-expansion-plan-20261015/docs/markets-no-ch), rama `docs/no-ch-expansion-plan-20261015`, carpeta `docs/markets-no-ch/`. La verificación de subida y hash se registra en el cierre de entrega; no es una publicación de páginas ni un merge a main.
+**Respaldo privado verificado:** [carpeta del plan y evidencias](https://github.com/pedronunezwebs-hash/usefulverse/tree/docs/no-ch-expansion-plan-20261015/docs/markets-no-ch), rama `docs/no-ch-expansion-plan-20261015`, carpeta `docs/markets-no-ch/`. El respaldo inicial de 13 archivos se leyó de nuevo y coincidió por hash (commit `b7ba6ff01efad9fce77b5178551157a54f034860`). Consultar siempre el Markdown más reciente de esa rama, no reconstruir estados desde un commit anterior. No se abrió PR ni se fusionó a main; 0 ejecuciones de Actions y 0 peticiones LFS para este respaldo. Los dos proyectos Pages se comprobaron como direct-upload sin integración Git; no se inició despliegue.
 
 Archivos que se conservan en el respaldo: este MD, inventario público, 100 fichas estructuradas, métricas, costes, snapshot de Search Console, fuentes y peticiones/respuestas DataForSEO. El usuario conserva además este Markdown descargable. Los scripts de auditoría/generación sin credenciales pueden respaldarse para repetir las comprobaciones locales; una futura ejecución pagada sigue necesitando una nueva orden.
 
@@ -2809,5 +2809,5 @@ Todas las filas significan **presencia en sitemap + página inglesa y canonical 
 - [x] 50 candidatas por mercado, métricas exactas y reservas identificadas.
 - [x] Contratos, longtails, implementación local, idiomas, QA, publicación futura y reanudación descritos.
 - [x] Validación final del documento y coherencia de recuentos: 100 fichas, 600 existentes, métricas y coste cotejados; hashes de ambos sitemaps sin cambios.
-- [ ] Respaldo privado verificado y apertura del documento editable.
-- [ ] Limpieza de temporales propios tras comprobar recuperación.
+- [x] Respaldo privado verificado por hash y documento enviado al panel editable de Codex; el enlace de Descargas permite abrirlo también si el panel queda en cola.
+- [x] Limpieza de temporales propios tras comprobar recuperación: 63 archivos de trabajo (17.344.488 bytes) eliminados directamente, sin Papelera. Solo se conserva como entrega local este Markdown; el plan anterior del usuario y los archivos de otras tareas no se tocaron.
