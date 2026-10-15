@@ -49,6 +49,7 @@ import dotsAndBoxesCopies from '../src/growth600/locales/dots-and-boxes-final.mj
 import chessAnalysisBoardCopies from '../src/growth600/locales/chess-analysis-board-final.mjs';
 import blackjackGameCopies from '../src/growth600/locales/blackjack-game-final.mjs';
 import tripeaksSolitaireCopies from '../src/growth600/locales/tripeaks-solitaire-final.mjs';
+import pendingToolsCopies from '../src/growth600/locales/pending-tools-final.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const localeDir = resolve(root, 'src/growth600/locales');
@@ -137,6 +138,8 @@ for (const { key } of localeEntries) {
   if (!dotsAndBoxesCopies[key]) throw new Error(`Growth600 release blocked: Dots and Boxes copy is missing for ${key}.`);
   copyByLocale[key] = { ...copyByLocale[key], 'dots-and-boxes': dotsAndBoxesCopies[key] };
   copyByLocale[key] = { ...copyByLocale[key], 'chess-analysis-board': chessAnalysisBoardCopies[key], 'blackjack-game': blackjackGameCopies[key], 'tripeaks-solitaire': tripeaksSolitaireCopies[key] };
+  if (!pendingToolsCopies[key]) throw new Error(`Growth600 release blocked: pending tools copy is missing for ${key}.`);
+  copyByLocale[key] = { ...copyByLocale[key], ...pendingToolsCopies[key] };
 }
 
 const outputDir = resolve(process.env.GROWTH600_DIST ?? resolve(root, 'dist-growth600'));
@@ -195,6 +198,8 @@ toolStyles['dots-and-boxes'] = minifyCss(await readFile(resolve(root, 'src/growt
 toolStyles['chess-analysis-board'] = minifyCss(await readFile(resolve(root, 'src/growth600/tools/chess-analysis-board/chess-analysis-board.css'), 'utf8'), { comments: 'exclamation' }).css;
 toolStyles['blackjack-game'] = minifyCss(await readFile(resolve(root, 'src/growth600/tools/blackjack-game/blackjack-game.css'), 'utf8'), { comments: 'exclamation' }).css;
 toolStyles['tripeaks-solitaire'] = minifyCss(await readFile(resolve(root, 'src/growth600/tools/tripeaks-solitaire/tripeaks-solitaire.css'), 'utf8'), { comments: 'exclamation' }).css;
+const pendingToolStyles = minifyCss(await readFile(resolve(root, 'src/growth600/tools/pending-23/pending-23.css'), 'utf8'), { comments: 'exclamation' }).css;
+for (const tool of growthPilotTools) toolStyles[tool.id] = pendingToolStyles;
 const faviconSvg = await readFile(resolve(root, 'public/favicon.svg'), 'utf8');
 const modelRevision = '92a21aca5713f20faf9a87590cdfbdce2e34112c';
 const modelFolder = `Xenova/swin2SR-lightweight-x2-64`;

@@ -6,6 +6,7 @@ import { join } from 'node:path';
 import { locales, localeEntries } from '../locales.mjs';
 import { tools as currentTools } from '../catalog.mjs';
 import { growthPilotTools } from './catalog.mjs';
+import pendingToolsCopies from './locales/pending-tools-final.mjs';
 import { transformerCalculatorEnglishCopy } from './locales/transformer-calculator.en.mjs';
 import stoichiometryCopies from './locales/stoichiometry-calculator-final.mjs';
 import pressureCalculatorCopies from './locales/pressure-calculator-final.mjs';
@@ -950,6 +951,7 @@ function createCopy(languages) {
   return Object.fromEntries(languages.map((locale) => [locale.key, {
     _home: { copyLanguage: locale.key, title: `UsefulVerse ${locale.key} tools | UsefulVerse`, description: 'Free browser tools with no account required.', intro: 'Small, useful tools that run in your browser.', directoryLabel: 'Everyday tools', freeLabel: 'Free, no usage limit', footerFree: 'Free browser tools.', skipToTool: 'Skip to tool', home: 'Home', languageLabel: 'Language', breadcrumbLabel: 'Breadcrumb', faqLabel: 'FAQ' },
     ...Object.fromEntries(growthPilotTools.map((tool) => [tool.id, toolCopy(tool, locale.key)])),
+    ...pendingToolsCopies[locale.key],
   }]));
 }
 
@@ -1078,6 +1080,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
     'density-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'density-calculator'), locale.key),
     'kinetic-energy-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'kinetic-energy-calculator'), locale.key),
     'resistor-color-code-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'resistor-color-code-calculator'), locale.key),
+    ...pendingToolsCopies[locale.key],
   };
   const result = await buildGrowthStaticSite({
     outputDir,

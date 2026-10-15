@@ -84,11 +84,18 @@ async function buildGrowthStaticSiteIntoDirectory({
   await writeFile(join(outputDir, 'assets', `growth600.${version}.css`), styles);
   const assetFiles = new Map([[`assets/growth600.${version}.css`, Buffer.byteLength(styles)]]);
   const toolStylePaths = {};
+  const stylesheetPathsByContent = new Map();
   for (const [toolId, source] of Object.entries(toolStyles)) {
-    const filename = `${toolId}.${sha(source)}.css`;
-    await writeFile(join(outputDir, 'assets', filename), source);
-    toolStylePaths[toolId] = `/assets/${filename}`;
-    assetFiles.set(`assets/${filename}`, Buffer.byteLength(source));
+    const digest = sha(source);
+    let path = stylesheetPathsByContent.get(digest);
+    if (!path) {
+      const filename = `${toolId}.${digest}.css`;
+      await writeFile(join(outputDir, 'assets', filename), source);
+      path = `/assets/${filename}`;
+      stylesheetPathsByContent.set(digest, path);
+      assetFiles.set(`assets/${filename}`, Buffer.byteLength(source));
+    }
+    toolStylePaths[toolId] = path;
   }
   for (const tool of tools) {
     const filename = `${tool.id}.${sha(controllerBundles[tool.id])}.js`;

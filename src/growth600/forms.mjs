@@ -1,5 +1,6 @@
 import { escapeGrowthHtml } from './render.mjs';
 import { FONT_PRESETS } from './tools/font-pairing-tool/logic.mjs';
+import { pendingToolIds, renderPendingToolForm } from './tools/pending-23/form.mjs';
 
 function attachCopy(html, copy) {
   const safeJson = JSON.stringify(copy).replaceAll('<', '\\u003c').replaceAll('>', '\\u003e').replaceAll('&', '\\u0026');
@@ -16,6 +17,7 @@ function button(action, text, kind = 'primary') {
 }
 
 export function renderGrowthForm(toolId, copy) {
+  if (pendingToolIds.includes(toolId)) return attachCopy(renderPendingToolForm(toolId, copy), copy);
   const fields = copy?.fields ?? {};
   const actions = copy?.actions ?? {};
   const fieldNames = {

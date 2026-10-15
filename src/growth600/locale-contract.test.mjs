@@ -21,6 +21,7 @@ import blackjackGameCopies from './locales/blackjack-game-final.mjs';
 import tripeaksSolitaireCopies from './locales/tripeaks-solitaire-final.mjs';
 import { localeEntries } from '../locales.mjs';
 import englishGrowthCopy from './locales/en.mjs';
+import pendingToolsCopies from './locales/pending-tools-final.mjs';
 import transformerCopies from './locales/transformer-calculator-final.mjs';
 import { transformerCalculatorEnglishCopy } from './locales/transformer-calculator.en.mjs';
 import stoichiometryCopies from './locales/stoichiometry-calculator-final.mjs';
@@ -133,6 +134,11 @@ for (const { key } of localeEntries) {
   localizedCopies[key]['aes-encryption-tool'] = aesEncryptionToolCopies[key];
   localizedCopies[key]['jwt-encoder'] = jwtEncoderCopies[key];
   localizedCopies[key]['customer-acquisition-cost-calculator'] = customerAcquisitionCostCalculatorCopies[key];
+}
+const pendingToolIds = Object.keys(pendingToolsCopies.en);
+for (const id of pendingToolIds) {
+  const index = growthPilotTools.findIndex((tool) => tool.id === id);
+  if (index >= 0) growthPilotTools.splice(index, 1);
 }
 // Its accepted machine-localized copies are asserted below, not in the base locale fixtures.
 growthPilotTools.splice(growthPilotTools.findIndex(({ id }) => id === 'cycling-power-calculator'), 1);
@@ -690,6 +696,22 @@ test('growth release gate accepts machine translation only with explicit owner a
   assert.throws(() => assertGrowthLocaleCoverage([{ id: 'one' }], [{ key: 'es' }], {
     es: { _home: sampleHome('es'), one: { ...accepted, localizationAcceptedAt: '' } },
   }), /localization is not approved for release/);
+});
+
+test('the final 23-tool batch has approved static copy in every supported locale', () => {
+  const tools = allGrowthPilotTools.filter(({ id }) => pendingToolIds.includes(id));
+  const copies = Object.fromEntries(localeEntries.map(({ key }) => [key, { _home: localizedCopies[key]._home, ...pendingToolsCopies[key] }]));
+  assert.equal(tools.length, 23);
+  assert.equal(localeEntries.length, 36);
+  assert.equal(assertGrowthLocaleCoverage(tools, localeEntries, copies), true);
+  for (const { key } of localeEntries) {
+    for (const { id } of tools) {
+      const copy = pendingToolsCopies[key][id];
+      assert.equal(copy.copyLanguage, key, `${key}/${id}`);
+      assert.equal(copy.localizationStatus, 'machine-accepted', `${key}/${id}`);
+      assert.ok(Array.from(copy.title).length <= 60 && Array.from(copy.description).length <= 160, `${key}/${id}`);
+    }
+  }
 });
 
 test('the first real English pilot copy satisfies every field, message, placeholder and title budget', () => {
