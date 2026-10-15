@@ -1,0 +1,72 @@
+{
+  "createdAt": "2026-10-15T10:13:12.223Z",
+  "planningOnly": true,
+  "branch": "docs/no-ch-expansion-plan-20261015",
+  "baseCommit": "4dab8f873c249c5c553cd01eb9189551945b07d0",
+  "cloudflareMutation": false,
+  "actionsExpected": 0,
+  "lfsRequests": 0,
+  "dataForSeoClosed": true,
+  "files": [
+    {
+      "path": "PLAN-NORUEGA-SUIZA.md",
+      "bytes": 406101,
+      "sha256": "516afb8a46d8350e53c9d1937f8bd79cf217d96082c61e68bbea728559a032ea"
+    },
+    {
+      "path": "inventory.json",
+      "bytes": 1060759,
+      "sha256": "3bfe7401559fe95fcc4a5374c1d654748afa8f8645abfbbd17dc05e4b96d3df6"
+    },
+    {
+      "path": "candidates.json",
+      "bytes": 281390,
+      "sha256": "c5f79cf20f57dde29a7a885e7348872b1ef00a5f69a7409eabf77b121877d8a6"
+    },
+    {
+      "path": "metrics.json",
+      "bytes": 335300,
+      "sha256": "8a2c26c7ab75fec553e81d457a3ac7f6695dca10b9b1e508f6c635608e6c1779"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 712,
+      "sha256": "04a8cad670f1bf0d284e582fedf33f711cbaa5ec4178051da54dfbef7ccfb425"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 13053,
+      "sha256": "60cb8aea510bcc3cadebb40687a821ec8346cc23e5ec6c607780adca5ecd7c4c"
+    },
+    {
+      "path": "gsc-snapshot.json",
+      "bytes": 1356,
+      "sha256": "d946e6e35dc3fd7f24f77491ddf6689b2abb527b2a712871db294ac3585c9865"
+    },
+    {
+      "path": "cost-ledger.json",
+      "bytes": 2816,
+      "sha256": "ed3d3ba8a882b0c7fcb4660795f05245319f93c2c0accebb8b18bd1d1cc92366"
+    },
+    {
+      "path": "research-closed.json",
+      "bytes": 192,
+      "sha256": "794a87d4c43e5d809cf4cfce9b969b000af957526724ca547c8229234f67eba8"
+    },
+    {
+      "path": "publishing-safety.json",
+      "bytes": 518,
+      "sha256": "8f1c67a9bf50a923d786be2424e4b7378d968a94c3f617a1d673a9f49b36093b"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 879,
+      "sha256": "221768dd66912f42c4d4a264172f40c908b99f72688608d933a0a3a1ddac78e7"
+    },
+    {
+      "path": "research-evidence.json.gz",
+      "bytes": 661058,
+      "sha256": "e9386bc491967472f68c943c7eb057691fb479b9cc2f69a515259e5c848f3455"
+    }
+  ]
+}

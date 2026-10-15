@@ -1,0 +1,21 @@
+{
+  "observedAt":"2026-10-15",
+  "source":"Google Search Console browser UI; domain property sc-domain:usefulverse.com",
+  "reportPeriod":{"start":"2026-09-27","end":"2026-10-12","searchType":"Web","timeRangeSelected":"3 months"},
+  "totals":{"clicks":118,"impressions":32938,"ctrDisplayed":"0.4%","positionDisplayed":25.7},
+  "countryRowsObserved":175,
+  "countries":[
+    {"country":"Iran","clicks":22,"impressions":572,"position":10.5},
+    {"country":"Thailand","clicks":19,"impressions":1688,"position":10.0},
+    {"country":"Japan","clicks":7,"impressions":1531,"position":19.9},
+    {"country":"United States","clicks":5,"impressions":3225,"position":34.4},
+    {"country":"Taiwan","clicks":3,"impressions":710,"position":11.8},
+    {"country":"Germany","clicks":1,"impressions":2885,"position":31.0},
+    {"country":"France","clicks":0,"impressions":1137,"position":52.4},
+    {"country":"Canada","clicks":0,"impressions":316,"position":32.6},
+    {"country":"Switzerland","clicks":0,"impressions":219,"position":32.4},
+    {"country":"Australia","clicks":0,"impressions":147,"position":43.4},
+    {"country":"Norway","clicks":0,"impressions":17,"position":35.9}
+  ],
+  "limits":"Read-only UI snapshot, no private API token or raw account identity retained; average positions are shown rounded by GSC. This is not a ranking or traffic forecast."
+}

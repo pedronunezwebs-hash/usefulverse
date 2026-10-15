@@ -1,0 +1,104 @@
+{
+  "capUSD": 0.3,
+  "entries": [
+    {
+      "name": "no-ideas",
+      "endpoint": "dataforseo_labs/google/keyword_ideas/live",
+      "date": "10150921-1949-0400-0000-9f9d90462d31",
+      "requested": 250,
+      "reserveUSD": 0.042,
+      "actualUSD": 0.042,
+      "status": "received",
+      "taskStatus": 20000,
+      "returned": 250
+    },
+    {
+      "name": "ch-ideas",
+      "endpoint": "dataforseo_labs/google/keyword_ideas/live",
+      "date": "10150921-1949-0400-0000-80aa73330e30",
+      "requested": 250,
+      "reserveUSD": 0.042,
+      "actualUSD": 0.042,
+      "status": "received",
+      "taskStatus": 20000,
+      "returned": 250
+    },
+    {
+      "name": "no-nb-overview",
+      "endpoint": "dataforseo_labs/google/keyword_overview/live",
+      "date": "2026-10-15T09:25:56.957Z",
+      "requested": 253,
+      "reserveUSD": 0.04236,
+      "status": "received",
+      "actualUSD": 0.03432,
+      "taskStatus": 20000,
+      "returned": 186
+    },
+    {
+      "name": "ch-de-overview",
+      "endpoint": "dataforseo_labs/google/keyword_overview/live",
+      "date": "2026-10-15T09:26:30.438Z",
+      "requested": 255,
+      "reserveUSD": 0.0426,
+      "status": "received",
+      "actualUSD": 0.03612,
+      "taskStatus": 20000,
+      "returned": 201
+    },
+    {
+      "name": "ch-fr-overview",
+      "endpoint": "dataforseo_labs/google/keyword_overview/live",
+      "date": "2026-10-15T09:26:47.454Z",
+      "requested": 81,
+      "reserveUSD": 0.02172,
+      "status": "received",
+      "actualUSD": 0.01704,
+      "taskStatus": 20000,
+      "returned": 42
+    },
+    {
+      "name": "ch-it-overview",
+      "endpoint": "dataforseo_labs/google/keyword_overview/live",
+      "date": "2026-10-15T09:28:43.480Z",
+      "requested": 44,
+      "reserveUSD": 0.01728,
+      "status": "received",
+      "actualUSD": 0.01416,
+      "taskStatus": 20000,
+      "returned": 18
+    },
+    {
+      "name": "no-nb-extra",
+      "endpoint": "dataforseo_labs/google/keyword_overview/live",
+      "date": "2026-10-15T09:31:45.355Z",
+      "requested": 137,
+      "reserveUSD": 0.02844,
+      "status": "received",
+      "actualUSD": 0.02196,
+      "taskStatus": 20000,
+      "returned": 83
+    },
+    {
+      "name": "ch-de-extra",
+      "endpoint": "dataforseo_labs/google/keyword_overview/live",
+      "date": "2026-10-15T09:31:56.744Z",
+      "requested": 147,
+      "reserveUSD": 0.02964,
+      "status": "received",
+      "actualUSD": 0.02592,
+      "taskStatus": 20000,
+      "returned": 116
+    },
+    {
+      "name": "ch-de-final",
+      "endpoint": "dataforseo_labs/google/keyword_overview/live",
+      "date": "2026-10-15T09:34:33.663Z",
+      "requested": 70,
+      "reserveUSD": 0.0204,
+      "status": "received",
+      "actualUSD": 0.0174,
+      "taskStatus": 20000,
+      "returned": 45
+    }
+  ]
+}

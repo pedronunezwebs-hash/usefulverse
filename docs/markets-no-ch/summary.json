@@ -1,0 +1,35 @@
+{
+  "tools": 100,
+  "baseline": 600,
+  "totalUSD": 0.25092,
+  "requests": 9,
+  "returnedRows": 1191,
+  "markets": {
+    "NO": {
+      "candidates": 50,
+      "atLeast1000": 25,
+      "atLeast100": 48,
+      "below100": 2,
+      "unknown": 0,
+      "priorities": {
+        "P1: empezar antes": 25,
+        "P2: datos/normativa": 17,
+        "P3: reserva demanda": 2,
+        "P2: gate técnico": 6
+      }
+    },
+    "CH": {
+      "candidates": 50,
+      "atLeast1000": 11,
+      "atLeast100": 45,
+      "below100": 5,
+      "unknown": 0,
+      "priorities": {
+        "P2: datos/normativa": 14,
+        "P3: reserva demanda": 5,
+        "P1: empezar antes": 26,
+        "P2: gate técnico": 5
+      }
+    }
+  }
+}

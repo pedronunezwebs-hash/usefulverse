@@ -1,0 +1,317 @@
+[
+  {
+    "id": "DATA-PRICING",
+    "title": "Tarifas actuales de DataForSEO Labs",
+    "url": "https://dataforseo.com/pricing/dataforseo-labs/dataforseo-google-api",
+    "note": "Precio base/resultado; clickstream desactivado. El coste concreto procede de cada respuesta API guardada.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "DATA-OVERVIEW",
+    "title": "Keyword Overview: ubicación, idioma y métricas",
+    "url": "https://docs.dataforseo.com/v3/dataforseo_labs-google-keyword_overview-live/",
+    "note": "Las cifras dependen de mercado/idioma y fecha del proveedor; no son tráfico capturable.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "DATA-IDEAS",
+    "title": "Keyword Ideas: expansión y filtros",
+    "url": "https://docs.dataforseo.com/v3/dataforseo_labs-google-keyword_ideas-live/",
+    "note": "Se filtraron resultados geográficos/navegacionales que no correspondían a una herramienta.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "GOOGLE-TITLE",
+    "title": "Títulos en Google Search",
+    "url": "https://developers.google.com/search/docs/appearance/title-link",
+    "note": "Política de títulos descriptivos y truncado; 60 caracteres es presupuesto editorial propio.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "GOOGLE-SNIPPET",
+    "title": "Descripciones y snippets",
+    "url": "https://developers.google.com/search/docs/appearance/snippet",
+    "note": "No hay máximo universal fijo de descripción; Google adapta el snippet.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "GOOGLE-LANG",
+    "title": "Sitios multilingües/multirregionales",
+    "url": "https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites",
+    "note": "URLs por idioma, disponibilidad y selección accesible.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "ADSENSE-RPM",
+    "title": "Definición de RPM",
+    "url": "https://support.google.com/adsense/answer/190515",
+    "note": "Evitar convertir CPM de YouTube o CPC de búsqueda en ingreso de la web.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "PAGES-PRICE",
+    "title": "Precios de solicitudes estáticas de Pages",
+    "url": "https://developers.cloudflare.com/pages/functions/pricing/",
+    "note": "Arquitectura de assets estáticos sin procesamiento facturable por operación.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "PAGES-LIMIT",
+    "title": "Límites de Pages",
+    "url": "https://developers.cloudflare.com/pages/platform/limits/",
+    "note": "Verificar de nuevo plan, archivos, assets y publicaciones antes de deploy.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "NO-TAX",
+    "title": "Skatteetaten: simulador y tablas fiscales",
+    "url": "https://www.skatteetaten.no/person/skatt/skattekalkulator/",
+    "note": "Entrada oficial para normas/fixtures; ampliar a la norma y ejercicio exactos de cada ficha.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "NO-WEALTH",
+    "title": "Patrimonio y descuentos de valoración",
+    "url": "https://www.skatteetaten.no/nn/tabellar-og-satsar/formuesskatt/",
+    "note": "Referencia específica de valoración patrimonial; no una suma de patrimonio de mercado.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "NO-WORK",
+    "title": "Arbeidstilsynet: feriepenger",
+    "url": "https://www.arbeidstilsynet.no/arbeidstid-og-organisering/ferie/feriepenger/",
+    "note": "Cálculo sobre renta previa y reglas de vacaciones; validar año y excepciones al implementar.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "NO-NAV",
+    "title": "NAV: importes y prestaciones",
+    "url": "https://www.nav.no/satser",
+    "note": "Entrada oficial para tablas vigentes; cada prestación necesita su regla específica y ejemplos.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "NO-PARENT",
+    "title": "NAV: foreldrepenger",
+    "url": "https://www.nav.no/foreldrepenger",
+    "note": "Definir cobertura, periodo y supuestos soportados; no presentar solicitudes.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "NO-CHILD",
+    "title": "NAV: barnebidrag",
+    "url": "https://www.nav.no/barnebidrag",
+    "note": "Reglas y alcance de manutención infantil.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "NO-HOUSING",
+    "title": "Husbanken: cálculo de bostøtte",
+    "url": "https://www.husbanken.no/person/bostotte/beregning-av-bostotte/",
+    "note": "Límites por hogar/ubicación; contrastar con calculadora oficial.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "NO-STUDENT",
+    "title": "Lånekassen: conversión del préstamo a beca",
+    "url": "https://lanekassen.no/nb-NO/stipend-og-lan/omgjoring-av-basislan/",
+    "note": "Diferencial frente a una amortización genérica de préstamo.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "NO-ENERGY",
+    "title": "NVE: Norgespris y alternativas",
+    "url": "https://www.nve.no/reguleringsmyndigheten/kunde/stroem/dette-er-norgespris/boer-jeg-velge-norgespris/",
+    "note": "No prometer previsión de precios futuros; programas y condiciones versionados.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "NO-TOLLS",
+    "title": "AutoPASS: directrices tarifarias",
+    "url": "https://www.autopass.no/no/bompengebransjen/takstretningslinjene/",
+    "note": "Base de reglas; aún se requieren datos por estación, licencia y ruta verificada.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "NO-TOLLS-EXAMPLE",
+    "title": "Fjellinjen: ejemplo de calculadora de peajes",
+    "url": "https://www.fjellinjen.no/bompengekalkulator",
+    "note": "Referencia de intención/resultado esperado; no copiar sus tablas o resultados como si fueran un dataset licenciado.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "NO-CUSTOMS",
+    "title": "Tolletaten",
+    "url": "https://www.toll.no/",
+    "note": "Organismo primario identificado; localizar y leer tarifas/licencias exactas durante el gate, no norma ya auditada en este plan.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "FX",
+    "title": "Norges Bank: datos abiertos de tipos de cambio",
+    "url": "https://www.norges-bank.no/en/topics/Statistics/open-data/",
+    "note": "Fuente indicativa de tipos; comprobar acceso CORS, términos y fecha para consumo directo/importado.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "OPEN-DATA",
+    "title": "SSB: API y licencia de datos abiertos",
+    "url": "https://www.ssb.no/en/api",
+    "note": "Fuentes oficiales pueden aportar tablas estáticas; cada dataset mantiene atribución y fecha. No es un permiso genérico para otros proveedores.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "CH-FOOTPRINT",
+    "title": "BAFU/FOEN: indicadores de huella ambiental suiza",
+    "url": "https://www.bafu.admin.ch/en/footprint",
+    "note": "Referencia metodológica de huella de consumo, distinta del inventario territorial. No aporta por sí sola licencia para redistribuir Ecoinvent ni factores de todos los escenarios: localizar factores abiertos, alcance, unidades, versión y permiso antes de implementar CH049.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "CH-TAX",
+    "title": "ESTV: calculadora oficial de impuestos",
+    "url": "https://www.estv.admin.ch/de/steuerrechner-steuern-berechnen",
+    "note": "Identifica ámbitos federal/cantonal/municipal y clases; se deben obtener reglas/datos, no solo resultados opacos.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "CH-BSV",
+    "title": "BSV: jubilación",
+    "url": "https://www.bsv.admin.ch/de/in-rente-gehen",
+    "note": "Renta estatal y previsión oficial; ampliar tablas por año y supuestos.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "CH-EMPLOY",
+    "title": "arbeit.swiss: desempleo",
+    "url": "https://www.arbeit.swiss/de/stellensuchende/faq-zur-arbeitslosenentschaedigung",
+    "note": "Referencia oficial de salario asegurado, reglas y límites; caso individual no garantizado.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "CH-LAW",
+    "title": "Derecho suizo y organismos oficiales",
+    "url": "https://www.fedlex.admin.ch/",
+    "note": "Fuente primaria identificada para completar fichas contractuales; la norma exacta sigue siendo un gate futuro.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "CH-RENT",
+    "title": "BWO: tipo hipotecario de referencia",
+    "url": "https://www.bwo.admin.ch/de/referenzzinssatz",
+    "note": "Tipo específico de alquiler y efectos; no sustituirlo por tipo director.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "CH-HEALTH",
+    "title": "Priminfo: franquicias",
+    "url": "https://www.priminfo.admin.ch/de/sparen/franchisenrechner",
+    "note": "Comparación oficial de costes/participaciones; primas introducidas por el usuario si no se distribuye tabla aprobada.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "CH-UID",
+    "title": "Registro oficial UID",
+    "url": "https://www.uid.admin.ch/",
+    "note": "Organismo primario identificado; algoritmo/checksum y ejemplos por verificar antes de implementar. El registro vivo no se infiere del checksum.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "SWISS-QR",
+    "title": "SIX: estándares QR-bill",
+    "url": "https://www.six-group.com/en/products-services/banking-services/payment-standardization/standards/qr-bill.html",
+    "note": "Estándar, direcciones y transición de versión; comprobar vigencia en la fecha del futuro release.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "SWISS-GEO",
+    "title": "swisstopo: marcos y fórmulas de referencia",
+    "url": "https://www.swisstopo.admin.ch/de/geodaetischer-bezugsrahmen",
+    "note": "Fórmulas/precisión y rejillas para transformación local; no subir coordenadas al API oficial por defecto.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "GROWTH",
+    "title": "OMS: estándares de crecimiento",
+    "url": "https://www.who.int/toolkits/child-growth-standards",
+    "note": "Tablas y rangos; completar fixture/interpretación/licencia antes del producto.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "GROWTH-CDC",
+    "title": "CDC: uso de curvas de crecimiento",
+    "url": "https://www.cdc.gov/growth-chart-training/",
+    "note": "Contrastar estándar/rangos y no aplicar IMC de adulto a menores.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "DICTIONARIES",
+    "title": "LibreOffice: diccionarios y patrones",
+    "url": "https://github.com/LibreOffice/dictionaries",
+    "note": "Licencia por diccionario, codificación, tamaño y morfología; no asumir una sola licencia para todo el repositorio.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "DICTIONARY-LICENSE",
+    "title": "Licencias de diccionarios de LibreOffice",
+    "url": "https://api.libreoffice.org/share/readme/LICENSE.html",
+    "note": "Revisar avisos/licencias individuales y redistribución comercial.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "GAME-RULES",
+    "title": "Pagat: juegos de Noruega",
+    "url": "https://www.pagat.com/national/norway.html",
+    "note": "Familias/reglas locales, no código o ilustraciones para copiar; leer página específica de cada juego.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "AMERIKANER",
+    "title": "Reglas de Amerikaner",
+    "url": "https://www.pagat.com/boston/amerikaner.html",
+    "note": "Diferencia de contratos/reglas frente a otros juegos de bazas.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "WORD-COMPETITOR",
+    "title": "Ordle",
+    "url": "https://ordle.no/",
+    "note": "Ejemplo de intención navegacional/competidor; no apropiarse de marca, banco de respuestas o arte.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "PUZZLE-INTENT",
+    "title": "Ejemplo público de puzzle binario",
+    "url": "https://cattern.app/de/binairo/",
+    "note": "Comprender intención de Binairo/Takuzu; no copiar puzzles/implementación.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "LOCAL-CAD",
+    "title": "OCCT Import JS",
+    "url": "https://github.com/kovacsv/occt-import-js",
+    "note": "Motor candidato para STEP local; evaluar versión, licencia, tamaño y memoria antes de seleccionarlo.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "LOCAL-AUDIO",
+    "title": "Basic Pitch TS",
+    "url": "https://github.com/spotify/basic-pitch-ts",
+    "note": "Candidato para inferencia musical local; licencia Apache 2.0 del proyecto no sustituye probar modelo/assets concretos.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "LOCAL-ASTRO",
+    "title": "Astronomy Engine",
+    "url": "https://github.com/cosinekitty/astronomy",
+    "note": "Candidato identificado para posiciones; revisar licencia/funciones/versiones y comparar fixtures al implementar.",
+    "consultedAt": "2026-10-15"
+  },
+  {
+    "id": "DICOM",
+    "title": "Cornerstone3D",
+    "url": "https://github.com/cornerstonejs/cornerstone3D",
+    "note": "Biblioteca de imágenes médicas con licencia MIT en el repo; evaluar códecs/datos y configuración exclusivamente local.",
+    "consultedAt": "2026-10-15"
+  }
+]

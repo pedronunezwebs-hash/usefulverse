@@ -1,0 +1,34 @@
+{
+  "observedAt": "2026-10-15T10:12:09.887Z",
+  "planningOnly": true,
+  "candidates": 100,
+  "NO": 50,
+  "CH": 50,
+  "existingTools": 600,
+  "existingUrls": 21924,
+  "newToolsImplemented": 0,
+  "newToolsPublished": 0,
+  "demandAtLeast100": 93,
+  "demandAtLeast1000": 36,
+  "below100": 7,
+  "actualCostUSD": 0.25092,
+  "paidRequests": 9,
+  "newSlugCollisions": 0,
+  "canonicalErrors": 0,
+  "allSourceAnchorsValid": true,
+  "sitemapsUnchanged": [
+    {
+      "host": "usefulverse.com",
+      "hash": "071394119f41aeda8ad28534a4b5ce4a72924951ecd28c119f4a7fb0d711dbeb",
+      "urls": 10260,
+      "tools": 277
+    },
+    {
+      "host": "tools.usefulverse.com",
+      "hash": "6f30d3418537f13547cd26f8457f66f7b3abf6c7dbe63851c20635fd019d59ac",
+      "urls": 11664,
+      "tools": 323
+    }
+  ],
+  "documentSha256": "516afb8a46d8350e53c9d1937f8bd79cf217d96082c61e68bbea728559a032ea"
+}
