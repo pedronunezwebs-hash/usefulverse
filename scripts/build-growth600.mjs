@@ -284,6 +284,11 @@ try {
     env: { ...process.env, MARKETS_NO_CH_DIST: marketToolsDir, GROWTH600_DIST: mergedDir },
     maxBuffer: 8 * 1024 * 1024,
   });
+  await execFile(process.execPath, [resolve(root, 'scripts/restore-growth600-legacy-snapshot.mjs')], {
+    cwd: root,
+    env: { ...process.env, GROWTH600_DIST: mergedDir },
+    maxBuffer: 8 * 1024 * 1024,
+  });
   await rename(mergedDir, outputDir);
   await Promise.all([rm(growthOnlyDir, { recursive: true }), rm(marketToolsDir, { recursive: true })]);
 } catch (error) {
