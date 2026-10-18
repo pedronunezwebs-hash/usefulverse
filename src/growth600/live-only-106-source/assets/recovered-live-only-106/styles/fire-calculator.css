@@ -1,0 +1,8 @@
+.fire-calculator {
+  display: grid;
+  gap: 1rem;
+}
+.fire-calculator .result [data-result-content] {
+  display: grid;
+  gap: 0.5rem;
+}

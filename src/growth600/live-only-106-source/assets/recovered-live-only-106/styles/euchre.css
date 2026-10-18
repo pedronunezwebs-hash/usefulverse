@@ -1,0 +1,41 @@
+.euchre-game {
+  display: grid;
+  gap: 1rem;
+}
+.euchre-bidding,
+.euchre-score {
+  padding: 1rem;
+  border: 1px solid var(--border-color, #d7dce3);
+  border-radius: 1rem;
+}
+.euchre-hand,
+.euchre-trick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  list-style: none;
+  padding: 0;
+}
+.euchre-card__button {
+  min-width: 3.75rem;
+  min-height: 4.75rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.euchre-card--diamonds,
+.euchre-card--hearts {
+  color: #b42318;
+}
+.euchre-card__button.is-selected {
+  outline: 3px solid var(--accent, #97c900);
+  outline-offset: 2px;
+}
+.euchre-trick__play {
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--border-color, #d7dce3);
+  border-radius: 0.65rem;
+  background: var(--surface, #fff);
+}
+.euchre-game [hidden] {
+  display: none !important;
+}

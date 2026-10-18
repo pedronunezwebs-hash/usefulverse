@@ -1,0 +1,26 @@
+{
+  "samples": [
+    {
+      "id": "voice-changer",
+      "strings": 60,
+      "chars": 3561,
+      "unique": 50
+    },
+    {
+      "id": "shikaku",
+      "strings": 64,
+      "chars": 2220,
+      "unique": 64
+    },
+    {
+      "id": "dxf-viewer",
+      "strings": 96,
+      "chars": 3445,
+      "unique": 96
+    }
+  ],
+  "total": 220,
+  "unique": 204,
+  "chars": 9226,
+  "uniqueChars": 8395
+}

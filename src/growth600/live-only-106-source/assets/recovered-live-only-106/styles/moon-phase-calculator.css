@@ -1,0 +1,30 @@
+.moon-phase-calculator__method,
+.moon-phase-calculator__privacy {
+  margin: 0 0 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border, #d8dee8);
+  border-radius: 0.75rem;
+  color: var(--muted, #465164);
+}
+.moon-phase-calculator__results {
+  margin-top: 1.5rem;
+}
+.moon-phase-calculator__results dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: 0.75rem;
+}
+.moon-phase-calculator__results dl > div {
+  padding: 1rem;
+  border: 1px solid var(--border, #d8dee8);
+  border-radius: 0.75rem;
+}
+.moon-phase-calculator__results dt {
+  font-weight: 600;
+  color: var(--muted, #465164);
+}
+.moon-phase-calculator__results dd {
+  margin: 0.35rem 0 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}

@@ -1,0 +1,49 @@
+.boolean-algebra-summary {
+  display: grid;
+  grid-template-columns: minmax(10rem, 1fr) minmax(0, 2fr);
+  gap: 0.25rem 0.8rem;
+  margin: 0.5rem 0 1rem;
+}
+.boolean-algebra-summary dt {
+  font-weight: 700;
+}
+.boolean-algebra-summary dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+.boolean-algebra-kmap,
+.boolean-algebra-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  margin-block: 1rem;
+}
+.boolean-algebra-kmap table,
+.boolean-algebra-table {
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.boolean-algebra-kmap td,
+.boolean-algebra-kmap th,
+.boolean-algebra-table td,
+.boolean-algebra-table th {
+  min-width: 2.5rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--line);
+  text-align: center;
+}
+.boolean-algebra-kmap th,
+.boolean-algebra-table th {
+  background: #eef3ec;
+}
+.boolean-algebra-kmap h3 {
+  margin-block: 0.5rem;
+}
+@media (max-width: 36rem) {
+  .boolean-algebra-summary {
+    grid-template-columns: 1fr;
+  }
+  .boolean-algebra-summary dd {
+    margin-bottom: 0.45rem;
+  }
+}

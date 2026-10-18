@@ -1,0 +1,22 @@
+.pdf-accessibility-checker__limits {
+  border-inline-start: 0.25rem solid var(--accent-color, #4976d1);
+  padding: 0.8rem 1rem;
+  background: var(--surface-muted, #f5f6f8);
+  border-radius: 0.35rem;
+}
+.pdf-accessibility-checker__report {
+  display: grid;
+  gap: 0.35rem;
+}
+.pdf-accessibility-checker__report li[data-present='true'] {
+  color: var(--success-color, #23733c);
+}
+.pdf-accessibility-checker__report li[data-present='false'] {
+  color: var(--warning-color, #875900);
+}
+.pdf-accessibility-checker__report ul {
+  padding-inline-start: 1.5rem;
+}
+.pdf-accessibility-checker [data-pdf-a11y-result] {
+  overflow-wrap: anywhere;
+}

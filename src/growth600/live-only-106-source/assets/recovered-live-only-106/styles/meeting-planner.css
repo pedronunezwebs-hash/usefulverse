@@ -1,0 +1,24 @@
+.meeting-planner__dst,
+.meeting-planner__privacy,
+.meeting-planner__scope {
+  margin: 0 0 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border, #d8dee8);
+  border-radius: 0.75rem;
+  color: var(--muted, #465164);
+}
+.meeting-planner__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: 1rem;
+}
+.meeting-planner__results {
+  margin-top: 1.5rem;
+}
+.meeting-planner__zone-list {
+  margin: 0;
+  padding-inline-start: 1.2rem;
+}
+.meeting-planner__results td {
+  vertical-align: top;
+}

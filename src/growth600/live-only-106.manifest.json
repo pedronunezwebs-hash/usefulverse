@@ -1,0 +1,857 @@
+{
+  "schemaVersion": 1,
+  "origin": "https://tools.usefulverse.com",
+  "capturedInventory": "2026-10-19",
+  "recoveryType": "published-static-snapshot",
+  "sourceCatalogUnavailable": true,
+  "tools": [
+    {
+      "id": "radical-calculator",
+      "url": "https://tools.usefulverse.com/tools/radical-calculator/",
+      "title": "Square Root Simplifier Free | UsefulVerse",
+      "h1": "Square Root Simplifier",
+      "description": "Simplify square and nth roots exactly, or rationalize a square-root denominator. Free browser calculator with no sign-up.",
+      "localeCount": 36
+    },
+    {
+      "id": "limit-calculator",
+      "url": "https://tools.usefulverse.com/tools/limit-calculator/",
+      "title": "Limit Calculator Free | UsefulVerse",
+      "h1": "Limit Calculator",
+      "description": "Estimate two-sided, one-sided and infinite limits for supported expressions. Free online limit solver with a worked sin(x)/x example.",
+      "localeCount": 36
+    },
+    {
+      "id": "inequality-calculator",
+      "url": "https://tools.usefulverse.com/tools/inequality-calculator/",
+      "title": "Inequality Calculator Free | UsefulVerse",
+      "h1": "Inequality Calculator",
+      "description": "Solve linear and quadratic inequalities. Get interval notation, critical points and a number-line view with this free inequality calculator.",
+      "localeCount": 36
+    },
+    {
+      "id": "rref-calculator",
+      "url": "https://tools.usefulverse.com/tools/rref-calculator/",
+      "title": "RREF Calculator Free | UsefulVerse",
+      "h1": "RREF Calculator",
+      "description": "Reduce a matrix to reduced row echelon form. See rank, pivot columns and row-operation steps with this free online RREF calculator.",
+      "localeCount": 36
+    },
+    {
+      "id": "histogram-calculator",
+      "url": "https://tools.usefulverse.com/tools/histogram-calculator/",
+      "title": "Histogram Calculator Free | UsefulVerse",
+      "h1": "Histogram Calculator",
+      "description": "Make a histogram from your data. Choose bin rules, compare counts or density, and download a chart or frequency table for free.",
+      "localeCount": 36
+    },
+    {
+      "id": "differential-equation-solver",
+      "url": "https://tools.usefulverse.com/tools/differential-equation-solver/",
+      "title": "Differential Equation Solver Free | UsefulVerse",
+      "h1": "Differential Equation Solver",
+      "description": "Solve a first-order differential equation numerically with RK4. Set an initial value, view a graph and export sample points for free.",
+      "localeCount": 36
+    },
+    {
+      "id": "prime-factorization-calculator",
+      "url": "https://tools.usefulverse.com/tools/prime-factorization-calculator/",
+      "title": "Prime Factorization Calculator Free | UsefulVerse",
+      "h1": "Prime Factorization Calculator",
+      "description": "Factor positive integers into primes, show division steps and count divisors. Free, exact browser calculator with no sign-up.",
+      "localeCount": 36
+    },
+    {
+      "id": "rational-expression-calculator",
+      "url": "https://tools.usefulverse.com/tools/rational-expression-calculator/",
+      "title": "Rational Expression Calculator Free | UsefulVerse",
+      "h1": "Rational Expression Calculator",
+      "description": "Simplify polynomial fractions, cancel common factors and keep excluded values visible. Free local calculator, no sign-up.",
+      "localeCount": 36
+    },
+    {
+      "id": "modulo-calculator",
+      "url": "https://tools.usefulverse.com/tools/modulo-calculator/",
+      "title": "Modulo Calculator Free | UsefulVerse",
+      "h1": "Modulo Calculator",
+      "description": "Find an exact modulo and quotient, including negative numbers, or check congruence. Free, private browser calculator with no sign-up.",
+      "localeCount": 36
+    },
+    {
+      "id": "stem-and-leaf-plot-generator",
+      "url": "https://tools.usefulverse.com/tools/stem-and-leaf-plot-generator/",
+      "title": "Stem and Leaf Plot Generator Free | UsefulVerse",
+      "h1": "Stem and Leaf Plot Generator",
+      "description": "Make a stem-and-leaf plot from data. Keep duplicate values, split stems into 1, 2 or 5 rows, and copy the result for free.",
+      "localeCount": 36
+    },
+    {
+      "id": "box-plot-calculator",
+      "url": "https://tools.usefulverse.com/tools/box-plot-calculator/",
+      "title": "Box Plot Calculator Free | UsefulVerse",
+      "h1": "Box Plot Calculator",
+      "description": "Make box-and-whisker plots for one or two data sets. Compare quartiles, IQR, fences and outliers for free.",
+      "localeCount": 36
+    },
+    {
+      "id": "sleep-debt-calculator",
+      "url": "https://tools.usefulverse.com/tools/sleep-debt-calculator/",
+      "title": "Sleep Debt Calculator Free | UsefulVerse",
+      "h1": "Sleep Debt Calculator",
+      "description": "Estimate sleep shortfalls for 1–14 nights against your own reference, compare nightly hours and optionally save your log on this device.",
+      "localeCount": 36
+    },
+    {
+      "id": "push-up-test",
+      "url": "https://tools.usefulverse.com/tools/push-up-test/",
+      "title": "Push-Up Test & Set Tracker Free | UsefulVerse",
+      "h1": "Push-Up Test & Set Tracker",
+      "description": "Log manually counted push-up sets, rest and progress. Free, private and optional local history; no camera needed.",
+      "localeCount": 36
+    },
+    {
+      "id": "sobriety-counter",
+      "url": "https://tools.usefulverse.com/tools/sobriety-counter/",
+      "title": "Sobriety Day Counter Free | UsefulVerse",
+      "h1": "Sobriety Day Counter",
+      "description": "Count calendar days from a date you choose, see personal milestones, and optionally keep a private note on this device.",
+      "localeCount": 36
+    },
+    {
+      "id": "bac-calculator",
+      "url": "https://tools.usefulverse.com/tools/bac-calculator/",
+      "title": "BAC Calculator Free | UsefulVerse",
+      "h1": "BAC Calculator",
+      "description": "Explore a local, educational Widmark-style BAC scenario with a broad uncertainty range. Never use it to decide whether it is safe or legal to drive.",
+      "localeCount": 36
+    },
+    {
+      "id": "hiking-time-calculator",
+      "url": "https://tools.usefulverse.com/tools/hiking-time-calculator/",
+      "title": "Hiking Time Calculator Free | UsefulVerse",
+      "h1": "Hiking Time Calculator",
+      "description": "Estimate hiking hours from total route distance, uphill gain, a Naismith baseline or your own pace, and planned breaks.",
+      "localeCount": 36
+    },
+    {
+      "id": "pdf-flattener",
+      "url": "https://tools.usefulverse.com/tools/pdf-flattener/",
+      "title": "PDF Form Flattener Free | Keep Page Text | UsefulVerse",
+      "h1": "PDF Form Flattener",
+      "description": "Flatten supported PDF form fields into a new local copy. Page text remains searchable; form fields become non-interactive.",
+      "localeCount": 36
+    },
+    {
+      "id": "pdf-metadata-editor",
+      "url": "https://tools.usefulverse.com/tools/pdf-metadata-editor/",
+      "title": "PDF Metadata Editor Free | UsefulVerse",
+      "h1": "PDF Metadata Editor",
+      "description": "Edit standard PDF title, author, subject and dates free in your browser. No upload; keep the original PDF unchanged.",
+      "localeCount": 36
+    },
+    {
+      "id": "pdf-bookmarks-editor",
+      "url": "https://tools.usefulverse.com/tools/pdf-bookmarks-editor/",
+      "title": "Add Bookmarks to PDF Free | UsefulVerse",
+      "h1": "PDF Bookmarks Editor",
+      "description": "Add, organize and edit PDF bookmarks locally. Set page destinations, arrange sections and export a separate PDF without uploading it.",
+      "localeCount": 36
+    },
+    {
+      "id": "pdf-page-size-converter",
+      "url": "https://tools.usefulverse.com/tools/pdf-page-size-converter/",
+      "title": "Resize PDF to A4, Letter or Custom Size Free | UsefulVerse",
+      "h1": "PDF Page Size Converter",
+      "description": "Change PDF page size to A4, Letter, Legal or custom dimensions. Fit and center pages locally without intentional cropping.",
+      "localeCount": 36
+    },
+    {
+      "id": "ics-viewer",
+      "url": "https://tools.usefulverse.com/tools/ics-viewer/",
+      "title": "ICS Viewer: Open Calendar Files Free | UsefulVerse",
+      "h1": "ICS Calendar Viewer",
+      "description": "Open and filter .ics calendar files in your browser. View recurring events and EXDATE exceptions locally, then export a CSV list.",
+      "localeCount": 36
+    },
+    {
+      "id": "wilks-calculator",
+      "url": "https://tools.usefulverse.com/tools/wilks-calculator/",
+      "title": "Wilks & DOTS Powerlifting Calculator Free | UsefulVerse",
+      "h1": "Wilks & DOTS Powerlifting Calculator",
+      "description": "Compare Wilks, Wilks-2 and DOTS powerlifting scores from bodyweight and a lift total. Free, private, and calculated in your browser.",
+      "localeCount": 36
+    },
+    {
+      "id": "circle-calculator",
+      "url": "https://tools.usefulverse.com/tools/circle-calculator/",
+      "title": "Circle Calculator Free | UsefulVerse",
+      "h1": "Circle Calculator",
+      "description": "Find circle area, circumference, diameter, arcs, sectors and segments. Free online calculator with clear formulas and examples.",
+      "localeCount": 36
+    },
+    {
+      "id": "family-tree-maker",
+      "url": "https://tools.usefulverse.com/tools/family-tree-maker/",
+      "title": "Family Tree Maker Free: Build & Export | UsefulVerse",
+      "h1": "Family Tree Maker",
+      "description": "Build a private family tree, check parent links, and export SVG or GEDCOM. Free, local and no account or genealogy lookup.",
+      "localeCount": 36
+    },
+    {
+      "id": "stock-profit-calculator",
+      "url": "https://tools.usefulverse.com/tools/stock-profit-calculator/",
+      "title": "Stock Profit Calculator Free & Unlimited | UsefulVerse",
+      "h1": "Stock Profit Calculator",
+      "description": "Estimate stock sale profit after fees with FIFO or average cost, multiple buy lots and break-even price. Free, unlimited and private in your browser.",
+      "localeCount": 36
+    },
+    {
+      "id": "pension-calculator",
+      "url": "https://tools.usefulverse.com/tools/pension-calculator/",
+      "title": "Pension Calculator Free & Unlimited | UsefulVerse",
+      "h1": "Pension Calculator",
+      "description": "Estimate a defined-benefit pension and optional lump-sum conversion. Free, unlimited and private in your browser.",
+      "localeCount": 36
+    },
+    {
+      "id": "lifetime-value-calculator",
+      "url": "https://tools.usefulverse.com/tools/lifetime-value-calculator/",
+      "title": "Customer Lifetime Value Calculator Free | UsefulVerse",
+      "h1": "Customer Lifetime Value Calculator",
+      "description": "Estimate customer lifetime value from monthly revenue, gross margin and churn. Add CAC for payback and LTV:CAC. Free and private in your browser.",
+      "localeCount": 36
+    },
+    {
+      "id": "polar-graphing-calculator",
+      "url": "https://tools.usefulverse.com/tools/polar-graphing-calculator/",
+      "title": "Polar Graphing Calculator Free | UsefulVerse",
+      "h1": "Polar Graphing Calculator",
+      "description": "Plot polar equations r(θ) in radians or degrees. View the curve and export sampled coordinates to CSV. Free, private and local in your browser.",
+      "localeCount": 36
+    },
+    {
+      "id": "boolean-algebra-calculator",
+      "url": "https://tools.usefulverse.com/tools/boolean-algebra-calculator/",
+      "title": "Boolean Algebra Calculator Free | UsefulVerse",
+      "h1": "Boolean Algebra Calculator",
+      "description": "Simplify Boolean expressions into SOP and POS, verify a truth table, and view Karnaugh maps. Free, no sign-up, processed locally in your browser.",
+      "localeCount": 36
+    },
+    {
+      "id": "week-number-calculator",
+      "url": "https://tools.usefulverse.com/tools/week-number-calculator/",
+      "title": "Week Number Calculator Free | UsefulVerse",
+      "h1": "Week Number Calculator",
+      "description": "Find the ISO week number and week-year for any date, or compare a custom week start. Free, private browser calculator.",
+      "localeCount": 36
+    },
+    {
+      "id": "statistical-power-calculator",
+      "url": "https://tools.usefulverse.com/tools/statistical-power-calculator/",
+      "title": "Statistical Power Calculator Free | UsefulVerse",
+      "h1": "Statistical Power Calculator",
+      "description": "Estimate sample size or power for two balanced groups using Cohen’s d. Free, private, and calculated in your browser.",
+      "localeCount": 36
+    },
+    {
+      "id": "fisher-exact-test-calculator",
+      "url": "https://tools.usefulverse.com/tools/fisher-exact-test-calculator/",
+      "title": "Fisher Exact Test Calculator Free | UsefulVerse",
+      "h1": "Fisher Exact Test Calculator",
+      "description": "Calculate a two-sided or one-sided Fisher exact test for a 2×2 table. See margins, p-value and odds ratio for free in your browser.",
+      "localeCount": 36
+    },
+    {
+      "id": "taylor-series-calculator",
+      "url": "https://tools.usefulverse.com/tools/taylor-series-calculator/",
+      "title": "Taylor Series Calculator Free | UsefulVerse",
+      "h1": "Taylor Series Calculator",
+      "description": "Build a Taylor or Maclaurin polynomial, choose its center and order, and compare its value with the function. Free and local.",
+      "localeCount": 36
+    },
+    {
+      "id": "effect-size-calculator",
+      "url": "https://tools.usefulverse.com/tools/effect-size-calculator/",
+      "title": "Effect Size Calculator Free | UsefulVerse",
+      "h1": "Effect Size Calculator",
+      "description": "Calculate Cohen’s d and Hedges’ g from two independent groups’ means, standard deviations and sample sizes. Free and local.",
+      "localeCount": 36
+    },
+    {
+      "id": "ellipse-calculator",
+      "url": "https://tools.usefulverse.com/tools/ellipse-calculator/",
+      "title": "Ellipse Calculator Free | UsefulVerse",
+      "h1": "Ellipse Calculator",
+      "description": "Calculate ellipse area, foci, eccentricity and Ramanujan perimeter approximation from two semiaxes. Free and local.",
+      "localeCount": 36
+    },
+    {
+      "id": "mann-whitney-u-test-calculator",
+      "url": "https://tools.usefulverse.com/tools/mann-whitney-u-test-calculator/",
+      "title": "Mann–Whitney U Test Calculator Free | UsefulVerse",
+      "h1": "Mann–Whitney U Test Calculator",
+      "description": "Run a two-sided Mann–Whitney U test on independent samples. See U, p-value, ties and rank-biserial effect. Free and local.",
+      "localeCount": 36
+    },
+    {
+      "id": "linear-programming-calculator",
+      "url": "https://tools.usefulverse.com/tools/linear-programming-calculator/",
+      "title": "Linear Programming Calculator Free | UsefulVerse",
+      "h1": "Linear Programming Calculator",
+      "description": "Solve 2-variable linear programs with the simplex method. Find max or min, feasible status and pivot steps. Free, local and no sign-up.",
+      "localeCount": 36
+    },
+    {
+      "id": "xml-to-csv-converter",
+      "url": "https://tools.usefulverse.com/tools/xml-to-csv-converter/",
+      "title": "XML to CSV Converter Free | UsefulVerse",
+      "h1": "XML to CSV Converter",
+      "description": "Convert simple XML records to CSV or CSV rows to XML in your browser. Free, local, no upload and no account.",
+      "localeCount": 36
+    },
+    {
+      "id": "csv-merge",
+      "url": "https://tools.usefulverse.com/tools/csv-merge/",
+      "title": "CSV Merge Free | UsefulVerse",
+      "h1": "CSV Merge",
+      "description": "Merge CSV files by column name, even when column order differs. Free in your browser, with no upload or account.",
+      "localeCount": 36
+    },
+    {
+      "id": "sitemap-validator",
+      "url": "https://tools.usefulverse.com/tools/sitemap-validator/",
+      "title": "Sitemap Validator Free | UsefulVerse",
+      "h1": "Sitemap Validator",
+      "description": "Check sitemap XML for duplicate URLs, invalid dates, namespaces and common field errors. Free local validation; no crawling.",
+      "localeCount": 36
+    },
+    {
+      "id": "bcrypt-generator",
+      "url": "https://tools.usefulverse.com/tools/bcrypt-generator/",
+      "title": "Bcrypt Generator Free | UsefulVerse",
+      "h1": "Bcrypt Generator",
+      "description": "Create and verify bcrypt password hashes locally with a fresh random salt and adjustable cost. Free browser tool; no upload or account.",
+      "localeCount": 36
+    },
+    {
+      "id": "retirement-calculator",
+      "url": "https://tools.usefulverse.com/tools/retirement-calculator/",
+      "title": "Retirement Calculator Free | UsefulVerse",
+      "h1": "Retirement Calculator",
+      "description": "Project retirement savings and withdrawals with base and conservative return assumptions. See inflation-adjusted value. Free, local, no account.",
+      "localeCount": 36
+    },
+    {
+      "id": "required-minimum-distribution-calculator",
+      "url": "https://tools.usefulverse.com/tools/required-minimum-distribution-calculator/",
+      "title": "RMD Calculator 2026 Free | UsefulVerse",
+      "h1": "RMD Calculator",
+      "description": "Estimate a 2026 RMD with the IRS Uniform Lifetime Table. Free, no account, and calculated in your browser.",
+      "localeCount": 36
+    },
+    {
+      "id": "protein-calculator",
+      "url": "https://tools.usefulverse.com/tools/protein-calculator/",
+      "title": "Protein Calculator Free | UsefulVerse",
+      "h1": "Protein Calculator",
+      "description": "Estimate a daily protein amount from body weight and your chosen factor. Free calculator, no account, computed in your browser.",
+      "localeCount": 36
+    },
+    {
+      "id": "mortgage-affordability-calculator",
+      "url": "https://tools.usefulverse.com/tools/mortgage-affordability-calculator/",
+      "title": "Mortgage Affordability Calculator Free | UsefulVerse",
+      "h1": "Mortgage Affordability Calculator",
+      "description": "Estimate a home-price range from income, debts, down payment, rate, taxes and insurance. Free, browser-based, with no account.",
+      "localeCount": 36
+    },
+    {
+      "id": "401k-calculator",
+      "url": "https://tools.usefulverse.com/tools/401k-calculator/",
+      "title": "401(k) Calculator Free | UsefulVerse",
+      "h1": "401(k) Calculator",
+      "description": "Estimate 401(k) contributions, employer match, vesting and a savings scenario. Free, local, no account.",
+      "localeCount": 36
+    },
+    {
+      "id": "inflation-calculator",
+      "url": "https://tools.usefulverse.com/tools/inflation-calculator/",
+      "title": "Inflation Calculator Free | UsefulVerse",
+      "h1": "Inflation Calculator",
+      "description": "Compare historical U.S. prices with CPI-U or model a custom inflation rate. See adjusted value and cumulative change. Free, local, no upload.",
+      "localeCount": 36
+    },
+    {
+      "id": "text-to-speech",
+      "url": "https://tools.usefulverse.com/tools/text-to-speech/",
+      "title": "Text to Speech Free Online | UsefulVerse",
+      "h1": "Text to Speech",
+      "description": "Read text aloud with a voice on your device. Free, no account, no upload to this site. Voice availability depends on your browser.",
+      "localeCount": 36
+    },
+    {
+      "id": "world-clock",
+      "url": "https://tools.usefulverse.com/tools/world-clock/",
+      "title": "World Clock Online Free | UsefulVerse",
+      "h1": "World Clock",
+      "description": "See live local times in cities around the world, compare UTC offsets and daylight saving changes. Free, no account.",
+      "localeCount": 36
+    },
+    {
+      "id": "euchre",
+      "url": "https://tools.usefulverse.com/tools/euchre/",
+      "title": "Euchre Card Game Online Free | UsefulVerse",
+      "h1": "Euchre",
+      "description": "Play Euchre online against three local bots. Bid, choose trump, follow suit and track the score. Free, no account or upload.",
+      "localeCount": 36
+    },
+    {
+      "id": "spades-game",
+      "url": "https://tools.usefulverse.com/tools/spades-game/",
+      "title": "Spades Card Game Online Free | UsefulVerse",
+      "h1": "Spades",
+      "description": "Play Spades against three local bots. Bid nil or tricks, follow suit and track bags. Free, no account or online opponent.",
+      "localeCount": 36
+    },
+    {
+      "id": "name-generator",
+      "url": "https://tools.usefulverse.com/tools/name-generator/",
+      "title": "Fantasy Name Generator Free | UsefulVerse",
+      "h1": "Original Name Generator",
+      "description": "Generate fantasy names, business ideas or usernames with a reusable seed. Free, no account, no availability claims.",
+      "localeCount": 36
+    },
+    {
+      "id": "random-word-generator",
+      "url": "https://tools.usefulverse.com/tools/random-word-generator/",
+      "title": "Random Word Generator — Free Online | UsefulVerse",
+      "h1": "Random Word Generator",
+      "description": "Generate unique random words by category and length. Free, no account, with no upload.",
+      "localeCount": 36
+    },
+    {
+      "id": "breathing-exercise",
+      "url": "https://tools.usefulverse.com/tools/breathing-exercise/",
+      "title": "Breathing Exercise — Free Online | UsefulVerse",
+      "h1": "Breathing Exercise",
+      "description": "Follow a free breathing timer with box, 4-7-8 or custom pacing. Optional sound, pause and reset; no account or upload.",
+      "localeCount": 36
+    },
+    {
+      "id": "alarm-clock",
+      "url": "https://tools.usefulverse.com/tools/alarm-clock/",
+      "title": "Online Alarm Clock Free with Snooze | UsefulVerse",
+      "h1": "Online Alarm Clock",
+      "description": "Set a free browser alarm for a local date and time, test an optional sound, then stop or snooze it for five minutes.",
+      "localeCount": 36
+    },
+    {
+      "id": "dividend-calculator",
+      "url": "https://tools.usefulverse.com/tools/dividend-calculator/",
+      "title": "Dividend Calculator Free & DRIP Projection | UsefulVerse",
+      "h1": "Dividend Calculator",
+      "description": "Estimate dividend income, payout yield and reinvestment growth with your own assumptions. Free, local and no signup. No live market data.",
+      "localeCount": 36
+    },
+    {
+      "id": "net-worth-calculator",
+      "url": "https://tools.usefulverse.com/tools/net-worth-calculator/",
+      "title": "Net Worth Calculator Free & Private | UsefulVerse",
+      "h1": "Net Worth Calculator",
+      "description": "Total your assets and debts, compare dated snapshots and export CSV. Free and local, with optional browser-only saving.",
+      "localeCount": 36
+    },
+    {
+      "id": "body-surface-area-calculator",
+      "url": "https://tools.usefulverse.com/tools/body-surface-area-calculator/",
+      "title": "Body Surface Area Calculator Free | UsefulVerse",
+      "h1": "Body Surface Area Calculator",
+      "description": "Estimate adult body surface area with Mosteller and Du Bois formulas. Free, local calculations with metric or US units.",
+      "localeCount": 36
+    },
+    {
+      "id": "weekly-planner",
+      "url": "https://tools.usefulverse.com/tools/weekly-planner/",
+      "title": "Weekly Planner Free | UsefulVerse",
+      "h1": "Weekly Planner",
+      "description": "Plan a weekly schedule, spot overlapping time blocks, and print or back up your plan. Free, with no account.",
+      "localeCount": 36
+    },
+    {
+      "id": "overtime-calculator",
+      "url": "https://tools.usefulverse.com/tools/overtime-calculator/",
+      "title": "Overtime Calculator Free | UsefulVerse",
+      "h1": "Overtime Calculator",
+      "description": "Estimate regular and overtime pay from your own hours, threshold, hourly rate, and multiplier. Free calculator; no account.",
+      "localeCount": 36
+    },
+    {
+      "id": "meeting-minutes-template",
+      "url": "https://tools.usefulverse.com/tools/meeting-minutes-template/",
+      "title": "Meeting Minutes Template Free | UsefulVerse",
+      "h1": "Meeting Minutes Template",
+      "description": "Create structured meeting minutes with attendees, decisions, and action owners and due dates. Edit, print, or export Markdown.",
+      "localeCount": 36
+    },
+    {
+      "id": "color-mixer",
+      "url": "https://tools.usefulverse.com/tools/color-mixer/",
+      "title": "Color Mixer — Free HEX & RGB Tool | UsefulVerse",
+      "h1": "Color Mixer",
+      "description": "Mix two or more colors by weight. Compare sRGB and linear-light results, build a color ramp, and copy HEX, RGB, or HSL values free.",
+      "localeCount": 36
+    },
+    {
+      "id": "debt-to-income-ratio-calculator",
+      "url": "https://tools.usefulverse.com/tools/debt-to-income-ratio-calculator/",
+      "title": "Debt-to-Income Calculator — Free DTI Tool | UsefulVerse",
+      "h1": "Debt-to-Income Ratio Calculator",
+      "description": "Calculate your front-end and total debt-to-income ratios from gross monthly income, housing costs, and monthly debt payments. Free and private.",
+      "localeCount": 36
+    },
+    {
+      "id": "car-lease-calculator",
+      "url": "https://tools.usefulverse.com/tools/car-lease-calculator/",
+      "title": "Car Lease Calculator Free | UsefulVerse",
+      "h1": "Car Lease Calculator",
+      "description": "Estimate a car lease payment from price, residual value, term, money factor, cap reduction, and tax. Free, private estimate.",
+      "localeCount": 36
+    },
+    {
+      "id": "fire-calculator",
+      "url": "https://tools.usefulverse.com/tools/fire-calculator/",
+      "title": "FIRE Calculator Free | UsefulVerse",
+      "h1": "FIRE Calculator",
+      "description": "Estimate a financial independence target and timeline from spending, withdrawal rate, savings, returns, and inflation. Free and private.",
+      "localeCount": 36
+    },
+    {
+      "id": "email-signature-generator",
+      "url": "https://tools.usefulverse.com/tools/email-signature-generator/",
+      "title": "Email Signature Generator Free | UsefulVerse",
+      "h1": "Email Signature Generator",
+      "description": "Create a simple email signature with links and an optional small logo. Preview and copy it free in your browser.",
+      "localeCount": 36
+    },
+    {
+      "id": "image-vectorizer",
+      "url": "https://tools.usefulverse.com/tools/image-vectorizer/",
+      "title": "Image Vectorizer Free | UsefulVerse",
+      "h1": "Image Vectorizer",
+      "description": "Turn simple PNG, JPEG, or WebP artwork into editable SVG paths in your browser. Free local vectorizer.",
+      "localeCount": 36
+    },
+    {
+      "id": "vo2-max-calculator",
+      "url": "https://tools.usefulverse.com/tools/vo2-max-calculator/",
+      "title": "VO2 Max Calculator Free | UsefulVerse",
+      "h1": "VO2 Max Calculator",
+      "description": "Estimate VO2 max with the Cooper run or Rockport walk test. Free browser calculator with clear method limits.",
+      "localeCount": 36
+    },
+    {
+      "id": "calories-burned-calculator",
+      "url": "https://tools.usefulverse.com/tools/calories-burned-calculator/",
+      "title": "Calories Burned Calculator Free | UsefulVerse",
+      "h1": "Calories Burned Calculator",
+      "description": "Estimate exercise calories from your weight, activity and workout time. Free MET-based calculator with no sign-up; results are estimates.",
+      "localeCount": 36
+    },
+    {
+      "id": "rhyme-finder",
+      "url": "https://tools.usefulverse.com/tools/rhyme-finder/",
+      "title": "Rhyme Finder Free Online | UsefulVerse",
+      "h1": "Rhyme Finder",
+      "description": "Group words by matching written endings in a poem or custom list. Free, private, and no account. Spelling helper, not a pronunciation dictionary.",
+      "localeCount": 36
+    },
+    {
+      "id": "water-intake-calculator",
+      "url": "https://tools.usefulverse.com/tools/water-intake-calculator/",
+      "title": "Water Intake Calculator Free | UsefulVerse",
+      "h1": "Water Intake Calculator",
+      "description": "Compare entered daily fluids and food water with a general adult reference. Free, private calculator with liters and US cups.",
+      "localeCount": 36
+    },
+    {
+      "id": "cpm-calculator",
+      "url": "https://tools.usefulverse.com/tools/cpm-calculator/",
+      "title": "CPM Calculator Free Unlimited | UsefulVerse",
+      "h1": "CPM calculator",
+      "description": "Calculate CPM, ad spend or impressions from two values. Free, unlimited and local to your browser.",
+      "localeCount": 36
+    },
+    {
+      "id": "annuity-calculator",
+      "url": "https://tools.usefulverse.com/tools/annuity-calculator/",
+      "title": "Annuity Calculator Free | UsefulVerse",
+      "h1": "Annuity Calculator",
+      "description": "Calculate an annuity’s future value, present value or required periodic payment. Compare payment timing and frequencies with a free local estimate.",
+      "localeCount": 36
+    },
+    {
+      "id": "options-profit-calculator",
+      "url": "https://tools.usefulverse.com/tools/options-profit-calculator/",
+      "title": "Options Profit Calculator Free | UsefulVerse",
+      "h1": "Options Profit Calculator",
+      "description": "Estimate a single call or put position at expiration. See profit, break-even and risk with a free local options payoff calculator.",
+      "localeCount": 36
+    },
+    {
+      "id": "cribbage",
+      "url": "https://tools.usefulverse.com/tools/cribbage/",
+      "title": "Cribbage Game & Score Calculator | UsefulVerse",
+      "h1": "Cribbage Score Calculator and Game",
+      "description": "Play Cribbage against a local computer and score hands, pegging and the crib. Free, private, no account or network opponent.",
+      "localeCount": 36
+    },
+    {
+      "id": "gin-rummy",
+      "url": "https://tools.usefulverse.com/tools/gin-rummy/",
+      "title": "Gin Rummy Game Online Free | UsefulVerse",
+      "h1": "Gin Rummy",
+      "description": "Play Gin Rummy online against a local browser opponent. Form runs and sets, track deadwood, knock or go gin. Free, no account.",
+      "localeCount": 36
+    },
+    {
+      "id": "gold-calculator",
+      "url": "https://tools.usefulverse.com/tools/gold-calculator/",
+      "title": "Gold Calculator Free | UsefulVerse",
+      "h1": "Gold Calculator",
+      "description": "Calculate fine-gold content by weight and purity, then estimate value with your own price. Free, no account, no live quote.",
+      "localeCount": 36
+    },
+    {
+      "id": "mortgage-refinance-calculator",
+      "url": "https://tools.usefulverse.com/tools/mortgage-refinance-calculator/",
+      "title": "Mortgage Refinance Calculator Free | UsefulVerse",
+      "h1": "Mortgage Refinance Calculator",
+      "description": "Compare your remaining mortgage with a refinance, including closing costs, payment changes, total cost and break-even. Free, private, no account.",
+      "localeCount": 36
+    },
+    {
+      "id": "cash-on-cash-return-calculator",
+      "url": "https://tools.usefulverse.com/tools/cash-on-cash-return-calculator/",
+      "title": "Cash-on-Cash Return Calculator Free | UsefulVerse",
+      "h1": "Cash-on-Cash Return Calculator",
+      "description": "Estimate rental property cash-on-cash return from rent, monthly costs, debt service and cash invested. Free, private, no account.",
+      "localeCount": 36
+    },
+    {
+      "id": "forex-position-size-calculator",
+      "url": "https://tools.usefulverse.com/tools/forex-position-size-calculator/",
+      "title": "Forex Position Size Calculator Free | UsefulVerse",
+      "h1": "Forex Position Size Calculator",
+      "description": "Calculate forex lot size from account balance, risk, stop-loss pips and pip value. Free, private, no live FX data or account.",
+      "localeCount": 36
+    },
+    {
+      "id": "lease-vs-buy-car-calculator",
+      "url": "https://tools.usefulverse.com/tools/lease-vs-buy-car-calculator/",
+      "title": "Lease vs Buy Car Calculator Free | UsefulVerse",
+      "h1": "Lease vs Buy Car Calculator",
+      "description": "Compare car lease and purchase costs over your use period, including mileage, maintenance and resale value. Free, private, no account.",
+      "localeCount": 36
+    },
+    {
+      "id": "epub-to-pdf",
+      "url": "https://tools.usefulverse.com/tools/epub-to-pdf/",
+      "title": "EPUB to PDF Converter Free | UsefulVerse",
+      "h1": "EPUB to PDF Converter",
+      "description": "Convert an EPUB ebook to a clean, printable PDF locally. Free, no account; save as PDF from your browser’s print dialog.",
+      "localeCount": 36
+    },
+    {
+      "id": "spider-solitaire",
+      "url": "https://tools.usefulverse.com/tools/spider-solitaire/",
+      "title": "Spider Solitaire Online Free | UsefulVerse",
+      "h1": "Spider Solitaire",
+      "description": "Play Spider Solitaire in 1, 2 or 4 suits with undo, hints and fresh deals. Free in your browser, no account or download.",
+      "localeCount": 36
+    },
+    {
+      "id": "freecell",
+      "url": "https://tools.usefulverse.com/tools/freecell/",
+      "title": "FreeCell Solitaire Online Free | UsefulVerse",
+      "h1": "FreeCell",
+      "description": "Play FreeCell online with legal supermoves, hints, undo and replayable deals. Free in your browser, no account or download.",
+      "localeCount": 36
+    },
+    {
+      "id": "snake-game",
+      "url": "https://tools.usefulverse.com/tools/snake-game/",
+      "title": "Snake Game Online Free | UsefulVerse",
+      "h1": "Snake Game",
+      "description": "Play a free snake game with keyboard or touch controls, pause, three speeds and a fresh board each round. No account or download.",
+      "localeCount": 36
+    },
+    {
+      "id": "gomoku",
+      "url": "https://tools.usefulverse.com/tools/gomoku/",
+      "title": "Gomoku Online Free | UsefulVerse",
+      "h1": "Gomoku",
+      "description": "Play Gomoku free on a 15×15 board against a simple local bot or a friend. No download or account; moves stay in your browser.",
+      "localeCount": 36
+    },
+    {
+      "id": "poker-odds-calculator",
+      "url": "https://tools.usefulverse.com/tools/poker-odds-calculator/",
+      "title": "Poker Odds Calculator Free | UsefulVerse",
+      "h1": "Poker Odds Calculator",
+      "description": "Estimate Texas Hold’em win, tie and equity odds free. Run exact river odds or seeded local simulations; no account or uploads.",
+      "localeCount": 36
+    },
+    {
+      "id": "heart-rate-zone-calculator",
+      "url": "https://tools.usefulverse.com/tools/heart-rate-zone-calculator/",
+      "title": "Heart Rate Zone Calculator Free | UsefulVerse",
+      "h1": "Heart Rate Zone Calculator",
+      "description": "Free heart rate zones by age or Karvonen. Set a measured maximum and custom cutoffs; see bpm ranges.",
+      "localeCount": 36
+    },
+    {
+      "id": "ideal-weight-calculator",
+      "url": "https://tools.usefulverse.com/tools/ideal-weight-calculator/",
+      "title": "Ideal Weight Calculator Free | UsefulVerse",
+      "h1": "Ideal Weight Calculator",
+      "description": "Compare four historical weight equations and an adult BMI reference range by height. Free, private, and calculated in your browser.",
+      "localeCount": 36
+    },
+    {
+      "id": "eisenhower-matrix",
+      "url": "https://tools.usefulverse.com/tools/eisenhower-matrix/",
+      "title": "Eisenhower Matrix Free Online | UsefulVerse",
+      "h1": "Eisenhower Matrix",
+      "description": "Sort tasks in a free Eisenhower Matrix. Set importance, urgency and due dates; move, complete, print or back up tasks privately.",
+      "localeCount": 36
+    },
+    {
+      "id": "social-security-calculator",
+      "url": "https://tools.usefulverse.com/tools/social-security-calculator/",
+      "title": "Social Security Calculator Free | UsefulVerse",
+      "h1": "Social Security Calculator",
+      "description": "Estimate a US Social Security retirement benefit from AIME with 2025–2026 SSA bend points. Free, private and local.",
+      "localeCount": 36
+    },
+    {
+      "id": "word-puzzle-solver",
+      "url": "https://tools.usefulverse.com/tools/word-puzzle-solver/",
+      "title": "Word Finder & Anagram Solver Free | UsefulVerse",
+      "h1": "Word Puzzle Solver",
+      "description": "Find anagrams and crossword-pattern words with letter filters. Use a small local word list or paste your own. Free, private and no sign-up.",
+      "localeCount": 36
+    },
+    {
+      "id": "ludo-game",
+      "url": "https://tools.usefulverse.com/tools/ludo-game/",
+      "title": "Ludo Game Online Free | Play vs Computer | UsefulVerse",
+      "h1": "Ludo Game",
+      "description": "Play Ludo online for free: roll, move four tokens, capture on unsafe squares, and race home against local bots or pass-and-play. No sign-up.",
+      "localeCount": 36
+    },
+    {
+      "id": "memory-test",
+      "url": "https://tools.usefulverse.com/tools/memory-test/",
+      "title": "Memory Test Online Free | UsefulVerse",
+      "h1": "Memory Test",
+      "description": "Try a free memory test with digit-span and visual sequence rounds. Difficulty grows after correct answers; no account or IQ claims.",
+      "localeCount": 36
+    },
+    {
+      "id": "fuel-economy-calculator",
+      "url": "https://tools.usefulverse.com/tools/fuel-economy-calculator/",
+      "title": "Fuel Economy Calculator Free | UsefulVerse",
+      "h1": "Fuel Economy Calculator",
+      "description": "Measure real fuel economy in L/100 km, km/L or MPG. Log full-to-full refills, track cost per distance and export a CSV.",
+      "localeCount": 36
+    },
+    {
+      "id": "timeline-maker",
+      "url": "https://tools.usefulverse.com/tools/timeline-maker/",
+      "title": "Timeline Maker Free | UsefulVerse",
+      "h1": "Timeline Maker",
+      "description": "Make an event timeline from dates and ranges. Sort events, zoom in, and download a free SVG or CSV locally.",
+      "localeCount": 36
+    },
+    {
+      "id": "crossword-online",
+      "url": "https://tools.usefulverse.com/tools/crossword-online/",
+      "title": "Free Crossword Online | Play Word Puzzles | UsefulVerse",
+      "h1": "Crossword Online",
+      "description": "Play an original crossword puzzle online. Fill across and down clues, check answers, use hints, and start a fresh locally generated board.",
+      "localeCount": 36
+    },
+    {
+      "id": "extract-images-from-pdf",
+      "url": "https://tools.usefulverse.com/tools/extract-images-from-pdf/",
+      "title": "Extract Images from PDF Free | UsefulVerse",
+      "h1": "Extract Images from PDF",
+      "description": "Extract embedded PDF image objects as PNG files at decoded image size. Preview and download individually or together as a ZIP, locally.",
+      "localeCount": 36
+    },
+    {
+      "id": "business-letter-generator",
+      "url": "https://tools.usefulverse.com/tools/business-letter-generator/",
+      "title": "Business Letter Generator Free | UsefulVerse",
+      "h1": "Business Letter Generator",
+      "description": "Create a free formal business letter with a clear layout. Edit, preview, copy, download, or print on A4 or Letter paper.",
+      "localeCount": 36
+    },
+    {
+      "id": "markdown-table-generator",
+      "url": "https://tools.usefulverse.com/tools/markdown-table-generator/",
+      "title": "Markdown Table Generator Free | UsefulVerse",
+      "h1": "Markdown Table Generator",
+      "description": "Build Markdown tables online. Edit cells, align columns, import CSV or TSV, escape pipes, and copy the finished Markdown.",
+      "localeCount": 36
+    },
+    {
+      "id": "pdf-accessibility-checker",
+      "url": "https://tools.usefulverse.com/tools/pdf-accessibility-checker/",
+      "title": "PDF Accessibility Checker Free | UsefulVerse",
+      "h1": "PDF Accessibility Checker",
+      "description": "Check a PDF for basic accessibility signals: tags, title, language, selectable text, figures without alt text, and heading order.",
+      "localeCount": 36
+    },
+    {
+      "id": "docx-editor",
+      "url": "https://tools.usefulverse.com/tools/docx-editor/",
+      "title": "Edit DOCX Online Free | UsefulVerse",
+      "h1": "DOCX Editor",
+      "description": "Edit text in a modern DOCX document on your device, keep other package parts, preview changes, and download a new Word file.",
+      "localeCount": 36
+    },
+    {
+      "id": "vcard-generator",
+      "url": "https://tools.usefulverse.com/tools/vcard-generator/",
+      "title": "VCard Generator Free | UsefulVerse",
+      "h1": "VCard Generator",
+      "description": "Create a vCard 3.0 or 4.0 contact file with escaped Unicode text and optional photo. Preview, copy or download it locally.",
+      "localeCount": 36
+    },
+    {
+      "id": "meeting-planner",
+      "url": "https://tools.usefulverse.com/tools/meeting-planner/",
+      "title": "Meeting Planner: Free Time Zone Scheduler | UsefulVerse",
+      "h1": "Meeting Planner",
+      "description": "Find shared meeting times across time zones, including daylight-saving changes and overnight hours. Download a local ICS invite.",
+      "localeCount": 36
+    },
+    {
+      "id": "moon-phase-calculator",
+      "url": "https://tools.usefulverse.com/tools/moon-phase-calculator/",
+      "title": "Moon Phase Calculator: Free Lunar Calendar | UsefulVerse",
+      "h1": "Moon Phase Calculator",
+      "description": "Estimate the Moon phase, illuminated fraction and primary phase dates for a month. Free calculation in your browser, with no account.",
+      "localeCount": 36
+    },
+    {
+      "id": "vcard-converter",
+      "url": "https://tools.usefulverse.com/tools/vcard-converter/",
+      "title": "VCF to CSV Converter Free | UsefulVerse",
+      "h1": "VCF to CSV Converter",
+      "description": "Convert multiple VCF contacts to CSV in your browser. Choose columns; no upload and no changes to your contact book.",
+      "localeCount": 36
+    }
+  ]
+}

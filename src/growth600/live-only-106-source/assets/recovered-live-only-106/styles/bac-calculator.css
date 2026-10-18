@@ -1,0 +1,51 @@
+.bac-calculator {
+  display: grid;
+  gap: 1rem;
+}
+.bac-calculator__warning {
+  padding: 1rem;
+  border-inline-start: 0.3rem solid #b42318;
+  background: #fff1f0;
+  color: #491b16;
+  font-weight: 650;
+}
+.bac-calculator__fieldset {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+.bac-calculator__drink {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid var(--border, #d8dee9);
+  border-radius: 0.75rem;
+}
+.bac-calculator__drink h3 {
+  grid-column: 1/-1;
+  margin: 0;
+}
+.bac-calculator__results {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: var(--surface, #f5f7fa);
+}
+.bac-calculator__results dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  gap: 0.75rem;
+}
+.bac-calculator__results dl > div {
+  padding: 0.75rem;
+  background: var(--background, #fff);
+  border-radius: 0.5rem;
+}
+.bac-calculator__results dt {
+  font-weight: 600;
+}
+.bac-calculator__results dd {
+  margin: 0.35rem 0 0;
+  font-size: 1.25rem;
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,42 @@
+.social-security-calculator__form,
+.social-security-calculator__results {
+  display: grid;
+  gap: 1rem;
+}
+.social-security-calculator__form {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: end;
+}
+.social-security-calculator__form .actions,
+.social-security-calculator__form .hint,
+.social-security-calculator__form [data-status],
+.social-security-calculator__results {
+  grid-column: 1/-1;
+}
+.social-security-calculator__results dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+.social-security-calculator__results dl div {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color, #dce3e8);
+  border-radius: 0.75rem;
+}
+.social-security-calculator__results dt {
+  font-weight: 600;
+}
+.social-security-calculator__results dd {
+  margin: 0.35rem 0 0;
+  font-variant-numeric: tabular-nums;
+}
+.social-security-calculator__results [data-result='monthly'] {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+@media (max-width: 600px) {
+  .social-security-calculator__form,
+  .social-security-calculator__results dl {
+    grid-template-columns: 1fr;
+  }
+}

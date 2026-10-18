@@ -1,0 +1,26 @@
+.rational-expression-calculator__table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.rational-expression-calculator__table caption {
+  text-align: start;
+  font-weight: 700;
+  padding: 0.5rem;
+}
+.rational-expression-calculator__table td,
+.rational-expression-calculator__table th {
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--line, #d9deea);
+  text-align: start;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+  unicode-bidi: plaintext;
+}
+.rational-expression-calculator__table th {
+  width: 40%;
+}
+.rational-expression-calculator__table tr:last-child td,
+.rational-expression-calculator__table tr:last-child th {
+  border-bottom: 0;
+}

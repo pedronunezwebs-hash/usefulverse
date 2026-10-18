@@ -1,0 +1,96 @@
+.business-letter-generator {
+  display: grid;
+  gap: 1rem;
+}
+.business-letter-generator__options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: 1rem;
+}
+.business-letter-generator__preview {
+  max-width: 100%;
+  overflow: auto;
+  padding: clamp(0.5rem, 3vw, 1.5rem);
+  background: var(--surface-soft, #f3f5f8);
+  border: 1px solid var(--line, #d7dce5);
+  border-radius: 1rem;
+}
+.business-letter-generator__paper {
+  box-sizing: border-box;
+  width: min(100%, 8.5in);
+  min-height: 10in;
+  margin-inline: auto;
+  padding: clamp(1.1rem, 5vw, 0.85in);
+  background: #fff;
+  color: #17191d;
+  border: 1px solid #d5d8de;
+  box-shadow: 0 4px 20px #17203316;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+}
+.business-letter-generator__paper[data-style='compact'] {
+  font-size: 0.94em;
+  padding: clamp(1rem, 4vw, 0.65in);
+}
+.business-letter-generator__paper[data-style='modern'] {
+  border-top: 0.35rem solid #4965d8;
+}
+.business-letter-generator__recipient,
+.business-letter-generator__sender {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.business-letter-generator__date {
+  text-align: end;
+  margin-block: 2rem 1.5rem;
+}
+.business-letter-generator__subject {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+.business-letter-generator__body {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.7;
+}
+.business-letter-generator__signature {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin-block-start: 2rem;
+}
+@media print {
+  body:has(.business-letter-generator) * {
+    visibility: hidden !important;
+  }
+  .business-letter-generator__paper,
+  .business-letter-generator__paper * {
+    visibility: visible !important;
+  }
+  .business-letter-generator__paper {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+  .business-letter-generator__preview {
+    max-width: none;
+    padding: 0;
+    background: #fff;
+    border: 0;
+  }
+  .business-letter-generator__paper {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .business-letter-generator__body {
+    white-space: pre-wrap;
+  }
+}

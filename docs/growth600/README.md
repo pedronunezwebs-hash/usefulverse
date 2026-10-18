@@ -1,6 +1,17 @@
 # Plan de expansión a 600 herramientas · 2026-10-07
 
-Plan y registro vivo de implementación. Verificación directa del 11-oct-2026: producción tiene **163 herramientas Growth600** (sitemap: **5.904 URLs** = 163 × 36 + 36 portadas) y 277 herramientas originales (sitemap principal: **10.260 URLs**). Reverse Mortgage Calculator (#101) ya figura en el sitemap público. Esta rama añade Car Depreciation Calculator (#118) como herramienta 164 del hub; su build local genera 5.940 URLs estáticas y todavía no es producción. No confundir una build/PR con indexación.
+## Base consolidada para la planificación de 300 herramientas · 2026-10-19
+
+- Producción contiene 277 herramientas originales y 423 herramientas en el hub independiente, con 10.260 y 15.365 URLs respectivamente. Se verificó que el sitemap local del hub y el público tienen el mismo conjunto exacto de **15.365 URLs** (cero URLs añadidas o perdidas); los dos sitemaps suman 25.625 URLs únicas.
+- Los 106 IDs del hub que faltaban en el catálogo fuente ahora tienen reconstrucción editable desde la publicación: 3.816 HTML, controladores, estilos y recursos. No se halló el código fuente de autoría anterior al build; la reconstrucción no se presenta como el original.
+- QA visual en Chrome: 106/106 herramientas en móvil, tableta y escritorio (318 comprobaciones sin overflow). Se cargaron 73 ejemplos y se probaron 72 acciones primarias. Se corrigieron los fallos detectados en mezclador de colores y planificador de reuniones; ambos quedan sin errores de consola.
+- PR #131 restaura el sitio con un archivo estático de respaldo; esta rama sustituye esa etapa de build por los 106 archivos recuperados y conserva el mecanismo de clave de IndexNow de PR #132. El build estático no añade APIs, servicios facturables ni dependencia nueva.
+- El método de traducción y las 300 fichas candidatas guardadas están en [`docs/planning/usefulverse-1000-2026-10-19/`](../planning/usefulverse-1000-2026-10-19/). No empezar su implementación hasta integrar y respaldar esta base.
+- Se validó el build del hub y el sitemap. La suite completa no se repitió en este QA. No implica indexación.
+
+## Historial del plan y checkpoints previos
+
+Plan y registro vivo de implementación. Verificación directa del 11-oct-2026: producción tenía **163 herramientas Growth600** (sitemap: **5.904 URLs** = 163 × 36 + 36 portadas) y 277 herramientas originales (sitemap principal: **10.260 URLs**). Reverse Mortgage Calculator (#101) ya figuraba en el sitemap público. Esta rama añadía Car Depreciation Calculator (#118) como herramienta 164 del hub; su build local generaba 5.940 URLs estáticas. Ese estado histórico quedó superado el 19-oct. No confundir una build/PR con indexación.
 
 - [Plan y checklist completo](PLAN-600.md): catálogo protegido de 277, 323 candidatas nuevas, 36 idiomas, fases, contratos y gates.
 - [Progreso de implementación](PROGRESS.md): fases verificadas, decisiones, pilotos y siguiente acción para reanudar.

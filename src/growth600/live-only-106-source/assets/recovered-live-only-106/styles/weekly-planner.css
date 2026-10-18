@@ -1,0 +1,40 @@
+.weekly-planner-form {
+  display: grid;
+  gap: 1rem;
+}
+.weekly-planner__day {
+  border-block-start: 1px solid var(--border, #d8dce5);
+  padding-block-start: 0.75rem;
+}
+.weekly-planner__day ul {
+  display: grid;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+.weekly-planner__day li {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem;
+  border-radius: 0.5rem;
+  background: var(--surface-muted, #f5f6f8);
+}
+.weekly-planner__day li[data-overlap='true'] {
+  outline: 2px solid var(--warning, #b45309);
+}
+.weekly-planner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+@media print {
+  .weekly-planner-form > .actions,
+  .weekly-planner-form > .calculator-grid,
+  .weekly-planner-form > .hint,
+  .weekly-planner-form > .status,
+  .weekly-planner__actions {
+    display: none !important;
+  }
+}
