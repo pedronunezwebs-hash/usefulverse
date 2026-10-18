@@ -1,0 +1,25 @@
+.modulo-calculator__table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.modulo-calculator__table caption {
+  text-align: start;
+  font-weight: 700;
+  padding: 0.5rem;
+}
+.modulo-calculator__table td,
+.modulo-calculator__table th {
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--line, #d9deea);
+  text-align: start;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.modulo-calculator__table th {
+  width: 40%;
+}
+.modulo-calculator__table td {
+  font-variant-numeric: tabular-nums;
+  unicode-bidi: plaintext;
+}

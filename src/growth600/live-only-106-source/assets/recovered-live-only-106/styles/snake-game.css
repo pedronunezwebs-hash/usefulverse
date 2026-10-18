@@ -1,0 +1,69 @@
+.snake-game {
+  max-width: 38rem;
+  margin-inline: auto;
+}
+.snake-game__settings {
+  max-width: 15rem;
+}
+.snake-game__stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.snake-game__stats p {
+  margin: 0.3rem;
+}
+.snake-game canvas {
+  display: block;
+  width: min(100%, 30rem);
+  height: auto;
+  aspect-ratio: 1;
+  margin: 1rem auto;
+  border: 2px solid #25334a;
+  border-radius: 0.75rem;
+  outline-offset: 4px;
+  touch-action: manipulation;
+}
+.snake-game__dpad {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(4rem, 6rem));
+  justify-content: center;
+  gap: 0.5rem;
+  border: 0;
+  padding: 0.75rem;
+  margin: 1rem auto;
+}
+.snake-game__dpad legend {
+  grid-column: 1/-1;
+  text-align: center;
+  margin-inline: auto;
+  max-width: 35rem;
+}
+.snake-game__dpad [data-action='up'] {
+  grid-column: 2;
+}
+.snake-game__dpad [data-action='left'] {
+  grid-column: 1;
+  grid-row: 3;
+}
+.snake-game__dpad [data-action='down'] {
+  grid-column: 2;
+  grid-row: 3;
+}
+.snake-game__dpad [data-action='right'] {
+  grid-column: 3;
+  grid-row: 3;
+}
+.snake-game__dpad button {
+  min-height: 3rem;
+  touch-action: manipulation;
+}
+.snake-game .actions {
+  justify-content: center;
+}
+@media (prefers-reduced-motion: reduce) {
+  .snake-game * {
+    scroll-behavior: auto;
+  }
+}

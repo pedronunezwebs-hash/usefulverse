@@ -1,0 +1,19 @@
+.pdf-page-size-converter__limits,
+.pdf-page-size-converter__warning {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: var(--surface-subtle, #f4f6f8);
+}
+.pdf-page-size-converter__settings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: 1rem;
+  margin-block: 1.25rem;
+}
+.pdf-page-size-converter__preview,
+.pdf-page-size-converter__result {
+  margin-block: 1.25rem;
+  padding: 1rem;
+  border: 1px solid var(--border, #d5dbe2);
+  border-radius: 0.75rem;
+}

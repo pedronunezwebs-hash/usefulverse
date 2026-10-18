@@ -1,0 +1,27 @@
+{
+  "original_manifest": "manifest-integridad.json",
+  "original_files_verified": 35,
+  "additional_files": [
+    {
+      "file": "LEEME.md",
+      "bytes": 1036,
+      "sha256": "faccf3384e5214af768646de48c57576de3730acf68745344d13901eb2bd8ea5"
+    },
+    {
+      "file": "RECONCILIACION-106-LIVE-ONLY.md",
+      "bytes": 15355,
+      "sha256": "da1f6f62f0a65da0277897e9ca7255c5abbbf467e072a8dd938a2f2118e51ba2"
+    },
+    {
+      "file": "reconciliacion-106-live-only.json",
+      "bytes": 50750,
+      "sha256": "bd6893946775f21f0afcdcea4c589365a52eb0519245064e6c6b23e884aa6973"
+    },
+    {
+      "file": "recuperacion-base-local/manifest.json",
+      "bytes": 952,
+      "sha256": "18a60dbfe9f4b7f6b3c6819d9c8a64a8444b8a014c547f049e596deb68b3bb54"
+    }
+  ],
+  "base_recovery_files": 6
+}

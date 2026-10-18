@@ -1,0 +1,49 @@
+.word-puzzle-solver,
+.word-puzzle-solver form {
+  display: grid;
+  gap: 1rem;
+}
+.word-puzzle-solver__filters {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+.word-puzzle-solver__check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+.word-puzzle-solver__check input {
+  width: auto;
+  margin-block-start: 0.25rem;
+}
+.word-puzzle-solver [data-word-results] {
+  display: grid;
+  gap: 0.75rem;
+}
+.word-puzzle-solver__results {
+  max-height: 24rem;
+  overflow: auto;
+  padding-inline-start: 2rem;
+  columns: 2;
+  column-gap: 2rem;
+}
+.word-puzzle-solver__results li {
+  break-inside: avoid;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.2rem 0;
+}
+.word-puzzle-solver [data-word-letters][hidden],
+.word-puzzle-solver [data-word-pattern][hidden] {
+  display: none;
+}
+@media (max-width: 40rem) {
+  .word-puzzle-solver__filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .word-puzzle-solver__results {
+    columns: 1;
+  }
+}

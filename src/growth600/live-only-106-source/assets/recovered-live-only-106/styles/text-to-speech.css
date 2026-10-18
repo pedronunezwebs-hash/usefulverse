@@ -1,0 +1,29 @@
+.text-to-speech {
+  display: grid;
+  gap: 0.25rem;
+}
+.text-to-speech textarea {
+  min-height: 12rem;
+}
+.text-to-speech input[type='range'] {
+  width: min(100%, 24rem);
+  accent-color: var(--focus, #2459d3);
+}
+.text-to-speech .field output {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+.text-to-speech [data-speech-progress] {
+  display: grid;
+  gap: 0.6rem;
+}
+.text-to-speech progress {
+  width: 100%;
+  min-height: 1rem;
+  accent-color: var(--focus, #2459d3);
+}
+@media (max-width: 600px) {
+  .text-to-speech .actions .button {
+    flex: 1 1 8rem;
+  }
+}

@@ -1,0 +1,52 @@
+.stem-leaf-summary {
+  display: grid;
+  grid-template-columns: minmax(8rem, 1fr) 1fr;
+  gap: 0.4rem 1rem;
+  margin: 0 0 1rem;
+}
+.stem-leaf-summary dt {
+  font-weight: 650;
+}
+.stem-leaf-summary dd {
+  margin: 0;
+}
+.stem-leaf-key,
+.stem-leaf-summary dd,
+.stem-leaf-table {
+  font-variant-numeric: tabular-nums;
+}
+.stem-leaf-key {
+  margin: 1rem 0;
+  padding: 0.8rem 1rem;
+  border-inline-start: 4px solid var(--accent, #83a900);
+  background: var(--surface-muted, #f4f6f2);
+  unicode-bidi: plaintext;
+}
+.stem-leaf-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.stem-leaf-table caption {
+  text-align: start;
+  padding: 0.65rem;
+  font-weight: 700;
+}
+.stem-leaf-table td,
+.stem-leaf-table th {
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--line, #d9deea);
+  text-align: start;
+  vertical-align: top;
+}
+.stem-leaf-table thead th {
+  background: var(--surface-muted, #eef3ec);
+}
+.stem-leaf-table tbody th {
+  font-weight: 650;
+}
+.stem-leaf-digits {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.04em;
+  unicode-bidi: plaintext;
+  overflow-wrap: anywhere;
+}

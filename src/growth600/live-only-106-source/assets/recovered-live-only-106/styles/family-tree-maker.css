@@ -1,0 +1,18 @@
+.family-tree-maker-form {
+  display: grid;
+  gap: 1rem;
+}
+.family-tree-maker-form fieldset {
+  display: grid;
+  gap: 0.8rem;
+  min-width: 0;
+}
+.family-tree-maker-form [data-family-svg] {
+  overflow-x: auto;
+  max-width: 100%;
+}
+.family-tree-maker-form [data-family-svg] svg {
+  display: block;
+  max-width: none;
+  height: auto;
+}

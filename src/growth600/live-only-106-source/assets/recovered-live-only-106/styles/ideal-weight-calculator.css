@@ -1,0 +1,29 @@
+.ideal-weight-calculator__results {
+  margin-block-start: 1.5rem;
+}
+.ideal-weight-calculator__table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.ideal-weight-calculator__table {
+  border-collapse: collapse;
+  min-width: 34rem;
+  width: 100%;
+}
+.ideal-weight-calculator__table td,
+.ideal-weight-calculator__table th {
+  border: 1px solid var(--border, #d8dce4);
+  padding: 0.65rem;
+  text-align: start;
+  vertical-align: top;
+}
+.ideal-weight-calculator__table th {
+  background: var(--surface-muted, #f3f5f8);
+}
+.ideal-weight-calculator__reference,
+.ideal-weight-calculator__sources {
+  margin-block: 1rem;
+}
+.ideal-weight-calculator__sources li {
+  margin-block: 0.35rem;
+}

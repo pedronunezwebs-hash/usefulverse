@@ -284,9 +284,14 @@ try {
     env: { ...process.env, MARKETS_NO_CH_DIST: marketToolsDir, GROWTH600_DIST: mergedDir },
     maxBuffer: 8 * 1024 * 1024,
   });
+  await execFile(process.execPath, [resolve(root, 'scripts/merge-live-only-106.mjs')], {
+    cwd: root,
+    env: { ...process.env, GROWTH600_DIST: mergedDir },
+    maxBuffer: 8 * 1024 * 1024,
+  });
   await rename(mergedDir, outputDir);
   await Promise.all([rm(growthOnlyDir, { recursive: true }), rm(marketToolsDir, { recursive: true })]);
 } catch (error) {
   throw new Error(`Growth600 + 100 market-tool release assembly failed. Growth build: ${growthOnlyDir}; market build: ${marketToolsDir}; merged staging: ${mergedDir}. ${error.message}`, { cause: error });
 }
-console.log(`Assembled additive release with the Growth600 pages plus ${growthPilotTools.length} Growth tools and ${marketTools.length} market tools; publishing directory: ${outputDir}.`);
+console.log(`Assembled additive release with ${growthPilotTools.length} Growth tools, ${marketTools.length} market tools, and the 106-tool published recovery snapshot; publishing directory: ${outputDir}.`);

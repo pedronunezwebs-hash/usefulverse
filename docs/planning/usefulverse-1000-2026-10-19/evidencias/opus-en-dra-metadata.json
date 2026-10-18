@@ -1,0 +1,114 @@
+{
+  "_id": "621ffdc036468d709f17595b",
+  "id": "Helsinki-NLP/opus-mt-en-dra",
+  "private": false,
+  "pipeline_tag": "translation",
+  "library_name": "transformers",
+  "tags": [
+    "transformers",
+    "pytorch",
+    "tf",
+    "marian",
+    "text2text-generation",
+    "translation",
+    "en",
+    "ta",
+    "kn",
+    "ml",
+    "te",
+    "dra",
+    "license:apache-2.0",
+    "endpoints_compatible",
+    "deploy:azure",
+    "region:us"
+  ],
+  "downloads": 1536,
+  "likes": 3,
+  "modelId": "Helsinki-NLP/opus-mt-en-dra",
+  "author": "Helsinki-NLP",
+  "sha": "5ecfd223f954f860b67f1b4c42e6f4c70d347581",
+  "lastModified": "2023-08-16T11:29:22.000Z",
+  "gated": false,
+  "disabled": false,
+  "widgetData": [
+    {
+      "text": "My name is Wolfgang and I live in Berlin"
+    },
+    {
+      "text": "My name is Sarah and I live in London"
+    }
+  ],
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "MarianMTModel"
+    ],
+    "model_type": "marian",
+    "tokenizer_config": {}
+  },
+  "cardData": {
+    "language": [
+      "en",
+      "ta",
+      "kn",
+      "ml",
+      "te",
+      "dra"
+    ],
+    "tags": [
+      "translation"
+    ],
+    "license": "apache-2.0"
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForSeq2SeqLM",
+    "pipeline_tag": "text2text-generation",
+    "processor": "AutoTokenizer"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "config.json"
+    },
+    {
+      "rfilename": "generation_config.json"
+    },
+    {
+      "rfilename": "metadata.json"
+    },
+    {
+      "rfilename": "pytorch_model.bin"
+    },
+    {
+      "rfilename": "source.spm"
+    },
+    {
+      "rfilename": "target.spm"
+    },
+    {
+      "rfilename": "tf_model.h5"
+    },
+    {
+      "rfilename": "tokenizer_config.json"
+    },
+    {
+      "rfilename": "vocab.json"
+    }
+  ],
+  "spaces": [
+    "anabaena/vaaksiddhi",
+    "BenitoMF/traduccions",
+    "Arsive/lt_space",
+    "Shashi23/MultilanguageTranslationApp",
+    "swastopia/Transformer_Translation_App",
+    "akash4AI/demo-multilingual-translator"
+  ],
+  "createdAt": "2022-03-02T23:29:04.000Z",
+  "inference": "warm",
+  "usedStorage": 928449224
+}

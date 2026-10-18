@@ -1,0 +1,96 @@
+.sleep-debt-calculator {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.sleep-debt-calculator input,
+.sleep-debt-calculator textarea {
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 100%;
+}
+.sleep-debt-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  min-width: 0;
+}
+.sleep-debt-consent input {
+  flex: 0 0 auto;
+  width: auto;
+  margin-block-start: 0.25rem;
+}
+.sleep-debt-figure,
+.sleep-debt-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.sleep-debt-chart {
+  display: block;
+  width: 100%;
+  min-width: 440px;
+  height: auto;
+}
+.sleep-debt-axis {
+  stroke: currentColor;
+  stroke-opacity: 0.35;
+  stroke-width: 1;
+}
+.sleep-debt-target {
+  stroke: #54742a;
+  stroke-dasharray: 6 4;
+  stroke-width: 2;
+}
+.sleep-debt-bar {
+  fill: #b7d96a;
+}
+.sleep-debt-label,
+.sleep-debt-tick {
+  fill: currentColor;
+  font:
+    12px system-ui,
+    sans-serif;
+}
+.sleep-debt-table {
+  border-collapse: collapse;
+  min-width: 34rem;
+  width: 100%;
+  font-variant-numeric: tabular-nums;
+}
+.sleep-debt-table td,
+.sleep-debt-table th {
+  padding: 0.55rem 0.75rem;
+  border-block-end: 1px solid #d7dce2;
+  text-align: start;
+  white-space: nowrap;
+}
+.sleep-debt-table caption {
+  text-align: start;
+  font-weight: 600;
+  padding: 0.5rem 0;
+}
+.sleep-debt-table-scroll:focus-visible {
+  outline: 3px solid #6a8c2d;
+  outline-offset: 3px;
+}
+.sleep-debt-calculator [data-result-content] dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0;
+}
+.sleep-debt-calculator [data-result-content] dt {
+  font-weight: 600;
+}
+.sleep-debt-calculator [data-result-content] dd {
+  margin-inline-start: 0;
+  font-variant-numeric: tabular-nums;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sleep-debt-calculator * {
+    scroll-behavior: auto;
+  }
+}

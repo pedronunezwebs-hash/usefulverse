@@ -1,0 +1,72 @@
+slug	nombre	keyword	volume	exclusion
+fingerspelling-trainer	Alfabeto manual de signos	fingerspelling practice	1000	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+perspective-corrector	Corrector de perspectiva	perspective tool	1000	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+lens-distortion-corrector	Corrector de distorsión de lente	lens distortion correction	880	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+three-way-merge	Fusionador de tres versiones	merge tool	1600	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+software-license-chooser	Selector de licencias de software	choose a license	1000	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+file-type-detector	Identificador de tipo de archivo	file type checker	1300	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+binary-disassembler	Desensamblador local	disassembler online	1300	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+local-file-search	Buscador local de archivos	search in files	260	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+buraco	Buraco	burraco	49500	Solapamiento de combinaciones con canasta-card-game pendiente de resolver; no reservar una URL nueva.
+french-tarot	Tarot francés de cartas	tarot jeu	n.a.	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+chinese-checkers	Damas chinas	chinese checkers	60500	La familia Halma ya está en halma-game; priorizar variante dentro de la existente.
+nine-mens-morris	Molino de nueve fichas	nine mens morris	18100	Ya existe nine-mens-morris.
+breakthrough-game	Breakthrough	breakthrough game	1000	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+sprouts-game	Sprouts	sprouts game	1900	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+numberlink	Numberlink	numberlink	1600	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+yajilin-puzzle	Yajilin	yajilin	390	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+kuromasu-puzzle	Kuromasu	kuromasu	590	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+tents-and-trees	Tiendas y árboles	tents and trees	1600	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+unit-circle-trainer	Círculo unitario interactivo	unit circle calculator	1300	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+electron-configuration	Configuración electrónica	electron configuration calculator	590	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+chemical-safety-lookup	Consulta de seguridad química	sds search	1000	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+protein-structure-viewer	Visor de estructuras proteicas	pdb viewer	1000	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+epidemiology-calculator	Riesgos relativos y odds ratio	odds ratio calculator	4400	Fisher existente ya incluye tabla 2×2 y odds ratio; ampliar antes de contar otra herramienta.
+queuing-calculator	Teoría de colas	queueing calculator	170	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+ingredient-substitution	Sustitutos de ingredientes	ingredient substitute	140	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+pan-size-converter	Adaptador de moldes de repostería	cake pan converter	590	Perfil geométrico que puede añadirse a recipe-scaler.
+coffee-brewing-calculator	Recetas de café	coffee calculator	3600	Demanda insuficiente y ampliación posible de ratio-proportion-calculator.
+homebrew-recipe-calculator	Formulador de cerveza casera	beer brewing calculator	1000	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+mushroom-identifier	Identificador visual de setas	mushroom identifier	18100	Fiabilidad y licencias del modelo pendientes; se retira de esta tanda para evitar falsa utilidad práctica.
+pet-medication-log	Registro de medicación de mascotas	pet medication tracker	70	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+home-inventory	Inventario del hogar	home inventory app	1900	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+appliance-repair-guide	Guía de diagnóstico de electrodomésticos	washing machine troubleshooting	1900	Cobertura por marca/modelo y derechos de manuales sin resolver; no es una herramienta sólida para esta tanda.
+recycling-sorter	Clasificador de residuos	recycling guide	1600	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+event-countdown-page	Cuenta atrás compartible	countdown clock	33100	Cuenta atrás ya incluida en online-timer.
+menopause-symptom-log	Registro de síntomas de menopausia	menopause symptom tracker	320	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+us-estate-tax	Impuesto sucesorio federal de Estados Unidos	estate tax calculator	1000	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+mexico-profit-sharing	Reparto PTU de México	calculadora ptu	880	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+canada-mortgage-stress-test	Prueba hipotecaria de Canadá	mortgage stress test calculator	590	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+credit-score-simulator	Simulador educativo de perfil crediticio	credit score simulator	6600	No existe un modelo abierto verificado que permita prometer un score crediticio real.
+freelance-rate-calculator	Tarifa profesional sostenible	freelance rate calculator	880	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+subscription-pricing-simulator	Precio de suscripción y cohortes	saas calculator	260	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+inventory-reorder-calculator	Reposición de inventario	eoq calculator	590	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+critical-path-planner	Planificador de ruta crítica	critical path method	18100	Combinar ruta crítica con PERT en un solo planificador.
+lean-canvas-builder	Lienzo Lean	lean canvas	60500	Mantener como plantilla del lienzo de negocio, no otra herramienta contada.
+likert-survey-analyzer	Análisis de escalas Likert	likert scale analysis	480	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+timeboxing-planner	Planificación por bloques	time blocking planner	3600	El reparto de bloques se solapa con study-planner y weekly-planner.
+decision-randomizer	Sorteo ponderado verificable	weighted wheel	9900	Mejorar random-name-picker con pesos, no crear otra rueda.
+round-table-agenda	Agenda de reunión participativa	meeting agenda template	33100	Integrar agenda en meeting-minutes-template.
+document-template-engine	Plantillas con campos y condiciones	document automation	1000	Combinar campos y condiciones con mail merge en una única herramienta.
+pdf-layer-manager	Gestor de capas PDF	pdf layers	720	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+pdf-preflight	Preflight de impresión PDF	pdf preflight	320	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+spreadsheet-auditor	Auditor de hojas de cálculo	excel audit	320	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+spreadsheet-pivot-builder	Tablas dinámicas locales	pivot table online	90	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+spreadsheet-data-cleaner	Limpieza de datos tabulares	data cleaning tool	6600	Posible ampliación de csv-editor; no contar sin necesidad distinta.
+audio-source-separator	Separador de instrumentos	stem splitter	40500	Ampliar vocal-remover a stems si la misma arquitectura lo permite.
+audio-equalizer	Ecualizador de audio	audio equalizer	12100	Añadir como efecto de audio-editor.
+audio-phase-checker	Analizador de fase estéreo	phase correlation meter	210	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+music-practice-log	Registro de práctica musical	music practice log	320	Plantilla de habit-tracker/workout-planner: no aporta demanda o independencia suficientes.
+temperament-tuning-tool	Afinaciones y temperamentos	tuning calculator	390	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+sample-slicer	Cortador de muestras musicales	audio slicer	590	Integrar cortes y pads con audio-editor/soundboard antes de otra URL.
+midi-arranger	Editor multipista MIDI	midi editor	8100	Ampliar online-sequencer con importación y pistas en vez de duplicar el editor.
+local-voice-generator	Voz sintética exportable	ai voice generator	368000	La voz exportable puede ser una mejora de text-to-speech; no contar como herramienta nueva.
+local-video-generator	Generador de vídeo local	ai video generator	1500000	Rendimiento de generación local en dispositivos corrientes no demostrado; no prometer gratuidad operativa escalable.
+online-compass	Brújula del dispositivo	compass online	301000	Usar orientación como modo del producto de brújula/qibla y evitar dos interfaces iguales.
+birth-chart	Carta natal calculada	birth chart	673000	Ya existe natal-chart-calculator: misma función con otro nombre.
+tarot-card-reading	Tirada de tarot recreativa	tarot reading	n.a.	Fuera de las 300 candidatas por menor demanda medida; no aprobado para implementación.
+numerology-calculator	Numerología recreativa	numerology	368000	Ya existe numerology-calculator.
+tattoo-preview	Simulador de tatuajes	tattoo design app	8100	Operación de composición que debería vivir en image-editor o mockup-generator.
+signature-designer	Diseñador de firma manuscrita	signature generator	165000	La firma dibujada ya es parte de pdf-form-filler; exportarla no crea por sí sola otra función.
+stock-screening-local	Filtro de datos bursátiles propios	stock screener	74000	Un screener sin datos actuales no satisface la demanda habitual; coste y licencias no resueltos.
+dream-journal-symbols	Diario y símbolos de sueños	dream meaning	74000	Diario y diccionario simbólico no justifican aquí otra URL frente a journal-online.

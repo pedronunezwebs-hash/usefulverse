@@ -1,0 +1,124 @@
+.box-plot-calculator,
+.box-plot-sample {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
+  box-sizing: border-box;
+}
+.box-plot-calculator {
+  gap: 1rem;
+  min-width: 0;
+}
+.box-plot-sample {
+  gap: 0.8rem;
+  min-inline-size: 0;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--line, #d9deea);
+  border-radius: 1rem;
+}
+.box-plot-sample,
+.box-plot-sample > * {
+  min-width: 0;
+  max-width: 100%;
+}
+.box-plot-sample legend {
+  max-width: 100%;
+  padding-inline: 0.35rem;
+  font-weight: 700;
+  white-space: normal;
+}
+.box-plot-sample textarea {
+  resize: vertical;
+  font-variant-numeric: tabular-nums;
+}
+.box-plot-calculator select,
+.box-plot-sample input,
+.box-plot-sample textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.box-plot-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.box-plot-axis,
+.box-plot-whisker,
+.box-plot-whisker-cap {
+  stroke: var(--line-strong, #718096);
+  stroke-width: 1.5;
+}
+.box-plot-box {
+  fill: var(--surface-muted, #e8efdb);
+  stroke: var(--accent, #668900);
+  stroke-width: 2;
+}
+.box-plot-median {
+  stroke: var(--accent-strong, #365400);
+  stroke-width: 3;
+}
+.box-plot-outlier {
+  fill: var(--accent-strong, #365400);
+  stroke: var(--surface, #fff);
+  stroke-width: 1;
+}
+.box-plot-label,
+.box-plot-tick {
+  fill: var(--text, #202720);
+  font:
+    12px system-ui,
+    sans-serif;
+}
+.box-plot-figure,
+.box-plot-table-scroll {
+  max-width: 100%;
+  min-width: 0;
+  border: 1px solid var(--line, #d9deea);
+}
+.box-plot-figure {
+  margin: 0 0 1rem;
+  padding: 0.65rem;
+  border-radius: 0.8rem;
+  background: var(--surface, #fff);
+}
+.box-plot-table-scroll {
+  width: 100%;
+  overflow: auto;
+  border-radius: 0.6rem;
+}
+.box-plot-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.box-plot-table caption {
+  text-align: start;
+  padding: 0.65rem;
+  font-weight: 700;
+}
+.box-plot-table td,
+.box-plot-table th {
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--line, #d9deea);
+  text-align: start;
+}
+.box-plot-table thead th {
+  background: var(--surface-muted, #eef3ec);
+}
+.box-plot-table tbody th {
+  font-weight: 650;
+}
+@media (max-width: 520px) {
+  .box-plot-chart .box-plot-label,
+  .box-plot-chart .box-plot-tick {
+    font-size: 14px;
+  }
+  .box-plot-figure {
+    padding: 0.35rem;
+  }
+}

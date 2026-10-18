@@ -1,0 +1,159 @@
+.eisenhower-matrix__note,
+.eisenhower-matrix__rules {
+  max-width: 76ch;
+  margin: 1rem auto;
+  color: var(--muted);
+}
+.eisenhower-matrix__rules {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+.eisenhower-matrix__rules p {
+  flex: 1 1 20rem;
+  margin: 0.35rem 0;
+}
+.eisenhower-matrix__form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 58rem;
+  margin: 1.25rem auto;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface);
+}
+.eisenhower-matrix__form label {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+}
+.eisenhower-matrix__form input,
+.eisenhower-matrix__form select,
+.eisenhower-matrix__form textarea,
+.eisenhower-matrix__task-actions select {
+  max-width: 100%;
+  min-width: 0;
+}
+.eisenhower-matrix__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 1rem auto;
+}
+.eisenhower-matrix__completed-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.eisenhower-matrix__summary {
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.eisenhower-matrix__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 76rem;
+  margin: 1.25rem auto;
+}
+.eisenhower-matrix__quadrant {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent);
+  border-radius: 1rem;
+  background: var(--surface);
+}
+.eisenhower-matrix__quadrant--do {
+  --accent: #c64b4b;
+}
+.eisenhower-matrix__quadrant--schedule {
+  --accent: #4774bf;
+}
+.eisenhower-matrix__quadrant--delegate {
+  --accent: #b58122;
+}
+.eisenhower-matrix__quadrant--drop {
+  --accent: #66806e;
+}
+.eisenhower-matrix__quadrant h2 {
+  margin: 0.15rem 0 0.35rem;
+}
+.eisenhower-matrix__quadrant > p {
+  color: var(--muted);
+}
+.eisenhower-matrix__quadrant ol {
+  display: grid;
+  gap: 0.65rem;
+  padding-inline-start: 1.4rem;
+}
+.eisenhower-matrix__task {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--background);
+}
+.eisenhower-matrix__task[data-done='true'] .eisenhower-matrix__task-content > strong {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+.eisenhower-matrix__task-content p {
+  margin: 0.4rem 0 0;
+  overflow-wrap: anywhere;
+}
+.eisenhower-matrix__due {
+  font-size: 0.9em;
+  color: var(--muted);
+}
+.eisenhower-matrix__task-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.65rem;
+}
+.eisenhower-matrix__task-actions button {
+  min-height: 2.25rem;
+}
+.eisenhower-matrix__empty {
+  padding: 0.5rem;
+  color: var(--muted);
+  font-style: italic;
+}
+.eisenhower-matrix :focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+.eisenhower-matrix [data-status] {
+  min-height: 1.5em;
+  text-align: center;
+}
+@media (max-width: 680px) {
+  .eisenhower-matrix__form,
+  .eisenhower-matrix__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media print {
+  .eisenhower-matrix [data-status],
+  .eisenhower-matrix__form,
+  .eisenhower-matrix__note,
+  .eisenhower-matrix__rules,
+  .eisenhower-matrix__task-actions,
+  .eisenhower-matrix__toolbar {
+    display: none !important;
+  }
+  .eisenhower-matrix__grid {
+    gap: 0.5rem;
+  }
+  .eisenhower-matrix__quadrant {
+    break-inside: avoid;
+    color: #111;
+    background: #fff;
+    border-color: #555;
+  }
+}

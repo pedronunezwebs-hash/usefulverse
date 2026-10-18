@@ -1,0 +1,15 @@
+@@ -8,2 +8,3 @@
+ import { renderPage } from '../src/markets-no-ch/render.mjs';
++import { norwayDisabilityBenefitEnglish } from '../src/markets-no-ch/norway-disability-benefit-copy-en.mjs';
+ 
+@@ -40,3 +41,4 @@
+ for (const tool of marketTools) {
+-  const copy = { ...english, ...english[tool.mode], actions: english.actions, messages: english.messages };
++  const modeCopy = tool.mode === 'norwayDisabilityBenefit' ? norwayDisabilityBenefitEnglish : english[tool.mode];
++  const copy = { ...english, ...modeCopy, actions: english.actions, messages: english.messages };
+   for (const locale of locales) {
+@@ -52,3 +54,3 @@
+ await mkdir(assets, { recursive: true });
+-for (const name of ['controller.mjs', 'logic.mjs', 'binary-worker.mjs', 'bubble-shooter.mjs', 'markets.css']) {
++for (const name of ['controller.mjs', 'norway-disability-benefit-controller.mjs', 'norway-disability-benefit.mjs', 'logic.mjs', 'binary-worker.mjs', 'bubble-shooter.mjs', 'markets.css']) {
+   await copyFile(join(root, 'src/markets-no-ch', name), join(assets, name === 'markets.css' ? 'markets-no-ch.css' : name));

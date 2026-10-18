@@ -1,0 +1,93 @@
+.pdf-bookmarks-editor {
+  display: grid;
+  gap: 1rem;
+}
+.pdf-bookmarks-editor__warning {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-inline-start: 4px solid #b7791f;
+  background: #fff9ed;
+  color: #503a18;
+}
+.pdf-bookmarks-editor__limits {
+  margin: 0;
+  color: var(--muted);
+}
+.pdf-bookmarks-editor__workspace {
+  display: grid;
+  gap: 0.75rem;
+}
+.pdf-bookmarks-editor__result h3,
+.pdf-bookmarks-editor__workspace h2 {
+  margin: 0.25rem 0;
+}
+.pdf-bookmarks-editor__empty {
+  margin: 0;
+  padding: 0.75rem;
+  border: 1px dashed var(--line);
+  border-radius: 0.6rem;
+  color: var(--muted);
+}
+.pdf-bookmarks-editor__list {
+  display: grid;
+  gap: 0.65rem;
+}
+.pdf-bookmarks-editor__row {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(6rem, 0.7fr) minmax(8rem, 1fr);
+  gap: 0.65rem 1rem;
+  min-width: 0;
+  padding: 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+}
+.pdf-bookmarks-editor__row legend {
+  padding-inline: 0.35rem;
+  font-weight: 700;
+}
+.pdf-bookmarks-editor__row .field {
+  min-width: 0;
+}
+.pdf-bookmarks-editor__row .field input,
+.pdf-bookmarks-editor__row .field select {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+}
+.pdf-bookmarks-editor__closed {
+  display: flex;
+  grid-column: 1/-1;
+  align-items: center;
+  gap: 0.55rem;
+}
+.pdf-bookmarks-editor__row .actions {
+  grid-column: 1/-1;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.pdf-bookmarks-editor__result {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+}
+.pdf-bookmarks-editor [data-bookmark-json] {
+  box-sizing: border-box;
+  width: 100%;
+  font:
+    400 0.9rem/1.5 ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    monospace;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 600px) {
+  .pdf-bookmarks-editor__row {
+    grid-template-columns: minmax(0, 1fr) minmax(5rem, 0.6fr);
+  }
+  .pdf-bookmarks-editor__row .field:nth-of-type(3) {
+    grid-column: 1/-1;
+  }
+  .pdf-bookmarks-editor__row .actions .button {
+    flex: 1 1 auto;
+  }
+}

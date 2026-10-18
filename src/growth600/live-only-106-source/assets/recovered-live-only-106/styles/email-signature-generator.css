@@ -1,0 +1,28 @@
+.email-signature-generator .calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
+}
+.email-signature-generator input[type='color'] {
+  min-height: 2.75rem;
+  padding: 0.25rem;
+}
+.email-signature-generator__preview {
+  overflow: auto;
+  padding: 1rem;
+  border: 1px solid var(--border, #d9dee8);
+  border-radius: 0.75rem;
+  background: #fff;
+  color: #202124;
+}
+.email-signature-generator [data-signature-html] {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0 0;
+  font:
+    0.8rem/1.5 ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    monospace;
+  resize: vertical;
+}

@@ -1,0 +1,39 @@
+.hiking-time-calculator {
+  display: grid;
+  gap: 1rem;
+}
+.hiking-time-calculator .calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: 1rem;
+}
+.hiking-time-calculator label {
+  display: grid;
+  gap: 0.4rem;
+}
+.hiking-time-calculator input,
+.hiking-time-calculator select {
+  max-width: 100%;
+  min-height: 2.75rem;
+  padding: 0.55rem;
+  border: 1px solid var(--line, #cbd5e1);
+  border-radius: 0.6rem;
+  background: var(--surface, #fff);
+  color: inherit;
+}
+.hiking-time-calculator table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.hiking-time-calculator td,
+.hiking-time-calculator th {
+  padding: 0.65rem;
+  text-align: start;
+  border-bottom: 1px solid var(--line, #cbd5e1);
+}
+.hiking-time-calculator [data-result] tr:last-child {
+  font-weight: 700;
+}
+.hiking-time-calculator [data-hiking-custom][hidden] {
+  display: none;
+}

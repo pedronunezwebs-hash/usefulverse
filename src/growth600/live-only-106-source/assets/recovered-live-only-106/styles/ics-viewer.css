@@ -1,0 +1,16 @@
+.ics-viewer__filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: 1rem;
+  margin-block: 1rem;
+}
+.ics-viewer__limits,
+.ics-viewer__privacy,
+.ics-viewer__scope {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: var(--surface-subtle, #f4f6f8);
+}
+.ics-viewer__results {
+  margin-block: 1.25rem;
+}

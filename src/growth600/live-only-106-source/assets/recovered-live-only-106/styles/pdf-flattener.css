@@ -1,0 +1,19 @@
+.pdf-flattener {
+  display: grid;
+  gap: 1rem;
+}
+.pdf-flattener__warning {
+  padding: 1rem;
+  border-inline-start: 0.3rem solid #a15c00;
+  background: #fff8e8;
+  color: #3b2a12;
+}
+.pdf-flattener__output {
+  display: inline-flex;
+  width: max-content;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.pdf-flattener__limits {
+  font-size: 0.95em;
+}

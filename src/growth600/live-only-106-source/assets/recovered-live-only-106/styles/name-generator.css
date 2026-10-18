@@ -1,0 +1,13 @@
+.name-generator [data-name-results] {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: 0.5rem 1.5rem;
+  padding-inline-start: 1.5rem;
+}
+.name-generator [data-name-results] li {
+  overflow-wrap: anywhere;
+  padding: 0.35rem 0;
+}
+.name-generator [data-name-seed] {
+  overflow-wrap: anywhere;
+}
