@@ -14,17 +14,17 @@ Browser-first collection of fast, private, static tools for everyday work.
 
 ## Separate tools hub
 
-The additional Growth600 tools are published on a separate static Cloudflare Pages site at
-[tools.usefulverse.com](https://tools.usefulverse.com/), so they do not replace or
-change the 277-tool catalog above. The hub currently has 423 tools in the same 36
-locales. Its 106 tools missing from editable catalogs have been reconstructed from
-published assets into editable page/controller/resource files. The original
-pre-build source modules were not available. A local release build matches all
-15,365 public hub URLs exactly, and visual QA covers all 106 tools at mobile,
-tablet and desktop sizes. The sitemap inventory is regenerated below. The staged
-translation workflow and 300-tool plan are saved in
+The tools hub is live as a separate static Cloudflare Pages site at
+[tools.usefulverse.com](https://tools.usefulverse.com/), without replacing the
+277-tool catalog above. It serves 423 tools across the same 36 locales. The 106
+tools missing from the editable catalog have reconstructed, editable pages,
+controllers and resources based on their published assets; their original
+pre-build authoring modules were not available. The deployed hub sitemap has
+15,365 URLs and matches the release build exactly. Visual QA covers all 106 tools
+at mobile, tablet and desktop sizes. The translation workflow and plan for the
+next 300 tools are saved in
 [docs/planning/usefulverse-1000-2026-10-19/](docs/planning/usefulverse-1000-2026-10-19/).
-The original checklist and implementation record are in
+The original checklist and current implementation record are in
 [docs/growth600/PLAN-600.md](docs/growth600/PLAN-600.md) and
 [docs/growth600/PROGRESS.md](docs/growth600/PROGRESS.md).
 
