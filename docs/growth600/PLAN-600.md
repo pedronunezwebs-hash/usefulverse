@@ -421,6 +421,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `tire diameter calculator` — sin métrica obtenida; no atribuir volumen.
   - `tire size calculator free online`; `tire size calculator with example`; `tire size calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Checkpoint local (2026-10-15; sin publicar):** analizador local solo para Apache/Nginx Combined; filtra por clase HTTP y fechas UTC, agrega por estado/método/día, y exporta esos totales sin datos de IP, ruta, query, referrer, agente de usuario ni líneas rechazadas. Límites explícitos: 10 MiB, 100.000 líneas, 8.192 caracteres por línea; fechas reales validadas y suma de bytes segura. 36 copias estáticas de Google Translate, etiquetadas como traducción automática aceptada por el propietario; no revisión nativa. Casos de parser, privacidad, filtros, overflow, formularios, locales, bundle y build focal **384/384**; `npm test` completo **2.044/2.044**. Build aislado: **6.624 páginas estáticas** (183 herramientas × 36 + 36 portadas), 6.900 archivos. Aún sin QA visual/responsive, commit, push, CI ni deploy; gates C/F/E/X/L/B/P/S siguen abiertos. El sitemap generado solo existe en el directorio temporal de validación y no se envió a buscadores.
 - **Checkpoint local (2026-10-11; no publicado):** calculador por rotaciones de Jacobi para matrices reales simétricas 2×2–8×8, autovectores normalizados, orden ascendente, residual por par, ejemplo diagonal y copia de resultados. Límites explícitos para entradas ±1.000.000; rechaza matrices no simétricas, tamaño/formato inválido y falta de convergencia. Suite de lógica 5/5, catálogo/formulario/localización inicial aprobados; 36 copias estáticas sencillas desde Google Translate. Faltan suite final, build reproducible, prueba en navegador móvil/RTL, gates del repo, PR, despliegue y verificación pública. La herramienta no se cuenta todavía entre las publicadas.
 - **Cierre (2026-10-09):** PR #81 integrada; pipeline principal y publicación del hub correctos. Muestras EN/ES/AR HTTP 200 y sitemap sin duplicados. Traducción automática básica, no revisión nativa; no se afirma indexación.
 - **Avance comprobado (2026-10-08):** herramienta local en inglés implementada con modos directo/inverso para sumas acotadas de polinomios, exponentiales y seno/coseno; la inversa acepta términos parciales estándar ya separados. Muestra ROC, límites de sintaxis y resultado accesible; no usa CAS ni API externa. Suite focalizada (lógica, controlador, formulario, catálogo, contrato de 36 locales, render y build): **159/159 aprobadas**. Bundle minificado y validado por el guard local: **6.719 bytes**. Los otros 35 idiomas siguen pendientes, el release gate los bloquea; faltan QA visual y despliegue. Recuento: **80/323** candidatas con implementación inglesa; quedan 243 filas del plan, incluida una duplicada que debe sustituirse.
@@ -1623,6 +1624,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 310 · Inductor Calculator
 
+- **Avance local (2026-10-14):** motor Wheeler para solenoide de aire y modo de toroide basado en el AL exacto de ficha técnica; modo de objetivo de vueltas; formulario, controlador, copy inglés y 36 copias estáticas preparadas. Pruebas focalizadas del motor: **5/5**. La matriz de traducción usa el flujo gratuito ya autorizado. Aún faltan ejecutar los gates integrados y la inspección del navegador; **no está publicada**.
+
 - [ ] **C/F/E/X/L/B/P/S completos — `inductor-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/inductor-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `inductance calculator` — 390 búsquedas/mes US/en, KD 6; nivel C. CPC — USD (no CPM).
@@ -1636,6 +1639,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 
 ### 311 · Centripetal Force Calculator
+
+- **Avance local (2026-10-14):** motor con entrada por velocidad o frecuencia (Hz/RPM), conversiones métricas e imperiales, velocidad angular, período, aceleración y fuerza; formulario y controlador locales. Pruebas focalizadas del motor: **5/5**. La matriz estática de 36 idiomas está generándose por el flujo gratuito autorizado. Aún faltan ejecutar los gates integrados y la inspección del navegador; **no está publicada**.
 
 - [ ] **C/F/E/X/L/B/P/S completos — `centripetal-force-calculator`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/centripetal-force-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
@@ -2204,6 +2209,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `rental property yield calculator` — 10/mes US/en; KD 13.
   - `rental yield calculator free online`; `rental yield calculator with example`; `rental yield calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Checkpoint local (2026-10-15):** calcula rendimiento bruto/neto en el navegador; resta vacancia y gastos operativos elegidos, e informa NOI e ingreso mensual medio. Excluye deuda, impuestos de renta, tasación y recomendación. 36 copias estáticas mediante Google Translate. La suite focal pasó **382/382** antes del ajuste final del controlador RSA; esta calculadora no se alteró desde esa prueba. No publicada y sin QA visual/release, por lo que la checklist permanece abierta.
 
 ## Checklist · Matemática y estadística
 
@@ -3049,6 +3055,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 ### 313 · Aes Encryption Tool
 
 - [ ] **C/F/E/X/L/B/P/S completos — `aes-encryption-tool`**
+- **Progreso local (2026-10-15):** motor AES-GCM y contenedor binario versionado; clave PBKDF2 local, límites de tamaño, formulario, controlador y CSS específicos; pruebas de ida/vuelta, clave incorrecta, ciphertext alterado y metadatos autenticados. Se está cerrando traducción y cableado de release. Aún no se marca completo ni publicado; el build integrado y la matriz de 36 locales tienen que pasar antes.
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/aes-encryption-tool/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `aes decrypt online` — 390 búsquedas/mes US/en, KD 12; nivel C. CPC 10.49 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** AES-GCM local, texto/archivos, PBKDF2 parametrizado, salt/IV aleatorios y contenedor versionado; clave incorrecta falla de forma autenticada y no revela basura.
@@ -3063,6 +3070,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 ### 314 · Jwt Encoder
 
 - [ ] **C/F/E/X/L/B/P/S completos — `jwt-encoder`**
+- **Progreso local (2026-10-15):** lógica HS256 local, expiración opcional, verificación de firma separada de autenticación, límites para JSON/token y pruebas de claims Unicode, expiración, secreto incorrecto y cambios de payload. Formularios y copias de 36 idiomas/build aún pendientes de completar; no publicada.
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/jwt-encoder/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `jwt encoder` — 390 búsquedas/mes US/en, KD 16; nivel C. CPC 6.43 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Construir y firmar JWT con algoritmos permitidos y secreto local, expiración y preview; no interpretar emisión como autenticación ni verificar usuarios.
@@ -3087,6 +3095,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `graphql validator online` — 10/mes US/en; KD 16.
   - `graphql formatter free online`; `graphql formatter with example`; `graphql formatter no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Checkpoint local (2026-10-15):** formatter para query y SDL implementado con Prettier GraphQL local y carga bajo demanda; valida sintaxis, posición del error, límites de 100.000 caracteres, ejemplo, reinicio, copiar y descargar. Copia estática de Google Translate preparada para 36 idiomas y marcada según el flujo previamente autorizado. Pruebas focalizadas **366/366** aprobadas. No desplegado; por eso la casilla C/F/E/X/L/B/P/S sigue abierta hasta revisión visual y gates de release.
 
 ### 321 · Rsa Key Generator
 
@@ -3101,6 +3110,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `rsa encryption online` — 210/mes US/en; KD 0.
   - `rsa key generator free online`; `rsa key generator with example`; `rsa key generator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Checkpoint local (2026-10-15):** Web Crypto genera RSA-OAEP/SHA-256 de 2048/3072 bits, exporta SPKI/PKCS8 PEM y huella SHA-256, cifra/descifra texto local con límites reales de 190/318 bytes UTF-8. Rechaza clave/ciphertext/formato no compatible; 36 copias estáticas vía Google Translate. Suite focal **382/382** y regresión completa tras el ajuste final del controlador **2.038/2.038**, con build local incluido. Sin QA visual, push ni deploy; checklist C/F/E/X/L/B/P/S sigue abierta.
 
 ### 322 · Log Analyzer
 
@@ -3970,6 +3980,8 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 312 · Writing Tracker
 
+- **Avance local (2026-10-15):** motor de proyectos/sesiones con edición por ID estable (sin doble conteo), metas, racha, almacenamiento local restaurable y exportación CSV con protección de fórmulas de hoja de cálculo; formulario/controlador y copy inglés completados. Lógica: **7/7 pruebas**. La matriz de traducción gratuita de 36 idiomas está en curso. Aún faltan gates integrados e inspección en navegador; **no está publicada**.
+
 - [ ] **C/F/E/X/L/B/P/S completos — `writing-tracker`**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/writing-tracker/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `writing tracker` — 390 búsquedas/mes US/en, KD 9; nivel C. CPC 9.7 USD (no CPM).
@@ -3995,6 +4007,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `chore schedule generator` — 10/mes US/en; KD —.
   - `chore chart maker free online`; `chore chart maker with example`; `chore chart maker no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Checkpoint local (2026-10-15):** lógica local de rotación semanal, pesos de esfuerzo 1–5, balance acumulado, vista imprimible y exportación CSV implementados; controles de miembros/tareas duplicados, fecha de lunes y rango de semanas. Copia estática preparada para 36 locales mediante la traducción automática sencilla ya autorizada. Suite Growth600 focal: 372/372; bundle de controladores, build y traducciones validados. No desplegada; falta QA visual y gates del release, así que C/F/E/X/L/B/P/S sigue abierta.
 
 ## Checklist · Imagen, lenguaje y creación
 
@@ -4396,6 +4409,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `css border radius generator` — 90/mes US/en; KD 8.
   - `border radius generator free online`; `border radius generator with example`; `border radius generator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Checkpoint local (2026-10-15):** generador local para cuatro esquinas independientes, radios elípticos y %, preview, enlace/desenlace de valores, copia/descarga CSS y nota sobre normalización CSS de radios solapados. Los 36 idiomas tienen copia estática automática; metadatos dentro del límite. Pruebas focales actuales: 375/375 aprobadas. Sigue sin desplegar; faltan QA visual y gates de release.
 
 ## Checklist · Juegos y práctica
 
@@ -4579,6 +4593,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 - **Prueba de aceptación específica:** El rey puede salir solo; una carta cubierta no se juega; todas las cartas mantienen identidad.
 - **Frontera con otras herramientas:** solitaire: mecánicadeparejasdistinta. Aplicar además las consolidaciones de §6; no crear otra URL por dirección inversa o modalidad.
 - **Implementación/riesgo:** L: motor local ligero previsto; verificar alcance y unidades/formato. Seguir el patrón de la familia y los gates globales; el caso anterior no sustituye todos los tests.
+- **Implementación local (2026-10-15):** motor clásico de 52 cartas, pirámide de 28, parejas expuestas que suman 13, reyes solos, waste superior con cartas expuestas, reglas explícitas de reciclaje (0/1/ilimitado), deshacer hasta 250 acciones, pista, reinicio del reparto y reparto aleatorio nuevo. 36 copias estáticas traducidas automáticamente desde inglés. Focales y contrato de idioma pasan; build aislado incluye 36 rutas únicas. Sin QA visual manual, release, publicación, deploy ni envío a buscadores; la casilla C/F/E/X/L/B/P/S sigue abierta hasta cerrar sus gates.
 - **Consultas secundarias del mismo propietario:**
   - `pyramid solitaire online` — 2.900/mes US/en; KD 29.
   - `pyramid solitaire free online`; `pyramid solitaire with example`; `pyramid solitaire no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
@@ -4599,6 +4614,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `rebus puzzles free online`; `rebus puzzles with example`; `rebus puzzles no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
 - **Otras métricas muestreadas:** CA/en `rebus puzzles` 5.400/mes, KD 6; UK/en `rebus puzzles` 3.600/mes, KD 7; AU/en `rebus puzzles` 6.600/mes, KD 9.
+- **Implementación local (2026-10-15):** diez acertijos textuales originales, barajados sin repetición por ronda, respuesta normalizada, pistas graduales, revelación/explicación y puntuación de sesión; controles localizados estáticamente en 36 idiomas. La colección y las frases siguen en inglés y se declara de forma visible, no se presenta como un juego localizado ni como infinito/diario. Pruebas automatizadas y build aislado pasan; QA visual manual, publicación, sitemap público y envío a buscadores siguen pendientes por alcance de esta tanda.
 
 ### 046 · Killer Sudoku
 
@@ -5101,7 +5117,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
 
 ### 125 · Lean Body Mass Calculator
 
-- [ ] **C/F/E/X/L/B/P/S completos — `lean-body-mass-calculator`**
+- [ ] **C/F/E/X/L/B/P/S completos — `lean-body-mass-calculator` (implementación local y traducciones completas; P/S pendientes)**
 - **Destino propuesto:** `https://tools.usefulverse.com/tools/lean-body-mass-calculator/`; otras 35 versiones con los prefijos del anexo. No está declarado publicado.
 - **Demanda:** `lean body mass calculator` — 6.600 búsquedas/mes US/en, KD 0; nivel B. CPC 1.46 USD (no CPM).
 - **Función mínima y ampliaciones útiles:** Estimación por masa grasa conocida y ecuaciones publicadas
@@ -5227,6 +5243,7 @@ Tachar la casilla de una herramienta solo al cerrar C/F/E/X/L/B/P/S. Las etapas 
   - `cycling power calculator` — 320/mes US/en; KD 10.
   - `cycling watts calculator free online`; `cycling watts calculator with example`; `cycling watts calculator no sign up` — **sugerencias sin volumen medido**, solo donde el producto resuelva realmente esa intención.
 - **Longtails funcionales:** convertir las opciones concretas de «función mínima» y el ejemplo de aceptación en secciones/FAQs específicas. Añadir casos de entrada, unidades, errores y artefactos propios; no publicar una URL por modificador y no rellenar la página con frases genéricas.
+- **Verificación local (2026-10-14):** fórmula de potencia en régimen estable con desglose aero/rodadura/pendiente y equivalencia métrica/imperial; 36 copias estáticas y metadatos dentro de límites. Tests focales y suites completas pasan (**1.959/1.959**), `locale:release-check` y `npm run check` (10.260 URLs existentes) pasan. No desplegada ni añadida al sitemap; P/S pendientes a propósito.
 
 ## Anexo A · 277 herramientas protegidas
 
@@ -5752,4 +5769,6 @@ Otras ideas detectadas pero no contadas: height calculator (110.000 US/en, KD 28
 - [ ] README con todas las herramientas, hosts, idiomas y archivo/listado completo de URLs reales; indicar totales reales, no la proyección de este plan.
 - [ ] Plan/progreso/datasets/artefactos respaldados online y temporales propios eliminados tras verificar recuperación.
 
-**Cierre de ESTE documento:** planificación entregada; no se ha implementado ni desplegado la expansión. Ninguna casilla de producto se ha tachado para hacer pasar un plan por trabajo terminado.
+**Estado del plan maestro (2026-10-15):** la expansión completa sigue sin terminar ni desplegarse. Un sublote local de 30 herramientas quedó implementado; ver `docs/growth600/PROGRESS.md` para alcance, pruebas y límites. Este cierre parcial no marca las 323 candidatas, las 36 versiones globales ni el release como completos; ninguna herramienta local se presenta como publicada antes de confirmarlo.
+
+**Actualización de conciliación (2026-10-15):** las 23 fichas `sunrise-sunset-calculator`, `moonrise-moonset-calculator`, `persian-calendar-converter`, `project-risk-matrix`, `org-chart-maker`, `sankey-diagram-generator`, `event-budget-calculator`, `decision-tree-maker`, `shift-scheduler`, `subscription-tracker`, `radar-chart-maker`, `packing-box-calculator`, `car-running-cost-calculator`, `bra-size-calculator`, `logo-maker`, `writing-prompt-generator`, `color-palette-from-image`, `text-summarizer`, `speed-reading-app`, `mockup-generator`, `acrostic-poem-maker`, `word-frequency-counter` e `image-histogram` ya están implementadas localmente en 36 idiomas y pasan los gates automatizados indicados en `docs/growth600/PROGRESS.md`. Los dos sitemaps públicos contienen 577 IDs de herramientas sin solapamiento; estas 23 no figuran aún en ninguno, así que son aditivas y llevarían a 600 IDs si se publican. Sus checks de release siguen abiertos porque este checkout solo comparte 194 de las 300 IDs del host tools y carece de las otras 106. No se deben desplegar sus 7.848 URLs locales como sustitución: integrar primero el lote en la fuente que generó las 300 rutas públicas actuales.

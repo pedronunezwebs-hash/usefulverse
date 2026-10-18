@@ -1,0 +1,25 @@
+export const swissTaxCompareEnglish = Object.freeze({
+  name: 'Swiss Annual Tax Scenario Comparator',
+  title: 'Swiss Tax Calculator Companion — Compare ESTV Results',
+  description: 'Compare annual Swiss income and wealth tax scenarios using figures from the official ESTV calculator. See the tax breakdown and effective rates without relying on copied or stale canton tables.',
+  intro: 'Use the official Swiss Federal Tax Administration (ESTV) calculator for each household and municipality. Enter its results here to compare the annual tax breakdown, effective rates and differences side by side.',
+  details: 'This companion does not estimate tax or reproduce canton tax tables. ESTV keeps its calculator current with the applicable federal, cantonal, municipal and church rules. This page calculates totals and effective rates only from the figures you enter.',
+  example: 'Run the same household and tax year for two municipalities in the ESTV calculator, then enter both result breakdowns here. A difference is marked comparable only when the year and taxable income and wealth bases match.',
+  fields: {
+    scenario: 'Scenario', label: 'Scenario name', year: 'Tax year', location: 'Municipality or profile',
+    taxableFederalIncome: 'Taxable income for federal tax (CHF)', taxableCantonalIncome: 'Taxable income for cantonal tax (CHF)', taxableWealth: 'Taxable wealth (CHF)',
+    federalIncomeTax: 'Direct federal income tax (CHF)', cantonalIncomeTax: 'Cantonal income tax (CHF)', municipalIncomeTax: 'Municipal income tax (CHF)', churchIncomeTax: 'Church income tax (CHF; enter 0 if not applicable)', wealthTax: 'Wealth tax (CHF)', personalTax: 'Personal or poll tax (CHF; enter 0 if not shown)',
+    add: 'Add another scenario', remove: 'Remove', calculate: 'Compare scenarios', reset: 'Clear scenarios', ready: 'Enter the annual figures from an ESTV result. You can compare up to four scenarios.',
+    openEstv: 'Open the official ESTV tax calculator', officialSteps: 'On ESTV, choose income and wealth tax, tax year, municipality and household details. Copy the taxable bases and final tax breakdown into a scenario here.',
+    resultHeading: 'Annual tax comparison', yearResult: 'Tax year', locationResult: 'Municipality or profile', incomeTaxTotal: 'Income tax total', wealthTaxResult: 'Wealth tax', totalTax: 'Total entered tax', incomeRate: 'Income tax / cantonal taxable income', wealthRate: 'Wealth tax / taxable wealth', delta: 'Difference from first scenario', comparable: 'Same year and taxable bases: comparison is like-for-like.', notComparable: 'The taxable bases or year differ; compare the amounts carefully.', noIncomeBasis: 'Not available: taxable income is zero.', noWealthBasis: 'Not available: taxable wealth is zero.',
+    breakdownHeading: 'Entered tax breakdown', export: 'Download comparison CSV', sourceNote: 'Current official calculator and method notes:', estvSource: 'ESTV calculator', docsSource: 'Calculation notes (May 2026)',
+  },
+  messages: { done: 'Comparison calculated in this browser.', invalid: 'Check that every scenario has a name, year, municipality and valid non-negative CHF amounts.', copied: 'Results are ready to download.', cleared: 'Scenarios cleared.' },
+  faq: [
+    { q: 'Does this calculate my Swiss tax automatically?', a: 'No. It compares the amounts you copy from the official ESTV calculator. It does not apply tax laws or estimate a canton or municipality.' },
+    { q: 'Why use this page instead of the ESTV calculator?', a: 'Use ESTV for the current individual calculation. Use this page to keep several result breakdowns together, compare effective rates and export a local CSV.' },
+    { q: 'Can I compare two municipalities?', a: 'Yes. For a meaningful comparison, keep the tax year, household situation, taxable income and taxable wealth the same in both ESTV calculations.' },
+    { q: 'Are my entries uploaded?', a: 'No. Calculations run in your browser. This tool does not send the entered tax amounts to a server.' },
+    { q: 'Is a result a binding tax assessment?', a: 'No. ESTV describes its online calculation as non-binding. The final assessment by the competent tax authority can differ.' },
+  ],
+});

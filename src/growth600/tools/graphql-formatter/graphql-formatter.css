@@ -1,0 +1,1 @@
+.graphql-formatter textarea{width:100%;min-height:16rem;resize:vertical;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;tab-size:2;white-space:pre;overflow:auto}.graphql-formatter [data-graphql-result]{margin-block-start:1.25rem}.graphql-formatter textarea:focus-visible{outline:3px solid var(--focus,#356be8);outline-offset:2px}

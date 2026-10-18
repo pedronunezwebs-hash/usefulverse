@@ -14,11 +14,187 @@ import { calculateSpecificHeat } from './tools/specific-heat-calculator/logic.mj
 import { calculateRcTimeConstant, calculateRcTransient } from './tools/rc-time-constant-calculator/logic.mjs';
 import { calculateReverseMortgage } from './tools/reverse-mortgage-calculator/logic.mjs';
 import { calculateCarDepreciation } from './tools/car-depreciation-calculator/logic.mjs';
+import { calculateCustomerAcquisitionCost } from './tools/customer-acquisition-cost-calculator/logic.mjs';
+import { formatGraphQLSource, validateGraphQLSource, GRAPHQL_FORMATTER_MAX_CHARACTERS } from './tools/graphql-formatter/logic.mjs';
+import { formatGraphQL } from './tools/graphql-formatter/runtime.mjs';
+import { createChoreSchedule, choreScheduleToCsv } from './tools/chore-chart-maker/logic.mjs';
+import { buildBorderRadiusCss } from './tools/css-border-radius-generator/logic.mjs';
+import { calculateRentalYield } from './tools/rental-yield-calculator/logic.mjs';
+import { generateRsaKeyPair, encryptRsaText, decryptRsaText } from './tools/rsa-key-generator/logic.mjs';
+import { accessLogSummaryCsv, analyzeAccessLogs } from './tools/log-analyzer/logic.mjs';
+import { createPyramidGame, drawPyramidCard, getPyramidStatus, removePyramidMove } from './tools/pyramid-solitaire/logic.mjs';
+import { createRebusSession, getCurrentRebus, submitRebusAnswer, REBUS_PUZZLE_COUNT } from './tools/rebus-puzzles/logic.mjs';
+import { countKillerSudokuSolutions, generateKillerSudoku, validateKillerSolution } from './tools/killer-sudoku/logic.mjs';
+import { createSudokuExample, findSudokuConflicts, solveSudoku } from './tools/sudoku-solver/logic.mjs';
+import { createHangmanGame, getHangmanVisibleWord, guessHangmanLetter } from './tools/hangman-game/logic.mjs';
+import { createAimSession, getAimAccuracy, placeAimTarget, recordAimAttempt } from './tools/aim-trainer/logic.mjs';
+import { CHESS_MATE_PUZZLES, createChessPuzzleSession, submitChessPuzzleMove, validateMatePuzzles } from './tools/chess-puzzles/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 164);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 164);
+  assert.equal(growthPilotTools.length, 217);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 217);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
+});
+
+test('Rebus Puzzles is a finite English phrase game, distinct from word search, and checks original shuffled riddles locally', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'rebus-puzzles');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'rebus puzzles');
+  assert.deepEqual(tool.relatedExistingIds, []);
+  assert.match(tool.boundary, /finite set of ten original, English-language/u);
+  assert.match(tool.boundary, /not translated/u);
+  const session = createRebusSession({ random: () => 0.5 });
+  assert.equal(session.order.length, REBUS_PUZZLE_COUNT);
+  assert.equal(new Set(session.order).size, REBUS_PUZZLE_COUNT);
+  assert.equal(getCurrentRebus(session).id, 'head-heels');
+  assert.equal(submitRebusAnswer(session, 'head over heels').correct, true);
+});
+
+test('Killer Sudoku is additive to classic Sudoku and proves generated cage grids unique', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'killer-sudoku');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'killer sudoku');
+  assert.deepEqual(tool.relatedExistingIds, ['sudoku']);
+  assert.match(tool.boundary, /Difficulty refers to cage density only/u);
+  const puzzle = generateKillerSudoku({ targetCages: 55, maxMergeAttempts: 100 });
+  assert.equal(validateKillerSolution(puzzle.solution, puzzle.cages), true);
+  const proof = countKillerSudokuSolutions(puzzle.cages, { limit: 2, maxNodes: 30_000 });
+  assert.equal(proof.complete, true);
+  assert.equal(proof.count, 1);
+});
+
+test('Sudoku Solver is distinct from the existing puzzle generator and never overstates bounded results', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'sudoku-solver');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'sudoku solver');
+  assert.deepEqual(tool.relatedExistingIds, ['sudoku']);
+  assert.equal(solveSudoku(createSudokuExample()).status, 'unique');
+  assert.deepEqual(findSudokuConflicts(createSudokuExample()), []);
+  assert.equal(solveSudoku(createSudokuExample(), { maxNodes: 1 }).status, 'incomplete');
+  assert.match(tool.boundary, /advanced human-technique explainer/u);
+});
+
+test('Hangman Game is a separate letter-guessing intent with local translated word-bank logic', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'hangman-game');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'hangman game');
+  assert.deepEqual(tool.relatedExistingIds, []);
+  assert.match(tool.boundary, /small static/u);
+  let game = createHangmanGame({ wordBank: ['apple'], random: () => 0, difficulty: 'easy' });
+  assert.deepEqual(getHangmanVisibleWord(game), ['＿', '＿', '＿', '＿', '＿']);
+  game = guessHangmanLetter(game, 'p').game;
+  assert.deepEqual(getHangmanVisibleWord(game), ['＿', 'p', 'p', '＿', '＿']);
+  const duplicate = guessHangmanLetter(game, 'p');
+  assert.equal(duplicate.accepted, false);
+  assert.equal(duplicate.game.wrong, 0);
+  assert.equal(createHangmanGame({ wordBank: ['apple'], random: () => 0, difficulty: 'hard' }).maxAttempts, 6);
+});
+
+test('Aim Trainer practices clicks without duplicating mouse hardware diagnostics', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'aim-trainer');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'aim trainer');
+  assert.deepEqual(tool.relatedExistingIds, []);
+  assert.match(tool.boundary, /does not emulate a specific game/u);
+  const target = placeAimTarget({ width: 300, height: 160, diameter: 88, random: () => 0.999 });
+  assert.ok(target.x - target.radius >= 0 && target.x + target.radius <= 300);
+  assert.ok(target.y - target.radius >= 0 && target.y + target.radius <= 160);
+  let session = recordAimAttempt(createAimSession(), true);
+  session = recordAimAttempt(session, false);
+  assert.equal(getAimAccuracy(session), 50);
+});
+
+test('Chess Puzzles is distinct from opening practice and every original mate answer is legal', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'chess-puzzles');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'chess puzzles');
+  assert.deepEqual(tool.relatedExistingIds, ['chess-opening-trainer']);
+  assert.match(tool.boundary, /not a full tactics library/u);
+  assert.equal(validateMatePuzzles().length, 10);
+  const session = createChessPuzzleSession({ puzzles: [CHESS_MATE_PUZZLES[0]], random: () => 0 });
+  assert.equal(submitChessPuzzleMove(session, 'f5', 'f6').ok, true);
+  assert.equal(session.game.isCheckmate(), true);
+});
+
+test('GraphQL formatter parses queries and SDL locally, reports malformed syntax and stays distinct from JSON formatting', async () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'graphql-formatter');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'graphql formatter');
+  assert.deepEqual(tool.relatedExistingIds, ['json-formatter', 'api-request-builder']);
+  assert.match(tool.boundary, /does not.*execute/u);
+  assert.match(await formatGraphQLSource('query X{hello(id:1){id name}}', formatGraphQL), /hello\(id: 1\)\s*\{\s*id\s*name/u);
+  assert.match(await formatGraphQLSource('type User{id:ID! name:String!}', formatGraphQL), /type User\s*\{/u);
+  await assert.rejects(() => formatGraphQLSource('query {', formatGraphQL), (error) => error.name === 'SyntaxError' && error.loc.start.line === 1 && error.loc.start.column === 8);
+  assert.throws(() => validateGraphQLSource('  '), { message: 'empty' });
+  assert.throws(() => validateGraphQLSource('x'.repeat(GRAPHQL_FORMATTER_MAX_CHARACTERS + 1)), { message: 'tooLong' });
+  await assert.rejects(() => formatGraphQLSource('query X { x }', null), { message: 'formatterUnavailable' });
+});
+
+test('chore chart maker rotates weekly assignments and exports a balanced local schedule', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'chore-chart-maker');
+  assert.ok(tool);
+  assert.deepEqual(tool.relatedExistingIds, ['task-list', 'goal-planner']);
+  const schedule = createChoreSchedule({ people: 'Alex\nSam\nRiley', chores: 'Kitchen | 3\nTrash | 1\nLaundry | 2', startDate: '2026-10-12', weeks: 4 });
+  assert.equal(schedule.schedule.length, 4);
+  assert.ok(schedule.schedule.every(({ assignments }) => assignments.length === 3));
+  assert.ok(schedule.loadSpread <= 3);
+  assert.match(choreScheduleToCsv(schedule), /Week,Starts,Chore,Assigned to,Effort points/u);
+});
+
+test('CSS border radius generator emits elliptical CSS independently from clip-path', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'css-border-radius-generator');
+  assert.ok(tool);
+  assert.deepEqual(tool.relatedExistingIds, ['css-clip-path-editor']);
+  assert.match(tool.boundary, /browsers may proportionally normalize/u);
+  assert.equal(buildBorderRadiusCss({ horizontal: [0, 0, 0, 0], vertical: [0, 0, 0, 0] }).css, '.shape {\n  border-radius: 0px 0px 0px 0px;\n}');
+  assert.equal(buildBorderRadiusCss({ horizontal: [10, 20, 30, 40], vertical: [5, 15, 25, 35] }).value, '10px 20px 30px 40px / 5px 15px 25px 35px');
+});
+
+test('rental yield calculator separates gross rent, vacancy, operating expenses and net yield', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'rental-yield-calculator');
+  assert.ok(tool);
+  assert.deepEqual(tool.relatedExistingIds, ['rent-vs-buy-calculator', 'loan-calculator']);
+  assert.match(tool.boundary, /not a valuation.*investment recommendation/u);
+  const result = calculateRentalYield({ propertyPrice: 200000, monthlyRent: 1000, vacancyPercent: 5, annualPropertyTax: 1800, annualMaintenance: 900, annualInsurance: 600, annualAssociationFees: 300 });
+  assert.equal(result.grossYieldPercent, 6);
+  assert.equal(result.netOperatingIncome, 7800);
+  assert.equal(result.netYieldPercent, 3.9);
+});
+
+test('RSA key generator has a distinct key-pair intent and never claims certificate identity', async () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'rsa-key-generator');
+  assert.ok(tool);
+  assert.deepEqual(tool.relatedExistingIds, ['aes-encryption-tool', 'certificate-decoder']);
+  assert.match(tool.boundary, /not a trusted identity, certificate authority/u);
+  const pair = await generateRsaKeyPair({ modulusLength: 2048 });
+  const cipher = await encryptRsaText({ publicKeyPem: pair.publicKeyPem, text: 'catalog smoke' });
+  assert.equal(await decryptRsaText({ privateKeyPem: pair.privateKeyPem, ciphertextBase64: cipher }), 'catalog smoke');
+});
+
+test('access log analyzer summarizes only declared fields and stays distinct from CSV viewing', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'log-analyzer');
+  assert.ok(tool);
+  assert.deepEqual(tool.relatedExistingIds, ['csv-viewer']);
+  assert.match(tool.boundary, /Apache\/Nginx combined access logs only/u);
+  const data = analyzeAccessLogs('203.0.113.8 - - [10/Oct/2026:08:10:00 +0000] "GET /account?email=x@example.com HTTP/1.1" 200 125 "-" "Private UA"');
+  assert.equal(data.matchedRequests, 1);
+  assert.doesNotMatch(accessLogSummaryCsv(data), /203\.0\.113|email=x|Private UA|\/account/u);
+});
+
+test('Pyramid Solitaire creates a local deal, accepts legal king removal and keeps its rules distinct from peg solitaire', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'pyramid-solitaire');
+  assert.ok(tool);
+  assert.deepEqual(tool.relatedExistingIds, ['solitaire']);
+  assert.match(tool.boundary, /random deals are not guaranteed solvable/iu);
+  const deal = createPyramidGame({ random: () => 0.5, recycleLimit: 0 });
+  assert.equal(deal.pyramid.length, 28);
+  assert.equal(deal.stock.length, 24);
+  const kingDeal = { ...deal, pyramid: [{ id: 'king', rank: 13, suit: 'spades', row: 6, column: 0 }], stock: [], waste: [], removed: [] };
+  const won = removePyramidMove(kingDeal, ['king']);
+  assert.equal(getPyramidStatus(won), 'won');
+  const drawn = drawPyramidCard(deal);
+  assert.equal(drawn.stock.length, 23);
+  assert.equal(drawn.waste.at(-1).id, deal.stock.at(-1).id);
 });
 
 test('bond calculator has a distinct fixed-coupon intent and matches the par-yield acceptance case', () => {
@@ -35,6 +211,63 @@ test('bond calculator has a distinct fixed-coupon intent and matches the par-yie
   assert.ok(calculateBondPrice({ ...terms, yieldPercent: '6' }).price < 1000);
   assert.ok(calculateBondPrice({ ...terms, yieldPercent: '4' }).price > 1000);
   assert.equal(buildBondYieldCurve(terms, 5).length, 41);
+});
+
+test('inductor calculator adds air-core Wheeler and manufacturer-AL toroid intents without duplicating RLC', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'inductor-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'inductance calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['rlc-circuit-calculator', 'capacitor-calculator', '555-timer-calculator']);
+  assert.match(tool.acceptance, /AL=100 nH\/turn²/u);
+});
+
+test('centripetal force calculator adds circular-motion inputs without duplicating generic force', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'centripetal-force-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'centripetal force calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['force-calculator', 'projectile-motion-calculator']);
+  assert.match(tool.acceptance, /Doubling speed quadruples/u);
+  assert.match(tool.boundary, /does not.*certify safety/iu);
+});
+
+test('writing tracker records editable sessions by stable identity and stays distinct from instant word count', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'writing-tracker');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'writing tracker');
+  assert.deepEqual(tool.relatedExistingIds, ['word-counter', 'goal-planner']);
+  assert.match(tool.acceptance, /not 950/u);
+  assert.match(tool.boundary, /not an automatic document word counter/u);
+});
+
+test('AES encryption tool authenticates plaintext and file metadata without a server dependency', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'aes-encryption-tool');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'aes decrypt online');
+  assert.deepEqual(tool.relatedExistingIds, ['pdf-protect-unlock']);
+  assert.match(tool.boundary, /not a cryptographic audit/u);
+  assert.match(tool.boundary, /16 MiB/u);
+  assert.match(tool.acceptance, /returns no plaintext/u);
+});
+
+test('JWT encoder is separate from a decoder and does not claim to authenticate users', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'jwt-encoder');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'jwt encoder');
+  assert.deepEqual(tool.relatedExistingIds, ['jwt-decoder']);
+  assert.match(tool.acceptance, /second 1,060/u);
+  assert.match(tool.boundary, /does not establish who issued a token/u);
+  assert.match(tool.boundary, /not saved or sent to a server/u);
+});
+
+test('CAC calculator is distinct from lifetime value and payback uses entered gross margin', () => {
+  const tool = growthPilotTools.find(({ id }) => id === 'customer-acquisition-cost-calculator');
+  assert.ok(tool);
+  assert.equal(tool.primaryIntent, 'customer acquisition cost calculator');
+  assert.deepEqual(tool.relatedExistingIds, ['profit-margin-calculator']);
+  assert.match(tool.boundary, /not marginal\/channel CAC/u);
+  const result = calculateCustomerAcquisitionCost({ marketingSpend: 1000, salesSpend: 0, toolsSpend: 0, agencySpend: 0, otherSpend: 0, newCustomers: 10, monthlyRevenuePerCustomer: 50, grossMarginPercent: 80, currency: 'USD' });
+  assert.equal(result.cac, 100);
+  assert.equal(result.paybackMonths, 2.5);
 });
 
 test('waist-to-hip ratio is a unitless arithmetic tool, distinct from body-fat estimation and health diagnosis', () => {

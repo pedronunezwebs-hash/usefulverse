@@ -1,0 +1,27 @@
+export const matchThreeEnglish = {
+  name: 'Match 3 Game',
+  title: 'Match 3 Game Online — Free Untimed Match-Three Puzzle',
+  description: 'Play an original match-3 puzzle with clear goals, move limits, cascades, optional hints and 12 levels. No timer, account or upload; progress can stay on this device.',
+  intro: 'Swap two neighboring tiles to make a line of three or more. Complete each level goal before your moves run out; cascades are scored as they happen.',
+  details: 'This original browser puzzle uses a fresh, valid board with at least one possible move. A swap that makes no match is reversed and does not use a move. Matching tiles fall away, new tiles drop in and any resulting cascade is counted in the same turn. The game has no timer.',
+  example: 'Select a tile, then select one directly above, below, left or right. For example, move a tile into a line of two matching colors to clear three. Use Hint if you want help finding a legal move.',
+  fields: {
+    board: 'Match-3 puzzle board', tile: 'tile', row: 'row', column: 'column', color: 'color', colors: ['Ruby', 'Amber', 'Lime', 'Teal', 'Blue', 'Violet'],
+    level: 'Level', score: 'Score', goal: 'Goal', moves: 'Moves left', status: 'Game status', ready: 'Choose neighboring tiles to make a match.',
+    selectTile: 'Tile selected. Choose a neighboring tile.', noMatch: 'Those tiles do not make a match. Choose a different neighbor.', invalidSwap: 'Only tiles that touch horizontally or vertically can be swapped.',
+    matched: 'Match cleared.', cascade: 'Cascade cleared. Chain count:', won: 'Goal reached. You completed the level!', wonFinal: 'You finished all 12 levels!', lost: 'No moves left. Try the level again.',
+    hint: 'Show a hint', hintText: 'Try swapping row {row}, column {column} with its highlighted neighbor.',
+    newGame: 'New game', restart: 'Restart level', nextLevel: 'Next level', pause: 'Pause game', resume: 'Resume game', paused: 'Game paused.',
+    shuffle: 'Shuffle board', shuffled: 'Board shuffled. Your score and moves stay the same.', undo: 'Undo last move', undone: 'Last move undone.', noHint: 'No available move was found, so the board was shuffled.', deadBoard: 'No matches were available; the board was shuffled.', movesHelp: 'A valid match uses one move. A failed swap is returned and costs nothing.',
+    save: 'Save progress', load: 'Load saved progress', clearSave: 'Delete saved progress', saved: 'Progress saved on this device.', loaded: 'Saved progress loaded.', noSave: 'No valid saved match-3 game was found.', deleted: 'Saved progress deleted.', saveError: 'This browser could not save your progress.',
+    localOnly: 'The puzzle runs in your browser. Progress is stored only on this device if you choose to save it.', howTo: 'How to play',
+    sample: 'Load example board', clear: 'Clear selection', sound: 'Sound effects', mute: 'Mute sound',
+  },
+  exampleHeading: 'Example', howItWorks: 'How the match-3 puzzle works', faqHeading: 'Frequently asked questions', limitsHeading: 'Game details',
+  faq: [
+    { q: 'How do I play a match-3 game?', a: 'Select two tiles that touch horizontally or vertically. A swap only stays if it creates a line of at least three matching tiles.' },
+    { q: 'Does this match-3 puzzle have a timer?', a: 'No. Play at your own pace. Each level has a goal and a set number of moves, but no countdown clock.' },
+    { q: 'What happens if a swap does not match?', a: 'The tiles return to their original places, and no move is taken away.' },
+    { q: 'Is my match-3 game uploaded?', a: 'No. The game runs in your browser. Saved progress stays in local browser storage on this device.' },
+  ],
+};

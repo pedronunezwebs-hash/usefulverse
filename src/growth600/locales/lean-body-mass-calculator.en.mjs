@@ -1,0 +1,32 @@
+export const leanBodyMassCalculatorEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'Lean body mass calculator',
+  title: 'Lean Body Mass Calculator Free, Unlimited | UsefulVerse',
+  description: 'Estimate lean body mass and fat mass from body-fat percentage or the Boer equation. Free local calculator with clear limits.',
+  intro: 'Choose a direct calculation from a body-fat percentage you already have, or an estimate from the published Boer height-and-weight equation. See the method and assumptions.',
+  howQuestion: 'How do I calculate lean body mass?',
+  howAnswer: 'If you know a body-fat percentage, lean mass is body weight multiplied by one minus that percentage. Otherwise, the Boer estimate uses a sex-specific equation with weight and height. Results are estimates, not a body-composition measurement.',
+  privacyQuestion: 'Is this lean body mass calculator private?',
+  privacyAnswer: 'Yes. The calculation runs in your browser. Your weight, height and body-fat entry are not uploaded or saved.',
+  fields: {
+    method: 'Calculation method', directMethod: 'Use known body-fat percentage', boerMethod: 'Estimate with Boer equation',
+    equationSet: 'Boer equation set', maleEquation: 'Men equation', femaleEquation: 'Women equation',
+    weight: 'Body weight', height: 'Height', bodyFatPercent: 'Body-fat percentage', unitSystem: 'Units', metric: 'Metric (kg, cm)', imperial: 'Imperial (lb, in)',
+    result: 'Estimated lean body mass', fatMass: 'Estimated fat mass', formula: 'Formula used',
+    directFormula: 'LBM = W × (1 − BF% ÷ 100)',
+    boerMaleFormula: 'LBM = 0.407W (kg) + 0.267H (cm) − 19.2',
+    boerFemaleFormula: 'LBM = 0.252W (kg) + 0.473H (cm) − 48.3',
+    sourceBoer: 'Boer (1984) paper on PubMed',
+    accuracyNote: 'Estimates vary by method and person. The Boer equation is a population regression, not a direct measurement. Adult estimate only; not for children or pregnancy and not medical advice. Ask a qualified clinician about health decisions.',
+  },
+  actions: { calculate: 'Calculate', example: 'Load example', reset: 'Reset', result: 'Calculation result' },
+  messages: {
+    calculated: 'Estimate calculated.', checkInputs: 'Check the values and selected method.',
+    result: 'Fat mass: {fatMass} {unit}. Lean mass: {leanPercent}%.',
+  },
+  additionalFaqs: [
+    { question: 'What is the difference between lean mass and fat mass?', answer: 'This calculator treats lean mass as body weight minus estimated fat mass for the selected method. It does not measure muscle alone or separate every tissue component.' },
+    { question: 'What does the Boer equation estimate?', answer: 'It estimates lean body mass from height and weight using a published equation set for men or women. It can differ from an individual measurement, so treat it as a rough estimate.' },
+    { question: 'Can I use this result as medical advice?', answer: 'No. The result is an estimate and is not a diagnosis or treatment recommendation. It is intended for adults, not children or pregnancy. Ask a qualified healthcare professional about personal health decisions.' },
+  ],
+});

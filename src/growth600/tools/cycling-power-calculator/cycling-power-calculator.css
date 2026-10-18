@@ -1,0 +1,4 @@
+.cycling-power-calculator .hint{max-width:72ch}
+.cycling-power-calculator [data-result-content] dl{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.5rem 1rem}
+.cycling-power-calculator [data-result-content] dt{font-weight:600}
+.cycling-power-calculator [data-result-content] dd{margin:0;text-align:end;font-variant-numeric:tabular-nums}

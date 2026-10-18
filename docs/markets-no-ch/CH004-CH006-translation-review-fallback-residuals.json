@@ -1,0 +1,338 @@
+[
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "am",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "am",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "el",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "el",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "fa",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "fa",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ha",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ha",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "it",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "it",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "nl",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "nl",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "sv",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "sv",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "sw",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "sw",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "te",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "te",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "th",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "th",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "tr",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "tr",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ur",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ur",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "it",
+    "source": "Scenario",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "nb",
+    "source": "Scenario",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "nl",
+    "source": "Scenario",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "sv",
+    "source": "Scenario",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "am",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "am",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "el",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "el",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "fa",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "fa",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ha",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ha",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "it",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "it",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "mr",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "mr",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "nl",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "nl",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "sv",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "sv",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "sw",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "sw",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "te",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "te",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "th",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "th",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "tr",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "tr",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ur",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ur",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  }
+]

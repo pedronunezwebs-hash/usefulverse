@@ -1,0 +1,7 @@
+.css-border-radius-generator .radius-link { display: flex; align-items: flex-start; gap: .6rem; margin-block: .75rem; }
+.css-border-radius-generator .radius-link input { flex: none; margin-block-start: .2rem; }
+.css-border-radius-generator .radius-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.css-border-radius-generator .radius-preview-panel { display: grid; justify-items: center; gap: .75rem; margin-block: 1.25rem; }
+.css-border-radius-generator .radius-preview-panel h3 { justify-self: start; width: 100%; }
+.css-border-radius-generator .radius-preview { display: grid; place-items: center; width: min(100%, 320px); height: 180px; padding: 1rem; border: 2px solid currentColor; background: color-mix(in srgb, currentColor 8%, transparent); text-align: center; overflow-wrap: anywhere; }
+@media (max-width: 520px) { .css-border-radius-generator .radius-grid { grid-template-columns: 1fr; } }

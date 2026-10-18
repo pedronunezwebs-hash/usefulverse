@@ -1,0 +1,33 @@
+export const jwtEncoderEnglishCopy = Object.freeze({
+  copyLanguage: 'en',
+  name: 'JWT encoder',
+  title: 'JWT Encoder Free | UsefulVerse',
+  description: 'Create and verify HS256 JWTs locally from JSON claims. No upload, account or token API.',
+  intro: 'Build a compact HS256 token from a JSON claims object or verify its signature in this browser. Signature verification alone does not identify a trusted issuer or authenticate a user.',
+  howQuestion: 'How does this JWT encoder work?',
+  howAnswer: 'It signs the base64url-encoded header and JSON payload with HMAC-SHA-256 (HS256), or verifies that signature locally. You can optionally add an expiration claim in seconds. Only HS256 is supported.',
+  privacyQuestion: 'Are my claims, token or secret uploaded?',
+  privacyAnswer: 'No. The signing and verification use browser Web Crypto. This page does not send or save the JSON, token or secret. Avoid entering production secrets into shared or compromised devices.',
+  fields: {
+    mode: 'Action', createMode: 'Create token', verifyMode: 'Verify signature',
+    payload: 'JWT payload (JSON object)', token: 'Compact JWT', secret: 'HMAC secret',
+    secretHint: 'HS256 needs at least 32 UTF-8 bytes of secret key material. Use a randomly generated key and never paste a production signing secret here.',
+    standardSource: 'HS256 key-size requirement (RFC 7518)',
+    expiresIn: 'Expire after seconds (optional)', expiresHint: 'Adds exp as a NumericDate. Leave blank to keep the payload unchanged; a payload that already has exp cannot use this field.',
+    resultHeading: 'Result', resultOutput: 'Token or verification details',
+    accuracyNote: 'Local HS256 utility only—not an identity provider or authentication decision. A valid signature does not prove who issued a token or whether its claims should be trusted. Validate issuer, audience, key management, time and application policy separately. JSON is limited to 64 KiB and tokens to 128 KiB.',
+  },
+  actions: { run: 'Create token', example: 'Load example', copy: 'Copy result', result: 'JWT result' },
+  messages: {
+    created: 'HS256 token created locally.', verified: 'Signature matches this secret. This does not authenticate a user or trusted issuer.',
+    working: 'Processing locally in this browser.', checkInputs: 'Check the action, JSON and secret.',
+    invalidSignature: 'Signature does not match this secret; no verified claims are shown.',
+    unsupportedCrypto: 'Secure Web Crypto is unavailable. Use a supported browser over HTTPS.',
+    copied: 'Result copied.', copyUnavailable: 'Copy is unavailable in this browser.',
+  },
+  additionalFaqs: [
+    { question: 'Does a valid JWT signature mean a user is authenticated?', answer: 'No. It only shows that the token signature matches the secret entered here. Your application must independently trust the issuer, audience, key, time limits and authorization rules.' },
+    { question: 'Which JWT algorithms are supported?', answer: 'This tool creates and checks HS256 tokens with an HMAC secret. It does not create or verify RSA, ECDSA, EdDSA or other algorithms.' },
+    { question: 'Can I recover a lost signing secret?', answer: 'No. The tool does not store or recover secrets. Keep production keys in an appropriate secure key-management system, not in this page.' },
+  ],
+});

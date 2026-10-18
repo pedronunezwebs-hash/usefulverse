@@ -21,7 +21,7 @@ export async function bundleGrowthControllers({ tools = growthPilotTools, maxByt
     const contents = result.outputFiles[0]?.text;
     if (!contents) throw new Error(`Bundler produced no controller for ${tool.id}.`);
     const bytes = Buffer.byteLength(contents);
-    const toolBudget = tool.id === 'chess-opening-trainer' ? 48 * 1024 : maxBytes;
+    const toolBudget = ['chess-opening-trainer', 'chess-puzzles', 'chess-analysis-board'].includes(tool.id) ? 48 * 1024 : maxBytes;
     if (bytes > toolBudget) throw new Error(`${tool.id} controller is ${bytes} bytes; budget is ${toolBudget}.`);
     bundles[tool.id] = contents;
   }

@@ -1,5 +1,6 @@
 import { escapeGrowthHtml } from './render.mjs';
 import { FONT_PRESETS } from './tools/font-pairing-tool/logic.mjs';
+import { pendingToolIds, renderPendingToolForm } from './tools/pending-23/form.mjs';
 
 function attachCopy(html, copy) {
   const safeJson = JSON.stringify(copy).replaceAll('<', '\\u003c').replaceAll('>', '\\u003e').replaceAll('&', '\\u0026');
@@ -16,6 +17,7 @@ function button(action, text, kind = 'primary') {
 }
 
 export function renderGrowthForm(toolId, copy) {
+  if (pendingToolIds.includes(toolId)) return attachCopy(renderPendingToolForm(toolId, copy), copy);
   const fields = copy?.fields ?? {};
   const actions = copy?.actions ?? {};
   const fieldNames = {
@@ -125,6 +127,23 @@ export function renderGrowthForm(toolId, copy) {
     'har-viewer': ['file', 'paste', 'pasteHint', 'privacyWarning', 'search', 'method', 'statusFilter', 'all', 'errorsOnly', 'successOnly', 'totalRequests', 'failedRequests', 'transferred', 'totalTime', 'slowest', 'request', 'response', 'duration', 'size', 'waterfall', 'results', 'shown', 'of', 'noMatches', 'methodLabel', 'statusLabel', 'urlLabel', 'durationLabel', 'sizeLabel', 'timingNote', 'unknownDate', 'invalid', 'tooMany'],
     'robots-txt-tester': ['robotsText', 'robotsHint', 'userAgent', 'userAgentHint', 'urls', 'urlsHint', 'scopeNote', 'agentGroup', 'noSpecificGroup', 'ruleCount', 'diagnostics', 'ignored', 'malformed', 'allowed', 'blocked', 'winningRule', 'defaultRule'],
     'openapi-editor': ['format', 'autoFormat', 'jsonFormat', 'yamlFormat', 'document', 'upload', 'accuracyNote', 'previewTitle', 'operations', 'issues', 'yamlLicense'],
+    'graphql-formatter': ['source', 'sourceHint', 'output', 'outputHint', 'accuracyNote', 'resultTitle'],
+    'chore-chart-maker': ['people', 'peopleHint', 'chores', 'choresHint', 'startDate', 'weeks', 'week1', 'week2', 'week4', 'week8', 'week12', 'accuracyNote', 'privacyNote', 'resultTitle', 'weekLabel', 'startsLabel', 'choreLabel', 'assignedToLabel', 'pointsLabel', 'loadSummary', 'loadSpread'],
+    'css-border-radius-generator': ['unit', 'pixels', 'percent', 'linkCorners', 'preview', 'previewShape', 'horizontal', 'vertical', 'topLeft', 'topRight', 'bottomRight', 'bottomLeft', 'output', 'accuracyNote', 'previewSize'],
+    'rental-yield-calculator': ['propertyPrice', 'monthlyRent', 'currencySymbol', 'vacancyPercent', 'annualPropertyTax', 'annualMaintenance', 'annualInsurance', 'annualAssociationFees', 'annualOtherExpenses', 'currencyNote', 'accuracyNote', 'resultTitle', 'grossAnnualRent', 'vacancyLoss', 'effectiveAnnualRent', 'annualExpensesTotal', 'netOperatingIncome', 'grossYieldPercent', 'netYieldPercent', 'monthlyNetIncome'],
+    'rsa-key-generator': ['keySize', 'bits2048', 'bits3072', 'accuracyNote', 'publicKey', 'privateKey', 'fingerprint', 'message', 'ciphertext', 'decryptOutput', 'maxBytes', 'encryptionNote', 'privateKeyWarning'],
+    'log-analyzer': ['file', 'logs', 'formatNote', 'privacyNote', 'statusClass', 'allStatuses', 'status2xx', 'status3xx', 'status4xx', 'status5xx', 'fromDate', 'toDate', 'resultTitle', 'totalLines', 'parsedLines', 'invalidLines', 'matchedRequests', 'transferredBytes', 'invalidLineNumbers', 'statusTable', 'methodTable', 'dayTable', 'statusLabel', 'methodLabel', 'dateLabel', 'requests', 'noData', 'accuracyNote'],
+    'pyramid-solitaire': ['gameTitle', 'rules', 'recycleRule', 'ruleAppliesNext', 'noRecycle', 'oneRecycle', 'unlimitedRecycle', 'pyramid', 'stock', 'waste', 'removed', 'cardsLeft', 'cardFaceDown', 'emptyPile', 'covered', 'exposed', 'rankAce', 'rankJack', 'rankQueen', 'rankKing', 'suitClubs', 'suitDiamonds', 'suitHearts', 'suitSpades', 'statusHint', 'stockStatus', 'wasteStatus', 'recycleStatus', 'accuracyNote'],
+    'rebus-puzzles': ['puzzle', 'answer', 'answerHint', 'puzzleCount', 'total', 'hintLabel', 'explanation', 'score', 'attempts', 'puzzlesLanguageNote'],
+    'killer-sudoku': ['difficulty', 'board', 'rules', 'accuracyNote', 'cell', 'row', 'column', 'cageSum', 'notes'],
+    'sudoku-solver': ['board', 'cell', 'column', 'note', 'accuracyNote'],
+    'hangman-game': ['difficulty', 'letter', 'word', 'attempts', 'remaining', 'used', 'privacyNote', 'rules'],
+    'aim-trainer': ['duration', 'duration15', 'duration30', 'duration60', 'targetSize', 'targetLarge', 'targetRegular', 'targetSmall', 'areaLabel', 'areaNote', 'target', 'hits', 'misses', 'accuracy', 'timeLeft', 'resultTitle', 'privacyNote'],
+    'chess-puzzles': ['board', 'instructions', 'attempts', 'hints', 'square', 'empty', 'piece_wp', 'piece_wn', 'piece_wb', 'piece_wr', 'piece_wq', 'piece_wk', 'piece_bp', 'piece_bn', 'piece_bb', 'piece_br', 'piece_bq', 'piece_bk', 'rules', 'privacyNote'],
+    'dots-and-boxes': ['boardSize', 'size3', 'size4', 'size5', 'mode', 'computer', 'twoPlayers', 'board', 'instructions', 'playerOne', 'playerTwo', 'computerName', 'score', 'currentTurn', 'horizontalEdge', 'verticalEdge', 'rules', 'privacyNote'],
+    'chess-analysis-board': ['board', 'instructions', 'square', 'empty', 'piece_k', 'piece_q', 'piece_r', 'piece_b', 'piece_n', 'piece_p', 'fen', 'fenHint', 'pgn', 'pgnHint', 'promotion', 'queen', 'rook', 'bishop', 'knight', 'currentPosition', 'moveNumber', 'moveList', 'noMoves', 'white', 'black', 'check', 'checkmate', 'draw', 'fenOutput', 'pgnOutput', 'analysisNote', 'notes', 'notesHint', 'privacyNote', 'engineTitle', 'engineMode', 'engineDepth', 'engineTime', 'engineLines', 'engineScore', 'mate', 'engineLicense'],
+    'blackjack-game': ['player', 'dealer', 'score', 'hidden', 'remaining', 'rounds', 'wins', 'losses', 'pushes', 'gameStatus', 'hand', 'suit_spades', 'suit_hearts', 'suit_diamonds', 'suit_clubs', 'rules', 'privacyNote'],
+    'tripeaks-solitaire': ['instructions', 'board', 'stock', 'waste', 'emptyWaste', 'faceDown', 'removed', 'covered', 'exposed', 'moves', 'remaining', 'score', 'status', 'privacyNote'],
     'font-pairing-tool': ['preset', 'headingFont', 'bodyFont', 'fontFiles', 'accuracyNote', 'sampleHeading', 'sampleBody', 'hierarchyLabel', 'headingSize', 'bodySize', 'headingWeight', 'bodyWeight', 'lineHeight', 'familyGeorgia', 'familyTimes', 'familyArial', 'familyVerdana', 'familyTrebuchet', 'familyMono', 'familySystem', 'presetEditorial', 'presetModern', 'presetClassic', 'presetTechnical', 'presetFriendly', 'presetSystem'],
     'roth-vs-traditional-calculator': ['annualContribution', 'currentTaxRate', 'futureTaxRate', 'annualReturn', 'years', 'budgetNote', 'accuracyNote', 'resultSummary', 'rothAnnualDeposit', 'rothAfterTax', 'traditionalBeforeTax', 'traditionalAfterTax', 'traditionalTax', 'taxPaidNow', 'estimatedDifference', 'totalBudget', 'irsSource'],
     'polygon-calculator': ['sides', 'dimensionMode', 'sideLength', 'apothem', 'circumradius', 'dimension', 'unit', 'accuracyNote', 'resultSummary', 'perimeter', 'area', 'computedSide', 'computedApothem', 'computedCircumradius', 'interiorAngle', 'centralAngle', 'formulaNote'],
@@ -148,6 +167,12 @@ export function renderGrowthForm(toolId, copy) {
     'asphalt-calculator': ['area', 'areaUnit', 'compactedThickness', 'thicknessUnit', 'density', 'densityUnit', 'wastePercent', 'pricePerTonne', 'accuracyNote', 'relatedConcreteCalculator'],
     mancala: ['mode'],
     'dominoes-game': ['mode', 'variant', 'board', 'stock', 'hand', 'opponentHand', 'accuracyNote'],
+    'hearts-game': ['passDirection', 'board', 'hand', 'scores', 'clubs', 'diamonds', 'spades', 'hearts', 'accuracyNote'],
+    'typing-practice': ['mode', 'prompt', 'typedInput', 'customText', 'progress', 'accuracy', 'accuracyNote'],
+    sokoban: ['level', 'board', 'player', 'box', 'goal', 'moves', 'pushes', 'accuracyNote'],
+    'maze-generator': ['width', 'height', 'seed', 'board', 'start', 'finish', 'steps', 'solutionNote', 'accuracyNote'],
+    'sleep-calculator': ['direction', 'bedtimeMode', 'wakeMode', 'wakeReference', 'bedReference', 'durationHours', 'extraMinutes', 'latency', 'result', 'resultDetails', 'accuracyNote'],
+    'lean-body-mass-calculator': ['method', 'directMethod', 'boerMethod', 'equationSet', 'maleEquation', 'femaleEquation', 'weight', 'height', 'bodyFatPercent', 'unitSystem', 'metric', 'imperial', 'result', 'fatMass', 'formula', 'directFormula', 'boerMaleFormula', 'boerFemaleFormula', 'sourceBoer', 'accuracyNote'],
     hitori: ['size', 'difficulty', 'board', 'rules', 'accuracyNote', 'cell', 'row', 'column', 'black', 'white'],
     nurikabe: ['difficulty', 'board', 'rules', 'accuracyNote', 'cell', 'row', 'column', 'sea', 'island'],
     'logic-grid-puzzle': ['difficulty', 'board', 'clues', 'categoryPair', 'categoryGroups', 'same', 'different', 'unmarked', 'sameMark', 'differentMark', 'rules', 'accuracyNote'],
@@ -188,6 +213,13 @@ export function renderGrowthForm(toolId, copy) {
     'heat-pump-calculator': ['heatOutput', 'heatOutputUnit', 'cop', 'electricityRatePerKwh', 'hoursPerDay', 'currency', 'accuracyNote'],
     'miter-angle-calculator': ['mode', 'cornerAngle', 'springAngle', 'accuracyNote', 'diagramLabel', 'diagramCorner', 'diagramCut', 'diagramSpring'],
     'voltage-drop-calculator': ['circuit', 'dc', 'singlePhase', 'threePhase', 'material', 'copper', 'aluminum', 'oneWayLength', 'lengthUnit', 'currentA', 'crossSectionMm2', 'supplyVoltageV', 'powerFactor', 'accuracyNote'],
+    'cycling-power-calculator': ['mass', 'speed', 'gradientPercent', 'headwind', 'rollingResistance', 'dragArea', 'airDensity', 'drivetrainEfficiency', 'unitSystem', 'metric', 'imperial', 'accuracyNote'],
+    'inductor-calculator': ['mode', 'airCore', 'toroid', 'turns', 'dimensionUnit', 'coilDiameter', 'coilLength', 'alValue', 'targetInductance', 'targetUnit', 'accuracyNote', 'method', 'wheelerRange', 'outsideWheelerRange'],
+    'centripetal-force-calculator': ['mode', 'speedMode', 'frequencyMode', 'mass', 'massUnit', 'radius', 'radiusUnit', 'speed', 'speedUnit', 'frequency', 'frequencyUnit', 'accuracyNote'],
+    'writing-tracker': ['projectName', 'projectGoal', 'sessionProject', 'chooseProject', 'sessionDate', 'sessionWords', 'sessionMinutes', 'sessionNote', 'accuracyNote', 'projectsHeading', 'sessionsHeading', 'summaryHeading', 'totalWords', 'totalMinutes', 'sessionCount', 'activeDays', 'currentStreak', 'noProjects', 'noSessions', 'projectGoalNone', 'projectRemaining', 'projectReached', 'date', 'words', 'minutes', 'note'],
+    'aes-encryption-tool': ['mode', 'encryptMode', 'decryptMode', 'dataMode', 'textMode', 'fileMode', 'password', 'passwordHint', 'sourceText', 'sourceFile', 'iterations', 'iterationsValue', 'accuracyNote', 'resultHeading', 'resultText', 'fileResult', 'fileNameNote'],
+    'jwt-encoder': ['mode', 'createMode', 'verifyMode', 'payload', 'token', 'secret', 'secretHint', 'standardSource', 'expiresIn', 'expiresHint', 'resultHeading', 'resultOutput', 'accuracyNote'],
+    'customer-acquisition-cost-calculator': ['marketingSpend', 'salesSpend', 'toolsSpend', 'agencySpend', 'otherSpend', 'newCustomers', 'currency', 'monthlyRevenue', 'grossMargin', 'accuracyNote', 'resultHeading', 'totalSpend', 'customers', 'cac', 'monthlyGrossProfit', 'payback', 'notAvailable', 'months'],
   }[toolId];
   if (!fieldNames || fieldNames.some((key) => !fields[key])) throw new Error(`Missing localized form fields for ${toolId}.`);
   const actionNames = {
@@ -258,6 +290,13 @@ export function renderGrowthForm(toolId, copy) {
     'specific-heat-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'rc-time-constant-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     'horsepower-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'cycling-power-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'inductor-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'centripetal-force-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
+    'writing-tracker': ['addProject', 'recordSession', 'updateSession', 'example', 'exportCsv', 'edit', 'delete', 'deleteProject', 'cancelEdit'],
+    'aes-encryption-tool': ['process', 'example', 'copy', 'download'],
+    'jwt-encoder': ['run', 'example', 'copy', 'result'],
+    'customer-acquisition-cost-calculator': ['calculate', 'example', 'reset', 'copy', 'result'],
     'rtf-converter': ['convert', 'reset', 'copy', 'download', 'print', 'result'],
     'csv-to-pdf': ['preview', 'reset', 'example', 'print', 'result'],
     'round-robin-tournament-generator': ['generate', 'reset', 'example', 'downloadCsv', 'print', 'result'],
@@ -297,6 +336,23 @@ export function renderGrowthForm(toolId, copy) {
     'har-viewer': ['analyze', 'example', 'reset', 'showMore', 'result'],
     'robots-txt-tester': ['test', 'example', 'reset', 'result'],
     'openapi-editor': ['validate', 'example', 'format', 'download', 'copyReport'],
+    'graphql-formatter': ['format', 'example', 'reset', 'result', 'copy', 'download'],
+    'chore-chart-maker': ['generate', 'example', 'reset', 'result', 'print', 'downloadCsv'],
+    'css-border-radius-generator': ['example', 'reset', 'copy', 'download'],
+    'rental-yield-calculator': ['example', 'reset', 'calculate', 'copy'],
+    'rsa-key-generator': ['generate', 'encrypt', 'decrypt', 'copyPublic', 'copyPrivate', 'copyFingerprint', 'copyCiphertext', 'reset'],
+    'log-analyzer': ['analyze', 'example', 'reset', 'exportCsv'],
+    'pyramid-solitaire': ['newGame', 'restart', 'undo', 'hint', 'draw', 'recycle'],
+    'rebus-puzzles': ['check', 'hint', 'reveal', 'next', 'restart'],
+    'killer-sudoku': ['newGame', 'checkBoard', 'hint', 'undo', 'rules', 'easy', 'regular', 'hard'],
+    'sudoku-solver': ['example', 'solve', 'step', 'clear'],
+    'hangman-game': ['newWord', 'guess', 'hint', 'restart', 'easy', 'regular', 'hard'],
+    'aim-trainer': ['start', 'restart'],
+    'chess-puzzles': ['newPuzzle', 'hint', 'clearSelection'],
+    'dots-and-boxes': ['newGame'],
+    'chess-analysis-board': ['newGame', 'loadFen', 'loadPgn', 'previous', 'next', 'copyFen', 'copyPgn', 'analyze', 'stop'],
+    'blackjack-game': ['newRound', 'hit', 'stand', 'double', 'split'],
+    'tripeaks-solitaire': ['newGame', 'draw', 'undo', 'hint'],
     'font-pairing-tool': ['applyPreset', 'swap', 'copyCss', 'clearFonts', 'reset'],
     'roth-vs-traditional-calculator': ['compare', 'example', 'reset', 'result'],
     'polygon-calculator': ['calculate', 'example', 'reset', 'copy', 'result'],
@@ -320,6 +376,12 @@ export function renderGrowthForm(toolId, copy) {
     'asphalt-calculator': ['calculate', 'reset', 'copy', 'example', 'result'],
     mancala: ['newGame', 'rules', 'result', 'computer', 'twoPlayers'],
     'dominoes-game': ['newGame', 'draw', 'pass', 'playLeft', 'playRight', 'computer', 'twoPlayers', 'drawRule', 'blockRule'],
+    'hearts-game': ['newGame', 'passCards', 'passLeft', 'passRight', 'passAcross', 'hold', 'playCard', 'rules', 'result'],
+    'typing-practice': ['newLesson', 'rowHome', 'rowTop', 'rowBottom', 'rowMixed', 'applyCustomText', 'clearCustomText', 'startOver', 'rules', 'result'],
+    sokoban: ['restart', 'undo', 'up', 'down', 'left', 'right', 'levelOne', 'levelTwo', 'rules', 'result'],
+    'maze-generator': ['generate', 'solve', 'hideSolution', 'restart', 'exportSvg', 'up', 'down', 'left', 'right', 'rules', 'result'],
+    'sleep-calculator': ['calculate', 'example', 'reset', 'result'],
+    'lean-body-mass-calculator': ['calculate', 'example', 'reset', 'result'],
     hitori: ['newGame', 'checkBoard', 'hint', 'clearMarks', 'easy', 'medium', 'hard'],
     nurikabe: ['newGame', 'checkBoard', 'hint', 'clearMarks', 'easy', 'medium', 'hard'],
     'logic-grid-puzzle': ['newGame', 'checkBoard', 'hint', 'clearMarks', 'easy', 'medium', 'hard', 'rules'],
@@ -391,6 +453,97 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions"><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(actions.example)}</button><button type="button" data-action="format" class="button button--secondary">${escapeGrowthHtml(actions.format)}</button><button type="submit" data-action="validate" class="button button--primary">${escapeGrowthHtml(actions.validate)}</button><button type="button" data-action="download" class="button button--secondary">${escapeGrowthHtml(actions.download)}</button><button type="button" data-action="copy-report" class="button button--secondary">${escapeGrowthHtml(actions.copyReport)}</button></div>
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-openapi-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.previewTitle)}</h2><p data-openapi-summary></p><ol data-openapi-operations></ol><h3>${escapeGrowthHtml(fields.issues)}</h3><ul data-openapi-issues></ul></section>
+  </form>`, copy);
+
+  if (toolId === 'graphql-formatter') return attachCopy(`<form id="tool-form" class="graphql-formatter" novalidate>
+    ${label('graphql-source', fields.source, `<textarea id="graphql-source" name="source" rows="14" maxlength="100000" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-describedby="graphql-source-hint graphql-accuracy" required>${escapeGrowthHtml(copy.exampleSource)}</textarea>`)}
+    <p id="graphql-source-hint" class="hint">${escapeGrowthHtml(fields.sourceHint)}</p>
+    <p id="graphql-accuracy" class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions"><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(actions.example)}</button><button type="reset" data-action="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button><button type="submit" data-action="format" class="button button--primary">${escapeGrowthHtml(actions.format)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-graphql-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.resultTitle)}</h2>${label('graphql-output', fields.output, `<textarea id="graphql-output" name="output" rows="14" maxlength="100000" readonly spellcheck="false" aria-describedby="graphql-output-hint"></textarea>`)}<p id="graphql-output-hint" class="hint">${escapeGrowthHtml(fields.outputHint)}</p><div class="actions">${button('copy', actions.copy, 'secondary')}${button('download', actions.download, 'secondary')}</div></section>
+  </form>`, copy);
+
+  if (toolId === 'chore-chart-maker') return attachCopy(`<form id="tool-form" class="chore-chart-maker" novalidate>
+    ${label('chore-people', fields.people, `<textarea id="chore-people" name="people" rows="5" maxlength="800" required>${escapeGrowthHtml(copy.examplePeople)}</textarea>`)}
+    <p class="hint">${escapeGrowthHtml(fields.peopleHint)}</p>
+    ${label('chore-list', fields.chores, `<textarea id="chore-list" name="chores" rows="7" maxlength="5000" required>${escapeGrowthHtml(copy.exampleChores)}</textarea>`)}
+    <p class="hint">${escapeGrowthHtml(fields.choresHint)}</p>
+    <div class="calculator-grid">
+      ${label('chore-start-date', fields.startDate, '<input id="chore-start-date" name="startDate" type="date" required>')}
+      ${label('chore-weeks', fields.weeks, `<select id="chore-weeks" name="weeks"><option value="1">${escapeGrowthHtml(fields.week1)}</option><option value="2">${escapeGrowthHtml(fields.week2)}</option><option value="4" selected>${escapeGrowthHtml(fields.week4)}</option><option value="8">${escapeGrowthHtml(fields.week8)}</option><option value="12">${escapeGrowthHtml(fields.week12)}</option></select>`)}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+    <div class="actions"><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(actions.example)}</button><button type="reset" data-action="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button><button type="submit" data-action="generate" class="button button--primary">${escapeGrowthHtml(actions.generate)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-chore-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><p data-chore-summary></p><div class="chore-schedule" data-chore-schedule></div><h3>${escapeGrowthHtml(fields.loadSummary)}</h3><ul data-chore-loads></ul><p data-chore-spread></p><div class="actions"><button type="button" data-action="print" class="button button--secondary">${escapeGrowthHtml(actions.print)}</button><button type="button" data-action="download-csv" class="button button--secondary">${escapeGrowthHtml(actions.downloadCsv)}</button></div></section>
+  </form>`, copy);
+
+  if (toolId === 'css-border-radius-generator') {
+    const corners = [['topLeft', fields.topLeft], ['topRight', fields.topRight], ['bottomRight', fields.bottomRight], ['bottomLeft', fields.bottomLeft]];
+    const radiusInput = (key, labelText, axis, value) => label(`radius-${key}-${axis}`, `${labelText} · ${axis === 'x' ? fields.horizontal : fields.vertical}`, `<input id="radius-${key}-${axis}" name="${key}${axis.toUpperCase()}" type="number" min="0" max="500" step="1" value="${value}" inputmode="decimal" required>`);
+    const controls = (axis, values) => `<div class="radius-grid">${corners.map(([key, text], index) => radiusInput(key, text, axis, values[index])).join('')}</div>`;
+    return attachCopy(`<form id="tool-form" class="css-border-radius-generator" novalidate>
+    ${label('radius-unit', fields.unit, `<select id="radius-unit" name="unit"><option value="px">${escapeGrowthHtml(fields.pixels)}</option><option value="%">${escapeGrowthHtml(fields.percent)}</option></select>`)}
+    <label class="radius-link"><input type="checkbox" name="linkCorners" data-link-corners> ${escapeGrowthHtml(fields.linkCorners)}</label>
+    <h3>${escapeGrowthHtml(fields.horizontal)}</h3>${controls('x', [32, 100, 20, 64])}
+    <h3>${escapeGrowthHtml(fields.vertical)}</h3>${controls('y', [22, 40, 70, 26])}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.previewSize)}</p>
+    <section class="radius-preview-panel" aria-labelledby="radius-preview-title"><h3 id="radius-preview-title">${escapeGrowthHtml(fields.preview)}</h3><div class="radius-preview" data-radius-preview role="img" aria-label="${escapeGrowthHtml(fields.previewShape)}">${escapeGrowthHtml(fields.previewShape)}</div></section>
+    ${label('radius-output', fields.output, '<textarea id="radius-output" name="output" rows="4" readonly spellcheck="false"></textarea>')}
+    <div class="actions"><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(actions.example)}</button><button type="reset" data-action="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button><button type="button" data-action="copy" class="button button--primary">${escapeGrowthHtml(actions.copy)}</button><button type="button" data-action="download" class="button button--secondary">${escapeGrowthHtml(actions.download)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+  </form>`, copy);
+  }
+
+  if (toolId === 'rental-yield-calculator') return attachCopy(`<form id="tool-form" class="rental-yield-calculator" novalidate>
+    <div class="calculator-grid">
+      ${label('rental-price', fields.propertyPrice, '<input id="rental-price" name="propertyPrice" type="number" min="0.01" max="1000000000000" step="any" inputmode="decimal" required>')}
+      ${label('rental-monthly-rent', fields.monthlyRent, '<input id="rental-monthly-rent" name="monthlyRent" type="number" min="0" max="1000000000" step="any" inputmode="decimal" required>')}
+    </div>
+    ${label('rental-currency', fields.currencySymbol, '<input id="rental-currency" name="currencySymbol" type="text" maxlength="8" value="$" autocomplete="off">')}
+    ${label('rental-vacancy', fields.vacancyPercent, '<input id="rental-vacancy" name="vacancyPercent" type="number" min="0" max="100" step="any" value="0" inputmode="decimal" required>')}
+    <div class="calculator-grid">
+      ${label('rental-property-tax', fields.annualPropertyTax, '<input id="rental-property-tax" name="annualPropertyTax" type="number" min="0" step="any" value="0" inputmode="decimal">')}
+      ${label('rental-maintenance', fields.annualMaintenance, '<input id="rental-maintenance" name="annualMaintenance" type="number" min="0" step="any" value="0" inputmode="decimal">')}
+      ${label('rental-insurance', fields.annualInsurance, '<input id="rental-insurance" name="annualInsurance" type="number" min="0" step="any" value="0" inputmode="decimal">')}
+      ${label('rental-association-fees', fields.annualAssociationFees, '<input id="rental-association-fees" name="annualAssociationFees" type="number" min="0" step="any" value="0" inputmode="decimal">')}
+      ${label('rental-other-expenses', fields.annualOtherExpenses, '<input id="rental-other-expenses" name="annualOtherExpenses" type="number" min="0" step="any" value="0" inputmode="decimal">')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.currencyNote)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions"><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(actions.example)}</button><button type="reset" data-action="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button><button type="submit" data-action="calculate" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-rental-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><dl class="rental-results"><div><dt>${escapeGrowthHtml(fields.grossAnnualRent)}</dt><dd data-gross-rent></dd></div><div><dt>${escapeGrowthHtml(fields.vacancyLoss)}</dt><dd data-vacancy-loss></dd></div><div><dt>${escapeGrowthHtml(fields.effectiveAnnualRent)}</dt><dd data-effective-rent></dd></div><div><dt>${escapeGrowthHtml(fields.annualExpensesTotal)}</dt><dd data-expenses></dd></div><div><dt>${escapeGrowthHtml(fields.netOperatingIncome)}</dt><dd data-noi></dd></div><div><dt>${escapeGrowthHtml(fields.grossYieldPercent)}</dt><dd data-gross-yield></dd></div><div><dt>${escapeGrowthHtml(fields.netYieldPercent)}</dt><dd data-net-yield></dd></div><div><dt>${escapeGrowthHtml(fields.monthlyNetIncome)}</dt><dd data-monthly-net></dd></div></dl><div class="actions"><button type="button" data-action="copy" class="button button--secondary">${escapeGrowthHtml(actions.copy)}</button></div></section>
+  </form>`, copy);
+
+  if (toolId === 'rsa-key-generator') return attachCopy(`<form id="tool-form" class="rsa-key-generator" novalidate>
+    ${label('rsa-key-size', fields.keySize, `<select id="rsa-key-size" name="keySize"><option value="2048">${escapeGrowthHtml(fields.bits2048)}</option><option value="3072">${escapeGrowthHtml(fields.bits3072)}</option></select>`)}
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions"><button type="button" data-action="generate" class="button button--primary">${escapeGrowthHtml(actions.generate)}</button><button type="reset" data-action="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <section class="key-block"><h2>${escapeGrowthHtml(fields.publicKey)}</h2>${label('rsa-public-key', fields.publicKey, '<textarea id="rsa-public-key" name="publicKey" rows="8" readonly spellcheck="false" autocomplete="off"></textarea>')}<div class="key-controls"><button type="button" data-action="copyPublic" class="button button--secondary">${escapeGrowthHtml(actions.copyPublic)}</button></div></section>
+    <section class="key-block"><h2>${escapeGrowthHtml(fields.privateKey)}</h2><p class="key-warning">${escapeGrowthHtml(fields.privateKeyWarning)}</p>${label('rsa-private-key', fields.privateKey, '<textarea id="rsa-private-key" name="privateKey" rows="10" readonly spellcheck="false" autocomplete="off"></textarea>')}<div class="key-controls"><button type="button" data-action="copyPrivate" class="button button--secondary">${escapeGrowthHtml(actions.copyPrivate)}</button></div></section>
+    ${label('rsa-fingerprint', fields.fingerprint, '<textarea id="rsa-fingerprint" class="key-fingerprint" name="fingerprint" rows="2" readonly spellcheck="false"></textarea>')}<div class="key-controls"><button type="button" data-action="copyFingerprint" class="button button--secondary">${escapeGrowthHtml(actions.copyFingerprint)}</button></div>
+    <p class="hint">${escapeGrowthHtml(fields.encryptionNote)}</p>${label('rsa-max-bytes', fields.maxBytes, '<input id="rsa-max-bytes" name="maxBytes" type="text" value="190" readonly>')}
+    ${label('rsa-message', fields.message, '<textarea id="rsa-message" name="message" rows="3" maxlength="636" autocomplete="off"></textarea>')}<div class="actions"><button type="button" data-action="encrypt" class="button button--secondary">${escapeGrowthHtml(actions.encrypt)}</button></div>
+    ${label('rsa-ciphertext', fields.ciphertext, '<textarea id="rsa-ciphertext" name="ciphertext" rows="5" autocomplete="off" spellcheck="false"></textarea>')}<div class="key-controls"><button type="button" data-action="copyCiphertext" class="button button--secondary">${escapeGrowthHtml(actions.copyCiphertext)}</button><button type="button" data-action="decrypt" class="button button--secondary">${escapeGrowthHtml(actions.decrypt)}</button></div>
+    ${label('rsa-decrypt-output', fields.decryptOutput, '<textarea id="rsa-decrypt-output" name="decryptOutput" rows="3" readonly></textarea>')}
+    <p class="status" role="status" aria-live="polite" data-status></p>
+  </form>`, copy);
+
+  if (toolId === 'log-analyzer') return attachCopy(`<form id="tool-form" class="log-analyzer" novalidate>
+    <p class="hint log-privacy">${escapeGrowthHtml(fields.privacyNote)}</p><p class="hint">${escapeGrowthHtml(fields.formatNote)}</p>
+    <div class="log-file"><label for="log-file">${escapeGrowthHtml(fields.file)}</label><input id="log-file" name="file" type="file" accept=".log,.txt,text/plain"></div>
+    ${label('log-source', fields.logs, '<textarea id="log-source" name="logs" rows="12" spellcheck="false" autocomplete="off"></textarea>')}
+    <div class="calculator-grid">
+      ${label('log-status-class', fields.statusClass, `<select id="log-status-class" name="statusClass"><option value="all">${escapeGrowthHtml(fields.allStatuses)}</option><option value="2xx">${escapeGrowthHtml(fields.status2xx)}</option><option value="3xx">${escapeGrowthHtml(fields.status3xx)}</option><option value="4xx">${escapeGrowthHtml(fields.status4xx)}</option><option value="5xx">${escapeGrowthHtml(fields.status5xx)}</option></select>`)}
+      ${label('log-from-date', fields.fromDate, '<input id="log-from-date" name="fromDate" type="date">')}
+      ${label('log-to-date', fields.toDate, '<input id="log-to-date" name="toDate" type="date">')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions"><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(actions.example)}</button><button type="reset" data-action="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button><button type="submit" data-action="analyze" class="button button--primary">${escapeGrowthHtml(actions.analyze)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="log-results" data-log-results hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><dl class="log-summary"><div><dt>${escapeGrowthHtml(fields.totalLines)}</dt><dd data-total-lines></dd></div><div><dt>${escapeGrowthHtml(fields.parsedLines)}</dt><dd data-parsed-lines></dd></div><div><dt>${escapeGrowthHtml(fields.invalidLines)}</dt><dd data-invalid-lines></dd></div><div><dt>${escapeGrowthHtml(fields.matchedRequests)}</dt><dd data-matched-requests></dd></div><div><dt>${escapeGrowthHtml(fields.transferredBytes)}</dt><dd data-transferred-bytes></dd></div></dl><p>${escapeGrowthHtml(fields.invalidLineNumbers)}: <span data-invalid-numbers></span></p><p data-no-matches></p><div class="log-tables"><section><h3>${escapeGrowthHtml(fields.statusTable)}</h3><table data-status-table></table></section><section><h3>${escapeGrowthHtml(fields.methodTable)}</h3><table data-method-table></table></section><section><h3>${escapeGrowthHtml(fields.dayTable)}</h3><table data-day-table></table></section></div><div class="actions"><button type="button" data-action="export-csv" class="button button--secondary">${escapeGrowthHtml(actions.exportCsv)}</button></div></section>
   </form>`, copy);
 
   if (toolId === 'font-pairing-tool') {
@@ -887,6 +1040,33 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions"><button type="button" data-action="draw" class="button button--secondary">${escapeGrowthHtml(labels.draw)}</button><button type="button" data-action="pass" class="button button--secondary">${escapeGrowthHtml(labels.pass)}</button></div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);
 
+  if (toolId === 'hearts-game') return attachCopy(`<section class="game hearts-game" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="game-toolbar"><div class="field"><label for="hearts-pass-direction">${escapeGrowthHtml(fields.passDirection)}</label><select id="hearts-pass-direction" data-pass-direction><option value="left">${escapeGrowthHtml(labels.passLeft)}</option><option value="right">${escapeGrowthHtml(labels.passRight)}</option><option value="across">${escapeGrowthHtml(labels.passAcross)}</option><option value="hold">${escapeGrowthHtml(labels.hold)}</option></select></div><button type="button" data-action="new-game" class="button button--primary">${escapeGrowthHtml(labels.newGame)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section aria-labelledby="hearts-score-heading"><h2 id="hearts-score-heading">${escapeGrowthHtml(fields.scores)}</h2><ol class="hearts-scores" data-scores></ol></section>
+    <section aria-labelledby="hearts-board-heading"><h2 id="hearts-board-heading">${escapeGrowthHtml(fields.board)}</h2><ol class="hearts-trick" data-trick aria-live="polite"></ol></section>
+    <section aria-labelledby="hearts-hand-heading"><h2 id="hearts-hand-heading">${escapeGrowthHtml(fields.hand)}</h2><ul class="hearts-hand" data-hand></ul></section>
+    <div class="actions"><button type="button" data-action="pass-cards" class="button button--primary" disabled>${escapeGrowthHtml(labels.passCards)}</button></div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);
+
+  if (toolId === 'typing-practice') return attachCopy(`<section class="typing-practice" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="game-toolbar"><div class="field"><label for="typing-mode">${escapeGrowthHtml(fields.mode)}</label><select id="typing-mode" data-mode><option value="home">${escapeGrowthHtml(labels.rowHome)}</option><option value="top">${escapeGrowthHtml(labels.rowTop)}</option><option value="bottom">${escapeGrowthHtml(labels.rowBottom)}</option><option value="mixed">${escapeGrowthHtml(labels.rowMixed)}</option></select></div><button type="button" data-action="new-lesson" class="button button--primary">${escapeGrowthHtml(labels.newLesson)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section aria-labelledby="typing-prompt-heading"><h2 id="typing-prompt-heading">${escapeGrowthHtml(fields.prompt)}</h2><p class="typing-practice__prompt" data-prompt></p></section>
+    <div class="field"><label for="typing-input">${escapeGrowthHtml(fields.typedInput)}</label><textarea id="typing-input" data-typing-input rows="3" maxlength="1000" autocapitalize="off" autocomplete="off" spellcheck="false"></textarea></div>
+    <p class="typing-practice__progress"><span>${escapeGrowthHtml(fields.progress)}: </span><strong data-progress-label></strong></p><progress max="100" value="0" data-progress aria-label="${escapeGrowthHtml(fields.progress)}"></progress>
+    <div class="field"><label for="typing-custom-text">${escapeGrowthHtml(fields.customText)}</label><textarea id="typing-custom-text" data-custom-text rows="3" maxlength="1000"></textarea></div>
+    <div class="actions"><button type="button" data-action="apply-custom-text" class="button button--secondary">${escapeGrowthHtml(labels.applyCustomText)}</button><button type="button" data-action="clear-custom-text" class="button button--secondary">${escapeGrowthHtml(labels.clearCustomText)}</button><button type="button" data-action="start-over" class="button button--secondary">${escapeGrowthHtml(labels.startOver)}</button></div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);
+
+  if (toolId === 'sokoban') return attachCopy(`<section class="game sokoban" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="game-toolbar"><div class="field"><label for="sokoban-level">${escapeGrowthHtml(fields.level)}</label><select id="sokoban-level" data-level><option value="0">${escapeGrowthHtml(labels.levelOne)}</option><option value="1">${escapeGrowthHtml(labels.levelTwo)}</option></select></div><button type="button" data-action="restart" class="button button--secondary">${escapeGrowthHtml(labels.restart)}</button><button type="button" data-action="undo" class="button button--secondary">${escapeGrowthHtml(labels.undo)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section aria-labelledby="sokoban-board-heading"><h2 id="sokoban-board-heading">${escapeGrowthHtml(fields.board)}</h2><div class="sokoban-board" data-board role="grid" tabindex="0" aria-label="${escapeGrowthHtml(fields.board)}"></div></section>
+    <dl class="sokoban-stats"><div><dt>${escapeGrowthHtml(fields.moves)}</dt><dd data-moves>0</dd></div><div><dt>${escapeGrowthHtml(fields.pushes)}</dt><dd data-pushes>0</dd></div></dl>
+    <div class="sokoban-controls" role="group" aria-label="${escapeGrowthHtml(fields.board)}"><button type="button" data-move="up" aria-label="${escapeGrowthHtml(labels.up)}">↑</button><button type="button" data-move="left" aria-label="${escapeGrowthHtml(labels.left)}">←</button><button type="button" data-move="down" aria-label="${escapeGrowthHtml(labels.down)}">↓</button><button type="button" data-move="right" aria-label="${escapeGrowthHtml(labels.right)}">→</button></div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);
+
   if (toolId === 'hitori') return attachCopy(`<section class="game hitori-game" aria-label="${escapeGrowthHtml(copy.name)}">
     <div class="game-toolbar"><div class="field"><label for="hitori-size">${escapeGrowthHtml(fields.size)}</label><select id="hitori-size" data-size><option value="5">5 × 5</option><option value="6">6 × 6</option><option value="7">7 × 7</option><option value="8">8 × 8</option></select></div>
       <div class="field"><label for="hitori-difficulty">${escapeGrowthHtml(fields.difficulty)}</label><select id="hitori-difficulty" data-difficulty><option value="easy">${escapeGrowthHtml(labels.easy)}</option><option value="medium">${escapeGrowthHtml(labels.medium)}</option><option value="hard">${escapeGrowthHtml(labels.hard)}</option></select></div>
@@ -928,6 +1108,51 @@ export function renderGrowthForm(toolId, copy) {
     <div class="actions"><button type="button" data-action="preview" class="button button--primary">${escapeGrowthHtml(labels.showPreview)}</button><button type="button" data-action="copy" class="button button--secondary">${escapeGrowthHtml(labels.copy)}</button><button type="button" data-action="download" class="button button--secondary">${escapeGrowthHtml(labels.download)}</button><button type="button" data-action="clear" class="button button--secondary">${escapeGrowthHtml(labels.clear)}</button></div>
     <p class="status" data-status role="status" aria-live="polite"></p>
   </section>`, copy);
+  if (toolId === 'maze-generator') return attachCopy(`<section class="game maze-generator" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="maze-settings">
+      ${label('maze-width', fields.width, '<input id="maze-width" data-width type="number" min="9" max="41" step="2" value="21" inputmode="numeric">')}
+      ${label('maze-height', fields.height, '<input id="maze-height" data-height type="number" min="9" max="31" step="2" value="15" inputmode="numeric">')}
+      ${label('maze-seed', fields.seed, '<input id="maze-seed" data-seed type="text" maxlength="40" autocomplete="off">')}
+    </div>
+    <div class="actions maze-actions"><button type="button" data-action="generate" class="button button--primary">${escapeGrowthHtml(labels.generate)}</button><button type="button" data-action="solve" class="button button--secondary">${escapeGrowthHtml(labels.solve)}</button><button type="button" data-action="hide-solution" class="button button--secondary" hidden>${escapeGrowthHtml(labels.hideSolution)}</button><button type="button" data-action="restart" class="button button--secondary">${escapeGrowthHtml(labels.restart)}</button><button type="button" data-action="export-svg" class="button button--secondary">${escapeGrowthHtml(labels.exportSvg)}</button></div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p data-solution-note hidden>${escapeGrowthHtml(fields.solutionNote)}</p>
+    <section aria-labelledby="maze-board-heading"><h2 id="maze-board-heading">${escapeGrowthHtml(fields.board)}</h2><div class="maze-board" data-board role="grid" tabindex="0" aria-label="${escapeGrowthHtml(fields.board)}"></div></section>
+    <dl class="maze-stats"><div><dt>${escapeGrowthHtml(fields.steps)}</dt><dd data-steps>0</dd></div></dl>
+    <div class="maze-controls" role="group" aria-label="${escapeGrowthHtml(fields.board)}"><button type="button" data-move="up" aria-label="${escapeGrowthHtml(labels.up)}">↑</button><button type="button" data-move="left" aria-label="${escapeGrowthHtml(labels.left)}">←</button><button type="button" data-move="down" aria-label="${escapeGrowthHtml(labels.down)}">↓</button><button type="button" data-move="right" aria-label="${escapeGrowthHtml(labels.right)}">→</button></div>
+    <details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details><div class="result" data-result aria-live="polite"></div>
+  </section>`, copy);
+
+  if (toolId === 'sleep-calculator') return attachCopy(`<section class="sleep-calculator" data-tool="sleep-calculator" aria-label="${escapeGrowthHtml(copy.name)}">
+    <form class="sleep-calculator-form">
+      <div class="field"><label for="sleep-direction">${escapeGrowthHtml(fields.direction)}</label><select id="sleep-direction" data-direction><option value="bedtime">${escapeGrowthHtml(fields.bedtimeMode)}</option><option value="wake">${escapeGrowthHtml(fields.wakeMode)}</option></select></div>
+      <div class="field"><label for="sleep-time">${escapeGrowthHtml(fields.wakeReference)}</label><input id="sleep-time" data-time type="time" value="07:00" required></div>
+      <div class="field"><label for="sleep-hours">${escapeGrowthHtml(fields.durationHours)}</label><input id="sleep-hours" data-duration-hours type="number" min="1" max="16" value="8" step="1" inputmode="numeric" required></div>
+      <div class="field"><label for="sleep-minutes">${escapeGrowthHtml(fields.extraMinutes)}</label><select id="sleep-minutes" data-duration-minutes><option value="0">0</option><option value="15">15</option><option value="30">30</option><option value="45">45</option></select></div>
+      <div class="field"><label for="sleep-latency">${escapeGrowthHtml(fields.latency)}</label><input id="sleep-latency" data-latency type="number" min="0" max="180" value="15" step="5" inputmode="numeric" required></div>
+      <div class="actions"><button type="submit" data-action="calculate" class="button button--primary">${escapeGrowthHtml(labels.calculate)}</button><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(labels.example)}</button><button type="button" data-action="reset" class="button button--secondary">${escapeGrowthHtml(labels.reset)}</button></div>
+    </form>
+    <section class="sleep-calculator-result" aria-labelledby="sleep-result-heading"><h2 id="sleep-result-heading">${escapeGrowthHtml(fields.result)}</h2><output data-output aria-live="polite">—</output><p data-result-details></p></section>
+    <p class="hint sleep-calculator-note">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="status" data-status role="status" aria-live="polite"></p>
+  </section>`, copy);
+
+  if (toolId === 'lean-body-mass-calculator') return attachCopy(`<section class="lean-body-mass-calculator" data-tool="lean-body-mass-calculator" aria-label="${escapeGrowthHtml(copy.name)}">
+    <form class="lean-body-mass-form">
+      <div class="lean-body-mass-options">
+        <div class="field"><label for="lbm-method">${escapeGrowthHtml(fields.method)}</label><select id="lbm-method" data-method><option value="body-fat">${escapeGrowthHtml(fields.directMethod)}</option><option value="boer">${escapeGrowthHtml(fields.boerMethod)}</option></select></div>
+        <div class="field"><label for="lbm-units">${escapeGrowthHtml(fields.unitSystem)}</label><select id="lbm-units" data-units><option value="metric">${escapeGrowthHtml(fields.metric)}</option><option value="imperial">${escapeGrowthHtml(fields.imperial)}</option></select></div>
+        <div class="field" data-equation-fields hidden><label for="lbm-equation">${escapeGrowthHtml(fields.equationSet)}</label><select id="lbm-equation" data-equation><option value="male">${escapeGrowthHtml(fields.maleEquation)}</option><option value="female">${escapeGrowthHtml(fields.femaleEquation)}</option></select></div>
+      </div>
+      <div class="lean-body-mass-inputs">
+        <div class="field"><label for="lbm-weight" data-weight-label>${escapeGrowthHtml(fields.weight)} (kg)</label><input id="lbm-weight" data-weight type="number" min="20" max="350" step="any" value="80" inputmode="decimal" required></div>
+        <div class="field" data-height-field hidden><label for="lbm-height" data-height-label>${escapeGrowthHtml(fields.height)} (cm)</label><input id="lbm-height" data-height type="number" min="100" max="250" step="any" value="175" inputmode="decimal"></div>
+        <div class="field" data-body-fat-field><label for="lbm-body-fat">${escapeGrowthHtml(fields.bodyFatPercent)} (%)</label><input id="lbm-body-fat" data-body-fat type="number" min="0" max="75" step="any" value="20" inputmode="decimal"></div>
+      </div>
+      <div class="actions"><button type="submit" data-action="calculate" class="button button--primary">${escapeGrowthHtml(labels.calculate)}</button><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(labels.example)}</button><button type="button" data-action="reset" class="button button--secondary">${escapeGrowthHtml(labels.reset)}</button></div>
+    </form>
+    <section class="lean-body-mass-result" aria-labelledby="lbm-result-heading"><h2 id="lbm-result-heading">${escapeGrowthHtml(fields.result)}</h2><output data-output aria-live="polite">—</output><p data-result-details></p><p><strong>${escapeGrowthHtml(fields.formula)}:</strong> <span data-formula></span></p></section>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="status" data-status role="status" aria-live="polite"></p>
+    <p class="hint"><a href="https://pubmed.ncbi.nlm.nih.gov/6496691/" target="_blank" rel="noopener noreferrer">${escapeGrowthHtml(fields.sourceBoer)}</a></p>
+  </section>`, copy);
 
   if (toolId === 'slitherlink') return attachCopy(`<section class="game slitherlink-game" aria-label="${escapeGrowthHtml(copy.name)}">
     <div class="game-toolbar"><div class="field"><label for="slitherlink-size">${escapeGrowthHtml(fields.size)}</label><select id="slitherlink-size" data-size><option value="4">4 × 4</option><option value="5" selected>5 × 5</option><option value="6">6 × 6</option></select></div>
@@ -943,6 +1168,30 @@ export function renderGrowthForm(toolId, copy) {
     <section aria-labelledby="peg-solitaire-board-heading"><h2 id="peg-solitaire-board-heading">${escapeGrowthHtml(fields.board)}</h2><div class="peg-solitaire-board" data-board role="group" aria-label="${escapeGrowthHtml(fields.board)}"></div></section>
     <div class="actions"><button type="button" data-action="hint" class="button button--secondary">${escapeGrowthHtml(labels.hint)}</button><button type="button" data-action="undo" class="button button--secondary">${escapeGrowthHtml(labels.undo)}</button></div>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);
+
+  if (toolId === 'pyramid-solitaire') return attachCopy(`<section class="game pyramid-solitaire-game" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="game-toolbar"><button type="button" data-action="new-game" class="button button--primary">${escapeGrowthHtml(actions.newGame)}</button><button type="button" data-action="restart" class="button button--secondary">${escapeGrowthHtml(actions.restart)}</button><button type="button" data-action="undo" class="button button--secondary">${escapeGrowthHtml(actions.undo)}</button><button type="button" data-action="hint" class="button button--secondary">${escapeGrowthHtml(actions.hint)}</button></div>
+    <p class="pyramid-rules">${escapeGrowthHtml(fields.rules)}</p>
+    ${label('pyramid-recycle-rule', fields.recycleRule, `<select id="pyramid-recycle-rule" name="recycleRule" data-recycle-rule><option value="0">${escapeGrowthHtml(fields.noRecycle)}</option><option value="1" selected>${escapeGrowthHtml(fields.oneRecycle)}</option><option value="unlimited">${escapeGrowthHtml(fields.unlimitedRecycle)}</option></select>`)}<p class="hint">${escapeGrowthHtml(fields.ruleAppliesNext)}</p>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <div class="pyramid-piles" aria-label="${escapeGrowthHtml(fields.stock)} and ${escapeGrowthHtml(fields.waste)}"><button type="button" data-action="draw" class="pyramid-pile pyramid-pile--stock" aria-label="${escapeGrowthHtml(fields.cardFaceDown)}"><span>${escapeGrowthHtml(actions.draw)}</span><strong data-stock-count>24</strong></button><button type="button" data-pyramid-waste class="pyramid-pile pyramid-pile--waste"><span>${escapeGrowthHtml(fields.waste)}</span><strong data-waste-card>${escapeGrowthHtml(fields.emptyPile)}</strong></button><button type="button" data-action="recycle" class="button button--secondary">${escapeGrowthHtml(actions.recycle)} <span>${escapeGrowthHtml(fields.recycleStatus)}: <span data-recycle-count>0</span></span></button></div>
+    <section aria-labelledby="pyramid-board-heading"><h2 id="pyramid-board-heading">${escapeGrowthHtml(fields.pyramid)}</h2><div class="pyramid-board" data-board role="group" aria-label="${escapeGrowthHtml(fields.gameTitle)}"></div></section>
+    <dl class="pyramid-stats"><div><dt>${escapeGrowthHtml(fields.cardsLeft)}</dt><dd data-pyramid-left>28</dd></div><div><dt>${escapeGrowthHtml(fields.stockStatus)}</dt><dd data-stock-remaining>24</dd></div><div><dt>${escapeGrowthHtml(fields.wasteStatus)}</dt><dd data-waste-remaining>0</dd></div><div><dt>${escapeGrowthHtml(fields.removed)}</dt><dd data-removed-count>0</dd></div></dl>
+    <p class="hint">${escapeGrowthHtml(fields.statusHint)}</p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+  </section>`, copy);
+
+  if (toolId === 'rebus-puzzles') return attachCopy(`<section class="game rebus-puzzles-game" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="rebus-toolbar"><p class="rebus-progress"><span>${escapeGrowthHtml(fields.puzzleCount)}</span> <strong data-puzzle-index>1</strong> ${escapeGrowthHtml(fields.total)} <span data-puzzle-total>10</span></p><p class="rebus-score">${escapeGrowthHtml(fields.score)}: <strong data-score>0</strong> · ${escapeGrowthHtml(fields.attempts)}: <strong data-attempts>0</strong></p></div>
+    <div class="rebus-board" data-rebus-board role="img" aria-label="${escapeGrowthHtml(fields.puzzle)}"></div>
+    <form data-rebus-answer-form novalidate>${label('rebus-answer', fields.answer, `<input id="rebus-answer" name="answer" data-answer autocomplete="off" aria-describedby="rebus-answer-hint" placeholder="${escapeGrowthHtml(fields.answerHint)}">`)}<p class="hint" id="rebus-answer-hint">${escapeGrowthHtml(fields.answerHint)}</p><div class="rebus-actions"><button type="submit" data-action="check" class="button button--primary">${escapeGrowthHtml(actions.check)}</button><button type="button" data-action="hint" class="button button--secondary">${escapeGrowthHtml(actions.hint)}</button><button type="button" data-action="reveal" class="button button--secondary">${escapeGrowthHtml(actions.reveal)}</button><button type="button" data-action="next" class="button button--secondary" disabled>${escapeGrowthHtml(actions.next)}</button><button type="button" data-action="restart" class="button button--secondary">${escapeGrowthHtml(actions.restart)}</button></div></form>
+    <p class="status" role="status" aria-live="polite" data-status></p><p class="rebus-hint" data-hint hidden><strong>${escapeGrowthHtml(fields.hintLabel)}:</strong> <span data-hint-text></span></p><section class="rebus-explanation" data-explanation hidden><h2>${escapeGrowthHtml(fields.explanation)}</h2><p data-explanation-text></p></section><p class="hint">${escapeGrowthHtml(fields.puzzlesLanguageNote)}</p>
+  </section>`, copy);
+
+  if (toolId === 'killer-sudoku') return attachCopy(`<section class="game killer-sudoku-game" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="killer-sudoku-toolbar"><div class="field"><label for="killer-sudoku-difficulty">${escapeGrowthHtml(fields.difficulty)}</label><select id="killer-sudoku-difficulty" data-difficulty><option value="easy">${escapeGrowthHtml(labels.easy)}</option><option value="medium" selected>${escapeGrowthHtml(labels.regular)}</option><option value="hard">${escapeGrowthHtml(labels.hard)}</option></select></div><button type="button" data-action="new-game" class="button button--primary">${escapeGrowthHtml(labels.newGame)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p><section aria-labelledby="killer-sudoku-board-heading"><h2 id="killer-sudoku-board-heading">${escapeGrowthHtml(fields.board)}</h2><div class="killer-sudoku-board" data-board role="group" aria-label="${escapeGrowthHtml(fields.board)}"></div></section>
+    <div class="killer-sudoku-actions"><button type="button" data-action="check-board" class="button button--primary">${escapeGrowthHtml(labels.checkBoard)}</button><button type="button" data-action="hint" class="button button--secondary">${escapeGrowthHtml(labels.hint)}</button><button type="button" data-action="undo" class="button button--secondary">${escapeGrowthHtml(labels.undo)}</button></div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules)}</p></details></section>`, copy);
 
   if (toolId === 'futoshiki') return attachCopy(`<section class="game futoshiki-game" aria-label="${escapeGrowthHtml(copy.name)}">
     <div class="game-toolbar"><div class="field"><label for="futoshiki-size">${escapeGrowthHtml(fields.size)}</label><select id="futoshiki-size" data-size><option value="4">${escapeGrowthHtml(labels.small)}</option><option value="5" selected>${escapeGrowthHtml(labels.medium)}</option><option value="6">${escapeGrowthHtml(labels.large)}</option></select></div><div class="field"><label for="futoshiki-difficulty">${escapeGrowthHtml(fields.difficulty)}</label><select id="futoshiki-difficulty" data-difficulty><option value="easy">${escapeGrowthHtml(labels.easy)}</option><option value="medium" selected>${escapeGrowthHtml(labels.regular)}</option><option value="hard">${escapeGrowthHtml(labels.hard)}</option></select></div><button type="button" data-action="new-game" class="button button--primary">${escapeGrowthHtml(labels.newGame)}</button></div>
@@ -1845,6 +2094,59 @@ export function renderGrowthForm(toolId, copy) {
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
 
+  if (toolId === 'centripetal-force-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    <div class="calculator-grid">
+      ${label('centripetal-mode', fields.mode, `<select id="centripetal-mode" name="mode"><option value="speed">${escapeGrowthHtml(fields.speedMode)}</option><option value="frequency">${escapeGrowthHtml(fields.frequencyMode)}</option></select>`)}
+      ${label('centripetal-mass', fields.mass, '<input id="centripetal-mass" name="mass" type="number" min="0.000001" max="1000000000" step="any" value="2" inputmode="decimal" required>')}
+      ${label('centripetal-mass-unit', fields.massUnit, '<select id="centripetal-mass-unit" name="massUnit"><option value="kg">kg</option><option value="lb">lb</option></select>')}
+      ${label('centripetal-radius', fields.radius, '<input id="centripetal-radius" name="radius" type="number" min="0.000001" max="1000000000" step="any" value="0.5" inputmode="decimal" required>')}
+      ${label('centripetal-radius-unit', fields.radiusUnit, '<select id="centripetal-radius-unit" name="radiusUnit"><option value="m">m</option><option value="cm">cm</option><option value="mm">mm</option><option value="in">in</option><option value="ft">ft</option></select>')}
+      <div data-speed-fields class="calculator-grid">${label('centripetal-speed', fields.speed, '<input id="centripetal-speed" name="speed" type="number" min="0.000001" max="1000000000" step="any" value="4" inputmode="decimal" required>')}${label('centripetal-speed-unit', fields.speedUnit, '<select id="centripetal-speed-unit" name="speedUnit"><option value="m/s">m/s</option><option value="km/h">km/h</option><option value="mph">mph</option></select>')}</div>
+      <div data-frequency-fields class="calculator-grid" hidden>${label('centripetal-frequency', fields.frequency, '<input id="centripetal-frequency" name="frequency" type="number" min="0.000001" max="1000000000000" step="any" value="2" inputmode="decimal" required>')}${label('centripetal-frequency-unit', fields.frequencyUnit, '<select id="centripetal-frequency-unit" name="frequencyUnit"><option value="Hz">Hz</option><option value="rpm">rpm</option></select>')}</div>
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${button('calculate', actions.calculate)}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'inductor-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    <div class="calculator-grid">
+      ${label('inductor-mode', fields.mode, `<select id="inductor-mode" name="mode"><option value="airCore">${escapeGrowthHtml(fields.airCore)}</option><option value="toroid">${escapeGrowthHtml(fields.toroid)}</option></select>`)}
+      ${label('inductor-turns', fields.turns, '<input id="inductor-turns" name="turns" type="number" min="1" max="100000" step="1" value="10" inputmode="numeric" required>')}
+      <div data-air-core-fields class="calculator-grid">
+        ${label('inductor-diameter', fields.coilDiameter, '<input id="inductor-diameter" name="coilDiameter" type="number" min="0.001" max="1000" step="any" value="20" inputmode="decimal" required>')}
+        ${label('inductor-length', fields.coilLength, '<input id="inductor-length" name="coilLength" type="number" min="0.001" max="1000" step="any" value="20" inputmode="decimal" required>')}
+        ${label('inductor-dimension-unit', fields.dimensionUnit, '<select id="inductor-dimension-unit" name="dimensionUnit"><option value="mm">mm</option><option value="cm">cm</option><option value="in">in</option><option value="m">m</option></select>')}
+      </div>
+      <div data-toroid-fields class="calculator-grid" hidden>${label('inductor-al', fields.alValue, '<input id="inductor-al" name="alValue" type="number" min="0.000001" max="1000000000000000" step="any" inputmode="decimal" required>')}</div>
+      ${label('inductor-target', fields.targetInductance, '<input id="inductor-target" name="targetInductance" type="number" min="0.000000000001" max="1000000000000" step="any" inputmode="decimal">')}
+      ${label('inductor-target-unit', fields.targetUnit, `<select id="inductor-target-unit" name="targetUnit"><option value="uH">µH</option><option value="nH">nH</option><option value="mH">mH</option><option value="H">H</option></select>`)}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${button('calculate', actions.calculate)}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'cycling-power-calculator') return attachCopy(`<form id="tool-form" novalidate>
+    <div class="calculator-grid">
+      ${label('cycling-unit-system', fields.unitSystem, `<select id="cycling-unit-system" name="unitSystem"><option value="metric">${escapeGrowthHtml(fields.metric)}</option><option value="imperial">${escapeGrowthHtml(fields.imperial)}</option></select>`)}
+      ${label('cycling-mass', fields.mass, '<input id="cycling-mass" name="mass" type="number" min="20" max="551" step="any" value="85" inputmode="decimal" required>')}
+      ${label('cycling-speed', fields.speed, '<input id="cycling-speed" name="speed" type="number" min="0.1" max="100" step="any" value="30" inputmode="decimal" required>')}
+      ${label('cycling-gradient', fields.gradientPercent, '<input id="cycling-gradient" name="gradientPercent" type="number" min="-30" max="30" step="any" value="0" inputmode="decimal" required>')}
+      ${label('cycling-wind', fields.headwind, '<input id="cycling-wind" name="headwind" type="number" min="-100" max="100" step="any" value="0" inputmode="decimal" required>')}
+      ${label('cycling-rolling', fields.rollingResistance, '<input id="cycling-rolling" name="rollingResistance" type="number" min="0" max="0.05" step="any" value="0.004" inputmode="decimal" required>')}
+      ${label('cycling-drag-area', fields.dragArea, '<input id="cycling-drag-area" name="dragArea" type="number" min="0.05" max="1.5" step="any" value="0.32" inputmode="decimal" required>')}
+      ${label('cycling-air-density', fields.airDensity, '<input id="cycling-air-density" name="airDensity" type="number" min="0.5" max="1.5" step="any" value="1.225" inputmode="decimal" required>')}
+      ${label('cycling-efficiency', fields.drivetrainEfficiency, '<input id="cycling-efficiency" name="drivetrainEfficiency" type="number" min="50" max="100" step="any" value="97" inputmode="decimal" required>')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${button('calculate', actions.calculate)}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(labels.result)}</h2><div data-result-content></div>${button('copy', labels.copy, 'secondary')}</section>
+  </form>`, copy);
+
   if (toolId === 'beam-deflection-calculator') return attachCopy(`<form id="tool-form" class="beam-deflection-calculator" novalidate>
     <div class="calculator-grid">
       ${label('beam-support', fields.support, `<select id="beam-support" name="support"><option value="simply-supported">${escapeGrowthHtml(fields.simplySupported)}</option><option value="cantilever">${escapeGrowthHtml(fields.cantilever)}</option></select>`)}
@@ -2611,6 +2913,149 @@ export function renderGrowthForm(toolId, copy) {
     <p class="status" role="status" aria-live="polite" data-status></p>
     <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(actions.result)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
   </form>`, copy);
+
+  if (toolId === 'aes-encryption-tool') return attachCopy(`<form id="tool-form" class="aes-encryption-tool" novalidate>
+    <div class="calculator-grid">
+      ${label('aes-action-mode', fields.mode, `<select id="aes-action-mode" name="mode"><option value="encrypt">${escapeGrowthHtml(fields.encryptMode)}</option><option value="decrypt">${escapeGrowthHtml(fields.decryptMode)}</option></select>`)}
+      ${label('aes-content-mode', fields.dataMode, `<select id="aes-content-mode" name="contentMode"><option value="text">${escapeGrowthHtml(fields.textMode)}</option><option value="file">${escapeGrowthHtml(fields.fileMode)}</option></select>`)}
+      ${label('aes-password', fields.password, '<input id="aes-password" name="password" type="password" minlength="12" maxlength="1024" autocomplete="new-password" required>')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.passwordHint)}</p>
+    <div data-text-input>${label('aes-source-text', fields.sourceText, '<textarea id="aes-source-text" name="sourceText" rows="9" maxlength="1400500" spellcheck="false" required></textarea>')}</div>
+    <div data-file-input hidden>${label('aes-source-file', fields.sourceFile, '<input id="aes-source-file" name="sourceFile" type="file" required>')}</div>
+    <p class="hint"><strong>${escapeGrowthHtml(fields.iterations)}:</strong> ${escapeGrowthHtml(fields.iterationsValue)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions"><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(actions.example)}</button><button type="submit" data-action="process" class="button button--primary">${escapeGrowthHtml(actions.process)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.resultHeading)}</h2><p data-file-result hidden>${escapeGrowthHtml(fields.fileResult)} <span data-file-name></span>. ${escapeGrowthHtml(fields.fileNameNote)}</p><label for="aes-output-text" data-text-result>${escapeGrowthHtml(fields.resultText)}</label><textarea id="aes-output-text" data-output-text rows="8" readonly spellcheck="false" data-text-result></textarea><div class="actions"><button type="button" data-action="copy" class="button button--secondary" hidden>${escapeGrowthHtml(actions.copy)}</button><button type="button" data-action="download" class="button button--secondary" hidden>${escapeGrowthHtml(actions.download)}</button></div></section>
+  </form>`, copy);
+
+  if (toolId === 'jwt-encoder') return attachCopy(`<form id="tool-form" class="jwt-encoder" novalidate>
+    ${label('jwt-mode', fields.mode, `<select id="jwt-mode" name="mode"><option value="create">${escapeGrowthHtml(fields.createMode)}</option><option value="verify">${escapeGrowthHtml(fields.verifyMode)}</option></select>`)}
+    <div class="calculator-grid">
+      ${label('jwt-secret', fields.secret, '<input id="jwt-secret" name="secret" type="password" minlength="32" maxlength="1024" autocomplete="new-password" required>')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.secretHint)}</p>
+    <p class="hint"><a href="https://www.rfc-editor.org/rfc/rfc7518#section-3.2" target="_blank" rel="noopener noreferrer">${escapeGrowthHtml(fields.standardSource)}</a></p>
+    <div data-create-fields>${label('jwt-payload', fields.payload, '<textarea id="jwt-payload" name="payload" rows="9" maxlength="65536" spellcheck="false" required></textarea>')}
+      ${label('jwt-expiration', fields.expiresIn, '<input id="jwt-expiration" name="expiresInSeconds" type="number" min="1" max="31536000" step="1" inputmode="numeric">')}<p class="hint">${escapeGrowthHtml(fields.expiresHint)}</p>
+    </div>
+    <div data-verify-fields hidden>${label('jwt-token', fields.token, '<textarea id="jwt-token" name="token" rows="7" maxlength="131072" spellcheck="false" required></textarea>')}</div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions"><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(actions.example)}</button><button type="submit" data-action="run" class="button button--primary">${escapeGrowthHtml(actions.run)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.resultHeading)}</h2><label for="jwt-output">${escapeGrowthHtml(fields.resultOutput)}</label><textarea id="jwt-output" data-output rows="10" readonly spellcheck="false"></textarea><div class="actions"><button type="button" data-action="copy" class="button button--secondary">${escapeGrowthHtml(actions.copy)}</button></div></section>
+  </form>`, copy);
+
+  if (toolId === 'customer-acquisition-cost-calculator') return attachCopy(`<form id="tool-form" class="customer-acquisition-cost-calculator" novalidate>
+    <div class="calculator-grid">
+      ${label('cac-marketing-spend', fields.marketingSpend, '<input id="cac-marketing-spend" name="marketingSpend" type="number" min="0" max="1000000000000" step="any" inputmode="decimal" value="0" required>')}
+      ${label('cac-sales-spend', fields.salesSpend, '<input id="cac-sales-spend" name="salesSpend" type="number" min="0" max="1000000000000" step="any" inputmode="decimal" value="0" required>')}
+      ${label('cac-tools-spend', fields.toolsSpend, '<input id="cac-tools-spend" name="toolsSpend" type="number" min="0" max="1000000000000" step="any" inputmode="decimal" value="0" required>')}
+      ${label('cac-agency-spend', fields.agencySpend, '<input id="cac-agency-spend" name="agencySpend" type="number" min="0" max="1000000000000" step="any" inputmode="decimal" value="0" required>')}
+      ${label('cac-other-spend', fields.otherSpend, '<input id="cac-other-spend" name="otherSpend" type="number" min="0" max="1000000000000" step="any" inputmode="decimal" value="0" required>')}
+      ${label('cac-customers', fields.newCustomers, '<input id="cac-customers" name="newCustomers" type="number" min="1" max="1000000000" step="1" inputmode="numeric" required>')}
+      ${label('cac-currency', fields.currency, '<input id="cac-currency" name="currency" type="text" minlength="3" maxlength="3" pattern="[A-Za-z]{3}" autocomplete="off" value="USD" required>')}
+      ${label('cac-monthly-revenue', fields.monthlyRevenue, '<input id="cac-monthly-revenue" name="monthlyRevenuePerCustomer" type="number" min="0" max="1000000000000" step="any" inputmode="decimal" value="0" required>')}
+      ${label('cac-gross-margin', fields.grossMargin, '<input id="cac-gross-margin" name="grossMarginPercent" type="number" min="0" max="100" step="any" inputmode="decimal" value="0" required>')}
+    </div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <div class="actions">${button('example', actions.example, 'secondary')}${submit('calculate')}${reset}</div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="result" data-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.resultHeading)}</h2><div data-result-content></div>${button('copy', actions.copy, 'secondary')}</section>
+  </form>`, copy);
+
+  if (toolId === 'writing-tracker') return attachCopy(`<section class="writing-tracker">
+    <section class="writing-tracker__summary" aria-labelledby="writing-summary-heading"><h2 id="writing-summary-heading">${escapeGrowthHtml(fields.summaryHeading)}</h2>
+      <dl class="writing-tracker__stats">${[['totalWords', fields.totalWords], ['totalMinutes', fields.totalMinutes], ['sessions', fields.sessionCount], ['activeDays', fields.activeDays], ['currentStreak', fields.currentStreak]].map(([key, text]) => `<div><dt>${escapeGrowthHtml(text)}</dt><dd data-summary="${key}">0</dd></div>`).join('')}</dl>
+    </section>
+    <div class="writing-tracker__forms">
+      <form id="writing-project-form" class="writing-tracker__panel"><h2>${escapeGrowthHtml(fields.projectsHeading)}</h2>
+        ${label('writing-project-name', fields.projectName, '<input id="writing-project-name" name="name" type="text" maxlength="80" required autocomplete="off">')}
+        ${label('writing-project-goal', fields.projectGoal, '<input id="writing-project-goal" name="targetWords" type="number" min="0" max="100000000" step="1" inputmode="numeric">')}
+        <button type="submit" class="button button--primary" data-action="add-project">${escapeGrowthHtml(actions.addProject)}</button>
+      </form>
+      <form id="writing-session-form" class="writing-tracker__panel">
+        ${label('writing-session-project', fields.sessionProject, '<select id="writing-session-project" name="projectId" required></select>')}
+        ${label('writing-session-date', fields.sessionDate, '<input id="writing-session-date" name="date" type="date" required>')}
+        ${label('writing-session-words', fields.sessionWords, '<input id="writing-session-words" name="words" type="number" min="0" max="10000000" step="1" inputmode="numeric" value="0" required>')}
+        ${label('writing-session-minutes', fields.sessionMinutes, '<input id="writing-session-minutes" name="minutes" type="number" min="0" max="1440" step="1" inputmode="numeric">')}
+        ${label('writing-session-note', fields.sessionNote, '<input id="writing-session-note" name="note" type="text" maxlength="500" autocomplete="off">')}
+        <div class="actions"><button type="button" class="button button--secondary" data-action="writing-example">${escapeGrowthHtml(actions.example)}</button><button type="submit" class="button button--primary" data-action="record-session">${escapeGrowthHtml(actions.recordSession)}</button><button type="button" class="button button--secondary" data-action="cancel-edit" hidden>${escapeGrowthHtml(actions.cancelEdit)}</button></div>
+      </form>
+    </div>
+    <section class="writing-tracker__panel" aria-labelledby="writing-projects-heading"><h2 id="writing-projects-heading">${escapeGrowthHtml(fields.projectsHeading)}</h2><p data-no-projects>${escapeGrowthHtml(fields.noProjects)}</p><ul class="writing-tracker__list" data-project-list></ul></section>
+    <section class="writing-tracker__panel" aria-labelledby="writing-sessions-heading"><div class="writing-tracker__heading"><h2 id="writing-sessions-heading">${escapeGrowthHtml(fields.sessionsHeading)}</h2><button type="button" class="button button--secondary" data-action="export-csv">${escapeGrowthHtml(actions.exportCsv)}</button></div><p data-no-sessions>${escapeGrowthHtml(fields.noSessions)}</p><ol class="writing-tracker__list" data-session-list></ol></section>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="status" role="status" aria-live="polite" data-status></p>
+  </section>`, copy);
+
+  if (toolId === 'sudoku-solver') return attachCopy(`<section class="sudoku-solver" data-tool="sudoku-solver" aria-label="${escapeGrowthHtml(copy.name)}">
+    <p class="sudoku-solver__note">${escapeGrowthHtml(fields.note)}</p>
+    <section aria-labelledby="sudoku-solver-board-heading"><h2 id="sudoku-solver-board-heading">${escapeGrowthHtml(fields.board)}</h2><div class="sudoku-solver-board" data-board role="group" aria-label="${escapeGrowthHtml(fields.board)}"></div></section>
+    <div class="sudoku-solver__actions"><button type="button" data-action="example" class="button button--secondary">${escapeGrowthHtml(actions.example)}</button><button type="button" data-action="solve" class="button button--primary">${escapeGrowthHtml(actions.solve)}</button><button type="button" data-action="step" class="button button--secondary">${escapeGrowthHtml(actions.step)}</button><button type="button" data-action="clear" class="button button--secondary">${escapeGrowthHtml(actions.clear)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+  </section>`, copy);
+
+  if (toolId === 'hangman-game') return attachCopy(`<section class="hangman-game" data-tool="hangman-game" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="hangman-toolbar"><div class="field"><label for="hangman-difficulty">${escapeGrowthHtml(fields.difficulty)}</label><select id="hangman-difficulty" data-difficulty><option value="easy">${escapeGrowthHtml(labels.easy)}</option><option value="regular" selected>${escapeGrowthHtml(labels.regular)}</option><option value="hard">${escapeGrowthHtml(labels.hard)}</option></select></div><button type="button" data-action="new-word" class="button button--primary">${escapeGrowthHtml(labels.newWord)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p><div class="hangman-game__play"><svg class="hangman-game__drawing" data-drawing viewBox="0 0 180 180" aria-hidden="true"><path d="M20 165h130M48 165V22h70v18M118 40h25v16"/><circle data-part="1" cx="143" cy="73" r="17"/><path data-part="2" d="M143 90v38"/><path data-part="3" d="M143 99l-24 20"/><path data-part="4" d="M143 99l24 20"/><path data-part="5" d="M143 128l-21 27"/><path data-part="6" d="M143 128l21 27"/></svg><p class="hangman-game__progress" data-progress></p></div>
+    <section aria-labelledby="hangman-word-heading"><h2 id="hangman-word-heading">${escapeGrowthHtml(fields.word)}</h2><p class="hangman-game__word" data-word role="img" aria-label="${escapeGrowthHtml(fields.word)}"></p></section>
+    <form class="hangman-game__form" data-guess-form novalidate>${label('hangman-letter', fields.letter, `<input id="hangman-letter" name="letter" data-letter type="text" inputmode="text" maxlength="8" autocomplete="off" aria-describedby="hangman-rules">`)}<button type="submit" data-action="guess" class="button button--primary">${escapeGrowthHtml(labels.guess)}</button></form>
+    <div class="hangman-game__actions"><button type="button" data-action="hint" class="button button--secondary">${escapeGrowthHtml(labels.hint)}</button><button type="button" data-action="restart" class="button button--secondary">${escapeGrowthHtml(labels.restart)}</button></div>
+    <p class="hangman-game__attempt-label" data-attempt-label></p><p class="hangman-game__used" data-used></p><p class="hint" id="hangman-rules">${escapeGrowthHtml(fields.rules)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+  </section>`, copy);
+
+  if (toolId === 'aim-trainer') return attachCopy(`<section class="aim-trainer" data-tool="aim-trainer" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="aim-trainer__settings">
+      <div class="field"><label for="aim-duration">${escapeGrowthHtml(fields.duration)}</label><select id="aim-duration" data-duration><option value="15">${escapeGrowthHtml(fields.duration15)}</option><option value="30" selected>${escapeGrowthHtml(fields.duration30)}</option><option value="60">${escapeGrowthHtml(fields.duration60)}</option></select></div>
+      <div class="field"><label for="aim-target-size">${escapeGrowthHtml(fields.targetSize)}</label><select id="aim-target-size" data-target-size><option value="large">${escapeGrowthHtml(fields.targetLarge)}</option><option value="regular" selected>${escapeGrowthHtml(fields.targetRegular)}</option><option value="small">${escapeGrowthHtml(fields.targetSmall)}</option></select></div>
+      <button type="button" class="button button--primary" data-action="start">${escapeGrowthHtml(actions.start)}</button>
+      <button type="button" class="button button--secondary" data-action="restart">${escapeGrowthHtml(actions.restart)}</button>
+    </div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section class="aim-trainer__score" aria-label="${escapeGrowthHtml(fields.resultTitle)}"><p><strong>${escapeGrowthHtml(fields.timeLeft)}:</strong> <span data-time>30</span></p><p><strong>${escapeGrowthHtml(fields.hits)}:</strong> <span data-hits>0</span></p><p><strong>${escapeGrowthHtml(fields.misses)}:</strong> <span data-misses>0</span></p><p><strong>${escapeGrowthHtml(fields.accuracy)}:</strong> <span data-accuracy>0%</span></p></section>
+    <p class="hint">${escapeGrowthHtml(fields.areaNote)}</p>
+    <div class="aim-trainer__area" data-area role="group" aria-label="${escapeGrowthHtml(fields.areaLabel)}" aria-disabled="true"><button type="button" class="aim-trainer__target" data-target aria-label="${escapeGrowthHtml(fields.target)}" hidden></button></div>
+    <p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+  </section>`, copy);
+
+  if (toolId === 'chess-puzzles') return attachCopy(`<section class="chess-puzzles" data-tool="chess-puzzles" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="game-toolbar"><button type="button" data-action="new-puzzle" class="button button--primary">${escapeGrowthHtml(actions.newPuzzle)}</button><button type="button" data-action="hint" class="button button--secondary">${escapeGrowthHtml(actions.hint)}</button><button type="button" data-action="clear-selection" class="button button--secondary">${escapeGrowthHtml(actions.clearSelection)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p><p class="hint">${escapeGrowthHtml(fields.instructions)}</p>
+    <section aria-labelledby="chess-puzzles-heading"><h2 id="chess-puzzles-heading">${escapeGrowthHtml(fields.board)}</h2><div class="chess-puzzles__board" data-board role="grid" aria-rowcount="8" aria-colcount="8" aria-label="${escapeGrowthHtml(fields.board)}" dir="ltr"></div></section>
+    <dl class="chess-puzzles__stats"><div><dt>${escapeGrowthHtml(fields.attempts)}</dt><dd data-attempts>0</dd></div><div><dt>${escapeGrowthHtml(fields.hints)}</dt><dd data-hints>0</dd></div></dl>
+    <p class="hint">${escapeGrowthHtml(fields.rules)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+  </section>`, copy);
+
+  if (toolId === 'dots-and-boxes') return attachCopy(`<section class="dots-boxes" data-tool="dots-and-boxes" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="calculator-grid"><div class="field"><label for="dots-size">${escapeGrowthHtml(fields.boardSize)}</label><select id="dots-size" data-size><option value="3">${escapeGrowthHtml(fields.size3)}</option><option value="4" selected>${escapeGrowthHtml(fields.size4)}</option><option value="5">${escapeGrowthHtml(fields.size5)}</option></select></div><div class="field"><label for="dots-mode">${escapeGrowthHtml(fields.mode)}</label><select id="dots-mode" data-mode><option value="computer">${escapeGrowthHtml(fields.computer)}</option><option value="two-player">${escapeGrowthHtml(fields.twoPlayers)}</option></select></div></div>
+    <button type="button" data-action="new-game" class="button button--primary">${escapeGrowthHtml(actions.newGame)}</button><p class="status" role="status" aria-live="polite" data-status></p><p class="hint">${escapeGrowthHtml(fields.instructions)}</p>
+    <div class="dots-boxes__stats"><div><strong data-player-one></strong><span> · ${escapeGrowthHtml(fields.score)}: </span><output data-score-one>0</output></div><div><strong data-player-two></strong><span> · ${escapeGrowthHtml(fields.score)}: </span><output data-score-two>0</output></div></div>
+    <p><strong>${escapeGrowthHtml(fields.currentTurn)}:</strong> <span data-turn></span></p><div class="dots-boxes__board" data-board role="grid" aria-label="${escapeGrowthHtml(fields.board)}" aria-busy="false"></div><p class="hint">${escapeGrowthHtml(fields.rules)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+  </section>`, copy);
+
+  if (toolId === 'chess-analysis-board') return attachCopy(`<section class="chess-analysis-board" data-tool="chess-analysis-board" aria-label="${escapeGrowthHtml(copy.name)}" data-engine-src="/assets/vendor/stockfish-19.0.0/stockfish-19-lite-single.js">
+    <p class="hint">${escapeGrowthHtml(fields.instructions)}</p>
+    <div class="game-toolbar"><button type="button" class="button button--secondary" data-action="previous">${escapeGrowthHtml(actions.previous)}</button><button type="button" class="button button--secondary" data-action="next">${escapeGrowthHtml(actions.next)}</button><button type="button" class="button button--primary" data-action="new-game">${escapeGrowthHtml(actions.newGame)}</button><label>${escapeGrowthHtml(fields.promotion)} <select data-promotion><option value="q">${escapeGrowthHtml(fields.queen)}</option><option value="r">${escapeGrowthHtml(fields.rook)}</option><option value="b">${escapeGrowthHtml(fields.bishop)}</option><option value="n">${escapeGrowthHtml(fields.knight)}</option></select></label></div>
+    <p class="status" role="status" aria-live="polite" data-status></p><p><strong>${escapeGrowthHtml(fields.currentPosition)}:</strong> <span data-board-state></span> · ${escapeGrowthHtml(fields.moveNumber)} <span data-move-count>0</span>/<span data-move-total>0</span></p>
+    <div class="chess-analysis-board__board" data-board role="grid" aria-rowcount="8" aria-colcount="8" aria-label="${escapeGrowthHtml(fields.board)}" dir="ltr"></div>
+    <div class="calculator-grid"><div class="field"><label for="analysis-fen">${escapeGrowthHtml(fields.fen)}</label><input id="analysis-fen" data-fen-input maxlength="160" autocomplete="off"><p class="hint">${escapeGrowthHtml(fields.fenHint)}</p><button type="button" class="button button--secondary" data-action="load-fen">${escapeGrowthHtml(actions.loadFen)}</button></div><div class="field"><label for="analysis-pgn">${escapeGrowthHtml(fields.pgn)}</label><textarea id="analysis-pgn" data-pgn-input rows="5" maxlength="12000" spellcheck="false"></textarea><p class="hint">${escapeGrowthHtml(fields.pgnHint)}</p><button type="button" class="button button--secondary" data-action="load-pgn">${escapeGrowthHtml(actions.loadPgn)}</button></div></div>
+    <div class="chess-analysis-board__outputs"><div class="field"><label for="analysis-fen-output">${escapeGrowthHtml(fields.fenOutput)}</label><textarea id="analysis-fen-output" data-fen-output rows="2" readonly></textarea><button type="button" class="button button--secondary" data-action="copy-fen">${escapeGrowthHtml(actions.copyFen)}</button></div><div class="field"><label for="analysis-pgn-output">${escapeGrowthHtml(fields.pgnOutput)}</label><textarea id="analysis-pgn-output" data-pgn-output rows="4" readonly></textarea><button type="button" class="button button--secondary" data-action="copy-pgn">${escapeGrowthHtml(actions.copyPgn)}</button></div></div>
+    <section class="field" aria-label="${escapeGrowthHtml(fields.engineTitle)}"><h2>${escapeGrowthHtml(fields.engineTitle)}</h2><div class="game-toolbar"><label>${escapeGrowthHtml(fields.engineMode)} <select data-engine-mode><option value="depth">${escapeGrowthHtml(fields.engineDepth)}</option><option value="time">${escapeGrowthHtml(fields.engineTime)}</option></select></label><label>${escapeGrowthHtml(fields.engineDepth)} <select data-engine-depth><option value="8">8</option><option value="12" selected>12</option><option value="16">16</option><option value="20">20</option></select></label><label>${escapeGrowthHtml(fields.engineTime)} <select data-engine-time disabled><option value="1">1</option><option value="3" selected>3</option><option value="5">5</option></select></label><button type="button" class="button button--primary" data-action="analyze">${escapeGrowthHtml(actions.analyze)}</button><button type="button" class="button button--secondary" data-action="stop" hidden disabled>${escapeGrowthHtml(actions.stop)}</button></div><p class="status" role="status" aria-live="polite" data-engine-status></p><ol data-analysis-lines></ol><p class="hint">${escapeGrowthHtml(fields.engineLines)} · <a href="/assets/licenses/stockfish-NOTICE.md">${escapeGrowthHtml(fields.engineLicense)}</a></p></section>
+    <div class="field"><label for="analysis-notes">${escapeGrowthHtml(fields.notes)}</label><textarea id="analysis-notes" rows="3" maxlength="2000"></textarea><p class="hint">${escapeGrowthHtml(fields.notesHint)}</p></div><p class="hint">${escapeGrowthHtml(fields.analysisNote)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+  </section>`, copy);
+
+  if (toolId === 'blackjack-game') return attachCopy(`<section class="blackjack-game" data-tool="blackjack-game" aria-label="${escapeGrowthHtml(copy.name)}">
+    <p class="hint">${escapeGrowthHtml(copy.intro)}</p><div class="game-toolbar"><button type="button" class="button button--primary" data-action="new-round">${escapeGrowthHtml(actions.newRound)}</button><button type="button" class="button button--secondary" data-action="hit" disabled>${escapeGrowthHtml(actions.hit)}</button><button type="button" class="button button--secondary" data-action="stand" disabled>${escapeGrowthHtml(actions.stand)}</button><button type="button" class="button button--secondary" data-action="double" disabled>${escapeGrowthHtml(actions.double)}</button><button type="button" class="button button--secondary" data-action="split" disabled>${escapeGrowthHtml(actions.split)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p><div class="blackjack-game__table"><section><h2>${escapeGrowthHtml(fields.dealer)} · <span data-dealer-value>—</span></h2><ul class="blackjack-game__hand" data-dealer-hand aria-label="${escapeGrowthHtml(fields.dealer)}"></ul></section><section><h2>${escapeGrowthHtml(fields.player)} · <span data-player-value>0</span></h2><div data-player-hands></div></section></div>
+    <dl class="blackjack-game__stats"><div><dt>${escapeGrowthHtml(fields.rounds)}</dt><dd data-rounds>0</dd></div><div><dt>${escapeGrowthHtml(fields.wins)}</dt><dd data-wins>0</dd></div><div><dt>${escapeGrowthHtml(fields.losses)}</dt><dd data-losses>0</dd></div><div><dt>${escapeGrowthHtml(fields.pushes)}</dt><dd data-pushes>0</dd></div><div><dt>${escapeGrowthHtml(fields.remaining)}</dt><dd data-remaining>52</dd></div></dl>
+    <p class="hint">${escapeGrowthHtml(fields.rules)}</p><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+  </section>`, copy);
+
+  if (toolId === 'tripeaks-solitaire') return attachCopy(`<section class="tripeaks" data-tool="tripeaks-solitaire" aria-label="${escapeGrowthHtml(copy.name)}">
+    <p class="hint">${escapeGrowthHtml(fields.instructions)}</p><div class="game-toolbar"><button type="button" class="button button--primary" data-action="new-game">${escapeGrowthHtml(actions.newGame)}</button><button type="button" class="button button--secondary" data-action="draw">${escapeGrowthHtml(actions.draw)}</button><button type="button" class="button button--secondary" data-action="undo" disabled>${escapeGrowthHtml(actions.undo)}</button><button type="button" class="button button--secondary" data-action="hint">${escapeGrowthHtml(actions.hint)}</button></div><p class="status" role="status" aria-live="polite" data-status></p>
+    <dl class="blackjack-game__stats"><div><dt>${escapeGrowthHtml(fields.moves)}</dt><dd data-moves>0</dd></div><div><dt>${escapeGrowthHtml(fields.score)}</dt><dd data-score>0</dd></div><div><dt>${escapeGrowthHtml(fields.remaining)}</dt><dd data-cards-left>28</dd></div></dl><div class="tripeaks__piles"><div class="tripeaks__pile"><span class="tripeaks__pile-label">${escapeGrowthHtml(fields.stock)}</span><button type="button" class="tripeaks__card is-covered" data-stock-draw aria-label="${escapeGrowthHtml(actions.draw)}"><span aria-hidden="true" data-stock-count>24</span></button></div><div class="tripeaks__pile"><span class="tripeaks__pile-label">${escapeGrowthHtml(fields.waste)}</span><span data-waste class="tripeaks__card" aria-label="${escapeGrowthHtml(fields.waste)}">${escapeGrowthHtml(fields.emptyWaste)}</span></div></div><h2>${escapeGrowthHtml(fields.board)}</h2><div class="tripeaks__board" data-tableau role="group" aria-label="${escapeGrowthHtml(fields.board)}"></div><p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p>
+  </section>`, copy);
 
   if (toolId === 'goal-planner') return attachCopy(`<form id="tool-form" novalidate>
     ${label('goal-title', fields.title, '<input id="goal-title" name="title" type="text" maxlength="120" autocomplete="off" required>')}

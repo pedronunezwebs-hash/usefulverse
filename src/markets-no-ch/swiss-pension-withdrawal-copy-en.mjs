@@ -1,0 +1,25 @@
+export const swissPensionWithdrawalEnglish = Object.freeze({
+  name: 'Swiss Pension Capital Withdrawal Tax Comparison',
+  title: 'Swiss Pension Withdrawal Tax Calculator — Compare ESTV Scenarios',
+  description: 'Compare Swiss pension lump-sum withdrawal tax scenarios using results from the official ESTV calculator. Add all benefits due in each tax year; calculations stay in your browser.',
+  intro: 'Compare planned Swiss pension capital withdrawals by entering the official ESTV tax result for each scenario. Useful for reviewing timing or amount options with the same municipality, tax year and household profile.',
+  details: 'The Swiss Federal Tax Administration taxes eligible pension capital benefits separately from ordinary income. All capital benefits due in the same tax year are added together for one annual tax calculation. This tool does not reproduce cantonal tax rules: use the current official ESTV calculator and enter its result. Check withdrawal eligibility and timing with your pension provider and tax authority.',
+  example: 'For each scenario, enter the combined capital benefits due in that tax year and the matching official ESTV tax result. Compare the effective tax share and after-tax amount. A scenario in another year or municipality is shown, but is flagged as not directly comparable.',
+  fields: {
+    scenario: 'Scenario', label: 'Scenario name', year: 'Tax year', location: 'Swiss municipality', household: 'Household profile used in ESTV', capital: 'Total pension capital benefits due this tax year (CHF)', tax: 'Official ESTV tax on these benefits (CHF)',
+    steps: 'For each scenario, calculate the capital withdrawal tax in ESTV using the same tax year, municipality and household profile. Add together every pension capital benefit due in that year before using ESTV.',
+    openEstv: 'Open the official ESTV tax calculator', calculate: 'Compare scenarios', add: 'Add scenario', remove: 'Remove scenario', reset: 'Reset', export: 'Download CSV', ready: 'Enter each scenario and its official ESTV result.',
+    totalCapital: 'Capital benefits due', officialTax: 'Official ESTV tax', effectiveRate: 'Tax / capital', afterTax: 'Capital after tax', delta: 'Tax difference from first scenario', comparable: 'Same year, municipality and household profile as the first scenario.', notComparable: 'Different year, municipality or household profile; compare these figures with care.', resultHeading: 'Pension withdrawal comparison',
+    sourceNote: 'Official references:', estv: 'ESTV tax calculator', estvRules: 'ESTV calculation notes', rules: 'Swiss pension withdrawal rules',
+    limit: 'This is a comparison of figures you enter, not a personal tax assessment. It does not determine whether or when a withdrawal is permitted.',
+  },
+  messages: { done: 'Scenarios compared in this browser.', invalid: 'Check the year, municipality, household profile, capital amounts and official tax results.', cleared: 'Scenarios reset.', exported: 'Comparison downloaded as a CSV file.' },
+  faq: [
+    { q: 'Does this calculate my Swiss tax automatically?', a: 'No. It uses the amount you enter from the current official ESTV calculator and computes only the effective share, after-tax capital and scenario differences.' },
+    { q: 'Which withdrawals should I add together?', a: 'Enter all pension capital benefits that are due in the same tax year as one combined amount, as directed by the ESTV calculation notes.' },
+    { q: 'Can I compare different years or municipalities?', a: 'Yes, each scenario is displayed. The tool flags a different year, municipality or household profile because the tax results are not directly comparable.' },
+    { q: 'Does it tell me if I can withdraw my pension?', a: 'No. Withdrawal conditions depend on the benefit and your circumstances. Confirm eligibility and timing with your pension provider and tax authority.' },
+    { q: 'Does it recommend taking capital instead of a pension?', a: 'No. It compares withdrawal-tax results only and excludes investment returns, ordinary income tax, wealth tax, future benefits and personal needs.' },
+    { q: 'Are my figures uploaded?', a: 'No. The comparison and CSV export run in this browser; the figures are not sent to a server.' },
+  ],
+});

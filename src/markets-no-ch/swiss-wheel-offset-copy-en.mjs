@@ -1,0 +1,26 @@
+export const swissWheelOffsetEnglish = Object.freeze({
+  name: 'Wheel Offset Calculator',
+  title: 'Wheel Offset Calculator — Free ET & Rim Position Comparison',
+  description: 'Compare rim width, wheel offset (ET) and spacers. See inner and outer rim movement, centerline change and optional estimated clearance — a geometry guide, not fitment approval.',
+  intro: 'Compare your current and proposed wheel dimensions in your browser. Enter rim width, offset (ET), and spacers; optionally add measured inner and outer clearance to estimate the remaining space.',
+  example: 'For the same 8-inch rim, changing ET from 35 to 45 moves the wheel centerline 10 mm inward: the inner edge moves 10 mm inward and the outer edge 10 mm inward.',
+  details: 'The calculator converts inputs to millimetres, compares the rim edges and wheel centerline, and draws a simple side-by-side geometry diagram. Optional remaining-clearance values are arithmetic estimates based only on the clearances you measured.',
+  limits: 'This is a geometry comparison, not a vehicle compatibility, safety, legal or homologation check. It cannot account for suspension shape, steering lock, tire bulge, brake clearance, manufacturing tolerances or loaded movement. Measure your vehicle and confirm fitment with a qualified professional before driving.',
+  fields: {
+    currentSetup: 'Current wheel', newSetup: 'Proposed wheel', width: 'Rim width', offset: 'Wheel offset (ET)', spacer: 'Spacer thickness', unit: 'Unit', millimetres: 'Millimetres (mm)', inches: 'Inches (in)',
+    currentInner: 'Measured current inner clearance (optional)', currentOuter: 'Measured current outer clearance (optional)', clearanceHelp: 'Use your own measurements from the current wheel to the nearest obstruction. Leave blank if unknown.',
+    calculate: 'Compare wheel positions', loadSample: 'Load example', clear: 'Clear', export: 'Download CSV', ready: 'Enter the current and proposed wheel dimensions.', complete: 'Comparison complete.',
+    innerMovement: 'Inner rim edge movement', outerMovement: 'Outer rim edge movement', centerMovement: 'Wheel centerline movement', remainingInner: 'Estimated inner clearance remaining', remainingOuter: 'Estimated outer clearance remaining',
+    inward: 'inward', outward: 'outward', unchanged: 'no movement', closer: 'closer to suspension', away: 'farther from suspension', towardFender: 'farther outward', towardCenter: 'farther inward',
+    diagram: 'Wheel position comparison', currentWheel: 'Current', proposedWheel: 'Proposed', suspension: 'Suspension side', fender: 'Fender side', noClearance: 'No baseline clearance entered', negativeClearance: 'The arithmetic estimate is below zero; do not treat this as a fitment verdict.',
+    invalid: 'Check the measurements and units. Widths must be between 50 and 1,000 mm after conversion.', noExport: 'Compare the wheels before downloading a CSV.',
+  },
+  exampleHeading: 'Example', howItWorks: 'How the comparison works', faqHeading: 'Frequently asked questions', limitsHeading: 'Important limits', related: 'Related tools', home: 'Home', siteName: 'UsefulVerse', language: 'Language', freeBadge: 'Free browser tool', useTool: 'Compare wheel positions',
+  faq: [
+    { q: 'What does a higher ET number do?', a: 'With the same rim width and spacer, a 10 mm higher ET moves the wheel centerline and both rim edges 10 mm inward.' },
+    { q: 'How does a spacer affect effective ET?', a: 'A spacer moves the wheel outward, so the effective offset is ET minus spacer thickness. A 10 mm spacer changes effective ET by −10 mm.' },
+    { q: 'Can this confirm that wheels fit my car?', a: 'No. It compares basic rim geometry only. It does not model the vehicle, tire shape, suspension, brakes, steering or legal approval.' },
+    { q: 'What does remaining clearance mean?', a: 'If you enter measured current clearance, the calculator subtracts the estimated rim movement toward that side. Tire bulge and other parts are not included.' },
+    { q: 'Are inches and millimetres supported?', a: 'Yes. Choose a unit for rim width and another for ET/spacers; results are displayed in millimetres.' },
+  ],
+});

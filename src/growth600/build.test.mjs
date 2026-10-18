@@ -6,6 +6,7 @@ import { join } from 'node:path';
 import { locales, localeEntries } from '../locales.mjs';
 import { tools as currentTools } from '../catalog.mjs';
 import { growthPilotTools } from './catalog.mjs';
+import pendingToolsCopies from './locales/pending-tools-final.mjs';
 import { transformerCalculatorEnglishCopy } from './locales/transformer-calculator.en.mjs';
 import stoichiometryCopies from './locales/stoichiometry-calculator-final.mjs';
 import pressureCalculatorCopies from './locales/pressure-calculator-final.mjs';
@@ -31,6 +32,33 @@ import specificHeatCalculatorCopies from './locales/specific-heat-calculator-fin
 import rcTimeConstantCalculatorCopies from './locales/rc-time-constant-calculator-final.mjs';
 import reverseMortgageCalculatorCopies from './locales/reverse-mortgage-calculator-final.mjs';
 import carDepreciationCalculatorCopies from './locales/car-depreciation-calculator-final.mjs';
+import mazeGeneratorCopies from './locales/maze-generator-final.mjs';
+import sleepCalculatorCopies from './locales/sleep-calculator-final.mjs';
+import leanBodyMassCalculatorCopies from './locales/lean-body-mass-calculator-final.mjs';
+import cyclingPowerCalculatorCopies from './locales/cycling-power-calculator-final.mjs';
+import inductorCalculatorCopies from './locales/inductor-calculator-final.mjs';
+import centripetalForceCalculatorCopies from './locales/centripetal-force-calculator-final.mjs';
+import writingTrackerCopies from './locales/writing-tracker-final.mjs';
+import aesEncryptionToolCopies from './locales/aes-encryption-tool-final.mjs';
+import jwtEncoderCopies from './locales/jwt-encoder-final.mjs';
+import customerAcquisitionCostCalculatorCopies from './locales/customer-acquisition-cost-calculator-final.mjs';
+import graphqlFormatterCopies from './locales/graphql-formatter-final.mjs';
+import choreChartMakerCopies from './locales/chore-chart-maker-final.mjs';
+import cssBorderRadiusGeneratorCopies from './locales/css-border-radius-generator-final.mjs';
+import rentalYieldCalculatorCopies from './locales/rental-yield-calculator-final.mjs';
+import rsaKeyGeneratorCopies from './locales/rsa-key-generator-final.mjs';
+import logAnalyzerCopies from './locales/log-analyzer-final.mjs';
+import pyramidSolitaireCopies from './locales/pyramid-solitaire-final.mjs';
+import rebusPuzzlesCopies from './locales/rebus-puzzles-final.mjs';
+import killerSudokuCopies from './locales/killer-sudoku-final.mjs';
+import sudokuSolverCopies from './locales/sudoku-solver-final.mjs';
+import hangmanGameCopies from './locales/hangman-game-final.mjs';
+import aimTrainerCopies from './locales/aim-trainer-final.mjs';
+import chessPuzzlesCopies from './locales/chess-puzzles-final.mjs';
+import dotsAndBoxesCopies from './locales/dots-and-boxes-final.mjs';
+import chessAnalysisBoardCopies from './locales/chess-analysis-board-final.mjs';
+import blackjackGameCopies from './locales/blackjack-game-final.mjs';
+import tripeaksSolitaireCopies from './locales/tripeaks-solitaire-final.mjs';
 import { buildGrowthStaticSite } from './build.mjs';
 import englishGrowthCopy from './locales/en.mjs';
 import frenchGrowthCopy from './locales/fr.mjs';
@@ -96,6 +124,33 @@ import { imageSplitterArabicCopy } from './locales/image-splitter.ar.mjs';
 const actions = { calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', updateProgress: 'Record progress', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', feet: 'Feet', inches: 'Inches', liters: 'Liters', cubicFeet: 'Cubic feet', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Computer', twoPlayers: 'Two players', privacyNote: 'Private on this device.', riseMode: 'Rise', pitchMode: 'Pitch' };
 const messages = { copied: 'Copied.', copyUnavailable: 'Copy unavailable.', calculated: 'Done.', sameSize: 'Sizes match.', checkInputs: 'Check entries.', diameter: 'Outside diameter', sidewall: 'Sidewall height', circumference: 'Circumference', revolutions: 'Revolutions per kilometre', diameterDifference: 'Diameter difference', diameterChange: 'Diameter change', groundClearance: 'Ground-clearance change', actualSpeed: 'Actual speed estimate', area: 'Area', volume: 'Volume', volumePerContainer: 'Volume per container', totalVolume: 'Total soil volume', orderVolume: 'Order volume', estimatedWeight: 'Estimated weight', bagsToBuy: 'Bags to buy', invalidFormula: 'Check formula.', atomCount: 'atoms', molarMass: 'Molar mass', estimateOnly: 'Estimate only.', currentPayment: 'Current payment', newPayment: 'New payment', paymentDifference: 'Difference', currentTotal: 'Current total', newTotal: 'New total', estimatedDifference: 'Estimated savings', breakEven: 'Break-even', noBreakEven: 'No break-even', monthCount: '{count} months', privatePair: '{giver} gives to {recipient}', allRevealed: 'All revealed.', drawReady: 'Ready.', checkNamesAndRules: 'Check entries.', downloaded: 'Downloaded.', pit: 'Pit', seeds: 'seeds', playerOne: 'Player one', playerTwo: 'Player two', playerOneWins: 'Player one wins.', playerTwoWins: 'Player two wins.', tie: 'Tie.', gameOver: 'Game over.', turn: '{player} turn.', effectiveRun: 'Horizontal run to ridge', rafterLength: 'Geometric rafter length', pitch: 'Pitch (rise per 12)', roofAngle: 'Roof angle', plumbCut: 'Plumb-cut angle', overhangRun: 'Horizontal overhang' };
 function toolCopy(tool, language) {
+  if (tool.id === 'killer-sudoku') return structuredClone(killerSudokuCopies[language]);
+  if (tool.id === 'sudoku-solver') return structuredClone(sudokuSolverCopies[language]);
+  if (tool.id === 'hangman-game') return structuredClone(hangmanGameCopies[language]);
+  if (tool.id === 'aim-trainer') return structuredClone(aimTrainerCopies[language]);
+  if (tool.id === 'chess-puzzles') return structuredClone(chessPuzzlesCopies[language]);
+  if (tool.id === 'dots-and-boxes') return structuredClone(dotsAndBoxesCopies[language]);
+  if (tool.id === 'chess-analysis-board') return structuredClone(chessAnalysisBoardCopies[language]);
+  if (tool.id === 'blackjack-game') return structuredClone(blackjackGameCopies[language]);
+  if (tool.id === 'tripeaks-solitaire') return structuredClone(tripeaksSolitaireCopies[language]);
+  if (tool.id === 'maze-generator') return structuredClone(mazeGeneratorCopies[language]);
+  if (tool.id === 'sleep-calculator') return structuredClone(sleepCalculatorCopies[language]);
+  if (tool.id === 'lean-body-mass-calculator') return structuredClone(leanBodyMassCalculatorCopies[language]);
+  if (tool.id === 'cycling-power-calculator') return structuredClone(cyclingPowerCalculatorCopies[language]);
+  if (tool.id === 'inductor-calculator') return structuredClone(inductorCalculatorCopies[language]);
+  if (tool.id === 'centripetal-force-calculator') return structuredClone(centripetalForceCalculatorCopies[language]);
+  if (tool.id === 'writing-tracker') return structuredClone(writingTrackerCopies[language]);
+  if (tool.id === 'aes-encryption-tool') return structuredClone(aesEncryptionToolCopies[language]);
+  if (tool.id === 'jwt-encoder') return structuredClone(jwtEncoderCopies[language]);
+  if (tool.id === 'customer-acquisition-cost-calculator') return structuredClone(customerAcquisitionCostCalculatorCopies[language]);
+  if (tool.id === 'graphql-formatter') return structuredClone(graphqlFormatterCopies[language]);
+  if (tool.id === 'chore-chart-maker') return structuredClone(choreChartMakerCopies[language]);
+  if (tool.id === 'css-border-radius-generator') return structuredClone(cssBorderRadiusGeneratorCopies[language]);
+  if (tool.id === 'rental-yield-calculator') return structuredClone(rentalYieldCalculatorCopies[language]);
+  if (tool.id === 'rsa-key-generator') return structuredClone(rsaKeyGeneratorCopies[language]);
+  if (tool.id === 'log-analyzer') return structuredClone(logAnalyzerCopies[language]);
+  if (tool.id === 'pyramid-solitaire') return structuredClone(pyramidSolitaireCopies[language]);
+  if (tool.id === 'rebus-puzzles') return structuredClone(rebusPuzzlesCopies[language]);
   if (tool.id === 'transformer-calculator') return transformerCalculatorEnglishCopy;
   if (tool.id === 'image-splitter') return structuredClone(language === 'en' ? imageSplitterEnglishCopy : language === 'ar' ? imageSplitterArabicCopy : imageSplitterCopies[language]);
   if (tool.id === 'stoichiometry-calculator') return structuredClone(stoichiometryCopies[language]);
@@ -173,6 +228,7 @@ function toolCopy(tool, language) {
     'asphalt-calculator': { area: 'Paved area', areaUnit: 'Area unit', compactedThickness: 'Compacted thickness', thicknessUnit: 'Thickness unit', density: 'Mix density', densityUnit: 'Density unit', wastePercent: 'Extra material', pricePerTonne: 'Price per tonne', accuracyNote: 'Estimate only; use supplier data.', relatedConcreteCalculator: 'Planning concrete? Use the concrete calculator.' },
     mancala: { mode: 'Mode', board: 'Kalah board', rules: 'Sow seeds around the board; skip the opponent store. Capture the opposite pit when the last seed lands in an empty pit on your side.' },
     'dominoes-game': { mode: 'Play mode', variant: 'Rules', board: 'Domino line', stock: 'Tiles left to draw', hand: 'Your tiles', opponentHand: "Opponent's tiles", accuracyNote: 'Local double-six game.', rules: 'Match an open end.' },
+    'hearts-game': { passDirection: 'Pass cards', board: 'Current trick', hand: 'Your hand', scores: 'Hand scores', clubs: 'clubs', diamonds: 'diamonds', spades: 'spades', hearts: 'hearts', accuracyNote: 'Local Hearts game.', rules: 'Follow suit and avoid points.' },
     hitori: { size: 'Grid size', difficulty: 'Difficulty', board: 'Hitori number grid', rules: 'Rules', accuracyNote: 'Unique local puzzles.', cell: 'Cell', row: 'row', column: 'column', black: 'black', white: 'white' },
     nurikabe: { difficulty: 'Difficulty', board: 'Nurikabe grid', rules: 'Rules', accuracyNote: 'Unique local puzzles.', cell: 'Cell', row: 'row', column: 'column', sea: 'sea', island: 'island' },
     'peg-solitaire': { board: 'English peg solitaire board', rules: 'Jump over one peg into an empty hole.', accuracyNote: 'Local game.', hole: 'hole', row: 'row', column: 'column', peg: 'peg', empty: 'empty' },
@@ -430,6 +486,28 @@ function toolCopy(tool, language) {
     Object.assign(fields, { pairs: 'Paired before and after values', pairsHint: 'One pair per line; 2–500 pairs.', accuracyNote: 'Zeros are omitted and ties receive average ranks.', resultStatus: 'Test result', resultCount: 'Pairs', nonzeroLabel: 'nonzero', zeroCount: 'Zero differences omitted', tiedCount: 'Tied rank groups', positiveRankSum: 'Positive rank sum', negativeRankSum: 'Negative rank sum', pValue: 'Two-sided p-value', method: 'Method', methodExact: 'Exact two-sided test', methodApproximation: 'Normal approximation', methodNotAvailable: 'Not available', resultTable: 'Paired values and signed ranks', before: 'Before', after: 'After', difference: 'Difference', absoluteRank: 'Absolute rank', signedRank: 'Signed rank' });
   }
   const localized = { name, title: `${name} free | UsefulVerse`, description: `Free ${name} that works in your browser, with no account required.`, intro: `Use this ${name} for free in your browser.`, howQuestion: `How do I use ${name}?`, howAnswer: `Enter the details and use the controls shown.`, privacyQuestion: 'Is my data uploaded?', privacyAnswer: 'No. This tool runs locally in this browser.', fields, actions, messages: { ...localizedMessages, ...asphaltMessages, ...poolMessages, ...saltMessages, ...roofMessages, ...drywallMessages, ...roofingMessages, ...deckMessages, ...fenceMessages, ...redactorMessages, ...upscalerMessages, ...dominoMessages, ...weightMessages, ...helocMessages, ...teamMessages, ...paverMessages, ...brickMessages, ...rafterMessages, ...carpetMessages, ...aquariumMessages, ...grassSeedMessages, ...insulationMessages, ...wallFramingMessages, ...electricityCostMessages, ...compostMessages, ...pondMessages, ...fertilizerMessages, ...balusterMessages, ...retainingWallMessages, ...batteryRuntimeMessages, ...lumberCutMessages, ...plantSpacingMessages, ...evChargingMessages, ...rainwaterMessages, ...rampMessages, ...heatLossMessages, ...heatPumpMessages, ...miterMessages, ...voltageDropMessages, ...molarityMessages, ...dilutionMessages, ...ohmsMessages, ...chemicalMessages, ...gearMessages, ...pulleyMessages, ...rlcMessages, ...densityMessages, ...compressionMessages, ...polynomialMessages, ...halfLifeMessages, ...accelerationMessages, ...forceMessages, ...horsepowerMessages, ...mortgagePointsMessages, ...trapezoidMessages, ...prayerMessages, ...goalMessages, ...mindMapMessages, ...moodMessages, ...journalMessages, ...pegSolitaireMessages, ...futoshikiMessages, ...colorNameMessages, ...photoToSketchMessages, ...schemaValidatorMessages, ...savingsGoalMessages, ...severanceMessages, ...divisibilityMessages, ...laplaceMessages, ...vectorMessages, ...equationMessages, ...chessOpeningTrainerMessages }, copyLanguage: language, ...(['carpet-calculator', 'aquarium-calculator', 'grass-seed-calculator', 'insulation-calculator', 'wall-framing-calculator', 'electricity-cost-calculator', 'compost-calculator', 'pond-volume-calculator', 'fertilizer-calculator', 'baluster-spacing-calculator', 'retaining-wall-calculator', 'battery-runtime-calculator', 'lumber-cut-calculator', 'plant-spacing-calculator', 'ev-charging-calculator', 'rainwater-harvesting-calculator', 'ramp-calculator', 'heat-loss-calculator', 'heat-pump-calculator', 'miter-angle-calculator', 'voltage-drop-calculator', 'molarity-calculator', 'dilution-calculator', 'ohms-law-calculator', 'mood-tracker', 'journal-online', 'travel-itinerary-planner', 'half-life-calculator', 'mortgage-points-calculator', 'trapezoid-calculator', 'color-name-finder', 'photo-to-sketch', 'schema-markup-validator', 'savings-goal-calculator', 'severance-pay-calculator', 'divisibility-calculator', 'vector-calculator', 'force-calculator', 'horsepower-calculator', 'chess-opening-trainer', 'decibel-calculator'].includes(tool.id) ? { localizationStatus: 'approved' } : {}) };
+  if (tool.id === 'hearts-game') {
+    Object.assign(localized.actions, { passCards: 'Pass selected cards', passLeft: 'Pass left', passRight: 'Pass right', passAcross: 'Pass across', hold: 'Hold', playCard: 'Play card' });
+    Object.assign(localized.messages, { passing: 'Choose three cards.', selectThree: '{count} of 3 selected.', yourTurn: 'Your turn.', computerTurn: 'Computer turn.', cardPlayed: 'Card played.', trickWon: 'Trick won.', roundWon: 'Hand complete.', roundComplete: 'Hand complete.', invalidPass: 'Choose three cards.', moonShot: 'A player shot the moon.' });
+  }
+  if (tool.id === 'typing-practice') {
+    Object.assign(localized.fields, { mode: 'Keyboard lesson', prompt: 'Type this text', typedInput: 'Your typing', customText: 'Your text', progress: 'Character progress', accuracy: 'Accuracy', accuracyNote: 'Practice only; no speed score.', rules: 'Type the prompt and correct errors.' });
+    Object.assign(localized.actions, { newLesson: 'New exercise', rowHome: 'Home row', rowTop: 'Top row', rowBottom: 'Bottom row', rowMixed: 'Mixed rows', applyCustomText: 'Practice my text', clearCustomText: 'Clear custom text', startOver: 'Start over' });
+    Object.assign(localized.messages, { lessonReady: 'Type the prompt.', inputProgress: '{correct} of {total} correct; {accuracy}%.', lessonComplete: 'Done: {accuracy}%.', customTextLoaded: 'Custom text loaded.', customTextEmpty: 'Enter text.', customTextTooLong: 'Too long.', invalidMode: 'Choose a lesson.', savedProgress: 'Exercises: {count}.' });
+    localized.additionalFaqs = [
+      { question: 'Is this a typing speed test?', answer: 'No. It teaches keyboard rows and accuracy; it does not report WPM.' },
+      { question: 'Can I practice another language?', answer: 'Yes. Paste up to 1,000 characters of your text.' },
+    ];
+  }
+  if (tool.id === 'sokoban') {
+    Object.assign(localized.fields, { level: 'Choose a level', board: 'Puzzle board', player: 'Player', playerOnGoal: 'Player on goal', box: 'Box', boxOnGoal: 'Box on goal', goal: 'Goal', floor: 'Floor', wall: 'Wall', moves: 'Moves', pushes: 'Pushes', accuracyNote: 'Two original local levels.', rules: 'Push every box onto a goal.' });
+    Object.assign(localized.actions, { restart: 'Restart level', undo: 'Undo move', up: 'Move up', down: 'Move down', left: 'Move left', right: 'Move right', levelOne: 'First push', levelTwo: 'Up the lane' });
+    Object.assign(localized.messages, { ready: 'Level ready.', moved: 'Moves {moves}; pushes {pushes}.', blocked: 'Blocked.', levelComplete: 'Level {level} complete in {moves} moves and {pushes} pushes.', undoEmpty: 'Nothing to undo.', restarted: 'Level restarted.', chooseLevel: 'Choose a level.' });
+    localized.additionalFaqs = [
+      { question: 'Can I pull boxes in Sokoban?', answer: 'No. Boxes can only be pushed.' },
+      { question: 'Can I play without downloading anything?', answer: 'Yes. The levels run in your browser.' },
+    ];
+  }
   if (tool.id === 'wilcoxon-signed-rank-test-calculator') {
     Object.assign(localized.messages, { calculated: 'Test calculated.', allZero: 'All paired differences are zero.', checkInputs: 'Check paired values.', exampleLoaded: 'Example loaded.', downloaded: 'CSV downloaded.', downloadUnavailable: 'CSV unavailable.' });
     localized.additionalFaqs = [1, 2, 3].map((number) => ({ question: `Wilcoxon question ${number}?`, answer: 'Interpret the test using its assumptions.' }));
@@ -804,6 +882,10 @@ function toolCopy(tool, language) {
     { question: 'Draw or block?', answer: 'The variant changes drawing rules.' },
     { question: 'Can two people play locally?', answer: 'Yes. Two people can share one device.' },
   ];
+  if (tool.id === 'hearts-game') localized.additionalFaqs = [
+    { question: 'How are Hearts points counted?', answer: 'Each heart is one point and the queen of spades is thirteen.' },
+    { question: 'Can I play without signing up?', answer: 'Yes. This local game needs no account and does not connect to online players.' },
+  ];
   if (tool.id === 'hitori') localized.additionalFaqs = [
     { question: 'What are the rules of Hitori?', answer: 'Do not leave duplicate numbers among the white cells in any row or column. Black cells cannot touch orthogonally, and all white cells must form one connected area. Diagonal black cells may touch.' },
     { question: 'Does each new Hitori puzzle have a solution?', answer: 'The generator checks that each displayed grid has exactly one solution under these rules. It runs on your device and does not need an account or a server.' },
@@ -869,6 +951,7 @@ function createCopy(languages) {
   return Object.fromEntries(languages.map((locale) => [locale.key, {
     _home: { copyLanguage: locale.key, title: `UsefulVerse ${locale.key} tools | UsefulVerse`, description: 'Free browser tools with no account required.', intro: 'Small, useful tools that run in your browser.', directoryLabel: 'Everyday tools', freeLabel: 'Free, no usage limit', footerFree: 'Free browser tools.', skipToTool: 'Skip to tool', home: 'Home', languageLabel: 'Language', breadcrumbLabel: 'Breadcrumb', faqLabel: 'FAQ' },
     ...Object.fromEntries(growthPilotTools.map((tool) => [tool.id, toolCopy(tool, locale.key)])),
+    ...pendingToolsCopies[locale.key],
   }]));
 }
 
@@ -880,8 +963,14 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   const controllerBundles = Object.fromEntries(growthPilotTools.map((tool) => [tool.id, `document.querySelector('[data-tool="${tool.id}"]');`]));
   const workerBundles = { 'image-upscaler-worker': 'self.addEventListener("message",()=>{});' };
   const extraAssets = { 'models-test/config.json': '{"upscale":2}', 'models-test/onnx/model.onnx': Buffer.from([1, 2, 3]) };
-  const toolStyles = { 'har-viewer': '.har-viewer__table{border-collapse:collapse}', 'robots-txt-tester': '.robots-txt-tester__decision{display:grid}', 'binary-base64-tool': '.binary-base64-tool img{max-width:100%}', 'csv-editor': '.csv-editor__table-scroll{overflow:auto}', 'logic-grid-puzzle': '.logic-grid-table{table-layout:fixed}', 'markdown-editor': '.markdown-editor{max-width:70rem}', 'purchase-order-generator': '.purchase-order-table-scroll{overflow:auto}', 'eigenvalue-calculator': '.eigenvalue-results__list{display:grid;gap:1rem}', 'bond-calculator': '[data-bond-chart]{display:block;width:100%}', 'waist-to-hip-ratio-calculator': '.waist-to-hip-ratio-calculator .result{font-variant-numeric:tabular-nums}', 'hebrew-calendar-converter': '.hebrew-calendar-converter fieldset{display:grid}', 'absolute-value-calculator': '.absolute-value-calculator fieldset{display:grid}', 'rc-time-constant-calculator': '.rc-time-constant-calculator [data-rc-chart]{display:block;width:100%}', 'reverse-mortgage-calculator': '.reverse-mortgage-calculator table{overflow:auto}' };
+  const toolStyles = { 'har-viewer': '.har-viewer__table{border-collapse:collapse}', 'robots-txt-tester': '.robots-txt-tester__decision{display:grid}', 'binary-base64-tool': '.binary-base64-tool img{max-width:100%}', 'csv-editor': '.csv-editor__table-scroll{overflow:auto}', 'logic-grid-puzzle': '.logic-grid-table{table-layout:fixed}', 'markdown-editor': '.markdown-editor{max-width:70rem}', 'purchase-order-generator': '.purchase-order-table-scroll{overflow:auto}', 'eigenvalue-calculator': '.eigenvalue-results__list{display:grid;gap:1rem}', 'bond-calculator': '[data-bond-chart]{display:block;width:100%}', 'waist-to-hip-ratio-calculator': '.waist-to-hip-ratio-calculator .result{font-variant-numeric:tabular-nums}', 'hebrew-calendar-converter': '.hebrew-calendar-converter fieldset{display:grid}', 'absolute-value-calculator': '.absolute-value-calculator fieldset{display:grid}', 'rc-time-constant-calculator': '.rc-time-constant-calculator [data-rc-chart]{display:block;width:100%}', 'reverse-mortgage-calculator': '.reverse-mortgage-calculator table{overflow:auto}', 'writing-tracker': '.writing-tracker__stats{display:grid;gap:.75rem}', 'aes-encryption-tool': '.aes-encryption-tool textarea{width:100%}', 'jwt-encoder': '.jwt-encoder textarea{width:100%}', 'customer-acquisition-cost-calculator': '.customer-acquisition-cost-calculator .calculator-grid{display:grid;gap:1rem}', 'rebus-puzzles': '.rebus-puzzles-game{display:grid;gap:1rem}', 'killer-sudoku': '.killer-sudoku-board{display:grid;grid-template-columns:repeat(9,minmax(0,1fr))}', 'sudoku-solver': '.sudoku-solver-board{display:grid;grid-template-columns:repeat(9,minmax(0,1fr))}', 'hangman-game': '.hangman-game__word{display:flex;justify-content:center}' };
   const fixtureCopyByLocale = { en: englishGrowthCopy, es: spanishGrowthCopy, fr: frenchGrowthCopy, pt: portugueseGrowthCopy, de: germanGrowthCopy, ja: japaneseGrowthCopy, ko: koreanGrowthCopy, id: indonesianGrowthCopy, hi: hindiGrowthCopy, ar: arabicGrowthCopy, zh: simplifiedChineseGrowthCopy, bn: bengaliGrowthCopy, ru: russianGrowthCopy, ur: urduGrowthCopy, tr: turkishGrowthCopy, vi: vietnameseGrowthCopy, it: italianGrowthCopy, zh_tw: traditionalChineseGrowthCopy, bg: bulgarianGrowthCopy, ca: catalanGrowthCopy, nl: dutchGrowthCopy, el: greekGrowthCopy, ms: malayGrowthCopy, pl: polishGrowthCopy, sv: swedishGrowthCopy, th: thaiGrowthCopy, uk: ukrainianGrowthCopy, sw: swahiliGrowthCopy, mr: marathiGrowthCopy, te: teluguGrowthCopy, ha: hausaGrowthCopy, tl: filipinoGrowthCopy, ta: tamilGrowthCopy, fa: persianGrowthCopy, am: amharicGrowthCopy, gu: gujaratiGrowthCopy };
+  toolStyles['aim-trainer'] = '.aim-trainer__area{position:relative;overflow:hidden}';
+  toolStyles['chess-puzzles'] = '.chess-puzzles__board{display:grid}';
+  toolStyles['dots-and-boxes'] = '.dots-boxes__board{display:grid}';
+  toolStyles['chess-analysis-board'] = '.chess-analysis-board__board{display:grid}';
+  toolStyles['blackjack-game'] = '.blackjack-game__table{display:grid}';
+  toolStyles['tripeaks-solitaire'] = '.tripeaks__board{display:grid}';
   for (const locale of smallLocales) fixtureCopyByLocale[locale.key] = {
     ...fixtureCopyByLocale[locale.key],
     'carpet-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'carpet-calculator'), locale.key),
@@ -919,6 +1008,36 @@ test('separate static build writes only localized hub routes, its sitemap and bo
     'density-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'density-calculator'), locale.key),
     'kinetic-energy-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'kinetic-energy-calculator'), locale.key),
     'resistor-color-code-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'resistor-color-code-calculator'), locale.key),
+    'aes-encryption-tool': toolCopy(growthPilotTools.find(({ id }) => id === 'aes-encryption-tool'), locale.key),
+    'jwt-encoder': toolCopy(growthPilotTools.find(({ id }) => id === 'jwt-encoder'), locale.key),
+    'customer-acquisition-cost-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'customer-acquisition-cost-calculator'), locale.key),
+    'graphql-formatter': toolCopy(growthPilotTools.find(({ id }) => id === 'graphql-formatter'), locale.key),
+    'chore-chart-maker': toolCopy(growthPilotTools.find(({ id }) => id === 'chore-chart-maker'), locale.key),
+    'css-border-radius-generator': toolCopy(growthPilotTools.find(({ id }) => id === 'css-border-radius-generator'), locale.key),
+    'rental-yield-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'rental-yield-calculator'), locale.key),
+    'rsa-key-generator': toolCopy(growthPilotTools.find(({ id }) => id === 'rsa-key-generator'), locale.key),
+    'log-analyzer': toolCopy(growthPilotTools.find(({ id }) => id === 'log-analyzer'), locale.key),
+    'pyramid-solitaire': toolCopy(growthPilotTools.find(({ id }) => id === 'pyramid-solitaire'), locale.key),
+    'rebus-puzzles': toolCopy(growthPilotTools.find(({ id }) => id === 'rebus-puzzles'), locale.key),
+    'killer-sudoku': toolCopy(growthPilotTools.find(({ id }) => id === 'killer-sudoku'), locale.key),
+    'sudoku-solver': toolCopy(growthPilotTools.find(({ id }) => id === 'sudoku-solver'), locale.key),
+    'hangman-game': toolCopy(growthPilotTools.find(({ id }) => id === 'hangman-game'), locale.key),
+    'aim-trainer': toolCopy(growthPilotTools.find(({ id }) => id === 'aim-trainer'), locale.key),
+    'chess-puzzles': toolCopy(growthPilotTools.find(({ id }) => id === 'chess-puzzles'), locale.key),
+    'dots-and-boxes': toolCopy(growthPilotTools.find(({ id }) => id === 'dots-and-boxes'), locale.key),
+    'chess-analysis-board': toolCopy(growthPilotTools.find(({ id }) => id === 'chess-analysis-board'), locale.key),
+    'blackjack-game': toolCopy(growthPilotTools.find(({ id }) => id === 'blackjack-game'), locale.key),
+    'tripeaks-solitaire': toolCopy(growthPilotTools.find(({ id }) => id === 'tripeaks-solitaire'), locale.key),
+    'hearts-game': toolCopy(growthPilotTools.find(({ id }) => id === 'hearts-game'), locale.key),
+    'typing-practice': toolCopy(growthPilotTools.find(({ id }) => id === 'typing-practice'), locale.key),
+    sokoban: toolCopy(growthPilotTools.find(({ id }) => id === 'sokoban'), locale.key),
+    'maze-generator': toolCopy(growthPilotTools.find(({ id }) => id === 'maze-generator'), locale.key),
+    'sleep-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'sleep-calculator'), locale.key),
+    'lean-body-mass-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'lean-body-mass-calculator'), locale.key),
+    'cycling-power-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'cycling-power-calculator'), locale.key),
+    'inductor-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'inductor-calculator'), locale.key),
+    'centripetal-force-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'centripetal-force-calculator'), locale.key),
+    'writing-tracker': toolCopy(growthPilotTools.find(({ id }) => id === 'writing-tracker'), locale.key),
     'acceleration-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'acceleration-calculator'), locale.key),
     'force-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'force-calculator'), locale.key),
     'friction-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'friction-calculator'), locale.key),
@@ -961,6 +1080,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
     'density-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'density-calculator'), locale.key),
     'kinetic-energy-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'kinetic-energy-calculator'), locale.key),
     'resistor-color-code-calculator': toolCopy(growthPilotTools.find(({ id }) => id === 'resistor-color-code-calculator'), locale.key),
+    ...pendingToolsCopies[locale.key],
   };
   const result = await buildGrowthStaticSite({
     outputDir,
@@ -1021,6 +1141,57 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   assert.ok(csvStylePath, 'CSV editor route links its own content-hashed stylesheet');
   assert.match(await readFile(join(outputDir, csvStylePath), 'utf8'), /csv-editor__table-scroll/u);
   assert.match(csvPage, /Types are for checking only/u);
+  const writingTrackerPage = await readFile(join(outputDir, 'tools/writing-tracker/index.html'), 'utf8');
+  const writingTrackerStylePath = writingTrackerPage.match(/href="(\/assets\/writing-tracker\.[a-f0-9]+\.css)"/u)?.[1];
+  assert.ok(writingTrackerStylePath, 'writing tracker route links its dedicated stylesheet');
+  assert.match(await readFile(join(outputDir, writingTrackerStylePath), 'utf8'), /writing-tracker__stats/u);
+  const rebusPage = await readFile(join(outputDir, 'tools/rebus-puzzles/index.html'), 'utf8');
+  const rebusStylePath = rebusPage.match(/href="(\/assets\/rebus-puzzles\.[a-f0-9]+\.css)"/u)?.[1];
+  assert.ok(rebusStylePath, 'Rebus route links its dedicated stylesheet');
+  assert.match(await readFile(join(outputDir, rebusStylePath), 'utf8'), /rebus-puzzles-game/u);
+  assert.match(rebusPage, /The puzzle collection and expected answers are in English/u);
+  const killerPage = await readFile(join(outputDir, 'tools/killer-sudoku/index.html'), 'utf8');
+  const killerStylePath = killerPage.match(/href="(\/assets\/killer-sudoku\.[a-f0-9]+\.css)"/u)?.[1];
+  assert.ok(killerStylePath, 'Killer Sudoku route links its dedicated stylesheet');
+  assert.match(await readFile(join(outputDir, killerStylePath), 'utf8'), /killer-sudoku-board/u);
+  assert.match(killerPage, /A one-cell cage directly gives its value/u);
+  const sudokuSolverPage = await readFile(join(outputDir, 'tools/sudoku-solver/index.html'), 'utf8');
+  const sudokuSolverStylePath = sudokuSolverPage.match(/href="(\/assets\/sudoku-solver\.[a-f0-9]+\.css)"/u)?.[1];
+  assert.ok(sudokuSolverStylePath, 'Sudoku Solver route links its dedicated stylesheet');
+  assert.match(await readFile(join(outputDir, sudokuSolverStylePath), 'utf8'), /sudoku-solver-board/u);
+  assert.match(sudokuSolverPage, /A limited search is never labeled unique/u);
+  const hangmanPage = await readFile(join(outputDir, 'tools/hangman-game/index.html'), 'utf8');
+  const hangmanStylePath = hangmanPage.match(/href="(\/assets\/hangman-game\.[a-f0-9]+\.css)"/u)?.[1];
+  assert.ok(hangmanStylePath, 'Hangman Game route links its dedicated stylesheet');
+  assert.match(await readFile(join(outputDir, hangmanStylePath), 'utf8'), /hangman-game__word/u);
+  assert.match(hangmanPage, /The translated word bank and game run in this browser/u);
+  const aimTrainerPage = await readFile(join(outputDir, 'tools/aim-trainer/index.html'), 'utf8');
+  const aimTrainerStylePath = aimTrainerPage.match(/href="(\/assets\/aim-trainer\.[a-f0-9]+\.css)"/u)?.[1];
+  assert.ok(aimTrainerStylePath, 'Aim Trainer route links its dedicated stylesheet');
+  assert.match(await readFile(join(outputDir, aimTrainerStylePath), 'utf8'), /aim-trainer__area/u);
+  assert.match(aimTrainerPage, /Practice mouse or touch aim/u);
+  const chessPuzzlesPage = await readFile(join(outputDir, 'tools/chess-puzzles/index.html'), 'utf8');
+  const chessPuzzlesStylePath = chessPuzzlesPage.match(/href="(\/assets\/chess-puzzles\.[a-f0-9]+\.css)"/u)?.[1];
+  assert.ok(chessPuzzlesStylePath, 'Chess Puzzles route links its dedicated stylesheet');
+  assert.match(await readFile(join(outputDir, chessPuzzlesStylePath), 'utf8'), /chess-puzzles__board/u);
+  assert.match(chessPuzzlesPage, /ten original positions/u);
+  const aesPage = await readFile(join(outputDir, 'tools/aes-encryption-tool/index.html'), 'utf8');
+  const aesStylePath = aesPage.match(/href="(\/assets\/aes-encryption-tool\.[a-f0-9]+\.css)"/u)?.[1];
+  assert.ok(aesStylePath, 'AES tool route links its dedicated stylesheet');
+  assert.match(await readFile(join(outputDir, aesStylePath), 'utf8'), /aes-encryption-tool/u);
+  assert.match(aesPage, /PBKDF2-HMAC-SHA-256/u);
+  const jwtPage = await readFile(join(outputDir, 'tools/jwt-encoder/index.html'), 'utf8');
+  const jwtStylePath = jwtPage.match(/href="(\/assets\/jwt-encoder\.[a-f0-9]+\.css)"/u)?.[1];
+  assert.ok(jwtStylePath, 'JWT route links its dedicated stylesheet');
+  assert.match(await readFile(join(outputDir, jwtStylePath), 'utf8'), /jwt-encoder/u);
+  assert.match(jwtPage, /not an identity provider/u);
+  const cacPage = await readFile(join(outputDir, 'tools/customer-acquisition-cost-calculator/index.html'), 'utf8');
+  assert.match(cacPage, /Customer Acquisition Cost Calculator/u);
+  assert.match(cacPage, /name="marketingSpend"/u);
+  assert.match(cacPage, /not marginal CAC/u);
+  const cacStylePath = cacPage.match(/href="(\/assets\/customer-acquisition-cost-calculator\.[a-f0-9]+\.css)"/u)?.[1];
+  assert.ok(cacStylePath, 'CAC calculator route links its dedicated stylesheet');
+  assert.match(await readFile(join(outputDir, cacStylePath), 'utf8'), /customer-acquisition-cost-calculator/u);
   assert.doesNotMatch(enPage, /csv-editor\.[a-f0-9]+\.css/u, 'CSV-only CSS is not loaded on unrelated pages');
   assert.match(robotsPage, /maxlength="200000"/u);
   assert.match(robotsPage, /not a complete emulator/u);
@@ -1196,7 +1367,7 @@ test('separate static build writes only localized hub routes, its sitemap and bo
   // Top-level entries include shared and tool-only stylesheets, one controller
   // per tool, the model worker, the models directory (nested contents), and
   // the dedicated stylesheet for each page that needs one.
-  assert.equal(files.length, growthPilotTools.length + 17);
+  assert.equal(files.length, growthPilotTools.length + 1 + Object.keys(toolStyles).length + Object.keys(workerBundles).length + 1);
   assert.ok((await stat(join(outputDir, 'assets', files[0]))).isFile());
 });
 

@@ -1,0 +1,47 @@
+{
+  "status": "automatic_drafts_withheld_after_visible_quality_defects",
+  "generatedAt": "2026-10-18",
+  "nativeReview": "not performed",
+  "visitorRuntimeTranslation": false,
+  "publicationApproved": false,
+  "policy": "Do not display unreviewed machine output. Non-English tool copy currently falls back to the English source. Restore locale-specific copy only after contextual language review.",
+  "tools": [
+    {
+      "tool": "swiss-health-deductible",
+      "id": "CH007",
+      "sourceStrings": 54,
+      "nonEnglishLocales": 36,
+      "englishSourceFallbackEntries": 1944,
+      "pilotRoutes": 37,
+      "rejectedAutomaticDraftBackup": "/private/tmp/swiss-health-deductible-translations.mjs.rejected-auto-draft-20261018"
+    },
+    {
+      "tool": "swiss-rent-adjustment",
+      "id": "CH010",
+      "sourceStrings": 42,
+      "nonEnglishLocales": 36,
+      "englishSourceFallbackEntries": 1512,
+      "pilotRoutes": 37,
+      "rejectedAutomaticDraftBackup": "/private/tmp/swiss-rent-adjustment-translations.mjs.rejected-auto-draft-20261018"
+    },
+    {
+      "tool": "swiss-vacation-accrual",
+      "id": "CH011",
+      "sourceStrings": 36,
+      "nonEnglishLocales": 36,
+      "englishSourceFallbackEntries": 1296,
+      "pilotRoutes": 37,
+      "automaticDraft": "none; English source fallback"
+    },
+    {
+      "tool": "swiss-premium-reduction",
+      "id": "CH008",
+      "sourceStrings": 31,
+      "nonEnglishLocales": 36,
+      "englishSourceFallbackEntries": 1116,
+      "pilotRoutes": 37,
+      "automaticDraft": "none; English source fallback"
+    }
+  ],
+  "note": "Entry counts are unique source-copy keys multiplied by 36 locales; they are explicit English fallbacks, not completed translations. CH011 likewise uses English source fallback until locale review. CH008 uses English source fallback until locale review."
+}

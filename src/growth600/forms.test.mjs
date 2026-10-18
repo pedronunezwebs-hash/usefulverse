@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { growthPilotTools } from './catalog.mjs';
 import { renderGrowthForm } from './forms.mjs';
+import { pendingToolEnglishCopy } from './locales/pending-tools.en.mjs';
 import { abTestEnglishCopy } from './locales/a-b-test-calculator.en.mjs';
 import { investmentAllocationEnglishCopy } from './locales/investment-allocation-calculator.en.mjs';
 import { repeatingDecimalEnglishCopy } from './locales/repeating-decimal-to-fraction.en.mjs';
@@ -10,6 +11,9 @@ import { singularValueDecompositionEnglishCopy } from './locales/singular-value-
 import { spearmanCorrelationEnglishCopy } from './locales/spearman-correlation-calculator.en.mjs';
 import { wilcoxonSignedRankEnglishCopy } from './locales/wilcoxon-signed-rank-test-calculator.en.mjs';
 import { chineseRemainderEnglishCopy } from './locales/chinese-remainder-theorem-calculator.en.mjs';
+import { mazeGeneratorEnglishCopy } from './locales/maze-generator.en.mjs';
+import { sleepCalculatorEnglishCopy } from './locales/sleep-calculator.en.mjs';
+import { leanBodyMassCalculatorEnglishCopy } from './locales/lean-body-mass-calculator.en.mjs';
 import { jsonDiffEnglishCopy } from './locales/json-diff.en.mjs';
 import { textToBinaryEnglishCopy } from './locales/text-to-binary.en.mjs';
 import { certificateDecoderEnglishCopy } from './locales/certificate-decoder.en.mjs';
@@ -55,6 +59,37 @@ import { reverseMortgageCalculatorEnglishCopy } from './locales/reverse-mortgage
 import reverseMortgageCalculatorCopies from './locales/reverse-mortgage-calculator-final.mjs';
 import { carDepreciationCalculatorEnglishCopy } from './locales/car-depreciation-calculator.en.mjs';
 import carDepreciationCalculatorCopies from './locales/car-depreciation-calculator-final.mjs';
+import { cyclingPowerCalculatorEnglishCopy } from './locales/cycling-power-calculator.en.mjs';
+import cyclingPowerCalculatorCopies from './locales/cycling-power-calculator-final.mjs';
+import { inductorCalculatorEnglishCopy } from './locales/inductor-calculator.en.mjs';
+import inductorCalculatorCopies from './locales/inductor-calculator-final.mjs';
+import { centripetalForceCalculatorEnglishCopy } from './locales/centripetal-force-calculator.en.mjs';
+import centripetalForceCalculatorCopies from './locales/centripetal-force-calculator-final.mjs';
+import { writingTrackerEnglishCopy } from './locales/writing-tracker.en.mjs';
+import writingTrackerCopies from './locales/writing-tracker-final.mjs';
+import { aesEncryptionToolEnglishCopy } from './locales/aes-encryption-tool.en.mjs';
+import aesEncryptionToolCopies from './locales/aes-encryption-tool-final.mjs';
+import { jwtEncoderEnglishCopy } from './locales/jwt-encoder.en.mjs';
+import jwtEncoderCopies from './locales/jwt-encoder-final.mjs';
+import { customerAcquisitionCostCalculatorEnglishCopy } from './locales/customer-acquisition-cost-calculator.en.mjs';
+import { graphqlFormatterEnglishCopy } from './locales/graphql-formatter.en.mjs';
+import { choreChartMakerEnglishCopy } from './locales/chore-chart-maker.en.mjs';
+import { cssBorderRadiusGeneratorEnglishCopy } from './locales/css-border-radius-generator.en.mjs';
+import { rentalYieldCalculatorEnglishCopy } from './locales/rental-yield-calculator.en.mjs';
+import { rsaKeyGeneratorEnglishCopy } from './locales/rsa-key-generator.en.mjs';
+import { logAnalyzerEnglishCopy } from './locales/log-analyzer.en.mjs';
+import { pyramidSolitaireEnglishCopy } from './locales/pyramid-solitaire.en.mjs';
+import rebusPuzzlesEnglishCopy from './locales/rebus-puzzles.en.mjs';
+import killerSudokuCopies from './locales/killer-sudoku-final.mjs';
+import sudokuSolverCopies from './locales/sudoku-solver-final.mjs';
+import hangmanGameEnglishCopy from './locales/hangman-game.en.mjs';
+import { aimTrainerEnglishCopy } from './locales/aim-trainer.en.mjs';
+import chessPuzzlesEnglishCopy from './locales/chess-puzzles.en.mjs';
+import dotsAndBoxesEnglishCopy from './locales/dots-and-boxes.en.mjs';
+import chessAnalysisBoardEnglishCopy from './locales/chess-analysis-board.en.mjs';
+import blackjackGameEnglishCopy from './locales/blackjack-game.en.mjs';
+import tripeaksSolitaireEnglishCopy from './locales/tripeaks-solitaire.en.mjs';
+import customerAcquisitionCostCalculatorCopies from './locales/customer-acquisition-cost-calculator-final.mjs';
 
 const actions = {
   calculate: 'Calculate', generate: 'Generate', reset: 'Reset', example: 'Load example', newGame: 'New game', rules: 'Rules', reveal: 'Reveal', next: 'Next', copy: 'Copy', download: 'Download', result: 'Result', rectangle: 'Rectangle', circle: 'Circle', triangle: 'Triangle', meters: 'Meters', centimeters: 'Centimeters', millimeters: 'Millimeters', feet: 'Feet', inches: 'Inches', squareMeters: 'Square meters', squareFeet: 'Square feet', cubicMeters: 'Cubic meters', cubicFeet: 'Cubic feet', kelvin: 'Kelvin difference', fahrenheit: 'Fahrenheit difference', kilowatts: 'Kilowatts (kW)', btuPerHour: 'BTU per hour (BTU/h)', kgPerCubicMeter: 'Kilograms per cubic meter', lbPerCubicFoot: 'Pounds per cubic foot', kilograms: 'Kilograms', pounds: 'Pounds', computer: 'Play computer', twoPlayers: 'Two players', privacyNote: 'Assignments are visible on this device.', kmh: 'Kilometres per hour (km/h)', mph: 'Miles per hour (mph)', withCeiling: 'Walls and ceiling', wallsOnly: 'Walls only', productionMode: 'Estimate array output', sizingMode: 'Size for daily use', years: 'years', add: 'Add', subtract: 'Subtract', multiply: 'Multiply', divide: 'Divide', magnitude: 'Modulus', argument: 'Argument', rectangularToPolar: 'Rectangular to polar', polarToRectangular: 'Polar to rectangular', roots: 'Nth roots',
@@ -114,6 +149,51 @@ const copies = {
     messages: { ...messages, played: 'Tile played.', drew: 'Tile drawn.', passed: 'Turn passed.', noMoves: 'No legal move.', stockEmpty: 'The stock is empty.' },
     fields: { mode: 'Play mode', variant: 'Rules', board: 'Domino line', stock: 'Tiles left', hand: 'Your tiles', opponentHand: 'Opponent tiles', accuracyNote: 'Local play only.', rules: 'Match one open end.' },
   },
+  'hearts-game': {
+    name: 'Hearts card game',
+    actions: { ...actions, newGame: 'New hand', passCards: 'Pass selected cards', passLeft: 'Pass left', passRight: 'Pass right', passAcross: 'Pass across', hold: 'Hold cards', playCard: 'Play card', rules: 'Rules', result: 'Hand result' },
+    messages: { ...messages },
+    fields: { passDirection: 'Pass cards', board: 'Current trick', hand: 'Your hand', scores: 'Scores', clubs: 'clubs', diamonds: 'diamonds', spades: 'spades', hearts: 'hearts', accuracyNote: 'Local play.', rules: 'Follow suit.' },
+  },
+  'typing-practice': {
+    name: 'Typing practice',
+    actions: { ...actions, newLesson: 'New exercise', rowHome: 'Home row', rowTop: 'Top row', rowBottom: 'Bottom row', rowMixed: 'Mixed rows', applyCustomText: 'Practice my text', clearCustomText: 'Clear custom text', startOver: 'Start over', rules: 'How to practice', result: 'Practice progress' },
+    messages: { ...messages, lessonReady: 'Type the prompt.', inputProgress: '{correct} of {total} correct; {accuracy}%.', lessonComplete: 'Done: {accuracy}%.', customTextLoaded: 'Custom text loaded.', customTextEmpty: 'Enter text.', customTextTooLong: 'Too long.', invalidMode: 'Choose a lesson.', savedProgress: 'Exercises: {count}.' },
+    fields: { mode: 'Keyboard lesson', prompt: 'Type this text', typedInput: 'Your typing', customText: 'Your text', progress: 'Character progress', accuracy: 'Accuracy', accuracyNote: 'Practice only; no WPM.', rules: 'Use Backspace to correct an error.' },
+  },
+  sokoban: {
+    name: 'Sokoban',
+    actions: { ...actions, restart: 'Restart level', undo: 'Undo move', up: 'Move up', down: 'Move down', left: 'Move left', right: 'Move right', levelOne: 'First push', levelTwo: 'Up the lane', rules: 'How to play', result: 'Level result' },
+    messages: { ...messages, ready: 'Level ready.', moved: 'Moves {moves}; pushes {pushes}.', blocked: 'Blocked.', levelComplete: 'Level {level} complete in {moves} moves and {pushes} pushes.', undoEmpty: 'Nothing to undo.', restarted: 'Level restarted.', chooseLevel: 'Choose a level.' },
+    fields: { level: 'Choose a level', board: 'Puzzle board', player: 'Player', playerOnGoal: 'Player on goal', box: 'Box', boxOnGoal: 'Box on goal', goal: 'Goal', floor: 'Floor', wall: 'Wall', moves: 'Moves', pushes: 'Pushes', accuracyNote: 'Two original local levels.', rules: 'Push boxes onto the goals.' },
+  },
+  'maze-generator': mazeGeneratorEnglishCopy,
+  'sleep-calculator': sleepCalculatorEnglishCopy,
+  'lean-body-mass-calculator': leanBodyMassCalculatorEnglishCopy,
+  'cycling-power-calculator': cyclingPowerCalculatorEnglishCopy,
+  'inductor-calculator': inductorCalculatorEnglishCopy,
+  'centripetal-force-calculator': centripetalForceCalculatorEnglishCopy,
+  'writing-tracker': writingTrackerEnglishCopy,
+  'aes-encryption-tool': aesEncryptionToolEnglishCopy,
+  'jwt-encoder': jwtEncoderEnglishCopy,
+  'customer-acquisition-cost-calculator': customerAcquisitionCostCalculatorEnglishCopy,
+  'graphql-formatter': graphqlFormatterEnglishCopy,
+  'chore-chart-maker': choreChartMakerEnglishCopy,
+  'css-border-radius-generator': cssBorderRadiusGeneratorEnglishCopy,
+  'rental-yield-calculator': rentalYieldCalculatorEnglishCopy,
+  'rsa-key-generator': rsaKeyGeneratorEnglishCopy,
+  'log-analyzer': logAnalyzerEnglishCopy,
+  'pyramid-solitaire': pyramidSolitaireEnglishCopy,
+  'rebus-puzzles': rebusPuzzlesEnglishCopy,
+  'killer-sudoku': killerSudokuCopies.en,
+  'sudoku-solver': sudokuSolverCopies.en,
+  'hangman-game': hangmanGameEnglishCopy,
+  'aim-trainer': aimTrainerEnglishCopy,
+  'chess-puzzles': chessPuzzlesEnglishCopy,
+  'dots-and-boxes': dotsAndBoxesEnglishCopy,
+  'chess-analysis-board': chessAnalysisBoardEnglishCopy,
+  'blackjack-game': blackjackGameEnglishCopy,
+  'tripeaks-solitaire': tripeaksSolitaireEnglishCopy,
   hitori: {
     name: 'Hitori puzzle', actions: { ...actions, newGame: 'New puzzle', checkBoard: 'Check board', hint: 'Hint', clearMarks: 'Clear marks', easy: 'Easy', medium: 'Medium', hard: 'Hard' },
     messages: { ...messages },
@@ -490,6 +570,14 @@ copies['decibel-calculator'] = { name: 'Decibel Calculator', actions: { calculat
 copies['hijri-calendar-converter'] = { name: 'Hijri Calendar Converter', actions: { convert: 'Convert date', reset: 'Reset', example: 'Try an example', result: 'Converted date' }, fields: { mode: 'Direction', gregorianToHijri: 'Gregorian to Hijri', hijriToGregorian: 'Hijri to Gregorian', gregorianDate: 'Gregorian date', gregorianYear: 'Year', gregorianMonth: 'Month', gregorianDay: 'Day', hijriYear: 'Year AH', hijriMonth: 'Month', hijriDay: 'Day', hijriMonths: ['Muharram', 'Safar', 'Rabi al-Awwal', 'Rabi al-Thani', 'Jumada al-Awwal', 'Jumada al-Thani', 'Rajab', 'Sha’ban', 'Ramadan', 'Shawwal', 'Dhu al-Qadah', 'Dhu al-Hijjah'], methodNote: 'Tabular calendar.' } };
 copies['capacitor-calculator'] = { name: 'Capacitor Calculator', actions: { calculate: 'Calculate', reset: 'Clear', example: 'Try an example', result: 'Results' }, fields: { values: 'Capacitance values', valuesHint: 'One per line.', unit: 'Unit', connection: 'Connection', series: 'Series', parallel: 'Parallel', voltage: 'Voltage', accuracyNote: 'Ideal capacitors only.', resultEquivalent: 'Equivalent capacitance', resultCharge: 'Charge', resultEnergy: 'Energy', resultVoltage: 'Voltage', capacitor: 'Capacitor', formulaNote: 'Formulas' } };
 copies['openapi-editor'] = { name: 'OpenAPI editor', actions: { ...actions, validate: 'Check contract', example: 'Load example', format: 'Format document', download: 'Download file', copyReport: 'Copy report' }, fields: Object.fromEntries(['format','autoFormat','jsonFormat','yamlFormat','document','upload','accuracyNote','previewTitle','operations','issues','yamlLicense'].map((key) => [key, key])) };
+copies['graphql-formatter'] = graphqlFormatterEnglishCopy;
+copies['chore-chart-maker'] = choreChartMakerEnglishCopy;
+copies['css-border-radius-generator'] = cssBorderRadiusGeneratorEnglishCopy;
+copies['rental-yield-calculator'] = rentalYieldCalculatorEnglishCopy;
+copies['rsa-key-generator'] = rsaKeyGeneratorEnglishCopy;
+copies['log-analyzer'] = logAnalyzerEnglishCopy;
+copies['pyramid-solitaire'] = pyramidSolitaireEnglishCopy;
+copies['rebus-puzzles'] = rebusPuzzlesEnglishCopy;
 copies['font-pairing-tool'] = { name: 'Font Pairing Tool', actions: { ...actions, applyPreset: 'Apply pairing', swap: 'Swap fonts', copyCss: 'Copy CSS', clearFonts: 'Clear added fonts' }, fields: Object.fromEntries(['preset','headingFont','bodyFont','fontFiles','accuracyNote','sampleHeading','sampleBody','hierarchyLabel','headingSize','bodySize','headingWeight','bodyWeight','lineHeight','familyGeorgia','familyTimes','familyArial','familyVerdana','familyTrebuchet','familyMono','familySystem','presetEditorial','presetModern','presetClassic','presetTechnical','presetFriendly','presetSystem'].map((key) => [key, key])) };
 copies['roth-vs-traditional-calculator'] = { name: 'Roth vs Traditional IRA Calculator', actions: { ...actions, compare: 'Compare estimates', example: 'Load example', reset: 'Reset', result: 'Results' }, fields: Object.fromEntries(['annualContribution','currentTaxRate','futureTaxRate','annualReturn','years','budgetNote','accuracyNote','resultSummary','rothAnnualDeposit','rothAfterTax','traditionalBeforeTax','traditionalAfterTax','traditionalTax','taxPaidNow','estimatedDifference','totalBudget','irsSource'].map((key) => [key, key])) };
 copies['roth-vs-traditional-calculator'].fields.budgetNote = 'Compare the same pretax budget in each scenario.';
@@ -501,6 +589,7 @@ copies['vector-calculator'] = { name: 'Vector Calculator', actions: { ...actions
 copies['cubic-quartic-equation-calculator'] = { name: 'Cubic and quartic calculator', actions: { ...actions }, messages: { ...messages, exampleLoaded: 'Example loaded.' }, fields: { degree: 'Degree', degree3: 'Cubic', degree4: 'Quartic', a4: 'x4 coefficient', a3: 'x3 coefficient', a2: 'x2 coefficient', a1: 'x coefficient', a0: 'Constant', accuracyNote: 'Real roots only.', resultSummary: 'Roots', root: 'Root', multiplicity: 'Multiplicity', residual: 'Residual', noRealRoots: 'No real roots.', nonRealRootsNote: 'Non-real roots not shown.', exampleHint: 'Example' } };
 copies['complex-number-calculator'] = { name: 'Complex number calculator', actions: { ...actions }, messages: { ...messages, calculated: 'Result ready.', checkInputs: 'Check values.', exampleLoaded: 'Example loaded.', componentOutOfRange: 'Component outside range.', radiusOutOfRange: 'Radius outside range.', angleOutOfRange: 'Angle outside range.', negativeRadius: 'Negative radius.', invalidAngleUnit: 'Choose degrees or radians.', invalidRootDegree: 'Choose degree 2 to 12.', divisionByZero: 'Cannot divide by zero.', zeroArgument: 'Zero has no argument.', resultOutOfRange: 'Result outside range.', invalidOperation: 'Choose an operation.', missingValue: 'Enter every value.' }, fields: { operation: 'Operation', realA: 'Real part of z1', imaginaryA: 'Imaginary part of z1', realB: 'Real part of z2', imaginaryB: 'Imaginary part of z2', radius: 'Magnitude', angle: 'Angle', angleUnit: 'Angle unit', degrees: 'Degrees', radians: 'Radians', degree: 'Root degree', resultSummary: 'Result', resultReal: 'Real part', resultImaginary: 'Imaginary part', modulus: 'Modulus', argument: 'Principal argument', polar: 'Polar form', rootNumber: 'Root', zeroArgumentNote: 'Zero has no argument.', accuracyNote: 'Numerical results only.', exampleHint: 'i × i = −1.' } };
 copies['divisibility-calculator'] = { name: 'Divisibility Calculator', actions: { ...actions, commonDivisors: 'Test common divisors' }, messages: { ...messages, calculated: 'Results ready.', checkInputs: 'Check entries.', exampleLoaded: 'Example loaded.', commonDivisorsLoaded: 'Common divisors loaded.', calculateFirst: 'Check a number first.', divisible: 'Divisible', notDivisible: 'Not divisible' }, fields: { integer: 'Whole number', divisors: 'Divisors', accuracyNote: 'Checks up to 30 positive divisors.', resultSummary: 'Results', remainder: 'Remainder', quotient: 'Exact quotient', rule: 'Rule', rule1: 'Divisible by 1.', rule2: 'Last digit is even.', rule3: 'Digit sum divisible by 3.', rule4: 'Last two digits divisible by 4.', rule5: 'Last digit is 0 or 5.', rule6: 'Divisible by 2 and 3.', rule7: 'Double last digit and subtract.', rule8: 'Last three digits divisible by 8.', rule9: 'Digit sum divisible by 9.', rule10: 'Last digit is 0.', rule11: 'Alternating digit sum divisible by 11.', rule12: 'Divisible by 3 and 4.', rule13: 'Multiply last digit by 4 and add.', rule25: 'Last two digits are 00, 25, 50 or 75.', rule100: 'Last two digits are 00.', rule1000: 'Last three digits are 000.', ruleGeneric: 'Use the exact remainder.' } };
+Object.assign(copies, pendingToolEnglishCopy);
 
 test('all pilot forms render semantic labels, explicit actions and localized strings', () => {
   for (const tool of growthPilotTools) {
@@ -832,6 +921,76 @@ test('dominoes form exposes localized play modes, draw/block choices, board, sto
   assert.match(html, /aria-live="polite"/u);
 });
 
+test('Hearts form exposes a localized pass phase, live trick, hand, scores and accessible controls', () => {
+  const html = renderGrowthForm('hearts-game', copies['hearts-game']);
+  assert.match(html, /data-pass-direction/u);
+  assert.match(html, /data-scores/u);
+  assert.match(html, /data-trick aria-live="polite"/u);
+  assert.match(html, /data-hand/u);
+  assert.match(html, /data-action="pass-cards"/u);
+  assert.match(html, /aria-live="polite"/u);
+});
+
+test('typing practice form provides row lessons, custom text and accessible progress feedback', () => {
+  const html = renderGrowthForm('typing-practice', copies['typing-practice']);
+  assert.match(html, /value="home"/u);
+  assert.match(html, /value="top"/u);
+  assert.match(html, /value="bottom"/u);
+  assert.match(html, /data-typing-input/u);
+  assert.match(html, /data-custom-text/u);
+  assert.match(html, /data-progress aria-label=/u);
+  assert.match(html, /data-action="apply-custom-text"/u);
+  assert.match(html, /data-action="start-over"/u);
+  assert.match(html, /aria-live="polite"/u);
+});
+
+test('Sokoban form provides an accessible grid, undo/restart, and keyboard/touch direction labels', () => {
+  const html = renderGrowthForm('sokoban', copies.sokoban);
+  assert.match(html, /data-board role="grid" tabindex="0"/u);
+  assert.match(html, /data-level/u);
+  assert.match(html, /data-action="undo"/u);
+  assert.match(html, /data-action="restart"/u);
+  assert.match(html, /data-move="up"/u);
+  assert.match(html, /data-move="left"/u);
+  assert.match(html, /data-move="down"/u);
+  assert.match(html, /data-move="right"/u);
+  assert.match(html, /data-pushes/u);
+});
+
+test('maze generator form provides bounded settings, accessible controls and export actions', () => {
+  const html = renderGrowthForm('maze-generator', copies['maze-generator']);
+  assert.match(html, /data-width type="number" min="9" max="41" step="2"/u);
+  assert.match(html, /data-height type="number" min="9" max="31" step="2"/u);
+  assert.match(html, /data-seed type="text" maxlength="40"/u);
+  assert.match(html, /data-board role="grid" tabindex="0"/u);
+  assert.match(html, /data-action="solve"/u);
+  assert.match(html, /data-action="export-svg"/u);
+  assert.match(html, /data-move="up"/u);
+  assert.match(html, /aria-live="polite"/u);
+});
+
+test('sleep calculator form provides two planning modes, bounded inputs, and an accessible result', () => {
+  const html = renderGrowthForm('sleep-calculator', copies['sleep-calculator']);
+  assert.match(html, /data-direction/u);
+  assert.match(html, /data-time type="time"/u);
+  assert.match(html, /data-duration-hours type="number" min="1" max="16"/u);
+  assert.match(html, /data-latency type="number" min="0" max="180"/u);
+  assert.match(html, /data-action="example"/u);
+  assert.match(html, /data-result-details/u);
+  assert.match(html, /aria-live="polite"/u);
+});
+
+test('lean body mass form provides both methods, unit controls, model scope, and its formula source', () => {
+  const html = renderGrowthForm('lean-body-mass-calculator', copies['lean-body-mass-calculator']);
+  assert.match(html, /data-method/u);
+  assert.match(html, /data-equation-fields/u);
+  assert.match(html, /data-body-fat/u);
+  assert.match(html, /data-units/u);
+  assert.match(html, /data-formula/u);
+  assert.match(html, /pubmed\.ncbi\.nlm\.nih\.gov\/6496691/u);
+  assert.match(html, /aria-live="polite"/u);
+});
+
 test('Hitori form exposes localized grid settings, accessible game grid and rule actions', () => {
   const html = renderGrowthForm('hitori', copies.hitori);
   assert.match(html, /data-size/u);
@@ -880,6 +1039,97 @@ test('Futoshiki form renders localized selectors, accessible board, checks, hint
   assert.match(html, /aria-pressed="false"/u);
   assert.match(html, /greater-than and less-than|Follow the row/u);
   assert.match(html, /aria-live="polite"/u);
+});
+
+test('Killer Sudoku form has a labeled 9×9 board, cage rules and complete game controls', () => {
+  const html = renderGrowthForm('killer-sudoku', copies['killer-sudoku']);
+  assert.match(html, /data-difficulty/u);
+  assert.match(html, /data-board[^>]+role="group"[^>]+aria-label=/u);
+  assert.match(html, /a one-cell cage directly gives its value/i);
+  for (const action of ['new-game', 'check-board', 'hint', 'undo']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
+  assert.match(html, /aria-live="polite"/u);
+});
+
+test('Sudoku Solver form provides a labeled editable board and explicit actions', () => {
+  const html = renderGrowthForm('sudoku-solver', copies['sudoku-solver']);
+  assert.match(html, /data-tool="sudoku-solver"/u);
+  assert.match(html, /data-board[^>]+role="group"[^>]+aria-label=/u);
+  assert.match(html, /never labeled unique/i);
+  for (const action of ['example', 'solve', 'step', 'clear']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
+  assert.match(html, /aria-live="polite"/u);
+});
+
+test('Hangman Game form exposes localized controls, an accessible word state and local rules', () => {
+  const html = renderGrowthForm('hangman-game', copies['hangman-game']);
+  assert.match(html, /data-tool="hangman-game"/u);
+  assert.match(html, /data-guess-form/u);
+  assert.match(html, /data-word[^>]+role="img"/u);
+  assert.match(html, /The translated word bank and game run in this browser/u);
+  for (const action of ['new-word', 'guess', 'hint', 'restart']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
+  assert.match(html, /data-part="6"/u);
+  assert.doesNotMatch(html, /fetch\(|https?:\/\//iu);
+});
+
+test('Aim Trainer form labels duration, size, live score and a bounded local target area', () => {
+  const html = renderGrowthForm('aim-trainer', copies['aim-trainer']);
+  assert.match(html, /data-tool="aim-trainer"/u);
+  assert.match(html, /data-duration/u);
+  assert.match(html, /option value="15"/u);
+  assert.match(html, /option value="60"/u);
+  assert.match(html, /data-area[^>]+aria-disabled="true"/u);
+  assert.match(html, /data-target[^>]+hidden/u);
+  for (const action of ['start', 'restart']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
+  assert.match(html, /No account, upload or saved history/u);
+});
+
+test('Chess Puzzles renders a keyboard-operated labeled grid and all core controls', () => {
+  const html = renderGrowthForm('chess-puzzles', copies['chess-puzzles']);
+  assert.match(html, /data-tool="chess-puzzles"/u);
+  assert.match(html, /role="grid" aria-rowcount="8" aria-colcount="8"/u);
+  for (const action of ['new-puzzle', 'hint', 'clear-selection']) assert.match(html, new RegExp('data-action="' + action + '"', 'u'));
+  assert.match(html, /Select a white piece, then select its destination square/u);
+  assert.match(html, /Original mate-in-one examples/u);
+});
+
+test('Dots and Boxes form offers bounded board sizes, two modes, scores and labeled line controls', () => {
+  const html = renderGrowthForm('dots-and-boxes', copies['dots-and-boxes']);
+  assert.match(html, /data-tool="dots-and-boxes"/u);
+  assert.match(html, /option value="3"/u);
+  assert.match(html, /option value="5"/u);
+  assert.match(html, /data-score-one/u);
+  assert.match(html, /data-score-two/u);
+  assert.match(html, /role="grid"/u);
+  assert.match(html, /No account, network game, upload or saved history/u);
+});
+
+test('Chess Analysis Board form exposes legal board controls and bounded local FEN and PGN inputs', () => {
+  const html = renderGrowthForm('chess-analysis-board', copies['chess-analysis-board']);
+  assert.match(html, /data-tool="chess-analysis-board"/u);
+  assert.match(html, /data-pgn-input[^>]*maxlength="12000"/u);
+  assert.match(html, /data-fen-input maxlength="160"/u);
+  assert.match(html, /data-board role="grid"/u);
+  assert.match(html, /data-engine-mode/u);
+  assert.match(html, /data-action="analyze"/u);
+  assert.match(html, /data-action="stop"/u);
+  assert.match(html, /data-engine-src="\/assets\/vendor\/stockfish-19\.0\.0\/stockfish-19-lite-single\.js"/u);
+});
+
+test('Blackjack form offers practice-only actions and makes its no-wager boundary visible', () => {
+  const html = renderGrowthForm('blackjack-game', copies['blackjack-game']);
+  assert.match(html, /data-tool="blackjack-game"/u);
+  assert.match(html, /data-action="hit" disabled/u);
+  assert.match(html, /data-action="double" disabled/u);
+  assert.match(html, /data-action="split" disabled/u);
+  assert.match(html, /no chips, betting, prizes or real money/iu);
+});
+
+test('Tripeaks form includes peaks, stock, waste, undo and move-hint controls', () => {
+  const html = renderGrowthForm('tripeaks-solitaire', copies['tripeaks-solitaire']);
+  assert.match(html, /data-tool="tripeaks-solitaire"/u);
+  assert.match(html, /data-tableau role="group"/u);
+  assert.match(html, /data-stock-draw/u);
+  assert.match(html, /data-action="undo"/u);
+  assert.match(html, /data-score/u);
 });
 
 test('Hashi form renders accessible board, difficulty and bridge check, hint, undo and clear actions', () => {
@@ -1110,6 +1360,96 @@ test('OpenAPI editor exposes local JSON/YAML editing, bounded file input and saf
   assert.match(html, /js-yaml-LICENSE/u);
   for (const action of ['example', 'format', 'validate', 'download', 'copy-report']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
   assert.match(html, /role="status" aria-live="polite"/u);
+});
+
+test('GraphQL formatter form exposes a bounded local editor and separate readonly result', () => {
+  const html = renderGrowthForm('graphql-formatter', graphqlFormatterEnglishCopy);
+  assert.match(html, /id="graphql-source"[^>]*maxlength="100000"/u);
+  assert.match(html, /id="graphql-output"[^>]*readonly/u);
+  assert.match(html, /data-action="format"/u);
+  assert.match(html, /data-action="download"/u);
+  assert.match(html, /query GetUser/u);
+  assert.doesNotMatch(html, /action="https?:/u);
+});
+
+test('chore chart form exposes bounded household inputs, Monday schedule settings and print/CSV actions', () => {
+  const html = renderGrowthForm('chore-chart-maker', choreChartMakerEnglishCopy);
+  assert.match(html, /id="chore-people"[^>]*maxlength="800"/u);
+  assert.match(html, /id="chore-list"[^>]*maxlength="5000"/u);
+  assert.match(html, /name="startDate" type="date" required/u);
+  assert.match(html, /data-action="download-csv"/u);
+  assert.match(html, /data-action="print"/u);
+  assert.match(html, /Alex\\nSam\\nRiley/u);
+  assert.doesNotMatch(html, /action="https?:/u);
+});
+
+test('CSS radius generator form provides labeled keyboard-operable corner controls and a live preview', () => {
+  const html = renderGrowthForm('css-border-radius-generator', cssBorderRadiusGeneratorEnglishCopy);
+  assert.match(html, /name="topLeftX" type="number" min="0" max="500"/u);
+  assert.match(html, /name="bottomRightY" type="number"/u);
+  assert.match(html, /data-radius-preview role="img"/u);
+  assert.match(html, /data-link-corners/u);
+  assert.match(html, /data-action="copy"/u);
+  assert.match(html, /data-action="download"/u);
+  assert.match(html, /border-radius/u);
+});
+
+test('rental yield form separates price, monthly rent, vacancy, operating expenses and live results', () => {
+  const html = renderGrowthForm('rental-yield-calculator', rentalYieldCalculatorEnglishCopy);
+  assert.match(html, /name="propertyPrice" type="number"[^>]+required/u);
+  assert.match(html, /name="vacancyPercent" type="number"[^>]+max="100"/u);
+  assert.match(html, /name="annualMaintenance" type="number"/u);
+  assert.match(html, /data-gross-yield/u);
+  assert.match(html, /data-net-yield/u);
+  assert.match(html, /data-noi/u);
+  assert.match(html, /data-action="copy"/u);
+});
+
+test('RSA key generator form labels key formats, local encryption limits and private-key warning', () => {
+  const html = renderGrowthForm('rsa-key-generator', rsaKeyGeneratorEnglishCopy);
+  for (const name of ['keySize', 'publicKey', 'privateKey', 'fingerprint', 'message', 'ciphertext', 'decryptOutput']) assert.match(html, new RegExp(`name="${name}"`, 'u'));
+  for (const action of ['generate', 'encrypt', 'decrypt', 'copyPrivate', 'reset']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
+  assert.match(html, /SPKI PEM/u);
+  assert.match(html, /190 UTF-8 bytes/u);
+  assert.match(html, /private key is shown/u);
+  assert.doesNotMatch(html, /action="https?:/u);
+});
+
+test('access log analyzer form declares input limits, supported filters, aggregate tables and privacy boundary', () => {
+  const html = renderGrowthForm('log-analyzer', logAnalyzerEnglishCopy);
+  assert.match(html, /name="file" type="file" accept="\.log,\.txt/u);
+  assert.match(html, /name="logs"/u);
+  assert.match(html, /name="statusClass"/u);
+  assert.match(html, /name="fromDate" type="date"/u);
+  assert.match(html, /data-status-table/u);
+  assert.match(html, /data-method-table/u);
+  assert.match(html, /data-day-table/u);
+  for (const action of ['analyze', 'example', 'reset', 'export-csv']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
+  assert.match(html, /10 MiB/u);
+  assert.match(html, /IP addresses/u);
+  assert.doesNotMatch(html, /action="https?:/u);
+});
+
+test('Pyramid Solitaire form provides localized rules, recycle variants, accessible piles and undo controls', () => {
+  const html = renderGrowthForm('pyramid-solitaire', pyramidSolitaireEnglishCopy);
+  assert.match(html, /data-board role="group" aria-label="Pyramid Solitaire board"/u);
+  assert.match(html, /data-recycle-rule/u);
+  for (const value of ['0', '1', 'unlimited']) assert.match(html, new RegExp(`<option value="${value}"`, 'u'));
+  for (const action of ['new-game', 'restart', 'undo', 'hint', 'draw', 'recycle']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
+  assert.match(html, /data-pyramid-waste/u);
+  assert.match(html, /role="status" aria-live="polite"/u);
+  assert.match(html, /A random deal is not guaranteed to be solvable/u);
+  assert.doesNotMatch(html, /action="https?:/u);
+});
+
+test('Rebus Puzzles form provides accessible answer entry, progressive-hint actions, progress and translation disclosure', () => {
+  const html = renderGrowthForm('rebus-puzzles', rebusPuzzlesEnglishCopy);
+  assert.match(html, /data-rebus-board role="img"/u);
+  assert.match(html, /<label for="rebus-answer">Your answer<\/label>/u);
+  for (const action of ['check', 'hint', 'reveal', 'next', 'restart']) assert.match(html, new RegExp(`data-action="${action}"`, 'u'));
+  assert.match(html, /role="status" aria-live="polite"/u);
+  assert.match(html, /The puzzle collection and expected answers are in English/u);
+  assert.doesNotMatch(html, /action="https?:/u);
 });
 
 test('font pairing form has two named font controls, bounded local upload, type sliders and useful actions', () => {
@@ -1678,6 +2018,97 @@ test('car depreciation localized copy is complete in all 36 locales and has no p
     assert.ok(copy.additionalFaqs.every(({ question, answer }) => question?.trim() && answer?.trim()), locale);
     assert.ok(copy.fields.formulaNote?.trim(), locale);
     for (const group of [copy.actions, copy.messages]) for (const value of Object.values(group)) assert.doesNotMatch(value, /^[\p{P}\p{S}\s]+$/u, locale);
+  }
+});
+
+test('cycling power form exposes metric/imperial inputs, local estimates, examples and result copy', () => {
+  const html = renderGrowthForm('cycling-power-calculator', cyclingPowerCalculatorEnglishCopy);
+  for (const expected of ['name="unitSystem"', 'value="metric"', 'value="imperial"', 'name="mass"', 'name="speed"', 'name="gradientPercent"', 'name="headwind"', 'name="rollingResistance"', 'name="dragArea"', 'name="airDensity"', 'name="drivetrainEfficiency"', 'data-action="example"', 'data-action="calculate"', 'data-action="reset"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /not a power-meter reading/u);
+  assert.match(html, /not uploaded or saved/u);
+  assert.equal(Object.keys(cyclingPowerCalculatorCopies).length, 36);
+  for (const [locale, copy] of Object.entries(cyclingPowerCalculatorCopies)) {
+    assert.equal(copy.copyLanguage, locale);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, locale);
+    assert.equal(copy.additionalFaqs.length, 2, locale);
+    assert.ok(copy.additionalFaqs.every(({ question, answer }) => question?.trim() && answer?.trim()), locale);
+  }
+});
+
+test('inductor form exposes the air-core and toroid methods, optional target turns and local result copy', () => {
+  const html = renderGrowthForm('inductor-calculator', inductorCalculatorEnglishCopy);
+  for (const expected of ['name="mode"', 'value="airCore"', 'value="toroid"', 'name="turns"', 'name="coilDiameter"', 'name="coilLength"', 'name="alValue"', 'name="targetInductance"', 'name="targetUnit"', 'data-air-core-fields', 'data-toroid-fields', 'data-action="example"', 'data-action="calculate"', 'data-action="reset"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /The answer is an estimate, not a measurement/u);
+  assert.match(html, /not uploaded or saved/u);
+  assert.equal(Object.keys(inductorCalculatorCopies).length, 36);
+  for (const [locale, copy] of Object.entries(inductorCalculatorCopies)) {
+    assert.equal(copy.copyLanguage, locale);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, locale);
+    assert.equal(copy.additionalFaqs.length, 2, locale);
+  }
+});
+
+test('centripetal-force form exposes speed and frequency modes with local result copy', () => {
+  const html = renderGrowthForm('centripetal-force-calculator', centripetalForceCalculatorEnglishCopy);
+  for (const expected of ['name="mode"', 'value="speed"', 'value="frequency"', 'name="mass"', 'name="radius"', 'name="speed"', 'name="frequency"', 'data-speed-fields', 'data-frequency-fields', 'data-action="example"', 'data-action="calculate"', 'data-action="reset"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /not uploaded or saved/u);
+  assert.equal(Object.keys(centripetalForceCalculatorCopies).length, 36);
+  for (const [locale, copy] of Object.entries(centripetalForceCalculatorCopies)) {
+    assert.equal(copy.copyLanguage, locale);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, locale);
+    assert.equal(copy.additionalFaqs.length, 2, locale);
+  }
+});
+
+test('writing tracker renders separate project/session forms, local privacy copy and all locale copies', () => {
+  const html = renderGrowthForm('writing-tracker', writingTrackerEnglishCopy);
+  for (const expected of ['id="writing-project-form"', 'id="writing-session-form"', 'name="targetWords"', 'name="words"', 'name="minutes"', 'data-project-list', 'data-session-list', 'data-action="export-csv"', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /not uploaded to a server/u);
+  assert.equal(Object.keys(writingTrackerCopies).length, 36);
+  for (const [locale, copy] of Object.entries(writingTrackerCopies)) {
+    assert.equal(copy.copyLanguage, locale);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, locale);
+    assert.equal(copy.additionalFaqs.length, 2, locale);
+  }
+});
+
+test('AES form supports local text/file encryption and decryption with honest limits in every locale', () => {
+  const html = renderGrowthForm('aes-encryption-tool', aesEncryptionToolEnglishCopy);
+  for (const expected of ['name="mode"', 'value="encrypt"', 'value="decrypt"', 'name="contentMode"', 'value="text"', 'value="file"', 'name="password"', 'name="sourceText"', 'name="sourceFile"', 'data-action="process"', 'data-action="download"', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /not a security audit/u);
+  assert.match(html, /16 MiB/u);
+  assert.equal(Object.keys(aesEncryptionToolCopies).length, 36);
+  for (const [locale, copy] of Object.entries(aesEncryptionToolCopies)) {
+    assert.equal(copy.copyLanguage, locale);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, locale);
+    assert.equal(copy.additionalFaqs.length, 3, locale);
+    assert.ok(copy.messages.wrongOrDamaged && copy.fields.passwordHint && copy.fields.accuracyNote, locale);
+  }
+});
+
+test('JWT form switches create/verify inputs and states that local signature verification is not authentication', () => {
+  const html = renderGrowthForm('jwt-encoder', jwtEncoderEnglishCopy);
+  for (const expected of ['name="mode"', 'value="create"', 'value="verify"', 'name="payload"', 'name="token"', 'name="secret"', 'minlength="32"', 'name="expiresInSeconds"', 'rfc-editor.org/rfc/rfc7518#section-3.2', 'data-action="run"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /does not identify a trusted issuer/u);
+  assert.equal(Object.keys(jwtEncoderCopies).length, 36);
+  for (const [locale, copy] of Object.entries(jwtEncoderCopies)) {
+    assert.equal(copy.copyLanguage, locale);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, locale);
+    assert.equal(copy.additionalFaqs.length, 3, locale);
+    assert.ok(copy.messages.invalidSignature && copy.fields.accuracyNote, locale);
+  }
+});
+
+test('CAC form exposes bounded, same-period spend fields and static localized disclaimers', () => {
+  const html = renderGrowthForm('customer-acquisition-cost-calculator', customerAcquisitionCostCalculatorEnglishCopy);
+  for (const expected of ['name="marketingSpend"', 'name="salesSpend"', 'name="toolsSpend"', 'name="agencySpend"', 'name="otherSpend"', 'name="newCustomers"', 'name="currency"', 'name="monthlyRevenuePerCustomer"', 'name="grossMarginPercent"', 'data-action="calculate"', 'data-action="copy"', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /not marginal CAC/u);
+  assert.equal(Object.keys(customerAcquisitionCostCalculatorCopies).length, 36);
+  for (const [locale, copy] of Object.entries(customerAcquisitionCostCalculatorCopies)) {
+    assert.equal(copy.copyLanguage, locale);
+    assert.ok(copy.title.length <= 60 && copy.description.length <= 160, locale);
+    assert.equal(copy.additionalFaqs.length, 2, locale);
+    assert.ok(copy.fields.accuracyNote.length > 80 && copy.fields.payback, locale);
   }
 });
 
