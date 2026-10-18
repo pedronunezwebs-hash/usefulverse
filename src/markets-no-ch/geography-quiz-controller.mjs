@@ -12,12 +12,20 @@ if (root) {
   const displayNames = (() => { try { return new Intl.DisplayNames([lang], { type: 'region' }); } catch { return null; } })();
   const continentLabels = localizedGeographyContinents(f);
   const countries = Object.fromEntries(geographyMapFeatures.map((feature) => [feature.id, feature]));
+  const answerableCodes = new Set();
+  const primaryAnswerIds = new Set();
+  for (const feature of geographyMapFeatures) {
+    if (feature.iso2 && !answerableCodes.has(feature.iso2)) {
+      answerableCodes.add(feature.iso2);
+      primaryAnswerIds.add(feature.id);
+    }
+  }
   let storageAvailable = true;
   let saved = { attempts: 0, correct: 0, missedIds: [] };
   try {
     const value = JSON.parse(localStorage.getItem(savedKey) || 'null');
     if (value && Number.isInteger(value.attempts) && Number.isInteger(value.correct) && Array.isArray(value.missedIds)) {
-      saved = { attempts: Math.max(0, value.attempts), correct: Math.max(0, value.correct), missedIds: [...new Set(value.missedIds.filter((id) => countries[id]?.iso2))].slice(0, 240) };
+      saved = { attempts: Math.max(0, value.attempts), correct: Math.max(0, value.correct), missedIds: [...new Set(value.missedIds.filter((id) => countries[id]?.iso2 && primaryAnswerIds.has(id)))].slice(0, 240) };
     }
   } catch { storageAvailable = false; }
   let round = null;
@@ -58,7 +66,7 @@ if (root) {
       path.dataset.geoId = feature.id;
       path.setAttribute('aria-hidden', 'true');
       if (question?.mode === 'continent' && feature.id === question.target.id) path.classList.add('is-target');
-      if (question?.mode === 'country' && feature.iso2) path.classList.add('is-selectable');
+      if (question?.mode === 'country' && primaryAnswerIds.has(feature.id)) path.classList.add('is-selectable');
       fragment.append(path);
     }
     group.replaceChildren(fragment);
@@ -167,7 +175,7 @@ if (root) {
   $('#geo-mode').addEventListener('change', () => { $('#geo-scope').disabled = $('#geo-mode').value === 'continent'; $('[data-geo-scope-label]').hidden = $('#geo-mode').value === 'continent'; });
   $('[data-geo-shapes]').addEventListener('click', (event) => {
     const path = event.target.closest('[data-geo-id]');
-    if (path && round?.question?.mode === 'country' && countries[path.dataset.geoId]?.iso2) answer(path.dataset.geoId);
+    if (path && round?.question?.mode === 'country' && primaryAnswerIds.has(path.dataset.geoId)) answer(path.dataset.geoId);
   });
   updateTotals(); drawMap(null);
   $('[data-geo-prompt]').textContent = '';

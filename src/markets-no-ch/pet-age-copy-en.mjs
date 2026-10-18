@@ -1,0 +1,27 @@
+export const petAgeEnglish = Object.freeze({
+  name: 'Dog and Cat Age Calculator',
+  title: 'Pet Age Calculator — Compare Dog and Cat Life Stages',
+  description: 'Compare up to five pets by age and life stage. Cats use FelineVMA 2025 chart points; dogs use broad AAHA life-stage estimates, not a human-years formula.',
+  intro: 'Add one or more pets to compare their ages and broad life stages. Cat age comparisons use the FelineVMA 2025 chart. Dog stages use your entered expected lifespan and do not claim an exact human-age equivalent.',
+  details: 'Age is entered in whole years and months. Cat comparison years are linearly interpolated between FelineVMA chart anchors. Dog stages use broad life-stage ranges, including 75% of the expected lifespan for the senior threshold. These are educational comparisons, not diagnoses or lifespan predictions.',
+  example: 'A 1-year-old cat maps to 15 comparison years on the FelineVMA 2025 chart. A 10-year-old dog with an entered 12-year expected lifespan is shown as senior; no human-years multiplier is applied.',
+  scope: 'A general comparison tool. The selected language does not determine a pet’s breed, health, lifespan or veterinary guidance.',
+  limits: 'Life stages vary by animal, breed, size and health. The dog estimate uses only the expected lifespan you enter. The cat chart is a comparison scale, not a biological conversion. Ask a veterinarian about an individual animal.',
+  fields: {
+    pet: 'Pet', petName: 'Name (optional)', species: 'Animal', dog: 'Dog', cat: 'Cat', ageYearsInput: 'Age in whole years', ageMonthsInput: 'Additional months', expectedLifespan: 'Expected lifespan for this dog (years)',
+    addPet: 'Add another pet', removePet: 'Remove', compare: 'Compare ages',
+    tableName: 'Name', tableAnimal: 'Animal', tableAge: 'Age', tableStage: 'Life stage', tableHuman: 'Chart comparison', tableExpectedLife: 'Entered expected lifespan',
+    ageYears: 'years', ageMonths: 'months', humanAge: 'comparison years', noDogHumanYears: 'Not estimated for dogs',
+    dogStageNote: 'Dog stages are broad estimates based on the expected lifespan entered for each dog; no human-years conversion is made.',
+    catStageNote: 'Cat comparison years follow the FelineVMA 2025 chart anchors and linear interpolation between them.',
+    interpolated: 'Intermediate ages are interpolated between published chart points.',
+    puppy: 'Puppy', kitten: 'Kitten', youngAdult: 'Young adult', matureAdult: 'Mature adult', senior: 'Senior', geriatric: 'Geriatric',
+    source: 'Source', sourceCat: 'FelineVMA cat-age chart (2025)', sourceDog: 'AAHA canine life-stage guidance',
+  },
+  exampleHeading: 'Example', howItWorks: 'How the comparison works', faqHeading: 'Frequently asked questions', limitsHeading: 'Limits and guidance', related: 'Related tools', home: 'All tools', siteName: 'UsefulVerse', language: 'Language', freeBadge: 'Free browser tool', useTool: 'Compare pets',
+  faq: [
+    { q: 'Does this multiply a pet’s age by seven?', a: 'No. Cats use chart-based comparison points. Dogs use broad life stages and the expected lifespan you enter; the tool does not convert dog years into human years.' },
+    { q: 'Why does the dog result ask for expected lifespan?', a: 'Dog life stages vary by breed, size and individual health. The entered estimate sets the broad senior threshold and is not a lifespan prediction.' },
+    { q: 'What does the cat comparison mean?', a: 'It places an age between FelineVMA 2025 chart anchors. It is a comparison scale, not a biological age conversion.' },
+  ],
+});

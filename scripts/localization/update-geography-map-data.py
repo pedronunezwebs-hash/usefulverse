@@ -10,7 +10,7 @@ import zipfile
 from datetime import date
 from pathlib import Path
 
-URL = 'https://naturalearth.s3.amazonaws.com/110m_cultural/ne_110m_admin_0_countries.zip'
+URL = 'https://naturalearth.s3.amazonaws.com/50m_cultural/ne_50m_admin_0_map_units.zip'
 OUT = Path(__file__).resolve().parents[2] / 'src/markets-no-ch/geography-quiz-data.mjs'
 
 
@@ -134,10 +134,10 @@ def main() -> None:
         if path:
             features.append({'id': feature_id, 'iso2': a2, 'name': row.get('NAME_EN') or row.get('NAME') or row.get('ADMIN') or feature_id,
                 'continent': row.get('CONTINENT') or '', 'subregion': row.get('SUBREGION') or '', 'path': path})
-    if len(features) < 160 or not any(item['iso2'] == 'NO' for item in features) or not any(item['iso2'] == 'CH' for item in features):
+    if len(features) < 240 or not any(item['iso2'] == 'NO' for item in features) or not any(item['iso2'] == 'CH' for item in features):
         raise SystemExit('Unexpected country coverage; output left untouched.')
     payload = json.dumps(features, ensure_ascii=False, separators=(',', ':'))
-    source = f"// Natural Earth 5.1.1 Admin 0 countries; public-domain vector geometry. Downloaded {date.today().isoformat()}.\nexport const geographyMapUpdatedAt = '{date.today().isoformat()}';\nexport const geographyMapSource = 'Natural Earth 5.1.1 · Admin 0 Countries · public domain';\nexport const geographyMapFeatures = Object.freeze({payload});\n"
+    source = f"// Natural Earth 5.1.1 Admin 0 map units; public-domain vector geometry. Downloaded {date.today().isoformat()}.\nexport const geographyMapUpdatedAt = '{date.today().isoformat()}';\nexport const geographyMapSource = 'Natural Earth 5.1.1 · Admin 0 Map Units · public domain';\nexport const geographyMapFeatures = Object.freeze({payload});\n"
     temp = OUT.with_suffix('.mjs.tmp')
     temp.write_text(source, encoding='utf-8')
     temp.replace(OUT)

@@ -132,8 +132,14 @@ export function amerikanerLead(game, { cardId, requestedCardId = null } = {}) {
   assert(card, 'Choose a card from the declarer’s hand.');
   const isAmericaner = game.currentBid.type === 'americaner';
   if (!isAmericaner) {
-    const wanted = game.players.flatMap(({ hand }) => hand).find(({ id }) => id === requestedCardId);
-    assert(wanted && wanted.suit === card.suit && !player.hand.some(({ id }) => id === requestedCardId), 'Request an in-play card of the led suit that is not in the declarer’s hand.');
+    const inPlay = game.players.flatMap(({ hand }) => hand);
+    const canRequestAnyCard = player.hand.some((lead) => inPlay.some((candidate) => candidate.suit === lead.suit && !player.hand.some(({ id }) => id === candidate.id)));
+    if (requestedCardId === null && !canRequestAnyCard) {
+      game.partnerId = null;
+    } else {
+      const wanted = inPlay.find(({ id }) => id === requestedCardId);
+      assert(wanted && wanted.suit === card.suit && !player.hand.some(({ id }) => id === requestedCardId), 'Request an in-play card of the led suit that is not in the declarer’s hand.');
+    }
     game.requestedCardId = requestedCardId;
     game.trumpSuit = card.suit;
   } else {
@@ -222,6 +228,7 @@ export function chooseAmerikanerCpuLead(game, playerId = game?.turn) {
   const inPlay = new Set(game.players.flatMap(({ hand: cards }) => cards.map(({ id }) => id)));
   const groups = Array.from({ length: 4 }, (_, suit) => hand.filter((card) => card.suit === suit));
   const suit = groups.map((cards, index) => ({ cards, suit: index })).filter(({ cards, suit }) => cards.length > 0 && Array.from({ length: 13 }, (_, index) => `${suit}-${index + 2}`).some((id) => inPlay.has(id) && !held.has(id))).sort((a, b) => b.cards.length - a.cards.length || b.cards.reduce((sum, card) => sum + card.rank, 0) - a.cards.reduce((sum, card) => sum + card.rank, 0))[0];
+  if (!suit) return { card: hand.toSorted((a, b) => a.rank - b.rank)[0], requestedCard: null };
   const leadCard = suit.cards.toSorted((a, b) => a.rank - b.rank)[0];
   const askedCard = Array.from({ length: 13 }, (_, index) => ({ id: `${leadCard.suit}-${index + 2}`, suit: leadCard.suit, rank: index + 2 })).filter(({ id }) => inPlay.has(id) && !held.has(id)).toSorted((a, b) => b.rank - a.rank)[0];
   return { card: leadCard, requestedCard: askedCard };

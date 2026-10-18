@@ -327,3 +327,11 @@ if (document.querySelector('[data-resume-checker]')) {
 if (document.querySelector('[data-vocal-remover]')) {
   import('./vocal-remover-controller.mjs');
 }
+
+if (document.querySelector('[data-market-tool="swissWheelOffset"]')) {
+  import('./swiss-wheel-offset-controller.mjs');
+}
+
+if (document.querySelector('[data-market-tool="petAge"]')) {
+  import('./pet-age-controller.mjs');
+}

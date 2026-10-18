@@ -4,7 +4,7 @@ const sharedSourceName = 'Norske kortspill · Amerikaner';
 const locales = ['es', 'fr', 'pt', 'de', 'ja', 'ko', 'id', 'hi', 'ar', 'zh', 'bn', 'ru', 'ur', 'tr', 'vi', 'it', 'zh_tw', 'bg', 'ca', 'nl', 'el', 'ms', 'pl', 'sv', 'th', 'uk', 'sw', 'mr', 'te', 'ha', 'tl', 'ta', 'fa', 'am', 'gu', 'nb'];
 const preserveSourceTitle = Object.fromEntries(locales.map((locale) => [locale, { [sharedSourceName]: sharedSourceName }]));
 
-const zhTwBase = Object.fromEntries(Object.entries(amerikanerCardGameTranslationsByLocale.zh_tw).map(([source, text]) => [source, text
+const zhTwBase = Object.fromEntries(Object.entries(amerikanerCardGameTranslationsByLocale.zh_tw ?? {}).map(([source, text]) => [source, text
   .replaceAll('美式紙牌遊戲', 'Amerikaner 紙牌遊戲')
   .replaceAll('美式撲克', 'Amerikaner')
   .replaceAll('美國佬', 'Amerikaner')]));
@@ -23,6 +23,7 @@ const zhTw = {
 const tl = {
   'Amerikaner Card Game': 'Larong baraha na Amerikaner',
   'Amerikaner Card Game Online — Bid, Find a Partner and Win Tricks': 'Amerikaner Online — mag-bid, maghanap ng kapareha at manalo ng mga trick',
+  'Learn the Norwegian Amerikaner trick-taking game: bid how many tricks you and an unknown partner can take, set trump with your lead, and request the card that reveals your partner.': 'Laruin ang larong Norwegian Amerikaner, isang trick-taking game: mag-bid kung ilang trick ang kaya ninyong makuha ng hindi pa kilalang kapareha, itakda ang trump sa iyong lead, at hingin ang barahang magbubunyag sa kapareha mo.',
   'Play Amerikaner': 'Maglaro ng Amerikaner',
   'Call Amerikaner': 'Tawagin ang Amerikaner',
   'Bid at least half your hand rounded up and higher than the current bid, pass for this auction, or call Amerikaner to try every trick alone.': 'Mag-bid ng hindi bababa sa kalahati ng iyong mga baraha, i-round up at lampasan ang kasalukuyang bid; maaari ka ring pumasa o tumawag ng Amerikaner upang subukang kunin ang lahat ng trick nang mag-isa.',
@@ -34,6 +35,18 @@ const tl = {
 
 export const amerikanerCardGameTranslationOverrides = Object.freeze({
   ...preserveSourceTitle,
+  es: Object.freeze({
+    'Amerikaner Card Game Online — Bid, Find a Partner and Win Tricks': 'Juego de cartas Amerikaner en línea: apuesta, busca pareja y gana bazas',
+    'Learn the Norwegian Amerikaner trick-taking game: bid how many tricks you and an unknown partner can take, set trump with your lead, and request the card that reveals your partner.': 'Juega al Amerikaner noruego, un juego de bazas: apuesta cuántas bazas puedes ganar junto con una pareja aún desconocida, establece el triunfo al salir y pide la carta que revela quién es tu pareja.',
+  }),
+  nb: Object.freeze({
+    'Amerikaner Card Game Online — Bid, Find a Partner and Win Tricks': 'Kortspillet Amerikaner på nett — meld, finn en makker og vinn stikk',
+    'Learn the Norwegian Amerikaner trick-taking game: bid how many tricks you and an unknown partner can take, set trump with your lead, and request the card that reveals your partner.': 'Spill det norske kortspillet Amerikaner: meld hvor mange stikk du og en ukjent makker kan ta, velg trumf med utspillet ditt og be om kortet som avslører makkeren din.',
+  }),
+  ur: Object.freeze({
+    'Amerikaner Card Game Online — Bid, Find a Partner and Win Tricks': 'Amerikaner کارڈ گیم آن لائن — بولی لگائیں، ساتھی تلاش کریں اور چالیں جیتیں',
+    'Learn the Norwegian Amerikaner trick-taking game: bid how many tricks you and an unknown partner can take, set trump with your lead, and request the card that reveals your partner.': 'ناروے کے تاش کے کھیل Amerikaner میں سیکھیں کہ کتنی چالیں بولی جائیں، نامعلوم ساتھی کو کیسے تلاش کریں، اپنے پہلے پتے سے ٹرمپ کیسے مقرر کریں اور ساتھی ظاہر کرنے والا پتہ کیسے مانگیں۔',
+  }),
   zh_tw: { ...preserveSourceTitle.zh_tw, ...zhTw, [sharedSourceName]: sharedSourceName },
   tl: { ...preserveSourceTitle.tl, ...tl },
 });

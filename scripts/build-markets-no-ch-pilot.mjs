@@ -1,4 +1,4 @@
-import { copyFile, cp, mkdir, writeFile } from 'node:fs/promises';
+import { copyFile, cp, mkdir, readFile, rename, stat, writeFile } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { build as bundle } from 'esbuild';
@@ -6,6 +6,27 @@ import { localeEntries } from '../src/locales.mjs';
 import { english } from '../src/markets-no-ch/copy-en.mjs';
 import { translationsByLocale } from '../src/markets-no-ch/translations.mjs';
 import { marketTools } from '../src/markets-no-ch/catalog.mjs';
+import { numerologyEnglish } from '../src/markets-no-ch/numerology-copy-en.mjs';
+import { nineMensMorrisEnglish } from '../src/markets-no-ch/nine-mens-morris-copy-en.mjs';
+import { halmaGameEnglish } from '../src/markets-no-ch/halma-game-copy-en.mjs';
+import { canastaCardGameEnglish } from '../src/markets-no-ch/canasta-card-game-copy-en.mjs';
+import { skatCardGameEnglish } from '../src/markets-no-ch/skat-card-game-copy-en.mjs';
+import { doppelkopfEnglish } from '../src/markets-no-ch/doppelkopf-copy-en.mjs';
+import { schafkopfEnglish } from '../src/markets-no-ch/schafkopf-copy-en.mjs';
+import { schnapsenEnglish } from '../src/markets-no-ch/schnapsen-copy-en.mjs';
+import { suguruEnglish } from '../src/markets-no-ch/suguru-copy-en.mjs';
+import { shikakuEnglish } from '../src/markets-no-ch/shikaku-copy-en.mjs';
+import { brickBreakerEnglish } from '../src/markets-no-ch/brick-breaker-copy-en.mjs';
+import { miniGolfEnglish } from '../src/markets-no-ch/minigolf-copy-en.mjs';
+import { matchThreeEnglish } from '../src/markets-no-ch/match-three-copy-en.mjs';
+import { audioToMidiEnglish } from '../src/markets-no-ch/audio-to-midi-copy-en.mjs';
+import { voiceChangerEnglish } from '../src/markets-no-ch/voice-changer-copy-en.mjs';
+import { dicomViewerEnglish } from '../src/markets-no-ch/dicom-viewer-copy-en.mjs';
+import { crazyEightsEnglish } from '../src/markets-no-ch/crazy-eights-copy-en.mjs';
+import { idiotCardGameEnglish } from '../src/markets-no-ch/idiot-card-game-copy-en.mjs';
+import { jassEnglish } from '../src/markets-no-ch/jass-copy-en.mjs';
+import { warCardGameEnglish } from '../src/markets-no-ch/war-card-game-copy-en.mjs';
+import { natalChartEnglish } from '../src/markets-no-ch/natal-chart-copy-en.mjs';
 import { renderPage } from '../src/markets-no-ch/render.mjs';
 import { norwayDisabilityBenefitEnglish } from '../src/markets-no-ch/norway-disability-benefit-copy-en.mjs';
 import { norwayStudentFinanceEnglish } from '../src/markets-no-ch/norway-student-finance-copy-en.mjs';
@@ -57,6 +78,39 @@ import { swissRentAdjustmentTranslationsByLocale } from '../src/markets-no-ch/sw
 import { swissVacationAccrualEnglish } from '../src/markets-no-ch/swiss-vacation-accrual-copy-en.mjs';
 import { swissVacationAccrualTranslationsByLocale } from '../src/markets-no-ch/swiss-vacation-accrual-translations.mjs';
 import { swissPremiumReductionEnglish } from '../src/markets-no-ch/swiss-premium-reduction-copy-en.mjs';
+import { swissWheelOffsetEnglish } from '../src/markets-no-ch/swiss-wheel-offset-copy-en.mjs';
+import { swissWheelOffsetTranslationsByLocale } from '../src/markets-no-ch/swiss-wheel-offset-translations.mjs';
+import { petAgeEnglish } from '../src/markets-no-ch/pet-age-copy-en.mjs';
+import { petAgeTranslationsByLocale } from '../src/markets-no-ch/pet-age-translations.mjs';
+import { swissUidEnglish } from '../src/markets-no-ch/swiss-uid-copy-en.mjs';
+import { swissUidTranslationsByLocale } from '../src/markets-no-ch/swiss-uid-translations.mjs';
+import { swissCoordinateEnglish } from '../src/markets-no-ch/swiss-coordinate-copy-en.mjs';
+import { swissCoordinateTranslationsByLocale } from '../src/markets-no-ch/swiss-coordinate-translations.mjs';
+import { frequencyToneEnglish } from '../src/markets-no-ch/frequency-tone-generator-copy-en.mjs';
+import { frequencyToneTranslationsByLocale } from '../src/markets-no-ch/frequency-tone-generator-translations.mjs';
+import { norwayCompanyCarEnglish } from '../src/markets-no-ch/norway-company-car-copy-en.mjs';
+import { norwayEmployerCostEnglish } from '../src/markets-no-ch/norway-employer-cost-copy-en.mjs';
+import { norwayCompanyCarTranslationsByLocale } from '../src/markets-no-ch/norway-company-car-translations.mjs';
+import { pinballEnglish } from '../src/markets-no-ch/pinball-copy-en.mjs';
+import { pinballTranslationsByLocale } from '../src/markets-no-ch/pinball-translations.mjs';
+import { amerikanerCardGameEnglish } from '../src/markets-no-ch/amerikaner-card-game-copy-en.mjs';
+import { amerikanerCardGameTranslationsByLocale } from '../src/markets-no-ch/amerikaner-card-game-translations.mjs';
+import { presidentCardGameEnglish } from '../src/markets-no-ch/president-card-game-copy-en.mjs';
+import { presidentCardGameTranslationsByLocale } from '../src/markets-no-ch/president-card-game-translations.mjs';
+import { geographyQuizEnglish } from '../src/markets-no-ch/geography-quiz-copy-en.mjs';
+import { norwayChildSupportEnglish } from '../src/markets-no-ch/norway-child-support-copy-en.mjs';
+import { norwayParentalBenefitEnglish } from '../src/markets-no-ch/norway-parental-benefit-copy-en.mjs';
+import { norwayUnemploymentBenefitEnglish } from '../src/markets-no-ch/norway-unemployment-benefit-copy-en.mjs';
+import { norwayHousingBenefitEnglish } from '../src/markets-no-ch/norway-housing-benefit-copy-en.mjs';
+import { swissVehicleTaxEnglish } from '../src/markets-no-ch/switzerland-vehicle-tax-copy-en.mjs';
+import { currencyConverterEnglish } from '../src/markets-no-ch/currency-converter-copy-en.mjs';
+import { carbonFootprintEnglish } from '../src/markets-no-ch/carbon-footprint-copy-en.mjs';
+import { dewPointEnglish } from '../src/markets-no-ch/dew-point-copy-en.mjs';
+import { aquariumWaterMixingEnglish } from '../src/markets-no-ch/aquarium-water-mixing-copy-en.mjs';
+import { barcodeReaderEnglish } from '../src/markets-no-ch/barcode-reader-copy-en.mjs';
+import { scaleDrawingEnglish } from '../src/markets-no-ch/scale-drawing-copy-en.mjs';
+import { shutTheBoxEnglish } from '../src/markets-no-ch/shut-the-box-copy-en.mjs';
+import { snakesAndLaddersEnglish } from '../src/markets-no-ch/snakes-and-ladders-copy-en.mjs';
 import { swissPremiumReductionTranslationsByLocale } from '../src/markets-no-ch/swiss-premium-reduction-translations.mjs';
 import { remainingToolsEnglish } from '../src/markets-no-ch/remaining-tools-copy-en.mjs';
 import { resumeStructureEnglish } from '../src/markets-no-ch/resume-structure-copy-en.mjs';
@@ -65,6 +119,18 @@ import { finalCandidateTranslationsByLocale } from '../src/markets-no-ch/final-c
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const output = resolve(process.env.MARKETS_NO_CH_DIST ?? '/private/tmp/usefulverse-market-pilot-dist');
+const staging = `${output}.staging-${process.pid}`;
+const rewriteAssetPrefix = (value) => value.replaceAll('/assets/', '/assets/market-tools/');
+async function copyMarketAsset(source, destination) {
+  const ext = source.split('.').at(-1)?.toLowerCase();
+  if (['mjs', 'js', 'css', 'txt'].includes(ext)) {
+    await writeFile(destination, rewriteAssetPrefix(await readFile(source, 'utf8')));
+  } else await copyFile(source, destination);
+}
+for (const path of [output, staging]) {
+  try { await stat(path); throw new Error(`Refusing to overwrite existing market pilot artifact: ${path}. Set MARKETS_NO_CH_DIST to a new path.`); }
+  catch (error) { if (error.code !== 'ENOENT') throw error; }
+}
 const locales = [...localeEntries.map((entry) => ({ ...entry, rtl: ['ar', 'ur', 'fa'].includes(entry.key) })), { key: 'nb', code: 'nb-NO', name: 'Norsk bokmål', prefix: '/nb', rtl: false }];
 const finalCandidateModes = new Set(['swissHealthDeductible', 'swissPremiumReduction', 'swissRentAdjustment', 'swissVacationAccrual']);
 if (locales.length !== 37 || new Set(locales.map(({ key }) => key)).size !== 37) throw new Error('Expected 37 unique locales.');
@@ -94,7 +160,7 @@ if (toolsToBuild.some(({ mode }) => Object.hasOwn(remainingToolsEnglish, mode) |
 }
 
 
-if (marketTools.some(({ mode }) => mode === 'grisCardGame')) {
+if (toolsToBuild.some(({ mode }) => mode === 'grisCardGame')) {
   const sourceStrings = [];
   const collectStrings = (value) => {
     if (typeof value === 'string') sourceStrings.push(value);
@@ -116,7 +182,52 @@ if (marketTools.some(({ mode }) => mode === 'grisCardGame')) {
   }
 }
 
-if (marketTools.some(({ mode }) => mode === 'fiveLetterWord')) {
+if (toolsToBuild.some(({ mode }) => mode === 'swissWheelOffset')) {
+  const strings = [];
+  const collect = (value) => { if (typeof value === 'string') strings.push(value); else if (Array.isArray(value)) value.forEach(collect); else if (value && typeof value === 'object') Object.values(value).forEach(collect); };
+  collect(swissWheelOffsetEnglish);
+  const commonSources = new Set(Object.keys(translationsByLocale.es ?? {}));
+  const sources = [...new Set(strings.filter((source) => !commonSources.has(source)))];
+  for (const locale of locales.filter(({ key }) => key !== 'en')) {
+    const dictionary = swissWheelOffsetTranslationsByLocale[locale.key];
+    if (!dictionary || sources.some((source) => typeof dictionary[source] !== 'string' || !dictionary[source].trim())) throw new Error(`Wheel Offset translation pack is incomplete for ${locale.key}.`);
+  }
+}
+
+if (toolsToBuild.some(({ mode }) => mode === 'petAge')) {
+  const strings = [];
+  const collect = (value) => { if (typeof value === 'string') strings.push(value); else if (Array.isArray(value)) value.forEach(collect); else if (value && typeof value === 'object') Object.values(value).forEach(collect); };
+  collect(petAgeEnglish);
+  const commonSources = new Set(Object.keys(translationsByLocale.es ?? {}));
+  const sources = [...new Set(strings.filter((source) => !commonSources.has(source)))];
+  for (const locale of locales.filter(({ key }) => key !== 'en')) {
+    const dictionary = petAgeTranslationsByLocale[locale.key];
+    if (!dictionary || sources.some((source) => typeof dictionary[source] !== 'string' || !dictionary[source].trim())) throw new Error(`Pet Age translation pack is incomplete for ${locale.key}.`);
+  }
+}
+
+for (const [mode, englishCopy, pack, label] of [
+  ['swissUid', swissUidEnglish, swissUidTranslationsByLocale, 'Swiss UID'],
+  ['swissCoordinates', swissCoordinateEnglish, swissCoordinateTranslationsByLocale, 'Swiss coordinates'],
+  ['frequencyTone', frequencyToneEnglish, frequencyToneTranslationsByLocale, 'Frequency tone'],
+  ['norwayCompanyCar', norwayCompanyCarEnglish, norwayCompanyCarTranslationsByLocale, 'Norway company car'],
+  ['pinball', pinballEnglish, pinballTranslationsByLocale, 'Pinball'],
+  ['amerikanerCardGame', amerikanerCardGameEnglish, amerikanerCardGameTranslationsByLocale, 'Amerikaner'],
+  ['presidentCardGame', presidentCardGameEnglish, presidentCardGameTranslationsByLocale, 'President'],
+]) {
+  if (!toolsToBuild.some((tool) => tool.mode === mode)) continue;
+  const strings = [];
+  const collect = (value) => { if (typeof value === 'string') strings.push(value); else if (Array.isArray(value)) value.forEach(collect); else if (value && typeof value === 'object') Object.values(value).forEach(collect); };
+  collect(englishCopy);
+  const commonSources = new Set(Object.keys(translationsByLocale.es ?? {}));
+  const sources = [...new Set(strings.filter((source) => !commonSources.has(source)))];
+  for (const locale of locales.filter(({ key }) => key !== 'en')) {
+    const dictionary = pack[locale.key];
+    if (!dictionary || sources.some((source) => typeof dictionary[source] !== 'string' || !dictionary[source].trim())) throw new Error(`${label} translation pack is incomplete for ${locale.key}.`);
+  }
+}
+
+if (toolsToBuild.some(({ mode }) => mode === 'fiveLetterWord')) {
   const strings = [];
   const collectStrings = (value) => {
     if (typeof value === 'string') strings.push(value);
@@ -138,7 +249,7 @@ if (marketTools.some(({ mode }) => mode === 'fiveLetterWord')) {
   }
 }
 
-if (marketTools.some(({ mode }) => mode === 'bridgeGame')) {
+if (toolsToBuild.some(({ mode }) => mode === 'bridgeGame')) {
   const strings = [];
   const collectStrings = (value) => {
     if (typeof value === 'string') strings.push(value);
@@ -160,7 +271,7 @@ if (marketTools.some(({ mode }) => mode === 'bridgeGame')) {
   }
 }
 
-if (marketTools.some(({ mode }) => mode === 'farkleGame')) {
+if (toolsToBuild.some(({ mode }) => mode === 'farkleGame')) {
   const strings = [];
   const collectStrings = (value) => {
     if (typeof value === 'string') strings.push(value);
@@ -182,7 +293,7 @@ if (marketTools.some(({ mode }) => mode === 'farkleGame')) {
   }
 }
 
-if (marketTools.some(({ mode }) => mode === 'swissNetSalary')) {
+if (toolsToBuild.some(({ mode }) => mode === 'swissNetSalary')) {
   const strings = [];
   const collect = (value) => {
     if (typeof value === 'string') strings.push(value);
@@ -197,7 +308,7 @@ if (marketTools.some(({ mode }) => mode === 'swissNetSalary')) {
   }
 }
 
-if (marketTools.some(({ mode }) => mode === 'swissTaxCompare')) {
+if (toolsToBuild.some(({ mode }) => mode === 'swissTaxCompare')) {
   const strings = [];
   const collect = (value) => {
     if (typeof value === 'string') strings.push(value);
@@ -212,7 +323,7 @@ if (marketTools.some(({ mode }) => mode === 'swissTaxCompare')) {
   }
 }
 
-if (marketTools.some(({ mode }) => mode === 'swissAhvPension')) {
+if (toolsToBuild.some(({ mode }) => mode === 'swissAhvPension')) {
   const strings = [];
   const collect = (value) => {
     if (typeof value === 'string') strings.push(value);
@@ -328,7 +439,7 @@ if (toolsToBuild.some(({ mode }) => mode === 'swissPremiumReduction')) {
   }
 }
 
-if (marketTools.some(({ mode }) => mode === 'codebreaker')) {
+if (toolsToBuild.some(({ mode }) => mode === 'codebreaker')) {
   const sourceStrings = [];
   const collectStrings = (value) => {
     if (typeof value === 'string') sourceStrings.push(value);
@@ -350,7 +461,7 @@ if (marketTools.some(({ mode }) => mode === 'codebreaker')) {
   }
 }
 
-if (marketTools.some(({ mode }) => mode === 'shoeSize')) {
+if (toolsToBuild.some(({ mode }) => mode === 'shoeSize')) {
   const sourceStrings = [];
   const collectStrings = (value) => {
     if (typeof value === 'string') sourceStrings.push(value);
@@ -371,7 +482,7 @@ if (marketTools.some(({ mode }) => mode === 'shoeSize')) {
   }
 }
 
-if (marketTools.some(({ mode }) => mode === 'childGrowth')) {
+if (toolsToBuild.some(({ mode }) => mode === 'childGrowth')) {
   const sourceStrings = [];
   const collectStrings = (value) => {
     if (typeof value === 'string') sourceStrings.push(value);
@@ -387,7 +498,7 @@ if (marketTools.some(({ mode }) => mode === 'childGrowth')) {
   }
 }
 
-if (marketTools.some(({ mode }) => mode === 'ringSize')) {
+if (toolsToBuild.some(({ mode }) => mode === 'ringSize')) {
   const sourceStrings = [];
   const collectStrings = (value) => {
     if (typeof value === 'string') sourceStrings.push(value);
@@ -402,7 +513,7 @@ if (marketTools.some(({ mode }) => mode === 'ringSize')) {
   }
 }
 
-if (marketTools.some(({ mode }) => mode === 'model3dViewer')) {
+if (toolsToBuild.some(({ mode }) => mode === 'model3dViewer')) {
   const sourceStrings = [];
   const collectStrings = (value) => {
     if (typeof value === 'string') sourceStrings.push(value);
@@ -417,7 +528,7 @@ if (marketTools.some(({ mode }) => mode === 'model3dViewer')) {
   }
 }
 
-if (marketTools.some(({ mode }) => mode === 'dxfViewer')) {
+if (toolsToBuild.some(({ mode }) => mode === 'dxfViewer')) {
   const sourceStrings = [];
   const collectStrings = (value) => {
     if (typeof value === 'string') sourceStrings.push(value);
@@ -431,66 +542,160 @@ if (marketTools.some(({ mode }) => mode === 'dxfViewer')) {
     if (!dictionary || uniqueSources.some((source) => typeof dictionary[source] !== 'string' || !dictionary[source].trim())) throw new Error(`DXF viewer translation pack is incomplete for ${locale.key}.`);
   }
 }
+function copyFor(tool) {
+  const explicit = {
+    numerology: numerologyEnglish, nineMensMorris: nineMensMorrisEnglish, halma: halmaGameEnglish,
+    canasta: canastaCardGameEnglish, skat: skatCardGameEnglish, doppelkopf: doppelkopfEnglish,
+    schafkopf: schafkopfEnglish, schnapsen: schnapsenEnglish, suguru: suguruEnglish, shikaku: shikakuEnglish,
+    brickBreaker: brickBreakerEnglish, miniGolf: miniGolfEnglish, matchThree: matchThreeEnglish,
+    audioToMidi: audioToMidiEnglish, voiceChanger: voiceChangerEnglish, dicomViewer: dicomViewerEnglish,
+    crazyEights: crazyEightsEnglish, idiotCardGame: idiotCardGameEnglish, jass: jassEnglish,
+    warCardGame: warCardGameEnglish, natalChart: natalChartEnglish,
+    geographyQuiz: geographyQuizEnglish,
+    norwayChildSupport: norwayChildSupportEnglish,
+    norwayEmployerCost: norwayEmployerCostEnglish,
+    norwayParentalBenefit: norwayParentalBenefitEnglish,
+    norwayUnemploymentBenefit: norwayUnemploymentBenefitEnglish,
+    norwayHousingBenefit: norwayHousingBenefitEnglish,
+    swissVehicleTax: swissVehicleTaxEnglish,
+    currency: currencyConverterEnglish,
+    carbonFootprint: carbonFootprintEnglish,
+    dewPoint: dewPointEnglish,
+    aquariumWaterMixing: aquariumWaterMixingEnglish,
+    barcodeReader: barcodeReaderEnglish,
+    scaleDrawing: scaleDrawingEnglish,
+    shutBox: shutTheBoxEnglish,
+    snakesAndLadders: snakesAndLaddersEnglish,
+  }[tool.mode];
+  const modeCopy = explicit ?? (tool.mode === 'norwayDisabilityBenefit' ? norwayDisabilityBenefitEnglish : tool.mode === 'norwayStudentFinance' ? norwayStudentFinanceEnglish : tool.mode === 'norwayBsu' ? norwayBsuEnglish : tool.mode === 'norwayCommutingDeduction' ? norwayCommutingDeductionEnglish : tool.mode === 'norwayMileageReimbursement' ? norwayMileageReimbursementEnglish : tool.mode === 'latePaymentInterest' ? latePaymentInterestEnglish : tool.mode === 'norwayImportCost' ? norwayImportCostEnglish : tool.mode === 'norwayCarImportCost' ? norwayCarImportCostEnglish : tool.mode === 'norwayTollCost' ? norwayTollCostEnglish : tool.mode === 'norwayPropertyTransfer' ? norwayPropertyTransferEnglish : tool.mode === 'norwayElectricitySupport' ? norwayElectricitySupportEnglish : tool.mode === 'beadPattern' ? beadPatternEnglish : tool.mode === 'codebreaker' ? codebreakerEnglish : tool.mode === 'fiveLetterWord' ? fiveLetterWordEnglish : tool.mode === 'shoeSize' ? shoeSizeEnglish : tool.mode === 'childGrowth' ? childGrowthEnglish : tool.mode === 'grisCardGame' ? grisCardGameEnglish : tool.mode === 'model3dViewer' ? model3dViewerEnglish : tool.mode === 'dxfViewer' ? dxfViewerEnglish : tool.mode === 'bridgeGame' ? bridgeGameEnglish : tool.mode === 'farkleGame' ? farkleEnglish : tool.mode === 'swissNetSalary' ? swissNetSalaryEnglish : tool.mode === 'swissTaxCompare' ? swissTaxCompareEnglish : tool.mode === 'swissAhvPension' ? swissAhvPensionEnglish : tool.mode === 'swissPillar3a' ? swissPillar3aEnglish : tool.mode === 'swissBvgPension' ? swissBvgPensionEnglish : tool.mode === 'swissPensionWithdrawal' ? swissPensionWithdrawalEnglish : tool.mode === 'swissHealthDeductible' ? swissHealthDeductibleEnglish : tool.mode === 'swissRentAdjustment' ? swissRentAdjustmentEnglish : tool.mode === 'swissVacationAccrual' ? swissVacationAccrualEnglish : tool.mode === 'swissPremiumReduction' ? swissPremiumReductionEnglish : tool.mode === 'swissWheelOffset' ? swissWheelOffsetEnglish : tool.mode === 'petAge' ? petAgeEnglish : tool.mode === 'resumeStructure' ? resumeStructureEnglish : tool.mode === 'vocalRemover' ? vocalRemoverEnglish : remainingToolsEnglish[tool.mode] ?? english[tool.mode]);
+  return { ...english, ...modeCopy, actions: english.actions, messages: { ...english.messages, ...(modeCopy?.messages ?? {}) } };
+}
+
+// Render every requested page in memory first. A missing form, copy field, or
+// locale pack must fail before the output tree is changed, never midway through
+// the route loop.
+const preflightErrors = [];
+for (const tool of toolsToBuild) {
+  const copy = copyFor(tool);
+  for (const locale of locales) {
+    try {
+      renderPage({ tool, locale, locales, copy });
+    } catch (error) {
+      preflightErrors.push(`${tool.id} [${tool.mode}] / ${locale.key}: ${error.message}`);
+    }
+  }
+}
+if (preflightErrors.length) {
+  throw new Error(`Market tools preflight failed for ${preflightErrors.length} page(s); no routes were written:\n${preflightErrors.join('\n')}`);
+}
 
 const urls = [];
+await mkdir(staging, { recursive: false });
 for (const tool of toolsToBuild) {
-  const modeCopy = tool.mode === 'norwayDisabilityBenefit' ? norwayDisabilityBenefitEnglish : tool.mode === 'norwayStudentFinance' ? norwayStudentFinanceEnglish : tool.mode === 'norwayBsu' ? norwayBsuEnglish : tool.mode === 'norwayCommutingDeduction' ? norwayCommutingDeductionEnglish : tool.mode === 'norwayMileageReimbursement' ? norwayMileageReimbursementEnglish : tool.mode === 'latePaymentInterest' ? latePaymentInterestEnglish : tool.mode === 'norwayImportCost' ? norwayImportCostEnglish : tool.mode === 'norwayCarImportCost' ? norwayCarImportCostEnglish : tool.mode === 'norwayTollCost' ? norwayTollCostEnglish : tool.mode === 'norwayPropertyTransfer' ? norwayPropertyTransferEnglish : tool.mode === 'norwayElectricitySupport' ? norwayElectricitySupportEnglish : tool.mode === 'beadPattern' ? beadPatternEnglish : tool.mode === 'codebreaker' ? codebreakerEnglish : tool.mode === 'fiveLetterWord' ? fiveLetterWordEnglish : tool.mode === 'shoeSize' ? shoeSizeEnglish : tool.mode === 'childGrowth' ? childGrowthEnglish : tool.mode === 'grisCardGame' ? grisCardGameEnglish : tool.mode === 'model3dViewer' ? model3dViewerEnglish : tool.mode === 'dxfViewer' ? dxfViewerEnglish : tool.mode === 'bridgeGame' ? bridgeGameEnglish : tool.mode === 'farkleGame' ? farkleEnglish : tool.mode === 'swissNetSalary' ? swissNetSalaryEnglish : tool.mode === 'swissTaxCompare' ? swissTaxCompareEnglish : tool.mode === 'swissAhvPension' ? swissAhvPensionEnglish : tool.mode === 'swissPillar3a' ? swissPillar3aEnglish : tool.mode === 'swissBvgPension' ? swissBvgPensionEnglish : tool.mode === 'swissPensionWithdrawal' ? swissPensionWithdrawalEnglish : tool.mode === 'swissHealthDeductible' ? swissHealthDeductibleEnglish : tool.mode === 'swissRentAdjustment' ? swissRentAdjustmentEnglish : tool.mode === 'swissVacationAccrual' ? swissVacationAccrualEnglish : tool.mode === 'swissPremiumReduction' ? swissPremiumReductionEnglish : tool.mode === 'resumeStructure' ? resumeStructureEnglish : tool.mode === 'vocalRemover' ? vocalRemoverEnglish : remainingToolsEnglish[tool.mode] ?? english[tool.mode];
-  const copy = { ...english, ...modeCopy, actions: english.actions, messages: { ...english.messages, ...(modeCopy?.messages ?? {}) } };
+  const copy = copyFor(tool);
   for (const locale of locales) {
     const pathPrefix = locale.prefix.replace(/^\//u, '');
-    const path = join(output, pathPrefix, 'tools', tool.id, 'index.html');
+    const path = join(staging, pathPrefix, 'tools', tool.id, 'index.html');
     await mkdir(join(path, '..'), { recursive: true });
-    await writeFile(path, renderPage({ tool, locale, locales, copy }));
+    await writeFile(path, rewriteAssetPrefix(renderPage({ tool, locale, locales, copy })));
     urls.push(`https://tools.usefulverse.com${locale.prefix}/tools/${tool.id}/`);
   }
 }
 
-const assets = join(output, 'assets');
+const assets = join(staging, 'assets', 'market-tools');
 await mkdir(assets, { recursive: true });
-await copyFile(join(root, 'public/favicon.svg'), join(output, 'favicon.svg'));
-  for (const name of ['controller.mjs', 'five-letter-word-controller.mjs', 'five-letter-word.mjs', 'bridge-game-controller.mjs', 'bridge-game.mjs', 'farkle-controller.mjs', 'farkle.mjs', 'swiss-net-salary-controller.mjs', 'swiss-net-salary.mjs', 'swiss-tax-compare-controller.mjs', 'swiss-tax-compare.mjs', 'swiss-ahv-pension-controller.mjs', 'swiss-ahv-pension.mjs', 'swiss-pillar-3a-controller.mjs', 'swiss-pillar-3a.mjs', 'swiss-bvg-pension-controller.mjs', 'swiss-bvg-pension.mjs', 'swiss-pension-withdrawal-controller.mjs', 'swiss-pension-withdrawal.mjs', 'swiss-health-deductible-controller.mjs', 'swiss-health-deductible.mjs', 'swiss-rent-adjustment-controller.mjs', 'swiss-rent-adjustment.mjs', 'swiss-vacation-accrual-controller.mjs', 'swiss-vacation-accrual.mjs', 'swiss-premium-reduction-controller.mjs', 'swiss-premium-reduction.mjs', 'remaining-tools.mjs', 'remaining-tools-controller.mjs', 'resume-structure.mjs', 'resume-docx-archive.mjs', 'resume-structure-controller.mjs', 'vocal-remover-controller.mjs', 'norway-property-transfer-controller.mjs', 'norway-property-transfer.mjs', 'norway-electricity-support-controller.mjs', 'norway-electricity-support.mjs', 'bead-pattern-controller.mjs', 'bead-pattern.mjs', 'bead-pattern-worker.mjs', 'codebreaker-controller.mjs', 'codebreaker.mjs', 'shoe-size-controller.mjs', 'shoe-size.mjs', 'ring-size.mjs', 'ring-size-controller.mjs', 'child-growth-controller.mjs', 'child-growth.mjs', 'cdc-growth-data.mjs', 'model3d-viewer-controller.mjs', 'model3d-step-worker.js', 'dxf-viewer-controller.mjs', 'dxf-viewer-worker.mjs', 'norway-disability-benefit-controller.mjs', 'norway-disability-benefit.mjs', 'norway-student-finance-controller.mjs', 'norway-student-finance.mjs', 'norway-bsu-controller.mjs', 'norway-bsu.mjs', 'norway-commuting-deduction-controller.mjs', 'norway-commuting-deduction.mjs', 'norway-mileage-reimbursement-controller.mjs', 'norway-mileage-reimbursement.mjs', 'late-payment-interest-controller.mjs', 'late-payment-interest.mjs', 'norway-import-cost-controller.mjs', 'norway-import-cost.mjs', 'norway-car-import-cost-controller.mjs', 'norway-car-import-cost.mjs', 'norway-toll-stations-data.mjs', 'logic.mjs', 'binary-worker.mjs', 'bubble-shooter.mjs', 'markets.css']) {
-await copyFile(join(root, 'src/markets-no-ch', name), join(assets, name === 'markets.css' ? 'markets-no-ch.css' : name));
+await copyFile(join(root, 'public/favicon.svg'), join(staging, 'favicon.svg'));
+  for (const name of ['controller.mjs', 'display-test-controller.mjs', 'fps-test-controller.mjs', 'yatzy-controller.mjs', 'yatzy.mjs', 'microphone-controller.mjs', 'bubble-shooter-controller.mjs', 'bubble-shooter.mjs', 'numerology-controller.mjs', 'numerology.mjs', 'nine-mens-morris-controller.mjs', 'nine-mens-morris.mjs', 'halma-game-controller.mjs', 'halma-game.mjs', 'canasta-game-controller.mjs', 'canasta-game.mjs', 'skat-game-controller.mjs', 'skat-game.mjs', 'doppelkopf-controller.mjs', 'doppelkopf-game.mjs', 'schafkopf-controller.mjs', 'schafkopf-game.mjs', 'schnapsen-controller.mjs', 'schnapsen-game.mjs', 'suguru-controller.mjs', 'suguru.mjs', 'suguru-worker.mjs', 'shikaku-controller.mjs', 'shikaku.mjs', 'brick-breaker-controller.mjs', 'brick-breaker.mjs', 'minigolf-controller.mjs', 'minigolf.mjs', 'match-three-controller.mjs', 'match-three.mjs', 'audio-to-midi-controller.mjs', 'audio-to-midi-transcriber.mjs', 'audio-to-midi-worker.mjs', 'voice-changer-controller.mjs', 'voice-changer.mjs', 'dicom-viewer-controller.mjs', 'dicom-viewer.mjs', 'dicom-viewer-worker.mjs', 'crazy-eights-controller.mjs', 'crazy-eights-game.mjs', 'idiot-card-game-controller.mjs', 'jass-controller.mjs', 'jass-game.mjs', 'war-card-game-controller.mjs', 'war-game.mjs', 'natal-chart-controller.mjs', 'natal-chart.mjs', 'controller.mjs', 'five-letter-word-controller.mjs', 'five-letter-word.mjs', 'bridge-game-controller.mjs', 'bridge-game.mjs', 'farkle-controller.mjs', 'farkle.mjs', 'swiss-net-salary-controller.mjs', 'swiss-net-salary.mjs', 'swiss-tax-compare-controller.mjs', 'swiss-tax-compare.mjs', 'swiss-ahv-pension-controller.mjs', 'swiss-ahv-pension.mjs', 'swiss-pillar-3a-controller.mjs', 'swiss-pillar-3a.mjs', 'swiss-bvg-pension-controller.mjs', 'swiss-bvg-pension.mjs', 'swiss-pension-withdrawal-controller.mjs', 'swiss-pension-withdrawal.mjs', 'swiss-health-deductible-controller.mjs', 'swiss-health-deductible.mjs', 'swiss-rent-adjustment-controller.mjs', 'swiss-rent-adjustment.mjs', 'swiss-vacation-accrual-controller.mjs', 'swiss-vacation-accrual.mjs', 'swiss-premium-reduction-controller.mjs', 'swiss-premium-reduction.mjs', 'remaining-tools.mjs', 'remaining-tools-controller.mjs', 'resume-structure.mjs', 'resume-docx-archive.mjs', 'resume-structure-controller.mjs', 'vocal-remover-controller.mjs', 'norway-property-transfer-controller.mjs', 'norway-property-transfer.mjs', 'norway-electricity-support-controller.mjs', 'norway-electricity-support.mjs', 'bead-pattern-controller.mjs', 'bead-pattern.mjs', 'bead-pattern-worker.mjs', 'codebreaker-controller.mjs', 'codebreaker.mjs', 'shoe-size-controller.mjs', 'shoe-size.mjs', 'ring-size.mjs', 'ring-size-controller.mjs', 'child-growth-controller.mjs', 'child-growth.mjs', 'cdc-growth-data.mjs', 'model3d-viewer-controller.mjs', 'model3d-step-worker.js', 'dxf-viewer-controller.mjs', 'dxf-viewer-worker.mjs', 'norway-disability-benefit-controller.mjs', 'norway-disability-benefit.mjs', 'norway-student-finance-controller.mjs', 'norway-student-finance.mjs', 'norway-bsu-controller.mjs', 'norway-bsu.mjs', 'norway-commuting-deduction-controller.mjs', 'norway-commuting-deduction.mjs', 'norway-mileage-reimbursement-controller.mjs', 'norway-mileage-reimbursement.mjs', 'late-payment-interest-controller.mjs', 'late-payment-interest.mjs', 'norway-import-cost-controller.mjs', 'norway-import-cost.mjs', 'norway-car-import-cost-controller.mjs', 'norway-car-import-cost.mjs', 'norway-toll-stations-data.mjs', 'logic.mjs', 'binary-worker.mjs', 'markets.css']) {
+  await copyMarketAsset(join(root, 'src/markets-no-ch', name), join(assets, name === 'markets.css' ? 'markets-no-ch.css' : name));
+}
+await copyMarketAsset(join(root, 'src/markets-no-ch/swiss-wheel-offset-controller.mjs'), join(assets, 'swiss-wheel-offset-controller.mjs'));
+await copyMarketAsset(join(root, 'src/markets-no-ch/swiss-wheel-offset.mjs'), join(assets, 'swiss-wheel-offset.mjs'));
+await copyMarketAsset(join(root, 'src/markets-no-ch/pet-age-controller.mjs'), join(assets, 'pet-age-controller.mjs'));
+await copyMarketAsset(join(root, 'src/markets-no-ch/pet-age.mjs'), join(assets, 'pet-age.mjs'));
+for (const [mode, files] of Object.entries({
+  norwayTax: ['norway-tax-controller.mjs', 'norway-income-tax.mjs'],
+  swissUid: ['swiss-uid-controller.mjs', 'swiss-uid.mjs'],
+  swissCoordinates: ['swiss-coordinate-controller.mjs', 'swiss-coordinate-converter.mjs'],
+  norwayCompanyCar: ['norway-company-car-controller.mjs', 'norway-company-car.mjs'],
+  frequencyTone: ['frequency-tone-generator-controller.mjs', 'frequency-tone-generator.mjs'],
+  pinball: ['pinball-controller.mjs', 'pinball.mjs'],
+  amerikanerCardGame: ['amerikaner-card-game-controller.mjs', 'amerikaner-game.mjs'],
+  presidentCardGame: ['president-card-game-controller.mjs', 'president-game.mjs'],
+})) {
+  if (!toolsToBuild.some((tool) => tool.mode === mode)) continue;
+  for (const name of files) await copyMarketAsset(join(root, 'src/markets-no-ch', name), join(assets, name));
+}
+for (const [mode, files] of Object.entries({
+  norwayChildSupport: ['norway-child-support-controller.mjs', 'norway-child-support.mjs'],
+  norwayParentalBenefit: ['norway-parental-benefit-controller.mjs', 'norway-parental-benefit.mjs', 'norway-parental-calendar.mjs'],
+  norwayUnemploymentBenefit: ['norway-unemployment-benefit-controller.mjs', 'norway-unemployment-benefit.mjs'],
+  norwayHousingBenefit: ['norway-housing-benefit-controller.mjs', 'norway-housing-benefit.mjs'],
+  norwayWealthTax: ['norway-wealth-tax-controller.mjs', 'norway-wealth-tax.mjs'],
+  swissVehicleTax: ['switzerland-vehicle-tax-controller.mjs', 'switzerland-vehicle-tax.mjs'],
+  currency: ['currency-converter-controller.mjs', 'currency-converter.mjs'],
+  carbonFootprint: ['carbon-footprint-controller.mjs', 'carbon-footprint.mjs', 'carbon-electricity-factors.mjs'],
+  dewPoint: ['dew-point-controller.mjs', 'dew-point.mjs'],
+  aquariumWaterMixing: ['aquarium-water-mixing-controller.mjs', 'aquarium-water-mixing.mjs'],
+  barcodeReader: ['barcode-reader-controller.mjs', 'barcode-reader.mjs'],
+  scaleDrawing: ['scale-drawing-controller.mjs', 'scale-drawing.mjs'],
+  snakesAndLadders: ['snakes-and-ladders-controller.mjs', 'snakes-and-ladders.mjs'],
+  geographyQuiz: ['geography-quiz-controller.mjs', 'geography-quiz.mjs', 'geography-quiz-data.mjs'],
+  shutBox: ['shut-the-box-controller.mjs', 'shut-the-box.mjs'],
+  grisCardGame: ['gris-card-game-controller.mjs', 'gris-game.mjs'],
+})) {
+  if (!toolsToBuild.some((tool) => tool.mode === mode)) continue;
+  for (const name of files) await copyMarketAsset(join(root, 'src/markets-no-ch', name), join(assets, name));
 }
 if (toolsToBuild.some(({ mode }) => mode === 'vocalRemover')) {
   const runtime = join(assets, 'vocal-remover'); await mkdir(runtime, { recursive: true });
   const ortDist = join(root, 'node_modules/onnxruntime-web/dist');
-  for (const name of ['ort-wasm-simd-threaded.mjs', 'ort-wasm-simd-threaded.wasm']) await copyFile(join(ortDist, name), join(runtime, name));
-  await copyFile(join(root, 'docs/markets-no-ch/ONNXRUNTIME-WEB-LICENSE.txt'), join(runtime, 'ONNXRUNTIME-WEB-MIT-LICENSE.txt'));
-  await copyFile(join(root, 'docs/markets-no-ch/OPEN-UNMIX-MIT-LICENSE.txt'), join(runtime, 'OPEN-UNMIX-MIT-LICENSE.txt'));
+  for (const name of ['ort-wasm-simd-threaded.mjs', 'ort-wasm-simd-threaded.wasm']) await copyMarketAsset(join(ortDist, name), join(runtime, name));
+  await copyMarketAsset(join(root, 'docs/markets-no-ch/ONNXRUNTIME-WEB-LICENSE.txt'), join(runtime, 'ONNXRUNTIME-WEB-MIT-LICENSE.txt'));
+  await copyMarketAsset(join(root, 'docs/markets-no-ch/OPEN-UNMIX-MIT-LICENSE.txt'), join(runtime, 'OPEN-UNMIX-MIT-LICENSE.txt'));
   await bundle({ entryPoints: [join(root, 'src/markets-no-ch/vocal-remover-worker.mjs')], outfile: join(assets, 'vocal-remover-worker.mjs'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], legalComments: 'none' });
+  await writeFile(join(assets, 'vocal-remover-worker.mjs'), rewriteAssetPrefix(await readFile(join(assets, 'vocal-remover-worker.mjs'), 'utf8')));
 }
 if (toolsToBuild.some(({ mode }) => mode === 'resumeStructure')) {
   const vendor = join(assets, 'vendor'); await mkdir(vendor, { recursive: true });
   const pdfDist = join(root, 'node_modules/pdfjs-dist');
-  await copyFile(join(pdfDist, 'build/pdf.mjs'), join(vendor, 'pdf.min.mjs'));
-  await copyFile(join(pdfDist, 'build/pdf.worker.mjs'), join(vendor, 'pdf.worker.min.mjs'));
-  await copyFile(join(pdfDist, 'LICENSE'), join(vendor, 'PDFJS-APACHE-LICENSE.txt'));
-  await copyFile(join(root, 'node_modules/fflate/LICENSE'), join(assets, 'FFLATE-MIT-LICENSE.txt'));
+  await copyMarketAsset(join(pdfDist, 'build/pdf.mjs'), join(vendor, 'pdf.min.mjs'));
+  await copyMarketAsset(join(pdfDist, 'build/pdf.worker.mjs'), join(vendor, 'pdf.worker.min.mjs'));
+  await copyMarketAsset(join(pdfDist, 'LICENSE'), join(vendor, 'PDFJS-APACHE-LICENSE.txt'));
+  await copyMarketAsset(join(root, 'node_modules/fflate/LICENSE'), join(assets, 'FFLATE-MIT-LICENSE.txt'));
   await bundle({ entryPoints: [join(root, 'src/markets-no-ch/resume-structure-worker.mjs')], outfile: join(assets, 'resume-structure-worker.mjs'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], legalComments: 'none' });
+  await writeFile(join(assets, 'resume-structure-worker.mjs'), rewriteAssetPrefix(await readFile(join(assets, 'resume-structure-worker.mjs'), 'utf8')));
   for (const directory of ['cmaps', 'standard_fonts']) await cp(join(pdfDist, directory), join(vendor, directory), { recursive: true });
 }
 if (toolsToBuild.some(({ mode }) => mode === 'fiveLetterWord')) {
   const bankOut = join(assets, 'five-letter-word-bank');
   await mkdir(bankOut, { recursive: true });
-  for (const name of ['nb-accepted.txt', 'nb-targets.txt', 'ATTRIBUTION.txt']) await copyFile(join(root, 'src/markets-no-ch/five-letter-word-bank', name), join(bankOut, name));
+  for (const name of ['nb-accepted.txt', 'nb-targets.txt', 'ATTRIBUTION.txt']) await copyMarketAsset(join(root, 'src/markets-no-ch/five-letter-word-bank', name), join(bankOut, name));
 }
 if (toolsToBuild.some(({ mode }) => mode === 'dxfViewer')) {
   await bundle({ entryPoints: [join(root, 'src/markets-no-ch/dxf-viewer-worker.mjs')], outfile: join(assets, 'dxf-viewer-worker.mjs'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], legalComments: 'none' });
-  await copyFile(join(root, 'docs/markets-no-ch/licenses/DXF-PARSER-MIT-LICENSE.txt'), join(assets, 'DXF-PARSER-MIT-LICENSE.txt'));
-  await copyFile(join(root, 'docs/markets-no-ch/licenses/LOGLEVEL-MIT-LICENSE.txt'), join(assets, 'LOGLEVEL-MIT-LICENSE.txt'));
+  await writeFile(join(assets, 'dxf-viewer-worker.mjs'), rewriteAssetPrefix(await readFile(join(assets, 'dxf-viewer-worker.mjs'), 'utf8')));
+  await copyMarketAsset(join(root, 'docs/markets-no-ch/licenses/DXF-PARSER-MIT-LICENSE.txt'), join(assets, 'DXF-PARSER-MIT-LICENSE.txt'));
+  await copyMarketAsset(join(root, 'docs/markets-no-ch/licenses/LOGLEVEL-MIT-LICENSE.txt'), join(assets, 'LOGLEVEL-MIT-LICENSE.txt'));
 }
 if (toolsToBuild.some(({ mode }) => mode === 'model3dViewer')) {
   for (const name of ['occt-import-js.js', 'occt-import-js.wasm']) {
-    await copyFile(join(root, 'src/markets-no-ch/vendor/occt-import-js-0.0.23', name), join(assets, name));
+    await copyMarketAsset(join(root, 'src/markets-no-ch/vendor/occt-import-js-0.0.23', name), join(assets, name));
   }
   for (const name of ['OCCT-IMPORT-JS-LGPL-2.1.txt', 'OCCT-LGPL-2.1.txt', 'OCCT-LGPL-EXCEPTION-1.0.txt']) {
-    await copyFile(join(root, 'docs/markets-no-ch/licenses', name), join(assets, name));
+    await copyMarketAsset(join(root, 'docs/markets-no-ch/licenses', name), join(assets, name));
   }
   await bundle({ entryPoints: [join(root, 'src/markets-no-ch/model3d-viewer-runtime.mjs')], outfile: join(assets, 'model3d-viewer-runtime.mjs'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], legalComments: 'none' });
   await bundle({ entryPoints: [join(root, 'src/markets-no-ch/model3d-viewer-worker.mjs')], outfile: join(assets, 'model3d-viewer-worker.mjs'), bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], legalComments: 'none' });
-  await copyFile(join(root, 'docs/markets-no-ch/licenses/THREE-MIT-LICENSE.txt'), join(assets, 'THREE-MIT-LICENSE.txt'));
+  for (const name of ['model3d-viewer-runtime.mjs', 'model3d-viewer-worker.mjs']) await writeFile(join(assets, name), rewriteAssetPrefix(await readFile(join(assets, name), 'utf8')));
+  await copyMarketAsset(join(root, 'docs/markets-no-ch/licenses/THREE-MIT-LICENSE.txt'), join(assets, 'THREE-MIT-LICENSE.txt'));
+}
+if (toolsToBuild.some(({ mode }) => mode === 'natalChart')) {
+  const vendor = join(assets, 'vendor'); await mkdir(vendor, { recursive: true });
+  await copyMarketAsset(join(root, 'src/markets-no-ch/vendor/astronomy.browser.min.js'), join(vendor, 'astronomy.browser.min.js'));
+  await copyMarketAsset(join(root, 'src/markets-no-ch/vendor/ASTRONOMY-ENGINE-MIT-LICENSE.txt'), join(vendor, 'ASTRONOMY-ENGINE-MIT-LICENSE.txt'));
 }
 const now = new Date().toISOString().slice(0, 10);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((url) => `  <url><loc>${url}</loc><lastmod>${now}</lastmod></url>`).join('\n')}\n</urlset>\n`;
-await writeFile(join(output, 'market-pilot-sitemap-fragment.xml'), sitemap);
+await writeFile(join(staging, 'market-pilot-sitemap-fragment.xml'), sitemap);
+await rename(staging, output);
 console.log(`Built ${urls.length} pilot routes for ${toolsToBuild.length} tools in ${locales.length} locales at ${output}. This is a test artifact, not the complete production site.`);

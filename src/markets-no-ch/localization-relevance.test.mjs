@@ -19,7 +19,7 @@ test('every catalog tool has one scope classification and audience note in the s
   assert.equal(new Set(notes).size, notes.length, 'each tool needs a tool-specific audience/use-case analysis, not a repeated template');
 
   const counts = Object.fromEntries(['universal', 'regional', 'jurisdictional', 'mixed'].map((scope) => [scope, rows.filter((row) => row.scope === scope).length]));
-  assert.deepEqual(counts, { universal: 30, regional: 11, jurisdictional: 6, mixed: 4 }, 'changing scope counts requires a deliberate audit update');
+  assert.deepEqual(counts, { universal: 36, regional: 10, jurisdictional: 39, mixed: 15 }, 'changing scope counts requires a deliberate audit update');
   for (const row of rows) assert.ok(row.note.length > 40, `${row.id} needs a meaningful audience/scope note`);
   for (const row of rows.filter(({ scope }) => scope === 'jurisdictional')) {
     assert.match(row.note, /norueg|suiz|cant[oó]n|UID|QR-bill/iu, `${row.id} must name the governing jurisdiction or local identifier`);

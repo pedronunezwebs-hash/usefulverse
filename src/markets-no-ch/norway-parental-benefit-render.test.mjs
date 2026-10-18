@@ -9,11 +9,18 @@ import { norwayParentalBenefitTranslationsByLocale } from './norway-parental-ben
 import { norwayUnemploymentBenefitEnglish } from './norway-unemployment-benefit-copy-en.mjs';
 import { norwayUnemploymentBenefitTranslationsByLocale } from './norway-unemployment-benefit-translations.mjs';
 import { translationsByLocale } from './translations.mjs';
+import { manualMarketMetadataOverridesByLocale } from './manual-localization-quality-overrides.mjs';
 
 const tool = marketTools.find(({ mode }) => mode === 'norwayParentalBenefit');
 const common = { ...english, ...norwayParentalBenefitEnglish, actions: english.actions, messages: english.messages };
 const allLocales = [...localeEntries, { key: 'nb', code: 'nb-NO', name: 'Norsk bokmål', prefix: '/nb' }];
 const escapeHtml = (value) => value.replace(/[&<>"']/gu, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
+const uniqueSourceStrings = (value) => {
+  if (typeof value === 'string') return [value];
+  if (Array.isArray(value)) return value.flatMap(uniqueSourceStrings);
+  if (value && typeof value === 'object') return Object.values(value).flatMap(uniqueSourceStrings);
+  return [];
+};
 
 test('parental-benefit planner renders global-language routes with Norway jurisdiction explicit', () => {
   assert.ok(tool);
@@ -29,8 +36,11 @@ test('parental-benefit planner renders global-language routes with Norway jurisd
     if (locale.key !== 'en') {
       const dictionary = norwayParentalBenefitTranslationsByLocale[locale.key];
       assert.ok(dictionary, `${locale.key} translation pack`);
-      assert.equal(Object.keys(dictionary).length, 83, `${locale.key} static tool-specific strings`);
-      assert.ok(html.includes(`<h1>${escapeHtml(dictionary[norwayParentalBenefitEnglish.name])}</h1>`), `${locale.key} translated heading`);
+      assert.equal(Object.keys(dictionary).length, new Set(uniqueSourceStrings(norwayParentalBenefitEnglish)).size, `${locale.key} static tool-specific strings`);
+      const expectedHeading = locale.key === 'nb'
+        ? manualMarketMetadataOverridesByLocale.nb[norwayParentalBenefitEnglish.name]
+        : dictionary[norwayParentalBenefitEnglish.name];
+      assert.ok(html.includes(`<h1>${escapeHtml(expectedHeading)}</h1>`), `${locale.key} translated heading`);
       assert.ok(dictionary[norwayParentalBenefitEnglish.fields.scope].length > 25, `${locale.key} has an explicit dated Norway scope`);
       assert.ok(html.includes(norwayUnemploymentBenefitTranslationsByLocale[locale.key][norwayUnemploymentBenefitEnglish.name]), `${locale.key} localizes the related Norway tool title`);
       assert.ok(!Object.values(dictionary).some((value) => /UVP\d{4}X|127\.0\.0\.1|AXWebArea/iu.test(value)), `${locale.key} has no capture artifacts`);

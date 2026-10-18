@@ -13,7 +13,7 @@ export function initBarcodeReader(documentRef = document, windowRef = window, na
   const clearButton = q('[data-barcode-clear]'); const copyAllButton = q('[data-barcode-copy-all]');
   let detector; let stream; let frameId; let lastScanAt = 0; let busy = false; let destroyed = false; let results = [];
   const say = (message) => { status.textContent = message; };
-  const updateButtons = () => { const ready = Boolean(detector); scanButton.disabled = !ready || !file.files?.[0]; cameraButton.disabled = !ready || Boolean(stream); stopButton.disabled = !stream; };
+  const updateButtons = () => { const ready = Boolean(detector); scanButton.disabled = !ready || !file.files?.[0]; cameraButton.disabled = !ready || Boolean(stream); stopButton.disabled = !stream; copyAllButton.disabled = !results.length; };
 
   function renderResults(next, capped = false) {
     results = next;
@@ -30,6 +30,7 @@ export function initBarcodeReader(documentRef = document, windowRef = window, na
       item.append(heading, value, check, button); resultList.append(item);
     }
     resultCount.textContent = results.length ? copy.resultCount.replace('{count}', String(results.length)) : '';
+    updateButtons();
     if (capped) say(copy.countLimit);
     else if (results.length) say(copy.resultCount.replace('{count}', String(results.length)));
   }

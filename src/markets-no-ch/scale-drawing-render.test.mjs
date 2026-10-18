@@ -12,6 +12,12 @@ const locales = [...localeEntries.map((entry) => ({ ...entry, rtl: ['ar', 'ur', 
 const tool = marketTools.find((entry) => entry.mode === 'scaleDrawing');
 const copy = { ...english, ...scaleDrawingEnglish, actions: english.actions, messages: english.messages };
 const escape = (value) => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
+const uniqueSourceStrings = (value) => {
+  if (typeof value === 'string') return [value];
+  if (Array.isArray(value)) return value.flatMap(uniqueSourceStrings);
+  if (value && typeof value === 'object') return Object.values(value).flatMap(uniqueSourceStrings);
+  return [];
+};
 
 test('scale-drawing copy is statically translated and renders complete metadata/actions on all 37 routes', () => {
   assert.ok(tool, 'catalog entry exists');
@@ -19,7 +25,7 @@ test('scale-drawing copy is statically translated and renders complete metadata/
   assert.equal(Object.keys(scaleDrawingTranslationsByLocale).length, 36);
   const expectedKeys = Object.keys(scaleDrawingEnglish);
   for (const [language, dictionary] of Object.entries(scaleDrawingTranslationsByLocale)) {
-    assert.equal(Object.keys(dictionary).length, 56, `${language} has each unique source string`);
+    assert.equal(Object.keys(dictionary).length, new Set(uniqueSourceStrings(scaleDrawingEnglish)).size, `${language} has each unique source string`);
     const combined = { ...(translationsByLocale[language] ?? {}), ...dictionary };
     for (const key of expectedKeys) {
       if (key === 'fields' || key === 'faq') continue;

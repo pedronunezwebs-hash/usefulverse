@@ -86,8 +86,8 @@ if (root) {
     q('[data-president-round]').textContent = String(game.round);
     q('[data-president-others]').textContent = isExchanging ? text('exchangePrompt', { player: playerName(exchange?.to), count: exchange?.count ?? 0 }) : game.players.filter(({ hand }) => hand.length).map((player) => `${playerName(player.id)}: ${player.hand.length}`).join(' · ');
     const rules = { ...PRESIDENT_DEFAULT_RULES, ...(game.rules ?? {}) };
-    const defaultsSelected = rules.opening === PRESIDENT_DEFAULT_RULES.opening && rules.allowReentry === PRESIDENT_DEFAULT_RULES.allowReentry && rules.exchangeCards === PRESIDENT_DEFAULT_RULES.exchangeCards;
-    q('[data-president-rules]').textContent = defaultsSelected ? copy.rulesSummary : text('customRulesActive', {
+    q('[data-president-rules]').textContent = text('rulesSummary', {
+      target: rules.targetScore ?? game.targetScore ?? 11,
       opening: rules.opening === 'three-clubs' ? copy.clubThree : copy.playerOne,
       reentry: rules.allowReentry ? copy.reentryYes : copy.reentryNo,
       exchange: rules.exchangeCards ? copy.exchangeOn : copy.exchangeOff,

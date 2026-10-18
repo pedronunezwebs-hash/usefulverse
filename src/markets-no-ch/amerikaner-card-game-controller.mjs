@@ -64,15 +64,17 @@ if (root) {
     q('[data-amerikaner-bid]').disabled = !legalNumbers.length;
 
     const firstRegularLead = leading && game.currentBid.type === 'tricks' && game.trickNumber === 0;
-    q('[data-amerikaner-request-wrap]').hidden = !firstRegularLead;
-    q('[data-amerikaner-lead-help]').textContent = firstRegularLead ? copy.leadHelp : copy.chooseLead;
     const leadCard = hand.find(({ id }) => id === selectedCardId);
     const requested = q('[data-amerikaner-request-card]');
     const declarerCards = new Set(hand.map(({ id }) => id));
-    const availableRequests = leadCard ? game.players.flatMap(({ hand: cards }) => cards).filter((card) => card.suit === leadCard.suit && !declarerCards.has(card.id)) : [];
+    const opponentCards = game.players.flatMap(({ hand: cards }) => cards).filter(({ id }) => !declarerCards.has(id));
+    const canRequestAnyCard = hand.some((lead) => opponentCards.some((card) => card.suit === lead.suit));
+    const availableRequests = leadCard ? opponentCards.filter((card) => card.suit === leadCard.suit) : [];
+    q('[data-amerikaner-request-wrap]').hidden = !firstRegularLead || !canRequestAnyCard;
+    q('[data-amerikaner-lead-help]').textContent = firstRegularLead && !canRequestAnyCard ? copy.noPartnerLead : firstRegularLead ? copy.leadHelp : copy.chooseLead;
     requested.innerHTML = availableRequests.map((card) => `<option value="${card.id}">${escapeHtml(cardName(card))}</option>`).join('');
     requested.disabled = !leadCard || !availableRequests.length;
-    q('[data-amerikaner-confirm-lead]').disabled = !leadCard || firstRegularLead && !availableRequests.length;
+    q('[data-amerikaner-confirm-lead]').disabled = !leadCard || firstRegularLead && canRequestAnyCard && !availableRequests.length;
 
     const legal = legalAmerikanerCards(game, 0);
     const isLegal = (id) => legal.some((card) => card.id === id);

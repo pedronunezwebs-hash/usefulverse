@@ -44,7 +44,7 @@ test('requires equal-sized sets and strictly higher rank; twos beat aces', () =>
 
 test('passing is optional and a pass can rejoin after a new player climbs', () => {
   const game = fixture({
-    hands: [[card(0, 0, 8), card(0, 1, 12)], [card(0, 0, 9)], [card(0, 0, 10)]],
+    hands: [[card(0, 0, 8), card(0, 1, 12)], [card(0, 0, 9), card(0, 1, 3)], [card(0, 0, 10), card(0, 1, 4)], [card(0, 0, 11), card(0, 1, 5)]],
     trick: [card(1, 0, 7)], lastPlay: { player: 2, rank: 7, cards: [card(1, 0, 7)] }, currentPlayer: 0,
   });
   presidentPass(game, 0);
@@ -54,6 +54,8 @@ test('passing is optional and a pass can rejoin after a new player climbs', () =
   assert.deepEqual(game.passed, []);
   assert.equal(game.currentPlayer, 2);
   presidentPlay(game, 2, ['0-0-10']);
+  assert.equal(game.currentPlayer, 3);
+  presidentPlay(game, 3, ['0-0-11']);
   assert.equal(game.currentPlayer, 0);
   assert.equal(presidentIsLegalPlay(game, 0, ['0-1-12']), true);
 });
@@ -80,11 +82,12 @@ test('rankings award points and start next deal with two-card exchange; human Pr
   game.players[2].hand = [card(0, 3, 7)];
   game.players[3].hand = [card(0, 0, 9), card(0, 1, 10)];
   presidentPlay(game, 0, ['0-0-3']);
+  presidentPlay(game, 2, ['0-3-7']);
   assert.equal(game.players[0].score, 2);
   assert.equal(game.round, 2);
   assert.equal(game.status, 'exchange');
   assert.equal(game.lastPlacements[0], 0);
-  assert.equal(game.exchangeQueue[0].from, 1);
+  assert.equal(game.exchangeQueue[0].from, 3);
   assert.equal(game.exchangeQueue[0].to, 0);
   const humanExchange = createPresidentGame({ seed: 20, players: 4 });
   humanExchange.round = 1;

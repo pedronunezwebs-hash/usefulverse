@@ -239,7 +239,7 @@ export function chooseIdiotCpuAction(game, player = game?.currentPlayer) {
     if (seat.faceDown.length) return { type: 'faceDown', index: Math.floor(seededRandom((game.seed + game.turns + player) >>> 0)() * seat.faceDown.length) };
   }
   const legal = idiotLegalHandCards(game, player);
-  if (!legal.length) return game.stock.length > game.discard.length ? { type: 'risk' } : { type: 'takePile' };
+  if (!legal.length) return { type: 'takePile' };
   const groups = new Map();
   for (const card of legal) groups.set(card.rank, [...(groups.get(card.rank) ?? []), card]);
   const candidates = [...groups.values()];

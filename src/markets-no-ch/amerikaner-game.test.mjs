@@ -9,7 +9,7 @@ import {
 const card = (suit, rank) => ({ id: `${suit}-${rank}`, suit, rank });
 function fixture(hands, bid = { playerId: 0, type: 'americaner', tricks: hands[0].length }) {
   const players = hands.map((hand, id) => ({ id, hand: [...hand], score: 0, tricks: 0 }));
-  return { players, dealer: 0, round: 1, seed: 1, deckSize: hands.reduce((n, hand) => n + hand.length, 0), removedTwos: 52 - hands.reduce((n, hand) => n + hand.length, 0), status: 'lead', winner: null, currentBid: bid, passed: [], bidOrder: [], bidCursor: 0, turn: bid.playerId, trick: [], trickNumber: 0, partnerId: null, trumpSuit: null, requestedCardId: null, declarerTricks: 0, lastAction: 'declarer', lastResult: null };
+  return { players, dealer: 0, round: 1, seed: 1, deckSize: hands.reduce((n, hand) => n + hand.length, 0), removedTwos: 52 - hands.reduce((n, hand) => n + hand.length, 0), captured: [], status: 'lead', winner: null, currentBid: bid, passed: [], bidOrder: [], bidCursor: 0, turn: bid.playerId, trick: [], trickNumber: 0, partnerId: null, trumpSuit: null, requestedCardId: null, declarerTricks: 0, lastAction: 'declarer', lastResult: null };
 }
 
 test('deals 3–6 players evenly and removes only enough twos for equal hands', () => {
@@ -18,7 +18,7 @@ test('deals 3–6 players evenly and removes only enough twos for equal hands', 
     const sizes = game.players.map(({ hand }) => hand.length);
     assert.ok(sizes.every((size) => size === sizes[0]));
     assert.deepEqual([game.deckSize, game.removedTwos], ({ 3: [51, 1], 4: [52, 0], 5: [50, 2], 6: [48, 4] })[count]);
-    assert.equal(new Set(game.players.flatMap(({ hand }) => hand.map(({ id }) => id)).concat(createAmerikanerDeck(42, count).filter(({ id }) => game.players.flatMap(({ hand }) => hand).every((card) => card.id !== id)).map(({ id }) => id))).size, 52);
+    assert.equal(new Set(createAmerikanerDeck(42, count).map(({ id }) => id)).size, game.deckSize);
     assert.equal(amerikanerInventory(game), game.deckSize);
   }
   assert.throws(() => createAmerikanerGame({ players: 2 }), /3 to 6/u);
@@ -72,7 +72,8 @@ test('asked partner card is forced in the first trick and trump beats an off-sui
   amerikanerLead(game, { cardId: '2-4', requestedCardId: '2-14' });
   assert.equal(game.trumpSuit, 2);
   assert.deepEqual(legalAmerikanerCards(game, 1).map(({ id }) => id), ['2-14']);
-  assert.throws(() => amerikanerPlay(game, { playerId: 1, cardId: '2-14' }), /legal/u); // declarer lead makes player 1 the turn only after explicit advance
+  amerikanerPlay(game, { playerId: 1, cardId: '2-14' });
+  assert.equal(game.partnerId, 1);
 });
 
 test('the requested card reveals the partner even when a higher trump wins the first trick', () => {

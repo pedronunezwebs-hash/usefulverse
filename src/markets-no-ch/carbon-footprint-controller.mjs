@@ -30,12 +30,32 @@ export function initCarbonFootprint(documentRef = document) {
   const format = (amount) => new Intl.NumberFormat(documentRef.documentElement.lang || 'en', { maximumFractionDigits: 2 }).format(amount);
   const render = (comparison) => {
     const labels = { electricity: copy.electricity, heating: copy.heating, transport: copy.transport, flights: copy.flights, other: copy.other };
-    const rows = Object.keys(labels).map((key) => {
-      const before = comparison.baseline.bySector[key]; const after = comparison.scenario.bySector[key];
-      return `<tr><th scope="row">${labels[key]}</th><td>${format(before.activity)} ${before.unit}</td><td>${format(before.factorKgPerUnit)} kg/${before.unit}</td><td>${format(before.emissionsKg)}</td><td>${format(after.emissionsKg)}</td></tr>`;
-    }).join('');
+    const node = (tag, text, scope) => { const item = documentRef.createElement(tag); item.textContent = String(text); if (scope) item.scope = scope; return item; };
+    results.replaceChildren();
+    const totals = documentRef.createElement('div'); totals.className = 'carbon-totals';
     const diff = comparison.differenceKg;
-    results.innerHTML = `<div class="carbon-totals"><p>${copy.baselineTotal}<strong>${format(comparison.baseline.totalKg)} kg CO2e</strong></p><p>${copy.scenarioTotal}<strong>${format(comparison.scenario.totalKg)} kg CO2e</strong></p><p>${copy.difference}<strong>${diff > 0 ? '+' : ''}${format(diff)} kg CO2e</strong></p></div><div class="table-scroll"><table><thead><tr><th scope="col">${copy.fields?.sector ?? 'Sector'}</th><th scope="col">${copy.activity}</th><th scope="col">${copy.factor}</th><th scope="col">${copy.baselineEmissions}</th><th scope="col">${copy.scenarioEmissions}</th></tr></thead><tbody>${rows}<tr><th scope="row">Total</th><td colspan="2">${copy.status.replace('{count}', '5')}</td><td>${format(comparison.baseline.totalKg)}</td><td>${format(comparison.scenario.totalKg)}</td></tr></tbody></table></div>`;
+    for (const [label, amount] of [[copy.baselineTotal, comparison.baseline.totalKg], [copy.scenarioTotal, comparison.scenario.totalKg], [copy.difference, diff]]) {
+      const paragraph = documentRef.createElement('p');
+      paragraph.append(node('span', label), node('strong', `${amount > 0 && label === copy.difference ? '+' : ''}${format(amount)} kg CO2e`));
+      totals.append(paragraph);
+    }
+    const table = documentRef.createElement('table');
+    const head = documentRef.createElement('thead'); const headRow = documentRef.createElement('tr');
+    for (const label of [copy.fields?.sector ?? 'Sector', copy.activity, copy.factor, copy.baselineEmissions, copy.scenarioEmissions]) headRow.append(node('th', label, 'col'));
+    head.append(headRow);
+    const body = documentRef.createElement('tbody');
+    for (const key of Object.keys(labels)) {
+      const before = comparison.baseline.bySector[key]; const after = comparison.scenario.bySector[key];
+      const row = documentRef.createElement('tr');
+      row.append(node('th', labels[key], 'row'), node('td', `${format(before.activity)} ${before.unit}`), node('td', `${format(before.factorKgPerUnit)} kg/${before.unit}`), node('td', format(before.emissionsKg)), node('td', format(after.emissionsKg)));
+      body.append(row);
+    }
+    const total = documentRef.createElement('tr');
+    const totalLabel = node('th', 'Total', 'row'); const totalDescription = node('td', copy.status.replace('{count}', '5')); totalDescription.colSpan = 2;
+    total.append(totalLabel, totalDescription, node('td', format(comparison.baseline.totalKg)), node('td', format(comparison.scenario.totalKg)));
+    body.append(total); table.append(head, body);
+    const scroll = documentRef.createElement('div'); scroll.className = 'table-scroll'; scroll.append(table);
+    results.append(totals, scroll);
     results.hidden = false;
     status.textContent = copy.reduction.replace('{percent}', format(comparison.reductionPercent ?? 0));
     exportButton.disabled = false;

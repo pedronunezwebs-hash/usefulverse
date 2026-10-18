@@ -1,4 +1,6 @@
-import { access, readFile } from 'node:fs/promises';
+import { access, cp, readFile, rename, rm } from 'node:fs/promises';
+import { execFile as execFileCallback } from 'node:child_process';
+import { promisify } from 'node:util';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { build } from 'esbuild';
@@ -6,6 +8,7 @@ import { minify as minifyCss } from 'csso';
 import { localeEntries } from '../src/locales.mjs';
 import { tools as currentTools } from '../src/catalog.mjs';
 import { growthPilotTools } from '../src/growth600/catalog.mjs';
+import { marketTools } from '../src/markets-no-ch/catalog.mjs';
 import { bundleGrowthControllers } from '../src/growth600/bundle-controllers.mjs';
 import { buildGrowthStaticSite } from '../src/growth600/build.mjs';
 import markdownEditorCopies from '../src/growth600/locales/markdown-editor-final.mjs';
@@ -52,6 +55,7 @@ import tripeaksSolitaireCopies from '../src/growth600/locales/tripeaks-solitaire
 import pendingToolsCopies from '../src/growth600/locales/pending-tools-final.mjs';
 
 const root = resolve(import.meta.dirname, '..');
+const execFile = promisify(execFileCallback);
 const localeDir = resolve(root, 'src/growth600/locales');
 const missing = [];
 const copyByLocale = {};
@@ -143,6 +147,11 @@ for (const { key } of localeEntries) {
 }
 
 const outputDir = resolve(process.env.GROWTH600_DIST ?? resolve(root, 'dist-growth600'));
+if (await access(outputDir).then(() => true, () => false)) throw new Error(`Refusing to overwrite existing release directory: ${outputDir}`);
+const buildId = `${process.pid}-${Date.now()}`;
+const growthOnlyDir = `${outputDir}.growth-only-${buildId}`;
+const marketToolsDir = `${outputDir}.market-tools-${buildId}`;
+const mergedDir = `${outputDir}.merged-${buildId}`;
 const styleFiles = [
   'src/growth600/site.css', 'src/growth600/rtl-fixes.css',
   'src/growth600/tools/peg-solitaire/peg-solitaire.css',
@@ -243,7 +252,7 @@ const workerBuild = await build({
   bundle: true, format: 'esm', platform: 'browser', target: ['es2022'], minify: true, write: false, logLevel: 'silent',
 });
 const result = await buildGrowthStaticSite({
-  outputDir,
+  outputDir: growthOnlyDir,
   origin: 'https://tools.usefulverse.com',
   localeEntries,
   copyByLocale,
@@ -261,4 +270,23 @@ const result = await buildGrowthStaticSite({
   maxFiles: 18_500,
   maxAssetBytes: 24 * 1024,
 });
-console.log(`Built ${result.pages} static pages for ${growthPilotTools.length} new tools in ${localeEntries.length} locales (${result.files} files, ${result.totalBytes} bytes).`);
+console.log(`Built ${result.pages} Growth600 pages for ${growthPilotTools.length} new tools in ${localeEntries.length} locales (${result.files} files, ${result.totalBytes} bytes).`);
+
+try {
+  await execFile(process.execPath, [resolve(root, 'scripts/build-markets-no-ch-pilot.mjs')], {
+    cwd: root,
+    env: { ...process.env, MARKETS_NO_CH_DIST: marketToolsDir },
+    maxBuffer: 8 * 1024 * 1024,
+  });
+  await cp(growthOnlyDir, mergedDir, { recursive: true, errorOnExist: true, force: false });
+  await execFile(process.execPath, [resolve(root, 'scripts/merge-markets-no-ch-into-growth600.mjs')], {
+    cwd: root,
+    env: { ...process.env, MARKETS_NO_CH_DIST: marketToolsDir, GROWTH600_DIST: mergedDir },
+    maxBuffer: 8 * 1024 * 1024,
+  });
+  await rename(mergedDir, outputDir);
+  await Promise.all([rm(growthOnlyDir, { recursive: true }), rm(marketToolsDir, { recursive: true })]);
+} catch (error) {
+  throw new Error(`Growth600 + 100 market-tool release assembly failed. Growth build: ${growthOnlyDir}; market build: ${marketToolsDir}; merged staging: ${mergedDir}. ${error.message}`, { cause: error });
+}
+console.log(`Assembled additive release with the Growth600 pages plus ${growthPilotTools.length} Growth tools and ${marketTools.length} market tools; publishing directory: ${outputDir}.`);

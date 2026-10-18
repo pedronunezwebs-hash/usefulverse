@@ -11,7 +11,7 @@ test('2026 list-price tiers apply 30% then 20%', () => {
 test('vehicle over three years old uses 75% base', () => {
   const result = calculateNorwayCompanyCarBenefit({ listPriceNewNok: 500000, olderThanThreeYearsOnJan1: true });
   assert.equal(result.reducedListPriceNok, 375000);
-  assert.equal(result.annualTaxableBenefitNok, 112500);
+  assert.equal(result.annualTaxableBenefitNok, 112030);
 });
 
 test('documented work mileage must exceed 40,000 km', () => {

@@ -54,6 +54,7 @@ function sortedCards(cards, direction = 1) {
 }
 
 function dealRound(game, previousPlacements = []) {
+  game.rules = normalizeRules(game.rules);
   const decks = game.players.length > 6 ? 2 : 1;
   const deck = createPresidentDeck((game.seed + game.round * 0x9e3779b9) >>> 0, decks);
   for (const player of game.players) player.hand = [];

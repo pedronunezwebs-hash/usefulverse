@@ -30,7 +30,15 @@ export function makeGeographyQuestion({ features, mode = 'country', scope = 'wor
   if (scope !== 'world' && !geographyContinents.includes(scope)) throw new RangeError('Unknown geography scope.');
   const excluded = new Set(excludedIds);
   const included = includedIds.length ? new Set(includedIds) : null;
-  const mapped = features.filter((feature) => feature.iso2 && continentGroup(feature.continent) && (scope === 'world' || continentGroup(feature.continent) === scope));
+  // Map Units includes overseas units with their sovereign state's ISO2 code.
+  // Keep one answer per ISO2 code so flag mode never shows duplicate flags as
+  // distinct choices, while the map itself can still draw all map units.
+  const seenCodes = new Set();
+  const mapped = features.filter((feature) => {
+    if (!feature.iso2 || seenCodes.has(feature.iso2) || !continentGroup(feature.continent)) return false;
+    seenCodes.add(feature.iso2);
+    return scope === 'world' || continentGroup(feature.continent) === scope;
+  });
   const pool = mapped.filter((feature) => !excluded.has(feature.id) && (mode !== 'flag' || feature.continent !== 'Antarctica'));
   const candidates = included ? pool.filter((feature) => included.has(feature.id)) : pool;
   if (pool.length < 4 || !candidates.length) throw new RangeError('At least four answerable map features and one target are required for this mode and scope.');

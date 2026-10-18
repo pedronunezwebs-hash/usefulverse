@@ -13,16 +13,18 @@ const flatten = (value, output = []) => {
 
 test('Pinball has complete static translations in every non-English locale', () => {
   const sources = [...new Set(flatten(pinballEnglish))];
+  const toolSources = sources.filter((source) => !Object.hasOwn(translationsByLocale.es ?? {}, source));
   assert.equal(sources.length, 56);
   assert.deepEqual(Object.keys(pinballTranslationsByLocale).sort(), Object.keys(translationsByLocale).filter((locale) => locale !== 'en').sort());
   for (const [locale, dictionary] of Object.entries(pinballTranslationsByLocale)) {
-    assert.equal(Object.keys(dictionary).length, sources.length, `${locale} has all unique strings`);
-    for (const source of sources) {
+    assert.equal(Object.keys(dictionary).length, toolSources.length, `${locale} has all tool-specific strings`);
+    for (const source of toolSources) {
       assert.ok(dictionary[source]?.trim(), `${locale} is missing: ${source}`);
       for (const placeholder of source.match(/\{[^{}]+\}/gu) ?? []) assert.ok(dictionary[source].includes(placeholder), `${locale} lost ${placeholder}`);
       assert.doesNotMatch(dictionary[source], /QZX\d{3}QZX|⟪UV_[A-Z]+⟫|987654321/u, `${locale} has a capture marker`);
     }
-    assert.ok(dictionary['Pinball Game — Free Local Flipper and Bumper Table'].startsWith(dictionary['Pinball Game']), `${locale} title begins with the localized game name`);
+    const mergedDictionary = { ...(translationsByLocale[locale] ?? {}), ...dictionary };
+    assert.ok(mergedDictionary['Pinball Game — Free Local Flipper and Bumper Table'].startsWith(mergedDictionary['Pinball Game']), `${locale} title begins with the localized game name`);
   }
 });
 

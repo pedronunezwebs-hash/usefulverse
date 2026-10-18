@@ -1,0 +1,28 @@
+export const currencyConverterEnglish = Object.freeze({
+  name: 'Currency Converter',
+  title: 'Currency Converter — Free Rates, Fees & Offline Tools',
+  description: 'Convert NOK, CHF, EUR and major currencies using dated ECB reference rates. Compare fees and exchange margins, convert a list of amounts, and save rates on this device.',
+  intro: 'Convert between popular currencies with dated European Central Bank reference rates. Update rates only when you choose; the last successful snapshot stays on this device for offline use.',
+  privacy: 'Your inputs stay on this device. Nothing is uploaded.',
+  exampleHeading: 'Example', example: 'At 1 EUR = 10 NOK, converting 20 EUR gives 200 NOK before fees. Add a 1 EUR fixed fee and 2% fee to see the estimated net amount.',
+  howItWorks: 'How conversion works',
+  details: 'Convert between popular currencies with dated European Central Bank reference rates. Update rates only when you choose; the last successful snapshot stays on this device for offline use.',
+  faqHeading: 'Frequently asked questions',
+  faq: [
+    { q: 'Are these live market or bank rates?', a: 'No. ECB reference rates are informational and may differ from live market, card, bank or cash-exchange rates. A provider may also add its own spread.' },
+    { q: 'Does this page send my amounts to a server?', a: 'No. Conversion and fee calculations happen in this browser. Amounts are never sent when rates update.' },
+    { q: 'Can I use the converter offline?', a: 'Yes, after you have loaded or imported rates once on this device. The saved snapshot shows its observation date, so it is not presented as current when offline.' },
+  ],
+  limitsHeading: 'Limits and accuracy',
+  limits: 'ECB reference rates are indicative, published on working days, and not intended for transaction pricing.',
+  fields: {
+    amounts: 'Amounts to convert (one per line)', from: 'From currency', to: 'To currency', fixedFee: 'Fixed fee in the source currency',
+    percentageFee: 'Percentage fee (%)', margin: 'Exchange-rate margin (%)', rateStatus: 'Rate status',
+    noRates: 'No rates loaded. Update from the ECB or paste a dated CSV.', requesting: 'Requesting the latest available ECB reference rates…',
+    updated: 'Reference rates updated', updateFailed: 'Could not load ECB rates. Try later or paste a dated CSV.',
+    update: 'Update rates from ECB', pasteHeading: 'Paste an ECB CSV rates file', pasteHelp: 'Optional: paste the full CSV downloaded from the ECB. Rates are stored only in this browser.',
+    import: 'Import and save rates', imported: 'Rates imported and saved on this device', invalidCsv: 'CSV is invalid or missing the date, NOK or CHF rates.',
+    invalid: 'Check the amounts, fees and rate snapshot, then try again.', beforeFees: 'Before fees', received: 'Estimated amount received', fixedFeeResult: 'Fixed fee', percentageFeeResult: 'Percentage fee',
+    marginResult: 'Rate margin', reset: 'Reset fees and amounts', source: 'ECB reference rates',
+  },
+});

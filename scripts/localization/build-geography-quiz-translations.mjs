@@ -39,6 +39,7 @@ for (const locale of locales) {
     }
     dictionary[source] = translation.trim();
   });
+  if (locale === 'nb') dictionary[geographyQuizEnglish.name] = 'Verdenskartquiz i geografi';
   packs[locale] = dictionary;
 }
 
@@ -47,7 +48,8 @@ for (const dictionary of Object.values(packs)) {
   const name = dictionary[geographyQuizEnglish.name];
   const rawTitle = dictionary[titleSource] ?? name;
   const escapedName = name.replace(/[.*+?^${}()|[\]\\]/gu, '\\$&');
-  const tail = rawTitle.replace(new RegExp(`^${escapedName}\\s*[—–:·-]?\\s*`, 'iu'), '').replace(/^[\s—–:·-]+/u, '').trim();
+  const titleWithoutName = rawTitle.startsWith(name) ? rawTitle.slice(name.length).replace(/^[\s—–:·-]+/u, '').trim() : '';
+  const tail = titleWithoutName || rawTitle.split(' — ').slice(1).join(' — ').trim();
   dictionary[titleSource] = tail ? `${name} — ${tail}` : name;
 }
 

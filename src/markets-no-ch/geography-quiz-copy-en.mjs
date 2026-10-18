@@ -13,7 +13,7 @@ export const geographyQuizEnglish = Object.freeze({
     { q: 'Is my score uploaded?', a: 'No. Progress and missed answers are stored only in this browser. There is no account or online ranking.' },
   ],
   limitsHeading: 'Map source and limits',
-  limits: 'Made with Natural Earth 1:50m Admin 0 country outlines, version 5.1.1, a public-domain dataset. The source depicts de facto control and may generalize or omit small features. It is a learning map, not a legal statement of borders or sovereignty. The map was last refreshed locally on {date}.',
+  limits: 'Made with Natural Earth 1:50m Admin 0 map units, version 5.1.1, a public-domain dataset. The map draws country and territory units, while country and flag questions use one answer per ISO2 code to avoid duplicate flags. Natural Earth depicts de facto control and may generalize or omit small features. This is a learning map, not a legal statement of borders or sovereignty. The map was last refreshed locally on {date}.',
   privacy: 'Free to play. Your progress and review list stay in this browser; nothing is uploaded.',
   useTool: 'Practice geography', related: 'Related tools', freeBadge: 'FREE · MAP AND QUIZ RUN IN YOUR BROWSER', language: 'Language', siteName: 'UsefulVerse', home: 'All tools',
   fields: Object.freeze({

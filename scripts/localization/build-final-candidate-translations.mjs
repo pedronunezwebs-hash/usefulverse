@@ -57,7 +57,8 @@ async function translate(locale, rows, offset) {
 
 for (const locale of locales) {
   const dictionary = packs[locale.key] ?? {};
-  if (Object.keys(dictionary).length === sources.length) { console.log(`${locale.key}: recovered from checkpoint`); continue; }
+  for (const key of Object.keys(dictionary)) if (!sourcesSet.has(key)) delete dictionary[key];
+  if (sources.every((source) => dictionary[source]?.trim()) && Object.keys(dictionary).length === sources.length) { console.log(`${locale.key}: recovered from checkpoint`); continue; }
   for (let offset = 0; offset < sources.length; offset += 8) {
     const batch = sources.slice(offset, offset + 8);
     if (batch.every((source) => dictionary[source]?.trim())) continue;

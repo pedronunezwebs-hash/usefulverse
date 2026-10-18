@@ -66,7 +66,6 @@ async function translateBatch(language, rows) {
   throw lastError;
 }
 
-const packs = {};
 for (const { key: locale } of locales) {
   const dictionary = packs[locale] ?? {};
   for (const key of Object.keys(dictionary)) if (!sources.includes(key)) delete dictionary[key];

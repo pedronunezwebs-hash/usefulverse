@@ -11,6 +11,7 @@ const rectCells = (rect, size) => {
   const cells = [];
   for (let row = rect.top; row <= rect.bottom; row += 1) for (let col = rect.left; col <= rect.right; col += 1) cells.push(indexOf(row, col, size));
   return cells;
+};
 const area = (rect) => (rect.bottom - rect.top + 1) * (rect.right - rect.left + 1);
 
 export function validateShikaku(puzzle, regions) {

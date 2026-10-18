@@ -7,6 +7,8 @@ import { swissBvgPensionEnglish } from '../../src/markets-no-ch/swiss-bvg-pensio
 import { swissPensionWithdrawalEnglish } from '../../src/markets-no-ch/swiss-pension-withdrawal-copy-en.mjs';
 import { swissHealthDeductibleEnglish } from '../../src/markets-no-ch/swiss-health-deductible-copy-en.mjs';
 import { swissRentAdjustmentEnglish } from '../../src/markets-no-ch/swiss-rent-adjustment-copy-en.mjs';
+import { swissWheelOffsetEnglish } from '../../src/markets-no-ch/swiss-wheel-offset-copy-en.mjs';
+import { petAgeEnglish } from '../../src/markets-no-ch/pet-age-copy-en.mjs';
 
 const modelId = 'Kutalia/madlad400-3b-mt-onnx';
 const cacheDir = '/private/tmp/usefulverse-madlad-cache';
@@ -44,6 +46,8 @@ const tools = [
   ['swiss-pension-withdrawal', swissPensionWithdrawalEnglish, 'swissPensionWithdrawalTranslationsByLocale'],
   ['swiss-health-deductible', swissHealthDeductibleEnglish, 'swissHealthDeductibleTranslationsByLocale'],
   ['swiss-rent-adjustment', swissRentAdjustmentEnglish, 'swissRentAdjustmentTranslationsByLocale'],
+  ['swiss-wheel-offset', swissWheelOffsetEnglish, 'swissWheelOffsetTranslationsByLocale'],
+  ['pet-age', petAgeEnglish, 'petAgeTranslationsByLocale'],
 ];
 const progress = {};
 const fallbacks = [];

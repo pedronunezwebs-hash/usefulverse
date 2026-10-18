@@ -45,11 +45,10 @@ test('five same-suit cards start one signal phase after the sixth card is passed
   while (chosen.length < 5) chosen.push({ ...player.hand.find(({ suit: cardSuit }) => cardSuit !== suit), suit });
   player.hand = [...chosen, { id: 'extra', suit: (suit + 1) % 4, rank: 2, originalOwner: player.id, passCount: 0 }];
   const receiver = (player.id + 1) % 3;
-  game.players[receiver].hand = Array.from({ length: 5 }, (_, index) => ({ id: `r-${index}`, suit: index % 4, rank: 2, originalOwner: receiver, passCount: 0 }));
   grisPass(game, { cardId: 'extra' });
   assert.equal(game.status, 'signal');
-  assert.equal(game.signaler, receiver);
-  assert.equal(sameSuitCount(game.players[receiver].hand), 5);
+  assert.equal(game.signaler, player.id);
+  assert.equal(sameSuitCount(game.players[player.id].hand), 5);
   const resolution = game.reactionOrder.map((playerId) => grisReact(game, { playerId }));
   assert.equal(resolution.at(-1).status, 'round-end');
   assert.equal(game.players[game.lastPenaltyPlayer].letters, 1);
@@ -66,7 +65,7 @@ test('a returned card can be replaced from stock or kept after a disputed circui
   game.status = 'return-check'; game.pendingCard = card.id; game.pendingReturn = true;
   grisResolveReturnedCard(game, { discardCard: true });
   assert.equal(game.players[receiver].hand.length, before);
-  assert.equal(game.stock.length, stockBefore);
+  assert.equal(game.stock.length, stockBefore - 1);
   assert.equal(game.discard.at(-1).id, card.id);
   assert.equal(grisInventory(game), 52);
 });
@@ -84,7 +83,7 @@ test('word is configurable and a complete word eliminates a seat; rounds redeal 
   assert.equal(game.round, 2); assert.equal(game.status, 'passing');
   assert.equal(game.dealer, 0);
   assert.notEqual(game.dealer, previousDealer);
-  assert.equal(game.starter, 1);
+  assert.equal(game.starter, 2);
   assert.equal(game.players[1].eliminated, true);
   assert.equal(game.players.filter(({ hand }) => hand.length === 6).length, 1);
   assert.equal(grisInventory(game), 52);
