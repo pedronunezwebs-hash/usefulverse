@@ -1,4 +1,4 @@
-import { access, cp, readFile, rename, rm } from 'node:fs/promises';
+import { access, cp, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import { execFile as execFileCallback } from 'node:child_process';
 import { promisify } from 'node:util';
 import { resolve } from 'node:path';
@@ -289,6 +289,9 @@ try {
     env: { ...process.env, GROWTH600_DIST: mergedDir },
     maxBuffer: 8 * 1024 * 1024,
   });
+  const indexNowKey = (await readFile(resolve(root, 'src/growth600/indexnow-key.txt'), 'utf8')).trim();
+  if (!/^[a-f0-9]{8,128}$/u.test(indexNowKey)) throw new Error('Growth600 IndexNow key must contain 8 to 128 lowercase hexadecimal characters.');
+  await writeFile(resolve(mergedDir, `${indexNowKey}.txt`), `${indexNowKey}\n`, { flag: 'wx' });
   await rename(mergedDir, outputDir);
   await Promise.all([rm(growthOnlyDir, { recursive: true }), rm(marketToolsDir, { recursive: true })]);
 } catch (error) {
