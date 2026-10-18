@@ -1,0 +1,21 @@
+.options-profit-calculator__results dl {
+  display: grid;
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+.options-profit-calculator__results dl > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.35rem 1rem;
+  border-bottom: 1px solid var(--border-color, #d8dee9);
+  padding: 0.55rem 0;
+}
+.options-profit-calculator__results dt {
+  font-weight: 600;
+}
+.options-profit-calculator__results dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+}

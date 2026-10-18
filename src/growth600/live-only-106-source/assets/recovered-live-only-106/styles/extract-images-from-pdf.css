@@ -1,0 +1,31 @@
+.extract-images-pdf__results {
+  margin-block: 1.5rem;
+}
+.extract-images-pdf__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+.extract-images-pdf__item {
+  min-width: 0;
+  border: 1px solid var(--color-border, #cbd5e1);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+.extract-images-pdf__preview {
+  display: block;
+  width: 100%;
+  height: 12rem;
+  object-fit: contain;
+  background: #f8fafc;
+  border-radius: 0.4rem;
+}
+.extract-images-pdf progress {
+  width: 100%;
+  margin-block: 1rem;
+}
+.extract-images-pdf__item p {
+  overflow-wrap: anywhere;
+}

@@ -1,0 +1,86 @@
+.push-up-test {
+  display: grid;
+  gap: 1rem;
+}
+.push-up-summary,
+.push-up-test .calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+.push-up-summary {
+  margin: 0;
+}
+.push-up-summary dt {
+  font-weight: 600;
+}
+.push-up-summary dd {
+  margin: 0 0 0.65rem;
+}
+.push-up-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+.push-up-consent input {
+  flex: none;
+  margin-top: 0.25rem;
+}
+.push-up-table-scroll {
+  max-width: 100%;
+  overflow: auto;
+}
+.push-up-history table,
+.push-up-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.push-up-test td,
+.push-up-test th {
+  padding: 0.55rem;
+  text-align: start;
+  border-bottom: 1px solid var(--border-color, #d9e0df);
+}
+.push-up-test caption {
+  text-align: start;
+  font-weight: 600;
+  padding: 0.5rem;
+}
+.push-up-history figure {
+  margin: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+.push-up-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+}
+.push-up-axis {
+  stroke: currentColor;
+  stroke-opacity: 0.4;
+}
+.push-up-bar {
+  fill: var(--accent, #c8f44b);
+}
+.push-up-tick {
+  font-size: 12px;
+  fill: currentColor;
+}
+.push-up-test textarea {
+  width: 100%;
+  resize: vertical;
+}
+.push-up-test .result {
+  min-width: 0;
+}
+.push-up-test .hint {
+  line-height: 1.55;
+}
+@media (max-width: 560px) {
+  .push-up-summary,
+  .push-up-test .calculator-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

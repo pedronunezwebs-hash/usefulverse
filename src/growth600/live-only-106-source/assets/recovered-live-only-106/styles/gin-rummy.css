@@ -1,0 +1,72 @@
+.gin-rummy__layout {
+  display: grid;
+  gap: 1rem;
+}
+.gin-rummy__zone {
+  border: 1px solid var(--border, #d8deea);
+  border-radius: 0.9rem;
+  padding: 1rem;
+}
+.gin-rummy__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  min-height: 3rem;
+}
+.gin-rummy__card {
+  align-items: center;
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #cbd3e1);
+  border-radius: 0.55rem;
+  color: var(--text, #172033);
+  display: inline-flex;
+  font:
+    650 1rem/1 system-ui,
+    sans-serif;
+  justify-content: center;
+  min-height: 3.25rem;
+  min-width: 3.4rem;
+  padding: 0.55rem;
+}
+.gin-rummy__card:not(:disabled) {
+  cursor: pointer;
+}
+.gin-rummy__card:focus-visible,
+.gin-rummy__card:not(:disabled):hover {
+  outline: 3px solid var(--accent, #7fb900);
+  outline-offset: 2px;
+}
+.gin-rummy__card:disabled {
+  opacity: 0.72;
+}
+.gin-rummy__card--back {
+  background: var(--surface-muted, #e9eef7);
+  color: var(--muted, #5a6577);
+}
+.gin-rummy__controls,
+.gin-rummy__summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+.gin-rummy__summary p {
+  margin: 0;
+}
+.gin-rummy__controls {
+  align-items: center;
+  gap: 0.65rem;
+}
+.gin-rummy__controls label {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.45rem;
+}
+@media (max-width: 36rem) {
+  .gin-rummy__zone {
+    padding: 0.75rem;
+  }
+  .gin-rummy__card {
+    min-height: 2.9rem;
+    min-width: 2.9rem;
+  }
+}

@@ -1,0 +1,40 @@
+.vcard-converter {
+  display: grid;
+  gap: 1rem;
+}
+.vcard-converter textarea {
+  inline-size: 100%;
+  max-inline-size: 100%;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+.vcard-converter__fields {
+  min-inline-size: 0;
+  border: 1px solid var(--line, #d9dee7);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.vcard-converter__fields legend {
+  padding-inline: 0.4rem;
+  font-weight: 700;
+}
+.vcard-converter__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: 0.65rem 1rem;
+}
+.vcard-converter__choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  min-inline-size: 0;
+}
+.vcard-converter__choice input {
+  flex: 0 0 auto;
+  margin-block: 0.2rem;
+}
+.vcard-converter [data-result] textarea {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: plaintext;
+  overflow-wrap: anywhere;
+}

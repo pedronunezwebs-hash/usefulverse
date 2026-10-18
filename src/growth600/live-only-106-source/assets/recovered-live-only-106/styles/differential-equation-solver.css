@@ -1,0 +1,68 @@
+.ode-figure,
+.ode-table-scroll {
+  max-width: 100%;
+  margin: 1rem 0;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: #fff;
+}
+.ode-figure {
+  overflow: hidden;
+  padding: 0.5rem;
+}
+.ode-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.ode-axis {
+  stroke: #87938f;
+  stroke-width: 1.5;
+}
+.ode-line {
+  fill: none;
+  stroke: #526b00;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ode-end,
+.ode-start {
+  fill: #83a900;
+  stroke: #354600;
+  stroke-width: 1.5;
+}
+.ode-label {
+  fill: var(--ink);
+  font:
+    12px ui-sans-serif,
+    system-ui,
+    sans-serif;
+}
+.ode-table-scroll {
+  overflow: auto;
+}
+.ode-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.ode-table caption {
+  padding: 0.6rem;
+  text-align: start;
+  font-weight: 700;
+}
+.ode-table td,
+.ode-table th {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--line);
+  text-align: end;
+  white-space: nowrap;
+}
+.ode-table th {
+  background: #eef3ec;
+}
+.ode-table-scroll:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}

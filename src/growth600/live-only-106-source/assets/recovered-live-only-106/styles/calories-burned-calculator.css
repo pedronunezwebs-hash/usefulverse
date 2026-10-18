@@ -1,0 +1,30 @@
+.calories-burned-calculator {
+  display: grid;
+  gap: 1rem;
+}
+.calories-burned-calculator [data-custom-met][hidden] {
+  display: none;
+}
+.calories-burned-calculator__results dl {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.55rem 1rem;
+}
+.calories-burned-calculator__results dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+}
+.calories-burned-calculator__results dd:last-child {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 32rem) {
+  .calories-burned-calculator__results dl {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+  .calories-burned-calculator__results dd {
+    margin-block-end: 0.55rem;
+    text-align: start;
+  }
+}

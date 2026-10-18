@@ -1,0 +1,70 @@
+.fuel-economy {
+  display: grid;
+  gap: 1rem;
+}
+.fuel-economy__fields,
+.fuel-economy__metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: 0.8rem;
+}
+.fuel-economy__note {
+  padding: 0.85rem 1rem;
+  border-inline-start: 0.25rem solid var(--accent, #a9e747);
+  background: var(--surface, #fff);
+  border-radius: 0.45rem;
+}
+.fuel-economy__results {
+  display: grid;
+  gap: 1rem;
+}
+.fuel-economy__metrics .result-block {
+  min-width: 0;
+}
+.fuel-economy__metrics output {
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
+}
+.fuel-economy__table-wrap {
+  overflow-x: auto;
+}
+.fuel-economy__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.fuel-economy__table td,
+.fuel-economy__table th {
+  padding: 0.65rem;
+  text-align: start;
+  border-block-end: 1px solid var(--line, #d9e0eb);
+  white-space: nowrap;
+}
+.fuel-economy__table thead th {
+  font-weight: 700;
+}
+.fuel-economy__table button {
+  min-height: 2.4rem;
+}
+.fuel-economy__empty {
+  padding: 1rem;
+  border: 1px dashed var(--line, #d9e0eb);
+  border-radius: 0.65rem;
+  text-align: center;
+}
+.fuel-economy__summary {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--line, #d9e0eb);
+  border-radius: 0.8rem;
+}
+.fuel-economy__summary strong {
+  font-size: 1.1rem;
+}
+@media (max-width: 32rem) {
+  .fuel-economy__actions .button {
+    flex: 1 1 100%;
+  }
+}

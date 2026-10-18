@@ -1,0 +1,177 @@
+[
+  {
+    "file": "300-candidatas.tsv",
+    "sha256": "0748847534af17a72d98b4e229547db4af54d1c7883a587eae85b20aa1c1785a",
+    "bytes": 209543
+  },
+  {
+    "file": "METODO-TRADUCCION.md",
+    "sha256": "87df6cddab3c2dceab198e77e47ecf1ff5328d74f6d4f27448280d72080d0d7e",
+    "bytes": 17376
+  },
+  {
+    "file": "PLAN-1000.md",
+    "sha256": "af081dab155f4f25611bb99e7fe91540ce5a588da962b23e04dec60293a81d4e",
+    "bytes": 50371
+  },
+  {
+    "file": "UsefulVerse-300-candidatas.xlsx",
+    "sha256": "503ae2324ca33522fbc73257cc0ad777fc74cf10938e0d472aa5860d646da7a4",
+    "bytes": 234214
+  },
+  {
+    "file": "costes.tsv",
+    "sha256": "8184f3931cb86740165a87960df6eb0eb1c80767ae4bfb62122ef7432078effd",
+    "bytes": 931
+  },
+  {
+    "file": "datos-plan.json",
+    "sha256": "5bb90f70ff4f41b9587b75424efb0e39d681285109712dfbcefdfdbb5d4a636a",
+    "bytes": 3156640
+  },
+  {
+    "file": "descartes.tsv",
+    "sha256": "64ad7bfe9db86e86f2a12089f24fd999798c288b2b71744b7e7075e002dbbe4b",
+    "bytes": 10886
+  },
+  {
+    "file": "evidencias/discovery-creative-learning.json.gz",
+    "sha256": "3c17860392f5dd904384aafd9a0b92703083ea0a9de63720d27bc3bd0bbc3b47",
+    "bytes": 835200
+  },
+  {
+    "file": "evidencias/discovery-en-calculators.json.gz",
+    "sha256": "779020820cc4323fd740cdd155f6b5476316421ee1411ed44266e65f2a7fdcd9",
+    "bytes": 1099994
+  },
+  {
+    "file": "evidencias/discovery-en-games.json.gz",
+    "sha256": "02450a2ab52a87770209d1df68ea7b63c1c0f1e11f426003950fd62dc3c98b77",
+    "bytes": 1108439
+  },
+  {
+    "file": "evidencias/discovery-en-media.json.gz",
+    "sha256": "dede3557b2e0977ef3d3a774ef51d56a18a7b00b497a5431f46abdf2abfa65a0",
+    "bytes": 971914
+  },
+  {
+    "file": "evidencias/discovery-es-local.json.gz",
+    "sha256": "2a62b8f901b1b139cf2ebb68c1948fe4efe7ac4260874a818ec40e300ab8b0b4",
+    "bytes": 818810
+  },
+  {
+    "file": "evidencias/discovery-hi-local.json.gz",
+    "sha256": "d11ff6bbaf93f0630f36c10a831d67b692dd0b042d00b6722220f0fc3e5759dd",
+    "bytes": 440867
+  },
+  {
+    "file": "evidencias/discovery-ja-local.json.gz",
+    "sha256": "ab7a9c15efa302e4cc5ebecc2f1fa40fb60b3abbdcf9518ca3347804c12bd9f9",
+    "bytes": 1147515
+  },
+  {
+    "file": "evidencias/discovery-ko-local.json.gz",
+    "sha256": "056a618180080d941bd316c13a91b86478ac2ecf21373eb50568cb6c21ba369e",
+    "bytes": 464589
+  },
+  {
+    "file": "evidencias/discovery-multilingual-asia.json.gz",
+    "sha256": "878d6aadf59c0dfadc3cff269f6fd1add781aadd74a8484c5e74d1a1c6547bcc",
+    "bytes": 5362
+  },
+  {
+    "file": "evidencias/discovery-multilingual-west.json.gz",
+    "sha256": "42139c9c0e60d929c733056b664e16e14625cf91bf19f33738a046d2f99f3ead",
+    "bytes": 77006
+  },
+  {
+    "file": "evidencias/discovery-pt-local.json.gz",
+    "sha256": "08fd0bba8a2713fba2aca7b105a9c050900a7cda4b035a64aa3260c363746541",
+    "bytes": 990270
+  },
+  {
+    "file": "evidencias/discovery-zh-corrected.json.gz",
+    "sha256": "5a9fd3f50e0d6938280b0ae044ca291a46478e1fbb6d0cc33c3ca477b65dbfd2",
+    "bytes": 213665
+  },
+  {
+    "file": "evidencias/discovery-zh-local.json.gz",
+    "sha256": "3a15076f5148c6b8953f4cdc54b98b0e98edc2cee08d106edea045656ab1dbae",
+    "bytes": 637
+  },
+  {
+    "file": "evidencias/global-candidates.json.gz",
+    "sha256": "6da24ebc4730dc84c9f462098ebab7c209bdddae7ce89a7c22ce5fe5d5825a83",
+    "bytes": 69452
+  },
+  {
+    "file": "evidencias/global-extras.json.gz",
+    "sha256": "220d4f1d97389e34a9cb3b7906f5b08c506a5492c67e2e7d6583f2883f22b371",
+    "bytes": 7656
+  },
+  {
+    "file": "evidencias/global-final-screen.json.gz",
+    "sha256": "d9305d6a6920ae78195525df7dc09306dc590e1bd5a62401aa6c00cbb1d993ce",
+    "bytes": 1625
+  },
+  {
+    "file": "evidencias/global-initial-screen.json.gz",
+    "sha256": "a55f290112b216e2e57e4bc74b0238230f621471b58f1da88c0e6798ae629815",
+    "bytes": 24613
+  },
+  {
+    "file": "evidencias/global-refinement.json.gz",
+    "sha256": "d532a7c7e03e63cdeceabe895b56a9aaf11a7647a6c281869a383e0f76c00234",
+    "bytes": 3233
+  },
+  {
+    "file": "evidencias/google-ads-languages.json",
+    "sha256": "a8e9069e4df7d729d7839721fb1764ce3095c591e7e02ccbe500097f72500a67",
+    "bytes": 4845
+  },
+  {
+    "file": "evidencias/live-extra-metadata.json",
+    "sha256": "485fa3868685706f39349fb771423bd414577bba19e8f809d149519d17c7b3b3",
+    "bytes": 49206
+  },
+  {
+    "file": "evidencias/m2m100_418M-metadata.json",
+    "sha256": "6de4b1c68573e4a80448bf227566d00f39cfd916bfd932ec3ee84b31cd042b27",
+    "bytes": 7774
+  },
+  {
+    "file": "evidencias/madlad400-3b-mt-metadata.json",
+    "sha256": "a403f7bcef8f20ed037f753f4ddee9b9aa5a7cb2d2a9f3de8c86cdc551d03ba1",
+    "bytes": 13852
+  },
+  {
+    "file": "evidencias/nllb-200-distilled-600M-metadata.json",
+    "sha256": "a8ef67ad3ee2d181d3672ed3a0b820291b81ffc1801abcfb966bfc96b413c1ad",
+    "bytes": 12549
+  },
+  {
+    "file": "evidencias/opus-en-dra-metadata.json",
+    "sha256": "bb0e4ac5e6b0b366c50d905b44090f3927c2285a3a5551fc3db0f49ae9a22680",
+    "bytes": 2205
+  },
+  {
+    "file": "evidencias/tools.usefulverse.com.sitemap.xml",
+    "sha256": "5b8f59d3b15b5bcdf8d4874c9a5240fe2049821b94645e6be2de5dbdc87df132",
+    "bytes": 1431497
+  },
+  {
+    "file": "evidencias/translation-sample-metrics.json",
+    "sha256": "af450dc44560c61c4876d0a7776b5cf4208b13b5d0d9854b2851d9ae624d2228",
+    "bytes": 394
+  },
+  {
+    "file": "evidencias/usefulverse.com.sitemap.xml",
+    "sha256": "071394119f41aeda8ad28534a4b5ce4a72924951ecd28c119f4a7fb0d711dbeb",
+    "bytes": 786404
+  },
+  {
+    "file": "inventario-700.tsv",
+    "sha256": "5cf77c5f65b75a1ca1d23186f357d797acbc67f3822f4ae91c3ef923eedc0017",
+    "bytes": 148807
+  }
+]

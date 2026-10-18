@@ -1,0 +1,89 @@
+.memory-test {
+  display: grid;
+  gap: 1rem;
+}
+.memory-test__answer-actions,
+.memory-test__settings {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.7rem;
+}
+.memory-test__settings .field {
+  min-width: min(100%, 13rem);
+}
+.memory-test__level,
+.memory-test__rounds {
+  font-weight: 700;
+}
+.memory-test__display {
+  min-height: 3rem;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  border: 1px solid var(--line, #d9e0eb);
+  border-radius: 0.8rem;
+  background: var(--surface, #fff);
+  font-size: clamp(1.5rem, 5vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+.memory-test__pattern {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(3.5rem, 6rem));
+  justify-content: center;
+  gap: 0.55rem;
+}
+.memory-test__cell {
+  aspect-ratio: 1;
+  border: 1px solid var(--line, #cbd5e1);
+  border-radius: 0.7rem;
+  background: var(--surface, #fff);
+  color: inherit;
+  font: inherit;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+.memory-test__cell.is-lit {
+  background: var(--accent, #a9e747);
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent, #a9e747) 40%, transparent);
+}
+.memory-test__cell:disabled {
+  cursor: default;
+}
+.memory-test__input {
+  display: grid;
+  gap: 0.65rem;
+}
+.memory-test__input h2 {
+  margin: 0;
+}
+.memory-test__answer {
+  min-height: 2.5rem;
+  padding: 0.7rem;
+  border: 1px solid var(--line, #d9e0eb);
+  border-radius: 0.6rem;
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
+}
+.memory-test__digits {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(2.7rem, 4rem));
+  gap: 0.45rem;
+}
+.memory-test__digits .button {
+  min-height: 2.8rem;
+  padding: 0.35rem;
+}
+.memory-test__answer-actions .button[disabled],
+.memory-test__digits .button[disabled] {
+  opacity: 0.55;
+}
+@media (max-width: 28rem) {
+  .memory-test__settings .field {
+    flex: 1 1 100%;
+  }
+  .memory-test__answer-actions .button {
+    flex: 1 1 auto;
+  }
+}

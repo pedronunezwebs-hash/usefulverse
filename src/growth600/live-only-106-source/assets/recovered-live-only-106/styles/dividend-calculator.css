@@ -1,0 +1,19 @@
+.dividend-calculator-form {
+  display: grid;
+  gap: 1rem;
+}
+.dividend-calculator-form input[type='number'] {
+  max-width: 100%;
+}
+.dividend-reinvest > span {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+.dividend-calculator-form [data-result-content] {
+  overflow-x: auto;
+}
+.dividend-calculator-form [data-result-content] table {
+  width: 100%;
+  font-variant-numeric: tabular-nums;
+}

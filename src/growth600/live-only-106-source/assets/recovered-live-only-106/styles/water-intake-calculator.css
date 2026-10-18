@@ -1,0 +1,9 @@
+.water-intake-calculator__results dl > div {
+  align-items: baseline;
+}
+.water-intake-calculator__results dd {
+  font-variant-numeric: tabular-nums;
+}
+.water-intake-calculator__results [data-water-percent] {
+  font-weight: 700;
+}

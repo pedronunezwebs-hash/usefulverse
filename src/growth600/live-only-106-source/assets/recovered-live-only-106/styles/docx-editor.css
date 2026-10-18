@@ -1,0 +1,56 @@
+.docx-editor__column,
+.docx-editor__limits {
+  min-width: 0;
+}
+.docx-editor__workspace {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+.docx-editor__column,
+.docx-editor__column fieldset {
+  padding: 0.75rem;
+  border: 1px solid var(--border, #d5dce5);
+}
+.docx-editor__column {
+  max-height: 38rem;
+  overflow: auto;
+  border-radius: 0.75rem;
+}
+.docx-editor__column h2 {
+  margin-top: 0.25rem;
+}
+.docx-editor__column fieldset {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+  border-radius: 0.5rem;
+}
+.docx-editor__column legend {
+  font-weight: 700;
+}
+.docx-editor__column label {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0.35rem 0;
+}
+.docx-editor__column input {
+  width: 100%;
+  min-width: 0;
+}
+.docx-editor__preview p {
+  margin: 0.5rem 0;
+  padding: 0.4rem 0.25rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid color-mix(in srgb, var(--border, #d5dce5) 55%, transparent);
+}
+@media (max-width: 760px) {
+  .docx-editor__workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .docx-editor__column {
+    max-height: 28rem;
+  }
+}

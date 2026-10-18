@@ -1,0 +1,20 @@
+.wilks-calculator {
+  display: grid;
+  gap: 1rem;
+}
+.wilks-calculator__note {
+  max-width: 72ch;
+}
+.wilks-calculator table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.wilks-calculator td,
+.wilks-calculator th {
+  padding: 0.65rem;
+  border-block-end: 1px solid var(--border, #c8ced8);
+  text-align: start;
+}
+.wilks-calculator td {
+  font-variant-numeric: tabular-nums;
+}

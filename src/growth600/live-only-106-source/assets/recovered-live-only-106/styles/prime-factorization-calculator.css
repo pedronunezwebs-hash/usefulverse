@@ -1,0 +1,29 @@
+.prime-factorization-calculator .prime-factorization-calculator__table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.prime-factorization-calculator__table caption {
+  text-align: start;
+  font-weight: 700;
+  padding: 0.5rem;
+}
+.prime-factorization-calculator__table td,
+.prime-factorization-calculator__table th {
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--line, #d9deea);
+  text-align: start;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.prime-factorization-calculator__table th {
+  width: 40%;
+}
+.prime-factorization-calculator__table td {
+  font-variant-numeric: tabular-nums;
+  unicode-bidi: plaintext;
+}
+.prime-factorization-calculator__table tr:last-child td,
+.prime-factorization-calculator__table tr:last-child th {
+  border-bottom: 0;
+}

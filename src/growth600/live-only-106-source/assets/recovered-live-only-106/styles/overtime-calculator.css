@@ -1,0 +1,10 @@
+.overtime-calculator {
+  display: grid;
+  gap: 1rem;
+}
+.overtime-calculator .calculator-grid {
+  align-items: end;
+}
+.overtime-calculator [data-result-content] {
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,76 @@
+.histogram-figure {
+  max-width: 100%;
+  margin: 1rem 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: #fff;
+}
+.histogram-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: var(--ink);
+}
+.histogram-axis {
+  stroke: #87938f;
+  stroke-width: 1.5;
+}
+.histogram-bar {
+  fill: #83a900;
+  stroke: #526b00;
+  stroke-width: 1;
+}
+.histogram-label,
+.histogram-title,
+.histogram-value {
+  fill: currentColor;
+  font:
+    11px ui-sans-serif,
+    system-ui,
+    sans-serif;
+}
+.histogram-value {
+  font-size: 10px;
+  font-weight: 700;
+}
+.histogram-title {
+  font-size: 13px;
+  font-weight: 700;
+}
+.histogram-table-scroll {
+  max-width: 100%;
+  overflow: auto;
+  margin-block: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  background: #fff;
+}
+.histogram-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.histogram-table caption {
+  padding: 0.6rem;
+  text-align: start;
+  font-weight: 700;
+}
+.histogram-table td,
+.histogram-table th {
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--line);
+  text-align: end;
+  white-space: nowrap;
+}
+.histogram-table td:first-child,
+.histogram-table th:first-child {
+  text-align: start;
+}
+.histogram-table th {
+  background: #eef3ec;
+}
+.histogram-table-scroll:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}

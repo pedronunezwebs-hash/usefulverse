@@ -1,0 +1,40 @@
+.heart-rate-zones__results {
+  margin-block-start: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border, #cbd5e1);
+  border-radius: 0.75rem;
+  background: var(--surface, #fff);
+}
+.heart-rate-zones__results table {
+  width: 100%;
+  min-width: 30rem;
+  border-collapse: collapse;
+  margin-block: 0.75rem;
+}
+.heart-rate-zones__results caption {
+  text-align: start;
+  font-weight: 700;
+  padding-block: 0.5rem;
+}
+.heart-rate-zones__results td,
+.heart-rate-zones__results th {
+  padding: 0.6rem;
+  border-block-end: 1px solid var(--border, #cbd5e1);
+  text-align: start;
+}
+.heart-rate-zones__results tbody tr:nth-child(odd) {
+  background: color-mix(in srgb, var(--accent, #65a30d) 7%, transparent);
+}
+.heart-rate-zones__boundaries {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(4.5rem, 1fr));
+  gap: 0.5rem;
+}
+@media (max-width: 36rem) {
+  .heart-rate-zones__boundaries {
+    grid-template-columns: repeat(3, minmax(4rem, 1fr));
+  }
+  .heart-rate-zones__results {
+    overflow-x: auto;
+  }
+}
