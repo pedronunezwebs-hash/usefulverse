@@ -1,0 +1,27 @@
+export const scaleDrawingEnglish = Object.freeze({
+  name: 'Scale Drawing Calculator',
+  title: 'Scale Drawing Calculator — Free Drawing & Print Scale',
+  description: 'Calculate real distances from a 1:n drawing scale, convert to a new scale, compare multiple measurements, and print a physical scale bar with a 100 mm check line.',
+  intro: 'Work out real distances from a plan, resize a drawing for another scale, and prepare a scale bar for printing. Everything runs in your browser.',
+  example: 'At 1:100, a 10 mm line on paper represents 1 m in reality. Changing the drawing to 1:50 needs 200% print size.',
+  details: 'Enter the scale and a measured paper distance to calculate the real length. Choose another scale to see the new drawing length and print enlargement. Compare a list of real distances, export the table, and print a physically dimensioned scale bar.',
+  limits: 'Print settings, margins and printer hardware can change the final size. Print at Actual size or 100%, turn off Fit to page, and measure the 100 mm check line before relying on a paper plan. This tool does not certify a drawing or survey.',
+  fields: {
+    sourceDenominator: 'Current scale denominator (1:n)', targetDenominator: 'New scale denominator (1:n)', drawingDistance: 'Measured distance on the drawing',
+    unit: 'Length unit', mm: 'Millimetres (mm)', cm: 'Centimetres (cm)', m: 'Metres (m)', km: 'Kilometres (km)', inches: 'Inches (in)', feet: 'Feet (ft)',
+    distances: 'Real distances to compare (one per line)', distancesHelp: 'Enter up to 100 positive distances. Use the selected real-distance unit.', realUnit: 'Real-distance unit',
+    barDistance: 'Real distance shown by the scale bar', calculate: 'Calculate scale', loadSample: 'Load example', clear: 'Clear', export: 'Download CSV', print: 'Print worksheet',
+    ready: 'Enter a scale and a measured drawing distance.', complete: 'Scale comparison complete.', invalid: 'Check the scale and distances. Denominators must be at least 1; distances must be greater than zero.',
+    result: 'Scale result', realLength: 'Real-world distance', paperLength: 'Length at the new scale', printPercent: 'Print enlargement from current drawing',
+    comparisonTable: 'Distance table', row: 'Line', realDistance: 'Real distance', currentLength: 'At current scale (mm)', newLength: 'At new scale (mm)',
+    scaleBar: 'Printable scale bar', checkLine: '100 mm print check', printHelp: 'Print at Actual size or 100%. Turn off Fit to page, then measure the check line.',
+    barLimit: 'Choose a scale-bar distance that prints between 1 mm and 250 mm.', noExport: 'Calculate the scale before downloading the table.',
+  },
+  exampleHeading: 'Example', howItWorks: 'How the scale works', faqHeading: 'Frequently asked questions', limitsHeading: 'Printing and accuracy', related: 'Related tools', home: 'Home', siteName: 'UsefulVerse', language: 'Language', freeBadge: 'Free browser tool', useTool: 'Calculate drawing scale',
+  faq: [
+    { q: 'How do I calculate a 1:100 scale?', a: 'Multiply the measured paper length by 100. For example, 10 mm on paper represents 1,000 mm, or 1 m, in reality.' },
+    { q: 'How much should I enlarge a 1:100 drawing to make it 1:50?', a: 'Print at 200%. The scale factor is 100 divided by 50. Check the printed 100 mm line because printer settings may resize the page.' },
+    { q: 'Why is the check line included?', a: 'It gives you a physical 100 mm reference. If it does not measure 100 mm, the print is not at the intended size.' },
+    { q: 'Can this verify an architectural or survey plan?', a: 'No. It performs arithmetic on the scale and measurements you enter. It cannot certify a plan, survey or site measurement.' },
+  ],
+});

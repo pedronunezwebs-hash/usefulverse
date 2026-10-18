@@ -1,0 +1,28 @@
+export const swissBvgPensionEnglish = Object.freeze({
+  name: 'Swiss Occupational Pension (BVG/LPP) Scenario Calculator',
+  title: 'Swiss BVG Pension Calculator — 2026 and 2027 Minimum Scenarios',
+  description: 'Estimate the Swiss mandatory BVG coordinated salary, annual retirement credit and a clearly labeled pension balance scenario for 2026 or 2027.',
+  intro: 'Enter your annual salary, age, current mandatory BVG balance and transparent assumptions. The tool applies published federal minimum limits and shows a simplified projection of the mandatory part.',
+  details: 'Your pension fund can insure more salary, credit different interest, charge risk and administration costs, and offer different retirement terms. This tool does not guess your fund rules or calculate your extra-mandatory benefits. Use the mandatory BVG values from your certificate and ask your pension fund for a personal forecast.',
+  example: 'In 2027 the mandatory entry threshold is CHF 23,040 and the coordination deduction is CHF 26,880. For an annual salary of CHF 80,000, the minimum coordinated salary is CHF 53,120. The credited savings rate depends on age; projected interest and retirement conversion are editable assumptions.',
+  fields: {
+    year: 'Reference year', year2026: '2026', year2027: '2027', salary: 'Annual salary with this employer (CHF)', age: 'Current age', retirementAge: 'Scenario retirement age',
+    balance: 'Current mandatory BVG retirement balance from your certificate (CHF)', salaryGrowth: 'Assumed annual salary growth (%)', interest: 'Assumed annual credit interest (%)', conversion: 'Assumed conversion rate at the selected retirement age (%)', retirementHelp: 'Choose a retirement age allowed by your pension fund. The 6.8% default is the mandatory BVG conversion rate at reference age; for early or deferred retirement, use the factor from your fund’s certificate or forecast.',
+    threshold: 'Mandatory entry threshold', coordination: 'Coordination deduction', minSalary: 'Minimum coordinated salary', maxSalary: 'Maximum salary in mandatory insurance', insured: 'Estimated coordinated salary for this employer', accrualRate: 'Age-related retirement credit rate', annualCredit: 'Estimated annual retirement credit at this age',
+    projected: 'Projected mandatory BVG balance', addedCredits: 'Future retirement credits before interest', annualPension: 'Illustrative annual pension', monthlyPension: 'Illustrative monthly pension', years: 'Projected contribution years',
+    calculate: 'Calculate scenario', reset: 'Reset', export: 'Download scenario CSV', ready: 'Enter your salary, age, certificate balance and assumptions.', resultHeading: 'Mandatory BVG scenario',
+    sourceNote: 'Official references:', bsvRules: 'BSV: occupational pension rules and benefits', bsv2027: 'BSV: limits effective in 2027', bsvTables: 'BSV: occupational pension key figures',
+    interestNote: 'Interest is a scenario input, not a guaranteed return. The 2027 rate of 1.75% was only recommended by the BVG Commission as of 17 October 2026; the Federal Council had not yet decided. Enter another assumption to compare outcomes.',
+    projectionNote: 'Projection assumes continuous coverage, annual credits at year end, constant rules, and the entered salary growth, interest and conversion rates. It excludes risks, costs, gaps, purchases and extra-mandatory benefits. A fund-specific forecast may differ substantially.',
+    noCoverage: 'This salary is below the published mandatory entry threshold for the selected year. A fund may offer broader cover or special rules; check your certificate.',
+  },
+  messages: { done: 'Scenario calculated in this browser.', invalid: 'Check that the ages, salary, balance and rates are within the supported ranges.', cleared: 'Inputs cleared.', exported: 'Scenario downloaded as a CSV file.' },
+  faq: [
+    { q: 'Is this the amount my pension fund will pay?', a: 'No. It is a simplified mandatory-minimum scenario. Your pension fund certificate and personal forecast contain your actual insured salary, balance, interest and conversion terms.' },
+    { q: 'Does it include extra-mandatory benefits?', a: 'No. Those rules differ by pension fund and must not be inferred from federal BVG minimums.' },
+    { q: 'Is the 2027 interest rate 1.75%?', a: 'Not as of 17 October 2026. The BVG Commission recommended 1.75%; the Federal Council still had to make the decision. The interest assumption is editable.' },
+    { q: 'Why is the whole salary not insured?', a: 'Mandatory BVG uses an entry threshold, coordination deduction and an upper salary limit. A pension fund may insure more under its regulations.' },
+    { q: 'Does the projection include employer and employee contributions?', a: 'It projects age-related retirement credits. How those credits are financed and split between employer and employee depends on the pension fund.' },
+    { q: 'Are my numbers uploaded?', a: 'No. Calculation and CSV export run in your browser.' },
+  ],
+});

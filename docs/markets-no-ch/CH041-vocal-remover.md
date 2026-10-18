@@ -1,0 +1,12 @@
+# CH041 · separador local de voz y acompañamiento
+
+Estado: implementación y smoke local en navegador completados; no publicado.
+
+- Modelo: `MixDirective/open-unmix-umxhq-vocals-onnx`, revisión fijada `e06097d3193a4c3168b5ddd2a479a680b1176c16`; ONNX de 35.623.512 bytes, SHA-256 `f27742bb52b24cb039614dc76d0764e279df3eb2a9d6daa82c6daee3369ec747`.
+- La ficha y el archivo `LICENSE` del redistribuidor declaran MIT para la exportación y afirman que los pesos UMX-HQ son MIT. La ficha describe pesos unchanged y enlaza a los autores UMX-HQ. El registro original de Zenodo identifica los pesos y autores, pero su vista pública deja vacío el campo Rights; se conserva esa limitación de procedencia en vez de atribuirle una licencia que no muestra. Fuentes: [ficha fijada del modelo](https://huggingface.co/MixDirective/open-unmix-umxhq-vocals-onnx/tree/e06097d3193a4c3168b5ddd2a479a680b1176c16), [proyecto Open-Unmix](https://github.com/sigsep/open-unmix-pytorch), [registro Zenodo](https://zenodo.org/records/3370489).
+- El piloto no aloja los 35,6 MB del modelo: los descarga al pulsar Separar desde la revisión fija, verifica longitud y SHA-256 y ejecuta ONNX Runtime Web/WASM local. La petición externa solo obtiene el modelo; nunca envía audio. No hay API de inferencia de pago ni cuota de servidor. La persona necesita conexión y descarga 35,6 MB en el primer uso.
+- Flujo local: audio de hasta 30 s, PCM estéreo a 44,1 kHz, STFT, máscara UMX-HQ, WAV de voz estimada y acompañamiento residual. Mono se duplica a estéreo. Se limita el alcance en la página por posibles fugas/artefactos.
+- Smoke de navegador: WAV sintético de voz TTS mezclada con acordes, 7,66 s; salida con dos reproductores y dos WAV descargables. En el tono de acompañamiento de 110 Hz, la amplitud estimada en stem de voz fue 0,00033 frente a 0,1198 en acompañamiento; para 165 Hz, 0,0260 frente a 0,0499; para 220 Hz, 0,00767 frente a 0,0459. Es una comprobación reproducible de que el pipeline no devuelve el mismo audio en ambas salidas, no una evaluación perceptual de canciones comerciales o de todos los géneros.
+- El build aislado generó 37 rutas. Chromium cargó el controlador, el modelo y WASM local; se corrigió un 404 inicial del controlador y una ruta de runtime JSEP antes del smoke final.
+
+El modelo queda fijado por hash. Para actualizarlo hace falta evaluar licencia, hash, runtime y ejemplos de separación antes de cambiar la revisión. Las licencias de ONNX Runtime y de la exportación se incluyen junto a los assets del piloto.

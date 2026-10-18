@@ -1,0 +1,26 @@
+export const swissVehicleTaxEnglish = Object.freeze({
+  name: 'Swiss Vehicle Tax Comparison Calculator',
+  title: 'Swiss Vehicle Tax Calculator — Compare 26 Cantons Free',
+  description: 'Compare 2026 annual vehicle-tax examples across all 26 Swiss cantons. Select two published reference cars, sort the results and export CSV. Free, local and transparent.',
+  intro: 'Compare the published 2026 annual tax examples for six reference cars across all 26 Swiss cantons. Choose one or two vehicles, filter a canton and sort the amounts.',
+  example: 'Example: the TCS February 2026 comparison lists CHF 535 for the VW Tayron plug-in hybrid and CHF 109 for the Tesla Model Y in Bern. These are published model examples, not a custom estimate for your car.',
+  details: 'Cantonal vehicle-tax rules are not uniform. This page reproduces a dated comparative table for six named vehicle configurations; it does not apply one formula to all cantons or infer taxes for another vehicle.',
+  limits: 'The figures are reference examples rounded to whole CHF, not an official invoice, legal advice or a personalised estimate. This table does not calculate partial-year registration, other vehicle classes or custom specifications. Check the source and your cantonal road-traffic office before relying on an amount.',
+  exampleHeading: 'How to use the comparison', howItWorks: 'What this comparison includes', faqHeading: 'Swiss vehicle-tax questions', limitsHeading: 'Scope and source',
+  faq: [
+    { q: 'Does this calculate the tax for my exact car?', a: 'No. It compares six named vehicle examples published by TCS in February 2026. A similar model or a different trim can have a different tax.' },
+    { q: 'Why do cantonal amounts differ?', a: 'Cantons use different tax bases and incentives, such as weight, power, engine size, CO₂ or combinations. This comparison uses the published values rather than pretending one national formula exists.' },
+    { q: 'Are electric cars always tax-free?', a: 'No. The published examples show different outcomes by canton; some charge tax and some show CHF 0 for a particular model. That does not mean every electric vehicle is exempt.' },
+    { q: 'Can I estimate a partial year or another vehicle type?', a: 'Not with this reference table. Proration and vehicle categories follow different cantonal rules. Use the official calculator for your canton and vehicle.' },
+    { q: 'Where does the data come from?', a: 'The comparison is based on TCS’s Swiss vehicle-tax report dated 28 February 2026. TCS rounds these example amounts to whole Swiss francs and notes that actual values may differ.' },
+  ],
+  fields: {
+    vehicle: 'Reference vehicle', comparison: 'Compare with another reference vehicle (optional)', allCantons: 'All 26 cantons', canton: 'Canton', order: 'Order by annual tax', ascending: 'Lowest first', descending: 'Highest first',
+    calculate: 'Compare cantons', sample: 'Load example', clear: 'Clear', export: 'Download CSV', ready: 'Choose one published reference vehicle, then compare its annual examples by canton.',
+    results: '2026 reference amounts', annualTax: 'Annual tax (CHF)', secondTax: 'Second vehicle (CHF)', difference: 'Difference (first − second)',
+    minimum: 'Lowest example', maximum: 'Highest example', average: 'Mean across shown cantons', source: 'Source and date',
+    privacy: 'Your selections stay in this browser. No car data is uploaded.', status: 'Showing {count} cantons. Amounts are annual TCS reference examples.', invalid: 'Choose a valid reference vehicle, a different second vehicle if used, and a valid canton.',
+    sourceName: 'TCS · Vehicle taxes and subsidies in Switzerland · 28 February 2026', sourceNote: 'The source table uses six named vehicle examples and rounded CHF values; the official cantonal invoice is authoritative.',
+    vehicleSpecs: 'Reference vehicle specifications', year: 'Tax year', footnote: 'Reference examples only · not a personalised estimate', cantonCodes: 'Canton codes', noComparison: 'Select a second vehicle to compare both amounts and their difference.',
+  },
+});

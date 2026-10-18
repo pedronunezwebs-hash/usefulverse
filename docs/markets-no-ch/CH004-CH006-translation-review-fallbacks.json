@@ -1,0 +1,2030 @@
+[
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "am",
+    "source": " A fund may offer broader cover or special rules;",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "am",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "am",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "am",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "am",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "am",
+    "source": "It projects age-related retirement credits.",
+    "reason": "The local model changed protected values ([] → [\"18\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ar",
+    "source": " The 6.",
+    "reason": "The local model dropped the protected value 6."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ar",
+    "source": " the Federal Council still had to make the decision.",
+    "reason": "The local model changed protected values ([] → [\"52\",\"30\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ar",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ar",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ar",
+    "source": "Coordination deduction",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "bg",
+    "source": " The 2027 rate of 1.",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "bg",
+    "source": " The 6.",
+    "reason": "The local model dropped the protected value 6."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "bg",
+    "source": " annual retirement credit and a clearly labeled pension balance scenario for 2026 or 2027.",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "bg",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "bg",
+    "source": "75%;",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "bg",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "bg",
+    "source": "8% default is the mandatory BVG conversion rate at reference age;",
+    "reason": "The local model dropped the protected value 8%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "bg",
+    "source": "Annual salary with this employer (CHF)",
+    "reason": "The local model changed protected values ([\"CHF\"] → [\"0\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "bg",
+    "source": "Current mandatory BVG retirement balance from your certificate (CHF)",
+    "reason": "The local model changed protected values ([\"CHF\"] → [\"0\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "bg",
+    "source": "In 2027 the mandatory entry threshold is CHF 23,040 and the coordination deduction is CHF 26,880.",
+    "reason": "The local model changed protected values ([\"2027\",\"CHF\",\"23,040\",\"CHF\",\"26,880\"] → [\"2027\",\"CHF\",\"23,040\",\"3\",\"26,880\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "bg",
+    "source": "Is the 2027 interest rate 1.",
+    "reason": "The local model dropped the protected value 1."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "bn",
+    "source": " The 6.",
+    "reason": "The local model dropped the protected value 6."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "bn",
+    "source": " The BVG Commission recommended 1.",
+    "reason": "The local model dropped the protected value 1."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "bn",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "bn",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "bn",
+    "source": "Is the 2027 interest rate 1.",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "bn",
+    "source": "Not as of 17 October 2026.",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ca",
+    "source": " The 6.",
+    "reason": "The local model dropped the protected value 6."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ca",
+    "source": " age,",
+    "reason": "The local model changed protected values ([] → [\"10\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ca",
+    "source": "75%;",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ca",
+    "source": "In 2027 the mandatory entry threshold is CHF 23,040 and the coordination deduction is CHF 26,880.",
+    "reason": "The local model changed protected values ([\"2027\",\"CHF\",\"23,040\",\"CHF\",\"26,880\"] → [\"2027\",\"CHF\",\"23,040\",\"3\",\"26,880\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ca",
+    "source": "Is the 2027 interest rate 1.",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "de",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "el",
+    "source": " annual retirement credit and a clearly labeled pension balance scenario for 2026 or 2027.",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "el",
+    "source": " the minimum coordinated salary is CHF 53,120.",
+    "reason": "The local model dropped the protected value 53,120."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "el",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "el",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "el",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "el",
+    "source": "75%;",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "el",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "el",
+    "source": "Annual salary with this employer (CHF)",
+    "reason": "The local model changed protected values ([\"CHF\"] → [\"0\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "el",
+    "source": "Current mandatory BVG retirement balance from your certificate (CHF)",
+    "reason": "The local model changed protected values ([\"CHF\"] → [\"0\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "el",
+    "source": "Not as of 17 October 2026.",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "es",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "es",
+    "source": "No.",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "fa",
+    "source": " The 6.",
+    "reason": "The local model dropped the protected value 6."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "fa",
+    "source": " The BVG Commission recommended 1.",
+    "reason": "The local model dropped the protected value 1."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "fa",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "fa",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "fa",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "fa",
+    "source": "Not as of 17 October 2026.",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "fr",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "fr",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "fr",
+    "source": "Coordination deduction",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "gu",
+    "source": " and offer different retirement terms.",
+    "reason": "The local model changed protected values ([] → [\"10\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "gu",
+    "source": " charge risk and administration costs,",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "gu",
+    "source": " coordination deduction and an upper salary limit.",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "gu",
+    "source": " purchases and extra-mandatory benefits.",
+    "reason": "The local model changed protected values ([] → [\"10,000\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "gu",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "gu",
+    "source": "In 2027 the mandatory entry threshold is CHF 23,040 and the coordination deduction is CHF 26,880.",
+    "reason": "The local model changed protected values ([\"2027\",\"CHF\",\"23,040\",\"CHF\",\"26,880\"] → [\"2027\",\"CHF\",\"23,040\",\"3\",\"26,880\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ha",
+    "source": " The BVG Commission recommended 1.",
+    "reason": "The local model dropped the protected value 1."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ha",
+    "source": " The credited savings rate depends on age;",
+    "reason": "The local model changed protected values ([] → [\"12\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ha",
+    "source": " annual credits at year end,",
+    "reason": "The local model changed protected values ([] → [\"2013\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ha",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ha",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ha",
+    "source": "Current age",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ha",
+    "source": "Maximum salary in mandatory insurance",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ha",
+    "source": "Scenario retirement age",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "hi",
+    "source": " The 2027 rate of 1.",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "hi",
+    "source": " The 6.",
+    "reason": "The local model dropped the protected value 6."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "hi",
+    "source": " The BVG Commission recommended 1.",
+    "reason": "The local model dropped the protected value 1."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "hi",
+    "source": " interest and conversion rates.",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "hi",
+    "source": " interest and conversion terms.",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "hi",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "hi",
+    "source": "75%;",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "hi",
+    "source": "Assumed annual credit interest (%)",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "hi",
+    "source": "Not as of 17 October 2026.",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "id",
+    "source": " The 2027 rate of 1.",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "it",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "it",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "it",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ja",
+    "source": " The 6.",
+    "reason": "The local model dropped the protected value 6."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ja",
+    "source": " annual retirement credit and a clearly labeled pension balance scenario for 2026 or 2027.",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ja",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ja",
+    "source": "75%;",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ja",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ja",
+    "source": "Not as of 17 October 2026.",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ko",
+    "source": " The 2027 rate of 1.",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ko",
+    "source": " The 6.",
+    "reason": "The local model dropped the protected value 6."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ko",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model changed protected values ([\"75%\",\"17\",\"2026\"] → [\"75%\",\"17\",\"10\",\"2026\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ko",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ko",
+    "source": "In 2027 the mandatory entry threshold is CHF 23,040 and the coordination deduction is CHF 26,880.",
+    "reason": "The local model dropped the protected value 26,880."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ko",
+    "source": "Is the 2027 interest rate 1.",
+    "reason": "The local model dropped the protected value 1."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ko",
+    "source": "Not as of 17 October 2026.",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": " The 2027 rate of 1.",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": " The 6.",
+    "reason": "The local model dropped the protected value 6."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": " The BVG Commission recommended 1.",
+    "reason": "The local model dropped the protected value 1."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": " annual retirement credit and a clearly labeled pension balance scenario for 2026 or 2027.",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": " balance and rates are within the supported ranges.",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": " charge risk and administration costs,",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": " coordination deduction and an upper salary limit.",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": " credit different interest,",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": " for early or deferred retirement,",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": " projected interest and retirement conversion are editable assumptions.",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": "In 2027 the mandatory entry threshold is CHF 23,040 and the coordination deduction is CHF 26,880.",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": "Is the 2027 interest rate 1.",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": "Not as of 17 October 2026.",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "mr",
+    "source": "Projected contribution years",
+    "reason": "The local model changed protected values ([] → [\"2014\",\"15\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ms",
+    "source": "In 2027 the mandatory entry threshold is CHF 23,040 and the coordination deduction is CHF 26,880.",
+    "reason": "The local model dropped the protected value 26,880."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "nb",
+    "source": " The 6.",
+    "reason": "The local model dropped the protected value 6."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "nb",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "nb",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "nl",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "nl",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "nl",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "nl",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "nl",
+    "source": "Current age",
+    "reason": "The local model changed protected values ([] → [\"20\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "pl",
+    "source": " The 6.",
+    "reason": "The local model dropped the protected value 6."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "pl",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "pl",
+    "source": "In 2027 the mandatory entry threshold is CHF 23,040 and the coordination deduction is CHF 26,880.",
+    "reason": "The local model changed protected values ([\"2027\",\"CHF\",\"23,040\",\"CHF\",\"26,880\"] → [\"2027\",\"CHF\",\"23,040\",\"3\",\"26,880\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "pl",
+    "source": "Is the 2027 interest rate 1.",
+    "reason": "The local model dropped the protected value 1."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "pt",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ru",
+    "source": " The 6.",
+    "reason": "The local model dropped the protected value 6."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ru",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ru",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ru",
+    "source": "In 2027 the mandatory entry threshold is CHF 23,040 and the coordination deduction is CHF 26,880.",
+    "reason": "The local model dropped the protected value 26,880."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "sv",
+    "source": " The 6.",
+    "reason": "The local model dropped the protected value 6."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "sv",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "sv",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "sv",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "sv",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "sw",
+    "source": " The 2027 rate of 1.",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "sw",
+    "source": " The 6.",
+    "reason": "The local model dropped the protected value 6."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "sw",
+    "source": " The BVG Commission recommended 1.",
+    "reason": "The local model dropped the protected value 1."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "sw",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "sw",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "sw",
+    "source": "75%;",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "sw",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "sw",
+    "source": "Is the 2027 interest rate 1.",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "sw",
+    "source": "Not as of 17 October 2026.",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ta",
+    "source": " coordination deduction and an upper salary limit.",
+    "reason": "The local model changed protected values ([] → [\"1980\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ta",
+    "source": " current mandatory BVG balance and transparent assumptions.",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ta",
+    "source": " projected interest and retirement conversion are editable assumptions.",
+    "reason": "The local model changed protected values ([] → [\"2015\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ta",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "te",
+    "source": " The 6.",
+    "reason": "The local model dropped the protected value 6."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "te",
+    "source": " and the entered salary growth,",
+    "reason": "The local model changed protected values ([] → [\"2\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "te",
+    "source": " certificate balance and assumptions.",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "te",
+    "source": " coordination deduction and an upper salary limit.",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "te",
+    "source": " purchases and extra-mandatory benefits.",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "te",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "te",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "te",
+    "source": "Is the 2027 interest rate 1.",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "te",
+    "source": "Not as of 17 October 2026.",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "te",
+    "source": "Projected contribution years",
+    "reason": "The local model changed protected values ([] → [\"2014\",\"15\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "te",
+    "source": "Projected mandatory BVG balance",
+    "reason": "The local model changed protected values ([] → [\"2014\",\"15\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "th",
+    "source": " The 6.",
+    "reason": "The local model dropped the protected value 6."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "th",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "th",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "th",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "th",
+    "source": "75%;",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "th",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "tl",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "tl",
+    "source": "Age-related retirement credit rate",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "tl",
+    "source": "Is the 2027 interest rate 1.",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "tl",
+    "source": "Not as of 17 October 2026.",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "tr",
+    "source": " The 6.",
+    "reason": "The local model dropped the protected value 6."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "tr",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "tr",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "tr",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "tr",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "uk",
+    "source": " The 6.",
+    "reason": "The local model dropped the protected value 6."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "uk",
+    "source": " annual retirement credit and a clearly labeled pension balance scenario for 2026 or 2027.",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "uk",
+    "source": " the minimum coordinated salary is CHF 53,120.",
+    "reason": "The local model dropped the protected value 53,120."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "uk",
+    "source": "75%;",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "uk",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "uk",
+    "source": "8% default is the mandatory BVG conversion rate at reference age;",
+    "reason": "The local model dropped the protected value 8%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "uk",
+    "source": "Current mandatory BVG retirement balance from your certificate (CHF)",
+    "reason": "The local model changed protected values ([\"CHF\"] → [\"0\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "uk",
+    "source": "In 2027 the mandatory entry threshold is CHF 23,040 and the coordination deduction is CHF 26,880.",
+    "reason": "The local model changed protected values ([\"2027\",\"CHF\",\"23,040\",\"CHF\",\"26,880\"] → [\"2027\",\"CHF\",\"23,040\",\"3\",\"26,880\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "uk",
+    "source": "Not as of 17 October 2026.",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "uk",
+    "source": "Swiss BVG Pension Calculator — 2026 and 2027 Minimum Scenarios",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ur",
+    "source": " The 2027 rate of 1.",
+    "reason": "The local model dropped the protected value 1."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ur",
+    "source": " The credited savings rate depends on age;",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ur",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ur",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ur",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ur",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ur",
+    "source": "Not as of 17 October 2026.",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "ur",
+    "source": "Projected contribution years",
+    "reason": "The local model changed protected values ([] → [\"1\",\"2009\",\"2013\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "vi",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model changed protected values ([\"75%\",\"17\",\"2026\"] → [\"75%\",\"17\",\"10\",\"2026\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "vi",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "vi",
+    "source": "Not as of 17 October 2026.",
+    "reason": "The local model changed protected values ([\"17\",\"2026\"] → [\"17\",\"10\",\"2026\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "vi",
+    "source": "Swiss BVG Pension Calculator — 2026 and 2027 Minimum Scenarios",
+    "reason": "The local model changed protected values ([\"2026\",\"2027\"] → [\"1\",\"5\",\"2014\",\"2026\",\"2027\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "zh",
+    "source": " The 2027 rate of 1.",
+    "reason": "The local model changed protected values ([\"2027\",\"1\"] → [\"1\",\"2027\",\"1\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "zh",
+    "source": "75% was only recommended by the BVG Commission as of 17 October 2026;",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "zh",
+    "source": "75%;",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "zh",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "zh",
+    "source": "Current mandatory BVG retirement balance from your certificate (CHF)",
+    "reason": "The local model changed protected values ([\"CHF\"] → [\"0\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "zh",
+    "source": "Not as of 17 October 2026.",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "zh_tw",
+    "source": " The 2027 rate of 1.",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "zh_tw",
+    "source": " The 6.",
+    "reason": "The local model dropped the protected value 6."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "zh_tw",
+    "source": "75%;",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "zh_tw",
+    "source": "75%?",
+    "reason": "The local model dropped the protected value 75%."
+  },
+  {
+    "tool": "swiss-bvg-pension",
+    "locale": "zh_tw",
+    "source": "Not as of 17 October 2026.",
+    "reason": "The local model dropped the protected value 17."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "bg",
+    "source": "Official ESTV tax on these benefits (CHF)",
+    "reason": "The local model changed protected values ([\"CHF\"] → [\"0\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "bg",
+    "source": "Total pension capital benefits due this tax year (CHF)",
+    "reason": "The local model changed protected values ([\"CHF\"] → [\"0\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "ca",
+    "source": "Total pension capital benefits due this tax year (CHF)",
+    "reason": "The local model changed protected values ([\"CHF\"] → [\"0\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "el",
+    "source": "Total pension capital benefits due this tax year (CHF)",
+    "reason": "The local model changed protected values ([\"CHF\"] → [\"0\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "es",
+    "source": "No.",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "fr",
+    "source": "ESTV calculation notes",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "gu",
+    "source": " municipality or household profile;",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "ha",
+    "source": " after-tax capital and scenario differences.",
+    "reason": "The local model changed protected values ([] → [\"1.25%\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "ha",
+    "source": " enter the combined capital benefits due in that tax year and the matching official ESTV tax result.",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "ha",
+    "source": " municipality and household profile as the first scenario.",
+    "reason": "The local model changed protected values ([] → [\"1.2.3\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "ha",
+    "source": "Official ESTV tax",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "hi",
+    "source": " municipality or household profile because the tax results are not directly comparable.",
+    "reason": "The local model changed protected values ([] → [\"1.20\",\"35\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "it",
+    "source": "Scenario",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "ko",
+    "source": " as directed by the ESTV calculation notes.",
+    "reason": "The local model changed protected values ([] → [\"10.25\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "mr",
+    "source": " calculate the capital withdrawal tax in ESTV using the same tax year,",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "mr",
+    "source": " capital amounts and official tax results.",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "mr",
+    "source": " enter the combined capital benefits due in that tax year and the matching official ESTV tax result.",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "mr",
+    "source": "Different year,",
+    "reason": "The local model changed protected values ([] → [\"2018\",\"19\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "ms",
+    "source": "Swiss Pension Withdrawal Tax Calculator — Compare ESTV Scenarios",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "nb",
+    "source": "Scenario",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "nl",
+    "source": "Scenario",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "pl",
+    "source": "ESTV calculation notes",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "sv",
+    "source": "Scenario",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "ta",
+    "source": " enter the combined capital benefits due in that tax year and the matching official ESTV tax result.",
+    "reason": "The local model changed protected values ([] → [\"10%\",\"25%\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "te",
+    "source": " Add all benefits due in each tax year;",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "te",
+    "source": " after-tax capital and scenario differences.",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "te",
+    "source": " capital amounts and official tax results.",
+    "reason": "The local model changed protected values ([] → [\"2016\",\"17\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "ur",
+    "source": " capital amounts and official tax results.",
+    "reason": "The local model changed protected values ([] → [\"100\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "ur",
+    "source": " municipality and household profile as the first scenario.",
+    "reason": "The local model changed protected values ([] → [\"100\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "ur",
+    "source": " municipality and household profile.",
+    "reason": "The local model changed protected values ([] → [\"10.25\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "ur",
+    "source": " municipality or household profile;",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "vi",
+    "source": "Swiss Pension Withdrawal Tax Calculator — Compare ESTV Scenarios",
+    "reason": "The local model changed protected values ([] → [\"1\",\"5\",\"2013\"])."
+  },
+  {
+    "tool": "swiss-pension-withdrawal",
+    "locale": "zh",
+    "source": "Official ESTV tax on these benefits (CHF)",
+    "reason": "The local model changed protected values ([\"CHF\"] → [\"0\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "am",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "am",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "am",
+    "source": "Pillar 3a contribution and tax scenario",
+    "reason": "The local model changed protected values ([\"3a\"] → [\"1.2\",\"3a\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "bg",
+    "source": " Tax on a future pillar 3a withdrawal,",
+    "reason": "The local model changed protected values ([\"3a\"] → [\"0\",\"3a\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "bg",
+    "source": " the maximum deduction is CHF 7,373 if you are affiliated with a second-pillar scheme.",
+    "reason": "The local model dropped the protected value 7,373."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "bg",
+    "source": " the maximum is 20% of qualifying earned income,",
+    "reason": "The local model dropped the protected value 20%."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "bg",
+    "source": "BSV: pillar 3a contribution rules",
+    "reason": "The local model changed protected values ([\"3a\"] → [\"0\",\"3a\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "bg",
+    "source": "Check Swiss pillar 3a contribution deduction limits for 2026 or 2027 and compare annual tax amounts from the official ESTV calculator before and after a contribution.",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "bg",
+    "source": "ESTV total income and wealth tax before the contribution (CHF)",
+    "reason": "The local model changed protected values ([\"CHF\"] → [\"0\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "bg",
+    "source": "I had qualifying earned income that allows pillar 3a contributions for this tax year",
+    "reason": "The local model changed protected values ([\"3a\"] → [\"0\",\"3a\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "bg",
+    "source": "No qualifying earned income confirmed: this scenario applies a maximum deduction of CHF 0.",
+    "reason": "The local model dropped the protected value 0."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "bg",
+    "source": "Pillar 3a contribution and tax scenario",
+    "reason": "The local model changed protected values ([\"3a\"] → [\"0\",\"3a\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "bg",
+    "source": "Qualifying Swiss earned income for this tax year (CHF)",
+    "reason": "The local model changed protected values ([\"CHF\"] → [\"0\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "bg",
+    "source": "The maximum is 20% of qualifying earned income,",
+    "reason": "The local model dropped the protected value 20%."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ca",
+    "source": " the maximum is 20% of qualifying earned income,",
+    "reason": "The local model dropped the protected value 20%."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ca",
+    "source": "BSV: 2027 deduction limits",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "el",
+    "source": " Add only the eligible pillar 3a deduction in the second calculation.",
+    "reason": "The local model changed protected values ([\"3a\"] → [\"0\",\"3a\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "el",
+    "source": " capped at CHF 36,864.",
+    "reason": "The local model dropped the protected value 36,864."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "el",
+    "source": " the maximum deduction is CHF 7,373 if you are affiliated with a second-pillar scheme.",
+    "reason": "The local model dropped the protected value 7,373."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "el",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "el",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "el",
+    "source": "Check Swiss pillar 3a contribution deduction limits for 2026 or 2027 and compare annual tax amounts from the official ESTV calculator before and after a contribution.",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "el",
+    "source": "ESTV total income and wealth tax after the contribution (CHF)",
+    "reason": "The local model changed protected values ([\"CHF\"] → [\"0\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "el",
+    "source": "Pillar 3a contribution and tax scenario",
+    "reason": "The local model changed protected values ([\"3a\"] → [\"0\",\"3a\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "fa",
+    "source": " capped at CHF 36,864.",
+    "reason": "The local model dropped the protected value 36,864."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "fa",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "fa",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "fa",
+    "source": "Swiss Pillar 3a Tax-Saving Scenario Calculator",
+    "reason": "The local model changed protected values ([\"3a\"] → [\"10\",\"3a\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "gu",
+    "source": " qualifying earned income.",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ha",
+    "source": " the maximum is 20% of qualifying earned income,",
+    "reason": "The local model dropped the protected value 20%."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ha",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ha",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ha",
+    "source": "BSV: 2027 deduction limits",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ha",
+    "source": "Municipality used in both ESTV calculations",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ha",
+    "source": "Open the official ESTV calculator",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ha",
+    "source": "The maximum is 20% of qualifying earned income,",
+    "reason": "The local model dropped the protected value 20%."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ha",
+    "source": "The tool shows the excess separately.",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "hi",
+    "source": " account or investment.",
+    "reason": "The local model changed protected values ([] → [\"1980\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "hi",
+    "source": " contribution and both official ESTV tax amounts.",
+    "reason": "The local model changed protected values ([] → [\"1.25\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "hi",
+    "source": " up to the annual large-contribution limit.",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "hi",
+    "source": "No qualifying earned income confirmed: this scenario applies a maximum deduction of CHF 0.",
+    "reason": "The local model dropped the protected value 0."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "it",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "it",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ko",
+    "source": " capped at CHF 36,864.",
+    "reason": "The local model dropped the protected value 36,864."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ko",
+    "source": "No qualifying earned income confirmed: this scenario applies a maximum deduction of CHF 0.",
+    "reason": "The local model dropped the protected value 0."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "mr",
+    "source": " contribution and both official ESTV tax amounts.",
+    "reason": "The local model changed protected values ([] → [\"2014\",\"15\",\"3.6\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "mr",
+    "source": " qualifying earned income.",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "mr",
+    "source": " the maximum is 20% of qualifying earned income,",
+    "reason": "The local model changed protected values ([\"20%\"] → [\"1\",\"20%\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "mr",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "mr",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "mr",
+    "source": "Check Swiss pillar 3a contribution deduction limits for 2026 or 2027 and compare annual tax amounts from the official ESTV calculator before and after a contribution.",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "mr",
+    "source": "No qualifying earned income confirmed: this scenario applies a maximum deduction of CHF 0.",
+    "reason": "The local model dropped the protected value 0."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "mr",
+    "source": "The maximum is 20% of qualifying earned income,",
+    "reason": "The local model changed protected values ([\"20%\"] → [\"1\",\"20%\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "mr",
+    "source": "Use the same tax year,",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ms",
+    "source": "Second-pillar situation",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "nl",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "nl",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "pl",
+    "source": "Check Swiss pillar 3a contribution deduction limits for 2026 or 2027 and compare annual tax amounts from the official ESTV calculator before and after a contribution.",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "sv",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "sv",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "sw",
+    "source": " canton,",
+    "reason": "The local model changed protected values ([] → [\"1\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "sw",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "sw",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ta",
+    "source": " then enter the official ESTV tax results before and after the contribution.",
+    "reason": "The local model changed protected values ([] → [\"1980\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ta",
+    "source": "Pillar 3a contribution and tax scenario",
+    "reason": "The local model changed protected values ([\"3a\"] → [\"1.5\",\"3a\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ta",
+    "source": "This compares current-year income/wealth tax only.",
+    "reason": "The local model changed protected values ([] → [\"2013\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "te",
+    "source": " contribution and both official ESTV tax amounts.",
+    "reason": "The local model changed protected values ([] → [\"2014\",\"15\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "te",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "te",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "te",
+    "source": "ESTV total income and wealth tax after the contribution (CHF)",
+    "reason": "The local model changed protected values ([\"CHF\"] → [\"1\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "te",
+    "source": "ESTV total income and wealth tax before the contribution (CHF)",
+    "reason": "The local model changed protected values ([\"CHF\"] → [\"1\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "th",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "th",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "th",
+    "source": "BSV: 2027 deduction limits",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "th",
+    "source": "Swiss Pillar 3a Tax-Saving Scenario Calculator",
+    "reason": "The local model changed protected values ([\"3a\"] → [\"0\",\"3a\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "tl",
+    "source": "Check Swiss pillar 3a contribution deduction limits for 2026 or 2027 and compare annual tax amounts from the official ESTV calculator before and after a contribution.",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "tl",
+    "source": "No qualifying earned income confirmed: this scenario applies a maximum deduction of CHF 0.",
+    "reason": "The local model dropped the protected value 0."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "tr",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "tr",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "tr",
+    "source": "Swiss Pillar 3a Tax-Saving Scenario Calculator",
+    "reason": "The local model changed protected values ([\"3a\"] → [\"1985\",\"3a\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "tr",
+    "source": "The maximum is 20% of qualifying earned income,",
+    "reason": "The local model dropped the protected value 20%."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "uk",
+    "source": " Add only the eligible pillar 3a deduction in the second calculation.",
+    "reason": "The local model changed protected values ([\"3a\"] → [\"0\",\"3a\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "uk",
+    "source": " Use the ESTV calculator with the same details in both scenarios and add the pillar 3a contribution only to the second.",
+    "reason": "The local model changed protected values ([\"3a\"] → [\"0\",\"3a\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "uk",
+    "source": "BSV: 2027 deduction limits",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "uk",
+    "source": "Check Swiss pillar 3a contribution deduction limits for 2026 or 2027 and compare annual tax amounts from the official ESTV calculator before and after a contribution.",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "uk",
+    "source": "Does this choose a bank or 3a product?",
+    "reason": "The local model changed protected values ([\"3a\"] → [\"0\",\"3a\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "uk",
+    "source": "For 2027,",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "uk",
+    "source": "No qualifying earned income confirmed: this scenario applies a maximum deduction of CHF 0.",
+    "reason": "The local model dropped the protected value 0."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ur",
+    "source": " contribution and both official ESTV tax amounts.",
+    "reason": "The local model changed protected values ([] → [\"100\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ur",
+    "source": "2026",
+    "reason": "The local model dropped the protected value 2026."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "ur",
+    "source": "2027",
+    "reason": "The local model dropped the protected value 2027."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "vi",
+    "source": "Household/profile used in both ESTV calculations",
+    "reason": "The local model returned this clause unchanged."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "vi",
+    "source": "Swiss Pillar 3a Tax Calculator — Contribution Limits and ESTV Comparison",
+    "reason": "The local model changed protected values ([\"3a\"] → [\"10\",\"3\",\"2014\",\"3a\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "zh",
+    "source": " capped at CHF 36,864.",
+    "reason": "The local model dropped the protected value 36,864."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "zh",
+    "source": "Qualifying Swiss earned income for this tax year (CHF)",
+    "reason": "The local model changed protected values ([\"CHF\"] → [\"0\",\"CHF\"])."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "zh_tw",
+    "source": " capped at CHF 36,864.",
+    "reason": "The local model dropped the protected value 36,864."
+  },
+  {
+    "tool": "swiss-pillar-3a",
+    "locale": "zh_tw",
+    "source": "For 2027,",
+    "reason": "The local model dropped the protected value 2027."
+  }
+]

@@ -1,0 +1,26 @@
+export const swissAhvPensionEnglish = Object.freeze({
+  name: 'Swiss AHV/AVS Retirement Pension Scenario Calculator',
+  title: 'Swiss AHV Pension Calculator — 2026 and 2027 Scenarios',
+  description: 'Estimate a Swiss AHV/AVS old-age pension scenario from your official determining average annual income and credited contribution years. Includes the 2026 and 2027 federal pension formula and the 13th old-age pension.',
+  intro: 'Enter the determining average annual income and contribution years from your AHV account or official pension estimate. The tool applies the federal normal-retirement formula for 2026 or 2027 and shows monthly and annual amounts, including the 13th old-age pension.',
+  details: 'The determining average annual income (RAM) is not your current salary. It reflects indexed contribution earnings and may include education and care credits and income splitting. Use the amount shown in your official account or forecast. This scenario covers one person at normal retirement age; it does not reconstruct a career from salary or determine age eligibility.',
+  example: 'Illustration only: with a 2027 determining average annual income of CHF 46,080 and 44 of 44 credited contribution years, the estimated full monthly pension is CHF 1,946. From 2026, a qualifying old-age pension is paid 13 times per year; this scenario assumes the pension is payable for all 12 months.',
+  fields: {
+    year: 'Pension year', year2026: '2026', year2027: '2027',
+    average: 'Determining average annual income from your AHV statement (CHF)',
+    averageHelp: 'Use the official RAM / determining average annual income. Do not enter only your current or last salary.',
+    creditedYears: 'Credited contribution years from your account', fullYears: 'Full contribution duration for your case', years43: '43 years', years43q1: '43 years and 3 months', years43q2: '43 years and 6 months', years43q3: '43 years and 9 months', years44: '44 years',
+    calculate: 'Estimate pension scenario', reset: 'Clear inputs', ready: 'Enter the values shown by your AHV account or official forecast.',
+    resultHeading: 'Indicative old-age pension scenario', monthly: 'Estimated monthly pension', annual12: '12 regular monthly payments', thirteenth: '13th old-age pension', annualTotal: 'Estimated total for 12 months plus 13th pension', fullScale: 'Full-scale monthly amount before contribution-year adjustment', roundedAverage: 'Determining average annual income rounded up to the official table band', contributionRatio: 'Credited contribution years / full duration', minimum: 'Minimum full monthly pension for selected year', maximum: 'Maximum full monthly pension for selected year', formulaNote: 'The official income figure is rounded up to the next published table band. The statutory formula is applied, then adjusted for the contribution duration you enter.',
+    guidance: 'Official online estimate for Switzerland and abroad: ESCAL', sourceNote: 'Official references:', bsvSource: 'BSV pension formula and amounts', ahvSource: 'AHV/IV leaflet 3.01', thirteenthSource: '13th pension rules', export: 'Download scenario CSV',
+  },
+  messages: { done: 'Scenario calculated in this browser.', invalid: 'Check the tax year, official average annual income and contribution-year amounts.', cleared: 'Inputs cleared.', exported: 'Scenario downloaded as a CSV file.' },
+  faq: [
+    { q: 'Can I enter my current salary?', a: 'No. The official determining average annual income is based on the insured career, indexation and applicable credits. A current salary alone cannot predict it.' },
+    { q: 'Where do I find the determining average annual income?', a: 'Use your AHV individual account, an official ESCAL forecast or your compensation office. This tool does not infer it from age, country or present-day pay.' },
+    { q: 'Does this include care and education credits or married-couple splitting?', a: 'Only if those effects are already included in the official average income you enter. The tool cannot determine your individual credits or split income.' },
+    { q: 'Does it calculate early or deferred retirement?', a: 'No. It shows normal-retirement scenarios only. Early claim reductions, deferral increases, transition-generation supplements and spouse caps require individual official records and are not included.' },
+    { q: 'Why is there a 13th payment?', a: 'Since 2026, people entitled to an AHV old-age pension in December receive an additional annual payment. This estimate assumes a full year of entitlement and does not include child or transition supplements.' },
+    { q: 'Is this an official pension decision?', a: 'No. It is an estimate using the values you provide. Your compensation office determines the binding pension after checking the insured record.' },
+  ],
+});

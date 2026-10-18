@@ -1,0 +1,25 @@
+export const swissCoordinateEnglish = Object.freeze({
+  name: 'Swiss Coordinate Converter',
+  title: 'Swiss Coordinate Converter — Free LV95, LV03, WGS84 & UTM',
+  description: 'Convert Swiss LV95/LV03, WGS84 and UTM coordinates in your browser. Check CRS, datum and approximation notes; convert a point or up to 1,000 rows to CSV.',
+  intro: 'Convert latitude/longitude, Swiss LV95 or LV03, and WGS84 UTM coordinates on this device. Paste one point or a list; no location is sent to a server.',
+  details: 'Swiss-to-WGS84 conversion uses swisstopo’s published approximate navigation formulas. LV03↔LV95 uses only the 2,000,000 m / 1,000,000 m false-origin offset, not the CHENyx06 grid. UTM uses the WGS84 transverse Mercator projection and selects the standard zone, including Norway and Svalbard exceptions.',
+  example: 'Bern is near LV95 E 2,600,000 m / N 1,200,000 m and LV03 E 600,000 m / N 200,000 m. A direct LV03/LV95 offset is a quick approximation, not a survey transformation.',
+  limits: 'Approximate Swiss transformations are for navigation and general use, not cadastral surveying, engineering control or geodetic work. swisstopo reports that LV03/LV95 distortion can reach 1.6 m; its CHENyx06/FINELTRA grid is needed for centimetre-level transformation. UTM does not support polar regions; use UPS there. Check the displayed CRS and accuracy note before using any result.',
+  fields: {
+    source: 'Input coordinate system', target: 'Convert to', wgs84: 'WGS 84 latitude / longitude', lv95: 'Swiss LV95 · EPSG:2056', lv03: 'Swiss LV03 · EPSG:21781', utm: 'WGS 84 / UTM',
+    first: 'Latitude / Easting', second: 'Longitude / Northing', latitude: 'Latitude', longitude: 'Longitude', easting: 'Easting', northing: 'Northing', zone: 'UTM zone (1–60)', hemisphere: 'Hemisphere', north: 'North', south: 'South',
+    convert: 'Convert coordinates', sample: 'Load Bern example', clear: 'Clear', batch: 'Batch coordinates', batchPlaceholder: '46.9480; 7.4474\n46.0441; 8.7305', batchHelp: 'One pair per line. Separate with semicolon, comma or tab. For UTM input, add zone and hemisphere: easting;northing;zone;N. Up to 1,000 rows.',
+    ready: 'Enter a coordinate pair or paste a list.', complete: 'Conversion complete.', invalid: 'Some coordinates are invalid or outside the supported area. Check the input order, units, zone and hemisphere.',
+    output: 'Converted coordinates', value1: 'Coordinate 1', value2: 'Coordinate 2', dms: 'DMS latitude / longitude', crs: 'CRS and datum', accuracy: 'Accuracy note', complete: 'Conversion complete.',
+    swissForwardAccuracy: 'swisstopo approximate formula; position precision better than 1 m in Switzerland.', swissInverseAccuracy: 'swisstopo approximate formula; published precision better than 0.12″ longitude and 0.08″ latitude.',
+    lv03OffsetAccuracy: 'False-origin offset only. LV03 distortions can reach 1.6 m; this is not CHENyx06/FINELTRA.', utmAccuracy: 'WGS84 UTM transverse Mercator series; not a survey certification.',
+    unchangedAccuracy: 'Same coordinate system; values are unchanged.', export: 'Download CSV', noExport: 'Convert at least one coordinate before exporting.',
+    faq: [
+      { q: 'Are these coordinates suitable for official surveying?', a: 'No. The Swiss formulas here are approximate and intended for navigation/general use. Official or centimetre-level LV03/LV95 transformations need the CHENyx06/FINELTRA grid and the relevant survey workflow.' },
+      { q: 'Why does LV95 differ from LV03 by about 2,000,000 and 1,000,000?', a: 'Those are the false-origin offsets used to distinguish the modern LV95 values from the older LV03 values. The simple offset does not remove local distortions in LV03.' },
+      { q: 'Does the tool upload my coordinates?', a: 'No. Conversion and CSV preparation run in this browser. No online geocoder or coordinate service is called.' },
+      { q: 'Can I convert many rows?', a: 'Yes. Paste up to 1,000 pairs, one per line. For UTM input, each row can include its own zone and hemisphere.' },
+    ],
+  },
+});

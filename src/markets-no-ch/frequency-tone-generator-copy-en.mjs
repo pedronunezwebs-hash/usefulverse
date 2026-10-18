@@ -1,0 +1,28 @@
+export const frequencyToneEnglish = Object.freeze({
+  name: 'Frequency Tone Generator',
+  title: 'Tone Generator Online — Free Frequency & Sweep Tool',
+  description: 'Play or export simple audio tones and frequency sweeps. Choose frequency, waveform, duration and mono or stereo WAV; processing stays in your browser.',
+  intro: 'Make a short sine, square, triangle or sawtooth tone, or sweep between two frequencies. Play it briefly at a low level or save a WAV made on this device.',
+  example: 'A 440 Hz sine tone gives a simple reference signal. A 200–1,200 Hz sweep changes pitch steadily over the chosen duration.',
+  details: 'The page creates the signal with the browser Web Audio API and generates the WAV sample data locally. No upload, server conversion or account is used.',
+  limits: 'This is a simple signal generator, not a certified audio, hearing or medical test. The sound reaching your ears depends on your device, speakers, headphones and system volume. Start very quietly and stop if uncomfortable. High frequencies may not play on every device.',
+  fields: {
+    mode: 'Signal type', tone: 'Single tone', sweep: 'Frequency sweep', frequency: 'Frequency (Hz)', startFrequency: 'Start frequency (Hz)', endFrequency: 'End frequency (Hz)',
+    waveform: 'Waveform', sine: 'Sine', square: 'Square', triangle: 'Triangle', sawtooth: 'Sawtooth', channel: 'Output channels', mono: 'Mono', stereo: 'Stereo', duration: 'Duration (seconds)', volume: 'Output amplitude (0–10%)',
+    preset: 'Quick preset', custom: 'Custom frequency', low: 'Low tone · 100 Hz', reference: 'Reference · 440 Hz', mid: 'Mid tone · 1,000 Hz', high: 'High tone · 8,000 Hz', sweepPreset: 'Sweep · 200–1,200 Hz',
+    play: 'Play tone', stop: 'Stop sound', export: 'Export WAV', status: 'Tone generator status', ready: 'Set a tone, then press Play or export a WAV.', playing: 'Tone is playing. Press Stop to end it now.', finished: 'Playback ended.', exported: 'WAV file is ready.',
+    invalid: 'Check the frequency, duration and output settings.', unsupported: 'This browser does not support Web Audio output.', tooHigh: 'This frequency is too high for the current audio output rate. Choose a lower value.', copied: 'Settings copied.', copy: 'Copy settings',
+    local: 'The signal and WAV are generated in this browser. Nothing is uploaded.', safety: 'Start at the lowest level. A browser slider cannot guarantee a safe sound level because each device is different.',
+    exampleHeading: 'Example', howItWorks: 'How the tone generator works', limitsHeading: 'Sound and device limits', faq1q: 'Can I play a chosen frequency?', faq1a: 'Yes. Choose a frequency from 20 Hz up to 20,000 Hz, subject to the browser audio device Nyquist limit. Some speakers and headphones cannot reproduce the full range.',
+    faq2q: 'Can I make a frequency sweep?', faq2a: 'Yes. Select Frequency sweep and set its start and end frequencies. The frequency changes linearly during the selected playback or WAV duration.', faq3q: 'Does it upload or record audio?', faq3a: 'No. It creates and plays the selected signal locally. It does not use the microphone or send audio to a server.',
+    faq4q: 'Is this a hearing or speaker certification test?', faq4a: 'No. Device hardware, volume, room and hearing differ. This tool provides a signal only and cannot certify equipment or diagnose hearing.', faq5q: 'What does mono or stereo WAV mean?', faq5a: 'Mono stores one audio channel. Stereo stores the same generated signal in two channels; it does not test left/right speaker balance.',
+  },
+  exampleHeading: 'Example', howItWorks: 'How the tone generator works', faqHeading: 'Frequency generator questions', limitsHeading: 'Sound and device limits',
+  faq: [
+    { q: 'Can I play a chosen frequency?', a: 'Yes. Choose a frequency from 20 Hz up to 20,000 Hz, subject to the browser audio device Nyquist limit. Some speakers and headphones cannot reproduce the full range.' },
+    { q: 'Can I make a frequency sweep?', a: 'Yes. Select Frequency sweep and set its start and end frequencies. The frequency changes linearly during the selected playback or WAV duration.' },
+    { q: 'Does it upload or record audio?', a: 'No. It creates and plays the selected signal locally. It does not use the microphone or send audio to a server.' },
+    { q: 'Is this a hearing or speaker certification test?', a: 'No. Device hardware, volume, room and hearing differ. This tool provides a signal only and cannot certify equipment or diagnose hearing.' },
+    { q: 'What does mono or stereo WAV mean?', a: 'Mono stores one audio channel. Stereo stores the same generated signal in two channels; it does not test left/right speaker balance.' },
+  ],
+});
