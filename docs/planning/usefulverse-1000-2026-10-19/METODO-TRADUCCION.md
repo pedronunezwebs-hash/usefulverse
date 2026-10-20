@@ -1,6 +1,6 @@
 # UsefulVerse · Método de traducción en masa
 
-Fecha: 19 de octubre de 2026. **Especificación para la siguiente fase; no se ha instalado ni ejecutado el sistema propuesto.**
+Fecha inicial: 19 de octubre de 2026. **Actualizado el 20 de octubre:** el runner local, la memoria SQLite y la importación de borradores están implementados; M2M100 INT8 está instalado y ejecutándose. La revisión humana y la publicación siguen pendientes.
 
 ## Decisión recomendada
 
@@ -100,9 +100,9 @@ Idioma, país, moneda, unidades y reglas son elecciones separadas. Una persona q
 
 Usar `Intl` para cifras, fechas y moneda, con entrada que admita formatos locales. Contemplar RTL, textos largos y alfabetos no latinos. Una herramienta estadounidense puede ser útil en español, pero debe seguir identificándose como estadounidense. No traducir un nombre de impuesto como si fuese equivalente en otro país.
 
-### 11. Hoja de revisión opcional
+### 11. Hoja de revisión
 
-Columnas: `tool_id`, `key`, `source_en`, `context`, `locale`, `translation`, `status`, `source_hash`, `engine_revision`, `review_note`. Una fila es una traducción concreta. La importación se hace por clave y hash, no por posición de fila. Importar solo traducciones marcadas y verificar que la fuente no haya cambiado. Tratar entradas que empiezan por `=`, `+`, `-` o `@` como texto cuando sean contenido, para evitar fórmulas no deseadas.
+Columnas: `tool_id`, `key`, `source_en`, `context`, `locale`, `translation`, `status`, `source_hash`, `engine_revision`, `reviewer`, `reviewed_at`, `review_note`. Una fila es una traducción concreta. La importación se hace por clave y hash, no por posición de fila, y solo acepta aprobaciones con identificador declarado de revisor y fecha ISO. Estos campos son auto-declarados: no prueban identidad ni permiten atribuir la revisión al dueño sin evidencia externa. Tratar entradas que empiezan por `=`, `+`, `-` o `@` como texto cuando sean contenido, para evitar fórmulas no deseadas.
 
 Si se usa Google Sheets, trabajar con rangos acotados y congelar resultados como valores antes de exportar. No introducir claves de API, datos de usuarios ni documentos privados. No es necesario que Pedro mantenga manualmente 300 hojas.
 
@@ -110,23 +110,23 @@ Si se usa Google Sheets, trabajar con rangos acotados y congelar resultados como
 
 Generar los módulos de idioma, rutas, canonical y hreflang desde el mismo manifest. La aceptación futura requiere 37 versiones completas de cada herramienta nueva y conservación de todas las URLs previas válidas. El proyecto tiene actualmente 25.625 URLs de sitemap entre ambos hosts; no debe sustituirse esa línea base por el catálogo incompleto de 594 herramientas.
 
-Los comandos de un futuro runner podrían ser `extract`, `translate --resume`, `review-export`, `review-import`, `validate` y `build`. **Son una interfaz propuesta, todavía no comandos disponibles en este repositorio.**
+El runner disponible en `scripts/localization/translation-queue.py` ofrece `extract`, `extract-batch`, `import-drafts`, `translate --resume`, `review-export`, `review-import` y `validate`. `scripts/localization/export-approved-tool-copy.mjs` genera un módulo solo cuando todas las cadenas actuales están aprobadas y tienen procedencia de revisión. `scripts/localization/import-pending-tool-drafts.mjs` consolida las copias actuales como borradores y nunca las aprueba.
 
 ## Piloto antes de procesar 300
 
-1. Usar tres herramientas con vocabulario distinto, reutilizando las muestras examinadas, y los 36 destinos.
-2. Registrar cadenas nuevas, aciertos de memoria, caracteres, tiempo de arranque, tiempo total, errores y pico de RAM. Comparar una ejecución completa y otra de reanudación sin cambios.
-3. Interrumpir un lote de prueba y comprobar que solo se repite la unidad incompleta. Esto se hará al implementar, no durante esta tarea de planificación.
-4. Comprobar significado de acciones y resultados, no estilo nativo. Telugú, hausa, amárico y otros destinos con menos recursos requieren una muestra reforzada, no aprobación automática.
-5. Medir `horas_estimadas = cadenas_nuevas / cadenas_por_hora_observadas`; publicar rango y margen. No dar hoy una cifra de horas inventada.
-6. Congelar motor, revisiones, glosario y parámetros tras superar el piloto. Procesar el resto por tandas recuperables, sin reabrir la elección de proveedor para cada herramienta.
+1. Se probó M2M100 con 25 cadenas hausa y una persa: el runner conservó marcadores y no detectó errores de formato en esa muestra. Esto no aprueba el significado ni la naturalidad de las traducciones.
+2. Se midió el trabajo con lotes 32 y 128. El lote 128 produjo más borradores por tanda, pero no hay todavía una medición completa de tiempo para los 36 destinos.
+3. La traducción es reanudable: las filas confirmadas quedan en SQLite y las filas interrumpidas se devuelven a pendiente al reanudar ese idioma.
+4. El origen actual de 288 candidatas contiene 15.278 cadenas estables. Las rutas ya preparadas siguen como borrador; las filas que no preservan la firma de marcadores pasan a `needs-review`.
+5. Telugu usa MADLAD en la configuración prevista. Sus pesos no están instalados en este checkout y el piloto de Telugu aún no se ha completado.
+6. El significado de acciones, resultados, advertencias y términos regionales aún requiere revisión humana; ningún idioma se aprueba automáticamente por pasar las comprobaciones de formato.
 
 ## Coste y actualización
 
-La ruta recomendada no tiene factura por carácter ni una cuota mensual de proveedor. Sí tiene coste de equipo, electricidad, almacenamiento y tiempo. No se activó ninguna API de traducción, suscripción o descarga de pesos en esta tarea. El límite autorizado de 3 USD corresponde exclusivamente a la investigación SEO.
+La ruta local no tiene factura por carácter ni cuota mensual de proveedor. Sí consume equipo, electricidad, almacenamiento y tiempo. No se activó ninguna API de traducción ni proveedor pagado. M2M100 se descargó y convirtió localmente; MADLAD sigue pendiente. El límite autorizado de 3 USD corresponde exclusivamente a la investigación SEO.
 
 Traducir automáticamente no mantiene vigentes las leyes ni los datos. Cada herramienta dependiente de datos tendrá `source_url`, `license`, `effective_from`, `checked_at`, `review_due`, versión y propietario de actualización. Si una fuente o regla caduca, mostrar su fecha y suspender la estimación que dependa de ella hasta revisarla. Un feed meteorológico se refresca por la cadencia del proveedor; una tabla fiscal, cuando cambie su ejercicio o norma. No es correcto prometer «actualizada siempre» sin una política de caducidad y seguimiento.
 
 ## Resultado de esta tarea
 
-Se entrega el método, el diseño de cola/memoria, el piloto y los criterios de aceptación. Quedan para la fase de implementación: instalar dependencias en entorno aislado, obtener los modelos con sus revisiones, medir velocidad/calidad, programar el runner y generar traducciones. No se ha modificado el código publicado.
+Estado al 20 de octubre: runner local implementado; 288 candidatas tienen 36 rutas de copy en inglés o borrador y se consolidaron 534.730 filas para revisión. 532.272 superaron los controles de marcadores; 2.458 requieren revisión por marcadores. La importación final no tiene claves faltantes ni fuentes obsoletas. La ruta noruega adicional `nb` se está completando desde `nb-NO`. No hay filas aprobadas ni packs aprobados exportados. El build de publicación exige 37 idiomas y permanece bloqueado también por 12 herramientas sin implementar y 289 packs sin revisión. Ninguna herramienta se publicó.

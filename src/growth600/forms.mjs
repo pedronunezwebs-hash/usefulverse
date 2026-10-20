@@ -1,6 +1,7 @@
 import { escapeGrowthHtml } from './render.mjs';
 import { FONT_PRESETS } from './tools/font-pairing-tool/logic.mjs';
 import { pendingToolIds, renderPendingToolForm } from './tools/pending-23/form.mjs';
+import koreaWithholdingTable from './tools/korea-net-salary/withholding-table.json' with { type: 'json' };
 
 function attachCopy(html, copy) {
   const safeJson = JSON.stringify(copy).replaceAll('<', '\\u003c').replaceAll('>', '\\u003e').replaceAll('&', '\\u0026');
@@ -17,9 +18,618 @@ function button(action, text, kind = 'primary') {
 }
 
 export function renderGrowthForm(toolId, copy) {
-  if (pendingToolIds.includes(toolId)) return attachCopy(renderPendingToolForm(toolId, copy), copy);
   const fields = copy?.fields ?? {};
   const actions = copy?.actions ?? {};
+  if (toolId === 'us-aca-subsidy') return attachCopy(`<section class="pending-tool us-aca-subsidy" data-aca-subsidy>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('aca-income',fields.householdIncome,'<input id="aca-income" name="income" type="number" min="0" max="10000000" step="1" value="50000" required>')}
+      ${label('aca-family-size',fields.familySize,'<input id="aca-family-size" name="familySize" type="number" min="1" max="20" step="1" value="1" required>')}
+      ${label('aca-region',fields.region,`<select id="aca-region" name="region"><option value="contiguous">${escapeGrowthHtml(fields.contiguous)}</option><option value="alaska">${escapeGrowthHtml(fields.alaska)}</option><option value="hawaii">${escapeGrowthHtml(fields.hawaii)}</option></select>`)}
+      ${label('aca-benchmark',fields.benchmarkPremium,'<input id="aca-benchmark" name="benchmark" type="number" min="0" max="1000000" step="0.01" value="9000" required>')}
+      ${label('aca-enrollment',fields.enrollmentPremium,'<input id="aca-enrollment" name="enrollment" type="number" min="0" max="1000000" step="0.01" value="7200" required>')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://www.irs.gov/irb/2025-32_IRB" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.irsSource)}</a></p>
+    <p class="hint"><a href="https://www.govinfo.gov/content/pkg/FR-2025-01-17/html/2025-01377.htm" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.fplSource)}</a></p>
+  </section>`, copy);
+  if (toolId === 'france-unemployment-benefit') return attachCopy(`<section class="pending-tool france-are" data-france-are>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('fr-sjr',fields.sjr,'<input id="fr-sjr" name="sjr" type="number" min="0.01" max="10000" step="0.01" value="100" required>')}
+      ${label('fr-days',fields.days,'<select id="fr-days" name="days"><option value="28">28</option><option value="29">29</option><option value="30" selected>30</option><option value="31">31</option></select>')}
+      ${label('fr-part-time',fields.partTime,'<select id="fr-part-time" name="partTime"><option value="1">100%</option><option value="0.8">80%</option><option value="0.6">60%</option><option value="0.5">50%</option><option value="0.4">40%</option><option value="0.2">20%</option></select>')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://www.francetravail.fr/candidat/mes-droits-aux-aides-et-allocati/lessentiel-a-savoir-sur-lallocat/quelle-somme-vais-je-recevoir/comment-est-calcule-le-montant-d.html" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'germany-unemployment-benefit') return attachCopy(`<section class="pending-tool germany-unemployment-benefit" data-germany-unemployment-benefit>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('de-daily-entitlement',fields.dailyEntitlement,'<input id="de-daily-entitlement" name="daily" type="number" min="0" max="10000" step="0.01" value="60" required>')}
+      ${label('de-qualifying-child',fields.childStatus,`<select id="de-qualifying-child" name="child"><option value="none">${escapeGrowthHtml(fields.noChild)}</option><option value="qualifying">${escapeGrowthHtml(fields.qualifyingChild)}</option></select>`)}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://www.arbeitsagentur.de/finanzielle-hilfen/anspruch-hoehe-dauer-arbeitslosengeld" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'spain-unemployment-benefit') return attachCopy(`<section class="pending-tool spain-unemployment-benefit" data-spain-unemployment-benefit>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('es-regulatory-base',fields.regulatoryBase,'<input id="es-regulatory-base" name="base" type="number" min="0" max="100000" step="0.01" value="1800" required>')}
+      ${label('es-benefit-day',fields.benefitDay,'<input id="es-benefit-day" name="day" type="number" min="1" max="720" step="1" value="120" required>')}
+      ${label('es-children',fields.dependentChildren,`<select id="es-children" name="children"><option value="none">${escapeGrowthHtml(fields.noChildren)}</option><option value="one">${escapeGrowthHtml(fields.oneOrMoreChildren)}</option><option value="two-plus">${escapeGrowthHtml(fields.twoOrMoreChildren)}</option></select>`)}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://www.sepe.es/HomeSepe/prestaciones-desempleo/Cuantias-anuales" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'mexico-income-tax') return attachCopy(`<section class="pending-tool mexico-income-tax" data-mexico-income-tax>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('mexico-taxable-income',fields.annualTaxableIncome,'<input id="mexico-taxable-income" name="income" type="number" min="0" max="1000000000" step="0.01" value="500000" required>')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://dof.gob.mx/nota_detalle_popup.php?codigo=5777219" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'brazil-unemployment-benefit') return attachCopy(`<section class="pending-tool brazil-unemployment-benefit" data-brazil-unemployment-benefit>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('br-avg-wage',fields.averageWage,'<input id="br-avg-wage" name="wage" type="number" min="0" max="100000000" step="0.01" value="2500" required>')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://portalfat.mte.gov.br/mte-reajusta-valores-do-beneficio-seguro-desemprego/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'virtual-try-on') return attachCopy(`<section class="pending-tool virtual-try-on" data-virtual-try-on>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('tryon-base-image',fields.baseImage,'<input id="tryon-base-image" name="base" type="file" accept="image/png,image/jpeg,image/webp" required>')}
+      ${label('tryon-garment-image',fields.garmentImage,'<input id="tryon-garment-image" name="garment" type="file" accept="image/png,image/jpeg,image/webp" required>')}
+      ${label('tryon-left',fields.leftPosition,'<input id="tryon-left" name="left" type="number" min="0" max="100" step="1" value="35">')}
+      ${label('tryon-top',fields.topPosition,'<input id="tryon-top" name="top" type="number" min="0" max="100" step="1" value="25">')}
+      ${label('tryon-width',fields.garmentWidth,'<input id="tryon-width" name="width" type="number" min="1" max="100" step="1" value="35">')}
+      ${label('tryon-opacity',fields.opacity,'<input id="tryon-opacity" name="opacity" type="range" min="10" max="100" step="1" value="100">')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.preview)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><canvas data-preview></canvas><div class="actions"><button type="button" data-download class="button button--secondary">${escapeGrowthHtml(actions.download)}</button></div></section>
+  </section>`, copy);
+  if (toolId === 'embroidery-digitizer') return attachCopy(`<section class="pending-tool embroidery-digitizer" data-embroidery-digitizer>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('embroidery-image',fields.image,'<input id="embroidery-image" name="image" type="file" accept="image/png,image/jpeg,image/webp" required>')}
+      ${label('embroidery-threshold',fields.threshold,'<input id="embroidery-threshold" name="threshold" type="range" min="16" max="240" value="128">')}
+      ${label('embroidery-spacing',fields.rowSpacing,'<input id="embroidery-spacing" name="spacing" type="number" min="2" max="16" step="1" value="6" required>')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.convert)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-preview></div><div class="actions"><button type="button" data-download class="button button--secondary">${escapeGrowthHtml(actions.download)}</button></div></section>
+  </section>`, copy);
+  if (toolId === 'china-individual-income-tax') return attachCopy(`<section class="pending-tool china-individual-income-tax" data-china-income-tax>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('china-taxable-income',fields.taxableIncomeAfterDeductions,'<input id="china-taxable-income" name="income" type="number" min="0" max="1000000000" step="0.01" value="200000" required>')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://www.chinatax.gov.cn/eng/c102962/c102967/c102997/c103004/c5245849/content.html" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'taiwan-income-tax') return attachCopy(`<section class="pending-tool taiwan-income-tax" data-taiwan-income-tax>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('taiwan-taxable-income',fields.netTaxableIncome,'<input id="taiwan-taxable-income" name="income" type="number" min="0" max="1000000000" step="1" value="1000000" required>')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://www.etax.nat.gov.tw/etwmain/en/announcement/alien-individual-income-tax/progressive-tax-rate" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'india-hra-exemption') return attachCopy(`<section class="pending-tool india-hra-exemption" data-india-hra>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('hra-basic',fields.basicSalary,'<input id="hra-basic" name="basic" type="number" min="0" max="100000000" step="0.01" value="600000" required>')}
+      ${label('hra-da',fields.eligibleDa,'<input id="hra-da" name="da" type="number" min="0" max="100000000" step="0.01" value="0" required>')}
+      ${label('hra-actual',fields.actualHra,'<input id="hra-actual" name="hra" type="number" min="0" max="100000000" step="0.01" value="240000" required>')}
+      ${label('hra-rent',fields.actualRent,'<input id="hra-rent" name="rent" type="number" min="0" max="100000000" step="0.01" value="240000" required>')}
+      ${label('hra-city',fields.cityType,`<select id="hra-city" name="city"><option value="metro">${escapeGrowthHtml(fields.metroCity)}</option><option value="other">${escapeGrowthHtml(fields.otherCity)}</option></select>`)}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://www.incometaxindia.gov.in/w/deductions/allowances-allowed-to-a-salaried-employee" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'uk-universal-credit') return attachCopy(`<section class="pending-tool uk-universal-credit" data-uk-universal-credit>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('uc-max-award',fields.maximumAward,'<input id="uc-max-award" name="award" type="number" min="0" max="1000000" step="0.01" value="800" required>')}
+      ${label('uc-net-earnings',fields.netEarnings,'<input id="uc-net-earnings" name="earnings" type="number" min="0" max="1000000" step="0.01" value="1200" required>')}
+      ${label('uc-work-allowance',fields.workAllowance,`<select id="uc-work-allowance" name="allowance"><option value="none">${escapeGrowthHtml(fields.noAllowance)}</option><option value="housing">${escapeGrowthHtml(fields.housingAllowance)}</option><option value="no-housing">${escapeGrowthHtml(fields.noHousingAllowance)}</option></select>`)}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://www.gov.uk/universal-credit/how-your-wages-affect-your-payments" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'malaysia-epf') return attachCopy(`<section class="pending-tool malaysia-epf" data-malaysia-epf>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('malaysia-wages',fields.monthlyWages,'<input id="malaysia-wages" name="wages" type="number" min="0" max="100000000" step="0.01" value="3000" required>')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'spain-income-tax') return attachCopy(`<section class="pending-tool spain-income-tax" data-spain-income-tax>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('spain-taxable-base',fields.taxableBaseAfterMinimum,'<input id="spain-taxable-base" name="base" type="number" min="0" max="100000000" step="0.01" value="30000" required>')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://boe.es/buscar/act.php?id=BOE-A-2006-20764" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'brazil-fgts-calculator') return attachCopy(`<section class="pending-tool brazil-fgts-calculator" data-brazil-fgts>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('fgts-remuneration',fields.remunerationBase,'<input id="fgts-remuneration" name="base" type="number" min="0" max="100000000" step="0.01" value="3000" required>')}
+      ${label('fgts-category',fields.workerCategory,`<select id="fgts-category" name="category"><option value="standard">${escapeGrowthHtml(fields.standardWorker)}</option><option value="apprentice">${escapeGrowthHtml(fields.apprentice)}</option></select>`)}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://www.fgts.gov.br/Paginas/subpaginas/recolhimento-empregado.aspx" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'portugal-net-salary') return attachCopy(`<section class="pending-tool portugal-net-salary" data-portugal-net-salary>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('portugal-gross-monthly',fields.grossMonthly,'<input id="portugal-gross-monthly" name="gross" type="number" min="0" max="1000000" step="0.01" value="2000" required>')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://info.portaldasfinancas.gov.pt/pt/atualidades/legislativa/Paginas/Despacho-233-A-2026.aspx" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'spain-termination-pay') return attachCopy(`<section class="pending-tool spain-termination-pay" data-spain-termination-pay>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('spain-annual-pay',fields.annualRemuneration,'<input id="spain-annual-pay" name="annualPay" type="number" min="1" max="100000000" step="0.01" value="36000" required>')}
+      ${label('spain-service-months',fields.serviceMonths,'<input id="spain-service-months" name="months" type="number" min="1" max="720" step="1" value="60" required>')}
+      ${label('spain-dismissal-type',fields.dismissalType,`<select id="spain-dismissal-type" name="type"><option value="objective">${escapeGrowthHtml(fields.objectiveDismissal)}</option><option value="unfair">${escapeGrowthHtml(fields.unfairDismissal)}</option></select>`)}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://boe.es/buscar/act.php?id=BOE-A-2015-11430" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'sewing-pattern-drafter') return attachCopy(`<section class="pending-tool sewing-pattern-drafter" data-sewing-pattern>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form data-pattern-form><div class="calculator-grid">
+      ${['waistMm','easeMm','lengthMm','seamAllowanceMm','hemAllowanceMm'].map((key)=>label(`pattern-${key}`,fields[key],`<input id="pattern-${key}" name="${key}" type="number" min="0" max="3000" step="1" value="${key==='waistMm'?'760':key==='lengthMm'?'550':key==='seamAllowanceMm'?'10':key==='hemAllowanceMm'?'25':'20'}" required>`)).join('')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.draft)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><p data-measurements></p><div data-preview></div><div class="actions"><button type="button" data-download class="button button--secondary">${escapeGrowthHtml(actions.download)}</button></div></section>
+  </section>`, copy);
+  if (toolId === 'pregnancy-weight-gain') return attachCopy(`<section class="pending-tool pregnancy-weight-gain" data-pregnancy-weight-gain>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form data-pregnancy-form><div class="calculator-grid">
+      ${label('pregnancy-bmi',fields.prepregnancyBmi,`<input id="pregnancy-bmi" name="bmi" type="number" min="10" max="60" step="0.1" value="22" required>`)}
+      ${label('pregnancy-type',fields.pregnancyType,`<select id="pregnancy-type" name="pregnancyType"><option value="singleton">${escapeGrowthHtml(fields.singleton)}</option><option value="twins">${escapeGrowthHtml(fields.twins)}</option><option value="three-or-more">${escapeGrowthHtml(fields.threeOrMore)}</option></select>`)}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section><p class="hint"><a href="https://www.cdc.gov/maternal-infant-health/pregnancy-weight/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'japan-income-tax') return attachCopy(`<section class="pending-tool japan-income-tax" data-japan-income-tax>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('japan-income',fields.taxableIncome,'<input id="japan-income" name="income" type="number" min="0" max="330000000" step="1" value="7000000" required>')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'france-income-tax') return attachCopy(`<section class="pending-tool france-income-tax" data-france-income-tax>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('france-income',fields.taxableIncomePerPart,'<input id="france-income" name="income" type="number" min="0" max="100000000" step="0.01" value="30000" required>')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://bofip.impots.gouv.fr/bofip/2491-PGP.html/identifiant%3DBOI-IR-LIQ-20-10-20260407" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'capital-gains-tax-uk') return attachCopy(`<section class="pending-tool uk-capital-gains" data-uk-capital-gains>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('uk-cgt-gains',fields.netGainsAfterLosses,'<input id="uk-cgt-gains" name="gains" type="number" min="0" max="100000000" step="0.01" value="12600" required>')}
+      ${label('uk-cgt-income',fields.taxableIncome,'<input id="uk-cgt-income" name="income" type="number" min="0" max="100000000" step="0.01" value="20000" required>')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://www.gov.uk/capital-gains-tax/rates" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'us-w4-withholding') return attachCopy(`<section class="pending-tool us-w4-withholding" data-us-w4-withholding>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('w4-wages',fields.wagesPerPayPeriod,'<input id="w4-wages" name="wages" type="number" min="0" max="1000000" step="0.01" value="2307.69" required>')}
+      ${label('w4-frequency',fields.payFrequency,`<select id="w4-frequency" name="frequency"><option value="weekly">${escapeGrowthHtml(fields.weekly)}</option><option value="biweekly" selected>${escapeGrowthHtml(fields.biweekly)}</option><option value="semimonthly">${escapeGrowthHtml(fields.semimonthly)}</option><option value="monthly">${escapeGrowthHtml(fields.monthly)}</option></select>`)}
+      ${label('w4-filing-status',fields.filingStatus,`<select id="w4-filing-status" name="filingStatus"><option value="single">${escapeGrowthHtml(fields.single)}</option><option value="married">${escapeGrowthHtml(fields.married)}</option><option value="head">${escapeGrowthHtml(fields.headOfHousehold)}</option></select>`)}
+      ${label('w4-step2',fields.step2,'<input id="w4-step2" name="step2" type="checkbox">')}
+      ${label('w4-step3',fields.step3,'<input id="w4-step3" name="step3" type="number" min="0" max="1000000" step="0.01" value="0">')}
+      ${label('w4-step4a',fields.step4a,'<input id="w4-step4a" name="step4a" type="number" min="0" max="1000000" step="0.01" value="0">')}
+      ${label('w4-step4b',fields.step4b,'<input id="w4-step4b" name="step4b" type="number" min="0" max="1000000" step="0.01" value="0">')}
+      ${label('w4-step4c',fields.step4c,'<input id="w4-step4c" name="step4c" type="number" min="0" max="1000000" step="0.01" value="0">')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://www.irs.gov/publications/p15t" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'canada-payroll') return attachCopy(`<section class="pending-tool canada-payroll" data-canada-payroll>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('canada-income',fields.annualIncome,'<input id="canada-income" name="income" type="number" min="0" max="10000000" step="0.01" value="85000" required>')}
+      ${label('canada-age',fields.age,'<input id="canada-age" name="age" type="number" min="18" max="69" step="1" value="40" required>')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4032-payroll-deductions-tables/t4032oc-jan/t4032oc-january-general-information.html" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'korea-net-salary') {
+    const safeTableJson = JSON.stringify(koreaWithholdingTable.bands).replaceAll('<', '\\u003c').replaceAll('>', '\\u003e').replaceAll('&', '\\u0026');
+    return attachCopy(`<script type="application/json" data-korea-withholding-table>${safeTableJson}</script><section class="pending-tool korea-net-salary" data-korea-net-salary>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('korea-salary',fields.monthlyTaxableSalary,'<input id="korea-salary" name="salary" type="number" min="1000000" max="9999999" step="1000" value="3500000" required>')}
+      ${label('korea-family',fields.eligibleFamilyMembers,`<select id="korea-family" name="family">${Array.from({length:11},(_,index)=>`<option value="${index+1}"${index===0?' selected':''}>${index+1}</option>`).join('')}</select>`)}
+      ${label('korea-children',fields.eligibleChildren,`<select id="korea-children" name="children">${Array.from({length:12},(_,index)=>`<option value="${index}"${index===0?' selected':''}>${index}</option>`).join('')}</select>`)}
+      ${label('korea-ratio',fields.withholdingRatio,'<select id="korea-ratio" name="ratio"><option value="80">80%</option><option value="100" selected>100%</option><option value="120">120%</option></select>')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7862&amp;mi=6583" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  }
+  if (toolId === 'chemical-name-resolver') return attachCopy(`<section class="pending-tool chemical-name-resolver" data-chemical-name-resolver>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form novalidate>
+      ${label('chemical-name-query', fields.query, '<input id="chemical-name-query" name="query" type="search" maxlength="120" autocomplete="off" required>')}
+      <p class="hint">${escapeGrowthHtml(fields.queryHint)}</p>
+      <div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.lookup)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    </form>
+    <p class="status" data-status role="status" aria-live="polite"></p>
+    <section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-results></div></section>
+    <p class="hint">${escapeGrowthHtml(fields.disclosure)} <a href="https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'ipa-transcriber') return attachCopy(`<section class="pending-tool ipa-transcriber" data-ipa-transcriber>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form novalidate>
+      ${label('ipa-transcriber-text', fields.text, '<textarea id="ipa-transcriber-text" name="text" data-input="text" maxlength="120" rows="3" required></textarea>')}
+      <p class="hint">${escapeGrowthHtml(fields.inputHint)}</p>
+      <div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.transcribe)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    </form><p class="status" data-status role="status" aria-live="polite"></p>
+    <section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint">${escapeGrowthHtml(fields.privacyNote)}</p><p class="hint"><a href="https://github.com/cmusphinx/cmudict" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'singapore-cpf') return attachCopy(`<section class="pending-tool singapore-cpf" data-singapore-cpf>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('cpf-age',fields.age,'<input id="cpf-age" name="age" type="number" min="16" max="100" step="1" value="35" required>')}
+      ${label('cpf-wage',fields.ordinaryWage,'<input id="cpf-wage" name="wage" type="number" min="750.01" max="1000000" step="0.01" value="5000" required>')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://www.cpf.gov.sg/employer/employer-obligations/how-much-cpf-contributions-to-pay" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'philippines-sss') return attachCopy(`<section class="pending-tool philippines-sss" data-philippines-sss>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form><div class="calculator-grid">
+      ${label('sss-salary',fields.monthlyCompensation,'<input id="sss-salary" name="salary" type="number" min="0" max="1000000000" step="0.01" value="25000" required>')}
+    </div><p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+    <p class="hint"><a href="https://www.sss.gov.ph/pay-contribution/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p>
+  </section>`, copy);
+  if (toolId === 'preferans') return attachCopy(`<section class="game preferans-game" data-preferans>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><div class="actions"><button type="button" data-start class="button button--primary">${escapeGrowthHtml(actions.start)}</button><button type="button" data-new hidden class="button button--secondary">${escapeGrowthHtml(actions.newHand)}</button></div>
+    <section data-auction hidden aria-labelledby="preferans-auction-heading"><h2 id="preferans-auction-heading">${escapeGrowthHtml(fields.auction)}</h2><p data-auction-status></p><div class="actions" data-bid-actions></div></section>
+    <section data-exchange hidden aria-labelledby="preferans-exchange-heading"><h2 id="preferans-exchange-heading">${escapeGrowthHtml(fields.exchange)}</h2><p>${escapeGrowthHtml(fields.exchangeHint)}</p><ul data-exchange-cards class="preferans-cards"></ul><button type="button" data-confirm-exchange class="button button--primary" disabled>${escapeGrowthHtml(actions.exchange)}</button></section>
+    <section data-defense hidden aria-labelledby="preferans-defense-heading"><h2 id="preferans-defense-heading">${escapeGrowthHtml(fields.defense)}</h2><div class="actions"><button type="button" data-defend class="button button--primary">${escapeGrowthHtml(actions.defend)}</button><button type="button" data-drop class="button button--secondary">${escapeGrowthHtml(actions.drop)}</button></div></section>
+    <section aria-labelledby="preferans-score-heading"><h2 id="preferans-score-heading">${escapeGrowthHtml(fields.score)}</h2><ol data-scores></ol></section><section aria-labelledby="preferans-trick-heading"><h2 id="preferans-trick-heading">${escapeGrowthHtml(fields.currentTrick)}</h2><ol data-trick aria-live="polite"></ol></section>
+    <section aria-labelledby="preferans-hand-heading"><h2 id="preferans-hand-heading">${escapeGrowthHtml(fields.hand)}</h2><ul data-hand class="preferans-cards"></ul></section><p class="status" data-status role="status" aria-live="polite"></p>
+    <details><summary>${escapeGrowthHtml(fields.rulesTitle)}</summary><ul>${[fields.rulesDeck,fields.rulesBidding,fields.rulesPlay,fields.rulesScoring,fields.rulesScope].map((rule)=>`<li>${escapeGrowthHtml(rule)}</li>`).join('')}</ul><p><a href="https://www.pagat.com/preference/austpref.html" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.sourceLink)}</a></p></details>
+  </section>`, copy);
+  if (toolId === 'janggi') return attachCopy(renderPendingToolForm(toolId, copy), copy);
+  if (toolId === '3d-model-editor') return attachCopy(`<section class="mesh-editor" data-mesh-editor>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><p class="status" data-status role="status" aria-live="polite"></p>
+    <canvas width="720" height="460" tabindex="0" role="img" aria-label="${escapeGrowthHtml(fields.preview)}" data-mesh-preview></canvas><p class="hint" data-mesh-summary></p>
+    <form data-mesh-form><fieldset><legend>${escapeGrowthHtml(fields.primitive)}</legend><div class="form-grid">${['width','height','depth'].map((key)=>label(`mesh-${key}`,fields[key],`<input id="mesh-${key}" name="${key}" type="number" min="0.01" max="1000" step="any" value="1" required>`)).join('')}</div><button class="button button--primary" type="submit" name="operation" value="box">${escapeGrowthHtml(actions.createBox)}</button></fieldset>
+    <fieldset><legend>${escapeGrowthHtml(fields.extrusion)}</legend>${label('mesh-face',fields.face,`<select id="mesh-face" name="face"></select>`)}${label('mesh-distance',fields.distance,`<input id="mesh-distance" name="distance" type="number" min="-1000" max="1000" step="any" value="1">`)}<button class="button button--secondary" type="submit" name="operation" value="extrude">${escapeGrowthHtml(actions.extrude)}</button></fieldset>
+    <fieldset><legend>${escapeGrowthHtml(fields.transform)}</legend><div class="form-grid">${['x','y','z'].map((key)=>label(`mesh-${key}`,fields[key],`<input id="mesh-${key}" name="${key}" type="number" min="-1000" max="1000" step="any" value="0">`)).join('')}${['rx','ry','rz'].map((key)=>label(`mesh-${key}`,fields[key],`<input id="mesh-${key}" name="${key}" type="number" min="-3600" max="3600" step="any" value="0">`)).join('')}${['sx','sy','sz'].map((key)=>label(`mesh-${key}`,fields[key],`<input id="mesh-${key}" name="${key}" type="number" min="0.01" max="1000" step="any" value="1">`)).join('')}</div><button class="button button--secondary" type="submit" name="operation" value="transform">${escapeGrowthHtml(actions.transform)}</button></fieldset>
+    <div class="actions"><button type="button" class="button button--secondary" data-export>${escapeGrowthHtml(actions.exportObj)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+  </section>`, copy);
+  if (toolId === 'phq9-questionnaire') return attachCopy(`<section class="phq9" data-phq9>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form data-phq9-form><fieldset><legend>${escapeGrowthHtml(fields.recallPeriod)}</legend>
+    ${Array.from({length:9},(_,index)=>{const n=index+1;return `<fieldset class="phq9__item"><legend>${n}. ${escapeGrowthHtml(fields[`question${n}`])}</legend><div class="phq9__options">${[0,1,2,3].map((score)=>`<label><input type="radio" name="q${n}" value="${score}" required><span>${escapeGrowthHtml(fields[`option${score}`])}</span></label>`).join('')}</div></fieldset>`}).join('')}
+    <fieldset class="phq9__item"><legend>${escapeGrowthHtml(fields.difficulty)}</legend>${[0,1,2,3].map((score)=>`<label><input type="radio" name="difficulty" value="${score}" required><span>${escapeGrowthHtml(fields[`difficulty${score}`])}</span></label>`).join('')}</fieldset>
+    <div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.score)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></fieldset></form>
+    <section data-result hidden aria-labelledby="phq9-result-heading"><h2 id="phq9-result-heading">${escapeGrowthHtml(fields.resultTitle)}</h2><p data-score></p><p data-band></p><p data-difficulty></p><aside class="phq9__safety" data-safety hidden role="alert" aria-labelledby="phq9-safety-heading"><h3 id="phq9-safety-heading">${escapeGrowthHtml(fields.safetyTitle)}</h3><p>${escapeGrowthHtml(fields.safetyImmediate)}</p><p>${escapeGrowthHtml(fields.safetySupport)}</p><p>${escapeGrowthHtml(fields.safetyNote)} <a href="https://findahelpline.com/" target="_blank" rel="noreferrer">${escapeGrowthHtml(fields.helplineLink)}</a></p></aside></section>
+    <p class="status" data-status role="status" aria-live="polite"></p>
+  </section>`, copy);
+  if (toolId === 'gad7-questionnaire') return attachCopy(`<section class="phq9" data-gad7>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><p class="hint">${escapeGrowthHtml(fields.instrumentNote)}</p><form data-gad7-form><fieldset><legend>${escapeGrowthHtml(fields.recallPeriod)}</legend>
+    ${Array.from({length:7},(_,index)=>{const n=index+1;return `<fieldset class="phq9__item"><legend>${n}. ${escapeGrowthHtml(fields[`question${n}`])}</legend><div class="phq9__options">${[0,1,2,3].map((score)=>`<label><input type="radio" name="q${n}" value="${score}" required><span>${escapeGrowthHtml(fields[`option${score}`])}</span></label>`).join('')}</div></fieldset>`}).join('')}
+    <fieldset class="phq9__item"><legend>${escapeGrowthHtml(fields.difficulty)}</legend>${[0,1,2,3].map((score)=>`<label><input type="radio" name="difficulty" value="${score}" required><span>${escapeGrowthHtml(fields[`difficulty${score}`])}</span></label>`).join('')}</fieldset>
+    <div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.score)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></fieldset></form>
+    <section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><p data-score></p><p data-band></p><p data-difficulty></p><p class="hint">${escapeGrowthHtml(fields.resultNote)}</p></section><p class="status" data-status role="status" aria-live="polite"></p>
+  </section>`, copy);
+  if (toolId === 'panorama-stitcher') return attachCopy(`<section class="pending-tool panorama-stitcher" data-panorama-stitcher>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><form data-panorama-form><label class="field" for="panorama-images">${escapeGrowthHtml(fields.images)}<input id="panorama-images" name="images" type="file" accept="image/jpeg,image/png,image/webp" multiple required></label>
+    <p class="hint">${escapeGrowthHtml(fields.orderNote)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.stitch)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></form>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><p data-panorama-dimensions></p><img data-panorama-preview alt="${escapeGrowthHtml(fields.resultAlt)}"><p><a class="button button--secondary" data-download hidden>${escapeGrowthHtml(actions.download)}</a></p></section>
+  </section>`, copy);
+  if (toolId === 'adult-adhd-screener') return attachCopy(`<section class="asrs" data-asrs>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p><p class="hint">${escapeGrowthHtml(fields.languageNote)} <a href="https://www.hcp.med.harvard.edu/ncs/asrs_2025.php" target="_blank" rel="noreferrer">${escapeGrowthHtml(fields.officialLink)}</a></p><p class="hint">${escapeGrowthHtml(fields.instrumentNote)}</p>
+    <form data-asrs-form><fieldset><legend>${escapeGrowthHtml(fields.recallPeriod)}</legend>${Array.from({length:6},(_,index)=>{const n=index+1;return `<fieldset class="asrs__item"><legend>${n}. ${escapeGrowthHtml(fields[`question${n}`])}</legend><div class="asrs__options">${[0,1,2,3,4].map((score)=>`<label><input type="radio" name="q${n}" value="${score}" required><span>${escapeGrowthHtml(fields[`option${score}`])}</span></label>`).join('')}</div></fieldset>`}).join('')}
+    <div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.score)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div></fieldset></form>
+    <section data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><p data-score></p><p data-band></p><p class="hint">${escapeGrowthHtml(fields.resultNote)}</p></section><p class="status" data-status role="status" aria-live="polite"></p>
+  </section>`, copy);
+  if (toolId === 'local-ai-chat') return attachCopy(`<section class="local-ai-chat" data-local-ai-chat>
+    <p class="hint">${escapeGrowthHtml(fields.modelNotice)} <a href="https://huggingface.co/Qwen/Qwen3-0.6B/blob/main/LICENSE" target="_blank" rel="noreferrer">${escapeGrowthHtml(fields.modelLicense)}</a></p>
+    <div class="actions"><button type="button" class="button button--primary" data-load-model>${escapeGrowthHtml(actions.loadModel)}</button><button type="button" class="button button--secondary" data-clear-chat>${escapeGrowthHtml(actions.clear)}</button><button type="button" class="button button--secondary" data-download-chat disabled>${escapeGrowthHtml(actions.download)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <ol class="local-ai-chat__messages" data-messages aria-live="polite" aria-label="${escapeGrowthHtml(fields.conversation)}"></ol>
+    <form data-chat-form><label class="field" for="local-ai-chat-prompt">${escapeGrowthHtml(fields.prompt)}<textarea id="local-ai-chat-prompt" name="prompt" maxlength="2000" rows="4" required disabled></textarea></label><div class="actions"><button type="submit" class="button button--primary" data-send disabled>${escapeGrowthHtml(actions.send)}</button><button type="button" class="button button--secondary" data-stop hidden>${escapeGrowthHtml(actions.stop)}</button></div></form>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+  </section>`, copy);
+  if (toolId === 'paraphrasing-tool') return attachCopy(`<section class="local-ai-chat local-paraphraser" data-paraphraser>
+    <p class="hint">${escapeGrowthHtml(fields.modelNotice)} <a href="https://huggingface.co/Qwen/Qwen3-0.6B/blob/main/LICENSE" target="_blank" rel="noreferrer">${escapeGrowthHtml(fields.modelLicense)}</a></p>
+    <div class="actions"><button type="button" class="button button--primary" data-load-model>${escapeGrowthHtml(actions.loadModel)}</button><button type="reset" form="paraphraser-form" class="button button--secondary" data-clear>${escapeGrowthHtml(actions.clear)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <form id="paraphraser-form" data-paraphraser-form><label class="field" for="paraphraser-style">${escapeGrowthHtml(fields.style)}<select id="paraphraser-style" name="style" disabled><option value="clear">${escapeGrowthHtml(fields.clearStyle)}</option><option value="formal">${escapeGrowthHtml(fields.formalStyle)}</option><option value="friendly">${escapeGrowthHtml(fields.friendlyStyle)}</option><option value="concise">${escapeGrowthHtml(fields.conciseStyle)}</option></select></label><label class="field" for="paraphraser-source">${escapeGrowthHtml(fields.source)}<textarea id="paraphraser-source" name="source" maxlength="4000" rows="8" required disabled></textarea></label><p class="hint"><span data-length>0</span> / 4,000</p><div class="actions"><button type="submit" class="button button--primary" data-rewrite disabled>${escapeGrowthHtml(actions.rewrite)}</button><button type="button" class="button button--secondary" data-stop hidden>${escapeGrowthHtml(actions.stop)}</button><button type="button" class="button button--secondary" data-copy disabled>${escapeGrowthHtml(actions.copy)}</button></div><label class="field" for="paraphraser-output">${escapeGrowthHtml(fields.output)}<textarea id="paraphraser-output" data-output rows="8" readonly></textarea></label></form>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+  </section>`, copy);
+  if (toolId === 'mus') return attachCopy(`<section class="game mus-game" data-mus-game>
+    <div class="game-toolbar"><button type="button" class="button button--primary" data-start>${escapeGrowthHtml(actions.start)}</button><button type="button" class="button button--secondary" data-new-game hidden>${escapeGrowthHtml(actions.reset)}</button></div>
+    <div class="mus-scoreboard" aria-label="${escapeGrowthHtml(fields.scoreboard)}"><section><h2>${escapeGrowthHtml(fields.ownTeam)}</h2><p><span data-own-score>0</span> / 40 · <span data-own-games>0</span></p></section><section><h2>${escapeGrowthHtml(fields.rivalTeam)}</h2><p><span data-rival-score>0</span> / 40 · <span data-rival-games>0</span></p></section></div>
+    <section aria-labelledby="mus-hand-heading"><h2 id="mus-hand-heading">${escapeGrowthHtml(fields.hand)}</h2><ul class="mus-hand" data-hand aria-label="${escapeGrowthHtml(fields.hand)}"></ul></section>
+    <section aria-labelledby="mus-table-heading"><h2 id="mus-table-heading">${escapeGrowthHtml(fields.table)}</h2><p data-lance></p><ol data-players></ol><div class="actions" data-actions></div></section>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-results hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><ol data-history></ol></section>
+    <details><summary>${escapeGrowthHtml(fields.rules)}</summary><p>${escapeGrowthHtml(fields.rulesOverview)}</p><ul>${[fields.ruleGrande,fields.ruleChica,fields.rulePairs,fields.ruleGame,fields.ruleBets].map((rule)=>`<li>${escapeGrowthHtml(rule)}</li>`).join('')}</ul><p>${escapeGrowthHtml(fields.privacy)}</p></details>
+  </section>`, copy);
+  if (toolId === 'origami-simulator') return attachCopy(`<section class="origami-simulator" data-origami-simulator>
+    <div class="field-grid">${label('origami-model', fields.model, `<select id="origami-model" data-model><option value="book-fold">${escapeGrowthHtml(fields.bookFold)}</option><option value="gate-fold">${escapeGrowthHtml(fields.gateFold)}</option><option value="accordion-fold">${escapeGrowthHtml(fields.accordionFold)}</option></select>`)}${label('origami-step', fields.step, '<select id="origami-step" data-step></select>')}</div>
+    ${label('origami-progress', fields.progress, '<input id="origami-progress" data-progress type="range" min="0" max="100" value="0" step="1">')}
+    <p class="hint">${escapeGrowthHtml(fields.scope)}</p><div class="actions"><button type="button" class="button button--secondary" data-rotate="left">${escapeGrowthHtml(actions.rotateLeft)}</button><button type="button" class="button button--secondary" data-rotate="right">${escapeGrowthHtml(actions.rotateRight)}</button><button type="button" class="button button--secondary" data-reset>${escapeGrowthHtml(actions.reset)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p><canvas data-canvas width="800" height="520" tabindex="0" role="img" aria-label="${escapeGrowthHtml(fields.canvasLabel)}"></canvas><p class="hint">${escapeGrowthHtml(fields.dragHint)}</p>
+  </section>`, copy);
+  if (toolId === 'pdf-digital-signature-validator') return attachCopy(`<form id="tool-form" class="pending-form" data-pdf-signature-form novalidate>
+    ${label('pdf-signature-file', fields.file, '<input id="pdf-signature-file" name="pdf" type="file" accept="application/pdf,.pdf" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.scope)}</p>
+    <div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.inspect)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p><section class="pending-result" data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><ol data-signatures></ol></section>
+  </form>`, copy);
+  if (toolId === 'geometry-construction') return attachCopy(`<section class="geometry-construction" data-geometry-construction>
+    <p class="hint">${escapeGrowthHtml(fields.scope)}</p><div class="actions" role="toolbar" aria-label="${escapeGrowthHtml(fields.toolsLabel)}">${['select','point','segment','line','ray','circle','midpoint','perpendicularBisector'].map((mode) => `<button type="button" class="button button--secondary" data-mode="${mode}">${escapeGrowthHtml(actions[mode])}</button>`).join('')}<button type="button" class="button button--secondary" data-reset>${escapeGrowthHtml(actions.reset)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p><svg class="geometry-construction__canvas" data-canvas viewBox="0 0 800 500" role="application" aria-label="${escapeGrowthHtml(fields.canvasLabel)}" tabindex="0"><rect class="geometry-construction__background" width="800" height="500"/></svg><p class="hint">${escapeGrowthHtml(fields.instructions)}</p>
+  </section>`, copy);
+  if (toolId === 'pinochle') return attachCopy(`<section class="game pinochle-game" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="game-toolbar"><div class="field"><label for="pinochle-decks">${escapeGrowthHtml(fields.deckProfile)}</label><select id="pinochle-decks" data-decks><option value="1">${escapeGrowthHtml(fields.singleDeck)}</option><option value="2">${escapeGrowthHtml(fields.doubleDeck)}</option></select></div><button type="button" data-start class="button button--primary">${escapeGrowthHtml(actions.startGame)}</button><button type="button" data-new-hand class="button button--secondary" hidden>${escapeGrowthHtml(actions.newHand)}</button></div>
+    <section aria-labelledby="pinochle-scores-heading"><h2 id="pinochle-scores-heading">${escapeGrowthHtml(fields.scores)}</h2><ol class="pinochle-scores" data-scores></ol></section>
+    <section aria-labelledby="pinochle-opponents-heading"><h2 id="pinochle-opponents-heading">${escapeGrowthHtml(fields.otherHands)}</h2><ol class="pinochle-opponents" data-opponents></ol></section>
+    <section data-bid-panel hidden><h2>${escapeGrowthHtml(fields.auction)}</h2><div class="actions"><button type="button" data-bid class="button button--primary">${escapeGrowthHtml(actions.bid)}</button><button type="button" data-pass class="button button--secondary">${escapeGrowthHtml(actions.pass)}</button></div></section>
+    <section class="game-toolbar" data-trump-panel hidden><div class="field"><label for="pinochle-trump">${escapeGrowthHtml(fields.trump)}</label><select id="pinochle-trump" data-trump><option value="clubs">${escapeGrowthHtml(fields.clubs)}</option><option value="diamonds">${escapeGrowthHtml(fields.diamonds)}</option><option value="hearts">${escapeGrowthHtml(fields.hearts)}</option><option value="spades">${escapeGrowthHtml(fields.spades)}</option></select></div><button type="button" data-call-trump class="button button--primary">${escapeGrowthHtml(actions.callTrump)}</button></section>
+    <section data-exchange-panel hidden><h2>${escapeGrowthHtml(fields.exchange)}</h2><p>${escapeGrowthHtml(fields.exchangeHint)}</p><button type="button" data-return-cards class="button button--primary" disabled>${escapeGrowthHtml(actions.returnCards)}</button></section>
+    <p data-contract></p><p data-hand-points></p><section aria-labelledby="pinochle-trick-heading"><h2 id="pinochle-trick-heading">${escapeGrowthHtml(fields.trick)}</h2><ol class="pinochle-trick" data-trick aria-live="polite"></ol></section>
+    <section aria-labelledby="pinochle-hand-heading"><h2 id="pinochle-hand-heading">${escapeGrowthHtml(fields.hand)}</h2><ul class="pinochle-hand" data-hand></ul></section><p class="status" data-status role="status" aria-live="polite"></p>
+    <details class="pinochle-rules"><summary>${escapeGrowthHtml(fields.rulesTitle)}</summary><ul>${[fields.rulesPartnership,fields.rulesMeld,fields.rulesTrick,fields.rulesScore].map((rule) => `<li>${escapeGrowthHtml(rule)}</li>`).join('')}</ul><p><a href="https://www.pagat.com/marriage/pinmain.html" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.singleDeckRules)}</a> · <a href="https://www.pagat.com/marriage/pindd.html" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.doubleDeckRules)}</a></p></details>
+  </section>`, copy);
+  if (toolId === 'tute') return attachCopy(`<section class="game tute-game" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="game-toolbar"><div class="field"><label for="tute-mode">${escapeGrowthHtml(fields.mode)}</label><select id="tute-mode" data-mode><option value="pairs">${escapeGrowthHtml(fields.pairs)}</option><option value="individual">${escapeGrowthHtml(fields.individual)}</option></select></div><label class="tute-rule-toggle"><input type="checkbox" data-allow-tute checked> ${escapeGrowthHtml(fields.allowTute)}</label><button type="button" data-start class="button button--primary">${escapeGrowthHtml(actions.start)}</button></div>
+    <section aria-labelledby="tute-score-heading"><h2 id="tute-score-heading">${escapeGrowthHtml(fields.score)}</h2><ol class="tute-score" data-score></ol><p data-trump></p></section>
+    <section aria-labelledby="tute-opponents-heading"><h2 id="tute-opponents-heading">${escapeGrowthHtml(fields.otherHands)}</h2><ol class="tute-opponents" data-opponents></ol></section>
+    <section aria-labelledby="tute-trick-heading"><h2 id="tute-trick-heading">${escapeGrowthHtml(fields.currentTrick)}</h2><ol class="tute-trick" data-trick aria-live="polite"></ol></section>
+    <section aria-labelledby="tute-hand-heading"><h2 id="tute-hand-heading">${escapeGrowthHtml(fields.yourHand)}</h2><ul class="tute-hand" data-hand></ul></section>
+    <section data-singing hidden><h2>${escapeGrowthHtml(fields.singing)}</h2><div class="actions" data-singing-actions></div></section><p class="status" data-status role="status" aria-live="polite"></p>
+    <details class="tute-rules"><summary>${escapeGrowthHtml(fields.rulesTitle)}</summary><ul>${[fields.rulesPairs,fields.rulesIndividual,fields.rulesPlay,fields.rulesSinging,fields.rulesScoring].map((rule)=>`<li>${escapeGrowthHtml(rule)}</li>`).join('')}</ul><p><a href="https://www.pagat.com/marriage/tute.html" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.rulesSource)}</a> · <a href="https://www.nhfournier.es/en/como-jugar/tute/" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${escapeGrowthHtml(fields.publisherSource)}</a></p></details>
+  </section>`, copy);
+  if (toolId === 'laser-box-designer') return attachCopy(`<form id="tool-form" class="pending-form" data-laser-box-form novalidate>
+    <div class="field-grid">${label('laser-box-width', fields.width, '<input id="laser-box-width" name="width" type="number" min="20" max="600" step="1" value="120" required>')}${label('laser-box-depth', fields.depth, '<input id="laser-box-depth" name="depth" type="number" min="20" max="600" step="1" value="80" required>')}${label('laser-box-height', fields.height, '<input id="laser-box-height" name="height" type="number" min="10" max="600" step="1" value="60" required>')}${label('laser-box-thickness', fields.thickness, '<input id="laser-box-thickness" name="thickness" type="number" min="2" max="12" step="0.1" value="3" required>')}${label('laser-box-clearance', fields.clearance, '<input id="laser-box-clearance" name="clearance" type="number" min="0" max="0.5" step="0.01" value="0.15" required>')}${label('laser-box-fingers', fields.fingers, '<input id="laser-box-fingers" name="fingers" type="number" min="2" max="12" step="1" value="4" required>')}</div>
+    <p class="hint">${escapeGrowthHtml(fields.scope)}</p><div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.generate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button><button type="button" class="button button--secondary" data-download disabled>${escapeGrowthHtml(actions.download)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p><section class="pending-result" data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><p data-dimensions></p><div class="laser-box-preview" data-preview></div></section>
+  </form>`, copy);
+  if (toolId === 'chord-recognizer') return attachCopy(`<form id="tool-form" class="pending-form" data-chord-recognizer-form novalidate>
+    ${label('chord-recognizer-audio', fields.audio, '<input id="chord-recognizer-audio" name="audio" type="file" accept="audio/*" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.scope)}</p>
+    <div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.analyze)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p><section class="pending-result" data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><ol class="chord-recognizer-timeline" data-timeline></ol></section>
+  </form>`, copy);
+  if (toolId === 'hearing-self-check') return attachCopy(`<form id="tool-form" class="hearing-self-check" data-hearing-form>
+    <p class="hint">${escapeGrowthHtml(fields.volumeSafety)}</p>
+    <div class="hearing-self-check__tones">${[250,500,1000,2000,4000,6000].map((frequency) => `<fieldset class="hearing-self-check__tone" data-hearing-frequency><legend>${frequency} Hz</legend><button type="button" class="button button--secondary" data-hearing-play="${frequency}">${escapeGrowthHtml(actions.playTone)}</button><div class="actions"><button type="button" class="button button--secondary" data-frequency="${frequency}" data-hearing-response="heard" aria-pressed="false" disabled>${escapeGrowthHtml(fields.heard)}</button><button type="button" class="button button--secondary" data-frequency="${frequency}" data-hearing-response="not-heard" aria-pressed="false" disabled>${escapeGrowthHtml(fields.notHeard)}</button><button type="button" class="button button--secondary" data-frequency="${frequency}" data-hearing-response="skipped" aria-pressed="false">${escapeGrowthHtml(fields.skipped)}</button></div></fieldset>`).join('')}</div>
+    <div class="actions"><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <p class="status" data-hearing-status role="status" aria-live="polite"></p><section class="pending-result" data-hearing-summary hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2></section>
+  </form>`, copy);
+  if (toolId === 'us-roth-conversion') return attachCopy(`<form id="tool-form" class="pending-form" data-roth-conversion-form novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.assumptionHint)}</p>
+    ${label('roth-conversion-amount', fields.amount, '<input id="roth-conversion-amount" name="amount" type="number" min="0.01" max="100000000" step="0.01" value="10000" required inputmode="decimal">')}
+    ${label('roth-conversion-current-rate', fields.currentRate, '<input id="roth-conversion-current-rate" name="currentRate" type="number" min="0" max="60" step="0.01" value="20" required inputmode="decimal">')}
+    ${label('roth-conversion-future-rate', fields.futureRate, '<input id="roth-conversion-future-rate" name="futureRate" type="number" min="0" max="60" step="0.01" value="25" required inputmode="decimal">')}
+    ${label('roth-conversion-return', fields.annualReturn, '<input id="roth-conversion-return" name="annualReturn" type="number" min="-50" max="30" step="0.01" value="5" required inputmode="decimal">')}
+    ${label('roth-conversion-years', fields.years, '<input id="roth-conversion-years" name="years" type="number" min="1" max="80" step="1" value="20" required inputmode="numeric">')}
+    <div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p><section class="pending-result" data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+  </form>`, copy);
+  if (toolId === '3d-function-grapher') return attachCopy(`<form id="tool-form" class="pending-form" data-3d-graph-form novalidate>
+    ${label('surface-expression', fields.expression, '<input id="surface-expression" name="expression" type="text" maxlength="120" value="x^2+y^2" required autocomplete="off" spellcheck="false">')}
+    <p class="hint">${escapeGrowthHtml(fields.syntaxHint)}</p>
+    <div class="field-grid">${label('surface-min', fields.minimum, '<input id="surface-min" name="minimum" type="number" min="-20" max="20" step="0.1" value="-5" required>')}${label('surface-max', fields.maximum, '<input id="surface-max" name="maximum" type="number" min="-20" max="20" step="0.1" value="5" required>')}${label('surface-grid', fields.grid, '<input id="surface-grid" name="grid" type="number" min="4" max="50" step="1" value="20" required>')}</div>
+    <div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.plot)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button><button type="button" class="button button--secondary" data-export disabled>${escapeGrowthHtml(actions.exportObj)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p><section class="pending-result" data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><canvas data-surface-canvas width="800" height="520" tabindex="0" role="img" aria-label="${escapeGrowthHtml(fields.canvasLabel)}" aria-describedby="surface-rotation-hint"></canvas><p class="hint" id="surface-rotation-hint">${escapeGrowthHtml(fields.dragHint)} ${escapeGrowthHtml(fields.keyboardHint)}</p><div data-result-content></div></section>
+  </form>`, copy);
+  if (toolId === 'word-stress-finder') return attachCopy(`<form id="tool-form" class="pending-form" data-word-stress-form novalidate>
+    ${label('stress-word', fields.word, '<input id="stress-word" name="word" type="text" maxlength="60" required autocomplete="off" spellcheck="false" lang="es">')}
+    <p class="hint">${escapeGrowthHtml(fields.languageHint)}</p>
+    <div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.analyze)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p><section class="pending-result" data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+  </form>`, copy);
+  if (toolId === 'hdr-merger') return attachCopy(`<form id="tool-form" class="pending-form" data-hdr-form novalidate>
+    ${label('hdr-images', fields.images, '<input id="hdr-images" name="images" type="file" accept="image/jpeg,image/png,image/webp" multiple required>')}
+    <p class="hint">${escapeGrowthHtml(fields.imageHint)}</p>
+    ${label('hdr-exposures', fields.exposures, '<input id="hdr-exposures" name="exposures" type="text" value="-2, 0, 2" maxlength="40" required inputmode="decimal">')}
+    ${label('hdr-tone', fields.tone, '<input id="hdr-tone" name="tone" type="range" min="-3" max="3" step="0.1" value="0">')}
+    <div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.merge)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button><button type="button" class="button button--secondary" data-download disabled>${escapeGrowthHtml(actions.download)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p><section class="pending-result" data-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><canvas data-hdr-preview role="img" aria-label="${escapeGrowthHtml(fields.previewLabel)}"></canvas></section>
+  </form>`, copy);
+  if (toolId === 'fanorona') return attachCopy(`<form id="tool-form" class="pending-form" data-fanorona-form novalidate>
+    ${label('fanorona-mode', fields.mode, `<select id="fanorona-mode" name="mode"><option value="computer">${escapeGrowthHtml(fields.vsComputer)}</option><option value="two-player">${escapeGrowthHtml(fields.passAndPlay)}</option></select>`)}
+    <div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.newGame)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <p class="hint">${escapeGrowthHtml(fields.ruleHint)}</p><p class="status" data-status role="status" aria-live="polite"></p>
+    <section data-fanorona-game hidden><h2 data-fanorona-turn></h2><p data-fanorona-score></p><div class="fanorona-position"><svg data-fanorona-lines viewBox="0 0 900 500" aria-hidden="true"></svg><div class="fanorona-board" data-fanorona-board role="grid" aria-label="${escapeGrowthHtml(fields.boardLabel)}"></div></div><div class="actions" data-fanorona-actions></div><div data-fanorona-choice></div></section>
+  </form>`, copy);
+  if (toolId === 'masyu-puzzle') return attachCopy(`<form id="tool-form" class="pending-form" data-masyu-form novalidate>
+    ${label('masyu-seed', fields.seed, '<input id="masyu-seed" name="seed" type="number" min="0" max="2147483647" step="1" value="1" required inputmode="numeric">')}
+    <p class="hint">${escapeGrowthHtml(fields.ruleHint)} <a href="https://www.nikoli.co.jp/en/puzzles/masyu/" target="_blank" rel="noopener noreferrer">${escapeGrowthHtml(fields.rulesSource)}</a></p>
+    <div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.start)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p><section data-masyu-game hidden><div class="masyu-position"><svg data-masyu-lines viewBox="0 0 700 700" aria-hidden="true"></svg><div data-masyu-board class="masyu-board" role="grid" aria-label="${escapeGrowthHtml(fields.boardLabel)}"></div></div><div class="actions" data-masyu-actions></div><p data-masyu-result role="status" aria-live="polite"></p></section>
+  </form>`, copy);
+  if (toolId === 'text-translator') return attachCopy(`<form id="tool-form" class="pending-form" data-text-translator-form novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.engineNote)}</p>
+    <div class="text-translator__language-grid">${label('translate-source', fields.source, '<select id="translate-source" name="source"></select>')}${label('translate-target', fields.target, '<select id="translate-target" name="target"></select>')}</div>
+    ${label('translate-input', fields.text, '<textarea id="translate-input" class="text-translator__text" name="text" maxlength="5000" required autocomplete="off" spellcheck="true"></textarea>')}
+    <p class="hint"><span data-length>0</span> / 5,000 · ${escapeGrowthHtml(fields.inputHint)}</p>
+    <div class="actions"><button type="submit" data-translate class="button button--primary">${escapeGrowthHtml(actions.translate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button><button type="button" data-copy class="button button--secondary" disabled>${escapeGrowthHtml(actions.copy)}</button></div>
+    <p data-status class="text-translator__status" role="status" aria-live="polite"></p><p data-progress class="text-translator__progress" role="status" aria-live="polite"></p>
+    ${label('translate-output', fields.translation, '<textarea id="translate-output" class="text-translator__output" data-translation-output readonly aria-live="polite"></textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.privacyNote)} <a href="https://developer.chrome.com/docs/ai/translator-api" target="_blank" rel="noopener noreferrer">${escapeGrowthHtml(fields.apiSource)}</a></p>
+  </form>`, copy);
+  if (toolId === 'uk-student-loan') return attachCopy(`<form id="tool-form" class="pending-form" data-uk-student-loan-form novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.dataNote)}</p><p class="uk-student-loan-sources"><a href="https://www.gov.uk/repaying-your-student-loan/what-you-pay" target="_blank" rel="noopener noreferrer">${escapeGrowthHtml(fields.repaymentSource)}</a><a href="https://www.gov.uk/repaying-your-student-loan/when-your-student-loan-gets-written-off-or-cancelled" target="_blank" rel="noopener noreferrer">${escapeGrowthHtml(fields.writeoffSource)}</a></p>
+    <div class="field-grid">${label('uk-loan-income', fields.annualIncome, '<input id="uk-loan-income" name="income" type="number" min="0" max="100000000" step="0.01" value="40000" required inputmode="decimal">')}${label('uk-loan-plan', fields.plan, '<select id="uk-loan-plan" name="plan"><option>Plan 1</option><option>Plan 2</option><option>Plan 4</option><option>Plan 5</option><option value="Postgraduate">' + escapeGrowthHtml(fields.postgraduatePlan) + '</option></select>')}</div>
+    <div class="field-grid">${label('uk-loan-first-year', fields.firstRepaymentYear, '<input id="uk-loan-first-year" name="firstRepaymentYear" type="number" min="1960" max="2100" step="1" value="2020" required inputmode="numeric">')}${label('uk-loan-first-date', fields.firstLoanDate, '<input id="uk-loan-first-date" name="firstLoanDate" type="date" value="2018-09-01" required>')}</div>
+    ${label('uk-loan-dob', fields.birthDate, '<input id="uk-loan-dob" name="birthDate" type="date">')}
+    <div class="field-grid">${label('uk-loan-balance', fields.outstandingBalance, '<input id="uk-loan-balance" name="balance" type="number" min="0" max="1000000000" step="0.01" value="30000" inputmode="decimal">')}${label('uk-loan-status', fields.plan2Status, '<select id="uk-loan-status" name="status"><option value="after-study">' + escapeGrowthHtml(fields.afterStudy) + '</option><option value="studying">' + escapeGrowthHtml(fields.studying) + '</option></select>')}</div>
+    <div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <p data-status role="status" aria-live="polite"></p><section data-uk-student-loan-result class="pending-result" hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-result-content></div></section>
+  </form>`, copy);
+  if (toolId === 'mahjong-four-player') return attachCopy(`<form id="tool-form" class="mahjong-four-player" novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.tableRules)}</p>
+    <div class="mahjong-four-player__players">${[1,2,3,4].map((index) => label(`mahjong-player-${index}`, `${fields.player} ${index}`, `<input id="mahjong-player-${index}" name="player${index}" type="text" value="Player ${index}" maxlength="24" required autocomplete="off">`)).join('')}</div>
+    <div class="actions"><button type="button" data-mahjong-start class="button button--primary">${escapeGrowthHtml(actions.start)}</button><button type="button" data-mahjong-reset class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p>
+    <section class="mahjong-four-player__board" data-mahjong-board hidden aria-live="polite"></section>
+  </form>`, copy);
+  if (toolId === 'video-editor') return attachCopy(`<form id="tool-form" class="video-editor" novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.localOnly)}</p>
+    ${label('video-editor-files', fields.videoFiles, `<input id="video-editor-files" type="file" data-video-files accept="video/*,.mp4,.webm,.mov" multiple>`)}
+    <p class="hint">${escapeGrowthHtml(fields.limits)}</p>
+    <div data-video-rows class="video-editor__rows"></div>
+    ${label('video-editor-overlay', fields.overlay, `<input id="video-editor-overlay" name="overlay" type="text" maxlength="100" autocomplete="off">`)}
+    <div class="actions"><button type="button" data-video-export class="button button--primary">${escapeGrowthHtml(actions.export)}</button><button type="button" data-video-stop hidden class="button button--secondary">${escapeGrowthHtml(actions.stop)}</button><button type="button" data-video-reset class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <p data-video-status role="status" aria-live="polite"></p><div data-video-result></div>
+  </form>`, copy);
+  if (toolId === 'font-identifier') return attachCopy(`<form id="tool-form" class="font-identifier" novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.localOnly)}</p>
+    ${label('font-identifier-image', fields.sampleImage, '<input id="font-identifier-image" name="sampleImage" type="file" accept="image/jpeg,image/png,image/webp" required>')}
+    <p class="hint">${escapeGrowthHtml(fields.imageHint)}</p>
+    ${label('font-identifier-text', fields.sampleText, '<textarea id="font-identifier-text" name="sampleText" rows="2" maxlength="80" required></textarea>')}
+    <p class="hint">${escapeGrowthHtml(fields.textHint)}</p>
+    <img data-font-sample-preview class="font-identifier__preview" alt="${escapeGrowthHtml(fields.previewAlt)}" hidden>
+    <div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.compare)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <p data-font-status class="status" role="status" aria-live="polite"></p>
+    <section class="pending-result" aria-live="polite"><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-font-results></div><p class="hint">${escapeGrowthHtml(fields.limitNote)}</p></section>
+  </form>`, copy);
+  if (toolId === 'indian-rummy') return attachCopy(`<form id="tool-form" class="indian-rummy" novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.practiceOnly)}</p>
+    ${label('indian-rummy-name', fields.playerName, `<input id="indian-rummy-name" name="playerName" type="text" maxlength="24" value="${escapeGrowthHtml(fields.you)}" autocomplete="off">`)}
+    <div class="actions"><button type="button" data-rummy-start class="button button--primary">${escapeGrowthHtml(actions.start)}</button><button type="button" data-rummy-reset class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <section data-rummy-board class="indian-rummy__board" hidden aria-live="polite">
+      <p data-rummy-turn></p><p data-rummy-wild></p><p data-rummy-stock></p><p data-rummy-discard></p>
+      <div class="actions"><button type="button" data-rummy-draw-stock class="button button--secondary">${escapeGrowthHtml(actions.drawStock)}</button><button type="button" data-rummy-draw-discard class="button button--secondary">${escapeGrowthHtml(actions.drawDiscard)}</button></div>
+      <p class="hint">${escapeGrowthHtml(fields.drawHint)}</p><div data-rummy-hand class="indian-rummy__hand"></div><p data-rummy-status role="status" aria-live="polite"></p>
+    </section>
+  </form>`, copy);
+  if (toolId === 'panchang-calendar') return attachCopy(`<form id="tool-form" class="panchang-calendar" novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.methodNote)}</p>
+    ${label('panchang-date', fields.date, '<input id="panchang-date" name="date" type="date" required>')}
+    ${label('panchang-latitude', fields.latitude, '<input id="panchang-latitude" name="latitude" type="number" min="-90" max="90" step="any" required inputmode="decimal">')}
+    ${label('panchang-longitude', fields.longitude, '<input id="panchang-longitude" name="longitude" type="number" min="-180" max="180" step="any" required inputmode="decimal">')}
+    ${label('panchang-time-zone', fields.timeZone, '<input id="panchang-time-zone" name="timeZone" type="text" maxlength="80" required autocomplete="off">')}
+    <div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button></div>
+    <section data-panchang-result class="panchang-calendar__result" aria-live="polite"></section><p data-panchang-status role="status" aria-live="polite"></p>
+    <p class="hint"><a href="https://packolkata.imd.gov.in/panchang/en/preface" target="_blank" rel="noopener noreferrer">${escapeGrowthHtml(fields.officialReference)}</a></p>
+  </form>`, copy);
+  if (toolId === 'japanese-name-strokes') return attachCopy(`<form id="tool-form" class="japanese-name-strokes" novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p>
+    ${label('japanese-name-input', fields.name, '<input id="japanese-name-input" name="name" type="text" maxlength="40" required autocomplete="off" autocapitalize="off">')}
+    <div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.count)}</button></div>
+    <section data-japanese-strokes-result class="japanese-name-strokes__result" aria-live="polite"></section>
+    <p data-japanese-strokes-status role="status" aria-live="polite"></p>
+    <p class="hint"><a href="https://github.com/KanjiVG/kanjivg" target="_blank" rel="noopener noreferrer">${escapeGrowthHtml(fields.source)}</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 3.0</a> · <a href="/assets/licenses/japanese-name-strokes/ATTRIBUTION.md">${escapeGrowthHtml(fields.attribution)}</a></p>
+  </form>`, copy);
+  if (toolId === 'carrom') return attachCopy(`<form id="tool-form" class="carrom" novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.variantNote)}</p>
+    <canvas data-carrom-board width="600" height="600" role="img" aria-label="${escapeGrowthHtml(fields.boardLabel)}"></canvas>
+    <p data-carrom-turn aria-live="polite"></p><p data-carrom-score></p><p data-carrom-status role="status" aria-live="polite"></p>
+    <div class="calculator-grid">
+      ${label('carrom-aim', fields.aim ?? ({en:'Aim',es:'Dirección',fr:'Visée',pt:'Mira',de:'Ziel',ja:'狙い',ko:'조준',id:'Bidik',hi:'निशाना',ar:'التصويب',zh:'瞄准',bn:'লক্ষ্য',ru:'Прицел',ur:'نشانہ',tr:'Nişan',vi:'Ngắm',it:'Mira',zh_tw:'瞄準',bg:'Прицел',ca:'Objectiu',nl:'Richten',el:'Στόχευση',ms:'Sasaran',pl:'Cel',sv:'Sikta',th:'เล็ง',uk:'Приціл',sw:'Lenga',mr:'लक्ष्य',te:'గురి',ha:'Nufi',tl:'Pagpuntirya',ta:'குறி',fa:'نشانه‌گیری',am:'አላማ',gu:'નિશાન',nb:'Sikt'}[copy.copyLanguage] ?? 'Aim'), '<input id="carrom-aim" name="aim" type="range" min="-60" max="60" value="0" step="1"><output data-carrom-aim-value>0°</output>')}
+      ${label('carrom-power', fields.power ?? ({en:'Power',es:'Potencia',fr:'Puissance',pt:'Potência',de:'Kraft',ja:'パワー',ko:'힘',id:'Daya',hi:'शक्ति',ar:'القوة',zh:'力量',bn:'শক্তি',ru:'Сила',ur:'طاقت',tr:'Güç',vi:'Lực',it:'Potenza',zh_tw:'力量',bg:'Сила',ca:'Potència',nl:'Kracht',el:'Ισχύς',ms:'Kuasa',pl:'Siła',sv:'Kraft',th:'แรง',uk:'Сила',sw:'Nguvu',mr:'शक्ती',te:'శక్తి',ha:'Ƙarfi',tl:'Lakas',ta:'சக்தி',fa:'نیرو',am:'ኃይል',gu:'શક્તિ',nb:'Kraft'}[copy.copyLanguage] ?? 'Power'), '<input id="carrom-power" name="power" type="range" min="120" max="620" value="360" step="10"><output data-carrom-power-value>360</output>')}
+    </div>
+    <div class="actions"><button type="button" data-carrom-shoot class="button button--primary">${escapeGrowthHtml(actions.shoot)}</button><button type="button" data-carrom-reset class="button button--secondary">${escapeGrowthHtml(actions.newGame)}</button></div>
+  </form>`, copy);
+  if (toolId === 'crokinole') return attachCopy(`<form id="tool-form" class="crokinole" novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.variantNote)}</p>
+    <canvas width="600" height="600" role="img" aria-label="${escapeGrowthHtml(fields.boardLabel)}"></canvas>
+    <p data-crokinole-turn aria-live="polite"></p><p data-crokinole-score></p><p data-crokinole-status role="status" aria-live="polite"></p>
+    <div class="calculator-grid">
+      ${label('crokinole-angle', fields.angle, '<input id="crokinole-angle" name="angle" type="range" min="-180" max="180" value="0" step="1"><output data-crokinole-angle-value>0°</output>')}
+      ${label('crokinole-power', fields.power, '<input id="crokinole-power" name="power" type="range" min="80" max="450" value="260" step="10"><output data-crokinole-power-value>260</output>')}
+    </div>
+    <div class="actions"><button type="button" data-crokinole-shoot class="button button--primary">${escapeGrowthHtml(actions.shoot)}</button><button type="button" data-crokinole-reset class="button button--secondary">${escapeGrowthHtml(actions.newGame)}</button></div>
+  </form>`, copy);
+  if (toolId === 'bowling-game') return attachCopy(`<form id="tool-form" class="bowling-game" novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.instructions)} <a href="https://bowl.com/welcome/keeping-score-7c992ab8f438aa57fac9f9aef753ae44" target="_blank" rel="noopener noreferrer">${escapeGrowthHtml(fields.officialRules)}</a></p>
+    <div class="bowling-game__controls">
+      <label class="field" for="bowling-aim">${escapeGrowthHtml(fields.aim)}<input id="bowling-aim" name="aim" type="range" min="-100" max="100" value="0"><output data-bowling-aim>0</output></label>
+      <label class="field" for="bowling-power">${escapeGrowthHtml(fields.power)}<input id="bowling-power" name="power" type="range" min="25" max="100" value="74"><output data-bowling-power>74</output></label>
+      <label class="field" for="bowling-spin">${escapeGrowthHtml(fields.spin)}<input id="bowling-spin" name="spin" type="range" min="-100" max="100" value="0"><output data-bowling-spin>0</output></label>
+    </div>
+    <div class="actions"><button type="submit" class="button button--primary" data-bowling-roll>${escapeGrowthHtml(actions.run)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p>
+    <svg class="bowling-game__lane" data-bowling-lane viewBox="0 0 440 300" role="img" aria-label="${escapeGrowthHtml(fields.laneLabel)}"><rect x="78" y="20" width="284" height="258" rx="18" fill="var(--surface,#f2e5c9)" stroke="currentColor" stroke-opacity=".35"/><path d="M 112 20 L 142 278 M 328 20 L 298 278" stroke="currentColor" stroke-opacity=".18"/><g data-bowling-pins></g><path data-bowling-path d="M 220 278 L 220 200" fill="none" stroke="var(--accent,#c6f45b)" stroke-width="5" stroke-linecap="round"/></svg>
+    <section class="bowling-game__score" aria-labelledby="bowling-score-title"><h2 id="bowling-score-title">${escapeGrowthHtml(fields.scoreboard)}</h2><p data-bowling-summary></p><div class="bowling-game__table-wrap"><table data-bowling-table aria-label="${escapeGrowthHtml(fields.scoreboard)}"></table></div></section>
+  </form>`, copy);
+  if (pendingToolIds.includes(toolId)) return attachCopy(renderPendingToolForm(toolId, copy), copy);
+  if (toolId === 'photo-background-changer') return attachCopy(`<form id="tool-form" class="photo-background" data-worker-src="__WORKER_PHOTO_BACKGROUND_WORKER__" novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p>
+    ${label('photo-bg-source', fields.photo, '<input id="photo-bg-source" name="portrait" type="file" accept="image/jpeg,image/png,image/webp">')}
+    ${label('photo-bg-mode', fields.mode, `<select id="photo-bg-mode" name="mode"><option value="color">${escapeGrowthHtml(fields.solidMode)}</option><option value="image">${escapeGrowthHtml(fields.imageMode)}</option><option value="transparent">${escapeGrowthHtml(fields.transparentMode)}</option></select>`)}
+    <div data-background-color-field>${label('photo-bg-color', fields.color, '<input id="photo-bg-color" name="color" type="color" value="#ffffff">')}</div>
+    <div data-background-image-field hidden>${label('photo-bg-image', fields.backgroundImage, '<input id="photo-bg-image" name="background" type="file" accept="image/jpeg,image/png,image/webp">')}</div>
+    <div class="photo-background__controls">
+      ${label('photo-bg-scale', fields.scale, '<input id="photo-bg-scale" name="scale" type="range" min="60" max="140" value="100" step="1">')}
+      ${label('photo-bg-softness', fields.edgeSoftness, '<input id="photo-bg-softness" name="softness" type="range" min="0" max="5" value="1" step="0.5">')}
+      ${label('photo-bg-shadow', fields.shadow, '<input id="photo-bg-shadow" name="shadow" type="range" min="0" max="100" value="25" step="1">')}
+    </div>
+    <div class="actions"><button type="button" data-photo-run class="button button--primary" disabled>${escapeGrowthHtml(actions.create)}</button><button type="button" data-photo-cancel class="button button--secondary" hidden disabled>${escapeGrowthHtml(actions.cancel)}</button><button type="button" data-photo-clear class="button button--secondary">${escapeGrowthHtml(actions.clear)}</button></div>
+    <progress data-photo-progress max="100" value="0" hidden></progress>
+    <p class="status" data-status role="status" aria-live="polite">${escapeGrowthHtml(fields.ready)}</p>
+    <p class="hint photo-background__licenses"><a href="/assets/licenses/photo-background-changer/MODNET-NOTICE.md">MODNet model notice</a> · <a href="/assets/licenses/photo-background-changer/LICENSE-APACHE-2.0.txt">Apache 2.0</a> · <a href="/assets/licenses/photo-background-changer/LICENSE-MIT-ONNX-RUNTIME.txt">ONNX Runtime MIT</a> · <a href="/assets/licenses/photo-background-changer/THIRD-PARTY-NOTICES.md">Runtime notices</a></p>
+  </form><section class="photo-background__result" data-photo-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><canvas class="photo-background__preview" data-photo-preview role="img" aria-label="${escapeGrowthHtml(fields.previewLabel)}"></canvas><p class="hint">${escapeGrowthHtml(fields.previewHint)}</p><button type="button" data-photo-download class="button button--secondary" disabled>${escapeGrowthHtml(actions.download)}</button></section>`, copy);
+  if (toolId === 'enneagram-questionnaire') return attachCopy(`<form id="tool-form" class="enneagram-quiz" novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p>
+    ${fields.questions.map((question, index) => `<fieldset class="enneagram-quiz__question"><legend>${escapeGrowthHtml(question)}</legend><div class="enneagram-quiz__scale">${fields.scaleLabels.map((labelText, rating) => `<label><input type="radio" name="q${String(index + 1).padStart(2, '0')}" value="${rating + 1}" required><span>${escapeGrowthHtml(labelText)}</span></label>`).join('')}</div></fieldset>`).join('')}
+    <p data-enneagram-progress>${escapeGrowthHtml(fields.progress.replace('{answered}', '0').replace('{total}', String(fields.questions.length)))}</p>
+    <div class="actions"><button type="submit" class="button button--primary" disabled>${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p>
+  </form><section class="enneagram-result" data-enneagram-result hidden aria-live="polite"><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-enneagram-output></div></section>`, copy);
+  if (toolId === 'online-compiler') return attachCopy(`<form id="tool-form" class="online-python" data-worker-src="/assets/pyodide-314.0.7/online-python-worker.mjs" novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.scopeNote)}</p>
+    <label class="field" for="python-source">${escapeGrowthHtml(fields.source)}</label>
+    <textarea id="python-source" name="source" rows="14" maxlength="20000" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off">print("Hello, world!")</textarea>
+    <label class="field" for="python-stdin">${escapeGrowthHtml(fields.stdin)}</label>
+    <textarea id="python-stdin" name="stdin" rows="3" maxlength="5000" spellcheck="false"></textarea>
+    <div class="actions"><button type="button" data-python-run class="button button--primary">${escapeGrowthHtml(actions.run)}</button><button type="button" data-python-stop class="button button--secondary" disabled>${escapeGrowthHtml(actions.stop)}</button><button type="button" data-python-clear class="button button--secondary">${escapeGrowthHtml(actions.clear)}</button><button type="button" data-python-download class="button button--secondary">${escapeGrowthHtml(actions.download)}</button></div>
+    <h2>${escapeGrowthHtml(fields.output)}</h2><pre class="online-python__output" data-python-output aria-live="polite"></pre><p class="status" data-status role="status" aria-live="polite"></p>
+    <p class="hint">${escapeGrowthHtml(fields.runtimeNote)} <a href="https://pyodide.org/en/stable/" target="_blank" rel="noopener noreferrer">Pyodide</a> · <a href="/assets/licenses/Pyodide-MPL-2.0.txt">MPL 2.0</a> · <a href="/assets/licenses/Pyodide-Python-PSF.txt">Python license</a></p>
+  </form>`, copy);
+  if (toolId === 'webfont-subsetter') return attachCopy(`<form id="tool-form" class="webfont-subsetter" data-worker-src="/assets/webfont-subsetter-worker.mjs" novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.scope)}</p>
+    ${label('webfont-file', fields.fontFile, '<input id="webfont-file" name="font" type="file" accept=".ttf,.otf,font/ttf,font/otf" required>')}
+    ${label('webfont-text', fields.characters, '<textarea id="webfont-text" name="text" rows="6" maxlength="20000" required></textarea>')}
+    <label class="webfont-subsetter__permission"><input name="permission" type="checkbox" required> ${escapeGrowthHtml(fields.permission)}</label>
+    <p class="hint">${escapeGrowthHtml(fields.rightsNote)}</p>
+    <div class="actions"><button type="button" data-font-run class="button button--primary">${escapeGrowthHtml(actions.subset)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p>
+    <p class="hint">${escapeGrowthHtml(fields.localNote)} <a href="/assets/licenses/FontTools-MIT.txt">FontTools MIT</a> · <a href="/assets/licenses/Pyodide-MPL-2.0.txt">Pyodide MPL 2.0</a></p>
+  </form><section class="webfont-subsetter__result" data-font-result hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><p data-font-stats></p><button type="button" data-font-download class="button button--secondary" disabled>${escapeGrowthHtml(actions.download)}</button></section>`, copy);
+  if (toolId === 'us-self-employment-tax') return attachCopy(`<form id="tool-form" class="pending-form" data-us-se-tax-form novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.dataNote)}</p>
+    <div class="field-grid">${label('us-se-profit', fields.netBusinessProfit, '<input id="us-se-profit" name="netBusinessProfit" type="number" inputmode="decimal" min="0" max="1000000000" step="0.01" value="100000" required>')}${label('us-se-wages', fields.socialSecurityWages, '<input id="us-se-wages" name="socialSecurityWages" type="number" inputmode="decimal" min="0" max="1000000000" step="0.01" value="0" required>')}</div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p>
+    <p class="us-se-tax__sources"><a href="https://www.irs.gov/forms-pubs/about-schedule-se-form-1040" target="_blank" rel="noopener noreferrer">${escapeGrowthHtml(fields.irsSource)}</a><a href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank" rel="noopener noreferrer">${escapeGrowthHtml(fields.ssaSource)}</a></p>
+    <div class="actions"><button type="submit" class="button button--primary">${escapeGrowthHtml(actions.calculate)}</button><button type="reset" class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p>
+  </form><section data-us-se-tax-result class="pending-result" hidden><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><div data-us-se-tax-output></div></section>`, copy);
+  if (toolId === 'chemical-structure-editor') return attachCopy(`<script type="module" src="/assets/chemical-structure-editor-runtime.mjs"></script><form id="tool-form" class="chemical-structure-editor" data-chem-form novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.scope)}</p>
+    <div class="chemical-structure-editor__toolbar">
+      <div class="field"><label for="chem-element">${escapeGrowthHtml(fields.element)}</label><select id="chem-element" data-chem-element><option value="6">${escapeGrowthHtml(fields.carbon)}</option><option value="7">${escapeGrowthHtml(fields.nitrogen)}</option><option value="8">${escapeGrowthHtml(fields.oxygen)}</option><option value="9">F</option><option value="15">P</option><option value="16">S</option><option value="17">Cl</option><option value="35">Br</option><option value="53">I</option></select></div>
+      <button type="button" data-chem-add-atom class="button button--secondary">${escapeGrowthHtml(actions.addAtom)}</button>
+      <div class="field"><label for="chem-bond-order">${escapeGrowthHtml(fields.bondOrder)}</label><select id="chem-bond-order" data-chem-bond-order><option value="1">${escapeGrowthHtml(fields.single)}</option><option value="2">${escapeGrowthHtml(fields.double)}</option><option value="3">${escapeGrowthHtml(fields.triple)}</option></select></div>
+      <button type="button" data-chem-set-bond class="button button--secondary">${escapeGrowthHtml(actions.setBond)}</button>
+      <div class="field"><label for="chem-ring-size">${escapeGrowthHtml(fields.ringSize)}</label><select id="chem-ring-size" data-chem-ring-size><option value="5">5</option><option value="6" selected>6</option><option value="7">7</option></select></div>
+      <label class="chemical-structure-editor__toggle"><input type="checkbox" data-chem-aromatic> ${escapeGrowthHtml(fields.aromaticRing)}</label>
+      <button type="button" data-chem-add-ring class="button button--secondary">${escapeGrowthHtml(actions.addRing)}</button>
+      <button type="button" data-chem-delete class="button button--secondary" disabled>${escapeGrowthHtml(actions.deleteSelection)}</button>
+      <button type="button" data-chem-undo class="button button--secondary" disabled>${escapeGrowthHtml(actions.undo)}</button>
+      <button type="button" data-chem-new class="button button--secondary">${escapeGrowthHtml(actions.newStructure)}</button>
+    </div>
+    <p class="hint" data-chem-selection>${escapeGrowthHtml(fields.loading)}</p>
+    <div class="chemical-structure-editor__drawing" data-chem-canvas role="group" aria-label="${escapeGrowthHtml(fields.drawingLabel)}"></div>
+    <div class="field-grid">${label('chem-source-format', fields.inputFormat, '<select id="chem-source-format" data-chem-source-format><option value="smiles">SMILES</option><option value="molfile">Molfile V2000/V3000</option></select>')}${label('chem-source', fields.importStructure, '<textarea id="chem-source" data-chem-source rows="4" maxlength="12000" spellcheck="false"></textarea>')}</div>
+    <div class="actions"><button type="button" data-chem-import class="button button--secondary">${escapeGrowthHtml(actions.importStructure)}</button><button type="button" data-chem-copy class="button button--secondary">${escapeGrowthHtml(actions.copySmiles)}</button><button type="button" data-chem-download class="button button--primary">${escapeGrowthHtml(actions.downloadMolfile)}</button></div>
+    <p class="status" data-status role="status" aria-live="polite"></p>
+    <p class="hint">${escapeGrowthHtml(fields.localNote)} <a href="/assets/licenses/OpenChemLib-BSD-3-Clause.txt">OpenChemLib BSD-3-Clause</a></p>
+  </form><section class="chemical-structure-editor__result"><h2>${escapeGrowthHtml(fields.resultTitle)}</h2><p>${escapeGrowthHtml(fields.formula)}: <strong data-chem-formula></strong></p>${label('chem-smiles', fields.smiles, '<textarea id="chem-smiles" data-chem-smiles rows="3" readonly></textarea>')}</section>`, copy);
+  if (toolId === 'pool-game') return attachCopy(`<form id="tool-form" class="pool-game" novalidate>
+    <p class="hint">${escapeGrowthHtml(fields.instructions)}</p>
+    <div class="pool-game__score"><span>${escapeGrowthHtml(fields.pocketed)}</span><strong data-pool-score>0 / 15</strong><span data-pool-turn></span></div>
+    <canvas data-pool-table width="1000" height="500" role="img" aria-label="${escapeGrowthHtml(fields.tableLabel)}" aria-describedby="pool-game-status"></canvas>
+    <div class="pool-game__controls">
+      ${label('pool-aim-angle', fields.aimAngle, '<input data-pool-angle type="range" min="-180" max="180" value="0" step="1">')}
+      ${label('pool-shot-power', fields.power, '<input data-pool-power type="range" min="5" max="100" value="40" step="1">')}
+    </div>
+    <div class="pool-game__placement" data-pool-placement hidden>
+      <p>${escapeGrowthHtml(fields.ballInHand)}</p>
+      <div class="pool-game__controls">
+        ${label('pool-cue-x', fields.cuePositionX, '<input data-pool-cue-x type="range" min="50" max="950" value="220" step="5">')}
+        ${label('pool-cue-y', fields.cuePositionY, '<input data-pool-cue-y type="range" min="50" max="450" value="250" step="5">')}
+      </div>
+      <button type="button" data-pool-place class="button button--secondary">${escapeGrowthHtml(actions.placeCue)}</button>
+    </div>
+    <div class="actions"><button type="button" data-pool-shoot class="button button--primary">${escapeGrowthHtml(actions.shoot)}</button><button type="button" data-pool-reset class="button button--secondary">${escapeGrowthHtml(actions.reset)}</button></div>
+    <p class="status" id="pool-game-status" role="status" aria-live="polite" data-pool-status>${escapeGrowthHtml(fields.aimHint)}</p>
+    <p class="hint">${escapeGrowthHtml(fields.rulesLimit)}</p>
+    <p class="hint"><a href="https://wpapool.com/rules/" target="_blank" rel="noopener noreferrer">${escapeGrowthHtml(fields.rulesSource)}</a></p>
+  </form>`, copy);
   const fieldNames = {
     'image-color-picker': ['imageFile', 'accuracyNote', 'previewHint', 'zoom', 'currentColor', 'paletteLabel'],
     'image-region-redactor': ['imageFile', 'mode', 'strength', 'regionX', 'regionY', 'regionWidth', 'regionHeight', 'accuracyNote', 'dragHint', 'regionsLabel'],
@@ -168,6 +778,7 @@ export function renderGrowthForm(toolId, copy) {
     mancala: ['mode'],
     'dominoes-game': ['mode', 'variant', 'board', 'stock', 'hand', 'opponentHand', 'accuracyNote'],
     'hearts-game': ['passDirection', 'board', 'hand', 'scores', 'clubs', 'diamonds', 'spades', 'hearts', 'accuracyNote'],
+    belote: ['trump', 'board', 'hand', 'scores', 'opponents', 'cardsLeft', 'clubs', 'diamonds', 'hearts', 'spades', 'jack', 'queen', 'king', 'ace', 'accuracyNote', 'rules'],
     'typing-practice': ['mode', 'prompt', 'typedInput', 'customText', 'progress', 'accuracy', 'accuracyNote'],
     sokoban: ['level', 'board', 'player', 'box', 'goal', 'moves', 'pushes', 'accuracyNote'],
     'maze-generator': ['width', 'height', 'seed', 'board', 'start', 'finish', 'steps', 'solutionNote', 'accuracyNote'],
@@ -377,6 +988,7 @@ export function renderGrowthForm(toolId, copy) {
     mancala: ['newGame', 'rules', 'result', 'computer', 'twoPlayers'],
     'dominoes-game': ['newGame', 'draw', 'pass', 'playLeft', 'playRight', 'computer', 'twoPlayers', 'drawRule', 'blockRule'],
     'hearts-game': ['newGame', 'passCards', 'passLeft', 'passRight', 'passAcross', 'hold', 'playCard', 'rules', 'result'],
+    belote: ['newGame', 'startGame', 'playCard', 'rules', 'result'],
     'typing-practice': ['newLesson', 'rowHome', 'rowTop', 'rowBottom', 'rowMixed', 'applyCustomText', 'clearCustomText', 'startOver', 'rules', 'result'],
     sokoban: ['restart', 'undo', 'up', 'down', 'left', 'right', 'levelOne', 'levelTwo', 'rules', 'result'],
     'maze-generator': ['generate', 'solve', 'hideSolution', 'restart', 'exportSvg', 'up', 'down', 'left', 'right', 'rules', 'result'],
@@ -1047,6 +1659,15 @@ export function renderGrowthForm(toolId, copy) {
     <section aria-labelledby="hearts-board-heading"><h2 id="hearts-board-heading">${escapeGrowthHtml(fields.board)}</h2><ol class="hearts-trick" data-trick aria-live="polite"></ol></section>
     <section aria-labelledby="hearts-hand-heading"><h2 id="hearts-hand-heading">${escapeGrowthHtml(fields.hand)}</h2><ul class="hearts-hand" data-hand></ul></section>
     <div class="actions"><button type="button" data-action="pass-cards" class="button button--primary" disabled>${escapeGrowthHtml(labels.passCards)}</button></div>
+    <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);
+
+  if (toolId === 'belote') return attachCopy(`<section class="game belote-game" aria-label="${escapeGrowthHtml(copy.name)}">
+    <div class="game-toolbar"><div class="field"><label for="belote-trump">${escapeGrowthHtml(fields.trump)}</label><select id="belote-trump" data-trump><option value="clubs">${escapeGrowthHtml(fields.clubs)}</option><option value="diamonds">${escapeGrowthHtml(fields.diamonds)}</option><option value="hearts">${escapeGrowthHtml(fields.hearts)}</option><option value="spades">${escapeGrowthHtml(fields.spades)}</option></select></div><button type="button" data-action="start-game" class="button button--primary">${escapeGrowthHtml(labels.startGame)}</button><button type="button" data-action="new-game" class="button button--secondary" hidden>${escapeGrowthHtml(labels.newGame)}</button></div>
+    <p class="status" role="status" aria-live="polite" data-status></p>
+    <section aria-labelledby="belote-scores-heading"><h2 id="belote-scores-heading">${escapeGrowthHtml(fields.scores)}</h2><ol class="belote-scores" data-scores></ol></section>
+    <section aria-labelledby="belote-opponents-heading"><h2 id="belote-opponents-heading">${escapeGrowthHtml(fields.opponents)}</h2><ol class="belote-opponents" data-opponents></ol></section>
+    <section aria-labelledby="belote-board-heading"><h2 id="belote-board-heading">${escapeGrowthHtml(fields.board)}</h2><ol class="belote-trick" data-trick aria-live="polite"></ol></section>
+    <section aria-labelledby="belote-hand-heading"><h2 id="belote-hand-heading">${escapeGrowthHtml(fields.hand)}</h2><ul class="belote-hand" data-hand></ul></section>
     <p class="hint">${escapeGrowthHtml(fields.accuracyNote)}</p><details class="rules"><summary>${escapeGrowthHtml(labels.rules)}</summary><p>${escapeGrowthHtml(fields.rules ?? '')}</p></details></section>`, copy);
 
   if (toolId === 'typing-practice') return attachCopy(`<section class="typing-practice" aria-label="${escapeGrowthHtml(copy.name)}">

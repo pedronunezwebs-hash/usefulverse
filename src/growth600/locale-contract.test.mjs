@@ -135,7 +135,7 @@ for (const { key } of localeEntries) {
   localizedCopies[key]['jwt-encoder'] = jwtEncoderCopies[key];
   localizedCopies[key]['customer-acquisition-cost-calculator'] = customerAcquisitionCostCalculatorCopies[key];
 }
-const pendingToolIds = Object.keys(pendingToolsCopies.en);
+const pendingToolIds = Object.keys(pendingToolsCopies.en).filter((id) => id !== 'growth-tool-chrome');
 for (const id of pendingToolIds) {
   const index = growthPilotTools.findIndex((tool) => tool.id === id);
   if (index >= 0) growthPilotTools.splice(index, 1);
@@ -685,33 +685,43 @@ test('growth release gate blocks candidate copy explicitly marked as untranslate
   assert.throws(() => assertGrowthLocaleCoverage([{ id: 'one' }], [{ key: 'es' }], { es: { _home: sampleHome('es'), one: draft } }), /localization is not approved for release/);
 });
 
-test('growth release gate accepts machine translation only with explicit owner acceptance metadata', () => {
+test('growth release gate accepts human-reviewed translations only with reviewer and date metadata', () => {
   const accepted = {
     ...sample('es'),
-    localizationStatus: 'machine-accepted',
-    localizationAcceptedBy: 'site-owner',
-    localizationAcceptedAt: '2026-10-08',
+    localizationStatus: 'human-reviewed',
+    localizationReviewers: ['reviewer-1'],
+    localizationLastReviewedAt: '2026-10-08',
   };
   assert.equal(assertGrowthLocaleCoverage([{ id: 'one' }], [{ key: 'es' }], { es: { _home: sampleHome('es'), one: accepted } }), true);
   assert.throws(() => assertGrowthLocaleCoverage([{ id: 'one' }], [{ key: 'es' }], {
-    es: { _home: sampleHome('es'), one: { ...accepted, localizationAcceptedAt: '' } },
+    es: { _home: sampleHome('es'), one: { ...accepted, localizationReviewers: [] } },
+  }), /localization is not approved for release/);
+  assert.throws(() => assertGrowthLocaleCoverage([{ id: 'one' }], [{ key: 'es' }], {
+    es: { _home: sampleHome('es'), one: { ...accepted, localizationStatus: 'machine-draft' } },
+  }), /localization is not approved for release/);
+  assert.equal(assertGrowthLocaleCoverage([{ id: 'one' }], [{ key: 'en' }], {
+    en: { _home: sampleHome('en'), one: { ...sample('en'), localizationStatus: 'source-english' } },
+  }), true);
+  assert.throws(() => assertGrowthLocaleCoverage([{ id: 'one' }], [{ key: 'es' }], {
+    es: { _home: sampleHome('es'), one: { ...sample('es'), localizationStatus: 'source-english' } },
   }), /localization is not approved for release/);
 });
 
-test('the final 23-tool batch has approved static copy in every supported locale', () => {
+test('the pending-tool batch has static copy in every locale but machine drafts remain blocked for release', () => {
   const tools = allGrowthPilotTools.filter(({ id }) => pendingToolIds.includes(id));
   const copies = Object.fromEntries(localeEntries.map(({ key }) => [key, { _home: localizedCopies[key]._home, ...pendingToolsCopies[key] }]));
-  assert.equal(tools.length, 23);
+  assert.equal(tools.length, pendingToolIds.length);
   assert.equal(localeEntries.length, 36);
-  assert.equal(assertGrowthLocaleCoverage(tools, localeEntries, copies), true);
+  assert.equal(assertGrowthLocaleCoverage(tools, [{ key: 'en' }], { en: copies.en }), true);
   for (const { key } of localeEntries) {
     for (const { id } of tools) {
       const copy = pendingToolsCopies[key][id];
       assert.equal(copy.copyLanguage, key, `${key}/${id}`);
-      assert.equal(copy.localizationStatus, 'machine-accepted', `${key}/${id}`);
+      assert.equal(copy.localizationStatus, key === 'en' ? 'source-english' : 'machine-draft', `${key}/${id}`);
       assert.ok(Array.from(copy.title).length <= 60 && Array.from(copy.description).length <= 160, `${key}/${id}`);
     }
   }
+  assert.throws(() => assertGrowthLocaleCoverage(tools, localeEntries.filter(({ key }) => key !== 'en'), Object.fromEntries(Object.entries(copies).filter(([key]) => key !== 'en'))), /localization is not approved for release/);
 });
 
 test('the first real English pilot copy satisfies every field, message, placeholder and title budget', () => {

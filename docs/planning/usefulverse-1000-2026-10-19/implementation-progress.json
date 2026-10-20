@@ -1,0 +1,2097 @@
+{
+  "baseline": "github/main a5cdeeabfdf2908d91d7d5fd6bf880412459e5b8",
+  "branch": "codex/usefulverse-300-tools-20261019",
+  "worktree": "/private/tmp/usefulverse-300-implementation-20261019",
+  "dataforseo": "prohibited",
+  "external_translation_api": "not used",
+  "counts": {
+    "implementation-in-progress": 291,
+    "pending": 1,
+    "demand-reserve": 8
+  },
+  "tools": [
+    {
+      "plan_id": "UV0701",
+      "slug": "text-translator",
+      "status": "implementation-in-progress",
+      "note": "API Translator/LanguageDetector integrada de Chrome escritorio, sin endpoint ni modelo en UsefulVerse; 37 opciones de UI y detección de pares en ejecución, cobertura inferior a 37 destinos. Sin fallback remoto. Pruebas y revisión de traducciones pendientes."
+    },
+    {
+      "plan_id": "UV0702",
+      "slug": "internet-speed-test",
+      "status": "implementation-in-progress",
+      "note": "Prueba manual y acotada al edge estático de UsefulVerse: 4 RTT medidos tras warm-up y 3 descargas de 512 KiB (máximo 1,5 MiB); no mide subida ni redes externas. Recurso estático sin cargo de solicitud/almacenamiento según docs oficiales de Cloudflare; se ejecuta solo al pulsar. Textos extraídos para 37 locales; traducción/revisión y QA pendientes."
+    },
+    {
+      "plan_id": "UV0703",
+      "slug": "local-ai-chat",
+      "status": "implementation-in-progress",
+      "note": "Local WebLLM 0.2.86 + Qwen3-0.6B q4f16_1 prototype implemented. Apache-2.0 dependencies; model fixed at HF revision 8c14ce481d4c692769976ad52afea453a102df19 (~351 MB), wasm fixed at GitHub revision 00fe7a40e57e5e8eb9fef87526a4bf28ad5846c0 (6.36 MB). Optional explicit download, WebGPU execution, no server inference; test ran on WebGPU/Metal, produced a Spanish answer, suppressed Qwen thinking output, and clear removed the conversation. Mobile/tablet/desktop emulation (390/768/1440 px) had no horizontal overflow; no console warnings/errors; browser storage cleared to 0 after QA. Source copy: 56 strings for 37 locales; local M2M100 drafts underway (681/2016 translated at last check, 0 human review events). 158 focused tests pass. Still in progress: 37-locale translation review and release QA."
+    },
+    {
+      "plan_id": "UV0704",
+      "slug": "weather-dashboard",
+      "status": "implementation-in-progress",
+      "note": "Alternativa oficial encontrada: MET Norway Locationforecast global, datos CC BY 4.0 y uso comercial abierto. Consultas CORS simples de bajo volumen, respetando Origin y Expires; usuario recibe disclosure de IP/coordenadas y cacheo por pestaña. Sin coste, key, geolocation automática ni sondeo. No SLA; si el tráfico supera el uso bajo, no escalar sin evaluar proxy/coste. Traducción y validación pendientes. Fuentes: https://api.met.no/doc/TermsOfService, https://docs.api.met.no/doc/License.html."
+    },
+    {
+      "plan_id": "UV0705",
+      "slug": "dictionary",
+      "status": "implementation-in-progress",
+      "note": "Implementación local con API pública oficial de Wiktionary en curso; sin proveedor de pago. La búsqueda comunica a Wikimedia la palabra y el idioma, y requiere revisar cobertura y atribución."
+    },
+    {
+      "plan_id": "UV0706",
+      "slug": "fancy-text-generator",
+      "status": "implementation-in-progress",
+      "note": "Lógica lista; traducción revisada e integración de 37 locales pendientes."
+    },
+    {
+      "plan_id": "UV0707",
+      "slug": "grammar-checker",
+      "status": "implementation-in-progress",
+      "note": "Asistencia local y acotada: usa el corrector ortográfico nativo cuando el navegador tenga diccionario para el idioma indicado y detecta cuatro patrones mecánicos Unicode (palabra repetida, espacios repetidos, espacio antes de puntuación y puntuación duplicada). No analiza gramática, significado ni hechos; sin API, subida ni guardado. Pendientes traducción/revisión de 37 locales y QA visual/funcional."
+    },
+    {
+      "plan_id": "UV0708",
+      "slug": "soundboard",
+      "status": "implementation-in-progress",
+      "note": "Tablero local con muestras de audio elegidas por la persona, pads accesibles, volumen y Stop All; límites de archivos/tamaño y sin biblioteca, carga remota ni almacenamiento. Traducción/revisión pendientes; volumen queda etiquetado según el plan."
+    },
+    {
+      "plan_id": "UV0709",
+      "slug": "thesaurus",
+      "status": "implementation-in-progress",
+      "note": "Implementación local con API pública de Wiktionary en curso; consulta a Wikimedia con la palabra e idioma elegidos. Cobertura y atribución deben validarse antes de publicar."
+    },
+    {
+      "plan_id": "UV0710",
+      "slug": "germany-net-salary",
+      "status": "implementation-in-progress",
+      "note": "Estimador 2026 anualizado para empleo regular con seguro público: tarifa oficial BMF, topes contributivos, seguro sanitario y cuidados con entradas personales y variante Sajonia. No replica retención PAP, recargo de solidaridad, clases II/III/V/VI ni seguro privado. Controlador compilado; traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0711",
+      "slug": "local-image-generator",
+      "status": "pending",
+      "note": "Pendiente: el candidato Mindview T2I-Turbo pesa ~1.2 GB y usa runtime WGSL propio; falta auditoría del runtime/licencia, filtro de seguridad, límites de uso y medición real de memoria/rendimiento. No integrado."
+    },
+    {
+      "plan_id": "UV0712",
+      "slug": "rdap-domain-lookup",
+      "status": "implementation-in-progress",
+      "note": "Consulta RDAP directa a la registraduría determinada por la lista vigente de IANA; HTTPS, límite/tiempo de espera, sin backend ni API de pago. CORS del bootstrap y de Verisign verificados; traducción/revisión pendientes."
+    },
+    {
+      "plan_id": "UV0713",
+      "slug": "texas-holdem",
+      "status": "implementation-in-progress",
+      "note": "Local three-seat practice implementation added; 37-locale copy pack and manual browser review remain pending."
+    },
+    {
+      "plan_id": "UV0714",
+      "slug": "air-quality-dashboard",
+      "status": "implementation-in-progress",
+      "note": "Dashboard local implementado para importar CSV (sin proveedor live ni cifra inventada): 71 cadenas extraídas para 37 locales; últimas cifras de cola: 2124 pending, 432 translated. Los borradores M2M siguen sin revisión humana. Lógica: 6 pruebas; valida zonas horarias ISO, agrupa por contaminante+unidad y limita tamaño/registros; no calcula AQI ni riesgo. Bundle: 6.682 bytes, sin fetch. QA visual de página y paquetes aprobados de locale pendientes."
+    },
+    {
+      "plan_id": "UV0715",
+      "slug": "paraphrasing-tool",
+      "status": "implementation-in-progress",
+      "note": "Prototipo local comparte WebLLM 0.2.86 + Qwen3-0.6B q4f16_1 fijado con Local AI Chat; descarga opcional ~351 MB y WebGPU en dispositivo, sin prompt/endpoint en UsefulVerse. Cuatro estilos, límite 4.000 caracteres, detener/copiar/limpiar y advertencias de fidelidad; runtime cargado bajo acción explícita. Copy extraído: 61 cadenas × 37 locales (2.257 filas pendientes de borrador/revisión); 162 pruebas enfocadas pasan. Falta QA real del generador y revisión humana de los 37 locales; no lista para publicar."
+    },
+    {
+      "plan_id": "UV0716",
+      "slug": "coloring-studio",
+      "status": "implementation-in-progress",
+      "note": "Editor local con 3 láminas vectoriales originales hechas para el sitio, coloración accesible por ratón/teclado y exportación SVG limpia o coloreada. Sin galería/API/servidor externo ni subida. Pruebas de plantilla, entradas y colores añadidas; traducción revisada e integración de 37 locales y QA visual de página completa pendientes."
+    },
+    {
+      "plan_id": "UV0717",
+      "slug": "online-compiler",
+      "status": "implementation-in-progress",
+      "note": "Python 3 únicamente, biblioteca estándar local con Pyodide 314.0.7 y worker desechable; ~13 MiB de descarga inicial, límites de fuente/entrada/salida y 12 s. Sin ejecución del servidor, paquetes o red del programa. Falta traducción/revisión en 37 locales y QA visual/funcional; no es compilador multi-lenguaje ni IDE completo."
+    },
+    {
+      "plan_id": "UV0718",
+      "slug": "open-radio-player",
+      "status": "implementation-in-progress",
+      "note": "Reemplazada la búsqueda remota por importación local M3U/M3U8; filtra en el navegador (país, idioma, género/nombre) y reproduce hasta 30 URLs HTTPS tras Play. Límite 256 KiB/500 emisoras; host mostrado, puerto solo 443/predeterminado; sin fetch, DNS, directorio, analítica ni subida. El broadcaster recibe la petición de audio/IP, los metadatos dependen de la lista y no se verifican derechos. 58 cadenas extraídas para 37 locales; últimas cifras: 460 borradores traducidos y 1.628 pendientes, ninguno aprobado. Pruebas de parser/formulario y gate pasan; falta QA visual."
+    },
+    {
+      "plan_id": "UV0719",
+      "slug": "qibla-compass",
+      "status": "implementation-in-progress",
+      "note": "Bearing inicial y distancia por gran círculo desde coordenadas manuales, sin geolocalización ni magnetómetro. Arreglado el rumbo arbitrario en la antípoda: allí y en la Kaaba el rumbo es indefinido y la UI lo explica. Prueba añadida para el antipodal y preservadas validaciones de coordenadas. 40 cadenas extraídas para 37 locales; cola actual: 550 borradores y 890 pendientes, ninguno aprobado; falta revisión humana."
+    },
+    {
+      "plan_id": "UV0720",
+      "slug": "baccarat-practice",
+      "status": "implementation-in-progress",
+      "note": "Práctica local de Punto Banco con fichas ficticias de saldo por sesión y puntuación plana, sin modelar cuotas ni premios reales. Reglas de cartas, mano natural y tercera carta contrastadas con la norma consolidada del Department of Internal Affairs de Nueva Zelanda, actualizada en junio de 2026. Añadidas pruebas reproducibles de valores, mazo de ocho barajas, reparto, tabla completa del Banker y puntuación ficticia (4/4 pasan localmente). Sin red ni proveedor en ejecución; las 37 traducciones siguen pendientes de revisión humana y QA visual."
+    },
+    {
+      "plan_id": "UV0721",
+      "slug": "big-five-personality-test",
+      "status": "implementation-in-progress",
+      "note": "Implements public-domain IPIP 50-item Big-Five factor markers with source item order, published positive/negative keys and local raw totals/means. Verified item wording and score directions against IPIP primary pages; added neutral-baseline, positive-key, reverse-key and invalid-response tests (32 shared logic tests pass locally). All product locales remain machine-assisted drafts and are not claimed psychometrically equivalent or validated; no diagnosis, hiring or selection use."
+    },
+    {
+      "plan_id": "UV0722",
+      "slug": "indian-rummy",
+      "status": "implementation-in-progress",
+      "note": "Juego local de práctica de 13 cartas contra bot básico: dos mazos, dos jokers impresos, carta comodín visible, robar/descartar y validador de mano completa con dos secuencias y una recta pura. Se corrigió el barajado para rechazar fuentes aleatorias inválidas; pruebas locales cubren reparto, turnos, protección de carta tomada y validación de secuencias (3/3 pasan). Sin puntuación, apuestas, dinero, juego online ni variantes. Pagat describe esta variante pero la página indica última revisión el 12-oct-2022; se declara explícitamente esa antigüedad y su carácter no oficial. Traducción 37 idiomas y QA pendientes. Consulta principal `rummy` de 673.000/mes es amplia; no se auditó la SERP (DataForSEO prohibido)."
+    },
+    {
+      "plan_id": "UV0723",
+      "slug": "pool-game",
+      "status": "implementation-in-progress",
+      "note": "Motor local de práctica 8-ball con física aproximada, grupos, turnos, faltas básicas y bola en mano. Añadí validación compartida para impedir colocar la blanca en una tronera, fuera de la mesa o solapada con otra bola, además de pruebas de rack, colocación, faltas, turnos, victoria de la 8 y tiro/física (4/4 pasan; 39 pruebas relacionadas pasan en total). Fuente de reglas WPA consultada hoy; apertura sigue simplificada y se omiten bola cantada y decisiones arbitrales. Sin red, almacenamiento ni apuestas. Pendientes traducción humana de 37 idiomas, QA visual y comprobar intención genérica."
+    },
+    {
+      "plan_id": "UV0724",
+      "slug": "pronunciation-dictionary",
+      "status": "implementation-in-progress",
+      "note": "Usa Wiktionary para IPA y enlaces a audio en Commons con archivo/licencia por grabación; reproduce el audio solo al activarlo. La voz TTS del navegador es opcional y puede ser gestionada por un proveedor. Búsqueda y reproducción se comunican a Wikimedia; traducción y revisión pendientes."
+    },
+    {
+      "plan_id": "UV0725",
+      "slug": "roulette-practice",
+      "status": "implementation-in-progress",
+      "note": "Intención de ruleta de práctica resuelta con ruleta europea de un solo cero, apuestas simuladas y sin dinero; fuente de referencia de casino oficial, sin datos de proveedor. Traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0726",
+      "slug": "us-paycheck-calculator",
+      "status": "implementation-in-progress",
+      "note": "Calcula escenario de nómina en USD con deducciones que introduce la persona; no embebe tablas tributarias ni pretende estar actualizado sobre impuestos, y enlaza al estimador IRS oficial. Añadidas pruebas de redondeo a centavos, anualización en las cuatro frecuencias y rechazos de montos/frecuencias inválidos y deducciones excesivas (3/3 pasan). Traducciones humanas de 37 locales y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0727",
+      "slug": "india-income-tax-calculator",
+      "status": "implementation-in-progress",
+      "note": "Snapshot local para TY 2026-27 contrastado hoy con el Act 2025 y FAQs/Memorandum oficiales del Budget 2026: tramos sección 202, rebate sección 156 para residentes, marginal relief sobre ₹12 lakh, cess 4%; acota ingreso imponible a ₹50 lakh y excluye surcharge. Añadí metadatos effectiveFrom 2026-04-01, checkedAt 2026-10-19, reviewDue 2026-11-19, desactivación de ejecución al vencer y bloqueo del build si cualquier regla catalogada expiró. Pruebas de umbrales, residentes/no residentes, cess, marginal relief y caducidad pasan (33 pruebas compartidas). No red, cuenta ni proveedor en ejecución. Pendientes traducción humana de 37 locales y QA visual."
+    },
+    {
+      "plan_id": "UV0728",
+      "slug": "never-have-i-ever",
+      "status": "implementation-in-progress",
+      "note": "Juego de grupo con frase creada por participantes, votos sí/no en un dispositivo compartido y recuento oculto hasta completar el grupo; sin prompts predeterminados, nombres, red ni persistencia. Añadí pruebas de longitud/caracteres de la frase, rango y entero del grupo, y respuesta válida (36 pruebas compartidas pasan). Copy declara que después de la última respuesta el recuento puede verse en la pantalla común. Pendientes traducción humana de 37 locales y QA visual."
+    },
+    {
+      "plan_id": "UV0729",
+      "slug": "panchang-calendar",
+      "status": "implementation-in-progress",
+      "note": "Snapshot astronómico local a sunrise con Astronomy Engine 2.1.19 (MIT); coordenadas y zona horaria explícitas, sin red, geolocalización, festivales ni muhurta. Pruebas cubren snapshot, fecha bisiesta, zona al oeste de UTC, entradas inválidas y ausencia de sunrise polar. Aproximación Lahiri lineal y limitaciones regionales declaradas; pendientes revisión humana de 37 locales y QA visual."
+    },
+    {
+      "plan_id": "UV0730",
+      "slug": "photo-background-changer",
+      "status": "implementation-in-progress",
+      "note": "Compositor local de retrato humano con MODNet Apache-2.0 fijado y worker ONNX; fondos de color, imagen o transparencia, escala, suavizado y sombra. Pruebas cubren MIME/tamaño, límite de 12 MP y recorte center-cover; fotos permanecen en el navegador. Descarga inicial ~21 MB informada antes del uso. Pendientes revisión humana de 37 locales y QA visual/funcional/modelo en navegador."
+    },
+    {
+      "plan_id": "UV0731",
+      "slug": "rubiks-cube-solver",
+      "status": "implementation-in-progress",
+      "note": "Uses MIT cube.js 1.3.2 vendored with attribution/license preserved; solver tables build in a Web Worker. Added local tests for solved state, generated legal scramble, malformed/impossible states and whitespace. Translation review for 37 locales and browser worker/performance QA remain pending."
+    },
+    {
+      "plan_id": "UV0732",
+      "slug": "video-editor",
+      "status": "implementation-in-progress",
+      "note": "Editor local de secuencia corta: hasta 3 clips, recorte, reordenación, título y audio original; exporta WebM en tiempo real, máximo 120 s y 100 MiB. Corregí ciclo de vida del AudioContext para permitir exportaciones repetidas y lo suspendo entre usos. Pruebas verifican sumas, trims y topes; traducción y QA real de codecs siguen pendientes."
+    },
+    {
+      "plan_id": "UV0733",
+      "slug": "adult-adhd-screener",
+      "status": "implementation-in-progress",
+      "note": "Prototipo local ASRS v1.1 Part A, 6 preguntas para personas adultas, opción de frecuencia 0–4 y scoring actualizado 0–24 con estratos 0–9/10–13/14–17/18–24 del documento oficial Harvard 2024; no diagnóstico, no persistencia ni API. Harvard indica uso gratuito sin permiso formal para las 6Q y exige citar artículo/copyright; se añadieron atribución y link a versiones actuales. Sitio oficial presenta 19 traducciones; cuestionario interactivo actual en inglés, no se inventaron las traducciones restantes. Copy de interfaz: 57 cadenas extraídas × 37 locales, borrador local sin revisión humana; se requiere validar interfaz y decidir cobertura de instrumento para 37 idiomas antes de release. Suite focalizada con lógica ASRS/PHQ9, 3D, forms, bundle y fechas: 169 tests pasan. QA clínica/visual y revisión de 37 locales pendientes; no lista para publicar. Fuentes: https://www.hcp.med.harvard.edu/ncs/asrs_2025.php ; https://www.hcp.med.harvard.edu/ncs/ftpdir/adhd/ASRS_v1.1_screener%286Q%29_scoring_update.pdf."
+    },
+    {
+      "plan_id": "UV0734",
+      "slug": "brazil-termination-calculator",
+      "status": "implementation-in-progress",
+      "note": "Gross, local Brazil termination arithmetic separates user-provided eligible months/FGTS base from cash components. Added official-source maintenance dates (checked 2026-10-19, expires 2026-11-19), runtime expiry and build gate; calculation stops after review is due. 56 English strings extracted across 37 locale records. Tests cover rates, totals, invalid dates and expiry. Human locale review and browser QA pending."
+    },
+    {
+      "plan_id": "UV0735",
+      "slug": "chinese-zodiac",
+      "status": "implementation-in-progress",
+      "note": "Convierte la fecha gregoriana al año animal lunar con Intl.DateTimeFormat/ICU local, sin red ni interpretación astrológica. Añadí pruebas en ambos lados del Año Nuevo Lunar 2024, validación de fecha y texto lunar localizado. Revisión humana de los 37 paquetes y QA de ICU en navegadores sigue pendiente."
+    },
+    {
+      "plan_id": "UV0736",
+      "slug": "color-vision-check",
+      "status": "implementation-in-progress",
+      "note": "Ejercicio local no clínico de emparejar colores, sin datos ni red. Inyecté la fuente aleatoria para que las rondas sean reproducibles en pruebas y validé cuatro opciones únicas y una sola respuesta correcta para ambas dificultades. Mantiene el aviso de que no es una prueba clínica; la revisión humana de 37 locales y el QA visual siguen pendientes."
+    },
+    {
+      "plan_id": "UV0737",
+      "slug": "font-identifier",
+      "status": "implementation-in-progress",
+      "note": "Comparador visual de muestra tipográfica en Canvas local: la persona aporta recorte y texto exacto, se puntúa solapamiento de píxeles con candidatos comunes; 4 MiB/8 MP, sin modelo, fuente remota ni inventario de fuentes. Distingue aliases de fallback y declara que las coincidencias son relativas, no identificación definitiva. 48 cadenas fuente extraídas para 37 locales; traducción humana y QA visual/navegador pendientes."
+    },
+    {
+      "plan_id": "UV0738",
+      "slug": "gamepad-tester",
+      "status": "implementation-in-progress",
+      "note": "Gamepad API local con actualización en vivo por requestAnimationFrame, zona muerta ajustable, estado de botones/ejes y prueba háptica manual de baja intensidad cuando el dispositivo la ofrece; detiene el polling en reset/pagehide y no guarda ni envía datos. Añadí cobertura de topes de dispositivos/entradas. Revisión humana y QA con hardware en los 37 locales/navegadores pendientes."
+    },
+    {
+      "plan_id": "UV0739",
+      "slug": "geographic-distance-calculator",
+      "status": "implementation-in-progress",
+      "note": "Fórmula local de gran círculo robustecida en los extremos: acota redondeo, deja rumbo sin definir en pares idénticos/antípodas; pruebas de Madrid–París, unidades, waypoints, límites y coordenadas pasan (46 pruebas compartidas/locales). Sin red ni mapa; la página declara que no es ruta por carretera. Traducción humana y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0740",
+      "slug": "japanese-name-strokes",
+      "status": "implementation-in-progress",
+      "note": "Contador local basado en datos KanjiVG versionados. Añadí pruebas de NFC, caracteres no cubiertos, total completo y límites; 3/3 pasan. Sin consulta externa durante uso; traducciones humanas y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0741",
+      "slug": "love-calculator",
+      "status": "implementation-in-progress",
+      "note": "Juego determinista basado en nombres NFC y minúsculas, suma Unicode visible módulo 101, tarjeta con aviso explícito y cálculo local; no afirma medir compatibilidad. Traducción/revisión pendientes."
+    },
+    {
+      "plan_id": "UV0742",
+      "slug": "static-website-builder",
+      "status": "implementation-in-progress",
+      "note": "Generador ZIP local de HTML/CSS/SVG sin scripts ni dependencias remotas. Añadí pruebas de idioma/dirección, secciones opcionales, HTTPS, credenciales en URL, color y datos incompletos; 46 pruebas compartidas/locales pasan. Traducción humana y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0743",
+      "slug": "virtual-keyboard",
+      "status": "implementation-in-progress",
+      "note": "Teclado en pantalla personalizable; corregí el retroceso para borrar grafemas completos en navegadores con o sin Intl.Segmenter, incluidos acentos combinados, tonos, banderas y secuencias ZWJ. 2/2 pruebas pasan. Texto y teclas siguen locales; traducciones humanas y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0744",
+      "slug": "baseball-game",
+      "status": "implementation-in-progress",
+      "note": "Juego arcade local de tres entradas con acciones deterministas para pruebas; añadí pruebas de transición de lanzamiento y rechazo de turnos/azar inválidos (2/2 pasan). Sin red ni apuestas. Traducciones humanas y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0745",
+      "slug": "chord-progression-builder",
+      "status": "implementation-in-progress",
+      "note": "Constructor diatónico local con vista previa Web Audio tras acción y exportación MIDI; añadí pruebas de acordes mayores/menores, inversiones, límites y estructura del archivo MIDI (3/3 pasan). Sin API ni datos externos. Traducciones humanas y QA de audio en navegador pendientes."
+    },
+    {
+      "plan_id": "UV0746",
+      "slug": "cricket-game",
+      "status": "implementation-in-progress",
+      "note": "Juego local de overs cortos; añadí pruebas de configuración, elección de turno y límites de delivery. La prueba detectó entradas de innings mutables dentro del estado congelado; ahora también quedan congeladas. 2/2 pasan. Sin red ni apuestas; traducciones humanas y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0747",
+      "slug": "dns-lookup",
+      "status": "implementation-in-progress",
+      "note": "Consulta DNS pública bajo demanda, sin clave ni backend; añadí prueba con fetch simulado (sin red) para validar URL, privacidad del request, validación local y máximo de 100 respuestas (pasa). No se ha contactado al resolver durante las pruebas. Traducciones humanas y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0748",
+      "slug": "india-gratuity-calculator",
+      "status": "implementation-in-progress",
+      "note": "Estimador bruto para India con fórmula 15/26 y techo de ₹20 lakh. Contrasté vigencia con el FAQ ministerial 2026 y la notificación oficial del techo; añadí effectiveFrom 2025-11-21, checkedAt 2026-10-19, reviewDue 2026-11-19, bloqueo por fecha efectiva/vencida y fuente estática en el catálogo. Pruebas de thresholds, meses, fijo, muerte, tope y vencimiento pasan. Sin consulta externa en ejecución; traducción humana y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0749",
+      "slug": "ip-geolocation-lookup",
+      "status": "implementation-in-progress",
+      "note": "Lookup consults IANA bootstrap and the indicated RDAP registry after submit; its actual result is registration range, not geolocation. Añadí pruebas puras de IPv4, IPv6 comprimido/IPv4 embebida y entradas malformadas (2/2 pasan), sin hacer llamadas de red."
+    },
+    {
+      "plan_id": "UV0750",
+      "slug": "mahjong-four-player",
+      "status": "implementation-in-progress",
+      "note": "Juego local de práctica para cuatro personas. Añadí pruebas de mano estándar, límite de cuatro copias, reparto inicial (136 fichas) y secuencia robar/descartar (3/3 pasan). No puntúa ni consulta red; traducción humana y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0751",
+      "slug": "public-transit-planner",
+      "status": "implementation-in-progress",
+      "note": "Planificador local sobre un ZIP GTFS elegido por la persona, sin servicios/API. Añadí validación de hora local 00:00–23:59 (antes aceptaba horas imposibles) y pruebas con horarios sintéticos de ruta directa, transbordo, día de servicio, hora de salida y límites (2/2 pasan). No maneja realtime ni convierte zona horaria; vigencia depende del feed. Traducción humana y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0752",
+      "slug": "shogi",
+      "status": "implementation-in-progress",
+      "note": "Motor local de Shogi; añadí pruebas de posición inicial, apertura SFEN, turno, promoción obligatoria y nifu (3/3 pasan). Las pruebas descubrieron que el exportador SFEN recorría archivos invertidos; corregí el orden al estándar. Sin red; no arbitra repetición ni jaque perpetuo. Traducción humana y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0753",
+      "slug": "soccer-penalty-game",
+      "status": "implementation-in-progress",
+      "note": "Simulador arcade local de penaltis con turnos alternados, cinco tiros y muerte súbita; sin datos reales de equipos, red ni apuestas. Añadida prueba de cambio de roles, empate tras cinco rondas, muerte súbita y dirección inválida; la suite compartida pasa. El rival es aleatorio y no estratégico. La intención genérica es mixta y no demuestra demanda específica para penaltis; QA visual y traducción humana de 37 idiomas pendientes."
+    },
+    {
+      "plan_id": "UV0754",
+      "slug": "teen-patti",
+      "status": "implementation-in-progress",
+      "note": "Práctica local contra dos rivales con baraja estándar, comparación de manos, mostrar o retirarse y marcador sin apuestas ni fichas. Corregí la validación para rechazar la misma carta repetida dentro de una mano; añadidas pruebas de baraja única, jerarquía declarada A-K-Q > A-2-3 > K-Q-J, folds sin revelar rivales y showdown (31 pruebas compartidas pasan). Existen variaciones de mesa. La keyword tiene intención mixta de juego/apuestas; traducción 37 locales, revisión de intención y QA pendientes."
+    },
+    {
+      "plan_id": "UV0755",
+      "slug": "would-you-rather",
+      "status": "implementation-in-progress",
+      "note": "Juego de votación local con pregunta/opciones del grupo. Hice que la detección de opciones repetidas use NFC y minúsculas Unicode independientes del idioma del dispositivo; añadí casos de voto, duplicados, equivalencia de acentos, controles y límites (47 pruebas compartidas pasan). Sin servicios ni persistencia; traducción humana y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0756",
+      "slug": "enneagram-questionnaire",
+      "status": "implementation-in-progress",
+      "note": "Cuestionario local original de reflexión, explícitamente no validado ni diagnóstico. Reforcé scoreEnneagramReflection para aceptar solo valores 1–5 válidos y añadí pruebas de nueve resultados, empate múltiple, cercanos, respuesta malformada y temas desequilibrados (2/2 pasan). Traducción humana de 37 locales y QA visual/funcional pendientes."
+    },
+    {
+      "plan_id": "UV0757",
+      "slug": "local-music-generator",
+      "status": "implementation-in-progress",
+      "note": "Generador procedural local (no IA) con melodía en escala, acordes, Web Audio y exportación MIDI; mejoré cancelación inmediata y liberación de AudioContext para que un Stop durante resume no arranque audio después, validé límites del MIDI y añadí 3 pruebas de compás, notas y archivo. El candidato pide música IA: esta lógica no satisface esa parte y permanece expresamente como generador procedural; no hay un modelo comercial redistribuible, pequeño y sin coste verificado. Traducción humana y QA auditivo en navegador pendientes."
+    },
+    {
+      "plan_id": "UV0758",
+      "slug": "phq9-questionnaire",
+      "status": "implementation-in-progress",
+      "note": "Cuestionario PHQ-9 con los 9 ítems, 4 opciones por frecuencia en dos semanas, pregunta de impacto no puntuada, total 0–27 y bandas publicadas; respuesta positiva al ítem 9 dispara panel role=alert con orientación general y directorio internacional, sin puntuar riesgo. Respuestas sólo en memoria de página, sin API ni persistencia; el directorio se abre sólo por clic. La web oficial permite reproducir/traducir/distribuir sin permiso; manual oficial consultado y vigencia revisada 19-oct-2026. Copy: 67 cadenas para 37 locales, cola local automática sin aprobación humana. Suite focalizada: 166 pruebas pasan. QA de seguridad y traducciones humanas frente a versiones oficiales pendientes; no lista para publicar. Fuentes: https://www.phqscreeners.com/select-screener ; https://www.phqscreeners.com/images/sites/g/files/g10016261/f/201412/instructions.pdf ; https://findahelpline.com/."
+    },
+    {
+      "plan_id": "UV0759",
+      "slug": "rock-paper-scissors",
+      "status": "implementation-in-progress",
+      "note": "Juego local de tres movimientos, elección aleatoria uniforme y reglas claras; faltan traducciones, página estática y revisión visual."
+    },
+    {
+      "plan_id": "UV0763",
+      "slug": "charades",
+      "status": "implementation-in-progress",
+      "note": "Selector aleatorio local para listas de palabras aportadas por el grupo. Añadí pruebas de selección desde la lista, líneas vacías y límites de entradas/caracteres (49 pruebas compartidas pasan); no contactan servicios externos. No hay corpus ni suposiciones culturales. Traducción humana y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0760",
+      "slug": "truth-or-dare",
+      "status": "implementation-in-progress",
+      "note": "Mazos originales diferenciados para familia/adultos, turnos de hasta 12 nombres, revelar antes de puntuar, pase sin penalización y puntuación voluntaria opcional; sin riesgo físico, alcohol, presión sexual ni datos remotos. Traducción/revisión pendientes."
+    },
+    {
+      "plan_id": "UV0761",
+      "slug": "uk-stamp-duty",
+      "status": "implementation-in-progress",
+      "note": "Calcula SDLT/LBTT/LTT por territorio con tablas oficiales 2026 y recargos separados; verifiqué las bandas actuales en GOV.UK, gov.scot y GOV.WALES. Añadí effectiveFrom 2026-04-01, checkedAt 2026-10-19, reviewDue 2026-11-19 y desactivación anterior/caducada; 3 pruebas cubren umbrales, recargos y cuatro territorios. Sin consulta al calcular. Traducción humana y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0762",
+      "slug": "basketball-shooting-game",
+      "status": "implementation-in-progress",
+      "note": "Juego arcade local de tiro con trayectoria parabólica; corregí el criterio para exigir velocidad vertical descendente al cruzar el plano del aro, además de altura dentro del margen. Prueba con trayectorias de subida y bajada cubre el caso. Sin datos deportivos ni red. Traducción humana y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0764",
+      "slug": "durak",
+      "status": "implementation-in-progress",
+      "note": "Podkidnoy Durak contra rival local; pruebas verifican mazo único de 36 cartas, atacante inicial por triunfo bajo e ilegalidades básicas. Siguen pendientes la traducción humana de 37 idiomas, integración y QA visual."
+    },
+    {
+      "plan_id": "UV0765",
+      "slug": "egfr-calculator",
+      "status": "implementation-in-progress",
+      "note": "Estimador eGFR adulto CKD-EPI 2021 solo creatinina, sin diagnóstico ni etapa; fórmula race-free vigente según NIDDK, unidades SI/convencionales y corte automático tras reviewDue (2026-11-19). Pruebas locales cubren conversión y expiración. Traducción/revisión clínica de 37 idiomas pendientes."
+    },
+    {
+      "plan_id": "UV0766",
+      "slug": "india-ppf-calculator",
+      "status": "implementation-in-progress",
+      "note": "Rate remains user-entered and links to the Department of Economic Affairs quarterly small-savings notice; no external refresh or API cost is involved, and the projection never claims to fetch the latest rate. Assumes one contribution at the start of each year and a constant rate. New local tests verify paise rounding, reconciliation and bounds; localization and visual QA pending."
+    },
+    {
+      "plan_id": "UV0767",
+      "slug": "music-identifier",
+      "status": "implementation-in-progress",
+      "note": "UV0767 integrated: local browser-only matcher compares one 2–20 s clip against 1–5 visitor-selected reference files using a bounded tonal-energy fingerprint. Limits size/duration, never uploads or names tracks outside the chosen files, and describes similarity as a heuristic. Logic tests, form contract, 37-locale copy contract and bundle pass. New copy is currently English fallback/machine-draft; human review and visual browser QA remain pending."
+    },
+    {
+      "plan_id": "UV0768",
+      "slug": "personal-color-analysis",
+      "status": "implementation-in-progress",
+      "note": "Comparador local de paletas con controles de luz, muestreo de píxel y exportación JSON; tests comprueban dimensiones acotadas, paletas y entradas inválidas. Describe combinaciones estéticas, no diagnóstico científico de estación; traducción humana/QA pendientes."
+    },
+    {
+      "plan_id": "UV0769",
+      "slug": "screen-mirroring",
+      "status": "implementation-in-progress",
+      "note": "Intercambio manual de SDP para WebRTC directo, captura solo tras acción y permiso del navegador, vídeo sin audio, sin signaling backend, STUN ni TURN. Corregí el cierre de captura/conexión y la limpieza de timeout cuando falla la negociación ICE, evitando dejar la pantalla capturada tras un error. `node --check` y diff-check pasan; falta QA real entre navegadores/redes, revisar privacidad de candidatos, traducción humana de 37 locales y QA visual."
+    },
+    {
+      "plan_id": "UV0770",
+      "slug": "business-model-canvas",
+      "status": "implementation-in-progress",
+      "note": "Lienzo editable local con bloques del modelo y exportación; el equipo aporta el contenido, sin promesas ni servicios externos. Traducción/revisión pendientes; volumen queda etiquetado según el plan. Volumen conservado: 201.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0771",
+      "slug": "earthquake-map",
+      "status": "implementation-in-progress",
+      "note": "Feeds oficiales USGS globales M2.5+ en 4 periodos, carga manual directa con CORS, caché upstream 60 s, sin proxy/clave/polling ni geolocalización; puntos sobre un mapa mundial Natural Earth 1:110m de dominio público, lista accesible, hora/localización, crédito USGS. Se informa IP compartida con USGS, datos preliminares y límites de seguridad. Activado por autorización posterior como fallback de demanda (201.000/mes, inferior al umbral original de 240.000); traducción y QA visual pendientes. Volumen conservado: 201.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0772",
+      "slug": "economic-calendar",
+      "status": "implementation-in-progress",
+      "note": "Calendario local de eventos introducidos por la persona, con fuente HTTPS visible y exportación ICS; no consume feed ni API y no afirma estar actualizado automáticamente. Tests verifican orden, formato ICS/escaping y rechazo de fecha/URL/categoría inválidas. Traducción humana y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0773",
+      "slug": "emoji-search",
+      "status": "implementation-in-progress",
+      "note": "Búsqueda local sobre índice CLDR fijado; búsqueda acentuada y multi-palabra con orden determinista, límites de dataset y resultados. Tests cubren Unicode y límites. La cobertura sigue siendo la del paquete de datos fijado y requiere QA/revisión de locales."
+    },
+    {
+      "plan_id": "UV0774",
+      "slug": "face-shape-analyzer",
+      "status": "implementation-in-progress",
+      "note": "Guía geométrica local de cuatro medidas y ratios visibles; no usa foto, cámara ni biometría, y no diagnostica. Tests cubren patrones y límites numéricos. Traducción humana de 37 locales y revisión visual pendientes."
+    },
+    {
+      "plan_id": "UV0775",
+      "slug": "france-housing-benefit",
+      "status": "implementation-in-progress",
+      "note": "Filtro preliminar con los topes oficiales CAF de ingresos y alquiler por hogar, zona y vivienda compartida, vigentes desde 2026-10-01. No estima cuantía APL/ALF/ALS ni decide derecho; enlaza simulador oficial. Volumen conservado: 201.000/mes (<240.000). Traducción y QA pendientes. Page controller wrapper added after an integration gap was found; local browser bundles compiled and passed the static controller guard (64 KiB, 72 KiB for GPX/MusicXML). Translation/review and browser QA remain pending. Page controller wrapper added after an integration gap was found; local browser bundles compiled and passed the static controller guard (72 KiB pending-controller budget). Translation/review and browser QA remain pending."
+    },
+    {
+      "plan_id": "UV0776",
+      "slug": "online-paint",
+      "status": "implementation-in-progress",
+      "note": "Local accessible canvas with pointer/keyboard drawing, undo, clear and PNG export added; 37-locale copy pack remains pending. Volumen conservado: 201.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0777",
+      "slug": "travel-route-optimizer",
+      "status": "implementation-in-progress",
+      "note": "Optimizador local para 2–16 lugares dados por la persona; vecino cercano + 2-opt, inicio fijo y retorno opcional, con comparación frente al orden original. Normalización de nombres duplicados estable en Unicode y tests de unicidad, ruta/validaciones. Sin mapas, API, tráfico ni subida; no es ruta vial. 37 traducciones humanas y QA visual/funcional pendientes."
+    },
+    {
+      "plan_id": "UV0778",
+      "slug": "truco",
+      "status": "implementation-in-progress",
+      "note": "Mesa local de cuatro personas con perfiles seleccionables Argentina y Truco Paulista de Brasil, separando idioma de reglas; turnos pass-and-play, manos privadas, puntaje, envido argentino simplificado, vira/manilhas Paulista e historial. Perfiles de aprendizaje explícitos, con alcance y reglas simplificadas divulgados. Copy extraído para 37 locales; traducción aprobada, revisión funcional y QA visual pendientes. Demanda de 201.000/mes: activada desde reserva por instrucción posterior del usuario para aceptar opciones cercanas al mínimo. Volumen conservado: 201.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0779",
+      "slug": "uk-pay-calculator",
+      "status": "implementation-in-progress",
+      "note": "Estimador local de take-home pay con bandas oficiales 2026/27 y jurisdicción seleccionable: Inglaterra, Gales, Irlanda del Norte o Escocia; categoría NI A, pensión ilustrativa por earnings calificables y desglose anual/mensual/semanal. Supuestos y exclusiones explicados; fuentes oficiales enlazadas; requiere actualizarse por ejercicio fiscal. Copy extraído para 37 locales; traducción aprobada y QA visual/funcional pendientes. Demanda de 201.000/mes: activada desde reserva por instrucción posterior del usuario para aceptar opciones cercanas al mínimo. Volumen conservado: 201.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0780",
+      "slug": "visual-acuity-check",
+      "status": "implementation-in-progress",
+      "note": "Carta direccional local tumbling-E por un ojo, con prueba de calibración física por tarjeta de 85,6 mm y distancia introducida; seis tamaños, cinco orientaciones aleatorias por nivel, umbral 4/5, sin guardar resultados/cámara/red. Avisa que no es diagnóstico ni sustituye revisión completa; enlaza NEI/NHS y deriva síntomas súbitos/dolor a atención urgente. Copy extraído para 37 locales; traducción aprobada y QA visual/funcional pendientes. Demanda de 201.000/mes: activada desde reserva por instrucción posterior del usuario para aceptar opciones cercanas al mínimo. Volumen conservado: 201.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0781",
+      "slug": "craps-practice",
+      "status": "implementation-in-progress",
+      "note": "Simulador local Pass Line/Don’t Pass con fichas ficticias y reglas enlazadas; tests verifican natural/craps/punto, pagos, push de 12 y cierre de ronda. Sin dinero real, depósitos, apuestas laterales ni persistencia. Datos de regla y traducción humana/QA aún pendientes."
+    },
+    {
+      "plan_id": "UV0782",
+      "slug": "i-ching-oracle",
+      "status": "implementation-in-progress",
+      "note": "Generador local de seis líneas por método de tres monedas, valor H=2/H=3 seleccionable, líneas cambiantes y hexagrama transformado; sin predicciones ni interpretación. Aleatoriedad segura de navegador y tests deterministas mediante fuente inyectada solo en pruebas. Copy de 37 locales aún sin revisión humana/QA."
+    },
+    {
+      "plan_id": "UV0783",
+      "slug": "image-search-open",
+      "status": "implementation-in-progress",
+      "note": "Buscador directo de Wikimedia Commons en acción explícita: muestra solo etiquetas CC0, CC BY, CC BY-SA o dominio público con autor y página/condiciones; filtra no comercial/no derivadas, limita 24 resultados y 3 MB/12 s, restringe host de miniaturas. Explica IP y consulta a Wikimedia y derechos de imagen/persona; metadata como texto, sin proxy, clave, upload ni persistencia. Copy extraído para 37 locales; traducción aprobada y QA visual/funcional pendientes. Demanda de 165.000/mes: promovida como alternativa cercana tras agotar candidatas restantes de 201.000. Volumen conservado: 165.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0784",
+      "slug": "india-nps-calculator",
+      "status": "implementation-in-progress",
+      "note": "Proyección local con retorno supuesto por la persona y reglas PFRDA para All Citizen Model; fecha de corte `2026-11-19`, se desactiva si caduca. Tests cubren aportes mensuales, salida normal/anticipada, umbrales y expiración. No calcula impuestos, elegibilidad ni producto concreto; traducción humana de 37 locales y QA pendientes."
+    },
+    {
+      "plan_id": "UV0785",
+      "slug": "makruk",
+      "status": "implementation-in-progress",
+      "note": "Promovida por la instrucción actual del usuario de completar las 300, pese a 165.000 búsquedas/mes (<240.000). Integración del motor MIT makruk-js 4.0.2 vendorizado con licencia; juego local contra bot, movimientos legales y conteo de final del motor; las reglas no dependen del idioma. Referencia TCA y guía visual; traducción generada pendiente de revisión y QA. Volumen conservado: 165.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0786",
+      "slug": "raci-matrix-builder",
+      "status": "implementation-in-progress",
+      "note": "Matriz local con roles/tareas del usuario, validaciones configurables y exportación CSV; no certifica gobernanza. Traducción/revisión pendientes; volumen queda etiquetado según el plan. Volumen conservado: 165.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0787",
+      "slug": "racing-game",
+      "status": "implementation-in-progress",
+      "note": "Juego arcade local de tres carriles, esquiva obstáculos con teclado o botones; se implementa por autorización del usuario pese a quedar bajo el umbral original. Traducción y QA pendientes. Volumen conservado: 165.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0788",
+      "slug": "scopa",
+      "status": "implementation-in-progress",
+      "note": "Juego local de mesa para dos personas con perfiles de 40 cartas italianas o francesas elegibles aparte del idioma; captura por coincidencia/suma con prioridad exacta, scopa, primiera, settebello, monedas y empate sin punto. Pass-and-play y privacidad de mano divulgada; historial/reglas comunes visibles; sin red ni persistencia. Copy extraído para 37 locales; traducción aprobada y revisión funcional/QA visual pendientes. Demanda de 165.000/mes: promovida como alternativa cercana tras agotar candidatas restantes de 201.000. Volumen conservado: 165.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0789",
+      "slug": "belote",
+      "status": "implementation-in-progress",
+      "note": "UV0789 promovida desde reserva por instrucción expresa de completar las 300. Belote local de cuatro jugadores: 32 cartas, parejas enfrentadas, triunfo elegido antes de repartir, seguimiento de palo, triunfo/sobretriunfo, puntos y bonus K+Q con bots locales. Pruebas cubren reparto, legalidad, sobretriunfo, anuncio, bonus y mano completa. Perfil francés simplificado; omite subastas y torneos regionales. Copia inglesa existe para los 37 locales, pero en locales no ingleses queda fallback/borrador; traducción humana y QA visual pendientes. El build de publicación sigue bloqueado por falta de paquetes aprobados (primer fallo: text-translator)."
+    },
+    {
+      "plan_id": "UV0790",
+      "slug": "email-address-validator",
+      "status": "implementation-in-progress",
+      "note": "Valida sintaxis dot-atom habitual, conversión IDN del dominio y límites SMTP sin consultar DNS ni afirmar entregabilidad; candidato de menor demanda incluido por la autorización del usuario de implementar las 300 fichas. Traducción y QA pendientes. Volumen conservado: 135.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0791",
+      "slug": "fishing-game",
+      "status": "implementation-in-progress",
+      "note": "Minijuego arcade local de pesca virtual basado en temporización; se incluye por la autorización de implementar las 300 fichas, aunque la demanda anotada es 135.000/mes. Traducción y QA pendientes. Volumen conservado: 135.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0792",
+      "slug": "object-remover",
+      "status": "implementation-in-progress",
+      "note": "Borrador de objetos local: máscara pintable/borrable y relleno aproximado por difusión de colores de frontera; hasta 900 px y 600.000 píxeles, máscara ≤40%. No recupera textura/detalle y no usa IA/API; solo fondos suaves. Volumen TSV conservado: 135.000/mes; la fuente previa también contenía 74.000, discrepancia no resuelta. Traducción y QA pendientes. Page controller wrapper added after an integration gap was found; local browser bundles compiled and passed the static controller guard (64 KiB, 72 KiB for GPX/MusicXML). Translation/review and browser QA remain pending. Page controller wrapper added after an integration gap was found; local browser bundles compiled and passed the static controller guard (72 KiB pending-controller budget). Translation/review and browser QA remain pending."
+    },
+    {
+      "plan_id": "UV0793",
+      "slug": "photosphere-viewer",
+      "status": "implementation-in-progress",
+      "note": "Promovida por la instrucción actual de completar las 300, pese a 135.000 búsquedas/mes (<240.000). Visor equirectangular WebGL local: solo JPEG/PNG/WebP, límite 30 MiB, drag + flechas + sliders yaw/pitch/FOV, aviso de proporción y límites GPU; sin upload ni persistencia. Copy extraído para 37 locales; traducción y revisión pendientes. Volumen conservado: 135.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0794",
+      "slug": "plant-identifier",
+      "status": "demand-reserve",
+      "note": "Autorizada para completar 300; sigue pendiente modelo y dataset comercialmente permitidos, cobertura por especies/regiones y QA local. No ofrecer decisiones de comestibilidad/toxicidad."
+    },
+    {
+      "plan_id": "UV0795",
+      "slug": "sticker-pack-maker",
+      "status": "implementation-in-progress",
+      "note": "Promovida por la instrucción actual de completar las 300, pese a 135.000 búsquedas/mes (<240.000). Compone localmente hasta 12 imágenes, genera contorno por alpha dilation, lámina PNG transparente 4×3 y centra la última fila; no quita fondos ni instala packs. Copy extraído para 37 locales; traducción/revisión y QA pendientes. Volumen conservado: 135.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0796",
+      "slug": "word-cloud-generator",
+      "status": "implementation-in-progress",
+      "note": "Nube visual basada en texto del usuario, segmentación disponible en navegador y SVG local; sin análisis semántico ni corpus externo. Traducción/revisión pendientes; volumen queda etiquetado según el plan. Volumen conservado: 135.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0797",
+      "slug": "brazil-thirteenth-salary",
+      "status": "implementation-in-progress",
+      "note": "Incorporada por instrucción expresa del usuario aunque la consulta principal solo tiene 110.000 búsquedas/mes (dato real, no equiparable al suelo inicial de 240.000). Calcula bruto por meses confirmados y saldo aritmético con anticipos/retenciones introducidos; no inventa impuestos ni determina elegibilidad. Reglas respaldadas por leyes y guía oficial brasileñas. Volumen conservado: 110.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0798",
+      "slug": "darts-scoreboard",
+      "status": "implementation-in-progress",
+      "note": "Se completó la implementación local de la candidata ya iniciada; volumen real 110.000 búsquedas/mes, menor al suelo original de 240.000. Marcador local 301/501 de 1–4 personas, valida segmentos, aplica bust/double-out, sugiere cierres y permite deshacer; sin apuestas, red ni persistencia. Volumen conservado: 110.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0799",
+      "slug": "lines-of-action",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada ahora por instrucción expresa del usuario, conservando la evidencia original: 110.000 búsquedas/mes, por debajo del umbral 240.000. Juego local de tablero con modo dos personas/computadora, reglas y variante configurables; traducción global y QA pendientes. Reglas contrastadas con ICGA: https://icga.org/icga/games/Loa/. Volumen conservado: 110.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0800",
+      "slug": "monte-carlo-simulator",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada ahora por instrucción expresa del usuario, conservando la evidencia original: 110.000 búsquedas/mes, por debajo del umbral 240.000. Simulación reproducible local de sumas independientes, sin servicios externos; traducción global y QA pendientes. Volumen conservado: 110.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0801",
+      "slug": "text-to-handwriting",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario; se conserva la evidencia original: 110.000 búsquedas/mes, por debajo del umbral 240.000. Composición local de páginas A4/US Letter con dirección RTL/LTR, variación reproducible y exportación PNG/impresión PDF; usa solo la fuente cursiva del dispositivo. Traducción global y QA pendientes. Volumen conservado: 110.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0802",
+      "slug": "tide-times",
+      "status": "implementation-in-progress",
+      "note": "Visor local de series de nivel de agua aportadas por el usuario; marca máximos/mínimos locales en observaciones o predicciones importadas. No pronostica mareas ni consulta estaciones. Demanda 110.000/mes conservada (<240.000); traducción/QA pendientes."
+    },
+    {
+      "plan_id": "UV0803",
+      "slug": "vaccination-schedule",
+      "status": "implementation-in-progress",
+      "note": "Seguimiento local de fechas a partir del intervalo indicado por la persona o su profesional sanitario; calcula fechas calendario, no recomienda vacunas ni dosis y no envía recordatorios. Demanda 110.000/mes conservada; traducción/QA pendientes."
+    },
+    {
+      "plan_id": "UV0804",
+      "slug": "verb-conjugator",
+      "status": "implementation-in-progress",
+      "note": "Conjugador presente limitado a patrones regulares para inglés, español, portugués, francés, alemán y neerlandés; bloquea verbos irregulares y una lista de cambios de raíz frecuentes; no es diccionario completo. Demanda original 110.000/mes conservada; traducción/QA pendientes."
+    },
+    {
+      "plan_id": "UV0805",
+      "slug": "whist",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario; se conserva la evidencia original: 110.000 búsquedas/mes, por debajo del umbral 240.000. Variante de cuatro jugadores sin subasta, con elección entre triunfo girado y sin triunfo; traducción global y QA pendientes. Fuente histórica enlazada: https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Whist. Volumen conservado: 110.000/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0806",
+      "slug": "brazil-vacation-pay-calculator",
+      "status": "implementation-in-progress",
+      "note": "Estimador bruto local de remuneración fija mensual × días/30 más adicional de un tercio; base consultada en Constitución brasileña art. 7 XVII y Receita Federal. No incluye elegibilidad, abono, descuentos, impuestos ni salario variable. Demanda original 90.500/mes conservada; traducción/QA pendientes."
+    },
+    {
+      "plan_id": "UV0807",
+      "slug": "document-mail-merge",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario; se conserva la evidencia original: 90.500 búsquedas/mes, por debajo del umbral 240.000. Combina plantilla con CSV, vista previa y ZIP local de documentos de texto; no envía correo ni sube datos. Traducción global y QA pendientes. Volumen conservado: 90.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0808",
+      "slug": "endless-runner",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario; se conserva la evidencia original: 90.500 búsquedas/mes, por debajo del umbral 240.000. Juego arcade geométrico propio con teclado/táctil, pausa y puntuación local; sin marcas, compras ni red. Traducción global y QA pendientes. Volumen conservado: 90.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0809",
+      "slug": "gad7-questionnaire",
+      "status": "implementation-in-progress",
+      "note": "GAD-7 local: siete respuestas 0–3 (total 0–21; bandas 0–4/5–9/10–14/15–21) y pregunta de impacto no puntuada; no se guardan ni transmiten respuestas. Copia inglesa contrastada con NIH y validación original; 61 cadenas extraídas × 36 destinos = 2.196 filas en la cola M2M100 local. 162 pruebas enfocadas pasan, incluido bundle de todos los controladores. Borradores no aprobados; traducción revisada y QA visual pendientes; no lista para publicar."
+    },
+    {
+      "plan_id": "UV0810",
+      "slug": "hanoi-tower",
+      "status": "implementation-in-progress",
+      "note": "Juego local de tres varillas, selección accesible, reglas legales y mínimo 2^n−1; sin solver ni cuenta. Traducción/revisión pendientes; volumen queda etiquetado según el plan. Volumen conservado: 90.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0811",
+      "slug": "japan-income-tax",
+      "status": "implementation-in-progress",
+      "note": "Estimador de impuesto nacional de Japón para ingresos 2026: tarifas progresivas NTA, base truncada a ¥1.000, surtax de reconstrucción 2,1 % y cuota total truncada a ¥100. Excluye impuesto local, créditos, renta de separación, no residentes y ajuste para renta base muy alta; caduca 2027-01-01. 45 cadenas × 36 idiomas destino más inglés (1.620 unidades) extraídas; traducción/revisión humana y QA pendientes; sin red."
+    },
+    {
+      "plan_id": "UV0812",
+      "slug": "pinochle",
+      "status": "implementation-in-progress",
+      "note": "Juego local de Pinochle por parejas con perfiles de una y dos barajas; subasta, llamada de triunfo, pase de cuatro cartas al declarador y retorno en la variante de una baraja, meld tras el intercambio, obligación de asistir/ganar/truncar y sobretruncar, bazas, contrato, anotación acumulada y bots heurísticos. Reglas enlazadas a los perfiles Pagat; sin online ni apuestas. Sin red ni persistencia. Volumen 90.500/mes (<240.000); iniciado por instrucción posterior para completar 300. Traducción humana en 37 idiomas y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0813",
+      "slug": "zakat-calculator",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior pese a volumen histórico de 90.500/mes. Estimador configurable: la persona selecciona activos, pasivos, nisab, porcentaje, precisión y divisa; no fija doctrina ni datos de mercado. 37 idiomas extraídos; traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0814",
+      "slug": "block-puzzle",
+      "status": "implementation-in-progress",
+      "note": "Incorporada por instrucción expresa del usuario; volumen real 74.000 búsquedas/mes, inferior al suelo inicial de 240.000. Puzzle original de colocación en cuadrícula 10×10, con piezas rotables, filas/columnas y puntuación declarada; juego local sin API ni persistencia. Traducción y revisión pendientes."
+    },
+    {
+      "plan_id": "UV0815",
+      "slug": "creatinine-clearance-calculator",
+      "status": "implementation-in-progress",
+      "note": "Implementada como estimación adulta Cockcroft–Gault con peso kg, creatinina sérica mg/dL y factor 1.00/0.85 explícito; sin diagnóstico, normalización eGFR ni dosis. Enlaza referencia FDA. Copy extraído para 37 idiomas; traducción y revisión pendientes; sin publicar."
+    },
+    {
+      "plan_id": "UV0816",
+      "slug": "france-income-tax",
+      "status": "implementation-in-progress",
+      "note": "Calculadora local del baremo progresivo 2025 (declaración 2026) limitada a una parte fiscal y al impuesto bruto: 0/11/30/41/45 %, umbrales oficiales BOFiP. No calcula quotient familial, plafonnement, décote, créditos, reducciones, cargas sociales ni no-residentes. 43 cadenas × 36 idiomas destino más inglés (1.548 unidades) en cola; traducción, revisión humana y QA pendientes; sin red."
+    },
+    {
+      "plan_id": "UV0817",
+      "slug": "hearing-self-check",
+      "status": "implementation-in-progress",
+      "note": "Prototipo local en Web Audio, sin proveedor, backend, telemetría ni almacenamiento. Observación no clínica, sin umbral de aprobado/suspenso; faltan paquete aprobado de 37 locales y QA."
+    },
+    {
+      "plan_id": "UV0818",
+      "slug": "portugal-net-salary",
+      "status": "implementation-in-progress",
+      "note": "2026 mainland monthly gross-to-net estimate only: official IRS withholding Table I for no dependents (or married two earners) + standard employee Social Security 11%. Local only, no server/provider cost. Official rates checked 2026-10-20; automatically disabled 2026-12-01 for review. Copy extracted for 37 locales; draft translations and QA pending. 74,000 searches/month, below floor; promoted by explicit owner instruction."
+    },
+    {
+      "plan_id": "UV0819",
+      "slug": "space-shooter",
+      "status": "implementation-in-progress",
+      "note": "Incorporada por instrucción expresa del usuario pese a un volumen medido de 74.000 búsquedas/mes, inferior al suelo de 240.000. Juego arcade original local, controles de teclado y táctiles, sin red, cuentas, guardado, anuncios, compras ni franquicias. Texto base extraído para 37 idiomas; traducciones y revisión pendientes. Volumen conservado y no presentado como objetivo cumplido."
+    },
+    {
+      "plan_id": "UV0820",
+      "slug": "tls-site-checker",
+      "status": "demand-reserve",
+      "note": "Autorizada para completar 300; pendiente mecanismo gratuito y verificable, términos compatibles con uso comercial y evaluación de privacidad de consultas remotas. SSL Labs requiere más revisión de condiciones y privacidad; no integrado."
+    },
+    {
+      "plan_id": "UV0821",
+      "slug": "tower-defense",
+      "status": "implementation-in-progress",
+      "note": "Incorporada por instrucción expresa del usuario pese al volumen medido de 74.000 búsquedas/mes, inferior al suelo de 240.000. Juego original local con mapa fijo, dos defensas, diez oleadas y controles de ratón/tacto/teclado. Sin API, red, compras o persistencia. Copy extraído para 37 idiomas; traducción/revisión pendientes. Volumen conservado y no presentado como objetivo cumplido."
+    },
+    {
+      "plan_id": "UV0822",
+      "slug": "virtual-drum-kit",
+      "status": "implementation-in-progress",
+      "note": "Incorporada por instrucción expresa del usuario pese a volumen medido de 74.000 búsquedas/mes, inferior al suelo de 240.000. Kit de siete sonidos sintetizados localmente con Web Audio, grabación/reproducción temporal y exportación JSON; sin muestras, red ni almacenamiento. Copy extraído para 37 idiomas; borradores/revisión pendientes. Demanda conservada y no presentada como objetivo cumplido."
+    },
+    {
+      "plan_id": "UV0823",
+      "slug": "customer-journey-map",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario; se conserva la evidencia original: 60.500 búsquedas/mes, por debajo del umbral 240.000. Mapa editable de etapas con fuente/estado observado-hipótesis-sin investigar; no inventa hallazgos y exporta JSON local. Traducción global y QA pendientes. Volumen conservado: 60.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0824",
+      "slug": "germany-unemployment-benefit",
+      "status": "implementation-in-progress",
+      "note": "UV0824 limited to multiplying the user-supplied official daily Leistungsentgelt by 60%/67% and 30 days. Does not estimate daily basis/eligibility. Bundesagentur official guidance checked 2026-10-20; review due 2027-04-20. Local/no API/server; translations and QA pending. 60,500 searches/month (<240k), promoted by owner instruction."
+    },
+    {
+      "plan_id": "UV0825",
+      "slug": "online-whiteboard",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario; se conserva la evidencia original: 60.500 búsquedas/mes, por debajo del umbral 240.000. Pizarra de un dispositivo con trazos, notas agrupables, navegación por teclado y exportación local; distinta del lienzo de pintura simple. Traducción global y QA pendientes. Volumen conservado: 60.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0826",
+      "slug": "password-strength-checker",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario aunque la evidencia del plan registra 60.500 búsquedas/mes, bajo el umbral mínimo acordado. Estimador heurístico local, sin consulta de brechas ni afirmaciones de tiempo de crack; generador alternativo usa aleatoriedad criptográfica del navegador. Traducción de 37 locales y QA pendientes. Volumen conservado: 60.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0827",
+      "slug": "prayer-beads-counter",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario pese a evidencia del plan de 60.500 búsquedas/mes, inferior al umbral 240.000. Contador configurable, vibración opcional y guardado local solo tras consentimiento explícito; no presupone tradición ni recoge creencias. Traducción de 37 locales y QA pendientes. Volumen conservado: 60.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0828",
+      "slug": "roc-curve-calculator",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario pese a evidencia del plan de 60.500 búsquedas/mes, debajo de 240.000. Cálculo local de ROC/AUC, agrupación de scores empatados, gráfico SVG y tabla de umbrales; traducción de 37 locales y QA pendientes. Volumen conservado: 60.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0829",
+      "slug": "spain-termination-pay",
+      "status": "implementation-in-progress",
+      "note": "UV0829 scope narrowed to Spain gross statutory dismissal compensation for post-2012 employment, not full finiquito. Locally calculated; no API/server cost. Official BOE rules checked 2026-10-20. English copy extracted for 37 locales; translations are machine drafts pending human review and QA. 60,500 searches/month, below 240,000 threshold; promoted by explicit owner instruction."
+    },
+    {
+      "plan_id": "UV0830",
+      "slug": "tank-game",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario pese a evidencia del plan de 60.500 búsquedas/mes, por debajo de 240.000. Juego táctico original local con cobertura destructible, CPU determinista, sin activos externos ni conexión. Traducción global y QA pendientes. Volumen conservado: 60.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0831",
+      "slug": "xiangqi",
+      "status": "implementation-in-progress",
+      "note": "Incorporada por instrucción expresa del usuario pese a 60.500 búsquedas/mes, inferior al suelo de 240.000. Juego local para dos personas con reglas de movimiento de Xiangqi, río, caballo, cañón, elefante, palacio, generales y detección básica de jaque/fin. Sin CPU, red ni árbitro de repetición perpetua. Copy extraído para 37 idiomas; revisión de traducciones pendiente. Volumen conservado; no presentado como objetivo cumplido."
+    },
+    {
+      "plan_id": "UV0832",
+      "slug": "australia-income-tax",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario pese a evidencia de 49.500 búsquedas/mes, inferior a 240.000. Impuesto individual australiano 2026–27 por categoría general de residencia, tasas progresivas enlazadas a ATO y bloqueo automático fuera de vigencia; excluye Medicare, HELP y ajustes. Revisión de reglas, traducción global y QA pendientes. Volumen conservado: 49.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0833",
+      "slug": "bubble-level",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario pese a la evidencia de 49.500 búsquedas/mes, debajo del umbral 240.000. Nivel digital con lectura manual universal y sensor de orientación solo tras clic/permiso, calibración y fallback; no declara precisión certificada. Traducción y QA pendientes. Volumen conservado: 49.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0834",
+      "slug": "flipbook-animator",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario pese a evidencia de 49.500 búsquedas/mes, inferior a 240.000. Editor canvas local de 480×360, hasta 60 fotogramas, onion skin, previsualización y exportación como SVG animado con PNG incorporados; no depende de GIF externo. Traducción global y QA pendientes. Volumen conservado: 49.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0835",
+      "slug": "hardy-weinberg-calculator",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario pese a evidencia de 49.500 búsquedas/mes, inferior a 240.000. Estimación educativa bialélica autosómica con frecuencias o recuentos observados; sin p-valor, diagnóstico ni afirmación de equilibrio. Traducción global y QA pendientes. Volumen conservado: 49.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0836",
+      "slug": "india-apy-calculator",
+      "status": "implementation-in-progress",
+      "note": "Incorporada por instrucción expresa del usuario; volumen medido 49.500 búsquedas/mes, inferior a 240.000. Tabla oficial APY consultada; suma nominal sin rentabilidad y muestra edad, frecuencia, pagos y fecha de revisión. Incluye criterio de inelegibilidad de personas que son o fueron contribuyentes del impuesto sobre la renta. No hace decisión legal/financiera ni petición de red. Traducción y revisión pendientes; volumen conservado."
+    },
+    {
+      "plan_id": "UV0837",
+      "slug": "india-epf-calculator",
+      "status": "implementation-in-progress",
+      "note": "Implementada localmente tras autorización posterior pese a la demanda registrada de 49.500/mes (inferior al umbral objetivo). Estimador mensual con base y tasas editables, separa contribución del empleado, EPS estimada y EPF del empleador; defaults no se actualizan en vivo y enlace EPFO oficial. Copy fuente extraído para 37 idiomas; traducciones pendientes de revisión humana. Sin publicar."
+    },
+    {
+      "plan_id": "UV0838",
+      "slug": "sky-map",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior pese a volumen histórico de 49.500/mes. Mapa local con astronomía MIT para Sol, Luna y cinco planetas; coordenadas manuales y hora UTC. No incluye catálogo de estrellas/constelaciones ni red de datos; alcance queda reducido y explícito. 37 idiomas extraídos; traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0839",
+      "slug": "sleepiness-questionnaire",
+      "status": "implementation-in-progress",
+      "note": "Implementada como autoobservación original y local: seis situaciones, escala de frecuencia 0–3, resumen descriptivo sin umbrales clínicos. No es la Epworth Sleepiness Scale ni una herramienta diagnóstica. Copy fuente extraído para 37 idiomas; traducción y revisión humana pendientes; sin publicar."
+    },
+    {
+      "plan_id": "UV0840",
+      "slug": "spain-income-tax",
+      "status": "implementation-in-progress",
+      "note": "2025 income: narrowed to Spanish national state progressive-scale component only, with amount input after applicable personal/family minimum; not full IRPF. BOE Act 35/2006 checked 2026-10-20. Local only/no API; due for review 2027-01-15. 37-locale translation and QA pending. 49,500 searches/month (<240,000), promoted by owner instruction."
+    },
+    {
+      "plan_id": "UV0841",
+      "slug": "touchscreen-tester",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario pese a evidencia de 49.500 búsquedas/mes, inferior a 240.000. Test de cobertura de pantalla con contactos simultáneos, trazos y marcas por área; no confunde zonas no tocadas con fallos del hardware. No envía ni guarda datos. Traducción global y QA pendientes. Volumen conservado: 49.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0842",
+      "slug": "transliteration-tool",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario pese a evidencia de 49.500 búsquedas/mes, inferior a 240.000. Modos explícitos Russian ISO 9 bidireccional y eliminación de diacríticos latina con pérdida declarada; no traduce ni infiere idioma y deja otros caracteres sin cambios. Traducción global y QA pendientes. Volumen conservado: 49.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0843",
+      "slug": "uk-universal-credit",
+      "status": "implementation-in-progress",
+      "note": "UK UC scope narrowed to monthly earnings taper only: user-entered maximum award and net earnings, 55% deduction after eligible 2026/27 work allowance (£427/£710). Not entitlement calculator. Official GOV.UK rates checked 2026-10-20; disables 2027-04-06. Local/no API/server cost; 37-locale translation and QA pending. 49,500 searches/month (<240,000), promoted by owner instruction."
+    },
+    {
+      "plan_id": "UV0844",
+      "slug": "us-w4-withholding",
+      "status": "implementation-in-progress",
+      "note": "Estimador de retención federal por período según IRS Pub 15-T 2026 Worksheet 1A para W-4 2020+: 4 frecuencias, 3 estados, casilla Step 2 y campos Steps 3/4. No calcula responsabilidad anual total, varios empleos ni pagos ya retenidos; expira 2027-01-01. 58 cadenas × 36 idiomas destino más inglés (2.088 unidades) extraídas; traducción/revisión y QA pendientes. Sin red."
+    },
+    {
+      "plan_id": "UV0845",
+      "slug": "value-proposition-canvas",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario pese a evidencia de 49.500 búsquedas/mes, inferior a 240.000. Canvas bilateral para organizar aportes escritos por la persona; no inventa investigación, no puntúa el encaje y exporta JSON local. Traducción global y QA pendientes. Volumen conservado: 49.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0846",
+      "slug": "briscola",
+      "status": "implementation-in-progress",
+      "note": "Incorporada por instrucción expresa pese a 40.500 búsquedas/mes, muy por debajo de 240.000; volumen conservado y no presentado como umbral cumplido. Briscola/Brisca de dos personas con modo bot local sencillo o pass-and-play, valores de carta y triunfo declarados. Variantes de pareja y 3/4 jugadores no incluidas; copy extraído para 37 idiomas, traducción/revisión pendientes."
+    },
+    {
+      "plan_id": "UV0847",
+      "slug": "carrom",
+      "status": "implementation-in-progress",
+      "note": "Juego local de práctica 2D para dos personas: 18 fichas, percutor con aim/power, física aproximada, cuatro bolsillos y queen que vale 3 si se cubre con ficha propia en el mismo disparo. Variante simplificada explícita; no arbitra torneos ni incluye reglas regionales. Copy extraído para 37 locales; traducción/revisión y QA pendientes."
+    },
+    {
+      "plan_id": "UV0848",
+      "slug": "crokinole",
+      "status": "implementation-in-progress",
+      "note": "Juego local de práctica circular para dos personas: 8 discos cada una, física aproximada, anillos de 20/15/10/5 puntos y falta si no contacta primero un disco rival presente. Variante simplificada; no arbitra torneos ni cubre reglas oficiales completas. Copy extraído para 37 locales; traducción/revisión y QA pendientes."
+    },
+    {
+      "plan_id": "UV0849",
+      "slug": "dna-sequence-tool",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario pese a evidencia de 40.500 búsquedas/mes, inferior a 240.000. Complemento inverso IUPAC, transcripción y traducción por marco con códigos estándar/mitocondrial vertebrado, referencia NCBI; no hace interpretación clínica. Traducción global y QA pendientes. Volumen conservado: 40.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0850",
+      "slug": "email-authentication-checker",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario pese a evidencia de 40.500 búsquedas/mes, bajo 240.000. Revisión de TXT bajo acción explícita con Cloudflare DoH (máx. 17 queries/15 s), SPF include acotado, DMARC RFC 9989 y DKIM por selector aportado. Revela consultas/IP; no verifica mensajes ni evalúa SPF por completo. Traducción y QA pendientes. Volumen conservado: 40.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0851",
+      "slug": "galaxies-puzzle",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada pese a 40.500 búsquedas/mes. Puzzle global 9×9 con nueve centros y áreas explícitas; verifica cobertura, inclusión del centro, área, simetría rotacional y conectividad. Traducción y QA pendientes. Volumen conservado: 40.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0852",
+      "slug": "platform-game",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada pese a 40.500 búsquedas/mes. Juego arcade original de plataformas, controles teclado/táctiles, pausa de pestaña y sin persistencia ni assets externos. Traducción y QA pendientes. Volumen conservado: 40.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0853",
+      "slug": "presentation-maker",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada pese a 40.500 búsquedas/mes, inferior al suelo de 240.000. Editor local de hasta 20 diapositivas de texto con vista previa y export HTML editable; no exporta PPTX/PDF. Traducción y QA pendientes. Volumen conservado: 40.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0854",
+      "slug": "swot-analysis-builder",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por instrucción expresa del usuario pese a evidencia de 40.500 búsquedas/mes, inferior al suelo de 240.000. Cuatro cuadrantes con notas aportadas por la persona; sin investigación inventada, puntuaciones ni recomendaciones. Local; traducción y QA pendientes. Volumen conservado: 40.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0855",
+      "slug": "table-tennis-game",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada pese a 40.500 búsquedas/mes, inferior al suelo de 240.000. Arcade local de mesa 2D; CPU sencilla, teclado y botones, sin red ni persistencia. Traducción y QA pendientes. Volumen conservado: 40.500/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0856",
+      "slug": "word-stress-finder",
+      "status": "implementation-in-progress",
+      "note": "Ayudante local de acentuación española con división silábica aproximada, consulta de tilde escrita y reglas generales RAE; no usa diccionario/API ni detecta tildes omitidas. Interfaz 37 idiomas y reglas solo españolas; traducción/QA pendientes."
+    },
+    {
+      "plan_id": "UV0857",
+      "slug": "circuit-diagram-editor",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior pese a volumen histórico de 33.100/mes. Simulador local de DC lineal para resistencias y fuentes ideales, con netlist, esquema SVG y análisis nodal modificado; sin semiconductores, AC ni transitorios. 37 idiomas extraídos; traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0858",
+      "slug": "france-unemployment-benefit",
+      "status": "implementation-in-progress",
+      "note": "Promovida por instrucción explícita del propietario pese a 33.100 búsquedas/mes (<240.000). Estimador ARE metropolitano ordinario: SJR oficial introducido por la persona, fórmula 40,4% + parte fija/57%, mínimo, techo 75%, factor de jornada parcial y días naturales del mes. Sin elegibilidad, duración, SJR, retenciones ni casos especiales. Fuentes France Travail/Service Public verificadas 2026-10-20; apagado por revisión 2027-01-01. 37 idiomas, QA pendientes."
+    },
+    {
+      "plan_id": "UV0859",
+      "slug": "http-response-checker",
+      "status": "implementation-in-progress",
+      "note": "Solución acotada al bloqueo CORS/SSRF sin backend ni coste: una única petición HTTPS HEAD iniciada por la persona, sin credenciales, con redirección manual y bloqueo de IP literal/hosts locales. Solo entrega respuesta legible con CORS; los fallos no prueban caída y la resolución DNS privada no se puede verificar desde el navegador. Corregida la unión entre el controlador y el formulario genérico; compilación aislada: 3.191 bytes. Traducciones de 37 locales y QA de navegador pendientes."
+    },
+    {
+      "plan_id": "UV0860",
+      "slug": "orbital-visualizer",
+      "status": "implementation-in-progress",
+      "note": "Visualizador local de orbitales hidrogenoides: calcula densidad relativa |ψ|² en cortes XY/XZ/YZ a partir de n, l, m y Z acotados; modelo ideal de un electrón, no química multielectrónica. Volumen conservado: 33.100/mes (<240.000); implementación autorizada por la petición de completar las candidatas con menor demanda cercana. Traducción y QA pendientes. Page controller wrapper added after an integration gap was found; local browser bundles compiled and passed the static controller guard (64 KiB, 72 KiB for GPX/MusicXML). Translation/review and browser QA remain pending. Page controller wrapper added after an integration gap was found; local browser bundles compiled and passed the static controller guard (72 KiB pending-controller budget). Translation/review and browser QA remain pending."
+    },
+    {
+      "plan_id": "UV0861",
+      "slug": "pdf-imposition",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada pese a 33.100 búsquedas/mes. Imposición local de pliegos para cuadernillo 4-up, hasta 100 páginas/25 MB con PDF-lib local; sin marcas de corte, sangrado ni calibración. Traducción y QA pendientes. Volumen conservado: 33.100/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0862",
+      "slug": "photo-restoration",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada pese a 33.100 búsquedas/mes. Restauración manual clone-stamp local, máx. 15 MB/12 MP y export de vista previa 1600px; sin modelo, IA ni carga de fotos. Traducción y QA pendientes. Volumen conservado: 33.100/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0863",
+      "slug": "qtc-calculator",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada pese a 33.100 búsquedas/mes. Calcula Bazett, Fridericia, Framingham y Hodges desde QT más RR o frecuencia; sin umbrales ni interpretación diagnóstica; referencias revisadas. Traducción y QA pendientes. Volumen conservado: 33.100/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0864",
+      "slug": "recipe-nutrition-analyzer",
+      "status": "implementation-in-progress",
+      "note": "Calculadora local de receta con pesos y datos nutricionales por 100 g introducidos por la persona; totales y por ración. Sin base alimentaria, reconocimiento ni API: usa etiquetas/fuentes que el usuario elija. Volumen conservado: 33.100/mes (<240.000); implementación autorizada por instrucción posterior de completar el plan con candidatas de menor demanda. Traducción y QA pendientes. Page controller wrapper added after an integration gap was found; local browser bundles compiled and passed the static controller guard (64 KiB, 72 KiB for GPX/MusicXML). Translation/review and browser QA remain pending. Page controller wrapper added after an integration gap was found; local browser bundles compiled and passed the static controller guard (72 KiB pending-controller budget). Translation/review and browser QA remain pending."
+    },
+    {
+      "plan_id": "UV0865",
+      "slug": "star-battle",
+      "status": "implementation-in-progress",
+      "note": "Puzzle local interactivo 8×8 estilo Star Battle: 2 estrellas por fila y columna, 4 por región 4×4 y sin contacto diagonal; variante libre, sin pistas ni solución única. Volumen conservado: 33.100/mes (<240.000); implementación autorizada por instrucción posterior. Traducción y QA pendientes. Page controller wrapper added after an integration gap was found; local browser bundles compiled and passed the static controller guard (64 KiB, 72 KiB for GPX/MusicXML). Translation/review and browser QA remain pending. Page controller wrapper added after an integration gap was found; local browser bundles compiled and passed the static controller guard (72 KiB pending-controller budget). Translation/review and browser QA remain pending."
+    },
+    {
+      "plan_id": "UV0866",
+      "slug": "tute",
+      "status": "implementation-in-progress",
+      "note": "Juego local de Tute en perfiles de parejas (40 cartas, cuatro jugadores, diez bazas, triunfo expuesto y reglas estrictas desde el inicio) e individual de dos jugadores (stock de veinte, robo tras cada baza y obligación estricta al agotarse). Puntúa cartas, última baza, cantes de 20/40 y Tute opcional de cuatro Reyes/Caballos; empate se resuelve por la última baza. Bots locales heurísticos. Reglas enlazadas a Pagat y Fournier; sin red, persistencia ni apuestas. Volumen 33.100/mes (<240.000); iniciado por instrucción posterior para completar 300. Traducción humana en 37 idiomas y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0867",
+      "slug": "wedding-planner",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada pese a 33.100 búsquedas/mes, inferior al suelo de 240.000. Lista privada de invitados, presupuestos/depósitos de proveedores y tareas; unidades monetarias aportadas por usuario, sin recomendaciones ni integraciones. Traducción y QA pendientes. Volumen conservado: 33.100/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0868",
+      "slug": "3d-print-slicer",
+      "status": "implementation-in-progress",
+      "note": "Implementada como previsualizador local de secciones horizontales de STL; no genera G-code, trayectorias, relleno, soportes ni perfiles. Volumen original 27.100/mes conservado (<240.000); traducción/revisión y QA pendientes."
+    },
+    {
+      "plan_id": "UV0869",
+      "slug": "bowling-game",
+      "status": "implementation-in-progress",
+      "note": "Juego local arcade de 10 cuadros con controles de puntería, potencia y efecto; simula derribos con heurística aproximada y azar; puntúa strikes, spares, bonos del décimo y acumulado con reglas USBC de ten-pin. Sin red, cuenta ni guardado. Pendientes traducción/revisión de 37 locales y QA visual/funcional."
+    },
+    {
+      "plan_id": "UV0870",
+      "slug": "braille-translator",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada pese a 27.100 búsquedas/mes. Conversor local de subconjunto Latin básico ↔ Braille Unicode (A–Z, números, signos indicados); señala que no es transcripción multilingüe certificada; referencia BANA/LOC. Traducción y QA pendientes. Volumen conservado: 27.100/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0871",
+      "slug": "brazil-inss-contribution",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada pese a 27.100 búsquedas/mes. Estimador Brasil 2026 basado en tabla INSS oficial; deshabilita fuera de 2026 y separa alícuotas por categoría sin decidir elegibilidad. Traducción y QA pendientes. Volumen conservado: 27.100/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0872",
+      "slug": "brazil-unemployment-benefit",
+      "status": "implementation-in-progress",
+      "note": "UV0872 limited to the 2026 formal-worker Seguro-Desemprego monthly installment formula (not eligibility or installment count). Official MTE table dated 2026-01-11 checked 2026-10-20; auto-disables 2027-01-11. Local/no API/server cost; translations/QA pending. 27,100 searches/month (<240k), promoted by explicit owner instruction."
+    },
+    {
+      "plan_id": "UV0873",
+      "slug": "broken-link-checker",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada con el bloqueo de CORS/SSRF acotado: máximo 10 URLs HTTPS únicas, petición HEAD manual secuencial sin credenciales ni redirect; solo reporta estados cuando CORS permite leerlos y nunca infiere caída por timeout. 37 idiomas extraídos; traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0874",
+      "slug": "car-parking-simulator",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada pese a 27.100 búsquedas/mes. Minijuego local 2D de estacionamiento con dirección, marcha atrás, obstáculos, reglas explícitas de victoria y sin persistencia. Traducción y QA pendientes. Volumen conservado: 27.100/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0875",
+      "slug": "chat-with-documents",
+      "status": "implementation-in-progress",
+      "note": "Búsqueda extractiva local en TXT/Markdown: ranking de frases exactas por solapamiento de términos, hasta 150.000 caracteres y 12.000 frases. No es chat IA ni búsqueda semántica. Volumen original 27.100/mes conservado; traducción/QA pendientes."
+    },
+    {
+      "plan_id": "UV0876",
+      "slug": "hba1c-eag-calculator",
+      "status": "implementation-in-progress",
+      "note": "Conversor educativo HbA1c NGSP/IFCC a eAG mg/dL o mmol/L, con ecuación ADAG publicada por NGSP (R² 0.84) y advertencia de variación individual. No diagnóstico ni medición. Demanda 27.100/mes conservada; traducción/QA pendientes."
+    },
+    {
+      "plan_id": "UV0877",
+      "slug": "janggi",
+      "status": "implementation-in-progress",
+      "note": "Local two-player Janggi rules engine/controller: 9×10 board, seven piece types, selectable independent horse/elephant formations, palace paths, cannon screens, blocked horse/elephant paths, soldiers, pass and Han 1.5 material-point advantage. Uses official Korea Janggi Federation pass/score framework; tournament timers, repetition and bikjang adjudication are not claimed. 70 strings extracted for 37 locales; translation/human review and site release QA pending. Eight engine cases and 162 focused logic/form/controller tests pass; browser QA at 395 px confirms 90-cell board, keyboard navigation, legal move and pass scoring with no overflow or console errors. No API, server dependency or persistence. Original demand 27,100/month remains below 240,000; user authorization to finish 300 is preserved. Not published."
+    },
+    {
+      "plan_id": "UV0878",
+      "slug": "mexico-aguinaldo",
+      "status": "implementation-in-progress",
+      "note": "Escenario bruto proporcional de aguinaldo: salario diario y días/entitlement aportados; Art. 87 de LFT federal consultado (mínimo 15 días para personas cubiertas; otros regímenes difieren). Sin impuestos ni definición automática de salario base. Demanda original 27.100/mes conservada; traducción/QA pendientes."
+    },
+    {
+      "plan_id": "UV0879",
+      "slug": "mexico-income-tax",
+      "status": "implementation-in-progress",
+      "note": "UV0879 narrowed to the individual annual 2026 ISR tariff applied locally to taxable income after authorized deductions. DOF Anexo 8 tariff and SAT art. 152 checked 2026-10-20; disables 2027-01-01 for review. No API/server cost. Translation and QA pending. 27,100 searches/month (<240k), promoted by owner instruction."
+    },
+    {
+      "plan_id": "UV0880",
+      "slug": "pregnancy-weight-gain",
+      "status": "implementation-in-progress",
+      "note": "Guía local del rango total de ganancia según IMC previo y embarazo único/gemelar basada en la tabla CDC fechada 2024-05-15; muestra lb y kg, no estima semanas ni personaliza. BMI ≥40 y trillizos+ no estimados. 37 idiomas extraídos a cola local; borradores y revisión humana, QA del navegador y release aún pendientes. Cero API/cuotas; datos sólo en navegador. Demanda original 27.100/mes conservada; ejecución autorizada por instrucción posterior, no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0881",
+      "slug": "ptsd-questionnaire",
+      "status": "demand-reserve",
+      "note": "Autorizada para completar 300; PCL-5 es de dominio público, pero no se debe inventar traducción clínica para 37 idiomas. Las traducciones oficiales disponibles no cubren las 37; requiere contenido validado antes de exponer escala y puntuación."
+    },
+    {
+      "plan_id": "UV0882",
+      "slug": "singapore-cpf",
+      "status": "implementation-in-progress",
+      "note": "Estimador local de salarios ordinarios para ciudadanos/SPR desde tercer año: tasas CPF de 2026 por banda de edad, techo OW SGD 8.000, total redondeado al dólar más cercano y parte de empleado hacia abajo. Excluye AW/bonos, PR años 1–2 y salarios ≤SGD 750. La tasa cambia el 2027-01-01 para ciertas edades; próximo control 2026-12-01 y bloquear caducidad. Copy extraída para 47 cadenas × 36 idiomas destino más inglés (1.692 unidades); traducción/revisión y QA pendientes; sin API."
+    },
+    {
+      "plan_id": "UV0883",
+      "slug": "taiwan-income-tax",
+      "status": "implementation-in-progress",
+      "note": "UV0883 scoped to Taiwan resident 2026 progressive tax scale only on user-entered net taxable income after deductions. Official Ministry of Finance eTax schedule published 2026-04-27, checked 2026-10-20; expires 2027-04-20. Local/no API. Translation and release QA pending; 27,100 searches/month (<240k), promoted by owner instruction."
+    },
+    {
+      "plan_id": "UV0884",
+      "slug": "venn-diagram-maker",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada pese a 27.100 búsquedas/mes. Diagrama Venn de dos conjuntos, validación de conteos y SVG local; círculos explícitamente no proporcionales. Traducción y QA pendientes. Volumen conservado: 27.100/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0885",
+      "slug": "brazil-fgts-calculator",
+      "status": "implementation-in-progress",
+      "note": "UV0885 narrowed to one-month employer FGTS deposit: 8% standard covered worker / 2% apprentice, based on official FGTS and MTE guidance checked 2026-10-20. Local only, no API/server cost. Copy extraction for 37 locales and QA pending. 22,200 searches/month, below floor; promoted by explicit owner instruction."
+    },
+    {
+      "plan_id": "UV0886",
+      "slug": "calligraphy-worksheet",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 22.200/mes. Genera SVG A4 imprimible con texto Unicode aportado por el usuario, filas y dirección auto/LTR/RTL; copy extraído para 37 idiomas, traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0887",
+      "slug": "draw-and-guess",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 22.200/mes. Juego de dibujo local con nombres/prompts del grupo en cualquier idioma y canvas táctil; sin listas culturales ni multiplayer; 37 idiomas extraídos, traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0888",
+      "slug": "font-editor",
+      "status": "implementation-in-progress",
+      "note": "Implementada como editor local de muestra tipográfica y generador de CSS con cuatro pilas de fuentes del sistema; ajustes de tamaño, peso, interlineado, espaciado y color. Sin edición de archivos de fuente ni descargas externas. Copy extraído para 37 idiomas; traducción y revisión pendientes; sin publicar."
+    },
+    {
+      "plan_id": "UV0889",
+      "slug": "garden-planner",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior pese a volumen histórico de 22.200/mes. Planificador global y local de cuadrícula: dimensiones/unidades y ubicaciones introducidas por la persona; SVG/JSON descargables, sin agronomía ni datos de clima. 37 idiomas extraídos; traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0890",
+      "slug": "gpx-track-editor",
+      "status": "implementation-in-progress",
+      "note": "Editor GPX local: inspecciona segmentos, mueve o elimina puntos, recalcula distancia entre segmentos y suma cambios de elevación registrados; exporta GPX. Sin mapa, suavizado, rutas ni puntos de paso. Volumen conservado: 22.200/mes (<240.000); implementación autorizada por instrucción posterior. Traducción y QA pendientes. Page controller wrapper added after an integration gap was found; local browser bundles compiled and passed the static controller guard (64 KiB, 72 KiB for GPX/MusicXML). Translation/review and browser QA remain pending. Page controller wrapper added after an integration gap was found; local browser bundles compiled and passed the static controller guard (72 KiB pending-controller budget). Translation/review and browser QA remain pending."
+    },
+    {
+      "plan_id": "UV0891",
+      "slug": "korea-net-salary",
+      "status": "implementation-in-progress",
+      "note": "2026-10-20: Local monthly salary estimate implemented for 2026-07 through 2026-12 from the current NTS simplified withholding table plus 2026 employee insurance rates. Bounded to KRW 1,000,000–9,999,999 taxable monthly salary, family count 1–11, eligible children and 80/100/120 withholding. Static NTS data is embedded in each generated page; no network or API. Official-table sample, rate/ceiling, selected withholding ratio, invalid-input and expiry tests pass; form test passes; controller bundle is 3,292 bytes. English source copy added; localized copy remains machine fallback pending translation and human review for all 37 locales. No browser visual QA or publication."
+    },
+    {
+      "plan_id": "UV0892",
+      "slug": "norinori-puzzle",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior pese a volumen histórico de 22.200/mes. Puzzle Norinori seeded local con seis regiones 2×3; comprueba dos casillas por región y parejas dominó sin contactos extra; no afirma unicidad. 37 idiomas extraídos; traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0893",
+      "slug": "project-pert-estimator",
+      "status": "implementation-in-progress",
+      "note": "Implementación alineada con UV0893 y su URL: red PERT de 1–100 actividades, dependencias validadas, ciclos rechazados, tiempos tempranos/tardíos, holgura y ruta crítica controladora; varianza de esa ruta bajo independencia explícita. Sin probabilidad ni fecha garantizada. Fórmulas contrastadas con NASA/PMI; borrador de copia preparado para la cola local y revisión aún pendiente. Volumen conservado: 22.200/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0894",
+      "slug": "rent-split-calculator",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada pese a 22.200 búsquedas/mes. Calcula reparto igual o por pesos introducidos, registra pagadores y distribuye centavos con suma exacta; recomienda reembolsos sin pagos externos. Traducción y QA pendientes. Volumen conservado: 22.200/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0895",
+      "slug": "sentence-diagrammer",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 22.200/mes. Diagramador de estructura manual, categorías introducidas por usuario y soporte multilingüe; 37 idiomas extraídos, traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0896",
+      "slug": "bird-sound-identifier",
+      "status": "demand-reserve",
+      "note": "Investigación actualizada (2026-10-20): Google Perch 2.0 figura en el modelo oficial de Kaggle con Apache-2.0 y casi 15.000 especies; son ~103 M parámetros, el model card advierte que los logits no están calibrados y recomienda ajustar umbrales con datos propios. No integrar hasta validar runtime de navegador, memoria móvil, etiquetas, cobertura/errores y flujo seguro de descarga. Fuente: https://www.kaggle.com/models/google/bird-vocalization-classifier/tensorFlow2/perch_v2."
+    },
+    {
+      "plan_id": "UV0897",
+      "slug": "capital-gains-tax-uk",
+      "status": "implementation-in-progress",
+      "note": "Estimador local de CGT individual 2026–27 basado en ejemplos HMRC: aplica AEA £3.000, banda básica £37.700 y tipos 18%/24% a ganancias netas después de pérdidas e ingreso imponible aportados. Excluye trust, company, BADR, private residence relief y residencia especial; desactiva fuera del año fiscal. 48 cadenas × 36 idiomas destino más inglés (1.728 unidades) extraídas; traducción, revisión humana y QA pendientes; sin red."
+    },
+    {
+      "plan_id": "UV0898",
+      "slug": "database-schema-designer",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada pese a 18.100 búsquedas/mes. Modelador SQL local con ERD SVG, validación de claves y export DDL a PostgreSQL/MySQL/SQLite; dialectos y límites explícitos. Traducción y QA pendientes. Volumen conservado: 18.100/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0899",
+      "slug": "hex-game",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada para completar la cartera prevista: juego Hex local 7×7 con rival heurístico simple y rutas de conexión explícitas. Sin datos externos, cuenta ni guardado; traducción y QA pendientes. Volumen conservado: 18.100/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0900",
+      "slug": "ipa-transcriber",
+      "status": "implementation-in-progress",
+      "note": "Promovida por instrucción explícita del propietario para completar las 300 candidatas. Implementación local con CMUdict para inglés norteamericano; conversión IPA amplia desde ARPAbet. Datos comerciales permitidos con atribución y licencia incluidas. No cubre todos los idiomas, acentos o palabras. 1.611 borradores M2M listos para revisión, 21 filas con marcadores para corregir y 24 filas Telugu pendientes de piloto MADLAD; 0 aprobadas. Lógica verificada con hello/world; controller de 4.832 bytes compila y pasa el guard estático. QA de interfaz/publicación pendiente."
+    },
+    {
+      "plan_id": "UV0901",
+      "slug": "lithophane-generator",
+      "status": "implementation-in-progress",
+      "note": "Implementada como conversor local de imagen a relieve rectangular binario STL, con resolución limitada a 128×128, geometría cerrada de caras y lados, y restricciones dimensionales. Requiere revisar escala/manifold/ajustes en un slicer antes de imprimir. Copy extraído para 37 idiomas; traducción y revisión pendientes; sin publicar."
+    },
+    {
+      "plan_id": "UV0902",
+      "slug": "preferans",
+      "status": "implementation-in-progress",
+      "note": "Partida local de práctica de una mano basada explícitamente en el perfil austríaco básico: baraja de 32, subasta ascendente por palo que fija triunfo, intercambio del talón, elección de defensa, diez bazas, bots simples y puntos por transferencia/penalización en unidades no monetarias. Omite bote acumulado, apuestas, contratos sin talón, bonus e invitaciones. 95 textos en cola local para 36 idiomas; borradores, aprobación/revisión humana, QA visual y release pendientes. Sin API ni cuota. Volumen original 18.100/mes conservado; implementación autorizada para completar las 300."
+    },
+    {
+      "plan_id": "UV0903",
+      "slug": "email-header-analyzer",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 14.800/mes. Herramienta local de inspección de campos de cabecera; 37 idiomas extraídos a cola, traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0904",
+      "slug": "hnefatafl",
+      "status": "implementation-in-progress",
+      "note": "Juego local hotseat de dos personas en variante Hnefatafl fija 11×11: movimientos ortogonales, capturas por sandwich, escape del rey y captura por cerco de cuatro lados. Sin bot ni red; variante y sus límites se declaran. Demanda 14.800/mes conservada; traducción/QA pendientes."
+    },
+    {
+      "plan_id": "UV0905",
+      "slug": "html-sanitizer",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 14.800/mes. Sanitizador local con allowlist estrecha de tags/atributos y sin ejecución; 37 idiomas extraídos, traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0906",
+      "slug": "insurance-needs-calculator",
+      "status": "implementation-in-progress",
+      "note": "Calculadora aritmética local de brecha de cobertura a partir de deudas, gastos inmediatos/educativos, años de ingreso, activos y cobertura existente ingresados por la persona. Sin recomendaciones, tasas ni reglas de país. Demanda original 14.800/mes conservada; traducción/QA pendientes."
+    },
+    {
+      "plan_id": "UV0907",
+      "slug": "karaoke-lyrics-editor",
+      "status": "implementation-in-progress",
+      "note": "Implementada como editor local de texto LRC aportado por el usuario: conserva metadatos admitidos, desplaza y normaliza marcas a centésimas, limita tiempos negativos a cero y exporta LRC. No obtiene, reproduce ni sincroniza letras protegidas. Copy extraído para 37 idiomas; traducción y revisión pendientes; sin publicar."
+    },
+    {
+      "plan_id": "UV0908",
+      "slug": "language-detector",
+      "status": "implementation-in-progress",
+      "note": "Detector ligero local: pistas Unicode de escritura y vocabulario frecuente, devuelve candidatos y nivel cualitativo sin probabilidad calibrada. Soporte para idiomas del plan con límites para texto corto/mixto. Demanda 14.800/mes conservada; traducción/QA pendientes."
+    },
+    {
+      "plan_id": "UV0909",
+      "slug": "moving-planner",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada conforme a la autorización posterior del usuario para completar las 300 aunque queden candidatas de menor demanda; volumen histórico conservado: 14.800/mes. Checklist local fechado, sin datos ni servicios nacionales; copy extraído para 37 idiomas, traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0910",
+      "slug": "perceived-stress-questionnaire",
+      "status": "demand-reserve",
+      "note": "Autorizada para completar 300; pendiente permiso de la escala y traducciones autorizadas. No crear preguntas sustitutivas y presentarlas como instrumento estandarizado."
+    },
+    {
+      "plan_id": "UV0911",
+      "slug": "song-structure-planner",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 14.800/mes. Planificador musical global de secciones y compases definidos por el usuario; copy extraído para 37 idiomas, traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0912",
+      "slug": "spain-unemployment-benefit",
+      "status": "implementation-in-progress",
+      "note": "UV0912 limited to full-time contributory monthly amount, applying 70%/60% by benefit day and the 2026 SEPE child-dependent caps. Not an eligibility or duration check. SEPE amount page and BOE art. 270 checked 2026-10-20; review 2027-01-10. Local/no API/server. 37-local translation and QA pending. 14,800 searches/month (<240k), promoted by owner instruction."
+    },
+    {
+      "plan_id": "UV0913",
+      "slug": "survival-analysis",
+      "status": "implementation-in-progress",
+      "note": "Implementada como estimador Kaplan–Meier descriptivo para etiquetas, tiempos de seguimiento y eventos/censura introducidos por el usuario; informa conjuntos en riesgo y mediana si se alcanza. Sin intervalos de confianza, prueba de grupos, ajuste ni interpretación clínica. Copy extraído para 37 idiomas; traducción y revisión pendientes; sin publicar."
+    },
+    {
+      "plan_id": "UV0914",
+      "slug": "3d-function-grapher",
+      "status": "implementation-in-progress",
+      "note": "Plotter local de z=f(x,y) con parser limitado sin eval, superficie muestreada, rotación por arrastre y exportación OBJ; sin dependencias/API/servidor. Rejilla 4–50; traducción 37 idiomas y QA pendientes."
+    },
+    {
+      "plan_id": "UV0915",
+      "slug": "3d-model-editor",
+      "status": "implementation-in-progress",
+      "note": "Editor local de malla: crea caja acotada, extruye una cara, transforma posición/rotación/escala y exporta OBJ sin API/servidor/dependencias nuevas. Lógica probada: caja 8 vértices/6 caras; extrusión agrega 4 vértices y 4 paredes laterales; transformación preserva topología; índices OBJ validados. 5 pruebas enfocadas (4 de lógica y bundle cubierto en suite) pasan; formulario localizado desde copia fuente extraída a 37 locales. Sin datos externos que necesiten actualización. QA visual/funcional real y revisión humana de 37 locales siguen pendientes; no lista para publicar."
+    },
+    {
+      "plan_id": "UV0916",
+      "slug": "api-mock-workbench",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 12.100/mes. Creador local de fixture JSON HTTP estático (no servidor); copy extraído para 37 idiomas, traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0917",
+      "slug": "blood-pressure-log",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 12.100/mes. Registro médico local solo en memoria de página, sin diagnóstico ni umbrales; incluye guía CDC vigente; copy extraído para 37 idiomas, traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0918",
+      "slug": "comic-maker",
+      "status": "implementation-in-progress",
+      "note": "Editor local de tira fotográfica de 1–6 imágenes, paneles centrados, 1–3 columnas, pies por panel y descarga PNG; sin generación de imágenes/OCR. Demanda original 12.100/mes conservada (<240.000); traducción/QA pendientes."
+    },
+    {
+      "plan_id": "UV0919",
+      "slug": "india-hra-exemption",
+      "status": "implementation-in-progress",
+      "note": "UV0919 narrowed to local HRA exemption formula under Indian Income Tax Act s10(13A)/Rule 2A, old regime only. Official CBDT/Income Tax Department current guidance checked 2026-10-20; review 2027-04-20. No API/server. Copy extracted for 37 locales; machine/human review and QA pending. 12,100 searches/month (<240k), promoted on explicit owner instruction."
+    },
+    {
+      "plan_id": "UV0920",
+      "slug": "inheritance-shares-calculator",
+      "status": "demand-reserve",
+      "note": "Autorizada para completar 300; pendiente jurisdicción, escuela/reglas sucesorias explícitas, fuentes primarias y revisión especializada. No existe una fórmula universal que pueda publicarse como resultado legal."
+    },
+    {
+      "plan_id": "UV0921",
+      "slug": "panorama-stitcher",
+      "status": "implementation-in-progress",
+      "note": "Stitcher local de dos fotos solapadas: ORB, emparejamiento Hamming, homografía RANSAC, ganancia mediana por canal y exportación JPEG. OpenCV.js 4.12.0-release.1 Apache-2.0 (~10,9 MB) se sirve como asset estático same-origin y sólo se descarga al activar la herramienta; Cloudflare documenta assets estáticos sin coste por petición ni almacenamiento. Prueba sintética en navegador: 1500×422, 324/400 inliers con cambio de exposición; 162 pruebas unitarias/formulario pasan. Pendientes: QA de integración/compatibilidad, interfaz aprobada en 37 idiomas y revisión humana."
+    },
+    {
+      "plan_id": "UV0922",
+      "slug": "password-breach-checker",
+      "status": "implementation-in-progress",
+      "note": "Implementada localmente con opt-in explícito: Web Crypto calcula SHA-1; solo el prefijo de 5 caracteres se consulta al endpoint gratuito Pwned Passwords con Add-Padding y la comparación de sufijo se hace en el navegador. CSP permite solo ese host para esta función. El password completo no se envía ni se muestra. Copy extraído para 37 idiomas; traducción y revisión pendientes; sin publicar."
+    },
+    {
+      "plan_id": "UV0923",
+      "slug": "sewing-pattern-drafter",
+      "status": "implementation-in-progress",
+      "note": "Borrador local de un panel de falda de medio círculo: calcula radio (cintura + holgura)/π, genera SVG en milímetros a escala 1:1, distingue corte y costura e incluye regla de 50 mm. Chromium: cintura final 780 mm, radio 248,3 mm; móvil 390 px, tablet 768 px y desktop 1440 px sin overflow ni errores de consola. Pasan 164 pruebas de formulario/motor y 1 suite de bundle; diff check limpio. Sin API, paquetes externos ni procesamiento servidor. Copy: 691/1584 borradores automáticos; 893 pendientes; 0 revisiones humanas registradas. Pendientes: validación física de impresión y aprobación de los 37 idiomas.'"
+    },
+    {
+      "plan_id": "UV0924",
+      "slug": "us-roth-conversion",
+      "status": "implementation-in-progress",
+      "note": "Cálculo local por escenario con tasas y rendimiento introducidos por el usuario; sin tablas tributarias, API, servidor, persistencia ni recomendación. Fuentes IRS enlazadas para revisión. Traducción 37 idiomas y QA pendientes."
+    },
+    {
+      "plan_id": "UV0925",
+      "slug": "us-self-employment-tax",
+      "status": "implementation-in-progress",
+      "note": "Implementado localmente como estimador federal limitado para año fiscal 2026: beneficio neto Schedule C, factor 92.35%, umbral de $400, base compartida de Seguro Social con salarios W-2 hasta $184,500, Medicare sin límite y deducción potencial de la mitad. Sin API, subida ni proveedor de pago. Verificado contra IRS y SSA oficiales: https://www.irs.gov/forms-pubs/about-schedule-se-form-1040 y https://www.ssa.gov/oact/cola/cbb.html. Los materiales IRS Schedule SE de 2026 consultados aún están marcados como borrador; la interfaz lo dice y el snapshot expira para revisión el 2027-01-19 mediante el gate de regla. Cuatro tests de lógica, formulario y compilación; QA en navegador móvil 390 px comprobó valores $14,129.55 y $13,156.15 con salarios W-2, sin overflow ni consola; solo localhost. 50 cadenas extraídas para 37 locales; borradores sin revisar, no aprobado. Volumen histórico 12,100/mes conservado; implementación autorizada posteriormente para completar las 300. No publicado."
+    },
+    {
+      "plan_id": "UV0926",
+      "slug": "virtual-try-on",
+      "status": "implementation-in-progress",
+      "note": "UV0926 narrowed to manual local 2D composite: user-provided base photo + transparent garment cutout, position/size/opacity and PNG export. No AI, model, server, API, third-party dependency or image upload. Translation and visual/device QA pending. 12,100 searches/month (<240k), promoted by owner instruction."
+    },
+    {
+      "plan_id": "UV0927",
+      "slug": "calcudoku",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 9.900/mes. Generador seeded 4–6 con cages conectadas y verificador local; explícito que la unicidad no está garantizada; 37 idiomas extraídos, traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0928",
+      "slug": "genetic-cross-calculator",
+      "status": "implementation-in-progress",
+      "note": "Cuadro de Punnett local de 1–2 loci simples; muestra proporciones genotípicas sin afirmar rasgos ni riesgo clínico. Traducción y QA pendientes. Volumen conservado: 9.900/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0929",
+      "slug": "geometry-construction",
+      "status": "implementation-in-progress",
+      "note": "Tablero geométrico local con puntos libres arrastrables, segmentos, rectas, rayos, círculos, puntos medios dependientes y mediatrices; los objetos derivados se recalculan al mover puntos. Límites: sin intersecciones generales, solver algebraico, restricciones arbitrarias, persistencia ni pruebas formales. Volumen 9.900/mes (<240.000); iniciado por instrucción posterior para completar 300. Traducción humana en 37 idiomas y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0930",
+      "slug": "html-accessibility-auditor",
+      "status": "implementation-in-progress",
+      "note": "Auditor local y limitado a 8 reglas estáticas comunes; elimina scripts, estilos y recursos antes de analizar HTML en documento separado. No declara conformidad WCAG. Traducción y QA pendientes. Volumen conservado: 9.900/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0931",
+      "slug": "linear-algebra-visualizer",
+      "status": "implementation-in-progress",
+      "note": "Visualizador 2D local: transforma malla y bases mediante dos matrices 2×2, compone B×A y muestra determinantes como escala de área con signo. Volumen conservado: 9.900/mes (<240.000); autorización posterior para completar candidatas bajo umbral. Traducción y QA pendientes. Page controller wrapper added after an integration gap was found; local browser bundles compiled and passed the static controller guard (64 KiB, 72 KiB for GPX/MusicXML). Translation/review and browser QA remain pending. Page controller wrapper added after an integration gap was found; local browser bundles compiled and passed the static controller guard (72 KiB pending-controller budget). Translation/review and browser QA remain pending."
+    },
+    {
+      "plan_id": "UV0932",
+      "slug": "malaysia-epf",
+      "status": "implementation-in-progress",
+      "note": "UV0932 narrowed to Malaysia non-Malaysian non-PR, non-domestic-helper employee monthly EPF; 2% employee + 2% employer, total rounded up to ringgit. Official KWSP schedule checked 2026-10-20. Local/no API; review due 2027-04-20. Translation and QA pending. 9,900 monthly searches (<240,000), promoted by owner instruction."
+    },
+    {
+      "plan_id": "UV0933",
+      "slug": "music-interval-calculator",
+      "status": "implementation-in-progress",
+      "note": "Calculadora local para dos notas en notación científica C–B, con sostenido/bemol dobles y octava −1…9. Calcula dirección, intervalo diatónico, calidad y semitonos en temperamento igual de 12 tonos; etiqueta alteraciones fuera del conjunto común sin inventar un nombre. Sin API ni guardado. Pendientes traducción/revisión en 37 locales y QA."
+    },
+    {
+      "plan_id": "UV0934",
+      "slug": "origami-simulator",
+      "status": "implementation-in-progress",
+      "note": "Tres secuencias originales (book/gate/accordion), malla rígida paralela con rotación de pliegue y vista 3D rotatoria; pruebas geométricas aprobadas. Aproximación cinemática (sin grosor, autocolisión ni pliegues arbitrarios). Traducción humana en 37 idiomas y QA visual pendientes. Demanda original 9.900/mes (<240.000), promovida por instrucción expresa."
+    },
+    {
+      "plan_id": "UV0935",
+      "slug": "pdf-digital-signature-validator",
+      "status": "implementation-in-progress",
+      "note": "Inspección local de ByteRange/CMS soportado con Web Crypto, hasta 25 MiB. Verificado con PDF sintético firmado RSA-CMS, relleno cero en /Contents y rechazo al alterar contenido; pruebas estructurales pasan. Confianza de certificado desconocida, revocación no consultada, sello de tiempo no validado y diccionarios comprimidos/múltiples firmantes no cubiertos. Demanda original 9.900/mes (<240.000), implementada por instrucción expresa; traducción humana de 37 idiomas y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0936",
+      "slug": "regex-pattern-builder",
+      "status": "implementation-in-progress",
+      "note": "Generador de 3 patrones de búsqueda seguros: texto literal escapado, alternativas y longitudes numéricas, con vista previa en texto de muestra. Sin regex arbitrario ni red; traducción y QA pendientes. Volumen conservado: 9.900/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0937",
+      "slug": "acronym-dictionary",
+      "status": "implementation-in-progress",
+      "note": "Glosario personal local con búsqueda sin catálogo idiomático impuesto; entrada de usuario de hasta 1.000 siglas, definiciones y grupos; export JSON manual de coincidencias. Demanda original conservada; traducción/QA pendientes."
+    },
+    {
+      "plan_id": "UV0938",
+      "slug": "audio-denoiser",
+      "status": "implementation-in-progress",
+      "note": "Implementada como puerta de ruido local por amplitud para audio mono/estéreo de hasta 60 s, 48 kHz y 20 MiB. Ajustes de umbral, atenuación, ataque y liberación; exporta WAV PCM. No elimina ruido que se solapa con voz/música ni usa un servicio remoto. Copy extraído para 37 idiomas; traducción y revisión pendientes; sin publicar."
+    },
+    {
+      "plan_id": "UV0939",
+      "slug": "chemical-structure-editor",
+      "status": "implementation-in-progress",
+      "note": "Editor 2D local con OpenChemLib JS 9.25.1 (BSD-3-Clause) fijado y autoalojado; dibuja átomos/enlaces/anillos, valida valencias, importa SMILES/Molfile y exporta fórmula, SMILES y MOL. 74 cadenas extraídas para 37 idiomas; traducciones/revisión humana pendientes. QA de navegador a 390 px comprobó carga local, selección por teclado, importación de benceno y anillo separado (C12H18), sin overflow; suite focalizada: 156 pruebas verdes. No usa API ni servicio remoto. Volumen original conservado: 8.100/mes (<240.000); autorización general del usuario para completar las 300, sin reinterpretar la demanda. Sin publicar."
+    },
+    {
+      "plan_id": "UV0940",
+      "slug": "gitignore-generator",
+      "status": "implementation-in-progress",
+      "note": "Generador local con plantillas de lenguaje/SO/editor y patrones comunes; selección visible, salida revisable, evita ocultar lockfiles. Traducción y QA pendientes. Volumen conservado: 8.100/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0941",
+      "slug": "hdr-merger",
+      "status": "implementation-in-progress",
+      "note": "Mezcla local de 2–5 exposiciones alineadas en PNG con compensación EV y tone mapping; limita cada imagen a 2048×2048 y 10 MiB, sin alineación automática, carga ni API. Traducción 37 idiomas y QA pendientes."
+    },
+    {
+      "plan_id": "UV0942",
+      "slug": "pet-feeding-calculator",
+      "status": "implementation-in-progress",
+      "note": "Implementada como conversión de calorías a gramos y división por comidas, exclusivamente con el objetivo diario y el dato de densidad energética que introduce el usuario. No estima necesidades nutricionales; exige seguir una meta veterinaria y etiqueta del producto. Copy extraído para 37 idiomas; traducción y revisión pendientes; sin publicar."
+    },
+    {
+      "plan_id": "UV0943",
+      "slug": "philippines-sss",
+      "status": "implementation-in-progress",
+      "note": "Estimador local para empleador comercial/empleado según tabla oficial SSS efectiva 2025-01-01: bandas de MSC de ₱500 hasta ₱35.000, SS regular hasta ₱20.000, MPF por encima y EC de empleador. Revisado en fuente oficial 2026-10-20; próxima revisión 2027-01-05. Copia extraída: 48 cadenas × 36 idiomas destino más inglés (1.728 unidades); traducción/revisión humana y QA pendientes. No cubre otras categorías ni es nómina; sin API/coste."
+    },
+    {
+      "plan_id": "UV0944",
+      "slug": "portfolio-backtester",
+      "status": "implementation-in-progress",
+      "note": "Analizador histórico local de 2–20 series de precios alineadas; simula pesos iniciales iguales, buy-and-hold, índice normalizado, retorno total y máxima caída observada. Excluye dividendos/costes/impuestos y no pronostica. Volumen original 8.100/mes conservado; traducción/QA pendientes."
+    },
+    {
+      "plan_id": "UV0945",
+      "slug": "survey-builder",
+      "status": "implementation-in-progress",
+      "note": "Constructor local con vista previa, JSON de definición y CSV de una respuesta; no aloja formularios ni recopila respuestas de terceros. Traducción y QA pendientes. Volumen conservado: 8.100/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0946",
+      "slug": "totp-authenticator",
+      "status": "implementation-in-progress",
+      "note": "Generador TOTP local con secreto Base32 manual o 160–512 bits aleatorios, Web Crypto HMAC SHA-1/256/512, 6/8 dígitos y períodos 15–120 s. Sin QR, vault, red ni persistencia; advertencia de seguridad visible. Traducción/revisión y QA pendientes."
+    },
+    {
+      "plan_id": "UV0947",
+      "slug": "uk-student-loan",
+      "status": "implementation-in-progress",
+      "note": "Estimador local de un solo plan con umbrales/interés británicos 2026–27, amortización anual aproximada y fecha de cancelación por plan, incluidos límites históricos. Fuentes HMRC/SLC consultadas 2026-10-19; revisión mensual y bloqueo automático desde 2026-11-19. Pruebas lógicas; traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0948",
+      "slug": "canada-payroll",
+      "status": "implementation-in-progress",
+      "note": "Estimador anual local de CPP base/adicionales y EI 2026 para empleado regular de 18–69 años fuera de Quebec. Aplica exención y techos CRA; desglosa empleado/empleador; no calcula impuesto federal/provincial, QPP/QPIP, múltiple empleador ni redondeo por período. Revisión 2026-12-01 y caduca 2027-01-01. Copy extraída para 37 idiomas; traducción, revisión humana y QA pendientes; sin API."
+    },
+    {
+      "plan_id": "UV0949",
+      "slug": "chomp-game",
+      "status": "implementation-in-progress",
+      "note": "Juego de dos personas en el mismo dispositivo; reglas de Chomp explícitas y matriz 2–8 por lado. No requiere API, CPU ni datos culturales. Traducción y QA pendientes. Volumen conservado: 6.600/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0950",
+      "slug": "crochet-chart-maker",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 6.600/mes. Creador global de chart de cuadrícula con símbolos elegidos por el usuario, sin imponer abreviaturas regionales; 37 idiomas extraídos, traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0951",
+      "slug": "document-redline-merger",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 6.600/mes. Comparador local de dos borradores con diff LCS acotado, etiquetas seguras y exportación HTML auto-contenida; 37 idiomas extraídos, traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0952",
+      "slug": "ebook-creator",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 6.600/mes. Creador EPUB 3 local desde capítulos de texto; formato consultado con la especificación W3C 3.4; 37 idiomas extraídos, traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0953",
+      "slug": "enzyme-kinetics-calculator",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 6.600/mes. Calculadora/curva Michaelis–Menten para valores aportados, con referencia NCBI; no ajusta parámetros; 37 idiomas extraídos, traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0954",
+      "slug": "focus-stacker",
+      "status": "implementation-in-progress",
+      "note": "Temporizador local de 1–8 bloques definidos por la persona; pausa si la pestaña se oculta, no notifica ni persiste datos. Traducción y QA pendientes. Volumen conservado: 6.600/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0955",
+      "slug": "handwriting-input",
+      "status": "implementation-in-progress",
+      "note": "Bloc local de trazos Pointer Events en canvas 1200×500, undo, limpiar y descarga PNG; sin OCR ni conversión a texto. Demanda original 6.600/mes conservada (<240.000); traducción/QA pendientes."
+    },
+    {
+      "plan_id": "UV0956",
+      "slug": "laser-box-designer",
+      "status": "implementation-in-progress",
+      "note": "Generador local de caja abierta de cinco paneles: base con ranuras y paredes con pestañas inferiores; SVG en mm descargado localmente. Las juntas verticales requieren pegamento/útil; espesor, kerf y ajuste requieren calibración y corte de prueba. Sin llamadas ni carga de archivos. Volumen histórico 6.600/mes (<240.000); iniciado por instrucción posterior para completar 300. Traducción revisada en 37 idiomas y QA visual pendientes."
+    },
+    {
+      "plan_id": "UV0957",
+      "slug": "meeting-retrospective",
+      "status": "implementation-in-progress",
+      "note": "Plantilla local de retro para ideas aportadas por usuarios; produce Markdown con encabezados localizados, sin inventar recomendaciones ni guardar datos. Traducción y QA pendientes. Volumen conservado: 6.600/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0958",
+      "slug": "mus",
+      "status": "implementation-in-progress",
+      "note": "Motor de partida integrado: mazo/deal, Mus unánime, descartes con reciclaje, 4 lances, apuestas/subidas/órdago, puntuación de equipo a 40 y match a dos juegos; 14 pruebas específicas de Mus pasan. Órdago aceptado cierra el juego; si se rechaza, suma una piedra y continúa la mano. Formulario, tres bots locales y ocultación visual de manos integrados; extracción fuente de 109 cadenas preparada para 37 idiomas. Traducción humana y QA responsive completa siguen pendientes. Variante común contrastada con Pagat y Federación Española de Mus; sin gasto de APIs."
+    },
+    {
+      "plan_id": "UV0959",
+      "slug": "nim-game",
+      "status": "implementation-in-progress",
+      "note": "Juego estándar de Nim en modo normal: acepta 2–6 pilas de 1–50, valida jugadas legales y el último en retirar gana. Bot local aplica XOR ganador cuando es posible; cinco pruebas propias cubren límites, victoria y respuestas del bot, más contrato de formulario localizado. Navegador local comprobó inicio, respuesta del bot, controles accesibles y sin desbordamiento a viewport de 500 px ni errores de consola en fixture. Controlador integrado; 46 cadenas extraídas para 37 locales en SQLite local. Traducción humana y QA responsive final pendientes; no listo para publicar."
+    },
+    {
+      "plan_id": "UV0960",
+      "slug": "pcb-layout-editor",
+      "status": "implementation-in-progress",
+      "note": "Editor local de borrador PCB: placa rectangular de 10–200 mm, cuatro huellas through-hole, referencias/rotación, rutas por pads con waypoints y exportación Gerber RS-274X de cobre superior/perfil más taladros Excellon métricos en modo absoluto. Cuatro pruebas propias pasan; suite combinada Nim/geometría/PCB/formularios/bundle pasó 160/160; la suite PCB volvió a pasar 4/4 tras el último ajuste del encabezado de taladros. Navegador comprobó crear placa, añadir dos huellas, ruta con waypoint, preview accesible, tres exportaciones disponibles, sin overflow a 500 px ni errores de consola en fixture de estructura de producción. 84 cadenas extraídas para 37 locales y en cola local. Sin servidor, API ni gasto de proveedor. No tiene DRC, autorouter, capas inferiores ni revisión humana de traducciones; no listo para fabricar ni publicar."
+    },
+    {
+      "plan_id": "UV0961",
+      "slug": "reaction-mechanism-editor",
+      "status": "implementation-in-progress",
+      "note": "Implementación local por autorización del usuario de completar las 300; demanda histórica conservada: 6.600/mes. Editor explícito de diagramas con átomos, enlaces, cargas, pares libres, flechas de dos electrones/fishhook, hasta 12 pasos y exportación SVG/JSON. Cuatro pruebas de lógica, contrato del formulario y guard de bundle (248 controladores) pasan. QA en navegador con estilos del sitio a 500 px: átomo/enlace/fishhook, descargas SVG y JSON verificadas por contenido, cero overflow y cero errores de consola; se corrigió el botón SVG que la revisión visual encontró vacío. 69 cadenas extraídas para 37 locales a cola SQLite local; borradores automáticos sin aprobar. Build completo aún bloqueado por otro tool activo sin pack aprobado (`text-translator`); revisión humana, packs aprobados de 37 idiomas y build completo siguen pendientes. Sin API externa ni runtime de servidor; no listo para publicar."
+    },
+    {
+      "plan_id": "UV0962",
+      "slug": "time-series-forecast",
+      "status": "implementation-in-progress",
+      "note": "Pronóstico local por tendencia lineal de datos ordenados introducidos por el usuario, con formato decimal según locale; no promete predicción general ni intervalos de confianza. Traducción y QA pendientes. Volumen conservado: 6.600/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0963",
+      "slug": "database-migration-converter",
+      "status": "implementation-in-progress",
+      "note": "Implementada como conversor local de un subconjunto de CREATE TABLE para MySQL, PostgreSQL y SQLite; mapea tipos comunes y claves simples, informa cambios y rechaza constructos no preservados. Nunca conecta ni ejecuta DDL. Copy extraído para 37 idiomas; traducción y revisión pendientes; sin publicar."
+    },
+    {
+      "plan_id": "UV0964",
+      "slug": "fanorona",
+      "status": "implementation-in-progress",
+      "note": "Implementación local de Fanorona Tsivy 9×5 con captura obligatoria, acercamiento/retirada y relay; bot voraz básico, sin red ni guardado. Reglas referenciadas; QA y revisión de traducciones pendientes."
+    },
+    {
+      "plan_id": "UV0965",
+      "slug": "futures-position-calculator",
+      "status": "implementation-in-progress",
+      "note": "Implementada localmente tras autorización posterior pese a 49.500 búsquedas/mes. Calcula exposición nocional, riesgo hasta stop y recompensa objetivo para escenarios long/short con multiplicador, costes y código de moneda elegidos por el usuario. Excluye margen, liquidación, ejecución y asesoramiento. Copy extraído para 37 idiomas; traducción y revisión pendientes; sin publicar."
+    },
+    {
+      "plan_id": "UV0966",
+      "slug": "indonesia-pph21",
+      "status": "implementation-in-progress",
+      "note": "Implementación autorizada por el usuario pese a conservar la demanda histórica de 5.400/mes. Calcula TER oficial A/B/C para enero–noviembre y conciliación PPh21 progresiva de diciembre desde 12 ingresos mensuales, deducciones elegibles y PTKP. Seis pruebas de lógica, contrato de formulario y guard de bundle pasan; 64 cadenas extraídas para 37 locales a cola local, aún sin traducción revisada/aprobada. Estimación local sin red, cuenta, persistencia ni proveedor; no publicada. Build general sigue bloqueado por el pack aprobado ausente de text-translator."
+    },
+    {
+      "plan_id": "UV0967",
+      "slug": "option-strategy-builder",
+      "status": "implementation-in-progress",
+      "note": "Calcula P/L intrínseco al vencimiento desde patas/contratos introducidos por la persona; sin cotizaciones, consejo, tiempo, ejercicio anticipado, impuestos ni comisiones. Fórmulas contrastadas con Options Industry Council; traducción y QA pendientes. Volumen conservado: 5.400/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0968",
+      "slug": "rhythm-trainer",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 5.400/mes. Metrónomo local Web Audio y tap tempo mediano, sin grabación ni servicios; copy extraído para 37 idiomas, traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0969",
+      "slug": "sequence-alignment",
+      "status": "implementation-in-progress",
+      "note": "Alineador global Needleman–Wunsch con puntuación lineal elegida por usuario y límites de memoria/tamaño; no busca datos ni interpreta biología. Traducción y QA pendientes. Volumen conservado: 5.400/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0970",
+      "slug": "storyboard-maker",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 5.400/mes. Storyboard global de contenido aportado por usuario, preview y Markdown local; 37 idiomas extraídos, traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0971",
+      "slug": "china-individual-income-tax",
+      "status": "implementation-in-progress",
+      "note": "UV0971 scoped to 2026 annual resident comprehensive-income tax table applied to user-entered net taxable base after all deductions; no deduction engine/nonresident calculation. State Taxation Administration schedule and annual rates checked 2026-10-20; review due 2027-04-20. Local/no API/server cost. 37 locale translation and QA pending. 4,400 searches/month (<240k), promoted by owner instruction."
+    },
+    {
+      "plan_id": "UV0972",
+      "slug": "control-system-simulator",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 4.400/mes. Simulador analítico local de respuesta escalón de primer orden con parámetros propios; copy extraído para 37 idiomas, traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0973",
+      "slug": "digital-signature-verifier",
+      "status": "implementation-in-progress",
+      "note": "Verificador local de firma sobre mensaje exacto con clave pública SPKI: RSA PKCS#1 v1.5/SHA-256, RSA-PSS, ECDSA P-256 y Ed25519 según soporte del navegador. No valida identidad/certificados; traducción y QA pendientes; demanda original conservada."
+    },
+    {
+      "plan_id": "UV0974",
+      "slug": "embroidery-digitizer",
+      "status": "implementation-in-progress",
+      "note": "UV0974 narrowed to a single-color horizontal running-stitch SVG sketch from a locally selected raster image; no machine format/digitizing guarantees. Browser-only processing, bounded file/pixels and generated path count; no API/server/dependency. 37-locale copy extraction and QA pending. 4,400 searches/month (<240k), promoted by owner instruction."
+    },
+    {
+      "plan_id": "UV0975",
+      "slug": "lights-out",
+      "status": "implementation-in-progress",
+      "note": "Puzzle local generado mediante movimientos legales desde el tablero resuelto: garantiza solvencia sin servicio externo ni datos dependientes de país. Traducción y QA pendientes. Volumen conservado: 4.400/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0976",
+      "slug": "masyu-puzzle",
+      "status": "implementation-in-progress",
+      "note": "Juego local Masyu 7×7: bucle original conocido, ocho perlas, validador de reglas y pistas de arista. Diseños deterministas transformados; sin afirmar unicidad ni niveles graduados. Validación de motor; traducciones/QA pendientes."
+    },
+    {
+      "plan_id": "UV0977",
+      "slug": "medication-schedule",
+      "status": "implementation-in-progress",
+      "note": "Implementada como organizador de instrucciones prescritas que la persona introduce: acepta repetición diaria o días de semana, ordena por hora y exporta CSV local. No recomienda fármacos/dosis, comprueba interacciones ni envía recordatorios. Copy extraído para 37 idiomas; traducción y revisión pendientes; sin publicar."
+    },
+    {
+      "plan_id": "UV0978",
+      "slug": "music-transposition",
+      "status": "implementation-in-progress",
+      "note": "Editor local en curso para partwise MusicXML sin comprimir (≤1 MB), cambios enteros de −24…+24 semitonos, notas y armaduras estándar mayor/menor; mantiene accidentales coherentes y descarga el XML transformado. No convierte instrumentos entre tono escrito/concert pitch. Faltan traducciones/revisión en 37 locales y QA con archivos MusicXML reales. Page controller wrapper added after an integration gap was found; local browser bundles compiled and passed the static controller guard (64 KiB, 72 KiB for GPX/MusicXML). Translation/review and browser QA remain pending. Page controller wrapper added after an integration gap was found; local browser bundles compiled and passed the static controller guard (72 KiB pending-controller budget). Translation/review and browser QA remain pending."
+    },
+    {
+      "plan_id": "UV0979",
+      "slug": "sheet-music-scanner",
+      "status": "demand-reserve",
+      "note": "Investigación actualizada (2026-10-20): apareció satb-line-omr, modelo ONNX de 12,8 MB y ejecución en navegador con una variante MIT; su alcance es una línea de partitura coral SATB, no lectura general de partituras, y excluye letras/dinámicas/acordes. No cubre el candidato sin un cambio de alcance. Fuente primaria: https://github.com/alexanderalber/satb-line-omr."
+    },
+    {
+      "plan_id": "UV0980",
+      "slug": "sourdough-calculator",
+      "status": "implementation-in-progress",
+      "note": "Implementación local y global: escalado por porcentajes panaderos; incluye harina y agua del iniciador, sin predicciones de fermentación ni supuestos de seguridad alimentaria. Traducción y QA pendientes. Volumen conservado: 4.400/mes (<240.000). autorizado por instrucción posterior; no equivale al umbral objetivo."
+    },
+    {
+      "plan_id": "UV0981",
+      "slug": "spreadsheet-diff",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por instrucción posterior para completar las 300 pese a volumen histórico de 4.400/mes. Comparador local de CSV por clave única: altas, bajas y cambios exactos, sin ejecutar fórmulas; admite CSV con campos entrecomillados, exporta JSON. 37 idiomas extraídos; traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0982",
+      "slug": "chemical-name-resolver",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por la instrucción explícita del usuario de completar las 300 candidatas, aunque el plan original la mantenía en reserva por 3.600 búsquedas/mes. Resuelve nombre con una consulta manual y acotada a PubChem PUG REST; no persiste ni usa backend. El endpoint devolvió una redirección antiabuso desde este entorno; CORS y respuesta real del navegador no verificados. Traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0983",
+      "slug": "chord-recognizer",
+      "status": "implementation-in-progress",
+      "note": "Implementación local: estima acordes comunes en ventanas de medio segundo desde un archivo de audio local; no llama servicios, no sube audio ni usa modelos externos. Etiquetas y similitud son heurísticas y pueden fallar en mezclas densas, inversiones, percusión o afinación alterada. Volumen histórico 3.600/mes (<240.000); continúa por instrucción posterior para completar las 300. Traducción 37 idiomas y revisión humana, pruebas visuales y release bloqueados/pendientes."
+    },
+    {
+      "plan_id": "UV0984",
+      "slug": "dataset-anonymizer",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior pese a volumen histórico de 3.600/mes. CSV local con acciones por columna drop/blank/token y exportación JSON; se advierte que esto no garantiza anonimato ni cumplimiento. 37 idiomas extraídos; traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0985",
+      "slug": "sql-query-explainer",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 3.600/mes. Inspector local de SELECT para cláusulas principales; no ejecuta ni conecta a bases de datos y declara sus dialectos no cubiertos. 37 idiomas extraídos; traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0986",
+      "slug": "territory-game",
+      "status": "implementation-in-progress",
+      "note": "Implementación local autorizada para completar las 300; demanda histórica 3.600/mes conservada. Juego original por turnos en arena 16×12, traza rutas y reclama zonas al cerrarlas; dos rivales deterministas pueden cortar la ruta expuesta; victoria al 60%. Ocho pruebas de lógica; formulario y guard de bundle; QA real en navegador móvil 390 px con captura de territorio y flecha de teclado verificados, sin overflow ni errores de consola. 54 cadenas exportadas a cola local con 37 locales; traducciones aún no revisadas/aprobadas y Telugu requiere piloto separado. Sin red ni persistencia; no publicado."
+    },
+    {
+      "plan_id": "UV0987",
+      "slug": "audio-loudness-normalizer",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior pese a volumen histórico de 2.900/mes. Alcance seguro disponible sin DSP especializado: normalizador local de sample peak a WAV PCM16; no mide LUFS ni true peak, por lo que queda explícitamente acotado y no afirma cumplir esas métricas del plan. 37 idiomas extraídos; traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0988",
+      "slug": "bond-ladder-planner",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 2.900/mes. Planificador local de flujos de bonos a partir de condiciones introducidas por la persona, con calendario y resumen anual; sin cotizaciones, valoraciones, impuestos ni recomendaciones. 37 idiomas extraídos; traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0989",
+      "slug": "css-specificity-calculator",
+      "status": "implementation-in-progress",
+      "note": "Analizador CSS local probado para IDs, clases, atributos, tipos, namespaces, comentarios y pseudo-clases :where/:is/:not/:has/nth-child; lista A/B/C clara y límites explícitos. 44 cadenas base extraídas para los 37 idiomas; los borradores automáticos no están aprobados y quedan pendientes de revisión humana. Sin llamadas de red. Pruebas de lógica: 6/6; bundle controller: 5.410 bytes, sin fetch. QA visual en navegador y empaquetado de release siguen bloqueados por paquetes de locale aprobados incompletos."
+    },
+    {
+      "plan_id": "UV0990",
+      "slug": "equation-photo-reader",
+      "status": "demand-reserve",
+      "note": "Investigación actualizada (2026-10-20): Texo anuncia OCR LaTeX de 20 M parámetros y ejecución en navegador, pero su repo establece AGPL-3.0 por defecto; la licencia LGPL indicada es una autorización limitada a una app macOS concreta, no a UsefulVerse. No integrar hasta resolver cumplimiento AGPL, licencia aplicable a pesos/datos y probar runtime, memoria y precisión. Fuente primaria: https://github.com/alephpi/Texo."
+    },
+    {
+      "plan_id": "UV0991",
+      "slug": "skyscrapers-puzzle",
+      "status": "implementation-in-progress",
+      "note": "Puzzle local de visibilidad 4×4 a 7×7 con semilla; genera cuadrícula latina, pistas de borde y validación interactiva. No se afirma unicidad. Volumen conservado: 1.900/mes (<240.000); implementación autorizada por instrucción posterior de completar candidatas de menor demanda. Traducción y QA pendientes. Page controller wrapper added after an integration gap was found; local browser bundles compiled and passed the static controller guard (64 KiB, 72 KiB for GPX/MusicXML). Translation/review and browser QA remain pending. Page controller wrapper added after an integration gap was found; local browser bundles compiled and passed the static controller guard (72 KiB pending-controller budget). Translation/review and browser QA remain pending."
+    },
+    {
+      "plan_id": "UV0992",
+      "slug": "us-aca-subsidy",
+      "status": "implementation-in-progress",
+      "note": "Implementación local para el crédito fiscal ACA 2026: usa la tabla IRS de porcentajes aplicables de 2026 y los FPL 2025 vigentes al abrir inscripción 2026; estima el crédito anual a partir de MAGI, familia, región, SLCSP y prima de inscripción introducidos por la persona. Incluye Alaska/Hawaii y topes familiares >8; excluye elegibilidad completa, períodos parciales y reconciliación del Form 8962. Sin API ni datos transmitidos. Cinco pruebas focalizadas pasan; copy de 37 locales requiere revisión humana y falta QA de navegador."
+    },
+    {
+      "plan_id": "UV0993",
+      "slug": "geometry-net-generator",
+      "status": "implementation-in-progress",
+      "note": "Generador local de plantilla de seis caras para cuboide, con área/volumen y exportación SVG. El controlador conserva fallback para localizar la copia y ahora valida límites, unidades imprimibles y escape SVG; cuatro pruebas de geometría más contrato de formulario. Navegador con estructura de main/tool-panel como producción verificó copy en alcance, SVG, área, controles accesibles y sin overflow a viewport 500 px ni errores de consola. No hay gasto/API. Traducción humana de 37 locales y QA responsive visual de la página final pendientes; no listo para publicar."
+    },
+    {
+      "plan_id": "UV0994",
+      "slug": "optics-ray-tracer",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 2.400/mes. Trazador 2D local por capas con Snell y valores introducidos por persona; TIR detiene el trazado transmitido; traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0995",
+      "slug": "spreadsheet-formula-explainer",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 2.400/mes. Parser local de subconjunto documentado de fórmulas de hoja de cálculo; muestra árbol sintáctico sin ejecutar ni leer libros. 37 idiomas extraídos; traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0996",
+      "slug": "webfont-subsetter",
+      "status": "implementation-in-progress",
+      "note": "Implementado localmente con FontTools 4.62.1 y Pyodide empaquetado en el sitio. Reduce TTF/OTF por caracteres Unicode solicitados, conserva dependencias de glifos compuestos, verifica cobertura del cmap y vuelve a abrir la fuente exportada para validar cmap y formato; presenta bytes y glifos antes/después y exige confirmar derechos de modificación. El wheel coincide con el SHA-256 del lockfile y la ejecución de navegador solo cargó recursos de 127.0.0.1. 45 cadenas extraídas para 37 idiomas; los borradores automáticos no están revisados. Tests de lógica/formulario/bundle y round-trip real con fuente local pasaron; viewport móvil 390 px sin overflow ni errores de consola. Volumen histórico 2.400/mes conservado; implementación autorizada después para completar las 300. No publicado; localización humana, build global y QA final pendientes."
+    },
+    {
+      "plan_id": "UV0997",
+      "slug": "akari-puzzle",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 1.900/mes. Puzzle global Akari seeded con iluminación/clues validados localmente; no afirma unicidad; 37 idiomas extraídos, traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0998",
+      "slug": "amazons-game",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 1.900/mes. Juego Amazons 10×10 para dos personas en el mismo dispositivo, con movimiento/flechas y detección de bloqueo; traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV0999",
+      "slug": "formal-proof-checker",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 1.900/mes. Checker proposicional local para una lista documentada de reglas por línea; no descarga supuestos ni busca pruebas. 37 idiomas extraídos; traducción y QA pendientes."
+    },
+    {
+      "plan_id": "UV1000",
+      "slug": "heyawake-puzzle",
+      "status": "implementation-in-progress",
+      "note": "Implementación iniciada por autorización posterior para completar las 300 pese a volumen histórico de 1.900/mes. Heyawake local seeded 6×6, salas 2×2, validador de adyacencia, pistas, conexión blanca y regla de líneas; no afirma unicidad. 37 idiomas extraídos; traducción y QA pendientes."
+    }
+  ],
+  "implementation_scope_authorized_by_user": "El 2026-10-19 el usuario indicó implementar las 300 candidatas del plan; las etiquetas y cifras de demanda originales se conservan y no se vuelven a atribuir como verificadas. La autorización de implementación no altera las mediciones ni garantiza que sean prioridad SEO. El 2026-10-19 el usuario ordenó continuar hasta implementar las 300 herramientas completas, lo que autoriza avanzar también en candidatas previamente clasificadas como reserva; se mantiene el registro de demanda original y no se reinterpretan sus métricas como aprobadas.",
+  "last_updated": "2026-10-20",
+  "controller_validation": {
+    "date": "2026-10-20",
+    "scope": "All tools currently marked implementation-in-progress, including adult ADHD screener, PHQ-9 and 3D mesh editor.",
+    "compiled": 507,
+    "static_controller_guard": "All 507 catalog controllers compiled in memory with esbuild and passed assertLocalController static guards; controller bundles total 7,052,606 bytes. Chemical name resolver controller is 4,022 bytes. No full site build or publication. 290 implementation candidates still lack approved 37-locale packs; automated drafts do not count as approval.",
+    "translation": "Korea net salary: 55 English source strings and 1,980 locale rows queued; 1,844 local draft rows, 34 needing placeholder review, 102 pending/checkpointed, 0 approved. M2M drafts cover 33 of 35 M2M locales; Gujarati, Norwegian Bokmål and Telugu remain pending. Chemical name resolver: 53 English source strings and 1,908 locale rows added to the local queue; all pending, no drafts or approvals. Neither tool’s machine drafts are in release packs.",
+    "publication": "not published",
+    "toolCount": 507,
+    "compiledAndStaticGuardPassed": 507,
+    "translationDraftsAwaitingReview": true,
+    "unpublished": true
+  },
+  "releaseConstraints": {
+    "additionalProviderCostUsd": 0,
+    "localeCount": 37,
+    "externalPaidApis": false,
+    "runtimeServerDependencies": false,
+    "freshnessPolicy": "official-source dates with expiry; disable stale estimates",
+    "toolCount": 507,
+    "compiledAndStaticGuardPassed": 506,
+    "translationDraftsAwaitingReview": true,
+    "implementationCount": 290
+  },
+  "controller_build": {
+    "date": "2026-10-20",
+    "catalogTools": 508,
+    "bundledTools": 508,
+    "totalBundleBytes": 7057438,
+    "staticControllerGuardRun": true,
+    "scope": "All 508 catalog controllers compiled in memory with esbuild and passed assertLocalController static guards; no full site build or publication."
+  },
+  "releaseReadinessCheck": {
+    "date": "2026-10-20",
+    "controllerBundles": {
+      "passed": true,
+      "catalogTools": 508,
+      "bundledTools": 508,
+      "totalBytes": 7057438,
+      "note": "IPA Transcriber added; per-controller bundle is 4,832 bytes."
+    },
+    "fullTestSuite": {
+      "passed": null,
+      "status": "not rerun after IPA Transcriber addition; prior 3,033-test pass predates this change",
+      "previousTests": 3033,
+      "previousFailed": 0
+    },
+    "growthCatalogAndBuildTests": {
+      "passed": null,
+      "status": "not rerun after IPA Transcriber addition; prior 85-test pass predates this change"
+    },
+    "baseLocaleReleaseCheck": {
+      "passed": true,
+      "locales": 20
+    },
+    "syntheticStaticBuildFixture": {
+      "passed": true,
+      "files": 18793,
+      "note": "Uses synthetic approved locale metadata; this is not the real release build."
+    },
+    "approvedTranslationPacks": {
+      "available": 0,
+      "requiredCataloguedCandidates": 291,
+      "requiredChromePacks": 1,
+      "requiredTotalPacks": 292,
+      "requiredLocales": 37,
+      "currentCataloguedCandidatePacks": 291,
+      "currentAuxiliaryPacks": 1,
+      "targetPackCountAfterAll300Candidates": 301,
+      "note": "Current build gate requires packs for catalogued candidates plus growth-tool-chrome. Nine candidate implementations/source-copy packets are absent; after all 300 candidates enter the catalog, the target becomes 301 packs."
+    },
+    "actualGrowthBuild": {
+      "status": "blocked",
+      "totalCandidates": 300,
+      "missingCandidateImplementations": 9,
+      "missingCandidateSlugs": [
+        "local-image-generator",
+        "plant-identifier",
+        "tls-site-checker",
+        "ptsd-questionnaire",
+        "bird-sound-identifier",
+        "perceived-stress-questionnaire",
+        "inheritance-shares-calculator",
+        "sheet-music-scanner",
+        "equation-photo-reader"
+      ],
+      "missingApprovedPacks": 292,
+      "requiresHumanReview": true,
+      "diagnostics": "Current preflight remains blocked by 9 missing candidate implementations and 292 unapproved translation packs across 37 locales; machine drafts are not approvals.",
+      "translationPackIssues": 292
+    },
+    "publish": "not attempted",
+    "requiredToolLocales": {
+      "total": 37,
+      "baseRouteLocales": 36,
+      "norwegianExtraRoute": "nb",
+      "sourceLocale": "en"
+    },
+    "translationPreparation": {
+      "candidateToolsWithEnglishCopy": 291,
+      "sourceStrings": 15432,
+      "draftRowsImportedAndPlaceholderChecked": 555804,
+      "draftRowsAcceptedByChecks": 550401,
+      "rowsNeedingPlaceholderReview": 2285,
+      "approvedRows": 0,
+      "missingNorwegianCandidatePages": 290,
+      "staleSources": 0,
+      "missingQueueKeys": 0,
+      "translationQueueTests": {
+        "passed": true,
+        "tests": 4,
+        "scope": "queue-level checks; does not approve translations"
+      },
+      "norwegianM2m100Batch": {
+        "status": "running-resumable",
+        "translatedDraftRows": 12644,
+        "pendingRows": 2672,
+        "rowsRunning": 128,
+        "needsReviewRows": 42,
+        "approvedRows": 0,
+        "batchSize": 128,
+        "threads": 4,
+        "note": "M2M100 local CPU job is resumable with committed SQLite batches. Output remains machine draft."
+      },
+      "newCandidateCopy": {
+        "tool": "ipa-transcriber",
+        "sourceStrings": 46,
+        "localeRows": 1656,
+        "translatedLocaleRows": 1611,
+        "pendingRows": 24,
+        "needsHumanReviewRows": 21,
+        "approvedRows": 0,
+        "m2mLocalesCompleted": 35,
+        "m2mLocalesRequired": 35,
+        "remainingLocales": [
+          "te"
+        ],
+        "reviewExport": ".translation-data/review-ipa-transcriber.csv",
+        "queueStatus": "machine drafts prepared; Telugu pending separate MADLAD pilot; human review required",
+        "releasePackIntegrated": false,
+        "validation": "hello/world lookup produced IPA from pinned CMUdict; controller bundle 4,832 bytes compiled and passed assertLocalController."
+      },
+      "queueSnapshot": {
+        "date": "2026-10-20",
+        "snapshotAtUtc": "2026-10-20T03:27:59Z",
+        "translatedDraftRows": 552016,
+        "needsReviewRows": 2315,
+        "pendingRows": 3037,
+        "runningRows": 128,
+        "approvedRows": 0,
+        "candidatePacketRows": 555552,
+        "auxiliaryPackRows": 252,
+        "excludedNonCandidateQueueRows": 1692,
+        "pendingLocales": {
+          "nb-NO": 2672,
+          "te": 127
+        },
+        "runningLocales": {
+          "nb-NO": 128
+        },
+        "note": "Consistent SQLite snapshot from the review-package export. Machine output remains unapproved; Telugu stays paused pending human review of the 16-row pilot."
+      },
+      "additionalCandidateCopy": {
+        "tool": "chemical-name-resolver",
+        "sourceStrings": 53,
+        "localeRows": 1908,
+        "translatedLocaleRows": 1883,
+        "pendingRows": 15,
+        "needsHumanReviewRows": 10,
+        "approvedRows": 0,
+        "queueStatus": "local M2M/MADLAD drafts; 15 pending Telugu rows remain after a 16-row pilot; human sample review required",
+        "releasePackIntegrated": false
+      },
+      "teluguPilot": {
+        "model": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094",
+        "license": "Apache-2.0",
+        "sourceStringsProcessed": 16,
+        "draftRows": 16,
+        "approvedRows": 0,
+        "maxObservedProcessMemoryApproxBytes": 3100000000,
+        "reviewExport": ".translation-data/review-telugu-pilot.csv",
+        "remainingPendingRows": 120,
+        "status": "pilot-complete; await human sample review before processing remaining rows",
+        "note": "16 Telugu machine drafts exported for review. The separate row where MADLAD was not used and the output exactly repeated the English source is marked needs-review. No human review or approval is claimed.",
+        "needsReviewRows": 63
+      },
+      "auxiliarySourceStrings": 7
+    }
+  },
+  "translationReviewPackages": {
+    "createdAtUtc": "2026-10-20T03:27:59Z",
+    "exporter": "scripts/localization/export-review-packages.py",
+    "groupBy": "candidate tool",
+    "output": ".translation-data/review-packets-by-tool/",
+    "manifest": ".translation-data/review-packets-by-tool/manifest.json",
+    "reviewGuide": ".translation-data/review-packets-by-tool/REVIEW-README.md",
+    "productLocales": 37,
+    "destinationLocalesPerPacket": 36,
+    "candidateTools": 300,
+    "availableCandidatePackets": 291,
+    "missingCandidateSourcePackets": [
+      "bird-sound-identifier",
+      "equation-photo-reader",
+      "inheritance-shares-calculator",
+      "local-image-generator",
+      "perceived-stress-questionnaire",
+      "plant-identifier",
+      "ptsd-questionnaire",
+      "sheet-music-scanner",
+      "tls-site-checker"
+    ],
+    "additionalQueuePrefixExcluded": [
+      "pert-estimator"
+    ],
+    "queueRows": 557496,
+    "sourceStrings": 15432,
+    "rowsInCandidatePackets": 555552,
+    "queueStatusCounts": {
+      "needs-review": 2315,
+      "pending": 3037,
+      "running": 128,
+      "translated": 552016
+    },
+    "humanApprovedRows": 0,
+    "chromeApiPackRequired": 1,
+    "note": "Each CSV groups one candidate across all 36 destination locales and carries source hashes and reviewer provenance. Machine drafts remain unapproved; export does not integrate release packs.",
+    "candidatePacketStatusCounts": {
+      "translated": 550401,
+      "needs-review": 2285,
+      "pending": 2738,
+      "running": 128
+    },
+    "excludedQueueRows": 1692,
+    "auxiliarySourceStrings": 7,
+    "rowsInRequiredReviewPackets": 555804,
+    "availableReviewPackets": 292,
+    "requiredAuxiliaryPacks": [
+      "growth-tool-chrome"
+    ],
+    "availableAuxiliaryPackets": [
+      "growth-tool-chrome"
+    ],
+    "missingAuxiliarySourcePackets": [],
+    "requiredPacketStatusCounts": {
+      "translated": 550401,
+      "needs-review": 2285,
+      "pending": 2990,
+      "running": 128
+    },
+    "auxiliaryPacketStatusCounts": {
+      "pending": 252
+    },
+    "targetTotalReviewPacketsAfterAllCandidates": 301,
+    "futureCandidatePacketsAfterImplementations": 9,
+    "auxiliaryPackageStatus": "growth-tool-chrome source extracted; its 252 locale rows remain machine drafts/pending translation.",
+    "humanReviewImportCommand": ".translation-env/bin/python scripts/localization/translation-queue.py review-import .translation-data/review-packets-by-tool/",
+    "humanReviewImportRule": "Directory import reads only CSV rows explicitly marked approved and verifies current source hash, protected-token signature, reviewer and ISO date."
+  },
+  "recentModelFeasibilityResearch": {
+    "date": "2026-10-20",
+    "birdSoundIdentifier": "Google Perch 2.0 has an official Apache-2.0 Kaggle release, but browser runtime, memory, calibration and local QA remain unverified.",
+    "equationPhotoReader": "Texo is browser-capable but AGPL-3.0 is its default license; the repository describes only a narrow separate LGPL authorization.",
+    "sheetMusicScanner": "A small MIT browser model exists for single staff lines in SATB choral scores only; it does not satisfy general score recognition.",
+    "primarySources": [
+      "https://www.kaggle.com/models/google/bird-vocalization-classifier/tensorFlow2/perch_v2",
+      "https://github.com/alephpi/Texo",
+      "https://github.com/alexanderalber/satb-line-omr"
+    ]
+  },
+  "placeholderTokenAudit": {
+    "date": "2026-10-20",
+    "issue": "The prior Unicode word boundary hid ASCII digits after non-Latin letters and could misclassify preserved placeholders.",
+    "fix": "The numeric placeholder boundary now treats ASCII identifier characters as word characters, independent of adjacent writing system.",
+    "machineDraftsReclassifiedAsTranslated": 288,
+    "machineDraftsFlaggedForHumanReviewAfterCorrection": 6,
+    "approvedRowsAdded": 0,
+    "humanReviewEventsAdded": 0,
+    "note": "Machine outputs remain drafts; corrected-boundary mismatches remain under review.",
+    "candidateRowsFlaggedForHumanReview": 2,
+    "excludedLegacyQueueRowsFlagged": 4
+  }
+}

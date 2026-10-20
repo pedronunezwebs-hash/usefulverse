@@ -20,7 +20,11 @@
     "aligned_above": 50,
     "aligned_near": 8,
     "approved_implementation": 0,
-    "note": "300 candidatas documentadas, NO 300 herramientas que cumplan el mínimo. Ninguna implementación aprobada sin fuentes, costes y verificación de independencia."
+    "note": "300 candidatas documentadas, NO 300 herramientas que cumplan el mínimo. Ninguna implementación aprobada sin fuentes, costes y verificación de independencia. Posteriormente, instrucciones directas del usuario autorizaron continuar implementación local de candidatas, incluidas las inferiores al suelo; el estado actual se lleva en implementation-progress.json. Las cifras de volumen originales no se elevan.",
+    "implementation_in_progress": 235,
+    "pending": 7,
+    "viability_pending": 0,
+    "demand_reserve": 58
   },
   "plan": [
     {
@@ -46,7 +50,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Prioridad por demanda; falta viabilidad",
+      "decision": "Prioridad por demanda; alternativa browser-only local encontrada; traducir solo pares disponibles",
       "rank": 1,
       "plan_id": "UV0701",
       "technical_source": "https://github.com/huggingface/transformers.js"
@@ -56,9 +60,9 @@
       "nombre": "Prueba de velocidad de Internet",
       "categoria": "Desarrollo",
       "consultas": "internet speed test|speed test|test velocidad",
-      "funcion": "Medir descarga, subida y latencia mediante un motor y endpoints documentados.",
-      "diferencia": "browser-frame-rate-test mide animación local; no la conexión de red.",
-      "requisito": "Motor abierto Cloudflare como candidato; confirmar condiciones del servicio, privacidad y ausencia de cobro antes de publicar.",
+      "funcion": "Estimar descarga, latencia y jitter al edge estático propio con transferencia por ejecución limitada a 1,5 MiB; no subir datos ni probar redes ajenas.",
+      "diferencia": "browser-frame-rate-test mide animación local; esta prueba mide la ruta del navegador al edge de UsefulVerse.",
+      "requisito": "Static Assets oficiales sin cargo por solicitudes ni almacenamiento; ejecución solo bajo demanda y consumo de datos visible.",
       "keyword": "speed test",
       "volume": 101000000,
       "source_file": "global-initial-screen.json",
@@ -68,16 +72,16 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/internet-speed-test/",
-      "execution": "Servicio/datos externos: condiciones y cuotas pendientes",
-      "maintenance": "Datos: revisar fuente, licencia y cadencia",
+      "execution": "Tres descargas estáticas same-origin de 512 KiB y cuatro RTT medidos; sin API externa, upload ni geolocalización.",
+      "maintenance": "El fichero de prueba se genera en el build; revisar el billing oficial de Static Assets cuando cambien las condiciones.",
       "effort": "L",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Prioridad por demanda; falta viabilidad",
+      "decision": "En implementación local; volumen medido 101.000.000/mes; función acotada a descarga y latencia",
       "rank": 2,
       "plan_id": "UV0702",
-      "technical_source": "https://github.com/cloudflare/speedtest"
+      "technical_source": "https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/ (consultado 19-oct-2026); solicitudes de Static Assets gratuitas e ilimitadas y almacenamiento sin coste adicional."
     },
     {
       "slug": "local-ai-chat",
@@ -96,16 +100,16 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/local-ai-chat/",
-      "execution": "Modelo local: licencia y rendimiento pendientes",
-      "maintenance": "Revisar motor, recursos y dependencias",
+      "execution": "WebLLM 0.2.86 + Qwen3-0.6B execute on the visitor device using WebGPU. Optional first download (~351 MB) from Hugging Face and a 6.36 MB WASM runtime from pinned GitHub. Browser QA produced a Spanish response; prompt is not sent to UsefulVerse.",
+      "maintenance": "Review pinned revisions, licenses, WebGPU/browser coverage, download size and multilingual quality each release. 56 source strings extracted for 37 locales; local machine drafts are not human approvals. Browser QA 2026-10-19; 37-locale review and final release gate remain outstanding.",
       "effort": "L",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Prioridad por demanda; falta viabilidad",
+      "decision": "Implementation in progress; feasibility validated on actual WebGPU browser. Small-model quality and supported-device coverage are limited and disclosed. Not ready for publication until human review of all 37 UI locales and release QA pass.",
       "rank": 3,
       "plan_id": "UV0703",
-      "technical_source": "https://github.com/huggingface/transformers.js"
+      "technical_source": "https://developer.chrome.com/docs/ai/prompt-api — Web Chrome 148, extensions Chrome 138; el modelo solo documenta en/ja/es/de/fr y exige equipos compatibles."
     },
     {
       "slug": "weather-dashboard",
@@ -214,7 +218,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Prioridad por demanda; falta viabilidad",
+      "decision": "Implementación local en curso; detecta solo cuatro patrones mecánicos y delega ortografía al navegador; no afirma analizar gramática; traducción y QA pendientes",
       "rank": 7,
       "plan_id": "UV0707",
       "technical_source": "https://dev.languagetool.org/public-http-api.html"
@@ -292,16 +296,16 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/germany-net-salary/",
-      "execution": "Cálculo/editor/juego local propuesto",
-      "maintenance": "Alta: normativa y tablas por ejercicio",
+      "execution": "Tarifa anual y contribuciones oficiales 2026, anualizadas para empleo regular",
+      "maintenance": "Actualizar cada ejercicio; revisar topes, tipos y fórmula de retención",
       "effort": "L",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Prioridad por demanda; falta viabilidad",
+      "decision": "Estimador local 2026 iniciado; 2.240.000/mes",
       "rank": 10,
       "plan_id": "UV0710",
-      "technical_source": "https://www.bmf-steuerrechner.de/index.xhtml"
+      "technical_source": "BMF §32a EStG 2026; límites oficiales de seguro social y tipos BMG/DRV 2026"
     },
     {
       "slug": "local-image-generator",
@@ -392,9 +396,9 @@
       "nombre": "Calidad del aire",
       "categoria": "Vida",
       "consultas": "air quality index|aqi|air quality near me",
-      "funcion": "Consultar medidas fechadas y comparar contaminantes e índices por norma seleccionada.",
-      "diferencia": "weather-dashboard pronostica meteorología; la calidad del aire requiere mediciones y estándares distintos.",
-      "requisito": "Datos con permiso comercial y cobertura, cuota y fecha verificables; no prometer datos donde no existen.",
+      "funcion": "Importar mediciones de calidad del aire desde un CSV local; agrupar por contaminante y unidad con promedio, rango, última lectura y fechas del archivo.",
+      "diferencia": "No consulta un feed en vivo ni calcula AQI; presenta datos que el visitante ya tiene, con sello de tiempo y unidad, en un panel local.",
+      "requisito": "CSV ≤100 KB con fecha ISO 8601 y zona horaria, contaminante, valor y unidad; indicar que la vigencia, procedencia y calibración dependen del archivo y su proveedor.",
       "keyword": "aqi",
       "volume": 1000000,
       "source_file": "global-extras.json",
@@ -404,13 +408,13 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/air-quality-dashboard/",
-      "execution": "Servicio/datos externos: condiciones y cuotas pendientes",
-      "maintenance": "Datos: revisar fuente, licencia y cadencia",
+      "execution": "CSV seleccionado por la persona; lectura, agrupación y tablas en navegador; sin API, geolocalización, servidor, almacenamiento ni carga de archivo.",
+      "maintenance": "La fecha se toma del CSV; no hay actualización en vivo. Revisar cuando se ofrezca una fuente primaria comercial, CORS y cuota verificables.",
       "effort": "L",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Prioridad por demanda; falta viabilidad",
+      "decision": "Implementación local autorizada tras no hallar una fuente global directa con coste y uso comercial verificables; CSV local sin datos inventados ni cálculo regulatorio.",
       "rank": 14,
       "plan_id": "UV0714",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -494,7 +498,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Prioridad por demanda; falta viabilidad",
+      "decision": "Python 3 + biblioteca estándar con Pyodide local; ~13 MiB iniciales, worker de 12 s, sin red, paquetes o ejecución de servidor; QA y localización pendientes",
       "rank": 17,
       "plan_id": "UV0717",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -504,9 +508,9 @@
       "nombre": "Radio por Internet",
       "categoria": "Vida",
       "consultas": "online radio|radio online|listen to radio",
-      "funcion": "Buscar emisoras públicas por idioma y país y reproducir el stream desde su fuente.",
+      "funcion": "Importar una lista M3U/M3U8 de emisoras y filtrarla localmente por nombre, código de país, idioma o etiqueta; reproducir el stream elegido.",
       "diferencia": "noise-generator sintetiza ruido; no sintoniza emisiones de terceros.",
-      "requisito": "Directorio permitido, derechos de cada emisión, HTTPS y compatibilidad de reproducción.",
+      "requisito": "Lista local ≤256 KiB y ≤500 entradas con metadatos declarados por el proveedor de la lista; solo URL HTTPS, sin verificación de derechos ni vigencia.",
       "keyword": "online radio",
       "volume": 823000,
       "source_file": "global-extras.json",
@@ -516,13 +520,13 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/open-radio-player/",
-      "execution": "Servicio/datos externos: condiciones y cuotas pendientes",
-      "maintenance": "Datos: revisar fuente, licencia y cadencia",
+      "execution": "Parseo y filtros en navegador; reproducción directa solo tras pulsar Play; sin API, DNS público, analítica, proxy, servidor, carga de playlist o almacenamiento",
+      "maintenance": "La actualidad depende del archivo M3U/M3U8 que aporta la persona; no hay actualización automática",
       "effort": "L",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Prioridad por demanda; falta viabilidad",
+      "decision": "Implementación local autorizada como reproductor de listas M3U/M3U8 aportadas por la persona; no ofrece buscador de directorio",
       "rank": 18,
       "plan_id": "UV0718",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -532,9 +536,9 @@
       "nombre": "Dirección de la qibla",
       "categoria": "Vida",
       "consultas": "qibla direction|qibla compass|القبلة",
-      "funcion": "Calcular rumbo a la Kaaba, mostrar referencia al norte y mapa o brújula opcional.",
+      "funcion": "Calcular rumbo inicial de gran círculo y distancia aproximada a la Kaaba con coordenadas manuales; mostrar la dirección desde el norte verdadero.",
       "diferencia": "prayer-times-calculator calcula horarios; no orienta espacialmente el dispositivo.",
-      "requisito": "Cálculo local; ubicación manual y límites del magnetómetro visibles.",
+      "requisito": "Cálculo local; no solicita geolocalización ni usa magnetómetro/mapa. Rumbo indefinido en la Kaaba y su antípoda.",
       "keyword": "qibla direction",
       "volume": 823000,
       "source_file": "discovery-creative-learning.json",
@@ -544,13 +548,13 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/qibla-compass/",
-      "execution": "Cálculo/editor/juego local propuesto",
-      "maintenance": "Revisar motor, recursos y dependencias",
+      "execution": "Cálculo en el navegador con coordenadas ingresadas; no envía datos",
+      "maintenance": "Constantes geográficas estáticas; revisar si se corrigen o publican coordenadas oficiales más precisas",
       "effort": "M",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Prioridad por demanda; falta viabilidad",
+      "decision": "Implementación local verificada; falta traducción revisada en 37 idiomas",
       "rank": 19,
       "plan_id": "UV0719",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -613,12 +617,12 @@
     },
     {
       "slug": "indian-rummy",
-      "nombre": "Rummy indio",
+      "nombre": "Rummy indio de práctica",
       "categoria": "Juegos",
       "consultas": "rummy|indian rummy|rummy game",
-      "funcion": "Jugar rummy de 13 cartas contra bots con secuencias puras y declaración válida.",
-      "diferencia": "gin-rummy y canasta tienen reglas distintas de reparto, validación y puntuación.",
-      "requisito": "Reglas explicadas; sin apuestas ni premios, y keyword específica preferible a término mixto.",
+      "funcion": "Jugar una partida local de rummy indio de 13 cartas contra un bot básico; robar, descartar y validar declaraciones.",
+      "diferencia": "Gin rummy y canasta usan reglas y tamaños de mano distintos.",
+      "requisito": "Práctica sin apuestas ni dinero, dos secuencias y una recta pura; documentar que la intención de la consulta broad no se auditó.",
       "keyword": "rummy",
       "volume": 673000,
       "source_file": "global-initial-screen.json",
@@ -628,25 +632,25 @@
       "intent": "Mixta: verificar SERP",
       "intent_note": "Rummy general incluye casinos y otras variantes; demanda específica menor.",
       "url": "https://tools.usefulverse.com/tools/indian-rummy/",
-      "execution": "Cálculo/editor/juego local propuesto",
-      "maintenance": "Revisar motor, recursos y dependencias",
+      "execution": "Juego local de 13 cartas contra bot básico; sin dinero, red ni puntuación",
+      "maintenance": "Revisar variante, estados y calidad del bot; mantener exclusión de mecánicas de apuesta",
       "effort": "M",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Revisar intención antes de priorizar",
+      "decision": "Implementación local iniciada; 673.000/mes; intención SERP amplia no revisada",
       "rank": 22,
       "plan_id": "UV0722",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "Reglas Paplu descritas en Pagat; fuente de referencia enlazada en la herramienta"
     },
     {
       "slug": "pool-game",
       "nombre": "Billar de ocho bolas",
       "categoria": "Juegos",
       "consultas": "8 ball pool|billiards game|pool game",
-      "funcion": "Jugar una partida de billar con física, grupos de bolas y faltas.",
+      "funcion": "Práctica local de 8-ball para dos personas: tiro, física aproximada, grupos, turnos y faltas básicas; reglas de apertura simplificadas.",
       "diferencia": "mini-golf-game tiene recorrido y golpes distintos; no hay mesa de billar.",
-      "requisito": "Arte propio; distinguir consulta genérica de marca de aplicación.",
+      "requisito": "Arte propio; revisar la variante con el reglamento WPA vigente, distinguir consulta genérica de marca de aplicación y traducir a los 37 idiomas antes de publicar.",
       "keyword": "8 ball pool",
       "volume": 673000,
       "source_file": "global-candidates.json",
@@ -662,10 +666,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Revisar intención antes de priorizar",
+      "decision": "Implementación con perfil de reglas simplificado; falta comprobar intención genérica",
       "rank": 23,
       "plan_id": "UV0723",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://wpapool.com/rules/ (reglamento vigente; la interfaz declara reglas simplificadas)"
     },
     {
       "slug": "pronunciation-dictionary",
@@ -809,12 +813,12 @@
     },
     {
       "slug": "panchang-calendar",
-      "nombre": "Panchang diario",
+      "nombre": "Calculadora Panchang aproximada",
       "categoria": "Vida",
       "consultas": "panchang aaj ka|panchang|आज का पंचांग",
-      "funcion": "Calcular tithi, nakshatra, yoga, karana y día solar para fecha, ubicación y convención elegidas.",
-      "diferencia": "printable-calendar-maker no calcula estos elementos astronómicos; no es otra traducción del calendario mensual.",
-      "requisito": "Efemérides abiertas y convención regional explícita, sin afirmar predicciones científicas.",
+      "funcion": "Calcular sunrise local y snapshot aproximado de tithi/paksha, nakshatra, yoga y karana para fecha y coordenadas.",
+      "diferencia": "No es un convertidor de fechas ni un calendario gregoriano; calcula componentes de un Panchang.",
+      "requisito": "Zona horaria y coordenadas; convenciones y aproximaciones declaradas, sin fiestas ni muhurta.",
       "keyword": "panchang aaj ka",
       "volume": 550000,
       "source_file": "global-final-screen.json",
@@ -824,16 +828,16 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/panchang-calendar/",
-      "execution": "Cálculo/editor/juego local propuesto",
-      "maintenance": "Revisar motor, recursos y dependencias",
+      "execution": "Astronomy Engine embebido; sin API, geolocalización o datos remotos",
+      "maintenance": "Revisar marco sidéreo, sunrise y diferencias entre calendarios regionales; contrastar con IMD",
       "effort": "M",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Prioridad por demanda; falta viabilidad",
+      "decision": "Implementación astronómica local iniciada; 550.000/mes",
       "rank": 29,
       "plan_id": "UV0729",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "IMD Rashtriya Panchanga publica elementos astronómicos de Panchang; Astronomy Engine MIT para posiciones solares/lunares"
     },
     {
       "slug": "photo-background-changer",
@@ -858,7 +862,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Prioridad por demanda; falta viabilidad",
+      "decision": "Composición local de retrato humano con MODNet Apache-2.0 fijado; fondos de color/imagen/transparencia; ~21 MB iniciales. QA y localización pendientes",
       "rank": 30,
       "plan_id": "UV0730",
       "technical_source": "https://github.com/huggingface/transformers.js"
@@ -893,12 +897,12 @@
     },
     {
       "slug": "video-editor",
-      "nombre": "Editor de vídeo por pistas",
+      "nombre": "Editor de vídeo corto",
       "categoria": "Creatividad",
       "consultas": "video editor|editor de video|montage video",
-      "funcion": "Montar varios clips con pistas de audio, títulos, cortes y exportación.",
-      "diferencia": "media-converter convierte y recorta un clip; no monta una línea de tiempo multipista.",
-      "requisito": "WebCodecs o WASM local, formatos y límites de memoria explícitos.",
+      "funcion": "Unir y reordenar hasta tres clips locales, recortar puntos de entrada/salida, superponer título simple y exportar WebM con audio de origen.",
+      "diferencia": "media-converter procesa un archivo; esta herramienta monta una secuencia ordenable de varios clips.",
+      "requisito": "Límites estrictos de memoria/duración y codecs compatibles; salida WebM local.",
       "keyword": "video editor",
       "volume": 550000,
       "source_file": "global-initial-screen.json",
@@ -908,16 +912,16 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/video-editor/",
-      "execution": "Cálculo/editor/juego local propuesto",
-      "maintenance": "Revisar motor, recursos y dependencias",
+      "execution": "Canvas/MediaRecorder en el navegador; hasta tres clips, título y audio original",
+      "maintenance": "Mantener límites; revisión de códecs, duración, consumo de memoria y soporte por navegador",
       "effort": "M",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Prioridad por demanda; falta viabilidad",
+      "decision": "Editor local iniciado; 550.000/mes",
       "rank": 32,
       "plan_id": "UV0732",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "MediaRecorder y Canvas locales; no requiere datos externos ni API"
     },
     {
       "slug": "adult-adhd-screener",
@@ -936,16 +940,16 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/adult-adhd-screener/",
-      "execution": "Cálculo/editor/juego local propuesto",
-      "maintenance": "Revisar motor, recursos y dependencias",
+      "execution": "ASRS v1.1 6Q, puntaje local del método alternativo publicado 2024, enlace a versiones oficiales.",
+      "maintenance": "Comprobar la página de instrumento y el scoring al menos semestralmente; usar sólo versiones lingüísticas publicadas oficialmente. Próxima revisión: 2027-04-19.",
       "effort": "L",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Prioridad por demanda; falta viabilidad",
+      "decision": "Implementación iniciada por autorización posterior del usuario; conserva las métricas históricas.",
       "rank": 33,
       "plan_id": "UV0733",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "Harvard Medical School ASRS v1.1 6Q usage/scoring page and official February 2024 scoring update."
     },
     {
       "slug": "brazil-termination-calculator",
@@ -970,7 +974,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Prioridad por demanda; falta viabilidad",
+      "decision": "Implementación local iniciada; demanda medida 450.000/mes",
       "rank": 34,
       "plan_id": "UV0734",
       "technical_source": "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/acoes-e-programas/programas-projetos-acoes-obras-e-atividades/proteja/duvidas-frequentes"
@@ -1369,12 +1373,12 @@
     },
     {
       "slug": "ip-geolocation-lookup",
-      "nombre": "Consulta de IP y ASN",
+      "nombre": "Consulta de IP y red por registro",
       "categoria": "Desarrollo",
       "consultas": "ip lookup|ip location|what is my ip",
-      "funcion": "Consultar ASN, red y localización aproximada de una IP con fecha del conjunto.",
-      "diferencia": "subnet-calculator calcula máscaras; no aporta datos de asignación o geolocalización.",
-      "requisito": "Base abierta y redistribuible o endpoint permitido; ubicación aproximada.",
+      "funcion": "Consultar el rango de red y los campos de registro publicados para una IP IPv4 o IPv6.",
+      "diferencia": "subnet-calculator calcula máscaras; esta consulta resuelve el registro público del bloque asignado.",
+      "requisito": "Bootstrap IANA RDAP y servidor de registro regional; país es del registro, no geolocalización de personas.",
       "keyword": "ip lookup",
       "volume": 368000,
       "source_file": "global-initial-screen.json",
@@ -1384,16 +1388,16 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/ip-geolocation-lookup/",
-      "execution": "Servicio/datos externos: condiciones y cuotas pendientes",
-      "maintenance": "Datos: revisar fuente, licencia y cadencia",
+      "execution": "Consulta directa y puntual a los registros RDAP oficiales; sin API de pago ni backend.",
+      "maintenance": "El bootstrap IANA se lee en cada sesión de búsqueda; los registros regionales pueden limitar o bloquear CORS.",
       "effort": "L",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Prioridad por demanda; falta viabilidad",
+      "decision": "En implementación local; volumen medido 368.000/mes, alcance de registro RDAP declarado",
       "rank": 49,
       "plan_id": "UV0749",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "IANA RDAP bootstrap IPv4/IPv6 y RFC 9224; consulta manual CORS del 19-oct-2026."
     },
     {
       "slug": "mahjong-four-player",
@@ -1412,16 +1416,16 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/mahjong-four-player/",
-      "execution": "Cálculo/editor/juego local propuesto",
-      "maintenance": "Revisar motor, recursos y dependencias",
+      "execution": "Partida local para cuatro asientos: repartir, robar, descartar y validar mano estándar",
+      "maintenance": "Traducción revisada y QA; valorar reglas completas por variante antes de ampliar",
       "effort": "M",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Prioridad por demanda; falta viabilidad",
+      "decision": "Implementación local iniciada; 368.000/mes; variante cerrada de práctica",
       "rank": 50,
       "plan_id": "UV0750",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "Reglas básicas implementadas localmente; variante y exclusiones declaradas"
     },
     {
       "slug": "public-transit-planner",
@@ -1446,7 +1450,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Revisar intención antes de priorizar",
+      "decision": "Implementación iniciada con feeds GTFS aportados por usuario; sin backend ni cuota",
       "rank": 51,
       "plan_id": "UV0751",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -1468,16 +1472,16 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/shogi/",
-      "execution": "Cálculo/editor/juego local propuesto",
-      "maintenance": "Revisar motor, recursos y dependencias",
+      "execution": "Motor local Shogi con promoción, capturas/drop, bot heurístico o modo local de dos personas y exportación SFEN.",
+      "maintenance": "Baja: reglas locales, sin red; se excluyen repetición/perpetual check y arbitraje de torneo.",
       "effort": "M",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Prioridad por demanda; falta viabilidad",
+      "decision": "En implementación; volumen conservado 368.000/mes, consulta alineada ≥300.000",
       "rank": 52,
       "plan_id": "UV0752",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.shogi.or.jp/knowledge/shogi/03.php; https://www.shogi.or.jp/knowledge/shogi/05.php"
     },
     {
       "slug": "soccer-penalty-game",
@@ -1586,7 +1590,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Prioridad por demanda; falta viabilidad",
+      "decision": "Quiz de 27 preguntas originales, local y no validado; no reproduce una escala de terceros. QA y localización pendientes",
       "rank": 56,
       "plan_id": "UV0756",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -1636,16 +1640,16 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/phq9-questionnaire/",
-      "execution": "Cálculo/editor/juego local propuesto",
-      "maintenance": "Revisar motor, recursos y dependencias",
+      "execution": "Cuestionario PHQ-9 oficial, puntuación local y orientación de seguridad; sin servicio remoto ni almacenamiento.",
+      "maintenance": "Revisar la página oficial/manual semestralmente; traducciones de ítems sólo desde versiones oficiales validadas. Revisión siguiente: 2027-04-19.",
       "effort": "L",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "≥300.000",
-      "decision": "Prioridad por demanda; falta viabilidad",
+      "decision": "Implementación iniciada por autorización del usuario para completar las 300; conserva los datos históricos de demanda.",
       "rank": 58,
       "plan_id": "UV0758",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "PHQ Screeners permission statement and PHQ/GAD instruction manual. Scoring bands and 9-item 0-27 scale verified from official manual."
     },
     {
       "slug": "rock-paper-scissors",
@@ -1978,7 +1982,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 201.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 70,
       "plan_id": "UV0770",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2006,7 +2010,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 201.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 71,
       "plan_id": "UV0771",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2034,7 +2038,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 201.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 72,
       "plan_id": "UV0772",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2062,7 +2066,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 201.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 73,
       "plan_id": "UV0773",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2090,7 +2094,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 201.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 74,
       "plan_id": "UV0774",
       "technical_source": "https://github.com/huggingface/transformers.js"
@@ -2118,10 +2122,11 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local autorizada por instrucción posterior; volumen medido 74.000/mes, inferior a 240.000",
       "rank": 75,
       "plan_id": "UV0775",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.caf.fr/professionnels/offres-et-services/accompagnement-des-allocataires/bareme-aides-au-logement",
+      "original_decision": "Reserva: NO cumple demanda autorizada"
     },
     {
       "slug": "online-paint",
@@ -2146,7 +2151,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 201.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 76,
       "plan_id": "UV0776",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2174,7 +2179,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 201.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 77,
       "plan_id": "UV0777",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2202,7 +2207,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 201.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 78,
       "plan_id": "UV0778",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2230,7 +2235,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 201.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 79,
       "plan_id": "UV0779",
       "technical_source": "https://www.gov.uk/government/collections/rates-and-allowances-hm-revenue-and-customs"
@@ -2258,7 +2263,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 201.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 80,
       "plan_id": "UV0780",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2286,7 +2291,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 165.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 81,
       "plan_id": "UV0781",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2314,7 +2319,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Incluida por instrucción posterior de completar las 300; volumen inferior al suelo inicial",
       "rank": 82,
       "plan_id": "UV0782",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2342,7 +2347,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 165.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 83,
       "plan_id": "UV0783",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2370,7 +2375,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 165.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 84,
       "plan_id": "UV0784",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2398,7 +2403,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Incluida por instrucción posterior de completar las 300; volumen inferior al suelo inicial",
       "rank": 85,
       "plan_id": "UV0785",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2426,7 +2431,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 165.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 86,
       "plan_id": "UV0786",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2454,7 +2459,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 165.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 87,
       "plan_id": "UV0787",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2482,7 +2487,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 165.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 88,
       "plan_id": "UV0788",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2510,7 +2515,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 135.000/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 89,
       "plan_id": "UV0789",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2538,7 +2543,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 135.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 90,
       "plan_id": "UV0790",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2566,7 +2571,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 135.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 91,
       "plan_id": "UV0791",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2594,10 +2599,11 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso con relleno de color limitado; conflicto de volúmenes 135.000/74.000 pendiente de reconciliar",
       "rank": 92,
       "plan_id": "UV0792",
-      "technical_source": "https://github.com/huggingface/transformers.js"
+      "technical_source": "No external model or service; local color inpainting implementation.",
+      "original_decision": "Reserva: NO cumple demanda autorizada"
     },
     {
       "slug": "photosphere-viewer",
@@ -2622,7 +2628,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Incluida por instrucción posterior de completar las 300; volumen inferior al suelo inicial",
       "rank": 93,
       "plan_id": "UV0793",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2650,7 +2656,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 135.000/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 94,
       "plan_id": "UV0794",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2678,7 +2684,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Incluida por instrucción posterior de completar las 300; volumen inferior al suelo inicial",
       "rank": 95,
       "plan_id": "UV0795",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2706,7 +2712,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 135.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 96,
       "plan_id": "UV0796",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2716,9 +2722,9 @@
       "nombre": "Décimo tercero de Brasil",
       "categoria": "Finanzas",
       "consultas": "calculadora décimo terceiro|calculo decimo terceiro|13 salario calculadora",
-      "funcion": "Calcular devengo, cuotas y deducciones del décimo tercero brasileño.",
-      "diferencia": "No existe devengo y retención específica del décimo tercero.",
-      "requisito": "Meses elegibles y tablas oficiales de contribución e impuesto.",
+      "funcion": "Calcular el bruto según remuneración mensual y meses elegibles confirmados; restar anticipos e importes de retención que introduzca la persona, sin calcular impuestos.",
+      "diferencia": "Calculadora brasileña del 13º salario con cálculo de bruto y saldo; no determina retenciones ni derecho.",
+      "requisito": "Leyes 4.090/1962 y 4.749/1965; guía oficial del Ministerio del Trabajo; contador de meses elegido por la persona.",
       "keyword": "calculadora décimo terceiro",
       "volume": 110000,
       "source_file": "global-candidates.json",
@@ -2728,25 +2734,26 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/brazil-thirteenth-salary/",
-      "execution": "Cálculo/editor/juego local propuesto",
-      "maintenance": "Alta: normativa y tablas por ejercicio",
+      "execution": "Cálculo local por fórmula legal básica; fuente oficial visible; sin API ni coste variable.",
+      "maintenance": "Revisar cambios normativos; sin tablas anuales de retención.",
       "effort": "L",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Incorporada por instrucción expresa; volumen real de 110.000, inferior al suelo inicial",
       "rank": 97,
       "plan_id": "UV0797",
-      "technical_source": "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/acoes-e-programas/programas-projetos-acoes-obras-e-atividades/proteja/duvidas-frequentes"
+      "technical_source": "https://www.planalto.gov.br/ccivil_03/leis/l4090.htm",
+      "supporting_source": "https://www.planalto.gov.br/ccivil_03/leis/l4749.htm"
     },
     {
       "slug": "darts-scoreboard",
       "nombre": "Marcador de dardos",
       "categoria": "Juegos",
       "consultas": "darts scorer|darts score calculator|marcador dardos",
-      "funcion": "Anotar lanzamientos reales, gestionar 301/501 y sugerir cierres legales.",
-      "diferencia": "No es un juego de azar ni random-number-generator; registra una partida física.",
-      "requisito": "Una URL con variantes de puntuación; sin resultados deportivos en directo.",
+      "funcion": "Marcador 301/501 para 1–4 personas; valida notación de hasta tres dardos, aplica bust/doble salida, propone hasta cinco rutas de cierre legales y permite deshacer.",
+      "diferencia": "Registra la puntuación de una partida física y propone un checkout; no simula tablero, no busca resultados deportivos.",
+      "requisito": "Reglas DRA y WDF; 501 doble salida; rutas locales verificables.",
       "keyword": "darts scorer",
       "volume": 110000,
       "source_file": "global-candidates.json",
@@ -2756,16 +2763,17 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/darts-scoreboard/",
-      "execution": "Cálculo/editor/juego local propuesto",
-      "maintenance": "Revisar motor, recursos y dependencias",
+      "execution": "Marcador local; valida lanzamientos introducidos, sin red, apuestas o persistencia.",
+      "maintenance": "Revisar reglas oficiales si cambia el formato",
       "effort": "M",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Autorizada previamente; implementación completada en worktree pese a volumen inferior",
       "rank": 98,
       "plan_id": "UV0798",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.pdc.tv/sites/default/files/2020-08/DRA-Rules.pdf",
+      "supporting_source": "https://dartswdf.com/rules/"
     },
     {
       "slug": "lines-of-action",
@@ -2790,7 +2798,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 110.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 99,
       "plan_id": "UV0799",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2818,7 +2826,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 110.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 100,
       "plan_id": "UV0800",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2846,7 +2854,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 110.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 101,
       "plan_id": "UV0801",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2874,7 +2882,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada como análisis local de serie de alturas aportada por la persona; no ofrece predicción ni estación. Demanda original 110.000/mes conservada (<240.000). Traducción/QA pendientes.",
       "rank": 102,
       "plan_id": "UV0802",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2902,7 +2910,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada como rastreador de fechas e intervalos indicados por profesional; no recomienda calendario. Demanda 110.000/mes conservada (<240.000). Traducción/QA pendientes.",
       "rank": 103,
       "plan_id": "UV0803",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2930,7 +2938,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada con alcance reducido: conjugador de presente regular para seis idiomas; demanda 110.000/mes conservada (<240.000). Traducción y QA pendientes.",
       "rank": 104,
       "plan_id": "UV0804",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2958,7 +2966,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 110.000/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 105,
       "plan_id": "UV0805",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -2986,7 +2994,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada como cálculo bruto con salario fijo aportado y adicional de 1/3; demanda 90.500/mes conservada (<240.000). Traducción/QA pendientes.",
       "rank": 106,
       "plan_id": "UV0806",
       "technical_source": "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/acoes-e-programas/programas-projetos-acoes-obras-e-atividades/proteja/duvidas-frequentes"
@@ -3014,7 +3022,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 90.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 107,
       "plan_id": "UV0807",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3042,7 +3050,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 90.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 108,
       "plan_id": "UV0808",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3070,7 +3078,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 90.500/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 109,
       "plan_id": "UV0809",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3098,7 +3106,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 90.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 110,
       "plan_id": "UV0810",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3108,7 +3116,7 @@
       "nombre": "Renta y residencia fiscal de Japón",
       "categoria": "Finanzas",
       "consultas": "所得税 計算|住民税 計算|japan income tax calculator",
-      "funcion": "Estimar impuesto de renta y residencia con deducciones y año declarado.",
+      "funcion": "Estimar impuesto nacional japonés para ingreso imponible anual 2026 ya calculado, aplicando el baremo progresivo NTA y surtax de reconstrucción.",
       "diferencia": "No existe cálculo fiscal japonés; no inferir residencia desde interfaz japonesa.",
       "requisito": "Fuentes oficiales y diferencias municipales declaradas.",
       "keyword": "所得税 計算",
@@ -3126,10 +3134,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local autorizada por instrucción posterior; alcance reducido a impuesto nacional sobre ingreso agregado 2026; volumen 90.500/mes (<240.000) conservado.",
       "rank": 111,
       "plan_id": "UV0811",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2260.htm (NTA, ley vigente al 2026-04-01); https://www.nta.go.jp/publication/pamph/koho/kurashi/html/02_1.htm"
     },
     {
       "slug": "pinochle",
@@ -3154,7 +3162,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 90.500/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 112,
       "plan_id": "UV0812",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3182,7 +3190,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación iniciada por autorización posterior; volumen histórico conservado",
       "rank": 113,
       "plan_id": "UV0813",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3192,9 +3200,9 @@
       "nombre": "Puzzle de bloques",
       "categoria": "Juegos",
       "consultas": "block puzzle|block blast puzzle|juego de bloques",
-      "funcion": "Colocar piezas en una cuadrícula y completar líneas con un diseño original.",
-      "diferencia": "brick-breaker-game es de pelota; 2048 fusiona números y no coloca piezas.",
-      "requisito": "Excluir marcas como keyword calificable; reglas y arte propios.",
+      "funcion": "Juego original local de colocar piezas de 1–4 celdas en una cuadrícula 10×10, rotarlas y limpiar filas o columnas.",
+      "diferencia": "No rompe ladrillos con pelota; no fusiona valores. El visitante coloca piezas en un tablero y limpia líneas completas.",
+      "requisito": "Piezas originales, colocación válida, rotación, limpieza simultánea de filas/columnas y reglas de puntuación visibles.",
       "keyword": "block puzzle",
       "volume": 74000,
       "source_file": "global-candidates.json",
@@ -3204,13 +3212,13 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/block-puzzle/",
-      "execution": "Cálculo/editor/juego local propuesto",
-      "maintenance": "Revisar motor, recursos y dependencias",
+      "execution": "Juego estático local en navegador; sin API, red ni coste variable.",
+      "maintenance": "Baja: motor local sin datos externos",
       "effort": "M",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local autorizada; volumen medido 74.000/mes, inferior a 240.000",
       "rank": 114,
       "plan_id": "UV0814",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3238,7 +3246,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 74.000/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 115,
       "plan_id": "UV0815",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3248,7 +3256,7 @@
       "nombre": "Impuesto sobre la renta de Francia",
       "categoria": "Finanzas",
       "consultas": "simulateur impot revenu|calcul impot revenu|simulateur impots",
-      "funcion": "Estimar impuesto con quotient familial, partes, décote y límites del ejercicio.",
+      "funcion": "Estimar impuesto bruto progresivo sobre revenu net imposable por una parte fiscal para ingresos 2025 gravados en 2026.",
       "diferencia": "tax-calculator no incorpora cociente familiar ni reglas francesas.",
       "requisito": "Fuentes fiscales oficiales y supuestos de declaración explícitos.",
       "keyword": "simulateur impots",
@@ -3266,10 +3274,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local autorizada por instrucción posterior; alcance reducido a una parte fiscal e impuesto bruto según baremo oficial 2025; volumen 74.000/mes (<240.000) conservado.",
       "rank": 116,
       "plan_id": "UV0816",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://bofip.impots.gouv.fr/bofip/2491-PGP.html/identifiant%3DBOI-IR-LIQ-20-10-20260407; guía: https://www.impots.gouv.fr/particulier/questions/comment-calculer-mon-taux-dimposition-dapres-le-bareme-progressif-de-limpot"
     },
     {
       "slug": "hearing-self-check",
@@ -3294,7 +3302,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada por el propietario para completar 300; volumen medido conservado; función local sin coste de proveedor.",
       "rank": 117,
       "plan_id": "UV0817",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3322,10 +3330,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Promovida por instrucción explícita del propietario pese a 74.000/mes (<240.000). Estimación 2026 mensual limitada a Portugal continental, Tabla I sin dependientes + SS del trabajador; 37 idiomas/QA pendientes.",
       "rank": 118,
       "plan_id": "UV0818",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://info.portaldasfinancas.gov.pt/pt/atualidades/legislativa/Paginas/Despacho-233-A-2026.aspx"
     },
     {
       "slug": "space-shooter",
@@ -3334,7 +3342,7 @@
       "consultas": "space shooter|space games|juegos de naves",
       "funcion": "Pilotar, esquivar y disparar en oleadas originales con progresión local.",
       "diferencia": "aim-trainer mide puntería en blancos; no es una partida de combate espacial.",
-      "requisito": "Arte y sonido propios; sin referencia a franquicias.",
+      "requisito": "Arte propio sin sonido; sin referencia a franquicias.",
       "keyword": "space games",
       "volume": 74000,
       "source_file": "global-candidates.json",
@@ -3344,16 +3352,16 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/space-shooter/",
-      "execution": "Cálculo/editor/juego local propuesto",
-      "maintenance": "Revisar motor, recursos y dependencias",
+      "execution": "Juego arcade local en canvas y controles de teclado/táctiles; sin API, red ni coste variable.",
+      "maintenance": "Baja: motor y gráficos locales, sin datos externos.",
       "effort": "M",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 74.000/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 119,
       "plan_id": "UV0819",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "Mecánica original; no requiere fuente de datos externa."
     },
     {
       "slug": "tls-site-checker",
@@ -3378,7 +3386,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 74.000/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 120,
       "plan_id": "UV0820",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3390,7 +3398,7 @@
       "consultas": "tower defense|tower defense games|juegos defender torres",
       "funcion": "Colocar defensas, administrar recursos y frenar oleadas en mapas propios.",
       "diferencia": "No hay juego estratégico de oleadas y colocación.",
-      "requisito": "Mapas y gráficos originales; sin compras o servidores.",
+      "requisito": "Mapa, gráficos y reglas propios; sin compras, red o franquicias.",
       "keyword": "tower defense",
       "volume": 74000,
       "source_file": "global-candidates.json",
@@ -3400,16 +3408,16 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/tower-defense/",
-      "execution": "Cálculo/editor/juego local propuesto",
-      "maintenance": "Revisar motor, recursos y dependencias",
+      "execution": "Juego original local de diez oleadas con dos tipos de torres; sin API, red ni coste variable.",
+      "maintenance": "Baja: reglas y gráficos originales en navegador; no consume datos externos.",
       "effort": "M",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 74.000/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 121,
       "plan_id": "UV0821",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "Reglas originales; no requiere fuente de datos externa."
     },
     {
       "slug": "virtual-drum-kit",
@@ -3418,7 +3426,7 @@
       "consultas": "virtual drums|drum kit online|bateria virtual",
       "funcion": "Tocar una batería con teclado o tacto, grabar golpes y exportar patrón.",
       "diferencia": "drum-machine programa pasos; aquí se interpreta en tiempo real.",
-      "requisito": "Muestras propias o abiertas y latencia indicada como dependiente del dispositivo.",
+      "requisito": "Sonidos sintetizados localmente; latencia informada como dependiente del dispositivo.",
       "keyword": "virtual drums",
       "volume": 74000,
       "source_file": "global-initial-screen.json",
@@ -3428,16 +3436,16 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/virtual-drum-kit/",
-      "execution": "Cálculo/editor/juego local propuesto",
-      "maintenance": "Revisar motor, recursos y dependencias",
+      "execution": "Batería virtual de audio sintetizado con Web Audio local, grabación temporal y descarga JSON; sin muestras, API, red ni coste variable.",
+      "maintenance": "Baja: motor y sonidos sintetizados localmente; comprobar variación de latencia por navegador/dispositivo.",
       "effort": "M",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 74.000/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 122,
       "plan_id": "UV0822",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "Síntesis original; no requiere fuente de datos ni muestras externas."
     },
     {
       "slug": "customer-journey-map",
@@ -3462,7 +3470,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 60.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 123,
       "plan_id": "UV0823",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3490,10 +3498,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Promovida por instrucción explícita del propietario pese a 60.500/mes (<240.000). Estimación local desde base diaria ALG I ya calculada, 60%/67%; no elegibilidad; 37 idiomas/QA pendientes.",
       "rank": 124,
       "plan_id": "UV0824",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.arbeitsagentur.de/finanzielle-hilfen/anspruch-hoehe-dauer-arbeitslosengeld"
     },
     {
       "slug": "online-whiteboard",
@@ -3518,7 +3526,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 60.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 125,
       "plan_id": "UV0825",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3546,7 +3554,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 60.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 126,
       "plan_id": "UV0826",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3574,7 +3582,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 60.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 127,
       "plan_id": "UV0827",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3602,7 +3610,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 60.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 128,
       "plan_id": "UV0828",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3620,7 +3628,7 @@
       "source_file": "global-candidates.json",
       "task_id": "10181909-1949-0367-0000-d6f424f63198",
       "period": "2025-10 / 2026-09",
-      "scope": "Global · Google · sin filtro de idioma · sin socios",
+      "scope": "Estimación local de indemnización estatutaria bruta para relaciones laborales iniciadas desde 12-02-2012; no calcula finiquito completo.",
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/spain-termination-pay/",
@@ -3630,10 +3638,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Promovida por instrucción explícita del propietario pese a 60.500/mes (<240.000). Alcance acotado a indemnización estatutaria bruta (no finiquito completo), contratos desde 12-02-2012; 37 idiomas/QA pendientes.",
       "rank": 129,
       "plan_id": "UV0829",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://boe.es/buscar/act.php?id=BOE-A-2015-11430"
     },
     {
       "slug": "tank-game",
@@ -3658,7 +3666,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 60.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 130,
       "plan_id": "UV0830",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3680,16 +3688,16 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/xiangqi/",
-      "execution": "Cálculo/editor/juego local propuesto",
-      "maintenance": "Revisar motor, recursos y dependencias",
+      "execution": "Juego local para dos personas con movimiento legal básico y detección de jaque/fin; sin CPU, red ni persistencia.",
+      "maintenance": "Baja: reglas locales; sin servicios externos.",
       "effort": "M",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local autorizada por instrucción expresa; volumen medido 60.500/mes, inferior a 240.000",
       "rank": 131,
       "plan_id": "UV0831",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.xiangqi.com/help/pieces-and-moves"
     },
     {
       "slug": "australia-income-tax",
@@ -3714,7 +3722,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 49.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 132,
       "plan_id": "UV0832",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3742,7 +3750,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 49.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 133,
       "plan_id": "UV0833",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3770,7 +3778,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 49.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 134,
       "plan_id": "UV0834",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3798,7 +3806,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 49.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 135,
       "plan_id": "UV0835",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3820,16 +3828,16 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/india-apy-calculator/",
-      "execution": "Cálculo/editor/juego local propuesto",
-      "maintenance": "Alta: normativa y tablas por ejercicio",
+      "execution": "Tabla de contribución oficial en memoria local; suma nominal y enlace oficial; no consulta API.",
+      "maintenance": "Revisar el baremo oficial al actualizar; el resultado muestra la fecha de consulta y fuentes.",
       "effort": "L",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local autorizada por instrucción expresa; volumen medido 49.500/mes, inferior a 240.000",
       "rank": 136,
       "plan_id": "UV0836",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.pfrda.org.in/schemes/atal-pension-yojana-apy; https://jansuraksha.gov.in/Files/APY/ENGLISH/APY.pdf"
     },
     {
       "slug": "india-epf-calculator",
@@ -3854,7 +3862,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 49.500/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 137,
       "plan_id": "UV0837",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3882,7 +3890,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación iniciada con alcance reducido; cifra original conservada",
       "rank": 138,
       "plan_id": "UV0838",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3910,7 +3918,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 49.500/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 139,
       "plan_id": "UV0839",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3938,10 +3946,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Promovida por instrucción explícita del propietario pese a 49.500/mes (<240.000). Alcance local reducido a la escala estatal nacional IRPF 2025, no IRPF completo; 37 idiomas/QA pendientes.",
       "rank": 140,
       "plan_id": "UV0840",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://boe.es/buscar/act.php?id=BOE-A-2006-20764"
     },
     {
       "slug": "touchscreen-tester",
@@ -3966,7 +3974,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 49.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 141,
       "plan_id": "UV0841",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -3994,7 +4002,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 49.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 142,
       "plan_id": "UV0842",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4022,17 +4030,17 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Promovida por instrucción explícita del propietario pese a 49.500/mes (<240.000). Alcance reducido a taper mensual de UC (no determina elegibilidad); 37 idiomas/QA pendientes.",
       "rank": 143,
       "plan_id": "UV0843",
-      "technical_source": "https://www.gov.uk/government/collections/rates-and-allowances-hm-revenue-and-customs"
+      "technical_source": "https://www.gov.uk/universal-credit/how-your-wages-affect-your-payments"
     },
     {
       "slug": "us-w4-withholding",
       "nombre": "Ajuste de retenciones W-4",
       "categoria": "Finanzas",
       "consultas": "w4 calculator|tax withholding estimator|withholding calculator",
-      "funcion": "Estimar ajuste de W-4 con varios empleos, retenciones ya pagadas y parte del año restante.",
+      "funcion": "Estimar retención federal por período con W-4 2020+ usando ingreso por pago, estado civil fiscal, frecuencia y campos W-4 3/4 bajo el método automatizado de IRS Publication 15-T.",
       "diferencia": "us-paycheck-calculator estima una nómina; aquí se ajusta retención para un objetivo anual.",
       "requisito": "Tablas IRS y supuestos de declaración; sin presentar como formulario oficial.",
       "keyword": "tax withholding estimator",
@@ -4050,10 +4058,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local autorizada por instrucción posterior; alcance reducido a estimación federal por período según IRS Worksheet 1A de 2026; 49.500 búsquedas/mes conservadas (<240.000).",
       "rank": 144,
       "plan_id": "UV0844",
-      "technical_source": "https://www.irs.gov/payments/tax-withholding"
+      "technical_source": "https://www.irs.gov/publications/p15t (Publication 15-T, Worksheet 1A; consultada 2026-10-20)"
     },
     {
       "slug": "value-proposition-canvas",
@@ -4078,7 +4086,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 49.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 145,
       "plan_id": "UV0845",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4100,16 +4108,16 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/briscola/",
-      "execution": "Cálculo/editor/juego local propuesto",
-      "maintenance": "Revisar motor, recursos y dependencias",
+      "execution": "Juego local de bazas con bot heurístico opcional o modo dos personas en el mismo dispositivo; sin API.",
+      "maintenance": "Baja: reglas y bot local; solo variante de dos jugadores.",
       "effort": "M",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local autorizada por instrucción expresa; volumen medido 40.500/mes, muy inferior a 240.000",
       "rank": 146,
       "plan_id": "UV0846",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.pagat.com/aceten/briscola.html"
     },
     {
       "slug": "carrom",
@@ -4134,7 +4142,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada el 2026-10-19 para completar las 300; volumen original 40.500 sin revalidar",
       "rank": 147,
       "plan_id": "UV0847",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4162,7 +4170,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada el 2026-10-19 para completar las 300; volumen original 40.500 sin revalidar",
       "rank": 148,
       "plan_id": "UV0848",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4190,7 +4198,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 40.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 149,
       "plan_id": "UV0849",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4218,7 +4226,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 40.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 150,
       "plan_id": "UV0850",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4246,7 +4254,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 40.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 151,
       "plan_id": "UV0851",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4274,7 +4282,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 40.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 152,
       "plan_id": "UV0852",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4302,7 +4310,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 40.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 153,
       "plan_id": "UV0853",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4330,7 +4338,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 40.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 154,
       "plan_id": "UV0854",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4358,7 +4366,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 40.500/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 155,
       "plan_id": "UV0855",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4386,7 +4394,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local autorizada por instrucción expresa; herramienta acotada a reglas ortográficas españolas, sin diccionario o API; volumen medido conservado, inferior a 240.000",
       "rank": 156,
       "plan_id": "UV0856",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4414,7 +4422,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación iniciada por autorización posterior; volumen histórico conservado",
       "rank": 157,
       "plan_id": "UV0857",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4442,7 +4450,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 33.100/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 158,
       "plan_id": "UV0858",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4470,7 +4478,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación iniciada con alcance seguro y explícito",
       "rank": 159,
       "plan_id": "UV0859",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4498,10 +4506,11 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 33.100/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 160,
       "plan_id": "UV0860",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://openstax.org/books/chemistry-2e/pages/6-3-development-of-quantum-theory",
+      "original_decision": "Reserva: NO cumple demanda autorizada"
     },
     {
       "slug": "pdf-imposition",
@@ -4526,7 +4535,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 33.100/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 161,
       "plan_id": "UV0861",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4554,7 +4563,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 33.100/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 162,
       "plan_id": "UV0862",
       "technical_source": "https://github.com/huggingface/transformers.js"
@@ -4582,7 +4591,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 33.100/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 163,
       "plan_id": "UV0863",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4610,10 +4619,11 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local autorizada por instrucción posterior; no cumple el umbral",
       "rank": 164,
       "plan_id": "UV0864",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "No built-in food database or external service; values supplied by the user.",
+      "original_decision": "Reserva: NO cumple demanda autorizada"
     },
     {
       "slug": "star-battle",
@@ -4638,10 +4648,11 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 33.100/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 165,
       "plan_id": "UV0865",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "No external data; explicit local puzzle rules.",
+      "original_decision": "Reserva: NO cumple demanda autorizada"
     },
     {
       "slug": "tute",
@@ -4666,7 +4677,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 33.100/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 166,
       "plan_id": "UV0866",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4694,7 +4705,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 33.100/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 167,
       "plan_id": "UV0867",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4722,7 +4733,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementada con alcance reducido: previsualizador local de secciones STL; no genera G-code. Demanda original 27.100/mes conservada; traducción y QA pendientes.",
       "rank": 168,
       "plan_id": "UV0868",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4750,7 +4761,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso bajo nueva instrucción de completar 300; volumen medido 27.100/mes, inferior al mínimo",
       "rank": 169,
       "plan_id": "UV0869",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4778,7 +4789,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 27.100/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 170,
       "plan_id": "UV0870",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4806,7 +4817,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 27.100/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 171,
       "plan_id": "UV0871",
       "technical_source": "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/acoes-e-programas/programas-projetos-acoes-obras-e-atividades/proteja/duvidas-frequentes"
@@ -4834,10 +4845,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Promovida por instrucción explícita del propietario pese a 27.100/mes (<240.000). Estimación local de la mensualidad 2026 para trabajador formal; no verifica elegibilidad ni número de cuotas; 37 idiomas/QA pendientes.",
       "rank": 172,
       "plan_id": "UV0872",
-      "technical_source": "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/acoes-e-programas/programas-projetos-acoes-obras-e-atividades/proteja/duvidas-frequentes"
+      "technical_source": "https://portalfat.mte.gov.br/mte-reajusta-valores-do-beneficio-seguro-desemprego/"
     },
     {
       "slug": "broken-link-checker",
@@ -4862,7 +4873,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación iniciada con alcance HEAD/CORS limitado; cifra original conservada",
       "rank": 173,
       "plan_id": "UV0873",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4890,7 +4901,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 27.100/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 174,
       "plan_id": "UV0874",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4918,7 +4929,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada con alcance reducido: búsqueda extractiva local TXT/Markdown, sin modelo ni respuesta generativa; demanda original 27.100/mes conservada (<240.000). Traducción/QA pendientes.",
       "rank": 175,
       "plan_id": "UV0875",
       "technical_source": "https://github.com/huggingface/transformers.js"
@@ -4946,7 +4957,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada como conversor educativo HbA1c/eAG según regresión ADAG publicada; demanda 27.100/mes conservada (<240.000). Traducción/QA pendientes.",
       "rank": 176,
       "plan_id": "UV0876",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -4974,10 +4985,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada por instrucción del usuario para completar las 300; juego local de Janggi con reglas y variantes descritas, sin red ni servidor. Demanda medida 27.100/mes conservada (<240.000); traducción, revisión humana y QA pendientes.",
       "rank": 177,
       "plan_id": "UV0877",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://kojf.net/theme/sample30/html/content03.php"
     },
     {
       "slug": "mexico-aguinaldo",
@@ -5002,7 +5013,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada como escenario bruto proporcional, con salario y entitlement aportados; LFT Art. 87 fuente oficial consultada. Demanda 27.100/mes conservada (<240.000). Traducción/QA pendientes.",
       "rank": 178,
       "plan_id": "UV0878",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5030,10 +5041,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Promovida por instrucción explícita del propietario pese a 27.100/mes (<240.000). Tarifa anual ISR individual 2026 sobre base aportada tras deducciones; no calcula declaración completa; 37 idiomas/QA pendientes.",
       "rank": 179,
       "plan_id": "UV0879",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://dof.gob.mx/nota_detalle_popup.php?codigo=5777219"
     },
     {
       "slug": "pregnancy-weight-gain",
@@ -5058,10 +5069,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada por instrucción del usuario para completar las 300; demanda original 27.100/mes conservada (<240.000). Guía local del rango total CDC por IMC previo y embarazo único/gemelar; no publicar hasta revisión humana, traducciones aprobadas para 37 idiomas y QA.",
       "rank": 180,
       "plan_id": "UV0880",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.cdc.gov/maternal-infant-health/pregnancy-weight/ (tabla CDC publicada 2024-05-15); revisión ACOG como apoyo."
     },
     {
       "slug": "ptsd-questionnaire",
@@ -5086,7 +5097,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 27.100/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 181,
       "plan_id": "UV0881",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5114,10 +5125,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local autorizada por instrucción posterior; alcance reducido a Ordinary Wages 2026 para ciudadanos/SPR desde tercer año; 27.100 búsquedas/mes conservadas (<240.000).",
       "rank": 182,
       "plan_id": "UV0882",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.cpf.gov.sg/employer/employer-obligations/how-much-cpf-contributions-to-pay (consultado 2026-10-20); tasas 2026: https://www.cpf.gov.sg/content/dam/web/employer/employer-obligations/documents/CPFcontributionratesfrom1Jan2026.pdf"
     },
     {
       "slug": "taiwan-income-tax",
@@ -5142,10 +5153,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Promovida por instrucción explícita del propietario pese a 27.100/mes (<240.000). Escala progresiva 2026 para residentes, sobre base neta ya calculada; 37 idiomas/QA pendientes.",
       "rank": 183,
       "plan_id": "UV0883",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.etax.nat.gov.tw/etwmain/en/announcement/alien-individual-income-tax/progressive-tax-rate"
     },
     {
       "slug": "venn-diagram-maker",
@@ -5170,7 +5181,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 27.100/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 184,
       "plan_id": "UV0884",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5198,10 +5209,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Promovida por instrucción explícita del propietario pese a 22.200/mes (<240.000). Estimación local de un depósito mensual FGTS del empleador (8% general/2% aprendiz); 37 idiomas/QA pendientes.",
       "rank": 185,
       "plan_id": "UV0885",
-      "technical_source": "https://www.gov.br/trabalho-e-emprego/pt-br/acesso-a-informacao/acoes-e-programas/programas-projetos-acoes-obras-e-atividades/proteja/duvidas-frequentes"
+      "technical_source": "https://www.fgts.gov.br/Paginas/subpaginas/recolhimento-empregado.aspx"
     },
     {
       "slug": "calligraphy-worksheet",
@@ -5226,7 +5237,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen observado 22.200/mes conservado; hoja imprimible global con dirección LTR/RTL; traducción 37 idiomas y QA pendientes.",
       "rank": 186,
       "plan_id": "UV0886",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5254,7 +5265,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen observado 22.200/mes conservado; prompts del usuario en cualquier idioma; traducción 37 idiomas y QA pendientes.",
       "rank": 187,
       "plan_id": "UV0887",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5282,7 +5293,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 22.200/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 188,
       "plan_id": "UV0888",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5310,7 +5321,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación iniciada por autorización posterior; volumen histórico conservado",
       "rank": 189,
       "plan_id": "UV0889",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5338,10 +5349,11 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 22.200/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 190,
       "plan_id": "UV0890",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.topografix.com/gpx/1/1/",
+      "original_decision": "Reserva: NO cumple demanda autorizada"
     },
     {
       "slug": "korea-net-salary",
@@ -5366,7 +5378,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 22.200/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 191,
       "plan_id": "UV0891",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5394,7 +5406,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación iniciada por autorización posterior; volumen histórico conservado",
       "rank": 192,
       "plan_id": "UV0892",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5422,7 +5434,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Incluida en el plan de 300 por autorización posterior; volumen muy inferior al suelo inicial",
       "rank": 193,
       "plan_id": "UV0893",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5450,7 +5462,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 22.200/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 194,
       "plan_id": "UV0894",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5478,7 +5490,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen observado 22.200/mes conservado; diagramador manual global; traducción 37 idiomas y QA pendientes.",
       "rank": 195,
       "plan_id": "UV0895",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5506,7 +5518,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 18.100/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 196,
       "plan_id": "UV0896",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5516,7 +5528,7 @@
       "nombre": "Ganancias patrimoniales del Reino Unido",
       "categoria": "Finanzas",
       "consultas": "capital gains tax calculator uk|cgt calculator|capital gains calculator",
-      "funcion": "Separar ganancias, pérdidas, exención y bandas según activo e ingresos.",
+      "funcion": "Estimar CGT de persona física para el año fiscal 2026–27 usando ganancias netas tras pérdidas y taxable income tras allowances; aplicar AEA y dividir a 18%/24% según banda básica no usada.",
       "diferencia": "switzerland-property-gains-tax-calculator requiere tasa propia; no aplica bandas HMRC.",
       "requisito": "Fuentes oficiales y tratamiento por tipo de activo.",
       "keyword": "capital gains calculator",
@@ -5534,10 +5546,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local autorizada por instrucción posterior; alcance reducido a CGT individual 2026–27 para tasas HMRC ordinarias; 18.100 búsquedas/mes conservadas (<240.000).",
       "rank": 197,
       "plan_id": "UV0897",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.gov.uk/capital-gains-tax/rates (HMRC 2026-27, consultado 2026-10-20); https://www.gov.uk/guidance/capital-gains-tax-rates-and-allowances"
     },
     {
       "slug": "database-schema-designer",
@@ -5562,7 +5574,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 18.100/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 198,
       "plan_id": "UV0898",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5590,7 +5602,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 18.100/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 199,
       "plan_id": "UV0899",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5618,7 +5630,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 18.100/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 200,
       "plan_id": "UV0900",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5646,7 +5658,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 18.100/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 201,
       "plan_id": "UV0901",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5674,10 +5686,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada por instrucción del usuario para completar las 300; demanda original 18.100/mes conservada (<240.000). Perfil austríaco básico de práctica con puntos unitarios no monetarios; no publicable hasta revisión humana, 37 locales aprobados y QA.",
       "rank": 202,
       "plan_id": "UV0902",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.pagat.com/preference/austpref.html (reglas básicas austríacas; consultado 2026-10-20). El sitio explica que existen variantes distintas: https://www.pagat.com/preference/"
     },
     {
       "slug": "email-header-analyzer",
@@ -5702,7 +5714,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen observado 14.800/mes conservado; utilidad local y global acotada; copy extraído para 37 idiomas, traducción y QA pendientes.",
       "rank": 203,
       "plan_id": "UV0903",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5730,7 +5742,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada: juego 11×11 hotseat con reglas de variante visibles; demanda 14.800/mes conservada (<240.000). Traducción/QA pendientes.",
       "rank": 204,
       "plan_id": "UV0904",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5758,7 +5770,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen histórico 14.800/mes conservado; sanitizador local de allowlist acotada; traducción 37 idiomas y QA pendientes.",
       "rank": 205,
       "plan_id": "UV0905",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5786,7 +5798,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada como escenario aritmético de usuario, sin recomendación ni tasas; demanda original conservada (<240.000). Traducción/QA pendientes.",
       "rank": 206,
       "plan_id": "UV0906",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5814,7 +5826,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 14.800/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 207,
       "plan_id": "UV0907",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5842,7 +5854,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada con alcance limitado: escritura Unicode y pistas de palabras frecuentes; señal cualitativa, no probabilidad. Demanda 14.800/mes conservada (<240.000). Traducción/QA pendientes.",
       "rank": 208,
       "plan_id": "UV0908",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5870,7 +5882,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada por el usuario para completar 300; volumen observado 14.800/mes conservado; no alcanza el umbral objetivo. Herramienta global en progreso, traducción y QA pendientes.",
       "rank": 209,
       "plan_id": "UV0909",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5898,7 +5910,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 14.800/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 210,
       "plan_id": "UV0910",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5926,7 +5938,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen observado 14.800/mes conservado; generador local con estructura elegida por usuario; traducción 37 idiomas y QA pendientes.",
       "rank": 211,
       "plan_id": "UV0911",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -5954,10 +5966,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Promovida por instrucción explícita del propietario pese a 14.800/mes (<240.000). Estimación local de cuantía mensual contributiva a tiempo completo (no elegibilidad/duración); 37 idiomas/QA pendientes.",
       "rank": 212,
       "plan_id": "UV0912",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.sepe.es/HomeSepe/prestaciones-desempleo/Cuantias-anuales"
     },
     {
       "slug": "survival-analysis",
@@ -5982,7 +5994,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 14.800/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 213,
       "plan_id": "UV0913",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6010,7 +6022,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local autorizada por instrucción expresa; volumen medido conservado, inferior a 240.000",
       "rank": 214,
       "plan_id": "UV0914",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6032,16 +6044,16 @@
       "intent": "Alineada con la función propuesta",
       "intent_note": "Consulta vinculada a la función; sin auditoría SERP completa.",
       "url": "https://tools.usefulverse.com/tools/3d-model-editor/",
-      "execution": "Cálculo/editor/juego local propuesto",
+      "execution": "Editor local WebGL/canvas de caja, extrusión, transformación y exportación OBJ; sin API ni servicio.",
       "maintenance": "Revisar motor, recursos y dependencias",
       "effort": "M",
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación iniciada por autorización del usuario para completar las 300 candidatas; conserva la demanda original como dato histórico.",
       "rank": 215,
       "plan_id": "UV0915",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "Wavefront OBJ specification; local geometry algorithm covered by focused tests."
     },
     {
       "slug": "api-mock-workbench",
@@ -6066,7 +6078,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen observado 12.100/mes conservado; fixture JSON local sin endpoint; traducción 37 idiomas y QA pendientes.",
       "rank": 216,
       "plan_id": "UV0916",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6094,7 +6106,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen observado 12.100/mes conservado; bitácora de sesión local sin interpretación clínica; traducción 37 idiomas y QA pendientes.",
       "rank": 217,
       "plan_id": "UV0917",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6122,7 +6134,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada como compositor local de imágenes y pies; demanda 12.100/mes conservada (<240.000). Traducción/QA pendientes.",
       "rank": 218,
       "plan_id": "UV0918",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6150,10 +6162,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Promovida por instrucción explícita del propietario pese a 12.100/mes (<240.000). Cálculo local HRA limitado a régimen antiguo y arrendamiento real; 37 idiomas/QA pendientes.",
       "rank": 219,
       "plan_id": "UV0919",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.incometaxindia.gov.in/w/deductions/allowances-allowed-to-a-salaried-employee"
     },
     {
       "slug": "inheritance-shares-calculator",
@@ -6178,7 +6190,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 12.100/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 220,
       "plan_id": "UV0920",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6206,10 +6218,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior para completar las 300; volumen histórico 12.100/mes conservado. Runtime OpenCV.js fijado, estático y cargado a petición; sin inferencia ni procesamiento remoto.",
       "rank": 221,
       "plan_id": "UV0921",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "OpenCV 4.12.0 ORB feature matching + RANSAC homography (official OpenCV docs), Apache-2.0 runtime"
     },
     {
       "slug": "password-breach-checker",
@@ -6234,7 +6246,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 12.100/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 222,
       "plan_id": "UV0922",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6262,10 +6274,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior para completar las 300; conserva volumen histórico 12.100/mes. SVG de patronaje medio círculo en navegador, sin API ni tratamiento remoto.",
       "rank": 223,
       "plan_id": "UV0923",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "Fórmula waist circumference / π, contrastada con guía de patronaje BERNINA Half-Circle Skirt (2024); alcance experimental."
     },
     {
       "slug": "us-roth-conversion",
@@ -6290,7 +6302,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local autorizada por instrucción expresa; volumen medido conservado, inferior a 240.000",
       "rank": 224,
       "plan_id": "UV0924",
       "technical_source": "https://www.irs.gov/payments/tax-withholding"
@@ -6318,7 +6330,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 12.100/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 225,
       "plan_id": "UV0925",
       "technical_source": "https://www.irs.gov/payments/tax-withholding"
@@ -6346,10 +6358,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Promovida por instrucción explícita del propietario pese a 12.100/mes (<240.000). Alternativa local: composición manual 2D con cutout transparente; no prueba de ajuste por IA; 37 idiomas/QA pendientes.",
       "rank": 226,
       "plan_id": "UV0926",
-      "technical_source": "https://github.com/huggingface/transformers.js"
+      "technical_source": "No external data or models; local Canvas composition."
     },
     {
       "slug": "calcudoku",
@@ -6374,7 +6386,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen observado 9.900/mes conservado; puzzle local con solución válida, unicidad no garantizada; traducción 37 idiomas y QA pendientes.",
       "rank": 227,
       "plan_id": "UV0927",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6402,7 +6414,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 9.900/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 228,
       "plan_id": "UV0928",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6430,7 +6442,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 9.900/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 229,
       "plan_id": "UV0929",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6458,7 +6470,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 9.900/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 230,
       "plan_id": "UV0930",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6486,10 +6498,11 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local autorizada por instrucción posterior; no cumple el umbral",
       "rank": 231,
       "plan_id": "UV0931",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "No external dataset or service; deterministic matrix arithmetic.",
+      "original_decision": "Reserva: NO cumple demanda autorizada"
     },
     {
       "slug": "malaysia-epf",
@@ -6514,10 +6527,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Promovida por instrucción explícita del propietario pese a 9.900/mes (<240.000). Estimación local acotada a EPF mensual de empleado no malasio/no PR no doméstico (2% + 2%); 37 idiomas/QA pendientes.",
       "rank": 232,
       "plan_id": "UV0932",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.kwsp.gov.my/en/employer/responsibilities/non-malaysian-citizen-employees"
     },
     {
       "slug": "music-interval-calculator",
@@ -6542,7 +6555,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso; calculadora de notas escritas, sin análisis de audio; volumen medido 9.900/mes bajo el mínimo",
       "rank": 233,
       "plan_id": "UV0933",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6570,7 +6583,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 9.900/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 234,
       "plan_id": "UV0934",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6598,7 +6611,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 9.900/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 235,
       "plan_id": "UV0935",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6626,7 +6639,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 9.900/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 236,
       "plan_id": "UV0936",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6654,7 +6667,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada: glosario personalizado, sin diccionario factual externo; demanda original conservada (<240.000). Traducción y QA pendientes.",
       "rank": 237,
       "plan_id": "UV0937",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6682,7 +6695,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 8.100/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 238,
       "plan_id": "UV0938",
       "technical_source": "https://github.com/huggingface/transformers.js"
@@ -6710,7 +6723,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 8.100/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 239,
       "plan_id": "UV0939",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6738,7 +6751,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 8.100/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 240,
       "plan_id": "UV0940",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6766,7 +6779,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local autorizada por instrucción expresa; mezcla de archivos alineados, sin coste de proveedor ni servidor; volumen medido conservado",
       "rank": 241,
       "plan_id": "UV0941",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6794,7 +6807,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 8.100/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 242,
       "plan_id": "UV0942",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6822,10 +6835,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local autorizada por instrucción posterior; tabla oficial de empleador comercial/empleado efectiva 2025-01-01; volumen observado 8.100/mes conservado (<240.000), sin afirmar que cumpla el umbral objetivo.",
       "rank": 243,
       "plan_id": "UV0943",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.sss.gov.ph/pay-contribution/ (tabla oficial consultada 2026-10-20); circular 2024-006: https://www.sss.gov.ph/wp-content/uploads/2024/12/CI-2024-006-Publication.pdf"
     },
     {
       "slug": "portfolio-backtester",
@@ -6850,7 +6863,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada como análisis de series aportadas: buy-and-hold de peso inicial igual; demanda 8.100/mes conservada (<240.000). Traducción/QA pendientes.",
       "rank": 244,
       "plan_id": "UV0944",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6878,7 +6891,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 8.100/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 245,
       "plan_id": "UV0945",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6906,7 +6919,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada: TOTP local; demanda original 8.100/mes conservada (<240.000). Sin QR, almacenamiento ni red. Traducción y QA pendientes.",
       "rank": 246,
       "plan_id": "UV0946",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -6934,7 +6947,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 8.100/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 247,
       "plan_id": "UV0947",
       "technical_source": "https://www.gov.uk/government/collections/rates-and-allowances-hm-revenue-and-customs"
@@ -6962,10 +6975,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local autorizada por instrucción posterior; alcance 2026 CPP/EI anual fuera de Quebec, sin impuesto sobre renta; 6.600 búsquedas/mes conservadas (<240.000).",
       "rank": 248,
       "plan_id": "UV0948",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.canada.ca/en/revenue-agency/services/forms-publications/payroll/t4032-payroll-deductions-tables/t4032oc-jan/t4032oc-january-general-information.html (CRA 2026)"
     },
     {
       "slug": "chomp-game",
@@ -6990,7 +7003,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 6.600/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 249,
       "plan_id": "UV0949",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7018,7 +7031,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen observado 6.600/mes conservado; grid SVG con símbolos del usuario; traducción 37 idiomas y QA pendientes.",
       "rank": 250,
       "plan_id": "UV0950",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7046,7 +7059,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen observado 6.600/mes conservado; comparación redline local, sin fusión automática; traducción 37 idiomas y QA pendientes.",
       "rank": 251,
       "plan_id": "UV0951",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7074,7 +7087,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen observado 6.600/mes conservado; EPUB 3 local de texto propio; traducción 37 idiomas y QA pendientes.",
       "rank": 252,
       "plan_id": "UV0952",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7102,7 +7115,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen observado 6.600/mes conservado; modelo Michaelis–Menten con parámetros propios, sin fitting; traducción y QA pendientes.",
       "rank": 253,
       "plan_id": "UV0953",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7130,7 +7143,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 6.600/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 254,
       "plan_id": "UV0954",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7158,7 +7171,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada con alcance reducido: bloc de escritura/dibujo manual con export PNG; no hace OCR ni convierte a texto. Demanda 6.600/mes conservada (<240.000). Traducción/QA pendientes.",
       "rank": 255,
       "plan_id": "UV0955",
       "technical_source": "https://github.com/huggingface/transformers.js"
@@ -7186,7 +7199,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 6.600/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 256,
       "plan_id": "UV0956",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7214,7 +7227,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 6.600/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 257,
       "plan_id": "UV0957",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7242,7 +7255,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 6.600/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 258,
       "plan_id": "UV0958",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7270,7 +7283,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 6.600/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 259,
       "plan_id": "UV0959",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7298,7 +7311,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 6.600/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 260,
       "plan_id": "UV0960",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7326,7 +7339,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 6.600/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 261,
       "plan_id": "UV0961",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7354,7 +7367,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 6.600/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 262,
       "plan_id": "UV0962",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7382,7 +7395,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 5.400/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 263,
       "plan_id": "UV0963",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7410,7 +7423,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 5.400/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 264,
       "plan_id": "UV0964",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7438,7 +7451,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 5.400/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 265,
       "plan_id": "UV0965",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7466,7 +7479,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 5.400/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 266,
       "plan_id": "UV0966",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7494,7 +7507,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 5.400/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 267,
       "plan_id": "UV0967",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7522,7 +7535,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen observado 5.400/mes conservado; metrónomo local y tap tempo; traducción 37 idiomas y QA pendientes.",
       "rank": 268,
       "plan_id": "UV0968",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7550,7 +7563,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 5.400/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 269,
       "plan_id": "UV0969",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7578,7 +7591,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen observado 5.400/mes conservado; storyboard local con escenas propias; traducción 37 idiomas y QA pendientes.",
       "rank": 270,
       "plan_id": "UV0970",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7606,10 +7619,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Promovida por instrucción explícita del propietario pese a 4.400/mes (<240.000). Tabla 2026 para residente sobre base neta ya calculada; no determina deducciones; 37 idiomas/QA pendientes.",
       "rank": 271,
       "plan_id": "UV0971",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "https://www.chinatax.gov.cn/eng/c102962/c102967/c102997/c103004/c5245849/content.html"
     },
     {
       "slug": "control-system-simulator",
@@ -7634,7 +7647,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen observado 4.400/mes conservado; modelo analítico local de primer orden; traducción 37 idiomas y QA pendientes.",
       "rank": 272,
       "plan_id": "UV0972",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7662,7 +7675,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local autorizada: verifica firmas de clave pública sobre mensaje exacto; no valida identidad/certificados; demanda original conservada. Traducción y QA pendientes.",
       "rank": 273,
       "plan_id": "UV0973",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7690,10 +7703,10 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Promovida por instrucción explícita del propietario pese a 4.400/mes (<240.000). Versión local acotada a bosquejo SVG de running-stitch monocromo, no archivo de máquina; 37 idiomas/QA pendientes.",
       "rank": 274,
       "plan_id": "UV0974",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "No external data; local raster sampling algorithm."
     },
     {
       "slug": "lights-out",
@@ -7718,7 +7731,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 4.400/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 275,
       "plan_id": "UV0975",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7746,7 +7759,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 4.400/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 276,
       "plan_id": "UV0976",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7774,7 +7787,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 4.400/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 277,
       "plan_id": "UV0977",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7802,7 +7815,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso bajo nueva instrucción de completar 300; volumen medido 4.400/mes, inferior al mínimo",
       "rank": 278,
       "plan_id": "UV0978",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7830,7 +7843,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 4.400/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 279,
       "plan_id": "UV0979",
       "technical_source": "https://github.com/huggingface/transformers.js"
@@ -7858,7 +7871,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 4.400/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 280,
       "plan_id": "UV0980",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7886,7 +7899,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación iniciada por autorización posterior; volumen histórico conservado",
       "rank": 281,
       "plan_id": "UV0981",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7914,7 +7927,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 3.600/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 282,
       "plan_id": "UV0982",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7942,7 +7955,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 3.600/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 283,
       "plan_id": "UV0983",
       "technical_source": "https://github.com/huggingface/transformers.js"
@@ -7970,7 +7983,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación iniciada con alcance explícito; cifra original conservada",
       "rank": 284,
       "plan_id": "UV0984",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -7998,7 +8011,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación iniciada por autorización posterior; volumen histórico conservado",
       "rank": 285,
       "plan_id": "UV0985",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -8026,7 +8039,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 3.600/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 286,
       "plan_id": "UV0986",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -8054,7 +8067,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación iniciada con alcance reducido; cifra original conservada",
       "rank": 287,
       "plan_id": "UV0987",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -8082,7 +8095,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación iniciada por autorización posterior; volumen histórico conservado",
       "rank": 288,
       "plan_id": "UV0988",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -8110,7 +8123,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "En implementación por instrucción posterior del usuario; volumen medido 2.900/mes. inferior al suelo de 240.000; no se presenta como objetivo cumplido",
       "rank": 289,
       "plan_id": "UV0989",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -8138,7 +8151,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 2.900/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 290,
       "plan_id": "UV0990",
       "technical_source": "https://github.com/huggingface/transformers.js"
@@ -8166,10 +8179,11 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación local en curso por instrucción posterior; volumen observado 2.900/mes conservado, inferior al suelo de 240.000; no se presenta como demanda objetivo.",
       "rank": 291,
       "plan_id": "UV0991",
-      "technical_source": "Pendiente de fuente específica antes de implementar"
+      "technical_source": "No external data; deterministic seeded Latin-square generator.",
+      "original_decision": "Reserva: NO cumple demanda autorizada"
     },
     {
       "slug": "us-aca-subsidy",
@@ -8194,7 +8208,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Jurisdicción y año visibles; fuentes oficiales del país.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 2.900/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 292,
       "plan_id": "UV0992",
       "technical_source": "https://www.irs.gov/payments/tax-withholding"
@@ -8222,7 +8236,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen observado 2.400/mes conservado; net cuboide SVG con dimensiones propias; traducción 37 idiomas y QA pendientes.",
       "rank": 293,
       "plan_id": "UV0993",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -8250,7 +8264,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen observado 2.400/mes conservado; trazado Snell por capas con valores del usuario; traducción 37 idiomas y QA pendientes.",
       "rank": 294,
       "plan_id": "UV0994",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -8278,7 +8292,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación iniciada por autorización posterior; volumen histórico conservado",
       "rank": 295,
       "plan_id": "UV0995",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -8306,7 +8320,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Reserva del plan: 2.400/mes, por debajo del suelo de 240.000; no implementar ni publicar sin nueva decisión/evidencia.",
       "rank": 296,
       "plan_id": "UV0996",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -8334,7 +8348,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen observado 1.900/mes conservado; puzzle local con solución válida, unicidad no garantizada; traducción 37 idiomas y QA pendientes.",
       "rank": 297,
       "plan_id": "UV0997",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -8362,7 +8376,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación autorizada para completar las 300; volumen observado 1.900/mes conservado; juego local Amazons 10×10; traducción 37 idiomas y QA pendientes.",
       "rank": 298,
       "plan_id": "UV0998",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -8390,7 +8404,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Formatos Intl, RTL y datos/lexicón de idioma con cobertura explícita.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación iniciada por autorización posterior; volumen histórico conservado",
       "rank": 299,
       "plan_id": "UV0999",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -8418,7 +8432,7 @@
       "localization": "Interfaz en 37 idiomas; idioma no elige país ni reglas. Reglas y variante elegibles; ayudas claras y arte propio.",
       "exclusion": null,
       "demand": "Inferior a 240.000",
-      "decision": "Reserva: NO cumple demanda autorizada",
+      "decision": "Implementación iniciada por autorización posterior; volumen histórico conservado",
       "rank": 300,
       "plan_id": "UV1000",
       "technical_source": "Pendiente de fuente específica antes de implementar"
@@ -48802,7 +48816,8 @@
       "competition": "LOW",
       "cpc": 0.02,
       "candidate": "preferans",
-      "selected": true
+      "selected": true,
+      "status": "implementation-in-progress"
     },
     {
       "keyword": "preferans",
@@ -48878,7 +48893,8 @@
       "competition": "LOW",
       "cpc": null,
       "candidate": "preferans",
-      "selected": false
+      "selected": false,
+      "status": "implementation-in-progress"
     },
     {
       "keyword": "преферанс онлайн",
@@ -48954,7 +48970,8 @@
       "competition": "LOW",
       "cpc": 2.69,
       "candidate": "preferans",
-      "selected": false
+      "selected": false,
+      "status": "implementation-in-progress"
     },
     {
       "keyword": "麻雀 ゲーム",

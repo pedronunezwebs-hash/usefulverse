@@ -1,4 +1,9 @@
 node_modules/
+.translation-env/
+.translation-models/
+.translation-data/
+.hf-cache/
+.cache/pip/
 .DS_Store
 .wrangler/
 /dist/

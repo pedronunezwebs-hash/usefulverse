@@ -1,0 +1,23 @@
+import { drawCanvasSegment, getCanvasPoint, normalizeBrushSettings } from './logic.mjs';
+const root=document.querySelector('[data-tool="online-paint"]');
+if(root){
+  const form=root.querySelector('[data-pending-form]');const result=root.querySelector('[data-result]');const content=root.querySelector('[data-result-content]');const status=root.querySelector('[data-status]');const copy=JSON.parse(root.querySelector('[data-tool-copy]')?.textContent??'{}');
+  const color=form.querySelector('[data-input="color"]');const size=form.querySelector('[data-input="size"]');const canvas=document.createElement('canvas');canvas.width=800;canvas.height=500;canvas.tabIndex=0;canvas.setAttribute('role','img');canvas.setAttribute('aria-label',copy.fields.canvasDescription);canvas.className='online-paint-canvas';
+  const ctx=canvas.getContext('2d',{willReadFrequently:true});ctx.fillStyle='#FFFFFF';ctx.fillRect(0,0,canvas.width,canvas.height);let brush=normalizeBrushSettings(color.value,size.value);let drawing=false;let keyboardDrawing=false;let last=null;let cursor={x:canvas.width/2,y:canvas.height/2};let history=[];
+  const button=(key,handler)=>{const b=document.createElement('button');b.type='button';b.className='button button--secondary';b.textContent=copy.fields[key];b.addEventListener('click',handler);return b;};
+  const toolbar=document.createElement('div');toolbar.className='online-paint-toolbar';
+  toolbar.append(button('undo',()=>{const image=history.pop();if(image)ctx.putImageData(image,0,0);status.textContent=image?copy.messages.undone:copy.messages.nothingToUndo;}));
+  toolbar.append(button('clear',()=>{history.push(ctx.getImageData(0,0,canvas.width,canvas.height));if(history.length>8)history.shift();ctx.fillStyle='#FFFFFF';ctx.fillRect(0,0,canvas.width,canvas.height);status.textContent=copy.messages.cleared;}));
+  toolbar.append(button('download',()=>canvas.toBlob((blob)=>{if(!blob){status.textContent=copy.messages.downloadError;return;}const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='usefulverse-drawing.png';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);status.textContent=copy.messages.downloaded;},'image/png')));
+  toolbar.append(button('keyboardDraw',()=>{keyboardDrawing=!keyboardDrawing;status.textContent=keyboardDrawing?copy.messages.keyboardStarted:copy.messages.keyboardStopped;if(keyboardDrawing){snapshot();ctx.fillStyle=brush.color;ctx.beginPath();ctx.arc(cursor.x,cursor.y,Math.max(1,brush.size/2),0,Math.PI*2);ctx.fill();}}));
+  content.append(toolbar,canvas);result.hidden=false;
+  const snapshot=()=>{history.push(ctx.getImageData(0,0,canvas.width,canvas.height));if(history.length>8)history.shift();};
+  const point=(event)=>getCanvasPoint(canvas,event.clientX,event.clientY);
+  canvas.addEventListener('pointerdown',(event)=>{if(event.button!==0)return;snapshot();drawing=true;last=point(event);canvas.setPointerCapture(event.pointerId);ctx.fillStyle=brush.color;ctx.beginPath();ctx.arc(last.x,last.y,brush.size/2,0,Math.PI*2);ctx.fill();});
+  canvas.addEventListener('pointermove',(event)=>{if(!drawing)return;const next=point(event);drawCanvasSegment(ctx,last,next,brush);last=next;});
+  const stop=()=>{drawing=false;last=null;};canvas.addEventListener('pointerup',stop);canvas.addEventListener('pointercancel',stop);canvas.addEventListener('lostpointercapture',stop);
+  canvas.addEventListener('keydown',(event)=>{if(!['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(event.key))return;event.preventDefault();const previous={...cursor};const step=event.shiftKey?20:5;if(event.key==='ArrowUp')cursor.y=Math.max(0,cursor.y-step);if(event.key==='ArrowDown')cursor.y=Math.min(canvas.height,cursor.y+step);if(event.key==='ArrowLeft')cursor.x=Math.max(0,cursor.x-step);if(event.key==='ArrowRight')cursor.x=Math.min(canvas.width,cursor.x+step);if(keyboardDrawing)drawCanvasSegment(ctx,previous,cursor,brush);});
+  const update=()=>{try{brush=normalizeBrushSettings(color.value,size.value);status.textContent='';status.classList.remove('status--error');}catch{status.textContent=copy.messages.invalidBrush;status.classList.add('status--error');}};color.addEventListener('input',update);size.addEventListener('input',update);
+  form.addEventListener('submit',(event)=>{event.preventDefault();update();if(!status.classList.contains('status--error'))status.textContent=copy.messages.ready;});
+  form.addEventListener('reset',()=>queueMicrotask(()=>{history=[];ctx.fillStyle='#FFFFFF';ctx.fillRect(0,0,canvas.width,canvas.height);keyboardDrawing=false;brush=normalizeBrushSettings(color.value,size.value);status.textContent=copy.messages.reset;}));
+}
