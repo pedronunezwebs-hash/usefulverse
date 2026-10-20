@@ -75,7 +75,7 @@ Todo **limpio y dentro de las políticas de Google**: nada de comprar enlaces, r
 2. **Aparecer en las listas de «alternativas gratuitas»:** AlternativeTo, SaaSHub, Product Hunt (un lanzamiento por categoría,
    no uno solo), directorios de herramientas educativas, listas «awesome» de GitHub y recursos de profesores. Con cuenta real y
    descripción honesta.
-3. **Páginas de «alternativa gratuita a X»** (p. ej. «Alternativa gratis a iLovePDF sin límites»): comparación honesta, sin
+3. **Páginas de «alternativa gratuita a X»** (para iLovePDF, usar la comparación honesta de `PDF-VS-ILOVEPDF.md` §4) (p. ej. «Alternativa gratis a iLovePDF sin límites»): comparación honesta, sin
    copiar su marca ni hablar mal de ella. Captan a gente cansada de los límites y suscripciones, que es exactamente tu
    público.
 4. **Contenido que merece enlaces (linkable assets):** guías definitivas por categoría («Cómo reducir un PDF para email,

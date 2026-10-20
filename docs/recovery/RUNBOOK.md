@@ -164,6 +164,8 @@ inmediato, porque los proyectos antiguos siguen vivos.
 **Nivel de esfuerzo (A/B/C):** ver `docs/quality/REVISION-FINAL.md` §1. Toda herramienta pasa la puerta mínima; el
 tratamiento completo (long-tail profundo, 8-12 FAQ, títulos por keyword en 10 idiomas, widget) es para el nivel A.
 
+**Primero en la cola de nivel A: la paridad PDF** (`docs/quality/PDF-VS-ILOVEPDF.md` §3): son búsquedas enormes y el motor ya existe.
+
 **Elegir el lote:** abrir `docs/quality/progress.csv` y tomar las siguientes filas con `tipo=existente` y
 `estado=pendiente`, ordenadas por `prioridad` (de menor a mayor). Preferir herramientas de la misma familia en el mismo
 lote (PDF con PDF, etc.) para que se enlacen entre sí. Marcar `estado=en-curso` y el nombre del agente, y hacer push con

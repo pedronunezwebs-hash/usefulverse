@@ -63,6 +63,15 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 ### Fase 3-4 · Herramientas existentes (RUNBOOK §5-6) · el detalle está en `progress.csv`
 - Terminadas: **0 / 700** · Con noruego `nb`: **100 / 700**
 
+### Paridad PDF con iLovePDF (`docs/quality/PDF-VS-ILOVEPDF.md`) · nivel A, prioridad alta
+- [ ] 16 páginas dedicadas por intención (compress, merge, split, pdf↔word/excel/powerpoint, edit, sign, watermark,
+      rotate, protect, unlock, page numbers) reutilizando el motor · dentro del freno semanal
+- [ ] Quitar los límites fijos (redact, crop, pdf→ppt, excel→pdf)
+- [ ] OCR → PDF con texto seleccionable · escanear con perspectiva
+- [ ] Editar PDF con objetos nativos · comparación visual
+- [ ] Mejorar la fidelidad de Office (tablas; viabilidad de LibreOffice en WASM)
+- [ ] Resumir y traducir PDF con IA en el navegador (licencia comercial, sin servidor)
+
 ### Herramientas nuevas (RUNBOOK §7)
 - [ ] Paso A: las 300 subidas con `noindex` (fuera del sitemap y de los `hreflang`) · subidas: **0 / 300**
 - Paso B: activadas **0** (máximo 30 por semana) · semana actual: 0 / 30
