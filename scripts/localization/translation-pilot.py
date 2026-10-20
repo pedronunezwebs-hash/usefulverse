@@ -31,7 +31,7 @@ ALIASES = {"pt-BR": "pt", "zh-CN": "zh", "zh-TW": "zh", "fil": "tl", "nb-NO": "n
 SCRIPTS = {"ar": "ARABIC", "fa": "ARABIC", "ur": "ARABIC", "hi": "DEVANAGARI", "mr": "DEVANAGARI", "bn": "BENGALI", "te": "TELUGU", "ta": "TAMIL", "gu": "GUJARATI", "am": "ETHIOPIC", "ru": "CYRILLIC", "uk": "CYRILLIC", "bg": "CYRILLIC", "el": "GREEK", "th": "THAI", "ko": "HANGUL"}
 FORMAT = "usefulverse-translation-pilot-v1"
 CONTEXT_POLICY = json.loads(Path(__file__).with_name("pilot-context-policy.json").read_text())
-POLICIES = {CONTEXT_POLICY["id"]: CONTEXT_POLICY, "context-v3": json.loads(Path(__file__).with_name("pilot-sentence-policy.json").read_text())}
+POLICIES = {CONTEXT_POLICY["id"]: CONTEXT_POLICY, "context-v3": json.loads(Path(__file__).with_name("pilot-sentence-policy.json").read_text()), "context-v4": json.loads(Path(__file__).with_name("pilot-memory-policy.json").read_text())}
 SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
 TECHNICAL_TOKEN = re.compile(r"\.(?:dxf|dwg|png|svg|wav|mp3|pdf|json|csv|txt)\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
 
@@ -58,6 +58,29 @@ def translation_input(unit, policy):
             raise ValueError("Stale contextual glossary; review changed source before translation")
         return entry["translation_input"]
     return unit["source"]
+
+
+def reviewed_memory(unit, locale, policy):
+    if policy == "baseline": return None
+    policy_digest(policy)
+    entry = POLICIES[policy].get("reviewed_memory", {}).get(unit["key"])
+    if not entry or locale not in entry["translations"]: return None
+    if any(unit.get(key) != entry[key] for key in ("source", "source_hash", "context")):
+        raise ValueError("Stale reviewed memory; source and meaning must match exactly")
+    return entry["translations"][locale]
+
+
+def forward_with_memory(units, locale, policy, translate):
+    memory = [reviewed_memory(unit, locale, policy) for unit in units]
+    values = [(text, text, False) if text is not None else None for text in memory]
+    traces = [None] * len(units)
+    pending = [i for i, text in enumerate(memory) if text is None]
+    if pending:
+        model_traces = []
+        model_values = translate([translation_input(units[i], policy) for i in pending], "en", locale, model_traces)
+        for index, value, trace in zip(pending, model_values, model_traces if policy != "baseline" else [None] * len(pending), strict=True):
+            values[index], traces[index] = value, trace
+    return values, traces, memory
 
 
 def record_id(corpus, engine, locale, unit, candidate, beam, policy="baseline"):
@@ -180,6 +203,12 @@ def validate_record(row):
         expected_input = translation_input(unit, policy) if row["candidate"] == "model" else row["source"]
         if row.get("model_input") != expected_input:
             raise ValueError("Contextual input does not match reviewed source")
+        memory = reviewed_memory(unit, row["locale"], policy) if row["candidate"] == "model" else None
+        if memory is not None:
+            if row.get("translation_origin") != "reviewed-memory" or row.get("translation") != memory or row.get("forward_segments") is not None:
+                raise ValueError("Reviewed memory output/provenance mismatch")
+            if row.get("memory_digest") != digest(POLICIES[policy]["reviewed_memory"][row["key"]]):
+                raise ValueError("Reviewed memory revision mismatch")
     if row.get("source_hash") != hashlib.sha256(row["source"].encode()).hexdigest():
         raise ValueError("Stale source hash in checkpoint")
 
@@ -273,7 +302,7 @@ def summarize(paths):
             group = groups.setdefault((row.get("inference_policy", "baseline"), row["engine"], row["locale"], row["candidate"]), Counter())
             group["records"] += 1
             if row.get("inference_policy", "baseline") != "baseline":
-                group["forward_segment_evidence"] += int(row["candidate"] == "model" and not segment_evidence_valid(row.get("forward_segments"), row["model_input"], row["raw_translation"]))
+                group["forward_segment_evidence"] += int(row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not segment_evidence_valid(row.get("forward_segments"), row["model_input"], row["raw_translation"]))
                 group["back_segment_evidence"] += int(not segment_evidence_valid(row.get("back_segments"), row["translation"], row["back_translation"]))
             checks = automatic_checks(row["source"], row["translation"], row["locale"], row["key"], row["back_translation"])
             for flag, fails in {"empty": not checks["nonempty"], "protected_tokens": not checks["protected_tokens_identical"],
@@ -387,7 +416,11 @@ def run(args):
                     batch = pending[start:start + args.batch_size]
                     tick = time.monotonic()
                     forward_traces, back_traces = [], []
-                    values = translate([translation_input(unit, policy) for unit in batch], "en", locale, forward_traces) if candidate == "model" else [(unit["legacy"][locale], unit["legacy"][locale], False) for unit in batch]
+                    if candidate == "model":
+                        values, forward_traces, memory = forward_with_memory(batch, locale, policy, translate)
+                    else:
+                        values = [(unit["legacy"][locale], unit["legacy"][locale], False) for unit in batch]
+                        memory = [None] * len(batch)
                     back = translate([value or raw for value, raw, _ in values], locale, "en", back_traces)
                     seconds = time.monotonic() - tick
                     for index, (unit, (value, raw, truncated), (back_value, back_raw, back_truncated)) in enumerate(zip(batch, values, back, strict=True)):
@@ -407,7 +440,9 @@ def run(args):
                             row.update(inference_policy=policy, policy_digest=policy_digest(policy), context=unit["context"],
                                 model_input=translation_input(unit, policy) if candidate == "model" else unit["source"],
                                 protection=POLICIES[policy]["protection"], forward_segments=forward_traces[index] if candidate == "model" else None,
-                                back_segments=back_traces[index])
+                                back_segments=back_traces[index], translation_origin="reviewed-memory" if memory[index] is not None else candidate,
+                                memory_digest=digest(POLICIES[policy]["reviewed_memory"][unit["key"]]) if memory[index] is not None else None)
+                        if memory[index] is not None: counts["reviewed_memory_hits"] += 1
                         emit(row)
                         handle.write(canonical(row) + "\n")
                         handle.flush()

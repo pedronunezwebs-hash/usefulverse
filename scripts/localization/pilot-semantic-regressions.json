@@ -2572,5 +2572,50 @@
     "issue": "Pierde la unidad segundos tras 30; frase incompleta.",
     "observed_candidate": "madlad/context-v2",
     "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.unsupported",
+    "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+    "translation": "Archivo no compatible. Elija un archivo.dxf ASCII.",
+    "issue": "La extensión sobrevive, pero queda pegada a «archivo.dxf». ",
+    "observed_candidate": "madlad/context-v3",
+    "actions_run_id": "39435208282"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.loaded",
+    "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+    "translation": "Audio descodificado localmente. Duración: {duración} segundos.",
+    "issue": "Traduce {duration} a {duración}; rompe la sustitución del valor aunque la retrotraducción oculte el fallo.",
+    "observed_candidate": "madlad/context-v3",
+    "actions_run_id": "39435208282"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.file",
+    "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+    "translation": "Velg en ASCII DXF- fil",
+    "issue": "Separación incorrecta en «DXF- fil».",
+    "observed_candidate": "madlad/context-v3",
+    "actions_run_id": "39435208282"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.unsupported",
+    "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+    "translation": "Fil som ikke støttes. Velg en ASCII DXF- fil.",
+    "issue": "Pierde la extensión literal .dxf; DXF-fil no la conserva.",
+    "observed_candidate": "madlad/context-v3",
+    "actions_run_id": "39435208282"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.loaded",
+    "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+    "translation": "Lyd dekodet lokalt. Varighet: {varighet} sekunder.",
+    "issue": "Traduce {duration} a {varighet}; rompe la sustitución del valor aunque la vuelta diga {duration}.",
+    "observed_candidate": "madlad/context-v3",
+    "actions_run_id": "39435208282"
   }
 ]

@@ -115,7 +115,7 @@ class TranslationPilotTest(unittest.TestCase):
         for path in (directory / 'checkpoints').rglob('*.jsonl'):
             for line in path.read_text().splitlines():
                 row = json.loads(line); records[row['record_id']] = row
-        for filename, expected_count in [('review-es-nb.json', 240), ('review-core-six.json', 402), ('review-madlad-de-fr.json', 80), ('review-context-v2-m2m100.json', 80), ('review-context-v2-madlad.json', 80)]:
+        for filename, expected_count in [('review-es-nb.json', 240), ('review-core-six.json', 402), ('review-madlad-de-fr.json', 80), ('review-context-v2-m2m100.json', 80), ('review-context-v2-madlad.json', 80), ('review-context-v3-madlad.json', 80)]:
             review = json.loads((directory / filename).read_text())
             self.assertFalse(review['native_review'])
             self.assertEqual(review['approved_locales'], [])
@@ -266,6 +266,35 @@ class TranslationPilotTest(unittest.TestCase):
             with patch.object(pilot, 'actions_only'), patch.object(pilot.subprocess, 'run', side_effect=AssertionError('Unexpected model conversion')), contextlib.redirect_stdout(stream):
                 pilot.run(args)
             self.assertIn('"conversion_seconds":0', stream.getvalue())
+
+    def test_reviewed_memory_is_bound_to_source_context_and_destination(self):
+        source = 'Audio decoded locally. Duration: {duration} seconds.'
+        unit = {'key': 'voice-changer.fields.loaded', 'source': source, 'source_hash': hashlib.sha256(source.encode()).hexdigest(), 'context': 'fields.loaded'}
+        text = pilot.reviewed_memory(unit, 'es', 'context-v4')
+        self.assertEqual(text, 'Audio decodificado localmente. Duración: {duration} segundos.')
+        self.assertIsNone(pilot.reviewed_memory(unit, 'fr', 'context-v4'))
+        self.assertIsNone(pilot.reviewed_memory(unit, 'es', 'context-v3'))
+        for changed in [{'source_hash': 'stale'}, {'context': 'another-sense'}]:
+            with self.assertRaises(ValueError): pilot.reviewed_memory({**unit, **changed}, 'es', 'context-v4')
+
+    def test_reviewed_memory_bypasses_model_without_fabricating_model_output(self):
+        source = 'Audio decoded locally. Duration: {duration} seconds.'
+        unit = {'key': 'voice-changer.fields.loaded', 'source': source, 'source_hash': hashlib.sha256(source.encode()).hexdigest(), 'context': 'fields.loaded'}
+        def no_model(*args): self.fail('Reviewed memory hit must never be retranslated')
+        values, traces, memory = pilot.forward_with_memory([unit], 'es', 'context-v4', no_model)
+        self.assertIn('{duration}', values[0][0])
+        self.assertIsNone(traces[0])
+        self.assertEqual(memory, [values[0][0]])
+
+    def test_every_reviewed_memory_entry_preserves_literals_and_has_actual_agent_provenance(self):
+        for entry in pilot.POLICIES['context-v4']['reviewed_memory'].values():
+            self.assertEqual(entry['review_kind'], 'agent')
+            self.assertFalse(entry['native_review'])
+            self.assertTrue(entry['reviewer'])
+            for locale, text in entry['translations'].items():
+                checks = pilot.automatic_checks(entry['source'], text, locale)
+                self.assertTrue(checks['protected_tokens_identical'])
+                self.assertTrue(checks['technical_tokens_identical'])
 
     def test_missing_sentence_spacing_is_not_misreported_as_a_file_extension_change(self):
         checks = pilot.automatic_checks('Audio decoded. Try again.', 'Audio decodificado.Prueba otra vez.', 'es')
