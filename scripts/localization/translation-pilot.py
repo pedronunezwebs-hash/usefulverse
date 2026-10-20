@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import base64
 from collections import Counter
+from decimal import Decimal
 import hashlib
 import importlib.util
 import json
@@ -34,12 +35,17 @@ CONTEXT_POLICY = json.loads(Path(__file__).with_name("pilot-context-policy.json"
 POLICIES = {CONTEXT_POLICY["id"]: CONTEXT_POLICY, "context-v3": json.loads(Path(__file__).with_name("pilot-sentence-policy.json").read_text()), "context-v4": json.loads(Path(__file__).with_name("pilot-memory-policy.json").read_text())}
 POLICIES["context-v5"] = json.loads(Path(__file__).with_name("pilot-coverage-policy.json").read_text())
 POLICIES["context-v6"] = json.loads(Path(__file__).with_name("pilot-privacy-policy.json").read_text())
+POLICIES["context-v7"] = json.loads(Path(__file__).with_name("pilot-technical-policy.json").read_text())
 SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
 TECHNICAL_TOKEN = re.compile(r"\.(?:dxf|dwg|png|svg|wav|mp3|pdf|json|csv|txt)\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
 SOFTWARE_VERSION = re.compile(r"(?<![\w.])\d+(?:\.\d+){2,}(?![\w.]\d)")
 SOFTWARE_IDENTIFIER = re.compile(r"(?<!\w)(?:dxf-parser|loglevel|Web Audio)(?!\w)", re.IGNORECASE)
 TYPED_LITERAL = re.compile(r"(?<![\w.])\d+(?:\.\d+){2,}(?![\w.]\d)|\((?:in|ft|mi|mm|cm|m|km|yd)\)")
 OPAQUE_LITERAL = re.compile(r"https?://[^\s<>]+|`[^`]*`|\{[A-Za-z][A-Za-z0-9_]*\}|</?[A-Za-z][^>]*>")
+COORDINATE = re.compile(r"\(\s*([+-]?\d+(?:\.\d+)?)\s*,\s*([+-]?\d+(?:\.\d+)?)\s*\)")
+COORDINATE_SPAN = r"\(\s*[+-]?\d+(?:\.\d+)?\s*,\s*[+-]?\d+(?:\.\d+)?\s*\)"
+TYPED_DATA_V7 = re.compile(rf"(?:{TYPED_LITERAL.pattern})|(?:{COORDINATE_SPAN})|(?:{SOFTWARE_IDENTIFIER.pattern})|\b[23]D\b|(?<!\w)[+-]?\d+(?:[.,]\d+)*(?:%|°)?(?!\w)", re.IGNORECASE)
+NUMERIC_VALUE = re.compile(r"(?<![\w.])[+-]?\d+(?:[.,\u00a0\u202f ]\d+)*(?:%|°)?(?!\w)")
 
 
 def canonical(value):
@@ -170,7 +176,7 @@ def segment_evidence_valid(trace, expected_input, assembled_output):
     return "".join(source) == expected_input and "".join(output) == assembled_output
 
 
-def translate_covered_sentences(texts, model_translate, traces=None):
+def translate_covered_sentences(texts, model_translate, traces=None, literal_pattern=TYPED_LITERAL):
     """Cover every sentence, copying typed data at known source spans in either direction.
 
     Prose stays in complete sentences except at explicit version/unit data boundaries.
@@ -185,7 +191,7 @@ def translate_covered_sentences(texts, model_translate, traces=None):
         breaks = [(m.start(1), m.end(1)) for m in re.finditer(r"[.!?](\s+)(?=\S)", text)
             if not any(start <= m.start() < end for start, end in protected_spans)]
         opaque = [(m.start(), m.end()) for m in OPAQUE_LITERAL.finditer(text)]
-        typed = opaque + [(m.start(), m.end()) for m in TYPED_LITERAL.finditer(text)
+        typed = opaque + [(m.start(), m.end()) for m in literal_pattern.finditer(text)
             if not any(start <= m.start() < end for start, end in opaque)]
         spans = sorted(typed + breaks) + [(len(text), len(text))]
         for start, end in spans:
@@ -211,10 +217,43 @@ def translate_covered_sentences(texts, model_translate, traces=None):
         valid = bool(raw.strip()) and segment_evidence_valid(trace, source, raw)
         valid &= queue.signature(source) == queue.signature(raw)
         valid &= Counter(t.casefold() for t in TECHNICAL_TOKEN.findall(source)) == Counter(t.casefold() for t in TECHNICAL_TOKEN.findall(raw))
-        valid &= Counter(TYPED_LITERAL.findall(source)) == Counter(TYPED_LITERAL.findall(raw))
+        valid &= Counter(literal_pattern.findall(source)) == Counter(literal_pattern.findall(raw))
         if traces is not None: traces.append(trace)
         results.append((raw if valid else None, raw, any(part.get("truncated", False) for part in trace)))
     return results
+
+
+def translate_typed_data_sentences(texts, model_translate, traces=None):
+    """v7 only: preserve whole quantities, coordinates and package names at source spans."""
+    return translate_covered_sentences(texts, model_translate, traces, TYPED_DATA_V7)
+
+
+def numeric_prose(text):
+    return COORDINATE.sub(" ", SOFTWARE_VERSION.sub(" ", OPAQUE_LITERAL.sub(" ", text)))
+
+
+def numeric_data(text, locale):
+    """Conservative audit of en/es/nb numbers, separate from the strict literal contract.
+
+    Coordinates have explicit English mathematical notation, including optional spacing.
+    Local quantity separators are parsed only by a known grammar; malformed groups fail.
+    No translated output is rewritten and no inference acceptance flag is relaxed.
+    """
+    if locale not in ("en", "es", "nb-NO"): return None
+    prose = OPAQUE_LITERAL.sub(" ", text)
+    coordinates = [tuple(Decimal(value) for value in match.groups()) for match in COORDINATE.finditer(prose)]
+    prose = numeric_prose(text)
+    quantities = Counter()
+    grouping, decimal = (",", ".") if locale == "en" else ((".", ",") if locale == "es" else (" ", ","))
+    group = re.escape(grouping)
+    grammar = rf"[+-]?(?:\d+|\d{{1,3}}(?:{group}\d{{3}})+)(?:{re.escape(decimal)}\d+)?"
+    for match in NUMERIC_VALUE.finditer(prose):
+        token = match.group().replace("\u00a0", " ").replace("\u202f", " ")
+        suffix = token[-1] if token[-1] in "%°" else ""
+        number = token[:-1] if suffix else token
+        if not re.fullmatch(grammar, number): return None
+        quantities[(Decimal(number.replace(grouping, "").replace(decimal, ".")), suffix)] += 1
+    return quantities, coordinates
 
 
 def semantic_issues(key, source_hash, translation, locale, direction="forward"):
@@ -231,7 +270,19 @@ def automatic_checks(source, translation, locale, key=None, back_translation=Non
     script_ratio = None if not required_script or not letters else sum(required_script in unicodedata.name(char, "") for char in letters) / len(letters)
     unit_label = bool(key and key.startswith("dxf-viewer.fields.units."))
     unit_symbols = lambda text: Counter(re.findall(r"\(([^()]*)\)", text))
+    # An exact signed source-token multiset is the explicit unlocalized data contract.
+    # Otherwise parse only the target locale's grammar; do not guess ambiguous formats.
+    literal_numeric_copy = Counter(NUMERIC_VALUE.findall(numeric_prose(source))) == Counter(NUMERIC_VALUE.findall(numeric_prose(translation)))
+    source_data = numeric_data(source, "en")
+    target_data = numeric_data(translation, "en" if literal_numeric_copy else locale)
+    back_data = None if back_translation is None else numeric_data(back_translation, "en")
+    known_numeric_locale = locale in ("en", "es", "nb-NO")
     return {
+        "numeric_notation": "source-literal" if literal_numeric_copy else locale if known_numeric_locale else None,
+        "numeric_values_identical": None if not known_numeric_locale else source_data is not None and target_data is not None and source_data[0] == target_data[0],
+        "coordinate_values_identical": None if not source_data or not source_data[1] else target_data is not None and source_data[1] == target_data[1],
+        "back_numeric_values_identical": None if back_translation is None else source_data is not None and back_data is not None and source_data[0] == back_data[0],
+        "back_coordinate_values_identical": None if back_translation is None or not source_data or not source_data[1] else back_data is not None and source_data[1] == back_data[1],
         "software_identifiers_identical": Counter(t.casefold() for t in SOFTWARE_IDENTIFIER.findall(source)) == Counter(t.casefold() for t in SOFTWARE_IDENTIFIER.findall(translation)),
         "back_software_identifiers_identical": None if back_translation is None else Counter(t.casefold() for t in SOFTWARE_IDENTIFIER.findall(source)) == Counter(t.casefold() for t in SOFTWARE_IDENTIFIER.findall(back_translation)),
         "software_versions_identical": Counter(SOFTWARE_VERSION.findall(source)) == Counter(SOFTWARE_VERSION.findall(translation)),
@@ -370,7 +421,11 @@ def summarize(paths):
                 group["forward_segment_evidence"] += int(row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not segment_evidence_valid(row.get("forward_segments"), row["model_input"], row["raw_translation"]))
                 group["back_segment_evidence"] += int(not segment_evidence_valid(row.get("back_segments"), row["translation"], row["back_translation"]))
             checks = automatic_checks(row["source"], row["translation"], row["locale"], row["key"], row["back_translation"])
-            for flag, fails in {"software_identifiers": not checks["software_identifiers_identical"],
+            for flag, fails in {"numeric_values": checks["numeric_values_identical"] is False,
+                "coordinate_values": checks["coordinate_values_identical"] is False,
+                "back_numeric_values": checks["back_numeric_values_identical"] is False,
+                "back_coordinate_values": checks["back_coordinate_values_identical"] is False,
+                "software_identifiers": not checks["software_identifiers_identical"],
                 "back_software_identifiers": checks["back_software_identifiers_identical"] is False,
                 "software_versions": not checks["software_versions_identical"],
                 "back_software_versions": checks["back_software_versions_identical"] is False,
@@ -474,6 +529,8 @@ def run(args):
                 return translate_unmasked_sentences(texts, prose_translate, traces)
             if POLICIES[policy]["protection"] == "covered-sentences-typed-data-v1":
                 return translate_covered_sentences(texts, prose_translate, traces)
+            if POLICIES[policy]["protection"] == "covered-sentences-typed-data-v2":
+                return translate_typed_data_sentences(texts, prose_translate, traces)
             return translate_literal_segments(texts, prose_translate, traces)
         protected = [queue.protect(text) for text in texts]
         outputs = model_translate([text for text, _ in protected], source_locale, target_locale)
