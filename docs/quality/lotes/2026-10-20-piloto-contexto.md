@@ -14,7 +14,7 @@ Checklist (FABLE bug + multi-sesión y RUNBOOK):
 - [x] Conservar baseline; hash de la política en identidades; trazas de fragmentos y controles ida/vuelta.
 - [x] Repetir tres configuraciones, revisar y conservar referencias; solo v4 supera su umbral es/nb.
 - [x] Revisión adversarial, tests vecinos, CI y GET de producción.
-- [ ] Actualizar ESTADO, progress, LOG; push y SHA remoto; liberar candado y eliminar temporales propios.
+- [x] Actualizados ESTADO, progress y LOG; push y hashes remotos verificados; candado LIBRE y temporales propios eliminados.
 
 La segmentación puede empeorar gramática u orden: es un experimento que requiere revisión, no una reparación automática
 que permita aprobar el idioma. No hay sustituciones en destino ni revisión nativa inventada.
@@ -117,4 +117,11 @@ revisada por contexto. Repetir referencias y completo es/nb con la misma muestra
 
 ## Limpieza del lote
 
-PENDIENTE-LIMPIEZA-CONTEXTO: se anotará online después de verificar hashes remotos y eliminar realmente el clon propio.
+Limpieza comprobada el 20-oct-2026 a las 14:47 UTC, después del push y de comparar los blobs locales con GitHub.
+Eliminado directamente, sin Papelera, el directorio propio `usefulverse-codex-contexto-20261020.IpuOmn`: clon,
+archivos regenerables, diffs, logs, corpus y binarios de QA. Huella observada: 0,52 GiB, por debajo del máximo de 2 GiB.
+**0 rutas temporales propias residuales; 56,88 GiB libres** tras la eliminación. No se descargaron pesos de traducción,
+instalaron dependencias pesadas ni hicieron builds completos en el Mac. Los modelos del runner se eliminaron con éxito.
+Verificados online por SHA de blob y tamaño los seis checkpoints (6.145 registros), la rúbrica completa, la memoria y
+las 410 regresiones; HEAD de la rama antes de limpiar: `1158de9`. Relevo en main `a7ecd5b`, candado LIBRE.
+Este cierre se escribe online después de borrar realmente el clon; no quedan commits ni archivos únicos solo en local.
