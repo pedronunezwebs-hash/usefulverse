@@ -1,0 +1,9 @@
+ctranslate2==4.8.3
+transformers==5.20.1
+huggingface-hub==2.2.0
+sentencepiece==0.2.2
+numpy==2.5.4
+accelerate==1.15.0
+safetensors==0.8.0
+opencc-python-reimplemented==0.1.7
+langid==1.1.6
