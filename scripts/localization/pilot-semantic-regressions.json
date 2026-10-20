@@ -538,5 +538,851 @@
     "issue": "Concordancia de ett tallledetråd incorrecta en bokmål; debe ser én tallledetråd.",
     "observed_candidate": "model-madlad",
     "run_id": "39402041888"
+  },
+  {
+    "locale": "de",
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "translation": "Fit Zeichnung",
+    "issue": "No expresa ajustar el dibujo a la vista.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "dxf-viewer.fields.zoomIn",
+    "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+    "translation": "Zoom in",
+    "issue": "La acción queda en inglés.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "dxf-viewer.fields.zoomOut",
+    "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+    "translation": "Zoom aus",
+    "issue": "Zoom aus no expresa correctamente alejar.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "shikaku.fields.resume",
+    "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+    "translation": "Rezumiert",
+    "issue": "Rezumiert no expresa reanudar.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "shikaku.fields.clear",
+    "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+    "translation": "klare Rechteckungen",
+    "issue": "La acción de borrar se convierte en un adjetivo y Rechteckungen es incorrecto.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "shikaku.fields.undo",
+    "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+    "translation": "Undo letzte Rechteckung",
+    "issue": "Undo queda en inglés y Rechteckung es incorrecto.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "shikaku.fields.selectStart",
+    "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+    "translation": "Wählen Sie einen Startplatz.",
+    "issue": "Startplatz es un lugar de salida, no una casilla.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "shikaku.fields.selectEnd",
+    "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+    "translation": "Jetzt wählen Sie den entgegengesetzten Winkel.",
+    "issue": "Winkel es ángulo, no la esquina del tablero.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "translation": "Nein: Jede Rechteckel muss genau eine Nummer-Taste enthalten.",
+    "issue": "Una pista numérica se convierte en una tecla; Rechteckel es incorrecto.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "Klares Audio",
+    "issue": "La acción de borrar se convierte en la descripción de un audio claro.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "voice-changer.fields.preview",
+    "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+    "translation": "Vorhersage Effekt",
+    "issue": "La previsualización se convierte en predicción.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "voice-changer.fields.stop",
+    "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+    "translation": "Stoppen Sie die Vorhersage",
+    "issue": "Detener la previsualización se convierte en detener la predicción.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "voice-changer.fields.export",
+    "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+    "translation": "Export verarbeitet WAV",
+    "issue": "Verarbeitet no concuerda con el objeto WAV en este botón.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "voice-changer.fields.loaded",
+    "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+    "translation": "Laufzeit: {duration} Sekunden.",
+    "issue": "Se omite que el audio ya se ha decodificado localmente.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "voice-changer.fields.tooLong",
+    "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+    "translation": "Dieses Tool unterstützt Clips bis zu 30 Sekunden. Trim die Datei und versuchen Sie erneut.",
+    "issue": "Trim queda en inglés y falta una forma imperativa correcta.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "No. Ihr Browser decodiert und verarbeitet das ausgewählte Audio lokal. UsefulVerse erhält die Aufnahme nicht.",
+    "issue": "La respuesta No. queda en inglés.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "translation": "Nr. Jedes Rechteck muss genau einen Zahlenhinweis enthalten.",
+    "issue": "La negación se convierte en Nr., abreviatura de número.",
+    "observed_candidate": "legacy",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "Klarer Ton",
+    "issue": "Borrar se convierte en descripción de sonido claro.",
+    "observed_candidate": "legacy",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "Nr. Ihr Browser dekodiert und verarbeitet das ausgewählte Audio lokal. UsefulVerse empfängt die Aufzeichnung nicht.",
+    "issue": "La negación se convierte en Nr., abreviatura de número.",
+    "observed_candidate": "legacy",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "translation": "Faible dessin",
+    "issue": "Se convierte en dibujo débil, sin la acción de ajustar.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "dxf-viewer.fields.zoomIn",
+    "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+    "translation": "Zoom dans",
+    "issue": "Zoom dans no expresa correctamente acercar.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "dxf-viewer.fields.zoomOut",
+    "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+    "translation": "Zoom à partir",
+    "issue": "Zoom à partir no expresa correctamente alejar.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "shikaku.fields.resume",
+    "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+    "translation": "Résumé",
+    "issue": "Résumé es resumen, no reanudar.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "shikaku.fields.clear",
+    "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+    "translation": "Les rectangles clairs",
+    "issue": "Borrar se convierte en el adjetivo claros.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "shikaku.fields.undo",
+    "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+    "translation": "Le dernier rectangle",
+    "issue": "Se omite la acción de deshacer.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "shikaku.fields.selectStart",
+    "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+    "translation": "Choisissez un square de départ.",
+    "issue": "Square es un jardín/plaza, no la casilla del juego.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "shikaku.fields.deleteSave",
+    "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+    "translation": "Supprimer le jeu sauvé",
+    "issue": "Jeu sauvé no es la formulación apropiada de partida guardada.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "translation": "N. Chaque rectangle doit contenir exactement un numéro d'indice.",
+    "issue": "La respuesta negativa se convierte en N. y el término pista numérica es impreciso.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "L’audio clair",
+    "issue": "Borrar se convierte en la descripción de audio claro.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "voice-changer.fields.preview",
+    "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+    "translation": "Effet prévisible",
+    "issue": "El efecto de previsualizar se convierte en efecto previsible.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "voice-changer.fields.stop",
+    "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+    "translation": "Arrêter la prévision",
+    "issue": "La previsualización se convierte en previsión.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "voice-changer.fields.load",
+    "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+    "translation": "Télécharger l’audio localement",
+    "issue": "Charger un archivo local se convierte en télécharger, descargar.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "voice-changer.fields.export",
+    "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+    "translation": "Exportation de WAV",
+    "issue": "Se omite que el WAV ha sido procesado.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "voice-changer.fields.tooLong",
+    "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+    "translation": "Cet outil soutient les clips jusqu'à 30 secondes. Trimmer le fichier et essayer à nouveau.",
+    "issue": "Trimmer no es la instrucción francesa apropiada para recortar este audio.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "shikaku.fields.clear",
+    "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+    "translation": "Rectangles clairs",
+    "issue": "Borrar se convierte en el adjetivo claros.",
+    "observed_candidate": "legacy",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "Son clair",
+    "issue": "Borrar se convierte en la descripción de sonido claro.",
+    "observed_candidate": "legacy",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "translation": "Dicas de desenho",
+    "issue": "Ajustar el dibujo se convierte en consejos de dibujo.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "dxf-viewer.fields.zoomIn",
+    "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+    "translation": "Zoom em",
+    "issue": "Zoom em no expresa correctamente ampliar.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "dxf-viewer.fields.zoomOut",
+    "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+    "translation": "O Zoom",
+    "issue": "Se omite la acción de alejar.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "shikaku.fields.resume",
+    "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+    "translation": "Resumo",
+    "issue": "Resumo es resumen, no retomar la partida.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "shikaku.fields.clear",
+    "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+    "translation": "Rectangulos claros",
+    "issue": "Borrar se convierte en el adjetivo claros; la forma no es pt-BR.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "shikaku.fields.undo",
+    "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+    "translation": "O último rectangulo",
+    "issue": "Se omite la acción de deshacer.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "shikaku.fields.selectStart",
+    "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+    "translation": "Escolha uma praça de início.",
+    "issue": "Praça es plaza, no casilla.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "shikaku.fields.deleteSave",
+    "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+    "translation": "Desligue o jogo salvo",
+    "issue": "Excluir se convierte en desligar, apagar/desconectar.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "translation": "No. Cada rectangulo deve conter exatamente um número.",
+    "issue": "No. queda en inglés y se omite el término pista.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "Áudio claro",
+    "issue": "Borrar se convierte en la descripción de audio claro.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "voice-changer.fields.preview",
+    "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+    "translation": "Previsão de efeito",
+    "issue": "La previsualización se convierte en previsión.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "voice-changer.fields.stop",
+    "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+    "translation": "Parar a previsão",
+    "issue": "La previsualización se convierte en previsión.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "voice-changer.fields.export",
+    "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+    "translation": "Exportação processada WAV",
+    "issue": "El botón deja de expresar claramente la acción de exportar.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "voice-changer.fields.loaded",
+    "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+    "translation": "Audio decodido localmente. duração: {duration} segundos.",
+    "issue": "Decodido no es decodificado.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "voice-changer.fields.tooLong",
+    "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+    "translation": "Esta ferramenta suporta clipes até 30 segundos. remover o arquivo e tente novamente.",
+    "issue": "Recortar se convierte en eliminar el archivo.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "No. O seu navegador decode e processa o áudio selecionado localmente. o UsefulVerse não recebe a gravação.",
+    "issue": "No. queda en inglés y decode no es la forma apropiada en pt-BR.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "Áudio nítido",
+    "issue": "Borrar se convierte en la descripción de audio nítido.",
+    "observed_candidate": "legacy",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "translation": "適切なデザイン",
+    "issue": "La acción de ajustar se convierte en diseño adecuado.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "dxf-viewer.fields.zoomIn",
+    "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+    "translation": "Zoom で",
+    "issue": "La mezcla Zoom で no expresa correctamente ampliar.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "dxf-viewer.fields.zoomOut",
+    "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+    "translation": "Zoom 出る",
+    "issue": "La mezcla Zoom 出る no expresa correctamente reducir.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "shikaku.fields.resume",
+    "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+    "translation": "リサイクル",
+    "issue": "Reanudar se convierte en reciclar.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "shikaku.fields.clear",
+    "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+    "translation": "明るい直角",
+    "issue": "Borrar rectángulos se convierte en ángulos rectos brillantes.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "shikaku.fields.undo",
+    "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+    "translation": "最後の直角",
+    "issue": "Se omite deshacer y rectángulo se convierte en ángulo recto.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "shikaku.fields.selectStart",
+    "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+    "translation": "スタート広場を選択します。",
+    "issue": "La casilla se convierte en plaza de salida.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "translation": "ノー 各直角には、正確に1つの数字のヒントが含まれなければなりません。",
+    "issue": "Rectángulo se convierte en ángulo recto.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "明るいオーディオ",
+    "issue": "Borrar se convierte en la descripción de un audio brillante.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "voice-changer.fields.preview",
+    "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+    "translation": "予測効果",
+    "issue": "La previsualización se convierte en predicción.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "voice-changer.fields.load",
+    "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+    "translation": "オーディオを地元で充電",
+    "issue": "Cargar localmente se convierte en cargar una batería en el vecindario.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "voice-changer.fields.export",
+    "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+    "translation": "輸出処理WAV",
+    "issue": "Exportar un archivo se expresa como exportación de comercio exterior.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "voice-changer.fields.loaded",
+    "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+    "translation": "オーディオは地元で解読されました. 期間: {duration} 秒。",
+    "issue": "Localmente se convierte en el vecindario y decodificar es impreciso.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "No. あなたのブラウザは、地元で選択したオーディオを削除および処理します. UsefulVerse は録音を受け取らない。",
+    "issue": "Decodificar se convierte en eliminar el audio; No. queda en inglés.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "shikaku.fields.clear",
+    "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+    "translation": "透明な長方形",
+    "issue": "Borrar se convierte en la descripción de rectángulos transparentes.",
+    "observed_candidate": "legacy",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "クリアなオーディオ",
+    "issue": "Borrar se convierte en la descripción de audio claro.",
+    "observed_candidate": "legacy",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "hi",
+    "key": "shikaku.fields.resume",
+    "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+    "translation": "संदर्भ",
+    "issue": "Reanudar se convierte en referencia.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "hi",
+    "key": "shikaku.fields.clear",
+    "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+    "translation": "स्पष्ट रेटिंग",
+    "issue": "Borrar rectángulos se convierte en calificación clara.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "hi",
+    "key": "shikaku.fields.undo",
+    "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+    "translation": "आखिरी रेटिंग",
+    "issue": "Deshacer el rectángulo se convierte en última calificación.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "hi",
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "translation": "नहीं. प्रत्येक सीधे कोने में एक संख्या संकेत होना चाहिए।",
+    "issue": "Rectángulo se convierte en esquina recta y la regla pierde precisión.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "hi",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "स्पष्ट ऑडियो",
+    "issue": "Borrar se convierte en la descripción de audio claro.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "hi",
+    "key": "voice-changer.fields.preview",
+    "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+    "translation": "पूर्वानुमान प्रभाव",
+    "issue": "La previsualización se convierte en predicción.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "hi",
+    "key": "voice-changer.fields.export",
+    "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+    "translation": "WAV प्रसंस्करण",
+    "issue": "Se omite la acción de exportar.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "hi",
+    "key": "voice-changer.fields.export",
+    "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+    "translation": "निर्यात संसाधित WAV",
+    "issue": "Orden de palabras poco natural en el botón de exportación.",
+    "observed_candidate": "legacy",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "translation": "التصميم المناسب",
+    "issue": "Ajustar el dibujo se convierte en diseño adecuado.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "dxf-viewer.fields.zoomIn",
+    "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+    "translation": "زوم في",
+    "issue": "La transliteración literal no expresa correctamente ampliar.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "dxf-viewer.fields.zoomOut",
+    "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+    "translation": "زوم الخروج",
+    "issue": "La expresión literal no expresa correctamente reducir.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "shikaku.fields.resume",
+    "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+    "translation": "سيرة",
+    "issue": "Reanudar se convierte en biografía.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "shikaku.fields.clear",
+    "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+    "translation": "مستطيل واضح",
+    "issue": "Borrar se convierte en la descripción de un rectángulo claro.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "shikaku.fields.undo",
+    "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+    "translation": "وَأَخْرَجَ الْمَدِينَةُ",
+    "issue": "Alucina una frase sobre sacar la ciudad; no deshace un rectángulo.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "translation": "يجب أن يحتوي كل مستطيل على رقم واحد بالضبط.",
+    "issue": "Se omite la respuesta negativa de la FAQ.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "الصوت الواضح",
+    "issue": "Borrar se convierte en la descripción de un sonido claro.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.preview",
+    "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+    "translation": "تأثير المسبق",
+    "issue": "El texto deja de expresar claramente la previsualización.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.stop",
+    "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+    "translation": "توقف التوقعات",
+    "issue": "La previsualización se convierte en pronóstico.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.export",
+    "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+    "translation": "تصدير المعالجة WAV",
+    "issue": "La instrucción de exportar el WAV procesado tiene el objeto mal construido.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.loaded",
+    "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+    "translation": "الصوت محذوفة محليا.مدة: {duration} ثانية.",
+    "issue": "Decodificado se convierte en eliminado.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.tooLong",
+    "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+    "translation": "يدعم هذا الأداة مقاطع الفيديو تصل إلى 30 ثواني.",
+    "issue": "Se cambia audio por vídeo y se omite recortar y volver a intentar.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "لا. يقوم المتصفح الخاص بك بتفريغ ومعالجة الصوت المحدد محلياً. لا يحصل UsefulVerse على التسجيل.",
+    "issue": "Decodificar se convierte en un término ambiguo de vaciado/transcripción.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "translation": "رقم. يجب أن يحتوي كل مستطيل على دليل رقم واحد بالضبط.",
+    "issue": "La respuesta negativa se convierte en la palabra número.",
+    "observed_candidate": "legacy",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "صوت واضح",
+    "issue": "Borrar se convierte en la descripción de sonido claro.",
+    "observed_candidate": "legacy",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "رقم. يقوم متصفحك بفك تشفير الصوت المحدد ومعالجته محليًا. UsefulVerse لا يتلقى التسجيل.",
+    "issue": "La respuesta negativa se convierte en la palabra número.",
+    "observed_candidate": "legacy",
+    "run_id": "39402644071"
   }
 ]

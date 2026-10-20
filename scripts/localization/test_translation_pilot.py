@@ -111,23 +111,24 @@ class TranslationPilotTest(unittest.TestCase):
 
     def test_agent_review_stays_bound_to_the_exact_observed_translations(self):
         directory = pilot.ROOT / 'docs/quality/translation-pilot'
-        review = json.loads((directory / 'review-es-nb.json').read_text())
         records = {}
         for path in (directory / 'checkpoints').glob('*.jsonl'):
             for line in path.read_text().splitlines():
                 row = json.loads(line); records[row['record_id']] = row
-        self.assertFalse(review['native_review'])
-        self.assertEqual(review['approved_locales'], [])
-        self.assertEqual(len(review['rows']), 240)
-        for row in review['rows']:
-            with self.subTest(key=row['key'], locale=row['locale'], candidate=row['candidate']):
-                self.assertEqual(set(row['scores']), {'meaning', 'numbers_negations', 'naturalness'})
-                self.assertTrue(all(type(score) is int and 0 <= score <= 3 for score in row['scores'].values()))
-                self.assertTrue(row['notes'])
-                for identity in row['record_ids']:
-                    actual = records[identity]
-                    self.assertEqual(actual['source_hash'], row['source_hash'])
-                    self.assertEqual(hashlib.sha256(actual['translation'].encode()).hexdigest(), row['translation_hash'])
+        for filename, expected_count in [('review-es-nb.json', 240), ('review-core-six.json', 222)]:
+            review = json.loads((directory / filename).read_text())
+            self.assertFalse(review['native_review'])
+            self.assertEqual(review['approved_locales'], [])
+            self.assertEqual(len(review['rows']), expected_count)
+            for row in review['rows']:
+                with self.subTest(key=row['key'], locale=row['locale'], candidate=row['candidate']):
+                    self.assertEqual(set(row['scores']), {'meaning', 'numbers_negations', 'naturalness'})
+                    self.assertTrue(all(type(score) is int and 0 <= score <= 3 for score in row['scores'].values()))
+                    self.assertTrue(row['notes'])
+                    for identity in row['record_ids']:
+                        actual = records[identity]
+                        self.assertEqual(actual['source_hash'], row['source_hash'])
+                        self.assertEqual(hashlib.sha256(actual['translation'].encode()).hexdigest(), row['translation_hash'])
 
     def test_a_valid_forward_translation_does_not_hide_broken_back_translation_tokens(self):
         checks = pilot.automatic_checks('Choose an audio file no larger than 25 MB.',

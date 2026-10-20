@@ -1,0 +1,4008 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex (agente, sin API de pago)",
+  "native_review": false,
+  "reviewed_at_utc": "2026-10-20T10:03:09.069159+00:00",
+  "scope": "20 claves de referencia por idioma en de/fr/pt-BR/ja/hi/ar, comparadas con el inglés y la traducción actual; DXF actual ausente en estos destinos.",
+  "rubric": "REVISION-FINAL §2, 0-3 en significado, cifras/negaciones y naturalidad. Cribado: falta revisar las otras 20 referencias y MADLAD.",
+  "approved_locales": [],
+  "decision": "rejected-pending-corrections",
+  "rows": [
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "translation_hash": "2f2c151b2c25de96bd07fda08223d2def3d563486236f4385e968f9be53d800c",
+      "record_ids": [
+        "ac15d854a6cc466e117f65992f79175bc4b0b528801b5d980e436bb3f2be307c"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "No expresa ajustar el dibujo a la vista."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "translation_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "record_ids": [
+        "08ea380ba616d58797c4ee01a86110280175f876c81a423a5ab7779e78f0ed74"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "La acción queda en inglés."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "translation_hash": "9ef876ea580a2102489c0ed99b330b21fad358d2cb1b1cab60043632860a9bc6",
+      "record_ids": [
+        "1ad5db3ebf660ded4397b3824db2cfe6ed8e24b89d0171f98b77194e2bf5e179"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Zoom aus no expresa correctamente alejar."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "5b5206165cdaa95f807ac32710a6680d5d2009a682a3f30e1869e986ff4132a0",
+      "record_ids": [
+        "6bea0c7f6b4c8ec7fae2072db302994feef8298c7a4f6b76af22f2bc4fb44015"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Rezumiert no expresa reanudar."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "f4c7a91d60e464faa5c664deff4ccd002a641e058890b582796075c2bd0874f8",
+      "record_ids": [
+        "3f96bf433401bd685598811a4eba679fa75aaf1094136012ddf91d176ef14c29"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "La acción de borrar se convierte en un adjetivo y Rechteckungen es incorrecto."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "3d187872d6247b4ed57d91b424beec8adf62299a6919dce5a1ccc4c81658b8f1",
+      "record_ids": [
+        "6df388e1df8c961a0cd5a0b977a41d6368271638296c281a8825e37719329eb5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "f40488bb6aaa775b2d7761142143bfb5a213b5deb8d8a5199f10a7253c131bbe",
+      "record_ids": [
+        "8bed19d32c2e973b5a55fbeb35dde18e527cd4925a0ddf57679bb287d1d95473"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Undo queda en inglés y Rechteckung es incorrecto."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "1a8caca423bbafd5f36b36b00ae45fb82c4509e88e8b84e52ef51577315ae11f",
+      "record_ids": [
+        "4c3edc5767bf629f462c7e896773ead86086f60b4312283267c3b97ebdf75063"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Startplatz es un lugar de salida, no una casilla."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "02d9af67c1e9da427ddbf0d49bb577fcdfa3635a3d3a339eac0c6a784f701b00",
+      "record_ids": [
+        "374afc6f14af2665371d0ed949b2b96b99e7702a99a016de77d9995842484dee"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Winkel es ángulo, no la esquina del tablero."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "58e455b15190ba38fc209232f08e9c7e48b7c4c2c027ba7d8536451bc7e0c958",
+      "record_ids": [
+        "6623ba2ebb4b2dfbcfcbde07c7c0a9fe9e3a37b8a9953ce55abe8d455b5afc2d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "65238831812cc141e093a568517f28beb10778b14a3bba6107c74926e9fcac6f",
+      "record_ids": [
+        "33054d14b299ecbd766710b79fc6d2f062a4f7a3edbcdeeaa86c735b239bbb47"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Una pista numérica se convierte en una tecla; Rechteckel es incorrecto."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "e7737ad8e02b6c79f5e8d3b52e1649d56ec81bdc13ba04dfdabccb9dac710e35",
+      "record_ids": [
+        "1631565e0a7b6baed4f5b31756d2bcf7042d35c95242efcf2eba9335e1599870"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "La acción de borrar se convierte en la descripción de un audio claro."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "cc28eb4cc7db4fb5420e0775cc3d47bb16f4b47ad21e45dfb444283c71741848",
+      "record_ids": [
+        "856928ed8a7df4396a87f9adf6911360dac94ed8ec08418113be7bed99cca1e9"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "La previsualización se convierte en predicción."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "3ec9c82d4ae7077b8dfee2269203a319101fd0329cd763d3f419ecd531d93d8a",
+      "record_ids": [
+        "f7cdaa9749fd1edcfc57690e32239b43eff317dad29793d0c102789325decb01"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Detener la previsualización se convierte en detener la predicción."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "b8ccd81315969d24dc9b7e41a83031a3c5b93360c6270b16e3db5a96cd3a4b5b",
+      "record_ids": [
+        "a4456be4c09a8463987b30c1216f5fabaabb17142c4d68979513e4d66431e969"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "ba6af9bbe1cac30a756d8d24146c9f3e344d25275d2de84c17e049fb4c6a1fda",
+      "record_ids": [
+        "31222a147b014d62fd00716c0a7bac438feb7849f0d8f6128b28a56d42b261ff"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Verarbeitet no concuerda con el objeto WAV en este botón."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "75ec81b1a00a9fadab380d0932590e64de1add462fa7dd96b24618da51d93c33",
+      "record_ids": [
+        "f81b5159b57c152d89b8eef0f4eb775b0dd9beef9aad9985bd69ced29609b8fe"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Se omite que el audio ya se ha decodificado localmente."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "52d31cb095b44960c9087275674dc4fc0d62f1fa74816407f16e68fd554f7586",
+      "record_ids": [
+        "1d76091616fdac10907058190d5709cb7fd330b339bddd0dd9fc7eafaac4c6cf"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "d58c269f431077531b0ade21372eb5eb294774ba4959e6522a37ab650df7ac52",
+      "record_ids": [
+        "7b151589f9b511fc3767f2e898132ceb53cea1708b7b8d645c9e03470d4837f5"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Trim queda en inglés y falta una forma imperativa correcta."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "f7ec34b368cfea6aa15af23d0b1d3c113b11f3e3e7fe2fd1fcd6b57ea052483c",
+      "record_ids": [
+        "dd6fba469477374bcc337e01e3cf1b82cbdb2d7d4909fc89bbd6b505697929df"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 1,
+        "naturalness": 1
+      },
+      "notes": [
+        "La respuesta No. queda en inglés."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "legacy",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "76f6db6d9811aab192ead2deb65cc01b155ac1e57bc5a520cf5456f278600207",
+      "record_ids": [
+        "06bd84f124d70fc5560a717a957729664b9e8c31796fcbf1c7d9ee04d0643ebe"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "legacy",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "161fba9238e38c5b932c220b4784bf02872e77373fef96ca5d0e4e8a74efe3a8",
+      "record_ids": [
+        "f06233c4c2327b4fce4f8cc2475c008674e9fd459a31ee647f453cb030477a55"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "legacy",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "c6dad1ebbca38ef408703f11711720db50ad7c07730b8b81895323d1aae89840",
+      "record_ids": [
+        "5fb25136a80d46711ac2a5ca44946660da1f93592b5651ca4de90d0a9431ac09"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "legacy",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "375f118802d19bc91bd67d2eeb6e6054d92c819d53a48a6088c0685742773c23",
+      "record_ids": [
+        "b62376f2c956aeb911938932d59cad690a2ef365f9ffa5b2eb887769ba758da3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "legacy",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "f56fe674afbf8b16df454d32473d041bb33b1815751b894b25c366bed65b87ec",
+      "record_ids": [
+        "20e941c9b790c52c97f9c021e7cd3bdf6ac8515b6198e7cbcb0e206755531a4a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "legacy",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "40452dc936b0291f5a1673227f04cc427acfacc99884e7b3480d670ee6b88207",
+      "record_ids": [
+        "673112e2f6ab8a80a3b878fe27c0496b221b16d22e8a174febf380d5bd6a4bab"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "legacy",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "81a0fa2da966da61e0f61e677da01f2053232a0a3d9b160c3cd5799e3f6522fa",
+      "record_ids": [
+        "0ef4b450dec429eaf1fd293b68a2263d577599b807785d203340b74cf1076319"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "legacy",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "ccc26f50d12830f59645d0d33a703dd73decd820598252379432c5e5a04fbd7d",
+      "record_ids": [
+        "f04fb3763a986ea9e216fb70c810eb9008fcc7c1c6b6c854b5e667b3f1a2a0a3"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 1,
+        "naturalness": 1
+      },
+      "notes": [
+        "La negación se convierte en Nr., abreviatura de número."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "4ffe759d6e33eababf5ede3926c67db4b1d1a76fc624094e72397c47955cbf2d",
+      "record_ids": [
+        "1bdae211cc4725c5332013a95e757dc9d374f74d7c280697457b66ce9a7a692d"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Borrar se convierte en descripción de sonido claro."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "41966d7cfa43d4f867862eac15c8d869d43a31fb1d6e04f2424c72d299329d76",
+      "record_ids": [
+        "92a62600477fea9b732415d01301c402d7d696ad6a51769529152421b1d6cce0"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "6c43876458a25f5eae4ed106d925924258d1cf641039e3f3d04a43ea042519d9",
+      "record_ids": [
+        "7a090a4171eb10213f2c277fb00963b54733d7a5c5751d43ae03d080d462b802"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "2ecee4a26d277b1a05945d320be0933a8ceb28819e03be64d01f3c386f409a75",
+      "record_ids": [
+        "e10e2e9adbf00e68f5ca7c6c601e2381bdb069481a6b8920ed8e3ce1b7a90701"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "b34a7a77372ad24228627e1f062ab546a7809897e8ac5b4266cde8880080ca66",
+      "record_ids": [
+        "842e0b5b46ef01ac308643128f4fb2183dee9f3c65857db12d1f799f40357e09"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "39014c58e460ef69e2f45f65cd4054b3ebe95a68b589f3ce995c52a3bd35980b",
+      "record_ids": [
+        "287e2ae419efffcc7ab5832e37f33572f3ac2ab8d9002214a7442e96c1b90951"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "ace1d09fad28a6b685752b98e97b9c18dbf95e28a59a41a48d8b723994c9c7a6",
+      "record_ids": [
+        "dcecda2c7c89fb12cc66e94436fc691501e6115490243f83784590b1668bebac"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "05122ce1a821f3e34ad7bff10431fbda33f2b6df9e27fac41ac22653f872c7af",
+      "record_ids": [
+        "248ffb2a60321d8fa57642ed364334fecf76d6dfb9bc3dba8942e97cfffff2ee"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "de",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "0fe158ff5e579ef1f04bd0d1f77cc217f7c555cecb87fbec75d31a5f3962d02f",
+      "record_ids": [
+        "149c35a3a0d4a1672e1fc248386817779e209b3316abef78cc01f2ce79eba8fa"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 1,
+        "naturalness": 1
+      },
+      "notes": [
+        "La negación se convierte en Nr., abreviatura de número."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "translation_hash": "70fea6380666d69ee6f1e1b5f9688ca85eb252a8cfe39438a5f8b40e4685be13",
+      "record_ids": [
+        "c7582969f7a8bb3d31ad2667b501e2e9d058d36b15e13729bd36445f1751651c"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Se convierte en dibujo débil, sin la acción de ajustar."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "translation_hash": "a7bdcbb8e765931e4675a45564c40bf9601028bc2ed2b9073ba13e0b2e8ac879",
+      "record_ids": [
+        "f98c945ed608ec330dd78d94945d61c0987b49c2d17b72eefbd253413c9af7c8"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Zoom dans no expresa correctamente acercar."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "translation_hash": "b0377e797eadc4ac0afb9a6eee538456c4ad942d0ec02465e7f6268856c8148e",
+      "record_ids": [
+        "8b6038ffa251c91f60171a62f4c9a997291b3a087671fdd8644dd3087783d52e"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Zoom à partir no expresa correctamente alejar."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "9d750fae748681ca14e2c3fe0c1ed0a2b56984cf12747e281cf815833de21c9c",
+      "record_ids": [
+        "73d95bc8dfdd824fb59da27879b46d399425cd744958a043fc71d0ccf376fa8e"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Résumé es resumen, no reanudar."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "5d08bbf1d81b73adba793cde0cfc34f5334ce12bef1dc73fb054e1f5c54affcb",
+      "record_ids": [
+        "1a38f51addcabfeb157f16d2dad3f9bb20049a2a2051bc3d79c5a7d7b661f088"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Borrar se convierte en el adjetivo claros."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "ed9f5238ae419709f9072d5d679bcc1d5ae37b9d826d38cf12a542fa2a255b0d",
+      "record_ids": [
+        "4123c1bc7acc389393db5ea1bf867b99f5c510cbeac491c1013b1fe4ccaad466"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "cd99341eb6fd20f0a8fb3eb4b8b78703cf8d8719432a8e72fa3846da2a584cfb",
+      "record_ids": [
+        "c5f5737099f8290bd07731ef3c747cd634b4abe359d9348af301db1fe44d18e5"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Se omite la acción de deshacer."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "36c8b8f0da6cd5f62a3e954101ec1504a657c85031545e0eadf015420d12c118",
+      "record_ids": [
+        "8d474d4424c3bb5b16a14e74dbcd4458a6d8be8688b9cc22551bf9a71cceb8ca"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Square es un jardín/plaza, no la casilla del juego."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "db87f1d2e13b8f0ad583607a6f834254a75a3e801f8e4a5db745084c9ef05c29",
+      "record_ids": [
+        "0a61011543e9bb265f9f34e06e8e17c9d8f126d26b6ce8767036214ba4d58514"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "2a23435d886637fc34fb9207c88a64e01c8a87eeee264722fd8e411e31da998b",
+      "record_ids": [
+        "64c0e988966f340105e9550665b2e8b68f357e1d64d1df98914ec5b6ee32d0ed"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Jeu sauvé no es la formulación apropiada de partida guardada."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "42ca8fdb630221e3f10b0cc69e4f173586d14a51520809931ad7f1b323d640e5",
+      "record_ids": [
+        "6504f91bcf40bdec4c37f44f1b7918e81150e1e627058e288d184f63030f26cc"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 1,
+        "naturalness": 1
+      },
+      "notes": [
+        "La respuesta negativa se convierte en N. y el término pista numérica es impreciso."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "61ed5cf8b7e195200aac8c11fb9556262bffa427466253638c2ff13d0836ceb1",
+      "record_ids": [
+        "af671d0c4aa19cc5d72dc1ab7e3abe90aecf07d292e0b2f74b2c6f5f67d365d6"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Borrar se convierte en la descripción de audio claro."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "6a4ce5020d4c981250661c23cb865b8db263728001ff20c9ea35ac804bd6b505",
+      "record_ids": [
+        "ffd3daac5237f108392db00cea6fdabbd6c2a2bccb633dc4eee519deea3c7efe"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "El efecto de previsualizar se convierte en efecto previsible."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "2cd7fae81abe7a937cc8f97f680705f2badd639c53cc7f0c6e3be1dd78178b91",
+      "record_ids": [
+        "bf2dc61dae406bf7e2f2b93b508b1fca13d98d62f32ba7792196476d067564f9"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "La previsualización se convierte en previsión."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "878c24e5a520fef8f7762eacc305bb500707f2080f49c85a4de1847177922f02",
+      "record_ids": [
+        "1c61a0986176fcc690ab1fb02de071eb26a8603967e5962a32b4dcccb029eafe"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Charger un archivo local se convierte en télécharger, descargar."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "69c77a494bf028d8b0cfb4447d0b85f6fca16b18196e5460099877a1f2af6ee3",
+      "record_ids": [
+        "8decfba0e9002b4218a1d70232c4b61387eaff6f3170e951b341930f34659a4e"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Se omite que el WAV ha sido procesado."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "1c35bf1d4494bdf7ae4b3bde2dbe3a518a4d5fc3378a00c03133c84fa12e34d1",
+      "record_ids": [
+        "b825d84b83a293caed1c02bd1c3b5efc7e4a84038dc59200f0d7aca4ae0c1f74"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "970d993597267a1dacd6558d78e535c7e5624710394911d1a8f4cdd7ab27605f",
+      "record_ids": [
+        "4743f37dbbff9f727788c8f4319ec205bf1c4e295f7f0824544e7b2f0dea64b4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "36c5962028e146299e9fb9c0bd94d18b57f803cd0aed8f2d8f5842191fba85b8",
+      "record_ids": [
+        "faa0fd42d2ce1670bb14d2f08b313433eb3472c1928c9d33de4a9fc7bff863dd"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Trimmer no es la instrucción francesa apropiada para recortar este audio."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "9e0cb8b8447ae51e851b16881f5fe86bf534861c013e16159c5a214f082051ea",
+      "record_ids": [
+        "5d89e5b6561eab59b46404c99c49ec5e9a24a43b0175ff536d8fddcff4feaa3c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "legacy",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "ddd913203fe2d9939f3e7841db2a2dd215eff3d80eac5d090fef344c16ee54e7",
+      "record_ids": [
+        "36c68c9f023a76f29848a83fd56c8b54480b2f88dc634f0efbe620eacf3ffd33"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "legacy",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "355d92ccbf4c426d188f1863aeef0b1d2758510fea4ed6e41ed7c3e1f38bd502",
+      "record_ids": [
+        "a823db87030222beaf9271cc6bc2b455080fe1b6934d057fe07209394f526f49"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Borrar se convierte en el adjetivo claros."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "legacy",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "284f66e26d660a6095b64d50c55c7af8f30ed3e81ae3a3be351ffd3980a2a601",
+      "record_ids": [
+        "2a558e41c69131ad9406c40a3d4a80dc653b293dc6c7444969c2f6e7e41ab732"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "legacy",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "38b9e531f7442d70d26093b6c08d122bb0489bca44e4e8a7d3041fe8a16dedcf",
+      "record_ids": [
+        "d3249a587d7af94594b7cb7988a43c8b98b34babb2d80bc49a7c303af1363ef8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "legacy",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "9dfae5e5d70ee4ed8331b4103f7a0b5fe0b483c17a278de2a74524d40b173ff3",
+      "record_ids": [
+        "ff32c5f990eac30614563de698846d9c92226e475f7e96a22d13f1f81ee7a37d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "legacy",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "df59c2ab8dad6c632e8c8034076fcbe40c7a85c01ad53bc16258729976e1c8fb",
+      "record_ids": [
+        "08f5116f18a86a9361c0f3102a96eb3e007bd2ddb8b37fd8b60fbf1563c4c5ac"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "legacy",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "5424efd29225ebb0d3a362426b1a5678c90a2fc873a113f9ccfa306d0e44b3be",
+      "record_ids": [
+        "0b55b2083a400dc53a10d856d506cfd766199ffb8e55eb14f666c41db4afc8e6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "legacy",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "e8ab0eb70a7bbf7f61d59cce278b2a09a29b6f6256c4b6e64902a54c19d4b743",
+      "record_ids": [
+        "c85eaf432685b39bea971aceebf1630e72a4561ade1a02d908891d6a2eb62f1b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "3b28e9f5f0f780a6b32f374b3feb5abb3258e452a9d150e417958414dc9a526b",
+      "record_ids": [
+        "9955158007538233477f2e559d22e84159ee89137813bde9b03a424468bf9d90"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Borrar se convierte en la descripción de sonido claro."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "033b5c0cc3f8df3c1ee53ea7a1333ca9fbb1f19a1249574ac4a9707fe3884bb7",
+      "record_ids": [
+        "56615a5aa598315d6c8af52f7f472cb31a959f89f98118aebd8882a49c48df48"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "5a04e1edeffabb0121816c36e82a0848aea7c6885a35b2769baa66f5aba464cb",
+      "record_ids": [
+        "93ef101836e399d2bf9b7f3ff41c96b46c04c5a6a336f1cac8683f5379b24357"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "fc0e4f8823f3dd0364c65d1f6df958144f80bbbf472dc44358d4b390a0f00aae",
+      "record_ids": [
+        "ee063f82645dda566faa7043e4f5fd7567f858417b57f259dd3586250dae7b7c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "8d2dcde7ca4f3346e1112cd2281db63f36e3238c3893a490a6d250580dedb713",
+      "record_ids": [
+        "d56f12efbcc5446c6f31e78d3500aab09460be33f322c2945e201967956167b7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "0c150ac65d0d6ad81d1b63630239f7d9a215ec0c91105e27d44a7c42bd7175db",
+      "record_ids": [
+        "c9d396171d12dad33298ca4f31eb844f6b6626f382d8894568ad47a0abf354ed"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "5e33101e6ffd63e8d2d6d3210434ba070569c88751bd2694b7ad94fe877e2f11",
+      "record_ids": [
+        "9c50dc69df1dd6dfbca5a2c5e83dc424f7a4e5c0d33bc18f9df43d378f19ea1e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "545e5362ba08add2e91b34c4541b77b7dc22727ff78a01dc24ebcca12f15d5d8",
+      "record_ids": [
+        "5fc5856854cd3f562c475b2382dec7bf0b7a37e5fceb6b34f14128167167d2e9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "fr",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "6a4803f51cbe05b82a88c7df53b9e0893bd30536e5c71d4d72559726b93d3a45",
+      "record_ids": [
+        "aa6f05b4b812e7e207c380b9f125ec46e662fda8556582cd860a782f814159fb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "translation_hash": "df5499630d9ead043de7f6635b83e63bc90f6b969fa9d0779d5d777dc281d22f",
+      "record_ids": [
+        "c5190ced514b2b13a38302b4190fa30b76ee29ac1f40aab04879795ddec65069"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Ajustar el dibujo se convierte en consejos de dibujo."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "translation_hash": "efba60bc29bcf0ca399fbec0620d7e2e80f22de86d75f9939682120a4affd99c",
+      "record_ids": [
+        "75f9ee5d465c48fea1698cd3b89dcb2a974df0344ec0eb38dab0ca19b76d9a3a"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Zoom em no expresa correctamente ampliar."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "translation_hash": "8b871b8e010a9b46aebcb484628804af997a4a0e4ba63e335b7ebad33f32dec3",
+      "record_ids": [
+        "ecdcb077127febd3f5de6e01fb824bebb11d47d55b6ee2e7d501bf998cc4e0f9"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Se omite la acción de alejar."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "3c9717bdf2260bc9ef2033566ad1f5d48e398d53fa0a6910c063a5ae9dcdedda",
+      "record_ids": [
+        "280345c6430b66920a45b94f99cdbe3244780ec55f4073e9188372c869f644d8"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Resumo es resumen, no retomar la partida."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "73cdf321d512752146c44048495b82236bb80e597f69bf895d10a80bef847767",
+      "record_ids": [
+        "31701c0849a8443051aa7e2f6404bd88393568cd60ebad84548c289951778aa2"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Borrar se convierte en el adjetivo claros; la forma no es pt-BR."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "79acc09c30823963130b5b411ca261a4fdfcd4b4881404b60f62be08db16a20d",
+      "record_ids": [
+        "3ed77321015073613562907b504ad3253560ff1fd174d2ecdd32aac2681363d4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "d979747d59de1b66ac98946ba2df4d13ffa88b1a78c736caec1c8bf4b9284ee3",
+      "record_ids": [
+        "51f3787c3c228939c182fccd006dc9b890bfc1330990436f7a6b3fb6c6debb39"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Se omite la acción de deshacer."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "ee19683fcc4906fca001a032538506fa00ee9e932c5dc270c7bad790b08c9a95",
+      "record_ids": [
+        "b7cf1261f8432d6aa09db788f498b1494488fcfc9eda9ceee8686894c7df942f"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Praça es plaza, no casilla."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "4e913244106e44a071f728652bd11e564cd6b15f88d615063e2e8b830df0f361",
+      "record_ids": [
+        "f50c167b445096ffa92a527d56f033a24bad653f14c3768476263368b19ffc39"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "1a5a31a95520d1329ccb94410fb940efc0d589177be37eaeba233f1267c36989",
+      "record_ids": [
+        "dbbb4d583095321428c217f31c4742bae41d6a0c94144978674fc6c525d4a7e1"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Excluir se convierte en desligar, apagar/desconectar."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "f83886394c0744f5bd3a461f42a8fd424a7ef00a8af7248a670244b026dadb8f",
+      "record_ids": [
+        "f1bb0701646a334e43c60800899b49de3d1d022a840f54637043fd4f244601d4"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 1,
+        "naturalness": 1
+      },
+      "notes": [
+        "No. queda en inglés y se omite el término pista."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "b7e1c8ef2c0a7874d7863d6b50c7245734423dc19c83199da2f7296317b5fd5f",
+      "record_ids": [
+        "3c9a120919a2e4079c411195a64c1eacab245270d3ea260758f6a1fcbde695c3"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Borrar se convierte en la descripción de audio claro."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "065bd95184b1a4ee23d113c856138ef0595b96a32d13319757117c96cf2ced33",
+      "record_ids": [
+        "7387eb261b36c815db9d87d95f35eeec22ded0dd7520a2320b908ecfe92e785f"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "La previsualización se convierte en previsión."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "a195eeb19f064d185b8365bf4292e1f9522805f1264775e4272e21664450c203",
+      "record_ids": [
+        "40f09d71d8d2e59374b9bb5fa5d5508b096bf65039029cc9ab45711031515745"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "La previsualización se convierte en previsión."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "bb804cb2d82073fac33ed89386244d0e724568d42a428f183808f97759a3d33f",
+      "record_ids": [
+        "9c873d1f6b492f71ed89f84c8d849d8360e64625c8160be481c2fdcd014578d7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "aa7befed231f065efad1fa188368388850d9b1aefdce419d1ec28ea343f38ed7",
+      "record_ids": [
+        "73e643407ab78f1a158f3e333333065739b75d0b1ef1a5bc158c82fe0c51f89d"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "El botón deja de expresar claramente la acción de exportar."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "7a616aee9ac0f7662f73196f29bcce49dd44214e25ba8380cba93b1383f1104a",
+      "record_ids": [
+        "ceb654afe7cb85003cbcba287371c6e0e11afe01d656c722d67d07c3a5face4c"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Decodido no es decodificado."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "20de0e850eab8e886328c0dcff784c104a54bd6a45f6ef502321d5066e50f2e1",
+      "record_ids": [
+        "534a55968b44d952ad4908de51e2790a0d834bcbb388b0ef4160e99cbcac4833"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "ffe044ed0fc7f27538d1919386860539fa7799d9aeead6d7de917845022cd116",
+      "record_ids": [
+        "09a70741b80c0367cf5765d5dec615b21a36865c9bdcb73f8eedd20dd1f12623"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Recortar se convierte en eliminar el archivo."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "618346ba5049c1d26fc2296389032451bc91078ac43e45efd8cb8f849efd082a",
+      "record_ids": [
+        "9cc389dbdecd8100952171ed53bce96cce55c361954bba36a46b946aef9b40a1"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 1,
+        "naturalness": 1
+      },
+      "notes": [
+        "No. queda en inglés y decode no es la forma apropiada en pt-BR."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "legacy",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "6304c5019ae88330b6686b6c518482e6c04e7930bcef1721bbf7a2d13b256425",
+      "record_ids": [
+        "3f2235e124b4ad1cde8d94cacbf7deb70c30a6568354564a5e3c8334dfc5f33f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "legacy",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "b8a296b2ba5e8c7f5664504e409bc4e6de37ca5fffdfd889ca0bec75c8cfaf50",
+      "record_ids": [
+        "4079400f5bfa069be931fe80dfedb445a82128ffa0deb83652e9f88b18a6c046"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "legacy",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "fb0a39eba07f9772c617b944c851f69f5c9f4da714885966fd1f388d5d0f98de",
+      "record_ids": [
+        "3b30a90b8dd58be41b7205251ec29499cff86d6372da023a4c984af764517bb6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "legacy",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "bcd60aeaefdaf9a2dcdc000d371dcba4150a261c6cd28d53a3562ace28f8b9d3",
+      "record_ids": [
+        "cad65d7b2ae238f34d83e59abf6b54e640e3e2cf859e5b0e7e3e91d673acf8a2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "legacy",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "4b9b726f754a3d2d6404286aed082e103839c0844165744a9f6743847333fd0c",
+      "record_ids": [
+        "7512c781ba72924fbf77ce6969f75ae9683cbf8a4da3ee9b2683d5f29778d4ad"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "legacy",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "4e913244106e44a071f728652bd11e564cd6b15f88d615063e2e8b830df0f361",
+      "record_ids": [
+        "9a2a598acbf99504c9ea500d357c42a5ceef26e692015c1e44e99a77f86f1674"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "legacy",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "be9a48bb4330ea29dd4dd38abd8f3b3f4e98399e9fcc059d49eb25b9540ae735",
+      "record_ids": [
+        "30f5786ca2072bc696d62424efbf5e8aebbae12fad0281c954a0fa0f30dfc6dc"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "legacy",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "c66905599752c2fbb53f90933f8518786859ecec59394b26280c47036068a0c2",
+      "record_ids": [
+        "054f801298561ab4aed0efa9c0afded002849ba2dc62e578a6c7d689680ccab3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "192f270417f84ca663e7796fd49a18e5a1e43bf3b422da97d6971fe794014f6e",
+      "record_ids": [
+        "cf1c02b76754ab11ab223b261341017015e50195522b68c863521da1afd2707b"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Borrar se convierte en la descripción de audio nítido."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "d58bedf6c96b2a65608405fb121b707bcf9a0c4d439642c31d38f6a6d3ab4810",
+      "record_ids": [
+        "34736d17a34f6d7e8cb4ab509e538d7a60f3e9eacf2f2f1c34f2ffc65a41ea70"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "d53c6c9b88dbb4384623239f38ce69a623e4c9acb8e5559e496291b233391809",
+      "record_ids": [
+        "09c9cb319c09b9f1442a3a5fb87d197dac21cf0683718b94aa217b4b1e23308c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "bb804cb2d82073fac33ed89386244d0e724568d42a428f183808f97759a3d33f",
+      "record_ids": [
+        "455164fa4f6bc586906e92dd2958e542de1a2c6ee3d6c78fbcf7e143cad4ed76"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "680581cbde23deb37a660f72dd81cd2357c33ad522810d3d39feeff8c82f54a7",
+      "record_ids": [
+        "dc3027294a0da5a4a642b558f2bc377dd756bbefbf044954c8eab1c5aae47d2a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "e563f6e957e3ae3e39064f363a2335c3b1fec516369af48e969aa7b7484d5eb9",
+      "record_ids": [
+        "cd812dc25762a684a502591e234057ed1ebf3108371ef0affcd4fce7a052cbef"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "87eb59ae2948c6e368100c3881a3be66a2a7cd8eed0a15f5d69be13c3f85f9e0",
+      "record_ids": [
+        "21a008cbbef17fc3636fd388617bfd08f351b55f09349b17855d520db58c1dcd"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "fe67c103006617ad5c5aa7e8f1dd37e4df416d111ce293b03e5a3abc9a6ef26f",
+      "record_ids": [
+        "42bf370d61f765b5ad47abb60722a7d9d5b4c15777d500c63c4671c62ac83d67"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "36487f004326de8bbddb7b3311bbd4077b263b3fff13fb9317b4c0746b0f3f93",
+      "record_ids": [
+        "b6530c7028a0d2defb293ebb09bb613ff8b0737fc55ba34d84e369f4429f49af"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "translation_hash": "a4061cf4c76e85619a30844015c0a79ae1df59ec57a570ef4f9dad45c7497c95",
+      "record_ids": [
+        "a3b5cc6dd4aad86a76eb6d4ba9e8b768f9c603a98e405442ead6fd63ce9d040a"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "La acción de ajustar se convierte en diseño adecuado."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "translation_hash": "460952fc012b64414721b5f84ee5dc3ad8f78d08b71fe5436f625a411d8526fe",
+      "record_ids": [
+        "76377663cacce1b989eb38bf6836984892170f281836248350267dc366e590c9"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "La mezcla Zoom で no expresa correctamente ampliar."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "translation_hash": "0520d6a2ea5d2603933f9050c99970557968e30f32cf2fed451abc7a4d6b1ca5",
+      "record_ids": [
+        "a7c16e963ff22e13899cb06bb6ae7eb0248e8747441f1f3ff6ab138ff3ed1cec"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "La mezcla Zoom 出る no expresa correctamente reducir."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "aef9fc1613e2d31eab1fc3aa13f0da2919f3ed5d7d28d97043efe5c980a16079",
+      "record_ids": [
+        "c1f1e2d0f6bfece9dc59f7c07d4a06353927f4849dff872df0cfd02c53ac6dc4"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Reanudar se convierte en reciclar."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "6cc76a2877f6b249a308a29dc6730fa69288695599646d2c7debdce8b891d18e",
+      "record_ids": [
+        "bd910691ecafaed00ab4a67c32dbba6c95fc2fe357cdb2abe292356003d5463d"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Borrar rectángulos se convierte en ángulos rectos brillantes."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "36532d84f7e616cc62a101dc9d116d4be1c7e9fe47d865a64dfce02bf88b7d23",
+      "record_ids": [
+        "a27e5434c3bc80f08340e288eb24f4e45cf0b1d5a63d18d7ba3cb015c9921917"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "7ce1ddbeb27f924c3375310cda5106477a1c98e0ae00e0fe38e916a3d0d793e6",
+      "record_ids": [
+        "263b3ba2fd58c9d2cf30d309dba9ab4703064ee96f3c5eed35539e86c9f35cdd"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Se omite deshacer y rectángulo se convierte en ángulo recto."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "a0f94a8d56a7374056fc6be5c40bb61a607df742d4ff1cbedaf8dfdd9e0bf387",
+      "record_ids": [
+        "2a955d17fa470e6f05e50c0145a4f7eda42bacc91a18bc85867371c51e8c7eba"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "La casilla se convierte en plaza de salida."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "36d272920ef3f365f44c3cf7591d3863a454972befa6b71605842f828e28654e",
+      "record_ids": [
+        "a426e7f3d4e95e0b23d7b75b417b78aace5df0b78b45ebd63f5b4264c66d2ae4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "242cf0f119c8e9bfc8e90cd719bb601526ed93b0e68a1b9ac3a28e28c1f5a983",
+      "record_ids": [
+        "dac84147f282dd990374832cc4ec6d20b080be6d3ee73b5f2d245e9bb6de5bbd"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "69064150ae1d6462a8f044850f3ae37d467df792d331242e90eed82d50d47ceb",
+      "record_ids": [
+        "1d39706623216825937b039b471ab9356042cc7b4c48788cabdd0bb95b20d30e"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Rectángulo se convierte en ángulo recto."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "4767dd9e83e505454c3a71bbab20318878928626808def011f07e0793f33245f",
+      "record_ids": [
+        "7b664506d7db3b5f380834d79242481bfbf7eeaf3c2cb01b2bf58b2e1e6fbeb7"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Borrar se convierte en la descripción de un audio brillante."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "b86ebbdfb235576c6249624b219f01d0c53cfa30e18155498d1e3f4e9e047ee8",
+      "record_ids": [
+        "5e04ba83d5708e14b412b21d092663e24a3cad04d6a8d4aa22894937ae140a06"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "La previsualización se convierte en predicción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "4b5b3256af8a71d093ffd48e9e49bf2f46e21efa0a7196047592c019e315cefc",
+      "record_ids": [
+        "382952f9872f50b88aba8a20a82efe4232bcbe3fb7f1cb4402ab529d4a8a6a49"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "02b9c2350a8c00642590110dedb7ca1d30ae92b08c3c3428acee3093bd6786ab",
+      "record_ids": [
+        "ff9739b423757c2057f7a93857be16c03e5a9ec9502b0300482770927ab4c69d"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Cargar localmente se convierte en cargar una batería en el vecindario."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "ab9cda510cb08511c2b2e38a6628cd9c142b9c66149c986691c71df8d677e98b",
+      "record_ids": [
+        "85b41e64010e905bc2eb973f24cb716e0421c895e440918bcc87c636e532fe3a"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Exportar un archivo se expresa como exportación de comercio exterior."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "ee4a5dc459d0bb0b9fbf57ed843bdb652c7a85b9c7960b659886039197e5217c",
+      "record_ids": [
+        "40be23fa8e0c8a969b0daa565601744e85ae3934cbb2d1d7d45437d511d69c79"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Localmente se convierte en el vecindario y decodificar es impreciso."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "e8bc0b80e3c6cf432b259cad2594e9c95c08172f97a7dbd4fb86e9584a9f77c2",
+      "record_ids": [
+        "9bfe49e85ceb64abacfa31e58d00cace14f3efdcf721ad9ddb9a5e85ef499ff9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "4c54d473bd339a853405320a1fcf1121e9f1e96236e77accddf6d1ba018f0619",
+      "record_ids": [
+        "3dee30d56b57c8141c51cbc6bfe26301e0ed1ed18aed6fdfdbc10f1f3257de5a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "eb7c3d7762e12734d205f50ea01b561ef62c1a2095c73245ac279193e91b82e4",
+      "record_ids": [
+        "4d9b77495ebbfeb97d8a10ca9d2983638a5d2ff193d0c7d7edf25e695d425f99"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 1,
+        "naturalness": 1
+      },
+      "notes": [
+        "Decodificar se convierte en eliminar el audio; No. queda en inglés."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "legacy",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "788935e0a2451853f97738acee3a4cd8bdf5c0eb5202d627e5a404a41907f0f2",
+      "record_ids": [
+        "7a444916f34e0bd8ab25284bff490c54953dd06838e7751df9910843dcff1785"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "legacy",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "1a8493c2b071d13c2820110c7251672d917329b04283a3af3d0810dde846ed17",
+      "record_ids": [
+        "3d8ce58b910c0c18f2ad87b5cb9f2989b6e5841f333d0cbf6a070b1f4cfed97b"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Borrar se convierte en la descripción de rectángulos transparentes."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "legacy",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "aadf0e9efb2cacfd5225631ef2a84988e93a265a6cdec5654323c538570c5544",
+      "record_ids": [
+        "92182e97ac837c98cb0db00dc4d4f746e64f54e79ba84916ba1224fca5ccc20a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "legacy",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "a9ca485742c6515d286fb49b55f2d65eb1a86f1379ca7ed892668e1bfebcbc35",
+      "record_ids": [
+        "e1597f6a3da8cb4f1db673a33d8ea65ddeea555bb049e7dc7b1b3a27fcc1b693"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "legacy",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "915f0363265179a2f19fb1875f35ad54c5be49f85ec3fe64bb9900f13e69e550",
+      "record_ids": [
+        "5d07a6eac0b7e9aa507cdaace88bfa053494d09c5ca625335a77fd5c48ede9b3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "legacy",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "e3a187157defec312733ea3b8282e8c8dedd1fc00e4d7ead4aac5fad588f5250",
+      "record_ids": [
+        "93761693e154720f36ff9b340b7916acec9408dd888f7323a7b54a40cd90f1c2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "legacy",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "242cf0f119c8e9bfc8e90cd719bb601526ed93b0e68a1b9ac3a28e28c1f5a983",
+      "record_ids": [
+        "89bb9591fab97d970f7ef7cbfbd69fb25cb75a3fc9a094d3965cf820f823994a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "legacy",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "1ec084f89a68730e122a96d2b8bcb25a4dd7f8589fc1da79405b4a3a71704d0f",
+      "record_ids": [
+        "1cb2e25cc8c659eecc873bf67781a084270b08d3cbb2e9494dcffea50e799a41"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "522ba1cec6fb5eebecfcaa69b495d9c717e3d3798e5f7a364ee76f71e49e4a28",
+      "record_ids": [
+        "c112dbc1981ac1ec7119a9bc33444ac7e4707c0ae5de0571620896f3ced84fab"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Borrar se convierte en la descripción de audio claro."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "675630d07b9cdab34c7faa68d750038ab1fc9d042dfcac0934c6afbfa6085aee",
+      "record_ids": [
+        "a16004da863dc84e4fcb7f9adafd5bb5c69952e79e3eff383806f9556b87f5c2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "cf7f3d98105d5bd0764ed7051b404e491895169007c122a0f0572f19181c4e09",
+      "record_ids": [
+        "c248a8f44989f957428936d4156c409464e743e56a96e80d340ff293228ce197"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "08c16dba47bb4b6fbce12607458d44f3f06240b09b32a834b22f903e82a5fdf6",
+      "record_ids": [
+        "8b27a378b36bbc3acc781457158e2e45844b5d0f50cad97c5955c807c938cb87"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "0a403e33749d5552621ade2c0e592d454ca8756d743eae8cca41e9d44ab61f2e",
+      "record_ids": [
+        "128cdeaf20ac5e63f32fe8aaf52babf10974ae22c828a2c9ca303c1e30dc0d6e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "260c08e63ce477cfe072022e4d16bb153ce147a8f56e07f9c6de8dc54d59d7d6",
+      "record_ids": [
+        "04dd45b382013a789f77ec6b6d3b16b7fd17f6bb0fa4a2d5818e08aede60883f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "3d499c214e6c8580ee9f47a312650f5dba9c9048db32bcf094788994d259621a",
+      "record_ids": [
+        "f3a5e89d102179a52dad11fbd6412a96b5391b3c04101ef8df56989772677a02"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "e24a0cc318be2005531fbecc666c55369b13c5e8cdc5ad8477dc4b534f7d08e5",
+      "record_ids": [
+        "af6fd5d9b5e164d4da0fc9d90013e5e37721efa6bacfeae1952ca98d2b69989b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "c884a5a069ba476e82ecc0ae3d6a99372305d9f32ce8072d4404476ae75083f3",
+      "record_ids": [
+        "dd78ba8bd098ee2c702dd079036f7efcc88666619a2c86ebbbf845d0273c5d3b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "translation_hash": "f3951ce2fbe59f2e78ef6d7402a24c1c2f652e53b4b5f845ca50e717ba6133f0",
+      "record_ids": [
+        "365d4888965fe45d5d453d0ee5d332f2f5ce22d87498c702c4325d16ab25b24a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "translation_hash": "438191af0dd8756d31a0d29deb4f5ad8c3333dee8a589d6e95691f5242b089b4",
+      "record_ids": [
+        "10448676e0160ccc0c16aa844a195a9cb01a778cfaebd25f9ef3a1ceb36ff14f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "translation_hash": "119c7bf5d7861d00589946811af8210b0543fd2a51fcd0667cd32861f433f417",
+      "record_ids": [
+        "5f234c3c0dbc497ffdbe1b34d8794426d077c717dd2eabb9b2e37dd202fc66d3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "619c9ce0324c87b7f3afc0ad803301478a667df385938709ee7d245cff47c008",
+      "record_ids": [
+        "2aeb276d55dd59ec1d51ca6911dcd317af767671ea972151e538738394f10fa2"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Reanudar se convierte en referencia."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "2e1b3ee5ae0b3288ec738724883592e2a0bf4887a28f371ddc25e1f3286fac2f",
+      "record_ids": [
+        "38c8e390cb7e30deb54c47ef3d95d491edc3cff03adba7ed0d3ef45cf14ddb1e"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Borrar rectángulos se convierte en calificación clara."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "64b4d7ee720084df5fa97d76309ec2cdb33df646fe02956b0a0863d2e7cfe10f",
+      "record_ids": [
+        "7a9b2ac69f3c1904fc3468ae2e69e245e19057ad52e5470e497f90fbe5c4c1ee"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "f20bac3821f8252afbc99ebfb4a634a50574af6c5067a904936b76f6b298898c",
+      "record_ids": [
+        "a6abb988b53ef31fbc5a82153177a53e0ca518f6808c9b8329d6cb1ddfbb4094"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Deshacer el rectángulo se convierte en última calificación."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "85db6ce979bee98de129354c5b6d77db5b9cd3eb485b4d22782c0ea7827f0066",
+      "record_ids": [
+        "9ddf0f35062c23676eda1690088e6ec349377ff9d86b8f536d669e5e7d10cebf"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "22a681659664b9f20b7d5c6d1262fb63071476f94936fe20e50c04bb768d925a",
+      "record_ids": [
+        "bb920e608655ed32614574c2946a27810a2d07f1250d0182ce1b998117463ea4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "4b37237dfa600d67995a8ffff80665423b7960bfc6d57cf3e8614815ca83571b",
+      "record_ids": [
+        "2c3a72ce3c630134ece6e7f63b0eb361b940cfc3767b3d2b5e10db4fba400ef3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "e8d550ce6ff9bac4e16f72bbca4e1ca2717bb928cff0674762b1a903f5528e51",
+      "record_ids": [
+        "0bbadd8c44e79d680e91ca5114b38e8002386be37af8aa429944aa1c5729acd7"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Rectángulo se convierte en esquina recta y la regla pierde precisión."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "cb07965e1d97f8da1b85392e8d879342fa6651f9384c01e184f18fdacff437b1",
+      "record_ids": [
+        "ff77f32930fefc7dcbb6b70adae7982b59933243bb708fc600517476a6c6781c"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Borrar se convierte en la descripción de audio claro."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "088b86c90f347a4466bbd9560c36c7be0b5cb8adf3cb9b18aecb81e51d9372f6",
+      "record_ids": [
+        "a1635730fd0d0aae5780933c7c8da9d45a56b63ad9969ffdb2bb26236230fb2d"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "La previsualización se convierte en predicción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "e79ea3136181027e8699fa300029c8ac148510519b4b959ca73692f9781dedce",
+      "record_ids": [
+        "6fc557c98d055a5698e557756763455c68dfabb4a3b2e5edeb47957a37df522b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "c371aeb84c1f86312b829564e4a1300685578a10b3f5b4ecdf9747942cef3f5d",
+      "record_ids": [
+        "f3c380138814b33bf5376aaa635bc0c4081b94da8a94a2ab6f9099ae0b0fc81b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "fbc094fa2a71926f73f3f2641128b624a0c4e54ce83cfbe9a8794ca699d7edbd",
+      "record_ids": [
+        "19acf2350ab7795c0a99b397229a8ffbc11370f90d5dc42376b2a5252d19db7b"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Se omite la acción de exportar."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "271857dd0096de6691d04be0636212f10debb931ade8860b775b51726b07b908",
+      "record_ids": [
+        "0da3dcebbdf05caac97c076ad22716f1f49e82aab699f46161ab9dcafce4d353"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "d5c7684ad53bc861b28c3a0a53220411aa6fe5943b25b17b402d63fbe36ffb74",
+      "record_ids": [
+        "3a7c0c79466a3cbdb5ff78a4c37b2d88d0153173c75d423b0881f75a7c8e1b1d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "b2d395d293ae430fd8e13857ec98568eb89f343ab5e164107510fb8b4cdcbd48",
+      "record_ids": [
+        "5e541587e1ab8de65b305c88df2ed73dae5aceded3722b6ef9e1e83bfc5b44b8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "b867d4fcd07ea92376f5b630069824e86d3fc7ad64b3d1795ed74e6621dccfdf",
+      "record_ids": [
+        "257f4142fd8af779e34fd7699f98152fcbf9b953a29982f41f4287d584e09885"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "legacy",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "ef7ab2c666bea6e8823e6b8774baf269d324ffd774317b96b3b3668043fea7a5",
+      "record_ids": [
+        "3fe8c7e80ad896b28f264b4f81d847e45a9061470bff25469ba7c9510e561f0d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "legacy",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "57faded01f3c09bc2e2b3cb6665b82718f7da26fa93982331fe4d22344aa891b",
+      "record_ids": [
+        "6fef312af6f854406e67f835fa7ee614c8c6bb59dfec3907ea0eae86b9004da3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "legacy",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "305e684668fe9b516ef731475c53898d3f77852d8ad295ebbbbe5cff497df3eb",
+      "record_ids": [
+        "a9247280d42e62fd87c17afc019be2a2c50ac98fc7a2aa827cfce1fb265adbad"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "legacy",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "d3f785d7d8cc12e0d2fd7837fc072380521e647a0bc3a88026f57b437d0e1bd4",
+      "record_ids": [
+        "1f1672f78a83da062418d9103143e11fff3052bc6b67f6bfec479c08e3e10ffe"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "legacy",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "6e5171aa8703c1b4d42bc183609ceee7e0088c2601fc83c4f3111bd0d9b3fb40",
+      "record_ids": [
+        "ce7ee78cb88284a34ea09456807ea95d790c1cb7b02087107bf4bb3e7c7b261e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "legacy",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "553d955f6925387dd0ff1a5f7a8e487bccb90042cede2a8c4d97a8bad43c6530",
+      "record_ids": [
+        "1da64305fc3df9b6e66628a8434055ded2937d94d9d4fc77dd467eb016466cc6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "legacy",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "c32b804c1ab405ba47f65524690833d9410e827a0bb4a7ab89fd84dc51896763",
+      "record_ids": [
+        "929a0e821ceef990c6eba5db3eeaa330d3734ad75d28911d0c5cafb8ca678fc6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "legacy",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "9797b0a9e396ed1145dd1433b0e4f94e3032db682999d65282ecb54af31edb2e",
+      "record_ids": [
+        "9b52233b144498bb976e33b022eed4a5a2a99bc06c97c110dd468bbbb4a7e424"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "de831d14b6b3ebaf8dd95f0509c32f441742704ae3cea95584dd57a8b0c84a03",
+      "record_ids": [
+        "b1b6d937244484e6b89f434eec9287ffcece20bb1f88c3a21af4329b979f7533"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "79e216a5e21b5d3f52280c80b485054215329bb84f95ae1d2cd714d3a1aaa665",
+      "record_ids": [
+        "2eaa2f65d66728e825a11c842914d23ce887be18f924f81f2be7402a708c7a95"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "709a05e86c8c650702eecacb441ba315e2a10851ada6b3289ca0d3bed2f5affb",
+      "record_ids": [
+        "81338a2f344a04600498454b1f489a904cf45b5fbb24ebc1a84271790b7e29f2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "2d7533f3f4b6d8c76cab665bf714fa5b2b1cdda678a02ef93bd286ddffec23ef",
+      "record_ids": [
+        "afd0bc97ee1ae0fd59ebb85d611ca08e84fc1dd4ab6a831cec251bf9da563c09"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "3a704654404ce810d5b9fb949b3b672436d83fed2a6a5b8de016e3b75ca40046",
+      "record_ids": [
+        "1ca44eccbc37298db9c923135f5f94179349bc6d4ba64fa8ae7c253d0bdc1f57"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Orden de palabras poco natural en el botón de exportación."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "60354d67cb9ac16cf61cc869f7951d25fa197672571e53c5783a9f3a9efc2173",
+      "record_ids": [
+        "4bd4ed17fc1836a97f015f9adaf43bd553e5202731362d683bcb0c00a6241e40"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "507ba8e49d52c15c99bdbe9459cb85ce0d3786349c906af21677f4b33de0d427",
+      "record_ids": [
+        "a41e38465f46cddedd39cf89138bbb35614554e784f70536a2a0ac47c09881b8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "e888ba54cf44958318e89fdebd860ccb2eabddc2d591b604d77f233ffee0c87e",
+      "record_ids": [
+        "950fd075c2cae629e0a687ef56cfda3d5e2af4ac7ffaa29322396fa05405d018"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "be86c3bcff855c7fd878d91de6fe32b738a3af7d2b38adcd3856e9be78c0538c",
+      "record_ids": [
+        "2daf9c51dadcf5db189456e7e0955dbcfadc14d6d4026c7ae4a0acedd7a56a43"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "translation_hash": "a8efcd4bc008358ed43e21d64fec0c820494fe34753514e536ec097774287845",
+      "record_ids": [
+        "267d66811b98888cdc82ba9ed7f61a2394a175afe6e4e7143f059b3df4bd83c6"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Ajustar el dibujo se convierte en diseño adecuado."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "translation_hash": "3fc84cf77cb7472f6d8d35016b5b030b2256b41ee3cfa37fa37e54b7473a754e",
+      "record_ids": [
+        "e37ee8c4aa527e4b21f6eb00940873b295920643860081d0c474266690e556be"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "La transliteración literal no expresa correctamente ampliar."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "translation_hash": "bebbb2e21a0b54ba2943555e4f4646495fc289d1db48f34ee234e817723c8680",
+      "record_ids": [
+        "889711425275a20465206b3399228f2dae187e3362d6dd64393a17ff06b58c6c"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "La expresión literal no expresa correctamente reducir."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "5d41bdb75d82d0eb64f560f19352717142369202cfe5a6459afc2de90f5b6aa5",
+      "record_ids": [
+        "32b6634b6a38fc1951b311f6ae9182d919af754ddf7e9e4a96b8d4a679933bd5"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Reanudar se convierte en biografía."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "ecea9b1e2b5899b9415ebdfb6fe733c960853625274033da31380ad708465ca2",
+      "record_ids": [
+        "f287241f77cae73fd4cb42dac58b74344ea6404bb105fd83e04813a13031d9b3"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Borrar se convierte en la descripción de un rectángulo claro."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "41af2bc5899fe9282a9a2c1e03136c027af82aed54361aed4b75c01b4968b549",
+      "record_ids": [
+        "9ed42cc6d12eaca29847546d0041ef967dc92167bd77af3b3be6a3954f5e1831"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "7d3f987f4fce7aca99b7c4784efa3921c1400442ecc73abafab66e90b22d8c0c",
+      "record_ids": [
+        "2898070088eaa1b3c83c5e21bc2130b054d53ff4164b39a7df09500abab0a02b"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Alucina una frase sobre sacar la ciudad; no deshace un rectángulo."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "3928e25512a45ba715f86ef04f174f554b19423837b126a6527067dbc238ba3d",
+      "record_ids": [
+        "71a41cf5202741a4aad01f7e1ab8d3a8945e804e8ac35dc22ff7efdec0ab9e75"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "c7b7db1ba11371ade1a36a8ea23419169aec367c802d53de965733ee45878607",
+      "record_ids": [
+        "1188a58458a09e17b77da1142bbf5ef2dbcc49b10070fbc2950a1943a21ef710"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "203c377cdbe5827bf65add5c3406621cf8a85dc5fcd9577f3036616e708ae0b0",
+      "record_ids": [
+        "3d22d2707181468c0d8c48ef290fe932759922a42591446d270cc208c20d9392"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "67d75af5cb02bdfe0a97d6a4aefd409ea77a8177f3ae45f5feb2440411c33c0a",
+      "record_ids": [
+        "ecdb3f9aadbc52448b2a1cdeeff7b5e17e46bc971d55cf80855213c88cf730e9"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 1,
+        "naturalness": 1
+      },
+      "notes": [
+        "Se omite la respuesta negativa de la FAQ."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "73b50f38a9895ccfcb0396a3ae9eab9e50fb7e2c5849fc77dd78e711a301160f",
+      "record_ids": [
+        "44fec8c9414ebe97160a202d6821366a407269173ce39375ae2980f5a205e1f4"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Borrar se convierte en la descripción de un sonido claro."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "6ed4919c5c07104dcb69f1639e480239e6c37411728d4d9bd990bce3b7ca162f",
+      "record_ids": [
+        "6ba8c69e865b0137fa1181da9b8ad8d5d7e21e7d10c469ff1f84c170c0347e06"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "El texto deja de expresar claramente la previsualización."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "eeaeb814bb5e1764f27641ad89ad6cc9cda596ef46d6eff3bac1e737a94e3f8a",
+      "record_ids": [
+        "09e8ef122348051f2287740287763125bcac73ab7e7c5b11daab9ed30805469a"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "La previsualización se convierte en pronóstico."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "ac0e95be828000d9f28f6a0e544c47f76d164425ba043d33c5b4b99948aa96e9",
+      "record_ids": [
+        "fc2dc46e8b4137018b5ba94c94951e25f9fd3b7f704eff04171b09bd52b0fc50"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "f09e93441d40798faded4c7929e8ffe108d7549c8527a89339a36dfc6d9551a1",
+      "record_ids": [
+        "cd1cdabac70e80250e1e7c090347449b6ed10e32c34f4152bdfe28ffca452931"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "La instrucción de exportar el WAV procesado tiene el objeto mal construido."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "b4cd74e90b1be8c737a082d093d18b4cc029a8423f9572b8f8548f3cc927a428",
+      "record_ids": [
+        "9ebf401f23399f0e8ff4f7790f0fcc753690b3e0e9ba321fbe5ba776cb16fb44"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Decodificado se convierte en eliminado."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "0787e7c57e7b7002cbb07050243991d2d267cdf9400a3d8d4bb91550f644dd58",
+      "record_ids": [
+        "386db2be0488538572609f0c0feddb8965c3045037eebf1be625d5e03cd0a344"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "5d2e3bfd00137601ed5a19cc941ed9f2cd2b3fb2c7602297397a73056392fc4e",
+      "record_ids": [
+        "95759fb4546af8d96539fbfa96204bc6ae2c0f553a0abae17e599843517bc9a7"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Se cambia audio por vídeo y se omite recortar y volver a intentar."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "m2m100",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "f718a35ecf7244aef750aa0383eef026426aa26c5bee49ac796006b6e7413f6e",
+      "record_ids": [
+        "21a28f56b581d7367bae4c2d5f95bdf828d800b3d46678d4136b712c21f279cc"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Decodificar se convierte en un término ambiguo de vaciado/transcripción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "legacy",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "fca33febc479f21c89bd0b4114bbbc2bc8778f10ce691fe7a2919ee4cafd0b5a",
+      "record_ids": [
+        "8bf18292de61364348ea10e3ef0532e4c47f8591f834d261a919295ac8feac24"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "legacy",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "bfcba28eb46b32858c11cdf9b49c2c606e7d5ccf6b48f337a1d911c4690df61b",
+      "record_ids": [
+        "7c72537af69bd8543295b4c652f8b48ca637160ee5f240410a092c59a608613e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "legacy",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "53dde046f851777d0b0ded8440b8a9b38dec0ef3ee40d1a150ff1661095845d3",
+      "record_ids": [
+        "3826fda17cca0cde4590ca52cede5f806c9fd7b43927ce2f4ca90d2935660c3f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "legacy",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "f820406d1f29d3d14b26e7c931ba10901dd472ae45946660cc6cb3dba2e01697",
+      "record_ids": [
+        "e6fa46c1ec99ec6d7f25aebda2c327356432928c6ae21db5fc1cd55e9f17fda9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "legacy",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "ea2954b11d088b7ced7b21ff6952fb0f09025ab7f1fd504745fcc8b100ef20ba",
+      "record_ids": [
+        "32df5e880fd5a6a34ebd47e786272c41c4a8aad01056841eaeaf83ca859ddaf3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "legacy",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "42479a06fc3c7472d45f3e3ee6741da9e20ca57c7c0bdcc749055c7c27dbe35f",
+      "record_ids": [
+        "ce3f2931b61efec3dc2e59e96df665a474746e82e6d0b9da743bc3ef7fa59545"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "legacy",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "203c377cdbe5827bf65add5c3406621cf8a85dc5fcd9577f3036616e708ae0b0",
+      "record_ids": [
+        "5c4215ba82f62853f58bde01c18a836376fec7ec0def5807b9886f28d0e560e4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "legacy",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "dc989326b7e94e329182d587205f6ba21cb46e5f0d7d8d77698d3c48e21540cb",
+      "record_ids": [
+        "90608081096a78ae01654c4ab652025f0902f94b92c0551d10fc1759b9960b16"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 1,
+        "naturalness": 1
+      },
+      "notes": [
+        "La respuesta negativa se convierte en la palabra número."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "b14d8df65653d41c31970a37754290532d3d45ff402f5c71b50db01538460430",
+      "record_ids": [
+        "27f100593631289e539c48c4d5c34fff23e063b3cb4f10842bf65fe67ba0cd89"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Borrar se convierte en la descripción de sonido claro."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "b9581fd526a9902737d98043dc11c4d024363fa35b64edf0d62163e2d968b5e5",
+      "record_ids": [
+        "42bfc74d5331651e95bdfa638acecfe8b3546d3103465a9def6b52e76caf03c2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "89d7cb2bcd54497d1dbddb65634987a6000af619fc147eb26339fe095a48a811",
+      "record_ids": [
+        "ced9a2667d3babf316b4be8401413132f802a8eb59b36b1376c36917949969c2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "6aece87a56a68ad46c929f7e2ba266a62fde8e0c27b9f4dbda36fe8cf2184e18",
+      "record_ids": [
+        "780d2d90b598fe43d9d08ccfd42bac73cf462914ccbbb0777747dc24a014a81b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "0fe1f4122b1cd657e9a8efbd00b6734eba28624e84137f19df88c9ad917782b6",
+      "record_ids": [
+        "4b28858d0d68f0f18ed038a9fe02f724ad9fa63cf22ae517513ff4f6155a4abb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "e5f3b052d05672c60c353fd4d981b76b0d5c5dadcbe20c5a041f43544df59b1f",
+      "record_ids": [
+        "612159d10513bf9520b21ed4eab20a44f148697b8786950bb091624115a7c7bd"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "9bb8c8ff4d6cfae0e944b889c6b4ad409623c0a61b72416e7df5c7cce77ef29b",
+      "record_ids": [
+        "a51082c2e59b3322e65099fc5cd92953ec171b4914ee2347cf8117f952e79dca"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "da5e8ab9b565d9f69a744c1a20baa01b12b621becfc8b35626e536a98487b949",
+      "record_ids": [
+        "dc50ec9d053541c172698001a1942bc67dc570c168a06f95ed261a2a0708466f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sin error crítico de sentido observado en esta muestra; no certifica el resto del idioma."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "legacy",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "f8d202ff1ab4a94283463e3ee6743b6ac946efc767a1b157d68220133897f610",
+      "record_ids": [
+        "16683ba6585a2a96d0b4ca5486f3c5ec2d8541aa504ef6aeb14ea8499d3ea859"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 1,
+        "naturalness": 1
+      },
+      "notes": [
+        "La respuesta negativa se convierte en la palabra número."
+      ]
+    }
+  ]
+}

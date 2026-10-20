@@ -1,0 +1,168 @@
+{
+  "39401768186": {
+    "status": "completed",
+    "conclusion": "failure",
+    "headSha": "46b53eacfddacf69f66d20e3a3a0f8668c778307",
+    "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39401768186",
+    "jobs": [
+      {
+        "name": "translation-pilot (m2m100)",
+        "status": "completed",
+        "conclusion": "failure",
+        "startedAt": "2026-10-20T09:35:20Z",
+        "completedAt": "2026-10-20T09:35:51Z",
+        "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39401768186/job/118557938537"
+      },
+      {
+        "name": "translation-pilot (madlad)",
+        "status": "completed",
+        "conclusion": "failure",
+        "startedAt": "2026-10-20T09:35:21Z",
+        "completedAt": "2026-10-20T09:35:49Z",
+        "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39401768186/job/118557938785"
+      },
+      {
+        "name": "validate-and-deploy",
+        "status": "completed",
+        "conclusion": "skipped",
+        "startedAt": "2026-10-20T09:35:19Z",
+        "completedAt": "2026-10-20T09:35:18Z",
+        "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39401768186/job/118557941031"
+      }
+    ]
+  },
+  "39402041888": {
+    "status": "completed",
+    "conclusion": "success",
+    "headSha": "46f3a8d9b76304746148c27f9948554ea044aada",
+    "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39402041888",
+    "jobs": [
+      {
+        "name": "translation-pilot (madlad)",
+        "status": "completed",
+        "conclusion": "success",
+        "startedAt": "2026-10-20T09:37:34Z",
+        "completedAt": "2026-10-20T09:43:11Z",
+        "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39402041888/job/118558860556"
+      },
+      {
+        "name": "translation-pilot (m2m100)",
+        "status": "completed",
+        "conclusion": "success",
+        "startedAt": "2026-10-20T09:37:34Z",
+        "completedAt": "2026-10-20T09:39:40Z",
+        "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39402041888/job/118558860729"
+      },
+      {
+        "name": "validate-and-deploy",
+        "status": "completed",
+        "conclusion": "skipped",
+        "startedAt": "2026-10-20T09:37:33Z",
+        "completedAt": "2026-10-20T09:37:32Z",
+        "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39402041888/job/118558864365"
+      }
+    ]
+  },
+  "39402644071": {
+    "status": "completed",
+    "conclusion": "success",
+    "headSha": "3d6fdc6217878875780aa75f93eca1e15b35a285",
+    "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39402644071",
+    "jobs": [
+      {
+        "name": "translation-pilot (m2m100)",
+        "status": "completed",
+        "conclusion": "success",
+        "startedAt": "2026-10-20T09:43:13Z",
+        "completedAt": "2026-10-20T09:51:57Z",
+        "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39402644071/job/118561168786"
+      },
+      {
+        "name": "validate-and-deploy",
+        "status": "completed",
+        "conclusion": "skipped",
+        "startedAt": "2026-10-20T09:43:12Z",
+        "completedAt": "2026-10-20T09:43:11Z",
+        "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39402644071/job/118561170380"
+      }
+    ]
+  },
+  "m2m100": {
+    "model": {
+      "converted_sha256": {
+        "config.json": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af",
+        "model.bin": "eb3fd60ec655f8ebe50680262e3f1f4477b63e191e7d099fa91d8284b5d9a32f",
+        "shared_vocabulary.json": "7eb5d0ff184c6095c7c10f9911c0aea492250abd12854f9c3d787c64b1c6397e"
+      },
+      "engine": "m2m100",
+      "license": "MIT",
+      "minimum_free_gib": 5,
+      "repository": "facebook/m2m100_418M",
+      "revision": "55c2e61bbf05dfb8d7abccdc3fae6fc8512fd636"
+    },
+    "summary": {
+      "approved": 0,
+      "conversion_seconds": 18.814833346,
+      "counts": {
+        "legacy": 80,
+        "model": 80
+      },
+      "engine": "m2m100",
+      "peak_rss_kib": 844460,
+      "scope": "references",
+      "total_seconds": 70.98536922299999
+    }
+  },
+  "madlad": {
+    "model": {
+      "converted_sha256": {
+        "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+        "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+        "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+      },
+      "engine": "madlad",
+      "license": "Apache-2.0",
+      "minimum_free_gib": 18,
+      "repository": "google/madlad400-3b-mt",
+      "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+    },
+    "summary": {
+      "approved": 0,
+      "conversion_seconds": 77.20591187000002,
+      "counts": {
+        "legacy": 80,
+        "model": 80
+      },
+      "engine": "madlad",
+      "peak_rss_kib": 3771300,
+      "scope": "references",
+      "total_seconds": 281.741193207
+    }
+  },
+  "m2m100-all": {
+    "model": {
+      "converted_sha256": {
+        "config.json": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af",
+        "model.bin": "eb3fd60ec655f8ebe50680262e3f1f4477b63e191e7d099fa91d8284b5d9a32f",
+        "shared_vocabulary.json": "7eb5d0ff184c6095c7c10f9911c0aea492250abd12854f9c3d787c64b1c6397e"
+      },
+      "engine": "m2m100",
+      "license": "MIT",
+      "minimum_free_gib": 5,
+      "repository": "facebook/m2m100_418M",
+      "revision": "55c2e61bbf05dfb8d7abccdc3fae6fc8512fd636"
+    },
+    "summary": {
+      "approved": 0,
+      "conversion_seconds": 33.588916315999995,
+      "counts": {
+        "legacy": 891,
+        "model": 1320
+      },
+      "engine": "m2m100",
+      "peak_rss_kib": 1019372,
+      "scope": "references",
+      "total_seconds": 481.09770523500003
+    }
+  }
+}

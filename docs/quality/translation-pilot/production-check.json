@@ -1,0 +1,31 @@
+{
+  "at_utc": "2026-10-20T09:38:34.618218+00:00",
+  "method": "curl HTTPS GET, XML URL inventory; no deployment",
+  "checks": [
+    {
+      "url": "https://usefulverse.com/sitemap.xml",
+      "status": 200,
+      "urls": 10260
+    },
+    {
+      "url": "https://tools.usefulverse.com/sitemap.xml",
+      "status": 200,
+      "urls": 15365
+    },
+    {
+      "url": "https://tools.usefulverse.com/tools/zzz-no-existe/",
+      "status": 200,
+      "soft_404": true
+    },
+    {
+      "url": "https://tools.usefulverse.com/es/zzz/",
+      "status": 200,
+      "soft_404": true
+    },
+    {
+      "url": "https://tools.usefulverse.com/zzz.html",
+      "status": 200,
+      "soft_404": true
+    }
+  ]
+}
