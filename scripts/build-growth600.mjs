@@ -404,7 +404,8 @@ const result = await buildGrowthStaticSite({
   extraAssets,
   styles,
   faviconSvg,
-  currentTools,
+  // Preview additions can link to the existing hub without republishing it.
+  currentTools: [...currentTools, ...growthPilotTools.filter(({ id }) => !releaseToolIds.has(id))],
   ...releasePlan,
   maxFiles: previewOnly ? 20_000 : 18_500,
   maxAssetBytes: 24 * 1024,
