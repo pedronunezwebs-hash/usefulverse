@@ -4,12 +4,14 @@
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
 **Última actualización:** 2026-10-20 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-20 15:49 UTC · Paso A: política context-v5, frases completas y datos protegidos; PR #136
+**Turno actual (candado):** EN CURSO · Codex · 2026-10-20 15:49 UTC · Paso A: v5 rechazada; referencias v6 pasan; completo v6 en Actions 39455323981; PR #136
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
 
 ## 1. Siguiente paso exacto
+
+> **Hito del turno activo:** v5 no supera privacidad es; v6 pasa las referencias es/nb. Piloto completo v6 en [39455323981](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39455323981), fuente `0e8e63e`, job `118740568261`. La evidencia y la muestra fijada están en la rama del PR. Esperar/recoger el run y revisar antes de ampliar. **0 idiomas aprobados; Paso A abierto.**
 
 1. **Paso A preparado en el PR [#136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136) (borrador), rama `feat/new-tools-batch-1`.** Las 300 fuentes del respaldo privado
    `usefulverse-300-worktree-backup-20261020`, `backup/usefulverse-300-implementation` (`27a2f174`),
