@@ -18,7 +18,9 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
    **hoy** y pasar al **Paso A** del RUNBOOK §7 (subida en `noindex`).
 2. **Fase 0** del RUNBOOK §4: 404 real en `tools.usefulverse.com` (hoy cualquier URL inventada devuelve 200 con la home),
    título de la home e índice de sitemaps por idioma.
-3. Después: diseño «Planeta Infinito» (PLAN §3-4) y bucle de calidad (RUNBOOK §5), en el orden de `progress.csv`.
+3. **Unificar en un solo sitio** (RUNBOOK §4b): un Worker de Static Assets (100.000 archivos, assets gratis) y 301 de
+   `tools.` → `usefulverse.com`.
+4. Después: diseño «Planeta Infinito» (PLAN §3-4) y bucle de calidad (RUNBOOK §5), en el orden de `progress.csv`.
 
 ## 2. Pendiente de Pedro (decisiones o acciones humanas)
 
@@ -47,7 +49,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 - [ ] Sistema de diseño «Planeta Infinito» en el repo (tokens, componentes, RTL)
 - [ ] Plantilla nueva de herramienta (home, archivos, calculadora, juego) aprobada por Pedro en el móvil
 - [ ] Páginas de confianza y hubs de categoría
-- [ ] Fusión de `tools.usefulverse.com` → `usefulverse.com` con 301
+- [ ] Unificación en un solo sitio (RUNBOOK §4b): Worker de Static Assets + regla 301 `tools.` → `usefulverse.com`
 - [ ] `llms.txt`, JSON-LD revisado, presupuesto de rendimiento en CI
 - [ ] Cloudflare Web Analytics + `docs/quality/KPIS.md`
 

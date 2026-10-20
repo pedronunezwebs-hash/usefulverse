@@ -160,7 +160,7 @@ juego) visto en el móvil.
    fórmulas y fecha de revisión).
 3. **Hubs de categoría** con una introducción útil, un filtro y la lista de herramientas (`ItemList`). Son la
    estructura que reparte autoridad.
-4. **Un solo dominio:** migrar `tools.usefulverse.com` a `usefulverse.com/<idioma>/tools/<slug>/` con una
+4. **Un solo dominio** (procedimiento exacto en `RUNBOOK.md` §4b: Worker de Static Assets con 100.000 archivos y assets gratis + regla 301): migrar `tools.usefulverse.com` a `usefulverse.com/<idioma>/tools/<slug>/` con una
    redirección 301 por URL (unas 15.000 reglas; Cloudflare Pages admite `_redirects` con comodines, y se usan
    patrones por slug). Así se evita parecer «varios sitios para ocultar la escala», que Google cita
    expresamente como abuso. Antes de migrar, comprobar que ningún slug choca entre los dos catálogos (hoy no

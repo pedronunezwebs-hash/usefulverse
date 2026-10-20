@@ -105,6 +105,58 @@ El Mac de Pedro tiene **~22 GB libres** y Pedro sigue trabajando en él. Reglas:
 
 ---
 
+## 4b. Unificar todo en `usefulverse.com` (un solo sitio, sin coste extra)
+
+**Por qué se partió:** Cloudflare Pages en el plan gratuito admite **20.000 archivos por sitio**, y UsefulVerse tiene
+~25.600 URLs (habrá ~38.000 con las 300 nuevas y el noruego). **Solución verificada (20-oct-2026):** la cuenta
+`c32922f3…` ya tiene **Workers Paid (5 $/mes, ya pagado por la agencia)**. **Workers Static Assets** admite hasta
+**100.000 archivos por Worker**, y Cloudflare documenta que *«Requests to static assets are free and unlimited»*. Un
+Worker **solo de assets** (sin script que se ejecute en cada petición) sirve todo el sitio sin coste por visita, aunque
+lleguen millones.
+
+**Reglas de coste:** el Worker no lleva script (`main`) o, si algún día lo necesita, nunca `run_worker_first: true` para
+todo el sitio. Así cada visita es una petición de asset gratuita. Nada de Pages Functions ni de proxys entre proyectos.
+
+**Procedimiento** (después de la fase 0 y antes de la traducción masiva; una rama, un PR):
+1. **Medir:** contar los archivos de `dist/` + `dist-growth600/` (+ las 300 nuevas y `nb` previstos). Debe quedar **< 80.000**
+   (margen sobre 100.000). Si no, reducirlo: unificar assets compartidos y quitar duplicados de vendor/modelos.
+2. **Colisiones:** comprobar que ninguna ruta de archivo choca entre los dos builds (las herramientas no chocan: 0 slugs
+   comunes). Revisar `/assets/…`, las homes por idioma (`/es/`…), `robots.txt`, `sitemap.xml`, `llms.txt` y `404.html`.
+   Lo del hub que choque se mueve a `/assets/hub/…`.
+3. **Build único:** el hub genera sus URLs, `canonical`, `hreflang` y enlaces internos con la base `https://usefulverse.com`
+   (no `tools.`). Un script `scripts/merge-sites.mjs` junta las dos salidas en `dist-site/` y genera **un** índice de sitemaps
+   por idioma, **un** `robots.txt` y **un** `404.html` (el bueno de `renderNotFoundPage`). Test: toda URL del sitemap existe
+   en `dist-site/`, no hay `canonical` ni `hreflang` hacia `tools.`, y las páginas `noindex` siguen fuera del sitemap.
+4. **Worker de assets** (`wrangler.jsonc`):
+   ```jsonc
+   {
+     "name": "usefulverse",
+     "compatibility_date": "2026-10-01",
+     "assets": { "directory": "./dist-site", "not_found_handling": "404-page", "html_handling": "auto-trailing-slash" }
+   }
+   ```
+   Pasar las cabeceras de seguridad y caché actuales a `dist-site/_headers` y las redirecciones a `_redirects` (Workers
+   Static Assets admite ambos).
+5. **Probar en `usefulverse.<subdominio>.workers.dev`:** muestra de 300 URLs (los dos catálogos, 37 idiomas, RTL),
+   404 reales, cabeceras y Lighthouse móvil.
+6. **Cambio de dominio, en ventana tranquila:** quitar `usefulverse.com` del proyecto de Pages y añadirlo como *Custom
+   Domain* del Worker. Verificar 200 en la home y en 20 URLs al momento.
+7. **Redirigir `tools.usefulverse.com` → `usefulverse.com`** con **una sola regla de redirección de Cloudflare**
+   (Rules → Redirect Rules, incluida gratis): `https://tools.usefulverse.com/*` → `https://usefulverse.com/${1}`, **301**,
+   conservando la ruta y la query. El registro DNS de `tools` sigue con proxy activo (naranja) para que la regla actúe.
+   Verificar con 200 URLs: 301 → 200 en la ruta equivalente.
+8. **Despliegue:** el workflow pasa de `pages deploy` (dos proyectos) a **`wrangler deploy`** del Worker en cada push a
+   `main` (sin el `workflow_dispatch` manual del hub). Wrangler solo sube los archivos que cambian.
+9. **Después:** reenviar el índice de sitemaps de `usefulverse.com` en Search Console (la propiedad de dominio ya cubre ambos
+   hosts; no hace falta ningún «cambio de dirección») y en Bing. Mantener los dos proyectos de Pages **2 semanas** como
+   vuelta atrás. Borrarlos solo con el OK de Pedro.
+10. Actualizar `MAPA-REPO.md` (un sitio, un build, un despliegue) y `ESTADO.md`.
+
+**Vuelta atrás:** devolver el dominio al proyecto de Pages `usefulverse` y desactivar la regla de redirección. Es
+inmediato, porque los proyectos antiguos siguen vivos.
+
+---
+
 ## 5. Bucle principal · Mejorar herramientas existentes (lote de 5 a 10)
 
 **Elegir el lote:** abrir `docs/quality/progress.csv` y tomar las siguientes filas con `tipo=existente` y
