@@ -164,5 +164,79 @@
       "scope": "references",
       "total_seconds": 481.09770523500003
     }
+  },
+  "39402907694": {
+    "status": "completed",
+    "conclusion": "success",
+    "headSha": "e7cfb77fb17b6b7e385cbe0e09be4b0eeff66eea",
+    "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39402907694",
+    "jobs": [
+      {
+        "name": "translation-pilot (madlad)",
+        "status": "completed",
+        "conclusion": "success",
+        "startedAt": "2026-10-20T09:51:59Z",
+        "completedAt": "2026-10-20T10:30:54Z",
+        "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39402907694/job/118564676364"
+      },
+      {
+        "name": "validate-and-deploy",
+        "status": "completed",
+        "conclusion": "skipped",
+        "startedAt": "2026-10-20T09:51:58Z",
+        "completedAt": "2026-10-20T09:51:57Z",
+        "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39402907694/job/118564677821"
+      }
+    ]
+  },
+  "39405978076": {
+    "status": "completed",
+    "conclusion": "success",
+    "headSha": "f8fe9291a4364431699fffe3b5af6d1593ebf1a8",
+    "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39405978076",
+    "jobs": [
+      {
+        "name": "validate-and-deploy",
+        "status": "completed",
+        "conclusion": "success",
+        "startedAt": "2026-10-20T10:11:03Z",
+        "completedAt": "2026-10-20T10:14:31Z",
+        "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39405978076/job/118572307567"
+      },
+      {
+        "name": "translation-pilot",
+        "status": "completed",
+        "conclusion": "skipped",
+        "startedAt": "2026-10-20T10:11:01Z",
+        "completedAt": "2026-10-20T10:11:00Z",
+        "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39405978076/job/118572309794"
+      }
+    ]
+  },
+  "madlad-all": {
+    "model": {
+      "converted_sha256": {
+        "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+        "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+        "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+      },
+      "engine": "madlad",
+      "license": "Apache-2.0",
+      "minimum_free_gib": 18,
+      "repository": "google/madlad400-3b-mt",
+      "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+    },
+    "summary": {
+      "approved": 0,
+      "conversion_seconds": 136.739646648,
+      "counts": {
+        "legacy": 918,
+        "model": 1360
+      },
+      "engine": "madlad",
+      "peak_rss_kib": 3985808,
+      "scope": "references",
+      "total_seconds": 2278.6924632299997
+    }
   }
 }

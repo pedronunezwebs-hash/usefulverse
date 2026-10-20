@@ -2,6 +2,7 @@
 
 20-oct-2026 · Codex · PR [#136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136).
 Dependencia del Paso A; no habilita ninguna herramienta ni idioma. **Idiomas aprobados por este piloto: 0.**
+Código y checkpoints de esta guía están en `feat/new-tools-batch-1` hasta integrar el PR; no confundirlos con `main`.
 
 ## Corpus y método
 
@@ -54,7 +55,7 @@ contexto, modelo, traducción actual o beam genera una identidad distinta y se v
 - [x] Corpus y contratos de seguridad/reanudación con tests permanentes.
 - [x] Workflow validado con Actionlint 1.7.12.
 - [x] Comparación real corta de ambos motores en Actions; 320 registros, incluyendo la traducción actual.
-- [ ] 40 referencias por destino, incluida la traducción actual donde existe.
+- [x] 40 referencias computadas por destino, incluida la traducción actual donde existe; 4.809 registros guardados.
 - [ ] Rúbrica del agente y elección documentada por idioma; no inventar revisión nativa.
 - [ ] Tres herramientas completas, muestra de 20 frases por idioma, bokmål confirmado y umbral superado.
 - [ ] Memoria y paquetes reales de las 300 en los idiomas aprobados.
@@ -64,7 +65,7 @@ contexto, modelo, traducción actual o beam genera una identidad distinta y se v
 [Run 39402041888](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39402041888), commit `46f3a8d`.
 Ambos jobs completados; el job de publicación quedó omitido. 40 frases × 2 destinos × 2 candidatos × 2 motores =
 320 registros recuperados de los logs y guardados como JSONL. La traducción actual se revisa una vez aunque tenga
-dos retrotraducciones. [Rúbrica del agente](translation-pilot/review-es-nb.json): 240 traducciones únicas evaluadas,
+dos retrotraducciones. [Rúbrica del agente](https://github.com/pedronunezwebs-hash/usefulverse/blob/f8fe9291a4364431699fffe3b5af6d1593ebf1a8/docs/quality/translation-pilot/review-es-nb.json): 240 traducciones únicas evaluadas,
 sin afirmar revisión nativa. Cada evaluación referencia el hash del texto y los registros concretos; un test impide
 desvincular la puntuación de la traducción observada.
 
@@ -102,13 +103,21 @@ Un cambio en el algoritmo de inferencia requiere cambiar la versión de formato/
 (1.400 salidas del modelo y 971 actuales con retrotraducción). Las 160 filas iniciales es/nb se reutilizaron;
 el run añadió 2.211 registros en 481,10 s, incluidos 33,59 s de conversión. Pico RSS de inferencia: 1.019.372 KiB.
 
-La [revisión de otros seis destinos](translation-pilot/review-core-six.json) compara las **40 referencias** en
+La [revisión de otros seis destinos](https://github.com/pedronunezwebs-hash/usefulverse/blob/f8fe9291a4364431699fffe3b5af6d1593ebf1a8/docs/quality/translation-pilot/review-core-six.json) compara las **40 referencias** en
 de/fr/pt-BR/ja/hi/ar: 402 traducciones (40 del modelo + 27 actuales por destino; faltan las 13 actuales de DXF).
 Con es/nb, **642 traducciones únicas evaluadas** por el agente y **202 salidas rechazadas** registradas como regresiones.
 Esas combinaciones no superan el umbral. Esta revisión tampoco afirma revisión nativa ni sustituye los controles del lote.
 No interpretar `known_semantic_errors=0` en los otros destinos como aprobación: falta su revisión.
 La longitud y el alfabeto son señales de revisión; las siglas técnicas y la densidad del chino pueden producir avisos
 sin un error de sentido. La retrotraducción se valida por separado: un texto correcto de ida no oculta cifras perdidas a la vuelta.
+
+[MADLAD completo de referencias](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39402907694):
+**36 destinos × 40 referencias = 1.440 salidas del modelo**, más 998 actuales con retrotraducción, **2.438 registros**.
+Se reutilizaron 160 filas es/nb y se añadieron 2.278. Tiempo del run: **2.278,69 s** (conversión: 136,74 s);
+pico RSS de inferencia: **3.985.808 KiB**. Los hashes de las conversiones INT8 coinciden entre la tanda corta y la
+completa en ambos motores. Detalle: `run-evidence.json` y `reference-coverage.json`.
+Con los dos motores, **4.809 registros** guardados. Es la comparación de referencias; **el piloto completo de tres
+herramientas y la aprobación de idiomas siguen pendientes**. No procesar las 300 con una combinación que haya fallado.
 
 Preparar las fuentes de las 300 sin importar una BD ni traducir nada:
 

@@ -1,0 +1,318 @@
+{
+  "at_utc": "2026-10-20T10:53:55.786487+00:00",
+  "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
+  "source_locale": "en",
+  "product_locales": 37,
+  "destination_locales": 36,
+  "reference_units": 40,
+  "full_source_units": 214,
+  "reference_computation_complete": true,
+  "full_tool_pilot_complete": false,
+  "approved_locales": [],
+  "agent_reviewed_translations": 642,
+  "native_review": false,
+  "engines": {
+    "m2m100": {
+      "records": 2371,
+      "destinations": 35,
+      "by_locale": {
+        "am": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ar": {
+          "model": 40,
+          "legacy": 27
+        },
+        "bg": {
+          "legacy": 27,
+          "model": 40
+        },
+        "bn": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ca": {
+          "model": 40,
+          "legacy": 27
+        },
+        "de": {
+          "legacy": 27,
+          "model": 40
+        },
+        "el": {
+          "model": 40,
+          "legacy": 27
+        },
+        "es": {
+          "model": 40,
+          "legacy": 40
+        },
+        "fa": {
+          "model": 40,
+          "legacy": 27
+        },
+        "fil": {
+          "model": 40,
+          "legacy": 27
+        },
+        "fr": {
+          "legacy": 27,
+          "model": 40
+        },
+        "gu": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ha": {
+          "model": 40,
+          "legacy": 27
+        },
+        "hi": {
+          "model": 40,
+          "legacy": 27
+        },
+        "id": {
+          "model": 40,
+          "legacy": 27
+        },
+        "it": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ja": {
+          "legacy": 27,
+          "model": 40
+        },
+        "ko": {
+          "legacy": 27,
+          "model": 40
+        },
+        "mr": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ms": {
+          "legacy": 27,
+          "model": 40
+        },
+        "nb-NO": {
+          "model": 40,
+          "legacy": 40
+        },
+        "nl": {
+          "legacy": 27,
+          "model": 40
+        },
+        "pl": {
+          "model": 40,
+          "legacy": 27
+        },
+        "pt-BR": {
+          "legacy": 27,
+          "model": 40
+        },
+        "ru": {
+          "legacy": 27,
+          "model": 40
+        },
+        "sv": {
+          "legacy": 27,
+          "model": 40
+        },
+        "sw": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ta": {
+          "legacy": 27,
+          "model": 40
+        },
+        "th": {
+          "model": 40,
+          "legacy": 27
+        },
+        "tr": {
+          "legacy": 27,
+          "model": 40
+        },
+        "uk": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ur": {
+          "model": 40,
+          "legacy": 27
+        },
+        "vi": {
+          "model": 40,
+          "legacy": 27
+        },
+        "zh-CN": {
+          "model": 40,
+          "legacy": 27
+        },
+        "zh-TW": {
+          "model": 40,
+          "legacy": 27
+        }
+      }
+    },
+    "madlad": {
+      "records": 2438,
+      "destinations": 36,
+      "by_locale": {
+        "am": {
+          "legacy": 27,
+          "model": 40
+        },
+        "ar": {
+          "legacy": 27,
+          "model": 40
+        },
+        "bg": {
+          "model": 40,
+          "legacy": 27
+        },
+        "bn": {
+          "legacy": 27,
+          "model": 40
+        },
+        "ca": {
+          "model": 40,
+          "legacy": 27
+        },
+        "de": {
+          "model": 40,
+          "legacy": 27
+        },
+        "el": {
+          "legacy": 27,
+          "model": 40
+        },
+        "es": {
+          "model": 40,
+          "legacy": 40
+        },
+        "fa": {
+          "model": 40,
+          "legacy": 27
+        },
+        "fil": {
+          "model": 40,
+          "legacy": 27
+        },
+        "fr": {
+          "legacy": 27,
+          "model": 40
+        },
+        "gu": {
+          "legacy": 27,
+          "model": 40
+        },
+        "ha": {
+          "legacy": 27,
+          "model": 40
+        },
+        "hi": {
+          "legacy": 27,
+          "model": 40
+        },
+        "id": {
+          "model": 40,
+          "legacy": 27
+        },
+        "it": {
+          "legacy": 27,
+          "model": 40
+        },
+        "ja": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ko": {
+          "legacy": 27,
+          "model": 40
+        },
+        "mr": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ms": {
+          "model": 40,
+          "legacy": 27
+        },
+        "nb-NO": {
+          "model": 40,
+          "legacy": 40
+        },
+        "nl": {
+          "legacy": 27,
+          "model": 40
+        },
+        "pl": {
+          "legacy": 27,
+          "model": 40
+        },
+        "pt-BR": {
+          "model": 40,
+          "legacy": 27
+        },
+        "ru": {
+          "legacy": 27,
+          "model": 40
+        },
+        "sv": {
+          "legacy": 27,
+          "model": 40
+        },
+        "sw": {
+          "legacy": 27,
+          "model": 40
+        },
+        "ta": {
+          "legacy": 27,
+          "model": 40
+        },
+        "te": {
+          "model": 40,
+          "legacy": 27
+        },
+        "th": {
+          "model": 40,
+          "legacy": 27
+        },
+        "tr": {
+          "model": 40,
+          "legacy": 27
+        },
+        "uk": {
+          "legacy": 27,
+          "model": 40
+        },
+        "ur": {
+          "legacy": 27,
+          "model": 40
+        },
+        "vi": {
+          "legacy": 27,
+          "model": 40
+        },
+        "zh-CN": {
+          "model": 40,
+          "legacy": 27
+        },
+        "zh-TW": {
+          "model": 40,
+          "legacy": 27
+        }
+      }
+    }
+  },
+  "unsupported": [
+    {
+      "engine": "m2m100",
+      "locale": "te"
+    }
+  ]
+}

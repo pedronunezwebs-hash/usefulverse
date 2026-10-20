@@ -21,7 +21,8 @@ Este lote resuelve infraestructura y obtiene evidencia lingüística; **no compl
    **35 destinos × 40 referencias = 1.400 salidas del modelo**; con traducción actual, **2.371 registros** conservados.
    `te` se declara no soportado. Las 160 unidades ya medidas de es/nb se reutilizaron: no aparecen como nuevas en el run.
 4. [MADLAD referencias 39402907694](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39402907694):
-   **en ejecución al redactar este bloque**; actualizar resultado y checkpoints antes de cerrar el lote.
+   **36 destinos × 40 referencias = 1.440 salidas del modelo**, con la copia actual **2.438 registros** conservados.
+   Total entre motores: **4.809 registros**. Tiempos, RSS, hashes INT8, commits y jobs: `translation-pilot/run-evidence.json`.
 5. Revisión del agente (sin afirmar revisión nativa): 240 traducciones de las 40 referencias es/nb y cribado de otras
    402 traducciones, 40 claves por destino en de/fr/pt-BR/ja/hi/ar (DXF actual ausente allí). Rúbrica 0–3 por significado,
    cifras/negaciones y naturalidad. Evaluaciones ligadas por hash a los textos observados.
@@ -42,14 +43,16 @@ Este lote resuelve infraestructura y obtiene evidencia lingüística; **no compl
 - Tests ligeros actuales: **21 Python (19 pasan; 2 requieren las dependencias del job dedicado)** y cuatro tests Node
   focalizados. Las dos pruebas reales de dependencias se ejecutaron y pasaron en los jobs del piloto.
 - Actionlint 1.7.12: workflow válido. Gitleaks 8.30.1: 0 secretos en los diffs publicados.
-- CI de código completo pendiente de enlazar al último commit al cerrar. Los runs anteriores validaron ambos builds,
-  `locale:release-check` y la preview aislada de las 300, sin desplegar.
+- [CI final 39405978076](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39405978076), código `f8fe929`:
+  **3.045/3.045 tests Node**, 21 casos Python (19 pasan, 2 de dependencias reservados al job de modelos),
+  build principal 10.260 páginas, `locale:release-check`, hub (217 + 100 + 106 herramientas) y preview aislada verdes.
+  Preview: 11.293 archivos, 10.800 páginas de herramientas noindex fuera del sitemap. Sin despliegue.
 
 ## Producción, coste y límites
 
 GET con `curl`, 20-oct a las 09:38 UTC: sitemaps XML de `usefulverse.com` **10.260** y de `tools.` **15.365**:
 **25.625 → 25.625 URLs indexables**. `/tools/zzz-no-existe/`, `/es/zzz/` y `/zzz.html` del hub aún devuelven **200**.
-La fase 0 y su arreglo siguen pendientes; no se ha avanzado de fase. Evidencia JSON del lote pendiente de incorporar.
+La fase 0 y su arreglo siguen pendientes; no se ha avanzado de fase. Evidencia: `translation-pilot/production-check.json`.
 
 **Sin merge, deploy, activaciones, 301, cambios de dominio ni envíos a buscadores.** GitHub Actions del repo público,
 máquinas estándar `ubuntu-latest`, máximo dos jobs de traducción por run, sin artifacts/cachés nuevos ni APIs de pago.
@@ -63,8 +66,9 @@ sin builds completos locales. El directorio temporal propio se elimina después 
 
 - **0 idiomas aprobados por este piloto**. es/nb no superan el umbral con ninguno de los candidatos sin corregir;
   preferencias provisionales: actual corregido para es, MADLAD corregido para nb. No congelar motores con estas notas.
-- Terminar la comparación de las 40 referencias en todos los destinos; glosario por sentido y protección de marcadores;
-  corregir configuración antes de ampliar las combinaciones fallidas. Después, tres herramientas completas y muestra
+- Referencias computadas en todos los destinos; completar la rúbrica restante y la comparación con MADLAD.
+  Glosario por sentido y protección de marcadores; corregir configuración antes de ampliar combinaciones fallidas.
+  Después, tres herramientas completas y muestra
   de 20 cadenas por idioma, umbral de RUNBOOK §8.1. No publicar fallbacks EN ni inventar revisiones.
 - Capacidad del Paso A sigue abierta: sumar las 300 al hub excede Pages. RUNBOOK §4b está previsto después de fase 0;
   no se ha ejecutado ni dado por completado. Mantener el bloqueo explícito y resolver la dependencia antes de publicar.
