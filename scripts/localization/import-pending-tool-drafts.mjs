@@ -4,6 +4,7 @@ import { once } from 'node:events';
 import { resolve } from 'node:path';
 import pendingCopies from '../../src/growth600/locales/pending-tools-final.mjs';
 import { pendingToolEnglishCopy } from '../../src/growth600/locales/pending-tools.en.mjs';
+import { extractToolCopyUnits } from './extract-tool-copy-units.mjs';
 
 const root = resolve(import.meta.dirname, '../..');
 const progressPath = resolve(root, 'docs/planning/usefulverse-1000-2026-10-19/implementation-progress.json');
@@ -16,26 +17,7 @@ const candidateIds = tools
   .filter(({ status }) => ['implementation-in-progress', 'implemented'].includes(status))
   .map(({ slug }) => slug);
 const localeMap = { pt: 'pt-BR', zh: 'zh-CN', zh_tw: 'zh-TW', tl: 'fil' };
-const excludedKeys = new Set([
-  'copyLanguage', 'localizationStatus', 'localizationAcceptedBy', 'localizationAcceptedAt',
-  'localizationReviewers', 'localizationLastReviewedAt', 'officialNoticeUrl', 'officialFgtsUrl',
-]);
-const targetLocales = ['es', 'fr', 'pt-BR', 'de', 'ja', 'ko', 'id', 'hi', 'ar', 'zh-CN', 'bn', 'ru', 'ur', 'tr', 'vi', 'it', 'zh-TW', 'bg', 'ca', 'nl', 'el', 'ms', 'pl', 'sv', 'th', 'uk', 'sw', 'mr', 'ha', 'fil', 'ta', 'fa', 'am', 'gu', 'nb-NO', 'te'];
-const sharedContextPath = (path) => ['copy.intro', 'copy.howQuestion', 'copy.privacyQuestion', 'copy.privacyAnswer'].includes(path)
-  || path.startsWith('copy.actions.') || path.startsWith('copy.messages.');
 const locales = Object.keys(pendingCopies).filter((locale) => locale !== 'en');
-
-function collect(value, path, output) {
-  if (typeof value === 'string' && value.trim()) {
-    output.push({ key: `${path}`, source: value });
-  } else if (Array.isArray(value)) {
-    value.forEach((item, index) => collect(item, `${path}.${index}`, output));
-  } else if (value && typeof value === 'object') {
-    for (const [key, child] of Object.entries(value)) {
-      if (!excludedKeys.has(key)) collect(child, `${path}.${key}`, output);
-    }
-  }
-}
 
 function resolvePath(value, path) {
   return path.split('.').slice(1).reduce((current, part) => {
@@ -49,15 +31,9 @@ let records = 0;
 for (const toolId of candidateIds) {
   const englishCopy = pendingToolEnglishCopy[toolId];
   if (!englishCopy) throw new Error(`${toolId}: canonical English copy is missing`);
-  const units = [];
-  collect(englishCopy, 'copy', units);
-  const sourceUnits = units.map((unit) => ({
-    key: `${toolId}.${unit.key}`,
-    source: unit.source,
-    context: `${sharedContextPath(unit.key) ? 'Shared' : toolId} UI ${unit.key}`,
-    locales: targetLocales,
-  }));
-  await writeFile(resolve(sourceDirectory, `${toolId}.json`), `${JSON.stringify({ toolId, units: sourceUnits }, null, 2)}\n`, 'utf8');
+  const document = extractToolCopyUnits(englishCopy, toolId);
+  const units = document.units.map((unit) => ({ ...unit, key: unit.key.slice(toolId.length + 1) }));
+  await writeFile(resolve(sourceDirectory, `${toolId}.json`), `${JSON.stringify(document, null, 2)}\n`, 'utf8');
   for (const routeLocale of locales) {
     const copy = pendingCopies[routeLocale]?.[toolId];
     if (!copy) throw new Error(`${toolId}/${routeLocale}: localized draft is missing`);
