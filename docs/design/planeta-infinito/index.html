@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UsefulVerse · Prototipo Planeta Infinito</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap">
+<style>
+:root{
+  --brand:#5B3DF5; --brand-ink:#3A22C9; --brand-soft:#EEEAFF;
+  --sun:#FFB020; --ink:#15122B; --ink-2:#4A4763; --line:#E4E1F2;
+  --paper:#FBFAFF; --card:#FFFFFF; --field:#F4F2FC;
+  --pdf:#FF5A4E; --img:#13B5A6; --calc:#22A866; --text:#2F7BF6; --media:#E8418F; --game:#F29A0C;
+  --r:20px; --r-s:12px;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans Arabic",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --brand:#8B74FF; --brand-ink:#B3A4FF; --brand-soft:#241D4D; --ink:#F3F1FF; --ink-2:#B9B5D6; --line:#2C2850;
+  --paper:#100D22; --card:#18143A; --field:#211C47; color-scheme:dark;}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 var(--body)}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:8px}
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:16px}
+.num{font-variant-numeric:tabular-nums}
+bdi{unicode-bidi:isolate}
+
+/* ---------- Planet mark ---------- */
+.mark{display:inline-block;flex:none}
+.mark .orbit{fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linecap:round}
+.mark .planet{fill:var(--c,var(--brand))}
+.mark .front{fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linecap:round}
+.mark .moon{fill:var(--sun)}
+
+/* ---------- Header ---------- */
+header.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-block-end:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:12px;height:60px}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;font:800 21px/1 var(--display);letter-spacing:-.02em}
+.logo b{color:var(--brand);font-weight:800}
+.top .sp{flex:1}
+.pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:8px 12px;font-size:14px;font-weight:600;cursor:pointer}
+.pill:hover{border-color:var(--brand)}
+.iconbtn{width:40px;height:40px;display:grid;place-items:center;border-radius:999px;border:1px solid var(--line);background:var(--card);cursor:pointer}
+.iconbtn:hover{border-color:var(--brand)}
+.proto-nav{display:flex;gap:6px;overflow-x:auto;padding:10px 16px;border-block-end:1px solid var(--line);background:var(--card);font-size:13px}
+.proto-nav a{white-space:nowrap;text-decoration:none;padding:6px 10px;border-radius:999px;background:var(--field);font-weight:600}
+.proto-nav a[aria-current=page]{background:var(--ink);color:var(--paper)}
+
+/* ---------- Common ---------- */
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--brand-ink);text-transform:uppercase}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.025em;line-height:1.05;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,8vw,64px);font-weight:800}
+h2{font-size:clamp(24px,5vw,34px);font-weight:800}
+h3{font-size:19px;font-weight:700;letter-spacing:-.01em}
+.lede{color:var(--ink-2);font-size:18px;max-width:58ch;margin:12px 0 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;border:0;border-radius:999px;padding:14px 22px;font-weight:700;cursor:pointer;text-decoration:none;transition:transform .15s,background .15s}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brand-ink)}
+.btn-primary:active{transform:scale(.97)}
+.btn-ghost{background:var(--field);color:var(--ink)}
+.btn-ghost:hover{background:var(--brand-soft)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
+.trust{display:flex;flex-wrap:wrap;gap:8px 16px;margin:18px 0 0;padding:0;list-style:none;font-size:14px;font-weight:600;color:var(--ink-2)}
+.trust li{display:flex;align-items:center;gap:6px}
+.trust svg{color:var(--calc)}
+.crumbs{font-size:14px;color:var(--ink-2);display:flex;gap:6px;flex-wrap:wrap;padding-block:16px 4px}
+.crumbs a{text-decoration:none}.crumbs a:hover{color:var(--brand)}
+.sec{padding-block:40px}
+.page{display:none}.page.on{display:block}
+
+/* ---------- Home ---------- */
+.hero{padding-block:28px 8px;display:grid;gap:20px}
+@media(min-width:880px){.hero{grid-template-columns:1.1fr .9fr;align-items:center;padding-block:56px 24px}}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.search{display:flex;align-items:center;gap:10px;background:var(--card);border:2px solid var(--ink);border-radius:999px;padding:6px 6px 6px 18px;margin-top:22px;max-width:560px;box-shadow:4px 4px 0 var(--ink)}
+.search input{border:0;background:transparent;flex:1;min-width:0;font-size:17px;padding:8px 0}
+.search input:focus{outline:none}
+.search:focus-within{box-shadow:4px 4px 0 var(--brand);border-color:var(--brand)}
+.galaxy{width:100%;max-width:min(300px,80vw);margin-inline:auto;aspect-ratio:1;order:-1}
+@media(min-width:880px){.galaxy{max-width:440px;order:0}}
+.galaxy .ring{fill:none;stroke:var(--line);stroke-width:1.5}
+.cats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px}
+@media(min-width:720px){.cats{grid-template-columns:repeat(3,1fr)}}
+.cat{display:flex;flex-direction:column;gap:10px;padding:16px;text-decoration:none;transition:transform .15s,border-color .15s}
+.cat:hover{transform:translateY(-3px);border-color:var(--c)}
+.cat small{color:var(--ink-2);font-weight:600}
+.cat strong{font:700 18px/1.1 var(--display)}
+.tools{display:grid;gap:10px;margin-top:20px}
+@media(min-width:720px){.tools{grid-template-columns:repeat(2,1fr)}}
+.tool{display:flex;align-items:center;gap:14px;padding:14px 16px;text-decoration:none;transition:border-color .15s}
+.tool:hover{border-color:var(--brand)}
+.tool p{margin:2px 0 0;font-size:14px;color:var(--ink-2)}
+.tool .go{margin-inline-start:auto;color:var(--ink-2)}
+[dir=rtl] .flip{transform:scaleX(-1)}
+
+/* ---------- Tool page ---------- */
+.toolhead{display:flex;gap:14px;align-items:flex-start;margin-top:8px}
+.toolbox{margin-top:22px;padding:16px}
+@media(min-width:720px){.toolbox{padding:24px}}
+.drop{position:relative;display:grid;place-items:center;text-align:center;gap:10px;padding:32px 16px;border:2px dashed color-mix(in srgb,var(--pdf) 55%,var(--line));border-radius:var(--r);background:color-mix(in srgb,var(--pdf) 6%,var(--card));cursor:pointer;transition:background .15s,border-color .15s}
+.drop:hover,.drop.over{background:color-mix(in srgb,var(--pdf) 12%,var(--card));border-color:var(--pdf)}
+.drop strong{font:800 22px/1.1 var(--display)}
+.drop p{margin:0;color:var(--ink-2);font-size:15px}
+.files{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:8px}
+.files li{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:var(--r-s);background:var(--field);font-size:15px}
+.files .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.files .sz{color:var(--ink-2);font-size:13px}
+.bar{height:6px;border-radius:9px;background:var(--line);overflow:hidden;width:70px}
+.bar i{display:block;height:100%;width:0;background:var(--pdf);transition:width .2s}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px}
+.seg{display:inline-flex;flex-wrap:wrap;background:var(--field);border-radius:22px;padding:4px;gap:2px}
+.seg button{white-space:nowrap;border:0;background:transparent;border-radius:999px;padding:8px 14px;font-weight:600;font-size:14px;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--card);box-shadow:0 1px 3px rgb(0 0 0/.12);color:var(--brand-ink)}
+.status{display:flex;align-items:center;gap:14px;margin-top:18px;padding:14px;border-radius:var(--r-s);background:var(--brand-soft)}
+.status[hidden]{display:none}
+.done{margin-top:18px;padding:18px;border-radius:var(--r);background:var(--ink);color:var(--paper)}
+.done[hidden]{display:none}
+.done h3{color:inherit}
+.done .row .btn-ghost{background:rgb(255 255 255/.12);color:inherit}
+.next{margin-top:14px;padding:16px;border-radius:var(--r);border:2px solid var(--ink);background:var(--card);box-shadow:4px 4px 0 var(--ink)}
+.next[hidden]{display:none}
+.next ul{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:8px}
+.next a{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:var(--r-s);background:var(--field);text-decoration:none;font-weight:600}
+.next a:hover{background:var(--brand-soft)}
+.next a span{font-weight:400;color:var(--ink-2);font-size:14px}
+.steps{display:grid;gap:12px;counter-reset:s;margin-top:18px;padding:0;list-style:none}
+@media(min-width:720px){.steps{grid-template-columns:repeat(3,1fr)}}
+.steps li{padding:18px;counter-increment:s}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:999px;background:var(--brand);color:#fff;font:800 17px/1 var(--display);margin-bottom:10px}
+.steps p{margin:6px 0 0;color:var(--ink-2)}
+.limits{display:grid;gap:12px;margin-top:18px}
+@media(min-width:720px){.limits{grid-template-columns:repeat(3,1fr)}}
+.limits div{padding:16px;border-radius:var(--r);background:var(--field)}
+.limits strong{display:block;font:700 18px/1.2 var(--display)}
+.limits p{margin:6px 0 0;font-size:15px;color:var(--ink-2)}
+details{border-block-end:1px solid var(--line);padding-block:14px}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;gap:10px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";margin-inline-start:auto;font:800 22px/1 var(--display);color:var(--brand)}
+details[open] summary::after{content:"–"}
+details p{margin:8px 0 0;color:var(--ink-2)}
+
+/* ---------- Calculator ---------- */
+.calc{display:grid;gap:14px;margin-top:16px}
+.calc label{display:grid;gap:6px;font-size:14px;font-weight:600;color:var(--ink-2)}
+.calc input{width:100%;border:2px solid var(--line);background:var(--card);border-radius:var(--r-s);padding:14px;font-size:22px;font-weight:700}
+.calc input:focus{outline:none;border-color:var(--calc)}
+.calc .pair{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:end}
+.calc .pair span{padding-bottom:16px;font-weight:700;color:var(--ink-2)}
+.result{padding:18px;border-radius:var(--r);background:color-mix(in srgb,var(--calc) 12%,var(--card));border:2px solid var(--calc)}
+.result .big{font:800 clamp(36px,9vw,56px)/1 var(--display);letter-spacing:-.03em}
+.result p{margin:8px 0 0;color:var(--ink-2)}
+
+/* ---------- Game ---------- */
+.board{display:grid;grid-template-columns:repeat(9,1fr);width:min(100%,460px);aspect-ratio:1;margin:18px auto 0;border:3px solid var(--ink);border-radius:14px;overflow:hidden;background:var(--card)}
+.board button{border:0;border-inline-end:1px solid var(--line);border-block-end:1px solid var(--line);background:transparent;font:700 clamp(17px,4.6vw,24px)/1 var(--display);cursor:pointer;padding:0;aspect-ratio:1}
+.board button.given{color:var(--ink)}
+.board button.user{color:var(--brand)}
+.board button.bad{color:var(--pdf);background:color-mix(in srgb,var(--pdf) 10%,transparent)}
+.board button.sel{background:color-mix(in srgb,var(--game) 30%,transparent)}
+.board button.peer{background:color-mix(in srgb,var(--game) 9%,transparent)}
+.board button:nth-child(9n+3),.board button:nth-child(9n+6){border-inline-end:3px solid var(--ink)}
+.board button:nth-child(n+19):nth-child(-n+27),.board button:nth-child(n+46):nth-child(-n+54){border-block-end:3px solid var(--ink)}
+.pad{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;width:min(100%,460px);margin:14px auto 0}
+.pad button{border:0;border-radius:var(--r-s);background:var(--field);padding:12px 0;font:800 20px/1 var(--display);cursor:pointer}
+.pad button:hover{background:var(--brand-soft)}
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:6px 12px;font-weight:700;font-size:13px;background:color-mix(in srgb,var(--game) 18%,var(--card));color:var(--ink)}
+
+/* ---------- Footer ---------- */
+footer{margin-top:40px;padding-block:28px;border-block-start:1px solid var(--line);color:var(--ink-2);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+footer a{text-decoration:none}footer a:hover{color:var(--brand)}
+
+/* ---------- Motion ---------- */
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.25)}100%{transform:scale(1)}}
+.pop .planet{animation:pop .5s cubic-bezier(.3,1.6,.5,1);transform-origin:center;transform-box:fill-box}
+@keyframes drift{to{transform:rotate(360deg)}}
+.galaxy .spin{transform-origin:200px 200px;animation:drift 60s linear infinite}
+.galaxy .spin2{transform-origin:200px 200px;animation:drift 90s linear infinite reverse}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+
+<!-- Reusable planet mark -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="inf" d="M29.00 16.00 L28.85 16.78 L28.43 17.51 L27.77 18.13 L26.94 18.62 L26.00 18.96 L25.01 19.15 L24.01 19.22 L23.05 19.17 L22.13 19.03 L21.27 18.82 L20.46 18.56 L19.71 18.25 L19.02 17.91 L18.36 17.55 L17.74 17.18 L17.15 16.79 L16.57 16.40 L16.00 16.00 L15.43 15.60 L14.85 15.21 L14.26 14.82 L13.64 14.45 L12.98 14.09 L12.29 13.75 L11.54 13.44 L10.73 13.18 L9.87 12.97 L8.95 12.83 L7.99 12.78 L6.99 12.85 L6.00 13.04 L5.06 13.38 L4.23 13.87 L3.57 14.49 L3.15 15.22 L3.00 16.00 L3.15 16.78 L3.57 17.51 L4.23 18.13 L5.06 18.62 L6.00 18.96 L6.99 19.15 L7.99 19.22 L8.95 19.17 L9.87 19.03 L10.73 18.82 L11.54 18.56 L12.29 18.25 L12.98 17.91 L13.64 17.55 L14.26 17.18 L14.85 16.79 L15.43 16.40 L16.00 16.00 L16.57 15.60 L17.15 15.21 L17.74 14.82 L18.36 14.45 L19.02 14.09 L19.71 13.75 L20.46 13.44 L21.27 13.18 L22.13 12.97 L23.05 12.83 L24.01 12.78 L25.01 12.85 L26.00 13.04 L26.94 13.38 L27.77 13.87 L28.43 14.49 L28.85 15.22 L29.00 16.00Z"/>
+    <clipPath id="frontHalf"><rect x="0" y="16" width="32" height="16"/></clipPath>
+    <symbol id="planet" viewBox="0 0 32 32">
+      <use href="#inf" style="fill:none;stroke:var(--ring,var(--ink));stroke-width:2;stroke-linejoin:round" transform="rotate(-18 16 16)"/>
+      <circle cx="16" cy="16" r="5.6" style="fill:var(--c,var(--brand))" class="planet"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 16V4M6 10l6-6 6 6M4 20h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#home" aria-label="UsefulVerse home">
+      <svg class="mark" width="34" height="34" aria-hidden="true"><use href="#planet"/></svg>
+      <span>useful<b>verse</b></span>
+    </a>
+    <span class="sp"></span>
+    <button class="iconbtn" aria-label="Search tools"><svg width="20" height="20"><use href="#i-search"/></svg></button>
+    <button class="pill" id="langBtn" aria-label="Change language"><svg width="18" height="18"><use href="#i-globe"/></svg><span id="langLbl">EN</span></button>
+  </div>
+</header>
+<nav class="proto-nav" aria-label="Prototype screens">
+  <a href="#home">1 · Inicio</a><a href="#pdf">2 · Herramienta PDF</a><a href="#calc">3 · Calculadora</a><a href="#game">4 · Juego</a>
+</nav>
+
+<main>
+<!-- ================= HOME ================= -->
+<section class="page" id="home">
+  <div class="wrap hero">
+    <div>
+      <span class="eyebrow"><svg class="mark" width="18" height="18" aria-hidden="true"><use href="#planet"/></svg> 700 free tools · 37 languages</span>
+      <h1 style="margin-top:12px">Every tool you need.<br><em>Free. Unlimited. Yours.</em></h1>
+      <p class="lede">PDFs, images, calculators, games and more — right in your browser. No sign-up, no limits, and your files never leave your device.</p>
+      <form class="search" role="search" onsubmit="return false">
+        <svg width="22" height="22" aria-hidden="true"><use href="#i-search"/></svg>
+        <label class="sr" for="q">Search tools</label>
+        <input id="q" placeholder="Try “compress pdf” or “sudoku”" autocomplete="off">
+        <button class="btn btn-primary" style="padding:10px 18px">Search</button>
+      </form>
+      <ul class="trust">
+        <li><svg width="18" height="18"><use href="#i-check"/></svg>No sign-up</li>
+        <li><svg width="18" height="18"><use href="#i-check"/></svg>No file limits</li>
+        <li><svg width="18" height="18"><use href="#i-check"/></svg>Files stay on your device</li>
+      </ul>
+    </div>
+    <svg class="galaxy" viewBox="0 0 400 400" role="img" aria-label="The UsefulVerse: a planet with orbiting tool categories">
+      <circle class="ring" cx="200" cy="200" r="120"/><circle class="ring" cx="200" cy="200" r="175"/>
+      <use href="#planet" x="130" y="130" width="140" height="140"/>
+      <g class="spin">
+        <circle cx="320" cy="200" r="16" fill="var(--pdf)"/><circle cx="80" cy="200" r="13" fill="var(--img)"/>
+        <circle cx="200" cy="80" r="11" fill="var(--sun)"/>
+      </g>
+      <g class="spin2">
+        <circle cx="375" cy="200" r="11" fill="var(--calc)"/><circle cx="25" cy="200" r="15" fill="var(--text)"/>
+        <circle cx="200" cy="375" r="12" fill="var(--media)"/><circle cx="200" cy="25" r="9" fill="var(--game)"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="wrap sec">
+    <h2>Pick a world</h2>
+    <div class="cats">
+      <a class="card cat" href="#pdf" style="--c:var(--pdf)"><svg class="mark" width="40" height="40" style="--c:var(--pdf)"><use href="#planet"/></svg><strong>PDF</strong><small class="num">64 tools</small></a>
+      <a class="card cat" href="#pdf" style="--c:var(--img)"><svg class="mark" width="40" height="40" style="--c:var(--img)"><use href="#planet"/></svg><strong>Images</strong><small class="num">58 tools</small></a>
+      <a class="card cat" href="#calc" style="--c:var(--calc)"><svg class="mark" width="40" height="40" style="--c:var(--calc)"><use href="#planet"/></svg><strong>Calculators</strong><small class="num">212 tools</small></a>
+      <a class="card cat" href="#calc" style="--c:var(--text)"><svg class="mark" width="40" height="40" style="--c:var(--text)"><use href="#planet"/></svg><strong>Text &amp; data</strong><small class="num">96 tools</small></a>
+      <a class="card cat" href="#pdf" style="--c:var(--media)"><svg class="mark" width="40" height="40" style="--c:var(--media)"><use href="#planet"/></svg><strong>Video &amp; audio</strong><small class="num">41 tools</small></a>
+      <a class="card cat" href="#game" style="--c:var(--game)"><svg class="mark" width="40" height="40" style="--c:var(--game)"><use href="#planet"/></svg><strong>Games &amp; puzzles</strong><small class="num">87 tools</small></a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <h2>Most used today</h2>
+    <div class="tools">
+      <a class="card tool" href="#pdf"><svg class="mark" width="36" height="36" style="--c:var(--pdf)"><use href="#planet"/></svg><div><strong>Compress PDF</strong><p>Smaller files, same look</p></div><svg class="go flip" width="20" height="20"><use href="#i-arrow"/></svg></a>
+      <a class="card tool" href="#calc"><svg class="mark" width="36" height="36" style="--c:var(--calc)"><use href="#planet"/></svg><div><strong>Percentage Calculator</strong><p>% of, change and difference</p></div><svg class="go flip" width="20" height="20"><use href="#i-arrow"/></svg></a>
+      <a class="card tool" href="#game"><svg class="mark" width="36" height="36" style="--c:var(--game)"><use href="#planet"/></svg><div><strong>Sudoku</strong><p>Endless puzzles + daily challenge</p></div><svg class="go flip" width="20" height="20"><use href="#i-arrow"/></svg></a>
+      <a class="card tool" href="#calc"><svg class="mark" width="36" height="36" style="--c:var(--text)"><use href="#planet"/></svg><div><strong>Date Calculator</strong><p>Days between dates, add days</p></div><svg class="go flip" width="20" height="20"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PDF TOOL ================= -->
+<section class="page" id="pdf">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span aria-hidden="true">/</span><a href="#home">PDF</a><span aria-hidden="true">/</span><span aria-current="page">Compress PDF</span></nav>
+    <div class="toolhead">
+      <svg class="mark" id="pdfMark" width="56" height="56" style="--c:var(--pdf)" aria-hidden="true"><use href="#planet"/></svg>
+      <div>
+        <h1>Compress PDF</h1>
+        <p class="lede" style="margin-top:8px">Make PDFs smaller in seconds. As many files as you want — they never leave your device.</p>
+      </div>
+    </div>
+
+    <div class="card toolbox">
+      <label class="drop" id="drop" tabindex="0">
+        <input type="file" id="fileIn" accept="application/pdf" multiple class="sr">
+        <svg width="44" height="44" style="color:var(--pdf)" aria-hidden="true"><use href="#i-up"/></svg>
+        <strong>Drop your PDFs here</strong>
+        <p>or tap to choose · no limit on files or size</p>
+      </label>
+      <div class="row">
+        <button class="btn btn-ghost" id="sample" type="button">Try with 3 sample files</button>
+      </div>
+      <ul class="files" id="files" aria-live="polite"></ul>
+      <div id="opts" hidden>
+        <p style="margin:18px 0 8px;font-weight:700">How small?</p>
+        <div class="seg" role="group" aria-label="Compression level">
+          <button type="button" aria-pressed="false">Light</button><button type="button" aria-pressed="true">Balanced</button><button type="button" aria-pressed="false">Smallest</button>
+        </div>
+        <div class="row"><button class="btn btn-primary" id="go" type="button">Compress <span class="num" id="cnt"></span></button></div>
+      </div>
+      <div class="status" id="status" hidden role="status">
+        <svg width="46" height="46" viewBox="0 0 32 32" aria-hidden="true" class="mark">
+          <use href="#inf" class="orbit" transform="rotate(-18 16 16)" style="stroke:var(--line)"/>
+          <circle class="planet" cx="16" cy="16" r="6.2" style="--c:var(--pdf)"/>
+          <circle r="2.4" class="moon"><animateMotion dur="1.4s" repeatCount="indefinite" rotate="auto"><mpath href="#inf"/></animateMotion></circle>
+        </svg>
+        <div><strong id="stTxt">Compressing…</strong><div style="font-size:14px;color:var(--ink-2)">Working on your device. Bigger batches just take a bit longer.</div></div>
+      </div>
+      <div class="done" id="done" hidden>
+        <h3 id="doneTxt">Done!</h3>
+        <p style="margin:6px 0 0;opacity:.8" id="doneSub"></p>
+        <div class="row"><button class="btn btn-primary" type="button">Download all (ZIP)</button><button class="btn btn-ghost" type="button" id="again">Compress more</button></div>
+      </div>
+      <aside class="next" id="next" hidden aria-label="Next step">
+        <strong style="font:800 19px/1.1 var(--display)">What’s next for these PDFs?</strong>
+        <ul>
+          <li><a href="#pdf"><svg class="mark" width="28" height="28" style="--c:var(--pdf)"><use href="#planet"/></svg><div>Merge into one PDF<br><span>Your 3 files go straight in</span></div></a></li>
+          <li><a href="#pdf"><svg class="mark" width="28" height="28" style="--c:var(--pdf)"><use href="#planet"/></svg><div>Protect with a password<br><span>Keep them private</span></div></a></li>
+          <li><a href="#pdf"><svg class="mark" width="28" height="28" style="--c:var(--text)"><use href="#planet"/></svg><div>Convert PDF to Word<br><span>Edit the text</span></div></a></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <div class="wrap sec">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li class="card"><h3>Add your PDFs</h3><p>Drop one file or a thousand. Nothing is uploaded.</p></li>
+      <li class="card"><h3>Choose how small</h3><p>Balanced keeps text sharp. Smallest squeezes images more.</p></li>
+      <li class="card"><h3>Download</h3><p>Get each file, or everything in one ZIP.</p></li>
+    </ol>
+  </div>
+
+  <div class="wrap">
+    <h2>Real limits, in plain words</h2>
+    <div class="limits">
+      <div><strong>Files: no limit</strong><p>Add as many as you like. They are done one by one, so big batches never freeze your phone.</p></div>
+      <div><strong>Size: no limit</strong><p>We set no cap. Very large files depend on your device’s memory.</p></div>
+      <div><strong>Privacy: 100% local</strong><p>Your PDFs are processed on this device and are never sent to a server.</p></div>
+    </div>
+  </div>
+
+  <div class="wrap sec">
+    <h2>Questions people ask</h2>
+    <details><summary>Is it really free and unlimited?</summary><p>Yes. No account, no subscription, no daily cap. Compress 1 PDF or 1,000.</p></details>
+    <details><summary>Will my PDF look worse?</summary><p>“Balanced” keeps text and lines sharp and only shrinks big images. Use “Light” if quality matters most.</p></details>
+    <details><summary>How do I compress a PDF to under 1 MB for email?</summary><p>Choose “Smallest”. If it is still too big, split it into parts with the Split PDF tool.</p></details>
+    <details><summary>Does it work on iPhone and Android?</summary><p>Yes, in any modern browser. Nothing to install.</p></details>
+  </div>
+</section>
+
+<!-- ================= CALCULATOR ================= -->
+<section class="page" id="calc">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span aria-hidden="true">/</span><a href="#home">Calculators</a><span aria-hidden="true">/</span><span aria-current="page">Percentage</span></nav>
+    <div class="toolhead">
+      <svg class="mark" width="56" height="56" style="--c:var(--calc)" aria-hidden="true"><use href="#planet"/></svg>
+      <div><h1>Percentage Calculator</h1><p class="lede" style="margin-top:8px">Type two numbers. Get the answer and see how it was worked out.</p></div>
+    </div>
+    <div class="card toolbox">
+      <div class="seg" role="group" aria-label="What do you want to find?" id="mode">
+        <button type="button" aria-pressed="true" data-m="of">% of a number</button><button type="button" aria-pressed="false" data-m="is">What % is it</button><button type="button" aria-pressed="false" data-m="ch">% change</button>
+      </div>
+      <div class="calc">
+        <div class="pair">
+          <label><span id="la">Percent</span><input id="a" inputmode="decimal" value="15" class="num"></label>
+          <span id="mid">% of</span>
+          <label><span id="lb">Number</span><input id="b" inputmode="decimal" value="200" class="num"></label>
+        </div>
+        <div class="result" aria-live="polite"><div class="big num" id="res">30</div><p id="how">15% of 200 = 200 × 15 ÷ 100 = 30</p></div>
+        <div class="row" style="margin:0"><button class="btn btn-ghost" type="button" id="ex">Show me an example</button><button class="btn btn-ghost" type="button" id="cp">Copy result</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GAME ================= -->
+<section class="page" id="game">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span aria-hidden="true">/</span><a href="#home">Games</a><span aria-hidden="true">/</span><span aria-current="page">Sudoku</span></nav>
+    <div class="toolhead">
+      <svg class="mark" width="56" height="56" style="--c:var(--game)" aria-hidden="true"><use href="#planet"/></svg>
+      <div><h1>Sudoku</h1><p class="lede" style="margin-top:8px">A new puzzle every time — it never runs out.</p></div>
+    </div>
+    <div class="card toolbox">
+      <div class="row" style="margin-top:0">
+        <span class="chip" id="daily">Daily challenge · <bdi id="dday"></bdi></span>
+        <span class="chip" style="background:var(--field)">Streak <bdi class="num">3</bdi></span>
+      </div>
+      <div class="row">
+        <div class="seg" role="group" aria-label="Difficulty" id="lvl">
+          <button type="button" aria-pressed="false" data-h="38">Easy</button><button type="button" aria-pressed="true" data-h="46">Medium</button><button type="button" aria-pressed="false" data-h="52">Hard</button><button type="button" aria-pressed="false" data-h="56">Expert</button>
+        </div>
+        <button class="btn btn-primary" type="button" id="newg" style="padding:10px 18px">New puzzle</button>
+      </div>
+      <div class="board" id="board" role="grid" aria-label="Sudoku board"></div>
+      <div class="pad" id="pad"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#home" style="font-size:17px"><svg class="mark" width="26" height="26"><use href="#planet"/></svg><span>useful<b>verse</b></span></a>
+    <span>Free forever. No limits. No sign-up.</span>
+    <span class="sp" style="flex:1"></span>
+    <a href="#home">About</a><a href="#home">How it works</a><a href="#home">Privacy</a><a href="#home">Contact</a>
+  </div>
+</footer>
+
+<script>
+// ---- simple hash router ----
+const pages=[...document.querySelectorAll('.page')],navs=[...document.querySelectorAll('.proto-nav a')];
+function route(){const id=(location.hash||'#home').slice(1);pages.forEach(p=>p.classList.toggle('on',p.id===id));navs.forEach(a=>a.hash==='#'+id?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));requestAnimationFrame(()=>scrollTo(0,0))}
+addEventListener('hashchange',route);route();
+
+// ---- RTL demo toggle ----
+const lb=document.getElementById('langBtn');lb.onclick=()=>{const r=document.documentElement.dir==='rtl';document.documentElement.dir=r?'ltr':'rtl';document.documentElement.lang=r?'en':'ar';document.getElementById('langLbl').textContent=r?'EN':'AR (RTL)'};
+
+// ---- PDF tool simulation ----
+const $=id=>document.getElementById(id);let list=[];
+const fmt=b=>b>1e6?(b/1e6).toFixed(1)+' MB':Math.round(b/1e3)+' KB';
+function render(){ $('files').innerHTML=list.map((f,i)=>`<li><svg class="mark" width="24" height="24" style="--c:var(--pdf)"><use href="#planet"/></svg><bdi class="nm">${f.n}</bdi><span class="sz num">${fmt(f.s)}${f.o?' → <b>'+fmt(f.o)+'</b>':''}</span><span class="bar"><i id="b${i}" style="width:${f.o?100:0}%"></i></span></li>`).join('');
+  $('opts').hidden=!list.length;$('cnt').textContent=list.length?list.length+(list.length>1?' files':' file'):'';}
+function add(arr){list=list.concat(arr);$('done').hidden=$('next').hidden=true;render()}
+$('sample').onclick=()=>add([{n:'invoice-march.pdf',s:2.4e6},{n:'contract-signed.pdf',s:5.8e6},{n:'holiday-photos.pdf',s:18.2e6}]);
+$('fileIn').onchange=e=>add([...e.target.files].map(f=>({n:f.name,s:f.size})));
+const dr=$('drop');['dragover','dragenter'].forEach(t=>dr.addEventListener(t,e=>{e.preventDefault();dr.classList.add('over')}));
+['dragleave','drop'].forEach(t=>dr.addEventListener(t,e=>{e.preventDefault();dr.classList.remove('over')}));
+dr.addEventListener('drop',e=>add([...e.dataTransfer.files].filter(f=>f.type==='application/pdf').map(f=>({n:f.name,s:f.size}))));
+dr.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('fileIn').click()}});
+document.querySelectorAll('.seg').forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;g.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b))}));
+$('go').onclick=async()=>{$('opts').hidden=true;$('status').hidden=false;
+  for(let i=0;i<list.length;i++){$('stTxt').textContent=`Compressing ${i+1} of ${list.length}…`;for(let p=0;p<=100;p+=20){$('b'+i).style.width=p+'%';await new Promise(r=>setTimeout(r,120))}list[i].o=Math.round(list[i].s*(.28+Math.random()*.2))}
+  render();$('status').hidden=true;const s=list.reduce((a,f)=>a+f.s,0),o=list.reduce((a,f)=>a+f.o,0);
+  $('doneTxt').textContent=`Done! ${Math.round((1-o/s)*100)}% smaller`;$('doneSub').textContent=`${fmt(s)} → ${fmt(o)} across ${list.length} files`;
+  $('done').hidden=false;$('next').hidden=false;const m=$('pdfMark');m.classList.remove('pop');void m.offsetWidth;m.classList.add('pop')};
+$('again').onclick=()=>{list=[];render();$('done').hidden=$('next').hidden=true};
+
+// ---- Percentage calculator ----
+let mode='of';const nf=new Intl.NumberFormat(undefined,{maximumFractionDigits:4});
+const P=s=>parseFloat(String(s).replace(',','.'));
+function calc(){const a=P($('a').value),b=P($('b').value);let r,h;
+  if(isNaN(a)||isNaN(b)){$('res').textContent='—';$('how').textContent='Type two numbers to see the answer.';return}
+  if(mode==='of'){r=a*b/100;h=`${nf.format(a)}% of ${nf.format(b)} = ${nf.format(b)} × ${nf.format(a)} ÷ 100 = ${nf.format(r)}`;$('res').textContent=nf.format(r)}
+  else if(mode==='is'){r=b?a/b*100:NaN;h=`${nf.format(a)} ÷ ${nf.format(b)} × 100 = ${nf.format(r)}%`;$('res').textContent=isNaN(r)?'—':nf.format(r)+'%'}
+  else{r=a?(b-a)/a*100:NaN;h=`(${nf.format(b)} − ${nf.format(a)}) ÷ ${nf.format(a)} × 100 = ${nf.format(r)}%`;$('res').textContent=isNaN(r)?'—':(r>0?'+':'')+nf.format(r)+'%'}
+  $('how').textContent=h}
+const M={of:['Percent','% of','Number'],is:['Part','is what % of','Whole'],ch:['From','to','To']};
+$('mode').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;mode=b.dataset.m;const[l1,m,l2]=M[mode];$('la').textContent=l1;$('mid').textContent=m;$('lb').textContent=l2;calc()});
+['a','b'].forEach(i=>$(i).addEventListener('input',calc));
+const EX={of:[20,59.99],is:[45,60],ch:[1200,1380]};
+$('ex').onclick=()=>{[$('a').value,$('b').value]=EX[mode];calc()};
+$('cp').onclick=()=>{navigator.clipboard?.writeText($('res').textContent);$('cp').textContent='Copied';setTimeout(()=>$('cp').textContent='Copy result',1200)};
+calc();
+
+// ---- Sudoku: seeded generator (never runs out) ----
+function rng(seed){return()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function solved(R){const g=Array(81).fill(0);const ok=(i,v)=>{const r=i/9|0,c=i%9,br=r-r%3,bc=c-c%3;for(let k=0;k<9;k++){if(g[r*9+k]===v||g[k*9+c]===v||g[(br+(k/3|0))*9+bc+k%3]===v)return false}return true};
+  const fill=i=>{if(i===81)return true;const vs=[1,2,3,4,5,6,7,8,9].sort(()=>R()-.5);for(const v of vs){if(ok(i,v)){g[i]=v;if(fill(i+1))return true;g[i]=0}}return false};fill(0);return g}
+let sol,cells,sel=-1,holes=46;
+function newGame(seed){const R=rng(seed);sol=solved(R);cells=sol.map(v=>({v,given:true,u:0}));const idx=[...Array(81).keys()].sort(()=>R()-.5).slice(0,holes);idx.forEach(i=>{cells[i].given=false;cells[i].v=0});sel=-1;draw()}
+function draw(){const b=$('board');b.innerHTML='';cells.forEach((c,i)=>{const e=document.createElement('button');const r=i/9|0,col=i%9;
+  e.type='button';e.textContent=c.v||'';e.className=c.given?'given':(c.v?(c.v===sol[i]?'user':'bad'):'');
+  if(sel>=0){const sr=sel/9|0,sc=sel%9;if(i===sel)e.classList.add('sel');else if(r===sr||col===sc||((r/3|0)===(sr/3|0)&&(col/3|0)===(sc/3|0)))e.classList.add('peer')}
+  e.setAttribute('aria-label',`Row ${r+1}, column ${col+1}, ${c.v||'empty'}`);e.onclick=()=>{sel=i;draw()};b.appendChild(e)})}
+$('pad').innerHTML=[1,2,3,4,5,6,7,8,9].map(n=>`<button type="button">${n}</button>`).join('')+'<button type="button" aria-label="Erase">⌫</button>';
+$('pad').addEventListener('click',e=>{const b=e.target.closest('button');if(!b||sel<0||cells[sel].given)return;cells[sel].v=b.textContent==='⌫'?0:+b.textContent;draw()});
+$('lvl').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;holes=+b.dataset.h;newGame(Math.random()*1e9|0)});
+$('newg').onclick=()=>newGame(Math.random()*1e9|0);
+const today=new Date();$('dday').textContent=today.toLocaleDateString(undefined,{day:'numeric',month:'short'});
+$('daily').onclick=()=>newGame(+today.toISOString().slice(0,10).replace(/-/g,''));$('daily').style.cursor='pointer';
+newGame(Math.random()*1e9|0);
+</script>
+</body>
+</html>

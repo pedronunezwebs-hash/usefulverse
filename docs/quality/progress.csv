@@ -1,0 +1,1002 @@
+prioridad,slug,host,tipo,idiomas,impresiones_1_15_oct,clics_1_15_oct,estado,agente,fecha,pr,nota
+0,fase-0,ambos,fase-0,,,,pendiente,,,,404 real subdominio + título home + índice de sitemaps (RUNBOOK §4)
+1,date-calculator,usefulverse.com,existente,36,2547,2,pendiente,,,,falta nb
+2,time-duration-calculator,usefulverse.com,existente,36,2511,5,pendiente,,,,falta nb
+3,roman-numeral-converter,usefulverse.com,existente,36,2040,3,pendiente,,,,falta nb
+4,barcode-generator,usefulverse.com,existente,36,1942,0,pendiente,,,,falta nb
+5,fraction-calculator,usefulverse.com,existente,36,1807,8,pendiente,,,,falta nb
+6,prime-number-checker,usefulverse.com,existente,36,1642,5,pendiente,,,,falta nb
+7,percentage-calculator,usefulverse.com,existente,36,1420,2,pendiente,,,,falta nb
+8,number-to-words-converter,usefulverse.com,existente,36,1362,5,pendiente,,,,falta nb
+9,ratio-proportion-calculator,usefulverse.com,existente,36,1258,4,pendiente,,,,falta nb
+10,discount-calculator,usefulverse.com,existente,36,931,2,pendiente,,,,falta nb
+11,random-number-generator,usefulverse.com,existente,36,880,5,pendiente,,,,falta nb
+12,average-calculator,usefulverse.com,existente,36,851,0,pendiente,,,,falta nb
+13,age-calculator,usefulverse.com,existente,36,666,1,pendiente,,,,falta nb
+14,fuel-cost-calculator,usefulverse.com,existente,36,644,0,pendiente,,,,falta nb
+15,pdf-ocr,usefulverse.com,existente,36,478,0,pendiente,,,,falta nb
+16,binary-converter,usefulverse.com,existente,36,437,0,pendiente,,,,falta nb
+17,qr-code-generator,usefulverse.com,existente,36,396,1,pendiente,,,,falta nb
+18,unit-converter,usefulverse.com,existente,36,382,0,pendiente,,,,falta nb
+19,square-footage-calculator,usefulverse.com,existente,36,355,1,pendiente,,,,falta nb
+20,word-counter,usefulverse.com,existente,36,342,0,pendiente,,,,falta nb
+21,unit-price-calculator,usefulverse.com,existente,36,329,0,pendiente,,,,falta nb
+22,online-timer,usefulverse.com,existente,36,293,1,pendiente,,,,falta nb
+23,text-diff-checker,usefulverse.com,existente,36,290,1,pendiente,,,,falta nb
+24,image-cropper,usefulverse.com,existente,36,286,0,pendiente,,,,falta nb
+25,crossword-maker,usefulverse.com,existente,36,275,5,pendiente,,,,falta nb
+26,text-case-converter,usefulverse.com,existente,36,264,0,pendiente,,,,falta nb
+27,loan-calculator,usefulverse.com,existente,36,243,0,pendiente,,,,falta nb
+28,business-days-calculator,usefulverse.com,existente,36,241,0,pendiente,,,,falta nb
+29,random-name-picker,usefulverse.com,existente,36,236,2,pendiente,,,,falta nb
+30,media-transcriber,usefulverse.com,existente,36,230,0,pendiente,,,,falta nb
+31,zip-archive-tool,usefulverse.com,existente,36,227,2,pendiente,,,,falta nb
+32,profit-margin-calculator,usefulverse.com,existente,36,216,0,pendiente,,,,falta nb
+33,time-zone-converter,usefulverse.com,existente,36,211,1,pendiente,,,,falta nb
+34,pdf-document-converter,usefulverse.com,existente,36,204,1,pendiente,,,,falta nb
+35,gif-maker,usefulverse.com,existente,36,194,3,pendiente,,,,falta nb
+36,image-collage-maker,usefulverse.com,existente,36,192,3,pendiente,,,,falta nb
+37,remove-line-breaks,usefulverse.com,existente,36,191,0,pendiente,,,,falta nb
+38,standard-deviation-calculator,usefulverse.com,existente,36,183,0,pendiente,,,,falta nb
+39,guitar-tuner,usefulverse.com,existente,36,182,1,pendiente,,,,falta nb
+40,schema-markup-validator,tools.usefulverse.com,existente,36,177,0,pendiente,,,,falta nb
+41,mahjong-solitaire,usefulverse.com,existente,36,168,0,pendiente,,,,falta nb
+42,online-sequencer,usefulverse.com,existente,36,168,0,pendiente,,,,falta nb
+43,auto-loan-refinance-calculator,tools.usefulverse.com,existente,36,167,1,pendiente,,,,falta nb
+44,time-card-calculator,usefulverse.com,existente,36,163,0,pendiente,,,,falta nb
+45,gpa-calculator,usefulverse.com,existente,36,155,2,pendiente,,,,falta nb
+46,salary-to-hourly-calculator,usefulverse.com,existente,36,155,0,pendiente,,,,falta nb
+47,office-file-compressor,usefulverse.com,existente,36,152,3,pendiente,,,,falta nb
+48,printable-label-maker,usefulverse.com,existente,36,149,1,pendiente,,,,falta nb
+49,pdf-repair,usefulverse.com,existente,36,145,0,pendiente,,,,falta nb
+50,stair-calculator,tools.usefulverse.com,existente,36,144,1,pendiente,,,,falta nb
+51,quiz-maker,usefulverse.com,existente,36,138,0,pendiente,,,,falta nb
+52,rounding-calculator,usefulverse.com,existente,36,138,0,pendiente,,,,falta nb
+53,favicon-generator,usefulverse.com,existente,36,135,0,pendiente,,,,falta nb
+54,regex-tester,usefulverse.com,existente,36,134,0,pendiente,,,,falta nb
+55,sequence-calculator,usefulverse.com,existente,36,134,0,pendiente,,,,falta nb
+56,sprite-sheet-maker,usefulverse.com,existente,36,133,2,pendiente,,,,falta nb
+57,url-encoder-decoder,usefulverse.com,existente,36,133,1,pendiente,,,,falta nb
+58,compound-interest-calculator,usefulverse.com,existente,36,130,0,pendiente,,,,falta nb
+59,random-word-generator,tools.usefulverse.com,existente,36,130,0,pendiente,,,,falta nb
+60,solar-panel-calculator,tools.usefulverse.com,existente,36,130,0,pendiente,,,,falta nb
+61,scientific-notation-converter,usefulverse.com,existente,36,127,3,pendiente,,,,falta nb
+62,adult-bmi-calculator,usefulverse.com,existente,36,127,0,pendiente,,,,falta nb
+63,heat-loss-calculator,tools.usefulverse.com,existente,36,124,2,pendiente,,,,falta nb
+64,body-water-calculator,tools.usefulverse.com,existente,36,123,1,pendiente,,,,falta nb
+65,secret-santa-generator,tools.usefulverse.com,existente,36,122,1,pendiente,,,,falta nb
+66,bingo-card-generator,usefulverse.com,existente,36,121,3,pendiente,,,,falta nb
+67,probability-calculator,usefulverse.com,existente,36,111,0,pendiente,,,,falta nb
+68,invoice-generator,usefulverse.com,existente,36,109,1,pendiente,,,,falta nb
+69,due-date-calculator,usefulverse.com,existente,36,108,0,pendiente,,,,falta nb
+70,tip-calculator,usefulverse.com,existente,36,104,0,pendiente,,,,falta nb
+71,commission-calculator,usefulverse.com,existente,36,102,1,pendiente,,,,falta nb
+72,audio-compressor,usefulverse.com,existente,36,102,0,pendiente,,,,falta nb
+73,tournament-bracket-generator,usefulverse.com,existente,36,98,2,pendiente,,,,falta nb
+74,word-search-maker,usefulverse.com,existente,36,97,1,pendiente,,,,falta nb
+75,bpm-detector,usefulverse.com,existente,36,92,0,pendiente,,,,falta nb
+76,protractor,usefulverse.com,existente,36,91,3,pendiente,,,,falta nb
+77,pool-volume-calculator,tools.usefulverse.com,existente,36,90,3,pendiente,,,,falta nb
+78,remove-duplicate-lines,usefulverse.com,existente,36,90,0,pendiente,,,,falta nb
+79,voice-recorder,usefulverse.com,existente,36,90,0,pendiente,,,,falta nb
+80,long-division-calculator,usefulverse.com,existente,36,89,0,pendiente,,,,falta nb
+81,battery-runtime-calculator,tools.usefulverse.com,existente,36,88,0,pendiente,,,,falta nb
+82,quotation-generator,usefulverse.com,existente,36,88,0,pendiente,,,,falta nb
+83,resume-builder,usefulverse.com,existente,36,87,2,pendiente,,,,falta nb
+84,gcd-lcm-calculator,usefulverse.com,existente,36,87,0,pendiente,,,,falta nb
+85,running-pace-calculator,usefulverse.com,existente,36,87,0,pendiente,,,,falta nb
+86,pdf-to-pdfa,usefulverse.com,existente,36,84,0,pendiente,,,,falta nb
+87,scientific-calculator,usefulverse.com,existente,36,82,1,pendiente,,,,falta nb
+88,pool-salt-calculator,tools.usefulverse.com,existente,36,81,0,pendiente,,,,falta nb
+89,electricity-cost-calculator,tools.usefulverse.com,existente,36,80,0,pendiente,,,,falta nb
+90,pdf-form-filler,usefulverse.com,existente,36,80,0,pendiente,,,,falta nb
+91,random-team-generator,tools.usefulverse.com,existente,36,80,0,pendiente,,,,falta nb
+92,drum-machine,usefulverse.com,existente,36,79,5,pendiente,,,,falta nb
+93,virtual-piano,usefulverse.com,existente,36,77,2,pendiente,,,,falta nb
+94,cycle-calendar-estimator,usefulverse.com,existente,36,77,0,pendiente,,,,falta nb
+95,password-generator,usefulverse.com,existente,36,77,0,pendiente,,,,falta nb
+96,checkers,usefulverse.com,existente,36,74,2,pendiente,,,,falta nb
+97,image-resizer-compressor,usefulverse.com,existente,36,74,0,pendiente,,,,falta nb
+98,business-card-maker,usefulverse.com,existente,36,73,0,pendiente,,,,falta nb
+99,media-converter,usefulverse.com,existente,36,72,1,pendiente,,,,falta nb
+100,pdf-page-editor,usefulverse.com,existente,36,71,0,pendiente,,,,falta nb
+101,utm-builder,usefulverse.com,existente,36,70,0,pendiente,,,,falta nb
+102,mortgage-points-calculator,tools.usefulverse.com,existente,36,69,0,pendiente,,,,falta nb
+103,study-planner,usefulverse.com,existente,36,69,0,pendiente,,,,falta nb
+104,base64-encoder-decoder,usefulverse.com,existente,36,68,0,pendiente,,,,falta nb
+105,lorem-ipsum-generator,usefulverse.com,existente,36,65,0,pendiente,,,,falta nb
+106,math-worksheet-generator,usefulverse.com,existente,36,64,1,pendiente,,,,falta nb
+107,color-palette-generator,usefulverse.com,existente,36,63,0,pendiente,,,,falta nb
+108,pdf-compare,usefulverse.com,existente,36,63,0,pendiente,,,,falta nb
+109,teleprompter-online,usefulverse.com,existente,36,63,0,pendiente,,,,falta nb
+110,morse-code-translator,usefulverse.com,existente,36,62,2,pendiente,,,,falta nb
+111,resistor-color-code-calculator,tools.usefulverse.com,existente,36,61,0,pendiente,,,,falta nb
+112,soil-calculator,tools.usefulverse.com,existente,36,60,2,pendiente,,,,falta nb
+113,online-metronome,usefulverse.com,existente,36,60,1,pendiente,,,,falta nb
+114,three-phase-power-calculator,tools.usefulverse.com,existente,36,60,1,pendiente,,,,falta nb
+115,flow-rate-calculator,tools.usefulverse.com,existente,36,59,0,pendiente,,,,falta nb
+116,portrait-background-remover,usefulverse.com,existente,36,59,0,pendiente,,,,falta nb
+117,qr-code-reader,usefulverse.com,existente,36,59,0,pendiente,,,,falta nb
+118,json-to-excel,tools.usefulverse.com,existente,36,58,0,pendiente,,,,falta nb
+119,savings-goal-calculator,tools.usefulverse.com,existente,36,58,0,pendiente,,,,falta nb
+120,number-line-graphing-tool,tools.usefulverse.com,existente,36,57,4,pendiente,,,,falta nb
+121,photo-to-sketch,tools.usefulverse.com,existente,36,54,0,pendiente,,,,falta nb
+122,tire-size-calculator,tools.usefulverse.com,existente,36,54,0,pendiente,,,,falta nb
+123,macro-calorie-calculator,usefulverse.com,existente,36,53,0,pendiente,,,,falta nb
+124,asphalt-calculator,tools.usefulverse.com,existente,36,52,0,pendiente,,,,falta nb
+125,citation-generator,usefulverse.com,existente,36,52,0,pendiente,,,,falta nb
+126,mental-math-practice,usefulverse.com,existente,36,52,0,pendiente,,,,falta nb
+127,travel-itinerary-planner,tools.usefulverse.com,existente,36,52,0,pendiente,,,,falta nb
+128,epub-reader,usefulverse.com,existente,36,50,3,pendiente,,,,falta nb
+129,pdf-to-markdown,usefulverse.com,existente,36,50,1,pendiente,,,,falta nb
+130,ascii-art-generator,usefulverse.com,existente,36,50,0,pendiente,,,,falta nb
+131,text-to-slug,usefulverse.com,existente,36,50,0,pendiente,,,,falta nb
+132,spearman-correlation-calculator,tools.usefulverse.com,existente,36,49,0,pendiente,,,,falta nb
+133,backgammon,usefulverse.com,existente,36,48,1,pendiente,,,,falta nb
+134,kanban-board,usefulverse.com,existente,36,48,0,pendiente,,,,falta nb
+135,name-generator,tools.usefulverse.com,existente,36,48,0,pendiente,,,,falta nb
+136,iban-validator,usefulverse.com,existente,36,47,0,pendiente,,,,falta nb
+137,inductor-calculator,tools.usefulverse.com,existente,36,47,0,pendiente,,,,falta nb
+138,inflation-calculator,tools.usefulverse.com,existente,36,47,0,pendiente,,,,falta nb
+139,system-of-equations-calculator,usefulverse.com,existente,36,46,0,pendiente,,,,falta nb
+140,tax-calculator,usefulverse.com,existente,36,46,0,pendiente,,,,falta nb
+141,divisibility-calculator,tools.usefulverse.com,existente,36,45,0,pendiente,,,,falta nb
+142,linear-regression-calculator,usefulverse.com,existente,36,45,0,pendiente,,,,falta nb
+143,video-compressor,usefulverse.com,existente,36,45,0,pendiente,,,,falta nb
+144,room-planner,usefulverse.com,existente,36,44,1,pendiente,,,,falta nb
+145,chart-maker,usefulverse.com,existente,36,44,0,pendiente,,,,falta nb
+146,cover-letter-builder,usefulverse.com,existente,36,44,0,pendiente,,,,falta nb
+147,go-game,usefulverse.com,existente,36,44,0,pendiente,,,,falta nb
+148,overtime-calculator,tools.usefulverse.com,existente,36,44,0,pendiente,,,,falta nb
+149,recipe-scaler,usefulverse.com,existente,36,44,0,pendiente,,,,falta nb
+150,reverse-mortgage-calculator,tools.usefulverse.com,existente,36,44,0,pendiente,,,,falta nb
+151,meta-tag-generator,usefulverse.com,existente,36,43,0,pendiente,,,,falta nb
+152,poster-maker,usefulverse.com,existente,36,43,0,pendiente,,,,falta nb
+153,one-rep-max-calculator,usefulverse.com,existente,36,42,1,pendiente,,,,falta nb
+154,statistical-test-calculator,usefulverse.com,existente,36,42,1,pendiente,,,,falta nb
+155,color-converter,usefulverse.com,existente,36,42,0,pendiente,,,,falta nb
+156,image-format-converter,usefulverse.com,existente,36,42,0,pendiente,,,,falta nb
+157,image-to-text,usefulverse.com,existente,36,42,0,pendiente,,,,falta nb
+158,sitemap-xml-generator,usefulverse.com,existente,36,41,0,pendiente,,,,falta nb
+159,stock-profit-calculator,tools.usefulverse.com,existente,36,41,0,pendiente,,,,falta nb
+160,555-timer-calculator,tools.usefulverse.com,existente,36,40,0,pendiente,,,,falta nb
+161,jigsaw-puzzle,usefulverse.com,existente,36,40,0,pendiente,,,,falta nb
+162,friction-calculator,tools.usefulverse.com,existente,36,39,1,pendiente,,,,falta nb
+163,latex-equation-renderer,usefulverse.com,existente,36,39,1,pendiente,,,,falta nb
+164,color-contrast-checker,usefulverse.com,existente,36,39,0,pendiente,,,,falta nb
+165,credit-card-payoff-calculator,usefulverse.com,existente,36,39,0,pendiente,,,,falta nb
+166,solitaire,usefulverse.com,existente,36,39,0,pendiente,,,,falta nb
+167,typing-speed-test,usefulverse.com,existente,36,39,0,pendiente,,,,falta nb
+168,hashi-puzzle,tools.usefulverse.com,existente,36,38,2,pendiente,,,,falta nb
+169,car-lease-calculator,tools.usefulverse.com,existente,36,37,0,pendiente,,,,falta nb
+170,tangram,usefulverse.com,existente,36,36,1,pendiente,,,,falta nb
+171,function-grapher,usefulverse.com,existente,36,36,0,pendiente,,,,falta nb
+172,plant-spacing-calculator,tools.usefulverse.com,existente,36,36,0,pendiente,,,,falta nb
+173,led-resistor-calculator,tools.usefulverse.com,existente,36,35,1,pendiente,,,,falta nb
+174,reading-speed-test,usefulverse.com,existente,36,35,1,pendiente,,,,falta nb
+175,spelling-practice,usefulverse.com,existente,36,35,0,pendiente,,,,falta nb
+176,timestamp-converter,usefulverse.com,existente,36,35,0,pendiente,,,,falta nb
+177,vo2-max-calculator,tools.usefulverse.com,existente,36,35,0,pendiente,,,,falta nb
+178,beam-deflection-calculator,tools.usefulverse.com,existente,36,34,1,pendiente,,,,falta nb
+179,printable-calendar-maker,usefulverse.com,existente,36,33,1,pendiente,,,,falta nb
+180,compression-ratio-calculator,tools.usefulverse.com,existente,36,33,0,pendiente,,,,falta nb
+181,pressure-calculator,tools.usefulverse.com,existente,36,33,0,pendiente,,,,falta nb
+182,depreciation-calculator,usefulverse.com,existente,36,32,0,pendiente,,,,falta nb
+183,alarm-clock,tools.usefulverse.com,existente,36,31,0,pendiente,,,,falta nb
+184,readability-checker,tools.usefulverse.com,existente,36,31,0,pendiente,,,,falta nb
+185,trapezoid-calculator,tools.usefulverse.com,existente,36,30,1,pendiente,,,,falta nb
+186,car-depreciation-calculator,tools.usefulverse.com,existente,36,30,0,pendiente,,,,falta nb
+187,insulation-calculator,tools.usefulverse.com,existente,36,30,0,pendiente,,,,falta nb
+188,text-to-binary-converter,tools.usefulverse.com,existente,36,30,0,pendiente,,,,falta nb
+189,torque-calculator,tools.usefulverse.com,existente,36,30,0,pendiente,,,,falta nb
+190,url-parser,usefulverse.com,existente,36,29,1,pendiente,,,,falta nb
+191,uuid-generator,usefulverse.com,existente,36,29,0,pendiente,,,,falta nb
+192,work-order-generator,tools.usefulverse.com,existente,36,29,0,pendiente,,,,falta nb
+193,brick-calculator,tools.usefulverse.com,existente,36,28,0,pendiente,,,,falta nb
+194,laplace-transform-calculator,tools.usefulverse.com,existente,36,28,0,pendiente,,,,falta nb
+195,voltage-drop-calculator,tools.usefulverse.com,existente,36,28,0,pendiente,,,,falta nb
+196,flashcard-maker,usefulverse.com,existente,36,27,0,pendiente,,,,falta nb
+197,purchase-order-generator,tools.usefulverse.com,existente,36,27,0,pendiente,,,,falta nb
+198,color-name-finder,tools.usefulverse.com,existente,36,26,3,pendiente,,,,falta nb
+199,json-ld-generator,usefulverse.com,existente,36,26,0,pendiente,,,,falta nb
+200,lumber-cut-calculator,tools.usefulverse.com,existente,36,26,0,pendiente,,,,falta nb
+201,polygon-calculator,tools.usefulverse.com,existente,36,26,0,pendiente,,,,falta nb
+202,break-even-calculator,usefulverse.com,existente,36,25,0,pendiente,,,,falta nb
+203,color-mixer,tools.usefulverse.com,existente,36,25,0,pendiente,,,,falta nb
+204,meeting-minutes-template,tools.usefulverse.com,existente,36,25,0,pendiente,,,,falta nb
+205,thermal-expansion-calculator,tools.usefulverse.com,existente,36,24,1,pendiente,,,,falta nb
+206,html-table-generator,usefulverse.com,existente,36,24,0,pendiente,,,,falta nb
+207,rent-vs-buy-calculator,usefulverse.com,existente,36,24,0,pendiente,,,,falta nb
+208,repeating-decimal-to-fraction,tools.usefulverse.com,existente,36,24,0,pendiente,,,,falta nb
+209,weight-loss-calculator,tools.usefulverse.com,existente,36,24,0,pendiente,,,,falta nb
+210,dilution-calculator,tools.usefulverse.com,existente,36,23,2,pendiente,,,,falta nb
+211,confidence-interval-calculator,usefulverse.com,existente,36,23,0,pendiente,,,,falta nb
+212,gravel-calculator,tools.usefulverse.com,existente,36,23,0,pendiente,,,,falta nb
+213,investment-allocation-calculator,tools.usefulverse.com,existente,36,23,0,pendiente,,,,falta nb
+214,journal-online,tools.usefulverse.com,existente,36,23,0,pendiente,,,,falta nb
+215,speaker-tester,usefulverse.com,existente,36,23,0,pendiente,,,,falta nb
+216,polynomial-long-division-calculator,tools.usefulverse.com,existente,36,22,0,pendiente,,,,falta nb
+217,file-checksum,usefulverse.com,existente,36,21,1,pendiente,,,,falta nb
+218,kinetic-energy-calculator,tools.usefulverse.com,existente,36,21,0,pendiente,,,,falta nb
+219,molarity-calculator,tools.usefulverse.com,existente,36,21,0,pendiente,,,,falta nb
+220,music-scale-finder,usefulverse.com,existente,36,21,0,pendiente,,,,falta nb
+221,tile-calculator,usefulverse.com,existente,36,21,0,pendiente,,,,falta nb
+222,julian-date-converter,tools.usefulverse.com,existente,36,20,0,pendiente,,,,falta nb
+223,mind-map-maker,tools.usefulverse.com,existente,36,20,0,pendiente,,,,falta nb
+224,rc-time-constant-calculator,tools.usefulverse.com,existente,36,20,0,pendiente,,,,falta nb
+225,sliding-puzzle,usefulverse.com,existente,36,20,0,pendiente,,,,falta nb
+226,subnet-calculator,usefulverse.com,existente,36,20,0,pendiente,,,,falta nb
+227,triangle-calculator,usefulverse.com,existente,36,20,0,pendiente,,,,falta nb
+228,volume-calculator,usefulverse.com,existente,36,20,0,pendiente,,,,falta nb
+229,xml-formatter,usefulverse.com,existente,36,20,0,pendiente,,,,falta nb
+230,round-robin-tournament-generator,tools.usefulverse.com,existente,36,19,2,pendiente,,,,falta nb
+231,pond-volume-calculator,tools.usefulverse.com,existente,36,19,1,pendiente,,,,falta nb
+232,family-tree-maker,tools.usefulverse.com,existente,36,19,0,pendiente,,,,falta nb
+233,mancala,tools.usefulverse.com,existente,36,19,0,pendiente,,,,falta nb
+234,sha256-hash-generator,usefulverse.com,existente,36,19,0,pendiente,,,,falta nb
+235,bond-calculator,tools.usefulverse.com,existente,36,18,0,pendiente,,,,falta nb
+236,chess-game,usefulverse.com,existente,36,18,0,pendiente,,,,falta nb
+237,dividend-calculator,tools.usefulverse.com,existente,36,18,0,pendiente,,,,falta nb
+238,equation-solver,usefulverse.com,existente,36,18,0,pendiente,,,,falta nb
+239,music-score-editor,usefulverse.com,existente,36,18,0,pendiente,,,,falta nb
+240,pdf-protect-unlock,usefulverse.com,existente,36,18,0,pendiente,,,,falta nb
+241,receipt-generator,usefulverse.com,existente,36,18,0,pendiente,,,,falta nb
+242,body-fat-calculator,usefulverse.com,existente,36,17,0,pendiente,,,,falta nb
+243,html-entity-encoder-decoder,usefulverse.com,existente,36,17,0,pendiente,,,,falta nb
+244,meme-maker,usefulverse.com,existente,36,17,0,pendiente,,,,falta nb
+245,pension-calculator,tools.usefulverse.com,existente,36,17,0,pendiente,,,,falta nb
+246,body-surface-area-calculator,tools.usefulverse.com,existente,36,16,0,pendiente,,,,falta nb
+247,combinatorics-calculator,usefulverse.com,existente,36,16,0,pendiente,,,,falta nb
+248,hebrew-calendar-converter,tools.usefulverse.com,existente,36,16,0,pendiente,,,,falta nb
+249,invitation-maker,usefulverse.com,existente,36,16,0,pendiente,,,,falta nb
+250,modular-inverse-calculator,tools.usefulverse.com,existente,36,16,0,pendiente,,,,falta nb
+251,reaction-time-test,usefulverse.com,existente,36,16,0,pendiente,,,,falta nb
+252,reynolds-number-calculator,tools.usefulverse.com,existente,36,16,0,pendiente,,,,falta nb
+253,spreadsheet-converter,usefulverse.com,existente,36,16,0,pendiente,,,,falta nb
+254,week-number-calculator,tools.usefulverse.com,existente,36,16,0,pendiente,,,,falta nb
+255,wilcoxon-signed-rank-test-calculator,tools.usefulverse.com,existente,36,16,0,pendiente,,,,falta nb
+256,noise-generator,usefulverse.com,existente,36,15,1,pendiente,,,,falta nb
+257,markdown-html-converter,usefulverse.com,existente,36,15,0,pendiente,,,,falta nb
+258,ramp-calculator,tools.usefulverse.com,existente,36,15,0,pendiente,,,,falta nb
+259,pwa-manifest-generator,usefulverse.com,existente,36,14,1,pendiente,,,,falta nb
+260,jsonpath-query-tool,usefulverse.com,existente,36,14,0,pendiente,,,,falta nb
+261,seating-chart-maker,usefulverse.com,existente,36,14,0,pendiente,,,,falta nb
+262,severance-pay-calculator,tools.usefulverse.com,existente,36,14,0,pendiente,,,,falta nb
+263,audio-editor,usefulverse.com,existente,36,13,1,pendiente,,,,falta nb
+264,horsepower-calculator,tools.usefulverse.com,existente,36,13,1,pendiente,,,,falta nb
+265,polynomial-factorization-calculator,usefulverse.com,existente,36,13,1,pendiente,,,,falta nb
+266,absolute-value-calculator,tools.usefulverse.com,existente,36,13,0,pendiente,,,,falta nb
+267,aquarium-calculator,tools.usefulverse.com,existente,36,13,0,pendiente,,,,falta nb
+268,cron-expression-builder,usefulverse.com,existente,36,13,0,pendiente,,,,falta nb
+269,json-formatter,usefulverse.com,existente,36,13,0,pendiente,,,,falta nb
+270,keyboard-tester,usefulverse.com,existente,36,13,0,pendiente,,,,falta nb
+271,polynomial-derivative-calculator,usefulverse.com,existente,36,13,0,pendiente,,,,falta nb
+272,task-list,usefulverse.com,existente,36,13,0,pendiente,,,,falta nb
+273,fretboard-trainer,usefulverse.com,existente,36,12,1,pendiente,,,,falta nb
+274,webcam-tester,usefulverse.com,existente,36,12,1,pendiente,,,,falta nb
+275,board-foot-calculator,usefulverse.com,existente,36,12,0,pendiente,,,,falta nb
+276,css-box-shadow-generator,usefulverse.com,existente,36,12,0,pendiente,,,,falta nb
+277,local-notepad,usefulverse.com,existente,36,12,0,pendiente,,,,falta nb
+278,pixel-art-editor,usefulverse.com,existente,36,12,0,pendiente,,,,falta nb
+279,retaining-wall-calculator,tools.usefulverse.com,existente,36,12,0,pendiente,,,,falta nb
+280,audio-spectrogram,usefulverse.com,existente,36,11,0,pendiente,,,,falta nb
+281,connect-four,usefulverse.com,existente,36,11,0,pendiente,,,,falta nb
+282,html-email-builder,usefulverse.com,existente,36,11,0,pendiente,,,,falta nb
+283,prayer-times-calculator,tools.usefulverse.com,existente,36,11,0,pendiente,,,,falta nb
+284,specific-heat-calculator,tools.usefulverse.com,existente,36,11,0,pendiente,,,,falta nb
+285,svg-editor,usefulverse.com,existente,36,11,0,pendiente,,,,falta nb
+286,transformer-calculator,tools.usefulverse.com,existente,36,11,0,pendiente,,,,falta nb
+287,color-vision-simulator,usefulverse.com,existente,36,10,1,pendiente,,,,falta nb
+288,antenna-length-calculator,tools.usefulverse.com,existente,36,10,0,pendiente,,,,falta nb
+289,decibel-calculator,tools.usefulverse.com,existente,36,10,0,pendiente,,,,falta nb
+290,force-calculator,tools.usefulverse.com,existente,36,10,0,pendiente,,,,falta nb
+291,fourier-series-calculator,tools.usefulverse.com,existente,36,10,0,pendiente,,,,falta nb
+292,openapi-editor,tools.usefulverse.com,existente,36,10,0,pendiente,,,,falta nb
+293,robots-txt-tester,tools.usefulverse.com,existente,36,10,0,pendiente,,,,falta nb
+294,stoichiometry-calculator,tools.usefulverse.com,existente,36,9,3,pendiente,,,,falta nb
+295,epub-metadata-editor,usefulverse.com,existente,36,9,1,pendiente,,,,falta nb
+296,capacitor-calculator,tools.usefulverse.com,existente,36,9,0,pendiente,,,,falta nb
+297,chess-clock,usefulverse.com,existente,36,9,0,pendiente,,,,falta nb
+298,gear-ratio-calculator,tools.usefulverse.com,existente,36,9,0,pendiente,,,,falta nb
+299,har-viewer,tools.usefulverse.com,existente,36,9,0,pendiente,,,,falta nb
+300,html-form-builder,usefulverse.com,existente,36,9,0,pendiente,,,,falta nb
+301,mood-tracker,tools.usefulverse.com,existente,36,9,0,pendiente,,,,falta nb
+302,nonogram,usefulverse.com,existente,36,9,0,pendiente,,,,falta nb
+303,weekly-planner,tools.usefulverse.com,existente,36,9,0,pendiente,,,,falta nb
+304,chess-opening-trainer,tools.usefulverse.com,existente,36,8,0,pendiente,,,,falta nb
+305,coordinate-geometry-calculator,usefulverse.com,existente,36,8,0,pendiente,,,,falta nb
+306,css-animation-generator,usefulverse.com,existente,36,8,0,pendiente,,,,falta nb
+307,fertilizer-calculator,tools.usefulverse.com,existente,36,8,0,pendiente,,,,falta nb
+308,futoshiki,tools.usefulverse.com,existente,36,8,0,pendiente,,,,falta nb
+309,heloc-calculator,tools.usefulverse.com,existente,36,8,0,pendiente,,,,falta nb
+310,html-formatter,usefulverse.com,existente,36,8,0,pendiente,,,,falta nb
+311,image-region-redactor,tools.usefulverse.com,existente,36,8,0,pendiente,,,,falta nb
+312,miter-angle-calculator,tools.usefulverse.com,existente,36,8,0,pendiente,,,,falta nb
+313,paint-calculator,usefulverse.com,existente,36,8,0,pendiente,,,,falta nb
+314,pcb-trace-width-calculator,tools.usefulverse.com,existente,36,8,0,pendiente,,,,falta nb
+315,pulley-calculator,tools.usefulverse.com,existente,36,8,0,pendiente,,,,falta nb
+316,roth-vs-traditional-calculator,tools.usefulverse.com,existente,36,8,0,pendiente,,,,falta nb
+317,sample-size-calculator,usefulverse.com,existente,36,8,0,pendiente,,,,falta nb
+318,test-data-generator,usefulverse.com,existente,36,8,0,pendiente,,,,falta nb
+319,mouse-tester,usefulverse.com,existente,36,7,1,pendiente,,,,falta nb
+320,concrete-calculator,usefulverse.com,existente,36,7,0,pendiente,,,,falta nb
+321,ear-training,usefulverse.com,existente,36,7,0,pendiente,,,,falta nb
+322,goal-planner,tools.usefulverse.com,existente,36,7,0,pendiente,,,,falta nb
+323,matrix-calculator,usefulverse.com,existente,36,7,0,pendiente,,,,falta nb
+324,momentum-calculator,tools.usefulverse.com,existente,36,7,0,pendiente,,,,falta nb
+325,parametric-equation-calculator,tools.usefulverse.com,existente,36,7,0,pendiente,,,,falta nb
+326,peg-solitaire,tools.usefulverse.com,existente,36,7,0,pendiente,,,,falta nb
+327,projectile-motion-calculator,tools.usefulverse.com,existente,36,7,0,pendiente,,,,falta nb
+328,seamless-pattern-maker,usefulverse.com,existente,36,7,0,pendiente,,,,falta nb
+329,sql-formatter,usefulverse.com,existente,36,7,0,pendiente,,,,falta nb
+330,time-tracker,usefulverse.com,existente,36,7,0,pendiente,,,,falta nb
+331,boolean-algebra-calculator,tools.usefulverse.com,existente,36,6,0,pendiente,,,,falta nb
+332,chemical-equation-balancer,tools.usefulverse.com,existente,36,6,0,pendiente,,,,falta nb
+333,cubic-quartic-equation-calculator,tools.usefulverse.com,existente,36,6,0,pendiente,,,,falta nb
+334,fence-calculator,tools.usefulverse.com,existente,36,6,0,pendiente,,,,falta nb
+335,kana-practice,usefulverse.com,existente,36,6,0,pendiente,,,,falta nb
+336,markdown-editor,tools.usefulverse.com,existente,36,6,0,pendiente,,,,falta nb
+337,ohms-law-calculator,tools.usefulverse.com,existente,36,6,0,pendiente,,,,falta nb
+338,rlc-circuit-calculator,tools.usefulverse.com,existente,36,6,0,pendiente,,,,falta nb
+339,roi-cagr-calculator,usefulverse.com,existente,36,6,0,pendiente,,,,falta nb
+340,roof-pitch-calculator,tools.usefulverse.com,existente,36,6,0,pendiente,,,,falta nb
+341,tic-tac-toe,usefulverse.com,existente,36,6,0,pendiente,,,,falta nb
+342,logic-grid-puzzle,tools.usefulverse.com,existente,36,5,1,pendiente,,,,falta nb
+343,2048-game,usefulverse.com,existente,36,5,0,pendiente,,,,falta nb
+344,complex-number-calculator,tools.usefulverse.com,existente,36,5,0,pendiente,,,,falta nb
+345,effective-interest-rate-calculator,tools.usefulverse.com,existente,36,5,0,pendiente,,,,falta nb
+346,robots-txt-generator,usefulverse.com,existente,36,5,0,pendiente,,,,falta nb
+347,screen-recorder,usefulverse.com,existente,36,5,0,pendiente,,,,falta nb
+348,section-modulus-calculator,tools.usefulverse.com,existente,36,5,0,pendiente,,,,falta nb
+349,slitherlink,tools.usefulverse.com,existente,36,5,0,pendiente,,,,falta nb
+350,workout-planner,usefulverse.com,existente,36,5,0,pendiente,,,,falta nb
+351,baluster-spacing-calculator,tools.usefulverse.com,existente,36,4,1,pendiente,,,,falta nb
+352,font-pairing-tool,tools.usefulverse.com,existente,36,4,1,pendiente,,,,falta nb
+353,hangul-practice,usefulverse.com,existente,36,4,1,pendiente,,,,falta nb
+354,acceleration-calculator,tools.usefulverse.com,existente,36,4,0,pendiente,,,,falta nb
+355,blackjack-game,tools.usefulverse.com,existente,36,4,0,pendiente,,,,falta nb
+356,breathing-exercise,tools.usefulverse.com,existente,36,4,0,pendiente,,,,falta nb
+357,btu-calculator,tools.usefulverse.com,existente,36,4,0,pendiente,,,,falta nb
+358,html-css-js-playground,usefulverse.com,existente,36,4,0,pendiente,,,,falta nb
+359,kakuro,usefulverse.com,existente,36,4,0,pendiente,,,,falta nb
+360,photo-mosaic-maker,usefulverse.com,existente,36,4,0,pendiente,,,,falta nb
+361,rsa-key-generator,tools.usefulverse.com,existente,36,4,0,pendiente,,,,falta nb
+362,screen-ruler,usefulverse.com,existente,36,4,0,pendiente,,,,falta nb
+363,subtitle-converter,usefulverse.com,existente,36,4,0,pendiente,,,,falta nb
+364,truth-table-generator,usefulverse.com,existente,36,4,0,pendiente,,,,falta nb
+365,audio-looper,usefulverse.com,existente,36,3,0,pendiente,,,,falta nb
+366,certificate-maker,usefulverse.com,existente,36,3,0,pendiente,,,,falta nb
+367,chinese-remainder-theorem-calculator,tools.usefulverse.com,existente,36,3,0,pendiente,,,,falta nb
+368,css-gradient-generator,usefulverse.com,existente,36,3,0,pendiente,,,,falta nb
+369,debt-to-income-ratio-calculator,tools.usefulverse.com,existente,36,3,0,pendiente,,,,falta nb
+370,dominoes-game,tools.usefulverse.com,existente,36,3,0,pendiente,,,,falta nb
+371,drywall-calculator,tools.usefulverse.com,existente,36,3,0,pendiente,,,,falta nb
+372,ev-charging-calculator,tools.usefulverse.com,existente,36,3,0,pendiente,,,,falta nb
+373,jwt-decoder,usefulverse.com,existente,36,3,0,pendiente,,,,falta nb
+374,periodic-table,usefulverse.com,existente,36,3,0,pendiente,,,,falta nb
+375,reversi,usefulverse.com,existente,36,3,0,pendiente,,,,falta nb
+376,roofing-calculator,tools.usefulverse.com,existente,36,3,0,pendiente,,,,falta nb
+377,sqlite-playground,usefulverse.com,existente,36,3,0,pendiente,,,,falta nb
+378,sudoku,usefulverse.com,existente,36,3,0,pendiente,,,,falta nb
+379,sudoku-solver,tools.usefulverse.com,existente,36,3,0,pendiente,,,,falta nb
+380,aes-encryption-tool,tools.usefulverse.com,existente,36,2,1,pendiente,,,,falta nb
+381,certificate-decoder,tools.usefulverse.com,existente,36,2,1,pendiente,,,,falta nb
+382,polar-graphing-calculator,tools.usefulverse.com,existente,36,2,1,pendiente,,,,falta nb
+383,a-b-test-calculator,tools.usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+384,abacus-practice,usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+385,bmr-tdee-calculator,usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+386,csv-editor,tools.usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+387,debt-payoff-planner,usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+388,fire-calculator,tools.usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+389,heat-pump-calculator,tools.usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+390,image-watermark-tool,usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+391,interval-timer,tools.usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+392,javascript-formatter,usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+393,json-to-xml-converter,tools.usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+394,log-analyzer,tools.usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+395,net-worth-calculator,tools.usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+396,packing-list-maker,usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+397,pdf-redact,usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+398,retirement-calculator,tools.usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+399,rtf-converter,tools.usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+400,singular-value-decomposition-calculator,tools.usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+401,waist-to-hip-ratio-calculator,tools.usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+402,wall-framing-calculator,tools.usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+403,wallpaper-calculator,tools.usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+404,weekly-meal-planner,usefulverse.com,existente,36,2,0,pendiente,,,,falta nb
+405,api-request-builder,usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+406,centripetal-force-calculator,tools.usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+407,css-grid-generator,usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+408,dots-and-boxes,tools.usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+409,eigenvalue-calculator,tools.usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+410,font-tester,usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+411,guitar-chord-finder,usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+412,habit-tracker,usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+413,half-life-calculator,tools.usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+414,hex-editor,usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+415,hijri-calendar-converter,tools.usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+416,ideal-gas-law-calculator,tools.usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+417,image-color-picker,tools.usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+418,json-model-generator,tools.usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+419,json-schema-validator,usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+420,json-yaml-converter,usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+421,lifetime-value-calculator,tools.usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+422,memory-game,usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+423,molecule-viewer,usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+424,pdf-crop,usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+425,pdf-to-image,usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+426,pdf-tools,usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+427,polynomial-integral-calculator,usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+428,probability-distribution-calculator,usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+429,sleep-calculator,tools.usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+430,text-to-speech,tools.usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+431,vector-calculator,tools.usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+432,z-score-calculator,usefulverse.com,existente,36,1,0,pendiente,,,,falta nb
+433,3d-model-viewer,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+434,401k-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+435,529-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+436,acrostic-poem-maker,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+437,aim-trainer,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+438,amerikaner-card-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+439,annuity-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+440,aquarium-water-mixing-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+441,audio-to-midi-transcriber,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+442,bac-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+443,barcode-reader,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+444,battleship,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+445,bcrypt-generator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+446,bead-pattern-generator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+447,binary-base64-tool,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+448,binary-puzzle,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+449,box-plot-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+450,bra-size-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+451,brick-breaker-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+452,bridge-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+453,browser-frame-rate-test,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+454,bubble-shooter,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+455,business-letter-generator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+456,calories-burned-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+457,canasta-card-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+458,car-running-cost-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+459,carbon-footprint-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+460,carpet-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+461,cash-flow-irr-calculator,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+462,cash-on-cash-return-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+463,chess-analysis-board,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+464,chess-puzzles,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+465,child-growth-percentile-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+466,chore-chart-maker,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+467,circle-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+468,codebreaker-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+469,color-palette-from-image,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+470,compost-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+471,cpm-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+472,crazy-eights-card-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+473,cribbage,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+474,crossword-online,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+475,css-border-radius-generator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+476,css-clip-path-editor,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+477,css-filter-generator,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+478,css-formatter,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+479,csv-merge,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+480,csv-to-json,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+481,csv-to-pdf,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+482,csv-viewer,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+483,currency-converter,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+484,customer-acquisition-cost-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+485,cycling-power-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+486,decision-matrix,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+487,decision-tree-maker,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+488,deck-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+489,density-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+490,dew-point-humidity-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+491,diagram-maker,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+492,dice-poker-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+493,dicom-viewer,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+494,differential-equation-solver,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+495,dimensional-weight-calculator,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+496,display-pixel-test,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+497,docx-editor,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+498,doppelkopf-card-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+499,dxf-drawing-viewer,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+500,effect-size-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+501,eisenhower-matrix,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+502,ellipse-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+503,email-signature-generator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+504,epub-to-pdf,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+505,euchre,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+506,event-budget-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+507,extract-images-from-pdf,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+508,farkle-dice-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+509,fisher-exact-test-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+510,five-letter-word-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+511,forex-position-size-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+512,freecell,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+513,frequency-tone-generator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+514,frequency-wavelength-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+515,fuel-economy-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+516,gantt-chart-maker,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+517,geographic-coordinate-converter,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+518,geography-map-quiz,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+519,gin-rummy,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+520,gold-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+521,gomoku,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+522,grade-scale-generator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+523,graph-paper-generator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+524,graphql-formatter,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+525,grass-seed-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+526,gris-card-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+527,halma-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+528,hangman-game,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+529,heart-rate-zone-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+530,hearts-game,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+531,hiking-time-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+532,histogram-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+533,hitori,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+534,household-budget-planner,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+535,html-to-pdf,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+536,ics-viewer,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+537,ideal-weight-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+538,idiot-card-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+539,image-editor,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+540,image-histogram,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+541,image-metadata-remover,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+542,image-sharpener,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+543,image-splitter,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+544,image-to-pdf,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+545,image-upscaler,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+546,image-vectorizer,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+547,inequality-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+548,jass-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+549,json-diff,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+550,json-to-csv,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+551,jwt-encoder,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+552,killer-sudoku,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+553,knitting-gauge-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+554,late-payment-interest-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+555,lean-body-mass-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+556,lease-vs-buy-car-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+557,limit-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+558,linear-programming-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+559,local-spell-checker,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+560,logo-maker,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+561,ludo-game,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+562,mann-whitney-u-test-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+563,markdown-table-generator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+564,match-three-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+565,maze-generator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+566,meeting-planner,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+567,memory-test,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+568,microphone-level-meter,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+569,minesweeper,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+570,mini-golf-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+571,mockup-generator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+572,modulo-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+573,molar-mass-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+574,moon-phase-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+575,moonrise-moonset-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+576,mortgage-affordability-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+577,mortgage-refinance-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+578,mulch-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+579,natal-chart-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+580,nine-mens-morris,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+581,norway-bsu-benefit-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+582,norway-car-import-cost-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+583,norway-child-support-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+584,norway-commuting-deduction-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+585,norway-company-car-tax-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+586,norway-disability-benefit-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+587,norway-electricity-support-comparator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+588,norway-employer-cost-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+589,norway-holiday-pay-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+590,norway-housing-benefit-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+591,norway-import-cost-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+592,norway-income-tax-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+593,norway-mileage-reimbursement-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+594,norway-parental-benefit-planner,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+595,norway-property-transfer-fee-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+596,norway-student-finance-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+597,norway-toll-cost-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+598,norway-unemployment-benefit-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+599,norway-wealth-tax-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+600,numerology-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+601,nurikabe,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+602,options-profit-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+603,org-chart-maker,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+604,packing-box-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+605,passport-photo-maker,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+606,paver-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+607,pdf-accessibility-checker,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+608,pdf-bookmarks-editor,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+609,pdf-flattener,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+610,pdf-metadata-editor,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+611,pdf-page-size-converter,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+612,persian-calendar-converter,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+613,pet-age-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+614,ph-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+615,phonetic-alphabet-converter,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+616,pinball-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+617,poker-odds-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+618,president-card-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+619,prime-factorization-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+620,project-risk-matrix,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+621,protein-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+622,push-up-test,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+623,pyramid-solitaire,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+624,radar-chart-maker,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+625,radical-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+626,rafter-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+627,rainwater-harvesting-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+628,rational-expression-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+629,reading-log,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+630,rebus-puzzles,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+631,rental-yield-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+632,required-minimum-distribution-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+633,resume-structure-checker,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+634,rhyme-finder,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+635,ring-size-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+636,rref-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+637,sankey-diagram-generator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+638,scale-drawing-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+639,schafkopf-card-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+640,schnapsen-card-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+641,shift-scheduler,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+642,shikaku-puzzle,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+643,shoe-size-converter,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+644,shut-the-box,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+645,sitemap-validator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+646,skat-card-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+647,sleep-debt-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+648,snake-game,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+649,snakes-and-ladders,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+650,sobriety-counter,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+651,social-security-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+652,sokoban,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+653,song-key-finder,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+654,spades-game,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+655,speed-reading-app,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+656,spider-solitaire,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+657,statistical-power-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+658,stem-and-leaf-plot-generator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+659,subscription-tracker,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+660,suguru-puzzle,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+661,sunrise-sunset-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+662,svg-optimizer,usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+663,swiss-qr-bill-generator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+664,swiss-uid-validator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+665,switzerland-ahv-pension-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+666,switzerland-bvg-pension-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+667,switzerland-child-support-budget-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+668,switzerland-health-deductible-comparator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+669,switzerland-income-tax-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+670,switzerland-inheritance-gift-tax-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+671,switzerland-net-salary-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+672,switzerland-pension-withdrawal-tax-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+673,switzerland-pillar-3a-tax-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+674,switzerland-premium-subsidy-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+675,switzerland-property-gains-tax-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+676,switzerland-rent-adjustment-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+677,switzerland-tenancy-notice-planner,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+678,switzerland-unemployment-benefit-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+679,switzerland-vehicle-tax-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+680,taylor-series-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+681,text-summarizer,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+682,timeline-maker,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+683,tripeaks-solitaire,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+684,typing-practice,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+685,vacation-entitlement-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+686,vcard-converter,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+687,vcard-generator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+688,vocal-remover,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+689,voice-changer,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+690,war-card-game,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+691,water-intake-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+692,wheel-offset-clearance-calculator,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+693,wilks-calculator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+694,word-frequency-counter,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+695,word-hyphenation-tool,tools.usefulverse.com,existente,37,0,0,pendiente,,,,
+696,word-puzzle-solver,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+697,world-clock,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+698,writing-prompt-generator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+699,writing-tracker,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+700,xml-to-csv-converter,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
+1001,text-translator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · traductor 226000000/mes
+1002,internet-speed-test,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · speed test 101000000/mes
+1003,local-ai-chat,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · ai chatbot 6120000/mes
+1004,weather-dashboard,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · weather forecast 4090000/mes
+1005,dictionary,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · dictionary 3350000/mes
+1006,fancy-text-generator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · font generator 3350000/mes
+1007,grammar-checker,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · grammar checker 3350000/mes
+1008,soundboard,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · soundboard 3350000/mes
+1009,thesaurus,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · thesaurus 2740000/mes
+1010,germany-net-salary,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · brutto netto rechner 2240000/mes
+1011,local-image-generator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · ai image generator 2240000/mes
+1012,rdap-domain-lookup,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · whois 1500000/mes
+1013,texas-holdem,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · poker 1220000/mes
+1014,air-quality-dashboard,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · aqi 1000000/mes
+1015,paraphrasing-tool,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · paraphrasing tool 1000000/mes
+1016,coloring-studio,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · coloring pages 823000/mes
+1017,online-compiler,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · python compiler 823000/mes
+1018,open-radio-player,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · online radio 823000/mes
+1019,qibla-compass,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · qibla direction 823000/mes
+1020,baccarat-practice,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · baccarat 673000/mes
+1021,big-five-personality-test,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · personality test 673000/mes
+1022,indian-rummy,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · rummy 673000/mes
+1023,pool-game,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · 8 ball pool 673000/mes
+1024,pronunciation-dictionary,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · pronunciation 673000/mes
+1025,roulette-practice,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · roulette 673000/mes
+1026,us-paycheck-calculator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · paycheck calculator 673000/mes
+1027,india-income-tax-calculator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · income tax calculator 550000/mes
+1028,never-have-i-ever,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · never have i ever 550000/mes
+1029,panchang-calendar,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · panchang aaj ka 550000/mes
+1030,photo-background-changer,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · photo background changer 550000/mes
+1031,rubiks-cube-solver,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · rubiks cube solver 550000/mes
+1032,video-editor,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · video editor 550000/mes
+1033,adult-adhd-screener,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · adhd test 450000/mes
+1034,brazil-termination-calculator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · calculadora rescisão 450000/mes
+1035,chinese-zodiac,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · chinese zodiac 450000/mes
+1036,color-vision-check,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · color blind test 450000/mes
+1037,font-identifier,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · font finder 450000/mes
+1038,gamepad-tester,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · gamepad tester 450000/mes
+1039,geographic-distance-calculator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · distance calculator 450000/mes
+1040,japanese-name-strokes,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · 姓名判断 450000/mes
+1041,love-calculator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · love calculator 450000/mes
+1042,static-website-builder,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · website builder 450000/mes
+1043,virtual-keyboard,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · hindi typing 450000/mes
+1044,baseball-game,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · baseball game 368000/mes
+1045,chord-progression-builder,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · chord progression 368000/mes
+1046,cricket-game,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · cricket games 368000/mes
+1047,dns-lookup,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · dns checker 368000/mes
+1048,india-gratuity-calculator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · gratuity calculator 368000/mes
+1049,ip-geolocation-lookup,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · ip lookup 368000/mes
+1050,mahjong-four-player,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · 麻雀 ゲーム 368000/mes
+1051,public-transit-planner,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · journey planner 368000/mes
+1052,shogi,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · 将棋 368000/mes
+1053,soccer-penalty-game,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · soccer games 368000/mes
+1054,teen-patti,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · teen patti 368000/mes
+1055,would-you-rather,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · would you rather questions 368000/mes
+1056,enneagram-questionnaire,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · enneagram test 301000/mes
+1057,local-music-generator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · ai music generator 301000/mes
+1058,phq9-questionnaire,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · depression test 301000/mes
+1059,rock-paper-scissors,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · rock paper scissors 301000/mes
+1060,truth-or-dare,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · truth or dare 301000/mes
+1061,uk-stamp-duty,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · stamp duty calculator 301000/mes
+1062,basketball-shooting-game,(por decidir),nueva,0,,,pendiente,,,,Alternativa cercana; falta viabilidad · basketball games 246000/mes
+1063,charades,(por decidir),nueva,0,,,pendiente,,,,Alternativa cercana; falta viabilidad · charades 246000/mes
+1064,durak,(por decidir),nueva,0,,,pendiente,,,,Alternativa cercana; falta viabilidad · дурак онлайн 246000/mes
+1065,egfr-calculator,(por decidir),nueva,0,,,pendiente,,,,Alternativa cercana; falta viabilidad · egfr calculator 246000/mes
+1066,india-ppf-calculator,(por decidir),nueva,0,,,pendiente,,,,Alternativa cercana; falta viabilidad · ppf calculator 246000/mes
+1067,music-identifier,(por decidir),nueva,0,,,pendiente,,,,Alternativa cercana; falta viabilidad · song finder 246000/mes
+1068,personal-color-analysis,(por decidir),nueva,0,,,pendiente,,,,Alternativa cercana; falta viabilidad · パーソナルカラー診断 246000/mes
+1069,screen-mirroring,(por decidir),nueva,0,,,pendiente,,,,Alternativa cercana; falta viabilidad · screen mirroring 246000/mes
+1070,business-model-canvas,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · business model canvas 201000/mes
+1071,earthquake-map,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · terremotos hoy 201000/mes
+1072,economic-calendar,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · economic calendar 201000/mes
+1073,emoji-search,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · emoji copy paste 201000/mes
+1074,face-shape-analyzer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · face shape detector 201000/mes
+1075,france-housing-benefit,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · simulation apl 201000/mes
+1076,online-paint,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · drawing app 201000/mes
+1077,travel-route-optimizer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · route planner 201000/mes
+1078,truco,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · truco 201000/mes
+1079,uk-pay-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · salary calculator uk 201000/mes
+1080,visual-acuity-check,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · eye test 201000/mes
+1081,craps-practice,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · craps 165000/mes
+1082,iching-cast,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · i ching 165000/mes
+1083,image-search-open,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · free images 165000/mes
+1084,india-nps-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · nps calculator 165000/mes
+1085,makruk,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · หมากรุกไทย 165000/mes
+1086,raci-matrix-builder,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · raci matrix 165000/mes
+1087,racing-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · racing game 165000/mes
+1088,scopa,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · scopa 165000/mes
+1089,belote,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · belote 135000/mes
+1090,email-address-validator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · email checker 135000/mes
+1091,fishing-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · fishing game 135000/mes
+1092,object-remover,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · remove object from photo 135000/mes
+1093,photosphere-viewer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · panorama viewer 135000/mes
+1094,plant-identifier,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · plant identifier 135000/mes
+1095,sticker-pack-maker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · sticker maker 135000/mes
+1096,word-cloud-generator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · word cloud 135000/mes
+1097,brazil-thirteenth-salary,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calculadora décimo terceiro 110000/mes
+1098,darts-scoreboard,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · darts scorer 110000/mes
+1099,lines-of-action,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · lines of action 110000/mes
+1100,monte-carlo-simulator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · monte carlo simulation 110000/mes
+1101,text-to-handwriting,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · text to handwriting 110000/mes
+1102,tide-times,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · tide times 110000/mes
+1103,vaccination-schedule,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · vaccination schedule 110000/mes
+1104,verb-conjugator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · conjugaison 110000/mes
+1105,whist,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · whist 110000/mes
+1106,brazil-vacation-pay-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calculo ferias 90500/mes
+1107,document-mail-merge,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · mail merge 90500/mes
+1108,endless-runner,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · running games 90500/mes
+1109,gad7-questionnaire,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · gad7 90500/mes
+1110,hanoi-tower,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · tower of hanoi 90500/mes
+1111,japan-income-tax,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 所得税 計算 90500/mes
+1112,pinochle,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pinochle 90500/mes
+1113,zakat-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · zakat calculator 90500/mes
+1114,block-puzzle,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · block puzzle 74000/mes
+1115,creatinine-clearance-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · creatinine clearance calculator 74000/mes
+1116,france-income-tax,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · simulateur impots 74000/mes
+1117,hearing-self-check,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · hearing test 74000/mes
+1118,portugal-net-salary,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · salario liquido 74000/mes
+1119,space-shooter,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · space games 74000/mes
+1120,tls-site-checker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · ssl checker 74000/mes
+1121,tower-defense,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · tower defense 74000/mes
+1122,virtual-drum-kit,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · virtual drums 74000/mes
+1123,customer-journey-map,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · customer journey map 60500/mes
+1124,germany-unemployment-benefit,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · arbeitslosengeld rechner 60500/mes
+1125,online-whiteboard,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · online whiteboard 60500/mes
+1126,password-strength-checker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · password checker 60500/mes
+1127,prayer-beads-counter,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · tasbih counter 60500/mes
+1128,roc-curve-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · roc curve 60500/mes
+1129,spain-termination-pay,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calculadora finiquito 60500/mes
+1130,tank-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · tank games 60500/mes
+1131,xiangqi,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 象棋 60500/mes
+1132,australia-income-tax,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · tax calculator australia 49500/mes
+1133,bubble-level,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · bubble level 49500/mes
+1134,flipbook-animator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · animation maker 49500/mes
+1135,hardy-weinberg-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · hardy weinberg equilibrium 49500/mes
+1136,india-apy-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · apy calculator 49500/mes
+1137,india-epf-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · epf calculator 49500/mes
+1138,sky-map,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · star map 49500/mes
+1139,sleepiness-questionnaire,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · epworth sleepiness scale 49500/mes
+1140,spain-income-tax,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calculadora irpf 49500/mes
+1141,touchscreen-tester,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · touch screen test 49500/mes
+1142,transliteration-tool,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · transliteration 49500/mes
+1143,uk-universal-credit,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · universal credit calculator 49500/mes
+1144,us-w4-withholding,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · tax withholding estimator 49500/mes
+1145,value-proposition-canvas,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · value proposition canvas 49500/mes
+1146,briscola,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · briscola 40500/mes
+1147,carrom,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · carrom game 40500/mes
+1148,crokinole,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · crokinole 40500/mes
+1149,dna-sequence-tool,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · reverse complement 40500/mes
+1150,email-authentication-checker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · spf checker 40500/mes
+1151,galaxies-puzzle,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · galaxies game 40500/mes
+1152,platform-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · platform games 40500/mes
+1153,presentation-maker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · presentation maker 40500/mes
+1154,swot-analysis-builder,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · swot analysis template 40500/mes
+1155,table-tennis-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · ping pong game 40500/mes
+1156,word-stress-finder,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · syllable counter 40500/mes
+1157,circuit-diagram-editor,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · circuit simulator 33100/mes
+1158,france-unemployment-benefit,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · simulateur chomage 33100/mes
+1159,http-response-checker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · redirect checker 33100/mes
+1160,orbital-visualizer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · orbital diagram 33100/mes
+1161,pdf-imposition,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pdf booklet 33100/mes
+1162,photo-restoration,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · restore old photos 33100/mes
+1163,qtc-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · qtc calculator 33100/mes
+1164,recipe-nutrition-analyzer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · recipe nutrition calculator 33100/mes
+1165,star-battle,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · star battle 33100/mes
+1166,tute,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · tute 33100/mes
+1167,wedding-planner,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · wedding planning tool 33100/mes
+1168,3d-print-slicer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 3d slicer 27100/mes
+1169,bowling-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · bowling game 27100/mes
+1170,braille-translator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · braille translator 27100/mes
+1171,brazil-inss-contribution,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calculadora inss 27100/mes
+1172,brazil-unemployment-benefit,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calculadora seguro desemprego 27100/mes
+1173,broken-link-checker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · broken link checker 27100/mes
+1174,car-parking-simulator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · car parking game 27100/mes
+1175,chat-with-documents,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pdf ai 27100/mes
+1176,hba1c-eag-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · a1c calculator 27100/mes
+1177,janggi,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 장기 27100/mes
+1178,mexico-aguinaldo,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calculadora aguinaldo 27100/mes
+1179,mexico-income-tax,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calculadora isr 27100/mes
+1180,pregnancy-weight-gain,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pregnancy weight gain calculator 27100/mes
+1181,ptsd-questionnaire,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pcl5 27100/mes
+1182,singapore-cpf,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · cpf calculator 27100/mes
+1183,taiwan-income-tax,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 所得稅試算 27100/mes
+1184,venn-diagram-maker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · venn diagram maker 27100/mes
+1185,brazil-fgts-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calculadora fgts 22200/mes
+1186,calligraphy-worksheet,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · handwriting worksheets 22200/mes
+1187,draw-and-guess,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · drawing guessing game 22200/mes
+1188,font-editor,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · font editor 22200/mes
+1189,garden-planner,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · garden planner 22200/mes
+1190,gpx-track-editor,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · gpx viewer 22200/mes
+1191,korea-net-salary,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 연봉계산기 22200/mes
+1192,norinori-puzzle,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · norinori 22200/mes
+1193,project-pert-estimator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pert chart 22200/mes
+1194,rent-split-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · split rent 22200/mes
+1195,sentence-diagrammer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · análisis sintáctico 22200/mes
+1196,bird-sound-identifier,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · bird song identifier 18100/mes
+1197,capital-gains-tax-uk,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · capital gains calculator 18100/mes
+1198,database-schema-designer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · database diagram 18100/mes
+1199,hex-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · hex game 18100/mes
+1200,ipa-transcriber,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · phonetic transcription 18100/mes
+1201,lithophane-generator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · lithophane maker 18100/mes
+1202,preferans,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · преферанс 18100/mes
+1203,email-header-analyzer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · email header analyzer 14800/mes
+1204,hnefatafl,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · hnefatafl 14800/mes
+1205,html-sanitizer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · clean html 14800/mes
+1206,insurance-needs-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · insurance calculator 14800/mes
+1207,karaoke-lyrics-editor,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · karaoke maker 14800/mes
+1208,language-detector,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · language detector 14800/mes
+1209,moving-planner,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · moving checklist 14800/mes
+1210,perceived-stress-questionnaire,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · perceived stress scale 14800/mes
+1211,song-structure-planner,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · song structure 14800/mes
+1212,spain-unemployment-benefit,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calcular paro 14800/mes
+1213,survival-analysis,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · kaplan meier curve 14800/mes
+1214,3d-function-grapher,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 3d graphing calculator 12100/mes
+1215,3d-model-editor,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 3d modeling online 12100/mes
+1216,api-mock-workbench,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · mock api 12100/mes
+1217,blood-pressure-log,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · blood pressure log 12100/mes
+1218,comic-maker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · comic maker 12100/mes
+1219,india-hra-exemption,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · hra calculator 12100/mes
+1220,inheritance-shares-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · islamic inheritance calculator 12100/mes
+1221,panorama-stitcher,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · stitch photos 12100/mes
+1222,password-breach-checker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pwned passwords 12100/mes
+1223,sewing-pattern-drafter,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pattern maker 12100/mes
+1224,us-roth-conversion,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · roth conversion 12100/mes
+1225,us-self-employment-tax,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · self employment tax calculator 12100/mes
+1226,virtual-try-on,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · virtual try on 12100/mes
+1227,calcudoku,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calcudoku 9900/mes
+1228,genetic-cross-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · punnett square calculator 9900/mes
+1229,geometry-construction,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · geometry calculator 9900/mes
+1230,html-accessibility-auditor,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · accessibility checker 9900/mes
+1231,linear-algebra-visualizer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · matrix transformation 9900/mes
+1232,malaysia-epf,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · kwsp calculator 9900/mes
+1233,music-interval-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · intervalos musicales 9900/mes
+1234,origami-simulator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · origami instructions 9900/mes
+1235,pdf-digital-signature-validator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · validate pdf signature 9900/mes
+1236,regex-pattern-builder,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · regex generator 9900/mes
+1237,acronym-dictionary,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · acronym finder 8100/mes
+1238,audio-denoiser,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · remove background noise 8100/mes
+1239,chemical-structure-editor,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · structure drawing 8100/mes
+1240,gitignore-generator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · gitignore generator 8100/mes
+1241,hdr-merger,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · hdr photo 8100/mes
+1242,pet-feeding-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · dog calorie calculator 8100/mes
+1243,philippines-sss,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · sss contribution table 8100/mes
+1244,portfolio-backtester,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · portfolio backtest 8100/mes
+1245,survey-builder,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · survey maker 8100/mes
+1246,totp-authenticator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · totp generator 8100/mes
+1247,uk-student-loan,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · student finance calculator 8100/mes
+1248,canada-payroll,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · payroll calculator canada 6600/mes
+1249,chomp-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · chocolate game 6600/mes
+1250,crochet-chart-maker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · crochet pattern generator 6600/mes
+1251,document-redline-merger,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · document comparison 6600/mes
+1252,ebook-creator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · ebook creator 6600/mes
+1253,enzyme-kinetics-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · enzyme kinetics 6600/mes
+1254,focus-stacker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · focus stacking 6600/mes
+1255,handwriting-input,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · chinese handwriting input 6600/mes
+1256,laser-box-designer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · box generator 6600/mes
+1257,meeting-retrospective,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · sprint retrospective 6600/mes
+1258,mus,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · mus online 6600/mes
+1259,nim-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · nim game 6600/mes
+1260,pcb-layout-editor,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pcb layout 6600/mes
+1261,reaction-mechanism-editor,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · reaction mechanism 6600/mes
+1262,time-series-forecast,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · time series forecasting 6600/mes
+1263,database-migration-converter,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · sql converter 5400/mes
+1264,fanorona,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · fanorona 5400/mes
+1265,futures-position-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · futures calculator 5400/mes
+1266,indonesia-pph21,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · kalkulator pph 21 5400/mes
+1267,option-strategy-builder,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · option strategy builder 5400/mes
+1268,rhythm-trainer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · rhythm trainer 5400/mes
+1269,sequence-alignment,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · sequence alignment 5400/mes
+1270,storyboard-maker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · storyboard maker 5400/mes
+1271,china-individual-income-tax,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 个税计算器 4400/mes
+1272,control-system-simulator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pid tuning 4400/mes
+1273,digital-signature-verifier,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · verify digital signature 4400/mes
+1274,embroidery-digitizer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · embroidery digitizing 4400/mes
+1275,lights-out,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · lights out game 4400/mes
+1276,masyu-puzzle,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · masyu 4400/mes
+1277,medication-schedule,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · medication reminder 4400/mes
+1278,music-transposition,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · transpose music 4400/mes
+1279,sheet-music-scanner,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · sheet music scanner 4400/mes
+1280,sourdough-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · sourdough calculator 4400/mes
+1281,spreadsheet-diff,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · spreadsheet compare 4400/mes
+1282,chemical-name-resolver,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · smiles to structure 3600/mes
+1283,chord-recognizer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · chord detector 3600/mes
+1284,dataset-anonymizer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · anonymize data 3600/mes
+1285,sql-query-explainer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · explain sql 3600/mes
+1286,territory-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · territory game 3600/mes
+1287,audio-loudness-normalizer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · audio normalization 2900/mes
+1288,bond-ladder-planner,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · bond ladder 2900/mes
+1289,css-specificity-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · css specificity 2900/mes
+1290,equation-photo-reader,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · math ocr 2900/mes
+1291,skyscrapers-puzzle,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · skyscrapers puzzle 2900/mes
+1292,us-aca-subsidy,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · aca subsidy calculator 2900/mes
+1293,geometry-net-generator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 3d shape nets 2400/mes
+1294,optics-ray-tracer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · lens simulator 2400/mes
+1295,spreadsheet-formula-explainer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · excel formula generator 2400/mes
+1296,webfont-subsetter,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · webfont generator 2400/mes
+1297,akari-puzzle,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · light up puzzle 1900/mes
+1298,amazons-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · juego amazonas 1900/mes
+1299,formal-proof-checker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · natural deduction calculator 1900/mes
+1300,heyawake-puzzle,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · heyawake 1900/mes

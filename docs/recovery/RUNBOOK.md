@@ -1,0 +1,226 @@
+# UsefulVerse · Manual de ejecución para agentes (RUNBOOK)
+
+Versión 1 · 20-oct-2026 · Válido para Codex, ChatGPT, Claude o cualquier agente con acceso al repo.
+**Cómo se usa:** Pedro pega en el agente: *«Lee `AGENTS.md` y `docs/recovery/RUNBOOK.md` del repo
+`pedronunezwebs-hash/usefulverse` y ejecuta el siguiente lote.»* No hace falta nada más. Este manual dice qué hacer,
+en qué orden, cómo verificarlo, cuándo parar y cómo dejarlo listo para el siguiente agente.
+
+Documentos de referencia, en orden de prioridad: `AGENTS.md` → este RUNBOOK → `docs/recovery/README.md`
+(diagnóstico de la caída) → `docs/quality/PLAN.md` (plan de calidad completo) → `docs/design/planeta-infinito/`
+(prototipo de marca aprobado).
+
+---
+
+## 1. Estado real a 20-oct-2026 (verificado)
+
+| Hecho | Dato |
+|---|---|
+| Herramientas públicas | 700 (277 en `usefulverse.com` y 423 en `tools.usefulverse.com`); 25.625 URLs en los sitemaps |
+| Idiomas | 37 definidos. A **600 herramientas les falta el noruego `nb`** (las 277 del dominio y 323 del subdominio) |
+| Google | El 16-oct las impresiones cayeron de ~3.700/día a ~50/día. No hay acción manual: es una desconfianza algorítmica por crecer a escala con poca calidad. |
+| Las «300 nuevas» | **Todavía no están construidas.** `PLAN-1000.md` (19-oct) dice: 300 candidatas investigadas, **0 implementaciones listas**. Solo 50 tienen demanda confirmada ≥300.000 búsquedas/mes y viabilidad pendiente. Otras 19 necesitan revisión (11 de intención y 8 alternativas cercanas), y 231 son de reserva y no cumplen la demanda pedida. |
+| **Fallo técnico urgente** | `tools.usefulverse.com` devuelve **200 con la home** en cualquier URL inexistente (p. ej. `/tools/zzz/`). Son *soft 404*: Google ve URLs basura infinitas que parecen páginas. `usefulverse.com` sí devuelve 404 correctamente. |
+| Marca | Concepto **«Planeta Infinito»** aprobado por Pedro: planeta + anillo ∞, violeta `#5B3DF5`, display Bricolage Grotesque, colores por categoría. |
+
+---
+
+## 2. Política de publicación (cumple con Google y es la elegida)
+
+**¿Puede Google «bloquear» el sitio por subir mucho de golpe?** No como castigo automático por el volumen en sí. Una acción
+manual solo llega si el contenido se considera spam (*scaled content abuse*: muchas páginas sin valor para los
+usuarios). El riesgo real es algorítmico: cada página floja que se añade refuerza la desconfianza y alarga la
+recuperación. Las páginas nuevas sin valor se quedan en «Descubierta: sin indexar» y no aportan nada. Lo que decide el
+resultado es la calidad de cada página, no la velocidad de subida.
+
+Por eso la regla es: **se publica todo lo que esté terminado, en cuanto pase la puerta de calidad, sin esperas
+artificiales, pero con un freno de seguridad semanal:**
+
+1. **Mejorar las páginas existentes no tiene límite** (no crea URLs). Es la prioridad número uno.
+2. **Herramientas nuevas:** cada una se publica completa (con sus 37 idiomas) en cuanto pasa la puerta de calidad
+   (sección 6) y el piloto de traducción de cada idioma (sección 8). Si un idioma aún no pasa el piloto, se publica sin
+   ese idioma y se añade luego.
+3. **Freno semanal:** como máximo **30 herramientas nuevas por semana** (≈1.100 URLs, ≈4 % del total). Antes de la
+   caída se publicaban ≈900 URLs al día.
+4. **Noruego (`nb`) en las 600 existentes:** se añade a cada herramienta cuando esa herramienta termina su mejora de
+   calidad (sección 5), nunca en bloque sin mejorar.
+5. **Las 231 candidatas de reserva no se construyen** salvo decisión expresa de Pedro.
+6. **Ninguna herramienta que necesite servidores, APIs o datos de pago** (p. ej. test de velocidad con ancho de banda
+   propio, tiempo meteorológico con API, chat de IA en servidor) se construye sin una ficha de costes aprobada por Pedro.
+   Límite de la cuenta: Cloudflare ≤ 10 $/ciclo y GitHub en 0 $.
+
+Si Search Console muestra una caída nueva >50 % frente a la semana anterior: **se pausa la publicación de herramientas
+nuevas** (la mejora de las existentes continúa) y se avisa a Pedro.
+
+---
+
+## 3. Trabajar sin llenar el disco de Pedro (y en segundo plano)
+
+El Mac de Pedro tiene **~22 GB libres** y Pedro sigue trabajando en él. Reglas:
+
+1. **Trabajo pesado en la nube, no en el Mac:**
+   - Traducción con modelos (M2M100, MADLAD: varios GB) → **solo en GitHub Codespaces**. Nunca se descargan modelos al Mac.
+   - Builds completos (25.000+ páginas) → los hace **GitHub Actions** al hacer push. En local solo se construyen las
+     herramientas del lote.
+2. **Codespaces sin coste:** presupuesto de Codespaces en 0 $ con bloqueo (se comprueba en GitHub → Settings → Billing antes
+   de crear uno). Máquina de 2 núcleos. Se borra el codespace **al terminar cada sesión**, después de comprobar que todo
+   está en GitHub (`gh codespace delete`). No se dejan codespaces parados.
+3. **Si se trabaja en el Mac:**
+   - Clon superficial en una carpeta temporal del agente (nunca en el Escritorio):
+     `git clone --depth 1 --filter=blob:none https://github.com/pedronunezwebs-hash/usefulverse.git`
+   - Si otro agente usa el mismo repo, cada uno trabaja en su propio `git worktree`, nunca en el checkout del otro.
+   - Builds parciales a una carpeta temporal: `USEFULVERSE_DIST=<tmp>/dist USEFULVERSE_PACKS=<idiomas> npm run build`
+     (las variables ya existen en el repo). Al terminar se borra `<tmp>/dist`.
+   - `node_modules`, `dist`, capturas y descargas se **borran al cerrar el lote**, sin Papelera.
+   - **Antes de cada lote:** `df -h /`. Si quedan **menos de 10 GB libres**, no se empieza; se avisa a Pedro.
+   - Huella máxima de un lote en el Mac: **2 GB**.
+4. **Segundo plano:** procesos con prioridad baja (`nice -n 15`), un solo build a la vez y nada que ocupe la pantalla.
+5. **Minutos de GitHub Actions:** como máximo **un despliegue al día** con un lote completo. Los cambios solo de
+   documentación llevan `[skip ci]`. Si el uso del mes supera el 80 % de los minutos gratuitos, se paran los
+   despliegues hasta el ciclo siguiente.
+
+---
+
+## 4. Fase 0 · Arreglos urgentes (un PR, primero de todo)
+
+1. **404 real en `tools.usefulverse.com`:** el build del subdominio debe generar un `404.html` en la raíz de la salida
+   (Cloudflare Pages solo deja de hacer el «fallback» a la home cuando existe `404.html`). Verificación después del despliegue:
+   `curl -s -o /dev/null -w "%{http_code}" https://tools.usefulverse.com/tools/zzz-no-existe/` → **404**, también en
+   `/es/zzz/` y en `/zzz.html`. Añadir un test que falle si el build no contiene `404.html`.
+2. **Título de la home:** quitar «Free» duplicado («Everyday Online Tools — Free · no limits — Free»). Añadir un test:
+   ninguna palabra repetida en un `<title>` y longitud ≤ 60 caracteres.
+3. **Índice de sitemaps por idioma** en ambos hosts (`sitemap.xml` → índice; `sitemap-<idioma>.xml`), con `lastmod` real.
+4. Desplegar, verificar en producción, reenviar solo los sitemaps en Search Console y Bing. Anotar el resultado en
+   `docs/quality/progress.csv` (fila `fase-0`).
+
+---
+
+## 5. Bucle principal · Mejorar herramientas existentes (lote de 5 a 10)
+
+**Elegir el lote:** abrir `docs/quality/progress.csv` y tomar las siguientes filas con `tipo=existente` y
+`estado=pendiente`, ordenadas por `prioridad` (de menor a mayor). Preferir herramientas de la misma familia en el mismo
+lote (PDF con PDF, etc.) para que se enlacen entre sí. Marcar `estado=en-curso` y el nombre del agente, y hacer push con
+`[skip ci]`, para que nadie más las coja.
+
+**Para cada herramienta del lote:**
+1. **Investigar (sin APIs de pago):**
+   - Consultas reales de Search Console de esa URL (si el agente tiene acceso; si no, se omite).
+   - Sugerencias de Google y «Otras preguntas de los usuarios» observadas en el navegador.
+   - Los 3 primeros competidores: qué cubren y qué les falta.
+   - Guardar en `docs/quality/tools/<slug>/keywords.json`: keyword principal, 10-30 long-tail y preguntas reales.
+2. **Auditar límites** (código + prueba): quitar los límites artificiales (nº de archivos, tableros, resultados). Los
+   técnicos se resuelven con una cola, Web Workers y liberación de memoria. Los reales del dispositivo se explican en
+   lenguaje simple. Test: 200 archivos o 1.000 generaciones sin fallos.
+3. **Rejugabilidad** (juegos y generadores): generación procedural con semilla y validación, niveles, reto diario,
+   progreso local y compartir la partida. Test: 1.000 generaciones sin repetir y todas válidas.
+4. **Contenido propio** en la plantilla: intro que responde directamente, «Cómo se usa» (3 pasos), ejemplos resueltos
+   y recalculados por test, usos, límites y privacidad reales, consejos y 6-12 FAQ de la investigación, más 3-5 herramientas
+   relacionadas. Sin relleno.
+5. **Metadatos:** título ≤ 60 caracteres con la keyword primero; descripción de 120-155 caracteres; «gratis» o «sin límites» solo
+   si es verdad. JSON-LD: `WebApplication` (precio 0, `isAccessibleForFree`), `BreadcrumbList` y `FAQPage` idéntico al texto
+   visible. Nunca `AggregateRating` inventado.
+6. **«Siguiente paso»:** al terminar la tarea, una tarjeta dentro de la página (sin ventana emergente) con 1-3 herramientas
+   del grafo `tools-graph.json`. El archivo pasa de una herramienta a otra si la entrada y la salida coinciden.
+7. **Test del niño de 8 años:** frases ≤ 20 palabras en la interfaz y la intro, sin tecnicismos sin explicar. La tarea
+   principal se completa en ≤ 3 pasos sin leer la ayuda.
+8. **Diseño:** usar los componentes del sistema «Planeta Infinito» (cuando la fase de diseño esté hecha; antes, la
+   plantilla actual).
+9. **Traducir** a los 37 idiomas con el método de `METODO-TRADUCCION.md` en Codespaces (sección 8), **incluido el
+   noruego `nb`** si faltaba.
+
+**Puerta de calidad** (sección 6). Si no se pasa un punto, se arregla; no se publica a medias.
+
+**Publicar:** un PR por lote con la lista de herramientas, el recuento de URLs antes y después, y la evidencia de la
+puerta. Merge y despliegue (máximo uno al día). **Verificar en producción** (sección 9). Marcar
+`estado=terminada` con la fecha y el número de PR. **Limpiar** (sección 3).
+
+---
+
+## 6. Puerta de calidad (por herramienta; se apunta la evidencia en el PR)
+
+| # | Control | Evidencia |
+|---|---|---|
+| 1 | Funciona: casos normales, extremos e inválidos | `npm test` verde + prueba en navegador |
+| 2 | Sin límites artificiales | Auditoría + test de 200 archivos o 1.000 generaciones |
+| 3 | Rejugable (si aplica) | Test de no repetición |
+| 4 | Contenido propio, similitud < 30 % con otras herramientas | Test de n-gramas |
+| 5 | Ejemplos y fórmulas exactos | Test que recalcula cada ejemplo publicado |
+| 6 | Título y descripción únicos, longitudes y promesas verdaderas | Test de metadatos |
+| 7 | JSON-LD válido e idéntico a lo visible | Validador en el build |
+| 8 | Siguiente paso funcionando | Prueba en navegador |
+| 9 | Niño de 8 años | Revisión + prueba de tarea |
+| 10 | Móvil: LCP < 1,8 s, CLS < 0,05, INP < 150 ms | Lighthouse móvil |
+| 11 | Accesible (teclado, lector de pantalla, contraste AA) | axe-core + teclado |
+| 12 | RTL (`ar`) y textos largos (`de`) sin cortes, a 390 px | Captura |
+| 13 | 37 idiomas presentes (o los que hayan pasado el piloto), con `hreflang` recíproco | Test de cobertura |
+| 14 | `npm run check` y `npm run locale:release-check` verdes | Salida del comando |
+
+---
+
+## 7. Bucle de herramientas nuevas (de las 300 candidatas)
+
+1. **Orden:** primero las 50 con `decision = Prioridad por demanda; falta viabilidad`, ordenadas por `rank`; después las
+   8 alternativas cercanas y las 11 de intención por revisar. Las 231 de reserva no se construyen salvo decisión de Pedro.
+2. **Viabilidad antes de construir:** ¿se puede hacer 100 % en el navegador, sin servidor, sin API de pago y con licencias
+   válidas? Si necesita servidor o datos externos, se hace una ficha de costes y **se para hasta que Pedro la apruebe**.
+   ¿Es de verdad distinta de las 700 existentes? (Ver «Qué cuenta como nueva herramienta» en `PLAN-1000.md`.)
+3. **Construir** con la misma receta de la sección 5 y la misma puerta de la sección 6.
+4. **Publicar** respetando el freno semanal (≤ 30 nuevas por semana). Contarlas en `progress.csv`.
+
+---
+
+## 8. Traducción (en Codespaces)
+
+1. Abrir un codespace de 2 núcleos sobre la rama del lote.
+2. Primera vez: ejecutar el **piloto** de `METODO-TRADUCCION.md` (3 herramientas y 37 idiomas) y fijar el motor por idioma.
+   Umbral: 0 errores en botones, cifras y negaciones; ≤ 1 error leve cada 20 frases. Comprobar que el noruego es bokmål. Los
+   resultados se guardan en `docs/quality/translation-pilot.md`.
+3. Por lote: extraer solo las cadenas nuevas o cambiadas, traducirlas con memoria, pasar los controles automáticos
+   (placeholders, cifras, idioma detectado, nada en inglés) y retrotraducir una muestra de 20 cadenas por idioma.
+4. Hacer commit y push de los paquetes de idioma y de la memoria (SQLite con Git LFS **no**: exportarla como JSON o CSV
+   comprimido < 25 MB). Después **borrar el codespace**.
+5. Un idioma que no pase el umbral **no se publica** en ese lote.
+
+---
+
+## 9. Verificación después de cada despliegue
+
+```bash
+# 1. Cada URL nueva o cambiada: 200, canonical propio y sin noindex
+curl -s -o /tmp/p.html -w "%{http_code}\n" https://usefulverse.com/tools/<slug>/
+grep -o '<link rel="canonical"[^>]*>' /tmp/p.html
+# 2. Cada URL de un idioma (muestra: en, es, ar, ja, nb)
+# 3. Soft 404 sigue arreglado
+curl -s -o /dev/null -w "%{http_code}\n" https://tools.usefulverse.com/tools/zzz-no-existe/   # → 404
+# 4. Las URLs están en el sitemap de su idioma
+```
+
+Después, reenviar solo el índice de sitemaps en Search Console y Bing. Inspeccionar como máximo 5 URLs clave con
+«Inspeccionar URL». Nada de envíos masivos.
+
+---
+
+## 10. Informe por lote (en el PR y en `docs/quality/LOG.md`)
+
+```
+Lote N · fecha · agente
+Herramientas: slug1, slug2, …   (existentes: X · nuevas: Y)
+URLs antes → después: …
+Puerta: 14/14 en todas (enlace a la evidencia) · excepciones: …
+Despliegue: run de Actions …, verificado en producción: sí/no
+Idiomas publicados: 37 / excepciones por piloto: …
+Minutos de Actions usados este mes: … / 2.000 · Disco libre al acabar: … GB
+Siguiente lote propuesto: …
+```
+
+---
+
+## 11. Prohibido
+
+- Publicar herramientas que no hayan pasado la puerta, o más de 30 nuevas por semana.
+- Construir las 231 de reserva, o algo con servidor o API de pago, sin aprobación.
+- Cambiar slugs o borrar URLs (las fusiones, con 301).
+- `noindex` masivo (Pedro lo ha descartado).
+- Envíos masivos a IndexNow, Naver, Yandex o Google.
+- Descargar modelos o hacer builds completos en el Mac de Pedro; dejar codespaces vivos.
+- Trabajar en el checkout de otro agente; `reset --hard` o `push --force` sobre `main`.
+- Inventar datos, reseñas, fuentes o promesas («100 % seguro», «el mejor»).
