@@ -20,6 +20,8 @@ Revisado el 20-oct-2026 sobre `main` (`pedronunezwebs-hash/usefulverse`, **públ
 - **El hub `tools.` solo se publica a mano:** *Run workflow* (`workflow_dispatch`) en `main` con `publish_growth600 = true`
   (`pages deploy dist-growth600 --project-name=usefulverse-tools`).
 - Los PR a `main` ejecutan las validaciones sin publicar. `[skip ci]` en el mensaje evita la ejecución.
+- En `feat/new-tools-batch-1`, `workflow_dispatch` con `translation_pilot=true` ejecuta **solo** el piloto CPU en
+  `ubuntu-latest`, sin secretos ni despliegue. Parámetros, checkpoints y resultados: `docs/quality/translation-pilot.md`.
 
 ## Carpetas clave
 

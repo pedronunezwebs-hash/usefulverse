@@ -2,6 +2,22 @@
 
 Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 
+## 2026-10-20 · Codex · Paso A: referencias de traducción computadas; 0 idiomas aprobados
+- [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), rama `feat/new-tools-batch-1`; sin merge/publicación.
+- Corpus real de tres herramientas, 40 referencias, 37 idiomas. Tanda es/nb de ambos motores: 320 registros.
+  M2M100: 40 referencias en 35 destinos soportados (2.371 registros); MADLAD en los 36 destinos (2.438).
+  **4.809 registros** conservados y fusionados sin perder las tandas previas; te solo con MADLAD.
+- 642 traducciones evaluadas por el agente, sin revisión nativa inventada; 202 salidas rechazadas como regresiones.
+  **0 idiomas aprobados**: glosario y marcadores deben corregirse antes de ampliar combinaciones fallidas.
+- Extracción segura de las 300: 15.815 unidades; 7.887 cadenas distintas; slugs, archivos y datos del revisor conservados.
+  Tests de reanudación atómica, no descarga con checkpoint completo y retrotraducción. Detalle:
+  [informe del lote](lotes/2026-10-20-piloto-actions.md) y
+  [piloto en la rama](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/translation-pilot.md).
+- Producción por GET: sitemaps **25.625 → 25.625**; tres rutas falsas devuelven 200. Sin deploy, activaciones ni cambios de fase.
+  [CI final 39405978076](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39405978076), `f8fe929`:
+  **3.045 tests Node**; 19 Python pasan, 2 de dependencias solo en el job de modelos; builds y puerta de idiomas verdes.
+  Pedro: ninguna prueba nueva, P-001–P-008 pendientes y 0 FALLA. Limpieza real anotada en el informe tras borrar el clon.
+
 ## 2026-10-20 · Codex · Paso A: fuente recuperada y CI verde; publicación pendiente
 - [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136) en borrador, rama `feat/new-tools-batch-1`.
   Fuente de las 300 recuperada selectivamente del respaldo privado `27a2f174`, sin importar su historial.
