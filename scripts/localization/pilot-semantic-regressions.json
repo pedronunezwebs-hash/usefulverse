@@ -2626,5 +2626,491 @@
     "issue": "«Et ledetråd» tiene género incorrecto; debe ser «En ledetråd». Sentido y seis casillas intactos.",
     "observed_candidate": "madlad/context-v4",
     "actions_run_id": "39436428601"
+  },
+  {
+    "locale": "ar",
+    "key": "dxf-viewer.faq.0.a",
+    "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+    "translation": "لا. هذه الأداة تفتح ASCII DXF فقط. إنها لا تفكك DWG أو ثنائي DXF.",
+    "issue": "Usa descomponer en lugar de decodificar y un orden poco natural para DXF binario.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ar",
+    "key": "dxf-viewer.faq.2.a",
+    "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+    "translation": "فقط عندما يعلن DXF المليمترات، وإلا يستخدم المتصفح الوحدة المعلنة أو يضع علامات على القياسات كوحدات رسم.",
+    "issue": "Cambia visor por navegador.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ar",
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "translation": "الرسم المﻻئم",
+    "issue": "«الرسم الملائم» describe un dibujo adecuado; no ajustar la vista.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ar",
+    "key": "dxf-viewer.fields.unsupported",
+    "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+    "translation": "ملف غير مدعوم. اختار ملف ASCII.dxf.",
+    "issue": "اختار es pasado, no el imperativo اختر; también pega ASCII.dxf.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ar",
+    "key": "dxf-viewer.fields.zoomOut",
+    "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+    "translation": "تضييق",
+    "issue": "«تضييق» significa estrechar, no alejar el zoom.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ar",
+    "key": "shikaku.example",
+    "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+    "translation": "تقع الدالة 6 داخل مستطيل واحد يغطي بالضبط ستة مربعات.",
+    "issue": "«الدالة» significa función; no la pista marcada 6.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ar",
+    "key": "shikaku.fields.check",
+    "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+    "translation": "ألغاز التحقق",
+    "issue": "«ألغاز التحقق» significa puzzles de comprobación, no comprobar el puzzle.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ar",
+    "key": "shikaku.fields.clear",
+    "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+    "translation": "مستطيلات واضحة",
+    "issue": "«مستطيلات واضحة» describe rectángulos claros; no borrarlos.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ar",
+    "key": "shikaku.fields.hint",
+    "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+    "translation": "اعرض إشارة",
+    "issue": "إشارة es señal, menos preciso que una pista de juego.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ar",
+    "key": "shikaku.fields.selectStart",
+    "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+    "translation": "اختار مربع البداية",
+    "issue": "اختار es pasado, no el imperativo requerido.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.decodeFailed",
+    "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+    "translation": "لم يتمكن هذا المتصفح من فك تشفير هذا الشكل الصوتي. جرّب WAV أو MP3.",
+    "issue": "فك تشفير significa descifrar; aquí se necesita decodificar audio.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.export",
+    "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+    "translation": "صيغة WAV المجهزة للتصدير",
+    "issue": "Nombra formato WAV preparado para exportar, no la acción exportar.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "لا، متصفحك يفكّر ويُعالج الصوت المُختار محليّاً. UsefulVerse لا يستقبل التسجيل.",
+    "issue": "«يفكّر» significa piensa; no decodifica.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "لا. هذا التحكم الخفيف في النغمة يغير معدل التشغيل، لذا فإن النغمة الأدنى تلعب ببطء والنغمة الأعلى تلعب بسرعة أكبر.",
+    "issue": "تلعب para audio es un calco de jugar; debe hablar de reproducción.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.loaded",
+    "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+    "translation": "تم فك تشفير الصوت محليا، المدة: 00000000 ثانية.",
+    "issue": "Pierde {duration} y genera ceros.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.preview",
+    "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+    "translation": "أثر الاستعراض",
+    "issue": "«أثر الاستعراض» nombra un efecto de revisión; no reproducir audio.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.privacy",
+    "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+    "translation": "يبقى الصوت في هذا المتصفح. لا يتم تحميله أو حفظه بواسطة UsefulVerse.",
+    "issue": "تحميل es ambiguo con descargar/cargar; la ausencia de subida no queda clara.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.tooLarge",
+    "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+    "translation": "اختار ملفاً صوتياً لا يتجاوز حجمه 25 MB.",
+    "issue": "اختار es pasado, no el imperativo اختر.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.tooLong",
+    "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+    "translation": "تدعم هذه الأداة مقاطع فيديو تصل إلى 30 ثانية. قم بتقصير الملف وحاول مرة أخرى.",
+    "issue": "Inventa vídeo para una herramienta de audio.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "hi",
+    "key": "dxf-viewer.faq.2.a",
+    "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+    "translation": "सिर्फ जब DXF मिलीमीटर्स घोषित करता है. अन्यथा प्रदर्शक घोषित इकाई या लेबल माप को ड्राइंग इकाई के रूप में उपयोग करता है.",
+    "issue": "Confunde etiquetar las medidas con usar una «medición de etiqueta»; estructura defectuosa.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "hi",
+    "key": "dxf-viewer.fields.binary",
+    "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+    "translation": "द्विचर DXF समर्थित नहीं है. ड्राइंग को ASCII DXF के रूप में सहेजें या निर्यात करें.",
+    "issue": "«द्विचर» alude a dos variables, no al formato binario.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "hi",
+    "key": "dxf-viewer.fields.exportPng",
+    "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+    "translation": "पीएनजी डाउनलोड करें",
+    "issue": "PNG queda transliterado como पीएनजी; semánticamente reconocible, pero incumple conservación literal del formato.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "hi",
+    "key": "dxf-viewer.fields.exportSvg",
+    "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+    "translation": "डाउनलोड",
+    "issue": "Solo dice descargar; desaparece SVG.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "hi",
+    "key": "dxf-viewer.fields.unsupported",
+    "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+    "translation": "असमर्थित फ़ाइल. ASCII.dxf फ़ाइल चुनें.",
+    "issue": "Espacio perdido entre ASCII y .dxf.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "hi",
+    "key": "shikaku.fields.check",
+    "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+    "translation": "जाँच पहेली",
+    "issue": "Orden incorrecto en «जाँच पहेली»; no expresa de forma natural comprobar.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "hi",
+    "key": "shikaku.fields.clear",
+    "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+    "translation": "चतुर्भुज साफ करें",
+    "issue": "Cambia rectángulos por cuadriláteros; limpiar no precisa eliminar.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "hi",
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "translation": "नहीं. हर आयत में एक संख्या संकेत होना चाहिये.",
+    "issue": "Omite la condición explícita exactamente una pista.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "hi",
+    "key": "shikaku.fields.newPuzzle",
+    "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+    "translation": "नया पहेली",
+    "issue": "Concordancia incorrecta: नया पहेली en vez de नई पहेली.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "hi",
+    "key": "shikaku.fields.undo",
+    "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+    "translation": "पिछला आयत पहले जैसा करें",
+    "issue": "«hacer el anterior como antes» es una instrucción poco precisa para deshacer.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "hi",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "ऑडियो साफ करें",
+    "issue": "«ऑडियो साफ करें» puede indicar limpiar audio, no eliminar el clip cargado.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "hi",
+    "key": "voice-changer.fields.export",
+    "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+    "translation": "प्रोसेस्ड डबल्यूएवी निर्यात करें",
+    "issue": "WAV queda transliterado; el sentido se reconoce, pero no conserva el token técnico literal.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "hi",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "नहीं. आपका ब्राउज़र चयनित ऑडियो को स्थानीय रूप से डिकोड और प्रक्रिया करता है. UsefulVerse रिकॉर्डिंग प्राप्त नहीं करता है.",
+    "issue": "Construcción poco natural para decodificar y procesar.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "hi",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "नहीं. यह हल्का पिच नियंत्रण प्लेबैक दर को बदलता है, इसलिए एक कम पिच धीमी गति से बजाया जाता है और एक उच्च पिच तेज गति से बजाया जाता है.",
+    "issue": "Calco y concordancia poco naturales al describir el control de tono.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "hi",
+    "key": "voice-changer.fields.preview",
+    "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+    "translation": "पूर्वावलोकन प्रभाव",
+    "issue": "«पूर्वावलोकन प्रभाव» es efecto de vista previa; no la acción de reproducirlo.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "hi",
+    "key": "voice-changer.fields.tooLarge",
+    "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+    "translation": "कृपया एक ऑडियो फ़ाइल चुनें जो 25 MB से बड़ा नहीं है.",
+    "issue": "Concordancia incorrecta de बड़ा con फ़ाइल.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ja",
+    "key": "dxf-viewer.faq.2.a",
+    "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+    "translation": "DXF がミリメートルを宣言した場合のみ。そうでなければ、ビューアは宣言された単位を使用するか、測定値を描画単位としてラベル付けします。",
+    "issue": "«宣言» y «描画単位としてラベル付け» son calcos técnicos poco naturales.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ja",
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "translation": "フィット図法",
+    "issue": "«フィット図法» no es ajustar el dibujo a la vista.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ja",
+    "key": "shikaku.fields.check",
+    "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+    "translation": "チェックパズル",
+    "issue": "«チェックパズル» invierte la construcción; debe expresar comprobar el puzzle.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ja",
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "translation": "いや、長方形には数字のヒントが一つしか入っていない。",
+    "issue": "Afirma lo que contiene el rectángulo en vez de expresar claramente la regla obligatoria; «いや» es brusco.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ja",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "クリア・オーディオ",
+    "issue": "«クリア・オーディオ» es un sintagma nominal, no eliminar audio.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ja",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "この軽量なピッチコントロールは再生速度を変えます。低いピッチは遅く、高いピッチは速く再生します。",
+    "issue": "Omite el no inicial explícito; conserva la explicación de velocidad.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ja",
+    "key": "voice-changer.fields.loaded",
+    "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+    "translation": "オーディオがローカルで復号されました。持続時間: {duration} 秒。",
+    "issue": "«復号» y «持続時間» son menos naturales aquí que decodificar/duración en interfaz de audio.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ja",
+    "key": "voice-changer.fields.preview",
+    "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+    "translation": "プレビュー効果",
+    "issue": "«プレビュー効果» nombra un efecto; no indica reproducirlo.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ja",
+    "key": "voice-changer.fields.privacy",
+    "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+    "translation": "オーディオはこのブラウザに保存されます。UsefulVerse はアップロードも保存もしません。",
+    "issue": "Añade guardado en el navegador y hace a UsefulVerse sujeto de subir/guardar; cambia la promesa de privacidad.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "ja",
+    "key": "voice-changer.fields.tooLong",
+    "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+    "translation": "このツールは 30 秒までのクリップをサポートします。 ファイルを削除してやり直してください。",
+    "issue": "Traduce recortar como «削除» (borrar el archivo).",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "translation": "Desenho de ajuste",
+    "issue": "«Desenho de ajuste» nombra un dibujo de ajuste; no ajusta la vista.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "dxf-viewer.fields.unsupported",
+    "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+    "translation": "Arquivo não suportado. Escolha um arquivo.dxf ASCII.",
+    "issue": "La extensión sobrevive pero queda pegada a «arquivo.dxf». ",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "shikaku.fields.clear",
+    "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+    "translation": "Retângulos claros",
+    "issue": "«Retângulos claros» describe rectángulos claros, no los borra.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "translation": "Cada retângulo deve conter exatamente uma pista numérica.",
+    "issue": "Omite la respuesta negativa inicial explícita; conserva exactamente una pista.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "Esse controle de pitch leve altera a taxa de reprodução, de modo que um pitch mais baixo é reproduzido mais devagar e um pitch mais alto é reproduzido mais rápido.",
+    "issue": "Omite la respuesta negativa inicial; «pitch leve» es un calco poco natural.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "voice-changer.fields.preview",
+    "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+    "translation": "Efeito de visualização",
+    "issue": "«Efeito de visualização» nombra un efecto visual, no escuchar la vista previa.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "voice-changer.fields.privacy",
+    "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+    "translation": "O áudio permanece neste navegador e não é carregado ou salvo pelo UsefulVerse.",
+    "issue": "«carregado» es ambiguo entre cargar y subir; no expresa claramente ausencia de subida.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "voice-changer.fields.stop",
+    "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+    "translation": "Parar a visualização",
+    "issue": "«Parar a visualização» no describe claramente detener audio.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "voice-changer.fields.tooLong",
+    "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+    "translation": "Esta ferramenta suporta clips de até 30 segundos. Recorte o ficheiro e tente novamente.",
+    "issue": "«ficheiro» y «clips» no son la terminología brasileña archivo/clipes.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
   }
 ]

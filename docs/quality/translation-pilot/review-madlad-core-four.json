@@ -1,0 +1,2893 @@
+{
+  "schema_version": 1,
+  "expected_rows": 160,
+  "reviewer": "Codex (agente, sin API de pago)",
+  "reviewed_at_utc": "2026-10-20T14:18:04.678483+00:00",
+  "native_review": false,
+  "rubric": "REVISION-FINAL §2: significado, cifras/negaciones y naturalidad, 0–3.",
+  "scope": "40 referencias MADLAD baseline en pt-BR/ja/hi/ar, original, traducción y vuelta leídos. Una vuelta equivocada no invalida por sí sola una ida correcta.",
+  "decision": "rejected-pending-context-corrections",
+  "approved_locales": [],
+  "rows": [
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "dxf-viewer.faq.0.a",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "translation_hash": "75eca2b2a6841c2cf9425781c02597c24af67cd054c2804ce5981d605782d576",
+      "record_ids": [
+        "61915f989b5908a52e39c9350c2464a7818ffb14df876a03f42ef2f7dbe0fad7"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Usa descomponer en lugar de decodificar y un orden poco natural para DXF binario."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "dxf-viewer.faq.2.a",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "translation_hash": "2514bd07fec0601ea29a52c36c25a1c739c5c0890bc0f1bbb9b56270a7f10cf4",
+      "record_ids": [
+        "77523e696bd997ddf2f862da2c21821af7482fc2c231888e8fc8af26fabca327"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Cambia visor por navegador."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.binary",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "translation_hash": "24d18911b417f7f303927048a95de0faa67844e50f2ff9151c933ba04878c888",
+      "record_ids": [
+        "c77f92fa6431aadda911faea4c6363e7efad157005367a4424a319c576581940"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.cancel",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "translation_hash": "6344e4290d60c3063c9c6dab581386234d3ba8738314721c5119620a72b4b398",
+      "record_ids": [
+        "11c4723498fb999605bcb1a382b4ed76d7d07aa463a10a19883097886a65a203"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.exportPng",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "translation_hash": "fe083cf3ce23fad5208af4542fc597995dd585a8d82dacb69e256258fbd35e74",
+      "record_ids": [
+        "7f3a9994ef16558d2e09a11c0948a829cd2afe70ff004325d856d3879ca6367e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.exportSvg",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "translation_hash": "a33659584061cb43985955466871b104c092f03d3749fcc635c09d372b6887bb",
+      "record_ids": [
+        "31e915b19e41c384b8bfc844059c663bfac7c879219f16b6b0df4789f2c888ce"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "translation_hash": "ef5ce19ebf9a86d689279b82ac4d74824072ee6527e60450da163446150eeac9",
+      "record_ids": [
+        "3133dd09181dbaed2b7aebc155e4fcb8a073fd572b3439dec88953a613499d4b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "translation_hash": "dcbc7be2b5598d793e8bda9a568e99993c1a311285560b2fe431ed4fca4df61e",
+      "record_ids": [
+        "47d98d8c59dbd17833bd62eac41fc9d8135f887ec99b533de62d8494357ebc1c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.measurement",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "translation_hash": "8fe31c66e68cb920b8028d2f1fdcd9ad25a447a496674e0025ca782627e8747c",
+      "record_ids": [
+        "c7915f83ebb7dc945d068a5d2e092de0b6c8baa9f4a06ed466d181b85039d8a9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "translation_hash": "06e64c06286d1791cfc099598a08f689418a833a11471931f81f50d4cbecbc3a",
+      "record_ids": [
+        "f910894d043b03ba86d29aa74d06b57e40cad106538c3afb015be36b0c5c9755"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«الرسم الملائم» describe un dibujo adecuado; no ajustar la vista."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.unsupported",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "translation_hash": "055ee0e7a51b72a2a6ab29b657f8c737cabfee04e8d35dea8f8de857d6b2951d",
+      "record_ids": [
+        "d32a135bb53c9f8cd87717742d7822e7c32d993d5ba9b6132a3fe693a6b327f5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "اختار es pasado, no el imperativo اختر; también pega ASCII.dxf."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "translation_hash": "32747990e2ae2e496fd4c12d67bb38b088ba3a62a79a5a019e160db06fd134a6",
+      "record_ids": [
+        "d3be67a07829cef3178d139f3f34db9e45a6ae923f74083aab5bf160175d86fa"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "translation_hash": "de8e27e8caae4268647a1b9f074f4d6a72e2b46d8881c1a2198f4b06036252b3",
+      "record_ids": [
+        "9bba3af5e0f0da9ff7504e6c25e48299bb527684dfc2fb06e67c0f7713f38198"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«تضييق» significa estrechar, no alejar el zoom."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "shikaku.example",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "translation_hash": "85de8a02132d2e9a54a98156470bbf72490a86cc2488e68a3cdc834698c40b2d",
+      "record_ids": [
+        "6e7b071c67c6660080c0ab64c9583e655c2e23435047eb746c8cfce1ef857688"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "«الدالة» significa función; no la pista marcada 6."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "shikaku.fields.check",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "translation_hash": "ad86d275a9108a80439d17ff094b515d9575f146c916e2a15a847c5dd77263d8",
+      "record_ids": [
+        "cc6e7fface83fac74b11e2482db14500ffb7319962e1e3828cdb7eb3581c1ecd"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«ألغاز التحقق» significa puzzles de comprobación, no comprobar el puzzle."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "53ff013b2be914b7772334063be7472a2ee49be049fc794b65ca16788c332796",
+      "record_ids": [
+        "ffd333f39bc2f047df8d36432b39f1fa43325b93dce58e4e3ed4dcd51693378f"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "«مستطيلات واضحة» describe rectángulos claros; no borrarlos."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "shikaku.fields.daily",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "translation_hash": "b8326c1766c992203ea22ecbe49c64b4cd606d6c3668a8ac843b6c58743daa1f",
+      "record_ids": [
+        "66c846c03036af48caf1ef47ba59fbefd8073bd72ddf3e14400a1c6f70874e85"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "203c377cdbe5827bf65add5c3406621cf8a85dc5fcd9577f3036616e708ae0b0",
+      "record_ids": [
+        "90d4eebb47ffd5c2c064851835dba69662ced53cbb9ba358b9798ef038cfa25e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "2d126db28da2b13750465599a66051450045067e788392385df481d1dde8914c",
+      "record_ids": [
+        "c65a2b4df1fbffac736ecc0f68858121221e2c7fcb4c0b135c8e73f2d33f2c1b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "802db6db1fd9d254831a4c321f1d986f45868dcdf136e065b60282939ac53689",
+      "record_ids": [
+        "de14b030822945e3fcb6d25c7b90b6b33d61586fd6340d9c7601950f5befae79"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "إشارة es señal, menos preciso que una pista de juego."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "shikaku.fields.newPuzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "translation_hash": "3548e7a20be6192d15d8f2abc9ecc14cf3625ea4754ec28f93ffcf79eadcb669",
+      "record_ids": [
+        "e1429fae61c13c8aa89bfd6c75a99085bc1646df8c0576d6350c0017b0d91fa9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "fca33febc479f21c89bd0b4114bbbc2bc8778f10ce691fe7a2919ee4cafd0b5a",
+      "record_ids": [
+        "992b5090569710d457a7addc992ccba9958f98f70659b38481148cdb6d3b4d83"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "shikaku.fields.reveal",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "translation_hash": "ebeb61159aacd1f0bef4457d78693331265465ef07afff83362e975c8e02a3f1",
+      "record_ids": [
+        "30ccf5f35955a9fa1da3def7865e4e1de0409645d0ae22b3642f1b42fb7f7b24"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "790467b5017ba1e59f81af5ddc9c9967abf18ccaefebeefbc637f599e723c915",
+      "record_ids": [
+        "48d3d3b9fb609f7f046422fa775867e74a2e5eaca861eb733be9769d8795da0a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "6fc31aedf9df27a704e5422346b1bdca219763af8c5a893f4c02753ed28ef1ff",
+      "record_ids": [
+        "43c4fd456859eba41db845d280e2e8a4d7353540c15e977ab83ff4aff56e77cc"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "اختار es pasado, no el imperativo requerido."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "e3942e3e08b7f68a1e59d4a9a5cf3a54a465af83a4e9b9f538ceac1b3ca30c9a",
+      "record_ids": [
+        "3396f01f45da4459dc16399a1f180bfc964468dde69ecf76bc498967788fef42"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.chooseFile",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "translation_hash": "63f58bf427f9fb1e338c69d6e1108ddd9471e893628ac4ebb2f135ef6c2b4aff",
+      "record_ids": [
+        "3b14f72eea07c4bf63f7bac640bd5dbda4a3572b1be484bd519853ad656760eb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.chooseFirst",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "translation_hash": "d0ebc4a03cce6f02e23e6a2fbce80b3a3d554390a4651b8cf9c9f0783419190f",
+      "record_ids": [
+        "fe5f8bf60d3d51b4ee4191c69b22140471e546917e313ed44160bbf35a21a2ec"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "b14d8df65653d41c31970a37754290532d3d45ff402f5c71b50db01538460430",
+      "record_ids": [
+        "2f3244f6f4ea6a328bcd04e53269ba1ac15f310c2150e2fe7254180f31480511"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "«صوت واضح» describe sonido claro, no eliminar audio."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.decodeFailed",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "translation_hash": "a94b880123af55c5727d8d628adc2c0f1b2d6ff452428c7204c7ba202ee5b491",
+      "record_ids": [
+        "c4d50f80e78928eb762558c083e5a8e751347eb1ef3c60825e473cd896e763f3"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "فك تشفير significa descifrar; aquí se necesita decodificar audio."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "9d8e08747cacf5b559f65016f687d16d7339a84b44b69b5d5cad768e24fea34e",
+      "record_ids": [
+        "7668a232103b6a02508ab85017191396d84e1bf0bbabfb11d205ffbf5968098d"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Nombra formato WAV preparado para exportar, no la acción exportar."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "fe242fb443fabffb825f05b149c6930f6c3de67233e4592c29fc91bc5a91df7a",
+      "record_ids": [
+        "952fc67f8db3613d7bcfd60075097603d56a49ef250646ca790679a2a40f68a1"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«يفكّر» significa piensa; no decodifica."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.faq2a",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "translation_hash": "51ce8da44b9185c954346a010db577fcc1ad1e2809b4b57a815a72888e8a1d18",
+      "record_ids": [
+        "19895b96f8258b7ce5e668ab29242dbd83157b27d976220ab1f6bcabd1c13735"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "تلعب para audio es un calco de jugar; debe hablar de reproducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "9455fffc0992b0bc76a64271582b4fdaaa4e4edb4ecf8a01fb1669bcc235da5c",
+      "record_ids": [
+        "9d8ea0f00a7488d0472ff52409a9aed286cbe0f29cfef8ebb390bc2e7b095754"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "1402689b71b94f13cadfd33b79eb74dfe50eba88b78417df3052108626a78118",
+      "record_ids": [
+        "8fe2b657b495a1f1c976aeceb84c98f7f81e1aa1dd91ad656498c0ec66fe19fe"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 0,
+        "naturalness": 2
+      },
+      "notes": [
+        "Pierde {duration} y genera ceros."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "c5286b64d6bf6664ed4bf65a5b25a36cda2944b6caa0460a8e56fa741081e56e",
+      "record_ids": [
+        "333671efa6a3e7af0b110ab4ae9bc9c520d64a8177fff2f4e377f0531ee329cd"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«أثر الاستعراض» nombra un efecto de revisión; no reproducir audio."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.privacy",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "translation_hash": "363ed164a879e76fc9b79ea584f87154cd26c1351054de288098a2212a970114",
+      "record_ids": [
+        "ce2b9dbaf1dd16936b8b06b5c24f76fbfe6f58f9f48a16ee576d9c3b225a6288"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "تحميل es ambiguo con descargar/cargar; la ausencia de subida no queda clara."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "3c2d356d00b6e1cac553e0edfd004fee71ef56003e677d7b544dc2f26b92ff28",
+      "record_ids": [
+        "c04014b89d25a1dd31f9b9e36e19199ec1d8f7c9aaf56ac826146986a7d1edad"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "46495c582b63e1b4c590b2dbfecd70bb4e37a51793c901126db8fe8963478681",
+      "record_ids": [
+        "5905463a29c1e95bd3c7fbcdfac0857d06273293aaa006ebe8f6d30fe7a90799"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "اختار es pasado, no el imperativo اختر."
+      ]
+    },
+    {
+      "locale": "ar",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "5935b122f6c84eff260078ed3b607d61b6d03825684185d6ef00b800855ca5a9",
+      "record_ids": [
+        "20cec27e2ab0b5d86a90fbf2e2a2d9c6f801a14468b72b8074daa847608383ff"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Inventa vídeo para una herramienta de audio."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "dxf-viewer.faq.0.a",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "translation_hash": "ead1af1ce2a1b028221dec6930be65d8cca23cc08a2454511b9c1398d94ab9d2",
+      "record_ids": [
+        "8264b19e975fe371a474edacf3d5bef0beaea11b961ca1304253e4bfb6f058ab"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "dxf-viewer.faq.2.a",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "translation_hash": "c2d48ad88227b7afc4790e62d844d010e4d39e3d15dfd3f8e6a7479803012ec2",
+      "record_ids": [
+        "fe1058c0374cf34548a1727c903389eb0be14ecd1bf2654e9e85e44d85bacd10"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Confunde etiquetar las medidas con usar una «medición de etiqueta»; estructura defectuosa."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.binary",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "translation_hash": "0c0deeb61e60e7f3c673ef66198470003fa52d6a6758fc8f7da5e11eca6ecdd6",
+      "record_ids": [
+        "681163e9d183d9e03f73258fb984b5a6921b240cab78199142cae342e268fa0c"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«द्विचर» alude a dos variables, no al formato binario."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.cancel",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "translation_hash": "5a7d89eb283bba822e3e2101da236ba797f0da36cec1839e6482f80920f453b4",
+      "record_ids": [
+        "b0f4117492fdc56c13a4fb21c08d1382ecfa7e97b597c72a77f902ff2938ee15"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.exportPng",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "translation_hash": "5d2ee242ed9946ded61948acc7f95f8afc7ebbe5e12513244c79821ada8205db",
+      "record_ids": [
+        "c5303aaba351d94829cf3131475e7dc249e71ec1d4304bb0d15c1171f65249de"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "PNG queda transliterado como पीएनजी; semánticamente reconocible, pero incumple conservación literal del formato."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.exportSvg",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "translation_hash": "566035c0236a60ab3f0e4dc4f0d40ce9bb9b9af41cb3b68532df41a43870b361",
+      "record_ids": [
+        "c38714c5940558b95775381abff2170242c765347435cda1d93867b63a74db65"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Solo dice descargar; desaparece SVG."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "translation_hash": "2c20ccb600499e09276f5d76814070da4dfe2aacfbd99b776b08a971c47d1630",
+      "record_ids": [
+        "721088c6cb24c583323362cc572565e988993f6e6f4b5613b5d4e0d1e7568549"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "translation_hash": "323ea33aafc97c61361344b973ed9400ac0e901ec6a5dff9730e583776b2d486",
+      "record_ids": [
+        "cdaf6892b040d3e871ff5daff1325c50b7daa8b98a3c086b99dc34997cb75f65"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.measurement",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "translation_hash": "3615400a670453e73ccd2389295c4279c09ae0826e1495723727951f290a5398",
+      "record_ids": [
+        "d8cf025a440467a759aa615fd500d79ef911272fd16cd608a5f2d40ff90ed573"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "translation_hash": "aad341dc39ae75304889b27342163e1e70fa32a127ded1d3406ca7111e4b8b33",
+      "record_ids": [
+        "d544cdc39d5eaabadcba1611e6413530f57565ba32b7b91c2bc85f8930185b2f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.unsupported",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "translation_hash": "6b426e859f09f851a5f68d89d4c24ec6cd5b7f84fd945fe93b345d2ade71b357",
+      "record_ids": [
+        "5f3abd6057024b83b55cabce9b5adfbe5d74eb58489e1c6e2962355a3b77db50"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Espacio perdido entre ASCII y .dxf."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "translation_hash": "9c10d66c6032815212a5d0b16ac91c8dbdc2caf352bde2b97ed5f4a7635eda36",
+      "record_ids": [
+        "45c2e4556326a2a55cc3c11632f4aa28f12bbe10c8905878960eb1baf0b5a8aa"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "translation_hash": "525fb313252d2483aae9d8f944ae8ae8c658bdf5ea596c695c679ccc41b65335",
+      "record_ids": [
+        "e99523bbfd3c2f5abc714437dfa68061939e4a38080cd476a6606ba40e0f365a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "shikaku.example",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "translation_hash": "8684820377ce3e0cf836d9db160b2f9042620e0c76799cfd0e0a899c2f4d2e7a",
+      "record_ids": [
+        "4f2cf49700d440070dd8c8d8912db96b9ba9889e9842bb4dfd81a70437732e02"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "shikaku.fields.check",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "translation_hash": "a099775daa15a8f6effa2713ead133b426212c2c6a8f4067a40083a1e6418466",
+      "record_ids": [
+        "3b5f866a6af4d8e54b884e7d8418784db2eb846a70b197a523b0b59e415f9c0c"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Orden incorrecto en «जाँच पहेली»; no expresa de forma natural comprobar."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "7ba916f92816c42a7f29d6095ed49877659fe818228056690ecab32dd0c08257",
+      "record_ids": [
+        "db54a0ba1bed1139a7361dbdd2af46e208c6711c2c980cf2677c1a02fc72679c"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Cambia rectángulos por cuadriláteros; limpiar no precisa eliminar."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "shikaku.fields.daily",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "translation_hash": "82e7d59c76675f62ea35e0666ab4e7e1b0f7e6e74b98c318a66874f9bc5b4728",
+      "record_ids": [
+        "fa06f24c4cd6771dab6015b9cec45aa4642745a70deffa1245bfb4d6de80d122"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "41629f076fe62305945e64ed304305c90103b09bf18df9867343633d75bc1adb",
+      "record_ids": [
+        "1094bddd1e794b5254e90301b46a12d6258035d5aec2824c5b884d89aaa4e060"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "7472a35a6239e83c31175f805d9eb15765bc1b1847257c39926cc7adad9634cc",
+      "record_ids": [
+        "a3b0cd8260f049477c0941407f549f6f04ab94fb0f96badab91db501f0fae85b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 2,
+        "naturalness": 3
+      },
+      "notes": [
+        "Omite la condición explícita exactamente una pista."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "305e684668fe9b516ef731475c53898d3f77852d8ad295ebbbbe5cff497df3eb",
+      "record_ids": [
+        "e8c6aaffa01ff7c7796a32dc07d365b0b9753d5cc769aa8d9bd857b812896a33"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "shikaku.fields.newPuzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "translation_hash": "4be62edd4fbf0358c21c17c53992e419d19e776ce79c483f66c16be4f9318394",
+      "record_ids": [
+        "8f7107994278f6ab3ab685ebe8870f9c2fcfbb6c405c7b101a22ee23d7094083"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Concordancia incorrecta: नया पहेली en vez de नई पहेली."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "5318c134abaf15c36884839feeadb708afda0cc1d496bae4aa9bd1db4c6aba06",
+      "record_ids": [
+        "1ded2b9a9bff3d37bf834bbf301c08aef0a8c634b51143a67e91e8fc56ec8408"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "shikaku.fields.reveal",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "translation_hash": "09e12aca36f88d479756fe5b97b883e4a5ecdda2caefb682c21005b04a2506f2",
+      "record_ids": [
+        "f12a3c26fbc15da0ce843206d9c0a848c7cf51e933ec765cc466fc2b90dbb107"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "f96f5c2c01550586abdc62792ee8f58c72dec3d3a97af50a6c64e18240442ab4",
+      "record_ids": [
+        "c3bdf76bd20d173602d7743eab4aef76717dc99b63931a1531478b6b736365f4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "b069c11556fec8b1493cedb51b3f816001d34b2e7abf0d8e79b1b56f4cc9c47d",
+      "record_ids": [
+        "6c5d7a686c12f4c5c7e8477832289f16d171289df416f89cdcd97b93bc0de229"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "f9cc3259af0e84b0cc91ab8723670865d08df048c2f345bbdb5937403d847832",
+      "record_ids": [
+        "13327e06152c4d0e02ae1aacab19051d94880278e7c77b6dfffa4350dbba50b7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«hacer el anterior como antes» es una instrucción poco precisa para deshacer."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.chooseFile",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "translation_hash": "3119f1a33e47349e39233b0c3cad815fdd10542e24cdb94ce0b4d4c18f345dfb",
+      "record_ids": [
+        "60efec73e9981f4e711418186cb2ff55669d3b26ab1ad3a86370d841500ded75"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.chooseFirst",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "translation_hash": "88c97429a170ac75ad1ee79d551ba120f19e96abbd97eabdbeda920f3d8e01b7",
+      "record_ids": [
+        "7c3b01d5d846f15d59c3e6385346b0626d8b474dba38d54b4eb78e97f319c3c5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "8fe5b0369c12efc181d067f0303f27b16b1155c87b93b8d6a78f6c4a6a2e1d57",
+      "record_ids": [
+        "abd42c9bb380ca9e4de7870452d72bf8ba6fbd172b0fb6d8a1105dcee9a2287b"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "«ऑडियो साफ करें» puede indicar limpiar audio, no eliminar el clip cargado."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.decodeFailed",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "translation_hash": "1f14f3334ccc5586c2cbcc0a79b2531cf7e69ac0f31db0be480713229ccd0140",
+      "record_ids": [
+        "59dab101b597bac6bb8bb1ee28a7586227f63c384646e41b5f767162366d0ee1"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "2d28f1e842a0828851b1260f13d34d141efab5d95590bc80898df9cf1aa19948",
+      "record_ids": [
+        "4c60f959064613c0e00a0b788dedee3c5e373c6f7a13cb47dd434d0713f0199b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "WAV queda transliterado; el sentido se reconoce, pero no conserva el token técnico literal."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "3fba5b72236041dc95be0e03cbd41b71fecb1d7751c64e895204df758a57ab16",
+      "record_ids": [
+        "2367a49fda5a767f8ac3a1d0e34a05b77e49a5dc6a145efc3b7f363f7a670ee9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Construcción poco natural para decodificar y procesar."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.faq2a",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "translation_hash": "fe8cce36a9151a6e1a855644c71fbc76d267e8efa389a628726f9aad844a10f2",
+      "record_ids": [
+        "23121e59151fccc56c0bded04cd90438138cf73a3bc31e39cb61587d85aa96cf"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Calco y concordancia poco naturales al describir el control de tono."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "7fabd5ccf3d15d47c31a101054766c5463a24c15725ae3f3f64c27d3d8f02b37",
+      "record_ids": [
+        "e2606508c4d3535f13848923fcbf87ed860c4e7f97bdae47834ffc7d7d2dfa66"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "6a42db5eafbdc359b2a81e42de851653f071ac0b432fcabcc4580bfe27c7c5e5",
+      "record_ids": [
+        "cc20a0eff69e395548f1dbb7fda7400ff5ba974709eedff333834805dec87adb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "79e216a5e21b5d3f52280c80b485054215329bb84f95ae1d2cd714d3a1aaa665",
+      "record_ids": [
+        "b13085d3378388f5c8dc924592c078962b526e60f2bedd902b55fd923db8939a"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«पूर्वावलोकन प्रभाव» es efecto de vista previa; no la acción de reproducirlo."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.privacy",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "translation_hash": "b80ffd49a5e985a9f249eed464febdeabe5fabb9020d20389f39678d63a135f7",
+      "record_ids": [
+        "328ee8118433393e6cf0e0182f4e635789a6dc12bf1d07af92c6f37c08c838ef"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "709a05e86c8c650702eecacb441ba315e2a10851ada6b3289ca0d3bed2f5affb",
+      "record_ids": [
+        "a4de8538738c6f545c00e09c7e517dc69f1fe856aea98e23479d657b5f2d11d6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "10b0c65367f567ad9c7fa4c820483f747e6096a71e657e3348a84568e32249fd",
+      "record_ids": [
+        "5fdd7385abd02214cec33097d3e8033628a9b6b07843d2efc0080ce17a51a574"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Concordancia incorrecta de बड़ा con फ़ाइल."
+      ]
+    },
+    {
+      "locale": "hi",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "b6d170c7e5a30c9a35ff8e86b4d7f5967e0ed4d9dfa9de5cac9ef7fc7faa3c8b",
+      "record_ids": [
+        "090cbd8a1ca1d6441b6024cbf3031ec1df86cd5df91fddedc16a3a1f0fd84b7a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "dxf-viewer.faq.0.a",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "translation_hash": "bfb86ff5fd1e76064de3cceca10a48aafc21064269c34b0e27b6842426914b41",
+      "record_ids": [
+        "90e90fb3c6216f035ac1e644edd8f7fc3e3eed84f46f6e69c6e481412ce3ec55"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "dxf-viewer.faq.2.a",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "translation_hash": "273b147a3bbb20d210a39d95fc1a97a7adf7850f5c3c20c4ca309bdcf79a4ffa",
+      "record_ids": [
+        "8d195df999d0eb9e9fe20cb80b1abfe741a9a423c4e17a2f533c931179532ffc"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«宣言» y «描画単位としてラベル付け» son calcos técnicos poco naturales."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.binary",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "translation_hash": "0e705bee3de171ad76ea9d648977c2a7e747eef66323817c8298e4ad560d5269",
+      "record_ids": [
+        "ebc030e810c979ab72ca4eb478c7d355ba37314b771d7bdfc0e43bfe13752848"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.cancel",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "translation_hash": "08df11b686d80043463d8c0290341c4f1ea62098cdf9a6e56e37eed754a00887",
+      "record_ids": [
+        "e691e1784be8ce1f1e1faf30d1be76ddbed3a615c33c7f969bbe8034f5052f49"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.exportPng",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "translation_hash": "06ec9f7c1921340a5f190460c382c091e11bb512a4acbe96529b3ac271c41d31",
+      "record_ids": [
+        "5a13b98ee037692df8fada561f4a547cf11798fa7a267d42cafa933ffac2f770"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.exportSvg",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "translation_hash": "d46024e1d8918559cee398cc15a4712d9b756b81b9668007312795757053b346",
+      "record_ids": [
+        "9e12bcc77a2cbd28fc15a2b4057d94b62642aa416d63216d11adb218d891b947"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "translation_hash": "125b728e7acf349cfe7e6cf70d076c53a533dc80be93511d29bd097ee02c33b8",
+      "record_ids": [
+        "18c9a419ea138293a85c88c668313b0ca6ab4267def74640e5f5c934b2f3729b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "translation_hash": "41e63fb48fe3adc1e94786f6be67f708bcd4deffdb7c42bde89257108d5c453a",
+      "record_ids": [
+        "94690294bd5b2773c23a8cc114f989b10b548bbeefbac6b1af9191cb8888a085"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.measurement",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "translation_hash": "def15b68ef0406ac168a7e72df2d5d0148e2b7d0b9001503d1228e15cd1ec76f",
+      "record_ids": [
+        "5a85433ba13282b3b33d53e2f4c04798c88d5260a34523a59c990ff73cb40dce"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "translation_hash": "f8174046bcb10ffd6204461c952ab4004b917312eb2d6ebf54a8c249c1db2bf6",
+      "record_ids": [
+        "b6cd9ae30c9858c5071e36729032d9f9c429eab222fe3e61f3aa937e5e3fdd4a"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«フィット図法» no es ajustar el dibujo a la vista."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.unsupported",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "translation_hash": "11e0c9d2523d0cc5117ab535d1f315aa5bbdea1c83a4b1465c60fa8cb21affab",
+      "record_ids": [
+        "cfbcb93205d45a1af16317f26554453b34860ddafda1a1d6a0a14742fab78d56"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "translation_hash": "da39c794fbcebb1ff92c43f239ad9b07fd433ac74a1ea65afc596322929e461d",
+      "record_ids": [
+        "8145360225b7843601902018769001dd3082a9ce3e9a29925a85c0b5f78333b3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "translation_hash": "5c30ac21396a014dff9f2920f8a983c872cdfda8085a3cb6b9d4662c70dbc9ce",
+      "record_ids": [
+        "9916a4d0bf6c47a396113a88122610dc6b141af26eb39e92c2df54efb3970857"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "shikaku.example",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "translation_hash": "09b6e3a296b7c96f9e5d8503eaa85df287e4617f0739cd3c6156fd6aeddfa2f9",
+      "record_ids": [
+        "b3cc44e5029a4397a8ac213736187da1914f60d177c316dd8338c9eef6cb7f22"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "shikaku.fields.check",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "translation_hash": "2d5e4c0d124ae7009e1d763e436aadae1871bebc8df7c0713146bd4332396bb4",
+      "record_ids": [
+        "a66af954be037276642306952c3273587de9864695a58018061a408b683875c3"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "«チェックパズル» invierte la construcción; debe expresar comprobar el puzzle."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "72f16256f23f1a85919d59611dd5b7f3e235e608f0ce766ac089101e5afc491e",
+      "record_ids": [
+        "41d4b72be6493d997cb4eae01c7cb15700d9571191f26a6d656b3a3220e34bfc"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "shikaku.fields.daily",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "translation_hash": "612c143b65f6e6ad5930e4f0a71dc75db998c4c9946e5a50ffcf31f18ce6e0fa",
+      "record_ids": [
+        "a514385947be31909b9a75b699842018f82f84a53beb8d30422d37280f0978cb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "12862d419d4a25b4abd8cb3dd53cfc2cad7323edae335715c4692873080ef37a",
+      "record_ids": [
+        "7a0486ac8bbea95c71245413c6bc447ff9ae5c06d79dd669f007a629ba86648b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "1d50543b5de48bd00c39b58efbd091c75c8b71d6859a24e0523470512a462e48",
+      "record_ids": [
+        "da9fbc010489db759f81b4b16a087e997edfcf4f2bc8267a67984a1e232c4b40"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Afirma lo que contiene el rectángulo en vez de expresar claramente la regla obligatoria; «いや» es brusco."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "aadf0e9efb2cacfd5225631ef2a84988e93a265a6cdec5654323c538570c5544",
+      "record_ids": [
+        "5a1d71c8f84c6b27af801d9a6c163431615519503e3bd5209c84211d423bd28c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "shikaku.fields.newPuzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "translation_hash": "96b292759d1a595db4f9eb5455aa96504239a9f0389bb93fb3036c7f770e4489",
+      "record_ids": [
+        "61d405487ec3ad65a37effe0c3844803d142c9a2bf54cb4beb188383a58a9d95"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "788935e0a2451853f97738acee3a4cd8bdf5c0eb5202d627e5a404a41907f0f2",
+      "record_ids": [
+        "19537b402db3b290aac6711ff3e688f39a6fd327f4766dae725a6376b5dbc8fe"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "shikaku.fields.reveal",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "translation_hash": "4aced32315922d32b2765bfba2aa2c3af583cf8e337b08e3f3f8a05ed731acea",
+      "record_ids": [
+        "4f6bc8f08a2687e4282f9c9fdead9dc95ede0a4bb175b07c89259d99fc10a132"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "574780f9474fe1c449a2714cf8c0b0d74d1ca9f322db3180b7fe087d1317cec9",
+      "record_ids": [
+        "801776373807d0e22cd4ec2c7ee1fcb53b95a8756926e9a3c7cc5acbf77f0ade"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "3ad8720cf63ee89ea2604e804425b127c1aa522df919f26983408a47ab81eebf",
+      "record_ids": [
+        "f93bcc0e624fdf20be2f272329f6e28c9473befe2c4e0589a2f8a027c7fa34ab"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "487f71aae1726717c635dc3ad61ea71053e707ce9fced5e8e4121a5c9dc6f86e",
+      "record_ids": [
+        "c66846cd5bccf908983bf5babeb737dfbaaa0bda5a9cce570dd58946f9b717a0"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.chooseFile",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "translation_hash": "394ad1086bb4f5020029f20bba7be93f742cca0e548e0a53d58cdf1c4a555187",
+      "record_ids": [
+        "e86296c5e89b3e04f5bd9814efdc6660edc1fead96940d9f358ba1be7fd0e1ea"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.chooseFirst",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "translation_hash": "ffd44a6a9c104aa25c31b8856b8d1538b7fc8d6ceed3b16ee6cd5284e95801d8",
+      "record_ids": [
+        "1979503247cb879a4e9ab320a8ba4f246382742f62bcede9506e8f602c848e6b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "5f2cea88596f8e1b90303e2081eb6550303f782b8b338ed942d41f74708c6d38",
+      "record_ids": [
+        "fe22a9b38a09cffab6b4b38b1ab37c8c8e2242ac1a349e43202cf3aef984bfa4"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«クリア・オーディオ» es un sintagma nominal, no eliminar audio."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.decodeFailed",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "translation_hash": "31a264d73a57661045a46d85660a77582ef191a1ed95500459b96e939c85d480",
+      "record_ids": [
+        "3fffc220d130832718283d1af28a998746b76d527c5207a8f0870e5f78bb0663"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "6c84248770f6b189f5f016912055bbf7a2bf684751c76f118d595ea271e74f35",
+      "record_ids": [
+        "0317b5f15e0e95ddf72de408a2a224b9ca3f9722c398a3bcb851e7092aed66ad"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "2fe04bc740044338fdb1a797a1e05004ca665126c0a2175a779538a0b5918aaa",
+      "record_ids": [
+        "82829c663091aebcc5d84ccb0b1fcd294cbad1f452edfe6ee65bb3ae1d1a004d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.faq2a",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "translation_hash": "611497e554862b772bd23eff85a8d0c24e64e3d61349be01769720978805c5a7",
+      "record_ids": [
+        "7cbfe10ec211e616d8b9ac7e4c311761376983178911436b85fb05828d3bfbad"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 2,
+        "naturalness": 3
+      },
+      "notes": [
+        "Omite el no inicial explícito; conserva la explicación de velocidad."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "41d3e3231f373a4e5b1c3c9f00df1721044a453275e4fccd8703b1a9bbf081dd",
+      "record_ids": [
+        "b7db337060e51389999b7a010f73a0fea7b843dc3d0659c37e0235ad905a7b25"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "23755a54c0e4341c2cd9d0171d8b95f84d9b219caeb49846ca29b696840b3334",
+      "record_ids": [
+        "93232c61e70e0c1edb9bfadca50f9e1a9ebcaadbb9c95fbd0511202dcc480466"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«復号» y «持続時間» son menos naturales aquí que decodificar/duración en interfaz de audio."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "675630d07b9cdab34c7faa68d750038ab1fc9d042dfcac0934c6afbfa6085aee",
+      "record_ids": [
+        "028b8ec03544a1c5265db516db5fb64757d0bf293bf301f7e4d685fb05b0fa72"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«プレビュー効果» nombra un efecto; no indica reproducirlo."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.privacy",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "translation_hash": "3f070cca9d53ab1cfeecdaacab66d51041ff6602937e5e9898cec6cadbe95359",
+      "record_ids": [
+        "8e4bff3d439d57997e94eff65c1c5d0115d215012d9445f7e131ec0939b76a66"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Añade guardado en el navegador y hace a UsefulVerse sujeto de subir/guardar; cambia la promesa de privacidad."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "cf7f3d98105d5bd0764ed7051b404e491895169007c122a0f0572f19181c4e09",
+      "record_ids": [
+        "b45baae603ed5ce9bb75a175703371e8b98d60aae61c5d8895da64343785d992"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "1c6ce5a4ba173c8e6b0cfdd96f4d0ec4e02d1cc333ae038611678283e9d16248",
+      "record_ids": [
+        "f472322f8db80287e5da90809c748c3284a2ba036176023fc9b5acbe7da51ca1"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "ja",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "1f65000fe236f005eddb7ded7ceb20bdd2bec8a06dcb897a5934af3e435e2d71",
+      "record_ids": [
+        "dda49ec31dc70f7edc9f88199364ed8a9729fd12fd7b90dc6fe8e025b63907db"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Traduce recortar como «削除» (borrar el archivo)."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "dxf-viewer.faq.0.a",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "translation_hash": "8d388c826e45e4315e80dff8e327ae58aa5bcabb5ffda9c249f9eb329dd14cd9",
+      "record_ids": [
+        "28082b1866f1b09ab71d5fa685b6e46499564ab175ecf1cfa7ac9973fca74902"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "dxf-viewer.faq.2.a",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "translation_hash": "149aafe323924ac3df8ac9e56e707fccb28f69c231d7b36a0585f8cef519fb1d",
+      "record_ids": [
+        "9c97565be20a4b621aa977081a9d6945d89b6f4c69500cbe34c462593dc8cc70"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.binary",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "translation_hash": "c359f845638a549a48d8b07cbf7c0cbb906c4e76b35072ada79dbdaca4bb6c03",
+      "record_ids": [
+        "1d9221b6d5062987a6df6cf0b76aec8f29f8f48a64311f15851da22a12b36b91"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.cancel",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "translation_hash": "94db49a09686d235676bdf30ee4fb4657b8d441f8e3dd58d3c28e1bbbdb424f0",
+      "record_ids": [
+        "8402978a544560f8b0894470d1ae44db0490d9f8f84986d781ef5162e8b75773"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.exportPng",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "translation_hash": "a34bd9ca177a7ac959b9151b19c7ebf90bad23c2ed21b811ee6b7c34747ef26d",
+      "record_ids": [
+        "fd2aa44c73889c98169f00bb78ac820f4e62fcc1d0f97a1446e84b345c4d269e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.exportSvg",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "translation_hash": "186d1b5c81e10c604df24b532430bcc020313c4c8cb2a6b9d0c764edf89960b9",
+      "record_ids": [
+        "0e72defa6907ace410ddc5dd500f9b3d36aaca767189fc0e6ea5d7c8715d6cd5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "translation_hash": "7fdb477a8f7410b47340b00dff2aa85a1f48a70e3a3f5d82d01f1a1cfd8b1f4e",
+      "record_ids": [
+        "d4cabb571feda3850d41ea4a4198625b84ddec79fa8ca5bf2e060d028377791a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "translation_hash": "d2af6f2e221f64e8d9870f13f052eaa947295ea8d24f22b421d27bce29fd9f37",
+      "record_ids": [
+        "153472b9cd6b9d8f5d6bda96cf2aa3726ffc3e171c61aac34a2e6d80a7d3374a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.measurement",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "translation_hash": "b6eadf10930a20207ef1b56765b11fe3d278f464b520776d5fc4d4ca1ec63342",
+      "record_ids": [
+        "c9e0afd9b9e06a38f7aa7c9d4b9dc513f239be99d0adfbfee6b6b9012d028d7e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "translation_hash": "cb973df745b64ae8a9be21420fbaef77cef7cf3674fe4466bdbdb13f2b0dd210",
+      "record_ids": [
+        "d67dd441c7224416ec8a484b1ccde24ce8bb58e86cafce299cf29947b3f405ac"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«Desenho de ajuste» nombra un dibujo de ajuste; no ajusta la vista."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.unsupported",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "translation_hash": "f7544583d71e5f2a1df777c5d6f47e22b4161d6661cdf5b1be0a4bc15a0608ff",
+      "record_ids": [
+        "9b5a883113412596152c83d083f5435d7665c6eb2760a3426315e2657895b729"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "La extensión sobrevive pero queda pegada a «arquivo.dxf». "
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "translation_hash": "41589f218636b10bc61d3a421f149874319702a9a6dbe4aea5d0e05b538f6323",
+      "record_ids": [
+        "d0bf8223976a0d3d939366c2e9d937e063245e95d9e4568e485f32cb63161f9b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "translation_hash": "8529909d3432ac39bf1381c46fb19a5183c886d7837c7ec8c1bd4932bb4a087e",
+      "record_ids": [
+        "8ef7a81cf3e62fc71cc92d671b648e1e254be3a7f8e4fa936b814f1f75268281"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "shikaku.example",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "translation_hash": "d16841fddc2ab3081c4d184d55282fe544dc93c243d321a7b77ae5d965f76bb7",
+      "record_ids": [
+        "a331f13b174dac609a3a5cf29742704ac3ce3a4ad2bb4d0cbce8747982b7a000"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "shikaku.fields.check",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "translation_hash": "d326d24e54ea16355ab6e5707b80a11d080c1345951b7bfb64dcd4e622e21799",
+      "record_ids": [
+        "a6f978deb183ecab7b80fd165ce59cc127490befeb3e38fb442d1dc88f517c99"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "a3c01027e8cf997f7ab78bb86d99ea3ad387865cfe175ff3d07122c3ef9c7af0",
+      "record_ids": [
+        "9fce0cb06e664af0e61df4c3a1c10726a8c36e7f1a27d83ff7a3bdbbbb06ec79"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "«Retângulos claros» describe rectángulos claros, no los borra."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "shikaku.fields.daily",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "translation_hash": "2dfd1a48d04ac4f0fb85b83188b99902b27d8e13a53cf262fe34df5ae01508d6",
+      "record_ids": [
+        "e2481822a5961c754cc8c09578f2cceca246c3cc3a89ff566f0bd88e9e2c22d8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "be9a48bb4330ea29dd4dd38abd8f3b3f4e98399e9fcc059d49eb25b9540ae735",
+      "record_ids": [
+        "548b69a27879d18533c1260533f8b33c5b6a434c2c77c52f88eabaf9f1643c1d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "a2d52169bed4781a6622d321861eff7ec0f6c1a2a41567ddb043de3ec4e5129a",
+      "record_ids": [
+        "cb4893d66b4722989b5bd60ee51c3ac60a3a8a0d3169207b25a249ef4041f93e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 2,
+        "naturalness": 3
+      },
+      "notes": [
+        "Omite la respuesta negativa inicial explícita; conserva exactamente una pista."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "fb0a39eba07f9772c617b944c851f69f5c9f4da714885966fd1f388d5d0f98de",
+      "record_ids": [
+        "4695a197e99be49844e921cce3233c6691c017b006084133caa18035662c8fb9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "shikaku.fields.newPuzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "translation_hash": "5755aeab8d718a26a7aa037423cbaf67d994f3ac3b78de72ed51dcc4174f5f66",
+      "record_ids": [
+        "5f37fe8773bfbe897cdc816bb558232922749b53891ff2b4ba5158479892241d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "6304c5019ae88330b6686b6c518482e6c04e7930bcef1721bbf7a2d13b256425",
+      "record_ids": [
+        "2d7919b73266082f80a92cce8748427361826197cf5d61577176dd578e1f72ec"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "shikaku.fields.reveal",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "translation_hash": "51b638d9197976b97dc3c9d3aa6b7d56960b019194c87814015f5f70b081fdde",
+      "record_ids": [
+        "328a5c27967e8d9c6b48b2414e778b83bad09a919b831939364636ad2028dadd"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "4e913244106e44a071f728652bd11e564cd6b15f88d615063e2e8b830df0f361",
+      "record_ids": [
+        "676b7854e5f98d320cbf9193b3b13e8c38bed794f2c44196aac8708aebfde268"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "4b9b726f754a3d2d6404286aed082e103839c0844165744a9f6743847333fd0c",
+      "record_ids": [
+        "61e0d20ccb73f88ba2085302d1c78da17ac4ba8ab44dc32afdd32a26cdf26ba5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "bcd60aeaefdaf9a2dcdc000d371dcba4150a261c6cd28d53a3562ace28f8b9d3",
+      "record_ids": [
+        "b2eafbd60f5c97c93da5cb4bdbca316b820d9557e823f09d244a6c3f1bde577a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.chooseFile",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "translation_hash": "f89e9e0172b7dad4bd254e09b980b6364472a7a3a20486041071db087772d539",
+      "record_ids": [
+        "2f0753cfbdc9ff7566608db4d31235e6783690f1e45774a1eb39f59e9c062b7a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.chooseFirst",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "translation_hash": "a981c70b23f83d10e0388e76290efe25ccfb8e552e74fcb2ff35b487beef9417",
+      "record_ids": [
+        "8d67ee0ae04eabb67174080b60dc86009bbdebce2138b7cf55cee1f3b7d3b3b8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "b7e1c8ef2c0a7874d7863d6b50c7245734423dc19c83199da2f7296317b5fd5f",
+      "record_ids": [
+        "86e7d67228f7a998676d221264de673a13aabb4863c79df218726c87601cc454"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "«Áudio claro» describe claridad, no eliminar audio."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.decodeFailed",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "translation_hash": "1acc4d0d5a89c8227cd949e09fa21d057252004368a066b4d2356f5a9200ce84",
+      "record_ids": [
+        "e03735c20d8361d1d0dc7575777e7cfec7bd6b8f953186c8c690c0df58a02df6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "680581cbde23deb37a660f72dd81cd2357c33ad522810d3d39feeff8c82f54a7",
+      "record_ids": [
+        "2aa638361cb826ae1283a47273cd9fb64266d3403aa18351ae466d96a46bde89"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "49f5ca11bb7ffd03ddcae4032d8be13133a9bfc4e8a2de0afb32c768deddfec6",
+      "record_ids": [
+        "f755dd34e45df16e11116a25b1997e03e8c6f568496a4f74a1d6b19674e98e13"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.faq2a",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "translation_hash": "4c9c9ace48f9548837ef6288a3c4630027314cb0aefbc8daefe682a9797cb908",
+      "record_ids": [
+        "f2778a4f834dfe6c6062a477787d459bd7dbf4c4cba27e9caa83e4ee1625317f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 2,
+        "naturalness": 2
+      },
+      "notes": [
+        "Omite la respuesta negativa inicial; «pitch leve» es un calco poco natural."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "bb804cb2d82073fac33ed89386244d0e724568d42a428f183808f97759a3d33f",
+      "record_ids": [
+        "1466d45c1100266cbb39669a360c57d4b4399160801c304b8319a2df5a54d229"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "e563f6e957e3ae3e39064f363a2335c3b1fec516369af48e969aa7b7484d5eb9",
+      "record_ids": [
+        "35dbb6351283a38670e319a9999d685dbea172b4d9c02743895fd053189b4e03"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "d58bedf6c96b2a65608405fb121b707bcf9a0c4d439642c31d38f6a6d3ab4810",
+      "record_ids": [
+        "0867883ccadc173a5fb04b0714b4c2b08423b924fac2a56497fdf2bf1c6a00f1"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "«Efeito de visualização» nombra un efecto visual, no escuchar la vista previa."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.privacy",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "translation_hash": "51fdd0e10ff1239e9332c37348c037a9caa561f7daaf7f852576f0cebea6929e",
+      "record_ids": [
+        "99db4b3baa118e5d41db00407f746b5fa2461b090bd1a366a389e7c9f4bf6f76"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«carregado» es ambiguo entre cargar y subir; no expresa claramente ausencia de subida."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "5c610bf6211bf4329446021c21f24d5e1c215970302a261574fbed030542fefe",
+      "record_ids": [
+        "1df7299d462165418838e80d24d1acd3a79e9ad4afa242b7c8cb79464e4db831"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«Parar a visualização» no describe claramente detener audio."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "20de0e850eab8e886328c0dcff784c104a54bd6a45f6ef502321d5066e50f2e1",
+      "record_ids": [
+        "1f29c2016828533cce6312d50321a382d02e6e6d46d9f3afc852514cee28b036"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción."
+      ]
+    },
+    {
+      "locale": "pt-BR",
+      "candidate": "madlad",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "037b397424f667dc0a33cc29338be37385510fcbe0c53180e6ae3863986c9f43",
+      "record_ids": [
+        "72997c9908bb4eb900c6450b8ebe91331ac189623b1777c67016b06a65f9bffc"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«ficheiro» y «clips» no son la terminología brasileña archivo/clipes."
+      ]
+    }
+  ]
+}

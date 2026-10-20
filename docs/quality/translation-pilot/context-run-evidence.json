@@ -1,0 +1,159 @@
+{
+  "at_utc": "2026-10-20T14:15:18.952619+00:00",
+  "approved_locales": [],
+  "runs": [
+    {
+      "inference_policy": "context-v2",
+      "run_id": 39434607232,
+      "job_id": 118668204682,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af",
+          "model.bin": "eb3fd60ec655f8ebe50680262e3f1f4477b63e191e7d099fa91d8284b5d9a32f",
+          "shared_vocabulary.json": "7eb5d0ff184c6095c7c10f9911c0aea492250abd12854f9c3d787c64b1c6397e"
+        },
+        "engine": "m2m100",
+        "license": "MIT",
+        "minimum_free_gib": 5,
+        "repository": "facebook/m2m100_418M",
+        "revision": "55c2e61bbf05dfb8d7abccdc3fae6fc8512fd636"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 34.107179363,
+        "counts": {
+          "legacy": 80,
+          "model": 80
+        },
+        "engine": "m2m100",
+        "peak_rss_kib": 841480,
+        "scope": "references",
+        "total_seconds": 60.325732575
+      }
+    },
+    {
+      "inference_policy": "context-v2",
+      "run_id": 39434607232,
+      "job_id": 118668203605,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 84.342443573,
+        "counts": {
+          "legacy": 80,
+          "model": 80
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3662376,
+        "scope": "references",
+        "total_seconds": 259.269984583
+      }
+    },
+    {
+      "inference_policy": "context-v3",
+      "run_id": 39435208282,
+      "job_id": 118670913946,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 121.43904965299998,
+        "counts": {
+          "legacy": 80,
+          "model": 80
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3734340,
+        "scope": "references",
+        "total_seconds": 217.002813736
+      }
+    },
+    {
+      "inference_policy": "context-v4",
+      "run_id": 39436428601,
+      "job_id": 118674535266,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 75.30086836499999,
+        "counts": {
+          "legacy": 80,
+          "model": 80,
+          "reviewed_memory_hits": 7
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3732204,
+        "scope": "references",
+        "total_seconds": 250.86763277400001
+      }
+    }
+  ],
+  "checkpoints": [
+    {
+      "path": "checkpoints/context-v2/m2m100.jsonl",
+      "records": 160,
+      "sha256": "a7b345ca4dc937a294d7313390dfd33cb659de7dad804593e5fc00467790ef51"
+    },
+    {
+      "path": "checkpoints/context-v2/madlad.jsonl",
+      "records": 160,
+      "sha256": "21f4ceb56c59470eefb202f7329d8ab7f69d7733c5007102800b40057ff0a834"
+    },
+    {
+      "path": "checkpoints/context-v3/madlad.jsonl",
+      "records": 160,
+      "sha256": "2b43c218f0362dd4350fdcbff8b487192e78d302dc6d3f7e2990bacb1d642ac0"
+    },
+    {
+      "path": "checkpoints/context-v4/madlad.jsonl",
+      "records": 160,
+      "sha256": "41c7bece65652fbae7f43f6368ddd4708edb65847a7b900624fb6b3895ac5cc6"
+    },
+    {
+      "path": "checkpoints/m2m100.jsonl",
+      "records": 2371,
+      "sha256": "d85ca9a7a5d9eb732bce21aee2ecd67f69d0e19ad7bef2c519cd3cc4bde7ba1a"
+    },
+    {
+      "path": "checkpoints/madlad.jsonl",
+      "records": 2438,
+      "sha256": "e8e4ece85552fe89bdb9518bc8eeca91b5a9b446fcbe4c3694b95f8b70290643"
+    }
+  ]
+}
