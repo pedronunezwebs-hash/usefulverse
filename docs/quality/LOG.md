@@ -2,6 +2,24 @@
 
 Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 
+## 2026-10-21 · Codex · Paso A: v7/v8, tipos numéricos y guard de cantidades inventadas
+- [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador; código `203422e`…`96c7440`.
+  Políticas v2–v8 medidas intactas. Solo runner/políticas/evidencia, sin cambios de src/public, merge del código o deploy.
+- V7 tipa cantidades/coordenadas/paquetes, desambigua objetos geométricos y audio. Gate inicial retirado al reconciliar
+  el aviso de respuesta negativa con la rúbrica v6. Completo 39484416039 cancelado antes de emitir datos; limpieza verificada.
+- V8 añade No/Nei explícito en FAQ equivalentes y ejemplo Shikaku claro. [Referencias 39485133272](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39485133272):
+  **es353/360 rechazado** por «30 10 segundos» frente a 30; **nb360/360 solo referencias**. No completo v8.
+  La salida cruda queda bloqueada como machine-draft; no se repara eliminando el dato por conjetura.
+- **7.481 registros, 1.914 evaluaciones registradas (con repeticiones), 472 fixtures (458 ida, 14 vuelta), 0 idiomas aprobados**.
+  Contratos de memoria por hash/contexto, cobertura de errores ligada a rúbricas/checkpoints independientes y dirección back separada.
+- Suite ligera: **55 Python, 53 correctos y 2 de dependencias**. Jobs reales: 51 y 53 con dependencias, antes de los dos
+  últimos controles ligeros. CI final [39486540297](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39486540297), `96c7440`: **verde: 3.045 Node; 55 Python (53 correctos y 2 omitidos por dependencias); check, idiomas, hub y preview verdes**.
+  Actionlint válido; Gitleaks sin secretos. Conflictos documentales de main integrados sin cambiar el árbol de código.
+- Producción por GET de XML: **25.625→25.625 URLs**, tres rutas falsas del hub aún HTTP 200. Sin activaciones, 301 ni envíos.
+  No certifica siete capas/18 controles de herramientas, UI, responsive/RTL, rendimiento o hardware.
+- Pedro: **0 pruebas nuevas**, P-001–P-008 pendientes, 0 FALLA. Próximo v9 por familia de cantidades críticas;
+  no masiva ni fase 0. Capacidad Pages y 37 idiomas siguen abiertos. [Informe y limpieza](lotes/2026-10-21-piloto-v7.md).
+
 ## 2026-10-21 · Codex · Paso A: v5/v6 y control independiente de regresiones
 - [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador, `4c477b7`…`bd74b32`. Sin merge del código ni publicación.
 - V5 cubre cada oración, conserva versiones/símbolos por posiciones conocidas y memoria exacta; rechaza privacidad es.

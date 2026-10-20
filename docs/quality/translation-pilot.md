@@ -260,3 +260,54 @@ el nuevo control de identificadores lo detecta. Fallos de vuelta se señalan sin
 **0 idiomas aprobados**. Siguiente: política v7 independiente para las familias anteriores, tipos de coordenadas/números
 y nombres de software. No editar v2–v6 medidos. Repetir referencias y el mismo completo es/nb antes de ampliar; después
 revisar 28 destinos restantes, con muestra de 80 en los siete idiomas de pocos recursos. Sin traducción masiva ni fase 0.
+
+
+## Contexto técnico v7 · decisión inicial retirada
+
+Política independiente `pilot-technical-policy.json` (38 entradas controladas, 53 memorias por clave y 101 destinos).
+Desambigua worker como tarea en segundo plano, entity como objeto geométrico y vocals como pista de voz;
+explicita los efectos de audio y la relación tono/velocidad. Conserva las FAQ de fuente idéntica por contexto.
+Nombres y etiquetas ambiguas proceden de memoria revisada por el agente, con origen/digest explícitos, sin
+revisión nativa ni atribución al modelo. V2–v6 medidos permanecen intactos.
+
+El segmentador v7 copia cantidades, coordenadas y nombres de software en posiciones de origen conocidas.
+Los auditores de valores usan Decimal exacto y coordenadas ordenadas; diferencian un formato local equivalente
+de un cambio de valor. El contrato literal previo se conserva por separado y no se reparan salidas del modelo.
+Notación numérica copiada literalmente = contrato de dato de origen; si cambia, gramática explícita es/nb,
+sin inferir formatos de otros idiomas ni grupos mal formados. Versiones/URLs/código no se cuentan como cantidades.
+
+51 tests Python locales (49 pasan, 2 dependencias reservadas a Actions). Código `203422e`.
+[Referencias v7 39483290546](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39483290546),
+es359/360 y nb360/360: solo referencias. Rúbrica y tres hallazgos de vuelta guardados; completo todavía pendiente. `full-sample-v7-plan.json`
+conserva las 68 claves y 20 adicionales de v6: ya observadas, no son una muestra ciega de v7. No se aprueba idioma
+alguno por tests verdes ni se avanza a fase 0. [Informe del lote](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/lotes/2026-10-21-piloto-v7.md).
+
+Referencias v7: 160 registros, 13 aciertos de memoria, 186,10 s; 51 tests reales pasan. Tras el refuerzo del auditor: 52 tests locales (50 correctos y 2 de dependencias), 467 fixtures. Total 7.321 registros y 1.834 evaluaciones, 0 idiomas aprobados. La capitalización del ejemplo español es un caso leve ya conocido; las vueltas se auditan por separado.
+
+
+### Corrección del gate v7 y variante v8
+
+La evaluación inicial v7 de 359/360 y 360/360 se retiró al contrastarla con los avisos del registro: la respuesta
+a «Is my recording uploaded?» no conservaba No/Nei explícito, aunque negaba recepción por UsefulVerse.
+La rúbrica heredada no había resuelto esa contradicción. Evaluación corregida **357/360 y 358/360**: ambos
+rechazados, sin afirmar una fuga de audio. Completo v7 39484416039 cancelado, 0 registros emitidos, limpieza
+correcta. Política v7 intacta; decisiones anteriores conservadas en Git y en `supersedes`.
+
+V8 (`pilot-explicit-negative-policy.json`) hereda v7 y añade memoria precisa para ambas FAQ y el ejemplo español:
+55 claves/106 destinos. Inglés controlado con «never uploaded». 53 tests locales (51 correctos, 2 dependencias),
+468 fixtures; sin modelos en Mac. Mismo plan de muestra en `full-sample-v8-plan.json`; referencias por repetir,
+0 idiomas aprobados. Ninguna traducción masiva ni fase 0 con el Paso A abierto.
+
+
+### Resultado v8 · gate numérico cerrado
+
+[Referencias v8 39485133272](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39485133272): 160 registros,
+16 memorias, 268,07 s; 53 tests reales con dependencias pasan, limpieza correcta. **es353/360 rechazado** por
+«30 10 segundos» frente a 30. El guard rechaza el dato añadido, conserva el crudo y no lo repara por conjetura.
+**nb360/360 pasa solo referencias**. No se ejecuta completo v8. Fuente/pesos iguales no garantizan frases iguales
+al variar la composición del lote; solo se reutiliza una rúbrica por hashes de fuente/texto idénticos.
+
+**7.481 registros, 1.914 evaluaciones registradas, 472 fixtures (458 ida/14 vuelta), 0 idiomas aprobados**.
+Suite ligera: 55 Python (53 correctos, 2 de dependencias; estas se probaron en los jobs reales antes de los dos
+últimos controles ligeros de auditoría). Próximo v9 por familia de cantidades críticas y prosa junto a números;
+no restaurar cifras por suposición. Repetir ambas referencias antes del completo; nada de masiva ni fase 0.
