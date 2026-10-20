@@ -238,6 +238,8 @@ puerta. Merge y despliegue (máximo uno al día). **Verificar en producción** (
 | 12 | RTL (`ar`) y textos largos (`de`) sin cortes, a 390 px | Captura |
 | 13 | 37 idiomas presentes (o los que hayan pasado el piloto), con `hreflang` recíproco | Test de cobertura |
 | 14 | `npm run check` y `npm run locale:release-check` verdes | Salida del comando |
+| 15 | **Las 7 capas de `docs/quality/PRUEBAS.md`**: ≥10 valores de referencia con fuente, propiedades o aleatorios, regresión, Playwright (Chromium, Firefox y WebKit; móvil 390 px; en/es/de/ar/ja/hi/nb), axe y Lighthouse | Salida de los tests + enlace al run de Actions |
+| 16 | Lo que no se puede automatizar está en `PRUEBAS-PEDRO.md`, y **ninguna prueba de Pedro de esta herramienta está pendiente o en `FALLA`** | Filas de PRUEBAS-PEDRO |
 
 ---
 
@@ -325,6 +327,12 @@ Además del bucle de calidad, el agente dedica una parte de cada quincena a la *
 (autoridad, marca, recurrencia) y actualiza `docs/quality/KPIS.md` con la tabla de KPIs de esa estrategia. Ninguna acción de
 crecimiento publica nada en nombre de Pedro (Product Hunt, Reddit, directorios) sin su aprobación: el agente prepara los
 textos y Pedro publica.
+
+## 11b. Pruebas semanales y pruebas de Pedro
+
+- Una Action semanal pasa por **todas** las herramientas en producción (carga sin errores, tarea principal, móvil y WebKit) y
+  abre un Issue si algo falla (`PRUEBAS.md` §2). Montarla en la fase 8, o antes si se puede.
+- Al empezar cada sesión, revisar `PRUEBAS-PEDRO.md`: arreglar los `FALLA` antes que nada y actualizar el contador en `ESTADO.md`.
 
 ## 12. Piloto automático y anuncios (para dejar la web un año)
 

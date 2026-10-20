@@ -30,6 +30,14 @@ Prevalecen sobre cualquier plan anterior de `docs/` (incluido `docs/growth600/`)
   PR. Los PR de personas externas necesitan aprobación de Pedro. `main` y `backup/*` no se pueden borrar ni sobrescribir.
 - Solo Pedro tiene permiso de escritura. No añadir colaboradores ni apps con escritura sin su aprobación.
 
+## Pruebas (obligatorio, decisión de Pedro 20-oct-2026)
+
+Ninguna herramienta se da por terminada ni se activa sin pasar las **7 capas de `docs/quality/PRUEBAS.md`** (valores de
+referencia con fuente, propiedades, regresión, navegador de extremo a extremo, dispositivos e idiomas, accesibilidad y
+rendimiento, y revisión). **Cada error encontrado se convierte en un test permanente.** Lo que no puedas probar
+(dispositivo real, cámara, micrófono, permisos, archivos reales, sensaciones) se apunta en
+`docs/quality/PRUEBAS-PEDRO.md` con los pasos exactos; Pedro lo prueba y el siguiente agente arregla lo que falle.
+
 ## Cómo trabajar
 
 **No se borra ninguna herramienta** (decisión de Pedro, 20-oct-2026). Las casi duplicadas se diferencian; una fusión con 301, solo con su aprobación. Estrategia de crecimiento: `docs/quality/STRATEGY-1M.md`. Niveles de esfuerzo, traducción, piloto automático y anuncios: `docs/quality/REVISION-FINAL.md`. Auditoría de las 700 herramientas (errores, límites, huecos): `docs/quality/AUDITORIA-CATALOGO.md` y `docs/quality/auditoria/`. PDF: `PDF-VS-ILOVEPDF.md` y `PDF-IA.md`.

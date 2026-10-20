@@ -25,6 +25,8 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 ## 2. Pendiente de Pedro (decisiones o acciones humanas)
 
+- [ ] **Pruebas para Pedro: 8 pendientes · 0 fallos abiertos** → `docs/quality/PRUEBAS-PEDRO.md` (móvil real, cámara, micrófono, altavoces…)
+
 - [ ] Autorizar el borrado de **~24 GB** de copias temporales antiguas de UsefulVerse en `/tmp` (builds `merged-release-…`,
       `reconstruction…`, caché de MADLAD de 3,3 GB…), dejadas por sesiones del 17-19 oct. **No borrar
       `/tmp/usefulverse-300-implementation-20261019` hasta que su rama esté en GitHub.**
@@ -52,6 +54,12 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 - [ ] Título de la home sin «Free» repetido + test de títulos
 - [ ] Índice de sitemaps por idioma en ambos hosts
 - [ ] Despliegue verificado + sitemaps reenviados
+
+### Pruebas (`docs/quality/PRUEBAS.md`)
+- [ ] Infraestructura: Playwright (Chromium, Firefox, WebKit), fast-check, axe, Lighthouse CI en Actions
+- [ ] Tests de regresión de los 26 errores de la auditoría (antes de arreglarlos)
+- [ ] Action semanal sobre producción que abre un Issue si algo falla
+- [ ] Columnas de pruebas en `progress.csv`
 
 ### Fase 0b · Errores confirmados (`AUDITORIA-CATALOGO.md` §2) · arreglados: **0 / 26**
 - [ ] G1 · Hash en los 106 JS de `recovered-live-only-106` (o caché corta)
