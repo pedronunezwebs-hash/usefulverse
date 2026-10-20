@@ -3,8 +3,8 @@
 > Archivo de relevo entre agentes (ChatGPT/Codex ↔ Claude). En 1 minuto dice **dónde estamos, qué falta y por dónde
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
-**Última actualización:** 2026-10-20 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-20 15:49 UTC · Paso A: política context-v5, frases completas y datos protegidos; PR #136
+**Última actualización:** 2026-10-21 · **por:** Codex
+**Turno actual (candado):** LIBRE
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
@@ -19,25 +19,33 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
    más las 100 market-tools y las 106 recuperadas: 700 existentes en total entre los dos hosts.
    **Bloqueos técnicos del Paso A:** juntar las 300 con el hub excede 20.000 archivos de Pages; faltan las traducciones
    revisadas y el noruego `nb` real de las 300. No confundir el test del contrato SEO en 37 rutas con traducciones verificadas.
-   Ver `docs/quality/lotes/2026-10-20-paso-a.md`. CI actual verde: [run 39440552803](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39440552803), código `dfe55ae` (3.045 tests Node; 33 Python pasan y 2 de dependencias se reservan al job de modelos; ambos builds y preview de 10.800 páginas noindex). Resolver capacidad y 37 idiomas antes de merge/publicación. No avanzar a fase 0 mientras siga abierto el Paso A.
+   Ver `docs/quality/lotes/2026-10-20-paso-a.md`. CI final verificada y verde: [run 39460406968](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39460406968), código `bd74b32` (3.045 Node; 43 Python correctos y 2 omitidos por dependencias, probados en los jobs reales; check, idiomas, hub y preview verdes). Resolver capacidad y 37 idiomas antes de merge/publicación. No avanzar a fase 0 mientras siga abierto el Paso A.
    La vista previa antigua `draft-300-noindex.usefulverse-tools.pages.dev` ya existía; no es el despliegue de esta rama.
-   **Piloto de traducción ya implementado en esa rama:** workflow manual CPU, corpus real, checkpoints y rúbrica.
-   [Guía y datos](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/translation-pilot.md).
-   **6.145 registros guardados entre baseline y variantes; 1.378 evaluaciones del agente**, que pueden repetir texto entre motores/configuraciones.
-   410 salidas problemáticas registradas como regresiones. **0 idiomas aprobados**; sin revisión nativa inventada.
-   Baseline: 4.809 registros en 36 destinos (37 con inglés); M2M100 no soporta te. MADLAD baseline en de/fr/pt-BR/ja/hi/ar ya revisado.
-   `context-v2` segmentado se descarta; `context-v3` pierde marcadores/extensiones; `context-v4` usa inglés controlado + siete entradas exactas de memoria revisada.
-   v4 pasa las 40 referencias es/nb (360/360 y 358/360), pero **el piloto completo de las tres herramientas en es/nb queda rechazado**:
-   [run 39437391534](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39437391534), **856 registros**, 214 cadenas por idioma + copia actual/vuelta;
-   160 referencias reutilizadas, 696 registros nuevos. La muestra de 20 por idioma, ampliada a 68 claves por controles/cifras/negaciones/unidades,
-   y 20 actuales por idioma suma 176 evaluaciones adicionales: Clear/clean, omisiones de privacidad/límites, versiones y símbolos de unidad siguen fallando.
-   **Siguiente dentro del Paso A:** clonar `feat/new-tools-batch-1`; leer `review-context-v4-full.json`, `automatic-summary.json`, `full-sample-plan.json`
-   y el [informe del lote](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/lotes/2026-10-20-piloto-contexto.md).
-   Crear una política **v5** (no editar v2/v3/v4 ya medidas): corregir por familias Clear drawing/measurement y preset Clean; compartir sentido entre FAQ duplicadas;
-   conservar todas las frases de cada párrafo (no omitir No/privacidad/límites) y dejar versiones/símbolos de unidades como datos protegidos.
-   Repetir referencias y piloto completo es/nb con los mismos controles; después revisión de los 28 destinos restantes y elección por idioma.
-   **No ejecutar traducción masiva ni avanzar a fase 0 con estos gates abiertos.** Ver `translation-pilot/reference-coverage.json` en la rama del PR.
-   Las 300 fuentes se pueden reextraer con `prepare-candidate-sources.mjs`: 15.815 unidades, preservando slugs y metadatos.
+   **Piloto de traducción en esa rama:** corpus real de 3 herramientas, checkpoints y rúbrica; solo Actions estándar, sin modelos en el Mac.
+   [Guía/datos](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/translation-pilot.md).
+   **7.161 registros guardados · 1.754 evaluaciones registradas** (pueden repetir texto/rúbrica) · **464 fixtures** (456 ida, 8 vuelta).
+   **0 idiomas aprobados**, sin revisión nativa inventada. Baseline: 4.809 registros en 36 destinos; M2M100 no soporta te.
+   v2/v3/v4 se conservan; **v5** por oraciones/datos protegidos falla privacidad es; **v6** añade memoria precisa de privacidad.
+   Referencias v6: es **360/360**, nb **359/360** (1 concordancia leve). Después, completo v6
+   [run 39455323981](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39455323981): **856 registros**,
+   214 cadenas por destino × candidato/actual, 160 referencias reutilizadas y 696 nuevas; 71 aciertos de memoria.
+   **Completo rechazado en ambos idiomas**. Misma muestra de 68 claves: es586/612 (v4 539), nb569/612 (v4 555).
+   Otras 20 claves fijadas por semilla antes de recoger resultados: es169/180, nb166/180. 216 evaluaciones completas
+   (176 candidatos nuevos + 40 actuales conservadas tras verificar hashes). Con referencias: 128/214 candidatos revisados por idioma.
+   Las frases finales revisadas, símbolos y versiones se conservan, pero faltan sentidos técnicos/privacidad, gramática y nombres sin ruido.
+   **Siguiente dentro del Paso A:** clonar `feat/new-tools-batch-1` y leer `review-context-v6-full.json`, `automatic-summary.json`,
+   `full-sample-v6-plan.json` y [lote v5/v6](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/lotes/2026-10-20-piloto-v5.md).
+   Crear **v7 independiente**, sin editar v2–v6 medidos. Corregir por familias upload/load en privacidad DXF; worker como tarea
+   de fondo (no empleado); entity como objeto geométrico (no dispositivo/unidad); bounds como extensión del dibujo;
+   vocals como pista de voz (no vocales); aplica/usa y glosario de audio (pitch-rate, gain). Corregir Name añadido al nombre nb,
+   referentes de solapamiento, concordancias y compuestos. Conservar los sentidos compartidos de FAQ duplicadas.
+   Tipar coordenadas, cantidades e identificadores de software: 200.000/200 000 y (0,0) pueden conservar valor, pero falla
+   el comparador literal actual. No adivinar restauraciones. La nueva auditoría distingue pérdida de dxf-parser de versiones intactas;
+   los errores de vuelta no se atribuyen sin más a una ida correcta.
+   Repetir referencias y completo es/nb con las mismas muestras antes de ampliar; después revisar los **28 destinos restantes**
+   y elegir objetivamente por idioma. PLAN §9 exige **80 muestras** en ha/am/te/gu/ta/mr/sw; sus 40 referencias no cierran el gate.
+   **No traducción masiva, merge/publicación ni fase 0 con estos gates abiertos.** Capacidad Pages y 37 traducciones de las 300 siguen pendientes.
+   Las 300 fuentes siguen reextraíbles: 15.815 unidades, slugs y metadatos preservados; no se modificaron en este lote.
 2. **Fase 0** del RUNBOOK §4 + **caché con hash de los 106 JS** (AUDITORIA-CATALOGO G1; sin esto ningún arreglo llega a los visitantes) + **fase 0b**: los 26 errores confirmados de `AUDITORIA-CATALOGO.md` §2.
    Fase 0 (detalle): 404 real en `tools.usefulverse.com` (hoy cualquier URL inventada devuelve 200 con la home),
    título de la home e índice de sitemaps por idioma.
@@ -73,7 +81,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
       Dependabot; acciones fijadas por SHA; `main` y `backup/*` protegidas; PR externos con aprobación · 2026-10-20
 - [x] Copia de seguridad del trabajo de las 300 en `backup/codex-300-tools-20261020` · 2026-10-20
 - [x] Fuente completa de las 300 recuperada en rama pública `feat/new-tools-batch-1`, PR #136 (borrador), con noindex explícito y CI verde · 2026-10-20; en `main` y publicadas por este lote: **0 / 300**, activadas: **0**
-- [~] Piloto de traducción en Actions: 6.145 registros, 1.378 evaluaciones; referencias v4 es/nb pasan y piloto completo es/nb rechazado; **0 idiomas aprobados** · 2026-10-20
+- [~] Piloto de traducción: 7.161 registros, 1.754 evaluaciones, 464 fixtures; v6 pasa referencias es/nb y falla completo; **0 idiomas aprobados** · 2026-10-21
 
 ### Fase 0 · Arreglos urgentes (RUNBOOK §4)
 - [ ] `404.html` en la salida del hub (`dist-growth600`) + test; verificar 404 en `/tools/zzz/`, `/es/zzz/` y `/zzz.html`
@@ -150,6 +158,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 | Fecha | Agente | Qué | PR / commit | Verificado en producción |
 |---|---|---|---|---|
+| 2026-10-21 | Codex | V5/v6: oraciones trazables, datos protegidos y memoria; 7.161 registros, 1.754 evaluaciones, 464 regresiones; completo es/nb rechazado | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `4c477b7`…`bd74b32` | GET: 25.625 URLs y tres soft 404; sin deploy. |
 | 2026-10-20 | Codex | Glosario por sentido y memoria exacta; piloto completo es/nb; 6.145 registros, 1.378 evaluaciones, 410 regresiones; 0 idiomas aprobados | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `2c75dc2`…`dfe55ae` | GET: 25.625 URLs y tres soft 404; sin deploy. |
 | 2026-10-20 | Codex | Piloto CPU reanudable: 4.809 registros, 642 traducciones evaluadas, 202 regresiones; extracción segura de las 300 | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `46b53ea`…`f8fe929` | GET de sitemaps: 25.625 URLs; tres rutas falsas aún 200. Sin deploy. |
 | 2026-10-20 | Codex | Fuente de las 300 + noindex por catálogo + CI de preview aislada; Paso A sin publicar | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `7879f9a`, `83efa8a`, `4e8d27c` | Sitemaps: 25.625 URLs; 10 URLs de la preview antigua con noindex. Sin deploy nuevo; soft 404 persiste. |

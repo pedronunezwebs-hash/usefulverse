@@ -2,6 +2,24 @@
 
 Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 
+## 2026-10-21 · Codex · Paso A: v5/v6 y control independiente de regresiones
+- [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador, `4c477b7`…`bd74b32`. Sin merge del código ni publicación.
+- V5 cubre cada oración, conserva versiones/símbolos por posiciones conocidas y memoria exacta; rechaza privacidad es.
+  V6 añade el sentido de no subir ni guardar: referencias es360/360, nb359/360, solo referencias.
+- [Completo v6 39455323981](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39455323981): 856 registros,
+  160 reutilizados y 696 nuevos; 71 aciertos de memoria, 930,07 s. **Rechazados es y nb** por sentidos técnicos/privacidad,
+  Name en el nombre nb, gramática y compuestos. Las omisiones finales revisadas, símbolos y versiones se conservan.
+- Misma muestra de 68 claves +20 adicionales fijadas con semilla: 176 candidatos revisados y 40 actuales conservados por hash.
+  **7.161 registros, 1.754 evaluaciones registradas (con repeticiones), 464 fixtures (456 ida, 8 vuelta), 0 idiomas aprobados**.
+- 45 tests Python (43 pasan localmente, 2 de dependencias en runner); cobertura cruza rúbricas/checkpoints independientes.
+  Control de identificadores de paquetes, trazas, memoria y auditoría de vuelta separada. Políticas v2–v6 medidas intactas.
+- CI final verificada y verde: [39460406968](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39460406968), `bd74b32`.
+  3.045 Node y 43 Python correctos, 2 omitidos por dependencias; check, idiomas, hub y preview verdes. Dependencias reales probadas en los jobs de modelos. Actionlint válido, Gitleaks sin secretos en 2,83 MB de diff y el refuerzo posterior.
+- Producción GET: 25.625→25.625 URLs en sitemaps; tres rutas falsas del hub aún 200. Sin deploy, activaciones, 301 ni envíos.
+  Las siete capas de herramientas, responsive/RTL, rendimiento y hardware no se certifican por este lote de infraestructura.
+- Pedro: ninguna prueba nueva; P-001–P-008 pendientes y 0 FALLA. Siguiente v7 por familias; no ampliar ni fase 0.
+  [Informe y cierre](lotes/2026-10-20-piloto-v5.md); capacidad de Pages y 37 idiomas siguen abiertos.
+
 ## 2026-10-20 · Codex · Paso A: referencias corregidas y piloto completo es/nb rechazado
 - [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador. `2c75dc2`…`dfe55ae`.
   Inglés controlado por sentido, tres variantes separadas y siete entradas de memoria exacta revisadas por el agente.
