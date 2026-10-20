@@ -2,6 +2,20 @@
 
 Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 
+## 2026-10-20 · Codex · Paso A: fuente recuperada y CI verde; publicación pendiente
+- [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136) en borrador, rama `feat/new-tools-batch-1`.
+  Fuente de las 300 recuperada selectivamente del respaldo privado `27a2f174`, sin importar su historial.
+- Commits de código: `7879f9a` (recuperación y noindex), `83efa8a` (CI aislada/estilos), `4e8d27c` (referencias del catálogo).
+- [CI final](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39398910565): **3.041/3.041 tests**,
+  `npm run check`, `locale:release-check`, hub público y build aislado de las 300 verdes. Preview: 11.293 archivos;
+  10.800 páginas de herramientas con noindex + homes noindex; sitemap vacío. Noindex/hreflang/robots con regresión.
+- Gitleaks: 0 secretos. Columnas de pruebas añadidas a `progress.csv`; las siete capas de las 300 siguen pendientes.
+- Producción comprobada por HTTP: sitemaps con **25.625 URLs**; 10 URLs de la preview antigua con meta/cabecera noindex;
+  las tres rutas inventadas del hub aún devuelven 200. El sitemap de la preview antigua respondió 403 al revalidarlo.
+- **Sin merge, deploy, envíos a buscadores ni activaciones. Paso A NO terminado**: capacidad conjunta de Pages insuficiente
+  y traducciones revisadas/nb pendientes. No se avanza de fase. En main: 0/300; activadas: 0; existentes terminadas: 0/700.
+- Pedro: 0 pruebas nuevas, P-001 a P-008 siguen pendientes, 0 FALLA. Relevo y limpieza: `lotes/2026-10-20-paso-a.md`.
+
 ## 2026-10-20 · Claude · Auditoría del catálogo y PDF con IA
 - Rastreo de las 700 páginas EN + 7 auditorías por categoría frente a los líderes → `AUDITORIA-CATALOGO.md` (13 problemas de
   todo el sitio, 26 errores confirmados, huecos) y `auditoria/*.md` con evidencia. Rastreo en `auditoria/rastreo-700-en.csv`.
