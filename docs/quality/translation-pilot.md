@@ -53,11 +53,47 @@ contexto, modelo, traducción actual o beam genera una identidad distinta y se v
 
 - [x] Corpus y contratos de seguridad/reanudación con tests permanentes.
 - [x] Workflow validado con Actionlint 1.7.12.
-- [ ] Comparación real corta de ambos motores en Actions.
+- [x] Comparación real corta de ambos motores en Actions; 320 registros, incluyendo la traducción actual.
 - [ ] 40 referencias por destino, incluida la traducción actual donde existe.
 - [ ] Rúbrica del agente y elección documentada por idioma; no inventar revisión nativa.
 - [ ] Tres herramientas completas, muestra de 20 frases por idioma, bokmål confirmado y umbral superado.
 - [ ] Memoria y paquetes reales de las 300 en los idiomas aprobados.
+
+## Primera comparación real: español y bokmål
+
+[Run 39402041888](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39402041888), commit `46f3a8d`.
+Ambos jobs completados; el job de publicación quedó omitido. 40 frases × 2 destinos × 2 candidatos × 2 motores =
+320 registros recuperados de los logs y guardados como JSONL. La traducción actual se revisa una vez aunque tenga
+dos retrotraducciones. [Rúbrica del agente](translation-pilot/review-es-nb.json): 240 traducciones únicas evaluadas,
+sin afirmar revisión nativa. Cada evaluación referencia el hash del texto y los registros concretos; un test impide
+desvincular la puntuación de la traducción observada.
+
+| Destino | Actual | M2M100 | MADLAD | Decisión |
+|---|---:|---:|---:|---|
+| es | 349/360 | 267/360 | 324/360 | Ninguno supera el umbral; preferencia provisional por actual tras corregir |
+| nb-NO | 329/360 | 275/360 | 350/360 | Ninguno supera el umbral; preferencia provisional por MADLAD tras corregir |
+
+La nota total no sustituye el umbral de cero errores en botones, cifras y negaciones. Se han registrado 60 salidas
+incorrectas observadas como regresiones de contexto/hash, incluidas las negaciones `Nr.` de la traducción actual.
+El control de tokens técnicos detecta además la pérdida de `.dxf`; la pérdida de `{duration}` de MADLAD se rechaza,
+sin reconstruir ni adivinar el marcador. `automatic-summary.json` se recalcula desde los checkpoints con las reglas
+actuales. **Estas combinaciones es/nb no pasan a traducción masiva.** Se necesitan glosario por sentido y una nueva
+configuración piloto; no basta con un modelo más grande.
+
+| Motor | Conversión | Total de la tanda | Pico RSS del proceso de inferencia |
+|---|---:|---:|---:|
+| M2M100 | 18,81 s | 70,99 s | 844.460 KiB |
+| MADLAD | 77,21 s | 281,74 s | 3.771.300 KiB |
+
+Son medidas de dos destinos y 40 referencias, no una predicción de las 300 herramientas ni de todo el catálogo.
+El pico no incluye el subproceso de conversión. Los checksums de los modelos INT8 están en `UVPILOT_MODEL` del run;
+se conservarán en el informe del lote. Dependencias pesadas verificadas en Actions: CPU-only Torch, conversor,
+tokenizers y carga del modelo binario de langid. NumPy está fijado en 2.2.6: la primera ejecución con 2.5.4 falló
+en Python 3.11 y las versiones ≥2.3 eliminan una operación binaria usada por langid 1.1.6.
+
+Al recuperar una ejecución reanudada, el recolector **fusiona** sus registros con el checkpoint anterior y reemplaza
+el JSONL de forma atómica. Los tests cubren conservación del lote previo, logs truncados y duplicados incompatibles.
+Un cambio en el algoritmo de inferencia requiere cambiar la versión de formato/identidad antes de reutilizar resultados.
 
 Fuentes primarias: [M2M100](https://huggingface.co/facebook/m2m100_418M),
 [MADLAD-400](https://huggingface.co/google/madlad400-3b-mt),

@@ -1,5 +1,11 @@
 # Local translation queue
 
+> **Ejecución vigente · 20-oct-2026:** modelos y traducción pesada **solo en GitHub Actions del repo público**;
+> nunca descargar pesos ni ejecutar este setup en el Mac de Pedro (AGENTS y RUNBOOK §3/§8).
+> El piloto reanudable ya existe: [evidencia y comandos](../../docs/quality/translation-pilot.md).
+> Los comandos de instalación locales de abajo describen el mecanismo histórico para una máquina de cómputo desechable;
+> no autorizan a usarlos en el Mac. Las salidas actuales del piloto siguen en `machine-draft`, sin idiomas aprobados.
+
 This runner implements the SQLite memory and resumable M2M100 draft stages from
 `docs/planning/usefulverse-1000-2026-10-19/METODO-TRADUCCION.md`. It has no
 hosted translation API. Generated text remains a draft until it has passed

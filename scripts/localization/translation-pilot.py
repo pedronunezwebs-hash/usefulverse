@@ -10,10 +10,12 @@ import importlib.util
 import json
 import os
 from pathlib import Path
+import re
 import resource
 import shutil
 import subprocess
 import sys
+import tempfile
 import time
 import unicodedata
 
@@ -29,6 +31,7 @@ ALIASES = {"pt-BR": "pt", "zh-CN": "zh", "zh-TW": "zh", "fil": "tl", "nb-NO": "n
 SCRIPTS = {"ar": "ARABIC", "fa": "ARABIC", "ur": "ARABIC", "hi": "DEVANAGARI", "mr": "DEVANAGARI", "bn": "BENGALI", "te": "TELUGU", "ta": "TAMIL", "gu": "GUJARATI", "am": "ETHIOPIC", "ru": "CYRILLIC", "uk": "CYRILLIC", "bg": "CYRILLIC", "el": "GREEK", "th": "THAI", "ko": "HANGUL"}
 FORMAT = "usefulverse-translation-pilot-v1"
 SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
+TECHNICAL_TOKEN = re.compile(r"\.[a-z][a-z0-9]{1,5}\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
 
 
 def canonical(value):
@@ -57,6 +60,7 @@ def automatic_checks(source, translation, locale, key=None):
     return {
         "nonempty": bool(translation.strip()),
         "protected_tokens_identical": queue.signature(source) == queue.signature(translation),
+        "technical_tokens_identical": Counter(token.casefold() for token in TECHNICAL_TOKEN.findall(source)) == Counter(token.casefold() for token in TECHNICAL_TOKEN.findall(translation)),
         "untranslated_source": source.casefold().strip() == translation.casefold().strip(),
         "length_ratio": round(len(translation) / max(1, len(source)), 3),
         "expected_script_ratio": script_ratio,
@@ -114,6 +118,12 @@ def pending_work(corpus, units, locales, engine, beam, completed):
 
 def collect_logs(paths, output):
     records = {}
+    if output.exists():
+        for line in output.read_text().splitlines():
+            row = json.loads(line)
+            validate_record(row)
+            records[row["record_id"]] = row
+    recovered = 0
     for path in paths:
         for line in Path(path).read_text().splitlines():
             if "UVPILOT_RECORD " not in line:
@@ -125,10 +135,20 @@ def collect_logs(paths, output):
             if identity in records and canonical(records[identity]) != canonical(row):
                 raise ValueError("Conflicting duplicate checkpoint; refusing to overwrite evidence")
             records[identity] = row
-    if not records:
+            recovered += 1
+    if not recovered:
         raise ValueError("No complete pilot records in logs; refusing empty checkpoint")
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text("".join(canonical(records[key]) + "\n" for key in sorted(records)))
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=output.parent, delete=False) as handle:
+            temporary = Path(handle.name)
+            for key in sorted(records): handle.write(canonical(records[key]) + "\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, output)
+    finally:
+        if temporary is not None: temporary.unlink(missing_ok=True)
     return len(records)
 
 
@@ -146,7 +166,7 @@ def summarize(paths):
             group["records"] += 1
             checks = automatic_checks(row["source"], row["translation"], row["locale"], row["key"])
             for flag, fails in {"empty": not checks["nonempty"], "protected_tokens": not checks["protected_tokens_identical"],
-                "english_unchanged": checks["untranslated_source"], "length_ratio": not 0.5 <= checks["length_ratio"] <= 2.5,
+                "technical_tokens": not checks["technical_tokens_identical"], "english_unchanged": checks["untranslated_source"], "length_ratio": not 0.5 <= checks["length_ratio"] <= 2.5,
                 "wrong_script": checks["expected_script_ratio"] is not None and checks["expected_script_ratio"] < 0.6,
                 "known_semantic_errors": bool(checks["known_semantic_errors"]), "marker_restore": not row["marker_restore_ok"], "truncated": row["truncated"]}.items():
                 group[flag] += int(fails)
