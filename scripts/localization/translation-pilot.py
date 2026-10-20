@@ -37,7 +37,7 @@ POLICIES["context-v6"] = json.loads(Path(__file__).with_name("pilot-privacy-poli
 SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
 TECHNICAL_TOKEN = re.compile(r"\.(?:dxf|dwg|png|svg|wav|mp3|pdf|json|csv|txt)\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
 SOFTWARE_VERSION = re.compile(r"(?<![\w.])\d+(?:\.\d+){2,}(?![\w.]\d)")
-SOFTWARE_IDENTIFIER = re.compile(r"(?<![\w-])(?:dxf-parser|loglevel|Web Audio)(?![\w-])", re.IGNORECASE)
+SOFTWARE_IDENTIFIER = re.compile(r"(?<!\w)(?:dxf-parser|loglevel|Web Audio)(?!\w)", re.IGNORECASE)
 TYPED_LITERAL = re.compile(r"(?<![\w.])\d+(?:\.\d+){2,}(?![\w.]\d)|\((?:in|ft|mi|mm|cm|m|km|yd)\)")
 OPAQUE_LITERAL = re.compile(r"https?://[^\s<>]+|`[^`]*`|\{[A-Za-z][A-Za-z0-9_]*\}|</?[A-Za-z][^>]*>")
 

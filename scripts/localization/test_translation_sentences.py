@@ -103,6 +103,9 @@ class SentenceCoverageTest(unittest.TestCase):
         self.assertTrue(checks['back_software_versions_identical'])
         self.assertTrue(checks['software_identifiers_identical'])
         self.assertFalse(checks['back_software_identifiers_identical'])
+        compounds=pilot.automatic_checks('Uses dxf-parser, loglevel and Web Audio.',
+            'Bruker dxf-parser-biblioteket, loglevel-loggeren og Web Audio-filtre.', 'nb-NO')
+        self.assertTrue(compounds['software_identifiers_identical'], 'A local compound suffix does not change the software identifier')
 
     def test_observed_back_errors_are_flagged_separately_from_correct_forward_copy(self):
         cases=[('shikaku.fields.selectStart','Choose a start square.','Velg en startrute.','Choose a start window.'),

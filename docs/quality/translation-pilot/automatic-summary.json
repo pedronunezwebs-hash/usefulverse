@@ -4280,7 +4280,7 @@
       "reviewed_memory_hits": 5,
       "forward_segment_evidence": 0,
       "back_segment_evidence": 0,
-      "software_identifiers": 1,
+      "software_identifiers": 0,
       "back_software_identifiers": 0,
       "software_versions": 1,
       "back_software_versions": 1,
