@@ -11,7 +11,11 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 ## 1. Siguiente paso exacto
 
-1. **Guardar el trabajo de las 300 herramientas en una rama remota de verdad.** Está en
+1. **Las 300 están desplegadas en una vista previa con `noindex`** (`draft-300-noindex.usefulverse-tools.pages.dev`; comprobado el
+   20-oct: cabecera `X-Robots-Tag: noindex`, meta `noindex,follow` y sitemap vacío). Falta: **subir su código a GitHub** (en GitHub solo
+   está la copia de seguridad `backup/codex-300-tools-20261020` de la mañana del 20-oct) e integrarlas en `main` según RUNBOOK §7
+   «Paso A», idealmente ya dentro del sitio unificado (§4b).
+   Detalle de la copia de seguridad: **Guardar el trabajo de las 300 herramientas en una rama remota de verdad.** Está en
    `/tmp/usefulverse-300-implementation-20261019` (rama local `codex/usefulverse-300-tools-20261019`, sin subir, con 345
    archivos sin commit). Claude dejó una **copia de seguridad** en la rama remota `backup/codex-300-tools-20261020`
    (commit `636f3c1`). El agente que lleva esas herramientas (ChatGPT/Codex) debe hacer commit y push de su rama
@@ -27,7 +31,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 - [ ] **Pruebas para Pedro: 8 pendientes · 0 fallos abiertos** → `docs/quality/PRUEBAS-PEDRO.md` (móvil real, cámara, micrófono, altavoces…)
 
-- [ ] Autorizar el borrado de **~24 GB** de copias temporales antiguas de UsefulVerse en `/tmp` (builds `merged-release-…`,
+- [ ] Autorizar el borrado de **~24 GB** (Pedro: «aún no», 20-oct; esperar a su aviso) de copias temporales antiguas de UsefulVerse en `/tmp` (builds `merged-release-…`,
       `reconstruction…`, caché de MADLAD de 3,3 GB…), dejadas por sesiones del 17-19 oct. **No borrar
       `/tmp/usefulverse-300-implementation-20261019` hasta que su rama esté en GitHub.**
 - [ ] Fichas de coste de las herramientas nuevas que necesiten servidor o API (test de velocidad, tiempo, chat de IA…), cuando aparezcan.
@@ -65,6 +69,12 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 - [ ] G1 · Hash en los 106 JS de `recovered-live-only-106` (o caché corta)
 - [ ] Errores de cálculo y lógica (mates, finanzas, ciencia, otros, dev): test que lo reproduce + arreglo
 - [ ] Juegos rotos (sudoku, 2048 táctil, palabra de 5 letras en inglés, kakuro y mahjong reales)
+
+### Peso y diseño responsive (`PESO-Y-DISENO.md`)
+- [ ] Dividir `app.js` (70 KB) y los paquetes de idioma (`locale-es.js` 167 KB) por herramienta
+- [ ] Home ≤ 25 KB de HTML (hoy 217 KB) · sacar el JSON incrustado de market-tools (74 KB)
+- [ ] Test de presupuesto de peso en CI + Lighthouse CI
+- [ ] Tokens de espaciado y contenedor; pruebas visuales en 320-1920 px; sin desbordamiento; RTL y textos largos
 
 ### Fase 1-2 · Diseño y plantilla (PLAN §3-4)
 - [ ] Sistema de diseño «Planeta Infinito» en el repo (tokens, componentes, RTL)

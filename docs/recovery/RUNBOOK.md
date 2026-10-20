@@ -239,6 +239,8 @@ puerta. Merge y despliegue (máximo uno al día). **Verificar en producción** (
 | 13 | 37 idiomas presentes (o los que hayan pasado el piloto), con `hreflang` recíproco | Test de cobertura |
 | 14 | `npm run check` y `npm run locale:release-check` verdes | Salida del comando |
 | 15 | **Las 7 capas de `docs/quality/PRUEBAS.md`**: ≥10 valores de referencia con fuente, propiedades o aleatorios, regresión, Playwright (Chromium, Firefox y WebKit; móvil 390 px; en/es/de/ar/ja/hi/nb), axe y Lighthouse | Salida de los tests + enlace al run de Actions |
+| 17 | **Peso** dentro del presupuesto de `PESO-Y-DISENO.md` §2 (test de CI) | Informe de peso del PR |
+| 18 | **Diseño responsive**: 320-1920 px, zoom al 200 %, sin desbordamiento, márgenes ≥ 16 px en móvil, zonas táctiles ≥ 44 px, RTL y textos largos (`PESO-Y-DISENO.md` §4) | Capturas + test visual |
 | 16 | Lo que no se puede automatizar está en `PRUEBAS-PEDRO.md`, y **ninguna prueba de Pedro de esta herramienta está pendiente o en `FALLA`** | Filas de PRUEBAS-PEDRO |
 
 ---
