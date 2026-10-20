@@ -31,6 +31,7 @@ ALIASES = {"pt-BR": "pt", "zh-CN": "zh", "zh-TW": "zh", "fil": "tl", "nb-NO": "n
 SCRIPTS = {"ar": "ARABIC", "fa": "ARABIC", "ur": "ARABIC", "hi": "DEVANAGARI", "mr": "DEVANAGARI", "bn": "BENGALI", "te": "TELUGU", "ta": "TAMIL", "gu": "GUJARATI", "am": "ETHIOPIC", "ru": "CYRILLIC", "uk": "CYRILLIC", "bg": "CYRILLIC", "el": "GREEK", "th": "THAI", "ko": "HANGUL"}
 FORMAT = "usefulverse-translation-pilot-v1"
 CONTEXT_POLICY = json.loads(Path(__file__).with_name("pilot-context-policy.json").read_text())
+POLICIES = {CONTEXT_POLICY["id"]: CONTEXT_POLICY, "context-v3": json.loads(Path(__file__).with_name("pilot-sentence-policy.json").read_text())}
 SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
 TECHNICAL_TOKEN = re.compile(r"\.(?:dxf|dwg|png|svg|wav|mp3|pdf|json|csv|txt)\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
 
@@ -45,13 +46,13 @@ def digest(value):
 
 def policy_digest(policy):
     if policy == "baseline": return None
-    if policy != CONTEXT_POLICY["id"]: raise ValueError("Unknown inference policy")
-    return digest(CONTEXT_POLICY)
+    if policy not in POLICIES: raise ValueError("Unknown inference policy")
+    return digest(POLICIES[policy])
 
 
 def translation_input(unit, policy):
     policy_digest(policy)
-    entry = CONTEXT_POLICY["entries"].get(unit["key"]) if policy != "baseline" else None
+    entry = POLICIES[policy]["entries"].get(unit["key"]) if policy != "baseline" else None
     if entry:
         if any(unit.get(key) != entry[key] for key in ("source", "source_hash", "context")):
             raise ValueError("Stale contextual glossary; review changed source before translation")
@@ -109,6 +110,35 @@ def translate_literal_segments(texts, model_translate, traces=None):
         valid = bool(raw.strip()) and queue.signature(source) == queue.signature(raw) and Counter(TECHNICAL_TOKEN.findall(source)) == Counter(TECHNICAL_TOKEN.findall(raw))
         results.append((raw if valid else None, raw, truncated))
     return results
+
+
+def translate_unmasked_sentences(texts, model_translate, traces=None):
+    """Keep complete syntax and visible literals in model input. Reject damage, never repair it."""
+    outputs = model_translate(texts)
+    if len(outputs) != len(texts): raise ValueError("Model returned an incomplete sentence batch")
+    results = []
+    for source, (raw, cut) in zip(texts, outputs, strict=True):
+        valid = bool(raw.strip()) and queue.signature(source) == queue.signature(raw) and Counter(token.casefold() for token in TECHNICAL_TOKEN.findall(source)) == Counter(token.casefold() for token in TECHNICAL_TOKEN.findall(raw))
+        if traces is not None:
+            traces.append([{"kind": "prose", "input": source, "output": raw, "truncated": cut,
+                "leading_space": "", "trailing_space": ""}])
+        results.append((raw if valid else None, raw, cut))
+    return results
+
+
+def segment_evidence_valid(trace, expected_input, assembled_output):
+    """Audit stored model fragments independently of the inference policy's acceptance flag."""
+    if not isinstance(trace, list): return False
+    source, output = [], []
+    for part in trace:
+        if part.get("kind") == "literal":
+            source.append(part["text"]); output.append(part["text"])
+        elif part.get("kind") == "prose":
+            if not part["input"].strip() or not part["output"].strip(): return False
+            source.append(part["leading_space"] + part["input"] + part["trailing_space"])
+            output.append(part["leading_space"] + part["output"].strip() + part["trailing_space"])
+        else: return False
+    return "".join(source) == expected_input and "".join(output) == assembled_output
 
 
 def semantic_issues(key, source_hash, translation, locale):
@@ -238,6 +268,9 @@ def summarize(paths):
             seen.add(row["record_id"])
             group = groups.setdefault((row.get("inference_policy", "baseline"), row["engine"], row["locale"], row["candidate"]), Counter())
             group["records"] += 1
+            if row.get("inference_policy", "baseline") != "baseline":
+                group["forward_segment_evidence"] += int(row["candidate"] == "model" and not segment_evidence_valid(row.get("forward_segments"), row["model_input"], row["raw_translation"]))
+                group["back_segment_evidence"] += int(not segment_evidence_valid(row.get("back_segments"), row["translation"], row["back_translation"]))
             checks = automatic_checks(row["source"], row["translation"], row["locale"], row["key"], row["back_translation"])
             for flag, fails in {"empty": not checks["nonempty"], "protected_tokens": not checks["protected_tokens_identical"],
                 "technical_tokens": not checks["technical_tokens_identical"], "english_unchanged": checks["untranslated_source"], "length_ratio": not 0.5 <= checks["length_ratio"] <= 2.5,
@@ -332,6 +365,8 @@ def run(args):
             def prose_translate(prose):
                 values = model_translate(prose, source_locale, target_locale)
                 return [(opencc.convert(raw) if target_locale == "zh-TW" else raw, cut) for raw, cut in values]
+            if POLICIES[policy]["protection"] == "full-sentence-literals-v1":
+                return translate_unmasked_sentences(texts, prose_translate, traces)
             return translate_literal_segments(texts, prose_translate, traces)
         protected = [queue.protect(text) for text in texts]
         outputs = model_translate([text for text, _ in protected], source_locale, target_locale)
@@ -367,7 +402,7 @@ def run(args):
                         if policy != "baseline":
                             row.update(inference_policy=policy, policy_digest=policy_digest(policy), context=unit["context"],
                                 model_input=translation_input(unit, policy) if candidate == "model" else unit["source"],
-                                protection=CONTEXT_POLICY["protection"], forward_segments=forward_traces[index] if candidate == "model" else None,
+                                protection=POLICIES[policy]["protection"], forward_segments=forward_traces[index] if candidate == "model" else None,
                                 back_segments=back_traces[index])
                         emit(row)
                         handle.write(canonical(row) + "\n")
@@ -402,7 +437,7 @@ def main():
     work.add_argument("--scope", choices=["references", "full"], default="references")
     work.add_argument("--locales", default="")
     work.add_argument("--resume")
-    work.add_argument("--policy", choices=["baseline", "context-v2"], default="baseline")
+    work.add_argument("--policy", choices=["baseline", *POLICIES], default="baseline")
     work.add_argument("--batch-size", type=int, choices=range(1, 17), default=8)
     work.add_argument("--beam-size", type=int, choices=[1, 2, 3, 4], default=2)
     args = parser.parse_args()

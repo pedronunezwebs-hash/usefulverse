@@ -1816,5 +1816,194 @@
     "issue": "La negación se convierte en رقم, número.",
     "observed_candidate": "legacy",
     "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "dxf-viewer.fields.measurement",
+    "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+    "translation": "Messen Sie Abstand",
+    "issue": "Falta el artículo en «Messen Sie Abstand»; etiqueta poco natural.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "de",
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "translation": "Fit-Zeichnung",
+    "issue": "«Fit-Zeichnung» nombra un dibujo; no expresa ajustar la vista.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "de",
+    "key": "dxf-viewer.fields.unsupported",
+    "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+    "translation": "Nicht unterstützte Datei. Wählen Sie eine ASCII-DXF-Datei.",
+    "issue": "Pierde la extensión literal .dxf; ASCII-DXF no conserva la instrucción de archivo exacta.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "de",
+    "key": "dxf-viewer.fields.zoomOut",
+    "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+    "translation": "Vergrößern",
+    "issue": "«Vergrößern» amplía; el botón debe alejar.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "de",
+    "key": "shikaku.fields.check",
+    "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+    "translation": "Check puzzle",
+    "issue": "«Check puzzle» queda en inglés.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "de",
+    "key": "shikaku.fields.clear",
+    "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+    "translation": "Klare Rechtecke",
+    "issue": "«Klare Rechtecke» describe rectángulos claros; no los elimina.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "de",
+    "key": "shikaku.fields.resume",
+    "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+    "translation": "Resume",
+    "issue": "«Resume» queda sin traducir y no indica continuar la partida.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "de",
+    "key": "shikaku.fields.undo",
+    "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+    "translation": "Letztes Rechteck rückgängig",
+    "issue": "Falta el verbo completo «rückgängig machen» en la etiqueta.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "de",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "Diese leichte Tonhöhensteuerung ändert die Wiedergabegeschwindigkeit, sodass eine niedrigere Tonhöhe langsamer und eine höhere Tonhöhe schneller abgespielt wird.",
+    "issue": "Omite la respuesta negativa inicial explícita; conserva la explicación de velocidad.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "de",
+    "key": "voice-changer.fields.preview",
+    "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+    "translation": "Vorschau-Effekt",
+    "issue": "«Vorschau-Effekt» nombra un efecto, no la acción de escucharlo.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "fr",
+    "key": "dxf-viewer.faq.2.a",
+    "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+    "translation": "Uniquement lorsque le DXF déclare des millimètres, sinon le visualiseur utilise l'unité déclarée ou étiquette les mesures comme unités de dessin.",
+    "issue": "«déclare des millimètres» y «étiquette les mesures» son calcos técnicos poco naturales.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "fr",
+    "key": "dxf-viewer.fields.binary",
+    "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+    "translation": "Enregistrez ou exportez le dessin au format ASCII DXF.Enregistrez ou exportez le dessin au format ASCII DXF.",
+    "issue": "Duplica la instrucción de exportar y elimina por completo la advertencia de DXF binario no soportado.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "fr",
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "translation": "Fit drawing",
+    "issue": "«Fit drawing» queda en inglés.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "fr",
+    "key": "dxf-viewer.fields.unsupported",
+    "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+    "translation": "Fichier non pris en charge. Choisissez un fichier.dxf ASCII.",
+    "issue": "La extensión sobrevive, pero queda pegada a «fichier.dxf».",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "fr",
+    "key": "dxf-viewer.fields.zoomIn",
+    "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+    "translation": "Zoom dans la vidéo",
+    "issue": "Inventa vídeo en una herramienta de dibujo DXF.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "fr",
+    "key": "shikaku.fields.daily",
+    "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+    "translation": "Daily puzzle",
+    "issue": "«Daily puzzle» queda en inglés.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "fr",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "Un son clair",
+    "issue": "«Un son clair» describe sonido claro; no lo elimina.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "fr",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "Votre navigateur décode et traite l'audio sélectionné localement. UsefulVerse ne reçoit pas l'enregistrement.",
+    "issue": "Omite el «Non» inicial explícito, aunque conserva «ne reçoit pas».",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "fr",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "Ce contrôle de hauteur léger modifie la vitesse de lecture, de sorte qu'une hauteur inférieure est jouée plus lentement et une hauteur supérieure est jouée plus rapidement.",
+    "issue": "Omite el «Non» inicial y emplea un calco para el control de tono.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "fr",
+    "key": "voice-changer.fields.preview",
+    "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+    "translation": "Preview effect",
+    "issue": "«Preview effect» queda en inglés.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "fr",
+    "key": "voice-changer.fields.privacy",
+    "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+    "translation": "L'audio reste dans ce navigateur. Il n'est pas téléchargé ou enregistré par UsefulVerse.",
+    "issue": "«téléchargé» no expresa de forma inequívoca la ausencia de subida de audio.",
+    "observed_candidate": "madlad",
+    "actions_run_id": "39402907694"
   }
 ]

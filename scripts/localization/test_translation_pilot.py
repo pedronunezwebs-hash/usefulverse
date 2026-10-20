@@ -115,7 +115,7 @@ class TranslationPilotTest(unittest.TestCase):
         for path in (directory / 'checkpoints').glob('*.jsonl'):
             for line in path.read_text().splitlines():
                 row = json.loads(line); records[row['record_id']] = row
-        for filename, expected_count in [('review-es-nb.json', 240), ('review-core-six.json', 402)]:
+        for filename, expected_count in [('review-es-nb.json', 240), ('review-core-six.json', 402), ('review-madlad-de-fr.json', 80)]:
             review = json.loads((directory / filename).read_text())
             self.assertFalse(review['native_review'])
             self.assertEqual(review['approved_locales'], [])
@@ -194,6 +194,46 @@ class TranslationPilotTest(unittest.TestCase):
         self.assertEqual(pilot.translate_literal_segments(['25 MB'], lambda _: self.fail('literal-only input must not run a model'))[0][0], '25 MB')
         broken = pilot.translate_literal_segments(['Value: {count}'], lambda texts: [('Valor {count}', False) for _ in texts])[0]
         self.assertIsNone(broken[0], 'A hallucinated extra placeholder must fail, never be repaired')
+
+    def test_contextual_entries_preserve_literals_and_use_short_controlled_sentences(self):
+        for entry in pilot.CONTEXT_POLICY['entries'].values():
+            with self.subTest(concept=entry['concept']):
+                self.assertEqual(hashlib.sha256(entry['source'].encode()).hexdigest(), entry['source_hash'])
+                self.assertEqual(pilot.queue.signature(entry['source']), pilot.queue.signature(entry['translation_input']))
+                self.assertTrue(pilot.automatic_checks(entry['source'], entry['translation_input'], 'en')['technical_tokens_identical'])
+                for sentence in entry['translation_input'].split('. '): self.assertLessEqual(len(sentence.split()), 20)
+
+    def test_segment_evidence_rejects_empty_prose_changed_literals_and_forged_assembly(self):
+        trace = [{'kind': 'prose', 'input': 'Duration:', 'output': 'Duración:', 'leading_space': '', 'trailing_space': ' ', 'truncated': False},
+            {'kind': 'literal', 'text': '{duration}'}]
+        self.assertTrue(pilot.segment_evidence_valid(trace, 'Duration: {duration}', 'Duración: {duration}'))
+        self.assertFalse(pilot.segment_evidence_valid(trace, 'Duration: {duration}', 'Duración: 00000000'))
+        self.assertFalse(pilot.segment_evidence_valid(trace, 'Duration: {count}', 'Duración: {duration}'))
+        empty = copy.deepcopy(trace); empty[0]['output'] = ''
+        self.assertFalse(pilot.segment_evidence_valid(empty, 'Duration: {duration}', ' {duration}'))
+
+    def test_literal_evidence_round_trip_for_a_thousand_input_shapes(self):
+        for i in range(1000):
+            source = (' ' * (i % 3)) + f'Keep {{count}}, {{count}}, {i} MB and ASCII .dxf.' + (' ' * (i % 2))
+            traces = []
+            result = pilot.translate_literal_segments([source], lambda texts: [(text, False) for text in texts], traces)
+            self.assertEqual(result[0][0], source)
+            self.assertTrue(pilot.segment_evidence_valid(traces[0], source, source))
+
+    def test_full_sentence_variant_keeps_model_context_and_rejects_any_lost_literal(self):
+        source = 'Audio decoded locally. Duration: {duration} seconds.'
+        seen, traces = [], []
+        def model(texts):
+            seen.extend(texts)
+            return [('Audio decodificado localmente. Duración: {duration} segundos.', False)]
+        value, raw, _ = pilot.translate_unmasked_sentences([source], model, traces)[0]
+        self.assertEqual(seen, [source])
+        self.assertEqual(value, raw)
+        self.assertTrue(pilot.segment_evidence_valid(traces[0], source, raw))
+        for broken in ['Audio decodificado. Duración: 00000000 segundos.', '', 'Audio {duration} {duration}']:
+            self.assertIsNone(pilot.translate_unmasked_sentences([source], lambda _: [(broken, False)])[0][0])
+        with self.assertRaises(ValueError): pilot.translate_unmasked_sentences([source], lambda _: [])
+        self.assertIsNone(pilot.translate_unmasked_sentences(['Choose an ASCII .dxf file.'], lambda _: [('Elige un archivo ASCII DXF.', False)])[0][0])
 
     def test_missing_sentence_spacing_is_not_misreported_as_a_file_extension_change(self):
         checks = pilot.automatic_checks('Audio decoded. Try again.', 'Audio decodificado.Prueba otra vez.', 'es')
