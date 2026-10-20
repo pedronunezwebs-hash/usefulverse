@@ -22,8 +22,13 @@ Prevalecen sobre cualquier plan anterior de `docs/` (incluido `docs/growth600/`)
    (`docs/recovery/indexable-core-tools.csv` = orden de trabajo, empezando por las 128 con datos). No añadas
    `noindex` a ninguna página sin aprobación explícita del dueño.
 3. Las 300 herramientas preparadas y sin publicar **siguen sin publicarse**.
-4. Prohibido enviar URLs en masa a buscadores (IndexNow, Naver, Yandex o Google) mientras dure la recuperación.
+4. **Excepción aprobada por el dueño (20-oct-2026): cobertura de 37 idiomas.** Todas las herramientas publicadas
+   deben existir en los 37 idiomas definidos. Hoy a 600 les falta el noruego bokmål (`/nb/`: 277 del dominio
+   principal y 323 del subdominio). Se puede añadir `nb` a una herramienta **solo cuando esa herramienta ya
+   haya pasado la puerta de calidad en inglés**, junto con su traducción, de forma gradual y dentro del
+   límite de crecimiento. Es la única ampliación de URLs permitida.
+5. Prohibido enviar URLs en masa a buscadores (IndexNow, Naver, Yandex o Google) mientras dure la recuperación.
    Solo se reenvían los sitemaps limpios cuando el dueño lo pida.
-5. No publicar traducciones automáticas sin revisión en URLs indexables.
-6. Cada PR indica cuántas URLs indexables había antes y después. Si el número sube, el PR necesita la
+6. No publicar traducciones automáticas sin revisión en URLs indexables.
+7. Cada PR indica cuántas URLs indexables había antes y después. Si el número sube, el PR necesita la
    aprobación explícita del dueño.
