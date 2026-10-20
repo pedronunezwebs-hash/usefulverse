@@ -11,7 +11,9 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 ## 1. Siguiente paso exacto
 
-1. **Las 300 están desplegadas en una vista previa con `noindex`** (`draft-300-noindex.usefulverse-tools.pages.dev`; comprobado el
+1. **Código de las 300 respaldado por ChatGPT** en el repo privado `usefulverse-300-worktree-backup-20261020`, rama
+   `backup/usefulverse-300-implementation` (commit `27a2f174`); el worktree local ya no existe.
+   **Las 300 están desplegadas en una vista previa con `noindex`** (`draft-300-noindex.usefulverse-tools.pages.dev`; comprobado el
    20-oct: cabecera `X-Robots-Tag: noindex`, meta `noindex,follow` y sitemap vacío). Falta: **subir su código a GitHub** (en GitHub solo
    está la copia de seguridad `backup/codex-300-tools-20261020` de la mañana del 20-oct) e integrarlas en `main` según RUNBOOK §7
    «Paso A», idealmente ya dentro del sitio unificado (§4b).
@@ -31,7 +33,9 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 - [ ] **Pruebas para Pedro: 8 pendientes · 0 fallos abiertos** → `docs/quality/PRUEBAS-PEDRO.md` (móvil real, cámara, micrófono, altavoces…)
 
-- [ ] Autorizar el borrado de **~24 GB** (Pedro: «aún no», 20-oct; esperar a su aviso) de copias temporales antiguas de UsefulVerse en `/tmp` (builds `merged-release-…`,
+- [x] Limpieza de `/tmp` hecha el 20-oct con el OK de Pedro: 18 GB liberados (154 carpetas y archivos de usefulverse). Antes se
+      respaldaron los restos sin commit de 5 reconstrucciones y 73 archivos de estado en el repo **privado**
+      `usefulverse-300-worktree-backup-20261020` (ramas `backup/tmp-*`). Disco: 34 → 52 GB libres de copias temporales antiguas de UsefulVerse en `/tmp` (builds `merged-release-…`,
       `reconstruction…`, caché de MADLAD de 3,3 GB…), dejadas por sesiones del 17-19 oct. **No borrar
       `/tmp/usefulverse-300-implementation-20261019` hasta que su rama esté en GitHub.**
 - [ ] Fichas de coste de las herramientas nuevas que necesiten servidor o API (test de velocidad, tiempo, chat de IA…), cuando aparezcan.
