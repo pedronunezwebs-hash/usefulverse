@@ -475,5 +475,68 @@
     "issue": "Enheter/viseren se convierten en usos incorrectos de seeren/etiketter.",
     "observed_candidate": "model",
     "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "Nettleseren din dekoder og behandler den valgte lyden lokalt. UsefulVerse mottar ikke opptaket.",
+    "issue": "Se omite la respuesta negativa Nei. de la FAQ.",
+    "observed_candidate": "model-madlad",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.example",
+    "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+    "translation": "Una pista marcada 6 pertenece dentro de un rectángulo que cubre exactamente seis casillas.",
+    "issue": "Sintaxis poco natural: la pista debe estar dentro de un rectángulo.",
+    "observed_candidate": "model-madlad",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "Este control de tono ligero cambia la velocidad de reproducción, por lo que un tono más bajo se reproduce más lento y un tono más alto se reproduce más rápido.",
+    "issue": "Se omite la respuesta negativa No. de la FAQ.",
+    "observed_candidate": "model-madlad",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "translation": "Dibujo de ajuste",
+    "issue": "Se pierde la acción de ajustar el plano a la vista.",
+    "observed_candidate": "model-madlad",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "Denne lette tonehøydekontrollen endrer avspillingshastigheten, slik at en lavere tonehøyde spilles langsommere og en høyere tonehøyde spilles raskere.",
+    "issue": "Se omite la respuesta negativa Nei. de la FAQ.",
+    "observed_candidate": "model-madlad",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "Un audio claro",
+    "issue": "Borrar el audio se convierte en la descripción de un audio claro.",
+    "observed_candidate": "model-madlad",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "translation": "Nei. Hvert rektangel må inneholde nøyaktig ett tallledetråd.",
+    "issue": "Concordancia de ett tallledetråd incorrecta en bokmål; debe ser én tallledetråd.",
+    "observed_candidate": "model-madlad",
+    "run_id": "39402041888"
   }
 ]
