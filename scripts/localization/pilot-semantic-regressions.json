@@ -3735,5 +3735,495 @@
     "observed_candidate": "madlad-context-v6",
     "issue": "pronoun-agreement",
     "evidence": "review-context-v6-references.json"
+  },
+  {
+    "key": "dxf-viewer.description",
+    "source_hash": "44507baf26966f5e70c69064513d6977453186776a56683e19936f8edf5d01a3",
+    "locale": "es",
+    "direction": "forward",
+    "translation": "Abrir dibujos ASCII DXF localmente. Vea líneas, círculos, arcos y polilíneas 2D compatibles, cambie capas, mida distancias y exporte la geometría compatible como SVG o PNG.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Cambiar capas no precisa mostrar/ocultar su visibilidad.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.details",
+    "source_hash": "19a9af223175a6ad8539b143a6070ff1587c5504b4f8c294231c68d022d50ef6",
+    "locale": "es",
+    "direction": "forward",
+    "translation": "Un trabajador local analiza ASCII DXF. No se ejecutan ni se recuperan scripts, referencias externas, imágenes, fuentes ni recursos de red en el archivo. Este visor no abre DWG o DXF binario.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Trabajador local convierte una tarea informática del navegador en una persona que analiza el archivo.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.fields.bounds",
+    "source_hash": "d9263fe0e96224c35916149562a4073403013737373c25cb4f0c3e941f930992",
+    "locale": "es",
+    "direction": "forward",
+    "translation": "Dibujo de límites",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Dibujo de límites es dibujo de fronteras, no la extensión geométrica del dibujo.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.fields.measureHelp",
+    "source_hash": "7440fe2d67307dc58e3928157543d92c94c5281c073d0a8e8991d55902b4dc00",
+    "locale": "es",
+    "direction": "forward",
+    "translation": "Seleccione el botón y, a continuación, elija dos puntos en el dibujo. Presiona Escape para cancelar.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Mezcla Seleccione/elija con Presiona en una misma instrucción.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.intro",
+    "source_hash": "99fbd66cd6a5eb3cd27bb3a678221d4d1d58d7bfb129bd957ae447847ccf88cc",
+    "locale": "es",
+    "direction": "forward",
+    "translation": "Abra un dibujo DXF ASCII en este dispositivo. Desplácese y haga zoom, muestre u oculte capas, mida una distancia y exporte la geometría que admite este visor. El archivo original no se carga.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "No se carga niega ambiguamente la carga local en vez de la subida al servidor; la vuelta dice not loaded.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.privacy",
+    "source_hash": "83d9effeb10db2cfc8b9ec4a67f2cac9e9ad08a27e76b5ab9fd4ce3ae5c17ab1",
+    "locale": "es",
+    "direction": "forward",
+    "translation": "El archivo se lee en este navegador y no se carga. Solo se dibujan líneas 2D básicas, círculos, arcos y polilíneas de segmentos rectos; las entidades no compatibles se enumeran y se excluyen de las mediciones y la exportación.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "No se carga no expresa inequívocamente no subir el archivo; la vuelta dice does not load.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.limits",
+    "source_hash": "783499d44597e45c05459c343fa5c7306eef0bfd3407a5b1c5badb793bf136ce",
+    "locale": "es",
+    "direction": "forward",
+    "translation": "Vista previa y exportación compatibles: LINE, CIRCLE, ARC, y LWPOLYLINE/POLYLINE recta en el plano XY. Las curvas abultadas, el texto, los bloques, las dimensiones, las splines, las entidades 3D y otros tipos se enumeran como no compatibles y no se incluyen en las medidas ni en las exportaciones. Tamaño máximo de archivo: 10 MB; máximo de registros de grupo: 200.000.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Curvas abultadas es un calco poco claro. 200.000 conserva el valor 200,000: el contrato literal falla, no se puntúa como cambio de cantidad.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "shikaku.details",
+    "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+    "locale": "es",
+    "direction": "forward",
+    "translation": "Elige un cuadrado de inicio y luego elige un cuadrado de final para dibujar un rectángulo. También puede arrastrar a través de la cuadrícula. Cada rectángulo debe contener una pista cuyo número coincida con su área.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Cuadrado de final es poco natural; mezcla elige con puede en el mismo párrafo.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "shikaku.fields.dragHelp",
+    "source_hash": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+    "locale": "es",
+    "direction": "forward",
+    "translation": "Haga clic en dos esquinas opuestas o arrastre para dibujar un rectángulo. Teclado: TAB hasta un cuadrado y luego Intro para seleccionarlo.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "TAB hasta un cuadrado omite el verbo de la instrucción de foco; usar Tab para llegar a una casilla.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "shikaku.fields.faq.0.a",
+    "source_hash": "1da9eab3e79e5ba1c578b590065014537d077420ad02d77072da8a8f5d7355b5",
+    "locale": "es",
+    "direction": "forward",
+    "translation": "Shikaku es un rompecabezas de números. Dibuja rectángulos alrededor de las pistas. Cada rectángulo tiene el área mostrada por su pista, y todos los cuadrados de la cuadrícula deben ser usados una vez.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Todos los cuadrados deben ser usados es una pasiva rígida; casillas que hay que cubrir resulta más claro.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "shikaku.fields.statusInvalid",
+    "source_hash": "b0615c877a8c4951a33e24c9c757535594838f8c18f5501b8ab4865d8e4f9224",
+    "locale": "es",
+    "direction": "forward",
+    "translation": "Ese rectángulo no coincide con una pista o se superpone a otra.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Otra concuerda con pista, no con rectángulo; el objeto del solapamiento queda ambiguo.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "shikaku.limits",
+    "source_hash": "553fd69edcd34b8a5279837687322bd6fb5734cb75fe06a4837f8fc424a1f323",
+    "locale": "es",
+    "direction": "forward",
+    "translation": "Los rompecabezas se hacen en su navegador. Una cuadrícula más grande puede tardar un momento en un dispositivo más lento. No necesitas una cuenta ni subir un archivo.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Alterna su navegador con no necesitas en el mismo párrafo.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "voice-changer.description",
+    "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+    "locale": "es",
+    "direction": "forward",
+    "translation": "Cambiar el tono de una grabación de audio en este dispositivo. Aplicar efectos de radio o voz profunda. Previsualiza el eco y exporta el audio procesado localmente. Esta herramienta es gratuita y privada. Tu audio no está subido.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Alterna infinitivos e imperativos; tu audio no está subido es poco natural. Gratis/privado/no subida ya no se omiten.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "voice-changer.details",
+    "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+    "locale": "es",
+    "direction": "forward",
+    "translation": "Su navegador decodifica el audio seleccionado localmente. Aplica filtros Web Audio, ganancia, cambios de pitch-rate y eco opcional. Produce un archivo WAV para su descarga. No se envía audio a un servidor.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Pitch-rate queda en inglés sin explicar; Web Audio es un nombre de API legítimo. La negación final no se omite.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "voice-changer.faq.1.a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "locale": "es",
+    "direction": "forward",
+    "translation": "Este control de tono no conserva la velocidad de reproducción. Un tono más bajo se reproduce más lentamente. Un tono más alto toca más rápido.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Toca más rápido no expresa claramente reproducir el audio a mayor velocidad; la relación tono/velocidad se conserva.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "voice-changer.fields.effect",
+    "source_hash": "ffbf819dc31718970d65542a047c75320c4d30c4b66081b9b50d96254b84cc58",
+    "locale": "es",
+    "direction": "forward",
+    "translation": "Preestablecido de efecto",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Preestablecido de efecto es una etiqueta poco natural; ajuste o efecto predefinido sería claro.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "voice-changer.fields.faq3q",
+    "source_hash": "d813cb24bd4299b43bc5c7917288209d13a12fdb21eb4e842e0a3082ee5a5153",
+    "locale": "es",
+    "direction": "forward",
+    "translation": "¿Puede clonar una voz o vocales separadas?",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Vocales separadas son letras/sonidos vocálicos, no separar una pista de voz; la vuelta confirma separate vowels.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "voice-changer.fields.faq4a",
+    "source_hash": "36140ce8462a25b57c9ba69b2cb20061e69ad445824bcd9d735b018b7bfe1c1e",
+    "locale": "es",
+    "direction": "forward",
+    "translation": "La herramienta representa un archivo WAV estándar sin comprimir en su navegador. La entrada puede ser cualquier formato de audio que su navegador pueda decodificar.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Representa un archivo no expresa que la herramienta genera el WAV para descargar.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.description",
+    "source_hash": "44507baf26966f5e70c69064513d6977453186776a56683e19936f8edf5d01a3",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Åpne ASCII DXF tegninger lokalt. Vis støttede 2D-linjer, sirkler, buer og polylinjer, veksle lag, måle avstander og eksportere støttet geometri som SVG eller PNG.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Veksle lag no aclara mostrar/ocultar; mezcla infinitivos y órdenes.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.details",
+    "source_hash": "19a9af223175a6ad8539b143a6070ff1587c5504b4f8c294231c68d022d50ef6",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "En lokal arbeidstaker analyserer ASCII DXF. Ingen skript, eksterne referanser, bilder, skrifter eller nettverksressurser i filen kjøres eller hentes. Denne visningsprogrammet åpner ikke DWG eller binær DXF.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Arbeidstaker es un trabajador humano, no una tarea informática; Denne visningsprogrammet no concuerda.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.example",
+    "source_hash": "ce884c6216576feda9fdd1b0a2604b98788c5f8f014b2f391314b12b8951afe3",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "En linje fra (0, 0) til (10, 0) måler 10 tegneenheter. Seeren leser DXF-enhetskoden når den er tilstede; når den ikke er tilstede, blir målinger merket som tegneenheter.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Seeren presenta al visor como espectador humano. La ida conserva coordenadas y distancia; la vuelta character units es un defecto separado.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.faq.1.a",
+    "source_hash": "2e62ffc986c2e02d3e675c0d3748abcdcd6f331804dd987527903e3b816761c4",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Viseren tegner bare enhetstypene som er oppført i delen for støttet innhold. Det rapporterer andre enhetstyper og deres teller. Det erstatter ikke ikke-støttede enheter med tilnærminger.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Enhetstyper se interpreta como tipos de dispositivos/unidades, no objetos geométricos; teller son contadores, no recuentos. Det tampoco concuerda con viseren.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.fields.bounds",
+    "source_hash": "d9263fe0e96224c35916149562a4073403013737373c25cb4f0c3e941f930992",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Tegner grenser",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Tegner grenser es la acción de dibujar fronteras, no los límites geométricos del dibujo.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.fields.empty",
+    "source_hash": "8db2d1d2045cd8de1270ae6fca1094084ce1d6391f14fdad08980a1d95afa5a7",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Fant ingen støttet 2D- geometri.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Espacio incorrecto en 2D- geometri.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.fields.licenseLoglevel",
+    "source_hash": "2eb48ef5efc420cb12c000e15d078d46f93d4fe77c043d33d3b931f86d52e03b",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "loglevel MIT- lisens",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Espacio incorrecto en MIT- lisens; loglevel sí está conservado.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.fields.pngUnavailable",
+    "source_hash": "4ed628c84e35f441cce67f56ab7980227758e3fb3183e37bb62e2f306b3c8524",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "PNG- eksport kunne ikke opprettes.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Espacio incorrecto en PNG- eksport.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.fields.tooLarge",
+    "source_hash": "b3aad30c4cd8726e20889b9716bdd3cd6c6bfdaf3c8281176d74b3ea158041a7",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Denne filen er over 10 MB- grensen. Prøv en mindre tegning.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Espacio incorrecto en MB- grensen; 10 MB se conserva.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.intro",
+    "source_hash": "99fbd66cd6a5eb3cd27bb3a678221d4d1d58d7bfb129bd957ae447847ccf88cc",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Åpne en ASCII DXF- tegning på denne enheten. Panorere og zoome, vise eller skjule lag, måle en avstand, og eksportere geometrien denne visningsprogrammet støtter. Den opprinnelige filen er ikke lastet opp.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "DXF- tegning y Denne visningsprogrammet requieren corrección de compuesto/concordancia; no subida se conserva.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.limits",
+    "source_hash": "783499d44597e45c05459c343fa5c7306eef0bfd3407a5b1c5badb793bf136ce",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Støttet forhåndsvisning og eksport: LINE, CIRCLE, ARC, og rett LWPOLYLINE / POLYLINE i XY-planet. Utbuktede kurver, tekst, blokker, dimensjoner, spline-linjer, 3D-enheter og andre typer er oppført som ikke støttet og er ikke inkludert i målinger eller eksporter. Maksimal filstørrelse: 10 MB; maksimalt antall gruppeoppføringer: 200 000.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Enheter sigue siendo ambiguo para objetos geométricos; estilo técnico a pulir. 200 000 conserva la cantidad, pero falla el contrato literal frente a 200,000.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.name",
+    "source_hash": "e6d034b5aef391a04544b8db03c3b3f0b7652ae40923872550d786b6ebfe150a",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Lokal DXF- tegneviserName",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Añade el sufijo inglés Name al nombre público y un compuesto DXF- defectuoso.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.privacy",
+    "source_hash": "83d9effeb10db2cfc8b9ec4a67f2cac9e9ad08a27e76b5ab9fd4ce3ae5c17ab1",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Filen leses i denne nettleseren og lastes ikke opp. Bare grunnleggende 2D linjer, sirkler, buer og rett-segment polylinjer er tegnet; ikke-støttede enheter er oppført og utelukket fra målinger og eksport.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Entidades traducidas como enheter pueden confundirse con unidades; compuestos y orden de palabras poco naturales. No subida sí se conserva.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "shikaku.details",
+    "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Velg en startrute, og velg deretter en sluttrute for å tegne et rektangel. Du kan også dra over rutenettet. Hvert rektangel må inneholde ett ledetråd hvis tall samsvarer med området.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Ett ledetråd tiene género incorrecto; området no precisa el área numérica (arealet).",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "shikaku.fields.faq.0.a",
+    "source_hash": "1da9eab3e79e5ba1c578b590065014537d077420ad02d77072da8a8f5d7355b5",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Shikaku er et tall puslespill. Tegn rektangler rundt ledetrådene. Hvert rektangel har området som vises av ledetråd, og alle rutenettet ruter må brukes en gang.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Tall puslespill y rutenettet ruter tienen composición/concordancia defectuosa; området no precisa el área numérica.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "shikaku.fields.statusDaily",
+    "source_hash": "807700b6a008c31ae2b6c1417633b10b203ed84e9a4cace36de0c3ec31320af2",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Dagens puslespill er klar.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Puslespill es neutro: debe ser klart, no klar.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "shikaku.fields.statusInvalid",
+    "source_hash": "b0615c877a8c4951a33e24c9c757535594838f8c18f5501b8ab4865d8e4f9224",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Rektangelet stemmer ikke med en ledetråd eller overlapper en annen.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "En annen concuerda con ledetråd y deja ambiguo el objeto del solapamiento; otro rectángulo sería et annet rektangel.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "shikaku.fields.statusNoHint",
+    "source_hash": "5f73bb19199ff39a117346245696341080defb739fb4aa96d4dc30a22a130302",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Ingen hint er tilgjengelig.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Concordancia defectuosa: plural Ingen hint requiere tilgjengelige; alternativa singular Intet hint er tilgjengelig.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "voice-changer.description",
+    "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Endre tonehøyden på et lydopptak på denne enheten. Bruk radio eller dype stemmeeffekter. Forhåndsvis ekko og eksporter behandlet lyd lokalt. Dette verktøyet er gratis og privat. Din lyd er ikke lastet opp.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Radio sin aclarar efecto y din lyd resultan poco naturales; ya conserva gratis/privado/no subida.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "voice-changer.details",
+    "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Nettleseren din dekoder den valgte lyden lokalt. Det gjelder Web Audio filtre, gevinst, pitch-rate endringer og valgfritt ekko. Det gjengir en WAV-fil for nedlasting. Ingen lyd blir sendt til en server.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Det gjelder es concierne, no aplica filtros; gevinst es beneficio y pitch-rate sigue en inglés. La negación final se conserva.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "voice-changer.example",
+    "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Prøv et stemmeopptak og sammenlign originalen med radioen eller forhåndsinnstillingen for lavere tonehøyde. Endringer i tonehøyde endrer også avspillingshastigheten. Dette er ikke stemmekloning eller tonehøydekorreksjon i studiokvalitet.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Radioen parece el aparato radio y no el preset de efecto; debe explicitarlo.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "voice-changer.faq.2.a",
+    "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Dette verktøyet kan ikke klone en person eller isolere et vokalspor. Det kan ikke gjøre en stemme til en annen virkelig person. Det gjelder bare enkle lydeffekter.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Det gjelder bare significa que solo concierne, no que aplica efectos de audio. Las negaciones de clonación permanecen.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "voice-changer.fields.faq3a",
+    "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Dette verktøyet kan ikke klone en person eller isolere et vokalspor. Det kan ikke gjøre en stemme til en annen virkelig person. Det gjelder bare enkle lydeffekter.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Det gjelder bare significa que solo concierne, no que aplica efectos de audio. Las negaciones de clonación permanecen.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "voice-changer.fields.faq3q",
+    "source_hash": "d813cb24bd4299b43bc5c7917288209d13a12fdb21eb4e842e0a3082ee5a5153",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Kan det klone en stemme eller separate vokaler?",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Separate se usa como adjetivo inglés en lugar del verbo separere; vokaler se interpreta como vocales, no pistas de voz.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "voice-changer.limits",
+    "source_hash": "72eaa6afc178fd8d0e8f7da5c73ba70e6a5473c00316ce0df573d3b309416522",
+    "locale": "nb-NO",
+    "direction": "forward",
+    "translation": "Dette lette verktøyet er designet for korte klipp, ikke sanger i full lengde. Tonehøyden endres ved å justere avspillingshastigheten, slik at klippets varighet og stemmetonen endres sammen. Effekter kan ikke skape en naturlig ny identitet, separate stemmer, eller garantere det samme resultatet på hver nettleser.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "Separate stemmer requiere separere para expresar la acción; el resto de límites y negaciones se conserva.",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.fields.units.2",
+    "source_hash": "edfdb5a87b358af95686144ba2d07e16e464f046e1a637723e001af2c14f6815",
+    "locale": "es",
+    "direction": "back",
+    "translation": "Pies (ft)",
+    "observed_candidate": "madlad-context-v6-back",
+    "issue": "back-feet-left-as-pies",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.fields.licenseNotice",
+    "source_hash": "1a3dae13c1345946548b51490ab16830f3e311fc0f8a30857ce509de14d7288d",
+    "locale": "es",
+    "direction": "back",
+    "translation": "This viewer includes dxf-parser 1.1.2 y loglevel 1.9.2 with MIT license. The parser runs in a local process in the background; here are links to the source code and licenses.",
+    "observed_candidate": "madlad-context-v6-back",
+    "issue": "back-untranslated-spanish-conjunction",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.fields.units.0",
+    "source_hash": "3e4fe3522c14354a0bb5dba08a790e5aef1e686637efb6e5da44cda6557d578c",
+    "locale": "nb-NO",
+    "direction": "back",
+    "translation": "Without device",
+    "observed_candidate": "madlad-context-v6-back",
+    "issue": "back-unitless-as-device",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.fields.units.11",
+    "source_hash": "867b57fbc069cc8d63a1b5ee2594be81443a7c2c0f795e98af5552bfc1ba137b",
+    "locale": "nb-NO",
+    "direction": "back",
+    "translation": "Steam",
+    "observed_candidate": "madlad-context-v6-back",
+    "issue": "back-angstrom-as-steam",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.fields.noLayers",
+    "source_hash": "4795658968bdf67123be6383f83a84ab808cd23c32faf10013c3b6f48f99b0cb",
+    "locale": "nb-NO",
+    "direction": "back",
+    "translation": "No teams are declared; units use their own team names.",
+    "observed_candidate": "madlad-context-v6-back",
+    "issue": "back-layers-as-teams",
+    "evidence": "review-context-v6-full.json"
+  },
+  {
+    "key": "dxf-viewer.example",
+    "source_hash": "ce884c6216576feda9fdd1b0a2604b98788c5f8f014b2f391314b12b8951afe3",
+    "locale": "nb-NO",
+    "direction": "back",
+    "translation": "A line from (0,0) to (10,0) measures 10 character units. The viewer reads the DXF unit code when it is present; when it is not present, measurements are marked as drawing units.",
+    "observed_candidate": "madlad-context-v6-back",
+    "issue": "back-drawing-units-as-character-units",
+    "evidence": "review-context-v6-full.json"
   }
 ]

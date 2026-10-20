@@ -95,6 +95,15 @@ class SentenceCoverageTest(unittest.TestCase):
         self.assertFalse(any('example.com' in text or 'function' in text or '{count}' in text for text in seen))
         self.assertTrue(pilot.segment_evidence_valid(traces[0],source,raw))
 
+    def test_package_identifiers_are_audited_separately_from_version_numbers(self):
+        source='This viewer bundles dxf-parser 1.1.2 and loglevel 1.9.2.'
+        target='Denne viseren inkluderer dxf-parser 1.1.2 og loglevel 1.9.2.'
+        checks=pilot.automatic_checks(source,target,'nb-NO',back_translation='This viewer includes dxf parser 1.1.2 and loglevel 1.9.2.')
+        self.assertTrue(checks['software_versions_identical'])
+        self.assertTrue(checks['back_software_versions_identical'])
+        self.assertTrue(checks['software_identifiers_identical'])
+        self.assertFalse(checks['back_software_identifiers_identical'])
+
     def test_observed_back_errors_are_flagged_separately_from_correct_forward_copy(self):
         cases=[('shikaku.fields.selectStart','Choose a start square.','Velg en startrute.','Choose a start window.'),
             ('shikaku.fields.faq.1.a','No. Each rectangle must contain exactly one number clue.','Nei. Hvert rektangel må inneholde nøyaktig én tall-ledetråd.','No, no, no. Each rectangle must contain exactly one number clue.')]

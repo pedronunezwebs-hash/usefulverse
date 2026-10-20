@@ -37,6 +37,7 @@ POLICIES["context-v6"] = json.loads(Path(__file__).with_name("pilot-privacy-poli
 SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
 TECHNICAL_TOKEN = re.compile(r"\.(?:dxf|dwg|png|svg|wav|mp3|pdf|json|csv|txt)\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
 SOFTWARE_VERSION = re.compile(r"(?<![\w.])\d+(?:\.\d+){2,}(?![\w.]\d)")
+SOFTWARE_IDENTIFIER = re.compile(r"(?<![\w-])(?:dxf-parser|loglevel|Web Audio)(?![\w-])", re.IGNORECASE)
 TYPED_LITERAL = re.compile(r"(?<![\w.])\d+(?:\.\d+){2,}(?![\w.]\d)|\((?:in|ft|mi|mm|cm|m|km|yd)\)")
 OPAQUE_LITERAL = re.compile(r"https?://[^\s<>]+|`[^`]*`|\{[A-Za-z][A-Za-z0-9_]*\}|</?[A-Za-z][^>]*>")
 
@@ -231,6 +232,8 @@ def automatic_checks(source, translation, locale, key=None, back_translation=Non
     unit_label = bool(key and key.startswith("dxf-viewer.fields.units."))
     unit_symbols = lambda text: Counter(re.findall(r"\(([^()]*)\)", text))
     return {
+        "software_identifiers_identical": Counter(t.casefold() for t in SOFTWARE_IDENTIFIER.findall(source)) == Counter(t.casefold() for t in SOFTWARE_IDENTIFIER.findall(translation)),
+        "back_software_identifiers_identical": None if back_translation is None else Counter(t.casefold() for t in SOFTWARE_IDENTIFIER.findall(source)) == Counter(t.casefold() for t in SOFTWARE_IDENTIFIER.findall(back_translation)),
         "software_versions_identical": Counter(SOFTWARE_VERSION.findall(source)) == Counter(SOFTWARE_VERSION.findall(translation)),
         "back_software_versions_identical": None if back_translation is None else Counter(SOFTWARE_VERSION.findall(source)) == Counter(SOFTWARE_VERSION.findall(back_translation)),
         "unit_symbols_identical": None if not unit_label else unit_symbols(source) == unit_symbols(translation),
@@ -367,7 +370,9 @@ def summarize(paths):
                 group["forward_segment_evidence"] += int(row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not segment_evidence_valid(row.get("forward_segments"), row["model_input"], row["raw_translation"]))
                 group["back_segment_evidence"] += int(not segment_evidence_valid(row.get("back_segments"), row["translation"], row["back_translation"]))
             checks = automatic_checks(row["source"], row["translation"], row["locale"], row["key"], row["back_translation"])
-            for flag, fails in {"software_versions": not checks["software_versions_identical"],
+            for flag, fails in {"software_identifiers": not checks["software_identifiers_identical"],
+                "back_software_identifiers": checks["back_software_identifiers_identical"] is False,
+                "software_versions": not checks["software_versions_identical"],
                 "back_software_versions": checks["back_software_versions_identical"] is False,
                 "unit_symbols": checks["unit_symbols_identical"] is False,
                 "back_unit_symbols": checks["back_unit_symbols_identical"] is False, "empty": not checks["nonempty"], "protected_tokens": not checks["protected_tokens_identical"],

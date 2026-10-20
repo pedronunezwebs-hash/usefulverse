@@ -1,9 +1,9 @@
 {
-  "at_utc": "2026-10-20T16:11:59.639680+00:00",
+  "at_utc": "2026-10-20T16:36:45.740569+00:00",
   "automatic_approval": false,
   "approved_locales": [],
   "note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
-  "evaluations": 1538,
+  "evaluations": 1754,
   "groups": [
     {
       "review_file": "review-context-v2-m2m100.json",
@@ -498,6 +498,58 @@
       "number_negation_errors": 0,
       "major_rows": 0,
       "minor_rows": 1
+    },
+    {
+      "review_file": "review-context-v6-full.json",
+      "policy": "context-v6",
+      "locale": "es",
+      "candidate": "legacy",
+      "rows": 20,
+      "points": 168,
+      "maximum": 180,
+      "button_errors": 1,
+      "number_negation_errors": 1,
+      "major_rows": 2,
+      "minor_rows": 2
+    },
+    {
+      "review_file": "review-context-v6-full.json",
+      "policy": "context-v6",
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "rows": 88,
+      "points": 755,
+      "maximum": 792,
+      "button_errors": 0,
+      "number_negation_errors": 2,
+      "major_rows": 5,
+      "minor_rows": 14
+    },
+    {
+      "review_file": "review-context-v6-full.json",
+      "policy": "context-v6",
+      "locale": "nb-NO",
+      "candidate": "legacy",
+      "rows": 20,
+      "points": 155,
+      "maximum": 180,
+      "button_errors": 1,
+      "number_negation_errors": 2,
+      "major_rows": 5,
+      "minor_rows": 1
+    },
+    {
+      "review_file": "review-context-v6-full.json",
+      "policy": "context-v6",
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "rows": 88,
+      "points": 735,
+      "maximum": 792,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 8,
+      "minor_rows": 19
     },
     {
       "review_file": "review-context-v6-references.json",

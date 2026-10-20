@@ -21,7 +21,7 @@ Revisado el 20-oct-2026 sobre `main` (`pedronunezwebs-hash/usefulverse`, **públ
   (`pages deploy dist-growth600 --project-name=usefulverse-tools`).
 - Los PR a `main` ejecutan las validaciones sin publicar. `[skip ci]` en el mensaje evita la ejecución.
 - En `feat/new-tools-batch-1`, `workflow_dispatch` con `translation_pilot=true` ejecuta **solo** el piloto CPU en
-  `ubuntu-latest`, sin secretos ni despliegue. `pilot_policy` separa baseline, segmentos v2, frases v3, memoria revisada v4 y cobertura de oraciones/datos tipados v5. Parámetros, checkpoints y resultados: `docs/quality/translation-pilot.md`.
+  `ubuntu-latest`, sin secretos ni despliegue. `pilot_policy` separa baseline, segmentos v2, frases v3, memoria revisada v4 y cobertura de oraciones/datos tipados v5/v6. Parámetros, checkpoints y resultados: `docs/quality/translation-pilot.md`.
 
 ## Carpetas clave
 
