@@ -2132,3 +2132,414 @@ test('specific heat localized unit labels retain standard SI and customary symbo
     assert.equal(copy.fields.btu, 'BTU', locale);
   }
 });
+
+test('Fanorona form provides local modes, an accessible 9 by 5 board and localized relay controls', () => {
+  const copy = pendingToolEnglishCopy.fanorona;
+  const html = renderGrowthForm('fanorona', copy);
+  for (const expected of ['data-fanorona-form', 'value="computer"', 'value="two-player"', 'data-fanorona-lines', 'data-fanorona-board', 'role="grid"', 'data-fanorona-choice', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /Capture by approach/u);
+  assert.match(html, /Capture by withdrawal/u);
+  assert.match(html, /The player with no legal move loses/u);
+});
+
+test('Masyu form exposes a bounded seed, keyboard-operable point grid and local solution hints', () => {
+  const html = renderGrowthForm('masyu-puzzle', pendingToolEnglishCopy['masyu-puzzle']);
+  for (const expected of ['data-masyu-form', 'name="seed"', 'max="2147483647"', 'data-masyu-board', 'role="grid"', 'data-masyu-lines', 'data-masyu-actions', 'aria-live="polite"', 'nikoli.co.jp/en/puzzles/masyu']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /white pearl must be crossed straight/u);
+  assert.match(html, /black pearl must turn/u);
+});
+
+test('UK student loan form shows dated official rules, plan inputs and source links', () => {
+  const html = renderGrowthForm('uk-student-loan', pendingToolEnglishCopy['uk-student-loan']);
+  for (const expected of ['data-uk-student-loan-form', 'name="income"', 'name="plan"', 'Plan 1', 'Plan 2', 'Plan 4', 'Plan 5', 'Postgraduate', 'name="firstRepaymentYear"', 'name="firstLoanDate"', 'name="birthDate"', 'name="balance"', 'what-you-pay', 'when-your-student-loan-gets-written-off-or-cancelled', '2026–27', '19 November 2026', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+});
+
+test('text translator exposes every product language selector and the browser-only privacy limit', () => {
+  const html = renderGrowthForm('text-translator', pendingToolEnglishCopy['text-translator']);
+  for (const expected of ['data-text-translator-form', 'name="source"', 'name="target"', 'maxlength="5000"', 'data-translation-output', 'data-progress', 'role="status"', 'developer.chrome.com/docs/ai/translator-api']) assert.ok(html.includes(expected), expected);
+  assert.match(html, /desktop Chrome browser/u);
+  assert.match(html, /No request is sent to UsefulVerse/u);
+});
+
+test('air quality dashboard accepts only a local CSV and explains its non-live limits', () => {
+  const html = renderGrowthForm('air-quality-dashboard', pendingToolEnglishCopy['air-quality-dashboard']);
+  for (const expected of ['name="csvFile"', 'type="file"', 'accept=".csv,text/csv"', '100 KB', 'timestamp, pollutant, value, unit', 'does not load live data', 'regulatory AQI', 'data-result-content', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.doesNotMatch(html, /data-action="example"/u);
+  assert.match(pendingToolEnglishCopy['air-quality-dashboard'].fields.timeZoneNote, /device’s local time/u);
+});
+
+test('radio player imports a bounded local M3U playlist without an example or directory dependency', () => {
+  const html = renderGrowthForm('open-radio-player', pendingToolEnglishCopy['open-radio-player']);
+  for (const expected of ['name="playlist"', 'type="file"', 'accept=".m3u,.m3u8,audio/x-mpegurl,application/vnd.apple.mpegurl"']) assert.ok(html.includes(expected), expected);
+  assert.match(pendingToolEnglishCopy['open-radio-player'].fields.accuracyNote, /does not search or update/u);
+  assert.match(pendingToolEnglishCopy['open-radio-player'].privacyAnswer, /not sent to UsefulVerse/u);
+  assert.doesNotMatch(html, /data-action="example"/u);
+});
+
+test('qibla copy distinguishes an undefined bearing at the Kaaba and its antipode', () => {
+  const copy = pendingToolEnglishCopy['qibla-compass'];
+  assert.match(copy.fields.bearingUndefined, /unique bearing is undefined/u);
+  assert.match(copy.fields.compassLabel, /true north/u);
+});
+
+test('font identifier asks for a local image and exact text, with limits and non-definitive results disclosed', () => {
+  const copy = pendingToolEnglishCopy['font-identifier'];
+  const html = renderGrowthForm('font-identifier', copy);
+  for (const expected of ['type="file"', 'accept="image/jpeg,image/png,image/webp"', 'maxlength="80"', 'data-font-sample-preview', 'data-font-results', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(copy.fields.accuracyNote, /not definitive font identification/u);
+  assert.match(copy.privacyAnswer, /not uploaded or saved/u);
+  assert.match(copy.fields.limitNote, /relative to these candidates only/u);
+});
+
+test('Belote renders an explicit trump call, private hand area, team scores and simplified rule disclosure', () => {
+  const copy = pendingToolEnglishCopy.belote;
+  const html = renderGrowthForm('belote', copy);
+  for (const expected of ['data-trump', 'data-action="start-game"', 'data-action="new-game"', 'data-scores', 'data-opponents', 'data-trick', 'data-hand', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(copy.fields.rules, /Follow suit; if void, trump/u);
+  assert.match(copy.fields.accuracyNote, /does not implement a regional auction/u);
+  assert.match(copy.privacyAnswer, /not uploaded or saved/u);
+});
+
+test('audio chord estimator exposes a bounded local file flow and visible heuristic disclosure', () => {
+  const copy = pendingToolEnglishCopy['chord-recognizer'];
+  const html = renderGrowthForm('chord-recognizer', copy);
+  for (const expected of ['data-chord-recognizer-form', 'type="file"', 'accept="audio/*"', 'data-timeline', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(copy.fields.scope, /Estimates common/u);
+  assert.match(copy.fields.accuracyNote, /heuristic estimate/u);
+  assert.match(copy.privacyAnswer, /not uploaded or saved/u);
+});
+
+test('laser box designer exposes bounded dimensions, fit preview and fabrication limits', () => {
+  const copy = pendingToolEnglishCopy['laser-box-designer'];
+  const html = renderGrowthForm('laser-box-designer', copy);
+  for (const expected of ['data-laser-box-form', 'name="width"', 'name="depth"', 'name="thickness"', 'name="clearance"', 'data-preview', 'data-download']) assert.ok(html.includes(expected), expected);
+  assert.match(copy.fields.scope, /Five panels/u);
+  assert.match(copy.fields.accuracyNote, /test-cut|test cut/u);
+  assert.match(copy.privacyAnswer, /not uploaded or saved/u);
+});
+
+test('dynamic geometry board provides selectable local constructions and honest solver scope', () => {
+  const copy = pendingToolEnglishCopy['geometry-construction'];
+  const html = renderGrowthForm('geometry-construction', copy);
+  for (const expected of ['data-geometry-construction', 'data-canvas', 'data-mode="point"', 'data-mode="circle"', 'data-mode="perpendicularBisector"', 'data-reset', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(copy.fields.scope, /select two points/u);
+  assert.match(copy.fields.accuracyNote, /fixed set of constructions/u);
+  assert.match(copy.privacyAnswer, /not uploaded or saved/u);
+});
+
+test('Pinochle form exposes deck variants, auction, trump, trick play and local table state', () => {
+  const copy = pendingToolEnglishCopy.pinochle;
+  const html = renderGrowthForm('pinochle', copy);
+  for (const expected of ['data-decks', 'value="1"', 'value="2"', 'data-bid', 'data-pass', 'data-trump', 'data-exchange-panel', 'data-return-cards', 'data-trick', 'data-hand', 'data-contract', 'data-hand-points', 'pagat.com/marriage/pindd.html', 'aria-live="polite"']) assert.ok(html.includes(expected), expected);
+  assert.match(copy.fields.exchangeHint, /exactly four cards/u);
+  assert.match(copy.fields.accuracyNote, /no money or wagers/iu);
+  assert.match(copy.privacyAnswer, /Nothing is uploaded/u);
+});
+
+test('Tute form separates partnership and individual rules and exposes singing controls', () => {
+  const copy = pendingToolEnglishCopy.tute;
+  const html = renderGrowthForm('tute', copy);
+  for (const expected of ['data-mode', 'value="pairs"', 'value="individual"', 'data-allow-tute', 'data-singing', 'data-singing-actions', 'data-trick', 'data-hand', 'pagat.com/marriage/tute.html', 'nhfournier.es/en/como-jugar/tute']) assert.ok(html.includes(expected), expected);
+  assert.match(copy.fields.rulesPairs, /strict Tute rules/u);
+  assert.match(copy.fields.rulesIndividual, /twenty-card stock/u);
+  assert.match(copy.privacyAnswer, /Nothing is uploaded/u);
+});
+
+test('Indonesia PPh 21 form shows monthly TER inputs, PTKP and annual reconciliation scope', () => {
+  const copy = pendingToolEnglishCopy['indonesia-pph21'];
+  const html = renderGrowthForm('indonesia-pph21', copy);
+  assert.match(html, /Gross pay for each month \(12 amounts, IDR\)/u);
+  assert.match(html, /Eligible dependents \(0–3\)/u);
+  assert.match(copy.fields.accuracyNote, /PP 58\/2023 TER tables/u);
+  assert.match(copy.fields.accuracyNote, /IDR 6 million/u);
+  assert.match(copy.howAnswer, /January–November/u);
+});
+
+test('Reaction mechanism editor form identifies its local-only scope and supported inputs', () => {
+  const copy = pendingToolEnglishCopy['reaction-mechanism-editor'];
+  const html = renderGrowthForm('reaction-mechanism-editor', copy);
+  assert.match(html, /Mechanism title/u);
+  assert.match(copy.fields.accuracyNote, /12 steps/u);
+  assert.match(copy.description, /electron-pushing mechanism/u);
+  assert.match(copy.fields.downloadSvg, /Download SVG/u);
+  assert.match(copy.fields.accuracyNote, /not a chemistry checker/u);
+});
+
+test('Origami simulator form exposes model and step selectors, a labeled 3D canvas and accessible rotation controls', () => {
+  const copy = pendingToolEnglishCopy['origami-simulator'];
+  const html = renderGrowthForm('origami-simulator', copy);
+  assert.match(html, /<label for="origami-model">Original fold model<\/label>/u);
+  assert.match(html, /<select id="origami-step" data-step><\/select>/u);
+  assert.match(html, /role="img" aria-label="Interactive three-dimensional preview/u);
+  assert.match(html, /Rotate left/u);
+  assert.match(html, /Accordion fold/u);
+});
+
+test('PDF signature inspector form has a labeled PDF input and an announced result region', () => {
+  const copy = pendingToolEnglishCopy['pdf-digital-signature-validator'];
+  const html = renderGrowthForm('pdf-digital-signature-validator', copy);
+  assert.match(html, /<label for="pdf-signature-file">Signed PDF file<\/label>/u);
+  assert.match(html, /accept="application\/pdf,\.pdf"/u);
+  assert.match(html, /aria-live="polite"/u);
+  assert.match(html, /data-signatures/u);
+});
+
+test('Mus game form provides private-hand, team-score, lance, action and rule regions', () => {
+  const copy = pendingToolEnglishCopy.mus;
+  const html = renderGrowthForm('mus', copy);
+  assert.match(html, /data-mus-game/u);
+  assert.match(html, /data-own-score/u);
+  assert.match(html, /aria-label="Your hand"/u);
+  assert.match(html, /data-players/u);
+  assert.match(html, /data-actions/u);
+  assert.match(html, /Rules and scoring/u);
+});
+
+test('Nim form bounds starting piles and exposes labeled local play controls', () => {
+  const copy = pendingToolEnglishCopy['nim-game'];
+  const html = renderGrowthForm('nim-game', copy);
+  assert.match(html, /name="piles"/u);
+  assert.match(html, /2 to 6 whole numbers from 1 to 50/u);
+  assert.match(html, /data-pending-form/u);
+  assert.match(html, /data-result-content/u);
+  assert.match(html, /role="status" aria-live="polite"/u);
+  assert.match(copy.fields.accuracyNote, /standard normal-play Nim/u);
+  assert.match(copy.privacyAnswer, /not uploaded or saved/u);
+});
+
+test('cuboid net form labels dimensions, units and accessible SVG output', () => {
+  const copy = pendingToolEnglishCopy['geometry-net-generator'];
+  const html = renderGrowthForm('geometry-net-generator', copy);
+  for (const field of ['length', 'width', 'height', 'unit']) assert.match(html, new RegExp(`name="${field}"`, 'u'));
+  assert.match(html, /data-pending-form/u);
+  assert.match(html, /data-result-content/u);
+  assert.match(html, /role="status" aria-live="polite"/u);
+  assert.match(copy.fields.accuracyNote, /does not add glue tabs/u);
+  assert.match(copy.privacyAnswer, /not uploaded or saved/u);
+});
+
+test('PCB layout form bounds a local board and discloses fabrication checks', () => {
+  const copy = pendingToolEnglishCopy['pcb-layout-editor'];
+  const html = renderGrowthForm('pcb-layout-editor', copy);
+  for (const field of ['boardWidth', 'boardHeight', 'grid']) assert.match(html, new RegExp(`name="${field}"`, 'u'));
+  assert.match(html, /data-pending-form/u);
+  assert.match(html, /role="status" aria-live="polite"/u);
+  assert.match(html, /Create board/u);
+  assert.match(copy.fields.accuracyNote, /does not check electrical shorts/u);
+  assert.match(copy.privacyAnswer, /not uploaded or saved/u);
+});
+
+test('Territory game renders local controls and discloses exposed-route rules', () => {
+  const copy = pendingToolEnglishCopy['territory-game'];
+  const html = renderGrowthForm('territory-game', copy);
+  assert.match(html, /Start match/u);
+  assert.match(html, /Reset match/u);
+  assert.match(html, /data-result-content/u);
+  assert.match(html, /role="status" aria-live="polite"/u);
+  assert.match(copy.description, /two local opponents/u);
+  assert.match(copy.fields.accuracyNote, /can cut the exposed route/u);
+  assert.match(copy.privacyAnswer, /not uploaded or saved/u);
+});
+
+test('webfont subsetter requires local TTF/OTF input, requested glyphs, and licence confirmation', () => {
+  const html = renderGrowthForm('webfont-subsetter', pendingToolEnglishCopy['webfont-subsetter']);
+  assert.match(html, /data-worker-src="\/assets\/webfont-subsetter-worker\.mjs"/u);
+  assert.match(html, /name="font" type="file" accept="\.ttf,\.otf/u);
+  assert.match(html, /name="text"/u);
+  assert.match(html, /name="permission" type="checkbox" required/u);
+  assert.match(html, /data-font-stats/u);
+  assert.match(html, /FontTools-MIT\.txt/u);
+});
+
+test('US self-employment tax form separates net profit from existing Social Security wages', () => {
+  const html = renderGrowthForm('us-self-employment-tax', pendingToolEnglishCopy['us-self-employment-tax']);
+  assert.match(html, /data-us-se-tax-form/u);
+  assert.match(html, /name="netBusinessProfit"/u);
+  assert.match(html, /name="socialSecurityWages"/u);
+  assert.match(html, /Tax year: 2026/u);
+  assert.match(html, /irs\.gov\/forms-pubs\/about-schedule-se-form-1040/u);
+  assert.match(html, /ssa\.gov\/oact\/cola\/cbb\.html/u);
+  assert.match(html, /data-us-se-tax-output/u);
+});
+
+test('chemical structure editor exposes a local graph editor, SMILES/Molfile import and safe exports', () => {
+  const html = renderGrowthForm('chemical-structure-editor', pendingToolEnglishCopy['chemical-structure-editor']);
+  assert.match(html, /data-chem-canvas/u);
+  assert.match(html, /data-chem-add-atom/u);
+  assert.match(html, /data-chem-set-bond/u);
+  assert.match(html, /data-chem-add-ring/u);
+  assert.match(html, /value="molfile"/u);
+  assert.match(html, /OpenChemLib-BSD-3-Clause\.txt/u);
+  assert.match(html, /data-chem-download/u);
+});
+
+test('Janggi form exposes independent piece formations, a local ruleset note and explicit start/reset actions', () => {
+  const html=renderGrowthForm('janggi',pendingToolEnglishCopy.janggi);
+  assert.match(html,/name="choSetup"/u);assert.match(html,/name="hanSetup"/u);
+  assert.match(html,/two-person game|two-person Janggi game|two people/u);
+  assert.match(html,/Start game/u);assert.match(html,/New game/u);
+});
+
+test('local AI chat exposes an explicit large-model download, bounded prompt, local privacy note and export controls', () => {
+  const html = renderGrowthForm('local-ai-chat', pendingToolEnglishCopy['local-ai-chat']);
+  assert.match(html, /data-load-model/u);
+  assert.match(html, /about 351 MB/u);
+  assert.match(html, /for="local-ai-chat-prompt"/u);
+  assert.match(html, /maxlength="2000"/u);
+  assert.match(html, /data-download-chat disabled/u);
+  assert.match(html, /prompts are processed locally/u);
+  assert.match(html, /Qwen3-0\.6B\/blob\/main\/LICENSE/u);
+});
+
+test('Panorama stitcher form requires two local photos and explains the feature limits', () => {
+  const html = renderGrowthForm('panorama-stitcher', pendingToolEnglishCopy['panorama-stitcher']);
+  assert.match(html, /type="file" accept="image\/jpeg,image\/png,image\/webp" multiple required/u);
+  assert.match(html, /never uploaded/u);
+  assert.match(html, /data-panorama-preview/u);
+  assert.match(html, /data-download hidden/u);
+});
+
+test('sewing pattern drafter exposes bounded metric inputs and a local full-scale SVG result', () => {
+  const html = renderGrowthForm('sewing-pattern-drafter', pendingToolEnglishCopy['sewing-pattern-drafter']);
+  for (const input of ['waistMm', 'easeMm', 'lengthMm', 'seamAllowanceMm', 'hemAllowanceMm']) assert.match(html, new RegExp(`name="${input}"`, 'u'));
+  assert.match(html, /50 mm square/u);
+  assert.match(html, /Download full-scale SVG/u);
+  assert.match(html, /data-preview/u);
+});
+
+test('pregnancy weight gain guide scopes inputs and links to the dated CDC source', () => {
+  const html = renderGrowthForm('pregnancy-weight-gain', pendingToolEnglishCopy['pregnancy-weight-gain']);
+  assert.match(html, /name="bmi" type="number" min="10" max="60"/u);
+  assert.match(html, /name="pregnancyType"/u);
+  assert.match(html, /value="three-or-more"/u);
+  assert.match(html, /data-result-content/u);
+  assert.match(html, /www\.cdc\.gov\/maternal-infant-health\/pregnancy-weight/u);
+  assert.match(html, /not a personal target/u);
+});
+
+test('Philippines SSS form states local scope and links to official schedule', () => {
+  const html = renderGrowthForm('philippines-sss', pendingToolEnglishCopy['philippines-sss']);
+  assert.match(html, /data-philippines-sss/u);
+  assert.match(html, /name="salary" type="number"/u);
+  assert.match(html, /business employer and employee/u);
+  assert.match(html, /www\.sss\.gov\.ph\/pay-contribution/u);
+  assert.match(html, /payroll compliance/u);
+});
+
+test('Singapore CPF form exposes the dated age and ordinary wage assumptions', () => {
+  const html = renderGrowthForm('singapore-cpf', pendingToolEnglishCopy['singapore-cpf']);
+  assert.match(html, /data-singapore-cpf/u);
+  assert.match(html, /name="age" type="number" min="16" max="100"/u);
+  assert.match(html, /name="wage" type="number" min="750\.01"/u);
+  assert.match(html, /ordinary wages only/u);
+  assert.match(html, /www\.cpf\.gov\.sg\/employer/u);
+});
+
+test('Canada payroll form scopes annual CPP and EI outside Quebec', () => {
+  const html = renderGrowthForm('canada-payroll', pendingToolEnglishCopy['canada-payroll']);
+  assert.match(html, /data-canada-payroll/u);
+  assert.match(html, /name="income" type="number"/u);
+  assert.match(html, /name="age" type="number" min="18" max="69"/u);
+  assert.match(html, /outside Quebec/u);
+  assert.match(html, /www\.canada\.ca\/en\/revenue-agency/u);
+});
+
+test('Korea salary form exposes taxable pay, eligible family counts, withholding choice and NTS source', () => {
+  const html = renderGrowthForm('korea-net-salary', pendingToolEnglishCopy['korea-net-salary']);
+  assert.match(html, /data-korea-net-salary/u);
+  assert.match(html, /name="salary" type="number" min="1000000" max="9999999"/u);
+  assert.match(html, /name="family"/u);
+  assert.match(html, /name="children"/u);
+  assert.match(html, /name="ratio"/u);
+  assert.match(html, /nts\.go\.kr\/nts\/cm\/cntnts/u);
+  assert.match(html, /not a payslip/u);
+});
+
+test('US W-4 form exposes supported pay frequencies, status and withholding adjustments', () => {
+  const html = renderGrowthForm('us-w4-withholding', pendingToolEnglishCopy['us-w4-withholding']);
+  assert.match(html, /data-us-w4-withholding/u);
+  assert.match(html, /name="frequency"/u);
+  assert.match(html, /name="filingStatus"/u);
+  for (const field of ['step2','step3','step4a','step4b','step4c']) assert.match(html, new RegExp(`name="${field}"`, 'u'));
+  assert.match(html, /www\.irs\.gov\/publications\/p15t/u);
+});
+
+test('UK CGT form labels taxable income and net gains with the HMRC year source', () => {
+  const html = renderGrowthForm('capital-gains-tax-uk', pendingToolEnglishCopy['capital-gains-tax-uk']);
+  assert.match(html, /data-uk-capital-gains/u);
+  assert.match(html, /name="gains" type="number"/u);
+  assert.match(html, /name="income" type="number"/u);
+  assert.match(html, /2026–27 tax year/u);
+  assert.match(html, /gov\.uk\/capital-gains-tax\/rates/u);
+});
+
+test('France income tax form identifies one-part taxable income and year scope', () => {
+  const html = renderGrowthForm('france-income-tax', pendingToolEnglishCopy['france-income-tax']);
+  assert.match(html, /data-france-income-tax/u);
+  assert.match(html, /name="income" type="number"/u);
+  assert.match(html, /one tax part/u);
+  assert.match(html, /bofip\.impots\.gouv\.fr/u);
+});
+
+test('Japan income tax form scopes national tax and links to the current NTA table', () => {
+  const html = renderGrowthForm('japan-income-tax', pendingToolEnglishCopy['japan-income-tax']);
+  assert.match(html, /data-japan-income-tax/u);
+  assert.match(html, /name="income" type="number" min="0" max="330000000"/u);
+  assert.match(html, /national income tax/u);
+  assert.match(html, /nta\.go\.jp\/taxes\/shiraberu\/taxanswer\/shotoku\/2260/u);
+});
+
+test('Preferans practice form presents local bidding, talon exchange, defense and variant rules', () => {
+  const html = renderGrowthForm('preferans', pendingToolEnglishCopy.preferans);
+  assert.match(html, /data-preferans/u);
+  assert.match(html, /data-bid-actions/u);
+  assert.match(html, /data-exchange-cards/u);
+  assert.match(html, /data-defend/u);
+  assert.match(html, /data-hand/u);
+  assert.match(html, /This omits cumulative pot accounting/u);
+  assert.match(html, /pagat\.com\/preference\/austpref\.html/u);
+});
+
+test('GAD-7 form renders all seven required frequency items and the separate unscored impact question', () => {
+  const html = renderGrowthForm('gad7-questionnaire', pendingToolEnglishCopy['gad7-questionnaire']);
+  assert.equal((html.match(/name="q[1-7]"/gu) ?? []).length, 28);
+  assert.match(html, /name="difficulty"/u);
+  assert.match(html, /data-result hidden/u);
+  assert.match(html, /not a diagnosis/u);
+});
+
+test('PHQ-9 form renders all nine required frequency items, non-scored impact and item-nine safety resources', () => {
+  const html = renderGrowthForm('phq9-questionnaire', pendingToolEnglishCopy['phq9-questionnaire']);
+  assert.equal((html.match(/name="q[1-9]"/gu) ?? []).length, 36);
+  assert.match(html, /name="difficulty"/u);
+  assert.match(html, /data-safety hidden/u);
+  assert.match(html, /https:\/\/findahelpline\.com\//u);
+  assert.match(html, /not a diagnosis/u);
+});
+
+test('3D mesh editor renders bounded primitive, extrusion, transform and local OBJ controls', () => {
+  const html = renderGrowthForm('3d-model-editor', pendingToolEnglishCopy['3d-model-editor']);
+  assert.match(html, /data-mesh-preview/u);
+  assert.match(html, /name="operation" value="extrude"/u);
+  assert.match(html, /name="sx"/u);
+  assert.match(html, /data-export/u);
+  assert.match(html, /Download OBJ/u);
+});
+
+test('adult ADHD screener exposes six required items, the five official frequency choices and limitations', () => {
+  const html = renderGrowthForm('adult-adhd-screener', pendingToolEnglishCopy['adult-adhd-screener']);
+  assert.equal((html.match(/name="q[1-6]"/gu) ?? []).length, 30);
+  assert.match(html, /Never/u); assert.match(html, /Very often/u);
+  assert.match(html, /not a diagnosis/u);
+  assert.match(html, /asrs_2025\.php/u);
+  assert.match(html, /currently in English/u);
+});
+
+test('chemical name resolver form discloses the PubChem lookup and renders bounded accessible controls', () => {
+  const html = renderGrowthForm('chemical-name-resolver', pendingToolEnglishCopy['chemical-name-resolver']);
+  assert.match(html, /data-chemical-name-resolver/u);
+  assert.match(html, /maxlength="120"/u);
+  assert.match(html, /role="status" aria-live="polite"/u);
+  assert.match(html, /pubchem\.ncbi\.nlm\.nih\.gov\/docs\/pug-rest/u);
+  assert.match(html, /query and normal connection metadata are sent to PubChem/u);
+});

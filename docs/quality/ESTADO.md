@@ -3,7 +3,7 @@
 > Archivo de relevo entre agentes (ChatGPT/Codex ↔ Claude). En 1 minuto dice **dónde estamos, qué falta y por dónde
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
-**Última actualización:** 2026-10-20 · **por:** Claude
+**Última actualización:** 2026-10-20 · **por:** Codex
 **Turno actual (candado):** EN CURSO · Codex · 2026-10-20 15:55 +07 · RUNBOOK §7 Paso A, integración segura de las 300 en feat/new-tools-batch-1.
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -11,17 +11,16 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 ## 1. Siguiente paso exacto
 
-1. **Código de las 300 respaldado por ChatGPT** en el repo privado `usefulverse-300-worktree-backup-20261020`, rama
-   `backup/usefulverse-300-implementation` (commit `27a2f174`); el worktree local ya no existe.
-   **Las 300 están desplegadas en una vista previa con `noindex`** (`draft-300-noindex.usefulverse-tools.pages.dev`; comprobado el
-   20-oct: cabecera `X-Robots-Tag: noindex`, meta `noindex,follow` y sitemap vacío). Falta: **subir su código a GitHub** (en GitHub solo
-   está la copia de seguridad `backup/codex-300-tools-20261020` de la mañana del 20-oct) e integrarlas en `main` según RUNBOOK §7
-   «Paso A», idealmente ya dentro del sitio unificado (§4b).
-   Detalle de la copia de seguridad: **Guardar el trabajo de las 300 herramientas en una rama remota de verdad.** Está en
-   `/tmp/usefulverse-300-implementation-20261019` (rama local `codex/usefulverse-300-tools-20261019`, sin subir, con 345
-   archivos sin commit). Claude dejó una **copia de seguridad** en la rama remota `backup/codex-300-tools-20261020`
-   (commit `636f3c1`). El agente que lleva esas herramientas (ChatGPT/Codex) debe hacer commit y push de su rama
-   **hoy** y pasar al **Paso A** del RUNBOOK §7 (subida en `noindex`).
+1. **Paso A en preparación por Codex: rama `feat/new-tools-batch-1`.** Las 300 fuentes del respaldo privado
+   `usefulverse-300-worktree-backup-20261020`, `backup/usefulverse-300-implementation` (`27a2f174`),
+   están recuperadas selectivamente, sin importar su historial privado ni sobrescribir las reglas de seguridad actuales.
+   Todas llevan `indexable: false`; regresiones de noindex/sitemap/hreflang y preservación de las 217 del hub añadidas.
+   **No se ha completado el Paso A ni se ha desplegado**. El build público sigue seleccionando las 217 existentes del hub,
+   más las 100 market-tools y las 106 recuperadas: 700 existentes en total entre los dos hosts.
+   **Bloqueos técnicos del Paso A:** juntar las 300 con el hub excede 20.000 archivos de Pages; faltan las traducciones
+   revisadas y el noruego `nb` real de las 300. No confundir el test del contrato SEO en 37 rutas con traducciones verificadas.
+   Ver `docs/quality/lotes/2026-10-20-paso-a.md`. Ejecutar CI completo de la rama; resolver estos gates antes de merge/publicación.
+   La vista previa antigua `draft-300-noindex.usefulverse-tools.pages.dev` ya existía; no es el despliegue de esta rama.
 2. **Fase 0** del RUNBOOK §4 + **caché con hash de los 106 JS** (AUDITORIA-CATALOGO G1; sin esto ningún arreglo llega a los visitantes) + **fase 0b**: los 26 errores confirmados de `AUDITORIA-CATALOGO.md` §2.
    Fase 0 (detalle): 404 real en `tools.usefulverse.com` (hoy cualquier URL inventada devuelve 200 con la home),
    título de la home e índice de sitemaps por idioma.

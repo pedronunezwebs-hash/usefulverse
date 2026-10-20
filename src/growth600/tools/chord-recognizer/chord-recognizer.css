@@ -1,0 +1,1 @@
+.chord-recognizer-timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:.6rem;padding:0;list-style:none}.chord-recognizer-timeline__item{display:grid;gap:.3rem;padding:.75rem;border:1px solid var(--line,#d8dee9);border-radius:.65rem;background:var(--surface,#fff)}.chord-recognizer-timeline__item strong{font-size:1.2rem}

@@ -1,0 +1,8 @@
+import { estimateFaceShape } from './logic.mjs';
+const root=document.querySelector('[data-tool="face-shape-analyzer"]');
+if(root){const form=root.querySelector('[data-pending-form]'),result=root.querySelector('[data-result]'),content=root.querySelector('[data-result-content]'),status=root.querySelector('[data-status]'),copy=JSON.parse(root.querySelector('[data-tool-copy]')?.textContent??'{}'),f=copy.fields;
+ const clear=()=>{result.hidden=true;content.replaceChildren();status.textContent='';status.classList.remove('status--error');};form.addEventListener('input',clear);form.addEventListener('reset',()=>queueMicrotask(clear));
+ form.addEventListener('submit',(event)=>{event.preventDefault();clear();try{const estimate=estimateFaceShape({foreheadWidth:form.elements.namedItem('foreheadWidth').value,cheekboneWidth:form.elements.namedItem('cheekboneWidth').value,jawWidth:form.elements.namedItem('jawWidth').value,faceLength:form.elements.namedItem('faceLength').value});
+ const title=document.createElement('h3');title.textContent=f[`shape_${estimate.shape.replaceAll('-', '_')}`];const note=document.createElement('p');note.textContent=f.shapeExplanation;const list=document.createElement('ul');list.className='face-shape-ratios';for(const [key,value] of Object.entries(estimate.ratios)){const li=document.createElement('li');li.textContent=`${f[key]}: ${new Intl.NumberFormat(copy.copyLanguage?.replaceAll('_','-')??undefined,{maximumFractionDigits:2}).format(value)}`;list.append(li);}content.append(title,note,list);status.textContent=copy.messages.estimateNote;result.hidden=false;
+ }catch{status.textContent=copy.messages.error;status.classList.add('status--error');result.hidden=false;}});
+}

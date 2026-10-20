@@ -31,8 +31,8 @@ import { createAimSession, getAimAccuracy, placeAimTarget, recordAimAttempt } fr
 import { CHESS_MATE_PUZZLES, createChessPuzzleSession, submitChessPuzzleMove, validateMatePuzzles } from './tools/chess-puzzles/logic.mjs';
 
 test('the current growth IDs are unique and additive to the protected catalog', () => {
-  assert.equal(growthPilotTools.length, 217);
-  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 217);
+  assert.equal(growthPilotTools.length, 517);
+  assert.equal(new Set(growthPilotTools.map(({ id }) => id)).size, 517);
   assert.equal(assertGrowthCatalogIsAdditive(tools), true);
 });
 

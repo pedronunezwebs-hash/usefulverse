@@ -2,6 +2,12 @@
 
 Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 
+## 2026-10-20 · Codex · Paso A: fuente recuperada, publicación pendiente
+- Rama `feat/new-tools-batch-1`: recuperación selectiva del respaldo privado `27a2f174` de las 300; no se importa historial privado.
+- Todas con `indexable: false`; tests de noindex, sitemap, hreflang, robots y protección de existentes; build público conserva 700.
+- Paso A NO terminado: capacidad de Pages insuficiente al juntarlas y traducciones revisadas/nb pendientes. No avanzar de fase.
+- Detalle, checklist y reproducción: `lotes/2026-10-20-paso-a.md`. CI completo pendiente; no desplegado.
+
 ## 2026-10-20 · Claude · Auditoría del catálogo y PDF con IA
 - Rastreo de las 700 páginas EN + 7 auditorías por categoría frente a los líderes → `AUDITORIA-CATALOGO.md` (13 problemas de
   todo el sitio, 26 errores confirmados, huecos) y `auditoria/*.md` con evidencia. Rastreo en `auditoria/rastreo-700-en.csv`.

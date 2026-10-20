@@ -1,0 +1,27 @@
+import { createWiktionaryRequest, extractWiktionaryPronunciations, parseWiktionaryResponse, readLimitedResponse } from '../dictionary/logic.mjs';
+
+const root=document.querySelector('[data-tool="pronunciation-dictionary"]');
+if(root){
+  const form=root.querySelector('[data-pending-form]');const result=root.querySelector('[data-result]');const content=root.querySelector('[data-result-content]');const status=root.querySelector('[data-status]');const copy=JSON.parse(root.querySelector('[data-tool-copy]')?.textContent??'{}');let activeRequest=null;let requestVersion=0;
+  const announce=(message,error=false)=>{status.textContent=message;status.classList.toggle('status--error',error);};
+  const node=(tag,text)=>{const element=document.createElement(tag);if(text!==undefined)element.textContent=String(text);return element;};
+  form.addEventListener('reset',()=>{requestVersion++;activeRequest?.abort();activeRequest=null;form.querySelector('[type="submit"]').disabled=false;window.speechSynthesis?.cancel();content.replaceChildren();result.hidden=true;announce('');});
+  form.addEventListener('submit',async(event)=>{
+    event.preventDefault();activeRequest?.abort();const version=++requestVersion;window.speechSynthesis?.cancel();const input=Object.fromEntries([...form.querySelectorAll('[data-input]')].map((field)=>[field.dataset.input,field.value]));content.replaceChildren();result.hidden=true;
+    let request;try{request=createWiktionaryRequest(input.term,input.language);}catch{announce(copy.messages.invalid,true);return;}
+    const abort=new AbortController();activeRequest=abort;const timeout=setTimeout(()=>abort.abort(),12_000);const submit=form.querySelector('[type="submit"]');submit.disabled=true;announce(copy.messages.searching);
+    try{
+      const response=await fetch(request.url,{method:'GET',mode:'cors',credentials:'omit',redirect:'error',referrerPolicy:'no-referrer',headers:{Accept:'application/json'},signal:abort.signal});
+      if(!response.ok)throw new Error('http');if(!response.headers.get('content-type')?.toLowerCase().includes('application/json'))throw new Error('format');
+      const text=await readLimitedResponse(response);if(version!==requestVersion)return;const payload=parseWiktionaryResponse(text);const entry=extractWiktionaryPronunciations(payload,request.languageName,input.language);content.append(node('h3',entry.title||input.term.trim()));
+      if(entry.pronunciations.length){const list=node('ul');list.setAttribute('aria-label',copy.fields.ipaLabel);for(const value of entry.pronunciations)list.append(node('li',value));content.append(list);}
+      else content.append(node('p',copy.messages.noIpa));
+      if(entry.recordings.length){content.append(node('h4',copy.fields.recordingsLabel));for(const recording of entry.recordings){const group=node('div');group.className='pronunciation-recording';if(recording.label)group.append(node('p',recording.label));const player=node('audio');player.controls=true;player.preload='none';for(const item of recording.sources){const source=node('source');source.src=item.url;if(item.type)source.type=item.type;player.append(source);}player.addEventListener('error',()=>announce(copy.messages.audioUnavailable,true));group.append(player);const filename=node('a',`${copy.fields.recordingFile}: ${recording.file}`);const filePage=encodeURIComponent(recording.file.replaceAll(' ','_'));filename.href=`https://commons.wikimedia.org/wiki/File:${filePage}`;filename.target='_blank';filename.rel='noopener noreferrer';group.append(filename);group.append(node('p',copy.fields.recordingAttribution));content.append(group);}}
+      if('speechSynthesis' in window&&'SpeechSynthesisUtterance' in window){const speak=node('button',copy.fields.speakButton);speak.type='button';speak.className='button button--secondary';speak.addEventListener('click',()=>{window.speechSynthesis.cancel();const utterance=new SpeechSynthesisUtterance(input.term.trim());utterance.lang=input.language;utterance.onerror=()=>announce(copy.messages.voiceUnavailable,true);utterance.onstart=()=>announce(copy.messages.speaking);utterance.onend=()=>announce(copy.messages.voiceComplete);window.speechSynthesis.speak(utterance);});content.append(speak);}
+      const encoded=encodeURIComponent((entry.title||input.term.trim()).replaceAll(' ','_'));const links=node('p');const article=node('a',copy.fields.entryLink);article.href=`https://en.wiktionary.org/wiki/${encoded}`;article.target='_blank';article.rel='noopener noreferrer';const history=node('a',copy.fields.historyLink);history.href=`https://en.wiktionary.org/w/index.php?title=${encoded}&action=history`;history.target='_blank';history.rel='noopener noreferrer';links.append(article,document.createTextNode(' · '),history);content.append(links);
+      const attribution=node('p',copy.fields.licenseAttribution);attribution.className='hint';content.append(attribution);const license=node('a',copy.fields.licenseLink);license.href='https://en.wiktionary.org/wiki/Wiktionary:Copyrights';license.target='_blank';license.rel='noopener noreferrer';content.append(license);
+      result.hidden=false;announce(entry.pronunciations.length?copy.messages.complete:copy.messages.noIpa);
+    }catch(error){if(version!==requestVersion)return;announce(error.name==='AbortError'?copy.messages.timeout:error.message==='http'?copy.messages.serviceError:copy.messages.lookupError,true);result.hidden=true;}
+    finally{clearTimeout(timeout);if(activeRequest===abort){activeRequest=null;submit.disabled=false;}}
+  });
+}
