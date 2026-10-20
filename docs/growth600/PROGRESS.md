@@ -1,5 +1,10 @@
 # UsefulVerse · progreso del plan 277 → 600
 
+> **CERRADO · 20-oct-2026.** Por decisión del dueño, no se añaden más herramientas: el catálogo queda en 700
+> herramientas públicas y el trabajo pasa a la mejora de calidad y a la recuperación SEO tras la caída del 16-oct.
+> Mira `AGENTS.md` (en la raíz) y `docs/recovery/README.md`. Este archivo queda solo como historial.
+
+
 Última verificación: 2026-10-15. El objetivo de **600 herramientas públicas únicas** está alcanzado: `usefulverse.com` conserva sus 277 herramientas y `tools.usefulverse.com` publica 323 distintas; los catálogos no se solapan. El sitemap principal conserva 10.260 URLs y el sitemap del subdominio tiene 11.664 URLs (incluidas 36 portadas y 36 variantes por herramienta). La carga fusionada conservó todas las 10.836 URLs previas del subdominio y añadió 828 rutas localizadas para 23 herramientas. Despliegue estático verificado: `5065cf23.usefulverse-tools.pages.dev`; las rutas antiguas y nuevas muestreadas responden HTTP 200 y las canónicas coinciden. El commit fuente `8a7f357` está respaldado en la rama `codex/usefulverse-23-tools-20261015`, sin PR ni Actions. Search Console muestra el sitemap del subdominio como **Correcto**, leído el 15 de octubre, con **11.664 URLs descubiertas**; esto acredita lectura del sitemap, no indexación de cada URL.
 
 El registro histórico que sigue conserva la evidencia de sus gates C/F/E/X/L/B/P/S; el recuento actual de URLs certifica publicación y preservación, no una nueva prueba interactiva individual de cada herramienta.
