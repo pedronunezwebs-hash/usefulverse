@@ -233,6 +233,11 @@ def numeric_prose(text):
     return COORDINATE.sub(" ", SOFTWARE_VERSION.sub(" ", OPAQUE_LITERAL.sub(" ", text)))
 
 
+def coordinate_data(text):
+    return [tuple(Decimal(value) for value in match.groups())
+        for match in COORDINATE.finditer(OPAQUE_LITERAL.sub(" ", text))]
+
+
 def numeric_data(text, locale):
     """Conservative audit of en/es/nb numbers, separate from the strict literal contract.
 
@@ -241,8 +246,7 @@ def numeric_data(text, locale):
     No translated output is rewritten and no inference acceptance flag is relaxed.
     """
     if locale not in ("en", "es", "nb-NO"): return None
-    prose = OPAQUE_LITERAL.sub(" ", text)
-    coordinates = [tuple(Decimal(value) for value in match.groups()) for match in COORDINATE.finditer(prose)]
+    coordinates = coordinate_data(text)
     prose = numeric_prose(text)
     quantities = Counter()
     grouping, decimal = (",", ".") if locale == "en" else ((".", ",") if locale == "es" else (" ", ","))
@@ -278,13 +282,14 @@ def automatic_checks(source, translation, locale, key=None, back_translation=Non
     source_data = numeric_data(source, "en")
     target_data = numeric_data(translation, "en" if literal_numeric_copy else locale)
     back_data = None if back_translation is None else numeric_data(back_translation, "en")
+    source_coordinates = coordinate_data(source)
     known_numeric_locale = locale in ("en", "es", "nb-NO")
     return {
         "numeric_notation": "source-literal" if literal_numeric_copy else locale if known_numeric_locale else None,
         "numeric_values_identical": None if not known_numeric_locale else source_data is not None and target_data is not None and source_data[0] == target_data[0],
-        "coordinate_values_identical": None if not source_data or not source_data[1] else target_data is not None and source_data[1] == target_data[1],
+        "coordinate_values_identical": None if not source_coordinates else source_coordinates == coordinate_data(translation),
         "back_numeric_values_identical": None if back_translation is None else source_data is not None and back_data is not None and source_data[0] == back_data[0],
-        "back_coordinate_values_identical": None if back_translation is None or not source_data or not source_data[1] else back_data is not None and source_data[1] == back_data[1],
+        "back_coordinate_values_identical": None if back_translation is None or not source_coordinates else source_coordinates == coordinate_data(back_translation),
         "software_identifiers_identical": Counter(t.casefold() for t in SOFTWARE_IDENTIFIER.findall(source)) == Counter(t.casefold() for t in SOFTWARE_IDENTIFIER.findall(translation)),
         "back_software_identifiers_identical": None if back_translation is None else Counter(t.casefold() for t in SOFTWARE_IDENTIFIER.findall(source)) == Counter(t.casefold() for t in SOFTWARE_IDENTIFIER.findall(back_translation)),
         "software_versions_identical": Counter(SOFTWARE_VERSION.findall(source)) == Counter(SOFTWARE_VERSION.findall(translation)),

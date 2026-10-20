@@ -262,7 +262,7 @@ y nombres de software. No editar v2–v6 medidos. Repetir referencias y el mismo
 revisar 28 destinos restantes, con muestra de 80 en los siete idiomas de pocos recursos. Sin traducción masiva ni fase 0.
 
 
-## Contexto técnico v7 · referencias superadas; completo pendiente
+## Contexto técnico v7 · decisión inicial retirada
 
 Política independiente `pilot-technical-policy.json` (38 entradas controladas, 53 memorias por clave y 101 destinos).
 Desambigua worker como tarea en segundo plano, entity como objeto geométrico y vocals como pista de voz;
@@ -297,3 +297,17 @@ V8 (`pilot-explicit-negative-policy.json`) hereda v7 y añade memoria precisa pa
 55 claves/106 destinos. Inglés controlado con «never uploaded». 53 tests locales (51 correctos, 2 dependencias),
 468 fixtures; sin modelos en Mac. Mismo plan de muestra en `full-sample-v8-plan.json`; referencias por repetir,
 0 idiomas aprobados. Ninguna traducción masiva ni fase 0 con el Paso A abierto.
+
+
+### Resultado v8 · gate numérico cerrado
+
+[Referencias v8 39485133272](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39485133272): 160 registros,
+16 memorias, 268,07 s; 53 tests reales con dependencias pasan, limpieza correcta. **es353/360 rechazado** por
+«30 10 segundos» frente a 30. El guard rechaza el dato añadido, conserva el crudo y no lo repara por conjetura.
+**nb360/360 pasa solo referencias**. No se ejecuta completo v8. Fuente/pesos iguales no garantizan frases iguales
+al variar la composición del lote; solo se reutiliza una rúbrica por hashes de fuente/texto idénticos.
+
+**7.481 registros, 1.914 evaluaciones registradas, 472 fixtures (458 ida/14 vuelta), 0 idiomas aprobados**.
+Suite ligera: 55 Python (53 correctos, 2 de dependencias; estas se probaron en los jobs reales antes de los dos
+últimos controles ligeros de auditoría). Próximo v9 por familia de cantidades críticas y prosa junto a números;
+no restaurar cifras por suposición. Repetir ambas referencias antes del completo; nada de masiva ni fase 0.

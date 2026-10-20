@@ -4,18 +4,23 @@
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
 **Última actualización:** 2026-10-21 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-20 19:19 UTC · Paso A: referencias v7 en Actions 39483290546; PR #136
+**Turno actual (candado):** EN CURSO · Codex · 2026-10-20 19:19 UTC · Paso A: gate v7 retirado; referencias v8 en Actions 39485133272; PR #136
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
 
 ## 1. Siguiente paso exacto
 
-**Hito en curso v7:** código `203422e` subido a `feat/new-tools-batch-1`; [referencias es/nb
-39483290546](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39483290546), job `118837137425`.
-Los 51 tests pasan con dependencias reales en Actions. Al terminar, recoger logs, revisar las 40 referencias por
-idioma con rúbrica y hashes; solo si pasan lanzar completo con `full-sample-v7-plan.json` (68 +20 claves de v6).
-No se aprueba ningún idioma ni se publica por tener tests verdes. [Informe activo](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/lotes/2026-10-21-piloto-v7.md).
+**Hito en curso v8:** políticas v7/v8 guardadas en `feat/new-tools-batch-1`. V7: referencias evaluadas de nuevo
+**es357/360 y nb358/360, rechazadas** por respuesta explícita de privacidad pendiente. La rúbrica heredada
+había pasado pese a un aviso sin resolver; se retiró el gate. Completo v7 39484416039 cancelado antes de emitir
+registros; limpieza del runner verificada. V7 permanece intacta; **0 idiomas aprobados**.
+V8 explicita No/Nei y el ejemplo de seis casillas; fuente `3c1faf3`.
+[Referencias v8 39485133272](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39485133272), job
+`118843472452`. Al terminar, recoger logs y revisar 40 por idioma, incluyendo todos los avisos heredados.
+Solo si pasan repetir completo con `full-sample-v8-plan.json` (68 +20 claves conocidas de v6).
+Acumulado guardado: **7.321 registros, 1.834 evaluaciones, 468 fixtures**. Tests locales: 53 (51 correctos, 2
+requieren dependencias reales). [Informe activo](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/lotes/2026-10-21-piloto-v7.md).
 
 1. **Paso A preparado en el PR [#136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136) (borrador), rama `feat/new-tools-batch-1`.** Las 300 fuentes del respaldo privado
    `usefulverse-300-worktree-backup-20261020`, `backup/usefulverse-300-implementation` (`27a2f174`),

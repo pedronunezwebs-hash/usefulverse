@@ -4269,5 +4269,44 @@
     "issue": "La respuesta a Is my recording uploaded? pierde el No explícito. Niega recepción por UsefulVerse, sin conservar una respuesta inequívoca sobre subida; gate retirado hasta resolverlo.",
     "observed_candidate": "madlad/context-v7",
     "actions_run_id": "39483290546"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.tooLong",
+    "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+    "translation": "Esta herramienta soporta clips de hasta 30 10 segundos. Recorte el archivo e inténtelo de nuevo.",
+    "issue": "Añade un 10 que no existe en la fuente: hasta 30 10 segundos. La duración máxima resulta ambigua y los controles de datos rechazan la salida. No se restaura por suposición.",
+    "observed_candidate": "madlad/context-v8",
+    "actions_run_id": "39485133272"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "No. No. Your browser decodes and processes the selected audio on this device. UsefulVerse does not receive the recording.",
+    "issue": "No duplicado sin origen; la ida conserva No explícito y procesamiento local.",
+    "observed_candidate": "madlad/context-v8",
+    "actions_run_id": "39485133272",
+    "direction": "back"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "No, no, no. Your browser decodes and processes the selected audio locally. UsefulVerse is not receiving the recording.",
+    "issue": "No repetido sin origen; la ida conserva Nei explícito y no recepción.",
+    "observed_candidate": "madlad/context-v8",
+    "actions_run_id": "39485133272",
+    "direction": "back"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "Delete uploaded audio",
+    "issue": "Uploaded añade una subida en lugar de audio cargado localmente. La ida cargado es correcta.",
+    "observed_candidate": "madlad/context-v8",
+    "actions_run_id": "39485133272",
+    "direction": "back"
   }
 ]

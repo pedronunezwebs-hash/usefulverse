@@ -59,6 +59,16 @@ class TypedDataTest(unittest.TestCase):
         self.assertFalse(pilot.automatic_checks('Maximum: 200,000.','Máximo: 20.00.00.','es')['numeric_values_identical'])
         self.assertTrue(pilot.automatic_checks('Use dxf-parser 1.1.2 at https://example.com/123 and `v9`.','Usa dxf-parser 1.1.2 en https://example.com/123 y `v9`.','es')['numeric_values_identical'])
 
+    def test_quantity_failures_do_not_mark_unchanged_coordinates_as_wrong(self):
+        source='From (0, 0) to (10, 0). Maximum: 200,000 records.'
+        target='De (0,0) a (10,0). Máximo: 20.00.00 registros.'
+        checks=pilot.automatic_checks(source,target,'es')
+        self.assertFalse(checks['numeric_values_identical'])
+        self.assertTrue(checks['coordinate_values_identical'])
+        checks=pilot.automatic_checks(source,'Von (0,0) nach (10,0). Höchstens: 200.000 Datensätze.','de')
+        self.assertIsNone(checks['numeric_values_identical'])
+        self.assertTrue(checks['coordinate_values_identical'])
+
     def test_v7_protects_complete_typed_data_spans_and_keeps_full_trace(self):
         source='Read dxf-parser 1.1.2 and Web Audio here. Maximum 200,000 records. Draw (0, 0) to (10, 0).'
         seen=[]; traces=[]
@@ -78,6 +88,20 @@ class TypedDataTest(unittest.TestCase):
         self.assertTrue(pilot.automatic_checks(source,'Máximo: 200,000 registros; -2.25 y 1.5.','es')['numeric_values_identical'])
         self.assertFalse(pilot.automatic_checks(source,'Máximo: 200,000 registros; 2.25 y 1.5.','es')['numeric_values_identical'])
         self.assertIsNone(pilot.automatic_checks('Maximum 200,000.','Höchstens 200.000.','de')['numeric_values_identical'])
+
+    def test_invented_extra_number_in_prose_is_rejected_without_guessing_a_repair(self):
+        source='This tool supports clips up to 30 seconds. Trim the file and try again.'
+        observed={'This tool supports clips up to':'Esta herramienta soporta clips de hasta',
+            'seconds.':'10 segundos.','Trim the file and try again.':'Recorte el archivo e inténtelo de nuevo.'}
+        traces=[]
+        value,raw,truncated=pilot.translate_typed_data_sentences([source],lambda texts:[(observed[text],False) for text in texts],traces)[0]
+        self.assertIsNone(value)
+        self.assertIn('30 10 segundos',raw,'Keep the raw failure; do not silently remove the invented 10')
+        self.assertFalse(truncated)
+        self.assertTrue(pilot.segment_evidence_valid(traces[0],source,raw))
+        checks=pilot.automatic_checks(source,raw,'es',back_translation='This tool supports clips up to 30 10 seconds. Trim the file and try again.')
+        self.assertFalse(checks['numeric_values_identical'])
+        self.assertFalse(checks['back_numeric_values_identical'])
 
     def test_v7_policy_is_bound_to_source_context_and_preserves_faq_aliases(self):
         policy=pilot.POLICIES['context-v7']
