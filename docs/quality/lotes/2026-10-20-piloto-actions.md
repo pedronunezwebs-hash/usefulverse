@@ -79,4 +79,12 @@ sin builds completos locales. El directorio temporal propio se elimina después 
 
 ## Limpieza
 
-Pendiente del cierre: comprobar todo en GitHub, liberar el candado en main y eliminar únicamente la carpeta temporal propia.
+Comprobada el 20-oct-2026 a las 10:58 UTC, después del push y de verificar los hashes de ambos checkpoints en GitHub.
+Carpeta propia `usefulverse-codex-piloto-20261020.1Tp1Wl` eliminada directamente, sin Papelera: clon, scripts temporales,
+fuentes regenerables, descargas de Actionlint/Gitleaks, diffs y QA. También eliminados los tres ZIP de logs que creó
+este lote en la caché de gh (runs 39401768186, 39402035778 y 39405978076). No se borraron carpetas ni cachés ajenas.
+**0 rutas temporales propias residuales; disco libre: 57,68 GiB**. No se descargaron modelos ni hicieron builds completos
+locales; huella local observada inferior a 0,6 GiB. No quedaron commits únicos ni archivos sin push; los JSONL completos
+se comprobaron por SHA de blob remoto antes de eliminar (M2M100: 3.012.736 bytes; MADLAD: 3.110.828 bytes).
+Candado liberado y relevo actualizado en main (`c162e20`) y en la rama del PR. Este cierre se escribe online tras comprobar
+la eliminación real; no es una intención de limpieza.
