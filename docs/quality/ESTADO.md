@@ -4,12 +4,18 @@
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
 **Última actualización:** 2026-10-21 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-20 19:19 UTC · Paso A: política v7 por sentidos técnicos y datos tipados; PR #136
+**Turno actual (candado):** EN CURSO · Codex · 2026-10-20 19:19 UTC · Paso A: referencias v7 en Actions 39483290546; PR #136
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
 
 ## 1. Siguiente paso exacto
+
+**Hito en curso v7:** código `203422e` subido a `feat/new-tools-batch-1`; [referencias es/nb
+39483290546](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39483290546), job `118837137425`.
+Los 51 tests pasan con dependencias reales en Actions. Al terminar, recoger logs, revisar las 40 referencias por
+idioma con rúbrica y hashes; solo si pasan lanzar completo con `full-sample-v7-plan.json` (68 +20 claves de v6).
+No se aprueba ningún idioma ni se publica por tener tests verdes. [Informe activo](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/lotes/2026-10-21-piloto-v7.md).
 
 1. **Paso A preparado en el PR [#136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136) (borrador), rama `feat/new-tools-batch-1`.** Las 300 fuentes del respaldo privado
    `usefulverse-300-worktree-backup-20261020`, `backup/usefulverse-300-implementation` (`27a2f174`),

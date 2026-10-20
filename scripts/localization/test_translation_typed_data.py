@@ -8,6 +8,15 @@ spec=importlib.util.spec_from_file_location('pilot',Path(__file__).with_name('tr
 pilot=importlib.util.module_from_spec(spec); spec.loader.exec_module(pilot)
 
 class TypedDataTest(unittest.TestCase):
+    def test_capitalization_regression_does_not_mark_the_lowercase_fix_as_same_error(self):
+        source='A clue marked 6 belongs inside one rectangle that covers exactly six squares.'
+        import hashlib
+        source_hash=hashlib.sha256(source.encode()).hexdigest()
+        bad='Una pista marcada 6 Pertenece dentro de un rectángulo que cubre exactamente seis cuadrados.'
+        issue='Mayúscula en mitad de frase por segmentar junto al número.'
+        self.assertIn(issue,pilot.semantic_issues('shikaku.example',source_hash,bad,'es'))
+        self.assertNotIn(issue,pilot.semantic_issues('shikaku.example',source_hash,bad.replace('Pertenece','pertenece'),'es'))
+
     def test_equivalent_local_quantity_formats_do_not_claim_a_changed_value(self):
         for locale,target in [('es','Máximo: 200.000 registros; 10 MB.'),('nb-NO','Maksimum: 200 000 oppføringer; 10 MB.')]:
             c=pilot.automatic_checks('Maximum: 200,000 records; 10 MB.',target,locale)

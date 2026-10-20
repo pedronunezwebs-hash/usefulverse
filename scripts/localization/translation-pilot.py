@@ -257,11 +257,12 @@ def numeric_data(text, locale):
 
 
 def semantic_issues(key, source_hash, translation, locale, direction="forward"):
-    normalized = unicodedata.normalize("NFKC", translation).casefold().strip()
+    normalized = unicodedata.normalize("NFKC", translation).strip()
     return sorted({row["issue"] for row in SEMANTIC_REGRESSIONS if row["key"] == key
         and row.get("direction", "forward") == direction
         and row["source_hash"] == source_hash and row["locale"] == locale
-        and unicodedata.normalize("NFKC", row["translation"]).casefold().strip() == normalized})
+        and (unicodedata.normalize("NFKC", row["translation"]).strip() == normalized if row.get("case_sensitive") else
+            unicodedata.normalize("NFKC", row["translation"]).casefold().strip() == normalized.casefold())})
 
 
 def automatic_checks(source, translation, locale, key=None, back_translation=None):

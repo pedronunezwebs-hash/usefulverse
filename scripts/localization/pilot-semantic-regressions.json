@@ -2427,7 +2427,11 @@
     "translation": "Una pista marcada 6 Pertenece dentro de un rectángulo que cubre exactamente seis cuadrados.",
     "issue": "Mayúscula en mitad de frase por segmentar junto al número.",
     "observed_candidate": "madlad/context-v2",
-    "actions_run_id": "39434607232"
+    "actions_run_id": "39434607232",
+    "case_sensitive": true,
+    "observed_additional_runs": [
+      "39483290546"
+    ]
   },
   {
     "locale": "es",
@@ -4225,5 +4229,35 @@
     "observed_candidate": "madlad-context-v6-back",
     "issue": "back-drawing-units-as-character-units",
     "evidence": "review-context-v6-full.json"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.faq.0.a",
+    "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+    "translation": "No. No. This tool only opens DXF ASCII. It does not open binary DWG or DXF.",
+    "issue": "No repetido; binary modifica DWG en lugar de conservar la agrupación DWG o DXF binario. La ida de memoria es correcta.",
+    "direction": "back",
+    "observed_candidate": "madlad/context-v7",
+    "actions_run_id": "39483290546"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.faq.0.a",
+    "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+    "translation": "No, no, no. This tool only opens ASCII DXF. It does not open DWG or binary DXF.",
+    "issue": "No, no, no añade negaciones repetidas sin origen. La ida de memoria es correcta.",
+    "direction": "back",
+    "observed_candidate": "madlad/context-v7",
+    "actions_run_id": "39483290546"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.example",
+    "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+    "translation": "A marked track 6 It belongs within a rectangle that covers exactly six squares.",
+    "issue": "Track sustituye la pista de un rompecabezas y It queda como nuevo sujeto tras 6. La ida tiene solo la mayúscula señalada, no el error track.",
+    "direction": "back",
+    "observed_candidate": "madlad/context-v7",
+    "actions_run_id": "39483290546"
   }
 ]

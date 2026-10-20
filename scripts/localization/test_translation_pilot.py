@@ -103,7 +103,8 @@ class TranslationPilotTest(unittest.TestCase):
         directory = pilot.ROOT / 'docs/quality/translation-pilot'
         records = {row['record_id']: row for path in (directory / 'checkpoints').rglob('*.jsonl')
             for row in map(json.loads, path.read_text().splitlines())}
-        for path in sorted(directory.glob('review-context-v[56]-*.json')):
+        for path in sorted(directory.glob('review-context-v*-*.json')):
+            if int(path.name.split('-')[2][1:]) < 5: continue
             review = json.loads(path.read_text())
             for row in review['rows']:
                 if row['candidate'] == 'legacy' or min(row['scores'].values()) == 3: continue

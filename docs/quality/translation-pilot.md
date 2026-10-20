@@ -260,3 +260,26 @@ el nuevo control de identificadores lo detecta. Fallos de vuelta se señalan sin
 **0 idiomas aprobados**. Siguiente: política v7 independiente para las familias anteriores, tipos de coordenadas/números
 y nombres de software. No editar v2–v6 medidos. Repetir referencias y el mismo completo es/nb antes de ampliar; después
 revisar 28 destinos restantes, con muestra de 80 en los siete idiomas de pocos recursos. Sin traducción masiva ni fase 0.
+
+
+## Contexto técnico v7 · referencias superadas; completo pendiente
+
+Política independiente `pilot-technical-policy.json` (38 entradas controladas, 53 memorias por clave y 101 destinos).
+Desambigua worker como tarea en segundo plano, entity como objeto geométrico y vocals como pista de voz;
+explicita los efectos de audio y la relación tono/velocidad. Conserva las FAQ de fuente idéntica por contexto.
+Nombres y etiquetas ambiguas proceden de memoria revisada por el agente, con origen/digest explícitos, sin
+revisión nativa ni atribución al modelo. V2–v6 medidos permanecen intactos.
+
+El segmentador v7 copia cantidades, coordenadas y nombres de software en posiciones de origen conocidas.
+Los auditores de valores usan Decimal exacto y coordenadas ordenadas; diferencian un formato local equivalente
+de un cambio de valor. El contrato literal previo se conserva por separado y no se reparan salidas del modelo.
+Notación numérica copiada literalmente = contrato de dato de origen; si cambia, gramática explícita es/nb,
+sin inferir formatos de otros idiomas ni grupos mal formados. Versiones/URLs/código no se cuentan como cantidades.
+
+51 tests Python locales (49 pasan, 2 dependencias reservadas a Actions). Código `203422e`.
+[Referencias v7 39483290546](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39483290546),
+es359/360 y nb360/360: solo referencias. Rúbrica y tres hallazgos de vuelta guardados; completo todavía pendiente. `full-sample-v7-plan.json`
+conserva las 68 claves y 20 adicionales de v6: ya observadas, no son una muestra ciega de v7. No se aprueba idioma
+alguno por tests verdes ni se avanza a fase 0. [Informe del lote](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/lotes/2026-10-21-piloto-v7.md).
+
+Referencias v7: 160 registros, 13 aciertos de memoria, 186,10 s; 51 tests reales pasan. Tras el refuerzo del auditor: 52 tests locales (50 correctos y 2 de dependencias), 467 fixtures. Total 7.321 registros y 1.834 evaluaciones, 0 idiomas aprobados. La capitalización del ejemplo español es un caso leve ya conocido; las vueltas se auditan por separado.
