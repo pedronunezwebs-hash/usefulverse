@@ -197,3 +197,21 @@ Siguiente: **v5 nueva**, manteniendo v2/v3/v4 y sus checkpoints. Corregir famili
 conservar todas las frases de cada párrafo; tratar versiones y símbolos como datos. Repetir primero referencias y luego
 el completo es/nb con la misma muestra y controles. Después los otros 28 destinos pendientes de revisión.
 **0 idiomas aprobados, 0 paquetes de las 300 publicados por este piloto.** Detalle de fallos: `review-context-v4-full.json`.
+
+## Variante v5 · oraciones cubiertas y datos tipados
+
+`context-v5` conserva v2/v3/v4 sin cambios. Fuente: `pilot-coverage-policy.json`: 22 entradas de inglés controlado
+por clave/hash/contexto y 69 destinos de memoria revisada (presets, acciones, unidades, licencias y correcciones anteriores).
+Las FAQ duplicadas tienen entradas explícitas del mismo sentido; no se fusionan textos por parecido.
+Cada oración se envía y registra por separado. Versiones, símbolos de unidad, URLs, código y placeholders se copian en
+sus posiciones conocidas, con trazas completas de origen/ensamblado. No se reparan marcadores deduciendo dónde estaban.
+La cobertura de oraciones comprueba que ninguna se omite como unidad; no demuestra que el modelo conserve todas las
+ideas dentro de una oración. La rúbrica del agente y los controles de cifras/negaciones siguen siendo obligatorios.
+Las versiones se comprueban también en la vuelta, recalculando las señales de checkpoints antiguos sin alterarlos.
+
+Regresiones nuevas: párrafo con privacidad/límites al final, oración intermedia vacía, lote incompleto, datos repetidos,
+inyección de unidad, URLs/código que contienen versiones/símbolos, procedencia y fuentes exactas. 42 tests Python
+(40 correctos; 2 dependen del job de modelos), además de los tests Node de corpus. No es certificación de las siete capas.
+Referencias: [run 39452889204](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39452889204), código `4c477b7`.
+La política es un candidato híbrido con memoria, no una medición del modelo sin ayudas ni una revisión nativa.
+Los resultados y la decisión se añaden tras leer las traducciones y las vueltas. No hay idiomas aprobados.
