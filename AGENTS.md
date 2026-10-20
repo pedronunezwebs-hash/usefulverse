@@ -36,6 +36,6 @@ estado en `docs/quality/progress.csv`. Plan completo: `docs/quality/PLAN.md`. Ma
    límite de crecimiento. Es la única ampliación de URLs permitida.
 5. Prohibido enviar URLs en masa a buscadores (IndexNow, Naver, Yandex o Google) mientras dure la recuperación.
    Solo se reenvían los sitemaps limpios cuando el dueño lo pida.
-6. No publicar traducciones automáticas sin revisión en URLs indexables.
+6. Solo se publican traducciones de idiomas que hayan pasado el piloto y los controles de `docs/recovery/RUNBOOK.md` §8.
 7. Cada PR indica cuántas URLs indexables había antes y después. Si el número sube, el PR necesita la
    aprobación explícita del dueño.
