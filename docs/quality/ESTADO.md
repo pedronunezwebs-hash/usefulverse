@@ -28,6 +28,9 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
       `reconstruction…`, caché de MADLAD de 3,3 GB…), dejadas por sesiones del 17-19 oct. **No borrar
       `/tmp/usefulverse-300-implementation-20261019` hasta que su rama esté en GitHub.**
 - [ ] Fichas de coste de las herramientas nuevas que necesiten servidor o API (test de velocidad, tiempo, chat de IA…), cuando aparezcan.
+- [ ] **Dónde ejecutar la traducción masiva** (~19 M de palabras, ~50-180 h de cómputo estimadas): Mac por la noche /
+      repo público (Actions ilimitado y gratis) / Codespaces repartido en meses. Ver `REVISION-FINAL.md` §2.
+- [ ] Confirmar que la tarjeta de Cloudflare sigue válida (dominio con renovación automática el 28-sep-2027 + Workers Paid mensual).
 - [ ] Publicar en Product Hunt, Reddit o directorios cuando el agente deje los textos preparados (fase 7).
 
 ## 3. Checklist general (marcar con [x] y fecha)
@@ -59,6 +62,14 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 ### Herramientas nuevas (RUNBOOK §7)
 - [ ] Paso A: las 300 subidas con `noindex` (fuera del sitemap y de los `hreflang`) · subidas: **0 / 300**
 - Paso B: activadas **0** (máximo 30 por semana) · semana actual: 0 / 30
+
+### Fase 8 · Piloto automático y anuncios (REVISION-FINAL §3-5)
+- [ ] Action semanal de vigilancia (URLs, 404, sitemaps, alarma de Search Console → Issue)
+- [ ] Aviso de datos caducados + Issue del 2 de enero
+- [ ] Activación automática semanal de hasta 30 nuevas ya aprobadas
+- [ ] Huecos de anuncio reservados y apagados, CMP certificado preparado, `ads.txt`, privacidad con sección de anuncios
+- [ ] 2FA y avisos de facturación revisados
+- [ ] **Web terminada** (checklist de REVISION-FINAL §5) → candado `TERMINADO · modo piloto automático`
 
 ### Fase 7 · Crecimiento (STRATEGY-1M)
 - [ ] Widgets para insertar (enlace `nofollow` de marca) · [ ] PWA · [ ] Juegos diarios con tarjeta para compartir

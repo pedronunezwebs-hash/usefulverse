@@ -159,6 +159,9 @@ inmediato, porque los proyectos antiguos siguen vivos.
 
 ## 5. Bucle principal · Mejorar herramientas existentes (lote de 5 a 10)
 
+**Nivel de esfuerzo (A/B/C):** ver `docs/quality/REVISION-FINAL.md` §1. Toda herramienta pasa la puerta mínima; el
+tratamiento completo (long-tail profundo, 8-12 FAQ, títulos por keyword en 10 idiomas, widget) es para el nivel A.
+
 **Elegir el lote:** abrir `docs/quality/progress.csv` y tomar las siguientes filas con `tipo=existente` y
 `estado=pendiente`, ordenadas por `prioridad` (de menor a mayor). Preferir herramientas de la misma familia en el mismo
 lote (PDF con PDF, etc.) para que se enlacen entre sí. Marcar `estado=en-curso` y el nombre del agente, y hacer push con
@@ -248,7 +251,14 @@ puerta. Merge y despliegue (máximo uno al día). **Verificar en producción** (
 5. En `progress.csv`: `estado=activa`, con la fecha y el PR. Contar las activaciones de la semana; al llegar a 30, parar
    hasta la semana siguiente.
 
-## 8. Traducción (en Codespaces)
+## 8. Traducción
+
+> **Antes de nada lee `docs/quality/REVISION-FINAL.md` §2:** inglés controlado, memoria de traducción, elección **objetiva**
+> del motor por idioma (incluida la traducción actual si puntúa más), controles automáticos y muestra de 20 frases.
+> También explica el **problema de volumen** (~19 M de palabras): dónde se ejecuta (Mac por la noche, repo público con
+> Actions ilimitado o Codespaces repartido) lo decide Pedro (ver `ESTADO.md`).
+
+### 8.1 Pasos (Codespaces o Mac, según la decisión)
 
 1. Abrir un codespace de 2 núcleos sobre la rama del lote.
 2. Primera vez: ejecutar el **piloto** de `METODO-TRADUCCION.md` (3 herramientas y 37 idiomas) y fijar el motor por idioma.
@@ -301,7 +311,16 @@ Además del bucle de calidad, el agente dedica una parte de cada quincena a la *
 crecimiento publica nada en nombre de Pedro (Product Hunt, Reddit, directorios) sin su aprobación: el agente prepara los
 textos y Pedro publica.
 
-## 12. Prohibido
+## 12. Piloto automático y anuncios (para dejar la web un año)
+
+Al acabar las fases de calidad, aplicar `docs/quality/REVISION-FINAL.md` §3-5:
+- Action semanal de vigilancia que abre un Issue si algo falla.
+- Aviso automático de datos caducados en las herramientas con normativa o impuestos.
+- Activación automática semanal de hasta 30 herramientas nuevas que ya pasaron la puerta (`estado=lista-para-activar`).
+- Huecos de anuncio reservados y apagados, CMP certificado preparado y `ads.txt` preparado.
+- Checklist de «web terminada». `ESTADO.md` pasa a «TERMINADO · modo piloto automático».
+
+## 13. Prohibido
 
 - Activar (quitar el `noindex`) herramientas que no hayan pasado la puerta, o más de 30 por semana.
 - Meter páginas `noindex` en el sitemap o en los `hreflang`, o bloquearlas en `robots.txt`.
