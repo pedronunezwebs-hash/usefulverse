@@ -135,3 +135,65 @@ Fuentes primarias: [M2M100](https://huggingface.co/facebook/m2m100_418M),
 [MADLAD-400](https://huggingface.co/google/madlad400-3b-mt),
 [conversión CTranslate2](https://opennmt.net/CTranslate2/guides/transformers.html),
 [facturación de Actions](https://docs.github.com/en/billing/concepts/product-billing/github-actions).
+
+## Segundo lote: sentido, literales y memoria revisada
+
+Las variantes se conservan separadas, con su JSON de política inmutable y digest en la identidad de checkpoint.
+No editar una política ya medida: crear una versión nueva. Baseline sigue intacto (4.809 registros).
+
+- `context-v2`: diez sentidos explícitos en inglés y segmentación alrededor de todos los literales. Ambos motores
+  terminaron las referencias es/nb, 320 registros. **Descartada**: conserva muchos tokens, pero rompe la gramática,
+  elimina condiciones (milímetros) e inventa cifras. M2M100 no se amplía en esos pares.
+- `context-v3`: mantiene frases completas y literales visibles, sin marcadores artificiales. MADLAD, 160 registros.
+  Mejora el sentido, pero traduce `{duration}` y pierde `.dxf` en bokmål; los controles lo rechazan.
+- `context-v4`: frases completas y **siete entradas exactas de memoria revisadas por el agente** (dos es, cinco nb).
+  Un acierto evita inferencia de ida; se marca `translation_origin=reviewed-memory` y su digest, nunca como salida cruda
+  del modelo. Se retrotraduce igualmente. No se adivina la restauración de un marcador que el modelo haya perdido.
+  Las fuentes canónicas y la interfaz publicada no cambian. La memoria exige coincidencia de clave, fuente, hash,
+  contexto y destino; no se aplica por palabras parecidas ni por posición.
+
+[Referencias v4, run 39436428601](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39436428601):
+40 frases por idioma; 160 registros incluyendo copia actual y retrotraducción. Resultado de revisión del agente:
+**es 360/360; nb 358/360**, cero errores en botones/cifras/negaciones y dos leves de concordancia en 40 frases nb.
+Cumple el umbral de referencias (máximo 1 leve/20); **no aprueba el idioma ni la herramienta**. Seis señales de
+longitud son acciones inglesas muy cortas desambiguadas; revisadas expresamente en la rúbrica, siguen visibles.
+Las dos mejoras de concordancia nb permanecen como regresiones pendientes de pulir.
+
+Solo después de esa revisión se inició el [piloto completo es/nb 39437391534](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39437391534),
+214 unidades en total entre las tres herramientas, conservando y reutilizando los 160 registros de
+referencias. El estado final y los fallos están en `lotes/2026-10-20-piloto-contexto.md`; no inferir aprobación del job verde.
+
+```sh
+gh workflow run deploy-cloudflare.yml -R pedronunezwebs-hash/usefulverse \
+  --ref feat/new-tools-batch-1 -f translation_pilot=true -f pilot_engine=madlad \
+  -f pilot_policy=context-v4 -f pilot_scope=full -f pilot_locales=es,nb-NO
+```
+
+Los checkpoints de cada variante van en `checkpoints/context-vN/<motor>.jsonl`. Recoger cada log del job con `collect`
+(fusiona el checkpoint previo) y regenerar los informes. `summarize` distingue política, motor, idioma y candidato;
+recalcula los controles y audita la traza de fragmentos. El test de reanudación usa el checkpoint real de referencias;
+no descarga ni importa un modelo en el Mac. Una identidad contextual no puede hacerse pasar por baseline ni viceversa.
+Los tokens técnicos se comprueban también en la vuelta: una ida correcta no oculta que desaparezca `.dxf` al volver.
+
+Las 40 referencias MADLAD baseline en de/fr/pt-BR/ja/hi/ar están ahora revisadas por el agente, sin afirmar revisión
+nativa. Sus rúbricas se conservan ligadas a los registros exactos; todas esas combinaciones necesitan correcciones.
+Las cifras de evaluaciones pueden repetir texto entre candidatos y variantes: no llamarlas frases únicas nuevas.
+
+### Resultado del piloto completo v4 es/nb
+
+[Run 39437391534](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39437391534) terminado:
+**856 registros** (214 unidades × 2 idiomas × sistema híbrido/actual), de los que 160 se reutilizaron y 696 son nuevos.
+975,22 s, incluida conversión 74,97 s; pico de inferencia 4.065.256 KiB. **Ambos idiomas rechazados** tras la muestra
+ampliada fijada antes de recoger resultados (`full-sample-plan.json`): 68 claves del sistema híbrido y 20 actuales por
+idioma, 176 evaluaciones nuevas, además de las referencias. Hay Clear/clean incorrectos, frases finales omitidas,
+versiones y símbolos de unidad alterados. No confundir computar las 214 cadenas con aprobarlas.
+
+Total guardado: **6.145 registros**, **1.378 evaluaciones** que pueden repetir texto entre variantes y **410 salidas
+problemáticas registradas como regresiones**. `automatic-summary.json` se recalcula para todas las políticas; las
+alertas de longitud/igualdad pueden necesitar juicio técnico, pero los fallos de privacidad/cifras/botones impiden aprobar.
+El control de unidades solo aplica a sus etiquetas: no interpreta la preposición inglesa in como símbolo de pulgadas.
+
+Siguiente: **v5 nueva**, manteniendo v2/v3/v4 y sus checkpoints. Corregir familias completas y FAQ duplicadas por sentido;
+conservar todas las frases de cada párrafo; tratar versiones y símbolos como datos. Repetir primero referencias y luego
+el completo es/nb con la misma muestra y controles. Después los otros 28 destinos pendientes de revisión.
+**0 idiomas aprobados, 0 paquetes de las 300 publicados por este piloto.** Detalle de fallos: `review-context-v4-full.json`.
