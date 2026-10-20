@@ -18,7 +18,7 @@ Documentos de referencia, en orden de prioridad: `AGENTS.md` → este RUNBOOK �
 | Herramientas públicas | 700 (277 en `usefulverse.com` y 423 en `tools.usefulverse.com`); 25.625 URLs en los sitemaps |
 | Idiomas | 37 definidos. A **600 herramientas les falta el noruego `nb`** (las 277 del dominio y 323 del subdominio) |
 | Google | El 16-oct las impresiones cayeron de ~3.700/día a ~50/día. No hay acción manual: es una desconfianza algorítmica por crecer a escala con poca calidad. |
-| Las «300 nuevas» | **Todavía no están construidas.** `PLAN-1000.md` (19-oct) dice: 300 candidatas investigadas, **0 implementaciones listas**. Solo 50 tienen demanda confirmada ≥300.000 búsquedas/mes y viabilidad pendiente. Otras 19 necesitan revisión (11 de intención y 8 alternativas cercanas), y 231 son de reserva y no cumplen la demanda pedida. |
+| Las «300 nuevas» | Pedro informa (20-oct) de que están **casi terminadas con ChatGPT, fuera de este repo**. No están en `main` ni publicadas: hoy ningún slug de `300-candidatas.tsv` aparece en los sitemaps. Según `PLAN-1000.md`, 50 tienen demanda confirmada ≥300.000/mes, 19 necesitan revisión y 231 son de reserva. |
 | **Fallo técnico urgente** | `tools.usefulverse.com` devuelve **200 con la home** en cualquier URL inexistente (p. ej. `/tools/zzz/`). Son *soft 404*: Google ve URLs basura infinitas que parecen páginas. `usefulverse.com` sí devuelve 404 correctamente. |
 | Marca | Concepto **«Planeta Infinito»** aprobado por Pedro: planeta + anillo ∞, violeta `#5B3DF5`, display Bricolage Grotesque, colores por categoría. |
 
@@ -158,12 +158,15 @@ puerta. Merge y despliegue (máximo uno al día). **Verificar en producción** (
 
 ## 7. Bucle de herramientas nuevas (de las 300 candidatas)
 
+0. **Origen:** el código de cada herramienta hecha con ChatGPT se sube al repo en una rama (`feat/new-tools-batch-N`),
+   nunca directamente a `main`. Desde ese momento se trata exactamente igual que cualquier herramienta: pasa la puerta
+   de la sección 6 y el freno de la sección 2.
 1. **Orden:** primero las 50 con `decision = Prioridad por demanda; falta viabilidad`, ordenadas por `rank`; después las
    8 alternativas cercanas y las 11 de intención por revisar. Las 231 de reserva no se construyen salvo decisión de Pedro.
 2. **Viabilidad antes de construir:** ¿se puede hacer 100 % en el navegador, sin servidor, sin API de pago y con licencias
    válidas? Si necesita servidor o datos externos, se hace una ficha de costes y **se para hasta que Pedro la apruebe**.
    ¿Es de verdad distinta de las 700 existentes? (Ver «Qué cuenta como nueva herramienta» en `PLAN-1000.md`.)
-3. **Construir** con la misma receta de la sección 5 y la misma puerta de la sección 6.
+3. **Construir o completar** con la misma receta de la sección 5 y la misma puerta de la sección 6.
 4. **Publicar** respetando el freno semanal (≤ 30 nuevas por semana). Contarlas en `progress.csv`.
 
 ---

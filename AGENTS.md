@@ -26,7 +26,7 @@ estado en `docs/quality/progress.csv`. Plan completo: `docs/quality/PLAN.md`. Ma
    siguen indexables. La recuperación se hará **mejorando la calidad en el sitio**, por orden de prioridad
    (`docs/recovery/indexable-core-tools.csv` = orden de trabajo, empezando por las 128 con datos). No añadas
    `noindex` a ninguna página sin aprobación explícita del dueño.
-3. **Herramientas nuevas (de las 300 candidatas, que aún NO están construidas):** cada una se publica completa en cuanto
+3. **Herramientas nuevas (las 300 candidatas, casi terminadas con ChatGPT fuera del repo y sin publicar):** cada una se publica completa en cuanto
    pasa la puerta de calidad de `docs/recovery/RUNBOOK.md` §6, con un **freno de 30 herramientas nuevas por semana**.
    Las 231 de reserva y todo lo que necesite servidor o API de pago, solo con aprobación de Pedro.
 4. **Excepción aprobada por el dueño (20-oct-2026): cobertura de 37 idiomas.** Todas las herramientas publicadas
