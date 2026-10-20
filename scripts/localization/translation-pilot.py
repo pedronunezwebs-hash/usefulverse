@@ -31,7 +31,7 @@ ALIASES = {"pt-BR": "pt", "zh-CN": "zh", "zh-TW": "zh", "fil": "tl", "nb-NO": "n
 SCRIPTS = {"ar": "ARABIC", "fa": "ARABIC", "ur": "ARABIC", "hi": "DEVANAGARI", "mr": "DEVANAGARI", "bn": "BENGALI", "te": "TELUGU", "ta": "TAMIL", "gu": "GUJARATI", "am": "ETHIOPIC", "ru": "CYRILLIC", "uk": "CYRILLIC", "bg": "CYRILLIC", "el": "GREEK", "th": "THAI", "ko": "HANGUL"}
 FORMAT = "usefulverse-translation-pilot-v1"
 SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
-TECHNICAL_TOKEN = re.compile(r"\.[a-z][a-z0-9]{1,5}\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
+TECHNICAL_TOKEN = re.compile(r"\.(?:dxf|dwg|png|svg|wav|mp3|pdf|json|csv|txt)\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
 
 
 def canonical(value):
@@ -53,7 +53,7 @@ def semantic_issues(key, source_hash, translation, locale):
         and unicodedata.normalize("NFKC", row["translation"]).casefold().strip() == normalized})
 
 
-def automatic_checks(source, translation, locale, key=None):
+def automatic_checks(source, translation, locale, key=None, back_translation=None):
     letters = [char for char in translation if char.isalpha()]
     required_script = SCRIPTS.get(locale)
     script_ratio = None if not required_script or not letters else sum(required_script in unicodedata.name(char, "") for char in letters) / len(letters)
@@ -61,6 +61,7 @@ def automatic_checks(source, translation, locale, key=None):
         "nonempty": bool(translation.strip()),
         "protected_tokens_identical": queue.signature(source) == queue.signature(translation),
         "technical_tokens_identical": Counter(token.casefold() for token in TECHNICAL_TOKEN.findall(source)) == Counter(token.casefold() for token in TECHNICAL_TOKEN.findall(translation)),
+        "back_protected_tokens_identical": None if back_translation is None else queue.signature(source) == queue.signature(back_translation),
         "untranslated_source": source.casefold().strip() == translation.casefold().strip(),
         "length_ratio": round(len(translation) / max(1, len(source)), 3),
         "expected_script_ratio": script_ratio,
@@ -164,11 +165,12 @@ def summarize(paths):
             seen.add(row["record_id"])
             group = groups.setdefault((row["engine"], row["locale"], row["candidate"]), Counter())
             group["records"] += 1
-            checks = automatic_checks(row["source"], row["translation"], row["locale"], row["key"])
+            checks = automatic_checks(row["source"], row["translation"], row["locale"], row["key"], row["back_translation"])
             for flag, fails in {"empty": not checks["nonempty"], "protected_tokens": not checks["protected_tokens_identical"],
                 "technical_tokens": not checks["technical_tokens_identical"], "english_unchanged": checks["untranslated_source"], "length_ratio": not 0.5 <= checks["length_ratio"] <= 2.5,
                 "wrong_script": checks["expected_script_ratio"] is not None and checks["expected_script_ratio"] < 0.6,
-                "known_semantic_errors": bool(checks["known_semantic_errors"]), "marker_restore": not row["marker_restore_ok"], "truncated": row["truncated"]}.items():
+                "known_semantic_errors": bool(checks["known_semantic_errors"]), "marker_restore": not row["marker_restore_ok"],
+                "back_protected_tokens": checks["back_protected_tokens_identical"] is False, "truncated": row["truncated"]}.items():
                 group[flag] += int(fails)
     return {"approved": 0, "review_required": True, "groups": [{"engine": engine, "locale": locale, "candidate": candidate, **counts}
         for (engine, locale, candidate), counts in sorted(groups.items())]}
@@ -272,9 +274,9 @@ def run(args):
                             "corpus_digest": corpus["sourceDigest"], "engine": args.engine, "engine_revision": config["revision"], "engine_license": config["license"],
                             "candidate": candidate, "locale": locale, "key": unit["key"], "tool": unit["tool"], "source": unit["source"], "source_hash": unit["source_hash"],
                             "translation": text, "raw_translation": raw, "back_translation": back_value or back_raw,
-                            "marker_restore_ok": value is not None, "truncated": truncated or back_truncated,
+                            "marker_restore_ok": value is not None, "back_marker_restore_ok": back_value is not None, "truncated": truncated or back_truncated,
                             "detected_language": detected, "language_detector_score": confidence,
-                            "checks": automatic_checks(unit["source"], text, locale, unit["key"]), "seconds_per_batch_unit": seconds / len(batch),
+                            "checks": automatic_checks(unit["source"], text, locale, unit["key"], back_value or back_raw), "seconds_per_batch_unit": seconds / len(batch),
                             "beam_size": args.beam_size, "status": "machine-draft", "reviewer": "", "reviewed_at": "",
                             "actions_run_id": os.environ.get("GITHUB_RUN_ID", ""), "actions_run_attempt": os.environ.get("GITHUB_RUN_ATTEMPT", ""),
                             "source_commit": os.environ.get("GITHUB_SHA", "")}

@@ -129,5 +129,36 @@ class TranslationPilotTest(unittest.TestCase):
                     self.assertEqual(actual['source_hash'], row['source_hash'])
                     self.assertEqual(hashlib.sha256(actual['translation'].encode()).hexdigest(), row['translation_hash'])
 
+    def test_a_valid_forward_translation_does_not_hide_broken_back_translation_tokens(self):
+        checks = pilot.automatic_checks('Choose an audio file no larger than 25 MB.',
+            'اختر ملفًا صوتيًا لا يزيد حجمه عن 25 MB.', 'ar',
+            back_translation='Select the audio file not more than ZXPH0000QXZ MB.')
+        self.assertTrue(checks['protected_tokens_identical'])
+        self.assertFalse(checks['back_protected_tokens_identical'])
+
+    def test_a_fully_resumed_run_never_downloads_or_imports_a_model(self):
+        import contextlib
+        import io
+        from types import SimpleNamespace
+        from unittest.mock import patch
+        unit = {'key': 'tool.button', 'source': 'Save', 'source_hash': hashlib.sha256(b'Save').hexdigest(), 'context': 'button', 'legacy': {}, 'reference': True}
+        corpus = {'sourceDigest': 'source-v1', 'fullSourceUnits': 1, 'locales': ['en', 'es'], 'units': [unit]}
+        identity = pilot.record_id(corpus, 'm2m100', 'es', unit, 'model', 2)
+        row = {'format': pilot.FORMAT, 'status': 'machine-draft', 'engine': 'm2m100', 'engine_revision': pilot.ENGINES['m2m100']['revision'],
+            'record_id': identity, 'corpus_digest': 'source-v1', 'locale': 'es', 'key': unit['key'], 'source': 'Save',
+            'source_hash': unit['source_hash'], 'candidate': 'model', 'beam_size': 2}
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); (root / 'corpus.json').write_text(json.dumps(corpus)); (root / 'resume.jsonl').write_text(json.dumps(row) + '\n')
+            args = SimpleNamespace(corpus=root / 'corpus.json', resume=root / 'resume.jsonl', locales='es', scope='full', engine='m2m100', beam_size=2)
+            stream = io.StringIO()
+            with patch.object(pilot, 'actions_only'), patch.object(pilot.subprocess, 'run', side_effect=AssertionError('Unexpected model conversion')) as conversion, contextlib.redirect_stdout(stream):
+                pilot.run(args)
+            conversion.assert_not_called()
+            self.assertIn('"conversion_seconds":0', stream.getvalue())
+
+    def test_missing_sentence_spacing_is_not_misreported_as_a_file_extension_change(self):
+        checks = pilot.automatic_checks('Audio decoded. Try again.', 'Audio decodificado.Prueba otra vez.', 'es')
+        self.assertTrue(checks['technical_tokens_identical'])
+
 
 if __name__ == '__main__': unittest.main()
