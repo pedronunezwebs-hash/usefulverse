@@ -343,3 +343,10 @@ sistemática. Google tarda meses en reevaluar un sitio entero.
 7. **Medición:** la línea base está en la sección 2. Revisión cada 2 semanas. Si a las 8-10 semanas de mejoras
    visibles no hay ninguna recuperación, se vuelve a plantear al dueño el `noindex` temporal de las páginas que
    sigan siendo débiles.
+
+### Tercera decisión del dueño · 20-oct-2026: las 300 herramientas preparadas
+
+Se publican por goteo, **solo en inglés, como máximo 30 por semana**, con la puerta mínima descrita en `AGENTS.md`.
+Los demás idiomas de esas herramientas se publican más tarde, cuando haya recuperación estable. Motivo: tienen el
+mayor potencial de captación y conviene que Google empiece a descubrirlas ya, pero sin repetir el pico de URLs
+que causó la caída. 300 URLs en 10 semanas = +1,2 % sobre el total actual.

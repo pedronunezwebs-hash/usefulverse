@@ -21,7 +21,16 @@ Prevalecen sobre cualquier plan anterior de `docs/` (incluido `docs/growth600/`)
    siguen indexables. La recuperación se hará **mejorando la calidad en el sitio**, por orden de prioridad
    (`docs/recovery/indexable-core-tools.csv` = orden de trabajo, empezando por las 128 con datos). No añadas
    `noindex` a ninguna página sin aprobación explícita del dueño.
-3. Las 300 herramientas preparadas y sin publicar **siguen sin publicarse**.
+3. **Las 300 herramientas preparadas se publican por goteo (decisión del dueño, 20-oct-2026), solo en inglés:**
+   - Como máximo **30 herramientas por semana**, empezando por las de mayor potencial de búsqueda.
+   - Cada una entra **únicamente en inglés** (una URL por herramienta). Sus otros 36 idiomas se publican más
+     tarde, cuando Search Console muestre recuperación estable 3-4 semanas, y también de forma gradual.
+   - Antes de publicarla, cada herramienta pasa la **puerta mínima**: funciona en móvil y escritorio (con tests), sin
+     límites artificiales, contenido propio (cómo se usa, ejemplos, 6+ FAQ reales), título y descripción únicos y
+     verdaderos, schema válido y enlaces a 3 herramientas relacionadas. El rediseño completo llegará después
+     con el resto del sitio.
+   - Las herramientas de cada tanda van en un único PR, con la lista y el recuento de URLs antes y después.
+   - Ningún envío masivo a buscadores: basta con actualizar el sitemap.
 4. **Excepción aprobada por el dueño (20-oct-2026): cobertura de 37 idiomas.** Todas las herramientas publicadas
    deben existir en los 37 idiomas definidos. Hoy a 600 les falta el noruego bokmål (`/nb/`: 277 del dominio
    principal y 323 del subdominio). Se puede añadir `nb` a una herramienta **solo cuando esa herramienta ya
