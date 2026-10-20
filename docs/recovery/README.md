@@ -34,6 +34,13 @@ Propuesta del núcleo inicial, sacada de los datos: `docs/recovery/indexable-cor
 Son **128 herramientas indexables** (98 del dominio principal y 30 del subdominio) y **572 en `noindex`**, hasta
 que se mejoren. El criterio: al menos 100 impresiones o 1 clic entre el 1 y el 15-oct.
 
+### Segunda decisión del dueño · 20-oct-2026: sin `noindex`, mejora en el sitio
+
+El dueño **descarta el `noindex` masivo**: quiere que los 36 idiomas y las 700 herramientas sigan indexables.
+Las 300 herramientas preparadas no se publican. Esta decisión **sustituye a los pasos 2, 3 y 7 de abajo**:
+el CSV deja de ser una lista de `noindex` y pasa a ser **el orden de trabajo de mejora**. El plan vigente es el
+del apartado «Plan vigente: mejora sin `noindex`», al final de este documento.
+
 ---
 
 ## 2. Qué pasó: los datos
@@ -311,3 +318,28 @@ Contexto externo: el *September 2026 spam update* de Google se desplegó del 24-
 ([Search Engine Land](https://searchengineland.com/google-september-2026-spam-update-done-rolling-out-493550),
 [Google Search Status](https://status.search.google.com/incidents/XhUDXP7A67iHCD2kmbVu)). No coincide con la
 fecha de la caída (16-oct).
+
+---
+
+## Plan vigente: mejora sin `noindex` (20-oct-2026)
+
+Base: la política de spam de Google no considera spam la traducción en sí. Lo que penaliza es publicar mucho
+contenido «sin aportar valor a los usuarios». La recuperación pasa por subir el valor de todo el sitio de forma
+sistemática. Google tarda meses en reevaluar un sitio entero.
+
+1. **Congelación total:** no se publican URLs nuevas (las 300 preparadas incluidas).
+2. **Traducción de calidad, por idioma:** retraducir los packs que se hicieron con Google Translate con un modelo
+   de calidad, con un glosario por mercado (como ja/ko/id/hi) y la revisión de las keywords reales de cada
+   idioma. El orden lo marca el volumen de impresiones de cada idioma. Al generarse desde los packs, cada mejora
+   llega a las 700 herramientas a la vez.
+3. **Contenido propio por herramienta**, empezando por las 128 con datos del CSV: cómo funciona, fórmula con su
+   fuente, ejemplos resueltos, casos de uso, errores frecuentes y FAQ sacada de búsquedas reales. Después se
+   localiza a los 36 idiomas.
+4. **Rediseño del sitio:** plantilla más cuidada, enlazado interno temático (herramientas relacionadas por
+   categoría) y páginas de confianza (sobre nosotros, contacto, metodología).
+5. **Un solo dominio:** valorar integrar `tools.usefulverse.com` en `usefulverse.com` con redirecciones 301. Google
+   menciona expresamente como abuso «crear varios sitios para ocultar la naturaleza a escala del contenido».
+6. **Sitemaps** divididos por idioma, con un `lastmod` que solo cambie cuando la página mejora de verdad.
+7. **Medición:** la línea base está en la sección 2. Revisión cada 2 semanas. Si a las 8-10 semanas de mejoras
+   visibles no hay ninguna recuperación, se vuelve a plantear al dueño el `noindex` temporal de las páginas que
+   sigan siendo débiles.
