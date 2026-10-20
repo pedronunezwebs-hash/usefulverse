@@ -26,11 +26,11 @@ on:
         type: choice
         options: [both, m2m100, madlad]
       pilot_policy:
-        description: "Baseline, segmentos v2, frases v3 o frases con memoria revisada v4"
+        description: "Baseline o variantes de contexto v2–v5; v5 cubre cada oración y protege datos"
         required: false
         default: baseline
         type: choice
-        options: [baseline, context-v2, context-v3, context-v4]
+        options: [baseline, context-v2, context-v3, context-v4, context-v5]
       pilot_scope:
         description: "40 referencias o las tres herramientas completas"
         required: false

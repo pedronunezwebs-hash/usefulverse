@@ -32,8 +32,12 @@ SCRIPTS = {"ar": "ARABIC", "fa": "ARABIC", "ur": "ARABIC", "hi": "DEVANAGARI", "
 FORMAT = "usefulverse-translation-pilot-v1"
 CONTEXT_POLICY = json.loads(Path(__file__).with_name("pilot-context-policy.json").read_text())
 POLICIES = {CONTEXT_POLICY["id"]: CONTEXT_POLICY, "context-v3": json.loads(Path(__file__).with_name("pilot-sentence-policy.json").read_text()), "context-v4": json.loads(Path(__file__).with_name("pilot-memory-policy.json").read_text())}
+POLICIES["context-v5"] = json.loads(Path(__file__).with_name("pilot-coverage-policy.json").read_text())
 SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
 TECHNICAL_TOKEN = re.compile(r"\.(?:dxf|dwg|png|svg|wav|mp3|pdf|json|csv|txt)\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
+SOFTWARE_VERSION = re.compile(r"(?<![\w.])\d+(?:\.\d+){2,}(?![\w.]\d)")
+TYPED_LITERAL = re.compile(r"(?<![\w.])\d+(?:\.\d+){2,}(?![\w.]\d)|\((?:in|ft|mi|mm|cm|m|km|yd)\)")
+OPAQUE_LITERAL = re.compile(r"https?://[^\s<>]+|`[^`]*`|\{[A-Za-z][A-Za-z0-9_]*\}|</?[A-Za-z][^>]*>")
 
 
 def canonical(value):
@@ -164,6 +168,53 @@ def segment_evidence_valid(trace, expected_input, assembled_output):
     return "".join(source) == expected_input and "".join(output) == assembled_output
 
 
+def translate_covered_sentences(texts, model_translate, traces=None):
+    """Cover every sentence, copying typed data at known source spans in either direction.
+
+    Prose stays in complete sentences except at explicit version/unit data boundaries.
+    These boundaries remain visible in the trace; no target-side repair or guessed marker.
+    Nonempty output per sentence is necessary, not proof of preserved meaning.
+    """
+    plans, fragments = [], []
+    for text in texts:
+        plan, cursor = [], 0
+        protected_spans = [(m.start(), m.end()) for m in queue.PLACEHOLDER.finditer(text)]
+        # A period inside a URL, code span or numeric token cannot split a sentence.
+        breaks = [(m.start(1), m.end(1)) for m in re.finditer(r"[.!?](\s+)(?=\S)", text)
+            if not any(start <= m.start() < end for start, end in protected_spans)]
+        opaque = [(m.start(), m.end()) for m in OPAQUE_LITERAL.finditer(text)]
+        typed = opaque + [(m.start(), m.end()) for m in TYPED_LITERAL.finditer(text)
+            if not any(start <= m.start() < end for start, end in opaque)]
+        spans = sorted(typed + breaks) + [(len(text), len(text))]
+        for start, end in spans:
+            if start < cursor: continue
+            prose = text[cursor:start]
+            if any(char.isalpha() for char in prose):
+                index = len(fragments); fragments.append(prose.strip())
+                plan.append(("prose", index, prose[:len(prose)-len(prose.lstrip())], prose[len(prose.rstrip()):]))
+            elif prose:
+                plan.append(("literal", prose))
+            if end > start: plan.append(("literal", text[start:end]))
+            cursor = end
+        plans.append(plan)
+    outputs = model_translate(fragments) if fragments else []
+    if len(outputs) != len(fragments): raise ValueError("Model returned an incomplete sentence batch")
+    results = []
+    for source, plan in zip(texts, plans, strict=True):
+        trace = [{"kind": "literal", "text": part[1]} if part[0] == "literal" else
+            {"kind": "prose", "input": fragments[part[1]], "output": outputs[part[1]][0],
+                "truncated": outputs[part[1]][1], "leading_space": part[2], "trailing_space": part[3]} for part in plan]
+        raw = "".join(part["text"] if part["kind"] == "literal" else
+            part["leading_space"] + part["output"].strip() + part["trailing_space"] for part in trace)
+        valid = bool(raw.strip()) and segment_evidence_valid(trace, source, raw)
+        valid &= queue.signature(source) == queue.signature(raw)
+        valid &= Counter(t.casefold() for t in TECHNICAL_TOKEN.findall(source)) == Counter(t.casefold() for t in TECHNICAL_TOKEN.findall(raw))
+        valid &= Counter(TYPED_LITERAL.findall(source)) == Counter(TYPED_LITERAL.findall(raw))
+        if traces is not None: traces.append(trace)
+        results.append((raw if valid else None, raw, any(part.get("truncated", False) for part in trace)))
+    return results
+
+
 def semantic_issues(key, source_hash, translation, locale):
     normalized = unicodedata.normalize("NFKC", translation).casefold().strip()
     return sorted({row["issue"] for row in SEMANTIC_REGRESSIONS if row["key"] == key
@@ -178,6 +229,8 @@ def automatic_checks(source, translation, locale, key=None, back_translation=Non
     unit_label = bool(key and key.startswith("dxf-viewer.fields.units."))
     unit_symbols = lambda text: Counter(re.findall(r"\(([^()]*)\)", text))
     return {
+        "software_versions_identical": Counter(SOFTWARE_VERSION.findall(source)) == Counter(SOFTWARE_VERSION.findall(translation)),
+        "back_software_versions_identical": None if back_translation is None else Counter(SOFTWARE_VERSION.findall(source)) == Counter(SOFTWARE_VERSION.findall(back_translation)),
         "unit_symbols_identical": None if not unit_label else unit_symbols(source) == unit_symbols(translation),
         "back_unit_symbols_identical": None if not unit_label or back_translation is None else unit_symbols(source) == unit_symbols(back_translation),
         "nonempty": bool(translation.strip()),
@@ -311,7 +364,9 @@ def summarize(paths):
                 group["forward_segment_evidence"] += int(row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not segment_evidence_valid(row.get("forward_segments"), row["model_input"], row["raw_translation"]))
                 group["back_segment_evidence"] += int(not segment_evidence_valid(row.get("back_segments"), row["translation"], row["back_translation"]))
             checks = automatic_checks(row["source"], row["translation"], row["locale"], row["key"], row["back_translation"])
-            for flag, fails in {"unit_symbols": checks["unit_symbols_identical"] is False,
+            for flag, fails in {"software_versions": not checks["software_versions_identical"],
+                "back_software_versions": checks["back_software_versions_identical"] is False,
+                "unit_symbols": checks["unit_symbols_identical"] is False,
                 "back_unit_symbols": checks["back_unit_symbols_identical"] is False, "empty": not checks["nonempty"], "protected_tokens": not checks["protected_tokens_identical"],
                 "technical_tokens": not checks["technical_tokens_identical"], "english_unchanged": checks["untranslated_source"], "length_ratio": not 0.5 <= checks["length_ratio"] <= 2.5,
                 "wrong_script": checks["expected_script_ratio"] is not None and checks["expected_script_ratio"] < 0.6,
@@ -408,6 +463,8 @@ def run(args):
                 return [(opencc.convert(raw) if target_locale == "zh-TW" else raw, cut) for raw, cut in values]
             if POLICIES[policy]["protection"] == "full-sentence-literals-v1":
                 return translate_unmasked_sentences(texts, prose_translate, traces)
+            if POLICIES[policy]["protection"] == "covered-sentences-typed-data-v1":
+                return translate_covered_sentences(texts, prose_translate, traces)
             return translate_literal_segments(texts, prose_translate, traces)
         protected = [queue.protect(text) for text in texts]
         outputs = model_translate([text for text, _ in protected], source_locale, target_locale)
