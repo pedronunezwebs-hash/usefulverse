@@ -30,6 +30,7 @@ ENGINES = {
 ALIASES = {"pt-BR": "pt", "zh-CN": "zh", "zh-TW": "zh", "fil": "tl", "nb-NO": "no"}
 SCRIPTS = {"ar": "ARABIC", "fa": "ARABIC", "ur": "ARABIC", "hi": "DEVANAGARI", "mr": "DEVANAGARI", "bn": "BENGALI", "te": "TELUGU", "ta": "TAMIL", "gu": "GUJARATI", "am": "ETHIOPIC", "ru": "CYRILLIC", "uk": "CYRILLIC", "bg": "CYRILLIC", "el": "GREEK", "th": "THAI", "ko": "HANGUL"}
 FORMAT = "usefulverse-translation-pilot-v1"
+CONTEXT_POLICY = json.loads(Path(__file__).with_name("pilot-context-policy.json").read_text())
 SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
 TECHNICAL_TOKEN = re.compile(r"\.(?:dxf|dwg|png|svg|wav|mp3|pdf|json|csv|txt)\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
 
@@ -42,8 +43,72 @@ def digest(value):
     return hashlib.sha256(canonical(value).encode()).hexdigest()
 
 
-def record_id(corpus, engine, locale, unit, candidate, beam):
-    return digest([FORMAT, corpus["sourceDigest"], engine, ENGINES[engine], locale, unit["key"], unit["source_hash"], unit["context"], candidate, beam, unit["legacy"].get(locale) if candidate == "legacy" else None])
+def policy_digest(policy):
+    if policy == "baseline": return None
+    if policy != CONTEXT_POLICY["id"]: raise ValueError("Unknown inference policy")
+    return digest(CONTEXT_POLICY)
+
+
+def translation_input(unit, policy):
+    policy_digest(policy)
+    entry = CONTEXT_POLICY["entries"].get(unit["key"]) if policy != "baseline" else None
+    if entry:
+        if any(unit.get(key) != entry[key] for key in ("source", "source_hash", "context")):
+            raise ValueError("Stale contextual glossary; review changed source before translation")
+        return entry["translation_input"]
+    return unit["source"]
+
+
+def record_id(corpus, engine, locale, unit, candidate, beam, policy="baseline"):
+    identity = [FORMAT, corpus["sourceDigest"], engine, ENGINES[engine], locale, unit["key"], unit["source_hash"], unit["context"], candidate, beam, unit["legacy"].get(locale) if candidate == "legacy" else None]
+    # Keep baseline IDs recoverable; a policy edit invalidates only its own experiment.
+    if policy != "baseline": identity += [policy, policy_digest(policy)]
+    return digest(identity)
+
+
+def translate_literal_segments(texts, model_translate, traces=None):
+    """Translate only prose. Copy known literal spans in their original positions, never guess a lost marker.
+
+    Fragment boundaries can affect grammar; this experiment still requires linguistic review.
+    The callback returns (raw model output, truncated) for each stripped prose fragment.
+    """
+    literal = re.compile(f"(?:{TECHNICAL_TOKEN.pattern})|(?:{queue.PLACEHOLDER.pattern})", re.IGNORECASE)
+    plans, fragments = [], []
+    for text in texts:
+        plan, end = [], 0
+        spans = [(m.start(), m.end()) for m in literal.finditer(text)] + [(len(text), len(text))]
+        for start, stop in spans:
+            prose = text[end:start]
+            if any(char.isalpha() for char in prose):
+                index = len(fragments)
+                fragments.append(prose.strip())
+                left = prose[:len(prose) - len(prose.lstrip())]
+                right = prose[len(prose.rstrip()):]
+                plan.append(("prose", index, left, right))
+            else:
+                plan.append(("literal", prose))
+            if stop > start: plan.append(("literal", text[start:stop]))
+            end = stop
+        plans.append(plan)
+    translated = model_translate(fragments) if fragments else []
+    if len(translated) != len(fragments): raise ValueError("Model returned an incomplete segment batch")
+    results = []
+    for source, plan in zip(texts, plans, strict=True):
+        pieces, truncated = [], False
+        for part in plan:
+            if part[0] == "literal": pieces.append(part[1])
+            else:
+                raw, cut = translated[part[1]]
+                pieces.append(part[2] + raw.strip() + part[3])
+                truncated |= cut
+        raw = "".join(pieces)
+        if traces is not None:
+            traces.append([{"kind": "literal", "text": part[1]} if part[0] == "literal" else
+                {"kind": "prose", "input": fragments[part[1]], "output": translated[part[1]][0],
+                    "truncated": translated[part[1]][1], "leading_space": part[2], "trailing_space": part[3]} for part in plan])
+        valid = bool(raw.strip()) and queue.signature(source) == queue.signature(raw) and Counter(TECHNICAL_TOKEN.findall(source)) == Counter(TECHNICAL_TOKEN.findall(raw))
+        results.append((raw if valid else None, raw, truncated))
+    return results
 
 
 def semantic_issues(key, source_hash, translation, locale):
@@ -77,6 +142,14 @@ def validate_record(row):
         raise ValueError("Machine output cannot create review provenance")
     if row.get("engine") not in ENGINES or row.get("engine_revision") != ENGINES[row["engine"]]["revision"]:
         raise ValueError("Unknown or changed model revision")
+    policy = row.get("inference_policy", "baseline")
+    if policy != "baseline":
+        if row.get("policy_digest") != policy_digest(policy):
+            raise ValueError("Changed inference policy in checkpoint")
+        unit = {"key": row["key"], "source": row["source"], "source_hash": row["source_hash"], "context": row["context"]}
+        expected_input = translation_input(unit, policy) if row["candidate"] == "model" else row["source"]
+        if row.get("model_input") != expected_input:
+            raise ValueError("Contextual input does not match reviewed source")
     if row.get("source_hash") != hashlib.sha256(row["source"].encode()).hexdigest():
         raise ValueError("Stale source hash in checkpoint")
 
@@ -92,7 +165,7 @@ def actions_only():
         raise SystemExit("Model download/inference is restricted to GitHub Actions Linux runners; not the Mac.")
 
 
-def pending_work(corpus, units, locales, engine, beam, completed):
+def pending_work(corpus, units, locales, engine, beam, completed, policy="baseline"):
     work = []
     for locale in locales:
         if engine == "m2m100" and locale == "te":
@@ -102,7 +175,7 @@ def pending_work(corpus, units, locales, engine, beam, completed):
             for unit in units:
                 if candidate == "legacy" and not unit["legacy"].get(locale):
                     continue
-                identity = record_id(corpus, engine, locale, unit, candidate, beam)
+                identity = record_id(corpus, engine, locale, unit, candidate, beam, policy)
                 previous = completed.get(identity)
                 if previous:
                     validate_record(previous)
@@ -163,17 +236,17 @@ def summarize(paths):
             if row["record_id"] in seen:
                 continue
             seen.add(row["record_id"])
-            group = groups.setdefault((row["engine"], row["locale"], row["candidate"]), Counter())
+            group = groups.setdefault((row.get("inference_policy", "baseline"), row["engine"], row["locale"], row["candidate"]), Counter())
             group["records"] += 1
             checks = automatic_checks(row["source"], row["translation"], row["locale"], row["key"], row["back_translation"])
             for flag, fails in {"empty": not checks["nonempty"], "protected_tokens": not checks["protected_tokens_identical"],
                 "technical_tokens": not checks["technical_tokens_identical"], "english_unchanged": checks["untranslated_source"], "length_ratio": not 0.5 <= checks["length_ratio"] <= 2.5,
                 "wrong_script": checks["expected_script_ratio"] is not None and checks["expected_script_ratio"] < 0.6,
                 "known_semantic_errors": bool(checks["known_semantic_errors"]), "marker_restore": not row["marker_restore_ok"],
-                "back_protected_tokens": checks["back_protected_tokens_identical"] is False, "truncated": row["truncated"]}.items():
+                "back_protected_tokens": checks["back_protected_tokens_identical"] is False, "back_marker_restore": not row.get("back_marker_restore_ok", True), "truncated": row["truncated"]}.items():
                 group[flag] += int(fails)
-    return {"approved": 0, "review_required": True, "groups": [{"engine": engine, "locale": locale, "candidate": candidate, **counts}
-        for (engine, locale, candidate), counts in sorted(groups.items())]}
+    return {"approved": 0, "review_required": True, "groups": [{"inference_policy": policy, "engine": engine, "locale": locale, "candidate": candidate, **counts}
+        for (policy, engine, locale, candidate), counts in sorted(groups.items())]}
 
 
 def convert(engine, model_dir):
@@ -211,7 +284,9 @@ def run(args):
             row = json.loads(line)
             validate_record(row)
             completed[row["record_id"]] = row
-    work = pending_work(corpus, units, locales, args.engine, args.beam_size, completed)
+    policy = getattr(args, "policy", "baseline")
+    policy_digest(policy)
+    work = pending_work(corpus, units, locales, args.engine, args.beam_size, completed, policy)
     if args.engine == "m2m100" and "te" in locales:
         print("UVPILOT_UNSUPPORTED " + canonical({"engine": args.engine, "locale": "te", "reason": "M2M100 does not support Telugu"}), flush=True)
     if not work:
@@ -232,28 +307,36 @@ def run(args):
     translator = ctranslate2.Translator(str(model_dir), device="cpu", inter_threads=1, intra_threads=min(4, os.cpu_count() or 1), compute_type="int8")
     opencc = OpenCC("s2twp")
 
-    def translate(texts, source_locale, target_locale):
+    def model_translate(texts, source_locale, target_locale):
         target = ALIASES.get(target_locale, target_locale)
-        protected = [queue.protect(text) for text in texts]
         if args.engine == "m2m100":
             tokenizer.src_lang = ALIASES.get(source_locale, source_locale)
-            inputs = [tokenizer.convert_ids_to_tokens(tokenizer.encode(text)) for text, _ in protected]
+            inputs = [tokenizer.convert_ids_to_tokens(tokenizer.encode(text)) for text in texts]
             options = {"target_prefix": [[f"__{target}__"]] * len(inputs)}
         else:
-            inputs = [tokenizer.convert_ids_to_tokens(tokenizer.encode(f"<2{target}> {text}")) for text, _ in protected]
+            inputs = [tokenizer.convert_ids_to_tokens(tokenizer.encode(f"<2{target}> {text}")) for text in texts]
             options = {}
         if any(len(tokens) > 512 for tokens in inputs):
             raise ValueError("Input exceeds pilot token budget; refusing truncation")
         outputs = translator.translate_batch(inputs, beam_size=args.beam_size, max_batch_size=args.batch_size,
             batch_type="examples", num_hypotheses=1, max_decoding_length=256, **options)
         result = []
-        for output, (_, saved) in zip(outputs, protected, strict=True):
+        for output in outputs:
             tokens = output.hypotheses[0]
             raw = tokenizer.decode(tokenizer.convert_tokens_to_ids(tokens), skip_special_tokens=True)
-            restored = queue.restore(raw, saved)
-            if restored is not None and target_locale == "zh-TW": restored = opencc.convert(restored)
-            result.append((restored, raw, len(tokens) >= 256))
+            result.append((raw, len(tokens) >= 256))
         return result
+
+    def translate(texts, source_locale, target_locale, traces=None):
+        if policy != "baseline":
+            def prose_translate(prose):
+                values = model_translate(prose, source_locale, target_locale)
+                return [(opencc.convert(raw) if target_locale == "zh-TW" else raw, cut) for raw, cut in values]
+            return translate_literal_segments(texts, prose_translate, traces)
+        protected = [queue.protect(text) for text in texts]
+        outputs = model_translate([text for text, _ in protected], source_locale, target_locale)
+        result = [(queue.restore(raw, saved), raw, cut) for (raw, cut), (_, saved) in zip(outputs, protected, strict=True)]
+        return [(opencc.convert(value) if value is not None and target_locale == "zh-TW" else value, raw, cut) for value, raw, cut in result]
 
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -264,13 +347,14 @@ def run(args):
                 for start in range(0, len(pending), args.batch_size):
                     batch = pending[start:start + args.batch_size]
                     tick = time.monotonic()
-                    values = translate([unit["source"] for unit in batch], "en", locale) if candidate == "model" else [(unit["legacy"][locale], unit["legacy"][locale], False) for unit in batch]
-                    back = translate([value or raw for value, raw, _ in values], locale, "en")
+                    forward_traces, back_traces = [], []
+                    values = translate([translation_input(unit, policy) for unit in batch], "en", locale, forward_traces) if candidate == "model" else [(unit["legacy"][locale], unit["legacy"][locale], False) for unit in batch]
+                    back = translate([value or raw for value, raw, _ in values], locale, "en", back_traces)
                     seconds = time.monotonic() - tick
-                    for unit, (value, raw, truncated), (back_value, back_raw, back_truncated) in zip(batch, values, back, strict=True):
+                    for index, (unit, (value, raw, truncated), (back_value, back_raw, back_truncated)) in enumerate(zip(batch, values, back, strict=True)):
                         text = value if value is not None else raw
                         detected, confidence = langid.classify(text) if sum(char.isalpha() for char in text) >= 20 else (None, None)
-                        row = {"format": FORMAT, "record_id": record_id(corpus, args.engine, locale, unit, candidate, args.beam_size),
+                        row = {"format": FORMAT, "record_id": record_id(corpus, args.engine, locale, unit, candidate, args.beam_size, policy),
                             "corpus_digest": corpus["sourceDigest"], "engine": args.engine, "engine_revision": config["revision"], "engine_license": config["license"],
                             "candidate": candidate, "locale": locale, "key": unit["key"], "tool": unit["tool"], "source": unit["source"], "source_hash": unit["source_hash"],
                             "translation": text, "raw_translation": raw, "back_translation": back_value or back_raw,
@@ -280,6 +364,11 @@ def run(args):
                             "beam_size": args.beam_size, "status": "machine-draft", "reviewer": "", "reviewed_at": "",
                             "actions_run_id": os.environ.get("GITHUB_RUN_ID", ""), "actions_run_attempt": os.environ.get("GITHUB_RUN_ATTEMPT", ""),
                             "source_commit": os.environ.get("GITHUB_SHA", "")}
+                        if policy != "baseline":
+                            row.update(inference_policy=policy, policy_digest=policy_digest(policy), context=unit["context"],
+                                model_input=translation_input(unit, policy) if candidate == "model" else unit["source"],
+                                protection=CONTEXT_POLICY["protection"], forward_segments=forward_traces[index] if candidate == "model" else None,
+                                back_segments=back_traces[index])
                         emit(row)
                         handle.write(canonical(row) + "\n")
                         handle.flush()
@@ -313,6 +402,7 @@ def main():
     work.add_argument("--scope", choices=["references", "full"], default="references")
     work.add_argument("--locales", default="")
     work.add_argument("--resume")
+    work.add_argument("--policy", choices=["baseline", "context-v2"], default="baseline")
     work.add_argument("--batch-size", type=int, choices=range(1, 17), default=8)
     work.add_argument("--beam-size", type=int, choices=[1, 2, 3, 4], default=2)
     args = parser.parse_args()

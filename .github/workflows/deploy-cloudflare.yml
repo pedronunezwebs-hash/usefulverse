@@ -25,6 +25,12 @@ on:
         default: both
         type: choice
         options: [both, m2m100, madlad]
+      pilot_policy:
+        description: "Comparación original o entradas por sentido con literales fuera del modelo"
+        required: false
+        default: baseline
+        type: choice
+        options: [baseline, context-v2]
       pilot_scope:
         description: "40 referencias o las tres herramientas completas"
         required: false
@@ -119,6 +125,7 @@ jobs:
       OMP_NUM_THREADS: "4"
       MKL_NUM_THREADS: "4"
       PILOT_ENGINE: ${{ matrix.engine }}
+      PILOT_POLICY: ${{ inputs.pilot_policy }}
       PILOT_SCOPE: ${{ inputs.pilot_scope }}
       PILOT_LOCALES: ${{ inputs.pilot_locales }}
     steps:
@@ -145,9 +152,10 @@ jobs:
         run: |
           args=()
           checkpoint="docs/quality/translation-pilot/checkpoints/${PILOT_ENGINE}.jsonl"
+          if [ "$PILOT_POLICY" != "baseline" ]; then checkpoint="docs/quality/translation-pilot/checkpoints/${PILOT_POLICY}/${PILOT_ENGINE}.jsonl"; fi
           if [ -f "$checkpoint" ]; then args+=(--resume "$checkpoint"); fi
           python -u scripts/localization/translation-pilot.py run \
-            --engine "$PILOT_ENGINE" --scope "$PILOT_SCOPE" --locales "$PILOT_LOCALES" \
+            --policy "$PILOT_POLICY" --engine "$PILOT_ENGINE" --scope "$PILOT_SCOPE" --locales "$PILOT_LOCALES" \
             --corpus "$RUNNER_TEMP/pilot-corpus.json" --output "$RUNNER_TEMP/pilot-results.jsonl" "${args[@]}"
       - name: Remove job-owned model downloads and caches
         if: always()

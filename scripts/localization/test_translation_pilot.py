@@ -157,6 +157,44 @@ class TranslationPilotTest(unittest.TestCase):
             conversion.assert_not_called()
             self.assertIn('"conversion_seconds":0', stream.getvalue())
 
+    def test_context_policy_disambiguates_actions_without_changing_canonical_source(self):
+        source = 'Resume'
+        unit = {'key': 'shikaku.fields.resume', 'source': source, 'source_hash': hashlib.sha256(source.encode()).hexdigest(), 'context': 'fields.resume', 'legacy': {}}
+        self.assertEqual(pilot.translation_input(unit, 'baseline'), source)
+        self.assertEqual(pilot.translation_input(unit, 'context-v2'), 'Continue the saved game')
+        self.assertEqual(unit['source'], source)
+        self.assertNotEqual(pilot.record_id({'sourceDigest': 'same'}, 'madlad', 'es', unit, 'model', 2),
+            pilot.record_id({'sourceDigest': 'same'}, 'madlad', 'es', unit, 'model', 2, 'context-v2'))
+        with self.assertRaises(ValueError): pilot.translation_input({**unit, 'source': 'Resume playback'}, 'context-v2')
+
+    def test_literals_never_reach_the_model_and_are_reassembled_without_guessing(self):
+        seen = []
+        def model(texts):
+            seen.extend(texts)
+            values = {'Audio decoded locally. Duration:': 'Audio decodificado localmente. Duración:', 'seconds.': 'segundos.'}
+            return [(values[text], False) for text in texts]
+        source = 'Audio decoded locally. Duration: {duration} seconds.'
+        result = pilot.translate_literal_segments([source], model)
+        self.assertEqual(result[0][0], 'Audio decodificado localmente. Duración: {duration} segundos.')
+        self.assertTrue(pilot.automatic_checks(source, result[0][0], 'es')['protected_tokens_identical'])
+        self.assertFalse(any('{duration}' in text or 'ZXQPH' in text for text in seen))
+        with self.assertRaises(ValueError): pilot.translate_literal_segments([source], lambda texts: [])
+
+    def test_literal_segmentation_preserves_repetitions_extensions_and_punctuation(self):
+        source = 'Keep {count}, {count}, 25 MB, ASCII .dxf and UsefulVerse.'
+        seen = []
+        def model(texts):
+            seen.extend(texts)
+            return [(text.replace('Keep', 'Conserva').replace('and', 'y'), False) for text in texts]
+        result = pilot.translate_literal_segments([source], model)[0][0]
+        checks = pilot.automatic_checks(source, result, 'es')
+        self.assertTrue(checks['protected_tokens_identical'])
+        self.assertTrue(checks['technical_tokens_identical'])
+        self.assertFalse(any(token in ' '.join(seen) for token in ['{count}', '25', 'MB', 'ASCII', '.dxf', 'UsefulVerse']))
+        self.assertEqual(pilot.translate_literal_segments(['25 MB'], lambda _: self.fail('literal-only input must not run a model'))[0][0], '25 MB')
+        broken = pilot.translate_literal_segments(['Value: {count}'], lambda texts: [('Valor {count}', False) for _ in texts])[0]
+        self.assertIsNone(broken[0], 'A hallucinated extra placeholder must fail, never be repaired')
+
     def test_missing_sentence_spacing_is_not_misreported_as_a_file_extension_change(self):
         checks = pilot.automatic_checks('Audio decoded. Try again.', 'Audio decodificado.Prueba otra vez.', 'es')
         self.assertTrue(checks['technical_tokens_identical'])
