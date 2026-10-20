@@ -215,3 +215,14 @@ inyección de unidad, URLs/código que contienen versiones/símbolos, procedenci
 Referencias: [run 39452889204](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39452889204), código `4c477b7`.
 La política es un candidato híbrido con memoria, no una medición del modelo sin ayudas ni una revisión nativa.
 Los resultados y la decisión se añaden tras leer las traducciones y las vueltas. No hay idiomas aprobados.
+
+### Decisión de referencias v5 y repetición v6
+
+160 registros v5, 80 evaluaciones ligadas a texto/hash: es **357/360, rechazado** por negación de privacidad ambigua
+(«not uploaded» → «no es cargado»); nb **359/360**, solo referencias, un leve Det/Den. No se ejecutó el completo v5.
+V4 decía «no es subido»: el fallo se observa en el candidato nuevo, no se atribuye a una ida previa correcta.
+Dos fixtures nuevos elevan regresiones a **412**. Se conservan las políticas/checkpoints anteriores.
+`context-v6` (`pilot-privacy-policy.json`) hereda la cobertura v5 y añade un sentido y dos destinos de memoria de
+privacidad: **23 entradas controladas, 71 destinos de memoria**. El resto del corpus y la rúbrica se mantienen.
+[Referencias v6 39454358926](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39454358926), código `7212c33`;
+se decide el completo únicamente tras leer el nuevo resultado. No hay idiomas aprobados.

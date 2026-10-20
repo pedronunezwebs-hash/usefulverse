@@ -96,7 +96,7 @@ class TranslationPilotTest(unittest.TestCase):
         self.assertGreater(len(fixtures), 40)
         for row in fixtures:
             with self.subTest(locale=row['locale'], key=row['key'], candidate=row['observed_candidate']):
-                self.assertTrue(pilot.semantic_issues(row['key'], row['source_hash'], row['translation'], row['locale']))
+                self.assertTrue(pilot.semantic_issues(row['key'], row['source_hash'], row['translation'], row['locale'], row.get('direction', 'forward')))
         self.assertEqual(pilot.semantic_issues('shikaku.fields.resume', hashlib.sha256(b'Resume').hexdigest(), 'Reanudar', 'es'), [])
 
     def test_observed_madlad_marker_and_file_extension_losses_are_not_accepted(self):

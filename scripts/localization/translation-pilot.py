@@ -216,9 +216,10 @@ def translate_covered_sentences(texts, model_translate, traces=None):
     return results
 
 
-def semantic_issues(key, source_hash, translation, locale):
+def semantic_issues(key, source_hash, translation, locale, direction="forward"):
     normalized = unicodedata.normalize("NFKC", translation).casefold().strip()
     return sorted({row["issue"] for row in SEMANTIC_REGRESSIONS if row["key"] == key
+        and row.get("direction", "forward") == direction
         and row["source_hash"] == source_hash and row["locale"] == locale
         and unicodedata.normalize("NFKC", row["translation"]).casefold().strip() == normalized})
 
@@ -243,6 +244,7 @@ def automatic_checks(source, translation, locale, key=None, back_translation=Non
         "length_ratio": round(len(translation) / max(1, len(source)), 3),
         "expected_script_ratio": script_ratio,
         "known_semantic_errors": semantic_issues(key, hashlib.sha256(source.encode()).hexdigest(), translation, locale),
+        "known_back_semantic_errors": [] if back_translation is None else semantic_issues(key, hashlib.sha256(source.encode()).hexdigest(), back_translation, locale, "back"),
         "review_required": True,
     }
 
@@ -372,6 +374,7 @@ def summarize(paths):
                 "technical_tokens": not checks["technical_tokens_identical"], "english_unchanged": checks["untranslated_source"], "length_ratio": not 0.5 <= checks["length_ratio"] <= 2.5,
                 "wrong_script": checks["expected_script_ratio"] is not None and checks["expected_script_ratio"] < 0.6,
                 "known_semantic_errors": bool(checks["known_semantic_errors"]), "marker_restore": not row["marker_restore_ok"],
+                "known_back_semantic_errors": bool(checks["known_back_semantic_errors"]),
                 "back_technical_tokens": checks["back_technical_tokens_identical"] is False,
                 "back_protected_tokens": checks["back_protected_tokens_identical"] is False, "back_marker_restore": not row.get("back_marker_restore_ok", True), "truncated": row["truncated"]}.items():
                 group[flag] += int(fails)

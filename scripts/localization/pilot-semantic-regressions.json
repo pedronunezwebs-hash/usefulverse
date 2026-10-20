@@ -3706,5 +3706,25 @@
     "observed_candidate": "madlad-context-v5",
     "issue": "ambiguous-upload-negation",
     "evidence": "review-context-v5-references.json"
+  },
+  {
+    "key": "shikaku.fields.selectStart",
+    "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+    "locale": "nb-NO",
+    "direction": "back",
+    "translation": "Choose a start window.",
+    "observed_candidate": "madlad-context-v5-back",
+    "issue": "back-window-not-grid-square",
+    "evidence": "review-context-v5-references.json"
+  },
+  {
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "locale": "nb-NO",
+    "direction": "back",
+    "translation": "No, no, no. Each rectangle must contain exactly one number clue.",
+    "observed_candidate": "madlad-context-v5-back",
+    "issue": "back-repeated-negation",
+    "evidence": "review-context-v5-references.json"
   }
 ]

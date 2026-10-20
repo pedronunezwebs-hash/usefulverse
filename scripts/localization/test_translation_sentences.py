@@ -95,6 +95,14 @@ class SentenceCoverageTest(unittest.TestCase):
         self.assertFalse(any('example.com' in text or 'function' in text or '{count}' in text for text in seen))
         self.assertTrue(pilot.segment_evidence_valid(traces[0],source,raw))
 
+    def test_observed_back_errors_are_flagged_separately_from_correct_forward_copy(self):
+        cases=[('shikaku.fields.selectStart','Choose a start square.','Velg en startrute.','Choose a start window.'),
+            ('shikaku.fields.faq.1.a','No. Each rectangle must contain exactly one number clue.','Nei. Hvert rektangel må inneholde nøyaktig én tall-ledetråd.','No, no, no. Each rectangle must contain exactly one number clue.')]
+        for key,source,target,back in cases:
+            checks=pilot.automatic_checks(source,target,'nb-NO',key,back)
+            self.assertTrue(checks['known_back_semantic_errors'])
+            self.assertEqual(checks['known_semantic_errors'],[],'A defective back translation cannot disqualify correct forward wording by itself')
+
     def test_v6_privacy_memory_negates_upload_without_negating_local_loading(self):
         entry=pilot.POLICIES['context-v6']['reviewed_memory']['voice-changer.fields.privacy']
         self.assertEqual(entry['translations']['es'],'El audio permanece en este navegador. No se sube a UsefulVerse ni se guarda allí.')
