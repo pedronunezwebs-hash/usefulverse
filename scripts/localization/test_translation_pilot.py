@@ -115,8 +115,12 @@ class TranslationPilotTest(unittest.TestCase):
         for path in (directory / 'checkpoints').rglob('*.jsonl'):
             for line in path.read_text().splitlines():
                 row = json.loads(line); records[row['record_id']] = row
-        for filename, expected_count in [('review-es-nb.json', 240), ('review-core-six.json', 402), ('review-madlad-de-fr.json', 80), ('review-context-v2-m2m100.json', 80), ('review-context-v2-madlad.json', 80), ('review-context-v3-madlad.json', 80)]:
-            review = json.loads((directory / filename).read_text())
+        known_counts = {'review-es-nb.json': 240, 'review-core-six.json': 402, 'review-madlad-de-fr.json': 80, 'review-context-v2-m2m100.json': 80, 'review-context-v2-madlad.json': 80, 'review-context-v3-madlad.json': 80}
+        for path in sorted(directory.glob('review*.json')):
+            review = json.loads(path.read_text())
+            if 'rows' not in review: continue  # aggregate metrics are not a review
+            expected_count = known_counts.get(path.name, review.get('expected_rows'))
+            self.assertIsNotNone(expected_count, 'Every review declares its complete scope')
             self.assertFalse(review['native_review'])
             self.assertEqual(review['approved_locales'], [])
             self.assertEqual(len(review['rows']), expected_count)
@@ -295,6 +299,12 @@ class TranslationPilotTest(unittest.TestCase):
                 checks = pilot.automatic_checks(entry['source'], text, locale)
                 self.assertTrue(checks['protected_tokens_identical'])
                 self.assertTrue(checks['technical_tokens_identical'])
+
+    def test_a_good_forward_extension_cannot_hide_its_loss_on_back_translation(self):
+        checks = pilot.automatic_checks('Choose an ASCII .dxf file.', 'Velg en ASCII .dxf-fil.', 'nb-NO',
+            back_translation='Choose an ASCII DXF file.')
+        self.assertTrue(checks['technical_tokens_identical'])
+        self.assertFalse(checks['back_technical_tokens_identical'])
 
     def test_missing_sentence_spacing_is_not_misreported_as_a_file_extension_change(self):
         checks = pilot.automatic_checks('Audio decoded. Try again.', 'Audio decodificado.Prueba otra vez.', 'es')

@@ -1,0 +1,1550 @@
+{
+  "schema_version": 1,
+  "expected_rows": 80,
+  "inference_policy": "context-v4",
+  "reviewer": "Codex (agente, sin API de pago)",
+  "reviewed_at_utc": "2026-10-20T14:14:15.573754+00:00",
+  "native_review": false,
+  "rubric": "REVISION-FINAL §2: significado, cifras/negaciones y naturalidad, 0–3.",
+  "scope": "40 referencias por destino es/nb del sistema híbrido MADLAD + inglés controlado + memoria revisada. Original, traducción y vuelta leídos.",
+  "decision": "reference-threshold-passed-only-full-pilot-required",
+  "approved_locales": [],
+  "reference_gate": {
+    "es": {
+      "button_number_negation_errors": 0,
+      "minor_errors": 0,
+      "sample": 40,
+      "passed": true
+    },
+    "nb-NO": {
+      "button_number_negation_errors": 0,
+      "minor_errors": 2,
+      "sample": 40,
+      "passed": true,
+      "note": "Dos errores leves de concordancia en 40 frases, dentro de la tasa máxima de 1/20; pendientes de pulir. No son errores en botones ni cifras/negaciones."
+    }
+  },
+  "length_flag_review": "Las tres señales de longitud por destino corresponden a Resume, Clear rectangles y Fit drawing: acciones cortas desambiguadas con inglés controlado. El texto de ida conserva el sentido; no son pérdidas ni relleno. No se oculta la proporción al original.",
+  "rows": [
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.faq.0.a",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "translation_hash": "0228603d3b8a0944a01dba247ee9842d175dd33a91a8277c2c38c3ca2e199b01",
+      "record_ids": [
+        "eab4b0772ff7763d355f11f7034ddbcc9925d43b38c8a022c82d6837f3076cb3"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.faq.2.a",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "translation_hash": "d77899ab269614975de966d4a8333191384f4e210c515d8fde3b478a066c7060",
+      "record_ids": [
+        "fcbb5467071774939b33a3a5c30d51057ab176277c10b6d8a5798f28225baba5"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.binary",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "translation_hash": "450abb8b89d340bed389d779400ea5334a81d29721145b20df0be66fd3f201c1",
+      "record_ids": [
+        "d24c4de9e9703ef3e0d754a8294fc71c0ba09b15359ce787249c7efcad8577d5"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.cancel",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "translation_hash": "85965ae79fa993c7f2d1e80480f190ca8b8a9d158fcfe08a1dbba12466f655f8",
+      "record_ids": [
+        "23c24453280314a38def3524c5d979ad48991ceb467691d97ef66f32ce87c410"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.exportPng",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "translation_hash": "e6581d60954bd764b466aec4666e1d6c52e6a69a89c6664c949112139baa09c9",
+      "record_ids": [
+        "0d0816a4a9f360e67e4b701502a0e15164a40c920284c522bd1f68345f6953c2"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.exportSvg",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "translation_hash": "b9cdaed1d0fa23e25939140e5a511223c62c0d24550b7a4909b2f5dbbbaf1b3b",
+      "record_ids": [
+        "ec6b3f1c2e398cbf83e788dab24b45736911b9be56a242cfb1a88d1bd2aff0b0"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "translation_hash": "e62fbcdf36628bfb7ceb6e8c5ad8a028d44008d6e2433bdff6010b117864253a",
+      "record_ids": [
+        "edb58f679a2db685350c9c68127a46d40b958539271caba28a746da3adaf9442"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "translation_hash": "3b64d26674321e74f3d60bf4451f20b0f16da0295cd7f179020a1405baee89d0",
+      "record_ids": [
+        "27b4d68d03b5317ef6886a0413d32409c933f3a87f946432dea48e350ced7ffe"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.measurement",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "translation_hash": "3a4b1eeb31b6330bd8fa232c5dba44fb6b0f2a74228d82fc3b04b6f57af8e23a",
+      "record_ids": [
+        "e4a2b2999c4240d8a47a9fbbc176a9e2377c7913c875636bcf3538783cd94bf0"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "translation_hash": "2c153c15f124e414f74899e2ee46a82bc9e68444a9f634f4db4e5a76db30115f",
+      "record_ids": [
+        "9520f3d1275e5aabe02c179b95957bf16eb542076d4466d68f1b272177310c5b"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.unsupported",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "translation_hash": "5d91f224ae06117e9c44ba494e9759bbe63480f0d2c6f08d1e1407a06270a5eb",
+      "record_ids": [
+        "659224e2d87877b68d649c5fa1e549f2138856991cd8f9e4109610bb24c9aa0f"
+      ],
+      "translation_origin": "reviewed-memory",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "translation_hash": "464d372afb80116f6d0f2038c64f6c33a5e16dff5f2ad18677559b3ec78800dc",
+      "record_ids": [
+        "965b586a2bfc8aba359c992edf3f33c79d171482263e6792781a542f914b3707"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "translation_hash": "af8e849ed26ec188b86c2e5d770e84b6c6dcd58fa8615b4dd49f55b879b16513",
+      "record_ids": [
+        "b1932c2befea9ee70ba9fa999a7c8c4a8b0aff120b70282013231b7d9dbb7721"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.example",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "translation_hash": "149c8b5039675fe77370957b7827b6126cd1255035e68e91494768388e01577a",
+      "record_ids": [
+        "f3f0f5b2b7edcc247df6ea1bdd45adb8e41d6ae8cfa3ec7418b9d14a26cc0829"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.check",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "translation_hash": "203353c448abf18f1ea43f98413ce159a985fd9b6fa5783cf0e2e90286693577",
+      "record_ids": [
+        "f3fa7613c13a6d0e02dee6522d6b53945e7b789551f60a94af3bb2e5b68ed960"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "62e698fb711f50f83fa1bc8b1ed825800fe6c805cf3a4c364c12d0986e331393",
+      "record_ids": [
+        "d7a178f65e0373d8ee9747ad27daf823b1250e6038e0f2d515798defd918e062"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.daily",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "translation_hash": "89adf4b17102ae3ec585f234f5b1c928048c1a127fb228e6aa7a673f7cc82ba4",
+      "record_ids": [
+        "8f7f3487ce88fc468c5dbc5b7f25177fb4abe58ee207a1c9614de066f59086c8"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "252e8f12ebc501b4d85304d86346f0c94e2c34a3866db085e07923ae307402c5",
+      "record_ids": [
+        "ef5c20fb0103f8cf72137f979f0523f971c046f4b27c732a4daea5e319ed6c48"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "de9fb2af14280956053bb5344225923402bcd34f790481d4b7ec545989eeafb9",
+      "record_ids": [
+        "1186372122373a60e667653253674bc26a3ad178632b6b6ccd629ce04c8939cd"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "0b9d8a88f752de74a70fb544c6717d734f242dc8458ddc1d21d0273d8bd34d66",
+      "record_ids": [
+        "9b64fb3e624722e2529f7ed992e7e3eec645f1a0355b6bcd6445955eefa073a9"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.newPuzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "translation_hash": "96d9e4f494f0ea52da051157b6dcf8cd73ac76aae6893e19d0d947ece1f7bc30",
+      "record_ids": [
+        "9ef43a8adf2f9027437077c3d61f15c1abd0924474b3767a8e643c68c38221c9"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "01ddd0f17edac3f87b0c6754fa191e21d4ae73faecd9f0b3d0143d9576bbbac4",
+      "record_ids": [
+        "ae60fe6b7b11bbc14289ba865ab229624ea7cfb5fd93cf2da06510904059acb9"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.reveal",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "translation_hash": "130a0104d0d3143d7cda34511c6315d70f0d7512b2832fed6c542df93c1685b9",
+      "record_ids": [
+        "fbf2c47720c41f6b35f0c88f415a2c1e0dba3cc1f42a16a27050000159fde74a"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "8c99333123c2589d0ea069da5c5fb636e960f2607af94bdde73282f186952d71",
+      "record_ids": [
+        "88e6cf53a04075e70b96ceb5435c7478a76c8e609dd5420d3c2ad2d0e590af6a"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "27c2cbd7c9497973342fa8a59da363572bff2a144360f5ab70631b1ab2de45b5",
+      "record_ids": [
+        "9880d893f4b03854b8e9e72ec0de020809b7aa3cd3366eef1c3b8a41c53e49c1"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "0ce20272dac19530c592bd3778b8c9b7426475f2d8428ef809c0f8dda0349fea",
+      "record_ids": [
+        "4921015f0da082849cf13807e6a880dfafc8d1d4da17bd5df1ce07ed4194285f"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.chooseFile",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "translation_hash": "d00c5a5b2fb2adb432d42c4189169cdfe383016f49ca7d2e28da0acec3001ae1",
+      "record_ids": [
+        "9a5076b14a4ae35d33d0b7e3ee395c4a87b30239fa7263b40d06f3e7edd211f5"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.chooseFirst",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "translation_hash": "2c0cd1fdf977ac73953a69518f6c5e4a6109747483b45d7d5662edbbfe4f168a",
+      "record_ids": [
+        "287b2b0831bec7515670b85c1aff8ee9052683786141d6300bd469b9d30f401f"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "1f8a7458ad27c99540674719f5cd6ff56806fbf0c21df5b49423eb1fe3379cc0",
+      "record_ids": [
+        "2aae5698b1d5a7ee5801ff175b65bd02ad8205c1a098902aa9711fe80136c96e"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.decodeFailed",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "translation_hash": "6a04240263e4a8015b01f2dd595c2e52437715f90b74d36d3eeb380a24a27c00",
+      "record_ids": [
+        "7e02af13a598e6d298773d93ef0ac7f54234943997ed6198afb3dc7c9f42a12d"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "2315d71e0f8aeefb7bbf662c9a1aad5e8cf2a2d21b98a1892e5cfc0a603c4c74",
+      "record_ids": [
+        "ed54bd3c6ba9ab97e4de1bab5f6c6cb5c0477778c705f1c1c68f93bda7f7f7f0"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "97e2a5fae6c5eae5a9dd3e49d8461df3b36c9799b02a4ece6942b24d429a3256",
+      "record_ids": [
+        "f3cc8f7470710fc45f863bb7cbf0d4a77ccc319fa569684ae7ad4f6ee49c6070"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.faq2a",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "translation_hash": "34b3bef8fd223518b69b7cce78fb5f1feeac312e69b1bcb60742b00c1b0f8a72",
+      "record_ids": [
+        "ac6304aae29303b85c8b5fded0110835a82370039b8986d46111bf428ab45705"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "7125b2fd9758e7a7695c233f1ac0889c496c4699b68480cfbb560dffa5184f58",
+      "record_ids": [
+        "3e9f995134ed40827ec38f5b19e76f3c9cad8eaf45b0c6fa7f6b46ca9519a79f"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "5891107f89d27dc1b71ca22083151aa22caed665cb95632924ded2208fde4f02",
+      "record_ids": [
+        "00719058cba0814bfd2314810cba077e6d7c7905c0fb1884d6521e8dab5f548c"
+      ],
+      "translation_origin": "reviewed-memory",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "9f9808c00dc7971ef0cf906b3e400c3c0f1cc23ae4484026044a37997e6c1af1",
+      "record_ids": [
+        "6e67ec30e4262d9f37c57429bdcb7c1f62fc06cdf432ad6ee4e10bf4354ade36"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.privacy",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "translation_hash": "dbe55dfb212fa0f609525a0a3b6dd4c2e2267d4175a1cd6abe450c969ae1eb5b",
+      "record_ids": [
+        "d78d902c26fa68a7db4077be8b757982791f17ce6dff6a794184bfc04ba491a0"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "7ae0d486fb7b33979c32e7f415660bcebf33408ef08ede05ee1cc662921eda1e",
+      "record_ids": [
+        "135b234357e48f3668a43d84e77db9f4938ba8816f8ac35fe4b8903c761e4864"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "de6288237877e954d481557d2422c4bcb16712662a36b322f9a1ef0d04a11a28",
+      "record_ids": [
+        "1cdb8b5307cc8bcd2bf63e1ad94fb2adba5bb0294af080131dc0f9679a8bd2f3"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "8663a00a1f19a52447ce93440855528c43998c1083411af62f6c177451a9b6f8",
+      "record_ids": [
+        "2c091efe7ecf4b0c4ed71d1eab22e470a7d2338538b77f44b59e750e755ed37f"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.faq.0.a",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "translation_hash": "a15a9bb58635e6e9388e02e409435aab0767989ec31a82ffdd993ef876b5e582",
+      "record_ids": [
+        "e9e702d9071b0713a468d706ecf165fe5b45293424de3a66fea6f7a701599d30"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.faq.2.a",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "translation_hash": "16d312201d6ea5bd60a16b795f38089f7c66a0d43b12fa66cf4d00f0863612f9",
+      "record_ids": [
+        "cea6ad151e4b7b09092776d8a0c6a8b8ec75968cab9512272732f72efce43991"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.binary",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "translation_hash": "d32c356cc5c19941dfcbf228592ad86a980be5813b0aa1a38dc28dfbf89e8311",
+      "record_ids": [
+        "6a139a33158ab21a23b45a679461bfb5354dc254392ebf289d9519eb3cd98c48"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.cancel",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "translation_hash": "43aa43d0702e8f0f164503896c5351910c4e74d2af7aa158c226933fe1d1ce8c",
+      "record_ids": [
+        "48a4a6e8c84129dea6ae271663c6cedc976f7f2af079e006f4cfac57b13bebe3"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.exportPng",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "translation_hash": "1aa1bd73d5619a9df19b45810fd5fd3808dfa5e877a2977bb4656aa1717acbb9",
+      "record_ids": [
+        "b1b4caf1043f25acfe9db912c8011d546a54f26aa4e2fd53cf6a6cb0c6532e3e"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.exportSvg",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "translation_hash": "419e8dc4090d050173c15a0510e8e241c414955231dc6d6115fdf6f73566e668",
+      "record_ids": [
+        "64f98edba994c392151757bb1d7b0eca1d9fb98d5bbb9b9189bcc667349e6e62"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "translation_hash": "0255cb7c13867c2519c64c334873360497a5c18e5383d19b43c60001bcd316cd",
+      "record_ids": [
+        "86c22ff88dba39a08645c4f9a080e5228683d02511fa83c2800258cf4aec4364"
+      ],
+      "translation_origin": "reviewed-memory",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "translation_hash": "54397fcac7f69290d2ecbc3ce4ee6c07e6e039be8cefde8802686fcfee34277e",
+      "record_ids": [
+        "4b6e5fffa78eff0b0706b45ce13634fbe8654ca280d84c5ce53c9a22625b510a"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.measurement",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "translation_hash": "91551dd4e44b49509958aa5f168e7f2ad0cdc3c365ad5a5073dbabfcf07ac637",
+      "record_ids": [
+        "5635f1366b946de1c474f9e607492c6cec46822c9108c80842cf05de6016066c"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "translation_hash": "9a6d8dd98fc2f8508e658f8c36d140020268daa5103bf74d170d740c72938870",
+      "record_ids": [
+        "03c0e854a620b800ae4556205d734672a4345a1474ff6b93701ed06660f182d3"
+      ],
+      "translation_origin": "reviewed-memory",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.unsupported",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "translation_hash": "5ff2d5a4de75d7bc6e4325e509f418da1dadb5b025f31214aa04dd36d5b5bfe1",
+      "record_ids": [
+        "a9de92d299373c72c50872d7bb60cb1272b887cd8c9fbdcffb5682faf3780b02"
+      ],
+      "translation_origin": "reviewed-memory",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "translation_hash": "9b818d63f602c32a8f33e76be5231b02e2afcadd8229482afcfeda50f21f0ce0",
+      "record_ids": [
+        "65e7d55bd7a1eac098255d215cc5fa9d423ad314cf3c243d46b20f252ae03865"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "translation_hash": "58a3a638fb92cd4d17db395ddac5c5c6204e857931dd1a1e67378a5b8a901ccd",
+      "record_ids": [
+        "6c7435da787de7695b00c449d14d13e0d924e616cad7a03b2a4b131b9db2823a"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.example",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "translation_hash": "328b109e67be3a5d1c91ae4fa6e5c7695c1919b624254ec0c12b1181d029d99b",
+      "record_ids": [
+        "035aff2e9c9d5a2993bb6386dd84d8cff6eb5e80bff4d06981ec9966db6b1b5d"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "«Et ledetråd» tiene género incorrecto; debe ser «En ledetråd». Sentido y seis casillas intactos."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.check",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "translation_hash": "10e369958ed00b699cecff4f1eabcb0b6afb13246d2a058a2ef6c673d8dd37ce",
+      "record_ids": [
+        "790aaafca08015ce041cad9ffbb742689c92f34bd8c1b24e2c162be6e8abd2f2"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "416926ab38e377ee189c06d08e53e0b8b546e071607c31f47cbb291be38d05d9",
+      "record_ids": [
+        "66332b408679c84e3e35c459bccd190c985e8d7a9ed0b11874b6c94cdcb3dc9b"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.daily",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "translation_hash": "7a34361fd7016a4988aa7b3e83d62dc63671ddec9ade1516485847b78e37fb84",
+      "record_ids": [
+        "6391a005f6313ce3c15f307b3102b9dfa50165f74d17fbba0db5bd26344a246f"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "e6ca477a5a4ce27b6827995712adcd02bc03e313289b953742f27146a6383526",
+      "record_ids": [
+        "4e5ee0e02d27c10655b4a7dd46f656e768571c152d57f24f91b397cc280d5ba1"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "2bc9d55f347a0881b49cd75fda8d081ff89faaa4bd35697d1d0b0a9685ce2b38",
+      "record_ids": [
+        "9821c679ca155c188846d829b6f4b06a00b4e8570e435f398d66af4b6e0948b6"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Concordancia incorrecta «ett ... ledetråd» y espacio en tall-ledetråd; conserva no múltiples y exactamente una pista."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "852e56dabb007659b41daedecd0b26e8c8f44b8df8e99893dde9a12a27d382f1",
+      "record_ids": [
+        "d80ddaf73dc3151c96f96e94ae3609db8cb91320655acec36c78ae66f8066e81"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.newPuzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "translation_hash": "97ccf014fa6e89f85949ce6b0fe678a47f37a0a61b8b8ff06af17676b7a70aeb",
+      "record_ids": [
+        "470d1b8bba53592bccf7446a8a8aea8af4dcd921f4014019d7f318d9c3025fac"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "44916e4a47efbae4d499ee9c6b9dab47ae4f40b87dde8176f2ed7515479b0173",
+      "record_ids": [
+        "58d472b649626d3a9a4591546b3a81c4133d29fd8cecad4590f9ed434810e479"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.reveal",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "translation_hash": "97f881c4db41b7e07aa529a5a0d1a7629c6db9e6a99372beab5d6cd915d2ec20",
+      "record_ids": [
+        "2e327dc79c3b09a799f138dfa2952f1334d1ab2938e3a9b9d46e1fe412757a47"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "5723ba5a744e21d36f4e2a3fbd91b6dcf60941dfc153ce59fbac2324562fb863",
+      "record_ids": [
+        "de04f0ed4fe151c5509f0b562b6fb8447b440016f8fc0ab434adc75292006fad"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "bd2a8c15502d18c284b5aeb572c0d7e2505fea61fcd93d0c0d3a1bf6ac2dce5c",
+      "record_ids": [
+        "5dd43f3a3d037d336581da90d18f7e8e7dfa9fba61cb2ab54dfcf9912bd9617f"
+      ],
+      "translation_origin": "reviewed-memory",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "84abec37ce988e25d7cbf7f94fe9cf1f1abe03760a6e7d38d204103763cfc32e",
+      "record_ids": [
+        "2a88e282e35ecb7a412608b53c2f1536b815b0d1c70bf6ed6222b2d9f45fba6b"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.chooseFile",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "translation_hash": "45a33637567598f608beae81bab0c713af16227bc6c7f50d421876f530075c48",
+      "record_ids": [
+        "b40cde8e7df5474debe7e576a3129a44545e8ad3656fb1be69aacd2bd8f1ca3d"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.chooseFirst",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "translation_hash": "9cf0870788c44ab17c08c01ca027eb91ecfc699269c619328e67e3422d59a858",
+      "record_ids": [
+        "41bde61c06fb0f2eac0ab049d203892cd55e6bf7af36a864e65c8fa54f063c44"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "76e8843994dc85072d78614facbe7b6c69b034ed1bcfcf7cd070ed3035823866",
+      "record_ids": [
+        "5f6595f07c9459cf97161c2020f41df85d0f9926920efe52b9dd7ef800b2f850"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.decodeFailed",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "translation_hash": "dc5aaf78e1bd9c32f3999585bac9d5ca9154ce02c2c2287c47fcbf19c4dd0d3b",
+      "record_ids": [
+        "265f4e7e8a6a1b7736af6e0621db5b19f44ea84976c8ef0b6487d7b81f95f1fa"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "06144b213d46b03d80dc1c2b1339b3842bcf6ad4ebee6aab1e5e17b1d0353b2d",
+      "record_ids": [
+        "f762a30113f3e080bd2be865101ccd13a24e668b6a24fad32ec2704bddce1267"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "2ba68aba8476e7e716891109a49f083c9eac0cc9f2e6991126cf9d5b5811ed8a",
+      "record_ids": [
+        "b14fefdcf640cd7ee0e0217a29cf98960ff5cae6b69ed9cb3aae3f073b20cf6e"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.faq2a",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "translation_hash": "e6ed7b4b866a5429bd57830cfd1f06e5c649414990f59b87b44924de74a3dcdf",
+      "record_ids": [
+        "bce7d34b9a5c22629fa3bbe8303db549ed8e184a84c145d1a496c11f24d4d7f7"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "73b26bf8b92760fe148825188a972573bd2807d24a866588ceda6a7d3a434794",
+      "record_ids": [
+        "f91b56d02fcd74dbf60dcf64c670e6a702036fcdedbc59f68c923c0050a45d86"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "a853a9225c2fe94deb0d68f664b6ec7b23f90ad79ebcf0e8e0d82faa31551c2c",
+      "record_ids": [
+        "a30eb2b88d10c44abcb4acb5dcbac0c0058943f8a6fc00f1425f41cd5b084553"
+      ],
+      "translation_origin": "reviewed-memory",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "64470f54b53a2ebce22391a070781aaf0efd2c52d3df44f9cdd8b22092ef485d",
+      "record_ids": [
+        "c930a5707dfb185bf68ae80c878169b78d3090d433b4bfbb9cb6bd1f1f8d62fc"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.privacy",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "translation_hash": "20126aa98f0d7868e37e7ac4398bc1284eae5f83b88f0f10e47dae6449b9ddb7",
+      "record_ids": [
+        "fad533afc279a8b7eba44c1fcac4f12d6341edaf610f130c76e4a3854c9d0ca1"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "71da32ad1c049ad3f1eb500a68b0d8089ec6118a8bf87682a6fbbc2646e9b4ae",
+      "record_ids": [
+        "a79972f2988a3efd416b8ba8fa77f0870fe1722777e6e8e6d6ec5e789449d4ab"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "fa277023a8330f7983302036cd60ceb3ea97ca9c03ce66b795f636b12e0280e5",
+      "record_ids": [
+        "c0dbd9961e7bdc6f562eedfe5227b731211105cf3fdea81e59bfa7905c29fa25"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "316722da6ecee30b6574423192400e1ea1a4fd19b0a02fcd0ebb73643e2908fc",
+      "record_ids": [
+        "dce2ac853d22a62c1e8facd3847aa1e1bf220d378adda4156ef0e338a3dd39b9"
+      ],
+      "translation_origin": "model",
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Sentido, acción, cifras y negaciones conservados al comparar original, texto observado y retrotraducción; se identifica el origen de memoria cuando aplica."
+      ]
+    }
+  ]
+}

@@ -2617,5 +2617,14 @@
     "issue": "Traduce {duration} a {varighet}; rompe la sustitución del valor aunque la vuelta diga {duration}.",
     "observed_candidate": "madlad/context-v3",
     "actions_run_id": "39435208282"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.example",
+    "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+    "translation": "Et ledetråd merket 6 hører hjemme i et rektangel som dekker nøyaktig seks ruter.",
+    "issue": "«Et ledetråd» tiene género incorrecto; debe ser «En ledetråd». Sentido y seis casillas intactos.",
+    "observed_candidate": "madlad/context-v4",
+    "actions_run_id": "39436428601"
   }
 ]

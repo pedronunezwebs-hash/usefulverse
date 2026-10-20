@@ -179,6 +179,7 @@ def automatic_checks(source, translation, locale, key=None, back_translation=Non
         "nonempty": bool(translation.strip()),
         "protected_tokens_identical": queue.signature(source) == queue.signature(translation),
         "technical_tokens_identical": Counter(token.casefold() for token in TECHNICAL_TOKEN.findall(source)) == Counter(token.casefold() for token in TECHNICAL_TOKEN.findall(translation)),
+        "back_technical_tokens_identical": None if back_translation is None else Counter(token.casefold() for token in TECHNICAL_TOKEN.findall(source)) == Counter(token.casefold() for token in TECHNICAL_TOKEN.findall(back_translation)),
         "back_protected_tokens_identical": None if back_translation is None else queue.signature(source) == queue.signature(back_translation),
         "untranslated_source": source.casefold().strip() == translation.casefold().strip(),
         "length_ratio": round(len(translation) / max(1, len(source)), 3),
@@ -301,6 +302,7 @@ def summarize(paths):
             seen.add(row["record_id"])
             group = groups.setdefault((row.get("inference_policy", "baseline"), row["engine"], row["locale"], row["candidate"]), Counter())
             group["records"] += 1
+            group["reviewed_memory_hits"] += int(row.get("translation_origin") == "reviewed-memory")
             if row.get("inference_policy", "baseline") != "baseline":
                 group["forward_segment_evidence"] += int(row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not segment_evidence_valid(row.get("forward_segments"), row["model_input"], row["raw_translation"]))
                 group["back_segment_evidence"] += int(not segment_evidence_valid(row.get("back_segments"), row["translation"], row["back_translation"]))
@@ -309,6 +311,7 @@ def summarize(paths):
                 "technical_tokens": not checks["technical_tokens_identical"], "english_unchanged": checks["untranslated_source"], "length_ratio": not 0.5 <= checks["length_ratio"] <= 2.5,
                 "wrong_script": checks["expected_script_ratio"] is not None and checks["expected_script_ratio"] < 0.6,
                 "known_semantic_errors": bool(checks["known_semantic_errors"]), "marker_restore": not row["marker_restore_ok"],
+                "back_technical_tokens": checks["back_technical_tokens_identical"] is False,
                 "back_protected_tokens": checks["back_protected_tokens_identical"] is False, "back_marker_restore": not row.get("back_marker_restore_ok", True), "truncated": row["truncated"]}.items():
                 group[flag] += int(fails)
     return {"approved": 0, "review_required": True, "groups": [{"inference_policy": policy, "engine": engine, "locale": locale, "candidate": candidate, **counts}
