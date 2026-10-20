@@ -34,7 +34,7 @@
     "utif": "3.1.0"
   },
   "dependencies": {
-    "@huggingface/transformers": "4.3.0",
+    "@huggingface/transformers": "4.3.1",
     "@mediabunny/mp3-encoder": "1.61.0",
     "@neslinesli93/qpdf-wasm": "0.3.0",
     "@sqlite.org/sqlite-wasm": "3.53.4-build2",
