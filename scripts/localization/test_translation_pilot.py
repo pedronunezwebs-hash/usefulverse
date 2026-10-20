@@ -98,6 +98,27 @@ class TranslationPilotTest(unittest.TestCase):
             with self.subTest(locale=row['locale'], key=row['key'], candidate=row['observed_candidate']):
                 self.assertTrue(pilot.semantic_issues(row['key'], row['source_hash'], row['translation'], row['locale'], row.get('direction', 'forward')))
         self.assertEqual(pilot.semantic_issues('shikaku.fields.resume', hashlib.sha256(b'Resume').hexdigest(), 'Reanudar', 'es'), [])
+        # The independent review/checkpoint evidence defines expected failures.
+        # Removing an observed error from the fixture registry must fail this test.
+        directory = pilot.ROOT / 'docs/quality/translation-pilot'
+        records = {row['record_id']: row for path in (directory / 'checkpoints').rglob('*.jsonl')
+            for row in map(json.loads, path.read_text().splitlines())}
+        for path in sorted(directory.glob('review-context-v[56]-*.json')):
+            review = json.loads(path.read_text())
+            for row in review['rows']:
+                if row['candidate'] == 'legacy' or min(row['scores'].values()) == 3: continue
+                actual = records[row['record_ids'][0]]
+                with self.subTest(review=path.name, locale=row['locale'], key=row['key']):
+                    self.assertTrue(pilot.semantic_issues(actual['key'], actual['source_hash'], actual['translation'], actual['locale']),
+                        'An independently reviewed error has lost its permanent regression')
+            for finding in review.get('back_findings', []):
+                actual = records[finding['record_id']]
+                self.assertEqual(hashlib.sha256(actual['back_translation'].encode()).hexdigest(), finding['back_translation_hash'])
+                checks = pilot.automatic_checks(actual['source'], actual['translation'], actual['locale'], actual['key'], actual['back_translation'])
+                if finding.get('check'):
+                    self.assertFalse(checks[finding['check']])
+                else:
+                    self.assertTrue(checks['known_back_semantic_errors'])
 
     def test_observed_madlad_marker_and_file_extension_losses_are_not_accepted(self):
         source = 'Audio decoded locally. Duration: {duration} seconds.'

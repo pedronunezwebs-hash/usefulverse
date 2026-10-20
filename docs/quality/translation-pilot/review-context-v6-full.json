@@ -4059,5 +4059,43 @@
         "Se conserva la evaluación v4 al verificar fuente y destino idénticos; vuelta v6 disponible/auditada por separado."
       ]
     }
+  ],
+  "back_findings": [
+    {
+      "record_id": "51441b2910a25e2d590ddce8f43a5f5dd21e6099626cb72b41998cb4a944d16c",
+      "back_translation_hash": "3243758537e7c4058517391d298c3a094d680799e253f523f32d08b91c58439f",
+      "note": "Feet vuelve como Pies (comida en inglés), ida Pies (ft) correcta."
+    },
+    {
+      "record_id": "e20659c71dd6f8e7da3901755c7953337cd130335e480ec806635eed3ca2f1da",
+      "back_translation_hash": "dbea25efce00dbf7c2df5825097467e5c50080a2eaa3060dbc249151b0eb0978",
+      "note": "Conjunción española y sin traducir en la vuelta."
+    },
+    {
+      "record_id": "11424a177de0383f8386aaa63869816ebd5d2b5d6446fb9afc0fdcebdf345c7a",
+      "back_translation_hash": "72e44e9bb3f74e101cde59846afaa7438657600984151252e90499e272876654",
+      "note": "Sin unidad se convierte en sin dispositivo."
+    },
+    {
+      "record_id": "185258d183fc961314a6c68fa86fce69b4650599ed989e0a6d1243ae51a0a55a",
+      "back_translation_hash": "f71a850301976cee8f8f2e1386105374539c67eee5f2f187c0daca2c7426360b",
+      "note": "Ångstrøm correcto vuelve como Steam."
+    },
+    {
+      "record_id": "8302344213d8844005aa8e783d743321f3063cc2351b82a2f5fcd7d7106aedf8",
+      "back_translation_hash": "7ba1c6dc6756dbdcf3b8d9f4b51bbf63a789ea98d5e96d421d4a96c5017c730a",
+      "note": "Capas gráficas vuelven como equipos; lag sí era correcto en la ida."
+    },
+    {
+      "record_id": "212b1de428813b74a5536fb834070d036e7a389c89336abe5217043db0f952af",
+      "back_translation_hash": "58eca004d293ff602310d4489f8c4baa221e6c65d4b5b3402be8f96b01f494ba",
+      "note": "Drawing units vuelve como character units; no se atribuye ese cambio a las coordenadas de ida correctas."
+    },
+    {
+      "record_id": "ed1889467197e9ae652778470d89c69c3a1387a560ede8b6d3898d4927409a07",
+      "back_translation_hash": "980262ba14c7cef77be6063b49828b469d124a0a2c0093147db88d6bab207074",
+      "note": "Pierde el guion de dxf-parser, aunque conserva sus versiones.",
+      "check": "back_software_identifiers_identical"
+    }
   ]
 }
