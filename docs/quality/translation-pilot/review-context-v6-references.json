@@ -1,0 +1,1486 @@
+{
+  "schema_version": 1,
+  "expected_rows": 80,
+  "inference_policy": "context-v6",
+  "reviewer": "Codex (agente, sin API de pago)",
+  "reviewed_at_utc": "2026-10-20T16:11:59.610483+00:00",
+  "native_review": false,
+  "rubric": "REVISION-FINAL §2: significado, cifras/negaciones y naturalidad, 0–3.",
+  "scope": "40 referencias por destino es/nb del candidato híbrido; leídas fuente, ida y vuelta.",
+  "decision": "reference-threshold-passed-only-full-pilot-required",
+  "approved_locales": [],
+  "reference_gate": {
+    "es": {
+      "button_number_negation_errors": 0,
+      "minor_errors": 0,
+      "sample": 40,
+      "passed": true
+    },
+    "nb-NO": {
+      "button_number_negation_errors": 0,
+      "minor_errors": 1,
+      "sample": 40,
+      "passed": true
+    }
+  },
+  "notes": [
+    "Comparación con v5: ocho idas cambian y diez pares ida/vuelta. Leídos los cambios; se conserva la rúbrica para las cadenas idénticas.",
+    "La corrección de privacidad es memoria exacta, no un acierto del modelo sin ayudas.",
+    "El único leve nb es concordancia Den frente al antecedente neutro verktøyet en FAQ DXF; significado/negación intactos.",
+    "Los fallos de vuelta casilla/ventana y No repetido siguen visibles por separado; no invalidan por sí solos idas correctas.",
+    "0 idiomas aprobados; solo permite repetir el piloto completo con muestra fijada."
+  ],
+  "rows": [
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.faq.0.a",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "translation_hash": "7858a3b974ee3aee07c5bd918751e429ba1f867f2b57112bbe9b4e5db658d1c6",
+      "record_ids": [
+        "fb3eef60b62ef0c96338a24a91ec6a1fb1fd351330c5ae8fd893fb1dea900f50"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.faq.2.a",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "translation_hash": "11fea13b849deda3e6c6ba5273d7b3ff59e60e22a7be335135a34427ef408031",
+      "record_ids": [
+        "823a58bd0048c46b10f060a891bcb6994daca822985a71163793f897b9a84d86"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.binary",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "translation_hash": "476b8ec18855f4f32cb37f80b75d958875f65d78dcc14b5acf9c36f1f4ba21da",
+      "record_ids": [
+        "e0890c7ecce98ae7fa9c43c949606ba5806e4c0337c1877a960add24f3576fac"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.cancel",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "translation_hash": "85965ae79fa993c7f2d1e80480f190ca8b8a9d158fcfe08a1dbba12466f655f8",
+      "record_ids": [
+        "f3c174a57e37917bbe18c8fbc85222435f7661e6addfd4793fdde037e9bc5978"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.exportPng",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "translation_hash": "e6581d60954bd764b466aec4666e1d6c52e6a69a89c6664c949112139baa09c9",
+      "record_ids": [
+        "b91ea935eb699092c3df9c60dba54991e88f965d11569bb4093652c04563625a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.exportSvg",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "translation_hash": "b9cdaed1d0fa23e25939140e5a511223c62c0d24550b7a4909b2f5dbbbaf1b3b",
+      "record_ids": [
+        "9eba7e43ad118d60c4e32fe17590f000c73be07c36ab7be3e1b2a8ff863f8052"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "translation_hash": "e62fbcdf36628bfb7ceb6e8c5ad8a028d44008d6e2433bdff6010b117864253a",
+      "record_ids": [
+        "d14b487e988ff98aacc2ef0de64f637fa5bb87acb5ba3b357860e0a214db8baa"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "translation_hash": "3b64d26674321e74f3d60bf4451f20b0f16da0295cd7f179020a1405baee89d0",
+      "record_ids": [
+        "cda59309e52cf90b01a26266b2bc680545f8c7d3d6f94ce6d7dc1354d166da08"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.measurement",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "translation_hash": "3a4b1eeb31b6330bd8fa232c5dba44fb6b0f2a74228d82fc3b04b6f57af8e23a",
+      "record_ids": [
+        "aea3b14938e5725865275f1832084d0f9f4ca37785361375f18f4fb5e908eca5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "translation_hash": "2c153c15f124e414f74899e2ee46a82bc9e68444a9f634f4db4e5a76db30115f",
+      "record_ids": [
+        "c042e878d8cf9505a618950c3c7fdc387301bffed9958a428a6cf65333aa9dd1"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.unsupported",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "translation_hash": "5d91f224ae06117e9c44ba494e9759bbe63480f0d2c6f08d1e1407a06270a5eb",
+      "record_ids": [
+        "1a2ea329f6eb9cf5c94b4232c1d999263687648cde18f1ae44ffb1357ee25202"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio.",
+        "Procedencia: memoria del agente, no revisión nativa ni salida cruda del modelo."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "translation_hash": "464d372afb80116f6d0f2038c64f6c33a5e16dff5f2ad18677559b3ec78800dc",
+      "record_ids": [
+        "7c8199724d233b0c9a819abfce715b5f783fb1ef0dcdd66c733fa96447a4d8b7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "translation_hash": "e6e97c5aab206b57c3836800541474cceb98a84c4da3ac10c75ba72f62e53f3a",
+      "record_ids": [
+        "556763835ea96e677b3c4b25701c9c1b7ab138f3d3d15dbdee93547b78177b35"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.example",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "translation_hash": "8017208abb82ca441d0262944478d24aae300ad0d8dac31dde9c0e61641ee615",
+      "record_ids": [
+        "c9f761b07841e41cb9153907a75ed84aa9be89e7f959fe1133ed4c80cd7044ed"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.check",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "translation_hash": "203353c448abf18f1ea43f98413ce159a985fd9b6fa5783cf0e2e90286693577",
+      "record_ids": [
+        "6cca1a7870d6154d07a9c573b324df0000e95671c65f21510078bf533dc806a3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "62e698fb711f50f83fa1bc8b1ed825800fe6c805cf3a4c364c12d0986e331393",
+      "record_ids": [
+        "78db1b5338d8dfd9588cf2138211ead4db59ae8a555bf7ef75e2f82f7175b1aa"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.daily",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "translation_hash": "89adf4b17102ae3ec585f234f5b1c928048c1a127fb228e6aa7a673f7cc82ba4",
+      "record_ids": [
+        "d09d25bb9abb9f73f1c58f829f2cab22d8c235220ce21c5a50b8799c1345e5f4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "252e8f12ebc501b4d85304d86346f0c94e2c34a3866db085e07923ae307402c5",
+      "record_ids": [
+        "7858f275ab02b738839a359fe2afdcc2147cc8f1012613bd1032d03e3f3a955c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "16e55115dc22b88cc934f3017b17fbb077c9638408073298cbdb61702237bb0d",
+      "record_ids": [
+        "8f7593fa2e75e011d938780fd37b71dfdd8f8d3317b182c3b9f86c2305df95e2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "0b9d8a88f752de74a70fb544c6717d734f242dc8458ddc1d21d0273d8bd34d66",
+      "record_ids": [
+        "a1654122a61e767981e23c3ada6d1bc85774cd5a01d05cc373ac0711439b5655"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.newPuzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "translation_hash": "96d9e4f494f0ea52da051157b6dcf8cd73ac76aae6893e19d0d947ece1f7bc30",
+      "record_ids": [
+        "4816a3814c6db205621d2c31da7da53a8153ca69a7b64a48830bcffa1c06aaed"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "01ddd0f17edac3f87b0c6754fa191e21d4ae73faecd9f0b3d0143d9576bbbac4",
+      "record_ids": [
+        "6adddd3f5ad31ef7daedb257960cc7c58ccf5e1cf1e9b383b90b0643501a5c87"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.reveal",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "translation_hash": "130a0104d0d3143d7cda34511c6315d70f0d7512b2832fed6c542df93c1685b9",
+      "record_ids": [
+        "0374f0d647c6ce7f3747e6c34dd7130353ae45af1628999140a3c380f1768916"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "8c99333123c2589d0ea069da5c5fb636e960f2607af94bdde73282f186952d71",
+      "record_ids": [
+        "3e41ca09e44c0a7bc990ab7a30965b98954f678cef00d1718eb7fe17bc368fc0"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "27c2cbd7c9497973342fa8a59da363572bff2a144360f5ab70631b1ab2de45b5",
+      "record_ids": [
+        "4cda121467ecc3c827f8508bda8382a648acd0ef3d6e59cdb41081604426c998"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "0ce20272dac19530c592bd3778b8c9b7426475f2d8428ef809c0f8dda0349fea",
+      "record_ids": [
+        "80159bb08bba6ca3ff2995ed907bcbc6528a4ae01e40aead9cc5bc76c226cfd3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.chooseFile",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "translation_hash": "d00c5a5b2fb2adb432d42c4189169cdfe383016f49ca7d2e28da0acec3001ae1",
+      "record_ids": [
+        "516943f779ff62e1e5a407b8c03bacc19fb612c495f0ff15814fc43297ea4601"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.chooseFirst",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "translation_hash": "2c0cd1fdf977ac73953a69518f6c5e4a6109747483b45d7d5662edbbfe4f168a",
+      "record_ids": [
+        "ff66e018a4d0ecefbe1859b59ae0ecb82d42e72aa962388ac6e5ddc3967dd391"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "1f8a7458ad27c99540674719f5cd6ff56806fbf0c21df5b49423eb1fe3379cc0",
+      "record_ids": [
+        "194a1ad898af808d716fb5238a9a86efb63c24390efafc9ca4eba2dc9e12192c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.decodeFailed",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "translation_hash": "8682f36965b715d2cdf420ca456497a61ca35906e3144687d708f3cfc5085707",
+      "record_ids": [
+        "9fdbff3896f84e9344a36115dd25e5650638e89f340bf6118873b53fefc1bd43"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "2315d71e0f8aeefb7bbf662c9a1aad5e8cf2a2d21b98a1892e5cfc0a603c4c74",
+      "record_ids": [
+        "ef6764ae08eef67a36aaeee284a87d98880c32fc67092a80e5fa5f2a3c0ee604"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "4a9550b18287efee031624fc96b7c36c6c2b707dea28ebf7de06098edc567987",
+      "record_ids": [
+        "606ce59e81ec8ac9d3ee021df412d57ac93be82102bd2f343e55c320fb76ea24"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.faq2a",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "translation_hash": "76ac8ca6d94c69b916a554e08d82dc6b2998fdf35636e09b0b9085eb8bb6e581",
+      "record_ids": [
+        "f79168a74dbc38bfc566d34be963f7c7fe9a69eb8f6b3c8cd7b217f37112f075"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "7125b2fd9758e7a7695c233f1ac0889c496c4699b68480cfbb560dffa5184f58",
+      "record_ids": [
+        "3963703e9b1a33969b52e78c7f1ead17621e2ac586496f823cff8139b38fda42"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "5891107f89d27dc1b71ca22083151aa22caed665cb95632924ded2208fde4f02",
+      "record_ids": [
+        "5cf17674ee16bb1bf9690ab6738a7b7b250161e09ab2c44ca5dd4e3456923f69"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio.",
+        "Procedencia: memoria del agente, no revisión nativa ni salida cruda del modelo."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "9f9808c00dc7971ef0cf906b3e400c3c0f1cc23ae4484026044a37997e6c1af1",
+      "record_ids": [
+        "35bf88d86f38b84747af69cb554ffea9c88b1a0ab44dc64fa43f9609a9379708"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.privacy",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "translation_hash": "dbb64ae2bf88b5426abc2c4139d3ba5516f13a51f6af724a6cd6f0468525f530",
+      "record_ids": [
+        "97bd4a6d3accf3c91133dac55f70ffc4a8c464872450195dd9068d8dd553555a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "La memoria revisada niega inequívocamente subir a UsefulVerse y guardar allí, conservando el procesamiento en este navegador.",
+        "Procedencia: memoria del agente, no revisión nativa ni salida cruda del modelo."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "7ae0d486fb7b33979c32e7f415660bcebf33408ef08ede05ee1cc662921eda1e",
+      "record_ids": [
+        "7a12a952e14c21c46bec97c68ebca03829e5292559d347be0eebd49f132cf42a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "de6288237877e954d481557d2422c4bcb16712662a36b322f9a1ef0d04a11a28",
+      "record_ids": [
+        "163887d5373b0685e76f20fe0f2df457973fd135b02d86563bf5c66071fd797a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "e7e53f8abf65a60cf747f8625f607a32d9222732f1b23e17190edfc7d46396f0",
+      "record_ids": [
+        "390c207939300a1589b53678bce663729bd31829fd1a861e400a1f713c7d4eb7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.faq.0.a",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "translation_hash": "33df245e9cc1134cb94eb42d0729240273b50b7266b476f7246d3010130c6f78",
+      "record_ids": [
+        "62ef26db53b15958928e5da577f49f58d4f50b2fdab80365ed61221db697b374"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Den abre de nuevo el antecedente verktøyet, neutro; debe ser Det. La negación DWG/binario y ASCII DXF se conservan. Leve, no error de negación."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.faq.2.a",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "translation_hash": "0030a85efe1b8880aa6ce37efd76d2e2c17652c71b108cf82b44e667a14c623d",
+      "record_ids": [
+        "3ff34e1f90e0cccf8a5f7ed85b0b298790c8fe4c7cab246862e5fbe8fb1588d3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.binary",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "translation_hash": "d32c356cc5c19941dfcbf228592ad86a980be5813b0aa1a38dc28dfbf89e8311",
+      "record_ids": [
+        "a97f80fbac3b025ce009c580a63e535c4ca9b3726662f1dc9b20763af508166b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.cancel",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "translation_hash": "43aa43d0702e8f0f164503896c5351910c4e74d2af7aa158c226933fe1d1ce8c",
+      "record_ids": [
+        "6e3d2f33d20091f01c0d83b6b9aecadd14c97b864121fdd7f4381857d00b4088"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.exportPng",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "translation_hash": "1aa1bd73d5619a9df19b45810fd5fd3808dfa5e877a2977bb4656aa1717acbb9",
+      "record_ids": [
+        "591bb22419a6fcacd9e8da5c65db1c8b2eb1fc8029da60828e094fc85d6520d3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.exportSvg",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "translation_hash": "419e8dc4090d050173c15a0510e8e241c414955231dc6d6115fdf6f73566e668",
+      "record_ids": [
+        "8f4deabc045daa35f5d5d86249efebe17104a1d9ba7325acfe9881d38069b5f4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "translation_hash": "0255cb7c13867c2519c64c334873360497a5c18e5383d19b43c60001bcd316cd",
+      "record_ids": [
+        "2b48af9c18978501568c699576b87d14a459d8090a3a5fbfd1a1b2b2b4ae2a1d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio.",
+        "Procedencia: memoria del agente, no revisión nativa ni salida cruda del modelo."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "translation_hash": "54397fcac7f69290d2ecbc3ce4ee6c07e6e039be8cefde8802686fcfee34277e",
+      "record_ids": [
+        "0340055a3fc4d56b40201e6a343f2f8e4e3dbb75b854f50ccd3675a32e761848"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.measurement",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "translation_hash": "91551dd4e44b49509958aa5f168e7f2ad0cdc3c365ad5a5073dbabfcf07ac637",
+      "record_ids": [
+        "532913e1148c7f26b025748ce07023c2f0ebde17ff3ec822e6ec73e621a95b9c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "translation_hash": "9a6d8dd98fc2f8508e658f8c36d140020268daa5103bf74d170d740c72938870",
+      "record_ids": [
+        "e7688d38145a0e6a7a65d382c0c374a330ff74f71afac1809b6ab9dbfc70997e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio.",
+        "Procedencia: memoria del agente, no revisión nativa ni salida cruda del modelo."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.unsupported",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "translation_hash": "5ff2d5a4de75d7bc6e4325e509f418da1dadb5b025f31214aa04dd36d5b5bfe1",
+      "record_ids": [
+        "fe379bcedb374f07da07134d5cdf5fea6469e4d15a054f3e057ceca8a4820700"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio.",
+        "Procedencia: memoria del agente, no revisión nativa ni salida cruda del modelo."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "translation_hash": "9b818d63f602c32a8f33e76be5231b02e2afcadd8229482afcfeda50f21f0ce0",
+      "record_ids": [
+        "6182409dd715bfe1691024b5ecdd07603fd4048e61dc53771fbfcde18268e99c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "translation_hash": "58a3a638fb92cd4d17db395ddac5c5c6204e857931dd1a1e67378a5b8a901ccd",
+      "record_ids": [
+        "0d437e5bc00d365a359eea7a794333ae1ca7ed7af17a0b546feaa5a8c2998738"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.example",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "translation_hash": "a3bc8150395f14ab5ae2be79266fece35869dda10f5a2f9b014632ae0423a8c3",
+      "record_ids": [
+        "5ae2aab14bb6eabf469542728ce025873cb3bd3377ac9e405b22cffa0e20ee12"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio.",
+        "Procedencia: memoria del agente, no revisión nativa ni salida cruda del modelo."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.check",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "translation_hash": "10e369958ed00b699cecff4f1eabcb0b6afb13246d2a058a2ef6c673d8dd37ce",
+      "record_ids": [
+        "fdc0274b6782e63b8400225cf2303b58466f4602108cd0eb1e17eb1416de46aa"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "416926ab38e377ee189c06d08e53e0b8b546e071607c31f47cbb291be38d05d9",
+      "record_ids": [
+        "ced30fc8e0def64744e33f8e8b2fc3b770089df0701e115383444fb29b3dea1c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.daily",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "translation_hash": "7a34361fd7016a4988aa7b3e83d62dc63671ddec9ade1516485847b78e37fb84",
+      "record_ids": [
+        "f396c27b8f9feddb42c8f04f32141183d8c8b48c30e3c693f980d399cb106f01"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "e6ca477a5a4ce27b6827995712adcd02bc03e313289b953742f27146a6383526",
+      "record_ids": [
+        "392ed6f152b910c5654c015d1a7f03caa2b3fccf43915a2ef069c18c5a0d78bf"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "2667ddf5c27a73009070564e2d202a54ac7e643559dd585d0e7ffeb5a1ba2742",
+      "record_ids": [
+        "d76e894d9784c23a1b4cca30f35394a656cf8da6ea05847748ecc54bac044f9b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida de memoria correcta; vuelta No, no, no es defecto separado y detectado.",
+        "Procedencia: memoria del agente, no revisión nativa ni salida cruda del modelo."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "852e56dabb007659b41daedecd0b26e8c8f44b8df8e99893dde9a12a27d382f1",
+      "record_ids": [
+        "712d83094ec25137e89658bc8d0f96273f448a4c38a7fcd19e70a8f77db8fb9b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.newPuzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "translation_hash": "97ccf014fa6e89f85949ce6b0fe678a47f37a0a61b8b8ff06af17676b7a70aeb",
+      "record_ids": [
+        "73fed050006a12dc1b27470df62f73d87521445215bc1f5743e3cf4ab0243850"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "44916e4a47efbae4d499ee9c6b9dab47ae4f40b87dde8176f2ed7515479b0173",
+      "record_ids": [
+        "65cf39149a3a47728e1e2dba653370a8b9ca5dba78b183805d11390a0d20b849"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.reveal",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "translation_hash": "97f881c4db41b7e07aa529a5a0d1a7629c6db9e6a99372beab5d6cd915d2ec20",
+      "record_ids": [
+        "26282ba6e443413f2236fa8d7a8c8a159fac809f2c5e9a42c38ad382fd661ecd"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "5723ba5a744e21d36f4e2a3fbd91b6dcf60941dfc153ce59fbac2324562fb863",
+      "record_ids": [
+        "5757cdf0ee6d44f8fdc9184db758160084f2e27e5d37fb50c74095af808474c8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "bd2a8c15502d18c284b5aeb572c0d7e2505fea61fcd93d0c0d3a1bf6ac2dce5c",
+      "record_ids": [
+        "146ccbc67804a0912ba93603d0616f63e4088e2f7be717b0732a3afeb5edf352"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Startrute es casilla inicial; start window de vuelta es un defecto separado y detectado.",
+        "Procedencia: memoria del agente, no revisión nativa ni salida cruda del modelo."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "84abec37ce988e25d7cbf7f94fe9cf1f1abe03760a6e7d38d204103763cfc32e",
+      "record_ids": [
+        "f0de4ad04f5f9b0e23f5631a96bcfa8c58ddc55cdc844c43ada6f06bfc14d3c5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.chooseFile",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "translation_hash": "45a33637567598f608beae81bab0c713af16227bc6c7f50d421876f530075c48",
+      "record_ids": [
+        "8308149bd3ea17d0df3604321da7da29cb3d5da45103c2ab77c2cd8d6ab6bcdd"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.chooseFirst",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "translation_hash": "9cf0870788c44ab17c08c01ca027eb91ecfc699269c619328e67e3422d59a858",
+      "record_ids": [
+        "398b60dda7effbbc0357157cf0d7c7ebb3b901310d2c8e4ea194a6b51b4b194a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "76e8843994dc85072d78614facbe7b6c69b034ed1bcfcf7cd070ed3035823866",
+      "record_ids": [
+        "8841ff41b3883e463717262edcaff3c5ab4b5a82a10d82d83b5ed12f4174aaa2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.decodeFailed",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "translation_hash": "9947ca17c854f08752c11e5acbf9a09ba9e83ea7d7889dd0385165d49eebf2dd",
+      "record_ids": [
+        "a294ac62f169ca8351c3a6b4a1466fc037db1175785778181cb8e0b5a1b0b41c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "translation_hash": "06144b213d46b03d80dc1c2b1339b3842bcf6ad4ebee6aab1e5e17b1d0353b2d",
+      "record_ids": [
+        "d7f2cb8fb03247cd682d4089187388299739909a399aa83f5a2f8eebca89d2d2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "translation_hash": "2ba68aba8476e7e716891109a49f083c9eac0cc9f2e6991126cf9d5b5811ed8a",
+      "record_ids": [
+        "bc8c49b5b44139416db89b6e55618d7dff160929bc4a289a06ffecf0feeaa78d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.faq2a",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "translation_hash": "766a883305ca5b7ff81cac818a514739c5c048e2ab0ecea18c3d71777e36a569",
+      "record_ids": [
+        "cc93211c53fd1975c48567a2c08b1a398dea74496f6072897dc717d0a63aa0de"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "translation_hash": "73b26bf8b92760fe148825188a972573bd2807d24a866588ceda6a7d3a434794",
+      "record_ids": [
+        "af25fb35f4397df0b47b5e2daf55235cc73472a67e31a19d397a4bbf9652b49a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "translation_hash": "a853a9225c2fe94deb0d68f664b6ec7b23f90ad79ebcf0e8e0d82faa31551c2c",
+      "record_ids": [
+        "03157cd8e5abba40a9d7d062669601470079ead6c0adde96f27256a867174ff0"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio.",
+        "Procedencia: memoria del agente, no revisión nativa ni salida cruda del modelo."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "translation_hash": "64470f54b53a2ebce22391a070781aaf0efd2c52d3df44f9cdd8b22092ef485d",
+      "record_ids": [
+        "de5c96037780f632ac9dcc576236b76a7a0e265bf5e7998797c9b5d5432dd766"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.privacy",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "translation_hash": "ab18a6f85d640778f0a7a77769da9af51ee6a7d11b7a56ce97f1bf70426dcfda",
+      "record_ids": [
+        "45aebc057e56ff444d45129bfc887534ec101ac52759a30ed0d1a9a981cad369"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "La memoria revisada niega inequívocamente subir a UsefulVerse y guardar allí, conservando el procesamiento en este navegador.",
+        "Procedencia: memoria del agente, no revisión nativa ni salida cruda del modelo."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "translation_hash": "71da32ad1c049ad3f1eb500a68b0d8089ec6118a8bf87682a6fbbc2646e9b4ae",
+      "record_ids": [
+        "28b17e7b8c6d62a63b896e4acecd8e43a80377a25306fa7e46c5c97c67387bb3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "fa277023a8330f7983302036cd60ceb3ea97ca9c03ce66b795f636b12e0280e5",
+      "record_ids": [
+        "57283e5839c8ec5f085d53e166610928380fc01615cd7c661ae0973aeb8406ea"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    },
+    {
+      "locale": "nb-NO",
+      "candidate": "madlad+context+reviewed-memory",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "translation_hash": "d71c1ccb246b9c4c7d0e6758783e0bd478072277c5df6f545029d96f8f513033",
+      "record_ids": [
+        "24d8cb3bc474408315b676846200043e2ae2a65230f1d1fc281463352d4b416d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Texto revisado contra fuente/ida/vuelta; acciones, cifras y negaciones conservadas. Si la ida coincide con v5, se mantiene su criterio."
+      ]
+    }
+  ]
+}

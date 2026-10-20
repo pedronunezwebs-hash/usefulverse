@@ -3726,5 +3726,14 @@
     "observed_candidate": "madlad-context-v5-back",
     "issue": "back-repeated-negation",
     "evidence": "review-context-v5-references.json"
+  },
+  {
+    "key": "dxf-viewer.faq.0.a",
+    "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+    "locale": "nb-NO",
+    "translation": "Dette verktøyet kan ikke åpne DWG eller binær DXF. Den åpner bare ASCII DXF.",
+    "observed_candidate": "madlad-context-v6",
+    "issue": "pronoun-agreement",
+    "evidence": "review-context-v6-references.json"
   }
 ]
