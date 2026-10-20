@@ -4,14 +4,14 @@
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
 **Última actualización:** 2026-10-20 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-20 15:55 +07 · RUNBOOK §7 Paso A, integración segura de las 300 en feat/new-tools-batch-1.
+**Turno actual (candado):** LIBRE
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
 
 ## 1. Siguiente paso exacto
 
-1. **Paso A en preparación por Codex: rama `feat/new-tools-batch-1`.** Las 300 fuentes del respaldo privado
+1. **Paso A preparado en el PR [#136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136) (borrador), rama `feat/new-tools-batch-1`.** Las 300 fuentes del respaldo privado
    `usefulverse-300-worktree-backup-20261020`, `backup/usefulverse-300-implementation` (`27a2f174`),
    están recuperadas selectivamente, sin importar su historial privado ni sobrescribir las reglas de seguridad actuales.
    Todas llevan `indexable: false`; regresiones de noindex/sitemap/hreflang y preservación de las 217 del hub añadidas.
@@ -19,7 +19,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
    más las 100 market-tools y las 106 recuperadas: 700 existentes en total entre los dos hosts.
    **Bloqueos técnicos del Paso A:** juntar las 300 con el hub excede 20.000 archivos de Pages; faltan las traducciones
    revisadas y el noruego `nb` real de las 300. No confundir el test del contrato SEO en 37 rutas con traducciones verificadas.
-   Ver `docs/quality/lotes/2026-10-20-paso-a.md`. Ejecutar CI completo de la rama; resolver estos gates antes de merge/publicación.
+   Ver `docs/quality/lotes/2026-10-20-paso-a.md`. CI final verde: [run 39398910565](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39398910565), código `4e8d27c` (3.041 tests, ambos builds actuales y preview de 10.800 páginas noindex). Resolver capacidad y 37 idiomas antes de merge/publicación. No avanzar a fase 0 mientras siga abierto el Paso A.
    La vista previa antigua `draft-300-noindex.usefulverse-tools.pages.dev` ya existía; no es el despliegue de esta rama.
 2. **Fase 0** del RUNBOOK §4 + **caché con hash de los 106 JS** (AUDITORIA-CATALOGO G1; sin esto ningún arreglo llega a los visitantes) + **fase 0b**: los 26 errores confirmados de `AUDITORIA-CATALOGO.md` §2.
    Fase 0 (detalle): 404 real en `tools.usefulverse.com` (hoy cualquier URL inventada devuelve 200 con la home),
@@ -55,6 +55,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
       ejecuciones) analizados con gitleaks → 0 secretos; token nuevo solo de Pages; escaneo de secretos y bloqueo de push;
       Dependabot; acciones fijadas por SHA; `main` y `backup/*` protegidas; PR externos con aprobación · 2026-10-20
 - [x] Copia de seguridad del trabajo de las 300 en `backup/codex-300-tools-20261020` · 2026-10-20
+- [x] Fuente completa de las 300 recuperada en rama pública `feat/new-tools-batch-1`, PR #136 (borrador), con noindex explícito y CI verde · 2026-10-20; en `main` y publicadas por este lote: **0 / 300**, activadas: **0**
 
 ### Fase 0 · Arreglos urgentes (RUNBOOK §4)
 - [ ] `404.html` en la salida del hub (`dist-growth600`) + test; verificar 404 en `/tools/zzz/`, `/es/zzz/` y `/zzz.html`
@@ -66,7 +67,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 - [ ] Infraestructura: Playwright (Chromium, Firefox, WebKit), fast-check, axe, Lighthouse CI en Actions
 - [ ] Tests de regresión de los 26 errores de la auditoría (antes de arreglarlos)
 - [ ] Action semanal sobre producción que abre un Issue si algo falla
-- [ ] Columnas de pruebas en `progress.csv`
+- [x] Columnas de pruebas en `progress.csv` · 2026-10-20 (las siete capas de las 300 siguen pendientes)
 
 ### Fase 0b · Errores confirmados (`AUDITORIA-CATALOGO.md` §2) · arreglados: **0 / 26**
 - [ ] G1 · Hash en los 106 JS de `recovered-live-only-106` (o caché corta)
@@ -131,6 +132,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 | Fecha | Agente | Qué | PR / commit | Verificado en producción |
 |---|---|---|---|---|
+| 2026-10-20 | Codex | Fuente de las 300 + noindex por catálogo + CI de preview aislada; Paso A sin publicar | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `7879f9a`, `83efa8a`, `4e8d27c` | Sitemaps: 25.625 URLs; 10 URLs de la preview antigua con noindex. Sin deploy nuevo; soft 404 persiste. |
 | 2026-10-20 | Claude | Auditoría de las 700 herramientas (`AUDITORIA-CATALOGO.md` + `auditoria/`) y diseño de PDF con IA (`PDF-IA.md`) | `04099ce` | Web sin cambios |
 | 2026-10-20 | Claude | Comparación con iLovePDF (`PDF-VS-ILOVEPDF.md`) | `ae9a27f` | Web sin cambios |
 | 2026-10-20 | Claude | Repo público con seguridad (ver checklist) | `5af802b` + ajustes en GitHub y Cloudflare | Web sin cambios |
