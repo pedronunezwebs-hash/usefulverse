@@ -36,11 +36,13 @@ Por eso la regla es: **se publica todo lo que esté terminado, en cuanto pase la
 artificiales, pero con un freno de seguridad semanal:**
 
 1. **Mejorar las páginas existentes no tiene límite** (no crea URLs). Es la prioridad número uno.
-2. **Herramientas nuevas:** cada una se publica completa (con sus 37 idiomas) en cuanto pasa la puerta de calidad
-   (sección 6) y el piloto de traducción de cada idioma (sección 8). Si un idioma aún no pasa el piloto, se publica sin
-   ese idioma y se añade luego.
-3. **Freno semanal:** como máximo **30 herramientas nuevas por semana** (≈1.100 URLs, ≈4 % del total). Antes de la
-   caída se publicaban ≈900 URLs al día.
+2. **Herramientas nuevas (las 300 hechas con ChatGPT): se suben ya, todas con `noindex`.** Google no indexa esas páginas y
+   no cuentan en la valoración del sitio, pero existen y se pueden usar. Mientras estén en `noindex`: fuera del sitemap,
+   fuera de los `hreflang` de las páginas indexables, nunca bloqueadas en `robots.txt` (Google tiene que poder leer el
+   `noindex`) y sin envíos a buscadores.
+3. **Activación con freno:** una herramienta nueva pasa a indexable (sin `noindex`, en el sitemap y en los `hreflang`) solo
+   cuando supera la puerta de calidad (sección 6) y sus idiomas el piloto (sección 8). **Máximo 30 activaciones por semana**
+   (≈1.100 URLs, ≈4 %). Antes de la caída se publicaban ≈900 URLs al día.
 4. **Noruego (`nb`) en las 600 existentes:** se añade a cada herramienta cuando esa herramienta termina su mejora de
    calidad (sección 5), nunca en bloque sin mejorar.
 5. **Las 231 candidatas de reserva no se construyen** salvo decisión expresa de Pedro.
@@ -156,20 +158,30 @@ puerta. Merge y despliegue (máximo uno al día). **Verificar en producción** (
 
 ---
 
-## 7. Bucle de herramientas nuevas (de las 300 candidatas)
+## 7. Bucle de herramientas nuevas (las 300 hechas con ChatGPT)
 
-0. **Origen:** el código de cada herramienta hecha con ChatGPT se sube al repo en una rama (`feat/new-tools-batch-N`),
-   nunca directamente a `main`. Desde ese momento se trata exactamente igual que cualquier herramienta: pasa la puerta
-   de la sección 6 y el freno de la sección 2.
-1. **Orden:** primero las 50 con `decision = Prioridad por demanda; falta viabilidad`, ordenadas por `rank`; después las
-   8 alternativas cercanas y las 11 de intención por revisar. Las 231 de reserva no se construyen salvo decisión de Pedro.
-2. **Viabilidad antes de construir:** ¿se puede hacer 100 % en el navegador, sin servidor, sin API de pago y con licencias
-   válidas? Si necesita servidor o datos externos, se hace una ficha de costes y **se para hasta que Pedro la apruebe**.
-   ¿Es de verdad distinta de las 700 existentes? (Ver «Qué cuenta como nueva herramienta» en `PLAN-1000.md`.)
-3. **Construir o completar** con la misma receta de la sección 5 y la misma puerta de la sección 6.
-4. **Publicar** respetando el freno semanal (≤ 30 nuevas por semana). Contarlas en `progress.csv`.
+**Paso A · Subida inicial en `noindex` (una sola vez, por tandas de PR manejables):**
+1. Subir el código de las herramientas al repo en ramas `feat/new-tools-batch-N`; nunca directamente a `main`.
+2. Marcar cada herramienta como `indexable: false` en el catálogo, para que el generador emita
+   `<meta name="robots" content="noindex, follow">` en sus 37 idiomas, **no las meta en el sitemap ni en los `hreflang`** de
+   otras páginas y no envíe nada a IndexNow.
+3. Antes de hacer merge, tests obligatorios: (a) toda página `indexable: false` lleva el `noindex`; (b) ninguna aparece en
+   ningún sitemap; (c) ninguna aparece en los `hreflang` de páginas indexables; (d) `robots.txt` no las bloquea;
+   (e) `npm test`, `npm run check` y `npm run locale:release-check` en verde.
+4. Desplegar y verificar en producción con una muestra de 10 URLs: 200, `noindex` presente y ausentes del sitemap.
+5. En `progress.csv`: `estado=subida-noindex`.
 
----
+**Paso B · Activación (bucle semanal, máximo 30 por semana):**
+1. **Orden:** primero las 50 con demanda confirmada (por `rank`), después las 8 alternativas cercanas y las 11 de intención
+   por revisar. Las 231 de reserva se pueden subir en `noindex`, pero no se activan sin una decisión de Pedro.
+2. **Viabilidad:** si necesita servidor, API o datos de pago, se hace una ficha de costes y se para hasta que Pedro la
+   apruebe. Además se comprueba que sea distinta de las 700 existentes (ver «Qué cuenta como nueva herramienta» en
+   `PLAN-1000.md`).
+3. Mejorarla con la receta de la sección 5 y pasar la puerta de la sección 6 y el piloto de traducción de la sección 8.
+4. **Activar:** `indexable: true` → sin `noindex`, dentro del sitemap de cada idioma y en los `hreflang`. Desplegar y verificar
+   (sección 9), y pedir la indexación de las 5 más importantes de la tanda.
+5. En `progress.csv`: `estado=activa`, con la fecha y el PR. Contar las activaciones de la semana; al llegar a 30, parar
+   hasta la semana siguiente.
 
 ## 8. Traducción (en Codespaces)
 
@@ -219,7 +231,8 @@ Siguiente lote propuesto: …
 
 ## 11. Prohibido
 
-- Publicar herramientas que no hayan pasado la puerta, o más de 30 nuevas por semana.
+- Activar (quitar el `noindex`) herramientas que no hayan pasado la puerta, o más de 30 por semana.
+- Meter páginas `noindex` en el sitemap o en los `hreflang`, o bloquearlas en `robots.txt`.
 - Construir las 231 de reserva, o algo con servidor o API de pago, sin aprobación.
 - Cambiar slugs o borrar URLs (las fusiones, con 301).
 - `noindex` masivo (Pedro lo ha descartado).

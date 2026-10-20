@@ -10,8 +10,8 @@ herramientas gratuitas: Search Console por API, navegador, tests locales y el m�
 
 ## 0. Antes de empezar: 5 avisos que cambian el plan
 
-1. **Las 300 herramientas nuevas (casi terminadas con ChatGPT)** entran al repo por ramas. Cada una se publica completa
-   en cuanto pase la puerta de calidad, con un freno de 30 por semana (sección 14 y `RUNBOOK.md`).
+1. **Las 300 herramientas nuevas (casi terminadas con ChatGPT)** se suben ya con `noindex` y se activan al pasar la puerta
+   de calidad, como máximo 30 por semana (sección 14 y `RUNBOOK.md` §7).
 2. **La traducción es el punto débil número uno de la caída.** Este plan multiplica el texto por herramienta
    (FAQ, ejemplos, guías), así que también multiplica el texto traducido. El método propuesto en
    `METODO-TRADUCCION.md` (M2M100 418M local) es gratis, pero es un modelo pequeño y su calidad puede quedar por
@@ -491,15 +491,18 @@ media de 7 días, o si la posición empeora más de 10 puntos en 5 días.
 
 ---
 
-## 14. Las herramientas nuevas (de las 300 candidatas): publicar cuando estén listas
+## 14. Las 300 herramientas nuevas: se suben ya con `noindex` y se activan poco a poco
 
-Estado: según Pedro (20-oct), están **casi terminadas con ChatGPT, fuera del repo** y sin publicar. `PLAN-1000.md`
-las clasifica así: 50 con demanda confirmada, 19 por revisar y 231 de reserva. Política (detallada en `docs/recovery/RUNBOOK.md`):
-1. Cada herramienta nueva se publica **completa, con sus 37 idiomas, en cuanto pasa la puerta de calidad** y el
-   piloto de traducción de cada idioma. No hay esperas artificiales.
-2. **Freno de seguridad: como máximo 30 herramientas nuevas por semana** (≈1.100 URLs, ≈4 %).
-3. Las que necesiten servidor, API o datos de pago solo se construyen con una ficha de costes aprobada.
-   Las 231 de reserva no se construyen salvo decisión de Pedro.
+Decisión de Pedro (20-oct-2026). Están casi terminadas con ChatGPT:
+1. **Se suben todas ya con `noindex`** (en sus 37 idiomas): existen y se pueden usar, pero Google no las indexa ni cuentan en
+   la valoración del sitio. Fuera del sitemap y de los `hreflang`, nunca bloqueadas en `robots.txt`, y sin envíos a
+   buscadores.
+2. **Se activan** (sin `noindex`, en el sitemap y en los `hreflang`) cuando cada una pasa la puerta de calidad y el piloto de
+   traducción: **máximo 30 por semana**. Primero las 50 con demanda confirmada.
+3. Las que necesiten servidor o API de pago, solo con una ficha de costes aprobada. Las 231 de reserva no se activan sin
+   decisión de Pedro.
+
+Procedimiento exacto: `docs/recovery/RUNBOOK.md` §7.
 
 ## 15. Riesgos y cómo se cubren
 
@@ -524,7 +527,7 @@ las clasifica así: 50 con demanda confirmada, 19 por revisar y 231 de reserva. 
 - [ ] Fase 3 · herramientas en inglés por prioridad, cada una con los 12 puntos
 - [ ] Fase 4 · piloto de traducción aprobado por idioma + traducción de las terminadas a los **37 idiomas** (noruego `nb` incluido: faltan 600 herramientas)
 - [ ] Fase 5 · medición quincenal + reescritura de títulos con CTR bajo
-- [ ] Herramientas nuevas: cada una en cuanto pase la puerta, ≤ 30/semana (RUNBOOK §7)
+- [ ] Herramientas nuevas: subida en `noindex` + activación ≤ 30/semana al pasar la puerta (RUNBOOK §7)
 
 ---
 

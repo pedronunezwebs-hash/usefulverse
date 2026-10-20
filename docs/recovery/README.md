@@ -350,3 +350,9 @@ Se publican por goteo, **solo en inglés, como máximo 30 por semana**, con la p
 Los demás idiomas de esas herramientas se publican más tarde, cuando haya recuperación estable. Motivo: tienen el
 mayor potencial de captación y conviene que Google empiece a descubrirlas ya, pero sin repetir el pico de URLs
 que causó la caída. 300 URLs en 10 semanas = +1,2 % sobre el total actual.
+
+### Cuarta decisión del dueño · 20-oct-2026: las 300 nuevas, con `noindex` al subir
+
+Sustituye a la tercera decisión (goteo solo en inglés). Las 300 herramientas hechas con ChatGPT se suben ya, todas con
+`noindex` y fuera del sitemap y de los `hreflang`. Se activan al pasar la puerta de calidad, como máximo 30 por semana.
+Detalle en `AGENTS.md` y en `RUNBOOK.md` §7.

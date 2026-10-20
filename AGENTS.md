@@ -26,9 +26,16 @@ estado en `docs/quality/progress.csv`. Plan completo: `docs/quality/PLAN.md`. Ma
    siguen indexables. La recuperación se hará **mejorando la calidad en el sitio**, por orden de prioridad
    (`docs/recovery/indexable-core-tools.csv` = orden de trabajo, empezando por las 128 con datos). No añadas
    `noindex` a ninguna página sin aprobación explícita del dueño.
-3. **Herramientas nuevas (las 300 candidatas, casi terminadas con ChatGPT fuera del repo y sin publicar):** cada una se publica completa en cuanto
-   pasa la puerta de calidad de `docs/recovery/RUNBOOK.md` §6, con un **freno de 30 herramientas nuevas por semana**.
-   Las 231 de reserva y todo lo que necesite servidor o API de pago, solo con aprobación de Pedro.
+3. **Herramientas nuevas (las 300 hechas con ChatGPT) · decisión del dueño, 20-oct-2026: se suben ya con `noindex` y se
+   activan poco a poco.**
+   - Se pueden publicar todas ya, pero **cada una nace en `noindex`**: `<meta name="robots" content="noindex, follow">`
+     en sus 37 idiomas.
+   - Mientras estén en `noindex`: **fuera del sitemap**, **fuera de los `hreflang`** de las páginas indexables, **nunca
+     bloqueadas en `robots.txt`** y sin envíos a buscadores. Sí se pueden enlazar desde el sitio y desde «siguiente paso».
+   - **Activar** una herramienta (quitar el `noindex`, añadirla al sitemap y a los `hreflang`) solo cuando pase la puerta de
+     calidad de `docs/recovery/RUNBOOK.md` §6, con un **máximo de 30 activaciones por semana**. Cada activación se
+     anota en `docs/quality/progress.csv` (`estado=activa`).
+   - Las 231 de reserva y todo lo que necesite servidor o API de pago, solo con aprobación de Pedro.
 4. **Excepción aprobada por el dueño (20-oct-2026): cobertura de 37 idiomas.** Todas las herramientas publicadas
    deben existir en los 37 idiomas definidos. Hoy a 600 les falta el noruego bokmål (`/nb/`: 277 del dominio
    principal y 323 del subdominio). Se puede añadir `nb` a una herramienta **solo cuando esa herramienta ya
