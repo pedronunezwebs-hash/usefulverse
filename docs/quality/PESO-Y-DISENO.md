@@ -62,3 +62,46 @@ sea responsive** en cualquier dispositivo. Es obligatorio y está en la puerta d
    aprobada (regresión visual) en cada PR que toque el diseño. Si algo se mueve sin querer, el PR falla.
 9. **Revisión humana:** las capturas en móvil de cada tanda van al PR. Pedro aprueba el sistema de diseño una vez (fase 1),
    y después solo se revisan los cambios.
+
+## 5. Peso del repo de GitHub y de lo que se sube a Cloudflare
+
+### Medido el 20-oct-2026
+
+- **Repo:** 145 MB empaquetado; el árbol actual de `main` ocupa **291 MB** en 6.516 archivos.
+- **Lo que más pesa:**
+
+| Qué | Peso | Problema |
+|---|---|---|
+| `src/growth600/live-only-106-source/` | **95 MB, 4.011 archivos (3.819 HTML)** | Las 106 herramientas «recuperadas» están guardadas como **páginas ya generadas**, no como código fuente: pesan mucho, no se pueden mejorar de forma ordenada y son la causa de la caché sin hash (auditoría G1) |
+| `live-only-106.snapshot.json.gz` + `legacy-tools-archive-2026-10-15.tar.gz` | 13,2 + 12,7 MB | El mismo contenido otras dos veces, como copia comprimida |
+| `src/growth600/locales/` | 33 MB, 454 archivos | Traducciones generadas en archivos muy grandes |
+| `src/locales/` (`plan-language-data.mjs` 6 MB, `opportunity-tools.mjs` 4,8 MB, `generated-opportunity-copy.mjs` 4,5 MB) | 25 MB | Archivos gigantes: **cada pequeño cambio guarda otra copia entera en el historial** (ya hay 3-4 versiones de 3,5-4,5 MB de cada uno) |
+| Archivos `.gz` de investigación y `docs/planning/` | ~51 MB en 37 `.gz` + 13,8 MB | Datos de investigación (DataForSEO, evidencias) dentro del código |
+| `public/` (OCR 17 MB, modelos ONNX 11,7 MB, wasm 9 MB) | ~40 MB | Necesarios para las herramientas: se mantienen, pero sin copias duplicadas |
+
+### Objetivo y acciones
+
+**Objetivo:** el árbol de `main` pasa de 291 MB a **menos de 80 MB**, y ningún archivo de código supera **500 KB**.
+
+1. **Pasar las 106 herramientas recuperadas a código fuente de verdad** (entradas de catálogo + textos por idioma +
+   plantilla común), como el resto. Después se retiran de `main` las 3.819 páginas HTML congeladas y las dos copias
+   comprimidas (**−121 MB**). Quedan en el historial y en una rama `archive/live-only-106` por si hiciera falta consultarlas.
+   Se hace junto con G1 (caché con hash) y el rediseño, porque toca las mismas páginas.
+2. **Investigación fuera del código:** los `.gz`, los JSON de evidencias y `docs/planning/` pasan a **assets de una Release
+   de GitHub** («archivo-investigacion-2026-10»; gratis, hasta 2 GB por archivo, no se descargan al clonar). En el repo
+   queda solo un índice `.md` con los enlaces.
+3. **Traducciones y datos generados divididos** por herramienta y por idioma (lo mismo que pide el peso de las páginas, §3.1).
+   Los archivos que se generan con un script **no se suben**: se generan en el build. Archivos pequeños = historial ligero.
+4. **Sin duplicados de binarios** (modelos, wasm, OCR): una sola copia compartida por los dos sitios (más fácil tras unificar el
+   dominio). Test de CI que falla si se añade un archivo de más de 5 MB sin aprobación o un binario duplicado (mismo hash).
+5. **No reescribir el historial** (el repo es público, puede haber forks y `main` está protegida). Los agentes clonan siempre en
+   modo ligero (`--depth 1 --filter=blob:none`), así que el historial antiguo no les afecta. Si un día el repo superara 1 GB, se
+   valoraría `git filter-repo` con aprobación expresa de Pedro.
+6. **Ahorro de GitHub Actions:** el workflow de despliegue ignora los cambios solo de documentación (`paths-ignore: docs/**,
+   *.md`); caché de `node_modules` (`actions/setup-node` con `cache: npm`); un solo build por push.
+7. **Cloudflare:** los assets estáticos no tienen coste de almacenamiento, pero cuentan para el límite de **100.000 archivos**
+   y de **25 MiB por archivo**. Medidas:
+   - script que borra de la salida del build todo archivo que ninguna página referencia;
+   - nombres con hash, para que Wrangler solo suba lo que cambia;
+   - una sola copia de cada librería;
+   - informe de número de archivos y peso total en cada PR, con aviso al pasar de 80.000 archivos.

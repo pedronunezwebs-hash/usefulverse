@@ -74,6 +74,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 - [ ] Dividir `app.js` (70 KB) y los paquetes de idioma (`locale-es.js` 167 KB) por herramienta
 - [ ] Home ≤ 25 KB de HTML (hoy 217 KB) · sacar el JSON incrustado de market-tools (74 KB)
 - [ ] Test de presupuesto de peso en CI + Lighthouse CI
+- [ ] Repo ligero (`PESO-Y-DISENO.md` §5): 106 recuperadas a código fuente (−121 MB), investigación a una Release, traducciones divididas, sin binarios duplicados, `paths-ignore` de docs en el workflow · `main` 291 MB → < 80 MB
 - [ ] Tokens de espaciado y contenedor; pruebas visuales en 320-1920 px; sin desbordamiento; RTL y textos largos
 
 ### Fase 1-2 · Diseño y plantilla (PLAN §3-4)
