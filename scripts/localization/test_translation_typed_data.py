@@ -16,6 +16,24 @@ class TypedDataTest(unittest.TestCase):
         issue='Mayúscula en mitad de frase por segmentar junto al número.'
         self.assertIn(issue,pilot.semantic_issues('shikaku.example',source_hash,bad,'es'))
         self.assertNotIn(issue,pilot.semantic_issues('shikaku.example',source_hash,bad.replace('Pertenece','pertenece'),'es'))
+        source='No. Your browser decodes and processes the selected audio locally. UsefulVerse does not receive the recording.'
+        bad='Su navegador decodifica y procesa el audio seleccionado localmente. UsefulVerse No recibe la grabación.'
+        issue='Mayúscula suelta en «UsefulVerse No recibe» por separar el sujeto literal.'
+        source_hash=hashlib.sha256(source.encode()).hexdigest()
+        self.assertIn(issue,pilot.semantic_issues('voice-changer.fields.faq1a',source_hash,bad,'es'))
+        self.assertNotIn(issue,pilot.semantic_issues('voice-changer.fields.faq1a',source_hash,bad.replace('UsefulVerse No','UsefulVerse no'),'es'))
+
+    def test_v8_explicit_upload_answer_is_not_lost_between_identical_faq_aliases(self):
+        policy=pilot.POLICIES['context-v8']
+        for key in ['voice-changer.fields.faq1a','voice-changer.faq.0.a']:
+            entry=policy['reviewed_memory'][key]
+            self.assertTrue(entry['translations']['es'].startswith('No. '))
+            self.assertTrue(entry['translations']['nb-NO'].startswith('Nei. '))
+            self.assertIn('never uploaded',policy['entries'][key]['translation_input'])
+            self.assertFalse(entry['native_review'])
+            for locale,text in entry['translations'].items():
+                self.assertTrue(pilot.automatic_checks(entry['source'],text,locale)['protected_tokens_identical'])
+        self.assertEqual(policy['reviewed_memory']['voice-changer.fields.faq1a']['translations'],policy['reviewed_memory']['voice-changer.faq.0.a']['translations'])
 
     def test_equivalent_local_quantity_formats_do_not_claim_a_changed_value(self):
         for locale,target in [('es','Máximo: 200.000 registros; 10 MB.'),('nb-NO','Maksimum: 200 000 oppføringer; 10 MB.')]:

@@ -7,27 +7,26 @@
   "native_review": false,
   "rubric": "REVISION-FINAL §2: significado, cifras/negaciones y naturalidad, 0–3.",
   "scope": "40 referencias por destino es/nb del candidato híbrido; leídas fuente, ida y vuelta.",
-  "decision": "reference-threshold-passed-only-full-pilot-required",
+  "decision": "reference-gate-withdrawn-do-not-expand",
   "approved_locales": [],
   "reference_gate": {
     "es": {
-      "button_number_negation_errors": 0,
+      "button_number_negation_errors": 1,
       "minor_errors": 1,
       "sample": 40,
-      "passed": true
+      "passed": false
     },
     "nb-NO": {
-      "button_number_negation_errors": 0,
+      "button_number_negation_errors": 1,
       "minor_errors": 0,
       "sample": 40,
-      "passed": true
+      "passed": false
     }
   },
   "notes": [
-    "71/80 idas coinciden exactamente con v6; rúbrica conservada por hash. Las nueve idas cambiadas y 11 pares ida/vuelta cambiados se leyeron junto a sus fuentes.",
-    "es359/360: un caso leve de naturalidad en el ejemplo Shikaku (mayúscula y calco). nb360/360: corregida la concordancia de la FAQ DXF con memoria revisada.",
-    "Las vueltas defectuosas No repetido y track no invalidan por sí solas idas correctas; se registran con dirección back y hashes.",
-    "Solo referencias: 0 idiomas aprobados; permite repetir completo con la muestra fija."
+    "Evaluación corregida: es357/360 y nb358/360, ambos rechazados hasta resolver la respuesta de privacidad. La evaluación anterior se conserva en supersedes y en Git.",
+    "No se afirma que el archivo salga del dispositivo: el defecto es la pérdida de una respuesta explícita y la contradicción entre rúbrica y regresión. No se adjudica como aviso inocuo sin resolverlo.",
+    "Se canceló el completo 39484416039; los registros parciales recuperables se conservan como machine-draft y no constituyen un completo válido."
   ],
   "rows": [
     {
@@ -598,12 +597,12 @@
         "e064020d8a4169933c25a9dbc66cebf1792beb4e4d90f2e25911360bdf5cc840"
       ],
       "scores": {
-        "meaning": 3,
-        "numbers_negations": 3,
+        "meaning": 2,
+        "numbers_negations": 2,
         "naturalness": 3
       },
       "notes": [
-        "Fuente e ida idénticas a v6 por hash; se conserva la rúbrica previa. Vuelta v7 contrastada, sin revisión nativa."
+        "Falta la respuesta explícita No/Nei a Is my recording uploaded?. El resto niega recepción por UsefulVerse y afirma procesamiento local; el aviso heredado no estaba resuelto antes de ampliar. Se exige respuesta inequívoca y se retira el gate."
       ]
     },
     {
@@ -1318,12 +1317,12 @@
         "536ceeb60a0ed212c251c588cfbc6423d8f087038d087a1ca4cd6d222e05b129"
       ],
       "scores": {
-        "meaning": 3,
-        "numbers_negations": 3,
+        "meaning": 2,
+        "numbers_negations": 2,
         "naturalness": 3
       },
       "notes": [
-        "Fuente e ida idénticas a v6 por hash; se conserva la rúbrica previa. Vuelta v7 contrastada, sin revisión nativa."
+        "Falta la respuesta explícita No/Nei a Is my recording uploaded?. El resto niega recepción por UsefulVerse y afirma procesamiento local; el aviso heredado no estaba resuelto antes de ampliar. Se exige respuesta inequívoca y se retira el gate."
       ]
     },
     {
@@ -1493,5 +1492,13 @@
         "Track sustituye la pista de un rompecabezas y It queda como nuevo sujeto tras 6. La ida tiene solo la mayúscula señalada, no el error track."
       ]
     }
-  ]
+  ],
+  "supersedes": {
+    "decision": "reference-threshold-passed-only-full-pilot-required",
+    "points": {
+      "es": 359,
+      "nb-NO": 360
+    },
+    "reason": "La comparación posterior con fixtures reveló un aviso de No/Nei en la FAQ de subida que no se había reconciliado con la rúbrica heredada. Se cierra el gate y se cancela el completo."
+  }
 }

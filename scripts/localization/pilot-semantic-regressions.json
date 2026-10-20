@@ -2121,7 +2121,8 @@
     "translation": "Su navegador decodifica y procesa el audio seleccionado localmente. UsefulVerse No recibe la grabación.",
     "issue": "Mayúscula suelta en «UsefulVerse No recibe» por separar el sujeto literal.",
     "observed_candidate": "m2m100/context-v2",
-    "actions_run_id": "39434607232"
+    "actions_run_id": "39434607232",
+    "case_sensitive": true
   },
   {
     "locale": "es",
@@ -4257,6 +4258,15 @@
     "translation": "A marked track 6 It belongs within a rectangle that covers exactly six squares.",
     "issue": "Track sustituye la pista de un rompecabezas y It queda como nuevo sujeto tras 6. La ida tiene solo la mayúscula señalada, no el error track.",
     "direction": "back",
+    "observed_candidate": "madlad/context-v7",
+    "actions_run_id": "39483290546"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "Su navegador decodifica y procesa el audio seleccionado localmente. UsefulVerse no recibe la grabación.",
+    "issue": "La respuesta a Is my recording uploaded? pierde el No explícito. Niega recepción por UsefulVerse, sin conservar una respuesta inequívoca sobre subida; gate retirado hasta resolverlo.",
     "observed_candidate": "madlad/context-v7",
     "actions_run_id": "39483290546"
   }

@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-20T19:32:29.924778+00:00",
+  "at_utc": "2026-10-20T19:37:57.147329+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -324,14 +324,14 @@
   "full_tool_computation_policy": "context-v6",
   "full_tool_pilot_approved_locales": [],
   "total_records_all_policies": 7321,
-  "semantic_regressions": 467,
+  "semantic_regressions": 468,
   "contextual_reference_gate": {
-    "es": "passed-only-references-359/360-1-minor-case",
-    "nb-NO": "passed-only-references-360/360"
+    "es": "rejected-357/360",
+    "nb-NO": "rejected-358/360"
   },
   "full_tool_gate": {
-    "es": "pending-full-v7",
-    "nb-NO": "pending-full-v7"
+    "es": "not-authorized-reference-gate-failed",
+    "nb-NO": "not-authorized-reference-gate-failed"
   },
   "contextual_policies_reviewed": [
     "context-v2",

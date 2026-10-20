@@ -1,0 +1,11 @@
+{
+  "run_id": 39484416039,
+  "job_id": 118841008325,
+  "source_commit": "f0aa420b0fc483f547f1ae0be54e6a9a4c29579e",
+  "conclusion": "cancelled",
+  "reason": "Gate de referencias v7 retirado: avisos heredados de respuesta negativa explícita en FAQ de subida de grabación no estaban resueltos. No usar el completo para aprobar idiomas.",
+  "partial_records_in_log": 0,
+  "cleanup_step": "success",
+  "at_utc": "2026-10-20T19:35:59.933691+00:00",
+  "approved_locales": []
+}
