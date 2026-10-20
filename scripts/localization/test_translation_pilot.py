@@ -2,6 +2,7 @@ import copy
 import base64
 import hashlib
 import importlib.util
+import json
 from pathlib import Path
 import tempfile
 import unittest
@@ -74,6 +75,14 @@ class TranslationPilotTest(unittest.TestCase):
         self.assertNotIn('wrangler', job)
         self.assertNotIn('upload-artifact', job)
         self.assertIn('persist-credentials: false', steps)
+
+    def test_observed_semantic_errors_are_rejected_even_when_tokens_survive(self):
+        fixtures = json.loads(Path(__file__).with_name('pilot-semantic-regressions.json').read_text())
+        self.assertGreater(len(fixtures), 40)
+        for row in fixtures:
+            with self.subTest(locale=row['locale'], key=row['key'], candidate=row['observed_candidate']):
+                self.assertTrue(pilot.semantic_issues(row['key'], row['source_hash'], row['translation'], row['locale']))
+        self.assertEqual(pilot.semantic_issues('shikaku.fields.resume', hashlib.sha256(b'Resume').hexdigest(), 'Reanudar', 'es'), [])
 
 
 if __name__ == '__main__': unittest.main()

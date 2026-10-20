@@ -28,6 +28,7 @@ ENGINES = {
 ALIASES = {"pt-BR": "pt", "zh-CN": "zh", "zh-TW": "zh", "fil": "tl", "nb-NO": "no"}
 SCRIPTS = {"ar": "ARABIC", "fa": "ARABIC", "ur": "ARABIC", "hi": "DEVANAGARI", "mr": "DEVANAGARI", "bn": "BENGALI", "te": "TELUGU", "ta": "TAMIL", "gu": "GUJARATI", "am": "ETHIOPIC", "ru": "CYRILLIC", "uk": "CYRILLIC", "bg": "CYRILLIC", "el": "GREEK", "th": "THAI", "ko": "HANGUL"}
 FORMAT = "usefulverse-translation-pilot-v1"
+SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
 
 
 def canonical(value):
@@ -42,7 +43,14 @@ def record_id(corpus, engine, locale, unit, candidate, beam):
     return digest([FORMAT, corpus["sourceDigest"], engine, ENGINES[engine], locale, unit["key"], unit["source_hash"], unit["context"], candidate, beam, unit["legacy"].get(locale) if candidate == "legacy" else None])
 
 
-def automatic_checks(source, translation, locale):
+def semantic_issues(key, source_hash, translation, locale):
+    normalized = unicodedata.normalize("NFKC", translation).casefold().strip()
+    return sorted({row["issue"] for row in SEMANTIC_REGRESSIONS if row["key"] == key
+        and row["source_hash"] == source_hash and row["locale"] == locale
+        and unicodedata.normalize("NFKC", row["translation"]).casefold().strip() == normalized})
+
+
+def automatic_checks(source, translation, locale, key=None):
     letters = [char for char in translation if char.isalpha()]
     required_script = SCRIPTS.get(locale)
     script_ratio = None if not required_script or not letters else sum(required_script in unicodedata.name(char, "") for char in letters) / len(letters)
@@ -52,6 +60,7 @@ def automatic_checks(source, translation, locale):
         "untranslated_source": source.casefold().strip() == translation.casefold().strip(),
         "length_ratio": round(len(translation) / max(1, len(source)), 3),
         "expected_script_ratio": script_ratio,
+        "known_semantic_errors": semantic_issues(key, hashlib.sha256(source.encode()).hexdigest(), translation, locale),
         "review_required": True,
     }
 
@@ -121,6 +130,28 @@ def collect_logs(paths, output):
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text("".join(canonical(records[key]) + "\n" for key in sorted(records)))
     return len(records)
+
+
+def summarize(paths):
+    groups = {}
+    seen = set()
+    for path in paths:
+        for line in Path(path).read_text().splitlines():
+            row = json.loads(line)
+            validate_record(row)
+            if row["record_id"] in seen:
+                continue
+            seen.add(row["record_id"])
+            group = groups.setdefault((row["engine"], row["locale"], row["candidate"]), Counter())
+            group["records"] += 1
+            checks = automatic_checks(row["source"], row["translation"], row["locale"], row["key"])
+            for flag, fails in {"empty": not checks["nonempty"], "protected_tokens": not checks["protected_tokens_identical"],
+                "english_unchanged": checks["untranslated_source"], "length_ratio": not 0.5 <= checks["length_ratio"] <= 2.5,
+                "wrong_script": checks["expected_script_ratio"] is not None and checks["expected_script_ratio"] < 0.6,
+                "known_semantic_errors": bool(checks["known_semantic_errors"]), "marker_restore": not row["marker_restore_ok"], "truncated": row["truncated"]}.items():
+                group[flag] += int(fails)
+    return {"approved": 0, "review_required": True, "groups": [{"engine": engine, "locale": locale, "candidate": candidate, **counts}
+        for (engine, locale, candidate), counts in sorted(groups.items())]}
 
 
 def convert(engine, model_dir):
@@ -223,7 +254,7 @@ def run(args):
                             "translation": text, "raw_translation": raw, "back_translation": back_value or back_raw,
                             "marker_restore_ok": value is not None, "truncated": truncated or back_truncated,
                             "detected_language": detected, "language_detector_score": confidence,
-                            "checks": automatic_checks(unit["source"], text, locale), "seconds_per_batch_unit": seconds / len(batch),
+                            "checks": automatic_checks(unit["source"], text, locale, unit["key"]), "seconds_per_batch_unit": seconds / len(batch),
                             "beam_size": args.beam_size, "status": "machine-draft", "reviewer": "", "reviewed_at": "",
                             "actions_run_id": os.environ.get("GITHUB_RUN_ID", ""), "actions_run_attempt": os.environ.get("GITHUB_RUN_ATTEMPT", ""),
                             "source_commit": os.environ.get("GITHUB_SHA", "")}
@@ -250,6 +281,9 @@ def main():
     collection = sub.add_parser("collect")
     collection.add_argument("--logs", nargs="+", required=True)
     collection.add_argument("--output", required=True)
+    summary = sub.add_parser("summarize")
+    summary.add_argument("--checkpoints", nargs="+", required=True)
+    summary.add_argument("--output", required=True)
     work = sub.add_parser("run")
     work.add_argument("--engine", choices=ENGINES, required=True)
     work.add_argument("--corpus", required=True)
@@ -262,6 +296,7 @@ def main():
     args = parser.parse_args()
     if args.command == "convert": convert(args.engine, Path(args.model_dir))
     elif args.command == "collect": print(canonical({"records": collect_logs(args.logs, Path(args.output)), "output": args.output}))
+    elif args.command == "summarize": Path(args.output).write_text(json.dumps(summarize(args.checkpoints), ensure_ascii=False, indent=2) + "\n")
     else: run(args)
 
 

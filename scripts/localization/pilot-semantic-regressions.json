@@ -1,0 +1,479 @@
+[
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.preview",
+    "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+    "translation": "Forhåndsvirkning",
+    "issue": "La acción de previsualizar se convierte en efecto previo.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.preview",
+    "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+    "translation": "Efecto previo",
+    "issue": "La acción de previsualizar se convierte en efecto previo.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.newPuzzle",
+    "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+    "translation": "Nytt pussel",
+    "issue": "Pussel no es la forma bokmål correcta en este contexto.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.load",
+    "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+    "translation": "Carga de audio local",
+    "issue": "El botón deja de expresar claramente la acción de cargar.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.binary",
+    "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+    "translation": "Binære DXF støttes ikke. Lagre eller eksportere tegningen som ASCII DXF.",
+    "issue": "Binære y eksportere no concuerdan con el texto de la instrucción.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.fields.undo",
+    "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+    "translation": "El último rectángulo",
+    "issue": "Se omite la acción de deshacer.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.fields.selectEnd",
+    "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+    "translation": "Seleccione el ángulo opuesto.",
+    "issue": "La esquina del tablero se convierte en ángulo y se omite ahora.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.tooLong",
+    "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+    "translation": "Esta herramienta soporta clips hasta 30 segundos. Trim el archivo y intente de nuevo.",
+    "issue": "Trim queda sin traducir.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "translation": "Desea dibujar",
+    "issue": "Se pierde la acción de ajustar el plano a la vista.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "Nr. Nettleseren din dekoder og behandler den valgte lyden lokalt. UsefulVerse mottar ikke opptaket.",
+    "issue": "La negación No. se convierte en la abreviatura de número Nr.; debe ser Nei.",
+    "observed_candidate": "legacy",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.daily",
+    "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+    "translation": "Daglig pussel",
+    "issue": "Pussel no es la forma bokmål correcta en este contexto.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.example",
+    "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+    "translation": "En indikator markeret 6 tilhører inne i en rektangle som dekker nøyaktig seks kvadrater.",
+    "issue": "Formas markeret/rektangle mezcladas con bokmål incorrecto.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.fields.selectStart",
+    "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+    "translation": "Elegir un cuarto de inicio.",
+    "issue": "La casilla se convierte en un cuarto.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "translation": "No. Hver rektangle må inneholde nøyaktig ett nummer.",
+    "issue": "No. queda en inglés; rektangle es incorrecto.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.stop",
+    "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+    "translation": "Deja la previsión",
+    "issue": "Preview se convierte en previsión y detener en dejar.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "translation": "No. Cada rectángulo debe contener exactamente un número de puntuación.",
+    "issue": "La pista numérica se convierte en número de puntuación.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.undo",
+    "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+    "translation": "Endelig rektangulær",
+    "issue": "Deshacer se convierte en finalmente rectangular.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.check",
+    "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+    "translation": "Sjekk pussel",
+    "issue": "Pussel no es la forma bokmål correcta en este contexto.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.loaded",
+    "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+    "translation": "Audio decodido local. duración: {duration} segundos.",
+    "issue": "Decodido no es una forma correcta de decodificado.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "translation": "Gode tegninger",
+    "issue": "Fit drawing se convierte en buenos dibujos.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.export",
+    "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+    "translation": "Exportación procesada WAV",
+    "issue": "El botón deja de expresar claramente una acción de exportar.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "Klar lyd",
+    "issue": "La acción de borrar se convierte en la descripción de sonido claro.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.fields.clear",
+    "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+    "translation": "Rectángulos claros",
+    "issue": "Clear es borrar los rectángulos, no describirlos como claros.",
+    "observed_candidate": "legacy",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.decodeFailed",
+    "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+    "translation": "Este navegador no podía decodificar ese formato de audio.Tenta WAV o MP3.",
+    "issue": "Decodificar y probar formatos incluye la forma errónea Tenta.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "translation": "Nr. Hvert rektangel må inneholde nøyaktig én tallledetråd.",
+    "issue": "La negación No. se convierte en la abreviatura de número Nr.; debe ser Nei.",
+    "observed_candidate": "legacy",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.example",
+    "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+    "translation": "Una pista marcada 6 pertenece dentro de un rectángulo que cubre exactamente seis cuadrados.",
+    "issue": "Sintaxis ambigua de pertenece dentro; debe indicar el área del rectángulo.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "No. Este control de piezo ligero cambia la tasa de reproducción, por lo que un piezo más bajo juega más lentamente y un piezo más alto juega más rápido.",
+    "issue": "Pitch se traduce como piezo y playback como jugar; cambia el significado.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "audio claro",
+    "issue": "Clear es borrar el audio, no describirlo como claro.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.deleteSave",
+    "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+    "translation": "Slett redde spill",
+    "issue": "Lagret spill se convierte en redde spill, cambia el significado.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.binary",
+    "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+    "translation": "DXF binario no se apoya. salvar o exportar el dibujo como ASCII DXF.",
+    "issue": "Guardar se traduce como salvar; instrucción poco natural y soporte incorrecto.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.privacy",
+    "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+    "translation": "El audio permanece en este navegador. no se carga ni se salva por UsefulVerse.",
+    "issue": "Upload y save se traducen de forma ambigua como cargar y salvar.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.resume",
+    "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+    "translation": "Resumé",
+    "issue": "Resume se convierte en resumé; no reanuda la partida.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.hint",
+    "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+    "translation": "Vis en innsikt",
+    "issue": "Hint se convierte en innsikt, cambia la acción de pedir una pista.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "No. Nettleseren dekoder og behandler det valgte lyd lokalt. UsefulVerse mottar ikke opptak.",
+    "issue": "La respuesta No. queda en inglés y hay errores de concordancia.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.clear",
+    "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+    "translation": "Klar rektangler",
+    "issue": "La acción de borrar se convierte en un adjetivo.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.zoomOut",
+    "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+    "translation": "¡Zoom fuera",
+    "issue": "No expresa correctamente la acción de reducir.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.fields.deleteSave",
+    "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+    "translation": "Eliminar el juego salvado",
+    "issue": "Partida guardada se convierte en juego salvado.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.fields.resume",
+    "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+    "translation": "Resumen",
+    "issue": "Resume es reanudar la partida, no resumen.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "Audio claro",
+    "issue": "Clear es borrar el audio, no describirlo como claro.",
+    "observed_candidate": "legacy",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.zoomIn",
+    "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+    "translation": "El zoom en",
+    "issue": "No expresa correctamente la acción de ampliar.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "No. Denne lette pitch-kontrollen endrer spillingsrate, slik at en lavere pitch spiller saktere og en høyere pitch spiller raskere.",
+    "issue": "La respuesta No. queda en inglés; terminología de velocidad incorrecta.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.load",
+    "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+    "translation": "Ladd lyd lokalt",
+    "issue": "Ladd no es el imperativo bokmål de cargar.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.fields.clear",
+    "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+    "translation": "Rectángulos claros",
+    "issue": "Clear es borrar los rectángulos, no describirlos como claros.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.zoomIn",
+    "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+    "translation": "Zoom i",
+    "issue": "Zoom i no es la acción correcta Zoom inn.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "Klar lyd",
+    "issue": "La acción de borrar se convierte en la descripción de sonido claro.",
+    "observed_candidate": "legacy",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.selectStart",
+    "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+    "translation": "Velg en startkvarter.",
+    "issue": "La casilla se convierte en kvarter.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.faq.2.a",
+    "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+    "translation": "Sólo cuando el DXF declara millímetros. de lo contrario, el espectador utiliza la unidad declarada o etiquetas de mediciones como unidades de dibujo.",
+    "issue": "El visor se convierte en espectador; sintaxis incorrecta en la unidad de medida.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "Nr. Denne lette tonehøydekontrollen endrer avspillingshastigheten, slik at en lavere tonehøyde spilles langsommere og en høyere tonehøyde spilles raskere.",
+    "issue": "La negación No. se convierte en la abreviatura de número Nr.; debe ser Nei.",
+    "observed_candidate": "legacy",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.fields.hint",
+    "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+    "translation": "Mostrar un hito",
+    "issue": "Hint es pista, no hito.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.cancel",
+    "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+    "translation": "Avbestill lasting",
+    "issue": "Avbestill se usa para anular pedidos; la carga se interrumpe con Avbryt.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.clear",
+    "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+    "translation": "Tydelige rektangler",
+    "issue": "La acción de borrar se convierte en un adjetivo.",
+    "observed_candidate": "legacy",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.stop",
+    "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+    "translation": "Stop forhåndsvisning",
+    "issue": "Stop debe ser Stopp en este botón bokmål.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.faq.2.a",
+    "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+    "translation": "Bare når DXF erklærer millimeter. ellers bruker seeren den erklærte enheten eller etiketter målinger som tegningsenheter.",
+    "issue": "Enheter/viseren se convierten en usos incorrectos de seeren/etiketter.",
+    "observed_candidate": "model",
+    "run_id": "39402041888"
+  }
+]
