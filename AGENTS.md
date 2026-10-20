@@ -16,6 +16,8 @@ Prevalecen sobre cualquier plan anterior de `docs/` (incluido `docs/growth600/`)
 
 ## Cómo trabajar
 
+**No se borra ninguna herramienta** (decisión de Pedro, 20-oct-2026). Las casi duplicadas se diferencian; una fusión con 301, solo con su aprobación. Estrategia de crecimiento: `docs/quality/STRATEGY-1M.md`.
+
 Ejecuta el trabajo con **`docs/recovery/RUNBOOK.md`** (lotes, puerta de calidad, disco, verificación) y lleva el
 estado en `docs/quality/progress.csv`. Plan completo: `docs/quality/PLAN.md`. Marca aprobada: `docs/design/planeta-infinito/`.
 

@@ -5,7 +5,7 @@ Versión 1 · 20-oct-2026 · Válido para Codex, ChatGPT, Claude o cualquier age
 `pedronunezwebs-hash/usefulverse` y ejecuta el siguiente lote.»* No hace falta nada más. Este manual dice qué hacer,
 en qué orden, cómo verificarlo, cuándo parar y cómo dejarlo listo para el siguiente agente.
 
-Documentos de referencia, en orden de prioridad: `AGENTS.md` → este RUNBOOK → `docs/recovery/README.md`
+Documentos de referencia, en orden de prioridad: `AGENTS.md` → este RUNBOOK → `docs/quality/STRATEGY-1M.md` (estrategia de crecimiento) → `docs/recovery/README.md`
 (diagnóstico de la caída) → `docs/quality/PLAN.md` (plan de calidad completo) → `docs/design/planeta-infinito/`
 (prototipo de marca aprobado).
 
@@ -124,9 +124,13 @@ lote (PDF con PDF, etc.) para que se enlacen entre sí. Marcar `estado=en-curso`
    del grafo `tools-graph.json`. El archivo pasa de una herramienta a otra si la entrada y la salida coinciden.
 7. **Test del niño de 8 años:** frases ≤ 20 palabras en la interfaz y la intro, sin tecnicismos sin explicar. La tarea
    principal se completa en ≤ 3 pasos sin leer la ayuda.
-8. **Diseño:** usar los componentes del sistema «Planeta Infinito» (cuando la fase de diseño esté hecha; antes, la
+8. **Recurrencia y difusión** (STRATEGY-1M §5):
+   - juegos con reto diario, racha y tarjeta de resultado para compartir;
+   - calculadoras con los valores en la URL, con `canonical` a la página base;
+   - opción «Insertar en tu web» (`<iframe>`) con el enlace de crédito `rel="nofollow"` y solo con la marca.
+9. **Diseño:** usar los componentes del sistema «Planeta Infinito» (cuando la fase de diseño esté hecha; antes, la
    plantilla actual).
-9. **Traducir** a los 37 idiomas con el método de `METODO-TRADUCCION.md` en Codespaces (sección 8), **incluido el
+10. **Traducir** a los 37 idiomas con el método de `METODO-TRADUCCION.md` en Codespaces (sección 8), **incluido el
    noruego `nb`** si faltaba.
 
 **Puerta de calidad** (sección 6). Si no se pasa un punto, se arregla; no se publica a medias.
@@ -229,12 +233,21 @@ Siguiente lote propuesto: …
 
 ---
 
-## 11. Prohibido
+## 11. Crecimiento y KPIs (cada 2 semanas)
+
+Además del bucle de calidad, el agente dedica una parte de cada quincena a la **fase 7** de `docs/quality/STRATEGY-1M.md`
+(autoridad, marca, recurrencia) y actualiza `docs/quality/KPIS.md` con la tabla de KPIs de esa estrategia. Ninguna acción de
+crecimiento publica nada en nombre de Pedro (Product Hunt, Reddit, directorios) sin su aprobación: el agente prepara los
+textos y Pedro publica.
+
+## 12. Prohibido
 
 - Activar (quitar el `noindex`) herramientas que no hayan pasado la puerta, o más de 30 por semana.
 - Meter páginas `noindex` en el sitemap o en los `hreflang`, o bloquearlas en `robots.txt`.
 - Construir las 231 de reserva, o algo con servidor o API de pago, sin aprobación.
-- Cambiar slugs o borrar URLs (las fusiones, con 301).
+- Borrar herramientas, cambiar slugs o borrar URLs. Una fusión, solo con aprobación de Pedro y con 301.
+- Enlaces con palabras clave en los widgets incrustables (siempre `nofollow` y solo la marca); comprar enlaces; PBN.
+- Herramientas que dependan de un servidor de pago para su uso «ilimitado».
 - `noindex` masivo (Pedro lo ha descartado).
 - Envíos masivos a IndexNow, Naver, Yandex o Google.
 - Descargar modelos o hacer builds completos en el Mac de Pedro; dejar codespaces vivos.

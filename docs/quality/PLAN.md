@@ -1,4 +1,6 @@
-# UsefulVerse · Plan de calidad máxima: marca, rediseño y mejora herramienta por herramienta
+# UsefulVerse · Plan de calidad máxima
+
+> Estrategia de crecimiento hacia 1 millón de visitas al día (autoridad, marca, recurrencia, sostenibilidad): **`docs/quality/STRATEGY-1M.md`**. Este plan cubre la calidad; aquel, el crecimiento.: marca, rediseño y mejora herramienta por herramienta
 
 Versión 1 · 20-oct-2026 · Autor: Claude (para Pedro)
 Ámbito: `usefulverse.com` y `tools.usefulverse.com` (700 herramientas públicas hoy, 300 preparadas sin publicar).
@@ -53,6 +55,7 @@ inglés y, después, en cada idioma. Hasta entonces sigue publicada como está. 
 | 3 | **Herramienta por herramienta en inglés:** límites, funcionalidad, rejugabilidad, contenido, metadatos y siguiente paso | Cada herramienta pasa la puerta de calidad (sección 10) |
 | 4 | **Traducción** de cada herramienta terminada a 36 idiomas con el método propio y su puerta de calidad | Cada idioma pasa el piloto y los controles automáticos |
 | 5 | **Medición y ajuste** (CTR, indexación, uso) | Revisión cada 2 semanas; iterar títulos con CTR bajo |
+| 7 | **Crecimiento** (autoridad, marca, recurrencia): ver `docs/quality/STRATEGY-1M.md` | En paralelo desde que termina la fase 0 |
 | 6 | **Publicación de las 300 nuevas**, ya con la plantilla y la puerta de calidad | Recuperación estable 3-4 semanas; máximo +10-15 % de URLs por semana |
 
 Las fases 3 y 4 avanzan en cinta: cuando una herramienta termina en inglés, pasa a traducción y la siguiente entra
@@ -423,9 +426,8 @@ captura o medición), no con «debería funcionar».
 | 11 | **Accesible:** teclado, lector de pantalla y contraste AA | axe-core + prueba con teclado |
 | 12 | **RTL y textos largos** sin cortes (prueba en ar y de) | Captura en 390 px |
 
-Las herramientas que no tengan valor propio frente a otra (duplicadas o casi iguales) se **fusionan** en la mejor
-con una 301. No se maquillan.
-
+Las herramientas casi iguales a otra **no se borran ni se fusionan**: se **diferencian** (caso de uso, contenido e
+intención propios). Solo se fusionan con 301 si Pedro lo aprueba expresamente.
 ---
 
 ## 11. Cómo se ejecuta herramienta por herramienta (proceso de agentes)
@@ -446,7 +448,7 @@ Por cada herramienta:
 
 Reglas:
 - Ninguna herramienta nueva ni URL nueva.
-- No se cambian slugs; si hay una fusión, 301.
+- No se borra ninguna herramienta ni se cambian slugs. Una fusión, solo con aprobación de Pedro y con 301.
 - Un agente no trabaja en el mismo checkout que otro: worktree propio, como ya pasó con Codex.
 - Todo se puede reanudar: un chat nuevo lee `progress.csv` y continúa.
 
@@ -526,6 +528,7 @@ Procedimiento exacto: `docs/recovery/RUNBOOK.md` §7.
 - [ ] Fase 2 · plantilla nueva + páginas de confianza + hubs + fusión del subdominio con 301 + schema + sitemaps por idioma + `llms.txt` + presupuesto de rendimiento en CI
 - [ ] Fase 3 · herramientas en inglés por prioridad, cada una con los 12 puntos
 - [ ] Fase 4 · piloto de traducción aprobado por idioma + traducción de las terminadas a los **37 idiomas** (noruego `nb` incluido: faltan 600 herramientas)
+- [ ] Fase 7 · crecimiento: widgets con nofollow, listados de alternativas, páginas de «alternativa gratuita a X», PWA, juegos diarios para compartir, analítica + KPIS.md (STRATEGY-1M.md)
 - [ ] Fase 5 · medición quincenal + reescritura de títulos con CTR bajo
 - [ ] Herramientas nuevas: subida en `noindex` + activación ≤ 30/semana al pasar la puerta (RUNBOOK §7)
 
