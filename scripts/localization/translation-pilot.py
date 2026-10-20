@@ -175,7 +175,11 @@ def automatic_checks(source, translation, locale, key=None, back_translation=Non
     letters = [char for char in translation if char.isalpha()]
     required_script = SCRIPTS.get(locale)
     script_ratio = None if not required_script or not letters else sum(required_script in unicodedata.name(char, "") for char in letters) / len(letters)
+    unit_label = bool(key and key.startswith("dxf-viewer.fields.units."))
+    unit_symbols = lambda text: Counter(re.findall(r"\(([^()]*)\)", text))
     return {
+        "unit_symbols_identical": None if not unit_label else unit_symbols(source) == unit_symbols(translation),
+        "back_unit_symbols_identical": None if not unit_label or back_translation is None else unit_symbols(source) == unit_symbols(back_translation),
         "nonempty": bool(translation.strip()),
         "protected_tokens_identical": queue.signature(source) == queue.signature(translation),
         "technical_tokens_identical": Counter(token.casefold() for token in TECHNICAL_TOKEN.findall(source)) == Counter(token.casefold() for token in TECHNICAL_TOKEN.findall(translation)),
@@ -307,7 +311,8 @@ def summarize(paths):
                 group["forward_segment_evidence"] += int(row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not segment_evidence_valid(row.get("forward_segments"), row["model_input"], row["raw_translation"]))
                 group["back_segment_evidence"] += int(not segment_evidence_valid(row.get("back_segments"), row["translation"], row["back_translation"]))
             checks = automatic_checks(row["source"], row["translation"], row["locale"], row["key"], row["back_translation"])
-            for flag, fails in {"empty": not checks["nonempty"], "protected_tokens": not checks["protected_tokens_identical"],
+            for flag, fails in {"unit_symbols": checks["unit_symbols_identical"] is False,
+                "back_unit_symbols": checks["back_unit_symbols_identical"] is False, "empty": not checks["nonempty"], "protected_tokens": not checks["protected_tokens_identical"],
                 "technical_tokens": not checks["technical_tokens_identical"], "english_unchanged": checks["untranslated_source"], "length_ratio": not 0.5 <= checks["length_ratio"] <= 2.5,
                 "wrong_script": checks["expected_script_ratio"] is not None and checks["expected_script_ratio"] < 0.6,
                 "known_semantic_errors": bool(checks["known_semantic_errors"]), "marker_restore": not row["marker_restore_ok"],

@@ -306,6 +306,16 @@ class TranslationPilotTest(unittest.TestCase):
         self.assertTrue(checks['technical_tokens_identical'])
         self.assertFalse(checks['back_technical_tokens_identical'])
 
+    def test_unit_symbols_survive_forward_and_back_translation_in_unit_labels(self):
+        checks = pilot.automatic_checks('Inches (in)', 'Pulgadas (pulgadas)', 'es', 'dxf-viewer.fields.units.1', 'Inches (inches)')
+        self.assertFalse(checks['unit_symbols_identical'])
+        self.assertFalse(checks['back_unit_symbols_identical'])
+        checks = pilot.automatic_checks('Kilometres (km)', 'Kilometer (km)', 'nb-NO', 'dxf-viewer.fields.units.7', 'Kilometers (miles)')
+        self.assertTrue(checks['unit_symbols_identical'])
+        self.assertFalse(checks['back_unit_symbols_identical'])
+        ordinary = pilot.automatic_checks('Audio stays in this browser.', 'El audio permanece en este navegador.', 'es', 'voice-changer.fields.privacy')
+        self.assertIsNone(ordinary['unit_symbols_identical'], 'English preposition in is not a unit token')
+
     def test_missing_sentence_spacing_is_not_misreported_as_a_file_extension_change(self):
         checks = pilot.automatic_checks('Audio decoded. Try again.', 'Audio decodificado.Prueba otra vez.', 'es')
         self.assertTrue(checks['technical_tokens_identical'])
