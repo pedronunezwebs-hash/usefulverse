@@ -4,7 +4,7 @@
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
 **Última actualización:** 2026-10-20 · **por:** Codex
-**Turno actual (candado):** LIBRE
+**Turno actual (candado):** EN CURSO · Codex · 2026-10-20 16:23 +07 · Paso A: piloto de traducción reanudable en Actions, rama feat/new-tools-batch-1
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
