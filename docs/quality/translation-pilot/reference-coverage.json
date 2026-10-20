@@ -326,12 +326,12 @@
   "total_records_all_policies": 6465,
   "semantic_regressions": 415,
   "contextual_reference_gate": {
-    "es": "passed-only-references",
-    "nb-NO": "passed-only-references-2-minor-per-40"
+    "es": "passed-only-references-360/360",
+    "nb-NO": "passed-only-references-359/360-1-minor"
   },
   "full_tool_gate": {
-    "es": "rejected",
-    "nb-NO": "rejected"
+    "es": "v6-computing; v4-rejected",
+    "nb-NO": "v6-computing; v4-rejected"
   },
   "contextual_policies_reviewed": [
     "context-v2",
@@ -339,5 +339,6 @@
     "context-v4",
     "context-v5",
     "context-v6"
-  ]
+  ],
+  "contextual_reference_gate_policy": "context-v6"
 }

@@ -226,3 +226,7 @@ Dos fixtures nuevos elevan regresiones a **412**. Se conservan las políticas/ch
 privacidad: **23 entradas controladas, 71 destinos de memoria**. El resto del corpus y la rúbrica se mantienen.
 [Referencias v6 39454358926](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39454358926), código `7212c33`;
 se decide el completo únicamente tras leer el nuevo resultado. No hay idiomas aprobados.
+
+La revisión de PLAN §9 exige muestra doble en ha/ am/ te/ gu/ ta/ mr/ sw: **80 cadenas**, no solo las 40 referencias.
+Antes de aprobar esos destinos se debe ejecutar el corpus completo y fijar la muestra ampliada, además de los controles
+automáticos. Los checkpoints baseline de 40 no cierran ese gate; no hay ninguno aprobado.
