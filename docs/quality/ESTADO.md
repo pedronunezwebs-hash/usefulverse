@@ -4,7 +4,7 @@
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
 **Última actualización:** 2026-10-20 · **por:** Claude
-**Turno actual (candado):** LIBRE  ← cambia a `EN CURSO · <agente> · <fecha y hora> · <qué>` al empezar y a `LIBRE` al terminar.
+**Turno actual (candado):** EN CURSO · Codex · 2026-10-20 15:55 +07 · RUNBOOK §7 Paso A, integración segura de las 300 en feat/new-tools-batch-1.
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
