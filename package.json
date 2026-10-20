@@ -20,7 +20,7 @@
     "seo:yandex": "node scripts/yandex-webmaster.mjs"
   },
   "devDependencies": {
-    "dompurify": "3.4.16",
+    "dompurify": "3.4.17",
     "esbuild": "0.28.2",
     "fflate": "0.8.3",
     "heic2any": "0.0.4",
