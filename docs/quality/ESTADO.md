@@ -78,7 +78,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 - [ ] OCR → PDF con texto seleccionable · escanear con perspectiva
 - [ ] Editar PDF con objetos nativos · comparación visual
 - [ ] Mejorar la fidelidad de Office (tablas; viabilidad de LibreOffice en WASM)
-- [ ] Resumir y traducir PDF con IA en el navegador (licencia comercial, sin servidor)
+- [ ] Resumir y traducir PDF con IA en el dispositivo: diseño en `docs/quality/PDF-IA.md` (escalera Chrome IA → Transformers.js → modo ligero)
 
 ### Herramientas nuevas (RUNBOOK §7)
 - [ ] Paso A: las 300 subidas con `noindex` (fuera del sitemap y de los `hreflang`) · subidas: **0 / 300**
@@ -100,6 +100,8 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 | Fecha | Agente | Qué | PR / commit | Verificado en producción |
 |---|---|---|---|---|
+| 2026-10-20 | Claude | Auditoría de las 700 herramientas (`AUDITORIA-CATALOGO.md` + `auditoria/`) y diseño de PDF con IA (`PDF-IA.md`) | `04099ce` | Web sin cambios |
+| 2026-10-20 | Claude | Comparación con iLovePDF (`PDF-VS-ILOVEPDF.md`) | `ae9a27f` | Web sin cambios |
 | 2026-10-20 | Claude | Repo público con seguridad (ver checklist) | `5af802b` + ajustes en GitHub y Cloudflare | Web sin cambios |
 | 2026-10-20 | Claude | Documentación: diagnóstico, plan, RUNBOOK, estrategia, ESTADO, mapa del repo y copia de seguridad de las 300 | `d938d8b`…, `backup/codex-300-tools-20261020` | Sin cambios en la web |
 

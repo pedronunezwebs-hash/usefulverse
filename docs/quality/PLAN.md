@@ -1,6 +1,8 @@
 # UsefulVerse · Plan de calidad máxima
 
-> Estrategia de crecimiento hacia 1 millón de visitas al día (autoridad, marca, recurrencia, sostenibilidad): **`docs/quality/STRATEGY-1M.md`**. Este plan cubre la calidad; aquel, el crecimiento.: marca, rediseño y mejora herramienta por herramienta
+> Estrategia de crecimiento hacia 1 millón de visitas al día (autoridad, marca, recurrencia, sostenibilidad): **`docs/quality/STRATEGY-1M.md`**. Este plan cubre la calidad; aquel, el crecimiento.
+> **Auditoría de las 700 herramientas** (errores confirmados, límites, huecos por categoría): `docs/quality/AUDITORIA-CATALOGO.md`.
+> Niveles de esfuerzo, traducción, piloto automático y anuncios: `docs/quality/REVISION-FINAL.md`. PDF: `PDF-VS-ILOVEPDF.md` y `PDF-IA.md`.: marca, rediseño y mejora herramienta por herramienta
 
 Versión 1 · 20-oct-2026 · Autor: Claude (para Pedro)
 Ámbito: `usefulverse.com` y `tools.usefulverse.com` (700 herramientas públicas hoy, 300 preparadas sin publicar).
