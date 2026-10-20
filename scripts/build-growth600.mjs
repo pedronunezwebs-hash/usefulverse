@@ -69,6 +69,7 @@ const noindexDraftRelease = process.env.GROWTH600_NOINDEX_DRAFT_RELEASE === '1';
 const previewOnly = noindexDraftRelease && process.env.GROWTH600_PREVIEW_ONLY === '1';
 const releasePlan = growthReleasePlan(growthPilotTools, { previewOnly });
 const releaseTools = releasePlan.tools;
+const releaseToolIds = new Set(releaseTools.map(({ id }) => id));
 assertRuleSnapshotsCurrent(releaseTools);
 const catalogToolIds = new Set(growthPilotTools.map(({ id }) => id));
 const missingCandidateImplementations = [...candidateToolIds].filter((toolId) => !catalogToolIds.has(toolId));
@@ -395,7 +396,7 @@ const result = await buildGrowthStaticSite({
   extraToolLocales,
   copyByLocale,
   controllerBundles: await bundleGrowthControllers({ tools: releaseTools }),
-  toolStyles,
+  toolStyles: Object.fromEntries(Object.entries(toolStyles).filter(([id]) => releaseToolIds.has(id))),
   workerBundles: { 'image-upscaler-worker': workerBuild.outputFiles[0].text, 'pdf-imposition-worker': pdfImpositionWorkerBuild.outputFiles[0].text, 'photo-background-worker': photoBackgroundWorkerBuild.outputFiles[0].text },
   // ONNX Runtime's pinned static browser bundle uses Function internally for
   // its own dispatch; no user-controlled source reaches either worker.

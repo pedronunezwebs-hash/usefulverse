@@ -4,7 +4,7 @@ import { mkdtemp, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { growthPilotTools } from './catalog.mjs';
-import { localeEntries } from '../locales.mjs';
+import { localeEntries, localePath } from '../locales.mjs';
 import { tools as currentTools } from '../catalog.mjs';
 import { renderGrowthToolPage } from './render.mjs';
 import { buildGrowthStaticSite } from './build.mjs';
@@ -32,9 +32,11 @@ test('catalog noindex cannot be disabled by renderer defaults or an explicit fal
       // SEO contract only: this does not certify translated wording or the tool UI.
       const html = renderGrowthToolPage({ tool, locale, localeEntries: entries,
         copy: { ...english._home, ...pendingCopies.en[tool.id] },
-        origin: 'https://tools.usefulverse.com', formHtml: '<form></form>', noindex: false });
+        origin: 'https://tools.usefulverse.com', formHtml: '<form></form>', noindex: false,
+        pathForLocale: (key, id = '') => key === 'nb' ? `/nb/${id ? `tools/${id}/` : ''}` : localePath(key, id) });
       assert.match(html, /<meta name="robots" content="noindex,\s*follow">/u, `${locale.key}/${tool.id}`);
       assert.doesNotMatch(html, /rel="alternate"[^>]*hreflang=/u, `${locale.key}/${tool.id}`);
+      if (locale.key === 'nb') assert.ok(html.includes(`rel="canonical" href="https://tools.usefulverse.com/nb/tools/${tool.id}/"`));
     }
   }
 });
