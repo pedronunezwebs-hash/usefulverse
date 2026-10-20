@@ -114,7 +114,7 @@ class TranslationPilotTest(unittest.TestCase):
         records = {}
         for path in (directory / 'checkpoints').rglob('*.jsonl'):
             for line in path.read_text().splitlines():
-                row = json.loads(line); records[row['record_id']] = row
+                row = json.loads(line); pilot.validate_record(row); records[row['record_id']] = row
         known_counts = {'review-es-nb.json': 240, 'review-core-six.json': 402, 'review-madlad-de-fr.json': 80, 'review-context-v2-m2m100.json': 80, 'review-context-v2-madlad.json': 80, 'review-context-v3-madlad.json': 80}
         for path in sorted(directory.glob('review*.json')):
             review = json.loads(path.read_text())
