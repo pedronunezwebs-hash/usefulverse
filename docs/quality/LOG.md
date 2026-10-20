@@ -2,6 +2,25 @@
 
 Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 
+## 2026-10-20 · Codex · Paso A: referencias corregidas y piloto completo es/nb rechazado
+- [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador. `2c75dc2`…`dfe55ae`.
+  Inglés controlado por sentido, tres variantes separadas y siete entradas de memoria exacta revisadas por el agente.
+- Referencias v4: es 360/360 y nb 358/360; cero errores en botones/cifras/negaciones, dos leves/40 en nb.
+  Después, [piloto completo 39437391534](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39437391534):
+  214 cadenas × 2 idiomas × (sistema híbrido + actual) = **856 registros**; reutiliza 160 y añade 696.
+- **6.145 registros** totales; **1.378 evaluaciones** del agente (pueden repetir texto entre variantes), **410 regresiones**.
+  **0 idiomas aprobados**: el completo revela nuevos Clear/clean incorrectos, omisiones de No/privacidad/límites,
+  versiones y símbolos de unidad alterados. No ampliar esas combinaciones hasta corregir en una política nueva.
+- Memoria con origen/digest; checkpoints inmutables por política; control de símbolos de unidad y tokens técnicos en la vuelta;
+  reanudación real sin modelo y rechazo de suplantación de identidad. MADLAD baseline de seis destinos más revisado.
+- [CI final 39440552803](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39440552803), `dfe55ae`:
+  **3.045 Node**, 33 Python pasan + 2 de dependencias reservados al job de modelos; check, idiomas, hub y preview verdes.
+  Dependencias reales probadas en Actions. Actionlint válido; Gitleaks sin secretos en los diffs.
+- Producción GET: **25.625 → 25.625 URLs**, tres rutas falsas del hub aún 200; sin merge del código a main, deploy,
+  activaciones, 301 ni envíos a buscadores. Las siete capas y la puerta de herramientas siguen pendientes.
+- Pedro: **0 pruebas nuevas**, P-001–P-008 pendientes, **0 FALLA**. Relevo y limpieza:
+  [informe](lotes/2026-10-20-piloto-contexto.md); datos y rúbricas en la rama del PR.
+
 ## 2026-10-20 · Codex · Paso A: referencias de traducción computadas; 0 idiomas aprobados
 - [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), rama `feat/new-tools-batch-1`; sin merge/publicación.
 - Corpus real de tres herramientas, 40 referencias, 37 idiomas. Tanda es/nb de ambos motores: 320 registros.

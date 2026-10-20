@@ -178,3 +178,22 @@ Los tokens técnicos se comprueban también en la vuelta: una ida correcta no oc
 Las 40 referencias MADLAD baseline en de/fr/pt-BR/ja/hi/ar están ahora revisadas por el agente, sin afirmar revisión
 nativa. Sus rúbricas se conservan ligadas a los registros exactos; todas esas combinaciones necesitan correcciones.
 Las cifras de evaluaciones pueden repetir texto entre candidatos y variantes: no llamarlas frases únicas nuevas.
+
+### Resultado del piloto completo v4 es/nb
+
+[Run 39437391534](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39437391534) terminado:
+**856 registros** (214 unidades × 2 idiomas × sistema híbrido/actual), de los que 160 se reutilizaron y 696 son nuevos.
+975,22 s, incluida conversión 74,97 s; pico de inferencia 4.065.256 KiB. **Ambos idiomas rechazados** tras la muestra
+ampliada fijada antes de recoger resultados (`full-sample-plan.json`): 68 claves del sistema híbrido y 20 actuales por
+idioma, 176 evaluaciones nuevas, además de las referencias. Hay Clear/clean incorrectos, frases finales omitidas,
+versiones y símbolos de unidad alterados. No confundir computar las 214 cadenas con aprobarlas.
+
+Total guardado: **6.145 registros**, **1.378 evaluaciones** que pueden repetir texto entre variantes y **410 salidas
+problemáticas registradas como regresiones**. `automatic-summary.json` se recalcula para todas las políticas; las
+alertas de longitud/igualdad pueden necesitar juicio técnico, pero los fallos de privacidad/cifras/botones impiden aprobar.
+El control de unidades solo aplica a sus etiquetas: no interpreta la preposición inglesa in como símbolo de pulgadas.
+
+Siguiente: **v5 nueva**, manteniendo v2/v3/v4 y sus checkpoints. Corregir familias completas y FAQ duplicadas por sentido;
+conservar todas las frases de cada párrafo; tratar versiones y símbolos como datos. Repetir primero referencias y luego
+el completo es/nb con la misma muestra y controles. Después los otros 28 destinos pendientes de revisión.
+**0 idiomas aprobados, 0 paquetes de las 300 publicados por este piloto.** Detalle de fallos: `review-context-v4-full.json`.

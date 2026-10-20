@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-20T10:53:55.786487+00:00",
+  "at_utc": "2026-10-20T14:40:25.003496+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 642,
+  "agent_reviewed_translations": 1378,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -314,5 +314,23 @@
       "engine": "m2m100",
       "locale": "te"
     }
-  ]
+  ],
+  "agent_reviewed_evaluations": 1378,
+  "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
+  "full_tool_computation_locales": [
+    "es",
+    "nb-NO"
+  ],
+  "full_tool_computation_policy": "context-v4",
+  "full_tool_pilot_approved_locales": [],
+  "total_records_all_policies": 6145,
+  "semantic_regressions": 410,
+  "contextual_reference_gate": {
+    "es": "passed-only-references",
+    "nb-NO": "passed-only-references-2-minor-per-40"
+  },
+  "full_tool_gate": {
+    "es": "rejected",
+    "nb-NO": "rejected"
+  }
 }

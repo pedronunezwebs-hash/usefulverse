@@ -3112,5 +3112,581 @@
     "issue": "«ficheiro» y «clips» no son la terminología brasileña archivo/clipes.",
     "observed_candidate": "madlad",
     "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.licenseNotice",
+    "source_hash": "1a3dae13c1345946548b51490ab16830f3e311fc0f8a30857ce509de14d7288d",
+    "translation": "Este visor integra dxf-parser 1.1.2 y loglevel 1.9.2, ambos con licencia MIT. El parser se ejecuta localmente; aquí están los enlaces al código fuente y a las licencias.",
+    "issue": "Parser sin explicar en contenido para usuarios.",
+    "observed_candidate": "legacy/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.description",
+    "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+    "translation": "Cambie el tono, dé forma a los efectos de radio o de voz profunda, obtenga una vista previa del eco y exporte audio procesado localmente. Gratis, privado y sin carga.",
+    "issue": "«sin carga» no expresa no subir audio; la vuelta lo interpreta como sin cobro.",
+    "observed_candidate": "legacy/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.example",
+    "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+    "translation": "Pruebe una grabación de voz y compare la original con la radio o el preajuste de tono más bajo. Los cambios de tono también cambian la velocidad de reproducción; Esto no es clonación de voz ni corrección de tono con calidad de estudio.",
+    "issue": "Mayúscula tras punto y coma; redacción a pulir.",
+    "observed_candidate": "legacy/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.clean",
+    "source_hash": "5137c8760c9411860cdc0eccf0e2e3ae66cc0379c45c89104b477351d3cce57f",
+    "translation": "Limpiar",
+    "issue": "Limpiar es una acción; el control selecciona el preset neutro, no limpia audio.",
+    "observed_candidate": "legacy/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.description",
+    "source_hash": "44507baf26966f5e70c69064513d6977453186776a56683e19936f8edf5d01a3",
+    "translation": "Abre dibujos ASCII DXF localmente, visualiza líneas, círculos, arcos y polilíneas 2D compatibles, cambia capas, mide distancias y exporta la geometría compatible como SVG o PNG.",
+    "issue": "«cambia capas» no precisa activar/desactivar su visibilidad.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.details",
+    "source_hash": "19a9af223175a6ad8539b143a6070ff1587c5504b4f8c294231c68d022d50ef6",
+    "translation": "Un worker local analiza el archivo DXF ASCII. No se ejecutan ni se recuperan scripts, referencias externas, imágenes, fuentes ni recursos de red en el archivo.Este visor no abre archivos DWG ni DXF binarios.",
+    "issue": "Worker sin explicar y falta espacio entre frases.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.example",
+    "source_hash": "ce884c6216576feda9fdd1b0a2604b98788c5f8f014b2f391314b12b8951afe3",
+    "translation": "Una línea de (0, 0) a (10, 0) mide 10 unidades de dibujo.El visor lee el código de unidad DXF cuando está presente; cuando está ausente, las medidas se etiquetan como unidades de dibujo.",
+    "issue": "Falta espacio entre «dibujo.El visor». La ida conserva coordenadas y distancia.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.faq.1.a",
+    "source_hash": "2e62ffc986c2e02d3e675c0d3748abcdcd6f331804dd987527903e3b816761c4",
+    "translation": "El visor dibuja solo los tipos de entidades que se enumeran en su sección de contenido compatible.Otras entidades se informan por tipo y cuenta; no se aproximan silenciosamente.",
+    "issue": "«cuenta» es un calco para recuento; la explicación de aproximación resulta poco natural.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.clear",
+    "source_hash": "b802d7be157572bc06f40858d9a1209da3ad1440067be6ef2c9e330a28064f79",
+    "translation": "Dibujo claro",
+    "issue": "«Dibujo claro» describe un dibujo claro; debe eliminar el dibujo cargado.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.clearMeasure",
+    "source_hash": "477e2f83ccd0d051eb075fd528e1c62b955767ea6743ce8e2f34273bb9b7a430",
+    "translation": "Una medición clara",
+    "issue": "«Una medición clara» describe claridad; debe borrar la medida.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.licenseNotice",
+    "source_hash": "1a3dae13c1345946548b51490ab16830f3e311fc0f8a30857ce509de14d7288d",
+    "translation": "Este visor incluye dxf-parser 1.1.2 y loglevel 1.9.2 bajo la licencia MIT.El analizador se ejecuta en un worker local; los enlaces a las fuentes y la licencia se proporcionan aquí.",
+    "issue": "Falta espacio después de MIT y quedan parser/worker en inglés técnico.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.units.0",
+    "source_hash": "3e4fe3522c14354a0bb5dba08a790e5aef1e686637efb6e5da44cda6557d578c",
+    "translation": "Unitless",
+    "issue": "Unitless queda sin traducir; no es un símbolo de unidad.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.units.1",
+    "source_hash": "f831c59e09265ffa74465d4c46d8ded148602d57a0cb8e11bd4039995e9ae4c6",
+    "translation": "Pulgadas (pulgadas)",
+    "issue": "Traduce el símbolo (in) a (pulgadas); debe conservar el símbolo.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.units.15",
+    "source_hash": "063fc974f9f9dedd3ac0c56b669ca14a74a1eb707447cb5497fb513acbad6e93",
+    "translation": "Decametres",
+    "issue": "Decametres queda en inglés; falta decámetros.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.units.4",
+    "source_hash": "632e882fc1bcc9bc9a0f665ff0cf0ae1e148d5ecc17bc93baac9ae9d2a20a35e",
+    "translation": "Milímetros (milímetros)",
+    "issue": "Traduce el símbolo (mm) a (milímetros); debe conservar el símbolo.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.intro",
+    "source_hash": "99fbd66cd6a5eb3cd27bb3a678221d4d1d58d7bfb129bd957ae447847ccf88cc",
+    "translation": "Abre un dibujo ASCII DXF en este dispositivo, realiza una panorámica y un zoom, muestra u oculta capas, mide una distancia y exporta la geometría que admite este visor. El archivo original no se carga.",
+    "issue": "«no se carga» no expresa de forma inequívoca que no se sube el archivo.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.limits",
+    "source_hash": "783499d44597e45c05459c343fa5c7306eef0bfd3407a5b1c5badb793bf136ce",
+    "translation": "Vista previa y exportación compatibles: LINE, CIRCLE, ARC y LWPOLYLINE/POLYLINE recta en el plano XY. Las curvas abultadas, el texto, los bloques, las dimensiones, las splines, las entidades 3D y otros tipos se enumeran como no compatibles y no se incluyen en las medidas ni en las exportaciones.",
+    "issue": "Omite toda la última frase: máximo 10 MB y 200,000 registros. No hay truncamiento mecánico marcado.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.privacy",
+    "source_hash": "83d9effeb10db2cfc8b9ec4a67f2cac9e9ad08a27e76b5ab9fd4ce3ae5c17ab1",
+    "translation": "El archivo se lee en este navegador y no se carga.Solo se dibujan líneas 2D básicas, círculos, arcos y polilíneas de segmentos rectos; las entidades no compatibles se enumeran y se excluyen de las mediciones y la exportación.",
+    "issue": "Cargar no equivale inequívocamente a subir; falta espacio entre frases.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.fields.dragHelp",
+    "source_hash": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+    "translation": "Haz clic en dos esquinas opuestas o arrastra para dibujar un rectángulo.Teclado:Tabulación hasta un cuadrado y, a continuación, Intro para seleccionarlo.",
+    "issue": "Faltan espacios y verbo claro en la instrucción Tabulación hasta un cuadrado.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.fields.faq.3.a",
+    "source_hash": "b4a3cd8df4c7c1248e8bcaeff995fcf41138a20df48de0f20ec6b259788dd2a3",
+    "translation": "El progreso solo se almacena en este navegador a menos que borres los datos del sitio.",
+    "issue": "Omite la respuesta No inicial, aunque conserva solo este navegador y la excepción de borrar datos.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.limits",
+    "source_hash": "553fd69edcd34b8a5279837687322bd6fb5734cb75fe06a4837f8fc424a1f323",
+    "translation": "Los rompecabezas se crean en tu navegador. Una cuadrícula más grande puede tardar un momento en un dispositivo más lento.",
+    "issue": "Omite la última frase que niega necesitar cuenta o subir archivo.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.useTool",
+    "source_hash": "ad92418e211ebbde381b62bbb7e699a7a6f1d7db47b2c1cb9a1e5b6fc1fe270e",
+    "translation": "Juega el rompecabezas",
+    "issue": "Preferible «Juega al rompecabezas»; construcción poco natural.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.description",
+    "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+    "translation": "Cambia el tono, da forma a la radio o a los efectos de voz profunda, previsualiza el eco y exporta el audio procesado localmente.",
+    "issue": "Omite la última frase: gratis, privado y sin subir archivos; calco «da forma a la radio». ",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.details",
+    "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+    "translation": "Su navegador decodifica el audio seleccionado, aplica los filtros de Web Audio, la ganancia, el pitch-rate y el eco opcional localmente, y luego procesa un archivo WAV para su descarga.",
+    "issue": "Omite por completo «No audio is sent to a server». ",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.example",
+    "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+    "translation": "Pruebe una grabación de voz y compare el original con la radio o el ajuste preestablecido de tono más bajo Los cambios de tono también cambian la velocidad de reproducción; esto no es clonación de voz ni corrección de tono de estudio.",
+    "issue": "Pierde separación entre preset y la frase sobre cambios de tono.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.faq.1.a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "Este control de tono ligero cambia la velocidad de reproducción, por lo que un tono más bajo se reproduce más lento y un tono más alto se reproduce más rápido.",
+    "issue": "Omite el No inicial explícito; esta clave duplicada no recibió el inglés controlado de fields.faq2a.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.bright",
+    "source_hash": "f1712d5a128deefcad0984658d98808d812f72fe59d19ddced41919cd24b4859",
+    "translation": "Una voz brillante",
+    "issue": "Artículo innecesario en etiqueta de preset; requiere glosario coherente de timbre.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.clean",
+    "source_hash": "5137c8760c9411860cdc0eccf0e2e3ae66cc0379c45c89104b477351d3cce57f",
+    "translation": "Limpio",
+    "issue": "«Limpio» no aclara que es preset neutro; verificar sentido en el código, no convertirlo en acción de limpieza.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.deep",
+    "source_hash": "17389d4e8de33a504da6a09acec749666c5d80564efd2b73b1105b15b995ca17",
+    "translation": "La voz profunda",
+    "issue": "Etiqueta con artículo innecesario; voz grave sería más natural.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.echo",
+    "source_hash": "8335e4c92c40556ab31f1bc57faab0a2563d89f720a8e6740fee674ea79df3c9",
+    "translation": "Echo",
+    "issue": "Echo queda en inglés; debe ser eco.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.fileHelp",
+    "source_hash": "9a003593e6b751602ed805fc0816716a5c552b558c289d22e7dcf733186d4dcd",
+    "translation": "Usa un formato que tu navegador pueda decodificar.Máximo 25 MB y 30 segundos.",
+    "issue": "Falta espacio antes de Máximo.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.limits",
+    "source_hash": "72eaa6afc178fd8d0e8f7da5c73ba70e6a5473c00316ce0df573d3b309416522",
+    "translation": "Esta herramienta ligera está diseñada para clips cortos, no para canciones de larga duración. El tono se cambia ajustando la velocidad de reproducción, por lo que la duración del clip y el tono de la voz cambian juntos.Los efectos no pueden crear una nueva identidad natural, separar voces o garantizar el mismo resultado en cada navegador.",
+    "issue": "Falta espacio entre frases.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.faq.0.a",
+    "source_hash": "1da9eab3e79e5ba1c578b590065014537d077420ad02d77072da8a8f5d7355b5",
+    "translation": "Shikaku er et tallpuslespill. Tegn rektangler rundt ledetrådene. Hvert rektangel har området vist med ledetråden, og alle rutenettrutene må brukes én gang.",
+    "issue": "Området no expresa con precisión el área numérica del rectángulo.",
+    "observed_candidate": "legacy/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.faq.3.a",
+    "source_hash": "b4a3cd8df4c7c1248e8bcaeff995fcf41138a20df48de0f20ec6b259788dd2a3",
+    "translation": "Nr. Fremdriften lagres kun i denne nettleseren med mindre du sletter nettstedsdataene.",
+    "issue": "Traduce No como Nr. (número), no Nei.",
+    "observed_candidate": "legacy/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.statusInvalid",
+    "source_hash": "b0615c877a8c4951a33e24c9c757535594838f8c18f5501b8ab4865d8e4f9224",
+    "translation": "Det rektangelet samsvarer ikke med en anelse eller overlapper en annen.",
+    "issue": "En anelse es una sospecha/idea vaga; no una pista de este juego.",
+    "observed_candidate": "legacy/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.example",
+    "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+    "translation": "Prøv et stemmeopptak og sammenlign originalen med radioen eller forhåndsinnstillingen for lavere tonehøyde. Tonehøydeendringer endrer også avspillingshastigheten; dette er ikke stemmekloning eller tonehøydekorreksjon i studiograd.",
+    "issue": "Studiograd no expresa calidad de estudio de forma natural.",
+    "observed_candidate": "legacy/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.clean",
+    "source_hash": "5137c8760c9411860cdc0eccf0e2e3ae66cc0379c45c89104b477351d3cce57f",
+    "translation": "Rengjør",
+    "issue": "Rengjør es limpiar, no seleccionar preset neutro.",
+    "observed_candidate": "legacy/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.faq3a",
+    "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+    "translation": "Nr. Den bruker enkle lydeffekter. Den kloner ikke en person, isolerer ikke vokal eller gjør en stemme til en annen virkelig person.",
+    "issue": "Traduce No como Nr. (número), no Nei.",
+    "observed_candidate": "legacy/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.description",
+    "source_hash": "44507baf26966f5e70c69064513d6977453186776a56683e19936f8edf5d01a3",
+    "translation": "Åpne ASCII DXF-tegninger lokalt.Vis støttede 2D-linjer, sirkler, buer og polylinjer, veksle lag, måle avstander og eksportere den støttede geometrien som SVG eller PNG.",
+    "issue": "Falta espacio tras la primera frase y se mezclan formas de los verbos de interfaz.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.details",
+    "source_hash": "19a9af223175a6ad8539b143a6070ff1587c5504b4f8c294231c68d022d50ef6",
+    "translation": "En lokal arbeidsprosess tolker ASCII DXF. Ingen skript, eksterne referanser, bilder, skrifttyper eller nettverksressurser i fila blir kjørt eller hentet. Denne visningsprogrammet åpner ikke DWG eller binær DXF.",
+    "issue": "Concordancia «Denne visningsprogrammet» incorrecta.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.example",
+    "source_hash": "ce884c6216576feda9fdd1b0a2604b98788c5f8f014b2f391314b12b8951afe3",
+    "translation": "En linje fra (0, 0) til (10, 0) måler 10 tegneenheter. Viseren leser DXF- enhetskoden når den er til stede. Når den ikke er til stede, blir målingene merket som tegneenheter.",
+    "issue": "Espaciado DXF- enhetskoden defectuoso. La ida conserva coordenadas; la vuelta cambia su notación.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.faq.1.a",
+    "source_hash": "2e62ffc986c2e02d3e675c0d3748abcdcd6f331804dd987527903e3b816761c4",
+    "translation": "Viseren tegner bare de enhetstypene som er oppført i støttet-innhold-delen. Andre enheter rapporteres etter type og antall. De blir ikke tilnærmet stille.",
+    "issue": "«De blir ikke tilnærmet stille» no explica omitir entidades sin aproximaciones silenciosas; confunde entidad con unidad/dispositivo.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.clearMeasure",
+    "source_hash": "477e2f83ccd0d051eb075fd528e1c62b955767ea6743ce8e2f34273bb9b7a430",
+    "translation": "Tydelig måling",
+    "issue": "«Tydelig måling» describe una medida clara; no la elimina.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.licenseNotice",
+    "source_hash": "1a3dae13c1345946548b51490ab16830f3e311fc0f8a30857ce509de14d7288d",
+    "translation": "Denne visningsprogrammet inneholder dxf-parser 1. 1. 2 og loglevel 1. 9. 2 under MIT-lisensen. Parseren kjører i en lokal arbeidsmaskin. Kilde- og lisenslenker finnes her.",
+    "issue": "Cambia versiones 1.1.2 y 1.9.2 a «1. 1. 2» y «1. 9. 2»; además cambia worker por máquina local.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.noLayers",
+    "source_hash": "4795658968bdf67123be6383f83a84ab808cd23c32faf10013c3b6f48f99b0cb",
+    "translation": "Ingen lag er deklarert; enheter bruker sine egne lagnavn.",
+    "issue": "El término enheter resulta ambiguo entre entidades y unidades; requiere glosario DXF.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.units.0",
+    "source_hash": "3e4fe3522c14354a0bb5dba08a790e5aef1e686637efb6e5da44cda6557d578c",
+    "translation": "Unitless",
+    "issue": "Unitless queda sin traducir.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.units.11",
+    "source_hash": "867b57fbc069cc8d63a1b5ee2594be81443a7c2c0f795e98af5552bfc1ba137b",
+    "translation": "Ångstrømmer",
+    "issue": "Preferir el lema técnico ångstrøm documentado por NAOB; la vuelta Steam streams es defectuosa y no basta por sí sola para invalidar la ida.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.units.14",
+    "source_hash": "a21e7a96e11052ce03f5a6387651c9f045350957b27fb5bf6362f44d8d4f93a1",
+    "translation": "Decimeter",
+    "issue": "Decimeter conserva grafía inglesa; el diccionario de bokmål lista desimeter.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.units.20",
+    "source_hash": "9f3d14423dd78bc76a689f4f8183ed9b66d635cb8cc1e0648c29e06ad1a07c96",
+    "translation": "parsecs",
+    "issue": "Plural inglés parsecs; pulir el nombre técnico sin cambiar la unidad.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.units.9",
+    "source_hash": "515e9e806a6a27bef6815326ea66ba2dc9d57236e1c876ce7f20523135524076",
+    "translation": "Milsunit-format",
+    "issue": "Inventa «Milsunit-format» al traducir Mils.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.intro",
+    "source_hash": "99fbd66cd6a5eb3cd27bb3a678221d4d1d58d7bfb129bd957ae447847ccf88cc",
+    "translation": "Åpne en ASCII DXF- tegning på denne enheten. Panorer og zoom, vis eller skjul lag, mål en avstand, og eksporter geometrien som dette programmet støtter. Den opprinnelige fila blir ikke lastet opp.",
+    "issue": "Espacio incorrecto en DXF- tegning.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.limits",
+    "source_hash": "783499d44597e45c05459c343fa5c7306eef0bfd3407a5b1c5badb793bf136ce",
+    "translation": "Støttet forhåndsvisning og eksport: LINE, CIRCLE, ARC, og rett LWPOLYLINE/POLYLINE i XY-planet. Utbultede kurver, tekst, blokker, dimensjoner, splines, 3D-enheter og andre typer er oppført som ikke støttet og er ikke inkludert i målinger eller eksporter. Maksimal filstørrelse: 10 MB; maksimale gruppeposter: 200 000.",
+    "issue": "Términos de geometría poco naturales. 200 000 conserva el valor, pero falla el contrato literal frente a 200,000; no se aprueba por ello.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.useTool",
+    "source_hash": "8cd6167ee484e3a475817225a082457c8715d0af6b63a210fdbbe294f69d0c55",
+    "translation": "Vis en DXF- tegning",
+    "issue": "Espacio incorrecto en DXF- tegning.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.details",
+    "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+    "translation": "Velg en startrute, og velg deretter en sluttrute for å tegne et rektangel. Du kan også dra over rutenettet. Hvert rektangel må inneholde ett ledetråd med et tall som samsvarer med området.",
+    "issue": "«ett ledetråd» tiene género incorrecto; området no expresa con precisión el área numérica.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.dragHelp",
+    "source_hash": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+    "translation": "Klikk på to motsatte hjørner eller dra for å tegne et rektangel.Tastatur: Tab til en firkant, og trykk deretter på Enter for å markere den.",
+    "issue": "Falta espacio entre frases.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.faq.3.a",
+    "source_hash": "b4a3cd8df4c7c1248e8bcaeff995fcf41138a20df48de0f20ec6b259788dd2a3",
+    "translation": "Fremdriften lagres bare i denne nettleseren med mindre du sletter nettstedsdataene.",
+    "issue": "Omite el Nei inicial explícito; conserva la regla de almacenamiento y la excepción.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.intro",
+    "source_hash": "6b55fa1e3b28bc596a9ea90e686bce05cb108ac91729eff5a4bb55aaf4ecc058",
+    "translation": "Tegn rektangler slik at hvert tall er arealet til nøyaktig ett område.Dekk hver firkant en gang, uten overlapping.",
+    "issue": "Falta espacio entre frases.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.description",
+    "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+    "translation": "Du kan endre tonehøyde, forme radio- eller dype stemmeeffekter, forhåndsvise ekko og eksportere behandlet lyd lokalt.",
+    "issue": "Omite gratis, privado y sin subir audio.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.details",
+    "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+    "translation": "Nettleseren din dekoder den valgte lyden, bruker Web Audio- filtre, forsterkning, tonehøyde og valgfritt ekko lokalt, og gjengir deretter en WAV- fil for nedlasting. Ingen lyd blir sendt til en tjener.",
+    "issue": "Tonehøyde pierde rate (cambio de velocidad) en la enumeración del procesamiento.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.faq.1.a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "Denne lette tonehøydekontrollen endrer avspillingshastigheten, slik at en lavere tonehøyde spilles langsommere og en høyere tonehøyde spilles raskere.",
+    "issue": "Omite Nei; clave duplicada fuera de la política de inglés controlado.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.faq.2.a",
+    "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+    "translation": "Nei, den bruker enkle lydeffekter. Den kloner ikke en person, isolerer vokaler eller gjør en stemme til en annen ekte person.",
+    "issue": "Vokaler es ambiguo entre vocales y pistas de voz; requiere glosario de audio.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.clean",
+    "source_hash": "5137c8760c9411860cdc0eccf0e2e3ae66cc0379c45c89104b477351d3cce57f",
+    "translation": "Fjern",
+    "issue": "Fjern significa eliminar; el control elige el preset neutro, no borra audio.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.faq3a",
+    "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+    "translation": "Nei, den bruker enkle lydeffekter. Den kloner ikke en person, isolerer vokaler eller gjør en stemme til en annen ekte person.",
+    "issue": "Vokaler es ambiguo entre vocales y pistas de voz; requiere glosario de audio.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.limits",
+    "source_hash": "72eaa6afc178fd8d0e8f7da5c73ba70e6a5473c00316ce0df573d3b309416522",
+    "translation": "Dette lette verktøyet er laget for korte klipp, ikke sanger i full lengde. Tonehøyden endres ved å justere avspillingshastigheten, slik at klippets varighet og stemmetonen endres sammen. Effekter kan ikke skape en naturlig ny identitet, separate stemmer, eller garantere det samme resultatet på alle nettlesere.",
+    "issue": "«separate stemmer» no es la forma verbal bokmål requerida en esa enumeración.",
+    "observed_candidate": "model/context-v4/full",
+    "actions_run_id": "39437391534"
   }
 ]
