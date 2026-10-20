@@ -45,7 +45,7 @@
       "english_unchanged": 0,
       "length_ratio": 0,
       "wrong_script": 0,
-      "known_semantic_errors": 3,
+      "known_semantic_errors": 4,
       "marker_restore": 0,
       "back_protected_tokens": 2,
       "truncated": 0
@@ -61,7 +61,7 @@
       "english_unchanged": 0,
       "length_ratio": 0,
       "wrong_script": 3,
-      "known_semantic_errors": 14,
+      "known_semantic_errors": 21,
       "marker_restore": 0,
       "back_protected_tokens": 2,
       "truncated": 0
@@ -173,7 +173,7 @@
       "english_unchanged": 0,
       "length_ratio": 0,
       "wrong_script": 0,
-      "known_semantic_errors": 3,
+      "known_semantic_errors": 4,
       "marker_restore": 0,
       "back_protected_tokens": 0,
       "truncated": 0
@@ -189,7 +189,7 @@
       "english_unchanged": 2,
       "length_ratio": 0,
       "wrong_script": 0,
-      "known_semantic_errors": 16,
+      "known_semantic_errors": 24,
       "marker_restore": 0,
       "back_protected_tokens": 1,
       "truncated": 0
@@ -333,7 +333,7 @@
       "english_unchanged": 0,
       "length_ratio": 0,
       "wrong_script": 0,
-      "known_semantic_errors": 2,
+      "known_semantic_errors": 4,
       "marker_restore": 0,
       "back_protected_tokens": 0,
       "truncated": 0
@@ -349,7 +349,7 @@
       "english_unchanged": 0,
       "length_ratio": 0,
       "wrong_script": 0,
-      "known_semantic_errors": 15,
+      "known_semantic_errors": 19,
       "marker_restore": 0,
       "back_protected_tokens": 0,
       "truncated": 0
@@ -445,7 +445,7 @@
       "english_unchanged": 0,
       "length_ratio": 0,
       "wrong_script": 2,
-      "known_semantic_errors": 7,
+      "known_semantic_errors": 14,
       "marker_restore": 0,
       "back_protected_tokens": 0,
       "truncated": 0
@@ -541,7 +541,7 @@
       "english_unchanged": 0,
       "length_ratio": 7,
       "wrong_script": 0,
-      "known_semantic_errors": 14,
+      "known_semantic_errors": 23,
       "marker_restore": 0,
       "back_protected_tokens": 3,
       "truncated": 0
@@ -765,7 +765,7 @@
       "english_unchanged": 0,
       "length_ratio": 0,
       "wrong_script": 0,
-      "known_semantic_errors": 16,
+      "known_semantic_errors": 25,
       "marker_restore": 0,
       "back_protected_tokens": 0,
       "truncated": 0

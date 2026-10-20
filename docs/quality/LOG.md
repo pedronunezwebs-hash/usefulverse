@@ -6,7 +6,7 @@ Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 - [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), rama `feat/new-tools-batch-1`; sin merge/publicación.
 - Corpus real de tres herramientas, 40 referencias, 37 idiomas. Tanda es/nb de ambos motores: 320 registros.
   M2M100: 40 referencias en 35 destinos soportados, 2.371 registros conservados; MADLAD restante en curso.
-- 462 traducciones evaluadas por el agente, sin revisión nativa inventada; 154 salidas rechazadas como regresiones.
+- 642 traducciones evaluadas por el agente, sin revisión nativa inventada; 202 salidas rechazadas como regresiones.
   **0 idiomas aprobados**: glosario y marcadores deben corregirse antes de ampliar combinaciones fallidas.
 - Extracción segura de las 300: 15.815 unidades; 7.887 cadenas distintas; slugs, archivos y datos del revisor conservados.
   Tests de reanudación atómica, no descarga con checkpoint completo y retrotraducción. Detalle:

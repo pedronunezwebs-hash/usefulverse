@@ -23,9 +23,9 @@ Este lote resuelve infraestructura y obtiene evidencia lingüística; **no compl
 4. [MADLAD referencias 39402907694](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39402907694):
    **en ejecución al redactar este bloque**; actualizar resultado y checkpoints antes de cerrar el lote.
 5. Revisión del agente (sin afirmar revisión nativa): 240 traducciones de las 40 referencias es/nb y cribado de otras
-   222 traducciones, 20 claves por destino en de/fr/pt-BR/ja/hi/ar (DXF actual ausente allí). Rúbrica 0–3 por significado,
+   402 traducciones, 40 claves por destino en de/fr/pt-BR/ja/hi/ar (DXF actual ausente allí). Rúbrica 0–3 por significado,
    cifras/negaciones y naturalidad. Evaluaciones ligadas por hash a los textos observados.
-6. **154 salidas incorrectas observadas** registradas por contexto, idioma y hash como regresiones permanentes.
+6. **202 salidas incorrectas observadas** registradas por contexto, idioma y hash como regresiones permanentes.
    Incluyen borrar → «audio claro», reanudar → resumen/reciclar/biografía y negación → número. Las traducciones actuales
    también contienen fallos; no se importan como aprobadas por antigüedad.
 7. Extracción reproducible de las 300 fuentes: **15.815 unidades**, **7.887 cadenas distintas**, **9.505 unidades de memoria

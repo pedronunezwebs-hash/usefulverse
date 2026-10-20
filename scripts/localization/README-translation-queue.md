@@ -53,6 +53,12 @@ translate a small reviewed sample and measure peak memory before queuing more.
 
 ## Work cycle
 
+Para reextraer las 300 fuentes actuales sin traducir ni descargar modelos:
+`node scripts/localization/prepare-candidate-sources.mjs <directorio-temporal>`.
+Genera paquetes con `sourceCopy` (necesario para exportar después), unidades estables y manifest.
+Slugs relacionados, nombres de archivo y metadatos de revisión se conservan sin enviarlos al traductor.
+La extracción/importación de borradores usa el mismo filtro; no reutilizar paquetes viejos que incluyan esas claves.
+
 The product has 37 locales in total: canonical English plus 36 translated
 destinations, including Norwegian Bokmål (`nb-NO`) for the extra `/nb` tool
 routes.

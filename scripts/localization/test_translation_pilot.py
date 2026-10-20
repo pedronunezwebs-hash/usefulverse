@@ -115,7 +115,7 @@ class TranslationPilotTest(unittest.TestCase):
         for path in (directory / 'checkpoints').glob('*.jsonl'):
             for line in path.read_text().splitlines():
                 row = json.loads(line); records[row['record_id']] = row
-        for filename, expected_count in [('review-es-nb.json', 240), ('review-core-six.json', 222)]:
+        for filename, expected_count in [('review-es-nb.json', 240), ('review-core-six.json', 402)]:
             review = json.loads((directory / filename).read_text())
             self.assertFalse(review['native_review'])
             self.assertEqual(review['approved_locales'], [])

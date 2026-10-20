@@ -73,7 +73,7 @@ desvincular la puntuación de la traducción observada.
 | es | 349/360 | 267/360 | 324/360 | Ninguno supera el umbral; preferencia provisional por actual tras corregir |
 | nb-NO | 329/360 | 275/360 | 350/360 | Ninguno supera el umbral; preferencia provisional por MADLAD tras corregir |
 
-La nota total no sustituye el umbral de cero errores en botones, cifras y negaciones. Se han registrado 60 salidas
+La nota total no sustituye el umbral de cero errores en botones, cifras y negaciones. En esta primera tanda se registraron 60 salidas
 incorrectas observadas como regresiones de contexto/hash, incluidas las negaciones `Nr.` de la traducción actual.
 El control de tokens técnicos detecta además la pérdida de `.dxf`; la pérdida de `{duration}` de MADLAD se rechaza,
 sin reconstruir ni adivinar el marcador. `automatic-summary.json` se recalcula desde los checkpoints con las reglas
@@ -94,6 +94,33 @@ en Python 3.11 y las versiones ≥2.3 eliminan una operación binaria usada por 
 Al recuperar una ejecución reanudada, el recolector **fusiona** sus registros con el checkpoint anterior y reemplaza
 el JSONL de forma atómica. Los tests cubren conservación del lote previo, logs truncados y duplicados incompatibles.
 Un cambio en el algoritmo de inferencia requiere cambiar la versión de formato/identidad antes de reutilizar resultados.
+
+## Referencias adicionales y fuentes de las 300
+
+[M2M100 completo de referencias](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39402644071):
+40 frases en sus 35 destinos soportados; `te` queda explícitamente sin ese motor. Checkpoint fusionado de **2.371 registros**
+(1.400 salidas del modelo y 971 actuales con retrotraducción). Las 160 filas iniciales es/nb se reutilizaron;
+el run añadió 2.211 registros en 481,10 s, incluidos 33,59 s de conversión. Pico RSS de inferencia: 1.019.372 KiB.
+
+La [revisión de otros seis destinos](translation-pilot/review-core-six.json) compara las **40 referencias** en
+de/fr/pt-BR/ja/hi/ar: 402 traducciones (40 del modelo + 27 actuales por destino; faltan las 13 actuales de DXF).
+Con es/nb, **642 traducciones únicas evaluadas** por el agente y **202 salidas rechazadas** registradas como regresiones.
+Esas combinaciones no superan el umbral. Esta revisión tampoco afirma revisión nativa ni sustituye los controles del lote.
+No interpretar `known_semantic_errors=0` en los otros destinos como aprobación: falta su revisión.
+La longitud y el alfabeto son señales de revisión; las siglas técnicas y la densidad del chino pueden producir avisos
+sin un error de sentido. La retrotraducción se valida por separado: un texto correcto de ida no oculta cifras perdidas a la vuelta.
+
+Preparar las fuentes de las 300 sin importar una BD ni traducir nada:
+
+```sh
+node scripts/localization/prepare-candidate-sources.mjs <directorio-temporal>
+```
+
+Produce 300 JSON con `sourceCopy` + unidades estables y un manifest reproducible: **15.815 unidades**, **7.887 textos
+distintos**, **9.505 unidades con contexto**, **681.101 caracteres fuente**. El manifest está guardado en
+`translation-pilot/candidate-source-manifest.json`; los JSON completos se regeneran desde la fuente versionada.
+`relatedTools`, `outputName`, identidades y fechas de revisión quedan intactos. Los tests evitan volver a enviarlos al motor
+y verifican que estén las 300 candidatas exactas, incluidos sus slugs históricos. No son paquetes aprobados para publicar.
 
 Fuentes primarias: [M2M100](https://huggingface.co/facebook/m2m100_418M),
 [MADLAD-400](https://huggingface.co/google/madlad400-3b-mt),

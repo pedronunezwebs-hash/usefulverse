@@ -1384,5 +1384,437 @@
     "issue": "La respuesta negativa se convierte en la palabra número.",
     "observed_candidate": "legacy",
     "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "dxf-viewer.faq.0.a",
+    "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+    "translation": "No. Dieses Tool öffnet nur ASCII DXF. Es dekodiert nicht DWG oder binäre DXF.",
+    "issue": "No. queda en inglés.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "dxf-viewer.faq.2.a",
+    "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+    "translation": "Nur wenn die DXF Millimeter erklärt. sonst benutzt der Zuschauer die deklarierten Einheit oder Etikettiert Messungen als Zeichnungseinheiten.",
+    "issue": "El visor se convierte en espectador y las unidades/etiquetas están mal construidas.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "dxf-viewer.fields.binary",
+    "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+    "translation": "Binary DXF wird nicht unterstützt. Speichern oder Exportieren der Zeichnung als ASCII DXF.",
+    "issue": "Binary queda en inglés y la instrucción no tiene una forma verbal correcta.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "dxf-viewer.fields.cancel",
+    "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+    "translation": "Laden abgeschafft",
+    "issue": "Cancelar la carga se convierte en carga abolida.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "shikaku.example",
+    "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+    "translation": "Ein Hinweis mit dem Zeichen 6 gehört innerhalb eines Rechteckens, das genau sechs Quadraten umfasst.",
+    "issue": "Rechteckens y Quadraten tienen flexiones incorrectas.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "shikaku.fields.check",
+    "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+    "translation": "Überprüfen Puzzle",
+    "issue": "Überprüfen Puzzle tiene una construcción verbal incorrecta.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "shikaku.fields.daily",
+    "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+    "translation": "Alltag Puzzle",
+    "issue": "El reto diario se convierte en puzzle de la vida cotidiana.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "No. Diese leichte Pitch-Kontrolle ändert die Wiedergaberate, so dass ein niedrigerer Pitch langsamer spielt und ein höherer Pitch schneller spielt.",
+    "issue": "No. queda en inglés.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "de",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "Nr. Diese leichte Tonhöhensteuerung ändert die Wiedergabegeschwindigkeit, sodass eine niedrigere Tonhöhe langsamer und eine höhere Tonhöhe schneller abgespielt wird.",
+    "issue": "La negación se convierte en Nr., abreviatura de número.",
+    "observed_candidate": "legacy",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "dxf-viewer.faq.2.a",
+    "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+    "translation": "Seulement lorsque le DXF déclare des millimètres. sinon le spectateur utilise l'unité déclarée ou les étiquettes des mesures comme unités de dessin.",
+    "issue": "El visor se convierte en espectador y etiqueta/etiquetas cambia de función.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "shikaku.example",
+    "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+    "translation": "Une piste marquée 6 appartient à l'intérieur d'un rectangle qui couvre exactement six carrés.",
+    "issue": "La pista numérica se expresa como piste en vez de indice.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "Ce contrôle de piste légère change le taux de récupération, de sorte qu'un point inférieur joue plus lentement et un point supérieur joue plus rapidement.",
+    "issue": "Tono y velocidad de reproducción se convierten en pista, punto y tasa de recuperación; se omite Non.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "voice-changer.fields.privacy",
+    "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+    "translation": "L'audio reste dans ce navigateur. Il n'est pas téléchargé ou sauvé par UsefulVerse.",
+    "issue": "No enviar al servidor se expresa como no descargar; no comunica la promesa de privacidad con precisión.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "shikaku.fields.check",
+    "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+    "translation": "Casse-tête à vérifier",
+    "issue": "El botón expresa rompecabezas por comprobar en vez de una acción clara.",
+    "observed_candidate": "legacy",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "fr",
+    "key": "voice-changer.fields.privacy",
+    "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+    "translation": "L'audio reste dans ce navigateur. Il n’est ni téléchargé ni enregistré par UsefulVerse.",
+    "issue": "Téléchargé no distingue enviar audio al servidor de descargarlo.",
+    "observed_candidate": "legacy",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "dxf-viewer.faq.0.a",
+    "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+    "translation": "Esta ferramenta abre ASCII DXF apenas. não decode DWG ou DXF binário.",
+    "issue": "Se omite Não. y decode queda sin conjugar en pt-BR.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "dxf-viewer.faq.2.a",
+    "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+    "translation": "Somente quando o DXF declara milímetros. caso contrário, o espectador usa a unidade declarada ou etiquete as medições como unidades de desenho.",
+    "issue": "El visor se convierte en espectador y las etiquetas/mediciones están mal construidas.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "dxf-viewer.fields.exportPng",
+    "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+    "translation": "Descarregar PNG",
+    "issue": "Descarregar no es el uso regional pt-BR esperado: Baixar.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "dxf-viewer.fields.exportSvg",
+    "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+    "translation": "Descarregar SVG",
+    "issue": "Descarregar no es el uso regional pt-BR esperado: Baixar.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "dxf-viewer.fields.invalidCoordinates",
+    "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+    "translation": "Entre quatro coordenadas válidas.",
+    "issue": "Entre no es la instrucción apropiada para introducir estas coordenadas.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "dxf-viewer.fields.unsupported",
+    "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+    "translation": "Não suportado arquivo. Escolha um arquivo ASCII .dxf.",
+    "issue": "Orden incorrecto en Não suportado arquivo.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "shikaku.example",
+    "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+    "translation": "Uma pista marcada 6 pertence dentro de um rectangulo que cobre exatamente seis quadrados.",
+    "issue": "Sintaxis y grafía impropias en pertence dentro de um rectangulo.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "shikaku.fields.check",
+    "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+    "translation": "Veja o puzzle",
+    "issue": "Comprobar se convierte en ver el puzzle.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "pt-BR",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "Este controle de pista leve muda a taxa de reprodução, de modo que uma pista mais baixa joga mais lentamente e uma pista mais alta joga mais rápido.",
+    "issue": "Tono se convierte en pista y reproducir en jugar; se omite Não.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "dxf-viewer.faq.0.a",
+    "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+    "translation": "このツールは ASCII DXF だけを開きます. DWG または バイナリー DXF を解読することはありません。",
+    "issue": "Se omite la respuesta negativa de la FAQ.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "dxf-viewer.faq.2.a",
+    "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+    "translation": "DXFがミリメートルを宣言する場合のみ、そうでなければ視聴者は宣言されたユニットまたはラベル測定を描くユニットとして使用します。",
+    "issue": "El visor se convierte en espectador y la explicación de las unidades queda mal construida.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "dxf-viewer.fields.binary",
+    "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+    "translation": "バイナリー DXF はサポートされていません. ASCII DXF としてデザインを保存または輸出します。",
+    "issue": "Exportar un archivo se expresa como comercio exterior.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "dxf-viewer.fields.cancel",
+    "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+    "translation": "ダウンロードキャンセル",
+    "issue": "Cancelar la carga de un archivo local se convierte en cancelar una descarga.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "dxf-viewer.fields.invalidCoordinates",
+    "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+    "translation": "4つの有効なコーディネートを入力します。",
+    "issue": "Coordenadas se convierte en coordinación de ropa/estilo.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "dxf-viewer.fields.unsupported",
+    "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+    "translation": "サポートされていないファイルを選択します ASCII .dxf ファイルを選択します。",
+    "issue": "Ordena elegir un archivo no compatible antes de pedir DXF.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "shikaku.example",
+    "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+    "translation": "6 を指定したヒントは、正角の内部に属し、正確に 6 平方形をカバーしています。",
+    "issue": "Rectángulo se convierte en ángulo recto.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "voice-changer.fields.decodeFailed",
+    "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+    "translation": "このブラウザは、このオーディオ形式を解読することができません. 試してみる WAV または MP3.",
+    "issue": "La instrucción de probar WAV/MP3 tiene el orden incorrecto.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ja",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "この軽量のフィッチコントロールは再生率を変更するので、低いフィッチはよりゆっくりと、より高いフィッチはより速く再生します。",
+    "issue": "Pitch se transcribe como フィッチ en lugar de ピッチ; se omite いいえ.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "hi",
+    "key": "dxf-viewer.fields.invalidCoordinates",
+    "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+    "translation": "चार वैध समन्वय दर्ज करें।",
+    "issue": "Coordenadas se convierte en coordinación.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "hi",
+    "key": "dxf-viewer.fields.unsupported",
+    "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+    "translation": "असहाय फ़ाइल. एक ASCII .dxf फ़ाइल का चयन करें.",
+    "issue": "Archivo no compatible se convierte en archivo desamparado.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "hi",
+    "key": "shikaku.example",
+    "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+    "translation": "6 को चिह्नित करने वाला एक संकेत एक सीधे कोने के अंदर आता है जो बिल्कुल छह वर्गों को कवर करता है।",
+    "issue": "Rectángulo se convierte en esquina recta.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "hi",
+    "key": "shikaku.fields.check",
+    "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+    "translation": "Puzzle देखें",
+    "issue": "Comprobar se convierte en ver y Puzzle queda en inglés.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "hi",
+    "key": "shikaku.fields.newPuzzle",
+    "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+    "translation": "नए पहेली",
+    "issue": "Concordancia de género incorrecta en नए पहेली.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "hi",
+    "key": "voice-changer.fields.decodeFailed",
+    "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+    "translation": "यह ब्राउज़र उस ऑडियो प्रारूप को अनगिनत नहीं कर सकता. WAV या MP3 का प्रयास करें.",
+    "issue": "Decodificar se convierte en un término incorrecto relacionado con incontable.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "hi",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "यह हल्का पिच नियंत्रण प्लेबैक दर को बदलता है, इसलिए एक निचले पिच धीरे-धीरे खेलता है और एक उच्च पिच तेजी से खेलता है।",
+    "issue": "Reproducir audio se expresa como jugar; se omite la respuesta negativa.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "dxf-viewer.faq.0.a",
+    "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+    "translation": "لا. هذه الأداة تفتح ASCII DXF فقط. لا يزين DWG أو DXF الثنائي.",
+    "issue": "No decodifica se convierte en no decora.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "dxf-viewer.faq.2.a",
+    "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+    "translation": "فقط عندما يعلن DXF ملليمتر.إلا يستخدم المشاهد الوحدة المعلنة أو العلامات القياسات كوحدات الرسم.",
+    "issue": "El visor y las etiquetas/medidas tienen un significado/construcción incorrectos.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "shikaku.example",
+    "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+    "translation": "يقع علامة 6 داخل مستطيل يغطي ستة مربع بالضبط.",
+    "issue": "يقع علامة tiene concordancia incorrecta.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "shikaku.fields.check",
+    "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+    "translation": "تحقق من Puzzle",
+    "issue": "Puzzle queda en inglés.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "shikaku.fields.newPuzzle",
+    "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+    "translation": "Puzzle جديدة",
+    "issue": "Puzzle queda en inglés.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.decodeFailed",
+    "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+    "translation": "هذا المتصفح لا يمكن تفكيك هذا تنسيق الصوت.حاول WAV أو MP3.",
+    "issue": "La instrucción sobre decodificar el formato está mal construida.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "هذا التحكم في الميدان الخفيف يغير معدل التردد ، لذلك يلعب الميدان الأدنى ببطء أكبر وميدان أعلى يلعب بشكل أسرع.",
+    "issue": "Tono se convierte en campo y la tasa de reproducción en frecuencia; se omite لا.",
+    "observed_candidate": "model",
+    "run_id": "39402644071"
+  },
+  {
+    "locale": "ar",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "رقم. يعمل هذا التحكم الخفيف في درجة الصوت على تغيير معدل التشغيل، بحيث يتم تشغيل درجة الصوت المنخفضة بشكل أبطأ ويتم تشغيل درجة الصوت الأعلى بشكل أسرع.",
+    "issue": "La negación se convierte en رقم, número.",
+    "observed_candidate": "legacy",
+    "run_id": "39402644071"
   }
 ]

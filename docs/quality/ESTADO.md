@@ -25,7 +25,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
    [Guía y datos](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/translation-pilot.md).
    M2M100: 40 referencias en sus 35 destinos soportados, 2.371 registros guardados; MADLAD: tanda es/nb completada,
    referencias de los demás destinos en curso. **0 idiomas aprobados**; los errores de sentido también afectan a la copia
-   actual. 462 traducciones evaluadas por el agente; 154 salidas rechazadas registradas como regresiones.
+   actual. 642 traducciones evaluadas por el agente; 202 salidas rechazadas registradas como regresiones.
    Siguiente dentro del Paso A: completar/recoger la tanda de referencias de MADLAD, corregir glosario por sentido y
    marcadores, revisar antes de ampliar las combinaciones fallidas; después piloto completo de tres herramientas y
    elección documentada por idioma. **No ejecutar traducción masiva ni avanzar a fase 0 con estos gates abiertos.**
