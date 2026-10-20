@@ -105,6 +105,17 @@ El Mac de Pedro tiene **~22 GB libres** y Pedro sigue trabajando en él. Reglas:
 
 ---
 
+## 4a. Fase 0b · Caché y errores confirmados
+
+1. **Antes de nada, G1:** los 106 JS de `/assets/recovered-live-only-106/` se sirven sin hash y con `immutable, max-age=31536000`.
+   Pon el hash del contenido en el nombre (o una caché corta con revalidación); si no, ningún arreglo llega a quien ya
+   visitó esas páginas. Verificación: `curl -I` de un asset antes y después.
+2. **Los 26 errores confirmados** de `docs/quality/AUDITORIA-CATALOGO.md` §2: por cada uno, primero un test que lo
+   reproduzca (con el caso de la tabla), después el arreglo y por último la prueba en el navegador. Un PR por familia.
+   Anotar el avance en `ESTADO.md`.
+3. Al mejorar cualquier herramienta (§5), revisar **su informe** en `docs/quality/auditoria/` y aplicar todo lo que le
+   afecte: límites, huecos, SEO y UX.
+
 ## 4b. Unificar todo en `usefulverse.com` (un solo sitio, sin coste extra)
 
 **Por qué se partió:** Cloudflare Pages en el plan gratuito admite **20.000 archivos por sitio**, y UsefulVerse tiene

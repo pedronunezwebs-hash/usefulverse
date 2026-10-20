@@ -16,7 +16,8 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
    archivos sin commit). Claude dejó una **copia de seguridad** en la rama remota `backup/codex-300-tools-20261020`
    (commit `636f3c1`). El agente que lleva esas herramientas (ChatGPT/Codex) debe hacer commit y push de su rama
    **hoy** y pasar al **Paso A** del RUNBOOK §7 (subida en `noindex`).
-2. **Fase 0** del RUNBOOK §4: 404 real en `tools.usefulverse.com` (hoy cualquier URL inventada devuelve 200 con la home),
+2. **Fase 0** del RUNBOOK §4 + **caché con hash de los 106 JS** (AUDITORIA-CATALOGO G1; sin esto ningún arreglo llega a los visitantes) + **fase 0b**: los 26 errores confirmados de `AUDITORIA-CATALOGO.md` §2.
+   Fase 0 (detalle): 404 real en `tools.usefulverse.com` (hoy cualquier URL inventada devuelve 200 con la home),
    título de la home e índice de sitemaps por idioma.
 3. **Unificar en un solo sitio** (RUNBOOK §4b): un Worker de Static Assets (100.000 archivos, assets gratis) y 301 de
    `tools.` → `usefulverse.com`.
@@ -52,11 +53,18 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 - [ ] Índice de sitemaps por idioma en ambos hosts
 - [ ] Despliegue verificado + sitemaps reenviados
 
+### Fase 0b · Errores confirmados (`AUDITORIA-CATALOGO.md` §2) · arreglados: **0 / 26**
+- [ ] G1 · Hash en los 106 JS de `recovered-live-only-106` (o caché corta)
+- [ ] Errores de cálculo y lógica (mates, finanzas, ciencia, otros, dev): test que lo reproduce + arreglo
+- [ ] Juegos rotos (sudoku, 2048 táctil, palabra de 5 letras en inglés, kakuro y mahjong reales)
+
 ### Fase 1-2 · Diseño y plantilla (PLAN §3-4)
 - [ ] Sistema de diseño «Planeta Infinito» en el repo (tokens, componentes, RTL)
 - [ ] Plantilla nueva de herramienta (home, archivos, calculadora, juego) aprobada por Pedro en el móvil
 - [ ] Páginas de confianza y hubs de categoría
 - [ ] Unificación en un solo sitio (RUNBOOK §4b): Worker de Static Assets + regla 301 `tools.` → `usefulverse.com`
+- [ ] Plantilla: títulos y descripciones reales (G3), contenido y FAQ por temática (G4), JSON-LD y migas en `tools.` (G5),
+      relacionadas por grafo (G6), arrastrar y pegar archivos (G7), título = intención (G11), CSP (G12)
 - [ ] `llms.txt`, JSON-LD revisado, presupuesto de rendimiento en CI
 - [ ] Cloudflare Web Analytics + `docs/quality/KPIS.md`
 

@@ -32,7 +32,7 @@ Prevalecen sobre cualquier plan anterior de `docs/` (incluido `docs/growth600/`)
 
 ## Cómo trabajar
 
-**No se borra ninguna herramienta** (decisión de Pedro, 20-oct-2026). Las casi duplicadas se diferencian; una fusión con 301, solo con su aprobación. Estrategia de crecimiento: `docs/quality/STRATEGY-1M.md`. Niveles de esfuerzo, traducción, piloto automático y anuncios: `docs/quality/REVISION-FINAL.md`.
+**No se borra ninguna herramienta** (decisión de Pedro, 20-oct-2026). Las casi duplicadas se diferencian; una fusión con 301, solo con su aprobación. Estrategia de crecimiento: `docs/quality/STRATEGY-1M.md`. Niveles de esfuerzo, traducción, piloto automático y anuncios: `docs/quality/REVISION-FINAL.md`. Auditoría de las 700 herramientas (errores, límites, huecos): `docs/quality/AUDITORIA-CATALOGO.md` y `docs/quality/auditoria/`. PDF: `PDF-VS-ILOVEPDF.md` y `PDF-IA.md`.
 
 Ejecuta el trabajo con **`docs/recovery/RUNBOOK.md`** (lotes, puerta de calidad, disco, verificación) y lleva el
 estado en `docs/quality/progress.csv`. Plan completo: `docs/quality/PLAN.md`. Marca aprobada: `docs/design/planeta-infinito/`.
