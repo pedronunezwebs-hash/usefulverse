@@ -173,5 +173,34 @@
   "approved_locales": [],
   "note": "Mismas 20/68 claves que v4, fijadas antes de lanzar el completo v6. Referencias es/nb pasan; no equivale a aprobar el completo.",
   "source_sample_file": "full-sample-plan.json",
-  "source_sample_sha256": "1d1d177cb8449ca340c8a288cf45655c66e3aa5dee15c755cba60c8bb60b5bc7"
+  "source_sample_sha256": "1d1d177cb8449ca340c8a288cf45655c66e3aa5dee15c755cba60c8bb60b5bc7",
+  "additional_holdout": {
+    "selected_at_utc": "2026-10-20T16:13:25.594762+00:00",
+    "selected_before_full_results_collection": true,
+    "seed": "usefulverse-20261020-v6-holdout",
+    "algorithm": "sha256(seed + | + key), ascending within tool; first 6 voice, 6 shikaku, 8 DXF; exclude 40 references and original 68 review keys",
+    "keys": [
+      "voice-changer.faq.0.q",
+      "voice-changer.fields.effect",
+      "voice-changer.fields.faq3q",
+      "voice-changer.faq.1.q",
+      "voice-changer.fields.faq5q",
+      "voice-changer.fields.faq4a",
+      "shikaku.limitsHeading",
+      "shikaku.fields.statusDaily",
+      "shikaku.related",
+      "shikaku.fields.statusRemoved",
+      "shikaku.fields.statusHint",
+      "shikaku.fields.ready",
+      "dxf-viewer.fields.licenseLoglevel",
+      "dxf-viewer.fields.hidden",
+      "dxf-viewer.fields.layer",
+      "dxf-viewer.fields.bounds",
+      "dxf-viewer.fields.unit",
+      "dxf-viewer.faqHeading",
+      "dxf-viewer.fields.loading",
+      "dxf-viewer.name"
+    ],
+    "purpose": "Conservar la muestra v4 sin cambiarla y añadir textos no usados para corregir v4. Las 20 adicionales no sustituyen ningún control ni permiten aprobar automáticamente."
+  }
 }
