@@ -11,6 +11,15 @@ Documentos de referencia, en orden de prioridad: `AGENTS.md` → este RUNBOOK �
 
 ---
 
+## 0. Relevo entre agentes (siempre)
+
+Al empezar y al terminar, sigue el **protocolo de relevo** de `docs/quality/ESTADO.md` (candado de turno, siguiente paso,
+checklist, contadores). Estructura del repo: `docs/quality/MAPA-REPO.md`. **Al terminar cada sesión, todo el trabajo
+va en commit y push a una rama remota**, aunque esté a medias. El 20-oct se encontró el trabajo de las 300
+herramientas solo en `/tmp`, sin subir: no se repite.
+
+---
+
 ## 1. Estado real a 20-oct-2026 (verificado)
 
 | Hecho | Dato |
@@ -252,4 +261,6 @@ textos y Pedro publica.
 - Envíos masivos a IndexNow, Naver, Yandex o Google.
 - Descargar modelos o hacer builds completos en el Mac de Pedro; dejar codespaces vivos.
 - Trabajar en el checkout de otro agente; `reset --hard` o `push --force` sobre `main`.
+- Terminar una sesión sin push (trabajo solo en local o en `/tmp`) o sin actualizar `ESTADO.md`.
+- Dejar copias completas del repo, builds o modelos en `/tmp` después de terminar (el 20-oct había ~24 GB acumulados).
 - Inventar datos, reseñas, fuentes o promesas («100 % seguro», «el mejor»).

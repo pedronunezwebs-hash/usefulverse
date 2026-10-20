@@ -1,11 +1,16 @@
 # AGENTS.md · UsefulVerse
 
+> **Antes de nada lee `docs/quality/ESTADO.md`** (estado, candado de turno y siguiente paso) y `docs/quality/MAPA-REPO.md`
+> (estructura del repo). **Al terminar, actualiza `ESTADO.md` y haz push de todo:** nunca dejes trabajo solo en local o en `/tmp`.
+
 Reglas para cualquier agente (Codex, ChatGPT, Claude u otro) que trabaje en este repositorio.
 Prevalecen sobre cualquier plan anterior de `docs/` (incluido `docs/growth600/`).
 
-## Catálogo congelado · decisión del dueño (20-oct-2026)
+## Catálogo en pausa · decisión del dueño (20-oct-2026)
 
-- **Prohibido crear o publicar herramientas nuevas, idiomas nuevos, subdominios o rutas indexables nuevas.**
+- **Pausa (no límite definitivo):** por ahora no se crean herramientas ni idiomas nuevos más allá de las 300 ya hechas y de
+  la cobertura `nb`. Cuando el sitio se recupere, Pedro podrá reabrir la ampliación con las reglas de `docs/quality/STRATEGY-1M.md`:
+  demanda demostrada, puerta de calidad, freno semanal y nada de servidores de pago. Prohibido abrir subdominios nuevos.
   El catálogo queda fijado en las 700 herramientas públicas actuales (277 en `usefulverse.com` y 423 en
   `tools.usefulverse.com`). El programa Growth600 y cualquier plan de expansión quedan **cerrados**.
 - El trabajo permitido es **mejorar la calidad** de las herramientas existentes: lógica, UX, contenido propio,
