@@ -197,3 +197,66 @@ Siguiente: **v5 nueva**, manteniendo v2/v3/v4 y sus checkpoints. Corregir famili
 conservar todas las frases de cada párrafo; tratar versiones y símbolos como datos. Repetir primero referencias y luego
 el completo es/nb con la misma muestra y controles. Después los otros 28 destinos pendientes de revisión.
 **0 idiomas aprobados, 0 paquetes de las 300 publicados por este piloto.** Detalle de fallos: `review-context-v4-full.json`.
+
+## Variante v5 · oraciones cubiertas y datos tipados
+
+`context-v5` conserva v2/v3/v4 sin cambios. Fuente: `pilot-coverage-policy.json`: 22 entradas de inglés controlado
+por clave/hash/contexto y 69 destinos de memoria revisada (presets, acciones, unidades, licencias y correcciones anteriores).
+Las FAQ duplicadas tienen entradas explícitas del mismo sentido; no se fusionan textos por parecido.
+Cada oración se envía y registra por separado. Versiones, símbolos de unidad, URLs, código y placeholders se copian en
+sus posiciones conocidas, con trazas completas de origen/ensamblado. No se reparan marcadores deduciendo dónde estaban.
+La cobertura de oraciones comprueba que ninguna se omite como unidad; no demuestra que el modelo conserve todas las
+ideas dentro de una oración. La rúbrica del agente y los controles de cifras/negaciones siguen siendo obligatorios.
+Las versiones se comprueban también en la vuelta, recalculando las señales de checkpoints antiguos sin alterarlos.
+
+Regresiones nuevas: párrafo con privacidad/límites al final, oración intermedia vacía, lote incompleto, datos repetidos,
+inyección de unidad, URLs/código que contienen versiones/símbolos, procedencia y fuentes exactas. 42 tests Python
+(40 correctos; 2 dependen del job de modelos), además de los tests Node de corpus. No es certificación de las siete capas.
+Referencias: [run 39452889204](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39452889204), código `4c477b7`.
+La política es un candidato híbrido con memoria, no una medición del modelo sin ayudas ni una revisión nativa.
+Los resultados y la decisión se añaden tras leer las traducciones y las vueltas. No hay idiomas aprobados.
+
+### Decisión de referencias v5 y repetición v6
+
+160 registros v5, 80 evaluaciones ligadas a texto/hash: es **357/360, rechazado** por negación de privacidad ambigua
+(«not uploaded» → «no es cargado»); nb **359/360**, solo referencias, un leve Det/Den. No se ejecutó el completo v5.
+V4 decía «no es subido»: el fallo se observa en el candidato nuevo, no se atribuye a una ida previa correcta.
+Dos fixtures nuevos elevan regresiones a **412**. Se conservan las políticas/checkpoints anteriores.
+`context-v6` (`pilot-privacy-policy.json`) hereda la cobertura v5 y añade un sentido y dos destinos de memoria de
+privacidad: **23 entradas controladas, 71 destinos de memoria**. El resto del corpus y la rúbrica se mantienen.
+[Referencias v6 39454358926](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39454358926), código `7212c33`;
+se decide el completo únicamente tras leer el nuevo resultado. No hay idiomas aprobados.
+
+La revisión de PLAN §9 exige muestra doble en ha/ am/ te/ gu/ ta/ mr/ sw: **80 cadenas**, no solo las 40 referencias.
+Antes de aprobar esos destinos se debe ejecutar el corpus completo y fijar la muestra ampliada, además de los controles
+automáticos. Los checkpoints baseline de 40 no cierran ese gate; no hay ninguno aprobado.
+
+### Completo v6 · rechazado en es y nb
+
+[Run 39455323981](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39455323981), fuente `0e8e63e`:
+856 registros (160 referencias reutilizadas + 696 nuevas), 214 unidades por destino y candidato/actual, 71 aciertos de
+memoria en total. 930,07 s, conversión 91,89 s, pico inferencia 3.852.792 KiB. Tests reales del runner: 44 correctos;
+la auditoría posterior añade control de identificadores de paquete y se comprueba con 45 tests en CI.
+
+Se mantienen las 68 claves v4 y se añaden 20 fijadas por semilla en `b8776ae` antes de recoger resultados.
+176 candidatos revisados + 40 evaluaciones actuales conservadas al verificar fuente/texto idénticos = 216 evaluaciones.
+Con las referencias: 128/214 candidatos revisados por destino, no todo el texto. Revisión del agente, no nativa.
+
+| Candidato/muestra | es | nb | Decisión |
+|---|---:|---:|---|
+| v4, mismas 68 claves | 539/612 | 555/612 | Rechazado |
+| v6, mismas 68 claves | 586/612 | 569/612 | Rechazado |
+| v6, 20 adicionales | 169/180 | 166/180 | Rechazado: 4 y 5 filas imperfectas, respectivamente |
+
+En los candidatos v6 no hay pérdidas de símbolos/ versiones ni trazas vacías; se conservan las frases finales
+omitidas por v4 en los casos revisados. Persisten: worker como empleado humano; upload/load en privacidad DXF;
+Drawing bounds como acción de dibujar; vocals como vocales; aplica como concierne; pitch-rate sin traducir; Name
+pegado al nombre nb; concordancias y compuestos. Las salidas concretas quedan como regresiones.
+200.000/200 000 y coordenadas sin espacios conservan valores, pero el contrato literal actual no lo reconoce:
+requiere datos tipados, sin normalización adivinada. Una vuelta cambia dxf-parser a dxf parser aunque conserva versiones:
+el nuevo control de identificadores lo detecta. Fallos de vuelta se señalan sin atribuirlos a idas correctas.
+
+**7.161 registros · 1.754 evaluaciones registradas (con texto/rúbricas repetidas) · 464 fixtures (456 ida, 8 vuelta).**
+**0 idiomas aprobados**. Siguiente: política v7 independiente para las familias anteriores, tipos de coordenadas/números
+y nombres de software. No editar v2–v6 medidos. Repetir referencias y el mismo completo es/nb antes de ampliar; después
+revisar 28 destinos restantes, con muestra de 80 en los siete idiomas de pocos recursos. Sin traducción masiva ni fase 0.
