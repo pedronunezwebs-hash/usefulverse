@@ -3688,5 +3688,23 @@
     "issue": "«separate stemmer» no es la forma verbal bokmål requerida en esa enumeración.",
     "observed_candidate": "model/context-v4/full",
     "actions_run_id": "39437391534"
+  },
+  {
+    "key": "voice-changer.fields.privacy",
+    "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+    "locale": "nb-NO",
+    "translation": "Lyden forblir i denne nettleseren. Det er ikke lastet opp eller lagret av UsefulVerse.",
+    "observed_candidate": "madlad-context-v5",
+    "issue": "pronoun-agreement",
+    "evidence": "review-context-v5-references.json"
+  },
+  {
+    "key": "voice-changer.fields.privacy",
+    "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+    "locale": "es",
+    "translation": "El audio permanece en este navegador. No es cargado o guardado por UsefulVerse.",
+    "observed_candidate": "madlad-context-v5",
+    "issue": "ambiguous-upload-negation",
+    "evidence": "review-context-v5-references.json"
   }
 ]

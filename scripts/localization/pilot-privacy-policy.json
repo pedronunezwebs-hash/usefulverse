@@ -1,0 +1,747 @@
+{
+  "id": "context-v6",
+  "protection": "covered-sentences-typed-data-v1",
+  "description": "context-v5 coverage and typed data; fixes the observed upload/load ambiguity with two exact privacy memory targets. Earlier measured policies remain immutable.",
+  "reviewer": "Codex",
+  "review_kind": "agent",
+  "reviewed_at": "2026-10-20",
+  "native_review": false,
+  "entries": {
+    "shikaku.fields.resume": {
+      "source": "Resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "context": "fields.resume",
+      "concept": "continue-saved-game",
+      "translation_input": "Continue the saved game"
+    },
+    "shikaku.fields.clear": {
+      "source": "Clear rectangles",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "context": "fields.clear",
+      "concept": "remove-rectangles",
+      "translation_input": "Remove all rectangles"
+    },
+    "voice-changer.fields.clear": {
+      "source": "Clear audio",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "context": "fields.clear",
+      "concept": "remove-audio",
+      "translation_input": "Remove the loaded audio"
+    },
+    "voice-changer.fields.preview": {
+      "source": "Preview effect",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "context": "fields.preview",
+      "concept": "play-audio-effect",
+      "translation_input": "Play the audio effect"
+    },
+    "voice-changer.fields.stop": {
+      "source": "Stop preview",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "context": "fields.stop",
+      "concept": "stop-audio-effect",
+      "translation_input": "Stop playing the audio effect"
+    },
+    "dxf-viewer.fields.resetView": {
+      "source": "Fit drawing",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "context": "fields.resetView",
+      "concept": "fit-drawing-to-viewport",
+      "translation_input": "Fit the drawing in the viewer"
+    },
+    "shikaku.fields.faq.1.a": {
+      "source": "No. Each rectangle must contain exactly one number clue.",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "context": "fields.faq.1.a",
+      "concept": "one-clue-per-rectangle",
+      "translation_input": "A rectangle cannot contain multiple number clues. Each rectangle must contain exactly one number clue."
+    },
+    "voice-changer.fields.faq1a": {
+      "source": "No. Your browser decodes and processes the selected audio locally. UsefulVerse does not receive the recording.",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "context": "fields.faq1a",
+      "concept": "audio-not-uploaded",
+      "translation_input": "Your browser decodes and processes the selected audio locally. UsefulVerse does not receive the recording."
+    },
+    "voice-changer.fields.faq2a": {
+      "source": "No. This lightweight pitch control changes playback rate, so a lower pitch plays slower and a higher pitch plays faster.",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "context": "fields.faq2a",
+      "concept": "pitch-not-independent-of-speed",
+      "translation_input": "This pitch control does not preserve playback speed. A lower pitch plays slower. A higher pitch plays faster."
+    },
+    "dxf-viewer.faq.0.a": {
+      "source": "No. This tool opens ASCII DXF only. It does not decode DWG or binary DXF.",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "context": "faq.0.a",
+      "concept": "dxf-not-dwg",
+      "translation_input": "This tool cannot open DWG or binary DXF. It only opens ASCII DXF."
+    },
+    "dxf-viewer.fields.clear": {
+      "source": "Clear drawing",
+      "source_hash": "b802d7be157572bc06f40858d9a1209da3ad1440067be6ef2c9e330a28064f79",
+      "context": "fields.clear",
+      "concept": "remove-drawing",
+      "translation_input": "Remove the loaded drawing"
+    },
+    "dxf-viewer.fields.clearMeasure": {
+      "source": "Clear measurement",
+      "source_hash": "477e2f83ccd0d051eb075fd528e1c62b955767ea6743ce8e2f34273bb9b7a430",
+      "context": "fields.clearMeasure",
+      "concept": "remove-measurement",
+      "translation_input": "Remove the measurement"
+    },
+    "voice-changer.fields.clean": {
+      "source": "Clean",
+      "source_hash": "5137c8760c9411860cdc0eccf0e2e3ae66cc0379c45c89104b477351d3cce57f",
+      "context": "fields.clean",
+      "concept": "neutral-audio-preset",
+      "translation_input": "Neutral voice"
+    },
+    "voice-changer.fields.faq3a": {
+      "source": "No. It applies simple audio effects. It does not clone a person, isolate vocals, or turn a voice into another real person.",
+      "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "context": "fields.faq3a",
+      "concept": "no-voice-cloning-or-separation",
+      "translation_input": "This tool cannot clone a person or isolate a vocal track. It cannot turn a voice into another real person. It only applies simple audio effects."
+    },
+    "voice-changer.faq.0.a": {
+      "source": "No. Your browser decodes and processes the selected audio locally. UsefulVerse does not receive the recording.",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "context": "faq.0.a",
+      "concept": "audio-not-uploaded",
+      "translation_input": "Your browser decodes and processes the selected audio locally. UsefulVerse does not receive the recording."
+    },
+    "voice-changer.faq.1.a": {
+      "source": "No. This lightweight pitch control changes playback rate, so a lower pitch plays slower and a higher pitch plays faster.",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "context": "faq.1.a",
+      "concept": "pitch-not-independent-of-speed",
+      "translation_input": "This pitch control does not preserve playback speed. A lower pitch plays slower. A higher pitch plays faster."
+    },
+    "voice-changer.faq.2.a": {
+      "source": "No. It applies simple audio effects. It does not clone a person, isolate vocals, or turn a voice into another real person.",
+      "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "context": "faq.2.a",
+      "concept": "no-voice-cloning-or-separation",
+      "translation_input": "This tool cannot clone a person or isolate a vocal track. It cannot turn a voice into another real person. It only applies simple audio effects."
+    },
+    "shikaku.fields.faq.3.a": {
+      "source": "No. Progress is stored only in this browser unless you clear its site data.",
+      "source_hash": "b4a3cd8df4c7c1248e8bcaeff995fcf41138a20df48de0f20ec6b259788dd2a3",
+      "context": "fields.faq.3.a",
+      "concept": "progress-not-synced",
+      "translation_input": "Progress is not shared with other devices. It is stored only in this browser unless you clear its site data."
+    },
+    "voice-changer.description": {
+      "source": "Change pitch, shape radio or deep-voice effects, preview echo, and export processed audio locally. Free, private, and no upload.",
+      "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+      "context": "description",
+      "concept": "audio-effects-no-upload",
+      "translation_input": "Change the pitch of an audio recording on this device. Apply radio or deep-voice effects. Preview echo and export processed audio locally. This tool is free and private. Your audio is not uploaded."
+    },
+    "voice-changer.details": {
+      "source": "Your browser decodes the selected audio, applies Web Audio filters, gain, pitch-rate and optional echo locally, then renders a WAV file for download. No audio is sent to a server.",
+      "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+      "context": "details",
+      "concept": "local-audio-processing-and-export",
+      "translation_input": "Your browser decodes the selected audio locally. It applies Web Audio filters, gain, pitch-rate changes and optional echo. It renders a WAV file for download. No audio is sent to a server."
+    },
+    "shikaku.limits": {
+      "source": "Puzzles are made in your browser. A larger grid can take a moment on a slower device. No account or file upload is needed.",
+      "source_hash": "553fd69edcd34b8a5279837687322bd6fb5734cb75fe06a4837f8fc424a1f323",
+      "context": "limits",
+      "concept": "no-account-or-upload-required",
+      "translation_input": "Puzzles are made in your browser. A larger grid can take a moment on a slower device. You do not need an account or a file upload."
+    },
+    "dxf-viewer.faq.1.a": {
+      "source": "The viewer draws only the entity types listed in its supported-content section. Other entities are reported by type and count; they are not silently approximated.",
+      "source_hash": "2e62ffc986c2e02d3e675c0d3748abcdcd6f331804dd987527903e3b816761c4",
+      "context": "faq.1.a",
+      "concept": "unsupported-entities-not-approximated",
+      "translation_input": "The viewer draws only the entity types listed in its supported-content section. It reports other entity types and their counts. It does not replace unsupported entities with approximations."
+    },
+    "voice-changer.fields.privacy": {
+      "source": "Audio stays in this browser. It is not uploaded or saved by UsefulVerse.",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "context": "fields.privacy",
+      "concept": "audio-not-uploaded-or-saved",
+      "translation_input": "Audio stays in this browser. No audio is sent to or saved by UsefulVerse."
+    }
+  },
+  "reviewed_memory": {
+    "voice-changer.fields.loaded": {
+      "source": "Audio decoded locally. Duration: {duration} seconds.",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "context": "fields.loaded",
+      "translations": {
+        "es": "Audio decodificado localmente. Duración: {duration} segundos.",
+        "nb-NO": "Lyd dekodet lokalt. Varighet: {duration} sekunder."
+      },
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Corrección completa del sentido, marcador o formato observado en context-v3; no restauración inferida."
+    },
+    "dxf-viewer.fields.unsupported": {
+      "source": "Unsupported file. Choose an ASCII .dxf file.",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "context": "fields.unsupported",
+      "translations": {
+        "es": "Archivo no compatible. Elige un archivo ASCII .dxf.",
+        "nb-NO": "Filen støttes ikke. Velg en ASCII .dxf-fil."
+      },
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Corrección completa del sentido, marcador o formato observado en context-v3; no restauración inferida."
+    },
+    "dxf-viewer.fields.file": {
+      "source": "Choose an ASCII DXF file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "context": "fields.file",
+      "translations": {
+        "nb-NO": "Velg en ASCII DXF-fil"
+      },
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Corrección completa del sentido, marcador o formato observado en context-v3; no restauración inferida."
+    },
+    "dxf-viewer.fields.resetView": {
+      "source": "Fit drawing",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "context": "fields.resetView",
+      "translations": {
+        "nb-NO": "Tilpass tegningen til visningen"
+      },
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Corrección completa del sentido, marcador o formato observado en context-v3; no restauración inferida."
+    },
+    "shikaku.fields.selectStart": {
+      "source": "Choose a start square.",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "context": "fields.selectStart",
+      "translations": {
+        "nb-NO": "Velg en startrute."
+      },
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Corrección completa del sentido, marcador o formato observado en context-v3; no restauración inferida."
+    },
+    "dxf-viewer.fields.clear": {
+      "source": "Clear drawing",
+      "source_hash": "b802d7be157572bc06f40858d9a1209da3ad1440067be6ef2c9e330a28064f79",
+      "context": "fields.clear",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Eliminar dibujo",
+        "nb-NO": "Fjern tegningen"
+      }
+    },
+    "dxf-viewer.fields.clearMeasure": {
+      "source": "Clear measurement",
+      "source_hash": "477e2f83ccd0d051eb075fd528e1c62b955767ea6743ce8e2f34273bb9b7a430",
+      "context": "fields.clearMeasure",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Borrar medida",
+        "nb-NO": "Fjern målingen"
+      }
+    },
+    "voice-changer.fields.clean": {
+      "source": "Clean",
+      "source_hash": "5137c8760c9411860cdc0eccf0e2e3ae66cc0379c45c89104b477351d3cce57f",
+      "context": "fields.clean",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Voz neutra",
+        "nb-NO": "Nøytral stemme"
+      }
+    },
+    "voice-changer.fields.radio": {
+      "source": "Radio",
+      "source_hash": "2a7dfeb2f2b018e5dae04497c0a281e7b22403057b91679046c9da52433894e1",
+      "context": "fields.radio",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Radio",
+        "nb-NO": "Radio"
+      }
+    },
+    "voice-changer.fields.deep": {
+      "source": "Deep voice",
+      "source_hash": "17389d4e8de33a504da6a09acec749666c5d80564efd2b73b1105b15b995ca17",
+      "context": "fields.deep",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Voz grave",
+        "nb-NO": "Dyp stemme"
+      }
+    },
+    "voice-changer.fields.bright": {
+      "source": "Bright voice",
+      "source_hash": "f1712d5a128deefcad0984658d98808d812f72fe59d19ddced41919cd24b4859",
+      "context": "fields.bright",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Voz brillante",
+        "nb-NO": "Lys stemme"
+      }
+    },
+    "voice-changer.fields.echo": {
+      "source": "Echo",
+      "source_hash": "8335e4c92c40556ab31f1bc57faab0a2563d89f720a8e6740fee674ea79df3c9",
+      "context": "fields.echo",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Eco",
+        "nb-NO": "Ekko"
+      }
+    },
+    "dxf-viewer.fields.unitless": {
+      "source": "Drawing units (not declared)",
+      "source_hash": "8ff1e2308dce301052a99f1379844905708c30578f65dc795e3900fcdea42cd9",
+      "context": "fields.unitless",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Unidades de dibujo (sin declarar)",
+        "nb-NO": "Tegningsenheter (ikke angitt)"
+      }
+    },
+    "shikaku.example": {
+      "source": "A clue marked 6 belongs inside one rectangle that covers exactly six squares.",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "context": "example",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "nb-NO": "En ledetråd merket 6 hører til i et rektangel som dekker nøyaktig seks ruter."
+      }
+    },
+    "shikaku.fields.faq.1.a": {
+      "source": "No. Each rectangle must contain exactly one number clue.",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "context": "fields.faq.1.a",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "nb-NO": "Nei. Hvert rektangel må inneholde nøyaktig én tall-ledetråd."
+      }
+    },
+    "dxf-viewer.fields.licenseNotice": {
+      "source": "This viewer bundles dxf-parser 1.1.2 and loglevel 1.9.2 under the MIT license. The parser runs in a local worker; source and license links are provided here.",
+      "source_hash": "1a3dae13c1345946548b51490ab16830f3e311fc0f8a30857ce509de14d7288d",
+      "context": "fields.licenseNotice",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Este visor incluye dxf-parser 1.1.2 y loglevel 1.9.2 con licencia MIT. El analizador se ejecuta en un proceso local en segundo plano; aquí están los enlaces al código fuente y a las licencias.",
+        "nb-NO": "Denne viseren inkluderer dxf-parser 1.1.2 og loglevel 1.9.2 med MIT-lisens. Filen leses i en lokal bakgrunnsprosess; lenker til kildekode og lisenser finnes her."
+      }
+    },
+    "dxf-viewer.fields.units.0": {
+      "source": "Unitless",
+      "source_hash": "3e4fe3522c14354a0bb5dba08a790e5aef1e686637efb6e5da44cda6557d578c",
+      "context": "fields.units.0",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Sin unidades",
+        "nb-NO": "Uten enhet"
+      }
+    },
+    "dxf-viewer.fields.units.1": {
+      "source": "Inches (in)",
+      "source_hash": "f831c59e09265ffa74465d4c46d8ded148602d57a0cb8e11bd4039995e9ae4c6",
+      "context": "fields.units.1",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Pulgadas (in)",
+        "nb-NO": "Tommer (in)"
+      }
+    },
+    "dxf-viewer.fields.units.2": {
+      "source": "Feet (ft)",
+      "source_hash": "edfdb5a87b358af95686144ba2d07e16e464f046e1a637723e001af2c14f6815",
+      "context": "fields.units.2",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Pies (ft)",
+        "nb-NO": "Fot (ft)"
+      }
+    },
+    "dxf-viewer.fields.units.3": {
+      "source": "Miles (mi)",
+      "source_hash": "bb4e926d0dbb42884c988f635ea23e2ceec8b03b18fb6cf69e920dc44c1fcc63",
+      "context": "fields.units.3",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Millas (mi)",
+        "nb-NO": "Miles (mi)"
+      }
+    },
+    "dxf-viewer.fields.units.4": {
+      "source": "Millimetres (mm)",
+      "source_hash": "632e882fc1bcc9bc9a0f665ff0cf0ae1e148d5ecc17bc93baac9ae9d2a20a35e",
+      "context": "fields.units.4",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Milímetros (mm)",
+        "nb-NO": "Millimeter (mm)"
+      }
+    },
+    "dxf-viewer.fields.units.5": {
+      "source": "Centimetres (cm)",
+      "source_hash": "f952c46e591a1d61db8896f3c1ba1ca71c318ba103464c22b9dd841ccca42009",
+      "context": "fields.units.5",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Centímetros (cm)",
+        "nb-NO": "Centimeter (cm)"
+      }
+    },
+    "dxf-viewer.fields.units.6": {
+      "source": "Metres (m)",
+      "source_hash": "bfc523cc656ff81500a7aa966eb1bc0f2427a051f0e894b9505823c419fa9b01",
+      "context": "fields.units.6",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Metros (m)",
+        "nb-NO": "Meter (m)"
+      }
+    },
+    "dxf-viewer.fields.units.7": {
+      "source": "Kilometres (km)",
+      "source_hash": "6c126a207c917838218d41a04e89ec5e47897a65b0f97d70b8683435bfe830ca",
+      "context": "fields.units.7",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Kilómetros (km)",
+        "nb-NO": "Kilometer (km)"
+      }
+    },
+    "dxf-viewer.fields.units.8": {
+      "source": "Microinches",
+      "source_hash": "88e4605e0ba3e42b02b5ae842abecbd5fd6c21ed4da6dafb65bda8c904951216",
+      "context": "fields.units.8",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Micropulgadas",
+        "nb-NO": "Mikrotommer"
+      }
+    },
+    "dxf-viewer.fields.units.9": {
+      "source": "Mils",
+      "source_hash": "515e9e806a6a27bef6815326ea66ba2dc9d57236e1c876ce7f20523135524076",
+      "context": "fields.units.9",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Mils",
+        "nb-NO": "Mils"
+      }
+    },
+    "dxf-viewer.fields.units.10": {
+      "source": "Yards (yd)",
+      "source_hash": "0aeb999b046b09dd8389f351d5ff6cdafe54fc98cc4feeec340f5e9cb89d1cfd",
+      "context": "fields.units.10",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Yardas (yd)",
+        "nb-NO": "Yard (yd)"
+      }
+    },
+    "dxf-viewer.fields.units.11": {
+      "source": "Angstroms",
+      "source_hash": "867b57fbc069cc8d63a1b5ee2594be81443a7c2c0f795e98af5552bfc1ba137b",
+      "context": "fields.units.11",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Ángstroms",
+        "nb-NO": "Ångstrøm"
+      }
+    },
+    "dxf-viewer.fields.units.12": {
+      "source": "Nanometres",
+      "source_hash": "01504ac2090b84cf7ce78a0cc61d5acf40163e2e020c82897a836e20abaa7590",
+      "context": "fields.units.12",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Nanómetros",
+        "nb-NO": "Nanometer"
+      }
+    },
+    "dxf-viewer.fields.units.13": {
+      "source": "Microns",
+      "source_hash": "0f31142920ce09c9d36ffa66b75b4818a775b62ec7415b543b646b0de3d7c5a2",
+      "context": "fields.units.13",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Micras",
+        "nb-NO": "Mikrometer"
+      }
+    },
+    "dxf-viewer.fields.units.14": {
+      "source": "Decimetres",
+      "source_hash": "a21e7a96e11052ce03f5a6387651c9f045350957b27fb5bf6362f44d8d4f93a1",
+      "context": "fields.units.14",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Decímetros",
+        "nb-NO": "Desimeter"
+      }
+    },
+    "dxf-viewer.fields.units.15": {
+      "source": "Decametres",
+      "source_hash": "063fc974f9f9dedd3ac0c56b669ca14a74a1eb707447cb5497fb513acbad6e93",
+      "context": "fields.units.15",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Decámetros",
+        "nb-NO": "Dekameter"
+      }
+    },
+    "dxf-viewer.fields.units.16": {
+      "source": "Hectometres",
+      "source_hash": "55e514ae72c03e8cb0084e3cb3e0d6658229f1662bc42eb44a8f153b09bf7dfe",
+      "context": "fields.units.16",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Hectómetros",
+        "nb-NO": "Hektometer"
+      }
+    },
+    "dxf-viewer.fields.units.17": {
+      "source": "Gigametres",
+      "source_hash": "dcac701aa0c706092d112ecfbc6c7c21e8989a853dae214a9094584cb96acbd3",
+      "context": "fields.units.17",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Gigámetros",
+        "nb-NO": "Gigameter"
+      }
+    },
+    "dxf-viewer.fields.units.18": {
+      "source": "Astronomical units",
+      "source_hash": "b372bf77326f1ac91b99e05579aaec0a110f23144a20e9e599dd8c09ffffd3bd",
+      "context": "fields.units.18",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Unidades astronómicas",
+        "nb-NO": "Astronomiske enheter"
+      }
+    },
+    "dxf-viewer.fields.units.19": {
+      "source": "Light years",
+      "source_hash": "1fc9961fc6f626cde7c803922aebf05a33ee5252df2fb48653bf8a203ca7131f",
+      "context": "fields.units.19",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Años luz",
+        "nb-NO": "Lysår"
+      }
+    },
+    "dxf-viewer.fields.units.20": {
+      "source": "Parsecs",
+      "source_hash": "9f3d14423dd78bc76a689f4f8183ed9b66d635cb8cc1e0648c29e06ad1a07c96",
+      "context": "fields.units.20",
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Entrada completa revisada contra el sentido del código y el original. No se reconstruyen salidas del modelo. No aprueba el idioma.",
+      "translations": {
+        "es": "Pársecs",
+        "nb-NO": "Parsec"
+      }
+    },
+    "voice-changer.fields.privacy": {
+      "source": "Audio stays in this browser. It is not uploaded or saved by UsefulVerse.",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "context": "fields.privacy",
+      "translations": {
+        "es": "El audio permanece en este navegador. No se sube a UsefulVerse ni se guarda allí.",
+        "nb-NO": "Lyden blir i denne nettleseren. Den lastes ikke opp til UsefulVerse og lagres ikke der."
+      },
+      "review_kind": "agent",
+      "reviewer": "Codex",
+      "reviewed_at": "2026-10-20",
+      "native_review": false,
+      "status": "agent-reviewed-memory",
+      "note": "Corrección observada y revisada en review-context-v5-references.json: negar subida al servidor, conservar carga local y concordancia Lyden/Den."
+    }
+  },
+  "evidence": [
+    "review-context-v4-full.json",
+    "full-sample-plan.json",
+    "https://help.autodesk.com/cloudhelp/2025/ENU/AutoCAD-Core/files/GUID-A58A87BB-482B-4042-A00A-EEF55A2B4FD8.htm",
+    "https://ordbokene.no/bm%2Cnn/desimeter",
+    "https://naob.no/ordbok/%C3%A5ngstr%C3%B8m",
+    "https://naob.no/ordbok/parsec"
+  ]
+}

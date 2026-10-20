@@ -33,6 +33,7 @@ FORMAT = "usefulverse-translation-pilot-v1"
 CONTEXT_POLICY = json.loads(Path(__file__).with_name("pilot-context-policy.json").read_text())
 POLICIES = {CONTEXT_POLICY["id"]: CONTEXT_POLICY, "context-v3": json.loads(Path(__file__).with_name("pilot-sentence-policy.json").read_text()), "context-v4": json.loads(Path(__file__).with_name("pilot-memory-policy.json").read_text())}
 POLICIES["context-v5"] = json.loads(Path(__file__).with_name("pilot-coverage-policy.json").read_text())
+POLICIES["context-v6"] = json.loads(Path(__file__).with_name("pilot-privacy-policy.json").read_text())
 SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
 TECHNICAL_TOKEN = re.compile(r"\.(?:dxf|dwg|png|svg|wav|mp3|pdf|json|csv|txt)\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
 SOFTWARE_VERSION = re.compile(r"(?<![\w.])\d+(?:\.\d+){2,}(?![\w.]\d)")

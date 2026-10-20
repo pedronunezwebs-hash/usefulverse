@@ -95,6 +95,15 @@ class SentenceCoverageTest(unittest.TestCase):
         self.assertFalse(any('example.com' in text or 'function' in text or '{count}' in text for text in seen))
         self.assertTrue(pilot.segment_evidence_valid(traces[0],source,raw))
 
+    def test_v6_privacy_memory_negates_upload_without_negating_local_loading(self):
+        entry=pilot.POLICIES['context-v6']['reviewed_memory']['voice-changer.fields.privacy']
+        self.assertEqual(entry['translations']['es'],'El audio permanece en este navegador. No se sube a UsefulVerse ni se guarda allí.')
+        self.assertEqual(entry['translations']['nb-NO'],'Lyden blir i denne nettleseren. Den lastes ikke opp til UsefulVerse og lagres ikke der.')
+        self.assertFalse(entry['native_review'])
+        self.assertTrue(pilot.semantic_issues('voice-changer.fields.privacy', entry['source_hash'], 'El audio permanece en este navegador. No es cargado o guardado por UsefulVerse.', 'es'))
+        for locale,text in entry['translations'].items():
+            self.assertTrue(pilot.automatic_checks(entry['source'],text,locale)['protected_tokens_identical'])
+
     def test_v5_entries_and_memory_are_bound_to_the_full_observed_corpus(self):
         path=pilot.ROOT/'docs/quality/translation-pilot/checkpoints/context-v4/madlad.jsonl'
         units={row['key']:row for row in map(json.loads,path.read_text().splitlines())}
