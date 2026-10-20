@@ -2005,5 +2005,572 @@
     "issue": "«téléchargé» no expresa de forma inequívoca la ausencia de subida de audio.",
     "observed_candidate": "madlad",
     "actions_run_id": "39402907694"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.faq.0.a",
+    "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+    "translation": "Esta herramienta no puede abrir DWG o binario DXFSólo se abre ASCII DXF.",
+    "issue": "La segmentación pega «DXFSólo» y pierde la separación entre frases.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.faq.2.a",
+    "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+    "translation": "Sólo cuando el DXF En caso contrario, el espectador utiliza la unidad declarada o etiquetas de mediciones como unidades de dibujo.",
+    "issue": "Desaparece la condición de milímetros; queda «Sólo cuando el DXF» sin completar.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.binary",
+    "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+    "translation": "Binario DXF no se apoya.Save o exportar el dibujo como ASCII DXF.",
+    "issue": "«no se apoya.Save» es traducción incorrecta e incluye inglés.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.file",
+    "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+    "translation": "Elegir una ASCII DXF Archivo",
+    "issue": "«Elegir una ASCII DXF Archivo» no respeta el orden ni el género.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "translation": "Conexión del dibujo en el espectador",
+    "issue": "«Conexión del dibujo» no significa ajustar la vista.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.unsupported",
+    "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+    "translation": "Ficheiro no compatible. escoge un ASCII .dxf El archivo .",
+    "issue": "Mezcla «Ficheiro» con español y forma «.dxf El archivo». ",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.zoomOut",
+    "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+    "translation": "¡Zoom fuera!",
+    "issue": "«¡Zoom fuera!» es un calco poco claro para alejar.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.fields.clear",
+    "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+    "translation": "Removemos todos los rectángulos",
+    "issue": "«Removemos» habla de lo que hacemos, en vez de dar la acción de borrar.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "translation": "Un rectángulo no puede contener múltiples pistas de números; cada rectángulo debe contener exactamente una pistas de números.",
+    "issue": "«una pistas de números» tiene concordancia incorrecta.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.fields.resume",
+    "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+    "translation": "Continúa el juego salvado",
+    "issue": "«juego salvado» es un calco para partida guardada.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "Descarga el audio cargado",
+    "issue": "Traduce eliminar como «Descarga», la acción contraria para el usuario.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.decodeFailed",
+    "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+    "translation": "Este navegador no puede decodificar ese formato de audio. WAV o MP3.",
+    "issue": "Omite la instrucción de probar; queda el fragmento «WAV o MP3». ",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "Su navegador decodifica y procesa el audio seleccionado localmente. UsefulVerse No recibe la grabación.",
+    "issue": "Mayúscula suelta en «UsefulVerse No recibe» por separar el sujeto literal.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "Este control de la pista no conserva la velocidad de reproducción. una pista inferior juega más lentamente. una pista superior juega más rápido.",
+    "issue": "«pista inferior/superior» no expresa tono; pierde el sentido del control.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.loaded",
+    "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+    "translation": "El audio se desciende de forma local.Durante: {duration} Los segundos.",
+    "issue": "«El audio se desciende» y «Durante» no significan audio decodificado y duración.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.preview",
+    "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+    "translation": "Juega el efecto de audio",
+    "issue": "«Juega» trata play como jugar, no reproducir audio.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.stop",
+    "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+    "translation": "Deja de jugar el efecto de audio",
+    "issue": "«Deja de jugar» no significa detener audio.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.tooLong",
+    "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+    "translation": "Esta herramienta soporta clips hasta 30 2 segundos. remate el archivo y intente de nuevo.",
+    "issue": "Inventa «30 2 segundos» y traduce recortar como «remate». ",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.faq.0.a",
+    "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+    "translation": "Dette verktøyet kan ikke åpnes DWG eller binære DXFDet åpner bare ASCII DXF.",
+    "issue": "«verktøyet kan ikke åpnes» cambia qué no se puede abrir; además pega «DXFDet». ",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.faq.2.a",
+    "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+    "translation": "Bare når den DXF Annars bruker titteren den erklærte enheten eller etiketter målinger som tegningsenheter.",
+    "issue": "Pierde milímetros y mezcla «Annars» con bokmål; condición incompleta.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.binary",
+    "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+    "translation": "Binære DXF ikke støttes. lagre eller eksportere tegningen som ASCII DXF.",
+    "issue": "Fragmentos sin verbo auxiliar y concordancia defectuosa en «Binære DXF». ",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.exportPng",
+    "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+    "translation": "Nedlasting PNG",
+    "issue": "«Nedlasting» es el sustantivo descarga, no la acción «Last ned». ",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.exportSvg",
+    "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+    "translation": "Nedlasting SVG",
+    "issue": "«Nedlasting» es el sustantivo descarga, no la acción «Last ned». ",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.file",
+    "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+    "translation": "Velg en ASCII DXF Filer",
+    "issue": "«en ... Filer» mezcla singular y plural.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.measurement",
+    "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+    "translation": "Måling av avstand",
+    "issue": "Etiqueta nominal «Måling av avstand» en vez de indicar medir.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "translation": "Fikk tegningen i seeren",
+    "issue": "«Fikk tegningen» significa obtuvo el dibujo, no ajustar vista.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.unsupported",
+    "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+    "translation": "Ikke støttet fil. Velg en ASCII .dxf og filer.",
+    "issue": "Añade «og filer» al final y rompe la instrucción de archivo.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.example",
+    "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+    "translation": "En indikator som er markert 6 Den tilhører innsiden av en rettangle som dekker nøyaktig seks kvadrater.",
+    "issue": "«rettangle» no es rektangel; gramática y término de pista defectuosos.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "translation": "En rektangle kan ikke inneholde flere tallsignaler.Hver rektangle må inneholde nøyaktig én tallsignal.",
+    "issue": "«rektangle» y «tallsignal» no son los términos naturales del juego; concordancia rota.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.resume",
+    "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+    "translation": "Fortsett spillet reddet",
+    "issue": "«spillet reddet» alude al rescate del juego; no a la partida guardada.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.selectStart",
+    "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+    "translation": "Velg et startkvarter.",
+    "issue": "«startkvarter» no es una casilla inicial.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.undo",
+    "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+    "translation": "I siste rettangle",
+    "issue": "«I siste rettangle» pierde por completo deshacer y usa un término incorrecto.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "Fjern den lastede audioen",
+    "issue": "«audioen» es menos natural que lyd/lydfil; conserva eliminar.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.decodeFailed",
+    "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+    "translation": "Denne nettleseren kan ikke dekode det lydformatet. WAV eller MP3.",
+    "issue": "Omite el verbo probar antes de WAV o MP3.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.export",
+    "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+    "translation": "Eksport behandlet WAV",
+    "issue": "«Eksport behandlet» no es la instrucción natural «Eksporter». ",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "Nettleseren dekoder og behandler det valgte lyd lokalt. UsefulVerse De mottar ikke opptaket.",
+    "issue": "Concordancia errónea «det valgte lyd» y sujeto fragmentado.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "Denne pitch-kontrollen beholder ikke spillets hastighet. et lavere pitch spiller saktere. et høyere pitch spiller raskere.",
+    "issue": "«spillets hastighet» cambia la velocidad de reproducción por velocidad del juego.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.loaded",
+    "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+    "translation": "Audio dekodert lokalt. varighet: {duration} Sekunder av.",
+    "issue": "«Sekunder av» añade una preposición sin sentido.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.preview",
+    "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+    "translation": "Spille lydeffekten",
+    "issue": "«Spille» es infinitivo; usar imperativo en el botón.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.stop",
+    "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+    "translation": "Slutt å spille audio-effekten",
+    "issue": "«audio-effekten» es menos natural que lydeffekten.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.tooLong",
+    "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+    "translation": "Dette verktøyet støtter klipp opp til 30 2 sekunder. Trim filen og prøv igjen.",
+    "issue": "Inventa «30 2 sekunder»; la cifra deja de ser exacta.",
+    "observed_candidate": "m2m100/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.faq.0.a",
+    "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+    "translation": "Esta herramienta no puede abrir DWG o binario DXF. Solo se abre ASCII DXF.",
+    "issue": "«binario DXF» invierte el orden y «Solo se abre» queda poco natural.",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.faq.2.a",
+    "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+    "translation": "Solo cuando el DXF De lo contrario, el visor usa la unidad declarada o etiqueta las medidas como unidades de dibujo.",
+    "issue": "Desaparece por completo la condición de milímetros; queda «Solo cuando el DXF». ",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.binary",
+    "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+    "translation": "Binary DXF Guarde o exporte el dibujo como un archivo PDF. ASCII DXF.",
+    "issue": "Pierde no soportado e inventa exportar un PDF; mezcla inglés.",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.file",
+    "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+    "translation": "Elige un país ASCII DXF fichero",
+    "issue": "«Elige un país» no significa elegir un archivo.",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.unsupported",
+    "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+    "translation": "No se admite este archivo. ASCII .dxf archivo.",
+    "issue": "Pierde la instrucción de elegir; deja «ASCII .dxf archivo». ",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.example",
+    "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+    "translation": "Una pista marcada 6 Pertenece dentro de un rectángulo que cubre exactamente seis cuadrados.",
+    "issue": "Mayúscula en mitad de frase por segmentar junto al número.",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.decodeFailed",
+    "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+    "translation": "Este navegador no ha podido decodificar el formato de audio. WAV o MP3.",
+    "issue": "Desaparece probar; WAV o MP3 quedan como fragmento sin verbo.",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.loaded",
+    "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+    "translation": "Audio decodificado localmente. Duración: {duration} 10 segundos.",
+    "issue": "Inventa diez segundos después del marcador {duration}; debe aparecer solo la duración variable.",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.privacy",
+    "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+    "translation": "El audio permanece en este navegador y no es subido o guardado por el navegador. UsefulVerse.",
+    "issue": "Atribuye no guardar al navegador y deja UsefulVerse suelto; cambia la promesa de privacidad.",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.tooLong",
+    "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+    "translation": "Esta herramienta soporta clips de hasta 30 Recorte el archivo e inténtelo de nuevo.",
+    "issue": "Pierde la unidad segundos tras 30; texto queda incompleto.",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.faq.0.a",
+    "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+    "translation": "Dette verktøyet kan ikke åpnes DWG eller binær DXFDen åpnes bare ASCII DXF.",
+    "issue": "«verktøyet kan ikke åpnes» se refiere al propio programa; pega «DXFDen». ",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.faq.2.a",
+    "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+    "translation": "Bare når DXF Ellers bruker visningsprogrammet den angitte enheten eller merker målingene som tegneenheter.",
+    "issue": "Desaparece la condición de milímetros; «Bare når DXF» queda sin completar.",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.binary",
+    "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+    "translation": "Binær DXF Lagre eller eksporter tegningen som en PDF-fil. ASCII DXF.",
+    "issue": "Pierde no soportado e inventa exportar PDF.",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.file",
+    "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+    "translation": "Velg en farge ASCII DXF fil",
+    "issue": "«Velg en farge» significa elegir un color, no un archivo.",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "translation": "Tilpass tegningen i visningsprogram",
+    "issue": "Falta la forma definida en «i visningsprogram». ",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.unsupported",
+    "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+    "translation": "Fil som ikke støttes. ASCII .dxf fil.",
+    "issue": "Omite elegir archivo; fragmento «ASCII .dxf fil». ",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.zoomOut",
+    "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+    "translation": "Forstørr ut",
+    "issue": "«Forstørr ut» mezcla ampliar y alejar; acción poco clara.",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.example",
+    "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+    "translation": "En ledetråd merket 6 Hver firkant tilhører innenfor et rektangel som dekker nøyaktig seks ruter.",
+    "issue": "Añade «Hver firkant» (cada cuadrado), ajeno a la frase fuente sobre una pista.",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "translation": "Et rektangel kan ikke inneholde flere tall- ledetråder. Hvert rektangel må inneholde nøyaktig ett tall- ledetråd.",
+    "issue": "Concordancia incorrecta «ett ... ledetråd» y separación defectuosa en tall-ledetråd.",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.selectStart",
+    "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+    "translation": "Velg en startplass.",
+    "issue": "«startplass» es lugar inicial, menos preciso que casilla inicial.",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "Nettleseren din dekoder og behandler den valgte lyden lokalt. UsefulVerse Mottakeren mottar ikke opptaket.",
+    "issue": "Inventa «Mottakeren» (el destinatario) como sujeto que no recibe, en vez de UsefulVerse.",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.tooLong",
+    "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+    "translation": "Dette verktøyet støtter klipp opptil 30 Beskjær filen og prøv på nytt.",
+    "issue": "Pierde la unidad segundos tras 30; frase incompleta.",
+    "observed_candidate": "madlad/context-v2",
+    "actions_run_id": "39434607232"
   }
 ]

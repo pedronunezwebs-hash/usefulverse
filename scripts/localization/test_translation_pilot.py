@@ -112,10 +112,10 @@ class TranslationPilotTest(unittest.TestCase):
     def test_agent_review_stays_bound_to_the_exact_observed_translations(self):
         directory = pilot.ROOT / 'docs/quality/translation-pilot'
         records = {}
-        for path in (directory / 'checkpoints').glob('*.jsonl'):
+        for path in (directory / 'checkpoints').rglob('*.jsonl'):
             for line in path.read_text().splitlines():
                 row = json.loads(line); records[row['record_id']] = row
-        for filename, expected_count in [('review-es-nb.json', 240), ('review-core-six.json', 402), ('review-madlad-de-fr.json', 80)]:
+        for filename, expected_count in [('review-es-nb.json', 240), ('review-core-six.json', 402), ('review-madlad-de-fr.json', 80), ('review-context-v2-m2m100.json', 80), ('review-context-v2-madlad.json', 80)]:
             review = json.loads((directory / filename).read_text())
             self.assertFalse(review['native_review'])
             self.assertEqual(review['approved_locales'], [])
@@ -234,6 +234,38 @@ class TranslationPilotTest(unittest.TestCase):
             self.assertIsNone(pilot.translate_unmasked_sentences([source], lambda _: [(broken, False)])[0][0])
         with self.assertRaises(ValueError): pilot.translate_unmasked_sentences([source], lambda _: [])
         self.assertIsNone(pilot.translate_unmasked_sentences(['Choose an ASCII .dxf file.'], lambda _: [('Elige un archivo ASCII DXF.', False)])[0][0])
+
+    def test_a_baseline_record_cannot_impersonate_a_contextual_checkpoint(self):
+        source = 'Save'
+        unit = {'key': 'tool.button', 'source': source, 'source_hash': hashlib.sha256(source.encode()).hexdigest(), 'context': 'button', 'legacy': {}}
+        corpus = {'sourceDigest': 'same'}
+        identity = pilot.record_id(corpus, 'madlad', 'es', unit, 'model', 2, 'context-v3')
+        baseline = {'format': pilot.FORMAT, 'status': 'machine-draft', 'engine': 'madlad', 'engine_revision': pilot.ENGINES['madlad']['revision'],
+            'record_id': identity, 'corpus_digest': 'same', 'locale': 'es', 'key': unit['key'], 'source': source,
+            'source_hash': unit['source_hash'], 'candidate': 'model', 'beam_size': 2}
+        with self.assertRaises(ValueError): pilot.pending_work(corpus, [unit], ['es'], 'madlad', 2, {identity: baseline}, 'context-v3')
+
+    def test_actual_contextual_reference_checkpoint_resumes_without_a_model(self):
+        import contextlib
+        import io
+        from types import SimpleNamespace
+        from unittest.mock import patch
+        checkpoint = pilot.ROOT / 'docs/quality/translation-pilot/checkpoints/context-v2/m2m100.jsonl'
+        rows = [json.loads(line) for line in checkpoint.read_text().splitlines()]
+        units = {}
+        for row in rows:
+            unit = units.setdefault(row['key'], {'key': row['key'], 'source': row['source'], 'source_hash': row['source_hash'],
+                'context': row['context'], 'reference': True, 'legacy': {}})
+            if row['candidate'] == 'legacy': unit['legacy'][row['locale']] = row['translation']
+        self.assertEqual(len(units), 40)
+        corpus = {'sourceDigest': rows[0]['corpus_digest'], 'fullSourceUnits': 214, 'locales': ['en', 'es', 'nb-NO'], 'units': list(units.values())}
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'corpus.json'; path.write_text(json.dumps(corpus))
+            args = SimpleNamespace(corpus=path, resume=checkpoint, locales='es,nb-NO', scope='references', engine='m2m100', beam_size=2, policy='context-v2')
+            stream = io.StringIO()
+            with patch.object(pilot, 'actions_only'), patch.object(pilot.subprocess, 'run', side_effect=AssertionError('Unexpected model conversion')), contextlib.redirect_stdout(stream):
+                pilot.run(args)
+            self.assertIn('"conversion_seconds":0', stream.getvalue())
 
     def test_missing_sentence_spacing_is_not_misreported_as_a_file_extension_change(self):
         checks = pilot.automatic_checks('Audio decoded. Try again.', 'Audio decodificado.Prueba otra vez.', 'es')

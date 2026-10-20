@@ -1,0 +1,37 @@
+{
+  "at_utc": "2026-10-20T14:02:26.467508+00:00",
+  "deployment_performed": false,
+  "indexable_before": 25625,
+  "indexable_after": 25625,
+  "checks": [
+    {
+      "url": "https://usefulverse.com/sitemap.xml",
+      "http_status": 200,
+      "method": "GET curl",
+      "url_count": 10260,
+      "xml_root": "{http://www.sitemaps.org/schemas/sitemap/0.9}urlset"
+    },
+    {
+      "url": "https://tools.usefulverse.com/sitemap.xml",
+      "http_status": 200,
+      "method": "GET curl",
+      "url_count": 15365,
+      "xml_root": "{http://www.sitemaps.org/schemas/sitemap/0.9}urlset"
+    },
+    {
+      "url": "https://tools.usefulverse.com/tools/zzz-no-existe/",
+      "http_status": 200,
+      "method": "GET curl"
+    },
+    {
+      "url": "https://tools.usefulverse.com/es/zzz/",
+      "http_status": 200,
+      "method": "GET curl"
+    },
+    {
+      "url": "https://tools.usefulverse.com/zzz.html",
+      "http_status": 200,
+      "method": "GET curl"
+    }
+  ]
+}

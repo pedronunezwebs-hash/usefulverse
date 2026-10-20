@@ -211,6 +211,10 @@ def pending_work(corpus, units, locales, engine, beam, completed, policy="baseli
                     validate_record(previous)
                     expected = {"corpus_digest": corpus["sourceDigest"], "engine": engine, "locale": locale,
                         "key": unit["key"], "source_hash": unit["source_hash"], "candidate": candidate, "beam_size": beam}
+                    if policy != "baseline":
+                        expected.update(inference_policy=policy, policy_digest=policy_digest(policy))
+                    elif previous.get("inference_policy", "baseline") != "baseline":
+                        raise ValueError("Contextual checkpoint cannot impersonate the baseline")
                     if any(previous.get(key) != value for key, value in expected.items()):
                         raise ValueError("Checkpoint identity does not match its contents")
                 else:
