@@ -1,7 +1,8 @@
 {
-  "at_utc": "2026-10-20T19:26:01.577972+00:00",
+  "at_utc": "2026-10-20T19:51:58.933820+00:00",
   "deployments_this_batch": 0,
   "indexable_url_count": 25625,
+  "indexable_url_count_before": 25625,
   "requests": [
     {
       "url": "https://usefulverse.com/sitemap.xml",
@@ -31,5 +32,40 @@
       "method": "GET curl"
     }
   ],
-  "visual_or_device_review": false
+  "visual_or_device_review": false,
+  "initial_check": {
+    "at_utc": "2026-10-20T19:26:01.577972+00:00",
+    "deployments_this_batch": 0,
+    "indexable_url_count": 25625,
+    "requests": [
+      {
+        "url": "https://usefulverse.com/sitemap.xml",
+        "http_status": 200,
+        "url_count": 10260,
+        "method": "GET curl; parse XML urlset"
+      },
+      {
+        "url": "https://tools.usefulverse.com/sitemap.xml",
+        "http_status": 200,
+        "url_count": 15365,
+        "method": "GET curl; parse XML urlset"
+      },
+      {
+        "url": "https://tools.usefulverse.com/tools/zzz-no-existe/",
+        "http_status": 200,
+        "method": "GET curl"
+      },
+      {
+        "url": "https://tools.usefulverse.com/es/zzz/",
+        "http_status": 200,
+        "method": "GET curl"
+      },
+      {
+        "url": "https://tools.usefulverse.com/zzz.html",
+        "http_status": 200,
+        "method": "GET curl"
+      }
+    ],
+    "visual_or_device_review": false
+  }
 }
