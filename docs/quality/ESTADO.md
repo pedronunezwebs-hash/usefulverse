@@ -103,8 +103,17 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 - [ ] Mejorar la fidelidad de Office (tablas; viabilidad de LibreOffice en WASM)
 - [ ] Resumir y traducir PDF con IA en el dispositivo: diseño en `docs/quality/PDF-IA.md` (escalera Chrome IA → Transformers.js → modo ligero)
 
+### Cobertura: las 1.000 herramientas pasan por el mismo plan
+- 700 existentes → bucle de calidad (RUNBOOK §5) · 300 nuevas → RUNBOOK §7 (Paso A + Paso B), **con la misma puerta de calidad
+  y las mismas pruebas** (PRUEBAS.md). Comprobado el 20-oct: las 300 de `progress.csv` coinciden con las 304 carpetas nuevas del
+  respaldo de ChatGPT (299 por slug, `iching-cast` → `i-ching-oracle`, `capital-gains-tax-uk` → módulo `uk-capital-gains`;
+  `pending-23`, `controller-helpers` y los tests son módulos compartidos, no herramientas).
+- [ ] **Auditar las 300 nuevas con el mismo método** que las 700 (rastreo de la vista previa + auditoría por categoría frente a los
+      líderes) **antes de activarlas**. Añadir sus hallazgos a `AUDITORIA-CATALOGO.md`.
+
 ### Herramientas nuevas (RUNBOOK §7)
-- [ ] Paso A: las 300 subidas con `noindex` (fuera del sitemap y de los `hreflang`) · subidas: **0 / 300**
+- [~] Paso A: las 300 están en una **vista previa** con `noindex` (`draft-300-noindex.usefulverse-tools.pages.dev`); falta integrarlas en
+      `main` y en el sitio unificado con `noindex` · en `main`: **0 / 300**
 - Paso B: activadas **0** (máximo 30 por semana) · semana actual: 0 / 30
 
 ### Fase 8 · Piloto automático y anuncios (REVISION-FINAL §3-5)

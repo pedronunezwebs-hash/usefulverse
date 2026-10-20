@@ -264,7 +264,8 @@ puerta. Merge y despliegue (máximo uno al día). **Verificar en producción** (
 2. **Viabilidad:** si necesita servidor, API o datos de pago, se hace una ficha de costes y se para hasta que Pedro la
    apruebe. Además se comprueba que sea distinta de las 700 existentes (ver «Qué cuenta como nueva herramienta» en
    `PLAN-1000.md`).
-3. Mejorarla con la receta de la sección 5 y pasar la puerta de la sección 6 y el piloto de traducción de la sección 8.
+3. Revisar sus hallazgos de la auditoría de las 300 (ver `ESTADO.md`, «Cobertura»), mejorarla con la receta de la sección 5 y
+   pasar la puerta de la sección 6 y el piloto de traducción de la sección 8.
 4. **Activar:** `indexable: true` → sin `noindex`, dentro del sitemap de cada idioma y en los `hreflang`. Desplegar y verificar
    (sección 9), y pedir la indexación de las 5 más importantes de la tanda.
 5. En `progress.csv`: `estado=activa`, con la fecha y el PR. Contar las activaciones de la semana; al llegar a 30, parar

@@ -700,303 +700,303 @@ prioridad,slug,host,tipo,idiomas,impresiones_1_15_oct,clics_1_15_oct,estado,agen
 698,writing-prompt-generator,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
 699,writing-tracker,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
 700,xml-to-csv-converter,tools.usefulverse.com,existente,36,0,0,pendiente,,,,falta nb
-1001,text-translator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · traductor 226000000/mes
-1002,internet-speed-test,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · speed test 101000000/mes
-1003,local-ai-chat,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · ai chatbot 6120000/mes
-1004,weather-dashboard,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · weather forecast 4090000/mes
-1005,dictionary,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · dictionary 3350000/mes
-1006,fancy-text-generator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · font generator 3350000/mes
-1007,grammar-checker,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · grammar checker 3350000/mes
-1008,soundboard,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · soundboard 3350000/mes
-1009,thesaurus,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · thesaurus 2740000/mes
-1010,germany-net-salary,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · brutto netto rechner 2240000/mes
-1011,local-image-generator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · ai image generator 2240000/mes
-1012,rdap-domain-lookup,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · whois 1500000/mes
-1013,texas-holdem,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · poker 1220000/mes
-1014,air-quality-dashboard,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · aqi 1000000/mes
-1015,paraphrasing-tool,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · paraphrasing tool 1000000/mes
-1016,coloring-studio,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · coloring pages 823000/mes
-1017,online-compiler,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · python compiler 823000/mes
-1018,open-radio-player,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · online radio 823000/mes
-1019,qibla-compass,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · qibla direction 823000/mes
-1020,baccarat-practice,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · baccarat 673000/mes
-1021,big-five-personality-test,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · personality test 673000/mes
-1022,indian-rummy,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · rummy 673000/mes
-1023,pool-game,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · 8 ball pool 673000/mes
-1024,pronunciation-dictionary,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · pronunciation 673000/mes
-1025,roulette-practice,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · roulette 673000/mes
-1026,us-paycheck-calculator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · paycheck calculator 673000/mes
-1027,india-income-tax-calculator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · income tax calculator 550000/mes
-1028,never-have-i-ever,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · never have i ever 550000/mes
-1029,panchang-calendar,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · panchang aaj ka 550000/mes
-1030,photo-background-changer,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · photo background changer 550000/mes
-1031,rubiks-cube-solver,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · rubiks cube solver 550000/mes
-1032,video-editor,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · video editor 550000/mes
-1033,adult-adhd-screener,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · adhd test 450000/mes
-1034,brazil-termination-calculator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · calculadora rescisão 450000/mes
-1035,chinese-zodiac,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · chinese zodiac 450000/mes
-1036,color-vision-check,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · color blind test 450000/mes
-1037,font-identifier,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · font finder 450000/mes
-1038,gamepad-tester,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · gamepad tester 450000/mes
-1039,geographic-distance-calculator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · distance calculator 450000/mes
-1040,japanese-name-strokes,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · 姓名判断 450000/mes
-1041,love-calculator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · love calculator 450000/mes
-1042,static-website-builder,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · website builder 450000/mes
-1043,virtual-keyboard,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · hindi typing 450000/mes
-1044,baseball-game,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · baseball game 368000/mes
-1045,chord-progression-builder,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · chord progression 368000/mes
-1046,cricket-game,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · cricket games 368000/mes
-1047,dns-lookup,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · dns checker 368000/mes
-1048,india-gratuity-calculator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · gratuity calculator 368000/mes
-1049,ip-geolocation-lookup,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · ip lookup 368000/mes
-1050,mahjong-four-player,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · 麻雀 ゲーム 368000/mes
-1051,public-transit-planner,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · journey planner 368000/mes
-1052,shogi,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · 将棋 368000/mes
-1053,soccer-penalty-game,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · soccer games 368000/mes
-1054,teen-patti,(por decidir),nueva,0,,,pendiente,,,,Revisar intención antes de priorizar · teen patti 368000/mes
-1055,would-you-rather,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · would you rather questions 368000/mes
-1056,enneagram-questionnaire,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · enneagram test 301000/mes
-1057,local-music-generator,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · ai music generator 301000/mes
-1058,phq9-questionnaire,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · depression test 301000/mes
-1059,rock-paper-scissors,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · rock paper scissors 301000/mes
-1060,truth-or-dare,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · truth or dare 301000/mes
-1061,uk-stamp-duty,(por decidir),nueva,0,,,pendiente,,,,Prioridad por demanda; falta viabilidad · stamp duty calculator 301000/mes
-1062,basketball-shooting-game,(por decidir),nueva,0,,,pendiente,,,,Alternativa cercana; falta viabilidad · basketball games 246000/mes
-1063,charades,(por decidir),nueva,0,,,pendiente,,,,Alternativa cercana; falta viabilidad · charades 246000/mes
-1064,durak,(por decidir),nueva,0,,,pendiente,,,,Alternativa cercana; falta viabilidad · дурак онлайн 246000/mes
-1065,egfr-calculator,(por decidir),nueva,0,,,pendiente,,,,Alternativa cercana; falta viabilidad · egfr calculator 246000/mes
-1066,india-ppf-calculator,(por decidir),nueva,0,,,pendiente,,,,Alternativa cercana; falta viabilidad · ppf calculator 246000/mes
-1067,music-identifier,(por decidir),nueva,0,,,pendiente,,,,Alternativa cercana; falta viabilidad · song finder 246000/mes
-1068,personal-color-analysis,(por decidir),nueva,0,,,pendiente,,,,Alternativa cercana; falta viabilidad · パーソナルカラー診断 246000/mes
-1069,screen-mirroring,(por decidir),nueva,0,,,pendiente,,,,Alternativa cercana; falta viabilidad · screen mirroring 246000/mes
-1070,business-model-canvas,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · business model canvas 201000/mes
-1071,earthquake-map,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · terremotos hoy 201000/mes
-1072,economic-calendar,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · economic calendar 201000/mes
-1073,emoji-search,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · emoji copy paste 201000/mes
-1074,face-shape-analyzer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · face shape detector 201000/mes
-1075,france-housing-benefit,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · simulation apl 201000/mes
-1076,online-paint,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · drawing app 201000/mes
-1077,travel-route-optimizer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · route planner 201000/mes
-1078,truco,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · truco 201000/mes
-1079,uk-pay-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · salary calculator uk 201000/mes
-1080,visual-acuity-check,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · eye test 201000/mes
-1081,craps-practice,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · craps 165000/mes
-1082,iching-cast,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · i ching 165000/mes
-1083,image-search-open,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · free images 165000/mes
-1084,india-nps-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · nps calculator 165000/mes
-1085,makruk,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · หมากรุกไทย 165000/mes
-1086,raci-matrix-builder,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · raci matrix 165000/mes
-1087,racing-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · racing game 165000/mes
-1088,scopa,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · scopa 165000/mes
-1089,belote,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · belote 135000/mes
-1090,email-address-validator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · email checker 135000/mes
-1091,fishing-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · fishing game 135000/mes
-1092,object-remover,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · remove object from photo 135000/mes
-1093,photosphere-viewer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · panorama viewer 135000/mes
-1094,plant-identifier,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · plant identifier 135000/mes
-1095,sticker-pack-maker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · sticker maker 135000/mes
-1096,word-cloud-generator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · word cloud 135000/mes
-1097,brazil-thirteenth-salary,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calculadora décimo terceiro 110000/mes
-1098,darts-scoreboard,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · darts scorer 110000/mes
-1099,lines-of-action,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · lines of action 110000/mes
-1100,monte-carlo-simulator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · monte carlo simulation 110000/mes
-1101,text-to-handwriting,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · text to handwriting 110000/mes
-1102,tide-times,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · tide times 110000/mes
-1103,vaccination-schedule,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · vaccination schedule 110000/mes
-1104,verb-conjugator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · conjugaison 110000/mes
-1105,whist,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · whist 110000/mes
-1106,brazil-vacation-pay-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calculo ferias 90500/mes
-1107,document-mail-merge,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · mail merge 90500/mes
-1108,endless-runner,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · running games 90500/mes
-1109,gad7-questionnaire,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · gad7 90500/mes
-1110,hanoi-tower,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · tower of hanoi 90500/mes
-1111,japan-income-tax,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 所得税 計算 90500/mes
-1112,pinochle,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pinochle 90500/mes
-1113,zakat-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · zakat calculator 90500/mes
-1114,block-puzzle,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · block puzzle 74000/mes
-1115,creatinine-clearance-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · creatinine clearance calculator 74000/mes
-1116,france-income-tax,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · simulateur impots 74000/mes
-1117,hearing-self-check,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · hearing test 74000/mes
-1118,portugal-net-salary,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · salario liquido 74000/mes
-1119,space-shooter,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · space games 74000/mes
-1120,tls-site-checker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · ssl checker 74000/mes
-1121,tower-defense,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · tower defense 74000/mes
-1122,virtual-drum-kit,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · virtual drums 74000/mes
-1123,customer-journey-map,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · customer journey map 60500/mes
-1124,germany-unemployment-benefit,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · arbeitslosengeld rechner 60500/mes
-1125,online-whiteboard,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · online whiteboard 60500/mes
-1126,password-strength-checker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · password checker 60500/mes
-1127,prayer-beads-counter,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · tasbih counter 60500/mes
-1128,roc-curve-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · roc curve 60500/mes
-1129,spain-termination-pay,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calculadora finiquito 60500/mes
-1130,tank-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · tank games 60500/mes
-1131,xiangqi,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 象棋 60500/mes
-1132,australia-income-tax,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · tax calculator australia 49500/mes
-1133,bubble-level,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · bubble level 49500/mes
-1134,flipbook-animator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · animation maker 49500/mes
-1135,hardy-weinberg-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · hardy weinberg equilibrium 49500/mes
-1136,india-apy-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · apy calculator 49500/mes
-1137,india-epf-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · epf calculator 49500/mes
-1138,sky-map,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · star map 49500/mes
-1139,sleepiness-questionnaire,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · epworth sleepiness scale 49500/mes
-1140,spain-income-tax,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calculadora irpf 49500/mes
-1141,touchscreen-tester,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · touch screen test 49500/mes
-1142,transliteration-tool,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · transliteration 49500/mes
-1143,uk-universal-credit,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · universal credit calculator 49500/mes
-1144,us-w4-withholding,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · tax withholding estimator 49500/mes
-1145,value-proposition-canvas,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · value proposition canvas 49500/mes
-1146,briscola,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · briscola 40500/mes
-1147,carrom,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · carrom game 40500/mes
-1148,crokinole,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · crokinole 40500/mes
-1149,dna-sequence-tool,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · reverse complement 40500/mes
-1150,email-authentication-checker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · spf checker 40500/mes
-1151,galaxies-puzzle,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · galaxies game 40500/mes
-1152,platform-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · platform games 40500/mes
-1153,presentation-maker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · presentation maker 40500/mes
-1154,swot-analysis-builder,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · swot analysis template 40500/mes
-1155,table-tennis-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · ping pong game 40500/mes
-1156,word-stress-finder,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · syllable counter 40500/mes
-1157,circuit-diagram-editor,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · circuit simulator 33100/mes
-1158,france-unemployment-benefit,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · simulateur chomage 33100/mes
-1159,http-response-checker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · redirect checker 33100/mes
-1160,orbital-visualizer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · orbital diagram 33100/mes
-1161,pdf-imposition,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pdf booklet 33100/mes
-1162,photo-restoration,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · restore old photos 33100/mes
-1163,qtc-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · qtc calculator 33100/mes
-1164,recipe-nutrition-analyzer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · recipe nutrition calculator 33100/mes
-1165,star-battle,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · star battle 33100/mes
-1166,tute,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · tute 33100/mes
-1167,wedding-planner,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · wedding planning tool 33100/mes
-1168,3d-print-slicer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 3d slicer 27100/mes
-1169,bowling-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · bowling game 27100/mes
-1170,braille-translator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · braille translator 27100/mes
-1171,brazil-inss-contribution,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calculadora inss 27100/mes
-1172,brazil-unemployment-benefit,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calculadora seguro desemprego 27100/mes
-1173,broken-link-checker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · broken link checker 27100/mes
-1174,car-parking-simulator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · car parking game 27100/mes
-1175,chat-with-documents,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pdf ai 27100/mes
-1176,hba1c-eag-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · a1c calculator 27100/mes
-1177,janggi,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 장기 27100/mes
-1178,mexico-aguinaldo,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calculadora aguinaldo 27100/mes
-1179,mexico-income-tax,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calculadora isr 27100/mes
-1180,pregnancy-weight-gain,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pregnancy weight gain calculator 27100/mes
-1181,ptsd-questionnaire,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pcl5 27100/mes
-1182,singapore-cpf,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · cpf calculator 27100/mes
-1183,taiwan-income-tax,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 所得稅試算 27100/mes
-1184,venn-diagram-maker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · venn diagram maker 27100/mes
-1185,brazil-fgts-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calculadora fgts 22200/mes
-1186,calligraphy-worksheet,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · handwriting worksheets 22200/mes
-1187,draw-and-guess,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · drawing guessing game 22200/mes
-1188,font-editor,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · font editor 22200/mes
-1189,garden-planner,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · garden planner 22200/mes
-1190,gpx-track-editor,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · gpx viewer 22200/mes
-1191,korea-net-salary,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 연봉계산기 22200/mes
-1192,norinori-puzzle,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · norinori 22200/mes
-1193,project-pert-estimator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pert chart 22200/mes
-1194,rent-split-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · split rent 22200/mes
-1195,sentence-diagrammer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · análisis sintáctico 22200/mes
-1196,bird-sound-identifier,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · bird song identifier 18100/mes
-1197,capital-gains-tax-uk,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · capital gains calculator 18100/mes
-1198,database-schema-designer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · database diagram 18100/mes
-1199,hex-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · hex game 18100/mes
-1200,ipa-transcriber,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · phonetic transcription 18100/mes
-1201,lithophane-generator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · lithophane maker 18100/mes
-1202,preferans,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · преферанс 18100/mes
-1203,email-header-analyzer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · email header analyzer 14800/mes
-1204,hnefatafl,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · hnefatafl 14800/mes
-1205,html-sanitizer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · clean html 14800/mes
-1206,insurance-needs-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · insurance calculator 14800/mes
-1207,karaoke-lyrics-editor,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · karaoke maker 14800/mes
-1208,language-detector,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · language detector 14800/mes
-1209,moving-planner,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · moving checklist 14800/mes
-1210,perceived-stress-questionnaire,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · perceived stress scale 14800/mes
-1211,song-structure-planner,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · song structure 14800/mes
-1212,spain-unemployment-benefit,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calcular paro 14800/mes
-1213,survival-analysis,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · kaplan meier curve 14800/mes
-1214,3d-function-grapher,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 3d graphing calculator 12100/mes
-1215,3d-model-editor,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 3d modeling online 12100/mes
-1216,api-mock-workbench,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · mock api 12100/mes
-1217,blood-pressure-log,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · blood pressure log 12100/mes
-1218,comic-maker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · comic maker 12100/mes
-1219,india-hra-exemption,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · hra calculator 12100/mes
-1220,inheritance-shares-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · islamic inheritance calculator 12100/mes
-1221,panorama-stitcher,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · stitch photos 12100/mes
-1222,password-breach-checker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pwned passwords 12100/mes
-1223,sewing-pattern-drafter,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pattern maker 12100/mes
-1224,us-roth-conversion,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · roth conversion 12100/mes
-1225,us-self-employment-tax,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · self employment tax calculator 12100/mes
-1226,virtual-try-on,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · virtual try on 12100/mes
-1227,calcudoku,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · calcudoku 9900/mes
-1228,genetic-cross-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · punnett square calculator 9900/mes
-1229,geometry-construction,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · geometry calculator 9900/mes
-1230,html-accessibility-auditor,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · accessibility checker 9900/mes
-1231,linear-algebra-visualizer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · matrix transformation 9900/mes
-1232,malaysia-epf,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · kwsp calculator 9900/mes
-1233,music-interval-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · intervalos musicales 9900/mes
-1234,origami-simulator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · origami instructions 9900/mes
-1235,pdf-digital-signature-validator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · validate pdf signature 9900/mes
-1236,regex-pattern-builder,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · regex generator 9900/mes
-1237,acronym-dictionary,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · acronym finder 8100/mes
-1238,audio-denoiser,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · remove background noise 8100/mes
-1239,chemical-structure-editor,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · structure drawing 8100/mes
-1240,gitignore-generator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · gitignore generator 8100/mes
-1241,hdr-merger,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · hdr photo 8100/mes
-1242,pet-feeding-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · dog calorie calculator 8100/mes
-1243,philippines-sss,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · sss contribution table 8100/mes
-1244,portfolio-backtester,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · portfolio backtest 8100/mes
-1245,survey-builder,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · survey maker 8100/mes
-1246,totp-authenticator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · totp generator 8100/mes
-1247,uk-student-loan,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · student finance calculator 8100/mes
-1248,canada-payroll,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · payroll calculator canada 6600/mes
-1249,chomp-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · chocolate game 6600/mes
-1250,crochet-chart-maker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · crochet pattern generator 6600/mes
-1251,document-redline-merger,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · document comparison 6600/mes
-1252,ebook-creator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · ebook creator 6600/mes
-1253,enzyme-kinetics-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · enzyme kinetics 6600/mes
-1254,focus-stacker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · focus stacking 6600/mes
-1255,handwriting-input,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · chinese handwriting input 6600/mes
-1256,laser-box-designer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · box generator 6600/mes
-1257,meeting-retrospective,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · sprint retrospective 6600/mes
-1258,mus,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · mus online 6600/mes
-1259,nim-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · nim game 6600/mes
-1260,pcb-layout-editor,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pcb layout 6600/mes
-1261,reaction-mechanism-editor,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · reaction mechanism 6600/mes
-1262,time-series-forecast,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · time series forecasting 6600/mes
-1263,database-migration-converter,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · sql converter 5400/mes
-1264,fanorona,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · fanorona 5400/mes
-1265,futures-position-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · futures calculator 5400/mes
-1266,indonesia-pph21,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · kalkulator pph 21 5400/mes
-1267,option-strategy-builder,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · option strategy builder 5400/mes
-1268,rhythm-trainer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · rhythm trainer 5400/mes
-1269,sequence-alignment,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · sequence alignment 5400/mes
-1270,storyboard-maker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · storyboard maker 5400/mes
-1271,china-individual-income-tax,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 个税计算器 4400/mes
-1272,control-system-simulator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · pid tuning 4400/mes
-1273,digital-signature-verifier,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · verify digital signature 4400/mes
-1274,embroidery-digitizer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · embroidery digitizing 4400/mes
-1275,lights-out,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · lights out game 4400/mes
-1276,masyu-puzzle,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · masyu 4400/mes
-1277,medication-schedule,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · medication reminder 4400/mes
-1278,music-transposition,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · transpose music 4400/mes
-1279,sheet-music-scanner,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · sheet music scanner 4400/mes
-1280,sourdough-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · sourdough calculator 4400/mes
-1281,spreadsheet-diff,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · spreadsheet compare 4400/mes
-1282,chemical-name-resolver,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · smiles to structure 3600/mes
-1283,chord-recognizer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · chord detector 3600/mes
-1284,dataset-anonymizer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · anonymize data 3600/mes
-1285,sql-query-explainer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · explain sql 3600/mes
-1286,territory-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · territory game 3600/mes
-1287,audio-loudness-normalizer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · audio normalization 2900/mes
-1288,bond-ladder-planner,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · bond ladder 2900/mes
-1289,css-specificity-calculator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · css specificity 2900/mes
-1290,equation-photo-reader,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · math ocr 2900/mes
-1291,skyscrapers-puzzle,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · skyscrapers puzzle 2900/mes
-1292,us-aca-subsidy,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · aca subsidy calculator 2900/mes
-1293,geometry-net-generator,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · 3d shape nets 2400/mes
-1294,optics-ray-tracer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · lens simulator 2400/mes
-1295,spreadsheet-formula-explainer,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · excel formula generator 2400/mes
-1296,webfont-subsetter,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · webfont generator 2400/mes
-1297,akari-puzzle,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · light up puzzle 1900/mes
-1298,amazons-game,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · juego amazonas 1900/mes
-1299,formal-proof-checker,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · natural deduction calculator 1900/mes
-1300,heyawake-puzzle,(por decidir),nueva,0,,,pendiente,,,,Reserva: NO cumple demanda autorizada · heyawake 1900/mes
+1001,text-translator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · traductor 226000000/mes
+1002,internet-speed-test,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · speed test 101000000/mes
+1003,local-ai-chat,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · ai chatbot 6120000/mes
+1004,weather-dashboard,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · weather forecast 4090000/mes
+1005,dictionary,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · dictionary 3350000/mes
+1006,fancy-text-generator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · font generator 3350000/mes
+1007,grammar-checker,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · grammar checker 3350000/mes
+1008,soundboard,(por decidir),nueva,0,,,subida-preview-noindex,,,,Revisar intención antes de priorizar · soundboard 3350000/mes
+1009,thesaurus,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · thesaurus 2740000/mes
+1010,germany-net-salary,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · brutto netto rechner 2240000/mes
+1011,local-image-generator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · ai image generator 2240000/mes
+1012,rdap-domain-lookup,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · whois 1500000/mes
+1013,texas-holdem,(por decidir),nueva,0,,,subida-preview-noindex,,,,Revisar intención antes de priorizar · poker 1220000/mes
+1014,air-quality-dashboard,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · aqi 1000000/mes
+1015,paraphrasing-tool,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · paraphrasing tool 1000000/mes
+1016,coloring-studio,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · coloring pages 823000/mes
+1017,online-compiler,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · python compiler 823000/mes
+1018,open-radio-player,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · online radio 823000/mes
+1019,qibla-compass,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · qibla direction 823000/mes
+1020,baccarat-practice,(por decidir),nueva,0,,,subida-preview-noindex,,,,Revisar intención antes de priorizar · baccarat 673000/mes
+1021,big-five-personality-test,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · personality test 673000/mes
+1022,indian-rummy,(por decidir),nueva,0,,,subida-preview-noindex,,,,Revisar intención antes de priorizar · rummy 673000/mes
+1023,pool-game,(por decidir),nueva,0,,,subida-preview-noindex,,,,Revisar intención antes de priorizar · 8 ball pool 673000/mes
+1024,pronunciation-dictionary,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · pronunciation 673000/mes
+1025,roulette-practice,(por decidir),nueva,0,,,subida-preview-noindex,,,,Revisar intención antes de priorizar · roulette 673000/mes
+1026,us-paycheck-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · paycheck calculator 673000/mes
+1027,india-income-tax-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · income tax calculator 550000/mes
+1028,never-have-i-ever,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · never have i ever 550000/mes
+1029,panchang-calendar,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · panchang aaj ka 550000/mes
+1030,photo-background-changer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · photo background changer 550000/mes
+1031,rubiks-cube-solver,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · rubiks cube solver 550000/mes
+1032,video-editor,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · video editor 550000/mes
+1033,adult-adhd-screener,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · adhd test 450000/mes
+1034,brazil-termination-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · calculadora rescisão 450000/mes
+1035,chinese-zodiac,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · chinese zodiac 450000/mes
+1036,color-vision-check,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · color blind test 450000/mes
+1037,font-identifier,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · font finder 450000/mes
+1038,gamepad-tester,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · gamepad tester 450000/mes
+1039,geographic-distance-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · distance calculator 450000/mes
+1040,japanese-name-strokes,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · 姓名判断 450000/mes
+1041,love-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · love calculator 450000/mes
+1042,static-website-builder,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · website builder 450000/mes
+1043,virtual-keyboard,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · hindi typing 450000/mes
+1044,baseball-game,(por decidir),nueva,0,,,subida-preview-noindex,,,,Revisar intención antes de priorizar · baseball game 368000/mes
+1045,chord-progression-builder,(por decidir),nueva,0,,,subida-preview-noindex,,,,Revisar intención antes de priorizar · chord progression 368000/mes
+1046,cricket-game,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · cricket games 368000/mes
+1047,dns-lookup,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · dns checker 368000/mes
+1048,india-gratuity-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · gratuity calculator 368000/mes
+1049,ip-geolocation-lookup,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · ip lookup 368000/mes
+1050,mahjong-four-player,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · 麻雀 ゲーム 368000/mes
+1051,public-transit-planner,(por decidir),nueva,0,,,subida-preview-noindex,,,,Revisar intención antes de priorizar · journey planner 368000/mes
+1052,shogi,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · 将棋 368000/mes
+1053,soccer-penalty-game,(por decidir),nueva,0,,,subida-preview-noindex,,,,Revisar intención antes de priorizar · soccer games 368000/mes
+1054,teen-patti,(por decidir),nueva,0,,,subida-preview-noindex,,,,Revisar intención antes de priorizar · teen patti 368000/mes
+1055,would-you-rather,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · would you rather questions 368000/mes
+1056,enneagram-questionnaire,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · enneagram test 301000/mes
+1057,local-music-generator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · ai music generator 301000/mes
+1058,phq9-questionnaire,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · depression test 301000/mes
+1059,rock-paper-scissors,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · rock paper scissors 301000/mes
+1060,truth-or-dare,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · truth or dare 301000/mes
+1061,uk-stamp-duty,(por decidir),nueva,0,,,subida-preview-noindex,,,,Prioridad por demanda; falta viabilidad · stamp duty calculator 301000/mes
+1062,basketball-shooting-game,(por decidir),nueva,0,,,subida-preview-noindex,,,,Alternativa cercana; falta viabilidad · basketball games 246000/mes
+1063,charades,(por decidir),nueva,0,,,subida-preview-noindex,,,,Alternativa cercana; falta viabilidad · charades 246000/mes
+1064,durak,(por decidir),nueva,0,,,subida-preview-noindex,,,,Alternativa cercana; falta viabilidad · дурак онлайн 246000/mes
+1065,egfr-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Alternativa cercana; falta viabilidad · egfr calculator 246000/mes
+1066,india-ppf-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Alternativa cercana; falta viabilidad · ppf calculator 246000/mes
+1067,music-identifier,(por decidir),nueva,0,,,subida-preview-noindex,,,,Alternativa cercana; falta viabilidad · song finder 246000/mes
+1068,personal-color-analysis,(por decidir),nueva,0,,,subida-preview-noindex,,,,Alternativa cercana; falta viabilidad · パーソナルカラー診断 246000/mes
+1069,screen-mirroring,(por decidir),nueva,0,,,subida-preview-noindex,,,,Alternativa cercana; falta viabilidad · screen mirroring 246000/mes
+1070,business-model-canvas,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · business model canvas 201000/mes
+1071,earthquake-map,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · terremotos hoy 201000/mes
+1072,economic-calendar,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · economic calendar 201000/mes
+1073,emoji-search,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · emoji copy paste 201000/mes
+1074,face-shape-analyzer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · face shape detector 201000/mes
+1075,france-housing-benefit,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · simulation apl 201000/mes
+1076,online-paint,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · drawing app 201000/mes
+1077,travel-route-optimizer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · route planner 201000/mes
+1078,truco,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · truco 201000/mes
+1079,uk-pay-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · salary calculator uk 201000/mes
+1080,visual-acuity-check,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · eye test 201000/mes
+1081,craps-practice,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · craps 165000/mes
+1082,iching-cast,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · i ching 165000/mes · construida como i-ching-oracle (rama backup/usefulverse-300-implementation)
+1083,image-search-open,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · free images 165000/mes
+1084,india-nps-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · nps calculator 165000/mes
+1085,makruk,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · หมากรุกไทย 165000/mes
+1086,raci-matrix-builder,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · raci matrix 165000/mes
+1087,racing-game,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · racing game 165000/mes
+1088,scopa,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · scopa 165000/mes
+1089,belote,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · belote 135000/mes
+1090,email-address-validator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · email checker 135000/mes
+1091,fishing-game,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · fishing game 135000/mes
+1092,object-remover,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · remove object from photo 135000/mes
+1093,photosphere-viewer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · panorama viewer 135000/mes
+1094,plant-identifier,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · plant identifier 135000/mes
+1095,sticker-pack-maker,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · sticker maker 135000/mes
+1096,word-cloud-generator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · word cloud 135000/mes
+1097,brazil-thirteenth-salary,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · calculadora décimo terceiro 110000/mes
+1098,darts-scoreboard,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · darts scorer 110000/mes
+1099,lines-of-action,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · lines of action 110000/mes
+1100,monte-carlo-simulator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · monte carlo simulation 110000/mes
+1101,text-to-handwriting,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · text to handwriting 110000/mes
+1102,tide-times,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · tide times 110000/mes
+1103,vaccination-schedule,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · vaccination schedule 110000/mes
+1104,verb-conjugator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · conjugaison 110000/mes
+1105,whist,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · whist 110000/mes
+1106,brazil-vacation-pay-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · calculo ferias 90500/mes
+1107,document-mail-merge,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · mail merge 90500/mes
+1108,endless-runner,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · running games 90500/mes
+1109,gad7-questionnaire,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · gad7 90500/mes
+1110,hanoi-tower,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · tower of hanoi 90500/mes
+1111,japan-income-tax,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · 所得税 計算 90500/mes
+1112,pinochle,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · pinochle 90500/mes
+1113,zakat-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · zakat calculator 90500/mes
+1114,block-puzzle,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · block puzzle 74000/mes
+1115,creatinine-clearance-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · creatinine clearance calculator 74000/mes
+1116,france-income-tax,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · simulateur impots 74000/mes
+1117,hearing-self-check,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · hearing test 74000/mes
+1118,portugal-net-salary,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · salario liquido 74000/mes
+1119,space-shooter,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · space games 74000/mes
+1120,tls-site-checker,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · ssl checker 74000/mes
+1121,tower-defense,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · tower defense 74000/mes
+1122,virtual-drum-kit,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · virtual drums 74000/mes
+1123,customer-journey-map,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · customer journey map 60500/mes
+1124,germany-unemployment-benefit,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · arbeitslosengeld rechner 60500/mes
+1125,online-whiteboard,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · online whiteboard 60500/mes
+1126,password-strength-checker,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · password checker 60500/mes
+1127,prayer-beads-counter,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · tasbih counter 60500/mes
+1128,roc-curve-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · roc curve 60500/mes
+1129,spain-termination-pay,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · calculadora finiquito 60500/mes
+1130,tank-game,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · tank games 60500/mes
+1131,xiangqi,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · 象棋 60500/mes
+1132,australia-income-tax,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · tax calculator australia 49500/mes
+1133,bubble-level,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · bubble level 49500/mes
+1134,flipbook-animator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · animation maker 49500/mes
+1135,hardy-weinberg-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · hardy weinberg equilibrium 49500/mes
+1136,india-apy-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · apy calculator 49500/mes
+1137,india-epf-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · epf calculator 49500/mes
+1138,sky-map,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · star map 49500/mes
+1139,sleepiness-questionnaire,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · epworth sleepiness scale 49500/mes
+1140,spain-income-tax,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · calculadora irpf 49500/mes
+1141,touchscreen-tester,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · touch screen test 49500/mes
+1142,transliteration-tool,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · transliteration 49500/mes
+1143,uk-universal-credit,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · universal credit calculator 49500/mes
+1144,us-w4-withholding,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · tax withholding estimator 49500/mes
+1145,value-proposition-canvas,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · value proposition canvas 49500/mes
+1146,briscola,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · briscola 40500/mes
+1147,carrom,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · carrom game 40500/mes
+1148,crokinole,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · crokinole 40500/mes
+1149,dna-sequence-tool,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · reverse complement 40500/mes
+1150,email-authentication-checker,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · spf checker 40500/mes
+1151,galaxies-puzzle,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · galaxies game 40500/mes
+1152,platform-game,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · platform games 40500/mes
+1153,presentation-maker,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · presentation maker 40500/mes
+1154,swot-analysis-builder,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · swot analysis template 40500/mes
+1155,table-tennis-game,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · ping pong game 40500/mes
+1156,word-stress-finder,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · syllable counter 40500/mes
+1157,circuit-diagram-editor,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · circuit simulator 33100/mes
+1158,france-unemployment-benefit,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · simulateur chomage 33100/mes
+1159,http-response-checker,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · redirect checker 33100/mes
+1160,orbital-visualizer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · orbital diagram 33100/mes
+1161,pdf-imposition,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · pdf booklet 33100/mes
+1162,photo-restoration,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · restore old photos 33100/mes
+1163,qtc-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · qtc calculator 33100/mes
+1164,recipe-nutrition-analyzer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · recipe nutrition calculator 33100/mes
+1165,star-battle,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · star battle 33100/mes
+1166,tute,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · tute 33100/mes
+1167,wedding-planner,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · wedding planning tool 33100/mes
+1168,3d-print-slicer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · 3d slicer 27100/mes
+1169,bowling-game,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · bowling game 27100/mes
+1170,braille-translator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · braille translator 27100/mes
+1171,brazil-inss-contribution,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · calculadora inss 27100/mes
+1172,brazil-unemployment-benefit,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · calculadora seguro desemprego 27100/mes
+1173,broken-link-checker,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · broken link checker 27100/mes
+1174,car-parking-simulator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · car parking game 27100/mes
+1175,chat-with-documents,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · pdf ai 27100/mes
+1176,hba1c-eag-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · a1c calculator 27100/mes
+1177,janggi,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · 장기 27100/mes
+1178,mexico-aguinaldo,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · calculadora aguinaldo 27100/mes
+1179,mexico-income-tax,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · calculadora isr 27100/mes
+1180,pregnancy-weight-gain,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · pregnancy weight gain calculator 27100/mes
+1181,ptsd-questionnaire,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · pcl5 27100/mes
+1182,singapore-cpf,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · cpf calculator 27100/mes
+1183,taiwan-income-tax,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · 所得稅試算 27100/mes
+1184,venn-diagram-maker,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · venn diagram maker 27100/mes
+1185,brazil-fgts-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · calculadora fgts 22200/mes
+1186,calligraphy-worksheet,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · handwriting worksheets 22200/mes
+1187,draw-and-guess,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · drawing guessing game 22200/mes
+1188,font-editor,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · font editor 22200/mes
+1189,garden-planner,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · garden planner 22200/mes
+1190,gpx-track-editor,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · gpx viewer 22200/mes
+1191,korea-net-salary,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · 연봉계산기 22200/mes
+1192,norinori-puzzle,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · norinori 22200/mes
+1193,project-pert-estimator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · pert chart 22200/mes
+1194,rent-split-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · split rent 22200/mes
+1195,sentence-diagrammer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · análisis sintáctico 22200/mes
+1196,bird-sound-identifier,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · bird song identifier 18100/mes
+1197,capital-gains-tax-uk,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · capital gains calculator 18100/mes · módulo uk-capital-gains en el respaldo
+1198,database-schema-designer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · database diagram 18100/mes
+1199,hex-game,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · hex game 18100/mes
+1200,ipa-transcriber,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · phonetic transcription 18100/mes
+1201,lithophane-generator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · lithophane maker 18100/mes
+1202,preferans,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · преферанс 18100/mes
+1203,email-header-analyzer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · email header analyzer 14800/mes
+1204,hnefatafl,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · hnefatafl 14800/mes
+1205,html-sanitizer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · clean html 14800/mes
+1206,insurance-needs-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · insurance calculator 14800/mes
+1207,karaoke-lyrics-editor,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · karaoke maker 14800/mes
+1208,language-detector,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · language detector 14800/mes
+1209,moving-planner,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · moving checklist 14800/mes
+1210,perceived-stress-questionnaire,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · perceived stress scale 14800/mes
+1211,song-structure-planner,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · song structure 14800/mes
+1212,spain-unemployment-benefit,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · calcular paro 14800/mes
+1213,survival-analysis,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · kaplan meier curve 14800/mes
+1214,3d-function-grapher,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · 3d graphing calculator 12100/mes
+1215,3d-model-editor,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · 3d modeling online 12100/mes
+1216,api-mock-workbench,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · mock api 12100/mes
+1217,blood-pressure-log,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · blood pressure log 12100/mes
+1218,comic-maker,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · comic maker 12100/mes
+1219,india-hra-exemption,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · hra calculator 12100/mes
+1220,inheritance-shares-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · islamic inheritance calculator 12100/mes
+1221,panorama-stitcher,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · stitch photos 12100/mes
+1222,password-breach-checker,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · pwned passwords 12100/mes
+1223,sewing-pattern-drafter,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · pattern maker 12100/mes
+1224,us-roth-conversion,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · roth conversion 12100/mes
+1225,us-self-employment-tax,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · self employment tax calculator 12100/mes
+1226,virtual-try-on,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · virtual try on 12100/mes
+1227,calcudoku,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · calcudoku 9900/mes
+1228,genetic-cross-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · punnett square calculator 9900/mes
+1229,geometry-construction,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · geometry calculator 9900/mes
+1230,html-accessibility-auditor,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · accessibility checker 9900/mes
+1231,linear-algebra-visualizer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · matrix transformation 9900/mes
+1232,malaysia-epf,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · kwsp calculator 9900/mes
+1233,music-interval-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · intervalos musicales 9900/mes
+1234,origami-simulator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · origami instructions 9900/mes
+1235,pdf-digital-signature-validator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · validate pdf signature 9900/mes
+1236,regex-pattern-builder,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · regex generator 9900/mes
+1237,acronym-dictionary,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · acronym finder 8100/mes
+1238,audio-denoiser,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · remove background noise 8100/mes
+1239,chemical-structure-editor,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · structure drawing 8100/mes
+1240,gitignore-generator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · gitignore generator 8100/mes
+1241,hdr-merger,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · hdr photo 8100/mes
+1242,pet-feeding-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · dog calorie calculator 8100/mes
+1243,philippines-sss,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · sss contribution table 8100/mes
+1244,portfolio-backtester,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · portfolio backtest 8100/mes
+1245,survey-builder,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · survey maker 8100/mes
+1246,totp-authenticator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · totp generator 8100/mes
+1247,uk-student-loan,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · student finance calculator 8100/mes
+1248,canada-payroll,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · payroll calculator canada 6600/mes
+1249,chomp-game,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · chocolate game 6600/mes
+1250,crochet-chart-maker,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · crochet pattern generator 6600/mes
+1251,document-redline-merger,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · document comparison 6600/mes
+1252,ebook-creator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · ebook creator 6600/mes
+1253,enzyme-kinetics-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · enzyme kinetics 6600/mes
+1254,focus-stacker,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · focus stacking 6600/mes
+1255,handwriting-input,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · chinese handwriting input 6600/mes
+1256,laser-box-designer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · box generator 6600/mes
+1257,meeting-retrospective,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · sprint retrospective 6600/mes
+1258,mus,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · mus online 6600/mes
+1259,nim-game,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · nim game 6600/mes
+1260,pcb-layout-editor,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · pcb layout 6600/mes
+1261,reaction-mechanism-editor,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · reaction mechanism 6600/mes
+1262,time-series-forecast,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · time series forecasting 6600/mes
+1263,database-migration-converter,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · sql converter 5400/mes
+1264,fanorona,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · fanorona 5400/mes
+1265,futures-position-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · futures calculator 5400/mes
+1266,indonesia-pph21,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · kalkulator pph 21 5400/mes
+1267,option-strategy-builder,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · option strategy builder 5400/mes
+1268,rhythm-trainer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · rhythm trainer 5400/mes
+1269,sequence-alignment,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · sequence alignment 5400/mes
+1270,storyboard-maker,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · storyboard maker 5400/mes
+1271,china-individual-income-tax,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · 个税计算器 4400/mes
+1272,control-system-simulator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · pid tuning 4400/mes
+1273,digital-signature-verifier,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · verify digital signature 4400/mes
+1274,embroidery-digitizer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · embroidery digitizing 4400/mes
+1275,lights-out,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · lights out game 4400/mes
+1276,masyu-puzzle,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · masyu 4400/mes
+1277,medication-schedule,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · medication reminder 4400/mes
+1278,music-transposition,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · transpose music 4400/mes
+1279,sheet-music-scanner,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · sheet music scanner 4400/mes
+1280,sourdough-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · sourdough calculator 4400/mes
+1281,spreadsheet-diff,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · spreadsheet compare 4400/mes
+1282,chemical-name-resolver,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · smiles to structure 3600/mes
+1283,chord-recognizer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · chord detector 3600/mes
+1284,dataset-anonymizer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · anonymize data 3600/mes
+1285,sql-query-explainer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · explain sql 3600/mes
+1286,territory-game,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · territory game 3600/mes
+1287,audio-loudness-normalizer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · audio normalization 2900/mes
+1288,bond-ladder-planner,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · bond ladder 2900/mes
+1289,css-specificity-calculator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · css specificity 2900/mes
+1290,equation-photo-reader,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · math ocr 2900/mes
+1291,skyscrapers-puzzle,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · skyscrapers puzzle 2900/mes
+1292,us-aca-subsidy,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · aca subsidy calculator 2900/mes
+1293,geometry-net-generator,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · 3d shape nets 2400/mes
+1294,optics-ray-tracer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · lens simulator 2400/mes
+1295,spreadsheet-formula-explainer,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · excel formula generator 2400/mes
+1296,webfont-subsetter,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · webfont generator 2400/mes
+1297,akari-puzzle,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · light up puzzle 1900/mes
+1298,amazons-game,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · juego amazonas 1900/mes
+1299,formal-proof-checker,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · natural deduction calculator 1900/mes
+1300,heyawake-puzzle,(por decidir),nueva,0,,,subida-preview-noindex,,,,Reserva: NO cumple demanda autorizada · heyawake 1900/mes
