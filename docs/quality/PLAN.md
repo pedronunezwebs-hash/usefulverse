@@ -10,8 +10,8 @@ herramientas gratuitas: Search Console por API, navegador, tests locales y el m�
 
 ## 0. Antes de empezar: 5 avisos que cambian el plan
 
-1. **Las 300 herramientas nuevas aún no están construidas** (`PLAN-1000.md`: 0 listas). Cada una se publica completa en
-   cuanto pase la puerta de calidad, con un freno de 30 por semana (sección 14 y `RUNBOOK.md`).
+1. **Las 300 herramientas nuevas (casi terminadas con ChatGPT)** entran al repo por ramas. Cada una se publica completa
+   en cuanto pase la puerta de calidad, con un freno de 30 por semana (sección 14 y `RUNBOOK.md`).
 2. **La traducción es el punto débil número uno de la caída.** Este plan multiplica el texto por herramienta
    (FAQ, ejemplos, guías), así que también multiplica el texto traducido. El método propuesto en
    `METODO-TRADUCCION.md` (M2M100 418M local) es gratis, pero es un modelo pequeño y su calidad puede quedar por
@@ -493,8 +493,8 @@ media de 7 días, o si la posición empeora más de 10 puntos en 5 días.
 
 ## 14. Las herramientas nuevas (de las 300 candidatas): publicar cuando estén listas
 
-Corrección importante: según `PLAN-1000.md`, las 300 **todavía no están construidas**: hay 0 implementaciones
-listas, 50 con demanda confirmada, 19 por revisar y 231 de reserva. Política (detallada en `docs/recovery/RUNBOOK.md`):
+Estado: según Pedro (20-oct), están **casi terminadas con ChatGPT, fuera del repo** y sin publicar. `PLAN-1000.md`
+las clasifica así: 50 con demanda confirmada, 19 por revisar y 231 de reserva. Política (detallada en `docs/recovery/RUNBOOK.md`):
 1. Cada herramienta nueva se publica **completa, con sus 37 idiomas, en cuanto pasa la puerta de calidad** y el
    piloto de traducción de cada idioma. No hay esperas artificiales.
 2. **Freno de seguridad: como máximo 30 herramientas nuevas por semana** (≈1.100 URLs, ≈4 %).
