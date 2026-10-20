@@ -28,8 +28,9 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
       `reconstruction…`, caché de MADLAD de 3,3 GB…), dejadas por sesiones del 17-19 oct. **No borrar
       `/tmp/usefulverse-300-implementation-20261019` hasta que su rama esté en GitHub.**
 - [ ] Fichas de coste de las herramientas nuevas que necesiten servidor o API (test de velocidad, tiempo, chat de IA…), cuando aparezcan.
-- [ ] **Dónde ejecutar la traducción masiva** (~19 M de palabras, ~50-180 h de cómputo estimadas): Mac por la noche /
-      repo público (Actions ilimitado y gratis) / Codespaces repartido en meses. Ver `REVISION-FINAL.md` §2.
+- [x] Dónde ejecutar la traducción masiva → **repo público + GitHub Actions** (decidido el 20-oct-2026)
+- [ ] Opcional: revocar en Cloudflare el token antiguo que usaba el repo antes del 20-oct, si no lo usa nada más (hay varios
+      tokens de Zenith y Joseph en la misma cuenta: no tocar sin identificarlo).
 - [ ] Confirmar que la tarjeta de Cloudflare sigue válida (dominio con renovación automática el 28-sep-2027 + Workers Paid mensual).
 - [ ] Publicar en Product Hunt, Reddit o directorios cuando el agente deje los textos preparados (fase 7).
 
@@ -40,6 +41,9 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 - [x] Decisiones: sin `noindex` masivo en las 700; 37 idiomas; no se borra ninguna herramienta · 2026-10-20
 - [x] Plan de calidad (`docs/quality/PLAN.md`), estrategia hacia 1M visitas al día (`STRATEGY-1M.md`), RUNBOOK y `progress.csv` · 2026-10-20
 - [x] Marca «Planeta Infinito» aprobada; prototipo en `docs/design/planeta-infinito/` · 2026-10-20
+- [x] **Repo hecho público con seguridad** (20-oct): historial (448 commits), PRs/issues (132) y registros de Actions (369
+      ejecuciones) analizados con gitleaks → 0 secretos; token nuevo solo de Pages; escaneo de secretos y bloqueo de push;
+      Dependabot; acciones fijadas por SHA; `main` y `backup/*` protegidas; PR externos con aprobación · 2026-10-20
 - [x] Copia de seguridad del trabajo de las 300 en `backup/codex-300-tools-20261020` · 2026-10-20
 
 ### Fase 0 · Arreglos urgentes (RUNBOOK §4)
@@ -79,6 +83,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 | Fecha | Agente | Qué | PR / commit | Verificado en producción |
 |---|---|---|---|---|
+| 2026-10-20 | Claude | Repo público con seguridad (ver checklist) | `5af802b` + ajustes en GitHub y Cloudflare | Web sin cambios |
 | 2026-10-20 | Claude | Documentación: diagnóstico, plan, RUNBOOK, estrategia, ESTADO, mapa del repo y copia de seguridad de las 300 | `d938d8b`…, `backup/codex-300-tools-20261020` | Sin cambios en la web |
 
 ## 5. Métricas rápidas (actualizar cada 2 semanas)

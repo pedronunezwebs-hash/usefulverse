@@ -19,6 +19,17 @@ Prevalecen sobre cualquier plan anterior de `docs/` (incluido `docs/growth600/`)
   tras pasar de 306 a ~25.600 URLs en menos de 3 semanas, con traducción automática a escala. No hay acción
   manual. El diagnóstico y el plan completos están en `docs/recovery/README.md`.
 
+## Seguridad (repo PÚBLICO desde el 20-oct-2026)
+
+- El repo es público. **Nunca** se suben claves, tokens, `.env`, cuentas de servicio ni datos personales. GitHub tiene
+  activados el escaneo de secretos y el **bloqueo de push con secretos**: si salta, se arregla el commit y nunca se fuerza.
+- Los secretos viven **solo** en GitHub → Settings → Secrets. `CLOUDFLARE_API_TOKEN` es un token **solo de Cloudflare
+  Pages** (`usefulverse-github-deploy`). Para la migración a Workers (RUNBOOK §4b) se crea otro token mínimo; no se usa
+  nunca la llave global.
+- Workflows: permisos `contents: read`, acciones fijadas por SHA, nunca `pull_request_target` ni secretos en jobs de
+  PR. Los PR de personas externas necesitan aprobación de Pedro. `main` y `backup/*` no se pueden borrar ni sobrescribir.
+- Solo Pedro tiene permiso de escritura. No añadir colaboradores ni apps con escritura sin su aprobación.
+
 ## Cómo trabajar
 
 **No se borra ninguna herramienta** (decisión de Pedro, 20-oct-2026). Las casi duplicadas se diferencian; una fusión con 301, solo con su aprobación. Estrategia de crecimiento: `docs/quality/STRATEGY-1M.md`. Niveles de esfuerzo, traducción, piloto automático y anuncios: `docs/quality/REVISION-FINAL.md`.

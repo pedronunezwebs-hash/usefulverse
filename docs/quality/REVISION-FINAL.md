@@ -33,6 +33,16 @@ sin medir todavía) son **~50-180 horas de cómputo**. Las horas gratuitas de Co
    Las herramientas ya son código JS público en la web.
 3. Repartirlo en varios meses de cuota de Codespaces.
 
+**Decisión (20-oct-2026): repo público + GitHub Actions.** El repo se hizo público, así que las máquinas estándar de Actions
+son gratis (4 núcleos y 16 GB de RAM por máquina, hasta 20 en paralelo y 6 h por trabajo). Reglas:
+- Un trabajo por idioma (o por tanda), en paralelo, que se pueda reanudar, con commit de los resultados (no como artefactos).
+- Solo máquinas estándar (`ubuntu-latest`); las grandes se cobran siempre.
+- Uso moderado: ejecutar en tandas, no 20 máquinas día y noche durante semanas (las normas de GitHub prohíben la carga
+  desproporcionada).
+- Con el cómputo de sobra: MADLAD-400 3B donde gane, varios motores por frase con selección automática de la mejor, y
+  controles y retrotraducción al 100 %.
+- Las correcciones de nativos llegan por PR (con aprobación de Pedro).
+
 **Reducir lo que hay que traducir:**
 - **Inglés controlado** al escribir el original: frases cortas (≤ 20 palabras), una idea por frase, sin modismos, sin
   frases hechas y términos del glosario. Es lo que más mejora cualquier traducción automática, y además cumple el test

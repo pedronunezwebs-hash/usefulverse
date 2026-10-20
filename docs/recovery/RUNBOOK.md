@@ -135,6 +135,8 @@ todo el sitio. Así cada visita es una petición de asset gratuita. Nada de Page
      "assets": { "directory": "./dist-site", "not_found_handling": "404-page", "html_handling": "auto-trailing-slash" }
    }
    ```
+   Crear antes un **token nuevo y mínimo** para el Worker: «Workers Scripts Write» en la cuenta y, si hace falta para el
+   dominio, solo la zona `usefulverse.com`. Guardarlo como secreto del repo; no usar la llave global.
    Pasar las cabeceras de seguridad y caché actuales a `dist-site/_headers` y las redirecciones a `_redirects` (Workers
    Static Assets admite ambos).
 5. **Probar en `usefulverse.<subdominio>.workers.dev`:** muestra de 300 URLs (los dos catálogos, 37 idiomas, RTL),
@@ -256,7 +258,7 @@ puerta. Merge y despliegue (máximo uno al día). **Verificar en producción** (
 > **Antes de nada lee `docs/quality/REVISION-FINAL.md` §2:** inglés controlado, memoria de traducción, elección **objetiva**
 > del motor por idioma (incluida la traducción actual si puntúa más), controles automáticos y muestra de 20 frases.
 > También explica el **problema de volumen** (~19 M de palabras): dónde se ejecuta (Mac por la noche, repo público con
-> Actions ilimitado o Codespaces repartido) lo decide Pedro (ver `ESTADO.md`).
+> Actions ilimitado o Codespaces repartido) **ya está decidido: GitHub Actions en el repo público** (ver `REVISION-FINAL.md` §2).
 
 ### 8.1 Pasos (Codespaces o Mac, según la decisión)
 

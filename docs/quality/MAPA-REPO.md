@@ -1,6 +1,6 @@
 # UsefulVerse · Mapa del repo (para no explorarlo cada vez)
 
-Revisado el 20-oct-2026 sobre `main` (`pedronunezwebs-hash/usefulverse`, privado, ~130 MB). Si cambias la estructura, actualiza este mapa.
+Revisado el 20-oct-2026 sobre `main` (`pedronunezwebs-hash/usefulverse`, **público desde el 20-oct**, ~130 MB). Seguridad: ver `AGENTS.md`. Si cambias la estructura, actualiza este mapa.
 
 ## Dos sitios, dos builds
 
