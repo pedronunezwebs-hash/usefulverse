@@ -322,3 +322,15 @@ La salida v8 «30 10 segundos» queda cruda y rechazada: v9 no quita el 10 ni re
 Otros destinos siguen pendientes de piloto y revisión; la estrategia tipada y los guards no se relajan.
 Referencias v9 aún pendientes de run y rúbrica. Muestra completa fijada en `full-sample-v9-plan.json`, mismas
 68 claves y 20 adicionales conocidas desde v6; no ciega. Completo solo tras pasar y reconciliar los avisos de referencias.
+
+Las revisiones v9 y posteriores deben incluir `warning_reconciliation`. `audit_review_warnings(review, records)`
+y la suite permanente comparan cada aviso actual, registro y hashes. Un aviso de ida no puede pasar como de vuelta;
+los contratos de datos de ida rotos bloquean el gate. Esta auditoría no sustituye la revisión de significado.
+
+Comando de auditoría (sin modelos):
+```bash
+python3 scripts/localization/translation-pilot.py audit-review \
+  --review docs/quality/translation-pilot/review-context-v9-references.json \
+  --checkpoints docs/quality/translation-pilot/checkpoints/context-v9/madlad.jsonl
+```
+Se ejecuta cuando existen los resultados y su revisión; comprueba consistencia, no aprueba idiomas automáticamente.

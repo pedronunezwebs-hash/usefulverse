@@ -412,24 +412,10 @@ def collect_logs(paths, output):
     return len(records)
 
 
-def summarize(paths):
-    groups = {}
-    seen = set()
-    for path in paths:
-        for line in Path(path).read_text().splitlines():
-            row = json.loads(line)
-            validate_record(row)
-            if row["record_id"] in seen:
-                continue
-            seen.add(row["record_id"])
-            group = groups.setdefault((row.get("inference_policy", "baseline"), row["engine"], row["locale"], row["candidate"]), Counter())
-            group["records"] += 1
-            group["reviewed_memory_hits"] += int(row.get("translation_origin") == "reviewed-memory")
-            if row.get("inference_policy", "baseline") != "baseline":
-                group["forward_segment_evidence"] += int(row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not segment_evidence_valid(row.get("forward_segments"), row["model_input"], row["raw_translation"]))
-                group["back_segment_evidence"] += int(not segment_evidence_valid(row.get("back_segments"), row["translation"], row["back_translation"]))
-            checks = automatic_checks(row["source"], row["translation"], row["locale"], row["key"], row["back_translation"])
-            for flag, fails in {"numeric_values": checks["numeric_values_identical"] is False,
+def record_flags(row):
+    """Recompute warning flags from raw evidence, never trust old checkpoint audits."""
+    checks = automatic_checks(row["source"], row["translation"], row["locale"], row["key"], row["back_translation"])
+    flags = {"numeric_values": checks["numeric_values_identical"] is False,
                 "coordinate_values": checks["coordinate_values_identical"] is False,
                 "back_numeric_values": checks["back_numeric_values_identical"] is False,
                 "back_coordinate_values": checks["back_coordinate_values_identical"] is False,
@@ -444,7 +430,73 @@ def summarize(paths):
                 "known_semantic_errors": bool(checks["known_semantic_errors"]), "marker_restore": not row["marker_restore_ok"],
                 "known_back_semantic_errors": bool(checks["known_back_semantic_errors"]),
                 "back_technical_tokens": checks["back_technical_tokens_identical"] is False,
-                "back_protected_tokens": checks["back_protected_tokens_identical"] is False, "back_marker_restore": not row.get("back_marker_restore_ok", True), "truncated": row["truncated"]}.items():
+                "back_protected_tokens": checks["back_protected_tokens_identical"] is False, "back_marker_restore": not row.get("back_marker_restore_ok", True), "truncated": row["truncated"]}
+    contextual = row.get("inference_policy", "baseline") != "baseline"
+    if contextual:
+        flags["forward_segment_evidence"] = row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not segment_evidence_valid(row.get("forward_segments"), row["model_input"], row["raw_translation"])
+        flags["back_segment_evidence"] = not segment_evidence_valid(row.get("back_segments"), row["translation"], row["back_translation"])
+    return flags
+
+
+def audit_review_warnings(review, records):
+    """Require an exact, hash-bound decision for every warning before accepting a review.
+
+    Back-translation defects are separate from forward quality. A known forward fixture
+    cannot silently inherit full marks, as happened in the withdrawn v7 reference gate.
+    This audit checks review consistency; it does not make a linguistic judgment.
+    """
+    expected = {}
+    judgments = {}
+    for judgment in review["rows"]:
+        for identity in judgment["record_ids"]:
+            row = records[identity]
+            flags = sorted(flag for flag, failed in record_flags(row).items() if failed)
+            if flags: expected[identity] = (row, flags)
+            judgments[identity] = judgment
+    resolutions = {entry["record_id"]: entry for entry in review["warning_reconciliation"]}
+    if len(resolutions) != len(review["warning_reconciliation"]) or set(resolutions) != set(expected):
+        raise ValueError("Missing, extra or duplicate warning reconciliation")
+    for identity, (row, flags) in expected.items():
+        entry = resolutions[identity]
+        for field in ["translation", "back_translation"]:
+            if entry.get(field + "_hash") != hashlib.sha256(row[field].encode()).hexdigest():
+                raise ValueError("Stale warning reconciliation text hash")
+        if set(entry["warnings"]) != set(flags):
+            raise ValueError("Every current warning needs an explicit reconciliation")
+        for flag, decision in entry["warnings"].items():
+            disposition = decision.get("disposition")
+            if disposition not in {"forward-defect", "back-defect", "reviewed-signal"} or not decision.get("note", "").strip() or type(decision.get("blocks_gate")) is not bool:
+                raise ValueError("Warning decision needs disposition, note and explicit gate effect")
+            if flag == "known_semantic_errors" and disposition != "forward-defect":
+                raise ValueError("A known forward fixture cannot be silently accepted")
+            if flag in {"numeric_values", "coordinate_values", "empty", "protected_tokens", "technical_tokens",
+                    "software_identifiers", "software_versions", "unit_symbols", "marker_restore", "forward_segment_evidence"}:
+                if disposition != "forward-defect" or not decision["blocks_gate"]:
+                    raise ValueError("A broken forward data contract must block the gate")
+            if disposition == "forward-defect" and min(judgments[identity]["scores"].values()) == 3:
+                raise ValueError("Forward defect contradicts a perfect rubric")
+            if disposition == "back-defect" and not flag.startswith("back_") and flag != "known_back_semantic_errors":
+                raise ValueError("A forward warning cannot be dismissed as a back defect")
+            gate = review.get("reference_gate", {}).get(row["locale"], {})
+            if decision["blocks_gate"] and gate.get("passed"):
+                raise ValueError("Passed gate contradicts a blocking warning")
+    return len(expected)
+
+
+def summarize(paths):
+    groups = {}
+    seen = set()
+    for path in paths:
+        for line in Path(path).read_text().splitlines():
+            row = json.loads(line)
+            validate_record(row)
+            if row["record_id"] in seen:
+                continue
+            seen.add(row["record_id"])
+            group = groups.setdefault((row.get("inference_policy", "baseline"), row["engine"], row["locale"], row["candidate"]), Counter())
+            group["records"] += 1
+            group["reviewed_memory_hits"] += int(row.get("translation_origin") == "reviewed-memory")
+            for flag, fails in record_flags(row).items():
                 group[flag] += int(fails)
     return {"approved": 0, "review_required": True, "groups": [{"inference_policy": policy, "engine": engine, "locale": locale, "candidate": candidate, **counts}
         for (policy, engine, locale, candidate), counts in sorted(groups.items())]}
@@ -608,6 +660,9 @@ def main():
     summary = sub.add_parser("summarize")
     summary.add_argument("--checkpoints", nargs="+", required=True)
     summary.add_argument("--output", required=True)
+    audit = sub.add_parser("audit-review")
+    audit.add_argument("--review", required=True)
+    audit.add_argument("--checkpoints", nargs="+", required=True)
     work = sub.add_parser("run")
     work.add_argument("--engine", choices=ENGINES, required=True)
     work.add_argument("--corpus", required=True)
@@ -622,6 +677,10 @@ def main():
     if args.command == "convert": convert(args.engine, Path(args.model_dir))
     elif args.command == "collect": print(canonical({"records": collect_logs(args.logs, Path(args.output)), "output": args.output}))
     elif args.command == "summarize": Path(args.output).write_text(json.dumps(summarize(args.checkpoints), ensure_ascii=False, indent=2) + "\n")
+    elif args.command == "audit-review":
+        records = {row["record_id"]: row for path in args.checkpoints for row in map(json.loads, Path(path).read_text().splitlines())}
+        for row in records.values(): validate_record(row)
+        print(canonical({"warning_records_reconciled": audit_review_warnings(json.loads(Path(args.review).read_text()), records), "automatic_approval": False}))
     else: run(args)
 
 

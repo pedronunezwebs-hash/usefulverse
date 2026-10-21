@@ -13,6 +13,39 @@ spec.loader.exec_module(pilot)
 
 
 class TranslationPilotTest(unittest.TestCase):
+    def test_reference_gate_cannot_ignore_fixture_warnings_or_reuse_stale_hashes(self):
+        directory=pilot.ROOT/'docs/quality/translation-pilot'
+        records={r['record_id']:r for r in map(json.loads,(directory/'checkpoints/context-v7/madlad.jsonl').read_text().splitlines())}
+        old=json.loads((directory/'review-context-v7-references.json').read_text())
+        judgment=next(row for row in old['rows'] if row['locale']=='es' and row['key']=='voice-changer.fields.faq1a')
+        identity=judgment['record_ids'][0];actual=records[identity]
+        flags=[flag for flag,failed in pilot.record_flags(actual).items() if failed]
+        self.assertIn('known_semantic_errors',flags)
+        entry={'record_id':identity,**{field+'_hash':hashlib.sha256(actual[field].encode()).hexdigest() for field in ['translation','back_translation']},
+            'warnings':{flag:{'disposition':'forward-defect' if flag=='known_semantic_errors' else 'reviewed-signal',
+                'note':'Observed upload FAQ lost its explicit No; other signals reviewed independently.',
+                'blocks_gate':flag=='known_semantic_errors'} for flag in flags}}
+        review={'rows':[copy.deepcopy(judgment)],'reference_gate':{'es':{'passed':False}},'warning_reconciliation':[entry]}
+        self.assertEqual(pilot.audit_review_warnings(review,records),1)
+        for mutation in ['missing','stale','perfect','passed','back','unexplained']:
+            changed=copy.deepcopy(review)
+            if mutation=='missing':changed['warning_reconciliation']=[]
+            elif mutation=='stale':changed['warning_reconciliation'][0]['translation_hash']='old'
+            elif mutation=='perfect':changed['rows'][0]['scores']={key:3 for key in judgment['scores']}
+            elif mutation=='passed':changed['reference_gate']['es']['passed']=True
+            elif mutation=='back':changed['warning_reconciliation'][0]['warnings']['known_semantic_errors']['disposition']='back-defect'
+            else:changed['warning_reconciliation'][0]['warnings']['known_semantic_errors']['note']=' '
+            with self.subTest(mutation=mutation),self.assertRaises(ValueError):pilot.audit_review_warnings(changed,records)
+
+    def test_summary_and_new_reviews_reconcile_the_same_current_warning_flags(self):
+        directory=pilot.ROOT/'docs/quality/translation-pilot'
+        paths=sorted((directory/'checkpoints').rglob('*.jsonl'))
+        self.assertEqual(pilot.summarize(paths),json.loads((directory/'automatic-summary.json').read_text()))
+        records={r['record_id']:r for path in paths for r in map(json.loads,path.read_text().splitlines())}
+        for path in directory.glob('review-context-v*-*.json'):
+            if int(path.name.split('-')[2][1:])>=9:
+                pilot.audit_review_warnings(json.loads(path.read_text()),records)
+
     def test_repeated_protected_values_cannot_disappear_or_multiply(self):
         source = 'Keep {count}, {count}, 25 MB and UsefulVerse.'
         self.assertFalse(pilot.automatic_checks(source, 'Conserva {count}, 25 MB y UsefulVerse.', 'es')['protected_tokens_identical'])
