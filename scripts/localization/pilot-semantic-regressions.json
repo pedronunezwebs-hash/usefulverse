@@ -4676,5 +4676,14 @@
     "issue": "Omitida la relación tono más alto → reproducción más rápida al traducir juntas tres oraciones completas.",
     "observed_candidate": "madlad/context-v10",
     "actions_run_id": "39624247518"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.faq.2.a",
+    "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+    "translation": "Bare når DXF-filen angir millimeter, ellers bruker visningsprogrammet den angitte enheten eller angir mål som tegneenhet.",
+    "issue": "Redacción poco natural de la etiqueta de unidades: angir mål som tegneenhet; conserva condición y valor, defecto leve de naturalidad.",
+    "observed_candidate": "madlad/context-v10",
+    "actions_run_id": "39624247518"
   }
 ]

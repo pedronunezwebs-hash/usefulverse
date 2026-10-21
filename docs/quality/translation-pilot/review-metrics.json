@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-21T15:25:10.792895+00:00",
+  "at_utc": "2026-10-21T15:30:37.875519+00:00",
   "automatic_approval": false,
   "approved_locales": [],
   "note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
@@ -700,12 +700,12 @@
       "locale": "nb-NO",
       "candidate": "madlad+whole-unit+reviewed-memory",
       "rows": 40,
-      "points": 360,
+      "points": 359,
       "maximum": 360,
       "button_errors": 0,
       "number_negation_errors": 0,
       "major_rows": 0,
-      "minor_rows": 0
+      "minor_rows": 1
     }
   ]
 }

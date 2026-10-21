@@ -22,13 +22,13 @@
     },
     "nb-NO": {
       "button_number_negation_errors": 0,
-      "minor_errors": 0,
+      "minor_errors": 1,
       "major_errors": 0,
       "sample": 40,
-      "points": 360,
+      "points": 359,
       "maximum": 360,
       "passed": true,
-      "reason": "References only; no complete pilot or language approval."
+      "reason": "One minor wording defect in unit-label FAQ, within <=1 minor/20. References only; no language approval."
     }
   },
   "notes": [
@@ -36,7 +36,8 @@
     "72/80 forward source/translation hashes identical to v9;8 changed outputs reviewed. All current back translations read separately.",
     "ES faq2a back faithfully repeats the missing higher-pitch clause: this is one forward defect, not an independent back defect. No automatic marker/data signal detected the omission before the new semantic fixture.",
     "No full v10 because ES failed the prerequisite. V9 full remains latest complete computation, already rejected.0 approved locales;28 other destinations and low-resource80 samples still open.",
-    "Legacy comparisons below reuse historical scores only after exact source/forward hash matching.80 legacy comparisons are not80 new evaluations; their current back translations not regraded. No engine frozen."
+    "Legacy comparisons below reuse historical scores only after exact source/forward hash matching.80 legacy comparisons are not80 new evaluations; their current back translations not regraded. No engine frozen.",
+    "Puntuación NB corregida al cierre de360 a359 por un defecto leve de redacción; revisión anterior recuperable en Git, sin cambio de gate. No se presenta estilo poco natural como perfecto."
   ],
   "legacy_comparison": {
     "review_file": "review-es-nb.json",
@@ -1957,10 +1958,10 @@
       "scores": {
         "meaning": 3,
         "numbers_negations": 3,
-        "naturalness": 3
+        "naturalness": 2
       },
       "notes": [
-        "Ida nueva contrastada con fuente completa y vuelta: acción/negación, unidades y significado conservados."
+        "Conserva la unidad declarada y la condición; angir mål som tegneenhet resulta poco natural y confunde la formulación de la etiqueta de unidades. Preferir una frase equivalente a merker målingene som tegneenheter. Un error leve de redacción, sin alterar cifras/negación."
       ],
       "critical_control": false
     },
@@ -2823,8 +2824,25 @@
           "note": "Omisión importante de la relación tono más alto/reproducción más rápida; una retrotraducción fiel a la ida incompleta no la justifica. Bloquea el completo v10."
         }
       }
+    },
+    {
+      "record_id": "7f7da09a01de46d2369c265a3262a3f71b99e2d7a34ae21631b1f062fe7aad0b",
+      "translation_hash": "16d312201d6ea5bd60a16b795f38089f7c66a0d43b12fa66cf4d00f0863612f9",
+      "back_translation_hash": "110c73933ffac4cf9ada8289a4609e9b5d210a381f272441545899296c4211f3",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": false,
+          "note": "Un defecto leve de naturalidad en40 referencias, dentro de <=1 por20. No se puntúa como perfecto, ni se aprueba el idioma; la omisión ES sigue bloqueando el completo."
+        }
+      }
     }
   ],
   "requires_complete_model_warning_coverage": true,
-  "warning_coverage_supplemental_reviews": []
+  "warning_coverage_supplemental_reviews": [],
+  "supersedes": {
+    "review_commit": "4d4944bb09c6646bc0677f7a087fbc31b031e27b",
+    "review_digest": "c1e96045475a4408c8204bfe33b8f7d7dae389eacb6dc395c8933484f2b527c2",
+    "reason": "Final close reading: NB faq.2.a has awkward angir mål som tegneenhet; naturalness2, one minor reference error. Gate remains passed under <=1 minor/20; no language approval."
+  }
 }

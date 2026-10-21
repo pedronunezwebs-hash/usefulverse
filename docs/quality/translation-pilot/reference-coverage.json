@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-21T15:25:10.792895+00:00",
+  "at_utc": "2026-10-21T15:30:37.875519+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -324,7 +324,7 @@
   "full_tool_computation_policy": "context-v9",
   "full_tool_pilot_approved_locales": [],
   "total_records_all_policies": 8497,
-  "semantic_regressions": 511,
+  "semantic_regressions": 512,
   "contextual_reference_gate": {
     "es": {
       "button_number_negation_errors": 0,
@@ -338,13 +338,13 @@
     },
     "nb-NO": {
       "button_number_negation_errors": 0,
-      "minor_errors": 0,
+      "minor_errors": 1,
       "major_errors": 0,
       "sample": 40,
-      "points": 360,
+      "points": 359,
       "maximum": 360,
       "passed": true,
-      "reason": "References only; no complete pilot or language approval."
+      "reason": "One minor wording defect in unit-label FAQ, within <=1 minor/20. References only; no language approval."
     }
   },
   "full_tool_gate": {
