@@ -35,6 +35,42 @@
       ],
       "limitations": "Read-only HTTP checks; no UI/device/responsive/RTL/performance/a11y/hardware certification.",
       "total_sitemap_urls": 25625
+    },
+    {
+      "at_utc": "2026-10-21T05:33:33.682129+00:00",
+      "method": "curl GET; parse XML loc elements; separate false-path GET status",
+      "deployment": false,
+      "sitemaps": [
+        {
+          "url": "https://usefulverse.com/sitemap.xml",
+          "http_status": 200,
+          "urls": 10260
+        },
+        {
+          "url": "https://tools.usefulverse.com/sitemap.xml",
+          "http_status": 200,
+          "urls": 15365
+        }
+      ],
+      "false_paths": [
+        {
+          "url": "https://tools.usefulverse.com/tools/zzz-no-existe/",
+          "http_status": 200,
+          "soft_404_persists": true
+        },
+        {
+          "url": "https://tools.usefulverse.com/es/zzz/",
+          "http_status": 200,
+          "soft_404_persists": true
+        },
+        {
+          "url": "https://tools.usefulverse.com/zzz.html",
+          "http_status": 200,
+          "soft_404_persists": true
+        }
+      ],
+      "limitations": "Read-only HTTP checks; no UI/device/responsive/RTL/performance/a11y/hardware certification.",
+      "total_sitemap_urls": 25625
     }
   ]
 }
