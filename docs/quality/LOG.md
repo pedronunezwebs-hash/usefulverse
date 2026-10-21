@@ -5,7 +5,7 @@ Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 ## 2026-10-21 · Codex · Hito v11:referencias revisadas,completo pendiente
 - Run39629733667:160 registros,77 tests reales,21 memorias,cleanup correcto,0 artefactos. Fuente fe2acf3.
 - ES y nb360/360 en40 referencias cada uno;14 registros con avisos reconciliados,9 defectos conocidos de vuelta separados.72 idas idénticas a v10 por hashes y8 revisadas nuevas.0 idiomas aprobados.
-- Checkpoint/revisión/resúmenes respaldados antes del completo. Siguiente:68+20 conocidas y todos los avisos;sin deploy/activaciones ni avance de fase.
+- Checkpoint/revisión/resúmenes respaldados antes del completo. Completo39631325214 fuente40fef81 en curso:recuperar antes de repetir.68+20 conocidas y todos los avisos;sin deploy/activaciones ni avance de fase.
 
 ## 2026-10-21 · Codex · Hito v11 en curso
 - Código `fe2acf3`: oraciones completas con traza y datos por oración/unidad; ambas FAQ de tono/velocidad y memoria NB de unidades.77 tests ligeros,75 correctos y dos dependencias. V2–v10 intactos.
