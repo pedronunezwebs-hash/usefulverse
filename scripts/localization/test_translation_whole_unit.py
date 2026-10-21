@@ -11,6 +11,31 @@ spec.loader.exec_module(pilot)
 
 
 class WholeUnitTest(unittest.TestCase):
+    def test_every_real_pilot_input_preserves_typed_data_including_mp3(self):
+        path=pilot.ROOT/'docs/quality/translation-pilot/checkpoints/context-v9/madlad.jsonl'
+        units={r['key']:r for r in map(json.loads,path.read_text().splitlines())}
+        self.assertEqual(len(units),214)
+        for key,unit in units.items():
+            target=pilot.translation_input(unit,'context-v10')
+            self.assertTrue(all(pilot.typed_data_checks(unit['source'],target,'en','en').values()),key)
+        source='Try WAV or MP3.'
+        self.assertTrue(all(pilot.typed_data_checks(source,'Prueba WAV o MP3.','en','es').values()))
+        self.assertFalse(all(pilot.typed_data_checks(source,'Prueba WAV o MP4.','en','es').values()))
+
+    def test_invalid_input_fails_before_model_download(self):
+        import hashlib, tempfile, os
+        from types import SimpleNamespace
+        from unittest.mock import patch
+        source='Value x999.'
+        unit={'key':'independent.invalid','source':source,'source_hash':hashlib.sha256(source.encode()).hexdigest(),
+              'context':'limits','legacy':{},'reference':False}
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/'corpus.json'
+            path.write_text(json.dumps({'sourceDigest':'test','locales':['en','es'],'fullSourceUnits':1,'units':[unit]}))
+            args=SimpleNamespace(corpus=path,locales='es',scope='full',resume=None,engine='madlad',beam_size=2,policy='context-v10')
+            with patch.object(pilot,'actions_only'),patch.dict(os.environ,RUNNER_TEMP=directory),patch.object(pilot.subprocess,'run',side_effect=AssertionError('Model download attempted')):
+                with self.assertRaisesRegex(ValueError,'typed input'):pilot.run(args)
+
     def test_whole_unit_keeps_2d_coordinates_and_api_names_in_context(self):
         source = 'View 2D lines with Web Audio. From (0, 0) to (10, 0), measure 10 units.'
         target = 'Ve líneas 2D con Web Audio. De (0, 0) a (10, 0), mide 10 unidades.'

@@ -278,7 +278,7 @@ def typed_data_checks(source, target, source_locale, target_locale):
     # Every remaining digit must belong to a recognized numeric token: word-bound
     # regex skips (e.g. 1e3/x999/999MB) must not masquerade as number-free prose.
     normalized = [text.replace("\u2212", "-") for text in (source, target)]
-    prose = [re.sub(r"\b\d+D\b", " ", numeric_prose(text)) for text in normalized]
+    prose = [re.sub(r"\b\d+D\b", " ", TECHNICAL_TOKEN.sub(" ", numeric_prose(text))) for text in normalized]
     coverage = all(not re.search(r"\d", NUMERIC_VALUE.sub(" ", text)) for text in prose)
     left, right = numeric_data(normalized[0], source_locale), numeric_data(normalized[1], target_locale)
     has_quantities = any(NUMERIC_VALUE.search(text) for text in prose)
@@ -625,6 +625,12 @@ def run(args):
         print("UVPILOT_SUMMARY " + canonical({"engine": args.engine, "counts": {}, "scope": args.scope,
             "resumed": True, "conversion_seconds": 0, "approved": 0}), flush=True)
         return
+    if policy == "context-v10":
+        for _, candidate, pending in work:
+            for unit in pending:
+                text = translation_input(unit, policy) if candidate == "model" else unit["source"]
+                if not all(typed_data_checks(unit["source"], text, "en", "en").values()):
+                    raise ValueError("Invalid canonical/controlled typed input before model download: " + unit["key"])
     config = ENGINES[args.engine]
     model_dir = Path(os.environ["RUNNER_TEMP"]) / f"usefulverse-pilot-{args.engine}"
     started = time.monotonic()
