@@ -311,3 +311,50 @@ al variar la composición del lote; solo se reutiliza una rúbrica por hashes de
 Suite ligera: 55 Python (53 correctos, 2 de dependencias; estas se probaron en los jobs reales antes de los dos
 últimos controles ligeros de auditoría). Próximo v9 por familia de cantidades críticas y prosa junto a números;
 no restaurar cifras por suposición. Repetir ambas referencias antes del completo; nada de masiva ni fase 0.
+
+
+## V9 · Límites críticos como frases completas (21-oct)
+
+Política independiente `context-v9`, `pilot-quantity-memory-policy.json`; v2–v8 medidas sin cambios.
+Las cinco claves de tamaño/duración del corpus tienen memoria exacta completa es/nb ligada a fuente/hash/contexto:
+fileHelp, tooLarge y tooLong de voz, tooLarge y limits de DXF. Cuatro memorias nuevas; 59 claves, 114 destinos.
+La salida v8 «30 10 segundos» queda cruda y rechazada: v9 no quita el 10 ni repara la salida.
+Otros destinos siguen pendientes de piloto y revisión; la estrategia tipada y los guards no se relajan.
+Referencias v9 aún pendientes de run y rúbrica. Muestra completa fijada en `full-sample-v9-plan.json`, mismas
+68 claves y 20 adicionales conocidas desde v6; no ciega. Completo solo tras pasar y reconciliar los avisos de referencias.
+
+Las revisiones v9 y posteriores deben incluir `warning_reconciliation`. `audit_review_warnings(review, records)`
+y la suite permanente comparan cada aviso actual, registro y hashes. Un aviso de ida no puede pasar como de vuelta;
+los contratos de datos de ida rotos bloquean el gate. Esta auditoría no sustituye la revisión de significado.
+
+Comando de auditoría (sin modelos):
+```bash
+python3 scripts/localization/translation-pilot.py audit-review \
+  --review docs/quality/translation-pilot/review-context-v9-references.json \
+  --checkpoints docs/quality/translation-pilot/checkpoints/context-v9/madlad.jsonl
+```
+Se ejecuta cuando existen los resultados y su revisión; comprueba consistencia, no aprueba idiomas automáticamente.
+
+Referencias v9 [39547858733](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39547858733):
+es360/360 y nb360/360, solo referencias;76 idas iguales a v8 y cuatro memorias completas nuevas.
+160 registros,20 aciertos de memoria,250,01 s;56 tests reales y cleanup correctos.
+13 registros de avisos reconciliados (señales de longitud y defectos de vuelta);473 fixtures.
+7.641 registros/1.994 evaluaciones acumulados,0 aprobados; completo aún pendiente.
+
+Audit regional posterior a las inferencias v9: `localized_numeric_values_identical` distingue copiar el dato inglés
+de conservar su lectura en el idioma destino.200,000 es decimal en es/nb;200.000 es/200 000 nb representan200000.
+El audit source-literal sigue separado e intacto. Ni números nuevos ni cambios de separador se reparan por conjetura.
+Resumen/auditor recomputan este control desde los crudos, sin editar checkpoints/políticas medidas.
+
+
+### Completo v9 rechazado (21-oct)
+
+[39548546424](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39548546424), fuente13a2ae0:
+696 nuevos,94 memorias,465,53 s, cleanup correcto. Muestra68:es592/612,nb588/612;20 adicionales conocidas:
+180/180 ambos. El fijo88 queda772/792 y768/792, rechazado por lectura regional de200,000 y fragmentación/gramática.
+177 evaluaciones nuevas incluyen Visible es fuera de muestra;40 comparaciones legacy históricas solo verifican
+hashes y no se suman como nuevas evaluaciones.44 registros con avisos del completo reconciliados, complementados
+por las referencias; cobertura permanente de todos los avisos del candidato.
+8.337 registros/2.171 evaluaciones,509 fixtures (479 ida,30 vuelta),0 aprobados.59 tests locales,57 correctos+2 deps.
+Siguiente v10 independiente por familia de fragmentación/datos regionales, conservando v2–v9;40 referencias
+antes del completo68+20 conocido. Sin masiva, publicación ni fase0 con estos gates abiertos.

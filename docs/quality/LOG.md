@@ -2,6 +2,26 @@
 
 Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 
+## 2026-10-21 · Codex · Paso A: v9 por familia y auditoría regional/avisos
+- [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador; `9b430c3`…`1a963cc`.
+  V2–v9 medidos intactos; fuentes, slugs,700 existentes y estados de herramientas preservados; sin merge del código/deploy.
+- V9 añade cuatro memorias completas para cubrir las cinco claves de duración/tamaño (una existente), ligadas a fuente/contexto.
+  [Referencias 39547858733](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39547858733): es 360/360,nb 360/360.
+  [Completo 39548546424](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39548546424): **fijo 88 es 772/792,nb 768/792, rechazados**.
+  Misma muestra 68:592/612 y 588/612;20 adicionales conocidas180/180 ambos, no prueba ciega. Cleanup de los dos runners verificado.
+- 177 nuevas evaluaciones del completo, incluida Visible es fuera de muestra.40 comparaciones legacy históricas solo verifican
+  hashes, no se cuentan como nuevas evaluaciones ni revisión nueva de sus vueltas. Revisión de agente, sin nativos.
+- Auditor permanente: cada aviso, hash y decisión; no heredar puntuación perfecta sobre un fixture ni omitir avisos fuera de muestra.
+  Regresión de cobertura roja al quitar Visible. Guard regional separa cantidad literal inglesa de su lectura local en es/nb;
+  detecta200,000 ambiguo sin modificar inferencia/checkpoints/políticas medidos. Sin reparar salidas ni relajar guards históricos.
+- **8.337 registros,2.171 evaluaciones (con repeticiones),509 fixtures (479 ida,30 vuelta), 0 idiomas aprobados**.
+  37 fixtures nuevos; suite ligera59 Python,57 correctos y 2 dependencias. CI final [39550210253](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39550210253), código 1a963cc: verde: 3.045 Node; 59 Python (57 correctos y 2 omitidos por dependencias); check, idiomas, hub y preview verdes.
+  Gitleaks sin secretos y actionlint correcto. Los modelos probaron56/58 casos con dependencias según su commit; audit regional posterior.
+- Producción por GET/XML, dos snapshots: **25.625→25.625 URLs**, tres falsos paths del hub aúnHTTP200. Sin activaciones ni envíos.
+  No se certifican siete capas/18 controles, UI, responsive/RTL, a 11y/rendimiento o hardware.0 pruebas nuevas para Pedro;
+  P-001–P-008 pendientes, 0 FALLA. Siguiente v10: contexto completo por familia +datos regionales/gramática, sin fase 0 ni masiva.
+  Capacidad Pages/37 idiomas pendientes. [Informe, datos y limpieza](lotes/2026-10-21-piloto-v9.md).
+
 ## 2026-10-21 · Codex · Paso A: v7/v8, tipos numéricos y guard de cantidades inventadas
 - [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador; código `203422e`…`96c7440`.
   Políticas v2–v8 medidas intactas. Solo runner/políticas/evidencia, sin cambios de src/public, merge del código o deploy.
