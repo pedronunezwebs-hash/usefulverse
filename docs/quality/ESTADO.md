@@ -11,6 +11,9 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 ## 1. Siguiente paso exacto
 
+**Hito del turno activo v9:** código `9b430c3`, [referencias 39547858733](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39547858733), job `119050010742`, es/nb. V9 independiente: frases completas para las cinco claves de duración/tamaño; 59 memorias, 114 destinos, v2–v8 intactas. No se presupone gate pasado ni se ejecuta completo todavía. Si se interrumpe: recuperar el log del job con `gh api repos/pedronunezwebs-hash/usefulverse/actions/jobs/119050010742/logs` y collect a `checkpoints/context-v9/madlad.jsonl` desde la rama; revisar hashes y TODOS los avisos antes de ampliar. Código/plan/checklist subidos; sin modelos ni builds completos en Mac.
+
+
 1. **Paso A preparado en el PR [#136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador, rama
    `feat/new-tools-batch-1`.** Las 300 fuentes del respaldo privado `usefulverse-300-worktree-backup-20261020`,
    `backup/usefulverse-300-implementation` (`27a2f174`), están recuperadas selectivamente sin historial privado.
