@@ -528,8 +528,26 @@ def audit_review_warnings(review, records):
             flags = sorted(flag for flag, failed in record_flags(row).items() if failed)
             if flags: expected[identity] = (row, flags)
             judgments[identity] = judgment
-    resolutions = {entry["record_id"]: entry for entry in review["warning_reconciliation"]}
-    if len(resolutions) != len(review["warning_reconciliation"]) or set(resolutions) != set(expected):
+    reconciliations = json.loads(json.dumps(review["warning_reconciliation"]))
+    addenda_path = ROOT / "docs/quality/translation-pilot/review-warning-addenda.json"
+    addenda = json.loads(addenda_path.read_text()) if addenda_path.exists() else []
+    for addendum in addenda:
+        if addendum["review_digest"] != digest(review): continue
+        # Preserve historical review bytes. Only newly observed back defects can
+        # supplement an exact old review; no rubric/gate/forward override is allowed.
+        for entry in addendum["warning_reconciliation"]:
+            if any(not (flag.startswith("back_") or flag == "known_back_semantic_errors") or
+                    decision["disposition"] != "back-defect" or decision["blocks_gate"]
+                    for flag, decision in entry["warnings"].items()):
+                raise ValueError("Historical addenda can only record non-gating back defects")
+            previous = next((r for r in reconciliations if r["record_id"] == entry["record_id"]), None)
+            if previous:
+                if any(previous[field] != entry[field] for field in ["translation_hash", "back_translation_hash"]) or set(previous["warnings"]) & set(entry["warnings"]):
+                    raise ValueError("Historical addendum cannot replace an existing decision")
+                previous["warnings"].update(entry["warnings"])
+            else: reconciliations.append(entry)
+    resolutions = {entry["record_id"]: entry for entry in reconciliations}
+    if len(resolutions) != len(reconciliations) or set(resolutions) != set(expected):
         raise ValueError("Missing, extra or duplicate warning reconciliation")
     for identity, (row, flags) in expected.items():
         entry = resolutions[identity]

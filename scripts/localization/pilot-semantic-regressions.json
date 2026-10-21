@@ -4657,5 +4657,15 @@
     "observed_candidate": "madlad/context-v9",
     "actions_run_id": "39548546424",
     "direction": "back"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.cancel",
+    "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+    "translation": "Cancel the upload",
+    "issue": "Upload por loading en la vuelta de carga local; la ida Cancelar la carga es correcta.",
+    "observed_candidate": "madlad/context-v10",
+    "actions_run_id": "39623344071",
+    "direction": "back"
   }
 ]

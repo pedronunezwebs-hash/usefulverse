@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "expected_rows": 29,
+  "inference_policy": "context-v10",
+  "reviewer": "Codex (agente, sin API de pago)",
+  "reviewed_at_utc": "2026-10-21T15:18:08.028242+00:00",
+  "native_review": false,
+  "rubric": "REVISION-FINAL §2: significado, cifras/negaciones y naturalidad, 0–3.",
+  "scope": "Partial recovered 29/80 model reference evaluations. Each actual source/forward/back read; no gate until complete 40 es +40 nb and all warnings.",
+  "decision": "incomplete-reference-run-no-full",
+  "approved_locales": [],
+  "reference_gate": {
+    "es": {
+      "passed": false,
+      "sample": 29,
+      "reason": "Incomplete run, only 29/40 es reviewed."
+    },
+    "nb-NO": {
+      "passed": false,
+      "sample": 0,
+      "reason": "Not computed yet."
+    }
+  },
+  "notes": [
+    "29 records recovered from failed39623344071, unchanged. Current raw evidence validates; no complete timing summary.",
+    "Four changed forward outputs reviewed,25 source/forward hashes identical; all current back texts contrasted separately.",
+    "No native review or language approval; full forbidden until both40-reference gates passed."
+  ],
+  "rows": [
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "dxf-viewer.faq.0.a",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "translation_hash": "b038cd1b20e93edaadfbde7d75767fe95da619f5e987290a7c7df5bec6b51db4",
+      "record_ids": [
+        "d8627833bdfc80ff5c4f70493f54a0c3e94b7c0933cbcbbe01c81af60aaf29cd"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "dxf-viewer.faq.2.a",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "translation_hash": "ab418195f4a29a4e390a91ddcfbb7dd202f29dc41245184859d2cba3b9be960a",
+      "record_ids": [
+        "1d7471948a90ef04a165ad18db48ce8dfc5bedb5eed29e716ab01fea20a59e99"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida nueva contrastada con fuente completa y vuelta: conserva acción, unidades/negación y significado. No se hereda rúbrica sin hashes."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "dxf-viewer.fields.binary",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "translation_hash": "a10d800288f795bb0832ce0e40a2b9622c68a31e23ea9b321c6053c3cdbc5bda",
+      "record_ids": [
+        "0af0e9862c3df14d36457b3035e4f50945fffa0b0dde6b2f45cf708d66793637"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida nueva contrastada con fuente completa y vuelta: conserva acción, unidades/negación y significado. No se hereda rúbrica sin hashes."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "dxf-viewer.fields.cancel",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "translation_hash": "85965ae79fa993c7f2d1e80480f190ca8b8a9d158fcfe08a1dbba12466f655f8",
+      "record_ids": [
+        "f635c3a98188a7912e037769f5a5748d55659875b32259a0ebc068d86ffcc12e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "dxf-viewer.fields.exportPng",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "translation_hash": "e6581d60954bd764b466aec4666e1d6c52e6a69a89c6664c949112139baa09c9",
+      "record_ids": [
+        "9d4b6dd48094ed1639238bafc0c55ce1281ddf8a415917dfc67fbd67020e13c5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "dxf-viewer.fields.exportSvg",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "translation_hash": "b9cdaed1d0fa23e25939140e5a511223c62c0d24550b7a4909b2f5dbbbaf1b3b",
+      "record_ids": [
+        "3579be54734b66eecd0d2d6eeee366f5950f8086f66c97dcaa2e10d92a4ae664"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "dxf-viewer.fields.file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "translation_hash": "e62fbcdf36628bfb7ceb6e8c5ad8a028d44008d6e2433bdff6010b117864253a",
+      "record_ids": [
+        "19522c38674b0473deb94eb604348c23efa98b57bbf8ef66faa4956dda12928c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "translation_hash": "3b64d26674321e74f3d60bf4451f20b0f16da0295cd7f179020a1405baee89d0",
+      "record_ids": [
+        "aa26721281489a958f06f8242c3f6b3c4199fe511b595916d096300a6b810083"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "dxf-viewer.fields.measurement",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "translation_hash": "3a4b1eeb31b6330bd8fa232c5dba44fb6b0f2a74228d82fc3b04b6f57af8e23a",
+      "record_ids": [
+        "25f96dd388d44757760645478732ad8d9664b615d3b210e3a62ac93e88fcf888"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "translation_hash": "2c153c15f124e414f74899e2ee46a82bc9e68444a9f634f4db4e5a76db30115f",
+      "record_ids": [
+        "c1f01da20684a19b1b7d2a6a348d0f6e37e99c8b2af302636c37f9273589f38c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "dxf-viewer.fields.unsupported",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "translation_hash": "5d91f224ae06117e9c44ba494e9759bbe63480f0d2c6f08d1e1407a06270a5eb",
+      "record_ids": [
+        "8402b5ddc15760c605278e1a66b5838692ccc7a0d4042340fb05c130ac7ce2ca"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "translation_hash": "464d372afb80116f6d0f2038c64f6c33a5e16dff5f2ad18677559b3ec78800dc",
+      "record_ids": [
+        "d2532bc28c6f7f949fad2c1a34e9686b2224a96f9cbce8f0cce0272aa5b2f153"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "translation_hash": "e6e97c5aab206b57c3836800541474cceb98a84c4da3ac10c75ba72f62e53f3a",
+      "record_ids": [
+        "cb274c38a1bdc6ddc98240f40d2de07b09c4dfac88d267afeeecfa9fdcee63fc"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida nueva contrastada con fuente completa y vuelta: conserva acción, unidades/negación y significado. No se hereda rúbrica sin hashes."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "shikaku.example",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "translation_hash": "4cb49a94ef838b79349c6f86363a5497bd571073520705c2e031b71bc129e117",
+      "record_ids": [
+        "5f9601cc8dc530bf68a66f3b9157e16920d3ffda75c94a5bb39541e2c5c5563a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "shikaku.fields.check",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "translation_hash": "203353c448abf18f1ea43f98413ce159a985fd9b6fa5783cf0e2e90286693577",
+      "record_ids": [
+        "d9ef512d60767c97382e86067aef92c11546a0ce5d661155d810be8c70153515"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "translation_hash": "62e698fb711f50f83fa1bc8b1ed825800fe6c805cf3a4c364c12d0986e331393",
+      "record_ids": [
+        "a31db1f1929942dae5dafb059e8c053020612ca2a89165f9925b9246eba0314f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "shikaku.fields.daily",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "translation_hash": "89adf4b17102ae3ec585f234f5b1c928048c1a127fb228e6aa7a673f7cc82ba4",
+      "record_ids": [
+        "21d9d6a1f0514fc05c7a59b693a7195620173ae14efae1d4e9b4f5d1d5e2d6a5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "translation_hash": "252e8f12ebc501b4d85304d86346f0c94e2c34a3866db085e07923ae307402c5",
+      "record_ids": [
+        "790288c71cfd449296639a34431319646836904ab77dc7eedf05a4d8bbc3ab62"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "de9fb2af14280956053bb5344225923402bcd34f790481d4b7ec545989eeafb9",
+      "record_ids": [
+        "4df19f63b602d95a2ca2154c0171e8139c78c9240796c6c74ed296a96c681983"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ida nueva contrastada con fuente completa y vuelta: conserva acción, unidades/negación y significado. No se hereda rúbrica sin hashes."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "translation_hash": "0b9d8a88f752de74a70fb544c6717d734f242dc8458ddc1d21d0273d8bd34d66",
+      "record_ids": [
+        "aadc6b0d765728606cef5bf81bd4c0ad3233ccbcf2b83634ff17b43499d8a9ab"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "shikaku.fields.newPuzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "translation_hash": "96d9e4f494f0ea52da051157b6dcf8cd73ac76aae6893e19d0d947ece1f7bc30",
+      "record_ids": [
+        "f90ab7ecad050749f639bc126af9037f71d4992ffd502dc190d9a954cd02e418"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "translation_hash": "01ddd0f17edac3f87b0c6754fa191e21d4ae73faecd9f0b3d0143d9576bbbac4",
+      "record_ids": [
+        "5a3b9932c96eea16a778cf0fd91066a5815043526d5b116c6c575f8d98b4bca7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "shikaku.fields.reveal",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "translation_hash": "130a0104d0d3143d7cda34511c6315d70f0d7512b2832fed6c542df93c1685b9",
+      "record_ids": [
+        "041ad92e6f1755d571776289ac7e392206c5fdc522d36dba7a286e296a88c339"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "translation_hash": "8c99333123c2589d0ea069da5c5fb636e960f2607af94bdde73282f186952d71",
+      "record_ids": [
+        "5d4e5f3dd6ad4a3dce23da7ede681b3357fd67ea04fd86a12c192158aaa12d53"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "27c2cbd7c9497973342fa8a59da363572bff2a144360f5ab70631b1ab2de45b5",
+      "record_ids": [
+        "8baa4807d91a29817c7692c9f2731e888d06938e9322e03a52482a846e37571f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "0ce20272dac19530c592bd3778b8c9b7426475f2d8428ef809c0f8dda0349fea",
+      "record_ids": [
+        "72cc63f3fa44ba3483e76d90ffd07ae634cb371bb182a83028145d3ec221c783"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "voice-changer.fields.chooseFile",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "translation_hash": "d00c5a5b2fb2adb432d42c4189169cdfe383016f49ca7d2e28da0acec3001ae1",
+      "record_ids": [
+        "499f83640cf812635ea1822559ddfa0d681106fc5a5d6cbdc6fd761f16d1dc63"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "voice-changer.fields.chooseFirst",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "translation_hash": "2c0cd1fdf977ac73953a69518f6c5e4a6109747483b45d7d5662edbbfe4f168a",
+      "record_ids": [
+        "66535af77b281c9f55e26b0c6f10b4ca9eb2ba28ead2bca9bb2119f79b878bbf"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    },
+    {
+      "locale": "es",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "translation_hash": "1f8a7458ad27c99540674719f5cd6ff56806fbf0c21df5b49423eb1fe3379cc0",
+      "record_ids": [
+        "7a50a1944807ebcd8479d33ca8acc74ef1ebbeb8907731086955ff5854ba7d18"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida idénticas a v9 por hashes; vuelta actual contrastada por separado."
+      ],
+      "critical_control": false
+    }
+  ],
+  "back_findings": [
+    {
+      "record_id": "c1f01da20684a19b1b7d2a6a348d0f6e37e99c8b2af302636c37f9273589f38c",
+      "back_translation_hash": "1615065918eb7c920d85e030954dc4c52cefe540add87429356943715b987aba",
+      "notes": [
+        "Vuelta dice viewfinder por visor del dibujo; ida de memoria correcta."
+      ]
+    },
+    {
+      "record_id": "f635c3a98188a7912e037769f5a5748d55659875b32259a0ebc068d86ffcc12e",
+      "back_translation_hash": "b5494718c227111581073c45e65ac329c063d349f37b4d155afe8daa4f59b016",
+      "notes": [
+        "Vuelta dice upload en vez de loading; carga local correcta en la ida."
+      ]
+    }
+  ],
+  "warning_reconciliation": [
+    {
+      "record_id": "f635c3a98188a7912e037769f5a5748d55659875b32259a0ebc068d86ffcc12e",
+      "translation_hash": "85965ae79fa993c7f2d1e80480f190ca8b8a9d158fcfe08a1dbba12466f655f8",
+      "back_translation_hash": "b5494718c227111581073c45e65ac329c063d349f37b4d155afe8daa4f59b016",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Vuelta con defecto registrada por separado en back_findings; la ida conserva el sentido."
+        }
+      }
+    },
+    {
+      "record_id": "c1f01da20684a19b1b7d2a6a348d0f6e37e99c8b2af302636c37f9273589f38c",
+      "translation_hash": "2c153c15f124e414f74899e2ee46a82bc9e68444a9f634f4db4e5a76db30115f",
+      "back_translation_hash": "1615065918eb7c920d85e030954dc4c52cefe540add87429356943715b987aba",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Etiqueta corta ampliada para desambiguar el control; acción conservada y contrastada con el contexto de interfaz."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Vuelta con defecto registrada por separado en back_findings; la ida conserva el sentido."
+        }
+      }
+    },
+    {
+      "record_id": "5a3b9932c96eea16a778cf0fd91066a5815043526d5b116c6c575f8d98b4bca7",
+      "translation_hash": "01ddd0f17edac3f87b0c6754fa191e21d4ae73faecd9f0b3d0143d9576bbbac4",
+      "back_translation_hash": "c9457efe0baa9003143a96fbdeeb17034603a0533d67dc5d5146b4919884f4d9",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Etiqueta corta ampliada para desambiguar el control; acción conservada y contrastada con el contexto de interfaz."
+        }
+      }
+    }
+  ]
+}

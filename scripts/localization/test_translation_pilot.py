@@ -13,6 +13,27 @@ spec.loader.exec_module(pilot)
 
 
 class TranslationPilotTest(unittest.TestCase):
+    def test_later_back_findings_preserve_old_reviews_without_a_gate_override(self):
+        from unittest.mock import patch
+        directory=pilot.ROOT/'docs/quality/translation-pilot'
+        addenda=json.loads((directory/'review-warning-addenda.json').read_text())
+        self.assertTrue(addenda)
+        item=addenda[0];file=directory/item['review_file'];review=json.loads(file.read_text())
+        self.assertEqual(hashlib.sha256(file.read_bytes()).hexdigest(),item['review_file_sha256'])
+        self.assertEqual(pilot.digest(review),item['review_digest'])
+        records={r['record_id']:r for f in (directory/'checkpoints').rglob('*.jsonl') for r in map(json.loads,f.read_text().splitlines())}
+        self.assertEqual(pilot.audit_review_warnings(review,records),14)
+        for mutation in ['stale-review','stale-text','gate','forward','duplicate']:
+            changed=copy.deepcopy(addenda);entry=changed[0]['warning_reconciliation'][0]
+            if mutation=='stale-review':changed[0]['review_digest']='old'
+            elif mutation=='stale-text':entry['back_translation_hash']='old'
+            elif mutation=='duplicate':changed.append(copy.deepcopy(changed[0]))
+            elif mutation=='gate':entry['warnings']['known_back_semantic_errors']['blocks_gate']=True
+            else:entry['warnings']={'protected_tokens':{'disposition':'back-defect','blocks_gate':False,'note':'Invalid forward override'}}
+            with tempfile.TemporaryDirectory() as tmp:
+                path=Path(tmp)/'docs/quality/translation-pilot/review-warning-addenda.json';path.parent.mkdir(parents=True);path.write_text(json.dumps(changed))
+                with patch.object(pilot,'ROOT',Path(tmp)),self.subTest(mutation=mutation),self.assertRaises(ValueError):pilot.audit_review_warnings(review,records)
+
     def test_run_evidence_inventory_cannot_omit_a_checkpoint(self):
         directory=pilot.ROOT/'docs/quality/translation-pilot'
         evidence=json.loads((directory/'context-run-evidence.json').read_text())

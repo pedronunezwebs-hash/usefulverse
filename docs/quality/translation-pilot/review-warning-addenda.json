@@ -1,0 +1,23 @@
+[
+  {
+    "review_file": "review-context-v9-references.json",
+    "review_digest": "aad2b9e0143f2dcbed0fafee710cc9a2b953c8f6efb1e3de665da5d169ec19d6",
+    "review_file_sha256": "c799759a9129dfe6d6919e9d5e00718dcc6d7d32f48b3430ccda4b0c8cb75f22",
+    "added_at_utc": "2026-10-21T15:19:27.953455+00:00",
+    "reason": "Previously unnoticed back ambiguity, observed in v10. Historical review remains unchanged; every current warning still reconciled. No forward/gate override.",
+    "warning_reconciliation": [
+      {
+        "record_id": "c126212d8690975bfd635f499896d8c5d16a682650a742d5d6e5fecc29208c40",
+        "translation_hash": "85965ae79fa993c7f2d1e80480f190ca8b8a9d158fcfe08a1dbba12466f655f8",
+        "back_translation_hash": "b5494718c227111581073c45e65ac329c063d349f37b4d155afe8daa4f59b016",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "Hallazgo posterior v10: upload por loading en la vuelta; ida correcta. Se conserva íntegra la revisión v9, sin cambiar su rúbrica/gate."
+          }
+        }
+      }
+    ]
+  }
+]
