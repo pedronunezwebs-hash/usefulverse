@@ -274,9 +274,15 @@ def typed_data_checks(source, target, source_locale, target_locale):
     values and multiplicity. Coordinates use explicit mathematical notation and order.
     No output is repaired. Unsupported numeric grammars fail closed, even for memory.
     """
-    left, right = numeric_data(source, source_locale), numeric_data(target, target_locale)
-    has_quantities = any(NUMERIC_VALUE.search(numeric_prose(text)) for text in (source, target))
-    quantities = not has_quantities or left is not None and right is not None and left[0] == right[0]
+    # Normalize a known mathematical minus before parsing, never in stored output.
+    # Every remaining digit must belong to a recognized numeric token: word-bound
+    # regex skips (e.g. 1e3/x999/999MB) must not masquerade as number-free prose.
+    normalized = [text.replace("\u2212", "-") for text in (source, target)]
+    prose = [re.sub(r"\b\d+D\b", " ", numeric_prose(text)) for text in normalized]
+    coverage = all(not re.search(r"\d", NUMERIC_VALUE.sub(" ", text)) for text in prose)
+    left, right = numeric_data(normalized[0], source_locale), numeric_data(normalized[1], target_locale)
+    has_quantities = any(NUMERIC_VALUE.search(text) for text in prose)
+    quantities = coverage and (not has_quantities or left is not None and right is not None and left[0] == right[0])
     opaque = lambda text: Counter(OPAQUE_LITERAL.findall(text))
     brands = lambda text: Counter(re.findall(r"UsefulVerse|Unicode", text, re.IGNORECASE))
     tokens = lambda pattern, text: Counter(t.casefold() for t in pattern.findall(text))

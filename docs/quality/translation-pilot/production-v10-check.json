@@ -1,0 +1,45 @@
+{
+  "snapshots": [
+    {
+      "at_utc": "2026-10-21T15:09:54.024446+00:00",
+      "method": "curl GET with status/hash; XML loc count; false paths status",
+      "deployment": false,
+      "sitemaps": [
+        {
+          "url": "https://usefulverse.com/sitemap.xml",
+          "http_status": 200,
+          "body_sha256": "071394119f41aeda8ad28534a4b5ce4a72924951ecd28c119f4a7fb0d711dbeb",
+          "urls": 10260
+        },
+        {
+          "url": "https://tools.usefulverse.com/sitemap.xml",
+          "http_status": 200,
+          "body_sha256": "2470b62172b9f1f0d406c58b1b0df88ea7306cb8bae85a656eb0130e580d21a3",
+          "urls": 15365
+        }
+      ],
+      "false_paths": [
+        {
+          "url": "https://tools.usefulverse.com/tools/zzz-no-existe/",
+          "http_status": 200,
+          "body_sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a",
+          "soft_404_persists": true
+        },
+        {
+          "url": "https://tools.usefulverse.com/es/zzz/",
+          "http_status": 200,
+          "body_sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a",
+          "soft_404_persists": true
+        },
+        {
+          "url": "https://tools.usefulverse.com/zzz.html",
+          "http_status": 200,
+          "body_sha256": "f00df9dd2e720b1a658330a2464b6847a67830cc65bf916a1a897b2684b4984a",
+          "soft_404_persists": true
+        }
+      ],
+      "total_sitemap_urls": 25625,
+      "limitations": "Read-only HTTP; no UI/device/responsive/RTL/a11y/performance/hardware certification."
+    }
+  ]
+}

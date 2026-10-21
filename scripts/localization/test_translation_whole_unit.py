@@ -54,6 +54,13 @@ class WholeUnitTest(unittest.TestCase):
         self.assertFalse(all(pilot.typed_data_checks('Maximum 200,000.','Maximum 200.000.','en','de').values()))
         self.assertTrue(all(pilot.typed_data_checks('Save {count}.','Speichern {count}.','en','de').values()))
 
+    def test_unicode_minus_and_unparsed_digits_cannot_hide_changed_values(self):
+        # CLDR nb minus is U+2212. A regex that skips it turns a negative into positive.
+        self.assertFalse(all(pilot.typed_data_checks('Value 2.25.','Verdi −2,25.','en','nb-NO').values()))
+        self.assertTrue(all(pilot.typed_data_checks('Value -2.25.','Verdi −2,25.','en','nb-NO').values()))
+        for target in ['Valor 1e3.','Valor x999.','Valor 999MB.']:
+            self.assertFalse(all(pilot.typed_data_checks('Value.',target,'en','es').values()),target)
+
     def test_v10_memories_and_controlled_input_use_the_same_data_contract(self):
         policy = pilot.POLICIES['context-v10']
         self.assertEqual(policy['entries'],pilot.POLICIES['context-v9']['entries'])
