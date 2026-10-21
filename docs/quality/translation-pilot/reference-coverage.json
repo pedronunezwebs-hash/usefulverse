@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-21T15:20:56.462465+00:00",
+  "at_utc": "2026-10-21T15:25:10.792895+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 2200,
+  "agent_reviewed_translations": 2251,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,7 +315,7 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 2200,
+  "agent_reviewed_evaluations": 2251,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
@@ -323,18 +323,28 @@
   ],
   "full_tool_computation_policy": "context-v9",
   "full_tool_pilot_approved_locales": [],
-  "total_records_all_policies": 8366,
-  "semantic_regressions": 510,
+  "total_records_all_policies": 8497,
+  "semantic_regressions": 511,
   "contextual_reference_gate": {
     "es": {
+      "button_number_negation_errors": 0,
+      "minor_errors": 0,
+      "major_errors": 1,
+      "sample": 40,
+      "points": 358,
+      "maximum": 360,
       "passed": false,
-      "sample": 29,
-      "reason": "Incomplete run, only 29/40 es reviewed."
+      "reason": "Whole-unit output omits the complete higher-pitch/faster-playback clause."
     },
     "nb-NO": {
-      "passed": false,
-      "sample": 0,
-      "reason": "Not computed yet."
+      "button_number_negation_errors": 0,
+      "minor_errors": 0,
+      "major_errors": 0,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "passed": true,
+      "reason": "References only; no complete pilot or language approval."
     }
   },
   "full_tool_gate": {

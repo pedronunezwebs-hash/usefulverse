@@ -1,9 +1,9 @@
 {
-  "at_utc": "2026-10-21T15:20:56.462465+00:00",
+  "at_utc": "2026-10-21T15:25:10.792895+00:00",
   "automatic_approval": false,
   "approved_locales": [],
   "note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
-  "evaluations": 2200,
+  "evaluations": 2251,
   "groups": [
     {
       "review_file": "review-context-v2-m2m100.json",
@@ -686,9 +686,22 @@
       "policy": "context-v10",
       "locale": "es",
       "candidate": "madlad+whole-unit+reviewed-memory",
-      "rows": 29,
-      "points": 261,
-      "maximum": 261,
+      "rows": 40,
+      "points": 358,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 1,
+      "minor_rows": 0
+    },
+    {
+      "review_file": "review-context-v10-references.json",
+      "policy": "context-v10",
+      "locale": "nb-NO",
+      "candidate": "madlad+whole-unit+reviewed-memory",
+      "rows": 40,
+      "points": 360,
+      "maximum": 360,
       "button_errors": 0,
       "number_negation_errors": 0,
       "major_rows": 0,

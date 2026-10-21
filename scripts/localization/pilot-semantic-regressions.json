@@ -4667,5 +4667,14 @@
     "observed_candidate": "madlad/context-v10",
     "actions_run_id": "39623344071",
     "direction": "back"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "Este control de tono no puede mantener la velocidad de reproducción sin cambios. Un tono más bajo significa una reproducción de audio más lenta.",
+    "issue": "Omitida la relación tono más alto → reproducción más rápida al traducir juntas tres oraciones completas.",
+    "observed_candidate": "madlad/context-v10",
+    "actions_run_id": "39624247518"
   }
 ]
