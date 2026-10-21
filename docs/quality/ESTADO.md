@@ -11,6 +11,12 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 ## 1. Siguiente paso exacto
 
+**Hito v10 EN CURSO (Codex):** código `7c4cc21`, auditor/inventario `8c3cfe1`; referencias es/nb
+[39623344071](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39623344071), job119302197888.
+Primero recuperar logs de ese job y revisar40 referencias por idioma y todos los avisos; no repetir sin comprobar
+checkpoint/run. Completo solo si ambas referencias pasan. Run39623097623 cancelado:0 registros y cleanup correcto.
+Informe recuperable en rama del PR: `docs/quality/lotes/2026-10-21-piloto-v10.md`. Candado sigue ocupado.
+
 1. **Paso A preparado en el PR [#136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador, rama
    `feat/new-tools-batch-1`.** Las 300 fuentes del respaldo privado `usefulverse-300-worktree-backup-20261020`,
    `backup/usefulverse-300-implementation` (`27a2f174`), están recuperadas selectivamente sin historial privado.
@@ -164,7 +170,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 | Fecha | Agente | Qué | PR / commit | Verificado en producción |
 |---|---|---|---|---|
 | 2026-10-21 | Codex | V9: frases completas para duración/tamaño, auditor de avisos y lectura regional; referencias pasan, completo es/nb rechazado; 8.337 registros, 2.171 evaluaciones, 509 regresiones | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `9b430c3`…`1a963cc` | GET: 25.625 URLs, tres soft404; sin deploy. |
-| 2026-10-21 | Codex | V7/v8: cantidades/coordenadas, sentidos técnicos y respuesta explícita; 7.481 registros, 1.914 evaluaciones, 472 regresiones; v8 es añade 10 a 30 segundos y queda bloqueado | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `203422e`…`1a963cc` | GET: 25.625 URLs, tres soft 404; sin deploy. |
+| 2026-10-21 | Codex | V7/v8: cantidades/coordenadas, sentidos técnicos y respuesta explícita; 7.481 registros, 1.914 evaluaciones, 472 regresiones; v8 es añade 10 a 30 segundos y queda bloqueado | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `203422e`…`96c7440` | GET: 25.625 URLs, tres soft 404; sin deploy. |
 | 2026-10-21 | Codex | V5/v6: oraciones trazables, datos protegidos y memoria; 7.161 registros, 1.754 evaluaciones, 464 regresiones; completo es/nb rechazado | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `4c477b7`…`bd74b32` | GET: 25.625 URLs y tres soft 404; sin deploy. |
 | 2026-10-20 | Codex | Glosario por sentido y memoria exacta; piloto completo es/nb; 6.145 registros, 1.378 evaluaciones, 410 regresiones; 0 idiomas aprobados | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `2c75dc2`…`dfe55ae` | GET: 25.625 URLs y tres soft 404; sin deploy. |
 | 2026-10-20 | Codex | Piloto CPU reanudable: 4.809 registros, 642 traducciones evaluadas, 202 regresiones; extracción segura de las 300 | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `46b53ea`…`f8fe929` | GET de sitemaps: 25.625 URLs; tres rutas falsas aún 200. Sin deploy. |
