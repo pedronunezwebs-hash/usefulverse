@@ -19,5 +19,38 @@
         }
       }
     ]
+  },
+  {
+    "review_file": "review-context-v9-full.json",
+    "review_file_sha256": "1bcb80bfc3f4eb636f52baab2988aaaa5d12afdb91068a83342bf8b739f45295",
+    "review_digest": "a4f65f4e05ff54778e07bd2fcc8db4767ff30d9fb6df702eeddb0466eabe5653",
+    "reviewed_at_utc": "2026-10-21T16:21:09.264894+00:00",
+    "reason": "V11 direct reading discovered old matching back defects; preserve original bytes and gate, add only exact hash-bound non-gating back resolutions.",
+    "warning_reconciliation": [
+      {
+        "record_id": "417f88207be18e3ca9ef00f8a350ceae708cf7a840c3b825bb5791daa070dada",
+        "translation_hash": "e6bcc08e8fa0be94c48a12faa6ab85e9e556f78a62783aa56a1b3ec6e2aabd6e",
+        "back_translation_hash": "43f149865fca04410c1b22d40c5f0311f789a593f449b81e582e04f9f86ad511",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "Teams interpreta las capas CAD lag como equipos; ida correcta. Hallazgo posterior v11:rúbrica/gate/ida históricos intactos."
+          }
+        }
+      },
+      {
+        "record_id": "1eb6a20d4fa9d90b2d9743169cf44a10e49fcffefaf4d288a9776a213967139c",
+        "translation_hash": "63a65296c191baa640477bb70b185c45add62f95f9e8a10d6917f18e3e175c38",
+        "back_translation_hash": "eaaea5acccc95a008b4caa0db6ba633f0dc6795b9a79e13b383ffa8f673d2d1a",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "Treatment usa el sentido médico en vez del procesamiento de audio; ida behandlingen válida en contexto. Hallazgo posterior v11:rúbrica/gate/ida históricos intactos."
+          }
+        }
+      }
+    ]
   }
 ]

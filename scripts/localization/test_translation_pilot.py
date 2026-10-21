@@ -198,12 +198,13 @@ class TranslationPilotTest(unittest.TestCase):
                         'An independently reviewed error has lost its permanent regression')
             for finding in review.get('back_findings', []):
                 actual = records[finding['record_id']]
-                self.assertEqual(hashlib.sha256(actual['back_translation'].encode()).hexdigest(), finding['back_translation_hash'])
-                checks = pilot.automatic_checks(actual['source'], actual['translation'], actual['locale'], actual['key'], actual['back_translation'])
-                if finding.get('check'):
-                    self.assertFalse(checks[finding['check']])
-                else:
-                    self.assertTrue(checks['known_back_semantic_errors'])
+                with self.subTest(review=path.name, locale=actual['locale'], key=actual['key'], direction='back'):
+                    self.assertEqual(hashlib.sha256(actual['back_translation'].encode()).hexdigest(), finding['back_translation_hash'])
+                    checks = pilot.automatic_checks(actual['source'], actual['translation'], actual['locale'], actual['key'], actual['back_translation'])
+                    if finding.get('check'):
+                        self.assertFalse(checks[finding['check']])
+                    else:
+                        self.assertTrue(checks['known_back_semantic_errors'])
 
     def test_observed_madlad_marker_and_file_extension_losses_are_not_accepted(self):
         source = 'Audio decoded locally. Duration: {duration} seconds.'

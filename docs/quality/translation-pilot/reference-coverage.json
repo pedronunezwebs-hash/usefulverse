@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-21T16:03:00.121859+00:00",
+  "at_utc": "2026-10-21T16:21:09.708600+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 2331,
+  "agent_reviewed_translations": 2508,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,16 +315,16 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 2331,
+  "agent_reviewed_evaluations": 2508,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
     "nb-NO"
   ],
-  "full_tool_computation_policy": "context-v9",
+  "full_tool_computation_policy": "context-v11",
   "full_tool_pilot_approved_locales": [],
-  "total_records_all_policies": 8657,
-  "semantic_regressions": 512,
+  "total_records_all_policies": 9353,
+  "semantic_regressions": 525,
   "contextual_reference_gate": {
     "es": {
       "button_number_negation_errors": 0,
@@ -348,8 +348,24 @@
     }
   },
   "full_tool_gate": {
-    "es": "rejected-regional-number-and-fragmented-grammar",
-    "nb-NO": "rejected-regional-number-and-fragmented-grammar"
+    "es": {
+      "passed": false,
+      "sample": 88,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 7,
+      "reason": "API identifier Web Audio lost;7 minor rows exceed <=1/20."
+    },
+    "nb-NO": {
+      "passed": false,
+      "sample": 88,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 4,
+      "minor_rows": 5,
+      "reason": "Four major and five minor grammar/compound errors; reference success does not permit release."
+    }
   },
   "contextual_policies_reviewed": [
     "context-v2",
@@ -377,5 +393,5 @@
     "sample_size": 80,
     "completed": false
   },
-  "full_tool_gate_policy": "context-v9"
+  "full_tool_gate_policy": "context-v11"
 }

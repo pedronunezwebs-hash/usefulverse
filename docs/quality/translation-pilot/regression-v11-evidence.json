@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "at_utc": "2026-10-21T16:21:09.345721+00:00",
+  "method": "Actual observed raw texts independently reviewed first; four forward and nine back findings referenced by the permanent review-driven test. All13 subtests failed before registry entries were added. No output repaired or inference rerun.",
+  "red_test": "scripts.localization.test_translation_pilot.TranslationPilotTest.test_observed_semantic_errors_are_rejected_even_when_tokens_survive",
+  "red_failures": 13,
+  "red_log_sha256": "d6e1f9eb7a49b681862ed18d583f91bf84934da03a7edf77a6a7a9f2d0e13f4d",
+  "fixtures_before": 512,
+  "fixtures_after": 525,
+  "new_findings": [
+    {
+      "direction": "forward",
+      "locale": "es",
+      "key": "dxf-viewer.description",
+      "issue": "Sentido 2D corregido, pero mezcla Abra/Exporte con Ver/Mostrar en la misma secuencia de instrucciones.",
+      "record_id": "be20642ab53407ab771248208f048fe3eb47cac4e5fe38ab7c90434875a22c9f",
+      "source_hash": "44507baf26966f5e70c69064513d6977453186776a56683e19936f8edf5d01a3",
+      "observed_text_sha256": "e95c2b383cc2cf3ef2d13d43e819b5a771926e20b877e90c0315cb58a254fad3",
+      "run_id": "39631325214",
+      "source_commit": "40fef81f492e9082cfc3d948db5ce4b6636b0317"
+    },
+    {
+      "direction": "forward",
+      "locale": "es",
+      "key": "voice-changer.details",
+      "issue": "Web Audio se traduce como audio web, perdiendo el identificador propio de API. Gramática unida mejora, pero contrato tipado y por oración lo rechazan. Bloqueo explícito.",
+      "record_id": "00a2e91ce6decc737194f5b7b5fb43b2285d1b0aabff1e6da29d9c8036b04eae",
+      "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+      "observed_text_sha256": "10fb3d8157c97e63c4a4f66292bb909d339258ddd36f369b7e19570915aa7481",
+      "run_id": "39631325214",
+      "source_commit": "40fef81f492e9082cfc3d948db5ce4b6636b0317"
+    },
+    {
+      "direction": "forward",
+      "locale": "nb-NO",
+      "key": "dxf-viewer.description",
+      "issue": "Acción 2D corregida; compuestos DXF- tegninger/2D linjer rotos y måle infinitivo entre imperativos.",
+      "record_id": "344df8158ebca8b41f45600231a190b0e615a40919fe4c3e9e6e0cd34896d33f",
+      "source_hash": "44507baf26966f5e70c69064513d6977453186776a56683e19936f8edf5d01a3",
+      "observed_text_sha256": "52278ec99878b45315fd35899c2da6c8b9ea284c692ec77da5614efdaa253892",
+      "run_id": "39631325214",
+      "source_commit": "40fef81f492e9082cfc3d948db5ce4b6636b0317"
+    },
+    {
+      "direction": "forward",
+      "locale": "nb-NO",
+      "key": "dxf-viewer.faq.1.a",
+      "issue": "Antall corrige recuento; persiste Den para antecedente neutro verktøyet, defecto leve de concordancia.",
+      "record_id": "48960492cc9b45c8501b6cd141d9bf30f4102ac3622048ebb59110c840cd1516",
+      "source_hash": "2e62ffc986c2e02d3e675c0d3748abcdcd6f331804dd987527903e3b816761c4",
+      "observed_text_sha256": "b8b708c269ca9eb38582c1731acd106062fa4c9638d8c1841d3e60ae8021989b",
+      "run_id": "39631325214",
+      "source_commit": "40fef81f492e9082cfc3d948db5ce4b6636b0317"
+    },
+    {
+      "direction": "back",
+      "locale": "es",
+      "key": "dxf-viewer.fields.units.3",
+      "issue": "Kilometers(km) sustituye millas(mi) en la vuelta; ida Millas(mi) correcta.",
+      "record_id": "9c68b4e2997ba14070b1daa37ece2e02e8cf5937f9bdc79256891c599abac67e",
+      "source_hash": "bb4e926d0dbb42884c988f635ea23e2ceec8b03b18fb6cf69e920dc44c1fcc63",
+      "observed_text_sha256": "0869542433933363a8c584b98e28bbdc1c949a8d628ddca24a8dc3da65007232",
+      "run_id": "39631325214",
+      "source_commit": "40fef81f492e9082cfc3d948db5ce4b6636b0317"
+    },
+    {
+      "direction": "back",
+      "locale": "es",
+      "key": "dxf-viewer.fields.units.4",
+      "issue": "Diameter(mm) cambia la unidad milímetros por una magnitud diámetro; el símbolo intacto no demuestra significado.",
+      "record_id": "92decd145fd56d7e441bb978e78d3300e6d4e81514098a959e6b97b777e77eb8",
+      "source_hash": "632e882fc1bcc9bc9a0f665ff0cf0ae1e148d5ecc17bc93baac9ae9d2a20a35e",
+      "observed_text_sha256": "1dc3f02de7ffc87e0027c059f43567f71fe5e7aa87d5a13afe59a3b401e9ab6e",
+      "run_id": "39631325214",
+      "source_commit": "40fef81f492e9082cfc3d948db5ce4b6636b0317"
+    },
+    {
+      "direction": "back",
+      "locale": "es",
+      "key": "dxf-viewer.fields.units.6",
+      "issue": "Meters(ft) cambia m por pies en la vuelta; ida Metros(m) correcta.",
+      "record_id": "70a3d6dbd523a0401b00ea1275edcdf026ca5b7f7b43609b033d3c136a31cad8",
+      "source_hash": "bfc523cc656ff81500a7aa966eb1bc0f2427a051f0e894b9505823c419fa9b01",
+      "observed_text_sha256": "808eb94ee6f001db0191ac67a4826f7ee3a59ebda6f13e9ba2458bd30f3cd704",
+      "run_id": "39631325214",
+      "source_commit": "40fef81f492e9082cfc3d948db5ce4b6636b0317"
+    },
+    {
+      "direction": "back",
+      "locale": "es",
+      "key": "dxf-viewer.fields.units.7",
+      "issue": "Kilometers(miles) cambia km por miles en la vuelta; ida Kilómetros(km) correcta.",
+      "record_id": "d418e1deaf00e8b567b350cd31a046134b9d85d3a3874e6fa4dd446edee6a3e9",
+      "source_hash": "6c126a207c917838218d41a04e89ec5e47897a65b0f97d70b8683435bfe830ca",
+      "observed_text_sha256": "f878b2b97bb8dcd620443689299c799573f80008e8041166673a5a51fb303e20",
+      "run_id": "39631325214",
+      "source_commit": "40fef81f492e9082cfc3d948db5ce4b6636b0317"
+    },
+    {
+      "direction": "back",
+      "locale": "es",
+      "key": "voice-changer.details",
+      "issue": "La vuelta mezcla instrucciones Use/Change/Create y sujeto You para operaciones atribuidas al navegador; no repara el identificador API perdido en la ida.",
+      "record_id": "00a2e91ce6decc737194f5b7b5fb43b2285d1b0aabff1e6da29d9c8036b04eae",
+      "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+      "observed_text_sha256": "e7c0d54a802979544a12b37a7a880e8158e6150c740e5dc77729b727a27d2118",
+      "run_id": "39631325214",
+      "source_commit": "40fef81f492e9082cfc3d948db5ce4b6636b0317"
+    },
+    {
+      "direction": "back",
+      "locale": "nb-NO",
+      "key": "dxf-viewer.example",
+      "issue": "Character units y DXF device code cambian unidades de dibujo/código de unidad por caracteres/dispositivo; ida tegneenheter/enhetskoden correcta.",
+      "record_id": "271204df371c8b3cb4be074bc7421a34dc0ba72f6cb2d0a6e995f38cb02669cd",
+      "source_hash": "ce884c6216576feda9fdd1b0a2604b98788c5f8f014b2f391314b12b8951afe3",
+      "observed_text_sha256": "3645e2b83ea5102dc5ad3f0afb7a91303fae2f75306fd0971ea4a04b4d5e67cb",
+      "run_id": "39631325214",
+      "source_commit": "40fef81f492e9082cfc3d948db5ce4b6636b0317"
+    },
+    {
+      "direction": "back",
+      "locale": "nb-NO",
+      "key": "dxf-viewer.fields.noLayers",
+      "issue": "Teams interpreta las capas CAD lag como equipos; ida correcta.",
+      "record_id": "b4872c845da3af1c16891e53bacef56db9b1f7ad5aa472fbb8c816d3b6c89e2f",
+      "source_hash": "4795658968bdf67123be6383f83a84ab808cd23c32faf10013c3b6f48f99b0cb",
+      "observed_text_sha256": "43f149865fca04410c1b22d40c5f0311f789a593f449b81e582e04f9f86ad511",
+      "run_id": "39631325214",
+      "source_commit": "40fef81f492e9082cfc3d948db5ce4b6636b0317"
+    },
+    {
+      "direction": "back",
+      "locale": "nb-NO",
+      "key": "dxf-viewer.limits",
+      "issue": "Targets interpreta cotas CAD målsettinger como objetivos; ida técnica contrastada con manual CAD y cantidades correctas.",
+      "record_id": "f6740f331a6ac5b54e5cca5fb07f9c92666cbe56458f5f2933679a4399cd34a5",
+      "source_hash": "783499d44597e45c05459c343fa5c7306eef0bfd3407a5b1c5badb793bf136ce",
+      "observed_text_sha256": "4c57414dd138ae29d4a85fde00bc6e9916904da36fe909698d1b8488957ddfb3",
+      "run_id": "39631325214",
+      "source_commit": "40fef81f492e9082cfc3d948db5ce4b6636b0317"
+    },
+    {
+      "direction": "back",
+      "locale": "nb-NO",
+      "key": "voice-changer.fields.faq5q",
+      "issue": "Treatment usa el sentido médico en vez del procesamiento de audio; ida behandlingen válida en contexto.",
+      "record_id": "cab87f9e1b65aa61fd45cec6226920c83a9b6879c82e9204011edd3aef70d9b7",
+      "source_hash": "5d38595de80def003ee79ea196a4e1ffa3850a2db105d3340f1a5cb7b7a030ab",
+      "observed_text_sha256": "eaaea5acccc95a008b4caa0db6ba633f0dc6795b9a79e13b383ffa8f673d2d1a",
+      "run_id": "39631325214",
+      "source_commit": "40fef81f492e9082cfc3d948db5ce4b6636b0317"
+    }
+  ],
+  "historical_back_addenda": [
+    {
+      "review_file": "review-context-v9-full.json",
+      "records": 2,
+      "review_digest": "a4f65f4e05ff54778e07bd2fcc8db4767ff30d9fb6df702eeddb0466eabe5653"
+    }
+  ],
+  "historical_reproduction": {
+    "observed_run": "39624247518",
+    "record_id": "bc1a20c37bbbf587089f36b56802b44a4c77398be4c46ad95475c0a045b34be2",
+    "model_input": "This pitch control cannot keep playback speed unchanged. Lower pitch means slower audio playback. Higher pitch means faster audio playback.",
+    "observed_output": "Este control de tono no puede mantener la velocidad de reproducción sin cambios. Un tono más bajo significa una reproducción de audio más lenta.",
+    "typed_contract_passes": true,
+    "semantic_omission_detected": true
+  },
+  "native_review": false,
+  "approved_locales": []
+}

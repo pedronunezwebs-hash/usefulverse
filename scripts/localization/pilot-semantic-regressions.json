@@ -4685,5 +4685,131 @@
     "issue": "Redacción poco natural de la etiqueta de unidades: angir mål som tegneenhet; conserva condición y valor, defecto leve de naturalidad.",
     "observed_candidate": "madlad/context-v10",
     "actions_run_id": "39624247518"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.description",
+    "source_hash": "44507baf26966f5e70c69064513d6977453186776a56683e19936f8edf5d01a3",
+    "translation": "Abra dibujos ASCII DXF en este dispositivo. Ver líneas 2D compatibles, círculos, arcos y polilíneas. Mostrar u ocultar capas y medir distancias. Exporte la geometría admitida como SVG o PNG.",
+    "issue": "Sentido 2D corregido, pero mezcla Abra/Exporte con Ver/Mostrar en la misma secuencia de instrucciones.",
+    "observed_candidate": "madlad/context-v11",
+    "actions_run_id": "39631325214"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.details",
+    "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+    "translation": "Este navegador decodifica el audio seleccionado localmente. Utiliza filtros de audio web. Cambia el volumen, el tono y la velocidad de reproducción. Puede agregar eco. Crea un archivo WAV para descargar. No se envía audio a un servidor.",
+    "issue": "Web Audio se traduce como audio web, perdiendo el identificador propio de API. Gramática unida mejora, pero contrato tipado y por oración lo rechazan. Bloqueo explícito.",
+    "observed_candidate": "madlad/context-v11",
+    "actions_run_id": "39631325214"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.description",
+    "source_hash": "44507baf26966f5e70c69064513d6977453186776a56683e19936f8edf5d01a3",
+    "translation": "Åpne ASCII DXF- tegninger på denne enheten. Vis støttede 2D linjer, sirkler, buer og polylinjer. Vis eller skjul lag og måle avstander. Eksporter støttet geometri som SVG eller PNG.",
+    "issue": "Acción 2D corregida; compuestos DXF- tegninger/2D linjer rotos y måle infinitivo entre imperativos.",
+    "observed_candidate": "madlad/context-v11",
+    "actions_run_id": "39631325214"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.faq.1.a",
+    "source_hash": "2e62ffc986c2e02d3e675c0d3748abcdcd6f331804dd987527903e3b816761c4",
+    "translation": "Dette verktøyet tegner bare de geometriske objekttypene som er oppført under støttet innhold. Den viser andre geometriske objekter etter type og antall. Objekter som ikke støttes, erstattes ikke med omtrentlige figurer.",
+    "issue": "Antall corrige recuento; persiste Den para antecedente neutro verktøyet, defecto leve de concordancia.",
+    "observed_candidate": "madlad/context-v11",
+    "actions_run_id": "39631325214"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.units.3",
+    "source_hash": "bb4e926d0dbb42884c988f635ea23e2ceec8b03b18fb6cf69e920dc44c1fcc63",
+    "translation": "Kilometers (km)",
+    "issue": "Kilometers(km) sustituye millas(mi) en la vuelta; ida Millas(mi) correcta.",
+    "observed_candidate": "madlad/context-v11",
+    "actions_run_id": "39631325214",
+    "direction": "back"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.units.4",
+    "source_hash": "632e882fc1bcc9bc9a0f665ff0cf0ae1e148d5ecc17bc93baac9ae9d2a20a35e",
+    "translation": "Diameter (mm)",
+    "issue": "Diameter(mm) cambia la unidad milímetros por una magnitud diámetro; el símbolo intacto no demuestra significado.",
+    "observed_candidate": "madlad/context-v11",
+    "actions_run_id": "39631325214",
+    "direction": "back"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.units.6",
+    "source_hash": "bfc523cc656ff81500a7aa966eb1bc0f2427a051f0e894b9505823c419fa9b01",
+    "translation": "Meters (ft)",
+    "issue": "Meters(ft) cambia m por pies en la vuelta; ida Metros(m) correcta.",
+    "observed_candidate": "madlad/context-v11",
+    "actions_run_id": "39631325214",
+    "direction": "back"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.units.7",
+    "source_hash": "6c126a207c917838218d41a04e89ec5e47897a65b0f97d70b8683435bfe830ca",
+    "translation": "Kilometers (miles)",
+    "issue": "Kilometers(miles) cambia km por miles en la vuelta; ida Kilómetros(km) correcta.",
+    "observed_candidate": "madlad/context-v11",
+    "actions_run_id": "39631325214",
+    "direction": "back"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.details",
+    "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+    "translation": "This browser decodes the selected audio locally. Use web audio filters. Change the volume, pitch, and playback speed. You can add echo. Create a WAV file to download. No audio is sent to a server.",
+    "issue": "La vuelta mezcla instrucciones Use/Change/Create y sujeto You para operaciones atribuidas al navegador; no repara el identificador API perdido en la ida.",
+    "observed_candidate": "madlad/context-v11",
+    "actions_run_id": "39631325214",
+    "direction": "back"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.example",
+    "source_hash": "ce884c6216576feda9fdd1b0a2604b98788c5f8f014b2f391314b12b8951afe3",
+    "translation": "A line from (0,0) to (10,0) measures 10 character units. This tool reads the DXF device code when it is present. Without this code, measurements are labeled as drawing units.",
+    "issue": "Character units y DXF device code cambian unidades de dibujo/código de unidad por caracteres/dispositivo; ida tegneenheter/enhetskoden correcta.",
+    "observed_candidate": "madlad/context-v11",
+    "actions_run_id": "39631325214",
+    "direction": "back"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.noLayers",
+    "source_hash": "4795658968bdf67123be6383f83a84ab808cd23c32faf10013c3b6f48f99b0cb",
+    "translation": "No teams declared. Geometric objects use their own layer names.",
+    "issue": "Teams interpreta las capas CAD lag como equipos; ida correcta.",
+    "observed_candidate": "madlad/context-v11",
+    "actions_run_id": "39631325214",
+    "direction": "back"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.limits",
+    "source_hash": "783499d44597e45c05459c343fa5c7306eef0bfd3407a5b1c5badb793bf136ce",
+    "translation": "Supported preview and export: LINE, CIRCLE, ARC and LWPOLYLINE/POLYLINE with straight segments in the XY plane. Curved segments, text, blocks, targets, splines, 3D objects, and other types appear as not supported. They are not included in measurements or exports. Maximum file size: 10 MB; maximum number of group entries: 200,000.",
+    "issue": "Targets interpreta cotas CAD målsettinger como objetivos; ida técnica contrastada con manual CAD y cantidades correctas.",
+    "observed_candidate": "madlad/context-v11",
+    "actions_run_id": "39631325214",
+    "direction": "back"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.fields.faq5q",
+    "source_hash": "5d38595de80def003ee79ea196a4e1ffa3850a2db105d3340f1a5cb7b7a030ab",
+    "translation": "Why can the treatment be slow?",
+    "issue": "Treatment usa el sentido médico en vez del procesamiento de audio; ida behandlingen válida en contexto.",
+    "observed_candidate": "madlad/context-v11",
+    "actions_run_id": "39631325214",
+    "direction": "back"
   }
 ]
