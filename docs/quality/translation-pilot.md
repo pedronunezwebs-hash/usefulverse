@@ -345,3 +345,16 @@ Audit regional posterior a las inferencias v9: `localized_numeric_values_identic
 de conservar su lectura en el idioma destino.200,000 es decimal en es/nb;200.000 es/200 000 nb representan200000.
 El audit source-literal sigue separado e intacto. Ni números nuevos ni cambios de separador se reparan por conjetura.
 Resumen/auditor recomputan este control desde los crudos, sin editar checkpoints/políticas medidas.
+
+
+### Completo v9 rechazado (21-oct)
+
+[39548546424](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39548546424), fuente13a2ae0:
+696 nuevos,94 memorias,465,53 s, cleanup correcto. Muestra68:es592/612,nb588/612;20 adicionales conocidas:
+180/180 ambos. El fijo88 queda772/792 y768/792, rechazado por lectura regional de200,000 y fragmentación/gramática.
+177 evaluaciones nuevas incluyen Visible es fuera de muestra;40 comparaciones legacy históricas solo verifican
+hashes y no se suman como nuevas evaluaciones.44 registros con avisos del completo reconciliados, complementados
+por las referencias; cobertura permanente de todos los avisos del candidato.
+8.337 registros/2.171 evaluaciones,509 fixtures (479 ida,30 vuelta),0 aprobados.59 tests locales,57 correctos+2 deps.
+Siguiente v10 independiente por familia de fragmentación/datos regionales, conservando v2–v9;40 referencias
+antes del completo68+20 conocido. Sin masiva, publicación ni fase0 con estos gates abiertos.

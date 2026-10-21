@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-21T05:13:53.024260+00:00",
+  "at_utc": "2026-10-21T05:25:36.362058+00:00",
   "approved_locales": [],
   "runs": [
     {
@@ -356,6 +356,48 @@
       },
       "emitted_records": 160,
       "checkpoint_sha256": "cbc02865b4effb5d7c7e8f821b5373d4a8e83d4ef2b49c1469dd411e27f9bcb0"
+    },
+    {
+      "inference_policy": "context-v9",
+      "run_id": 39548546424,
+      "job_id": 119052191086,
+      "source_commit": "13a2ae02371490fc0a5882a2e9d3bb5bd6181850",
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 108.24792008100002,
+        "counts": {
+          "legacy": 348,
+          "model": 348,
+          "reviewed_memory_hits": 94
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3751080,
+        "scope": "full",
+        "total_seconds": 465.53242447099996
+      },
+      "runner_cleanup": {
+        "name": "Remove job-owned model downloads and caches",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 8,
+        "started_at": "2026-10-21T05:24:12Z",
+        "completed_at": "2026-10-21T05:24:12Z"
+      },
+      "emitted_records": 696,
+      "checkpoint_sha256": "5844a6d0b163089d4d7974c1035179e8199efac3de0eb5c84fd9041134a80dcf"
     }
   ],
   "checkpoints": [

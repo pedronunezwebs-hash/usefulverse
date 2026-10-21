@@ -48,7 +48,24 @@ class TranslationPilotTest(unittest.TestCase):
         records={r['record_id']:r for path in paths for r in map(json.loads,path.read_text().splitlines())}
         for path in directory.glob('review-context-v*-*.json'):
             if int(path.name.split('-')[2][1:])>=9:
-                pilot.audit_review_warnings(json.loads(path.read_text()),records)
+                review=json.loads(path.read_text())
+                pilot.audit_review_warnings(review,records)
+                if review.get('requires_complete_model_warning_coverage'):
+                    reviewed={identity for row in review['rows'] for identity in row['record_ids']}
+                    for name in review['warning_coverage_supplemental_reviews']:
+                        supplemental=json.loads((directory/name).read_text())
+                        self.assertEqual(supplemental['inference_policy'],review['inference_policy'])
+                        reviewed.update(identity for row in supplemental['rows'] for identity in row['record_ids'])
+                    flagged={identity for identity,row in records.items() if row.get('inference_policy')==review['inference_policy']
+                        and row['candidate']=='model' and any(pilot.record_flags(row).values())}
+                    self.assertTrue(flagged<=reviewed,'An automatic warning outside the fixed sample was not reviewed')
+                for historical in review.get('legacy_comparison',{}).get('rows',[]):
+                    old=json.loads((directory/review['legacy_comparison']['review_file']).read_text())
+                    original=next(row for row in old['rows'] if row['candidate']=='legacy' and row['key']==historical['key'] and row['locale']==historical['locale'])
+                    actual=records[historical['record_ids'][0]]
+                    for field in ['source_hash','scores','translation_hash']:self.assertEqual(historical[field],original[field])
+                    self.assertEqual(actual['source_hash'],historical['source_hash'])
+                    self.assertEqual(hashlib.sha256(actual['translation'].encode()).hexdigest(),historical['translation_hash'])
 
     def test_repeated_protected_values_cannot_disappear_or_multiply(self):
         source = 'Keep {count}, {count}, 25 MB and UsefulVerse.'

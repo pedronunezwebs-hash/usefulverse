@@ -4318,5 +4318,344 @@
     "observed_candidate": "madlad/context-v9",
     "actions_run_id": "39547858733",
     "direction": "back"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.description",
+    "source_hash": "44507baf26966f5e70c69064513d6977453186776a56683e19936f8edf5d01a3",
+    "translation": "Abra dibujos ASCII DXF en este dispositivo. Vista soportada 2D Líneas, círculos, arcos y polilíneas. Mostrar u ocultar capas y medir distancias. Exporte la geometría admitida como SVG o PNG.",
+    "issue": "Vista soportada 2D Líneas rompe el verbo y la sintaxis al fragmentar junto a 2D.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.example",
+    "source_hash": "ce884c6216576feda9fdd1b0a2604b98788c5f8f014b2f391314b12b8951afe3",
+    "translation": "Una línea de (0, 0) a (10, 0) medidas 10 Unidades de dibujo. Esta herramienta lee el código de unidad DXF cuando está presente. Sin ese código, las medidas se etiquetan como unidades de dibujo.",
+    "issue": "Medidas 10 Unidades carece del verbo mide y añade mayúscula interna; coordenadas/valor sí se conservan.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.intro",
+    "source_hash": "99fbd66cd6a5eb3cd27bb3a678221d4d1d58d7bfb129bd957ae447847ccf88cc",
+    "translation": "Abra un dibujo ASCII DXF en este dispositivo. Desplácese por el dibujo y haga zoom. Mostrar u ocultar capas y medir distancias. Exporte la geometría soportada por esta herramienta. El archivo original nunca se envía a un servidor.",
+    "issue": "Mezcla Abra/Desplácese/Exporte con Mostrar u ocultar, sin mantener el modo de la instrucción.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.limits",
+    "source_hash": "783499d44597e45c05459c343fa5c7306eef0bfd3407a5b1c5badb793bf136ce",
+    "translation": "Vista previa y exportación compatibles: LINE, CIRCLE, ARC y LWPOLYLINE/POLYLINE con segmentos rectos en el plano XY. Las curvas abombadas, los textos, los bloques, las cotas, las splines, las entidades 3D y otros tipos se indican como no compatibles. No se incluyen en las mediciones ni en las exportaciones. Tamaño máximo del archivo: 10 MB; máximo de registros de grupo: 200,000.",
+    "issue": "200,000 conserva el dato literal inglés pero no su lectura regional: coma decimal es/nb. Debe presentar 200000 con formato local verificado. Curvas abombadas es además un calco poco claro.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.privacy",
+    "source_hash": "83d9effeb10db2cfc8b9ec4a67f2cac9e9ad08a27e76b5ab9fd4ce3ae5c17ab1",
+    "translation": "Este navegador lee su archivo. El archivo nunca se envía a un servidor. Esta herramienta solo dibuja imágenes básicas 2D Líneas, círculos, arcos y polilíneas con segmentos rectos. Se enumeran los objetos geométricos no compatibles. Están excluidos de las mediciones y exportación.",
+    "issue": "Dibuja imágenes básicas 2D Líneas añade imágenes y rompe la enumeración de geometría al fragmentar junto a 2D.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.details",
+    "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+    "translation": "Elige un cuadrado de inicio y luego elige un cuadrado de final para dibujar un rectángulo. También puede arrastrar a través de la cuadrícula. Cada rectángulo debe contener exactamente una pista numérica. Ese número debe ser igual al número de cuadrados dentro del rectángulo.",
+    "issue": "Cuadrado de final es poco natural y cambia de Elige a puede en la misma instrucción. Área como número de casillas sí se conserva.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.description",
+    "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+    "translation": "Cambia el tono de audio en este dispositivo. Añadir un efecto de radio o un efecto de voz profunda. Escucha el efecto de eco. Exportar el audio procesado en este dispositivo. Esta herramienta es gratuita y privada. El audio nunca se envía a un servidor.",
+    "issue": "Mezcla Cambia/Escucha con Añadir/Exportar en la misma secuencia de instrucciones.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.details",
+    "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+    "translation": "Este navegador decodifica el audio seleccionado localmente. Se utiliza Web Audio filtros. Cambia el volumen, el tono y la velocidad de reproducción. Puede agregar eco. Crea un archivo WAV para descargar. No se envía audio a un servidor.",
+    "issue": "Se utiliza Web Audio filtros tiene orden y concordancia rotos por fragmentar junto al identificador de API; los límites/negación finales sí se conservan.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.example",
+    "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+    "translation": "Prueba una grabación de voz. Compare el original con el ajuste preestablecido del efecto de radio o el ajuste preestablecido de tono bajo. Los cambios de tono también cambian la velocidad de reproducción. Esto no es clonación de voz o corrección de tono de estudio.",
+    "issue": "Alterna Prueba con Compare, trato de tú/usted en la misma instrucción.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.limits",
+    "source_hash": "72eaa6afc178fd8d0e8f7da5c73ba70e6a5473c00316ce0df573d3b309416522",
+    "translation": "Esta herramienta ligera está diseñada para clips cortos, no para canciones completas. Cambios de tono ajustando la velocidad de reproducción. La duración del clip y el tono de voz cambian juntos. Los efectos no pueden crear una nueva identidad natural ni aislar voces. No pueden garantizar el mismo resultado en todos los navegadores.",
+    "issue": "Cambios de tono ajustando es un fragmento sin verbo conjugado; la relación tono/velocidad y las negaciones se entienden.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.description",
+    "source_hash": "44507baf26966f5e70c69064513d6977453186776a56683e19936f8edf5d01a3",
+    "translation": "Åpne ASCII DXF- tegninger på denne enheten. Visning støttet 2D linjer, sirkler, buer og polylinjer. Vis eller skjul lag og måle avstander. Eksporter støttet geometri som SVG eller PNG.",
+    "issue": "Visning støttet 2D linjer rompe la acción y el orden de la oración; DXF- tegninger y måle también requieren corrección.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.example",
+    "source_hash": "ce884c6216576feda9fdd1b0a2604b98788c5f8f014b2f391314b12b8951afe3",
+    "translation": "En linje fra (0, 0) to (10, 0) målinger 10 Tegneenheter. Dette verktøyet leser DXF-enhetskoden når den er til stede. Uten denne koden blir målinger merket som tegneenheter.",
+    "issue": "To queda en inglés y målinger 10 Tegneenheter usa un sustantivo en lugar de måler; mayúscula interna por fragmentación numérica.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.faq.1.a",
+    "source_hash": "2e62ffc986c2e02d3e675c0d3748abcdcd6f331804dd987527903e3b816761c4",
+    "translation": "Dette verktøyet tegner bare de geometriske objekttypene som er oppført under støttet innhold. Den viser andre geometriske objekter etter type og nummer. Objekter som ikke støttes, erstattes ikke med omtrentlige figurer.",
+    "issue": "Etter type og nummer sugiere tipo/número identificador, no el recuento (antall) de objetos; Den no concuerda con verktøyet.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.intro",
+    "source_hash": "99fbd66cd6a5eb3cd27bb3a678221d4d1d58d7bfb129bd957ae447847ccf88cc",
+    "translation": "Åpne en ASCII DXF- tegning på denne enheten. Flytte rundt i tegningen og zoome. Vis eller skjul lag og måle avstander. Eksporter geometrien som støttes av dette verktøyet. Den opprinnelige filen blir aldri sendt til en server.",
+    "issue": "DXF- tegning deja un compuesto roto; Flytte/zoome/måle mezclan infinitivos con órdenes.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.limits",
+    "source_hash": "783499d44597e45c05459c343fa5c7306eef0bfd3407a5b1c5badb793bf136ce",
+    "translation": "Støttet forhåndsvisning og eksport: LINE, CIRCLE, ARC og LWPOLYLINE/POLYLINE med rette segmenter i XY-planet. Buede segmenter, tekst, blokker, målsettinger, spliner, 3D-objekter og andre typer vises som ikke støttet. De tas ikke med i målinger eller eksport. Maksimal filstørrelse: 10 MB; maksimalt antall gruppeoppføringer: 200,000.",
+    "issue": "200,000 usa coma decimal en bokmål; copiar la notación inglesa no prueba lectura local del límite 200000. No se modifica la memoria medida.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.privacy",
+    "source_hash": "83d9effeb10db2cfc8b9ec4a67f2cac9e9ad08a27e76b5ab9fd4ce3ae5c17ab1",
+    "translation": "Denne nettleseren leser filen din. Filen blir aldri sendt til en server. Dette verktøyet tegner bare grunnleggende 2D linjer, sirkler, buer og polylinjer med rette segmenter. Geometriske objekter som ikke støttes, er oppført. De er ekskludert fra målinger og eksport.",
+    "issue": "2D linjer requiere el compuesto 2D-linjer; sentido de privacidad y objetos geométricos conservado.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.details",
+    "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+    "translation": "Velg en startrute, og velg deretter en sluttrute for å tegne et rektangel. Du kan også dra over rutenettet. Hvert rektangel må inneholde nøyaktig ett nummer ledetråd. Dette tallet må være lik antall ruter inne i rektangelet.",
+    "issue": "Ett nummer ledetråd tiene género y composición defectuosos; debe expresar una pista numérica (tall-ledetråd).",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.faq.0.a",
+    "source_hash": "1da9eab3e79e5ba1c578b590065014537d077420ad02d77072da8a8f5d7355b5",
+    "translation": "Shikaku er et tall puslespill. Tegn rektangler rundt tallledetrådene. Ledetråd nummeret er lik antall ruter inne i rektangelet. Bruk hver rutenett firkant nøyaktig én gang.",
+    "issue": "Tall puslespill, Ledetråd nummeret y rutenett firkant rompen compuestos; área como número de casillas ahora sí queda explícita.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.details",
+    "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+    "translation": "Denne nettleseren dekoder den valgte lyden lokalt. Den bruker Web Audio filtre. Det endrer volum, tonehøyde og avspillingshastighet. Det kan legge til ekko. Det skaper en WAV-fil for nedlasting. Ingen lyd blir sendt til en server.",
+    "issue": "Web Audio filtre debe componerse correctamente y alterna Den/Det para el mismo sujeto; el procesamiento/privacidad se conservan.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.example",
+    "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+    "translation": "Prøv et stemmeopptak. Sammenlign originalen med forhåndsinnstillingen for radioeffekt eller forhåndsinnstillingen for lavere tonehøyde. Endringer i tonehøyde endrer også avspillingshastigheten. Dette er ikke stemme kloning eller studio-grade pitch korreksjon.",
+    "issue": "Stemme kloning y studio-grade pitch korreksjon mezclan inglés y compuestos rotos; no explica de forma clara corrección de tono de estudio.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.limits",
+    "source_hash": "72eaa6afc178fd8d0e8f7da5c73ba70e6a5473c00316ce0df573d3b309416522",
+    "translation": "Dette lette verktøyet er designet for korte klipp, ikke sanger i full lengde. Pitch endringer ved å justere avspillingshastighet. Klippvarighet og stemmetone endres sammen. Effektene kan ikke skape en naturlig ny identitet eller isolere stemmer. De kan ikke garantere det samme resultatet i alle nettlesere.",
+    "issue": "Pitch endringer ved å justere es un fragmento con inglés sin explicar; debe expresar que cambia la altura tonal al ajustar la reproducción.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.details",
+    "source_hash": "19a9af223175a6ad8539b143a6070ff1587c5504b4f8c294231c68d022d50ef6",
+    "translation": "A background task in this browser reads ASCII DXF. No scripts, external references, images, fonts, or network resources are executed or retrieved in the file. This tool cannot open binary DWG or DXF.",
+    "issue": "Binary DWG or DXF cambia el alcance: la fuente excluye todo DWG y solo DXF binario.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424",
+    "direction": "back"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.example",
+    "source_hash": "ce884c6216576feda9fdd1b0a2604b98788c5f8f014b2f391314b12b8951afe3",
+    "translation": "A line of (0, 0) a (10, 0) measures 10 Drawing units. This tool reads the DXF unit code when it is present. Without that code, measurements are labeled as drawing units.",
+    "issue": "A (10,0) conserva la preposición española a en una vuelta inglesa, además del orden roto.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424",
+    "direction": "back"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.empty",
+    "source_hash": "8db2d1d2045cd8de1270ae6fca1094084ce1d6391f14fdad08980a1d95afa5a7",
+    "translation": "No geometry found 2D compatible.",
+    "issue": "No geometry found 2D compatible tiene orden roto; la ida española es correcta.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424",
+    "direction": "back"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.tooLarge",
+    "source_hash": "b3aad30c4cd8726e20889b9716bdd3cd6c6bfdaf3c8281176d74b3ea158041a7",
+    "translation": "This file exceeds the 10 MB. Try a smaller drawing.",
+    "issue": "Exceeds the 10 MB omite limit y deja una frase inglesa incompleta; el límite numérico y la ida son correctos.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424",
+    "direction": "back"
+  },
+  {
+    "locale": "es",
+    "key": "shikaku.fields.dragHelp",
+    "source_hash": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+    "translation": "Click on two opposite corners or drag to draw a rectangle. Keyboard: Press Tab to move to a checkbox, then Enter to select it.",
+    "issue": "Checkbox cambia una casilla del tablero por una casilla de verificación de interfaz; la ida es correcta.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424",
+    "direction": "back"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.faq.0.a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "No. No. Your browser decodes and processes the selected audio on this device. UsefulVerse does not receive the recording.",
+    "issue": "No duplicado sin origen en la FAQ equivalente; la ida de memoria conserva la privacidad.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424",
+    "direction": "back"
+  },
+  {
+    "locale": "es",
+    "key": "voice-changer.fields.fileHelp",
+    "source_hash": "9a003593e6b751602ed805fc0816716a5c552b558c289d22e7dcf733186d4dcd",
+    "translation": "Use a format that your browser can decode. Maximum 25 MB y 30 seconds.",
+    "issue": "Máximo 25 MB y 30 segundos vuelve con la conjunción española y, sin traducir en la oración inglesa.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424",
+    "direction": "back"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.example",
+    "source_hash": "ce884c6216576feda9fdd1b0a2604b98788c5f8f014b2f391314b12b8951afe3",
+    "translation": "One line from (0, 0) to (10, 0) measurements 10 Drawing units. This tool reads the DXF device code when it is present. Without this code, measurements are labeled as drawing units.",
+    "issue": "DXF device code cambia el código de unidad geométrica por un código de dispositivo.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424",
+    "direction": "back"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.fields.empty",
+    "source_hash": "8db2d1d2045cd8de1270ae6fca1094084ce1d6391f14fdad08980a1d95afa5a7",
+    "translation": "Found no supported 2D- Geometry.",
+    "issue": "2D- Geometry introduce espacio y mayúscula interna en un compuesto de la vuelta; la ida es correcta.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424",
+    "direction": "back"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "dxf-viewer.limits",
+    "source_hash": "783499d44597e45c05459c343fa5c7306eef0bfd3407a5b1c5badb793bf136ce",
+    "translation": "Supported preview and export: LINE, CIRCLE, ARC and LWPOLYLINE/POLYLINE with straight segments in the XY plane. Curved segments, text, blocks, targets, splines, 3D-objects and other types appear as not supported. They are not included in measurements or exports. Maximum file size: 10 MB; maximum group entries: 200,000.",
+    "issue": "Targets interpreta las cotas CAD como objetivos; no se atribuye ese cambio automáticamente a la ida målsettinger.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424",
+    "direction": "back"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.details",
+    "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+    "translation": "Choose a start pane, and then choose an end pane to draw a rectangle. You can also drag over the grid. Each rectangle must contain exactly one number clue. This number must be equal to the number of squares inside the rectangle.",
+    "issue": "Start pane/end pane interpreta casillas de tablero como paneles de interfaz.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424",
+    "direction": "back"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.dragHelp",
+    "source_hash": "e1536db0212dd1255a50488b3351326fe8124029efce8dc7aa770c2fbc4c0da0",
+    "translation": "Click two opposite corners or drag to draw a rectangle. Keyboard: Press the Tab key to move to a path, and then press Enter to select it.",
+    "issue": "Path interpreta una casilla del tablero como una ruta.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424",
+    "direction": "back"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "shikaku.fields.statusWon",
+    "source_hash": "6be09835314bbdf76630f2754d8607ee2b3cda0836f3ea8a55f4be02f1210744",
+    "translation": "Fixed! Each square is covered correctly.",
+    "issue": "Fixed traduce resuelto como reparado, en lugar de solved; la ida Løst es correcta.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424",
+    "direction": "back"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.description",
+    "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+    "translation": "Change the pitch of this device. Add a radio or deep voice effect. Listen to the echo effect. Export the processed audio on this device. This tool is free and private. Audio is never sent to a server.",
+    "issue": "Pitch of this device cambia en este dispositivo por el tono del dispositivo; la ida habla de modificar audio localmente.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424",
+    "direction": "back"
+  },
+  {
+    "locale": "nb-NO",
+    "key": "voice-changer.faq.0.a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "No, no, no. Your browser decodes and processes the selected audio locally. UsefulVerse is not receiving the recording.",
+    "issue": "No repetido sin origen en la FAQ equivalente; la ida conserva Nei y procesamiento local.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39548546424",
+    "direction": "back"
   }
 ]
