@@ -168,5 +168,18 @@
     "semantic_omission_detected": true
   },
   "native_review": false,
-  "approved_locales": []
+  "approved_locales": [],
+  "green_verification": {
+    "at_utc": "2026-10-21T16:23:15.678724+00:00",
+    "python_tests": 77,
+    "correct": 75,
+    "dependency_skips": 2,
+    "log_sha256": "af0737ce39d29bd40f3ce06e8c5f564d22dbdc81dc2c9c31b1c6ede62e1aa849"
+  },
+  "coverage_correction": {
+    "source_commit": "32597994e4b5cffd87b891d11d3704ca956a9acd",
+    "cancelled_superseded_ci_run": 39634166321,
+    "local_failure": "Reference review still declared global v11 warning coverage without linking the newly computed full review. Coverage test correctly rejected it.",
+    "fix": "References now link full review as supplemental coverage; rubrics/gates unchanged, no warning waived. Full and reference coverage tests pass."
+  }
 }

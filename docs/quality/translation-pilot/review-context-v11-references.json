@@ -34,7 +34,8 @@
   "notes": [
     "160 records,80 model candidates,80 legacy;21 reviewed-memory hits, not attributed to model. 72/80 forward source/target hashes identical to v10;8 changed outputs reviewed.",
     "14 records with current warnings reconciled; existing permanent back fixtures apply. Back no-repetition/upload/viewfinder/window defects separated from forward quality. No newly observed forward/back defect in references.",
-    "ES360 and nb360 pass references only; next full same68+20 known since v6 and every warning outside sample. No language approval or engine frozen. Legacy ES349/NB329 historical only."
+    "ES360 and nb360 pass references only; next full same68+20 known since v6 and every warning outside sample. No language approval or engine frozen. Legacy ES349/NB329 historical only.",
+    "Una vez calculado el completo, sus avisos se enlazan como revisión suplementaria para que la cobertura actual de toda v11 sea verificable desde ambas revisiones. No cambia ninguna rúbrica ni la decisión previa de referencias."
   ],
   "rows": [
     {
@@ -1799,7 +1800,9 @@
     }
   ],
   "requires_complete_model_warning_coverage": true,
-  "warning_coverage_supplemental_reviews": [],
+  "warning_coverage_supplemental_reviews": [
+    "review-context-v11-full.json"
+  ],
   "legacy_comparison": {
     "review_file": "review-es-nb.json",
     "new_evaluations": 0,
