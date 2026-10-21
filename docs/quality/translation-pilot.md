@@ -358,3 +358,17 @@ por las referencias; cobertura permanente de todos los avisos del candidato.
 8.337 registros/2.171 evaluaciones,509 fixtures (479 ida,30 vuelta),0 aprobados.59 tests locales,57 correctos+2 deps.
 Siguiente v10 independiente por familia de fragmentación/datos regionales, conservando v2–v9;40 referencias
 antes del completo68+20 conocido. Sin masiva, publicación ni fase0 con estos gates abiertos.
+
+## Unidades completas v10 · referencias rechazadas (21-oct)
+
+`pilot-whole-unit-policy.json` conserva políticas v2–v9; transmite cada unidad completa para mantener sintaxis junto a 2D/coordenadas/API. Nuevo contrato compara cantidades por valor/gramática local y controla aparte datos opacos, versiones, coordenadas ordenadas, dimensiones, identificadores y unidades. El audit literal histórico sigue visible; solo una prueba tipada recalculada puede explicar su diferencia de formato. Memoria DXF:200.000 es/200 000 nb; esto se prueba por contrato, no como muestra lingüística completa.
+
+Regresiones reales: signo U+2212 omitido por parseo, dígitos no interpretados, MP3 clasificado como cifra, inventario sin v9 y hallazgo posterior upload/loading. Se corrigieron con pruebas rojas antes; preflight 214 evita descargar modelos ante entrada inválida. Adenda de vuelta ligada a digest/textos mantiene intacta la revisión v9, sin cambiar puntuación/gate.71 tests locales, 69 correctos+2 dependencias.
+
+Run39623344071 falló con 29 registros recuperables; [39624247518](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39624247518), fuente f930275, reanuda29 y emite131.160 registros; 20 memorias (3+17),70 tests reales/cleanup correctos, cero artefactos.228,07s/conversión94,21s/pico3.705.872KiB son del run reanudado; el fallido no emitió resumen de tiempos.72/80 idas idénticas por hashes, ocho nuevas; todas las vueltas revisadas.
+
+**es 358/360 rechazado** por omitir toda la cláusula tono alto/reproducción rápida.**nb 359/360 solo referencias**.Diez registros con avisos reconciliados; no se ejecuta completo v10,0 aprobados.80 comparaciones históricas de legacy por hashes (es 349, nb 329), 0 nuevas evaluaciones.8.497 registros/2.251 evaluaciones/512 fixtures (481 ida, 31 vuelta); tres nuevos. Último completo sigue v9, rechazado.
+
+CI [39626385396](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39626385396), código 1dd7f8c:verde:3.045 Node; 71 Python (69 correctos y 2 omitidos por dependencias); check, idiomas, hub y preview verdes. Todos los datos/código de esta sección están en la rama del PR; [informe, fallos y limpieza](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/lotes/2026-10-21-piloto-v10.md). Sin despliegue; GET/XML25.625 URLs y tres soft404. UI/hardware no certificados; Pedro sin nuevas pruebas, P-001–P-008 pendientes.
+
+Siguiente v11 independiente: cobertura de cada oración sin fragmentar junto a datos, especialmente las dos FAQ de tono/velocidad y la redacción NB de unidades; traza completa no equivale a corrección semántica. Conservar contrato tipado, memorias por fuente/hash/contexto, preflight 214, guards y políticas medidas. Repetir 40 referencias es/nb y todos los avisos; solo si pasan, completo68+20 conocidas y avisos adicionales. Después 28 destinos y 80 muestras por ha/am/te/gu/ta/mr/sw. No masiva, publicación ni fase 0 con gates abiertos.

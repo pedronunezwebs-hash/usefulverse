@@ -2,10 +2,14 @@
 
 Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 
-## 2026-10-21 · Codex · Hito v10 en curso
-- Frases completas y contrato tipado independiente en7c4cc21; ocho regresiones nuevas. Auditoría del inventario en8c3cfe1. 68 tests locales:66 correctos+2 dependencias.
-- Referencias [39623344071](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39623344071), job119302197888, pendientes de revisión. Sin completo autorizado todavía.
-- Cancelado39623097623 antes de emitir registros; cleanup confirmado. GET/XML:25.625 URLs y tres soft404. Sin deploy ni activación. Candado ocupado; ver informe v10 en rama del PR.
+## 2026-10-21 · Codex · Paso A: v10, contrato tipado y omisión bloqueante
+- [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador; `6d99ba9`…`1dd7f8c`. Unidades completas con cantidades regionales, invariantes separados, signo Unicode, cobertura numérica y preflight 214; políticas v2–v9 intactas.
+- Run39623344071 falló por validar MP3 como cifra; 29 registros recuperados intactos. [Reanudación39624247518](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39624247518):131 nuevos, 160 totales; 70 tests reales, cleanup correcto, cero artefactos. Run anterior39623097623 cancelado con 0 registros/cleanup correcto.
+- **es 358/360 rechazado**, omite tono alto/reproducción rápida; **nb 359/360 solo referencias**. No completo v10.80 idas/vueltas y diez registros con avisos reconciliados; 72 idas iguales por hashes, ocho nuevas.80 comparaciones legacy históricas no contadas como evaluaciones nuevas.
+- **8.497 registros, 2.251 evaluaciones, 512 fixtures (481 ida, 31 vuelta), 0 aprobados.** Tres fixtures semánticos nuevos y 12 tests nuevos; reproducciones rojas antes de arreglos. Adenda histórica por hashes conserva la revisión v9 al añadir hallazgo posterior de vuelta.
+- CI final [39626385396](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39626385396), código 1dd7f8c:**verde:3.045 Node; 71 Python (69 correctos y 2 omitidos por dependencias); check, idiomas, hub y preview verdes**. actionlint y Gitleaks correctos; 42 archivos remotos contrastados y nueve políticas medidas intactas.
+- GET/XML de producción15:09 y15:26UTC:10.260+15.365=25.625 URLs; tres rutas falsas del hub200, sin deploy. No se certifican UI/responsive/RTL/peso/a11y/rendimiento/hardware, 18 puntos ni siete capas.
+- Pedro:0 nuevas, P-001–P-008 pendientes, 0 FALLA. Siguiente v11 por cobertura semántica; referencias antes del completo, después 28 destinos y 80 muestras pocos recursos. Paso A/capacidad Pages/37 traducciones abiertos; sin fase 0. [Informe y limpieza](lotes/2026-10-21-piloto-v10.md).
 
 ## 2026-10-21 · Codex · Paso A: v9 por familia y auditoría regional/avisos
 - [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador; `9b430c3`…`1a963cc`.
