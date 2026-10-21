@@ -38,6 +38,7 @@ POLICIES["context-v6"] = json.loads(Path(__file__).with_name("pilot-privacy-poli
 POLICIES["context-v7"] = json.loads(Path(__file__).with_name("pilot-technical-policy.json").read_text())
 POLICIES["context-v8"] = json.loads(Path(__file__).with_name("pilot-explicit-negative-policy.json").read_text())
 POLICIES["context-v9"] = json.loads(Path(__file__).with_name("pilot-quantity-memory-policy.json").read_text())
+POLICIES["context-v10"] = json.loads(Path(__file__).with_name("pilot-whole-unit-policy.json").read_text())
 SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
 TECHNICAL_TOKEN = re.compile(r"\.(?:dxf|dwg|png|svg|wav|mp3|pdf|json|csv|txt)\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
 SOFTWARE_VERSION = re.compile(r"(?<![\w.])\d+(?:\.\d+){2,}(?![\w.]\d)")
@@ -87,6 +88,10 @@ def reviewed_memory(unit, locale, policy):
 def forward_with_memory(units, locale, policy, translate):
     memory = [reviewed_memory(unit, locale, policy) for unit in units]
     values = [(text, text, False) if text is not None else None for text in memory]
+    if policy == "context-v10":
+        for i, text in enumerate(memory):
+            if text is not None and not all(typed_data_checks(units[i]["source"], text, "en", locale).values()):
+                values[i] = (None, text, False)
     traces = [None] * len(units)
     pending = [i for i, text in enumerate(memory) if text is None]
     if pending:
@@ -262,6 +267,50 @@ def numeric_data(text, locale):
     return quantities, coordinates
 
 
+def typed_data_checks(source, target, source_locale, target_locale):
+    """v10: whole-unit data contract, independent of the historical literal audit.
+
+    Quantities may change spelling only if both known locale grammars prove equal
+    values and multiplicity. Coordinates use explicit mathematical notation and order.
+    No output is repaired. Unsupported numeric grammars fail closed, even for memory.
+    """
+    left, right = numeric_data(source, source_locale), numeric_data(target, target_locale)
+    has_quantities = any(NUMERIC_VALUE.search(numeric_prose(text)) for text in (source, target))
+    quantities = not has_quantities or left is not None and right is not None and left[0] == right[0]
+    opaque = lambda text: Counter(OPAQUE_LITERAL.findall(text))
+    brands = lambda text: Counter(re.findall(r"UsefulVerse|Unicode", text, re.IGNORECASE))
+    tokens = lambda pattern, text: Counter(t.casefold() for t in pattern.findall(text))
+    dimensions = lambda text: Counter(re.findall(r"\b\d+D\b", OPAQUE_LITERAL.sub(" ", text)))
+    units = lambda text: Counter(re.findall(r"\((?:in|ft|mi|mm|cm|m|km|yd)\)", text))
+    return {"nonempty": bool(target.strip()), "quantities": quantities,
+        "coordinates": coordinate_data(source) == coordinate_data(target),
+        "opaque_literals": opaque(source) == opaque(target), "brands": brands(source) == brands(target),
+        "versions": Counter(SOFTWARE_VERSION.findall(source)) == Counter(SOFTWARE_VERSION.findall(target)),
+        "software_identifiers": tokens(SOFTWARE_IDENTIFIER, source) == tokens(SOFTWARE_IDENTIFIER, target),
+        "technical_tokens": tokens(TECHNICAL_TOKEN, source) == tokens(TECHNICAL_TOKEN, target),
+        "dimensions": dimensions(source) == dimensions(target), "unit_symbols": units(source) == units(target)}
+
+
+def translate_whole_units(texts, model_translate, source_locale, target_locale, traces=None):
+    """v10 only: translate the whole content unit; retain raw damage without guessing."""
+    outputs = model_translate(texts)
+    if len(outputs) != len(texts): raise ValueError("Model returned an incomplete whole-unit batch")
+    results = []
+    for source, (raw, cut) in zip(texts, outputs, strict=True):
+        valid = not cut and all(typed_data_checks(source, raw, source_locale, target_locale).values())
+        if traces is not None:
+            traces.append([{"kind": "prose", "input": source, "output": raw, "truncated": cut,
+                "leading_space": "", "trailing_space": ""}])
+        results.append((raw if valid else None, raw, cut))
+    return results
+
+
+def typed_record_evidence(row):
+    return {"input": typed_data_checks(row["source"], row["model_input"], "en", "en"),
+        "forward": typed_data_checks(row["source"], row["translation"], "en", row["locale"]),
+        "back": typed_data_checks(row["translation"], row["back_translation"], row["locale"], "en")}
+
+
 def semantic_issues(key, source_hash, translation, locale, direction="forward"):
     normalized = unicodedata.normalize("NFKC", translation).strip()
     return sorted({row["issue"] for row in SEMANTIC_REGRESSIONS if row["key"] == key
@@ -336,6 +385,11 @@ def validate_record(row):
                 raise ValueError("Reviewed memory revision mismatch")
     if row.get("source_hash") != hashlib.sha256(row["source"].encode()).hexdigest():
         raise ValueError("Stale source hash in checkpoint")
+    if policy == "context-v10":
+        if row.get("typed_data_evidence") != typed_record_evidence(row):
+            raise ValueError("Typed data evidence differs from the raw record")
+        if not all(row["typed_data_evidence"]["input"].values()):
+            raise ValueError("Controlled input changed canonical typed data")
 
 
 def emit(row):
@@ -438,6 +492,10 @@ def record_flags(row):
     if contextual:
         flags["forward_segment_evidence"] = row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not segment_evidence_valid(row.get("forward_segments"), row["model_input"], row["raw_translation"])
         flags["back_segment_evidence"] = not segment_evidence_valid(row.get("back_segments"), row["translation"], row["back_translation"])
+    if row.get("inference_policy") == "context-v10":
+        evidence = typed_record_evidence(row)
+        flags["forward_typed_data"] = not all(evidence["forward"].values()) or not all(evidence["input"].values())
+        flags["back_typed_data"] = not all(evidence["back"].values())
     return flags
 
 
@@ -480,8 +538,12 @@ def audit_review_warnings(review, records):
                 raise ValueError("Warning decision needs disposition, note and explicit gate effect")
             if flag == "known_semantic_errors" and disposition != "forward-defect":
                 raise ValueError("A known forward fixture cannot be silently accepted")
-            if flag in {"numeric_values", "localized_numeric_values", "coordinate_values", "empty", "protected_tokens", "technical_tokens",
-                    "software_identifiers", "software_versions", "unit_symbols", "marker_restore", "forward_segment_evidence"}:
+            # Only a recomputed, fully valid v10 contract can explain a historical
+            # numeric-token spelling difference. Other policies and damaged tokens
+            # retain their hard block. Stored acceptance flags are never trusted.
+            quantity_only_signal = flag == "protected_tokens" and row.get("inference_policy") == "context-v10" and all(typed_record_evidence(row)["forward"].values()) and all(typed_record_evidence(row)["input"].values())
+            if not quantity_only_signal and flag in {"numeric_values", "localized_numeric_values", "coordinate_values", "empty", "protected_tokens", "technical_tokens",
+                    "software_identifiers", "software_versions", "unit_symbols", "marker_restore", "forward_segment_evidence", "forward_typed_data"}:
                 if disposition != "forward-defect" or not decision["blocks_gate"]:
                     raise ValueError("A broken forward data contract must block the gate")
             if disposition == "forward-defect" and min(judgments[identity]["scores"].values()) == 3:
@@ -598,6 +660,8 @@ def run(args):
                 return [(opencc.convert(raw) if target_locale == "zh-TW" else raw, cut) for raw, cut in values]
             if POLICIES[policy]["protection"] == "full-sentence-literals-v1":
                 return translate_unmasked_sentences(texts, prose_translate, traces)
+            if POLICIES[policy]["protection"] == "whole-unit-typed-data-v1":
+                return translate_whole_units(texts, prose_translate, source_locale, target_locale, traces)
             if POLICIES[policy]["protection"] == "covered-sentences-typed-data-v1":
                 return translate_covered_sentences(texts, prose_translate, traces)
             if POLICIES[policy]["protection"] == "covered-sentences-typed-data-v2":
@@ -645,6 +709,7 @@ def run(args):
                                 back_segments=back_traces[index], translation_origin="reviewed-memory" if memory[index] is not None else candidate,
                                 memory_digest=digest(POLICIES[policy]["reviewed_memory"][unit["key"]]) if memory[index] is not None else None)
                         if memory[index] is not None: counts["reviewed_memory_hits"] += 1
+                        if policy == "context-v10": row["typed_data_evidence"] = typed_record_evidence(row)
                         emit(row)
                         handle.write(canonical(row) + "\n")
                         handle.flush()
