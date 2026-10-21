@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-20T19:47:59.487109+00:00",
+  "at_utc": "2026-10-21T05:15:23.077123+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 1914,
+  "agent_reviewed_translations": 1994,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,7 +315,7 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 1914,
+  "agent_reviewed_evaluations": 1994,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
@@ -323,15 +323,15 @@
   ],
   "full_tool_computation_policy": "context-v6",
   "full_tool_pilot_approved_locales": [],
-  "total_records_all_policies": 7481,
-  "semantic_regressions": 472,
+  "total_records_all_policies": 7641,
+  "semantic_regressions": 473,
   "contextual_reference_gate": {
-    "es": "rejected-353/360",
+    "es": "passed-only-references-360/360",
     "nb-NO": "passed-only-references-360/360"
   },
   "full_tool_gate": {
-    "es": "not-run-joint-reference-gate-failed",
-    "nb-NO": "not-run-joint-reference-gate-failed"
+    "es": "pending-full-computation-and-review",
+    "nb-NO": "pending-full-computation-and-review"
   },
   "contextual_policies_reviewed": [
     "context-v2",
@@ -340,9 +340,10 @@
     "context-v5",
     "context-v6",
     "context-v7",
-    "context-v8"
+    "context-v8",
+    "context-v9"
   ],
-  "contextual_reference_gate_policy": "context-v8",
+  "contextual_reference_gate_policy": "context-v9",
   "low_resource_review_minimum": {
     "locales": [
       "ha",
@@ -356,5 +357,5 @@
     "sample_size": 80,
     "completed": false
   },
-  "full_tool_gate_policy": "context-v8"
+  "full_tool_gate_policy": "context-v9"
 }

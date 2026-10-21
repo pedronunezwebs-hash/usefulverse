@@ -334,3 +334,9 @@ python3 scripts/localization/translation-pilot.py audit-review \
   --checkpoints docs/quality/translation-pilot/checkpoints/context-v9/madlad.jsonl
 ```
 Se ejecuta cuando existen los resultados y su revisión; comprueba consistencia, no aprueba idiomas automáticamente.
+
+Referencias v9 [39547858733](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39547858733):
+es360/360 y nb360/360, solo referencias;76 idas iguales a v8 y cuatro memorias completas nuevas.
+160 registros,20 aciertos de memoria,250,01 s;56 tests reales y cleanup correctos.
+13 registros de avisos reconciliados (señales de longitud y defectos de vuelta);473 fixtures.
+7.641 registros/1.994 evaluaciones acumulados,0 aprobados; completo aún pendiente.

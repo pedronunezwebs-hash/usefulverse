@@ -4308,5 +4308,15 @@
     "observed_candidate": "madlad/context-v8",
     "actions_run_id": "39485133272",
     "direction": "back"
+  },
+  {
+    "locale": "es",
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "translation": "Adjust drawing in viewfinder",
+    "issue": "Viewfinder cambia el visor de dibujos por un visor de cámara en la vuelta; la ida conserva la acción.",
+    "observed_candidate": "madlad/context-v9",
+    "actions_run_id": "39547858733",
+    "direction": "back"
   }
 ]
