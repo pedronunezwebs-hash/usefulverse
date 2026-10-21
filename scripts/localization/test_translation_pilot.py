@@ -25,15 +25,18 @@ class TranslationPilotTest(unittest.TestCase):
             'warnings':{flag:{'disposition':'forward-defect' if flag=='known_semantic_errors' else 'reviewed-signal',
                 'note':'Observed upload FAQ lost its explicit No; other signals reviewed independently.',
                 'blocks_gate':flag=='known_semantic_errors'} for flag in flags}}
-        review={'rows':[copy.deepcopy(judgment)],'reference_gate':{'es':{'passed':False}},'warning_reconciliation':[entry]}
+        review={'expected_rows':1,'rows':[copy.deepcopy(judgment)],'reference_gate':{'es':{'passed':False}},'warning_reconciliation':[entry]}
         self.assertEqual(pilot.audit_review_warnings(review,records),1)
-        for mutation in ['missing','stale','perfect','passed','back','unexplained']:
+        for mutation in ['missing','stale','perfect','passed','back','unexplained','stale-rubric','duplicate','unbound']:
             changed=copy.deepcopy(review)
             if mutation=='missing':changed['warning_reconciliation']=[]
             elif mutation=='stale':changed['warning_reconciliation'][0]['translation_hash']='old'
             elif mutation=='perfect':changed['rows'][0]['scores']={key:3 for key in judgment['scores']}
             elif mutation=='passed':changed['reference_gate']['es']['passed']=True
             elif mutation=='back':changed['warning_reconciliation'][0]['warnings']['known_semantic_errors']['disposition']='back-defect'
+            elif mutation=='stale-rubric':changed['rows'][0]['translation_hash']='old'
+            elif mutation=='duplicate':changed['rows'][0]['record_ids'].append(identity)
+            elif mutation=='unbound':changed['rows'][0]['record_ids']=[]
             else:changed['warning_reconciliation'][0]['warnings']['known_semantic_errors']['note']=' '
             with self.subTest(mutation=mutation),self.assertRaises(ValueError):pilot.audit_review_warnings(changed,records)
 

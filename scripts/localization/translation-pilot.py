@@ -447,9 +447,17 @@ def audit_review_warnings(review, records):
     """
     expected = {}
     judgments = {}
+    if len(review["rows"]) != review["expected_rows"]:
+        raise ValueError("Review row count differs from its declared scope")
     for judgment in review["rows"]:
+        if not judgment["record_ids"]:
+            raise ValueError("Every rubric must be bound to observed records")
         for identity in judgment["record_ids"]:
             row = records[identity]
+            if identity in judgments:
+                raise ValueError("Duplicate record judgment in review")
+            if any(judgment[field] != row[field] for field in ["key", "locale", "source_hash"]) or judgment["translation_hash"] != hashlib.sha256(row["translation"].encode()).hexdigest():
+                raise ValueError("Stale rubric source or translation hash")
             flags = sorted(flag for flag, failed in record_flags(row).items() if failed)
             if flags: expected[identity] = (row, flags)
             judgments[identity] = judgment
