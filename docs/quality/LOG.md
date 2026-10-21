@@ -2,6 +2,11 @@
 
 Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 
+## 2026-10-21 · Codex · Hito v10 en curso
+- Frases completas y contrato tipado independiente en7c4cc21; ocho regresiones nuevas. Auditoría del inventario en8c3cfe1. 68 tests locales:66 correctos+2 dependencias.
+- Referencias [39623344071](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39623344071), job119302197888, pendientes de revisión. Sin completo autorizado todavía.
+- Cancelado39623097623 antes de emitir registros; cleanup confirmado. GET/XML:25.625 URLs y tres soft404. Sin deploy ni activación. Candado ocupado; ver informe v10 en rama del PR.
+
 ## 2026-10-21 · Codex · Paso A: v9 por familia y auditoría regional/avisos
 - [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador; `9b430c3`…`1a963cc`.
   V2–v9 medidos intactos; fuentes, slugs,700 existentes y estados de herramientas preservados; sin merge del código/deploy.
