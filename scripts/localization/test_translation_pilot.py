@@ -27,12 +27,13 @@ class TranslationPilotTest(unittest.TestCase):
                 'blocks_gate':flag=='known_semantic_errors'} for flag in flags}}
         review={'expected_rows':1,'rows':[copy.deepcopy(judgment)],'reference_gate':{'es':{'passed':False}},'warning_reconciliation':[entry]}
         self.assertEqual(pilot.audit_review_warnings(review,records),1)
-        for mutation in ['missing','stale','perfect','passed','back','unexplained','stale-rubric','duplicate','unbound']:
+        for mutation in ['missing','stale','perfect','passed','full-passed','back','unexplained','stale-rubric','duplicate','unbound']:
             changed=copy.deepcopy(review)
             if mutation=='missing':changed['warning_reconciliation']=[]
             elif mutation=='stale':changed['warning_reconciliation'][0]['translation_hash']='old'
             elif mutation=='perfect':changed['rows'][0]['scores']={key:3 for key in judgment['scores']}
             elif mutation=='passed':changed['reference_gate']['es']['passed']=True
+            elif mutation=='full-passed':changed['full_gate']={'es':{'passed':True}};changed.pop('reference_gate')
             elif mutation=='back':changed['warning_reconciliation'][0]['warnings']['known_semantic_errors']['disposition']='back-defect'
             elif mutation=='stale-rubric':changed['rows'][0]['translation_hash']='old'
             elif mutation=='duplicate':changed['rows'][0]['record_ids'].append(identity)

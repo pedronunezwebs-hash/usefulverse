@@ -488,7 +488,7 @@ def audit_review_warnings(review, records):
                 raise ValueError("Forward defect contradicts a perfect rubric")
             if disposition == "back-defect" and not flag.startswith("back_") and flag != "known_back_semantic_errors":
                 raise ValueError("A forward warning cannot be dismissed as a back defect")
-            gate = review.get("reference_gate", {}).get(row["locale"], {})
+            gate = review.get("reference_gate", review.get("full_gate", {})).get(row["locale"], {})
             if decision["blocks_gate"] and gate.get("passed"):
                 raise ValueError("Passed gate contradicts a blocking warning")
     return len(expected)
