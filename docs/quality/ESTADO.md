@@ -11,11 +11,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 ## 1. Siguiente paso exacto
 
-**Hito v11 EN CURSO (Codex):** código `fe2acf3`; referencias es/nb en
-[39629733667](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39629733667).
-Recuperar primero ese run y sus logs; no repetir sin comprobar registros.77 tests ligeros pasan (dos dependencias
-reservadas a Actions); política v11, ambas FAQ y memoria NB de unidades preparadas. No completo hasta revisar y pasar
-ambas40 referencias y todos los avisos. El candado sigue ocupado; informe en rama del PR: `lotes/2026-10-21-piloto-v11.md`.
+**Hito v11 EN CURSO (Codex):** referencias reales [39629733667](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39629733667), fuente `fe2acf3`, recuperadas y revisadas:es360/360,nb360/360.14 registros con avisos reconciliados;9 defectos conocidos solo de vuelta.80 idas/vueltas leídas;21 memorias revisadas,0 idiomas aprobados.77 tests reales,cleanup correcto. Prerrequisito al completo cumplido; siguiente:completo v11 con las mismas68+20 conocidas y todos los avisos fuera de muestra.8.657 registros,2.331 evaluaciones,512 fixtures. No repetir referencias. Candado ocupado; informe en rama PR `lotes/2026-10-21-piloto-v11.md`.
 
 1. **Paso A preparado en el PR [#136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador, rama
    `feat/new-tools-batch-1`.** Las 300 fuentes del respaldo privado `usefulverse-300-worktree-backup-20261020`,
