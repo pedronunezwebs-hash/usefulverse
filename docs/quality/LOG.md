@@ -2,6 +2,15 @@
 
 Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 
+## 2026-10-21 · Codex · V11: referencias pasan, completo rechazado; relevo v12
+- [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador; rama feat/new-tools-batch-1. Código fe2acf3, datos 3259799, cobertura `aa40244`.
+- Oraciones completas/datos en contexto, traza y contrato por oración; ambas FAQ de tono conservadas; una memoria NB de unidades. Seis tests rojos antes del arreglo.
+- Referencias 39629733667: es/nb 360; completo 39631325214:856 registros (696+160), 115 memorias, 77 tests reales por run, cleanup correcto, 0 artefactos. Muestra conocida 68+20: es 785/792 y nb 776/792, rechazados por API/registro/compuestos. 257 idas/vueltas leídas; 57 registros con avisos reconciliados.
+- 9.353 registros, 2.508 evaluaciones, 525 fixtures (485 ida/40 vuelta), 0 idiomas aprobados. 13 regresiones nuevas primero rojas; una adenda nueva con dos hallazgos de vuelta mantiene revisiones históricas intactas. Test de cobertura detectó enlace suplementario faltante; corregido, 77 tests ligeros 75+2 dependencias. CI de `3259799` sustituida/cancelada.
+- [CI final 39634328120](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39634328120), código `aa40244`: 3.045 Node, 77 Python (75+2), check/20 locales existentes/hub/preview verdes. Preview 11.293 archivos, 10.800 herramientas y homes noindex, sitemap indexable vacío. actionlint/Gitleaks correctos.
+- GET/XML propio antes/después: 25.625→25.625 URLs, hashes iguales; tres rutas falsas hub 200. Sin merge de código a main, deploy, activación, envíos, APIs pagadas, Codespaces ni operaciones Cloudflare. Fuente/assets públicos intactos.
+- Siguiente: v12 por familia de API/registro/compuestos, 40 referencias antes del completo; después 28 destinos/80 muestras reforzadas. Paso A sigue abierto, 0/300 main, 0 activadas; capacidad/37 traducciones pendientes. Pedro: 0 nuevas, P-001–P-008 pendientes, 0 FALLA. Evidencia/limpieza en [informe](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/lotes/2026-10-21-piloto-v11.md).
+
 ## 2026-10-21 · Codex · Hito v11:referencias revisadas,completo pendiente
 - Run39629733667:160 registros,77 tests reales,21 memorias,cleanup correcto,0 artefactos. Fuente fe2acf3.
 - ES y nb360/360 en40 referencias cada uno;14 registros con avisos reconciliados,9 defectos conocidos de vuelta separados.72 idas idénticas a v10 por hashes y8 revisadas nuevas.0 idiomas aprobados.
