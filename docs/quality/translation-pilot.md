@@ -340,3 +340,8 @@ es360/360 y nb360/360, solo referencias;76 idas iguales a v8 y cuatro memorias c
 160 registros,20 aciertos de memoria,250,01 s;56 tests reales y cleanup correctos.
 13 registros de avisos reconciliados (señales de longitud y defectos de vuelta);473 fixtures.
 7.641 registros/1.994 evaluaciones acumulados,0 aprobados; completo aún pendiente.
+
+Audit regional posterior a las inferencias v9: `localized_numeric_values_identical` distingue copiar el dato inglés
+de conservar su lectura en el idioma destino.200,000 es decimal en es/nb;200.000 es/200 000 nb representan200000.
+El audit source-literal sigue separado e intacto. Ni números nuevos ni cambios de separador se reparan por conjetura.
+Resumen/auditor recomputan este control desde los crudos, sin editar checkpoints/políticas medidas.

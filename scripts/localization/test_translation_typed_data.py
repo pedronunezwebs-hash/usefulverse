@@ -8,6 +8,21 @@ spec=importlib.util.spec_from_file_location('pilot',Path(__file__).with_name('tr
 pilot=importlib.util.module_from_spec(spec); spec.loader.exec_module(pilot)
 
 class TypedDataTest(unittest.TestCase):
+    def test_source_literal_quantity_contract_does_not_prove_localized_readability(self):
+        # CLDR es: decimal comma/group dot; nb: decimal comma/group NBSP.
+        # https://github.com/unicode-org/cldr-json/tree/main/cldr-json/cldr-numbers-full/main
+        source='Maximum group records: 200,000.'
+        for locale,target in [('es','Máximo de registros: 200,000.'),('nb-NO','Maksimalt antall oppføringer: 200,000.')]:
+            checks=pilot.automatic_checks(source,target,locale)
+            self.assertTrue(checks['numeric_values_identical'],'Preserve the measured source-literal audit')
+            self.assertFalse(checks['localized_numeric_values_identical'],'A local reader interprets comma as decimal, not thousands')
+        for locale,target in [('es','Máximo de registros: 200.000.'),('nb-NO','Maksimalt antall oppføringer: 200\u00a0000.')]:
+            checks=pilot.automatic_checks(source,target,locale)
+            self.assertTrue(checks['localized_numeric_values_identical'])
+            self.assertFalse(checks['protected_tokens_identical'],'The independent strict literal contract is not relaxed')
+        self.assertTrue(pilot.automatic_checks('Up to 30 seconds.','Hasta 30 segundos.','es')['localized_numeric_values_identical'])
+        self.assertIsNone(pilot.automatic_checks(source,'Höchstens 200.000 Einträge.','de')['localized_numeric_values_identical'])
+
     def test_v9_critical_duration_and_size_family_uses_whole_bound_memories(self):
         # Source evidence is versioned, so CI does not depend on a generated local corpus.
         rows=[json.loads(line) for line in (pilot.ROOT/'docs/quality/translation-pilot/checkpoints/context-v6/madlad.jsonl').read_text().splitlines()]

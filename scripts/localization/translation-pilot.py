@@ -282,12 +282,14 @@ def automatic_checks(source, translation, locale, key=None, back_translation=Non
     literal_numeric_copy = Counter(NUMERIC_VALUE.findall(numeric_prose(source))) == Counter(NUMERIC_VALUE.findall(numeric_prose(translation)))
     source_data = numeric_data(source, "en")
     target_data = numeric_data(translation, "en" if literal_numeric_copy else locale)
+    localized_target_data = numeric_data(translation, locale)
     back_data = None if back_translation is None else numeric_data(back_translation, "en")
     source_coordinates = coordinate_data(source)
     known_numeric_locale = locale in ("en", "es", "nb-NO")
     return {
         "numeric_notation": "source-literal" if literal_numeric_copy else locale if known_numeric_locale else None,
         "numeric_values_identical": None if not known_numeric_locale else source_data is not None and target_data is not None and source_data[0] == target_data[0],
+        "localized_numeric_values_identical": None if not known_numeric_locale else source_data is not None and localized_target_data is not None and source_data[0] == localized_target_data[0],
         "coordinate_values_identical": None if not source_coordinates else source_coordinates == coordinate_data(translation),
         "back_numeric_values_identical": None if back_translation is None else source_data is not None and back_data is not None and source_data[0] == back_data[0],
         "back_coordinate_values_identical": None if back_translation is None or not source_coordinates else source_coordinates == coordinate_data(back_translation),
@@ -416,6 +418,7 @@ def record_flags(row):
     """Recompute warning flags from raw evidence, never trust old checkpoint audits."""
     checks = automatic_checks(row["source"], row["translation"], row["locale"], row["key"], row["back_translation"])
     flags = {"numeric_values": checks["numeric_values_identical"] is False,
+                "localized_numeric_values": checks["localized_numeric_values_identical"] is False,
                 "coordinate_values": checks["coordinate_values_identical"] is False,
                 "back_numeric_values": checks["back_numeric_values_identical"] is False,
                 "back_coordinate_values": checks["back_coordinate_values_identical"] is False,
@@ -477,7 +480,7 @@ def audit_review_warnings(review, records):
                 raise ValueError("Warning decision needs disposition, note and explicit gate effect")
             if flag == "known_semantic_errors" and disposition != "forward-defect":
                 raise ValueError("A known forward fixture cannot be silently accepted")
-            if flag in {"numeric_values", "coordinate_values", "empty", "protected_tokens", "technical_tokens",
+            if flag in {"numeric_values", "localized_numeric_values", "coordinate_values", "empty", "protected_tokens", "technical_tokens",
                     "software_identifiers", "software_versions", "unit_symbols", "marker_restore", "forward_segment_evidence"}:
                 if disposition != "forward-defect" or not decision["blocks_gate"]:
                     raise ValueError("A broken forward data contract must block the gate")
