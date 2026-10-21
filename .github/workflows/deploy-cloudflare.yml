@@ -26,11 +26,11 @@ on:
         type: choice
         options: [both, m2m100, madlad]
       pilot_policy:
-        description: "Baseline o variantes de contexto v2–v8; v5–v8 cubre cada oración y protege datos"
+        description: "Baseline o variantes v2–v9; v9 conserva límites críticos como frases completas"
         required: false
         default: baseline
         type: choice
-        options: [baseline, context-v2, context-v3, context-v4, context-v5, context-v6, context-v7, context-v8]
+        options: [baseline, context-v2, context-v3, context-v4, context-v5, context-v6, context-v7, context-v8, context-v9]
       pilot_scope:
         description: "40 referencias o las tres herramientas completas"
         required: false

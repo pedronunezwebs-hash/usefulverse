@@ -311,3 +311,14 @@ al variar la composición del lote; solo se reutiliza una rúbrica por hashes de
 Suite ligera: 55 Python (53 correctos, 2 de dependencias; estas se probaron en los jobs reales antes de los dos
 últimos controles ligeros de auditoría). Próximo v9 por familia de cantidades críticas y prosa junto a números;
 no restaurar cifras por suposición. Repetir ambas referencias antes del completo; nada de masiva ni fase 0.
+
+
+## V9 · Límites críticos como frases completas (21-oct)
+
+Política independiente `context-v9`, `pilot-quantity-memory-policy.json`; v2–v8 medidas sin cambios.
+Las cinco claves de tamaño/duración del corpus tienen memoria exacta completa es/nb ligada a fuente/hash/contexto:
+fileHelp, tooLarge y tooLong de voz, tooLarge y limits de DXF. Cuatro memorias nuevas; 59 claves, 114 destinos.
+La salida v8 «30 10 segundos» queda cruda y rechazada: v9 no quita el 10 ni repara la salida.
+Otros destinos siguen pendientes de piloto y revisión; la estrategia tipada y los guards no se relajan.
+Referencias v9 aún pendientes de run y rúbrica. Muestra completa fijada en `full-sample-v9-plan.json`, mismas
+68 claves y 20 adicionales conocidas desde v6; no ciega. Completo solo tras pasar y reconciliar los avisos de referencias.

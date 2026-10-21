@@ -8,6 +8,33 @@ spec=importlib.util.spec_from_file_location('pilot',Path(__file__).with_name('tr
 pilot=importlib.util.module_from_spec(spec); spec.loader.exec_module(pilot)
 
 class TypedDataTest(unittest.TestCase):
+    def test_v9_critical_duration_and_size_family_uses_whole_bound_memories(self):
+        # Source evidence is versioned, so CI does not depend on a generated local corpus.
+        rows=[json.loads(line) for line in (pilot.ROOT/'docs/quality/translation-pilot/checkpoints/context-v6/madlad.jsonl').read_text().splitlines()]
+        units={r['key']:r for r in rows}
+        keys=['voice-changer.fields.fileHelp','voice-changer.fields.tooLarge',
+            'voice-changer.fields.tooLong','dxf-viewer.fields.tooLarge','dxf-viewer.limits']
+        for locale in ['es','nb-NO']:
+            selected=[units[key] for key in keys]
+            def forbidden_model(*args):
+                self.fail('Critical duration/size prose must not be split beside its quantity')
+            values,traces,memory=pilot.forward_with_memory(selected,locale,'context-v9',forbidden_model)
+            self.assertEqual(traces,[None]*len(keys))
+            for unit,value,target in zip(selected,values,memory,strict=True):
+                self.assertEqual(value,(target,target,False))
+                checks=pilot.automatic_checks(unit['source'],target,locale,unit['key'])
+                for check in ['numeric_values_identical','protected_tokens_identical','technical_tokens_identical']:
+                    self.assertTrue(checks[check],(unit['key'],locale,check))
+                stale=copy.deepcopy(unit);stale['context']='another-meaning'
+                with self.assertRaisesRegex(ValueError,'Stale'):pilot.reviewed_memory(stale,locale,'context-v9')
+                stale=copy.deepcopy(unit);stale['source']=unit['source'].replace('30','31').replace('10','11').replace('25','26')
+                with self.assertRaisesRegex(ValueError,'Stale'):pilot.reviewed_memory(stale,locale,'context-v9')
+        old=pilot.POLICIES['context-v8'];new=pilot.POLICIES['context-v9']
+        self.assertEqual(new['entries'],old['entries'])
+        for key,entry in old['reviewed_memory'].items():self.assertEqual(new['reviewed_memory'][key],entry)
+        for key in ['voice-changer.fields.faq1a','voice-changer.faq.0.a']:
+            self.assertEqual(new['reviewed_memory'][key],old['reviewed_memory'][key])
+
     def test_capitalization_regression_does_not_mark_the_lowercase_fix_as_same_error(self):
         source='A clue marked 6 belongs inside one rectangle that covers exactly six squares.'
         import hashlib

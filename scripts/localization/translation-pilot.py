@@ -37,6 +37,7 @@ POLICIES["context-v5"] = json.loads(Path(__file__).with_name("pilot-coverage-pol
 POLICIES["context-v6"] = json.loads(Path(__file__).with_name("pilot-privacy-policy.json").read_text())
 POLICIES["context-v7"] = json.loads(Path(__file__).with_name("pilot-technical-policy.json").read_text())
 POLICIES["context-v8"] = json.loads(Path(__file__).with_name("pilot-explicit-negative-policy.json").read_text())
+POLICIES["context-v9"] = json.loads(Path(__file__).with_name("pilot-quantity-memory-policy.json").read_text())
 SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
 TECHNICAL_TOKEN = re.compile(r"\.(?:dxf|dwg|png|svg|wav|mp3|pdf|json|csv|txt)\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
 SOFTWARE_VERSION = re.compile(r"(?<![\w.])\d+(?:\.\d+){2,}(?![\w.]\d)")
