@@ -2,6 +2,11 @@
 
 Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 
+## 2026-10-21 · Codex · Hito v11 en curso
+- Código `fe2acf3`: oraciones completas con traza y datos por oración/unidad; ambas FAQ de tono/velocidad y memoria NB de unidades.77 tests ligeros,75 correctos y dos dependencias. V2–v10 intactos.
+- [Referencias39629733667](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39629733667) pendientes de revisión. No completo hasta pasar ambas referencias y todos los avisos.
+- Sin publicación ni activación; Paso A abierto. Candado ocupado e informe v11 recuperable en rama del PR.
+
 ## 2026-10-21 · Codex · Paso A: v10, contrato tipado y omisión bloqueante
 - [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador; `6d99ba9`…`1dd7f8c`. Unidades completas con cantidades regionales, invariantes separados, signo Unicode, cobertura numérica y preflight 214; políticas v2–v9 intactas.
 - Run39623344071 falló por validar MP3 como cifra; 29 registros recuperados intactos. [Reanudación39624247518](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39624247518):131 nuevos, 160 totales; 70 tests reales, cleanup correcto, cero artefactos. Run anterior39623097623 cancelado con 0 registros/cleanup correcto.
