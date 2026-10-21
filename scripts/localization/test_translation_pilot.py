@@ -13,6 +13,15 @@ spec.loader.exec_module(pilot)
 
 
 class TranslationPilotTest(unittest.TestCase):
+    def test_run_evidence_inventory_cannot_omit_a_checkpoint(self):
+        directory=pilot.ROOT/'docs/quality/translation-pilot'
+        evidence=json.loads((directory/'context-run-evidence.json').read_text())
+        actual={str(path.relative_to(directory)):{'records':len(path.read_text().splitlines()),
+            'sha256':hashlib.sha256(path.read_bytes()).hexdigest()} for path in (directory/'checkpoints').rglob('*.jsonl')}
+        declared={entry['path']:{key:entry[key] for key in ['records','sha256']} for entry in evidence['checkpoints']}
+        self.assertEqual(declared,actual)
+        self.assertEqual(evidence['total_records'],sum(entry['records'] for entry in actual.values()))
+
     def test_reference_gate_cannot_ignore_fixture_warnings_or_reuse_stale_hashes(self):
         directory=pilot.ROOT/'docs/quality/translation-pilot'
         records={r['record_id']:r for r in map(json.loads,(directory/'checkpoints/context-v7/madlad.jsonl').read_text().splitlines())}
