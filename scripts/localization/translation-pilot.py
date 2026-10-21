@@ -39,6 +39,8 @@ POLICIES["context-v7"] = json.loads(Path(__file__).with_name("pilot-technical-po
 POLICIES["context-v8"] = json.loads(Path(__file__).with_name("pilot-explicit-negative-policy.json").read_text())
 POLICIES["context-v9"] = json.loads(Path(__file__).with_name("pilot-quantity-memory-policy.json").read_text())
 POLICIES["context-v10"] = json.loads(Path(__file__).with_name("pilot-whole-unit-policy.json").read_text())
+POLICIES["context-v11"] = json.loads(Path(__file__).with_name("pilot-complete-sentence-policy.json").read_text())
+TYPED_POLICIES = {"context-v10", "context-v11"}
 SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
 TECHNICAL_TOKEN = re.compile(r"\.(?:dxf|dwg|png|svg|wav|mp3|pdf|json|csv|txt)\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
 SOFTWARE_VERSION = re.compile(r"(?<![\w.])\d+(?:\.\d+){2,}(?![\w.]\d)")
@@ -88,7 +90,7 @@ def reviewed_memory(unit, locale, policy):
 def forward_with_memory(units, locale, policy, translate):
     memory = [reviewed_memory(unit, locale, policy) for unit in units]
     values = [(text, text, False) if text is not None else None for text in memory]
-    if policy == "context-v10":
+    if policy in TYPED_POLICIES:
         for i, text in enumerate(memory):
             if text is not None and not all(typed_data_checks(units[i]["source"], text, "en", locale).values()):
                 values[i] = (None, text, False)
@@ -317,6 +319,54 @@ def typed_record_evidence(row):
         "back": typed_data_checks(row["translation"], row["back_translation"], row["locale"], "en")}
 
 
+def complete_sentence_parts(text):
+    """Conservative punctuation boundaries, never inside URL/code/tag/version/data spans.
+
+    Ambiguous punctuation inside opaque data stays in the same unit. This is a
+    reproducible segmentation rule for the pilot, not a universal language parser.
+    """
+    spans = [(m.start(), m.end()) for pattern in (OPAQUE_LITERAL, SOFTWARE_VERSION, COORDINATE, NUMERIC_VALUE)
+        for m in pattern.finditer(text)]
+    boundaries = [m.start(1) for m in re.finditer(r"[.!?](\s+)(?=\S)", text)
+        if not any(start <= m.start() < end for start, end in spans)] + [len(text)]
+    parts, cursor = [], 0
+    for end in boundaries:
+        source = text[cursor:end]
+        if source.strip():
+            parts.append((source[:len(source)-len(source.lstrip())], source.strip(), source[len(source.rstrip()):]))
+        cursor = end
+    return parts
+
+
+def complete_sentence_evidence_valid(trace, source, raw, source_locale, target_locale):
+    if not segment_evidence_valid(trace, source, raw): return False
+    expected = complete_sentence_parts(source)
+    if not expected or len(trace) != len(expected): return False
+    for part, (leading, text, trailing) in zip(trace, expected, strict=True):
+        if part.get("kind") != "prose" or (part.get("leading_space"), part.get("input"), part.get("trailing_space")) != (leading, text, trailing): return False
+        if part.get("truncated") or not all(typed_data_checks(text, part["output"], source_locale, target_locale).values()): return False
+    return True
+
+
+def translate_complete_sentences(texts, model_translate, source_locale, target_locale, traces=None):
+    """v11 only: translate complete sentences with exact attempted-source coverage."""
+    plans = [complete_sentence_parts(text) for text in texts]
+    sentences = [part[1] for plan in plans for part in plan]
+    outputs = model_translate(sentences) if sentences else []
+    if len(outputs) != len(sentences): raise ValueError("Model returned an incomplete complete-sentence batch")
+    results, cursor = [], 0
+    for source, plan in zip(texts, plans, strict=True):
+        trace = [{"kind": "prose", "input": text, "output": outputs[cursor+i][0], "truncated": outputs[cursor+i][1],
+            "leading_space": leading, "trailing_space": trailing} for i, (leading, text, trailing) in enumerate(plan)]
+        cursor += len(plan)
+        raw = "".join(part["leading_space"] + part["output"].strip() + part["trailing_space"] for part in trace)
+        valid = all(typed_data_checks(source, raw, source_locale, target_locale).values())
+        valid &= complete_sentence_evidence_valid(trace, source, raw, source_locale, target_locale)
+        if traces is not None: traces.append(trace)
+        results.append((raw if valid else None, raw, any(part["truncated"] for part in trace)))
+    return results
+
+
 def semantic_issues(key, source_hash, translation, locale, direction="forward"):
     normalized = unicodedata.normalize("NFKC", translation).strip()
     return sorted({row["issue"] for row in SEMANTIC_REGRESSIONS if row["key"] == key
@@ -391,7 +441,7 @@ def validate_record(row):
                 raise ValueError("Reviewed memory revision mismatch")
     if row.get("source_hash") != hashlib.sha256(row["source"].encode()).hexdigest():
         raise ValueError("Stale source hash in checkpoint")
-    if policy == "context-v10":
+    if policy in TYPED_POLICIES:
         if row.get("typed_data_evidence") != typed_record_evidence(row):
             raise ValueError("Typed data evidence differs from the raw record")
         if not all(row["typed_data_evidence"]["input"].values()):
@@ -498,10 +548,13 @@ def record_flags(row):
     if contextual:
         flags["forward_segment_evidence"] = row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not segment_evidence_valid(row.get("forward_segments"), row["model_input"], row["raw_translation"])
         flags["back_segment_evidence"] = not segment_evidence_valid(row.get("back_segments"), row["translation"], row["back_translation"])
-    if row.get("inference_policy") == "context-v10":
+    if row.get("inference_policy") in TYPED_POLICIES:
         evidence = typed_record_evidence(row)
         flags["forward_typed_data"] = not all(evidence["forward"].values()) or not all(evidence["input"].values())
         flags["back_typed_data"] = not all(evidence["back"].values())
+    if row.get("inference_policy") == "context-v11":
+        flags["forward_sentence_evidence"] = row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not complete_sentence_evidence_valid(row.get("forward_segments"), row["model_input"], row["raw_translation"], "en", row["locale"])
+        flags["back_sentence_evidence"] = not complete_sentence_evidence_valid(row.get("back_segments"), row["translation"], row["back_translation"], row["locale"], "en")
     return flags
 
 
@@ -565,9 +618,9 @@ def audit_review_warnings(review, records):
             # Only a recomputed, fully valid v10 contract can explain a historical
             # numeric-token spelling difference. Other policies and damaged tokens
             # retain their hard block. Stored acceptance flags are never trusted.
-            quantity_only_signal = flag == "protected_tokens" and row.get("inference_policy") == "context-v10" and all(typed_record_evidence(row)["forward"].values()) and all(typed_record_evidence(row)["input"].values())
+            quantity_only_signal = flag == "protected_tokens" and row.get("inference_policy") in TYPED_POLICIES and all(typed_record_evidence(row)["forward"].values()) and all(typed_record_evidence(row)["input"].values())
             if not quantity_only_signal and flag in {"numeric_values", "localized_numeric_values", "coordinate_values", "empty", "protected_tokens", "technical_tokens",
-                    "software_identifiers", "software_versions", "unit_symbols", "marker_restore", "forward_segment_evidence", "forward_typed_data"}:
+                    "software_identifiers", "software_versions", "unit_symbols", "marker_restore", "forward_segment_evidence", "forward_typed_data", "forward_sentence_evidence"}:
                 if disposition != "forward-defect" or not decision["blocks_gate"]:
                     raise ValueError("A broken forward data contract must block the gate")
             if disposition == "forward-defect" and min(judgments[identity]["scores"].values()) == 3:
@@ -643,7 +696,7 @@ def run(args):
         print("UVPILOT_SUMMARY " + canonical({"engine": args.engine, "counts": {}, "scope": args.scope,
             "resumed": True, "conversion_seconds": 0, "approved": 0}), flush=True)
         return
-    if policy == "context-v10":
+    if policy in TYPED_POLICIES:
         for _, candidate, pending in work:
             for unit in pending:
                 text = translation_input(unit, policy) if candidate == "model" else unit["source"]
@@ -692,6 +745,8 @@ def run(args):
                 return translate_unmasked_sentences(texts, prose_translate, traces)
             if POLICIES[policy]["protection"] == "whole-unit-typed-data-v1":
                 return translate_whole_units(texts, prose_translate, source_locale, target_locale, traces)
+            if POLICIES[policy]["protection"] == "complete-sentences-typed-data-v1":
+                return translate_complete_sentences(texts, prose_translate, source_locale, target_locale, traces)
             if POLICIES[policy]["protection"] == "covered-sentences-typed-data-v1":
                 return translate_covered_sentences(texts, prose_translate, traces)
             if POLICIES[policy]["protection"] == "covered-sentences-typed-data-v2":
@@ -739,7 +794,7 @@ def run(args):
                                 back_segments=back_traces[index], translation_origin="reviewed-memory" if memory[index] is not None else candidate,
                                 memory_digest=digest(POLICIES[policy]["reviewed_memory"][unit["key"]]) if memory[index] is not None else None)
                         if memory[index] is not None: counts["reviewed_memory_hits"] += 1
-                        if policy == "context-v10": row["typed_data_evidence"] = typed_record_evidence(row)
+                        if policy in TYPED_POLICIES: row["typed_data_evidence"] = typed_record_evidence(row)
                         emit(row)
                         handle.write(canonical(row) + "\n")
                         handle.flush()
