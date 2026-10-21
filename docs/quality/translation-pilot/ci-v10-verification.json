@@ -1,0 +1,83 @@
+{
+  "runs": [
+    {
+      "run_id": 39624253808,
+      "job_id": 119305407762,
+      "source_commit": "f93027538b72d21ad518234809de847a95c95ab4",
+      "conclusion": "success",
+      "node_tests": 3045,
+      "node_pass": 3045,
+      "python_tests": 70,
+      "python_pass": 68,
+      "python_dependency_skips": 2,
+      "site_pages": 10260,
+      "existing_expanded_locale_release_gate": 20,
+      "hub_catalogs": [
+        217,
+        100,
+        106
+      ],
+      "isolated_preview_files": 11293,
+      "isolated_preview_tool_pages_noindex": 10800,
+      "isolated_preview_homes_noindex": true,
+      "isolated_preview_indexable_sitemap_urls": 0,
+      "deployment_steps": "skipped",
+      "artifacts": 0,
+      "log_sha256": "ccab429969b28622c56a0678f1dd8d60c5068c1a1fe2b2473ffa871849016223",
+      "limitations": "No language approval/native review/37 candidate reviewed locales/18 tool gates/7 test layers/real UI/responsive/RTL/a11y/performance/hardware certification."
+    },
+    {
+      "run_id": 39625609582,
+      "job_id": 119309907991,
+      "source_commit": "4d4944bb09c6646bc0677f7a087fbc31b031e27b",
+      "conclusion": "success",
+      "node_tests": 3045,
+      "node_pass": 3045,
+      "python_tests": 71,
+      "python_pass": 69,
+      "python_dependency_skips": 2,
+      "site_pages": 10260,
+      "existing_expanded_locale_release_gate": 20,
+      "hub_catalogs": [
+        217,
+        100,
+        106
+      ],
+      "isolated_preview_files": 11293,
+      "isolated_preview_tool_pages_noindex": 10800,
+      "isolated_preview_homes_noindex": true,
+      "isolated_preview_indexable_sitemap_urls": 0,
+      "deployment_steps": "skipped",
+      "artifacts": 0,
+      "log_sha256": "c728100c4342f8299c13e4a9ae601e4eacc257f78a98b293cc298a412f1184f4",
+      "limitations": "No language approval/native review/37 candidate reviewed locales/18 tool gates/7 test layers/real UI/responsive/RTL/a11y/performance/hardware certification."
+    },
+    {
+      "run_id": 39626385396,
+      "job_id": 119312616653,
+      "source_commit": "1dd7f8cc56c1fb56641d5878addf92204cef7106",
+      "conclusion": "success",
+      "node_tests": 3045,
+      "node_pass": 3045,
+      "python_tests": 71,
+      "python_pass": 69,
+      "python_dependency_skips": 2,
+      "site_pages": 10260,
+      "existing_expanded_locale_release_gate": 20,
+      "hub_catalogs": [
+        217,
+        100,
+        106
+      ],
+      "isolated_preview_files": 11293,
+      "isolated_preview_tool_pages_noindex": 10800,
+      "isolated_preview_homes_noindex": true,
+      "isolated_preview_indexable_sitemap_urls": 0,
+      "deployment_steps": "skipped",
+      "artifacts": 0,
+      "log_sha256": "6ce1b3b3dd6ab9fbc956150154e4e852d81aa9a9f376aa2933ca4f8175190450",
+      "limitations": "No language approval/native review/37 candidate reviewed locales/18 tool gates/7 test layers/real UI/responsive/RTL/a11y/performance/hardware certification."
+    }
+  ],
+  "at_utc": "2026-10-21T15:36:48.159900+00:00"
+}
