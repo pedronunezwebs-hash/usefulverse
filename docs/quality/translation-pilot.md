@@ -4,7 +4,30 @@
 Dependencia del Paso A; no habilita ninguna herramienta ni idioma. **Idiomas aprobados por este piloto: 0.**
 Código y checkpoints de esta guía están en `feat/new-tools-batch-1` hasta integrar el PR; no confundirlos con `main`.
 
-## V12 · 22-oct-2026 · resultado actual
+## V13 · 22-oct-2026 · resultado actual
+
+Los 23 fallos v12 están corregidos por memoria exacta: 88 claves/154 destinos ligados a fuente/hash/contexto.
+La memoria no es modelo ni demuestra generalización. Referencias 39736865789 (`717c7aa`): ES/NB 360/360;
+80 idas/vueltas leídas, 13 avisos y ocho defectos solo de vuelta. Completo 39737830473 (`22e139e`):
+696 nuevos + 160 reanudados = 856 registros; 154 memorias entre ambos runs. 85 tests reales por run,
+limpieza correcta y cero artefactos. Todos los 428 candidatos leídos; 88 conocidas con 792/792 por idioma.
+
+Dos leves nuevos fuera de las 88 bloquean el global ampliado previo: ES artículo en `statusPlaced` y NB «for å»
+en `statusRevealed`. El mínimo de estilo de 1/20 sí se cumple; el plan ampliado exige reparar los defectos observados.
+47 + 13 registros con avisos reconciliados; 35 + 8 hallazgos de vuelta separados. 309/348 idas del completo
+idénticas a v12 por hashes, 39 cambiadas. Nueve casos primero rojos y después 580 fixtures (510 ida/70 vuelta).
+Dos suplementos históricos v9/v11, de una fila cada uno, con tres vínculos por hashes; rúbricas/gates originales intactos.
+Inventario: 11.065 registros y 3.424 evaluaciones con repeticiones. 120 comparaciones legacy por hashes no son evaluaciones nuevas.
+
+[CI final 39740313985](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39740313985), fuente `d6d4019`
+(árbol idéntico a datos `92c4eea`): 3.045 Node, 85 Python (83 correctos/dos dependencias omitidas), check,
+20 locales existentes, hub y preview verdes; sin deploy. Cero idiomas aprobados. 37 traducciones, capacidad Pages,
+puerta de 18 puntos/siete capas, revisión nativa y UI/dispositivos pendientes.
+Siguiente: v14 independiente para los dos fallos de ida, conservando contratos; referencias ES/NB y después completo.
+Luego, 28 destinos, incluidos siete con muestra reforzada; probar sus gramáticas numéricas antes de ampliar.
+No repetir los runs v13. [Informe del lote](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/lotes/2026-10-22-piloto-v13.md).
+
+## V12 · 22-oct-2026 · histórico
 
 Los 16 fallos de ida v11 se corrigen mediante memoria exacta con fuente/hash/contexto, antes de inferencia.
 La política independiente conserva oraciones completas y contrato tipado; tiene 70 claves/131 destinos de memoria.
