@@ -127,5 +127,117 @@
       "scripts/localization/pilot-technical-policy.json": "60520b02ad3ff89bbc94f3387351f2f4c6eae39d40f768f7ce9de80be3ad6072",
       "scripts/localization/pilot-whole-unit-policy.json": "85c35ec96e0b01ec35151a06b96cb19c584c87f3df4fbd0b6289c2744e86ed28"
     }
+  },
+  "observed_full_at_utc": "2026-10-22T11:38:47.221188+00:00",
+  "observed_regressions_red": {
+    "tests": 1,
+    "failing_subtests": 5,
+    "command": "PYTHONPATH=scripts/localization python3 -m unittest test_translation_pilot.TranslationPilotTest.test_observed_semantic_errors_are_rejected_even_when_tokens_survive",
+    "log_sha256": "e0638a66fcdc2fe1faf247ff68be05819c4df7a18dc21f8b7fa4aaa7bf471c41",
+    "method": "Independent current review declared one forward calque and four new back variants before appending exact fixtures. Existing regression test first failed five subtests."
+  },
+  "fixtures_before": 580,
+  "fixtures_after": 585,
+  "new_findings": [
+    {
+      "direction": "forward",
+      "locale": "es",
+      "key": "voice-changer.fields.device",
+      "source_hash": "1b1a9c9785d90d1a99052625add45a8bb133b41268cf20f501f27ed2ec72d0a2",
+      "observed_text_sha256": "f270a9c70e7db8980b9f085adae2188f758c3bb068d2ef44917f05e054521d5b",
+      "issue": "Procesamiento más suave calca smoother con una cualidad táctil; en rendimiento informático corresponde procesamiento más fluido. Recomendación, dependencia del dispositivo y datos conservados; defecto leve de naturalidad, no de cifras ni negaciones.",
+      "record_id": "b18a5eec9171bee1e1a6f80e8360b13ade32caa25a62efcf53f7f9202d79c4aa",
+      "run_id": 39769512465,
+      "source_commit": "08a0498a2dd1e14b8ee7330a577366c87f9f0276"
+    },
+    {
+      "direction": "back",
+      "locale": "es",
+      "key": "voice-changer.intro",
+      "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+      "observed_text_sha256": "06de23b439c7512d565068fe22038c4b600c435a1fd7aa2e764317c595e4609b",
+      "issue": "Glow usa brillo visual en vez de timbre brillante de audio; la ida brillo en contexto de efectos de sonido es correcta. Variante cruda nueva, no reparar la ida.",
+      "record_id": "947ac9a8b625a89e4d4e8dde7eef2e1224d23420d7df73ea140a7d9d9ea7478f",
+      "run_id": 39769512465,
+      "source_commit": "08a0498a2dd1e14b8ee7330a577366c87f9f0276"
+    },
+    {
+      "direction": "back",
+      "locale": "nb-NO",
+      "key": "voice-changer.intro",
+      "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+      "observed_text_sha256": "106a9c17fdeb320c5cc7c76efad24b2a0775c146a6c169ee2275a1483d7bc4f0",
+      "issue": "Brighter reverb sustituye lysere klang (timbre brillante) por reverberación, mientras el eco ya es un efecto distinto. Variante cruda nueva; ida correcta.",
+      "record_id": "bd7a4ccdc9473c9ccf5651e805154c68e856e456caa0b78c7ea65094e1d61a54",
+      "run_id": 39769512465,
+      "source_commit": "08a0498a2dd1e14b8ee7330a577366c87f9f0276"
+    },
+    {
+      "direction": "back",
+      "locale": "es",
+      "key": "voice-changer.faq.2.a",
+      "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "observed_text_sha256": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+      "issue": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Cambia sujeto y función de la explicación; la ida describe correctamente los límites de la herramienta.",
+      "record_id": "8d836af3d24fa8c4a5414fb995263ed5166d61a79bd685f69d00b7886d5696d3",
+      "run_id": 39769512465,
+      "source_commit": "08a0498a2dd1e14b8ee7330a577366c87f9f0276"
+    },
+    {
+      "direction": "back",
+      "locale": "es",
+      "key": "voice-changer.fields.faq3a",
+      "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+      "observed_text_sha256": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+      "issue": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Misma variante en el alias de FAQ, que requiere su regresión ligada a clave/fuente. Ida correcta.",
+      "record_id": "c4fe0382cc75c8b75682e4c6a79f7fce78044c32f50766d0bdf537110fe42fe8",
+      "run_id": 39769512465,
+      "source_commit": "08a0498a2dd1e14b8ee7330a577366c87f9f0276"
+    }
+  ],
+  "historical_coverage": {
+    "new_back_only_bindings": 4,
+    "new_back_only_records": 8,
+    "previous_back_addenda_preserved": 2,
+    "new_historical_rows": 3,
+    "new_historical_review_files": [
+      "review-context-v6-late-v14.json",
+      "review-context-v9-late-v14.json",
+      "review-context-v11-late-v14.json"
+    ],
+    "previous_coverage_bindings_preserved": 6,
+    "new_coverage_bindings": 3,
+    "explicit_forward_withdrawals": 1,
+    "withdrawn_original_review": "review-context-v12-full.json",
+    "original_review_bytes_preserved": true,
+    "original_gate_already_rejected_and_stays_rejected": true,
+    "old_perfect_score_retained_visibly": true,
+    "new_negative_assessment": {
+      "meaning": 3,
+      "numbers_negations": 3,
+      "naturalness": 2
+    }
+  },
+  "withdrawal_tests": {
+    "tests": 2,
+    "red_errors": 2,
+    "red_log_sha256": "8b5fa4cf4339bc7f669a63fc23a372c77d355cc3684d59a43ca222efd45e71cd",
+    "green_log_sha256": "d52c3edafd8764709ef986459cf66ab80da7e60c9411ffb073e6b0124e733238",
+    "adversarial_cases": 30,
+    "scope": "Real historical false-perfect forward grade, byte/digest/source/context/text/grade provenance, explicit negative-only reassessment, missing fixture, duplicate/foreign entries, nonblocking/approval/passed-gate/path tampering. Does not mutate old bytes or gates.",
+    "hardened_green_log_sha256": "d43095852807f63b8b5530f20994a4879f06e32645bea9752c17eca5be179d03",
+    "hardened_cases": "Direct reader checks for absent permanent fixture and an unrelated passed historical locale; they cannot pass merely because another audit check rejects."
+  },
+  "historical_suite_red": {
+    "tests": 87,
+    "errors": 1,
+    "dependency_skips": 2,
+    "log_sha256": "7327065d365b91673b5f63cdc99fe1bee08caff3770c73713aa4b592909ab4a4"
+  },
+  "final_local_suite": {
+    "tests": 89,
+    "pass": 87,
+    "dependency_skips": 2,
+    "log_sha256": "16ae7547a926006e038565a4ba88ef5b05026bd73ce221a29213f15c0c820fce"
   }
 }

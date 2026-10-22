@@ -12,5 +12,49 @@
   ],
   "engine": "madlad",
   "recover_before_relaunch": true,
-  "approved_locales": []
+  "approved_locales": [],
+  "job_id": 119793226109,
+  "conclusion": "success",
+  "checkpoint_before": 160,
+  "checkpoint_after": 856,
+  "new_records": 696,
+  "checkpoint_sha256_at_collection": "2abfed40e0b3a79e2113b6664a7b6968e0878b10265efacd5710c833e9f5fb50",
+  "log_sha256": "87d3d5478776710076c725d79b85523c266e51e0efe173c49b5cb665d9e13d72",
+  "models": [
+    {
+      "converted_sha256": {
+        "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+        "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+        "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+      },
+      "engine": "madlad",
+      "license": "Apache-2.0",
+      "minimum_free_gib": 18,
+      "repository": "google/madlad400-3b-mt",
+      "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+    }
+  ],
+  "summary": [
+    {
+      "approved": 0,
+      "conversion_seconds": 106.59977603799996,
+      "counts": {
+        "legacy": 348,
+        "model": 348,
+        "reviewed_memory_hits": 135
+      },
+      "engine": "madlad",
+      "peak_rss_kib": 3777264,
+      "scope": "full",
+      "total_seconds": 832.6409289359999
+    }
+  ],
+  "cleanup": "success",
+  "site_job": "skipped",
+  "artifacts": 0,
+  "actual_python_test_lines": [
+    "translation-pilot (madlad)\tCheck pilot contracts and extract the real three-tool corpus\t2026-10-22T11:19:19.8782439Z Ran 87 tests in 34.201s",
+    "translation-pilot (madlad)\tCheck pilot contracts and extract the real three-tool corpus\t2026-10-22T11:19:19.8782892Z OK"
+  ],
+  "collected_at_utc": "2026-10-22T11:33:53.528585+00:00"
 }

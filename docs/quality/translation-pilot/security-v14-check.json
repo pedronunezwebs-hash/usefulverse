@@ -25,5 +25,11 @@
     "leaks": 0,
     "scope": "whole feature checkout before first v14 push",
     "log_sha256": "93cb89af96b89748a0566d7c26fdb5ed5d3df87d630c57ad898b45ad39849d10"
+  },
+  "full_data_scan": {
+    "at_utc": "2026-10-22T11:45:02.742287+00:00",
+    "gitleaks_exit": 0,
+    "leaks": 0,
+    "log_sha256": "2e31cf0e5baebfbf6144331234784c17f1db8fdfd01fb2d71bbe73f96b249ba0"
   }
 }

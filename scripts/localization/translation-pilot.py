@@ -612,6 +612,64 @@ def audit_complete_model_warning_coverage(review, records):
     return covered
 
 
+def historical_forward_withdrawals(review, records):
+    """Read explicit downgrades of old perfect ratings without altering their evidence.
+
+    This narrow mechanism only covers a newly fixture-confirmed forward defect in an
+    already rejected historical review. It cannot approve, improve or silently regrade.
+    """
+    directory = ROOT / "docs/quality/translation-pilot"
+    path = directory / "review-withdrawal-addenda.json"
+    addenda = json.loads(path.read_text()) if path.exists() else []
+    result, seen = [], set()
+    judgments = {identity: row for row in review["rows"] for identity in row["record_ids"]}
+    score_keys = {"meaning", "numbers_negations", "naturalness"}
+    for item in addenda:
+        if item.get("review_digest") != digest(review): continue
+        name = item.get("review_file")
+        if not isinstance(name, str) or Path(name).name != name or not name.endswith(".json"):
+            raise ValueError("Withdrawal must bind a local original review basename")
+        raw = (directory / name).read_bytes()
+        if hashlib.sha256(raw).hexdigest() != item.get("review_file_sha256") or digest(json.loads(raw)) != digest(review):
+            raise ValueError("Stale withdrawal original bytes or review digest")
+        if (item.get("schema_version") != 1 or item.get("kind") != "historical-perfect-forward-score-withdrawal"
+                or item.get("automatic_approval") is not False or item.get("approved_locales") != []
+                or item.get("native_review") is not False or item.get("review_kind") != "agent"
+                or not item.get("reason", "").strip() or not item.get("reviewer", "").strip()
+                or not item.get("reviewed_at_utc", "").strip() or not item.get("entries")):
+            raise ValueError("Withdrawal requires explicit non-approving agent provenance and reason")
+        if review.get("approved_locales") or any(gate.get("passed") for field in ["reference_gate", "full_gate"] for gate in review.get(field, {}).values()):
+            raise ValueError("Withdrawal cannot conceal an approved locale or passed historical gate")
+        for entry in item["entries"]:
+            identity = entry.get("record_id")
+            if identity in seen or identity not in judgments or identity not in records:
+                raise ValueError("Duplicate or unbound withdrawn record")
+            seen.add(identity)
+            row, original = records[identity], judgments[identity]
+            validate_record(row)
+            if row.get("candidate") != "model" or row.get("inference_policy") != review.get("inference_policy"):
+                raise ValueError("Withdrawal must use the original model and policy")
+            if any(entry.get(field) != row.get(field) for field in ["key", "locale", "source_hash", "context", "inference_policy"]):
+                raise ValueError("Stale withdrawal source or semantic context")
+            if any(entry.get(field + "_hash") != hashlib.sha256(row[field].encode()).hexdigest() for field in ["translation", "back_translation"]):
+                raise ValueError("Stale withdrawal raw text hash")
+            old, new = entry.get("original_scores", {}), entry.get("scores", {})
+            if (old != original["scores"] or set(old) != score_keys or set(new) != score_keys
+                    or any(type(old[key]) is not int or old[key] != 3 or type(new[key]) is not int or not 0 <= new[key] <= old[key] for key in score_keys)
+                    or min(new.values()) == 3 or not entry.get("note", "").strip()):
+                raise ValueError("Withdrawal must retain the exact old perfect score and only lower it")
+            if not record_flags(row)["known_semantic_errors"]:
+                raise ValueError("Withdrawal requires an independently observed permanent forward fixture")
+            warning = entry.get("warning", {})
+            if set(warning) != {"known_semantic_errors"}:
+                raise ValueError("Withdrawal cannot override unrelated warning decisions")
+            decision = warning["known_semantic_errors"]
+            if decision.get("disposition") != "forward-defect" or decision.get("blocks_gate") is not True or not decision.get("note", "").strip():
+                raise ValueError("Withdrawn forward defect must explicitly block the gate")
+            result.append(entry)
+    return result
+
+
 def audit_review_warnings(review, records, check_coverage=True):
     """Require an exact, hash-bound decision for every warning before accepting a review.
 
@@ -653,6 +711,20 @@ def audit_review_warnings(review, records, check_coverage=True):
                     raise ValueError("Historical addendum cannot replace an existing decision")
                 previous["warnings"].update(entry["warnings"])
             else: reconciliations.append(entry)
+    for withdrawal in historical_forward_withdrawals(review, records):
+        identity = withdrawal["record_id"]
+        # The original remains visible and immutable; only this audit uses the
+        # explicit negative reassessment to prevent inheriting its false full marks.
+        judgments[identity] = {**judgments[identity], "scores": withdrawal["scores"]}
+        existing = next((entry for entry in reconciliations if entry["record_id"] == identity), None)
+        if existing:
+            if set(existing["warnings"]) & set(withdrawal["warning"]):
+                raise ValueError("Withdrawal cannot replace an existing warning decision")
+            existing["warnings"].update(withdrawal["warning"])
+        else:
+            reconciliations.append({"record_id": identity,
+                **{field + "_hash": withdrawal[field + "_hash"] for field in ["translation", "back_translation"]},
+                "warnings": withdrawal["warning"]})
     resolutions = {entry["record_id"]: entry for entry in reconciliations}
     if len(resolutions) != len(reconciliations) or set(resolutions) != set(expected):
         raise ValueError("Missing, extra or duplicate warning reconciliation")

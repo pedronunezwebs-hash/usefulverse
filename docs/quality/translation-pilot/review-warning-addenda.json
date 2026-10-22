@@ -52,5 +52,145 @@
         }
       }
     ]
+  },
+  {
+    "review_file": "review-context-v11-full.json",
+    "review_file_sha256": "b117a7bd2177a73c1635ce17fc1d86729ae3e0196bb336b4eee60c3b48d069fa",
+    "review_digest": "1d1b0bcdc6609a368fc814211f0caf9e38fdd127a5984fecf15b95b880836951",
+    "reviewed_at_utc": "2026-10-22T11:41:02.986664+00:00",
+    "reviewer": "Codex (agente)",
+    "native_review": false,
+    "warning_reconciliation": [
+      {
+        "record_id": "3789d9003cc801bb71eaf1f1fed4c2f8296292dd406b9031811306ecc22e65b8",
+        "translation_hash": "2c426469740af6cd7d87b046fbf4ccd50b6aa26b88ed838e2e36575f1ec9a7df",
+        "back_translation_hash": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Misma variante en el alias de FAQ, que requiere su regresión ligada a clave/fuente. Ida correcta. Ida y vuelta históricas releídas directamente; la ida es correcta y no se cambia su rúbrica."
+          }
+        }
+      },
+      {
+        "record_id": "61400c945f143be781b93fb6697321fd62816550873918fa60fe5e39110ccd4e",
+        "translation_hash": "2c426469740af6cd7d87b046fbf4ccd50b6aa26b88ed838e2e36575f1ec9a7df",
+        "back_translation_hash": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Cambia sujeto y función de la explicación; la ida describe correctamente los límites de la herramienta. Ida y vuelta históricas releídas directamente; la ida es correcta y no se cambia su rúbrica."
+          }
+        }
+      }
+    ],
+    "note": "V14 discovery: additional back-only warning for exact old raw text, no original rubric, forward warning or gate override."
+  },
+  {
+    "review_file": "review-context-v12-full.json",
+    "review_file_sha256": "59c0e6ad9196b4978b825bea2eabda214c0bfd1bb495cb5d5137689eff653632",
+    "review_digest": "8fae13ba4b6c93e7e7a43328092655a4b6a4fc04303410f6c646734653fb9d7b",
+    "reviewed_at_utc": "2026-10-22T11:41:02.986664+00:00",
+    "reviewer": "Codex (agente)",
+    "native_review": false,
+    "warning_reconciliation": [
+      {
+        "record_id": "a02747e1b1852f6efeb6692b15ff9d13e0ac72aaed3f3e4f46075087e5b7eac5",
+        "translation_hash": "2c426469740af6cd7d87b046fbf4ccd50b6aa26b88ed838e2e36575f1ec9a7df",
+        "back_translation_hash": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Cambia sujeto y función de la explicación; la ida describe correctamente los límites de la herramienta. Ida y vuelta históricas releídas directamente; la ida es correcta y no se cambia su rúbrica."
+          }
+        }
+      },
+      {
+        "record_id": "f2d453d23fc47a28e0e7743928044a6370e4b0f61ec4956088c41924840e35e2",
+        "translation_hash": "2c426469740af6cd7d87b046fbf4ccd50b6aa26b88ed838e2e36575f1ec9a7df",
+        "back_translation_hash": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Misma variante en el alias de FAQ, que requiere su regresión ligada a clave/fuente. Ida correcta. Ida y vuelta históricas releídas directamente; la ida es correcta y no se cambia su rúbrica."
+          }
+        }
+      }
+    ],
+    "note": "V14 discovery: additional back-only warning for exact old raw text, no original rubric, forward warning or gate override."
+  },
+  {
+    "review_file": "review-context-v13-full.json",
+    "review_file_sha256": "de206636a5921a71480e334962342439565c136c105e2aadeb895d86c3410e32",
+    "review_digest": "b2ef06557ddad517edba7886261a72fc1af9ab2243c583ccbd751ef6aaf54cba",
+    "reviewed_at_utc": "2026-10-22T11:41:02.986664+00:00",
+    "reviewer": "Codex (agente)",
+    "native_review": false,
+    "warning_reconciliation": [
+      {
+        "record_id": "2f7e69fe482582093f5ae42f4545024d6c55df788fae8752321785c1c1238dda",
+        "translation_hash": "64fa0b3b79c2ecf535cd942217107d02142b373ed2e51dc263104147cfcceac7",
+        "back_translation_hash": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Cambia sujeto y función de la explicación; la ida describe correctamente los límites de la herramienta. Ida y vuelta históricas releídas directamente; la ida es correcta y no se cambia su rúbrica."
+          }
+        }
+      },
+      {
+        "record_id": "87aba6b1a7094e471c7a6498ae2131f5ad9041c1579bb210726f8cd05696442b",
+        "translation_hash": "64fa0b3b79c2ecf535cd942217107d02142b373ed2e51dc263104147cfcceac7",
+        "back_translation_hash": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Misma variante en el alias de FAQ, que requiere su regresión ligada a clave/fuente. Ida correcta. Ida y vuelta históricas releídas directamente; la ida es correcta y no se cambia su rúbrica."
+          }
+        }
+      }
+    ],
+    "note": "V14 discovery: additional back-only warning for exact old raw text, no original rubric, forward warning or gate override."
+  },
+  {
+    "review_file": "review-context-v9-full.json",
+    "review_file_sha256": "1bcb80bfc3f4eb636f52baab2988aaaa5d12afdb91068a83342bf8b739f45295",
+    "review_digest": "a4f65f4e05ff54778e07bd2fcc8db4767ff30d9fb6df702eeddb0466eabe5653",
+    "reviewed_at_utc": "2026-10-22T11:41:02.986664+00:00",
+    "reviewer": "Codex (agente)",
+    "native_review": false,
+    "warning_reconciliation": [
+      {
+        "record_id": "640821b9f2a94b88ee6c32db8294c1d3ba6a2f6e03c76551ec9d2cebb759814c",
+        "translation_hash": "2c426469740af6cd7d87b046fbf4ccd50b6aa26b88ed838e2e36575f1ec9a7df",
+        "back_translation_hash": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Cambia sujeto y función de la explicación; la ida describe correctamente los límites de la herramienta. Ida y vuelta históricas releídas directamente; la ida es correcta y no se cambia su rúbrica."
+          }
+        }
+      },
+      {
+        "record_id": "ae00c4d21325b178451e4e82a2dc673510e815da00d1ffd4ecf65d9b2aa72607",
+        "translation_hash": "2c426469740af6cd7d87b046fbf4ccd50b6aa26b88ed838e2e36575f1ec9a7df",
+        "back_translation_hash": "65a088863f053b538ececfa2897fb11e9593ca1429b10872c9adf6125ffc2289",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Misma variante en el alias de FAQ, que requiere su regresión ligada a clave/fuente. Ida correcta. Ida y vuelta históricas releídas directamente; la ida es correcta y no se cambia su rúbrica."
+          }
+        }
+      }
+    ],
+    "note": "V14 discovery: additional back-only warning for exact old raw text, no original rubric, forward warning or gate override."
   }
 ]

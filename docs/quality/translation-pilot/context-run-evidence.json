@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-22T11:17:13.361494+00:00",
+  "at_utc": "2026-10-22T11:43:13.761150+00:00",
   "approved_locales": [],
   "runs": [
     {
@@ -719,6 +719,41 @@
       "cleanup": "success",
       "site_job": "skipped",
       "artifacts": 0
+    },
+    {
+      "inference_policy": "context-v14",
+      "run_id": 39769512465,
+      "job_id": 119793226109,
+      "source_commit": "08a0498a2dd1e14b8ee7330a577366c87f9f0276",
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 106.59977603799996,
+        "counts": {
+          "legacy": 348,
+          "model": 348,
+          "reviewed_memory_hits": 135
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3777264,
+        "scope": "full",
+        "total_seconds": 832.6409289359999
+      },
+      "cleanup": "success",
+      "site_job": "skipped",
+      "artifacts": 0
     }
   ],
   "checkpoints": [
@@ -744,8 +779,8 @@
     },
     {
       "path": "checkpoints/context-v14/madlad.jsonl",
-      "records": 160,
-      "sha256": "58b48749e2aa26028af1e1bbc1670737ec60c0e732fe37504667a65b4e251867"
+      "records": 856,
+      "sha256": "2abfed40e0b3a79e2113b6664a7b6968e0878b10265efacd5710c833e9f5fb50"
     },
     {
       "path": "checkpoints/context-v2/m2m100.jsonl",
@@ -803,7 +838,7 @@
       "sha256": "e8e4ece85552fe89bdb9518bc8eeca91b5a9b446fcbe4c3694b95f8b70290643"
     }
   ],
-  "total_records": 11225,
+  "total_records": 11921,
   "cancelled_runs": [
     {
       "run_id": 39484416039,

@@ -5338,5 +5338,55 @@
     "direction": "back",
     "observed_candidate": "madlad/context-v13",
     "actions_run_id": "39737830473"
+  },
+  {
+    "key": "voice-changer.fields.device",
+    "source_hash": "1b1a9c9785d90d1a99052625add45a8bb133b41268cf20f501f27ed2ec72d0a2",
+    "locale": "es",
+    "direction": "forward",
+    "translation": "Se recomienda una computadora para un procesamiento más suave. La velocidad y el uso de la memoria dependen del dispositivo.",
+    "issue": "Procesamiento más suave calca smoother con una cualidad táctil; en rendimiento informático corresponde procesamiento más fluido. Recomendación, dependencia del dispositivo y datos conservados; defecto leve de naturalidad, no de cifras ni negaciones.",
+    "observed_candidate": "madlad/context-v14",
+    "actions_run_id": "39769512465"
+  },
+  {
+    "key": "voice-changer.intro",
+    "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+    "locale": "es",
+    "direction": "back",
+    "translation": "Give a short audio clip a lower or higher pitch, or a radio, glow, or echo effect. Preview the result, adjust it, and export a WAV file on your device.",
+    "issue": "Glow usa brillo visual en vez de timbre brillante de audio; la ida brillo en contexto de efectos de sonido es correcta. Variante cruda nueva, no reparar la ida.",
+    "observed_candidate": "madlad/context-v14",
+    "actions_run_id": "39769512465"
+  },
+  {
+    "key": "voice-changer.intro",
+    "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+    "locale": "nb-NO",
+    "direction": "back",
+    "translation": "Give a short audio clip a deeper pitch, higher pitch, radio sound, brighter reverb, or echo effect. Preview the result, adjust it and export a WAV file on your device.",
+    "issue": "Brighter reverb sustituye lysere klang (timbre brillante) por reverberación, mientras el eco ya es un efecto distinto. Variante cruda nueva; ida correcta.",
+    "observed_candidate": "madlad/context-v14",
+    "actions_run_id": "39769512465"
+  },
+  {
+    "key": "voice-changer.faq.2.a",
+    "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+    "locale": "es",
+    "direction": "back",
+    "translation": "This tool cannot clone a person or isolate a voice track. You cannot make a voice sound like another real person. Just add simple audio effects.",
+    "issue": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Cambia sujeto y función de la explicación; la ida describe correctamente los límites de la herramienta.",
+    "observed_candidate": "madlad/context-v14",
+    "actions_run_id": "39769512465"
+  },
+  {
+    "key": "voice-changer.fields.faq3a",
+    "source_hash": "809eaffb0f717879b5b5041d5d9bb7340dfbd8d1e77a5eed2a135d8fba01bcdf",
+    "locale": "es",
+    "direction": "back",
+    "translation": "This tool cannot clone a person or isolate a voice track. You cannot make a voice sound like another real person. Just add simple audio effects.",
+    "issue": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Misma variante en el alias de FAQ, que requiere su regresión ligada a clave/fuente. Ida correcta.",
+    "observed_candidate": "madlad/context-v14",
+    "actions_run_id": "39769512465"
   }
 ]
