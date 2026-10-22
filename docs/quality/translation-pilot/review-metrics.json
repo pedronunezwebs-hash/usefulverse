@@ -1,9 +1,9 @@
 {
-  "at_utc": "2026-10-22T07:02:03.042036+00:00",
+  "at_utc": "2026-10-22T07:22:21.417975+00:00",
   "automatic_approval": false,
   "approved_locales": [],
   "note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
-  "evaluations": 3074,
+  "evaluations": 3424,
   "groups": [
     {
       "review_file": "review-context-v2-m2m100.json",
@@ -864,6 +864,32 @@
       "minor_rows": 0
     },
     {
+      "review_file": "review-context-v13-full.json",
+      "policy": "context-v13",
+      "locale": "es",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "rows": 174,
+      "points": 1565,
+      "maximum": 1566,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 1
+    },
+    {
+      "review_file": "review-context-v13-full.json",
+      "policy": "context-v13",
+      "locale": "nb-NO",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "rows": 174,
+      "points": 1565,
+      "maximum": 1566,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 1
+    },
+    {
       "review_file": "review-context-v13-references.json",
       "policy": "context-v13",
       "locale": "es",
@@ -888,6 +914,32 @@
       "number_negation_errors": 0,
       "major_rows": 0,
       "minor_rows": 0
+    },
+    {
+      "review_file": "review-context-v11-late-v13.json",
+      "policy": "context-v11",
+      "locale": "es",
+      "candidate": "madlad-historical-extra-review",
+      "rows": 1,
+      "points": 8,
+      "maximum": 9,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 1
+    },
+    {
+      "review_file": "review-context-v9-late-v13.json",
+      "policy": "context-v9",
+      "locale": "es",
+      "candidate": "madlad-historical-extra-review",
+      "rows": 1,
+      "points": 8,
+      "maximum": 9,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 1
     }
   ]
 }

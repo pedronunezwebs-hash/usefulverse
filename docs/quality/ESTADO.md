@@ -11,9 +11,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 ## 1. Siguiente paso exacto
 
-**V13 en curso:** 23 trazas v12 reproducidas; política independiente88claves/154destinos. [Referencias39736865789](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39736865789), fuente `717c7aa`: ES/NB360/360;80 idas/vueltas leídas,13 avisos reconciliados,8 defectos solo de vuelta.75/80 idas iguales a v12 por hashes,5 cambiadas revisadas.85 tests con dependencias reales, limpieza correcta,0artefactos.10.369 registros/3.074evaluaciones/571fixtures,0idiomas aprobados. Completo autorizado tras este prerrequisito; leer todos428 y conservar88 comparables. Informe `docs/quality/lotes/2026-10-22-piloto-v13.md`.
-
-**Completo v13 en curso:** [39737830473](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39737830473), fuente `22e139ef094cff6c0e677cee5b721e0687e6146d`; reanuda160 registros. Recuperar este run y sus logs, no relanzar. Revisión completa pendiente;0idiomas aprobados.
+**V13 revisada; CI final y cierre pendientes:** referencias39736865789, completo39737830473, fuente `22e139e`.23 fallos previos corregidos;428 candidatos leídos.88 conocidas792/792 por idioma; global bloqueado por2 fallos leves nuevos fuera de88 (ES artículo en statusPlaced; NB for å en statusRevealed).El mínimo de estilo1/20 se cumple, pero el plan ampliado exige reparar los defectos observados.7 variantes nuevas de vuelta separadas.9 casos primero rojos y luego580fixtures;47+13 registros con avisos reconciliados. Dos suplementos históricos1fila v9/v11, tres vínculos por hashes, sin editar rúbricas/gates originales.11.065registros/3.424evaluaciones/580fixtures(510ida/70vuelta),0idiomas aprobados. Recuperar ambos runs, no repetir. Siguiente: CI final, respaldo, liberar candado y limpiar; después v14 independiente para esos2fallos.
 
 1. **Paso A preparado en el PR [#136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador, rama `feat/new-tools-batch-1`.**
    Las 300 fuentes del respaldo privado `usefulverse-300-worktree-backup-20261020`, rama

@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-22T07:02:03.042036+00:00",
+  "at_utc": "2026-10-22T07:22:21.417975+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 3074,
+  "agent_reviewed_translations": 3424,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,16 +315,16 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 3074,
+  "agent_reviewed_evaluations": 3424,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
     "nb-NO"
   ],
-  "full_tool_computation_policy": "context-v11",
+  "full_tool_computation_policy": "context-v13",
   "full_tool_pilot_approved_locales": [],
-  "total_records_all_policies": 10369,
-  "semantic_regressions": 571,
+  "total_records_all_policies": 11065,
+  "semantic_regressions": 580,
   "contextual_reference_gate": {
     "es": {
       "button_number_negation_errors": 0,
@@ -351,20 +351,32 @@
     "es": {
       "passed": false,
       "sample": 88,
+      "fixed_sample_points": 792,
+      "fixed_sample_maximum": 792,
+      "fixed_sample_passed": true,
+      "expanded_nonreference_rows": 174,
+      "expanded_points": 1565,
+      "expanded_maximum": 1566,
       "button_errors": 0,
       "number_negation_errors": 0,
       "major_rows": 0,
-      "minor_rows": 7,
-      "reason": "API identifier Web Audio lost;7 minor rows exceed <=1/20."
+      "minor_rows": 1,
+      "reason": "All174 nonreference current source/forward/back inspected; original88 scored separately. Known-source memory repairs do not demonstrate generalization or allow release. Further locales and engine comparison pending."
     },
     "nb-NO": {
       "passed": false,
       "sample": 88,
+      "fixed_sample_points": 792,
+      "fixed_sample_maximum": 792,
+      "fixed_sample_passed": true,
+      "expanded_nonreference_rows": 174,
+      "expanded_points": 1565,
+      "expanded_maximum": 1566,
       "button_errors": 0,
       "number_negation_errors": 0,
-      "major_rows": 4,
-      "minor_rows": 5,
-      "reason": "Four major and five minor grammar/compound errors; reference success does not permit release."
+      "major_rows": 0,
+      "minor_rows": 1,
+      "reason": "All174 nonreference current source/forward/back inspected; original88 scored separately. Known-source memory repairs do not demonstrate generalization or allow release. Further locales and engine comparison pending."
     }
   },
   "contextual_policies_reviewed": [
@@ -394,5 +406,5 @@
     "sample_size": 80,
     "completed": false
   },
-  "full_tool_gate_policy": "context-v11"
+  "full_tool_gate_policy": "context-v13"
 }

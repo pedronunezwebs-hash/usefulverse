@@ -639,5 +639,136 @@
     "all154_memory_targets_typed_valid": true,
     "previous_files_immutable": 50,
     "unchanged_inference_AST_functions": 7
+  },
+  "observed_full_at_utc": "2026-10-22T07:20:54.033419+00:00",
+  "observed_regressions_red": {
+    "command": "PYTHONPATH=scripts/localization python3 -m unittest test_translation_pilot.TranslationPilotTest.test_observed_semantic_errors_are_rejected_even_when_tokens_survive",
+    "tests": 1,
+    "failing_subtests": 9,
+    "log_sha256": "b032ebbc0d9be96107010dcd1c4000ff1871020f218e96f2dd9419a75ad45471",
+    "method": "All428 current source/forward/back candidates directly read; two negative forward rubrics and seven new back variants recorded independently before fixture additions. Nine failing subtests observed first; no raw output repaired."
+  },
+  "fixtures_before": 571,
+  "fixtures_after": 580,
+  "new_findings": [
+    {
+      "direction": "forward",
+      "locale": "es",
+      "key": "shikaku.fields.statusPlaced",
+      "source_hash": "a4ebba15893aa46fa3088c8feccb9426e6f8b20ec475561a3869f242b4f07390",
+      "observed_text_sha256": "a53c2d720c60192f95aab05588b1c1a661870df0c8003d0eb5250cec79681413",
+      "issue": "Se ha añadido rectángulo omite el artículo ante el nombre contable en una oración conjugada; debe decir Se ha añadido un rectángulo o Rectángulo añadido. Acción y estado conservados, defecto leve de gramática.",
+      "record_id": "8ecae0c8823df7cfcaa6cebb55061fe353f997ce9fa01c5c81533da63e055d4c",
+      "run_id": 39737830473,
+      "source_commit": "22e139ef094cff6c0e677cee5b721e0687e6146d"
+    },
+    {
+      "direction": "forward",
+      "locale": "nb-NO",
+      "key": "shikaku.fields.statusRevealed",
+      "source_hash": "fba57a4557f089d9e7b59719751802d531a121d417f1b6422716c35c56bc9f91",
+      "observed_text_sha256": "8dcdf542c820dd556704d826c5dfb2bb2424dab4bf1a9a6dcf4b1953995a6e6b",
+      "issue": "Start en ny oppgave å spille igjen omite for ante la subordinada de finalidad: Start en ny oppgave for å spille igjen. Estado y acción conservados, defecto leve de gramática.",
+      "record_id": "a3909f53260965cdac9f89d840afb46c0d1636a5b3399fb27d5d3ec2996149e9",
+      "run_id": 39737830473,
+      "source_commit": "22e139ef094cff6c0e677cee5b721e0687e6146d"
+    },
+    {
+      "direction": "back",
+      "locale": "es",
+      "key": "shikaku.fields.covered",
+      "source_hash": "d8273af5d600bea587f682d81abbbf72bce880dbf44244697c7aeec2aced68af",
+      "observed_text_sha256": "cd069e23142c3eac098585a1c787ea5013d6841ff63d6cd75e3a0f03a428b6a2",
+      "issue": "Covered polling stations convierte las casillas del tablero en centros de votación. La ida Casillas cubiertas sí conserva el sentido de la cuadrícula.",
+      "record_id": "1aca02ddb580ae573dbeb068491fd6fa17d091064a98ea8e602cb432126546bd",
+      "run_id": 39737830473,
+      "source_commit": "22e139ef094cff6c0e677cee5b721e0687e6146d"
+    },
+    {
+      "direction": "back",
+      "locale": "es",
+      "key": "voice-changer.intro",
+      "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+      "observed_text_sha256": "3261cc503883d17e6087c29574614eea1f92a2739f9237e557bef3adb49b6ffb",
+      "issue": "Glow usa el sentido de brillo visual en lugar de timbre brillante del audio. La ida distingue tono grave/agudo, radio, brillo de audio y eco; no se altera por esta vuelta.",
+      "record_id": "1fb3d9348766e08d04c863fa1a1c9b76d9f6e32c18acebc68fdba7872db6f3e5",
+      "run_id": 39737830473,
+      "source_commit": "22e139ef094cff6c0e677cee5b721e0687e6146d"
+    },
+    {
+      "direction": "back",
+      "locale": "nb-NO",
+      "key": "shikaku.details",
+      "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+      "observed_text_sha256": "fb8f12dc9173ba52d89be718aee39fdb47f432a548d39e6ba6eada1f6971ea32",
+      "issue": "Start pane y end pane cambian casillas de la cuadrícula por paneles de interfaz. La ida startrute/sluttrute mantiene las casillas inicial/final y el área por número de ruter.",
+      "record_id": "75e754fa9f9662b81f65c73cff10028d9075750a98afc8a2209498c9b845a0e6",
+      "run_id": 39737830473,
+      "source_commit": "22e139ef094cff6c0e677cee5b721e0687e6146d"
+    },
+    {
+      "direction": "back",
+      "locale": "nb-NO",
+      "key": "shikaku.fields.faq.0.a",
+      "source_hash": "1da9eab3e79e5ba1c578b590065014537d077420ad02d77072da8a8f5d7355b5",
+      "observed_text_sha256": "2771ec378d972d933c531185ae65de13db0863769b6c4ec9eb4dd6805a0baacd",
+      "issue": "Paths y routes cambian ruter (casillas del tablero) por caminos/rutas. La ida exige cubrir cada casilla exactamente una vez y el área coincide con su pista.",
+      "record_id": "dee551fa46583c5ac3b38f8cf45b72fbfea9ee2454759fc7e970e30a9a8cc441",
+      "run_id": 39737830473,
+      "source_commit": "22e139ef094cff6c0e677cee5b721e0687e6146d"
+    },
+    {
+      "direction": "back",
+      "locale": "nb-NO",
+      "key": "voice-changer.description",
+      "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+      "observed_text_sha256": "23bda6a1e81e01dc549ed4c545ec4466583a3fcc92dccd6f03f0899b3f6ed094",
+      "issue": "Change the pitch of this device atribuye tono al aparato, en lugar de cambiar el tono de audio en este dispositivo. La ida på denne enheten conserva el procesamiento local en contexto de audio.",
+      "record_id": "1260a023c0a018be5496dd1f7a55d162cbf5e836e9216293888bd2ba1284bb78",
+      "run_id": 39737830473,
+      "source_commit": "22e139ef094cff6c0e677cee5b721e0687e6146d"
+    },
+    {
+      "direction": "back",
+      "locale": "nb-NO",
+      "key": "voice-changer.intro",
+      "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+      "observed_text_sha256": "2d5f7fca44e3ba862938f8ee56ec7c250485b20cf3c83a0e8ec94d848ffaed46",
+      "issue": "Brighter reverb sustituye lysere klang (timbre más brillante) por reverberación; el eco ya es otra opción. La ida conserva timbre, tono, radio, eco y exportación local.",
+      "record_id": "3bd6e89fe03f78b1942a95507c541d10d31dd591bfcd77d698531aee77453a37",
+      "run_id": 39737830473,
+      "source_commit": "22e139ef094cff6c0e677cee5b721e0687e6146d"
+    },
+    {
+      "direction": "back",
+      "locale": "nb-NO",
+      "key": "voice-changer.limits",
+      "source_hash": "72eaa6afc178fd8d0e8f7da5c73ba70e6a5473c00316ce0df573d3b309416522",
+      "observed_text_sha256": "3f3b192ba0838ebcbc3efa9aded0fa2b46a8dadb4bdab262dadf6e2e2217d2a5",
+      "issue": "Distinguish voices significa distinguir/reconocer voces, en lugar de aislar/separar sus pistas. La ida skille ut stemmer conserva el aislamiento de audio que el programa no ofrece.",
+      "record_id": "dd08ec34925059a393b7432d8d0a8ebf6e2d1fbb5343c4142034aa45f731089d",
+      "run_id": 39737830473,
+      "source_commit": "22e139ef094cff6c0e677cee5b721e0687e6146d"
+    }
+  ],
+  "historical_coverage": {
+    "observed_full_suite_failure": "Strict warning coverage caught one newly flagged historical outside-sample record per v9/v11; no original rubric replaced.",
+    "red_tests": 85,
+    "red_errors": 1,
+    "dependency_skips": 2,
+    "log_sha256": "86afd9db7234b2d9a00bf6a956dd21061737211eabc547a72ea6608232cbda55",
+    "supplemental_review_files": [
+      "review-context-v9-late-v13.json",
+      "review-context-v11-late-v13.json"
+    ],
+    "new_historical_evaluations": 2,
+    "new_hash_bindings": 3,
+    "old_bindings_preserved": 3
+  },
+  "final_local_suite": {
+    "tests": 85,
+    "pass": 83,
+    "dependency_skips": 2,
+    "log_sha256": "6d755b4decdc53a4b90b7eeb2ea2ebbb7b1483714e5ad3fc04cd424147c4a2ef"
   }
 }

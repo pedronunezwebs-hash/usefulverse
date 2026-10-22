@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "expected_rows": 1,
+  "inference_policy": "context-v9",
+  "reviewer": "Codex (agente, sin API de pago)",
+  "reviewed_at_utc": "2026-10-22T07:22:21.319582+00:00",
+  "native_review": false,
+  "rubric": "REVISION-FINAL §2: meaning, numbers_negations, naturalness 0–3.",
+  "scope": "One historical record previously outside reviewed scope, now flagged by independently observed v13 fixture. Actual source/forward/back directly read.",
+  "decision": "historical-additional-coverage-no-gate-override",
+  "approved_locales": [],
+  "rows": [
+    {
+      "locale": "es",
+      "key": "shikaku.fields.statusPlaced",
+      "source_hash": "a4ebba15893aa46fa3088c8feccb9426e6f8b20ec475561a3869f242b4f07390",
+      "candidate": "madlad-historical-extra-review",
+      "translation_hash": "a53c2d720c60192f95aab05588b1c1a661870df0c8003d0eb5250cec79681413",
+      "record_ids": [
+        "978398e72de8b71f24d7e9b280cc404b83517ca1e6f34d2599b6cd1144422dcb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "critical_control": false,
+      "notes": [
+        "Se ha añadido rectángulo omite artículo ante el nombre contable en una oración conjugada. El estado de rectángulo añadido se entiende; defecto leve de gramática. Fuente/ida/vuelta histórica leídas directamente; la vuelta Rectangle added es correcta. Caso fuera de los registros ya revisados; no reemplaza rúbricas/gates anteriores."
+      ],
+      "score_origin": "new-direct-historical-agent-review"
+    }
+  ],
+  "warning_reconciliation": [
+    {
+      "record_id": "978398e72de8b71f24d7e9b280cc404b83517ca1e6f34d2599b6cd1144422dcb",
+      "translation_hash": "a53c2d720c60192f95aab05588b1c1a661870df0c8003d0eb5250cec79681413",
+      "back_translation_hash": "a4ebba15893aa46fa3088c8feccb9426e6f8b20ec475561a3869f242b4f07390",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Se ha añadido rectángulo omite artículo ante el nombre contable en una oración conjugada. El estado de rectángulo añadido se entiende; defecto leve de gramática. Fuente/ida/vuelta histórica leídas directamente; la vuelta Rectangle added es correcta. Caso fuera de los registros ya revisados; no reemplaza rúbricas/gates anteriores."
+        }
+      }
+    }
+  ],
+  "back_findings": []
+}

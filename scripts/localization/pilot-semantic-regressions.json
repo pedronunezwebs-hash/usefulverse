@@ -5248,5 +5248,95 @@
     "issue": "Voice Changer Online deja sin localizar la intención principal del título; no es una marca propia.",
     "observed_candidate": "madlad/context-v12",
     "actions_run_id": "39730859028"
+  },
+  {
+    "key": "shikaku.fields.statusPlaced",
+    "locale": "es",
+    "source_hash": "a4ebba15893aa46fa3088c8feccb9426e6f8b20ec475561a3869f242b4f07390",
+    "translation": "Se ha añadido rectángulo.",
+    "issue": "Se ha añadido rectángulo omite el artículo ante el nombre contable en una oración conjugada; debe decir Se ha añadido un rectángulo o Rectángulo añadido. Acción y estado conservados, defecto leve de gramática.",
+    "direction": "forward",
+    "observed_candidate": "madlad/context-v13",
+    "actions_run_id": "39737830473"
+  },
+  {
+    "key": "shikaku.fields.statusRevealed",
+    "locale": "nb-NO",
+    "source_hash": "fba57a4557f089d9e7b59719751802d531a121d417f1b6422716c35c56bc9f91",
+    "translation": "Løsning vist. Start en ny oppgave å spille igjen.",
+    "issue": "Start en ny oppgave å spille igjen omite for ante la subordinada de finalidad: Start en ny oppgave for å spille igjen. Estado y acción conservados, defecto leve de gramática.",
+    "direction": "forward",
+    "observed_candidate": "madlad/context-v13",
+    "actions_run_id": "39737830473"
+  },
+  {
+    "key": "shikaku.fields.covered",
+    "locale": "es",
+    "source_hash": "d8273af5d600bea587f682d81abbbf72bce880dbf44244697c7aeec2aced68af",
+    "translation": "Covered polling stations",
+    "issue": "Covered polling stations convierte las casillas del tablero en centros de votación. La ida Casillas cubiertas sí conserva el sentido de la cuadrícula.",
+    "direction": "back",
+    "observed_candidate": "madlad/context-v13",
+    "actions_run_id": "39737830473"
+  },
+  {
+    "key": "voice-changer.intro",
+    "locale": "es",
+    "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+    "translation": "Give a short audio clip a lower or higher pitch, or a radio, glow, or echo effect. Preview the result, adjust it and export a WAV file on your device.",
+    "issue": "Glow usa el sentido de brillo visual en lugar de timbre brillante del audio. La ida distingue tono grave/agudo, radio, brillo de audio y eco; no se altera por esta vuelta.",
+    "direction": "back",
+    "observed_candidate": "madlad/context-v13",
+    "actions_run_id": "39737830473"
+  },
+  {
+    "key": "shikaku.details",
+    "locale": "nb-NO",
+    "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+    "translation": "Select a start pane and then an end pane to draw a rectangle. You can also drag over the grid. Each rectangle must contain exactly one number clue. The number must be equal to the number of squares in the rectangle.",
+    "issue": "Start pane y end pane cambian casillas de la cuadrícula por paneles de interfaz. La ida startrute/sluttrute mantiene las casillas inicial/final y el área por número de ruter.",
+    "direction": "back",
+    "observed_candidate": "madlad/context-v13",
+    "actions_run_id": "39737830473"
+  },
+  {
+    "key": "shikaku.fields.faq.0.a",
+    "locale": "nb-NO",
+    "source_hash": "1da9eab3e79e5ba1c578b590065014537d077420ad02d77072da8a8f5d7355b5",
+    "translation": "Shikaku is a number puzzle game. Draw rectangles around the number clues. The number in each clue indicates how many paths the rectangle must cover. Use each route in the grid exactly once.",
+    "issue": "Paths y routes cambian ruter (casillas del tablero) por caminos/rutas. La ida exige cubrir cada casilla exactamente una vez y el área coincide con su pista.",
+    "direction": "back",
+    "observed_candidate": "madlad/context-v13",
+    "actions_run_id": "39737830473"
+  },
+  {
+    "key": "voice-changer.description",
+    "locale": "nb-NO",
+    "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+    "translation": "Change the pitch of this device. Add a radio effect or a deep voice effect. Listen to the echo effect. Export the processed audio on this device. This tool is free and private. Audio is never sent to a server.",
+    "issue": "Change the pitch of this device atribuye tono al aparato, en lugar de cambiar el tono de audio en este dispositivo. La ida på denne enheten conserva el procesamiento local en contexto de audio.",
+    "direction": "back",
+    "observed_candidate": "madlad/context-v13",
+    "actions_run_id": "39737830473"
+  },
+  {
+    "key": "voice-changer.intro",
+    "locale": "nb-NO",
+    "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+    "translation": "Give a short audio clip a deeper tone, higher tone, radio sound, brighter reverb, or echo effect. Preview the result, adjust it and export a WAV file on your device.",
+    "issue": "Brighter reverb sustituye lysere klang (timbre más brillante) por reverberación; el eco ya es otra opción. La ida conserva timbre, tono, radio, eco y exportación local.",
+    "direction": "back",
+    "observed_candidate": "madlad/context-v13",
+    "actions_run_id": "39737830473"
+  },
+  {
+    "key": "voice-changer.limits",
+    "locale": "nb-NO",
+    "source_hash": "72eaa6afc178fd8d0e8f7da5c73ba70e6a5473c00316ce0df573d3b309416522",
+    "translation": "This lightweight tool is made for short clips, not whole songs. The pitch is changed by adjusting the playback speed. Therefore, the clip duration and voice pitch are changed simultaneously. The effects cannot create a natural new voice identity, distinguish voices, or guarantee the same result in all browsers.",
+    "issue": "Distinguish voices significa distinguir/reconocer voces, en lugar de aislar/separar sus pistas. La ida skille ut stemmer conserva el aislamiento de audio que el programa no ofrece.",
+    "direction": "back",
+    "observed_candidate": "madlad/context-v13",
+    "actions_run_id": "39737830473"
   }
 ]

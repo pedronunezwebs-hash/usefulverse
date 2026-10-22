@@ -1,0 +1,29 @@
+{
+  "at_utc": "2026-10-22T07:14:10.319538+00:00",
+  "tools": [
+    {
+      "tool": "actionlint",
+      "archive": "actionlint_1.7.12_darwin_arm64.tar.gz",
+      "sha256": "aba9ced2dee8d27fecca3dc7feb1a7f9a52caefa1eb46f3271ea66b6e0e6953f",
+      "official_checksum_verified": true
+    },
+    {
+      "tool": "gitleaks",
+      "archive": "gitleaks_8.30.1_darwin_arm64.tar.gz",
+      "sha256": "b40ab0ae55c505963e365f271a8d3846efbc170aa17f2607f13df610a9aeb6a5",
+      "official_checksum_verified": true
+    }
+  ],
+  "actionlint": {
+    "version": "1.7.12",
+    "workflow": ".github/workflows/deploy-cloudflare.yml",
+    "exit_code": 0
+  },
+  "gitleaks_preliminary": {
+    "version": "8.30.1",
+    "mode": "dir --redact",
+    "leaks": 0,
+    "log_sha256": "deb4ea3f01b64dd656cbd3e76df24ac3eeb91b4fd907beebaca8a8911f776fb3"
+  },
+  "scope": "Only isolated public-repository translation infrastructure; no Cloudflare operation, paid API, Codespaces, Packages, LFS, cache or artifact upload. Standard ubuntu-latest runners."
+}
