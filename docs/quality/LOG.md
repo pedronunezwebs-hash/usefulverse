@@ -174,3 +174,5 @@ V13 referencias verificadas:39736865789,fuente717c7aa,ES/NB360/360;80 idas/vuelt
 **Completo v13 en curso:** [39737830473](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39737830473), fuente `22e139ef094cff6c0e677cee5b721e0687e6146d`; reanuda160 registros. Recuperar este run y sus logs, no relanzar. Revisión completa pendiente;0idiomas aprobados.
 
 V13 completo revisado:23 fallos anteriores corregidos,2 leves nuevos fuera de88;88 conocidas792/792 por idioma, global conservador bloqueado.428 candidatos leídos,47+13avisos,35+8hallazgos de vuelta separados.9casos primero rojos;580fixtures510ida/70vuelta. Suplementos históricosv9/v11:1fila cada uno,3vínculos por hashes, originales intactos.11.065registros/3.424evaluaciones.85tests ligeros(83+2dependencias).CI final y cierre pendientes;0idiomas aprobados/0deploy.
+
+**CI final v13 en curso:** [39740313985](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39740313985), fuente `d6d4019fa0ef79b7c399c4130c10c376d90d3904`, árbol idéntico a datos `92c4eea`. Recuperar este run; no desplegar.
