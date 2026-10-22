@@ -1,0 +1,96 @@
+{
+  "runs": [
+    {
+      "run_id": 39736862405,
+      "job_id": 119684478190,
+      "source_commit": "717c7aa7e9617f2e7cf3bae2f338a8a9e9f8fbff",
+      "event": "pull_request",
+      "conclusion": "success",
+      "log_sha256": "8674ac133c91e5ba5c891df11dd11f4c9190e6e0d93be1707f48cf72811ad8e3",
+      "artifacts": 0,
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out source",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Node.js",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install dependencies",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run tests",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build and validate all pages",
+          "conclusion": "success"
+        },
+        {
+          "name": "Require linguistic approval for expanded locales",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build and validate the isolated tools hub",
+          "conclusion": "success"
+        },
+        {
+          "name": "Validate the 300 staged tools without publishing",
+          "conclusion": "success"
+        },
+        {
+          "name": "Publish to the existing Cloudflare Pages project",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Publish the separate static tools hub",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Post Set up Node.js",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out source",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ],
+      "evidence_lines": [
+        "2026-10-22T06:54:30.9649451Z ✔ a repeated position is moved by one fret and answers are checked exactly (1.70536ms)",
+        "2026-10-22T06:54:58.2853540Z ✔ all 300 imported candidates are explicitly non-indexable; all 217 existing hub tools retain indexability (1.87171ms)",
+        "2026-10-22T06:54:58.2859926Z ✔ unapproved copy exemption cannot be used on an indexable tool (2.520926ms)",
+        "2026-10-22T06:54:58.2994669Z ✔ binary input is type-checked and bounded before encoding (0.618779ms)",
+        "2026-10-22T06:54:58.3533176Z ✔ word bank, difficulty, random source and multi-grapheme guesses are validated (0.91325ms)",
+        "2026-10-22T06:54:58.4074418Z ✔ dates, mood scale, tags and note length are validated (0.652742ms)",
+        "2026-10-22T06:54:58.4523407Z ✔ inputs, target URLs, agents and complexity are bounded and validated (12.624479ms)",
+        "2026-10-22T06:54:58.4629539Z ✔ generation is fresh, bounded, and every supported size has one checked loop solution (31.46343ms)",
+        "2026-10-22T06:54:58.4631824Z ✔ inputs and budgets are range checked (0.711091ms)",
+        "2026-10-22T06:54:58.4704875Z ✔ JSON backup round-trips validated itinerary data and rejects unsupported/corrupt structures (0.78506ms)",
+        "2026-10-22T06:54:58.4769363Z ✔ Arabic digits, decimal punctuation, boundaries and malformed pairs are checked (1.4739ms)",
+        "2026-10-22T06:54:58.4773867Z ✔ uses the supplied local issue date and preserves checked task state when rebuilding (1.646923ms)",
+        "2026-10-22T06:55:24.5911066Z ✔ validated exported plans round-trip and reject duplicate IDs or excess capacity (0.702465ms)",
+        "2026-10-22T06:56:14.1785764Z ✔ PWA manifest uses validated same-origin paths and standard display/color values (0.707365ms)",
+        "2026-10-22T06:56:14.1787414Z ℹ tests 3045",
+        "2026-10-22T06:56:14.1787858Z ℹ pass 3045",
+        "2026-10-22T06:56:14.1788065Z ℹ fail 0",
+        "2026-10-22T06:56:14.1788676Z ℹ skipped 0",
+        "2026-10-22T06:56:35.9004630Z Ran 85 tests in 21.370s",
+        "2026-10-22T06:56:35.9005088Z OK (skipped=2)",
+        "2026-10-22T06:58:52.7903518Z Built 0 Growth600 pages for 300 tools in 36 locales (11293 files, 241869934 bytes).",
+        "2026-10-22T06:58:54.7824729Z Verified noindex on 10800 preview tool pages (including all 10800 candidate pages) and all preview homepages; sitemap contains no indexable URLs."
+      ],
+      "at_utc": "2026-10-22T07:00:00.508374+00:00"
+    }
+  ]
+}

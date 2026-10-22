@@ -627,5 +627,17 @@
     "corpus_node_tests": 2,
     "log_sha256": "5129341e2a6d65cb0172be891c7c111451e56de79bccc03f6a47d4420e7f5f51",
     "note": "Full85-test suite before final ES intro coordination polish; rerun focused3 after polish."
+  },
+  "linguistic_rule_source": {
+    "url": "https://sprakradet.no/godt-og-korrekt-sprak/rettskriving-og-grammatikk/tegn/bindestrek/",
+    "checked_at": "2026-10-22",
+    "scope": "MIT-/DXF- and temporary compounds with proper names; compounds without spaces. Orthographic support only, not native certification."
+  },
+  "preflight": {
+    "units": 214,
+    "all_controlled_inputs_typed_valid": true,
+    "all154_memory_targets_typed_valid": true,
+    "previous_files_immutable": 50,
+    "unchanged_inference_AST_functions": 7
   }
 }
