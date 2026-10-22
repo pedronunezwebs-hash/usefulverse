@@ -51,8 +51,8 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
    Inventario actual: **9.513 registros y 2.588 evaluaciones**, 525 fixtures y 0 idiomas aprobados.
    [CI inicial 39730074541](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39730074541) verde sin publicación.
 
-   **Siguiente exacto dentro del Paso A:** ejecutar v12 completo es/nb en la misma rama con el checkpoint
-   de referencias recuperado (160 registros reanudables), sin repetir referencias ni v11.
+   **Siguiente exacto dentro del Paso A:** recuperar el [completo v12 en curso, 39730859028](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39730859028),
+   fuente `5801f4a`, es/nb y 160 referencias reanudables. No relanzar inferencia ni repetir referencias/v11.
    Revisar las mismas 68+20 conocidas desde v6 de `full-sample-v12-plan.json` y todos los avisos fuera
    de muestra. Leer ida/vuelta actuales; reutilizar rúbricas solo con fuente/ida de hashes exactos.
    La corrección de 16 salidas por memoria no demuestra generalización del modelo; distinguir su procedencia.
