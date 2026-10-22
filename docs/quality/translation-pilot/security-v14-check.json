@@ -31,5 +31,11 @@
     "gitleaks_exit": 0,
     "leaks": 0,
     "log_sha256": "2e31cf0e5baebfbf6144331234784c17f1db8fdfd01fb2d71bbe73f96b249ba0"
+  },
+  "closure_scan": {
+    "at_utc": "2026-10-22T11:59:29.309983+00:00",
+    "gitleaks_exit": 0,
+    "leaks": 0,
+    "log_sha256": "243792f7b2bbdd0ab3c8362c6595beefb64cad5bd9b27c76dd47e8c2a03b0097"
   }
 }

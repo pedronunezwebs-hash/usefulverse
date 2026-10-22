@@ -6,5 +6,8 @@
   "created_at": "2026-10-22T11:47:10Z",
   "recorded_at_utc": "2026-10-22T11:48:53.018834+00:00",
   "recover_before_relaunch": true,
-  "deployment_authorized": false
+  "deployment_authorized": false,
+  "resolved": true,
+  "conclusion": "success",
+  "verification_file": "ci-v14-verification.json"
 }
