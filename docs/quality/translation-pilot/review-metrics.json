@@ -1,9 +1,9 @@
 {
-  "at_utc": "2026-10-22T05:55:44.921373+00:00",
+  "at_utc": "2026-10-22T06:24:18.566989+00:00",
   "automatic_approval": false,
   "approved_locales": [],
   "note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
-  "evaluations": 2588,
+  "evaluations": 2994,
   "groups": [
     {
       "review_file": "review-context-v2-m2m100.json",
@@ -758,6 +758,84 @@
       "number_negation_errors": 0,
       "major_rows": 0,
       "minor_rows": 0
+    },
+    {
+      "review_file": "review-context-v11-late-v12.json",
+      "policy": "context-v11",
+      "locale": "es",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "rows": 13,
+      "points": 94,
+      "maximum": 117,
+      "button_errors": 4,
+      "number_negation_errors": 0,
+      "major_rows": 5,
+      "minor_rows": 6
+    },
+    {
+      "review_file": "review-context-v11-late-v12.json",
+      "policy": "context-v11",
+      "locale": "nb-NO",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "rows": 16,
+      "points": 131,
+      "maximum": 144,
+      "button_errors": 1,
+      "number_negation_errors": 0,
+      "major_rows": 2,
+      "minor_rows": 7
+    },
+    {
+      "review_file": "review-context-v9-late-v12.json",
+      "policy": "context-v9",
+      "locale": "es",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "rows": 13,
+      "points": 94,
+      "maximum": 117,
+      "button_errors": 4,
+      "number_negation_errors": 0,
+      "major_rows": 5,
+      "minor_rows": 6
+    },
+    {
+      "review_file": "review-context-v9-late-v12.json",
+      "policy": "context-v9",
+      "locale": "nb-NO",
+      "candidate": "madlad+historical-output-reviewed-in-v12",
+      "rows": 16,
+      "points": 131,
+      "maximum": 144,
+      "button_errors": 1,
+      "number_negation_errors": 0,
+      "major_rows": 2,
+      "minor_rows": 7
+    },
+    {
+      "review_file": "review-context-v12-full.json",
+      "policy": "context-v12",
+      "locale": "es",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "rows": 174,
+      "points": 1542,
+      "maximum": 1566,
+      "button_errors": 4,
+      "number_negation_errors": 0,
+      "major_rows": 5,
+      "minor_rows": 7
+    },
+    {
+      "review_file": "review-context-v12-full.json",
+      "policy": "context-v12",
+      "locale": "nb-NO",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "rows": 174,
+      "points": 1551,
+      "maximum": 1566,
+      "button_errors": 1,
+      "number_negation_errors": 0,
+      "major_rows": 2,
+      "minor_rows": 9
     },
     {
       "review_file": "review-context-v12-references.json",

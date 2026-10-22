@@ -34,7 +34,8 @@
   "notes": [
     "160 records:80 model candidates and80 legacy,21 reviewed-memory hits; memory is not model output. All80 source/forward and back texts identical to v11 by exact hashes and read again.",
     "ES360/360 and NB360/360 pass references only. Existing nine back defects separated from forward quality; no new defect observed. Full only after this review and warning audit pass.",
-    "Legacy80 comparisons below are historical forward scores only after exact source/target hash validation, not new evaluations. No engine frozen, no language approved or production changed."
+    "Legacy80 comparisons below are historical forward scores only after exact source/target hash validation, not new evaluations. No engine frozen, no language approved or production changed.",
+    "Completed full review linked as supplement for current complete-policy warning coverage; prior reference scores/decision unchanged."
   ],
   "rows": [
     {
@@ -1799,7 +1800,9 @@
     }
   ],
   "requires_complete_model_warning_coverage": true,
-  "warning_coverage_supplemental_reviews": [],
+  "warning_coverage_supplemental_reviews": [
+    "review-context-v12-full.json"
+  ],
   "legacy_comparison": {
     "review_file": "review-es-nb.json",
     "new_evaluations": 0,

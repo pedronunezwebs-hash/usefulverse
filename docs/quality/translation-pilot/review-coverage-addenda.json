@@ -1,0 +1,26 @@
+[
+  {
+    "review_file": "review-context-v11-full.json",
+    "review_file_sha256": "b117a7bd2177a73c1635ce17fc1d86729ae3e0196bb336b4eee60c3b48d069fa",
+    "review_digest": "1d1b0bcdc6609a368fc814211f0caf9e38fdd127a5984fecf15b95b880836951",
+    "supplemental_review": "review-context-v11-late-v12.json",
+    "supplemental_review_sha256": "a3d1421619c9f7fc92c7ecd4bdef8c94fd72306a133943f1904904576f1f818f",
+    "note": "Additional historical records only. Original bytes, scores and gate stay unchanged; new supplemental review cannot approve a language or override them."
+  },
+  {
+    "review_file": "review-context-v9-full.json",
+    "review_file_sha256": "1bcb80bfc3f4eb636f52baab2988aaaa5d12afdb91068a83342bf8b739f45295",
+    "review_digest": "a4f65f4e05ff54778e07bd2fcc8db4767ff30d9fb6df702eeddb0466eabe5653",
+    "supplemental_review": "review-context-v9-late-v12.json",
+    "supplemental_review_sha256": "280ddeeeae52475a9865bb5b5965e441fa264ea2c81dfc5749aff65b9fec7415",
+    "note": "Additional historical records only. Original bytes, scores and gate stay unchanged; new supplemental review cannot approve a language or override them."
+  },
+  {
+    "review_file": "review-context-v11-references.json",
+    "review_file_sha256": "854d8f11e828e5f06ba64d6661c4615a8ea184fab0ff8f6dfbeaa172990c98ec",
+    "review_digest": "bde5d68c5e21bf8571d12a36422164117e99b085cf588f98b5690318d63ffbbb",
+    "supplemental_review": "review-context-v11-late-v12.json",
+    "supplemental_review_sha256": "a3d1421619c9f7fc92c7ecd4bdef8c94fd72306a133943f1904904576f1f818f",
+    "note": "Additional historical records only. Original bytes, scores and gate stay unchanged; new supplemental review cannot approve a language or override them."
+  }
+]

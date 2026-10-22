@@ -559,7 +559,58 @@ def record_flags(row):
     return flags
 
 
-def audit_review_warnings(review, records):
+def audit_complete_model_warning_coverage(review, records):
+    """Require all current model warnings, including later discoveries in old raw text.
+
+    Historical supplements bind both original and supplemental review bytes. They
+    cannot replace a rubric, approve a locale or change a historical gate.
+    """
+    audit_review_warnings(review, records, check_coverage=False)
+    directory = ROOT / "docs/quality/translation-pilot"
+    policy = review["inference_policy"]
+    def identities(value):
+        result = {identity for row in value["rows"] for identity in row["record_ids"]}
+        if any(records[identity].get("inference_policy") != policy or records[identity]["candidate"] != "model" for identity in result):
+            raise ValueError("Warning coverage must use model records from the same inference policy")
+        return result
+    def read_review(name, expected_sha=None):
+        if not isinstance(name, str) or Path(name).name != name or not name.endswith(".json"):
+            raise ValueError("Supplemental review must be a local JSON basename")
+        raw = (directory / name).read_bytes()
+        if expected_sha is not None and hashlib.sha256(raw).hexdigest() != expected_sha:
+            raise ValueError("Stale supplemental/original review byte hash")
+        return json.loads(raw)
+    covered = identities(review)
+    for name in review.get("warning_coverage_supplemental_reviews", []):
+        supplemental = read_review(name)
+        if supplemental["inference_policy"] != policy:
+            raise ValueError("Supplemental review has a different inference policy")
+        audit_review_warnings(supplemental, records, check_coverage=False)
+        covered.update(identities(supplemental))
+    addenda_file = directory / "review-coverage-addenda.json"
+    addenda = json.loads(addenda_file.read_text()) if addenda_file.exists() else []
+    for entry in addenda:
+        if entry["review_digest"] != digest(review): continue
+        original = read_review(entry["review_file"], entry["review_file_sha256"])
+        if digest(original) != digest(review):
+            raise ValueError("Historical coverage addendum differs from the original review")
+        supplemental = read_review(entry["supplemental_review"], entry["supplemental_review_sha256"])
+        if supplemental["inference_policy"] != policy or supplemental.get("approved_locales") or any(
+                gate.get("passed") for field in ["reference_gate", "full_gate"] for gate in supplemental.get(field, {}).values()):
+            raise ValueError("Historical coverage cannot approve or override a gate or policy")
+        added = identities(supplemental)
+        if added & covered:
+            raise ValueError("Historical coverage cannot replace an already reviewed record")
+        audit_review_warnings(supplemental, records, check_coverage=False)
+        covered.update(added)
+    flagged = {identity for identity, row in records.items() if row.get("inference_policy") == policy
+               and row["candidate"] == "model" and any(record_flags(row).values())}
+    if not flagged <= covered:
+        raise ValueError("An automatic warning outside the fixed sample was not reviewed")
+    return covered
+
+
+def audit_review_warnings(review, records, check_coverage=True):
     """Require an exact, hash-bound decision for every warning before accepting a review.
 
     Back-translation defects are separate from forward quality. A known forward fixture
@@ -631,6 +682,8 @@ def audit_review_warnings(review, records):
             gate = review.get("reference_gate", review.get("full_gate", {})).get(row["locale"], {})
             if decision["blocks_gate"] and gate.get("passed"):
                 raise ValueError("Passed gate contradicts a blocking warning")
+    if check_coverage and review.get("requires_complete_model_warning_coverage"):
+        audit_complete_model_warning_coverage(review, records)
     return len(expected)
 
 

@@ -81,11 +81,7 @@ class TranslationPilotTest(unittest.TestCase):
                 review=json.loads(path.read_text())
                 pilot.audit_review_warnings(review,records)
                 if review.get('requires_complete_model_warning_coverage'):
-                    reviewed={identity for row in review['rows'] for identity in row['record_ids']}
-                    for name in review['warning_coverage_supplemental_reviews']:
-                        supplemental=json.loads((directory/name).read_text())
-                        self.assertEqual(supplemental['inference_policy'],review['inference_policy'])
-                        reviewed.update(identity for row in supplemental['rows'] for identity in row['record_ids'])
+                    reviewed=pilot.audit_complete_model_warning_coverage(review,records)
                     flagged={identity for identity,row in records.items() if row.get('inference_policy')==review['inference_policy']
                         and row['candidate']=='model' and any(pilot.record_flags(row).values())}
                     self.assertTrue(flagged<=reviewed,'An automatic warning outside the fixed sample was not reviewed')
