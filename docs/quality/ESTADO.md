@@ -42,26 +42,27 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
    no son nuevas evaluaciones. No se congela motor ni se aprueba idioma.
 
    **V12 en curso (22-oct):** 16 fallos crudos v11 reproducidos por sus trazas, sin nueva inferencia.
-   Tres tests nuevos primero rojos; 80 ligeros verdes (78 correctos, 2 dependencias omitidas) y 2 de corpus.
-   Política independiente con 10 claves/16 destinos de memoria exacta adicionales (70/131 totales),
-   contrato tipado y por oración conservados. Aún sin runs v12: ejecutar y leer 40 referencias es/nb;
-   completo solo si ambas pasan. [Plan y evidencia del lote](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/lotes/2026-10-21-piloto-v12.md).
+   Tres tests nuevos primero rojos; 80 ligeros verdes (78+2 dependencias) y 2 del corpus.
+   Política independiente: 10 claves/16 destinos de memoria exacta adicionales (70/131 totales),
+   contrato tipado y por oración conservados. [Referencias 39730087914](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39730087914),
+   fuente `32142e3`: 160 registros, 21 memorias, 80 tests con dependencias reales, cleanup correcto, 0 artefactos.
+   **es 360/360 y nb 360/360**, 80 idas/vueltas leídas y 14 registros con avisos reconciliados;
+   textos idénticos a v11 por hashes, nueve defectos de vuelta ya conocidos separados. Solo prerrequisito al completo.
+   Inventario actual: **9.513 registros y 2.588 evaluaciones**, 525 fixtures y 0 idiomas aprobados.
+   [CI inicial 39730074541](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39730074541) verde sin publicación.
 
-   **Siguiente exacto dentro del Paso A:** clonar superficialmente `feat/new-tools-batch-1` y leer
-   [revisión completa](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/translation-pilot/review-context-v11-full.json),
-   [referencias](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/translation-pilot/review-context-v11-references.json),
-   `automatic-summary.json`, `regression-v11-evidence.json`, `review-warning-addenda.json`,
-   `full-sample-v11-plan.json` y el [informe v11](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/lotes/2026-10-21-piloto-v11.md). Ambos runs están recuperados; no repetir v11.
-   Crear **v12 independiente**, sin editar v2–v11. Corregir por familia registro imperativo/tú-usted en ES,
-   concordancia y compuestos NB (`2D-linjer`, `DXF-tegning`, `tall-ledetråd`, tono/clonación) y preservación de `Web Audio`
-   dentro de oración completa; mantener también el recuento `antall`. No reparar salidas perdidas tras inferencia.
-   Memoria solo por fuente/hash/contexto; separar los errores de vuelta de unidades, teams/treatment/targets de los de ida.
-   Conservar contrato tipado, signo Unicode, cobertura de dígitos, preflight 214, coordenadas/versiones/código,
-   formato 200000 local probado y ambas FAQ equivalentes. Primero 40 referencias es/nb y todos los avisos;
-   solo si ambas pasan, completo con las mismas 68+20 conocidas y avisos fuera de muestra. No es muestra ciega.
-   Después 28 destinos restantes y 80 muestras en ha/am/te/gu/ta/mr/sw (PLAN §9); gramáticas numéricas desconocidas bloquean.
-   **Sin traducción masiva, publicación ni fase 0.** Capacidad Pages y 37 traducciones revisadas de las 300 pendientes;
+   **Siguiente exacto dentro del Paso A:** ejecutar v12 completo es/nb en la misma rama con el checkpoint
+   de referencias recuperado (160 registros reanudables), sin repetir referencias ni v11.
+   Revisar las mismas 68+20 conocidas desde v6 de `full-sample-v12-plan.json` y todos los avisos fuera
+   de muestra. Leer ida/vuelta actuales; reutilizar rúbricas solo con fuente/ida de hashes exactos.
+   La corrección de 16 salidas por memoria no demuestra generalización del modelo; distinguir su procedencia.
+   Añadir cada fallo nuevo a regresiones primero en rojo, sin editar checkpoints/revisiones v2–v11.
+   Enlazar la revisión completa como suplemento desde referencias para cubrir todos los avisos v12.
+   Después del gate completo, 28 destinos restantes y 80 muestras en ha/am/te/gu/ta/mr/sw (PLAN §9);
+   gramáticas numéricas desconocidas bloquean. No congelar motor antes de comparación objetiva.
+   **Sin traducción masiva, publicación ni fase 0.** Capacidad Pages y 37 traducciones revisadas pendientes;
    fuente reextraíble 15.815 unidades, slugs/metadatos preservados. Revisión nativa y UI/dispositivos no realizadas.
+   [Informe v12](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/lotes/2026-10-21-piloto-v12.md).
 
 2. **Fase 0** del RUNBOOK §4 + **caché con hash de los 106 JS** (AUDITORIA-CATALOGO G1) + **fase 0b**:
    los 26 errores confirmados de `AUDITORIA-CATALOGO.md` §2, primero test y después arreglo.

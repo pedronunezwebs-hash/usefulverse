@@ -2,6 +2,12 @@
 
 Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 
+## 2026-10-22 · Codex · Hito v12: referencias pasan; completo pendiente
+- Run [39730087914](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39730087914), fuente `32142e3`: 160 registros, 21 memorias, 80 tests reales, cleanup correcto, 0 artefactos. Conversión 84,59 s; total 242,50 s; pico 3.692.948 KiB.
+- ES y NB 360/360: 80 idas/vueltas actuales leídas, 14 registros con avisos reconciliados, nueve defectos de vuelta ya conocidos separados. Textos idénticos a v11 por hashes; legacy80 solo comparación histórica. Ningún idioma aprobado.
+- Inventario 9.513 registros/2.588 evaluaciones/525 fixtures. 80 tests ligeros (78+2) verdes. CI inicial 39730074541 verde, preview sin URLs indexables. GET:25.625 URLs y tres soft 404; sin deploy.
+- Siguiente: completo v12 mismas 68+20 conocidas y todos los avisos, sin repetir referencias. Candado propio EN CURSO; Paso A abierto, 0/300 main y 0 activadas.
+
 ## 2026-10-22 · Codex · Hito v12: reproducción y memoria; referencias pendientes
 - 16 fallos reales v11 reproducidos con sus salidas por oración, sin inferencia nueva ni reparación posterior. Tres tests nuevos rojos antes de registrar v12; 80 ligeros verdes (78+2 dependencias) y 2 Node del corpus.
 - 10 claves/16 destinos nuevos de memoria con fuente/hash/contexto y procedencia; 70 claves/131 destinos totales. Contrato tipado y de cobertura por oración conservados; políticas v2–v11 intactas. No demuestra generalización del modelo ni revisión nativa.
