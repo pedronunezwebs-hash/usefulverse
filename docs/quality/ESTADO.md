@@ -13,6 +13,8 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 **V13 en curso:** 23 trazas v12 reproducidas; política independiente88claves/154destinos. [Referencias39736865789](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39736865789), fuente `717c7aa`: ES/NB360/360;80 idas/vueltas leídas,13 avisos reconciliados,8 defectos solo de vuelta.75/80 idas iguales a v12 por hashes,5 cambiadas revisadas.85 tests con dependencias reales, limpieza correcta,0artefactos.10.369 registros/3.074evaluaciones/571fixtures,0idiomas aprobados. Completo autorizado tras este prerrequisito; leer todos428 y conservar88 comparables. Informe `docs/quality/lotes/2026-10-22-piloto-v13.md`.
 
+**Completo v13 en curso:** [39737830473](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39737830473), fuente `22e139ef094cff6c0e677cee5b721e0687e6146d`; reanuda160 registros. Recuperar este run y sus logs, no relanzar. Revisión completa pendiente;0idiomas aprobados.
+
 1. **Paso A preparado en el PR [#136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador, rama `feat/new-tools-batch-1`.**
    Las 300 fuentes del respaldo privado `usefulverse-300-worktree-backup-20261020`, rama
    `backup/usefulverse-300-implementation` (`27a2f174`), están recuperadas sin historial privado.
