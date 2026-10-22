@@ -166,3 +166,5 @@ Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 ## 2026-10-22 · Codex · v13 en curso
 
 Candado 239e101. V12 cruda reproducida en23 casos;3 tests primero rojos y luego verdes, memoria fuente/hash/contexto88claves154destinos. Lecturas y plan en `lotes/2026-10-22-piloto-v13.md`. Referencias pendientes;0idiomas aprobados,0deploy,25.625URLs indexables previstas sin cambio.
+
+Referencias en curso: [39736865789](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39736865789), fuente `717c7aa7e9617f2e7cf3bae2f338a8a9e9f8fbff`. Recuperar logs/checkpoint; no relanzar. CI PR39736862405 en paralelo, sin deploy.
