@@ -258,3 +258,8 @@ ni se inventa su instante o tamaño. Código, checkpoints y CI se recuperaron de
 La retirada medida de la nueva carpeta de cierre figura al final.
 
 Retirada efectiva de la carpeta de cierre el 2026-10-22T17:59:30.648930+07:00 (2026-10-22T10:59:30.648930+00:00 UTC): se eliminó directamente, sin Papelera, solo /private/tmp/usefulverse-codex-v13-cierre-20261022.9tw_spk4. Tamaño medido antes de retirar: 30812 KiB. Disco libre después: 50.3661 GiB. Ruta, auxiliar del arranque y ZIP de logs propios externos comprobados ausentes. La carpeta v13 original ya estaba ausente al retomar; no se inventan su tamaño ni fecha de retirada. Antes de borrar se verificaron 120 archivos críticos, seis documentos idénticos en ambas ramas y recuperación de todos los archivos de proyecto locales; feature cda7b22e17c2d2a8ab2577669b9e668f7232e332, main 54b429415cf4b20c8f22b2d8be09004cf9b3833b. Código de rama idéntico a CI final, main solo cambió documentación; PR abierto, borrador y fusionable.
+
+
+## V14 · 2026-10-22 · Codex · en curso
+
+Candado 572d1d8; fuente previa feature 1a34b53/main 8cda84d. Dos casos crudos v13 reproducidos y dos tests rojos antes del arreglo (cuatro errores por política inexistente). Dos memorias nuevas; política independiente, referencias/completo pendientes. Plan e informe persistentes. Sin deploy.

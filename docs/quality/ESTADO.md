@@ -11,6 +11,8 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 ## 1. Siguiente paso exacto
 
+**V14 EN CURSO:** tests rojos/reproducción de dos fallos v13 completados; política independiente preparada y validada: 87 tests (85 correctos, dos dependencias omitidas), preflight 214/156 y seguridad verdes. Referencias todavía pendientes. No repetir v13. Informe: `docs/quality/lotes/2026-10-22-piloto-v14.md`. Sin despliegue.
+
 1. **Paso A sigue en el [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador, rama `feat/new-tools-batch-1`.**
    Las 300 fuentes están recuperadas del respaldo privado sin su historial, todas con `indexable:false`,
    fuera de sitemap/hreflang y sin bloqueo robots. Las 700 existentes se conservan.
