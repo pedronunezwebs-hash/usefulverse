@@ -4,6 +4,39 @@
 Dependencia del Paso A; no habilita ninguna herramienta ni idioma. **Idiomas aprobados por este piloto: 0.**
 Código y checkpoints de esta guía están en `feat/new-tools-batch-1` hasta integrar el PR; no confundirlos con `main`.
 
+## V12 · 22-oct-2026 · resultado actual
+
+Los 16 fallos de ida v11 se corrigen mediante memoria exacta con fuente/hash/contexto, antes de inferencia.
+La política independiente conserva oraciones completas y contrato tipado; tiene 70 claves/131 destinos de memoria.
+No se atribuye esa memoria al modelo ni se demuestra calidad sobre textos nuevos.
+
+[Referencias 39730087914](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39730087914), fuente `32142e3`:
+ES y NB 360/360; 160 registros y 21 memorias. [Completo 39730859028](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39730859028),
+fuente `5801f4a`: 696 nuevos +160 reanudados =856; 110 memorias adicionales. Ambos runs pasan 80 tests con dependencias reales,
+limpian sus modelos y no crean artefactos. Completo: 800,09 s, conversión 74,71 s y pico 3.748.548 KiB; no extrapolar a las 300.
+
+Antes de recoger el completo se amplió la lectura a los 428 candidatos actuales, manteniendo la muestra común de 88.
+Las 88 alcanzan **792/792 en cada idioma**, pero fuera de ellas se encuentran **23 errores de ida**: ES 12 (5 importantes/7 leves),
+NB 11 (2 importantes/9 leves). Home/Hogar, casillas/plazas, salida/producción, renderizar/dibujar audio, títulos ingleses y gramática.
+**Global rechazado y cero idiomas aprobados.** Los 34 hallazgos de vuelta del completo están separados; sus 65 registros con avisos
+y los 14 de referencias tienen decisiones ligadas a los textos crudos. 310/348 idas del completo conservan los hashes v11 y 38 cambian.
+
+46 observaciones nuevas fallaron en el test permanente antes de registrarse (23 ida/23 vuelta); 571 fixtures (508 ida/63 vuelta).
+La cobertura detectó también 58 registros históricos coincidentes de v9/v11 fuera de las muestras antiguas. Dos suplementos y
+`review-coverage-addenda.json` vinculan original y suplemento por hashes de bytes/digest. El auditor exige misma política,
+fuente/ida ligadas y cada aviso resuelto; prohíbe reemplazar rúbricas existentes, pasar gates o aprobar idiomas con el suplemento.
+Los 32 archivos históricos originales y las diez políticas previas quedan intactos. Dos tests adversariales primero rojos.
+
+Inventario: **10.209 registros, 2.994 evaluaciones con repeticiones**. Las 120 comparaciones legacy reutilizan notas históricas
+solo tras comprobar hashes; no se cuentan como evaluaciones nuevas. [CI final 39734259820](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39734259820),
+fuente `a427cba`: 3.045 Node, 82 Python (80+2 dependencias), check/20 locales existentes/hub/preview verdes, sin despliegue.
+No certifica revisión nativa, 37 traducciones de las 300, puerta de 18 puntos, siete capas por herramienta, UI/RTL/peso/dispositivos.
+
+Próximo: v13 independiente para los 23 fallos de ida, separando los defectos de vuelta. Primero 40 referencias es/nb y todos los
+avisos; después el completo con las 88 comparables y lectura de los 428. Muestra conocida, no ciega. Después 28 destinos y
+80 muestras reforzadas en ha/am/te/gu/ta/mr/sw; gramáticas desconocidas bloquean. No repetir v12 ni hacer traducción masiva.
+Evidencia y cierre en el [informe v12](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/lotes/2026-10-21-piloto-v12.md).
+
 ## Corpus y método
 
 - Tres herramientas reales del método: `voice-changer`, `shikaku`, `dxf-viewer`.
