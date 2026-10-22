@@ -11,6 +11,8 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 ## 1. Siguiente paso exacto
 
+**V13 en curso:** 23 salidas crudas v12 reproducidas sin inferencia nueva; tests primero rojos y política independiente con 88 claves/154 destinos de memoria. Referencias ES/NB pendientes; no lanzar completo antes de revisarlas. Informe `docs/quality/lotes/2026-10-22-piloto-v13.md`.
+
 1. **Paso A preparado en el PR [#136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador, rama `feat/new-tools-batch-1`.**
    Las 300 fuentes del respaldo privado `usefulverse-300-worktree-backup-20261020`, rama
    `backup/usefulverse-300-implementation` (`27a2f174`), están recuperadas sin historial privado.

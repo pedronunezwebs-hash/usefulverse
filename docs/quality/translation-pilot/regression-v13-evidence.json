@@ -1,0 +1,631 @@
+{
+  "schema_version": 1,
+  "observed_run": 39730859028,
+  "observed_source_commit": "5801f4a6c8a4107d4c9812e090bf7bd04661e08d",
+  "reproduced_at_utc": "2026-10-22T06:52:18.234650+00:00",
+  "method": "Replay all23 actual stored v12 raw per-sentence callbacks through unchanged complete-sentence translator and forward path; no new model inference or raw repair. All23 already have permanent fixtures from independent v12 review.",
+  "red": {
+    "command": "python3 -m unittest discover -s scripts/localization -p 'test_translation_expanded_language.py'",
+    "tests": 3,
+    "errors": 26,
+    "cause": "Unknown v13 before implementation:23 observed cases, final policy assertion and two adversarial tests.",
+    "log_sha256": "68d7530599aa37fbdc57d98d7af4acb3fac697de7e1c27d9a195cb72be516b62"
+  },
+  "reproduced_rows": [
+    {
+      "record_id": "c3e5bbda0a98538a515df7501ae91f7263470711ffa99b725eb8e46d9fc540a8",
+      "key": "dxf-viewer.fields.unsupportedEntities",
+      "locale": "es",
+      "source_hash": "2e7b68ffd5fff7d8322f1177f8a7c0429321faa89151761a2f991d224e559e54",
+      "translation_hash": "f145956bb87acecab61917a5615953e394ed53d27fe8911a11845f2e7a8b1e8d",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "508ef7778a8ac6e11221bd50c892fc9b36493490edd620a88bb7e4d706bf0895",
+      "key": "dxf-viewer.home",
+      "locale": "es",
+      "source_hash": "3a78695388b38b5cceefaf6796b0137877514593543b91af2752d5a17e3d736c",
+      "translation_hash": "a2015f512647b091a6a74037676cda9f36b6ece5f0016076322ed956c7da7562",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "214983ad7996d6c80098975d904614436ee44c8e6b604100c11bdecbabab6c0f",
+      "key": "shikaku.description",
+      "locale": "es",
+      "source_hash": "e418413f1c809ce33c6f17e66f10484724abb9b24447be9218f95a69cbcaa3ba",
+      "translation_hash": "f0fdbf6a832e6d8f879f4e397d42dc4aa8109d75b7b78246887170ea18ba92c5",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "71cec29ba59ea51c8c59261d6926d59637a47968c1470234b6b347b0ab95fe1a",
+      "key": "shikaku.fields.covered",
+      "locale": "es",
+      "source_hash": "d8273af5d600bea587f682d81abbbf72bce880dbf44244697c7aeec2aced68af",
+      "translation_hash": "c0eaf0b8cd5c76551ddfbe35b80359cc6c73fbd64903cb57b6bf2c245d0c911e",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "b004a353920da783572c23718a958808112737d6ad9a2cc2cecd3446744a4017",
+      "key": "shikaku.fields.statusDeleted",
+      "locale": "es",
+      "source_hash": "f7199f55065da8ed3ff257627690e490ea2d72b6b1a6d8196368b367754699b0",
+      "translation_hash": "112167491b2ce3ac756ebc832213963f6a931321945d197eeae2f098cb0ac745",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "efdb598d726f4d502a4774728cb87538029795fd577d67999e34cfe1c627d0fa",
+      "key": "shikaku.fields.statusWrong",
+      "locale": "es",
+      "source_hash": "54331662ad57f2bd8cd757b763966e28b9826927a5ae5bdf3a03cf4f8b612443",
+      "translation_hash": "1eb3fa6c816086ca2c966144a72d3e9f36c274522ebe1665e82a9915813611dc",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors",
+        "known_back_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "2ea7e1d0eba31a8db0079da0c225752497b6cbcbc9ce2b5e2dde12efeb642600",
+      "key": "shikaku.home",
+      "locale": "es",
+      "source_hash": "3a78695388b38b5cceefaf6796b0137877514593543b91af2752d5a17e3d736c",
+      "translation_hash": "a2015f512647b091a6a74037676cda9f36b6ece5f0016076322ed956c7da7562",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "164a71fa4722d271f7a752e9abd749dab60f63d1fb5ca249597fc650eb1c5a9e",
+      "key": "shikaku.name",
+      "locale": "es",
+      "source_hash": "82b2bf0dce5656b938065733b2bc2835963390dc21cd41c03872d7a4855cbd95",
+      "translation_hash": "21c6b4ddb63e593190c1ecd6bf197da546c81f2480d1bbfd9f03bd1781f80591",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "93f6f8a582a36a60ee51bc0f73cdf7d96811fb1af1496c6ca0a6bd0415352669",
+      "key": "shikaku.title",
+      "locale": "es",
+      "source_hash": "46426c263587c1c71b4d4228a94025aafb9f5a665a87a44c5061001c097367ac",
+      "translation_hash": "701838dec1bfb522c8468b8e03ed459a6e3795cf31984a8aa9bfcb0dd1b08bdf",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "7aa0f8b5b6971a9445c07531467b99912ff20ac15ba93c47b58f8150f2a63819",
+      "key": "voice-changer.fields.volume",
+      "locale": "es",
+      "source_hash": "82c427959a0cfe74aba5cc4c517acc466b1a43e6ae328a37c31c5a4177e62c49",
+      "translation_hash": "6de5d795908356a75077024ef1a075566ba0df7a5901e2cbac4b9ed2338e5ee3",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "00f498a3be8eb1f03353c1f0d61fbb06a089bc2598524bbf9a5dad54838c4b6b",
+      "key": "voice-changer.intro",
+      "locale": "es",
+      "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+      "translation_hash": "ae692e0850b0760d892d3722462e13a6c271a4222ba97669b544cbf890f6ed91",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors",
+        "known_back_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "146f8656441f9b4821ceab7b44a8fbd6b9766ce2de119fd393ebd74d600c5b0a",
+      "key": "voice-changer.title",
+      "locale": "es",
+      "source_hash": "a51378a5843555727a3bea41e16c54f7946224af0ad128c2e1a7a7ba0553e990",
+      "translation_hash": "183e6ef83097c9749680a36fcf4043da20a47ffe64f52c9dceca47fcc5210898",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "bafa0447d02187e044331e6a70bd689daa2f8418362ff94bad0f1e93872e2ce5",
+      "key": "dxf-viewer.faq.0.q",
+      "locale": "nb-NO",
+      "source_hash": "dfd386c937a742c687f0e2b52e71e759124b113a4820c3e94926f0b98cc1c05f",
+      "translation_hash": "21defdd0209fcf65bd15bdd3b7d600a1ff41b6b499f084ac8cbd515f0a5b4988",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "2cc3994258bb0f85c60524abf25dd8104669343b6418385b3a223ce2cec3eead",
+      "key": "dxf-viewer.fields.licenseMit",
+      "locale": "nb-NO",
+      "source_hash": "dda6e5f49978b2355b302632860f2c0b8a7eeeb36426dcced89530e24477663e",
+      "translation_hash": "ecad38728121591cedb1b10af07c07afc917f7762d94165065c05ddaa1a16c1e",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "0369d282793f4ba4c3d97ea088b42a36eb4bb3d1bcfc8d75e3afcc1d29125644",
+      "key": "dxf-viewer.title",
+      "locale": "nb-NO",
+      "source_hash": "b9f732a48868897b52ad34a6a03c092acfcaf4ae2f9c3b9449a9500391affba7",
+      "translation_hash": "68217e73ec5db34c1f8efe91aae5e198e070a5a46afded675e2e994d6410a4f1",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "927abcc0163c60a1eea683e06edb056ec7053759fff713b41acd769c7ad61292",
+      "key": "shikaku.fields.sourceTitle",
+      "locale": "nb-NO",
+      "source_hash": "0e9c5244dec188f34ed390ee9850eb80f13fe256203518c4cdb8516584a52e38",
+      "translation_hash": "b508c22202c1a65dbd08d8dca641bd785fd07560e33d54e20c711252a52a36db",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "0953601159a5d99543b90755847d35c83e883ee222aaaa6e94c045158777dfdb",
+      "key": "shikaku.fields.statusGenerated",
+      "locale": "nb-NO",
+      "source_hash": "b68594cb804f6740dd0ebcbb5a69fcc5f04409219fb01f8c8987d0f74b1bb3d9",
+      "translation_hash": "f7a91993818c4af5e628a3e002cba6123063a3af2217f588e80196b7765af532",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "001a911c77b71d7edda7d7b3e0d593260fa59695b43ba786b2a7007b67c9b6c1",
+      "key": "shikaku.fields.statusWrong",
+      "locale": "nb-NO",
+      "source_hash": "54331662ad57f2bd8cd757b763966e28b9826927a5ae5bdf3a03cf4f8b612443",
+      "translation_hash": "def9b8911ebabebba6297292fc670a97b79b1703ef788cdd00f2478706879870",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "5d4e90218cb656653891dc1d552a1e0ef0aeb0b6692f523b9c7ef03d73face47",
+      "key": "shikaku.name",
+      "locale": "nb-NO",
+      "source_hash": "82b2bf0dce5656b938065733b2bc2835963390dc21cd41c03872d7a4855cbd95",
+      "translation_hash": "527421451d7f57e15d5c17b27efb7d2385d033d75cca562d532d31a1a42476b0",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "76792451c77d44f78826b6b498783f214c209c0814023997de5b1ecbde54ed6a",
+      "key": "shikaku.title",
+      "locale": "nb-NO",
+      "source_hash": "46426c263587c1c71b4d4228a94025aafb9f5a665a87a44c5061001c097367ac",
+      "translation_hash": "e47315ea0e009910bd908473edaed5a78252329749ba2aae9400bfb0f1377003",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "b3ccf0c07850222cbc13f93e8c3712ca83b7c9773dcf19bdb7dfd02d2f65aaeb",
+      "key": "voice-changer.fields.processing",
+      "locale": "nb-NO",
+      "source_hash": "d5ed60fedd3a8a563ee05862b43b6f3290b6c47f5ae3c12aa890d0386451a1c1",
+      "translation_hash": "1ee65d02a4298d79af1437b6a2617407081d3f53adfb1856e830fe5ee686f296",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "985f03ab6fcc2f4bad482de944bbbff039b0541acfe194b1973ab04c713a2303",
+      "key": "voice-changer.intro",
+      "locale": "nb-NO",
+      "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+      "translation_hash": "3598f0ad45f8ff78f60996b442b5e506a2cd2da35c58571240c033678791101f",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "494fa84a9f940eba935198f445cca14b7fe52bdeeb17e72b6e48f83dad042d0e",
+      "key": "voice-changer.title",
+      "locale": "nb-NO",
+      "source_hash": "a51378a5843555727a3bea41e16c54f7946224af0ad128c2e1a7a7ba0553e990",
+      "translation_hash": "e9185efb7ed2d0e92d2de19c02865d366b47310a1c8d22b88897644de4e3e148",
+      "same_raw_replayed": true,
+      "flags": [
+        "known_semantic_errors"
+      ]
+    }
+  ],
+  "memory_review": [
+    {
+      "key": "dxf-viewer.fields.unsupportedEntities",
+      "locale": "es",
+      "source": "Unsupported entities",
+      "source_hash": "2e7b68ffd5fff7d8322f1177f8a7c0429321faa89151761a2f991d224e559e54",
+      "context": "fields.unsupportedEntities",
+      "previous_raw": "Entidades no apoyadas",
+      "reviewed_translation": "Entidades no compatibles",
+      "reviewed_translation_sha256": "bea36f0e8cacfac03060f86d8e9921709eca6284b26d0f72d4f4fd3e32dfbe7c",
+      "observed_issue": [
+        "Entidades no apoyadas usa el sentido de apoyo en lugar de compatibilidad técnica; debe indicar entidades no compatibles."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "dxf-viewer.home",
+      "locale": "es",
+      "source": "Home",
+      "source_hash": "3a78695388b38b5cceefaf6796b0137877514593543b91af2752d5a17e3d736c",
+      "context": "home",
+      "previous_raw": "Hogar",
+      "reviewed_translation": "Inicio",
+      "reviewed_translation_sha256": "58fcc9468fe1f60716a71caef50fce70a6d2d46f7a2c0d0f45f1f76dc7779625",
+      "observed_issue": [
+        "Home de navegación se traduce por Hogar (vivienda), en lugar de Inicio."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "shikaku.description",
+      "locale": "es",
+      "source": "Play Shikaku online for free. Divide each grid into rectangles that match the numbered areas. Get a daily puzzle, hints and a fresh board; your game stays on this device.",
+      "source_hash": "e418413f1c809ce33c6f17e66f10484724abb9b24447be9218f95a69cbcaa3ba",
+      "context": "description",
+      "previous_raw": "Jugar en línea Shikaku gratis. Divida cada cuadrícula en rectángulos que coincidan con las áreas numeradas. Obtén un rompecabezas diario, pistas y un tablero nuevo; tu juego se queda en este dispositivo.",
+      "reviewed_translation": "Juega a Shikaku en línea gratis. Divide cada cuadrícula en rectángulos que coincidan con las áreas numeradas. Obtén un rompecabezas diario, pistas y un tablero nuevo; tu partida se queda en este dispositivo.",
+      "reviewed_translation_sha256": "080261673939a195708b01746d21c86e54b0454fedcc1a342125047d769c5586",
+      "observed_issue": [
+        "Jugar/Divida/Obtén mezcla infinitivo, usted y tú dentro de la misma secuencia."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "shikaku.fields.covered",
+      "locale": "es",
+      "source": "Covered squares",
+      "source_hash": "d8273af5d600bea587f682d81abbbf72bce880dbf44244697c7aeec2aced68af",
+      "context": "fields.covered",
+      "previous_raw": "Las plazas cubiertas",
+      "reviewed_translation": "Casillas cubiertas",
+      "reviewed_translation_sha256": "b1aa4a468f41d998155fb1fa4ebefa2718d67e8471d4a8a2c00e52e218dcae11",
+      "observed_issue": [
+        "Plazas cubiertas confunde casillas del tablero con plazas urbanas; etiqueta de recuento de casillas."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "shikaku.fields.statusDeleted",
+      "locale": "es",
+      "source": "Saved progress deleted.",
+      "source_hash": "f7199f55065da8ed3ff257627690e490ea2d72b6b1a6d8196368b367754699b0",
+      "context": "fields.statusDeleted",
+      "previous_raw": "El progreso guardado se elimina.",
+      "reviewed_translation": "Se ha eliminado el progreso guardado.",
+      "reviewed_translation_sha256": "6a86d7274233aea29e7705e99e847eb6606d6e6cd1c1102384fb886227570476",
+      "observed_issue": [
+        "Se elimina expresa proceso/presente, no confirma que el progreso guardado ya se ha eliminado."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "shikaku.fields.statusWrong",
+      "locale": "es",
+      "source": "Check the rectangle areas and clues.",
+      "source_hash": "54331662ad57f2bd8cd757b763966e28b9826927a5ae5bdf3a03cf4f8b612443",
+      "context": "fields.statusWrong",
+      "previous_raw": "Compruebe las áreas de rectángulo y pistas.",
+      "reviewed_translation": "Comprueba las áreas de los rectángulos y las pistas.",
+      "reviewed_translation_sha256": "2772709920fa4b550887f7bc132eededa9dae964e69ef86b03b84b4998ecdb71",
+      "observed_issue": [
+        "Las áreas de rectángulo y pistas tiene coordinación y determinantes defectuosos; deben revisarse las áreas de los rectángulos y las pistas."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "shikaku.home",
+      "locale": "es",
+      "source": "Home",
+      "source_hash": "3a78695388b38b5cceefaf6796b0137877514593543b91af2752d5a17e3d736c",
+      "context": "home",
+      "previous_raw": "Hogar",
+      "reviewed_translation": "Inicio",
+      "reviewed_translation_sha256": "58fcc9468fe1f60716a71caef50fce70a6d2d46f7a2c0d0f45f1f76dc7779625",
+      "observed_issue": [
+        "Home de navegación se traduce por Hogar (vivienda), en lugar de Inicio."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "shikaku.name",
+      "locale": "es",
+      "source": "Shikaku Rectangle Puzzle",
+      "source_hash": "82b2bf0dce5656b938065733b2bc2835963390dc21cd41c03872d7a4855cbd95",
+      "context": "name",
+      "previous_raw": "Shikaku Rectángulo rompecabezas",
+      "reviewed_translation": "Rompecabezas de rectángulos Shikaku",
+      "reviewed_translation_sha256": "5d918e73906760ebd23164b4bfb660268b86d1d81d8bb02df311cc9422706c98",
+      "observed_issue": [
+        "Shikaku Rectángulo rompecabezas conserva un orden nominal impropio del español."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "shikaku.title",
+      "locale": "es",
+      "source": "Shikaku Puzzle Online — Free Daily Rectangle Game",
+      "source_hash": "46426c263587c1c71b4d4228a94025aafb9f5a665a87a44c5061001c097367ac",
+      "context": "title",
+      "previous_raw": "Shikaku Puzzle Online — Juego de Rectángulos Diario Gratis",
+      "reviewed_translation": "Shikaku en línea — Juego diario de rectángulos gratis",
+      "reviewed_translation_sha256": "83749630075f11c29f8499a646fdda671e48bb8f9808c26fbabe5a7a9ffbdcba",
+      "observed_issue": [
+        "Shikaku Puzzle Online deja la expresión descriptiva inglesa sin localizar; Shikaku es el nombre propio que debe conservarse."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "voice-changer.fields.volume",
+      "locale": "es",
+      "source": "Output level",
+      "source_hash": "82c427959a0cfe74aba5cc4c517acc466b1a43e6ae328a37c31c5a4177e62c49",
+      "context": "fields.volume",
+      "previous_raw": "Nivel de producción",
+      "reviewed_translation": "Nivel de salida",
+      "reviewed_translation_sha256": "0c3c3f6453a2336976015870d27eb0aac2c727f3b1cd864e8cf5e8c9b2a668a0",
+      "observed_issue": [
+        "Output level es nivel de salida de audio; Nivel de producción cambia el sentido del control de volumen."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "voice-changer.intro",
+      "locale": "es",
+      "source": "Give a short audio clip a lower, higher, radio, bright, or echo effect. Preview the result, adjust it, and export a WAV file on your device.",
+      "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+      "context": "intro",
+      "previous_raw": "Dé a un clip de audio corto un efecto más bajo, más alto, radio, brillante o eco. Previsualice el resultado, ajuste y exporte un archivo WAV en su dispositivo.",
+      "reviewed_translation": "Dale a un clip de audio corto un tono más grave o más agudo, o un efecto de radio, brillo o eco. Previsualiza el resultado, ajústalo y exporta un archivo WAV en tu dispositivo.",
+      "reviewed_translation_sha256": "612dbe1941adc3df367f29a1a9a12799536c9a8e0903dfd7e1d592cc71491891",
+      "observed_issue": [
+        "Efecto más bajo, más alto, radio, brillante o eco es una coordinación poco natural que no explicita bien el tono; ajuste carece de su objeto en la segunda instrucción."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "voice-changer.title",
+      "locale": "es",
+      "source": "Voice Changer Online — Free Voice Effects in Your Browser",
+      "source_hash": "a51378a5843555727a3bea41e16c54f7946224af0ad128c2e1a7a7ba0553e990",
+      "context": "title",
+      "previous_raw": "Voice Changer Online — Efectos de voz gratis en tu navegador",
+      "reviewed_translation": "Cambia tu voz en línea — Efectos gratis en tu navegador",
+      "reviewed_translation_sha256": "89ea39e61cf192accf7a6c850558e1ddd19c7de8ffcbe12328dc0c997814e622",
+      "observed_issue": [
+        "Voice Changer Online deja sin traducir la intención principal del título; no es una marca propia."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "dxf-viewer.faq.0.q",
+      "locale": "nb-NO",
+      "source": "Does this viewer support DWG?",
+      "source_hash": "dfd386c937a742c687f0e2b52e71e759124b113a4820c3e94926f0b98cc1c05f",
+      "context": "faq.0.q",
+      "previous_raw": "Støtter denne visningsprogrammet DWG?",
+      "reviewed_translation": "Støtter dette visningsprogrammet DWG?",
+      "reviewed_translation_sha256": "cebad509525844338dadef7a6a49eb208a1fc2e5c096ce5f2e0178e66a6f05d7",
+      "observed_issue": [
+        "Denne visningsprogrammet no concuerda con el neutro visningsprogrammet; corresponde dette."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "dxf-viewer.fields.licenseMit",
+      "locale": "nb-NO",
+      "source": "MIT license",
+      "source_hash": "dda6e5f49978b2355b302632860f2c0b8a7eeeb36426dcced89530e24477663e",
+      "context": "fields.licenseMit",
+      "previous_raw": "MIT- lisens",
+      "reviewed_translation": "MIT-lisens",
+      "reviewed_translation_sha256": "b37f557f44a1c6fc58a0b374f5ab8f4c00a86ba3fc2e6b6c3f2754de137dd6ba",
+      "observed_issue": [
+        "MIT- lisens rompe el compuesto con espacio tras el guion; corresponde MIT-lisens."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "dxf-viewer.title",
+      "locale": "nb-NO",
+      "source": "Free DXF Viewer — View Layers, Measure and Export SVG",
+      "source_hash": "b9f732a48868897b52ad34a6a03c092acfcaf4ae2f9c3b9449a9500391affba7",
+      "context": "title",
+      "previous_raw": "Gratis DXF Viewer - Vis lag, måle og eksportere SVG",
+      "reviewed_translation": "Gratis DXF-viser — Vis lag, mål og eksporter SVG",
+      "reviewed_translation_sha256": "63a0ffdc1b3e4720ebcc4c620abffac45a24e1cd95e276d8321cc39ca18afa3d",
+      "observed_issue": [
+        "Vis lag, måle og eksportere mezcla imperativo con infinitivos y deja Viewer genérico en inglés."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "shikaku.fields.sourceTitle",
+      "locale": "nb-NO",
+      "source": "Shikaku rules",
+      "source_hash": "0e9c5244dec188f34ed390ee9850eb80f13fe256203518c4cdb8516584a52e38",
+      "context": "fields.sourceTitle",
+      "previous_raw": "Shikaku- regler",
+      "reviewed_translation": "Shikaku-regler",
+      "reviewed_translation_sha256": "d4d4924bfd144ee09a01bc48ead26050a3a7cd51b569ea896f9c26a2108ee5ac",
+      "observed_issue": [
+        "Shikaku- regler deja un espacio incorrecto tras el guion del compuesto."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "shikaku.fields.statusGenerated",
+      "locale": "nb-NO",
+      "source": "A new puzzle is ready.",
+      "source_hash": "b68594cb804f6740dd0ebcbb5a69fcc5f04409219fb01f8c8987d0f74b1bb3d9",
+      "context": "fields.statusGenerated",
+      "previous_raw": "Et nytt puslespill er klar.",
+      "reviewed_translation": "Et nytt puslespill er klart.",
+      "reviewed_translation_sha256": "8534f09ea29bdc6fb4bdf0324ba0449446f2a21abd719b63f6bb27993d6aee56",
+      "observed_issue": [
+        "Et nytt puslespill er klar no concuerda en neutro; corresponde klart."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "shikaku.fields.statusWrong",
+      "locale": "nb-NO",
+      "source": "Check the rectangle areas and clues.",
+      "source_hash": "54331662ad57f2bd8cd757b763966e28b9826927a5ae5bdf3a03cf4f8b612443",
+      "context": "fields.statusWrong",
+      "previous_raw": "Sjekk rektangel områder og ledetråder.",
+      "reviewed_translation": "Sjekk rektangelområder og ledetråder.",
+      "reviewed_translation_sha256": "42bf5a2091dad3f9f3377177eab80104470cc1119be965fea9a23dcd8998ab01",
+      "observed_issue": [
+        "Rektangel områder rompe el compuesto; debe expresarse rektangelområder o arealene til rektanglene."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "shikaku.name",
+      "locale": "nb-NO",
+      "source": "Shikaku Rectangle Puzzle",
+      "source_hash": "82b2bf0dce5656b938065733b2bc2835963390dc21cd41c03872d7a4855cbd95",
+      "context": "name",
+      "previous_raw": "Shikaku rektangel puslespill",
+      "reviewed_translation": "Shikaku-rektangelpuslespill",
+      "reviewed_translation_sha256": "37a3cc792f71b7d3b86856a841eaf26d773ccedc2a399a2c803e1cca156000b8",
+      "observed_issue": [
+        "Rektangel puslespill rompe el compuesto nominal del nombre descriptivo."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "shikaku.title",
+      "locale": "nb-NO",
+      "source": "Shikaku Puzzle Online — Free Daily Rectangle Game",
+      "source_hash": "46426c263587c1c71b4d4228a94025aafb9f5a665a87a44c5061001c097367ac",
+      "context": "title",
+      "previous_raw": "Shikaku Puzzle Online — Gratis daglig rektangelspill",
+      "reviewed_translation": "Shikaku på nett — Gratis daglig rektangelspill",
+      "reviewed_translation_sha256": "170a4e728537ca6711fe08911760ef818ba3e8fbb6eb57c953a06f15adb0ab7a",
+      "observed_issue": [
+        "Shikaku Puzzle Online deja la expresión descriptiva inglesa sin localizar; se conserva solo Shikaku como nombre propio."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "voice-changer.fields.processing",
+      "locale": "nb-NO",
+      "source": "Rendering processed audio…",
+      "source_hash": "d5ed60fedd3a8a563ee05862b43b6f3290b6c47f5ae3c12aa890d0386451a1c1",
+      "context": "fields.processing",
+      "previous_raw": "Tegner behandlet lyd …",
+      "reviewed_translation": "Gjengir behandlet lyd …",
+      "reviewed_translation_sha256": "58b84046fba2a54f082eeafdf44b9d3624ad093572c947680b31d80cb0187e01",
+      "observed_issue": [
+        "Tegner behandlet lyd indica dibujar sonido, no renderizar/procesar el audio; estado de operación equivocado."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "voice-changer.intro",
+      "locale": "nb-NO",
+      "source": "Give a short audio clip a lower, higher, radio, bright, or echo effect. Preview the result, adjust it, and export a WAV file on your device.",
+      "source_hash": "848926741c46009849a7e27867a28fdba48a4e2b3dcfe0df97682c25c0dcb469",
+      "context": "intro",
+      "previous_raw": "Gi et kort lydklipp en lavere, høyere, radio, lys eller ekkoeffekt. Forhåndsvis resultatet, justere den, og eksportere en WAV-fil på enheten.",
+      "reviewed_translation": "Gi et kort lydklipp en effekt med dypere tone, høyere tone, radiolyd, lysere klang eller ekko. Forhåndsvis resultatet, juster det og eksporter en WAV-fil på enheten din.",
+      "reviewed_translation_sha256": "f77d5863bd1adac5d5ff9ff03d8a33d716f04735be70569434124e733d98cdee",
+      "observed_issue": [
+        "Forhåndsvis/justere/eksportere mezcla imperativo e infinitivos; den no concuerda con resultatet neutro y la lista inicial queda mal coordinada."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    },
+    {
+      "key": "voice-changer.title",
+      "locale": "nb-NO",
+      "source": "Voice Changer Online — Free Voice Effects in Your Browser",
+      "source_hash": "a51378a5843555727a3bea41e16c54f7946224af0ad128c2e1a7a7ba0553e990",
+      "context": "title",
+      "previous_raw": "Voice Changer Online — Gratis stemmeeffekter i nettleseren din",
+      "reviewed_translation": "Endre stemmen på nett — Gratis stemmeeffekter i nettleseren",
+      "reviewed_translation_sha256": "3e2fa4bdbe59fb72b27e22f93eaf967625f3c3562e2e01e33b2566e9f01ef434",
+      "observed_issue": [
+        "Voice Changer Online deja sin localizar la intención principal del título; no es una marca propia."
+      ],
+      "review_kind": "agent",
+      "native_review": false
+    }
+  ],
+  "prior_memory_keys": 70,
+  "prior_memory_targets": 131,
+  "memory_keys": 88,
+  "memory_targets": 154,
+  "approved_locales": [],
+  "green": {
+    "tests": 85,
+    "pass": 83,
+    "dependency_skips": 2,
+    "corpus_node_tests": 2,
+    "log_sha256": "5129341e2a6d65cb0172be891c7c111451e56de79bccc03f6a47d4420e7f5f51",
+    "note": "Full85-test suite before final ES intro coordination polish; rerun focused3 after polish."
+  }
+}

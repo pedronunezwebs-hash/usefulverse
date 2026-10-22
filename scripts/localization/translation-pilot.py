@@ -41,7 +41,8 @@ POLICIES["context-v9"] = json.loads(Path(__file__).with_name("pilot-quantity-mem
 POLICIES["context-v10"] = json.loads(Path(__file__).with_name("pilot-whole-unit-policy.json").read_text())
 POLICIES["context-v11"] = json.loads(Path(__file__).with_name("pilot-complete-sentence-policy.json").read_text())
 POLICIES["context-v12"] = json.loads(Path(__file__).with_name("pilot-reviewed-language-policy.json").read_text())
-TYPED_POLICIES = {"context-v10", "context-v11", "context-v12"}
+POLICIES["context-v13"] = json.loads(Path(__file__).with_name("pilot-expanded-language-policy.json").read_text())
+TYPED_POLICIES = {"context-v10", "context-v11", "context-v12", "context-v13"}
 SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
 TECHNICAL_TOKEN = re.compile(r"\.(?:dxf|dwg|png|svg|wav|mp3|pdf|json|csv|txt)\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
 SOFTWARE_VERSION = re.compile(r"(?<![\w.])\d+(?:\.\d+){2,}(?![\w.]\d)")
@@ -553,7 +554,7 @@ def record_flags(row):
         evidence = typed_record_evidence(row)
         flags["forward_typed_data"] = not all(evidence["forward"].values()) or not all(evidence["input"].values())
         flags["back_typed_data"] = not all(evidence["back"].values())
-    if row.get("inference_policy") in {"context-v11", "context-v12"}:
+    if row.get("inference_policy") in {"context-v11", "context-v12", "context-v13"}:
         flags["forward_sentence_evidence"] = row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not complete_sentence_evidence_valid(row.get("forward_segments"), row["model_input"], row["raw_translation"], "en", row["locale"])
         flags["back_sentence_evidence"] = not complete_sentence_evidence_valid(row.get("back_segments"), row["translation"], row["back_translation"], row["locale"], "en")
     return flags
