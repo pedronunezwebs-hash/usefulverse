@@ -2,6 +2,10 @@
 
 Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 
+## 2026-10-22 · Codex · Hito v12: ampliar lectura antes de recoger completo
+- Se conservan las 68+20 y su nota comparable. Por ser correcciones de memoria sobre muestra conocida, se leerán además todos los textos restantes: 174 no-referencia por idioma, 428 candidatos contando referencias. Plan ampliado mientras run39730859028 está en curso y antes de recoger resultados; no es ciego porque existen salidas anteriores en el repo.
+- Cualquier defecto de ida fuera de las 88 también bloquea el gate global. No cambia política, corpus, inferencia ni umbral; aún sin resultado completo.
+
 ## 2026-10-22 · Codex · Hito v12: completo en curso, recuperar sin relanzar
 - Run [39730859028](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39730859028), fuente `5801f4a`, madlad/context-v12, completo es/nb con 160 referencias reanudables. Referencias revisadas y ambos gates pasan; no repetir inferencia al retomar.
 - Resultado y gate completo todavía pendientes. Candado propio EN CURSO; recuperar logs y revisar muestra/avisos antes de avanzar.
