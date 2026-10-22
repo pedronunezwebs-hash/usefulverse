@@ -662,5 +662,57 @@
   "public_source_assets_unchanged_from": "9335c51dca47b2d6e69de32a8001d948d451b635",
   "main_non_docs_unchanged_from": "a04833044d5f833242f02a5590895f4da6ebafa6",
   "approved_locales": [],
-  "native_review": false
+  "native_review": false,
+  "closure_verification": {
+    "at_utc": "2026-10-22T10:57:28.294755+00:00",
+    "feature_before_receipt": "e2d63aaa78daf20009162aab928ea263fd8e97a7",
+    "main": "54b429415cf4b20c8f22b2d8be09004cf9b3833b",
+    "critical_files_including_proof_and_recovery": 120,
+    "six_handoff_files": [
+      {
+        "path": "docs/quality/ESTADO.md",
+        "git_blob_sha": "e64a239e529df74b88342fb6bd9a276e58fb1a92",
+        "bytes": 19732
+      },
+      {
+        "path": "docs/quality/LOG.md",
+        "git_blob_sha": "9fbaa46ff5acadee94a7581bc856cd53cc3bb13c",
+        "bytes": 31428
+      },
+      {
+        "path": "docs/quality/MAPA-REPO.md",
+        "git_blob_sha": "71c8f756077d37883c18acc8ed2baf640d93849b",
+        "bytes": 5247
+      },
+      {
+        "path": "docs/quality/progress.csv",
+        "git_blob_sha": "1d0de216eb07ef300720f1a4565bd31a7ccb9f88",
+        "bytes": 178039
+      },
+      {
+        "path": "docs/quality/translation-pilot.md",
+        "git_blob_sha": "3d5b54dfa48248505ff764a1fe5832d4144c48f7",
+        "bytes": 39780
+      },
+      {
+        "path": "docs/quality/lotes/2026-10-22-piloto-v13.md",
+        "git_blob_sha": "0d6aca51b2aa5577a3cd7bdd2347018982ca0118",
+        "bytes": 8169
+      }
+    ],
+    "current_metadata_overrides": {
+      "docs/quality/translation-pilot/production-v13-check.json": "a8db97a0dde4f662c5f56ac04ba09cb9ab0ae79a",
+      "docs/quality/translation-pilot/security-v13-check.json": "1a0dda48f3cbf66cffa192649225b44592ecc6af",
+      "docs/quality/translation-pilot/recovery-v13-closure.json": "fd17f62d506e18dbfc7edc93b6d84e550bb5bdde"
+    },
+    "feature_non_docs_equal_final_CI": true,
+    "main_non_docs_equal_baseline": true,
+    "model_cleanup_success": true,
+    "run_artifacts": 0,
+    "PR_open_draft": true,
+    "Pedro_file_unchanged": true,
+    "owned_global_log_zip_caches": 0,
+    "previous_root_already_absent": true,
+    "workspace_helper_absent": true
+  }
 }
