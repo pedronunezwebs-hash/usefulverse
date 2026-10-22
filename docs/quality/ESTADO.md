@@ -11,6 +11,8 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 ## 1. Siguiente paso exacto
 
+**V14 referencias verificadas:** run 39768400364, fuente 48e0fcf; ES/NB 360/360. Las 80 fuentes/idas/vueltas leídas, 14 avisos reconciliados y nueve defectos solo de vuelta; 75 idas/72 vueltas idénticas a v13 por hashes, cinco idas nuevas. 160 registros, 21 memorias, 87 tests reales, limpieza correcta, cero artefactos. Suite local del checkpoint 87 (85 correctos, dos dependencias omitidas). Completo autorizado por este prerrequisito; aún no lanzado. No repetir referencias ni v13.
+
 V14 references: [39768400364](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39768400364), fuente `48e0fcfffa0c19b83a1746c397718f7b9abdd13a`. En curso; recuperar este run antes de relanzar. Sin despliegue ni aprobación.
 
 **V14 EN CURSO:** tests rojos/reproducción de dos fallos v13 completados; política independiente preparada y validada: 87 tests (85 correctos, dos dependencias omitidas), preflight 214/156 y seguridad verdes. Referencias todavía pendientes. No repetir v13. Informe: `docs/quality/lotes/2026-10-22-piloto-v14.md`. Sin despliegue.

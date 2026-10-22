@@ -1,0 +1,3106 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex (agente, sin API de pago)",
+  "native_review": false,
+  "rubric": "REVISION-FINAL §2: significado, cifras/negaciones y naturalidad, 0–3.",
+  "expected_rows": 80,
+  "inference_policy": "context-v14",
+  "reviewed_at_utc": "2026-10-22T11:17:13.315776+00:00",
+  "scope": "All80 current model-candidate source/forward/back texts read directly in two40-row groups. Exact source/forward hashes permit historical score reuse; all current backs read separately. Known sample, agent review, not native or generalization.",
+  "decision": "references-pass-es-nb-prerequisite-only",
+  "approved_locales": [],
+  "reference_gate": {
+    "es": {
+      "button_number_negation_errors": 0,
+      "minor_errors": 0,
+      "major_errors": 0,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "passed": true,
+      "reason": "40 fuentes, idas y vueltas actuales leídas. Acciones, datos, negaciones y gramática correctos en la ida observada; defectos de vuelta separados. Solo prerrequisito del completo, sin aprobar el idioma."
+    },
+    "nb-NO": {
+      "button_number_negation_errors": 0,
+      "minor_errors": 0,
+      "major_errors": 0,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "passed": true,
+      "reason": "40 fuentes, idas y vueltas actuales leídas. Acciones, datos, negaciones y gramática correctos en la ida observada; defectos de vuelta separados. Solo prerrequisito del completo, sin aprobar el idioma."
+    }
+  },
+  "notes": [
+    "All80 source/forward/back texts read. Five changed forward texts directly judged; old scores inherited only by exact source/forward hashes.",
+    "Every current warning reconciled against source and actual forward/back separately. No language approval, engine freeze or release."
+  ],
+  "rows": [
+    {
+      "locale": "es",
+      "key": "dxf-viewer.faq.0.a",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "b038cd1b20e93edaadfbde7d75767fe95da619f5e987290a7c7df5bec6b51db4",
+      "record_ids": [
+        "8d34d2ed74aceeb4fbe09102b390744a550b85f4f0d2c7cb1107c68ab5e11b62"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "es",
+      "key": "dxf-viewer.faq.2.a",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "11fea13b849deda3e6c6ba5273d7b3ff59e60e22a7be335135a34427ef408031",
+      "record_ids": [
+        "ca4e9a0e97a72af5624adfb41f98622cda426158936016015bbd3681f5200202"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "dxf-viewer.fields.binary",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "ec9f1d8abd61461b967529edb3a552ba2cf43ddf03e0fad6eb035fe39ba3a85f",
+      "record_ids": [
+        "d512ae7eb7928b39a270644a4ac8c237ba8312d97558c1d4d1b46f10adc167da"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Negación y tipo binario conservados; Guardar o exportar es una instrucción en infinitivo natural en UI. ASCII DXF y la alternativa de exportación intactos."
+      ],
+      "critical_control": false,
+      "score_origin": "new-direct-agent-review",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "dxf-viewer.fields.cancel",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "85965ae79fa993c7f2d1e80480f190ca8b8a9d158fcfe08a1dbba12466f655f8",
+      "record_ids": [
+        "9d37585aaa436d00fcb3633ffd73356f531436a6411a2c4226c1902c02c0c042"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "dxf-viewer.fields.exportPng",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "e6581d60954bd764b466aec4666e1d6c52e6a69a89c6664c949112139baa09c9",
+      "record_ids": [
+        "4a19c0cec15b7f94b3c4c1247be3e3a31315210405b7215d3541a2c42d5763c6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "dxf-viewer.fields.exportSvg",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "b9cdaed1d0fa23e25939140e5a511223c62c0d24550b7a4909b2f5dbbbaf1b3b",
+      "record_ids": [
+        "aba25924e7ef100b154d119488642f1f9187dc616d233caa0f3b9d8e007490a1"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "dxf-viewer.fields.file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "e62fbcdf36628bfb7ceb6e8c5ad8a028d44008d6e2433bdff6010b117864253a",
+      "record_ids": [
+        "84820334888e55d52ee2fec3fd7d09f947fdc2aa484f78c87960bc9344b9276a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "3b64d26674321e74f3d60bf4451f20b0f16da0295cd7f179020a1405baee89d0",
+      "record_ids": [
+        "4097947476a2c3d3d9066cfd26fa6d9928fe61dfdf8e6d69d952bf073c6fcc2b"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "dxf-viewer.fields.measurement",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "3a4b1eeb31b6330bd8fa232c5dba44fb6b0f2a74228d82fc3b04b6f57af8e23a",
+      "record_ids": [
+        "4cbd8d18a328baae3bcb0621d16246ed4d7b9d10d33dccade3d039ecb9e42a60"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "2c153c15f124e414f74899e2ee46a82bc9e68444a9f634f4db4e5a76db30115f",
+      "record_ids": [
+        "5ec5bd39af3a7668d99f5ed7d6efd5ea52889e3e6eee6c0a4a3cf17a1e0d96c5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "dxf-viewer.fields.unsupported",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "5d91f224ae06117e9c44ba494e9759bbe63480f0d2c6f08d1e1407a06270a5eb",
+      "record_ids": [
+        "68d67aae776f3099216d1d3e12d3bae2a9abf5e1cca232ac68e1af27b7da672f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "es",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "464d372afb80116f6d0f2038c64f6c33a5e16dff5f2ad18677559b3ec78800dc",
+      "record_ids": [
+        "4e71f9d88fad9d89c4e102410e1634a0ab807295726d181c5cb1b26773e98250"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "af8e849ed26ec188b86c2e5d770e84b6c6dcd58fa8615b4dd49f55b879b16513",
+      "record_ids": [
+        "a922920fceab98a877bb14924957840c01457868f672187480e9bde10a2b51bb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Aleja el zoom conserva la acción de alejar/reducir la ampliación; instrucción breve y comprensible."
+      ],
+      "critical_control": false,
+      "score_origin": "new-direct-agent-review",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.example",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "4cb49a94ef838b79349c6f86363a5497bd571073520705c2e031b71bc129e117",
+      "record_ids": [
+        "0aba260191716a973b4a1025d6f79275e539f91129da015d8b2e21d2f52da6c3"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.fields.check",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "203353c448abf18f1ea43f98413ce159a985fd9b6fa5783cf0e2e90286693577",
+      "record_ids": [
+        "abd678cc4e178a533da68d987beecc6a84305d11c13d7e40228c18da4d61dfca"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "62e698fb711f50f83fa1bc8b1ed825800fe6c805cf3a4c364c12d0986e331393",
+      "record_ids": [
+        "d9dc93147af4b02cf6c08a18a3530e058082ff3b60420edc403340eb22463c12"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.fields.daily",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "89adf4b17102ae3ec585f234f5b1c928048c1a127fb228e6aa7a673f7cc82ba4",
+      "record_ids": [
+        "234a5168d12256cbdbc9d9b66929d3c9624c752695089a182329713ad54f370c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "252e8f12ebc501b4d85304d86346f0c94e2c34a3866db085e07923ae307402c5",
+      "record_ids": [
+        "cb00e95a328b92aebe0a00cbdd6c017e4be790de5c97fb393a97c1fd88561e31"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "16e55115dc22b88cc934f3017b17fbb077c9638408073298cbdb61702237bb0d",
+      "record_ids": [
+        "9698f061864db843bc575294737a3b99147ec826191c3436240070b6cded098c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "0b9d8a88f752de74a70fb544c6717d734f242dc8458ddc1d21d0273d8bd34d66",
+      "record_ids": [
+        "0506bf606adffca69947057d9ace5bfad135da0f08eeacaabae1f4f0d777c046"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.fields.newPuzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "96d9e4f494f0ea52da051157b6dcf8cd73ac76aae6893e19d0d947ece1f7bc30",
+      "record_ids": [
+        "b39ac51e75cf94cacc8830266ce4d4050ce60f4cdd93dfef53425fcd5a7b1dc7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "01ddd0f17edac3f87b0c6754fa191e21d4ae73faecd9f0b3d0143d9576bbbac4",
+      "record_ids": [
+        "91924d28d136dbc49dc3f1429e3ecc08a90b325fb0ce9f78614bd0373aff7938"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.fields.reveal",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "130a0104d0d3143d7cda34511c6315d70f0d7512b2832fed6c542df93c1685b9",
+      "record_ids": [
+        "f3eeda5d792bc951de9429d9c36522182172bd04e018b9147a19690ea916fb2e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "8c99333123c2589d0ea069da5c5fb636e960f2607af94bdde73282f186952d71",
+      "record_ids": [
+        "0d12632f45172d0b4adac99e5d18afd449fe465e5d199c6e66efb6ffb8ec7380"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Ahora elige la esquina opuesta conserva el orden y la selección del extremo contrario."
+      ],
+      "critical_control": false,
+      "score_origin": "new-direct-agent-review",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "27c2cbd7c9497973342fa8a59da363572bff2a144360f5ab70631b1ab2de45b5",
+      "record_ids": [
+        "38b0bfbe78d0ca7eb39dcad86c4f483cd63af4507579a10ba7c81fe7e85e3490"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "0ce20272dac19530c592bd3778b8c9b7426475f2d8428ef809c0f8dda0349fea",
+      "record_ids": [
+        "dfe4909505dfab0234af8768841536266b01ce926aba5992deab89eb7185be86"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Deshacer el último rectángulo conserva la acción y su alcance único."
+      ],
+      "critical_control": false,
+      "score_origin": "new-direct-agent-review",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.fields.chooseFile",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "d00c5a5b2fb2adb432d42c4189169cdfe383016f49ca7d2e28da0acec3001ae1",
+      "record_ids": [
+        "e4a69efa0cfcbdca8dc1fd155bdb6208641b1839afe4bc51b604ed7c9fc6e89c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.fields.chooseFirst",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "2c0cd1fdf977ac73953a69518f6c5e4a6109747483b45d7d5662edbbfe4f168a",
+      "record_ids": [
+        "a6ec54b2e60bb0452acdf36d7da8abd4c98ed6a11915dbe57a898f3d043e4cac"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "1f8a7458ad27c99540674719f5cd6ff56806fbf0c21df5b49423eb1fe3379cc0",
+      "record_ids": [
+        "2792166e1d82a75ab266c23dcd0e5f73d71ec76834bff48a16b8b2e30b872ae6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.fields.decodeFailed",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "8682f36965b715d2cdf420ca456497a61ca35906e3144687d708f3cfc5085707",
+      "record_ids": [
+        "4924d4650eb2e214d5e47bb7115f70739df787311f06fcaa6505cd590a1f8fcd"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "2315d71e0f8aeefb7bbf662c9a1aad5e8cf2a2d21b98a1892e5cfc0a603c4c74",
+      "record_ids": [
+        "b366729643334eb51cc587ac61fe9f12a4f4c681945586250882e8cf8c6a8178"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "d93a9c5eefb7fa82c83b285b66e94fdfb8bad6ec7da1b026e62d2bfeaa0e5383",
+      "record_ids": [
+        "ece5903abbbb1de329d68430a8e3e91e6e2be7831a6bc1cbe0092091925f4241"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.fields.faq2a",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "ae2e2d864ba57aed781aec554b8ec83dbe43ad84a1ff4adbd2ef6127d1030ae8",
+      "record_ids": [
+        "8059c88513089a85344816a5ab2c87940e49654008b627f3673c0f1b3211fa2e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "7125b2fd9758e7a7695c233f1ac0889c496c4699b68480cfbb560dffa5184f58",
+      "record_ids": [
+        "7c5bed2708a853960fa6e5af9f8ee9b69200cb83629eca65129eb10d8cb38fd2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "5891107f89d27dc1b71ca22083151aa22caed665cb95632924ded2208fde4f02",
+      "record_ids": [
+        "481dab76bbebbe0992bd4087ea969a6991c6e95fa27bbdd5e3f523a47d0be3df"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "9f9808c00dc7971ef0cf906b3e400c3c0f1cc23ae4484026044a37997e6c1af1",
+      "record_ids": [
+        "51dff71b6f21912f475f9265dc1703c246a97d1863dcd4db631db250b1dd7918"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.fields.privacy",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "dbb64ae2bf88b5426abc2c4139d3ba5516f13a51f6af724a6cd6f0468525f530",
+      "record_ids": [
+        "06210d85bc3ad98e94a17949139ca3cd00cd10e78e0ba9be5aae0450e8adef6d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "7ae0d486fb7b33979c32e7f415660bcebf33408ef08ede05ee1cc662921eda1e",
+      "record_ids": [
+        "c673ce6deb69b4fb8fd01c980ac79cf0c0650c9b7c71a520e6c26c4db6576608"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "eb6f5d7eed9cee23fb4a0ab4407b854219aca9a4a7f3e57111c949836213c2c2",
+      "record_ids": [
+        "057c34a5bd82888fc449bd8f6aef52c9f723dfa712e328106004a5efa225db77"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "d031ae0283d3d497fdee45bbb5944b91332611bbef9007d72b3f1e445589b220",
+      "record_ids": [
+        "d228d7bd3f50b6f234ac2849f3cb5d3ac5c5f4ddc7b9172783009ea8cd8308e0"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": true,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.faq.0.a",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "8454a89857117141863b907139127496df4908cafe73a3c6e37b43544e8aff19",
+      "record_ids": [
+        "df993b0ba183066606d0446180a01cb289fcf24ad5e1b0798dbb6e0c1a2a40c9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.faq.2.a",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "3dba92bb40d4f659327d27b5b44f2e94077363ec9b5c14a178933e29c52ddcbd",
+      "record_ids": [
+        "955e893d5791d8eff237d7006774386241b1191f094b604802e7ef9d9b565cab"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.fields.binary",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "d32c356cc5c19941dfcbf228592ad86a980be5813b0aa1a38dc28dfbf89e8311",
+      "record_ids": [
+        "77680329e6b9866d58e43596161abe0ef60ebca1f3544640acaad5c7a95edc3a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.fields.cancel",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "43aa43d0702e8f0f164503896c5351910c4e74d2af7aa158c226933fe1d1ce8c",
+      "record_ids": [
+        "5cc406b0bef416d71e81fda5cf95cb38cafa95a74d6986de45be202c95e8ad26"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.fields.exportPng",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "1aa1bd73d5619a9df19b45810fd5fd3808dfa5e877a2977bb4656aa1717acbb9",
+      "record_ids": [
+        "a6b0e29ebadacd5e93694948c0ae744d8a3e9bbb4102cafaf3ed7f495b5ca738"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.fields.exportSvg",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "419e8dc4090d050173c15a0510e8e241c414955231dc6d6115fdf6f73566e668",
+      "record_ids": [
+        "18a7a6800d66145ddd1b028c70e297225c4a4db8354b8ef0aa207df04d72f871"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.fields.file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "0255cb7c13867c2519c64c334873360497a5c18e5383d19b43c60001bcd316cd",
+      "record_ids": [
+        "f26712e4b5a364ce20e681f095dab59a710887bd437e2cb4d74867fa9275bd10"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "54397fcac7f69290d2ecbc3ce4ee6c07e6e039be8cefde8802686fcfee34277e",
+      "record_ids": [
+        "b00b287fd125a4cf76ce45f6db5a194bef6820e3e9eaf834b1f7fd131dcee857"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.fields.measurement",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "91551dd4e44b49509958aa5f168e7f2ad0cdc3c365ad5a5073dbabfcf07ac637",
+      "record_ids": [
+        "15e98195f75943359eb2ac59454275ef922d435c48575115944311a062654429"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "9a6d8dd98fc2f8508e658f8c36d140020268daa5103bf74d170d740c72938870",
+      "record_ids": [
+        "766dc75bb16e5948f0943b7d031a7e08bd9f568ecbfb876c333b8dc5105d9733"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.fields.unsupported",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "5ff2d5a4de75d7bc6e4325e509f418da1dadb5b025f31214aa04dd36d5b5bfe1",
+      "record_ids": [
+        "a5527a41bef0482574650e1e5cffed456044fad5cdabb611e27d3a3e0021bfaf"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "9b818d63f602c32a8f33e76be5231b02e2afcadd8229482afcfeda50f21f0ce0",
+      "record_ids": [
+        "d12d24184c3b6e5c9a4bb6ab141de3a25345e28602b4ce2d3e4328d81f2fb3d7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "58a3a638fb92cd4d17db395ddac5c5c6204e857931dd1a1e67378a5b8a901ccd",
+      "record_ids": [
+        "ba0638fcad8ffaf3475df3d9982b2fc364b8065273f982c39d51e134504fe31c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.example",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "a3bc8150395f14ab5ae2be79266fece35869dda10f5a2f9b014632ae0423a8c3",
+      "record_ids": [
+        "86f87ee16b9a5d8598b46b8f424daea4c46a0ba57130c322c67fa949bbe14567"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.fields.check",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "10e369958ed00b699cecff4f1eabcb0b6afb13246d2a058a2ef6c673d8dd37ce",
+      "record_ids": [
+        "f649dd38169dbe50d522c7be5268c6e1d5210c5aadf817e15fa5974bbc0232b4"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "416926ab38e377ee189c06d08e53e0b8b546e071607c31f47cbb291be38d05d9",
+      "record_ids": [
+        "1f4918753d5310a417399f6db737cc10d268eb681b013cba0b73f500c0441a2e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.fields.daily",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "7a34361fd7016a4988aa7b3e83d62dc63671ddec9ade1516485847b78e37fb84",
+      "record_ids": [
+        "afb1e2f29747df276c7e7949c31497e755ea49a173e4c886544cee97a42c739c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "e6ca477a5a4ce27b6827995712adcd02bc03e313289b953742f27146a6383526",
+      "record_ids": [
+        "4ccf4584c2582a0761d92f0e7c6512f3a7ddb60b8c7022a838608ff2a01802e7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "2667ddf5c27a73009070564e2d202a54ac7e643559dd585d0e7ffeb5a1ba2742",
+      "record_ids": [
+        "db6b1c8ff1031bc99d069f464a2cc14f8533995b1f28cdb5efefc05393ab3b60"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "852e56dabb007659b41daedecd0b26e8c8f44b8df8e99893dde9a12a27d382f1",
+      "record_ids": [
+        "1944b8e513b7facfed71706998dea8fe3563fb6fb1b2d0bbe314445b60056045"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.fields.newPuzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "97ccf014fa6e89f85949ce6b0fe678a47f37a0a61b8b8ff06af17676b7a70aeb",
+      "record_ids": [
+        "86596b08922342f1ffc118d94b41fce4aab1500bea00631780864a4cbc89b57e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "44916e4a47efbae4d499ee9c6b9dab47ae4f40b87dde8176f2ed7515479b0173",
+      "record_ids": [
+        "6001860cef3e0c1fbb34e8360c7a24de825f2a59900403a2f9c1aaf2996bf498"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.fields.reveal",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "97f881c4db41b7e07aa529a5a0d1a7629c6db9e6a99372beab5d6cd915d2ec20",
+      "record_ids": [
+        "2e66e46b57433b9fd6f1b19ff83aec321edff60dd73a1594e8466bc52c476be7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "5723ba5a744e21d36f4e2a3fbd91b6dcf60941dfc153ce59fbac2324562fb863",
+      "record_ids": [
+        "f499cf8dbf1ef192172e3c5ff9f6aa44f654d1f6f4390fff1225b6aca06dce2c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "bd2a8c15502d18c284b5aeb572c0d7e2505fea61fcd93d0c0d3a1bf6ac2dce5c",
+      "record_ids": [
+        "b5e78142348be171a80aa350c1181a335743b8d52ed4fd1bb9cdbbdb74b74df7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "84abec37ce988e25d7cbf7f94fe9cf1f1abe03760a6e7d38d204103763cfc32e",
+      "record_ids": [
+        "b835f9c23d71c4902a576b428304ff37f5a90e1609358d130a267b38d62b3384"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.fields.chooseFile",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "45a33637567598f608beae81bab0c713af16227bc6c7f50d421876f530075c48",
+      "record_ids": [
+        "0aa61af31ac02f72d106d4f2bfc8cc716cbb53a434f68aeadcb7e7d78b1ffe6a"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.fields.chooseFirst",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "9cf0870788c44ab17c08c01ca027eb91ecfc699269c619328e67e3422d59a858",
+      "record_ids": [
+        "7cae8808ccf334fcd31f5d0e7be495f6da65d568ade352e0fe9e9d31af7f1225"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "76e8843994dc85072d78614facbe7b6c69b034ed1bcfcf7cd070ed3035823866",
+      "record_ids": [
+        "4c2cc8b375e41d00b8c29e11cb36b2653ac2f6799b1412e91f0d25ac623dd116"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.fields.decodeFailed",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "9947ca17c854f08752c11e5acbf9a09ba9e83ea7d7889dd0385165d49eebf2dd",
+      "record_ids": [
+        "561f78eb6f94f8f1a9af36fca838a49043ac32169667eb5cf6ca2bb58743971f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "06144b213d46b03d80dc1c2b1339b3842bcf6ad4ebee6aab1e5e17b1d0353b2d",
+      "record_ids": [
+        "032998584a53c3f831cb96befba044cbb0a20fc00cff726f9f10f7b237c32bcb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "85d5c5610136aab5ce0e423e60f39a2dff79365d07dbccc9288f628d9f66583c",
+      "record_ids": [
+        "cd0742e8581e61e595c57ba3137f7204d4cdd4237fe76d42d731a513e5ddab67"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.fields.faq2a",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "f576563ec01be9187c0f949f451fa91278a5d9882938f16da60e5a724f57cdc2",
+      "record_ids": [
+        "da204302ef9ff40383f0aaea116b14d066d6f1f22f044f2608ffb58ae1af2089"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Tres oraciones completas. No puede mantener velocidad constante; bajar tono ralentiza y subirlo acelera. Bokmål correcto; no omite la relación más bajo/más alto."
+      ],
+      "critical_control": false,
+      "score_origin": "new-direct-agent-review",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "73b26bf8b92760fe148825188a972573bd2807d24a866588ceda6a7d3a434794",
+      "record_ids": [
+        "eaaedb5ff1a3ed777aa56fdefd648527ae11218e241a9e9b50a8797a881ceba2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "a853a9225c2fe94deb0d68f664b6ec7b23f90ad79ebcf0e8e0d82faa31551c2c",
+      "record_ids": [
+        "5e912408cd14597a8abeeadec55620b068d3a77ac9392e0b08dc12000f680ae2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "64470f54b53a2ebce22391a070781aaf0efd2c52d3df44f9cdd8b22092ef485d",
+      "record_ids": [
+        "389b113f50decfb62fd1802dc30fdb1e7ad581f81773721155121611ae172fb2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.fields.privacy",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "ab18a6f85d640778f0a7a77769da9af51ee6a7d11b7a56ce97f1bf70426dcfda",
+      "record_ids": [
+        "f87bd4c6434f964fd6d046bfcdccb7f7158a4e495c81bcacf0b4897d7181a4fb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "71da32ad1c049ad3f1eb500a68b0d8089ec6118a8bf87682a6fbbc2646e9b4ae",
+      "record_ids": [
+        "8fc67867c01abcfc20d30bf22b3a22483508ec20851bc7c22b993b31c41649ae"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "model"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "862f163ae6762b7d841ca97d736565da1e225e38b0309485816440100b41d08c",
+      "record_ids": [
+        "bf45e8ab65dee6733a69149b98dc98f20ff9a7bd1f1a1f4bcab9b3a2c8eb7d4f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": false,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "777725fdbab930e53b625e43518c23454cfdc898ff61981900a026a5ec96eedc",
+      "record_ids": [
+        "205dde01d7c985be08c1ea5ba8c4379d55d626531fb596d2c6817e11770b50f6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Fuente/ida/vuelta actuales leídas directamente. Rúbrica de ida heredada solo por igualdad exacta de fuente y hash de ida v13; la vuelta actual se juzga separadamente."
+      ],
+      "critical_control": true,
+      "score_origin": "historical-exact-source-forward-hash",
+      "translation_origin": "reviewed-memory"
+    }
+  ],
+  "back_findings": [
+    {
+      "record_id": "8d34d2ed74aceeb4fbe09102b390744a550b85f4f0d2c7cb1107c68ab5e11b62",
+      "back_translation_hash": "94c1598660bf7f93ec26ab37b44406a4663190210396b8bf64ea26d60e704359",
+      "notes": [
+        "No repetido; binary modifica DWG en lugar de conservar la agrupación DWG o DXF binario. La ida de memoria es correcta.",
+        "Ida contrastada directamente con su fuente; la vuelta no determina la puntuación de ida."
+      ]
+    },
+    {
+      "record_id": "9d37585aaa436d00fcb3633ffd73356f531436a6411a2c4226c1902c02c0c042",
+      "back_translation_hash": "b5494718c227111581073c45e65ac329c063d349f37b4d155afe8daa4f59b016",
+      "notes": [
+        "Upload por loading en la vuelta de carga local; la ida Cancelar la carga es correcta.",
+        "Ida contrastada directamente con su fuente; la vuelta no determina la puntuación de ida."
+      ]
+    },
+    {
+      "record_id": "5ec5bd39af3a7668d99f5ed7d6efd5ea52889e3e6eee6c0a4a3cf17a1e0d96c5",
+      "back_translation_hash": "1615065918eb7c920d85e030954dc4c52cefe540add87429356943715b987aba",
+      "notes": [
+        "Viewfinder cambia el visor de dibujos por un visor de cámara en la vuelta; la ida conserva la acción.",
+        "Ida contrastada directamente con su fuente; la vuelta no determina la puntuación de ida."
+      ]
+    },
+    {
+      "record_id": "2792166e1d82a75ab266c23dcd0e5f73d71ec76834bff48a16b8b2e30b872ae6",
+      "back_translation_hash": "767548e98e6a6bdd4f66a2e388dbc082db3a7b2e14fb50dafb808e0558d71601",
+      "notes": [
+        "Uploaded añade una subida en lugar de audio cargado localmente. La ida cargado es correcta.",
+        "Ida contrastada directamente con su fuente; la vuelta no determina la puntuación de ida."
+      ]
+    },
+    {
+      "record_id": "ece5903abbbb1de329d68430a8e3e91e6e2be7831a6bc1cbe0092091925f4241",
+      "back_translation_hash": "79c98deb064665d584a73c782f6a8e78f71e112b841d66b4325d3ff9d65ecc8d",
+      "notes": [
+        "No duplicado sin origen; la ida conserva No explícito y procesamiento local.",
+        "Ida contrastada directamente con su fuente; la vuelta no determina la puntuación de ida."
+      ]
+    },
+    {
+      "record_id": "df993b0ba183066606d0446180a01cb289fcf24ad5e1b0798dbb6e0c1a2a40c9",
+      "back_translation_hash": "0e554e8113f476ae9bae5efe2de7b613782ee7c189cd43503fc4d7928c76e1e4",
+      "notes": [
+        "No, no, no añade negaciones repetidas sin origen. La ida de memoria es correcta.",
+        "Ida contrastada directamente con su fuente; la vuelta no determina la puntuación de ida."
+      ]
+    },
+    {
+      "record_id": "db6b1c8ff1031bc99d069f464a2cc14f8533995b1f28cdb5efefc05393ab3b60",
+      "back_translation_hash": "90b414d5c73d29fd71a6ee82b32f072ff6483681ac446ded27601b4478f2ca28",
+      "notes": [
+        "back-repeated-negation",
+        "Ida contrastada directamente con su fuente; la vuelta no determina la puntuación de ida."
+      ]
+    },
+    {
+      "record_id": "b5e78142348be171a80aa350c1181a335743b8d52ed4fd1bb9cdbbdb74b74df7",
+      "back_translation_hash": "8911206a7a0d6e73306e04702d88ca3f0afec818814a4f76a878153bb5beb63d",
+      "notes": [
+        "back-window-not-grid-square",
+        "Ida contrastada directamente con su fuente; la vuelta no determina la puntuación de ida."
+      ]
+    },
+    {
+      "record_id": "cd0742e8581e61e595c57ba3137f7204d4cdd4237fe76d42d731a513e5ddab67",
+      "back_translation_hash": "4d70450e0664903982b2c840f819df451a0abc7b8e0148cfc8cc2bfa692349e5",
+      "notes": [
+        "No repetido sin origen; la ida conserva Nei explícito y no recepción.",
+        "Ida contrastada directamente con su fuente; la vuelta no determina la puntuación de ida."
+      ]
+    }
+  ],
+  "warning_reconciliation": [
+    {
+      "record_id": "8d34d2ed74aceeb4fbe09102b390744a550b85f4f0d2c7cb1107c68ab5e11b62",
+      "translation_hash": "b038cd1b20e93edaadfbde7d75767fe95da619f5e987290a7c7df5bec6b51db4",
+      "back_translation_hash": "94c1598660bf7f93ec26ab37b44406a4663190210396b8bf64ea26d60e704359",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "No repetido; binary modifica DWG en lugar de conservar la agrupación DWG o DXF binario. La ida de memoria es correcta. Ida correcta contrastada directamente; no se modifica por este defecto de vuelta."
+        }
+      }
+    },
+    {
+      "record_id": "9d37585aaa436d00fcb3633ffd73356f531436a6411a2c4226c1902c02c0c042",
+      "translation_hash": "85965ae79fa993c7f2d1e80480f190ca8b8a9d158fcfe08a1dbba12466f655f8",
+      "back_translation_hash": "b5494718c227111581073c45e65ac329c063d349f37b4d155afe8daa4f59b016",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Upload por loading en la vuelta de carga local; la ida Cancelar la carga es correcta. Ida correcta contrastada directamente; no se modifica por este defecto de vuelta."
+        }
+      }
+    },
+    {
+      "record_id": "5ec5bd39af3a7668d99f5ed7d6efd5ea52889e3e6eee6c0a4a3cf17a1e0d96c5",
+      "translation_hash": "2c153c15f124e414f74899e2ee46a82bc9e68444a9f634f4db4e5a76db30115f",
+      "back_translation_hash": "1615065918eb7c920d85e030954dc4c52cefe540add87429356943715b987aba",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Expansión breve de la etiqueta o acción contextual; fuente e ida leídas directamente, sin omisión, cifra o negación cambiada. La longitud por sí sola no implica defecto."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Viewfinder cambia el visor de dibujos por un visor de cámara en la vuelta; la ida conserva la acción. Ida correcta contrastada directamente; no se modifica por este defecto de vuelta."
+        }
+      }
+    },
+    {
+      "record_id": "91924d28d136dbc49dc3f1429e3ecc08a90b325fb0ce9f78614bd0373aff7938",
+      "translation_hash": "01ddd0f17edac3f87b0c6754fa191e21d4ae73faecd9f0b3d0143d9576bbbac4",
+      "back_translation_hash": "c9457efe0baa9003143a96fbdeeb17034603a0533d67dc5d5146b4919884f4d9",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Expansión breve de la etiqueta o acción contextual; fuente e ida leídas directamente, sin omisión, cifra o negación cambiada. La longitud por sí sola no implica defecto."
+        }
+      }
+    },
+    {
+      "record_id": "2792166e1d82a75ab266c23dcd0e5f73d71ec76834bff48a16b8b2e30b872ae6",
+      "translation_hash": "1f8a7458ad27c99540674719f5cd6ff56806fbf0c21df5b49423eb1fe3379cc0",
+      "back_translation_hash": "767548e98e6a6bdd4f66a2e388dbc082db3a7b2e14fb50dafb808e0558d71601",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Uploaded añade una subida en lugar de audio cargado localmente. La ida cargado es correcta. Ida correcta contrastada directamente; no se modifica por este defecto de vuelta."
+        }
+      }
+    },
+    {
+      "record_id": "ece5903abbbb1de329d68430a8e3e91e6e2be7831a6bc1cbe0092091925f4241",
+      "translation_hash": "d93a9c5eefb7fa82c83b285b66e94fdfb8bad6ec7da1b026e62d2bfeaa0e5383",
+      "back_translation_hash": "79c98deb064665d584a73c782f6a8e78f71e112b841d66b4325d3ff9d65ecc8d",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "No duplicado sin origen; la ida conserva No explícito y procesamiento local. Ida correcta contrastada directamente; no se modifica por este defecto de vuelta."
+        }
+      }
+    },
+    {
+      "record_id": "c673ce6deb69b4fb8fd01c980ac79cf0c0650c9b7c71a520e6c26c4db6576608",
+      "translation_hash": "7ae0d486fb7b33979c32e7f415660bcebf33408ef08ede05ee1cc662921eda1e",
+      "back_translation_hash": "c855467a5bc997275e301618f4a4a32a4bcd813949f40cf8a5d3945630d4e4b7",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Expansión breve de la etiqueta o acción contextual; fuente e ida leídas directamente, sin omisión, cifra o negación cambiada. La longitud por sí sola no implica defecto."
+        }
+      }
+    },
+    {
+      "record_id": "df993b0ba183066606d0446180a01cb289fcf24ad5e1b0798dbb6e0c1a2a40c9",
+      "translation_hash": "8454a89857117141863b907139127496df4908cafe73a3c6e37b43544e8aff19",
+      "back_translation_hash": "0e554e8113f476ae9bae5efe2de7b613782ee7c189cd43503fc4d7928c76e1e4",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "No, no, no añade negaciones repetidas sin origen. La ida de memoria es correcta. Ida correcta contrastada directamente; no se modifica por este defecto de vuelta."
+        }
+      }
+    },
+    {
+      "record_id": "766dc75bb16e5948f0943b7d031a7e08bd9f568ecbfb876c333b8dc5105d9733",
+      "translation_hash": "9a6d8dd98fc2f8508e658f8c36d140020268daa5103bf74d170d740c72938870",
+      "back_translation_hash": "e7d474960f722a9d48adcbea94e6cbcdd2ad783ab985b60233987dd0220a2d03",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Expansión breve de la etiqueta o acción contextual; fuente e ida leídas directamente, sin omisión, cifra o negación cambiada. La longitud por sí sola no implica defecto."
+        }
+      }
+    },
+    {
+      "record_id": "db6b1c8ff1031bc99d069f464a2cc14f8533995b1f28cdb5efefc05393ab3b60",
+      "translation_hash": "2667ddf5c27a73009070564e2d202a54ac7e643559dd585d0e7ffeb5a1ba2742",
+      "back_translation_hash": "90b414d5c73d29fd71a6ee82b32f072ff6483681ac446ded27601b4478f2ca28",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "back-repeated-negation Ida correcta contrastada directamente; no se modifica por este defecto de vuelta."
+        }
+      }
+    },
+    {
+      "record_id": "6001860cef3e0c1fbb34e8360c7a24de825f2a59900403a2f9c1aaf2996bf498",
+      "translation_hash": "44916e4a47efbae4d499ee9c6b9dab47ae4f40b87dde8176f2ed7515479b0173",
+      "back_translation_hash": "c9457efe0baa9003143a96fbdeeb17034603a0533d67dc5d5146b4919884f4d9",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Expansión breve de la etiqueta o acción contextual; fuente e ida leídas directamente, sin omisión, cifra o negación cambiada. La longitud por sí sola no implica defecto."
+        }
+      }
+    },
+    {
+      "record_id": "b5e78142348be171a80aa350c1181a335743b8d52ed4fd1bb9cdbbdb74b74df7",
+      "translation_hash": "bd2a8c15502d18c284b5aeb572c0d7e2505fea61fcd93d0c0d3a1bf6ac2dce5c",
+      "back_translation_hash": "8911206a7a0d6e73306e04702d88ca3f0afec818814a4f76a878153bb5beb63d",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "back-window-not-grid-square Ida correcta contrastada directamente; no se modifica por este defecto de vuelta."
+        }
+      }
+    },
+    {
+      "record_id": "cd0742e8581e61e595c57ba3137f7204d4cdd4237fe76d42d731a513e5ddab67",
+      "translation_hash": "85d5c5610136aab5ce0e423e60f39a2dff79365d07dbccc9288f628d9f66583c",
+      "back_translation_hash": "4d70450e0664903982b2c840f819df451a0abc7b8e0148cfc8cc2bfa692349e5",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "No repetido sin origen; la ida conserva Nei explícito y no recepción. Ida correcta contrastada directamente; no se modifica por este defecto de vuelta."
+        }
+      }
+    },
+    {
+      "record_id": "8fc67867c01abcfc20d30bf22b3a22483508ec20851bc7c22b993b31c41649ae",
+      "translation_hash": "71da32ad1c049ad3f1eb500a68b0d8089ec6118a8bf87682a6fbbc2646e9b4ae",
+      "back_translation_hash": "d8286e0b523d129b553327d8f5af5cd00c47249be4ec65ed215859a33a6b673f",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Expansión breve de la etiqueta o acción contextual; fuente e ida leídas directamente, sin omisión, cifra o negación cambiada. La longitud por sí sola no implica defecto."
+        }
+      }
+    }
+  ],
+  "requires_complete_model_warning_coverage": true,
+  "legacy_comparison": {
+    "review_file": "review-es-nb.json",
+    "new_evaluations": 0,
+    "scope": "40 references per locale; historical forward scores reused only after exact source/translation hash check. Current legacy backs not regraded.",
+    "rows": [
+      {
+        "locale": "es",
+        "key": "dxf-viewer.faq.0.a",
+        "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+        "translation_hash": "d397f4090c7a35c49744eccbda28ca93054e5568d1415831bc7ae13b25e78c89",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "6e6e18dd68e3604747344d1f934318ab727115fd381f97eda51d3da7bd877fa4"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "voice-changer.fields.decodeFailed",
+        "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+        "translation_hash": "efee41ee70808d99b42355ed555b28dc07a708cbbee7842c98c84e0442961463",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "62f51c84c96ec0371f3c243a2d63bd59675752d650e3b72babf15b77aff2fd38"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "dxf-viewer.faq.2.a",
+        "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+        "translation_hash": "7b12061eba570fcf48524ba5ec8489dabd6363c3c722437c73ca419bace95378",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "bbb55820ba913131481ca6cf1708d4c87b1152d448bb0e668c44ae2c1eb895a8"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "voice-changer.fields.tooLarge",
+        "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+        "translation_hash": "fa277023a8330f7983302036cd60ceb3ea97ca9c03ce66b795f636b12e0280e5",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "f3db9a7ba4966b35185084f7ac65e996561f616a9d723932723f8718d8eaf356"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "voice-changer.fields.privacy",
+        "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+        "translation_hash": "e7378ba72f2898a2bcfc33cdb02859482574bd10882ddd59c804d0b301a2d3da",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "f063128748e695453d81727bd58f87e6115215c5c44d58b6575649aa7bad3ca6"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "dxf-viewer.fields.invalidCoordinates",
+        "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+        "translation_hash": "fa2ab2bf8905b2fb4e5ade53150ff1ce1fdcd94d233a0ab3db328ac19ee42aaa",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "45086279a6a2bf98f76cd03cf16186284a16cb6fe8670d62c7e502431e177227"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "dxf-viewer.faq.0.a",
+        "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+        "translation_hash": "331ee7ae5555b89ece5d9a1382d903e223ef48a674ee29d0d21e14d7d8194a4b",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "b952c0f76edd757ee0c21d5dd64e8e8aa9044f6548eb5ad6332828b14b0f1273"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "dxf-viewer.fields.zoomIn",
+        "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+        "translation_hash": "9b818d63f602c32a8f33e76be5231b02e2afcadd8229482afcfeda50f21f0ce0",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "326baecb32b350b1c190bb2d5df9e1b720456eba838c709958d2314ea1be249f"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "voice-changer.fields.chooseFirst",
+        "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+        "translation_hash": "9cf0870788c44ab17c08c01ca027eb91ecfc699269c619328e67e3422d59a858",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "e27a3f9d2482283eba4f0e179b42a3321c610fe56193398714d1f34db4555cf0"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "shikaku.fields.selectEnd",
+        "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+        "translation_hash": "8c99333123c2589d0ea069da5c5fb636e960f2607af94bdde73282f186952d71",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "ebeb4e24a7bb263f866e49f81802b940e4cae509f238eba35971e4cdff2b38c6"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "voice-changer.fields.clear",
+        "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+        "translation_hash": "12ba718ce1248fe5a8e08d65cfb394ebfb026f8a3d1bb0d40ae2f1c82bba2892",
+        "scores": {
+          "meaning": 1,
+          "numbers_negations": 3,
+          "naturalness": 1
+        },
+        "record_ids": [
+          "34c8b1688926b383f8d0d061694a6a004bf122ec3fa6de046dc3b2298afb6a98"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "dxf-viewer.fields.zoomOut",
+        "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+        "translation_hash": "58a3a638fb92cd4d17db395ddac5c5c6204e857931dd1a1e67378a5b8a901ccd",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "3caac5d97c6136f2a0808244bb59f738dbe8401cd0d0095ccef4ee2741a8d8a0"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "dxf-viewer.fields.zoomOut",
+        "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+        "translation_hash": "bbfa4725a21855d443b0cbe94d33cd6e74dc1235a8a3a49a049750359a2e4287",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "c72eefcece599064df346adfdb927c6ed0f51eca1607a8cea1ca8c5fa5f57c5a"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "dxf-viewer.fields.exportPng",
+        "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+        "translation_hash": "1aa1bd73d5619a9df19b45810fd5fd3808dfa5e877a2977bb4656aa1717acbb9",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "2324819dd4cf63b01b38cedf0910fb8d182456140d9cffa79562207e699ba144"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "shikaku.fields.undo",
+        "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+        "translation_hash": "0ce20272dac19530c592bd3778b8c9b7426475f2d8428ef809c0f8dda0349fea",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "2d75fdb96f11280152627e60a4390d8d4a2718ef9e8d28be0cc8820b1c5f333d"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "dxf-viewer.fields.binary",
+        "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+        "translation_hash": "d5b48877d825af212ce15f04d27bbf40bb12fe92b027c730361a44dda493422c",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "21f5004a0d040fac6141d519508f2e330d6e7f4d1a8ed2bf3936c866810d9926"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "voice-changer.fields.decodeFailed",
+        "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+        "translation_hash": "3a0e96e105b3f2af21666ed11b8391d3041108bc40843f0cdba8093a67e4fc14",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "016d778d1c9999f6c205ee1c2c5875af6cdb97ed3a2c52c4efe6918a271ce742"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "voice-changer.fields.stop",
+        "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+        "translation_hash": "03a2fba1c79a7297031618335565e912bf573ac50254c694f4cf15aabab66e5c",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "a725e74ea88cade6b7c4292ff48e5b46b14949c62717775a5cb58ff5488f16a6"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "dxf-viewer.fields.resetView",
+        "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+        "translation_hash": "4726388f48b0cd4d1159619fdd3681f8dfeea0b1a0796154ab5939a3cc1da15c",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "3b7bc26352840064f85f180c5d0b9b8ef733f6ef64d778eb88d0e8963a0d3c82"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "voice-changer.fields.faq2a",
+        "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+        "translation_hash": "f568d49fce7232d25f5a422d68b51f8840dd36cf06411d1cca06da7b329f3620",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "1f9caf76fed3e9f53c211d9b1c195a914631f5d1520054cd5a957f67c3313c03"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "voice-changer.fields.faq2a",
+        "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+        "translation_hash": "c34866932c05a1bdcf119b9b0312ffc3472469cd5c70c688a803117c7d73877a",
+        "scores": {
+          "meaning": 1,
+          "numbers_negations": 0,
+          "naturalness": 1
+        },
+        "record_ids": [
+          "7d7d1e7ab4f4ca7d5022aa4c8e0fee29213e1c02e6e75260598df932d2debd80"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "voice-changer.fields.chooseFile",
+        "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+        "translation_hash": "45a33637567598f608beae81bab0c713af16227bc6c7f50d421876f530075c48",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "29d5a2f3c6e0d7e6d26364936a483abc21a570f264d44abfa5735fce5234d886"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "dxf-viewer.fields.exportPng",
+        "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+        "translation_hash": "c2f23209c653a5500c7fa7dab34775a503acfef5c96f441189e5b0334529b6a0",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "8b7482399ba2fbfe559abf3b1161c52b2cbb57a3611dbd0df3459295e60fbbac"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "shikaku.fields.reveal",
+        "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+        "translation_hash": "97f881c4db41b7e07aa529a5a0d1a7629c6db9e6a99372beab5d6cd915d2ec20",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "a10c26fd5193459ec492cdae9807d1386c7882258e6b4f8e5bc8e21c4cb71fe4"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "dxf-viewer.fields.zoomIn",
+        "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+        "translation_hash": "ee87d9f0a8bc743729904e22bafe4c2523320b9b148d448feefb281aa124cad5",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "e4b435c3b2e4813001496daea1a559ce41196af54e6236ff75f23146123382ce"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "voice-changer.fields.export",
+        "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+        "translation_hash": "06144b213d46b03d80dc1c2b1339b3842bcf6ad4ebee6aab1e5e17b1d0353b2d",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "90044d99d69a362ecf8c5c1eabcffeba2f220a73ed57d81d689d605afe6ce9a7"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "shikaku.example",
+        "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+        "translation_hash": "4e23f8b391e7ade2ee1c8ad5f63617d4574b4c970ca6f5a414013f0608e3fa41",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "e8eb9abf937d8047613ac60ea4db7e375a65175ae32ae9a77f57a30200d68abe"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "voice-changer.fields.loaded",
+        "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+        "translation_hash": "5891107f89d27dc1b71ca22083151aa22caed665cb95632924ded2208fde4f02",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "bbfc6b9d0a29df047649d6988480f43b3b19d1e127c310b63f56e08d21dad336"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "shikaku.fields.deleteSave",
+        "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+        "translation_hash": "252e8f12ebc501b4d85304d86346f0c94e2c34a3866db085e07923ae307402c5",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "ec5a9e9d268a5097a41d96406bf1f716da08270b5850596d07a0701d7ba0def9"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "shikaku.fields.selectStart",
+        "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+        "translation_hash": "bd2a8c15502d18c284b5aeb572c0d7e2505fea61fcd93d0c0d3a1bf6ac2dce5c",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "5a0c3732dcf27cefaabacc3bbe7b6e0dd0afcea88c59d0fd14b309e9c0a52e1b"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "dxf-viewer.fields.resetView",
+        "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+        "translation_hash": "89d462b8a1c816c064f3cd2c355067401cfa959f3381faf9d7b25a4609154446",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "8e0eed0dad5554b5864dc4043be39040f916bd66cb416b2e8726ab06c34a88d9"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "shikaku.fields.check",
+        "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+        "translation_hash": "b16678a09e484ab6121bc3f59f357eded7e811d3d858d3d668d3dabf85c473dc",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "1bda63af7bf627295dc288b532e1004db3db56ea6bf532894221610f0d427aac"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "voice-changer.fields.chooseFirst",
+        "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+        "translation_hash": "6360a26c6bf33ddc67aeb8ce8be40ead1f8b72de2cd28e94e1dd734d9690e241",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "52c171f7f05d53f3d91a47eafdc114fa682a9bc410ded2147e87400b64955df0"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "voice-changer.fields.stop",
+        "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+        "translation_hash": "6002107361477a429c911db6697376ef32bae4bbf1b0025bbe9cbc72faeb0024",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "6aecdb3849d4c35bb725e27df40d5cc2568b18f7f9518d89ae2b166061ec3fb0"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "voice-changer.fields.privacy",
+        "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+        "translation_hash": "026f710ff724741058bf4ff7ac30244e1d7443c120f4a01cdfb6075f0d9af8d3",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "d5b466a0193c12e47467a3907fac63777883f71606e9f95e7cb837529cdc2e3b"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "dxf-viewer.fields.exportSvg",
+        "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+        "translation_hash": "419e8dc4090d050173c15a0510e8e241c414955231dc6d6115fdf6f73566e668",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "7182bf2cd3f653a1dd7b645f796c21f193db85a55e400f6d70032815fd7ad642"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "dxf-viewer.fields.exportSvg",
+        "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+        "translation_hash": "fb7d4a97ee49d58e4a27bd93441ebeb609282bde4fd162a30b3b932ebfa598ce",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "7e0e6a931cb733507e7c316905ff6e6658a25da9bf19a56d6eaacc8ec2c997b5"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "voice-changer.fields.tooLong",
+        "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+        "translation_hash": "fbcc7f6677a1df01b83c5bb10f49a40c917bc79cd1a59932e394a21dc9e69b5a",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "843b6af4ed17ec4fe03146859ed72e090e71ffaffdd3ae53e9a285723512ac27"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "voice-changer.fields.tooLarge",
+        "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+        "translation_hash": "4ac81ed7dc3444f2d4093e4286fa573a32bb690c62a76ba6fc5a15e5bd8391eb",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "997abfc7587e13446a7fc16039aa5d05a6bc6dace8247f15bab55d39d9baf32f"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "voice-changer.fields.export",
+        "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+        "translation_hash": "2315d71e0f8aeefb7bbf662c9a1aad5e8cf2a2d21b98a1892e5cfc0a603c4c74",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "b5505fbd14f989c3ea88086853da51dd34d121f13410b4d50a657718e6e26df4"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "voice-changer.fields.faq1a",
+        "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+        "translation_hash": "9515f8fb064981fb6e7c8f9166970ba6a7e61a512c1d5adc57b716ff5c5ace63",
+        "scores": {
+          "meaning": 1,
+          "numbers_negations": 0,
+          "naturalness": 1
+        },
+        "record_ids": [
+          "11b758fb79cf9fdd2f3ffbaec229c25103628e03b3f08288320c8323c9c9db3e"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "shikaku.fields.selectEnd",
+        "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+        "translation_hash": "5723ba5a744e21d36f4e2a3fbd91b6dcf60941dfc153ce59fbac2324562fb863",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "fc664eaa65cbca3b1d47165f2265129e637ae7f02143f3405480e367802adc65"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "shikaku.fields.faq.1.a",
+        "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+        "translation_hash": "cf7bd6233d9b4991e7cdf684cc08bf91bcb867fc13b8f1566d78bec258cab801",
+        "scores": {
+          "meaning": 1,
+          "numbers_negations": 0,
+          "naturalness": 1
+        },
+        "record_ids": [
+          "5fc21a81926c561a64c3719b7433ec7a71f03f68a9a5c66e2cf309a140195204"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "dxf-viewer.fields.binary",
+        "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+        "translation_hash": "3a42bcaaeac761b4ad9cd49dac8fbdfaf8bcc63f473654c2f4db10abc85df006",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "76f47a31aa68442e3dcfe2a5cf4928fb5740013a8a4187ccb4cbe6e18d0e0433"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "dxf-viewer.fields.file",
+        "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+        "translation_hash": "3bb3252c5bd9f3a688cf708c54f5c9411171135ce1d775671ea1ff04427e5417",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "313d1e80b730be87bc333f855972068185b3aa76709955cd3d437c88d6e4bcf9"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "dxf-viewer.fields.invalidCoordinates",
+        "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+        "translation_hash": "0d0afef472d22528d52790f6a5741398912c97b37618e6f2f956cc71b5e8af7b",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "b888253df027598fa161a9c0856d02116b1f049fcf5c60de4b0c571221336284"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "voice-changer.fields.chooseFile",
+        "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+        "translation_hash": "2c7dc401af69fdd8322b7119701f7b1ad4dc517a7998de40b7b876f4930d73ec",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "66a05f3afbeba26e44cbeb5875b0eeee49e7254fcc5914cb56bae4d3384263ed"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "voice-changer.fields.tooLong",
+        "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+        "translation_hash": "e7e53f8abf65a60cf747f8625f607a32d9222732f1b23e17190edfc7d46396f0",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "caa82173028133a63952fcf122f735ae2be15542814803ff2521cac23e095950"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "voice-changer.fields.load",
+        "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+        "translation_hash": "7125b2fd9758e7a7695c233f1ac0889c496c4699b68480cfbb560dffa5184f58",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "0c57e68bdc0c01c233da3cc14d54f4d8cd6450a91e0490c3d9554062668f0e5d"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "shikaku.fields.check",
+        "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+        "translation_hash": "a80932ad80feea28fb593f96947c3f6f66d2e9b2dedbdf66302379c0487d007c",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "5a8687e664b65886ca4bdd93f509f022fb6fdfb3301c3f2a1349b01a161866df"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "shikaku.fields.hint",
+        "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+        "translation_hash": "0b9d8a88f752de74a70fb544c6717d734f242dc8458ddc1d21d0273d8bd34d66",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "64fdbc6dae1781b0f1cac5c6dffeb9d6277a7bbea39ebd4e32294e244ad87a0f"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "shikaku.fields.clear",
+        "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+        "translation_hash": "0d8f3f8d19c09229347a305082568453f415742c8b85147d1258497e981bd5ed",
+        "scores": {
+          "meaning": 1,
+          "numbers_negations": 3,
+          "naturalness": 1
+        },
+        "record_ids": [
+          "1a69e3d50fb2c3f0baa8d3f985af64098abc255f8dc0e589e9c5c3bc05aa4ab8"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "voice-changer.fields.faq1a",
+        "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+        "translation_hash": "6bcf9239977a3cac51dbb97c1a0739f7cc9deccaf4d227e5a5079765d2794a42",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "63c8ce62dd4c367a62bd84269bda1eb50654568ab5e550e7a7b72281bfc11491"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "shikaku.fields.resume",
+        "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+        "translation_hash": "edbc4daec5879022e4d061dc777af2416875d70bed151286662f9d387de22d78",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "c4f7b97ad9a61dc8da1a4e07f7057f77df8b6ea2fde54e3beea2b18660c64482"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "dxf-viewer.fields.file",
+        "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+        "translation_hash": "f947003b4e2cb964fdae40cda2f478ac81c3b26fd580c42dc74810d29cd169b2",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "b048b7342082903bf0c9b9cd94dd98e993b8268aa5652816a150ca2ecc4a318a"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "shikaku.fields.clear",
+        "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+        "translation_hash": "c5fa72a5eb462fbf674c9b46a0090f3087aa30999cb3cca57f4e7b1ca857cd94",
+        "scores": {
+          "meaning": 1,
+          "numbers_negations": 3,
+          "naturalness": 1
+        },
+        "record_ids": [
+          "66784067f3e8f7f2360488ca9dbc6fabbfc8cf85de5ea9513a854be77ae7a0b9"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "shikaku.fields.daily",
+        "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+        "translation_hash": "7a34361fd7016a4988aa7b3e83d62dc63671ddec9ade1516485847b78e37fb84",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "ba74d4acc72eab78a8e3f243049c09da5c1c32dd013c9c1ac3b02a68efc96a6e"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "shikaku.fields.selectStart",
+        "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+        "translation_hash": "9bdc16c2b86c48cb06c24a4deb1e0051984109eb1b60c561600a0071d9dc50f8",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "4c98ca5d9f5d867bf55480c36d803e4aea8dfca5be70ee161158f3229cd47804"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "dxf-viewer.fields.unsupported",
+        "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+        "translation_hash": "5b2e15c831cfbcd4a69bbd81fb61f8ab522c7bf50d24c85d956393bed5a17a48",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "e5b4ba5d5aa03056ceaf00e92920784b6d5f426327badc3f72129cef47f93d44"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "shikaku.fields.undo",
+        "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+        "translation_hash": "84abec37ce988e25d7cbf7f94fe9cf1f1abe03760a6e7d38d204103763cfc32e",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "241e0f6028142a1735ec087c01adf08f04089cc0d5896f68b346fbd4d3971fa1"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "voice-changer.fields.clear",
+        "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+        "translation_hash": "5d935d23abd1eadb7d4f5ff014bb1f2161468f5e720b303e4f30e7f4db539884",
+        "scores": {
+          "meaning": 1,
+          "numbers_negations": 3,
+          "naturalness": 1
+        },
+        "record_ids": [
+          "e77430f9b3ae3ba90739ccf99e906ca1ee54ad3c75063f612f506aae3f26f5ee"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "shikaku.fields.deleteSave",
+        "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+        "translation_hash": "e6ca477a5a4ce27b6827995712adcd02bc03e313289b953742f27146a6383526",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "ef6cba7de2a57bb7a37eb14912dbc82f487e1a5ec41046f612089a18b68abc74"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "dxf-viewer.fields.cancel",
+        "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+        "translation_hash": "85965ae79fa993c7f2d1e80480f190ca8b8a9d158fcfe08a1dbba12466f655f8",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "996b3cacea0247e1e6fe5c3e82f83ea3981d44bc5467fe7efb7ac5494061275f"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "shikaku.fields.newPuzzle",
+        "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+        "translation_hash": "dc723a1210ef3aa04c2fc36ecd172eb410a91d43d0d43b477836cafb7cfbc53b",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "14e91c9833e7303445ff1301cb33c285cca22ca9351f7cc17a41bb4179ead9d8"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "shikaku.example",
+        "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+        "translation_hash": "9505ab36679f9f74a5f796f55b6ccc8a62869470b3a557f6ffaa615c6eb6060a",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 2
+        },
+        "record_ids": [
+          "4da505ab482af7690fef5496a6c010e570dacdaef442497b6d22ac9662af30c3"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "dxf-viewer.fields.measurement",
+        "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+        "translation_hash": "dc73d9432d547a9a259c37d5537b250c84a169e07f1c8b083d43e0682e0c636a",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "2322f59c23d6e2d37f222bd863c860838f42d04839eb5c86b3f6c200b4c92a16"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "shikaku.fields.resume",
+        "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+        "translation_hash": "5685e1faf0b38db283ae1f0a07997285d8ef370a53ef7740b86c2f0d46aa0702",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "f91dd292a54897afadabc4be4c04496ebbfee73bae46c94e9b337b484ee468cd"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "dxf-viewer.fields.measurement",
+        "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+        "translation_hash": "91551dd4e44b49509958aa5f168e7f2ad0cdc3c365ad5a5073dbabfcf07ac637",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "85b5b225b9b71cad1fe7ae1f410755ead7927b6286794f78410596a0fa585217"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "voice-changer.fields.load",
+        "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+        "translation_hash": "73b26bf8b92760fe148825188a972573bd2807d24a866588ceda6a7d3a434794",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "9c7af030be8c7e53dd64bea716908ecd592ef964c9dfc4ce883fcb5e2801cb64"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "dxf-viewer.fields.unsupported",
+        "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+        "translation_hash": "6b74c68e03c7d616326dfda535f221c4bebfd56646917f15bb0dbb5be39858a9",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "dc033210e9fa3dcd3685a413fd6dc68d2a8913d8868d2b0f62d4480be534e287"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "shikaku.fields.newPuzzle",
+        "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+        "translation_hash": "96d9e4f494f0ea52da051157b6dcf8cd73ac76aae6893e19d0d947ece1f7bc30",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "b85924b30c970d0ae524d98cc7918a1b6554008735e1306aa5b554dc3c685b77"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "voice-changer.fields.preview",
+        "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+        "translation_hash": "6fcb352183ea1f99d9ec3ba78f6600986c78b9e7fcdd13e49fbf7ffad5391b97",
+        "scores": {
+          "meaning": 2,
+          "numbers_negations": 3,
+          "naturalness": 2
+        },
+        "record_ids": [
+          "4c366ace588b081fe1eb6c18e72e66a180680eab59bcb21e45bdbeda04a0df85"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "dxf-viewer.faq.2.a",
+        "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+        "translation_hash": "85ac2ce3629157510295ffef24d192a6741bdb9a0569431d17a4d0556a054037",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "02fe79f527a3082aa13d90896cdd66ffd7cb88136d1579549ed075614a940ded"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "dxf-viewer.fields.cancel",
+        "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+        "translation_hash": "89e1dbcb46515b56cecbfb1785eae13c69f6a1a35c792bfc9f7e8761a75bc6b0",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "f0b98be63e44bf6ba806a8fcf0d6ade042f0ca1f73231d53e2b665d841aceaeb"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "shikaku.fields.hint",
+        "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+        "translation_hash": "852e56dabb007659b41daedecd0b26e8c8f44b8df8e99893dde9a12a27d382f1",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "a104f54aeedb5dd0360e80f727cf153dea433d107e48f5cd535049de9ee51bde"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "voice-changer.fields.preview",
+        "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+        "translation_hash": "53db2e17b20585cd809a57b578aa633af6bfa1d0333f576cb4e4e9a4fd8c164b",
+        "scores": {
+          "meaning": 2,
+          "numbers_negations": 3,
+          "naturalness": 2
+        },
+        "record_ids": [
+          "44b3b5b27d5f61fd4bc98bf820c1f1054ae6c54e977ec2acaac17105bcd76591"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "shikaku.fields.daily",
+        "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+        "translation_hash": "89adf4b17102ae3ec585f234f5b1c928048c1a127fb228e6aa7a673f7cc82ba4",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "5c5f3c3808b1242348d001971cbc8a80eb6d77afde487e0e6119ea72defe3da1"
+        ]
+      },
+      {
+        "locale": "nb-NO",
+        "key": "voice-changer.fields.loaded",
+        "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+        "translation_hash": "a853a9225c2fe94deb0d68f664b6ec7b23f90ad79ebcf0e8e0d82faa31551c2c",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "bf3852886d09001e4524fa130742851e8191bbd62477621ea18f3e04a756a151"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "shikaku.fields.reveal",
+        "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+        "translation_hash": "d90515aa32d82ff5620ad0f0ba031d532241fc1e51e54a1a7244cf2f541defe4",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "946f1949d94094a4d5121cb374605d26be347dd5a2254d9a79410ad3800c8dec"
+        ]
+      },
+      {
+        "locale": "es",
+        "key": "shikaku.fields.faq.1.a",
+        "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+        "translation_hash": "ba1b3a7b4d9ac46d2f823fe68f97b9f3d8f96912c27b49e402618f23f4910408",
+        "scores": {
+          "meaning": 3,
+          "numbers_negations": 3,
+          "naturalness": 3
+        },
+        "record_ids": [
+          "11b680c51c59b03152ed25e6a4dbb2b6455ff23926b36994beab5f16e1f8c990"
+        ]
+      }
+    ]
+  },
+  "warning_coverage_supplemental_reviews": [],
+  "source_forward_hash_comparison_to_v13": {
+    "same": 75,
+    "changed": 5,
+    "total": 80,
+    "back_same": 72,
+    "back_changed": 8,
+    "all_current_back_texts_read": true
+  }
+}

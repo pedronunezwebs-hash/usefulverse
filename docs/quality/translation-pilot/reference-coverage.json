@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-22T07:22:21.417975+00:00",
+  "at_utc": "2026-10-22T11:17:13.361494+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 3424,
+  "agent_reviewed_translations": 3504,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,7 +315,7 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 3424,
+  "agent_reviewed_evaluations": 3504,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
@@ -323,7 +323,7 @@
   ],
   "full_tool_computation_policy": "context-v13",
   "full_tool_pilot_approved_locales": [],
-  "total_records_all_policies": 11065,
+  "total_records_all_policies": 11225,
   "semantic_regressions": 580,
   "contextual_reference_gate": {
     "es": {
@@ -334,7 +334,7 @@
       "points": 360,
       "maximum": 360,
       "passed": true,
-      "reason": "40 fuentes/idas/vueltas leídas; ninguna pérdida de significado, cifras/negaciones ni defecto de naturalidad observado. Solo prerrequisito al completo; no aprueba el idioma."
+      "reason": "40 fuentes, idas y vueltas actuales leídas. Acciones, datos, negaciones y gramática correctos en la ida observada; defectos de vuelta separados. Solo prerrequisito del completo, sin aprobar el idioma."
     },
     "nb-NO": {
       "button_number_negation_errors": 0,
@@ -344,7 +344,7 @@
       "points": 360,
       "maximum": 360,
       "passed": true,
-      "reason": "40 fuentes/idas/vueltas leídas; ninguna pérdida de significado, cifras/negaciones ni defecto de naturalidad observado. Solo prerrequisito al completo; no aprueba el idioma."
+      "reason": "40 fuentes, idas y vueltas actuales leídas. Acciones, datos, negaciones y gramática correctos en la ida observada; defectos de vuelta separados. Solo prerrequisito del completo, sin aprobar el idioma."
     }
   },
   "full_tool_gate": {
@@ -390,9 +390,11 @@
     "context-v9",
     "context-v10",
     "context-v11",
-    "context-v13"
+    "context-v12",
+    "context-v13",
+    "context-v14"
   ],
-  "contextual_reference_gate_policy": "context-v13",
+  "contextual_reference_gate_policy": "context-v14",
   "low_resource_review_minimum": {
     "locales": [
       "ha",
