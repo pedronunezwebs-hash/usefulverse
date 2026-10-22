@@ -54,7 +54,10 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
    **Siguiente exacto dentro del Paso A:** recuperar el [completo v12 en curso, 39730859028](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39730859028),
    fuente `5801f4a`, es/nb y 160 referencias reanudables. No relanzar inferencia ni repetir referencias/v11.
    Revisar las mismas 68+20 conocidas desde v6 de `full-sample-v12-plan.json` y todos los avisos fuera
-   de muestra. Leer ida/vuelta actuales; reutilizar rúbricas solo con fuente/ida de hashes exactos.
+   de muestra. V12 amplía además la lectura a los 174 textos no-referencia por idioma (los 428
+   candidatos entre referencias y completo), conservando la nota comparable de las 88. Plan ampliado
+   antes de recoger resultados; salidas anteriores existen, no es ciego. Un fallo de ida fuera de las
+   88 también bloquea el gate global. Leer ida/vuelta actuales; reutilizar rúbricas solo con hashes exactos.
    La corrección de 16 salidas por memoria no demuestra generalización del modelo; distinguir su procedencia.
    Añadir cada fallo nuevo a regresiones primero en rojo, sin editar checkpoints/revisiones v2–v11.
    Enlazar la revisión completa como suplemento desde referencias para cubrir todos los avisos v12.
