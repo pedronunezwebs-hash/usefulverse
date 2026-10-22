@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-21T16:21:09.708600+00:00",
+  "at_utc": "2026-10-22T05:55:44.921373+00:00",
   "approved_locales": [],
   "runs": [
     {
@@ -536,6 +536,45 @@
       "python_tests_with_actual_dependencies": 77,
       "artifacts": 0,
       "log_sha256": "f14aa38dc23121df737cb75881e487d990b497fc206467b948e0b8c0365790ea"
+    },
+    {
+      "inference_policy": "context-v12",
+      "run_id": 39730087914,
+      "job_id": 119662889174,
+      "source_commit": "32142e34766cd52fede4afba5b87a70b881fd9cf",
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 84.58823496400001,
+        "counts": {
+          "legacy": 80,
+          "model": 80,
+          "reviewed_memory_hits": 21
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3692948,
+        "scope": "references",
+        "total_seconds": 242.500319743
+      },
+      "resumed_records": 0,
+      "emitted_records": 160,
+      "checkpoint_sha256_at_collection": "e38d50af93245c478b5c304d612d0601b5fa7f67e4b778d8269a2b16ca0d0427",
+      "python_tests_with_actual_dependencies": 80,
+      "runner_cleanup": "success",
+      "artifacts": 0,
+      "log_sha256": "8321bceb3c5759f6481429d7da62421bf51a862b0f9bc8ad8f92746c83edd7c7"
     }
   ],
   "checkpoints": [
@@ -548,6 +587,11 @@
       "path": "checkpoints/context-v11/madlad.jsonl",
       "records": 856,
       "sha256": "9fdb2df8a76f0d3327d5ebc54a41cf1edd4a399792f14e93e495c2b24b0e66e1"
+    },
+    {
+      "path": "checkpoints/context-v12/madlad.jsonl",
+      "records": 160,
+      "sha256": "e38d50af93245c478b5c304d612d0601b5fa7f67e4b778d8269a2b16ca0d0427"
     },
     {
       "path": "checkpoints/context-v2/m2m100.jsonl",
@@ -605,7 +649,7 @@
       "sha256": "e8e4ece85552fe89bdb9518bc8eeca91b5a9b446fcbe4c3694b95f8b70290643"
     }
   ],
-  "total_records": 9353,
+  "total_records": 9513,
   "cancelled_runs": [
     {
       "run_id": 39484416039,

@@ -268,5 +268,140 @@
     "dependency_skips": 2,
     "corpus_node_tests": 2,
     "log_sha256": "0779cdcc3fe9cfe6fe7466bf8687f22690156f5a9ad765d4b0ea47dac32dc4c4"
+  },
+  "memory_review": [
+    {
+      "locale": "es",
+      "key": "dxf-viewer.description",
+      "source_hash": "44507baf26966f5e70c69064513d6977453186776a56683e19936f8edf5d01a3",
+      "reviewed_translation_sha256": "8fe757fed743f6010ac29cb82a5ee6b2a137e19855b11d7a7ca038abee5619b0",
+      "meaning_actions_limitations_negations_review": "Abrir ASCII DXF local; solo geometría 2D compatible (líneas/círculos/arcos/polilíneas); capas, distancias y exportación SVG/PNG. ES secuencia tú; NB DXF-tegninger/2D-linjer e imperativos.",
+      "native_review": false
+    },
+    {
+      "locale": "es",
+      "key": "dxf-viewer.intro",
+      "source_hash": "99fbd66cd6a5eb3cd27bb3a678221d4d1d58d7bfb129bd957ae447847ccf88cc",
+      "reviewed_translation_sha256": "33670e7831acd4e9bebb6ed06a4bfcd250124275fb8578508d6536ba727efb0c",
+      "meaning_actions_limitations_negations_review": "Abrir en este dispositivo; desplazar/zoom, capas, medir y exportar solo geometría compatible; archivo original no subido. ES tú; NB DXF-tegning y órdenes conjugadas.",
+      "native_review": false
+    },
+    {
+      "locale": "es",
+      "key": "shikaku.details",
+      "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+      "reviewed_translation_sha256": "00013794afa93810d014fa8741fca18221f27e19b64f781008c235bfb5c83da9",
+      "meaning_actions_limitations_negations_review": "Casilla inicial y final o arrastrar; exactamente una pista por rectángulo y área igual al número de casillas. ES tú; NB én tall-ledetråd y antallet ruter.",
+      "native_review": false
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.description",
+      "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+      "reviewed_translation_sha256": "34b02c07c840bfc073e9e73aa5a6f298a32deb202d27189d755730ac220dc528",
+      "meaning_actions_limitations_negations_review": "Tono, efecto radio/voz grave, escuchar eco y exportar audio local; gratis/privado/sin subida. ES todos los imperativos en tú.",
+      "native_review": false
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.details",
+      "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+      "reviewed_translation_sha256": "31442be22cfe2f5ec6dff93448958b8aee6c16c556160de74176f2fdca4d0188",
+      "meaning_actions_limitations_negations_review": "Decodificar audio elegido y Web Audio local; volumen/tono/velocidad y eco opcional; salida WAV; ningún audio al servidor. API preservada; NB Nettleseren/Den concordantes, Web Audio-filtre.",
+      "native_review": false
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.example",
+      "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+      "reviewed_translation_sha256": "73c980af097f03226b3f4ec594196b2445c75adfee4f6c4cc6a9dab05098d849",
+      "meaning_actions_limitations_negations_review": "Comparar original con radio/tono más bajo; tono también cambia velocidad; no clonación ni corrección de estudio. ES tú; NB stemmekloning/tonehøydekorreksjon sin inglés roto.",
+      "native_review": false
+    },
+    {
+      "locale": "es",
+      "key": "voice-changer.limits",
+      "source_hash": "72eaa6afc178fd8d0e8f7da5c73ba70e6a5473c00316ce0df573d3b309416522",
+      "reviewed_translation_sha256": "d5cf717312d99ad22293265822e4fe1d4521fea417161da70201f3ba61bc4642",
+      "meaning_actions_limitations_negations_review": "Clips cortos, no canciones completas; tono por velocidad cambia duración y tono juntos; no nueva identidad natural, aislar voces ni mismo resultado garantizado en todos los navegadores. Frases completas en ambos idiomas.",
+      "native_review": false
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.description",
+      "source_hash": "44507baf26966f5e70c69064513d6977453186776a56683e19936f8edf5d01a3",
+      "reviewed_translation_sha256": "7b57713e1b54fd33c316b1c5260af499a5ad372a196963e6edb3ec5e7ca980e0",
+      "meaning_actions_limitations_negations_review": "Abrir ASCII DXF local; solo geometría 2D compatible (líneas/círculos/arcos/polilíneas); capas, distancias y exportación SVG/PNG. ES secuencia tú; NB DXF-tegninger/2D-linjer e imperativos.",
+      "native_review": false
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.faq.1.a",
+      "source_hash": "2e62ffc986c2e02d3e675c0d3748abcdcd6f331804dd987527903e3b816761c4",
+      "reviewed_translation_sha256": "585449f713371aae729b16736b69ffde4a005939c2aee5acfcaf7f7ef04ee8d7",
+      "meaning_actions_limitations_negations_review": "Solo tipos compatibles se dibujan; otros se enumeran por tipo y antall (recuento), nunca aproximados. NB evita Den para verktøyet neutro.",
+      "native_review": false
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.intro",
+      "source_hash": "99fbd66cd6a5eb3cd27bb3a678221d4d1d58d7bfb129bd957ae447847ccf88cc",
+      "reviewed_translation_sha256": "faeca2ab306afa5144ea6a3e541813d1ce2fae6d7775d232e4622ec57031fe51",
+      "meaning_actions_limitations_negations_review": "Abrir en este dispositivo; desplazar/zoom, capas, medir y exportar solo geometría compatible; archivo original no subido. ES tú; NB DXF-tegning y órdenes conjugadas.",
+      "native_review": false
+    },
+    {
+      "locale": "nb-NO",
+      "key": "dxf-viewer.privacy",
+      "source_hash": "83d9effeb10db2cfc8b9ec4a67f2cac9e9ad08a27e76b5ab9fd4ce3ae5c17ab1",
+      "reviewed_translation_sha256": "226746683b69b0496aa955988352012819865b5942a6d7927576066b8e518da6",
+      "meaning_actions_limitations_negations_review": "Lectura en navegador sin subida; solo líneas/círculos/arcos/polilíneas rectas 2D; entidades no compatibles enumeradas y excluidas de medida/exportación. NB compuesto 2D-linjer.",
+      "native_review": false
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.details",
+      "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+      "reviewed_translation_sha256": "f9ffa5ad1417759084848f19d4528f65a019310b6f633e116d86b50a73472d50",
+      "meaning_actions_limitations_negations_review": "Casilla inicial y final o arrastrar; exactamente una pista por rectángulo y área igual al número de casillas. ES tú; NB én tall-ledetråd y antallet ruter.",
+      "native_review": false
+    },
+    {
+      "locale": "nb-NO",
+      "key": "shikaku.fields.faq.0.a",
+      "source_hash": "1da9eab3e79e5ba1c578b590065014537d077420ad02d77072da8a8f5d7355b5",
+      "reviewed_translation_sha256": "2c86faa235597c9df7cfc648e67f0ba5689f2b58212247833e28f333f08ca4c4",
+      "meaning_actions_limitations_negations_review": "Puzle numérico; rectángulos rodean pistas; cada número indica casillas que cubrir; cada casilla se usa exactamente una vez. NB tallpuslespill/tall-ledetrådene/rutenettet.",
+      "native_review": false
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.details",
+      "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+      "reviewed_translation_sha256": "036bea3775adf07b20d779c26db3b6351b812b99935911bc9b1eb9d5eff5f4b3",
+      "meaning_actions_limitations_negations_review": "Decodificar audio elegido y Web Audio local; volumen/tono/velocidad y eco opcional; salida WAV; ningún audio al servidor. API preservada; NB Nettleseren/Den concordantes, Web Audio-filtre.",
+      "native_review": false
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.example",
+      "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+      "reviewed_translation_sha256": "a5a4f50d252f350fa3909afdb7b5f0828b8775fef09dab5d205f593b83957ffc",
+      "meaning_actions_limitations_negations_review": "Comparar original con radio/tono más bajo; tono también cambia velocidad; no clonación ni corrección de estudio. ES tú; NB stemmekloning/tonehøydekorreksjon sin inglés roto.",
+      "native_review": false
+    },
+    {
+      "locale": "nb-NO",
+      "key": "voice-changer.limits",
+      "source_hash": "72eaa6afc178fd8d0e8f7da5c73ba70e6a5473c00316ce0df573d3b309416522",
+      "reviewed_translation_sha256": "5b0b2eeba3897aa8ac6887f4da7850791a994589ea7a80e5ce2a1f545ad28817",
+      "meaning_actions_limitations_negations_review": "Clips cortos, no canciones completas; tono por velocidad cambia duración y tono juntos; no nueva identidad natural, aislar voces ni mismo resultado garantizado en todos los navegadores. Frases completas en ambos idiomas.",
+      "native_review": false
+    }
+  ],
+  "linguistic_rule_source": {
+    "url": "https://sprakradet.no/godt-og-korrekt-sprak/rettskriving-og-grammatikk/tegn/bindestrek/",
+    "checked_at": "2026-10-22",
+    "scope": "Compuestos con abreviaturas y nombres de varios elementos; apoyo ortográfico para DXF-/2D-/Web Audio-, no certificación de toda la traducción."
   }
 }
