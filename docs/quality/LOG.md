@@ -161,3 +161,8 @@ Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 - Diagnóstico, plan de calidad, estrategia 1M, RUNBOOK, ESTADO.md, MAPA-REPO.md, progress.csv.
 - Copia de seguridad del trabajo sin guardar de las 300 herramientas: rama `backup/codex-300-tools-20261020` (commit `636f3c1`).
 - Sin cambios en la web. Siguiente: ver ESTADO.md §1.
+
+
+## 2026-10-22 · Codex · v13 en curso
+
+Candado 239e101. V12 cruda reproducida en23 casos;3 tests primero rojos y luego verdes, memoria fuente/hash/contexto88claves154destinos. Lecturas y plan en `lotes/2026-10-22-piloto-v13.md`. Referencias pendientes;0idiomas aprobados,0deploy,25.625URLs indexables previstas sin cambio.
