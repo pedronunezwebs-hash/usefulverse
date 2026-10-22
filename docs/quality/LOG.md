@@ -2,6 +2,11 @@
 
 Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 
+## 2026-10-22 · Codex · Hito v12: reproducción y memoria; referencias pendientes
+- 16 fallos reales v11 reproducidos con sus salidas por oración, sin inferencia nueva ni reparación posterior. Tres tests nuevos rojos antes de registrar v12; 80 ligeros verdes (78+2 dependencias) y 2 Node del corpus.
+- 10 claves/16 destinos nuevos de memoria con fuente/hash/contexto y procedencia; 70 claves/131 destinos totales. Contrato tipado y de cobertura por oración conservados; políticas v2–v11 intactas. No demuestra generalización del modelo ni revisión nativa.
+- Siguiente: 40 referencias reales es/nb y todos los avisos antes de completo. Candado propio EN CURSO; Paso A abierto, 0/300 main y 0 activadas, sin deploy.
+
 ## 2026-10-21 · Codex · V11: referencias pasan, completo rechazado; relevo v12
 - [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador; rama feat/new-tools-batch-1. Código fe2acf3, datos 3259799, cobertura `aa40244`.
 - Oraciones completas/datos en contexto, traza y contrato por oración; ambas FAQ de tono conservadas; una memoria NB de unidades. Seis tests rojos antes del arreglo.

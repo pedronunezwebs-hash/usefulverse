@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "observed_run": 39631325214,
+  "observed_source_commit": "40fef81f492e9082cfc3d948db5ce4b6636b0317",
+  "reproduced_at_utc": "2026-10-22T05:46:26.253494+00:00",
+  "method": "Replay actual stored v11 per-sentence raw outputs through unchanged complete-sentence translator/forward path. No new model inference, reconstruction or raw text repair. All sixteen bad forward rows already have permanent semantic fixtures or hard API check.",
+  "red": {
+    "command": "python3 -m unittest discover -s scripts/localization -p 'test_translation_reviewed_language.py'",
+    "tests": 3,
+    "errors": 19,
+    "cause": "Unknown v12 policy before implementation; sixteen subtests plus two adversarial tests and the final policy assertion.",
+    "log_sha256": "5fb5b550daeb0e38ac915dd7c77f3a610ed6d61b7d0deb434d20993be2c374be"
+  },
+  "reproduced_rows": [
+    {
+      "record_id": "be20642ab53407ab771248208f048fe3eb47cac4e5fe38ab7c90434875a22c9f",
+      "key": "dxf-viewer.description",
+      "locale": "es",
+      "source_hash": "44507baf26966f5e70c69064513d6977453186776a56683e19936f8edf5d01a3",
+      "translation_hash": "e95c2b383cc2cf3ef2d13d43e819b5a771926e20b877e90c0315cb58a254fad3",
+      "same_raw_replayed": true,
+      "memory": false,
+      "permanent_semantic_issues": [
+        "Sentido 2D corregido, pero mezcla Abra/Exporte con Ver/Mostrar en la misma secuencia de instrucciones."
+      ],
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "1212181aa757a6664c538fcf9b375b8a3f5c84dd76c1f65ccf9503463f72aa75",
+      "key": "dxf-viewer.intro",
+      "locale": "es",
+      "source_hash": "99fbd66cd6a5eb3cd27bb3a678221d4d1d58d7bfb129bd957ae447847ccf88cc",
+      "translation_hash": "1cba4986600e7c5b4f9eec47a6cbb39e1dadc3dcd9c71535c59809300eb0d511",
+      "same_raw_replayed": true,
+      "memory": false,
+      "permanent_semantic_issues": [
+        "Mezcla Abra/Desplácese/Exporte con Mostrar u ocultar, sin mantener el modo de la instrucción."
+      ],
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "88f6fdbee2fa1babc047fc749bc5179f7b9ebdafe6bb5de12dc7714bcb9ef3d1",
+      "key": "shikaku.details",
+      "locale": "es",
+      "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+      "translation_hash": "7450ae496aa7f9e1b18331187f5609b928be8d157edb71c6d4821033dc0fca18",
+      "same_raw_replayed": true,
+      "memory": false,
+      "permanent_semantic_issues": [
+        "Cuadrado de final es poco natural y cambia de Elige a puede en la misma instrucción. Área como número de casillas sí se conserva."
+      ],
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "bf33357315992b69b6ae761dbb9ec7f5d1266d9ee4d013a79676ddaffd7d9f3d",
+      "key": "voice-changer.description",
+      "locale": "es",
+      "source_hash": "9c82271bcbd243fd5ec78c1f86281aad2b110f9d14589729fda7cf9fec1e0f41",
+      "translation_hash": "65accfb89157b6071b746872a351e27363a68a7d59f85a0bc469ecbde70492c3",
+      "same_raw_replayed": true,
+      "memory": false,
+      "permanent_semantic_issues": [
+        "Mezcla Cambia/Escucha con Añadir/Exportar en la misma secuencia de instrucciones."
+      ],
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "00a2e91ce6decc737194f5b7b5fb43b2285d1b0aabff1e6da29d9c8036b04eae",
+      "key": "voice-changer.details",
+      "locale": "es",
+      "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+      "translation_hash": "10fb3d8157c97e63c4a4f66292bb909d339258ddd36f369b7e19570915aa7481",
+      "same_raw_replayed": true,
+      "memory": false,
+      "permanent_semantic_issues": [
+        "Web Audio se traduce como audio web, perdiendo el identificador propio de API. Gramática unida mejora, pero contrato tipado y por oración lo rechazan. Bloqueo explícito."
+      ],
+      "flags": [
+        "software_identifiers",
+        "known_semantic_errors",
+        "marker_restore",
+        "known_back_semantic_errors",
+        "back_marker_restore",
+        "forward_typed_data",
+        "back_typed_data",
+        "forward_sentence_evidence",
+        "back_sentence_evidence"
+      ]
+    },
+    {
+      "record_id": "4b14e1752a0fa0e55b4cd59f633651b1728eb1c5ce64b08af9dd496554efbf91",
+      "key": "voice-changer.example",
+      "locale": "es",
+      "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+      "translation_hash": "f99138d9171b6621efe49f56b9d764ed1fb24d7bd6e7940512e247f852ebab55",
+      "same_raw_replayed": true,
+      "memory": false,
+      "permanent_semantic_issues": [
+        "Alterna Prueba con Compare, trato de tú/usted en la misma instrucción."
+      ],
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "d69b57779f18cea33c1e88ce99c0efd38eff608840bd83276f05a5128e0f6710",
+      "key": "voice-changer.limits",
+      "locale": "es",
+      "source_hash": "72eaa6afc178fd8d0e8f7da5c73ba70e6a5473c00316ce0df573d3b309416522",
+      "translation_hash": "308022a138d454862ad58458627ef7675914b4413e8c1d0f81d20dd52dc54982",
+      "same_raw_replayed": true,
+      "memory": false,
+      "permanent_semantic_issues": [
+        "Cambios de tono ajustando es un fragmento sin verbo conjugado; la relación tono/velocidad y las negaciones se entienden."
+      ],
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "344df8158ebca8b41f45600231a190b0e615a40919fe4c3e9e6e0cd34896d33f",
+      "key": "dxf-viewer.description",
+      "locale": "nb-NO",
+      "source_hash": "44507baf26966f5e70c69064513d6977453186776a56683e19936f8edf5d01a3",
+      "translation_hash": "52278ec99878b45315fd35899c2da6c8b9ea284c692ec77da5614efdaa253892",
+      "same_raw_replayed": true,
+      "memory": false,
+      "permanent_semantic_issues": [
+        "Acción 2D corregida; compuestos DXF- tegninger/2D linjer rotos y måle infinitivo entre imperativos."
+      ],
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "48960492cc9b45c8501b6cd141d9bf30f4102ac3622048ebb59110c840cd1516",
+      "key": "dxf-viewer.faq.1.a",
+      "locale": "nb-NO",
+      "source_hash": "2e62ffc986c2e02d3e675c0d3748abcdcd6f331804dd987527903e3b816761c4",
+      "translation_hash": "b8b708c269ca9eb38582c1731acd106062fa4c9638d8c1841d3e60ae8021989b",
+      "same_raw_replayed": true,
+      "memory": false,
+      "permanent_semantic_issues": [
+        "Antall corrige recuento; persiste Den para antecedente neutro verktøyet, defecto leve de concordancia."
+      ],
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "0d4cb79a67fa0301e55e2dec8b6a0e2b225f3087a1ac7716add93068d4099125",
+      "key": "dxf-viewer.intro",
+      "locale": "nb-NO",
+      "source_hash": "99fbd66cd6a5eb3cd27bb3a678221d4d1d58d7bfb129bd957ae447847ccf88cc",
+      "translation_hash": "f3b4e515c46365eda9df03741849551c495ae8d2a1e4cc9559b68ea7bc1c8c2d",
+      "same_raw_replayed": true,
+      "memory": false,
+      "permanent_semantic_issues": [
+        "DXF- tegning deja un compuesto roto; Flytte/zoome/måle mezclan infinitivos con órdenes."
+      ],
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "3ffd50a86869702dbf72044121b736e1c5f3b245482d99743389007dc4b5449f",
+      "key": "dxf-viewer.privacy",
+      "locale": "nb-NO",
+      "source_hash": "83d9effeb10db2cfc8b9ec4a67f2cac9e9ad08a27e76b5ab9fd4ce3ae5c17ab1",
+      "translation_hash": "437294f95e8f881dc31e928f456904b00e4c21aeba4a1a22cf5cf935b2cdb894",
+      "same_raw_replayed": true,
+      "memory": false,
+      "permanent_semantic_issues": [
+        "2D linjer requiere el compuesto 2D-linjer; sentido de privacidad y objetos geométricos conservado."
+      ],
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "3d2354b3b0ae41ba89bf8a20a38eb398985cb94867274063d787de63a766c5dd",
+      "key": "shikaku.details",
+      "locale": "nb-NO",
+      "source_hash": "2faf9d87998fbccd93e0a34a26735ea2d111b6127af2981fc4ef0dc8705dbba4",
+      "translation_hash": "8c8b61b65637b670d674583f7a6539b3c595cf1e60d7794b3852df81e2248714",
+      "same_raw_replayed": true,
+      "memory": false,
+      "permanent_semantic_issues": [
+        "Ett nummer ledetråd tiene género y composición defectuosos; debe expresar una pista numérica (tall-ledetråd)."
+      ],
+      "flags": [
+        "known_semantic_errors",
+        "known_back_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "8f7a0fa03f3e8d429cf476ab2db66775fae85e46653d2b7f03347d46d1c83b51",
+      "key": "shikaku.fields.faq.0.a",
+      "locale": "nb-NO",
+      "source_hash": "1da9eab3e79e5ba1c578b590065014537d077420ad02d77072da8a8f5d7355b5",
+      "translation_hash": "a056b8ec429018bc5432147a44f29ddf6be5ec1af945c0a75e462fc8c87a2636",
+      "same_raw_replayed": true,
+      "memory": false,
+      "permanent_semantic_issues": [
+        "Tall puslespill, Ledetråd nummeret y rutenett firkant rompen compuestos; área como número de casillas ahora sí queda explícita."
+      ],
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "9d8d7a151d4e88004d55a4a37aae330e890ba51a59adcea2b18689a12ae312a9",
+      "key": "voice-changer.details",
+      "locale": "nb-NO",
+      "source_hash": "771da556d0ed6f331adfc2e9f36149cb2e9756c81d7735fd2e47345e4259664c",
+      "translation_hash": "43af66e200b9dc5d4c7e31dde0e3a6451c3970bc34454bff802a64fdbaaf1d76",
+      "same_raw_replayed": true,
+      "memory": false,
+      "permanent_semantic_issues": [
+        "Web Audio filtre debe componerse correctamente y alterna Den/Det para el mismo sujeto; el procesamiento/privacidad se conservan."
+      ],
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "0227e23a7176b8019817968a9375222e1e3a452e54c0331c1f6339593c0fe7ee",
+      "key": "voice-changer.example",
+      "locale": "nb-NO",
+      "source_hash": "2b449479c7ae7143ead7f8a406c6e238d202e1bd82421d6276ef8ef3eeb6f4c3",
+      "translation_hash": "b3d95e62daea2327d3ebfb79d94f4c758b26f188378b7a722e7b5165611b3176",
+      "same_raw_replayed": true,
+      "memory": false,
+      "permanent_semantic_issues": [
+        "Stemme kloning y studio-grade pitch korreksjon mezclan inglés y compuestos rotos; no explica de forma clara corrección de tono de estudio."
+      ],
+      "flags": [
+        "known_semantic_errors"
+      ]
+    },
+    {
+      "record_id": "31fabfda9412ff3157f9a811d7a3a1b7f39fb4eb0c08f97533085c29c54cb651",
+      "key": "voice-changer.limits",
+      "locale": "nb-NO",
+      "source_hash": "72eaa6afc178fd8d0e8f7da5c73ba70e6a5473c00316ce0df573d3b309416522",
+      "translation_hash": "18f6f9ae76681f2847a36c17f92c37be062900b7bf1b0b8fe3ec1cb2ad1d8d8d",
+      "same_raw_replayed": true,
+      "memory": false,
+      "permanent_semantic_issues": [
+        "Pitch endringer ved å justere es un fragmento con inglés sin explicar; debe expresar que cambia la altura tonal al ajustar la reproducción."
+      ],
+      "flags": [
+        "known_semantic_errors"
+      ]
+    }
+  ],
+  "green": {
+    "tests": 80,
+    "pass": 78,
+    "dependency_skips": 2,
+    "corpus_node_tests": 2,
+    "log_sha256": "0779cdcc3fe9cfe6fe7466bf8687f22690156f5a9ad765d4b0ea47dac32dc4c4"
+  }
+}

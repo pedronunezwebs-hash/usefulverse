@@ -3,7 +3,7 @@
 > Archivo de relevo entre agentes (ChatGPT/Codex ↔ Claude). En 1 minuto dice **dónde estamos, qué falta y por dónde
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
-**Última actualización:** 2026-10-21 · **por:** Codex
+**Última actualización:** 2026-10-22 · **por:** Codex
 **Turno actual (candado):** EN CURSO · Codex · 2026-10-21 23:39:13 +0700 · Paso A, v12 API/registro/compuestos; referencias es/nb antes del completo
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
@@ -40,6 +40,12 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
    eso no compensa los demás fallos. 13 regresiones nuevas (4 ida, 9 vuelta) probadas primero en rojo.
    40 comparaciones legacy de muestra y 80 de referencias reutilizan solo puntuaciones históricas por hashes,
    no son nuevas evaluaciones. No se congela motor ni se aprueba idioma.
+
+   **V12 en curso (22-oct):** 16 fallos crudos v11 reproducidos por sus trazas, sin nueva inferencia.
+   Tres tests nuevos primero rojos; 80 ligeros verdes (78 correctos, 2 dependencias omitidas) y 2 de corpus.
+   Política independiente con 10 claves/16 destinos de memoria exacta adicionales (70/131 totales),
+   contrato tipado y por oración conservados. Aún sin runs v12: ejecutar y leer 40 referencias es/nb;
+   completo solo si ambas pasan. [Plan y evidencia del lote](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/lotes/2026-10-21-piloto-v12.md).
 
    **Siguiente exacto dentro del Paso A:** clonar superficialmente `feat/new-tools-batch-1` y leer
    [revisión completa](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/translation-pilot/review-context-v11-full.json),
