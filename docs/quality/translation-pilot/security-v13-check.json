@@ -31,5 +31,11 @@
     "mode": "dir --redact",
     "leaks": 0,
     "log_sha256": "2610d164177fd6011f61cbf00d822105bf38cadf338a8e2a23c37f196e52d3cf"
+  },
+  "recovered_closure_scan": {
+    "version": "8.30.1",
+    "scope": "25 recovered public source/evidence documents and six handoff documents; prior full-repo scan preserved separately.",
+    "leaks": 0,
+    "log_sha256": "9ed320671e5c7fa7e9f8e63a8fd504597b1fd5cd5649573957fb60a36e44536d"
   }
 }

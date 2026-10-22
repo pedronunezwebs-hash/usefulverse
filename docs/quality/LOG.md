@@ -176,3 +176,83 @@ V13 referencias verificadas:39736865789,fuente717c7aa,ES/NB360/360;80 idas/vuelt
 V13 completo revisado:23 fallos anteriores corregidos,2 leves nuevos fuera de88;88 conocidas792/792 por idioma, global conservador bloqueado.428 candidatos leídos,47+13avisos,35+8hallazgos de vuelta separados.9casos primero rojos;580fixtures510ida/70vuelta. Suplementos históricosv9/v11:1fila cada uno,3vínculos por hashes, originales intactos.11.065registros/3.424evaluaciones.85tests ligeros(83+2dependencias).CI final y cierre pendientes;0idiomas aprobados/0deploy.
 
 **CI final v13 en curso:** [39740313985](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39740313985), fuente `d6d4019fa0ef79b7c399c4130c10c376d90d3904`, árbol idéntico a datos `92c4eea`. Recuperar este run; no desplegar.
+
+
+## 2026-10-22 · Codex · V13 cerrada
+
+Resultado: los 23 fallos de ida de v12 están corregidos. Tras leer los 428 candidatos actuales aparecen dos fallos leves nuevos,
+fuera de las 88 cadenas comparables. El global ampliado sigue bloqueado; cero idiomas aprobados.
+
+[PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador, rama `feat/new-tools-batch-1`.
+Política y corrección: [717c7aa](https://github.com/pedronunezwebs-hash/usefulverse/commit/717c7aa7e9617f2e7cf3bae2f338a8a9e9f8fbff).
+Datos y regresiones: [92c4eea](https://github.com/pedronunezwebs-hash/usefulverse/commit/92c4eea1505ec9ea862446e943ebc342376867f9).
+La sincronización `d6d4019` conserva el árbol completo de `92c4eea`; cambia solo la ascendencia.
+700 existentes y 300 candidatas conservadas. Paso A: 0/300 en main y 0 activadas. Sin merge de código, despliegue ni envíos.
+
+Causa: conservar datos y oraciones no demuestra gramática ni contexto. La memoria corrige fuentes conocidas, antes de inferir,
+con fuente, hash, contexto y procedencia. No se atribuye al modelo ni demuestra generalización. Algunas salidas varían entre runs,
+aunque la revisión y los hashes de los pesos coincidan; por eso se leen los textos actuales.
+
+- [x] Lectura fresca ESTADO → AGENTS → MAPA → RUNBOOK §7A/8 y puerta §6; PRUEBAS/Pedro, REVISION-FINAL §2, PLAN §9,
+  método, PESO-Y-DISENO §1–4 y reglas canónicas/FABLE. Pedro: ocho pendientes, cero FALLA.
+- [x] Candado `239e101`, 13:48:29 +07:00. Base main `a048330`, feature `9335c51`. Clon superficial aislado;
+  inicio: unos 46,94 GiB libres. Modelos y builds completos solo en Actions estándar.
+- [x] 23 trazas crudas v12 reproducidas sin nueva inferencia ni reparación. Tres tests primero rojos (26 errores porque
+  v13 aún no existía), después verdes. Se añaden 18 claves/23 destinos de memoria: 88 claves/154 destinos totales.
+  Preflight de 214 entradas válido. Cantidades, signos Unicode, coordenadas, versiones, identificadores y ambas FAQ de tono conservados.
+- [x] [Referencias 39736865789](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39736865789), fuente `717c7aa`:
+  ES/NB 360/360. Las 80 fuentes, idas y vueltas leídas; 13 registros con avisos y ocho defectos solo de vuelta.
+  75/80 idas y 72/80 vueltas idénticas a v12 por hashes; cinco idas nuevas revisadas. 160 registros, 21 memorias,
+  85 tests con dependencias reales, limpieza correcta y cero artefactos. Solo prerrequisito al completo.
+- [x] [Completo 39737830473](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39737830473), fuente `22e139e`:
+  696 nuevos + 160 reanudados = 856 registros. 133 memorias adicionales, 154 entre ambos runs.
+  85 tests reales, limpieza correcta y cero artefactos. Total: 799,1188 s; conversión: 133,6414 s;
+  pico: 7.516.772 KiB. No extrapolar estos tiempos a las 300.
+- [x] Plan declarado antes del run: 88 comparables y lectura de todos los 428 candidatos. Las 88 pasan con 792/792 por idioma;
+  las 20 adicionales conocidas, con 180/180. Los 23 fallos v12 están reparados. Aparecen dos leves nuevos fuera de las 88:
+  ES «Se ha añadido rectángulo.» omite «un»; NB «Start en ny oppgave å spille igjen.» omite «for».
+  Cada idioma obtiene 1565/1566 en 174 no-referencias, sin errores observados de botones, cifras o negaciones.
+  El mínimo de estilo de 1/20 sí se cumple. El plan ampliado previo exige reparar los defectos observados y mantiene el bloqueo global.
+- [x] 309/348 idas del completo idénticas a v12 por hashes; 39 cambiadas. Todas las vueltas actuales leídas.
+  47 registros con avisos del completo y 13 de referencias reconciliados; 35 + 8 hallazgos de vuelta separados de la ida.
+  Siete variantes nuevas de vuelta: casillas → centros de votación/paneles/rutas, brillo de audio → glow,
+  tono del audio → tono del aparato, timbre → reverberación y aislar voces → distinguirlas. Las idas correctas se conservan.
+- [x] Los nueve casos nuevos provocan nueve subtests rojos antes de añadir fixtures. Total: 580 (510 ida, 70 vuelta).
+  El auditor detecta el mismo defecto ES en una fila histórica v9 y otra v11 antes fuera de muestra. Dos revisiones nuevas
+  y tres vínculos por hashes, sin reemplazar rúbricas ni gates originales. 49 archivos históricos idénticos; tres entradas
+  anteriores de cobertura preservadas y tres añadidas. Once políticas previas intactas y prefijo de 571 fixtures conservado.
+- [x] [CI final 39740313985](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39740313985), fuente `d6d4019`:
+  3.045 Node; 85 Python (83 correctos y dos dependencias omitidas). Check de 10.260 páginas, 20 locales existentes,
+  hub 217 + 100 + 106 y preview verdes. Preview: 11.293 archivos, 10.800 páginas de herramientas y homes noindex;
+  sitemap indexable vacío. Publicación omitida y cero artefactos. No certifica la puerta de 18 puntos ni siete capas por herramienta.
+- [x] Actionlint 1.7.12 y Gitleaks 8.30.1 de releases oficiales, con checksums verificados: cero secretos.
+  Dos snapshots GET/XML propios: 25.625 → 25.625 URLs (10.260 + 15.365), hashes iguales. Las tres rutas falsas del hub
+  siguen devolviendo 200 con la home. Solo HTTP; sin revisión visual, responsive, RTL, peso, accesibilidad, rendimiento o hardware.
+- [x] Respaldo recuperado al retomar: 118 blobs críticos en Git Trees no truncados. Código y datos coinciden con la CI;
+  las dos actualizaciones de metadata CI/seguridad se recuperan por su blob. Se preservan los 49 archivos históricos.
+  Siete funciones de inferencia iguales por AST a `22e139e`; `src/` y `public/` intactos respecto a `9335c51`.
+- [x] Se detectan seis ZIP de logs propios fuera del clon (v12/v13): 1.804.932 bytes. Retirados tras verificar recuperación
+  y runs; se corrige ese residuo del cierre anterior. Los logs posteriores usan caché dentro del lote.
+- [ ] Eliminación efectiva del clon/QA/logs/descargas/caché propios después de verificar recuperación en ambas ramas.
+
+Inventario: 11.065 registros machine-draft y 3.424 evaluaciones con repeticiones. Las 120 comparaciones legacy
+(80 referencias + 40 completo) reutilizan notas históricas por hashes y no cuentan como evaluaciones nuevas.
+Siguen pendientes las 37 traducciones revisadas, capacidad Pages, puerta de 18 puntos/siete capas, revisión nativa y UI/dispositivos.
+Sin motor congelado, idioma aprobado ni traducción masiva. Pedro: ningún ID nuevo; P-001–P-008 pendientes y cero FALLA.
+
+Siguiente: recuperar la rama y leer `review-context-v13-full.json`, `regression-v13-evidence.json`,
+`review-coverage-addenda.json`, `automatic-summary.json` y `full-sample-v13-plan.json`. No repetir los runs guardados.
+Crear v14 independiente, conservando v2–v13. Corregir los dos fallos de ida por fuente/hash/contexto; separar los siete de vuelta.
+Conservar contratos, preflight de 214, 200000 local probado, ambas FAQ completas y cobertura histórica ligada a hashes.
+Primero 40 referencias ES/NB y todos sus avisos; solo si pasan, completo con las 88 comparables y lectura de los 428 candidatos.
+Muestra conocida, no ciega. Después, 28 destinos aún sin revisión, incluidos los siete con 80 muestras ha/am/te/gu/ta/mr/sw.
+Antes de ampliarlos, probar las gramáticas numéricas: hoy solo en/es/nb; las demás bloquean y no se relaja el contrato.
+No congelar motor sin comparación objetiva ni avanzar a fase 0 mientras Paso A siga abierto.
+
+Coste: runner estándar del repo público; sin artefactos, cachés persistentes, Packages, LFS, Codespaces, API de pago u operación
+Cloudflare. [GitHub, consultado 22-oct](https://docs.github.com/en/billing/concepts/product-billing/github-actions).
+No se audita facturación global. Onboarding Cloudflare, diseño Zenith y reenvío de sitemaps: N/A, piloto aislado sin publicación.
+
+Al retomar a las 17:48 +07:00, la carpeta temporal anterior ya estaba ausente. No se atribuye su retirada a este cierre
+ni se inventa su instante o tamaño. Código, checkpoints y CI se recuperaron de GitHub sin repetir modelos o builds.
+El cierre usa una carpeta nueva y ligera; su retirada se medirá después de verificar el respaldo.
