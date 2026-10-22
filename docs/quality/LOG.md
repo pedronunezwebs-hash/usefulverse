@@ -2,6 +2,13 @@
 
 Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 
+## 2026-10-22 · Codex · Hito v12: todos los textos leídos, global rechazado; CI final pendiente
+- PR #136 borrador. Referencias39730087914 (32142e3):160 registros, es/nb360/360. Completo39730859028 (5801f4a):696+160=856 registros, 131 memorias totales, 80 tests reales por run, cleanup correcto y cero artefactos. 800,09 s completo; pico3.748.548 KiB.
+- Plan ampliado antes de recoger resultados:428 candidatos actuales leídos. Las mismas88 alcanzan792/792 en ambos idiomas; fuera de ellas aparecen23 fallos de ida (ES12/NB11). Global rechazado, cero idiomas aprobados. 79 registros actuales con avisos reconciliados y 34 hallazgos de vuelta del completo separados.
+- 46 casos nuevos primero rojos, luego registro de571 fixtures (508 ida/63 vuelta). Control de cobertura detectó salidas históricas coincidentes fuera de muestra:58 registros de v9/v11 releídos y puntuados con hashes, dos suplementos/3 vínculos; originales32 intactos. Auditor y dos tests adversariales nuevos primero rojos. Suite82 ligera verde (80+2 dependencias).
+- Inventario10.209 registros/2.994 evaluaciones; 120 comparaciones legacy solo históricas. GET antes/después:25.625→25.625 URLs y hashes iguales, tres soft404200. Sin merge de código a main/deploy/activación/envíos/APIs pagadas/Codespaces/operaciones Cloudflare.
+- Próximo: CI final y cierre/limpieza; después v13 independiente con los23 fallos de ida y todos428 textos. Paso A abierto,0/300 main,0 activadas; Pedro0 nuevas, P-001–P-008 pendientes y0 FALLA.
+
 ## 2026-10-22 · Codex · Hito v12: ampliar lectura antes de recoger completo
 - Se conservan las 68+20 y su nota comparable. Por ser correcciones de memoria sobre muestra conocida, se leerán además todos los textos restantes: 174 no-referencia por idioma, 428 candidatos contando referencias. Plan ampliado mientras run39730859028 está en curso y antes de recoger resultados; no es ciego porque existen salidas anteriores en el repo.
 - Cualquier defecto de ida fuera de las 88 también bloquea el gate global. No cambia política, corpus, inferencia ni umbral; aún sin resultado completo.
