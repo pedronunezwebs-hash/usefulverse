@@ -11,6 +11,8 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 ## 1. Siguiente paso exacto
 
+CI final v14 [39773203261](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39773203261), fuente `2f1b4c2f478ba1a9f312d629bda04fabf04c1b69`: en curso. Recuperar antes de repetir; validará las 585 regresiones y el retiro explícito con 89 tests Python. La CI inicial 39768406467 está verificada (3.045 Node/87 Python, 85+dos dependencias); sin publicación. Modelos ya revisados, no relanzar.
+
 **V14 completo revisado:** run 39769512465, fuente 08a0498; 856 registros (696 nuevos/160 reanudados), 156 memorias totales y 272 idas puras del modelo. 428 candidatos leídos; 88 conocidas 792/792 por idioma. Global ampliado: ES 1565/1566, bloqueado por el calco leve procesamiento más suave en voice-changer.fields.device; NB 1566/1566, muestra conocida aprobada, sin aprobar el idioma. Mínimo de estilo cumplido. 48+14 avisos reconciliados, 37+9 hallazgos de vuelta separados. Cinco casos primero rojos y 585 fixtures. 11.921 registros y 3.856 evaluaciones con repeticiones, incluida una retirada explícita de nota perfecta v12 ligada por hashes. 89 tests locales (87 correctos/dos dependencias omitidas); ambos jobs de modelo pasaron sus 87 tests reales, limpieza y cero artefactos. CI final pendiente; no repetir modelos. Siguiente tras cierre: v15 independiente para ese único calco ES. Sin deploy.
 
 V14 full: [39769512465](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39769512465), fuente `08a0498a2dd1e14b8ee7330a577366c87f9f0276`. En curso; recuperar este run antes de relanzar. Sin despliegue ni aprobación.
