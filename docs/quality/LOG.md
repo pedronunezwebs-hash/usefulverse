@@ -263,3 +263,5 @@ Retirada efectiva de la carpeta de cierre el 2026-10-22T17:59:30.648930+07:00 (2
 ## V14 · 2026-10-22 · Codex · en curso
 
 Candado 572d1d8; fuente previa feature 1a34b53/main 8cda84d. Dos casos crudos v13 reproducidos y dos tests rojos antes del arreglo (cuatro errores por política inexistente). Dos memorias nuevas; política independiente, referencias/completo pendientes. Plan e informe persistentes. Sin deploy.
+
+V14 references: [39768400364](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39768400364), fuente `48e0fcfffa0c19b83a1746c397718f7b9abdd13a`. En curso; recuperar este run antes de relanzar. Sin despliegue ni aprobación.
