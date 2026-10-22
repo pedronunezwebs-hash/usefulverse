@@ -233,7 +233,7 @@ aunque la revisión y los hashes de los pesos coincidan; por eso se leen los tex
   Siete funciones de inferencia iguales por AST a `22e139e`; `src/` y `public/` intactos respecto a `9335c51`.
 - [x] Se detectan seis ZIP de logs propios fuera del clon (v12/v13): 1.804.932 bytes. Retirados tras verificar recuperación
   y runs; se corrige ese residuo del cierre anterior. Los logs posteriores usan caché dentro del lote.
-- [ ] Eliminación efectiva del clon/QA/logs/descargas/caché propios después de verificar recuperación en ambas ramas.
+- [x] Eliminación efectiva del clon/QA/logs/descargas/caché propios después de verificar recuperación en ambas ramas.
 
 Inventario: 11.065 registros machine-draft y 3.424 evaluaciones con repeticiones. Las 120 comparaciones legacy
 (80 referencias + 40 completo) reutilizan notas históricas por hashes y no cuentan como evaluaciones nuevas.
@@ -255,4 +255,6 @@ No se audita facturación global. Onboarding Cloudflare, diseño Zenith y reenv�
 
 Al retomar a las 17:48 +07:00, la carpeta temporal anterior ya estaba ausente. No se atribuye su retirada a este cierre
 ni se inventa su instante o tamaño. Código, checkpoints y CI se recuperaron de GitHub sin repetir modelos o builds.
-El cierre usa una carpeta nueva y ligera; su retirada se medirá después de verificar el respaldo.
+La retirada medida de la nueva carpeta de cierre figura al final.
+
+Retirada efectiva de la carpeta de cierre el 2026-10-22T17:59:30.648930+07:00 (2026-10-22T10:59:30.648930+00:00 UTC): se eliminó directamente, sin Papelera, solo /private/tmp/usefulverse-codex-v13-cierre-20261022.9tw_spk4. Tamaño medido antes de retirar: 30812 KiB. Disco libre después: 50.3661 GiB. Ruta, auxiliar del arranque y ZIP de logs propios externos comprobados ausentes. La carpeta v13 original ya estaba ausente al retomar; no se inventan su tamaño ni fecha de retirada. Antes de borrar se verificaron 120 archivos críticos, seis documentos idénticos en ambas ramas y recuperación de todos los archivos de proyecto locales; feature cda7b22e17c2d2a8ab2577669b9e668f7232e332, main 54b429415cf4b20c8f22b2d8be09004cf9b3833b. Código de rama idéntico a CI final, main solo cambió documentación; PR abierto, borrador y fusionable.
