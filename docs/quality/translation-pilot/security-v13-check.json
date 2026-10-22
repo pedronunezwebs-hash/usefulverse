@@ -25,5 +25,11 @@
     "leaks": 0,
     "log_sha256": "deb4ea3f01b64dd656cbd3e76df24ac3eeb91b4fd907beebaca8a8911f776fb3"
   },
-  "scope": "Only isolated public-repository translation infrastructure; no Cloudflare operation, paid API, Codespaces, Packages, LFS, cache or artifact upload. Standard ubuntu-latest runners."
+  "scope": "Only isolated public-repository translation infrastructure; no Cloudflare operation, paid API, Codespaces, Packages, LFS, cache or artifact upload. Standard ubuntu-latest runners.",
+  "gitleaks_final_data": {
+    "version": "8.30.1",
+    "mode": "dir --redact",
+    "leaks": 0,
+    "log_sha256": "2610d164177fd6011f61cbf00d822105bf38cadf338a8e2a23c37f196e52d3cf"
+  }
 }
