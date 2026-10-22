@@ -168,3 +168,5 @@ Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 Candado 239e101. V12 cruda reproducida en23 casos;3 tests primero rojos y luego verdes, memoria fuente/hash/contexto88claves154destinos. Lecturas y plan en `lotes/2026-10-22-piloto-v13.md`. Referencias pendientes;0idiomas aprobados,0deploy,25.625URLs indexables previstas sin cambio.
 
 Referencias en curso: [39736865789](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39736865789), fuente `717c7aa7e9617f2e7cf3bae2f338a8a9e9f8fbff`. Recuperar logs/checkpoint; no relanzar. CI PR39736862405 en paralelo, sin deploy.
+
+V13 referencias verificadas:39736865789,fuente717c7aa,ES/NB360/360;80 idas/vueltas,13avisos,8defectos solo vuelta.75 fuentes/idas iguales a v12 por hash y5 cambiadas revisadas.85tests reales,runner limpio,0artefactos.10.369registros/3.074evaluaciones/571fixtures. Plan de completo declarado antes del run:88 comparables+todos428.0aprobados,0deploy.
