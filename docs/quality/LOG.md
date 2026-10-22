@@ -273,3 +273,18 @@ V14 full: [39769512465](https://github.com/pedronunezwebs-hash/usefulverse/actio
 **V14 completo revisado:** run 39769512465, fuente 08a0498; 856 registros (696 nuevos/160 reanudados), 156 memorias totales y 272 idas puras del modelo. 428 candidatos leídos; 88 conocidas 792/792 por idioma. Global ampliado: ES 1565/1566, bloqueado por el calco leve procesamiento más suave en voice-changer.fields.device; NB 1566/1566, muestra conocida aprobada, sin aprobar el idioma. Mínimo de estilo cumplido. 48+14 avisos reconciliados, 37+9 hallazgos de vuelta separados. Cinco casos primero rojos y 585 fixtures. 11.921 registros y 3.856 evaluaciones con repeticiones, incluida una retirada explícita de nota perfecta v12 ligada por hashes. 89 tests locales (87 correctos/dos dependencias omitidas); ambos jobs de modelo pasaron sus 87 tests reales, limpieza y cero artefactos. CI final pendiente; no repetir modelos. Siguiente tras cierre: v15 independiente para ese único calco ES. Sin deploy.
 
 CI final v14 [39773203261](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39773203261), fuente `2f1b4c2f478ba1a9f312d629bda04fabf04c1b69`: en curso. Recuperar antes de repetir; validará las 585 regresiones y el retiro explícito con 89 tests Python. La CI inicial 39768406467 está verificada (3.045 Node/87 Python, 85+dos dependencias); sin publicación. Modelos ya revisados, no relanzar.
+
+
+## V14 · cierre verificado · 2026-10-22 · Codex
+
+V14 corrige los dos fallos Shikaku por memoria exacta (90 claves/156 destinos). 428 candidatos leídos: 88 conocidas 792/792 por idioma; ampliado ES 1565/1566 bloqueado por un calco leve y NB 1566/1566 pasa la muestra conocida. Mínimo de estilo 1/20 cumplido. 11.921 registros, 3.856 evaluaciones con repeticiones, 585 fixtures (511 ida/74 vuelta); cero idiomas aprobados.
+Corrección 48e0fcf; datos/auditor 2f1b4c2; CI 39773203261 (3.045 Node, 89 Python: 87 + dos dependencias). Modelos 39768400364/39769512465,
+87 tests reales por job, limpieza correcta, cero artefactos.48 + 14 avisos y 37 + 9 hallazgos de vuelta separados. Cinco casos primero rojos;
+prefijo 580 conservado. Tres filas históricas negativas nuevas y una retirada explícita de falsa nota perfecta v12; originales/gates intactos.
+Ocho decisiones adicionales solo de vuelta; seis vínculos de cobertura y dos entradas de vuelta anteriores preservados.
+Retiro con hashes y 30 ataques; no puede aprobar, mejorar notas ni usar datos/fixture ajenos.
+Producción GET/XML: 25.625→25.625 y hashes estables, tres soft 404 siguen devolviendo 200. Sin deploy, activación, merge de código o envíos.
+No certifica las 37 traducciones, puerta 18/siete capas, revisión nativa o UI/hardware. Pedro: ningún ID nuevo, P-001–P-008 pendientes, cero FALLA.
+Siguiente: Crear v15 independiente para ES voice-changer.fields.device: sustituir el calco «procesamiento más suave» por una formulación informática natural («procesamiento más fluido»), por fuente/hash/contexto. Primero reproducción y test; no editar v2–v14. Conservar contratos y el retiro explícito. Referencias ES/NB y todos sus avisos; solo si pasan ambas, completo con las 88 conocidas y lectura de los 428 candidatos. Muestra conocida, no ciega. Después, gramáticas numéricas verificadas y los 28 destinos aún sin revisión, incluidos ha/am/te/gu/ta/mr/sw con 80 muestras. No repetir runs guardados ni pasar a fase 0.
+Limpieza física pendiente de medición tras comprobar recuperación remota; se añadirá el resultado efectivo al cerrar.
+<!-- V14_CLEANUP_PENDING -->

@@ -4,7 +4,40 @@
 Dependencia del Paso A; no habilita ninguna herramienta ni idioma. **Idiomas aprobados por este piloto: 0.**
 Código y checkpoints de esta guía están en `feat/new-tools-batch-1` hasta integrar el PR; no confundirlos con `main`.
 
-## V13 · 22-oct-2026 · resultado actual
+## V14 · 22-oct-2026 · resultado actual
+
+Los dos fallos Shikaku están corregidos mediante memoria exacta por fuente/hash/contexto: 90 claves y 156 destinos.
+Se leyeron los 428 candidatos actuales. Las 88 conocidas pasan con 792/792 por idioma. En las 174 no-referencias,
+ES obtiene 1565/1566 por un calco leve y NB obtiene 1566/1566. Se cumple el mínimo de estilo de 1/20;
+la puerta ampliada mantiene ES bloqueado hasta reparar el defecto observado. Cero idiomas aprobados.
+La memoria se declara como tal: 156 idas de memoria y 272 idas puras del modelo. Muestra conocida, no ciega ni prueba de generalización.
+
+[Referencias 39768400364](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39768400364), fuente `48e0fcf`:
+ES/NB 360/360; 80 fuentes, idas y vueltas leídas, 14 avisos y nueve defectos solo de vuelta.
+[Completo 39769512465](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39769512465), fuente `08a0498`:
+696 nuevos + 160 reanudados = 856 registros. Ambos jobs pasaron 87 tests con dependencias reales, limpiaron y no crearon artefactos.
+Completo: 832,6409 s; conversión: 106,5998 s; pico: 3.777.264 KiB. No extrapolar a las 300.
+332/348 idas y 310/348 vueltas coinciden con v13 por hashes; las 16 idas nuevas y todas las vueltas actuales se leyeron.
+48 + 14 avisos reconciliados y 37 + 9 hallazgos de vuelta separados.
+
+Cinco casos primero rojos: un calco ES y cuatro variantes de vuelta. Total: 585 fixtures (511 ida/74 vuelta), prefijo de 580 intacto.
+Tres filas históricas nuevas v6/v9/v11 y tres vínculos de cobertura; ocho decisiones adicionales solo de vuelta.
+Una falsa nota perfecta v12 se retira explícitamente por hashes, con el original visible y el gate ya rechazado.
+Dos tests nuevos primero rojos y 30 ataques: prohíben aprobar, mejorar notas, mezclar fuente/contexto/hashes o retirar sin fixture permanente.
+Inventario: 11.921 registros y 3.856 evaluaciones con repeticiones, incluida la reevaluación negativa.
+Las 120 comparaciones legacy y las ocho decisiones solo de vuelta no se suman como evaluaciones nuevas de ida.
+
+[CI final 39773203261](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39773203261), fuente `2f1b4c2`:
+3.045 Node y 89 Python (87 correctos y dos dependencias omitidas); check de 10.260 páginas, 20 locales existentes, hub y preview verdes.
+Preview: 11.293 archivos, 10.800 páginas y homes noindex, sitemap indexable vacío. Sin deploy ni artefactos.
+Los modelos pasaron 87 tests antes de añadir los dos del auditor; no se les atribuyen 89.
+No certifica las 37 traducciones, puerta de 18 puntos/siete capas, revisión nativa ni UI/dispositivos.
+Producción GET/XML: 25.625 URLs y tres soft 404 pendientes. Paso A: 0/300 en main, 0 activadas; no se congela motor ni se avanza a fase 0.
+
+Siguiente: Crear v15 independiente para ES voice-changer.fields.device: sustituir el calco «procesamiento más suave» por una formulación informática natural («procesamiento más fluido»), por fuente/hash/contexto. Primero reproducción y test; no editar v2–v14. Conservar contratos y el retiro explícito. Referencias ES/NB y todos sus avisos; solo si pasan ambas, completo con las 88 conocidas y lectura de los 428 candidatos. Muestra conocida, no ciega. Después, gramáticas numéricas verificadas y los 28 destinos aún sin revisión, incluidos ha/am/te/gu/ta/mr/sw con 80 muestras. No repetir runs guardados ni pasar a fase 0.
+[Informe](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/lotes/2026-10-22-piloto-v14.md).
+
+## V13 · 22-oct-2026 · histórico
 
 Los 23 fallos v12 están corregidos por memoria exacta: 88 claves/154 destinos ligados a fuente/hash/contexto.
 La memoria no es modelo ni demuestra generalización. Referencias 39736865789 (`717c7aa`): ES/NB 360/360;
