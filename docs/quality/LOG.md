@@ -2,6 +2,10 @@
 
 Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 
+## 2026-10-22 · Codex · Hito v12: completo en curso, recuperar sin relanzar
+- Run [39730859028](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39730859028), fuente `5801f4a`, madlad/context-v12, completo es/nb con 160 referencias reanudables. Referencias revisadas y ambos gates pasan; no repetir inferencia al retomar.
+- Resultado y gate completo todavía pendientes. Candado propio EN CURSO; recuperar logs y revisar muestra/avisos antes de avanzar.
+
 ## 2026-10-22 · Codex · Hito v12: referencias pasan; completo pendiente
 - Run [39730087914](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39730087914), fuente `32142e3`: 160 registros, 21 memorias, 80 tests reales, cleanup correcto, 0 artefactos. Conversión 84,59 s; total 242,50 s; pico 3.692.948 KiB.
 - ES y NB 360/360: 80 idas/vueltas actuales leídas, 14 registros con avisos reconciliados, nueve defectos de vuelta ya conocidos separados. Textos idénticos a v11 por hashes; legacy80 solo comparación histórica. Ningún idioma aprobado.
