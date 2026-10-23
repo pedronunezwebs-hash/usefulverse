@@ -402,5 +402,40 @@
     "log_sha256": "6d8cb2ac5e688e04ee8fc3c641bc78c1fe0f29f34ca08cc8cd7f46463e834c5f"
   },
   "aggregate_review_metrics_baseline_sha256": "fc23ecddd36b6516a78aae9c922ff4a598e5346b98dcea143c929283a6f23195",
-  "historical_immutable_files": 80
+  "historical_immutable_files": 80,
+  "independent_current_review": {
+    "run_id": 39939504317,
+    "all_current_source_forward_back_read": 67,
+    "model_rows": 40,
+    "legacy_rows": 27,
+    "forward_negative_rows": 18,
+    "back_finding_rows": 22,
+    "new_permanent_fixtures": 38,
+    "new_forward_fixtures": 17,
+    "new_back_fixtures": 21,
+    "semantic_fixtures_before": 585,
+    "semantic_fixtures_after": 623,
+    "old585_prefix_preserved": true,
+    "observed_defects_red": {
+      "tests": 1,
+      "failures": 40,
+      "log_sha256": "77f99a2d2ebf707e317da0f9283fce470562f44d038b81741880afcede0aa4a1"
+    },
+    "warning_records_model": 23,
+    "warning_records_legacy": 16,
+    "model_hashes_same_v15": true,
+    "full_dispatched": false,
+    "approved_locales": [],
+    "observed_defects_green": {
+      "tests": 1,
+      "pass": 1,
+      "log_sha256": "24cefc2bc38a1c71e18591075993695fc72546b32ff6b5baab3d98032ce96fb5"
+    }
+  },
+  "post_review_suite": {
+    "tests": 104,
+    "pass": 102,
+    "dependency_skips": 2,
+    "log_sha256": "3b63c4395b0e5c3d99315ce4862502e72b3d29707168476e28a9f036cd21b250"
+  }
 }

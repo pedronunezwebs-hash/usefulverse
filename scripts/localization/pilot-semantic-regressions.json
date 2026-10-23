@@ -5388,5 +5388,368 @@
     "issue": "La vuelta cambia no puede la herramienta por You cannot (usuario) y Solo añade por Just add (imperativo). Misma variante en el alias de FAQ, que requiere su regresión ligada a clave/fuente. Ida correcta.",
     "observed_candidate": "madlad/context-v14",
     "actions_run_id": "39769512465"
+  },
+  {
+    "locale": "ko",
+    "key": "shikaku.example",
+    "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+    "translation": "6로 표시된 단서는 정확히 6개의 정사각형을 덮는 하나의 직사각형 안에 속합니다.",
+    "issue": "El valor seis se conserva semánticamente, pero six pasa a un segundo dígito 6: viola la multiplicidad del contrato numérico canónico. Es una limitación conservadora de notación, no un cambio de valor 6→otro número.",
+    "observed_candidate": "legacy/context-v16",
+    "actions_run_id": "39939504317"
+  },
+  {
+    "locale": "ko",
+    "key": "shikaku.fields.check",
+    "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+    "translation": "체크 퍼즐",
+    "issue": "체크 퍼즐 conserva el orden inglés y se lee como un nombre compuesto; la acción de comprobar el tablero necesita 퍼즐 확인. Botón poco claro.",
+    "observed_candidate": "legacy/context-v16",
+    "actions_run_id": "39939504317"
+  },
+  {
+    "locale": "ko",
+    "key": "shikaku.fields.resume",
+    "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+    "translation": "이력서",
+    "issue": "이력서 es un currículum/résumé, no reanudar la partida. La vuelta Resume oculta esta polisemia y no valida la ida.",
+    "observed_candidate": "legacy/context-v16",
+    "actions_run_id": "39939504317"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "깨끗한 오디오",
+    "issue": "깨끗한 오디오 describe audio limpio; no expresa quitar el audio cargado. El botón pierde su acción de borrar.",
+    "observed_candidate": "legacy/context-v16",
+    "actions_run_id": "39939504317"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.export",
+    "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+    "translation": "WAV 내보내기 처리됨",
+    "issue": "WAV 내보내기 처리됨 coloca procesado como estado de la exportación, no como modificador del WAV que se exporta; etiqueta desordenada.",
+    "observed_candidate": "legacy/context-v16",
+    "actions_run_id": "39939504317"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.preview",
+    "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+    "translation": "미리보기 효과",
+    "issue": "미리보기 효과 se lee como efecto de previsualización; el orden nominal no expresa con claridad escuchar/previsualizar el efecto de audio.",
+    "observed_candidate": "legacy/context-v16",
+    "actions_run_id": "39939504317"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.tooLarge",
+    "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+    "translation": "25MB보다 큰 오디오 파일을 선택하세요.",
+    "issue": "25MB보다 큰 pide un archivo mayor de 25 MB, invirtiendo no larger than. Además 25MB sin separación no pasa el contrato conservador de unidad/token.",
+    "observed_candidate": "legacy/context-v16",
+    "actions_run_id": "39939504317"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.tooLong",
+    "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+    "translation": "이 도구는 최대 30초의 클립을 지원합니다. 파일을 다듬고 다시 시도하세요.",
+    "issue": "파일을 다듬고 pide pulir/refinar el archivo; no indica recortar su duración como exige Trim en el aviso de 30 segundos.",
+    "observed_candidate": "legacy/context-v16",
+    "actions_run_id": "39939504317"
+  },
+  {
+    "locale": "ko",
+    "key": "dxf-viewer.faq.2.a",
+    "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+    "translation": "DXF가 밀리미터를 선언할 때만. 그렇지 않으면 뷰어는 선언된 단위를 사용하거나 측정값을 그림 단위로 라벨링합니다.",
+    "issue": "그림 단위 resulta genérico para unidades de dibujo CAD; 도면 단위 es la terminología oficial de Autodesk. Se conserva la condición de milímetros, pero falta precisión terminológica.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317"
+  },
+  {
+    "locale": "ko",
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "translation": "뷰어에서 그림 맞추기",
+    "issue": "뷰어에서 그림 맞추기 es una etiqueta literal y genérica; el control de encajar el dibujo CAD pide una formulación clara con 도면 y el ajuste a la vista.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317"
+  },
+  {
+    "locale": "ko",
+    "key": "dxf-viewer.fields.unsupported",
+    "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+    "translation": "지원되지 않는 파일입니다. ASCII.dxf 파일을 선택합니다.",
+    "issue": "ASCII.dxf concatena la codificación ASCII y la extensión: puede indicar un nombre de archivo ASCII.dxf. La fuente pide cualquier archivo .dxf codificado en ASCII.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317"
+  },
+  {
+    "locale": "ko",
+    "key": "shikaku.example",
+    "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+    "translation": "6으로 표시된 단서는 정확히 6개의 정사각형을 덮는 직사각형 안에 속합니다.",
+    "issue": "Los dos 6 corresponden al mismo valor explícito y al six escrito de la fuente. Significado conservado, pero cambia la multiplicidad de dígitos y falla el contrato canónico global y por oración. No se relaja ni se repara el raw.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317"
+  },
+  {
+    "locale": "ko",
+    "key": "shikaku.fields.reveal",
+    "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+    "translation": "해결책 보이기",
+    "issue": "해결책 보이기 usa una solución/remedio general; para la solución de este rompecabezas resulta más claro 정답 보기 o 풀이 보기. Defecto leve de terminología de interfaz.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "선택한 녹음은 업로드되지 않습니다. 이 브라우저는 로컬로 녹화를 디코딩하고 처리합니다. UsefulVerse는 녹음을 받지 않습니다.",
+    "issue": "녹화를 en la segunda oración significa grabación de vídeo, mientras la fuente y la herramienta procesan audio. La vuelta inglesa recording borra esta distinción; no prueba la ida.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "이 피치 컨트롤은 재생 속도를 변경하지 않고 유지할 수 없습니다. 낮은 피치는 느린 오디오 재생을 의미합니다. 높은 피치는 더 빠른 오디오 재생을 의미합니다.",
+    "issue": "재생 속도를 변경하지 않고 유지할 수 없습니다 introduce una construcción redundante y poco clara sobre mantener sin cambiar. Lower/slower y higher/faster están completos y correctos; defecto de naturalidad, no inversión de esa relación.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.load",
+    "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+    "translation": "로컬 오디오 불러오기",
+    "issue": "로컬 오디오 불러오기 cambia el modificador a audio local (tipo/origen de archivo); la fuente especifica que la acción de carga se realiza localmente. Debe conservar el alcance de locally sobre el procesamiento.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.tooLarge",
+    "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+    "translation": "크기가 25MB 미만인 오디오 파일을 선택하십시오.",
+    "issue": "25MB 미만 significa menos de 25 MB y excluye 25 MB exactos; no larger than incluye ese valor. Además 25MB pegado no pasa el contrato de tokens/unidades. No se confunde el fallo semántico de límite con la señal de formato.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317"
+  },
+  {
+    "locale": "ko",
+    "key": "shikaku.fields.clear",
+    "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+    "translation": "Delete Rectangle",
+    "issue": "Delete Rectangle singulariza Clear rectangles y reduce el alcance de quitar todos los rectángulos a uno; la ida coreana es válida.",
+    "observed_candidate": "legacy/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "shikaku.fields.faq.1.a",
+    "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+    "translation": "No, no, no. Each rectangle must contain exactly one numeric clue.",
+    "issue": "No, no, no. añade una repetición enfática ausente de la fuente; ruido de naturalidad en la vuelta, no inversión de la negación ni fallo de ida.",
+    "observed_candidate": "legacy/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "shikaku.fields.hint",
+    "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+    "translation": "Show hints",
+    "issue": "Show hints pluraliza la petición de una pista; la ida 힌트 표시 es correcta como botón singular contextual.",
+    "observed_candidate": "legacy/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "shikaku.fields.newPuzzle",
+    "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+    "translation": "New Puzzles",
+    "issue": "New Puzzles pluraliza la acción de crear un nuevo rompecabezas. La ida 새로운 퍼즐 es correcta.",
+    "observed_candidate": "legacy/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.clear",
+    "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+    "translation": "Clean audio",
+    "issue": "Clean audio repite el falso sentido limpiar/limpio en lugar de retirar el audio. Eco del defecto de ida, no una prueba independiente para aprobarla.",
+    "observed_candidate": "legacy/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.export",
+    "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+    "translation": "WAV export processed",
+    "issue": "WAV export processed mantiene el estado/exportación en lugar de exportar el WAV procesado. Eco del desorden de la ida.",
+    "observed_candidate": "legacy/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "No, no, no. The browser decodes and processes the selected audio locally. UsefulVerse does not receive recordings.",
+    "issue": "No, no, no. añade repetición enfática a No; las afirmaciones de procesamiento local y no recepción sí se conservan. Ida correcta.",
+    "observed_candidate": "legacy/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "No, no, no. These lightweight pitch controls change the playback speed so that low pitches play slower and high pitches play faster.",
+    "issue": "No, no, no. añade repetición enfática a No; la relación tono/velocidad se conserva. Ida correcta.",
+    "observed_candidate": "legacy/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.tooLarge",
+    "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+    "translation": "Select an audio file larger than 25MB.",
+    "issue": "Larger than 25MB repite la inversión del límite de la ida (fuente: como máximo 25 MB). No se cuenta como nuevo fallo independiente de ida.",
+    "observed_candidate": "legacy/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "dxf-viewer.faq.2.a",
+    "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+    "translation": "Only when DXF declares millimeters. Otherwise, the viewer either uses the declared units or labels the measurements as image units.",
+    "issue": "Image units reduce las unidades de dibujo CAD a unidades de imagen, mostrando la ambigüedad terminológica de 그림. La ida se juzga directamente y ya tiene nota de terminología.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "dxf-viewer.fields.cancel",
+    "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+    "translation": "Unload",
+    "issue": "Unload significa descargar/retirar lo cargado, no cancelar una carga en curso. Ida 불러오기 취소 correcta.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "translation": "Fitting in the Viewer",
+    "issue": "Fitting in the Viewer pierde el objeto dibujo de Fit drawing. La ida conserva 그림, aunque su estilo se evalúa aparte.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "dxf-viewer.fields.unsupported",
+    "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+    "translation": "Unsupported file. Select the ASCII.dxf file.",
+    "issue": "The ASCII.dxf file interpreta ASCII.dxf como nombre de archivo y no codificación/extensión separadas; eco de la ambigüedad de ida.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "dxf-viewer.fields.zoomIn",
+    "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+    "translation": "Zoom",
+    "issue": "Zoom omite la dirección in. La ida 확대 significa ampliar y es correcta.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "shikaku.example",
+    "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+    "translation": "The clues marked with 6 belong to a rectangle that covers exactly 6 squares.",
+    "issue": "The clues pluraliza una única pista y puede situar varias en un rectángulo; la ida describe una pista. La señal numérica aparte refleja six→6, no un cambio del valor seis.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "shikaku.fields.reveal",
+    "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+    "translation": "Show solutions",
+    "issue": "Show solutions pluraliza la única solución pedida para el rompecabezas. La terminología de la ida se puntúa aparte.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "shikaku.fields.selectStart",
+    "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+    "translation": "Select the starting rectangle.",
+    "issue": "Starting rectangle sustituye la casilla cuadrada inicial por un rectángulo; la ida 사각형 se entiende como casilla en el contexto de la cuadrícula.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "shikaku.fields.undo",
+    "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+    "translation": "Undo Last Square",
+    "issue": "Undo Last Square restringe el último rectángulo a un cuadrado; la ida 사각형 sirve como cuadrilátero contextual y no exige lados iguales.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "This pitch control cannot be maintained without changing the playback speed. A low pitch means slow audio playback. A higher pitch means faster audio playback.",
+    "issue": "This pitch control cannot be maintained cambia el objeto mantener la velocidad por mantener el control; la ida se lee aparte y conserva la relación tono/velocidad, con estilo deficiente.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.load",
+    "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+    "translation": "Load Local Audio",
+    "issue": "Load Local Audio mantiene el cambio de alcance de locally al tipo de audio en lugar de la acción local. Eco del defecto de ida.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.tooLarge",
+    "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+    "translation": "Choose an audio file that is less than 25MB in size",
+    "issue": "Less than 25MB conserva la exclusión incorrecta de 25 MB exactos. Eco del fallo de límite de ida; no valida el original.",
+    "observed_candidate": "model/context-v16",
+    "actions_run_id": "39939504317",
+    "direction": "back"
   }
 ]

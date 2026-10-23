@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-23T05:54:18.226829+00:00",
+  "at_utc": "2026-10-23T10:42:40.551364+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 4284,
+  "agent_reviewed_translations": 4351,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,7 +315,7 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 4284,
+  "agent_reviewed_evaluations": 4351,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
@@ -323,8 +323,8 @@
   ],
   "full_tool_computation_policy": "context-v15",
   "full_tool_pilot_approved_locales": [],
-  "total_records_all_policies": 12777,
-  "semantic_regressions": 585,
+  "total_records_all_policies": 12844,
+  "semantic_regressions": 623,
   "contextual_reference_gate": {
     "es": {
       "passed": true,
@@ -349,6 +349,19 @@
       "minor_rows": 0,
       "minimum_style_budget_met": true,
       "reason": "Direct source/forward/back reading of current known sample. Agent review only; no approved language, frozen engine, native review or publication."
+    },
+    "ko": {
+      "rows": 40,
+      "points": 344,
+      "maximum": 360,
+      "button_errors": 4,
+      "number_negation_errors": 2,
+      "major_rows": 2,
+      "minor_rows": 8,
+      "passed": false,
+      "sample": 40,
+      "minimum_style_budget_met": false,
+      "reason": "Direct review found boundary 25 MB error, audio/video confusion, ambiguous controls/terminology and unsupported numeric multiplicity. Hard forward data failures independently block. No full dispatch or language approval."
     }
   },
   "full_tool_gate": {
@@ -405,9 +418,10 @@
     "context-v12",
     "context-v13",
     "context-v14",
-    "context-v15"
+    "context-v15",
+    "context-v16"
   ],
-  "contextual_reference_gate_policy": "context-v15",
+  "contextual_reference_gate_policy": "mixed-per-locale",
   "low_resource_review_minimum": {
     "locales": [
       "ha",
@@ -421,5 +435,21 @@
     "sample_size": 80,
     "completed": false
   },
-  "full_tool_gate_policy": "context-v15"
+  "full_tool_gate_policy": "context-v15",
+  "contextual_reference_gate_policy_by_locale": {
+    "es": "context-v15",
+    "nb-NO": "context-v15",
+    "ko": "context-v16"
+  },
+  "latest_reference_pilot": {
+    "policy": "context-v16",
+    "locale": "ko",
+    "run_id": 39939504317,
+    "model_references": 40,
+    "legacy_references": 27,
+    "model_gate_passed": false,
+    "full_dispatched": false,
+    "approved_locales": []
+  },
+  "engines_inventory_note": "Baseline computation inventory retained. Contextual runs/counts in context-run-evidence.json; no fresh v16 validation for other35 destinations."
 }
