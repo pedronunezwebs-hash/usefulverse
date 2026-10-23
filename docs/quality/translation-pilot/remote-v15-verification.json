@@ -1,8 +1,8 @@
 {
-  "at_utc": "2026-10-23T06:02:30.725015+00:00",
-  "feature_head": "f724a1e6774d05bd05c5b8ea20f70f97c217d05c",
+  "at_utc": "2026-10-23T06:03:16.037678+00:00",
+  "feature_head": "f7f73bc7c82a2811003ebc002a77f8c1ade5fb55",
   "main_head": "1a7f16f8c59ad119d5dc43a17b0ec8449ae60180",
-  "all_local_tracked_files_match_remote": 7433,
+  "all_local_tracked_files_match_remote": 7434,
   "critical_file_sha256": {
     ".github/workflows/deploy-cloudflare.yml": "afc4092ea2643c484032d5ae9c4005f01339567e1f3194f4ceebc42de84de677",
     "docs/quality/ESTADO.md": "193813856adc6a504e168e3e24fdf787602d401b7d6667db4c6f842e6d6b777b",
@@ -37,6 +37,7 @@
     "docs/quality/translation-pilot/production-v15-check.json": "54dcac3a076b220107b4ea86668f3ca4cb5a81c9e98a2b16967869ea6b304d01",
     "docs/quality/translation-pilot/reference-coverage.json": "41aa1e5b3c80040a95cbe495eca7769bbcb5a7dff214b69f54d53579a0aed530",
     "docs/quality/translation-pilot/regression-v15-evidence.json": "c39e3636e368d5002c85febb7cfa6245d754aa50af9cba989550ff6d9ae82e30",
+    "docs/quality/translation-pilot/remote-v15-verification.json": "99a846020588dc4adf3c1af1a5dc1c31f7d9dab1bcfd25775c2b85738b1d30ea",
     "docs/quality/translation-pilot/review-context-v10-references.json": "d5edc1e5762bd266f69a478e87578947bb8110eb4eaf0f59a3b5206667fb9544",
     "docs/quality/translation-pilot/review-context-v11-full.json": "b117a7bd2177a73c1635ce17fc1d86729ae3e0196bb336b4eee60c3b48d069fa",
     "docs/quality/translation-pilot/review-context-v11-late-v12.json": "a3d1421619c9f7fc92c7ecd4bdef8c94fd72306a133943f1904904576f1f818f",
@@ -70,7 +71,7 @@
     "docs/quality/translation-pilot/review-metrics.json": "fc23ecddd36b6516a78aae9c922ff4a598e5346b98dcea143c929283a6f23195",
     "docs/quality/translation-pilot/run-context-v15-full.json": "90e42fa9a59169b900fb600cae548b2114c5d6b8c6fd02696738532667e1876f",
     "docs/quality/translation-pilot/run-context-v15-references.json": "a3e206ab96423f6ee51a5ed819cc2f2ce0b5f9eaebfb8d5b44e1ee3bea22f4a1",
-    "docs/quality/translation-pilot/security-v15-check.json": "0ccaf1137840fab145883a38cc291711987c2c5b186b3fe168e9f8d9b7066334",
+    "docs/quality/translation-pilot/security-v15-check.json": "9b2979f34bf0bbd2665ae42363c92d2bf81c4cc783e2ebd9960f45c48e203d0d",
     "scripts/localization/pilot-complete-sentence-policy.json": "8eeebad938f00e0704e98d91cd97547a2bf0ed4555d85a4ce9a097d99d114613",
     "scripts/localization/pilot-context-policy.json": "9a04fc1ee6eee01b85df58b5ccbf304cfbdbd33828e448314a7927c46737165e",
     "scripts/localization/pilot-coverage-policy.json": "1ab7d91464cd1ea874d864244f78de7cdd250f711c7403e16fa0d265eba10bc8",
