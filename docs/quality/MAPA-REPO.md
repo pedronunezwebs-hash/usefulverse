@@ -27,7 +27,7 @@ Revisado el 20-oct-2026 sobre `main` (`pedronunezwebs-hash/usefulverse`, **públ
 
 - **V15 (histórico):** calco informático ES corregido por memoria exacta; 91 claves/157 destinos. Referencias ES/NB 360/360, completo conocido revisado: es: 1566/1566, pasa muestra conocida; nb-NO: 1566/1566, pasa muestra conocida. 585 fixtures, cero idiomas aprobados. Datos y trazas globales/por oración y retiro histórico explícito conservados; sin despliegue.
 
-- **V16 (último lote; CI pendiente):** gramática ko CLDR fijada por revisión/hash; run 39939504317, 40 modelo+27 legacy leídos directamente. Modelo 344/360 y legacy 219/243, rechazados; completo no despachado. 12.844 registros/4.351 evaluaciones/623 fixtures. 104 Python locales (102+2); 103 reales en el modelo. Cero idiomas aprobados, activación o despliegue. Políticas/datos anteriores y adendas intactos. [Informe](lotes/2026-10-23-piloto-v16.md).
+- **V16 (último lote; CI 39941496076 en curso):** gramática ko CLDR fijada por revisión/hash; run 39939504317, 40 modelo+27 legacy leídos directamente. Modelo 344/360 y legacy 219/243, rechazados; completo no despachado. 12.844 registros/4.351 evaluaciones/623 fixtures. 104 Python locales (102+2); 103 reales en el modelo. Cero idiomas aprobados, activación o despliegue. Políticas/datos anteriores y adendas intactos. [Informe](lotes/2026-10-23-piloto-v16.md).
 
 ## Carpetas clave
 
