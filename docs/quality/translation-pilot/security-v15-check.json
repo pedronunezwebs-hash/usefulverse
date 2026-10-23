@@ -1,0 +1,31 @@
+{
+  "at_utc": "2026-10-23T05:26:16.300832+00:00",
+  "tools": [
+    {
+      "tool": "actionlint",
+      "version": "1.7.12",
+      "official_url": "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_darwin_arm64.tar.gz",
+      "sha256": "aba9ced2dee8d27fecca3dc7feb1a7f9a52caefa1eb46f3271ea66b6e0e6953f"
+    },
+    {
+      "tool": "gitleaks",
+      "version": "8.30.1",
+      "official_url": "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_darwin_arm64.tar.gz",
+      "sha256": "b40ab0ae55c505963e365f271a8d3846efbc170aa17f2607f13df610a9aeb6a5"
+    }
+  ],
+  "initial_checks": "pass",
+  "leaks": 0,
+  "documented_false_positive": {
+    "file": "remote-v14-verification.json",
+    "line": 7,
+    "value": "f6a3f4442df98f17083d5dedeaa397682babfdbc",
+    "kind": "Verified Git blob SHA-1 of historical workflow, not API credential",
+    "exact_fingerprint_only": true
+  },
+  "scope": "Current tree, not complete GitHub account/history billing audit",
+  "log_sha256": {
+    "actionlint": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gitleaks": "b1a038089e8437c7713cc2287e0fc6a14cb758f4e4a2b31c4faa6e363bf37bc2"
+  }
+}
