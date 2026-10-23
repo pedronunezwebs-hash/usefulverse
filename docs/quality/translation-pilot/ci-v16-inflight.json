@@ -4,8 +4,10 @@
   "source_commit": "4120e82629cb74072393352686b4cc7a450ec467",
   "status_at_capture": "in_progress",
   "created_at": "2026-10-23T10:46:47Z",
-  "resolved": false,
+  "resolved": true,
   "phase": "final",
   "expected_python_tests": 104,
-  "no_deployment": true
+  "no_deployment": true,
+  "conclusion": "success",
+  "resolved_at_utc": "2026-10-23T10:52:28.699494+00:00"
 }

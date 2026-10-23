@@ -1,0 +1,23 @@
+{
+  "checked_at_utc": "2026-10-23T10:53:26.348272+00:00",
+  "owned_run_ids": [
+    39939504317,
+    39941496076
+  ],
+  "internal_log_zips": [
+    {
+      "path_relative_to_own_root": "cache/gh/run-log-39941496076-1792752407.zip",
+      "bytes": 242583,
+      "sha256": "32e71dc1e5a88217bf4c3112dacc92e1f10dbcc5770c4d76ed5099b5fc5977c4"
+    },
+    {
+      "path_relative_to_own_root": "cache/gh/run-log-39939504317-1792751388.zip",
+      "bytes": 100825,
+      "sha256": "471fd92881625258ade46979a261911b49f1627e8aba7023cae0036ef547a83c"
+    }
+  ],
+  "internal_count": 2,
+  "external_owned_zip_count": 0,
+  "cleanup": "Internal logs/caches removed with only task-owned root after full online recovery verification. Actual deletion receipt appended to report/LOG after removal.",
+  "scope": "Only task-owned log ZIPs in own XDG_CACHE_HOME and two known gh user-cache directories; other tasks untouched."
+}
