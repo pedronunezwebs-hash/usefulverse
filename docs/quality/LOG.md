@@ -1,5 +1,12 @@
 # UsefulVerse · LOG de lotes
 
+## 2026-10-23 · Codex · V17: once memorias coreanas y cuatro tests nuevos; referencias pendientes
+
+[Informe](lotes/2026-10-23-piloto-v17.md). Política independiente context-v17: diez fallos de ida observados en v16 y la segunda FAQ completa de tono corregidos por memoria exacta fuente/hash/contexto. 96 claves/168 destinos, incluidos157 ES/NB intactos y11 ko. Cuatro tests nuevos: primero13 errores sin política, después verdes; se reproducen los diez callbacks/trazas originales. Suite local108 Python (106 correctos/dos dependencias omitidas), dos Node del corpus;214 entradas/168 memorias válidas. Diez funciones, incluida gramática/parser ko y siete contratos de inferencia, iguales por AST;152 archivos históricos/adendas y prefijo623 fixtures intactos. Plan de40 referencias y posible completo de88 claves más todas174 no-referencias predeclarado. Referencias aún no ejecutadas, completo condicionado al gate. Producción GET/XML inicial:25.625 URLs, tres soft404 pendientes; sin deploy.
+
+Siguiente: Ejecutar una sola vez referencias ko context-v17 en Actions; guardar ID/SHA en ambas ramas antes de esperar. Leer40 modelo y27 legacy, conciliar todos los avisos. Completo solo si pasa el gate modelo; no repetir v16/v15. No avanzar fase0.
+
+
 ## 2026-10-23 · Codex · v16: gramática ko y referencias rechazadas
 
 [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136); [informe](lotes/2026-10-23-piloto-v16.md). CLDR fijada por revisión/hash, once tests de gramática/datos y uno de revisión legacy incluidos. Cinco tandas rojas→verdes, 38 fixtures nuevas; 80 archivos históricos/adendas/prefijo585 intactos. Seis funciones iguales por AST, contratos globales y por oración conservados. Ninguna memoria ko.
