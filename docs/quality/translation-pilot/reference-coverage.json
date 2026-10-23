@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-22T11:43:13.761150+00:00",
+  "at_utc": "2026-10-23T05:34:10.346389+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 3856,
+  "agent_reviewed_translations": 3936,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,7 +315,7 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 3856,
+  "agent_reviewed_evaluations": 3936,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
@@ -323,28 +323,32 @@
   ],
   "full_tool_computation_policy": "context-v14",
   "full_tool_pilot_approved_locales": [],
-  "total_records_all_policies": 11921,
+  "total_records_all_policies": 12081,
   "semantic_regressions": 585,
   "contextual_reference_gate": {
     "es": {
-      "button_number_negation_errors": 0,
-      "minor_errors": 0,
-      "major_errors": 0,
+      "passed": true,
       "sample": 40,
       "points": 360,
       "maximum": 360,
-      "passed": true,
-      "reason": "40 fuentes, idas y vueltas actuales leídas. Acciones, datos, negaciones y gramática correctos en la ida observada; defectos de vuelta separados. Solo prerrequisito del completo, sin aprobar el idioma."
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "minimum_style_budget_met": true,
+      "reason": "Direct source/forward/back reading of current known sample. Agent review only; no approved language, frozen engine, native review or publication."
     },
     "nb-NO": {
-      "button_number_negation_errors": 0,
-      "minor_errors": 0,
-      "major_errors": 0,
+      "passed": true,
       "sample": 40,
       "points": 360,
       "maximum": 360,
-      "passed": true,
-      "reason": "40 fuentes, idas y vueltas actuales leídas. Acciones, datos, negaciones y gramática correctos en la ida observada; defectos de vuelta separados. Solo prerrequisito del completo, sin aprobar el idioma."
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "minimum_style_budget_met": true,
+      "reason": "Direct source/forward/back reading of current known sample. Agent review only; no approved language, frozen engine, native review or publication."
     }
   },
   "full_tool_gate": {
@@ -396,9 +400,10 @@
     "context-v11",
     "context-v12",
     "context-v13",
-    "context-v14"
+    "context-v14",
+    "context-v15"
   ],
-  "contextual_reference_gate_policy": "context-v14",
+  "contextual_reference_gate_policy": "context-v15",
   "low_resource_review_minimum": {
     "locales": [
       "ha",
