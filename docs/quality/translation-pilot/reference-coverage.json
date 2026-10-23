@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-23T05:34:10.346389+00:00",
+  "at_utc": "2026-10-23T05:54:18.226829+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 3936,
+  "agent_reviewed_translations": 4284,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,15 +315,15 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 3936,
+  "agent_reviewed_evaluations": 4284,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
     "nb-NO"
   ],
-  "full_tool_computation_policy": "context-v14",
+  "full_tool_computation_policy": "context-v15",
   "full_tool_pilot_approved_locales": [],
-  "total_records_all_policies": 12081,
+  "total_records_all_policies": 12777,
   "semantic_regressions": 585,
   "contextual_reference_gate": {
     "es": {
@@ -353,38 +353,42 @@
   },
   "full_tool_gate": {
     "es": {
-      "passed": false,
+      "passed": true,
       "sample": 88,
-      "fixed_sample_points": 792,
-      "fixed_sample_maximum": 792,
-      "fixed_sample_passed": true,
-      "expanded_nonreference_rows": 174,
-      "expanded_points": 1565,
-      "expanded_maximum": 1566,
+      "points": 1566,
+      "maximum": 1566,
       "button_errors": 0,
       "number_negation_errors": 0,
       "major_rows": 0,
-      "minor_rows": 1,
+      "minor_rows": 0,
       "minimum_style_budget_met": true,
-      "global_no_open_defects_requirement": "full-sample-v14-plan.json expanded_validation: repair every observed forward defect outside original88.",
-      "reason": "Las 88 pasan. Un calco leve ES fuera de muestra mantiene el bloqueo ampliado de ES, aunque se cumple el mínimo de estilo 1/20. NB pasa esta muestra completa conocida. Cero idiomas aprobados y sin motor congelado, revisión nativa o publicación."
-    },
-    "nb-NO": {
-      "passed": true,
-      "sample": 88,
+      "reason": "Direct source/forward/back reading of current known sample. Agent review only; no approved language, frozen engine, native review or publication.",
       "fixed_sample_points": 792,
       "fixed_sample_maximum": 792,
       "fixed_sample_passed": true,
       "expanded_nonreference_rows": 174,
       "expanded_points": 1566,
       "expanded_maximum": 1566,
+      "global_no_open_defects_requirement": "full-sample-v15-plan.json: any observed outside88 forward defect blocks global."
+    },
+    "nb-NO": {
+      "passed": true,
+      "sample": 88,
+      "points": 1566,
+      "maximum": 1566,
       "button_errors": 0,
       "number_negation_errors": 0,
       "major_rows": 0,
       "minor_rows": 0,
       "minimum_style_budget_met": true,
-      "global_no_open_defects_requirement": "full-sample-v14-plan.json expanded_validation: repair every observed forward defect outside original88.",
-      "reason": "Las 88 pasan. Un calco leve ES fuera de muestra mantiene el bloqueo ampliado de ES, aunque se cumple el mínimo de estilo 1/20. NB pasa esta muestra completa conocida. Cero idiomas aprobados y sin motor congelado, revisión nativa o publicación."
+      "reason": "Direct source/forward/back reading of current known sample. Agent review only; no approved language, frozen engine, native review or publication.",
+      "fixed_sample_points": 792,
+      "fixed_sample_maximum": 792,
+      "fixed_sample_passed": true,
+      "expanded_nonreference_rows": 174,
+      "expanded_points": 1566,
+      "expanded_maximum": 1566,
+      "global_no_open_defects_requirement": "full-sample-v15-plan.json: any observed outside88 forward defect blocks global."
     }
   },
   "contextual_policies_reviewed": [
@@ -417,5 +421,5 @@
     "sample_size": 80,
     "completed": false
   },
-  "full_tool_gate_policy": "context-v14"
+  "full_tool_gate_policy": "context-v15"
 }

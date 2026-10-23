@@ -124,5 +124,21 @@
     "pass": 90,
     "dependency_skips": 2,
     "log_sha256": "b002c4a9707f4d7f1b93590865d12762eb97b13dae86af480122bd4982e660e6"
+  },
+  "current_full_review": {
+    "run_id": 39906585266,
+    "all428_current_source_forward_back_read": true,
+    "new_forward_defects_observed": 0,
+    "new_back_semantic_defects_observed": 0,
+    "semantic_fixtures_before": 585,
+    "semantic_fixtures_after": 585,
+    "old585_prefix_preserved": true,
+    "model_hashes_same_v14": true
+  },
+  "final_local_suite": {
+    "tests": 92,
+    "pass": 90,
+    "dependency_skips": 2,
+    "log_sha256": "df945b66522a379df01a90fbec6b46ec6ee407b938c218298771549084d0e411"
   }
 }
