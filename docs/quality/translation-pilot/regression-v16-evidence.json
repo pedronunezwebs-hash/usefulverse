@@ -53,7 +53,6 @@
     "docs/quality/translation-pilot/full-sample-v11-plan.json": "be48dca010d448cd84ad633662ee96e41b785f341543e66ab0fbbaeb47e5223a",
     "docs/quality/translation-pilot/review-context-v10-references.json": "d5edc1e5762bd266f69a478e87578947bb8110eb4eaf0f59a3b5206667fb9544",
     "docs/quality/translation-pilot/review-warning-addenda.json": "bc51ca7d5ba91c65e0f3ead804eb22828dd232cf109b278798e8806739169112",
-    "docs/quality/translation-pilot/review-metrics.json": "fc23ecddd36b6516a78aae9c922ff4a598e5346b98dcea143c929283a6f23195",
     "docs/quality/translation-pilot/review-madlad-core-four.json": "dd046b481d68acb55fc4bf12ace0a6836e8960dba03dd84d9ef6eb77ddaff292",
     "docs/quality/translation-pilot/review-context-v14-full.json": "25236fc705d88ef2fb52d085421f86480bbe8de0e200f48f884798b4bc2ef94e",
     "docs/quality/translation-pilot/review-context-v4-references.json": "1d117cd145d16ca980e5e67262f79727b757d91be71898572926b60d5e79a419",
@@ -401,5 +400,7 @@
     "pass": 101,
     "dependency_skips": 2,
     "log_sha256": "6d8cb2ac5e688e04ee8fc3c641bc78c1fe0f29f34ca08cc8cd7f46463e834c5f"
-  }
+  },
+  "aggregate_review_metrics_baseline_sha256": "fc23ecddd36b6516a78aae9c922ff4a598e5346b98dcea143c929283a6f23195",
+  "historical_immutable_files": 80
 }

@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-23T05:54:18.177204+00:00",
+  "at_utc": "2026-10-23T10:35:15.276042+00:00",
   "approved_locales": [],
   "runs": [
     {
@@ -876,6 +876,114 @@
         "translation-pilot (madlad)\tCheck pilot contracts and extract the real three-tool corpus\t2026-10-23T05:28:27.6068219Z OK"
       ],
       "collected_at_utc": "2026-10-23T05:33:35.951123+00:00"
+    },
+    {
+      "inference_policy": "context-v16",
+      "schema_version": 1,
+      "run_id": 39939504317,
+      "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39939504317",
+      "source_commit": "11b047f31e8ebad184d9be91facea1fb0f7ca701",
+      "policy": "context-v16",
+      "engine": "madlad",
+      "scope": "references",
+      "locales": [
+        "ko"
+      ],
+      "status_at_capture": "in_progress",
+      "started_at": "2026-10-23T10:29:48Z",
+      "dispatches": 1,
+      "complete": true,
+      "model_inference_local": false,
+      "job_id": 120367192051,
+      "conclusion": "success",
+      "checkpoint_before": 0,
+      "checkpoint_after": 67,
+      "new_records": 67,
+      "checkpoint_sha256_at_collection": "38f39e96db0cdb0b5e49c87dded586be23c530385652e81010862eedc9d1aa87",
+      "log_sha256": "aca6b86512f194f0e9f59243b56853bd4d374fa97546b53c811c42ee992d9d26",
+      "models": [
+        {
+          "converted_sha256": {
+            "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+            "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+            "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+          },
+          "engine": "madlad",
+          "license": "Apache-2.0",
+          "minimum_free_gib": 18,
+          "repository": "google/madlad400-3b-mt",
+          "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+        }
+      ],
+      "model_hashes_same_v15": true,
+      "summary": [
+        {
+          "approved": 0,
+          "conversion_seconds": 92.08653897599999,
+          "counts": {
+            "legacy": 27,
+            "model": 40
+          },
+          "engine": "madlad",
+          "peak_rss_kib": 3726876,
+          "scope": "references",
+          "total_seconds": 195.80049130099997
+        }
+      ],
+      "cleanup": "success",
+      "site_job": "skipped",
+      "artifacts": 0,
+      "actual_python_test_lines": [
+        "translation-pilot (madlad)\tCheck pilot contracts and extract the real three-tool corpus\t2026-10-23T10:31:34.8400680Z Ran 103 tests in 57.492s",
+        "translation-pilot (madlad)\tCheck pilot contracts and extract the real three-tool corpus\t2026-10-23T10:31:34.8401044Z OK"
+      ],
+      "collected_at_utc": "2026-10-23T10:35:15.275034+00:00",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check out pilot source without persistent credentials",
+          "conclusion": "success"
+        },
+        {
+          "name": "Set up Python",
+          "conclusion": "success"
+        },
+        {
+          "name": "Restrict model storage to this disposable runner",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install pinned CPU-only translation dependencies",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check pilot contracts and extract the real three-tool corpus",
+          "conclusion": "success"
+        },
+        {
+          "name": "Translate, back-translate and checkpoint machine drafts in logs",
+          "conclusion": "success"
+        },
+        {
+          "name": "Remove job-owned model downloads and caches",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Set up Python",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Check out pilot source without persistent credentials",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
     }
   ],
   "checkpoints": [
@@ -908,6 +1016,11 @@
       "path": "checkpoints/context-v15/madlad.jsonl",
       "records": 856,
       "sha256": "098fb29f8380b896d242aacf45f7e5dc6a7eeb5c241c0ae8fbffdf1a4476a65e"
+    },
+    {
+      "path": "checkpoints/context-v16/madlad.jsonl",
+      "records": 67,
+      "sha256": "38f39e96db0cdb0b5e49c87dded586be23c530385652e81010862eedc9d1aa87"
     },
     {
       "path": "checkpoints/context-v2/m2m100.jsonl",
@@ -965,7 +1078,7 @@
       "sha256": "e8e4ece85552fe89bdb9518bc8eeca91b5a9b446fcbe4c3694b95f8b70290643"
     }
   ],
-  "total_records": 12777,
+  "total_records": 12844,
   "cancelled_runs": [
     {
       "run_id": 39484416039,
