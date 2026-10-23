@@ -6,7 +6,7 @@
 
 Run [39939504317](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39939504317), fuente `11b047f`: 67 registros (40 modelo/27 legacy), 103 tests reales, INT8 igual a v15, cleanup correcto, cero artefactos/sitio omitido. Leídas las 67 fuentes/idas/vueltas. Modelo 344/360, legacy 219/243; 23+16 avisos y 22 hallazgos de vuelta. Contrato six→6 falla por multiplicidad, no por cambiar el valor. Completo no despachado. 12.844 registros/4.351 evaluaciones con repeticiones/623 fixtures (528 ida/95 vuelta), cero idiomas aprobados.
 
-Local: 104 Python (102+2), dos Node. CI y HTTP de cierre pendientes. GET inicial 25.625 URLs y tres soft404; sin deploy/código a main/activaciones/envíos. Pedro P-001–P-008 pendientes/0 FALLA, ningún ID nuevo; puerta18/siete capas y dispositivos pendientes. Candado sigue propio hasta CI/relevo/limpieza. Siguiente: v17 para los diez defectos de ida ko, después referencias y completo condicionado; no repetir v16 ni avanzar fase0.
+Local: 104 Python (102+2), dos Node. CI final [39941496076](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39941496076) en curso (`4120e82`), recuperar sin relanzar; HTTP de cierre pendiente. GET inicial 25.625 URLs y tres soft404; sin deploy/código a main/activaciones/envíos. Pedro P-001–P-008 pendientes/0 FALLA, ningún ID nuevo; puerta18/siete capas y dispositivos pendientes. Candado sigue propio hasta CI/relevo/limpieza. Siguiente: v17 para los diez defectos de ida ko, después referencias y completo condicionado; no repetir v16 ni avanzar fase0.
 
 Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 
