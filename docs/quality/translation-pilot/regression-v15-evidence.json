@@ -109,5 +109,20 @@
     "dependency_skips": 2,
     "corpus_node_tests": 2,
     "log_sha256": "d7be5335b81bae1ce7884937d23597d5040909d89882b61f71e6917c0a83b36b"
+  },
+  "ci_evidence_regression": {
+    "issue": "Initial new collector read first ordinary hub file count (8253) rather than isolated preview (11293). Correct CI log line and builds were unchanged. Found before publication of this evidence.",
+    "red_tests": 1,
+    "red_failures": 1,
+    "red_log_sha256": "8e72d0e2ce37faa701911ffb677a44f162d51ae6c498988eab89e79ff469506d",
+    "green_log_sha256": "d10ffbd9f0faa72cd6837063279524e199b59fbc3d035051302a1e8dbc4b36ad",
+    "permanent_test": "test_translation_ci_evidence.py",
+    "original_v13_v14_evidence_unchanged": true
+  },
+  "after_ci_evidence_fix_suite": {
+    "tests": 92,
+    "pass": 90,
+    "dependency_skips": 2,
+    "log_sha256": "b002c4a9707f4d7f1b93590865d12762eb97b13dae86af480122bd4982e660e6"
   }
 }
