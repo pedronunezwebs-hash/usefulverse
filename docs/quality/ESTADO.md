@@ -11,7 +11,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 ## 1. Siguiente paso exacto
 
-**V15 en curso:** calco ES device reproducido, dos tests rojos y política independiente preparada. Referencias aún no ejecutadas; no repetir v14 ni avanzar a fase 0. Informe: `docs/quality/lotes/2026-10-23-piloto-v15.md`.
+**V15 en curso:** calco ES device reproducido y corregido; 91 tests locales (dos dependencias omitidas). Referencias 39905785741 ES/NB 360/360, todos los 80 textos/idas/vueltas leídos, 14 avisos y nueve defectos de vuelta conciliados. Completo lanzado, pendiente de recuperar y revisar; no repetir runs ni avanzar a fase 0. Informe: `docs/quality/lotes/2026-10-23-piloto-v15.md`.
 
 1. **Paso A continúa en el [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador, rama `feat/new-tools-batch-1`.**
    Las 300 fuentes están recuperadas con `indexable:false`, fuera de sitemap/hreflang y sin bloqueo robots.
