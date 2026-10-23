@@ -5751,5 +5751,65 @@
     "observed_candidate": "model/context-v16",
     "actions_run_id": "39939504317",
     "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.faq2a",
+    "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+    "translation": "No, no, no. This simple pitch adjustment changes the playback speed. Lowering the pitch slows the playback, and raising it speeds it up.",
+    "issue": "No, no, no. repite enfáticamente la respuesta negativa de un solo 아니요; la relación tono/velocidad sí está conservada. Defecto de estilo solo en la vuelta.",
+    "observed_candidate": "model/context-v17",
+    "actions_run_id": "39944893447",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "translation": "No, no, no. The browser decodes and processes the selected audio on your device. UsefulVerse does not receive recordings.",
+    "issue": "No, no, no. añade repetición a un único 아니요; dispositivo y no recepción del audio se conservan. Defecto de estilo solo en la vuelta.",
+    "observed_candidate": "model/context-v17",
+    "actions_run_id": "39944893447",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.tooLarge",
+    "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+    "translation": "Select an audio file that is less than 25 MB in size.",
+    "issue": "Less than25 MB excluye el límite exacto; el coreano 이하 sí lo incluye. Error de desigualdad en la vuelta independiente de una ida correcta.",
+    "observed_candidate": "model/context-v17",
+    "actions_run_id": "39944893447",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "dxf-viewer.fields.unsupported",
+    "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+    "translation": "Unsupported file. Select a.dxf file in ASCII format.",
+    "issue": "Select a.dxf une el artículo a la extensión en la vuelta; falta el espacio a .dxf. ASCII format sí permanece claro. Defecto tipográfico de vuelta, sin error nuevo de ida.",
+    "observed_candidate": "model/context-v17",
+    "actions_run_id": "39944893447",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "shikaku.example",
+    "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+    "translation": "The clues marked with 6 must be within one rectangle covering exactly six cells.",
+    "issue": "The clues plural con within one rectangle permite lectura colectiva de varias pistas en un único rectángulo; la fuente describe una pista. Ambigüedad de número en la vuelta; la ida es singular y correcta.",
+    "observed_candidate": "model/context-v17",
+    "actions_run_id": "39944893447",
+    "direction": "back"
+  },
+  {
+    "locale": "ko",
+    "key": "voice-changer.fields.load",
+    "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+    "translation": "Load Audio from Local",
+    "issue": "Load Audio from Local desplaza locally hacia la procedencia del archivo. La ida liga 로컬에서 a la carga; la vuelta tiene alcance ambiguo y se juzga separadamente.",
+    "observed_candidate": "model/context-v17",
+    "actions_run_id": "39944893447",
+    "direction": "back"
   }
 ]

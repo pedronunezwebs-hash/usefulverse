@@ -55,7 +55,8 @@
   "site_job": "skipped",
   "artifacts": 0,
   "actual_python_test_lines": [
-    "translation-pilot (madlad)\tCheck pilot contracts and extract the real three-tool corpus\t2026-10-23T11:17:59.4942542Z Ran 108 tests in 58.603s"
+    "translation-pilot (madlad)\tCheck pilot contracts and extract the real three-tool corpus\t2026-10-23T11:17:59.4942542Z Ran 108 tests in 58.603s",
+    "translation-pilot (madlad)\tCheck pilot contracts and extract the real three-tool corpus\t2026-10-23T11:17:59.4943482Z OK"
   ],
   "collected_at_utc": "2026-10-23T11:21:20.907959+00:00",
   "steps": [

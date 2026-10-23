@@ -1,0 +1,970 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex (agente, sin API de pago)",
+  "native_review": false,
+  "rubric": "REVISION-FINAL §2, RUNBOOK §8: significado, cifras/negaciones, naturalidad0–3; cero errores botones/cifras, máximo1leve/20, contratos válidos. Back judged separately.",
+  "expected_rows": 27,
+  "inference_policy": "context-v17",
+  "reviewed_at_utc": "2026-10-23T11:23:55.563580+00:00",
+  "scope": "Direct reading of each listed current source/forward/back; no automatic score or backtranslation-only approval.",
+  "approved_locales": [],
+  "requires_complete_model_warning_coverage": false,
+  "rows": [
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.reveal",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "candidate": "legacy",
+      "translation_hash": "339804f73f7f0532ae46830267e5a454bdb55f6dcf4f96c19191a07320d07702",
+      "record_ids": [
+        "09bbf4ad511b13d2b297ca34ed5c27f1b7bf805f7365ebc5132a9d135334af66"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.faq2a",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "candidate": "legacy",
+      "translation_hash": "811b279e84fb0682f57bc8fc02f7ee4f616728694929634accc197f7bf17b516",
+      "record_ids": [
+        "14e4fd663af899d637ee02f3fe950bfad272a97d667110439230d1f291635ba2"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "candidate": "legacy",
+      "translation_hash": "56c38dadfd08fe5d296f697b48c745d18d137c9d801926518f8dec73fd082d98",
+      "record_ids": [
+        "1f35a281e1cf8e9e3e45c61ac2b63b0df7cc205aaadba38a57a1e14e64583390"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.daily",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "candidate": "legacy",
+      "translation_hash": "7f52dcf8506879624417429b4367cb3b6226a2296ff53cc47ec70a69764db2fd",
+      "record_ids": [
+        "2247e881e4e5178366e563b247ef73768292305afbb4cf74242091812da928c7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "candidate": "legacy",
+      "translation_hash": "bdc4f8be87455ef786353feb6ab5db9f5fbbec390a97bd995c22c4fec818f3d6",
+      "record_ids": [
+        "27d6c3229ece0a072b82aba7a9c4682a24d1e5f9194c68cba5cff7dea815aa70"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. 깨끗한 오디오 describe audio limpio; no expresa quitar el audio cargado. El botón pierde su acción de borrar."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "candidate": "legacy",
+      "translation_hash": "d63dbfead08e02a792bf96a43b44050d05c1a1f217958f7aac3f7cb7083adba9",
+      "record_ids": [
+        "2e8f455bcba4e46a66070806d8730e14e980e379b5873eab36dbc932c92f1298"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "candidate": "legacy",
+      "translation_hash": "aa784ee071dc4f6e167aeb30252caed0c6400d149c91e1561b6ea06a35d1f92a",
+      "record_ids": [
+        "3cdc96f9169030ec97860c6470a2198c122b9a44c27cf2f5540943095f36681d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "candidate": "legacy",
+      "translation_hash": "2a6392621324d1e6d481acea1ee282f98761dc8549eaa0fcd9322cc92b28784a",
+      "record_ids": [
+        "46a12bf14ee4dddcdc8efc12e54d92d7714d80688b41c6d9b765d6d55eda9486"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "candidate": "legacy",
+      "translation_hash": "14a65d51492413df0aec8f3962f654e4fb970a4ef5c5b46f08450dcda8874491",
+      "record_ids": [
+        "48e10cb45cda8aa375a6c1f505cd4741a44ed6d6c876816b6357f2c859df8b31"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "candidate": "legacy",
+      "translation_hash": "7be7c75fc95cd59caa24db218d820dd464e5e4b4d862bcd050c9379d709634c1",
+      "record_ids": [
+        "4ff4e606ce71d641a15a1bd240ea12b2f0a973ef39e451dc89f0670e2b76f743"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. 이력서 es un currículum/résumé, no reanudar la partida. La vuelta Resume oculta esta polisemia y no valida la ida."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.chooseFirst",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "candidate": "legacy",
+      "translation_hash": "18c7d88db62ac3650808573f1ac4cdba12b82ed27acb28cb5c344e75e3879a0c",
+      "record_ids": [
+        "5882a9ca14f1e7df69ee2448aa948bc310b4f50ba19e45318e210ab73a92c3fb"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "candidate": "legacy",
+      "translation_hash": "8c4555d08d9d061b733d1c60dd70c4c4b003d491526f01ca2a7da924cf999f58",
+      "record_ids": [
+        "59076b53d94288aad0f751823e5ee2129f2ab2e9d298e061329b0a798b2fa75e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "candidate": "legacy",
+      "translation_hash": "016b3172da2a15b1fba954fe9d40704a42ed0d3cc0ecfa84053ba4a45ce68e0f",
+      "record_ids": [
+        "6a4bb6ac0cbf08a850282c070fd7d176868abd714bd82d97a447165bb4a746de"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.newPuzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "candidate": "legacy",
+      "translation_hash": "2e81128460cd92c06cf7a608caea3d59863d191e5c195c1507ab1bf0c5222dd9",
+      "record_ids": [
+        "72a181e3e8d51d52d39af80f1a314ae6fcf7dc3f7d3a59c02bcdc68ab5cdd0a1"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.check",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "candidate": "legacy",
+      "translation_hash": "39f8f253ee7c56682c8b914bc9b7d9ba3015bba8b23cd5f41d16262d2c66f7b6",
+      "record_ids": [
+        "763db2c922c70cf8ad723507bb41ca33a3d225cb25030c168244b386c073304a"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. 체크 퍼즐 conserva el orden inglés y se lee como un nombre compuesto; la acción de comprobar el tablero necesita 퍼즐 확인. Botón poco claro."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.privacy",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "candidate": "legacy",
+      "translation_hash": "a8e70bac6ad273ade7990a1782bd93320d7b15d376747efc8aff2b9d9bdf0a26",
+      "record_ids": [
+        "7a9a1f3730623d8b5bcecf489532c1a8453c914f461f74bd1e74098240ab79a7"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "candidate": "legacy",
+      "translation_hash": "a9bfbffb3df2d83184b7e23ea9e28ffc91a92128e94b3ef255a5938350496842",
+      "record_ids": [
+        "7b8f86bd90fd1570b5b808d4a200555766b83015e26dfcc92ee305839702f186"
+      ],
+      "scores": {
+        "meaning": 1,
+        "numbers_negations": 3,
+        "naturalness": 1
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. WAV 내보내기 처리됨 coloca procesado como estado de la exportación, no como modificador del WAV que se exporta; etiqueta desordenada."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.chooseFile",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "candidate": "legacy",
+      "translation_hash": "4c61e3c0be87eeb886421b623d87695b5036f2bc35ffcf5e0cce8622a8b14977",
+      "record_ids": [
+        "7ec72eb543457b3b193e7d3315a5ea70b5cca25fc54e91103404bcfa2bf2eb56"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "candidate": "legacy",
+      "translation_hash": "c9ba857450d4ecf7ffe5a325afa7f6793183ba46eaf4b78c74108b2757ed6340",
+      "record_ids": [
+        "8dee15c11a958a3f8c9b8c2c13671d571a30233f92d4c514fdff67a6d1681b67"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "candidate": "legacy",
+      "translation_hash": "fa19c7d63c2067c4d27078f9e152b76d0994ea2046af0ac12dc4a674ffc03ff6",
+      "record_ids": [
+        "9f82711d6c2d44067d3662d359033f671596a49d27684c7dff4019c0aa83e683"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.decodeFailed",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "candidate": "legacy",
+      "translation_hash": "a5923e5e1b0c09904ff76779544f13d7f4915807d5888e7c7b79f596abf562d2",
+      "record_ids": [
+        "a783ef597931ac9d83310145844bd39beb259be354ee26e0006c96939048c484"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "candidate": "legacy",
+      "translation_hash": "4a941faf12ac7d8751c08381198ec94cd9c94df1afb3ccbe4449425951548ebc",
+      "record_ids": [
+        "adf619897ae86b3c6162f57b90afc6ee4781d308358da18da6c8a2b9c42f5cb6"
+      ],
+      "scores": {
+        "meaning": 0,
+        "numbers_negations": 0,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. 25MB보다 큰 pide un archivo mayor de 25 MB, invirtiendo no larger than. Además 25MB sin separación no pasa el contrato conservador de unidad/token."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "candidate": "legacy",
+      "translation_hash": "2c5daa9c049fd9bde32a23ea3966c1dfad4931d059462ed67437a02ba18e284e",
+      "record_ids": [
+        "bd2b0b2f9f3004f2fd372f2e0e3f859bd08237cccbfded628b23daa68fd23abe"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "candidate": "legacy",
+      "translation_hash": "0e585a98663158fe01e412cb78d827b658cf2936ce6284a32fe8959d9e6d47d1",
+      "record_ids": [
+        "c15be42316d4107584cd0f8d854796580928de62e8725859c5de6f66bcd9f354"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. 미리보기 효과 se lee como efecto de previsualización; el orden nominal no expresa con claridad escuchar/previsualizar el efecto de audio."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.example",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "candidate": "legacy",
+      "translation_hash": "03d609d8cc6fae7854c8c87360827a25466a09ab7e956c009d78fac65222c84d",
+      "record_ids": [
+        "c17bb422dde0cb26710bd746f7af03ff944fe418a79dc745b9ec10e3fe6b0a11"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 2,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. El valor seis se conserva semánticamente, pero six pasa a un segundo dígito 6: viola la multiplicidad del contrato numérico canónico. Es una limitación conservadora de notación, no un cambio de valor 6→otro número."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "candidate": "legacy",
+      "translation_hash": "920d6d4b949ada8e03a26232e036ac22411545d81c8215be3abf0774edc1c328",
+      "record_ids": [
+        "d18f50da0e5e93a613f7a969dbe9f547cbdcf45cd92343d388065ddaef1a179e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+      ],
+      "critical_control": true,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "candidate": "legacy",
+      "translation_hash": "9a57eec7d28c36a0bad84a28293728a5ac4fc2d60c7d9e2eb86efa4c54dbff40",
+      "record_ids": [
+        "dae58160789c7c17fcc2199d03ddaeebb61bccdc7a2f078ca0bee360cf808a8d"
+      ],
+      "scores": {
+        "meaning": 2,
+        "numbers_negations": 3,
+        "naturalness": 2
+      },
+      "notes": [
+        "Lectura directa actual confirma el mismo texto fuente/ida por hashes. 파일을 다듬고 pide pulir/refinar el archivo; no indica recortar su duración como exige Trim en el aviso de 30 segundos."
+      ],
+      "critical_control": false,
+      "translation_origin": "legacy",
+      "score_origin": "direct-current-agent-review"
+    }
+  ],
+  "back_findings": [
+    {
+      "record_id": "14e4fd663af899d637ee02f3fe950bfad272a97d667110439230d1f291635ba2",
+      "back_translation_hash": "69af0afb0ffce6f28316219e256f0d99cab58e6ff21f5d1aeed9825e6d535381",
+      "notes": [
+        "No, no, no. añade repetición enfática a No; la relación tono/velocidad se conserva. Ida correcta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "1f35a281e1cf8e9e3e45c61ac2b63b0df7cc205aaadba38a57a1e14e64583390",
+      "back_translation_hash": "3c1544bb4ff978143f8944054edd6e86e0200e6d6ead70602d484fbf7fa6070d",
+      "notes": [
+        "Delete Rectangle singulariza Clear rectangles y reduce el alcance de quitar todos los rectángulos a uno; la ida coreana es válida."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "27d6c3229ece0a072b82aba7a9c4682a24d1e5f9194c68cba5cff7dea815aa70",
+      "back_translation_hash": "54c3337f9c3d052f8155bcc594a744072ed02c1725338625d0c0c3deb037ab2a",
+      "notes": [
+        "Clean audio repite el falso sentido limpiar/limpio en lugar de retirar el audio. Eco del defecto de ida, no una prueba independiente para aprobarla."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "2e8f455bcba4e46a66070806d8730e14e980e379b5873eab36dbc932c92f1298",
+      "back_translation_hash": "4781198a63a47810c3a2e468769d06d932bcd3607d5af040337e2cebbf2c5cc5",
+      "notes": [
+        "Show hints pluraliza la petición de una pista; la ida 힌트 표시 es correcta como botón singular contextual."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "3cdc96f9169030ec97860c6470a2198c122b9a44c27cf2f5540943095f36681d",
+      "back_translation_hash": "1200c9249cda2d45fce7bac54c09741e8cd6bafae47db14a5553986fb5301981",
+      "notes": [
+        "No, no, no. añade una repetición enfática ausente de la fuente; ruido de naturalidad en la vuelta, no inversión de la negación ni fallo de ida."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "46a12bf14ee4dddcdc8efc12e54d92d7714d80688b41c6d9b765d6d55eda9486",
+      "back_translation_hash": "1e84505ace69259d58a89f303bcad448963a5f012444b2a669f7b7389baa4510",
+      "notes": [
+        "No, no, no. añade repetición enfática a No; las afirmaciones de procesamiento local y no recepción sí se conservan. Ida correcta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "72a181e3e8d51d52d39af80f1a314ae6fcf7dc3f7d3a59c02bcdc68ab5cdd0a1",
+      "back_translation_hash": "f2f99926680fb3020c768e37a4dee779eb0becb044fcb2d64b034c0ae747874b",
+      "notes": [
+        "New Puzzles pluraliza la acción de crear un nuevo rompecabezas. La ida 새로운 퍼즐 es correcta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "7b8f86bd90fd1570b5b808d4a200555766b83015e26dfcc92ee305839702f186",
+      "back_translation_hash": "7b55e651a9f32c56b07b7d601fd23613deadbca26ace3d222cd7eed4cdd7c2b5",
+      "notes": [
+        "WAV export processed mantiene el estado/exportación en lugar de exportar el WAV procesado. Eco del desorden de la ida."
+      ],
+      "forward_induced": true
+    },
+    {
+      "record_id": "adf619897ae86b3c6162f57b90afc6ee4781d308358da18da6c8a2b9c42f5cb6",
+      "back_translation_hash": "9a99eb57fd9ea7970519a74cb331e881d23d799ace8eedffb08bed0322400e8a",
+      "notes": [
+        "Larger than 25MB repite la inversión del límite de la ida (fuente: como máximo 25 MB). No se cuenta como nuevo fallo independiente de ida."
+      ],
+      "forward_induced": true
+    }
+  ],
+  "warning_reconciliation": [
+    {
+      "record_id": "09bbf4ad511b13d2b297ca34ed5c27f1b7bf805f7365ebc5132a9d135334af66",
+      "translation_hash": "339804f73f7f0532ae46830267e5a454bdb55f6dcf4f96c19191a07320d07702",
+      "back_translation_hash": "37407052fc947f2b5e4f091dcda579bc9c9730aa6440dbcf13d4f9680dcdd4c4",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+        }
+      }
+    },
+    {
+      "record_id": "14e4fd663af899d637ee02f3fe950bfad272a97d667110439230d1f291635ba2",
+      "translation_hash": "811b279e84fb0682f57bc8fc02f7ee4f616728694929634accc197f7bf17b516",
+      "back_translation_hash": "69af0afb0ffce6f28316219e256f0d99cab58e6ff21f5d1aeed9825e6d535381",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "No, no, no. añade repetición enfática a No; la relación tono/velocidad se conserva. Ida correcta. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "1f35a281e1cf8e9e3e45c61ac2b63b0df7cc205aaadba38a57a1e14e64583390",
+      "translation_hash": "56c38dadfd08fe5d296f697b48c745d18d137c9d801926518f8dec73fd082d98",
+      "back_translation_hash": "3c1544bb4ff978143f8944054edd6e86e0200e6d6ead70602d484fbf7fa6070d",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Delete Rectangle singulariza Clear rectangles y reduce el alcance de quitar todos los rectángulos a uno; la ida coreana es válida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "2247e881e4e5178366e563b247ef73768292305afbb4cf74242091812da928c7",
+      "translation_hash": "7f52dcf8506879624417429b4367cb3b6226a2296ff53cc47ec70a69764db2fd",
+      "back_translation_hash": "3e646bc8ca01f9407ca08a1ce9d17308d851dcbf7afc5a125bf93911eaca87b2",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+        }
+      }
+    },
+    {
+      "record_id": "27d6c3229ece0a072b82aba7a9c4682a24d1e5f9194c68cba5cff7dea815aa70",
+      "translation_hash": "bdc4f8be87455ef786353feb6ab5db9f5fbbec390a97bd995c22c4fec818f3d6",
+      "back_translation_hash": "54c3337f9c3d052f8155bcc594a744072ed02c1725338625d0c0c3deb037ab2a",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Lectura directa actual confirma el mismo texto fuente/ida por hashes. 깨끗한 오디오 describe audio limpio; no expresa quitar el audio cargado. El botón pierde su acción de borrar. Contrato/señal de ida known_semantic_errors; salida cruda intacta."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Clean audio repite el falso sentido limpiar/limpio en lugar de retirar el audio. Eco del defecto de ida, no una prueba independiente para aprobarla. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "2e8f455bcba4e46a66070806d8730e14e980e379b5873eab36dbc932c92f1298",
+      "translation_hash": "d63dbfead08e02a792bf96a43b44050d05c1a1f217958f7aac3f7cb7083adba9",
+      "back_translation_hash": "4781198a63a47810c3a2e468769d06d932bcd3607d5af040337e2cebbf2c5cc5",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. Lectura directa actual confirma el mismo texto fuente/ida por hashes. Fuente/ida/vuelta leídas directamente; acción, sentido y condiciones conservados en el contexto indicado. La vuelta no determina la nota de ida."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Show hints pluraliza la petición de una pista; la ida 힌트 표시 es correcta como botón singular contextual. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "3cdc96f9169030ec97860c6470a2198c122b9a44c27cf2f5540943095f36681d",
+      "translation_hash": "aa784ee071dc4f6e167aeb30252caed0c6400d149c91e1561b6ea06a35d1f92a",
+      "back_translation_hash": "1200c9249cda2d45fce7bac54c09741e8cd6bafae47db14a5553986fb5301981",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "No, no, no. añade una repetición enfática ausente de la fuente; ruido de naturalidad en la vuelta, no inversión de la negación ni fallo de ida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "46a12bf14ee4dddcdc8efc12e54d92d7714d80688b41c6d9b765d6d55eda9486",
+      "translation_hash": "2a6392621324d1e6d481acea1ee282f98761dc8549eaa0fcd9322cc92b28784a",
+      "back_translation_hash": "1e84505ace69259d58a89f303bcad448963a5f012444b2a669f7b7389baa4510",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "No, no, no. añade repetición enfática a No; las afirmaciones de procesamiento local y no recepción sí se conservan. Ida correcta. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "4ff4e606ce71d641a15a1bd240ea12b2f0a973ef39e451dc89f0670e2b76f743",
+      "translation_hash": "7be7c75fc95cd59caa24db218d820dd464e5e4b4d862bcd050c9379d709634c1",
+      "back_translation_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Lectura directa actual confirma el mismo texto fuente/ida por hashes. 이력서 es un currículum/résumé, no reanudar la partida. La vuelta Resume oculta esta polisemia y no valida la ida. Contrato/señal de ida known_semantic_errors; salida cruda intacta."
+        }
+      }
+    },
+    {
+      "record_id": "72a181e3e8d51d52d39af80f1a314ae6fcf7dc3f7d3a59c02bcdc68ab5cdd0a1",
+      "translation_hash": "2e81128460cd92c06cf7a608caea3d59863d191e5c195c1507ab1bf0c5222dd9",
+      "back_translation_hash": "f2f99926680fb3020c768e37a4dee779eb0becb044fcb2d64b034c0ae747874b",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "New Puzzles pluraliza la acción de crear un nuevo rompecabezas. La ida 새로운 퍼즐 es correcta. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "763db2c922c70cf8ad723507bb41ca33a3d225cb25030c168244b386c073304a",
+      "translation_hash": "39f8f253ee7c56682c8b914bc9b7d9ba3015bba8b23cd5f41d16262d2c66f7b6",
+      "back_translation_hash": "025ae7117e337b5194b858daefed1f2094feb8b0f382b27ee61e1c3e27b4acd6",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. Lectura directa actual confirma el mismo texto fuente/ida por hashes. 체크 퍼즐 conserva el orden inglés y se lee como un nombre compuesto; la acción de comprobar el tablero necesita 퍼즐 확인. Botón poco claro."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Lectura directa actual confirma el mismo texto fuente/ida por hashes. 체크 퍼즐 conserva el orden inglés y se lee como un nombre compuesto; la acción de comprobar el tablero necesita 퍼즐 확인. Botón poco claro. Contrato/señal de ida known_semantic_errors; salida cruda intacta."
+        }
+      }
+    },
+    {
+      "record_id": "7b8f86bd90fd1570b5b808d4a200555766b83015e26dfcc92ee305839702f186",
+      "translation_hash": "a9bfbffb3df2d83184b7e23ea9e28ffc91a92128e94b3ef255a5938350496842",
+      "back_translation_hash": "7b55e651a9f32c56b07b7d601fd23613deadbca26ace3d222cd7eed4cdd7c2b5",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Lectura directa actual confirma el mismo texto fuente/ida por hashes. WAV 내보내기 처리됨 coloca procesado como estado de la exportación, no como modificador del WAV que se exporta; etiqueta desordenada. Contrato/señal de ida known_semantic_errors; salida cruda intacta."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "WAV export processed mantiene el estado/exportación en lugar de exportar el WAV procesado. Eco del desorden de la ida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "adf619897ae86b3c6162f57b90afc6ee4781d308358da18da6c8a2b9c42f5cb6",
+      "translation_hash": "4a941faf12ac7d8751c08381198ec94cd9c94df1afb3ccbe4449425951548ebc",
+      "back_translation_hash": "9a99eb57fd9ea7970519a74cb331e881d23d799ace8eedffb08bed0322400e8a",
+      "warnings": {
+        "numeric_values": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Lectura directa actual confirma el mismo texto fuente/ida por hashes. 25MB보다 큰 pide un archivo mayor de 25 MB, invirtiendo no larger than. Además 25MB sin separación no pasa el contrato conservador de unidad/token. Contrato/señal de ida numeric_values; salida cruda intacta."
+        },
+        "localized_numeric_values": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Lectura directa actual confirma el mismo texto fuente/ida por hashes. 25MB보다 큰 pide un archivo mayor de 25 MB, invirtiendo no larger than. Además 25MB sin separación no pasa el contrato conservador de unidad/token. Contrato/señal de ida localized_numeric_values; salida cruda intacta."
+        },
+        "back_numeric_values": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Larger than 25MB repite la inversión del límite de la ida (fuente: como máximo 25 MB). No se cuenta como nuevo fallo independiente de ida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        },
+        "technical_tokens": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Lectura directa actual confirma el mismo texto fuente/ida por hashes. 25MB보다 큰 pide un archivo mayor de 25 MB, invirtiendo no larger than. Además 25MB sin separación no pasa el contrato conservador de unidad/token. Contrato/señal de ida technical_tokens; salida cruda intacta."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Lectura directa actual confirma el mismo texto fuente/ida por hashes. 25MB보다 큰 pide un archivo mayor de 25 MB, invirtiendo no larger than. Además 25MB sin separación no pasa el contrato conservador de unidad/token. Contrato/señal de ida known_semantic_errors; salida cruda intacta."
+        },
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Larger than 25MB repite la inversión del límite de la ida (fuente: como máximo 25 MB). No se cuenta como nuevo fallo independiente de ida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        },
+        "back_technical_tokens": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Larger than 25MB repite la inversión del límite de la ida (fuente: como máximo 25 MB). No se cuenta como nuevo fallo independiente de ida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        },
+        "back_marker_restore": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Larger than 25MB repite la inversión del límite de la ida (fuente: como máximo 25 MB). No se cuenta como nuevo fallo independiente de ida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        },
+        "forward_typed_data": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Lectura directa actual confirma el mismo texto fuente/ida por hashes. 25MB보다 큰 pide un archivo mayor de 25 MB, invirtiendo no larger than. Además 25MB sin separación no pasa el contrato conservador de unidad/token. Contrato/señal de ida forward_typed_data; salida cruda intacta."
+        },
+        "back_typed_data": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Larger than 25MB repite la inversión del límite de la ida (fuente: como máximo 25 MB). No se cuenta como nuevo fallo independiente de ida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        },
+        "back_sentence_evidence": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Larger than 25MB repite la inversión del límite de la ida (fuente: como máximo 25 MB). No se cuenta como nuevo fallo independiente de ida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "c15be42316d4107584cd0f8d854796580928de62e8725859c5de6f66bcd9f354",
+      "translation_hash": "0e585a98663158fe01e412cb78d827b658cf2936ce6284a32fe8959d9e6d47d1",
+      "back_translation_hash": "96b15e5c305f171f2d921c5ae85058a1eac4cb2366ec115af59e233c7fd81d76",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Lectura directa actual confirma el mismo texto fuente/ida por hashes. 미리보기 효과 se lee como efecto de previsualización; el orden nominal no expresa con claridad escuchar/previsualizar el efecto de audio. Contrato/señal de ida known_semantic_errors; salida cruda intacta."
+        }
+      }
+    },
+    {
+      "record_id": "c17bb422dde0cb26710bd746f7af03ff944fe418a79dc745b9ec10e3fe6b0a11",
+      "translation_hash": "03d609d8cc6fae7854c8c87360827a25466a09ab7e956c009d78fac65222c84d",
+      "back_translation_hash": "b1e601b54d46fdc77845f5225f6e2c08dc57dbe8b53337fa1dcf18e925a67a3e",
+      "warnings": {
+        "numeric_values": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Lectura directa actual confirma el mismo texto fuente/ida por hashes. El valor seis se conserva semánticamente, pero six pasa a un segundo dígito 6: viola la multiplicidad del contrato numérico canónico. Es una limitación conservadora de notación, no un cambio de valor 6→otro número. Contrato/señal de ida numeric_values; salida cruda intacta."
+        },
+        "localized_numeric_values": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Lectura directa actual confirma el mismo texto fuente/ida por hashes. El valor seis se conserva semánticamente, pero six pasa a un segundo dígito 6: viola la multiplicidad del contrato numérico canónico. Es una limitación conservadora de notación, no un cambio de valor 6→otro número. Contrato/señal de ida localized_numeric_values; salida cruda intacta."
+        },
+        "protected_tokens": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Lectura directa actual confirma el mismo texto fuente/ida por hashes. El valor seis se conserva semánticamente, pero six pasa a un segundo dígito 6: viola la multiplicidad del contrato numérico canónico. Es una limitación conservadora de notación, no un cambio de valor 6→otro número. Contrato/señal de ida protected_tokens; salida cruda intacta."
+        },
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Lectura directa actual confirma el mismo texto fuente/ida por hashes. El valor seis se conserva semánticamente, pero six pasa a un segundo dígito 6: viola la multiplicidad del contrato numérico canónico. Es una limitación conservadora de notación, no un cambio de valor 6→otro número. Contrato/señal de ida known_semantic_errors; salida cruda intacta."
+        },
+        "back_marker_restore": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La vuelta conserva seis escrito y un solo dígito6, igual que la fuente canónica. El contrato de vuelta compara la ida con dos dígitos6 y la rechaza por multiplicidad/notación. No es un error semántico nuevo de vuelta ni valor inventado; ida ya bloqueada por contrato."
+        },
+        "forward_typed_data": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Lectura directa actual confirma el mismo texto fuente/ida por hashes. El valor seis se conserva semánticamente, pero six pasa a un segundo dígito 6: viola la multiplicidad del contrato numérico canónico. Es una limitación conservadora de notación, no un cambio de valor 6→otro número. Contrato/señal de ida forward_typed_data; salida cruda intacta."
+        },
+        "back_typed_data": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La vuelta conserva seis escrito y un solo dígito6, igual que la fuente canónica. El contrato de vuelta compara la ida con dos dígitos6 y la rechaza por multiplicidad/notación. No es un error semántico nuevo de vuelta ni valor inventado; ida ya bloqueada por contrato."
+        },
+        "back_sentence_evidence": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "La vuelta conserva seis escrito y un solo dígito6, igual que la fuente canónica. El contrato de vuelta compara la ida con dos dígitos6 y la rechaza por multiplicidad/notación. No es un error semántico nuevo de vuelta ni valor inventado; ida ya bloqueada por contrato."
+        }
+      }
+    },
+    {
+      "record_id": "dae58160789c7c17fcc2199d03ddaeebb61bccdc7a2f078ca0bee360cf808a8d",
+      "translation_hash": "9a57eec7d28c36a0bad84a28293728a5ac4fc2d60c7d9e2eb86efa4c54dbff40",
+      "back_translation_hash": "c51649a8121827e9d96ba788d5acf761f0e9fd385043ac8a47d0eafb559f8209",
+      "warnings": {
+        "known_semantic_errors": {
+          "disposition": "forward-defect",
+          "blocks_gate": true,
+          "note": "Lectura directa actual confirma el mismo texto fuente/ida por hashes. 파일을 다듬고 pide pulir/refinar el archivo; no indica recortar su duración como exige Trim en el aviso de 30 segundos. Contrato/señal de ida known_semantic_errors; salida cruda intacta."
+        }
+      }
+    }
+  ],
+  "reference_gate": {
+    "ko": {
+      "rows": 27,
+      "sample": 27,
+      "points": 219,
+      "maximum": 243,
+      "button_errors": 5,
+      "number_negation_errors": 2,
+      "major_rows": 5,
+      "minor_rows": 3,
+      "passed": false,
+      "minimum_style_budget_met": false,
+      "reason": "Direct current source/forward/back reading by agent; known exact memory declared, not a blind/native/generalization or locale approval."
+    }
+  },
+  "decision": "sample-rejected"
+}

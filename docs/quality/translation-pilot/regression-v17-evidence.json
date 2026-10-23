@@ -193,5 +193,23 @@
     "numeric_prose",
     "localized_audit_text"
   ],
-  "scope": "Independent memory policy only. Frozen v16 decimal grammar/parser and complete sentence callbacks, all older policies/raw/reviews/adendas intact. All168 memories fail closed on data, never invoke fallback. No output repair or native/generalization claim."
+  "scope": "Independent memory policy only. Frozen v16 decimal grammar/parser and complete sentence callbacks, all older policies/raw/reviews/adendas intact. All168 memories fail closed on data, never invoke fallback. No output repair or native/generalization claim.",
+  "reference_review": {
+    "model_rows": 40,
+    "legacy_rows": 27,
+    "model_points": 360,
+    "legacy_points": 219,
+    "model_warnings": 21,
+    "legacy_warnings": 16,
+    "back_findings": 20,
+    "new_back_fixtures": 6,
+    "all_current_source_forward_back_read": true,
+    "model_gate_passed": true,
+    "locale_approved": false,
+    "full_suite": {
+      "tests": 109,
+      "passed": 107,
+      "skipped": 2
+    }
+  }
 }

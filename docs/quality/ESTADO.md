@@ -16,9 +16,9 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
    Las 300 fuentes conservan `indexable:false`, fuera de sitemap/hreflang y sin bloqueo robots. Las 700 existentes se conservan.
    **0/300 en main; 0 activadas.** Capacidad Pages y 37 traducciones revisadas/nb real pendientes; no avanzar a fase 0.
 
-   **V17:** Política independiente context-v17: diez fallos de ida observados en v16 y la segunda FAQ completa de tono corregidos por memoria exacta fuente/hash/contexto. 96 claves/168 destinos, incluidos157 ES/NB intactos y11 ko. Cuatro tests nuevos: primero13 errores sin política, después verdes; se reproducen los diez callbacks/trazas originales. Suite local108 Python (106 correctos/dos dependencias omitidas), dos Node del corpus;214 entradas/168 memorias válidas. Diez funciones, incluida gramática/parser ko y siete contratos de inferencia, iguales por AST;152 archivos históricos/adendas y prefijo623 fixtures intactos. Plan de40 referencias y posible completo de88 claves más todas174 no-referencias predeclarado. Referencias aún no ejecutadas, completo condicionado al gate. Producción GET/XML inicial:25.625 URLs, tres soft404 pendientes; sin deploy. Referencias en curso: [39944893447](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39944893447), fuente `730e58d788a386a579756ec250d8ef536e3302cf`; ID guardado antes de esperar. No volver a despachar.
+   **V17:** V17 corrige por memoria exacta los diez fallos ko de v16 y la FAQ completa duplicada:96 claves/168 destinos,157 ES/NB intactos y11 ko. Cuatro tests nuevos reproducen callbacks/trazas:13 errores rojos antes de política y luego verdes. Run referencias [39944893447](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39944893447), fuente730e58d:67 registros,10 memorias,108 tests reales, INT8 igual a v16, cleanup correcto y0 artefactos/sitio omitido. Lectura directa de40 modelo y27 legacy:360/360 pasa frente a219/243 rechazado; comparación común27:243/243 frente a219/243.21+16 registros con avisos conciliados;20 hallazgos de vuelta separados. Seis variantes nuevas de vuelta: test rojo6 fallos y luego fixtures; total629 (528 ida/101 vuelta). Local109 Python (107+2), dos Node del corpus.12.911 registros/4.418 evaluaciones repetidas,0 idiomas aprobados. Plan88 más174 no-referencias modelo y92 legacy fijado antes de outputs; completo permitido solo tras este gate, aún no despachado.152 históricos/adendas/prefijo623 y diez funciones AST intactos. GET/XML inicial25.625 URLs, tres soft404,0 deploy.
 
-   **Siguiente exacto:** Recuperar run39944893447 sin repetirlo; guardar67 registros, leer40 modelo/27 legacy y conciliar avisos antes de decidir el completo. No avanzar fase0.
+   **Siguiente exacto:** Despachar una sola vez el completo ko context-v17; guardar ID/SHA en ambas ramas antes de esperar. Reanudar67 y recuperar266 nuevos (174 modelo/92 legacy). Leer todo, conciliar avisos y conservar cada fallo como test antes de cerrar. No avanzar fase0.
 
 2. **Fase 0** del RUNBOOK §4 + **caché con hash de los 106 JS** (AUDITORIA-CATALOGO G1) + **fase 0b**:
    los 26 errores confirmados de `AUDITORIA-CATALOGO.md` §2, primero test y después arreglo.
@@ -56,7 +56,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 - [x] Fuente completa de las 300 recuperada en rama pública `feat/new-tools-batch-1`, PR #136 (borrador), con noindex explícito y CI verde · 2026-10-20; en `main` y publicadas por este lote: **0 / 300**, activadas: **0**
 - [~] Piloto v16 histórico: ko 344/360 y legacy 219/243, referencias rechazadas y completo no ejecutado; 12.844 registros/4.351 evaluaciones/623 fixtures. **0 idiomas aprobados** · 2026-10-23
 
-- [~] Piloto v17: once memorias coreanas y cuatro tests nuevos; referencias pendientes · 2026-10-23
+- [~] Piloto v17: referencias ko360/360; seis regresiones de vuelta y completo autorizado por gate · 2026-10-23
 
 ### Fase 0 · Arreglos urgentes (RUNBOOK §4)
 - [ ] `404.html` en la salida del hub (`dist-growth600`) + test; verificar 404 en `/tools/zzz/`, `/es/zzz/` y `/zzz.html`
@@ -133,7 +133,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 | Fecha | Agente | Qué | PR / commit | Verificado en producción |
 |---|---|---|---|---|
-| 2026-10-23 | Codex | V17: once memorias coreanas y cuatro tests nuevos; referencias pendientes | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136) | GET/XML inicial: 25.625 URLs; tres soft404, sin deploy. |
+| 2026-10-23 | Codex | V17: referencias ko360/360; seis regresiones de vuelta y completo autorizado por gate | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136) | GET/XML inicial: 25.625 URLs; tres soft404, sin deploy. |
 | 2026-10-23 | Codex | V16: gramática ko fijada, 67 referencias leídas; gate rechazado, 38 fixtures nuevas | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `aedd468`…`11b047f` | GET/XML 25.625→25.625 URLs y hashes estables; tres soft 404. Sin deploy. |
 | 2026-10-23 | Codex | V15: calco ES corregido; referencias y completo conocidos revisados; 585 fixtures | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `a591e4b`…`5ab99a1` | GET/XML: 25.625 URLs y tres soft 404; sin deploy. |
 | 2026-10-22 | Codex | V14: dos Shikaku corregidas, un calco ES pendiente; 428 candidatos leídos, 585 fixtures y retiro histórico explícito | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `48e0fcf`…`2f1b4c2` | GET/XML: 25.625 URLs; tres soft 404. Sin deploy. |
