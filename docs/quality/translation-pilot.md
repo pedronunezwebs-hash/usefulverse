@@ -4,7 +4,15 @@
 Dependencia del Paso A; no habilita ninguna herramienta ni idioma. **Idiomas aprobados por este piloto: 0.**
 Código y checkpoints de esta guía están en `feat/new-tools-batch-1` hasta integrar el PR; no confundirlos con `main`.
 
-## V16 · 23-oct-2026 · resultado actual
+## V17 · 23-oct-2026 · resultado actual
+
+Política independiente context-v17: diez fallos de ida observados en v16 y la segunda FAQ completa de tono corregidos por memoria exacta fuente/hash/contexto. 96 claves/168 destinos, incluidos157 ES/NB intactos y11 ko. Cuatro tests nuevos: primero13 errores sin política, después verdes; se reproducen los diez callbacks/trazas originales. Suite local108 Python (106 correctos/dos dependencias omitidas), dos Node del corpus;214 entradas/168 memorias válidas. Diez funciones, incluida gramática/parser ko y siete contratos de inferencia, iguales por AST;152 archivos históricos/adendas y prefijo623 fixtures intactos. Plan de40 referencias y posible completo de88 claves más todas174 no-referencias predeclarado. Referencias aún no ejecutadas, completo condicionado al gate. Producción GET/XML inicial:25.625 URLs, tres soft404 pendientes; sin deploy.
+
+Siguiente: Ejecutar una sola vez referencias ko context-v17 en Actions; guardar ID/SHA en ambas ramas antes de esperar. Leer40 modelo y27 legacy, conciliar todos los avisos. Completo solo si pasa el gate modelo; no repetir v16/v15. No avanzar fase0.
+
+[Informe](lotes/2026-10-23-piloto-v17.md).
+
+## V16 · 23-oct-2026 · histórico
 
 Gramática decimal ko CLDR fijada por revisión/hash, once tests de contratos y uno de revisión incluyendo legacy. Referencias [39939504317](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39939504317), fuente `11b047f`: 40 modelo+27 legacy leídos directamente; sin memorias ko. Modelo **344/360**, legacy **219/243**, ambos rechazados. Sobre 27 claves comunes: 231/243 frente a 219/243, sin congelar motor. **Completo no despachado.** No se aprueba mediante la vuelta inglesa; 이력서→Resume y 녹화→recording ocultan errores de ida.
 
