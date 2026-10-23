@@ -211,5 +211,120 @@
       "passed": 107,
       "skipped": 2
     }
-  }
+  },
+  "old_automatic_summary_group_changes_after_reference_fixtures": {},
+  "full_review": {
+    "all333_current_source_forward_back_read": true,
+    "disjoint_reviews": {
+      "review-context-v17-full.json": {
+        "rows": 174,
+        "negative_forward_rows": 37,
+        "back_findings": 30
+      },
+      "review-context-v17-legacy-full.json": {
+        "rows": 92,
+        "negative_forward_rows": 10,
+        "back_findings": 19
+      },
+      "review-context-v17-legacy.json": {
+        "rows": 27,
+        "negative_forward_rows": 8,
+        "back_findings": 9
+      },
+      "review-context-v17-references.json": {
+        "rows": 40,
+        "negative_forward_rows": 0,
+        "back_findings": 11
+      }
+    },
+    "warning_records_reconciled": {
+      "review-context-v17-full.json": 88,
+      "review-context-v17-legacy-full.json": 38,
+      "review-context-v17-legacy.json": 16,
+      "review-context-v17-references.json": 21
+    },
+    "model_nonreference_rows": 174,
+    "legacy_nonreference_rows": 92,
+    "model_gate": {
+      "rows": 174,
+      "sample": 174,
+      "points": 1508,
+      "maximum": 1566,
+      "button_errors": 3,
+      "number_negation_errors": 1,
+      "major_rows": 6,
+      "minor_rows": 31,
+      "passed": false,
+      "minimum_style_budget_met": false,
+      "reason": "Direct174 current nonreference reads, fixed88 predeclared. CAD action/terminology, named unit, library/API identities, play/clean controls, cookie invention and privacy defects. No activation or phase advance.",
+      "fixed_sample_rows": 88,
+      "fixed_sample_points": 746,
+      "fixed_sample_maximum": 792,
+      "fixed_sample_passed": false,
+      "fixed_sample_gate": {
+        "rows": 88,
+        "sample": 88,
+        "points": 746,
+        "maximum": 792,
+        "button_errors": 3,
+        "number_negation_errors": 1,
+        "major_rows": 5,
+        "minor_rows": 22,
+        "passed": false,
+        "minimum_style_budget_met": false,
+        "reason": "Direct current source/forward/back reading by agent; known exact memory declared, not a blind/native/generalization or locale approval."
+      },
+      "expanded_nonreference_rows": 174,
+      "expanded_points": 1508,
+      "expanded_maximum": 1566,
+      "expanded_forward_defects": 37,
+      "known_reviewed_memory_rows": 1,
+      "pure_model_rows": 173,
+      "global_no_open_defects_requirement": "Any observed forward defect outside88 also blocks global, irrespective of a sample style budget."
+    },
+    "legacy_gate": {
+      "rows": 92,
+      "sample": 92,
+      "points": 812,
+      "maximum": 828,
+      "button_errors": 1,
+      "number_negation_errors": 1,
+      "major_rows": 2,
+      "minor_rows": 8,
+      "passed": false,
+      "minimum_style_budget_met": false,
+      "reason": "Direct current source/forward/back reading by agent; known exact memory declared, not a blind/native/generalization or locale approval."
+    },
+    "matched92": {
+      "keys": 92,
+      "model_points": 801,
+      "legacy_points": 812,
+      "maximum": 828,
+      "engine_frozen": false,
+      "note": "Direct matched-key comparison; full model and old copy both rejected. No new M2M100 review or publication."
+    },
+    "resumed67_records_equal": true,
+    "forward_reviews_before_regression_fixtures": true,
+    "full_red": {
+      "tests": 1,
+      "failures": 96,
+      "notes": "47 negative forward rows+49 back findings; four identical back variants shared,92 unique new fixtures."
+    },
+    "fixture_totals": {
+      "all": 721,
+      "forward": 575,
+      "back": 146,
+      "new_v17": 98,
+      "new_forward_v17": 47,
+      "new_back_v17": 51
+    },
+    "local_suite": {
+      "tests": 109,
+      "passed": 107,
+      "dependency_skips": 2
+    },
+    "reference_review_after_full": "Only reciprocal warning coverage metadata appended. Pre-full exact bytes pinned at full source31e719d and full-v17-gate-decision.json; rows, grades, reference gate and reference records identical.",
+    "approved_locales": []
+  },
+  "old_automatic_summary_group_changes_after_all_v17_fixtures": {}
 }

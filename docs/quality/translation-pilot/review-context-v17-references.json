@@ -1229,5 +1229,8 @@
     "legacy_maximum": 243,
     "engine_frozen": false,
     "note": "Same27 keys read directly. Ten model memories declared; not a pure-model/generalization comparison or new M2M100 evaluation."
-  }
+  },
+  "warning_coverage_supplemental_reviews": [
+    "review-context-v17-full.json"
+  ]
 }
