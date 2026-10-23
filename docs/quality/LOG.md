@@ -298,3 +298,5 @@ V15 references lanzado: [39905785741](https://github.com/pedronunezwebs-hash/use
 V15 referencias verificadas: run 39905785741 ES/NB 360/360, todos los 80 textos/idas/vueltas leídos, 14 avisos y nueve defectos de vuelta separados. 160 registros. Completo permitido como siguiente hito; no publicación ni aprobación de idioma.
 
 V15 full lanzado: [39906585266](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39906585266), fuente `63443a6fdc9bb97ce07ba9f872cf5d340d4d8321`. Recuperar este run antes de repetir; sin despliegue.
+
+CI inicial 39906569320 correcta: 3.045 Node, 91 Python (89 correctos/dos dependencias), check/20 locales existentes/hub/preview, publicación omitida y cero artefactos. Preview real: 11.293 archivos y 10.800 herramientas noindex. Un test permanente primero rojo corrigió un error del recolector nuevo (había leído 8.253 archivos del hub como preview); evidencia histórica intacta. Suite actual: 92 Python (90+2). Los jobs de modelo ejecutan 91 de su fuente original, no 92.
