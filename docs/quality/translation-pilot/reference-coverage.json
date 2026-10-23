@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-23T15:42:14.131365+00:00",
+  "at_utc": "2026-10-23T15:42:57.990892+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 4684,
+  "agent_reviewed_translations": 4751,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,7 +315,7 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 4684,
+  "agent_reviewed_evaluations": 4751,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
@@ -362,7 +362,7 @@
       "minor_rows": 0,
       "passed": true,
       "minimum_style_budget_met": true,
-      "reason": "Direct current source/forward/back reading by agent; known exact memory declared, not a blind/native/generalization or locale approval."
+      "reason": "Direct current source/forward/back agent reading; exact known memory declared. No blind/native/unseen-text or language approval claim."
     }
   },
   "full_tool_gate": {
@@ -458,7 +458,8 @@
     "context-v14",
     "context-v15",
     "context-v16",
-    "context-v17"
+    "context-v17",
+    "context-v18"
   ],
   "contextual_reference_gate_policy": "mixed-per-locale",
   "low_resource_review_minimum": {
@@ -478,16 +479,16 @@
   "contextual_reference_gate_policy_by_locale": {
     "es": "context-v15",
     "nb-NO": "context-v15",
-    "ko": "context-v17"
+    "ko": "context-v18"
   },
   "latest_reference_pilot": {
-    "policy": "context-v17",
+    "policy": "context-v18",
     "locale": "ko",
-    "run_id": 39944893447,
+    "run_id": 39979681259,
     "model_references": 40,
     "legacy_references": 27,
     "model_gate_passed": true,
-    "full_dispatched": true,
+    "full_dispatched": false,
     "approved_locales": []
   },
   "engines_inventory_note": "Baseline computation inventory retained; contextual counts in context-run-evidence.json. Only ko reviewed in v18. ES/NB remain v15; six other destinations retain historical evidence, not fresh v18 validation.",

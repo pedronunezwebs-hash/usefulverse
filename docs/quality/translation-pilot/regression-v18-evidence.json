@@ -195,5 +195,15 @@
     "passed": 111,
     "skipped": 2,
     "node_corpus_tests": 2
+  },
+  "local_references_suite": {
+    "tests": 114,
+    "passed": 112,
+    "skipped": 2
+  },
+  "current_results_guard": {
+    "negative_forward_and_all_back_findings_require_exact_permanent_fixtures": true,
+    "source_and_text_hashes_bound": true,
+    "all_current_model_and_legacy_results_required": true
   }
 }

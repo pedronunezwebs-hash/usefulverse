@@ -1,0 +1,1278 @@
+{
+  "schema_version": 1,
+  "reviewer": "Codex (agente, sin API de pago)",
+  "native_review": false,
+  "rubric": "REVISION-FINAL §2, RUNBOOK §8: significado, cifras/negaciones, naturalidad0–3; cero errores botones/cifras, máximo1leve/20, contratos válidos. Back judged separately.",
+  "expected_rows": 40,
+  "inference_policy": "context-v18",
+  "reviewed_at_utc": "2026-10-23T15:42:57.828584+00:00",
+  "scope": "Direct reading of each listed current source/forward/back; no automatic score or backtranslation-only approval.",
+  "approved_locales": [],
+  "requires_complete_model_warning_coverage": true,
+  "rows": [
+    {
+      "locale": "ko",
+      "key": "dxf-viewer.fields.resetView",
+      "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "19f241204a7576edfb16f2435c8814f0ebd015d63cf3997d1dd0b971e80db7b2",
+      "record_ids": [
+        "d0b383d04f594bce55d085ace3aeb64923af07477df3ad699e4a4ec1fbba3730"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "도면 전체를 화면에 맞추기 expresa encajar todo el dibujo CAD en pantalla; objeto y acción claros.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.preview",
+      "source_hash": "5677f1c7bdcc3b0aeca16edc77fcf7e2c661df3c703a39c3826ef4e6bafd4ba7",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "7740e72840ed872c33c7d8533468d24142b560730a8785feee3e91c53bbba27e",
+      "record_ids": [
+        "5ae17170b3f99648b10e846fa196b0ad74f6bd09ecddd14dcfe65227cf2c7e8f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "오디오 효과 재생 expresa escuchar la muestra del efecto; Preview effect en el control reproduce la previsualización.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.deleteSave",
+      "source_hash": "fcfc4f5b234b4dd34900451d4bec09472d96146fe4d1e712ca9a6901ebbb8e81",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "14a65d51492413df0aec8f3962f654e4fb970a4ef5c5b46f08450dcda8874491",
+      "record_ids": [
+        "86f6a06435394daf0b0054275c47c66042ce293d9d75141350190777031614c5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Elimina el juego guardado, sin confundirlo con continuar o limpiar el tablero.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "dxf-viewer.fields.exportPng",
+      "source_hash": "c61867c5855be06750d7dd59273ea284ab3137e925e19d49b08ae1ef52e80a90",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "bb2ea02e1ee39e7adeabf39e6960658f6ce5dbaca8b7cfc2c7bbc338b15b7063",
+      "record_ids": [
+        "df90f166a504cfd64be265b749a1261c310cc5e60745f560149ed7f53e9d853f"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Descarga PNG: formato y acción intactos; PNG técnico explica proporción de alfabeto.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.undo",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "d29091864809cf5114c60b8ab6c36fe4da2aa4fdc7cd57672bdc78acdf32f336",
+      "record_ids": [
+        "23b96ad8a73852b7d658fd68d78ff5db84d1681bc2f1fbe78e6d147a085f7ca8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Deshace el último rectángulo; 사각형 se entiende en este tablero de rectángulos. La vuelta square se evalúa aparte.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "dxf-viewer.fields.measurement",
+      "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "365d0d2e08154f4a37bb09e4bb5da051936d581a73b33d6bcd9bff691577a026",
+      "record_ids": [
+        "826ae4d5c3398a1a6469781fc4ad7c0b0db253a0df9348613a9945f3e176a98e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "거리 측정 expresa medir distancia como etiqueta nominal de acción.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.reveal",
+      "source_hash": "29fd05c556295e26c880d603969b16fcecd14f06bd7fe5fe33b7b32270a8cf2b",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "baf064ba2beb89297f11fee69d77fc29fecb9d394e2e590a5acb26b84cd680a5",
+      "record_ids": [
+        "1c6ca32a93cdd64a6c94ec0473be9772482b26e50533b2363621cc60783c3905"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "정답 보기 ofrece ver la solución del rompecabezas, sin el sentido genérico de remedio.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.faq2a",
+      "source_hash": "a3a03bad0bbe3b43c7afa3fad8f195c00b6751a62a306549ee17d7b820894ede",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "e5e095850fa083c4d882609923c9c1f408ffa84740761e9bf71f16c1cafb02ba",
+      "record_ids": [
+        "55bf52df3edba395d4a2f522559a5e06987919bbdf7bf0f372aee1647efe8787"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "아니요 y tres oraciones completas conservan que el tono modifica velocidad; bajo más lento y alto más rápido, sin doble negación confusa.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "dxf-viewer.faq.0.a",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "c7756024abca39d10588ddc70f3018c6dc5cd302a8f11c7b1a20013da6797a47",
+      "record_ids": [
+        "3118d3fc70dd2c99e022c89321aaab4ad89d3b7a6697f622be9a1a644046df6c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Prohibición explícita de DWG/binario y solo ASCII DXF conservada; no se pierde la respuesta negativa al reordenarla.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.faq1a",
+      "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "861adf197f995a4719162bb1bc68171b6cc98212c90aedb793f4e7e79478825c",
+      "record_ids": [
+        "5d048633073683da7158507d51f6a3ac64dd7f929a8516b94b57f284bacd7325"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "No; decodificación/procesamiento del audio en el dispositivo y UsefulVerse no recibe 녹음. No se cambia audio por vídeo.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.chooseFile",
+      "source_hash": "6a677afedf647f1eb623f8f519879a29c248680ab710a2b0e7d3e80e30604e5b",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "e085e5feff84d7db834527dd23a6a22fe59f57d54eea7657d69d0f2f3225e5f0",
+      "record_ids": [
+        "652c821c82c0755e808e8df71e9758bee1431b1651ab9a587ffb452d7d9c5c32"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Seleccionar archivo de audio, etiqueta coreana breve y clara.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "dxf-viewer.fields.zoomOut",
+      "source_hash": "bc7b631a689b45ca5c51923515d31eb3597b2d9b129d88d0dbee066ee5c35453",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "69d1c530729872d39529a10ce23373394941aa6423b9ff118d059fa65dc902f4",
+      "record_ids": [
+        "5d03c771e35321c01449e8df424c5e38d3c605c2ad5093d5fd10ce5e72061883"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "축소 reduce la vista; no se confunde con ampliar.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "dxf-viewer.fields.zoomIn",
+      "source_hash": "0e47f09a748fa1321dbaee5c8983f8e8f2880b1212956fb4f21ae9d60b88a8b2",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "11c2e8e755e47360b4abe161451e42dd30a0fd5aec308e5c7ee14f5f224a76ac",
+      "record_ids": [
+        "ed62fdd1bacaf995a0f855884eb05be68326c564cdb85ea79b4e98a03a5ee56c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "확대 amplía la vista; la omisión de in ocurre solo en la vuelta.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "dxf-viewer.fields.file",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "2b4639f4a416fd96f7e673d0fad9ee10255f5ff90f637f32080dd2b4eee03cec",
+      "record_ids": [
+        "9f9a2700c6c2620f3566a8b90e3e6765c05b06f03d19c5b0d99809e5afd62c63"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "ASCII DXF 파일 선택 conserva formato y acción de elegir un archivo.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "dxf-viewer.fields.exportSvg",
+      "source_hash": "91aec62280a34e09f0cc6d950821631f39f2e8d5958ad4ccb5c2b71e46284969",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "326c1dcf191116e3ec2eb47ae539f58016a70d328a46dc06c1c418de966957bd",
+      "record_ids": [
+        "53db6a3273fe0373c19a582524683b4b77ac316001d9b346578fcbb82289a6f1"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Descarga SVG conserva formato y acción; las letras del formato no son inglés sin traducir.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "fb0c813a74597db724ffa7bacde38fa6d61127c4863cca80dfeb5dc1905c4c8c",
+      "record_ids": [
+        "49d88dcd29fba83d00aa3742c3a997f3c8256decff0b06904f9a393cd0f728dc"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pide cuatro coordenadas válidas; 네 개 conserva cuatro escrito, no añade cifras.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.decodeFailed",
+      "source_hash": "8ac9fefb2036df2aa3c3d19e057fb03dd65986d9b01b7dd5ba23afc594500d85",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "8dbdab9a5c714ad3dd4042aab2c5aebd531348330c762e82fd4a694b3d946be5",
+      "record_ids": [
+        "97d2ae357cf8b81f7da333150185fb75a4786d1a3db24252e08db5169b94cfa1"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Navegador no puede decodificar ese formato; WAV o MP3 intactos y sufijos coreanos legítimos.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.newPuzzle",
+      "source_hash": "df82d701a78f84a1cdd74cf48b6bdf7676b0d40721f9d2261b4d8f9366edbf2f",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "1fceb53d7b2a4cb5abb265735d616bd17d3dd81b457219e433b78448c601054e",
+      "record_ids": [
+        "dc1a3dce85a5875d1515471007b2733accb150b1d1b3972c6ddb1957aa24cb98"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "새 퍼즐 expresa nuevo rompecabezas como acción contextual.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.clear",
+      "source_hash": "81ee240b521beb425e01afa3c468a5997958d602d2e8bb01089143e094406a5d",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "9e777f729c1f08400f671d3c7bce279ef55cbb07f234d554904029378ea031cf",
+      "record_ids": [
+        "01e801805fbcba06689abd988e6692a74e69626008721629523996c6b9b90b5e"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "모든 직사각형 제거 retira todos los rectángulos; no es borrar un único elemento.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.loaded",
+      "source_hash": "8cdc30e08ab17860683d1d63557a17b95a2f4e8b6466eaad14f3988750c5dc3d",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "e232664e1fbb21ca702c1731fb88b68d8df6ebc922c1c7f7c2cbb88a1f8670c0",
+      "record_ids": [
+        "964090e4f78c7b615651d72e110937c5da569acbe9a3077d82a2821dda512735"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Decodificación local y duración en segundos con {duration} exacto.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.resume",
+      "source_hash": "d640c7421da066618a39daf4266da5f61f66a9b1afcd626481b831a17064965d",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "99f38dcdc61822fb67d9244d457e0c9318dcbd13019238989abe5815bc074b20",
+      "record_ids": [
+        "f05ca40cd4e9fb0e6f80b4ab33b4c09d630048cc45a3e912610164f0a38958b9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Continúa el juego guardado; se evita 이력서, que significa currículum.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.export",
+      "source_hash": "6e822fbce5362bba76369a511b4779e707f58029d6f0ca038edbf565e206a527",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "5ce3258e645b6bb807d7dfa7ca0ced7b941a14acfef9075f45bd74441dfdf482",
+      "record_ids": [
+        "cb25915adf9dfd2d75a30858be63f6e59f3b7675777e8f61426d855937cb57ac"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "처리된 WAV 내보내기 conserva exportar el WAV procesado, sin orden nominal que parezca un estado.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "dxf-viewer.fields.cancel",
+      "source_hash": "6984f4bae3c90cdaa2e154af18caf482f4609339b435612551afcccd87bf386e",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "ee9369a87637e1f6c5c6fa5fcb42b2ad84c64842d817e39addd9b860c76ce561",
+      "record_ids": [
+        "a3f10ca3e0c8b6b1d4b0f30dfa8c88b21ad0fbfa7fdb001dc45ac0fed3793b85"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "불러오기 취소 cancela la carga, no descarga ni vacía el dibujo.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "dxf-viewer.fields.binary",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "20bd5776475e11c24a841a64567bf1d9ecd79ec5d5225076f244cc169ba1e9c1",
+      "record_ids": [
+        "a0abfabe42c050a268f7b03c8a21143a68c6fcb31f46396342aff0a899ef77b8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "No soporta DXF binario; guardar o exportar 도면 como ASCII DXF conserva ambos caminos.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.clear",
+      "source_hash": "a143c2e688b37c4f9dea0c52429eacc741ebac466dae52600a58818c9c446b3d",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "471bc583d151aff7553d5a88489f71934e8f8b16a4d8234f7ab53c173595e359",
+      "record_ids": [
+        "06206a6ba483fa86c542947afb1bd9ab782153cd2176f260c8950692af685723"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Retira el audio cargado; no describe audio limpio como adjetivo.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.selectEnd",
+      "source_hash": "4d8c2a77ccc4457ffdc8a547460729531b37bee88b91cfc99f6ac54256631b9a",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "e3228db09c76cbac737183e0379fa44bb74096c5d45094e7bd27a9a0504a5dc3",
+      "record_ids": [
+        "b7e703932f0a139564d20faef7b41b5cfb198be06a9c26af2ffa6688d27129e5"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Selecciona ahora la esquina opuesta; orden de selección y objeto intactos.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.privacy",
+      "source_hash": "1411e2dab3e5af4187645fd8254f9fd61ac5184111bfa089b3c271b5673b6ca5",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "777a951332b40a141994dfbe4afb07511ad4beebd352721049d02a7e1ef5f016",
+      "record_ids": [
+        "adfec92f2570961b3419df968a4f2e2cf3997857be04b1f722b9fb60b5a45b49"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Audio permanece en este navegador; UsefulVerse no lo transmite ni almacena.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.daily",
+      "source_hash": "e7b016fda7450a9be7da5d7e0fdaabaac0a2d4c8914ac2ceb9c61f6a943e796a",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "2bb0579c734dc347957c60c3d92a97aa4839ca7ffeb9f85ae48365ee9cf78c21",
+      "record_ids": [
+        "9bdef5e4c7a5a4f205dfcd90ad94c8cad05952a9df098df33cd3d6685da73a0d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "매일 퍼즐 expresa el rompecabezas diario en su botón contextual.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.stop",
+      "source_hash": "178940d0698c7eed5fd7e9df9707761de4dadc6a9908ed68b40038bcac9917b1",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "4c34c2bf8ca20828f8b38770127fd325ba87008b58b808f384fab66ad3e9b147",
+      "record_ids": [
+        "49ef10de26b26a6d9e8b388df47726c64c33859b345c9874dda8429c382e9d4c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Detiene la reproducción del efecto en la previsualización, coherente con el control de escuchar.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.tooLarge",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "1af43490115482250bebdee2b99ed0b44412aaa2f2de6067f143b687846fe5d1",
+      "record_ids": [
+        "20c2d29d1fd20aa58374ecc23946e5f007b322cd673814a22ad259237c892887"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "25 MB 이하 incluye exactamente25 MB; espacio de unidad y máximo correctos. La vuelta inglesa pierde la igualdad.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "dxf-viewer.fields.unsupported",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "fbbe882ca288ac7b17ba05455247d6281829d7d9348523258378330889ddec4b",
+      "record_ids": [
+        "ad445897e4dc271483a86fe329535920738c8cf4e789fcd2c34257e5cb9b2cf8"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Archivo no admitido y petición de .dxf en formato ASCII separados; no impone un archivo llamado ASCII.dxf.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.selectStart",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "e2a0205311dc0ac794817130ddbf23d3c784bd07a32108396b180d828c2f320c",
+      "record_ids": [
+        "ff830c0197a257da411dc878996461279c12c184bea0e9db1d6fadfe2ccdfde6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pide elegir la casilla inicial del tablero; 사각형 se interpreta como celda en contexto. La vuelta rectangle no aprueba ni cambia la ida.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.check",
+      "source_hash": "a0daff4ad7f7ea7bc77fec54167d75822a2b33e5ff7898e6a5791db2d330f030",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "fb83303c84a5f879befca48c3e70988d8659878a248a388d389122afc9d828a9",
+      "record_ids": [
+        "fd301ebde3ac757597feda64728fedd5f714b5e859f105f0a1c35c6efc8f6bf0"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "퍼즐 확인 expresa comprobar el tablero con orden coreano natural.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.faq.1.a",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "5589323b5deb9d61de1b3775d4705dd611befe3b5eeea5578bfd6900fc138d55",
+      "record_ids": [
+        "c15c7f9fc7a54111dacb0df94b5230d1421218ba41c3fd9cbf24b15b1984dc14"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Prohíbe varias pistas y exige exactamente una en cada rectángulo; no invierte cantidad ni negación.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "dxf-viewer.faq.2.a",
+      "source_hash": "ff95217e04ca467e0f4f03bb51af57989e6cacd9e27efefeab739506c80ebf59",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "db8b2ab5b751c490bf0d013d12d819aca8e3681235b9de32237a2e3de8a66fe0",
+      "record_ids": [
+        "e58f1c32284f7aa872e6e47b90dfbcae28ad3fa0264ba19a06dabcfc2aa601b9"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Solo DXF declarado milímetros; en otro caso usa unidad declarada o 도면 단위. Condición, alternativa y término CAD exactos.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.tooLong",
+      "source_hash": "8f0ffa6601913ce3aec7dd3b8572d351f16e1e3b2e3cec3209436229c1009bf2",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "d751b3ef9833096cf597264052d1917cbcbd708bc8e7415c11d02977d01d56a3",
+      "record_ids": [
+        "595fdcda2823719304d9050e42d30b41a59f8944ebf850871ed3b52851780016"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Máximo30 segundos, cortar archivo y reintentar; número y recomendación contextual intactos.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.example",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "a0d060138afc28904e4b63716e59e7a6f9342de0701fc05f53f9b3d7f622ec05",
+      "record_ids": [
+        "3984ec7ea6d3893d8d65df0993b0454fabbaffe2ce135d81f118b4089a6dc570"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Una pista6 en un rectángulo de exactamente 여섯 칸. Valor seis y multiplicidad canónica de un único dígito6 preservados; no se inventa corrupción de valor.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "shikaku.fields.hint",
+      "source_hash": "060329664d8415132b08a6c3658ecebdb8ba7607df95d6084f3f2ac031729a0f",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "296272e98b41163da41967e6e95b690dd57f294e4235ae3d6cf70c9e3d8403ed",
+      "record_ids": [
+        "a0af3da5603ad7f000255f43cc746b23dae806a3532d3834accdf7b5cd03523d"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "힌트 보이기 expresa mostrar una pista en contexto, sin alterar reglas del tablero.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.load",
+      "source_hash": "f648c3fb4176f6e9b22e39bd1d0d8c1049ef57c446f53f3bab01fd7c5e0f6bd0",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "1fb6dafa3016cad315eb28c177faa41fdca6ec72647b1f0131ece6eb76234b13",
+      "record_ids": [
+        "c30c0d66ac7bdb05e771e0ef1da234136cea14c580647c73dd0cb9203d41b5b6"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "오디오를 로컬에서 불러오기 liga local a la carga del audio; no a un tipo de audio. La vuelta desde local se anota aparte.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": true,
+      "translation_origin": "reviewed-memory",
+      "score_origin": "direct-current-agent-review"
+    },
+    {
+      "locale": "ko",
+      "key": "voice-changer.fields.chooseFirst",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "translation_hash": "37fd51b065aff7800e6662e81ce90457c50525665681915f746245881b82e8fb",
+      "record_ids": [
+        "29773f7151546f9473cd4645be84019a89982753566756927ddf95a4cf51525c"
+      ],
+      "scores": {
+        "meaning": 3,
+        "numbers_negations": 3,
+        "naturalness": 3
+      },
+      "notes": [
+        "Pide elegir primero un archivo de audio; secuencia y objeto claros.",
+        "Lectura directa actual de fuente/ida/vuelta; la ida coincide byte a byte con v17. No se deduce su calidad solo de la vuelta."
+      ],
+      "critical_control": false,
+      "translation_origin": "model",
+      "score_origin": "direct-current-agent-review"
+    }
+  ],
+  "back_findings": [
+    {
+      "record_id": "23b96ad8a73852b7d658fd68d78ff5db84d1681bc2f1fbe78e6d147a085f7ca8",
+      "back_translation_hash": "aecb627e2e5ec3611aaeeca923c2e1ad96ffb6471e3da0838f4587d3dcdbf487",
+      "notes": [
+        "Undo Last Square restringe el último rectángulo a un cuadrado; la ida 사각형 sirve como cuadrilátero contextual y no exige lados iguales."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "55bf52df3edba395d4a2f522559a5e06987919bbdf7bf0f372aee1647efe8787",
+      "back_translation_hash": "a0dd1673e05238509b0426ddee070539f189f7e497b1793e3a718bea6bfad5c7",
+      "notes": [
+        "No, no, no. repite enfáticamente la respuesta negativa de un solo 아니요; la relación tono/velocidad sí está conservada. Defecto de estilo solo en la vuelta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "5d048633073683da7158507d51f6a3ac64dd7f929a8516b94b57f284bacd7325",
+      "back_translation_hash": "a2cef189d137bf0e0fbd85b97e3db3be28808828ba49fc9ec262aea8dce24bc9",
+      "notes": [
+        "No, no, no. añade repetición a un único 아니요; dispositivo y no recepción del audio se conservan. Defecto de estilo solo en la vuelta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "ed62fdd1bacaf995a0f855884eb05be68326c564cdb85ea79b4e98a03a5ee56c",
+      "back_translation_hash": "509c517ede79fef060a5f3a109fd1f45951eef2c7970b25c20992011e36a4070",
+      "notes": [
+        "Zoom omite la dirección in. La ida 확대 significa ampliar y es correcta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "a3f10ca3e0c8b6b1d4b0f30dfa8c88b21ad0fbfa7fdb001dc45ac0fed3793b85",
+      "back_translation_hash": "6b88fe530b0a4bdd2fdccf3b791cb9cd80eaaf4c5a991c5541eca59db28590a9",
+      "notes": [
+        "Unload significa descargar/retirar lo cargado, no cancelar una carga en curso. Ida 불러오기 취소 correcta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "20c2d29d1fd20aa58374ecc23946e5f007b322cd673814a22ad259237c892887",
+      "back_translation_hash": "92ea77d5610748d23d66c86b7694d5965fd4d68be71c0a5ab7d582aec9551454",
+      "notes": [
+        "Less than25 MB excluye el límite exacto; el coreano 이하 sí lo incluye. Error de desigualdad en la vuelta independiente de una ida correcta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "ad445897e4dc271483a86fe329535920738c8cf4e789fcd2c34257e5cb9b2cf8",
+      "back_translation_hash": "989729bd79b3bd0364728b1218db597fd06f4a1debab5acc724f63cb381fed16",
+      "notes": [
+        "Select a.dxf une el artículo a la extensión en la vuelta; falta el espacio a .dxf. ASCII format sí permanece claro. Defecto tipográfico de vuelta, sin error nuevo de ida."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "ff830c0197a257da411dc878996461279c12c184bea0e9db1d6fadfe2ccdfde6",
+      "back_translation_hash": "52004b2367c0bb8d25470f027cd7997476deeecf2249e8f86d63180be1505910",
+      "notes": [
+        "Starting rectangle sustituye la casilla cuadrada inicial por un rectángulo; la ida 사각형 se entiende como casilla en el contexto de la cuadrícula."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "3984ec7ea6d3893d8d65df0993b0454fabbaffe2ce135d81f118b4089a6dc570",
+      "back_translation_hash": "c5a74f773839f25bdb8418cf9df1429c9023d856d63763ec8cdf08ecc1b6dffd",
+      "notes": [
+        "The clues plural con within one rectangle permite lectura colectiva de varias pistas en un único rectángulo; la fuente describe una pista. Ambigüedad de número en la vuelta; la ida es singular y correcta."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "a0af3da5603ad7f000255f43cc746b23dae806a3532d3834accdf7b5cd03523d",
+      "back_translation_hash": "28699787cc42008c6c4bec271e7c042a60518776978d75ec96f7ab4403afdb12",
+      "notes": [
+        "Show Hints pluraliza una pista; la ida 힌트 보이기 es correcta. Misma variante sin distinción de mayúsculas que la vuelta legacy."
+      ],
+      "forward_induced": false
+    },
+    {
+      "record_id": "c30c0d66ac7bdb05e771e0ef1da234136cea14c580647c73dd0cb9203d41b5b6",
+      "back_translation_hash": "8a6423646847877bf03bfe008d3f656475ddb0b8f692186c11cc5219860a4019",
+      "notes": [
+        "Load Audio from Local desplaza locally hacia la procedencia del archivo. La ida liga 로컬에서 a la carga; la vuelta tiene alcance ambiguo y se juzga separadamente."
+      ],
+      "forward_induced": false
+    }
+  ],
+  "warning_reconciliation": [
+    {
+      "record_id": "df90f166a504cfd64be265b749a1261c310cc5e60745f560149ed7f53e9d853f",
+      "translation_hash": "bb2ea02e1ee39e7adeabf39e6960658f6ce5dbaca8b7cfc2c7bbc338b15b7063",
+      "back_translation_hash": "f60b8e717c72af3d8a6507261dc477456b4ea859c4e090c8a11f796459603a1a",
+      "warnings": {
+        "wrong_script": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. Descarga PNG: formato y acción intactos; PNG técnico explica proporción de alfabeto."
+        }
+      }
+    },
+    {
+      "record_id": "23b96ad8a73852b7d658fd68d78ff5db84d1681bc2f1fbe78e6d147a085f7ca8",
+      "translation_hash": "d29091864809cf5114c60b8ab6c36fe4da2aa4fdc7cd57672bdc78acdf32f336",
+      "back_translation_hash": "aecb627e2e5ec3611aaeeca923c2e1ad96ffb6471e3da0838f4587d3dcdbf487",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Undo Last Square restringe el último rectángulo a un cuadrado; la ida 사각형 sirve como cuadrilátero contextual y no exige lados iguales. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "826ae4d5c3398a1a6469781fc4ad7c0b0db253a0df9348613a9945f3e176a98e",
+      "translation_hash": "365d0d2e08154f4a37bb09e4bb5da051936d581a73b33d6bcd9bff691577a026",
+      "back_translation_hash": "ac3960a4ff8ef03856d21325b43ead242c86421079d260ff064541ed4add020c",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. 거리 측정 expresa medir distancia como etiqueta nominal de acción."
+        }
+      }
+    },
+    {
+      "record_id": "1c6ca32a93cdd64a6c94ec0473be9772482b26e50533b2363621cc60783c3905",
+      "translation_hash": "baf064ba2beb89297f11fee69d77fc29fecb9d394e2e590a5acb26b84cd680a5",
+      "back_translation_hash": "38975e5a3f3cab20b418cc817ff4c96008ee5c901117af4dffd2ef8b00058f64",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. 정답 보기 ofrece ver la solución del rompecabezas, sin el sentido genérico de remedio."
+        }
+      }
+    },
+    {
+      "record_id": "55bf52df3edba395d4a2f522559a5e06987919bbdf7bf0f372aee1647efe8787",
+      "translation_hash": "e5e095850fa083c4d882609923c9c1f408ffa84740761e9bf71f16c1cafb02ba",
+      "back_translation_hash": "a0dd1673e05238509b0426ddee070539f189f7e497b1793e3a718bea6bfad5c7",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "No, no, no. repite enfáticamente la respuesta negativa de un solo 아니요; la relación tono/velocidad sí está conservada. Defecto de estilo solo en la vuelta. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        },
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. 아니요 y tres oraciones completas conservan que el tono modifica velocidad; bajo más lento y alto más rápido, sin doble negación confusa."
+        }
+      }
+    },
+    {
+      "record_id": "5d048633073683da7158507d51f6a3ac64dd7f929a8516b94b57f284bacd7325",
+      "translation_hash": "861adf197f995a4719162bb1bc68171b6cc98212c90aedb793f4e7e79478825c",
+      "back_translation_hash": "a2cef189d137bf0e0fbd85b97e3db3be28808828ba49fc9ec262aea8dce24bc9",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "No, no, no. añade repetición a un único 아니요; dispositivo y no recepción del audio se conservan. Defecto de estilo solo en la vuelta. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "652c821c82c0755e808e8df71e9758bee1431b1651ab9a587ffb452d7d9c5c32",
+      "translation_hash": "e085e5feff84d7db834527dd23a6a22fe59f57d54eea7657d69d0f2f3225e5f0",
+      "back_translation_hash": "5a23939c48070fbda0edd8f1cdf05912bd69ec7f9437039e90fc4015c01121ec",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. Seleccionar archivo de audio, etiqueta coreana breve y clara."
+        }
+      }
+    },
+    {
+      "record_id": "5d03c771e35321c01449e8df424c5e38d3c605c2ad5093d5fd10ce5e72061883",
+      "translation_hash": "69d1c530729872d39529a10ce23373394941aa6423b9ff118d059fa65dc902f4",
+      "back_translation_hash": "24649ee0c7a92fd868db079f46ef6b58509081e8b0e8b9ed929606f33c62831d",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. 축소 reduce la vista; no se confunde con ampliar."
+        }
+      }
+    },
+    {
+      "record_id": "ed62fdd1bacaf995a0f855884eb05be68326c564cdb85ea79b4e98a03a5ee56c",
+      "translation_hash": "11c2e8e755e47360b4abe161451e42dd30a0fd5aec308e5c7ee14f5f224a76ac",
+      "back_translation_hash": "509c517ede79fef060a5f3a109fd1f45951eef2c7970b25c20992011e36a4070",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Zoom omite la dirección in. La ida 확대 significa ampliar y es correcta. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        },
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. 확대 amplía la vista; la omisión de in ocurre solo en la vuelta."
+        }
+      }
+    },
+    {
+      "record_id": "9f9a2700c6c2620f3566a8b90e3e6765c05b06f03d19c5b0d99809e5afd62c63",
+      "translation_hash": "2b4639f4a416fd96f7e673d0fad9ee10255f5ff90f637f32080dd2b4eee03cec",
+      "back_translation_hash": "3c0eee71b3553f366996cd2256ade6e257581bda97d09481e85e26eb185c9903",
+      "warnings": {
+        "wrong_script": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. ASCII DXF 파일 선택 conserva formato y acción de elegir un archivo."
+        }
+      }
+    },
+    {
+      "record_id": "53db6a3273fe0373c19a582524683b4b77ac316001d9b346578fcbb82289a6f1",
+      "translation_hash": "326c1dcf191116e3ec2eb47ae539f58016a70d328a46dc06c1c418de966957bd",
+      "back_translation_hash": "6524127fb8db3b5ba6f2b0cf3e2defc468c49bb67a6d9957e858fe864e293a6d",
+      "warnings": {
+        "wrong_script": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. Descarga SVG conserva formato y acción; las letras del formato no son inglés sin traducir."
+        }
+      }
+    },
+    {
+      "record_id": "dc1a3dce85a5875d1515471007b2733accb150b1d1b3972c6ddb1957aa24cb98",
+      "translation_hash": "1fceb53d7b2a4cb5abb265735d616bd17d3dd81b457219e433b78448c601054e",
+      "back_translation_hash": "847af11cbb3a89fd1d2c79832b985eccf71498ff852b259950718b1658107c8e",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. 새 퍼즐 expresa nuevo rompecabezas como acción contextual."
+        }
+      }
+    },
+    {
+      "record_id": "a3f10ca3e0c8b6b1d4b0f30dfa8c88b21ad0fbfa7fdb001dc45ac0fed3793b85",
+      "translation_hash": "ee9369a87637e1f6c5c6fa5fcb42b2ad84c64842d817e39addd9b860c76ce561",
+      "back_translation_hash": "6b88fe530b0a4bdd2fdccf3b791cb9cd80eaaf4c5a991c5541eca59db28590a9",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Unload significa descargar/retirar lo cargado, no cancelar una carga en curso. Ida 불러오기 취소 correcta. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "9bdef5e4c7a5a4f205dfcd90ad94c8cad05952a9df098df33cd3d6685da73a0d",
+      "translation_hash": "2bb0579c734dc347957c60c3d92a97aa4839ca7ffeb9f85ae48365ee9cf78c21",
+      "back_translation_hash": "d09fa99943ea5696fc042514a48cb1de89743356949a123949269b60c41cd658",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. 매일 퍼즐 expresa el rompecabezas diario en su botón contextual."
+        }
+      }
+    },
+    {
+      "record_id": "20c2d29d1fd20aa58374ecc23946e5f007b322cd673814a22ad259237c892887",
+      "translation_hash": "1af43490115482250bebdee2b99ed0b44412aaa2f2de6067f143b687846fe5d1",
+      "back_translation_hash": "92ea77d5610748d23d66c86b7694d5965fd4d68be71c0a5ab7d582aec9551454",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Less than25 MB excluye el límite exacto; el coreano 이하 sí lo incluye. Error de desigualdad en la vuelta independiente de una ida correcta. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "ad445897e4dc271483a86fe329535920738c8cf4e789fcd2c34257e5cb9b2cf8",
+      "translation_hash": "fbbe882ca288ac7b17ba05455247d6281829d7d9348523258378330889ddec4b",
+      "back_translation_hash": "989729bd79b3bd0364728b1218db597fd06f4a1debab5acc724f63cb381fed16",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Select a.dxf une el artículo a la extensión en la vuelta; falta el espacio a .dxf. ASCII format sí permanece claro. Defecto tipográfico de vuelta, sin error nuevo de ida. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "ff830c0197a257da411dc878996461279c12c184bea0e9db1d6fadfe2ccdfde6",
+      "translation_hash": "e2a0205311dc0ac794817130ddbf23d3c784bd07a32108396b180d828c2f320c",
+      "back_translation_hash": "52004b2367c0bb8d25470f027cd7997476deeecf2249e8f86d63180be1505910",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Starting rectangle sustituye la casilla cuadrada inicial por un rectángulo; la ida 사각형 se entiende como casilla en el contexto de la cuadrícula. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "fd301ebde3ac757597feda64728fedd5f714b5e859f105f0a1c35c6efc8f6bf0",
+      "translation_hash": "fb83303c84a5f879befca48c3e70988d8659878a248a388d389122afc9d828a9",
+      "back_translation_hash": "25eb84288d7593c6e79de857e3196b2659426e6df945cfc5a9bcf8ae272bd4c4",
+      "warnings": {
+        "length_ratio": {
+          "disposition": "reviewed-signal",
+          "blocks_gate": false,
+          "note": "Fuente y coreano leídos directamente: texto breve/Hangul y tokens técnicos conservados justifican esta señal automática; no decide por sí sola la nota ni aprueba el idioma. 퍼즐 확인 expresa comprobar el tablero con orden coreano natural."
+        }
+      }
+    },
+    {
+      "record_id": "3984ec7ea6d3893d8d65df0993b0454fabbaffe2ce135d81f118b4089a6dc570",
+      "translation_hash": "a0d060138afc28904e4b63716e59e7a6f9342de0701fc05f53f9b3d7f622ec05",
+      "back_translation_hash": "c5a74f773839f25bdb8418cf9df1429c9023d856d63763ec8cdf08ecc1b6dffd",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "The clues plural con within one rectangle permite lectura colectiva de varias pistas en un único rectángulo; la fuente describe una pista. Ambigüedad de número en la vuelta; la ida es singular y correcta. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "a0af3da5603ad7f000255f43cc746b23dae806a3532d3834accdf7b5cd03523d",
+      "translation_hash": "296272e98b41163da41967e6e95b690dd57f294e4235ae3d6cf70c9e3d8403ed",
+      "back_translation_hash": "28699787cc42008c6c4bec271e7c042a60518776978d75ec96f7ab4403afdb12",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Show Hints pluraliza una pista; la ida 힌트 보이기 es correcta. Misma variante sin distinción de mayúsculas que la vuelta legacy. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    },
+    {
+      "record_id": "c30c0d66ac7bdb05e771e0ef1da234136cea14c580647c73dd0cb9203d41b5b6",
+      "translation_hash": "1fb6dafa3016cad315eb28c177faa41fdca6ec72647b1f0131ece6eb76234b13",
+      "back_translation_hash": "8a6423646847877bf03bfe008d3f656475ddb0b8f692186c11cc5219860a4019",
+      "warnings": {
+        "known_back_semantic_errors": {
+          "disposition": "back-defect",
+          "blocks_gate": false,
+          "note": "Load Audio from Local desplaza locally hacia la procedencia del archivo. La ida liga 로컬에서 a la carga; la vuelta tiene alcance ambiguo y se juzga separadamente. Vuelta evaluada separadamente, sin cambiar una ida correcta."
+        }
+      }
+    }
+  ],
+  "evidence_sources": [
+    {
+      "path": "checkpoints/context-v18/madlad.jsonl",
+      "sha256": "fff1b4e5f16d385488ce5ae4b334cbc95b97b0bfa9421f603537f5a23f0c00bd",
+      "source_commit": "8f88e8eea787eb73bd0adb23054582ec11f2a5f0"
+    }
+  ],
+  "reference_gate": {
+    "ko": {
+      "rows": 40,
+      "sample": 40,
+      "points": 360,
+      "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
+      "reason": "Direct current source/forward/back agent reading; exact known memory declared. No blind/native/unseen-text or language approval claim."
+    }
+  },
+  "decision": "Known sample agent review only; no language approval, engine freeze or publication.",
+  "matched_legacy_comparison": {
+    "rows": 27,
+    "model_points": 243,
+    "legacy_points": 219,
+    "maximum": 243,
+    "note": "Current identical-source comparison. Ten known model memories disclosed; no engine freeze or language release."
+  }
+}
