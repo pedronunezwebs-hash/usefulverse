@@ -220,3 +220,5 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 V15 references lanzado: [39905785741](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39905785741), fuente `a591e4bb7f92eaeae85bc762d7e6254b88b6ae33`. Recuperar este run antes de repetir; sin despliegue.
 
 V15 referencias verificadas: run 39905785741 ES/NB 360/360, todos los 80 textos/idas/vueltas leídos, 14 avisos y nueve defectos de vuelta separados. 160 registros. Completo permitido como siguiente hito; no publicación ni aprobación de idioma.
+
+V15 full lanzado: [39906585266](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39906585266), fuente `63443a6fdc9bb97ce07ba9f872cf5d340d4d8321`. Recuperar este run antes de repetir; sin despliegue.
