@@ -12,10 +12,100 @@
   "status_at_capture": "queued",
   "started_at": "2026-10-23T11:27:07Z",
   "dispatches": 1,
-  "complete": false,
+  "complete": true,
   "checkpoint_before": 67,
   "model_inference_local": false,
   "reference_gate_decision_file": "full-v17-gate-decision.json",
   "reference_review_at_dispatch_sha256": "b8e97890b53ea6a9fd217e189d4d8c22cf72a59e39e97ecf50d71010b125368c",
-  "reference_review_at_dispatch_commit": "31e719d074dfc54e966ff7347a1f603aaba3866a"
+  "reference_review_at_dispatch_commit": "31e719d074dfc54e966ff7347a1f603aaba3866a",
+  "job_id": 120389229630,
+  "conclusion": "success",
+  "checkpoint_after": 333,
+  "new_records": 266,
+  "checkpoint_sha256_at_collection": "c2a665c9a4af95b02c858bc882c43eb72b7c67ff864bc339709573593e07abca",
+  "log_sha256": "d915d6a1f7fd61bdd6353d410275bd98d1b9047b88798a7760a7ef842dd2a505",
+  "models": [
+    {
+      "converted_sha256": {
+        "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+        "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+        "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+      },
+      "engine": "madlad",
+      "license": "Apache-2.0",
+      "minimum_free_gib": 18,
+      "repository": "google/madlad400-3b-mt",
+      "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+    }
+  ],
+  "model_hashes_same_v16": true,
+  "summary": [
+    {
+      "approved": 0,
+      "conversion_seconds": 81.93110841700002,
+      "counts": {
+        "legacy": 92,
+        "model": 174,
+        "reviewed_memory_hits": 1
+      },
+      "engine": "madlad",
+      "peak_rss_kib": 3830856,
+      "scope": "full",
+      "total_seconds": 524.207774213
+    }
+  ],
+  "cleanup": "success",
+  "site_job": "skipped",
+  "artifacts": 0,
+  "actual_python_test_lines": [
+    "translation-pilot (madlad)\tCheck pilot contracts and extract the real three-tool corpus\t2026-10-23T11:28:59.5919105Z Ran 109 tests in 59.351s",
+    "translation-pilot (madlad)\tCheck pilot contracts and extract the real three-tool corpus\t2026-10-23T11:28:59.5919649Z OK"
+  ],
+  "collected_at_utc": "2026-10-23T11:38:07.800783+00:00",
+  "steps": [
+    {
+      "name": "Set up job",
+      "conclusion": "success"
+    },
+    {
+      "name": "Check out pilot source without persistent credentials",
+      "conclusion": "success"
+    },
+    {
+      "name": "Set up Python",
+      "conclusion": "success"
+    },
+    {
+      "name": "Restrict model storage to this disposable runner",
+      "conclusion": "success"
+    },
+    {
+      "name": "Install pinned CPU-only translation dependencies",
+      "conclusion": "success"
+    },
+    {
+      "name": "Check pilot contracts and extract the real three-tool corpus",
+      "conclusion": "success"
+    },
+    {
+      "name": "Translate, back-translate and checkpoint machine drafts in logs",
+      "conclusion": "success"
+    },
+    {
+      "name": "Remove job-owned model downloads and caches",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Set up Python",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Check out pilot source without persistent credentials",
+      "conclusion": "success"
+    },
+    {
+      "name": "Complete job",
+      "conclusion": "success"
+    }
+  ]
 }
