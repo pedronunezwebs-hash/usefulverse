@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "at_utc": "2026-10-23T12:01:51.715886+00:00",
+  "own_run_ids": [
+    39944893447,
+    39946160052,
+    39949596494
+  ],
+  "internal_log_zips_removed_with_root": [
+    {
+      "path": "cache/gh/run-log-39949596494-1792756564.zip",
+      "sha256": "b0782278d75fa4b0524f2143ea472516e4fb0a2761d16d7a1d820c1dfb82a116",
+      "bytes": 242074
+    },
+    {
+      "path": "cache/gh/run-log-39946160052-1792754827.zip",
+      "sha256": "7cab43d86de74974ca0d9816fae071b8c87d5a7693f543a939587f4f655fcc65",
+      "bytes": 316656
+    },
+    {
+      "path": "cache/gh/run-log-39944893447-1792754170.zip",
+      "sha256": "9bbfbada52c31f24fe5dc362894d5f563256c9abf5cc4990568d415166686422",
+      "bytes": 105375
+    }
+  ],
+  "external_task_log_zips_removed": [],
+  "external_remaining": 0,
+  "local_model_or_full_build_downloads": 0,
+  "plan": "Remove only own verified task root directly after full remote tree/index integrity checks. Actual removal receipt is appended after deletion, not inferred from this plan."
+}
