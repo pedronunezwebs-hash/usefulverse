@@ -44,7 +44,8 @@ POLICIES["context-v12"] = json.loads(Path(__file__).with_name("pilot-reviewed-la
 POLICIES["context-v13"] = json.loads(Path(__file__).with_name("pilot-expanded-language-policy.json").read_text())
 POLICIES["context-v14"] = json.loads(Path(__file__).with_name("pilot-shikaku-grammar-policy.json").read_text())
 POLICIES["context-v15"] = json.loads(Path(__file__).with_name("pilot-device-performance-policy.json").read_text())
-TYPED_POLICIES = {"context-v10", "context-v11", "context-v12", "context-v13", "context-v14", "context-v15"}
+POLICIES["context-v16"] = json.loads(Path(__file__).with_name("pilot-korean-numeric-policy.json").read_text())
+TYPED_POLICIES = {"context-v10", "context-v11", "context-v12", "context-v13", "context-v14", "context-v15", "context-v16"}
 SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
 TECHNICAL_TOKEN = re.compile(r"\.(?:dxf|dwg|png|svg|wav|mp3|pdf|json|csv|txt)\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
 SOFTWARE_VERSION = re.compile(r"(?<![\w.])\d+(?:\.\d+){2,}(?![\w.]\d)")
@@ -241,8 +242,11 @@ def translate_typed_data_sentences(texts, model_translate, traces=None):
     return translate_covered_sentences(texts, model_translate, traces, TYPED_DATA_V7)
 
 
-def numeric_prose(text):
-    return COORDINATE.sub(" ", SOFTWARE_VERSION.sub(" ", OPAQUE_LITERAL.sub(" ", text)))
+def numeric_prose(text, locale=None):
+    prose = COORDINATE.sub(" ", SOFTWARE_VERSION.sub(" ", OPAQUE_LITERAL.sub(" ", text)))
+    # Korean particles can adjoin a quantity. Mask syllables only in the audit,
+    # retaining punctuation boundaries between quantities (2개와3개 must not merge).
+    return re.sub(r"[\uac00-\ud7a3]", "~", prose) if locale == "ko" else prose
 
 
 def coordinate_data(text):
@@ -251,19 +255,34 @@ def coordinate_data(text):
 
 
 def numeric_data(text, locale):
-    """Conservative audit of en/es/nb numbers, separate from the strict literal contract.
+    """Conservative audit of en/es/nb/ko numbers, separate from the strict literal contract.
 
     Coordinates have explicit English mathematical notation, including optional spacing.
     Local quantity separators are parsed only by a known grammar; malformed groups fail.
     No translated output is rewritten and no inference acceptance flag is relaxed.
     """
-    if locale not in ("en", "es", "nb-NO"): return None
+    if locale not in ("en", "es", "nb-NO", "ko"): return None
+    if locale == "ko":
+        # Compact/Sino-Korean multipliers are numerical content, not particles.
+        # This decimal-only grammar rejects them instead of erasing or guessing.
+        numeric_text = numeric_prose(text)
+        if re.search(r"[0-9][0-9,.\s]*[십백천만억조경]", numeric_text): return None
+        if re.search(r"(?:마이너스|플러스)\s*[0-9]", numeric_text): return None
+        text = text.replace("\u2212", "-")
     coordinates = coordinate_data(text)
-    prose = numeric_prose(text)
+    prose = numeric_prose(text, locale)
+    if locale == "ko":
+        # CLDR latn snapshot: numeric-sources/context-v16/manifest.json. Strict
+        # decimal subset; never guess compact/foreign digits or a skipped sign.
+        if any(unicodedata.category(char).startswith("N") and char not in "0123456789" for char in prose): return None
+        if re.search(r"[＋﹢﹣－–—‒⁺⁻±∓]\s*\d|[+-]\s*[+-]\s*\d", prose): return None
+        covered = re.sub(r"\b\d+D\b", " ", TECHNICAL_TOKEN.sub(" ", prose))
+        if re.search(r"\d", NUMERIC_VALUE.sub(" ", covered)): return None
     quantities = Counter()
-    grouping, decimal = (",", ".") if locale == "en" else ((".", ",") if locale == "es" else (" ", ","))
+    grouping, decimal = (",", ".") if locale in ("en", "ko") else ((".", ",") if locale == "es" else (" ", ","))
     group = re.escape(grouping)
-    grammar = rf"[+-]?(?:\d+|\d{{1,3}}(?:{group}\d{{3}})+)(?:{re.escape(decimal)}\d+)?"
+    digit = r"[0-9]" if locale == "ko" else r"\d"
+    grammar = rf"[+-]?(?:{digit}+|{digit}{{1,3}}(?:{group}{digit}{{3}})+)(?:{re.escape(decimal)}{digit}+)?"
     for match in NUMERIC_VALUE.finditer(prose):
         token = match.group().replace("\u00a0", " ").replace("\u202f", " ")
         suffix = token[-1] if token[-1] in "%°" else ""
@@ -284,7 +303,8 @@ def typed_data_checks(source, target, source_locale, target_locale):
     # Every remaining digit must belong to a recognized numeric token: word-bound
     # regex skips (e.g. 1e3/x999/999MB) must not masquerade as number-free prose.
     normalized = [text.replace("\u2212", "-") for text in (source, target)]
-    prose = [re.sub(r"\b\d+D\b", " ", TECHNICAL_TOKEN.sub(" ", numeric_prose(text))) for text in normalized]
+    prose = [re.sub(r"\b\d+D\b", " ", TECHNICAL_TOKEN.sub(" ", numeric_prose(text, locale)))
+        for text, locale in zip(normalized, (source_locale, target_locale), strict=True)]
     coverage = all(not re.search(r"\d", NUMERIC_VALUE.sub(" ", text)) for text in prose)
     left, right = numeric_data(normalized[0], source_locale), numeric_data(normalized[1], target_locale)
     has_quantities = any(NUMERIC_VALUE.search(text) for text in prose)
@@ -394,7 +414,7 @@ def automatic_checks(source, translation, locale, key=None, back_translation=Non
     localized_target_data = numeric_data(translation, locale)
     back_data = None if back_translation is None else numeric_data(back_translation, "en")
     source_coordinates = coordinate_data(source)
-    known_numeric_locale = locale in ("en", "es", "nb-NO")
+    known_numeric_locale = locale in ("en", "es", "nb-NO", "ko")
     return {
         "numeric_notation": "source-literal" if literal_numeric_copy else locale if known_numeric_locale else None,
         "numeric_values_identical": None if not known_numeric_locale else source_data is not None and target_data is not None and source_data[0] == target_data[0],
@@ -556,7 +576,7 @@ def record_flags(row):
         evidence = typed_record_evidence(row)
         flags["forward_typed_data"] = not all(evidence["forward"].values()) or not all(evidence["input"].values())
         flags["back_typed_data"] = not all(evidence["back"].values())
-    if row.get("inference_policy") in {"context-v11", "context-v12", "context-v13", "context-v14", "context-v15"}:
+    if row.get("inference_policy") in {"context-v11", "context-v12", "context-v13", "context-v14", "context-v15", "context-v16"}:
         flags["forward_sentence_evidence"] = row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not complete_sentence_evidence_valid(row.get("forward_segments"), row["model_input"], row["raw_translation"], "en", row["locale"])
         flags["back_sentence_evidence"] = not complete_sentence_evidence_valid(row.get("back_segments"), row["translation"], row["back_translation"], row["locale"], "en")
     return flags
