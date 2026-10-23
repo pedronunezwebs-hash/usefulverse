@@ -1,5 +1,7 @@
 # UsefulVerse · Mapa del repo (para no explorarlo cada vez)
 
+> **Lote actual v16 (en curso):** gramática decimal ko fijada por CLDR/hash; diez tests de gramática/datos, 102 Python locales (100+2). Referencias predeclaradas 40 modelo+27 legacy, todavía sin ejecución. V2–v15/adendas intactas, sin memoria ko, aprobaciones, publicación ni activaciones. [Informe v16](lotes/2026-10-23-piloto-v16.md).
+
 Revisado el 20-oct-2026 sobre `main` (`pedronunezwebs-hash/usefulverse`, **público desde el 20-oct**, ~130 MB). Seguridad: ver `AGENTS.md`. Si cambias la estructura, actualiza este mapa.
 
 ## Dos sitios, dos builds

@@ -1,5 +1,9 @@
 # UsefulVerse · LOG de lotes
 
+## 2026-10-23 · Codex · v16 en curso
+
+Gramática ko fijada por CLDR/hash y diez tests permanentes rojos→verdes; 102 Python locales (100+2), dos Node. Referencias 40 modelo+27 legacy predeclaradas, aún sin run. [Informe v16](lotes/2026-10-23-piloto-v16.md). Cero deploy/activaciones. Candado reservado, cierre pendiente.
+
 Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 
 ## 2026-10-23 · Codex · V15: calco informático ES corregido y completo revisado

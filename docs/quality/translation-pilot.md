@@ -1,5 +1,7 @@
 # Piloto de traducción · evidencia y reanudación
 
+> **Lote actual v16 (en curso):** gramática decimal ko fijada por CLDR/hash; diez tests de gramática/datos, 102 Python locales (100+2). Referencias predeclaradas 40 modelo+27 legacy, todavía sin ejecución. V2–v15/adendas intactas, sin memoria ko, aprobaciones, publicación ni activaciones. [Informe v16](lotes/2026-10-23-piloto-v16.md).
+
 20-oct-2026 · Codex · PR [#136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136).
 Dependencia del Paso A; no habilita ninguna herramienta ni idioma. **Idiomas aprobados por este piloto: 0.**
 Código y checkpoints de esta guía están en `feat/new-tools-batch-1` hasta integrar el PR; no confundirlos con `main`.
