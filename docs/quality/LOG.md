@@ -292,3 +292,5 @@ Retirada efectiva el 2026-10-22T19:05:47.850637+07:00 (2026-10-22T12:05:47.85063
 ## 2026-10-23 · Codex · v15 iniciado
 
 Candado 4f11323; raw v14 device reproducido, test primero rojo (2 tests/3 errores), política exacta v15 preparada. Pendiente suite, referencias, completo condicionado, CI/HTTP y cierre. Paso A abierto; sin despliegue.
+
+V15 references lanzado: [39905785741](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39905785741), fuente `a591e4bb7f92eaeae85bc762d7e6254b88b6ae33`. Recuperar este run antes de repetir; sin despliegue.

@@ -216,3 +216,5 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 2. Actualizar este archivo: «Siguiente paso exacto», checklist, «Últimos lotes», contadores y candado → `LIBRE`.
 3. Actualizar `docs/quality/progress.csv` (estado por herramienta) y añadir el informe a `docs/quality/LOG.md`.
 4. Borrar las carpetas temporales propias (clones, `dist`, `node_modules`, modelos, capturas) y anotar el espacio libre del disco.
+
+V15 references lanzado: [39905785741](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39905785741), fuente `a591e4bb7f92eaeae85bc762d7e6254b88b6ae33`. Recuperar este run antes de repetir; sin despliegue.
