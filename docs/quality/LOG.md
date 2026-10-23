@@ -365,9 +365,11 @@ V18 corrige las 37 idas coreanas negativas de v17 mediante memoria exacta de fue
 
 151 registros con avisos conciliados (21+16 referencias y 76+38 completo), 61 hallazgos de vuelta separados de la calidad de ida. Once fallos nuevos de vuelta —área/anchura, casilla/columna, mezcla de duración/tono, ámbito de procesamiento y otros— tienen fixtures exactas: primero un test rojo con 11 fallos, después verde. Cinco tests Python nuevos; suite local final 114 (112 correctos, dos dependencias omitidas) y dos Node de corpus. Los runners pasaron 113/114 tests con dependencias reales, modelo INT8 idéntico a v17, limpieza correcta y cero artefactos/publicación. Se corrigieron metadatos detectados por tests y la etiqueta de tres vueltas legacy inducidas, sin tocar crudos, notas ni gates históricos. Total: 13.510 registros, 5.017 evaluaciones con repeticiones y 732 fixtures (575 ida/157 vuelta).
 
-Producción antes: GET/XML real, 25.625 URLs y tres soft404 pendientes. Seguridad verificada con Actionlint 1.7.12 y Gitleaks 8.30.1 oficiales con checksum, excluyendo solo el falso positivo histórico de un objeto Git comprobado. CI final y segunda comprobación HTTP pendientes. Cero idiomas aprobados, activaciones, despliegues o cambios de src/public.
+Producción antes: GET/XML real, 25.625 URLs y tres soft404 pendientes. Seguridad verificada con Actionlint 1.7.12 y Gitleaks 8.30.1 oficiales con checksum, excluyendo solo el falso positivo histórico de un objeto Git comprobado. [CI final 39983727423](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39983727423), fuente `82f69e28f5d4767eb5ce520d0897ac565fc1b7af`, correcta: 3.045 Node, 114 Python (112 correctos y 2 omitidos por dependencias). Validadas 10.260 URLs de sitemap, 20 locales existentes, hub 217+100+106 y preview de 11.293 archivos / 10.800 páginas de herramienta y todas las homes noindex; cero URLs indexables en su sitemap. Ambas publicaciones omitidas, job de modelo omitido y cero artefactos. GET/XML antes/después: 25.625→25.625 URLs con estados, bytes y hashes estables; tres rutas falsas siguen 200. No es prueba de UI ni de indexación real en buscadores. Cero idiomas aprobados, activaciones, despliegues o cambios de src/public.
 
-Siguiente: Terminar CI final de v18 y comprobación HTTP, verificar respaldo completo y limpieza real antes de liberar candado. Después iniciar v19 para id: primero test rojo del contrato numérico no soportado, gramática id versionada con fuentes CLDR fijadas y controles de datos/negaciones; no ampliar el parser global ni cambiar la conducta/digests/evidencia de v16/v17/v18. Referencias primero y completo solo si pasan. Luego los otros 26 destinos; ha/am/te/gu/ta/mr/sw requieren 80 muestras. ES/NB conservan v15, los seis destinos antiguos conservan evidencia histórica. Paso A abierto por capacidad Pages y 37 traducciones revisadas/nb real; no avanzar fase 0.
+ES/NB conservan la muestra conocida de v15; coreano pasa ahora la muestra conocida v18. El piloto de los 37 idiomas sigue abierto, sin motor congelado ni paquete nuevo publicado. Candado se libera solo después de verificar respaldo completo y retirar realmente los temporales propios; recibo al cerrar.
+
+Siguiente: Iniciar v19 para id: reproducir primero el contrato numérico no soportado con un test rojo, fijar fuentes CLDR y gramática id versionada por política; conservar conducta y digests históricos de v16/v17/v18, sin ampliar el parser global ni aceptar cifras por defecto. Referencias y todos sus avisos primero; completo solo si pasan. Después los otros 26 destinos pendientes; ha/am/te/gu/ta/mr/sw necesitan 80 muestras. ES/NB conservan v15 y los seis destinos antiguos conservan evidencia histórica, sin validación nueva de v18. Paso A abierto por capacidad Pages y 37 traducciones revisadas/nb real; no avanzar a fase 0. No repetir runs v18 39979681259/39980833943.
 
 Checklist del lote:
 
@@ -375,7 +377,7 @@ Checklist del lote:
 - [x] 37 reproducciones rojas→verdes, herencia y preflight
 - [x] Referencias y todos sus avisos conciliados
 - [x] 333 fuentes/idas/vueltas y todos sus avisos revisados
-- [ ] CI final/HTTP/seguridad y respaldo remoto
+- [x] CI final/HTTP/seguridad y respaldo remoto
 - [ ] Limpieza local efectiva (tras respaldo remoto; recibo al cerrar)
 
 Alcance: política/memoria y evidencia del piloto; 0/300 en main, 0 activadas, 0 idiomas aprobados, 0 despliegues/envíos. Paso A sigue abierto por capacidad Pages y 37 traducciones revisadas/nb real. No avanzar fase 0. Puerta 18/siete capas pendientes.

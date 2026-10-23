@@ -31,7 +31,7 @@ Revisado el 20-oct-2026 sobre `main` (`pedronunezwebs-hash/usefulverse`, **públ
 
 - **V17:** referencias ko 360/360; completo rechazado, 721 fixtures y CI final correcta. [Informe](lotes/2026-10-23-piloto-v17.md). Solo se registra política v17 y se amplían conjuntos de auditoría; gramática/inferencia previas intactas. 333 textos leídos, gate completo rechazado;0 idiomas aprobados/activadas/despliegues. CI 39949596494 verde.
 
-- **V18 · completo leído; CI final pendiente:** Coreano: referencias 360/360 y completo 1566/1566; CI final pendiente. [Informe](lotes/2026-10-23-piloto-v18.md). Políticas/datos/gramática anteriores intactos; solo registro v18 y auditoría ampliada. Cero idiomas/herramientas aprobados o publicados.
+- **V18 · verificado:** Coreano: referencias 360/360 y completo 1566/1566; CI final verde. [Informe](lotes/2026-10-23-piloto-v18.md). Políticas/datos/gramática anteriores intactos; solo registro v18 y auditoría ampliada. Cero idiomas/herramientas aprobados o publicados.
 
 ## Carpetas clave
 
