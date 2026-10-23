@@ -3,69 +3,32 @@
 > Archivo de relevo entre agentes (ChatGPT/Codex ↔ Claude). En 1 minuto dice **dónde estamos, qué falta y por dónde
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
-**Última actualización:** 2026-10-22 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-23T12:21:22+07:00 · piloto v15: calco ES device, test y referencias
+**Última actualización:** 2026-10-23 · **por:** Codex
+**Turno actual (candado):** LIBRE
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
 
 ## 1. Siguiente paso exacto
 
-**V15 en curso:** calco ES device reproducido y corregido; 91 tests locales (dos dependencias omitidas). Referencias 39905785741 ES/NB 360/360, todos los 80 textos/idas/vueltas leídos, 14 avisos y nueve defectos de vuelta conciliados. Completo 39906585266 recuperado y los 428 candidatos revisados: 88 conocidas 792/792 y ampliado 1566/1566 por idioma. 47+14 avisos conciliados. Muestra conocida, cero idiomas aprobados. Pendiente CI final, HTTP y cierre; no repetir runs ni avanzar a fase 0. Informe: `docs/quality/lotes/2026-10-23-piloto-v15.md`.
 
 1. **Paso A continúa en el [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador, rama `feat/new-tools-batch-1`.**
-   Las 300 fuentes están recuperadas con `indexable:false`, fuera de sitemap/hreflang y sin bloqueo robots.
-   Las 700 existentes se conservan. **0/300 en main; 0 activadas.** Faltan capacidad Pages (>20.000 archivos con el hub),
-   37 traducciones revisadas y nb real. La preview antigua no despliega esta rama. No avanzar a fase 0.
+   Las 300 fuentes conservan `indexable:false`, fuera de sitemap/hreflang y sin bloqueo robots. Las 700 existentes se conservan.
+   **0/300 en main; 0 activadas.** Capacidad Pages y 37 traducciones revisadas/nb real pendientes; no avanzar a fase 0.
 
-   **V14 cerrada:** los dos fallos Shikaku v13 están corregidos por memoria exacta antes de inferencia:
-   ES `statusPlaced` incluye «un»; NB `statusRevealed` incluye «for å». Dos claves/destinos nuevos;
-   **90 claves/156 destinos** ligados a fuente/hash/contexto. Memoria con procedencia explícita, no calidad atribuida al modelo.
-   V2–v14 originales conservados; siete funciones de inferencia iguales por AST a la base v13.
+   **V15 cerrada:** calco ES device corregido; 91 claves/157 destinos. Referencias ES/NB 360/360, todos los 80 textos/idas/vueltas leídos.
+   Completo: todos los 428 candidatos leídos; 88 conocidas: es 792/792; nb-NO 792/792. Ampliado: es: 1566/1566, pasa muestra conocida; nb-NO: 1566/1566, pasa muestra conocida.
+   Muestra conocida, no ciega. 157 memorias/271 idas puras del modelo. Cero idiomas aprobados, sin motor congelado ni generalización demostrada.
+   12.777 registros/4.284 evaluaciones con repeticiones/585 fixtures. Siete funciones de inferencia, 57 archivos históricos,
+   prefijo de fixtures y adendas de cobertura/vuelta/retiro explícito conservados. No se reescribe la antigua nota perfecta ni su gate rechazado.
+   Referencias [39905785741](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39905785741), completo [39906585266](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39906585266); ambos 91 tests reales, limpieza correcta, cero artefactos.
+   CI final [39908407189](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39908407189): 3.045 Node, 92 Python (90+2 dependencias); builds/preview noindex verdes, publicación omitida.
+   GET/XML: 25.625 URLs y hashes estables; tres soft 404 pendientes. Sin deploy, activación, código a main o envíos.
+   No certifica puerta 18/siete capas, revisión nativa, visual ni dispositivos. Pedro ocho pendientes, cero FALLA.
 
-   [Referencias 39768400364](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39768400364), fuente `48e0fcf`:
-   ES/NB 360/360; 80 fuentes/idas/vueltas leídas. 14 registros con avisos y nueve defectos solo de vuelta.
-   75 idas y 72 vueltas idénticas a v13 por hashes; cinco idas nuevas revisadas. 160 registros y 21 memorias.
-   [Completo 39769512465](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39769512465), fuente `08a0498`:
-   696 nuevos +160 reanudados =856 registros. 135 memorias adicionales: **156 memorias y 272 idas puras del modelo**.
-   Ambos jobs: 87 tests con dependencias reales, limpieza correcta, cero artefactos. Completo: 832,6409 s,
-   conversión 106,5998 s, pico 3.777.264 KiB; no extrapolar a las 300.
-
-   **Todos los 428 candidatos actuales leídos.** Las 88 conocidas pasan 792/792 por idioma.
-   En 174 no-referencias, ES obtiene **1565/1566** por un calco leve fuera de las 88; NB obtiene **1566/1566**
-   y pasa esta muestra conocida. Sin errores observados de botones, cifras o negaciones.
-   El mínimo de estilo 1/20 sí se cumple; el plan ampliado previo exige resolver cualquier defecto observado fuera de las 88,
-   por eso ES y el conjunto siguen bloqueados. **0 idiomas aprobados**, sin motor congelado ni generalización demostrada.
-   332/348 idas y 310/348 vueltas del completo idénticas a v13 por hashes; las 16 idas nuevas y todas las vueltas leídas.
-   48 avisos del completo +14 de referencias reconciliados; 37 +9 hallazgos de vuelta separados.
-
-   **Cinco observaciones primero rojas y después fixtures:** un calco de ida ES y cuatro variantes de vuelta.
-   Total: **585 (511 ida/74 vuelta)**. Tres evaluaciones históricas nuevas (v6/v9/v11) y tres vínculos de cobertura;
-   seis vínculos anteriores intactos. Ocho decisiones históricas adicionales solo de vuelta, con cuatro vínculos nuevos;
-   las dos entradas anteriores intactas. La misma ida tenía una nota perfecta en v12: retirada **explícita** con hashes,
-   original visible e inmutable, valoración nueva 3/3/2 y bloqueo obligatorio. El gate v12 ya era rechazado y no cambia.
-   Dos tests nuevos primero rojos; 30 ataques a procedencia, hashes, fuente/contexto, notas, puntuación, duplicados,
-   fixture ausente, aprobación, gates pasados y rutas. No permite mejorar notas ni ocultar una aprobación histórica.
-
-   **Inventario: 11.921 registros machine-draft; 3.856 evaluaciones con repeticiones.** Incluye la reevaluación negativa
-   explícita; 120 comparaciones legacy por hashes y ocho decisiones solo de vuelta no se suman como nuevas evaluaciones de ida.
-   [CI final 39773203261](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39773203261), fuente `2f1b4c2`:
-   **3.045 Node; 89 Python (87 correctos y dos dependencias omitidas)**. La CI inicial 39768406467 pasó 87 Python.
-   Check de 10.260 páginas, 20 locales existentes, hub 217+100+106 y preview verdes. Preview: 11.293 archivos,
-   10.800 páginas de herramientas y homes noindex, sitemap indexable vacío; publicación omitida, cero artefactos.
-   Los jobs de modelo ocurrieron antes de añadir los dos tests del auditor; no se inventa que ejecutaran 89.
-   No certifica 37 traducciones de las 300, puerta de 18 puntos/siete capas, revisión nativa ni UI/dispositivos.
-   Producción GET/XML: 25.625→25.625 URLs y hashes estables; las tres rutas falsas del hub siguen devolviendo 200.
-   Sin deploy, activación, merge de código a main ni envíos a buscadores. Modelos/builds completos solo en Actions estándar.
-
-   **Siguiente exacto:** recuperar la rama y leer `review-context-v14-full.json`, `regression-v14-evidence.json`,
-   `review-withdrawal-addenda.json`, `review-coverage-addenda.json`, `review-warning-addenda.json`,
-   `automatic-summary.json`, `full-sample-v14-plan.json` y `docs/quality/lotes/2026-10-22-piloto-v14.md`.
-   **No repetir los runs v14 guardados.** Crear v15 independiente para ES voice-changer.fields.device: sustituir el calco «procesamiento más suave» por una formulación informática natural («procesamiento más fluido»), por fuente/hash/contexto. Primero reproducción y test; no editar v2–v14. Conservar contratos y el retiro explícito. Referencias ES/NB y todos sus avisos; solo si pasan ambas, completo con las 88 conocidas y lectura de los 428 candidatos. Muestra conocida, no ciega. Después, gramáticas numéricas verificadas y los 28 destinos aún sin revisión, incluidos ha/am/te/gu/ta/mr/sw con 80 muestras. No repetir runs guardados ni pasar a fase 0.
-   Antes de ampliar idiomas, verificar sus gramáticas numéricas: hoy solo en/es/nb, las demás bloquean.
-   Los otros seis destinos revisados históricamente conservan esa evidencia; no tienen una validación nueva con v14.
-   Mantener preflight de 214, datos globales/por oración, signos Unicode, cobertura de dígitos, coordenadas/versiones/código,
-   200000 local probado y ambas FAQ de tono completas. No cambiar idas correctas por errores solo de vuelta.
+   **Siguiente exacto:** Crear lote v16 independiente para verificar primero la gramática numérica de ko (siguiente destino sin revisión), con fuentes oficiales CLDR fijadas por revisión/hash y tests rojos de agrupación, decimal, signos Unicode, cobertura de dígitos, 200000, versiones, coordenadas y código. Preservar políticas v2–v15, datos/trazas globales y por oración, las dos FAQ de tono completas, adendas y retiro histórico explícito; las gramáticas desconocidas deben seguir bloqueando. Solo después, referencias ko con lectura directa de fuente/ida/vuelta y todos los avisos; completo condicionado al gate, sin aprobar por retrotraducción sola. Continuar por los otros 27 destinos sin revisión; ha/am/te/gu/ta/mr/sw requieren 80 muestras predeclaradas. Los seis destinos revisados históricamente además de ES/NB conservan su evidencia, sin validación nueva v15. No repetir los runs v15 ni avanzar a fase 0; Paso A sigue abierto por capacidad Pages y 37 traducciones revisadas/nb real.
+   Leer `review-context-v15-full.json`, `regression-v15-evidence.json`, los tres manifiestos de adendas,
+   `automatic-summary.json`, `full-sample-v15-plan.json` y `docs/quality/lotes/2026-10-23-piloto-v15.md`.
 
 2. **Fase 0** del RUNBOOK §4 + **caché con hash de los 106 JS** (AUDITORIA-CATALOGO G1) + **fase 0b**:
    los 26 errores confirmados de `AUDITORIA-CATALOGO.md` §2, primero test y después arreglo.
@@ -101,7 +64,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
       Dependabot; acciones fijadas por SHA; `main` y `backup/*` protegidas; PR externos con aprobación · 2026-10-20
 - [x] Copia de seguridad del trabajo de las 300 en `backup/codex-300-tools-20261020` · 2026-10-20
 - [x] Fuente completa de las 300 recuperada en rama pública `feat/new-tools-batch-1`, PR #136 (borrador), con noindex explícito y CI verde · 2026-10-20; en `main` y publicadas por este lote: **0 / 300**, activadas: **0**
-- [~] Piloto: 11.921 registros, 3.856 evaluaciones, 585 fixtures; v14 referencias 360/360 y 88 conocidas 792/792; ES ampliado bloqueado por un calco, NB pasa muestra conocida. **0 idiomas aprobados** · 2026-10-22
+- [~] Piloto v15: 12.777 registros, 4.284 evaluaciones y 585 fixtures; referencias y 88 conocidas pasan; ampliado: es: 1566/1566, pasa muestra conocida; nb-NO: 1566/1566, pasa muestra conocida. **0 idiomas aprobados** · 2026-10-23
 
 ### Fase 0 · Arreglos urgentes (RUNBOOK §4)
 - [ ] `404.html` en la salida del hub (`dist-growth600`) + test; verificar 404 en `/tools/zzz/`, `/es/zzz/` y `/zzz.html`
@@ -178,6 +141,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 | Fecha | Agente | Qué | PR / commit | Verificado en producción |
 |---|---|---|---|---|
+| 2026-10-23 | Codex | V15: calco ES corregido; referencias y completo conocidos revisados; 585 fixtures | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `a591e4b`…`5ab99a1` | GET/XML: 25.625 URLs y tres soft 404; sin deploy. |
 | 2026-10-22 | Codex | V14: dos Shikaku corregidas, un calco ES pendiente; 428 candidatos leídos, 585 fixtures y retiro histórico explícito | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `48e0fcf`…`2f1b4c2` | GET/XML: 25.625 URLs; tres soft 404. Sin deploy. |
 | 2026-10-22 | Codex | V13: 23 fallos corregidos, 428 candidatos leídos; dos leves nuevos bloquean el global ampliado; 580 fixtures | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `717c7aa`…`92c4eea` | GET/XML: 25.625 URLs; tres soft 404. Sin deploy. |
 | 2026-10-22 | Codex | V12: 428 candidatos leídos; 88 conocidas pasan y global rechazado por 23 fallos fuera de muestra; 571 fixtures y cobertura histórica con hashes | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `32142e3`…`a427cba` | GET: 25.625→25.625 URLs, tres soft 404; sin deploy. |
@@ -216,11 +180,3 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 2. Actualizar este archivo: «Siguiente paso exacto», checklist, «Últimos lotes», contadores y candado → `LIBRE`.
 3. Actualizar `docs/quality/progress.csv` (estado por herramienta) y añadir el informe a `docs/quality/LOG.md`.
 4. Borrar las carpetas temporales propias (clones, `dist`, `node_modules`, modelos, capturas) y anotar el espacio libre del disco.
-
-V15 references lanzado: [39905785741](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39905785741), fuente `a591e4bb7f92eaeae85bc762d7e6254b88b6ae33`. Recuperar este run antes de repetir; sin despliegue.
-
-V15 referencias verificadas: run 39905785741 ES/NB 360/360, todos los 80 textos/idas/vueltas leídos, 14 avisos y nueve defectos de vuelta separados. 160 registros. Completo permitido como siguiente hito; no publicación ni aprobación de idioma.
-
-V15 full lanzado: [39906585266](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39906585266), fuente `63443a6fdc9bb97ce07ba9f872cf5d340d4d8321`. Recuperar este run antes de repetir; sin despliegue.
-
-CI final v15 [39908407189](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39908407189), fuente `5ab99a10ff5351637227d68610cb441dc4973dc6`. Recuperar resultado antes de repetir; cierre y limpieza pendientes.
