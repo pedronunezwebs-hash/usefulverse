@@ -24,7 +24,9 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
    Producción antes: GET/XML real, 25.625 URLs (10.260+15.365), tres soft404 pendientes. Seguridad: Actionlint 1.7.12 y Gitleaks 8.30.1 oficiales con checksum, cero secretos tras excluir solo un falso positivo histórico de un objeto Git verificado. Ningún idioma aprobado, activación, despliegue o cambio de src/public.
 
-   **Siguiente exacto:** Ejecutar el completo v18 ko: mismo plan fijo de 88 claves, lectura de todos los 174 modelos y 92 legacy fuera de referencias. Conciliar cada aviso y convertir cualquier fallo nuevo en test antes de cerrar. Después id y los otros 26 destinos pendientes; ha/am/te/gu/ta/mr/sw necesitan 80 muestras. Paso A abierto; no avanzar a fase 0.
+   [Completo v18](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39980833943) en curso, fuente 51f0e7af920c04f47e69a269358375b9511805c4. No repetir la ejecución; conserva las 67 referencias y calculará 266 registros nuevos. Resultado lingüístico completo todavía no evaluado.
+
+   **Siguiente exacto:** Esperar y recoger el run 39980833943 sin repetirlo. Respaldar sus crudos; leer todos los 174 modelos y 92 legacy fuera de referencias, conciliar cada aviso y convertir todo fallo nuevo en test antes de cerrar. Después id y los otros 26 destinos; ha/am/te/gu/ta/mr/sw requieren 80 muestras. No avanzar fase 0.
 
 2. **Fase 0** del RUNBOOK §4 + **caché con hash de los 106 JS** (AUDITORIA-CATALOGO G1) + **fase 0b**:
    los 26 errores confirmados de `AUDITORIA-CATALOGO.md` §2, primero test y después arreglo.
