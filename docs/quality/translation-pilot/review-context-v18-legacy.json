@@ -628,7 +628,7 @@
       "notes": [
         "Clean audio repite el falso sentido limpiar/limpio en lugar de retirar el audio. Eco del defecto de ida, no una prueba independiente para aprobarla."
       ],
-      "forward_induced": false
+      "forward_induced": true
     },
     {
       "record_id": "aa0f91b8b6957d5247f36b20c46ca30398d7864b583f4c05f8739fff07a19b9f",
@@ -668,7 +668,7 @@
       "notes": [
         "WAV export processed mantiene el estado/exportación en lugar de exportar el WAV procesado. Eco del desorden de la ida."
       ],
-      "forward_induced": false
+      "forward_induced": true
     },
     {
       "record_id": "275543899502b8bfad92bf775967cb072f2d1bf0aea0de832c70c4c4993a3b11",
@@ -676,7 +676,7 @@
       "notes": [
         "Larger than 25MB repite la inversión del límite de la ida (fuente: como máximo 25 MB). No se cuenta como nuevo fallo independiente de ida."
       ],
-      "forward_induced": false
+      "forward_induced": true
     }
   ],
   "warning_reconciliation": [
@@ -982,7 +982,9 @@
     {
       "path": "checkpoints/context-v18/madlad.jsonl",
       "sha256": "fff1b4e5f16d385488ce5ae4b334cbc95b97b0bfa9421f603537f5a23f0c00bd",
-      "source_commit": "8f88e8eea787eb73bd0adb23054582ec11f2a5f0"
+      "checkpoint_capture_commit": "4071d89119426d2c1b71f97855b097c49bd73c43",
+      "inference_source_commit": "8f88e8eea787eb73bd0adb23054582ec11f2a5f0",
+      "records_at_capture": 67
     }
   ],
   "reference_gate": {

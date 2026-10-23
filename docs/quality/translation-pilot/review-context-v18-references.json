@@ -1249,7 +1249,9 @@
     {
       "path": "checkpoints/context-v18/madlad.jsonl",
       "sha256": "fff1b4e5f16d385488ce5ae4b334cbc95b97b0bfa9421f603537f5a23f0c00bd",
-      "source_commit": "8f88e8eea787eb73bd0adb23054582ec11f2a5f0"
+      "checkpoint_capture_commit": "4071d89119426d2c1b71f97855b097c49bd73c43",
+      "inference_source_commit": "8f88e8eea787eb73bd0adb23054582ec11f2a5f0",
+      "records_at_capture": 67
     }
   ],
   "reference_gate": {
@@ -1274,5 +1276,8 @@
     "legacy_points": 219,
     "maximum": 243,
     "note": "Current identical-source comparison. Ten known model memories disclosed; no engine freeze or language release."
-  }
+  },
+  "warning_coverage_supplemental_reviews": [
+    "review-context-v18-full.json"
+  ]
 }

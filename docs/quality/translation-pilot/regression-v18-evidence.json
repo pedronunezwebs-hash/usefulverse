@@ -211,5 +211,27 @@
     "full_records": 333,
     "exact_reference_records_unchanged": true,
     "full_source_commit": "51f0e7af920c04f47e69a269358375b9511805c4"
-  }
+  },
+  "local_final_suite": {
+    "tests": 114,
+    "passed": 112,
+    "skipped": 2,
+    "node_corpus_tests": 2
+  },
+  "new_tests": 5,
+  "new_back_fixtures": 11,
+  "semantic_fixtures_total": 732,
+  "all333_current_source_forward_back_read": true,
+  "all37_forward_defects_corrected": true,
+  "model_full_gate_points": 1566,
+  "model_full_gate_maximum": 1566,
+  "fixed_sample_points": 792,
+  "fixed_sample_maximum": 792,
+  "warning_records_reconciled": 151,
+  "back_findings_separated": 61,
+  "metadata_corrections": [
+    "Restored forward_induced=true for3 unchanged legacy reference back findings; old source/forward/back bytes, scores, warning decisions and gates unchanged. Same v17 provenance retained for6 full legacy induced findings.",
+    "Added missing observed_candidate to11 new fixtures after existing test failure; model/context-v18 and actual runID recorded. No raw data or historical fixtures changed."
+  ],
+  "checkpoint_provenance": "Reference67 bytes recoverable at4071d891; all333 at66bd87b9. Inference-source commits are separately identified in every current review."
 }
