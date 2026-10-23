@@ -4,7 +4,7 @@
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
 **Última actualización:** 2026-10-22 · **por:** Codex
-**Turno actual (candado):** LIBRE
+**Turno actual (candado):** EN CURSO · Codex · 2026-10-23T12:21:22+07:00 · piloto v15: calco ES device, test y referencias
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
