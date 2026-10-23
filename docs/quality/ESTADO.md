@@ -16,17 +16,15 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
    Las 300 fuentes conservan `indexable:false`, fuera de sitemap/hreflang y sin bloqueo robots. Las 700 existentes se conservan.
    **0/300 en main; 0 activadas.** Capacidad Pages y 37 traducciones revisadas/nb real pendientes; no avanzar a fase 0.
 
-   **V18 · en curso:** V18 incorpora memoria exacta de fuente/hash/contexto para las 37 idas coreanas negativas de v17. Conserva los 168 destinos anteriores: son 205 destinos de memoria (48 ko y 157 ES/NB). Políticas, gramática, checkpoints, revisiones y tres adendas anteriores intactos.
+   **V18 · completo leído; CI final pendiente:** V18 corrige las 37 idas coreanas negativas de v17 mediante memoria exacta de fuente/hash/contexto. Conserva los 168 destinos anteriores: 205 destinos de memoria (48 ko y 157 ES/NB). Políticas, gramática, checkpoints, revisiones y tres adendas anteriores intactos; diez funciones iguales por AST. [Corrección](https://github.com/pedronunezwebs-hash/usefulverse/commit/489185efa98d32eb2704e09384f016bbe8076ccb).
 
-   Cuatro tests nuevos reproducen los 37 callbacks/trazas reales: primero 4 tests con 40 errores antes del arreglo y después verdes. También verifican fuente/contexto obsoletos, herencia y ataques a datos sin fallback. Preflight: 214 entradas y 205 memorias válidas. Suite local inicial: 113 Python, 111 correctos y dos dependencias omitidas; dos Node de corpus.
+   [Referencias 39979681259](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39979681259): modelo 360/360, pasa; legacy 219/243, rechaza. [Completo 39980833943](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39980833943): 266 registros nuevos y las 67 referencias reanudadas exactamente. Las 333 fuentes/idas/vueltas se leyeron directamente. Modelo: 174 entradas, 1566/1566, sin idas negativas; mismas 88 claves fijas, 792/792. Son 38 memorias conocidas y 136 inferencias fuera de referencias. Legacy: 92 entradas, 812/828 y diez negativas. Comparación común de 92: modelo 828/828 frente a legacy 812/828. Pasa esta muestra conocida; no es validación ciega, nativa ni de texto no visto, ni aprobación de un idioma.
 
-   [Referencias v18](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39979681259), fuente 8f88e8eea787eb73bd0adb23054582ec11f2a5f0: 67 crudos respaldados y leídos, 40 modelo + 27 legacy. Modelo 360/360, pasa; legacy 219/243, rechaza. 21+16 registros con avisos conciliados, mismos textos/trazas que v17. Diez memorias conocidas declaradas; no es prueba ciega, nativa ni de generalización. 113 tests con dependencias reales pasan en Actions. Modelo INT8 idéntico a v17; limpieza correcta, publicación omitida y cero artefactos.
+   151 registros con avisos conciliados (21+16 referencias y 76+38 completo), 61 hallazgos de vuelta separados de la calidad de ida. Once fallos nuevos de vuelta —área/anchura, casilla/columna, mezcla de duración/tono, ámbito de procesamiento y otros— tienen fixtures exactas: primero un test rojo con 11 fallos, después verde. Cinco tests Python nuevos; suite local final 114 (112 correctos, dos dependencias omitidas) y dos Node de corpus. Los runners pasaron 113/114 tests con dependencias reales, modelo INT8 idéntico a v17, limpieza correcta y cero artefactos/publicación. Se corrigieron metadatos detectados por tests y la etiqueta de tres vueltas legacy inducidas, sin tocar crudos, notas ni gates históricos. Total: 13.510 registros, 5.017 evaluaciones con repeticiones y 732 fixtures (575 ida/157 vuelta).
 
-   Producción antes: GET/XML real, 25.625 URLs (10.260+15.365), tres soft404 pendientes. Seguridad: Actionlint 1.7.12 y Gitleaks 8.30.1 oficiales con checksum, cero secretos tras excluir solo un falso positivo histórico de un objeto Git verificado. Ningún idioma aprobado, activación, despliegue o cambio de src/public.
+   Producción antes: GET/XML real, 25.625 URLs y tres soft404 pendientes. Seguridad verificada con Actionlint 1.7.12 y Gitleaks 8.30.1 oficiales con checksum, excluyendo solo el falso positivo histórico de un objeto Git comprobado. CI final y segunda comprobación HTTP pendientes. Cero idiomas aprobados, activaciones, despliegues o cambios de src/public.
 
-   [Completo v18](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39980833943) en curso, fuente 51f0e7af920c04f47e69a269358375b9511805c4. No repetir la ejecución; conserva las 67 referencias y calculará 266 registros nuevos. Resultado lingüístico completo todavía no evaluado.
-
-   **Siguiente exacto:** Esperar y recoger el run 39980833943 sin repetirlo. Respaldar sus crudos; leer todos los 174 modelos y 92 legacy fuera de referencias, conciliar cada aviso y convertir todo fallo nuevo en test antes de cerrar. Después id y los otros 26 destinos; ha/am/te/gu/ta/mr/sw requieren 80 muestras. No avanzar fase 0.
+   **Siguiente exacto:** Terminar CI final de v18 y comprobación HTTP, verificar respaldo completo y limpieza real antes de liberar candado. Después iniciar v19 para id: primero test rojo del contrato numérico no soportado, gramática id versionada con fuentes CLDR fijadas y controles de datos/negaciones; no ampliar el parser global ni cambiar la conducta/digests/evidencia de v16/v17/v18. Referencias primero y completo solo si pasan. Luego los otros 26 destinos; ha/am/te/gu/ta/mr/sw requieren 80 muestras. ES/NB conservan v15, los seis destinos antiguos conservan evidencia histórica. Paso A abierto por capacidad Pages y 37 traducciones revisadas/nb real; no avanzar fase 0.
 
 2. **Fase 0** del RUNBOOK §4 + **caché con hash de los 106 JS** (AUDITORIA-CATALOGO G1) + **fase 0b**:
    los 26 errores confirmados de `AUDITORIA-CATALOGO.md` §2, primero test y después arreglo.
@@ -66,7 +64,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 - [~] Piloto v17: referencias ko 360/360; completo rechazado, 721 fixtures y CI final correcta · 2026-10-23
 
-- [~] Piloto v18: Referencias ko 360/360; 37 correcciones listas para muestra completa · 2026-10-23
+- [~] Piloto v18: Coreano: referencias 360/360 y completo 1566/1566; CI final pendiente · 2026-10-23
 
 ### Fase 0 · Arreglos urgentes (RUNBOOK §4)
 - [ ] `404.html` en la salida del hub (`dist-growth600`) + test; verificar 404 en `/tools/zzz/`, `/es/zzz/` y `/zzz.html`
@@ -143,7 +141,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 | Fecha | Agente | Qué | PR / commit | Verificado en producción |
 |---|---|---|---|---|
-| 2026-10-23 | Codex | Referencias ko 360/360; 37 correcciones listas para muestra completa | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136) | GET/XML25.625 URLs; tres soft404 pendientes. Sin deploy. |
+| 2026-10-23 | Codex | Coreano: referencias 360/360 y completo 1566/1566; CI final pendiente | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136) | GET/XML 25.625 URLs; tres soft404 pendientes. Sin deploy. |
 | 2026-10-23 | Codex | V17: referencias ko 360/360; completo rechazado, 721 fixtures y CI final correcta | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136) | GET/XML 25.625→25.625 URLs y hashes estables; tres soft404 pendientes. Sin deploy. |
 | 2026-10-23 | Codex | V16: gramática ko fijada, 67 referencias leídas; gate rechazado, 38 fixtures nuevas | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `aedd468`…`11b047f` | GET/XML 25.625→25.625 URLs y hashes estables; tres soft 404. Sin deploy. |
 | 2026-10-23 | Codex | V15: calco ES corregido; referencias y completo conocidos revisados; 585 fixtures | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), `a591e4b`…`5ab99a1` | GET/XML: 25.625 URLs y tres soft 404; sin deploy. |
