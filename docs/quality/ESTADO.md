@@ -222,3 +222,5 @@ V15 references lanzado: [39905785741](https://github.com/pedronunezwebs-hash/use
 V15 referencias verificadas: run 39905785741 ES/NB 360/360, todos los 80 textos/idas/vueltas leídos, 14 avisos y nueve defectos de vuelta separados. 160 registros. Completo permitido como siguiente hito; no publicación ni aprobación de idioma.
 
 V15 full lanzado: [39906585266](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39906585266), fuente `63443a6fdc9bb97ce07ba9f872cf5d340d4d8321`. Recuperar este run antes de repetir; sin despliegue.
+
+CI final v15 [39908407189](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39908407189), fuente `5ab99a10ff5351637227d68610cb441dc4973dc6`. Recuperar resultado antes de repetir; cierre y limpieza pendientes.

@@ -302,3 +302,5 @@ V15 full lanzado: [39906585266](https://github.com/pedronunezwebs-hash/usefulver
 CI inicial 39906569320 correcta: 3.045 Node, 91 Python (89 correctos/dos dependencias), check/20 locales existentes/hub/preview, publicación omitida y cero artefactos. Preview real: 11.293 archivos y 10.800 herramientas noindex. Un test permanente primero rojo corrigió un error del recolector nuevo (había leído 8.253 archivos del hub como preview); evidencia histórica intacta. Suite actual: 92 Python (90+2). Los jobs de modelo ejecutan 91 de su fuente original, no 92.
 
 V15 completo 39906585266 recuperado y 428 candidatos leídos: ambas muestras conocidas pasan; 12.777 registros, 4.284 evaluaciones y 585 fixtures. 47+14 avisos y 37+9 hallazgos de vuelta separados. 92 tests locales (90+2); CI final pendiente.
+
+CI final v15 [39908407189](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39908407189), fuente `5ab99a10ff5351637227d68610cb441dc4973dc6`. Recuperar resultado antes de repetir; cierre y limpieza pendientes.
