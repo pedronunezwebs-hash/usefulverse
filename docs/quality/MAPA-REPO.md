@@ -29,7 +29,7 @@ Revisado el 20-oct-2026 sobre `main` (`pedronunezwebs-hash/usefulverse`, **públ
 
 - **V16 (histórico):** gramática ko CLDR fijada por revisión/hash; run 39939504317, 40 modelo+27 legacy leídos directamente. Modelo 344/360 y legacy 219/243, rechazados; completo no despachado. 12.844 registros/4.351 evaluaciones/623 fixtures. 104 Python locales/CI (102+2), 3.045 Node y preview noindex verdes en CI39941496076; 103 reales en el modelo. Cero idiomas aprobados, activación o despliegue. Políticas/datos anteriores y adendas intactos. [Informe](lotes/2026-10-23-piloto-v16.md).
 
-- **V17:** referencias ko 360/360; completo rechazado, 721 fixtures y CI final correcta. [Informe](lotes/2026-10-23-piloto-v17.md). Solo se registra política v17 y se amplían conjuntos de auditoría; gramática/inferencia previas intactas. 333 textos leídos, gate completo rechazado;0 idiomas aprobados/activadas/despliegues. CI39949596494 verde.
+- **V17:** referencias ko 360/360; completo rechazado, 721 fixtures y CI final correcta. [Informe](lotes/2026-10-23-piloto-v17.md). Solo se registra política v17 y se amplían conjuntos de auditoría; gramática/inferencia previas intactas. 333 textos leídos, gate completo rechazado;0 idiomas aprobados/activadas/despliegues. CI 39949596494 verde.
 
 ## Carpetas clave
 
