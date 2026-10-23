@@ -4,7 +4,25 @@
 Dependencia del Paso A; no habilita ninguna herramienta ni idioma. **Idiomas aprobados por este piloto: 0.**
 Código y checkpoints de esta guía están en `feat/new-tools-batch-1` hasta integrar el PR; no confundirlos con `main`.
 
-## V14 · 22-oct-2026 · resultado actual
+## V15 · 23-oct-2026 · resultado actual
+
+El calco informático ES `voice-changer.fields.device` queda corregido mediante memoria exacta antes de inferir: «procesamiento más fluido». 91 claves/157 destinos, ligados a fuente/hash/contexto; no se reparan salidas crudas ni se atribuye memoria al modelo. Dos tests primero rojos (tres errores), después verdes. Siete funciones de inferencia iguales por AST; 57 archivos históricos y los tres manifiestos de adendas intactos. El retiro explícito de la falsa nota perfecta v12 permanece visible y negativo.
+
+[Referencias 39905785741](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39905785741), fuente `a591e4b`: ES/NB 360/360; las 80 fuentes/idas/vueltas actuales leídas (40+40). Todas las idas y vueltas coinciden con v14 por hashes. 14 avisos reconciliados y nueve hallazgos de vuelta separados. 160 registros y 21 memorias.
+[Completo 39906585266](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39906585266), fuente `63443a6`: 696 nuevos +160 reanudados =856 registros. 157 idas de memoria y 271 idas puras del modelo entre ambos runs. Los dos jobs pasaron 91 tests con dependencias reales; limpieza correcta y cero artefactos.
+
+Todos los 428 candidatos actuales leídos. Las 88 conocidas: es 792/792, nb-NO 792/792. Ampliado de 174 no-referencias: es: 1566/1566, pasa muestra conocida; nb-NO: 1566/1566, pasa muestra conocida. Muestra conocida, no ciega ni demostración de generalización. 347/348 idas y 347/348 vueltas coinciden con v14 por hashes; la única ida cambiada fue leída directamente. 47+14 avisos reconciliados; 37+9 hallazgos de vuelta separados. No se cambia una ida correcta por un defecto de vuelta.
+
+Inventario: 12.777 registros machine-draft, 4.284 evaluaciones con repeticiones y 585 fixtures (511 ida/74 vuelta). 0 fixtures nuevas en v15; el prefijo de 585 queda intacto. Comparaciones legacy históricas por hashes no se suman como evaluaciones nuevas de ida. Cero idiomas aprobados, sin motor congelado ni traducción masiva.
+
+[CI final 39908407189](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39908407189), fuente `5ab99a1`: 3.045 Node; 92 Python (90 correctos/dos dependencias omitidas). Check de 10.260 URLs, 20 locales existentes, hub 217+100+106 y preview verdes. Preview: 11.293 archivos, 10.800 herramientas y todas las homes noindex, sitemap indexable vacío. Publicación omitida y cero artefactos. No certifica 37 traducciones, puerta de 18 puntos/siete capas ni revisión nativa, visual, responsive, RTL, peso, accesibilidad, rendimiento o dispositivos.
+
+Producción GET/XML antes/después: 25.625→25.625 URLs y hashes estables; tres rutas falsas del hub siguen devolviendo 200. Sin merge de código a main, deploy, activación ni envíos a buscadores. Paso A abierto: 0/300 en main, 0 activadas; capacidad Pages y 37 traducciones pendientes.
+
+Siguiente: Crear lote v16 independiente para verificar primero la gramática numérica de ko (siguiente destino sin revisión), con fuentes oficiales CLDR fijadas por revisión/hash y tests rojos de agrupación, decimal, signos Unicode, cobertura de dígitos, 200000, versiones, coordenadas y código. Preservar políticas v2–v15, datos/trazas globales y por oración, las dos FAQ de tono completas, adendas y retiro histórico explícito; las gramáticas desconocidas deben seguir bloqueando. Solo después, referencias ko con lectura directa de fuente/ida/vuelta y todos los avisos; completo condicionado al gate, sin aprobar por retrotraducción sola. Continuar por los otros 27 destinos sin revisión; ha/am/te/gu/ta/mr/sw requieren 80 muestras predeclaradas. Los seis destinos revisados históricamente además de ES/NB conservan su evidencia, sin validación nueva v15. No repetir los runs v15 ni avanzar a fase 0; Paso A sigue abierto por capacidad Pages y 37 traducciones revisadas/nb real.
+[Informe](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/lotes/2026-10-23-piloto-v15.md).
+
+## V14 · 22-oct-2026 · histórico
 
 Los dos fallos Shikaku están corregidos mediante memoria exacta por fuente/hash/contexto: 90 claves y 156 destinos.
 Se leyeron los 428 candidatos actuales. Las 88 conocidas pasan con 792/792 por idioma. En las 174 no-referencias,

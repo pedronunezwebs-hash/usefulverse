@@ -1,0 +1,13 @@
+{
+  "at_utc": "2026-10-23T05:59:26.108011+00:00",
+  "own_run_ids": [
+    39905785741,
+    39906585266,
+    39906569320,
+    39908407189
+  ],
+  "cache_policy": "XDG_CACHE_HOME inside own temporary root for every gh run view --log",
+  "internal_zip_count": 4,
+  "external_own_zip_count": 0,
+  "cleanup": "Actual removal recorded in report/LOG only after filesystem deletion; this file records cache containment before deletion."
+}
