@@ -205,5 +205,11 @@
     "negative_forward_and_all_back_findings_require_exact_permanent_fixtures": true,
     "source_and_text_hashes_bound": true,
     "all_current_model_and_legacy_results_required": true
+  },
+  "full_resume": {
+    "reference_records": 67,
+    "full_records": 333,
+    "exact_reference_records_unchanged": true,
+    "full_source_commit": "51f0e7af920c04f47e69a269358375b9511805c4"
   }
 }
