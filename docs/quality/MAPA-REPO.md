@@ -31,6 +31,8 @@ Revisado el 20-oct-2026 sobre `main` (`pedronunezwebs-hash/usefulverse`, **públ
 
 - **V17:** referencias ko 360/360; completo rechazado, 721 fixtures y CI final correcta. [Informe](lotes/2026-10-23-piloto-v17.md). Solo se registra política v17 y se amplían conjuntos de auditoría; gramática/inferencia previas intactas. 333 textos leídos, gate completo rechazado;0 idiomas aprobados/activadas/despliegues. CI 39949596494 verde.
 
+- **V18 · en curso:** 37 fallos ko reproducidos y corregidos; referencias v18 pendientes. [Informe](lotes/2026-10-23-piloto-v18.md). Políticas/datos/gramática anteriores intactos; solo registrov18 y auditoría ampliada. Cero idiomas/herramientas aprobados o publicados.
+
 ## Carpetas clave
 
 | Ruta | Qué hay |
