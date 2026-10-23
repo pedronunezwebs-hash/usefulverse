@@ -1,0 +1,42 @@
+{
+  "tools": [
+    {
+      "repository": "rhysd/actionlint",
+      "tag": "v1.7.12",
+      "asset": "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_darwin_arm64.tar.gz",
+      "sha256": "aba9ced2dee8d27fecca3dc7feb1a7f9a52caefa1eb46f3271ea66b6e0e6953f",
+      "checksums_url": "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_checksums.txt"
+    },
+    {
+      "repository": "gitleaks/gitleaks",
+      "tag": "v8.30.1",
+      "asset": "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_darwin_arm64.tar.gz",
+      "sha256": "b40ab0ae55c505963e365f271a8d3846efbc170aa17f2607f13df610a9aeb6a5",
+      "checksums_url": "https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_checksums.txt"
+    }
+  ],
+  "stages": [
+    {
+      "stage": "pre-dispatch",
+      "checked_at_utc": "2026-10-23T15:33:24.634883+00:00",
+      "actionlint_exit": 0,
+      "gitleaks_exit": 0,
+      "leaks": 0,
+      "report_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "stage": "pre-dispatch-docs",
+      "checked_at_utc": "2026-10-23T15:34:08.093799+00:00",
+      "actionlint_exit": 0,
+      "gitleaks_exit": 0,
+      "leaks": 0,
+      "report_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    }
+  ],
+  "known_false_positive": {
+    "fingerprint": "docs/quality/translation-pilot/remote-v14-verification.json:cloudflare-api-key:7",
+    "verified_git_blob": "f6a3f4442df98f17083d5dedeaa397682babfdbc",
+    "reason": "Exact historical Git object verified online, not a credential. External fingerprint only; no broad repository exemption."
+  },
+  "scope": "Current working-tree scan only; no account billing/security audit."
+}

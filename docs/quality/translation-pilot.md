@@ -4,7 +4,19 @@
 Dependencia del Paso A; no habilita ninguna herramienta ni idioma. **Idiomas aprobados por este piloto: 0.**
 Código y checkpoints de esta guía están en `feat/new-tools-batch-1` hasta integrar el PR; no confundirlos con `main`.
 
-## V17 · 23-oct-2026 · resultado actual
+## V18 ·23-oct-2026 ·en curso
+
+V18 añade memoria exacta fuente/hash/contexto para las37 idas de modelo ko negativas de v17. Diez referencias y la FAQ de tono v17 se conservan:48 destinos ko junto a157 ES/NB,205 destinos en total. Ninguna política ni revisión anterior se reescribe; controles/inferencia/gramática previos conservados.
+
+Cuatro tests nuevos: primero4 tests/40 errores antes de registrarv18, después verdes, con reproducción de los37 callbacks/trazas v17, fuente/contexto obsoletos, herencia168 y ataques a datos sin fallback. Suite local113 Python (111 correctos,dos dependencias omitidas), dos Node de corpus y preflight214 entradas/205 memorias válidos. Referencias y completo v18 aún no ejecutados; no confundir una memoria conocida con generalización.
+
+Producción antes: GET/XML real25.625 URLs (10.260+15.365); tres rutas inexistentes del hub siguen200. Actionlint1.7.12/Gitleaks8.30.1 oficiales con checksums correctos y cero secretos tras excluir únicamente el falso positivo histórico de un objeto Git verificado.
+
+Siguiente: Ejecutar solo referenciasv18 ko con MADLAD fijado; recoger/push de crudos, leer40 modelo+27legacy y conciliar todos los avisos antes de decidir el completo. Completo solo si pasan referencias; conservar mismas88 claves y leer174 modelo+92legacy fuera de referencias. Después id+26 destinos; ha/am/te/gu/ta/mr/sw requieren80 muestras. Sin fase0 todavía.
+
+[Informe](lotes/2026-10-23-piloto-v18.md).
+
+## V17 · 23-oct-2026 · histórico
 
 V17 corrige los diez fallos ko de referencias y la FAQ de tono duplicada mediante memoria exacta de fuente/hash/contexto: **11 destinos ko**, junto a los 157 ES/NB conservados (96 claves/168 destinos). [Corrección 0ede677](https://github.com/pedronunezwebs-hash/usefulverse/commit/0ede67759de2b9ff883312fb65d306fc8e4e378c) y [revisión 4d27099](https://github.com/pedronunezwebs-hash/usefulverse/commit/4d27099b639a7cbda942cf35569cd2d719c8dc8c). Políticas/gramática anteriores y diez funciones iguales por AST; 152 archivos históricos, tres adendas, 86 grupos antiguos y prefijo de 623 fixtures intactos.
 

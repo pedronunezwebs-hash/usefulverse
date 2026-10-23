@@ -351,3 +351,33 @@ CI final v15 [39908407189](https://github.com/pedronunezwebs-hash/usefulverse/ac
 Retirada efectiva el 2026-10-23T17:57:15.427184+07:00: eliminada directamente, sin Papelera, solo la carpeta propia `usefulverse-codex-v16-20261023.o52orrtk`; ruta comprobada ausente. Tamaño previo 555716 KiB; disco libre posterior 49.4914 GiB (53141037056 bytes). Antes de borrar: 7457 archivos versionados recuperables y 110 críticos verificados online; seis documentos idénticos, 80 históricos/adendas/prefijo585 intactos, código/checkpoints/revisiones/fixtures iguales a la CI final. Cero punteros LFS, los dos runs correctos sin artefactos/publicación y cero ZIP propios externos. 2 ZIP internos de logs retirados con clon, QA, binarios, fuentes auxiliares y cachés; sin modelos ni builds locales. Fuentes verificadas: feature 9ce625395c78d3cf8ecc6c00c8359cc2d4df26af; main 7734a99bca907e1e30dd626d7e5cdc6a4e5d8144.
 
 Retirada efectiva el 2026-10-23T22:25:00.279423+07:00: eliminada directamente, sin Papelera, solo la carpeta propia `usefulverse-codex-v17-20261023.tue22ugt`; ruta comprobada ausente. Tamaño previo 560284 KiB; disco libre posterior 36.0278 GiB (38684532736 bytes). Antes de borrar: 7479 archivos versionados recuperables y 196 críticos comparados online mediante árbol Git/índice; seis documentos idénticos,152 históricos/adendas/prefijo623 y86 grupos antiguos conservados; código/checkpoints/revisiones/fixtures iguales a CI final. Cero punteros LFS; tres runs correctos sin artefactos/publicación y cero ZIP propios externos. 3 ZIP internos retirados con clon, scripts, QA, binarios, fuentes auxiliares y cachés; sin modelos ni builds locales. Fuentes verificadas: feature `cafdba114539e0983709a3b6792c70c5324e6dfd`; main `d10ceb25280b22c31d25ce6921af9acac1bf1ee9`. Candado liberado solo tras esta retirada.
+
+
+---
+
+# Lote v18 · Paso A · Codex ·23-oct-2026
+
+[PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136), borrador, rama `feat/new-tools-batch-1`.
+
+V18 añade memoria exacta fuente/hash/contexto para las37 idas de modelo ko negativas de v17. Diez referencias y la FAQ de tono v17 se conservan:48 destinos ko junto a157 ES/NB,205 destinos en total. Ninguna política ni revisión anterior se reescribe; controles/inferencia/gramática previos conservados.
+
+Cuatro tests nuevos: primero4 tests/40 errores antes de registrarv18, después verdes, con reproducción de los37 callbacks/trazas v17, fuente/contexto obsoletos, herencia168 y ataques a datos sin fallback. Suite local113 Python (111 correctos,dos dependencias omitidas), dos Node de corpus y preflight214 entradas/205 memorias válidos. Referencias y completo v18 aún no ejecutados; no confundir una memoria conocida con generalización.
+
+Producción antes: GET/XML real25.625 URLs (10.260+15.365); tres rutas inexistentes del hub siguen200. Actionlint1.7.12/Gitleaks8.30.1 oficiales con checksums correctos y cero secretos tras excluir únicamente el falso positivo histórico de un objeto Git verificado.
+
+Siguiente: Ejecutar solo referenciasv18 ko con MADLAD fijado; recoger/push de crudos, leer40 modelo+27legacy y conciliar todos los avisos antes de decidir el completo. Completo solo si pasan referencias; conservar mismas88 claves y leer174 modelo+92legacy fuera de referencias. Después id+26 destinos; ha/am/te/gu/ta/mr/sw requieren80 muestras. Sin fase0 todavía.
+
+Checklist del lote:
+
+- [x] Lecturas frescas, candado y clon aislado
+- [x] 37 reproducciones rojas→verdes, herencia y preflight
+- [ ] Referencias y todos sus avisos conciliados
+- [ ] 333 fuentes/idas/vueltas y todos sus avisos revisados
+- [ ] CI final/HTTP/seguridad y respaldo remoto
+- [ ] Limpieza local efectiva (tras respaldo remoto; recibo al cerrar)
+
+Alcance: política/memoria y evidencia del piloto;0/300 en main,0 activadas,0 idiomas aprobados,0 despliegues/envíos. Paso A sigue abierto por capacidad Pages y37 traducciones revisadas/nb real. No avanzar fase0. Puerta18/siete capas pendientes.
+
+Pedro P-001–P-008 pendientes,0 FALLA, sin IDs nuevos. No hay cambio de UI/hardware: revisión nativa, dispositivos, visual/responsive/RTL320–1920, márgenes, peso, accesibilidad y rendimiento no comprobados.
+
+Cómputo: repo público, ubuntu-latest estándar,0USD según [GitHub](https://docs.github.com/en/billing/concepts/product-billing/github-actions), leído23Oct; no es una auditoría de la factura global. Sin API de pago, Cloudflare, Containers, Codespaces, Packages, LFS, artefactos nuevos ni cachés persistentes. Modelos y builds completos solo en Actions.
