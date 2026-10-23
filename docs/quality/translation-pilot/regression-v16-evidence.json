@@ -7,9 +7,9 @@
     "log_sha256": "6adba16c79289183b0038ea9951a8a932c6226f5da13fb47d5b8c90d2b586e38"
   },
   "green": {
-    "tests": 10,
-    "pass": 10,
-    "log_sha256": "45629e08d8c41ba474e149425cf4477b6ed2d14afbd48b41a5dea35ddb36ae32"
+    "tests": 11,
+    "pass": 11,
+    "log_sha256": "e903102c5cc316b1f367555bb89208a8ef34bd08f3df57f37015ce5b2014dfc3"
   },
   "historical_files": {
     "docs/quality/translation-pilot/review-context-v6-full.json": "19bbe7b48a142a2652abb536e3c0a76aa0e2dfcc12e1bdc47f77248234f20b1b",
@@ -154,7 +154,7 @@
         "back_unit_symbols": 0,
         "empty": 0,
         "protected_tokens": 1,
-        "technical_tokens": 2,
+        "technical_tokens": 1,
         "english_unchanged": 0,
         "length_ratio": 4,
         "wrong_script": 0,
@@ -220,7 +220,7 @@
         "back_unit_symbols": 0,
         "empty": 0,
         "protected_tokens": 2,
-        "technical_tokens": 5,
+        "technical_tokens": 1,
         "english_unchanged": 0,
         "length_ratio": 7,
         "wrong_script": 6,
@@ -286,7 +286,7 @@
         "back_unit_symbols": 0,
         "empty": 0,
         "protected_tokens": 1,
-        "technical_tokens": 2,
+        "technical_tokens": 1,
         "english_unchanged": 0,
         "length_ratio": 4,
         "wrong_script": 0,
@@ -352,7 +352,7 @@
         "back_unit_symbols": 0,
         "empty": 0,
         "protected_tokens": 1,
-        "technical_tokens": 5,
+        "technical_tokens": 0,
         "english_unchanged": 0,
         "length_ratio": 7,
         "wrong_script": 3,
@@ -379,6 +379,12 @@
       "tests": 2,
       "failures": 2,
       "log_sha256": "300926590a62f8f39149eb9e5043f8929289f303cc2a1e4309a3d9cadc34fbb3"
+    },
+    {
+      "issue": "Real baseline Korean particles wrongly hide unchanged MP3/DXF; synthetic API/dimension suffix guard",
+      "tests": 1,
+      "failures": 6,
+      "log_sha256": "00b4947f5be9898c9fe18f09bf4d07bcb6e8917b67d2f480ab1be165510dc92a"
     }
   ],
   "unchanged_inference_AST_functions": [
@@ -389,11 +395,11 @@
     "forward_with_memory",
     "run"
   ],
-  "typed_data_checks_change": "Only locale-aware numeric prose for ko; all existing locale behavior unchanged.",
+  "typed_data_checks_change": "Locale-aware numeric prose and technical-token/dimension boundaries for ko only. Existing locale behavior unchanged.",
   "preflight_suite": {
-    "tests": 102,
-    "pass": 100,
+    "tests": 103,
+    "pass": 101,
     "dependency_skips": 2,
-    "log_sha256": "e6b1231686270e7fb1a0446136c647fb6c436997aa925d194849d73228ec43c9"
+    "log_sha256": "6d8cb2ac5e688e04ee8fc3c641bc78c1fe0f29f34ca08cc8cd7f46463e834c5f"
   }
 }

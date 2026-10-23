@@ -83,6 +83,23 @@ class KoreanNumbersTest(unittest.TestCase):
         self.assertEqual([p['output'] for p in traces[0]],outputs)
         self.assertFalse(pilot.complete_sentence_evidence_valid(traces[0],source,raw,'en','ko'))
 
+    def test_real_korean_suffixes_do_not_hide_preserved_ascii_technical_tokens(self):
+        rows=map(json.loads,(pilot.ROOT/'docs/quality/translation-pilot/checkpoints/madlad.jsonl').read_text().splitlines())
+        keys={'voice-changer.fields.decodeFailed','dxf-viewer.fields.binary','voice-changer.fields.tooLarge','dxf-viewer.faq.0.a','dxf-viewer.faq.2.a'}
+        seen=set()
+        for row in rows:
+            if row['locale']!='ko' or row['candidate']!='model' or row['key'] not in keys: continue
+            seen.add(row['key'])
+            with self.subTest(key=row['key']):
+                self.assertTrue(pilot.typed_data_checks(row['source'],row['translation'],'en','ko')['technical_tokens'])
+                self.assertTrue(pilot.automatic_checks(row['source'],row['translation'],'ko',row['key'])['technical_tokens_identical'])
+        self.assertEqual(seen,keys)
+        source='Use Web Audio and dxf-parser 1.1.2 for 2D; try WAV or MP3.'
+        target='Web Audio로 dxf-parser를 1.1.2 버전으로 2D로 사용; WAV 또는 MP3로 시도.'
+        self.assertTrue(self.valid(source,target))
+        for old,new in [('Web Audio','Web AudioX'),('dxf-parser','dxf-parserX'),('2D','3D'),('MP3','MP4')]:
+            with self.subTest(damage=old):self.assertFalse(self.valid(source,target.replace(old,new)))
+
     def test_invalid_numeric_memory_never_falls_back_or_repairs_raw(self):
         policy='context-v16'; source='Maximum 200,000.'
         unit={'key':'independent.memory','source':source,'source_hash':hashlib.sha256(source.encode()).hexdigest(),'context':'limits'}

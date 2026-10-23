@@ -242,11 +242,17 @@ def translate_typed_data_sentences(texts, model_translate, traces=None):
     return translate_covered_sentences(texts, model_translate, traces, TYPED_DATA_V7)
 
 
+def localized_audit_text(text, locale):
+    # Hangul particles do not change an adjacent ASCII identifier or unit.
+    # This view is audit-only: opaque data and stored/traced output stay exact.
+    return re.sub(r"[\uac00-\ud7a3]", "~", text) if locale == "ko" else text
+
+
 def numeric_prose(text, locale=None):
     prose = COORDINATE.sub(" ", SOFTWARE_VERSION.sub(" ", OPAQUE_LITERAL.sub(" ", text)))
     # Korean particles can adjoin a quantity. Mask syllables only in the audit,
     # retaining punctuation boundaries between quantities (2개와3개 must not merge).
-    return re.sub(r"[\uac00-\ud7a3]", "~", prose) if locale == "ko" else prose
+    return localized_audit_text(prose, locale)
 
 
 def coordinate_data(text):
@@ -311,16 +317,16 @@ def typed_data_checks(source, target, source_locale, target_locale):
     quantities = coverage and (not has_quantities or left is not None and right is not None and left[0] == right[0])
     opaque = lambda text: Counter(OPAQUE_LITERAL.findall(text))
     brands = lambda text: Counter(re.findall(r"UsefulVerse|Unicode", text, re.IGNORECASE))
-    tokens = lambda pattern, text: Counter(t.casefold() for t in pattern.findall(text))
-    dimensions = lambda text: Counter(re.findall(r"\b\d+D\b", OPAQUE_LITERAL.sub(" ", text)))
+    tokens = lambda pattern, text, locale: Counter(t.casefold() for t in pattern.findall(localized_audit_text(text, locale)))
+    dimensions = lambda text, locale: Counter(re.findall(r"\b\d+D\b", localized_audit_text(OPAQUE_LITERAL.sub(" ", text), locale)))
     units = lambda text: Counter(re.findall(r"\((?:in|ft|mi|mm|cm|m|km|yd)\)", text))
     return {"nonempty": bool(target.strip()), "quantities": quantities,
         "coordinates": coordinate_data(source) == coordinate_data(target),
         "opaque_literals": opaque(source) == opaque(target), "brands": brands(source) == brands(target),
         "versions": Counter(SOFTWARE_VERSION.findall(source)) == Counter(SOFTWARE_VERSION.findall(target)),
-        "software_identifiers": tokens(SOFTWARE_IDENTIFIER, source) == tokens(SOFTWARE_IDENTIFIER, target),
-        "technical_tokens": tokens(TECHNICAL_TOKEN, source) == tokens(TECHNICAL_TOKEN, target),
-        "dimensions": dimensions(source) == dimensions(target), "unit_symbols": units(source) == units(target)}
+        "software_identifiers": tokens(SOFTWARE_IDENTIFIER, source, source_locale) == tokens(SOFTWARE_IDENTIFIER, target, target_locale),
+        "technical_tokens": tokens(TECHNICAL_TOKEN, source, source_locale) == tokens(TECHNICAL_TOKEN, target, target_locale),
+        "dimensions": dimensions(source, source_locale) == dimensions(target, target_locale), "unit_symbols": units(source) == units(target)}
 
 
 def translate_whole_units(texts, model_translate, source_locale, target_locale, traces=None):
@@ -422,7 +428,7 @@ def automatic_checks(source, translation, locale, key=None, back_translation=Non
         "coordinate_values_identical": None if not source_coordinates else source_coordinates == coordinate_data(translation),
         "back_numeric_values_identical": None if back_translation is None else source_data is not None and back_data is not None and source_data[0] == back_data[0],
         "back_coordinate_values_identical": None if back_translation is None or not source_coordinates else source_coordinates == coordinate_data(back_translation),
-        "software_identifiers_identical": Counter(t.casefold() for t in SOFTWARE_IDENTIFIER.findall(source)) == Counter(t.casefold() for t in SOFTWARE_IDENTIFIER.findall(translation)),
+        "software_identifiers_identical": Counter(t.casefold() for t in SOFTWARE_IDENTIFIER.findall(source)) == Counter(t.casefold() for t in SOFTWARE_IDENTIFIER.findall(localized_audit_text(translation, locale))),
         "back_software_identifiers_identical": None if back_translation is None else Counter(t.casefold() for t in SOFTWARE_IDENTIFIER.findall(source)) == Counter(t.casefold() for t in SOFTWARE_IDENTIFIER.findall(back_translation)),
         "software_versions_identical": Counter(SOFTWARE_VERSION.findall(source)) == Counter(SOFTWARE_VERSION.findall(translation)),
         "back_software_versions_identical": None if back_translation is None else Counter(SOFTWARE_VERSION.findall(source)) == Counter(SOFTWARE_VERSION.findall(back_translation)),
@@ -430,7 +436,7 @@ def automatic_checks(source, translation, locale, key=None, back_translation=Non
         "back_unit_symbols_identical": None if not unit_label or back_translation is None else unit_symbols(source) == unit_symbols(back_translation),
         "nonempty": bool(translation.strip()),
         "protected_tokens_identical": queue.signature(source) == queue.signature(translation),
-        "technical_tokens_identical": Counter(token.casefold() for token in TECHNICAL_TOKEN.findall(source)) == Counter(token.casefold() for token in TECHNICAL_TOKEN.findall(translation)),
+        "technical_tokens_identical": Counter(token.casefold() for token in TECHNICAL_TOKEN.findall(source)) == Counter(token.casefold() for token in TECHNICAL_TOKEN.findall(localized_audit_text(translation, locale))),
         "back_technical_tokens_identical": None if back_translation is None else Counter(token.casefold() for token in TECHNICAL_TOKEN.findall(source)) == Counter(token.casefold() for token in TECHNICAL_TOKEN.findall(back_translation)),
         "back_protected_tokens_identical": None if back_translation is None else queue.signature(source) == queue.signature(back_translation),
         "untranslated_source": source.casefold().strip() == translation.casefold().strip(),
