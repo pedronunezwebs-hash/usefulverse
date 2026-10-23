@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "run_id": 39946160052,
+  "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39946160052",
+  "source_commit": "31e719d074dfc54e966ff7347a1f603aaba3866a",
+  "policy": "context-v17",
+  "engine": "madlad",
+  "scope": "full",
+  "locales": [
+    "ko"
+  ],
+  "status_at_capture": "queued",
+  "started_at": "2026-10-23T11:27:07Z",
+  "dispatches": 1,
+  "complete": false,
+  "checkpoint_before": 67,
+  "model_inference_local": false,
+  "reference_gate_decision_file": "full-v17-gate-decision.json",
+  "reference_review_at_dispatch_sha256": "b8e97890b53ea6a9fd217e189d4d8c22cf72a59e39e97ecf50d71010b125368c",
+  "reference_review_at_dispatch_commit": "31e719d074dfc54e966ff7347a1f603aaba3866a"
+}
