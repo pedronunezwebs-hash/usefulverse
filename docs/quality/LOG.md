@@ -1,8 +1,12 @@
 # UsefulVerse · LOG de lotes
 
-## 2026-10-23 · Codex · v16 en curso
+## 2026-10-23 · Codex · v16: gramática ko y referencias rechazadas
 
-Gramática ko fijada por CLDR/hash y once tests permanentes rojos→verdes; 103 Python locales (101+2), dos Node. Referencias 40 modelo+27 legacy predeclaradas, run [39939504317](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39939504317) en curso, fuente `11b047f`; no relanzar. [Informe v16](lotes/2026-10-23-piloto-v16.md). Cero deploy/activaciones. Candado reservado, cierre pendiente.
+[PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136); [informe](lotes/2026-10-23-piloto-v16.md). CLDR fijada por revisión/hash, once tests de gramática/datos y uno de revisión legacy incluidos. Cinco tandas rojas→verdes, 38 fixtures nuevas; 80 archivos históricos/adendas/prefijo585 intactos. Seis funciones iguales por AST, contratos globales y por oración conservados. Ninguna memoria ko.
+
+Run [39939504317](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39939504317), fuente `11b047f`: 67 registros (40 modelo/27 legacy), 103 tests reales, INT8 igual a v15, cleanup correcto, cero artefactos/sitio omitido. Leídas las 67 fuentes/idas/vueltas. Modelo 344/360, legacy 219/243; 23+16 avisos y 22 hallazgos de vuelta. Contrato six→6 falla por multiplicidad, no por cambiar el valor. Completo no despachado. 12.844 registros/4.351 evaluaciones con repeticiones/623 fixtures (528 ida/95 vuelta), cero idiomas aprobados.
+
+Local: 104 Python (102+2), dos Node. CI y HTTP de cierre pendientes. GET inicial 25.625 URLs y tres soft404; sin deploy/código a main/activaciones/envíos. Pedro P-001–P-008 pendientes/0 FALLA, ningún ID nuevo; puerta18/siete capas y dispositivos pendientes. Candado sigue propio hasta CI/relevo/limpieza. Siguiente: v17 para los diez defectos de ida ko, después referencias y completo condicionado; no repetir v16 ni avanzar fase0.
 
 Un bloque por lote (plantilla en RUNBOOK §10). El más reciente arriba.
 

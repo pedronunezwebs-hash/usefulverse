@@ -1,12 +1,20 @@
 # Piloto de traducción · evidencia y reanudación
 
-> **Lote actual v16 (en curso):** gramática decimal ko fijada por CLDR/hash; once tests de gramática/datos, 103 Python locales (101+2). Referencias predeclaradas 40 modelo+27 legacy, run 39939504317 correcto y recuperado (67 registros); revisión en curso, completo bloqueado por hallazgos. V2–v15/adendas intactas, sin memoria ko, aprobaciones, publicación ni activaciones. [Informe v16](lotes/2026-10-23-piloto-v16.md).
-
 20-oct-2026 · Codex · PR [#136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136).
 Dependencia del Paso A; no habilita ninguna herramienta ni idioma. **Idiomas aprobados por este piloto: 0.**
 Código y checkpoints de esta guía están en `feat/new-tools-batch-1` hasta integrar el PR; no confundirlos con `main`.
 
-## V15 · 23-oct-2026 · resultado actual
+## V16 · 23-oct-2026 · resultado actual
+
+Gramática decimal ko CLDR fijada por revisión/hash, once tests de contratos y uno de revisión incluyendo legacy. Referencias [39939504317](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/39939504317), fuente `11b047f`: 40 modelo+27 legacy leídos directamente; sin memorias ko. Modelo **344/360**, legacy **219/243**, ambos rechazados. Sobre 27 claves comunes: 231/243 frente a 219/243, sin congelar motor. **Completo no despachado.** No se aprueba mediante la vuelta inglesa; 이력서→Resume y 녹화→recording ocultan errores de ida.
+
+23+16 registros con avisos conciliados, 18 idas con nota negativa y 22 hallazgos de vuelta. 38 fixtures nuevas (17 ida/21 vuelta), prefijo585/adendas/datos históricos intactos. `six→6` conserva valor pero rompe la multiplicidad canónica; limitación de notación explícita. Total **12.844 registros/4.351 evaluaciones con repeticiones/623 fixtures**, cero idiomas aprobados. No revalidar ES/NB u otros destinos por este run: sus pruebas anteriores siguen históricas.
+
+Local: **104 Python (102+2)** y dos Node del corpus; el modelo ejecutó **103 con dependencias reales** antes del test adicional. INT8 igual a v15, cleanup success y cero artefactos, sin publicación. CI final y HTTP de cierre pendientes. 0/300 main, 0 activadas; capacidad Pages, 37 traducciones, puerta18/siete capas, revisión nativa/UI/dispositivos pendientes. [Informe v16](https://github.com/pedronunezwebs-hash/usefulverse/blob/feat/new-tools-batch-1/docs/quality/lotes/2026-10-23-piloto-v16.md).
+
+Siguiente tras CI y cierre: Crear v17 independiente para corregir los diez registros de ida del modelo ko señalados en review-context-v16-references.json, por memoria exacta fuente/hash/contexto, con reproducción de callbacks/trazas y test rojo antes del arreglo. Usar 도면 para CAD, separar ASCII .dxf, aclarar botones/locally, 녹음 para audio, límite inclusivo 25 MB 이하 y la FAQ de tono completa; para shikaku.example conservar el valor seis sin añadir un segundo dígito (여섯), sin llamar al caso corrupción de valor. No modificar política/gramática v16 ni checkpoints/revisiones/adendas/retirada histórica. Referencias ko y todos los avisos primero; completo solo si pasa el gate con muestra predeclarada y lectura de las 174 no-referencias. No repetir el run v16 ni los v15. Después verificar gramática de id y los otros 26 destinos aún sin revisión; ha/am/te/gu/ta/mr/sw requieren 80 muestras. Los seis destinos revisados históricamente además de ES/NB conservan evidencia, sin validación nueva v16. Paso A sigue abierto por capacidad Pages y 37 traducciones revisadas/nb real; no avanzar fase 0.
+
+## V15 · 23-oct-2026 · histórico
 
 El calco informático ES `voice-changer.fields.device` queda corregido mediante memoria exacta antes de inferir: «procesamiento más fluido». 91 claves/157 destinos, ligados a fuente/hash/contexto; no se reparan salidas crudas ni se atribuye memoria al modelo. Dos tests primero rojos (tres errores), después verdes. Siete funciones de inferencia iguales por AST; 57 archivos históricos y los tres manifiestos de adendas intactos. El retiro explícito de la falsa nota perfecta v12 permanece visible y negativo.
 

@@ -1,7 +1,5 @@
 # UsefulVerse · Mapa del repo (para no explorarlo cada vez)
 
-> **Lote actual v16 (en curso):** gramática decimal ko fijada por CLDR/hash; once tests de gramática/datos, 103 Python locales (101+2). Referencias predeclaradas 40 modelo+27 legacy, run 39939504317 correcto y recuperado (67 registros); revisión en curso, completo bloqueado por hallazgos. V2–v15/adendas intactas, sin memoria ko, aprobaciones, publicación ni activaciones. [Informe v16](lotes/2026-10-23-piloto-v16.md).
-
 Revisado el 20-oct-2026 sobre `main` (`pedronunezwebs-hash/usefulverse`, **público desde el 20-oct**, ~130 MB). Seguridad: ver `AGENTS.md`. Si cambias la estructura, actualiza este mapa.
 
 ## Dos sitios, dos builds
@@ -27,7 +25,9 @@ Revisado el 20-oct-2026 sobre `main` (`pedronunezwebs-hash/usefulverse`, **públ
 
 - **V14 (histórico):** dos Shikaku por memoria exacta; referencias ES/NB pasan, 88 conocidas pasan y ampliado ES queda bloqueado por un calco leve, NB pasa muestra conocida. 585 fixtures y cero idiomas aprobados. Auditor con retiro explícito y negativo de una falsa nota perfecta histórica, ligado a bytes/digest/fuente/contexto; no muta originales ni permite aprobar gates. Políticas v2–v14 conservadas; sin despliegue.
 
-- **V15 (último lote):** calco informático ES corregido por memoria exacta; 91 claves/157 destinos. Referencias ES/NB 360/360, completo conocido revisado: es: 1566/1566, pasa muestra conocida; nb-NO: 1566/1566, pasa muestra conocida. 585 fixtures, cero idiomas aprobados. Datos y trazas globales/por oración y retiro histórico explícito conservados; sin despliegue.
+- **V15 (histórico):** calco informático ES corregido por memoria exacta; 91 claves/157 destinos. Referencias ES/NB 360/360, completo conocido revisado: es: 1566/1566, pasa muestra conocida; nb-NO: 1566/1566, pasa muestra conocida. 585 fixtures, cero idiomas aprobados. Datos y trazas globales/por oración y retiro histórico explícito conservados; sin despliegue.
+
+- **V16 (último lote; CI pendiente):** gramática ko CLDR fijada por revisión/hash; run 39939504317, 40 modelo+27 legacy leídos directamente. Modelo 344/360 y legacy 219/243, rechazados; completo no despachado. 12.844 registros/4.351 evaluaciones/623 fixtures. 104 Python locales (102+2); 103 reales en el modelo. Cero idiomas aprobados, activación o despliegue. Políticas/datos anteriores y adendas intactos. [Informe](lotes/2026-10-23-piloto-v16.md).
 
 ## Carpetas clave
 
