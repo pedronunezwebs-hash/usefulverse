@@ -49,7 +49,8 @@ POLICIES["context-v17"] = json.loads(Path(__file__).with_name("pilot-korean-memo
 POLICIES["context-v18"] = json.loads(Path(__file__).with_name("pilot-korean-expanded-memory-policy.json").read_text())
 POLICIES["context-v19"] = json.loads(Path(__file__).with_name("pilot-indonesian-numeric-policy.json").read_text())
 POLICIES["context-v20"] = json.loads(Path(__file__).with_name("pilot-indonesian-memory-policy.json").read_text())
-TYPED_POLICIES = {"context-v10", "context-v11", "context-v12", "context-v13", "context-v14", "context-v15", "context-v16", "context-v17", "context-v18", "context-v19", "context-v20"}
+POLICIES["context-v21"] = json.loads(Path(__file__).with_name("pilot-indonesian-expanded-memory-policy.json").read_text())
+TYPED_POLICIES = {"context-v10", "context-v11", "context-v12", "context-v13", "context-v14", "context-v15", "context-v16", "context-v17", "context-v18", "context-v19", "context-v20", "context-v21"}
 SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
 TECHNICAL_TOKEN = re.compile(r"\.(?:dxf|dwg|png|svg|wav|mp3|pdf|json|csv|txt)\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
 SOFTWARE_VERSION = re.compile(r"(?<![\w.])\d+(?:\.\d+){2,}(?![\w.]\d)")
@@ -389,7 +390,7 @@ def numeric_data_id_v19(text):
 
 def policy_typed_data_checks(source, target, source_locale, target_locale, policy):
     result = typed_data_checks(source, target, source_locale, target_locale)
-    if policy not in ("context-v19", "context-v20") or "id" not in (source_locale, target_locale): return result
+    if policy not in ("context-v19", "context-v20", "context-v21") or "id" not in (source_locale, target_locale): return result
     profile = POLICIES[policy]["numeric_profile"]
     manifest = ROOT / "docs/quality/translation-pilot/numeric-sources/context-v19/manifest.json"
     if profile != {"id": "id-decimal-v1", "locale": "id", "manifest": str(manifest.relative_to(ROOT)),
@@ -671,7 +672,7 @@ def record_flags(row):
     if row.get("inference_policy") in {"context-v11", "context-v12", "context-v13", "context-v14", "context-v15", "context-v16", "context-v17", "context-v18"}:
         flags["forward_sentence_evidence"] = row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not complete_sentence_evidence_valid(row.get("forward_segments"), row["model_input"], row["raw_translation"], "en", row["locale"])
         flags["back_sentence_evidence"] = not complete_sentence_evidence_valid(row.get("back_segments"), row["translation"], row["back_translation"], row["locale"], "en")
-    if row.get("inference_policy") in ("context-v19", "context-v20"):
+    if row.get("inference_policy") in ("context-v19", "context-v20", "context-v21"):
         flags["forward_sentence_evidence"] = row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not complete_sentence_evidence_valid_v19(row.get("forward_segments"), row["model_input"], row["raw_translation"], "en", row["locale"])
         flags["back_sentence_evidence"] = not complete_sentence_evidence_valid_v19(row.get("back_segments"), row["translation"], row["back_translation"], row["locale"], "en")
     return flags
