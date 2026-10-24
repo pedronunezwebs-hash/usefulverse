@@ -50,7 +50,8 @@ POLICIES["context-v18"] = json.loads(Path(__file__).with_name("pilot-korean-expa
 POLICIES["context-v19"] = json.loads(Path(__file__).with_name("pilot-indonesian-numeric-policy.json").read_text())
 POLICIES["context-v20"] = json.loads(Path(__file__).with_name("pilot-indonesian-memory-policy.json").read_text())
 POLICIES["context-v21"] = json.loads(Path(__file__).with_name("pilot-indonesian-expanded-memory-policy.json").read_text())
-TYPED_POLICIES = {"context-v10", "context-v11", "context-v12", "context-v13", "context-v14", "context-v15", "context-v16", "context-v17", "context-v18", "context-v19", "context-v20", "context-v21"}
+POLICIES["context-v22"] = json.loads(Path(__file__).with_name("pilot-chinese-numeric-policy.json").read_text())
+TYPED_POLICIES = {"context-v10", "context-v11", "context-v12", "context-v13", "context-v14", "context-v15", "context-v16", "context-v17", "context-v18", "context-v19", "context-v20", "context-v21", "context-v22"}
 SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
 TECHNICAL_TOKEN = re.compile(r"\.(?:dxf|dwg|png|svg|wav|mp3|pdf|json|csv|txt)\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
 SOFTWARE_VERSION = re.compile(r"(?<![\w.])\d+(?:\.\d+){2,}(?![\w.]\d)")
@@ -389,6 +390,8 @@ def numeric_data_id_v19(text):
 
 
 def policy_typed_data_checks(source, target, source_locale, target_locale, policy):
+    if policy == "context-v22":
+        return chinese_typed_data_checks_v22(source, target, source_locale, target_locale)
     result = typed_data_checks(source, target, source_locale, target_locale)
     if policy not in ("context-v19", "context-v20", "context-v21") or "id" not in (source_locale, target_locale): return result
     profile = POLICIES[policy]["numeric_profile"]
@@ -478,6 +481,87 @@ def translate_complete_sentences_v19(texts, model_translate, source_locale, targ
         raw = "".join(part["leading_space"] + part["output"].strip() + part["trailing_space"] for part in trace)
         valid = all(policy_typed_data_checks(source, raw, source_locale, target_locale, "context-v19").values())
         valid &= complete_sentence_evidence_valid_v19(trace, source, raw, source_locale, target_locale)
+        if traces is not None: traces.append(trace)
+        results.append((raw if valid else None, raw, any(part["truncated"] for part in trace)))
+    return results
+
+
+
+def chinese_audit_text_v22(text):
+    # Audit-only boundaries; original output, opaque spans and traces stay exact.
+    text = re.sub(r"[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]", "~", text)
+    return re.sub(r"(?<=[0-9])(?=(?:KB|MB|GB|TB)\b)", " ", text, flags=re.IGNORECASE)
+
+
+def numeric_data_zh_v22(text):
+    """Pinned CLDR latn decimal subset. Never silently erase numeric Han content."""
+    text = text.replace("\u2212", "-")
+    prose = COORDINATE.sub(" ", OPAQUE_LITERAL.sub(" ", text))
+    # RBNF/spellout and compact notation have a different grammar. False-positive
+    # lexical warnings are safer than accepting an unproved numerical conversion.
+    # CLDR RBNF also uses 丗 (30), absent from Python Unicode Numeric_Value.
+    if any((unicodedata.numeric(c, None) is not None and c not in "0123456789") or c == "丗" for c in prose): return None
+    if re.search(r"(?:负|正)\s*[0-9]|[0-9]\s*点\s*[0-9]", prose): return None
+    if any(unicodedata.category(c).startswith("N") and c not in "0123456789" for c in prose): return None
+    if re.search(r"[＋﹢﹣－–—‒⁺⁻±∓]\s*\d|[+-]\s*[+-]\s*\d|[0-9]\s*[％‰]", prose): return None
+    prose = SOFTWARE_VERSION.sub(" ", chinese_audit_text_v22(prose))
+    covered = re.sub(r"\b\d+D\b", " ", TECHNICAL_TOKEN.sub(" ", prose))
+    if re.search(r"\d", NUMERIC_VALUE.sub(" ", covered)): return None
+    quantities = Counter()
+    grammar = r"[+-]?(?:[0-9]+|[0-9]{1,3}(?:,[0-9]{3})+)(?:\.[0-9]+)?"
+    for match in NUMERIC_VALUE.finditer(prose):
+        token = match.group(); suffix = token[-1] if token[-1] in "%°" else ""
+        number = token[:-1] if suffix else token
+        if not re.fullmatch(grammar, number): return None
+        quantities[(Decimal(number.replace(",", "")), suffix)] += 1
+    return quantities, coordinate_data(text)
+
+
+def chinese_typed_data_checks_v22(source, target, source_locale, target_locale):
+    result = typed_data_checks(source, target, source_locale, target_locale)
+    if "zh-CN" not in (source_locale, target_locale): return result
+    manifest = ROOT / "docs/quality/translation-pilot/numeric-sources/context-v22/manifest.json"
+    if POLICIES["context-v22"]["numeric_profile"] != {"id": "zh-CN-decimal-v1", "locale": "zh-CN", "manifest": str(manifest.relative_to(ROOT)),
+            "manifest_sha256": hashlib.sha256(manifest.read_bytes()).hexdigest()}:
+        raise ValueError("Changed or unbound Chinese numeric profile")
+    values = [numeric_data_zh_v22(text) if locale == "zh-CN" else numeric_data(text.replace("\u2212", "-"), locale)
+        for text, locale in zip((source, target), (source_locale, target_locale), strict=True)]
+    result["quantities"] = all(v is not None for v in values) and values[0][0] == values[1][0]
+    # Technical word boundaries differ from numerical equality; never widen the
+    # historical parser or normalize the stored opaque/code/placeholder contract.
+    views = [chinese_audit_text_v22(text) if locale == "zh-CN" else localized_audit_text(text, locale)
+        for text, locale in zip((source, target), (source_locale, target_locale), strict=True)]
+    for key, pattern in (("versions", SOFTWARE_VERSION), ("software_identifiers", SOFTWARE_IDENTIFIER), ("technical_tokens", TECHNICAL_TOKEN)):
+        result[key] = Counter(t.casefold() for t in pattern.findall(views[0])) == Counter(t.casefold() for t in pattern.findall(views[1]))
+    dimensions = lambda text: Counter(re.findall(r"\b\d+D\b", OPAQUE_LITERAL.sub(" ", text)))
+    result["dimensions"] = dimensions(views[0]) == dimensions(views[1])
+    return result
+
+
+def complete_sentence_evidence_valid_v22(trace, source, raw, source_locale, target_locale):
+    if not segment_evidence_valid(trace, source, raw): return False
+    expected = complete_sentence_parts(source)
+    if not expected or len(trace) != len(expected): return False
+    for part, (leading, text, trailing) in zip(trace, expected, strict=True):
+        if part.get("kind") != "prose" or (part.get("leading_space"), part.get("input"), part.get("trailing_space")) != (leading, text, trailing): return False
+        if part.get("truncated") or not all(policy_typed_data_checks(text, part["output"], source_locale, target_locale, "context-v22").values()): return False
+    return True
+
+
+def translate_complete_sentences_v22(texts, model_translate, source_locale, target_locale, traces=None):
+    """v22 independent version: translate complete sentences with exact attempted-source coverage."""
+    plans = [complete_sentence_parts(text) for text in texts]
+    sentences = [part[1] for plan in plans for part in plan]
+    outputs = model_translate(sentences) if sentences else []
+    if len(outputs) != len(sentences): raise ValueError("Model returned an incomplete complete-sentence batch")
+    results, cursor = [], 0
+    for source, plan in zip(texts, plans, strict=True):
+        trace = [{"kind": "prose", "input": text, "output": outputs[cursor+i][0], "truncated": outputs[cursor+i][1],
+            "leading_space": leading, "trailing_space": trailing} for i, (leading, text, trailing) in enumerate(plan)]
+        cursor += len(plan)
+        raw = "".join(part["leading_space"] + part["output"].strip() + part["trailing_space"] for part in trace)
+        valid = all(policy_typed_data_checks(source, raw, source_locale, target_locale, "context-v22").values())
+        valid &= complete_sentence_evidence_valid_v22(trace, source, raw, source_locale, target_locale)
         if traces is not None: traces.append(trace)
         results.append((raw if valid else None, raw, any(part["truncated"] for part in trace)))
     return results
@@ -675,6 +759,9 @@ def record_flags(row):
     if row.get("inference_policy") in ("context-v19", "context-v20", "context-v21"):
         flags["forward_sentence_evidence"] = row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not complete_sentence_evidence_valid_v19(row.get("forward_segments"), row["model_input"], row["raw_translation"], "en", row["locale"])
         flags["back_sentence_evidence"] = not complete_sentence_evidence_valid_v19(row.get("back_segments"), row["translation"], row["back_translation"], row["locale"], "en")
+    if row.get("inference_policy") == "context-v22":
+        flags["forward_sentence_evidence"] = row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not complete_sentence_evidence_valid_v22(row.get("forward_segments"), row["model_input"], row["raw_translation"], "en", row["locale"])
+        flags["back_sentence_evidence"] = not complete_sentence_evidence_valid_v22(row.get("back_segments"), row["translation"], row["back_translation"], row["locale"], "en")
     return flags
 
 
@@ -990,6 +1077,8 @@ def run(args):
                 return translate_unmasked_sentences(texts, prose_translate, traces)
             if POLICIES[policy]["protection"] == "whole-unit-typed-data-v1":
                 return translate_whole_units(texts, prose_translate, source_locale, target_locale, traces)
+            if POLICIES[policy]["protection"] == "complete-sentences-typed-data-v3":
+                return translate_complete_sentences_v22(texts, prose_translate, source_locale, target_locale, traces)
             if POLICIES[policy]["protection"] == "complete-sentences-typed-data-v2":
                 return translate_complete_sentences_v19(texts, prose_translate, source_locale, target_locale, traces)
             if POLICIES[policy]["protection"] == "complete-sentences-typed-data-v1":

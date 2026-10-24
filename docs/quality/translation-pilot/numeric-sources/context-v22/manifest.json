@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "cldr_json_revision": "91c267402229a59e3ef2774544f001bf959e8809",
+  "cldr_revision": "96e54b273d2da4ec6fbad350ba19ff23fa24a588",
+  "verified_at_utc": "2026-10-24T11:10:26.808254+00:00",
+  "locale": "zh-CN",
+  "cldr_locale": "zh",
+  "numbering_system": "latn",
+  "digits": "0123456789",
+  "group": ",",
+  "decimal": ".",
+  "primary_group_size": 3,
+  "secondary_group_size": 3,
+  "standard_pattern": "#,##0.###",
+  "files": [
+    {
+      "path": "zh-numbers.json",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-numbers-full/main/zh/numbers.json",
+      "sha256": "dbdbc861785efb5e6d77f90cfd0f838f0369e6ab4ea2e093ca1fb07655f23eaf",
+      "bytes": 10241
+    },
+    {
+      "path": "zh-rbnf.xml",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr/96e54b273d2da4ec6fbad350ba19ff23fa24a588/common/rbnf/zh.xml",
+      "sha256": "746ea82e9a632ffbdf0616efecfe229b4d671b52ff556671509b4ea155ab3b08",
+      "bytes": 6527,
+      "revision": "96e54b273d2da4ec6fbad350ba19ff23fa24a588"
+    },
+    {
+      "path": "numberingSystems.json",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/cldr-json/cldr-core/supplemental/numberingSystems.json",
+      "sha256": "0efb69a00dbae5950195b077e0cc6c7f319d3a1e8a81401083ec4f42c14b0014",
+      "bytes": 10695
+    },
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/unicode-org/cldr-json/91c267402229a59e3ef2774544f001bf959e8809/LICENSE",
+      "sha256": "220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b",
+      "bytes": 2033
+    }
+  ],
+  "scope": "context-v22 only. Strict CLDR latn decimal subset with Han adjacency; no output rewriting. All Han spellout/compact/financial numerals are unsupported (even lexical occurrences may conservatively warn). No scientific/currency/foreign digits/unknown signs. Coordinates, versions, code and unit tokens remain separate and exact. RBNF retained to document excluded spellouts. Global parser and v19 id grammar stay unchanged."
+}

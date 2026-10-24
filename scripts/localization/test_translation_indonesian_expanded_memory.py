@@ -74,6 +74,22 @@ def stable_ast(value):
  if isinstance(value,list):return [stable_ast(child) for child in value]
  return value
 
+def historical_run_ast(node):
+ """Remove only the exact v22 dispatch; compare every historical run field."""
+ node=copy.deepcopy(node)
+ expected=ast.parse('if POLICIES[policy]["protection"] == "complete-sentences-typed-data-v3":\n return translate_complete_sentences_v22(texts, prose_translate, source_locale, target_locale, traces)').body[0]
+ removed=0
+ for parent in ast.walk(node):
+  for field,children in ast.iter_fields(parent):
+   if not isinstance(children,list):continue
+   for index,child in reversed(list(enumerate(children))):
+    if isinstance(child,ast.If) and stable_ast(child.test)==stable_ast(expected.test):
+     if stable_ast(child)!=stable_ast(expected):raise AssertionError('Changed v22 dispatch')
+     del children[index];removed+=1
+ if removed!=1:raise AssertionError('Missing or duplicate v22 dispatch')
+ return stable_ast(node)
+
+
 def observed():
  records={r['record_id']:r for r in map(json.loads,(DATA/'checkpoints/context-v20/madlad.jsonl').read_text().splitlines())}
  review=json.loads((DATA/'review-context-v20-full.json').read_text())
@@ -142,7 +158,7 @@ class IndonesianExpandedMemoryTest(unittest.TestCase):
      if row.get('inference_policy','baseline') not in {'baseline',*proof['historical_policy_digests']}:continue
      pilot.validate_record(row);flags[row['record_id']]=pilot.record_flags(row)
   self.assertEqual(len(flags),13910);self.assertEqual(pilot.digest(flags),proof['record_flags_digest'])
-  nodes={n.name:stable_ast(n) for n in ast.parse(Path(pilot.__file__).read_text()).body if isinstance(n,ast.FunctionDef)}
+  nodes={n.name:historical_run_ast(n) if n.name=="run" else stable_ast(n) for n in ast.parse(Path(pilot.__file__).read_text()).body if isinstance(n,ast.FunctionDef)}
   for name,value in proof['inference_function_ast_digests'].items():self.assertEqual(pilot.digest(nodes[name]),value)
 
 if __name__=='__main__':unittest.main()

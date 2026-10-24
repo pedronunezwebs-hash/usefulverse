@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "policy": "context-v22",
+  "locale": "zh-CN",
+  "reviewer": "Codex",
+  "native_review": false,
+  "global_parser_unchanged": true,
+  "v19_grammar_unchanged": true,
+  "memory_targets_preserved": 263,
+  "historical_records_frozen": 14243,
+  "historical_fixtures_prefix": 930,
+  "historical_files_identical": 233,
+  "preserved_function_ast_count": 13,
+  "run_change": "Only exact new v22 dispatch, checked by removing that AST node and comparing original run hash; altered dispatch and unrelated run change both rejected",
+  "local_inference_or_models": false,
+  "tests": [
+    {
+      "label": "Initial unsupported contract: includes absent new policy/profile/proof errors, not all linguistic failures",
+      "sha256": "19fa981663872b41288fcdd2c9c48c470e3cd7d0dc6173b3834705f603b7ae2e",
+      "result_lines": [
+        "Ran 9 tests in 0.012s",
+        "FAILED (failures=80, errors=4)"
+      ]
+    },
+    {
+      "label": "Historical run guard reproduces the intentional new dispatch",
+      "sha256": "a27f3c4679ac8c8ef661b14df392a2bf3d27e1773c10df7c1c1b4b7484ef9f08",
+      "result_lines": [
+        "Ran 6 tests in 8.422s",
+        "FAILED (failures=1)"
+      ]
+    },
+    {
+      "label": "Six previously skipped Han spellout numerals",
+      "sha256": "cd9372425593a3662c11cc167be243163467c2511aaacb3fff586e828c20ce47",
+      "result_lines": [
+        "Ran 1 test in 0.006s",
+        "FAILED (failures=6)"
+      ]
+    },
+    {
+      "label": "Unicode Numeric_Value alone misses CLDR RBNF 丗",
+      "sha256": "fe804332f30cbe3961dcff24a99562cd0be0963c49daa6f2c835f87d6987b362",
+      "result_lines": [
+        "Ran 10 tests in 9.120s",
+        "FAILED (failures=1)"
+      ]
+    },
+    {
+      "label": "148-test suite before final Han exclusion refinement",
+      "sha256": "5da81bba32a7dbe1f37ae4e87e35342b5640f2d109639cfb72fd01570b8b8329",
+      "result_lines": [
+        "Ran 148 tests in 68.039s",
+        "OK (skipped=2)"
+      ]
+    },
+    {
+      "label": "Current final ten numeric/history/dispatch tests",
+      "sha256": "aa4c14765372bd5a7a8c3fd797d1a34de2d320cf314c44fa464bb976f458771f",
+      "result_lines": [
+        "Ran 10 tests in 9.106s",
+        "OK"
+      ]
+    }
+  ]
+}
