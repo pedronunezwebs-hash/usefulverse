@@ -4,7 +4,7 @@
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
 **Última actualización:** 2026-10-24 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-24 13:05 +07 · v21: cincuenta correcciones id, referencias y completo condicionado; sin despliegue
+**Turno actual (candado):** LIBRE
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
@@ -207,4 +207,4 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 3. Actualizar `docs/quality/progress.csv` (estado por herramienta) y añadir el informe a `docs/quality/LOG.md`.
 4. Borrar las carpetas temporales propias (clones, `dist`, `node_modules`, modelos, capturas) y anotar el espacio libre del disco.
 
-Retirada efectiva el 2026-10-24T12:59:55.950428+07:00: eliminada directamente y sin Papelera solo la carpeta propia `usefulverse-codex-v20-20261024.b1uqhuiy`; ruta comprobada ausente. Tamaño previo 548558729 bytes; disco libre posterior 37.7623 GiB (40546963456 bytes). Antes de borrar: 7546 archivos versionados y 540 críticos recuperables mediante árbol Git/índice; seis documentos idénticos, 192 archivos históricos, prefijo 761 y 96 grupos anteriores conservados; estados/slugs/capas de progress y src/public intactos. Código/datos/revisiones/fixtures iguales a CI final 40067902344; solo metadatos posteriores. Cero punteros LFS, tres runs correctos sin artefactos ni publicación; cero ZIP propios externos restantes. 3 ZIP internos retirados junto con clon, scripts, QA, binarios y cachés. Sin modelos de traducción ni builds completos locales. Fuentes verificadas: feature `89768fad52455e4cac997d9a5573b3ab2f35a360`, main `7c9a94f3bbd1994eb6a1331e6972b1457197475d`. Candado liberado después de la retirada.
+Retirada efectiva el 2026-10-24T13:53:17.067234+07:00: eliminada directamente y sin Papelera solo la carpeta propia `usefulverse-codex-v21-20261024.ls3v43bl`; ruta comprobada ausente. Tamaño previo 551047861 bytes; disco libre posterior 37.7274 GiB (40509452288 bytes). Antes de borrar: 7569 archivos versionados y 562 críticos recuperables mediante árbol Git/índice; seis documentos idénticos, 209 archivos históricos, prefijo 891 y 100 grupos anteriores conservados; estados/slugs/capas de progress y src/public intactos. Código/datos/revisiones/fixtures iguales a CI final 40071558919; solo metadatos posteriores. Cero punteros LFS. Tres runs correctos y un intento previo fallido por test AST, sin inferencia; cuatro sin artefactos ni publicación y con limpieza correcta. Cero ZIP propios externos restantes. 4 ZIP internos retirados con clon, scripts, QA, binarios y cachés. Sin modelos de traducción ni builds completos locales. Fuentes verificadas: feature `89194337d1be0f8b975ef2ca024d0a05042f5db6`, main `dd53bb4108a8fa5d433e39f6c2223a0009e4b7bc`. Candado liberado después de la retirada.
