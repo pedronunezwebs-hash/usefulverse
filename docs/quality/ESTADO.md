@@ -4,7 +4,7 @@
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
 **Última actualización:** 2026-10-24 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-24T18:07:50.518634+07:00 · v22: contrato numérico zh-CN y referencias, sin publicación
+**Turno actual (candado):** LIBRE
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
@@ -16,7 +16,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
    Las 300 fuentes conservan `indexable:false`, fuera de sitemap/hreflang y sin bloqueo robots. Las 700 existentes se conservan.
    **0/300 en main; 0 activadas.** Capacidad Pages y 37 traducciones revisadas/nb real pendientes; no avanzar a fase 0.
 
-   **V22 · zh-CN: referencias rechazadas, completo no ejecutado.** Modelo 344/360 y legacy 223/243; comparación común 27: 232/243 frente 223/243.67 textos leídos, 60 avisos conciliados, 37 fixtures nuevas.16 datos no probados bloquean por separado; no se inventan errores lingüísticos.14.310 registros/5.817 evaluaciones/967 fixtures. Parser global, gramática v19,263 memorias e historia conservados. CI final 40090517822 correcta; GET/XML antes/después sin cambios. Retirada pendiente.
+   **V22 · zh-CN: referencias rechazadas, completo no ejecutado.** Modelo 344/360 y legacy 223/243; comparación común 27: 232/243 frente 223/243.67 textos leídos, 60 avisos conciliados, 37 fixtures nuevas.16 datos no probados bloquean por separado; no se inventan errores lingüísticos.14.310 registros/5.817 evaluaciones/967 fixtures. Parser global, gramática v19,263 memorias e historia conservados. CI final 40090517822 correcta; GET/XML antes/después sin cambios. Retirada efectiva verificada; candado LIBRE.
 
    Pasan muestra completa conocida ES/NB(v15), KO(v18), ID(v21); siete destinos revisados sin pasar (zh-CN nuevo y seis históricos),25 sin revisión detallada.0 idiomas aprobados. P-001–P-008 pendientes/0 FALLA.
 
@@ -49,7 +49,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 ## 3. Checklist general (marcar con [x] y fecha)
 
 ### Planificación
-- [x] V22 infraestructura/referencias zh-CN revisadas: gate rechazado,37 fixtures y 16 datos no probados separados; completo no ejecutado ·2026-10-24. CI final correcta; retirada pendiente.
+- [x] V22 infraestructura/referencias zh-CN revisadas: gate rechazado,37 fixtures y 16 datos no probados separados; completo no ejecutado ·2026-10-24. CI final correcta; retirada efectiva verificada.
 - [x] Diagnóstico de la caída del 16-oct (`docs/recovery/README.md`) · 2026-10-20
 - [x] Decisiones: sin `noindex` masivo en las 700; 37 idiomas; no se borra ninguna herramienta · 2026-10-20
 - [x] Plan de calidad (`docs/quality/PLAN.md`), estrategia hacia 1M visitas al día (`STRATEGY-1M.md`), RUNBOOK y `progress.csv` · 2026-10-20
@@ -197,4 +197,4 @@ Retirada efectiva el 2026-10-24T13:53:17.067234+07:00: eliminada directamente y 
 
 ## Cierre v22
 
-Retirada efectiva v22 pendiente; candado EN CURSO.
+Retirada efectiva el 2026-10-24T18:48:55.162410+07:00: eliminada directamente y sin Papelera solo la carpeta propia usefulverse-codex-v22-20261024.pbdcr7j4; ruta comprobada ausente. Tamaño previo 548751808 bytes; disco libre posterior 38.3213 GiB (41147142144 bytes). Antes de borrar: 7595 archivos versionados y 594 críticos recuperables por árbol Git/índice; seis documentos idénticos,229 archivos históricos, prefijo930 y104 grupos anteriores conservados; estados/slugs/capas de progress y src/public intactos. Código/datos/revisiones/fixtures iguales a CI final40090517822; solo metadatos/documentación posteriores, incluida errata editorial explícita. Cero punteros LFS. Dos runs correctos, cero artefactos/publicaciones y limpieza de modelos correcta. Cero ZIP propios externos restantes; 2 ZIP internos retirados con clon, scripts, QA, binarios y cachés. Sin modelos de traducción ni builds completos locales. Fuentes verificadas: feature 58dee9d7fdf5d4036a592b7252f6ea770e600eee, main bd7dd5ab74ae49f22342ac7634eb21f30b2c5455. Candado liberado después de la retirada.
