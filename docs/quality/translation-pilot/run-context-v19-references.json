@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "run_id": 40048103975,
+  "url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40048103975",
+  "source_commit": "8e7ad90695d7b0c785588f17600c025fbe9c3fbb",
+  "policy": "context-v19",
+  "engine": "madlad",
+  "scope": "references",
+  "locales": [
+    "id"
+  ],
+  "status_at_capture": "in_progress",
+  "started_at": "2026-10-24T01:04:34Z",
+  "dispatches": 1,
+  "complete": false,
+  "checkpoint_before": 0,
+  "model_inference_local": false
+}
