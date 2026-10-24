@@ -63,6 +63,17 @@ EXPECTED={
  'voice-changer.limits':'Alat ringan ini dirancang untuk klip pendek, bukan lagu berdurasi penuh. Nada diubah dengan menyesuaikan kecepatan pemutaran. Durasi klip dan nada suara berubah bersamaan. Efek tidak dapat menciptakan identitas baru yang alami, memisahkan suara, atau menjamin hasil yang sama di setiap peramban.',
 }
 
+def stable_ast(value):
+ """Compare AST fields, independent of ast.dump rendering defaults (3.11/3.14).
+
+ Empty type_params was added in 3.12; all actual code fields, empty lists,
+ optional None values and nonempty type parameters remain in the digest.
+ """
+ if isinstance(value,ast.AST):
+  return [type(value).__name__,[[field,stable_ast(child)] for field,child in ast.iter_fields(value) if not (field=='type_params' and child==[])]]
+ if isinstance(value,list):return [stable_ast(child) for child in value]
+ return value
+
 def observed():
  records={r['record_id']:r for r in map(json.loads,(DATA/'checkpoints/context-v20/madlad.jsonl').read_text().splitlines())}
  review=json.loads((DATA/'review-context-v20-full.json').read_text())
@@ -109,6 +120,17 @@ class IndonesianExpandedMemoryTest(unittest.TestCase):
     values,traces,memory=pilot.forward_with_memory([row],'id',policy,lambda *args:self.fail('No fallback'))
     self.assertEqual(values,[(None,bad,False)]);self.assertEqual(traces,[None]);self.assertEqual(memory,[bad])
 
+ def test_ast_guard_is_portable_and_still_detects_changed_code(self):
+  current=ast.parse('def f(x): return x').body[0]
+  legacy=copy.deepcopy(current)
+  legacy._fields=tuple(field for field in legacy._fields if field!='type_params')
+  if hasattr(legacy,'type_params'):delattr(legacy,'type_params')
+  self.assertEqual(stable_ast(current),stable_ast(legacy))
+  self.assertIn(['decorator_list',[]],stable_ast(current)[1])
+  self.assertIn(['returns',None],stable_ast(current)[1])
+  changed=ast.parse('def f(x): return x + 1').body[0]
+  self.assertNotEqual(stable_ast(current),stable_ast(changed))
+
  def test_frozen_history_original_flags_policy_digests_and_inference_functions(self):
   proof=json.loads((DATA/'regression-v21-evidence.json').read_text())
   for policy,value in proof['historical_policy_digests'].items():self.assertEqual(pilot.policy_digest(policy),value)
@@ -119,7 +141,7 @@ class IndonesianExpandedMemoryTest(unittest.TestCase):
      if row.get('inference_policy','baseline') not in {'baseline',*proof['historical_policy_digests']}:continue
      pilot.validate_record(row);flags[row['record_id']]=pilot.record_flags(row)
   self.assertEqual(len(flags),13910);self.assertEqual(pilot.digest(flags),proof['record_flags_digest'])
-  nodes={n.name:ast.dump(n,include_attributes=False) for n in ast.parse(Path(pilot.__file__).read_text()).body if isinstance(n,ast.FunctionDef)}
+  nodes={n.name:stable_ast(n) for n in ast.parse(Path(pilot.__file__).read_text()).body if isinstance(n,ast.FunctionDef)}
   for name,value in proof['inference_function_ast_digests'].items():self.assertEqual(pilot.digest(nodes[name]),value)
 
 if __name__=='__main__':unittest.main()

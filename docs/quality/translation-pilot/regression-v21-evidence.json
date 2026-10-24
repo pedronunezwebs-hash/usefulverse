@@ -26,6 +26,35 @@
   "fixture_prefix_count": 891,
   "fixture_prefix_digest": "047b543c9c04fcdb0f55243d9ad3b378685beb9b685ab47bebc59fab890676d8",
   "inference_function_ast_digests": {
+    "numeric_data": "0b493980b79a1bce7ae6882354ac18aa3f0dcee81a6f7c06efaed013b21bb0c5",
+    "numeric_data_id_v19": "80e6ff83de3376d284b2ec1e01cf40422c80b8a775108b7e46b512171cd689be",
+    "id_version_matches_v19": "33ad66c375fe5eee1c4d6a57d78fbb8e9530fed222bea590dfa41f134f68846c",
+    "numeric_prose": "eeecefc72031a91733ad2d5f5b5ba35010781289b2f9542f1d7c9f04945bc4b7",
+    "localized_audit_text": "080a665e191d4a11880d4e24bb649587adaf8268b45b749a60edd2970624de22",
+    "typed_data_checks": "12cbe3e2ec7d85cf02fa039e4787b0e6154251555ef588cfd12f1d0beffebd48",
+    "complete_sentence_parts": "1d927875fe393af774e7299958907715152028637cdba9cd50b9f5bc283ddd91",
+    "complete_sentence_evidence_valid": "c57fe2ef4a992c554fd03ead67be817110c3963f0c55b747644750c355bc6d13",
+    "translate_complete_sentences": "61a7f416a26a44fe44363e33a754c580d0ad689d74a49a467107a177b6b74135",
+    "complete_sentence_evidence_valid_v19": "1c6660ad175744971b5a3d0a0482a588854b33f11e5e1b3127b0d077b4fe9c07",
+    "translate_complete_sentences_v19": "feefaa82f69b3ca482c130f095ecf2f94e3a4019347c27a59fef2f0644a17467",
+    "forward_with_memory": "0e350a9fa31a361e4c97a73a4ce62d2755112c88293ef82b72c1e13845f9bcf2",
+    "typed_record_evidence": "e32942030f1f102c38256b0b57a187a7ba07daba410de93fbc460d9066ec554d",
+    "run": "31c9f4bf88dcfba46378143eb762fd7a5262ccb707a99c299869eaa28d19597f"
+  },
+  "red": {
+    "tests": 5,
+    "errors": 52,
+    "log_sha256": "0b39c17b16164e4f482bdb683df8512d5f5ad6a7d530ab6b57f427b3293c1dab",
+    "replayed_actual_v20_callbacks": 50
+  },
+  "pre_model_suite": {
+    "tests": 137,
+    "passed": 135,
+    "dependency_skips": 2,
+    "log_sha256": "714d308af81eb0ecd630ba768cb6f6acffda5d638c77b7d6c88ac78ff7d2cdb1",
+    "corpus_node_tests": 2
+  },
+  "legacy_ast_dump_digests_from_mac": {
     "numeric_data": "bf721d69064cd4a9f355bc01bfcbe0b13a5a9ad0551586e561263d6c4ca37372",
     "numeric_data_id_v19": "b6791c05c808e137f1f2b0f141d51733cfcf760e792dd3084a2a804eeaea8bcc",
     "id_version_matches_v19": "fecc387ad07b0a00dbbda3f5c6ea5e235c06042ea6130bf2a922e53a66af7d52",
@@ -41,13 +70,21 @@
     "typed_record_evidence": "440056fe8d99333cf5e97d03d3931f46e0102367876b1c36106eb9d50741d650",
     "run": "3242dea348f8c3cad55fca304d08f969f59559372b46499689dc872c8792cbbe"
   },
-  "red": {
-    "tests": 5,
-    "errors": 52,
-    "log_sha256": "0b39c17b16164e4f482bdb683df8512d5f5ad6a7d530ab6b57f427b3293c1dab",
-    "replayed_actual_v20_callbacks": 50
+  "ast_portability_regression": {
+    "failed_run_id": 40069125442,
+    "failed_source_commit": "4f88860864a5f70cb8a7c7d98097d0ff6afe006f",
+    "actual_runner_python": "3.11.17",
+    "capture_python": "3.14.7",
+    "cause": "ast.dump optional-empty-field rendering changed in3.13; default rendering differs between Mac3.14 and runner3.11. Empty type_params also added in3.12. Compare all actual AST fields with version-independent representation, omitting only empty type_params. All14 frozen inference functions are recomputed from original baseline, not updated inference.",
+    "source": "https://docs.python.org/3/library/ast.html#ast.dump",
+    "red_tests": 1,
+    "red_errors": 1,
+    "red_log_sha256": "b6aad860f23918055a3499cd35628211b3167a41d9978970e65fe1ef4d83a148",
+    "original_failed_run_log_sha256": "7066c2a57839db257d62a266a1fd64526cd2e357093b9e863feafe57ae85a95e",
+    "runtime_code_policy_or_inference_changed": false,
+    "green_suite_tests": 137
   },
-  "pre_model_suite": {
+  "initial_pre_model_suite": {
     "tests": 136,
     "passed": 134,
     "dependency_skips": 2,
