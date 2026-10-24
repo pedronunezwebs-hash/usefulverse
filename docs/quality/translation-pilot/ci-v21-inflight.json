@@ -5,5 +5,7 @@
   "event": "pull_request",
   "status_at_capture": "queued",
   "deployment_authorized": false,
-  "resolved": false
+  "resolved": true,
+  "final_status": "completed",
+  "conclusion": "success"
 }

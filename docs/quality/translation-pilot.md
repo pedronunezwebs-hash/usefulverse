@@ -4,7 +4,7 @@
 Dependencia del Paso A; no habilita ninguna herramienta ni idioma. **Idiomas aprobados por este piloto: 0.**
 Código y checkpoints de esta guía están en `feat/new-tools-batch-1` hasta integrar el PR; no confundirlos con `main`.
 
-## V21 · 24-oct-2026 · cierre en curso
+## V21 · 24-oct-2026 · verificado
 
 V21 corrige las 50 idas negativas de v20 mediante memoria exacta de fuente/hash/contexto. Conserva los 213 destinos previos: 263 destinos totales, incluidos 58 id. Los inputs controlados, gramática/perfil CLDR v19 y parser global se conservan; id sigue rechazado por el parser global. Catorce funciones de inferencia/gramática iguales por AST y los 13.910 registros anteriores mantienen sus flags con el prefijo original de 891 fixtures. No se cambian políticas, checkpoints ni rúbricas históricas.
 
@@ -18,7 +18,7 @@ Se conciliaron los 77 registros con avisos del completo (49 modelo/28 legacy) y 
 
 Suite local final: 138 tests (136 correctos/dos dependencias omitidas) y dos Node de corpus. Siete tests nuevos respecto a v20; memoria primero roja (cinco tests/52 errores), portabilidad AST primero roja (un test/un error) y cobertura actual roja antes de cada grupo de fixtures. Runners reales: 137 tests en las referencias correctas y 138 en completo, anteriores a las 33 fixtures nuevas del completo; la CI final verifica el estado definitivo. INT8 con los mismos hashes v20, limpieza correcta y cero artefactos/publicaciones en todos los intentos. Completo: 327,58 s totales, 122,35 s de conversión y pico 3.712.364 KiB. Modelos y builds completos solo en Actions.
 
-CI final pendiente; el candado permanece EN CURSO.
+[CI final 40071558919](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40071558919), fuente `212760583100753802a3528d4ef21c66c4aad061`, correcta: 3.045 Node y 138 Python (136 correctos y dos omitidos por dependencias). Check de 10.260 URLs, puerta de 20 locales existentes, hub 217+100+106 y preview de 11.293 archivos/10.800 herramientas y todas las homes noindex correctos; sitemap indexable 0. Ambas publicaciones y job de modelo omitidos, cero artefactos. No certifica los 37 idiomas.
 
 Producción GET/XML antes/después: 25.625 URLs sin cambios de estado, bytes o hash; tres rutas falsas del hub siguen 200 (soft404 pendientes de fase 0). Seguridad: Actionlint 1.7.12 y Gitleaks 8.30.1 oficiales con checksum; cero secretos tras excluir solo el falso positivo exacto de un objeto Git histórico verificado. Sin despliegue, activación, envío a buscadores ni cambios de src/public; 0/300 en main.
 
