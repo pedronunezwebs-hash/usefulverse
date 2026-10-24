@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-24T06:27:01.709148+00:00",
+  "at_utc": "2026-10-24T06:41:29.353780+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 5484,
+  "agent_reviewed_translations": 5750,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,7 +315,7 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 5484,
+  "agent_reviewed_evaluations": 5750,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
@@ -325,8 +325,8 @@
   ],
   "full_tool_computation_policy": "mixed-per-locale",
   "full_tool_pilot_approved_locales": [],
-  "total_records_all_policies": 13977,
-  "semantic_regressions": 897,
+  "total_records_all_policies": 14243,
+  "semantic_regressions": 930,
   "contextual_reference_gate": {
     "es": {
       "passed": true,
@@ -458,14 +458,14 @@
     "id": {
       "rows": 174,
       "sample": 174,
-      "points": 1454,
+      "points": 1566,
       "maximum": 1566,
-      "button_errors": 2,
-      "number_negation_errors": 1,
-      "major_rows": 33,
-      "minor_rows": 17,
-      "passed": false,
-      "minimum_style_budget_met": false,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0,
+      "passed": true,
+      "minimum_style_budget_met": true,
       "reason": "Direct current agent reading; exact known memory declared. Expanded scope blocks any observed open forward defect. No native/blind/unseen-text validation or locale approval."
     }
   },
@@ -519,7 +519,7 @@
     "model_references": 40,
     "legacy_references": 27,
     "model_gate_passed": true,
-    "full_dispatched": false,
+    "full_dispatched": true,
     "approved_locales": []
   },
   "engines_inventory_note": "Baseline computation inventory retained; contextual counts in context-run-evidence.json. Only id reviewed in v21; ES/NB retain v15 and KO v18. Six other destinations retain historical evidence, not fresh validation. Known-memory pilot only; no language approval.",
@@ -527,12 +527,12 @@
     "es": "context-v15",
     "nb-NO": "context-v15",
     "ko": "context-v18",
-    "id": "context-v20"
+    "id": "context-v21"
   },
   "latest_full_pilot": {
-    "policy": "context-v20",
+    "policy": "context-v21",
     "locale": "id",
-    "run_id": 40050727169,
+    "run_id": 40070361820,
     "current_outputs_read": 333,
     "model_nonreferences": 174,
     "legacy_nonreferences": 92,

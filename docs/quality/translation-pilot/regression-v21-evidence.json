@@ -104,5 +104,29 @@
     "passed": 136,
     "dependency_skips": 2,
     "log_sha256": "576296520ce19032c4d963adc9d06fcb142e218744f4f816f3d416b9a23bfd76"
+  },
+  "full_current_review": {
+    "red_tests": 1,
+    "red_failures": 33,
+    "red_log_sha256": "4ac7141111e51efd636ec781198b38b464490459655a8a0486fd69b39040d1d0",
+    "new_unique_fixtures": 33,
+    "new_forward": 0,
+    "new_back": 33,
+    "all_current_records_read": 333,
+    "new_records_read": 266,
+    "reference_review_only_change": "Added reciprocal supplemental model warning coverage; reference rows/grades/gate/source evidence identical to full dispatch source b7979a85517024ac173ba19720811b60991bfe9e.",
+    "reference_before_full_sha256": "fa497b659237f5147d3901425e3a1f6b97439b4c126d445226da4ecc629985f9",
+    "review_sha256": {
+      "review-context-v21-references.json": "ba90ecf2aa07661adc324617a3cbcfe62a569495e643da623020042cc5b6320a",
+      "review-context-v21-legacy.json": "eed609bf839cbf5a78f964f8d8ecb6eb8c845083dbac49c730ea0de11e73057a",
+      "review-context-v21-full.json": "77994adce90043bb1e4b9f2518e4fbe86e2ca4eaa4fe11d36c3244209ac1fb7b",
+      "review-context-v21-full-legacy.json": "001d9663b34312681a59319958ad964568216b9302a2b41788e8e8a0e1e25500"
+    }
+  },
+  "local_final_suite": {
+    "tests": 138,
+    "passed": 136,
+    "dependency_skips": 2,
+    "log_sha256": "f777296ee798aa627fb12ac1e889ccdfdcbee35eb61dc4ad7624f77532df5e86"
   }
 }

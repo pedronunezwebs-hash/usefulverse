@@ -240,5 +240,41 @@
         }
       }
     ]
+  },
+  {
+    "review_file": "review-context-v20-full.json",
+    "review_digest": "b5485e82243cb91cd0166c5e32350a3498647fcf8e082efe212f130768feb4b1",
+    "review_file_sha256": "cafc8eba30f688cf821060c570f49e83bee6605e84d5826539594c6b57b10555",
+    "added_at_utc": "2026-10-24T06:41:29.173660+00:00",
+    "reviewer": "Codex",
+    "native_review": false,
+    "approved_locales": [],
+    "reason": "Later v21 back-only discovery matches these historical raw values; append non-gating warning coverage without mutating original review bytes, grades or gates.",
+    "warning_reconciliation": [
+      {
+        "record_id": "65e7646ae9099d06a635b4eee00f9e3b14901d2647ca34a01aa0852afd111c2d",
+        "translation_hash": "d7b3d14036070ad52a92b8c16a93392e9164a742d814ffbb1058d1d0ff9bbb26",
+        "back_translation_hash": "63b777ad677fad426bf590a8af51c107327999388e55c10b9d08889d79861453",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "Hallazgo posterior v21 en el mismo crudo: La vuelta usa image/picture/images para el dibujo CAD. Pierde precisión técnica frente a drawing; gambar conserva dibujo en el contexto DXF. Imprecisión de vuelta independiente de la ida. Solo vuelta; fuente, ida, rúbrica y gate históricos conservados."
+          }
+        }
+      },
+      {
+        "record_id": "ed9fac6734eea8a869be7fc69dd35dd1058425c62076c08d84cb3a0a4a97e082",
+        "translation_hash": "9af9eaad68fb7632dc628723d37908fff59cf504e3588d8bf6dbd883fb66c559",
+        "back_translation_hash": "0b285e096a70de5632963a995216288402906bf271fc541916fa382f12cb2194",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "Hallazgo posterior v21 en el mismo crudo: La vuelta usa image/picture/images para el dibujo CAD. Pierde precisión técnica frente a drawing; gambar conserva dibujo en el contexto DXF. Imprecisión de vuelta independiente de la ida. Solo vuelta; fuente, ida, rúbrica y gate históricos conservados."
+          }
+        }
+      }
+    ]
   }
 ]

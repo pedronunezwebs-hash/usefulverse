@@ -1,9 +1,9 @@
 {
-  "at_utc": "2026-10-24T06:27:01.709148+00:00",
+  "at_utc": "2026-10-24T06:41:29.353780+00:00",
   "automatic_approval": false,
   "approved_locales": [],
   "note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
-  "evaluations": 5484,
+  "evaluations": 5750,
   "groups": [
     {
       "review_file": "review-context-v2-m2m100.json",
@@ -1301,6 +1301,32 @@
       "rows": 40,
       "points": 360,
       "maximum": 360,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 0,
+      "minor_rows": 0
+    },
+    {
+      "review_file": "review-context-v21-full-legacy.json",
+      "policy": "context-v21",
+      "locale": "id",
+      "candidate": "legacy",
+      "rows": 92,
+      "points": 799,
+      "maximum": 828,
+      "button_errors": 0,
+      "number_negation_errors": 0,
+      "major_rows": 10,
+      "minor_rows": 1
+    },
+    {
+      "review_file": "review-context-v21-full.json",
+      "policy": "context-v21",
+      "locale": "id",
+      "candidate": "madlad+complete-sentences+reviewed-memory",
+      "rows": 174,
+      "points": 1566,
+      "maximum": 1566,
       "button_errors": 0,
       "number_negation_errors": 0,
       "major_rows": 0,
