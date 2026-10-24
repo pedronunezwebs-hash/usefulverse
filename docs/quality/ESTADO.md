@@ -16,13 +16,11 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
    Las 300 fuentes conservan `indexable:false`, fuera de sitemap/hreflang y sin bloqueo robots. Las 700 existentes se conservan.
    **0/300 en main; 0 activadas.** Capacidad Pages y 37 traducciones revisadas/nb real pendientes; no avanzar a fase 0.
 
-   **V22 · zh-CN: referencias rechazadas, completo no ejecutado.** Modelo 344/360 y legacy 223/243; comparación común 27: 232/243 frente 223/243.67 textos leídos, 60 avisos conciliados, 37 fixtures nuevas.16 datos no probados bloquean por separado; no se inventan errores lingüísticos.14.310 registros/5.817 evaluaciones/967 fixtures. Parser global, gramática v19,263 memorias e historia conservados. CI final 40090517822 correcta; GET/XML antes/después sin cambios. Retirada efectiva verificada; candado LIBRE.
+   **V23 · zh-CN360/360, gate bloqueado por1 input completo sin prueba; completo no ejecutado.** Nueve idas corregidas,16 carencias anteriores resueltas, cuatro regresiones nuevas.14.377 registros/5.884 evaluaciones/971 fixtures. Validación local7,65× más rápida y5/103 fragmentos evitados en el modelo, sin coste. [Informe v23](lotes/2026-10-24-piloto-v23.md). CI/GET final y retirada efectiva pendientes; candado EN CURSO.
 
-   Pasan muestra completa conocida ES/NB(v15), KO(v18), ID(v21); siete destinos revisados sin pasar (zh-CN nuevo y seis históricos),25 sin revisión detallada.0 idiomas aprobados. P-001–P-008 pendientes/0 FALLA.
+   Pasan muestra completa conocida ES/NB(v15), KO(v18), ID(v21); zh-CN bloqueado por contrato, seis históricos sin pasar y25 sin revisión detallada.0 idiomas aprobados. P-001–P-008 pendientes/0 FALLA.
 
-   [Informe v22](lotes/2026-10-24-piloto-v22.md). Código/datos en la rama del PR, sin desplegar.
-
-   **Siguiente exacto:** Crear v23 independiente: primero reproducir callbacks/trazas y test rojo de las nueve idas modelo negativas de review-context-v22-references.json (loaded, decodeFailed, faq 1 a, faq 2 a de voz; daily de Shikaku; faq.2.a, unsupported, measurement y resetView de DXF), después correcciones por memoria exacta fuente/hash/contexto. Conservar las 263 memorias previas. Antes de volver a referencias, resolver mediante contrato zh-CN versionado y tests los 16 datos no probados: clasificadores 一个/最后一个, 四 y 六/6, one/six en fuente y 二进制 como término binario; no ampliar el parser global, no aceptar por defecto ni cambiar la gramática/política/crudos/revisiones v22 o v19. No inventar defectos lingüísticos a partir de gramática no soportada ni aprobar un gate con unproved-data. Referencias y todos sus avisos primero; completo solo si pasan, mismas 88 claves y lectura de todas 174 modelo+92 legacy disponibles. Después los otros 25 destinos sin revisión detallada; ha/am/te/gu/ta/mr/sw requieren 80 muestras. ES/NB conservanv15, KOv18 e IDv21; seis destinos antiguos conservan evidencia histórica sin aprobar. No repetir run 40089099175. Paso A sigue abierto por capacidad Pages y 37 traducciones revisadas/nb real; no avanzar fase 0.
+   **Siguiente exacto:** Crear v24 independiente sin repetir los runs v23. Primero reproducir el callback/traza real de shikaku.fields.faq.1.a en context-v23: marker_restore_ok es falso aunque la fuente canónica y los fragmentos pasan; test rojo que exija prueba del input controlado completo. Añadir contrato léxico explícito de A rectangle cannot contain multiple number clues. Each rectangle must contain exactly one number clue. ligado a model_input/hash/contexto/registro observado; no cambiar política, perfil, Unicode17 fijado, checkpoints o revisiones v23 ni gramáticas históricas. Hacer preflight de las 214 fuentes, inputs controlados completos y sus fragmentos ingleses para detectar otros huecos de prueba antes del modelo. Conservar los 274 destinos de memoria, caché cruda por instancia/dirección y el bloqueo de cualquier cifra desconocida; parser global sigue rechazando zh-CN/id. Referencias y todos los avisos primero; completo solo si pasa el gate, mismas 88 claves y lectura de todas las174 modelo+92 legacy disponibles. Después los otros25 destinos sin revisión detallada; ha/am/te/gu/ta/mr/sw requieren80 muestras. ES/NB conservanv15, KOv18 e IDv21; seis destinos antiguos conservan evidencia histórica sin aprobar. No repetir 40108791297/40109970196 ni40089099175. Paso A sigue abierto por capacidad Pages y37 traducciones revisadas/nb real; no avanzar fase0.
 
 2. **Fase 0** del RUNBOOK §4 + **caché con hash de los 106 JS** (AUDITORIA-CATALOGO G1) + **fase 0b**:
    los 26 errores confirmados de `AUDITORIA-CATALOGO.md` §2, primero test y después arreglo.
@@ -49,6 +47,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 ## 3. Checklist general (marcar con [x] y fecha)
 
 ### Planificación
+- [x] V23: nueve idas zh-CN corregidas y16 contratos resueltos;360/360 lingüístico, gate bloqueado por1 input completo sin prueba; aceleración gratuita y cuatro regresiones nuevas ·2026-10-24. CI/retirada pendientes.
 - [x] V22 infraestructura/referencias zh-CN revisadas: gate rechazado,37 fixtures y 16 datos no probados separados; completo no ejecutado ·2026-10-24. CI final correcta; retirada efectiva verificada.
 - [x] Diagnóstico de la caída del 16-oct (`docs/recovery/README.md`) · 2026-10-20
 - [x] Decisiones: sin `noindex` masivo en las 700; 37 idiomas; no se borra ninguna herramienta · 2026-10-20
@@ -146,6 +145,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
 | Fecha | Agente | Qué | PR / commit | Verificado en producción |
 |---|---|---|---|---|
+|2026-10-24|Codex|V23: zh-CN360/360, bloqueado por1 contrato; validación7,65× y5/103 fragmentos evitados|[PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136)|GET/XML inicial25.625 URLs; tres soft404. Sin deploy.|
 |2026-10-24|Codex|V22: zh-CN referencias 344/360 rechazadas;37 fixtures, sin completo|[PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136)|GET/XML inicial 25.625 URLs, tres soft 404. Sin deploy.|
 | 2026-10-24 | Codex | V21: indonesio: referencias 360/360 y completo conocido 1566/1566 | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136) | GET/XML 25.625 URLs; tres soft404 pendientes. Sin deploy. |
 | 2026-10-24 | Codex | V20: referencias id 360/360; completo rechazado 1454/1566, 130 fixtures nuevas | [PR #136](https://github.com/pedronunezwebs-hash/usefulverse/pull/136) | GET/XML 25.625 URLs; tres soft404 pendientes. Sin deploy. |
