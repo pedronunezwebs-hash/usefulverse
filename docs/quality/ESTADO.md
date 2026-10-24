@@ -30,7 +30,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 
    Suite local final: 138 tests (136 correctos/dos dependencias omitidas) y dos Node de corpus. Siete tests nuevos respecto a v20; memoria primero roja (cinco tests/52 errores), portabilidad AST primero roja (un test/un error) y cobertura actual roja antes de cada grupo de fixtures. Runners reales: 137 tests en las referencias correctas y 138 en completo, anteriores a las 33 fixtures nuevas del completo; la CI final verifica el estado definitivo. INT8 con los mismos hashes v20, limpieza correcta y cero artefactos/publicaciones en todos los intentos. Completo: 327,58 s totales, 122,35 s de conversión y pico 3.712.364 KiB. Modelos y builds completos solo en Actions.
 
-   CI final pendiente; el candado permanece EN CURSO.
+   [CI final 40071558919](https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40071558919), fuente `212760583100753802a3528d4ef21c66c4aad061`, correcta: 3.045 Node y 138 Python (136 correctos y dos omitidos por dependencias). Check de 10.260 URLs, puerta de 20 locales existentes, hub 217+100+106 y preview de 11.293 archivos/10.800 herramientas y todas las homes noindex correctos; sitemap indexable 0. Ambas publicaciones y job de modelo omitidos, cero artefactos. No certifica los 37 idiomas.
 
    Producción GET/XML antes/después: 25.625 URLs sin cambios de estado, bytes o hash; tres rutas falsas del hub siguen 200 (soft404 pendientes de fase 0). Seguridad: Actionlint 1.7.12 y Gitleaks 8.30.1 oficiales con checksum; cero secretos tras excluir solo el falso positivo exacto de un objeto Git histórico verificado. Sin despliegue, activación, envío a buscadores ni cambios de src/public; 0/300 en main.
 
