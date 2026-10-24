@@ -33,6 +33,8 @@ Revisado el 20-oct-2026 sobre `main` (`pedronunezwebs-hash/usefulverse`, **públ
 
 - **V18 · verificado:** Coreano: referencias 360/360 y completo 1566/1566; CI final verde. [Informe](lotes/2026-10-23-piloto-v18.md). Políticas/datos/gramática anteriores intactos; solo registro v18 y auditoría ampliada. Cero idiomas/herramientas aprobados o publicados.
 
+- **V19 ·24-oct:** contrato id versionado, parser global/historia intactos. Referencias modelo348/360 y legacy 233/243 rechazadas; completo no ejecutado.761 fixtures/0 idiomas aprobados, sin despliegue. [Informe](lotes/2026-10-24-piloto-v19.md).
+
 ## Carpetas clave
 
 | Ruta | Qué hay |
