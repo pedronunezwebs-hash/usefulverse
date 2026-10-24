@@ -6,7 +6,14 @@
   ],
   "external_owned_zip_removed": [],
   "external_owned_zip_remaining": 0,
-  "internal_owned_zip_to_remove_with_root": [
+  "only_owned_paths": true,
+  "root_basename": "usefulverse-codex-v22-20261024.pbdcr7j4",
+  "root_retired_yet": true,
+  "retired_at": "2026-10-24T18:48:55.162410+07:00",
+  "root_absent_verified": true,
+  "owned_bytes_removed": 548751808,
+  "free_bytes_after": 41147142144,
+  "internal_owned_zip_removed_with_root": [
     {
       "basename": "run-log-40089099175-1792840469.zip",
       "bytes": 95565,
@@ -17,8 +24,5 @@
       "bytes": 241110,
       "sha256": "7fff96884fa14b174d2fa902120a8008451a89ae80882ecfaa26b5d43279a9a5"
     }
-  ],
-  "only_owned_paths": true,
-  "root_basename": "usefulverse-codex-v22-20261024.pbdcr7j4",
-  "root_retired_yet": false
+  ]
 }

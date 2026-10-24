@@ -39,7 +39,7 @@ Revisado el 20-oct-2026 sobre `main` (`pedronunezwebs-hash/usefulverse`, **públ
 
 - **V21 · 24-oct:** indonesio: referencias 360/360 y completo conocido 1566/1566. Gramática v19 y todos los históricos conservados; sin publicación/aprobación de idioma. [Informe](lotes/2026-10-24-piloto-v21.md).
 
-- **V22 · 24-oct:** gramática decimal zh-CN independiente; parser global, v19 y 263 memorias intactos. Referencias 344/360, legacy 223/243 rechazadas; 16 datos no probados bloquean por separado, 37 fixtures nuevas.67 textos y 60 avisos revisados; completo no ejecutado. CI final correcta; retirada pendiente, sin despliegue/aprobación. [Informe](lotes/2026-10-24-piloto-v22.md).
+- **V22 · 24-oct:** gramática decimal zh-CN independiente; parser global, v19 y 263 memorias intactos. Referencias 344/360, legacy 223/243 rechazadas; 16 datos no probados bloquean por separado, 37 fixtures nuevas.67 textos y 60 avisos revisados; completo no ejecutado. CI final correcta; retirada efectiva verificada, sin despliegue/aprobación. [Informe](lotes/2026-10-24-piloto-v22.md).
 
 ## Carpetas clave
 
