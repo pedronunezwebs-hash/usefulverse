@@ -5,6 +5,7 @@ import importlib.util
 import json
 from pathlib import Path
 import unittest
+from decimal import Decimal
 from unittest.mock import patch
 
 spec = importlib.util.spec_from_file_location('pilot', Path(__file__).with_name('translation-pilot.py'))
@@ -87,11 +88,16 @@ class IndonesianNumbersTest(unittest.TestCase):
         for policy,value in proof['historical_policy_digests'].items():
             self.assertEqual(pilot.policy_digest(policy),value)
         flags={}
-        for path in sorted((data/'checkpoints').rglob('*.jsonl')):
-            for row in map(json.loads,path.read_text().splitlines()):
-                if row.get('inference_policy')=='context-v19':continue
-                pilot.validate_record(row)
-                flags[row['record_id']]=pilot.record_flags(row)
+        original=pilot.SEMANTIC_REGRESSIONS[:732]
+        self.assertEqual(pilot.digest(original),proof['fixture_prefix_digest'])
+        # New linguistic discoveries can flag old raw id outputs. Isolate the
+        # original fixture prefix to compare numeric/inference behavior itself.
+        with patch.object(pilot,'SEMANTIC_REGRESSIONS',original):
+            for path in sorted((data/'checkpoints').rglob('*.jsonl')):
+                for row in map(json.loads,path.read_text().splitlines()):
+                    if row.get('inference_policy')=='context-v19':continue
+                    pilot.validate_record(row)
+                    flags[row['record_id']]=pilot.record_flags(row)
         self.assertEqual(len(flags),13510)
         self.assertEqual(pilot.digest(flags),proof['record_flags_digest'])
 
@@ -100,5 +106,20 @@ class IndonesianNumbersTest(unittest.TestCase):
         policy['numeric_profile']['manifest_sha256']='0'*64
         with patch.dict(pilot.POLICIES,{'context-v19':policy}),self.assertRaisesRegex(ValueError,'numeric profile'):
             self.valid('Limit 25 MB.','Batas 25 MB.')
+
+    def test_generated_grouped_decimals_round_trip_and_detect_changed_value(self):
+        for integer in [0,1,12,999,1000,1234,999999,1000000,1234567,200000,999999999]:
+            for sign in [-1,1]:
+                for fraction in ['0.00','0.25','0.89']:
+                    value=sign*(Decimal(integer)+Decimal(fraction))
+                    en=format(value,',.2f')
+                    local=en.translate(str.maketrans({',':'.','.':','}))
+                    source='Value '+en+'.';target='Nilai '+local+'.'
+                    with self.subTest(value=str(value)):
+                        self.assertTrue(self.valid(source,target))
+                        self.assertTrue(all(pilot.policy_typed_data_checks(target,source,'id','en','context-v19').values()))
+                        wrong=format(value+1,',.2f').translate(str.maketrans({',':'.','.':','}))
+                        self.assertFalse(self.valid(source,'Nilai '+wrong+'.'))
+        self.assertFalse(self.valid('Version 1.234.567.','Versi 1.234.567.'),'Ambiguous version/grouped integer must stay blocked; code spans are exact')
 
 if __name__=='__main__':unittest.main()

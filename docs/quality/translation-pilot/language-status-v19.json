@@ -18,7 +18,6 @@
     "ar"
   ],
   "detailed_review_pending": [
-    "id",
     "zh-CN",
     "bn",
     "ru",
@@ -48,5 +47,15 @@
   ],
   "current_destination": "id",
   "approved_for_release": [],
-  "note": "Known sample pass is not full1000-tool translation, unseen-text/native validation or publication. Automatic references exist for all36 destinations; seven low-resource destinations require80 reviewed samples."
+  "note": "Known sample pass is not full1000-tool translation, unseen-text/native validation or publication. Automatic references exist for all36 destinations; seven low-resource destinations require80 reviewed samples.",
+  "current_reviewed_but_not_passing": {
+    "id": "context-v19"
+  },
+  "counts": {
+    "source": 1,
+    "known_full_sample_pass": 3,
+    "reviewed_not_passing": 7,
+    "detailed_review_pending": 26,
+    "approved_for_release": 0
+  }
 }

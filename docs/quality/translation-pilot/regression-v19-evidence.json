@@ -62,5 +62,19 @@
     "tests": 6,
     "errors": 36,
     "log_tail": "eturn io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/private/var/folders/p7/75l6dszs15v1_1nt8pkv7lcm0000gn/T/usefulverse-codex-v19-20261024.4dqttnzz/repo/docs/quality/translation-pilot/numeric-sources/context-v19/manifest.json'\n\n======================================================================\nERROR: test_versions_coordinates_code_and_opaque_contracts (test_translation_indonesian_numbers.IndonesianNumbersTest.test_versions_coordinates_code_and_opaque_contracts)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/var/folders/p7/75l6dszs15v1_1nt8pkv7lcm0000gn/T/usefulverse-codex-v19-20261024.4dqttnzz/repo/scripts/localization/test_translation_indonesian_numbers.py\", line 59, in test_versions_coordinates_code_and_opaque_contracts\n    self.assertTrue(self.valid(source,target))\n                    ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/private/var/folders/p7/75l6dszs15v1_1nt8pkv7lcm0000gn/T/usefulverse-codex-v19-20261024.4dqttnzz/repo/scripts/localization/test_translation_indonesian_numbers.py\", line 15, in valid\n    return all(pilot.policy_typed_data_checks(source,target,'en','id','context-v19').values())\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: module 'pilot' has no attribute 'policy_typed_data_checks'. Did you mean: 'typed_data_checks'?\n\n----------------------------------------------------------------------\nRan 6 tests in 0.005s\n\nFAILED (errors=36)\n"
+  },
+  "fixture_prefix_count": 732,
+  "fixture_prefix_digest": "be9929f1f26247ad993db01f189a030763c2ce5e50c9a375936a662926ad34a8",
+  "flags_comparison_scope": "Original732 fixtures isolate historical numeric/inference behavior; new linguistic discoveries may flag identical old Indonesian raw outputs without changing bytes/digests.",
+  "review_regressions": {
+    "red_tests": 1,
+    "red_failures": 30,
+    "new_unique_fixtures": 29,
+    "new_forward": 12,
+    "new_back": 17,
+    "current_back_findings": 18,
+    "duplicate_back_texts_shared": 1,
+    "log_sha256": "033a02ce09a43989423fc1fbd557057c0c0cb93368bffcdf35953f75424399d3",
+    "log_tail": "st):\n  File \"/private/var/folders/p7/75l6dszs15v1_1nt8pkv7lcm0000gn/T/usefulverse-codex-v19-20261024.4dqttnzz/repo/scripts/localization/test_translation_indonesian_current_review.py\", line 39, in test_all_current_forward_and_back_findings_have_exact_fixtures\n    self.assertTrue(pilot.semantic_issues(row['key'], row['source_hash'], row['back_translation'], 'id', 'back'), 'Observed back finding has no exact permanent fixture')\n    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: [] is not true : Observed back finding has no exact permanent fixture\n\n----------------------------------------------------------------------\nRan 1 test in 0.006s\n\nFAILED (failures=30)\n"
   }
 }
