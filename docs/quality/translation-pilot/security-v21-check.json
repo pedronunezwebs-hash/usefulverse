@@ -25,5 +25,7 @@
   "pre_ci_scan_at_utc": "2026-10-24T06:45:01.174532+00:00",
   "pre_ci_findings": 0,
   "final_scan_at_utc": "2026-10-24T06:51:28.635338+00:00",
-  "final_findings": 0
+  "final_findings": 0,
+  "remote_proof_scan_findings": 0,
+  "remote_proof_scan_at_utc": "2026-10-24T06:52:08.019540+00:00"
 }
