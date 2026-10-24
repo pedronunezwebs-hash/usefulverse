@@ -59,5 +59,30 @@
     "failures": 1,
     "observed": "The v19 guard accidentally included future v20 rows:13577 instead of original13510. Pin original policy set from original proof; original732-fixture digest and13510 records remain mandatory. New v20 guard independently covers all13577 historical records and original761 fixtures.",
     "log_sha256": "835fa43fd6736c93653ee5ecb6844db3be87fa7c9c8334dcb513131347a2a249"
+  },
+  "full_current_review": {
+    "red_tests": 1,
+    "red_failures": 126,
+    "red_log_sha256": "f91cb51f81ef9ac7ac2a7c7ebaefebdec5be928a3770e40be8edc49a11f02045",
+    "new_unique_fixtures": 125,
+    "new_forward": 61,
+    "new_back": 64,
+    "shared_exact_back_fixture": 1,
+    "all_current_records_read": 333,
+    "new_records_read": 266,
+    "reference_review_only_change": "Added reciprocal supplemental model warning coverage; reference rows, grades, source evidence and pre-full gate identical to full dispatch source1dd6e08da8c9107112a93e13ce1750fd1b68cd8b.",
+    "reference_before_full_sha256": "e75255afa6b95d684ef808fa8a3b4bb383a5892b10683786d4681941b3e11267",
+    "review_sha256": {
+      "review-context-v20-references.json": "73d6ed152c407115c696f47c9e1d986b1d54a0e70696dabee1645f65a67e6b32",
+      "review-context-v20-legacy.json": "142d9a565e8ba4fa3db8163d215c82baf98125bc11561ea4639372ea467d2541",
+      "review-context-v20-full.json": "cafc8eba30f688cf821060c570f49e83bee6605e84d5826539594c6b57b10555",
+      "review-context-v20-full-legacy.json": "fcffb73a8537897138d6bbe80028ca86105b461892657c7a4f5cdd98ba0c2328"
+    }
+  },
+  "local_final_suite": {
+    "tests": 131,
+    "passed": 129,
+    "dependency_skips": 2,
+    "log_sha256": "068a0f61941b165e4958188493a45f7b0a44124234c739508b6ec2babd890d98"
   }
 }

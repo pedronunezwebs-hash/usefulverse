@@ -35,6 +35,8 @@ Revisado el 20-oct-2026 sobre `main` (`pedronunezwebs-hash/usefulverse`, **públ
 
 - **V19 ·24-oct:** contrato id versionado, parser global/historia intactos. Referencias modelo348/360 y legacy 233/243 rechazadas; completo no ejecutado.761 fixtures/0 idiomas aprobados, sin despliegue. [Informe](lotes/2026-10-24-piloto-v19.md).
 
+- **V20 · 24-oct:** referencias id 360/360; completo rechazado 1454/1566, 130 fixtures nuevas. Gramática v19 y todos los históricos conservados; sin publicación/aprobación de idioma. [Informe](lotes/2026-10-24-piloto-v20.md).
+
 ## Carpetas clave
 
 | Ruta | Qué hay |

@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-24T01:37:12.069551+00:00",
+  "at_utc": "2026-10-24T05:48:49.207221+00:00",
   "corpus_digest": "973363f6406d71eb55da472f83cfa0b75c33f95a106ddd48f12bdda2cc118554",
   "source_locale": "en",
   "product_locales": 37,
@@ -9,7 +9,7 @@
   "reference_computation_complete": true,
   "full_tool_pilot_complete": false,
   "approved_locales": [],
-  "agent_reviewed_translations": 5151,
+  "agent_reviewed_translations": 5417,
   "native_review": false,
   "engines": {
     "m2m100": {
@@ -315,17 +315,18 @@
       "locale": "te"
     }
   ],
-  "agent_reviewed_evaluations": 5151,
+  "agent_reviewed_evaluations": 5417,
   "evaluation_count_note": "Evaluation counts can repeat the same text across policies/candidates; no native review claimed. Full sample scores are not comparable to the 40-reference totals.",
   "full_tool_computation_locales": [
     "es",
     "nb-NO",
-    "ko"
+    "ko",
+    "id"
   ],
   "full_tool_computation_policy": "mixed-per-locale",
   "full_tool_pilot_approved_locales": [],
-  "total_records_all_policies": 13644,
-  "semantic_regressions": 766,
+  "total_records_all_policies": 13910,
+  "semantic_regressions": 891,
   "contextual_reference_gate": {
     "es": {
       "passed": true,
@@ -453,6 +454,19 @@
       "known_reviewed_memory_rows": 38,
       "pure_model_rows": 136,
       "global_no_open_defects_requirement": "Any observed forward defect outside88 blocks global; the same fixed sample and all174 current nonreferences are reviewed."
+    },
+    "id": {
+      "rows": 174,
+      "sample": 174,
+      "points": 1454,
+      "maximum": 1566,
+      "button_errors": 2,
+      "number_negation_errors": 1,
+      "major_rows": 33,
+      "minor_rows": 17,
+      "passed": false,
+      "minimum_style_budget_met": false,
+      "reason": "Direct current agent reading; exact known memory declared. Expanded scope blocks any observed open forward defect. No native/blind/unseen-text validation or locale approval."
     }
   },
   "contextual_policies_reviewed": [
@@ -504,19 +518,20 @@
     "model_references": 40,
     "legacy_references": 27,
     "model_gate_passed": true,
-    "full_dispatched": false,
+    "full_dispatched": true,
     "approved_locales": []
   },
   "engines_inventory_note": "Baseline computation inventory retained; contextual counts in context-run-evidence.json. Only id reviewed in v20; ES/NB retain v15 and KO v18. Six other destinations retain historical evidence, not fresh validation. Known-memory pilot only; no language approval.",
   "full_tool_gate_policy_by_locale": {
     "es": "context-v15",
     "nb-NO": "context-v15",
-    "ko": "context-v18"
+    "ko": "context-v18",
+    "id": "context-v20"
   },
   "latest_full_pilot": {
-    "policy": "context-v18",
-    "locale": "ko",
-    "run_id": 39980833943,
+    "policy": "context-v20",
+    "locale": "id",
+    "run_id": 40050727169,
     "current_outputs_read": 333,
     "model_nonreferences": 174,
     "legacy_nonreferences": 92,

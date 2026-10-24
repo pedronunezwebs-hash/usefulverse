@@ -1107,5 +1107,8 @@
     "legacy_points": 233,
     "maximum": 243,
     "frozen_engine": false
-  }
+  },
+  "warning_coverage_supplemental_reviews": [
+    "review-context-v20-full.json"
+  ]
 }
