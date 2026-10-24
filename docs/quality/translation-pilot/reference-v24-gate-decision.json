@@ -39,8 +39,10 @@
   "all_current_outputs_read": 67,
   "warning_records_reconciled": 57,
   "back_findings": 17,
-  "full_dispatched": false,
+  "full_dispatched": true,
   "source_forward_back_identical_to_v23": 67,
   "only_forward_acceptance_change": "shikaku.fields.faq.1.a false→true in newly measuredv24; originalv23record unchanged",
-  "approved_locales": []
+  "approved_locales": [],
+  "full_run_id": 40114620348,
+  "full_run_url": "https://github.com/pedronunezwebs-hash/usefulverse/actions/runs/40114620348"
 }

@@ -206,7 +206,7 @@
     "planned_at_utc": "2026-10-24T06:08:33.319454+00:00",
     "selected_before_full_results_collection": true,
     "run_already_started": false,
-    "scope": "Read all174 current Indonesian model nonreference source/forward/back units, plus separate40 model references and27 legacy references; no observed forward defect outside88 may be hidden.",
+    "scope": "Read all174 current Chinese model nonreference source/forward/back units, plus separate40model references and27legacy references; every observed forward defect or unproved data outside88blocks global.",
     "keys": [
       "dxf-viewer.description",
       "dxf-viewer.details",
@@ -485,8 +485,8 @@
     "selected_before_full_dispatch": true,
     "scope": "Separate direct read of existing-copy nonreferences; not a prerequisite that old copy pass the better model gate. No publication changes."
   },
-  "source_plan_file": "full-sample-v22-plan.json",
-  "source_plan_sha256": "ca07adc3d6d4bd5f7ed2ef9d0afd29679988960bcec50c84e3dafb59dc54a96b",
+  "source_plan_file": "full-sample-v23-plan.json",
+  "source_plan_sha256": "3af828c8edcc9c6aa0c279db7860cdc116fe6dafec16cd36b23243a20d9255db",
   "known_memory_corrections": [
     "dxf-viewer.faq.2.a",
     "dxf-viewer.fields.measurement",
@@ -500,5 +500,15 @@
     "voice-changer.fields.faq2a",
     "voice-changer.fields.loaded"
   ],
-  "full_dispatch_authorized": false
+  "full_dispatch_authorized": true,
+  "authorization": {
+    "reference_run_id": 40113864520,
+    "reference_gate_passed": true,
+    "full_run_id": 40114620348,
+    "source_commit": "6ad96f98df4b208f71df4f85162cab240526f41c",
+    "metadata_clarified_at_utc": "2026-10-24T17:11:47.714098+00:00",
+    "keys_unchanged_from_pre_dispatch_plan": true,
+    "fixed88_keys_sha256": "99cf197f682fb5ac5b3512554ce2c77582ae3838110245d9be1e5c8a1e3f180a",
+    "note": "Correct inherited Indonesian wording to Chinese and record gate authorization; no key/sample change. Pre-dispatch plan retained in full run source commit."
+  }
 }
