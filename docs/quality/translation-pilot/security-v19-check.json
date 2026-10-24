@@ -27,5 +27,9 @@
     "actionlint": "passed",
     "gitleaks_findings": 0,
     "code_policy_data_review_fixtures_after_ci_unchanged": true
+  },
+  "remote_receipt_scan": {
+    "at_utc": "2026-10-24T01:22:33.816946+00:00",
+    "gitleaks_findings": 0
   }
 }
