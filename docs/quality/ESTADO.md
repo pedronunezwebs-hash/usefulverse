@@ -4,7 +4,7 @@
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
 **Última actualización:** 2026-10-24 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-24T19:07:44.742821+07:00 · v23: zh-CN y aceleración gratuita medida
+**Turno actual (candado):** LIBRE · Codex · 2026-10-24T23:30:33.226240+07:00 · v23 verificado y retirada efectiva
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
@@ -16,7 +16,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
    Las 300 fuentes conservan `indexable:false`, fuera de sitemap/hreflang y sin bloqueo robots. Las 700 existentes se conservan.
    **0/300 en main; 0 activadas.** Capacidad Pages y 37 traducciones revisadas/nb real pendientes; no avanzar a fase 0.
 
-   **V23 · zh-CN 360/360, gate bloqueado por 1 input completo sin prueba; completo no ejecutado.** Nueve idas corregidas, 16 carencias anteriores resueltas, cuatro regresiones nuevas.14.377 registros/5.884 evaluaciones/971 fixtures. Validación local7, 65× más rápida y 5/103 fragmentos evitados en el modelo, sin coste. [Informe v23](lotes/2026-10-24-piloto-v23.md). CI final 40111019015 y GET/XML sin cambios; retirada efectiva pendiente, candado EN CURSO.
+   **V23 · zh-CN 360/360, gate bloqueado por 1 input completo sin prueba; completo no ejecutado.** Nueve idas corregidas, 16 carencias anteriores resueltas, cuatro regresiones nuevas.14.377 registros/5.884 evaluaciones/971 fixtures. Validación local7, 65× más rápida y 5/103 fragmentos evitados en el modelo, sin coste. [Informe v23](lotes/2026-10-24-piloto-v23.md). CI final 40111019015 y GET/XML sin cambios; retirada efectiva verificada; candado LIBRE.
 
    Pasan muestra completa conocida ES/NB(v15), KO(v18), ID(v21); zh-CN bloqueado por contrato, seis históricos sin pasar y 25 sin revisión detallada.0 idiomas aprobados. P-001–P-008 pendientes/0 FALLA.
 
@@ -47,7 +47,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 ## 3. Checklist general (marcar con [x] y fecha)
 
 ### Planificación
-- [x] V23: nueve idas zh-CN corregidas y 16 contratos resueltos; 360/360 lingüístico, gate bloqueado por 1 input completo sin prueba; aceleración gratuita y cuatro regresiones nuevas ·2026-10-24. CI final 40111019015 correcta; retirada pendiente.
+- [x] V23: nueve idas zh-CN corregidas y 16 contratos resueltos; 360/360 lingüístico, gate bloqueado por 1 input completo sin prueba; aceleración gratuita y cuatro regresiones nuevas ·2026-10-24. CI final 40111019015 correcta; retirada efectiva verificada.
 - [x] V22 infraestructura/referencias zh-CN revisadas: gate rechazado,37 fixtures y 16 datos no probados separados; completo no ejecutado ·2026-10-24. CI final correcta; retirada efectiva verificada.
 - [x] Diagnóstico de la caída del 16-oct (`docs/recovery/README.md`) · 2026-10-20
 - [x] Decisiones: sin `noindex` masivo en las 700; 37 idiomas; no se borra ninguna herramienta · 2026-10-20
@@ -198,3 +198,7 @@ Retirada efectiva el 2026-10-24T13:53:17.067234+07:00: eliminada directamente y 
 ## Cierre v22
 
 Retirada efectiva el 2026-10-24T18:48:55.162410+07:00: eliminada directamente y sin Papelera solo la carpeta propia usefulverse-codex-v22-20261024.pbdcr7j4; ruta comprobada ausente. Tamaño previo 548751808 bytes; disco libre posterior 38.3213 GiB (41147142144 bytes). Antes de borrar: 7595 archivos versionados y 594 críticos recuperables por árbol Git/índice; seis documentos idénticos,229 archivos históricos, prefijo930 y104 grupos anteriores conservados; estados/slugs/capas de progress y src/public intactos. Código/datos/revisiones/fixtures iguales a CI final40090517822; solo metadatos/documentación posteriores, incluida errata editorial explícita. Cero punteros LFS. Dos runs correctos, cero artefactos/publicaciones y limpieza de modelos correcta. Cero ZIP propios externos restantes; 2 ZIP internos retirados con clon, scripts, QA, binarios y cachés. Sin modelos de traducción ni builds completos locales. Fuentes verificadas: feature 58dee9d7fdf5d4036a592b7252f6ea770e600eee, main bd7dd5ab74ae49f22342ac7634eb21f30b2c5455. Candado liberado después de la retirada.
+
+## Cierre v23
+
+Retirada efectiva el 2026-10-24T23:30:33.226240+07:00: eliminada directamente y sin Papelera solo la carpeta propia usefulverse-codex-v23-20261024.ew4x29t7; ruta comprobada ausente. Tamaño lógico previo 552363050 bytes; disco libre posterior 38.0762 GiB (40884035584 bytes). Antes de borrar: 7625 archivos versionados recuperables por árbol Git/índice, seis documentos idénticos, 250 archivos históricos, prefijo 967,106 grupos y nueve adendas conservados; estados/slugs/capas de progress y src/public intactos. Código/datos/revisiones/fixtures iguales a CI final 40111019015; después solo documentación/metadatos. Cero punteros LFS. Dos runs correctos y un intento previo fallido por prueba Unicode sin inferencia; cero artefactos/publicaciones y limpieza de modelos correcta. Cero ZIP propios externos restantes; tres ZIP de Actions internos y un ZIP de biblioteca versionada retirados con el clon propio, scripts, QA, binarios y cachés (originales recuperables en Git). Sin modelos de traducción ni builds completos locales. Fuentes verificadas antes de retirar: feature d96b8535e0d87a098d93187692a971387d945806, main ec2c46110c1050d15e9d35684f772e9c2a4794b0. Candado liberado después de la retirada.

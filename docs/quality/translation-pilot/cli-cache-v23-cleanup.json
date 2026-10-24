@@ -30,9 +30,23 @@
       "bytes": 242351
     }
   ],
-  "root_retired": false,
+  "root_retired": true,
   "root_name": "usefulverse-codex-v23-20261024.ew4x29t7",
   "scope": "Only exact owned run-ID archives removed externally. No unrelated user/agent cache touched. Root will be removed only after all versioned originals are recoverable online and full Git blob/mode verification succeeds.",
   "internal_cli_archives_count": 3,
-  "versioned_clone_archive_note": "One of4listed internal ZIPs is public/growth600-vendor/pyodide-314.0.7/python_stdlib.zip in own clone; Git mode/blob recovery checked. Other3 are owned Actions log caches. Deleting clone never deletes remote originals."
+  "versioned_clone_archive_note": "One of4listed internal ZIPs is public/growth600-vendor/pyodide-314.0.7/python_stdlib.zip in own clone; Git mode/blob recovery checked. Other3 are owned Actions log caches. Deleting clone never deletes remote originals.",
+  "retired_at": "2026-10-24T23:30:33.226240+07:00",
+  "root_absence_verified": true,
+  "owned_internal_cli_archives_remaining": 0,
+  "internal_cli_archives_retired": 3,
+  "free_bytes_after_cleanup": 40884035584,
+  "pre_retirement_verification": {
+    "feature_commit": "d96b8535e0d87a098d93187692a971387d945806",
+    "main_commit": "ec2c46110c1050d15e9d35684f772e9c2a4794b0",
+    "remote_index_files": 7625,
+    "whole_tree_sha256": "72182e6942a739f3ed934da6bd01b1d81394216ea30f5892dc23a133b6aace73",
+    "all_local_versioned_originals_recoverable_online": true,
+    "six_documents_identical": true,
+    "only_metadata_after_ci": true
+  }
 }
