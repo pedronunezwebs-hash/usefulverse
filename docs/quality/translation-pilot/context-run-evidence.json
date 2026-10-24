@@ -1,5 +1,5 @@
 {
-  "at_utc": "2026-10-24T16:16:10.701049+00:00",
+  "at_utc": "2026-10-24T17:05:49.998397+00:00",
   "approved_locales": [],
   "runs": [
     {
@@ -1327,6 +1327,37 @@
         "scope": "references",
         "total_seconds": 171.884367842
       }
+    },
+    {
+      "inference_policy": "context-v24",
+      "run_id": 40113864520,
+      "job_id": 120930984785,
+      "conclusion": "success",
+      "model": {
+        "converted_sha256": {
+          "config.json": "90fb54962455a4e0a0bc7235c0f063d7e46d9c1a1ae003af8059809abd6aeece",
+          "model.bin": "eb1067ee9578e6f5b9eb5d2364657d867b46576576f9f6a4cc46e795d6048cb1",
+          "shared_vocabulary.json": "c327551ce3ca6efc7b437e11a267f79979893332dda8a1d146e2c950815193f8"
+        },
+        "engine": "madlad",
+        "license": "Apache-2.0",
+        "minimum_free_gib": 18,
+        "repository": "google/madlad400-3b-mt",
+        "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094"
+      },
+      "timing": {
+        "approved": 0,
+        "conversion_seconds": 90.662641692,
+        "counts": {
+          "legacy": 27,
+          "model": 40,
+          "reviewed_memory_hits": 9
+        },
+        "engine": "madlad",
+        "peak_rss_kib": 3717060,
+        "scope": "references",
+        "total_seconds": 178.332040067
+      }
     }
   ],
   "checkpoints": [
@@ -1411,6 +1442,11 @@
       "sha256": "d3490ab26890d055ef54a4e50b8eb2e50cfee6b2ac8cc65f7be4c2251ced85fb"
     },
     {
+      "path": "checkpoints/context-v24/madlad.jsonl",
+      "records": 67,
+      "sha256": "8fc6c90d6171adbbd587b9a303b5c5e51559d748449f4c0b15cf5bfa2228bb32"
+    },
+    {
       "path": "checkpoints/context-v3/madlad.jsonl",
       "records": 160,
       "sha256": "2b43c218f0362dd4350fdcbff8b487192e78d302dc6d3f7e2990bacb1d642ac0"
@@ -1456,7 +1492,7 @@
       "sha256": "e8e4ece85552fe89bdb9518bc8eeca91b5a9b446fcbe4c3694b95f8b70290643"
     }
   ],
-  "total_records": 14377,
+  "total_records": 14444,
   "cancelled_runs": [
     {
       "run_id": 39484416039,
