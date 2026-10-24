@@ -27,7 +27,7 @@
     "minimum_style_budget_met": true,
     "reason": "Direct current agent reading; exact known memory declared. Expanded scope blocks any observed open forward defect. No native/blind/unseen-text validation or locale approval."
   },
-  "full_dispatched": false,
+  "full_dispatched": true,
   "approved_locales": [],
   "matched_legacy_comparison": {
     "keys": 27,
@@ -48,5 +48,6 @@
   },
   "direct_current_outputs_read": 67,
   "condition": "All current source/forward/back and warning resolutions audited before full dispatch. Passing known references is not locale approval.",
-  "full_authorized_by_gate": true
+  "full_authorized_by_gate": true,
+  "full_run_id": 40050727169
 }
