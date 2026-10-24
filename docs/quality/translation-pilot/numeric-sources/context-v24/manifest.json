@@ -1,0 +1,11 @@
+{
+  "id": "zh-CN-source-proof-v2",
+  "base_policy": "context-v23",
+  "base_manifest": "docs/quality/translation-pilot/numeric-sources/context-v23/manifest.json",
+  "base_manifest_sha256": "63e0c5fe3b076f6a085dcda41cd46be4fec9eed7072b848a75e078d4fe2a04e3",
+  "english_contracts": "english-contracts.json",
+  "english_contracts_sha256": "2f7c7e36acb42ed1f17f16e11408592abfd25124810680a59bf1f554ea9b3d55",
+  "source_snapshot": "source-snapshot.json",
+  "source_snapshot_sha256": "684f643bab1fad3b0541f288d68ad4ae73a54186ec2e9c57e63c569b269d8e1e",
+  "unicode_note": "Reuse exact pinned Unicode17 source/license through unchangedv23loader. No new model or CLDR download."
+}
