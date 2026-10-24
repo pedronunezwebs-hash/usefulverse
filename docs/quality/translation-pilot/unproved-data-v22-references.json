@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "policy": "context-v22",
+  "run_id": 40089099175,
+  "approved_locales": [],
+  "gate_blocked": true,
+  "rows": [
+    {
+      "record_id": "5d8236258b260c6ecb68f95b6491f20f18d025bfe868bb60b4a895ada172bbf4",
+      "key": "voice-changer.fields.chooseFirst",
+      "candidate": "model",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "translation_hash": "d94a3033b95d773513674d27663f029c7751fc1a149c6cd907228e1218a6732a",
+      "reason": "Unsupported Han numeral or lexical use; strict inference acceptance remains false, source/forward/back read directly, no automatic language approval."
+    },
+    {
+      "record_id": "f684211b42f6b91a9e9be4d6ae7debfa666ace4d732b1e159080c052855e2390",
+      "key": "voice-changer.fields.tooLarge",
+      "candidate": "model",
+      "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "translation_hash": "0a5d752ffc2c404c50c041bdbda95a581ff03c4e48fd5f70493087b47a0c0a17",
+      "reason": "Unsupported Han numeral or lexical use; strict inference acceptance remains false, source/forward/back read directly, no automatic language approval."
+    },
+    {
+      "record_id": "eeb3c0c5f176eba8fc3ad72671008a5db7097ce6d1b91b58b98bff420fe4164a",
+      "key": "shikaku.example",
+      "candidate": "model",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "translation_hash": "18b73c60c5ea03fd3dcc4f3b6c93e54a259ca7067bd14e95929048d6429abf92",
+      "reason": "Unsupported Han numeral or lexical use; strict inference acceptance remains false, source/forward/back read directly, no automatic language approval."
+    },
+    {
+      "record_id": "b56b23ef96ec0275b174ae760f00aefa5e162b0eeb16cda3ec432e47defcf888",
+      "key": "shikaku.fields.selectStart",
+      "candidate": "model",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "6b9d7bdd2398099b640e97a7fdfcdb2dfe78cbff692d74169673a450fbfc3280",
+      "reason": "Unsupported Han numeral or lexical use; strict inference acceptance remains false, source/forward/back read directly, no automatic language approval."
+    },
+    {
+      "record_id": "2dd94afd7e3096684a360d370c37c3a02122a639a2d7a461387a51aa5fde3b8a",
+      "key": "shikaku.fields.undo",
+      "candidate": "model",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "aceee2b2690650615756500d81b6e031a26d66158f479da269fd078be89284ce",
+      "reason": "Unsupported Han numeral or lexical use; strict inference acceptance remains false, source/forward/back read directly, no automatic language approval."
+    },
+    {
+      "record_id": "06213275b29616dc8804d8d6abf8b4c32d09e9d395529583ba591275c7947c31",
+      "key": "shikaku.fields.faq.1.a",
+      "candidate": "model",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "12493e0a262116d6221a5b02771708d63b36a6a400721ae9c59f24df2099f76d",
+      "reason": "Unsupported Han numeral or lexical use; strict inference acceptance remains false, source/forward/back read directly, no automatic language approval."
+    },
+    {
+      "record_id": "171be4a58109d3a7bc455419002a09bf6b87f2005c700b132f9ee188552d64e2",
+      "key": "dxf-viewer.faq.0.a",
+      "candidate": "model",
+      "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "translation_hash": "c2720b35f19207979457356b52f91d4bb243ab1181f6d71d0460db9599839f06",
+      "reason": "Unsupported Han numeral or lexical use; strict inference acceptance remains false, source/forward/back read directly, no automatic language approval."
+    },
+    {
+      "record_id": "524b94420a94d67733ccf54e02cbdbc102fc63e97a6aa688f8808d0762e7238b",
+      "key": "dxf-viewer.fields.file",
+      "candidate": "model",
+      "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "translation_hash": "10944bfc81908ece0e97dd4a2f9c3b4c02e7aae8ec07b9530a351185487cbf7a",
+      "reason": "Unsupported Han numeral or lexical use; strict inference acceptance remains false, source/forward/back read directly, no automatic language approval."
+    },
+    {
+      "record_id": "1aaada0e6fdeceaeedc710a5304d3a11fa075d9a9a97885016a2f5444278292e",
+      "key": "dxf-viewer.fields.unsupported",
+      "candidate": "model",
+      "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "translation_hash": "81bb76c2a3704c72b75c8236a64965e11831c13e589c3a5f7f28bf6f45e82bcb",
+      "reason": "Unsupported Han numeral or lexical use; strict inference acceptance remains false, source/forward/back read directly, no automatic language approval."
+    },
+    {
+      "record_id": "f95fa9e8d9bac9121fb28d3494f158700af091084c3ee10bb2ec0e2d555aa10b",
+      "key": "dxf-viewer.fields.binary",
+      "candidate": "model",
+      "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "translation_hash": "153d0e6a2613f290fcea15d5c12de94f557ce320a2c7a4fe0d19ba39936a0e67",
+      "reason": "Unsupported Han numeral or lexical use; strict inference acceptance remains false, source/forward/back read directly, no automatic language approval."
+    },
+    {
+      "record_id": "ad2aa8764d172b0cc06a08bb0b0633284480ab3e4c1d5a23b3cbe32be0c1a8f0",
+      "key": "dxf-viewer.fields.invalidCoordinates",
+      "candidate": "model",
+      "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "translation_hash": "6b09b3ade07357e03f11b81843fe8372a8f9ab0267d711d8444d2483997cf69a",
+      "reason": "Unsupported Han numeral or lexical use; strict inference acceptance remains false, source/forward/back read directly, no automatic language approval."
+    },
+    {
+      "record_id": "32fa3cc26a6af52d9dfccdce1955fe8d07976ff363fd23ee3cb6967c69fca32b",
+      "key": "voice-changer.fields.chooseFirst",
+      "candidate": "legacy",
+      "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "translation_hash": "d94a3033b95d773513674d27663f029c7751fc1a149c6cd907228e1218a6732a",
+      "reason": "Unsupported Han numeral or lexical use; strict inference acceptance remains false, source/forward/back read directly, no automatic language approval."
+    },
+    {
+      "record_id": "b35fb7f385ba1c61f14377da422e5fbc63d9fcbf0722ff785629b24ff1d34c56",
+      "key": "shikaku.example",
+      "candidate": "legacy",
+      "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "translation_hash": "ca5f2868a9d4b1afadb66b014d45ebb5587686f595ac0d547bceaaf80f1ff6b7",
+      "reason": "Unsupported Han numeral or lexical use; strict inference acceptance remains false, source/forward/back read directly, no automatic language approval."
+    },
+    {
+      "record_id": "c8b5c1f829769e0c0b9ab2c82f126ecd83184a38b21ab9729a2947d378339505",
+      "key": "shikaku.fields.selectStart",
+      "candidate": "legacy",
+      "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "translation_hash": "a1989e964294325ffc7c1698514a429faecae8eb474a3d4889983b45cde8f2a4",
+      "reason": "Unsupported Han numeral or lexical use; strict inference acceptance remains false, source/forward/back read directly, no automatic language approval."
+    },
+    {
+      "record_id": "6ae054499cb3a29b2aa639093fef3c35059b68aa2a583473da7ca933d187b227",
+      "key": "shikaku.fields.undo",
+      "candidate": "legacy",
+      "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "translation_hash": "505d4081d38e04e1a94cc7e43f21848207b9182edef00af3f80eba552c4b3b91",
+      "reason": "Unsupported Han numeral or lexical use; strict inference acceptance remains false, source/forward/back read directly, no automatic language approval."
+    },
+    {
+      "record_id": "32526dad1ff71137f819d4f5c6c1d7391855345c55cd1de66db6c7a198cee934",
+      "key": "shikaku.fields.faq.1.a",
+      "candidate": "legacy",
+      "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "translation_hash": "696abb4ec0d1b17d1be83828fc46e7c9e8a33dbccafac28b895ed3e7ea09912d",
+      "reason": "Unsupported Han numeral or lexical use; strict inference acceptance remains false, source/forward/back read directly, no automatic language approval."
+    }
+  ],
+  "scope": "Blocking contract status, separate from actual linguistic grades and semantic fixtures. No acceptance/output/grammar change."
+}

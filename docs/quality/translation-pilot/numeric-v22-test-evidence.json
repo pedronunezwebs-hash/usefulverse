@@ -77,7 +77,80 @@
         "Ran 11 tests in 9.593s",
         "OK"
       ]
+    },
+    {
+      "label": "Current full suite after v22 auditor-only correction",
+      "sha256": "e17c2c972bac51cde57e37c924ed320e6d7d0082ec067809b99852e35437382b",
+      "result_lines": [
+        "Ran 149 tests in 70.996s",
+        "OK (skipped=2)"
+      ]
+    },
+    {
+      "label": "Correct unsupported spelling previously forced an invented linguistic defect: first red",
+      "sha256": "48b09d1b4b3497490a91c87a7a971c8caac1a8a32982a8094f76efcb0d84e3f3",
+      "result_lines": [
+        "Ran 3 tests in 0.008s",
+        "FAILED (errors=1)"
+      ]
+    },
+    {
+      "label": "Arabic6 duplicated from source six was unsupported: first red classification test",
+      "sha256": "e17aa4d4ca43dd03b7cafb4efbc0df4ef2d5a0a721528a19e135c93422de0d21",
+      "result_lines": [
+        "Ran 1 test in 0.003s",
+        "FAILED (failures=1)"
+      ]
+    },
+    {
+      "label": "Five explicit blocking-classification tests; gates/old policies/damaged known data/trace tampering cannot bypass",
+      "sha256": "4c979c0d06f0e9e2109df48cae7f69ac5d403754045b4cfe404fe744e7390b47",
+      "result_lines": [
+        "Ran 5 tests in 0.011s",
+        "OK"
+      ]
+    },
+    {
+      "label": "All39 current forward/back findings reproduce missing permanent fixtures",
+      "sha256": "7b8f43d5d31f12b9c038d085293cdc3fc2c048039c1c4e2857882a7cb57701b2",
+      "result_lines": [
+        "Ran 1 test in 0.008s",
+        "FAILED (failures=39)"
+      ]
+    },
+    {
+      "label": "37 unique fixtures cover all39 current findings",
+      "sha256": "a626407facf1102b512cc38f00f6e7d889aa6280a5c03d1722ac6d1c4eb08dc5",
+      "result_lines": [
+        "Ran 1 test in 0.004s",
+        "OK"
+      ]
+    },
+    {
+      "label": "Full156 first detects missing observed_candidate metadata in new fixtures; existing permanent test red",
+      "sha256": "5331c19d268310ecccc137f091570e59384d45521c86b5d3a6ea53b11f9f2a66",
+      "result_lines": [
+        "Ran 156 tests in 68.531s",
+        "FAILED (errors=1, skipped=2)"
+      ]
+    },
+    {
+      "label": "Observed-candidate schema corrected, exact permanent fixture test green",
+      "sha256": "da95254272f850a5cdaf83a794a33a1e48d6dc09fc3e90642d49753cc63ce5e4",
+      "result_lines": [
+        "Ran 1 test in 0.311s",
+        "OK"
+      ]
+    },
+    {
+      "label": "Final local156:154pass,two dependency skips",
+      "sha256": "9d25a66d3bac8bd2caedc335ab9f8ee9f7036374055ffc54799ad57e4c11614e",
+      "result_lines": [
+        "Ran 156 tests in 70.598s",
+        "OK (skipped=2)"
+      ]
     }
   ],
-  "audit_refinement": "Only v22 technical/identifier/version flags now use the same explicit typed contract as inference. No acceptance, output, profile, policy, model callback or historical flag changed. Model run source predates this auditor-only fix and its extra test."
+  "audit_refinement": "Only v22 technical/identifier/version flags now use the same explicit typed contract as inference. No acceptance, output, profile, policy, model callback or historical flag changed. Model run source predates this auditor-only fix and its extra test.",
+  "unproved_data_status": "Onlycontext-v22 Han with otherwise intact typed data, known Arabic quantities and complete trace. Always gate-blocking, never inference acceptance or rubric change. Existing semantics/grades and old policies unchanged. EN zero..ten allowance classifies unsupported proof only; no quantities accepted by inference."
 }

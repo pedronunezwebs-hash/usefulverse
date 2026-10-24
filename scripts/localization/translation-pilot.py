@@ -880,6 +880,36 @@ def historical_forward_withdrawals(review, records):
     return result
 
 
+def chinese_quantity_unproved_v22(row):
+    """An explicit blocking audit status, never an inference acceptance or grade."""
+    if row.get("inference_policy") != "context-v22" or row.get("locale") != "zh-CN" or row.get("truncated"): return False
+    checks = typed_record_evidence(row)
+    if not all(checks["input"].values()) or checks["forward"]["quantities"] or not all(v for k, v in checks["forward"].items() if k != "quantities"): return False
+    prose = COORDINATE.sub(" ", OPAQUE_LITERAL.sub(" ", row["translation"]))
+    if not any(("\u3400" <= c <= "\u9fff") and (unicodedata.numeric(c, None) is not None or c == "丗") for c in prose): return False
+    # Even with unsupported Han spellout, known Arabic values cannot be invented.
+    def partial_values_agree(source, target):
+        left = numeric_data(source, "en")
+        right = numeric_data_zh_v22(chinese_audit_text_v22(target))
+        # Blocking audit classification only: the inference grammar still refuses
+        # Han. EN six -> Arabic6 is not an invented value just because the strict
+        # historical EN parser counts digits only. Never use this to pass a gate.
+        words = {word: Decimal(i) for i, word in enumerate(("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"))}
+        spelled = Counter((words[word.casefold()], "") for word in re.findall(r"\b(?:zero|one|two|three|four|five|six|seven|eight|nine|ten)\b", numeric_prose(source), re.IGNORECASE))
+        return left is not None and right is not None and not (right[0] - (left[0] + spelled))
+    if not partial_values_agree(row["source"], row["translation"]): return False
+    if row.get("candidate") == "model":
+        trace = row.get("forward_segments")
+        if not segment_evidence_valid(trace, row["model_input"], row["raw_translation"]): return False
+        expected = complete_sentence_parts(row["model_input"])
+        if len(trace) != len(expected): return False
+        for part, (leading, text, trailing) in zip(trace, expected, strict=True):
+            if part.get("kind") != "prose" or part.get("truncated") or (part.get("leading_space"), part.get("input"), part.get("trailing_space")) != (leading, text, trailing): return False
+            data = policy_typed_data_checks(text, part["output"], "en", "zh-CN", "context-v22")
+            if not all(v for k, v in data.items() if k != "quantities") or not partial_values_agree(text, part["output"]): return False
+    return True
+
+
 def audit_review_warnings(review, records, check_coverage=True):
     """Require an exact, hash-bound decision for every warning before accepting a review.
 
@@ -947,8 +977,13 @@ def audit_review_warnings(review, records, check_coverage=True):
             raise ValueError("Every current warning needs an explicit reconciliation")
         for flag, decision in entry["warnings"].items():
             disposition = decision.get("disposition")
-            if disposition not in {"forward-defect", "back-defect", "reviewed-signal"} or not decision.get("note", "").strip() or type(decision.get("blocks_gate")) is not bool:
+            if disposition not in {"forward-defect", "back-defect", "reviewed-signal", "unproved-data"} or not decision.get("note", "").strip() or type(decision.get("blocks_gate")) is not bool:
                 raise ValueError("Warning decision needs disposition, note and explicit gate effect")
+            if disposition == "unproved-data":
+                gate = review.get("reference_gate", review.get("full_gate", {})).get(row["locale"], {})
+                if flag not in {"forward_typed_data", "forward_sentence_evidence", "marker_restore", "protected_tokens"} or not chinese_quantity_unproved_v22(row) or not decision["blocks_gate"] or gate.get("passed") is not False:
+                    raise ValueError("Unproved v22 Han quantities require an explicitly blocked gate and intact known data")
+                continue
             if flag == "known_semantic_errors" and disposition != "forward-defect":
                 raise ValueError("A known forward fixture cannot be silently accepted")
             # Only a recomputed, fully valid v10 contract can explain a historical
