@@ -37,6 +37,8 @@ Revisado el 20-oct-2026 sobre `main` (`pedronunezwebs-hash/usefulverse`, **públ
 
 - **V20 · 24-oct:** referencias id 360/360; completo rechazado 1454/1566, 130 fixtures nuevas. Gramática v19 y todos los históricos conservados; sin publicación/aprobación de idioma. [Informe](lotes/2026-10-24-piloto-v20.md).
 
+- **V21 · 24-oct:** indonesio: referencias 360/360 y completo conocido 1566/1566. Gramática v19 y todos los históricos conservados; sin publicación/aprobación de idioma. [Informe](lotes/2026-10-24-piloto-v21.md).
+
 ## Carpetas clave
 
 | Ruta | Qué hay |
