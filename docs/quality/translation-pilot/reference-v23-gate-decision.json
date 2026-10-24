@@ -1,0 +1,45 @@
+{
+  "policy": "context-v23",
+  "run_id": 40109970196,
+  "reference_gate": {
+    "rows": 40,
+    "sample": 40,
+    "points": 360,
+    "maximum": 360,
+    "button_errors": 0,
+    "number_negation_errors": 0,
+    "major_rows": 0,
+    "minor_rows": 0,
+    "unproved_data_rows": 1,
+    "passed": false,
+    "minimum_style_budget_met": true,
+    "reason": "Direct current agent reading. Exact known memory declared. Any unproved inference-source data or observed forward defect blocks; no fabricated language grades from unsupported grammar. No native/blind/unseen-text or locale approval."
+  },
+  "legacy_gate": {
+    "rows": 27,
+    "sample": 27,
+    "points": 223,
+    "maximum": 243,
+    "button_errors": 5,
+    "number_negation_errors": 3,
+    "major_rows": 6,
+    "minor_rows": 2,
+    "unproved_data_rows": 0,
+    "passed": false,
+    "minimum_style_budget_met": false,
+    "reason": "Direct current agent reading. Exact known memory declared. Any unproved inference-source data or observed forward defect blocks; no fabricated language grades from unsupported grammar. No native/blind/unseen-text or locale approval."
+  },
+  "matched_legacy_comparison": {
+    "keys": 27,
+    "model_points": 243,
+    "legacy_points": 223,
+    "maximum": 243,
+    "frozen_engine": false
+  },
+  "all_current_outputs_read": 67,
+  "warning_records_reconciled": 58,
+  "back_findings": 17,
+  "full_dispatched": false,
+  "reason": "One whole controlled-input numeric proof absent. No inferred acceptance, full dispatch, language approval or publication. V23 measured candidate and all67raws preserved; next independent policy must reproduce rejection and bind source first.",
+  "approved_locales": []
+}

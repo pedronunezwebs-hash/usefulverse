@@ -41,6 +41,8 @@ Revisado el 20-oct-2026 sobre `main` (`pedronunezwebs-hash/usefulverse`, **públ
 
 - **V22 · 24-oct:** gramática decimal zh-CN independiente; parser global, v19 y 263 memorias intactos. Referencias 344/360, legacy 223/243 rechazadas; 16 datos no probados bloquean por separado, 37 fixtures nuevas.67 textos y 60 avisos revisados; completo no ejecutado. CI final correcta; retirada efectiva verificada, sin despliegue/aprobación. [Informe](lotes/2026-10-24-piloto-v22.md).
 
+- **V23 ·24-oct:** nueve idas zh-CN corregidas y16 carencias léxicas resueltas; referencias360/360, gate bloqueado por1 input completo sin prueba. Caché de políticas inmutables7,65× local y caché RAM exacta evita5/103 fragmentos del modelo;274 memorias,971 fixtures. Unicode17 fijado, historia/global intactos; no completo/deploy/aprobación. CI/retirada pendientes. [Informe](lotes/2026-10-24-piloto-v23.md).
+
 ## Carpetas clave
 
 | Ruta | Qué hay |

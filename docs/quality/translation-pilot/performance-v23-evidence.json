@@ -140,5 +140,45 @@
     "local_red_sha256": "492f073a54a3dc6a360d62974e61306fe6316add703248ac9daac2171275637f",
     "local_green_sha256": "094229866179a6a511b6844fae01fda535cc06f3daa769f2228ca882f6eca658",
     "pinned_numeric_sha256": "139b976bdc288be01c80f018523da769cf2845109b5a7f0f8a432db64bfedcfa"
+  },
+  "runtime_cache_measured": {
+    "run_id": 40109970196,
+    "requests": 103,
+    "model_items": 98,
+    "avoided_items": 5,
+    "saved_fraction": 0.04854368932038835,
+    "model_seconds": 73.29251745400006,
+    "calls": 14,
+    "memory_hits": 9,
+    "total_seconds": 171.884367842,
+    "controlled_model_speedup_claim": false,
+    "note": "Actual item avoidance, not measured counterfactual wall-clock acceleration. Separate policy validation benchmark is7.65x, not model inference."
+  },
+  "whole_input_gap": {
+    "record_id": "44232533fd023e05d28567421c34a7ff007a94db45e8f257e2db0cc29548c3bd",
+    "acceptance_stays_false": true,
+    "before": "classifier missed whole controlled inference input gap",
+    "after": "blocking unproved-data metadata only; inference/policy/checkpoint unchanged",
+    "red_sha256": "b2e09a61c444e0a81743ab49a816afdc24b11ddfc60bfcc6c255e4714c62805b",
+    "green_sha256": "7d5c9ab002d7c614c71e0655c1f64ea23d420dec69d8e37bf300ce249ba786bc"
+  },
+  "new_finding_tests": {
+    "findings": 4,
+    "red_sha256": "e8534aa79fd98541375f3248c101d0645e75990345d6f35cadff5b11577791cd",
+    "green_sha256": "a626407facf1102b512cc38f00f6e7d889aa6280a5c03d1722ac6d1c4eb08dc5"
+  },
+  "local_review_metadata_correction": {
+    "red_full_suite_sha256": "ab7ea53669917a5963ce7bc18d0cf76ee478393b8bbd5da6f99e070e027360b1",
+    "actual_tests": 187,
+    "failed_errors": 1,
+    "reason": "New legacy review mistakenly requested model-only coverage. Set flag false for legacy; all27legacy rows still individually audited and all40model coverage remains mandatory. No test/assertion or auditor change.",
+    "green_sha256": "34919cec390295022570a78370e340102387e55774f1050b50b250773f0ae087"
+  },
+  "local_final_suite": {
+    "tests": 187,
+    "passed": 185,
+    "dependency_skips": 2,
+    "seconds": 47.562,
+    "log_sha256": "34919cec390295022570a78370e340102387e55774f1050b50b250773f0ae087"
   }
 }

@@ -10350,5 +10350,85 @@
     "observed_candidate": "legacy",
     "run_id": "40089099175",
     "kind": "v22-back-reference-defect"
+  },
+  {
+    "key": "voice-changer.fields.faq1a",
+    "source_hash": "aff0083fa736a3592ca07ce38272d1df53b26062a4c2bd3c5c61776b95c039fe",
+    "locale": "zh-CN",
+    "translation": "No. The browser will decode and process the selected audio locally. UsefulVerse does not accept recordings.",
+    "direction": "back",
+    "issue": "Does not accept recordings sustituye no recibir por no aceptar. La ida 不会接收录音 sí conserva recepción; defecto solo de vuelta.",
+    "note": "Does not accept recordings sustituye no recibir por no aceptar. La ida 不会接收录音 sí conserva recepción; defecto solo de vuelta.",
+    "evidence": {
+      "policy": "context-v23",
+      "run_id": 40109970196,
+      "record_id": "2ae9f54402d0e3533e9ec432294f200b906666caaf75ae94598e69fead6aac94",
+      "reviewer": "Codex",
+      "native_review": false,
+      "reviewed_at": "2026-10-24"
+    },
+    "observed_candidate": "model",
+    "run_id": "40109970196",
+    "kind": "v23-back-reference-defect"
+  },
+  {
+    "key": "dxf-viewer.fields.unsupported",
+    "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+    "locale": "zh-CN",
+    "translation": "This file is not supported. Please select a.dxf file in ASCII format.",
+    "direction": "back",
+    "issue": "a.dxf pega el artículo a a la extensión como nombre a.dxf. El formato ASCII y la extensión .dxf debían permanecer separados del artículo; ida correcta.",
+    "note": "a.dxf pega el artículo a a la extensión como nombre a.dxf. El formato ASCII y la extensión .dxf debían permanecer separados del artículo; ida correcta.",
+    "evidence": {
+      "policy": "context-v23",
+      "run_id": 40109970196,
+      "record_id": "8f8e6dea42b5da9ccefbc10345f7bc4c6376d2f937070f3392d58d081cf862e8",
+      "reviewer": "Codex",
+      "native_review": false,
+      "reviewed_at": "2026-10-24"
+    },
+    "observed_candidate": "model",
+    "run_id": "40109970196",
+    "kind": "v23-back-reference-defect"
+  },
+  {
+    "key": "dxf-viewer.fields.measurement",
+    "source_hash": "519b0296b89f62d49e45fdd556147d8c26b0ddb30a55b45c5e33683b297d1a09",
+    "locale": "zh-CN",
+    "translation": "Measuring distance",
+    "direction": "back",
+    "issue": "Measuring distance es un gerundio/estado, no la orden Measure distance del botón; ida 测量距离 correcta.",
+    "note": "Measuring distance es un gerundio/estado, no la orden Measure distance del botón; ida 测量距离 correcta.",
+    "evidence": {
+      "policy": "context-v23",
+      "run_id": 40109970196,
+      "record_id": "417dbdd272a6d5aab3cc450e22810bb59950816668d35a5a903c1d6a2dcde96c",
+      "reviewer": "Codex",
+      "native_review": false,
+      "reviewed_at": "2026-10-24"
+    },
+    "observed_candidate": "model",
+    "run_id": "40109970196",
+    "kind": "v23-back-reference-defect"
+  },
+  {
+    "key": "dxf-viewer.fields.resetView",
+    "source_hash": "021addc424ab6e21290a4722048ea7b4080ca218e50695495efd5d19f1f1341b",
+    "locale": "zh-CN",
+    "translation": "Adjust the view to display the entire graph",
+    "direction": "back",
+    "issue": "entire graph restringe el dibujo CAD a un gráfico; la orden de ajustar la vista se conserva y la ida 图形 es correcta en el visor.",
+    "note": "entire graph restringe el dibujo CAD a un gráfico; la orden de ajustar la vista se conserva y la ida 图形 es correcta en el visor.",
+    "evidence": {
+      "policy": "context-v23",
+      "run_id": 40109970196,
+      "record_id": "9b6028657ce062be1a28befa2465b907d03dc67d51b6bb4e36a0156d9f1110fd",
+      "reviewer": "Codex",
+      "native_review": false,
+      "reviewed_at": "2026-10-24"
+    },
+    "observed_candidate": "model",
+    "run_id": "40109970196",
+    "kind": "v23-back-reference-defect"
   }
 ]

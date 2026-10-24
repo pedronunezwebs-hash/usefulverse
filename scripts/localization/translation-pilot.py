@@ -1112,6 +1112,15 @@ def chinese_quantity_unproved_v22(row):
 def chinese_quantity_unproved_v23(row):
     """An explicit blocking audit status, never an inference acceptance or grade."""
     if row.get("inference_policy") != "context-v23" or row.get("locale") != "zh-CN" or row.get("truncated"): return False
+    # Preserve the actual inference rejection even when canonical-source and
+    # per-sentence proofs pass: its whole controlled input can still be unbound.
+    # This is a blocking audit classification only; never rewrite raw acceptance.
+    if row.get("candidate") == "model" and not row.get("marker_restore_ok", True) and row["translation"] == row["raw_translation"]:
+        observed = typed_record_evidence(row)
+        attempted = policy_typed_data_checks(row["model_input"], row["raw_translation"], "en", "zh-CN", "context-v23")
+        contracts = v23_quantity_contracts()
+        if all(observed["input"].values()) and all(observed["forward"].values()) and not attempted["quantities"] and all(v for k, v in attempted.items() if k != "quantities") and numeric_data_zh_v23(row["model_input"], "en", contracts) is None and complete_sentence_evidence_valid_v23(row.get("forward_segments"), row["model_input"], row["raw_translation"], "en", "zh-CN"):
+            return True
     checks = typed_record_evidence(row)
     if not all(checks["input"].values()) or checks["forward"]["quantities"] or not all(v for k, v in checks["forward"].items() if k != "quantities"): return False
     prose = COORDINATE.sub(" ", OPAQUE_LITERAL.sub(" ", row["translation"]))
