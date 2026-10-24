@@ -134,6 +134,7 @@ class IndonesianExpandedMemoryTest(unittest.TestCase):
  def test_frozen_history_original_flags_policy_digests_and_inference_functions(self):
   proof=json.loads((DATA/'regression-v21-evidence.json').read_text())
   for policy,value in proof['historical_policy_digests'].items():self.assertEqual(pilot.policy_digest(policy),value)
+  addenda=json.loads((DATA/'review-warning-addenda.json').read_text());self.assertEqual(pilot.digest(addenda[:proof['historical_back_addenda_prefix_count']]),proof['historical_back_addenda_prefix_digest'])
   prefix=pilot.SEMANTIC_REGRESSIONS[:proof['fixture_prefix_count']];self.assertEqual(pilot.digest(prefix),proof['fixture_prefix_digest']);flags={}
   with patch.object(pilot,'SEMANTIC_REGRESSIONS',prefix):
    for path in sorted((DATA/'checkpoints').rglob('*.jsonl')):

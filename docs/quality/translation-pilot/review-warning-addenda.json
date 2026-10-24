@@ -192,5 +192,53 @@
       }
     ],
     "note": "V14 discovery: additional back-only warning for exact old raw text, no original rubric, forward warning or gate override."
+  },
+  {
+    "review_file": "review-context-v19-references.json",
+    "review_digest": "e76c5a9d06d3df0dab9ad1ccc203127108bc8aa0f16c6944afba5e54228546a2",
+    "review_file_sha256": "f30fa33a25bb307e0442f48af6b26e541d7280e773c4c7052e7daef3696f6693",
+    "added_at_utc": "2026-10-24T06:27:01.284479+00:00",
+    "reviewer": "Codex",
+    "native_review": false,
+    "approved_locales": [],
+    "reason": "Later v21 back-only discovery matches these historical raw values; append non-gating warning coverage without mutating original review bytes, grades or gates.",
+    "warning_reconciliation": [
+      {
+        "record_id": "0b9b1c8b6133dc3cd25380294bc7feeceeb907614bb4fc98d2e0a3a29db491a7",
+        "translation_hash": "7b9b7ca71a075b67a67adb9fd4305741dc23969e98de4b3b0c83900e08ed2eb9",
+        "back_translation_hash": "b5d2d8b681efac4043898e1125b63ff7bfeee17d670a6a151dfe116bbfaee6e5",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "Hallazgo posterior v21 en el mismo crudo: doesn't accept recordings cambia ausencia de recepción del archivo por no aceptar grabaciones; la ida UsefulVerse tidak menerima rekaman conserva la privacidad indicada. Defecto independiente de vuelta. Solo vuelta; fuente, ida, rúbrica y gate históricos conservados."
+          }
+        }
+      }
+    ]
+  },
+  {
+    "review_file": "review-context-v20-references.json",
+    "review_digest": "f3c49b395f5e937f0e847729c3ca3456db8cd5502842c95999969b972e72966b",
+    "review_file_sha256": "73d6ed152c407115c696f47c9e1d986b1d54a0e70696dabee1645f65a67e6b32",
+    "added_at_utc": "2026-10-24T06:27:01.466344+00:00",
+    "reviewer": "Codex",
+    "native_review": false,
+    "approved_locales": [],
+    "reason": "Later v21 back-only discovery matches these historical raw values; append non-gating warning coverage without mutating original review bytes, grades or gates.",
+    "warning_reconciliation": [
+      {
+        "record_id": "042475bdf438ed17e1a63112af2a30004f92a95e1069e0f89ab7359bddb832ac",
+        "translation_hash": "7b9b7ca71a075b67a67adb9fd4305741dc23969e98de4b3b0c83900e08ed2eb9",
+        "back_translation_hash": "b5d2d8b681efac4043898e1125b63ff7bfeee17d670a6a151dfe116bbfaee6e5",
+        "warnings": {
+          "known_back_semantic_errors": {
+            "disposition": "back-defect",
+            "blocks_gate": false,
+            "note": "Hallazgo posterior v21 en el mismo crudo: doesn't accept recordings cambia ausencia de recepción del archivo por no aceptar grabaciones; la ida UsefulVerse tidak menerima rekaman conserva la privacidad indicada. Defecto independiente de vuelta. Solo vuelta; fuente, ida, rúbrica y gate históricos conservados."
+          }
+        }
+      }
+    ]
   }
 ]

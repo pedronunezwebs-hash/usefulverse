@@ -90,5 +90,19 @@
     "dependency_skips": 2,
     "log_sha256": "c335442a492d6bfa0b67c58a9cfacd4203a0bae91229276720f07fe3f7fe149d",
     "corpus_node_tests": 2
+  },
+  "historical_back_addenda_prefix_count": 6,
+  "historical_back_addenda_prefix_digest": "83d3b83b80e23e252917bbe49a86841c3979ee277021d8cb8b1223563415bbff",
+  "reference_back_regressions": {
+    "red_tests": 1,
+    "red_failures": 6,
+    "new_unique_fixtures": 6,
+    "red_log_sha256": "7ecb0359d19f99e7f794e0b216797a06f1b40e10aa0e9dd75e9f77b034dfc418"
+  },
+  "post_reference_suite": {
+    "tests": 138,
+    "passed": 136,
+    "dependency_skips": 2,
+    "log_sha256": "576296520ce19032c4d963adc9d06fcb142e218744f4f816f3d416b9a23bfd76"
   }
 }
