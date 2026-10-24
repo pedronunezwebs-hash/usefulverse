@@ -4,7 +4,7 @@
 > seguir**, sin analizar la web. Si algo no cuadra con el repo, manda el repo: corrige este archivo.
 
 **Última actualización:** 2026-10-24 · **por:** Codex
-**Turno actual (candado):** EN CURSO · Codex · 2026-10-24 07:59 +07 · v19 indonesio: contrato numérico versionado y referencias; sin despliegue
+**Turno actual (candado):** LIBRE
 Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera abandonado: anótalo y continúa.
 
 ---
@@ -194,3 +194,5 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 2. Actualizar este archivo: «Siguiente paso exacto», checklist, «Últimos lotes», contadores y candado → `LIBRE`.
 3. Actualizar `docs/quality/progress.csv` (estado por herramienta) y añadir el informe a `docs/quality/LOG.md`.
 4. Borrar las carpetas temporales propias (clones, `dist`, `node_modules`, modelos, capturas) y anotar el espacio libre del disco.
+
+Retirada efectiva el 2026-10-24T08:23:07.742387+07:00: eliminada directamente y sin Papelera solo la carpeta propia `usefulverse-codex-v19-20261024.4dqttnzz`; ruta comprobada ausente. Tamaño previo 544321199 bytes; disco libre posterior 37.9630 GiB (40762478592 bytes). Antes de borrar: 7524 archivos versionados y 519 críticos recuperables mediante árbol Git/índice; seis documentos idénticos, 173 archivos históricos, prefijo de 732 fixtures y 94 grupos anteriores conservados; estados/slugs/capas de progress y src/public intactos. Código/datos/revisiones/fixtures iguales a CI final; solo metadatos posteriores. Cero punteros LFS, dos runs correctos sin artefactos ni publicación; cero ZIP propios externos. 2 ZIP internos retirados junto con clon, scripts, QA, binarios y cachés. Sin modelos de traducción ni builds completos locales. Fuentes verificadas: feature `75586eba172854831f4ab64a179fc4861435bf1a`, main `ac5c16856a47a9eb7ddad9c6d62a1152654a7dc6`. Candado liberado después de la retirada.
