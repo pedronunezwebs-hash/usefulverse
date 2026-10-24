@@ -624,7 +624,13 @@ def v23_quantity_contracts():
     file = directory / manifest["lexical_contracts"]; raw = file.read_bytes()
     if hashlib.sha256(raw).hexdigest() != manifest["lexical_contracts_sha256"]:
         raise ValueError("Changed reviewed lexical contract bytes")
-    cache_key = (str(ROOT.resolve()), manifest["lexical_contracts_sha256"])
+    numeric_source = manifest["numeric_values_source"]
+    if numeric_source["version"] != "17.0.0" or numeric_source["path"] != "DerivedNumericValues.txt" or numeric_source["license_ref"] != "docs/quality/translation-pilot/numeric-sources/context-v22/LICENSE":
+        raise ValueError("Unexpected pinned numeric-value source")
+    numeric_raw = (directory / numeric_source["path"]).read_bytes()
+    if hashlib.sha256(numeric_raw).hexdigest() != numeric_source["sha256"] or hashlib.sha256((ROOT / numeric_source["license_ref"]).read_bytes()).hexdigest() != numeric_source["license_sha256"]:
+        raise ValueError("Changed pinned numeric-value source/license")
+    cache_key = (str(ROOT.resolve()), manifest["lexical_contracts_sha256"], numeric_source["sha256"])
     if cache_key in _V23_QUANTITY_CACHE: return _V23_QUANTITY_CACHE[cache_key]
     data = json.loads(raw)
     if data["source_checkpoint"] != "docs/quality/translation-pilot/checkpoints/context-v22/madlad.jsonl":
@@ -661,13 +667,25 @@ def v23_quantity_contracts():
         key = (locale, text)
         if key in result: raise ValueError("Duplicate lexical contract")
         result[key] = tuple(quantities.items())
-    _V23_QUANTITY_CACHE[cache_key] = result
-    return result
+    numeric_characters = set()
+    if not numeric_raw.startswith(b"# DerivedNumericValues-17.0.0.txt"):
+        raise ValueError("Unexpected Unicode numeric-value version")
+    for line in numeric_raw.decode().splitlines():
+        body = line.split("#", 1)[0].strip()
+        if not body: continue
+        span = body.split(";", 1)[0].strip().split("..")
+        numeric_characters.update(chr(value) for value in range(int(span[0], 16), int(span[-1], 16) + 1))
+    snapshot = {"quantities": result, "numeric_characters": frozenset(numeric_characters)}
+    _V23_QUANTITY_CACHE[cache_key] = snapshot
+    return snapshot
 
 
 def numeric_data_zh_v23(text, locale, contracts):
     key = (locale, " ".join(text.split()))
-    if key in contracts: return Counter(dict(contracts[key])), coordinate_data(text)
+    if key in contracts["quantities"]: return Counter(dict(contracts["quantities"][key])), coordinate_data(text)
+    # Host UCD versions disagree on Han Numeric_Value (notably 两/兩).
+    # Unknown non-ASCII numerals are blocked by the pinned table on every host.
+    if any(char in contracts["numeric_characters"] and char not in "0123456789" for char in OPAQUE_LITERAL.sub(" ", text)): return None
     if locale == "zh-CN": return numeric_data_zh_v22(text)
     if locale == "en" and re.search(r"\b(?:zero|one|two|three|four|five|six|seven|eight|nine|ten)\b", numeric_prose(text), re.IGNORECASE): return None
     return numeric_data(text.replace("\u2212", "-"), locale)

@@ -5,5 +5,13 @@
   "cldr_manifest_sha256": "f41ee02e85a6d475e859b2f8dd08fe7a82da27c15c3aa75c566fa529bd8893d2",
   "lexical_contracts": "lexical-contracts.json",
   "lexical_contracts_sha256": "6272d2ab31c92533833be39f83ae7fdef0355a175f975cf5707b965ca0afab4c",
-  "scope": "v23 only. Same pinned CLDR latn decimal grammar as v22 plus exact reviewed lexical quantity proofs. No default acceptance and no output rewriting. CLDR/license files remain at their original versioned paths."
+  "scope": "v23 only. Same pinned CLDR latn decimal grammar as v22 plus exact reviewed lexical quantity proofs. No default acceptance and no output rewriting. CLDR/license files remain at their original versioned paths.",
+  "numeric_values_source": {
+    "version": "17.0.0",
+    "path": "DerivedNumericValues.txt",
+    "url": "https://www.unicode.org/Public/17.0.0/ucd/extracted/DerivedNumericValues.txt",
+    "sha256": "139b976bdc288be01c80f018523da769cf2845109b5a7f0f8a432db64bfedcfa",
+    "license_ref": "docs/quality/translation-pilot/numeric-sources/context-v22/LICENSE",
+    "license_sha256": "220ba0e1c43b99530d2d5bdb892a99dca0989414f51ab695ecd90163eaa1ec3b"
+  }
 }

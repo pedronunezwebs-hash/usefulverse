@@ -111,7 +111,34 @@
         "Ran 182 tests in 45.535s",
         "OK (skipped=2)"
       ]
+    },
+    {
+      "label": "Portable Unicode full184 tests:182pass,2dependency skips",
+      "sha256": "79670bb40134237a0e4c5e56e79275bcde02582988cf3ec281e227d2801987ce",
+      "result_lines": [
+        "Ran 184 tests in 45.674s",
+        "OK (skipped=2)"
+      ]
     }
   ],
-  "runtime_cache": "Only context-v23; exact raw texts/language direction/model-instance in disposable-runner RAM. No normalization, persistent model/cache/artifact storage or quality/approval reuse. Actual call avoidance will be measured in Actions."
+  "runtime_cache": "Only context-v23; exact raw texts/language direction/model-instance in disposable-runner RAM. No normalization, persistent model/cache/artifact storage or quality/approval reuse. Actual call avoidance will be measured in Actions.",
+  "portability_failure": {
+    "run_id": 40108791297,
+    "source_commit": "5f1b576948eb3df0dc8020c21cfbc63ed4ea58ab",
+    "actual_tests": 182,
+    "failed_negative_cases": 2,
+    "records": 0,
+    "model_inference": false,
+    "cleanup": "success",
+    "artifacts": 0,
+    "cause": "Python3.11 UCD14 vsPython3.14 UCD16 Numeric_Value differences for两/兩; host-dependent rejection was unsafe",
+    "primary_sources": [
+      "https://docs.python.org/3.11/library/unicodedata.html",
+      "https://docs.python.org/3.14/library/unicodedata.html",
+      "https://www.unicode.org/Public/17.0.0/ucd/extracted/DerivedNumericValues.txt"
+    ],
+    "local_red_sha256": "492f073a54a3dc6a360d62974e61306fe6316add703248ac9daac2171275637f",
+    "local_green_sha256": "094229866179a6a511b6844fae01fda535cc06f3daa769f2228ca882f6eca658",
+    "pinned_numeric_sha256": "139b976bdc288be01c80f018523da769cf2845109b5a7f0f8a432db64bfedcfa"
+  }
 }

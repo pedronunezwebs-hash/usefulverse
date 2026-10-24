@@ -1,7 +1,7 @@
 {
   "id": "context-v23",
   "protection": "complete-sentences-typed-data-v4",
-  "description": "v23: nine zh-CN reference corrections plus two same-source context-bound duplicates; exact reviewed lexical quantity proofs. Same263 old memory targets and all older grammars/data/policies. In-run exact raw-text deduplication; no approval/native/blind/unseen-text claim.",
+  "description": "v23: nine zh-CN reference corrections plus two same-source context-bound duplicates; exact reviewed lexical quantity proofs. Same263 old memory targets and all older grammars/data/policies. In-run exact raw-text deduplication; no approval/native/blind/unseen-text claim. Unicode17 Numeric_Value snapshot closes unknown numeral gaps consistently on Python3.11/3.14; first failed run emitted no records.",
   "reviewer": "Codex",
   "review_kind": "agent",
   "reviewed_at": "2026-10-24",
@@ -3494,7 +3494,7 @@
     "id": "zh-CN-reviewed-lexical-v1",
     "locale": "zh-CN",
     "manifest": "docs/quality/translation-pilot/numeric-sources/context-v23/manifest.json",
-    "manifest_sha256": "e857e786574e9a0719517fd205b614bf8a5af5eb4f91cbd387216663e516a90b"
+    "manifest_sha256": "63e0c5fe3b076f6a085dcda41cd46be4fec9eed7072b848a75e078d4fe2a04e3"
   },
   "runtime_cache": "exact-text-in-run-v1"
 }

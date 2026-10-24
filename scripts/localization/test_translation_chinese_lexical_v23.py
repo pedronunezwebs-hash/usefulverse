@@ -65,4 +65,17 @@ class ChineseLexicalV23Test(unittest.TestCase):
   with patch.dict(pilot.POLICIES,{'context-v23':changed}),self.assertRaisesRegex(ValueError,'numeric profile'):
    self.valid('Choose an audio file first.','首先选择一个音频文件。')
 
+ def test_two_classifiers_stay_blocked_with_runner_unicode14_properties(self):
+  original=pilot.unicodedata.numeric
+  def unicode14(char,default=None):return default if char in {'两','兩'} else original(char,default)
+  with patch.object(pilot.unicodedata,'numeric',unicode14):
+   for source,target in [('Choose a start square.','选择两个起始方格。'),('Undo last rectangle','撤销最后两个矩形')]:
+    with self.subTest(target=target):self.assertFalse(self.valid(source,target))
+
+ def test_pinned_unicode_table_blocks_all_unreviewed_non_ascii_numerals(self):
+  contracts=pilot.v23_quantity_contracts();self.assertIn('两',contracts['numeric_characters']);self.assertIn('兩',contracts['numeric_characters'])
+  self.assertGreater(len(contracts['numeric_characters']),1900)
+  for char in contracts['numeric_characters']-set('0123456789'):
+   with self.subTest(codepoint=hex(ord(char))):self.assertIsNone(pilot.numeric_data_zh_v23('数量'+char+'。','zh-CN',contracts))
+
 if __name__=='__main__':unittest.main()
