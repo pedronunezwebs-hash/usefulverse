@@ -61,6 +61,23 @@
         "Ran 10 tests in 9.106s",
         "OK"
       ]
+    },
+    {
+      "label": "Audit/inference boundary mismatch reproduced: two false technical/identifier warnings",
+      "sha256": "1c16c6e5f0167af19b04f8b03a0d23884f8c93194401c2c750046dfe6a1da45b",
+      "result_lines": [
+        "Ran 1 test in 0.007s",
+        "FAILED (failures=2)"
+      ]
+    },
+    {
+      "label": "Eleven final numeric/history/dispatch/audit tests after correction; damaged tokens remain blocked",
+      "sha256": "06ad5de9cc0165da290dcd6672887d6afc79530755fec6fbff19381068b66f05",
+      "result_lines": [
+        "Ran 11 tests in 9.593s",
+        "OK"
+      ]
     }
-  ]
+  ],
+  "audit_refinement": "Only v22 technical/identifier/version flags now use the same explicit typed contract as inference. No acceptance, output, profile, policy, model callback or historical flag changed. Model run source predates this auditor-only fix and its extra test."
 }

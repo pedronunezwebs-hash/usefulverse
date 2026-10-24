@@ -760,6 +760,12 @@ def record_flags(row):
         flags["forward_sentence_evidence"] = row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not complete_sentence_evidence_valid_v19(row.get("forward_segments"), row["model_input"], row["raw_translation"], "en", row["locale"])
         flags["back_sentence_evidence"] = not complete_sentence_evidence_valid_v19(row.get("back_segments"), row["translation"], row["back_translation"], row["locale"], "en")
     if row.get("inference_policy") == "context-v22":
+        evidence = typed_record_evidence(row)
+        # Use the same explicit v22 boundary contract in audit and inference;
+        # preserve all historical flags and every damaged-token hard block.
+        for flag, check in (("technical_tokens", "technical_tokens"), ("software_identifiers", "software_identifiers"), ("software_versions", "versions")):
+            flags[flag] = not evidence["forward"][check]
+            flags["back_" + flag] = not evidence["back"][check]
         flags["forward_sentence_evidence"] = row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not complete_sentence_evidence_valid_v22(row.get("forward_segments"), row["model_input"], row["raw_translation"], "en", row["locale"])
         flags["back_sentence_evidence"] = not complete_sentence_evidence_valid_v22(row.get("back_segments"), row["translation"], row["back_translation"], row["locale"], "en")
     return flags

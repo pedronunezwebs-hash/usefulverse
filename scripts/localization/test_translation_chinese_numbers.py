@@ -103,6 +103,20 @@ class ChineseNumbersTest(unittest.TestCase):
   nodes={n.name:n for n in ast.parse(Path(pilot.__file__).read_text()).body if isinstance(n,ast.FunctionDef)}
   for name,value in proof['inference_function_ast_digests'].items():self.assertEqual(pilot.digest(stable(nodes[name])),value,name)
 
+ def test_record_flags_use_v22_word_boundaries_and_still_detect_damage(self):
+  source='Use dxf-parser 1.1.2 for ASCII .dxf files up to 25 MB.'
+  target='使用dxf-parser 1.1.2打开ASCII .dxf文件，最大25MB。'
+  self.assertTrue(self.valid(source,target))
+  row={'source':source,'translation':target,'raw_translation':target,'model_input':source,
+   'locale':'zh-CN','key':'independent.numeric','back_translation':source,'inference_policy':'context-v22',
+   'candidate':'legacy','marker_restore_ok':True,'back_marker_restore_ok':True,'truncated':False,
+   'back_segments':[{'kind':'prose','input':target,'output':source,'truncated':False,'leading_space':'','trailing_space':''}]}
+  for flag in ['technical_tokens','software_identifiers','software_versions','back_technical_tokens','back_software_identifiers','back_software_versions']:
+   with self.subTest(flag=flag):self.assertFalse(pilot.record_flags(row)[flag])
+  for old,new in [('dxf-parser','dxf-parzer'),('1.1.2','1.2.2'),('.dxf','.dwg'),('MB','GB')]:
+   damaged={**row,'translation':target.replace(old,new)}
+   with self.subTest(damage=old):self.assertTrue(pilot.record_flags(damaged)['forward_typed_data'])
+
  def test_run_changes_only_the_explicit_v22_dispatch(self):
   from test_translation_indonesian_expanded_memory import historical_run_ast
   proof=json.loads((DATA/'regression-v22-evidence.json').read_text())
