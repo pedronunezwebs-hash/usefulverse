@@ -6,5 +6,8 @@
   "status_at_capture": "in_progress",
   "created_at": "2026-10-24T11:35:31Z",
   "expected_jobs": "validate-and-deploy; model omitted; both Publish omitted",
-  "complete": false
+  "complete": true,
+  "final_status": "completed",
+  "conclusion": "success",
+  "verification_file": "ci-v22-verification.json"
 }

@@ -16,7 +16,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
    Las 300 fuentes conservan `indexable:false`, fuera de sitemap/hreflang y sin bloqueo robots. Las 700 existentes se conservan.
    **0/300 en main; 0 activadas.** Capacidad Pages y 37 traducciones revisadas/nb real pendientes; no avanzar a fase 0.
 
-   **V22 · zh-CN: referencias rechazadas, completo no ejecutado.** Modelo 344/360 y legacy 223/243; comparación común 27: 232/243 frente 223/243.67 textos leídos, 60 avisos conciliados, 37 fixtures nuevas.16 datos no probados bloquean por separado; no se inventan errores lingüísticos.14.310 registros/5.817 evaluaciones/967 fixtures. Parser global, gramática v19,263 memorias e historia conservados. CI/producción final/retirada pendientes.
+   **V22 · zh-CN: referencias rechazadas, completo no ejecutado.** Modelo 344/360 y legacy 223/243; comparación común 27: 232/243 frente 223/243.67 textos leídos, 60 avisos conciliados, 37 fixtures nuevas.16 datos no probados bloquean por separado; no se inventan errores lingüísticos.14.310 registros/5.817 evaluaciones/967 fixtures. Parser global, gramática v19,263 memorias e historia conservados. CI final 40090517822 correcta; GET/XML antes/después sin cambios. Retirada pendiente.
 
    Pasan muestra completa conocida ES/NB(v15), KO(v18), ID(v21); siete destinos revisados sin pasar (zh-CN nuevo y seis históricos),25 sin revisión detallada.0 idiomas aprobados. P-001–P-008 pendientes/0 FALLA.
 
@@ -49,7 +49,7 @@ Si el candado lleva más de 24 h en `EN CURSO` sin commits nuevos, se considera 
 ## 3. Checklist general (marcar con [x] y fecha)
 
 ### Planificación
-- [x] V22 infraestructura/referencias zh-CN revisadas: gate rechazado,37 fixtures y 16 datos no probados separados; completo no ejecutado ·2026-10-24. CI/cierre pendientes.
+- [x] V22 infraestructura/referencias zh-CN revisadas: gate rechazado,37 fixtures y 16 datos no probados separados; completo no ejecutado ·2026-10-24. CI final correcta; retirada pendiente.
 - [x] Diagnóstico de la caída del 16-oct (`docs/recovery/README.md`) · 2026-10-20
 - [x] Decisiones: sin `noindex` masivo en las 700; 37 idiomas; no se borra ninguna herramienta · 2026-10-20
 - [x] Plan de calidad (`docs/quality/PLAN.md`), estrategia hacia 1M visitas al día (`STRATEGY-1M.md`), RUNBOOK y `progress.csv` · 2026-10-20
@@ -197,4 +197,4 @@ Retirada efectiva el 2026-10-24T13:53:17.067234+07:00: eliminada directamente y 
 
 ## Cierre v22
 
-Respaldo, CI/GET final y retirada efectiva propios pendientes; candado EN CURSO.
+Retirada efectiva v22 pendiente; candado EN CURSO.
