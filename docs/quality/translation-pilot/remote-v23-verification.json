@@ -1,0 +1,79 @@
+{
+  "checked_at_utc": "2026-10-24T16:27:20.511966+00:00",
+  "feature_commit": "72d6ceadf7f788aacb97e136894f9592aba1dba2",
+  "main_commit": "ec2c46110c1050d15e9d35684f772e9c2a4794b0",
+  "ci_source": "b0c84a6dee6e146ef82044fc0f74dde272e5cf25",
+  "entire_remote_index_files": 7623,
+  "entire_remote_index_blob_mode_equivalent": true,
+  "whole_tree_sha256": "26763aaad8b130b1d8239958cafe32ce3772161bc11735bf9791ba0e52e2e1bc",
+  "six_handoff_documents_identical": true,
+  "main_only_changed_six_handoff_documents": true,
+  "src_public_unchanged_files": 6851,
+  "unchanged_historical_files": 250,
+  "only_four_aggregates_changed": true,
+  "old_fixture_prefix": 967,
+  "current_fixtures": 971,
+  "metric_prefix_groups": 106,
+  "current_metric_groups": 108,
+  "warning_addenda_unchanged": 9,
+  "csv_rows": 1001,
+  "only_csv_changes": [
+    {
+      "slug": "dxf-drawing-viewer",
+      "fields": [
+        "nota"
+      ]
+    },
+    {
+      "slug": "shikaku-puzzle",
+      "fields": [
+        "nota"
+      ]
+    },
+    {
+      "slug": "voice-changer",
+      "fields": [
+        "nota"
+      ]
+    }
+  ],
+  "post_ci_only_documentation_metadata": [
+    "docs/quality/ESTADO.md",
+    "docs/quality/LOG.md",
+    "docs/quality/MAPA-REPO.md",
+    "docs/quality/lotes/2026-10-24-piloto-v23.md",
+    "docs/quality/progress.csv",
+    "docs/quality/translation-pilot.md",
+    "docs/quality/translation-pilot/ci-v23-inflight.json",
+    "docs/quality/translation-pilot/ci-v23-verification.json",
+    "docs/quality/translation-pilot/production-v23-check.json"
+  ],
+  "lfs_pointers": 0,
+  "runs": [
+    {
+      "id": 40108791297,
+      "conclusion": "failure",
+      "artifacts": 0,
+      "runner_cleanup": "success"
+    },
+    {
+      "id": 40109970196,
+      "conclusion": "success",
+      "artifacts": 0,
+      "runner_cleanup": "success"
+    },
+    {
+      "id": 40111019015,
+      "conclusion": "success",
+      "artifacts": 0,
+      "runner_cleanup": "model job skipped"
+    }
+  ],
+  "pr_open_draft": true,
+  "footprint_bytes": 569024512,
+  "free_bytes_before_cleanup": 40323153920,
+  "deployed": false,
+  "codespaces": false,
+  "paid_services": false,
+  "actual_root_cleanup": "pending; do not free lock before deletion"
+}

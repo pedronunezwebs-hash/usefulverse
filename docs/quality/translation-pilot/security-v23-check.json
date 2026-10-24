@@ -15,5 +15,8 @@
   "final_source_scan_at_utc": "2026-10-24T16:19:04.895901+00:00",
   "final_source_findings": 0,
   "final_source_report_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-  "workflow_actionlint_passed": true
+  "workflow_actionlint_passed": true,
+  "closure_scan_at_utc": "2026-10-24T16:28:46.958859+00:00",
+  "closure_secret_findings": 0,
+  "closure_report_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
 }
