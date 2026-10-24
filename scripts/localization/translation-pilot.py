@@ -31,6 +31,31 @@ ENGINES = {
 ALIASES = {"pt-BR": "pt", "zh-CN": "zh", "zh-TW": "zh", "fil": "tl", "nb-NO": "no"}
 SCRIPTS = {"ar": "ARABIC", "fa": "ARABIC", "ur": "ARABIC", "hi": "DEVANAGARI", "mr": "DEVANAGARI", "bn": "BENGALI", "te": "TELUGU", "ta": "TAMIL", "gu": "GUJARATI", "am": "ETHIOPIC", "ru": "CYRILLIC", "uk": "CYRILLIC", "bg": "CYRILLIC", "el": "GREEK", "th": "THAI", "ko": "HANGUL"}
 FORMAT = "usefulverse-translation-pilot-v1"
+class _FrozenPolicyDict(dict):
+    """JSON-compatible immutable policy data; deepcopy yields editable test data."""
+    def __init__(self, value):
+        dict.__init__(self, {key: freeze_policy(child) for key, child in value.items()})
+    def _readonly(self, *args, **kwargs): raise TypeError("Versioned policy data is immutable; copy before editing")
+    __setitem__ = __delitem__ = clear = pop = popitem = setdefault = update = __ior__ = _readonly
+    def __deepcopy__(self, memo): return json.loads(json.dumps(self, ensure_ascii=False))
+
+
+class _FrozenPolicyList(list):
+    def __init__(self, value): list.__init__(self, (freeze_policy(child) for child in value))
+    def _readonly(self, *args, **kwargs): raise TypeError("Versioned policy data is immutable; copy before editing")
+    __setitem__ = __delitem__ = append = clear = extend = insert = pop = remove = reverse = sort = __iadd__ = __imul__ = _readonly
+    def __deepcopy__(self, memo): return json.loads(json.dumps(self, ensure_ascii=False))
+
+
+def freeze_policy(value):
+    if isinstance(value, dict): return _FrozenPolicyDict(value)
+    if isinstance(value, list): return _FrozenPolicyList(value)
+    return value
+
+
+_POLICY_DIGEST_CACHE = {}
+
+
 CONTEXT_POLICY = json.loads(Path(__file__).with_name("pilot-context-policy.json").read_text())
 POLICIES = {CONTEXT_POLICY["id"]: CONTEXT_POLICY, "context-v3": json.loads(Path(__file__).with_name("pilot-sentence-policy.json").read_text()), "context-v4": json.loads(Path(__file__).with_name("pilot-memory-policy.json").read_text())}
 POLICIES["context-v5"] = json.loads(Path(__file__).with_name("pilot-coverage-policy.json").read_text())
@@ -51,7 +76,9 @@ POLICIES["context-v19"] = json.loads(Path(__file__).with_name("pilot-indonesian-
 POLICIES["context-v20"] = json.loads(Path(__file__).with_name("pilot-indonesian-memory-policy.json").read_text())
 POLICIES["context-v21"] = json.loads(Path(__file__).with_name("pilot-indonesian-expanded-memory-policy.json").read_text())
 POLICIES["context-v22"] = json.loads(Path(__file__).with_name("pilot-chinese-numeric-policy.json").read_text())
-TYPED_POLICIES = {"context-v10", "context-v11", "context-v12", "context-v13", "context-v14", "context-v15", "context-v16", "context-v17", "context-v18", "context-v19", "context-v20", "context-v21", "context-v22"}
+POLICIES["context-v23"] = json.loads(Path(__file__).with_name("pilot-chinese-memory-policy.json").read_text())
+POLICIES = {name: freeze_policy(value) for name, value in POLICIES.items()}
+TYPED_POLICIES = {"context-v10", "context-v11", "context-v12", "context-v13", "context-v14", "context-v15", "context-v16", "context-v17", "context-v18", "context-v19", "context-v20", "context-v21", "context-v22", "context-v23"}
 SEMANTIC_REGRESSIONS = json.loads(Path(__file__).with_name("pilot-semantic-regressions.json").read_text())
 TECHNICAL_TOKEN = re.compile(r"\.(?:dxf|dwg|png|svg|wav|mp3|pdf|json|csv|txt)\b|\b(?:ASCII|DXF|DWG|PNG|SVG|WAV|MP3|PDF|JSON|CSV|Unicode|KB|MB|GB|TB)\b", re.IGNORECASE)
 SOFTWARE_VERSION = re.compile(r"(?<![\w.])\d+(?:\.\d+){2,}(?![\w.]\d)")
@@ -75,7 +102,13 @@ def digest(value):
 def policy_digest(policy):
     if policy == "baseline": return None
     if policy not in POLICIES: raise ValueError("Unknown inference policy")
-    return digest(POLICIES[policy])
+    value = POLICIES[policy]
+    if type(value) is not _FrozenPolicyDict: return digest(value)
+    cached = _POLICY_DIGEST_CACHE.get(id(value))
+    if cached is None:
+        cached = (value, digest(value))
+        _POLICY_DIGEST_CACHE[id(value)] = cached
+    return cached[1]
 
 
 def translation_input(unit, policy):
@@ -390,6 +423,8 @@ def numeric_data_id_v19(text):
 
 
 def policy_typed_data_checks(source, target, source_locale, target_locale, policy):
+    if policy == "context-v23":
+        return chinese_typed_data_checks_v23(source, target, source_locale, target_locale)
     if policy == "context-v22":
         return chinese_typed_data_checks_v22(source, target, source_locale, target_locale)
     result = typed_data_checks(source, target, source_locale, target_locale)
@@ -566,6 +601,143 @@ def translate_complete_sentences_v22(texts, model_translate, source_locale, targ
         results.append((raw if valid else None, raw, any(part["truncated"] for part in trace)))
     return results
 
+
+
+_V23_QUANTITY_CACHE = {}
+
+
+def v23_quantity_contracts():
+    directory = ROOT / "docs/quality/translation-pilot/numeric-sources/context-v23"
+    manifest_file = directory / "manifest.json"
+    profile = POLICIES["context-v23"]["numeric_profile"]
+    if profile != {"id": "zh-CN-reviewed-lexical-v1", "locale": "zh-CN", "manifest": str(manifest_file.relative_to(ROOT)), "manifest_sha256": hashlib.sha256(manifest_file.read_bytes()).hexdigest()}:
+        raise ValueError("Changed or unbound v23 numeric profile")
+    manifest = json.loads(manifest_file.read_text())
+    if manifest["cldr_manifest"] != "docs/quality/translation-pilot/numeric-sources/context-v22/manifest.json" or manifest["lexical_contracts"] != "lexical-contracts.json":
+        raise ValueError("Unexpected numeric contract source path")
+    upstream = ROOT / manifest["cldr_manifest"]
+    if hashlib.sha256(upstream.read_bytes()).hexdigest() != manifest["cldr_manifest_sha256"]:
+        raise ValueError("Changed pinned CLDR numeric contract")
+    for source in json.loads(upstream.read_text())["files"]:
+        if hashlib.sha256((upstream.parent / source["path"]).read_bytes()).hexdigest() != source["sha256"]:
+            raise ValueError("Changed pinned CLDR/license source")
+    file = directory / manifest["lexical_contracts"]; raw = file.read_bytes()
+    if hashlib.sha256(raw).hexdigest() != manifest["lexical_contracts_sha256"]:
+        raise ValueError("Changed reviewed lexical contract bytes")
+    cache_key = (str(ROOT.resolve()), manifest["lexical_contracts_sha256"])
+    if cache_key in _V23_QUANTITY_CACHE: return _V23_QUANTITY_CACHE[cache_key]
+    data = json.loads(raw)
+    if data["source_checkpoint"] != "docs/quality/translation-pilot/checkpoints/context-v22/madlad.jsonl":
+        raise ValueError("Unexpected lexical contract checkpoint")
+    checkpoint = ROOT / data["source_checkpoint"]
+    if hashlib.sha256(checkpoint.read_bytes()).hexdigest() != data["source_checkpoint_sha256"]:
+        raise ValueError("Changed lexical contract source checkpoint")
+    records = {r["record_id"]: r for r in map(json.loads, checkpoint.read_text().splitlines())}
+    for row in records.values(): validate_record(row)
+    result = {}
+    for entry in data["entries"]:
+        text = entry["text"]; locale = entry["locale"]
+        if locale not in ("en", "zh-CN") or text != " ".join(text.split()) or hashlib.sha256(text.encode()).hexdigest() != entry["text_sha256"] or entry["native_review"] or not entry["evidence"]:
+            raise ValueError("Unbound reviewed lexical contract")
+        quantities = Counter()
+        for item in entry["quantities"]:
+            value = Decimal(item["value"])
+            if not value.is_finite() or type(item["count"]) is not int or item["count"] <= 0 or item["suffix"] not in ("", "%", "°"):
+                raise ValueError("Invalid reviewed lexical quantity")
+            quantities[(value, item["suffix"])] += item["count"]
+        for evidence in entry["evidence"]:
+            row = records[evidence["record_id"]]
+            if any(evidence[key] != row[key] for key in ("key", "context", "source_hash")):
+                raise ValueError("Stale lexical contract context")
+            field = evidence["field"].split(".")
+            if len(field) == 1:
+                value = row[field[0]]; expected_locale = "zh-CN" if field[0] == "translation" else "en"
+            else:
+                direction, index, side = field
+                value = row[direction + "_segments"][int(index)][side]
+                expected_locale = ("en" if direction == "forward" else "zh-CN") if side == "input" else ("zh-CN" if direction == "forward" else "en")
+            if " ".join(value.split()) != text or locale != expected_locale:
+                raise ValueError("Stale lexical contract text")
+        key = (locale, text)
+        if key in result: raise ValueError("Duplicate lexical contract")
+        result[key] = tuple(quantities.items())
+    _V23_QUANTITY_CACHE[cache_key] = result
+    return result
+
+
+def numeric_data_zh_v23(text, locale, contracts):
+    key = (locale, " ".join(text.split()))
+    if key in contracts: return Counter(dict(contracts[key])), coordinate_data(text)
+    if locale == "zh-CN": return numeric_data_zh_v22(text)
+    if locale == "en" and re.search(r"\b(?:zero|one|two|three|four|five|six|seven|eight|nine|ten)\b", numeric_prose(text), re.IGNORECASE): return None
+    return numeric_data(text.replace("\u2212", "-"), locale)
+
+
+def chinese_typed_data_checks_v23(source, target, source_locale, target_locale):
+    result = chinese_typed_data_checks_v22(source, target, source_locale, target_locale)
+    if "zh-CN" not in (source_locale, target_locale): return result
+    contracts = v23_quantity_contracts()
+    values = [numeric_data_zh_v23(text, locale, contracts) for text, locale in zip((source, target), (source_locale, target_locale), strict=True)]
+    result["quantities"] = all(value is not None for value in values) and values[0][0] == values[1][0]
+    return result
+
+
+def complete_sentence_evidence_valid_v23(trace, source, raw, source_locale, target_locale):
+    if not segment_evidence_valid(trace, source, raw): return False
+    expected = complete_sentence_parts(source)
+    if not expected or len(trace) != len(expected): return False
+    for part, (leading, text, trailing) in zip(trace, expected, strict=True):
+        if part.get("kind") != "prose" or (part.get("leading_space"), part.get("input"), part.get("trailing_space")) != (leading, text, trailing): return False
+        if part.get("truncated") or not all(policy_typed_data_checks(text, part["output"], source_locale, target_locale, "context-v23").values()): return False
+    return True
+
+
+def translate_complete_sentences_v23(texts, model_translate, source_locale, target_locale, traces=None):
+    """v23 independent version: translate complete sentences with exact attempted-source coverage."""
+    plans = [complete_sentence_parts(text) for text in texts]
+    sentences = [part[1] for plan in plans for part in plan]
+    outputs = model_translate(sentences) if sentences else []
+    if len(outputs) != len(sentences): raise ValueError("Model returned an incomplete complete-sentence batch")
+    results, cursor = [], 0
+    for source, plan in zip(texts, plans, strict=True):
+        trace = [{"kind": "prose", "input": text, "output": outputs[cursor+i][0], "truncated": outputs[cursor+i][1],
+            "leading_space": leading, "trailing_space": trailing} for i, (leading, text, trailing) in enumerate(plan)]
+        cursor += len(plan)
+        raw = "".join(part["leading_space"] + part["output"].strip() + part["trailing_space"] for part in trace)
+        valid = all(policy_typed_data_checks(source, raw, source_locale, target_locale, "context-v23").values())
+        valid &= complete_sentence_evidence_valid_v23(trace, source, raw, source_locale, target_locale)
+        if traces is not None: traces.append(trace)
+        results.append((raw if valid else None, raw, any(part["truncated"] for part in trace)))
+    return results
+
+
+
+def cached_prose_v23(callback, owner, source_locale, target_locale):
+    """Exact raw results in RAM for this model instance/run; never approval memory."""
+    state = getattr(owner, "_usefulverse_v23_cache", None)
+    if state is None:
+        state = {"entries": {}, "requests": 0, "model_items": 0, "model_seconds": 0.0, "calls": 0}
+        owner._usefulverse_v23_cache = state
+    def cached(texts):
+        keys = [(source_locale, target_locale, text) for text in texts]
+        missing = list(dict.fromkeys(key for key in keys if key not in state["entries"]))
+        tick = time.monotonic()
+        values = callback([key[2] for key in missing]) if missing else []
+        seconds = time.monotonic() - tick
+        if len(values) != len(missing) or any(not isinstance(value, (tuple, list)) or len(value) != 2 or not isinstance(value[0], str) or type(value[1]) is not bool for value in values):
+            raise ValueError("Incomplete or invalid cached model batch")
+        fresh = {key: (value[0], value[1]) for key, value in zip(missing, values, strict=True)}
+        # Truncated text is returned verbatim but never reused in a later call.
+        state["entries"].update({key: value for key, value in fresh.items() if not value[1]})
+        result = [state["entries"].get(key, fresh.get(key)) for key in keys]
+        state["requests"] += len(texts); state["model_items"] += len(missing)
+        state["model_seconds"] += seconds; state["calls"] += bool(missing)
+        print("UVPILOT_CACHE " + canonical({"policy": "context-v23", "source_locale": source_locale, "target_locale": target_locale,
+            **{key: state[key] for key in ("requests", "model_items", "model_seconds", "calls")},
+            "avoided_items": state["requests"] - state["model_items"], "cached_entries": len(state["entries"]),
+            "request_hashes": [digest(key) for key in keys], "miss_hashes": [digest(key) for key in missing]}), flush=True)
+        return result
+    return cached
 
 
 def semantic_issues(key, source_hash, translation, locale, direction="forward"):
@@ -768,6 +940,15 @@ def record_flags(row):
             flags["back_" + flag] = not evidence["back"][check]
         flags["forward_sentence_evidence"] = row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not complete_sentence_evidence_valid_v22(row.get("forward_segments"), row["model_input"], row["raw_translation"], "en", row["locale"])
         flags["back_sentence_evidence"] = not complete_sentence_evidence_valid_v22(row.get("back_segments"), row["translation"], row["back_translation"], row["locale"], "en")
+    if row.get("inference_policy") == "context-v23":
+        evidence = typed_record_evidence(row)
+        # Use the same explicit v22 boundary contract in audit and inference;
+        # preserve all historical flags and every damaged-token hard block.
+        for flag, check in (("technical_tokens", "technical_tokens"), ("software_identifiers", "software_identifiers"), ("software_versions", "versions")):
+            flags[flag] = not evidence["forward"][check]
+            flags["back_" + flag] = not evidence["back"][check]
+        flags["forward_sentence_evidence"] = row["candidate"] == "model" and row.get("translation_origin") != "reviewed-memory" and not complete_sentence_evidence_valid_v23(row.get("forward_segments"), row["model_input"], row["raw_translation"], "en", row["locale"])
+        flags["back_sentence_evidence"] = not complete_sentence_evidence_valid_v23(row.get("back_segments"), row["translation"], row["back_translation"], row["locale"], "en")
     return flags
 
 
@@ -910,6 +1091,38 @@ def chinese_quantity_unproved_v22(row):
     return True
 
 
+def chinese_quantity_unproved_v23(row):
+    """An explicit blocking audit status, never an inference acceptance or grade."""
+    if row.get("inference_policy") != "context-v23" or row.get("locale") != "zh-CN" or row.get("truncated"): return False
+    checks = typed_record_evidence(row)
+    if not all(checks["input"].values()) or checks["forward"]["quantities"] or not all(v for k, v in checks["forward"].items() if k != "quantities"): return False
+    prose = COORDINATE.sub(" ", OPAQUE_LITERAL.sub(" ", row["translation"]))
+    contracts = v23_quantity_contracts()
+    if numeric_data_zh_v23(row["source"], "en", contracts) is not None and numeric_data_zh_v23(row["translation"], "zh-CN", contracts) is not None: return False
+    # Even with unsupported Han spellout, known Arabic values cannot be invented.
+    def partial_values_agree(source, target):
+        left = numeric_data(source, "en")
+        right = numeric_data_zh_v22(chinese_audit_text_v22(target))
+        # Blocking audit classification only: the inference grammar still refuses
+        # Han. EN six -> Arabic6 is not an invented value just because the strict
+        # historical EN parser counts digits only. Never use this to pass a gate.
+        words = {word: Decimal(i) for i, word in enumerate(("zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"))}
+        spelled = Counter((words[word.casefold()], "") for word in re.findall(r"\b(?:zero|one|two|three|four|five|six|seven|eight|nine|ten)\b", numeric_prose(source), re.IGNORECASE))
+        return left is not None and right is not None and not (right[0] - (left[0] + spelled))
+    if not partial_values_agree(row["source"], row["translation"]): return False
+    if row.get("candidate") == "model":
+        trace = row.get("forward_segments")
+        if not segment_evidence_valid(trace, row["model_input"], row["raw_translation"]): return False
+        expected = complete_sentence_parts(row["model_input"])
+        if len(trace) != len(expected): return False
+        for part, (leading, text, trailing) in zip(trace, expected, strict=True):
+            if part.get("kind") != "prose" or part.get("truncated") or (part.get("leading_space"), part.get("input"), part.get("trailing_space")) != (leading, text, trailing): return False
+            data = policy_typed_data_checks(text, part["output"], "en", "zh-CN", "context-v23")
+            if not all(v for k, v in data.items() if k != "quantities") or not partial_values_agree(text, part["output"]): return False
+    return True
+
+
+
 def audit_review_warnings(review, records, check_coverage=True):
     """Require an exact, hash-bound decision for every warning before accepting a review.
 
@@ -981,7 +1194,7 @@ def audit_review_warnings(review, records, check_coverage=True):
                 raise ValueError("Warning decision needs disposition, note and explicit gate effect")
             if disposition == "unproved-data":
                 gate = review.get("reference_gate", review.get("full_gate", {})).get(row["locale"], {})
-                if flag not in {"forward_typed_data", "forward_sentence_evidence", "marker_restore", "protected_tokens"} or not chinese_quantity_unproved_v22(row) or not decision["blocks_gate"] or gate.get("passed") is not False:
+                if flag not in {"forward_typed_data", "forward_sentence_evidence", "marker_restore", "protected_tokens"} or not (chinese_quantity_unproved_v22(row) or chinese_quantity_unproved_v23(row)) or not decision["blocks_gate"] or gate.get("passed") is not False:
                     raise ValueError("Unproved v22 Han quantities require an explicitly blocked gate and intact known data")
                 continue
             if flag == "known_semantic_errors" and disposition != "forward-defect":
@@ -1118,6 +1331,8 @@ def run(args):
                 return translate_unmasked_sentences(texts, prose_translate, traces)
             if POLICIES[policy]["protection"] == "whole-unit-typed-data-v1":
                 return translate_whole_units(texts, prose_translate, source_locale, target_locale, traces)
+            if POLICIES[policy]["protection"] == "complete-sentences-typed-data-v4":
+                return translate_complete_sentences_v23(texts, cached_prose_v23(prose_translate, model_translate, source_locale, target_locale), source_locale, target_locale, traces)
             if POLICIES[policy]["protection"] == "complete-sentences-typed-data-v3":
                 return translate_complete_sentences_v22(texts, prose_translate, source_locale, target_locale, traces)
             if POLICIES[policy]["protection"] == "complete-sentences-typed-data-v2":

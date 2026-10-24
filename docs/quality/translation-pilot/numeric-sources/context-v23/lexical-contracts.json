@@ -1,0 +1,1524 @@
+{
+  "schema_version": 1,
+  "policy": "context-v23",
+  "normalization": "whitespace-only-v1; no value, punctuation, case or Unicode normalization",
+  "scope": "Reviewed exact known texts and source/context/hash evidence. Typed quantities only; not language approval or a general Han parser. Unknown numerals remain blocked. English controlled-input en/en checks retain the historical contract.",
+  "source_checkpoint": "docs/quality/translation-pilot/checkpoints/context-v22/madlad.jsonl",
+  "source_checkpoint_sha256": "e0cd3f66e4a96f22d40e7fa2ff40b6f6229f1694f449410d34b0ba6500c34d06",
+  "source_record_count": 16,
+  "entries": [
+    {
+      "locale": "en",
+      "text": "Choose an audio file first.",
+      "text_sha256": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "5d8236258b260c6ecb68f95b6491f20f18d025bfe868bb60b4a895ada172bbf4",
+          "key": "voice-changer.fields.chooseFirst",
+          "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+          "context": "fields.chooseFirst",
+          "field": "source"
+        },
+        {
+          "record_id": "5d8236258b260c6ecb68f95b6491f20f18d025bfe868bb60b4a895ada172bbf4",
+          "key": "voice-changer.fields.chooseFirst",
+          "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+          "context": "fields.chooseFirst",
+          "field": "forward.0.input"
+        },
+        {
+          "record_id": "32fa3cc26a6af52d9dfccdce1955fe8d07976ff363fd23ee3cb6967c69fca32b",
+          "key": "voice-changer.fields.chooseFirst",
+          "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+          "context": "fields.chooseFirst",
+          "field": "source"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "首先选择一个音频文件。",
+      "text_sha256": "d94a3033b95d773513674d27663f029c7751fc1a149c6cd907228e1218a6732a",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "5d8236258b260c6ecb68f95b6491f20f18d025bfe868bb60b4a895ada172bbf4",
+          "key": "voice-changer.fields.chooseFirst",
+          "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+          "context": "fields.chooseFirst",
+          "field": "translation"
+        },
+        {
+          "record_id": "5d8236258b260c6ecb68f95b6491f20f18d025bfe868bb60b4a895ada172bbf4",
+          "key": "voice-changer.fields.chooseFirst",
+          "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+          "context": "fields.chooseFirst",
+          "field": "forward.0.output"
+        },
+        {
+          "record_id": "5d8236258b260c6ecb68f95b6491f20f18d025bfe868bb60b4a895ada172bbf4",
+          "key": "voice-changer.fields.chooseFirst",
+          "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+          "context": "fields.chooseFirst",
+          "field": "back.0.input"
+        },
+        {
+          "record_id": "32fa3cc26a6af52d9dfccdce1955fe8d07976ff363fd23ee3cb6967c69fca32b",
+          "key": "voice-changer.fields.chooseFirst",
+          "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+          "context": "fields.chooseFirst",
+          "field": "translation"
+        },
+        {
+          "record_id": "32fa3cc26a6af52d9dfccdce1955fe8d07976ff363fd23ee3cb6967c69fca32b",
+          "key": "voice-changer.fields.chooseFirst",
+          "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+          "context": "fields.chooseFirst",
+          "field": "back.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "First, select an audio file.",
+      "text_sha256": "5374166b66b0077f94c1f1602d59d7a6839a0c6837c9fc34175ef6af527706b1",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "5d8236258b260c6ecb68f95b6491f20f18d025bfe868bb60b4a895ada172bbf4",
+          "key": "voice-changer.fields.chooseFirst",
+          "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+          "context": "fields.chooseFirst",
+          "field": "back_translation"
+        },
+        {
+          "record_id": "5d8236258b260c6ecb68f95b6491f20f18d025bfe868bb60b4a895ada172bbf4",
+          "key": "voice-changer.fields.chooseFirst",
+          "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+          "context": "fields.chooseFirst",
+          "field": "back.0.output"
+        },
+        {
+          "record_id": "32fa3cc26a6af52d9dfccdce1955fe8d07976ff363fd23ee3cb6967c69fca32b",
+          "key": "voice-changer.fields.chooseFirst",
+          "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+          "context": "fields.chooseFirst",
+          "field": "back_translation"
+        },
+        {
+          "record_id": "32fa3cc26a6af52d9dfccdce1955fe8d07976ff363fd23ee3cb6967c69fca32b",
+          "key": "voice-changer.fields.chooseFirst",
+          "source_hash": "1e76daf043779eafd0dd9c18db5dcd00e28dd5effe651203b37331c5953adca5",
+          "context": "fields.chooseFirst",
+          "field": "back.0.output"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Choose an audio file no larger than 25 MB.",
+      "text_sha256": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+      "quantities": [
+        {
+          "value": "25",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Límite inclusivo25MB; 一个 es artículo/clasificador del archivo.",
+      "evidence": [
+        {
+          "record_id": "f684211b42f6b91a9e9be4d6ae7debfa666ace4d732b1e159080c052855e2390",
+          "key": "voice-changer.fields.tooLarge",
+          "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+          "context": "fields.tooLarge",
+          "field": "source"
+        },
+        {
+          "record_id": "f684211b42f6b91a9e9be4d6ae7debfa666ace4d732b1e159080c052855e2390",
+          "key": "voice-changer.fields.tooLarge",
+          "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+          "context": "fields.tooLarge",
+          "field": "forward.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "选择一个大小不超过25 MB的音频文件。",
+      "text_sha256": "0a5d752ffc2c404c50c041bdbda95a581ff03c4e48fd5f70493087b47a0c0a17",
+      "quantities": [
+        {
+          "value": "25",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Límite inclusivo25MB; 一个 es artículo/clasificador del archivo.",
+      "evidence": [
+        {
+          "record_id": "f684211b42f6b91a9e9be4d6ae7debfa666ace4d732b1e159080c052855e2390",
+          "key": "voice-changer.fields.tooLarge",
+          "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+          "context": "fields.tooLarge",
+          "field": "translation"
+        },
+        {
+          "record_id": "f684211b42f6b91a9e9be4d6ae7debfa666ace4d732b1e159080c052855e2390",
+          "key": "voice-changer.fields.tooLarge",
+          "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+          "context": "fields.tooLarge",
+          "field": "forward.0.output"
+        },
+        {
+          "record_id": "f684211b42f6b91a9e9be4d6ae7debfa666ace4d732b1e159080c052855e2390",
+          "key": "voice-changer.fields.tooLarge",
+          "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+          "context": "fields.tooLarge",
+          "field": "back.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Select an audio file that is no larger than 25 MB.",
+      "text_sha256": "8e03e948027cbbe9e75c82bb07e30aca850e7222a7a630f6f5771dae7c5ed28e",
+      "quantities": [
+        {
+          "value": "25",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Límite inclusivo25MB; 一个 es artículo/clasificador del archivo.",
+      "evidence": [
+        {
+          "record_id": "f684211b42f6b91a9e9be4d6ae7debfa666ace4d732b1e159080c052855e2390",
+          "key": "voice-changer.fields.tooLarge",
+          "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+          "context": "fields.tooLarge",
+          "field": "back_translation"
+        },
+        {
+          "record_id": "f684211b42f6b91a9e9be4d6ae7debfa666ace4d732b1e159080c052855e2390",
+          "key": "voice-changer.fields.tooLarge",
+          "source_hash": "f2588e01720e08ecdddfd2e62885810f3fce7e0e4b735f9719461cba1b104770",
+          "context": "fields.tooLarge",
+          "field": "back.0.output"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "A clue marked 6 belongs inside one rectangle that covers exactly six squares.",
+      "text_sha256": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        },
+        {
+          "value": "6",
+          "suffix": "",
+          "count": 2
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Pista6, un rectángulo y exactamente seis casillas; dígitos/palabras representan los mismos tres valores.",
+      "evidence": [
+        {
+          "record_id": "eeb3c0c5f176eba8fc3ad72671008a5db7097ce6d1b91b58b98bff420fe4164a",
+          "key": "shikaku.example",
+          "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+          "context": "example",
+          "field": "source"
+        },
+        {
+          "record_id": "eeb3c0c5f176eba8fc3ad72671008a5db7097ce6d1b91b58b98bff420fe4164a",
+          "key": "shikaku.example",
+          "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+          "context": "example",
+          "field": "forward.0.input"
+        },
+        {
+          "record_id": "b35fb7f385ba1c61f14377da422e5fbc63d9fcbf0722ff785629b24ff1d34c56",
+          "key": "shikaku.example",
+          "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+          "context": "example",
+          "field": "source"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "标记为6的线索属于一个正好包含6个方格的矩形。",
+      "text_sha256": "18b73c60c5ea03fd3dcc4f3b6c93e54a259ca7067bd14e95929048d6429abf92",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        },
+        {
+          "value": "6",
+          "suffix": "",
+          "count": 2
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Pista6, un rectángulo y exactamente seis casillas; dígitos/palabras representan los mismos tres valores.",
+      "evidence": [
+        {
+          "record_id": "eeb3c0c5f176eba8fc3ad72671008a5db7097ce6d1b91b58b98bff420fe4164a",
+          "key": "shikaku.example",
+          "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+          "context": "example",
+          "field": "translation"
+        },
+        {
+          "record_id": "eeb3c0c5f176eba8fc3ad72671008a5db7097ce6d1b91b58b98bff420fe4164a",
+          "key": "shikaku.example",
+          "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+          "context": "example",
+          "field": "forward.0.output"
+        },
+        {
+          "record_id": "eeb3c0c5f176eba8fc3ad72671008a5db7097ce6d1b91b58b98bff420fe4164a",
+          "key": "shikaku.example",
+          "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+          "context": "example",
+          "field": "back.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "The clue marked 6 belongs to a rectangle that contains exactly 6 squares.",
+      "text_sha256": "9bc0695c103f64d72f8bfe09790779ddfc66c363ac79e2a90722c3e544c486de",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        },
+        {
+          "value": "6",
+          "suffix": "",
+          "count": 2
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Pista6, un rectángulo y exactamente seis casillas; dígitos/palabras representan los mismos tres valores.",
+      "evidence": [
+        {
+          "record_id": "eeb3c0c5f176eba8fc3ad72671008a5db7097ce6d1b91b58b98bff420fe4164a",
+          "key": "shikaku.example",
+          "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+          "context": "example",
+          "field": "back_translation"
+        },
+        {
+          "record_id": "eeb3c0c5f176eba8fc3ad72671008a5db7097ce6d1b91b58b98bff420fe4164a",
+          "key": "shikaku.example",
+          "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+          "context": "example",
+          "field": "back.0.output"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Choose a start square.",
+      "text_sha256": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "b56b23ef96ec0275b174ae760f00aefa5e162b0eeb16cda3ec432e47defcf888",
+          "key": "shikaku.fields.selectStart",
+          "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+          "context": "fields.selectStart",
+          "field": "source"
+        },
+        {
+          "record_id": "b56b23ef96ec0275b174ae760f00aefa5e162b0eeb16cda3ec432e47defcf888",
+          "key": "shikaku.fields.selectStart",
+          "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+          "context": "fields.selectStart",
+          "field": "forward.0.input"
+        },
+        {
+          "record_id": "c8b5c1f829769e0c0b9ab2c82f126ecd83184a38b21ab9729a2947d378339505",
+          "key": "shikaku.fields.selectStart",
+          "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+          "context": "fields.selectStart",
+          "field": "source"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "选择一个起始方格。",
+      "text_sha256": "6b9d7bdd2398099b640e97a7fdfcdb2dfe78cbff692d74169673a450fbfc3280",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "b56b23ef96ec0275b174ae760f00aefa5e162b0eeb16cda3ec432e47defcf888",
+          "key": "shikaku.fields.selectStart",
+          "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+          "context": "fields.selectStart",
+          "field": "translation"
+        },
+        {
+          "record_id": "b56b23ef96ec0275b174ae760f00aefa5e162b0eeb16cda3ec432e47defcf888",
+          "key": "shikaku.fields.selectStart",
+          "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+          "context": "fields.selectStart",
+          "field": "forward.0.output"
+        },
+        {
+          "record_id": "b56b23ef96ec0275b174ae760f00aefa5e162b0eeb16cda3ec432e47defcf888",
+          "key": "shikaku.fields.selectStart",
+          "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+          "context": "fields.selectStart",
+          "field": "back.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Select a starting square.",
+      "text_sha256": "cf465c9861202e949494b174654b61fc4209199ba03389e888324b4f69620ef6",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "b56b23ef96ec0275b174ae760f00aefa5e162b0eeb16cda3ec432e47defcf888",
+          "key": "shikaku.fields.selectStart",
+          "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+          "context": "fields.selectStart",
+          "field": "back_translation"
+        },
+        {
+          "record_id": "b56b23ef96ec0275b174ae760f00aefa5e162b0eeb16cda3ec432e47defcf888",
+          "key": "shikaku.fields.selectStart",
+          "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+          "context": "fields.selectStart",
+          "field": "back.0.output"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Undo last rectangle",
+      "text_sha256": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "2dd94afd7e3096684a360d370c37c3a02122a639a2d7a461387a51aa5fde3b8a",
+          "key": "shikaku.fields.undo",
+          "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+          "context": "fields.undo",
+          "field": "source"
+        },
+        {
+          "record_id": "2dd94afd7e3096684a360d370c37c3a02122a639a2d7a461387a51aa5fde3b8a",
+          "key": "shikaku.fields.undo",
+          "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+          "context": "fields.undo",
+          "field": "forward.0.input"
+        },
+        {
+          "record_id": "6ae054499cb3a29b2aa639093fef3c35059b68aa2a583473da7ca933d187b227",
+          "key": "shikaku.fields.undo",
+          "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+          "context": "fields.undo",
+          "field": "source"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "撤销最后一个矩形",
+      "text_sha256": "aceee2b2690650615756500d81b6e031a26d66158f479da269fd078be89284ce",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "2dd94afd7e3096684a360d370c37c3a02122a639a2d7a461387a51aa5fde3b8a",
+          "key": "shikaku.fields.undo",
+          "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+          "context": "fields.undo",
+          "field": "translation"
+        },
+        {
+          "record_id": "2dd94afd7e3096684a360d370c37c3a02122a639a2d7a461387a51aa5fde3b8a",
+          "key": "shikaku.fields.undo",
+          "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+          "context": "fields.undo",
+          "field": "forward.0.output"
+        },
+        {
+          "record_id": "2dd94afd7e3096684a360d370c37c3a02122a639a2d7a461387a51aa5fde3b8a",
+          "key": "shikaku.fields.undo",
+          "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+          "context": "fields.undo",
+          "field": "back.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Undo the last rectangle",
+      "text_sha256": "08de0268fddd51894ba30cffac35ea1193f8e92e36c05c0c8842496ddd370b12",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "2dd94afd7e3096684a360d370c37c3a02122a639a2d7a461387a51aa5fde3b8a",
+          "key": "shikaku.fields.undo",
+          "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+          "context": "fields.undo",
+          "field": "back_translation"
+        },
+        {
+          "record_id": "2dd94afd7e3096684a360d370c37c3a02122a639a2d7a461387a51aa5fde3b8a",
+          "key": "shikaku.fields.undo",
+          "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+          "context": "fields.undo",
+          "field": "back.0.output"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "No. Each rectangle must contain exactly one number clue.",
+      "text_sha256": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Exactamente una pista por rectángulo; articulo del objeto no añade otra cantidad.",
+      "evidence": [
+        {
+          "record_id": "06213275b29616dc8804d8d6abf8b4c32d09e9d395529583ba591275c7947c31",
+          "key": "shikaku.fields.faq.1.a",
+          "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+          "context": "fields.faq.1.a",
+          "field": "source"
+        },
+        {
+          "record_id": "32526dad1ff71137f819d4f5c6c1d7391855345c55cd1de66db6c7a198cee934",
+          "key": "shikaku.fields.faq.1.a",
+          "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+          "context": "fields.faq.1.a",
+          "field": "source"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "一个矩形不能包含多个数字提示。 每个矩形必须包含一个数字提示。",
+      "text_sha256": "12493e0a262116d6221a5b02771708d63b36a6a400721ae9c59f24df2099f76d",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Exactamente una pista por rectángulo; articulo del objeto no añade otra cantidad.",
+      "evidence": [
+        {
+          "record_id": "06213275b29616dc8804d8d6abf8b4c32d09e9d395529583ba591275c7947c31",
+          "key": "shikaku.fields.faq.1.a",
+          "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+          "context": "fields.faq.1.a",
+          "field": "translation"
+        },
+        {
+          "record_id": "06213275b29616dc8804d8d6abf8b4c32d09e9d395529583ba591275c7947c31",
+          "key": "shikaku.fields.faq.1.a",
+          "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+          "context": "fields.faq.1.a",
+          "field": "back.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "One rectangle cannot contain multiple numbered hints. Each rectangle must contain one numbered hint.",
+      "text_sha256": "2a60c6eea7ca17b55298849bf2ab73c0210efc525d9c1f0305ac0cbb987e4a11",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Exactamente una pista por rectángulo; articulo del objeto no añade otra cantidad.",
+      "evidence": [
+        {
+          "record_id": "06213275b29616dc8804d8d6abf8b4c32d09e9d395529583ba591275c7947c31",
+          "key": "shikaku.fields.faq.1.a",
+          "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+          "context": "fields.faq.1.a",
+          "field": "back_translation"
+        },
+        {
+          "record_id": "06213275b29616dc8804d8d6abf8b4c32d09e9d395529583ba591275c7947c31",
+          "key": "shikaku.fields.faq.1.a",
+          "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+          "context": "fields.faq.1.a",
+          "field": "back.0.output"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "A rectangle cannot contain multiple number clues.",
+      "text_sha256": "ddced0256f05729380f6912ef8cdcfe26ecdb20eb8cbe09417df4663d648ddb6",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Exactamente una pista por rectángulo; articulo del objeto no añade otra cantidad.",
+      "evidence": [
+        {
+          "record_id": "06213275b29616dc8804d8d6abf8b4c32d09e9d395529583ba591275c7947c31",
+          "key": "shikaku.fields.faq.1.a",
+          "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+          "context": "fields.faq.1.a",
+          "field": "forward.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "一个矩形不能包含多个数字提示。",
+      "text_sha256": "0b3eacae09fba10d437289a0c5f62274f7b0c4e6348c9423b780832d2c30c7d2",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Exactamente una pista por rectángulo; articulo del objeto no añade otra cantidad.",
+      "evidence": [
+        {
+          "record_id": "06213275b29616dc8804d8d6abf8b4c32d09e9d395529583ba591275c7947c31",
+          "key": "shikaku.fields.faq.1.a",
+          "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+          "context": "fields.faq.1.a",
+          "field": "forward.0.output"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Each rectangle must contain exactly one number clue.",
+      "text_sha256": "6fe8ecaaa238493eabecfc9baef15128fa59cd976fa7e1fbc88201064d0580b1",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Exactamente una pista por rectángulo; articulo del objeto no añade otra cantidad.",
+      "evidence": [
+        {
+          "record_id": "06213275b29616dc8804d8d6abf8b4c32d09e9d395529583ba591275c7947c31",
+          "key": "shikaku.fields.faq.1.a",
+          "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+          "context": "fields.faq.1.a",
+          "field": "forward.1.input"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "每个矩形必须包含一个数字提示。",
+      "text_sha256": "68aa3a368786734f926d318ac1348ac9ab62df23000f5f51621eb736739fa757",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Exactamente una pista por rectángulo; articulo del objeto no añade otra cantidad.",
+      "evidence": [
+        {
+          "record_id": "06213275b29616dc8804d8d6abf8b4c32d09e9d395529583ba591275c7947c31",
+          "key": "shikaku.fields.faq.1.a",
+          "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+          "context": "fields.faq.1.a",
+          "field": "forward.1.output"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "No. This tool opens ASCII DXF only. It does not decode DWG or binary DXF.",
+      "text_sha256": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "171be4a58109d3a7bc455419002a09bf6b87f2005c700b132f9ee188552d64e2",
+          "key": "dxf-viewer.faq.0.a",
+          "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+          "context": "faq.0.a",
+          "field": "source"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "此工具无法打开 DWG 或二进制 DXF。 它只能打开 ASCII DXF。",
+      "text_sha256": "c2720b35f19207979457356b52f91d4bb243ab1181f6d71d0460db9599839f06",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "171be4a58109d3a7bc455419002a09bf6b87f2005c700b132f9ee188552d64e2",
+          "key": "dxf-viewer.faq.0.a",
+          "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+          "context": "faq.0.a",
+          "field": "translation"
+        },
+        {
+          "record_id": "171be4a58109d3a7bc455419002a09bf6b87f2005c700b132f9ee188552d64e2",
+          "key": "dxf-viewer.faq.0.a",
+          "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+          "context": "faq.0.a",
+          "field": "back.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "This tool cannot open DWG or binary DXF files. It can only open ASCII DXF files.",
+      "text_sha256": "09166e3b304cd47f54843757ee518b4827a2d0479eb35f3d5b0852e7cd98ccdd",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "171be4a58109d3a7bc455419002a09bf6b87f2005c700b132f9ee188552d64e2",
+          "key": "dxf-viewer.faq.0.a",
+          "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+          "context": "faq.0.a",
+          "field": "back_translation"
+        },
+        {
+          "record_id": "171be4a58109d3a7bc455419002a09bf6b87f2005c700b132f9ee188552d64e2",
+          "key": "dxf-viewer.faq.0.a",
+          "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+          "context": "faq.0.a",
+          "field": "back.0.output"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "This tool cannot open DWG or binary DXF.",
+      "text_sha256": "ab6bde1456a2dd1676ec6a55555bc6b813ad0d2466427ccae6da86940178a6ab",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "171be4a58109d3a7bc455419002a09bf6b87f2005c700b132f9ee188552d64e2",
+          "key": "dxf-viewer.faq.0.a",
+          "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+          "context": "faq.0.a",
+          "field": "forward.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "此工具无法打开 DWG 或二进制 DXF。",
+      "text_sha256": "76c5a068081fa8dfa71b2eeec1a09329d317c6a9ee8f09c758d993ae0be24ea4",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "171be4a58109d3a7bc455419002a09bf6b87f2005c700b132f9ee188552d64e2",
+          "key": "dxf-viewer.faq.0.a",
+          "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+          "context": "faq.0.a",
+          "field": "forward.0.output"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "It only opens ASCII DXF.",
+      "text_sha256": "4e1410d91db40e6a80d3c265eccebc78320a6384fe9f4742ff3669dc941b2015",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "171be4a58109d3a7bc455419002a09bf6b87f2005c700b132f9ee188552d64e2",
+          "key": "dxf-viewer.faq.0.a",
+          "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+          "context": "faq.0.a",
+          "field": "forward.1.input"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "它只能打开 ASCII DXF。",
+      "text_sha256": "41629f69bb692a2d383659c5d6f049f5c26df53237aca23b1c12c24320c3b95a",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "171be4a58109d3a7bc455419002a09bf6b87f2005c700b132f9ee188552d64e2",
+          "key": "dxf-viewer.faq.0.a",
+          "source_hash": "0feb95bc72e6769d6efa2d2c3bb2504e6718a6c92b54989319377c872a967eee",
+          "context": "faq.0.a",
+          "field": "forward.1.output"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Choose an ASCII DXF file",
+      "text_sha256": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "524b94420a94d67733ccf54e02cbdbc102fc63e97a6aa688f8808d0762e7238b",
+          "key": "dxf-viewer.fields.file",
+          "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+          "context": "fields.file",
+          "field": "source"
+        },
+        {
+          "record_id": "524b94420a94d67733ccf54e02cbdbc102fc63e97a6aa688f8808d0762e7238b",
+          "key": "dxf-viewer.fields.file",
+          "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+          "context": "fields.file",
+          "field": "forward.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "选择一个 ASCII DXF 文件",
+      "text_sha256": "10944bfc81908ece0e97dd4a2f9c3b4c02e7aae8ec07b9530a351185487cbf7a",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "524b94420a94d67733ccf54e02cbdbc102fc63e97a6aa688f8808d0762e7238b",
+          "key": "dxf-viewer.fields.file",
+          "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+          "context": "fields.file",
+          "field": "translation"
+        },
+        {
+          "record_id": "524b94420a94d67733ccf54e02cbdbc102fc63e97a6aa688f8808d0762e7238b",
+          "key": "dxf-viewer.fields.file",
+          "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+          "context": "fields.file",
+          "field": "forward.0.output"
+        },
+        {
+          "record_id": "524b94420a94d67733ccf54e02cbdbc102fc63e97a6aa688f8808d0762e7238b",
+          "key": "dxf-viewer.fields.file",
+          "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+          "context": "fields.file",
+          "field": "back.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Select an ASCII DXF file",
+      "text_sha256": "2e197683ac595b8920b8e30caf2b42e047b6bb0931248b992715043aba8017f9",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "524b94420a94d67733ccf54e02cbdbc102fc63e97a6aa688f8808d0762e7238b",
+          "key": "dxf-viewer.fields.file",
+          "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+          "context": "fields.file",
+          "field": "back_translation"
+        },
+        {
+          "record_id": "524b94420a94d67733ccf54e02cbdbc102fc63e97a6aa688f8808d0762e7238b",
+          "key": "dxf-viewer.fields.file",
+          "source_hash": "8e2f47b1a3e50a19a1c0794b42271fbdfc3db0b5e1aaea5df5836c44f61c014e",
+          "context": "fields.file",
+          "field": "back.0.output"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Unsupported file. Choose an ASCII .dxf file.",
+      "text_sha256": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "1aaada0e6fdeceaeedc710a5304d3a11fa075d9a9a97885016a2f5444278292e",
+          "key": "dxf-viewer.fields.unsupported",
+          "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+          "context": "fields.unsupported",
+          "field": "source"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "不支持的文件。 选择一个 ASCII.dxf 文件。",
+      "text_sha256": "81bb76c2a3704c72b75c8236a64965e11831c13e589c3a5f7f28bf6f45e82bcb",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "1aaada0e6fdeceaeedc710a5304d3a11fa075d9a9a97885016a2f5444278292e",
+          "key": "dxf-viewer.fields.unsupported",
+          "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+          "context": "fields.unsupported",
+          "field": "translation"
+        },
+        {
+          "record_id": "1aaada0e6fdeceaeedc710a5304d3a11fa075d9a9a97885016a2f5444278292e",
+          "key": "dxf-viewer.fields.unsupported",
+          "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+          "context": "fields.unsupported",
+          "field": "back.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Unsupported file. Select an ASCII.dxf file.",
+      "text_sha256": "13b0874b523c7be04faaae3fe044398fbe19f1ebaa4365cb15729c2425412d67",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "1aaada0e6fdeceaeedc710a5304d3a11fa075d9a9a97885016a2f5444278292e",
+          "key": "dxf-viewer.fields.unsupported",
+          "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+          "context": "fields.unsupported",
+          "field": "back_translation"
+        },
+        {
+          "record_id": "1aaada0e6fdeceaeedc710a5304d3a11fa075d9a9a97885016a2f5444278292e",
+          "key": "dxf-viewer.fields.unsupported",
+          "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+          "context": "fields.unsupported",
+          "field": "back.0.output"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Unsupported file.",
+      "text_sha256": "2d2190ec118d6ca6f4392e7e55a582fa5d816ead1a9941d351e11e2f4e3255b3",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "1aaada0e6fdeceaeedc710a5304d3a11fa075d9a9a97885016a2f5444278292e",
+          "key": "dxf-viewer.fields.unsupported",
+          "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+          "context": "fields.unsupported",
+          "field": "forward.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "不支持的文件。",
+      "text_sha256": "606a48a7cb392f9908b8d7eb7e7d378c455f63ea01b28dfddc79788daaa321f9",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "1aaada0e6fdeceaeedc710a5304d3a11fa075d9a9a97885016a2f5444278292e",
+          "key": "dxf-viewer.fields.unsupported",
+          "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+          "context": "fields.unsupported",
+          "field": "forward.0.output"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Choose an ASCII .dxf file.",
+      "text_sha256": "6fe68d014e4a5e9e090e7cc9e995a6c71020a5aacf59d62f2f7ee9cdc8d56e26",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "1aaada0e6fdeceaeedc710a5304d3a11fa075d9a9a97885016a2f5444278292e",
+          "key": "dxf-viewer.fields.unsupported",
+          "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+          "context": "fields.unsupported",
+          "field": "forward.1.input"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "选择一个 ASCII.dxf 文件。",
+      "text_sha256": "ccdd54d495f9ffe8228c0da70a1b943ad894174f324a428b39c6e3ca6596e7b8",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "1aaada0e6fdeceaeedc710a5304d3a11fa075d9a9a97885016a2f5444278292e",
+          "key": "dxf-viewer.fields.unsupported",
+          "source_hash": "154a45f78d375f9a88bc75b2626c057a405848e003412cd74648474fc71ba2fc",
+          "context": "fields.unsupported",
+          "field": "forward.1.output"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Binary DXF is not supported. Save or export the drawing as ASCII DXF.",
+      "text_sha256": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "f95fa9e8d9bac9121fb28d3494f158700af091084c3ee10bb2ec0e2d555aa10b",
+          "key": "dxf-viewer.fields.binary",
+          "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+          "context": "fields.binary",
+          "field": "source"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "不支持二进制 DXF。 将工程图保存或导出为 ASCII DXF。",
+      "text_sha256": "153d0e6a2613f290fcea15d5c12de94f557ce320a2c7a4fe0d19ba39936a0e67",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "f95fa9e8d9bac9121fb28d3494f158700af091084c3ee10bb2ec0e2d555aa10b",
+          "key": "dxf-viewer.fields.binary",
+          "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+          "context": "fields.binary",
+          "field": "translation"
+        },
+        {
+          "record_id": "f95fa9e8d9bac9121fb28d3494f158700af091084c3ee10bb2ec0e2d555aa10b",
+          "key": "dxf-viewer.fields.binary",
+          "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+          "context": "fields.binary",
+          "field": "back.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Binary DXF is not supported. Save or export drawings as ASCII DXF.",
+      "text_sha256": "020795786bf51456874169422ae128df404e9e45b8f699b26f1a50c98fd02037",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "f95fa9e8d9bac9121fb28d3494f158700af091084c3ee10bb2ec0e2d555aa10b",
+          "key": "dxf-viewer.fields.binary",
+          "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+          "context": "fields.binary",
+          "field": "back_translation"
+        },
+        {
+          "record_id": "f95fa9e8d9bac9121fb28d3494f158700af091084c3ee10bb2ec0e2d555aa10b",
+          "key": "dxf-viewer.fields.binary",
+          "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+          "context": "fields.binary",
+          "field": "back.0.output"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Binary DXF is not supported.",
+      "text_sha256": "17998a4eba0064d970db279feb0a52b8dc38484405f1bbce409fc9378813d2e8",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "f95fa9e8d9bac9121fb28d3494f158700af091084c3ee10bb2ec0e2d555aa10b",
+          "key": "dxf-viewer.fields.binary",
+          "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+          "context": "fields.binary",
+          "field": "forward.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "不支持二进制 DXF。",
+      "text_sha256": "7692505c43b33ba39d679db311ce52d3ab31ee107c8202adb1723495899cc6b0",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "f95fa9e8d9bac9121fb28d3494f158700af091084c3ee10bb2ec0e2d555aa10b",
+          "key": "dxf-viewer.fields.binary",
+          "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+          "context": "fields.binary",
+          "field": "forward.0.output"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Save or export the drawing as ASCII DXF.",
+      "text_sha256": "42a31e2cf0193a35a67a3939503c8079d8bf06a7365bc85dd22687a3d1444d2a",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "f95fa9e8d9bac9121fb28d3494f158700af091084c3ee10bb2ec0e2d555aa10b",
+          "key": "dxf-viewer.fields.binary",
+          "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+          "context": "fields.binary",
+          "field": "forward.1.input"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "将工程图保存或导出为 ASCII DXF。",
+      "text_sha256": "8e578a0296416f5d4c0ee4e8eac6347023e3c20f37c8ca8da7f9b1d9d4a8e3a6",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "f95fa9e8d9bac9121fb28d3494f158700af091084c3ee10bb2ec0e2d555aa10b",
+          "key": "dxf-viewer.fields.binary",
+          "source_hash": "a1b49cfe791e8d1be11cddca5b401b92943db446cf6563baf70869d9187c1ebd",
+          "context": "fields.binary",
+          "field": "forward.1.output"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Enter four valid coordinates.",
+      "text_sha256": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+      "quantities": [
+        {
+          "value": "4",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Cuatro valores de coordenadas, four/四.",
+      "evidence": [
+        {
+          "record_id": "ad2aa8764d172b0cc06a08bb0b0633284480ab3e4c1d5a23b3cbe32be0c1a8f0",
+          "key": "dxf-viewer.fields.invalidCoordinates",
+          "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+          "context": "fields.invalidCoordinates",
+          "field": "source"
+        },
+        {
+          "record_id": "ad2aa8764d172b0cc06a08bb0b0633284480ab3e4c1d5a23b3cbe32be0c1a8f0",
+          "key": "dxf-viewer.fields.invalidCoordinates",
+          "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+          "context": "fields.invalidCoordinates",
+          "field": "back_translation"
+        },
+        {
+          "record_id": "ad2aa8764d172b0cc06a08bb0b0633284480ab3e4c1d5a23b3cbe32be0c1a8f0",
+          "key": "dxf-viewer.fields.invalidCoordinates",
+          "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+          "context": "fields.invalidCoordinates",
+          "field": "forward.0.input"
+        },
+        {
+          "record_id": "ad2aa8764d172b0cc06a08bb0b0633284480ab3e4c1d5a23b3cbe32be0c1a8f0",
+          "key": "dxf-viewer.fields.invalidCoordinates",
+          "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+          "context": "fields.invalidCoordinates",
+          "field": "back.0.output"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "输入四个有效坐标。",
+      "text_sha256": "6b09b3ade07357e03f11b81843fe8372a8f9ab0267d711d8444d2483997cf69a",
+      "quantities": [
+        {
+          "value": "4",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Cuatro valores de coordenadas, four/四.",
+      "evidence": [
+        {
+          "record_id": "ad2aa8764d172b0cc06a08bb0b0633284480ab3e4c1d5a23b3cbe32be0c1a8f0",
+          "key": "dxf-viewer.fields.invalidCoordinates",
+          "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+          "context": "fields.invalidCoordinates",
+          "field": "translation"
+        },
+        {
+          "record_id": "ad2aa8764d172b0cc06a08bb0b0633284480ab3e4c1d5a23b3cbe32be0c1a8f0",
+          "key": "dxf-viewer.fields.invalidCoordinates",
+          "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+          "context": "fields.invalidCoordinates",
+          "field": "forward.0.output"
+        },
+        {
+          "record_id": "ad2aa8764d172b0cc06a08bb0b0633284480ab3e4c1d5a23b3cbe32be0c1a8f0",
+          "key": "dxf-viewer.fields.invalidCoordinates",
+          "source_hash": "7324b432896adf04c517d2ce6c463a99c9e8e721d0f1c13074f772acd4387380",
+          "context": "fields.invalidCoordinates",
+          "field": "back.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "标记为 6 的线索属于一个正好覆盖六个正方形的矩形。",
+      "text_sha256": "ca5f2868a9d4b1afadb66b014d45ebb5587686f595ac0d547bceaaf80f1ff6b7",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        },
+        {
+          "value": "6",
+          "suffix": "",
+          "count": 2
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Pista6, un rectángulo y exactamente seis casillas; dígitos/palabras representan los mismos tres valores.",
+      "evidence": [
+        {
+          "record_id": "b35fb7f385ba1c61f14377da422e5fbc63d9fcbf0722ff785629b24ff1d34c56",
+          "key": "shikaku.example",
+          "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+          "context": "example",
+          "field": "translation"
+        },
+        {
+          "record_id": "b35fb7f385ba1c61f14377da422e5fbc63d9fcbf0722ff785629b24ff1d34c56",
+          "key": "shikaku.example",
+          "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+          "context": "example",
+          "field": "back.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "The clue marked 6 belongs to a rectangle that covers exactly six squares.",
+      "text_sha256": "4ef0d7ed6d9eea9ead5e985e3be32f2cec9650e410d793f232da4fabe24323ff",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        },
+        {
+          "value": "6",
+          "suffix": "",
+          "count": 2
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Pista6, un rectángulo y exactamente seis casillas; dígitos/palabras representan los mismos tres valores.",
+      "evidence": [
+        {
+          "record_id": "b35fb7f385ba1c61f14377da422e5fbc63d9fcbf0722ff785629b24ff1d34c56",
+          "key": "shikaku.example",
+          "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+          "context": "example",
+          "field": "back_translation"
+        },
+        {
+          "record_id": "b35fb7f385ba1c61f14377da422e5fbc63d9fcbf0722ff785629b24ff1d34c56",
+          "key": "shikaku.example",
+          "source_hash": "593ec85abb0b75beb17b5da08cfcb6bba7ecc957da385e51b4dbddb22c1aea0b",
+          "context": "example",
+          "field": "back.0.output"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "选择一个起始方块。",
+      "text_sha256": "a1989e964294325ffc7c1698514a429faecae8eb474a3d4889983b45cde8f2a4",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "c8b5c1f829769e0c0b9ab2c82f126ecd83184a38b21ab9729a2947d378339505",
+          "key": "shikaku.fields.selectStart",
+          "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+          "context": "fields.selectStart",
+          "field": "translation"
+        },
+        {
+          "record_id": "c8b5c1f829769e0c0b9ab2c82f126ecd83184a38b21ab9729a2947d378339505",
+          "key": "shikaku.fields.selectStart",
+          "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+          "context": "fields.selectStart",
+          "field": "back.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Choose a starting square.",
+      "text_sha256": "22616dee6665455669f81ae73bbe3011df072f118fd9b244babfe74d0fb40ee3",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "c8b5c1f829769e0c0b9ab2c82f126ecd83184a38b21ab9729a2947d378339505",
+          "key": "shikaku.fields.selectStart",
+          "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+          "context": "fields.selectStart",
+          "field": "back_translation"
+        },
+        {
+          "record_id": "c8b5c1f829769e0c0b9ab2c82f126ecd83184a38b21ab9729a2947d378339505",
+          "key": "shikaku.fields.selectStart",
+          "source_hash": "8dabb38c7c5e55d71afd03c5069e44cd354cb5a5c45c734524600ab9418cbe84",
+          "context": "fields.selectStart",
+          "field": "back.0.output"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "撤消最后一个矩形",
+      "text_sha256": "505d4081d38e04e1a94cc7e43f21848207b9182edef00af3f80eba552c4b3b91",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "6ae054499cb3a29b2aa639093fef3c35059b68aa2a583473da7ca933d187b227",
+          "key": "shikaku.fields.undo",
+          "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+          "context": "fields.undo",
+          "field": "translation"
+        },
+        {
+          "record_id": "6ae054499cb3a29b2aa639093fef3c35059b68aa2a583473da7ca933d187b227",
+          "key": "shikaku.fields.undo",
+          "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+          "context": "fields.undo",
+          "field": "back.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Deselect the last rectangle",
+      "text_sha256": "f9d1f986a3485eea313665241b867b1556f5cd25bbf99ddc01bbc8049a3fa3da",
+      "quantities": [],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Clasificador/artículo/ordinal de objeto o 二进制 léxico (binario), sin cantidad nueva. No aprueba significado/negación de toda la traducción.",
+      "evidence": [
+        {
+          "record_id": "6ae054499cb3a29b2aa639093fef3c35059b68aa2a583473da7ca933d187b227",
+          "key": "shikaku.fields.undo",
+          "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+          "context": "fields.undo",
+          "field": "back_translation"
+        },
+        {
+          "record_id": "6ae054499cb3a29b2aa639093fef3c35059b68aa2a583473da7ca933d187b227",
+          "key": "shikaku.fields.undo",
+          "source_hash": "019072f3607ff8a1f484104b0d45bce2c1731f1ec790bea4cd8030c49d0a5337",
+          "context": "fields.undo",
+          "field": "back.0.output"
+        }
+      ]
+    },
+    {
+      "locale": "zh-CN",
+      "text": "编号每个矩形必须恰好包含一个数字线索。",
+      "text_sha256": "696abb4ec0d1b17d1be83828fc46e7c9e8a33dbccafac28b895ed3e7ea09912d",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Exactamente una pista por rectángulo; articulo del objeto no añade otra cantidad.",
+      "evidence": [
+        {
+          "record_id": "32526dad1ff71137f819d4f5c6c1d7391855345c55cd1de66db6c7a198cee934",
+          "key": "shikaku.fields.faq.1.a",
+          "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+          "context": "fields.faq.1.a",
+          "field": "translation"
+        },
+        {
+          "record_id": "32526dad1ff71137f819d4f5c6c1d7391855345c55cd1de66db6c7a198cee934",
+          "key": "shikaku.fields.faq.1.a",
+          "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+          "context": "fields.faq.1.a",
+          "field": "back.0.input"
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "text": "Each numbered rectangle must contain exactly one numerical clue.",
+      "text_sha256": "f122831b42bd71c663ec498921a6bf0ec16db97a4ab55e8706c7925bcab6abe8",
+      "quantities": [
+        {
+          "value": "1",
+          "suffix": "",
+          "count": 1
+        }
+      ],
+      "reviewer": "Codex",
+      "native_review": false,
+      "note": "Exactamente una pista por rectángulo; articulo del objeto no añade otra cantidad.",
+      "evidence": [
+        {
+          "record_id": "32526dad1ff71137f819d4f5c6c1d7391855345c55cd1de66db6c7a198cee934",
+          "key": "shikaku.fields.faq.1.a",
+          "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+          "context": "fields.faq.1.a",
+          "field": "back_translation"
+        },
+        {
+          "record_id": "32526dad1ff71137f819d4f5c6c1d7391855345c55cd1de66db6c7a198cee934",
+          "key": "shikaku.fields.faq.1.a",
+          "source_hash": "487b8c56c6bd15983b620ebe17f26b6ac7753721072d6fbc1914f2a2881b24c5",
+          "context": "fields.faq.1.a",
+          "field": "back.0.output"
+        }
+      ]
+    }
+  ]
+}

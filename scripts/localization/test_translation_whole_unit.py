@@ -4,6 +4,7 @@ import importlib.util
 import json
 from pathlib import Path
 import unittest
+from unittest.mock import patch
 
 spec = importlib.util.spec_from_file_location('pilot', Path(__file__).with_name('translation-pilot.py'))
 pilot = importlib.util.module_from_spec(spec)
@@ -99,11 +100,11 @@ class WholeUnitTest(unittest.TestCase):
         for locale in ['es','nb-NO']:
             values,_,_=pilot.forward_with_memory([unit],locale,'context-v10',forbidden)
             self.assertIsNotNone(values[0][0])
-            altered=copy.deepcopy(policy['reviewed_memory']['dxf-viewer.limits'])
-            try:
-                policy['reviewed_memory']['dxf-viewer.limits']['translations'][locale]='Broken 10 MB 200,000.'
+            # Edit a scoped copy: the versioned live policy is now immutable.
+            altered=copy.deepcopy(policy)
+            altered['reviewed_memory']['dxf-viewer.limits']['translations'][locale]='Broken 10 MB 200,000.'
+            with patch.dict(pilot.POLICIES,{'context-v10':altered}):
                 self.assertIsNone(pilot.forward_with_memory([unit],locale,'context-v10',forbidden)[0][0][0])
-            finally:policy['reviewed_memory']['dxf-viewer.limits']=altered
         with self.assertRaises(ValueError):pilot.reviewed_memory({**unit,'context':'other'},'es','context-v10')
 
     def test_quantity_format_signal_can_be_reconciled_only_with_recomputed_contract(self):
