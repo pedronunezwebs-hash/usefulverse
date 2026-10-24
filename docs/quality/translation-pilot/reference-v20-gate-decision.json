@@ -1,0 +1,52 @@
+{
+  "policy": "context-v20",
+  "run_id": 40050138164,
+  "reference_gate": {
+    "rows": 40,
+    "sample": 40,
+    "points": 360,
+    "maximum": 360,
+    "button_errors": 0,
+    "number_negation_errors": 0,
+    "major_rows": 0,
+    "minor_rows": 0,
+    "passed": true,
+    "minimum_style_budget_met": true,
+    "reason": "Direct current agent reading; exact known memory declared. Expanded scope blocks any observed open forward defect. No native/blind/unseen-text validation or locale approval."
+  },
+  "legacy_gate": {
+    "rows": 27,
+    "sample": 27,
+    "points": 233,
+    "maximum": 243,
+    "button_errors": 2,
+    "number_negation_errors": 2,
+    "major_rows": 5,
+    "minor_rows": 0,
+    "passed": false,
+    "minimum_style_budget_met": true,
+    "reason": "Direct current agent reading; exact known memory declared. Expanded scope blocks any observed open forward defect. No native/blind/unseen-text validation or locale approval."
+  },
+  "full_dispatched": false,
+  "approved_locales": [],
+  "matched_legacy_comparison": {
+    "keys": 27,
+    "model_points": 243,
+    "legacy_points": 233,
+    "maximum": 243,
+    "frozen_engine": false
+  },
+  "hash_comparison_to_v19": {
+    "model": {
+      "forward": 32,
+      "back": 33
+    },
+    "legacy": {
+      "forward": 27,
+      "back": 27
+    }
+  },
+  "direct_current_outputs_read": 67,
+  "condition": "All current source/forward/back and warning resolutions audited before full dispatch. Passing known references is not locale approval.",
+  "full_authorized_by_gate": true
+}

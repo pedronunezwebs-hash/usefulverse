@@ -45,5 +45,19 @@
     "typed_record_evidence",
     "run"
   ],
-  "policy_digest": "bff5df5f9bc4dec643e78a63f0490d819c64d09a48aa7b8e1021574b385d4ffc"
+  "policy_digest": "bff5df5f9bc4dec643e78a63f0490d819c64d09a48aa7b8e1021574b385d4ffc",
+  "reference_back_regressions": {
+    "red_tests": 1,
+    "red_failures": 5,
+    "new_unique_fixtures": 5,
+    "new_forward": 0,
+    "new_back": 5,
+    "log_sha256": "98810da6a764bbecee04bfb277879df1fa5f6095e24a5df8d402c08060dbd5d1"
+  },
+  "historical_test_scope_fix": {
+    "red_tests": 9,
+    "failures": 1,
+    "observed": "The v19 guard accidentally included future v20 rows:13577 instead of original13510. Pin original policy set from original proof; original732-fixture digest and13510 records remain mandatory. New v20 guard independently covers all13577 historical records and original761 fixtures.",
+    "log_sha256": "835fa43fd6736c93653ee5ecb6844db3be87fa7c9c8334dcb513131347a2a249"
+  }
 }

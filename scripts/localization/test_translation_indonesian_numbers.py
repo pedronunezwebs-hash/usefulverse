@@ -95,7 +95,7 @@ class IndonesianNumbersTest(unittest.TestCase):
         with patch.object(pilot,'SEMANTIC_REGRESSIONS',original):
             for path in sorted((data/'checkpoints').rglob('*.jsonl')):
                 for row in map(json.loads,path.read_text().splitlines()):
-                    if row.get('inference_policy')=='context-v19':continue
+                    if row.get('inference_policy','baseline') not in {'baseline',*proof['historical_policy_digests']}:continue
                     pilot.validate_record(row)
                     flags[row['record_id']]=pilot.record_flags(row)
         self.assertEqual(len(flags),13510)
