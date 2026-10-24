@@ -1,0 +1,52 @@
+{
+  "as_of": "2026-10-24",
+  "source_locale": "en",
+  "product_locales": 37,
+  "destination_locales": 36,
+  "reference_computation_destinations": 36,
+  "passed_known_full_sample": {
+    "es": "context-v15",
+    "nb-NO": "context-v15",
+    "ko": "context-v18"
+  },
+  "historically_reviewed_but_not_passing": [
+    "de",
+    "fr",
+    "pt-BR",
+    "ja",
+    "hi",
+    "ar"
+  ],
+  "detailed_review_pending": [
+    "id",
+    "zh-CN",
+    "bn",
+    "ru",
+    "ur",
+    "tr",
+    "vi",
+    "it",
+    "zh-TW",
+    "bg",
+    "ca",
+    "nl",
+    "el",
+    "ms",
+    "pl",
+    "sv",
+    "th",
+    "uk",
+    "sw",
+    "mr",
+    "te",
+    "ha",
+    "fil",
+    "ta",
+    "fa",
+    "am",
+    "gu"
+  ],
+  "current_destination": "id",
+  "approved_for_release": [],
+  "note": "Known sample pass is not full1000-tool translation, unseen-text/native validation or publication. Automatic references exist for all36 destinations; seven low-resource destinations require80 reviewed samples."
+}

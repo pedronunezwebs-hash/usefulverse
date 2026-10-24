@@ -1,0 +1,66 @@
+{
+  "baseline_commit": "37af9864cac1de1fa64e278eeca77320070e5e1f",
+  "historical_policy_digests": {
+    "context-v2": "b344b0c6f12cbd3625700c6d37c604ec03d3115183cd4899bfc4f64ed065284b",
+    "context-v3": "ca156304940f94ae0c486525e1a26ea916c57bc4c995eb90aa1c2323908f5de9",
+    "context-v4": "96cfaa876dc1b20dd96957d4dd5263355e0d02392fd63b0504f1ebb6a86986a2",
+    "context-v5": "b1055d666c38f8698619ffb18274001424f0d2846c1dc9b2b27c1ff2e6537d76",
+    "context-v6": "ab937c2176f803ad077bdb29567014320c0d0a20f489830f04f81c770ecc68f1",
+    "context-v7": "3c8b67923be1bc6837551523bb3888227d7b4614d1fe61be43cc08562dbb89cc",
+    "context-v8": "f9c80e8561750e0f08a6fd1c6350c4bb3842dc7799cfa5a113943d2b70d4f1e3",
+    "context-v9": "fbfff06b87e2dcf9e04f1f107c65bf271c2a3808dcb9a2637d988f0496548360",
+    "context-v10": "343e405ab7719440177fc4ff5624142024f7e5ea1ad00d25eb7c62a091dc303f",
+    "context-v11": "71b6a61869646956986c151a5f00d6a68a49f87cc54d07298f49caa6def82514",
+    "context-v12": "17132a637a996324ac745809c39999fb087a7c6b53bfbf29abfd6c396b9f06fe",
+    "context-v13": "cc84a5dadf675702ba38bd0b272319a199ac141a71a5fdf1604ffcf9ec931ee5",
+    "context-v14": "658c8c48267656dd2d56a02715e8455b2a321d27daba5f58b2578a4f1c3094e7",
+    "context-v15": "3b304391a2d83b7d296253d1a483da48181b86b09ed4bed8d0049a5afe516599",
+    "context-v16": "e86941fdf844609f31cb835ad0132ae59e8ade8d8af86615a08fa9b0dfdbf3dd",
+    "context-v17": "47432f67ac4a40c278e116897c61ac3959de073f930a38f66ed4469f4f7257dc",
+    "context-v18": "433f45ca6b8ba1ae9b526cec706af164245605d7290394990e54e28c55af670a"
+  },
+  "records": 13510,
+  "preserved_functions": [
+    "numeric_data",
+    "numeric_prose",
+    "localized_audit_text",
+    "typed_data_checks",
+    "complete_sentence_parts",
+    "complete_sentence_evidence_valid",
+    "translate_complete_sentences"
+  ],
+  "record_flags_digest": "a422c984fce0b9c759cb53df68ed50958836ce469bccd6d2f53cad8b996bbc9a",
+  "unsupported_before": {
+    "Limit 25 MB.": {
+      "nonempty": true,
+      "quantities": false,
+      "coordinates": true,
+      "opaque_literals": true,
+      "brands": true,
+      "versions": true,
+      "software_identifiers": true,
+      "technical_tokens": true,
+      "dimensions": true,
+      "unit_symbols": true
+    },
+    "Maximum 200,000.": {
+      "nonempty": true,
+      "quantities": false,
+      "coordinates": true,
+      "opaque_literals": true,
+      "brands": true,
+      "versions": true,
+      "software_identifiers": true,
+      "technical_tokens": true,
+      "dimensions": true,
+      "unit_symbols": true
+    }
+  },
+  "new_policy": "context-v19",
+  "new_policy_digest": "22e9dbfc06cceeb6291ac80c3c980f544928cc9d3de78cc559cd418819d4ba91",
+  "red": {
+    "tests": 6,
+    "errors": 36,
+    "log_tail": "eturn io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/private/var/folders/p7/75l6dszs15v1_1nt8pkv7lcm0000gn/T/usefulverse-codex-v19-20261024.4dqttnzz/repo/docs/quality/translation-pilot/numeric-sources/context-v19/manifest.json'\n\n======================================================================\nERROR: test_versions_coordinates_code_and_opaque_contracts (test_translation_indonesian_numbers.IndonesianNumbersTest.test_versions_coordinates_code_and_opaque_contracts)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/var/folders/p7/75l6dszs15v1_1nt8pkv7lcm0000gn/T/usefulverse-codex-v19-20261024.4dqttnzz/repo/scripts/localization/test_translation_indonesian_numbers.py\", line 59, in test_versions_coordinates_code_and_opaque_contracts\n    self.assertTrue(self.valid(source,target))\n                    ~~~~~~~~~~^^^^^^^^^^^^^^^\n  File \"/private/var/folders/p7/75l6dszs15v1_1nt8pkv7lcm0000gn/T/usefulverse-codex-v19-20261024.4dqttnzz/repo/scripts/localization/test_translation_indonesian_numbers.py\", line 15, in valid\n    return all(pilot.policy_typed_data_checks(source,target,'en','id','context-v19').values())\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: module 'pilot' has no attribute 'policy_typed_data_checks'. Did you mean: 'typed_data_checks'?\n\n----------------------------------------------------------------------\nRan 6 tests in 0.005s\n\nFAILED (errors=36)\n"
+  }
+}
