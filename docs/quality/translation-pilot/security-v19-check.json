@@ -21,5 +21,11 @@
     "verified_git_blob": "f6a3f4442df98f17083d5dedeaa397682babfdbc",
     "historical_commit": "260d87a39690c23829f5c32e8cd5fc3161176f18"
   },
-  "global_billing_audit": false
+  "global_billing_audit": false,
+  "final_scan": {
+    "at_utc": "2026-10-24T01:21:38.469983+00:00",
+    "actionlint": "passed",
+    "gitleaks_findings": 0,
+    "code_policy_data_review_fixtures_after_ci_unchanged": true
+  }
 }

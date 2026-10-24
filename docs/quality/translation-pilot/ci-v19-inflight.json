@@ -2,7 +2,9 @@
   "run_id": 40048923585,
   "source_commit": "27a2d46194e03eaca86c5d4ef16a047948e1a116",
   "status_at_capture": "in_progress",
-  "resolved": false,
+  "resolved": true,
   "model_run": 40048103975,
-  "published": false
+  "published": false,
+  "conclusion": "success",
+  "resolution_file": "ci-v19-verification.json"
 }
